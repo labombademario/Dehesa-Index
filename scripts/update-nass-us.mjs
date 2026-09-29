@@ -99,12 +99,29 @@ async function fetchSeries() {
   });
   var cleaned = matching
     .filter(function (r) { return r.Value && r.Value !== '(D)' && r.Value !== '(NA)'; })
-    .map(function (r) { return { year: r.year, period: r.reference_period_desc || r.period_desc, value: parseFloat(String(r.Value).replace(/,/g, '')) }; })
+    .map(function (r) { return { year: r.year, period: r.reference_period_desc || r.period_desc, periodCode: r.period, value: parseFloat(String(r.Value).replace(/,/g, '')) }; })
     .filter(function (r) { return !isNaN(r.value); });
   if (cleaned.length < 2) {
     throw new Error('Solo se encontraron ' + cleaned.length + ' puntos válidos -- no hay suficiente histórico para calcular la variación.');
   }
   return cleaned.slice(-HISTORY_POINTS);
+}
+
+function observationDateFromNass(year, periodDesc, periodCode) {
+  var y = String(year);
+  var p = String(periodDesc || '').toLowerCase();
+  var monthMap = {
+    january: '01', february: '02', march: '03', april: '04',
+    may: '05', june: '06', july: '07', august: '08',
+    september: '09', october: '10', november: '11', december: '12'
+  };
+  for (var name in monthMap) {
+    if (p.indexOf(name) !== -1) return y + '-' + monthMap[name];
+  }
+  // NASS period codes may be M01..M12 even when the description is localized.
+  var m = String(periodCode || '').match(/^M(\\d{2})$/i);
+  if (m) return y + '-' + m[1];
+  return y;
 }
 
 function fmt(v) {
@@ -115,6 +132,7 @@ async function main() {
   console.log('Consultando USDA NASS Quick Stats (' + cfg.label + ', EE. UU., precio recibido mensual)...');
   var series = await fetchSeries();
   var latest = series[series.length - 1];
+  var observationDate = observationDateFromNass(latest.year, latest.period, latest.periodCode);
   var prev = series[series.length - 2];
   var changePct = fmt(((latest.value - prev.value) / prev.value) * 100);
   var history = series.map(function (p) { return fmt(p.value); });
@@ -135,6 +153,18 @@ async function main() {
     return pre + price + mid1 + changePct + mid2 + history.join(', ') + post;
   });
 
+  // Data Trust v2: actualiza únicamente la fecha de observación NASS.
+  // Publication date permanece null porque Quick Stats no la expone como
+  // fecha de publicación de la observación en este endpoint.
+  var trustKey = 'cereales-' + key + '-us';
+  var trustRe = new RegExp("('" + trustKey + "': \\{[\\s\\S]*?observationDate: )null(, publicationDate: )null");
+  if (!trustRe.test(updated)) {
+    throw new Error('No se encontró el registro Data Trust `' + trustKey + '` en js/data.js. Se aborta para no actualizar el precio sin su trazabilidad.');
+  }
+  updated = updated.replace(trustRe, function (_, pre, pub) {
+    return pre + "'" + observationDate + "'" + pub + 'null';
+  });
+
   if (updated === src) {
     console.log('Sin cambios: el valor ya estaba actualizado.');
     return;
@@ -142,6 +172,8 @@ async function main() {
 
   await writeFile(DATA_JS_PATH, updated, 'utf8');
   console.log('js/data.js actualizado (' + key + ').');
+
+  console.log('Data Trust: observationDate=' + observationDate + ' | publicationDate=pending');
 
   if (process.env.GITHUB_OUTPUT) {
     await writeFile(process.env.GITHUB_OUTPUT, 'price=' + price + '\nchange=' + changePct + '\nlabel=' + cfg.label + '\n', { flag: 'a' });
