@@ -1002,28 +1002,42 @@
   }
 
   function renderRelationshipsHtml() {
-    var t=ui();
     var rel=buildRelationshipEngine();
     var ready=rel.filter(function(r){return r.status==='ready';});
     var pending=rel.filter(function(r){return r.status!=='ready';});
+    var labels={
+      es:{title:'Relaciones agrícolas observadas',intro:'Correlación de cambios, no niveles. El motor prueba rezagos por periodo y asigna confianza según cobertura, fuerza y estabilidad de la asociación; no es una probabilidad ni una predicción.',corr:'Correlación Δ',lag:'Lag',window:'Ventana',pending:'relación(es) permanecen pendientes por falta de cobertura compatible.',periodQ:'trimestre',periodQs:'trimestres',periodM:'mes',periodMs:'meses',note:'La señal es descriptiva y no implica causalidad ni predicción.'},
+      en:{title:'Observed agricultural relationships',intro:'Correlation of changes, not levels. The engine tests period lags and assigns confidence from coverage, strength and stability; it is not a probability or a forecast.',corr:'Δ correlation',lag:'Lag',window:'Window',pending:'relationship(s) remain pending because compatible coverage is unavailable.',periodQ:'quarter',periodQs:'quarters',periodM:'month',periodMs:'months',note:'The signal is descriptive and does not imply causality or forecasting.'},
+      fr:{title:'Relations agricoles observées',intro:'Corrélation des variations, pas des niveaux. Le moteur teste les décalages par période et attribue une confiance selon la couverture, la force et la stabilité ; ce n’est ni une probabilité ni une prévision.',corr:'Corrélation Δ',lag:'Décalage',window:'Fenêtre',pending:'relation(s) restent en attente faute de couverture compatible.',periodQ:'trimestre',periodQs:'trimestres',periodM:'mois',periodMs:'mois',note:'Le signal est descriptif et n’implique ni causalité ni prévision.'},
+      it:{title:'Relazioni agricole osservate',intro:'Correlazione delle variazioni, non dei livelli. Il motore testa i ritardi per periodo e assegna la confidenza in base a copertura, forza e stabilità; non è una probabilità né una previsione.',corr:'Correlazione Δ',lag:'Ritardo',window:'Finestra',pending:'relazione/i restano in attesa per mancanza di copertura compatibile.',periodQ:'trimestre',periodQs:'trimestri',periodM:'mese',periodMs:'mesi',note:'Il segnale è descrittivo e non implica causalità né previsione.'}
+    };
+    var t=labels[lang()]||labels.es;
+    var names={
+      eurostat_fertiliser_input_index:{es:'Fertilizantes · índice de compra',en:'Fertilizer · purchase index',fr:'Engrais · indice d’achat',it:'Fertilizzanti · indice di acquisto'},
+      eurostat_energy_input_index:{es:'Energía · índice de compra',en:'Energy · purchase index',fr:'Énergie · indice d’achat',it:'Energia · indice di acquisto'},
+      eurostat_cereals_output_index:{es:'Cereales · índice de producción',en:'Cereals · output index',fr:'Céréales · indice de production',it:'Cereali · indice di produzione'},
+      eurostat_milk_output_index:{es:'Leche · índice de producción',en:'Milk · output index',fr:'Lait · indice de production',it:'Latte · indice di produzione'},
+      feed_input_index:{es:'Alimentación · índice de costes',en:'Feed · cost index',fr:'Alimentation · indice de coûts',it:'Mangimi · indice dei costi'}
+    };
     if(!ready.length){
-      return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>Relaciones agrícolas observadas</h2><p class="di-intel-muted">Pendiente: todavía no hay suficientes series verificadas con frecuencia, ventanas y fechas compatibles. Las relaciones no se rellenan con series sintéticas.</p></div></section>';
+      return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div></section>';
     }
     var rank={high:3,medium:2,low:1};
     ready.sort(function(a,b){return (rank[b.confidence]||0)-(rank[a.confidence]||0);});
     var cards=ready.slice(0,6).map(function(r){
       var corr=Number(r.correlationReturns);
-      var lagLabel=r.lagPeriods===0?'0':String(r.lagPeriods);
-      var lagUnit=r.frequency==='quarterly'?(r.lagPeriods===1?'trimestre':'trimestres'):(r.lagPeriods===1?'mes':'meses');
+      var lagUnit=r.frequency==='quarterly'?(r.lagPeriods===1?t.periodQ:t.periodQs):(r.lagPeriods===1?t.periodM:t.periodMs);
+      var aName=(names[r.seriesA.product]&&names[r.seriesA.product][lang()])||r.seriesA.product;
+      var bName=(names[r.seriesB.product]&&names[r.seriesB.product][lang()])||r.seriesB.product;
       return '<article class="di-rel-card">'+
         '<div class="di-rel-top"><span>'+esc(r.label)+'</span><b class="di-rel-confidence '+esc(r.confidence)+'">'+esc(r.confidence.toUpperCase())+'</b></div>'+
-        '<div class="di-rel-series">'+esc(r.seriesA.product)+' · EU <span>→</span> '+esc(r.seriesB.product)+' · EU</div>'+
-        '<div class="di-rel-metrics"><div><small>Correlación Δ</small><strong>'+corr.toFixed(2)+'</strong></div><div><small>Lag</small><strong>'+esc(lagLabel+' '+lagUnit)+'</strong></div><div><small>Ventana</small><strong>'+esc(r.window)+'</strong></div></div>'+
+        '<div class="di-rel-series">'+esc(aName)+' · EU <span>→</span> '+esc(bName)+' · EU</div>'+
+        '<div class="di-rel-metrics"><div><small>'+esc(t.corr)+'</small><strong>'+corr.toFixed(2)+'</strong></div><div><small>'+esc(t.lag)+'</small><strong>'+esc(String(r.lagPeriods)+' '+lagUnit)+'</strong></div><div><small>'+esc(t.window)+'</small><strong>'+esc(r.window)+'</strong></div></div>'+
         '<p class="di-rel-note">'+esc(r.interpretation)+'</p>'+
       '</article>';
     }).join('');
-    var pendingNote=pending.length ? '<div class="di-rel-note" style="margin-top:12px;">'+esc(pending.length+' relación(es) permanecen pendientes por falta de cobertura compatible.')+'</div>' : '';
-    return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>Relaciones agrícolas observadas</h2><p class="di-intel-muted">Correlación de cambios, no niveles. El motor prueba rezagos por periodo y asigna confianza según cobertura, fuerza y estabilidad de la asociación; no es una probabilidad ni una predicción.</p></div><div class="di-rel-grid">'+cards+'</div>'+pendingNote+'</section>';
+    var pendingNote=pending.length ? '<div class="di-rel-note" style="margin-top:12px;">'+esc(pending.length+' '+t.pending)+'</div>' : '';
+    return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div><div class="di-rel-grid">'+cards+'</div>'+pendingNote+'</section>';
   }
 
 
