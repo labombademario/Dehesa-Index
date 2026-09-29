@@ -1,48 +1,353 @@
-/* Dehesa Index — compact cross-page news index.
-   Market-linked stories are kept here so price/product pages can consume
-   verified headlines without loading the full News page renderer. */
-(function(global){
-  'use strict';
-  global.DehesaNewsIndex = {
-    trigo: [
-      { id:'n12', date:'2026-09-28', region:'global', topic:'comercio', source:'Reuters', headline:{es:'China recorta aranceles a productos agrícolas de EE. UU., pero excluye la soja',en:'China cuts tariffs on U.S. farm goods but excludes soybeans',fr:'La Chine réduit les droits sur les produits agricoles américains mais exclut le soja',it:'La Cina riduce i dazi sui prodotti agricoli USA ma esclude la soia'}, url:'https://www.reuters.com/world/china/china-says-cut-tariffs-us-farm-goods-soybeans-excluded-2026-09-28/' }
-    ],
-    maiz: [
-      { id:'n7', date:'2026-09-21', region:'us', topic:'clima', source:'DTN Progressive Farmer', headline:{es:'Lluvias récord de septiembre frenan la cosecha de maíz en el Corn Belt de EE. UU.',en:'Record September rains slow corn harvest across the U.S. Corn Belt',fr:'Des pluies record en septembre ralentissent la récolte de maïs dans la Corn Belt américaine',it:'Piogge record di settembre rallentano la raccolta del mais nella Corn Belt statunitense'}, url:'https://www.dtnpf.com/agriculture/web/ag/news/article/2026/09/21/usda-crop-progress-corn-13-harvested' },
-      { id:'n9', date:'2026-09-29', region:'us', topic:'oferta', source:'Farm Progress', headline:{es:'La cosecha de maíz de EE. UU. llega al 18% mientras las lluvias ralentizan el avance',en:'U.S. corn harvest reaches 18% as rain slows fieldwork',fr:'La récolte de maïs américaine atteint 18 % alors que les pluies ralentissent les travaux',it:'Il raccolto di mais negli USA raggiunge il 18% mentre le piogge rallentano i lavori'}, url:'https://www.farmprogress.com/markets-and-quotes/morning-market-review' }
-    ],
-    arroz: [],
-    cebada: [
-      { id:'n2', date:'2026-09-17', region:'eu', topic:'clima', source:'Euronews', headline:{es:'Calor y sequía: por qué podría escasear la cerveza en el Oktoberfest',en:'Heat and drought: why beer at Oktoberfest could soon be in short supply',fr:"Chaleur et sécheresse : pourquoi la bière pourrait bientôt manquer à l'Oktoberfest",it:"Caldo e siccità: perché la birra all'Oktoberfest potrebbe presto scarseggiare"}, url:'https://www.euronews.com/2026/09/17/heat-and-drought-why-beer-at-oktoberfest-could-soon-be-in-short-supply' }
-    ],
-    soja: [
-      { id:'n5', date:'2026-04-13', region:'us', topic:'comercio', source:'Associated Press', headline:{es:'Ya bajo presión financiera, los agricultores estadounidenses se ven más asfixiados por los aranceles y la guerra de Irán',en:'Already under financial pressure, farmers squeezed further by tariffs and Iran war',fr:'Déjà sous pression financière, les agriculteurs américains davantage étranglés par les tarifs douaniers et la guerre en Iran',it:'Già sotto pressione finanziaria, gli agricoltori statunitensi ulteriormente colpiti dai dazi e dalla guerra in Iran'}, url:'https://www.pbs.org/newshour/nation/already-under-financial-pressure-farmers-squeezed-further-by-tariffs-and-iran-war' },
-      { id:'n12', date:'2026-09-28', region:'global', topic:'comercio', source:'Reuters', headline:{es:'China recorta aranceles a productos agrícolas de EE. UU., pero excluye la soja',en:'China cuts tariffs on U.S. farm goods but excludes soybeans',fr:'La Chine réduit les droits sur les produits agricoles américains mais exclut le soja',it:'La Cina riduce i dazi sui prodotti agricoli USA ma esclude la soia'}, url:'https://www.reuters.com/world/china/china-says-cut-tariffs-us-farm-goods-soybeans-excluded-2026-09-28/' }
-    ],
-    fertilizantes: [
-      { id:'n1', date:'2026-09-22', region:'eu', topic:'costes', source:'Euronews', headline:{es:'Los agricultores españoles piden ayuda urgente por el encarecimiento de costes debido a la guerra de Irán',en:'Spanish farmers demand urgent aid as war in Iran drives up costs',fr:"Les agriculteurs espagnols réclament une aide urgente face à la hausse des coûts liée à la guerre en Iran",it:"Gli agricoltori spagnoli chiedono aiuti urgenti per l'aumento dei costi dovuto alla guerra in Iran"}, url:'https://www.euronews.com/2026/09/22/spanish-farmers-demand-urgent-aid-as-war-in-iran-drives-up-costs' },
-      { id:'n11', date:'2026-09-29', region:'global', topic:'comercio', source:'Reuters', headline:{es:'Belarús plantea un proyecto de fertilizantes nitrogenados con Gazprom y ofrece cooperación a EE. UU.',en:'Belarus proposes a nitrogen fertilizer project with Gazprom and offers U.S. cooperation',fr:'La Biélorussie propose un projet d’engrais azotés avec Gazprom et offre une coopération aux États-Unis',it:'La Bielorussia propone un progetto di fertilizzanti azotati con Gazprom e offre cooperazione agli USA'}, url:'https://www.reuters.com/world/europe/lukashenko-proposes-us-join-belarus-gazprom-fertilizer-project-belta-reports-2026-09-29/' }
-    ],
-    diesel: [
-      { id:'n1', date:'2026-09-22', region:'eu', topic:'energia', source:'Euronews', headline:{es:'Los agricultores españoles piden ayuda urgente por el encarecimiento de costes debido a la guerra de Irán',en:'Spanish farmers demand urgent aid as war in Iran drives up costs',fr:"Les agriculteurs espagnols réclament une aide urgente face à la hausse des coûts liée à la guerre en Iran",it:"Gli agricoltori spagnoli chiedono aiuti urgenti per l'aumento dei costi dovuto alla guerra in Iran"}, url:'https://www.euronews.com/2026/09/22/spanish-farmers-demand-urgent-aid-as-war-in-iran-drives-up-costs' },
-      { id:'n8', date:'2026-09-18', region:'us', topic:'energia', source:'Reuters', headline:{es:'El diésel en EE. UU. alcanza niveles récord y presiona los costes agrícolas',en:'Record U.S. diesel prices squeeze farmers and could lift food costs',fr:'Le diesel américain atteint des niveaux records et pèse sur les coûts agricoles',it:'Il diesel negli USA raggiunge livelli record e pesa sui costi agricoli'}, url:'https://www.reuters.com/business/energy/record-us-diesel-prices-squeeze-farmers-food-prices-may-rise-2026-09-18/' }
-    ],
-    energia: [
-      { id:'n1', date:'2026-09-22', region:'eu', topic:'energia', source:'Euronews', headline:{es:'Los agricultores españoles piden ayuda urgente por el encarecimiento de costes debido a la guerra de Irán',en:'Spanish farmers demand urgent aid as war in Iran drives up costs',fr:"Les agriculteurs espagnols réclament une aide urgente face à la hausse des coûts liée à la guerre en Iran",it:"Gli agricoltori spagnoli chiedono aiuti urgenti per l'aumento dei costi dovuto alla guerra in Iran"}, url:'https://www.euronews.com/2026/09/22/spanish-farmers-demand-urgent-aid-as-war-in-iran-drives-up-costs' },
-      { id:'n8', date:'2026-09-18', region:'us', topic:'energia', source:'Reuters', headline:{es:'El diésel en EE. UU. alcanza niveles récord y presiona los costes agrícolas',en:'Record U.S. diesel prices squeeze farmers and could lift food costs',fr:'Le diesel américain atteint des niveaux records et pèse sur les coûts agricoles',it:'Il diesel negli USA raggiunge livelli record e pesa sui costi agricoli'}, url:'https://www.reuters.com/business/energy/record-us-diesel-prices-squeeze-farmers-food-prices-may-rise-2026-09-18/' },
-      { id:'n10', date:'2026-09-29', region:'global', topic:'energia', source:'Reuters', headline:{es:'El petróleo baja mientras se recuperan algunas exportaciones de Oriente Medio',en:'Oil prices fall as Middle East exports show signs of recovery',fr:'Le pétrole recule alors que les exportations du Moyen-Orient montrent des signes de reprise',it:'Il petrolio scende alors que les exportations du Moyen-Orient montrent des signes de reprise'}, url:'https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/' }
-    ],
-    costes: [
-      { id:'n8', date:'2026-09-18', region:'us', topic:'energia', source:'Reuters', headline:{es:'El diésel en EE. UU. alcanza niveles récord y presiona los costes agrícolas',en:'Record U.S. diesel prices squeeze farmers and could lift food costs',fr:'Le diesel américain atteint des niveaux records et pèse sur les coûts agricoles',it:'Il diesel negli USA raggiunge livelli record e pesa sui costi agricoli'}, url:'https://www.reuters.com/business/energy/record-us-diesel-prices-squeeze-farmers-food-prices-may-rise-2026-09-18/' },
-      { id:'n1', date:'2026-09-22', region:'eu', topic:'costes', source:'Euronews', headline:{es:'Los agricultores españoles piden ayuda urgente por el encarecimiento de costes debido a la guerra de Irán',en:'Spanish farmers demand urgent aid as war in Iran drives up costs',fr:"Les agriculteurs espagnols réclament une aide urgente face à la hausse des coûts liée à la guerre en Iran",it:"Gli agricoltori spagnoli chiedono aiuti urgenti per l'aumento dei costi dovuto alla guerra in Iran"}, url:'https://www.euronews.com/2026/09/22/spanish-farmers-demand-urgent-aid-as-war-in-iran-drives-up-costs' }
-    ],
-    azucar: [
-      { id:'n10', date:'2026-09-29', region:'global', topic:'clima', source:'Reuters', headline:{es:'El clima condiciona la producción de azúcar de Brasil pese a la subida de precios',en:'Weather, not price, drives Brazil mills on sugar production',fr:'Le climat, plutôt que les prix, guide la production de sucre au Brésil',it:'Il clima, più dei prezzi, guida la produzione di zucchero in Brasile'}, url:'https://www.reuters.com/world/americas/weather-not-price-drive-brazil-mills-sugar-production-2026-09-29/' }
-    ],
-    pac: [
-      { id:'n3', date:'2026-09-10', region:'eu', topic:'politica', source:'Euronews', headline:{es:'Los agricultores saben que el dinero es limitado, dice el comisario europeo de Agricultura',en:'Farmers know cash is limited, European commissioner for agriculture says',fr:'Les agriculteurs savent que l’argent est limité, affirme le commissaire européen à l’Agriculture',it:'Gli agricoltori sanno che i fondi sono limitati, afferma il commissario europeo all’Agricoltura'}, url:'https://www.euronews.com/2026/09/10/farmers-know-cash-is-limited-european-commissioner-for-agriculture-christophe-hansen-says' },
-      { id:'n13', date:'2026-09-28', region:'eu', topic:'oferta', source:'European Commission', headline:{es:'El comercio agroalimentario de la UE sigue siendo sólido en 2026',en:'EU agri-food trade remains solid in 2026',fr:'Le commerce agroalimentaire de l’UE reste solide en 2026',it:'Il commercio agroalimentare dell’UE resta solido nel 2026'}, url:'https://agriculture.ec.europa.eu/media/news/eu-agri-food-trade-remains-solid-2026-2026-09-28_en' },
-      { id:'n6', date:'2026-07-28', region:'eu', topic:'ayudas', source:'La Moncloa — Gobierno de España', headline:{es:'Más de 563.000 agricultores y ganaderos solicitan las ayudas de la PAC para la campaña 2026',en:'Over 563,000 farmers and ranchers apply for CAP aid for the 2026 campaign',fr:'Plus de 563 000 agriculteurs et éleveurs demandent les aides de la PAC pour la campagne 2026',it:'Oltre 563.000 agricoltori e allevatori richiedono gli aiuti della PAC per la campagna 2026'}, url:'https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/agricultura/Paginas/2026/280726-solicitud-unica-pac.aspx' }
-    ]
-  };
-})(window);
+/* AUTO-GENERATED by scripts/update_news.py */
+(function(global){'use strict';global.DehesaNewsIndex={
+  "azucar": [
+    {
+      "id": "seed-n46",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "clima",
+      "topics": [
+        "clima",
+        "oferta"
+      ],
+      "products": [
+        "azucar"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Weather, not price, to drive Brazil mills on sugar production",
+        "es": "El clima condiciona la producción de azúcar de Brasil pese a la subida de precios",
+        "fr": "Le climat, plutôt que les prix, guide la production de sucre au Brésil",
+        "it": "Il clima, più dei prezzi, guida la produzione di zucchero in Brasile"
+      },
+      "description": "Unusually wet conditions in Brazil's center-south are delaying harvest and limiting sugar production.",
+      "url": "https://www.reuters.com/world/americas/weather-not-price-drive-brazil-mills-sugar-production-2026-09-29/",
+      "relevance": 91,
+      "auto": true
+    }
+  ],
+  "energia": [
+    {
+      "id": "seed-n47",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia",
+        "diesel",
+        "costes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
+        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
+        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
+        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
+      },
+      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
+      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
+      "relevance": 96,
+      "auto": true
+    }
+  ],
+  "diesel": [
+    {
+      "id": "seed-n47",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia",
+        "diesel",
+        "costes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
+        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
+        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
+        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
+      },
+      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
+      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
+      "relevance": 96,
+      "auto": true
+    }
+  ],
+  "costes": [
+    {
+      "id": "seed-n47",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia",
+        "diesel",
+        "costes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
+        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
+        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
+        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
+      },
+      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
+      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
+      "relevance": 96,
+      "auto": true
+    }
+  ],
+  "fertilizantes": [
+    {
+      "id": "seed-n50",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "costes",
+      "topics": [
+        "costes",
+        "oferta"
+      ],
+      "products": [
+        "fertilizantes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Lukashenko proposes US join Belarus-Gazprom fertilizer project, Belta reports",
+        "es": "Belarús plantea un proyecto de fertilizantes nitrogenados con Gazprom y ofrece cooperación a EE. UU.",
+        "fr": "La Biélorussie propose un projet d’engrais azotés avec Gazprom et offre une coopération aux États-Unis",
+        "it": "La Bielorussia propone un progetto di fertilizzanti azotati con Gazprom e offre cooperazione agli USA"
+      },
+      "description": "Belarus announced a proposed nitrogen fertilizer plant with Gazprom and suggested U.S. cooperation, Reuters reported citing Belta.",
+      "url": "https://www.reuters.com/world/europe/lukashenko-proposes-us-join-belarus-gazprom-fertilizer-project-belta-reports-2026-09-29/",
+      "relevance": 88,
+      "auto": true
+    }
+  ],
+  "maiz": [
+    {
+      "id": "seed-n52",
+      "date": "2026-09-28",
+      "region": "global",
+      "topic": "comercio",
+      "topics": [
+        "comercio"
+      ],
+      "products": [
+        "maiz",
+        "trigo",
+        "soja",
+        "leche"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "China to cut tariffs on US farm goods, but list excludes soybeans",
+        "es": "China recorta aranceles a productos agrícolas de EE. UU., pero excluye la soja",
+        "fr": "La Chine réduit les droits sur les produits agricoles américains mais exclut le soja",
+        "it": "La Cina riduce i dazi sui prodotti agricoli USA ma esclude la soia"
+      },
+      "description": "China announced tariff reductions for several U.S. agricultural products while soybeans remained excluded.",
+      "url": "https://www.reuters.com/world/china/china-says-cut-tariffs-us-farm-goods-soybeans-excluded-2026-09-28/",
+      "relevance": 98,
+      "auto": true
+    }
+  ],
+  "trigo": [
+    {
+      "id": "seed-n52",
+      "date": "2026-09-28",
+      "region": "global",
+      "topic": "comercio",
+      "topics": [
+        "comercio"
+      ],
+      "products": [
+        "maiz",
+        "trigo",
+        "soja",
+        "leche"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "China to cut tariffs on US farm goods, but list excludes soybeans",
+        "es": "China recorta aranceles a productos agrícolas de EE. UU., pero excluye la soja",
+        "fr": "La Chine réduit les droits sur les produits agricoles américains mais exclut le soja",
+        "it": "La Cina riduce i dazi sui prodotti agricoli USA ma esclude la soia"
+      },
+      "description": "China announced tariff reductions for several U.S. agricultural products while soybeans remained excluded.",
+      "url": "https://www.reuters.com/world/china/china-says-cut-tariffs-us-farm-goods-soybeans-excluded-2026-09-28/",
+      "relevance": 98,
+      "auto": true
+    },
+    {
+      "id": "seed-n10",
+      "date": "2026-09-28",
+      "region": "eu",
+      "topic": "oferta",
+      "topics": [
+        "oferta",
+        "comercio"
+      ],
+      "products": [
+        "trigo",
+        "soja",
+        "leche"
+      ],
+      "source": "European Commission",
+      "headline": {
+        "en": "EU agri-food trade remains solid in 2026",
+        "es": "El comercio agroalimentario de la UE sigue siendo sólido en 2026",
+        "fr": "Le commerce agroalimentaire de l’UE reste solide en 2026",
+        "it": "Il commercio agroalimentare dell’UE resta solido nel 2026"
+      },
+      "description": "EU agri-food exports reached €138.7 billion in January-July 2026 and the cumulative trade surplus reached €30.1 billion.",
+      "url": "https://agriculture.ec.europa.eu/media/news/eu-agri-food-trade-remains-solid-2026-2026-09-28_en",
+      "relevance": 94,
+      "auto": true
+    }
+  ],
+  "soja": [
+    {
+      "id": "seed-n52",
+      "date": "2026-09-28",
+      "region": "global",
+      "topic": "comercio",
+      "topics": [
+        "comercio"
+      ],
+      "products": [
+        "maiz",
+        "trigo",
+        "soja",
+        "leche"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "China to cut tariffs on US farm goods, but list excludes soybeans",
+        "es": "China recorta aranceles a productos agrícolas de EE. UU., pero excluye la soja",
+        "fr": "La Chine réduit les droits sur les produits agricoles américains mais exclut le soja",
+        "it": "La Cina riduce i dazi sui prodotti agricoli USA ma esclude la soia"
+      },
+      "description": "China announced tariff reductions for several U.S. agricultural products while soybeans remained excluded.",
+      "url": "https://www.reuters.com/world/china/china-says-cut-tariffs-us-farm-goods-soybeans-excluded-2026-09-28/",
+      "relevance": 98,
+      "auto": true
+    },
+    {
+      "id": "seed-n10",
+      "date": "2026-09-28",
+      "region": "eu",
+      "topic": "oferta",
+      "topics": [
+        "oferta",
+        "comercio"
+      ],
+      "products": [
+        "trigo",
+        "soja",
+        "leche"
+      ],
+      "source": "European Commission",
+      "headline": {
+        "en": "EU agri-food trade remains solid in 2026",
+        "es": "El comercio agroalimentario de la UE sigue siendo sólido en 2026",
+        "fr": "Le commerce agroalimentaire de l’UE reste solide en 2026",
+        "it": "Il commercio agroalimentare dell’UE resta solido nel 2026"
+      },
+      "description": "EU agri-food exports reached €138.7 billion in January-July 2026 and the cumulative trade surplus reached €30.1 billion.",
+      "url": "https://agriculture.ec.europa.eu/media/news/eu-agri-food-trade-remains-solid-2026-2026-09-28_en",
+      "relevance": 94,
+      "auto": true
+    },
+    {
+      "id": "seed-n55",
+      "date": "2026-09-25",
+      "region": "us",
+      "topic": "oferta",
+      "topics": [
+        "oferta",
+        "clima"
+      ],
+      "products": [
+        "soja"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "US harvest delays send soy processors scrambling for supplies",
+        "es": "Los retrasos de la cosecha de EE. UU. complican el abastecimiento de procesadores de soja",
+        "fr": "Les retards de récolte aux États-Unis compliquent l'approvisionnement des transformateurs de soja",
+        "it": "I ritardi del raccolto USA complicano l'approvvigionamento dei trasformatori di soia"
+      },
+      "description": "Late-summer rains delayed soybean harvest and tightened nearby supplies for processors.",
+      "url": "https://www.reuters.com/business/retail-consumer/us-harvest-delays-send-soy-processors-scrambling-supplies-2026-09-25/",
+      "relevance": 96,
+      "auto": true
+    }
+  ],
+  "leche": [
+    {
+      "id": "seed-n52",
+      "date": "2026-09-28",
+      "region": "global",
+      "topic": "comercio",
+      "topics": [
+        "comercio"
+      ],
+      "products": [
+        "maiz",
+        "trigo",
+        "soja",
+        "leche"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "China to cut tariffs on US farm goods, but list excludes soybeans",
+        "es": "China recorta aranceles a productos agrícolas de EE. UU., pero excluye la soja",
+        "fr": "La Chine réduit les droits sur les produits agricoles américains mais exclut le soja",
+        "it": "La Cina riduce i dazi sui prodotti agricoli USA ma esclude la soia"
+      },
+      "description": "China announced tariff reductions for several U.S. agricultural products while soybeans remained excluded.",
+      "url": "https://www.reuters.com/world/china/china-says-cut-tariffs-us-farm-goods-soybeans-excluded-2026-09-28/",
+      "relevance": 98,
+      "auto": true
+    },
+    {
+      "id": "seed-n10",
+      "date": "2026-09-28",
+      "region": "eu",
+      "topic": "oferta",
+      "topics": [
+        "oferta",
+        "comercio"
+      ],
+      "products": [
+        "trigo",
+        "soja",
+        "leche"
+      ],
+      "source": "European Commission",
+      "headline": {
+        "en": "EU agri-food trade remains solid in 2026",
+        "es": "El comercio agroalimentario de la UE sigue siendo sólido en 2026",
+        "fr": "Le commerce agroalimentaire de l’UE reste solide en 2026",
+        "it": "Il commercio agroalimentare dell’UE resta solido nel 2026"
+      },
+      "description": "EU agri-food exports reached €138.7 billion in January-July 2026 and the cumulative trade surplus reached €30.1 billion.",
+      "url": "https://agriculture.ec.europa.eu/media/news/eu-agri-food-trade-remains-solid-2026-2026-09-28_en",
+      "relevance": 94,
+      "auto": true
+    }
+  ]
+};})(window);
