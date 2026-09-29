@@ -204,6 +204,7 @@ img { max-width: 100%; }
 .di-home-status.real{background:rgba(47,125,79,.12);color:var(--positive)}
 .di-home-status.pending{background:rgba(138,132,113,.15);color:var(--neutral)}
 .di-home-status.neutral{background:var(--surface-alt);color:var(--text-faint)}
+.di-home-status.not-comparable{background:rgba(178,58,52,.10);color:var(--negative)}
 .di-home-empty{padding:28px;text-align:center;color:var(--text-muted);font-size:13px}
 #home-stats{grid-template-columns:repeat(4,1fr)}
 #home-stats > div{min-width:0}
