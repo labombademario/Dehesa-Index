@@ -7,9 +7,9 @@
 (function (global) {
   'use strict';
 
-  // --- Tipos de cambio (BCE / Banco de Inglaterra, referencia del 25 sep 2026) -
-  var EURUSD = 1.1403;
-  var GBPUSD = 1.3246;
+  // --- Tipos de cambio (Banco Central Europeo, referencia del 28 sep 2026) -
+  var EURUSD = 1.1378;
+  var GBPUSD = 1.3263;
   var FX = { USD: 1, EUR: EURUSD, GBP: GBPUSD };
   var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£' };
 
