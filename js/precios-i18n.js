@@ -138,7 +138,12 @@
       localGlobalProductLabel: 'Producto:',
       localGlobalMapBadge: 'Global Price Map',
       localGlobalNoCountryData: 'Este producto todavía no tiene desglose de precio por país dentro de la Unión Europea -- se muestra solo la referencia europea de conjunto.',
-      localGlobalDisclaimer: 'Los precios globales (EE. UU., Europa, Reino Unido) son los mismos ya publicados en el resto del panel, con su fuente real bajo cada etiqueta. El desglose por país dentro de la UE usa las cotizaciones nacionales que publica la Comisión Europea a través de su observatorio de mercado correspondiente; por ahora solo está disponible para los productos que ya tenían este desglose en otras partes del panel (lácteos, ganado, porcino, ovino, avicultura, aceite), más el trigo (Comisión Europea, semana del 14 al 20 de septiembre de 2026, vía IndexBox). Se irá ampliando a más productos según aparezcan fuentes citables.'
+      localGlobalDisclaimer: 'Los precios globales (EE. UU., Europa, Reino Unido) son los mismos ya publicados en el resto del panel, con su fuente real bajo cada etiqueta. El desglose por país dentro de la UE usa las cotizaciones nacionales que publica la Comisión Europea a través de su observatorio de mercado correspondiente; por ahora solo está disponible para los productos que ya tenían este desglose en otras partes del panel (lácteos, ganado, porcino, ovino, avicultura, aceite), más el trigo (Comisión Europea, semana del 14 al 20 de septiembre de 2026, vía IndexBox). Se irá ampliando a más productos según aparezcan fuentes citables.',
+      localGlobalMapUp: 'Sube',
+      localGlobalMapDown: 'Baja',
+      localGlobalMapFlat: 'Sin cambio',
+      localGlobalMapNoData: 'Sin datos para este producto',
+      localGlobalMapUnavailable: 'El mapa interactivo no se ha podido cargar (sin conexión al proveedor del mapa). Los precios siguen disponibles en la lista de abajo.'
     },
     en: {
       pageTitle: 'Price dashboard',
@@ -272,7 +277,12 @@
       localGlobalProductLabel: 'Product:',
       localGlobalMapBadge: 'Global Price Map',
       localGlobalNoCountryData: "This product doesn't have a country-level price breakdown within the EU yet -- only the EU-wide reference is shown.",
-      localGlobalDisclaimer: "The global prices (U.S., Europe, U.K.) are the same ones already published elsewhere on this panel, with their real source under each label. The EU country breakdown uses the national quotations published by the European Commission via its relevant market observatory; for now it's only available for the products that already had this breakdown elsewhere on the panel (dairy, cattle, pork, sheep, poultry, olive oil), plus wheat (European Commission, week of September 14-20, 2026, via IndexBox). More products will be added as citable sources appear."
+      localGlobalDisclaimer: "The global prices (U.S., Europe, U.K.) are the same ones already published elsewhere on this panel, with their real source under each label. The EU country breakdown uses the national quotations published by the European Commission via its relevant market observatory; for now it's only available for the products that already had this breakdown elsewhere on the panel (dairy, cattle, pork, sheep, poultry, olive oil), plus wheat (European Commission, week of September 14-20, 2026, via IndexBox). More products will be added as citable sources appear.",
+      localGlobalMapUp: 'Up',
+      localGlobalMapDown: 'Down',
+      localGlobalMapFlat: 'No change',
+      localGlobalMapNoData: 'No data for this product',
+      localGlobalMapUnavailable: "The interactive map couldn't load (no connection to the map provider). Prices are still available in the list below."
     },
     fr: {
       pageTitle: 'Tableau des prix',
@@ -406,7 +416,12 @@
       localGlobalProductLabel: 'Produit :',
       localGlobalMapBadge: 'Global Price Map',
       localGlobalNoCountryData: "Ce produit n'a pas encore de répartition de prix par pays au sein de l'UE -- seule la référence européenne globale est affichée.",
-      localGlobalDisclaimer: "Les prix mondiaux (États-Unis, Europe, Royaume-Uni) sont les mêmes que ceux déjà publiés ailleurs dans ce panneau, avec leur source réelle sous chaque étiquette. La répartition par pays au sein de l'UE utilise les cotations nationales publiées par la Commission européenne via son observatoire de marché correspondant ; pour l'instant, elle n'est disponible que pour les produits qui avaient déjà cette répartition ailleurs dans le panneau (produits laitiers, bovins, porcin, ovin, volaille, huile d'olive), plus le blé (Commission européenne, semaine du 14 au 20 septembre 2026, via IndexBox). D'autres produits seront ajoutés au fur et à mesure que des sources citables apparaîtront."
+      localGlobalDisclaimer: "Les prix mondiaux (États-Unis, Europe, Royaume-Uni) sont les mêmes que ceux déjà publiés ailleurs dans ce panneau, avec leur source réelle sous chaque étiquette. La répartition par pays au sein de l'UE utilise les cotations nationales publiées par la Commission européenne via son observatoire de marché correspondant ; pour l'instant, elle n'est disponible que pour les produits qui avaient déjà cette répartition ailleurs dans le panneau (produits laitiers, bovins, porcin, ovin, volaille, huile d'olive), plus le blé (Commission européenne, semaine du 14 au 20 septembre 2026, via IndexBox). D'autres produits seront ajoutés au fur et à mesure que des sources citables apparaîtront.",
+      localGlobalMapUp: 'En hausse',
+      localGlobalMapDown: 'En baisse',
+      localGlobalMapFlat: 'Stable',
+      localGlobalMapNoData: 'Pas de données pour ce produit',
+      localGlobalMapUnavailable: "La carte interactive n'a pas pu être chargée (pas de connexion au fournisseur de la carte). Les prix restent disponibles dans la liste ci-dessous."
     },
     it: {
       pageTitle: 'Pannello dei prezzi',
@@ -540,7 +555,12 @@
       localGlobalProductLabel: 'Prodotto:',
       localGlobalMapBadge: 'Global Price Map',
       localGlobalNoCountryData: "Questo prodotto non ha ancora una ripartizione di prezzo per paese all'interno dell'UE -- viene mostrato solo il riferimento europeo complessivo.",
-      localGlobalDisclaimer: "I prezzi globali (Stati Uniti, Europa, Regno Unito) sono gli stessi già pubblicati altrove in questo pannello, con la loro fonte reale sotto ciascuna etichetta. La ripartizione per paese all'interno dell'UE usa le quotazioni nazionali pubblicate dalla Commissione Europea tramite il relativo osservatorio di mercato; per ora è disponibile solo per i prodotti che avevano già questa ripartizione altrove nel pannello (lattiero-caseario, bovini, suini, ovini, avicoltura, olio d'oliva), più il grano (Commissione Europea, settimana dal 14 al 20 settembre 2026, tramite IndexBox). Altri prodotti saranno aggiunti man mano che emergeranno fonti citabili."
+      localGlobalDisclaimer: "I prezzi globali (Stati Uniti, Europa, Regno Unito) sono gli stessi già pubblicati altrove in questo pannello, con la loro fonte reale sotto ciascuna etichetta. La ripartizione per paese all'interno dell'UE usa le quotazioni nazionali pubblicate dalla Commissione Europea tramite il relativo osservatorio di mercato; per ora è disponibile solo per i prodotti che avevano già questa ripartizione altrove nel pannello (lattiero-caseario, bovini, suini, ovini, avicoltura, olio d'oliva), più il grano (Commissione Europea, settimana dal 14 al 20 settembre 2026, tramite IndexBox). Altri prodotti saranno aggiunti man mano che emergeranno fonti citabili.",
+      localGlobalMapUp: 'Sale',
+      localGlobalMapDown: 'Scende',
+      localGlobalMapFlat: 'Invariato',
+      localGlobalMapNoData: 'Nessun dato per questo prodotto',
+      localGlobalMapUnavailable: "La mappa interattiva non è stata caricata (nessuna connessione al fornitore della mappa). I prezzi restano disponibili nell'elenco qui sotto."
     }
   };
   global.DehesaPreciosI18n = UI;

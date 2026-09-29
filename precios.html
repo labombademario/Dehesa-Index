@@ -8,6 +8,11 @@
 <link rel="icon" href="assets/logo.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
+<!-- jsVectorMap: librería ligera de mapas interactivos (MIT), usada solo por
+     el "🗺️ Global Price Map" dentro de Local vs. Global (js/precios-intel.js).
+     Versión fijada a 1.7.0 para que un cambio futuro de la librería no
+     rompa el mapa sin avisar. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/jsvectormap.min.css">
 </head>
 <body>
 <div id="di-nav-root"></div>
@@ -53,6 +58,8 @@
 <script src="js/data.js"></script>
 <script src="js/precios-i18n.js"></script>
 <script src="js/precios.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/jsvectormap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/maps/world.js"></script>
 <script src="js/precios-intel.js"></script>
 </body>
 </html>

@@ -695,32 +695,48 @@
     var ER = D.ENERGY_REGIONS[lang()] || D.ENERGY_REGIONS.es;
     var t = P();
     var rows = [];
-    rows.push({ flag: '🇺🇸', label: lgMarketLabel(product, 'us', RG.us), built: D.buildRegion(product.us, lgMarketLabel(product, 'us', RG.us), 'USD', product.imperialKgPerUnit, UL[product.imperialUnitKey], D.FX, t) });
-    rows.push({ flag: '🇪🇺', label: lgMarketLabel(product, 'eu', RG.eu), built: D.buildRegion(product.eu, lgMarketLabel(product, 'eu', RG.eu), 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
+    // mapCode: código ISO-2 (mayúsculas) que usa jsVectorMap para pintar el
+    // país en el "🗺️ Global Price Map" -- null cuando la fila no
+    // corresponde a un único país (la referencia/futuro europeo "eu" es un
+    // precio de conjunto, no de un país concreto, así que no se pinta).
+    rows.push({ flag: '🇺🇸', mapCode: 'US', label: lgMarketLabel(product, 'us', RG.us), built: D.buildRegion(product.us, lgMarketLabel(product, 'us', RG.us), 'USD', product.imperialKgPerUnit, UL[product.imperialUnitKey], D.FX, t) });
+    rows.push({ flag: '🇪🇺', mapCode: null, label: lgMarketLabel(product, 'eu', RG.eu), built: D.buildRegion(product.eu, lgMarketLabel(product, 'eu', RG.eu), 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
     if (product.uk) {
-      rows.push({ flag: '🇬🇧', label: lgMarketLabel(product, 'uk', RG.uk), built: D.buildRegion(product.uk, lgMarketLabel(product, 'uk', RG.uk), 'GBP', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
+      rows.push({ flag: '🇬🇧', mapCode: 'GB', label: lgMarketLabel(product, 'uk', RG.uk), built: D.buildRegion(product.uk, lgMarketLabel(product, 'uk', RG.uk), 'GBP', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
     }
     // Mismo criterio que el resto del panel: si el producto no tiene
     // countryFactors (o un país concreto no publica cotización propia), no
-    // se inventa nada -- ese país simplemente no aparece en la lista.
+    // se inventa nada -- ese país simplemente no aparece en la lista ni en
+    // el mapa.
     var noCountryData = !product.countryFactors;
+    var MAP_CODE_BY_COUNTRY = { es: 'ES', fr: 'FR', de: 'DE', it: 'IT' };
     if (product.countryFactors) {
       LG_COUNTRY_ORDER.forEach(function (c) {
         var factor = product.countryFactors[c];
         if (factor == null) return;
         var raw = D.deriveCountryRaw(product.eu, factor);
         var label = ER[D.COUNTRY_ER_KEY[c]];
-        rows.push({ flag: D.COUNTRY_FLAG[c], label: label, built: D.buildRegion(raw, label, 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
+        rows.push({ flag: D.COUNTRY_FLAG[c], mapCode: MAP_CODE_BY_COUNTRY[c], label: label, built: D.buildRegion(raw, label, 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
       });
     }
     return { rows: rows, noCountryData: noCountryData };
   }
+
+  // Última data de Local vs. Global construida por renderLocalGlobalHtml,
+  // guardada para que render() pueda inicializar el mapa después de meter
+  // el HTML en el DOM (jsVectorMap necesita que el contenedor #di-lg-map ya
+  // exista). La instancia del mapa en sí se guarda en lgMapInstance para
+  // poder destruirla de forma limpia antes de recrearla (cambio de
+  // producto, de idioma o de tema).
+  var lgLastData = null;
+  var lgMapInstance = null;
 
   function renderLocalGlobalHtml() {
     var t = ui();
     var Core = core();
     if (!Core.PRODUCT_BY_KEY[lgProductKey]) lgProductKey = 'cereales:trigo';
     var data = buildLocalGlobal(lgProductKey);
+    lgLastData = data;
     var options = Core.PRODUCTS.filter(function (e) { return (e.catId + ':' + e.nameKey) !== 'energia:diesel'; }).map(function (e) {
       var k = e.catId + ':' + e.nameKey;
       return '<option value="' + k + '"' + (k === lgProductKey ? ' selected' : '') + '>' + esc(productName(e.nameKey)) + '</option>';
@@ -736,16 +752,100 @@
         '</div>'
       );
     }).join('');
+    var p = P();
     return (
       '<div class="di-intel-section" id="di-intel-localglobal">' +
         '<div class="di-intel-head"><h2>🌍 ' + esc(t.localGlobalTitle) + '</h2><p>' + esc(t.localGlobalIntro) + '</p></div>' +
         '<div class="di-season-select-row"><label class="di-field-label">' + esc(t.localGlobalProductLabel) + '</label><select class="di-eu-country-select" id="di-lg-select">' + options + '</select></div>' +
+        '<div class="di-lg-map-wrap">' +
+          '<div class="di-lg-map-title">🗺️ ' + esc(t.localGlobalMapBadge) + '</div>' +
+          '<div class="di-lg-map" id="di-lg-map"><div class="di-lg-map-fallback" id="di-lg-map-fallback" style="display:none;"></div></div>' +
+          '<div class="di-lg-map-legend">' +
+            '<span class="di-lg-legend-item"><span class="di-lg-legend-dot" style="background:' + p.positive + ';"></span>' + esc(t.localGlobalMapUp) + '</span>' +
+            '<span class="di-lg-legend-item"><span class="di-lg-legend-dot" style="background:' + p.negative + ';"></span>' + esc(t.localGlobalMapDown) + '</span>' +
+            '<span class="di-lg-legend-item"><span class="di-lg-legend-dot" style="background:' + p.neutral + ';"></span>' + esc(t.localGlobalMapFlat) + '</span>' +
+            '<span class="di-lg-legend-item"><span class="di-lg-legend-dot di-lg-legend-dot-nodata"></span>' + esc(t.localGlobalMapNoData) + '</span>' +
+          '</div>' +
+        '</div>' +
         '<div class="di-lg-grid">' + rowsHtml + '</div>' +
         (data.noCountryData ? '<p class="di-lg-nodata">' + esc(t.localGlobalNoCountryData) + '</p>' : '') +
-        '<div class="di-news-badge-row" style="margin-top:14px;"><span class="di-badge di-lg-map-badge">🗺️ ' + esc(t.localGlobalMapBadge) + '</span></div>' +
         '<div class="di-intel-disclaimer">' + esc(t.localGlobalDisclaimer) + '</div>' +
       '</div>'
     );
+  }
+
+  // ---------------------------------------------------------------------
+  // Inicializa (o reinicializa) el mapa jsVectorMap dentro de #di-lg-map
+  // con los países presentes en `rows` (cada uno con su mapCode). La
+  // librería se carga desde un CDN en precios.html; si por lo que sea no
+  // está disponible (sin red, bloqueada, CDN caído) se muestra un aviso de
+  // texto en su lugar en vez de dejar un hueco vacío o un error en consola.
+  // ---------------------------------------------------------------------
+  function destroyGlobalPriceMap() {
+    if (lgMapInstance) {
+      try { lgMapInstance.destroy(); } catch (e) { /* contenedor ya no existe -- ignorar */ }
+      lgMapInstance = null;
+    }
+  }
+
+  function initGlobalPriceMap() {
+    destroyGlobalPriceMap();
+    var container = document.getElementById('di-lg-map');
+    var fallback = document.getElementById('di-lg-map-fallback');
+    if (!container) return;
+    if (typeof global.jsVectorMap !== 'function') {
+      if (fallback) { fallback.textContent = ui().localGlobalMapUnavailable; fallback.style.display = 'block'; }
+      return;
+    }
+    var t = ui();
+    var p = P();
+    var data = lgLastData;
+    if (!data) return;
+
+    // codeData: código ISO-2 -> info de esa fila (para el color y el tooltip).
+    var codeData = {};
+    data.rows.forEach(function (r) {
+      if (!r.mapCode) return;
+      codeData[r.mapCode] = r;
+    });
+
+    try {
+      lgMapInstance = new global.jsVectorMap({
+        selector: '#di-lg-map',
+        map: 'world',
+        backgroundColor: 'transparent',
+        zoomButtons: true,
+        zoomOnScroll: false, // que el scroll de la página no quede atrapado en el mapa
+        showTooltip: true,
+        regionStyle: {
+          initial: { fill: p.surfaceAlt, fillOpacity: 1, stroke: p.border, strokeWidth: 0.5 },
+          hover: { fillOpacity: 0.8, cursor: 'pointer' },
+          selected: {}
+        },
+        onRegionTooltipShow: function (event, tooltip, code) {
+          var r = codeData[code];
+          if (!r) return; // país sin datos para este producto -- tooltip por defecto (solo el nombre)
+          var b = r.built;
+          tooltip.text(
+            '<strong>' + r.flag + ' ' + esc(r.label) + '</strong><br>' +
+            esc(b.price) + ' ' + esc(b.unit) + ' ' +
+            '<span style="color:' + b.changeColor + ';">' + esc(b.changeLabel) + '</span>',
+            true
+          );
+        }
+      });
+      // Colorear cada país con datos según si sube, baja o no cambia --
+      // mismos tres colores (verde/rojo/gris) que el resto del panel usa
+      // para esta misma señal (fmtChange/changeColor en data.js).
+      Object.keys(codeData).forEach(function (code) {
+        var region = lgMapInstance.regions && lgMapInstance.regions[code];
+        if (!region) return; // código no presente en el mapa mundial (no debería pasar con ES/FR/DE/IT/GB/US)
+        try { region.element.setStyle('fill', codeData[code].built.changeColor); } catch (e) {}
+      });
+    } catch (e) {
+      lgMapInstance = null;
+      if (fallback) { fallback.textContent = t.localGlobalMapUnavailable; fallback.style.display = 'block'; }
+    }
   }
 
   // ---------------------------------------------------------------------
@@ -784,6 +884,10 @@
       lgProductKey = e.target.value;
       render();
     });
+    // El contenedor #di-lg-map recién insertado por innerHTML ya existe en
+    // el DOM en este punto, así que el mapa se (re)crea aquí y no dentro de
+    // renderLocalGlobalHtml (que solo devuelve una cadena de HTML).
+    initGlobalPriceMap();
   }
 
   global.DehesaPreciosIntel = { render: render };
