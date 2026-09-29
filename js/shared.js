@@ -293,7 +293,7 @@
     var bar = document.createElement('div');
     bar.className = 'di-context-bar';
     bar.id = 'di-context-bar';
-    bar.innerHTML = '<div class="di-context-inner"><div class="di-context-copy"><span class="di-context-kicker">' + esc(l.context) + '</span><strong>' + esc(bits.join(' · ')) + '</strong></div><div class="di-context-actions">' + backButton + '<a href="' + esc(siblingHref) + '">' + esc(siblingLabel) + ' →</a></div></div>';
+    bar.innerHTML = '<div class="di-context-inner"><div class="di-context-copy"><span class="di-context-kicker">' + esc(l.context) + '</span><strong>' + esc(bits.join(' · ')) + '</strong></div><div class="di-context-actions">' + backButton + siblingLinks + '</div></div>';
     root.appendChild(bar);
     var back = document.getElementById('di-context-back');
     if (back) back.addEventListener('click', function(){ window.history.back(); });

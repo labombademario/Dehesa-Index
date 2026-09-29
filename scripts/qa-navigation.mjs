@@ -31,6 +31,8 @@ const prices = read('js/precios.js');
 check(shared.includes('function renderContextBar'), 'shared context bar exists');
 check(shared.includes('window.history.back()'), 'context back action exists');
 check(shared.includes("sitePath('assets/logo.png')"), 'footer logo uses nested-page-safe path');
+check(shared.includes('backButton + siblingLinks'), 'context bar renders the defined sibling links');
+check(!shared.includes('siblingHref') && !shared.includes('siblingLabel'), 'context bar has no stale undefined link variables');
 check(news.includes('window.history.pushState'), 'news filters create browser history entries');
 check(calendar.includes('window.history.pushState'), 'calendar filters create browser history entries');
 check(news.includes("window.addEventListener('popstate'"), 'news restores state on back/forward');
