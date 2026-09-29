@@ -253,6 +253,18 @@
     return '<option value="' + esc(value) + '"' + (selected ? ' selected' : '') + '>' + esc(label) + '</option>';
   }
 
+  function productPriceUrl(product) {
+    var map = { trigo:'precios/trigo/', maiz:'precios/maiz/', leche:'precios/leche/', fertilizantes:'precios/urea/', diesel:'precios/diesel/' };
+    return map[product] || 'precios.html?product=' + encodeURIComponent(product);
+  }
+  function newsContextParams() {
+    var p = [];
+    if (state.region !== 'all') p.push('region=' + encodeURIComponent(state.region));
+    if (state.product !== 'all') p.push('product=' + encodeURIComponent(state.product));
+    if (state.topic !== 'all') p.push('topic=' + encodeURIComponent(state.topic));
+    return p.length ? '?' + p.join('&') : '';
+  }
+
   function getFilteredItems() {
     return NEWS_ITEMS.filter(function(item) {
       return (state.region === 'all' || item.region === state.region) &&
@@ -345,7 +357,7 @@
           '<div class="di-news-item-headline">' + esc(tr.headline) + '</div>' +
           '<p class="di-news-item-summary">' + esc(tr.summary) + '</p>' +
           '<div class="di-news-tags">' + marketTags + topicTags + '</div>' +
-          '<span class="di-news-item-readmore">' + esc(t.readMore) + ' →</span>' +
+          '<span class="di-news-item-readmore">' + esc(t.readMore) + ' →</span><span class="di-news-item-price-link"><a href="' + productPriceUrl(item.products[0] || 'trigo') + '">' + esc(lang === 'es' ? 'Ver precios' : lang === 'fr' ? 'Voir les prix' : lang === 'it' ? 'Vedi prezzi' : 'View prices') + ' →</a></span>' +
         '</a>';
       }).join('') + '</div>';
     } else {
