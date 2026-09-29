@@ -247,6 +247,7 @@
     var lang = window.DehesaShared.getLang();
     var esc = window.DehesaShared.esc;
     var t = STRINGS[lang] || STRINGS.es;
+    window.DehesaShared.renderContextBar('calendario');
     var FREQ_LABEL = { weekly: t.freqWeekly, monthly: t.freqMonthly, quarterly: t.freqQuarterly, annual: t.freqAnnual };
 
     document.title = t.title;
