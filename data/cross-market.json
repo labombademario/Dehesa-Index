@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "2.0",
+  "generatedAt": "2026-09-29T22:40:53.848Z",
+  "methodology": {
+    "method": "Pearson correlation of period returns on common dates after tested lag offsets.",
+    "minimumPeriods": 6,
+    "lagPolicy": "Test only economically plausible lags defined per relationship family; choose the strongest absolute correlation for description, not prediction.",
+    "confidence": "Combines sample coverage and absolute correlation strength; not a statistical significance test.",
+    "causality": "No causal inference."
+  },
+  "relationships": [
+    {
+      "id": "fertiliser_to_cereal__urea|eu|world_bank|monthly__maiz|us|usda_nass|monthly",
+      "label": "Fertilizante → cereal",
+      "seriesA": {
+        "product": "urea",
+        "region": "eu",
+        "sourceId": "world_bank"
+      },
+      "seriesB": {
+        "product": "maiz",
+        "region": "us",
+        "sourceId": "usda_nass"
+      },
+      "frequency": "monthly",
+      "lagPeriods": 3,
+      "commonPeriods": 6,
+      "window": "6–7 periods",
+      "correlationReturns": -0.8322,
+      "direction": "negative",
+      "strength": "strong",
+      "confidence": "low",
+      "confidenceScore": 37,
+      "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
+      "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
+      "coverageStart": "2026-02-01",
+      "coverageEnd": "2026-07-01"
+    },
+    {
+      "id": "fertiliser_to_cereal__urea|eu|world_bank|monthly__trigo|us|usda_nass|monthly",
+      "label": "Fertilizante → cereal",
+      "seriesA": {
+        "product": "urea",
+        "region": "eu",
+        "sourceId": "world_bank"
+      },
+      "seriesB": {
+        "product": "trigo",
+        "region": "us",
+        "sourceId": "usda_nass"
+      },
+      "frequency": "monthly",
+      "lagPeriods": 3,
+      "commonPeriods": 6,
+      "window": "6–7 periods",
+      "correlationReturns": -0.7768,
+      "direction": "negative",
+      "strength": "strong",
+      "confidence": "low",
+      "confidenceScore": 35,
+      "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
+      "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
+      "coverageStart": "2026-02-01",
+      "coverageEnd": "2026-07-01"
+    },
+    {
+      "id": "energy_to_cereal__eurostat_energy_input_index|eu|eurostat|quarterly__eurostat_cereals_output_index|eu|eurostat|quarterly",
+      "label": "Energía → cereal",
+      "seriesA": {
+        "product": "eurostat_energy_input_index",
+        "region": "eu",
+        "sourceId": "eurostat"
+      },
+      "seriesB": {
+        "product": "eurostat_cereals_output_index",
+        "region": "eu",
+        "sourceId": "eurostat"
+      },
+      "frequency": "quarterly",
+      "lagPeriods": 0,
+      "commonPeriods": 23,
+      "window": "12–23 periods",
+      "correlationReturns": 0.7714,
+      "direction": "positive",
+      "strength": "strong",
+      "confidence": "medium",
+      "confidenceScore": 62,
+      "hypothesis": "Los costes de energía y los precios de producción agrícola pueden moverse conjuntamente en determinados periodos; no implica causalidad.",
+      "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
+      "coverageStart": "2020-12-01",
+      "coverageEnd": "2026-06-01"
+    },
+    {
+      "id": "fertiliser_to_energy__eurostat_fertiliser_input_index|eu|eurostat|quarterly__eurostat_energy_input_index|eu|eurostat|quarterly",
+      "label": "Fertilizante ↔ energía",
+      "seriesA": {
+        "product": "eurostat_fertiliser_input_index",
+        "region": "eu",
+        "sourceId": "eurostat"
+      },
+      "seriesB": {
+        "product": "eurostat_energy_input_index",
+        "region": "eu",
+        "sourceId": "eurostat"
+      },
+      "frequency": "quarterly",
+      "lagPeriods": 0,
+      "commonPeriods": 23,
+      "window": "12–23 periods",
+      "correlationReturns": 0.7891,
+      "direction": "positive",
+      "strength": "strong",
+      "confidence": "medium",
+      "confidenceScore": 63,
+      "hypothesis": "Fertilizantes y energía son insumos agrícolas relacionados; el co-movimiento puede reflejar shocks comunes y estructura de costes.",
+      "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
+      "coverageStart": "2020-12-01",
+      "coverageEnd": "2026-06-01"
+    },
+    {
+      "id": "milk_to_cereal__eurostat_milk_output_index|eu|eurostat|quarterly__eurostat_cereals_output_index|eu|eurostat|quarterly",
+      "label": "Leche ↔ cereal",
+      "seriesA": {
+        "product": "eurostat_milk_output_index",
+        "region": "eu",
+        "sourceId": "eurostat"
+      },
+      "seriesB": {
+        "product": "eurostat_cereals_output_index",
+        "region": "eu",
+        "sourceId": "eurostat"
+      },
+      "frequency": "quarterly",
+      "lagPeriods": 0,
+      "commonPeriods": 23,
+      "window": "12–23 periods",
+      "correlationReturns": 0.6025,
+      "direction": "positive",
+      "strength": "moderate",
+      "confidence": "low",
+      "confidenceScore": 48,
+      "hypothesis": "Los precios de leche y cereales pueden compartir factores de oferta y demanda dentro del complejo agrícola.",
+      "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
+      "coverageStart": "2020-12-01",
+      "coverageEnd": "2026-06-01"
+    },
+    {
+      "id": "energy_to_fertiliser__eurostat_energy_input_index|eu|eurostat|quarterly__eurostat_fertiliser_input_index|eu|eurostat|quarterly",
+      "label": "Energía → fertilizante",
+      "seriesA": {
+        "product": "eurostat_energy_input_index",
+        "region": "eu",
+        "sourceId": "eurostat"
+      },
+      "seriesB": {
+        "product": "eurostat_fertiliser_input_index",
+        "region": "eu",
+        "sourceId": "eurostat"
+      },
+      "frequency": "quarterly",
+      "lagPeriods": 0,
+      "commonPeriods": 23,
+      "window": "12–23 periods",
+      "correlationReturns": 0.7891,
+      "direction": "positive",
+      "strength": "strong",
+      "confidence": "medium",
+      "confidenceScore": 63,
+      "hypothesis": "La energía es un insumo relevante para la fabricación de fertilizantes; esta relación estadística no identifica por sí sola causalidad.",
+      "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
+      "coverageStart": "2020-12-01",
+      "coverageEnd": "2026-06-01"
+    }
+  ],
+  "relationshipFamilies": [
+    {
+      "id": "fertiliser_to_cereal",
+      "label": "Fertilizante → cereal",
+      "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
+      "preferredLags": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "energy_to_cereal",
+      "label": "Energía → cereal",
+      "hypothesis": "Los costes de energía y los precios de producción agrícola pueden moverse conjuntamente en determinados periodos; no implica causalidad.",
+      "preferredLags": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "fertiliser_to_energy",
+      "label": "Fertilizante ↔ energía",
+      "hypothesis": "Fertilizantes y energía son insumos agrícolas relacionados; el co-movimiento puede reflejar shocks comunes y estructura de costes.",
+      "preferredLags": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "milk_to_cereal",
+      "label": "Leche ↔ cereal",
+      "hypothesis": "Los precios de leche y cereales pueden compartir factores de oferta y demanda dentro del complejo agrícola.",
+      "preferredLags": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "energy_to_fertiliser",
+      "label": "Energía → fertilizante",
+      "hypothesis": "La energía es un insumo relevante para la fabricación de fertilizantes; esta relación estadística no identifica por sí sola causalidad.",
+      "preferredLags": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

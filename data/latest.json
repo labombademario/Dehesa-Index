@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T20:59:01.870Z",
+  "generatedAt": "2026-09-29T22:40:53.714Z",
   "observations": [
     {
       "id": "di_arroz_us",
@@ -52,6 +52,31 @@
           "year": 2026,
           "period": "JUL",
           "value": 11.8
+        }
+      ],
+      "snapshotDate": "2026-09-29"
+    },
+    {
+      "id": "di_diesel_eu",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2026-09-21",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T22:39:01Z",
+      "comparability": "directional",
+      "methodology": "Weighted EU average for automotive gas oil, consumer price with taxes. The source expresses it in EUR/1,000 litres; value retained at source precision after division by 1,000.",
+      "value": 2.2264435149088713,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "changePct": 3.136275640713582,
+      "history": [
+        {
+          "period": 9,
+          "year": 2026,
+          "value": 2.2264435149088713
         }
       ],
       "snapshotDate": "2026-09-29"
@@ -604,6 +629,66 @@
           "period": "Q2",
           "year": 2026,
           "value": 129.6
+        }
+      ],
+      "snapshotDate": "2026-09-29"
+    },
+    {
+      "id": "di_leche_eu",
+      "product": "leche",
+      "region": "eu",
+      "sourceId": "european_commission",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-09-09",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T22:39:01Z",
+      "comparability": "directional",
+      "methodology": "Weighted EU average excluding the UK; raw cow's milk price paid to producers at real fat and protein content. August 2026 is estimated by the Commission.",
+      "value": 42.22,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "changePct": 0.4,
+      "history": [
+        {
+          "period": 1,
+          "year": 2026,
+          "value": 45.17
+        },
+        {
+          "period": 2,
+          "year": 2026,
+          "value": 43.9
+        },
+        {
+          "period": 3,
+          "year": 2026,
+          "value": 42.91
+        },
+        {
+          "period": 4,
+          "year": 2026,
+          "value": 42.78
+        },
+        {
+          "period": 5,
+          "year": 2026,
+          "value": 42.6
+        },
+        {
+          "period": 6,
+          "year": 2026,
+          "value": 41.85
+        },
+        {
+          "period": 7,
+          "year": 2026,
+          "value": 42.05
+        },
+        {
+          "period": 8,
+          "year": 2026,
+          "value": 42.22
         }
       ],
       "snapshotDate": "2026-09-29"

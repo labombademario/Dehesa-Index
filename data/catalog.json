@@ -1,13 +1,15 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T20:59:01.877Z",
-  "observationCount": 8,
+  "generatedAt": "2026-09-29T22:40:53.724Z",
+  "observationCount": 10,
   "products": [
     "arroz",
+    "diesel",
     "eurostat_cereals_output_index",
     "eurostat_energy_input_index",
     "eurostat_fertiliser_input_index",
     "eurostat_milk_output_index",
+    "leche",
     "maiz",
     "trigo",
     "urea"
@@ -17,13 +19,16 @@
     "us"
   ],
   "sources": [
+    "eu_oil_bulletin",
+    "european_commission",
     "eurostat",
     "usda_nass",
     "world_bank"
   ],
   "frequencies": [
     "monthly",
-    "quarterly"
+    "quarterly",
+    "weekly"
   ],
   "latest": [
     {
@@ -40,6 +45,21 @@
       "points": 7,
       "coverageStart": "2026-01-01",
       "coverageEnd": "2026-07-01"
+    },
+    {
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2026-09-21",
+      "unit": "litro",
+      "currency": "EUR",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T22:39:01Z",
+      "comparability": "directional",
+      "points": 1,
+      "coverageStart": "2026-09-01",
+      "coverageEnd": "2026-09-01"
     },
     {
       "product": "eurostat_cereals_output_index",
@@ -100,6 +120,21 @@
       "points": 24,
       "coverageStart": "2020-09-01",
       "coverageEnd": "2026-06-01"
+    },
+    {
+      "product": "leche",
+      "region": "eu",
+      "sourceId": "european_commission",
+      "observationDate": "2026-08",
+      "unit": "100kg",
+      "currency": "EUR",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T22:39:01Z",
+      "comparability": "directional",
+      "points": 8,
+      "coverageStart": "2026-01-01",
+      "coverageEnd": "2026-08-01"
     },
     {
       "product": "maiz",

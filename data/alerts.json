@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-29T22:40:53.870Z",
+  "status": "informational",
+  "rules": [
+    {
+      "type": "stale_data",
+      "product": "arroz",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "leche",
+      "region": "eu",
+      "sourceId": "european_commission",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "maiz",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "trigo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "period_move",
+      "product": "eurostat_energy_input_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "severity": "high",
+      "changePct": 12.89,
+      "observationDate": "2026-06-01"
+    },
+    {
+      "type": "period_move",
+      "product": "eurostat_fertiliser_input_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "severity": "watch",
+      "changePct": 7.95,
+      "observationDate": "2026-06-01"
+    },
+    {
+      "type": "period_move",
+      "product": "trigo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "changePct": 6.32,
+      "observationDate": "2026-07-01"
+    }
+  ],
+  "policy": {
+    "noPredictions": true,
+    "noCausalInference": true,
+    "noAutomaticExternalNotifications": true,
+    "triggerThresholds": "absolute period change >=5%; stale according to quality threshold"
+  },
+  "note": "These are data-quality and market-movement signals. User alerts are evaluated locally from verified observations."
+}

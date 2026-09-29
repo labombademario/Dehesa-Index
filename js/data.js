@@ -526,7 +526,7 @@
       products: [
         { nameKey: 'leche', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
           us: { price: 18.45, changePct: 0.5, history: [17.80, 17.95, 18.10, 18.05, 18.20, 18.35, 18.45], currency: 'USD', kgPerUnit: 45.359 },
-          eu: { price: 46.20, changePct: 0.2, history: [45.00, 45.30, 45.60, 45.80, 46.00, 46.10, 46.20], currency: 'EUR', kgPerUnit: 100 },
+          eu: { price: 42.22, changePct: 0.4, history: [45.17, 43.90, 42.91, 42.78, 42.60, 41.85, 42.05, 42.22], currency: 'EUR', kgPerUnit: 100 },
           countryFactors: { es: 1, de: 0.904, fr: 0.975, it: 1.016 },
           uk: { price: 35.82, changePct: 4.02, history: [34.20, 34.50, 34.80, 35.10, 35.35, 35.60, 35.82], currency: 'GBP', kgPerUnit: 100 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (Class III)' }, eu: { type: 'referencia', market: 'Comisión Europea' }, uk: { type: 'referencia', market: 'AHDB (precio medio en granja del Reino Unido)' } } }
@@ -649,7 +649,7 @@
   var LITRO_KG = 0.835;
   var GAL_KG = LITRO_KG * 3.78541;
   var DIESEL_US_NATIONAL = { price: 6.529, changePct: 0.8, history: [6.42, 6.45, 6.48, 6.46, 6.50, 6.51, 6.529], currency: 'USD', kgPerUnit: GAL_KG };
-  var DIESEL_EU_NATIONAL = { price: 2.138, changePct: 1.1, history: [2.08, 2.09, 2.11, 2.10, 2.12, 2.13, 2.138], currency: 'EUR', kgPerUnit: LITRO_KG };
+  var DIESEL_EU_NATIONAL = { price: 2.2264435149088713, changePct: 3.136275640713582, history: [2.0331381469525866, 2.0633660614777104, 2.0391469620832606, 2.108412782332712, 2.1587361941679264, 2.2264435149088713], currency: 'EUR', kgPerUnit: LITRO_KG };
   var DIESEL_UK_NATIONAL = { price: 1.9918, changePct: 0.4, history: [1.9300, 1.9450, 1.9580, 1.9690, 1.9760, 1.9840, 1.9918], currency: 'GBP', kgPerUnit: LITRO_KG };
   var DIESEL_US_REGIONS = [
     { key: 'usMidwest', price: 6.680, changePct: 0.9, history: [6.55, 6.58, 6.61, 6.60, 6.64, 6.67, 6.680], currency: 'USD', kgPerUnit: GAL_KG },
@@ -928,8 +928,8 @@
     },
     'lacteos-leche-eu': {
       sourceId: 'european_commission', frequency: 'monthly',
-      methodology: 'PENDIENTE: la ficha muestra 46,20 EUR/100 kg, pero la publicación primaria de la Comisión Europea del 09/09/2026 informa agosto de 2026 en 45,05 para España y 42,22 para la media UE sin Reino Unido. Precio al productor con grasa y proteína reales; no sustituir ni convertir sin reconciliar geografía, período y base.',
-      comparability: 'directional', observationDate: null, publicationDate: null
+      methodology: 'Media ponderada de la UE sin Reino Unido, pagada a productores de leche cruda de vaca con contenido real de grasa y proteína. La Comisión identifica agosto de 2026 como cifra estimada; no equivale a una cotización de futuros ni a un precio al consumidor.',
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-09-09', status: 'verified', verifiedAt: '2026-09-29T22:39:01Z'
     },
     'fertilizantes-urea-us': {
       sourceId: 'dtn_fertilizer', frequency: 'weekly',
@@ -949,8 +949,8 @@
     },
     'energia-diesel-eu': {
       sourceId: 'eu_oil_bulletin', frequency: 'weekly',
-      methodology: 'PENDIENTE: la ficha muestra 2,138 EUR/litro, mientras que el XLSX primario de precios con impuestos del Weekly Oil Bulletin fija la media ponderada UE-27 en 2,226443515 EUR/litro para la semana del 21/09/2026, publicado el 24/09/2026. Es precio al consumidor con impuestos; no reconciliado con el valor visible.',
-      comparability: 'directional', observationDate: null, publicationDate: null
+      methodology: 'Media ponderada de la UE de gasóleo de automoción, con impuestos, publicada en EUR/1.000 litros y almacenada sin convertir su precisión de origen. Es un precio semanal al consumidor; no equivale a una cotización agrícola en finca.',
+      comparability: 'directional', observationDate: '2026-09-21', publicationDate: '2026-09-24', status: 'verified', verifiedAt: '2026-09-29T22:39:01Z'
     }
   };
 

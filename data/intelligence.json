@@ -1,11 +1,11 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-29T20:59:02.001Z",
+  "generatedAt": "2026-09-29T22:40:53.800Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
     "momentum": "last observation versus previous observation",
-    "yoy": "same quarter/year-ago observation when sufficient coverage exists",
+    "yoy": "same quarter or same month year-ago observation when sufficient coverage exists",
     "volatility": "standard deviation of period returns when >=6 observations",
     "seasonality": "disabled until >=24 monthly observations",
     "correlation": "disabled unless common-date coverage is sufficient"
@@ -137,6 +137,25 @@
       "points": 7,
       "coverageStart": "2026-01-01",
       "coverageEnd": "2026-07-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_leche_eu",
+      "product": "leche",
+      "region": "eu",
+      "sourceId": "european_commission",
+      "frequency": "monthly",
+      "unit": "100kg",
+      "currency": "EUR",
+      "latest": 42.22,
+      "observationDate": "2026-08-01",
+      "periodChangePct": 0.4042806183115477,
+      "yoyPct": null,
+      "volatility": 0.012187579580281035,
+      "points": 8,
+      "coverageStart": "2026-01-01",
+      "coverageEnd": "2026-08-01",
       "status": "verified",
       "comparability": "directional"
     },

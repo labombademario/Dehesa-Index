@@ -1,22 +1,24 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T20:59:01.957Z",
+  "generatedAt": "2026-09-29T22:40:53.775Z",
   "scope": {
-    "latestObservations": 8,
-    "historyObservations": 129,
-    "verified": 8,
+    "latestObservations": 10,
+    "historyObservations": 138,
+    "verified": 10,
     "pending": 0,
-    "stale": 4,
+    "stale": 5,
     "regions": [
       "us",
       "eu"
     ],
     "products": [
       "arroz",
+      "diesel",
       "eurostat_cereals_output_index",
       "eurostat_energy_input_index",
       "eurostat_fertiliser_input_index",
       "eurostat_milk_output_index",
+      "leche",
       "maiz",
       "trigo",
       "urea"
@@ -37,6 +39,21 @@
       "historyPoints": 7,
       "ageDays": 90,
       "stale": true
+    },
+    {
+      "id": "di_diesel_eu",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-09-21",
+      "publicationDate": "2026-09-24",
+      "verifiedAt": "2026-09-29T22:39:01Z",
+      "frequency": "weekly",
+      "historyPoints": 1,
+      "ageDays": 8,
+      "stale": false
     },
     {
       "id": "di_eurostat_cereals_output_index",
@@ -97,6 +114,21 @@
       "historyPoints": 24,
       "ageDays": 91,
       "stale": false
+    },
+    {
+      "id": "di_leche_eu",
+      "product": "leche",
+      "region": "eu",
+      "sourceId": "european_commission",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-09-09",
+      "verifiedAt": "2026-09-29T22:39:01Z",
+      "frequency": "monthly",
+      "historyPoints": 8,
+      "ageDays": 59,
+      "stale": true
     },
     {
       "id": "di_maiz_us",

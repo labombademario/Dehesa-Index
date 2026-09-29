@@ -1,6 +1,24 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T22:40:53.724Z",
+  "generatedAt": "2026-09-29T22:40:53.825Z",
+  "policy": {
+    "neverConvertQuoteBasis": true,
+    "neverTreatIndexAsPrice": true,
+    "fxRequiredForCurrencyConversion": true
+  },
+  "currencies": [
+    "EUR",
+    "INDEX",
+    "USD"
+  ],
+  "units": [
+    "100kg",
+    "bushel",
+    "cwt",
+    "index_2020_100",
+    "litro",
+    "tonelada"
+  ],
   "observations": [
     {
       "id": "di_eurostat_cereals_output_index:2020-09-01",
@@ -16,7 +34,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2020-09-01",
@@ -32,7 +55,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2020-09-01",
@@ -48,7 +76,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2020-09-01",
@@ -64,7 +97,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2020-12-01",
@@ -80,7 +118,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2020-12-01",
@@ -96,7 +139,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2020-12-01",
@@ -112,7 +160,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2020-12-01",
@@ -128,7 +181,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2021-03-01",
@@ -144,7 +202,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2021-03-01",
@@ -160,7 +223,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2021-03-01",
@@ -176,7 +244,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2021-03-01",
@@ -192,7 +265,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2021-06-01",
@@ -208,7 +286,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2021-06-01",
@@ -224,7 +307,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2021-06-01",
@@ -240,7 +328,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2021-06-01",
@@ -256,7 +349,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2021-09-01",
@@ -272,7 +370,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2021-09-01",
@@ -288,7 +391,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2021-09-01",
@@ -304,7 +412,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2021-09-01",
@@ -320,7 +433,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2021-12-01",
@@ -336,7 +454,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2021-12-01",
@@ -352,7 +475,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2021-12-01",
@@ -368,7 +496,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2021-12-01",
@@ -384,7 +517,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2022-03-01",
@@ -400,7 +538,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2022-03-01",
@@ -416,7 +559,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2022-03-01",
@@ -432,7 +580,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2022-03-01",
@@ -448,7 +601,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2022-06-01",
@@ -464,7 +622,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2022-06-01",
@@ -480,7 +643,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2022-06-01",
@@ -496,7 +664,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2022-06-01",
@@ -512,7 +685,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2022-09-01",
@@ -528,7 +706,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2022-09-01",
@@ -544,7 +727,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2022-09-01",
@@ -560,7 +748,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2022-09-01",
@@ -576,7 +769,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2022-12-01",
@@ -592,7 +790,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2022-12-01",
@@ -608,7 +811,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2022-12-01",
@@ -624,7 +832,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2022-12-01",
@@ -640,7 +853,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2023-03-01",
@@ -656,7 +874,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2023-03-01",
@@ -672,7 +895,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2023-03-01",
@@ -688,7 +916,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2023-03-01",
@@ -704,7 +937,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2023-06-01",
@@ -720,7 +958,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2023-06-01",
@@ -736,7 +979,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2023-06-01",
@@ -752,7 +1000,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2023-06-01",
@@ -768,7 +1021,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2023-09-01",
@@ -784,7 +1042,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2023-09-01",
@@ -800,7 +1063,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2023-09-01",
@@ -816,7 +1084,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2023-09-01",
@@ -832,7 +1105,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2023-12-01",
@@ -848,7 +1126,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2023-12-01",
@@ -864,7 +1147,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2023-12-01",
@@ -880,7 +1168,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2023-12-01",
@@ -896,7 +1189,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2024-03-01",
@@ -912,7 +1210,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2024-03-01",
@@ -928,7 +1231,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2024-03-01",
@@ -944,7 +1252,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2024-03-01",
@@ -960,7 +1273,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2024-06-01",
@@ -976,7 +1294,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2024-06-01",
@@ -992,7 +1315,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2024-06-01",
@@ -1008,7 +1336,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2024-06-01",
@@ -1024,7 +1357,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2024-09-01",
@@ -1040,7 +1378,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2024-09-01",
@@ -1056,7 +1399,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2024-09-01",
@@ -1072,7 +1420,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2024-09-01",
@@ -1088,7 +1441,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2024-12-01",
@@ -1104,7 +1462,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2024-12-01",
@@ -1120,7 +1483,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2024-12-01",
@@ -1136,7 +1504,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2024-12-01",
@@ -1152,7 +1525,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2025-03-01",
@@ -1168,7 +1546,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2025-03-01",
@@ -1184,7 +1567,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2025-03-01",
@@ -1200,7 +1588,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2025-03-01",
@@ -1216,7 +1609,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2025-06-01",
@@ -1232,7 +1630,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2025-06-01",
@@ -1248,7 +1651,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2025-06-01",
@@ -1264,7 +1672,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2025-06-01",
@@ -1280,7 +1693,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2025-09-01",
@@ -1296,7 +1714,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2025-09-01",
@@ -1312,7 +1735,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2025-09-01",
@@ -1328,7 +1756,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2025-09-01",
@@ -1344,7 +1777,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2025-09-01",
@@ -1360,7 +1798,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2025-10-01",
@@ -1376,7 +1819,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2025-11-01",
@@ -1392,7 +1840,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2025-12-01",
@@ -1408,7 +1861,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2025-12-01",
@@ -1424,7 +1882,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2025-12-01",
@@ -1440,7 +1903,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2025-12-01",
@@ -1456,7 +1924,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2025-12-01",
@@ -1472,7 +1945,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_arroz_us:2026-01-01",
@@ -1488,7 +1966,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.660Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 45.3592,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_leche_eu:2026-01-01",
@@ -1504,7 +1987,12 @@
       "publicationDate": "2026-09-09",
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_maiz_us:2026-01-01",
@@ -1520,7 +2008,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.345Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_trigo_us:2026-01-01",
@@ -1536,7 +2029,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2026-01-01",
@@ -1552,7 +2050,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_arroz_us:2026-02-01",
@@ -1568,7 +2071,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.660Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 45.3592,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_leche_eu:2026-02-01",
@@ -1584,7 +2092,12 @@
       "publicationDate": "2026-09-09",
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_maiz_us:2026-02-01",
@@ -1600,7 +2113,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.345Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_trigo_us:2026-02-01",
@@ -1616,7 +2134,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2026-02-01",
@@ -1632,7 +2155,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_arroz_us:2026-03-01",
@@ -1648,7 +2176,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.660Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 45.3592,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2026-03-01",
@@ -1664,7 +2197,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2026-03-01",
@@ -1680,7 +2218,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2026-03-01",
@@ -1696,7 +2239,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2026-03-01",
@@ -1712,7 +2260,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_leche_eu:2026-03-01",
@@ -1728,7 +2281,12 @@
       "publicationDate": "2026-09-09",
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_maiz_us:2026-03-01",
@@ -1744,7 +2302,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.345Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_trigo_us:2026-03-01",
@@ -1760,7 +2323,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2026-03-01",
@@ -1776,7 +2344,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_arroz_us:2026-04-01",
@@ -1792,7 +2365,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.660Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 45.3592,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_leche_eu:2026-04-01",
@@ -1808,7 +2386,12 @@
       "publicationDate": "2026-09-09",
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_maiz_us:2026-04-01",
@@ -1824,7 +2407,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.345Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_trigo_us:2026-04-01",
@@ -1840,7 +2428,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2026-04-01",
@@ -1856,7 +2449,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_arroz_us:2026-05-01",
@@ -1872,7 +2470,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.660Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 45.3592,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_leche_eu:2026-05-01",
@@ -1888,7 +2491,12 @@
       "publicationDate": "2026-09-09",
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_maiz_us:2026-05-01",
@@ -1904,7 +2512,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.345Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_trigo_us:2026-05-01",
@@ -1920,7 +2533,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2026-05-01",
@@ -1936,7 +2554,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_arroz_us:2026-06-01",
@@ -1952,7 +2575,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.660Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 45.3592,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_eurostat_cereals_output_index:2026-06-01",
@@ -1968,7 +2596,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_energy_input_index:2026-06-01",
@@ -1984,7 +2617,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_fertiliser_input_index:2026-06-01",
@@ -2000,7 +2638,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_eurostat_milk_output_index:2026-06-01",
@@ -2016,7 +2659,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T20:59:01.787Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
     },
     {
       "id": "di_leche_eu:2026-06-01",
@@ -2032,7 +2680,12 @@
       "publicationDate": "2026-09-09",
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_maiz_us:2026-06-01",
@@ -2048,7 +2701,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.345Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_trigo_us:2026-06-01",
@@ -2064,7 +2722,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2026-06-01",
@@ -2080,7 +2743,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_arroz_us:2026-07-01",
@@ -2096,7 +2764,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.660Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 45.3592,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_leche_eu:2026-07-01",
@@ -2112,7 +2785,12 @@
       "publicationDate": "2026-09-09",
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_maiz_us:2026-07-01",
@@ -2128,7 +2806,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.345Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_trigo_us:2026-07-01",
@@ -2144,7 +2827,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2026-07-01",
@@ -2160,7 +2848,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_leche_eu:2026-08-01",
@@ -2176,7 +2869,12 @@
       "publicationDate": "2026-09-09",
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_fertilizantes_urea_eu:2026-08-01",
@@ -2192,7 +2890,12 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "normalization": {
+        "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     },
     {
       "id": "di_diesel_eu:2026-09-01",
@@ -2208,7 +2911,12 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
     }
   ]
 }
