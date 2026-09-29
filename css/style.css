@@ -744,3 +744,22 @@ html[data-theme="dark"] .di-badge-green { background: #1E3328; color: #7FCF9B; b
   .di-news-intel-head{flex-direction:column}
   .di-news-context{font-size:15px}
 }
+
+
+/* ---------- Product ↔ News Intelligence ---------- */
+.di-related-news{
+  margin-top:14px;padding-top:12px;border-top:1px solid var(--border)
+}
+.di-related-news-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:7px}
+.di-related-news-head span{font-size:8.5px;font-weight:800;letter-spacing:.09em;color:var(--text-faint)}
+.di-related-news-head a{font-size:9px;font-weight:800;color:var(--accent);text-decoration:none}
+.di-related-news-title{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.di-related-news-item{
+  display:block;padding:7px 0;text-decoration:none;color:var(--text);
+  border-top:1px solid var(--border)
+}
+.di-related-news-item:hover{background:var(--surface-input)}
+.di-related-news-meta{display:block;font-size:8px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.di-related-news-item strong{display:block;font-size:11px;line-height:1.35;font-weight:650}
+.di-related-news-pending{opacity:.78}
+.di-related-news-pending p{margin:4px 0 0;font-size:10px;color:var(--text-faint)}
