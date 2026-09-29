@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-29T22:40:53.848Z",
+  "generatedAt": "2026-09-29T23:53:34.180Z",
   "methodology": {
     "method": "Pearson correlation of period returns on common dates after tested lag offsets.",
     "minimumPeriods": 6,
@@ -26,15 +26,15 @@
       "lagPeriods": 3,
       "commonPeriods": 6,
       "window": "6–7 periods",
-      "correlationReturns": -0.8322,
+      "correlationReturns": -0.9071,
       "direction": "negative",
       "strength": "strong",
       "confidence": "low",
-      "confidenceScore": 37,
+      "confidenceScore": 41,
       "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
       "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
-      "coverageStart": "2026-02-01",
-      "coverageEnd": "2026-07-01"
+      "coverageStart": "2026-03-01",
+      "coverageEnd": "2026-08-01"
     },
     {
       "id": "fertiliser_to_cereal__urea|eu|world_bank|monthly__trigo|us|usda_nass|monthly",
@@ -50,18 +50,18 @@
         "sourceId": "usda_nass"
       },
       "frequency": "monthly",
-      "lagPeriods": 3,
+      "lagPeriods": 0,
       "commonPeriods": 6,
       "window": "6–7 periods",
-      "correlationReturns": -0.7768,
-      "direction": "negative",
+      "correlationReturns": 0.7567,
+      "direction": "positive",
       "strength": "strong",
       "confidence": "low",
-      "confidenceScore": 35,
+      "confidenceScore": 34,
       "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
       "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
-      "coverageStart": "2026-02-01",
-      "coverageEnd": "2026-07-01"
+      "coverageStart": "2026-03-01",
+      "coverageEnd": "2026-08-01"
     },
     {
       "id": "energy_to_cereal__eurostat_energy_input_index|eu|eurostat|quarterly__eurostat_cereals_output_index|eu|eurostat|quarterly",

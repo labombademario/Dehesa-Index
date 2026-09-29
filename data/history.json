@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T22:40:53.724Z",
+  "generatedAt": "2026-09-29T23:53:33.893Z",
   "observations": [
     {
       "id": "di_eurostat_cereals_output_index:2020-09-01",
@@ -1475,22 +1475,6 @@
       "comparability": "not_comparable"
     },
     {
-      "id": "di_arroz_us:2026-01-01",
-      "product": "arroz",
-      "region": "us",
-      "sourceId": "usda_nass",
-      "observationDate": "2026-01-01",
-      "snapshotDate": "2026-09-29",
-      "value": 13.6,
-      "currency": "USD",
-      "unit": "cwt",
-      "frequency": "monthly",
-      "publicationDate": null,
-      "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
-      "comparability": "directional"
-    },
-    {
       "id": "di_leche_eu:2026-01-01",
       "product": "leche",
       "region": "eu",
@@ -1504,38 +1488,6 @@
       "publicationDate": "2026-09-09",
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
-      "comparability": "directional"
-    },
-    {
-      "id": "di_maiz_us:2026-01-01",
-      "product": "maiz",
-      "region": "us",
-      "sourceId": "usda_nass",
-      "observationDate": "2026-01-01",
-      "snapshotDate": "2026-09-29",
-      "value": 4.1,
-      "currency": "USD",
-      "unit": "bushel",
-      "frequency": "monthly",
-      "publicationDate": null,
-      "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
-      "comparability": "directional"
-    },
-    {
-      "id": "di_trigo_us:2026-01-01",
-      "product": "trigo",
-      "region": "us",
-      "sourceId": "usda_nass",
-      "observationDate": "2026-01-01",
-      "snapshotDate": "2026-09-29",
-      "value": 5.07,
-      "currency": "USD",
-      "unit": "bushel",
-      "frequency": "monthly",
-      "publicationDate": null,
-      "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
       "comparability": "directional"
     },
     {
@@ -1567,7 +1519,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional"
     },
     {
@@ -1593,13 +1545,13 @@
       "sourceId": "usda_nass",
       "observationDate": "2026-02-01",
       "snapshotDate": "2026-09-29",
-      "value": 4.11,
+      "value": 4.12,
       "currency": "USD",
       "unit": "bushel",
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional"
     },
     {
@@ -1615,7 +1567,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional"
     },
     {
@@ -1647,7 +1599,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional"
     },
     {
@@ -1743,7 +1695,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional"
     },
     {
@@ -1759,7 +1711,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional"
     },
     {
@@ -1791,7 +1743,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional"
     },
     {
@@ -1823,7 +1775,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional"
     },
     {
@@ -1839,7 +1791,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional"
     },
     {
@@ -1871,7 +1823,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional"
     },
     {
@@ -1903,7 +1855,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional"
     },
     {
@@ -1919,7 +1871,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional"
     },
     {
@@ -1951,7 +1903,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional"
     },
     {
@@ -2047,7 +1999,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional"
     },
     {
@@ -2063,7 +2015,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional"
     },
     {
@@ -2095,7 +2047,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional"
     },
     {
@@ -2127,7 +2079,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional"
     },
     {
@@ -2143,7 +2095,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional"
     },
     {
@@ -2163,6 +2115,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_arroz_us:2026-08-01",
+      "product": "arroz",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-29",
+      "value": 12.8,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-08-01",
       "product": "leche",
       "region": "eu",
@@ -2176,6 +2144,38 @@
       "publicationDate": "2026-09-09",
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_maiz_us:2026-08-01",
+      "product": "maiz",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-29",
+      "value": 4.45,
+      "currency": "USD",
+      "unit": "bushel",
+      "frequency": "monthly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_trigo_us:2026-08-01",
+      "product": "trigo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-29",
+      "value": 6.23,
+      "currency": "USD",
+      "unit": "bushel",
+      "frequency": "monthly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional"
     },
     {

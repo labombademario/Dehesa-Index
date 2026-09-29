@@ -1,28 +1,23 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T22:40:53.714Z",
+  "generatedAt": "2026-09-29T23:53:33.884Z",
   "observations": [
     {
       "id": "di_arroz_us",
       "product": "arroz",
       "region": "us",
       "sourceId": "usda_nass",
-      "observationDate": "2026-07",
+      "observationDate": "2026-08",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional",
-      "value": 11.8,
+      "value": 12.8,
       "currency": "USD",
       "unit": "cwt",
       "frequency": "monthly",
-      "changePct": 0,
+      "changePct": 8.47,
       "history": [
-        {
-          "year": 2026,
-          "period": "JAN",
-          "value": 13.6
-        },
         {
           "year": 2026,
           "period": "FEB",
@@ -52,6 +47,11 @@
           "year": 2026,
           "period": "JUL",
           "value": 11.8
+        },
+        {
+          "year": 2026,
+          "period": "AUG",
+          "value": 12.8
         }
       ],
       "snapshotDate": "2026-09-29"
@@ -698,26 +698,21 @@
       "product": "maiz",
       "region": "us",
       "sourceId": "usda_nass",
-      "observationDate": "2026-07",
+      "observationDate": "2026-08",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional",
-      "value": 4.26,
+      "value": 4.45,
       "currency": "USD",
       "unit": "bushel",
       "frequency": "monthly",
-      "changePct": -0.47,
+      "changePct": 4.46,
       "history": [
         {
           "year": 2026,
-          "period": "JAN",
-          "value": 4.1
-        },
-        {
-          "year": 2026,
           "period": "FEB",
-          "value": 4.11
+          "value": 4.12
         },
         {
           "year": 2026,
@@ -743,6 +738,11 @@
           "year": 2026,
           "period": "JUL",
           "value": 4.26
+        },
+        {
+          "year": 2026,
+          "period": "AUG",
+          "value": 4.45
         }
       ],
       "snapshotDate": "2026-09-29"
@@ -752,22 +752,17 @@
       "product": "trigo",
       "region": "us",
       "sourceId": "usda_nass",
-      "observationDate": "2026-07",
+      "observationDate": "2026-08",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional",
-      "value": 6.06,
+      "value": 6.23,
       "currency": "USD",
       "unit": "bushel",
       "frequency": "monthly",
-      "changePct": 6.32,
+      "changePct": 2.81,
       "history": [
-        {
-          "year": 2026,
-          "period": "JAN",
-          "value": 5.07
-        },
         {
           "year": 2026,
           "period": "FEB",
@@ -797,6 +792,11 @@
           "year": 2026,
           "period": "JUL",
           "value": 6.06
+        },
+        {
+          "year": 2026,
+          "period": "AUG",
+          "value": 6.23
         }
       ],
       "snapshotDate": "2026-09-29"

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T22:40:53.775Z",
+  "generatedAt": "2026-09-29T23:53:34.004Z",
   "scope": {
     "latestObservations": 10,
     "historyObservations": 138,
@@ -32,12 +32,12 @@
       "sourceId": "usda_nass",
       "status": "verified",
       "comparability": "directional",
-      "observationDate": "2026-07",
+      "observationDate": "2026-08",
       "publicationDate": null,
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "ageDays": 90,
+      "ageDays": 59,
       "stale": true
     },
     {
@@ -137,12 +137,12 @@
       "sourceId": "usda_nass",
       "status": "verified",
       "comparability": "directional",
-      "observationDate": "2026-07",
+      "observationDate": "2026-08",
       "publicationDate": null,
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "ageDays": 90,
+      "ageDays": 59,
       "stale": true
     },
     {
@@ -152,12 +152,12 @@
       "sourceId": "usda_nass",
       "status": "verified",
       "comparability": "directional",
-      "observationDate": "2026-07",
+      "observationDate": "2026-08",
       "publicationDate": null,
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "ageDays": 90,
+      "ageDays": 59,
       "stale": true
     },
     {

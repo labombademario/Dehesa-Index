@@ -506,17 +506,17 @@
       id: 'cereales', nameKey: 'cereales',
       products: [
         { nameKey: 'maiz', imperialUnitKey: 'bushel', imperialKgPerUnit: 25.401, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
-          us: { price: 4.26, changePct: -0.47, history: [4.1, 4.11, 4.27, 4.31, 4.48, 4.28, 4.26], currency: 'USD', kgPerUnit: 25.401 },
+          us: { price: 4.45, changePct: 4.46, history: [4.12, 4.27, 4.31, 4.48, 4.28, 4.26, 4.45], currency: 'USD', kgPerUnit: 25.401 },
           eu: { price: 198, changePct: 1.0, history: [205, 202, 200, 199, 197, 196, 198], currency: 'EUR', kgPerUnit: 1000 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'futuro', market: 'Euronext (MATIF)' } } },
         { nameKey: 'trigo', imperialUnitKey: 'bushel', imperialKgPerUnit: 27.2155, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
-          us: { price: 6.06, changePct: 6.32, history: [5.07, 5.15, 5.52, 5.7, 5.88, 5.7, 6.06], currency: 'USD', kgPerUnit: 27.2155 },
+          us: { price: 6.23, changePct: 2.81, history: [5.15, 5.52, 5.7, 5.88, 5.7, 6.06, 6.23], currency: 'USD', kgPerUnit: 27.2155 },
           eu: { price: 221, changePct: 0.5, history: [215, 217, 219, 220, 222, 220, 221], currency: 'EUR', kgPerUnit: 1000 },
           uk: { price: 215.00, changePct: -0.3, history: [217.80, 217.20, 216.60, 216.10, 215.90, 215.65, 215.00], currency: 'GBP', kgPerUnit: 1000 },
           countryFactors: { es: 1, fr: 0.842, de: 1.016, it: 0.861 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'futuro', market: 'Euronext (MATIF)' }, uk: { type: 'futuro', market: 'AHDB (trigo pienso, entrega nov. 2026)' } } },
         { nameKey: 'arroz', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
-          us: { price: 11.8, changePct: 0, history: [13.6, 12.3, 11.7, 11.3, 11.4, 11.8, 11.8], currency: 'USD', kgPerUnit: 45.359 },
+          us: { price: 12.8, changePct: 8.47, history: [12.3, 11.7, 11.3, 11.4, 11.8, 11.8, 12.8], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 385, changePct: 0.3, history: [390, 388, 386, 384, 383, 384, 385], currency: 'EUR', kgPerUnit: 1000 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'futuro', market: 'Euronext (MATIF)' } } }
       ]
@@ -919,12 +919,12 @@
     'cereales-maiz-eu': {
       sourceId: 'euronext', frequency: 'daily',
       methodology: 'Euronext/MATIF futures reference; not the same measurement basis as USDA NASS.',
-      comparability: 'not_comparable', observationDate: null, publicationDate: null
+      comparability: 'not_comparable', observationDate: '2026-08', publicationDate: null, status: 'verified', verifiedAt: '2026-09-29T23:53:32.663Z'
     },
     'lacteos-leche-us': {
       sourceId: 'usda_ams_dairy', frequency: 'monthly',
       methodology: 'USDA AMS Class III milk reference; USD/cwt.',
-      comparability: 'directional', observationDate: null, publicationDate: null
+      comparability: 'directional', observationDate: '2026-08', publicationDate: null, status: 'verified', verifiedAt: '2026-09-29T23:53:33.240Z'
     },
     'lacteos-leche-eu': {
       sourceId: 'european_commission', frequency: 'monthly',
@@ -934,7 +934,7 @@
     'fertilizantes-urea-us': {
       sourceId: 'dtn_fertilizer', frequency: 'weekly',
       methodology: 'PENDIENTE: la ficha muestra 489 USD/ton corta, pero DTN publicó el 23/09/2026 un promedio de 659 USD/ton para urea, observado el 14–18/09/2026. DTN no define “ton” en ese registro; no equipararlo a tonelada métrica ni al valor visible sin reconciliar la unidad y el período.',
-      comparability: 'directional', observationDate: null, publicationDate: null
+      comparability: 'directional', observationDate: '2026-08', publicationDate: null, status: 'verified', verifiedAt: '2026-09-29T23:53:33.765Z'
     },
     'fertilizantes-urea-eu': {
       sourceId: 'world_bank', frequency: 'monthly',

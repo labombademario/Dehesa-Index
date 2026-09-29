@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T22:40:53.825Z",
+  "generatedAt": "2026-09-29T23:53:34.120Z",
   "policy": {
     "neverConvertQuoteBasis": true,
     "neverTreatIndexAsPrice": true,
@@ -1953,27 +1953,6 @@
       }
     },
     {
-      "id": "di_arroz_us:2026-01-01",
-      "product": "arroz",
-      "region": "us",
-      "sourceId": "usda_nass",
-      "observationDate": "2026-01-01",
-      "snapshotDate": "2026-09-29",
-      "value": 13.6,
-      "currency": "USD",
-      "unit": "cwt",
-      "frequency": "monthly",
-      "publicationDate": null,
-      "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
-      "comparability": "directional",
-      "normalization": {
-        "kgPerUnit": 45.3592,
-        "baseUnit": "USD_per_kg_or_index",
-        "method": "unit mass anchor only; currency and quote basis remain unchanged"
-      }
-    },
-    {
       "id": "di_leche_eu:2026-01-01",
       "product": "leche",
       "region": "eu",
@@ -1990,48 +1969,6 @@
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,
-        "baseUnit": "USD_per_kg_or_index",
-        "method": "unit mass anchor only; currency and quote basis remain unchanged"
-      }
-    },
-    {
-      "id": "di_maiz_us:2026-01-01",
-      "product": "maiz",
-      "region": "us",
-      "sourceId": "usda_nass",
-      "observationDate": "2026-01-01",
-      "snapshotDate": "2026-09-29",
-      "value": 4.1,
-      "currency": "USD",
-      "unit": "bushel",
-      "frequency": "monthly",
-      "publicationDate": null,
-      "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
-      "comparability": "directional",
-      "normalization": {
-        "kgPerUnit": 27.2155,
-        "baseUnit": "USD_per_kg_or_index",
-        "method": "unit mass anchor only; currency and quote basis remain unchanged"
-      }
-    },
-    {
-      "id": "di_trigo_us:2026-01-01",
-      "product": "trigo",
-      "region": "us",
-      "sourceId": "usda_nass",
-      "observationDate": "2026-01-01",
-      "snapshotDate": "2026-09-29",
-      "value": 5.07,
-      "currency": "USD",
-      "unit": "bushel",
-      "frequency": "monthly",
-      "publicationDate": null,
-      "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
-      "comparability": "directional",
-      "normalization": {
-        "kgPerUnit": 27.2155,
         "baseUnit": "USD_per_kg_or_index",
         "method": "unit mass anchor only; currency and quote basis remain unchanged"
       }
@@ -2070,7 +2007,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -2106,13 +2043,13 @@
       "sourceId": "usda_nass",
       "observationDate": "2026-02-01",
       "snapshotDate": "2026-09-29",
-      "value": 4.11,
+      "value": 4.12,
       "currency": "USD",
       "unit": "bushel",
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2133,7 +2070,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2175,7 +2112,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -2301,7 +2238,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2322,7 +2259,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2364,7 +2301,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -2406,7 +2343,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2427,7 +2364,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2469,7 +2406,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -2511,7 +2448,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2532,7 +2469,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2574,7 +2511,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -2700,7 +2637,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2721,7 +2658,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2763,7 +2700,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -2805,7 +2742,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2826,7 +2763,7 @@
       "frequency": "monthly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -2856,6 +2793,27 @@
       }
     },
     {
+      "id": "di_arroz_us:2026-08-01",
+      "product": "arroz",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-29",
+      "value": 12.8,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-29T23:53:33.765Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 45.3592,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-08-01",
       "product": "leche",
       "region": "eu",
@@ -2872,6 +2830,48 @@
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_maiz_us:2026-08-01",
+      "product": "maiz",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-29",
+      "value": 4.45,
+      "currency": "USD",
+      "unit": "bushel",
+      "frequency": "monthly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-29T23:53:33.240Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_trigo_us:2026-08-01",
+      "product": "trigo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-29",
+      "value": 6.23,
+      "currency": "USD",
+      "unit": "bushel",
+      "frequency": "monthly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-29T23:53:32.663Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 27.2155,
         "baseUnit": "USD_per_kg_or_index",
         "method": "unit mass anchor only; currency and quote basis remain unchanged"
       }
