@@ -22,10 +22,45 @@ for (const file of files) {
   }
 }
 
+const latest = {
+  schemaVersion: '1.0',
+  generatedAt: new Date().toISOString(),
+  observations: Object.values(byKey).sort((a, b) => (a.product + a.region).localeCompare(b.product + b.region))
+};
+
+const historyRows = [];
+Object.values(byKey).forEach((o) => {
+  const series = Array.isArray(o.history) ? o.history : [];
+  series.forEach((point) => {
+    const period = String(point.period || '');
+    const year = String(point.year || '');
+    let month = null;
+    const monthMatch = period.match(/(\d{1,2})/);
+    if (monthMatch) month = monthMatch[1].padStart(2, '0');
+    const observationDate = month ? year + '-' + month + '-01' : year ? year + '-01-01' : null;
+    if (!observationDate) return;
+    historyRows.push({
+      id: o.id || ('di_' + o.product + '_' + o.region),
+      product: o.product,
+      region: o.region,
+      sourceId: o.sourceId,
+      observationDate,
+      snapshotDate: o.snapshotDate,
+      value: Number(point.value),
+      currency: o.currency,
+      unit: o.unit,
+      frequency: o.frequency
+    });
+  });
+});
+
 const history = {
   schemaVersion: '1.0',
   generatedAt: new Date().toISOString(),
-  observations: all.sort((a, b) => String(a.observationDate).localeCompare(String(b.observationDate)))
+  observations: historyRows.sort((a, b) =>
+    String(a.observationDate).localeCompare(String(b.observationDate)) ||
+    (a.product + a.region).localeCompare(b.product + b.region)
+  )
 };
 
 const latest = {
@@ -54,5 +89,6 @@ const catalog = {
 
 await mkdir(outDir, { recursive: true });
 await writeFile(path.join(outDir, 'latest.json'), JSON.stringify(latest, null, 2) + '\n');
+await writeFile(path.join(outDir, 'history.json'), JSON.stringify(history, null, 2) + '\n');
 await writeFile(path.join(outDir, 'catalog.json'), JSON.stringify(catalog, null, 2) + '\n');
-console.log('Generated data/latest.json and data/catalog.json from ' + files.length + ' snapshot(s).');
+console.log('Generated latest.json, history.json and catalog.json from ' + files.length + ' snapshot(s).');
