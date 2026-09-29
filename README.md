@@ -15,3 +15,14 @@ RSS/Atom -> normalize -> deduplicate -> classify -> relevance score -> data/news
 - GitHub Actions refreshes the generated dataset every 3 hours and can also be run manually.
 - Generated files should not be edited by hand: data/news.json and js/news-index.js are pipeline outputs.
 - The market-news UI has a fallback layer so a product without a matching regional story can still show recent compatible global coverage.
+
+
+### News → Market Intelligence
+
+The automated news pipeline also emits impactChannel and marketLinks metadata for each story.
+
+- MARKET IMPACT, INPUT COST, TRADE, WEATHER, SUPPLY, ENERGY, and POLICY channels are assigned deterministically from the story classification.
+- Input-cost stories can link to existing relationship keys such as fertilizer-cereals, energy-cereals, fertilizer-milk, and energy-milk.
+- The frontend joins those keys to the live Agricultural Relationship Engine, so lag, correlation, and confidence are calculated from the current verified history rather than copied into the news feed.
+- If a compatible Transmission Watch alert is active, the news card can also display TRANSMISSION WATCH.
+- The linkage is descriptive: it identifies market context and observed historical relationships; it does not turn a news item into a price forecast.
