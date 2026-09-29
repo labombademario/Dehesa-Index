@@ -860,6 +860,18 @@
     }
   }
 
+  function renderRelationshipsHtml() {
+    var rel=(INTEL20&&INTEL20.relationships)||[];
+    if(!rel.length) return '<section class="di-intel-section"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>Relaciones agrícolas</h2><p class="di-intel-muted">Pendiente: todavía no hay suficientes observaciones verificadas con ventanas y fechas compatibles.</p></div></section>';
+    var cards=rel.slice().sort(function(a,b){var rank={high:3,medium:2,low:1};return (rank[b.confidence]||0)-(rank[a.confidence]||0);}).slice(0,6).map(function(r){
+      return '<article class="di-rel-card"><div class="di-rel-top"><span>'+esc(r.label)+'</span><b class="di-rel-confidence '+esc(r.confidence)+'">'+esc(r.confidence.toUpperCase())+'</b></div>'+
+      '<div class="di-rel-series">'+esc(r.seriesA.product)+' · '+esc(r.seriesA.region.toUpperCase())+' <span>→</span> '+esc(r.seriesB.product)+' · '+esc(r.seriesB.region.toUpperCase())+'</div>'+
+      '<div class="di-rel-metrics"><div><small>Correlación</small><strong>'+Number(r.correlationReturns).toFixed(2)+'</strong></div><div><small>Lag</small><strong>'+esc(String(r.lagPeriods))+' periodo'+(r.lagPeriods===1?'':'s')+'</strong></div><div><small>Ventana</small><strong>'+esc(r.window)+'</strong></div></div>'+
+      '<p class="di-rel-note">'+esc(r.interpretation)+'</p></article>';
+    }).join('');
+    return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>Relaciones agrícolas observadas</h2><p class="di-intel-muted">Ventanas y rezagos se prueban sobre cambios de series verificadas. La confianza describe cobertura y fuerza estadística; no es una probabilidad ni una predicción.</p></div><div class="di-rel-grid">'+cards+'</div></section>';
+  }
+
   function renderIntelligence20Html() {
     var p=P();
     var rows=(INTEL20&&INTEL20.series)||[];
@@ -909,6 +921,7 @@
     var corrVolData = buildCorrAndVol();
     root.innerHTML =
       renderIntelligence20Html() +
+      renderRelationshipsHtml() +
       renderMarketMapHtml() +
       renderMomentumHtml() +
       '<div class="di-intel-grid-2">' + renderCorrelationHtml(corrVolData) + renderVolatilityHtml(corrVolData) + '</div>' +
