@@ -1044,7 +1044,7 @@
       valid: errors.length === 0,
       errors: errors,
       warnings: warnings,
-      pendingDates: warnings.filter(function (w) { return /observationDate|publicationDate/.test(w); }).length
+      pendingDates: ids.filter(function (id) { return !registry[id].observationDate || !registry[id].publicationDate; }).length
     };
   }
 
