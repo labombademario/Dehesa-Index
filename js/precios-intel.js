@@ -1115,6 +1115,66 @@
   }
 
   // ---------------------------------------------------------------------
+  // News → Market Impact Panel
+  // ---------------------------------------------------------------------
+  function renderNewsImpactPanelHtml() {
+    var core=core(), idx=global.DehesaNewsIndex||{}, rels=relationshipSnapshot(), alerts=buildTransmissionAlerts();
+    var active=core.getActiveTab ? core.getActiveTab() : 'cereales';
+    var entries=(core.PRODUCTS||[]).filter(function(e){return e.catId===active;});
+    var keys={}; entries.forEach(function(e){keys[e.nameKey]=true;});
+    var stories=[], seen={};
+    Object.keys(idx).forEach(function(k){
+      if(!keys[k]) return;
+      (idx[k]||[]).forEach(function(n){if(!seen[n.id]){seen[n.id]=true;stories.push(n);}});
+    });
+    if(!stories.length) Object.keys(idx).forEach(function(k){(idx[k]||[]).forEach(function(n){if(!seen[n.id]){seen[n.id]=true;stories.push(n);}});});
+    stories.sort(function(a,b){return String(a.date)<String(b.date)?1:-1;});
+    stories=stories.slice(0,5);
+
+    var labels={
+      es:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Impacto de noticias en el mercado',intro:'Cada noticia se conecta con un canal, un mercado y, cuando existe evidencia compatible, una relación observada y su señal estadística.',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELACIÓN OBSERVADA',none:'Sin relación estadística compatible',watch:'TRANSMISSION WATCH',context:'Contexto descriptivo · no es una predicción.',empty:'No hay noticias enlazadas para este mercado.'},
+      en:{kicker:'NEWS → MARKET INTELLIGENCE',title:'News market impact',intro:'Each story is linked to a channel, a market and, where compatible evidence exists, an observed relationship and its statistical signal.',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'OBSERVED RELATIONSHIP',none:'No compatible statistical relationship',watch:'TRANSMISSION WATCH',context:'Descriptive context · not a forecast.',empty:'No linked news is available for this market.'},
+      fr:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Impact des nouvelles sur le marché',intro:'Chaque actualité est reliée à un canal, un marché et, lorsque les données le permettent, à une relation observée et à son signal statistique.',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELATION OBSERVÉE',none:'Aucune relation statistique compatible',watch:'TRANSMISSION WATCH',context:'Contexte descriptif · pas une prévision.',empty:'Aucune actualité liée à ce marché.'},
+      it:{kicker:'NEWS → MARKET INTELLIGENCE',title:'Impatto delle notizie sul mercato',intro:'Ogni notizia è collegata a un canale, a un mercato e, quando i dati sono compatibili, a una relazione osservata e al relativo segnale statistico.',news:'NEWS',channel:'CHANNEL',market:'MARKET',relationship:'RELATIONSHIP',signal:'SIGNAL',alert:'ALERT',observed:'RELAZIONE OSSERVATA',none:'Nessuna relazione statistica compatibile',watch:'TRANSMISSION WATCH',context:'Contesto descrittivo · non è una previsione.',empty:'Nessuna notizia collegata a questo mercato.'}
+    };
+    var t=labels[lang()]||labels.es;
+    var channelLabels={input_cost:'INPUT COST',trade:'TRADE',weather:'WEATHER',supply:'SUPPLY',energy:'ENERGY',policy:'POLICY',market_impact:'MARKET IMPACT'};
+    function productLabel(k){return core.productName ? core.productName(k) : k;}
+    function alertFor(relId){return alerts.some(function(a){return a.relationship&&a.relationship.id===relId;});}
+    function relFor(link){return link.relation&&rels[link.relation]&&rels[link.relation].status==='ready'?rels[link.relation]:null;}
+    function storyCard(n){
+      var links=n.marketLinks||[];
+      var link=links[0]||{market:(n.products||[])[0]||'—',channel:n.impactChannel||'market_impact'};
+      var r=null;
+      for(var j=0;j<links.length;j++){r=relFor(links[j]);if(r){link=links[j];break;}}
+      var alert=r&&alertFor(r.id);
+      var corr=r&&isFinite(Number(r.correlationReturns))?Number(r.correlationReturns):null;
+      var signal=r ? (corr>=0?'Δ + asociación':'Δ − asociación') : t.none;
+      var signalClass=r ? (corr>=0?'positive':'negative') : 'neutral';
+      var relationText=r ? r.label : t.none;
+      var lag=r ? String(r.lagPeriods)+' '+(r.frequency==='quarterly'?(r.lagPeriods===1?'trimestre':'trimestres'):(r.lagPeriods===1?'mes':'meses')) : '—';
+      return '<article class="di-news-impact-card">'+
+        '<div class="di-news-impact-flow">'+
+          '<div class="di-news-impact-node news"><small>'+t.news+'</small><strong>'+esc(n.source)+'</strong><span>'+esc(n.date)+'</span></div>'+
+          '<span class="di-news-impact-arrow">→</span>'+
+          '<div class="di-news-impact-node"><small>'+t.channel+'</small><strong>'+esc(channelLabels[link.channel]||'MARKET IMPACT')+'</strong></div>'+
+          '<span class="di-news-impact-arrow">→</span>'+
+          '<div class="di-news-impact-node"><small>'+t.market+'</small><strong>'+esc(productLabel(link.market))+'</strong></div>'+
+          '<span class="di-news-impact-arrow">→</span>'+
+          '<div class="di-news-impact-node"><small>'+t.relationship+'</small><strong>'+esc(relationText)+'</strong></div>'+
+          '<span class="di-news-impact-arrow">→</span>'+
+          '<div class="di-news-impact-node signal '+signalClass+'"><small>'+t.signal+'</small><strong>'+esc(signal)+'</strong><span>'+esc(r ? ('r '+corr.toFixed(2)+' · lag '+lag) : '—')+'</span></div>'+
+          (alert?'<span class="di-news-impact-alert-node">⚠ '+t.watch+'</span>':'')+
+        '</div>'+
+        '<div class="di-news-impact-story"><a href="'+esc(n.url)+'" target="_blank" rel="noopener noreferrer">'+esc((n.headline&& (n.headline[lang()]||n.headline.es))||'')+'</a><span>'+esc(t.context)+'</span></div>'+
+      '</article>';
+    }
+    return '<section class="di-intel-section di-news-impact-panel"><div class="di-intel-head"><span class="di-intel-kicker">'+t.kicker+'</span><h2>'+t.title+'</h2><p class="di-intel-muted">'+t.intro+'</p></div>'+
+      (stories.length ? '<div class="di-news-impact-stack">'+stories.map(storyCard).join('')+'</div>' : '<div class="di-news-impact-empty">'+t.empty+'</div>')+
+      '</section>';
+  }
+
+  // ---------------------------------------------------------------------
   // Orquestación
   // ---------------------------------------------------------------------
   function wireOpenTargets(root) {
@@ -1137,6 +1197,7 @@
     }
     var corrVolData = buildCorrAndVol();
     root.innerHTML =
+      renderNewsImpactPanelHtml() +
       renderIntelligence20Html() +
       renderRelationshipsHtml() +
       renderMarketMapHtml() +
