@@ -271,13 +271,21 @@
     if (crop && !product) bits.push((cropLabels[crop] || {es:crop,en:crop,fr:crop,it:crop})[lang] || crop);
     if (region) bits.push((regionLabels[region] || {es:region,en:region,fr:region,it:region})[lang] || region);
     if (topic) bits.push(topic);
-    var sibling = activePage === 'precios' ? 'noticias.html' : activePage === 'noticias' ? 'precios.html' : 'precios.html';
-    var siblingLabel = activePage === 'precios' ? l.news : activePage === 'noticias' ? l.prices : l.prices;
-    var siblingParams = [];
-    if (product) siblingParams.push('product=' + encodeURIComponent(product));
-    if (region) siblingParams.push('region=' + encodeURIComponent(region));
-    if (crop && !product) siblingParams.push('product=' + encodeURIComponent(crop));
-    var siblingHref = sitePath(sibling) + (siblingParams.length ? '?' + siblingParams.join('&') : '');
+    var mappedProduct = product || ({ fertilizantes:'urea', cebada:'cebada', soja:'soja' }[crop] || crop);
+    var contextParams = [];
+    if (mappedProduct) contextParams.push('product=' + encodeURIComponent(mappedProduct));
+    if (region) contextParams.push('region=' + encodeURIComponent(region));
+    var priceHref = sitePath('precios.html') + (contextParams.length ? '?' + contextParams.join('&') : '');
+    var newsHref = sitePath('noticias.html') + (contextParams.length ? '?' + contextParams.join('&') : '');
+    var calendarParams = [];
+    if (crop || product) calendarParams.push('crop=' + encodeURIComponent(crop || product));
+    if (region) calendarParams.push('region=' + encodeURIComponent(region));
+    var calendarHref = sitePath('calendario.html') + (calendarParams.length ? '?' + calendarParams.join('&') : '');
+    var siblingLinks = activePage === 'precios'
+      ? '<a href="' + esc(newsHref) + '">' + esc(l.news) + ' →</a><a href="' + esc(calendarHref) + '">' + esc(l.calendar) + ' →</a>'
+      : activePage === 'noticias'
+        ? '<a href="' + esc(priceHref) + '">' + esc(l.prices) + ' →</a><a href="' + esc(calendarHref) + '">' + esc(l.calendar) + ' →</a>'
+        : '<a href="' + esc(priceHref) + '">' + esc(l.prices) + ' →</a><a href="' + esc(newsHref) + '">' + esc(l.news) + ' →</a>';
     var backButton = (document.referrer && document.referrer.indexOf(window.location.origin) === 0)
       ? '<button type="button" class="di-context-back" id="di-context-back">← ' + esc(l.back) + '</button>'
       : '';
