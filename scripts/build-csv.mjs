@@ -13,7 +13,7 @@ function csvEscape(value) {
   return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
 }
 
-const fields = ['product','region','sourceId','observationDate','snapshotDate','value','currency','unit','frequency','status','verifiedAt','changePct'];
+const fields = ['product','region','sourceId','observationDate','snapshotDate','value','currency','unit','frequency','status','verifiedAt','comparability','changePct'];
 const lines = [fields.join(',')];
 
 for (const o of history.observations || []) {
