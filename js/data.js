@@ -890,6 +890,7 @@
     euronext: { name: 'Euronext (MATIF)', url: SRC_URL.euronext, authority: 'official' },
     dtn_fertilizer: { name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer, authority: 'commercial' },
     world_bank: { name: 'Banco Mundial', url: SRC_URL.worldBank, authority: 'official' },
+    eurostat: { name: 'Eurostat', url: 'https://ec.europa.eu/eurostat/web/agriculture/information-data', authority: 'official' },
     eia: { name: 'EIA', url: SRC_URL.eia, authority: 'official' },
     eu_oil_bulletin: { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin, authority: 'official' }
   };
