@@ -561,6 +561,51 @@
   }
 
   // ---------------------------------------------------------------------
+  // Dehesa Atlantic Spread — readiness gate
+  // No calculamos un spread transatlántico cuando las dos observaciones no
+  // comparten fecha, unidad/basis y metodología comparables. El panel debe
+  // mostrar explícitamente por qué una comparación está pendiente.
+  // ---------------------------------------------------------------------
+  function trustForDashKey(dashKey) {
+    var parts = dashKey.split('-');
+    var productId = parts.slice(0, -1).join('-');
+    var region = parts[parts.length - 1];
+    var trust = D.DATA_TRUST || {};
+    return trust[productId + '-' + region] || null;
+  }
+
+  function renderAtlanticSpreadHtml() {
+    var labels = {
+      es:{title:'Dehesa Atlantic Spread',intro:'Comparación transatlántica normalizada: solo se calcula cuando las observaciones tienen base metodológica y fecha suficientes.',pending:'Pendiente de datos comparables',date:'Fecha de observación',method:'Metodología',basis:'Comparabilidad',note:'No mostramos un diferencial numérico si mezclar las dos cotizaciones podría inducir a una conclusión falsa.'},
+      en:{title:'Dehesa Atlantic Spread',intro:'Normalized transatlantic comparison: calculated only when observations have sufficient methodological and date coverage.',pending:'Comparable data pending',date:'Observation date',method:'Methodology',basis:'Comparability',note:'No numeric spread is shown when mixing the two quotations could produce a misleading conclusion.'},
+      fr:{title:'Dehesa Atlantic Spread',intro:'Comparaison transatlantique normalisée: calculée uniquement lorsque les observations sont suffisamment comparables et datées.',pending:'Données comparables en attente',date:"Date d'observation",method:'Méthodologie',basis:'Comparabilité',note:'Aucun différentiel numérique n’est affiché lorsque le mélange des deux cotations pourrait être trompeur.'},
+      it:{title:'Dehesa Atlantic Spread',intro:'Confronto transatlantico normalizzato: calcolato solo quando le osservazioni sono sufficientemente comparabili e datate.',pending:'Dati comparabili in attesa',date:'Data osservazione',method:'Metodologia',basis:'Comparabilità',note:'Nessun differenziale numerico viene mostrato quando combinare le due quotazioni potrebbe risultare fuorviante.'}
+    };
+    var t=labels[lang()]||labels.es;
+    var products=[['cereales-trigo','Trigo','Wheat'],['cereales-maiz','Maíz','Corn'],['energia-diesel','Diésel','Diesel']];
+    var cards=products.map(function(p){
+      var us=trustForDashKey(p[0]+'-us'), eu=trustForDashKey(p[0]+'-eu');
+      if(!us||!eu) return '';
+      var comparable=us.comparability==='direct'&&eu.comparability==='direct';
+      var dated=!!us.observationDate&&!!eu.observationDate;
+      var ready=us.status==='verified'&&eu.status==='verified'&&comparable&&dated;
+      var status=ready ? 'Ready' : t.pending;
+      var basis=(us.comparability||'—')+' / '+(eu.comparability||'—');
+      return '<div class="di-card di-atlantic-card">'+
+        '<div class="di-product-name">'+esc(p[0]==='energia-diesel'?(lang()==='es'?'Diésel':lang()==='fr'?'Diesel':lang()==='it'?'Diesel':'Diesel'):(lang()==='es'?p[1]:lang()==='en'?p[2]:p[1]))+'</div>'+
+        '<div class="di-atlantic-status">'+esc(status)+'</div>'+
+        '<div class="di-atlantic-grid">'+
+          '<div><span>'+esc(t.date)+'</span><b>'+esc(us.observationDate||'—')+' / '+esc(eu.observationDate||'—')+'</b></div>'+
+          '<div><span>'+esc(t.basis)+'</span><b>'+esc(basis)+'</b></div>'+
+        '</div>'+
+        '<div class="di-atlantic-method">'+esc(t.method)+': '+esc(us.methodology||'—')+' · '+esc(eu.methodology||'—')+'</div>'+
+        '<div class="di-spread-note">'+esc(t.note)+'</div>'+
+      '</div>';
+    }).join('');
+    return '<div class="di-intel-section" id="di-intel-atlantic"><div class="di-intel-head"><h2>'+esc(t.title)+'</h2><p>'+esc(t.intro)+'</p></div><div class="di-atlantic-grid">'+cards+'</div></div>';
+  }
+
+  // ---------------------------------------------------------------------
   // Ratios agrícolas (Spreads)
   // ---------------------------------------------------------------------
   function spreadRatioSeries(numEntry, denEntry, native) {
@@ -871,6 +916,7 @@
       '<div class="di-intel-grid-2">' + renderCorrelationHtml(corrVolData) + renderVolatilityHtml(corrVolData) + '</div>' +
       renderSeasonalityHtml() +
       renderLocalGlobalHtml() +
+      renderAtlanticSpreadHtml() +
       renderSpreadsHtml() +
       renderMarginHtml();
     wireOpenTargets(root);
