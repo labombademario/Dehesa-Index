@@ -150,7 +150,7 @@
       pageSubtitle: 'Daily and weekly agricultural prices — U.S. and Europe',
       badge: 'DATA STATUS',
       updated: 'Observation and provenance verification active',
-      banner: 'Each product is explicitly marked REAL, PENDING or NOT COMPARABLE. Unverified figures are not presented as active market prices. Provenance and methodology are available on each card.'
+      banner: 'Each product is explicitly marked REAL, PENDING or NOT COMPARABLE. Unverified figures are not presented as active market prices. Provenance and methodology are available on each card.',
       searchPlaceholder: 'Search a product (corn, milk, urea…)',
       searchNoResults: 'No products found with that name.',
       searchClearTitle: 'Clear search',
