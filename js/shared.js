@@ -474,6 +474,7 @@
     setLang: setLang,
     toggleTheme: toggleTheme,
     init: init,
+    renderContextBar: renderContextBar,
     esc: esc,
     onLangChange: null // páginas pueden sobrescribir esto para re-renderizar su contenido sin recargar
   };
