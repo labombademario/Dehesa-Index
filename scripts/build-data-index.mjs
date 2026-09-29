@@ -22,6 +22,12 @@ for (const file of files) {
   }
 }
 
+const history = {
+  schemaVersion: '1.0',
+  generatedAt: new Date().toISOString(),
+  observations: all.sort((a, b) => String(a.observationDate).localeCompare(String(b.observationDate)))
+};
+
 const latest = {
   schemaVersion: '1.0',
   generatedAt: new Date().toISOString(),
