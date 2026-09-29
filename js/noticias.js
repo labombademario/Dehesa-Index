@@ -139,6 +139,10 @@
       disclaimer: 'Estos titulares son reales y verificados, cada uno enlazado directamente a su fuente original. Se actualizan periódicamente mediante una tarea programada, no mediante un feed en directo, así que puede haber un pequeño desfase entre una noticia y su publicación aquí.',
       readMore: 'Leer en la fuente',
       filterAll: 'Todas', filterGlobal: 'Global', filterEuropa: 'Europa', filterAmerica: 'América',
+      regionLabel: 'Región', productLabel: 'Producto / mercado', topicLabel: 'Tema',
+      intelTitle: 'Qué está moviendo estos mercados', intelSub: 'Contexto editorial construido a partir de las noticias visibles y sus etiquetas.',
+      intelEmpty: 'No hay suficiente cobertura para generar contexto con estos filtros.',
+      filterSummary: 'Mostrando {count} noticias', tagMarket: 'Mercado', tagTopic: 'Tema',
       noResultsHint: 'No hay noticias en esta categoría por ahora. Prueba con otro filtro.',
       sourcesTitle: 'Fuentes',
       sources: [
@@ -160,6 +164,10 @@
       disclaimer: "These headlines are real and verified, each linking directly to its original source. They're refreshed periodically by a scheduled task rather than a live feed, so there can be a short delay between a story breaking and appearing here.",
       readMore: 'Read at the source',
       filterAll: 'All', filterGlobal: 'Global', filterEuropa: 'Europe', filterAmerica: 'Americas',
+      regionLabel: 'Region', productLabel: 'Product / market', topicLabel: 'Theme',
+      intelTitle: 'What is moving these markets', intelSub: 'Editorial context built from the visible stories and their tags.',
+      intelEmpty: 'There is not enough coverage to build context with these filters.',
+      filterSummary: 'Showing {count} stories', tagMarket: 'Market', tagTopic: 'Theme',
       noResultsHint: 'No headlines in this category right now. Try another filter.',
       sourcesTitle: 'Sources',
       sources: [
@@ -181,6 +189,10 @@
       disclaimer: "Ces titres sont réels et vérifiés, chacun renvoyant directement à sa source d'origine. Ils sont actualisés périodiquement par une tâche programmée plutôt que par un flux en direct : un léger décalage peut donc exister entre la publication d'une actualité et son apparition ici.",
       readMore: 'Lire la source',
       filterAll: 'Toutes', filterGlobal: 'Mondial', filterEuropa: 'Europe', filterAmerica: 'Amériques',
+      regionLabel: 'Région', productLabel: 'Produit / marché', topicLabel: 'Thème',
+      intelTitle: 'Ce qui fait bouger ces marchés', intelSub: 'Contexte éditorial construit à partir des actualités visibles et de leurs étiquettes.',
+      intelEmpty: 'Couverture insuffisante pour générer un contexte avec ces filtres.',
+      filterSummary: '{count} actualités affichées', tagMarket: 'Marché', tagTopic: 'Thème',
       noResultsHint: "Aucune actualité dans cette catégorie pour l'instant. Essayez un autre filtre.",
       sourcesTitle: 'Sources',
       sources: [
@@ -202,6 +214,10 @@
       disclaimer: "Questi titoli sono reali e verificati, ciascuno con un link diretto alla fonte originale. Vengono aggiornati periodicamente tramite un'attività pianificata anziché in tempo reale, quindi può trascorrere un breve intervallo tra la pubblicazione di una notizia e la sua comparsa qui.",
       readMore: 'Leggi alla fonte',
       filterAll: 'Tutte', filterGlobal: 'Globale', filterEuropa: 'Europa', filterAmerica: 'Americhe',
+      regionLabel: 'Regione', productLabel: 'Prodotto / mercato', topicLabel: 'Tema',
+      intelTitle: 'Cosa sta muovendo questi mercati', intelSub: 'Contesto editoriale costruito dalle notizie visibili e dalle relative etichette.',
+      intelEmpty: 'Copertura insufficiente per generare contesto con questi filtri.',
+      filterSummary: 'Visualizzate {count} notizie', tagMarket: 'Mercato', tagTopic: 'Tema',
       noResultsHint: 'Nessuna notizia in questa categoria al momento. Prova un altro filtro.',
       sourcesTitle: 'Fonti',
       sources: [
