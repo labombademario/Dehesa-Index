@@ -897,12 +897,12 @@
     'cereales-trigo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel.',
-      comparability: 'directional'
+      comparability: 'directional', observationDate: null, publicationDate: null
     },
     'cereales-trigo-eu': {
       sourceId: 'euronext', frequency: 'daily',
       methodology: 'Euronext/MATIF futures reference; not the same measurement basis as USDA NASS.',
-      comparability: 'not_comparable'
+      comparability: 'not_comparable', observationDate: null, publicationDate: null
     },
     'cereales-maiz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
@@ -942,7 +942,7 @@
     'energia-diesel-eu': {
       sourceId: 'eu_oil_bulletin', frequency: 'weekly',
       methodology: 'European Commission Weekly Oil Bulletin reference; EUR/litre.',
-      comparability: 'directional'
+      comparability: 'directional', observationDate: null, publicationDate: null
     }
   };
 
@@ -967,8 +967,8 @@
       sourceUrl: source.url || null,
       sourceAuthority: source.authority || 'unknown',
       frequency: meta.frequency || 'unknown',
-      observationDate: null,
-      publicationDate: null,
+      observationDate: meta.observationDate || null,
+      publicationDate: meta.publicationDate || null,
       methodology: meta.methodology || null,
       comparability: meta.comparability || 'review',
       status: 'sample',
