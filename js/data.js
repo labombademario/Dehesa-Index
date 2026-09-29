@@ -944,8 +944,8 @@
     },
     'energia-diesel-us': {
       sourceId: 'eia', frequency: 'weekly',
-      methodology: 'US national diesel fuel reference; USD/gallon.',
-      comparability: 'directional', observationDate: null, publicationDate: null
+      methodology: 'US national diesel fuel reference; USD/gallon. Observation dated 2026-09-21; EIA release dated 2026-09-22.',
+      comparability: 'directional', observationDate: '2026-09-21', publicationDate: '2026-09-22', status: 'verified', verifiedAt: '2026-09-29T00:00:00Z'
     },
     'energia-diesel-eu': {
       sourceId: 'eu_oil_bulletin', frequency: 'weekly',
