@@ -112,9 +112,9 @@ function observationDateFromNass(year, periodDesc, periodCode) {
   var y = String(year);
   var p = String(periodDesc || '').toLowerCase();
   var monthMap = {
-    january: '01', february: '02', march: '03', april: '04',
-    may: '05', june: '06', july: '07', august: '08',
-    september: '09', october: '10', november: '11', december: '12'
+    january: '01', january: '01', jan: '01', february: '02', feb: '02', march: '03', mar: '03', april: '04', apr: '04',
+    may: '05', june: '06', jun: '06', july: '07', jul: '07', august: '08', aug: '08',
+    september: '09', sep: '09', october: '10', oct: '10', november: '11', nov: '11', december: '12', dec: '12'
   };
   for (var name in monthMap) {
     if (p.indexOf(name) !== -1) return y + '-' + monthMap[name];
