@@ -32,9 +32,10 @@ ws = wb["Monthly Prices"]
 rows = list(ws.iter_rows(values_only=True))
 header_row = None
 urea_col = None
-for idx, row in enumerate(rows[:30]):
+for idx, row in enumerate(rows[:100]):
     for col, val in enumerate(row):
-        if str(val or "").strip().lower() == "urea, e. europe":
+        normalized = re.sub(r"\\s+", " ", str(val or "").strip().lower())
+        if normalized in ("urea, e. europe", "urea e. europe") or ("urea" in normalized and "europe" in normalized):
             header_row, urea_col = idx, col
             break
     if urea_col is not None:
