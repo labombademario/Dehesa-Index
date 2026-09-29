@@ -777,3 +777,16 @@ html[data-theme="dark"] .di-badge-green { background: #1E3328; color: #7FCF9B; b
 .di-market-news-stories span{display:block;font-size:8px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
 .di-market-news-stories strong{display:block;font-size:11px;line-height:1.35}
 @media(max-width:700px){.di-market-news-intel{grid-template-columns:1fr}.di-market-news-link{justify-self:start}.di-market-news-stories{grid-template-columns:1fr}}
+
+/* ---------- Agricultural calendar intelligence ---------- */
+.di-cal-filter-row{display:grid;grid-template-columns:auto minmax(130px,1fr) auto minmax(130px,1fr) auto minmax(130px,1fr);gap:8px;align-items:center;margin-top:10px}
+.di-cal-filter-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--text-faint)}
+.di-cal-filter-row select{min-height:34px;padding:7px 10px;border:1px solid var(--border);border-radius:7px;background:var(--surface);color:var(--text);font:inherit;font-size:11px}
+.di-cal-tags{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0}
+.di-cal-tag{display:inline-flex;padding:3px 6px;border-radius:999px;background:var(--surface-input);color:var(--text-muted);font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.di-cal-tag.crop{background:var(--surface-alt)}
+.di-cal-tag.impact{border:1px solid var(--border-strong)}
+.di-cal-impact{margin:8px 0;padding:7px 9px;border-left:2px solid var(--accent);background:var(--surface-input);font-size:10px;line-height:1.4;color:var(--text-muted)}
+.di-cal-impact strong{color:var(--text);font-weight:800}
+@media(max-width:800px){.di-cal-filter-row{grid-template-columns:1fr 1fr}.di-cal-filter-label{display:none}}
+@media(max-width:520px){.di-cal-filter-row{grid-template-columns:1fr}}
