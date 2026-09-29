@@ -410,10 +410,11 @@
     var index = global.DehesaNewsIndex || {};
     var key = entry.nameKey;
     var stories = index[key] || [];
-    if (!stories.length) return '<div class="di-related-news di-related-news-pending"><div class="di-related-news-head"><span>NEWS INTELLIGENCE</span><a href="noticias.html?product=' + encodeURIComponent(key) + '">Noticias relacionadas →</a></div><p>No hay cobertura editorial enlazada a este mercado todavía.</p></div>';
+    var region = state.location || 'us';
+    if (!stories.length) return '<div class="di-related-news di-related-news-pending"><div class="di-related-news-head"><span>NEWS INTELLIGENCE</span><a href="noticias.html?product=' + encodeURIComponent(key) + '&region=' + encodeURIComponent(region) + '">Noticias relacionadas →</a></div><p>No hay cobertura editorial enlazada a este mercado todavía.</p></div>';
     var lg = lang();
     var label = lg === 'es' ? 'Noticias relacionadas' : lg === 'fr' ? 'Actualités liées' : lg === 'it' ? 'Notizie correlate' : 'Related news';
-    return '<div class="di-related-news"><div class="di-related-news-head"><span>NEWS INTELLIGENCE</span><a href="noticias.html?product=' + encodeURIComponent(key) + '">Ver todas →</a></div>' +
+    return '<div class="di-related-news"><div class="di-related-news-head"><span>NEWS INTELLIGENCE</span><a href="noticias.html?product=' + encodeURIComponent(key) + '&region=' + encodeURIComponent(region) + '">Ver todas →</a></div>' +
       '<div class="di-related-news-title">' + esc(label) + '</div>' +
       stories.slice(0,2).map(function(n) {
         var h = n.headline[lg] || n.headline.es;
