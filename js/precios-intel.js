@@ -4,8 +4,8 @@
    Extraído y adaptado del artefacto Design original (Main.dc.html): mismos
    algoritmos (squarify, Pearson, volatilidad anualizada, desviación
    estacional media, ratios), mismo histórico ilustrativo de 5 años
-   (genLongHistory, ya en js/data.js) para que los números de aquí y los que
-   se ven en el histórico ampliado de cada producto sean siempre coherentes.
+   histórico normalizado disponible en data/history.json; si la cadencia o cobertura
+   no es suficiente, el módulo queda explícitamente en estado PENDIENTE.
    Incluye también Local vs. Global (mercado global EE. UU./Europa/Reino
    Unido vs. desglose físico por país UE), construido sobre el histórico
    corto nativo de cada región vía D.buildRegion/D.deriveCountryRaw.
@@ -262,7 +262,6 @@
     cereales: '#C99A2E', ganaderia: '#B15E3B', lacteos: '#3B6EA8', pienso: '#9C8552',
     fertilizantes: '#7B5EA7', azucar: '#C06B92', aceite: '#A69026', energia: '#5C7080'
   };
-  function legacyRangePctChange(region, seedKey, days) { return 0; }
   function niceStep(rawStep) {
     if (!(rawStep > 0)) return 1;
     var exp = Math.floor(Math.log(rawStep) / Math.LN10);
