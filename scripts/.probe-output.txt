@@ -1,5 +1,5 @@
-URL: https://api.tech.ec.europa.eu/agrifood/api/raw-milk/prices?memberStateCodes=DE
-Fecha: 2026-09-29T15:26:46.589Z
+URL: https://api.tech.ec.europa.eu/agrifood/api/dairy/rawmilk/prices?memberStateCodes=DE
+Fecha: 2026-09-29T15:27:31.948Z
 STATUS: 404 Not Found
 LONGITUD TOTAL: 128 caracteres
 BODY (primeros 6000 caracteres):
