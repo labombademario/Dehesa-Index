@@ -886,7 +886,7 @@
   var DATA_TRUST_SOURCES = {
     usda_nass: { name: 'USDA NASS', url: SRC_URL.nass, authority: 'official' },
     usda_ams_dairy: { name: 'USDA AMS (Class III)', url: SRC_URL.amsDairy, authority: 'official' },
-    european_commission: { name: 'Comisión Europea', url: SRC_URL.ecPrices, authority: 'official' },
+    european_commission: { name: 'Comisión Europea — Milk Market Observatory', url: 'https://agriculture.ec.europa.eu/data-and-analysis/markets/price-data/price-monitoring-sector/milk-and-dairy-products_en', authority: 'official' },
     euronext: { name: 'Euronext (MATIF)', url: SRC_URL.euronext, authority: 'official' },
     dtn_fertilizer: { name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer, authority: 'commercial' },
     world_bank: { name: 'Banco Mundial', url: SRC_URL.worldBank, authority: 'official' },
@@ -928,12 +928,12 @@
     },
     'lacteos-leche-eu': {
       sourceId: 'european_commission', frequency: 'monthly',
-      methodology: 'European Commission milk price reference; EUR/100 kg.',
+      methodology: 'PENDIENTE: la ficha muestra 46,20 EUR/100 kg, pero la publicación primaria de la Comisión Europea del 09/09/2026 informa agosto de 2026 en 45,05 para España y 42,22 para la media UE sin Reino Unido. Precio al productor con grasa y proteína reales; no sustituir ni convertir sin reconciliar geografía, período y base.',
       comparability: 'directional', observationDate: null, publicationDate: null
     },
     'fertilizantes-urea-us': {
       sourceId: 'dtn_fertilizer', frequency: 'weekly',
-      methodology: 'DTN fertilizer market index reference; USD/short ton.',
+      methodology: 'PENDIENTE: la ficha muestra 489 USD/ton corta, pero DTN publicó el 23/09/2026 un promedio de 659 USD/ton para urea, observado el 14–18/09/2026. DTN no define “ton” en ese registro; no equipararlo a tonelada métrica ni al valor visible sin reconciliar la unidad y el período.',
       comparability: 'directional', observationDate: null, publicationDate: null
     },
     'fertilizantes-urea-eu': {
@@ -949,7 +949,7 @@
     },
     'energia-diesel-eu': {
       sourceId: 'eu_oil_bulletin', frequency: 'weekly',
-      methodology: 'European Commission Weekly Oil Bulletin reference; EUR/litre.',
+      methodology: 'PENDIENTE: la ficha muestra 2,138 EUR/litro, mientras que el XLSX primario de precios con impuestos del Weekly Oil Bulletin fija la media ponderada UE-27 en 2,226443515 EUR/litro para la semana del 21/09/2026, publicado el 24/09/2026. Es precio al consumidor con impuestos; no reconciliado con el valor visible.',
       comparability: 'directional', observationDate: null, publicationDate: null
     }
   };
@@ -1006,7 +1006,15 @@
           var meta = DATA_TRUST_PILOT[key];
           if (!meta) return;
           var quote = product.quoteTypes && product.quoteTypes[region];
-          out[key] = buildTrustObservation(productId, region, raw, quote, meta);
+          out[key] = buildTrustObservation(productId, region, {
+            price: raw.price,
+            currency: raw.currency,
+            kgPerUnit: raw.kgPerUnit,
+            imperialUnitKey: product.imperialUnitKey,
+            metricUnitKey: product.metricUnitKey,
+            imperialKgPerUnit: product.imperialKgPerUnit,
+            metricKgPerUnit: product.metricKgPerUnit
+          }, quote, meta);
         });
       }
     }
@@ -1019,7 +1027,8 @@
       var d = diesel[i], meta = DATA_TRUST_PILOT[d.key];
       out[d.key] = buildTrustObservation('energia-diesel', d.region, {
         price: d.raw.price, currency: d.raw.currency, kgPerUnit: d.raw.kgPerUnit,
-        metricUnitKey: d.region === 'eu' ? 'litro' : 'gal'
+        imperialUnitKey: d.region === 'us' ? 'gal' : null,
+        metricUnitKey: d.region === 'eu' ? 'litro' : null
       }, d.quote, meta);
     }
     return out;

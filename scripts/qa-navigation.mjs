@@ -19,7 +19,7 @@ for (const page of htmlPages) {
   const scripts = [...html.matchAll(/<script[^>]+src=["']([^"']+)["']/gi)].map(m=>m[1]);
   for (const src of scripts) {
     if (/^https?:\/\//i.test(src)) continue;
-    check(exists(src.replace(/^\.\//,'')), `${page} local script exists: ${src}`);
+    check(exists(src.replace(/[?#].*$/,'').replace(/^\.\//,'')), `${page} local script exists: ${src}`);
   }
 }
 
