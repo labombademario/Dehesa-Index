@@ -1018,9 +1018,39 @@
 
   var DATA_TRUST = buildPilotTrustRegistry();
 
+  function validateDataTrustRegistry(registry) {
+    var required = ['schemaVersion','id','productId','region','value','currency','unit','kgPerUnit','quoteType','market','sourceId','source','sourceUrl','frequency','methodology','comparability','status'];
+    var errors = [], warnings = [], ids = Object.keys(registry);
+    for (var i = 0; i < ids.length; i++) {
+      var key = ids[i], o = registry[key];
+      for (var j = 0; j < required.length; j++) {
+        var field = required[j];
+        if (o[field] === null || o[field] === undefined || o[field] === '') {
+          errors.push(key + ': missing ' + field);
+        }
+      }
+      if (o.status === 'verified' && (!o.observationDate || !o.publicationDate || !o.verifiedAt)) {
+        errors.push(key + ': verified observations require observationDate, publicationDate and verifiedAt');
+      }
+      if (!o.observationDate) warnings.push(key + ': observationDate pending');
+      if (!o.publicationDate) warnings.push(key + ': publicationDate pending');
+      if (!o.sourceUrl) warnings.push(key + ': sourceUrl pending');
+    }
+    return {
+      schemaVersion: DATA_TRUST_SCHEMA_VERSION,
+      observations: ids.length,
+      valid: errors.length === 0,
+      errors: errors,
+      warnings: warnings,
+      pendingDates: warnings.filter(function (w) { return /observationDate|publicationDate/.test(w); }).length
+    };
+  }
+
+  var DATA_TRUST_HEALTH = validateDataTrustRegistry(DATA_TRUST);
+
   global.DehesaData = {
     FX: FX, FX_DATE: FX_DATE, formatFxDate: formatFxDate, CCY_SYMBOL: CCY_SYMBOL, UNIT_LABELS: UNIT_LABELS, REGION: REGION,
-    DATA_TRUST_SCHEMA_VERSION: DATA_TRUST_SCHEMA_VERSION, DATA_TRUST: DATA_TRUST, DATA_TRUST_SOURCES: DATA_TRUST_SOURCES,
+    DATA_TRUST_SCHEMA_VERSION: DATA_TRUST_SCHEMA_VERSION, DATA_TRUST: DATA_TRUST, DATA_TRUST_SOURCES: DATA_TRUST_SOURCES, DATA_TRUST_HEALTH: DATA_TRUST_HEALTH, validateDataTrustRegistry: validateDataTrustRegistry,
     ENERGY_REGIONS: ENERGY_REGIONS, COUNTRY_ER_KEY: COUNTRY_ER_KEY, COUNTRY_FLAG: COUNTRY_FLAG,
     QUOTE_TYPES: QUOTE_TYPES, NAMES: NAMES, CATS: CATS, FOOT: FOOT, RAW: RAW,
     INSURANCE: INSURANCE, WINE: WINE, WOOD: WOOD,
