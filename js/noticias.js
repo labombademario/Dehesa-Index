@@ -30,6 +30,54 @@
       it: { headline: "Gli agricoltori spagnoli chiedono aiuti urgenti per l'aumento dei costi dovuto alla guerra in Iran", summary: "Le organizzazioni agricole spagnole chiedono aiuti governativi urgenti di fronte all'aumento dei prezzi di gasolio e fertilizzanti provocato dal conflitto in Iran, che si aggiunge agli effetti della siccità sulle aziende agricole." }
     },
     {
+      id: 'n8', source: 'Reuters', url: 'https://www.reuters.com/business/energy/record-us-diesel-prices-squeeze-farmers-food-prices-may-rise-2026-09-18/',
+      date: '2026-09-18', region: 'us',
+      es: { headline: 'El diésel en EE. UU. alcanza niveles récord y presiona los costes agrícolas', summary: 'Los precios récord del diésel están elevando los costes de explotación y transporte de agricultores estadounidenses, con posibles efectos sobre los precios de los alimentos.' },
+      en: { headline: 'Record U.S. diesel prices squeeze farmers and could lift food costs', summary: 'Record diesel prices are raising operating and transport costs for U.S. farmers, with possible knock-on effects on food prices.' },
+      fr: { headline: 'Le diesel américain atteint des niveaux records et pèse sur les coûts agricoles', summary: 'Les prix records du diesel augmentent les coûts d’exploitation et de transport des agriculteurs américains, avec des effets possibles sur les prix alimentaires.' },
+      it: { headline: 'Il diesel negli USA raggiunge livelli record e pesa sui costi agricoli', summary: 'I prezzi record del diesel aumentano i costi operativi e di trasporto degli agricoltori statunitensi, con possibili effetti sui prezzi alimentari.' }
+    },
+    {
+      id: 'n9', source: 'Farm Progress', url: 'https://www.farmprogress.com/markets-and-quotes/morning-market-review',
+      date: '2026-09-29', region: 'us',
+      es: { headline: 'La cosecha de maíz de EE. UU. llega al 18% mientras las lluvias ralentizan el avance', summary: 'El avance de la cosecha de maíz alcanza el 18%, mientras las lluvias en el Medio Oeste dificultan el trabajo de campo y condicionan el ritmo de recolección.' },
+      en: { headline: 'U.S. corn harvest reaches 18% as rain slows fieldwork', summary: 'The U.S. corn harvest is 18% complete as rain across the Midwest slows fieldwork and limits near-term harvest progress.' },
+      fr: { headline: 'La récolte de maïs américaine atteint 18 % alors que les pluies ralentissent les travaux', summary: 'La récolte américaine de maïs atteint 18 %, tandis que les pluies dans le Midwest ralentissent les travaux et limitent les progrès à court terme.' },
+      it: { headline: 'Il raccolto di mais negli USA raggiunge il 18% mentre le piogge rallentano i lavori', summary: 'La raccolta statunitense di mais è completata al 18%, mentre le piogge nel Midwest rallentano i lavori nei campi.' }
+    },
+    {
+      id: 'n10', source: 'Reuters', url: 'https://www.reuters.com/world/americas/weather-not-price-drive-brazil-mills-sugar-production-2026-09-29/',
+      date: '2026-09-29', region: 'global',
+      es: { headline: 'El clima condiciona la producción de azúcar de Brasil pese a la subida de precios', summary: 'Las lluvias inusualmente intensas en el centro-sur de Brasil están retrasando la cosecha y limitando el contenido de azúcar de la caña, condicionando la mezcla entre azúcar y etanol.' },
+      en: { headline: 'Weather, not price, drives Brazil mills on sugar production', summary: 'Unusually wet weather in Brazil’s center-south is delaying harvest and limiting cane sugar content, affecting the balance between sugar and ethanol.' },
+      fr: { headline: 'Le climat, plutôt que les prix, guide la production de sucre au Brésil', summary: 'Des pluies inhabituellement fortes dans le centre-sud du Brésil retardent la récolte et limitent la teneur en sucre de la canne, influençant le choix entre sucre et éthanol.' },
+      it: { headline: 'Il clima, più dei prezzi, guida la produzione di zucchero in Brasile', summary: 'Le piogge insolitamente intense nel centro-sud del Brasile stanno ritardando la raccolta e limitando il contenuto zuccherino della canna, influenzando il mix tra zucchero ed etanolo.' }
+    },
+    {
+      id: 'n11', source: 'Reuters', url: 'https://www.reuters.com/world/europe/lukashenko-proposes-us-join-belarus-gazprom-fertilizer-project-belta-reports-2026-09-29/',
+      date: '2026-09-29', region: 'global',
+      es: { headline: 'Belarús plantea un proyecto de fertilizantes nitrogenados con Gazprom y ofrece cooperación a EE. UU.', summary: 'Belarús anunció un proyecto de planta de fertilizantes nitrogenados con Gazprom y planteó incorporar cooperación estadounidense, según Reuters citando a la agencia estatal Belta.' },
+      en: { headline: 'Belarus proposes a nitrogen fertilizer project with Gazprom and offers U.S. cooperation', summary: 'Belarus announced a proposed nitrogen fertilizer plant with Gazprom and suggested U.S. cooperation, Reuters reported citing state news agency Belta.' },
+      fr: { headline: 'La Biélorussie propose un projet d’engrais azotés avec Gazprom et offre une coopération aux États-Unis', summary: 'La Biélorussie a annoncé un projet d’usine d’engrais azotés avec Gazprom et proposé une coopération américaine, selon Reuters citant l’agence d’État Belta.' },
+      it: { headline: 'La Bielorussia propone un progetto di fertilizzanti azotati con Gazprom e offre cooperazione agli USA', summary: 'La Bielorussia ha annunciato un progetto di impianto di fertilizzanti azotati con Gazprom e proposto una cooperazione statunitense, secondo Reuters citando l’agenzia statale Belta.' }
+    },
+    {
+      id: 'n12', source: 'Reuters', url: 'https://www.reuters.com/world/china/china-says-cut-tariffs-us-farm-goods-soybeans-excluded-2026-09-28/',
+      date: '2026-09-28', region: 'global',
+      es: { headline: 'China recorta aranceles a productos agrícolas de EE. UU., pero excluye la soja', summary: 'China anunció reducciones arancelarias para varios productos agrícolas estadounidenses, entre ellos maíz, trigo, carne y lácteos, mientras la soja quedó excluida.' },
+      en: { headline: 'China cuts tariffs on U.S. farm goods but excludes soybeans', summary: 'China announced tariff reductions for several U.S. agricultural products, including corn, wheat, meat and dairy, while soybeans were excluded.' },
+      fr: { headline: 'La Chine réduit les droits sur les produits agricoles américains mais exclut le soja', summary: 'La Chine a annoncé des réductions de droits sur plusieurs produits agricoles américains, notamment le maïs, le blé, la viande et les produits laitiers, tandis que le soja est exclu.' },
+      it: { headline: 'La Cina riduce i dazi sui prodotti agricoli USA ma esclude la soia', summary: 'La Cina ha annunciato riduzioni dei dazi su diversi prodotti agricoli statunitensi, tra cui mais, grano, carne e lattiero-caseari, mentre la soia è esclusa.' }
+    },
+    {
+      id: 'n13', source: 'European Commission', url: 'https://agriculture.ec.europa.eu/media/news/eu-agri-food-trade-remains-solid-2026-2026-09-28_en',
+      date: '2026-09-28', region: 'eu',
+      es: { headline: 'El comercio agroalimentario de la UE sigue siendo sólido en 2026', summary: 'La Comisión Europea informó de que las importaciones agroalimentarias acumuladas de la UE alcanzaron 108.600 millones de euros hasta julio, un 4% menos interanual, con menores importaciones de cereales y lácteos.' },
+      en: { headline: 'EU agri-food trade remains solid in 2026', summary: 'The European Commission reported cumulative EU agri-food imports of €108.6 billion through July, down 4% year on year, with lower cereal and dairy import values.' },
+      fr: { headline: 'Le commerce agroalimentaire de l’UE reste solide en 2026', summary: 'La Commission européenne indique que les importations agroalimentaires cumulées de l’UE ont atteint 108,6 milliards d’euros jusqu’en juillet, en baisse de 4 % sur un an, avec des valeurs d’importation plus faibles pour les céréales et les produits laitiers.' },
+      it: { headline: 'Il commercio agroalimentare dell’UE resta solido nel 2026', summary: 'La Commissione europea riferisce che le importazioni agroalimentari cumulate dell’UE hanno raggiunto 108,6 miliardi di euro fino a luglio, in calo del 4% annuo, con valori inferiori per cereali e lattiero-caseari.' }
+    },
+    {
       id: 'n7', source: 'DTN Progressive Farmer', url: 'https://www.dtnpf.com/agriculture/web/ag/news/article/2026/09/21/usda-crop-progress-corn-13-harvested',
       date: '2026-09-21', region: 'us',
       es: { headline: 'Lluvias récord de septiembre frenan la cosecha de maíz en el Corn Belt de EE. UU.', summary: 'Datos del USDA muestran que solo el 13% del maíz estaba cosechado a fecha del 20 de septiembre, muy por detrás de la media, tras un mes marcado por precipitaciones históricas en el Medio Oeste.' },
@@ -79,7 +127,7 @@
     }
   ];
 
-  var UPDATED_ISO = '2026-09-27';
+  var UPDATED_ISO = '2026-09-29';
 
   var PRODUCT_LABELS = {
     es: { trigo: 'Trigo', maiz: 'Maíz', arroz: 'Arroz', cebada: 'Cebada', soja: 'Soja', fertilizantes: 'Fertilizantes', diesel: 'Diésel', energia: 'Energía', costes: 'Costes agrícolas', pac: 'PAC' },
