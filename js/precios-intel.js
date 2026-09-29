@@ -97,6 +97,7 @@
     RAW_SERIES = {};
     (observations || []).forEach(function(o) {
       if (o.status && o.status !== 'verified') return;
+      if (o.comparability === 'not_comparable') return;
       var key = relationshipSeriesKey(o);
       if (!RAW_SERIES[key]) RAW_SERIES[key] = [];
       RAW_SERIES[key].push({
