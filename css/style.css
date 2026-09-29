@@ -967,3 +967,11 @@ input,select,button{font-size:16px}
   .di-intel-section{border-radius:10px}
   .di-intel-disclaimer{font-size:9px;line-height:1.4}
 }
+
+/* Mobile navigation polish */
+.di-nav-links a{font-size:14px;font-weight:500;color:var(--nav-inactive);text-decoration:none;white-space:nowrap}
+.di-nav-links a.active{font-weight:700;color:var(--accent)}
+.di-nav-mobile-panel a{display:flex;align-items:center;padding:12px 4px;min-height:44px;font-size:16px;font-weight:500;color:var(--nav-inactive);border-bottom:1px solid var(--border);text-decoration:none}
+.di-nav-mobile-panel a.active{font-weight:700;color:var(--accent)}
+@media(max-width:700px){.di-header{backdrop-filter:saturate(1.1) blur(8px)}.di-nav-side{flex-shrink:0}.di-lang-select{min-height:42px;max-width:118px}.di-nav-toggle{min-width:44px!important;min-height:44px!important}.di-nav-mobile-panel{max-height:calc(100vh - 60px);overflow-y:auto;-webkit-overflow-scrolling:touch}}
+@media(max-width:350px){.di-lang-select{max-width:92px;font-size:11px}.di-nav-logo img{max-width:116px}}
