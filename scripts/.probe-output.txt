@@ -1,0 +1,5 @@
+URL: https://api.tech.ec.europa.eu/agrifood/api/milk/prices?memberStateCodes=ES
+Fecha: 2026-09-29T15:20:30.169Z
+STATUS: 404 Not Found
+BODY (primeros 6000 caracteres):
+{"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
