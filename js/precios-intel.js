@@ -281,12 +281,13 @@
       var meta = TREEMAP_WEIGHTS[key];
       var region = regionFor(e);
       var seed = seedFor(e);
-      return {
+      var x = rangePctChange(e, 90), y = rangePctChange(e, 7);
+      return x === null || y === null ? null : {
         key: key, name: productName(e.nameKey), group: meta ? meta.group : 'otros',
-        x: rangePctChange(e, 90),
-        y: rangePctChange(e, 7)
+        x: x, y: y
       };
     });
+    raw = raw.filter(function(p){ return !!p; });
     var maxAbsX = Math.max.apply(null, raw.map(function (p) { return Math.abs(p.x); })) || 0;
     var maxAbsY = Math.max.apply(null, raw.map(function (p) { return Math.abs(p.y); })) || 0;
     var ticksX = niceTicks(maxAbsX, 3), ticksY = niceTicks(maxAbsY, 3);
@@ -427,9 +428,9 @@
       var region = regionFor(e);
       var rows = realObservationsFor(e);
       var vals = rows.map(function(o){return Number(o.value)});
-      returnsByKey[key] = dailyReturns(vals, rows.length);
+      if (rows.length >= 2) returnsByKey[key] = dailyReturns(vals, rows.length);
     });
-    var keys = Core.PRODUCTS.map(function (e) { return e.catId + '-' + e.nameKey; });
+    var keys = Core.PRODUCTS.filter(function(e){ return realObservationsFor(e).length >= 2; }).map(function (e) { return e.catId + '-' + e.nameKey; });
     var corrCache = {};
     function getCorr(a, b) {
       if (a === b) return 1;
@@ -511,6 +512,7 @@
     var region = regionFor(entry);
     var full = D.genLongHistory(region, seedFor(entry));
     var n = full.length;
+    if (n < 3) return { ready:false };
     var monthSum = [0,0,0,0,0,0,0,0,0,0,0,0], monthCount = [0,0,0,0,0,0,0,0,0,0,0,0];
     var overallSum = 0;
     for (var i = 0; i < n; i++) {
@@ -561,6 +563,7 @@
     var p = P();
     if (!entryByDashKey(seasonProductKey)) seasonProductKey = 'cereales-trigo';
     var s = buildSeasonality(seasonProductKey);
+    if (!s.ready) return '<div class="di-intel-section" id="di-intel-season"><div class="di-intel-head"><h2>' + esc(t.seasonTitle) + '</h2><p>Histórico real insuficiente para calcular estacionalidad. Esta sección no utiliza series sintéticas.</p></div></div>';
     var options = Core.PRODUCTS.map(function (e) {
       var k = e.catId + '-' + e.nameKey;
       return '<option value="' + k + '"' + (k === seasonProductKey ? ' selected' : '') + '>' + esc(productName(e.nameKey)) + '</option>';
@@ -939,6 +942,11 @@
   function render() {
     var root = document.getElementById('pr-intel');
     if (!root) return;
+    if (!REAL_HISTORY_READY) {
+      root.innerHTML = '<div class="di-intel-section"><div class="di-intel-head"><h2>Inteligencia basada en histórico real</h2><p>Cargando observaciones normalizadas. Las series sintéticas no se utilizan para estos cálculos.</p></div></div>';
+      loadRealHistory(function(){ render(); });
+      return;
+    }
     var corrVolData = buildCorrAndVol();
     root.innerHTML =
       renderMarketMapHtml() +
