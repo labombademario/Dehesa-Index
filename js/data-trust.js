@@ -71,7 +71,7 @@
     }
 
     var typeDef=(D.QUOTE_TYPES[lang]||D.QUOTE_TYPES.es)[observation.quoteType];
-    var statusLabel=observation.status==='verified'?'Verified':t.sample;
+    var statusLabel=observation.status==='verified'?(lang==='es'?'Real':lang==='fr'?'Réel':lang==='it'?'Reale':'Real'):t.sample;
     var frequencyLabels={
       monthly:{es:'Mensual',en:'Monthly',fr:'Mensuelle',it:'Mensile'},
       weekly:{es:'Semanal',en:'Weekly',fr:'Hebdomadaire',it:'Settimanale'},
