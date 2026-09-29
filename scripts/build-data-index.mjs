@@ -40,6 +40,8 @@ function periodToDate(period, year) {
     sep:9,september:9,oct:10,october:10,nov:11,november:11,dec:12,december:12
   };
   const numeric = p.match(/(?:^|\D)(\d{1,2})(?:$|\D)/);
+  const quarter = p.match(/^q([1-4])$/i);
+  if (quarter) return y + '-' + String(Number(quarter[1]) * 3).padStart(2, '0') + '-01';
   const month = numeric ? Number(numeric[1]) : monthNames[p];
   return month >= 1 && month <= 12 ? y + '-' + String(month).padStart(2, '0') + '-01' : y + '-01-01';
 }
