@@ -258,7 +258,9 @@
             dateHtml +
           '</div>' +
           '<div class="di-cal-name">' + esc(tr.name) + '</div>' +
+          '<div class="di-cal-tags"><span class="di-cal-tag">' + esc(ev.type === 'harvest' ? t.typeHarvest : t.typePublication) + '</span>' + (ev.crops || []).slice(0,4).map(function(c){ return '<span class="di-cal-tag crop">' + esc(c) + '</span>'; }).join('') + '<span class="di-cal-tag impact">' + esc((t.impactLabels || {})[ev.impact] || ev.impact) + '</span></div>' +
           '<p class="di-cal-desc">' + esc(tr.desc) + '</p>' +
+          '<div class="di-cal-impact"><strong>' + esc(t.relevance) + '</strong> ' + esc((t.impactLabels || {})[ev.impact] || ev.impact) + '</div>' +
           lastHtml + noDateHtml +
           '<a class="di-cal-source-link" href="' + esc(ev.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(t.sourceLinkLabel) + ' →</a>' +
         '</div>';
