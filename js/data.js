@@ -910,6 +910,11 @@
       methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel.',
       comparability: 'directional', observationDate: null, publicationDate: null
     },
+    'cereales-arroz-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/cwt.',
+      comparability: 'directional', observationDate: null, publicationDate: null
+    },
     'cereales-maiz-eu': {
       sourceId: 'euronext', frequency: 'daily',
       methodology: 'Euronext/MATIF futures reference; not the same measurement basis as USDA NASS.',
