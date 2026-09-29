@@ -203,6 +203,7 @@ async function main() {
     publicationDate: null,
     status: 'verified',
     verifiedAt: verifiedAt,
+    comparability: 'directional',
     value: price,
     currency: 'USD',
     unit: key === 'arroz' ? 'cwt' : 'bushel',
