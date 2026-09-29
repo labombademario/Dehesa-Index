@@ -110,5 +110,27 @@
       '</div></details>';
   }
 
-  global.DehesaDataTrust={render:render,frequencyFor:frequencyFor,comparability:comparability};
+  function renderHealth(){
+    var h=D.DATA_TRUST_HEALTH||{observations:0,warnings:[],errors:[]},lang=S.getLang?S.getLang():'es';
+    var labels={
+      es:{title:'Salud de los datos',obs:'observaciones piloto',pending:'fechas pendientes',status:'Estado',ready:'Esquema válido',review:'Revisión requerida',sample:'muestras',verified:'verificadas'},
+      en:{title:'Data health',obs:'pilot observations',pending:'pending dates',status:'Status',ready:'Schema valid',review:'Review required',sample:'samples',verified:'verified'},
+      fr:{title:'Santé des données',obs:'observations pilotes',pending:'dates en attente',status:'Statut',ready:'Schéma valide',review:'Révision requise',sample:'échantillons',verified:'vérifiées'},
+      it:{title:'Salute dei dati',obs:'osservazioni pilota',pending:'date in attesa',status:'Stato',ready:'Schema valido',review:'Revisione richiesta',sample:'campioni',verified:'verificate'}
+    };
+    var t=labels[lang]||labels.es,ids=Object.keys(D.DATA_TRUST||{}),verified=0,samples=0;
+    for(var i=0;i<ids.length;i++){if(D.DATA_TRUST[ids[i]].status==='verified')verified++;else samples++;}
+    var status=h.errors&&h.errors.length?t.review:t.ready;
+    return '<section class="di-data-health" aria-label="'+esc(t.title)+'">'+
+      '<div class="di-data-health-head"><div><span class="di-data-health-kicker">'+esc(t.title)+'</span><strong>'+esc(status)+'</strong></div><span class="di-data-health-dot '+(h.errors&&h.errors.length?'error':'ok')+'"></span></div>'+
+      '<div class="di-data-health-stats">'+
+        '<div><b>'+esc(h.observations)+'</b><span>'+esc(t.obs)+'</span></div>'+
+        '<div><b>'+esc(samples)+'</b><span>'+esc(t.sample)+'</span></div>'+
+        '<div><b>'+esc(verified)+'</b><span>'+esc(t.verified)+'</span></div>'+
+        '<div><b>'+esc(h.pendingDates)+'</b><span>'+esc(t.pending)+'</span></div>'+
+      '</div>'+
+    '</section>';
+  }
+
+  global.DehesaDataTrust={render:render,frequencyFor:frequencyFor,comparability:comparability ,renderHealth:renderHealth};
 })(window);
