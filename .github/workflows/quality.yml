@@ -36,3 +36,5 @@ jobs:
           node --check scripts/build-data-index.mjs
           node --check scripts/build-csv.mjs
           node --check scripts/update-nass-us.mjs
+          node --check scripts/build-data-quality.mjs
+          node scripts/qa-site.mjs
