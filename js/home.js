@@ -8,7 +8,7 @@
   // instantánea que hay que actualizar a mano si cambian mucho los precios
   // de referencia -- no se recalcula sola.
   var MOVERS_DATA = [];
-  var HOME_DATA = { loaded: false, rows: [], catalog: null };
+  var HOME_DATA = { status: 'loading', rows: [], catalog: null };
   var PRODUCT_NAMES = { trigo: 'Trigo', maiz: 'Maíz', arroz: 'Arroz', leche: 'Leche', urea: 'Urea', diesel: 'Diésel' };
   function fmtMoverPrice(v) {
     var n = Number(v);
@@ -230,7 +230,7 @@
       { value: String(productCount || '—'), label: lang === 'es' ? 'productos con datos' : 'products with data' },
       { value: String(realCount || '—'), label: lang === 'es' ? 'observaciones reales' : 'real observations' },
       { value: String(sourceCount || '—'), label: lang === 'es' ? 'fuentes conectadas' : 'connected sources' },
-      { value: HOME_DATA.loaded ? 'LIVE' : '…', label: lang === 'es' ? 'estado de datos' : 'data status' }
+      { value: HOME_DATA.status === 'live' ? 'LIVE' : HOME_DATA.status === 'unavailable' ? 'OFFLINE' : '…', label: lang === 'es' ? 'estado de datos' : 'data status' }
     ];
     document.getElementById('home-stats').innerHTML = stats.map(function(s) {
       return '<div><div class="di-stat-value">' + esc(s.value) + '</div><div class="di-stat-label">' + esc(s.label) + '</div></div>';
@@ -281,7 +281,7 @@
       HOME_DATA.catalog = all[1];
       HOME_DATA.loaded = true;
       render();
-    }).catch(function(){ HOME_DATA.loaded = true; render(); });
+    }).catch(function(){ HOME_DATA.status = 'unavailable'; HOME_DATA.rows = []; HOME_DATA.catalog = null; render(); });
   }
 
   window.DehesaShared.init('home');
