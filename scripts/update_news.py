@@ -40,14 +40,14 @@ FEEDS=[
     ("S&P Global","global",google("site:spglobal.com agriculture food commodities grains fertilizer soybean sugar biofuels")),
     ("Argus Media","global",google("site:argusmedia.com agriculture fertilizer grains biofuels vegetable oils")),
     ("FoodNavigator","global",google("site:foodnavigator.com food commodity prices agriculture dairy sugar grains supply")),
-    ("Farmers Weekly","eu",google("site:fwi.co.uk agriculture farmers crops wheat barley fertilizer dairy trade")),
-    ("Farmers Guardian","eu",google("site:farmersguardian.com agriculture crops wheat barley fertilizer dairy livestock")),
+    ("Farmers Weekly","uk",google("site:fwi.co.uk agriculture farmers crops wheat barley fertilizer dairy trade")),
+    ("Farmers Guardian","uk",google("site:farmersguardian.com agriculture crops wheat barley fertilizer dairy livestock")),
     ("Agriland","eu",google("site:agriland.ie agriculture dairy grain fertilizer trade")),
     ("AGRA","eu",google("site:agra.fr agriculture CAP cereals dairy fertilizer trade")),
     ("Agroeuropa","eu",google("site:agroeuropa.es agroalimentario Unión Europea PAC cereales lácteos fertilizantes comercio")),
     ("ABC Rural","global",google("site:abc.net.au/news/rural agriculture grain wheat cattle dairy fertilizer")),
     ("Grain Central","global",google("site:graincentral.com wheat grains sorghum barley canola Australia agriculture")),
-    ("The Land","global",google("site:theland.com.au agriculture grain wheat cattle dairy fertilizer")),
+    ("The Land","global",google("site:theland.com.au agriculture grain wheat cattle dairy fertilizer")),\n\n    # United Kingdom agriculture / policy sources\n    ("DEFRA","uk",google("site:gov.uk/defra agriculture farming food trade fertilizer livestock crops")),\n    ("AHDB","uk",google("site:ahdb.org.uk agriculture wheat barley dairy livestock cereals market")),\n    ("NFU","uk",google("site:nfuonline.com farming agriculture food trade policy wheat dairy livestock")),
 
     # Institutional / official market and policy sources
     ("USDA","us",google("site:usda.gov/news agriculture corn wheat soybean dairy fertilizer livestock")),
@@ -77,7 +77,8 @@ TOPICS={
  "energia":["oil","diesel","gas","energy","fuel","crude"],"costes":["cost","input","fertilizer","diesel","fuel","inflation"],
  "politica":["government","policy","minister","commission","regulation","subsidy"]
 }
-REGIONS={"us":["united states","u.s.","corn belt","iowa","illinois","indiana","kansas"],
+REGIONS={"us":["united states","u.s.","u.s.a.","corn belt","iowa","illinois","indiana","kansas"],
+"uk":["united kingdom","u.k.","britain","british","england","scotland","wales","northern ireland","london","defra","ahdb","nfu"],
 "eu":["european union","europe","brussels","spain","france","germany","italy"]}
 
 def clean(s):
@@ -142,7 +143,10 @@ def classify(title,desc,source_region):
     products=[p for p,v in sorted(hits.items(),key=lambda x:x[1],reverse=True) if v]
     topics=[t for t,terms in TOPICS.items() if any(x.lower() in text for x in terms)]
     region=source_region
-    for r,terms in REGIONS.items():
+    # Source geography is the default; explicit country/region language can
+    # override it. UK is checked before the broader Europe bucket.
+    for r in ("us","uk","eu"):
+        terms=REGIONS[r]
         if any(x.lower() in text for x in terms): region=r; break
     relevance=min(100,35+12*len(products)+8*len(topics)+(10 if source_region in ("global","us","eu") else 0))
     return products[:4] or ["pac"],topics or ["oferta"],region,relevance
