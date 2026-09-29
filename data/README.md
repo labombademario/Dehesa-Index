@@ -21,7 +21,7 @@ Additional provenance is retained in the snapshot.
 
 ## Status
 
-The current pilot is limited to automated USDA NASS U.S. cereal observations. Other Data Trust v2 observations remain explicitly marked as sample/pending until their source-specific automation is implemented.
+The current pilot is limited to automated USDA NASS U.S. cereal observations. Other Data Trust v2 observations remain explicitly marked as pending verification until their source-specific automation is implemented.
 
 ## B2B direction
 
