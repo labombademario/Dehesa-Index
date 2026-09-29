@@ -1076,6 +1076,7 @@
       state.location = region;
       writeLS('dehesaIndexLocation', region);
     }
+    S.renderContextBar('precios');
     renderAll();
   }
 
