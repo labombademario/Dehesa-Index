@@ -61,6 +61,8 @@
   function seedFor(entry) { return core().seedKeyFor(entry, core().defaultRegionFor(entry)); }
   var REAL_HISTORY = {};
   var REAL_HISTORY_READY = false;
+  var INTEL20 = null;
+  var INTEL20_READY = false;
   function realObservationsFor(entry) {
     var key = entry.catId + '-' + entry.nameKey;
     return REAL_HISTORY[key] || [];
@@ -90,8 +92,10 @@
       });
       Object.keys(REAL_HISTORY).forEach(function(k){ REAL_HISTORY[k].sort(function(a,b){return String(a.observationDate).localeCompare(String(b.observationDate));}); });
       REAL_HISTORY_READY = true;
-      done();
-    }).catch(function(){ REAL_HISTORY_READY = true; done(); });
+      fetch('data/intelligence.json').then(function(r){ if(!r.ok) throw Error('intelligence'); return r.json(); }).then(function(d){
+        INTEL20=d; INTEL20_READY=true; done();
+      }).catch(function(){ INTEL20={series:[]}; INTEL20_READY=true; done(); });
+    }).catch(function(){ REAL_HISTORY_READY = true; INTEL20={series:[]}; INTEL20_READY=true; done(); });
   }
 
   // ---------------------------------------------------------------------
@@ -856,6 +860,31 @@
     }
   }
 
+  function renderIntelligence20Html() {
+    var p=P();
+    var rows=(INTEL20&&INTEL20.series)||[];
+    if(!rows.length) return '<section class="di-intel-section di-intel-engine20"><div class="di-intel-head"><span class="di-intel-kicker">INTELLIGENCE ENGINE 2.0</span><h2>Señales reales</h2><p class="di-intel-muted">Pendiente: el motor no tiene todavía una serie con cobertura suficiente.</p></div></section>';
+    var labels={
+      eurostat_cereals_output_index:'Cereales EU · índice de producción',
+      eurostat_milk_output_index:'Leche EU · índice de producción',
+      eurostat_fertiliser_input_index:'Fertilizantes EU · índice de compra',
+      eurostat_energy_input_index:'Energía EU · índice de compra'
+    };
+    var cards=rows.filter(function(r){return /^eurostat_/.test(r.product);}).map(function(r){
+      var ch=r.periodChangePct;
+      var yoy=r.yoyPct;
+      var chText=ch===null?'—':((ch>=0?'+':'')+ch.toFixed(1)+'%');
+      var yoyText=yoy===null?'Pendiente':((yoy>=0?'+':'')+yoy.toFixed(1)+'%');
+      var vol=r.volatility===null?'Pendiente':(r.volatility*100).toFixed(1)+'%';
+      var state=r.points>=5?'REAL':'PENDIENTE';
+      return '<article class="di-intel-engine-card"><div class="di-intel-engine-top"><span>'+esc(labels[r.product]||r.product)+'</span><b class="'+(state==='REAL'?'real':'pending')+'">'+state+'</b></div>'+
+        '<div class="di-intel-engine-value">'+esc(String(r.latest))+' <small>2020=100</small></div>'+
+        '<div class="di-intel-engine-metrics"><div><small>Último periodo</small><strong>'+esc(chText)+'</strong></div><div><small>YoY</small><strong>'+esc(yoyText)+'</strong></div><div><small>Volatilidad</small><strong>'+esc(vol)+'</strong></div></div>'+
+        '<div class="di-intel-engine-foot">'+esc(r.observationDate)+' · '+r.points+' observaciones · Eurostat</div></article>';
+    }).join('');
+    return '<section class="di-intel-section di-intel-engine20"><div class="di-intel-head"><span class="di-intel-kicker">INTELLIGENCE ENGINE 2.0</span><h2>Señales calculadas sobre datos reales</h2><p class="di-intel-muted">Momentum, YoY y volatilidad solo aparecen cuando la serie supera los umbrales de cobertura. Sin series sintéticas ni conversiones entre metodologías incompatibles.</p></div><div class="di-intel-engine-grid">'+cards+'</div></section>';
+  }
+
   // ---------------------------------------------------------------------
   // Orquestación
   // ---------------------------------------------------------------------
@@ -879,6 +908,7 @@
     }
     var corrVolData = buildCorrAndVol();
     root.innerHTML =
+      renderIntelligence20Html() +
       renderMarketMapHtml() +
       renderMomentumHtml() +
       '<div class="di-intel-grid-2">' + renderCorrelationHtml(corrVolData) + renderVolatilityHtml(corrVolData) + '</div>' +
