@@ -176,9 +176,10 @@
     Core.PRODUCTS.forEach(function (e) {
       var key = e.catId + '-' + e.nameKey;
       if (!TREEMAP_WEIGHTS[key]) return;
-      var r = regionFor(e);
-      regionByKey[key] = r;
-      if (Math.abs(r.changePct) > maxAbs) maxAbs = Math.abs(r.changePct);
+      var changePct = rangePctChange(e, 30);
+      if (changePct === null) return;
+      regionByKey[key] = { changePct: changePct };
+      if (Math.abs(changePct) > maxAbs) maxAbs = Math.abs(changePct);
     });
     var byGroup = {};
     Core.PRODUCTS.forEach(function (e) {
@@ -187,7 +188,8 @@
       if (!meta) return;
       var disp = Math.pow(meta.w, TREEMAP_EXPONENT);
       if (!byGroup[meta.group]) byGroup[meta.group] = [];
-      byGroup[meta.group].push({ key: key, entry: e, weight: disp });
+      if (!regionByKey[key]) return;
+      byGroup[meta.group].push({ key: key, entry: e, weight: 1 });
     });
     var groupItems = TREEMAP_GROUP_ORDER.filter(function (g) { return byGroup[g] && byGroup[g].length; }).map(function (g) {
       var total = byGroup[g].reduce(function (s, it) { return s + it.weight; }, 0);
