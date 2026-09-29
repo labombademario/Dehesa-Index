@@ -790,3 +790,24 @@ html[data-theme="dark"] .di-badge-green { background: #1E3328; color: #7FCF9B; b
 .di-cal-impact strong{color:var(--text);font-weight:800}
 @media(max-width:800px){.di-cal-filter-row{grid-template-columns:1fr 1fr}.di-cal-filter-label{display:none}}
 @media(max-width:520px){.di-cal-filter-row{grid-template-columns:1fr}}
+
+/* ---------- Dehesa Watch ---------- */
+.di-cal-watch{margin:18px 0 22px;padding:18px;border:1px solid var(--border-strong);border-radius:14px;background:var(--surface-alt)}
+.di-cal-watch-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:13px}
+.di-cal-watch-head h2{margin:3px 0 4px;font-size:20px}
+.di-cal-watch-head p{margin:0;color:var(--text-muted);font-size:11px;line-height:1.4}
+.di-cal-watch-count{min-width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--border-strong);font-weight:800;font-size:12px}
+.di-cal-watch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.di-cal-watch-card{padding:12px;border:1px solid var(--border);background:var(--surface);border-radius:10px}
+.di-cal-watch-card.priority-today{border-color:var(--accent)}
+.di-cal-watch-card.priority-high{border-color:var(--border-strong)}
+.di-cal-watch-top{display:flex;justify-content:space-between;gap:8px;font-size:8px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.05em}
+.di-cal-priority{font-weight:900;color:var(--accent)}
+.di-cal-watch-card h3{margin:8px 0 5px;font-size:13px}
+.di-cal-watch-card p{margin:0;color:var(--text-muted);font-size:10px;line-height:1.45}
+.di-cal-watch-crops{display:flex;flex-wrap:wrap;gap:5px;margin:9px 0}
+.di-cal-watch-crops a,.di-cal-watch-links a{font-size:8px;font-weight:800;text-transform:uppercase;text-decoration:none;color:var(--accent)}
+.di-cal-watch-crops a{padding:3px 6px;border:1px solid var(--border);border-radius:999px}
+.di-cal-watch-links{display:flex;flex-wrap:wrap;gap:8px;padding-top:8px;border-top:1px solid var(--border)}
+.di-cal-watch-empty{padding:12px;border:1px dashed var(--border);font-size:10px;color:var(--text-faint)}
+@media(max-width:800px){.di-cal-watch-grid{grid-template-columns:1fr}}
