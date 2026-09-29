@@ -257,6 +257,22 @@
         (state.crop === 'all' || (ev.crops || []).indexOf(state.crop) >= 0) &&
         (state.impact === 'all' || ev.impact === state.impact);
     });
+    var watchEvents = filteredEvents.filter(function(ev){ var d=isoDaysFromToday(ev.nextDate); return ev.hasDate && d !== null && d <= 7 && d >= -1; }).sort(function(a,b){ return isoDaysFromToday(a.nextDate) - isoDaysFromToday(b.nextDate); });
+    var watchRoot = document.getElementById('cal-watch');
+    if (watchRoot) {
+      var watchTitle = lang === 'es' ? 'Qué vigilar esta semana' : lang === 'fr' ? 'À surveiller cette semaine' : lang === 'it' ? 'Cosa monitorare questa settimana' : 'What to watch this week';
+      var watchSub = lang === 'es' ? 'Publicaciones y ventanas con impacto potencial en los mercados enlazados.' : lang === 'fr' ? 'Publications et fenêtres susceptibles d’affecter les marchés liés.' : lang === 'it' ? 'Pubblicazioni e finestre con potenziale impatto sui mercati collegati.' : 'Publications and windows with potential impact on linked markets.';
+      var priorityLabels = {today:{es:'HOY',en:'TODAY',fr:'AUJOURD’HUI',it:'OGGI'},high:{es:'PRIORIDAD',en:'PRIORITY',fr:'PRIORITÉ',it:'PRIORITÀ'},watch:{es:'VIGILAR',en:'WATCH',fr:'SURVEILLER',it:'MONITORARE'}};
+      watchRoot.innerHTML = '<section class="di-cal-watch"><div class="di-cal-watch-head"><div><span class="di-section-kicker">DEHESA WATCH</span><h2>' + esc(watchTitle) + '</h2><p>' + esc(watchSub) + '</p></div><span class="di-cal-watch-count">' + watchEvents.length + '</span></div>' +
+        (watchEvents.length ? '<div class="di-cal-watch-grid">' + watchEvents.map(function(ev){
+          var pr=priorityFor(ev), tr=ev[lang]||ev.es;
+          var map={trigo:'trigo',maiz:'maiz',leche:'leche',fertilizantes:'urea',diesel:'diesel',arroz:'arroz'};
+          var pLinks=(ev.crops||[]).slice(0,4).map(function(p){return '<a href="' + (map[p] ? 'precios/'+map[p]+'/' : 'precios.html') + '">' + esc(p) + '</a>';}).join('');
+          var newsLinks=(ev.crops||[]).slice(0,2).map(function(p){return '<a href="noticias.html?product=' + encodeURIComponent(p) + '&region=' + ev.market + '">News Intelligence</a>';}).join('');
+          return '<article class="di-cal-watch-card priority-' + pr + '"><div class="di-cal-watch-top"><span class="di-cal-priority">' + esc(priorityLabels[pr][lang]) + '</span><span>' + esc(fmtDate(ev.nextDate,lang)) + '</span></div><h3>' + esc(tr.name) + '</h3><p>' + esc(tr.desc) + '</p><div class="di-cal-watch-crops">' + pLinks + '</div><div class="di-cal-watch-links">' + newsLinks + '</div></article>';
+        }).join('') + '</div>' : '<div class="di-cal-watch-empty">' + esc(lang==='es'?'No hay publicaciones fechadas dentro de los próximos 7 días con los filtros actuales.':'No dated publications fall within the next 7 days under the current filters.') + '</div>') + '</section>';
+    }
+
     var sortedEvents = filteredEvents.slice().sort(function (a, b) {
       if (a.hasDate && b.hasDate) return a.nextDate < b.nextDate ? -1 : (a.nextDate > b.nextDate ? 1 : 0);
       if (a.hasDate && !b.hasDate) return -1;
