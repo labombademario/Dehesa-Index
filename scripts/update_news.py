@@ -83,7 +83,10 @@ def main():
             req=urllib.request.Request(url,headers={"User-Agent":UA})
             with urllib.request.urlopen(req,timeout=20) as r: items=parse(r.read())
             for x in items:
-                d=datetime.fromisoformat(x["date"]).date()
+                try:
+                    d=datetime.fromisoformat(x["date"]).date()
+                except Exception:
+                    continue
                 if d<cutoff: continue
                 products,topics,reg,score=classify(x["title"],x.get("desc",""),region)
                 rows.append({"id":"auto-"+hashlib.sha1((source+x["title"]+x["link"]).encode()).hexdigest()[:10],
