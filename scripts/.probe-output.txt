@@ -1,6 +1,279 @@
-URL: https://api.tech.ec.europa.eu/agrifood/api/dairy/rawmilk/prices?memberStateCodes=DE
-Fecha: 2026-09-29T15:27:31.948Z
-STATUS: 404 Not Found
-LONGITUD TOTAL: 128 caracteres
+URL: https://api.tech.ec.europa.eu/agrifood/api/pigmeat/prices?memberStateCodes=ES
+Fecha: 2026-09-29T23:48:06.215Z
+STATUS: 200 
+LONGITUD TOTAL: 1044052 caracteres
+FILAS: 5082
+CAMPOS: memberStateCode, memberStateName, beginDate, endDate, price, unit, weekNumber, pigClass
+  memberStateCode -> ["ES"]
+  memberStateName -> ["Spain"]
+  beginDate -> (1864 valores distintos, no se listan)
+  endDate -> (1864 valores distintos, no se listan)
+  price -> (4106 valores distintos, no se listan)
+  unit -> ["100 KG","P"]
+  weekNumber -> (54 valores distintos, no se listan)
+  pigClass -> ["E","R","S","Piglet"]
 BODY (primeros 6000 caracteres):
-{"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+[ {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "14/09/2026",
+  "endDate" : "20/09/2026",
+  "price" : "€172.73",
+  "unit" : "100 KG",
+  "weekNumber" : 38,
+  "pigClass" : "E"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "14/09/2026",
+  "endDate" : "20/09/2026",
+  "price" : "€180.01",
+  "unit" : "100 KG",
+  "weekNumber" : 38,
+  "pigClass" : "R"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "14/09/2026",
+  "endDate" : "20/09/2026",
+  "price" : "€178.56",
+  "unit" : "100 KG",
+  "weekNumber" : 38,
+  "pigClass" : "S"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "14/09/2026",
+  "endDate" : "20/09/2026",
+  "price" : "€38.07",
+  "unit" : "P",
+  "weekNumber" : 38,
+  "pigClass" : "Piglet"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "07/09/2026",
+  "endDate" : "13/09/2026",
+  "price" : "€170.34",
+  "unit" : "100 KG",
+  "weekNumber" : 37,
+  "pigClass" : "E"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "07/09/2026",
+  "endDate" : "13/09/2026",
+  "price" : "€38.95",
+  "unit" : "P",
+  "weekNumber" : 37,
+  "pigClass" : "Piglet"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "07/09/2026",
+  "endDate" : "13/09/2026",
+  "price" : "€179.41",
+  "unit" : "100 KG",
+  "weekNumber" : 37,
+  "pigClass" : "R"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "07/09/2026",
+  "endDate" : "13/09/2026",
+  "price" : "€177.64",
+  "unit" : "100 KG",
+  "weekNumber" : 37,
+  "pigClass" : "S"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "31/08/2026",
+  "endDate" : "06/09/2026",
+  "price" : "€172.12",
+  "unit" : "100 KG",
+  "weekNumber" : 36,
+  "pigClass" : "E"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "31/08/2026",
+  "endDate" : "06/09/2026",
+  "price" : "€178.08",
+  "unit" : "100 KG",
+  "weekNumber" : 36,
+  "pigClass" : "S"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "31/08/2026",
+  "endDate" : "06/09/2026",
+  "price" : "€38.81",
+  "unit" : "P",
+  "weekNumber" : 36,
+  "pigClass" : "Piglet"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "31/08/2026",
+  "endDate" : "06/09/2026",
+  "price" : "€182.65",
+  "unit" : "100 KG",
+  "weekNumber" : 36,
+  "pigClass" : "R"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "24/08/2026",
+  "endDate" : "30/08/2026",
+  "price" : "€176.41",
+  "unit" : "100 KG",
+  "weekNumber" : 35,
+  "pigClass" : "R"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "24/08/2026",
+  "endDate" : "30/08/2026",
+  "price" : "€175.96",
+  "unit" : "100 KG",
+  "weekNumber" : 35,
+  "pigClass" : "S"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "24/08/2026",
+  "endDate" : "30/08/2026",
+  "price" : "€38.81",
+  "unit" : "P",
+  "weekNumber" : 35,
+  "pigClass" : "Piglet"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "24/08/2026",
+  "endDate" : "30/08/2026",
+  "price" : "€170.11",
+  "unit" : "100 KG",
+  "weekNumber" : 35,
+  "pigClass" : "E"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "17/08/2026",
+  "endDate" : "23/08/2026",
+  "price" : "€172.57",
+  "unit" : "100 KG",
+  "weekNumber" : 34,
+  "pigClass" : "S"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "17/08/2026",
+  "endDate" : "23/08/2026",
+  "price" : "€175.80",
+  "unit" : "100 KG",
+  "weekNumber" : 34,
+  "pigClass" : "R"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "17/08/2026",
+  "endDate" : "23/08/2026",
+  "price" : "€166.99",
+  "unit" : "100 KG",
+  "weekNumber" : 34,
+  "pigClass" : "E"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "17/08/2026",
+  "endDate" : "23/08/2026",
+  "price" : "€37.14",
+  "unit" : "P",
+  "weekNumber" : 34,
+  "pigClass" : "Piglet"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "10/08/2026",
+  "endDate" : "16/08/2026",
+  "price" : "€172.63",
+  "unit" : "100 KG",
+  "weekNumber" : 33,
+  "pigClass" : "R"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "10/08/2026",
+  "endDate" : "16/08/2026",
+  "price" : "€33.73",
+  "unit" : "P",
+  "weekNumber" : 33,
+  "pigClass" : "Piglet"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "10/08/2026",
+  "endDate" : "16/08/2026",
+  "price" : "€169.10",
+  "unit" : "100 KG",
+  "weekNumber" : 33,
+  "pigClass" : "S"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "10/08/2026",
+  "endDate" : "16/08/2026",
+  "price" : "€164.24",
+  "unit" : "100 KG",
+  "weekNumber" : 33,
+  "pigClass" : "E"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "03/08/2026",
+  "endDate" : "09/08/2026",
+  "price" : "€166.33",
+  "unit" : "100 KG",
+  "weekNumber" : 32,
+  "pigClass" : "S"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "03/08/2026",
+  "endDate" : "09/08/2026",
+  "price" : "€163.33",
+  "unit" : "100 KG",
+  "weekNumber" : 32,
+  "pigClass" : "E"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "03/08/2026",
+  "endDate" : "09/08/2026",
+  "price" : "€172.47",
+  "unit" : "100 KG",
+  "weekNumber" : 32,
+  "pigClass" : "R"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "03/08/2026",
+  "endDate" : "09/08/2026",
+  "price" : "€33.11",
+  "unit" : "P",
+  "weekNumber" : 32,
+  "pigClass" : "Piglet"
+}, {
+  "memberStateCode" : "ES",
+  "memberStateName" : "Spain",
+  "beginDate" : "27/07/2026",
+  "endDate" : "02/08/2026",
+  "price" : "€172.48",
+  "unit" : "100 KG",
+  "weekNumber" : 31,
+  "pigClass" : "R"
+}, {
+  "memberStateCode" : "ES",
+ 
