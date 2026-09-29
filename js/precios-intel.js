@@ -1003,7 +1003,7 @@
 
   function renderRelationshipsHtml() {
     var t=ui();
-    var rel=RELATIONSHIP_RESULTS.length ? RELATIONSHIP_RESULTS : buildRelationshipEngine();
+    var rel=buildRelationshipEngine();
     var ready=rel.filter(function(r){return r.status==='ready';});
     var pending=rel.filter(function(r){return r.status!=='ready';});
     if(!ready.length){
