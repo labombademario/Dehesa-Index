@@ -938,7 +938,8 @@
     'fertilizantes-urea-eu': {
       sourceId: 'world_bank', frequency: 'monthly',
       methodology: 'World Bank Urea, E. Europe international commodity reference; USD/metric ton.',
-      comparability: 'not_comparable', observationDate: null, publicationDate: null
+      comparability: 'not_comparable', observationDate: '2026-08-01', publicationDate: '2026-09-02',
+      status: 'verified', verifiedAt: '2026-09-29T17:47:20Z'
     },
     'energia-diesel-us': {
       sourceId: 'eia', frequency: 'weekly',
