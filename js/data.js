@@ -875,8 +875,152 @@
     ['cereales-trigo', 'fertilizantes-urea']
   ];
 
+
+  // --- Data Trust v2: esquema normalizado de observaciones -----------------
+  // RAW sigue siendo la fuente de compatibilidad con la UI existente. Este
+  // registro convierte cada cotización piloto en una observación trazable:
+  // identidad + valor + unidad + mercado + fuente + frecuencia + fechas +
+  // metodología + comparabilidad + estado de verificación.
+  var DATA_TRUST_SCHEMA_VERSION = '2.0';
+
+  var DATA_TRUST_SOURCES = {
+    usda_nass: { name: 'USDA NASS', url: SRC_URL.nass, authority: 'official' },
+    usda_ams_dairy: { name: 'USDA AMS (Class III)', url: SRC_URL.amsDairy, authority: 'official' },
+    european_commission: { name: 'Comisión Europea', url: SRC_URL.ecPrices, authority: 'official' },
+    dtn_fertilizer: { name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer, authority: 'commercial' },
+    world_bank: { name: 'Banco Mundial', url: SRC_URL.worldBank, authority: 'official' },
+    eia: { name: 'EIA', url: SRC_URL.eia, authority: 'official' },
+    eu_oil_bulletin: { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin, authority: 'official' }
+  };
+
+  var DATA_TRUST_PILOT = {
+    'cereales-trigo-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel.',
+      comparability: 'directional'
+    },
+    'cereales-trigo-eu': {
+      sourceId: 'european_commission', frequency: 'source-dependent',
+      methodology: 'Current Euronext/MATIF display is a futures reference; not the same measurement basis as USDA NASS.',
+      comparability: 'not_comparable'
+    },
+    'cereales-maiz-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel.',
+      comparability: 'directional'
+    },
+    'cereales-maiz-eu': {
+      sourceId: 'european_commission', frequency: 'source-dependent',
+      methodology: 'Current Euronext/MATIF display is a futures reference; not the same measurement basis as USDA NASS.',
+      comparability: 'not_comparable'
+    },
+    'lacteos-leche-us': {
+      sourceId: 'usda_ams_dairy', frequency: 'monthly',
+      methodology: 'USDA AMS Class III milk reference; USD/cwt.',
+      comparability: 'directional'
+    },
+    'lacteos-leche-eu': {
+      sourceId: 'european_commission', frequency: 'monthly',
+      methodology: 'European Commission milk price reference; EUR/100 kg.',
+      comparability: 'directional'
+    },
+    'fertilizantes-urea-us': {
+      sourceId: 'dtn_fertilizer', frequency: 'weekly',
+      methodology: 'DTN fertilizer market index reference; USD/short ton.',
+      comparability: 'directional'
+    },
+    'fertilizantes-urea-eu': {
+      sourceId: 'world_bank', frequency: 'monthly',
+      methodology: 'World Bank international commodity reference; EUR/ton shown by the site after currency/unit presentation.',
+      comparability: 'not_comparable'
+    },
+    'energia-diesel-us': {
+      sourceId: 'eia', frequency: 'weekly',
+      methodology: 'US national diesel fuel reference; USD/gallon.',
+      comparability: 'directional'
+    },
+    'energia-diesel-eu': {
+      sourceId: 'eu_oil_bulletin', frequency: 'weekly',
+      methodology: 'European Commission Weekly Oil Bulletin reference; EUR/litre.',
+      comparability: 'directional'
+    }
+  };
+
+  function buildTrustObservation(productId, region, raw, quote, meta) {
+    var source = DATA_TRUST_SOURCES[meta.sourceId] || {};
+    var unit = raw.metricUnitKey || raw.imperialUnitKey || null;
+    var kgPerUnit = raw.metricKgPerUnit || raw.imperialKgPerUnit || raw.kgPerUnit || null;
+    return {
+      schemaVersion: DATA_TRUST_SCHEMA_VERSION,
+      id: 'di_' + productId.replace(/[^a-z0-9]+/gi, '_') + '_' + region,
+      productId: productId,
+      region: region,
+      value: raw.price,
+      currency: raw.currency,
+      unit: unit,
+      kgPerUnit: kgPerUnit,
+      quoteType: quote && quote.type ? quote.type : null,
+      market: quote && quote.market ? quote.market : null,
+      sourceId: meta.sourceId,
+      source: source.name || null,
+      sourceUrl: source.url || null,
+      sourceAuthority: source.authority || 'unknown',
+      frequency: meta.frequency || 'unknown',
+      observationDate: null,
+      publicationDate: null,
+      methodology: meta.methodology || null,
+      comparability: meta.comparability || 'review',
+      status: 'sample',
+      verifiedAt: null,
+      validation: {
+        value: true,
+        source: !!source.url,
+        observationDate: false,
+        publicationDate: false,
+        frequency: meta.frequency !== 'unknown',
+        methodology: !!meta.methodology
+      }
+    };
+  }
+
+  function buildPilotTrustRegistry() {
+    var out = {};
+    for (var catIndex = 0; catIndex < RAW.length; catIndex++) {
+      var category = RAW[catIndex];
+      for (var productIndex = 0; productIndex < category.products.length; productIndex++) {
+        var product = category.products[productIndex];
+        var productId = category.id + '-' + product.nameKey;
+        ['us', 'eu', 'uk'].forEach(function (region) {
+          var raw = product[region];
+          if (!raw) return;
+          var key = productId + '-' + region;
+          var meta = DATA_TRUST_PILOT[key];
+          if (!meta) return;
+          var quote = product.quoteTypes && product.quoteTypes[region];
+          out[key] = buildTrustObservation(productId, region, raw, quote, meta);
+        });
+      }
+    }
+
+    var diesel = [
+      { region: 'us', raw: DIESEL_US_NATIONAL, quote: DIESEL_QUOTE_TYPES.us, key: 'energia-diesel-us' },
+      { region: 'eu', raw: DIESEL_EU_NATIONAL, quote: DIESEL_QUOTE_TYPES.eu, key: 'energia-diesel-eu' }
+    ];
+    for (var i = 0; i < diesel.length; i++) {
+      var d = diesel[i], meta = DATA_TRUST_PILOT[d.key];
+      out[d.key] = buildTrustObservation('energia-diesel', d.region, {
+        price: d.raw.price, currency: d.raw.currency, kgPerUnit: d.raw.kgPerUnit,
+        metricUnitKey: d.region === 'eu' ? 'litro' : 'gal'
+      }, d.quote, meta);
+    }
+    return out;
+  }
+
+  var DATA_TRUST = buildPilotTrustRegistry();
+
   global.DehesaData = {
     FX: FX, FX_DATE: FX_DATE, formatFxDate: formatFxDate, CCY_SYMBOL: CCY_SYMBOL, UNIT_LABELS: UNIT_LABELS, REGION: REGION,
+    DATA_TRUST_SCHEMA_VERSION: DATA_TRUST_SCHEMA_VERSION, DATA_TRUST: DATA_TRUST, DATA_TRUST_SOURCES: DATA_TRUST_SOURCES,
     ENERGY_REGIONS: ENERGY_REGIONS, COUNTRY_ER_KEY: COUNTRY_ER_KEY, COUNTRY_FLAG: COUNTRY_FLAG,
     QUOTE_TYPES: QUOTE_TYPES, NAMES: NAMES, CATS: CATS, FOOT: FOOT, RAW: RAW,
     INSURANCE: INSURANCE, WINE: WINE, WOOD: WOOD,
