@@ -28,7 +28,8 @@
         { text: 'CME Group y Euronext (futuros de materias primas)', url: URLS.cme },
         { text: 'DTN Fertilizer Index', url: URLS.dtn }
       ],
-      disclaimer: 'Los precios que se muestran hoy en el panel son datos de muestra con fines de diseño y producto. El siguiente paso del proyecto es conectar las fuentes en vivo indicadas arriba.'
+      disclaimer: 'Los precios que se muestran hoy en el panel son datos de muestra con fines de diseño y producto. El siguiente paso del proyecto es conectar las fuentes en vivo indicadas arriba.',
+      apiNotice: 'El precio de EE. UU. del trigo se actualiza cada mes de forma automática desde USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS.'
     },
     en: {
       title: 'Dehesa Index — Information',
@@ -46,7 +47,8 @@
         { text: 'CME Group and Euronext (commodity futures)', url: URLS.cme },
         { text: 'DTN Fertilizer Index', url: URLS.dtn }
       ],
-      disclaimer: 'The prices shown on the dashboard today are sample data for design and product purposes. The next step for the project is connecting the live sources listed above.'
+      disclaimer: 'The prices shown on the dashboard today are sample data for design and product purposes. The next step for the project is connecting the live sources listed above.',
+      apiNotice: "The U.S. wheat price is updated automatically every month from USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS."
     },
     fr: {
       title: 'Dehesa Index — Informations',
@@ -64,7 +66,8 @@
         { text: 'CME Group et Euronext (contrats à terme sur matières premières)', url: URLS.cme },
         { text: 'DTN Fertilizer Index', url: URLS.dtn }
       ],
-      disclaimer: 'Les prix actuellement affichés sur le tableau de bord sont des données fictives à des fins de conception et de produit. La prochaine étape du projet consiste à connecter les sources en direct mentionnées ci-dessus.'
+      disclaimer: 'Les prix actuellement affichés sur le tableau de bord sont des données fictives à des fins de conception et de produit. La prochaine étape du projet consiste à connecter les sources en direct mentionnées ci-dessus.',
+      apiNotice: "Le prix américain du blé est mis à jour automatiquement chaque mois depuis USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS."
     },
     it: {
       title: 'Dehesa Index — Informazioni',
@@ -82,7 +85,8 @@
         { text: 'CME Group ed Euronext (futures sulle materie prime)', url: URLS.cme },
         { text: 'DTN Fertilizer Index', url: URLS.dtn }
       ],
-      disclaimer: 'I prezzi mostrati oggi nel pannello sono dati campione a scopo di progettazione e di prodotto. Il prossimo passo del progetto è collegare le fonti in tempo reale indicate sopra.'
+      disclaimer: 'I prezzi mostrati oggi nel pannello sono dati campione a scopo di progettazione e di prodotto. Il prossimo passo del progetto è collegare le fonti in tempo reale indicate sopra.',
+      apiNotice: "Il prezzo statunitense del grano viene aggiornato automaticamente ogni mese da USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS."
     }
   };
 
@@ -104,6 +108,7 @@
       return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.text) + '</a></li>';
     }).join('');
     document.getElementById('inf-disclaimer').textContent = t.disclaimer;
+    document.getElementById('inf-api-notice').textContent = t.apiNotice;
   }
 
   window.DehesaShared.init('informacion');
