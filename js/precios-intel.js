@@ -1118,9 +1118,9 @@
   // News → Market Impact Panel
   // ---------------------------------------------------------------------
   function renderNewsImpactPanelHtml() {
-    var core=core(), idx=global.DehesaNewsIndex||{}, rels=relationshipSnapshot(), alerts=buildTransmissionAlerts();
-    var active=core.getActiveTab ? core.getActiveTab() : 'cereales';
-    var entries=(core.PRODUCTS||[]).filter(function(e){return e.catId===active;});
+    var Core=core(), idx=global.DehesaNewsIndex||{}, rels=relationshipSnapshot(), alerts=buildTransmissionAlerts();
+    var active=Core.getActiveTab ? Core.getActiveTab() : 'cereales';
+    var entries=(Core.PRODUCTS||[]).filter(function(e){return e.catId===active;});
     var keys={}; entries.forEach(function(e){keys[e.nameKey]=true;});
     var stories=[], seen={};
     Object.keys(idx).forEach(function(k){
@@ -1139,7 +1139,7 @@
     };
     var t=labels[lang()]||labels.es;
     var channelLabels={input_cost:'INPUT COST',trade:'TRADE',weather:'WEATHER',supply:'SUPPLY',energy:'ENERGY',policy:'POLICY',market_impact:'MARKET IMPACT'};
-    function productLabel(k){return core.productName ? core.productName(k) : k;}
+    function productLabel(k){return Core.productName ? Core.productName(k) : k;}
     function alertFor(relId){return alerts.some(function(a){return a.relationship&&a.relationship.id===relId;});}
     function relFor(link){return link.relation&&rels[link.relation]&&rels[link.relation].status==='ready'?rels[link.relation]:null;}
     function storyCard(n){
