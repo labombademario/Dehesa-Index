@@ -94,6 +94,7 @@ observation = {
     "region": "eu",
     "sourceId": "world_bank",
     "observationDate": obs_date,
+    "publicationDate": publication_date,
     "value": latest_value,
     "currency": "USD",
     "unit": "tonelada",
