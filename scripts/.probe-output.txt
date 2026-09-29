@@ -1,13 +1,6 @@
-URL: https://api.tech.ec.europa.eu/agrifood/api/dairy/prices?years=2026&months=9
-Fecha: 2026-09-29T15:23:57.922Z
-STATUS: 500 
-LONGITUD TOTAL: 325 caracteres
+URL: https://api.tech.ec.europa.eu/agrifood/api/dairy/prices?memberStateCodes=DE,FR,IE,NL,IT&years=2026
+Fecha: 2026-09-29T15:24:35.113Z
+STATUS: 500 Internal Server Error
+LONGITUD TOTAL: 194 caracteres
 BODY (primeros 6000 caracteres):
-{
-  "error" : "Internal Server Error",
-  "status" : "500",
-  "message" : "An internal error occurred on the server.",
-  "technicalErrorMessage" : "The API cannot provide results. Possibly it does not exist. Please contact us via AGRI-EXT-HELPDESK@ec.europa.eu",
-  "apiSubErrors" : [ ],
-  "timestamp" : "29/09/2026 17:23:58"
-}
+{"code":"303001","type":"Status report","message":"Runtime Error","description":"Currently , Address endpoint : [ Name : AgrifoodPublicData--vprod_APIproductionEndpoint ] [ State : SUSPENDED ]"}
