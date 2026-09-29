@@ -24,7 +24,22 @@
       "description": "Unusually wet conditions in Brazil's center-south are delaying harvest and limiting sugar production.",
       "url": "https://www.reuters.com/world/americas/weather-not-price-drive-brazil-mills-sugar-production-2026-09-29/",
       "relevance": 91,
-      "auto": true
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "azucar",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "azucar",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "weather"
     },
     {
       "id": "seed-n47",
@@ -50,7 +65,34 @@
       "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
       "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
       "relevance": 96,
-      "auto": true
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
     },
     {
       "id": "seed-n50",
@@ -74,7 +116,40 @@
       "description": "Belarus announced a proposed nitrogen fertilizer plant with Gazprom and suggested U.S. cooperation, Reuters reported citing Belta.",
       "url": "https://www.reuters.com/world/europe/lukashenko-proposes-us-join-belarus-gazprom-fertilizer-project-belta-reports-2026-09-29/",
       "relevance": 88,
-      "auto": true
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "fertilizantes",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
     },
     {
       "id": "seed-n52",
@@ -100,7 +175,34 @@
       "description": "China announced tariff reductions for several U.S. agricultural products while soybeans remained excluded.",
       "url": "https://www.reuters.com/world/china/china-says-cut-tariffs-us-farm-goods-soybeans-excluded-2026-09-28/",
       "relevance": 98,
-      "auto": true
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "leche",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "soja",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "trade"
     },
     {
       "id": "seed-n10",
@@ -126,7 +228,46 @@
       "description": "EU agri-food exports reached €138.7 billion in January-July 2026 and the cumulative trade surplus reached €30.1 billion.",
       "url": "https://agriculture.ec.europa.eu/media/news/eu-agri-food-trade-remains-solid-2026-2026-09-28_en",
       "relevance": 94,
-      "auto": true
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "leche",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "soja",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "leche",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "soja",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "trade"
     },
     {
       "id": "seed-n55",
@@ -150,7 +291,22 @@
       "description": "Late-summer rains delayed soybean harvest and tightened nearby supplies for processors.",
       "url": "https://www.reuters.com/business/retail-consumer/us-harvest-delays-send-soy-processors-scrambling-supplies-2026-09-25/",
       "relevance": 96,
-      "auto": true
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "soja",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "soja",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "weather"
     }
   ]
 }
