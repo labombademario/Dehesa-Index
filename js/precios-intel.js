@@ -62,7 +62,146 @@
   var REAL_HISTORY = {};
   var REAL_HISTORY_READY = false;
   var INTEL20 = null;
+
   var INTEL20_READY = false;
+
+  // ---------------------------------------------------------------------
+  // Agricultural Relationship Engine
+  // ---------------------------------------------------------------------
+  // Las relaciones se calculan sobre variaciones de las series verificadas,
+  // no sobre niveles, para reducir correlaciones espurias por tendencia.
+  // El lag está expresado en periodos de la frecuencia común. La "confianza"
+  // es una etiqueta de cobertura/fuerza/estabilidad estadística; no es una
+  // probabilidad y no representa una predicción.
+  var RAW_SERIES = {};
+  var RELATIONSHIP_DEFS = [
+    { id:'fertilizer-cereals', a:'eurostat_fertiliser_input_index', b:'eurostat_cereals_output_index', maxLag:4, window:20, minPairs:8,
+      label:{es:'Fertilizante → cereales',en:'Fertilizer → cereals',fr:'Engrais → céréales',it:'Fertilizzanti → cereali'} },
+    { id:'energy-cereals', a:'eurostat_energy_input_index', b:'eurostat_cereals_output_index', maxLag:4, window:20, minPairs:8,
+      label:{es:'Energía → cereales',en:'Energy → cereals',fr:'Énergie → céréales',it:'Energia → cereali'} },
+    { id:'fertilizer-milk', a:'eurostat_fertiliser_input_index', b:'eurostat_milk_output_index', maxLag:4, window:20, minPairs:8,
+      label:{es:'Fertilizante → leche',en:'Fertilizer → milk',fr:'Engrais → lait',it:'Fertilizzanti → latte'} },
+    { id:'energy-milk', a:'eurostat_energy_input_index', b:'eurostat_milk_output_index', maxLag:4, window:20, minPairs:8,
+      label:{es:'Energía → leche',en:'Energy → milk',fr:'Énergie → lait',it:'Energia → latte'} },
+    { id:'milk-feed', a:'eurostat_milk_output_index', b:'feed_input_index', maxLag:4, window:20, minPairs:8,
+      label:{es:'Leche → alimentación',en:'Milk → feed',fr:'Lait → alimentation',it:'Latte → mangimi'} },
+    { id:'energy-feed', a:'eurostat_energy_input_index', b:'feed_input_index', maxLag:4, window:20, minPairs:8,
+      label:{es:'Energía → alimentación',en:'Energy → feed',fr:'Énergie → alimentation',it:'Energia → mangimi'} }
+  ];
+  var RELATIONSHIP_RESULTS = [];
+
+  function relationshipSeriesKey(o) {
+    return String(o.product || '') + '|' + String(o.region || '');
+  }
+  function buildRawSeries(observations) {
+    RAW_SERIES = {};
+    (observations || []).forEach(function(o) {
+      if (o.status && o.status !== 'verified') return;
+      var key = relationshipSeriesKey(o);
+      if (!RAW_SERIES[key]) RAW_SERIES[key] = [];
+      RAW_SERIES[key].push({
+        date:String(o.observationDate),
+        value:Number(o.value),
+        frequency:String(o.frequency || ''),
+        unit:String(o.unit || ''),
+        currency:String(o.currency || ''),
+        comparability:String(o.comparability || ''),
+        sourceId:String(o.sourceId || '')
+      });
+    });
+    Object.keys(RAW_SERIES).forEach(function(k) {
+      RAW_SERIES[k].sort(function(a,b){ return a.date.localeCompare(b.date); });
+    });
+  }
+  function periodStepMs(frequency) {
+    return frequency === 'monthly' ? 28 * 86400000 : (frequency === 'quarterly' ? 80 * 86400000 : 0);
+  }
+  function addPeriods(iso, frequency, periods) {
+    var d = new Date(iso + 'T00:00:00Z');
+    if (isNaN(d.getTime())) return null;
+    if (frequency === 'monthly') d.setUTCMonth(d.getUTCMonth() + periods);
+    else if (frequency === 'quarterly') d.setUTCMonth(d.getUTCMonth() + periods * 3);
+    else return null;
+    return d.toISOString().slice(0,10);
+  }
+  function returnSeries(rows) {
+    var out = [];
+    for (var i=1;i<rows.length;i++) {
+      var prev=Number(rows[i-1].value), cur=Number(rows[i].value);
+      if (!isFinite(prev)||!isFinite(cur)||prev===0) continue;
+      out.push({date:rows[i].date, value:(cur-prev)/prev});
+    }
+    return out;
+  }
+  function correlation(a,b) {
+    var n=Math.min(a.length,b.length);
+    if(n<3) return null;
+    var ma=0,mb=0,i;
+    for(i=0;i<n;i++){ma+=a[i];mb+=b[i];}
+    ma/=n; mb/=n;
+    var num=0,da=0,db=0;
+    for(i=0;i<n;i++){var xa=a[i]-ma,xb=b[i]-mb;num+=xa*xb;da+=xa*xa;db+=xb*xb;}
+    return da&&db ? num/Math.sqrt(da*db) : null;
+  }
+  function pairedReturns(aRows,bRows,lag) {
+    if(!aRows.length||!bRows.length) return [];
+    var a=returnSeries(aRows), b=returnSeries(bRows), bByDate={};
+    b.forEach(function(x){bByDate[x.date]=x.value;});
+    var out=[];
+    a.forEach(function(x){
+      var target=addPeriods(x.date,aRows[0].frequency,lag);
+      if(target!==null && bByDate.hasOwnProperty(target)) out.push({date:x.date,a:x.value,b:bByDate[target]});
+    });
+    return out;
+  }
+  function confidenceFor(n,r,stability) {
+    var ar=Math.abs(r);
+    if(n>=20 && ar>=0.70 && stability>=0.75) return 'high';
+    if(n>=12 && ar>=0.45 && stability>=0.60) return 'medium';
+    if(n>=8 && ar>=0.25) return 'low';
+    return null;
+  }
+  function buildRelationship(def) {
+    var aRows=RAW_SERIES[def.a+'|eu']||[], bRows=RAW_SERIES[def.b+'|eu']||[];
+    if(!aRows.length||!bRows.length) return {id:def.id,label:def.label[lang()]||def.label.es,status:'pending',reason:'missing_series'};
+    var frequency=aRows[0].frequency;
+    if(!frequency || frequency!==bRows[0].frequency) return {id:def.id,label:def.label[lang()]||def.label.es,status:'pending',reason:'frequency_mismatch'};
+    var candidates=[], lagSigns=[];
+    for(var lag=0;lag<=def.maxLag;lag++){
+      var pairs=pairedReturns(aRows,bRows,lag);
+      if(pairs.length<def.minPairs) continue;
+      var use=pairs.slice(Math.max(0,pairs.length-def.window));
+      var r=correlation(use.map(function(x){return x.a;}),use.map(function(x){return x.b;}));
+      if(r===null) continue;
+      candidates.push({lag:lag,pairs:use,r:r});
+      lagSigns.push(r===0?0:(r>0?1:-1));
+    }
+    if(!candidates.length) return {id:def.id,label:def.label[lang()]||def.label.es,status:'pending',reason:'insufficient_coverage'};
+    var best=candidates[0];
+    candidates.forEach(function(c){
+      if(Math.abs(c.r)>Math.abs(best.r) || (Math.abs(c.r)===Math.abs(best.r)&&c.lag<best.lag)) best=c;
+    });
+    var nonZero=lagSigns.filter(function(x){return x!==0;});
+    var dominant=best.r>0?1:(best.r<0?-1:0);
+    var stable=nonZero.length ? nonZero.filter(function(x){return x===dominant;}).length/nonZero.length : 0;
+    var confidence=confidenceFor(best.pairs.length,best.r,stable);
+    if(!confidence) return {id:def.id,label:def.label[lang()]||def.label.es,status:'pending',reason:'weak_relationship',sampleSize:best.pairs.length,correlationReturns:best.r,lagPeriods:best.lag,stability:stable};
+    var unitLabel=frequency==='quarterly' ? (best.pairs.length+' quarters') : (best.pairs.length+' months');
+    var direction=best.r>0?'positive':(best.r<0?'negative':'flat');
+    return {
+      id:def.id,label:def.label[lang()]||def.label.es,status:'ready',confidence:confidence,
+      seriesA:{product:def.a,region:'eu'},seriesB:{product:def.b,region:'eu'},
+      frequency:frequency,lagPeriods:best.lag,window:unitLabel,windowPeriods:best.pairs.length,
+      sampleSize:best.pairs.length,correlationReturns:best.r,direction:direction,stability:stable,
+      coverageStart:best.pairs.length?best.pairs[0].date:null,
+      coverageEnd:best.pairs.length?best.pairs[best.pairs.length-1].date:null,
+      interpretation:(def.label[lang()]||def.label.es)+' presenta una asociación '+direction+' en cambios de la serie con un rezago de '+best.lag+' '+(frequency==='quarterly'?'trimestre(s)':'mes(es)')+'. La señal es descriptiva y no implica causalidad ni predicción.'
+    };
+  }
+  function buildRelationshipEngine() {
+    RELATIONSHIP_RESULTS=RELATIONSHIP_DEFS.map(buildRelationship);
+    return RELATIONSHIP_RESULTS;
+  }
   function realObservationsFor(entry) {
     var key = entry.catId + '-' + entry.nameKey;
     return REAL_HISTORY[key] || [];
@@ -83,6 +222,7 @@
   function loadRealHistory(done) {
     if (REAL_HISTORY_READY) { done(); return; }
     fetch('data/history.json').then(function(r){ if(!r.ok) throw Error('history'); return r.json(); }).then(function(d){
+      buildRawSeries(d.observations || []);
       REAL_HISTORY = {};
       (d.observations || []).forEach(function(o){
         var key = 'cereales-' + o.product;
@@ -92,10 +232,11 @@
       });
       Object.keys(REAL_HISTORY).forEach(function(k){ REAL_HISTORY[k].sort(function(a,b){return String(a.observationDate).localeCompare(String(b.observationDate));}); });
       REAL_HISTORY_READY = true;
+      buildRelationshipEngine();
       fetch('data/intelligence.json').then(function(r){ if(!r.ok) throw Error('intelligence'); return r.json(); }).then(function(d){
         INTEL20=d; INTEL20_READY=true; done();
       }).catch(function(){ INTEL20={series:[]}; INTEL20_READY=true; done(); });
-    }).catch(function(){ REAL_HISTORY_READY = true; INTEL20={series:[]}; INTEL20_READY=true; done(); });
+    }).catch(function(){ REAL_HISTORY_READY = true; RELATIONSHIP_RESULTS=RELATIONSHIP_DEFS.map(function(d){return {id:d.id,label:d.label[lang()]||d.label.es,status:'pending',reason:'history_unavailable'};}); INTEL20={series:[]}; INTEL20_READY=true; done(); });
   }
 
   // ---------------------------------------------------------------------
@@ -861,16 +1002,30 @@
   }
 
   function renderRelationshipsHtml() {
-    var rel=(INTEL20&&INTEL20.relationships)||[];
-    if(!rel.length) return '<section class="di-intel-section"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>Relaciones agrícolas</h2><p class="di-intel-muted">Pendiente: todavía no hay suficientes observaciones verificadas con ventanas y fechas compatibles.</p></div></section>';
-    var cards=rel.slice().sort(function(a,b){var rank={high:3,medium:2,low:1};return (rank[b.confidence]||0)-(rank[a.confidence]||0);}).slice(0,6).map(function(r){
-      return '<article class="di-rel-card"><div class="di-rel-top"><span>'+esc(r.label)+'</span><b class="di-rel-confidence '+esc(r.confidence)+'">'+esc(r.confidence.toUpperCase())+'</b></div>'+
-      '<div class="di-rel-series">'+esc(r.seriesA.product)+' · '+esc(r.seriesA.region.toUpperCase())+' <span>→</span> '+esc(r.seriesB.product)+' · '+esc(r.seriesB.region.toUpperCase())+'</div>'+
-      '<div class="di-rel-metrics"><div><small>Correlación</small><strong>'+Number(r.correlationReturns).toFixed(2)+'</strong></div><div><small>Lag</small><strong>'+esc(String(r.lagPeriods))+' periodo'+(r.lagPeriods===1?'':'s')+'</strong></div><div><small>Ventana</small><strong>'+esc(r.window)+'</strong></div></div>'+
-      '<p class="di-rel-note">'+esc(r.interpretation)+'</p></article>';
+    var t=ui();
+    var rel=RELATIONSHIP_RESULTS.length ? RELATIONSHIP_RESULTS : buildRelationshipEngine();
+    var ready=rel.filter(function(r){return r.status==='ready';});
+    var pending=rel.filter(function(r){return r.status!=='ready';});
+    if(!ready.length){
+      return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>Relaciones agrícolas observadas</h2><p class="di-intel-muted">Pendiente: todavía no hay suficientes series verificadas con frecuencia, ventanas y fechas compatibles. Las relaciones no se rellenan con series sintéticas.</p></div></section>';
+    }
+    var rank={high:3,medium:2,low:1};
+    ready.sort(function(a,b){return (rank[b.confidence]||0)-(rank[a.confidence]||0);});
+    var cards=ready.slice(0,6).map(function(r){
+      var corr=Number(r.correlationReturns);
+      var lagLabel=r.lagPeriods===0?'0':String(r.lagPeriods);
+      var lagUnit=r.frequency==='quarterly'?(r.lagPeriods===1?'trimestre':'trimestres'):(r.lagPeriods===1?'mes':'meses');
+      return '<article class="di-rel-card">'+
+        '<div class="di-rel-top"><span>'+esc(r.label)+'</span><b class="di-rel-confidence '+esc(r.confidence)+'">'+esc(r.confidence.toUpperCase())+'</b></div>'+
+        '<div class="di-rel-series">'+esc(r.seriesA.product)+' · EU <span>→</span> '+esc(r.seriesB.product)+' · EU</div>'+
+        '<div class="di-rel-metrics"><div><small>Correlación Δ</small><strong>'+corr.toFixed(2)+'</strong></div><div><small>Lag</small><strong>'+esc(lagLabel+' '+lagUnit)+'</strong></div><div><small>Ventana</small><strong>'+esc(r.window)+'</strong></div></div>'+
+        '<p class="di-rel-note">'+esc(r.interpretation)+'</p>'+
+      '</article>';
     }).join('');
-    return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>Relaciones agrícolas observadas</h2><p class="di-intel-muted">Ventanas y rezagos se prueban sobre cambios de series verificadas. La confianza describe cobertura y fuerza estadística; no es una probabilidad ni una predicción.</p></div><div class="di-rel-grid">'+cards+'</div></section>';
+    var pendingNote=pending.length ? '<div class="di-rel-note" style="margin-top:12px;">'+esc(pending.length+' relación(es) permanecen pendientes por falta de cobertura compatible.')+'</div>' : '';
+    return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>Relaciones agrícolas observadas</h2><p class="di-intel-muted">Correlación de cambios, no niveles. El motor prueba rezagos por periodo y asigna confianza según cobertura, fuerza y estabilidad de la asociación; no es una probabilidad ni una predicción.</p></div><div class="di-rel-grid">'+cards+'</div>'+pendingNote+'</section>';
   }
+
 
   function renderIntelligence20Html() {
     var p=P();
