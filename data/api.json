@@ -16,6 +16,7 @@
     "to": "YYYY-MM-DD"
   },
   "observationId": "Stable identifiers are derived from product + region in Data Trust v2.",
+  "dataStatus": "Observations expose status=pending|verified and verifiedAt when status=verified.",
   "license": "See repository terms before commercial redistribution.",
   "status": "pilot"
 }
