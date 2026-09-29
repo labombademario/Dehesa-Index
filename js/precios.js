@@ -563,14 +563,17 @@
     links.forEach(function(l){ if(markets.indexOf(l.market)<0) markets.push(l.market); });
     var marketText=markets.slice(0,4).map(newsMarketLabel).join(' · ');
     var relationMap=(global.DehesaPreciosIntel&&global.DehesaPreciosIntel.getRelationships)?global.DehesaPreciosIntel.getRelationships():{};
+    var alertMap=(global.DehesaPreciosIntel&&global.DehesaPreciosIntel.getTransmissionAlerts)?global.DehesaPreciosIntel.getTransmissionAlerts():{};
     var relLinks=links.filter(function(l){return l.relation && relationMap[l.relation] && relationMap[l.relation].status==='ready';});
+    var activeAlerts=links.filter(function(l){return l.relation && Object.keys(alertMap).some(function(k){return alertMap[k].relationship && alertMap[k].relationship.id===l.relation;});});
     var relHtml=relLinks.slice(0,1).map(function(l){
       var r=relationMap[l.relation];
       var conf=(r.confidence||'').toUpperCase();
       var unit=r.frequency==='quarterly'?(r.lagPeriods===1?'trimestre':'trimestres'):(r.lagPeriods===1?'mes':'meses');
       return '<span class="di-news-impact-relation">'+esc(r.label)+' · lag '+esc(String(r.lagPeriods)+' '+unit)+' · '+esc(conf)+'</span>';
     }).join('');
-    return '<div class="di-news-impact">'+badge+(marketText?'<span class="di-news-impact-markets">'+esc(marketText)+'</span>':'')+relHtml+'</div>';
+    var alertHtml=activeAlerts.length ? '<span class="di-news-impact-alert">⚠ TRANSMISSION WATCH</span>' : '';
+    return '<div class="di-news-impact">'+badge+(marketText?'<span class="di-news-impact-markets">'+esc(marketText)+'</span>':'')+relHtml+alertHtml+'</div>';
   }
 
   function renderMarketNewsIntel() {
