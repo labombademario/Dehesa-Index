@@ -1,0 +1,25 @@
+name: Dehesa QA — site contracts
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate snapshots
+        run: node scripts/validate-snapshots.mjs
+      - name: Validate site contracts
+        run: node scripts/qa-site.mjs
