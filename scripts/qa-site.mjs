@@ -1,61 +1,50 @@
 #!/usr/bin/env node
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
-const root = process.cwd();
-const failures = [];
-const checks = [];
-async function read(rel){ return readFile(path.join(root, rel), 'utf8'); }
-function ok(name, condition, detail=''){ checks.push({name,ok:!!condition}); if(!condition) failures.push(name + (detail ? ': '+detail : '')); }
+const root=process.cwd(), failures=[], checks=[];
+async function read(rel){return readFile(path.join(root,rel),'utf8');}
+function check(name,value){checks.push([name,!!value]);if(!value)failures.push(name);}
 
-const rootPages = ['index.html','precios.html','noticias.html','calendario.html','informacion.html','blog.html','empresas.html','contacto.html'];
-for (const file of rootPages) {
-  const c = await read(file);
-  ok(file+' loads shared.js', /js\/shared\.js/.test(c));
-  ok(file+' has viewport', /name="viewport"/.test(c));
+const rootPages=['index.html','precios.html','noticias.html','calendario.html','informacion.html','blog.html','empresas.html','contacto.html'];
+for(const file of rootPages){const c=await read(file);check(file+' has shared.js',c.includes('js/shared.js'));check(file+' has viewport',c.includes('name="viewport"'));}
+for(const product of ['trigo','maiz','leche','urea','diesel']){
+ const c=await read('precios/'+product+'/index.html');
+ check(product+' landing -> prices',c.includes('precios.html?product='+product));
+ check(product+' landing -> news',c.includes('noticias.html?product='+(product==='urea'?'fertilizantes':product)));
+ check(product+' landing -> calendar',c.includes('calendario.html?crop='));
 }
-const productPages = ['trigo','maiz','leche','urea','diesel'];
-for (const product of productPages) {
-  const c = await read('precios/'+product+'/index.html');
-  ok(product+' landing has prices deep link', new RegExp('precios\\.html\\?product='+product).test(c));
-  ok(product+' landing has news link', new RegExp('noticias\\.html\\?product='+(product==='urea'?'fertilizantes':product)).test(c));
-  ok(product+' landing has calendar link', /calendario\.html\?crop=/.test(c));
+const shared=await read('js/shared.js');
+check('nested footer logo uses sitePath',shared.includes("sitePath('assets/logo.png')"));
+check('context bar exists',shared.includes('function renderContextBar'));
+check('context back uses history.back',shared.includes('window.history.back()'));
+
+const prices=await read('js/precios.js');
+check('price URL sync uses pushState',prices.includes('history.pushState'));
+check('price URL restores popstate',prices.includes("addEventListener('popstate', restorePriceUrl)"));
+check('price category ids are canonical',prices.includes("['cereales','lacteos','fertilizantes','energia','seguro','vino','madera']"));
+
+const news=await read('js/noticias.js');
+check('news URL sync uses pushState',news.includes('history.pushState'));
+check('news URL restores popstate',news.includes("addEventListener('popstate'"));
+check('news has direct price navigation',news.includes('di-news-item-price-link'));
+
+const cal=await read('js/calendario.js');
+check('calendar URL sync uses pushState',cal.includes('history.pushState'));
+check('calendar URL restores popstate',cal.includes("addEventListener('popstate'"));
+check('calendar avoids false barley mapping',!cal.includes("cebada:'trigo'"));
+check('calendar avoids false soy mapping',!cal.includes("soja:'maiz'"));
+
+for(const file of ['data/latest.json','data/history.json','data/catalog.json','data/api.json','data/quality.json']){
+ try{JSON.parse(await read(file));check(file+' valid JSON',true);}catch(e){check(file+' valid JSON',false);}
 }
-const shared = await read('js/shared.js');
-ok('shared footer uses nested-page-safe logo path', /sitePath\('assets\/logo\.png'\)/.test(shared));
-ok('shared exposes context bar', /function renderContextBar/.test(shared));
-ok('shared context back uses history.back', /window\.history\.back\(\)/.test(shared));
-
-const prices = await read('js/precios.js');
-ok('prices validates canonical tabs', /validTabs = \['cereales','lacteos','fertilizantes','energia','seguro','vino','madera'\]/.test(prices));
-ok('prices has pushState URL sync', /history\.pushState/.test(prices));
-ok('prices restores popstate', /addEventListener\('popstate', restorePriceUrl\)/.test(prices));
-
-const news = await read('js/noticias.js');
-ok('news uses pushState', /history\.pushState/.test(news));
-ok('news restores popstate', /addEventListener\('popstate'/.test(news));
-ok('news price link is a sibling anchor', /di-news-item-price-link/.test(news));
-
-const cal = await read('js/calendario.js');
-ok('calendar uses pushState', /history\.pushState/.test(cal));
-ok('calendar restores popstate', /addEventListener\('popstate'/.test(cal));
-ok('calendar does not alias unsupported barley/soy to corn/wheat', !/cebada:'trigo'|soja:'maiz/.test(cal));
-
-for (const file of ['data/latest.json','data/history.json','data/catalog.json','data/api.json']) {
-  try { JSON.parse(await read(file)); ok(file+' is valid JSON', true); }
-  catch(e){ ok(file+' is valid JSON', false, e.message); }
+const latest=JSON.parse(await read('data/latest.json'));
+check('latest has observations',Array.isArray(latest.observations)&&latest.observations.length>0);
+for(const o of latest.observations){
+ check(o.id+' verified',o.status==='verified');
+ check(o.id+' has source',!!o.sourceId);
+ check(o.id+' has observation date',/^\d{4}-\d{2}/.test(o.observationDate||''));
 }
-const latest = JSON.parse(await read('data/latest.json'));
-ok('latest has observations', Array.isArray(latest.observations) && latest.observations.length > 0);
-for (const o of (latest.observations || [])) {
-  ok('latest '+o.id+' has verified status', o.status === 'verified');
-  ok('latest '+o.id+' has observation date', /^\d{4}-\d{2}/.test(o.observationDate || ''));
-  ok('latest '+o.id+' has source', !!o.sourceId);
-}
-
-console.log('Dehesa Index QA: '+checks.filter(x=>x.ok).length+'/'+checks.length+' checks passed');
-if (failures.length) {
-  console.error('\nFAILURES');
-  failures.forEach(x=>console.error(' - '+x));
-  process.exit(1);
-}
+const passed=checks.filter(x=>x[1]).length;
+console.log('Dehesa Index QA: '+passed+'/'+checks.length+' checks passed');
+if(failures.length){console.error('FAILURES');failures.forEach(x=>console.error(' - '+x));process.exit(1);}
