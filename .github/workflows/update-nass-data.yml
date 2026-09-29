@@ -28,6 +28,9 @@ jobs:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
         run: node scripts/update-nass-us.mjs ${{ matrix.product }}
 
+      - name: Validate snapshots
+        run: node scripts/validate-snapshots.mjs
+
       - name: Commit updated data
         run: |
           if git diff --quiet -- js/data.js data/snapshots; then
