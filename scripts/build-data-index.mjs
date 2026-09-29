@@ -28,33 +28,50 @@ const latest = {
   observations: Object.values(byKey).sort((a, b) => (a.product + a.region).localeCompare(b.product + b.region))
 };
 
-const historyRows = [];
-Object.values(byKey).forEach((o) => {
-  const series = Array.isArray(o.history) ? o.history : [];
-  series.forEach((point) => {
-    const period = String(point.period || '');
-    const year = String(point.year || '');
-    let month = null;
-    const monthMatch = period.match(/(\d{1,2})/);
-    const monthNames = {jan:1,january:1,feb:2,february:2,mar:3,march:3,apr:4,april:4,may:5,jun:6,june:6,jul:7,july:7,aug:8,august:8,sep:9,september:9,oct:10,october:10,nov:11,november:11,dec:12,december:12};
-    if (monthMatch) month = monthMatch[1].padStart(2, '0');
-    else if (monthNames[period]) month = String(monthNames[period]).padStart(2, '0');
-    const observationDate = month ? year + '-' + month + '-01' : year ? year + '-01-01' : null;
-    if (!observationDate) return;
-    historyRows.push({
-      id: o.id || ('di_' + o.product + '_' + o.region),
-      product: o.product,
-      region: o.region,
-      sourceId: o.sourceId,
+const historyMap = new Map();
+
+function periodToDate(period, year) {
+  const p = String(period || '').trim().toLowerCase();
+  const y = String(year || '').trim();
+  if (!y) return null;
+  const monthNames = {
+    jan:1,january:1,feb:2,february:2,mar:3,march:3,apr:4,april:4,
+    may:5,jun:6,june:6,jul:7,july:7,aug:8,august:8,
+    sep:9,september:9,oct:10,october:10,nov:11,november:11,dec:12,december:12
+  };
+  const numeric = p.match(/(?:^|\\D)(\\d{1,2})(?:$|\\D)/);
+  const month = numeric ? Number(numeric[1]) : monthNames[p];
+  return month >= 1 && month <= 12 ? y + '-' + String(month).padStart(2, '0') + '-01' : y + '-01-01';
+}
+
+for (const observation of all) {
+  const series = Array.isArray(observation.history) ? observation.history : [];
+  for (const point of series) {
+    const observationDate = periodToDate(point.period, point.year);
+    const value = Number(point.value);
+    if (!observationDate || !Number.isFinite(value)) continue;
+    const id = (observation.id || ('di_' + observation.product + '_' + observation.region)) + ':' + observationDate;
+    const previous = historyMap.get(id);
+    const row = {
+      id,
+      product: observation.product,
+      region: observation.region,
+      sourceId: observation.sourceId,
       observationDate,
-      snapshotDate: o.snapshotDate,
-      value: Number(point.value),
-      currency: o.currency,
-      unit: o.unit,
-      frequency: o.frequency
-    });
-  });
-});
+      snapshotDate: observation.snapshotDate,
+      value,
+      currency: observation.currency,
+      unit: observation.unit,
+      frequency: observation.frequency
+    };
+    if (!previous || String(row.snapshotDate) > String(previous.snapshotDate)) historyMap.set(id, row);
+  }
+}
+
+const historyRows = Array.from(historyMap.values()).sort((a, b) =>
+  String(a.observationDate).localeCompare(String(b.observationDate)) ||
+  (a.product + a.region).localeCompare(b.product + b.region)
+);
 
 const history = {
   schemaVersion: '1.0',
