@@ -9,16 +9,55 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/"data"; JS=ROOT/"js"
 DATA.mkdir(exist_ok=True)
-DAYS=14; MAX_ITEMS=80; UA="DehesaIndex-NewsBot/1.0"
+DAYS=14; MAX_ITEMS=120; UA="DehesaIndex-NewsBot/1.0"
 
 def google(q,gl="US"):
     return "https://news.google.com/rss/search?"+urllib.parse.urlencode({"q":q,"hl":"en-US","gl":gl,"ceid":f"{gl}:en"})
 FEEDS=[
- ("Reuters","global",google("site:reuters.com agriculture commodities farmers fertilizer corn wheat soybean dairy")),
- ("Reuters","global",google("site:reuters.com energy oil diesel agriculture fertilizer")),
- ("USDA","us",google("site:usda.gov/news agriculture corn wheat soybean dairy fertilizer")),
- ("European Commission","eu",google("site:agriculture.ec.europa.eu agriculture agri-food trade cereals dairy fertilizer","BE")),
- ("FAO","global",google("site:fao.org news agriculture food prices cereals fertilizer livestock")),
+    # General news / wire services
+    ("Reuters","global",google("site:reuters.com agriculture commodities farmers fertilizer corn wheat soybean dairy")),
+    ("Reuters","global",google("site:reuters.com energy oil diesel agriculture fertilizer")),
+    ("Associated Press","global",google("site:apnews.com agriculture commodities farmers fertilizer corn wheat soybean dairy")),
+    ("AFP","global",google("site:afp.com agriculture commodities food fertilizer grains dairy")),
+    ("EFE","global",google("site:efe.com agricultura cereales trigo maiz soja fertilizantes leche energia comercio")),
+    ("Bloomberg","global",google("site:bloomberg.com agriculture commodities grains fertilizer soybean corn wheat dairy")),
+    ("Financial Times","global",google("site:ft.com agriculture commodities food grains fertilizer energy trade")),
+    ("Wall Street Journal","us",google("site:wsj.com agriculture commodities farmers grains fertilizer energy")),
+    ("CNBC","us",google("site:cnbc.com agriculture commodities grains fertilizer oil food")),
+    ("POLITICO","us",google("site:politico.com agriculture farm bill USDA tariffs agriculture")),
+    ("Euractiv","eu",google("site:euractiv.com agriculture CAP food trade fertilizer energy")),
+    ("Xinhua","global",google("site:english.news.cn agriculture grains food fertilizer trade soybean corn wheat")),
+
+    # Agriculture / commodity specialist media
+    ("DTN","us",google("site:dtnpf.com agriculture grains fertilizer energy livestock markets")),
+    ("AgWeb","us",google("site:agweb.com agriculture corn soybean wheat fertilizer dairy livestock")),
+    ("Farm Progress","us",google("site:farmprogress.com agriculture corn soybean wheat fertilizer dairy feed")),
+    ("Successful Farming","us",google("site:agriculture.com farming corn soybean wheat fertilizer markets")),
+    ("World Grain","global",google("site:world-grain.com grains wheat corn soybean rice trade supply")),
+    ("Feed Strategy","global",google("site:feedstrategy.com animal feed grains soybean meal corn wheat dairy")),
+    ("Dairy Herd","us",google("site:dairyherd.com dairy milk feed fertilizer energy markets")),
+    ("Fastmarkets","global",google("site:fastmarkets.com agriculture grains oilseeds biofuels feedstocks sugar fertilizer")),
+    ("S&P Global","global",google("site:spglobal.com agriculture food commodities grains fertilizer soybean sugar biofuels")),
+    ("Argus Media","global",google("site:argusmedia.com agriculture fertilizer grains biofuels vegetable oils")),
+    ("FoodNavigator","global",google("site:foodnavigator.com food commodity prices agriculture dairy sugar grains supply")),
+    ("Farmers Weekly","eu",google("site:fwi.co.uk agriculture farmers crops wheat barley fertilizer dairy trade")),
+    ("Farmers Guardian","eu",google("site:farmersguardian.com agriculture crops wheat barley fertilizer dairy livestock")),
+    ("Agriland","eu",google("site:agriland.ie agriculture dairy grain fertilizer trade")),
+    ("Agra Europe","eu",google("site:agraeurope.com agriculture CAP cereals dairy fertilizer trade")),
+    ("ABC Rural","global",google("site:abc.net.au/news/rural agriculture grain wheat cattle dairy fertilizer")),
+    ("Grain Central","global",google("site:graincentral.com wheat grains sorghum barley canola Australia agriculture")),
+    ("The Land","global",google("site:theland.com.au agriculture grain wheat cattle dairy fertilizer")),
+
+    # Institutional / official market and policy sources
+    ("USDA","us",google("site:usda.gov/news agriculture corn wheat soybean dairy fertilizer livestock")),
+    ("USDA ERS","us",google("site:ers.usda.gov agriculture commodity food prices farm costs trade")),
+    ("European Commission","eu",google("site:agriculture.ec.europa.eu agriculture agri-food trade cereals dairy fertilizer","BE")),
+    ("FAO","global",google("site:fao.org news agriculture food prices cereals fertilizer livestock")),
+    ("OECD","global",google("site:oecd.org agriculture trade commodity food fertilizer farm policy")),
+    ("WTO","global",google("site:wto.org agriculture trade tariffs food commodities")),
+    ("EIA","us",google("site:eia.gov energy oil diesel natural gas agriculture fertilizer")),
+    ("IEA","global",google("site:iea.org oil gas energy agriculture fertilizer food")),
+    ("International Grains Council","global",google("site:igc.int grain wheat maize rice soybean market supply trade")),
 ]
 PRODUCTS={
  "maiz":["corn","maize","maíz","maïs"],"trigo":["wheat","trigo","blé"],
