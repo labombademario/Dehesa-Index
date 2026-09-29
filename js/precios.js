@@ -399,6 +399,21 @@
     return { key: 'pending', label: { es: 'PENDIENTE', en: 'PENDING', fr: 'EN ATTENTE', it: 'IN ATTESA' } };
   }
 
+  function relatedNewsHtml(entry) {
+    var index = global.DehesaNewsIndex || {};
+    var key = entry.nameKey;
+    var stories = index[key] || [];
+    if (!stories.length) return '<div class="di-related-news di-related-news-pending"><div class="di-related-news-head"><span>NEWS INTELLIGENCE</span><a href="noticias.html?product=' + encodeURIComponent(key) + '">Noticias relacionadas →</a></div><p>No hay cobertura editorial enlazada a este mercado todavía.</p></div>';
+    var lg = lang();
+    var label = lg === 'es' ? 'Noticias relacionadas' : lg === 'fr' ? 'Actualités liées' : lg === 'it' ? 'Notizie correlate' : 'Related news';
+    return '<div class="di-related-news"><div class="di-related-news-head"><span>NEWS INTELLIGENCE</span><a href="noticias.html?product=' + encodeURIComponent(key) + '">Ver todas →</a></div>' +
+      '<div class="di-related-news-title">' + esc(label) + '</div>' +
+      stories.slice(0,2).map(function(n) {
+        var h = n.headline[lg] || n.headline.es;
+        return '<a class="di-related-news-item" href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer"><span class="di-related-news-meta">' + esc(n.source) + ' · ' + esc(n.date) + '</span><strong>' + esc(h) + '</strong></a>';
+      }).join('') + '</div>';
+  }
+
   function productCardHtml(entry, opts) {
     opts = opts || {};
     var t = ui();
@@ -435,6 +450,7 @@
         '</div>' +
         (showValue ? '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '<div class="di-product-no-value">Valor visible cuando la observación esté verificada.</div>') +
         (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(t.ukGapNote) + '</div>' : '') +
+        relatedNewsHtml(entry) +
         (foot ? '<div class="di-product-footnote">' + esc(foot) + '</div>' : '') +
         (opts.compact ? '' :
           '<button type="button" class="di-breakdown-toggle" data-action="breakdown" data-key="' + key + '">' + esc(expanded ? t.breakdownHideLabel : t.breakdownShowLabel) + '</button>' +
