@@ -89,6 +89,38 @@
       label:{es:'Energía → alimentación',en:'Energy → feed',fr:'Énergie → alimentation',it:'Energia → mangimi'} }
   ];
   var RELATIONSHIP_RESULTS = [];
+  var TRANSMISSION_DEFS = [
+    {id:'fertilizer-cereals-alert',shock:'eurostat_fertiliser_input_index',relationship:'fertilizer-cereals',threshold:5,channel:'input_cost',affected:'eurostat_cereals_output_index',label:{es:'Shock de fertilizante → cereales',en:'Fertilizer shock → cereals',fr:'Choc des engrais → céréales',it:'Shock dei fertilizzanti → cereali'}},
+    {id:'energy-cereals-alert',shock:'eurostat_energy_input_index',relationship:'energy-cereals',threshold:5,channel:'input_cost',affected:'eurostat_cereals_output_index',label:{es:'Shock energético → cereales',en:'Energy shock → cereals',fr:'Choc énergétique → céréales',it:'Shock energetico → cereali'}},
+    {id:'fertilizer-milk-alert',shock:'eurostat_fertiliser_input_index',relationship:'fertilizer-milk',threshold:5,channel:'input_cost',affected:'eurostat_milk_output_index',label:{es:'Shock de fertilizante → leche',en:'Fertilizer shock → milk',fr:'Choc des engrais → lait',it:'Shock dei fertilizzanti → latte'}},
+    {id:'energy-milk-alert',shock:'eurostat_energy_input_index',relationship:'energy-milk',threshold:5,channel:'input_cost',affected:'eurostat_milk_output_index',label:{es:'Shock energético → leche',en:'Energy shock → milk',fr:'Choc énergétique → lait',it:'Shock energetico → latte'}}
+  ];
+  var TRANSMISSION_ALERTS = [];
+
+  function latestShock(product) {
+    var rows=RAW_SERIES[product+'|eu']||[];
+    if(rows.length<2) return null;
+    var last=rows[rows.length-1], prev=rows[rows.length-2];
+    if(!isFinite(last.value)||!isFinite(prev.value)||prev.value===0) return null;
+    return {product:product,date:last.date,value:last.value,changePct:((last.value-prev.value)/prev.value)*100,frequency:last.frequency};
+  }
+  function buildTransmissionAlerts() {
+    var rels=buildRelationshipEngine(), byId={};
+    rels.forEach(function(r){byId[r.id]=r;});
+    TRANSMISSION_ALERTS=[];
+    TRANSMISSION_DEFS.forEach(function(def){
+      var shock=latestShock(def.shock), rel=byId[def.relationship];
+      if(!shock||!rel||rel.status!=='ready'||Math.abs(shock.changePct)<def.threshold) return;
+      TRANSMISSION_ALERTS.push({
+        id:def.id,label:def.label[lang()]||def.label.es,status:'watch',
+        severity:Math.abs(shock.changePct)>=10?'elevated':'watch',
+        shock:shock,relationship:rel,channel:def.channel,affected:def.affected,
+        direction:(shock.changePct>0?'positive':'negative')===rel.direction?'aligned':'opposed',
+        message:(def.label[lang()]||def.label.es)+' supera el umbral de '+def.threshold+'% en el último periodo. La relación histórica compatible tiene un lag de '+rel.lagPeriods+' '+(rel.frequency==='quarterly'?(rel.lagPeriods===1?'trimestre':'trimestres'):(rel.lagPeriods===1?'mes':'meses'))+' y confianza '+rel.confidence+'. Esto activa una alerta de transmisión observada, no una predicción.'
+      });
+    });
+    return TRANSMISSION_ALERTS;
+  }
 
   function relationshipSeriesKey(o) {
     return String(o.product || '') + '|' + String(o.region || '');
@@ -1038,7 +1070,18 @@
       '</article>';
     }).join('');
     var pendingNote=pending.length ? '<div class="di-rel-note" style="margin-top:12px;">'+esc(pending.length+' '+t.pending)+'</div>' : '';
-    return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div><div class="di-rel-grid">'+cards+'</div>'+pendingNote+'</section>';
+    var alerts=buildTransmissionAlerts();
+    var alertCards=alerts.map(function(a){
+      var lagUnit=a.relationship.frequency==='quarterly'?(a.relationship.lagPeriods===1?t.periodQ:t.periodQs):(a.relationship.lagPeriods===1?t.periodM:t.periodMs);
+      return '<article class="di-rel-card di-transmission-card">'+
+        '<div class="di-rel-top"><span>⚠ '+esc(a.label)+'</span><b class="di-rel-confidence '+esc(a.relationship.confidence)+'">'+esc(a.severity.toUpperCase())+'</b></div>'+
+        '<div class="di-rel-series">Shock: <strong>'+esc(a.shock.changePct.toFixed(1))+'%</strong> · '+esc(a.shock.date)+'</div>'+
+        '<div class="di-rel-metrics"><div><small>Canal</small><strong>Input cost</strong></div><div><small>Lag</small><strong>'+esc(String(a.relationship.lagPeriods)+' '+lagUnit)+'</strong></div><div><small>Confianza</small><strong>'+esc(a.relationship.confidence.toUpperCase())+'</strong></div></div>'+
+        '<p class="di-rel-note">'+esc(a.message)+'</p>'+
+      '</article>';
+    }).join('');
+    var alertSection=alerts.length ? '<div class="di-transmission-wrap"><div class="di-intel-head"><span class="di-intel-kicker">TRANSMISSION WATCH</span><h3>Input shock → mercado afectado</h3><p class="di-intel-muted">Las alertas se activan cuando un input supera un umbral y existe una relación histórica compatible. No estiman precios futuros.</p></div><div class="di-rel-grid">'+alertCards+'</div></div>' : '';
+    return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div><div class="di-rel-grid">'+cards+'</div>'+pendingNote+alertSection+'</section>';
   }
 
 
