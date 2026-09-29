@@ -59,6 +59,39 @@
     return Core.resolveDisplay(entry, Core.getLocation(), Core.getEuCountry()).region;
   }
   function seedFor(entry) { return core().seedKeyFor(entry, core().defaultRegionFor(entry)); }
+  var REAL_HISTORY = {};
+  var REAL_HISTORY_READY = false;
+  function realObservationsFor(entry) {
+    var key = entry.catId + '-' + entry.nameKey;
+    return REAL_HISTORY[key] || [];
+  }
+  function rangePctChange(entry, days) {
+    var rows = realObservationsFor(entry);
+    if (rows.length < 2) return null;
+    var last = rows[rows.length - 1];
+    var lastTime = new Date(last.observationDate).getTime();
+    var cutoff = lastTime - days * 86400000;
+    var first = rows[0];
+    for (var i = rows.length - 1; i >= 0; i--) {
+      if (new Date(rows[i].observationDate).getTime() <= cutoff) { first = rows[i]; break; }
+    }
+    return first.value ? ((last.value - first.value) / first.value) * 100 : null;
+  }
+  function loadRealHistory(done) {
+    if (REAL_HISTORY_READY) { done(); return; }
+    fetch('data/history.json').then(function(r){ if(!r.ok) throw Error('history'); return r.json(); }).then(function(d){
+      REAL_HISTORY = {};
+      (d.observations || []).forEach(function(o){
+        var key = 'cereales-' + o.product;
+        var dashKey = key;
+        if (!REAL_HISTORY[dashKey]) REAL_HISTORY[dashKey] = [];
+        REAL_HISTORY[dashKey].push(o);
+      });
+      Object.keys(REAL_HISTORY).forEach(function(k){ REAL_HISTORY[k].sort(function(a,b){return String(a.observationDate).localeCompare(String(b.observationDate));}); });
+      REAL_HISTORY_READY = true;
+      done();
+    }).catch(function(){ REAL_HISTORY_READY = true; done(); });
+  }
 
   // ---------------------------------------------------------------------
   // Dehesa Market Map (treemap squarified, Bruls/Huizing/van Wijk 1999)
@@ -219,11 +252,7 @@
     cereales: '#C99A2E', ganaderia: '#B15E3B', lacteos: '#3B6EA8', pienso: '#9C8552',
     fertilizantes: '#7B5EA7', azucar: '#C06B92', aceite: '#A69026', energia: '#5C7080'
   };
-  function rangePctChange(region, seedKey, days) {
-    var full = D.genLongHistory(region, seedKey);
-    var slice = full.slice(full.length - days);
-    return slice[0] ? ((slice[slice.length - 1] - slice[0]) / slice[0]) * 100 : 0;
-  }
+  function legacyRangePctChange(region, seedKey, days) { return 0; }
   function niceStep(rawStep) {
     if (!(rawStep > 0)) return 1;
     var exp = Math.floor(Math.log(rawStep) / Math.LN10);
@@ -254,8 +283,8 @@
       var seed = seedFor(e);
       return {
         key: key, name: productName(e.nameKey), group: meta ? meta.group : 'otros',
-        x: rangePctChange(region, seed, D.HISTORY_RANGE_DAYS['3m']),
-        y: rangePctChange(region, seed, D.HISTORY_RANGE_DAYS['1w'])
+        x: rangePctChange(e, 90),
+        y: rangePctChange(e, 7)
       };
     });
     var maxAbsX = Math.max.apply(null, raw.map(function (p) { return Math.abs(p.x); })) || 0;
@@ -396,8 +425,9 @@
     Core.PRODUCTS.forEach(function (e) {
       var key = e.catId + '-' + e.nameKey;
       var region = regionFor(e);
-      var full = D.genLongHistory(region, seedFor(e));
-      returnsByKey[key] = dailyReturns(full, CORR_WINDOW_DAYS);
+      var rows = realObservationsFor(e);
+      var vals = rows.map(function(o){return Number(o.value)});
+      returnsByKey[key] = dailyReturns(vals, rows.length);
     });
     var keys = Core.PRODUCTS.map(function (e) { return e.catId + '-' + e.nameKey; });
     var corrCache = {};
@@ -484,7 +514,7 @@
     var monthSum = [0,0,0,0,0,0,0,0,0,0,0,0], monthCount = [0,0,0,0,0,0,0,0,0,0,0,0];
     var overallSum = 0;
     for (var i = 0; i < n; i++) {
-      var m = D.dateForOffset(n - 1 - i).getMonth();
+      var m = new Date(rows[i].observationDate).getMonth();
       monthSum[m] += full[i]; monthCount[m] += 1; overallSum += full[i];
     }
     var overallAvg = overallSum / n;
