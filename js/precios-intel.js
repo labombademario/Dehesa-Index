@@ -511,16 +511,20 @@
 
   function buildSeasonality(dashKey) {
     var entry = entryByDashKey(dashKey);
-    var region = regionFor(entry);
-    var full = D.genLongHistory(region, seedFor(entry));
-    var n = full.length;
-    if (n < 3) return { ready:false };
+    if (!entry) return { ready:false };
+    var rows = realObservationsFor(entry);
+    if (rows.length < 3) return { ready:false, count: rows.length };
     var monthSum = [0,0,0,0,0,0,0,0,0,0,0,0], monthCount = [0,0,0,0,0,0,0,0,0,0,0,0];
     var overallSum = 0;
-    for (var i = 0; i < n; i++) {
-      var m = new Date(rows[i].observationDate).getMonth();
-      monthSum[m] += full[i]; monthCount[m] += 1; overallSum += full[i];
+    for (var i = 0; i < rows.length; i++) {
+      var value = Number(rows[i].value);
+      var date = new Date(rows[i].observationDate);
+      if (!isFinite(value) || isNaN(date.getTime())) continue;
+      var m = date.getUTCMonth();
+      monthSum[m] += value; monthCount[m] += 1; overallSum += value;
     }
+    var n = monthCount.reduce(function(a,b){return a+b;},0);
+    if (n < 3 || !isFinite(overallSum)) return { ready:false, count:n };
     var overallAvg = overallSum / n;
     var raw = [];
     for (var mm = 0; mm < 12; mm++) {
@@ -552,7 +556,7 @@
     });
     var yGrid = ticks.ticks.filter(function (v) { return v !== 0; }).map(function (v) { return { y: toPy(v), label: fmtTick(v) }; });
     return {
-      plotX: plotX, plotY: plotY, plotW: plotW, plotH: plotH, plotBottom: plotBottom, originY: originY,
+      ready:true, count:n, plotX: plotX, plotY: plotY, plotW: plotW, plotH: plotH, plotBottom: plotBottom, originY: originY,
       months: months, yGrid: yGrid,
       peakText: monthNames[peakIdx] + ' (' + D.fmtChange(raw[peakIdx]) + ')', peakColor: D.changeColor(raw[peakIdx], P()),
       troughText: monthNames[troughIdx] + ' (' + D.fmtChange(raw[troughIdx]) + ')', troughColor: D.changeColor(raw[troughIdx], P())
@@ -565,7 +569,7 @@
     var p = P();
     if (!entryByDashKey(seasonProductKey)) seasonProductKey = 'cereales-trigo';
     var s = buildSeasonality(seasonProductKey);
-    if (!s.ready) return '<div class="di-intel-section" id="di-intel-season"><div class="di-intel-head"><h2>' + esc(t.seasonTitle) + '</h2><p>Histórico real insuficiente para calcular estacionalidad. Esta sección no utiliza series sintéticas.</p></div></div>';
+    if (!s.ready) return '<div class="di-intel-section di-intel-pending" id="di-intel-season"><div class="di-intel-head"><h2>' + esc(t.seasonTitle) + '</h2><p>Histórico real insuficiente para calcular estacionalidad. No se utilizan series sintéticas.</p><span class="di-intel-state pending">PENDIENTE</span></div></div>';
     var options = Core.PRODUCTS.map(function (e) {
       var k = e.catId + '-' + e.nameKey;
       return '<option value="' + k + '"' + (k === seasonProductKey ? ' selected' : '') + '>' + esc(productName(e.nameKey)) + '</option>';
