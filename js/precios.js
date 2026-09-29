@@ -1159,7 +1159,7 @@
     var qs = new URLSearchParams(window.location.search);
     var requestedTab = qs.get('tab');
     var requestedRegion = qs.get('region');
-    var validTabs = ['cereales','lacteos','fertilizantes','energia','seguros','vino','madera'];
+    var validTabs = ['cereales','lacteos','fertilizantes','energia','seguro','vino','madera'];
     if (validTabs.indexOf(requestedTab) !== -1) state.activeTab = requestedTab;
     if (deepKey && PRODUCT_BY_KEY[deepKey]) {
       state.activeTab = PRODUCT_BY_KEY[deepKey].catId;
