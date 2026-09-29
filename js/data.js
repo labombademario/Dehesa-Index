@@ -910,8 +910,8 @@
       comparability: 'directional'
     },
     'cereales-maiz-eu': {
-      sourceId: 'european_commission', frequency: 'source-dependent',
-      methodology: 'Current Euronext/MATIF display is a futures reference; not the same measurement basis as USDA NASS.',
+      sourceId: 'euronext', frequency: 'daily',
+      methodology: 'Euronext/MATIF futures reference; not the same measurement basis as USDA NASS.',
       comparability: 'not_comparable'
     },
     'lacteos-leche-us': {
