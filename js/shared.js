@@ -163,6 +163,12 @@
     });
   }
 
+  function sitePrefix() {
+    var path = (window.location && window.location.pathname) || '';
+    return /\/precios\/[^/]+\/?$/.test(path) ? '../../' : '';
+  }
+  function sitePath(path) { return sitePrefix() + path; }
+
   // ---------------------------------------------------------------------
   // Nav
   // ---------------------------------------------------------------------
@@ -173,7 +179,7 @@
 
     var linksHtml = NAV_KEYS.map(function (k) {
       var isActive = k === activePage;
-      return '<a class="' + (isActive ? 'active' : '') + '" href="' + NAV_PAGES[k] + '" role="button">' + esc(t[k]) + '</a>';
+      return '<a class="' + (isActive ? 'active' : '') + '" href="' + sitePath(NAV_PAGES[k]) + '" role="button">' + esc(t[k]) + '</a>';
     }).join('');
 
     var langOptionsHtml = LANG_OPTIONS.map(function (o) {
@@ -188,7 +194,7 @@
     root.innerHTML =
       '<header class="di-header">' +
         '<div class="di-header-inner">' +
-          '<a class="di-nav-logo" href="index.html"><img src="assets/logo.png" alt="Dehesa Index"></a>' +
+          '<a class="di-nav-logo" href="' + sitePath('index.html') + '"><img src="' + sitePath('assets/logo.png') alt="Dehesa Index"></a>' +
           '<nav class="di-nav-links">' + linksHtml + '</nav>' +
           '<div class="di-nav-side">' +
             '<select class="di-lang-select" id="di-lang-select" title="' + esc(t.langSelect) + '">' + langOptionsHtml + '</select>' +
@@ -231,7 +237,7 @@
     }).join('');
 
     var linksHtml = NAV_KEYS.map(function (k) {
-      return '<a href="' + NAV_PAGES[k] + '" style="text-decoration:none;"><button>' + esc(navT[k]) + '</button></a>';
+      return '<a href="' + sitePath(NAV_PAGES[k]) + '" style="text-decoration:none;"><button>' + esc(navT[k]) + '</button></a>';
     }).join('');
 
     root.innerHTML =
@@ -326,7 +332,7 @@
           writeTourSeen();
           closeAll();
           if (!/precios\.html$/.test(window.location.pathname)) {
-            window.location.href = 'precios.html';
+            window.location.href = sitePath('precios.html');
           }
         } else {
           tourStep += 1;
