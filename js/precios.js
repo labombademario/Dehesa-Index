@@ -34,6 +34,13 @@
   // ---------------------------------------------------------------------
   function readLS(key) { try { return window.localStorage.getItem(key); } catch (e) { return null; } }
   function writeLS(key, v) { try { window.localStorage.setItem(key, v); } catch (e) {} }
+  function readAlerts() { try { var raw=window.localStorage.getItem('dehesaIndexAlerts'); var v=raw?JSON.parse(raw):[]; return Array.isArray(v)?v:[]; } catch(e){ return []; } }
+  function writeAlerts(arr) { try { window.localStorage.setItem('dehesaIndexAlerts',JSON.stringify(arr)); } catch(e) {} }
+  function saveLocalAlert(a) {
+    var arr=readAlerts().filter(function(x){return !(x.key===a.key&&x.region===a.region);});
+    arr.unshift({key:a.key,region:a.region,direction:a.direction,threshold:Number(a.threshold),createdAt:new Date().toISOString()});
+    writeAlerts(arr.slice(0,20));
+  }
   function readFavorites() {
     try {
       var raw = window.localStorage.getItem('dehesaIndexFavorites');
@@ -983,7 +990,7 @@
       state.alert.attempted = true;
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.alert.email || '');
       var thresholdOk = parseFloat(state.alert.threshold) > 0;
-      if (emailOk && thresholdOk) state.alert.confirmed = true;
+      if (emailOk && thresholdOk) { state.alert.confirmed = true; saveLocalAlert(state.alert); }
       renderAlertModal();
     });
   }
