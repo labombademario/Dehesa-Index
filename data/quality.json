@@ -1,19 +1,21 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T17:46:23.710Z",
+  "generatedAt": "2026-09-29T17:49:36.535Z",
   "scope": {
-    "latestObservations": 3,
-    "historyObservations": 21,
-    "verified": 3,
+    "latestObservations": 4,
+    "historyObservations": 33,
+    "verified": 4,
     "pending": 0,
     "stale": 0,
     "regions": [
-      "us"
+      "us",
+      "eu"
     ],
     "products": [
       "arroz",
       "maiz",
-      "trigo"
+      "trigo",
+      "urea"
     ]
   },
   "observations": [
@@ -57,6 +59,20 @@
       "verifiedAt": "2026-09-29T16:54:10.032Z",
       "frequency": "monthly",
       "historyPoints": 7,
+      "stale": false
+    },
+    {
+      "id": "di_fertilizantes_urea_eu",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "status": "verified",
+      "comparability": "not_comparable",
+      "observationDate": "2026-08-01",
+      "publicationDate": null,
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "frequency": "monthly",
+      "historyPoints": 12,
       "stale": false
     }
   ],
