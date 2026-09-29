@@ -20,6 +20,31 @@
   // ocurrencia). nextDate/lastDate son siempre fechas reales del calendario
   // oficial de cada organismo; cuando no se anuncia día fijo (los 2 de la
   // UE), hasDate queda en false y no se inventa una fecha para rellenar.
+  var WATCH_PRIORITY = {
+    publication: 2,
+    harvest: 1
+  };
+  function isoDaysFromToday(iso) {
+    if (!iso) return null;
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var parts = iso.split('-');
+    var d = new Date(parseInt(parts[0],10), parseInt(parts[1],10)-1, parseInt(parts[2],10));
+    return Math.round((d - today) / 86400000);
+  }
+  function priorityFor(ev) {
+    var days = isoDaysFromToday(ev.nextDate);
+    if (days === null) return 'watch';
+    if (days <= 0) return 'today';
+    if (days <= 3) return 'high';
+    if (days <= 7) return 'watch';
+    return 'later';
+  }
+  function productLink(product) {
+    var map = { trigo:'trigo', maiz:'maiz', leche:'leche', fertilizantes:'urea', diesel:'diesel', arroz:'arroz' };
+    return map[product] ? 'precios/' + map[product] + '/' : 'precios.html?product=' + product;
+  }
+
   var CALENDAR_EVENTS = [
     {
       id: 'us-agricultural-prices', market: 'us', freq: 'monthly', type: 'publication', crops: ['trigo','maiz','leche'], impact: 'precios',
