@@ -133,7 +133,13 @@
       seasonIntro: 'El patrón estacional medio de cada producto: cuánto se desvía el precio de un mes de calendario respecto a la propia media anual del producto, promediado sobre los 5 años de histórico ilustrativo.',
       seasonProductLabel: 'Producto:', seasonPeakLabel: 'Pico estacional:', seasonTroughLabel: 'Valle estacional:',
       seasonDisclaimer: 'Calculado sobre el mismo histórico ilustrativo de 5 años que usan Momentum, Correlación y Volatilidad — no es un patrón oficial verificado.',
-      seasonMonths: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+      seasonMonths: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+      localGlobalTitle: 'Local vs. Global',
+      localGlobalIntro: 'El mismo producto, visto a la vez desde el mercado global (EE. UU., la referencia o futuro europeo y, si existe, Reino Unido) y desde el precio físico real en cada país de la Unión Europea -- para ver de un vistazo si la presión del mercado mundial ya ha llegado al mercado local, o todavía no.',
+      localGlobalProductLabel: 'Producto:',
+      localGlobalMapBadge: 'Global Price Map',
+      localGlobalNoCountryData: 'Este producto todavía no tiene desglose de precio por país dentro de la Unión Europea -- se muestra solo la referencia europea de conjunto.',
+      localGlobalDisclaimer: 'Los precios globales (EE. UU., Europa, Reino Unido) son los mismos ya publicados en el resto del panel, con su fuente real bajo cada etiqueta. El desglose por país dentro de la UE usa las cotizaciones nacionales que publica la Comisión Europea a través de su observatorio de mercado correspondiente; por ahora solo está disponible para los productos que ya tenían este desglose en otras partes del panel (lácteos, ganado, porcino, ovino, avicultura, aceite), más el trigo (Comisión Europea, semana del 14 al 20 de septiembre de 2026, vía IndexBox). Se irá ampliando a más productos según aparezcan fuentes citables.'
     },
     en: {
       pageTitle: 'Price dashboard',
@@ -262,7 +268,13 @@
       seasonIntro: "Each product's average seasonal pattern: how much a calendar month's price typically deviates from that product's own annual average, averaged over the 5 years of illustrative history.",
       seasonProductLabel: 'Product:', seasonPeakLabel: 'Seasonal peak:', seasonTroughLabel: 'Seasonal trough:',
       seasonDisclaimer: "Computed from the same illustrative 5-year history used by Momentum, Correlation and Volatility — not a verified official pattern.",
-      seasonMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      seasonMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      localGlobalTitle: 'Local vs. Global',
+      localGlobalIntro: "The same product, seen at once from the global market (the U.S., the EU-wide reference or futures price and, where it exists, the U.K.) and from the actual physical price in each EU country -- so you can see at a glance whether global market pressure has already reached the local market, or not yet.",
+      localGlobalProductLabel: 'Product:',
+      localGlobalMapBadge: 'Global Price Map',
+      localGlobalNoCountryData: "This product doesn't have a country-level price breakdown within the EU yet -- only the EU-wide reference is shown.",
+      localGlobalDisclaimer: "The global prices (U.S., Europe, U.K.) are the same ones already published elsewhere on this panel, with their real source under each label. The EU country breakdown uses the national quotations published by the European Commission via its relevant market observatory; for now it's only available for the products that already had this breakdown elsewhere on the panel (dairy, cattle, pork, sheep, poultry, olive oil), plus wheat (European Commission, week of September 14-20, 2026, via IndexBox). More products will be added as citable sources appear."
     },
     fr: {
       pageTitle: 'Tableau des prix',
@@ -391,7 +403,13 @@
       seasonIntro: "Le profil saisonnier moyen de chaque produit : de combien le prix d'un mois donné s'écarte en moyenne de la moyenne annuelle du produit.",
       seasonProductLabel: 'Produit :', seasonPeakLabel: 'Pic saisonnier :', seasonTroughLabel: 'Creux saisonnier :',
       seasonDisclaimer: "Calculé sur le même historique illustratif de 5 ans qu'utilisent Momentum, Corrélation et Volatilité — ce n'est pas un profil officiel vérifié.",
-      seasonMonths: ['Janv.', 'Févr.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.']
+      seasonMonths: ['Janv.', 'Févr.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+      localGlobalTitle: 'Local vs. Global',
+      localGlobalIntro: "Le même produit, vu à la fois depuis le marché mondial (États-Unis, référence ou futur européen et, quand il existe, Royaume-Uni) et depuis le prix physique réel dans chaque pays de l'UE -- pour voir en un coup d'œil si la pression du marché mondial a déjà atteint le marché local, ou pas encore.",
+      localGlobalProductLabel: 'Produit :',
+      localGlobalMapBadge: 'Global Price Map',
+      localGlobalNoCountryData: "Ce produit n'a pas encore de répartition de prix par pays au sein de l'UE -- seule la référence européenne globale est affichée.",
+      localGlobalDisclaimer: "Les prix mondiaux (États-Unis, Europe, Royaume-Uni) sont les mêmes que ceux déjà publiés ailleurs dans ce panneau, avec leur source réelle sous chaque étiquette. La répartition par pays au sein de l'UE utilise les cotations nationales publiées par la Commission européenne via son observatoire de marché correspondant ; pour l'instant, elle n'est disponible que pour les produits qui avaient déjà cette répartition ailleurs dans le panneau (produits laitiers, bovins, porcin, ovin, volaille, huile d'olive), plus le blé (Commission européenne, semaine du 14 au 20 septembre 2026, via IndexBox). D'autres produits seront ajoutés au fur et à mesure que des sources citables apparaîtront."
     },
     it: {
       pageTitle: 'Pannello dei prezzi',
@@ -520,7 +538,13 @@
       seasonIntro: "Il pattern stagionale medio di ogni prodotto: di quanto il prezzo di un dato mese si discosta in media dalla media annuale dello stesso prodotto.",
       seasonProductLabel: 'Prodotto:', seasonPeakLabel: 'Picco stagionale:', seasonTroughLabel: 'Minimo stagionale:',
       seasonDisclaimer: "Calcolato sullo stesso storico illustrativo di 5 anni usato da Momentum, Correlazione e Volatilità — non è un pattern ufficiale verificato.",
-      seasonMonths: ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic']
+      seasonMonths: ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'],
+      localGlobalTitle: 'Local vs. Global',
+      localGlobalIntro: "Lo stesso prodotto, visto allo stesso tempo dal mercato globale (Stati Uniti, riferimento o future europeo e, dove esiste, Regno Unito) e dal prezzo fisico reale in ciascun paese dell'UE -- per vedere a colpo d'occhio se la pressione del mercato mondiale ha già raggiunto il mercato locale, o non ancora.",
+      localGlobalProductLabel: 'Prodotto:',
+      localGlobalMapBadge: 'Global Price Map',
+      localGlobalNoCountryData: "Questo prodotto non ha ancora una ripartizione di prezzo per paese all'interno dell'UE -- viene mostrato solo il riferimento europeo complessivo.",
+      localGlobalDisclaimer: "I prezzi globali (Stati Uniti, Europa, Regno Unito) sono gli stessi già pubblicati altrove in questo pannello, con la loro fonte reale sotto ciascuna etichetta. La ripartizione per paese all'interno dell'UE usa le quotazioni nazionali pubblicate dalla Commissione Europea tramite il relativo osservatorio di mercato; per ora è disponibile solo per i prodotti che avevano già questa ripartizione altrove nel pannello (lattiero-caseario, bovini, suini, ovini, avicoltura, olio d'oliva), più il grano (Commissione Europea, settimana dal 14 al 20 settembre 2026, tramite IndexBox). Altri prodotti saranno aggiunti man mano che emergeranno fonti citabili."
     }
   };
   global.DehesaPreciosI18n = UI;

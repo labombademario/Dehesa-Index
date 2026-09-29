@@ -6,9 +6,11 @@
    estacional media, ratios), mismo histórico ilustrativo de 5 años
    (genLongHistory, ya en js/data.js) para que los números de aquí y los que
    se ven en el histórico ampliado de cada producto sean siempre coherentes.
+   Incluye también Local vs. Global (mercado global EE. UU./Europa/Reino
+   Unido vs. desglose físico por país UE), construido sobre el histórico
+   corto nativo de cada región vía D.buildRegion/D.deriveCountryRaw.
    Vanilla JS / ES5. Se apoya en window.DehesaPreciosCore (expuesto al final
-   de js/precios.js) y window.DehesaData. Diferido a una fase posterior:
-   Local vs. Global. */
+   de js/precios.js) y window.DehesaData. */
 (function (global) {
   'use strict';
   var D = global.DehesaData;
@@ -670,6 +672,83 @@
   }
 
   // ---------------------------------------------------------------------
+  // Local vs. Global -- mismo producto visto a la vez desde el mercado
+  // global (EE. UU., referencia/futuro europeo y, si existe, Reino Unido)
+  // y desde el precio físico real en cada país de la UE. Reutiliza
+  // D.buildRegion / D.deriveCountryRaw sobre el histórico corto nativo de
+  // cada región (el mismo que usan las tarjetas normales de Precios), no
+  // el histórico ilustrativo de 5 años de los otros widgets de esta página.
+  // ---------------------------------------------------------------------
+  var LG_COUNTRY_ORDER = ['es', 'fr', 'de', 'it'];
+  var lgProductKey = 'cereales:trigo';
+
+  function lgMarketLabel(product, marketKey, generic) {
+    return (product.quoteTypes && product.quoteTypes[marketKey] && product.quoteTypes[marketKey].market) ? product.quoteTypes[marketKey].market : generic;
+  }
+
+  function buildLocalGlobal(productKey) {
+    var Core = core();
+    var entry = Core.PRODUCT_BY_KEY[productKey] || Core.PRODUCT_BY_KEY['cereales:trigo'];
+    var product = entry.product;
+    var UL = D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es;
+    var RG = D.REGION[lang()] || D.REGION.es;
+    var ER = D.ENERGY_REGIONS[lang()] || D.ENERGY_REGIONS.es;
+    var t = P();
+    var rows = [];
+    rows.push({ flag: '🇺🇸', label: lgMarketLabel(product, 'us', RG.us), built: D.buildRegion(product.us, lgMarketLabel(product, 'us', RG.us), 'USD', product.imperialKgPerUnit, UL[product.imperialUnitKey], D.FX, t) });
+    rows.push({ flag: '🇪🇺', label: lgMarketLabel(product, 'eu', RG.eu), built: D.buildRegion(product.eu, lgMarketLabel(product, 'eu', RG.eu), 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
+    if (product.uk) {
+      rows.push({ flag: '🇬🇧', label: lgMarketLabel(product, 'uk', RG.uk), built: D.buildRegion(product.uk, lgMarketLabel(product, 'uk', RG.uk), 'GBP', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
+    }
+    // Mismo criterio que el resto del panel: si el producto no tiene
+    // countryFactors (o un país concreto no publica cotización propia), no
+    // se inventa nada -- ese país simplemente no aparece en la lista.
+    var noCountryData = !product.countryFactors;
+    if (product.countryFactors) {
+      LG_COUNTRY_ORDER.forEach(function (c) {
+        var factor = product.countryFactors[c];
+        if (factor == null) return;
+        var raw = D.deriveCountryRaw(product.eu, factor);
+        var label = ER[D.COUNTRY_ER_KEY[c]];
+        rows.push({ flag: D.COUNTRY_FLAG[c], label: label, built: D.buildRegion(raw, label, 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
+      });
+    }
+    return { rows: rows, noCountryData: noCountryData };
+  }
+
+  function renderLocalGlobalHtml() {
+    var t = ui();
+    var Core = core();
+    if (!Core.PRODUCT_BY_KEY[lgProductKey]) lgProductKey = 'cereales:trigo';
+    var data = buildLocalGlobal(lgProductKey);
+    var options = Core.PRODUCTS.filter(function (e) { return (e.catId + ':' + e.nameKey) !== 'energia:diesel'; }).map(function (e) {
+      var k = e.catId + ':' + e.nameKey;
+      return '<option value="' + k + '"' + (k === lgProductKey ? ' selected' : '') + '>' + esc(productName(e.nameKey)) + '</option>';
+    }).join('');
+    var rowsHtml = data.rows.map(function (r) {
+      var b = r.built;
+      return (
+        '<div class="di-lg-row">' +
+          '<span class="di-lg-label">' + r.flag + ' ' + esc(r.label) + '</span>' +
+          '<span class="di-lg-price"><span class="di-lg-price-value">' + esc(b.price) + '</span><span class="di-lg-price-unit">' + esc(b.unit) + '</span></span>' +
+          '<span class="di-lg-change" style="color:' + b.changeColor + ';">' + esc(b.changeLabel) + '</span>' +
+          '<svg class="di-lg-spark" width="64" height="22" viewBox="0 0 120 36"><path d="' + b.sparkPath + '" fill="none" stroke="' + b.sparkColor + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>' +
+        '</div>'
+      );
+    }).join('');
+    return (
+      '<div class="di-intel-section" id="di-intel-localglobal">' +
+        '<div class="di-intel-head"><h2>🌍 ' + esc(t.localGlobalTitle) + '</h2><p>' + esc(t.localGlobalIntro) + '</p></div>' +
+        '<div class="di-season-select-row"><label class="di-field-label">' + esc(t.localGlobalProductLabel) + '</label><select class="di-eu-country-select" id="di-lg-select">' + options + '</select></div>' +
+        '<div class="di-lg-grid">' + rowsHtml + '</div>' +
+        (data.noCountryData ? '<p class="di-lg-nodata">' + esc(t.localGlobalNoCountryData) + '</p>' : '') +
+        '<div class="di-news-badge-row" style="margin-top:14px;"><span class="di-badge di-lg-map-badge">🗺️ ' + esc(t.localGlobalMapBadge) + '</span></div>' +
+        '<div class="di-intel-disclaimer">' + esc(t.localGlobalDisclaimer) + '</div>' +
+      '</div>'
+    );
+  }
+
+  // ---------------------------------------------------------------------
   // Orquestación
   // ---------------------------------------------------------------------
   function wireOpenTargets(root) {
@@ -691,12 +770,18 @@
       renderMomentumHtml() +
       '<div class="di-intel-grid-2">' + renderCorrelationHtml(corrVolData) + renderVolatilityHtml(corrVolData) + '</div>' +
       renderSeasonalityHtml() +
+      renderLocalGlobalHtml() +
       renderSpreadsHtml() +
       renderMarginHtml();
     wireOpenTargets(root);
     var seasonSelect = document.getElementById('di-season-select');
     if (seasonSelect) seasonSelect.addEventListener('change', function (e) {
       seasonProductKey = e.target.value;
+      render();
+    });
+    var lgSelect = document.getElementById('di-lg-select');
+    if (lgSelect) lgSelect.addEventListener('change', function (e) {
+      lgProductKey = e.target.value;
       render();
     });
   }
