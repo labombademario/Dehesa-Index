@@ -1151,7 +1151,7 @@
   // News → Market Impact Panel
   // ---------------------------------------------------------------------
   function renderNewsImpactPanelHtml() {
-    var Core=core(), idx=global.DehesaNewsIndex||{}, region=Core.getLocation ? Core.getLocation() : 'us', rels=region==='eu' ? relationshipSnapshot() : {}, alerts=region==='eu' ? buildTransmissionAlerts() : [];
+    var Core=core(), idx=global.DehesaNewsIndex||{}, region=Core.getLocation ? Core.getLocation() : 'us', rels=relationshipSnapshot(), alerts=buildTransmissionAlerts();
     var active=Core.getActiveTab ? Core.getActiveTab() : 'cereales';
     var entries=(Core.PRODUCTS||[]).filter(function(e){return e.catId===active;});
     var keys={}; entries.forEach(function(e){keys[e.nameKey]=true;});
