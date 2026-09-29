@@ -55,7 +55,7 @@
   var state = {
     location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk') ? v : null; })(),
     euCountry: (function () { var v = readLS('dehesaIndexEuCountry'); return (v === 'es' || v === 'de' || v === 'fr' || v === 'it') ? v : 'es'; })(),
-    activeTab: 'cereales',
+    activeTab: (new URLSearchParams(window.location.search).get('tab') || 'cereales'),
     favorites: readFavorites(),
     searchQuery: '',
     expanded: {},
@@ -226,6 +226,13 @@
       return '<button type="button" class="di-search-result" data-goto="' + key + '">' +
         esc(productName(entry.nameKey)) + ' <span class="di-search-result-cat">· ' + esc(catLabel(entry.catId)) + '</span></button>';
     }).join('');
+  }
+
+  function queryProductKey() {
+    var p = new URLSearchParams(window.location.search).get('product');
+    if (!p) return null;
+    var aliases = { trigo:'cereales:trigo', maiz:'cereales:maiz', arroz:'cereales:arroz', cebada:'cereales:cebada', soja:'cereales:soja', leche:'lacteos:leche', urea:'fertilizantes:urea', diesel:'energia:diesel', fertilizantes:'fertilizantes:urea' };
+    return aliases[p] || (PRODUCT_BY_KEY[p] ? p : null);
   }
 
   function goToProduct(key) {
@@ -1095,10 +1102,32 @@
     renderFavorites();
     if (global.DehesaPreciosIntel) global.DehesaPreciosIntel.render();
     renderTabsAndCategory();
+    if (state.deepLinkProduct) {
+      var key = state.deepLinkProduct;
+      state.deepLinkProduct = null;
+      setTimeout(function () {
+        var card = document.querySelector('[data-key="' + key + '"]');
+        if (card) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.style.boxShadow = '0 0 0 3px ' + (T().positive) + '55';
+          setTimeout(function () { card.style.boxShadow = ''; }, 1400);
+        }
+      }, 40);
+    }
   }
 
   function init() {
     S.init('precios');
+    var deepKey = queryProductKey();
+    var requestedRegion = new URLSearchParams(window.location.search).get('region');
+    if (deepKey && PRODUCT_BY_KEY[deepKey]) {
+      state.activeTab = PRODUCT_BY_KEY[deepKey].catId;
+      state.deepLinkProduct = deepKey;
+    }
+    if (requestedRegion === 'us' || requestedRegion === 'eu' || requestedRegion === 'uk') {
+      state.location = requestedRegion;
+      writeLS('dehesaIndexLocation', requestedRegion);
+    }
     wireGlobalControls();
     renderAll();
     S.onLangChange = function () { renderAll(); };
