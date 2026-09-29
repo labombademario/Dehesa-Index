@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: dehesa-energy
+  group: dehesa-data-writes
   cancel-in-progress: false
 jobs:
   update:

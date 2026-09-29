@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: dehesa-worldbank-urea
+  group: dehesa-data-writes
   cancel-in-progress: false
 
 jobs:

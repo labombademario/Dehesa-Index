@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: dehesa-nass-data
+  group: dehesa-data-writes
   cancel-in-progress: false
 
 permissions:

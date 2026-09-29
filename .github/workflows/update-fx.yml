@@ -18,6 +18,12 @@ on:
 permissions:
   contents: write
 
+# Mismo grupo que el resto de workflows que escriben datos: se ponen en cola
+# en vez de pisarse al hacer push.
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+
 jobs:
   update-fx:
     runs-on: ubuntu-latest
