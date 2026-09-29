@@ -121,7 +121,7 @@
       ctaPrimary: 'Voir le tableau des prix →',
       ctaSecondary: 'Comment ça marche',
       moversTitle: 'LES MOUVEMENTS AGRICOLES DU JOUR',
-      moversHint: "Instantané d'exemple — mêmes données que le tableau complet",
+      moversHint: 'Seules les observations réelles publiées par la couche de données',
       moversColProducto: 'Produit', moversColPrecio: 'Prix', moversCol1D: '1J', moversCol1W: '1S',
       moversCta: 'Voir tous les prix →',
       moversLabels: {
@@ -158,7 +158,7 @@
         { n: '02', title: 'Comparez sur la même base', desc: "Changez la devise (USD/EUR) et l'unité (impérial/métrique) pour comparer directement." },
         { n: '03', title: 'Suivez la tendance', desc: 'Graphiques historiques et variation en pourcentage pour voir où va le marché.' }
       ],
-      disclaimer: 'Le tableau de bord affiche actuellement des données fictives à des fins de conception et de produit — la prochaine étape consiste à connecter des sources en direct (USDA NASS, Commission européenne, CME Group, Euronext, DTN Fertilizer Index).',
+      disclaimer: 'Le tableau de bord affiche uniquement une observation réelle normalisée. Les sources en attente ou non comparables sont signalées explicitement.',
       ctaTitle: 'Explorez le tableau de bord complet des prix',
       ctaSub: 'Céréales, produits laitiers, bétail, aliments pour animaux et engrais — mis à jour et prêts à être comparés.',
       ctaButton: 'Voir les prix →'
@@ -169,7 +169,7 @@
       ctaPrimary: 'Vedi il pannello dei prezzi →',
       ctaSecondary: 'Come funziona',
       moversTitle: 'I MOVIMENTI AGRICOLI DI OGGI',
-      moversHint: 'Istantanea campione — stessi dati del pannello completo',
+      moversHint: 'Solo osservazioni reali pubblicate dal livello dati',
       moversColProducto: 'Prodotto', moversColPrecio: 'Prezzo', moversCol1D: '1G', moversCol1W: '1S',
       moversCta: 'Vedi tutti i prezzi →',
       moversLabels: {
@@ -206,7 +206,7 @@
         { n: '02', title: 'Confronta sulla stessa base', desc: 'Cambia valuta (USD/EUR) e unità di misura (imperiale/metrica) per confrontare direttamente.' },
         { n: '03', title: 'Segui la tendenza', desc: 'Grafici storici e variazione percentuale per vedere verso dove si muove il mercato.' }
       ],
-      disclaimer: 'Il pannello mostra attualmente dati campione a scopo di progettazione e di prodotto — il prossimo passo è collegare fonti in tempo reale (USDA NASS, Commissione europea, CME Group, Euronext, DTN Fertilizer Index).',
+      disclaimer: 'Il pannello mostra solo osservazioni reali normalizzate. Le fonti in attesa o non comparabili sono segnalate esplicitamente.',
       ctaTitle: 'Esplora il pannello completo dei prezzi',
       ctaSub: 'Cereali, lattiero-caseario, bestiame, mangimi e fertilizzanti — aggiornati e pronti per il confronto.',
       ctaButton: 'Vedi i prezzi →'
