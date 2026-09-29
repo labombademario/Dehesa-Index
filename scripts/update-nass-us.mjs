@@ -177,12 +177,13 @@ async function main() {
   // Publication date permanece null porque Quick Stats no la expone como
   // fecha de publicación de la observación en este endpoint.
   var trustKey = 'cereales-' + key + '-us';
+  var verifiedAt = new Date().toISOString();
   var trustRe = new RegExp("('" + trustKey + "': \\{[\\s\\S]*?observationDate: )null(, publicationDate: )null");
   if (!trustRe.test(updated)) {
-    throw new Error('No se encontró el registro Data Trust `' + trustKey + '` en js/data.js. Se aborta para no actualizar el precio sin su trazabilidad.');
+    throw new Error('No se encontró el registro Data Trust \`' + trustKey + '\` en js/data.js. Se aborta para no actualizar el precio sin su trazabilidad.');
   }
   updated = updated.replace(trustRe, function (_, pre, pub) {
-    return pre + "'" + observationDate + "'" + pub + 'null';
+    return pre + "'" + observationDate + "'" + pub + "null, status: 'verified', verifiedAt: '" + verifiedAt + "'";
   });
 
   if (updated === src) {
