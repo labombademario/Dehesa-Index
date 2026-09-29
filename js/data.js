@@ -498,7 +498,7 @@
           countryFactors: { es: 1, fr: 0.842, de: 1.016, it: 0.861 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'futuro', market: 'Euronext (MATIF)' }, uk: { type: 'futuro', market: 'AHDB (trigo pienso, entrega nov. 2026)' } } },
         { nameKey: 'arroz', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
-          us: { price: 14.60, changePct: 0.3, history: [14.20, 14.30, 14.35, 14.40, 14.50, 14.55, 14.60], currency: 'USD', kgPerUnit: 45.359 },
+          us: { price: 11.8, changePct: 0, history: [13.6, 12.3, 11.7, 11.3, 11.4, 11.8, 11.8], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 385, changePct: 0.3, history: [390, 388, 386, 384, 383, 384, 385], currency: 'EUR', kgPerUnit: 1000 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'futuro', market: 'Euronext (MATIF)' } } }
       ]
