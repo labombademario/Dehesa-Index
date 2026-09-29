@@ -58,20 +58,57 @@
   function render(entry,disp){
     if(!entry||!disp||!disp.quoteType)return'';
     var lang=S.getLang?S.getLang():'es',t=I18N[lang]||I18N.es;
-    var qt=(D.QUOTE_TYPES[lang]||D.QUOTE_TYPES.es)[disp.quoteType.type];
-    var source=sourceFor(entry,disp.quoteType),freq=frequencyFor(disp.quoteType.market),comp=comparability(entry);
-    var sourceHtml=source?'<a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(disp.quoteType.market||source.name)+'</a>':esc(disp.quoteType.market||'—');
-    var note=entry.product.footnoteKey?((D.FOOT[lang]||D.FOOT.es)[entry.product.footnoteKey]||t.compareNote):t.compareNote;
-    return '<details class="di-data-trust"><summary><span class="di-data-trust-dot"></span>'+esc(t.summary)+'</summary><div class="di-data-trust-body"><div class="di-data-trust-grid">'+
-      '<div><span class="di-data-trust-label">'+esc(t.status)+'</span><strong class="di-data-trust-sample">'+esc(t.sample)+'</strong></div>'+
-      '<div><span class="di-data-trust-label">'+esc(t.source)+'</span><strong>'+sourceHtml+'</strong></div>'+
-      '<div><span class="di-data-trust-label">'+esc(t.market)+'</span><strong>'+esc(disp.quoteType.market||'—')+'</strong></div>'+
-      '<div><span class="di-data-trust-label">'+esc(t.type)+'</span><strong>'+esc(qt?qt.label:(disp.quoteType.type||'—'))+'</strong></div>'+
-      '<div><span class="di-data-trust-label">'+esc(t.frequency)+'</span><strong>'+esc(frequencyLabel(freq,t))+'</strong></div>'+
-      '<div><span class="di-data-trust-label">'+esc(t.observation)+'</span><strong>'+esc(t.notDeclared)+'</strong></div>'+
-      '<div><span class="di-data-trust-label">'+esc(t.publication)+'</span><strong>'+esc(t.notDeclared)+'</strong></div>'+
-      '<div><span class="di-data-trust-label">'+esc(t.comparability)+'</span><strong>'+esc(compLabel(comp,t))+'</strong></div>'+
-      '</div><div class="di-data-trust-note"><b>'+esc(t.note)+':</b> '+esc(note)+'</div></div></details>';
+    var region=disp.region||disp.quoteType.region||null;
+    var productId=entry.catId+'-'+entry.product.nameKey;
+    var key=productId+'-'+(region||'');
+    var observation=D.DATA_TRUST&&D.DATA_TRUST[key];
+    if(!observation){
+      var fallbackRegion=region==='uk'?'uk':region==='eu'?'eu':'us';
+      observation=D.DATA_TRUST&&D.DATA_TRUST[productId+'-'+fallbackRegion];
+    }
+    if(!observation){
+      return '';
+    }
+
+    var typeDef=(D.QUOTE_TYPES[lang]||D.QUOTE_TYPES.es)[observation.quoteType];
+    var statusLabel=observation.status==='verified'?'Verified':t.sample;
+    var frequencyLabels={
+      monthly:{es:'Mensual',en:'Monthly',fr:'Mensuelle',it:'Mensile'},
+      weekly:{es:'Semanal',en:'Weekly',fr:'Hebdomadaire',it:'Settimanale'},
+      daily:{es:'Diaria',en:'Daily',fr:'Quotidienne',it:'Giornaliera'},
+      'source-dependent':{es:t.frequencyUnknown,en:t.frequencyUnknown,fr:t.frequencyUnknown,it:t.frequencyUnknown}
+    };
+    var frequency=(frequencyLabels[observation.frequency]&&frequencyLabels[observation.frequency][lang])||t.frequencyUnknown;
+    var compLabel={
+      conditional:t.conditional,
+      directional:t.directional,
+      direct:t.direct,
+      not_comparable:lang==='es'?'No directamente comparable':lang==='fr'?'Pas directement comparable':lang==='it'?'Non direttamente comparabile':'Not directly comparable',
+      review:t.review
+    }[observation.comparability]||t.review;
+    var statusClass=observation.status==='verified'?'verified':'sample';
+    var observationDate=observation.observationDate||t.notDeclared;
+    var publicationDate=observation.publicationDate||t.notDeclared;
+    var sourceHtml=observation.sourceUrl
+      ? '<a href="'+esc(observation.sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(observation.source)+'</a>'
+      : esc(observation.source||'—');
+
+    return '<details class="di-data-trust di-data-trust-'+statusClass+'">'+
+      '<summary><span class="di-data-trust-dot"></span>'+esc(t.summary)+'<span class="di-data-trust-id">'+esc(observation.id)+'</span></summary>'+
+      '<div class="di-data-trust-body">'+
+        '<div class="di-data-trust-grid">'+
+          '<div><span class="di-data-trust-label">'+esc(t.status)+'</span><strong class="di-data-trust-'+statusClass+'">'+esc(statusLabel)+'</strong></div>'+
+          '<div><span class="di-data-trust-label">'+esc(t.source)+'</span><strong>'+sourceHtml+'</strong></div>'+
+          '<div><span class="di-data-trust-label">'+esc(t.market)+'</span><strong>'+esc(observation.market||'—')+'</strong></div>'+
+          '<div><span class="di-data-trust-label">'+esc(t.type)+'</span><strong>'+esc(typeDef?typeDef.label:(observation.quoteType||'—'))+'</strong></div>'+
+          '<div><span class="di-data-trust-label">'+esc(t.frequency)+'</span><strong>'+esc(frequency)+'</strong></div>'+
+          '<div><span class="di-data-trust-label">'+esc(t.observation)+'</span><strong>'+esc(observationDate)+'</strong></div>'+
+          '<div><span class="di-data-trust-label">'+esc(t.publication)+'</span><strong>'+esc(publicationDate)+'</strong></div>'+
+          '<div><span class="di-data-trust-label">'+esc(t.comparability)+'</span><strong>'+esc(compLabel)+'</strong></div>'+
+        '</div>'+
+        '<div class="di-data-trust-note"><b>'+esc(t.note)+':</b> '+esc(observation.methodology||t.compareNote)+'</div>'+
+      '</div></details>';
   }
+
   global.DehesaDataTrust={render:render,frequencyFor:frequencyFor,comparability:comparability};
 })(window);
