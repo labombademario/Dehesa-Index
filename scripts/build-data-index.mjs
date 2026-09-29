@@ -65,6 +65,7 @@ for (const observation of all) {
       currency: observation.currency,
       unit: observation.unit,
       frequency: observation.frequency,
+      publicationDate: observation.publicationDate || null,
       status: observation.status || 'pending',
       verifiedAt: observation.verifiedAt || null,
       comparability: observation.comparability || 'review'
