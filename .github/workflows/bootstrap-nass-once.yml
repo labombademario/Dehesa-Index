@@ -1,4 +1,5 @@
 name: Bootstrap Dehesa NASS data once
+# One-shot bootstrap: this workflow removes itself after the data commit.
 
 on:
   push:
