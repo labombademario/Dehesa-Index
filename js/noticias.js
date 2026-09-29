@@ -306,6 +306,7 @@
   });
 
   function optionHtml(value, label, selected) {
+    var esc = window.DehesaShared.esc;
     return '<option value="' + esc(value) + '"' + (selected ? ' selected' : '') + '>' + esc(label) + '</option>';
   }
 

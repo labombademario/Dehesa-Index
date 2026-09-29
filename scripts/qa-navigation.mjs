@@ -42,6 +42,7 @@ check(prices.includes('function syncPriceUrl'), 'prices has URL state writer');
 check(prices.includes('function restorePriceUrl'), 'prices has URL state reader');
 
 check(!/noticias\.js[\s\S]{0,6000}history\.replaceState/.test(news), 'news no longer replaces filter history');
+check(/function optionHtml\([\s\S]*?var esc = window\.DehesaShared\.esc;/.test(news), 'news filter options use the shared escape helper in scope');
 check(!/calendario\.js[\s\S]{0,6000}history\.replaceState/.test(calendar), 'calendar no longer replaces filter history');
 
 const productPages = ['trigo','maiz','leche','urea','diesel'];
