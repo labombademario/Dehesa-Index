@@ -10,6 +10,14 @@
   var MOVERS_DATA = [];
   var HOME_DATA = { loaded: false, rows: [], catalog: null };
   var PRODUCT_NAMES = { trigo: 'Trigo', maiz: 'Maíz', arroz: 'Arroz', leche: 'Leche', urea: 'Urea', diesel: 'Diésel' };
+  function fmtMoverPrice(v) {
+    var n = Number(v);
+    if (!isFinite(n)) return '—';
+    var decimals = Math.abs(n) >= 100 ? 1 : (Math.abs(n) >= 10 ? 2 : 3);
+    return n.toFixed(decimals);
+  }
+  function productLabel(key) { return PRODUCT_NAMES[key] || String(key || '').replace(/-/g, ' '); }
+
   var STRINGS = {
     es: {
       h1: 'El pulso de la agricultura, en un solo panel',
