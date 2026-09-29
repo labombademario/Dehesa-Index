@@ -41,6 +41,13 @@ for idx, row in enumerate(rows[:100]):
     if urea_col is not None:
         break
 if urea_col is None:
+    candidates = []
+    for ridx, row in enumerate(rows[:120]):
+        for cidx, val in enumerate(row):
+            s = str(val or "")
+            if "urea" in s.lower() or "fertil" in s.lower():
+                candidates.append((ridx, cidx, s))
+    print("World Bank fertilizer/urea candidates:", candidates[:40])
     raise RuntimeError("World Bank Urea, E. Europe series not found")
 
 points = []
