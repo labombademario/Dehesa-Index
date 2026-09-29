@@ -1,7 +1,24 @@
-CMD: python scripts/update-ec-diesel-eu.py
-Traceback (most recent call last):
-  File "/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-ec-diesel-eu.py", line 18, in <module>
-    if header is None: raise RuntimeError('EC Oil Bulletin EU-27 diesel header not found')
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-RuntimeError: EC Oil Bulletin EU-27 diesel header not found
-EXIT: 1
+CMD: python - <<'P'
+import urllib.request,re
+from openpyxl import load_workbook
+src=open('scripts/update-ec-diesel-eu.py').read()
+url=re.search(r"URL='([^']+)'",src).group(1)
+raw=urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'x'}),timeout=90).read()
+open('/tmp/a.xlsx','wb').write(raw)
+wb=load_workbook('/tmp/a.xlsx',read_only=True,data_only=True)
+print(wb.sheetnames)
+ws=wb[wb.sheetnames[0]]
+for i,r in enumerate(ws.iter_rows(values_only=True)):
+    if i<6 or i in (7,8): print(i,[str(x)[:22] for x in r[:8]])
+    if i>9: break
+P
+['Prices with taxes', 'Prices wo taxes', 'Consumption', 'VAT', 'Excise duties', 'Excise duties - components', 'Other Indirect Taxes']
+0 ['Consumer prices of pet', 'CTR', 'EU_price_with_tax_euro', 'EU_price_with_tax_dies', 'EU_price_with_tax_heat', 'EU_price_with_tax_fuel', 'EU_price_with_tax_fuel', 'EU_price_with_tax_LPG']
+1 ['None', 'None', 'Euro-super 95  (I)', 'Gas oil automobile Aut', ' Gas oil de chauffage ', ' Fuel oil - Schweres H', ' Fuel oil -Schweres He', 'GPL pour moteur LPG mo']
+2 ['Date', 'None', '1000 l', '1000 l', '1000 l', 't', 't', '1000 l']
+3 ['2026-09-21 00:00:00', 'EU_', '2092.1594478614793', '2226.4435149088713', '1752.1676342224232', '702.6060561121728', '597.2929446852697', '863.890644698769']
+4 ['2026-09-14 00:00:00', 'EU_', '2063.3575051911107', '2158.7361941679264', '1711.5895290393926', '688.2514090295678', '578.4701170179737', '854.2469750765367']
+5 ['2026-09-07 00:00:00', 'EU_', '2043.0281411269013', '2108.412782332712', '1595.7566892899863', '668.1812524734459', '570.5353961193824', '850.5967027405358']
+7 ['2026-08-24 00:00:00', 'EU_', '1941.8563648897593', '2063.3660614777104', '1475.4712472734063', '690.4217088991296', '576.3154347030134', '850.5527010955583']
+8 ['2026-08-17 00:00:00', 'EU_', '1923.6200449931841', '2033.1381469525866', '1458.7022912064526', '681.8358752457556', '534.5447853998979', '851.9769334798319']
+EXIT: 0
