@@ -357,8 +357,8 @@
           '<div class="di-news-item-headline">' + esc(tr.headline) + '</div>' +
           '<p class="di-news-item-summary">' + esc(tr.summary) + '</p>' +
           '<div class="di-news-tags">' + marketTags + topicTags + '</div>' +
-          '<span class="di-news-item-readmore">' + esc(t.readMore) + ' →</span><span class="di-news-item-price-link"><a href="' + productPriceUrl(item.products[0] || 'trigo') + '">' + esc(lang === 'es' ? 'Ver precios' : lang === 'fr' ? 'Voir les prix' : lang === 'it' ? 'Vedi prezzi' : 'View prices') + ' →</a></span>' +
-        '</a>';
+          '<span class="di-news-item-readmore">' + esc(t.readMore) + ' →</span>' +
+        '</a><a class="di-news-item-price-link" href="' + productPriceUrl(item.products[0] || 'trigo') + '">' + esc(lang === 'es' ? 'Ver precios' : lang === 'fr' ? 'Voir les prix' : lang === 'it' ? 'Vedi prezzi' : 'View prices') + ' →</a>';
       }).join('') + '</div>';
     } else {
       itemsHtml = '<div class="di-news-empty">' + esc(t.noResultsHint) + '</div>';
