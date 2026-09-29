@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T17:51:00.093Z",
+  "generatedAt": "2026-09-29T20:59:01.957Z",
   "scope": {
-    "latestObservations": 4,
-    "historyObservations": 33,
-    "verified": 4,
+    "latestObservations": 8,
+    "historyObservations": 129,
+    "verified": 8,
     "pending": 0,
     "stale": 4,
     "regions": [
@@ -13,6 +13,10 @@
     ],
     "products": [
       "arroz",
+      "eurostat_cereals_output_index",
+      "eurostat_energy_input_index",
+      "eurostat_fertiliser_input_index",
+      "eurostat_milk_output_index",
       "maiz",
       "trigo",
       "urea"
@@ -31,8 +35,68 @@
       "verifiedAt": "2026-09-29T16:54:10.660Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "stale": true,
-      "ageDays": 90
+      "ageDays": 90,
+      "stale": true
+    },
+    {
+      "id": "di_eurostat_cereals_output_index",
+      "product": "eurostat_cereals_output_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-06-30",
+      "publicationDate": null,
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "frequency": "quarterly",
+      "historyPoints": 24,
+      "ageDays": 91,
+      "stale": false
+    },
+    {
+      "id": "di_eurostat_energy_input_index",
+      "product": "eurostat_energy_input_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-06-30",
+      "publicationDate": null,
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "frequency": "quarterly",
+      "historyPoints": 24,
+      "ageDays": 91,
+      "stale": false
+    },
+    {
+      "id": "di_eurostat_fertiliser_input_index",
+      "product": "eurostat_fertiliser_input_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-06-30",
+      "publicationDate": null,
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "frequency": "quarterly",
+      "historyPoints": 24,
+      "ageDays": 91,
+      "stale": false
+    },
+    {
+      "id": "di_eurostat_milk_output_index",
+      "product": "eurostat_milk_output_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-06-30",
+      "publicationDate": null,
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "frequency": "quarterly",
+      "historyPoints": 24,
+      "ageDays": 91,
+      "stale": false
     },
     {
       "id": "di_maiz_us",
@@ -46,8 +110,8 @@
       "verifiedAt": "2026-09-29T16:54:10.345Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "stale": true,
-      "ageDays": 90
+      "ageDays": 90,
+      "stale": true
     },
     {
       "id": "di_trigo_us",
@@ -61,8 +125,8 @@
       "verifiedAt": "2026-09-29T16:54:10.032Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "stale": true,
-      "ageDays": 90
+      "ageDays": 90,
+      "stale": true
     },
     {
       "id": "di_fertilizantes_urea_eu",
@@ -76,8 +140,8 @@
       "verifiedAt": "2026-09-29T17:47:20Z",
       "frequency": "monthly",
       "historyPoints": 12,
-      "stale": true,
-      "ageDays": 59
+      "ageDays": 59,
+      "stale": true
     }
   ],
   "policy": {

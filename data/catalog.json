@@ -1,9 +1,13 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T17:47:20.245Z",
-  "observationCount": 4,
+  "generatedAt": "2026-09-29T20:59:01.877Z",
+  "observationCount": 8,
   "products": [
     "arroz",
+    "eurostat_cereals_output_index",
+    "eurostat_energy_input_index",
+    "eurostat_fertiliser_input_index",
+    "eurostat_milk_output_index",
     "maiz",
     "trigo",
     "urea"
@@ -13,11 +17,13 @@
     "us"
   ],
   "sources": [
+    "eurostat",
     "usda_nass",
     "world_bank"
   ],
   "frequencies": [
-    "monthly"
+    "monthly",
+    "quarterly"
   ],
   "latest": [
     {
@@ -27,9 +33,73 @@
       "observationDate": "2026-07",
       "unit": "cwt",
       "currency": "USD",
+      "frequency": "monthly",
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.660Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "points": 7,
+      "coverageStart": "2026-01-01",
+      "coverageEnd": "2026-07-01"
+    },
+    {
+      "product": "eurostat_cereals_output_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "observationDate": "2026-06-30",
+      "unit": "index_2020_100",
+      "currency": "INDEX",
+      "frequency": "quarterly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "comparability": "directional",
+      "points": 24,
+      "coverageStart": "2020-09-01",
+      "coverageEnd": "2026-06-01"
+    },
+    {
+      "product": "eurostat_energy_input_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "observationDate": "2026-06-30",
+      "unit": "index_2020_100",
+      "currency": "INDEX",
+      "frequency": "quarterly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "comparability": "directional",
+      "points": 24,
+      "coverageStart": "2020-09-01",
+      "coverageEnd": "2026-06-01"
+    },
+    {
+      "product": "eurostat_fertiliser_input_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "observationDate": "2026-06-30",
+      "unit": "index_2020_100",
+      "currency": "INDEX",
+      "frequency": "quarterly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "comparability": "directional",
+      "points": 24,
+      "coverageStart": "2020-09-01",
+      "coverageEnd": "2026-06-01"
+    },
+    {
+      "product": "eurostat_milk_output_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "observationDate": "2026-06-30",
+      "unit": "index_2020_100",
+      "currency": "INDEX",
+      "frequency": "quarterly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "comparability": "directional",
+      "points": 24,
+      "coverageStart": "2020-09-01",
+      "coverageEnd": "2026-06-01"
     },
     {
       "product": "maiz",
@@ -38,9 +108,13 @@
       "observationDate": "2026-07",
       "unit": "bushel",
       "currency": "USD",
+      "frequency": "monthly",
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.345Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "points": 7,
+      "coverageStart": "2026-01-01",
+      "coverageEnd": "2026-07-01"
     },
     {
       "product": "trigo",
@@ -49,9 +123,13 @@
       "observationDate": "2026-07",
       "unit": "bushel",
       "currency": "USD",
+      "frequency": "monthly",
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
-      "comparability": "directional"
+      "comparability": "directional",
+      "points": 7,
+      "coverageStart": "2026-01-01",
+      "coverageEnd": "2026-07-01"
     },
     {
       "product": "urea",
@@ -60,9 +138,13 @@
       "observationDate": "2026-08-01",
       "unit": "tonelada",
       "currency": "USD",
+      "frequency": "monthly",
       "status": "verified",
       "verifiedAt": "2026-09-29T17:47:20Z",
-      "comparability": "not_comparable"
+      "comparability": "not_comparable",
+      "points": 12,
+      "coverageStart": "2025-09-01",
+      "coverageEnd": "2026-08-01"
     }
   ]
 }

@@ -167,7 +167,7 @@
       "region": "eu",
       "sourceId": "world_bank",
       "observationDate": "2026-08-01",
-      "value": 390.0,
+      "value": 390,
       "currency": "USD",
       "unit": "tonelada",
       "frequency": "monthly",
@@ -203,7 +203,7 @@
         {
           "period": 2,
           "year": 2026,
-          "value": 472.0
+          "value": 472
         },
         {
           "period": 3,
@@ -228,12 +228,560 @@
         {
           "period": 7,
           "year": 2026,
-          "value": 400.0
+          "value": 400
         },
         {
           "period": 8,
           "year": 2026,
-          "value": 390.0
+          "value": 390
+        }
+      ]
+    },
+    {
+      "id": "di_eurostat_cereals_output_index",
+      "product": "eurostat_cereals_output_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "observationDate": "2026-06-30",
+      "value": 115.44,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "quarterly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "comparability": "directional",
+      "methodology": "apri_pi_outq; EU27_2020; nominal agricultural price index, 2020=100.",
+      "history": [
+        {
+          "period": "Q3",
+          "year": 2020,
+          "value": 97.57
+        },
+        {
+          "period": "Q4",
+          "year": 2020,
+          "value": 104.84
+        },
+        {
+          "period": "Q1",
+          "year": 2021,
+          "value": 116.94
+        },
+        {
+          "period": "Q2",
+          "year": 2021,
+          "value": 120.55
+        },
+        {
+          "period": "Q3",
+          "year": 2021,
+          "value": 124.75
+        },
+        {
+          "period": "Q4",
+          "year": 2021,
+          "value": 147.34
+        },
+        {
+          "period": "Q1",
+          "year": 2022,
+          "value": 166.18
+        },
+        {
+          "period": "Q2",
+          "year": 2022,
+          "value": 200.22
+        },
+        {
+          "period": "Q3",
+          "year": 2022,
+          "value": 192.21
+        },
+        {
+          "period": "Q4",
+          "year": 2022,
+          "value": 189.29
+        },
+        {
+          "period": "Q1",
+          "year": 2023,
+          "value": 167.7
+        },
+        {
+          "period": "Q2",
+          "year": 2023,
+          "value": 142.13
+        },
+        {
+          "period": "Q3",
+          "year": 2023,
+          "value": 134.12
+        },
+        {
+          "period": "Q4",
+          "year": 2023,
+          "value": 124.79
+        },
+        {
+          "period": "Q1",
+          "year": 2024,
+          "value": 117.06
+        },
+        {
+          "period": "Q2",
+          "year": 2024,
+          "value": 121.07
+        },
+        {
+          "period": "Q3",
+          "year": 2024,
+          "value": 119.15
+        },
+        {
+          "period": "Q4",
+          "year": 2024,
+          "value": 125.15
+        },
+        {
+          "period": "Q1",
+          "year": 2025,
+          "value": 127.76
+        },
+        {
+          "period": "Q2",
+          "year": 2025,
+          "value": 122.3
+        },
+        {
+          "period": "Q3",
+          "year": 2025,
+          "value": 114.81
+        },
+        {
+          "period": "Q4",
+          "year": 2025,
+          "value": 114.03
+        },
+        {
+          "period": "Q1",
+          "year": 2026,
+          "value": 112.87
+        },
+        {
+          "period": "Q2",
+          "year": 2026,
+          "value": 115.44
+        }
+      ]
+    },
+    {
+      "id": "di_eurostat_milk_output_index",
+      "product": "eurostat_milk_output_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "observationDate": "2026-06-30",
+      "value": 129.6,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "quarterly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "comparability": "directional",
+      "methodology": "apri_pi_outq; EU27_2020; nominal agricultural price index, 2020=100.",
+      "history": [
+        {
+          "period": "Q3",
+          "year": 2020,
+          "value": 98.85
+        },
+        {
+          "period": "Q4",
+          "year": 2020,
+          "value": 101.68
+        },
+        {
+          "period": "Q1",
+          "year": 2021,
+          "value": 102.03
+        },
+        {
+          "period": "Q2",
+          "year": 2021,
+          "value": 105.23
+        },
+        {
+          "period": "Q3",
+          "year": 2021,
+          "value": 108.17
+        },
+        {
+          "period": "Q4",
+          "year": 2021,
+          "value": 115.21
+        },
+        {
+          "period": "Q1",
+          "year": 2022,
+          "value": 124.57
+        },
+        {
+          "period": "Q2",
+          "year": 2022,
+          "value": 139.92
+        },
+        {
+          "period": "Q3",
+          "year": 2022,
+          "value": 154.76
+        },
+        {
+          "period": "Q4",
+          "year": 2022,
+          "value": 163.75
+        },
+        {
+          "period": "Q1",
+          "year": 2023,
+          "value": 153.65
+        },
+        {
+          "period": "Q2",
+          "year": 2023,
+          "value": 135.51
+        },
+        {
+          "period": "Q3",
+          "year": 2023,
+          "value": 129.81
+        },
+        {
+          "period": "Q4",
+          "year": 2023,
+          "value": 132.82
+        },
+        {
+          "period": "Q1",
+          "year": 2024,
+          "value": 137.39
+        },
+        {
+          "period": "Q2",
+          "year": 2024,
+          "value": 137.18
+        },
+        {
+          "period": "Q3",
+          "year": 2024,
+          "value": 141.83
+        },
+        {
+          "period": "Q4",
+          "year": 2024,
+          "value": 153.3
+        },
+        {
+          "period": "Q1",
+          "year": 2025,
+          "value": 154.83
+        },
+        {
+          "period": "Q2",
+          "year": 2025,
+          "value": 155.43
+        },
+        {
+          "period": "Q3",
+          "year": 2025,
+          "value": 155.86
+        },
+        {
+          "period": "Q4",
+          "year": 2025,
+          "value": 147.79
+        },
+        {
+          "period": "Q1",
+          "year": 2026,
+          "value": 131.81
+        },
+        {
+          "period": "Q2",
+          "year": 2026,
+          "value": 129.6
+        }
+      ]
+    },
+    {
+      "id": "di_eurostat_fertiliser_input_index",
+      "product": "eurostat_fertiliser_input_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "observationDate": "2026-06-30",
+      "value": 182.37,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "quarterly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "comparability": "directional",
+      "methodology": "apri_pi_inq; EU27_2020; nominal agricultural price index, 2020=100.",
+      "history": [
+        {
+          "period": "Q3",
+          "year": 2020,
+          "value": 97.55
+        },
+        {
+          "period": "Q4",
+          "year": 2020,
+          "value": 98.25
+        },
+        {
+          "period": "Q1",
+          "year": 2021,
+          "value": 104.49
+        },
+        {
+          "period": "Q2",
+          "year": 2021,
+          "value": 113.14
+        },
+        {
+          "period": "Q3",
+          "year": 2021,
+          "value": 127.12
+        },
+        {
+          "period": "Q4",
+          "year": 2021,
+          "value": 172.45
+        },
+        {
+          "period": "Q1",
+          "year": 2022,
+          "value": 208.18
+        },
+        {
+          "period": "Q2",
+          "year": 2022,
+          "value": 247.92
+        },
+        {
+          "period": "Q3",
+          "year": 2022,
+          "value": 257.84
+        },
+        {
+          "period": "Q4",
+          "year": 2022,
+          "value": 262.7
+        },
+        {
+          "period": "Q1",
+          "year": 2023,
+          "value": 223.8
+        },
+        {
+          "period": "Q2",
+          "year": 2023,
+          "value": 187.49
+        },
+        {
+          "period": "Q3",
+          "year": 2023,
+          "value": 165.13
+        },
+        {
+          "period": "Q4",
+          "year": 2023,
+          "value": 161.19
+        },
+        {
+          "period": "Q1",
+          "year": 2024,
+          "value": 156.65
+        },
+        {
+          "period": "Q2",
+          "year": 2024,
+          "value": 152.25
+        },
+        {
+          "period": "Q3",
+          "year": 2024,
+          "value": 149.06
+        },
+        {
+          "period": "Q4",
+          "year": 2024,
+          "value": 150.04
+        },
+        {
+          "period": "Q1",
+          "year": 2025,
+          "value": 158.17
+        },
+        {
+          "period": "Q2",
+          "year": 2025,
+          "value": 160.83
+        },
+        {
+          "period": "Q3",
+          "year": 2025,
+          "value": 160.67
+        },
+        {
+          "period": "Q4",
+          "year": 2025,
+          "value": 162.09
+        },
+        {
+          "period": "Q1",
+          "year": 2026,
+          "value": 168.94
+        },
+        {
+          "period": "Q2",
+          "year": 2026,
+          "value": 182.37
+        }
+      ]
+    },
+    {
+      "id": "di_eurostat_energy_input_index",
+      "product": "eurostat_energy_input_index",
+      "region": "eu",
+      "sourceId": "eurostat",
+      "observationDate": "2026-06-30",
+      "value": 178.92,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "quarterly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "comparability": "directional",
+      "methodology": "apri_pi_inq; EU27_2020; nominal agricultural price index, 2020=100.",
+      "history": [
+        {
+          "period": "Q3",
+          "year": 2020,
+          "value": 97.32
+        },
+        {
+          "period": "Q4",
+          "year": 2020,
+          "value": 98.17
+        },
+        {
+          "period": "Q1",
+          "year": 2021,
+          "value": 111.36
+        },
+        {
+          "period": "Q2",
+          "year": 2021,
+          "value": 115.79
+        },
+        {
+          "period": "Q3",
+          "year": 2021,
+          "value": 122.1
+        },
+        {
+          "period": "Q4",
+          "year": 2021,
+          "value": 138.01
+        },
+        {
+          "period": "Q1",
+          "year": 2022,
+          "value": 166.96
+        },
+        {
+          "period": "Q2",
+          "year": 2022,
+          "value": 182.66
+        },
+        {
+          "period": "Q3",
+          "year": 2022,
+          "value": 188.25
+        },
+        {
+          "period": "Q4",
+          "year": 2022,
+          "value": 199.04
+        },
+        {
+          "period": "Q1",
+          "year": 2023,
+          "value": 181.56
+        },
+        {
+          "period": "Q2",
+          "year": 2023,
+          "value": 160.74
+        },
+        {
+          "period": "Q3",
+          "year": 2023,
+          "value": 163.12
+        },
+        {
+          "period": "Q4",
+          "year": 2023,
+          "value": 164.5
+        },
+        {
+          "period": "Q1",
+          "year": 2024,
+          "value": 156.33
+        },
+        {
+          "period": "Q2",
+          "year": 2024,
+          "value": 155.2
+        },
+        {
+          "period": "Q3",
+          "year": 2024,
+          "value": 152.44
+        },
+        {
+          "period": "Q4",
+          "year": 2024,
+          "value": 152.59
+        },
+        {
+          "period": "Q1",
+          "year": 2025,
+          "value": 159.34
+        },
+        {
+          "period": "Q2",
+          "year": 2025,
+          "value": 146.7
+        },
+        {
+          "period": "Q3",
+          "year": 2025,
+          "value": 149.17
+        },
+        {
+          "period": "Q4",
+          "year": 2025,
+          "value": 149.87
+        },
+        {
+          "period": "Q1",
+          "year": 2026,
+          "value": 158.49
+        },
+        {
+          "period": "Q2",
+          "year": 2026,
+          "value": 178.92
         }
       ]
     }
