@@ -31,7 +31,7 @@
         { text: 'Banco Central Europeo (tipos de cambio de referencia)', url: URLS.ecb }
       ],
       disclaimer: 'Los precios que se muestran hoy en el panel son datos de muestra con fines de diseño y producto. El siguiente paso del proyecto es conectar las fuentes en vivo indicadas arriba.',
-      apiNotice: 'El precio de EE. UU. del trigo se actualiza cada mes de forma automática desde USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. Los tipos de cambio EUR/USD y GBP/USD se actualizan cada día laborable desde las cotizaciones de referencia del Banco Central Europeo, que el propio BCE publica solo con fines informativos, no para uso en transacciones.'
+      apiNotice: 'Los precios de EE. UU. de trigo, maíz y arroz se actualizan cada mes de forma automática desde USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. Los tipos de cambio EUR/USD y GBP/USD se actualizan cada día laborable desde las cotizaciones de referencia del Banco Central Europeo, que el propio BCE publica solo con fines informativos, no para uso en transacciones.'
     },
     en: {
       title: 'Dehesa Index — Information',
@@ -51,7 +51,7 @@
         { text: 'European Central Bank (reference exchange rates)', url: URLS.ecb }
       ],
       disclaimer: 'The prices shown on the dashboard today are sample data for design and product purposes. The next step for the project is connecting the live sources listed above.',
-      apiNotice: "The U.S. wheat price is updated automatically every month from USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. The EUR/USD and GBP/USD exchange rates are updated every business day from the European Central Bank's reference rates, which the ECB itself publishes for information purposes only, not for use in transactions."
+      apiNotice: "The U.S. wheat, corn and rice prices are updated automatically every month from USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. The EUR/USD and GBP/USD exchange rates are updated every business day from the European Central Bank's reference rates, which the ECB itself publishes for information purposes only, not for use in transactions."
     },
     fr: {
       title: 'Dehesa Index — Informations',
@@ -71,7 +71,7 @@
         { text: 'Banque centrale européenne (taux de change de référence)', url: URLS.ecb }
       ],
       disclaimer: 'Les prix actuellement affichés sur le tableau de bord sont des données fictives à des fins de conception et de produit. La prochaine étape du projet consiste à connecter les sources en direct mentionnées ci-dessus.',
-      apiNotice: "Le prix américain du blé est mis à jour automatiquement chaque mois depuis USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. Les taux EUR/USD et GBP/USD sont mis à jour chaque jour ouvré à partir des taux de référence de la Banque centrale européenne, publiés par la BCE à titre purement informatif, non destinés à des transactions."
+      apiNotice: "Les prix américains du blé, du maïs et du riz sont mis à jour automatiquement chaque mois depuis USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. Les taux EUR/USD et GBP/USD sont mis à jour chaque jour ouvré à partir des taux de référence de la Banque centrale européenne, publiés par la BCE à titre purement informatif, non destinés à des transactions."
     },
     it: {
       title: 'Dehesa Index — Informazioni',
@@ -91,7 +91,7 @@
         { text: 'Banca Centrale Europea (tassi di cambio di riferimento)', url: URLS.ecb }
       ],
       disclaimer: 'I prezzi mostrati oggi nel pannello sono dati campione a scopo di progettazione e di prodotto. Il prossimo passo del progetto è collegare le fonti in tempo reale indicate sopra.',
-      apiNotice: "Il prezzo statunitense del grano viene aggiornato automaticamente ogni mese da USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. I tassi EUR/USD e GBP/USD vengono aggiornati ogni giorno lavorativo dai tassi di riferimento della Banca Centrale Europea, pubblicati dalla BCE a solo scopo informativo, non per l'uso in transazioni."
+      apiNotice: "I prezzi statunitensi di grano, mais e riso vengono aggiornati automaticamente ogni mese da USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. I tassi EUR/USD e GBP/USD vengono aggiornati ogni giorno lavorativo dai tassi di riferimento della Banca Centrale Europea, pubblicati dalla BCE a solo scopo informativo, non per l'uso in transazioni."
     }
   };
 

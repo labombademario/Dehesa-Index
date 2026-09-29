@@ -1,0 +1,56 @@
+name: Actualizar precio de arroz (EE. UU., USDA NASS)
+
+# Extiende la automatización de trigo/maíz a arroz: cereales:arroz, región
+# `us`, vía la API gratuita de USDA NASS Quick Stats. Ver
+# scripts/update-nass-us.mjs para el alcance exacto (por qué solo cubre
+# trigo, maíz y arroz por ahora).
+#
+# Requiere el mismo secreto de repositorio NASS_API_KEY que ya usan los
+# workflows de trigo y maíz (Settings -> Secrets and variables -> Actions).
+
+on:
+  schedule:
+    # USDA publica su informe mensual "Agricultural Prices" a finales de
+    # mes; el día 3 de cada mes a las 12:10 UTC (unos minutos después de
+    # trigo y maíz, para no chocar) da margen de sobra.
+    - cron: '10 12 3 * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-arroz-us:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Consultar USDA NASS y actualizar js/data.js
+        id: update
+        env:
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+        run: node scripts/update-nass-us.mjs arroz
+
+      - name: Comprobar si hay cambios
+        id: diff
+        run: |
+          if git diff --quiet -- js/data.js; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit y push del precio actualizado
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "dehesa-index-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add js/data.js
+          git commit -m "Actualización automática: arroz EE. UU. (USDA NASS) a \$${{ steps.update.outputs.price }}/cwt (${{ steps.update.outputs.change }}%)"
+          git push
