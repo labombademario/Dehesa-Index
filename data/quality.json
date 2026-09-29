@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-29T17:46:23.710Z",
+  "scope": {
+    "latestObservations": 3,
+    "historyObservations": 21,
+    "verified": 3,
+    "pending": 0,
+    "stale": 0,
+    "regions": [
+      "us"
+    ],
+    "products": [
+      "arroz",
+      "maiz",
+      "trigo"
+    ]
+  },
+  "observations": [
+    {
+      "id": "di_arroz_us",
+      "product": "arroz",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": null,
+      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "frequency": "monthly",
+      "historyPoints": 7,
+      "stale": false
+    },
+    {
+      "id": "di_maiz_us",
+      "product": "maiz",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": null,
+      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "frequency": "monthly",
+      "historyPoints": 7,
+      "stale": false
+    },
+    {
+      "id": "di_trigo_us",
+      "product": "trigo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": null,
+      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "frequency": "monthly",
+      "historyPoints": 7,
+      "stale": false
+    }
+  ],
+  "policy": {
+    "staleThresholds": {
+      "daily": 3,
+      "weekly": 14,
+      "monthly": 45,
+      "quarterly": 120,
+      "annual": 450
+    },
+    "note": "Staleness is a QA signal, not a market-quality judgment. Comparability remains source-specific."
+  }
+}
