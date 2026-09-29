@@ -71,11 +71,12 @@
     var last = rows[rows.length - 1];
     var lastTime = new Date(last.observationDate).getTime();
     var cutoff = lastTime - days * 86400000;
-    var first = rows[0];
+    var first = null;
     for (var i = rows.length - 1; i >= 0; i--) {
       if (new Date(rows[i].observationDate).getTime() <= cutoff) { first = rows[i]; break; }
     }
-    return first.value ? ((last.value - first.value) / first.value) * 100 : null;
+    if (!first || !isFinite(Number(first.value)) || !isFinite(Number(last.value))) return null;
+    return Number(first.value) ? ((Number(last.value) - Number(first.value)) / Number(first.value)) * 100 : null;
   }
   function loadRealHistory(done) {
     if (REAL_HISTORY_READY) { done(); return; }
@@ -430,9 +431,13 @@
       var region = regionFor(e);
       var rows = realObservationsFor(e);
       var vals = rows.map(function(o){return Number(o.value)});
-      if (rows.length >= 2) returnsByKey[key] = dailyReturns(vals, rows.length);
+      if (rows.length >= 30 && rows.every(function(o){ return o.frequency === 'daily'; })) returnsByKey[key] = dailyReturns(vals, rows.length);
     });
-    var keys = Core.PRODUCTS.filter(function(e){ return realObservationsFor(e).length >= 2; }).map(function (e) { return e.catId + '-' + e.nameKey; });
+    var keys = Core.PRODUCTS.filter(function(e){
+      var rows = realObservationsFor(e);
+      if (rows.length < 30) return false;
+      return rows.every(function(o){ return o.frequency === 'daily'; });
+    }).map(function (e) { return e.catId + '-' + e.nameKey; });
     var corrCache = {};
     function getCorr(a, b) {
       if (a === b) return 1;
