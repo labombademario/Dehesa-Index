@@ -594,6 +594,36 @@
     });
   }
 
+  var modalScrollY = 0;
+  var modalFocusEl = null;
+  function lockProductModal() {
+    if (modalScrollY === null) return;
+    modalScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    modalFocusEl = document.activeElement;
+    document.body.classList.add('di-modal-open');
+    document.body.style.top = '-' + modalScrollY + 'px';
+  }
+  function unlockProductModal() {
+    document.body.classList.remove('di-modal-open');
+    document.body.style.top = '';
+    var y = modalScrollY || 0;
+    window.scrollTo(0, y);
+    if (modalFocusEl && typeof modalFocusEl.focus === 'function') {
+      try { modalFocusEl.focus({ preventScroll: true }); } catch (e) { modalFocusEl.focus(); }
+    }
+    modalFocusEl = null;
+    modalScrollY = 0;
+  }
+  function bindModalKeyboard(closeFn) {
+    var root = document.getElementById('pr-modal-root');
+    if (!root) return;
+    root.onkeydown = function(e) {
+      if (e.key === 'Escape') { e.preventDefault(); closeFn(); }
+    };
+    var first = root.querySelector('button, input, select, [tabindex="0"]');
+    if (first) setTimeout(function(){ try { first.focus({ preventScroll: true }); } catch (e) { first.focus(); } }, 0);
+  }
+
   // ---------------------------------------------------------------------
   // Modal: Histórico ampliado
   // ---------------------------------------------------------------------
@@ -603,9 +633,10 @@
     var entry = PRODUCT_BY_KEY[key];
     if (!entry) return;
     state.history = { key: key, region: defaultRegionFor(entry), range: '3m', compareMode: false, compareKey: '', yoy: false };
+    lockProductModal();
     renderHistoryModal();
   }
-  function closeHistory() { state.history = null; renderModalRoot(); }
+  function closeHistory() { state.history = null; renderModalRoot(); unlockProductModal(); }
 
   function regionObjFor(entry, regionCode, country) {
     var UL = D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es;
@@ -720,6 +751,7 @@
       '</div>';
     document.getElementById('pr-modal-root').innerHTML = html;
     wireHistoryEvents();
+    bindModalKeyboard(closeHistory);
   }
 
   function wireHistoryEvents() {
@@ -767,9 +799,10 @@
     var entry = PRODUCT_BY_KEY[key];
     if (!entry) return;
     state.calc = { key: key, region: defaultRegionFor(entry), mode: 'directa' };
+    lockProductModal();
     renderCalcModal();
   }
-  function closeCalc() { state.calc = null; renderModalRoot(); }
+  function closeCalc() { state.calc = null; renderModalRoot(); unlockProductModal(); }
 
   function calcUnitPrice(entry, regionCode) {
     var ro = regionObjFor(entry, regionCode);
@@ -855,9 +888,10 @@
     var entry = PRODUCT_BY_KEY[key];
     if (!entry) return;
     state.alert = { key: key, region: defaultRegionFor(entry), direction: 'up', attempted: false, confirmed: false };
+    lockProductModal();
     renderAlertModal();
   }
-  function closeAlert() { state.alert = null; renderModalRoot(); }
+  function closeAlert() { state.alert = null; renderModalRoot(); unlockProductModal(); }
 
   function renderAlertModal() {
     var a = state.alert;
@@ -911,6 +945,7 @@
       '</div>';
     document.getElementById('pr-modal-root').innerHTML = html;
     wireAlertEvents();
+    bindModalKeyboard(closeAlert);
   }
 
   function wireAlertEvents() {
