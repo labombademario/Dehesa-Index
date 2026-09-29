@@ -1,8 +1,5 @@
 name: Dehesa Data — Eurostat agricultural indices
 on:
-  push:
-    paths:
-      - '**'
   schedule:
     - cron: '30 13 5 * *'
   workflow_dispatch:
