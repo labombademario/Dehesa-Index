@@ -268,8 +268,24 @@
       }).join('') + '</select>';
       html += '<div class="di-eu-country-hint">' + esc(t.euCountryHint) + '</div>';
     }
-    html += '<div class="di-fx-label">' + esc(t.fxLabel) + '</div>';
+    html += '<div class="di-fx-label">' + esc(fxLabelText(t)) + '</div>';
     root.innerHTML = html;
+  }
+
+  // El tipo de cambio se actualiza en vivo (ver scripts/update-fx.mjs), así
+  // que la etiqueta se rellena con los valores y la fecha reales de
+  // D.FX/D.FX_DATE en lugar de llevar cifras fijas en la traducción.
+  function fmtFxRate(v) {
+    // 4 decimales, coma como separador en es/fr/it (igual que el resto del
+    // sitio), punto en en -- D.fmtNumber no cubre decimales fijos ni coma.
+    var fixed = v.toFixed(4);
+    return lang() === 'en' ? fixed : fixed.replace('.', ',');
+  }
+  function fxLabelText(t) {
+    var eur = fmtFxRate(D.FX.EUR);
+    var gbp = fmtFxRate(D.FX.GBP);
+    var date = D.formatFxDate(D.FX_DATE, lang());
+    return t.fxLabel.replace('{eur}', eur).replace('{gbp}', gbp).replace('{date}', date);
   }
 
   // ---------------------------------------------------------------------

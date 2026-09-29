@@ -10,8 +10,26 @@
   // --- Tipos de cambio (Banco Central Europeo, referencia del 28 sep 2026) -
   var EURUSD = 1.1378;
   var GBPUSD = 1.3263;
+  var FX_DATE = '2026-09-28'; // fecha ISO de la cotización, la actualiza scripts/update-fx.mjs
   var FX = { USD: 1, EUR: EURUSD, GBP: GBPUSD };
   var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£' };
+
+  // Nombres de mes abreviados por idioma, para mostrar FX_DATE en el panel
+  // sin depender de Intl (coherencia con el resto del sitio, que es ES5
+  // puro y sin build step).
+  var MONTH_ABBR = {
+    es: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
+    en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    fr: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'],
+    it: ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic']
+  };
+  function formatFxDate(isoDate, lang) {
+    var parts = String(isoDate).split('-');
+    var y = parts[0], m = parseInt(parts[1], 10), d = parseInt(parts[2], 10);
+    var months = MONTH_ABBR[lang] || MONTH_ABBR.es;
+    if (lang === 'en') return months[m - 1] + ' ' + d + ', ' + y;
+    return d + ' ' + months[m - 1] + ' ' + y;
+  }
 
   var UNIT_LABELS = {
     es: { bushel: 'bushel', cwt: 'cwt', lb: 'lb', ton_corta: 'ton corta', tonelada: 'tonelada', kg: 'kg', '100kg': '100 kg', gal: 'galón', docena: 'docena', litro: 'litro' },
@@ -858,7 +876,7 @@
   ];
 
   global.DehesaData = {
-    FX: FX, CCY_SYMBOL: CCY_SYMBOL, UNIT_LABELS: UNIT_LABELS, REGION: REGION,
+    FX: FX, FX_DATE: FX_DATE, formatFxDate: formatFxDate, CCY_SYMBOL: CCY_SYMBOL, UNIT_LABELS: UNIT_LABELS, REGION: REGION,
     ENERGY_REGIONS: ENERGY_REGIONS, COUNTRY_ER_KEY: COUNTRY_ER_KEY, COUNTRY_FLAG: COUNTRY_FLAG,
     QUOTE_TYPES: QUOTE_TYPES, NAMES: NAMES, CATS: CATS, FOOT: FOOT, RAW: RAW,
     INSURANCE: INSURANCE, WINE: WINE, WOOD: WOOD,

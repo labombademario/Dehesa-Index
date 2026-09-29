@@ -62,19 +62,24 @@ async function main() {
 
   var src = await readFile(DATA_JS_PATH, 'utf8');
 
-  var reComment = /\/\/ --- Tipos de cambio \(BCE \/ Banco de Inglaterra, referencia del [^)]+\) -/;
+  var reComment = /\/\/ --- Tipos de cambio \((?:BCE \/ Banco de Inglaterra|Banco Central Europeo), referencia del [^)]+\) -/;
   var reEurUsd = /var EURUSD = [\d.]+;/;
   var reGbpUsd = /var GBPUSD = [\d.]+;/;
+  var reFxDate = /var FX_DATE = '[\d-]+';.*/;
 
   if (!reEurUsd.test(src) || !reGbpUsd.test(src)) {
     throw new Error('No se encontraron las líneas `var EURUSD = ...;` / `var GBPUSD = ...;` en js/data.js -- puede que el archivo se haya reestructurado. Revisar a mano.');
+  }
+  if (!reFxDate.test(src)) {
+    throw new Error("No se encontró la línea `var FX_DATE = '...';` en js/data.js -- puede que el archivo se haya reestructurado. Revisar a mano.");
   }
 
   var niceDate = rates.quoteDate ? formatSpanishDate(rates.quoteDate) : 'fecha desconocida';
   var updated = src
     .replace(reComment, '// --- Tipos de cambio (Banco Central Europeo, referencia del ' + niceDate + ') -')
     .replace(reEurUsd, 'var EURUSD = ' + eurUsd + ';')
-    .replace(reGbpUsd, 'var GBPUSD = ' + gbpUsd + ';');
+    .replace(reGbpUsd, 'var GBPUSD = ' + gbpUsd + ';')
+    .replace(reFxDate, "var FX_DATE = '" + (rates.quoteDate || '') + "'; // fecha ISO de la cotización, la actualiza scripts/update-fx.mjs");
 
   if (updated === src) {
     console.log('Sin cambios: los tipos de cambio ya estaban actualizados.');
