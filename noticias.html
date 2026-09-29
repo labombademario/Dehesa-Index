@@ -29,8 +29,24 @@
 
     <div class="di-disclaimer" id="nw-disclaimer"></div>
 
-    <div class="di-news-filters" id="nw-filters"></div>
+    <section class="di-news-intel" id="nw-intel" aria-labelledby="nw-intel-title"></section>
 
+    <section class="di-news-controls" aria-label="Filtros de noticias">
+      <div class="di-news-filter-group">
+        <label for="nw-region-filter" id="nw-region-label"></label>
+        <select id="nw-region-filter"></select>
+      </div>
+      <div class="di-news-filter-group">
+        <label for="nw-product-filter" id="nw-product-label"></label>
+        <select id="nw-product-filter"></select>
+      </div>
+      <div class="di-news-filter-group">
+        <label for="nw-topic-filter" id="nw-topic-label"></label>
+        <select id="nw-topic-filter"></select>
+      </div>
+    </section>
+
+    <div class="di-news-filter-summary" id="nw-filter-summary"></div>
     <div id="nw-items"></div>
 
     <section class="di-info-section">
