@@ -406,6 +406,7 @@
           '</div>' +
         '</div>' +
         quoteBadgeHtml(disp.quoteType) +
+        (global.DehesaDataTrust ? global.DehesaDataTrust.render(entry, disp) : '') +
         '<div class="di-product-price-row">' +
           '<span class="di-product-price">' + esc(built.price) + '</span>' +
           '<span class="di-product-unit">' + esc(built.unit) + '</span>' +
