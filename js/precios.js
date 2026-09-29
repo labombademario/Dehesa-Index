@@ -542,6 +542,37 @@
     );
   }
 
+  function newsImpactLabels() {
+    return {
+      es:{input_cost:'INPUT COST',trade:'TRADE',weather:'WEATHER',supply:'SUPPLY',energy:'ENERGY',policy:'POLICY',market_impact:'MARKET IMPACT'},
+      en:{input_cost:'INPUT COST',trade:'TRADE',weather:'WEATHER',supply:'SUPPLY',energy:'ENERGY',policy:'POLICY',market_impact:'MARKET IMPACT'},
+      fr:{input_cost:'COÛTS DES INTRANTS',trade:'COMMERCE',weather:'CLIMAT',supply:'OFFRE',energy:'ÉNERGIE',policy:'POLITIQUE',market_impact:'IMPACT MARCHÉ'},
+      it:{input_cost:'COSTI INPUT',trade:'COMMERCIO',weather:'METEO',supply:'OFFERTA',energy:'ENERGIA',policy:'POLITICA',market_impact:'IMPATTO MERCATO'}
+    };
+  }
+  function newsMarketLabel(key) {
+    var aliases={maiz:'maiz',trigo:'trigo',soja:'soja',arroz:'arroz',cebada:'cebada',azucar:'azucar',leche:'leche',fertilizantes:'fertilizantes',diesel:'diesel',energia:'energia'};
+    return productName(aliases[key] || key);
+  }
+  function newsImpactHtml(n) {
+    var lg=lang(), labels=newsImpactLabels()[lg]||newsImpactLabels().es;
+    var links=n.marketLinks||[];
+    var primary=n.impactChannel || (links[0]&&links[0].channel) || 'market_impact';
+    var badge='<span class="di-news-impact-badge di-news-impact-'+esc(primary)+'">'+esc(labels[primary]||labels.market_impact)+'</span>';
+    var markets=[];
+    links.forEach(function(l){ if(markets.indexOf(l.market)<0) markets.push(l.market); });
+    var marketText=markets.slice(0,4).map(newsMarketLabel).join(' · ');
+    var relationMap=(global.DehesaPreciosIntel&&global.DehesaPreciosIntel.getRelationships)?global.DehesaPreciosIntel.getRelationships():{};
+    var relLinks=links.filter(function(l){return l.relation && relationMap[l.relation] && relationMap[l.relation].status==='ready';});
+    var relHtml=relLinks.slice(0,1).map(function(l){
+      var r=relationMap[l.relation];
+      var conf=(r.confidence||'').toUpperCase();
+      var unit=r.frequency==='quarterly'?(r.lagPeriods===1?'trimestre':'trimestres'):(r.lagPeriods===1?'mes':'meses');
+      return '<span class="di-news-impact-relation">'+esc(r.label)+' · lag '+esc(String(r.lagPeriods)+' '+unit)+' · '+esc(conf)+'</span>';
+    }).join('');
+    return '<div class="di-news-impact">'+badge+(marketText?'<span class="di-news-impact-markets">'+esc(marketText)+'</span>':'')+relHtml+'</div>';
+  }
+
   function renderMarketNewsIntel() {
     var root = document.getElementById('pr-news-intel');
     if (!root || !global.DehesaNewsIndex) return;
@@ -617,9 +648,9 @@
         '<div class="di-market-news-stories">' +
           selected.map(function(n) {
             var h = n.headline[lg] || n.headline.es;
-            return '<a href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer">' +
+            return '<a class="di-market-news-story" href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer">' +
               '<span>' + esc(n.source) + ' · ' + esc(n.date) + '</span>' +
-              '<strong>' + esc(h) + '</strong>' +
+              '<strong>' + esc(h) + '</strong>' + newsImpactHtml(n) +
             '</a>';
           }).join('') +
         '</div>' +
@@ -1235,6 +1266,7 @@
       writeLS('dehesaIndexLocation', requestedRegion);
     }
     wireGlobalControls();
+    document.addEventListener('dehesa:intel-ready', function () { renderMarketNewsIntel(); });
     window.addEventListener('popstate', restorePriceUrl);
     renderAll();
     S.onLangChange = function () { renderAll(); };
