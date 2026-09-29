@@ -22,7 +22,34 @@
   // UE), hasDate queda en false y no se inventa una fecha para rellenar.
   var CALENDAR_EVENTS = [
     {
-      id: 'crop-progress', market: 'us', freq: 'weekly',
+      id: 'us-agricultural-prices', market: 'us', freq: 'monthly', type: 'publication', crops: ['trigo','maiz','leche'], impact: 'precios',
+      hasDate: true, nextDate: '2026-09-29', isToday: true, lastDate: '2026-08-28',
+      sourceUrl: 'https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php',
+      es: { name: 'USDA Agricultural Prices', desc: 'Precios recibidos y pagados por agricultores; útil para seguir márgenes, precios agrícolas e insumos.' },
+      en: { name: 'USDA Agricultural Prices', desc: 'Prices received and paid by farmers; useful for tracking farm prices, margins and input costs.' },
+      fr: { name: 'USDA Agricultural Prices', desc: 'Prix reçus et payés par les agriculteurs, utiles pour suivre les prix agricoles, les marges et les coûts des intrants.' },
+      it: { name: 'USDA Agricultural Prices', desc: 'Prezzi ricevuti e pagati dagli agricoltori, utili per seguire prezzi agricoli, margini e costi degli input.' }
+    },
+    {
+      id: 'eurostat-agri-prices', market: 'eu', freq: 'quarterly', type: 'publication', crops: ['trigo','maiz','leche','fertilizantes','diesel'], impact: 'precios',
+      hasDate: false, nextDate: null, isToday: false, lastDate: '2026-09-10',
+      sourceUrl: 'https://ec.europa.eu/eurostat/web/agriculture/information-data/agricultural-prices',
+      es: { name: 'Eurostat — Precios agrícolas', desc: 'Índices de precios de productos agrícolas e insumos como energía y fertilizantes; sirve para medir presión sobre ingresos y costes.' },
+      en: { name: 'Eurostat — Agricultural prices', desc: 'Price indices for agricultural output and inputs such as energy and fertilisers; useful for tracking revenue and cost pressure.' },
+      fr: { name: 'Eurostat — Prix agricoles', desc: 'Indices des prix agricoles et des intrants comme l’énergie et les engrais, utiles pour suivre la pression sur les revenus et les coûts.' },
+      it: { name: 'Eurostat — Prezzi agricoli', desc: 'Indici dei prezzi agricoli e degli input come energia e fertilizzanti, utili per seguire pressione su ricavi e costi.' }
+    },
+    {
+      id: 'eurostat-crop-production', market: 'eu', freq: 'annual', type: 'harvest', crops: ['trigo','maiz','cebada','arroz'], impact: 'cosecha',
+      hasDate: false, nextDate: null, isToday: false, lastDate: null,
+      sourceUrl: 'https://ec.europa.eu/eurostat/web/agriculture/information-data/crop-production',
+      es: { name: 'Eurostat — Producción de cultivos', desc: 'Datos anuales de superficie cosechada, producción y rendimiento. Las entregas de datos de cultivos se realizan en varias rondas y las finales llegan después.' },
+      en: { name: 'Eurostat — Crop production', desc: 'Annual data on harvested area, production and yields. Crop data arrive in several rounds, with final deliveries later.' },
+      fr: { name: 'Eurostat — Production végétale', desc: 'Données annuelles sur les surfaces récoltées, la production et les rendements, transmises en plusieurs vagues.' },
+      it: { name: 'Eurostat — Produzione agricola', desc: 'Dati annuali su superfici raccolte, produzione e rese, trasmessi in più tornate.' }
+    },
+    {
+      id: 'crop-progress', market: 'us', freq: 'weekly', type: 'publication', crops: ['trigo','maiz','arroz','soja'], impact: 'oferta',
       hasDate: true, nextDate: '2026-09-28', isToday: true, lastDate: '2026-09-21',
       sourceUrl: 'https://www.nass.usda.gov/Publications/National_Crop_Progress/',
       es: { name: 'USDA Crop Progress', desc: 'Porcentaje de siembra, desarrollo y cosecha de los principales cultivos de EE. UU., estado por estado.' },
@@ -31,7 +58,7 @@
       it: { name: 'USDA Crop Progress', desc: 'Percentuale settimanale di semina, sviluppo e raccolta delle principali colture statunitensi, Stato per Stato.' }
     },
     {
-      id: 'grain-stocks', market: 'us', freq: 'quarterly',
+      id: 'grain-stocks', market: 'us', freq: 'quarterly', type: 'publication', crops: ['trigo','maiz','soja'], impact: 'stocks',
       hasDate: true, nextDate: '2026-09-30', isToday: false, lastDate: '2026-06-30',
       sourceUrl: 'https://www.nass.usda.gov/Surveys/Guide_to_NASS_Surveys/Off-Farm_Grain_Stocks/index.php',
       es: { name: 'USDA Grain Stocks', desc: 'Existencias trimestrales de maíz, trigo y soja almacenadas en EE. UU., dentro y fuera de las explotaciones.' },
@@ -40,7 +67,7 @@
       it: { name: 'USDA Grain Stocks', desc: 'Scorte trimestrali di mais, frumento e soia detenute negli Stati Uniti, nelle aziende agricole e fuori.' }
     },
     {
-      id: 'export-sales', market: 'us', freq: 'weekly',
+      id: 'export-sales', market: 'us', freq: 'weekly', type: 'publication', crops: ['trigo','maiz','soja'], impact: 'comercio',
       hasDate: true, nextDate: '2026-10-01', isToday: false, lastDate: '2026-09-24',
       sourceUrl: 'https://www.fas.usda.gov/programs/export-sales-reporting-program/about-export-sales-reporting-program',
       es: { name: 'USDA Export Sales', desc: 'Ventas semanales de exportación de cereales, oleaginosas y otros productos agrícolas de EE. UU., por país comprador.' },
@@ -49,7 +76,7 @@
       it: { name: 'USDA Export Sales', desc: 'Vendite settimanali di cereali, semi oleosi e altri prodotti agricoli statunitensi verso l’estero, per paese acquirente.' }
     },
     {
-      id: 'wasde', market: 'us', freq: 'monthly',
+      id: 'wasde', market: 'us', freq: 'monthly', type: 'publication', crops: ['trigo','maiz','soja'], impact: 'oferta-demanda',
       hasDate: true, nextDate: '2026-10-09', isToday: false, lastDate: '2026-09-11',
       sourceUrl: 'https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report',
       es: { name: 'USDA WASDE', desc: 'El informe mensual más seguido del mercado agrícola: producción, oferta, demanda y existencias finales de los principales cultivos, en EE. UU. y en el mundo.' },
@@ -58,7 +85,7 @@
       it: { name: 'USDA WASDE', desc: 'Il rapporto agricolo mensile più seguito: produzione, offerta, domanda e scorte finali delle principali colture, negli Stati Uniti e nel mondo.' }
     },
     {
-      id: 'eu-cereals', market: 'eu', freq: 'weekly',
+      id: 'eu-cereals', market: 'eu', freq: 'weekly', type: 'publication', crops: ['trigo','maiz','cebada'], impact: 'precios',
       hasDate: false, nextDate: null, isToday: false, lastDate: null,
       sourceUrl: 'https://agridata.ec.europa.eu/extensions/DashboardCereals/ExtCerealsPrice.html',
       es: { name: 'Precios semanales de cereales — Comisión Europea', desc: 'Cotizaciones nacionales semanales de trigo, maíz y otros cereales en los países de la UE, publicadas en el Agri-food Data Portal.' },
@@ -67,7 +94,7 @@
       it: { name: 'Prezzi settimanali dei cereali — Commissione europea', desc: "Quotazioni nazionali settimanali di grano, mais e altri cereali nei paesi dell'UE, pubblicate sull'Agri-food Data Portal." }
     },
     {
-      id: 'eu-mmo', market: 'eu', freq: 'quarterly',
+      id: 'eu-mmo', market: 'eu', freq: 'quarterly', type: 'publication', crops: ['leche'], impact: 'lacteos',
       hasDate: false, nextDate: null, isToday: false, lastDate: null,
       sourceUrl: 'https://agriculture.ec.europa.eu/data-and-analysis/markets/overviews/market-observatories/milk/mmo-meeting-reports_en',
       es: { name: 'Milk Market Observatory — Comisión Europea', desc: 'Reunión trimestral de expertos que revisa precios y producción de leche y lácteos en la UE, con patrón habitual en marzo/abril, junio/julio, septiembre y diciembre.' },
