@@ -243,13 +243,13 @@
     var movers = HOME_DATA.rows.slice(0, 4).map(function(o) {
       var key = o.product;
       var label = (t.moversLabels && t.moversLabels[key]) || { name: productLabel(key), unit: o.unit || '', market: (o.region || '').toUpperCase() };
-      return { name: label.name, market: label.market, price: fmtMoverPrice(o.value) + (o.currency ? ' ' + o.currency : '') + (o.unit ? '/' + o.unit : ''), status: 'real', date: o.observationDate || '—' };
+      return { name: label.name, market: label.market, source: o.sourceId || '—', price: fmtMoverPrice(o.value) + (o.currency ? ' ' + o.currency : '') + (o.unit ? '/' + o.unit : ''), status: 'real', date: o.observationDate || '—' };
     });
     var headRow = '<div class="di-movers-row head"><span>' + esc(t.moversColProducto) + '</span><span class="num">' + esc(t.moversColPrecio) + '</span><span class="num">' + esc(t.moversCol1D) + '</span><span class="num">' + esc(t.moversCol1W) + '</span></div>';
     var bodyRows = movers.length ? movers.map(function(row, i) {
       var borderStyle = i === movers.length - 1 ? 'border-bottom:none;' : '';
       return '<div class="di-movers-row" style="' + borderStyle + '">' +
-        '<div><div class="di-movers-name">' + esc(row.name) + '</div><div class="di-movers-market">' + esc(row.market) + '</div></div>' +
+        '<div><div class="di-movers-name">' + esc(row.name) + '</div><div class="di-movers-market">' + esc(row.market) + '</div><div class="di-movers-source">' + esc(row.source) + '</div></div>' +
         '<div class="num">' + esc(row.price) + '</div>' +
         '<div class="num"><span class="di-home-status real">REAL</span></div>' +
         '<div class="num">' + esc(row.date) + '</div></div>';
