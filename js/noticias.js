@@ -254,8 +254,8 @@
   }
 
   function productPriceUrl(product) {
-    var map = { trigo:'precios/trigo/', maiz:'precios/maiz/', leche:'precios/leche/', fertilizantes:'precios/urea/', diesel:'precios/diesel/' };
-    return map[product] || 'precios.html?product=' + encodeURIComponent(product);
+    var map = { trigo:'trigo', maiz:'maiz', leche:'leche', fertilizantes:'urea', diesel:'diesel', arroz:'arroz' };
+    return 'precios.html?product=' + encodeURIComponent(map[product] || product);
   }
   function newsContextParams() {
     var p = [];
