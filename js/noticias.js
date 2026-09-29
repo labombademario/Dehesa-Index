@@ -314,6 +314,7 @@
     var lang = window.DehesaShared.getLang();
     var esc = window.DehesaShared.esc;
     var t = STRINGS[lang] || STRINGS.es;
+    window.DehesaShared.renderContextBar('noticias');
     var regionLabels = REGION_LABELS[lang] || REGION_LABELS.es;
     var productLabels = PRODUCT_LABELS[lang] || PRODUCT_LABELS.es;
     var topicLabels = TOPIC_LABELS[lang] || TOPIC_LABELS.es;
