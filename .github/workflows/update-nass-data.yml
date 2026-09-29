@@ -11,9 +11,6 @@ permissions:
 jobs:
   update-nass:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        product: [trigo, maiz, arroz]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,10 +20,14 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Update NASS observation and snapshot
+      - name: Update NASS observations and snapshots
         env:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
-        run: node scripts/update-nass-us.mjs ${{ matrix.product }}
+        run: |
+          set -e
+          for product in trigo maiz arroz; do
+            node scripts/update-nass-us.mjs "$product"
+          done
 
       - name: Validate snapshots
         run: node scripts/validate-snapshots.mjs
@@ -39,12 +40,12 @@ jobs:
 
       - name: Commit updated data
         run: |
-          if git diff --quiet -- js/data.js data/snapshots; then
+          if git diff --quiet -- js/data.js data/snapshots data/latest.json data/catalog.json data/history.json data/history.csv; then
             echo "No data changes."
             exit 0
           fi
           git config user.name "dehesa-index-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add js/data.js data/snapshots data/latest.json data/catalog.json data/history.json data/history.csv data/api.json
+          git add js/data.js data/snapshots data/latest.json data/catalog.json data/history.json data/history.csv
           git commit -m "data: update NASS observations and snapshots"
           git push
