@@ -199,6 +199,17 @@ img { max-width: 100%; }
   .di-tour-card { padding: 22px 18px 18px; }
 }
 
+/* ---------- Home data clarity ---------- */
+.di-home-status{display:inline-flex;align-items:center;border-radius:999px;padding:3px 8px;font-size:10px;font-weight:800;letter-spacing:.06em}
+.di-home-status.real{background:rgba(47,125,79,.12);color:var(--positive)}
+.di-home-status.pending{background:rgba(138,132,113,.15);color:var(--neutral)}
+.di-home-status.neutral{background:var(--surface-alt);color:var(--text-faint)}
+.di-home-empty{padding:28px;text-align:center;color:var(--text-muted);font-size:13px}
+#home-stats{grid-template-columns:repeat(4,1fr)}
+#home-stats > div{min-width:0}
+#home-stats .di-stat-value{font-variant-numeric:tabular-nums}
+@media(max-width:700px){#home-stats{grid-template-columns:repeat(2,1fr)}}
+
 /* ---------- Home page ---------- */
 .di-hero { background: linear-gradient(180deg, #1E3328 0%, #253E31 100%); color: #F7F4EC; padding: 72px 32px 84px; }
 .di-hero-inner { max-width: 900px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
