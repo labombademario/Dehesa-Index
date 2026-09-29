@@ -244,6 +244,7 @@
     var input = document.getElementById('pr-search-input');
     if (input) input.value = '';
     syncPriceUrl({ product: entry.nameKey });
+    S.renderContextBar('precios');
     renderAll();
     setTimeout(function () {
       var card = document.querySelector('[data-key="' + key + '"]');
@@ -1085,6 +1086,7 @@
       state.location = btn.getAttribute('data-loc');
       writeLS('dehesaIndexLocation', state.location);
       syncPriceUrl();
+      S.renderContextBar('precios');
       renderAll();
     });
     var searchInput = document.getElementById('pr-search-input');
@@ -1109,6 +1111,7 @@
       if (!btn) return;
       state.activeTab = btn.getAttribute('data-tab');
       syncPriceUrl();
+      S.renderContextBar('precios');
       renderTabsAndCategory();
     });
   }
