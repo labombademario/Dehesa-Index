@@ -41,171 +41,6 @@
       "impactChannel": "weather"
     }
   ],
-  "energia": [
-    {
-      "id": "seed-n47",
-      "date": "2026-09-29",
-      "region": "global",
-      "topic": "energia",
-      "topics": [
-        "energia",
-        "costes"
-      ],
-      "products": [
-        "energia",
-        "diesel",
-        "costes"
-      ],
-      "source": "Reuters",
-      "headline": {
-        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
-        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
-        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
-        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
-      },
-      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
-      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
-      "relevance": 96,
-      "auto": true,
-      "marketLinks": [
-        {
-          "market": "arroz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "cebada",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "maiz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        }
-      ],
-      "impactChannel": "input_cost"
-    }
-  ],
-  "diesel": [
-    {
-      "id": "seed-n47",
-      "date": "2026-09-29",
-      "region": "global",
-      "topic": "energia",
-      "topics": [
-        "energia",
-        "costes"
-      ],
-      "products": [
-        "energia",
-        "diesel",
-        "costes"
-      ],
-      "source": "Reuters",
-      "headline": {
-        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
-        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
-        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
-        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
-      },
-      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
-      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
-      "relevance": 96,
-      "auto": true,
-      "marketLinks": [
-        {
-          "market": "arroz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "cebada",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "maiz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        }
-      ],
-      "impactChannel": "input_cost"
-    }
-  ],
-  "costes": [
-    {
-      "id": "seed-n47",
-      "date": "2026-09-29",
-      "region": "global",
-      "topic": "energia",
-      "topics": [
-        "energia",
-        "costes"
-      ],
-      "products": [
-        "energia",
-        "diesel",
-        "costes"
-      ],
-      "source": "Reuters",
-      "headline": {
-        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
-        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
-        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
-        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
-      },
-      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
-      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
-      "relevance": 96,
-      "auto": true,
-      "marketLinks": [
-        {
-          "market": "arroz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "cebada",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "maiz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        }
-      ],
-      "impactChannel": "input_cost"
-    }
-  ],
   "arroz": [
     {
       "id": "seed-n47",
@@ -424,6 +259,171 @@
           "market": "fertilizantes",
           "channel": "supply",
           "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
+    }
+  ],
+  "costes": [
+    {
+      "id": "seed-n47",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia",
+        "diesel",
+        "costes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
+        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
+        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
+        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
+      },
+      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
+      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
+      "relevance": 96,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
+    }
+  ],
+  "diesel": [
+    {
+      "id": "seed-n47",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia",
+        "diesel",
+        "costes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
+        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
+        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
+        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
+      },
+      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
+      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
+      "relevance": 96,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
+    }
+  ],
+  "energia": [
+    {
+      "id": "seed-n47",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia",
+        "diesel",
+        "costes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
+        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
+        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
+        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
+      },
+      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
+      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
+      "relevance": 96,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
           "direction": "uncertain"
         }
       ],
@@ -884,6 +884,126 @@
       "impactChannel": "input_cost"
     }
   ],
+  "leche": [
+    {
+      "id": "seed-n52",
+      "date": "2026-09-28",
+      "region": "global",
+      "topic": "comercio",
+      "topics": [
+        "comercio"
+      ],
+      "products": [
+        "maiz",
+        "trigo",
+        "soja",
+        "leche"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "China to cut tariffs on US farm goods, but list excludes soybeans",
+        "es": "China recorta aranceles a productos agrícolas de EE. UU., pero excluye la soja",
+        "fr": "La Chine réduit les droits sur les produits agricoles américains mais exclut le soja",
+        "it": "La Cina riduce i dazi sui prodotti agricoli USA ma esclude la soia"
+      },
+      "description": "China announced tariff reductions for several U.S. agricultural products while soybeans remained excluded.",
+      "url": "https://www.reuters.com/world/china/china-says-cut-tariffs-us-farm-goods-soybeans-excluded-2026-09-28/",
+      "relevance": 98,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "leche",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "soja",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "trade"
+    },
+    {
+      "id": "seed-n10",
+      "date": "2026-09-28",
+      "region": "eu",
+      "topic": "oferta",
+      "topics": [
+        "oferta",
+        "comercio"
+      ],
+      "products": [
+        "trigo",
+        "soja",
+        "leche"
+      ],
+      "source": "European Commission",
+      "headline": {
+        "en": "EU agri-food trade remains solid in 2026",
+        "es": "El comercio agroalimentario de la UE sigue siendo sólido en 2026",
+        "fr": "Le commerce agroalimentaire de l’UE reste solide en 2026",
+        "it": "Il commercio agroalimentare dell’UE resta solido nel 2026"
+      },
+      "description": "EU agri-food exports reached €138.7 billion in January-July 2026 and the cumulative trade surplus reached €30.1 billion.",
+      "url": "https://agriculture.ec.europa.eu/media/news/eu-agri-food-trade-remains-solid-2026-2026-09-28_en",
+      "relevance": 94,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "leche",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "soja",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "trade",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "leche",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "soja",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "trade"
+    }
+  ],
   "soja": [
     {
       "id": "seed-n52",
@@ -1041,126 +1161,6 @@
         }
       ],
       "impactChannel": "weather"
-    }
-  ],
-  "leche": [
-    {
-      "id": "seed-n52",
-      "date": "2026-09-28",
-      "region": "global",
-      "topic": "comercio",
-      "topics": [
-        "comercio"
-      ],
-      "products": [
-        "maiz",
-        "trigo",
-        "soja",
-        "leche"
-      ],
-      "source": "Reuters",
-      "headline": {
-        "en": "China to cut tariffs on US farm goods, but list excludes soybeans",
-        "es": "China recorta aranceles a productos agrícolas de EE. UU., pero excluye la soja",
-        "fr": "La Chine réduit les droits sur les produits agricoles américains mais exclut le soja",
-        "it": "La Cina riduce i dazi sui prodotti agricoli USA ma esclude la soia"
-      },
-      "description": "China announced tariff reductions for several U.S. agricultural products while soybeans remained excluded.",
-      "url": "https://www.reuters.com/world/china/china-says-cut-tariffs-us-farm-goods-soybeans-excluded-2026-09-28/",
-      "relevance": 98,
-      "auto": true,
-      "marketLinks": [
-        {
-          "market": "leche",
-          "channel": "trade",
-          "relation": null,
-          "direction": "uncertain"
-        },
-        {
-          "market": "maiz",
-          "channel": "trade",
-          "relation": null,
-          "direction": "uncertain"
-        },
-        {
-          "market": "soja",
-          "channel": "trade",
-          "relation": null,
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "trade",
-          "relation": null,
-          "direction": "uncertain"
-        }
-      ],
-      "impactChannel": "trade"
-    },
-    {
-      "id": "seed-n10",
-      "date": "2026-09-28",
-      "region": "eu",
-      "topic": "oferta",
-      "topics": [
-        "oferta",
-        "comercio"
-      ],
-      "products": [
-        "trigo",
-        "soja",
-        "leche"
-      ],
-      "source": "European Commission",
-      "headline": {
-        "en": "EU agri-food trade remains solid in 2026",
-        "es": "El comercio agroalimentario de la UE sigue siendo sólido en 2026",
-        "fr": "Le commerce agroalimentaire de l’UE reste solide en 2026",
-        "it": "Il commercio agroalimentare dell’UE resta solido nel 2026"
-      },
-      "description": "EU agri-food exports reached €138.7 billion in January-July 2026 and the cumulative trade surplus reached €30.1 billion.",
-      "url": "https://agriculture.ec.europa.eu/media/news/eu-agri-food-trade-remains-solid-2026-2026-09-28_en",
-      "relevance": 94,
-      "auto": true,
-      "marketLinks": [
-        {
-          "market": "leche",
-          "channel": "trade",
-          "relation": null,
-          "direction": "uncertain"
-        },
-        {
-          "market": "soja",
-          "channel": "trade",
-          "relation": null,
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "trade",
-          "relation": null,
-          "direction": "uncertain"
-        },
-        {
-          "market": "leche",
-          "channel": "supply",
-          "relation": null,
-          "direction": "uncertain"
-        },
-        {
-          "market": "soja",
-          "channel": "supply",
-          "relation": null,
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "supply",
-          "relation": null,
-          "direction": "uncertain"
-        }
-      ],
-      "impactChannel": "trade"
     }
   ]
 };})(window);
