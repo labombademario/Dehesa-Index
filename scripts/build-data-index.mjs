@@ -36,7 +36,9 @@ Object.values(byKey).forEach((o) => {
     const year = String(point.year || '');
     let month = null;
     const monthMatch = period.match(/(\d{1,2})/);
+    const monthNames = {jan:1,january:1,feb:2,february:2,mar:3,march:3,apr:4,april:4,may:5,jun:6,june:6,jul:7,july:7,aug:8,august:8,sep:9,september:9,oct:10,october:10,nov:11,november:11,dec:12,december:12};
     if (monthMatch) month = monthMatch[1].padStart(2, '0');
+    else if (monthNames[period]) month = String(monthNames[period]).padStart(2, '0');
     const observationDate = month ? year + '-' + month + '-01' : year ? year + '-01-01' : null;
     if (!observationDate) return;
     historyRows.push({
@@ -61,12 +63,6 @@ const history = {
     String(a.observationDate).localeCompare(String(b.observationDate)) ||
     (a.product + a.region).localeCompare(b.product + b.region)
   )
-};
-
-const latest = {
-  schemaVersion: '1.0',
-  generatedAt: new Date().toISOString(),
-  observations: Object.values(byKey).sort((a, b) => (a.product + a.region).localeCompare(b.product + b.region))
 };
 
 const catalog = {
