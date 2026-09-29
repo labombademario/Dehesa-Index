@@ -119,7 +119,7 @@
     var p = entry.product;
     var UL = D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es;
     if (loc === 'us') {
-      return { region: p.us, targetCcy: 'USD', targetKgPerUnit: p.imperialKgPerUnit, targetUnitLabel: UL[p.imperialUnitKey], quoteType: p.quoteTypes && p.quoteTypes.us, ukGap: false };
+      return { region: p.us, regionCode: 'us', targetCcy: 'USD', targetKgPerUnit: p.imperialKgPerUnit, targetUnitLabel: UL[p.imperialUnitKey], quoteType: p.quoteTypes && p.quoteTypes.us, ukGap: false };
     }
     if (loc === 'eu') {
       var region = p.eu;
@@ -129,13 +129,13 @@
       } else if (p.countryFactors && country !== 'es' && p.countryFactors[country] != null) {
         region = D.deriveCountryRaw(p.eu, p.countryFactors[country]);
       }
-      return { region: region, targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: false };
+      return { region: region, regionCode: 'eu', targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: false };
     }
     // uk
     if (p.uk) {
-      return { region: p.uk, targetCcy: 'GBP', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.uk, ukGap: false };
+      return { region: p.uk, regionCode: 'uk', targetCcy: 'GBP', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.uk, ukGap: false };
     }
-    return { region: p.eu, targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: true };
+    return { region: p.eu, regionCode: 'eu', targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: true };
   }
 
   function availableRegions(entry) {
