@@ -253,7 +253,11 @@
     return Number(first.value) ? ((Number(last.value) - Number(first.value)) / Number(first.value)) * 100 : null;
   }
   function loadRealHistory(done) {
-    if (REAL_HISTORY_READY) { done(); return; }
+    function finish() {
+      done();
+      try { document.dispatchEvent(new CustomEvent('dehesa:intel-ready')); } catch (e) {}
+    }
+    if (REAL_HISTORY_READY) { finish(); return; }
     fetch('data/history.json').then(function(r){ if(!r.ok) throw Error('history'); return r.json(); }).then(function(d){
       buildRawSeries(d.observations || []);
       REAL_HISTORY = {};
@@ -267,9 +271,9 @@
       REAL_HISTORY_READY = true;
       buildRelationshipEngine();
       fetch('data/intelligence.json').then(function(r){ if(!r.ok) throw Error('intelligence'); return r.json(); }).then(function(d){
-        INTEL20=d; INTEL20_READY=true; done();
-      }).catch(function(){ INTEL20={series:[]}; INTEL20_READY=true; done(); });
-    }).catch(function(){ REAL_HISTORY_READY = true; RELATIONSHIP_RESULTS=RELATIONSHIP_DEFS.map(function(d){return {id:d.id,label:d.label[lang()]||d.label.es,status:'pending',reason:'history_unavailable'};}); INTEL20={series:[]}; INTEL20_READY=true; done(); });
+        INTEL20=d; INTEL20_READY=true; finish();
+      }).catch(function(){ INTEL20={series:[]}; INTEL20_READY=true; finish(); });
+    }).catch(function(){ REAL_HISTORY_READY = true; RELATIONSHIP_RESULTS=RELATIONSHIP_DEFS.map(function(d){return {id:d.id,label:d.label[lang()]||d.label.es,status:'pending',reason:'history_unavailable'};}); INTEL20={series:[]}; INTEL20_READY=true; finish(); });
   }
 
   // ---------------------------------------------------------------------
@@ -1160,5 +1164,19 @@
     initGlobalPriceMap();
   }
 
-  global.DehesaPreciosIntel = { render: render };
+  function relationshipSnapshot() {
+    var out = {};
+    RELATIONSHIP_RESULTS.forEach(function(r){ out[r.id] = r; });
+    return out;
+  }
+  function transmissionSnapshot() {
+    var out = {};
+    buildTransmissionAlerts().forEach(function(a){ out[a.id] = a; });
+    return out;
+  }
+  global.DehesaPreciosIntel = {
+    render: render,
+    getRelationships: relationshipSnapshot,
+    getTransmissionAlerts: transmissionSnapshot
+  };
 })(window);
