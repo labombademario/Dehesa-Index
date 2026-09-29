@@ -223,6 +223,74 @@
   }
 
   // ---------------------------------------------------------------------
+  // Contexto de navegación: conserva la relación entre módulos sin obligar
+  // al usuario a volver al principio de la página.
+  // ---------------------------------------------------------------------
+  function renderContextBar(activePage) {
+    var root = document.getElementById('di-nav-root');
+    if (!root) return;
+    var qs = new URLSearchParams(window.location.search);
+    var product = qs.get('product');
+    var region = qs.get('region');
+    var crop = qs.get('crop');
+    var topic = qs.get('topic');
+    var hasContext = !!(product || region || crop || topic);
+    var existing = document.getElementById('di-context-bar');
+    if (existing) existing.remove();
+    if (!hasContext) return;
+    var labels = {
+      es: { context:'Contexto', prices:'Precios', news:'Noticias', calendar:'Calendario', back:'Atrás', product:'Producto', region:'Mercado' },
+      en: { context:'Context', prices:'Prices', news:'News', calendar:'Calendar', back:'Back', product:'Product', region:'Market' },
+      fr: { context:'Contexte', prices:'Prix', news:'Actualités', calendar:'Calendrier', back:'Retour', product:'Produit', region:'Marché' },
+      it: { context:'Contesto', prices:'Prezzi', news:'Notizie', calendar:'Calendario', back:'Indietro', product:'Prodotto', region:'Mercato' }
+    };
+    var l = labels[lang] || labels.es;
+    var productLabels = {
+      trigo:{es:'Trigo',en:'Wheat',fr:'Blé',it:'Grano'},
+      maiz:{es:'Maíz',en:'Corn',fr:'Maïs',it:'Mais'},
+      arroz:{es:'Arroz',en:'Rice',fr:'Riz',it:'Riso'},
+      leche:{es:'Leche',en:'Milk',fr:'Lait',it:'Latte'},
+      urea:{es:'Urea',en:'Urea',fr:'Urée',it:'Urea'},
+      diesel:{es:'Diésel',en:'Diesel',fr:'Diesel',it:'Diesel'},
+      fertilizantes:{es:'Fertilizantes',en:'Fertilizers',fr:'Engrais',it:'Fertilizzanti'}
+    };
+    var regionLabels = {
+      us:{es:'EE. UU.',en:'U.S.',fr:'États-Unis',it:'USA'},
+      eu:{es:'Europa',en:'Europe',fr:'Europe',it:'Europa'},
+      uk:{es:'Reino Unido',en:'United Kingdom',fr:'Royaume-Uni',it:'Regno Unito'},
+      global:{es:'Global',en:'Global',fr:'Mondial',it:'Globale'}
+    };
+    var cropLabels = {
+      trigo:{es:'Trigo',en:'Wheat',fr:'Blé',it:'Grano'}, maiz:{es:'Maíz',en:'Corn',fr:'Maïs',it:'Mais'},
+      arroz:{es:'Arroz',en:'Rice',fr:'Riz',it:'Riso'}, cebada:{es:'Cebada',en:'Barley',fr:'Orge',it:'Orzo'},
+      soja:{es:'Soja',en:'Soybean',fr:'Soja',it:'Soia'}, leche:{es:'Leche',en:'Milk',fr:'Lait',it:'Latte'},
+      fertilizantes:{es:'Fertilizantes',en:'Fertilizers',fr:'Engrais',it:'Fertilizzanti'}, diesel:{es:'Diésel',en:'Diesel',fr:'Diesel',it:'Diesel'}
+    };
+    var bits = [];
+    if (product) bits.push((productLabels[product] || {es:product,en:product,fr:product,it:product})[lang] || product);
+    if (crop && !product) bits.push((cropLabels[crop] || {es:crop,en:crop,fr:crop,it:crop})[lang] || crop);
+    if (region) bits.push((regionLabels[region] || {es:region,en:region,fr:region,it:region})[lang] || region);
+    if (topic) bits.push(topic);
+    var sibling = activePage === 'precios' ? 'noticias.html' : activePage === 'noticias' ? 'precios.html' : 'precios.html';
+    var siblingLabel = activePage === 'precios' ? l.news : activePage === 'noticias' ? l.prices : l.prices;
+    var siblingParams = [];
+    if (product) siblingParams.push('product=' + encodeURIComponent(product));
+    if (region) siblingParams.push('region=' + encodeURIComponent(region));
+    if (crop && !product) siblingParams.push('product=' + encodeURIComponent(crop));
+    var siblingHref = sitePath(sibling) + (siblingParams.length ? '?' + siblingParams.join('&') : '');
+    var backButton = (document.referrer && document.referrer.indexOf(window.location.origin) === 0)
+      ? '<button type="button" class="di-context-back" id="di-context-back">← ' + esc(l.back) + '</button>'
+      : '';
+    var bar = document.createElement('div');
+    bar.className = 'di-context-bar';
+    bar.id = 'di-context-bar';
+    bar.innerHTML = '<div class="di-context-inner"><div class="di-context-copy"><span class="di-context-kicker">' + esc(l.context) + '</span><strong>' + esc(bits.join(' · ')) + '</strong></div><div class="di-context-actions">' + backButton + '<a href="' + esc(siblingHref) + '">' + esc(siblingLabel) + ' →</a></div></div>';
+    root.appendChild(bar);
+    var back = document.getElementById('di-context-back');
+    if (back) back.addEventListener('click', function(){ window.history.back(); });
+  }
+
+  // ---------------------------------------------------------------------
   // Footer
   // ---------------------------------------------------------------------
   function renderFooter() {
@@ -244,7 +312,7 @@
       '<footer class="di-footer">' +
         '<div class="di-footer-grid">' +
           '<div>' +
-            '<img src="assets/logo.png" alt="Dehesa Index">' +
+            '<img src="' + sitePath('assets/logo.png') + '" alt="Dehesa Index">' +
             '<p>' + esc(t.blurb) + '</p>' +
           '</div>' +
           '<div>' +
@@ -375,6 +443,7 @@
     writeTheme(theme);
     applyThemeAttr();
     renderNav(global.DehesaShared.activePage);
+    renderContextBar(global.DehesaShared.activePage);
     // Algunas páginas pintan colores dependientes del tema directamente en el
     // HTML (p. ej. los SVG de las minigráficas) -- reutilizamos el mismo
     // callback que el cambio de idioma para que esas páginas se repinten.
@@ -384,6 +453,7 @@
   function init(activePage) {
     global.DehesaShared.activePage = activePage;
     renderNav(activePage);
+    renderContextBar(activePage);
     renderFooter();
     renderWelcomeAndTour();
   }
