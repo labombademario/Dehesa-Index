@@ -81,6 +81,56 @@
 
   var UPDATED_ISO = '2026-09-27';
 
+  var PRODUCT_LABELS = {
+    es: { trigo: 'Trigo', maiz: 'Maíz', arroz: 'Arroz', cebada: 'Cebada', soja: 'Soja', fertilizantes: 'Fertilizantes', diesel: 'Diésel', energia: 'Energía', costes: 'Costes agrícolas', pac: 'PAC' },
+    en: { trigo: 'Wheat', maiz: 'Corn', arroz: 'Rice', cebada: 'Barley', soja: 'Soybeans', fertilizantes: 'Fertiliser', diesel: 'Diesel', energia: 'Energy', costes: 'Farm costs', pac: 'CAP' },
+    fr: { trigo: 'Blé', maiz: 'Maïs', arroz: 'Riz', cebada: 'Orge', soja: 'Soja', fertilizantes: 'Engrais', diesel: 'Gazole', energia: 'Énergie', costes: 'Coûts agricoles', pac: 'PAC' },
+    it: { trigo: 'Grano', maiz: 'Mais', arroz: 'Riso', cebada: 'Orzo', soja: 'Soia', fertilizantes: 'Fertilizzanti', diesel: 'Gasolio', energia: 'Energia', costes: 'Costi agricoli', pac: 'PAC' }
+  };
+  var TOPIC_LABELS = {
+    es: { clima: 'Clima', costes: 'Costes', comercio: 'Comercio', politica: 'Política agraria', oferta: 'Oferta y cosecha', tecnologia: 'Tecnología', energia: 'Energía', ayudas: 'Ayudas' },
+    en: { clima: 'Weather', costes: 'Costs', comercio: 'Trade', politica: 'Agricultural policy', oferta: 'Supply & harvest', tecnologia: 'Technology', energia: 'Energy', ayudas: 'Support & aid' },
+    fr: { clima: 'Climat', costes: 'Coûts', comercio: 'Commerce', politica: 'Politique agricole', oferta: 'Offre & récolte', tecnologia: 'Technologie', energia: 'Énergie', ayudas: 'Aides' },
+    it: { clima: 'Clima', costes: 'Costi', comercio: 'Commercio', politica: 'Politica agricola', oferta: 'Offerta e raccolto', tecnologia: 'Tecnologia', energia: 'Energia', ayudas: 'Aiuti' }
+  };
+  var REGION_LABELS = {
+    es: { all: 'Todas', us: 'EE. UU.', eu: 'Europa', global: 'Global' },
+    en: { all: 'All', us: 'U.S.', eu: 'Europe', global: 'Global' },
+    fr: { all: 'Toutes', us: 'États-Unis', eu: 'Europe', global: 'Mondial' },
+    it: { all: 'Tutte', us: 'Stati Uniti', eu: 'Europa', global: 'Globale' }
+  };
+
+  function inferTags(item) {
+    var text = [item.es && item.es.headline, item.es && item.es.summary, item.en && item.en.headline, item.en && item.en.summary].join(' ').toLowerCase();
+    var products = [], topics = [];
+    function has(re) { return re.test(text); }
+    if (has(/maíz|corn|corn belt/)) products.push('maiz');
+    if (has(/trigo|wheat/)) products.push('trigo');
+    if (has(/arroz|rice/)) products.push('arroz');
+    if (has(/cebada|barley|beer|cerveza|bière|birra/)) products.push('cebada');
+    if (has(/soja|soybean/)) products.push('soja');
+    if (has(/fertiliz|fertiliser|fertilizer|engrais/)) products.push('fertilizantes');
+    if (has(/gasóleo|diesel|fuel|combustible|carburant|gasolio/)) products.push('diesel');
+    if (has(/energía|energy|energie|energia|gas/)) products.push('energia');
+    if (has(/costes|costs|coûts|costi|cost/)) products.push('costes');
+    if (has(/pac|cap budget|ayudas de la pac|aide|aid|funding|financ/)) products.push('pac');
+    if (has(/sequía|drought|sécheresse|siccità|heat|calor|chaleur|caldo|rain|lluvia|pluie|pioggia/)) topics.push('clima');
+    if (has(/coste|costes|cost|prix|price|precios|gasóleo|diesel|fertiliz/)) topics.push('costes');
+    if (has(/tariff|arancel|duty|china|trade|comercio|commerce|export|ventas|sales/)) topics.push('comercio');
+    if (has(/pac|budget|presupuesto|commissioner|comisario|policy|política|funding|financ/)) topics.push('politica');
+    if (has(/harvest|cosecha|crop|cultivo|recolte|raccolto|supply|oferta/)) topics.push('oferta');
+    if (has(/ai|ia |artificial intelligence|inteligencia artificial|drones|sensores|digital/)) topics.push('tecnologia');
+    if (has(/energy|energía|energie|energia|gasóleo|diesel|fuel|gas/)) topics.push('energia');
+    if (has(/ayuda|aid|aide|aiuti|funding|financiación|support/)) topics.push('ayudas');
+    return { products: products.filter(function(v,i,a){ return a.indexOf(v) === i; }), topics: topics.filter(function(v,i,a){ return a.indexOf(v) === i; }) };
+  }
+
+  NEWS_ITEMS.forEach(function(item) {
+    var tags = inferTags(item);
+    item.products = tags.products;
+    item.topics = tags.topics;
+  });
+
   var STRINGS = {
     es: {
       title: 'Dehesa Index — Noticias', h1: 'Noticias',
