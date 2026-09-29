@@ -64,6 +64,38 @@ def parse(raw):
         if vals.get("title") and vals.get("link"): out.append(vals)
     return out
 
+CHANNEL_PRIORITY=["input_cost","trade","weather","supply","energy","policy","market_impact"]
+
+def build_market_links(products, topics, title, desc):
+    text=f"{title} {desc}".lower()
+    links=[]
+    def add(market,channel,relation=None):
+        key=(market,channel,relation or "")
+        if any((x["market"],x["channel"],x.get("relation") or "")==key for x in links): return
+        links.append({"market":market,"channel":channel,"relation":relation,"direction":"uncertain"})
+    market_products=[p for p in products if p not in ("costes","pac","energia","diesel")]
+    if "clima" in topics:
+        for p in market_products: add(p,"weather")
+    if "oferta" in topics:
+        for p in market_products: add(p,"supply")
+    if "comercio" in topics:
+        for p in market_products: add(p,"trade")
+    fertilizer_hit=("fertilizante" in text or "fertilizer" in text or "fertiliser" in text or "urea" in text or "nitrogen" in text or "potash" in text)
+    energy_hit=("diesel" in text or "energy" in text or "oil" in text or "crude" in text or "fuel" in text or "natural gas" in text)
+    if fertilizer_hit or "fertilizantes" in products:
+        for p in ("maiz","trigo","cebada","arroz"): add(p,"input_cost","fertilizer-cereals")
+        if "leche" in market_products or "leche" in products: add("leche","input_cost","fertilizer-milk")
+    if energy_hit or any(p in products for p in ("energia","diesel")):
+        for p in ("maiz","trigo","cebada","arroz"): add(p,"input_cost","energy-cereals")
+        if "leche" in market_products or "leche" in products: add("leche","input_cost","energy-milk")
+    if "energia" in topics and not energy_hit:
+        add("energia","energy")
+    if "politica" in topics:
+        for p in market_products: add(p,"policy")
+    if not links:
+        for p in market_products[:4]: add(p,"market_impact")
+    return sorted(links,key=lambda x: (CHANNEL_PRIORITY.index(x["channel"]) if x["channel"] in CHANNEL_PRIORITY else 99, x["market"]))
+
 def classify(title,desc,source_region):
     text=f"{title} {desc}".lower()
     hits={p:sum(t.lower() in text for t in terms) for p,terms in PRODUCTS.items()}
@@ -89,10 +121,12 @@ def main():
                     continue
                 if d<cutoff: continue
                 products,topics,reg,score=classify(x["title"],x.get("desc",""),region)
+                links=build_market_links(products,topics,x["title"],x.get("desc",""))
+                primary_channel=links[0]["channel"] if links else "market_impact"
                 rows.append({"id":"auto-"+hashlib.sha1((source+x["title"]+x["link"]).encode()).hexdigest()[:10],
                     "date":x["date"],"region":reg,"topic":topics[0],"topics":topics,"products":products,
                     "source":source,"headline":{"en":x["title"],"es":x["title"],"fr":x["title"],"it":x["title"]},
-                    "description":x.get("desc","")[:280],"url":x["link"],"relevance":score,"auto":True})
+                    "description":x.get("desc","")[:280],"url":x["link"],"relevance":score,"auto":True,"impactChannel":primary_channel,"marketLinks":links})
         except Exception as e: print(f"[WARN] {source}: {e}")
     dedup={}
     for x in rows:
