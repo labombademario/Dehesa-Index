@@ -1015,3 +1015,29 @@ body.di-modal-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 
 .di-news-item-price-link{display:inline-flex;align-items:center;margin-top:8px;padding:7px 9px;border:1px solid var(--border);border-radius:7px;font-size:9px;font-weight:800;text-decoration:none;color:var(--accent)}
 @media(max-width:430px){.di-news-item-price-link{min-height:38px;padding:8px 10px}.di-news-item-readmore{display:block;margin-top:8px}}
+
+
+/* Cross-module navigation context */
+.di-context-bar{border-bottom:1px solid var(--border);background:var(--surface);position:relative;z-index:4}
+.di-context-inner{max-width:1180px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.di-context-copy{display:flex;align-items:center;gap:9px;min-width:0}
+.di-context-kicker{font-size:8px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--muted);white-space:nowrap}
+.di-context-copy strong{font-size:11px;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.di-context-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.di-context-actions a,.di-context-back{min-height:34px;display:inline-flex;align-items:center;justify-content:center;padding:6px 10px;border:1px solid var(--border);border-radius:7px;background:transparent;color:var(--accent);font:700 9px/1 Public Sans,system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.di-context-back{color:var(--muted)}
+.di-context-actions a:hover,.di-context-back:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:700px){
+  .di-context-inner{padding:7px 14px;gap:10px}
+  .di-context-kicker{display:none}
+  .di-context-copy{min-width:0}
+  .di-context-copy strong{font-size:10px}
+  .di-context-actions{overflow-x:auto;scrollbar-width:none}
+  .di-context-actions::-webkit-scrollbar{display:none}
+  .di-context-actions a,.di-context-back{min-height:38px;white-space:nowrap}
+}
+@media(max-width:430px){
+  .di-context-inner{padding:6px 12px}
+  .di-context-copy strong{max-width:150px}
+  .di-context-actions a,.di-context-back{padding:6px 9px;font-size:8px}
+}
