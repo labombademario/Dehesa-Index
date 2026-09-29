@@ -811,3 +811,87 @@ html[data-theme="dark"] .di-badge-green { background: #1E3328; color: #7FCF9B; b
 .di-cal-watch-links{display:flex;flex-wrap:wrap;gap:8px;padding-top:8px;border-top:1px solid var(--border)}
 .di-cal-watch-empty{padding:12px;border:1px dashed var(--border);font-size:10px;color:var(--text-faint)}
 @media(max-width:800px){.di-cal-watch-grid{grid-template-columns:1fr}}
+
+/* ---------- Mobile UX pass: navigation, controls, cards, tables and charts ---------- */
+html{overflow-x:hidden}
+body{overflow-x:hidden}
+button,a,input,select{touch-action:manipulation}
+input,select,button{font-size:16px}
+.di-header-inner{min-width:0}
+.di-nav-logo img{max-width:180px}
+.di-nav-links{min-width:0}
+.di-container,.di-main,.di-content-narrow{min-width:0}
+.di-ticker{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.di-ticker::-webkit-scrollbar{display:none}
+.di-tabs-bar{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.di-tabs-bar::-webkit-scrollbar{display:none}
+.di-tabs-bar>*{flex:0 0 auto}
+.di-location-bar{min-width:0}
+.di-search-wrap{position:relative}
+.di-search-input{width:100%;min-height:44px}
+.di-search-results{max-height:60vh;overflow:auto;-webkit-overflow-scrolling:touch}
+.di-product-card,.di-card,.di-intel-pending{min-width:0;overflow:hidden}
+.di-product-card svg,.di-card svg{max-width:100%}
+.di-chart,.di-chart-wrap,.di-intel-chart{max-width:100%;overflow:hidden}
+.di-modal{padding:12px}
+.di-modal-card{width:min(680px,100%);max-height:calc(100vh - 24px);overflow:auto;-webkit-overflow-scrolling:touch}
+.di-table-wrap,.di-history-table,.di-data-table{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.di-table-wrap table,.di-history-table table,.di-data-table table{min-width:620px}
+.di-cal-event,.di-cal-watch-card,.di-news-item{min-width:0}
+.di-news-controls{min-width:0}
+.di-news-controls select,.di-cal-filter-row select{min-height:44px}
+.di-btn-gold,.di-btn-outline,.di-link-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:700px){
+  .di-header-inner{padding:10px 14px;gap:9px}
+  .di-nav-logo img{height:38px;max-width:145px}
+  .di-nav-links{order:3;width:100%;display:none;overflow-x:auto;flex-wrap:nowrap;gap:18px;padding:8px 2px 3px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .di-nav-links::-webkit-scrollbar{display:none}
+  .di-header-inner.nav-open .di-nav-links{display:flex}
+  .di-nav-side{margin-left:auto}
+  .di-nav-side button,.di-theme-toggle{min-width:42px;min-height:42px}
+  .di-nav-links button{font-size:13px;white-space:nowrap;min-height:38px}
+  .di-hero{padding:48px 18px 56px}
+  .di-hero h1{font-size:32px;line-height:1.12}
+  .di-hero-sub{font-size:14px}
+  .di-main{padding-left:14px;padding-right:14px}
+  .di-container{padding-left:14px;padding-right:14px}
+  .di-page-head h1{font-size:32px;line-height:1.12}
+  .di-page-head p{font-size:14px}
+  .di-precios-head{padding-top:18px}
+  .di-precios-head-row{align-items:flex-start}
+  .di-precios-head-row h1{font-size:30px;line-height:1.12}
+  .di-location-bar{overflow-x:auto;display:flex;gap:8px;flex-wrap:nowrap;padding-bottom:4px;scrollbar-width:none}
+  .di-location-bar::-webkit-scrollbar{display:none}
+  .di-location-bar>*{flex:0 0 auto}
+  .di-tabs-bar{gap:8px}
+  .di-tabs-bar>*{min-height:42px}
+  .di-product-grid{grid-template-columns:1fr!important}
+  .di-cat-grid{grid-template-columns:1fr 1fr}
+  .di-intel-grid,.di-atlantic-grid{grid-template-columns:1fr!important}
+  .di-market-news-intel{grid-template-columns:1fr}
+  .di-market-news-stories{grid-template-columns:1fr}
+  .di-news-card{padding:14px}
+  .di-news-controls{grid-template-columns:1fr;padding:12px}
+  .di-news-controls select{min-height:46px}
+  .di-cal-filter-row{grid-template-columns:1fr}
+  .di-cal-filter-row select{min-height:46px}
+  .di-cal-watch{padding:14px}
+  .di-cal-watch-grid{grid-template-columns:1fr}
+  .di-cal-watch-card{padding:13px}
+  .di-movers-table{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .di-movers-row{min-width:560px}
+  .di-stats-pad{grid-template-columns:repeat(2,1fr)!important}
+  .di-stats-pad>div{padding-left:9px;padding-right:9px}
+}
+@media(max-width:430px){
+  .di-nav-logo img{height:34px;max-width:125px}
+  .di-header-inner{padding:8px 10px}
+  .di-nav-side{gap:4px}
+  .di-page-head h1,.di-precios-head-row h1{font-size:27px}
+  .di-cat-grid{grid-template-columns:1fr}
+  .di-stats-pad{gap:0}
+  .di-stats-pad>div{font-size:11px}
+  .di-movers-row{min-width:500px}
+  .di-modal{padding:6px}
+  .di-modal-card{max-height:calc(100vh - 12px)}
+}
