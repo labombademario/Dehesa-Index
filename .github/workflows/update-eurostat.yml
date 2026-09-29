@@ -1,5 +1,11 @@
 name: Dehesa Data — Eurostat agricultural indices
 on:
+  push:
+    paths:
+      - 'scripts/update-eurostat-indices.mjs'
+      - '.github/workflows/update-eurostat.yml'
+      - 'scripts/build-intelligence.mjs'
+      - 'scripts/build-data-index.mjs'
   schedule:
     - cron: '30 13 5 * *'
   workflow_dispatch:
