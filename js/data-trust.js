@@ -122,7 +122,7 @@
     for(var i=0;i<ids.length;i++){if(D.DATA_TRUST[ids[i]].status==='verified')verified++;else samples++;}
     var status=h.errors&&h.errors.length?t.review:t.ready;
     return '<section class="di-data-health" aria-label="'+esc(t.title)+'">'+
-      '<div class="di-data-health-head"><div><span class="di-data-health-kicker">'+esc(t.title)+'</span><strong>'+esc(status)+'</strong></div><span class="di-data-health-dot '+(h.errors&&h.errors.length?'error':'ok')+'"></span></div>'+
+      '<div class="di-data-health-head"><div><span class="di-data-health-kicker">'+esc(t.title)+'</span><strong>'+esc(status)+'</strong></div><div class="di-data-state-legend"><span class="di-data-state-chip real">REAL</span><span class="di-data-state-chip pending">PENDIENTE</span><span class="di-data-state-chip not-comparable">NO COMPARABLE</span></div></div>'+
       '<div class="di-data-health-stats">'+
         '<div><b>'+esc(h.observations)+'</b><span>'+esc(t.obs)+'</span></div>'+
         '<div><b>'+esc(samples)+'</b><span>'+esc(t.sample)+'</span></div>'+
