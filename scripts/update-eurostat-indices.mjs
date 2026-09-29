@@ -35,9 +35,9 @@ function cellIndex(coords, sizes) {
 }
 function series(data, targetProduct, targetPadj, targetUnit) {
   const ids=data.id, sizes=data.size, dims=data.dimension;
-  const pCats=categories(dims.product), aCats=categories(dims.p_adj), uCats=categories(dims.unit), tCats=categories(dims.time);
+  const pCats=categories(dims.am_item), aCats=categories(dims.p_adj), uCats=categories(dims.unit), tCats=categories(dims.time);
   const p=targetProduct, a=targetPadj, u=targetUnit;
-  const pi=ids.indexOf('product'), ai=ids.indexOf('p_adj'), ui=ids.indexOf('unit'), ti=ids.indexOf('time'), gi=ids.indexOf('geo');
+  const pi=ids.indexOf('am_item'), ai=ids.indexOf('p_adj'), ui=ids.indexOf('unit'), ti=ids.indexOf('time'), gi=ids.indexOf('geo');
   if ([pi,ai,ui,ti].some(x=>x<0)) throw new Error('Unexpected Eurostat JSON-stat dimensions: '+ids.join(','));
   const geoCats=gi>=0?categories(dims.geo):[];
   const geo=geoCats.find(c=>c.code===GEO);
@@ -68,7 +68,7 @@ const configs = [
 const grouped={};
 for(const cfg of configs){
   const data=await load(cfg.dataset);
-  const p=pickDimension(data,'product',cfg.patterns);
+  const p=pickDimension(data,'am_item',cfg.patterns);
   const a=pickDimension(data,'p_adj',[/nominal/]);
   const u=pickDimension(data,'unit',[/2020.?=.?100/,/index.*2020/]);
   const points=series(data,p,a,u);
