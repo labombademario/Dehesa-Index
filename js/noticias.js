@@ -360,13 +360,13 @@
         var tr = item[lang] || item.es;
         var marketTags = item.products.map(function(p){ return '<span class="di-news-tag product">' + esc((PRODUCT_LABELS[lang] || PRODUCT_LABELS.es)[p]) + '</span>'; }).join('');
         var topicTags = item.topics.map(function(topic){ return '<span class="di-news-tag topic">' + esc((TOPIC_LABELS[lang] || TOPIC_LABELS.es)[topic]) + '</span>'; }).join('');
-        return '<a class="di-card di-news-item" href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">' +
+        return '<article class="di-card di-news-item">' +
           '<div class="di-news-item-meta"><span class="di-news-item-source">' + esc(item.source) + '</span><span>·</span><span>' + esc(fmtNewsDate(item.date, lang)) + '</span></div>' +
           '<div class="di-news-item-headline">' + esc(tr.headline) + '</div>' +
           '<p class="di-news-item-summary">' + esc(tr.summary) + '</p>' +
           '<div class="di-news-tags">' + marketTags + topicTags + '</div>' +
-          '<span class="di-news-item-readmore">' + esc(t.readMore) + ' →</span>' +
-        '</a><a class="di-news-item-price-link" href="' + productPriceUrl(item.products[0] || 'trigo') + '">' + esc(lang === 'es' ? 'Ver precios' : lang === 'fr' ? 'Voir les prix' : lang === 'it' ? 'Vedi prezzi' : 'View prices') + ' →</a>';
+          '<a class="di-news-item-readmore" href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.readMore) + ' →</a>' +
+          '<a class="di-news-item-price-link" href="' + productPriceUrl(item.products[0] || 'trigo') + '">' + esc(lang === 'es' ? 'Ver precios' : lang === 'fr' ? 'Voir les prix' : lang === 'it' ? 'Vedi prezzi' : 'View prices') + ' →</a></article>';
       }).join('') + '</div>';
     } else {
       itemsHtml = '<div class="di-news-empty">' + esc(t.noResultsHint) + '</div>';
