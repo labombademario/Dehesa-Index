@@ -19,13 +19,14 @@
  * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz>
  */
 
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_JS_PATH = path.join(__dirname, '..', 'js', 'data.js');
 const HISTORY_POINTS = 7; // últimos 7 meses publicados, para el minigráfico
+const SNAPSHOT_DIR = path.join(__dirname, '..', 'data', 'snapshots');
 
 // Un producto por entrada: qué pedirle a NASS y cómo encontrar/sustituir su
 // bloque `us: {...}` en js/data.js. `kgPerUnit` es el ancla que hace único
@@ -128,6 +129,25 @@ function fmt(v) {
   return Math.round(v * 100) / 100;
 }
 
+
+async function writeSnapshot(observation) {
+  await mkdir(SNAPSHOT_DIR, { recursive: true });
+  var stamp = new Date().toISOString().slice(0, 10);
+  var file = path.join(SNAPSHOT_DIR, stamp + '.json');
+  var existing = {};
+  try { existing = JSON.parse(await readFile(file, 'utf8')); } catch (e) {}
+  existing.schemaVersion = '1.0';
+  existing.generatedAt = new Date().toISOString();
+  existing.observations = existing.observations || [];
+  existing.observations = existing.observations.filter(function (o) {
+    return !(o.product === observation.product && o.region === observation.region);
+  });
+  existing.observations.push(observation);
+  existing.observations.sort(function (a, b) { return (a.product + a.region).localeCompare(b.product + b.region); });
+  await writeFile(file, JSON.stringify(existing, null, 2) + '\\n', 'utf8');
+  console.log('Snapshot: data/snapshots/' + stamp + '.json');
+}
+
 async function main() {
   console.log('Consultando USDA NASS Quick Stats (' + cfg.label + ', EE. UU., precio recibido mensual)...');
   var series = await fetchSeries();
@@ -172,6 +192,20 @@ async function main() {
 
   await writeFile(DATA_JS_PATH, updated, 'utf8');
   console.log('js/data.js actualizado (' + key + ').');
+
+  await writeSnapshot({
+    product: key,
+    region: 'us',
+    sourceId: 'usda_nass',
+    observationDate: observationDate,
+    publicationDate: null,
+    value: price,
+    currency: 'USD',
+    unit: key === 'arroz' ? 'cwt' : 'bushel',
+    frequency: 'monthly',
+    changePct: changePct,
+    history: series.map(function (p) { return { year: p.year, period: p.period, value: fmt(p.value) }; })
+  });
 
   console.log('Data Trust: observationDate=' + observationDate + ' | publicationDate=pending');
 
