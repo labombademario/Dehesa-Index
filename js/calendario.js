@@ -104,7 +104,7 @@
     }
   ];
 
-  var UPDATED_ISO = '2026-09-28';
+  var UPDATED_ISO = '2026-09-29';
 
   var STRINGS = {
     es: {
