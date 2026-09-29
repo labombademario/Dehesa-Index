@@ -55,7 +55,7 @@
   var state = {
     location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk') ? v : null; })(),
     euCountry: (function () { var v = readLS('dehesaIndexEuCountry'); return (v === 'es' || v === 'de' || v === 'fr' || v === 'it') ? v : 'es'; })(),
-    activeTab: (new URLSearchParams(window.location.search).get('tab') || 'cereales'),
+    activeTab: 'cereales',
     favorites: readFavorites(),
     searchQuery: '',
     expanded: {},
@@ -229,7 +229,8 @@
   }
 
   function queryProductKey() {
-    var p = new URLSearchParams(window.location.search).get('product');
+    var qs = new URLSearchParams(window.location.search);
+    var p = qs.get('product');
     if (!p) return null;
     var aliases = { trigo:'cereales:trigo', maiz:'cereales:maiz', arroz:'cereales:arroz', cebada:'cereales:cebada', soja:'cereales:soja', leche:'lacteos:leche', urea:'fertilizantes:urea', diesel:'energia:diesel', fertilizantes:'fertilizantes:urea' };
     return aliases[p] || (PRODUCT_BY_KEY[p] ? p : null);
@@ -1120,7 +1121,11 @@
   function init() {
     S.init('precios');
     var deepKey = queryProductKey();
-    var requestedRegion = new URLSearchParams(window.location.search).get('region');
+    var qs = new URLSearchParams(window.location.search);
+    var requestedTab = qs.get('tab');
+    var requestedRegion = qs.get('region');
+    var validTabs = ['cereales','lacteos','fertilizantes','energia','seguros','vino','madera'];
+    if (validTabs.indexOf(requestedTab) !== -1) state.activeTab = requestedTab;
     if (deepKey && PRODUCT_BY_KEY[deepKey]) {
       state.activeTab = PRODUCT_BY_KEY[deepKey].catId;
       state.deepLinkProduct = deepKey;
