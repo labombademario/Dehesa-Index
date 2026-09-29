@@ -1,0 +1,53 @@
+name: Actualizar tipos de cambio (BCE)
+
+# Actualiza EUR/USD y GBP/USD en js/data.js todos los días laborables desde
+# el feed público y gratuito del Banco Central Europeo (sin clave de API):
+# https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml
+# Ver scripts/update-fx.mjs para la lógica exacta.
+
+on:
+  schedule:
+    # El BCE publica su cotización de referencia sobre las 16:00 CET (14:00
+    # UTC en horario de verano europeo) los días laborables TARGET; 17:00
+    # UTC da margen de sobra. Corre de lunes a viernes -- si algún día no
+    # hay cotización nueva (festivo), el script simplemente no encuentra
+    # cambios y no hace commit.
+    - cron: '0 17 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-fx:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Consultar el BCE y actualizar js/data.js
+        id: update
+        run: node scripts/update-fx.mjs
+
+      - name: Comprobar si hay cambios
+        id: diff
+        run: |
+          if git diff --quiet -- js/data.js; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit y push de los tipos de cambio actualizados
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "dehesa-index-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add js/data.js
+          git commit -m "Actualización automática: tipos de cambio BCE (${{ steps.update.outputs.date }}) — EUR/USD ${{ steps.update.outputs.eurusd }}, GBP/USD ${{ steps.update.outputs.gbpusd }}"
+          git push

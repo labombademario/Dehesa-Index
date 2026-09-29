@@ -8,7 +8,8 @@
     nass: 'https://www.nass.usda.gov/',
     ec: 'https://agridata.ec.europa.eu/extensions/DataPortal/prices.html',
     cme: 'https://www.cmegroup.com/markets/agriculture.html',
-    dtn: 'https://www.dtnpf.com/agriculture/web/ag/crops/article/2026/09/23/fertilizer-prices-rise-six-eight'
+    dtn: 'https://www.dtnpf.com/agriculture/web/ag/crops/article/2026/09/23/fertilizer-prices-rise-six-eight',
+    ecb: 'https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html'
   };
 
   var STRINGS = {
@@ -26,10 +27,11 @@
         { text: 'USDA NASS / AMS (precios agrícolas y lácteos de EE. UU.)', url: URLS.nass },
         { text: 'Comisión Europea — Agri-food Data Portal', url: URLS.ec },
         { text: 'CME Group y Euronext (futuros de materias primas)', url: URLS.cme },
-        { text: 'DTN Fertilizer Index', url: URLS.dtn }
+        { text: 'DTN Fertilizer Index', url: URLS.dtn },
+        { text: 'Banco Central Europeo (tipos de cambio de referencia)', url: URLS.ecb }
       ],
       disclaimer: 'Los precios que se muestran hoy en el panel son datos de muestra con fines de diseño y producto. El siguiente paso del proyecto es conectar las fuentes en vivo indicadas arriba.',
-      apiNotice: 'El precio de EE. UU. del trigo se actualiza cada mes de forma automática desde USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS.'
+      apiNotice: 'El precio de EE. UU. del trigo se actualiza cada mes de forma automática desde USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. Los tipos de cambio EUR/USD y GBP/USD se actualizan cada día laborable desde las cotizaciones de referencia del Banco Central Europeo, que el propio BCE publica solo con fines informativos, no para uso en transacciones.'
     },
     en: {
       title: 'Dehesa Index — Information',
@@ -45,10 +47,11 @@
         { text: 'USDA NASS / AMS (U.S. farm and dairy prices)', url: URLS.nass },
         { text: 'European Commission — Agri-food Data Portal', url: URLS.ec },
         { text: 'CME Group and Euronext (commodity futures)', url: URLS.cme },
-        { text: 'DTN Fertilizer Index', url: URLS.dtn }
+        { text: 'DTN Fertilizer Index', url: URLS.dtn },
+        { text: 'European Central Bank (reference exchange rates)', url: URLS.ecb }
       ],
       disclaimer: 'The prices shown on the dashboard today are sample data for design and product purposes. The next step for the project is connecting the live sources listed above.',
-      apiNotice: "The U.S. wheat price is updated automatically every month from USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS."
+      apiNotice: "The U.S. wheat price is updated automatically every month from USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. The EUR/USD and GBP/USD exchange rates are updated every business day from the European Central Bank's reference rates, which the ECB itself publishes for information purposes only, not for use in transactions."
     },
     fr: {
       title: 'Dehesa Index — Informations',
@@ -64,10 +67,11 @@
         { text: 'USDA NASS / AMS (prix agricoles et laitiers américains)', url: URLS.nass },
         { text: 'Commission européenne — Agri-food Data Portal', url: URLS.ec },
         { text: 'CME Group et Euronext (contrats à terme sur matières premières)', url: URLS.cme },
-        { text: 'DTN Fertilizer Index', url: URLS.dtn }
+        { text: 'DTN Fertilizer Index', url: URLS.dtn },
+        { text: 'Banque centrale européenne (taux de change de référence)', url: URLS.ecb }
       ],
       disclaimer: 'Les prix actuellement affichés sur le tableau de bord sont des données fictives à des fins de conception et de produit. La prochaine étape du projet consiste à connecter les sources en direct mentionnées ci-dessus.',
-      apiNotice: "Le prix américain du blé est mis à jour automatiquement chaque mois depuis USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS."
+      apiNotice: "Le prix américain du blé est mis à jour automatiquement chaque mois depuis USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. Les taux EUR/USD et GBP/USD sont mis à jour chaque jour ouvré à partir des taux de référence de la Banque centrale européenne, publiés par la BCE à titre purement informatif, non destinés à des transactions."
     },
     it: {
       title: 'Dehesa Index — Informazioni',
@@ -83,10 +87,11 @@
         { text: 'USDA NASS / AMS (prezzi agricoli e lattiero-caseari statunitensi)', url: URLS.nass },
         { text: 'Commissione europea — Agri-food Data Portal', url: URLS.ec },
         { text: 'CME Group ed Euronext (futures sulle materie prime)', url: URLS.cme },
-        { text: 'DTN Fertilizer Index', url: URLS.dtn }
+        { text: 'DTN Fertilizer Index', url: URLS.dtn },
+        { text: 'Banca Centrale Europea (tassi di cambio di riferimento)', url: URLS.ecb }
       ],
       disclaimer: 'I prezzi mostrati oggi nel pannello sono dati campione a scopo di progettazione e di prodotto. Il prossimo passo del progetto è collegare le fonti in tempo reale indicate sopra.',
-      apiNotice: "Il prezzo statunitense del grano viene aggiornato automaticamente ogni mese da USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS."
+      apiNotice: "Il prezzo statunitense del grano viene aggiornato automaticamente ogni mese da USDA NASS Quick Stats. This product uses the NASS API but is not endorsed or certified by NASS. I tassi EUR/USD e GBP/USD vengono aggiornati ogni giorno lavorativo dai tassi di riferimento della Banca Centrale Europea, pubblicati dalla BCE a solo scopo informativo, non per l'uso in transazioni."
     }
   };
 
