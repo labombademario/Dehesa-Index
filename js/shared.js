@@ -278,7 +278,8 @@
     var priceHref = sitePath('precios.html') + (contextParams.length ? '?' + contextParams.join('&') : '');
     var newsHref = sitePath('noticias.html') + (contextParams.length ? '?' + contextParams.join('&') : '');
     var calendarParams = [];
-    if (crop || product) calendarParams.push('crop=' + encodeURIComponent(crop || product));
+    var mappedCrop = crop || ({ urea:'fertilizantes', fertilizantes:'fertilizantes', diesel:'diesel', trigo:'trigo', maiz:'maiz', arroz:'arroz', leche:'leche' }[product] || product);
+    if (mappedCrop) calendarParams.push('crop=' + encodeURIComponent(mappedCrop));
     if (region) calendarParams.push('region=' + encodeURIComponent(region));
     var calendarHref = sitePath('calendario.html') + (calendarParams.length ? '?' + calendarParams.join('&') : '');
     var siblingLinks = activePage === 'precios'
