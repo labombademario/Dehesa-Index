@@ -246,7 +246,7 @@
     if (state.product !== 'all') params.push('product=' + encodeURIComponent(state.product));
     if (state.topic !== 'all') params.push('topic=' + encodeURIComponent(state.topic));
     var next = window.location.pathname + (params.length ? '?' + params.join('&') : '');
-    if (window.history && window.history.pushState) window.history.replaceState(null, '', next);
+    if (window.history && window.history.pushState) window.history.pushState({ dehesa: 'news' }, '', next);
   }
 
   window.addEventListener('popstate', function () {
