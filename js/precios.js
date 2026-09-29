@@ -545,31 +545,85 @@
   function renderMarketNewsIntel() {
     var root = document.getElementById('pr-news-intel');
     if (!root || !global.DehesaNewsIndex) return;
+
+    // Build a cross-market feed from the compact verified news index.
+    // Category-specific stories are preferred; if none exist for the selected
+    // market/region, fall back to the most recent global/compatible stories so
+    // this module never renders an empty news bar.
     var stories = [];
-    productsInCat(state.activeTab).forEach(function(entry) {
+    var seen = {};
+    var preferred = productsInCat(state.activeTab);
+
+    preferred.forEach(function(entry) {
       (global.DehesaNewsIndex[entry.nameKey] || []).forEach(function(n) {
-        if (state.location === 'us' && n.region === 'eu') return;
-        if (state.location === 'eu' && n.region === 'us') return;
-        if (!stories.some(function(x){ return x.id === n.id; })) stories.push(n);
+        if (!seen[n.id]) { seen[n.id] = true; stories.push(n); }
       });
     });
+
     stories.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
+
+    var region = state.location || 'us';
+    var compatible = stories.filter(function(n) {
+      return n.region === region || n.region === 'global';
+    });
+
+    // If the selected category has no regional match, use the latest
+    // global/compatible market stories across the entire news index.
+    if (!compatible.length) {
+      compatible = [];
+      Object.keys(global.DehesaNewsIndex).forEach(function(key) {
+        (global.DehesaNewsIndex[key] || []).forEach(function(n) {
+          if (!seen['fallback-' + n.id] && (n.region === region || n.region === 'global')) {
+            seen['fallback-' + n.id] = true;
+            compatible.push(n);
+          }
+        });
+      });
+      compatible.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
+    }
+
+    var selected = compatible.slice(0, 4);
     var lg = lang();
-    var title = lg === 'es' ? 'Qué está moviendo este mercado' : lg === 'fr' ? 'Ce qui fait bouger ce marché' : lg === 'it' ? 'Cosa sta muovendo questo mercato' : 'What is moving this market';
-    var linkLabel = lg === 'es' ? 'Abrir News Intelligence →' : lg === 'fr' ? 'Ouvrir News Intelligence →' : lg === 'it' ? 'Apri News Intelligence →' : 'Open News Intelligence →';
-    if (!stories.length) {
-      root.innerHTML = '<div class="di-market-news-intel"><div><span class="di-section-kicker">NEWS INTELLIGENCE</span><h2>' + esc(title) + '</h2><p>No hay cobertura editorial enlazada a los mercados de esta sección para la región seleccionada.</p></div><a href="noticias.html">Noticias →</a></div>';
+    var title = lg === 'es' ? 'Noticias del mercado' :
+      lg === 'fr' ? 'Actualités du marché' :
+      lg === 'it' ? 'Notizie di mercato' : 'Market news';
+    var linkLabel = lg === 'es' ? 'News Intelligence →' :
+      lg === 'fr' ? 'News Intelligence →' :
+      lg === 'it' ? 'News Intelligence →' : 'News Intelligence →';
+    var regionLabel = region === 'us' ? 'EE. UU.' : region === 'eu' ? 'Europa' : 'Global';
+
+    if (!selected.length) {
+      root.innerHTML =
+        '<div class="di-market-news-intel di-market-news-empty">' +
+          '<div class="di-market-news-copy"><span class="di-section-kicker">NEWS INTELLIGENCE</span>' +
+          '<h2>' + esc(title) + '</h2>' +
+          '<p>La cobertura editorial verificada se está actualizando.</p></div>' +
+          '<a class="di-market-news-link" href="noticias.html">' + esc(linkLabel) + '</a>' +
+        '</div>';
       return;
     }
-    var topicCounts = {};
-    stories.forEach(function(n){ topicCounts[n.topic] = (topicCounts[n.topic] || 0) + 1; });
-    var leadTopic = Object.keys(topicCounts).sort(function(a,b){ return topicCounts[b] - topicCounts[a]; })[0];
-    var topicNames = { clima:{es:'clima',en:'weather',fr:'climat',it:'clima'}, costes:{es:'costes',en:'costs',fr:'coûts',it:'costi'}, comercio:{es:'comercio',en:'trade',fr:'commerce',it:'commercio'}, politica:{es:'política agraria',en:'agricultural policy',fr:'politique agricole',it:'politica agricola'}, oferta:{es:'oferta y cosecha',en:'supply and harvest',fr:'offre et récolte',it:'offerta e raccolto'}, energia:{es:'energía',en:'energy',fr:'énergie',it:'energia'}, ayudas:{es:'ayudas',en:'support',fr:'aides',it:'aiuti'} };
-    var lead = topicNames[leadTopic] ? topicNames[leadTopic][lg] : leadTopic;
-    var context = lg === 'es' ? 'La cobertura disponible está concentrada en ' + lead + '.' : lg === 'fr' ? 'La couverture disponible est concentrée sur ' + lead + '.' : lg === 'it' ? 'La copertura disponibile è concentrata su ' + lead + '.' : 'Available coverage is concentrated on ' + lead + '.';
-    root.innerHTML = '<div class="di-market-news-intel"><div class="di-market-news-copy"><span class="di-section-kicker">NEWS INTELLIGENCE</span><h2>' + esc(title) + '</h2><p>' + esc(context) + '</p></div><a class="di-market-news-link" href="noticias.html">' + esc(linkLabel) + '</a><div class="di-market-news-stories">' +
-      stories.slice(0,3).map(function(n){ var h=n.headline[lg]||n.headline.es; return '<a href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer"><span>' + esc(n.source) + ' · ' + esc(n.date) + '</span><strong>' + esc(h) + '</strong></a>'; }).join('') +
-      '</div></div>';
+
+    root.innerHTML =
+      '<div class="di-market-news-intel">' +
+        '<div class="di-market-news-copy">' +
+          '<span class="di-section-kicker">NEWS INTELLIGENCE · ' + esc(regionLabel) + '</span>' +
+          '<h2>' + esc(title) + '</h2>' +
+          '<p>' + (lg === 'es' ? 'Titulares recientes vinculados a este mercado y, cuando no hay cobertura local, a factores globales que pueden afectarlo.' :
+                     lg === 'fr' ? 'Titres récents liés à ce marché et, en l’absence de couverture locale, aux facteurs mondiaux susceptibles de l’affecter.' :
+                     lg === 'it' ? 'Titoli recenti collegati a questo mercato e, quando manca copertura locale, ai fattori globali che possono influenzarlo.' :
+                     'Recent headlines linked to this market and, when local coverage is unavailable, to global factors that may affect it.') + '</p>' +
+        '</div>' +
+        '<a class="di-market-news-link" href="noticias.html">' + esc(linkLabel) + '</a>' +
+        '<div class="di-market-news-stories">' +
+          selected.map(function(n) {
+            var h = n.headline[lg] || n.headline.es;
+            return '<a href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer">' +
+              '<span>' + esc(n.source) + ' · ' + esc(n.date) + '</span>' +
+              '<strong>' + esc(h) + '</strong>' +
+            '</a>';
+          }).join('') +
+        '</div>' +
+      '</div>';
   }
 
   function renderCategory() {
