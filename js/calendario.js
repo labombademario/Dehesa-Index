@@ -222,7 +222,17 @@
     }
   };
 
-  var state = { filter: 'all', crop: 'all', type: 'all', impact: 'all' };
+  var params = new URLSearchParams(window.location.search);
+  var state = { filter: params.get('region') || 'all', crop: params.get('crop') || 'all', type: params.get('type') || 'all', impact: params.get('impact') || 'all' };
+  function syncUrl() {
+    var p = [];
+    if (state.filter !== 'all') p.push('region=' + encodeURIComponent(state.filter));
+    if (state.crop !== 'all') p.push('crop=' + encodeURIComponent(state.crop));
+    if (state.type !== 'all') p.push('type=' + encodeURIComponent(state.type));
+    if (state.impact !== 'all') p.push('impact=' + encodeURIComponent(state.impact));
+    var next = window.location.pathname + (p.length ? '?' + p.join('&') : '');
+    if (window.history && window.history.replaceState) window.history.replaceState(null, '', next);
+  }
 
   function render() {
     var lang = window.DehesaShared.getLang();
@@ -248,8 +258,8 @@
       '<div class="di-cal-filter-label">' + esc(t.filterImpact) + '</div><select data-cal-filter="impact"><option value="all">' + esc(t.allImpacts) + '</option>' + Object.keys(t.impactLabels).map(function(k){return '<option value="'+k+'">'+esc(t.impactLabels[k])+'</option>';}).join('') + '</select></div>';
     document.getElementById('cal-filters').innerHTML =
       FILTER_OPTIONS.map(function (opt) { var active = state.filter === opt.id ? ' active' : ''; return '<button type="button" class="di-location-btn di-news-filter-btn' + active + '" data-filter="' + opt.id + '">' + esc(opt.label) + '</button>'; }).join('') + filtersHtml;
-    Array.prototype.forEach.call(document.querySelectorAll('#cal-filters button'), function (btn) { btn.addEventListener('click', function () { state.filter = btn.getAttribute('data-filter'); render(); }); });
-    Array.prototype.forEach.call(document.querySelectorAll('#cal-filters select'), function (sel) { sel.value = state[sel.getAttribute('data-cal-filter')]; sel.addEventListener('change', function(){ state[sel.getAttribute('data-cal-filter')] = sel.value; render(); }); });
+    Array.prototype.forEach.call(document.querySelectorAll('#cal-filters button'), function (btn) { btn.addEventListener('click', function () { state.filter = btn.getAttribute('data-filter'); syncUrl(); render(); }); });
+    Array.prototype.forEach.call(document.querySelectorAll('#cal-filters select'), function (sel) { sel.value = state[sel.getAttribute('data-cal-filter')]; sel.addEventListener('change', function(){ state[sel.getAttribute('data-cal-filter')] = sel.value; syncUrl(); render(); }); });
 
     var filteredEvents = CALENDAR_EVENTS.filter(function (ev) {
       return (state.filter === 'all' || ev.market === state.filter) &&
