@@ -662,6 +662,13 @@ html[data-theme="dark"] .di-badge-green { background: #1E3328; color: #7FCF9B; b
 .di-data-health-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .di-data-health-kicker{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--di-muted,#777);margin-bottom:3px}
 .di-data-health-head strong{font-size:12px;font-weight:700}
+.di-data-state-legend{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end}
+.di-data-state-chip{display:inline-flex;align-items:center;gap:4px;padding:4px 7px;border-radius:999px;font-size:8px;font-weight:800;letter-spacing:.06em;white-space:nowrap}
+.di-data-state-chip b{font-size:9px}
+.di-data-state-chip.real{background:rgba(47,125,79,.10);color:var(--positive,#2f7d4f)}
+.di-data-state-chip.pending{background:rgba(138,132,113,.12);color:var(--neutral,#777)}
+.di-data-state-chip.not-comparable{background:rgba(168,77,77,.10);color:#a84d4d}
+.di-data-health-note{margin-top:10px;padding-top:9px;border-top:1px solid var(--di-border,rgba(120,110,90,.14));font-size:9px;line-height:1.45;color:var(--di-muted,#777)}
 .di-data-health-dot{width:9px;height:9px;border-radius:50%;background:#c9a84a;flex:0 0 auto}
 .di-data-health-dot.error{background:#a84d4d}
 .di-data-health-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}
