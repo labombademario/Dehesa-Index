@@ -118,7 +118,6 @@
     'energia-diesel': { w: 60, group: 'energia' }
   };
   var TREEMAP_GROUP_ORDER = ['cereales', 'ganaderia', 'lacteos', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia'];
-  var TREEMAP_EXPONENT = 0.6;
   var TREEMAP_CANVAS_W = 1000, TREEMAP_CANVAS_H = 480;
 
   function squarify(items, rectX, rectY, rectW, rectH) {
@@ -187,8 +186,7 @@
       var key = e.catId + '-' + e.nameKey;
       var meta = TREEMAP_WEIGHTS[key];
       if (!meta) return;
-      var disp = Math.pow(meta.w, TREEMAP_EXPONENT);
-      if (!byGroup[meta.group]) byGroup[meta.group] = [];
+            if (!byGroup[meta.group]) byGroup[meta.group] = [];
       if (!regionByKey[key]) return;
       byGroup[meta.group].push({ key: key, entry: e, weight: 1 });
     });
