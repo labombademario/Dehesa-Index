@@ -492,7 +492,7 @@
           eu: { price: 198, changePct: 1.0, history: [205, 202, 200, 199, 197, 196, 198], currency: 'EUR', kgPerUnit: 1000 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'futuro', market: 'Euronext (MATIF)' } } },
         { nameKey: 'trigo', imperialUnitKey: 'bushel', imperialKgPerUnit: 27.2155, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
-          us: { price: 5.72, changePct: 0.5, history: [5.90, 5.85, 5.78, 5.70, 5.65, 5.69, 5.72], currency: 'USD', kgPerUnit: 27.2155 },
+          us: { price: 6.06, changePct: 6.32, history: [5.07, 5.15, 5.52, 5.7, 5.88, 5.7, 6.06], currency: 'USD', kgPerUnit: 27.2155 },
           eu: { price: 221, changePct: 0.5, history: [215, 217, 219, 220, 222, 220, 221], currency: 'EUR', kgPerUnit: 1000 },
           uk: { price: 215.00, changePct: -0.3, history: [217.80, 217.20, 216.60, 216.10, 215.90, 215.65, 215.00], currency: 'GBP', kgPerUnit: 1000 },
           countryFactors: { es: 1, fr: 0.842, de: 1.016, it: 0.861 },
