@@ -988,3 +988,27 @@ input,select,button{font-size:16px}
   .di-favorites{margin:20px 0}
   .di-favorites-grid{grid-template-columns:1fr!important}
 }
+
+/* Product modal UX: preserve page context while history, calculator and alerts are open */
+body.di-modal-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
+.di-modal-overlay{overscroll-behavior:contain}
+.di-big-modal-card{overscroll-behavior:contain}
+.di-big-modal-card .di-modal-head{position:sticky;top:0;z-index:3;background:var(--surface);padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid var(--border)}
+.di-big-modal-card .di-history-chart-wrap{min-height:0}
+.di-big-modal-card .di-history-chart-wrap svg{display:block;width:100%;height:auto;min-height:150px}
+.di-data-trust{scroll-margin-top:80px}
+.di-data-trust summary{min-height:44px;display:flex;align-items:center;gap:8px}
+@media(max-width:430px){
+  .di-big-modal-card{border-radius:14px;padding:14px!important}
+  .di-big-modal-card .di-modal-head{margin:0 -14px 12px;padding:0 14px 10px}
+  .di-big-modal-card .di-history-chart-wrap svg{min-height:135px}
+  .di-history-legend{display:grid!important;grid-template-columns:1fr;gap:6px}
+  .di-compare-toggle-row{display:grid!important;grid-template-columns:1fr;gap:8px}
+  .di-compare-toggle-row label{min-height:42px;display:flex;align-items:center}
+  .di-compare-panel{padding:10px!important}
+  .di-export-btn{width:100%;min-height:46px}
+}
+@media(max-width:350px){
+  .di-big-modal-card{padding:12px!important}
+  .di-big-modal-card .di-modal-head{margin:0 -12px 10px;padding:0 12px 8px}
+}
