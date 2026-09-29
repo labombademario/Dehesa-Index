@@ -898,8 +898,8 @@
   var DATA_TRUST_PILOT = {
     'cereales-trigo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
-      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel.',
-      comparability: 'directional', observationDate: '2026-07', publicationDate: null, status: 'verified', verifiedAt: '2026-09-29T16:54:10.032Z'
+      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the July 2026 Agricultural Prices release.',
+      comparability: 'directional', observationDate: '2026-07', publicationDate: '2026-07-31', status: 'verified', verifiedAt: '2026-09-29T16:54:10.032Z'
     },
     'cereales-trigo-eu': {
       sourceId: 'euronext', frequency: 'daily',
@@ -908,13 +908,13 @@
     },
     'cereales-maiz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
-      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel.',
-      comparability: 'directional', observationDate: '2026-07', publicationDate: null, status: 'verified', verifiedAt: '2026-09-29T16:54:10.345Z'
+      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the July 2026 Agricultural Prices release.',
+      comparability: 'directional', observationDate: '2026-07', publicationDate: '2026-07-31', status: 'verified', verifiedAt: '2026-09-29T16:54:10.345Z'
     },
     'cereales-arroz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
-      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/cwt.',
-      comparability: 'directional', observationDate: '2026-07', publicationDate: null, status: 'verified', verifiedAt: '2026-09-29T16:54:10.660Z'
+      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/cwt. Published in the July 2026 Agricultural Prices release.',
+      comparability: 'directional', observationDate: '2026-07', publicationDate: '2026-07-31', status: 'verified', verifiedAt: '2026-09-29T16:54:10.660Z'
     },
     'cereales-maiz-eu': {
       sourceId: 'euronext', frequency: 'daily',
