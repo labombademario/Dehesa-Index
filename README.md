@@ -8,7 +8,7 @@ Dehesa Index now maintains an automated agricultural market-news pipeline:
 
 RSS/Atom -> normalize -> deduplicate -> classify -> relevance score -> data/news.json -> js/news-index.js
 
-- Sources currently queried: Reuters, Associated Press, AFP, EFE, Bloomberg, Financial Times, Wall Street Journal, CNBC, POLITICO, Euractiv, Xinhua, DTN, AgWeb, Farm Progress, Successful Farming, World Grain, Feed Strategy, Dairy Herd, Fastmarkets, S&P Global, Argus Media, FoodNavigator, Farmers Weekly, Farmers Guardian, Agriland, Agra Europe, ABC Rural, Grain Central, The Land, USDA, USDA ERS, European Commission Agriculture, FAO, OECD, WTO, EIA, IEA and International Grains Council via Google News RSS search feeds.n Commission Agriculture and FAO via RSS search feeds.
+- Sources currently queried: Reuters, Associated Press, AFP, EFE, Bloomberg, Financial Times, Wall Street Journal, CNBC, POLITICO, Euractiv, Xinhua, DTN, AgWeb, Farm Progress, Successful Farming, World Grain, Feed Strategy, Dairy Herd, Fastmarkets, S&P Global, Argus Media, FoodNavigator, Farmers Weekly, Farmers Guardian, Agriland, AGRA, Agroeuropa, ABC Rural, Grain Central, The Land, USDA, USDA ERS, European Commission Agriculture, FAO, OECD, WTO, EIA, IEA and International Grains Council via Google News RSS search feeds.n Commission Agriculture and FAO via RSS search feeds.
 - Retention window: 14 days; maximum 120 stories.
 - Classification maps stories to maize, wheat, soybeans, rice, barley, sugar, fertilizer, diesel, energy, dairy, feed, farm costs and CAP.
 - Topics include weather, trade, supply, energy, costs and policy, with source-region tagging for US, EU and global coverage.
