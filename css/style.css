@@ -1065,3 +1065,5 @@ body.di-modal-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
   .di-news-impact{align-items:flex-start}
   .di-news-impact-relation{width:100%;border-radius:7px}
 }
+
+.di-news-impact-alert{display:inline-flex;align-items:center;min-height:20px;padding:3px 7px;border:1px solid var(--border);border-radius:999px;font-size:8px;line-height:1.2;font-weight:800;letter-spacing:.05em;color:var(--negative)}
