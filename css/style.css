@@ -895,3 +895,17 @@ input,select,button{font-size:16px}
   .di-modal{padding:6px}
   .di-modal-card{max-height:calc(100vh - 12px)}
 }
+
+/* Mobile overflow safety for generated data tables */
+.di-breakdown-table{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;display:block}
+.di-breakdown-table table{min-width:560px}
+@media(max-width:700px){
+  .di-breakdown-table{font-size:11px}
+  .di-breakdown-table table{min-width:520px}
+  .di-data-health-head,.di-market-news-head,.di-related-news-head{gap:8px}
+  .di-product-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .di-product-actions button,.di-product-actions a{width:100%;min-height:42px}
+  .di-precios-head-row{gap:8px;flex-wrap:wrap}
+  .di-banner{font-size:11px;line-height:1.45}
+  .di-data-health{overflow:hidden}
+}
