@@ -983,6 +983,8 @@
 
   function renderAll() {
     renderHead();
+    var healthEl = document.getElementById('pr-data-health');
+    if (healthEl && global.DehesaDataTrust) healthEl.innerHTML = global.DehesaDataTrust.renderHealth();
     renderTicker();
     renderSearchResults();
     renderLocationBar();
