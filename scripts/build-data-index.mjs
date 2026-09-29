@@ -39,7 +39,7 @@ function periodToDate(period, year) {
     may:5,jun:6,june:6,jul:7,july:7,aug:8,august:8,
     sep:9,september:9,oct:10,october:10,nov:11,november:11,dec:12,december:12
   };
-  const numeric = p.match(/(?:^|\\D)(\\d{1,2})(?:$|\\D)/);
+  const numeric = p.match(/(?:^|\D)(\d{1,2})(?:$|\D)/);
   const month = numeric ? Number(numeric[1]) : monthNames[p];
   return month >= 1 && month <= 12 ? y + '-' + String(month).padStart(2, '0') + '-01' : y + '-01-01';
 }
