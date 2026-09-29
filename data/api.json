@@ -1,0 +1,21 @@
+{
+  "name": "Dehesa Index Data API",
+  "version": "1.0",
+  "base": "/data/",
+  "resources": {
+    "latest": "/data/latest.json",
+    "history": "/data/history.json",
+    "historyCsv": "/data/history.csv",
+    "catalog": "/data/catalog.json"
+  },
+  "queryModel": {
+    "product": "exact product key, e.g. trigo",
+    "region": "us | eu | uk",
+    "sourceId": "source identifier",
+    "from": "YYYY-MM-DD",
+    "to": "YYYY-MM-DD"
+  },
+  "observationId": "Stable identifiers are derived from product + region in Data Trust v2.",
+  "license": "See repository terms before commercial redistribution.",
+  "status": "pilot"
+}
