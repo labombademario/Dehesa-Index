@@ -900,8 +900,8 @@
       comparability: 'directional'
     },
     'cereales-trigo-eu': {
-      sourceId: 'european_commission', frequency: 'source-dependent',
-      methodology: 'Current Euronext/MATIF display is a futures reference; not the same measurement basis as USDA NASS.',
+      sourceId: 'euronext', frequency: 'daily',
+      methodology: 'Euronext/MATIF futures reference; not the same measurement basis as USDA NASS.',
       comparability: 'not_comparable'
     },
     'cereales-maiz-us': {
@@ -948,8 +948,9 @@
 
   function buildTrustObservation(productId, region, raw, quote, meta) {
     var source = DATA_TRUST_SOURCES[meta.sourceId] || {};
-    var unit = raw.metricUnitKey || raw.imperialUnitKey || null;
-    var kgPerUnit = raw.metricKgPerUnit || raw.imperialKgPerUnit || raw.kgPerUnit || null;
+    var isUS = region === 'us';
+    var unit = isUS ? (raw.imperialUnitKey || null) : (raw.metricUnitKey || null);
+    var kgPerUnit = raw.kgPerUnit || (isUS ? raw.imperialKgPerUnit : raw.metricKgPerUnit) || null;
     return {
       schemaVersion: DATA_TRUST_SCHEMA_VERSION,
       id: 'di_' + productId.replace(/[^a-z0-9]+/gi, '_') + '_' + region,
