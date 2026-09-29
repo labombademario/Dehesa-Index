@@ -488,7 +488,7 @@
       id: 'cereales', nameKey: 'cereales',
       products: [
         { nameKey: 'maiz', imperialUnitKey: 'bushel', imperialKgPerUnit: 25.401, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
-          us: { price: 4.31, changePct: 0.9, history: [4.10, 4.15, 4.22, 4.18, 4.25, 4.29, 4.31], currency: 'USD', kgPerUnit: 25.401 },
+          us: { price: 4.26, changePct: -0.47, history: [4.1, 4.11, 4.27, 4.31, 4.48, 4.28, 4.26], currency: 'USD', kgPerUnit: 25.401 },
           eu: { price: 198, changePct: 1.0, history: [205, 202, 200, 199, 197, 196, 198], currency: 'EUR', kgPerUnit: 1000 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'futuro', market: 'Euronext (MATIF)' } } },
         { nameKey: 'trigo', imperialUnitKey: 'bushel', imperialKgPerUnit: 27.2155, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
