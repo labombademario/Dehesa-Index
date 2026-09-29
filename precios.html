@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dehesa Index — Precios</title>
+<meta name="description" content="Precios diarios y semanales de cereales, lácteos, ganado, pienso, fertilizantes y energía en EE. UU., Europa y Reino Unido.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="di-nav-root"></div>
+
+<div class="di-page">
+  <div class="di-container">
+
+    <div class="di-precios-head">
+      <div class="di-precios-head-row">
+        <h1 id="pr-title"></h1>
+        <span class="di-badge di-badge-sample" id="pr-badge"></span>
+      </div>
+      <p class="di-precios-sub" id="pr-subtitle"></p>
+      <p class="di-updated" id="pr-updated"></p>
+      <div class="di-banner" id="pr-banner"></div>
+    </div>
+
+    <div class="di-ticker" id="pr-ticker"></div>
+
+    <div class="di-search-wrap" id="pr-search-wrap">
+      <input type="text" class="di-search-input" id="pr-search-input">
+      <button class="di-search-clear" id="pr-search-clear" type="button" style="display:none;">✕</button>
+      <div class="di-search-results" id="pr-search-results" style="display:none;"></div>
+    </div>
+
+    <div class="di-location-bar" id="pr-location-bar"></div>
+
+    <div class="di-favorites" id="pr-favorites"></div>
+
+    <div id="pr-intel"></div>
+
+    <div class="di-tabs-bar" id="pr-tabs"></div>
+    <div id="pr-category"></div>
+
+  </div>
+</div>
+
+<div id="di-footer-root"></div>
+<div id="di-overlay-root"></div>
+<div id="pr-modal-root"></div>
+
+<script src="js/shared.js"></script>
+<script src="js/data.js"></script>
+<script src="js/precios-i18n.js"></script>
+<script src="js/precios.js"></script>
+<script src="js/precios-intel.js"></script>
+</body>
+</html>

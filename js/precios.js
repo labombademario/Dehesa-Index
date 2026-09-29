@@ -1,0 +1,942 @@
+/* Dehesa Index — página de Precios (núcleo): cabecera, ticker, buscador,
+   ubicación (EE. UU./Europa/Reino Unido) + país UE, favoritos, pestañas de
+   categoría, tarjetas de producto con desglose de fuentes, y los modales de
+   Histórico ampliado, Calculadora de coste y Alerta de precio.
+   Vanilla JS / ES5, sin frameworks ni build step. Se apoya en window.DehesaData
+   (js/data.js) y window.DehesaPreciosI18n (js/precios-i18n.js). Expone
+   window.DehesaPreciosCore al final del archivo para que js/precios-intel.js
+   (Market Map, Momentum, Correlación, Volatilidad, Estacionalidad, Spreads,
+   Margen del productor) reutilice el mismo índice de productos y ubicación.
+   NOTA DE ALCANCE: Local vs. Global, Seguro agrario/Vino a granel/Madera y
+   las páginas secundarias llegan en una fase posterior (ver banner). */
+(function (global) {
+  'use strict';
+  var D = global.DehesaData;
+  var UIALL = global.DehesaPreciosI18n;
+  var S = global.DehesaShared;
+  var esc = S.esc;
+
+  // ---------------------------------------------------------------------
+  // Tema (colores de gráfico) -- mismos hex que css/style.css
+  // ---------------------------------------------------------------------
+  var THEME = {
+    light: { positive: '#2F7D4F', negative: '#B23A34', neutral: '#8A8471', compareLine: '#3B6EA8' },
+    dark: { positive: '#4FCB77', negative: '#E8776D', neutral: '#8F8A74', compareLine: '#7FB2E8' }
+  };
+  function T() { return THEME[S.getTheme()] || THEME.light; }
+  function lang() { return S.getLang(); }
+  function ui() { return UIALL[lang()] || UIALL.es; }
+
+  // ---------------------------------------------------------------------
+  // localStorage helpers
+  // ---------------------------------------------------------------------
+  function readLS(key) { try { return window.localStorage.getItem(key); } catch (e) { return null; } }
+  function writeLS(key, v) { try { window.localStorage.setItem(key, v); } catch (e) {} }
+  function readFavorites() {
+    try {
+      var raw = window.localStorage.getItem('dehesaIndexFavorites');
+      var arr = raw ? JSON.parse(raw) : [];
+      return Array.isArray(arr) ? arr : [];
+    } catch (e) { return []; }
+  }
+  function writeFavorites(arr) { try { window.localStorage.setItem('dehesaIndexFavorites', JSON.stringify(arr)); } catch (e) {} }
+
+  // ---------------------------------------------------------------------
+  // Estado
+  // ---------------------------------------------------------------------
+  var CAT_ORDER = ['cereales', 'lacteos', 'ganado', 'porcino', 'ovino', 'avicultura', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia'];
+
+  var state = {
+    location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk') ? v : null; })(),
+    euCountry: (function () { var v = readLS('dehesaIndexEuCountry'); return (v === 'es' || v === 'de' || v === 'fr' || v === 'it') ? v : 'es'; })(),
+    activeTab: 'cereales',
+    favorites: readFavorites(),
+    searchQuery: '',
+    expanded: {},
+    history: null, // { key, region, range, compareMode, compareKey, yoy }
+    calc: null,    // { key, region, mode }
+    alert: null    // { key, region, direction, attempted, confirmed }
+  };
+  var showLocationWelcome = !state.location;
+  if (!state.location) state.location = 'us';
+
+  // ---------------------------------------------------------------------
+  // Base de productos (RAW + diésel sintético) -----------------------------
+  // ---------------------------------------------------------------------
+  var DIESEL_PRODUCT = {
+    nameKey: 'diesel',
+    imperialUnitKey: 'gal', imperialKgPerUnit: D.GAL_KG,
+    metricUnitKey: 'litro', metricKgPerUnit: D.LITRO_KG,
+    us: D.DIESEL_US_NATIONAL, eu: D.DIESEL_EU_NATIONAL, uk: D.DIESEL_UK_NATIONAL,
+    quoteTypes: D.DIESEL_QUOTE_TYPES,
+    footnoteKey: 'diesel',
+    isEnergy: true
+  };
+
+  var PRODUCTS = []; // { catId, nameKey, product }
+  var PRODUCT_BY_KEY = {};
+  (function buildIndex() {
+    for (var i = 0; i < D.RAW.length; i++) {
+      var cat = D.RAW[i];
+      for (var j = 0; j < cat.products.length; j++) {
+        var p = cat.products[j];
+        var entry = { catId: cat.id, nameKey: p.nameKey, product: p };
+        PRODUCTS.push(entry);
+        PRODUCT_BY_KEY[cat.id + ':' + p.nameKey] = entry;
+      }
+    }
+    var energiaEntry = { catId: 'energia', nameKey: 'diesel', product: DIESEL_PRODUCT };
+    PRODUCTS.push(energiaEntry);
+    PRODUCT_BY_KEY['energia:diesel'] = energiaEntry;
+  })();
+
+  function productName(nameKey) { return (D.NAMES[lang()] || D.NAMES.es)[nameKey] || nameKey; }
+  function catLabel(catId) { var c = (D.CATS[lang()] || D.CATS.es)[catId]; return c ? c.label : catId; }
+  function productsInCat(catId) {
+    return PRODUCTS.filter(function (e) { return e.catId === catId; });
+  }
+
+  // ---------------------------------------------------------------------
+  // Conversión de región según ubicación elegida
+  // ---------------------------------------------------------------------
+  function dieselCountryRegion(countryCode) {
+    var key = D.DIESEL_COUNTRY_TO_KEY[countryCode];
+    for (var i = 0; i < D.DIESEL_EU_COUNTRIES.length; i++) {
+      if (D.DIESEL_EU_COUNTRIES[i].key === key) return D.DIESEL_EU_COUNTRIES[i];
+    }
+    return null;
+  }
+
+  // Devuelve { region, targetCcy, targetKgPerUnit, targetUnitLabel, quoteType, ukGap }
+  // para el producto `entry` en la ubicación `loc` (y país `country` si loc==='eu').
+  function resolveDisplay(entry, loc, country) {
+    var p = entry.product;
+    var UL = D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es;
+    if (loc === 'us') {
+      return { region: p.us, targetCcy: 'USD', targetKgPerUnit: p.imperialKgPerUnit, targetUnitLabel: UL[p.imperialUnitKey], quoteType: p.quoteTypes && p.quoteTypes.us, ukGap: false };
+    }
+    if (loc === 'eu') {
+      var region = p.eu;
+      if (p.isEnergy) {
+        var dr = dieselCountryRegion(country);
+        if (dr) region = dr;
+      } else if (p.countryFactors && country !== 'es' && p.countryFactors[country] != null) {
+        region = D.deriveCountryRaw(p.eu, p.countryFactors[country]);
+      }
+      return { region: region, targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: false };
+    }
+    // uk
+    if (p.uk) {
+      return { region: p.uk, targetCcy: 'GBP', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.uk, ukGap: false };
+    }
+    return { region: p.eu, targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: true };
+  }
+
+  function availableRegions(entry) {
+    var p = entry.product;
+    var out = ['us', 'eu'];
+    if (p.uk) out.push('uk');
+    return out;
+  }
+  function defaultRegionFor(entry) {
+    var avail = availableRegions(entry);
+    return avail.indexOf(state.location) > -1 ? state.location : avail[0];
+  }
+
+  // ---------------------------------------------------------------------
+  // Buscador
+  // ---------------------------------------------------------------------
+  function normalizeSearch(s) {
+    return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+  }
+
+  // ---------------------------------------------------------------------
+  // Favoritos
+  // ---------------------------------------------------------------------
+  function isFavorite(key) { return state.favorites.indexOf(key) > -1; }
+  function toggleFavorite(key) {
+    var idx = state.favorites.indexOf(key);
+    if (idx > -1) {
+      state.favorites.splice(idx, 1);
+    } else {
+      if (state.favorites.length >= 4) state.favorites.shift();
+      state.favorites.push(key);
+    }
+    writeFavorites(state.favorites);
+    renderAll();
+  }
+
+  // ---------------------------------------------------------------------
+  // Render: cabecera
+  // ---------------------------------------------------------------------
+  function renderHead() {
+    var t = ui();
+    document.title = 'Dehesa Index — ' + t.pageTitle;
+    document.getElementById('pr-title').textContent = t.pageTitle;
+    document.getElementById('pr-badge').textContent = t.badge;
+    document.getElementById('pr-subtitle').textContent = t.pageSubtitle;
+    document.getElementById('pr-updated').textContent = t.updated;
+    document.getElementById('pr-banner').textContent = t.banner + ' ' + t.comingSoonNote;
+  }
+
+  // ---------------------------------------------------------------------
+  // Render: ticker
+  // ---------------------------------------------------------------------
+  function renderTicker() {
+    var root = document.getElementById('pr-ticker');
+    var items = PRODUCTS.map(function (entry) {
+      var disp = resolveDisplay(entry, state.location, state.euCountry);
+      var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
+      return (
+        '<span class="di-ticker-item">' +
+          '<span class="di-ticker-name">' + esc(productName(entry.nameKey)) + '</span>' +
+          '<span class="di-ticker-price">' + esc(built.price) + esc(built.unit) + '</span>' +
+          '<span style="color:' + built.changeColor + ';font-weight:700;">' + esc(built.changeLabel) + '</span>' +
+        '</span>'
+      );
+    }).join('');
+    root.innerHTML = '<div class="di-ticker-track">' + items + items + '</div>';
+  }
+
+  // ---------------------------------------------------------------------
+  // Render: buscador
+  // ---------------------------------------------------------------------
+  function renderSearchResults() {
+    var resultsRoot = document.getElementById('pr-search-results');
+    var clearBtn = document.getElementById('pr-search-clear');
+    var q = normalizeSearch(state.searchQuery);
+    clearBtn.style.display = state.searchQuery ? '' : 'none';
+    if (!q) { resultsRoot.style.display = 'none'; resultsRoot.innerHTML = ''; return; }
+    var matches = PRODUCTS.filter(function (entry) {
+      return normalizeSearch(productName(entry.nameKey)).indexOf(q) > -1;
+    });
+    resultsRoot.style.display = '';
+    if (!matches.length) {
+      resultsRoot.innerHTML = '<div class="di-search-empty">' + esc(ui().searchNoResults) + '</div>';
+      return;
+    }
+    resultsRoot.innerHTML = matches.map(function (entry) {
+      var key = entry.catId + ':' + entry.nameKey;
+      return '<button type="button" class="di-search-result" data-goto="' + key + '">' +
+        esc(productName(entry.nameKey)) + ' <span class="di-search-result-cat">· ' + esc(catLabel(entry.catId)) + '</span></button>';
+    }).join('');
+  }
+
+  function goToProduct(key) {
+    var entry = PRODUCT_BY_KEY[key];
+    if (!entry) return;
+    state.activeTab = entry.catId;
+    state.searchQuery = '';
+    var input = document.getElementById('pr-search-input');
+    if (input) input.value = '';
+    renderAll();
+    setTimeout(function () {
+      var card = document.querySelector('[data-key="' + key + '"]');
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        card.style.boxShadow = '0 0 0 3px ' + (T().positive) + '55';
+        setTimeout(function () { card.style.boxShadow = ''; }, 1400);
+      }
+    }, 30);
+  }
+
+  // ---------------------------------------------------------------------
+  // Render: barra de ubicación
+  // ---------------------------------------------------------------------
+  function renderLocationBar() {
+    var t = ui();
+    var root = document.getElementById('pr-location-bar');
+    var html = '<span class="di-location-label">' + esc(t.locationLabel) + '</span>' +
+      '<button type="button" class="di-location-btn' + (state.location === 'us' ? ' active' : '') + '" data-loc="us">🇺🇸 ' + esc(t.locationUsLabel) + '</button>' +
+      '<button type="button" class="di-location-btn' + (state.location === 'eu' ? ' active' : '') + '" data-loc="eu">🇪🇺 ' + esc(t.locationEuLabel) + '</button>' +
+      '<button type="button" class="di-location-btn' + (state.location === 'uk' ? ' active' : '') + '" data-loc="uk">🇬🇧 ' + esc(t.locationUkLabel) + '</button>';
+    if (state.location === 'eu') {
+      var countries = [
+        { code: 'es', flag: D.COUNTRY_FLAG.es, label: D.REGION[lang()].eu + ' — España' },
+        { code: 'de', flag: D.COUNTRY_FLAG.de, label: 'Deutschland' },
+        { code: 'fr', flag: D.COUNTRY_FLAG.fr, label: 'France' },
+        { code: 'it', flag: D.COUNTRY_FLAG.it, label: 'Italia' }
+      ];
+      html += '<select class="di-eu-country-select" id="pr-eu-country">' + countries.map(function (c) {
+        return '<option value="' + c.code + '"' + (c.code === state.euCountry ? ' selected' : '') + '>' + c.flag + ' ' + esc(c.label) + '</option>';
+      }).join('') + '</select>';
+      html += '<div class="di-eu-country-hint">' + esc(t.euCountryHint) + '</div>';
+    }
+    html += '<div class="di-fx-label">' + esc(t.fxLabel) + '</div>';
+    root.innerHTML = html;
+  }
+
+  // ---------------------------------------------------------------------
+  // Render: favoritos
+  // ---------------------------------------------------------------------
+  function renderFavorites() {
+    var t = ui();
+    var root = document.getElementById('pr-favorites');
+    var html = '<h2 class="di-favorites-title">' + esc(t.favoritesTitle) + '</h2>';
+    if (!state.favorites.length) {
+      html += '<div class="di-favorites-empty">' + esc(t.favoritesEmptyHint) + '</div>';
+    } else {
+      html += '<div class="di-favorites-grid">' + state.favorites.map(function (key) {
+        var entry = PRODUCT_BY_KEY[key];
+        if (!entry) return '';
+        return productCardHtml(entry, { compact: true });
+      }).join('') + '</div>';
+    }
+    root.innerHTML = html;
+    wireCardEvents(root);
+  }
+
+  // ---------------------------------------------------------------------
+  // Render: pestañas
+  // ---------------------------------------------------------------------
+  function renderTabs() {
+    var root = document.getElementById('pr-tabs');
+    root.innerHTML = CAT_ORDER.map(function (catId) {
+      return '<button type="button" class="di-tab-btn' + (catId === state.activeTab ? ' active' : '') + '" data-tab="' + catId + '">' + esc(catLabel(catId)) + '</button>';
+    }).join('');
+  }
+
+  // ---------------------------------------------------------------------
+  // Tarjeta de producto
+  // ---------------------------------------------------------------------
+  function quoteBadgeHtml(quoteType) {
+    if (!quoteType) return '';
+    var qt = (D.QUOTE_TYPES[lang()] || D.QUOTE_TYPES.es)[quoteType.type];
+    if (!qt) return '';
+    var title = qt.desc + (quoteType.market ? ' — ' + quoteType.market : '');
+    return '<span class="di-quote-badge" title="' + esc(title) + '">' + esc(qt.label) + '</span>';
+  }
+
+  function breakdownTableHtml(entry) {
+    var t = ui();
+    var p = entry.product;
+    var UL = D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es;
+    var rows = [];
+    var specs = [
+      { code: 'us', region: p.us, ccy: 'USD', kg: p.imperialKgPerUnit, unit: UL[p.imperialUnitKey], regionLabel: D.REGION[lang()].us },
+      { code: 'eu', region: p.eu, ccy: 'EUR', kg: p.metricKgPerUnit, unit: UL[p.metricUnitKey], regionLabel: D.REGION[lang()].eu },
+      { code: 'uk', region: p.uk, ccy: 'GBP', kg: p.metricKgPerUnit, unit: UL[p.metricUnitKey], regionLabel: D.REGION[lang()].uk }
+    ];
+    for (var i = 0; i < specs.length; i++) {
+      var s = specs[i];
+      if (!s.region) continue;
+      var qt = p.quoteTypes && p.quoteTypes[s.code];
+      var qtLabel = qt && (D.QUOTE_TYPES[lang()] || D.QUOTE_TYPES.es)[qt.type] ? (D.QUOTE_TYPES[lang()] || D.QUOTE_TYPES.es)[qt.type].label : '—';
+      var sym = D.CCY_SYMBOL[s.ccy] || s.ccy;
+      rows.push('<tr><td>' + esc(s.regionLabel) + (qt && qt.market ? ' — ' + esc(qt.market) : '') + '</td><td>' + esc(qtLabel) + '</td><td>' + sym + D.fmtNumber(s.region.price) + '/' + esc(s.unit) + '</td></tr>');
+    }
+    var sourcesHtml = '';
+    var cat = (D.CATS[lang()] || D.CATS.es)[entry.catId];
+    if (cat) {
+      sourcesHtml = D.withSeps(cat.sources).map(function (s) {
+        return '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' + s.sep;
+      }).join('');
+    }
+    return (
+      '<table class="di-breakdown-table"><thead><tr><th>' + esc(t.breakdownColMercado) + '</th><th>' + esc(t.breakdownColTipo) + '</th><th>' + esc(t.breakdownColPrecio) + '</th></tr></thead>' +
+      '<tbody>' + rows.join('') + '</tbody></table>' +
+      (sourcesHtml ? '<div class="di-field-hint">' + esc(t.fuenteLabel) + ' ' + sourcesHtml + '</div>' : '')
+    );
+  }
+
+  function energyRegionsHtml(entry) {
+    if (!entry.product.isEnergy) return '';
+    var t = ui();
+    var ER = D.ENERGY_REGIONS[lang()] || D.ENERGY_REGIONS.es;
+    var rows = [];
+    var title = '';
+    if (state.location === 'us') {
+      title = ER.usTitle;
+      rows = D.DIESEL_US_REGIONS.map(function (r) {
+        var built = D.buildRegion(r, ER[r.key] || r.key, 'USD', D.GAL_KG, (D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es).gal, D.FX, T());
+        return '<div class="di-energy-region-row"><span>' + esc(ER[r.key] || r.key) + '</span><b>' + esc(built.price) + esc(built.unit) + '</b></div>';
+      });
+    } else if (state.location === 'eu') {
+      title = ER.euTitle;
+      rows = D.DIESEL_EU_COUNTRIES.map(function (r) {
+        var built = D.buildRegion(r, ER[r.key] || r.key, 'EUR', D.LITRO_KG, (D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es).litro, D.FX, T());
+        return '<div class="di-energy-region-row"><span>' + esc(ER[r.key] || r.key) + '</span><b>' + esc(built.price) + esc(built.unit) + '</b></div>';
+      });
+    } else {
+      return '';
+    }
+    return '<div class="di-energy-regions"><div class="di-energy-regions-title">' + esc(title) + '</div>' + rows.join('') + '</div>';
+  }
+
+  function productCardHtml(entry, opts) {
+    opts = opts || {};
+    var t = ui();
+    var key = entry.catId + ':' + entry.nameKey;
+    var disp = resolveDisplay(entry, state.location, state.euCountry);
+    var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
+    var fav = isFavorite(key);
+    var expanded = !!state.expanded[key];
+    var foot = entry.product.footnoteKey ? (D.FOOT[lang()] || D.FOOT.es)[entry.product.footnoteKey] : '';
+    return (
+      '<div class="di-card di-product-card" data-key="' + key + '">' +
+        '<div class="di-product-head">' +
+          '<h3 class="di-product-name">' + esc(productName(entry.nameKey)) + '</h3>' +
+          '<div class="di-product-icons">' +
+            '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮</button>' +
+            '<button type="button" class="di-icon-btn" data-action="history" data-key="' + key + '" title="' + esc(t.historyButtonTitle) + '">📈</button>' +
+            '<button type="button" class="di-icon-btn" data-action="alert" data-key="' + key + '" title="' + esc(t.alertButtonTitle) + '">🔔</button>' +
+            '<button type="button" class="di-fav-star' + (fav ? ' active' : '') + '" data-action="fav" data-key="' + key + '" title="' + esc(fav ? t.favRemoveTitle : t.favAddTitle) + '">★</button>' +
+          '</div>' +
+        '</div>' +
+        quoteBadgeHtml(disp.quoteType) +
+        '<div class="di-product-price-row">' +
+          '<span class="di-product-price">' + esc(built.price) + '</span>' +
+          '<span class="di-product-unit">' + esc(built.unit) + '</span>' +
+          '<span class="di-product-change" style="color:' + built.changeColor + ';">' + esc(built.changeLabel) + '</span>' +
+        '</div>' +
+        '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' +
+        (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(t.ukGapNote) + '</div>' : '') +
+        (foot ? '<div class="di-product-footnote">' + esc(foot) + '</div>' : '') +
+        (opts.compact ? '' :
+          '<button type="button" class="di-breakdown-toggle" data-action="breakdown" data-key="' + key + '">' + esc(expanded ? t.breakdownHideLabel : t.breakdownShowLabel) + '</button>' +
+          (expanded ? breakdownTableHtml(entry) : '') +
+          energyRegionsHtml(entry)
+        ) +
+      '</div>'
+    );
+  }
+
+  function renderCategory() {
+    var root = document.getElementById('pr-category');
+    var entries = productsInCat(state.activeTab);
+    root.innerHTML = '<div class="di-product-grid">' + entries.map(function (e) { return productCardHtml(e, {}); }).join('') + '</div>';
+    wireCardEvents(root);
+  }
+
+  function wireCardEvents(root) {
+    var favBtns = root.querySelectorAll('[data-action="fav"]');
+    Array.prototype.forEach.call(favBtns, function (btn) {
+      btn.addEventListener('click', function () { toggleFavorite(btn.getAttribute('data-key')); });
+    });
+    var breakdownBtns = root.querySelectorAll('[data-action="breakdown"]');
+    Array.prototype.forEach.call(breakdownBtns, function (btn) {
+      btn.addEventListener('click', function () {
+        var key = btn.getAttribute('data-key');
+        state.expanded[key] = !state.expanded[key];
+        renderCategory();
+        renderFavorites();
+      });
+    });
+    var calcBtns = root.querySelectorAll('[data-action="calc"]');
+    Array.prototype.forEach.call(calcBtns, function (btn) {
+      btn.addEventListener('click', function () { openCalc(btn.getAttribute('data-key')); });
+    });
+    var historyBtns = root.querySelectorAll('[data-action="history"]');
+    Array.prototype.forEach.call(historyBtns, function (btn) {
+      btn.addEventListener('click', function () { openHistory(btn.getAttribute('data-key')); });
+    });
+    var alertBtns = root.querySelectorAll('[data-action="alert"]');
+    Array.prototype.forEach.call(alertBtns, function (btn) {
+      btn.addEventListener('click', function () { openAlert(btn.getAttribute('data-key')); });
+    });
+  }
+
+  // ---------------------------------------------------------------------
+  // Modal: Histórico ampliado
+  // ---------------------------------------------------------------------
+  function seedKeyFor(entry, regionCode) { return entry.catId + ':' + entry.nameKey + ':' + regionCode; }
+
+  function openHistory(key) {
+    var entry = PRODUCT_BY_KEY[key];
+    if (!entry) return;
+    state.history = { key: key, region: defaultRegionFor(entry), range: '3m', compareMode: false, compareKey: '', yoy: false };
+    renderHistoryModal();
+  }
+  function closeHistory() { state.history = null; renderModalRoot(); }
+
+  function regionObjFor(entry, regionCode, country) {
+    var UL = D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es;
+    if (regionCode === 'us') return { region: entry.product.us, ccy: 'USD', kg: entry.product.imperialKgPerUnit, unit: UL[entry.product.imperialUnitKey] };
+    if (regionCode === 'eu') {
+      var disp = resolveDisplay(entry, 'eu', country || state.euCountry);
+      return { region: disp.region, ccy: 'EUR', kg: entry.product.metricKgPerUnit, unit: UL[entry.product.metricUnitKey] };
+    }
+    return { region: entry.product.uk || entry.product.eu, ccy: entry.product.uk ? 'GBP' : 'EUR', kg: entry.product.metricKgPerUnit, unit: UL[entry.product.metricUnitKey] };
+  }
+
+  function renderHistoryModal() {
+    var h = state.history;
+    if (!h) return;
+    var t = ui();
+    var entry = PRODUCT_BY_KEY[h.key];
+    var avail = availableRegions(entry);
+    var days = D.HISTORY_RANGE_DAYS[h.range];
+    var ro = regionObjFor(entry, h.region);
+    var seedKey = seedKeyFor(entry, h.region);
+    var view = D.buildHistoryView(ro.region, productName(entry.nameKey), ro.ccy, ro.kg, ro.unit, D.FX, seedKey, days, T());
+
+    var regionBtns = avail.map(function (r) {
+      return '<button type="button" class="di-region-btn' + (r === h.region ? ' active' : '') + '" data-hregion="' + r + '">' + esc(D.REGION[lang()][r]) + '</button>';
+    }).join('');
+    var rangeBtns = D.HISTORY_RANGE_ORDER.map(function (r) {
+      return '<button type="button" class="di-range-btn' + (r === h.range ? ' active' : '') + '" data-hrange="' + r + '">' + r.toUpperCase() + '</button>';
+    }).join('');
+
+    var chartHtml = '';
+    if (h.compareMode && h.compareKey && PRODUCT_BY_KEY[h.compareKey]) {
+      var cEntry = PRODUCT_BY_KEY[h.compareKey];
+      var cRo = regionObjFor(cEntry, defaultRegionFor(cEntry));
+      var aRaw = D.rawHistorySlice(ro.region, seedKey, days, 0);
+      var bRaw = D.rawHistorySlice(cRo.region, seedKeyFor(cEntry, defaultRegionFor(cEntry)), days, 0);
+      var aPct = D.pctSeries(aRaw), bPct = D.pctSeries(bRaw);
+      var cmp = D.buildComparePair(aPct, productName(entry.nameKey), bPct, productName(cEntry.nameKey), T());
+      chartHtml =
+        '<div class="di-history-chart-wrap"><svg viewBox="0 0 560 170" preserveAspectRatio="none">' +
+          '<path d="' + cmp.comparePath + '" stroke="' + T().compareLine + '" fill="none" stroke-width="2"/>' +
+          '<path d="' + cmp.primaryPath + '" stroke="' + T().positive + '" fill="none" stroke-width="2"/>' +
+        '</svg></div>' +
+        '<div class="di-history-legend">' +
+          '<span><i style="background:' + T().positive + ';"></i>' + esc(cmp.primaryLabel) + ' <b style="color:' + cmp.primaryChangeColor + ';">' + esc(cmp.primaryChangeLabel) + '</b></span>' +
+          '<span><i style="background:' + T().compareLine + ';"></i>' + esc(cmp.compareLabel) + ' <b style="color:' + cmp.compareChangeColor + ';">' + esc(cmp.compareChangeLabel) + '</b></span>' +
+        '</div>' +
+        '<div class="di-compare-active-row"><span>' + esc(t.compareActiveLabel) + ' ' + esc(cmp.compareLabel) + '</span><button type="button" class="di-compare-clear" id="di-compare-clear">' + esc(t.compareClearLabel) + '</button></div>' +
+        '<div class="di-field-hint">' + esc(t.compareHint) + '</div>';
+    } else if (h.yoy) {
+      var thisYearRaw = D.rawHistorySlice(ro.region, seedKey, 365, 0);
+      var lastYearRaw = D.rawHistorySlice(ro.region, seedKey, 365, 365);
+      var tPct = D.pctSeries(thisYearRaw), lPct = D.pctSeries(lastYearRaw);
+      var cmp2 = D.buildComparePair(tPct, t.historyYoyThisYear, lPct, t.historyYoyLastYear, T());
+      chartHtml =
+        '<div class="di-history-chart-wrap"><svg viewBox="0 0 560 170" preserveAspectRatio="none">' +
+          '<path d="' + cmp2.comparePath + '" stroke="' + T().compareLine + '" fill="none" stroke-width="2"/>' +
+          '<path d="' + cmp2.primaryPath + '" stroke="' + T().positive + '" fill="none" stroke-width="2"/>' +
+        '</svg></div>' +
+        '<div class="di-history-legend">' +
+          '<span><i style="background:' + T().positive + ';"></i>' + esc(cmp2.primaryLabel) + ' <b style="color:' + cmp2.primaryChangeColor + ';">' + esc(cmp2.primaryChangeLabel) + '</b></span>' +
+          '<span><i style="background:' + T().compareLine + ';"></i>' + esc(cmp2.compareLabel) + ' <b style="color:' + cmp2.compareChangeColor + ';">' + esc(cmp2.compareChangeLabel) + '</b></span>' +
+        '</div>' +
+        '<div class="di-field-hint">' + esc(t.compareHint) + '</div>';
+    } else {
+      chartHtml =
+        '<div class="di-history-chart-wrap"><svg viewBox="0 0 560 170" preserveAspectRatio="none"><path d="' + view.sparkPath + '" stroke="' + view.sparkColor + '" fill="none" stroke-width="2"/></svg></div>' +
+        '<div class="di-history-stats">' +
+          '<span>' + esc(t.historyMin) + ' <b>' + esc(view.minLabel) + '</b></span>' +
+          '<span>' + esc(t.historyAvg) + ' <b>' + esc(view.avgLabel) + '</b></span>' +
+          '<span>' + esc(t.historyMax) + ' <b>' + esc(view.maxLabel) + '</b></span>' +
+          '<span style="margin-left:auto;color:' + view.changeColor + ';font-weight:700;">' + esc(view.changeLabel) + '</span>' +
+        '</div>';
+    }
+
+    var presetsHtml = D.HISTORY_COMPARE_PRESETS.map(function (pair) {
+      var kA = pair[0].replace('-', ':'), kB = pair[1].replace('-', ':');
+      var pick = (kA === h.key) ? kB : (kB === h.key) ? kA : kB;
+      var pEntry = PRODUCT_BY_KEY[pick];
+      if (!pEntry) return '';
+      return '<button type="button" class="di-compare-preset-btn" data-preset="' + pick + '">' + esc(productName(pEntry.nameKey)) + '</button>';
+    }).join('');
+
+    var otherProducts = PRODUCTS.filter(function (e) { return e.catId + ':' + e.nameKey !== h.key; });
+    var selectOptions = '<option value="">' + esc(t.compareNoneOption) + '</option>' + otherProducts.map(function (e) {
+      var k = e.catId + ':' + e.nameKey;
+      return '<option value="' + k + '"' + (k === h.compareKey ? ' selected' : '') + '>' + esc(productName(e.nameKey)) + '</option>';
+    }).join('');
+
+    var comparePanel = !h.compareMode ? '' :
+      '<div class="di-compare-panel">' +
+        '<div class="di-field-label">' + esc(t.comparePresetsLabel) + '</div>' + presetsHtml +
+        '<div class="di-field-label" style="margin-top:10px;">' + esc(t.compareFreeLabel) + '</div>' +
+        '<select class="di-compare-select" id="di-compare-select">' + selectOptions + '</select>' +
+      '</div>';
+
+    var html =
+      '<div class="di-modal-overlay" id="di-history-overlay">' +
+        '<div class="di-big-modal-card">' +
+          '<div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(t.historyButtonTitle) + '</h2>' +
+            '<button type="button" class="di-modal-close" id="di-history-close">✕</button></div>' +
+          '<div class="di-region-btns">' + regionBtns + '</div>' +
+          '<div class="di-range-btns">' + rangeBtns + '</div>' +
+          chartHtml +
+          '<div class="di-compare-toggle-row">' +
+            '<label><input type="checkbox" id="di-compare-mode"' + (h.compareMode ? ' checked' : '') + '> ' + esc(t.historyCompareToggle) + '</label>' +
+            '<label><input type="checkbox" id="di-yoy-mode"' + (h.yoy ? ' checked' : '') + '> ' + esc(t.compareYoyLabel) + '</label>' +
+          '</div>' +
+          comparePanel +
+          '<button type="button" class="di-export-btn" id="di-history-export">' + esc(t.historyExportButton) + '</button>' +
+          '<div class="di-history-disclaimer">' + esc(t.historyDisclaimer) + '</div>' +
+        '</div>' +
+      '</div>';
+    document.getElementById('pr-modal-root').innerHTML = html;
+    wireHistoryEvents();
+  }
+
+  function wireHistoryEvents() {
+    var overlay = document.getElementById('di-history-overlay');
+    if (!overlay) return;
+    overlay.addEventListener('mousedown', function (e) { if (e.target === overlay) closeHistory(); });
+    document.getElementById('di-history-close').addEventListener('click', closeHistory);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-hregion]'), function (btn) {
+      btn.addEventListener('click', function () { state.history.region = btn.getAttribute('data-hregion'); renderHistoryModal(); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-hrange]'), function (btn) {
+      btn.addEventListener('click', function () { state.history.range = btn.getAttribute('data-hrange'); renderHistoryModal(); });
+    });
+    document.getElementById('di-compare-mode').addEventListener('change', function (e) {
+      state.history.compareMode = e.target.checked;
+      if (state.history.compareMode) state.history.yoy = false;
+      renderHistoryModal();
+    });
+    document.getElementById('di-yoy-mode').addEventListener('change', function (e) {
+      state.history.yoy = e.target.checked;
+      if (state.history.yoy) state.history.compareMode = false;
+      renderHistoryModal();
+    });
+    var presetBtns = document.querySelectorAll('[data-preset]');
+    Array.prototype.forEach.call(presetBtns, function (btn) {
+      btn.addEventListener('click', function () { state.history.compareKey = btn.getAttribute('data-preset'); renderHistoryModal(); });
+    });
+    var sel = document.getElementById('di-compare-select');
+    if (sel) sel.addEventListener('change', function (e) { state.history.compareKey = e.target.value; renderHistoryModal(); });
+    var clearBtn = document.getElementById('di-compare-clear');
+    if (clearBtn) clearBtn.addEventListener('click', function () { state.history.compareKey = ''; renderHistoryModal(); });
+    document.getElementById('di-history-export').addEventListener('click', function () {
+      var h = state.history, entry = PRODUCT_BY_KEY[h.key];
+      var ro = regionObjFor(entry, h.region);
+      var days = D.HISTORY_RANGE_DAYS[h.range];
+      var t = ui();
+      D.exportHistoryCsv(t.csvHeaderDate, t.csvHeaderPrice, entry.catId + '-' + entry.nameKey, ro.region, h.region, seedKeyFor(entry, h.region), days, ro.kg, ro.unit, ro.ccy, D.FX);
+    });
+  }
+
+  // ---------------------------------------------------------------------
+  // Modal: Calculadora de coste
+  // ---------------------------------------------------------------------
+  function openCalc(key) {
+    var entry = PRODUCT_BY_KEY[key];
+    if (!entry) return;
+    state.calc = { key: key, region: defaultRegionFor(entry), mode: 'directa' };
+    renderCalcModal();
+  }
+  function closeCalc() { state.calc = null; renderModalRoot(); }
+
+  function calcUnitPrice(entry, regionCode) {
+    var ro = regionObjFor(entry, regionCode);
+    var built = D.buildRegion(ro.region, '', ro.ccy, ro.kg, ro.unit, D.FX, T());
+    return { priceValue: built.priceValue, priceLabel: built.price, unit: built.unit };
+  }
+
+  function renderCalcModal() {
+    var c = state.calc;
+    if (!c) return;
+    var t = ui();
+    var entry = PRODUCT_BY_KEY[c.key];
+    var avail = availableRegions(entry);
+    var up = calcUnitPrice(entry, c.region);
+    var regionBtns = avail.map(function (r) {
+      return '<button type="button" class="di-region-btn' + (r === c.region ? ' active' : '') + '" data-cregion="' + r + '">' + esc(D.REGION[lang()][r]) + '</button>';
+    }).join('');
+    var html =
+      '<div class="di-modal-overlay" id="di-calc-overlay">' +
+        '<div class="di-big-modal-card" style="max-width:440px;">' +
+          '<div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(t.calcButtonTitle) + '</h2>' +
+            '<button type="button" class="di-modal-close" id="di-calc-close">✕</button></div>' +
+          '<div class="di-region-btns">' + regionBtns + '</div>' +
+          '<div class="di-field-hint" style="margin-bottom:12px;">' + esc(t.calcTodayPriceLabel) + ' <b>' + esc(up.priceLabel) + esc(up.unit) + '</b></div>' +
+          '<div class="di-region-btns">' +
+            '<button type="button" class="di-mode-btn' + (c.mode === 'directa' ? ' active' : '') + '" data-cmode="directa">' + esc(t.calcModeDirecta) + '</button>' +
+            '<button type="button" class="di-mode-btn' + (c.mode === 'hectareas' ? ' active' : '') + '" data-cmode="hectareas">' + esc(t.calcModeHectareas) + '</button>' +
+          '</div>' +
+          (c.mode === 'directa' ?
+            '<label class="di-field-label">' + esc(t.calcQuantityLabel) + '</label><input type="number" min="0" step="any" class="di-field-input" id="di-calc-qty" value="1">' :
+            '<label class="di-field-label">' + esc(t.calcHectaresLabel) + '</label><input type="number" min="0" step="any" class="di-field-input" id="di-calc-ha" value="1" style="margin-bottom:10px;">' +
+            '<label class="di-field-label">' + esc(t.calcRateLabel) + '</label><input type="number" min="0" step="any" class="di-field-input" id="di-calc-rate" value="1">' +
+            '<div class="di-field-hint">' + esc(t.calcRateHint) + '</div>'
+          ) +
+          '<div class="di-calc-total-row"><span>' + esc(t.calcTotalLabel) + '</span><span class="di-calc-total-value" id="di-calc-total">—</span></div>' +
+        '</div>' +
+      '</div>';
+    document.getElementById('pr-modal-root').innerHTML = html;
+    wireCalcEvents(up);
+  }
+
+  function wireCalcEvents(up) {
+    var overlay = document.getElementById('di-calc-overlay');
+    if (!overlay) return;
+    overlay.addEventListener('mousedown', function (e) { if (e.target === overlay) closeCalc(); });
+    document.getElementById('di-calc-close').addEventListener('click', closeCalc);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-cregion]'), function (btn) {
+      btn.addEventListener('click', function () { state.calc.region = btn.getAttribute('data-cregion'); renderCalcModal(); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-cmode]'), function (btn) {
+      btn.addEventListener('click', function () { state.calc.mode = btn.getAttribute('data-cmode'); renderCalcModal(); });
+    });
+    function recompute() {
+      var total = 0;
+      if (state.calc.mode === 'directa') {
+        var qtyEl = document.getElementById('di-calc-qty');
+        var qty = qtyEl ? parseFloat(qtyEl.value) || 0 : 0;
+        total = qty * up.priceValue;
+      } else {
+        var haEl = document.getElementById('di-calc-ha');
+        var rateEl = document.getElementById('di-calc-rate');
+        var ha = haEl ? parseFloat(haEl.value) || 0 : 0;
+        var rate = rateEl ? parseFloat(rateEl.value) || 0 : 0;
+        total = ha * rate * up.priceValue;
+      }
+      var ccy = regionObjFor(PRODUCT_BY_KEY[state.calc.key], state.calc.region).ccy;
+      var totalEl = document.getElementById('di-calc-total');
+      if (totalEl) totalEl.textContent = (D.CCY_SYMBOL[ccy] || '') + D.fmtTotal(total);
+    }
+    var qtyEl = document.getElementById('di-calc-qty');
+    if (qtyEl) qtyEl.addEventListener('input', recompute);
+    var haEl = document.getElementById('di-calc-ha');
+    if (haEl) haEl.addEventListener('input', recompute);
+    var rateEl = document.getElementById('di-calc-rate');
+    if (rateEl) rateEl.addEventListener('input', recompute);
+    recompute();
+  }
+
+  // ---------------------------------------------------------------------
+  // Modal: Alerta de precio
+  // ---------------------------------------------------------------------
+  function openAlert(key) {
+    var entry = PRODUCT_BY_KEY[key];
+    if (!entry) return;
+    state.alert = { key: key, region: defaultRegionFor(entry), direction: 'up', attempted: false, confirmed: false };
+    renderAlertModal();
+  }
+  function closeAlert() { state.alert = null; renderModalRoot(); }
+
+  function renderAlertModal() {
+    var a = state.alert;
+    if (!a) return;
+    var t = ui();
+    var entry = PRODUCT_BY_KEY[a.key];
+    var avail = availableRegions(entry);
+    var regionBtns = avail.map(function (r) {
+      return '<button type="button" class="di-region-btn' + (r === a.region ? ' active' : '') + '" data-aregion="' + r + '">' + esc(D.REGION[lang()][r]) + '</button>';
+    }).join('');
+
+    var bodyHtml;
+    if (a.confirmed) {
+      var dirLabel = a.direction === 'up' ? t.alertDirectionUp : t.alertDirectionDown;
+      bodyHtml =
+        '<h3 class="di-alert-confirm-title">' + esc(t.alertConfirmedTitle) + '</h3>' +
+        '<div class="di-alert-summary-row"><span>' + esc(t.alertSummaryProduct) + '</span><b>' + esc(productName(entry.nameKey)) + '</b></div>' +
+        '<div class="di-alert-summary-row"><span>' + esc(t.alertSummaryCondition) + '</span><b>' + esc(dirLabel) + ' ' + esc(a.threshold || '') + '</b></div>' +
+        '<div class="di-alert-summary-row"><span>' + esc(t.alertSummaryEmail) + '</span><b>' + esc(a.email || '') + '</b></div>' +
+        (a.whatsapp ? '<div class="di-alert-summary-row"><span>' + esc(t.alertSummaryWhatsapp) + '</span><b>' + esc(a.whatsapp) + '</b></div>' : '') +
+        '<div class="di-alert-preview-note">' + esc(t.alertConfirmedNote) + '</div>' +
+        '<button type="button" class="di-modal-primary-btn" id="di-alert-done">' + esc(t.closeModal) + '</button>';
+    } else {
+      var emailErr = a.attempted && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(a.email || '');
+      var thresholdErr = a.attempted && !(parseFloat(a.threshold) > 0);
+      bodyHtml =
+        '<div class="di-region-btns">' + regionBtns + '</div>' +
+        '<div class="di-direction-btns">' +
+          '<button type="button" class="di-direction-btn' + (a.direction === 'up' ? ' active' : '') + '" data-adir="up">' + esc(t.alertDirectionUp) + '</button>' +
+          '<button type="button" class="di-direction-btn' + (a.direction === 'down' ? ' active' : '') + '" data-adir="down">' + esc(t.alertDirectionDown) + '</button>' +
+        '</div>' +
+        '<label class="di-field-label">' + esc(t.alertThresholdLabel) + '</label>' +
+        '<input type="number" min="0" step="any" class="di-field-input" id="di-alert-threshold" value="' + esc(a.threshold || '') + '">' +
+        (thresholdErr ? '<div class="di-alert-error">' + esc(t.alertErrorThreshold) + '</div>' : '') +
+        '<label class="di-field-label" style="margin-top:10px;">' + esc(t.alertEmailLabel) + '</label>' +
+        '<input type="email" class="di-field-input" id="di-alert-email" placeholder="' + esc(t.alertEmailPlaceholder) + '" value="' + esc(a.email || '') + '">' +
+        (emailErr ? '<div class="di-alert-error">' + esc(t.alertErrorEmail) + '</div>' : '') +
+        '<label class="di-field-label" style="margin-top:10px;">' + esc(t.alertWhatsappLabel) + '</label>' +
+        '<input type="text" class="di-field-input" id="di-alert-whatsapp" placeholder="' + esc(t.alertWhatsappPlaceholder) + '" value="' + esc(a.whatsapp || '') + '">' +
+        '<button type="button" class="di-alert-submit" id="di-alert-submit">' + esc(t.alertSubmitButton) + '</button>' +
+        '<div class="di-alert-preview-note">' + esc(t.alertPreviewNote) + '</div>';
+    }
+
+    var html =
+      '<div class="di-modal-overlay" id="di-alert-overlay">' +
+        '<div class="di-big-modal-card" style="max-width:440px;">' +
+          '<div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(t.alertButtonTitle) + '</h2>' +
+            '<button type="button" class="di-modal-close" id="di-alert-close">✕</button></div>' +
+          bodyHtml +
+        '</div>' +
+      '</div>';
+    document.getElementById('pr-modal-root').innerHTML = html;
+    wireAlertEvents();
+  }
+
+  function wireAlertEvents() {
+    var overlay = document.getElementById('di-alert-overlay');
+    if (!overlay) return;
+    overlay.addEventListener('mousedown', function (e) { if (e.target === overlay) closeAlert(); });
+    document.getElementById('di-alert-close').addEventListener('click', closeAlert);
+    var doneBtn = document.getElementById('di-alert-done');
+    if (doneBtn) doneBtn.addEventListener('click', closeAlert);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-aregion]'), function (btn) {
+      btn.addEventListener('click', function () { state.alert.region = btn.getAttribute('data-aregion'); renderAlertModal(); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-adir]'), function (btn) {
+      btn.addEventListener('click', function () { state.alert.direction = btn.getAttribute('data-adir'); renderAlertModal(); });
+    });
+    var submitBtn = document.getElementById('di-alert-submit');
+    if (submitBtn) submitBtn.addEventListener('click', function () {
+      var thresholdEl = document.getElementById('di-alert-threshold');
+      var emailEl = document.getElementById('di-alert-email');
+      var whatsappEl = document.getElementById('di-alert-whatsapp');
+      state.alert.threshold = thresholdEl ? thresholdEl.value : '';
+      state.alert.email = emailEl ? emailEl.value : '';
+      state.alert.whatsapp = whatsappEl ? whatsappEl.value : '';
+      state.alert.attempted = true;
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.alert.email || '');
+      var thresholdOk = parseFloat(state.alert.threshold) > 0;
+      if (emailOk && thresholdOk) state.alert.confirmed = true;
+      renderAlertModal();
+    });
+  }
+
+  function renderModalRoot() {
+    if (state.history) { renderHistoryModal(); return; }
+    if (state.calc) { renderCalcModal(); return; }
+    if (state.alert) { renderAlertModal(); return; }
+    document.getElementById('pr-modal-root').innerHTML = '';
+  }
+
+  // ---------------------------------------------------------------------
+  // Modal: bienvenida de ubicación (solo primera visita)
+  // ---------------------------------------------------------------------
+  function maybeShowLocationWelcomeWhenFree() {
+    if (!showLocationWelcome) return;
+    var overlayRoot = document.getElementById('di-overlay-root');
+    if (!overlayRoot) return;
+    if (!overlayRoot.innerHTML) { renderLocationWelcome(); return; }
+    // El shell ya está mostrando su propio modal (bienvenida de idioma o tour
+    // guiado) -- esperamos a que se cierre antes de pintar el nuestro encima.
+    var obs = new MutationObserver(function () {
+      if (showLocationWelcome && !overlayRoot.innerHTML) {
+        obs.disconnect();
+        renderLocationWelcome();
+      }
+    });
+    obs.observe(overlayRoot, { childList: true });
+  }
+
+  function renderLocationWelcome() {
+    if (!showLocationWelcome) return;
+    var t = ui();
+    var overlayRoot = document.getElementById('di-overlay-root');
+    if (!overlayRoot) return;
+    var html =
+      '<div class="di-modal-overlay" id="di-loc-welcome">' +
+        '<div class="di-modal-card">' +
+          '<h2>' + esc(t.welcomeTitle) + '</h2>' +
+          '<p style="font-size:13px;color:var(--welcome-text);opacity:0.85;margin:-14px 0 18px;">' + esc(t.welcomeSubtitle) + '</p>' +
+          '<div class="di-lang-grid" style="grid-template-columns:1fr;">' +
+            '<button data-wloc="us">🇺🇸 ' + esc(t.locationUsLabel) + '</button>' +
+            '<button data-wloc="eu">🇪🇺 ' + esc(t.locationEuLabel) + '</button>' +
+            '<button data-wloc="uk">🇬🇧 ' + esc(t.locationUkLabel) + '</button>' +
+          '</div>' +
+          '<p style="font-size:11.5px;color:var(--welcome-text);opacity:0.7;margin:16px 0 0;">' + esc(t.welcomeHint) + '</p>' +
+        '</div>' +
+      '</div>';
+    overlayRoot.innerHTML = html;
+    Array.prototype.forEach.call(overlayRoot.querySelectorAll('[data-wloc]'), function (btn) {
+      btn.addEventListener('click', function () {
+        state.location = btn.getAttribute('data-wloc');
+        writeLS('dehesaIndexLocation', state.location);
+        showLocationWelcome = false;
+        overlayRoot.innerHTML = '';
+        renderAll();
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------------
+  // Orquestación
+  // ---------------------------------------------------------------------
+  function wireGlobalControls() {
+    document.getElementById('pr-location-bar').addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('[data-loc]') : null;
+      if (!btn) return;
+      state.location = btn.getAttribute('data-loc');
+      writeLS('dehesaIndexLocation', state.location);
+      renderAll();
+    });
+    var searchInput = document.getElementById('pr-search-input');
+    searchInput.placeholder = ui().searchPlaceholder;
+    searchInput.addEventListener('input', function (e) {
+      state.searchQuery = e.target.value;
+      renderSearchResults();
+    });
+    document.getElementById('pr-search-clear').addEventListener('click', function () {
+      state.searchQuery = '';
+      searchInput.value = '';
+      renderSearchResults();
+      searchInput.focus();
+    });
+    document.getElementById('pr-search-results').addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('[data-goto]') : null;
+      if (!btn) return;
+      goToProduct(btn.getAttribute('data-goto'));
+    });
+    document.getElementById('pr-tabs').addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('[data-tab]') : null;
+      if (!btn) return;
+      state.activeTab = btn.getAttribute('data-tab');
+      renderTabsAndCategory();
+    });
+  }
+
+  function wireEuCountrySelect() {
+    var sel = document.getElementById('pr-eu-country');
+    if (!sel) return;
+    sel.addEventListener('change', function (e) {
+      state.euCountry = e.target.value;
+      writeLS('dehesaIndexEuCountry', state.euCountry);
+      renderAll();
+    });
+  }
+
+  function renderTabsAndCategory() {
+    renderTabs();
+    renderCategory();
+  }
+
+  function renderAll() {
+    renderHead();
+    renderTicker();
+    renderSearchResults();
+    renderLocationBar();
+    wireEuCountrySelect();
+    renderFavorites();
+    if (global.DehesaPreciosIntel) global.DehesaPreciosIntel.render();
+    renderTabsAndCategory();
+  }
+
+  function init() {
+    S.init('precios');
+    wireGlobalControls();
+    renderAll();
+    S.onLangChange = function () { renderAll(); };
+    maybeShowLocationWelcomeWhenFree();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // ---------------------------------------------------------------------
+  // Núcleo compartido con js/precios-intel.js (Market Map, Momentum,
+  // Correlación, Volatilidad, Estacionalidad, Spreads, Margen): esos widgets
+  // reutilizan el mismo índice de productos y la misma resolución de
+  // ubicación/país que ya usa esta página, en vez de reconstruirlos aparte.
+  // ---------------------------------------------------------------------
+  global.DehesaPreciosCore = {
+    PRODUCTS: PRODUCTS,
+    PRODUCT_BY_KEY: PRODUCT_BY_KEY,
+    resolveDisplay: resolveDisplay,
+    defaultRegionFor: defaultRegionFor,
+    availableRegions: availableRegions,
+    seedKeyFor: seedKeyFor,
+    productName: productName,
+    catLabel: catLabel,
+    T: T,
+    lang: lang,
+    ui: ui,
+    esc: esc,
+    getLocation: function () { return state.location; },
+    getEuCountry: function () { return state.euCountry; },
+    openHistory: function (key) { openHistory(key); }
+  };
+})(window);
