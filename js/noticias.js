@@ -234,7 +234,20 @@
     }
   };
 
-  var state = { region: 'all', product: 'all', topic: 'all' };
+  var initialParams = new URLSearchParams(window.location.search);
+  var state = {
+    region: initialParams.get('region') || 'all',
+    product: initialParams.get('product') || 'all',
+    topic: initialParams.get('topic') || 'all'
+  };
+  function syncUrl() {
+    var params = [];
+    if (state.region !== 'all') params.push('region=' + encodeURIComponent(state.region));
+    if (state.product !== 'all') params.push('product=' + encodeURIComponent(state.product));
+    if (state.topic !== 'all') params.push('topic=' + encodeURIComponent(state.topic));
+    var next = window.location.pathname + (params.length ? '?' + params.join('&') : '');
+    if (window.history && window.history.replaceState) window.history.replaceState(null, '', next);
+  }
 
   function optionHtml(value, label, selected) {
     return '<option value="' + esc(value) + '"' + (selected ? ' selected' : '') + '>' + esc(label) + '</option>';
@@ -313,7 +326,7 @@
 
     ['region','product','topic'].forEach(function(key) {
       var el = document.getElementById('nw-' + key + '-filter');
-      el.onchange = function(){ state[key] = el.value; render(); };
+      el.onchange = function(){ state[key] = el.value; syncUrl(); render(); };
     });
 
     var filteredItems = getFilteredItems();
