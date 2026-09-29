@@ -313,6 +313,19 @@ img { max-width: 100%; }
 .di-tab-btn { padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; background: none; color: var(--tab-inactive-text); font-size: 13.5px; font-weight: 600; cursor: pointer; }
 .di-tab-btn.active { background: var(--accent); color: var(--accent-ink); }
 
+/* Seguro agrario / Vino a granel / Madera (bloques informativos) */
+.di-info-badge { margin-bottom: 18px; }
+.di-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 18px; }
+.di-info-grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.di-info-card { padding: 20px 22px; }
+.di-info-card-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; font-weight: 600; margin-bottom: 14px; color: var(--text); }
+.di-info-stat-list { display: flex; flex-direction: column; gap: 10px; }
+.di-info-stat-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.di-info-stat-label { font-size: 13px; color: var(--text-tertiary); }
+.di-info-stat-value { font-size: 15px; font-weight: 700; color: var(--text); text-align: right; }
+.di-info-scope-note { font-size: 11.5px; color: var(--footnote); font-style: italic; line-height: 1.5; }
+.di-info-sources { margin-top: 10px; }
+
 /* Product grid + card */
 .di-product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-bottom: 12px; }
 .di-product-card { padding: 18px; display: flex; flex-direction: column; gap: 10px; }

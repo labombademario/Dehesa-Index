@@ -98,17 +98,27 @@
     ecOliveOil: 'https://agridata.ec.europa.eu/extensions/DashboardOliveOil/OliveOilPrices.html',
     eia: 'https://www.eia.gov/petroleum/gasdiesel/',
     usdaAgTransportFuel: 'https://agtransport.usda.gov/Fuel/Weekly-On-Highway-Diesel-Fuel-Prices/x88w-atzp',
-    euOilBulletin: 'https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en'
+    euOilBulletin: 'https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en',
+    agroseguro: 'https://agroseguro.es/',
+    rma: 'https://www.rma.usda.gov/',
+    ersCropInsurance: 'https://www.ers.usda.gov/topics/farm-practices-management/risk-management/crop-insurance-at-a-glance',
+    mapaCoyuntura: 'https://www.mapa.gob.es/es/estadistica/temas/publicaciones/informe-semanal-coyuntura',
+    franceAgriMerVin: 'https://www.franceagrimer.fr/chiffre-et-analyses-economiques/les-marches-la-production-de-vin',
+    oemv: 'https://www.oemv.es/informes',
+    cmeLumber: 'https://www.cmegroup.com/markets/agriculture/lumber-and-softs/lumber/quotes.html',
+    forestResearchTimber: 'https://www.forestresearch.gov.uk/tools-and-resources/statistics/statistics-by-topic/timber-statistics/timber-price-indices/',
+    franceBoisForetBois: 'https://franceboisforet.fr/2026/05/26/prix-de-vente-des-bois-sur-pied-en-foret-privee-indicateur-2026/'
   };
 
   function withSeps(list) {
     return list.map(function (s, i) { return { name: s.name, url: s.url, sep: i < list.length - 1 ? ' · ' : '' }; });
   }
 
-  // Solo las 11 categorías "de producto" (con precio diario/semanal) --
-  // Seguro agrario, Vino a granel y Madera son bloques informativos propios
-  // (estadísticas anuales, sin tarjeta de producto/histórico/calculadora) y
-  // llegarán en una fase posterior del rebuild.
+  // Las 11 categorías "de producto" (con precio diario/semanal) más
+  // Seguro agrario, Vino a granel y Madera, que son bloques informativos
+  // propios (estadísticas oficiales anuales/de campaña reales, sin tarjeta
+  // de producto/histórico/calculadora/alertas -- ver isInsurance/isWine/
+  // isWood en precios.js).
   var CATS = {
     es: {
       cereales: { label: 'Cereales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
@@ -121,7 +131,10 @@
       fertilizantes: { label: 'Fertilizantes', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'referencia internacional (Banco Mundial)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Azúcar', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Comisión Europea', url: SRC_URL.ecSugar }] },
       aceite: { label: 'Aceite de oliva', sources: [{ name: 'Comisión Europea', url: SRC_URL.ecOliveOil }] },
-      energia: { label: 'Energía', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin }] }
+      energia: { label: 'Energía', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin }] },
+      seguro: { label: 'Seguro agrario', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }, { name: 'USDA ERS', url: SRC_URL.ersCropInsurance }] },
+      vino: { label: 'Vino a granel', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
+      madera: { label: 'Madera', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     en: {
       cereales: { label: 'Grains', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
@@ -134,7 +147,10 @@
       fertilizantes: { label: 'Fertilizer', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'international reference (World Bank)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Sugar', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'European Commission', url: SRC_URL.ecSugar }] },
       aceite: { label: 'Olive Oil', sources: [{ name: 'European Commission', url: SRC_URL.ecOliveOil }] },
-      energia: { label: 'Energy', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Weekly Oil Bulletin (EC)', url: SRC_URL.euOilBulletin }] }
+      energia: { label: 'Energy', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Weekly Oil Bulletin (EC)', url: SRC_URL.euOilBulletin }] },
+      seguro: { label: 'Crop insurance', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }, { name: 'USDA ERS', url: SRC_URL.ersCropInsurance }] },
+      vino: { label: 'Bulk wine', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
+      madera: { label: 'Timber', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (UK)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     fr: {
       cereales: { label: 'Céréales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
@@ -147,7 +163,10 @@
       fertilizantes: { label: 'Engrais', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'référence internationale (Banque mondiale)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Sucre', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Commission européenne', url: SRC_URL.ecSugar }] },
       aceite: { label: "Huile d'olive", sources: [{ name: 'Commission européenne', url: SRC_URL.ecOliveOil }] },
-      energia: { label: 'Énergie', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bulletin pétrolier hebdomadaire (CE)', url: SRC_URL.euOilBulletin }] }
+      energia: { label: 'Énergie', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bulletin pétrolier hebdomadaire (CE)', url: SRC_URL.euOilBulletin }] },
+      seguro: { label: 'Assurance agricole', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }, { name: 'USDA ERS', url: SRC_URL.ersCropInsurance }] },
+      vino: { label: 'Vin en vrac', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
+      madera: { label: 'Bois', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     it: {
       cereales: { label: 'Cereali', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
@@ -160,7 +179,10 @@
       fertilizantes: { label: 'Fertilizzanti', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'riferimento internazionale (Banca Mondiale)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Zucchero', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Commissione europea', url: SRC_URL.ecSugar }] },
       aceite: { label: "Olio d'oliva", sources: [{ name: 'Commissione europea', url: SRC_URL.ecOliveOil }] },
-      energia: { label: 'Energia', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bollettino Petrolifero Settimanale (CE)', url: SRC_URL.euOilBulletin }] }
+      energia: { label: 'Energia', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bollettino Petrolifero Settimanale (CE)', url: SRC_URL.euOilBulletin }] },
+      seguro: { label: 'Assicurazione agricola', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }, { name: 'USDA ERS', url: SRC_URL.ersCropInsurance }] },
+      vino: { label: 'Vino sfuso', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
+      madera: { label: 'Legname', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     }
   };
 
@@ -208,6 +230,255 @@
       azucar: 'Il prezzo statunitense è strutturalmente più alto a causa del suo sistema di quote di importazione, non per un\'anomalia puntuale del mercato.',
       aceite: 'L\'offerta statunitense (California) è molto minore e non esiste un indice pubblico frequente come nell\'UE — cifra indicativa. I prezzi europei sono stati molto volatili dopo la siccità del 2023-2024. Germania e Francia non hanno una quotazione nazionale dell\'olio d\'oliva (non sono paesi produttori): selezionandole viene mostrato il riferimento europeo.',
       diesel: 'Il prezzo mostrato è quello del gasolio stradale (alla pompa), il riferimento pubblico più completo e frequente. Il gasolio agricolo agevolato è generalmente più economico, ma non viene pubblicato in modo altrettanto sistematico per regione.'
+    }
+  };
+
+  // --- Seguro agrario, Vino a granel y Madera: bloques informativos propios
+  // con estadísticas oficiales reales (no precios de mercado diarios/
+  // semanales que convertir de moneda/unidad), verbatim del artefacto
+  // original -- ver isInsurance/isWine/isWood en precios.js. ------------
+  var INSURANCE = {
+    es: {
+      badge: 'DATOS OFICIALES REALES',
+      esTitle: 'España — Agroseguro (ejercicio 2025)',
+      usTitle: 'EE. UU. — USDA RMA (año agrícola 2024)',
+      esStats: [
+        { label: 'Primas totales', value: '1.029 M€' },
+        { label: 'Superficie asegurada', value: '6,2 M ha' },
+        { label: 'Indemnizaciones pagadas', value: '804 M€' },
+        { label: 'Subvención pública', value: '≈50% de la prima' }
+      ],
+      usStats: [
+        { label: 'Superficie asegurada (net acres)', value: '543 M acres' },
+        { label: 'Capital asegurado (liability)', value: '>192.000 M$' },
+        { label: 'Subvención pública', value: '10.400 M$' },
+        { label: 'Participación (8 cultivos principales)', value: '≈89%' }
+      ],
+      scopeNote: 'Cifras oficiales de cada organismo, no datos de muestra — pero los dos sistemas no cubren exactamente lo mismo: las de España incluyen todas las líneas de Agroseguro (agrícola, ganadero y forestal) del ejercicio 2025; las de EE. UU. son específicas del seguro de cosechas (crop insurance) de la USDA RMA, año agrícola 2024. Sirven como referencia de magnitud, no como comparación exacta.'
+    },
+    en: {
+      badge: 'REAL OFFICIAL DATA',
+      esTitle: 'Spain — Agroseguro (2025)',
+      usTitle: 'U.S. — USDA RMA (2024 crop year)',
+      esStats: [
+        { label: 'Total premiums', value: '€1,029 M' },
+        { label: 'Insured area', value: '6.2 M ha' },
+        { label: 'Indemnities paid', value: '€804 M' },
+        { label: 'Public subsidy', value: '≈50% of premium' }
+      ],
+      usStats: [
+        { label: 'Insured area (net acres)', value: '543 M acres' },
+        { label: 'Insured liability', value: '>$192,000 M' },
+        { label: 'Public subsidy', value: '$10,400 M' },
+        { label: 'Participation (8 major crops)', value: '≈89%' }
+      ],
+      scopeNote: "Official figures from each agency, not sample data — but the two systems don't cover exactly the same scope: Spain's figures include all Agroseguro lines (crop, livestock and forestry) for 2025, while the U.S. figures are specific to USDA RMA's federal crop insurance, 2024 crop year. Treat this as a rough sense of scale, not an exact comparison."
+    },
+    fr: {
+      badge: 'DONNÉES OFFICIELLES RÉELLES',
+      esTitle: 'Espagne — Agroseguro (exercice 2025)',
+      usTitle: 'États-Unis — USDA RMA (campagne 2024)',
+      esStats: [
+        { label: 'Primes totales', value: '1 029 M€' },
+        { label: 'Surface assurée', value: '6,2 M ha' },
+        { label: 'Indemnités versées', value: '804 M€' },
+        { label: 'Subvention publique', value: '≈50 % de la prime' }
+      ],
+      usStats: [
+        { label: 'Surface assurée (net acres)', value: '543 M acres' },
+        { label: 'Capital assuré (liability)', value: '>192 000 M$' },
+        { label: 'Subvention publique', value: '10 400 M$' },
+        { label: 'Participation (8 cultures principales)', value: '≈89 %' }
+      ],
+      scopeNote: "Chiffres officiels de chaque organisme, pas des données fictives — mais les deux systèmes ne couvrent pas exactement le même périmètre : ceux de l'Espagne incluent toutes les lignes d'Agroseguro (agricole, élevage et forêt) pour 2025, tandis que ceux des États-Unis concernent spécifiquement l'assurance récolte (crop insurance) de l'USDA RMA, campagne 2024. À prendre comme un ordre de grandeur, pas une comparaison exacte."
+    },
+    it: {
+      badge: 'DATI UFFICIALI REALI',
+      esTitle: 'Spagna — Agroseguro (esercizio 2025)',
+      usTitle: 'Stati Uniti — USDA RMA (anno agricolo 2024)',
+      esStats: [
+        { label: 'Premi totali', value: '1.029 M€' },
+        { label: 'Superficie assicurata', value: '6,2 M ha' },
+        { label: 'Indennizzi pagati', value: '804 M€' },
+        { label: 'Sovvenzione pubblica', value: '≈50% del premio' }
+      ],
+      usStats: [
+        { label: 'Superficie assicurata (net acres)', value: '543 M acri' },
+        { label: 'Capitale assicurato (liability)', value: '>192.000 M$' },
+        { label: 'Sovvenzione pubblica', value: '10.400 M$' },
+        { label: 'Partecipazione (8 colture principali)', value: '≈89%' }
+      ],
+      scopeNote: 'Cifre ufficiali di ciascun ente, non dati campione — ma i due sistemi non coprono esattamente lo stesso ambito: quelle della Spagna includono tutte le linee di Agroseguro (agricola, zootecnica e forestale) per l\'esercizio 2025, mentre quelle statunitensi riguardano specificamente l\'assicurazione raccolto (crop insurance) dell\'USDA RMA, anno agricolo 2024. Da considerare come un ordine di grandezza, non un confronto esatto.'
+    }
+  };
+
+  var WINE = {
+    es: {
+      badge: 'DATOS OFICIALES REALES',
+      esTitle: 'España — MAPA (semana 37, 7–13 sept. 2026)',
+      frTitle: 'Francia — FranceAgriMer (semana 31, campaña 2025/26)',
+      esStats: [
+        { label: 'Blanco sin DOP/IGP', value: '42,45 €/hl' },
+        { label: 'Tinto sin DOP/IGP (12° color)', value: '47,86 €/hl' },
+        { label: 'Variación semanal (blanco)', value: '−1,96%' },
+        { label: 'Variación semanal (tinto)', value: '−0,33%' }
+      ],
+      frStats: [
+        { label: 'Blanc (Vin de France)', value: '98,00 €/hl' },
+        { label: 'Rouge (Vin de France)', value: '97,92 €/hl' },
+        { label: 'Variación interanual (blanco)', value: '−2,8%' },
+        { label: 'Variación interanual (tinto)', value: '+0,9%' }
+      ],
+      scopeNote: 'Cifras oficiales de cada organismo, no datos de muestra — pero no son directamente comparables en cadencia: las de España son el precio medio semanal del MAPA para vino sin DOP/IGP; las de Francia son el precio medio de la campaña 2025/26 hasta la semana 31 para "Vin de France" con mención de variedad (FranceAgriMer), frente a la campaña 2024/25. Aun así, la diferencia de nivel es real y llamativa: el vino francés se paga en torno al doble que el español en estos mercados. El Observatorio Español del Mercado del Vino (OeMv) publica análisis más detallados de este mercado en España, y no existe un mercado de vino a granel centralizado y comparable en EE. UU. — por eso esta categoría compara España y Francia en vez del habitual EE. UU./Europa del resto del panel.'
+    },
+    en: {
+      badge: 'REAL OFFICIAL DATA',
+      esTitle: 'Spain — MAPA (week 37, Sep 7–13, 2026)',
+      frTitle: 'France — FranceAgriMer (week 31, 2025/26 campaign)',
+      esStats: [
+        { label: 'White, no PDO/PGI', value: '€42.45/hL' },
+        { label: 'Red, no PDO/PGI (12° color)', value: '€47.86/hL' },
+        { label: 'Week-over-week (white)', value: '−1.96%' },
+        { label: 'Week-over-week (red)', value: '−0.33%' }
+      ],
+      frStats: [
+        { label: 'White (Vin de France)', value: '€98.00/hL' },
+        { label: 'Red (Vin de France)', value: '€97.92/hL' },
+        { label: 'Year-over-year (white)', value: '−2.8%' },
+        { label: 'Year-over-year (red)', value: '+0.9%' }
+      ],
+      scopeNote: "Official figures from each agency, not sample data — but not directly comparable in cadence: Spain's is MAPA's weekly average price for wine without a PDO/PGI designation; France's is the 2025/26 campaign-to-date average (through week 31) for 'Vin de France' with a stated grape variety (FranceAgriMer), versus the 2024/25 campaign. Even so, the gap in level is real and striking: French bulk wine trades at roughly double the Spanish price in these markets. Spain's own Observatorio Español del Mercado del Vino (OeMv) publishes more detailed analysis of this market, and there's no centralized, comparable bulk-wine market in the U.S. — which is why this category compares Spain and France instead of the usual U.S./Europe split used elsewhere on this dashboard."
+    },
+    fr: {
+      badge: 'DONNÉES OFFICIELLES RÉELLES',
+      esTitle: 'Espagne — MAPA (semaine 37, 7–13 sept. 2026)',
+      frTitle: 'France — FranceAgriMer (semaine 31, campagne 2025/26)',
+      esStats: [
+        { label: 'Blanc sans AOP/IGP', value: '42,45 €/hl' },
+        { label: 'Rouge sans AOP/IGP (12° couleur)', value: '47,86 €/hl' },
+        { label: 'Variation hebdomadaire (blanc)', value: '−1,96 %' },
+        { label: 'Variation hebdomadaire (rouge)', value: '−0,33 %' }
+      ],
+      frStats: [
+        { label: 'Blanc (Vin de France)', value: '98,00 €/hl' },
+        { label: 'Rouge (Vin de France)', value: '97,92 €/hl' },
+        { label: 'Variation sur un an (blanc)', value: '−2,8 %' },
+        { label: 'Variation sur un an (rouge)', value: '+0,9 %' }
+      ],
+      scopeNote: "Chiffres officiels de chaque organisme, pas des données fictives — mais pas directement comparables en fréquence : ceux de l'Espagne sont le prix moyen hebdomadaire du MAPA pour un vin sans AOP/IGP ; ceux de la France sont le prix moyen de la campagne 2025/26 à la semaine 31 pour un « Vin de France » avec mention de cépage (FranceAgriMer), comparé à la campagne 2024/25. L'écart de niveau reste réel et frappant : le vin français en vrac se négocie à environ le double du prix espagnol sur ces marchés. L'Observatoire espagnol du marché du vin (OeMv) publie des analyses plus détaillées de ce marché en Espagne, et il n'existe pas de marché du vrac centralisé et comparable aux États-Unis, d'où cette comparaison Espagne/France plutôt que le duo habituel États-Unis/Europe du reste du tableau de bord."
+    },
+    it: {
+      badge: 'DATI UFFICIALI REALI',
+      esTitle: 'Spagna — MAPA (settimana 37, 7–13 sett. 2026)',
+      frTitle: 'Francia — FranceAgriMer (settimana 31, campagna 2025/26)',
+      esStats: [
+        { label: 'Bianco senza DOP/IGP', value: '42,45 €/hl' },
+        { label: 'Rosso senza DOP/IGP (12° colore)', value: '47,86 €/hl' },
+        { label: 'Variazione settimanale (bianco)', value: '−1,96%' },
+        { label: 'Variazione settimanale (rosso)', value: '−0,33%' }
+      ],
+      frStats: [
+        { label: 'Bianco (Vin de France)', value: '98,00 €/hl' },
+        { label: 'Rosso (Vin de France)', value: '97,92 €/hl' },
+        { label: 'Variazione annua (bianco)', value: '−2,8%' },
+        { label: 'Variazione annua (rosso)', value: '+0,9%' }
+      ],
+      scopeNote: "Cifre ufficiali di ciascun ente, non dati campione — ma non direttamente comparabili per cadenza: quelle della Spagna sono il prezzo medio settimanale del MAPA per il vino senza DOP/IGP; quelle della Francia sono il prezzo medio della campagna 2025/26 alla settimana 31 per il \"Vin de France\" con menzione del vitigno (FranceAgriMer), rispetto alla campagna 2024/25. Il divario di livello resta comunque reale e marcato: il vino sfuso francese si scambia a circa il doppio del prezzo spagnolo su questi mercati. L'Osservatorio spagnolo del mercato del vino (OeMv) pubblica analisi più dettagliate di questo mercato in Spagna, e non esiste un mercato del vino sfuso centralizzato e comparabile negli USA — per questo la categoria confronta Spagna e Francia invece della consueta coppia USA/Europa usata nel resto del pannello."
+    }
+  };
+
+  var WOOD = {
+    es: {
+      badge: 'DATOS OFICIALES REALES',
+      usTitle: 'EE. UU. — CME Group (25 sep 2026)',
+      ukTitle: 'Reino Unido — Forest Research (dato trimestral, marzo 2026)',
+      frTitle: 'Francia — France Bois Forêt / ONF (campaña 2025)',
+      usStats: [
+        { label: 'Futuro de madera de construcción (framing lumber)', value: '538,00 $/1.000 pies tabla' },
+        { label: 'Variación diaria', value: '+0,19%' },
+        { label: 'Mercado', value: 'CME Group, contrato de vencimiento más próximo' }
+      ],
+      ukStats: [
+        { label: 'Índice de venta en pie, coníferas', value: '35,17 £/m³' },
+        { label: 'Variación interanual', value: '+12,9%' },
+        { label: 'Qué mide', value: 'Madera en pie sin talar, no aserrada' }
+      ],
+      frStats: [
+        { label: 'Media todas las especies', value: '86 €/m³' },
+        { label: 'Coníferas — Épicéa commun', value: '69 €/m³' },
+        { label: 'Frondosas — Roble (Chêne)', value: '190 €/m³' },
+        { label: 'Variación (media todas las especies)', value: '−4% vs. 2024' }
+      ],
+      scopeNote: 'Tres mercados nacionales reales, no una única referencia global como con otros productos — la madera no tiene un mercado internacional centralizado y líquido como el trigo o el maíz. Los tres datos son oficiales, pero no son comparables entre sí en cadencia ni en la fase del producto: el de EE. UU. es el precio diario del futuro de madera aserrada de construcción (framing lumber) del CME Group; el de Reino Unido es el índice trimestral de venta en pie de coníferas de Forest Research (madera sin aserrar, todavía en el bosque); y el de Francia es la media anual de venta en pie por especie de France Bois Forêt/ONF (campaña 2025, la más reciente publicada). Alemania, España e Italia quedan fuera de este primer núcleo: Alemania solo publica un índice oficial (Destatis), sin cifra en euros; España solo tiene datos regionales desactualizados (Castilla y León, 2020); e Italia no tiene una fuente nacional citable. Se añadirán si aparece una fuente mejor, siguiendo la misma convención de huecos honestos que el resto del panel.'
+    },
+    en: {
+      badge: 'REAL OFFICIAL DATA',
+      usTitle: 'U.S. — CME Group (Sep 25, 2026)',
+      ukTitle: 'United Kingdom — Forest Research (quarterly data, March 2026)',
+      frTitle: 'France — France Bois Forêt / ONF (2025 season)',
+      usStats: [
+        { label: 'Framing lumber futures', value: '$538.00/1,000 board feet' },
+        { label: 'Daily change', value: '+0.19%' },
+        { label: 'Market', value: 'CME Group, nearest-expiry contract' }
+      ],
+      ukStats: [
+        { label: 'Coniferous standing sales price index', value: '£35.17/m³' },
+        { label: 'Year-over-year change', value: '+12.9%' },
+        { label: 'What it measures', value: 'Standing (unfelled) timber, not sawn' }
+      ],
+      frStats: [
+        { label: 'All-species average', value: '€86/m³' },
+        { label: 'Conifers — Common spruce', value: '€69/m³' },
+        { label: 'Broadleaves — Oak', value: '€190/m³' },
+        { label: 'Change (all-species average)', value: '−4% vs. 2024' }
+      ],
+      scopeNote: "Three real national markets, not a single global reference like other products — timber has no centralized, liquid international market the way wheat or corn does. All three figures are official, but they aren't directly comparable in cadence or product stage: the U.S. figure is CME Group's daily framing-lumber futures price; the U.K. figure is Forest Research's quarterly coniferous standing-sales price index (unfelled timber, still in the forest); and the France figure is France Bois Forêt/ONF's annual average standing-sale price by species (2025 season, the latest published). Germany, Spain and Italy are left out of this first core: Germany only publishes an official index (Destatis), with no euro figure; Spain only has outdated regional data (Castilla y León, 2020); and Italy has no citable national source. They'll be added if a better source turns up, following the same honest-gap convention used elsewhere on this dashboard."
+    },
+    fr: {
+      badge: 'DONNÉES OFFICIELLES RÉELLES',
+      usTitle: 'États-Unis — CME Group (25 sept. 2026)',
+      ukTitle: 'Royaume-Uni — Forest Research (donnée trimestrielle, mars 2026)',
+      frTitle: 'France — France Bois Forêt / ONF (campagne 2025)',
+      usStats: [
+        { label: 'Contrat à terme bois de construction (framing lumber)', value: '538,00 $/1 000 board feet' },
+        { label: 'Variation journalière', value: '+0,19 %' },
+        { label: 'Marché', value: 'CME Group, contrat à échéance la plus proche' }
+      ],
+      ukStats: [
+        { label: 'Indice de prix de vente sur pied, résineux', value: '35,17 £/m³' },
+        { label: 'Variation sur un an', value: '+12,9 %' },
+        { label: 'Ce que ça mesure', value: 'Bois sur pied, non abattu, non scié' }
+      ],
+      frStats: [
+        { label: 'Moyenne toutes essences', value: '86 €/m³' },
+        { label: 'Résineux — Épicéa commun', value: '69 €/m³' },
+        { label: 'Feuillus — Chêne', value: '190 €/m³' },
+        { label: 'Variation (moyenne toutes essences)', value: '−4 % vs. 2024' }
+      ],
+      scopeNote: "Trois marchés nationaux réels, pas une référence mondiale unique comme pour d'autres produits — le bois n'a pas de marché international centralisé et liquide comme le blé ou le maïs. Les trois chiffres sont officiels, mais pas directement comparables en fréquence ni en stade du produit : celui des États-Unis est le prix quotidien du contrat à terme sur le bois de construction (framing lumber) du CME Group ; celui du Royaume-Uni est l'indice trimestriel de prix de vente sur pied des résineux de Forest Research (bois non abattu, encore en forêt) ; et celui de la France est le prix moyen annuel de vente sur pied par essence de France Bois Forêt/ONF (campagne 2025, la plus récente publiée). L'Allemagne, l'Espagne et l'Italie restent hors de ce premier socle : l'Allemagne ne publie qu'un indice officiel (Destatis), sans chiffre en euros ; l'Espagne n'a que des données régionales obsolètes (Castille-et-León, 2020) ; et l'Italie n'a pas de source nationale citable. Elles seront ajoutées si une meilleure source apparaît, selon la même convention de lacunes honnêtes que le reste du tableau de bord."
+    },
+    it: {
+      badge: 'DATI UFFICIALI REALI',
+      usTitle: 'Stati Uniti — CME Group (25 sett. 2026)',
+      ukTitle: 'Regno Unito — Forest Research (dato trimestrale, marzo 2026)',
+      frTitle: 'Francia — France Bois Forêt / ONF (campagna 2025)',
+      usStats: [
+        { label: 'Futures sul legname da costruzione (framing lumber)', value: '538,00 $/1.000 board feet' },
+        { label: 'Variazione giornaliera', value: '+0,19%' },
+        { label: 'Mercato', value: 'CME Group, contratto con scadenza più vicina' }
+      ],
+      ukStats: [
+        { label: 'Indice prezzo vendita in piedi, conifere', value: '35,17 £/m³' },
+        { label: 'Variazione annua', value: '+12,9%' },
+        { label: 'Cosa misura', value: 'Legname in piedi, non abbattuto né segato' }
+      ],
+      frStats: [
+        { label: 'Media tutte le specie', value: '86 €/m³' },
+        { label: 'Conifere — Abete rosso comune', value: '69 €/m³' },
+        { label: 'Latifoglie — Quercia', value: '190 €/m³' },
+        { label: 'Variazione (media tutte le specie)', value: '−4% vs. 2024' }
+      ],
+      scopeNote: "Tre mercati nazionali reali, non un unico riferimento globale come per altri prodotti — il legname non ha un mercato internazionale centralizzato e liquido come il grano o il mais. Le tre cifre sono ufficiali, ma non direttamente comparabili per cadenza né per fase del prodotto: quella statunitense è il prezzo giornaliero del future sul legname da costruzione (framing lumber) del CME Group; quella britannica è l'indice trimestrale del prezzo di vendita in piedi delle conifere di Forest Research (legname non abbattuto, ancora nel bosco); quella francese è il prezzo medio annuo di vendita in piedi per specie di France Bois Forêt/ONF (campagna 2025, l'ultima pubblicata). Germania, Spagna e Italia restano fuori da questo primo nucleo: la Germania pubblica solo un indice ufficiale (Destatis), senza cifra in euro; la Spagna ha solo dati regionali non aggiornati (Castiglia e León, 2020); e l'Italia non ha una fonte nazionale citabile. Verranno aggiunte se emergerà una fonte migliore, seguendo la stessa convenzione di lacune oneste usata nel resto del pannello."
     }
   };
 
@@ -590,6 +861,7 @@
     FX: FX, CCY_SYMBOL: CCY_SYMBOL, UNIT_LABELS: UNIT_LABELS, REGION: REGION,
     ENERGY_REGIONS: ENERGY_REGIONS, COUNTRY_ER_KEY: COUNTRY_ER_KEY, COUNTRY_FLAG: COUNTRY_FLAG,
     QUOTE_TYPES: QUOTE_TYPES, NAMES: NAMES, CATS: CATS, FOOT: FOOT, RAW: RAW,
+    INSURANCE: INSURANCE, WINE: WINE, WOOD: WOOD,
     LITRO_KG: LITRO_KG, GAL_KG: GAL_KG,
     DIESEL_US_NATIONAL: DIESEL_US_NATIONAL, DIESEL_EU_NATIONAL: DIESEL_EU_NATIONAL, DIESEL_UK_NATIONAL: DIESEL_UK_NATIONAL,
     DIESEL_US_REGIONS: DIESEL_US_REGIONS, DIESEL_EU_COUNTRIES: DIESEL_EU_COUNTRIES,

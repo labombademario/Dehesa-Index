@@ -1,14 +1,16 @@
 /* Dehesa Index — página de Precios (núcleo): cabecera, ticker, buscador,
    ubicación (EE. UU./Europa/Reino Unido) + país UE, favoritos, pestañas de
-   categoría, tarjetas de producto con desglose de fuentes, y los modales de
-   Histórico ampliado, Calculadora de coste y Alerta de precio.
+   categoría, tarjetas de producto con desglose de fuentes, los modales de
+   Histórico ampliado, Calculadora de coste y Alerta de precio, y las 3
+   pestañas informativas propias (Seguro agrario, Vino a granel, Madera:
+   estadísticas oficiales reales comparadas lado a lado, sin tarjeta de
+   producto/histórico/calculadora/alertas -- ver INFO_CATS/renderInfoCategoryHtml).
    Vanilla JS / ES5, sin frameworks ni build step. Se apoya en window.DehesaData
    (js/data.js) y window.DehesaPreciosI18n (js/precios-i18n.js). Expone
    window.DehesaPreciosCore al final del archivo para que js/precios-intel.js
-   (Market Map, Momentum, Correlación, Volatilidad, Estacionalidad, Spreads,
-   Margen del productor) reutilice el mismo índice de productos y ubicación.
-   NOTA DE ALCANCE: Local vs. Global, Seguro agrario/Vino a granel/Madera y
-   las páginas secundarias llegan en una fase posterior (ver banner). */
+   (Market Map, Momentum, Correlación, Volatilidad, Estacionalidad, Local vs.
+   Global, Spreads, Margen del productor) reutilice el mismo índice de
+   productos y ubicación. */
 (function (global) {
   'use strict';
   var D = global.DehesaData;
@@ -44,7 +46,11 @@
   // ---------------------------------------------------------------------
   // Estado
   // ---------------------------------------------------------------------
-  var CAT_ORDER = ['cereales', 'lacteos', 'ganado', 'porcino', 'ovino', 'avicultura', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia'];
+  var CAT_ORDER = ['cereales', 'lacteos', 'ganado', 'porcino', 'ovino', 'avicultura', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia', 'seguro', 'vino', 'madera'];
+  // Categorías informativas propias: no son "productos" con precio diario/
+  // semanal (sin favoritos/histórico/calculadora/alertas) -- estadísticas
+  // oficiales reales anuales o de campaña, ver renderInfoCategoryHtml().
+  var INFO_CATS = { seguro: true, vino: true, madera: true };
 
   var state = {
     location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk') ? v : null; })(),
@@ -176,7 +182,7 @@
     document.getElementById('pr-badge').textContent = t.badge;
     document.getElementById('pr-subtitle').textContent = t.pageSubtitle;
     document.getElementById('pr-updated').textContent = t.updated;
-    document.getElementById('pr-banner').textContent = t.banner + ' ' + t.comingSoonNote;
+    document.getElementById('pr-banner').textContent = t.banner;
   }
 
   // ---------------------------------------------------------------------
@@ -401,8 +407,75 @@
     );
   }
 
+  // ---------------------------------------------------------------------
+  // Seguro agrario / Vino a granel / Madera: bloques informativos propios
+  // con estadísticas oficiales reales (no un precio de mercado diario/
+  // semanal que convertir de moneda/unidad), comparadas lado a lado -- sin
+  // favoritos, histórico, calculadora ni alertas. Ver D.INSURANCE/D.WINE/
+  // D.WOOD en js/data.js.
+  // ---------------------------------------------------------------------
+  function infoStatsCardHtml(title, stats) {
+    var rows = stats.map(function (s) {
+      return '<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(s.label) + '</span><span class="di-info-stat-value">' + esc(s.value) + '</span></div>';
+    }).join('');
+    return '<div class="di-card di-info-card"><div class="di-info-card-title">' + esc(title) + '</div><div class="di-info-stat-list">' + rows + '</div></div>';
+  }
+
+  function infoSourcesHtml(catId) {
+    var t = ui();
+    var cat = (D.CATS[lang()] || D.CATS.es)[catId];
+    if (!cat) return '';
+    var links = D.withSeps(cat.sources).map(function (s) {
+      return '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer">' + esc(s.name) + '</a>' + s.sep;
+    }).join('');
+    return '<div class="di-field-hint di-info-sources">' + esc(t.fuenteLabel) + ' ' + links + '</div>';
+  }
+
+  function renderInfoCategoryHtml(catId) {
+    if (catId === 'seguro') {
+      var ins = D.INSURANCE[lang()] || D.INSURANCE.es;
+      return (
+        '<div class="di-badge di-badge-green di-info-badge">' + esc(ins.badge) + '</div>' +
+        '<div class="di-info-grid">' +
+          infoStatsCardHtml(ins.esTitle, ins.esStats) +
+          infoStatsCardHtml(ins.usTitle, ins.usStats) +
+        '</div>' +
+        '<div class="di-info-scope-note">' + esc(ins.scopeNote) + '</div>' +
+        infoSourcesHtml('seguro')
+      );
+    }
+    if (catId === 'vino') {
+      var win = D.WINE[lang()] || D.WINE.es;
+      return (
+        '<div class="di-badge di-badge-green di-info-badge">' + esc(win.badge) + '</div>' +
+        '<div class="di-info-grid">' +
+          infoStatsCardHtml(win.esTitle, win.esStats) +
+          infoStatsCardHtml(win.frTitle, win.frStats) +
+        '</div>' +
+        '<div class="di-info-scope-note">' + esc(win.scopeNote) + '</div>' +
+        infoSourcesHtml('vino')
+      );
+    }
+    // madera
+    var mad = D.WOOD[lang()] || D.WOOD.es;
+    return (
+      '<div class="di-badge di-badge-green di-info-badge">' + esc(mad.badge) + '</div>' +
+      '<div class="di-info-grid di-info-grid-3">' +
+        infoStatsCardHtml(mad.usTitle, mad.usStats) +
+        infoStatsCardHtml(mad.ukTitle, mad.ukStats) +
+        infoStatsCardHtml(mad.frTitle, mad.frStats) +
+      '</div>' +
+      '<div class="di-info-scope-note">' + esc(mad.scopeNote) + '</div>' +
+      infoSourcesHtml('madera')
+    );
+  }
+
   function renderCategory() {
     var root = document.getElementById('pr-category');
+    if (INFO_CATS[state.activeTab]) {
+      root.innerHTML = renderInfoCategoryHtml(state.activeTab);
+      return;
+    }
     var entries = productsInCat(state.activeTab);
     root.innerHTML = '<div class="di-product-grid">' + entries.map(function (e) { return productCardHtml(e, {}); }).join('') + '</div>';
     wireCardEvents(root);
