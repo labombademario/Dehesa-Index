@@ -11,7 +11,7 @@
       pageSubtitle: 'Precios agrícolas diarios y semanales — EE. UU. y Europa',
       badge: 'ESTADO DE DATOS',
       updated: 'Verificación de observaciones y procedencia activa',
-      banner: 'Cada producto muestra explícitamente si el dato está REAL, PENDIENTE o NO COMPARABLE. Las cifras no verificadas no se presentan como precios de mercado activos. La procedencia y metodología están disponibles en cada tarjeta.'
+      banner: 'Cada producto muestra explícitamente si el dato está REAL, PENDIENTE o NO COMPARABLE. Las cifras no verificadas no se presentan como precios de mercado activos. La procedencia y metodología están disponibles en cada tarjeta.',
       searchPlaceholder: 'Buscar un producto (maíz, leche, urea…)',
       searchNoResults: 'No se encontró ningún producto con ese nombre.',
       searchClearTitle: 'Borrar búsqueda',
