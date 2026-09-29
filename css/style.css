@@ -975,3 +975,16 @@ input,select,button{font-size:16px}
 .di-nav-mobile-panel a.active{font-weight:700;color:var(--accent)}
 @media(max-width:700px){.di-header{backdrop-filter:saturate(1.1) blur(8px)}.di-nav-side{flex-shrink:0}.di-lang-select{min-height:42px;max-width:118px}.di-nav-toggle{min-width:44px!important;min-height:44px!important}.di-nav-mobile-panel{max-height:calc(100vh - 60px);overflow-y:auto;-webkit-overflow-scrolling:touch}}
 @media(max-width:350px){.di-lang-select{max-width:92px;font-size:11px}.di-nav-logo img{max-width:116px}}
+
+@media(max-width:700px){
+  .di-search-wrap{max-width:none;margin:14px 0}
+  .di-search-input{min-height:46px}
+  .di-location-bar{margin:14px 0}
+  .di-location-label{flex-basis:100%;margin:0}
+  .di-location-btn,.di-eu-country-select{min-height:44px}
+  .di-fx-label{flex-basis:100%;line-height:1.4}
+  .di-tabs-bar{margin:18px 0 14px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:10px}
+  .di-tab-btn{flex:0 0 auto;min-height:44px;padding:8px 13px}
+  .di-favorites{margin:20px 0}
+  .di-favorites-grid{grid-template-columns:1fr!important}
+}
