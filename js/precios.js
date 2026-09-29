@@ -103,6 +103,80 @@
     PRODUCT_BY_KEY['energia:diesel'] = energiaEntry;
   })();
 
+  // ---------------------------------------------------------------------
+  // Datos publicados: la interfaz conserva RAW como respaldo offline, pero
+  // sustituye una cotización solamente cuando data/latest.json aporta una
+  // observación verificada con la misma fuente, moneda, unidad y frecuencia.
+  // Así un fallo de red o una fuente pendiente nunca convierte una muestra en
+  // un precio aparentemente real.
+  // ---------------------------------------------------------------------
+  var LIVE_OBSERVATION_MAP = {
+    'maiz:us': { key: 'cereales:maiz', sourceId: 'usda_nass', currency: 'USD', unit: 'bushel', frequency: 'monthly' },
+    'trigo:us': { key: 'cereales:trigo', sourceId: 'usda_nass', currency: 'USD', unit: 'bushel', frequency: 'monthly' },
+    'arroz:us': { key: 'cereales:arroz', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
+    'leche:eu': { key: 'lacteos:leche', sourceId: 'european_commission', currency: 'EUR', unit: '100kg', frequency: 'monthly' },
+    'urea:eu': { key: 'fertilizantes:urea', sourceId: 'world_bank', currency: 'USD', unit: 'tonelada', frequency: 'monthly' },
+    'diesel:us': { key: 'energia:diesel', sourceId: 'eia', currency: 'USD', unit: 'gal', frequency: 'weekly' },
+    'diesel:eu': { key: 'energia:diesel', sourceId: 'eu_oil_bulletin', currency: 'EUR', unit: 'litro', frequency: 'weekly' }
+  };
+
+  function numericHistory(observation) {
+    var points = Array.isArray(observation.history) ? observation.history : [];
+    var values = points.map(function (point) { return Number(point && point.value); })
+      .filter(function (value) { return Number.isFinite(value); });
+    return values.length >= 2 ? values : null;
+  }
+
+  function observationMatchesContract(observation, contract) {
+    return observation && contract && observation.status === 'verified' &&
+      observation.sourceId === contract.sourceId && observation.currency === contract.currency &&
+      observation.unit === contract.unit && observation.frequency === contract.frequency &&
+      Number.isFinite(Number(observation.value));
+  }
+
+  function applyPublishedObservation(observation) {
+    var contract = LIVE_OBSERVATION_MAP[observation.product + ':' + observation.region];
+    if (!observationMatchesContract(observation, contract)) return false;
+    var entry = PRODUCT_BY_KEY[contract.key];
+    if (!entry) return false;
+    var region = entry.product[observation.region];
+    if (!region) return false;
+    var history = numericHistory(observation);
+    region.price = Number(observation.value);
+    if (history) region.history = history;
+    if (Number.isFinite(Number(observation.changePct))) region.changePct = Number(observation.changePct);
+
+    var trustKey = contract.key.replace(':', '-') + '-' + observation.region;
+    var trust = D.DATA_TRUST && D.DATA_TRUST[trustKey];
+    if (trust) {
+      trust.value = region.price;
+      trust.status = observation.status;
+      trust.observationDate = observation.observationDate || null;
+      trust.publicationDate = observation.publicationDate || null;
+      trust.verifiedAt = observation.verifiedAt || null;
+      trust.methodology = observation.methodology || trust.methodology;
+      trust.comparability = observation.comparability || trust.comparability;
+    }
+    return true;
+  }
+
+  function loadPublishedPrices() {
+    if (typeof global.fetch !== 'function') return;
+    global.fetch('data/latest.json', { cache: 'no-store', headers: { Accept: 'application/json' } })
+      .then(function (response) { return response.ok ? response.json() : null; })
+      .then(function (doc) {
+        var observations = doc && Array.isArray(doc.observations) ? doc.observations : [];
+        var changed = observations.some(applyPublishedObservation);
+        if (!changed) return;
+        if (D.validateDataTrustRegistry) D.DATA_TRUST_HEALTH = D.validateDataTrustRegistry(D.DATA_TRUST);
+        renderAll();
+        document.dispatchEvent(new CustomEvent('dehesa:prices-data-ready'));
+      })
+      .catch(function () {
+        // El respaldo integrado mantiene la página utilizable sin red.
+      });
+  }
+
   function productName(nameKey) { return (D.NAMES[lang()] || D.NAMES.es)[nameKey] || nameKey; }
   function catLabel(catId) { var c = (D.CATS[lang()] || D.CATS.es)[catId]; return c ? c.label : catId; }
   function productsInCat(catId) {
@@ -1285,6 +1359,7 @@
     document.addEventListener('dehesa:intel-ready', function () { renderMarketNewsIntel(); });
     window.addEventListener('popstate', restorePriceUrl);
     renderAll();
+    loadPublishedPrices();
     S.onLangChange = function () { renderAll(); };
     maybeShowLocationWelcomeWhenFree();
   }

@@ -21,7 +21,16 @@ Additional provenance is retained in the snapshot.
 
 ## Status
 
-The current pilot is limited to automated USDA NASS U.S. cereal observations. Other Data Trust v2 observations remain explicitly marked as pending verification until their source-specific automation is implemented.
+`precios.html` reads `/data/latest.json` on load and applies an observation to
+the visible price only when its status, source, currency, unit and frequency
+match the product's published-source contract. The embedded data remains an
+offline fallback.
+
+The current live contracts cover USDA NASS U.S. cereals, the European
+Commission raw-milk series, World Bank EU urea, EIA U.S. diesel and the
+European Commission Weekly Oil Bulletin diesel series. A source without a
+verified observation remains visible only through the fallback dataset and is
+marked `PENDIENTE` in Data Trust; it is never promoted automatically.
 
 ## B2B direction
 

@@ -23,6 +23,8 @@ const prices=await read('js/precios.js');
 check('price URL sync uses pushState',prices.includes('history.pushState'));
 check('price URL restores popstate',prices.includes("addEventListener('popstate', restorePriceUrl)"));
 check('price category ids are canonical',prices.includes("['cereales','lacteos','fertilizantes','energia','seguro','vino','madera']"));
+check('prices consume verified published observations',prices.includes("global.fetch('data/latest.json'"));
+check('published prices enforce source contract',prices.includes("observationMatchesContract"));
 
 const news=await read('js/noticias.js');
 check('news URL sync uses pushState',news.includes('history.pushState'));
