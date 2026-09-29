@@ -955,3 +955,15 @@ input,select,button{font-size:16px}
   .di-modal-title{font-size:18px}
   .di-intel-context,.di-news-context{font-size:14px}
 }
+
+@media(max-width:430px){
+  .di-chart-svg-wrap{width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+  .di-chart-svg-wrap>svg{display:block;min-width:520px;max-width:none}
+  .di-corr-grid,.di-vol-grid,.di-season-grid{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .di-corr-grid>*{min-width:0}
+  .di-map-shell{width:100%;overflow:hidden}
+  .di-map-shell .jsvectormap-container{max-width:100%}
+  .di-map-shell svg{max-width:none}
+  .di-intel-section{border-radius:10px}
+  .di-intel-disclaimer{font-size:9px;line-height:1.4}
+}
