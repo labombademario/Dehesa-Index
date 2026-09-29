@@ -144,7 +144,7 @@ async function writeSnapshot(observation) {
   });
   existing.observations.push(observation);
   existing.observations.sort(function (a, b) { return (a.product + a.region).localeCompare(b.product + b.region); });
-  await writeFile(file, JSON.stringify(existing, null, 2) + '\\n', 'utf8');
+  await writeFile(file, JSON.stringify(existing, null, 2) + '\n', 'utf8');
   console.log('Snapshot: data/snapshots/' + stamp + '.json');
 }
 
