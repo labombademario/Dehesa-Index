@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T17:49:36.535Z",
+  "generatedAt": "2026-09-29T17:51:00.093Z",
   "scope": {
     "latestObservations": 4,
     "historyObservations": 33,
     "verified": 4,
     "pending": 0,
-    "stale": 0,
+    "stale": 4,
     "regions": [
       "us",
       "eu"
@@ -31,7 +31,8 @@
       "verifiedAt": "2026-09-29T16:54:10.660Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "stale": false
+      "stale": true,
+      "ageDays": 90
     },
     {
       "id": "di_maiz_us",
@@ -45,7 +46,8 @@
       "verifiedAt": "2026-09-29T16:54:10.345Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "stale": false
+      "stale": true,
+      "ageDays": 90
     },
     {
       "id": "di_trigo_us",
@@ -59,7 +61,8 @@
       "verifiedAt": "2026-09-29T16:54:10.032Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "stale": false
+      "stale": true,
+      "ageDays": 90
     },
     {
       "id": "di_fertilizantes_urea_eu",
@@ -73,7 +76,8 @@
       "verifiedAt": "2026-09-29T17:47:20Z",
       "frequency": "monthly",
       "historyPoints": 12,
-      "stale": false
+      "stale": true,
+      "ageDays": 59
     }
   ],
   "policy": {
