@@ -24,6 +24,8 @@ for (const file of files) {
     }
     if (!contract.allowedRegions.includes(o.region)) errors.push(file + ': ' + o.product + ': invalid region ' + o.region);
     if (!contract.allowedFrequencies.includes(o.frequency)) errors.push(file + ': ' + o.product + ': invalid frequency ' + o.frequency);
+    if (!contract.allowedStatuses.includes(o.status)) errors.push(file + ': ' + o.product + ': invalid status ' + o.status);
+    if (o.status === 'verified' && !o.verifiedAt) errors.push(file + ': ' + o.product + ': verified observation missing verifiedAt');
     if (typeof o.value !== 'number' || !Number.isFinite(o.value)) errors.push(file + ': ' + o.product + ': value is not numeric');
     if (!/^\d{4}-\d{2}(-\d{2})?$/.test(String(o.observationDate))) errors.push(file + ': ' + o.product + ': invalid observationDate');
   }
