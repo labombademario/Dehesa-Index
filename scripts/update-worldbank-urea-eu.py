@@ -35,7 +35,7 @@ urea_col = None
 for idx, row in enumerate(rows[:100]):
     for col, val in enumerate(row):
         normalized = re.sub(r"\\s+", " ", str(val or "").strip().lower())
-        if normalized in ("urea, e. europe", "urea e. europe") or ("urea" in normalized and "europe" in normalized):
+        if normalized in ("urea", "urea, e. europe", "urea e. europe") or ("urea" in normalized and "europe" in normalized):
             header_row, urea_col = idx, col
             break
     if urea_col is not None:
