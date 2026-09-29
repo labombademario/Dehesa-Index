@@ -291,6 +291,12 @@ img { max-width: 100%; }
 .di-badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 700; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
+.di-product-state-badge{display:inline-flex;align-items:center;margin-top:4px;padding:3px 7px;border-radius:999px;font-size:9.5px;font-weight:800;letter-spacing:.07em}
+.di-product-state-badge.real{background:rgba(47,125,79,.12);color:var(--positive)}
+.di-product-state-badge.pending{background:rgba(138,132,113,.14);color:var(--neutral)}
+.di-product-state-badge.not-comparable{background:rgba(178,58,52,.10);color:var(--negative)}
+.di-product-state-pending .di-product-price,.di-product-state-not-comparable .di-product-price{color:var(--text-faint)}
+.di-product-no-value{height:36px;display:flex;align-items:center;border-top:1px dashed var(--border);border-bottom:1px dashed var(--border);margin:8px 0;color:var(--text-faint);font-size:11px}
 /* ================= Precios page ================= */
 .di-precios-head { padding: 32px 0 8px; }
 .di-precios-head-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
