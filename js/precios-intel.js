@@ -224,9 +224,16 @@
     });
   }
 
+  function intelPendingHtml(title, message, id) {
+    return '<div class="di-intel-section di-intel-pending" id="' + id + '">' +
+      '<div class="di-intel-head"><h2>' + esc(title) + '</h2><p>' + esc(message) + '</p><span class="di-intel-state pending">PENDIENTE</span></div>' +
+    '</div>';
+  }
+
   function renderMarketMapHtml() {
     var t = ui();
     var groups = buildMarketMap();
+    if (!groups.length) return intelPendingHtml(t.mapTitle, 'Histórico real insuficiente para calcular este mapa sin extrapolaciones.', 'di-intel-map');
     var groupsHtml = groups.map(function (g) {
       var tilesHtml = g.products.map(function (p) {
         return '<button type="button" class="di-map-tile" data-open="' + p.key + '" title="' + esc(p.tileTitle) + '" ' +
@@ -350,6 +357,7 @@
     var t = ui();
     var p = P();
     var m = buildMomentum();
+    if (!m.points.length) return intelPendingHtml(t.momentumTitle, 'Se necesitan observaciones reales con cadencia suficiente para calcular 3M vs 1W.', 'di-intel-momentum');
     var gridX = m.xGrid.map(function (g) {
       return '<line x1="' + g.x + '" y1="' + m.plotY + '" x2="' + g.x + '" y2="' + m.plotBottom + '" stroke="' + p.border + '" stroke-width="1"/>' +
         '<text x="' + g.x + '" y="' + (m.plotBottom + 16) + '" font-size="9.5" text-anchor="middle" fill="' + p.textMuted + '">' + g.label + '</text>';
@@ -473,6 +481,7 @@
 
   function renderCorrelationHtml(data) {
     var t = ui();
+    if (data.keys.length < 2) return intelPendingHtml(t.corrTitle, 'Se necesitan al menos dos series diarias con cobertura suficiente para calcular correlaciones.', 'di-intel-corr');
     var headerCells = data.keys.map(function (k) { var e = entryByDashKey(k); return '<th title="' + esc(productName(e.nameKey)) + '">' + esc(productName(e.nameKey).slice(0, 3)) + '</th>'; }).join('');
     var bodyRows = data.rows.map(function (row) {
       var cells = row.cells.map(function (c) {
@@ -491,6 +500,7 @@
 
   function renderVolatilityHtml(data) {
     var t = ui();
+    if (!data.ranking.length) return intelPendingHtml(t.volTitle, 'Se necesita histórico diario suficiente para calcular volatilidad.', 'di-intel-vol');
     var rows = data.ranking.map(function (r) {
       return '<button type="button" class="di-vol-row" data-open="' + r.key + '">' +
         '<span class="di-vol-rank">' + r.rank + '</span>' +
