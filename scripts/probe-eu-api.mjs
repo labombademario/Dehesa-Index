@@ -36,6 +36,26 @@ async function main() {
     var res = await fetch(url, { headers: { Accept: 'application/json' } });
     lines.push('STATUS: ' + res.status + ' ' + res.statusText);
     var text = await res.text();
+    lines.push('LONGITUD TOTAL: ' + text.length + ' caracteres');
+    // Si el cuerpo es un array JSON de objetos, además de recortarlo
+    // resumimos qué valores únicos toma cada campo -- mucho más útil que
+    // solo ver los primeros 6000 caracteres cuando hay cientos de filas.
+    try {
+      var json = JSON.parse(text);
+      if (Array.isArray(json) && json.length > 0 && typeof json[0] === 'object') {
+        lines.push('FILAS: ' + json.length);
+        var fields = Object.keys(json[0]);
+        lines.push('CAMPOS: ' + fields.join(', '));
+        fields.forEach(function (f) {
+          var values = Array.from(new Set(json.map(function (r) { return r[f]; })));
+          if (values.length <= 40) {
+            lines.push('  ' + f + ' -> ' + JSON.stringify(values));
+          } else {
+            lines.push('  ' + f + ' -> (' + values.length + ' valores distintos, no se listan)');
+          }
+        });
+      }
+    } catch (e) { /* no era JSON o no era un array -- seguimos con el recorte de texto */ }
     lines.push('BODY (primeros 6000 caracteres):');
     lines.push(text.slice(0, 6000));
   } catch (err) {
