@@ -628,3 +628,16 @@ html[data-theme="dark"] .di-badge-green { background: #1E3328; color: #7FCF9B; b
 .di-data-health-stats b{font-size:17px;line-height:1}
 .di-data-health-stats span{font-size:9px;color:var(--di-muted,#777);line-height:1.25}
 @media(max-width:600px){.di-data-health-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px}}
+
+
+/* Atlantic Spread */
+.di-atlantic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.di-atlantic-card{padding:16px}
+.di-atlantic-status{display:inline-flex;margin:7px 0 12px;padding:4px 9px;border-radius:999px;border:1px solid var(--border-strong);background:var(--surface-alt);font-size:10px;font-weight:700;color:var(--text-muted)}
+.di-atlantic-grid .di-atlantic-card{min-width:0}
+.di-atlantic-grid>div>span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-faint);margin-bottom:3px}
+.di-atlantic-grid>div>b{display:block;font-size:11px;line-height:1.35}
+.di-atlantic-method{font-size:10.5px;color:var(--text-faint);line-height:1.45}
+.di-atlantic-card .di-spread-note{margin-top:9px}
+@media(max-width:900px){.di-atlantic-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.di-atlantic-grid{grid-template-columns:1fr}}
