@@ -666,34 +666,9 @@
   }
   function renderSpreadsHtml() {
     var t = ui();
-    var vaca = regionFor(entryByDashKey('ganado-vaca'));
-    var maiz = regionFor(entryByDashKey('cereales-maiz'));
-    var leche = regionFor(entryByDashKey('lacteos-leche'));
-    var pienso = regionFor(entryByDashKey('pienso-pienso'));
-    var trigo = regionFor(entryByDashKey('cereales-trigo'));
-    var urea = regionFor(entryByDashKey('fertilizantes-urea'));
-    var spreads = [
-      buildSpread(t.spreadLabelMilkFeed, t.spreadFormulaMilkFeed, leche, pienso, false, ''),
-      buildSpread(t.spreadLabelCattleCorn, t.spreadFormulaCattleCorn, vaca, maiz, true, t.spreadCattleCornNote),
-      buildSpread(t.spreadLabelWheatFert, t.spreadFormulaWheatFert, trigo, urea, false, '')
-    ];
-    var cardsHtml = spreads.map(function (sp) {
-      return '<div class="di-card di-spread-card">' +
-        '<div class="di-product-name">' + esc(sp.label) + '</div>' +
-        '<div class="di-spread-value">' + esc(sp.value) + ' <span style="font-size:13px;color:' + sp.changeColor + ';">' + esc(sp.changeLabel) + '</span></div>' +
-        '<div class="di-spread-formula">' + esc(sp.formula) + '</div>' +
-        '<div class="di-spread-trend" style="color:' + sp.trendColor + ';">' + esc(sp.trendText) + '</div>' +
-        (sp.note ? '<div class="di-spread-note">' + esc(sp.note) + '</div>' : '') +
-      '</div>';
-    }).join('');
-    return (
-      '<div class="di-intel-section" id="di-intel-spreads">' +
-        '<div class="di-intel-head"><h2>' + esc(t.spreadsTitle) + '</h2><p>' + esc(t.spreadsIntro) + '</p></div>' +
-        '<div class="di-spread-grid">' + cardsHtml + '</div>' +
-        '<div class="di-intel-disclaimer">' + esc(t.spreadsDisclaimer) + '</div>' +
-      '</div>'
-    );
+    return '<div class="di-intel-section di-intel-pending" id="di-intel-spreads"><div class="di-intel-head"><h2>' + esc(t.spreadsTitle) + '</h2><p>Spreads pendientes: no se calcula un diferencial hasta disponer de observaciones reales compatibles para ambos componentes.</p><span class="di-intel-state pending">PENDIENTE</span></div></div>';
   }
+
 
   // ---------------------------------------------------------------------
   // Margen del productor
@@ -719,41 +694,9 @@
   }
   function renderMarginHtml() {
     var t = ui();
-    var p = P();
-    var piensoChange = marginPctChange('pienso-pienso');
-    var energiaChange = marginPctChange('energia-diesel');
-    var fertChange = (marginPctChange('fertilizantes-urea') + marginPctChange('fertilizantes-dap') + marginPctChange('fertilizantes-potasa')) / 3;
-    var costIndexChange = 0.5 * piensoChange + 0.25 * energiaChange + 0.25 * fertChange;
-    var breakdown = [
-      { label: t.marginCostPienso, changeLabel: D.fmtChange(piensoChange), changeColor: D.changeColor(-piensoChange, p) },
-      { label: t.marginCostEnergia, changeLabel: D.fmtChange(energiaChange), changeColor: D.changeColor(-energiaChange, p) },
-      { label: t.marginCostFert, changeLabel: D.fmtChange(fertChange), changeColor: D.changeColor(-fertChange, p) }
-    ];
-    var margins = [
-      buildMargin(t.marginLabelDairy, 'lacteos-leche', piensoChange, energiaChange, fertChange, costIndexChange),
-      buildMargin(t.marginLabelMeat, 'ganado-vaca', piensoChange, energiaChange, fertChange, costIndexChange)
-    ];
-    var breakdownHtml = breakdown.map(function (b) {
-      return '<div class="di-margin-breakdown-row"><span>' + esc(b.label) + '</span><span style="color:' + b.changeColor + ';font-weight:700;">' + esc(b.changeLabel) + '</span></div>';
-    }).join('');
-    var cardsHtml = margins.map(function (m) {
-      return '<div class="di-card di-margin-card">' +
-        '<div class="di-product-name">' + esc(m.label) + '</div>' +
-        '<div class="di-margin-row"><span>' + esc(t.marginIngresoLabel) + '</span><span style="color:' + m.revenueColor + ';font-weight:700;">' + esc(m.revenueLabel) + '</span></div>' +
-        '<div class="di-margin-row"><span>' + esc(t.marginCosteLabel) + '</span><span style="color:' + m.costColor + ';font-weight:700;">' + esc(m.costLabel) + '</span></div>' +
-        '<div class="di-margin-delta" style="color:' + m.verdictColor + ';">' + esc(m.deltaLabel) + '</div>' +
-        '<div class="di-margin-verdict" style="color:' + m.verdictColor + ';">' + esc(m.verdict) + '</div>' +
-      '</div>';
-    }).join('');
-    return (
-      '<div class="di-intel-section" id="di-intel-margin">' +
-        '<div class="di-intel-head"><h2>' + esc(t.marginTitle) + '</h2><p>' + esc(t.marginIntro) + '</p></div>' +
-        '<div class="di-margin-grid">' + cardsHtml + '</div>' +
-        '<div class="di-card di-margin-breakdown" style="padding:12px 16px;"><div class="di-field-label" style="margin-bottom:4px;">' + esc(t.marginBreakdownTitle) + '</div>' + breakdownHtml + '</div>' +
-        '<div class="di-intel-disclaimer">' + esc(t.marginDisclaimer) + '</div>' +
-      '</div>'
-    );
+    return '<div class="di-intel-section di-intel-pending" id="di-intel-margin"><div class="di-intel-head"><h2>' + esc(t.marginTitle) + '</h2><p>Margen pendiente: requiere series reales de ingresos y costes con cobertura temporal suficiente.</p><span class="di-intel-state pending">PENDIENTE</span></div></div>';
   }
+
 
   // ---------------------------------------------------------------------
   // Local vs. Global -- mismo producto visto a la vez desde el mercado
@@ -817,46 +760,9 @@
 
   function renderLocalGlobalHtml() {
     var t = ui();
-    var Core = core();
-    if (!Core.PRODUCT_BY_KEY[lgProductKey]) lgProductKey = 'cereales:trigo';
-    var data = buildLocalGlobal(lgProductKey);
-    lgLastData = data;
-    var options = Core.PRODUCTS.filter(function (e) { return (e.catId + ':' + e.nameKey) !== 'energia:diesel'; }).map(function (e) {
-      var k = e.catId + ':' + e.nameKey;
-      return '<option value="' + k + '"' + (k === lgProductKey ? ' selected' : '') + '>' + esc(productName(e.nameKey)) + '</option>';
-    }).join('');
-    var rowsHtml = data.rows.map(function (r) {
-      var b = r.built;
-      return (
-        '<div class="di-lg-row">' +
-          '<span class="di-lg-label">' + r.flag + ' ' + esc(r.label) + '</span>' +
-          '<span class="di-lg-price"><span class="di-lg-price-value">' + esc(b.price) + '</span><span class="di-lg-price-unit">' + esc(b.unit) + '</span></span>' +
-          '<span class="di-lg-change" style="color:' + b.changeColor + ';">' + esc(b.changeLabel) + '</span>' +
-          '<svg class="di-lg-spark" width="64" height="22" viewBox="0 0 120 36"><path d="' + b.sparkPath + '" fill="none" stroke="' + b.sparkColor + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>' +
-        '</div>'
-      );
-    }).join('');
-    var p = P();
-    return (
-      '<div class="di-intel-section" id="di-intel-localglobal">' +
-        '<div class="di-intel-head"><h2>🌍 ' + esc(t.localGlobalTitle) + '</h2><p>' + esc(t.localGlobalIntro) + '</p></div>' +
-        '<div class="di-season-select-row"><label class="di-field-label">' + esc(t.localGlobalProductLabel) + '</label><select class="di-eu-country-select" id="di-lg-select">' + options + '</select></div>' +
-        '<div class="di-lg-map-wrap">' +
-          '<div class="di-lg-map-title">🗺️ ' + esc(t.localGlobalMapBadge) + '</div>' +
-          '<div class="di-lg-map" id="di-lg-map"><div class="di-lg-map-fallback" id="di-lg-map-fallback" style="display:none;"></div></div>' +
-          '<div class="di-lg-map-legend">' +
-            '<span class="di-lg-legend-item"><span class="di-lg-legend-dot" style="background:' + p.positive + ';"></span>' + esc(t.localGlobalMapUp) + '</span>' +
-            '<span class="di-lg-legend-item"><span class="di-lg-legend-dot" style="background:' + p.negative + ';"></span>' + esc(t.localGlobalMapDown) + '</span>' +
-            '<span class="di-lg-legend-item"><span class="di-lg-legend-dot" style="background:' + p.neutral + ';"></span>' + esc(t.localGlobalMapFlat) + '</span>' +
-            '<span class="di-lg-legend-item"><span class="di-lg-legend-dot di-lg-legend-dot-nodata"></span>' + esc(t.localGlobalMapNoData) + '</span>' +
-          '</div>' +
-        '</div>' +
-        '<div class="di-lg-grid">' + rowsHtml + '</div>' +
-        (data.noCountryData ? '<p class="di-lg-nodata">' + esc(t.localGlobalNoCountryData) + '</p>' : '') +
-        '<div class="di-intel-disclaimer">' + esc(t.localGlobalDisclaimer) + '</div>' +
-      '</div>'
-    );
+    return '<div class="di-intel-section di-intel-pending" id="di-intel-localglobal"><div class="di-intel-head"><h2>🌍 ' + esc(t.localGlobalTitle) + '</h2><p>Comparación local/global pendiente: requiere observaciones reales por mercado y país con fechas y bases comparables.</p><span class="di-intel-state pending">PENDIENTE</span></div></div>';
   }
+
 
   // ---------------------------------------------------------------------
   // Inicializa (o reinicializa) el mapa jsVectorMap dentro de #di-lg-map
