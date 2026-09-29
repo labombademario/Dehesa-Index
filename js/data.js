@@ -887,6 +887,7 @@
     usda_nass: { name: 'USDA NASS', url: SRC_URL.nass, authority: 'official' },
     usda_ams_dairy: { name: 'USDA AMS (Class III)', url: SRC_URL.amsDairy, authority: 'official' },
     european_commission: { name: 'Comisión Europea', url: SRC_URL.ecPrices, authority: 'official' },
+    euronext: { name: 'Euronext (MATIF)', url: SRC_URL.euronext, authority: 'official' },
     dtn_fertilizer: { name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer, authority: 'commercial' },
     world_bank: { name: 'Banco Mundial', url: SRC_URL.worldBank, authority: 'official' },
     eia: { name: 'EIA', url: SRC_URL.eia, authority: 'official' },
@@ -907,37 +908,37 @@
     'cereales-maiz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel.',
-      comparability: 'directional'
+      comparability: 'directional', observationDate: null, publicationDate: null
     },
     'cereales-maiz-eu': {
       sourceId: 'euronext', frequency: 'daily',
       methodology: 'Euronext/MATIF futures reference; not the same measurement basis as USDA NASS.',
-      comparability: 'not_comparable'
+      comparability: 'not_comparable', observationDate: null, publicationDate: null
     },
     'lacteos-leche-us': {
       sourceId: 'usda_ams_dairy', frequency: 'monthly',
       methodology: 'USDA AMS Class III milk reference; USD/cwt.',
-      comparability: 'directional'
+      comparability: 'directional', observationDate: null, publicationDate: null
     },
     'lacteos-leche-eu': {
       sourceId: 'european_commission', frequency: 'monthly',
       methodology: 'European Commission milk price reference; EUR/100 kg.',
-      comparability: 'directional'
+      comparability: 'directional', observationDate: null, publicationDate: null
     },
     'fertilizantes-urea-us': {
       sourceId: 'dtn_fertilizer', frequency: 'weekly',
       methodology: 'DTN fertilizer market index reference; USD/short ton.',
-      comparability: 'directional'
+      comparability: 'directional', observationDate: null, publicationDate: null
     },
     'fertilizantes-urea-eu': {
       sourceId: 'world_bank', frequency: 'monthly',
       methodology: 'World Bank international commodity reference; EUR/ton shown by the site after currency/unit presentation.',
-      comparability: 'not_comparable'
+      comparability: 'not_comparable', observationDate: null, publicationDate: null
     },
     'energia-diesel-us': {
       sourceId: 'eia', frequency: 'weekly',
       methodology: 'US national diesel fuel reference; USD/gallon.',
-      comparability: 'directional'
+      comparability: 'directional', observationDate: null, publicationDate: null
     },
     'energia-diesel-eu': {
       sourceId: 'eu_oil_bulletin', frequency: 'weekly',
