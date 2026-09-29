@@ -62,7 +62,9 @@ for (const observation of all) {
       value,
       currency: observation.currency,
       unit: observation.unit,
-      frequency: observation.frequency
+      frequency: observation.frequency,
+      status: observation.status || 'pending',
+      verifiedAt: observation.verifiedAt || null
     };
     if (!previous || String(row.snapshotDate) > String(previous.snapshotDate)) historyMap.set(id, row);
   }
@@ -96,7 +98,9 @@ const catalog = {
     sourceId: o.sourceId,
     observationDate: o.observationDate,
     unit: o.unit,
-    currency: o.currency
+    currency: o.currency,
+    status: o.status || 'pending',
+    verifiedAt: o.verifiedAt || null
   }))
 };
 
