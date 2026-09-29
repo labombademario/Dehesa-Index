@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T23:53:33.884Z",
+  "generatedAt": "2026-09-29T23:56:22.881Z",
   "observations": [
     {
       "id": "di_arroz_us",
@@ -92,7 +92,7 @@
       "unit": "index_2020_100",
       "frequency": "quarterly",
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional",
       "methodology": "apri_pi_outq; EU27_2020; nominal agricultural price index, 2020=100.",
       "history": [
@@ -230,7 +230,7 @@
       "unit": "index_2020_100",
       "frequency": "quarterly",
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional",
       "methodology": "apri_pi_inq; EU27_2020; nominal agricultural price index, 2020=100.",
       "history": [
@@ -368,7 +368,7 @@
       "unit": "index_2020_100",
       "frequency": "quarterly",
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional",
       "methodology": "apri_pi_inq; EU27_2020; nominal agricultural price index, 2020=100.",
       "history": [
@@ -506,7 +506,7 @@
       "unit": "index_2020_100",
       "frequency": "quarterly",
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional",
       "methodology": "apri_pi_outq; EU27_2020; nominal agricultural price index, 2020=100.",
       "history": [

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T23:53:33.893Z",
+  "generatedAt": "2026-09-29T23:56:22.890Z",
   "observations": [
     {
       "id": "di_eurostat_cereals_output_index:2020-09-01",
@@ -15,7 +15,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -31,7 +31,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -47,7 +47,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -63,7 +63,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -79,7 +79,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -95,7 +95,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -111,7 +111,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -127,7 +127,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -143,7 +143,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -159,7 +159,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -175,7 +175,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -191,7 +191,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -207,7 +207,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -223,7 +223,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -239,7 +239,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -255,7 +255,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -271,7 +271,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -287,7 +287,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -303,7 +303,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -319,7 +319,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -335,7 +335,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -351,7 +351,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -367,7 +367,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -383,7 +383,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -399,7 +399,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -415,7 +415,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -431,7 +431,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -447,7 +447,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -463,7 +463,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -479,7 +479,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -495,7 +495,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -511,7 +511,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -527,7 +527,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -543,7 +543,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -559,7 +559,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -575,7 +575,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -591,7 +591,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -607,7 +607,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -623,7 +623,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -639,7 +639,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -655,7 +655,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -671,7 +671,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -687,7 +687,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -703,7 +703,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -719,7 +719,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -735,7 +735,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -751,7 +751,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -767,7 +767,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -783,7 +783,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -799,7 +799,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -815,7 +815,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -831,7 +831,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -847,7 +847,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -863,7 +863,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -879,7 +879,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -895,7 +895,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -911,7 +911,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -927,7 +927,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -943,7 +943,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -959,7 +959,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -975,7 +975,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -991,7 +991,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1007,7 +1007,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1023,7 +1023,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1039,7 +1039,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1055,7 +1055,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1071,7 +1071,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1087,7 +1087,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1103,7 +1103,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1119,7 +1119,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1135,7 +1135,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1151,7 +1151,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1167,7 +1167,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1183,7 +1183,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1199,7 +1199,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1215,7 +1215,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1231,7 +1231,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1247,7 +1247,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1263,7 +1263,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1279,7 +1279,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1295,7 +1295,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1311,7 +1311,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1327,7 +1327,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1343,7 +1343,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1407,7 +1407,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1423,7 +1423,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1439,7 +1439,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1455,7 +1455,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1615,7 +1615,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1631,7 +1631,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1647,7 +1647,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1663,7 +1663,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1919,7 +1919,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1935,7 +1935,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1951,7 +1951,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
@@ -1967,7 +1967,7 @@
       "frequency": "quarterly",
       "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T20:59:01.787Z",
+      "verifiedAt": "2026-09-29T23:56:22.774Z",
       "comparability": "directional"
     },
     {
