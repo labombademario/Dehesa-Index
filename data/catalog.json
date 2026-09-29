@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-29T16:54:10.742Z",
+  "observationCount": 3,
+  "products": [
+    "arroz",
+    "maiz",
+    "trigo"
+  ],
+  "regions": [
+    "us"
+  ],
+  "sources": [
+    "usda_nass"
+  ],
+  "frequencies": [
+    "monthly"
+  ],
+  "latest": [
+    {
+      "product": "arroz",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-07",
+      "unit": "cwt",
+      "currency": "USD",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T16:54:10.660Z",
+      "comparability": "directional"
+    },
+    {
+      "product": "maiz",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-07",
+      "unit": "bushel",
+      "currency": "USD",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T16:54:10.345Z",
+      "comparability": "directional"
+    },
+    {
+      "product": "trigo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-07",
+      "unit": "bushel",
+      "currency": "USD",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T16:54:10.032Z",
+      "comparability": "directional"
+    }
+  ]
+}
