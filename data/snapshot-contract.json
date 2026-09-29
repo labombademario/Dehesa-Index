@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "requiredObservationFields": [
+    "product",
+    "region",
+    "sourceId",
+    "observationDate",
+    "value",
+    "currency",
+    "unit",
+    "frequency"
+  ],
+  "allowedRegions": ["us", "eu", "uk"],
+  "allowedFrequencies": ["daily", "weekly", "monthly", "quarterly", "annual", "source-dependent"]
+}
