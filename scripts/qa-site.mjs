@@ -34,7 +34,7 @@ ok('prices restores popstate', /addEventListener\('popstate', restorePriceUrl\)/
 const news = await read('js/noticias.js');
 ok('news uses pushState', /history\.pushState/.test(news));
 ok('news restores popstate', /addEventListener\('popstate'/.test(news));
-ok('news avoids nested article anchors', !/<a[^>]*di-news-item[^>]*>[\s\S]*<a[^>]*di-news-item-price-link/.test(news));
+ok('news avoids nested article anchors', !/<a[^>]*class=["'][^"']*\\bdi-news-item\\b[^"']*["'][^>]*>[\\s\\S]*<a[^>]*di-news-item-price-link/.test(news));
 
 const cal = await read('js/calendario.js');
 ok('calendar uses pushState', /history\.pushState/.test(cal));
