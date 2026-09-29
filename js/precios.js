@@ -385,19 +385,40 @@
     return '<div class="di-energy-regions"><div class="di-energy-regions-title">' + esc(title) + '</div>' + rows.join('') + '</div>';
   }
 
+  function trustObservationFor(entry, disp) {
+    if (!global.DehesaDataTrust || !D.DATA_TRUST) return null;
+    var region = disp && (disp.regionCode || disp.region);
+    var productId = entry.catId + '-' + entry.nameKey;
+    return D.DATA_TRUST[productId + '-' + region] || null;
+  }
+
+  function productDataState(observation) {
+    if (!observation) return { key: 'pending', label: { es: 'PENDIENTE', en: 'PENDING', fr: 'EN ATTENTE', it: 'IN ATTESA' } };
+    if (observation.comparability === 'not_comparable') return { key: 'not-comparable', label: { es: 'NO COMPARABLE', en: 'NOT COMPARABLE', fr: 'NON COMPARABLE', it: 'NON COMPARABILE' } };
+    if (observation.status === 'verified') return { key: 'real', label: { es: 'REAL', en: 'REAL', fr: 'RÉEL', it: 'REALE' } };
+    return { key: 'pending', label: { es: 'PENDIENTE', en: 'PENDING', fr: 'EN ATTENTE', it: 'IN ATTESA' } };
+  }
+
   function productCardHtml(entry, opts) {
     opts = opts || {};
     var t = ui();
     var key = entry.catId + ':' + entry.nameKey;
     var disp = resolveDisplay(entry, state.location, state.euCountry);
     var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
+    var observation = trustObservationFor(entry, disp);
+    var dataState = productDataState(observation);
+    var stateLabel = (dataState.label[lang()] || dataState.label.es);
     var fav = isFavorite(key);
     var expanded = !!state.expanded[key];
     var foot = entry.product.footnoteKey ? (D.FOOT[lang()] || D.FOOT.es)[entry.product.footnoteKey] : '';
+    var showValue = dataState.key === 'real';
+    var price = showValue ? built.price : '—';
+    var unit = showValue ? built.unit : '';
+    var change = showValue ? built.changeLabel : '';
     return (
-      '<div class="di-card di-product-card" data-key="' + key + '">' +
+      '<div class="di-card di-product-card di-product-state-' + dataState.key + '" data-key="' + key + '">' +
         '<div class="di-product-head">' +
-          '<h3 class="di-product-name">' + esc(productName(entry.nameKey)) + '</h3>' +
+          '<div><h3 class="di-product-name">' + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span></div>' +
           '<div class="di-product-icons">' +
             '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮</button>' +
             '<button type="button" class="di-icon-btn" data-action="history" data-key="' + key + '" title="' + esc(t.historyButtonTitle) + '">📈</button>' +
@@ -408,11 +429,11 @@
         quoteBadgeHtml(disp.quoteType) +
         (global.DehesaDataTrust ? global.DehesaDataTrust.render(entry, disp) : '') +
         '<div class="di-product-price-row">' +
-          '<span class="di-product-price">' + esc(built.price) + '</span>' +
-          '<span class="di-product-unit">' + esc(built.unit) + '</span>' +
-          '<span class="di-product-change" style="color:' + built.changeColor + ';">' + esc(built.changeLabel) + '</span>' +
+          '<span class="di-product-price">' + esc(price) + '</span>' +
+          '<span class="di-product-unit">' + esc(unit) + '</span>' +
+          '<span class="di-product-change" style="color:' + (showValue ? built.changeColor : 'var(--text-faint)') + ';">' + esc(change) + '</span>' +
         '</div>' +
-        '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' +
+        (showValue ? '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '<div class="di-product-no-value">Valor visible cuando la observación esté verificada.</div>') +
         (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(t.ukGapNote) + '</div>' : '') +
         (foot ? '<div class="di-product-footnote">' + esc(foot) + '</div>' : '') +
         (opts.compact ? '' :
