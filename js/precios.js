@@ -524,7 +524,38 @@
     );
   }
 
+  function renderMarketNewsIntel() {
+    var root = document.getElementById('pr-news-intel');
+    if (!root || !global.DehesaNewsIndex) return;
+    var stories = [];
+    productsInCat(state.activeTab).forEach(function(entry) {
+      (global.DehesaNewsIndex[entry.nameKey] || []).forEach(function(n) {
+        if (state.location === 'us' && n.region === 'eu') return;
+        if (state.location === 'eu' && n.region === 'us') return;
+        if (!stories.some(function(x){ return x.id === n.id; })) stories.push(n);
+      });
+    });
+    stories.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
+    var lg = lang();
+    var title = lg === 'es' ? 'Qué está moviendo este mercado' : lg === 'fr' ? 'Ce qui fait bouger ce marché' : lg === 'it' ? 'Cosa sta muovendo questo mercato' : 'What is moving this market';
+    var linkLabel = lg === 'es' ? 'Abrir News Intelligence →' : lg === 'fr' ? 'Ouvrir News Intelligence →' : lg === 'it' ? 'Apri News Intelligence →' : 'Open News Intelligence →';
+    if (!stories.length) {
+      root.innerHTML = '<div class="di-market-news-intel"><div><span class="di-section-kicker">NEWS INTELLIGENCE</span><h2>' + esc(title) + '</h2><p>No hay cobertura editorial enlazada a los mercados de esta sección para la región seleccionada.</p></div><a href="noticias.html">Noticias →</a></div>';
+      return;
+    }
+    var topicCounts = {};
+    stories.forEach(function(n){ topicCounts[n.topic] = (topicCounts[n.topic] || 0) + 1; });
+    var leadTopic = Object.keys(topicCounts).sort(function(a,b){ return topicCounts[b] - topicCounts[a]; })[0];
+    var topicNames = { clima:{es:'clima',en:'weather',fr:'climat',it:'clima'}, costes:{es:'costes',en:'costs',fr:'coûts',it:'costi'}, comercio:{es:'comercio',en:'trade',fr:'commerce',it:'commercio'}, politica:{es:'política agraria',en:'agricultural policy',fr:'politique agricole',it:'politica agricola'}, oferta:{es:'oferta y cosecha',en:'supply and harvest',fr:'offre et récolte',it:'offerta e raccolto'}, energia:{es:'energía',en:'energy',fr:'énergie',it:'energia'}, ayudas:{es:'ayudas',en:'support',fr:'aides',it:'aiuti'} };
+    var lead = topicNames[leadTopic] ? topicNames[leadTopic][lg] : leadTopic;
+    var context = lg === 'es' ? 'La cobertura disponible está concentrada en ' + lead + '.' : lg === 'fr' ? 'La couverture disponible est concentrée sur ' + lead + '.' : lg === 'it' ? 'La copertura disponibile è concentrata su ' + lead + '.' : 'Available coverage is concentrated on ' + lead + '.';
+    root.innerHTML = '<div class="di-market-news-intel"><div class="di-market-news-copy"><span class="di-section-kicker">NEWS INTELLIGENCE</span><h2>' + esc(title) + '</h2><p>' + esc(context) + '</p></div><a class="di-market-news-link" href="noticias.html">' + esc(linkLabel) + '</a><div class="di-market-news-stories">' +
+      stories.slice(0,3).map(function(n){ var h=n.headline[lg]||n.headline.es; return '<a href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer"><span>' + esc(n.source) + ' · ' + esc(n.date) + '</span><strong>' + esc(h) + '</strong></a>'; }).join('') +
+      '</div></div>';
+  }
+
   function renderCategory() {
+    renderMarketNewsIntel();
     var root = document.getElementById('pr-category');
     if (INFO_CATS[state.activeTab]) {
       root.innerHTML = renderInfoCategoryHtml(state.activeTab);
