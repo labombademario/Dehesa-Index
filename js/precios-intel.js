@@ -525,7 +525,9 @@
     var entry = entryByDashKey(dashKey);
     if (!entry) return { ready:false };
     var rows = realObservationsFor(entry);
-    if (rows.length < 3) return { ready:false, count: rows.length };
+    if (rows.length < 12) return { ready:false, count: rows.length };
+    var firstDate = new Date(rows[0].observationDate), lastDate = new Date(rows[rows.length - 1].observationDate);
+    if (isNaN(firstDate.getTime()) || isNaN(lastDate.getTime()) || (lastDate - firstDate) < 330 * 86400000) return { ready:false, count: rows.length };
     var monthSum = [0,0,0,0,0,0,0,0,0,0,0,0], monthCount = [0,0,0,0,0,0,0,0,0,0,0,0];
     var overallSum = 0;
     for (var i = 0; i < rows.length; i++) {
