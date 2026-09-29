@@ -231,7 +231,7 @@
     if (state.type !== 'all') p.push('type=' + encodeURIComponent(state.type));
     if (state.impact !== 'all') p.push('impact=' + encodeURIComponent(state.impact));
     var next = window.location.pathname + (p.length ? '?' + p.join('&') : '');
-    if (window.history && window.history.pushState) window.history.replaceState(null, '', next);
+    if (window.history && window.history.pushState) window.history.pushState({ dehesa: 'calendar' }, '', next);
   }
 
   window.addEventListener('popstate', function () {
