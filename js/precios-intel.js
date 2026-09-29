@@ -540,10 +540,11 @@
     var overallAvg = overallSum / n;
     var raw = [];
     for (var mm = 0; mm < 12; mm++) {
-      var avg = monthCount[mm] ? (monthSum[mm] / monthCount[mm]) : overallAvg;
-      raw.push(overallAvg ? ((avg - overallAvg) / overallAvg) * 100 : 0);
+      var avg = monthCount[mm] ? (monthSum[mm] / monthCount[mm]) : null;
+      raw.push(avg === null || !overallAvg ? null : ((avg - overallAvg) / overallAvg) * 100);
     }
-    var maxAbs = Math.max.apply(null, raw.map(function (v) { return Math.abs(v); })) || 0;
+    var observedRaw = raw.filter(function (v) { return v !== null && isFinite(v); });
+    var maxAbs = observedRaw.length ? Math.max.apply(null, observedRaw.map(function (v) { return Math.abs(v); })) : 0;
     var ticks = niceTicks(maxAbs, 3);
     var domain = ticks.domain || 1;
     var plotX = SEASON_MARGIN_LEFT, plotY = SEASON_MARGIN_TOP;
@@ -555,14 +556,17 @@
     var slotW = plotW / 12;
     var barW = Math.max(slotW - 8, 4);
     var monthNames = ui().seasonMonths;
-    var peakIdx = 0, troughIdx = 0;
-    for (var k2 = 1; k2 < 12; k2++) { if (raw[k2] > raw[peakIdx]) peakIdx = k2; if (raw[k2] < raw[troughIdx]) troughIdx = k2; }
+    var observedIdx = raw.map(function(v, idx){ return v === null ? null : idx; }).filter(function(v){ return v !== null; });
+    if (!observedIdx.length) return { ready:false, count:n };
+    var peakIdx = observedIdx[0], troughIdx = observedIdx[0];
+    for (var k2 = 1; k2 < observedIdx.length; k2++) { var oi = observedIdx[k2]; if (raw[oi] > raw[peakIdx]) peakIdx = oi; if (raw[oi] < raw[troughIdx]) troughIdx = oi; }
     var months = raw.map(function (pct, idx) {
       var slotX = plotX + idx * slotW;
       var barX = slotX + (slotW - barW) / 2;
       var y0 = originY, y1 = toPy(pct);
       var top = Math.min(y0, y1);
       var h = Math.max(Math.abs(y1 - y0), 1);
+      if (pct === null) return { month: monthNames[idx], x: barX, w: barW, y: originY, h: 0, color: 'transparent', labelX: slotX + slotW / 2, tooltip: monthNames[idx] + ': sin observación' };
       var style = tileStyle(pct, maxAbs);
       return { month: monthNames[idx], x: barX, w: barW, y: top, h: h, color: style.bg, labelX: slotX + slotW / 2, tooltip: monthNames[idx] + ': ' + D.fmtChange(pct) };
     });
