@@ -9,9 +9,9 @@
     es: {
       pageTitle: 'Panel de precios',
       pageSubtitle: 'Precios agrícolas diarios y semanales — EE. UU. y Europa',
-      badge: 'DATOS DE MUESTRA',
-      updated: 'Actualizado: 26 sep 2026 · 18:00 CET',
-      banner: 'Vista previa del diseño. Los precios de esta página son datos de muestra para ilustrar el producto — el siguiente paso es conectar fuentes en vivo (USDA, Comisión Europea, CME Group, Euronext, DTN Fertilizer Index, Mercolleida). Elige tu ubicación arriba para ver los precios de tu mercado; para comparar con el otro lado, usa la calculadora, el histórico o las alertas de cada producto.',
+      badge: 'ESTADO DE DATOS',
+      updated: 'Verificación de observaciones y procedencia activa',
+      banner: 'Cada producto muestra explícitamente si el dato está REAL, PENDIENTE o NO COMPARABLE. Las cifras no verificadas no se presentan como precios de mercado activos. La procedencia y metodología están disponibles en cada tarjeta.'
       searchPlaceholder: 'Buscar un producto (maíz, leche, urea…)',
       searchNoResults: 'No se encontró ningún producto con ese nombre.',
       searchClearTitle: 'Borrar búsqueda',
@@ -148,9 +148,9 @@
     en: {
       pageTitle: 'Price dashboard',
       pageSubtitle: 'Daily and weekly agricultural prices — U.S. and Europe',
-      badge: 'SAMPLE DATA',
-      updated: 'Updated: Sep 26, 2026 · 18:00 CET',
-      banner: 'Design preview. The prices on this page are sample data to illustrate the product — the next step is connecting live sources (USDA, European Commission, CME Group, Euronext, DTN Fertilizer Index, Mercolleida). Pick your location above to see prices for your market; to compare with the other side, use each product\'s calculator, history or alerts.',
+      badge: 'DATA STATUS',
+      updated: 'Observation and provenance verification active',
+      banner: 'Each product is explicitly marked REAL, PENDING or NOT COMPARABLE. Unverified figures are not presented as active market prices. Provenance and methodology are available on each card.'
       searchPlaceholder: 'Search a product (corn, milk, urea…)',
       searchNoResults: 'No products found with that name.',
       searchClearTitle: 'Clear search',
@@ -287,9 +287,9 @@
     fr: {
       pageTitle: 'Tableau des prix',
       pageSubtitle: 'Prix agricoles quotidiens et hebdomadaires — États-Unis et Europe',
-      badge: 'DONNÉES FICTIVES',
-      updated: 'Mis à jour : 26 sept. 2026 · 18h00 CET',
-      banner: "Aperçu de conception. Les prix de cette page sont des données fictives destinées à illustrer le produit — la prochaine étape consiste à connecter des sources en direct (USDA, Commission européenne, CME Group, Euronext, DTN Fertilizer Index, Mercolleida). Choisissez votre emplacement ci-dessus pour voir les prix de votre marché ; pour comparer avec l'autre côté, utilisez le calculateur, l'historique ou les alertes de chaque produit.",
+      badge: 'STATUT DES DONNÉES',
+      updated: 'Vérification des observations et de la provenance active',
+      banner: "Chaque produit indique explicitement RÉEL, EN ATTENTE ou NON COMPARABLE. Les chiffres non vérifiés ne sont pas présentés comme des prix de marché actifs. La provenance et la méthodologie sont disponibles sur chaque carte.",
       searchPlaceholder: 'Rechercher un produit (maïs, lait, urée…)',
       searchNoResults: 'Aucun produit trouvé avec ce nom.',
       searchClearTitle: 'Effacer la recherche',
@@ -426,9 +426,9 @@
     it: {
       pageTitle: 'Pannello dei prezzi',
       pageSubtitle: 'Prezzi agricoli giornalieri e settimanali — Stati Uniti ed Europa',
-      badge: 'DATI CAMPIONE',
-      updated: 'Aggiornato: 26 set 2026 · 18:00 CET',
-      banner: 'Anteprima del design. I prezzi in questa pagina sono dati campione a scopo illustrativo — il prossimo passo è collegare fonti in tempo reale (USDA, Commissione europea, CME Group, Euronext, DTN Fertilizer Index, Mercolleida). Scegli la tua ubicazione qui sopra per vedere i prezzi del tuo mercato; per confrontare con l\'altro lato, usa la calcolatrice, lo storico o gli avvisi di ciascun prodotto.',
+      badge: 'STATO DEI DATI',
+      updated: 'Verifica di osservazioni e provenienza attiva',
+      banner: 'Ogni prodotto indica esplicitamente REALE, IN ATTESA o NON COMPARABILE. I valori non verificati non vengono presentati come prezzi di mercato attivi. Provenienza e metodologia sono disponibili in ogni scheda.',
       searchPlaceholder: 'Cerca un prodotto (mais, latte, urea…)',
       searchNoResults: 'Nessun prodotto trovato con questo nome.',
       searchClearTitle: 'Cancella la ricerca',
