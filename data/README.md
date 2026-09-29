@@ -6,6 +6,9 @@ The public data layer is intentionally static and API-ready.
 
 - `/data/latest.json` — latest normalized observation per product/region.
 - `/data/catalog.json` — machine-readable catalog of products, regions, sources and frequencies.
+- `/data/history.json` — normalized historical observations reconstructed from dated snapshots.
+- `/data/history.csv` — CSV export generated from the normalized history.
+- `/data/api.json` — machine-readable description of the public contract.
 - `/data/snapshots/YYYY-MM-DD.json` — dated immutable snapshots when available.
 
 ## Contract
@@ -22,4 +25,4 @@ The current pilot is limited to automated USDA NASS U.S. cereal observations. Ot
 
 ## B2B direction
 
-These static JSON resources are the first version of the Dehesa Data API contract. Authentication, rate limits, CSV export, historical query parameters and alert feeds can be layered on top without changing the normalized observation schema.
+These static JSON resources are the first version of the Dehesa Data API contract. The browser Data Explorer supports product/region/date filtering and CSV export. Server-side authentication, rate limits, query parameters and alert feeds can be layered on top without changing the normalized observation schema.
