@@ -972,13 +972,13 @@
       publicationDate: meta.publicationDate || null,
       methodology: meta.methodology || null,
       comparability: meta.comparability || 'review',
-      status: 'sample',
-      verifiedAt: null,
+      status: meta.status || 'sample',
+      verifiedAt: meta.verifiedAt || null,
       validation: {
         value: true,
         source: !!source.url,
-        observationDate: false,
-        publicationDate: false,
+        observationDate: !!meta.observationDate,
+        publicationDate: !!meta.publicationDate,
         frequency: meta.frequency !== 'unknown',
         methodology: !!meta.methodology
       }
