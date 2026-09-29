@@ -22,7 +22,7 @@ function norm(s) {
 }
 function pickDimension(data, id, patterns) {
   const dim = data.dimension?.[id];
-  if (!dim) throw new Error(`Eurostat dimension missing: ${id}`);
+  if (!dim) throw new Error(`Eurostat dimension missing: ${id}; available=${Object.keys(data.dimension||{}).join(',')}`);
   const cats = categories(dim);
   const found = cats.find(c => patterns.some(p => p.test(norm(c.label))));
   if (!found) throw new Error(`Eurostat category not found in ${id}: ${patterns.map(String).join(', ')}`);
