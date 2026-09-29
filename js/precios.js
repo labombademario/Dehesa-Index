@@ -1130,11 +1130,7 @@
     overlayRoot.innerHTML = html;
     Array.prototype.forEach.call(overlayRoot.querySelectorAll('[data-wloc]'), function (btn) {
       btn.addEventListener('click', function () {
-        state.location = btn.getAttribute('data-wloc');
-        writeLS('dehesaIndexLocation', state.location);
-        showLocationWelcome = false;
-        overlayRoot.innerHTML = '';
-        renderAll();
+        setLocation(btn.getAttribute('data-wloc'));
       });
     });
   }
@@ -1175,16 +1171,32 @@
     renderAll();
   }
 
-  function wireGlobalControls() {
-    document.getElementById('pr-location-bar').addEventListener('click', function (e) {
-      var btn = e.target.closest ? e.target.closest('[data-loc]') : null;
-      if (!btn) return;
-      state.location = btn.getAttribute('data-loc');
-      writeLS('dehesaIndexLocation', state.location);
-      syncPriceUrl();
-      S.renderContextBar('precios');
-      renderAll();
+  function setLocation(nextLocation, opts) {
+    if (['us', 'eu', 'uk'].indexOf(nextLocation) === -1) return;
+    state.location = nextLocation;
+    showLocationWelcome = false;
+    writeLS('dehesaIndexLocation', nextLocation);
+    var overlayRoot = document.getElementById('di-overlay-root');
+    var locationWelcome = document.getElementById('di-loc-welcome');
+    if (locationWelcome && overlayRoot) overlayRoot.innerHTML = '';
+    syncPriceUrl({ replace: !!(opts && opts.replace) });
+    S.renderContextBar('precios');
+    renderAll();
+  }
+
+  function wireLocationButtons() {
+    var root = document.getElementById('pr-location-bar');
+    if (!root) return;
+    Array.prototype.forEach.call(root.querySelectorAll('[data-loc]'), function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        setLocation(btn.getAttribute('data-loc'));
+      });
     });
+  }
+
+  function wireGlobalControls() {
     var searchInput = document.getElementById('pr-search-input');
     searchInput.placeholder = ui().searchPlaceholder;
     searchInput.addEventListener('input', function (e) {
@@ -1234,6 +1246,7 @@
     renderTicker();
     renderSearchResults();
     renderLocationBar();
+    wireLocationButtons();
     wireEuCountrySelect();
     renderFavorites();
     if (global.DehesaPreciosIntel) global.DehesaPreciosIntel.render();
