@@ -651,6 +651,12 @@ html[data-theme="dark"] .di-badge-green { background: #1E3328; color: #7FCF9B; b
 
 
 /* Data health */
+.di-data-state-legend{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.di-data-state-chip{display:inline-flex;padding:3px 7px;border-radius:999px;font-size:9px;font-weight:800;letter-spacing:.05em}
+.di-data-state-chip.real{background:rgba(47,125,79,.12);color:var(--positive)}
+.di-data-state-chip.pending{background:rgba(138,132,113,.14);color:var(--neutral)}
+.di-data-state-chip.not-comparable{background:rgba(178,58,52,.10);color:var(--negative)}
+@media(max-width:600px){.di-data-state-legend{justify-content:flex-start;margin-top:8px}}
 .di-data-health{margin:14px 0 18px;padding:13px 15px;border:1px solid var(--di-border,rgba(120,110,90,.18));border-radius:10px;background:rgba(255,255,255,.025)}
 .di-data-health-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .di-data-health-kicker{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--di-muted,#777);margin-bottom:3px}
