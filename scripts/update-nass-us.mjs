@@ -201,6 +201,8 @@ async function main() {
     sourceId: 'usda_nass',
     observationDate: observationDate,
     publicationDate: null,
+    status: 'verified',
+    verifiedAt: verifiedAt,
     value: price,
     currency: 'USD',
     unit: key === 'arroz' ? 'cwt' : 'bushel',
