@@ -1303,6 +1303,7 @@
     esc: esc,
     getLocation: function () { return state.location; },
     getEuCountry: function () { return state.euCountry; },
+    getActiveTab: function () { return state.activeTab; },
     openHistory: function (key) { openHistory(key); }
   };
 })(window);
