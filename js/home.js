@@ -7,20 +7,9 @@
   // que la home no invente números distintos a los de Precios. Es una
   // instantánea que hay que actualizar a mano si cambian mucho los precios
   // de referencia -- no se recalcula sola.
-  var MOVERS_DATA = [
-    { key: 'trigo', symbol: '€', price: 221, changePct: 0.5, weekAgo: 215 },
-    { key: 'maiz', symbol: '$', price: 4.31, changePct: 0.9, weekAgo: 4.10 },
-    { key: 'leche', symbol: '$', price: 18.45, changePct: 0.5, weekAgo: 17.80 },
-    { key: 'urea', symbol: '$', price: 489, changePct: 0.6, weekAgo: 470 }
-  ];
-  function fmtMoverPrice(v) {
-    var decimals = Math.abs(v) >= 100 ? 1 : (Math.abs(v) >= 10 ? 2 : 3);
-    return v.toFixed(decimals);
-  }
-  function fmtMoverPct(v) {
-    return (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
-  }
-
+  var MOVERS_DATA = [];
+  var HOME_DATA = { loaded: false, rows: [], catalog: null };
+  var PRODUCT_NAMES = { trigo: 'Trigo', maiz: 'Maíz', arroz: 'Arroz', leche: 'Leche', urea: 'Urea', diesel: 'Diésel' };
   var STRINGS = {
     es: {
       h1: 'El pulso de la agricultura, en un solo panel',
@@ -28,8 +17,8 @@
       ctaPrimary: 'Ver el panel de precios →',
       ctaSecondary: 'Cómo funciona',
       moversTitle: 'MOVIMIENTOS AGRÍCOLAS DE HOY',
-      moversHint: 'Instantánea de muestra — mismos datos que el panel completo',
-      moversColProducto: 'Producto', moversColPrecio: 'Precio', moversCol1D: '1D', moversCol1W: '1S',
+      moversHint: 'Solo observaciones reales publicadas por la capa de datos',
+      moversColProducto: 'Producto', moversColPrecio: 'Último', moversCol1D: 'Estado', moversCol1W: 'Fecha',
       moversCta: 'Ver todos los precios →',
       moversLabels: {
         trigo: { name: 'Trigo', unit: 'tonelada', market: 'Europa · Euronext (MATIF)' },
@@ -65,7 +54,7 @@
         { n: '02', title: 'Compara en la misma base', desc: 'Cambia moneda (USD/EUR) y unidad (imperial/métrica) para comparar directamente.' },
         { n: '03', title: 'Sigue la tendencia', desc: 'Gráficos históricos y variación porcentual para ver hacia dónde se mueve el mercado.' }
       ],
-      disclaimer: 'El panel muestra actualmente datos de muestra con fines de diseño y producto — el siguiente paso es conectar fuentes en vivo (USDA NASS, Comisión Europea, CME Group, Euronext, DTN Fertilizer Index).',
+      disclaimer: 'Las cifras del panel principal se muestran únicamente cuando existe una observación real normalizada. Cuando una fuente está pendiente o no es comparable, se indica explícitamente.',
       ctaTitle: 'Explora el panel completo de precios',
       ctaSub: 'Cereales, lácteos, ganado, pienso y fertilizantes — actualizados y listos para comparar.',
       ctaButton: 'Ver precios →'
@@ -76,8 +65,8 @@
       ctaPrimary: 'View the price dashboard →',
       ctaSecondary: 'How it works',
       moversTitle: "TODAY'S AGRICULTURAL MOVERS",
-      moversHint: 'Sample snapshot — same data as the full dashboard',
-      moversColProducto: 'Commodity', moversColPrecio: 'Price', moversCol1D: '1D', moversCol1W: '1W',
+      moversHint: 'Only real observations published by the data layer',
+      moversColProducto: 'Commodity', moversColPrecio: 'Latest', moversCol1D: 'Status', moversCol1W: 'Date',
       moversCta: 'View all prices →',
       moversLabels: {
         trigo: { name: 'Wheat', unit: 'tonne', market: 'Europe · Euronext (MATIF)' },
@@ -113,7 +102,7 @@
         { n: '02', title: 'Compare on the same basis', desc: 'Switch currency (USD/EUR) and unit (imperial/metric) to compare directly.' },
         { n: '03', title: 'Follow the trend', desc: 'Historical charts and percentage change to see where the market is heading.' }
       ],
-      disclaimer: 'The dashboard currently shows sample data for design and product purposes — the next step is connecting live sources (USDA NASS, European Commission, CME Group, Euronext, DTN Fertilizer Index).',
+      disclaimer: 'Dashboard figures appear only when a real normalized observation exists. Pending or non-comparable sources are labeled explicitly.',
       ctaTitle: 'Explore the full price dashboard',
       ctaSub: 'Grains, dairy, livestock, feed and fertilizer — updated and ready to compare.',
       ctaButton: 'View prices →'
@@ -220,14 +209,22 @@
     var lang = window.DehesaShared.getLang();
     var esc = window.DehesaShared.esc;
     var t = STRINGS[lang] || STRINGS.es;
-
     document.title = 'Dehesa Index — ' + (lang === 'es' ? 'Inicio' : (lang === 'fr' ? 'Accueil' : (lang === 'it' ? 'Home' : 'Home')));
     document.getElementById('home-h1').textContent = t.h1;
     document.getElementById('home-sub').textContent = t.sub;
     document.getElementById('home-cta-primary').textContent = t.ctaPrimary;
     document.getElementById('home-cta-secondary').textContent = t.ctaSecondary;
 
-    document.getElementById('home-stats').innerHTML = t.stats.map(function (s) {
+    var realCount = HOME_DATA.rows.length;
+    var sourceCount = HOME_DATA.catalog ? (HOME_DATA.catalog.sources || []).length : 0;
+    var productCount = HOME_DATA.catalog ? (HOME_DATA.catalog.products || []).length : 0;
+    var stats = [
+      { value: String(productCount || '—'), label: lang === 'es' ? 'productos con datos' : 'products with data' },
+      { value: String(realCount || '—'), label: lang === 'es' ? 'observaciones reales' : 'real observations' },
+      { value: String(sourceCount || '—'), label: lang === 'es' ? 'fuentes conectadas' : 'connected sources' },
+      { value: HOME_DATA.loaded ? 'LIVE' : '…', label: lang === 'es' ? 'estado de datos' : 'data status' }
+    ];
+    document.getElementById('home-stats').innerHTML = stats.map(function(s) {
       return '<div><div class="di-stat-value">' + esc(s.value) + '</div><div class="di-stat-label">' + esc(s.label) + '</div></div>';
     }).join('');
 
@@ -235,50 +232,48 @@
     document.getElementById('home-movers-hint').textContent = t.moversHint;
     document.getElementById('home-movers-cta').textContent = t.moversCta;
 
-    var movers = MOVERS_DATA.map(function (m) {
-      var label = t.moversLabels[m.key];
-      var w1Pct = ((m.price - m.weekAgo) / m.weekAgo) * 100;
-      return {
-        name: label.name, market: label.market,
-        price: m.symbol + fmtMoverPrice(m.price) + '/' + label.unit,
-        d1: fmtMoverPct(m.changePct), d1Positive: m.changePct > 0, d1Negative: m.changePct < 0,
-        w1: fmtMoverPct(w1Pct), w1Positive: w1Pct > 0, w1Negative: w1Pct < 0
-      };
+    var movers = HOME_DATA.rows.slice(0, 4).map(function(o) {
+      var key = o.product;
+      var label = (t.moversLabels && t.moversLabels[key]) || { name: productLabel(key), unit: o.unit || '', market: (o.region || '').toUpperCase() };
+      return { name: label.name, market: label.market, price: fmtMoverPrice(o.value) + (o.currency ? ' ' + o.currency : '') + (o.unit ? '/' + o.unit : ''), status: 'real', date: o.observationDate || '—' };
     });
     var headRow = '<div class="di-movers-row head"><span>' + esc(t.moversColProducto) + '</span><span class="num">' + esc(t.moversColPrecio) + '</span><span class="num">' + esc(t.moversCol1D) + '</span><span class="num">' + esc(t.moversCol1W) + '</span></div>';
-    var bodyRows = movers.map(function (row, i) {
+    var bodyRows = movers.length ? movers.map(function(row, i) {
       var borderStyle = i === movers.length - 1 ? 'border-bottom:none;' : '';
-      function colorClass(pos, neg) { return pos ? 'style="color:var(--positive)"' : (neg ? 'style="color:var(--negative)"' : 'style="color:var(--text-faint)"'); }
       return '<div class="di-movers-row" style="' + borderStyle + '">' +
         '<div><div class="di-movers-name">' + esc(row.name) + '</div><div class="di-movers-market">' + esc(row.market) + '</div></div>' +
         '<div class="num">' + esc(row.price) + '</div>' +
-        '<div class="num" ' + colorClass(row.d1Positive, row.d1Negative) + '>' + esc(row.d1) + '</div>' +
-        '<div class="num" ' + colorClass(row.w1Positive, row.w1Negative) + '>' + esc(row.w1) + '</div>' +
-        '</div>';
-    }).join('');
+        '<div class="num"><span class="di-home-status real">REAL</span></div>' +
+        '<div class="num">' + esc(row.date) + '</div></div>';
+    }).join('') : '<div class="di-home-empty">Sin observaciones reales disponibles todavía.</div>';
     document.getElementById('home-movers-table').innerHTML = headRow + bodyRows;
 
     document.getElementById('home-cover-title').textContent = t.coverTitle;
     document.getElementById('home-cover-sub').textContent = t.coverSub;
-    document.getElementById('home-cat-grid').innerHTML = t.categories.map(function (c) {
-      return '<a class="di-cat-card" href="precios.html">' +
-        '<div class="di-cat-bar"></div>' +
-        '<div class="di-cat-label serif">' + esc(c.label) + '</div>' +
-        '<div class="di-cat-items">' + esc(c.items) + '</div>' +
-        '<div class="di-cat-desc">' + esc(c.desc) + '</div>' +
-        '</a>';
+    document.getElementById('home-cat-grid').innerHTML = t.categories.map(function(c) {
+      return '<a class="di-cat-card" href="precios.html"><div class="di-cat-bar"></div><div class="di-cat-label serif">' + esc(c.label) + '</div><div class="di-cat-items">' + esc(c.items) + '</div><div class="di-cat-desc">' + esc(c.desc) + '</div></a>';
     }).join('');
-
     document.getElementById('home-how-title').textContent = t.howTitle;
     document.getElementById('home-how-sub').textContent = t.howSub;
-    document.getElementById('home-steps-grid').innerHTML = t.steps.map(function (s) {
+    document.getElementById('home-steps-grid').innerHTML = t.steps.map(function(s) {
       return '<div class="di-step"><div class="di-step-n serif">' + esc(s.n) + '</div><div class="di-step-title">' + esc(s.title) + '</div><div class="di-step-desc">' + esc(s.desc) + '</div></div>';
     }).join('');
-
     document.getElementById('home-disclaimer').textContent = t.disclaimer;
     document.getElementById('home-cta-title').textContent = t.ctaTitle;
     document.getElementById('home-cta-sub').textContent = t.ctaSub;
     document.getElementById('home-cta-button').textContent = t.ctaButton;
+  }
+
+  function loadHomeData() {
+    Promise.all([
+      fetch('data/latest.json').then(function(r){ if(!r.ok) throw Error('latest'); return r.json(); }),
+      fetch('data/catalog.json').then(function(r){ if(!r.ok) throw Error('catalog'); return r.json(); })
+    ]).then(function(all) {
+      HOME_DATA.rows = (all[0].observations || []).sort(function(a,b){ return String(b.observationDate).localeCompare(String(a.observationDate)); });
+      HOME_DATA.catalog = all[1];
+      HOME_DATA.loaded = true;
+      render();
+    }).catch(function(){ HOME_DATA.loaded = true; render(); });
   }
 
   window.DehesaShared.init('home');
