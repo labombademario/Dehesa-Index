@@ -9,6 +9,7 @@ function lagged(a,b,lag){const mb=new Map(b.map(x=>[x.date,x.value]));const date
 function confidence(n,r){const coverage=n>=24?1:n>=12?.8:n>=8?.65:.45;const strength=Math.min(1,Math.abs(r));const confidence=Math.round(100*coverage*strength);return {level:confidence>=75?'high':confidence>=55?'medium':'low',score:confidence}}
 function windowName(n){return n>=24?'24+ periods':n>=12?'12–23 periods':n>=8?'8–11 periods':'6–7 periods'}
 const relationshipCatalog=[
+
  {id:'fertiliser_to_cereal',from:/^urea\|/,to:/^(trigo|maiz)\|/,label:'Fertilizante → cereal',hypothesis:'La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.',preferredLags:[0,1,2,3]},
  {id:'energy_to_cereal',from:/^eurostat_energy_input_index\|/,to:/^eurostat_cereals_output_index\|/,label:'Energía → cereal',hypothesis:'Los costes de energía y los precios de producción agrícola pueden moverse conjuntamente en determinados periodos; no implica causalidad.',preferredLags:[0,1,2]},
  {id:'fertiliser_to_energy',from:/^eurostat_fertiliser_input_index\|/,to:/^eurostat_energy_input_index\|/,label:'Fertilizante ↔ energía',hypothesis:'Fertilizantes y energía son insumos agrícolas relacionados; el co-movimiento puede reflejar shocks comunes y estructura de costes.',preferredLags:[0,1,2]},
