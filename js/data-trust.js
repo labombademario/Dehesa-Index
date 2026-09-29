@@ -118,17 +118,28 @@
       fr:{title:'Santé des données',obs:'observations documentées',pending:'dates en attente',status:'Statut',ready:'Schéma valide',review:'Révision requise',sample:'échantillons',verified:'vérifiées'},
       it:{title:'Salute dei dati',obs:'osservazioni documentate',pending:'date in attesa',status:'Stato',ready:'Schema valido',review:'Revisione richiesta',sample:'campioni',verified:'verificate'}
     };
-    var t=labels[lang]||labels.es,ids=Object.keys(D.DATA_TRUST||{}),verified=0,samples=0;
-    for(var i=0;i<ids.length;i++){if(D.DATA_TRUST[ids[i]].status==='verified')verified++;else samples++;}
+    var t=labels[lang]||labels.es,ids=Object.keys(D.DATA_TRUST||{}),verified=0,samples=0,notComparable=0;
+    for(var i=0;i<ids.length;i++){
+      var o=D.DATA_TRUST[ids[i]]||{};
+      if(o.status==='verified')verified++;else samples++;
+      if(o.comparability==='not_comparable')notComparable++;
+    }
     var status=h.errors&&h.errors.length?t.review:t.ready;
+    var extra={
+      es:{notComparable:'no comparables directos',schema:'esquema',pendingStatus:'pendientes de verificación'},
+      en:{notComparable:'not directly comparable',schema:'schema',pendingStatus:'pending verification'},
+      fr:{notComparable:'non directement comparables',schema:'schéma',pendingStatus:'en attente de vérification'},
+      it:{notComparable:'non direttamente comparabili',schema:'schema',pendingStatus:'in attesa di verifica'}
+    }[lang]||{notComparable:'not directly comparable',schema:'schema',pendingStatus:'pending verification'};
     return '<section class="di-data-health" aria-label="'+esc(t.title)+'">'+
-      '<div class="di-data-health-head"><div><span class="di-data-health-kicker">'+esc(t.title)+'</span><strong>'+esc(status)+'</strong></div><div class="di-data-state-legend"><span class="di-data-state-chip real">REAL</span><span class="di-data-state-chip pending">PENDIENTE</span><span class="di-data-state-chip not-comparable">NO COMPARABLE</span></div></div>'+
+      '<div class="di-data-health-head"><div><span class="di-data-health-kicker">'+esc(t.title)+'</span><strong>'+esc(status)+'</strong></div><div class="di-data-state-legend"><span class="di-data-state-chip real">REAL <b>'+esc(verified)+'</b></span><span class="di-data-state-chip pending">PENDIENTE <b>'+esc(samples)+'</b></span><span class="di-data-state-chip not-comparable">NO COMPARABLE <b>'+esc(notComparable)+'</b></span></div></div>'+
       '<div class="di-data-health-stats">'+
         '<div><b>'+esc(h.observations)+'</b><span>'+esc(t.obs)+'</span></div>'+
         '<div><b>'+esc(samples)+'</b><span>'+esc(t.sample)+'</span></div>'+
         '<div><b>'+esc(verified)+'</b><span>'+esc(t.verified)+'</span></div>'+
         '<div><b>'+esc(h.pendingDates)+'</b><span>'+esc(t.pending)+'</span></div>'+
       '</div>'+
+      '<div class="di-data-health-note">'+esc(notComparable)+' '+esc(extra.notComparable)+'. '+esc(h.pendingDates)+' '+esc(extra.pendingStatus)+'.</div>'+
     '</section>';
   }
 
