@@ -95,17 +95,24 @@ const catalog = {
   regions: [...new Set(all.map(o => o.region))].sort(),
   sources: [...new Set(all.map(o => o.sourceId))].sort(),
   frequencies: [...new Set(all.map(o => o.frequency))].sort(),
-  latest: latest.observations.map(o => ({
-    product: o.product,
-    region: o.region,
-    sourceId: o.sourceId,
-    observationDate: o.observationDate,
-    unit: o.unit,
-    currency: o.currency,
-    status: o.status || 'pending',
-    verifiedAt: o.verifiedAt || null,
-    comparability: o.comparability || 'review'
-  }))
+  latest: latest.observations.map(o => {
+    const points = historyRows.filter(h => h.product === o.product && h.region === o.region && h.sourceId === o.sourceId);
+    return {
+      product: o.product,
+      region: o.region,
+      sourceId: o.sourceId,
+      observationDate: o.observationDate,
+      unit: o.unit,
+      currency: o.currency,
+      frequency: o.frequency,
+      status: o.status || 'pending',
+      verifiedAt: o.verifiedAt || null,
+      comparability: o.comparability || 'review',
+      points: points.length,
+      coverageStart: points[0]?.observationDate || null,
+      coverageEnd: points[points.length - 1]?.observationDate || null
+    };
+  })
 };
 
 await mkdir(outDir, { recursive: true });
