@@ -608,7 +608,7 @@
       products: [
         { nameKey: 'urea', imperialUnitKey: 'ton_corta', imperialKgPerUnit: 907.185, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 489, changePct: 0.6, history: [470, 475, 480, 478, 482, 486, 489], currency: 'USD', kgPerUnit: 907.185 },
-          eu: { price: 455, changePct: 0.7, history: [440, 443, 447, 445, 449, 452, 455], currency: 'EUR', kgPerUnit: 1000 },
+          eu: { price: 390, changePct: -2.5, history: [461.1,394.4,409.3,392.5,415.4,472.0,725.6,856.9,770.5,453.1,400.0,390.0], currency: 'USD', kgPerUnit: 1000},
           uk: { price: 476.00, changePct: 0.5, history: [465, 468, 470, 472, 474, 475, 476], currency: 'GBP', kgPerUnit: 1000 },
           quoteTypes: { us: { type: 'indice', market: 'DTN Fertilizer Index' }, eu: { type: 'referencia', market: 'Banco Mundial' }, uk: { type: 'indice', market: 'AHDB (urea granulada 46% N, cotización media GB)' } } },
         { nameKey: 'dap', imperialUnitKey: 'ton_corta', imperialKgPerUnit: 907.185, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
@@ -903,7 +903,7 @@
     'cereales-trigo-eu': {
       sourceId: 'euronext', frequency: 'daily',
       methodology: 'Euronext/MATIF futures reference; not the same measurement basis as USDA NASS.',
-      comparability: 'not_comparable', observationDate: null, publicationDate: null
+      comparability: 'not_comparable', observationDate: '2026-08-01', publicationDate: "2026-09-02" , status: 'verified', verifiedAt: '2026-09-29T17:47:20Z'
     },
     'cereales-maiz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
@@ -937,7 +937,7 @@
     },
     'fertilizantes-urea-eu': {
       sourceId: 'world_bank', frequency: 'monthly',
-      methodology: 'World Bank international commodity reference; EUR/ton shown by the site after currency/unit presentation.',
+      methodology: 'World Bank Urea, E. Europe international commodity reference; USD/metric ton.',
       comparability: 'not_comparable', observationDate: null, publicationDate: null
     },
     'energia-diesel-us': {

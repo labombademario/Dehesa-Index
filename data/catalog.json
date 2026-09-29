@@ -1,17 +1,20 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T16:54:10.742Z",
-  "observationCount": 3,
+  "generatedAt": "2026-09-29T17:47:20.245Z",
+  "observationCount": 4,
   "products": [
     "arroz",
     "maiz",
-    "trigo"
+    "trigo",
+    "urea"
   ],
   "regions": [
+    "eu",
     "us"
   ],
   "sources": [
-    "usda_nass"
+    "usda_nass",
+    "world_bank"
   ],
   "frequencies": [
     "monthly"
@@ -49,6 +52,17 @@
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
       "comparability": "directional"
+    },
+    {
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2026-08-01",
+      "unit": "tonelada",
+      "currency": "USD",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
     }
   ]
 }

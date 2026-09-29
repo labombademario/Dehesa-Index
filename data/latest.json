@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T16:54:10.734Z",
+  "generatedAt": "2026-09-29T17:47:20.229Z",
   "observations": [
     {
       "id": "di_arroz_us",
@@ -160,6 +160,83 @@
           "year": 2026,
           "period": "JUL",
           "value": 6.06
+        }
+      ],
+      "snapshotDate": "2026-09-29"
+    },
+    {
+      "id": "di_fertilizantes_urea_eu",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2026-08-01",
+      "value": 390,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable",
+      "history": [
+        {
+          "period": 9,
+          "year": 2025,
+          "value": 461.1
+        },
+        {
+          "period": 10,
+          "year": 2025,
+          "value": 394.4
+        },
+        {
+          "period": 11,
+          "year": 2025,
+          "value": 409.3
+        },
+        {
+          "period": 12,
+          "year": 2025,
+          "value": 392.5
+        },
+        {
+          "period": 1,
+          "year": 2026,
+          "value": 415.4
+        },
+        {
+          "period": 2,
+          "year": 2026,
+          "value": 472
+        },
+        {
+          "period": 3,
+          "year": 2026,
+          "value": 725.6
+        },
+        {
+          "period": 4,
+          "year": 2026,
+          "value": 856.9
+        },
+        {
+          "period": 5,
+          "year": 2026,
+          "value": 770.5
+        },
+        {
+          "period": 6,
+          "year": 2026,
+          "value": 453.1
+        },
+        {
+          "period": 7,
+          "year": 2026,
+          "value": 400
+        },
+        {
+          "period": 8,
+          "year": 2026,
+          "value": 390
         }
       ],
       "snapshotDate": "2026-09-29"

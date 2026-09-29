@@ -1,7 +1,67 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T16:54:10.742Z",
+  "generatedAt": "2026-09-29T17:47:20.245Z",
   "observations": [
+    {
+      "id": "di_fertilizantes_urea_eu:2025-09-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-29",
+      "value": 461.1,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
+    },
+    {
+      "id": "di_fertilizantes_urea_eu:2025-10-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-29",
+      "value": 394.4,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
+    },
+    {
+      "id": "di_fertilizantes_urea_eu:2025-11-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-29",
+      "value": 409.3,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
+    },
+    {
+      "id": "di_fertilizantes_urea_eu:2025-12-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-29",
+      "value": 392.5,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
+    },
     {
       "id": "di_arroz_us:2026-01-01",
       "product": "arroz",
@@ -46,6 +106,21 @@
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_fertilizantes_urea_eu:2026-01-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-29",
+      "value": 415.4,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_arroz_us:2026-02-01",
@@ -93,6 +168,21 @@
       "comparability": "directional"
     },
     {
+      "id": "di_fertilizantes_urea_eu:2026-02-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-29",
+      "value": 472,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
+    },
+    {
       "id": "di_arroz_us:2026-03-01",
       "product": "arroz",
       "region": "us",
@@ -136,6 +226,21 @@
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_fertilizantes_urea_eu:2026-03-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-29",
+      "value": 725.6,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_arroz_us:2026-04-01",
@@ -183,6 +288,21 @@
       "comparability": "directional"
     },
     {
+      "id": "di_fertilizantes_urea_eu:2026-04-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-29",
+      "value": 856.9,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
+    },
+    {
       "id": "di_arroz_us:2026-05-01",
       "product": "arroz",
       "region": "us",
@@ -226,6 +346,21 @@
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_fertilizantes_urea_eu:2026-05-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-29",
+      "value": 770.5,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_arroz_us:2026-06-01",
@@ -273,6 +408,21 @@
       "comparability": "directional"
     },
     {
+      "id": "di_fertilizantes_urea_eu:2026-06-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-29",
+      "value": 453.1,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
+    },
+    {
       "id": "di_arroz_us:2026-07-01",
       "product": "arroz",
       "region": "us",
@@ -316,6 +466,36 @@
       "status": "verified",
       "verifiedAt": "2026-09-29T16:54:10.032Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_fertilizantes_urea_eu:2026-07-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-29",
+      "value": 400,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
+    },
+    {
+      "id": "di_fertilizantes_urea_eu:2026-08-01",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-29",
+      "value": 390,
+      "currency": "USD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-29T17:47:20Z",
+      "comparability": "not_comparable"
     }
   ]
 }
