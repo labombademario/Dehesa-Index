@@ -279,4 +279,5 @@
   window.DehesaShared.init('home');
   window.DehesaShared.onLangChange = render;
   render();
+  loadHomeData();
 })();
