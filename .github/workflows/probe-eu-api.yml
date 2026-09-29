@@ -1,0 +1,42 @@
+name: Probe EU Agri-food API (investigación, no producción)
+
+# Herramienta de un solo uso para averiguar el formato real de la API del
+# Agri-food Data Portal de la Comisión Europea antes de escribir el script
+# de automatización definitivo -- ver scripts/probe-eu-api.mjs para el
+# porqué. Se dispara a mano con la URL exacta a probar y el resultado
+# (estado HTTP + cuerpo) se comitea a scripts/.probe-output.txt para poder
+# leerlo con git pull. Este workflow (y el script) se borrarán una vez
+# tengamos claro el formato real de la API.
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL completa a consultar (GET)'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Consultar la URL indicada
+        run: node scripts/probe-eu-api.mjs "${{ github.event.inputs.url }}"
+
+      - name: Commit y push del resultado
+        run: |
+          git config user.name "dehesa-index-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add scripts/.probe-output.txt
+          git commit -m "Probe: ${{ github.event.inputs.url }}" || echo "Sin cambios"
+          git push
