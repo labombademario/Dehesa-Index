@@ -206,7 +206,172 @@
       "impactChannel": "input_cost"
     }
   ],
-  "fertilizantes": [
+  "arroz": [
+    {
+      "id": "seed-n47",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia",
+        "diesel",
+        "costes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
+        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
+        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
+        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
+      },
+      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
+      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
+      "relevance": 96,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
+    },
+    {
+      "id": "seed-n50",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "costes",
+      "topics": [
+        "costes",
+        "oferta"
+      ],
+      "products": [
+        "fertilizantes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Lukashenko proposes US join Belarus-Gazprom fertilizer project, Belta reports",
+        "es": "Belarús plantea un proyecto de fertilizantes nitrogenados con Gazprom y ofrece cooperación a EE. UU.",
+        "fr": "La Biélorussie propose un projet d’engrais azotés avec Gazprom et offre une coopération aux États-Unis",
+        "it": "La Bielorussia propone un progetto di fertilizzanti azotati con Gazprom e offre cooperazione agli USA"
+      },
+      "description": "Belarus announced a proposed nitrogen fertilizer plant with Gazprom and suggested U.S. cooperation, Reuters reported citing Belta.",
+      "url": "https://www.reuters.com/world/europe/lukashenko-proposes-us-join-belarus-gazprom-fertilizer-project-belta-reports-2026-09-29/",
+      "relevance": 88,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "fertilizantes",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
+    }
+  ],
+  "cebada": [
+    {
+      "id": "seed-n47",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia",
+        "diesel",
+        "costes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
+        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
+        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
+        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
+      },
+      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
+      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
+      "relevance": 96,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
+    },
     {
       "id": "seed-n50",
       "date": "2026-09-29",
@@ -267,6 +432,116 @@
   ],
   "maiz": [
     {
+      "id": "seed-n47",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia",
+        "diesel",
+        "costes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
+        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
+        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
+        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
+      },
+      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
+      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
+      "relevance": 96,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
+    },
+    {
+      "id": "seed-n50",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "costes",
+      "topics": [
+        "costes",
+        "oferta"
+      ],
+      "products": [
+        "fertilizantes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Lukashenko proposes US join Belarus-Gazprom fertilizer project, Belta reports",
+        "es": "Belarús plantea un proyecto de fertilizantes nitrogenados con Gazprom y ofrece cooperación a EE. UU.",
+        "fr": "La Biélorussie propose un projet d’engrais azotés avec Gazprom et offre une coopération aux États-Unis",
+        "it": "La Bielorussia propone un progetto di fertilizzanti azotati con Gazprom e offre cooperazione agli USA"
+      },
+      "description": "Belarus announced a proposed nitrogen fertilizer plant with Gazprom and suggested U.S. cooperation, Reuters reported citing Belta.",
+      "url": "https://www.reuters.com/world/europe/lukashenko-proposes-us-join-belarus-gazprom-fertilizer-project-belta-reports-2026-09-29/",
+      "relevance": 88,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "fertilizantes",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
+    },
+    {
       "id": "seed-n52",
       "date": "2026-09-28",
       "region": "global",
@@ -321,6 +596,116 @@
     }
   ],
   "trigo": [
+    {
+      "id": "seed-n47",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia",
+        "diesel",
+        "costes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Oil prices settle down 2.5% on signs Middle East exports recovering",
+        "es": "El petróleo cae un 2,5% ante señales de recuperación de las exportaciones de Oriente Medio",
+        "fr": "Le pétrole recule de 2,5 % sur des signes de reprise des exportations du Moyen-Orient",
+        "it": "Il petrolio scende del 2,5% su segnali di ripresa delle esportazioni mediorientali"
+      },
+      "description": "Brent settled at $102.59 per barrel while WTI settled at $89.38 as Middle East export flows showed signs of recovery.",
+      "url": "https://www.reuters.com/business/energy/oil-prices-rise-second-session-continued-middle-east-supply-concern-2026-09-29/",
+      "relevance": 96,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
+    },
+    {
+      "id": "seed-n50",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "costes",
+      "topics": [
+        "costes",
+        "oferta"
+      ],
+      "products": [
+        "fertilizantes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Lukashenko proposes US join Belarus-Gazprom fertilizer project, Belta reports",
+        "es": "Belarús plantea un proyecto de fertilizantes nitrogenados con Gazprom y ofrece cooperación a EE. UU.",
+        "fr": "La Biélorussie propose un projet d’engrais azotés avec Gazprom et offre une coopération aux États-Unis",
+        "it": "La Bielorussia propone un progetto di fertilizzanti azotati con Gazprom e offre cooperazione agli USA"
+      },
+      "description": "Belarus announced a proposed nitrogen fertilizer plant with Gazprom and suggested U.S. cooperation, Reuters reported citing Belta.",
+      "url": "https://www.reuters.com/world/europe/lukashenko-proposes-us-join-belarus-gazprom-fertilizer-project-belta-reports-2026-09-29/",
+      "relevance": 88,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "fertilizantes",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
+    },
     {
       "id": "seed-n52",
       "date": "2026-09-28",
@@ -438,6 +823,65 @@
         }
       ],
       "impactChannel": "trade"
+    }
+  ],
+  "fertilizantes": [
+    {
+      "id": "seed-n50",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "costes",
+      "topics": [
+        "costes",
+        "oferta"
+      ],
+      "products": [
+        "fertilizantes"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "Lukashenko proposes US join Belarus-Gazprom fertilizer project, Belta reports",
+        "es": "Belarús plantea un proyecto de fertilizantes nitrogenados con Gazprom y ofrece cooperación a EE. UU.",
+        "fr": "La Biélorussie propose un projet d’engrais azotés avec Gazprom et offre une coopération aux États-Unis",
+        "it": "La Bielorussia propone un progetto di fertilizzanti azotati con Gazprom e offre cooperazione agli USA"
+      },
+      "description": "Belarus announced a proposed nitrogen fertilizer plant with Gazprom and suggested U.S. cooperation, Reuters reported citing Belta.",
+      "url": "https://www.reuters.com/world/europe/lukashenko-proposes-us-join-belarus-gazprom-fertilizer-project-belta-reports-2026-09-29/",
+      "relevance": 88,
+      "auto": true,
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "fertilizer-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "fertilizantes",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ],
+      "impactChannel": "input_cost"
     }
   ],
   "soja": [
