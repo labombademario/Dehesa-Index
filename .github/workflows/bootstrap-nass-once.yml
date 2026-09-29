@@ -1,0 +1,42 @@
+name: Bootstrap Dehesa NASS data once
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    if: github.event.head_commit.message == 'ci: bootstrap NASS data'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch and validate NASS observations
+        env:
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+        run: |
+          set -e
+          for product in trigo maiz arroz; do
+            node scripts/update-nass-us.mjs "$product"
+          done
+          node scripts/validate-snapshots.mjs
+          node scripts/build-data-index.mjs
+          node scripts/build-csv.mjs
+
+      - name: Commit data and remove bootstrap workflow
+        run: |
+          set -e
+          git config user.name "dehesa-index-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git rm .github/workflows/bootstrap-nass-once.yml
+          git add js/data.js data/snapshots data/latest.json data/catalog.json data/history.json data/history.csv
+          git commit -m "data: bootstrap verified NASS observations"
+          git push
