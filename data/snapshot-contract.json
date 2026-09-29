@@ -8,8 +8,10 @@
     "value",
     "currency",
     "unit",
-    "frequency"
+    "frequency",
+    "status"
   ],
   "allowedRegions": ["us", "eu", "uk"],
-  "allowedFrequencies": ["daily", "weekly", "monthly", "quarterly", "annual", "source-dependent"]
+  "allowedFrequencies": ["daily", "weekly", "monthly", "quarterly", "annual", "source-dependent"],
+  "allowedStatuses": ["pending", "verified"]
 }
