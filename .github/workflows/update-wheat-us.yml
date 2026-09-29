@@ -3,7 +3,7 @@ name: Actualizar precio de trigo (EE. UU., USDA NASS)
 # Piloto de automatización de datos: solo cubre cereales:trigo, región `us`,
 # vía la API gratuita de USDA NASS Quick Stats. El resto de fuentes del
 # sitio (Euronext/MATIF, AHDB, CME, Comisión Europea...) sigue
-# actualizándose a mano -- ver js/scripts/update-wheat-us.mjs para el
+# actualizándose a mano -- ver scripts/update-nass-us.mjs para el
 # porqué y el alcance exacto.
 #
 # Requiere un secreto de repositorio llamado NASS_API_KEY (Settings ->
@@ -36,7 +36,7 @@ jobs:
         id: update
         env:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
-        run: node scripts/update-wheat-us.mjs
+        run: node scripts/update-nass-us.mjs trigo
 
       - name: Comprobar si hay cambios
         id: diff
