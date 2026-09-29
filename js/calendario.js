@@ -113,7 +113,7 @@
       badge: 'FECHAS OFICIALES', updatedLabel: 'Actualizado',
       disclaimer: 'Las fechas de EE. UU. (USDA) siguen el calendario oficial que publica cada organismo — exacto para WASDE y Grain Stocks, y calculado a partir de su patrón habitual (lunes / jueves) para los semanales. Los informes de la Comisión Europea se publican con periodicidad conocida (semanal o trimestral) pero sin un día fijo anunciado con antelación, así que se muestran sin fecha exacta. A diferencia de un calendario económico financiero, aquí no hay columna de "consenso de mercado": ningún organismo publica gratis una previsión de consenso para estos informes agrícolas, así que no se inventa una.',
       filterAll: 'Todos', filterUs: 'EE. UU.', filterEu: 'Europa',
-      freqWeekly: 'Semanal', freqMonthly: 'Mensual', freqQuarterly: 'Trimestral',
+      freqWeekly: 'Semanal', freqMonthly: 'Mensual', freqQuarterly: 'Trimestral', freqAnnual: 'Anual', filterType: 'Tipo', filterCrop: 'Cultivo', filterImpact: 'Impacto', allCrops: 'Todos los cultivos', allTypes: 'Todos los eventos', allImpacts: 'Todos los impactos', typePublication: 'Publicación', typeHarvest: 'Cosecha / producción', impactLabels: {oferta:'Oferta',stocks:'Stocks',comercio:'Comercio', 'oferta-demanda':'Oferta / demanda',precios:'Precios',lacteos:'Lácteos',cosecha:'Cosecha'}, harvestStatus:'Ventana de cosecha / producción', relevance:'Por qué importa:'
       marketUs: '🇺🇸 EE. UU.', marketEu: '🇪🇺 Europa', todayTag: 'Hoy',
       lastLabelText: 'Última publicación:',
       noExactDateNote: 'Periodicidad conocida; fecha exacta de la próxima publicación aún no anunciada.',
@@ -135,7 +135,7 @@
       badge: 'OFFICIAL DATES', updatedLabel: 'Updated',
       disclaimer: "U.S. (USDA) dates follow each agency's own published schedule — exact for WASDE and Grain Stocks, and computed from their usual weekday pattern (Monday / Thursday) for the weekly ones. European Commission reports have a known cadence (weekly or quarterly) but no fixed day announced in advance, so they're shown without an exact date. Unlike a financial economic calendar, there's no \"market consensus\" column here: no agency publishes a free consensus forecast for these agricultural reports, so we don't invent one.",
       filterAll: 'All', filterUs: 'U.S.', filterEu: 'Europe',
-      freqWeekly: 'Weekly', freqMonthly: 'Monthly', freqQuarterly: 'Quarterly',
+      freqWeekly: 'Weekly', freqMonthly: 'Monthly', freqQuarterly: 'Quarterly', freqAnnual: 'Annual', filterType: 'Type', filterCrop: 'Crop', filterImpact: 'Impact', allCrops: 'All crops', allTypes: 'All events', allImpacts: 'All impacts', typePublication: 'Publication', typeHarvest: 'Harvest / production', impactLabels: {oferta:'Supply',stocks:'Stocks',comercio:'Trade','oferta-demanda':'Supply / demand',precios:'Prices',lacteos:'Dairy',cosecha:'Harvest'}, harvestStatus:'Harvest / production window', relevance:'Why it matters:'
       marketUs: '🇺🇸 U.S.', marketEu: '🇪🇺 Europe', todayTag: 'Today',
       lastLabelText: 'Last release:',
       noExactDateNote: 'Known cadence; exact date of the next release not yet announced.',
@@ -157,7 +157,7 @@
       badge: 'DATES OFFICIELLES', updatedLabel: 'Mis à jour',
       disclaimer: "Les dates américaines (USDA) suivent le calendrier officiel publié par chaque agence — exact pour le WASDE et le Grain Stocks, et calculé à partir de leur jour habituel (lundi / jeudi) pour les rapports hebdomadaires. Les rapports de la Commission européenne ont une périodicité connue (hebdomadaire ou trimestrielle) mais sans jour fixe annoncé à l'avance, ils sont donc affichés sans date exacte. Contrairement à un calendrier économique financier, il n'y a pas ici de colonne « consensus de marché » : aucune agence ne publie gratuitement une prévision de consensus pour ces rapports agricoles, nous n'en inventons donc pas.",
       filterAll: 'Tous', filterUs: 'É.-U.', filterEu: 'Europe',
-      freqWeekly: 'Hebdomadaire', freqMonthly: 'Mensuel', freqQuarterly: 'Trimestriel',
+      freqWeekly: 'Hebdomadaire', freqMonthly: 'Mensuel', freqQuarterly: 'Trimestriel', freqAnnual: 'Annuel', filterType: 'Type', filterCrop: 'Culture', filterImpact: 'Impact', allCrops: 'Toutes les cultures', allTypes: 'Tous les événements', allImpacts: 'Tous les impacts', typePublication: 'Publication', typeHarvest: 'Récolte / production', impactLabels: {oferta:'Offre',stocks:'Stocks',comercio:'Commerce','oferta-demanda':'Offre / demande',precios:'Prix',lacteos:'Lait',cosecha:'Récolte'}, harvestStatus:'Fenêtre de récolte / production', relevance:'Pourquoi c’est important :'
       marketUs: '🇺🇸 É.-U.', marketEu: '🇪🇺 Europe', todayTag: "Aujourd'hui",
       lastLabelText: 'Dernière publication :',
       noExactDateNote: "Périodicité connue ; date exacte de la prochaine publication pas encore annoncée.",
@@ -179,7 +179,7 @@
       badge: 'DATE UFFICIALI', updatedLabel: 'Aggiornato',
       disclaimer: "Le date statunitensi (USDA) seguono il calendario ufficiale pubblicato da ciascuna agenzia — esatto per il WASDE e il Grain Stocks, e calcolato in base al giorno abituale (lunedì / giovedì) per quelli settimanali. I rapporti della Commissione europea hanno una periodicità nota (settimanale o trimestrale) ma senza un giorno fisso annunciato in anticipo, quindi vengono mostrati senza data esatta. A differenza di un calendario economico finanziario, qui non c'è una colonna \"consenso di mercato\": nessuna agenzia pubblica gratuitamente una previsione di consenso per questi rapporti agricoli, quindi non ne inventiamo una.",
       filterAll: 'Tutti', filterUs: 'USA', filterEu: 'Europa',
-      freqWeekly: 'Settimanale', freqMonthly: 'Mensile', freqQuarterly: 'Trimestrale',
+      freqWeekly: 'Settimanale', freqMonthly: 'Mensile', freqQuarterly: 'Trimestrale', freqAnnual: 'Annuale', filterType: 'Tipo', filterCrop: 'Coltura', filterImpact: 'Impatto', allCrops: 'Tutte le colture', allTypes: 'Tutti gli eventi', allImpacts: 'Tutti gli impatti', typePublication: 'Pubblicazione', typeHarvest: 'Raccolta / produzione', impactLabels: {oferta:'Offerta',stocks:'Scorte',comercio:'Commercio','oferta-demanda':'Offerta / domanda',precios:'Prezzi',lacteos:'Lattiero-caseario',cosecha:'Raccolta'}, harvestStatus:'Finestra di raccolta / produzione', relevance:'Perché conta:'
       marketUs: '🇺🇸 USA', marketEu: '🇪🇺 Europa', todayTag: 'Oggi',
       lastLabelText: 'Ultima pubblicazione:',
       noExactDateNote: 'Periodicità nota; data esatta della prossima pubblicazione non ancora annunciata.',
@@ -197,13 +197,13 @@
     }
   };
 
-  var state = { filter: 'all' };
+  var state = { filter: 'all', crop: 'all', type: 'all', impact: 'all' };
 
   function render() {
     var lang = window.DehesaShared.getLang();
     var esc = window.DehesaShared.esc;
     var t = STRINGS[lang] || STRINGS.es;
-    var FREQ_LABEL = { weekly: t.freqWeekly, monthly: t.freqMonthly, quarterly: t.freqQuarterly };
+    var FREQ_LABEL = { weekly: t.freqWeekly, monthly: t.freqMonthly, quarterly: t.freqQuarterly, annual: t.freqAnnual };
 
     document.title = t.title;
     document.getElementById('cal-badge').textContent = t.badge;
@@ -217,19 +217,20 @@
       { id: 'us', label: t.filterUs },
       { id: 'eu', label: t.filterEu }
     ];
-    document.getElementById('cal-filters').innerHTML = FILTER_OPTIONS.map(function (opt) {
-      var active = state.filter === opt.id ? ' active' : '';
-      return '<button type="button" class="di-location-btn di-news-filter-btn' + active + '" data-filter="' + opt.id + '">' + esc(opt.label) + '</button>';
-    }).join('');
-    Array.prototype.forEach.call(document.querySelectorAll('#cal-filters button'), function (btn) {
-      btn.addEventListener('click', function () {
-        state.filter = btn.getAttribute('data-filter');
-        render();
-      });
-    });
+    var cropLabels = {trigo:'Trigo',maiz:'Maíz',arroz:'Arroz',cebada:'Cebada',soja:'Soja',leche:'Leche',fertilizantes:'Fertilizantes',diesel:'Diésel'};
+    var filtersHtml = '<div class="di-cal-filter-row"><div class="di-cal-filter-label">' + esc(t.filterType) + '</div><select data-cal-filter="type"><option value="all">' + esc(t.allTypes) + '</option><option value="publication">' + esc(t.typePublication) + '</option><option value="harvest">' + esc(t.typeHarvest) + '</option></select>' +
+      '<div class="di-cal-filter-label">' + esc(t.filterCrop) + '</div><select data-cal-filter="crop"><option value="all">' + esc(t.allCrops) + '</option>' + Object.keys(cropLabels).map(function(k){return '<option value="'+k+'">'+esc(cropLabels[k])+'</option>';}).join('') + '</select>' +
+      '<div class="di-cal-filter-label">' + esc(t.filterImpact) + '</div><select data-cal-filter="impact"><option value="all">' + esc(t.allImpacts) + '</option>' + Object.keys(t.impactLabels).map(function(k){return '<option value="'+k+'">'+esc(t.impactLabels[k])+'</option>';}).join('') + '</select></div>';
+    document.getElementById('cal-filters').innerHTML =
+      FILTER_OPTIONS.map(function (opt) { var active = state.filter === opt.id ? ' active' : ''; return '<button type="button" class="di-location-btn di-news-filter-btn' + active + '" data-filter="' + opt.id + '">' + esc(opt.label) + '</button>'; }).join('') + filtersHtml;
+    Array.prototype.forEach.call(document.querySelectorAll('#cal-filters button'), function (btn) { btn.addEventListener('click', function () { state.filter = btn.getAttribute('data-filter'); render(); }); });
+    Array.prototype.forEach.call(document.querySelectorAll('#cal-filters select'), function (sel) { sel.value = state[sel.getAttribute('data-cal-filter')]; sel.addEventListener('change', function(){ state[sel.getAttribute('data-cal-filter')] = sel.value; render(); }); });
 
     var filteredEvents = CALENDAR_EVENTS.filter(function (ev) {
-      return state.filter === 'all' || ev.market === state.filter;
+      return (state.filter === 'all' || ev.market === state.filter) &&
+        (state.type === 'all' || ev.type === state.type) &&
+        (state.crop === 'all' || (ev.crops || []).indexOf(state.crop) >= 0) &&
+        (state.impact === 'all' || ev.impact === state.impact);
     });
     var sortedEvents = filteredEvents.slice().sort(function (a, b) {
       if (a.hasDate && b.hasDate) return a.nextDate < b.nextDate ? -1 : (a.nextDate > b.nextDate ? 1 : 0);
