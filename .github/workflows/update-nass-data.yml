@@ -1,0 +1,41 @@
+name: Dehesa Data — NASS snapshot
+
+on:
+  schedule:
+    - cron: '0 12 3 * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-nass:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        product: [trigo, maiz, arroz]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Update NASS observation and snapshot
+        env:
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+        run: node scripts/update-nass-us.mjs ${{ matrix.product }}
+
+      - name: Commit updated data
+        run: |
+          if git diff --quiet -- js/data.js data/snapshots; then
+            echo "No data changes."
+            exit 0
+          fi
+          git config user.name "dehesa-index-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add js/data.js data/snapshots
+          git commit -m "data: update NASS observations and snapshots"
+          git push
