@@ -624,7 +624,7 @@
     var linkLabel = lg === 'es' ? 'News Intelligence →' :
       lg === 'fr' ? 'News Intelligence →' :
       lg === 'it' ? 'News Intelligence →' : 'News Intelligence →';
-    var regionLabel = region === 'us' ? 'EE. UU.' : region === 'eu' ? 'Europa' : 'Global';
+    var regionLabel = region === 'us' ? 'EE. UU.' : region === 'eu' ? 'Europa' : region === 'uk' ? 'UK' : 'Global';
 
     if (!selected.length) {
       root.innerHTML =
