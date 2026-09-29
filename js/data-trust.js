@@ -58,7 +58,7 @@
   function render(entry,disp){
     if(!entry||!disp||!disp.quoteType)return'';
     var lang=S.getLang?S.getLang():'es',t=I18N[lang]||I18N.es;
-    var region=disp.region||disp.quoteType.region||null;
+    var region=disp.regionCode||disp.region||disp.quoteType.region||null;
     var productId=entry.catId+'-'+entry.product.nameKey;
     var key=productId+'-'+(region||'');
     var observation=D.DATA_TRUST&&D.DATA_TRUST[key];
