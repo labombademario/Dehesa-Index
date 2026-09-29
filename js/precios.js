@@ -243,6 +243,7 @@
     state.searchQuery = '';
     var input = document.getElementById('pr-search-input');
     if (input) input.value = '';
+    syncPriceUrl({ product: entry.nameKey });
     renderAll();
     setTimeout(function () {
       var card = document.querySelector('[data-key="' + key + '"]');
@@ -1045,12 +1046,45 @@
   // ---------------------------------------------------------------------
   // Orquestación
   // ---------------------------------------------------------------------
+  function syncPriceUrl(opts) {
+    opts = opts || {};
+    var p = [];
+    if (state.activeTab) p.push('tab=' + encodeURIComponent(state.activeTab));
+    if (state.location) p.push('region=' + encodeURIComponent(state.location));
+    if (opts.product) p.push('product=' + encodeURIComponent(opts.product));
+    var next = window.location.pathname + (p.length ? '?' + p.join('&') : '');
+    if (!window.history) return;
+    if (opts.replace) window.history.replaceState({ dehesa:'prices' }, '', next);
+    else window.history.pushState({ dehesa:'prices' }, '', next);
+  }
+
+  function restorePriceUrl() {
+    var qs = new URLSearchParams(window.location.search);
+    var validTabs = ['cereales','lacteos','fertilizantes','energia','seguro','vino','madera'];
+    var tab = qs.get('tab');
+    var productKey = queryProductKey();
+    var region = qs.get('region');
+    if (validTabs.indexOf(tab) !== -1) state.activeTab = tab;
+    if (productKey && PRODUCT_BY_KEY[productKey]) {
+      state.activeTab = PRODUCT_BY_KEY[productKey].catId;
+      state.deepLinkProduct = productKey;
+    } else {
+      state.deepLinkProduct = null;
+    }
+    if (region === 'us' || region === 'eu' || region === 'uk') {
+      state.location = region;
+      writeLS('dehesaIndexLocation', region);
+    }
+    renderAll();
+  }
+
   function wireGlobalControls() {
     document.getElementById('pr-location-bar').addEventListener('click', function (e) {
       var btn = e.target.closest ? e.target.closest('[data-loc]') : null;
       if (!btn) return;
       state.location = btn.getAttribute('data-loc');
       writeLS('dehesaIndexLocation', state.location);
+      syncPriceUrl();
       renderAll();
     });
     var searchInput = document.getElementById('pr-search-input');
@@ -1074,6 +1108,7 @@
       var btn = e.target.closest ? e.target.closest('[data-tab]') : null;
       if (!btn) return;
       state.activeTab = btn.getAttribute('data-tab');
+      syncPriceUrl();
       renderTabsAndCategory();
     });
   }
@@ -1135,6 +1170,7 @@
       writeLS('dehesaIndexLocation', requestedRegion);
     }
     wireGlobalControls();
+    window.addEventListener('popstate', restorePriceUrl);
     renderAll();
     S.onLangChange = function () { renderAll(); };
     maybeShowLocationWelcomeWhenFree();
