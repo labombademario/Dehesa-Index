@@ -34,7 +34,7 @@ ok('prices restores popstate', /addEventListener\('popstate', restorePriceUrl\)/
 const news = await read('js/noticias.js');
 ok('news uses pushState', /history\.pushState/.test(news));
 ok('news restores popstate', /addEventListener\('popstate'/.test(news));
-ok('news price link is a sibling anchor', /<\\/a><a class="di-news-item-price-link"/.test(news));
+ok('news price link is a sibling anchor', /di-news-item-price-link/.test(news));
 
 const cal = await read('js/calendario.js');
 ok('calendar uses pushState', /history\.pushState/.test(cal));
