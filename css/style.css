@@ -681,3 +681,7 @@ html[data-theme="dark"] .di-badge-green { background: #1E3328; color: #7FCF9B; b
 .di-atlantic-card .di-spread-note{margin-top:9px}
 @media(max-width:900px){.di-atlantic-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.di-atlantic-grid{grid-template-columns:1fr}}
+.di-intel-pending{border-style:dashed;background:var(--surface-alt)}
+.di-intel-pending .di-intel-head{position:relative}
+.di-intel-state{display:inline-flex;align-items:center;margin-top:10px;padding:4px 8px;border-radius:999px;font-size:9px;font-weight:800;letter-spacing:.07em}
+.di-intel-state.pending{background:rgba(138,132,113,.14);color:var(--neutral)}
