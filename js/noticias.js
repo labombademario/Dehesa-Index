@@ -246,8 +246,16 @@
     if (state.product !== 'all') params.push('product=' + encodeURIComponent(state.product));
     if (state.topic !== 'all') params.push('topic=' + encodeURIComponent(state.topic));
     var next = window.location.pathname + (params.length ? '?' + params.join('&') : '');
-    if (window.history && window.history.replaceState) window.history.replaceState(null, '', next);
+    if (window.history && window.history.pushState) window.history.replaceState(null, '', next);
   }
+
+  window.addEventListener('popstate', function () {
+    var p = new URLSearchParams(window.location.search);
+    state.region = p.get('region') || 'all';
+    state.product = p.get('product') || 'all';
+    state.topic = p.get('topic') || 'all';
+    render();
+  });
 
   function optionHtml(value, label, selected) {
     return '<option value="' + esc(value) + '"' + (selected ? ' selected' : '') + '>' + esc(label) + '</option>';
