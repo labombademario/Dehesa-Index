@@ -194,6 +194,7 @@ async function main() {
   console.log('js/data.js actualizado (' + key + ').');
 
   await writeSnapshot({
+    id: 'di_' + key + '_us',
     product: key,
     region: 'us',
     sourceId: 'usda_nass',
