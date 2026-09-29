@@ -88,28 +88,44 @@
     { id:'energy-feed', a:'eurostat_energy_input_index', b:'feed_input_index', maxLag:4, window:20, minPairs:8,
       label:{es:'Energía → alimentación',en:'Energy → feed',fr:'Énergie → alimentation',it:'Energia → mangimi'} }
   ];
+  var REGIONAL_RELATIONSHIP_DEFS = [
+    {region:'eu', id:'fertilizer-cereals', a:'eurostat_fertiliser_input_index', b:'eurostat_cereals_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Fertilizante → cereales',en:'Fertilizer → cereals',fr:'Engrais → céréales',it:'Fertilizzanti → cereali'}},
+    {region:'eu', id:'energy-cereals', a:'eurostat_energy_input_index', b:'eurostat_cereals_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → cereales',en:'Energy → cereals',fr:'Énergie → céréales',it:'Energia → cereali'}},
+    {region:'eu', id:'fertilizer-milk', a:'eurostat_fertiliser_input_index', b:'eurostat_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Fertilizante → leche',en:'Fertilizer → milk',fr:'Engrais → lait',it:'Fertilizzanti → latte'}},
+    {region:'eu', id:'energy-milk', a:'eurostat_energy_input_index', b:'eurostat_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → leche',en:'Energy → milk',fr:'Énergie → lait',it:'Energia → latte'}},
+    {region:'us', id:'fertilizer-cereals', a:'us_fertilizer_input_index', b:'us_cereals_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Fertilizante → cereales',en:'Fertilizer → cereals',fr:'Engrais → céréales',it:'Fertilizzanti → cereali'}},
+    {region:'us', id:'energy-cereals', a:'us_energy_input_index', b:'us_cereals_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → cereales',en:'Energy → cereals',fr:'Énergie → céréales',it:'Energia → cereali'}},
+    {region:'us', id:'fertilizer-milk', a:'us_fertilizer_input_index', b:'us_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Fertilizante → leche',en:'Fertilizer → milk',fr:'Engrais → lait',it:'Fertilizzanti → latte'}},
+    {region:'us', id:'energy-milk', a:'us_energy_input_index', b:'us_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → leche',en:'Energy → milk',fr:'Énergie → lait',it:'Energia → latte'}},
+    {region:'uk', id:'fertilizer-cereals', a:'uk_fertilizer_input_index', b:'uk_cereals_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Fertilizante → cereales',en:'Fertilizer → cereals',fr:'Engrais → céréales',it:'Fertilizzanti → cereali'}},
+    {region:'uk', id:'energy-cereals', a:'uk_energy_input_index', b:'uk_cereals_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → cereales',en:'Energy → cereals',fr:'Énergie → céréales',it:'Energia → cereali'}},
+    {region:'uk', id:'fertilizer-milk', a:'uk_fertilizer_input_index', b:'uk_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Fertilizante → leche',en:'Fertilizer → milk',fr:'Engrais → lait',it:'Fertilizzanti → latte'}},
+    {region:'uk', id:'energy-milk', a:'uk_energy_input_index', b:'uk_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → leche',en:'Energy → milk',fr:'Énergie → lait',it:'Energia → latte'}}
+  ];
+  var RELATIONSHIP_DEFS = REGIONAL_RELATIONSHIP_DEFS.filter(function(d){return d.region==='eu';});
   var RELATIONSHIP_RESULTS = [];
   var TRANSMISSION_DEFS = [
-    {id:'fertilizer-cereals-alert',shock:'eurostat_fertiliser_input_index',relationship:'fertilizer-cereals',threshold:5,channel:'input_cost',affected:'eurostat_cereals_output_index',label:{es:'Shock de fertilizante → cereales',en:'Fertilizer shock → cereals',fr:'Choc des engrais → céréales',it:'Shock dei fertilizzanti → cereali'}},
-    {id:'energy-cereals-alert',shock:'eurostat_energy_input_index',relationship:'energy-cereals',threshold:5,channel:'input_cost',affected:'eurostat_cereals_output_index',label:{es:'Shock energético → cereales',en:'Energy shock → cereals',fr:'Choc énergétique → céréales',it:'Shock energetico → cereali'}},
-    {id:'fertilizer-milk-alert',shock:'eurostat_fertiliser_input_index',relationship:'fertilizer-milk',threshold:5,channel:'input_cost',affected:'eurostat_milk_output_index',label:{es:'Shock de fertilizante → leche',en:'Fertilizer shock → milk',fr:'Choc des engrais → lait',it:'Shock dei fertilizzanti → latte'}},
-    {id:'energy-milk-alert',shock:'eurostat_energy_input_index',relationship:'energy-milk',threshold:5,channel:'input_cost',affected:'eurostat_milk_output_index',label:{es:'Shock energético → leche',en:'Energy shock → milk',fr:'Choc énergétique → lait',it:'Shock energetico → latte'}}
+    {region:'eu',id:'fertilizer-cereals-alert',shock:'eurostat_fertiliser_input_index',relationship:'fertilizer-cereals',threshold:5,channel:'input_cost',affected:'eurostat_cereals_output_index',label:{es:'Shock de fertilizante → cereales',en:'Fertilizer shock → cereals',fr:'Choc des engrais → céréales',it:'Shock dei fertilizzanti → cereali'}},
+    {region:'eu',id:'energy-cereals-alert',shock:'eurostat_energy_input_index',relationship:'energy-cereals',threshold:5,channel:'input_cost',affected:'eurostat_cereals_output_index',label:{es:'Shock energético → cereales',en:'Energy shock → cereals',fr:'Choc énergétique → céréales',it:'Shock energetico → cereali'}},
+    {region:'eu',id:'fertilizer-milk-alert',shock:'eurostat_fertiliser_input_index',relationship:'fertilizer-milk',threshold:5,channel:'input_cost',affected:'eurostat_milk_output_index',label:{es:'Shock de fertilizante → leche',en:'Fertilizer shock → milk',fr:'Choc des engrais → lait',it:'Shock dei fertilizzanti → latte'}},
+    {region:'eu',id:'energy-milk-alert',shock:'eurostat_energy_input_index',relationship:'energy-milk',threshold:5,channel:'input_cost',affected:'eurostat_milk_output_index',label:{es:'Shock energético → leche',en:'Energy shock → milk',fr:'Choc énergétique → lait',it:'Shock energetico → latte'}}
   ];
   var TRANSMISSION_ALERTS = [];
 
-  function latestShock(product) {
-    var rows=RAW_SERIES[product+'|eu']||[];
+  function latestShock(product, region) {
+    var rows=RAW_SERIES[product+'|'+(region||'eu')]||[];
     if(rows.length<2) return null;
     var last=rows[rows.length-1], prev=rows[rows.length-2];
     if(!isFinite(last.value)||!isFinite(prev.value)||prev.value===0) return null;
     return {product:product,date:last.date,value:last.value,changePct:((last.value-prev.value)/prev.value)*100,frequency:last.frequency};
   }
   function buildTransmissionAlerts() {
-    var rels=buildRelationshipEngine(), byId={};
+    buildRelationshipEngine();
+    var rels=RELATIONSHIP_RESULTS.filter(function(r){return r.region===activeRegion();}), byId={};
     rels.forEach(function(r){byId[r.id]=r;});
     TRANSMISSION_ALERTS=[];
-    TRANSMISSION_DEFS.forEach(function(def){
-      var shock=latestShock(def.shock), rel=byId[def.relationship];
+    activeTransmissionDefs().forEach(function(def){
+      var shock=latestShock(def.shock, def.region), rel=byId[def.relationship];
       if(!shock||!rel||rel.status!=='ready'||Math.abs(shock.changePct)<def.threshold) return;
       TRANSMISSION_ALERTS.push({
         id:def.id,label:def.label[lang()]||def.label.es,status:'watch',
@@ -195,7 +211,8 @@
     return null;
   }
   function buildRelationship(def) {
-    var aRows=RAW_SERIES[def.a+'|eu']||[], bRows=RAW_SERIES[def.b+'|eu']||[];
+    var region=def.region||'eu';
+    var aRows=RAW_SERIES[def.a+'|'+region]||[], bRows=RAW_SERIES[def.b+'|'+region]||[];
     if(!aRows.length||!bRows.length) return {id:def.id,label:def.label[lang()]||def.label.es,status:'pending',reason:'missing_series'};
     var frequency=aRows[0].frequency;
     if(!frequency || frequency!==bRows[0].frequency) return {id:def.id,label:def.label[lang()]||def.label.es,status:'pending',reason:'frequency_mismatch'};
@@ -223,7 +240,7 @@
     var direction=best.r>0?'positive':(best.r<0?'negative':'flat');
     return {
       id:def.id,label:def.label[lang()]||def.label.es,status:'ready',confidence:confidence,
-      seriesA:{product:def.a,region:'eu'},seriesB:{product:def.b,region:'eu'},
+      seriesA:{product:def.a,region:region},seriesB:{product:def.b,region:region},region:region,
       frequency:frequency,lagPeriods:best.lag,window:unitLabel,windowPeriods:best.pairs.length,
       sampleSize:best.pairs.length,correlationReturns:best.r,direction:direction,stability:stable,
       coverageStart:best.pairs.length?best.pairs[0].date:null,
@@ -232,8 +249,24 @@
     };
   }
   function buildRelationshipEngine() {
-    RELATIONSHIP_RESULTS=RELATIONSHIP_DEFS.map(buildRelationship);
+    RELATIONSHIP_RESULTS=REGIONAL_RELATIONSHIP_DEFS.map(buildRelationship);
     return RELATIONSHIP_RESULTS;
+  }
+  function activeRegion() {
+    try {
+      return (global.DehesaPreciosCore && global.DehesaPreciosCore.getLocation) ? global.DehesaPreciosCore.getLocation() : 'us';
+    } catch (e) { return 'us'; }
+  }
+  function activeRelationshipResults() {
+    var region=activeRegion(), out={};
+    RELATIONSHIP_RESULTS.filter(function(r){return r.region===region;}).forEach(function(r){
+      out[r.id]=Object.assign({},r,{id:r.id});
+    });
+    return out;
+  }
+  function activeTransmissionDefs() {
+    var region=activeRegion();
+    return TRANSMISSION_DEFS.filter(function(d){return d.region===region;});
   }
   function realObservationsFor(entry) {
     var key = entry.catId + '-' + entry.nameKey;
@@ -273,7 +306,7 @@
       fetch('data/intelligence.json').then(function(r){ if(!r.ok) throw Error('intelligence'); return r.json(); }).then(function(d){
         INTEL20=d; INTEL20_READY=true; finish();
       }).catch(function(){ INTEL20={series:[]}; INTEL20_READY=true; finish(); });
-    }).catch(function(){ REAL_HISTORY_READY = true; RELATIONSHIP_RESULTS=RELATIONSHIP_DEFS.map(function(d){return {id:d.id,label:d.label[lang()]||d.label.es,status:'pending',reason:'history_unavailable'};}); INTEL20={series:[]}; INTEL20_READY=true; finish(); });
+    }).catch(function(){ REAL_HISTORY_READY = true; RELATIONSHIP_RESULTS=REGIONAL_RELATIONSHIP_DEFS.map(function(d){return {id:d.id,region:d.region,label:d.label[lang()]||d.label.es,status:'pending',reason:'history_unavailable'};}); INTEL20={series:[]}; INTEL20_READY=true; finish(); });
   }
 
   // ---------------------------------------------------------------------
@@ -1226,9 +1259,7 @@
   }
 
   function relationshipSnapshot() {
-    var out = {};
-    RELATIONSHIP_RESULTS.forEach(function(r){ out[r.id] = r; });
-    return out;
+    return activeRelationshipResults();
   }
   function transmissionSnapshot() {
     var out = {};
@@ -1238,6 +1269,7 @@
   global.DehesaPreciosIntel = {
     render: render,
     getRelationships: relationshipSnapshot,
-    getTransmissionAlerts: transmissionSnapshot
+    getTransmissionAlerts: transmissionSnapshot,
+    getActiveRegion: activeRegion
   };
 })(window);
