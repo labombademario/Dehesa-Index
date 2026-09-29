@@ -234,12 +234,55 @@
     }
   };
 
-  var state = { filter: 'all' };
+  var state = { region: 'all', product: 'all', topic: 'all' };
+
+  function optionHtml(value, label, selected) {
+    return '<option value="' + esc(value) + '"' + (selected ? ' selected' : '') + '>' + esc(label) + '</option>';
+  }
+
+  function getFilteredItems() {
+    return NEWS_ITEMS.filter(function(item) {
+      return (state.region === 'all' || item.region === state.region) &&
+        (state.product === 'all' || item.products.indexOf(state.product) !== -1) &&
+        (state.topic === 'all' || item.topics.indexOf(state.topic) !== -1);
+    });
+  }
+
+  function renderIntel(items, t, lang, esc) {
+    var intel = document.getElementById('nw-intel');
+    var counts = {};
+    items.forEach(function(item) {
+      item.topics.forEach(function(topic) { counts[topic] = (counts[topic] || 0) + 1; });
+    });
+    var topics = Object.keys(counts).sort(function(a,b){ return counts[b] - counts[a]; }).slice(0, 3);
+    if (!items.length || !topics.length) {
+      intel.innerHTML = '<div class="di-news-intel-head"><div><span class="di-section-kicker">INTELLIGENCE</span><h2 id="nw-intel-title">' + esc(t.intelTitle) + '</h2><p>' + esc(t.intelEmpty) + '</p></div><span class="di-news-intel-state">PENDIENTE</span></div>';
+      return;
+    }
+    var lead = topics[0];
+    var leadCount = counts[lead];
+    var productCounts = {};
+    items.forEach(function(item) { item.products.forEach(function(p){ productCounts[p] = (productCounts[p] || 0) + 1; }); });
+    var products = Object.keys(productCounts).sort(function(a,b){ return productCounts[b] - productCounts[a]; }).slice(0,4);
+    var context = (lang === 'es'
+      ? 'La cobertura disponible está dominada por ' + TOPIC_LABELS.es[lead].toLowerCase() + ' (' + leadCount + ' noticia' + (leadCount === 1 ? '' : 's') + '). Los mercados relacionados son ' + products.map(function(p){ return PRODUCT_LABELS.es[p]; }).join(', ') + '.'
+      : lang === 'fr'
+      ? 'La couverture disponible est dominée par ' + TOPIC_LABELS.fr[lead].toLowerCase() + ' (' + leadCount + ' actualité' + (leadCount === 1 ? '' : 's') + '). Les marchés associés sont ' + products.map(function(p){ return PRODUCT_LABELS.fr[p]; }).join(', ') + '.'
+      : lang === 'it'
+      ? 'La copertura disponibile è dominata da ' + TOPIC_LABELS.it[lead].toLowerCase() + ' (' + leadCount + ' notizi' + (leadCount === 1 ? 'a' : 'e') + '). I mercati collegati sono ' + products.map(function(p){ return PRODUCT_LABELS.it[p]; }).join(', ') + '.'
+      : 'Available coverage is dominated by ' + TOPIC_LABELS.en[lead].toLowerCase() + ' (' + leadCount + ' stor' + (leadCount === 1 ? 'y' : 'ies') + '). Related markets are ' + products.map(function(p){ return PRODUCT_LABELS.en[p]; }).join(', ') + '.');
+    intel.innerHTML = '<div class="di-news-intel-head"><div><span class="di-section-kicker">INTELLIGENCE</span><h2 id="nw-intel-title">' + esc(t.intelTitle) + '</h2><p>' + esc(t.intelSub) + '</p></div><span class="di-news-intel-state">CONTEXTO</span></div>' +
+      '<div class="di-news-context">' + esc(context) + '</div>' +
+      '<div class="di-news-intel-tags">' + topics.map(function(topic){ return '<span class="di-news-tag topic">' + esc(t.tagTopic + ': ' + (TOPIC_LABELS[lang] || TOPIC_LABELS.es)[topic]) + '</span>'; }).join('') + products.map(function(p){ return '<span class="di-news-tag product">' + esc(t.tagMarket + ': ' + (PRODUCT_LABELS[lang] || PRODUCT_LABELS.es)[p]) + '</span>'; }).join('') + '</div>';
+  }
 
   function render() {
     var lang = window.DehesaShared.getLang();
     var esc = window.DehesaShared.esc;
     var t = STRINGS[lang] || STRINGS.es;
+    var regionLabels = REGION_LABELS[lang] || REGION_LABELS.es;
+    var productLabels = PRODUCT_LABELS[lang] || PRODUCT_LABELS.es;
+    var topicLabels = TOPIC_LABELS[lang] || TOPIC_LABELS.es;
 
     document.title = t.title;
     document.getElementById('nw-badge').textContent = t.badge;
@@ -248,35 +291,46 @@
     document.getElementById('nw-sub').textContent = t.sub;
     document.getElementById('nw-disclaimer').textContent = t.disclaimer;
 
-    var FILTER_OPTIONS = [
-      { id: 'all', label: t.filterAll },
-      { id: 'global', label: t.filterGlobal },
-      { id: 'eu', label: t.filterEuropa },
-      { id: 'us', label: t.filterAmerica }
-    ];
-    document.getElementById('nw-filters').innerHTML = FILTER_OPTIONS.map(function (opt) {
-      var active = state.filter === opt.id ? ' active' : '';
-      return '<button type="button" class="di-location-btn di-news-filter-btn' + active + '" data-filter="' + opt.id + '">' + esc(opt.label) + '</button>';
-    }).join('');
-    Array.prototype.forEach.call(document.querySelectorAll('#nw-filters button'), function (btn) {
-      btn.addEventListener('click', function () {
-        state.filter = btn.getAttribute('data-filter');
-        render();
-      });
+    document.getElementById('nw-region-label').textContent = t.regionLabel;
+    document.getElementById('nw-product-label').textContent = t.productLabel;
+    document.getElementById('nw-topic-label').textContent = t.topicLabel;
+
+    var regions = ['all','us','eu','global'];
+    var products = [];
+    var topics = [];
+    NEWS_ITEMS.forEach(function(item) {
+      item.products.forEach(function(p){ if(products.indexOf(p) === -1) products.push(p); });
+      item.topics.forEach(function(topic){ if(topics.indexOf(topic) === -1) topics.push(topic); });
+    });
+    products.sort(function(a,b){ return (productLabels[a] || a).localeCompare(productLabels[b] || b); });
+    topics.sort(function(a,b){ return (topicLabels[a] || a).localeCompare(topicLabels[b] || b); });
+
+    document.getElementById('nw-region-filter').innerHTML = regions.map(function(v){ return optionHtml(v, regionLabels[v], state.region === v); }).join('');
+    document.getElementById('nw-product-filter').innerHTML = optionHtml('all', lang === 'es' ? 'Todos' : lang === 'fr' ? 'Tous' : lang === 'it' ? 'Tutti' : 'All', state.product === 'all') +
+      products.map(function(v){ return optionHtml(v, productLabels[v], state.product === v); }).join('');
+    document.getElementById('nw-topic-filter').innerHTML = optionHtml('all', lang === 'es' ? 'Todos' : lang === 'fr' ? 'Tous' : lang === 'it' ? 'Tutti' : 'All', state.topic === 'all') +
+      topics.map(function(v){ return optionHtml(v, topicLabels[v], state.topic === v); }).join('');
+
+    ['region','product','topic'].forEach(function(key) {
+      var el = document.getElementById('nw-' + key + '-filter');
+      el.onchange = function(){ state[key] = el.value; render(); };
     });
 
-    var filteredItems = NEWS_ITEMS.filter(function (item) {
-      return state.filter === 'all' || item.region === state.filter;
-    });
+    var filteredItems = getFilteredItems();
+    renderIntel(filteredItems, t, lang, esc);
+    document.getElementById('nw-filter-summary').textContent = t.filterSummary.replace('{count}', String(filteredItems.length));
 
     var itemsHtml;
     if (filteredItems.length > 0) {
-      itemsHtml = '<div class="di-news-list">' + filteredItems.map(function (item) {
+      itemsHtml = '<div class="di-news-list">' + filteredItems.map(function(item) {
         var tr = item[lang] || item.es;
+        var marketTags = item.products.map(function(p){ return '<span class="di-news-tag product">' + esc((PRODUCT_LABELS[lang] || PRODUCT_LABELS.es)[p]) + '</span>'; }).join('');
+        var topicTags = item.topics.map(function(topic){ return '<span class="di-news-tag topic">' + esc((TOPIC_LABELS[lang] || TOPIC_LABELS.es)[topic]) + '</span>'; }).join('');
         return '<a class="di-card di-news-item" href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">' +
           '<div class="di-news-item-meta"><span class="di-news-item-source">' + esc(item.source) + '</span><span>·</span><span>' + esc(fmtNewsDate(item.date, lang)) + '</span></div>' +
           '<div class="di-news-item-headline">' + esc(tr.headline) + '</div>' +
           '<p class="di-news-item-summary">' + esc(tr.summary) + '</p>' +
+          '<div class="di-news-tags">' + marketTags + topicTags + '</div>' +
           '<span class="di-news-item-readmore">' + esc(t.readMore) + ' →</span>' +
         '</a>';
       }).join('') + '</div>';
@@ -286,7 +340,7 @@
     document.getElementById('nw-items').innerHTML = itemsHtml;
 
     document.getElementById('nw-sources-title').textContent = t.sourcesTitle;
-    document.getElementById('nw-sources-list').innerHTML = t.sources.map(function (s) {
+    document.getElementById('nw-sources-list').innerHTML = t.sources.map(function(s) {
       return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.text) + '</a></li>';
     }).join('');
   }
