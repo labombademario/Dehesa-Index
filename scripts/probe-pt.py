@@ -1,20 +1,21 @@
 import os, re, urllib.request
 os.makedirs('data/probe', exist_ok=True)
 B='https://www.ifap.pt/isip/ows/isip.data/ows'
-def get(u, n=400000):
+def get(u, n=600000, raw=False):
     try:
         r=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 DehesaIndex'}),timeout=90)
-        return r.read(n).decode('utf8','replace')
+        d=r.read(n)
+        return (r.headers.get('Content-Type'),len(d),r.headers.get('Access-Control-Allow-Origin')) if raw else d.decode('utf8','replace')
     except Exception as e: return 'ERR %s'%e
 out=[]
-for t in ['culturas.2025jun10','ocupacoes.solo.2025jun10','freguesias','distritos']:
-    T='isip.data:'+t
-    out.append('=== '+T)
-    h=get(B+'?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAMES=%s&resultType=hits'%T)
-    out.append('HITS '+' '.join(re.findall(r'number\w+="\d+"',h)))
-    d=get(B+'?SERVICE=WFS&REQUEST=DescribeFeatureType&VERSION=2.0.0&TYPENAMES=%s'%T)
-    out.append('FIELDS '+' | '.join(a+':'+b for a,b in re.findall(r'name="(\w+)"[^>]*type="([\w:]+)"',d)))
-    o=get(B+'?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAMES=%s&count=3&outputFormat=application/json'%T)
-    o=re.sub(r'"coordinates":\[[\[\]\d.,\- ]+\]','"coordinates":"..."',o)
-    out.append('ONE '+o[:1500])
-open('data/probe/pt8.txt','w').write('\n'.join(out))
+c=get(B+'?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0')
+out.append('WMS cap len %d'%len(c))
+for m in re.finditer(r'<Layer[^>]*>\s*<Name>([^<]+)</Name>\s*<Title>([^<]*)</Title>',c): out.append('LAYER %s | %s'%m.groups())
+out.append('CRS '+' '.join(sorted(set(re.findall(r'<CRS>([^<]+)</CRS>',c)))[:30]))
+out.append('SCALE '+' '.join(re.findall(r'<(?:Min|Max)ScaleDenominator>([^<]+)<',c)[:10]))
+for L in ['isip.data:culturas.2025jun10','isip.data:ocupacoes.solo.2025jun10']:
+    u=B+'?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=%s&STYLES=&CRS=EPSG:3857&BBOX=-1000000,4800000,-900000,4900000&WIDTH=512&HEIGHT=512&FORMAT=image/png&TRANSPARENT=true'%L
+    out.append('GETMAP %s %s'%(L,get(u,raw=True)))
+    u2=u.replace('-1000000,4800000,-900000,4900000','-1000000,4600000,-200000,5400000')
+    out.append('GETMAP wide %s'%(get(u2,raw=True),))
+open('data/probe/pt9.txt','w').write('\n'.join(out))
