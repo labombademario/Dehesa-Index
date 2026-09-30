@@ -900,7 +900,7 @@
     var entry = PRODUCT_BY_KEY[h.key];
     var avail = availableRegions(entry);
     var ro = regionObjFor(entry, h.region);
-    var DAY = 86400000, RANGES = [['3m', 92], ['6m', 183], ['1y', 366], ['2y', 731], ['max', 0]];
+    var DAY = 86400000, RANGES = [['3m', 92], ['6m', 183], ['1y', 366], ['2y', 731], ['5y', 1827], ['10y', 3653], ['max', 0]];
     var CH = window.DehesaChart, sym = (D.CCY_SYMBOL && D.CCY_SYMBOL[ro.ccy]) || (ro.ccy + ' ');
     function win(pts, days) { if (!days || !pts.length) return pts; var last = pts[pts.length - 1].ts; return pts.filter(function (p) { return p.ts >= last - days * DAY; }); }
     function daysOf(r) { for (var i = 0; i < RANGES.length; i++) if (RANGES[i][0] === r) return RANGES[i][1]; return 0; }
