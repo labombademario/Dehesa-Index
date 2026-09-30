@@ -1,0 +1,183 @@
+CAP len 193346
+<?xml version="1.0" encoding="UTF-8"?><wfs:WFS_Capabilities version="2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/wfs/2.0" xmlns:wfs="http://www.opengis.n
+NAMES: isip.data:baldios.2022jun10, isip.data:baldios.2023jun10, isip.data:baldios.2024jun10, isip.data:baldios.atual, isip.data:PERIGOSIDADE_INCENDIO_RURAL, isip.data:classificacao.automatica.2025, isip.data:compromissos.pepac.acores.central.oriental, isip.data:compromissos.pepac.acores.ocidental, isip.data:compromissos.pepac.continente, isip.data:compromissos.pepac.madeira, isip.data:culturas.2020jun10, isip.data:culturas.2021jun10, isip.data:culturas.2022jun10, isip.data:culturas.2023jun10, isip.data:culturas.2024jun10, isip.data:culturas.2025jun10, isip.data:distritos, isip.data:elementos.lineares.atual, isip.data:elementos.lineares.atual.acores.ocidental, isip.data:elementos.lineares.atual.madeira, isip.data:elementos.lineares.atual.acores.central.oriental, isip.data:freguesias, isip.data:infraestruturas.projetos.investimento, isip.data:monitorizacao, isip.data:monitorizacao_2020, isip.data:monitorizacao_2021, isip.data:monitorizacao_2022, isip.data:monitorizacao_2023, isip.data:ocupacoes.solo.2020jun10, isip.data:ocupacoes.solo.2021jun10, isip.data:ocupacoes.solo.2022jun10, isip.data:ocupacoes.solo.2023jun10, isip.data:ocupacoes.solo.2024jun10, isip.data:ocupacoes.solo.2025jun10, isip.data:ocupacoes.solo.atual, isip.data:ocupacoes.solo.atual.acores.central.oriental, isip.data:ocupacoes.solo.atual.acores.ocidental, isip.data:ocupacoes.solo.atual.madeira, isip.data:ocupacoes.solo.baldios.atual, isip.data:parcelas.AML.2017jun10, isip.data:parcelas.alentejo.2017jun10, isip.data:parcelas.Algarve.2017jun10, isip.data:parcelas.Centro.2017jun10, isip.data:parcelas.Norte.2017jun10, isip.data:parcelas.RAA.2017jun10, isip.data:parcelas.RAM.2017jun10, isip.data:parcelas.2020jun10, isip.data:parcelas.2021jun10, isip.data:parcelas.2022jun10, isip.data:parcelas.2023jun10, isip.data:parcelas.2024jun10, isip.data:parcelas.2025jun10, isip.data:parcelas.atual, isip.data:parcelas.atual.acores.central.oriental, isip.data:parcelas.atual.acores.ocidental, isip.data:parcelas.atual.madeira, isip.data:parcelas.vitis, isip.data:projetos.reap, isip.data:projetos.investimento, isip.data:ocupacoes.solo.AML.2017jun10
+=== isip.data:baldios.2022jun10
+HITS <?xml version="1.0" encoding="UTF-8"?><wfs:FeatureCollection xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" next="https://www.ifap.pt/
+DESC <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:isip.data="https://www.ifap.pt/isip/ows/isip.data" xmlns:wfs="http://www.opengis.net/wfs/2.0" elementFormDefault="qualified" targetNamespace="https://www.ifap.pt/isip/ows/isip.data">
+  <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://www.ifap.pt/isip/ows/schemas/gml/3.2.1/gml.xsd"/>
+  <xsd:complexType name="baldios.2022jun10Type">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_CAMPANHA" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_ID" nillable="false" type="xsd:decimal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_NUM" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_COD_DIS" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_COD_CON" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_COD_FRE" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="BAL_POLIGONO" nillable="true" type="gml:MultiSurfacePropertyType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="baldios.2022jun10" substitutionGroup="gml:AbstractFeature" type="isip.data:baldios.2022jun10Type"/>
+</xsd:schema>
+
+ONE {"type":"FeatureCollection","features":[{"type":"Feature","id":"baldios.2022jun10.2022.28","geometry":{"type":"MultiPolygon","coordinates":[[[[-8.24384797,40.88027563],[-8.24382537,40.88027852],[-8.24364844,40.88034302],[-8.24332471,40.88047485],[-8.24295581,40.88062673],[-8.2428317,40.88068636],[-8.24322763,40.88075747],[-8.24355057,40.88088226],[-8.24359649,40.88080765],[-8.2437355,40.88059309],[-8.24387819,40.8803285],[-8.24387813,40.88029276],[-8.24386116,40.88027705],[-8.24384797,40.88027563]]],[[[-8.24325803,40.87498426],[-8.24308014,40.87501482],[-8.24289797,40.87514551],[-8.24294882,40.87519194],[-8.24306399,40.8753376],[-8.24317005,40.87545917],[-8.24326998,40.87553482],[-8.24346823,40.87562301],[-8.2437345,40.87569736],[-8.24390996,40.87572014],[-8.24411712,40.8757165],[-8.24441199,40.87571162],[-8.24473409,40.87571359],[-8.24490951,40.87571227],[-8.24497248,40.87570511],[-8.24497395,40.87566316],[-8.24497,40.87564827],[-8.24468343,40.87555921],[-8.24415739,40.87539295],[-8.24400822,40.87534545],[-8.24397296,40.87537824],[-8.24347045,40.87520005],[-8.24359244,40.87500051],[-8.24352088,40.87498738],[-8.24325803,40.87498426]]],[[[-8.27299822,40.87484257],[-8.27283632,40.8748657],[-8.27290533,40.87493234],[-8.27294807,40.87497362],[-8.2732059,40.87520501],[-8.27351937,40.87550527],[-8.27374698,40.8757635],[-8.27379276,40.87582073],[-8.273804,40.87579708],[-8.27394628,40.87549947],[-8.27402786,40.87533559],[-8.27406534,40.87521153],[-8.27385804,40.87511251],[-8.27377947
+=== isip.data:baldios.2023jun10
+HITS <?xml version="1.0" encoding="UTF-8"?><wfs:FeatureCollection xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" next="https://www.ifap.pt/
+DESC <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:isip.data="https://www.ifap.pt/isip/ows/isip.data" xmlns:wfs="http://www.opengis.net/wfs/2.0" elementFormDefault="qualified" targetNamespace="https://www.ifap.pt/isip/ows/isip.data">
+  <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://www.ifap.pt/isip/ows/schemas/gml/3.2.1/gml.xsd"/>
+  <xsd:complexType name="baldios.2023jun10Type">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_CAMPANHA" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_ID" nillable="false" type="xsd:decimal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_NUM" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_COD_DIS" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_COD_CON" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_COD_FRE" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="BAL_POLIGONO" nillable="true" type="gml:MultiSurfacePropertyType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="baldios.2023jun10" substitutionGroup="gml:AbstractFeature" type="isip.data:baldios.2023jun10Type"/>
+</xsd:schema>
+
+ONE {"type":"FeatureCollection","features":[{"type":"Feature","id":"baldios.2023jun10.2023.28","geometry":{"type":"MultiPolygon","coordinates":[[[[-8.24384797,40.88027563],[-8.24382537,40.88027852],[-8.24364844,40.88034302],[-8.24332471,40.88047485],[-8.24295581,40.88062673],[-8.2428317,40.88068636],[-8.24322763,40.88075747],[-8.24355057,40.88088226],[-8.24359649,40.88080765],[-8.2437355,40.88059309],[-8.24387819,40.8803285],[-8.24387813,40.88029276],[-8.24386116,40.88027705],[-8.24384797,40.88027563]]],[[[-8.24325803,40.87498426],[-8.24308014,40.87501482],[-8.24289797,40.87514551],[-8.24294882,40.87519194],[-8.24306399,40.8753376],[-8.24317005,40.87545917],[-8.24326998,40.87553482],[-8.24346823,40.87562301],[-8.2437345,40.87569736],[-8.24390996,40.87572014],[-8.24411712,40.8757165],[-8.24441199,40.87571162],[-8.24473409,40.87571359],[-8.24490951,40.87571227],[-8.24497248,40.87570511],[-8.24497395,40.87566316],[-8.24497,40.87564827],[-8.24468343,40.87555921],[-8.24415739,40.87539295],[-8.24400822,40.87534545],[-8.24397296,40.87537824],[-8.24347045,40.87520005],[-8.24359244,40.87500051],[-8.24352088,40.87498738],[-8.24325803,40.87498426]]],[[[-8.27299822,40.87484257],[-8.27283632,40.8748657],[-8.27290533,40.87493234],[-8.27294807,40.87497362],[-8.2732059,40.87520501],[-8.27351937,40.87550527],[-8.27374698,40.8757635],[-8.27379276,40.87582073],[-8.273804,40.87579708],[-8.27394628,40.87549947],[-8.27402786,40.87533559],[-8.27406534,40.87521153],[-8.27385804,40.87511251],[-8.27377947
+=== isip.data:baldios.2024jun10
+HITS <?xml version="1.0" encoding="UTF-8"?><wfs:FeatureCollection xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" next="https://www.ifap.pt/
+DESC <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:isip.data="https://www.ifap.pt/isip/ows/isip.data" xmlns:wfs="http://www.opengis.net/wfs/2.0" elementFormDefault="qualified" targetNamespace="https://www.ifap.pt/isip/ows/isip.data">
+  <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://www.ifap.pt/isip/ows/schemas/gml/3.2.1/gml.xsd"/>
+  <xsd:complexType name="baldios.2024jun10Type">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_CAMPANHA" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_ID" nillable="false" type="xsd:decimal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_NUM" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_COD_DIS" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_COD_CON" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BAL_COD_FRE" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="BAL_POLIGONO" nillable="true" type="gml:MultiSurfacePropertyType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="baldios.2024jun10" substitutionGroup="gml:AbstractFeature" type="isip.data:baldios.2024jun10Type"/>
+</xsd:schema>
+
+ONE {"type":"FeatureCollection","features":[{"type":"Feature","id":"baldios.2024jun10.2024.28","geometry":{"type":"MultiPolygon","coordinates":[[[[-8.24384797,40.88027563],[-8.24382537,40.88027852],[-8.24364844,40.88034302],[-8.24332471,40.88047485],[-8.24295581,40.88062673],[-8.2428317,40.88068636],[-8.24322763,40.88075747],[-8.24355057,40.88088226],[-8.24359649,40.88080765],[-8.2437355,40.88059309],[-8.24387819,40.8803285],[-8.24387813,40.88029276],[-8.24386116,40.88027705],[-8.24384797,40.88027563]]],[[[-8.24325803,40.87498426],[-8.24308014,40.87501482],[-8.24289797,40.87514551],[-8.24294882,40.87519194],[-8.24306399,40.8753376],[-8.24317005,40.87545917],[-8.24326998,40.87553482],[-8.24346823,40.87562301],[-8.2437345,40.87569736],[-8.24390996,40.87572014],[-8.24411712,40.8757165],[-8.24441199,40.87571162],[-8.24473409,40.87571359],[-8.24490951,40.87571227],[-8.24497248,40.87570511],[-8.24497395,40.87566316],[-8.24497,40.87564827],[-8.24468343,40.87555921],[-8.24415739,40.87539295],[-8.24400822,40.87534545],[-8.24397296,40.87537824],[-8.24347045,40.87520005],[-8.24359244,40.87500051],[-8.24352088,40.87498738],[-8.24325803,40.87498426]]],[[[-8.27299822,40.87484257],[-8.27283632,40.8748657],[-8.27290533,40.87493234],[-8.27294807,40.87497362],[-8.2732059,40.87520501],[-8.27351937,40.87550527],[-8.27374698,40.8757635],[-8.27379276,40.87582073],[-8.273804,40.87579708],[-8.27394628,40.87549947],[-8.27402786,40.87533559],[-8.27406534,40.87521153],[-8.27385804,40.87511251],[-8.27377947
+=== isip.data:baldios.atual
+HITS <?xml version="1.0" encoding="UTF-8"?><wfs:FeatureCollection xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" next="https://www.ifap.pt/
+DESC <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:isip.data="https://www.ifap.pt/isip/ows/isip.data" xmlns:wfs="http://www.opengis.net/wfs/2.0" elementFormDefault="qualified" targetNamespace="https://www.ifap.pt/isip/ows/isip.data">
+  <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://www.ifap.pt/isip/ows/schemas/gml/3.2.1/gml.xsd"/>
+  <xsd:complexType name="baldios.atualType">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="NBALDIO" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="BENEF" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DD" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CC" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="FF" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="AREA" nillable="true" type="xsd:decimal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="GEOM" nillable="false" type="gml:MultiSurfacePropertyType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="baldios.atual" substitutionGroup="gml:AbstractFeature" type="isip.data:baldios.atualType"/>
+</xsd:schema>
+
+ONE {"type":"FeatureCollection","features":[{"type":"Feature","id":"baldios.atual.fid--261e0d4f_1a0f431b997_-5e4c","geometry":{"type":"MultiPolygon","coordinates":[[[[-13405.18376153,135578.64006285],[-13404.1061824,135583.82594245],[-13400.03373924,135603.42406532],[-13395.16573316,135615.70078815],[-13391.14425249,135624.80251772],[-13382.8895818,135638.13763357],[-13378.44474038,135644.48780451],[-13374.84652492,135652.10783635],[-13369.34344942,135661.20961137],[-13361.08893251,135681.31795725],[-13355.79747087,135691.05471919],[-13352.41094532,135698.25144886],[-13345.00288614,135707.77657794],[-13329.12820446,135723.86359912],[-13325.74169752,135727.46206591],[-13314.73514526,135732.33065347],[-13308.17351074,135734.23583519],[-13299.28361777,135737.62277306],[-13290.60532412,135741.00970444],[-13277.48222251,135747.78333725],[-13268.80394338,135751.80526205],[-13255.15399982,135759.9484971],[-13285.09197505,135785.38481559],[-13288.90451242,135787.60342581],[-13297.9513967,135789.38437977],[-13300.06077442,135789.82181039],[-13309.12314266,135785.38407814],[-13327.10737096,135781.633565],[-13330.77921573,135780.85221037],[-13346.52890831,135769.66434273],[-13379.4810045,135729.19499908],[-13374.87202443,135745.94496728],[-13380.27816343,135741.85109355],[-13386.30928958,135737.28845582],[-13401.27695579,135691.63221746],[-13404.32384385,135692.66336296],[-13404.0425607,135691.16338752],[-13403.62063786,135688.97592291],[-13402.79241806,135684.66349245],[-13401.02641492,135
+=== isip.data:PERIGOSIDADE_INCENDIO_RURAL
+HITS <?xml version="1.0" encoding="UTF-8"?><wfs:FeatureCollection xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" next="https://www.ifap.pt/
+DESC <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:isip.data="https://www.ifap.pt/isip/ows/isip.data" xmlns:wfs="http://www.opengis.net/wfs/2.0" elementFormDefault="qualified" targetNamespace="https://www.ifap.pt/isip/ows/isip.data">
+  <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://www.ifap.pt/isip/ows/schemas/gml/3.2.1/gml.xsd"/>
+  <xsd:complexType name="PERIGOSIDADE_INCENDIO_RURALType">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="the_geom" nillable="true" type="gml:MultiSurfacePropertyType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Id" nillable="true" type="xsd:long"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="gridcode" nillable="true" type="xsd:long"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PERIGOSIDADE_INCENDIO_RURAL" substitutionGroup="gml:AbstractFeature" type="isip.data:PERIGOSIDADE_INCENDIO_RURALType"/>
+</xsd:schema>
+
+ONE {"type":"FeatureCollection","features":[{"type":"Feature","id":"PERIGOSIDADE_INCENDIO_RURAL.1","geometry":{"type":"MultiPolygon","coordinates":[[[[-5341.4075,276020.196],[-5391.4075,276020.196],[-5391.4075,276045.196],[-5341.4075,276045.196],[-5341.4075,276020.196]]]]},"geometry_name":"the_geom","properties":{"Id":1,"gridcode":0}}],"totalFeatures":1754093,"numberMatched":1754093,"numberReturned":1,"timeStamp":"2026-09-30T22:52:10.383Z","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:EPSG::3763"}}}
+=== isip.data:classificacao.automatica.2025
+HITS <?xml version="1.0" encoding="UTF-8"?><wfs:FeatureCollection xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" next="https://www.ifap.pt/
+DESC <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:isip.data="https://www.ifap.pt/isip/ows/isip.data" xmlns:wfs="http://www.opengis.net/wfs/2.0" elementFormDefault="qualified" targetNamespace="https://www.ifap.pt/isip/ows/isip.data">
+  <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://www.ifap.pt/isip/ows/schemas/gml/3.2.1/gml.xsd"/>
+  <xsd:complexType name="classificacao.automatica.2025Type">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="the_geom" nillable="true" type="gml:MultiSurfacePropertyType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="class_id" nillable="true" type="xsd:long"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="layer" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="path" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="class" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="classificacao.automatica.2025" substitutionGroup="gml:AbstractFeature" type="isip.data:classificacao.automatica.2025Type"/>
+</xsd:schema>
+
+ONE {"type":"FeatureCollection","features":[{"type":"Feature","id":"classificacao.automatica.2025.1","geometry":{"type":"MultiPolygon","coordinates":[[[[98885.25,259999.5],[98886.5,259999.5],[98886.5,259999.25],[98887,259999.25],[98887,259999],[98884.75,259999],[98884.75,259999.25],[98885.25,259999.25],[98885.25,259999.5]]]]},"geometry_name":"the_geom","properties":{"class_id":12,"layer":"011-1_rgbi_25_sem_map","path":"E:\\Scripts\\results\\011-1_rgbi_25_sem_map.geojson","class":"eucalipto"}}],"totalFeatures":808760,"numberMatched":808760,"numberReturned":1,"timeStamp":"2026-09-30T22:52:11.883Z","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:EPSG::3763"}}}
+=== isip.data:compromissos.pepac.acores.central.oriental
+HITS <?xml version="1.0" encoding="UTF-8"?><wfs:FeatureCollection xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" next="https://www.ifap.pt/
+DESC <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:isip.data="https://www.ifap.pt/isip/ows/isip.data" xmlns:wfs="http://www.opengis.net/wfs/2.0" elementFormDefault="qualified" targetNamespace="https://www.ifap.pt/isip/ows/isip.data">
+  <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://www.ifap.pt/isip/ows/schemas/gml/3.2.1/gml.xsd"/>
+  <xsd:complexType name="compromissos.pepac.acores.central.orientalType">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="NUMERO" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CODIGO" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GEOM" nillable="true" type="gml:SurfacePropertyType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DD" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CC" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="FF" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SUB_TIPO" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ORI_DAD" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="compromissos.pepac.acores.central.oriental" substitutionGroup="gml:AbstractFeature" type="isip.data:compromissos.pepac.acores.central.orientalType"/>
+</xsd:schema>
+
+ONE {"type":"FeatureCollection","features":[],"totalFeatures":0,"numberMatched":0,"numberReturned":0,"timeStamp":"2026-09-30T22:52:19.117Z","crs":null}
+=== isip.data:compromissos.pepac.acores.ocidental
+HITS <?xml version="1.0" encoding="UTF-8"?><wfs:FeatureCollection xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" next="https://www.ifap.pt/
+DESC <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:isip.data="https://www.ifap.pt/isip/ows/isip.data" xmlns:wfs="http://www.opengis.net/wfs/2.0" elementFormDefault="qualified" targetNamespace="https://www.ifap.pt/isip/ows/isip.data">
+  <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://www.ifap.pt/isip/ows/schemas/gml/3.2.1/gml.xsd"/>
+  <xsd:complexType name="compromissos.pepac.acores.ocidentalType">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="NUMERO" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CODIGO" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="GEOM" nillable="true" type="gml:SurfacePropertyType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DD" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CC" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="FF" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SUB_TIPO" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ORI_DAD" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="compromissos.pepac.acores.ocidental" substitutionGroup="gml:AbstractFeature" type="isip.data:compromissos.pepac.acores.ocidentalType"/>
+</xsd:schema>
+
+ONE {"type":"FeatureCollection","features":[],"totalFeatures":0,"numberMatched":0,"numberReturned":0,"timeStamp":"2026-09-30T22:52:20.430Z","crs":null}
