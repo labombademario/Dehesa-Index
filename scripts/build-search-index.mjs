@@ -112,6 +112,7 @@ const PAGES = [
   ['oferta-demanda.html', OD, 'oferta demanda supply demand balance produccion consumo exportaciones importaciones existencias usda psd wasde'],
   ['mercados.html', tri('Mercados USDA', 'USDA markets', 'Marchés USDA', 'Mercati USDA'), 'mercados usda ams market news precios prices piensos feed etanol ethanol granos grains legumbres pulses aves poultry huevos eggs ganado cattle heno hay lacteos dairy'],
   ['exportaciones.html', tri('Exportaciones de EE. UU.', 'U.S. exports', 'Exportations américaines', 'Esportazioni USA'), 'exportaciones exports ventas sales compradores buyers comercio trade fas gats census importaciones paises countries'],
+  ['sequia.html', tri('Monitor de sequía de EE. UU.', 'U.S. Drought Monitor', 'Moniteur de sécheresse américain', 'Monitor della siccità USA'), 'sequia sequía drought monitor seca sequedad clima estados superficie usdm noaa sécheresse siccità'],
   ['cultivos.html', CS, 'cultivos crops condicion valoracion siembra cosecha progress nass estados unidos']
 ];
 for (const [u, n, k] of PAGES) add({ t: 'page', u, n, s: tri('Página', 'Page', 'Page', 'Page'), k });

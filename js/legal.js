@@ -24,6 +24,7 @@
           { b: 'USDA PSD.', t: 'Datos de oferta y demanda de USDA Foreign Agricultural Service (PSD Online), publicados con licencia CC BY 4.0; se cita la fuente y se indica que las cifras de “Mundo” son cálculo propio.' },
           { b: 'USDA AMS Market News.', t: 'Precios de la harina de soja de EE. UU. obtenidos de la API MARS de USDA AMS Market News (informe 3511); datos públicos del Gobierno de EE. UU., con la fuente citada.' },
           { b: 'USDA FAS (exportaciones y comercio).', t: 'Ventas de exportación y comercio de EE. UU. por país obtenidos de las API abiertas de USDA FAS (Export Sales Reporting y GATS, con datos del Census Bureau); datos públicos del Gobierno de EE. UU., con la fuente citada.' },
+          { b: 'U.S. Drought Monitor.', t: 'Datos de sequía por estado del U.S. Drought Monitor (National Drought Mitigation Center de la Universidad de Nebraska-Lincoln, USDA y NOAA); datos públicos, se cita la fuente.' },
           { b: 'NASA POWER.', t: 'Datos de clima del proyecto Prediction Of Worldwide Energy Resources (NASA), reanálisis MERRA-2. Datos de NASA de uso libre; se cita la fuente.' },
           { b: 'Banco Central Europeo.', t: 'Tipos de cambio de referencia, que el BCE publica solo con fines informativos.' }
         ], after: 'No mostramos datos de fuentes que prohíben su uso automatizado o comercial (por ejemplo AHDB, CME o DTN); esas tarjetas figuran como pendientes.' },
@@ -53,6 +54,7 @@
           { b: 'USDA PSD.', t: 'Supply and demand data from the USDA Foreign Agricultural Service (PSD Online), published under a CC BY 4.0 licence; the source is cited and the “World” figures are marked as our own calculation.' },
           { b: 'USDA AMS Market News.', t: 'US soybean meal prices obtained from the USDA AMS Market News MARS API (report 3511); public U.S. Government data, with the source cited.' },
           { b: 'USDA FAS (export sales and trade).', t: 'U.S. export sales and trade by country obtained from the USDA FAS open APIs (Export Sales Reporting and GATS, with Census Bureau data); public U.S. Government data, with the source cited.' },
+          { b: 'U.S. Drought Monitor.', t: 'State drought data from the U.S. Drought Monitor (National Drought Mitigation Center at the University of Nebraska-Lincoln, USDA and NOAA); public data, source credited.' },
           { b: 'NASA POWER.', t: 'Climate data from NASA’s Prediction Of Worldwide Energy Resources project, MERRA-2 reanalysis. NASA data free to use; the source is cited.' },
           { b: 'European Central Bank.', t: 'Reference exchange rates, which the ECB publishes for information purposes only.' }
         ], after: 'We do not show data from sources that prohibit automated or commercial use (for example AHDB, CME or DTN); those cards appear as pending.' },
@@ -82,6 +84,7 @@
           { b: 'USDA PSD.', t: 'Données d’offre et de demande de l’USDA Foreign Agricultural Service (PSD Online), publiées sous licence CC BY 4.0 ; la source est citée et les chiffres « Monde » sont indiqués comme un calcul propre.' },
           { b: 'USDA AMS Market News.', t: 'Prix du tourteau de soja des États-Unis obtenus via l’API MARS d’USDA AMS Market News (rapport 3511) ; données publiques du gouvernement américain, source citée.' },
           { b: 'USDA FAS (exportations et commerce).', t: 'Ventes à l’exportation et commerce des États-Unis par pays obtenus via les API ouvertes de l’USDA FAS (Export Sales Reporting et GATS, avec des données du Census Bureau) ; données publiques du gouvernement américain, source citée.' },
+          { b: 'U.S. Drought Monitor.', t: 'Données de sécheresse par État du U.S. Drought Monitor (National Drought Mitigation Center de l’Université du Nebraska-Lincoln, USDA et NOAA) ; données publiques, source citée.' },
           { b: 'NASA POWER.', t: 'Données climatiques du projet Prediction Of Worldwide Energy Resources de la NASA, réanalyse MERRA-2. Données NASA d’usage libre ; la source est citée.' },
           { b: 'Banque centrale européenne.', t: 'Taux de change de référence, publiés par la BCE à titre informatif uniquement.' }
         ], after: 'Nous n’affichons pas de données de sources qui interdisent l’usage automatisé ou commercial (par exemple AHDB, CME ou DTN) ; ces fiches apparaissent en attente.' },
@@ -111,6 +114,7 @@
           { b: 'USDA PSD.', t: 'Dati di offerta e domanda dell’USDA Foreign Agricultural Service (PSD Online), pubblicati con licenza CC BY 4.0; la fonte è citata e le cifre “Mondo” sono indicate come calcolo proprio.' },
           { b: 'USDA AMS Market News.', t: 'Prezzi della farina di soia degli Stati Uniti ottenuti dall’API MARS di USDA AMS Market News (rapporto 3511); dati pubblici del governo USA, fonte citata.' },
           { b: 'USDA FAS (esportazioni e commercio).', t: 'Vendite all’esportazione e commercio degli Stati Uniti per paese ottenuti dalle API aperte dell’USDA FAS (Export Sales Reporting e GATS, con dati del Census Bureau); dati pubblici del governo USA, fonte citata.' },
+          { b: 'U.S. Drought Monitor.', t: 'Dati di siccità per Stato dell’U.S. Drought Monitor (National Drought Mitigation Center dell’Università del Nebraska-Lincoln, USDA e NOAA); dati pubblici, fonte citata.' },
           { b: 'NASA POWER.', t: 'Dati climatici del progetto Prediction Of Worldwide Energy Resources della NASA, rianalisi MERRA-2. Dati NASA di uso libero; la fonte è citata.' },
           { b: 'Banca centrale europea.', t: 'Tassi di cambio di riferimento, che la BCE pubblica solo a scopo informativo.' }
         ], after: 'Non mostriamo dati di fonti che vietano l’uso automatizzato o commerciale (ad esempio AHDB, CME o DTN); queste schede appaiono in attesa.' },
