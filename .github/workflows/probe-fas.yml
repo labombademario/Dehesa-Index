@@ -11,21 +11,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Probe
+        env:
+          K: ${{ secrets.FAS_API_KEY }}
         run: |
           mkdir -p .probe
-          t() { echo "=== $1"; curl -sL -m 60 -o /tmp/o -w "%{http_code} %{content_type} %{size_download}\n" "$1"; head -c 600 /tmp/o | tr '\n' ' '; echo; }
+          if [ -z "$K" ]; then echo "FALTA FAS_API_KEY" > .probe/fas.txt; else
+          t() { echo "=== $1"; curl -sL -m 90 -H "X-Api-Key: $K" -o /tmp/o -w "%{http_code} %{content_type} %{size_download}\n" "$1"; head -c "${2:-700}" /tmp/o | tr '\n' ' '; echo; }
           {
-          t "https://api.fas.usda.gov/api/esr/commodities"
-          t "https://apps.fas.usda.gov/OpenData/api/esr/commodities"
-          t "https://apps.fas.usda.gov/opendataweb/home"
-          t "https://apps.fas.usda.gov/export-sales/esrd1.html"
-          t "https://apps.fas.usda.gov/export-sales/h101.htm"
-          t "https://apps.fas.usda.gov/gats/default.aspx"
-          t "https://api.fas.usda.gov/api/gats/countries"
-          t "https://apps.fas.usda.gov/gats/ExpressQuery1.aspx"
-          t "https://www.fas.usda.gov/data/export-sales-reporting"
-          t "https://apps.fas.usda.gov/psdonline/downloads/psd_grains_pulses_csv.zip"
-          } > .probe/fas.txt 2>&1
+          B=https://api.fas.usda.gov/api
+          t "$B/esr/commodities" 1500
+          t "$B/esr/countries" 600
+          t "$B/esr/unitsOfMeasure" 600
+          t "$B/esr/datareleasedates" 600
+          t "$B/esr/exports/commodityCode/107/allCountries/marketYear/2026" 1500
+          t "$B/esr/exports/commodityCode/401/allCountries/marketYear/2026" 600
+          t "$B/gats/countries" 600
+          t "$B/gats/commodities" 600
+          t "$B/gats/HS6Commodities" 600
+          t "$B/gats/regions" 400
+          t "$B/gats/unitsOfMeasure" 400
+          t "$B/gats/dataReleaseDates" 600
+          t "$B/gats/censusExports/partnerCode/CH/year/2026/month/6/HS10Code/1001990000" 800
+          t "$B/gats/censusExports/partnerCode/-1/year/2026/month/6" 800
+          t "$B/gats/UNTradeExports/reporterCode/ES/partnerCode/-1/year/2024/month/12" 800
+          t "$B/gats/UNTradeExports/reporterCode/US/partnerCode/CH/year/2025/month/12/HS6Code/100199" 800
+          } > .probe/fas.txt 2>&1; fi
       - name: Commit
         run: |
           git config user.name "github-actions"; git config user.email "actions@github.com"
