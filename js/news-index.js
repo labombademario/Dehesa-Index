@@ -6870,7 +6870,7 @@
    ]
   },
   {
-   "id": "auto-41d9627674",
+   "id": "auto-5d749704a3",
    "date": "2026-09-28",
    "region": "uk",
    "topic": "",
@@ -6878,7 +6878,7 @@
    "products": [
     "fertilizantes"
    ],
-   "source": "farmersguardian.com",
+   "source": "Farmers Guardian",
    "lang": "en",
    "headline": {
     "en": "Group urges fertiliser tax rethink as farmers face soaring inputs",
@@ -7033,7 +7033,7 @@
    ]
   },
   {
-   "id": "auto-c012272058",
+   "id": "auto-ce7f356a6d",
    "date": "2026-09-27",
    "region": "global",
    "topic": "",
@@ -7041,7 +7041,7 @@
    "products": [
     "fertilizantes"
    ],
-   "source": "thefinancialexpress.com.bd",
+   "source": "The Financial Express",
    "lang": "en",
    "headline": {
     "en": "Govt to purchase 0.95 million tonnes of non-urea fertiliser",
@@ -10844,7 +10844,7 @@
    ]
   },
   {
-   "id": "auto-ccfdcf18e9",
+   "id": "auto-dc249f7051",
    "date": "2026-09-29",
    "region": "eu",
    "topic": "",
@@ -10852,7 +10852,7 @@
    "products": [
     "leche"
    ],
-   "source": "Demócrata",
+   "source": "democrata.es",
    "lang": "es",
    "headline": {
     "en": "Consumidores reclaman datos claros para comprobar que las rebajas de la leche se trasladan con diligencia al supermercado",
@@ -15989,6 +15989,34 @@
      "direction": "uncertain"
     }
    ]
+  },
+  {
+   "id": "auto-80d1d4e048",
+   "date": "2026-09-25",
+   "region": "eu",
+   "topic": "politica",
+   "topics": [
+    "politica",
+    "ayudas"
+   ],
+   "products": [
+    "pac",
+    "ganado"
+   ],
+   "source": "Web-agri",
+   "lang": "fr",
+   "headline": {
+    "en": "Réforme de la Pac 2028 : les grandes orientations",
+    "es": "Réforme de la Pac 2028 : les grandes orientations",
+    "fr": "Réforme de la Pac 2028 : les grandes orientations",
+    "it": "Réforme de la Pac 2028 : les grandes orientations"
+   },
+   "description": "Alors que la future politique agricole commune (Pac) doit entrer en vigueur en 2028, les discussions s'accélèrent au niveau européen. Simplification des dispositifs, renforcement de la compétitivité, accompagnement de la transition environnementale et renouvellement des génératio",
+   "url": "https://www.web-agri.fr/politique-agricole-commune/article/903926/reforme-de-la-pac-2028-les-grandes-orientations",
+   "relevance": 62,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
   }
  ],
  "oliva": [
@@ -16429,7 +16457,7 @@
    "marketLinks": []
   },
   {
-   "id": "auto-7008655c9e",
+   "id": "auto-3fe469e5db",
    "date": "2026-09-29",
    "region": "eu",
    "topic": "",
@@ -16437,7 +16465,7 @@
    "products": [
     "pac"
    ],
-   "source": "lasvocesdelpueblo.com",
+   "source": "Lasvocesdelpueblo",
    "lang": "es",
    "headline": {
     "en": "Hito en el campo extremeño: La Consejería de Vox abona 220 millones de la PAC antes de octubre",
@@ -16724,212 +16752,34 @@
      "direction": "uncertain"
     }
    ]
-  }
- ],
- "huevos": [
-  {
-   "id": "auto-4e4003f4e1",
-   "date": "2026-09-30",
-   "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "huevos"
-   ],
-   "source": "WATTAgNet",
-   "lang": "en",
-   "headline": {
-    "en": "Cal-Maine Foods reports Q1 loss as egg prices continue decline",
-    "es": "Cal-Maine Foods reports Q1 loss as egg prices continue decline",
-    "fr": "Cal-Maine Foods reports Q1 loss as egg prices continue decline",
-    "it": "Cal-Maine Foods reports Q1 loss as egg prices continue decline"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZXEtQnFXbUU5VFFia2xjdWRyeEZEVzd0VHgyYU1ncTROZTc0LWFvMEFkY18ta25nZEhRcUluUTJxbnVrTXBpdXh2dUJ0eVRCbThIaXNWZDA0X1lIX1lqUWd6WVNFZnFSOTlickw2S0RjcTlxTmI1STZMUmdaYzd6RVFXNHNxQnIycVVBaFBLaW9Sb0c2RmxUbDA5T0VlSF96dENYbkRFREU?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "huevos",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
   },
   {
-   "id": "auto-f30bd6596a",
-   "date": "2026-09-29",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "huevos"
-   ],
-   "source": "The Straits Times",
-   "lang": "en",
-   "headline": {
-    "en": "S’pore’s fourth egg farm, set to produce Japanese eggs, breaks ground after four-year delay",
-    "es": "S’pore’s fourth egg farm, set to produce Japanese eggs, breaks ground after four-year delay",
-    "fr": "S’pore’s fourth egg farm, set to produce Japanese eggs, breaks ground after four-year delay",
-    "it": "S’pore’s fourth egg farm, set to produce Japanese eggs, breaks ground after four-year delay"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNmFscFg0aWFxWVBmb2dpaVViNW55WkZIQjUxS19GMG1HY0tMOW14ZXF1ZjFleU1GRzZUZzNtdUszMUJNRWozWnRKeGdTNy1tanNGQUl5Ul8zaUF4NmxDQkw2QllTYjlfMW1VR2QxTzd3LUh4LWZpdVJIUktCUDJ6OU5QOUNRd2JhNk92UnhrTlA5YV9saFpwVlFrdTRYeC14Y0ZnaWNBY2xzclV3Ui1OdXBTX19OUWlORGNtVmN5b3pzUTM1Rm5meXVGM1BTdw?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "huevos",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-4d8a509ec7",
-   "date": "2026-09-28",
-   "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios",
-    "costes"
-   ],
-   "products": [
-    "huevos",
-    "pienso"
-   ],
-   "source": "WATTAgNet",
-   "lang": "en",
-   "headline": {
-    "en": "US egg prices hit 20-year lows as feed costs expected to rise",
-    "es": "US egg prices hit 20-year lows as feed costs expected to rise",
-    "fr": "US egg prices hit 20-year lows as feed costs expected to rise",
-    "it": "US egg prices hit 20-year lows as feed costs expected to rise"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQm1yUFpvWWdWTVFmb2JnUl82XzNwUHhPalRrRVN2TzE4blhJMG9EUjJSeFFUZXNVRzZLV0pkTThDZnZHWWlUNzQ2S1BTRlB1TERRTHNjaVBHeGZ6VUM3cTF5eEN1UGRwRGFjUDRQNEIxa3o0bF9abzR4OHh4eThHeW5Ud3k1SkhUR1Z3ckJsbnZYa3hrbGkwUE5wM3lXS21Jcl9acWxrTzlONGc?oc=5",
-   "relevance": 70,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "huevos",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-cc7037c633",
-   "date": "2026-09-28",
+   "id": "auto-80d1d4e048",
+   "date": "2026-09-25",
    "region": "eu",
-   "topic": "comercio",
+   "topic": "politica",
    "topics": [
-    "comercio",
-    "oferta"
+    "politica",
+    "ayudas"
    ],
    "products": [
-    "huevos"
+    "pac",
+    "ganado"
    ],
-   "source": "WATTAgNet",
-   "lang": "en",
+   "source": "Web-agri",
+   "lang": "fr",
    "headline": {
-    "en": "Portugal’s 2025 egg production, exports higher",
-    "es": "Portugal’s 2025 egg production, exports higher",
-    "fr": "Portugal’s 2025 egg production, exports higher",
-    "it": "Portugal’s 2025 egg production, exports higher"
+    "en": "Réforme de la Pac 2028 : les grandes orientations",
+    "es": "Réforme de la Pac 2028 : les grandes orientations",
+    "fr": "Réforme de la Pac 2028 : les grandes orientations",
+    "it": "Réforme de la Pac 2028 : les grandes orientations"
    },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVFgxUWw0OUhUaXVkcWtld0FrSGdGajBTLVhkODlZR21nVEw0RF9vd1VBeXhHdlkyT3lUSzdGRk9DQkdqTHMxbGlZQ1ZoVHYyaXJZZnR3S0ROLXBTdWxscG5CN0h2Z0R4QWFYWDUxYV9rbVlxOUhxcGN1N2NJOVFCSzI0ME0yZzlqemR6aThqTjRndw?oc=5",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "huevos",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "huevos",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-37df928688",
-   "date": "2026-09-28",
-   "region": "global",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "huevos"
-   ],
-   "source": "WATTAgNet",
-   "lang": "en",
-   "headline": {
-    "en": "Label changes appear on Australian free range-egg cartons",
-    "es": "Label changes appear on Australian free range-egg cartons",
-    "fr": "Label changes appear on Australian free range-egg cartons",
-    "it": "Label changes appear on Australian free range-egg cartons"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNNmczSFFsaGFodm13alpIeWdiNmtOT2NSU0FWT19pYjNJRkNkd3ZBdmFQRkUtclNKNVFma3NpcGtQZ0I0NHBabnJCN3RhVy1LNEZXTXVhYzltY3FmLXlFUHZCaEd6ZVZfVUNxa0w2cnBFYm1CSmRfRnk0WWl1eENnS2R5ZkZoNlVBSzZNWGNhWGpUNHRaZlJlejVYT25QUmpyNHc?oc=5",
-   "relevance": 48,
+   "description": "Alors que la future politique agricole commune (Pac) doit entrer en vigueur en 2028, les discussions s'accélèrent au niveau européen. Simplification des dispositifs, renforcement de la compétitivité, accompagnement de la transition environnementale et renouvellement des génératio",
+   "url": "https://www.web-agri.fr/politique-agricole-commune/article/903926/reforme-de-la-pac-2028-les-grandes-orientations",
+   "relevance": 62,
    "auto": true,
    "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "huevos",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-edb12a5733",
-   "date": "2026-09-27",
-   "region": "us",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "precios"
-   ],
-   "products": [
-    "huevos"
-   ],
-   "source": "Tridge",
-   "lang": "en",
-   "headline": {
-    "en": "Duck Eggs Suppliers, Export Data & Price Trends | Global Market Overview 2026",
-    "es": "Duck Eggs Suppliers, Export Data & Price Trends | Global Market Overview 2026",
-    "fr": "Duck Eggs Suppliers, Export Data & Price Trends | Global Market Overview 2026",
-    "it": "Duck Eggs Suppliers, Export Data & Price Trends | Global Market Overview 2026"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9weGlKNndGbkcyZzNGdENoOEh0eTE1Z0xTTmExWTN2eUNjRDl0bkpmVGlwOGVVOG5Lb09HZkdLN0UzVFg1TjRTV3RXTWZFX0tBaVBSUThWaXlfT3ZC?oc=5",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "huevos",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
+   "marketLinks": []
   }
  ],
  "cordero": [
@@ -17483,6 +17333,179 @@
    "marketLinks": [
     {
      "market": "azucar",
+     "channel": "trade",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  }
+ ],
+ "huevos": [
+  {
+   "id": "auto-f30bd6596a",
+   "date": "2026-09-29",
+   "region": "us",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "huevos"
+   ],
+   "source": "The Straits Times",
+   "lang": "en",
+   "headline": {
+    "en": "S’pore’s fourth egg farm, set to produce Japanese eggs, breaks ground after four-year delay",
+    "es": "S’pore’s fourth egg farm, set to produce Japanese eggs, breaks ground after four-year delay",
+    "fr": "S’pore’s fourth egg farm, set to produce Japanese eggs, breaks ground after four-year delay",
+    "it": "S’pore’s fourth egg farm, set to produce Japanese eggs, breaks ground after four-year delay"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNmFscFg0aWFxWVBmb2dpaVViNW55WkZIQjUxS19GMG1HY0tMOW14ZXF1ZjFleU1GRzZUZzNtdUszMUJNRWozWnRKeGdTNy1tanNGQUl5Ul8zaUF4NmxDQkw2QllTYjlfMW1VR2QxTzd3LUh4LWZpdVJIUktCUDJ6OU5QOUNRd2JhNk92UnhrTlA5YV9saFpwVlFrdTRYeC14Y0ZnaWNBY2xzclV3Ui1OdXBTX19OUWlORGNtVmN5b3pzUTM1Rm5meXVGM1BTdw?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "huevos",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-4d8a509ec7",
+   "date": "2026-09-28",
+   "region": "global",
+   "topic": "precios",
+   "topics": [
+    "precios",
+    "costes"
+   ],
+   "products": [
+    "huevos",
+    "pienso"
+   ],
+   "source": "WATTAgNet",
+   "lang": "en",
+   "headline": {
+    "en": "US egg prices hit 20-year lows as feed costs expected to rise",
+    "es": "US egg prices hit 20-year lows as feed costs expected to rise",
+    "fr": "US egg prices hit 20-year lows as feed costs expected to rise",
+    "it": "US egg prices hit 20-year lows as feed costs expected to rise"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQm1yUFpvWWdWTVFmb2JnUl82XzNwUHhPalRrRVN2TzE4blhJMG9EUjJSeFFUZXNVRzZLV0pkTThDZnZHWWlUNzQ2S1BTRlB1TERRTHNjaVBHeGZ6VUM3cTF5eEN1UGRwRGFjUDRQNEIxa3o0bF9abzR4OHh4eThHeW5Ud3k1SkhUR1Z3ckJsbnZYa3hrbGkwUE5wM3lXS21Jcl9acWxrTzlONGc?oc=5",
+   "relevance": 70,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "huevos",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-cc7037c633",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "comercio",
+   "topics": [
+    "comercio",
+    "oferta"
+   ],
+   "products": [
+    "huevos"
+   ],
+   "source": "WATTAgNet",
+   "lang": "en",
+   "headline": {
+    "en": "Portugal’s 2025 egg production, exports higher",
+    "es": "Portugal’s 2025 egg production, exports higher",
+    "fr": "Portugal’s 2025 egg production, exports higher",
+    "it": "Portugal’s 2025 egg production, exports higher"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVFgxUWw0OUhUaXVkcWtld0FrSGdGajBTLVhkODlZR21nVEw0RF9vd1VBeXhHdlkyT3lUSzdGRk9DQkdqTHMxbGlZQ1ZoVHYyaXJZZnR3S0ROLXBTdWxscG5CN0h2Z0R4QWFYWDUxYV9rbVlxOUhxcGN1N2NJOVFCSzI0ME0yZzlqemR6aThqTjRndw?oc=5",
+   "relevance": 60,
+   "auto": true,
+   "impactChannel": "trade",
+   "marketLinks": [
+    {
+     "market": "huevos",
+     "channel": "trade",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "huevos",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-37df928688",
+   "date": "2026-09-28",
+   "region": "global",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "huevos"
+   ],
+   "source": "WATTAgNet",
+   "lang": "en",
+   "headline": {
+    "en": "Label changes appear on Australian free range-egg cartons",
+    "es": "Label changes appear on Australian free range-egg cartons",
+    "fr": "Label changes appear on Australian free range-egg cartons",
+    "it": "Label changes appear on Australian free range-egg cartons"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNNmczSFFsaGFodm13alpIeWdiNmtOT2NSU0FWT19pYjNJRkNkd3ZBdmFQRkUtclNKNVFma3NpcGtQZ0I0NHBabnJCN3RhVy1LNEZXTXVhYzltY3FmLXlFUHZCaEd6ZVZfVUNxa0w2cnBFYm1CSmRfRnk0WWl1eENnS2R5ZkZoNlVBSzZNWGNhWGpUNHRaZlJlejVYT25QUmpyNHc?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "huevos",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-edb12a5733",
+   "date": "2026-09-27",
+   "region": "us",
+   "topic": "comercio",
+   "topics": [
+    "comercio",
+    "precios"
+   ],
+   "products": [
+    "huevos"
+   ],
+   "source": "Tridge",
+   "lang": "en",
+   "headline": {
+    "en": "Duck Eggs Suppliers, Export Data & Price Trends | Global Market Overview 2026",
+    "es": "Duck Eggs Suppliers, Export Data & Price Trends | Global Market Overview 2026",
+    "fr": "Duck Eggs Suppliers, Export Data & Price Trends | Global Market Overview 2026",
+    "it": "Duck Eggs Suppliers, Export Data & Price Trends | Global Market Overview 2026"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9weGlKNndGbkcyZzNGdENoOEh0eTE1Z0xTTmExWTN2eUNjRDl0bkpmVGlwOGVVOG5Lb09HZkdLN0UzVFg1TjRTV3RXTWZFX0tBaVBSUThWaXlfT3ZC?oc=5",
+   "relevance": 60,
+   "auto": true,
+   "impactChannel": "trade",
+   "marketLinks": [
+    {
+     "market": "huevos",
      "channel": "trade",
      "relation": null,
      "direction": "uncertain"

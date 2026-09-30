@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-30T23:06:25.342523+00:00",
+ "generatedAt": "2026-09-30T23:09:44.079179+00:00",
  "count": 400,
  "items": [
   {
@@ -2462,39 +2462,6 @@
    ]
   },
   {
-   "id": "auto-4e4003f4e1",
-   "date": "2026-09-30",
-   "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "huevos"
-   ],
-   "source": "WATTAgNet",
-   "lang": "en",
-   "headline": {
-    "en": "Cal-Maine Foods reports Q1 loss as egg prices continue decline",
-    "es": "Cal-Maine Foods reports Q1 loss as egg prices continue decline",
-    "fr": "Cal-Maine Foods reports Q1 loss as egg prices continue decline",
-    "it": "Cal-Maine Foods reports Q1 loss as egg prices continue decline"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZXEtQnFXbUU5VFFia2xjdWRyeEZEVzd0VHgyYU1ncTROZTc0LWFvMEFkY18ta25nZEhRcUluUTJxbnVrTXBpdXh2dUJ0eVRCbThIaXNWZDA0X1lIX1lqUWd6WVNFZnFSOTlickw2S0RjcTlxTmI1STZMUmdaYzd6RVFXNHNxQnIycVVBaFBLaW9Sb0c2RmxUbDA5T0VlSF96dENYbkRFREU?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "huevos",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-3e198b2824",
    "date": "2026-09-30",
    "region": "us",
@@ -3713,37 +3680,6 @@
    ]
   },
   {
-   "id": "auto-c2bb787804",
-   "date": "2026-09-30",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cordero"
-   ],
-   "source": "Agrarheute",
-   "lang": "de",
-   "headline": {
-    "en": "\"Bauer sucht Frau\"-Landwirt (71) gestorben - Arbeit mit Holz war seine Leidenschaft",
-    "es": "\"Bauer sucht Frau\"-Landwirt (71) gestorben - Arbeit mit Holz war seine Leidenschaft",
-    "fr": "\"Bauer sucht Frau\"-Landwirt (71) gestorben - Arbeit mit Holz war seine Leidenschaft",
-    "it": "\"Bauer sucht Frau\"-Landwirt (71) gestorben - Arbeit mit Holz war seine Leidenschaft"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeWtqUDhtTjRpc0wyaXFiVTktUmNMbE1OVFNzZklIS1dwZi1EQjhxYXdQZ2NGYXJHcEtpTG93LTViS2Jka1ZQb2ZSbXNiVC1zQmZHU0g1Q1Q3OW9YWnpCTmIwdEhWQmJPQXVzMU5UNnVQa1NpVkNaZUdZcUVnU2ZpaDdHcTVGYlZzbkc3VVZFRVpJTFhWUExnTXFwdDJMQ2JTSHBwdnBHQzBwbG5LNjdjRkZn?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cordero",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-76657dab46",
    "date": "2026-09-30",
    "region": "eu",
@@ -3768,6 +3704,37 @@
    "marketLinks": [
     {
      "market": "azucar",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-c2bb787804",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "cordero"
+   ],
+   "source": "Agrarheute",
+   "lang": "de",
+   "headline": {
+    "en": "\"Bauer sucht Frau\"-Landwirt (71) gestorben - Arbeit mit Holz war seine Leidenschaft",
+    "es": "\"Bauer sucht Frau\"-Landwirt (71) gestorben - Arbeit mit Holz war seine Leidenschaft",
+    "fr": "\"Bauer sucht Frau\"-Landwirt (71) gestorben - Arbeit mit Holz war seine Leidenschaft",
+    "it": "\"Bauer sucht Frau\"-Landwirt (71) gestorben - Arbeit mit Holz war seine Leidenschaft"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeWtqUDhtTjRpc0wyaXFiVTktUmNMbE1OVFNzZklIS1dwZi1EQjhxYXdQZ2NGYXJHcEtpTG93LTViS2Jka1ZQb2ZSbXNiVC1zQmZHU0g1Q1Q3OW9YWnpCTmIwdEhWQmJPQXVzMU5UNnVQa1NpVkNaZUdZcUVnU2ZpaDdHcTVGYlZzbkc3VVZFRVpJTFhWUExnTXFwdDJMQ2JTSHBwdnBHQzBwbG5LNjdjRkZn?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cordero",
      "channel": "market_impact",
      "relation": null,
      "direction": "uncertain"
@@ -5126,30 +5093,6 @@
    "marketLinks": []
   },
   {
-   "id": "auto-784b7f06c8",
-   "date": "2026-09-30",
-   "region": "eu",
-   "topic": "oferta",
-   "topics": [
-    "oferta"
-   ],
-   "products": [],
-   "source": "Agrarheute",
-   "lang": "de",
-   "headline": {
-    "en": "Komplette Heuernte verbrennt, Landwirt hat kein Futter für den Winter - mit dieser Solidarität hat er nicht gerechnet",
-    "es": "Komplette Heuernte verbrennt, Landwirt hat kein Futter für den Winter - mit dieser Solidarität hat er nicht gerechnet",
-    "fr": "Komplette Heuernte verbrennt, Landwirt hat kein Futter für den Winter - mit dieser Solidarität hat er nicht gerechnet",
-    "it": "Komplette Heuernte verbrennt, Landwirt hat kein Futter für den Winter - mit dieser Solidarität hat er nicht gerechnet"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQaHhmTWtIaHJ0RGpTUXpNOTExZy1oWXlZOXlSc2xqT1ZYTkI3YmhxelRWRHhwZmtxdFcwYUFyc0JUSlBfZ3VyQXNLT0ExRnRsTzJiRjVNci1acVd0enN4ZmgyN0ZIaDg2WTJZYVBldmFyV0VlMlVveC1Kc0V5LW9rblpyVEdiOGE2WTkzVFpRUUFaOG8yTnluWHNxSW1tLVRPNkxnZFV1Rms2RUpo?oc=5",
-   "relevance": 36,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
    "id": "auto-1964d600a1",
    "date": "2026-09-30",
    "region": "eu",
@@ -5366,7 +5309,7 @@
    "marketLinks": []
   },
   {
-   "id": "auto-c741fd08d7",
+   "id": "auto-bca12a1c30",
    "date": "2026-09-30",
    "region": "us",
    "topic": "sanidad",
@@ -5374,7 +5317,7 @@
     "sanidad"
    ],
    "products": [],
-   "source": "en.philenews.com",
+   "source": "Philenews",
    "lang": "en",
    "headline": {
     "en": "Bird flu risk to general public remains low, health bodies say",
@@ -8439,7 +8382,7 @@
    ]
   },
   {
-   "id": "auto-ccfdcf18e9",
+   "id": "auto-dc249f7051",
    "date": "2026-09-29",
    "region": "eu",
    "topic": "",
@@ -8447,7 +8390,7 @@
    "products": [
     "leche"
    ],
-   "source": "Demócrata",
+   "source": "democrata.es",
    "lang": "es",
    "headline": {
     "en": "Consumidores reclaman datos claros para comprobar que las rebajas de la leche se trasladan con diligencia al supermercado",
@@ -8901,7 +8844,7 @@
    "marketLinks": []
   },
   {
-   "id": "auto-7008655c9e",
+   "id": "auto-3fe469e5db",
    "date": "2026-09-29",
    "region": "eu",
    "topic": "",
@@ -8909,7 +8852,7 @@
    "products": [
     "pac"
    ],
-   "source": "lasvocesdelpueblo.com",
+   "source": "Lasvocesdelpueblo",
    "lang": "es",
    "headline": {
     "en": "Hito en el campo extremeño: La Consejería de Vox abona 220 millones de la PAC antes de octubre",
@@ -10489,39 +10432,6 @@
    ]
   },
   {
-   "id": "auto-4b257ac349",
-   "date": "2026-09-28",
-   "region": "ca",
-   "topic": "oferta",
-   "topics": [
-    "oferta"
-   ],
-   "products": [
-    "leche"
-   ],
-   "source": "Dairy Farmers of Canada",
-   "lang": "en",
-   "headline": {
-    "en": "Full Fat Long-Life/UHT Milk Market Forecast to 2035: Ambient Dairy Demand Accelerates on Food Service and Recombined Product Growth",
-    "es": "Full Fat Long-Life/UHT Milk Market Forecast to 2035: Ambient Dairy Demand Accelerates on Food Service and Recombined Product Growth",
-    "fr": "Full Fat Long-Life/UHT Milk Market Forecast to 2035: Ambient Dairy Demand Accelerates on Food Service and Recombined Product Growth",
-    "it": "Full Fat Long-Life/UHT Milk Market Forecast to 2035: Ambient Dairy Demand Accelerates on Food Service and Recombined Product Growth"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNRmRKSnlCOEd3aUpXS19zdDdVa3VqcnE2dk5ocXdhTVltMDVxaHUyYzNmUER0UTdTOC1odXdEbmxPU0QtNDFRaWI4V2hfQlJyV2h1MkE2T1AwVWpiX0JwM01jQU0wTHBuWTdNX0RERGhyRXRBWVlCbDRabWVzcjJQVDE3aDBWaVkwRFltazhHZHVkbWpMX1NzZnhpaDJCRXRVc2hEX1RybWNpaTJjWWxHSkVfNjVHYi1SaXNpN2ZaREZPQms0VDJfc01BTjFOQ3B3NzNuM3ZlUkI0RXZpYlF5bGx4clkxZXFVUURkcXVFYVp5UQ?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "supply",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-38b06e5730",
    "date": "2026-09-28",
    "region": "eu",
@@ -11677,6 +11587,37 @@
    ]
   },
   {
+   "id": "auto-000883ef0b",
+   "date": "2026-09-28",
+   "region": "ca",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "leche"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "Full Fat Long-Life/UHT Milk Market To 2035: Food Service and Recombined Dairy Demand Drive Expansion - News and Statistics",
+    "es": "Full Fat Long-Life/UHT Milk Market To 2035: Food Service and Recombined Dairy Demand Drive Expansion - News and Statistics",
+    "fr": "Full Fat Long-Life/UHT Milk Market To 2035: Food Service and Recombined Dairy Demand Drive Expansion - News and Statistics",
+    "it": "Full Fat Long-Life/UHT Milk Market To 2035: Food Service and Recombined Dairy Demand Drive Expansion - News and Statistics"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNRmRKSnlCOEd3aUpXS19zdDdVa3VqcnE2dk5ocXdhTVltMDVxaHUyYzNmUER0UTdTOC1odXdEbmxPU0QtNDFRaWI4V2hfQlJyV2h1MkE2T1AwVWpiX0JwM01jQU0wTHBuWTdNX0RERGhyRXRBWVlCbDRabWVzcjJQVDE3aDBWaVkwRFltazhHZHVkbWpMX1NzZnhpaDJCRXRVc2hEX1RybWNpaTJjWWxHSkVfNjVHYi1SaXNpN2ZaREZPQms0VDJfc01BTjFOQ3B3NzNuM3ZlUkI0RXZpYlF5bGx4clkxZXFVUURkcXVFYVp5UQ?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "leche",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-01b1b4dcdb",
    "date": "2026-09-28",
    "region": "ca",
@@ -11956,7 +11897,7 @@
    ]
   },
   {
-   "id": "auto-41d9627674",
+   "id": "auto-5d749704a3",
    "date": "2026-09-28",
    "region": "uk",
    "topic": "",
@@ -11964,7 +11905,7 @@
    "products": [
     "fertilizantes"
    ],
-   "source": "farmersguardian.com",
+   "source": "Farmers Guardian",
    "lang": "en",
    "headline": {
     "en": "Group urges fertiliser tax rethink as farmers face soaring inputs",
@@ -12458,7 +12399,7 @@
    "marketLinks": []
   },
   {
-   "id": "auto-cb24bdbbf7",
+   "id": "auto-0d60c7de20",
    "date": "2026-09-28",
    "region": "ca",
    "topic": "oferta",
@@ -12466,7 +12407,7 @@
     "oferta"
    ],
    "products": [],
-   "source": "world-spectator.com",
+   "source": "The World-Spectator",
    "lang": "en",
    "headline": {
     "en": "Harvest ‘moving very slowly’ due to wet September",
@@ -13067,7 +13008,7 @@
    ]
   },
   {
-   "id": "auto-c012272058",
+   "id": "auto-ce7f356a6d",
    "date": "2026-09-27",
    "region": "global",
    "topic": "",
@@ -13075,7 +13016,7 @@
    "products": [
     "fertilizantes"
    ],
-   "source": "thefinancialexpress.com.bd",
+   "source": "The Financial Express",
    "lang": "en",
    "headline": {
     "en": "Govt to purchase 0.95 million tonnes of non-urea fertiliser",
@@ -13943,7 +13884,7 @@
    "marketLinks": []
   },
   {
-   "id": "auto-a1a8b86117",
+   "id": "auto-0068217e9b",
    "date": "2026-09-26",
    "region": "us",
    "topic": "oferta",
@@ -13951,7 +13892,7 @@
     "oferta"
    ],
    "products": [],
-   "source": "grainews.ca",
+   "source": "Grainews",
    "lang": "en",
    "headline": {
     "en": "U.S. Grain/Oilseed Review: Tour results again below last year’s yields",
@@ -14267,7 +14208,7 @@
    ]
   },
   {
-   "id": "auto-a624fc191a",
+   "id": "auto-8c6b3b4779",
    "date": "2026-09-25",
    "region": "eu",
    "topic": "precios",
@@ -14278,7 +14219,7 @@
     "trigo",
     "colza"
    ],
-   "source": "La France Agricole",
+   "source": "lafranceagricole.fr",
    "lang": "fr",
    "headline": {
     "en": "Les cours du blé et du colza sont de plus en plus fragilisés",
@@ -14341,6 +14282,68 @@
     {
      "market": "trigo",
      "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-80d1d4e048",
+   "date": "2026-09-25",
+   "region": "eu",
+   "topic": "politica",
+   "topics": [
+    "politica",
+    "ayudas"
+   ],
+   "products": [
+    "pac",
+    "ganado"
+   ],
+   "source": "Web-agri",
+   "lang": "fr",
+   "headline": {
+    "en": "Réforme de la Pac 2028 : les grandes orientations",
+    "es": "Réforme de la Pac 2028 : les grandes orientations",
+    "fr": "Réforme de la Pac 2028 : les grandes orientations",
+    "it": "Réforme de la Pac 2028 : les grandes orientations"
+   },
+   "description": "Alors que la future politique agricole commune (Pac) doit entrer en vigueur en 2028, les discussions s'accélèrent au niveau européen. Simplification des dispositifs, renforcement de la compétitivité, accompagnement de la transition environnementale et renouvellement des génératio",
+   "url": "https://www.web-agri.fr/politique-agricole-commune/article/903926/reforme-de-la-pac-2028-les-grandes-orientations",
+   "relevance": 62,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-8f15d9ee58",
+   "date": "2026-09-25",
+   "region": "global",
+   "topic": "comercio",
+   "topics": [
+    "comercio",
+    "precios"
+   ],
+   "products": [
+    "arroz"
+   ],
+   "source": "TradingView",
+   "lang": "en",
+   "headline": {
+    "en": "Indian rice export prices hold near one-year high; Thai, Vietnam rates slip",
+    "es": "Indian rice export prices hold near one-year high; Thai, Vietnam rates slip",
+    "fr": "Indian rice export prices hold near one-year high; Thai, Vietnam rates slip",
+    "it": "Indian rice export prices hold near one-year high; Thai, Vietnam rates slip"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPOURIcDZWcFh5SmpoU3BnazVMLURCVFhNT3FnTUp1ejh4eEdmSnF3RUVOUW9qMVFSUnlZSnU0c09LQUpBaTdCODN6ZHotWTZRclBvZ3RUZkstSHpjU1pQNWtxTjc4Y0h6YnhlWlg1RWdIaUo1V0Q5aU9fOHlMZk5YSVlfVjZtQ1E2LXpJSzljRl8tcnE2R21kYkgtaGtHV1F2TEV3eFZkQi02bXJQNU5pOExwaE9CekxkRGhLZVpBLTJiWE14VUliMVhxVlNaRTlJVS1aTkEwMFZYY3c?oc=5",
+   "relevance": 60,
+   "auto": true,
+   "impactChannel": "trade",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "trade",
      "relation": null,
      "direction": "uncertain"
     }
