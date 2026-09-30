@@ -29,6 +29,13 @@ const calendar = read('js/calendario.js');
 const prices = read('js/precios.js');
 
 check(shared.includes('function renderContextBar'), 'shared context bar exists');
+check(shared.includes('NAV_GROUPS') && shared.includes("'g:us'") && shared.includes("'g:eu'"), 'nav has the US data and EU data submenus');
+{
+  const groupFiles = [...shared.matchAll(/file: '([a-z-]+\.html)'/g)].map(m => m[1]);
+  check(groupFiles.length >= 12, 'submenus list their pages (' + groupFiles.length + ')');
+  for (const f of new Set(groupFiles)) check(exists(f), 'submenu target exists: ' + f);
+  for (const f of ['mercados.html','exportaciones.html','oferta-demanda.html','cultivos.html','rendimientos.html','ganaderia.html','sequia.html','insumos.html','costes.html','europa.html','producto.html','mapa.html','clima.html']) check(groupFiles.includes(f), 'submenu links ' + f);
+}
 check(shared.includes('window.history.back()'), 'context back action exists');
 check(shared.includes("sitePath('assets/logo.png')"), 'footer logo uses nested-page-safe path');
 check(shared.includes('backButton + siblingLinks'), 'context bar renders the defined sibling links');

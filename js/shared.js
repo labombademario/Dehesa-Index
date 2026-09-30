@@ -65,6 +65,33 @@
     empresas: 'empresas.html', contacto: 'contacto.html'
   };
 
+  // Submenús de datos. Cada grupo agrupa páginas que cuelgan de él; el resto del menú no cambia.
+  var NAV_ORDER = ['home', 'precios', 'noticias', 'calendario', 'g:us', 'g:eu', 'g:tools', 'informacion', 'blog', 'empresas', 'contacto'];
+  var NAV_GROUPS = {
+    us: { label: { es: 'Datos EE. UU.', en: 'U.S. data', fr: 'Données É.-U.', it: 'Dati USA' }, items: [
+      { file: 'mercados.html', label: { es: 'Mercados USDA', en: 'USDA markets', fr: 'Marchés USDA', it: 'Mercati USDA' } },
+      { file: 'exportaciones.html', label: { es: 'Exportaciones', en: 'Exports', fr: 'Exportations', it: 'Esportazioni' } },
+      { file: 'oferta-demanda.html', label: { es: 'Oferta y demanda', en: 'Supply and demand', fr: 'Offre et demande', it: 'Offerta e domanda' } },
+      { file: 'cultivos.html', label: { es: 'Estado de los cultivos', en: 'Crop progress', fr: 'État des cultures', it: 'Stato delle colture' } },
+      { file: 'rendimientos.html', label: { es: 'Rendimientos', en: 'Yields', fr: 'Rendements', it: 'Rese' } },
+      { file: 'ganaderia.html', label: { es: 'Ganadería', en: 'Livestock', fr: 'Élevage', it: 'Zootecnia' } },
+      { file: 'sequia.html', label: { es: 'Sequía', en: 'Drought', fr: 'Sécheresse', it: 'Siccità' } },
+      { file: 'insumos.html', label: { es: 'Insumos', en: 'Inputs', fr: 'Intrants', it: 'Input' } },
+      { file: 'costes.html', label: { es: 'Costes', en: 'Costs', fr: 'Coûts', it: 'Costi' } }
+    ] },
+    eu: { label: { es: 'Datos UE', en: 'EU data', fr: 'Données UE', it: 'Dati UE' }, items: [
+      { file: 'europa.html', label: { es: 'Precios de la UE', en: 'EU prices', fr: 'Prix de l’UE', it: 'Prezzi UE' } },
+      { file: 'index.html', hash: '#home-dehesa-index', label: { es: 'Índice Dehesa (UE)', en: 'Dehesa Index (EU)', fr: 'Indice Dehesa (UE)', it: 'Indice Dehesa (UE)' }, noActive: true }
+    ] },
+    tools: { label: { es: 'Herramientas', en: 'Tools', fr: 'Outils', it: 'Strumenti' }, items: [
+      { file: 'producto.html', query: '?p=trigo', label: { es: 'Ficha de producto', en: 'Product page', fr: 'Fiche produit', it: 'Scheda prodotto' } },
+      { file: 'mapa.html', label: { es: 'Mapa agrícola', en: 'Farm map', fr: 'Carte agricole', it: 'Mappa agricola' } },
+      { file: 'clima.html', label: { es: 'Clima agrícola', en: 'Farm weather', fr: 'Météo agricole', it: 'Meteo agricolo' } }
+    ] }
+  };
+  function currentFile() { var f = window.location.pathname.split('/').pop(); return f || 'index.html'; }
+  function groupIsActive(g) { var f = currentFile(); return g.items.some(function (i) { return !i.noActive && i.file === f; }); }
+
   var FOOTER_STRINGS = {
     es: {
       blurb: 'Un panel diario y semanal de precios agrícolas de EE. UU. y Europa: cereales, lácteos, ganado, pienso y fertilizantes, todo en un mismo sitio.',
@@ -206,8 +233,17 @@
     if (!root) return;
     var t = NAV_LABELS[lang] || NAV_LABELS.es;
 
-    var linksHtml = NAV_KEYS.map(function (k) {
-      var isActive = k === activePage;
+    var curFile = currentFile();
+    var inGroup = NAV_ORDER.some(function (k) { return k.indexOf('g:') === 0 && groupIsActive(NAV_GROUPS[k.slice(2)]); });
+    var linksHtml = NAV_ORDER.map(function (k) {
+      if (k.indexOf('g:') === 0) {
+        var g = NAV_GROUPS[k.slice(2)], on = groupIsActive(g);
+        return '<div class="di-nav-group"><button type="button" class="di-nav-gbtn' + (on ? ' active' : '') + '" aria-haspopup="true" aria-expanded="false">' + esc(g.label[lang] || g.label.es) + ' <span aria-hidden="true">▾</span></button>' +
+          '<div class="di-nav-menu">' + g.items.map(function (i) {
+            return '<a class="' + (!i.noActive && i.file === curFile ? 'active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + (i.hash || '') + '">' + esc(i.label[lang] || i.label.es) + '</a>';
+          }).join('') + '</div></div>';
+      }
+      var isActive = k === activePage && !inGroup;
       return '<a class="' + (isActive ? 'active' : '') + '" href="' + sitePath(NAV_PAGES[k]) + '" role="button">' + esc(t[k]) + '</a>';
     }).join('');
 
@@ -215,8 +251,14 @@
       return '<option value="' + o.code + '"' + (o.code === lang ? ' selected' : '') + '>' + o.label + '</option>';
     }).join('');
 
-    var mobileHtml = NAV_KEYS.map(function (k) {
-      var isActive = k === activePage;
+    var mobileHtml = NAV_ORDER.map(function (k) {
+      if (k.indexOf('g:') === 0) {
+        var g = NAV_GROUPS[k.slice(2)];
+        return '<div class="di-nav-mgroup">' + esc(g.label[lang] || g.label.es) + '</div>' + g.items.map(function (i) {
+          return '<a class="di-nav-msub' + (!i.noActive && i.file === curFile ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + (i.hash || '') + '">' + esc(i.label[lang] || i.label.es) + '</a>';
+        }).join('');
+      }
+      var isActive = k === activePage && !inGroup;
       return '<a class="' + (isActive ? 'active' : '') + '" href="' + sitePath(NAV_PAGES[k]) + '">' + esc(t[k]) + '</a>';
     }).join('');
 
@@ -243,6 +285,18 @@
     document.getElementById('di-theme-toggle').addEventListener('click', function () {
       toggleTheme();
     });
+    var gbtns = root.querySelectorAll('.di-nav-gbtn');
+    function closeGroups() { Array.prototype.forEach.call(gbtns, function (b) { b.setAttribute('aria-expanded', 'false'); b.parentNode.classList.remove('is-open'); }); }
+    Array.prototype.forEach.call(gbtns, function (b) {
+      b.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = b.parentNode.classList.contains('is-open');
+        closeGroups();
+        if (!open) { b.parentNode.classList.add('is-open'); b.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+    document.addEventListener('click', closeGroups);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeGroups(); });
     var toggleBtn = document.getElementById('di-mobile-toggle');
     var panel = document.getElementById('di-mobile-panel');
     toggleBtn.addEventListener('click', function () {
