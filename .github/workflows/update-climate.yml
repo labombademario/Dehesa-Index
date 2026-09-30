@@ -1,0 +1,28 @@
+name: Update agricultural climate (NASA POWER)
+on:
+  schedule:
+    - cron: '0 10 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Fetch NASA POWER monthly anomalies
+        run: node scripts/update-climate.mjs
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/climate.json
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "chore: update agricultural climate anomalies"
+          git pull --rebase origin main
+          git push
