@@ -26,6 +26,7 @@
     aceite: ['Aceite de oliva', 'Olive oil', "Huile d'olive", "Olio d'oliva"],
     azucar: ['Azúcar', 'Sugar', 'Sucre', 'Zucchero'],
     vino: ['Vino', 'Wine', 'Vin', 'Vino'],
+    fruta: ['Fruta y hortaliza', 'Fruit and vegetables', 'Fruits et légumes', 'Frutta e ortaggi'],
     fertilizantes: ['Fertilizantes', 'Fertilisers', 'Engrais', 'Fertilizzanti']
   };
   // Etiquetas del portal (en inglés) -> [es, en, fr, it]. Lo que no está aquí se muestra tal cual lo publica el portal.
@@ -131,7 +132,22 @@
     }
   };
   function tr() { return TX[lang()] || TX.es; }
-  function w(s) { var r = W[s]; return r ? r[LI[lang()] || 0] : s; }
+  // Fruta y hortaliza: producto y variedad se traducen a español; en otros idiomas se deja el nombre del portal (inglés)
+  var FRUIT = { 'Apples': 'Manzanas', 'Bananas': 'Plátanos', 'Tomatoes': 'Tomates', 'Carrots': 'Zanahorias', 'Pears': 'Peras', 'Onions': 'Cebollas', 'Lettuces': 'Lechugas', 'Peppers': 'Pimientos', 'Cauliflowers': 'Coliflores', 'Oranges': 'Naranjas', 'Cucumbers': 'Pepinos', 'Egg Plants': 'Berenjenas', 'Lemons': 'Limones', 'Garlic': 'Ajos', 'Courgettes': 'Calabacines', 'Peaches': 'Melocotones', 'Table Grapes': 'Uva de mesa', 'Beans': 'Judías verdes', 'Strawberries': 'Fresas', 'Nectarines': 'Nectarinas', 'Cabbage': 'Repollos', 'Plums': 'Ciruelas', 'Kiwis Hayward': 'Kiwis Hayward', 'Melons': 'Melones', 'Leeks': 'Puerros', 'Mandarins': 'Mandarinas', 'Cultivated Mushrooms': 'Champiñones', 'Clementines': 'Clementinas', 'Water Melons': 'Sandías', 'Cherries': 'Cerezas', 'Apricots': 'Albaricoques', 'Avocados': 'Aguacates', 'Asparagus': 'Espárragos', 'Satsumas': 'Satsumas', 'Ware potatoes': 'Patatas' };
+  var FVAR = { 'All types and varieties': 'Todas las variedades', 'Round': 'Redondo', 'Cherry/Special': 'Cherry/especial', 'Red delicious and other red varieties': 'Red delicious y otras rojas', 'Golden delicious': 'Golden delicious', 'Smooth varieties': 'Lisos', 'White': 'Blanco', 'White flesh': 'Pulpa blanca', 'Yellow flesh': 'Pulpa amarilla', 'Large size': 'Calibre grande', 'Small size': 'Calibre pequeño', 'Closed': 'Cerrados', 'Spring': 'Primavera', 'Violet': 'Morado', 'Flat': 'Planos', 'All sweet varieties': 'Todas las dulces', 'Navel': 'Navel', 'Yellow flesh - Large packaging': 'Pulpa amarilla, envase grande', 'Yellow flesh - Small packaging': 'Pulpa amarilla, envase pequeño', 'White flesh - Large packaging': 'Pulpa blanca, envase grande', 'White flesh - Small packaging': 'Pulpa blanca, envase pequeño', 'All types and varieties - large packaging': 'Todas las variedades, envase grande', 'All types and varieties - small packaging': 'Todas las variedades, envase pequeño', 'National weighted average of all types and varieties': 'Media nacional ponderada de todas las variedades', 'National weighted average of main varieties covering at least 70 % of the representative market in the reference period of the notification': 'Media nacional ponderada de las principales variedades (≥ 70 % del mercado)', 'Iceberg': 'Iceberg', 'With seeds in large packaging': 'Con pepitas, envase grande', 'With seeds in small packaging': 'Con pepitas, envase pequeño', 'Seedless in large packaging': 'Sin pepitas, envase grande', 'Seedless in small packaging': 'Sin pepitas, envase pequeño', 'Avec pépins - With seeds': 'Con pepitas' };
+  var FSTAGE = { 'Ex-packaging station price': ['Salida de central de envasado', 'Ex-packaging station'], 'Farmgate price': ['Precio en finca', 'Farm-gate price'], 'Retail buying price': ['Compra del comercio minorista', 'Retail buying price'], 'Retail selling price': ['Venta al consumidor', 'Retail selling price'] };
+  function w(s) {
+    var r = W[s]; if (r) return r[LI[lang()] || 0];
+    if (lang() !== 'es') return FSTAGE[s] && lang() === 'en' ? FSTAGE[s][1] : s;
+    if (FSTAGE[s]) return FSTAGE[s][0];
+    var b = /^Bananas [–-] EU [–-] (.*)$/.exec(s); if (b) return 'Plátanos · UE · ' + (FVAR[b[1]] || b[1]);
+    var m = /^(Organic-)?(Ware potatoes|[A-Za-z ]+?)(?:,.*?)?(?: [-–] (.*))?$/.exec(s);
+    if (m && FRUIT[m[2]]) {
+      var v = m[3] ? (FVAR[m[3]] || m[3].replace(/^Bananas? [-–] /, '')) : '';
+      return (m[1] ? 'Ecológicas · ' : '') + FRUIT[m[2]] + (v ? ' · ' + v : '');
+    }
+    return s;
+  }
   function seriesTitle(parts) { return parts.map(w).join(' · '); }
   var ISO = { EL: 'GR', UK: 'GB' };
   var AGG = { 'EU': ['UE (agregado de la Comisión)', 'EU (Commission aggregate)', 'UE (agrégat de la Commission)', 'UE (aggregato della Commissione)'],
