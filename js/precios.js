@@ -523,6 +523,14 @@
       }).join('') + '</div>';
   }
 
+  function noValueText() {
+    var lg = lang();
+    return lg === 'en' ? 'No verified observation yet: no sample value is shown.' :
+      lg === 'fr' ? 'Pas encore d’observation vérifiée : aucune valeur d’exemple n’est affichée.' :
+      lg === 'it' ? 'Nessuna osservazione verificata: non viene mostrato alcun valore di esempio.' :
+      'Aún sin observación verificada: no se muestra ningún valor de muestra.';
+  }
+
   function productCardHtml(entry, opts) {
     opts = opts || {};
     var t = ui();
@@ -535,7 +543,9 @@
     var fav = isFavorite(key);
     var expanded = !!state.expanded[key];
     var foot = entry.product.footnoteKey ? (D.FOOT[lang()] || D.FOOT.es)[entry.product.footnoteKey] : '';
-    var showValue = dataState.key === 'real';
+    // Se muestra el valor de toda observación verificada (REAL y NO COMPARABLE); el estado va en la etiqueta.
+    // Solo lo pendiente (sin observación verificada) se oculta: nunca se enseña un valor de muestra.
+    var showValue = !!observation && observation.status === 'verified';
     var price = showValue ? built.price : '—';
     var unit = showValue ? built.unit : '';
     var change = showValue ? built.changeLabel : '';
@@ -550,14 +560,14 @@
             '<button type="button" class="di-fav-star' + (fav ? ' active' : '') + '" data-action="fav" data-key="' + key + '" title="' + esc(fav ? t.favRemoveTitle : t.favAddTitle) + '">★</button>' +
           '</div>' +
         '</div>' +
-        quoteBadgeHtml(disp.quoteType) +
+        (showValue ? quoteBadgeHtml(disp.quoteType) : '') +
         (global.DehesaDataTrust ? global.DehesaDataTrust.render(entry, disp) : '') +
         '<div class="di-product-price-row">' +
           '<span class="di-product-price">' + esc(price) + '</span>' +
           '<span class="di-product-unit">' + esc(unit) + '</span>' +
           '<span class="di-product-change" style="color:' + (showValue ? built.changeColor : 'var(--text-faint)') + ';">' + esc(change) + '</span>' +
         '</div>' +
-        (showValue ? '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '<div class="di-product-no-value">Valor visible cuando la observación esté verificada.</div>') +
+        (showValue ? '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '<div class="di-product-no-value">' + esc(noValueText()) + '</div>') +
         (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(t.ukGapNote) + '</div>' : '') +
         relatedNewsHtml(entry) +
         (foot ? '<div class="di-product-footnote">' + esc(foot) + '</div>' : '') +
@@ -1243,7 +1253,7 @@
 
   function restorePriceUrl() {
     var qs = new URLSearchParams(window.location.search);
-    var validTabs = ['cereales','lacteos','fertilizantes','energia','seguro','vino','madera'];
+    var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','energia','seguro','vino','madera'];
     var tab = qs.get('tab');
     var productKey = queryProductKey();
     var region = qs.get('region');
@@ -1362,7 +1372,7 @@
     var qs = new URLSearchParams(window.location.search);
     var requestedTab = qs.get('tab');
     var requestedRegion = qs.get('region');
-    var validTabs = ['cereales','lacteos','fertilizantes','energia','seguro','vino','madera'];
+    var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','energia','seguro','vino','madera'];
     if (validTabs.indexOf(requestedTab) !== -1) state.activeTab = requestedTab;
     if (deepKey && PRODUCT_BY_KEY[deepKey]) {
       state.activeTab = PRODUCT_BY_KEY[deepKey].catId;
