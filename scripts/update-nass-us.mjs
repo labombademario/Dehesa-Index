@@ -25,7 +25,8 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_JS_PATH = path.join(__dirname, '..', 'js', 'data.js');
-const HISTORY_POINTS = 7; // últimos 7 meses publicados, para el minigráfico
+const HISTORY_POINTS = 7; // últimos 7 meses publicados, para el minigráfico de js/data.js
+const SNAPSHOT_HISTORY_POINTS = 120; // hasta 10 años de meses publicados, para el histórico ampliado (solo datos reales de NASS)
 const SNAPSHOT_DIR = path.join(__dirname, '..', 'data', 'snapshots');
 
 // Un producto por entrada: qué pedirle a NASS y cómo encontrar/sustituir su
@@ -144,7 +145,7 @@ async function fetchSeries() {
   if (cleaned.length < 2) {
     throw new Error('Solo se encontraron ' + cleaned.length + ' puntos válidos -- no hay suficiente histórico para calcular la variación.');
   }
-  return cleaned.slice(-HISTORY_POINTS);
+  return cleaned.slice(-SNAPSHOT_HISTORY_POINTS);
 }
 
 function observationDateFromNass(year, periodDesc, periodCode) {
@@ -199,7 +200,8 @@ async function writeSnapshot(observation) {
 
 async function main() {
   console.log('Consultando USDA NASS Quick Stats (' + cfg.label + ', EE. UU., precio recibido mensual)...');
-  var series = await fetchSeries();
+  var fullSeries = await fetchSeries();
+  var series = fullSeries.slice(-HISTORY_POINTS);
   var latest = series[series.length - 1];
   var observationDate = observationDateFromNass(latest.year, latest.period, latest.periodCode);
   var prev = series[series.length - 2];
@@ -277,7 +279,7 @@ async function main() {
     unit: cfg.obsUnit || (key === 'arroz' ? 'cwt' : 'bushel'),
     frequency: 'monthly',
     changePct: changePct,
-    history: series.map(function (p) { return { year: p.year, period: p.period, value: fmt(p.value) }; })
+    history: fullSeries.map(function (p) { return { year: p.year, period: p.period, value: fmt(p.value) }; })
   });
 
   console.log('Data Trust: observationDate=' + observationDate + ' | publicationDate=' + publicationDate);
