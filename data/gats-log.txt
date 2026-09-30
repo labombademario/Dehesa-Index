@@ -1,6 +1,11 @@
 unidades KG: 47
 socios: 67
 último mes con datos: 202607
-meses pendientes: 202607,202606,202605,202604,202603,202602,202601,202512,202511,202510,202509,202508,202507,202506,202505,202504,202503,202502,202501,202412,202411,202410,202409,202408,202407
-mes 202607 listo; filas de interés 2811 ; peticiones usadas 134 ; exportaciones totales 7332 M USD
-meses en el fichero: 1 ; parada: límite de la API (429)
+meses pendientes: 202606,202605,202604,202603,202602,202601,202512,202511,202510,202509,202508,202507,202506,202505,202504,202503,202502,202501,202412,202411,202410,202409,202408,202407
+mes 202606 listo; filas de interés 2801 ; peticiones usadas 134 ; exportaciones totales 7838 M USD
+mes 202605 listo; filas de interés 2927 ; peticiones usadas 268 ; exportaciones totales 7877 M USD
+mes 202604 listo; filas de interés 2859 ; peticiones usadas 402 ; exportaciones totales 8291 M USD
+mes 202603 listo; filas de interés 2877 ; peticiones usadas 536 ; exportaciones totales 9273 M USD
+mes 202602 listo; filas de interés 2796 ; peticiones usadas 670 ; exportaciones totales 8058 M USD
+mes 202601 listo; filas de interés 2834 ; peticiones usadas 804 ; exportaciones totales 8736 M USD
+meses en el fichero: 7 ; parada: límite de la API (429)
