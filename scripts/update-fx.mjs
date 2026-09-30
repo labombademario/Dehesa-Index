@@ -46,8 +46,9 @@ async function fetchEcbRates() {
 
   var usdRate = rateFor('USD'); // 1 EUR = usdRate USD
   var gbpRate = rateFor('GBP'); // 1 EUR = gbpRate GBP
+  var cadRate = rateFor('CAD'); // 1 EUR = cadRate CAD
 
-  return { quoteDate: quoteDate, usdRate: usdRate, gbpRate: gbpRate };
+  return { quoteDate: quoteDate, usdRate: usdRate, gbpRate: gbpRate, cadRate: cadRate };
 }
 
 async function main() {
@@ -55,9 +56,11 @@ async function main() {
   var rates = await fetchEcbRates();
   var eurUsd = fmt(rates.usdRate);
   var gbpUsd = fmt(rates.usdRate / rates.gbpRate);
+  var cadUsd = fmt(rates.usdRate / rates.cadRate);
 
   console.log('Fecha de la cotización del BCE: ' + rates.quoteDate);
   console.log('EUR/USD = ' + eurUsd + '  (BCE: 1 EUR = ' + rates.usdRate + ' USD)');
+  console.log('CAD/USD = ' + cadUsd + '  (derivado de 1 EUR = ' + rates.cadRate + ' CAD)');
   console.log('GBP/USD = ' + gbpUsd + '  (derivado de 1 EUR = ' + rates.gbpRate + ' GBP)');
 
   var src = await readFile(DATA_JS_PATH, 'utf8');
@@ -65,6 +68,7 @@ async function main() {
   var reComment = /\/\/ --- Tipos de cambio \((?:BCE \/ Banco de Inglaterra|Banco Central Europeo), referencia del [^)]+\) -/;
   var reEurUsd = /var EURUSD = [\d.]+;/;
   var reGbpUsd = /var GBPUSD = [\d.]+;/;
+  var reCadUsd = /var CADUSD = [\d.]+;/;
   var reFxDate = /var FX_DATE = '[\d-]+';.*/;
 
   if (!reEurUsd.test(src) || !reGbpUsd.test(src)) {
@@ -79,6 +83,7 @@ async function main() {
     .replace(reComment, '// --- Tipos de cambio (Banco Central Europeo, referencia del ' + niceDate + ') -')
     .replace(reEurUsd, 'var EURUSD = ' + eurUsd + ';')
     .replace(reGbpUsd, 'var GBPUSD = ' + gbpUsd + ';')
+    .replace(reCadUsd, 'var CADUSD = ' + cadUsd + ';')
     .replace(reFxDate, "var FX_DATE = '" + (rates.quoteDate || '') + "'; // fecha ISO de la cotización, la actualiza scripts/update-fx.mjs");
 
   if (updated === src) {

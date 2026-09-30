@@ -63,7 +63,7 @@
     var key=productId+'-'+(region||'');
     var observation=D.DATA_TRUST&&D.DATA_TRUST[key];
     if(!observation){
-      var fallbackRegion=region==='uk'?'uk':region==='eu'?'eu':'us';
+      var fallbackRegion=region==='uk'?'uk':region==='ca'?'ca':region==='eu'?'eu':'us';
       observation=D.DATA_TRUST&&D.DATA_TRUST[productId+'-'+fallbackRegion];
     }
     if(!observation){

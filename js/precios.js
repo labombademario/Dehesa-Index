@@ -60,7 +60,7 @@
   var INFO_CATS = { seguro: true, vino: true, madera: true };
 
   var state = {
-    location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk') ? v : null; })(),
+    location: (function () { var v = readLS('dehesaIndexLocation'); return (v === 'us' || v === 'eu' || v === 'uk' || v === 'ca') ? v : null; })(),
     euCountry: (function () { var v = readLS('dehesaIndexEuCountry'); return (v === 'es' || v === 'de' || v === 'fr' || v === 'it') ? v : 'es'; })(),
     activeTab: 'cereales',
     favorites: readFavorites(),
@@ -147,6 +147,17 @@
     'dap:eu': { key: 'fertilizantes:dap', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'monthly' },
     'potasa:eu': { key: 'fertilizantes:potasa', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'monthly' },
     'cerdo:eu': { key: 'porcino:cerdo', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
+    'trigo:ca': { key: 'cereales:trigo', sourceId: 'statcan', currency: 'CAD', unit: 'tonelada', frequency: 'monthly' },
+    'cebada:ca': { key: 'cereales:cebada', sourceId: 'statcan', currency: 'CAD', unit: 'tonelada', frequency: 'monthly' },
+    'avena:ca': { key: 'cereales:avena', sourceId: 'statcan', currency: 'CAD', unit: 'tonelada', frequency: 'monthly' },
+    'colza:ca': { key: 'cereales:colza', sourceId: 'statcan', currency: 'CAD', unit: 'tonelada', frequency: 'monthly' },
+    'maiz:ca': { key: 'cereales:maiz', sourceId: 'statcan', currency: 'CAD', unit: 'tonelada', frequency: 'monthly' },
+    'leche:ca': { key: 'lacteos:leche', sourceId: 'statcan', currency: 'CAD', unit: '100kg', frequency: 'monthly' },
+    'vaca:ca': { key: 'ganado:vaca', sourceId: 'statcan', currency: 'CAD', unit: 'cwt', frequency: 'monthly' },
+    'cerdo:ca': { key: 'porcino:cerdo', sourceId: 'statcan', currency: 'CAD', unit: 'cwt', frequency: 'monthly' },
+    'cordero:ca': { key: 'ovino:cordero', sourceId: 'statcan', currency: 'CAD', unit: 'cwt', frequency: 'monthly' },
+    'pollo:ca': { key: 'avicultura:pollo', sourceId: 'statcan', currency: 'CAD', unit: 'kg', frequency: 'monthly' },
+    'huevos:ca': { key: 'avicultura:huevos', sourceId: 'statcan', currency: 'CAD', unit: 'docena', frequency: 'monthly' },
     'gas_natural:us': { key: 'energia:gas_natural', sourceId: 'eia', currency: 'USD', unit: 'mmbtu', frequency: 'weekly' },
     'gas_natural:eu': { key: 'energia:gas_natural', sourceId: 'world_bank', currency: 'USD', unit: 'mmbtu', frequency: 'monthly' },
     'petroleo_wti:us': { key: 'energia:petroleo_wti', sourceId: 'eia', currency: 'USD', unit: 'barril', frequency: 'weekly' },
@@ -258,6 +269,11 @@
       }
       return { region: region, regionCode: 'eu', targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: false };
     }
+    if (loc === 'ca') {
+      var caUnit = p.caUnitKey || p.metricUnitKey;
+      if (p.ca) return { region: p.ca, regionCode: 'ca', targetCcy: 'CAD', targetKgPerUnit: p.caKgPerUnit || p.metricKgPerUnit, targetUnitLabel: UL[caUnit], quoteType: p.quoteTypes && p.quoteTypes.ca, ukGap: false };
+      return { region: p.eu, regionCode: 'eu', targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: true };
+    }
     // uk
     if (p.uk) {
       return { region: p.uk, regionCode: 'uk', targetCcy: 'GBP', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.uk, ukGap: false };
@@ -269,6 +285,7 @@
     var p = entry.product;
     var out = ['us', 'eu'];
     if (p.uk) out.push('uk');
+    if (p.ca) out.push('ca');
     return out;
   }
   function defaultRegionFor(entry) {
@@ -320,6 +337,7 @@
     var items = PRODUCTS.map(function (entry) {
       var disp = resolveDisplay(entry, state.location, state.euCountry);
       if (!disp.region) return ''; // producto sin dato en este mercado (p. ej. sorgo fuera de EE. UU.)
+      if (!entryHasData(entry)) return ''; // solo lo verificado en este mercado (regla de cobertura)
       var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
       return (
         '<span class="di-ticker-item">' +
@@ -393,7 +411,8 @@
     var html = '<span class="di-location-label">' + esc(t.locationLabel) + '</span>' +
       '<button type="button" class="di-location-btn' + (state.location === 'us' ? ' active' : '') + '" data-loc="us">🇺🇸 ' + esc(t.locationUsLabel) + '</button>' +
       '<button type="button" class="di-location-btn' + (state.location === 'eu' ? ' active' : '') + '" data-loc="eu">🇪🇺 ' + esc(t.locationEuLabel) + '</button>' +
-      '<button type="button" class="di-location-btn' + (state.location === 'uk' ? ' active' : '') + '" data-loc="uk">🇬🇧 ' + esc(t.locationUkLabel) + '</button>';
+      '<button type="button" class="di-location-btn' + (state.location === 'uk' ? ' active' : '') + '" data-loc="uk">🇬🇧 ' + esc(t.locationUkLabel) + '</button>' +
+      '<button type="button" class="di-location-btn' + (state.location === 'ca' ? ' active' : '') + '" data-loc="ca">🇨🇦 ' + esc(t.locationCaLabel) + '</button>';
     if (state.location === 'eu') {
       var countries = [
         { code: 'es', flag: D.COUNTRY_FLAG.es, label: D.REGION[lang()].eu + ' — España' },
@@ -426,6 +445,7 @@
     var date = D.formatFxDate(D.FX_DATE, lang());
     if (state.location === 'eu') return t.fxLabelEu.replace('{eur}', fmtFxRate(D.FX.EUR)).replace('{date}', date);
     if (state.location === 'uk') return t.fxLabelUk.replace('{gbp}', fmtFxRate(D.FX.GBP)).replace('{date}', date);
+    if (state.location === 'ca') return t.fxLabelCa.replace('{cad}', fmtFxRate(D.FX.CAD)).replace('{date}', date);
     return '';
   }
 
@@ -461,7 +481,7 @@
     var disp = resolveDisplay(entry, state.location, state.euCountry);
     if (!disp.region) return false;
     if (state.deepLinkProduct === key) return true;
-    if (state.location === 'uk' && disp.ukGap) return false;
+    if ((state.location === 'uk' || state.location === 'ca') && disp.ukGap) return false;
     var obs = trustObservationFor(entry, disp);
     return !!obs && obs.status === 'verified';
   }
@@ -498,11 +518,14 @@
     var specs = [
       { code: 'us', region: p.us, ccy: 'USD', kg: p.imperialKgPerUnit, unit: UL[p.imperialUnitKey], regionLabel: D.REGION[lang()].us },
       { code: 'eu', region: p.eu, ccy: 'EUR', kg: p.metricKgPerUnit, unit: UL[p.metricUnitKey], regionLabel: D.REGION[lang()].eu },
-      { code: 'uk', region: p.uk, ccy: 'GBP', kg: p.metricKgPerUnit, unit: UL[p.metricUnitKey], regionLabel: D.REGION[lang()].uk }
+      { code: 'uk', region: p.uk, ccy: 'GBP', kg: p.metricKgPerUnit, unit: UL[p.metricUnitKey], regionLabel: D.REGION[lang()].uk },
+      { code: 'ca', region: p.ca, ccy: 'CAD', kg: p.caKgPerUnit || p.metricKgPerUnit, unit: UL[p.caUnitKey || p.metricUnitKey], regionLabel: D.REGION[lang()].ca }
     ];
     for (var i = 0; i < specs.length; i++) {
       var s = specs[i];
       if (!s.region) continue;
+      // Canadá nace con marcador de posición: solo se enseña si hay observación verificada
+      if (s.code === 'ca') { var caTrust = D.DATA_TRUST && D.DATA_TRUST[entry.catId + '-' + entry.nameKey + '-ca']; if (!caTrust || caTrust.status !== 'verified') continue; }
       var qt = p.quoteTypes && p.quoteTypes[s.code];
       var qtLabel = qt && (D.QUOTE_TYPES[lang()] || D.QUOTE_TYPES.es)[qt.type] ? (D.QUOTE_TYPES[lang()] || D.QUOTE_TYPES.es)[qt.type].label : '—';
       var sym = D.CCY_SYMBOL[s.ccy] || s.ccy;
@@ -621,7 +644,7 @@
           '<span class="di-product-change" style="color:' + (showValue ? built.changeColor : 'var(--text-faint)') + ';">' + esc(change) + '</span>' +
         '</div>' +
         (showValue ? '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '<div class="di-product-no-value">' + esc(noValueText()) + '</div>') +
-        (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(t.ukGapNote) + '</div>' : '') +
+        (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(state.location === 'ca' ? t.caGapNote : t.ukGapNote) + '</div>' : '') +
         relatedNewsHtml(entry) +
         (foot ? '<div class="di-product-footnote">' + esc(foot) + '</div>' : '') +
         (opts.compact ? '' :
@@ -778,7 +801,7 @@
     var linkLabel = lg === 'es' ? 'News Intelligence →' :
       lg === 'fr' ? 'News Intelligence →' :
       lg === 'it' ? 'News Intelligence →' : 'News Intelligence →';
-    var regionLabel = region === 'us' ? 'EE. UU.' : region === 'eu' ? 'Europa' : region === 'uk' ? 'UK' : 'Global';
+    var regionLabel = region === 'us' ? 'EE. UU.' : region === 'eu' ? 'Europa' : region === 'uk' ? 'UK' : region === 'ca' ? 'Canadá' : 'Global';
 
     if (!selected.length) {
       root.innerHTML =
@@ -907,6 +930,7 @@
       var disp = resolveDisplay(entry, 'eu', country || state.euCountry);
       return { region: disp.region, ccy: 'EUR', kg: entry.product.metricKgPerUnit, unit: UL[entry.product.metricUnitKey] };
     }
+    if (regionCode === 'ca' && entry.product.ca) return { region: entry.product.ca, ccy: 'CAD', kg: entry.product.caKgPerUnit || entry.product.metricKgPerUnit, unit: UL[entry.product.caUnitKey || entry.product.metricUnitKey] };
     return { region: entry.product.uk || entry.product.eu, ccy: entry.product.uk ? 'GBP' : 'EUR', kg: entry.product.metricKgPerUnit, unit: UL[entry.product.metricUnitKey] };
   }
 
@@ -1303,6 +1327,7 @@
             '<button data-wloc="us">🇺🇸 ' + esc(t.locationUsLabel) + '</button>' +
             '<button data-wloc="eu">🇪🇺 ' + esc(t.locationEuLabel) + '</button>' +
             '<button data-wloc="uk">🇬🇧 ' + esc(t.locationUkLabel) + '</button>' +
+            '<button data-wloc="ca">🇨🇦 ' + esc(t.locationCaLabel) + '</button>' +
           '</div>' +
           '<p style="font-size:11.5px;color:var(--welcome-text);opacity:0.7;margin:16px 0 0;">' + esc(t.welcomeHint) + '</p>' +
         '</div>' +
@@ -1337,6 +1362,7 @@
     var p = e.product;
     if (state.location === 'eu' && !p.eu && !p.uk) state.location = p.us ? 'us' : state.location;
     else if (state.location === 'uk' && !p.uk && !p.eu) state.location = p.us ? 'us' : state.location;
+    else if (state.location === 'ca' && !p.ca) state.location = p.us ? 'us' : (p.eu ? 'eu' : state.location);
   }
 
   function restorePriceUrl() {
@@ -1352,7 +1378,7 @@
     } else {
       state.deepLinkProduct = null;
     }
-    if (region === 'us' || region === 'eu' || region === 'uk') {
+    if (region === 'us' || region === 'eu' || region === 'uk' || region === 'ca') {
       state.location = region;
       writeLS('dehesaIndexLocation', region);
     }
@@ -1362,7 +1388,7 @@
   }
 
   function setLocation(nextLocation, opts) {
-    if (['us', 'eu', 'uk'].indexOf(nextLocation) === -1) return;
+    if (['us', 'eu', 'uk', 'ca'].indexOf(nextLocation) === -1) return;
     state.location = nextLocation;
     showLocationWelcome = false;
     writeLS('dehesaIndexLocation', nextLocation);
@@ -1468,7 +1494,7 @@
       state.activeTab = PRODUCT_BY_KEY[deepKey].catId;
       state.deepLinkProduct = deepKey;
     }
-    if (requestedRegion === 'us' || requestedRegion === 'eu' || requestedRegion === 'uk') {
+    if (requestedRegion === 'us' || requestedRegion === 'eu' || requestedRegion === 'uk' || requestedRegion === 'ca') {
       state.location = requestedRegion;
       writeLS('dehesaIndexLocation', requestedRegion);
     }

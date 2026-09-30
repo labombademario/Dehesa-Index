@@ -11,8 +11,9 @@
   var EURUSD = 1.1355;
   var GBPUSD = 1.3286;
   var FX_DATE = '2026-09-30'; // fecha ISO de la cotización, la actualiza scripts/update-fx.mjs
-  var FX = { USD: 1, EUR: EURUSD, GBP: GBPUSD };
-  var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£' };
+  var CADUSD = 0.7200;
+  var FX = { USD: 1, EUR: EURUSD, GBP: GBPUSD, CAD: CADUSD };
+  var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', CAD: 'C$' };
 
   // Nombres de mes abreviados por idioma, para mostrar FX_DATE en el panel
   // sin depender de Intl (coherencia con el resto del sitio, que es ES5
@@ -39,10 +40,10 @@
   };
 
   var REGION = {
-    es: { us: 'EE. UU.', eu: 'Europa', uk: 'Reino Unido' },
-    en: { us: 'U.S.', eu: 'Europe', uk: 'U.K.' },
-    fr: { us: 'États-Unis', eu: 'Europe', uk: 'Royaume-Uni' },
-    it: { us: 'Stati Uniti', eu: 'Europa', uk: 'Regno Unito' }
+    es: { us: 'EE. UU.', eu: 'Europa', uk: 'Reino Unido', ca: 'Canadá' },
+    en: { us: 'U.S.', eu: 'Europe', uk: 'U.K.', ca: 'Canada' },
+    fr: { us: 'États-Unis', eu: 'Europe', uk: 'Royaume-Uni', ca: 'Canada' },
+    it: { us: 'Stati Uniti', eu: 'Europa', uk: 'Regno Unito', ca: 'Canada' }
   };
 
   var ENERGY_REGIONS = {
@@ -101,6 +102,7 @@
     euronext: 'https://www.euronext.com/en/products/commodities',
     euronextColza: 'https://live.euronext.com/en/product/commodities-futures/ECO-DPAR',
     defraMilk: 'https://www.gov.uk/government/statistics/uk-milk-prices-and-composition-of-milk',
+    statcan: 'https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210007701',
     cmeSoybeanMeal: 'https://www.cmegroup.com/markets/agriculture/oilseeds/soybean-meal',
     dtnFertilizer: 'https://www.dtnpf.com/agriculture/web/ag/crops/article/2026/09/23/fertilizer-prices-rise-six-eight',
     worldBank: 'https://www.worldbank.org/en/research/commodity-markets',
@@ -141,12 +143,12 @@
   // isWood en precios.js).
   var CATS = {
     es: {
-      cereales: { label: 'Cereales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
-      lacteos: { label: 'Lácteos', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }] },
-      ganado: { label: 'Ganado', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }] },
-      porcino: { label: 'Porcino', sources: [{ name: 'USDA NASS (cerdo)', url: SRC_URL.nass }, { name: 'Comisión Europea (porcino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
-      ovino: { label: 'Ovino', sources: [{ name: 'USDA AMS (cordero)', url: SRC_URL.usdaLamb }, { name: 'Comisión Europea (ovino)', url: SRC_URL.ecSheep }] },
-      avicultura: { label: 'Avicultura', sources: [{ name: 'USDA NASS (huevo)', url: SRC_URL.nass }, { name: 'USDA NASS (aves)', url: SRC_URL.nass }, { name: 'Comisión Europea (pollo)', url: SRC_URL.ecPoultry }, { name: 'Comisión Europea (huevo)', url: SRC_URL.ecEggs }] },
+      cereales: { label: 'Cereales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      lacteos: { label: 'Lácteos', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ganado: { label: 'Ganado', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      porcino: { label: 'Porcino', sources: [{ name: 'USDA NASS (cerdo)', url: SRC_URL.nass }, { name: 'Comisión Europea (porcino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ovino: { label: 'Ovino', sources: [{ name: 'USDA AMS (cordero)', url: SRC_URL.usdaLamb }, { name: 'Comisión Europea (ovino)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      avicultura: { label: 'Avicultura', sources: [{ name: 'USDA NASS (huevo)', url: SRC_URL.nass }, { name: 'USDA NASS (aves)', url: SRC_URL.nass }, { name: 'Comisión Europea (pollo)', url: SRC_URL.ecPoultry }, { name: 'Comisión Europea (huevo)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Pienso', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'índices regionales UE', url: SRC_URL.ecPrices }, { name: 'Comisión Europea (oleaginosas)', url: SRC_URL.ecPrices }] },
       fertilizantes: { label: 'Fertilizantes', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'referencia internacional (Banco Mundial)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Azúcar', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Comisión Europea', url: SRC_URL.ecSugar }] },
@@ -157,12 +159,12 @@
       madera: { label: 'Madera', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     en: {
-      cereales: { label: 'Grains', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
-      lacteos: { label: 'Dairy', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }] },
-      ganado: { label: 'Livestock', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }] },
-      porcino: { label: 'Pork', sources: [{ name: 'USDA NASS (pork)', url: SRC_URL.nass }, { name: 'European Commission (pigmeat)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
-      ovino: { label: 'Sheep & Lamb', sources: [{ name: 'USDA AMS (lamb)', url: SRC_URL.usdaLamb }, { name: 'European Commission (sheep)', url: SRC_URL.ecSheep }] },
-      avicultura: { label: 'Poultry & Eggs', sources: [{ name: 'USDA NASS (eggs)', url: SRC_URL.nass }, { name: 'USDA NASS (poultry)', url: SRC_URL.nass }, { name: 'European Commission (poultry)', url: SRC_URL.ecPoultry }, { name: 'European Commission (eggs)', url: SRC_URL.ecEggs }] },
+      cereales: { label: 'Grains', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      lacteos: { label: 'Dairy', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ganado: { label: 'Livestock', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      porcino: { label: 'Pork', sources: [{ name: 'USDA NASS (pork)', url: SRC_URL.nass }, { name: 'European Commission (pigmeat)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ovino: { label: 'Sheep & Lamb', sources: [{ name: 'USDA AMS (lamb)', url: SRC_URL.usdaLamb }, { name: 'European Commission (sheep)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      avicultura: { label: 'Poultry & Eggs', sources: [{ name: 'USDA NASS (eggs)', url: SRC_URL.nass }, { name: 'USDA NASS (poultry)', url: SRC_URL.nass }, { name: 'European Commission (poultry)', url: SRC_URL.ecPoultry }, { name: 'European Commission (eggs)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Feed', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'EU regional indices', url: SRC_URL.ecPrices }, { name: 'European Commission (oilseeds)', url: SRC_URL.ecPrices }] },
       fertilizantes: { label: 'Fertilizer', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'international reference (World Bank)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Sugar', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'European Commission', url: SRC_URL.ecSugar }] },
@@ -173,12 +175,12 @@
       madera: { label: 'Timber', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (UK)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     fr: {
-      cereales: { label: 'Céréales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
-      lacteos: { label: 'Produits laitiers', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }] },
-      ganado: { label: 'Bétail', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }] },
-      porcino: { label: 'Porc', sources: [{ name: 'USDA NASS (porc)', url: SRC_URL.nass }, { name: 'Commission européenne (porcin)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
-      ovino: { label: 'Ovins', sources: [{ name: 'USDA AMS (agneau)', url: SRC_URL.usdaLamb }, { name: 'Commission européenne (ovins)', url: SRC_URL.ecSheep }] },
-      avicultura: { label: 'Volaille et œufs', sources: [{ name: 'USDA NASS (œufs)', url: SRC_URL.nass }, { name: 'USDA NASS (volaille)', url: SRC_URL.nass }, { name: 'Commission européenne (volaille)', url: SRC_URL.ecPoultry }, { name: 'Commission européenne (œufs)', url: SRC_URL.ecEggs }] },
+      cereales: { label: 'Céréales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      lacteos: { label: 'Produits laitiers', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ganado: { label: 'Bétail', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      porcino: { label: 'Porc', sources: [{ name: 'USDA NASS (porc)', url: SRC_URL.nass }, { name: 'Commission européenne (porcin)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ovino: { label: 'Ovins', sources: [{ name: 'USDA AMS (agneau)', url: SRC_URL.usdaLamb }, { name: 'Commission européenne (ovins)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      avicultura: { label: 'Volaille et œufs', sources: [{ name: 'USDA NASS (œufs)', url: SRC_URL.nass }, { name: 'USDA NASS (volaille)', url: SRC_URL.nass }, { name: 'Commission européenne (volaille)', url: SRC_URL.ecPoultry }, { name: 'Commission européenne (œufs)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Aliments', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'indices régionaux UE', url: SRC_URL.ecPrices }, { name: 'Commission européenne (oléagineux)', url: SRC_URL.ecPrices }] },
       fertilizantes: { label: 'Engrais', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'référence internationale (Banque mondiale)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Sucre', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Commission européenne', url: SRC_URL.ecSugar }] },
@@ -189,12 +191,12 @@
       madera: { label: 'Bois', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     it: {
-      cereales: { label: 'Cereali', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
-      lacteos: { label: 'Lattiero-caseario', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }] },
-      ganado: { label: 'Bestiame', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }] },
-      porcino: { label: 'Suini', sources: [{ name: 'USDA NASS (suino)', url: SRC_URL.nass }, { name: 'Commissione europea (suino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
-      ovino: { label: 'Ovini', sources: [{ name: 'USDA AMS (agnello)', url: SRC_URL.usdaLamb }, { name: 'Commissione europea (ovini)', url: SRC_URL.ecSheep }] },
-      avicultura: { label: 'Avicoltura', sources: [{ name: 'USDA NASS (uova)', url: SRC_URL.nass }, { name: 'USDA NASS (pollame)', url: SRC_URL.nass }, { name: 'Commissione europea (pollame)', url: SRC_URL.ecPoultry }, { name: 'Commissione europea (uova)', url: SRC_URL.ecEggs }] },
+      cereales: { label: 'Cereali', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      lacteos: { label: 'Lattiero-caseario', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ganado: { label: 'Bestiame', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      porcino: { label: 'Suini', sources: [{ name: 'USDA NASS (suino)', url: SRC_URL.nass }, { name: 'Commissione europea (suino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ovino: { label: 'Ovini', sources: [{ name: 'USDA AMS (agnello)', url: SRC_URL.usdaLamb }, { name: 'Commissione europea (ovini)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      avicultura: { label: 'Avicoltura', sources: [{ name: 'USDA NASS (uova)', url: SRC_URL.nass }, { name: 'USDA NASS (pollame)', url: SRC_URL.nass }, { name: 'Commissione europea (pollame)', url: SRC_URL.ecPoultry }, { name: 'Commissione europea (uova)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Mangimi', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'indici regionali UE', url: SRC_URL.ecPrices }, { name: 'Commissione europea (semi oleosi)', url: SRC_URL.ecPrices }] },
       fertilizantes: { label: 'Fertilizzanti', sources: [{ name: 'DTN Fertilizer Index', url: SRC_URL.dtnFertilizer }, { name: 'riferimento internazionale (Banca Mondiale)', url: SRC_URL.worldBank }] },
       azucar: { label: 'Zucchero', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Commissione europea', url: SRC_URL.ecSugar }] },
@@ -507,34 +509,39 @@
     {
       id: 'cereales', nameKey: 'cereales',
       products: [
-        { nameKey: 'maiz', imperialUnitKey: 'bushel', imperialKgPerUnit: 25.401, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+        { nameKey: 'maiz', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'bushel', imperialKgPerUnit: 25.401, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 4.45, changePct: 4.46, history: [4.12, 4.27, 4.31, 4.48, 4.28, 4.26, 4.45], currency: 'USD', kgPerUnit: 25.401 },
           eu: { price: 259, changePct: -0.3846, history: [235, 237, 247, 254, 254, 244, 244, 248, 250, 263, 260, 259], currency: 'EUR', kgPerUnit: 1000 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'referencia', market: 'Comisión Europea (maíz pienso, mercado de Zaragoza, salida de silo)' } } },
-        { nameKey: 'trigo', imperialUnitKey: 'bushel', imperialKgPerUnit: 27.2155, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'referencia', market: 'Comisión Europea (maíz pienso, mercado de Zaragoza, salida de silo)' } } },
+        { nameKey: 'trigo', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'bushel', imperialKgPerUnit: 27.2155, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 6.23, changePct: 2.81, history: [5.15, 5.52, 5.7, 5.88, 5.7, 6.06, 6.23], currency: 'USD', kgPerUnit: 27.2155 },
           eu: { price: 262.7, changePct: 0.1525, history: [230.6, 231.75, 240.65, 254.3, 258.67, 246, 245.6, 247.2, 254.89, 258, 262.3, 262.7], currency: 'EUR', kgPerUnit: 1000 },
           uk: { price: 215.00, changePct: -0.3, history: [217.80, 217.20, 216.60, 216.10, 215.90, 215.65, 215.00], currency: 'GBP', kgPerUnit: 1000 },
           countryFactors: { es: 1, fr: 0.908, de: 0.917, it: 0.967 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'referencia', market: 'Comisión Europea (trigo panificable, mercado de Zaragoza, salida de silo)' }, uk: { type: 'futuro', market: 'AHDB (trigo pienso, entrega nov. 2026)' } } },
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'referencia', market: 'Comisión Europea (trigo panificable, mercado de Zaragoza, salida de silo)' }, uk: { type: 'futuro', market: 'AHDB (trigo pienso, entrega nov. 2026)' } } },
         { nameKey: 'arroz', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 12.8, changePct: 8.47, history: [12.3, 11.7, 11.3, 11.4, 11.8, 11.8, 12.8], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 451.68, changePct: 0, history: [451.68, 451.68, 451.68, 451.68, 451.68, 451.68, 451.68, 451.68, 451.68, 451.68, 451.68, 451.68], currency: 'EUR', kgPerUnit: 1000 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'referencia', market: 'Comisión Europea (arroz cáscara japónica, España)' } } },
         // Cebada y avena: EE. UU. (USDA NASS, precio recibido) y Europa (Comisión Europea). Las cifras de muestra las sustituyen los scripts con datos reales
-        { nameKey: 'cebada', imperialUnitKey: 'bushel', imperialKgPerUnit: 21.7724, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+        { nameKey: 'cebada', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'bushel', imperialKgPerUnit: 21.7724, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 5.55, changePct: 0.73, history: [5.47, 5.5, 5.58, 5.35, 5.47, 5.51, 5.55], currency: 'USD', kgPerUnit: 21.7724 },
           eu: { price: 235, changePct: 0.8584, history: [205, 207, 215, 227, 225, 225, 222, 225, 228, 228, 233, 235], currency: 'EUR', kgPerUnit: 1000 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'referencia', market: 'Comisión Europea (cebada pienso, mercado de Lleida, salida de silo)' } } },
-        { nameKey: 'avena', imperialUnitKey: 'bushel', imperialKgPerUnit: 14.515, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'referencia', market: 'Comisión Europea (cebada pienso, mercado de Lleida, salida de silo)' } } },
+        { nameKey: 'avena', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'bushel', imperialKgPerUnit: 14.515, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 3.02, changePct: -2.58, history: [3.08, 3.18, 3.17, 3.21, 3.25, 3.1, 3.02], currency: 'USD', kgPerUnit: 14.515 },
           eu: { price: 149.57, changePct: 3.1588, history: [162.42, 154.77, 164.44, 153.01, 152.25, 148.03, 141.28, 144.51, 142.03, 163.35, 144.99, 149.57], currency: 'EUR', kgPerUnit: 1000 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'referencia', market: 'Comisión Europea (avena pienso, agregado UE)' } } },
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'referencia', market: 'Comisión Europea (avena pienso, agregado UE)' } } },
         // Colza: EE. UU. (USDA NASS, canola) y Europa; centeno: solo Europa (NASS dejó de publicarlo en 1976) (Comisión Europea)
-        { nameKey: 'colza', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+        { nameKey: 'colza', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 25.7, changePct: -3.38, history: [20.9, 22.5, 22.6, 27.5, 27.7, 26.6, 25.7], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 476.36, changePct: 0.0693, history: [444.78, 440.1, 441.8, 442.09, 443.13, 442.19, 443.48, 443.14, 443.98, 437.35, 476.03, 476.36], currency: 'EUR', kgPerUnit: 1000 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (canola)' }, eu: { type: 'referencia', market: 'Comisión Europea (colza, España, media nacional)' } } },
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS (canola)' }, eu: { type: 'referencia', market: 'Comisión Europea (colza, España, media nacional)' } } },
         { nameKey: 'centeno', imperialUnitKey: 'bushel', imperialKgPerUnit: 25.401, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           eu: { price: 170.89, changePct: -6.0683, history: [174.26, 177.97, 173.61, 166.62, 176.37, 173.91, 174.33, 182.62, 177.24, 182.95, 181.93, 170.89], currency: 'EUR', kgPerUnit: 1000 },
           quoteTypes: { eu: { type: 'referencia', market: 'Comisión Europea (centeno panificable, agregado UE)' } } },
@@ -547,12 +554,13 @@
     {
       id: 'lacteos', nameKey: 'lacteos',
       products: [
-        { nameKey: 'leche', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
+        { nameKey: 'leche', caUnitKey: '100kg', caKgPerUnit: 100, imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
           us: { price: 19.8, changePct: -2.46, history: [18.3, 19.7, 20.8, 21.3, 21.1, 20.3, 19.8], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 45.53, changePct: 1.0655, history: [51.36, 51.94, 52.62, 52.62, 52.52, 52.23, 51.84, 47.48, 46.31, 45.53, 45.05, 45.53], currency: 'EUR', kgPerUnit: 100 },
           countryFactors: { es: 1, de: 0.904, fr: 0.979, it: 1.016 },
           uk: { price: 35.82, changePct: 4.02, history: [34.20, 34.50, 34.80, 35.10, 35.35, 35.60, 35.82], currency: 'GBP', kgPerUnit: 100 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, leche total)' }, eu: { type: 'referencia', market: 'Comisión Europea (leche cruda de vaca, España)' }, uk: { type: 'referencia', market: 'Defra (precio medio en granja del Reino Unido)' } } },
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 100 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS (precio recibido, leche total)' }, eu: { type: 'referencia', market: 'Comisión Europea (leche cruda de vaca, España)' }, uk: { type: 'referencia', market: 'Defra (precio medio en granja del Reino Unido)' } } },
         // Mantequilla y leche desnatada en polvo: solo dato de Europa (agregado UE de la Comisión). Las cifras de muestra las sustituye el script con datos reales
         { nameKey: 'mantequilla', imperialUnitKey: 'lb', imperialKgPerUnit: 0.453592, metricUnitKey: '100kg', metricKgPerUnit: 100,
           eu: { price: 416.42, changePct: -0.8665, history: [383.31, 386.98, 396.1, 399.52, 409.9, 394.24, 397.79, 403.61, 413.82, 410.77, 420.06, 416.42], currency: 'EUR', kgPerUnit: 100 },
@@ -566,13 +574,14 @@
     {
       id: 'ganado', nameKey: 'ganado',
       products: [
-        { nameKey: 'vaca', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
+        { nameKey: 'vaca', caUnitKey: 'cwt', caKgPerUnit: 45.359, imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
           us: { price: 234, changePct: -6.02, history: [243, 240, 245, 256, 258, 249, 234], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 614.67, changePct: 0.7309, history: [624.07, 614.52, 608.54, 600.3, 592.41, 616.07, 611.57, 612.58, 612.58, 605.95, 610.21, 614.67], currency: 'EUR', kgPerUnit: 100 },
           footnoteKey: 'vaca',
           countryFactors: { es: 1, de: 1.062, fr: 1.015, it: 1.087 },
           uk: { price: 620.00, changePct: 0.4, history: [610, 612, 614, 616, 618, 619, 620], currency: 'GBP', kgPerUnit: 100 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, novillos y novillas, peso vivo)' }, eu: { type: 'referencia', market: 'Comisión Europea (vacuno, España, machos jóvenes A-R3)' }, uk: { type: 'referencia', market: 'AHDB (GB deadweight, todas las categorías prime)' } } },
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 45.359 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS (precio recibido, novillos y novillas, peso vivo)' }, eu: { type: 'referencia', market: 'Comisión Europea (vacuno, España, machos jóvenes A-R3)' }, uk: { type: 'referencia', market: 'AHDB (GB deadweight, todas las categorías prime)' } } },
         { nameKey: 'cabra', imperialUnitKey: 'lb', imperialKgPerUnit: 0.453592, metricUnitKey: 'kg', metricKgPerUnit: 1,
           us: { price: 2.15, changePct: 0.5, history: [2.05, 2.08, 2.10, 2.09, 2.12, 2.14, 2.15], currency: 'USD', kgPerUnit: 0.453592 },
           eu: { price: 6.85, changePct: 0.4, history: [6.60, 6.65, 6.70, 6.75, 6.78, 6.82, 6.85], currency: 'EUR', kgPerUnit: 1 },
@@ -582,41 +591,45 @@
     {
       id: 'porcino', nameKey: 'porcino',
       products: [
-        { nameKey: 'cerdo', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
+        { nameKey: 'cerdo', caUnitKey: 'cwt', caKgPerUnit: 45.359, imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
           us: { price: 70.5, changePct: -0.7, history: [65.9, 68.7, 67.8, 68.5, 69.4, 71, 70.5], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 178.56, changePct: 0.5179, history: [172.71, 171.67, 170.59, 173.62, 168.63, 166.33, 169.1, 172.57, 175.96, 178.08, 177.64, 178.56], currency: 'EUR', kgPerUnit: 100 },
           uk: { price: 180.84, changePct: 0.2, history: [179.20, 179.50, 179.80, 180.10, 180.30, 180.40, 180.84], currency: 'GBP', kgPerUnit: 100 },
           footnoteKey: 'cerdo',
           countryFactors: { es: 1, de: 0.911, fr: 1.193, it: 1.353 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, cerdos vivos)' }, eu: { type: 'referencia', market: 'Comisión Europea (porcino, España, clase S)' }, uk: { type: 'referencia', market: 'AHDB (SPP, especificación UE, GB)' } } }
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 45.359 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS (precio recibido, cerdos vivos)' }, eu: { type: 'referencia', market: 'Comisión Europea (porcino, España, clase S)' }, uk: { type: 'referencia', market: 'AHDB (SPP, especificación UE, GB)' } } }
       ]
     },
     {
       id: 'ovino', nameKey: 'ovino',
       products: [
-        { nameKey: 'cordero', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
+        { nameKey: 'cordero', caUnitKey: 'cwt', caKgPerUnit: 45.359, imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
           us: { price: 232, changePct: 0.5, history: [218, 222, 225, 228, 230, 231, 232], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 1011.8, changePct: 0.8673, history: [1003, 973.4, 944.2, 932.7, 933, 951.2, 956.8, 970.5, 1007.3, 1008, 1003.1, 1011.8], currency: 'EUR', kgPerUnit: 100 },
           uk: { price: 724.00, changePct: 1.5, history: [705, 710, 714, 717, 719, 721, 724], currency: 'GBP', kgPerUnit: 100 },
           footnoteKey: 'cordero',
           countryFactors: { es: 1, de: 0.965, fr: 0.9, it: 0.815 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (cordero)' }, eu: { type: 'referencia', market: 'Comisión Europea (ovino, España, cordero pesado)' }, uk: { type: 'referencia', market: 'AHDB (GB deadweight, cordero NSL)' } } }
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 45.359 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA AMS (cordero)' }, eu: { type: 'referencia', market: 'Comisión Europea (ovino, España, cordero pesado)' }, uk: { type: 'referencia', market: 'AHDB (GB deadweight, cordero NSL)' } } }
       ]
     },
     {
       id: 'avicultura', nameKey: 'avicultura',
       products: [
         // huevos: docena EE. UU. = 0,6804 kg (huevo grande, mínimo USDA de 24 oz/docena) para comparar con la UE en €/100 kg; es una aproximación por tamaño, no un peso medio real
-        { nameKey: 'huevos', imperialUnitKey: 'docena', imperialKgPerUnit: 0.6804, metricUnitKey: '100kg', metricKgPerUnit: 100,
+        { nameKey: 'huevos', caUnitKey: 'docena', caKgPerUnit: 0.6804, imperialUnitKey: 'docena', imperialKgPerUnit: 0.6804, metricUnitKey: '100kg', metricKgPerUnit: 100,
           us: { price: 0.77, changePct: -1.79, history: [0.98, 1.26, 0.56, 0.56, 0.53, 0.78, 0.77], currency: 'USD', kgPerUnit: 0.6804 },
           eu: { price: 242.27, changePct: 1.3173, history: [218.69, 218.69, 218.43, 205.63, 205.91, 205.91, 205.91, 207.22, 209.55, 230.04, 239.12, 242.27], currency: 'EUR', kgPerUnit: 100 },
           countryFactors: { es: 1, de: 0.907, fr: 1.088, it: 1.243 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, huevos de mesa)' }, eu: { type: 'referencia', market: 'Comisión Europea (huevos, España, gallinas en jaula)' } } },
-        { nameKey: 'pollo', imperialUnitKey: 'lb', imperialKgPerUnit: 0.453592, metricUnitKey: 'kg', metricKgPerUnit: 1,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 0.6804 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS (precio recibido, huevos de mesa)' }, eu: { type: 'referencia', market: 'Comisión Europea (huevos, España, gallinas en jaula)' } } },
+        { nameKey: 'pollo', caUnitKey: 'kg', caKgPerUnit: 1, imperialUnitKey: 'lb', imperialKgPerUnit: 0.453592, metricUnitKey: 'kg', metricKgPerUnit: 1,
           us: { price: 0.65, changePct: -1.36, history: [0.66, 0.67, 0.68, 0.71, 0.7, 0.66, 0.65], currency: 'USD', kgPerUnit: 0.453592 },
           eu: { price: 2.3507, changePct: 0.034, history: [2.274, 2.2764, 2.2357, 2.2321, 2.2321, 2.2263, 2.239, 2.2644, 2.2764, 2.3051, 2.3499, 2.3507], currency: 'EUR', kgPerUnit: 1 },
           countryFactors: { es: 1, de: 1.961, fr: 1.574, it: 1.574 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, broilers, peso vivo)' }, eu: { type: 'referencia', market: 'Comisión Europea (pollo, España, broiler entero 65 %)' } } }
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS (precio recibido, broilers, peso vivo)' }, eu: { type: 'referencia', market: 'Comisión Europea (pollo, España, broiler entero 65 %)' } } }
       ]
     },
     {
@@ -846,6 +859,7 @@
     world_bank: { name: 'Banco Mundial', url: SRC_URL.worldBank, authority: 'official' },
     eurostat: { name: 'Eurostat', url: 'https://ec.europa.eu/eurostat/web/agriculture/information-data', authority: 'official' },
     eia: { name: 'EIA', url: SRC_URL.eia, authority: 'official' },
+    statcan: { name: 'Statistics Canada', url: 'https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210007701', authority: 'official' },
     defra: { name: 'Defra (Reino Unido)', url: SRC_URL.defraMilk, authority: 'official' },
     eu_agrifood: { name: 'Comisión Europea — Agri-food Data Portal', url: 'https://agriculture.ec.europa.eu/data-and-analysis/markets/price-data_en', authority: 'official' },
     eu_oil_bulletin: { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin, authority: 'official' },
@@ -946,6 +960,61 @@
     'energia-petroleo_brent-eu': {
       sourceId: 'eia', frequency: 'weekly',
       methodology: 'Brent crude oil spot price, Europe, FOB (EIA); USD/barrel. Global benchmark for European crude.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-trigo-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-cebada-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-avena-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-colza-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-maiz-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'lacteos-leche-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'ganado-vaca-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'porcino-cerdo-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'ovino-cordero-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'avicultura-pollo-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'avicultura-huevos-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
       comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
     },
     'energia-diesel-us': {
@@ -1137,7 +1206,7 @@
       for (var productIndex = 0; productIndex < category.products.length; productIndex++) {
         var product = category.products[productIndex];
         var productId = category.id + '-' + product.nameKey;
-        ['us', 'eu', 'uk'].forEach(function (region) {
+        ['us', 'eu', 'uk', 'ca'].forEach(function (region) {
           var raw = product[region];
           if (!raw) return;
           var key = productId + '-' + region;
@@ -1148,8 +1217,8 @@
             price: raw.price,
             currency: raw.currency,
             kgPerUnit: raw.kgPerUnit,
-            imperialUnitKey: product.imperialUnitKey,
-            metricUnitKey: product.metricUnitKey,
+            imperialUnitKey: region === 'ca' ? null : product.imperialUnitKey,
+            metricUnitKey: region === 'ca' ? product.caUnitKey : product.metricUnitKey,
             imperialKgPerUnit: product.imperialKgPerUnit,
             metricKgPerUnit: product.metricKgPerUnit
           }, quote, meta);
