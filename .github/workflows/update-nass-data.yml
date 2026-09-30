@@ -29,7 +29,7 @@ jobs:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
         run: |
           set -e
-          for product in trigo maiz arroz leche; do
+          for product in trigo maiz arroz leche huevos; do
             node scripts/update-nass-us.mjs "$product"
           done
 

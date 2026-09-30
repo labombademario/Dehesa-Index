@@ -119,6 +119,7 @@
     'urea:eu': { key: 'fertilizantes:urea', sourceId: 'world_bank', currency: 'USD', unit: 'tonelada', frequency: 'monthly' },
     'vaca:eu': { key: 'ganado:vaca', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
     'cordero:eu': { key: 'ovino:cordero', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
+    'huevos:us': { key: 'avicultura:huevos', sourceId: 'usda_nass', currency: 'USD', unit: 'docena', frequency: 'monthly' },
     'huevos:eu': { key: 'avicultura:huevos', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
     'pollo:eu': { key: 'avicultura:pollo', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'kg', frequency: 'weekly' },
     'azucar:eu': { key: 'azucar:azucar', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'monthly' },

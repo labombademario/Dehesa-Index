@@ -16,7 +16,7 @@
  * Requiere la variable de entorno NASS_API_KEY (clave gratuita, se pide en
  * https://quickstats.nass.usda.gov/api).
  *
- * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz|leche>
+ * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz|leche|huevos>
  */
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
@@ -58,6 +58,15 @@ const PRODUCTS = {
     trustKey: 'lacteos-leche-us',
     obsUnit: 'cwt',
     trustMethodology: 'National USDA NASS PRICE RECEIVED for all milk sold to plants (not Class III); USD/cwt.'
+  },
+  huevos: {
+    label: 'Huevos',
+    commodity: 'EGGS',
+    shortDesc: 'EGGS, TABLE - PRICE RECEIVED, MEASURED IN $ / DOZEN',
+    kgPerUnit: '0\\.6804',
+    trustKey: 'avicultura-huevos-us',
+    obsUnit: 'docena',
+    trustMethodology: 'National USDA NASS PRICE RECEIVED for table eggs (producer price, not retail); USD/dozen.'
   }
 };
 
