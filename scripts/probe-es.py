@@ -1,5 +1,5 @@
-import json,re,urllib.request,html,time,csv,io
-def get(u,n=60000000,t=120,retries=4):
+import json,re,urllib.request,time
+def get(u,n=5000000,t=90,retries=4):
     last=''
     for i in range(retries):
         try:
@@ -10,35 +10,25 @@ def get(u,n=60000000,t=120,retries=4):
     return last
 out=[]
 def P(*a): out.append(' '.join(str(x) for x in a))
-s=get('https://servicio.mapa.gob.es/ckan/es/dataset/esmapaindicespreciospreciopercibido')
-for m in re.finditer(r'(?i)(cc-by|creative commons|licencia|license)[^<]{0,200}',s): P('LIC',m.group(0)[:200].replace('\n',' '))
-d=get('https://servicio.mapa.gob.es/ckan/datastore/dump/23939af3-475f-4a4b-b18e-48fa9dbc4f3b')
-P('PERCIBIDO dump',len(d))
-try:
-    rows=list(csv.DictReader(io.StringIO(d)))
-    P(' nrows',len(rows),'cols',list(rows[0].keys()))
-    for c in rows[0].keys():
-        v=sorted(set(r[c] for r in rows if r[c]))
-        if c in('_id',) or re.search('precio',c): P('  col',c,len(v),v[:3]); continue
-        P('  col',c,len(v),v[:120])
-    for r in rows[:2]+rows[-2:]: P('  row',dict(r))
-    last=[r for r in rows if r['anio']==max(x['anio'] for x in rows)]
-    P(' last year rows',len(last), [ (r.get('producto'),r.get('mes'),r.get('precio_mensual')) for r in last[:8]])
-except Exception as e: P(' ERR',e,d[:200])
-rc=get('https://servicio.mapa.gob.es/ckan/datastore/dump/687a7bb1-ddf2-4cdd-8525-05cec40c6734')
-try:
-    rows=list(csv.DictReader(io.StringIO(rc)))
-    vs={}
-    for r in rows: vs[(r['id_variable'],r['variable'],r['unidades'])]=1
-    P('RECAN variables',len(vs))
-    for k in list(vs)[:140]: P('  var',k)
-    P(' tipos',sorted(set((r['tipo_explotacion_n1']) for r in rows))[:30])
-except Exception as e: P('RECAN ERR',e)
-s=get('https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES',5000000)
-try:
-    for o in json.loads(s):
-        if re.search(r'agr|gan|cultiv|pesca|precio|rural|sacrific|leche|cosecha',o.get('Nombre',''),re.I): P('INE',o.get('Id'),o.get('Codigo'),o.get('Nombre'))
-except Exception as e: P('INE ERR',s[:200])
-s=get('https://datos.gob.es/apidata/catalog/dataset/title/lonja?_sort=title&_pageSize=50&_page=0',3000000)
-P('DATOSGOB',s[:1200])
+b='https://servicio.mapa.gob.es/ckan/api/3/action/'
+for pk in ['esmapaindicespreciospreciopercibido','esmapaindicespreciospreciopagado']:
+    s=get(b+'package_show?id='+pk)
+    try:
+        d=json.loads(s)['result']; P('##',pk); P('NOTES',d.get('notes')); 
+        for k in ['author','maintainer','url','version','license_url','temporal_start','frequency']: P(k,d.get(k))
+        P('extras',json.dumps(d.get('extras'),ensure_ascii=False)[:1500])
+        for r in d['resources']: P('RES',json.dumps({k:v for k,v in r.items() if k in('id','description','name','datastore_active','last_modified','created')},ensure_ascii=False))
+    except Exception as e: P('ERR',s[:200])
+    s=get(b+'datastore_search?limit=1&resource_id='+('23939af3-475f-4a4b-b18e-48fa9dbc4f3b' if 'percibido' in pk else 'bb45def4-7841-4fa8-9a56-b7f959a9a951'))
+    try:
+        d=json.loads(s)['result']; P('FIELDS',json.dumps(d['fields'],ensure_ascii=False))
+    except Exception as e: P('FIELDS ERR',s[:200])
+# productos y muestra de 2025 para sanity
+s=get('https://servicio.mapa.gob.es/ckan/datastore/dump/23939af3-475f-4a4b-b18e-48fa9dbc4f3b',60000000)
+import csv,io
+rows=list(csv.DictReader(io.StringIO(s)))
+prods={}
+for r in rows: prods.setdefault((r['grupo'],r['producto']),[]).append((int(r['anio']),int(r['mes']),r['precio_mensual']))
+for k,v in sorted(prods.items()):
+    v.sort(); P('PROD',k,'n=',len(v),'first',v[0][:2],'last',v[-1], 'nonzero',sum(1 for x in v if x[2] not in('','0')))
 open('data/probe/es.txt','w').write('\n'.join(out))
