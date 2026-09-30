@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T12:33:20.246Z",
+  "generatedAt": "2026-09-30T14:10:57.666Z",
   "status": "informational",
   "rules": [
     {
@@ -168,6 +168,14 @@
       "product": "potasa",
       "region": "eu",
       "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "sorgo",
+      "region": "us",
+      "sourceId": "usda_nass",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },

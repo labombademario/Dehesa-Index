@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T12:33:19.970Z",
+  "generatedAt": "2026-09-30T14:10:57.394Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -386,6 +386,25 @@
       "coverageEnd": "2026-08-01",
       "status": "verified",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_sorgo_us",
+      "product": "sorgo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "frequency": "monthly",
+      "unit": "cwt",
+      "currency": "USD",
+      "latest": 7.7,
+      "observationDate": "2026-08-01",
+      "periodChangePct": -3.990024937655856,
+      "yoyPct": 19.379844961240302,
+      "volatility": 0.06462775608520649,
+      "points": 120,
+      "coverageStart": "2016-09-01",
+      "coverageEnd": "2026-08-01",
+      "status": "verified",
+      "comparability": "directional"
     },
     {
       "id": "di_trigo_us",
