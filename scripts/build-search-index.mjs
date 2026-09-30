@@ -24,6 +24,15 @@ const SYN = {
   lenteja: 'lentil lenteja lentille lenticchia pulse legumbre',
   guisante_seco: 'peas pea guisante pois piselli pulse legumbre proteaginosa',
   lino: 'flax flaxseed linseed lino linaza lin oilseed oleaginosa',
+  canola_elevador: 'canola colza rapeseed elevator bid alberta semanal weekly',
+  trigo_pienso_ab: 'feed wheat trigo forrajero pienso alberta weekly',
+  cebada_pienso_ab: 'feed barley cebada forrajera pienso alberta weekly',
+  avena_pienso_ab: 'feed oats avena forrajera pienso alberta weekly',
+  trigo_cwrs_ab: 'cwrs wheat trigo panadero red spring alberta weekly',
+  lenteja_laird_ab: 'lentil laird lenteja pulse alberta weekly',
+  guisante_verde_ab: 'green pea guisante verde pulse alberta weekly',
+  novillo_ab: 'steers novillos cattle vacuno alberta canfax weekly',
+  cerdo_ab: 'hog pig cerdo porcino cash index 100 alberta weekly',
   gas_natural: 'natural gas gas natural henry hub ttf gaz naturel gas naturale lng energia energy', petroleo_wti: 'oil crude wti texas petróleo petroleo petrole petrolio barril barrel baril energia energy', petroleo_brent: 'oil crude brent petróleo petroleo petrole petrolio barril barrel baril energia energy',
   azucar: 'sugar sucre zucchero remolacha caña beet cane', oliva: 'olive oil aceite huile olio virgen extra', diesel: 'gasoil gasóleo gasoleo fuel carburante combustible energia energía energy gazole'
 };

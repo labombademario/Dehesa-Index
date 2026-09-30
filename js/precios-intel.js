@@ -316,7 +316,7 @@
   // todos los cuadros tienen el mismo tamaño; solo se dibujan productos con dato verificado.
   var MAP_GROUP = {
     'cereales-maiz': 'cereales', 'cereales-trigo': 'cereales', 'cereales-arroz': 'cereales', 'cereales-cebada': 'cereales',
-    'cereales-avena': 'cereales', 'cereales-centeno': 'cereales', 'cereales-sorgo': 'cereales', 'cereales-colza': 'cereales', 'cereales-soja_grano': 'cereales', 'cereales-lenteja': 'cereales', 'cereales-guisante_seco': 'cereales', 'cereales-lino': 'cereales',
+    'cereales-avena': 'cereales', 'cereales-centeno': 'cereales', 'cereales-sorgo': 'cereales', 'cereales-colza': 'cereales', 'cereales-canola_elevador': 'cereales', 'cereales-trigo_pienso_ab': 'cereales', 'cereales-cebada_pienso_ab': 'cereales', 'cereales-avena_pienso_ab': 'cereales', 'cereales-trigo_cwrs_ab': 'cereales', 'cereales-lenteja_laird_ab': 'cereales', 'cereales-guisante_verde_ab': 'cereales', 'ganado-novillo_ab': 'ganaderia', 'porcino-cerdo_ab': 'ganaderia', 'cereales-soja_grano': 'cereales', 'cereales-lenteja': 'cereales', 'cereales-guisante_seco': 'cereales', 'cereales-lino': 'cereales',
     'lacteos-leche': 'lacteos', 'lacteos-mantequilla': 'lacteos', 'lacteos-leche_polvo': 'lacteos',
     'ganado-vaca': 'ganaderia', 'ganado-cabra': 'ganaderia', 'porcino-cerdo': 'ganaderia', 'ovino-cordero': 'ganaderia',
     'avicultura-huevos': 'ganaderia', 'avicultura-pollo': 'ganaderia',

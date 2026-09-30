@@ -87,10 +87,10 @@
   };
 
   var NAMES = {
-    es: { soja_grano: 'Soja en grano', lenteja: 'Lentejas', guisante_seco: 'Guisantes secos', lino: 'Lino (linaza)', gas_natural: 'Gas natural (Henry Hub / TTF)', petroleo_wti: 'Petróleo WTI (Texas)', petroleo_brent: 'Petróleo Brent', mantequilla: 'Mantequilla', leche_polvo: 'Leche desnatada en polvo', colza: 'Colza', centeno: 'Centeno', cebada: 'Cebada', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Maíz', trigo: 'Trigo', arroz: 'Arroz', leche: 'Leche', vaca: 'Vaca (vacuno)', cabra: 'Cabra', pienso: 'Pienso compuesto', harina_soja: 'Harina de soja', urea: 'Urea', dap: 'DAP (fosfato diamónico)', potasa: 'Potasa (MOP)', cerdo: 'Cerdo', cordero: 'Cordero', huevos: 'Huevos', pollo: 'Pollo', azucar: 'Azúcar', oliva: 'Aceite de oliva', diesel: 'Diésel agrícola' },
-    en: { soja_grano: 'Soybeans', lenteja: 'Lentils', guisante_seco: 'Dry peas', lino: 'Flaxseed', gas_natural: 'Natural gas (Henry Hub / TTF)', petroleo_wti: 'WTI crude oil (Texas)', petroleo_brent: 'Brent crude oil', mantequilla: 'Butter', leche_polvo: 'Skim milk powder', colza: 'Rapeseed', centeno: 'Rye', cebada: 'Barley', avena: 'Oats', sorgo: 'Sorghum', maiz: 'Corn', trigo: 'Wheat', arroz: 'Rice', leche: 'Milk', vaca: 'Cattle', cabra: 'Goat', pienso: 'Compound feed', harina_soja: 'Soybean meal', urea: 'Urea', dap: 'DAP (diammonium phosphate)', potasa: 'Potash (MOP)', cerdo: 'Pork', cordero: 'Lamb', huevos: 'Eggs', pollo: 'Chicken', azucar: 'Sugar', oliva: 'Olive oil', diesel: 'Agricultural diesel' },
-    fr: { soja_grano: 'Soja (grain)', lenteja: 'Lentilles', guisante_seco: 'Pois secs', lino: 'Lin (graines)', gas_natural: 'Gaz naturel (Henry Hub / TTF)', petroleo_wti: 'Pétrole WTI (Texas)', petroleo_brent: 'Pétrole Brent', mantequilla: 'Beurre', leche_polvo: 'Lait écrémé en poudre', colza: 'Colza', centeno: 'Seigle', cebada: 'Orge', avena: 'Avoine', sorgo: 'Sorgho', maiz: 'Maïs', trigo: 'Blé', arroz: 'Riz', leche: 'Lait', vaca: 'Bovins', cabra: 'Chèvre', pienso: 'Aliment composé', harina_soja: 'Tourteau de soja', urea: 'Urée', dap: 'DAP (phosphate diammonique)', potasa: 'Potasse (MOP)', cerdo: 'Porc', cordero: 'Agneau', huevos: 'Œufs', pollo: 'Poulet', azucar: 'Sucre', oliva: "Huile d'olive", diesel: 'Gazole agricole' },
-    it: { soja_grano: 'Soia in grani', lenteja: 'Lenticchie', guisante_seco: 'Piselli secchi', lino: 'Lino (semi)', gas_natural: 'Gas naturale (Henry Hub / TTF)', petroleo_wti: 'Petrolio WTI (Texas)', petroleo_brent: 'Petrolio Brent', mantequilla: 'Burro', leche_polvo: 'Latte scremato in polvere', colza: 'Colza', centeno: 'Segale', cebada: 'Orzo', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Mais', trigo: 'Grano', arroz: 'Riso', leche: 'Latte', vaca: 'Bovini', cabra: 'Capra', pienso: 'Mangime composto', harina_soja: 'Farina di soia', urea: 'Urea', dap: 'DAP (fosfato diammonico)', potasa: 'Potassa (MOP)', cerdo: 'Maiale', cordero: 'Agnello', huevos: 'Uova', pollo: 'Pollo', azucar: 'Zucchero', oliva: "Olio d'oliva", diesel: 'Gasolio agricolo' }
+    es: { canola_elevador: 'Canola, oferta de elevador (Alberta)', trigo_pienso_ab: 'Trigo forrajero, oferta de elevador (Alberta)', cebada_pienso_ab: 'Cebada forrajera, oferta de elevador (Alberta)', avena_pienso_ab: 'Avena forrajera, oferta de elevador (Alberta)', trigo_cwrs_ab: 'Trigo CWRS, oferta de elevador (Alberta)', lenteja_laird_ab: 'Lenteja Laird n.º 1, oferta al contado (Alberta)', guisante_verde_ab: 'Guisante verde n.º 2, oferta al contado (Alberta)', novillo_ab: 'Novillos, ventas directas (Alberta)', cerdo_ab: 'Cerdo en canal, precio al contado (Alberta)', soja_grano: 'Soja en grano', lenteja: 'Lentejas', guisante_seco: 'Guisantes secos', lino: 'Lino (linaza)', gas_natural: 'Gas natural (Henry Hub / TTF)', petroleo_wti: 'Petróleo WTI (Texas)', petroleo_brent: 'Petróleo Brent', mantequilla: 'Mantequilla', leche_polvo: 'Leche desnatada en polvo', colza: 'Colza', centeno: 'Centeno', cebada: 'Cebada', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Maíz', trigo: 'Trigo', arroz: 'Arroz', leche: 'Leche', vaca: 'Vaca (vacuno)', cabra: 'Cabra', pienso: 'Pienso compuesto', harina_soja: 'Harina de soja', urea: 'Urea', dap: 'DAP (fosfato diamónico)', potasa: 'Potasa (MOP)', cerdo: 'Cerdo', cordero: 'Cordero', huevos: 'Huevos', pollo: 'Pollo', azucar: 'Azúcar', oliva: 'Aceite de oliva', diesel: 'Diésel agrícola' },
+    en: { canola_elevador: 'Canola, elevator bid (Alberta)', trigo_pienso_ab: 'Feed wheat, elevator bid (Alberta)', cebada_pienso_ab: 'Feed barley, elevator bid (Alberta)', avena_pienso_ab: 'Feed oats, elevator bid (Alberta)', trigo_cwrs_ab: 'CWRS wheat, elevator bid (Alberta)', lenteja_laird_ab: 'Laird lentils no. 1, cash bid (Alberta)', guisante_verde_ab: 'Green peas no. 2, cash bid (Alberta)', novillo_ab: 'Steers, direct sales (Alberta)', cerdo_ab: 'Hogs (carcass), cash price (Alberta)', soja_grano: 'Soybeans', lenteja: 'Lentils', guisante_seco: 'Dry peas', lino: 'Flaxseed', gas_natural: 'Natural gas (Henry Hub / TTF)', petroleo_wti: 'WTI crude oil (Texas)', petroleo_brent: 'Brent crude oil', mantequilla: 'Butter', leche_polvo: 'Skim milk powder', colza: 'Rapeseed', centeno: 'Rye', cebada: 'Barley', avena: 'Oats', sorgo: 'Sorghum', maiz: 'Corn', trigo: 'Wheat', arroz: 'Rice', leche: 'Milk', vaca: 'Cattle', cabra: 'Goat', pienso: 'Compound feed', harina_soja: 'Soybean meal', urea: 'Urea', dap: 'DAP (diammonium phosphate)', potasa: 'Potash (MOP)', cerdo: 'Pork', cordero: 'Lamb', huevos: 'Eggs', pollo: 'Chicken', azucar: 'Sugar', oliva: 'Olive oil', diesel: 'Agricultural diesel' },
+    fr: { canola_elevador: 'Canola, offre d\'élévateur (Alberta)', trigo_pienso_ab: 'Blé fourrager, offre d\'élévateur (Alberta)', cebada_pienso_ab: 'Orge fourragère, offre d\'élévateur (Alberta)', avena_pienso_ab: 'Avoine fourragère, offre d\'élévateur (Alberta)', trigo_cwrs_ab: 'Blé CWRS, offre d\'élévateur (Alberta)', lenteja_laird_ab: 'Lentilles Laird n° 1, offre au comptant (Alberta)', guisante_verde_ab: 'Pois verts n° 2, offre au comptant (Alberta)', novillo_ab: 'Bouvillons, ventes directes (Alberta)', cerdo_ab: 'Porc (carcasse), prix comptant (Alberta)', soja_grano: 'Soja (grain)', lenteja: 'Lentilles', guisante_seco: 'Pois secs', lino: 'Lin (graines)', gas_natural: 'Gaz naturel (Henry Hub / TTF)', petroleo_wti: 'Pétrole WTI (Texas)', petroleo_brent: 'Pétrole Brent', mantequilla: 'Beurre', leche_polvo: 'Lait écrémé en poudre', colza: 'Colza', centeno: 'Seigle', cebada: 'Orge', avena: 'Avoine', sorgo: 'Sorgho', maiz: 'Maïs', trigo: 'Blé', arroz: 'Riz', leche: 'Lait', vaca: 'Bovins', cabra: 'Chèvre', pienso: 'Aliment composé', harina_soja: 'Tourteau de soja', urea: 'Urée', dap: 'DAP (phosphate diammonique)', potasa: 'Potasse (MOP)', cerdo: 'Porc', cordero: 'Agneau', huevos: 'Œufs', pollo: 'Poulet', azucar: 'Sucre', oliva: "Huile d'olive", diesel: 'Gazole agricole' },
+    it: { canola_elevador: 'Canola, offerta elevatore (Alberta)', trigo_pienso_ab: 'Grano da foraggio, offerta elevatore (Alberta)', cebada_pienso_ab: 'Orzo da foraggio, offerta elevatore (Alberta)', avena_pienso_ab: 'Avena da foraggio, offerta elevatore (Alberta)', trigo_cwrs_ab: 'Grano CWRS, offerta elevatore (Alberta)', lenteja_laird_ab: 'Lenticchie Laird n. 1, offerta a pronti (Alberta)', guisante_verde_ab: 'Piselli verdi n. 2, offerta a pronti (Alberta)', novillo_ab: 'Manzi, vendite dirette (Alberta)', cerdo_ab: 'Suini (carcassa), prezzo a pronti (Alberta)', soja_grano: 'Soia in grani', lenteja: 'Lenticchie', guisante_seco: 'Piselli secchi', lino: 'Lino (semi)', gas_natural: 'Gas naturale (Henry Hub / TTF)', petroleo_wti: 'Petrolio WTI (Texas)', petroleo_brent: 'Petrolio Brent', mantequilla: 'Burro', leche_polvo: 'Latte scremato in polvere', colza: 'Colza', centeno: 'Segale', cebada: 'Orzo', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Mais', trigo: 'Grano', arroz: 'Riso', leche: 'Latte', vaca: 'Bovini', cabra: 'Capra', pienso: 'Mangime composto', harina_soja: 'Farina di soia', urea: 'Urea', dap: 'DAP (fosfato diammonico)', potasa: 'Potassa (MOP)', cerdo: 'Maiale', cordero: 'Agnello', huevos: 'Uova', pollo: 'Pollo', azucar: 'Zucchero', oliva: "Olio d'oliva", diesel: 'Gasolio agricolo' }
   };
 
   var SRC_URL = {
@@ -143,10 +143,10 @@
   // isWood en precios.js).
   var CATS = {
     es: {
-      cereales: { label: 'Cereales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      cereales: { label: 'Cereales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       lacteos: { label: 'Lácteos', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
-      ganado: { label: 'Ganado', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
-      porcino: { label: 'Porcino', sources: [{ name: 'USDA NASS (cerdo)', url: SRC_URL.nass }, { name: 'Comisión Europea (porcino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ganado: { label: 'Ganado', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
+      porcino: { label: 'Porcino', sources: [{ name: 'USDA NASS (cerdo)', url: SRC_URL.nass }, { name: 'Comisión Europea (porcino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       ovino: { label: 'Ovino', sources: [{ name: 'USDA AMS (cordero)', url: SRC_URL.usdaLamb }, { name: 'Comisión Europea (ovino)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       avicultura: { label: 'Avicultura', sources: [{ name: 'USDA NASS (huevo)', url: SRC_URL.nass }, { name: 'USDA NASS (aves)', url: SRC_URL.nass }, { name: 'Comisión Europea (pollo)', url: SRC_URL.ecPoultry }, { name: 'Comisión Europea (huevo)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Pienso', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'índices regionales UE', url: SRC_URL.ecPrices }, { name: 'Comisión Europea (oleaginosas)', url: SRC_URL.ecPrices }] },
@@ -159,10 +159,10 @@
       madera: { label: 'Madera', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     en: {
-      cereales: { label: 'Grains', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      cereales: { label: 'Grains', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       lacteos: { label: 'Dairy', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
-      ganado: { label: 'Livestock', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
-      porcino: { label: 'Pork', sources: [{ name: 'USDA NASS (pork)', url: SRC_URL.nass }, { name: 'European Commission (pigmeat)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ganado: { label: 'Livestock', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
+      porcino: { label: 'Pork', sources: [{ name: 'USDA NASS (pork)', url: SRC_URL.nass }, { name: 'European Commission (pigmeat)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       ovino: { label: 'Sheep & Lamb', sources: [{ name: 'USDA AMS (lamb)', url: SRC_URL.usdaLamb }, { name: 'European Commission (sheep)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       avicultura: { label: 'Poultry & Eggs', sources: [{ name: 'USDA NASS (eggs)', url: SRC_URL.nass }, { name: 'USDA NASS (poultry)', url: SRC_URL.nass }, { name: 'European Commission (poultry)', url: SRC_URL.ecPoultry }, { name: 'European Commission (eggs)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Feed', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'EU regional indices', url: SRC_URL.ecPrices }, { name: 'European Commission (oilseeds)', url: SRC_URL.ecPrices }] },
@@ -175,10 +175,10 @@
       madera: { label: 'Timber', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (UK)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     fr: {
-      cereales: { label: 'Céréales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      cereales: { label: 'Céréales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       lacteos: { label: 'Produits laitiers', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
-      ganado: { label: 'Bétail', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
-      porcino: { label: 'Porc', sources: [{ name: 'USDA NASS (porc)', url: SRC_URL.nass }, { name: 'Commission européenne (porcin)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ganado: { label: 'Bétail', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
+      porcino: { label: 'Porc', sources: [{ name: 'USDA NASS (porc)', url: SRC_URL.nass }, { name: 'Commission européenne (porcin)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       ovino: { label: 'Ovins', sources: [{ name: 'USDA AMS (agneau)', url: SRC_URL.usdaLamb }, { name: 'Commission européenne (ovins)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       avicultura: { label: 'Volaille et œufs', sources: [{ name: 'USDA NASS (œufs)', url: SRC_URL.nass }, { name: 'USDA NASS (volaille)', url: SRC_URL.nass }, { name: 'Commission européenne (volaille)', url: SRC_URL.ecPoultry }, { name: 'Commission européenne (œufs)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Aliments', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'indices régionaux UE', url: SRC_URL.ecPrices }, { name: 'Commission européenne (oléagineux)', url: SRC_URL.ecPrices }] },
@@ -191,10 +191,10 @@
       madera: { label: 'Bois', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     it: {
-      cereales: { label: 'Cereali', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      cereales: { label: 'Cereali', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       lacteos: { label: 'Lattiero-caseario', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
-      ganado: { label: 'Bestiame', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
-      porcino: { label: 'Suini', sources: [{ name: 'USDA NASS (suino)', url: SRC_URL.nass }, { name: 'Commissione europea (suino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
+      ganado: { label: 'Bestiame', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
+      porcino: { label: 'Suini', sources: [{ name: 'USDA NASS (suino)', url: SRC_URL.nass }, { name: 'Commissione europea (suino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }, { name: 'Statistics Canada', url: SRC_URL.statcan }, { name: 'Alberta Agriculture', url: 'https://open.alberta.ca/publications/3479492' }] },
       ovino: { label: 'Ovini', sources: [{ name: 'USDA AMS (agnello)', url: SRC_URL.usdaLamb }, { name: 'Commissione europea (ovini)', url: SRC_URL.ecSheep }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       avicultura: { label: 'Avicoltura', sources: [{ name: 'USDA NASS (uova)', url: SRC_URL.nass }, { name: 'USDA NASS (pollame)', url: SRC_URL.nass }, { name: 'Commissione europea (pollame)', url: SRC_URL.ecPoultry }, { name: 'Commissione europea (uova)', url: SRC_URL.ecEggs }, { name: 'Statistics Canada', url: SRC_URL.statcan }] },
       pienso: { label: 'Mangimi', sources: [{ name: 'USDA', url: SRC_URL.nass }, { name: 'indici regionali UE', url: SRC_URL.ecPrices }, { name: 'Commissione europea (semi oleosi)', url: SRC_URL.ecPrices }] },
@@ -560,7 +560,28 @@
         // Sorgo: solo hay dato en EE. UU. (USDA NASS). El portal de la Comisión Europea no publica precio de sorgo, así que no hay región `eu`
         { nameKey: 'sorgo', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 7.7, changePct: -3.99, history: [6.46, 6.94, 6.73, 7.5, 7.95, 8.02, 7.7], currency: 'USD', kgPerUnit: 45.359 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' } } }
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' } } },
+        { nameKey: 'canola_elevador', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Alberta Agriculture and Irrigation (Weekly Market Review)' } } },
+        { nameKey: 'trigo_pienso_ab', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Alberta Agriculture and Irrigation (Weekly Market Review)' } } },
+        { nameKey: 'cebada_pienso_ab', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Alberta Agriculture and Irrigation (Weekly Market Review)' } } },
+        { nameKey: 'avena_pienso_ab', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Alberta Agriculture and Irrigation (Weekly Market Review)' } } },
+        { nameKey: 'trigo_cwrs_ab', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Alberta Agriculture and Irrigation (Weekly Market Review)' } } },
+        { nameKey: 'lenteja_laird_ab', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Alberta Agriculture and Irrigation (Weekly Market Review)' } } },
+        { nameKey: 'guisante_verde_ab', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Alberta Agriculture and Irrigation (Weekly Market Review)' } } }
       ]
     },
     {
@@ -597,7 +618,10 @@
         { nameKey: 'cabra', imperialUnitKey: 'lb', imperialKgPerUnit: 0.453592, metricUnitKey: 'kg', metricKgPerUnit: 1,
           us: { price: 2.15, changePct: 0.5, history: [2.05, 2.08, 2.10, 2.09, 2.12, 2.14, 2.15], currency: 'USD', kgPerUnit: 0.453592 },
           eu: { price: 6.85, changePct: 0.4, history: [6.60, 6.65, 6.70, 6.75, 6.78, 6.82, 6.85], currency: 'EUR', kgPerUnit: 1 },
-          footnoteKey: 'cabra' }
+          footnoteKey: 'cabra' },
+        { nameKey: 'novillo_ab', caUnitKey: 'cwt', caKgPerUnit: 45.359, imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: 'cwt', metricKgPerUnit: 45.359,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 45.359 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Alberta Agriculture and Irrigation (Weekly Market Review)' } } }
       ]
     },
     {
@@ -610,7 +634,10 @@
           footnoteKey: 'cerdo',
           countryFactors: { es: 1, de: 0.911, fr: 1.193, it: 1.353 },
           ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 45.359 },
-          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS (precio recibido, cerdos vivos)' }, eu: { type: 'referencia', market: 'Comisión Europea (porcino, España, clase S)' }, uk: { type: 'referencia', market: 'AHDB (SPP, especificación UE, GB)' } } }
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' }, us: { type: 'referencia', market: 'USDA NASS (precio recibido, cerdos vivos)' }, eu: { type: 'referencia', market: 'Comisión Europea (porcino, España, clase S)' }, uk: { type: 'referencia', market: 'AHDB (SPP, especificación UE, GB)' } } },
+        { nameKey: 'cerdo_ab', caUnitKey: 'kg', caKgPerUnit: 1, imperialUnitKey: 'kg', imperialKgPerUnit: 1, metricUnitKey: 'kg', metricKgPerUnit: 1,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Alberta Agriculture and Irrigation (Weekly Market Review)' } } }
       ]
     },
     {
@@ -871,6 +898,7 @@
     world_bank: { name: 'Banco Mundial', url: SRC_URL.worldBank, authority: 'official' },
     eurostat: { name: 'Eurostat', url: 'https://ec.europa.eu/eurostat/web/agriculture/information-data', authority: 'official' },
     eia: { name: 'EIA', url: SRC_URL.eia, authority: 'official' },
+    alberta_ag: { name: 'Alberta Agriculture and Irrigation', url: 'https://open.alberta.ca/publications/3479492', authority: 'official' },
     statcan: { name: 'Statistics Canada', url: 'https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3210007701', authority: 'official' },
     defra: { name: 'Defra (Reino Unido)', url: SRC_URL.defraMilk, authority: 'official' },
     eu_agrifood: { name: 'Comisión Europea — Agri-food Data Portal', url: 'https://agriculture.ec.europa.eu/data-and-analysis/markets/price-data_en', authority: 'official' },
@@ -1047,6 +1075,51 @@
     'cereales-lino-ca': {
       sourceId: 'statcan', frequency: 'monthly',
       methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-canola_elevador-ca': {
+      sourceId: 'alberta_ag', frequency: 'weekly',
+      methodology: 'Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta). Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-trigo_pienso_ab-ca': {
+      sourceId: 'alberta_ag', frequency: 'weekly',
+      methodology: 'Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta). Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-cebada_pienso_ab-ca': {
+      sourceId: 'alberta_ag', frequency: 'weekly',
+      methodology: 'Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta). Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-avena_pienso_ab-ca': {
+      sourceId: 'alberta_ag', frequency: 'weekly',
+      methodology: 'Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta). Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-trigo_cwrs_ab-ca': {
+      sourceId: 'alberta_ag', frequency: 'weekly',
+      methodology: 'Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta). Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-lenteja_laird_ab-ca': {
+      sourceId: 'alberta_ag', frequency: 'weekly',
+      methodology: 'Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta). Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-guisante_verde_ab-ca': {
+      sourceId: 'alberta_ag', frequency: 'weekly',
+      methodology: 'Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta). Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'ganado-novillo_ab-ca': {
+      sourceId: 'alberta_ag', frequency: 'weekly',
+      methodology: 'Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta). Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'porcino-cerdo_ab-ca': {
+      sourceId: 'alberta_ag', frequency: 'weekly',
+      methodology: 'Alberta Agriculture and Irrigation, Weekly Market Review (Open Government Licence - Alberta). Pendiente de la primera ejecución automática.',
       comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
     },
     'energia-diesel-us': {
