@@ -938,7 +938,7 @@
     'fertilizantes-urea-us': {
       sourceId: 'dtn_fertilizer', frequency: 'weekly',
       methodology: 'PENDIENTE: la ficha muestra 489 USD/ton corta, pero DTN publicó el 23/09/2026 un promedio de 659 USD/ton para urea, observado el 14–18/09/2026. DTN no define “ton” en ese registro; no equipararlo a tonelada métrica ni al valor visible sin reconciliar la unidad y el período.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: null, status: 'verified', verifiedAt: '2026-09-29T23:53:33.765Z'
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
     },
     'fertilizantes-urea-eu': {
       sourceId: 'world_bank', frequency: 'monthly',
