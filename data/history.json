@@ -1,7 +1,23 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T12:31:02.412Z",
+  "generatedAt": "2026-09-30T12:32:25.662Z",
   "observations": [
+    {
+      "id": "di_diesel_eu:2005-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.9364249972800387,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
     {
       "id": "di_leche_eu:2005-01-01",
       "product": "leche",
@@ -16,6 +32,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:01.627Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2005-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.9370006657337132,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -35,6 +67,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2005-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.9692639068531872,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2005-03-01",
       "product": "leche",
       "region": "eu",
@@ -48,6 +96,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:01.627Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2005-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0008581585169096,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -67,6 +131,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2005-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0136734630132271,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2005-05-01",
       "product": "leche",
       "region": "eu",
@@ -80,6 +160,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:01.627Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2005-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0102642303264384,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -99,6 +195,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2005-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0576403571590929,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2005-07-01",
       "product": "leche",
       "region": "eu",
@@ -112,6 +224,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:01.627Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2005-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0600327362093378,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -131,6 +259,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2005-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.124895594165077,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2005-09-01",
       "product": "leche",
       "region": "eu",
@@ -144,6 +288,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:01.627Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2005-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1234827267517633,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -163,6 +323,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2005-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.09240025814442,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2005-11-01",
       "product": "leche",
       "region": "eu",
@@ -176,6 +352,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:01.627Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2005-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2005-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0466601062686305,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -195,6 +387,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2006-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0734956949791203,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2006-01-01",
       "product": "leche",
       "region": "eu",
@@ -208,6 +416,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:01.627Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2006-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0845924092933845,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -227,6 +451,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2006-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0797805825299631,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2006-03-01",
       "product": "leche",
       "region": "eu",
@@ -240,6 +480,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:01.627Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2006-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.095570328013681,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -259,6 +515,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2006-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1363422283357705,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2006-05-01",
       "product": "leche",
       "region": "eu",
@@ -272,6 +544,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:01.627Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2006-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1184442299481616,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -307,6 +595,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2006-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.12160680519417,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2006-07-01",
       "product": "leche",
       "region": "eu",
@@ -339,6 +643,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2006-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.143144224434026,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2006-08-01",
       "product": "leche",
       "region": "eu",
@@ -368,6 +688,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2006-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1237727984038919,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -416,6 +752,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2006-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0599968758488303,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -531,6 +883,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2006-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0492837891075895,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2006-11-01",
       "product": "huevos",
       "region": "eu",
@@ -640,6 +1008,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2006-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2006-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0525580057989803,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -755,6 +1139,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2007-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0203694358353885,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2007-01-01",
       "product": "huevos",
       "region": "eu",
@@ -864,6 +1264,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2007-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0024665850701948,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -979,6 +1395,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2007-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.024413346913875,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2007-03-01",
       "product": "huevos",
       "region": "eu",
@@ -1088,6 +1520,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2007-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0444150453874923,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -1203,6 +1651,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2007-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0580000069899873,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2007-05-01",
       "product": "huevos",
       "region": "eu",
@@ -1312,6 +1776,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2007-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0678493095834878,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -1427,6 +1907,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2007-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0792692773293089,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2007-07-01",
       "product": "huevos",
       "region": "eu",
@@ -1536,6 +2032,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2007-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0875323055008899,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -1651,6 +2163,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2007-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0789441982648231,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2007-09-01",
       "product": "huevos",
       "region": "eu",
@@ -1760,6 +2288,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2007-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1121972652278942,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -1875,6 +2419,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2007-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1508068955700541,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2007-11-01",
       "product": "huevos",
       "region": "eu",
@@ -1984,6 +2544,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2007-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2007-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2038024253744815,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -2099,6 +2675,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2008-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2196201528663237,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2008-01-01",
       "product": "huevos",
       "region": "eu",
@@ -2208,6 +2800,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2008-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.190655979041648,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -2323,6 +2931,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2008-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2392158509564541,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2008-03-01",
       "product": "huevos",
       "region": "eu",
@@ -2432,6 +3056,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2008-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2565346960953472,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -2547,6 +3187,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2008-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3266729189288324,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2008-05-01",
       "product": "huevos",
       "region": "eu",
@@ -2656,6 +3312,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2008-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4325635058721418,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -2771,6 +3443,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2008-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4542765671992983,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2008-07-01",
       "product": "huevos",
       "region": "eu",
@@ -2867,6 +3555,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2008-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.393343653868663,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2008-08-01",
       "product": "huevos",
       "region": "eu",
@@ -2960,6 +3664,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2008-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3378111646761208,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -3075,6 +3795,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2008-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2956035990462544,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2008-10-01",
       "product": "huevos",
       "region": "eu",
@@ -3184,6 +3920,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2008-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1655695205735996,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -3299,6 +4051,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2008-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2008-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0735133809642154,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2008-12-01",
       "product": "huevos",
       "region": "eu",
@@ -3408,6 +4176,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2009-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.9490536245260103,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -3523,6 +4307,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2009-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.9767918302852074,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2009-02-01",
       "product": "huevos",
       "region": "eu",
@@ -3632,6 +4432,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2009-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.9457916685075536,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -3747,6 +4563,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2009-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.9726163297999716,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2009-04-01",
       "product": "huevos",
       "region": "eu",
@@ -3856,6 +4688,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2009-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.9756625901810287,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -3971,6 +4819,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2009-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.9895444723211589,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2009-06-01",
       "product": "huevos",
       "region": "eu",
@@ -4080,6 +4944,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2009-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0329398791051523,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -4195,6 +5075,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2009-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0394222737061747,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2009-08-01",
       "product": "huevos",
       "region": "eu",
@@ -4288,6 +5184,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2009-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0430063124324669,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -4403,6 +5315,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2009-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0189261709115873,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2009-10-01",
       "product": "huevos",
       "region": "eu",
@@ -4512,6 +5440,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2009-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.058592686058699,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -4627,6 +5571,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2009-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2009-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.051839160753243,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2009-12-01",
       "product": "huevos",
       "region": "eu",
@@ -4736,6 +5696,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2010-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0722797563047204,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -4851,6 +5827,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2010-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0840299983093007,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2010-02-01",
       "product": "huevos",
       "region": "eu",
@@ -4960,6 +5952,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2010-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.108293345252432,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -5075,6 +6083,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2010-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1775806990124371,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2010-04-01",
       "product": "huevos",
       "region": "eu",
@@ -5184,6 +6208,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2010-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2019496662124582,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -5299,6 +6339,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2010-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1871494167417576,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2010-06-01",
       "product": "huevos",
       "region": "eu",
@@ -5408,6 +6464,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2010-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1872847169272926,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -5523,6 +6595,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2010-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1738280977438456,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2010-08-01",
       "product": "huevos",
       "region": "eu",
@@ -5632,6 +6720,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2010-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1739119337207418,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -5747,6 +6851,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2010-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.177711507229085,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2010-10-01",
       "product": "huevos",
       "region": "eu",
@@ -5856,6 +6976,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2010-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2001027368553059,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -5971,6 +7107,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2010-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2010-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.238152107961278,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2010-12-01",
       "product": "huevos",
       "region": "eu",
@@ -6080,6 +7232,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2011-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.280335277295616,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -6195,6 +7363,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2011-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.324634835424252,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2011-02-01",
       "product": "huevos",
       "region": "eu",
@@ -6304,6 +7488,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2011-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3772732044535831,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -6419,6 +7619,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2011-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3871850609730834,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2011-04-01",
       "product": "huevos",
       "region": "eu",
@@ -6528,6 +7744,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2011-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4043482556101996,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -6643,6 +7875,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2011-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3586466421368781,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2011-06-01",
       "product": "huevos",
       "region": "eu",
@@ -6755,6 +8003,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2011-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3391198530537272,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2011-07-01",
       "product": "huevos",
       "region": "eu",
@@ -6851,6 +8115,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2011-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3887178681882948,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2011-08-01",
       "product": "huevos",
       "region": "eu",
@@ -6944,6 +8224,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2011-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.361036463234443,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -7059,6 +8355,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2011-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3759120669796125,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2011-10-01",
       "product": "huevos",
       "region": "eu",
@@ -7168,6 +8480,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2011-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4062507572635423,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -7283,6 +8611,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2011-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2011-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4149351200779303,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2011-12-01",
       "product": "huevos",
       "region": "eu",
@@ -7392,6 +8736,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2012-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.464000448723457,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -7507,6 +8867,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2012-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4687915396079594,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2012-02-01",
       "product": "huevos",
       "region": "eu",
@@ -7616,6 +8992,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2012-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.508983186474639,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -7731,6 +9123,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2012-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5211552357350877,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2012-04-01",
       "product": "huevos",
       "region": "eu",
@@ -7840,6 +9248,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2012-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5092665580595892,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -7955,6 +9379,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2012-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4559981095791548,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2012-06-01",
       "product": "huevos",
       "region": "eu",
@@ -8064,6 +9504,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2012-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.414451242639417,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -8179,6 +9635,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2012-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4932091342556186,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2012-08-01",
       "product": "huevos",
       "region": "eu",
@@ -8272,6 +9744,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2012-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5359476673789458,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -8387,6 +9875,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2012-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5147548823726986,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2012-10-01",
       "product": "huevos",
       "region": "eu",
@@ -8496,6 +10000,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2012-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5006204291863376,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -8611,6 +10131,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2012-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2012-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4857769244049257,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2012-12-01",
       "product": "huevos",
       "region": "eu",
@@ -8720,6 +10256,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2013-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4611372833868472,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -8835,6 +10387,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2013-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4608660884924545,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2013-02-01",
       "product": "huevos",
       "region": "eu",
@@ -8944,6 +10512,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2013-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4703308338728418,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -9059,6 +10643,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2013-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4497713601466595,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2013-04-01",
       "product": "huevos",
       "region": "eu",
@@ -9168,6 +10768,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2013-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3958994518423804,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -9283,6 +10899,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2013-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4135775984904306,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2013-06-01",
       "product": "huevos",
       "region": "eu",
@@ -9395,6 +11027,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2013-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4183236187496218,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2013-07-01",
       "product": "huevos",
       "region": "eu",
@@ -9491,6 +11139,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2013-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.444886831668978,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2013-08-01",
       "product": "huevos",
       "region": "eu",
@@ -9584,6 +11248,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2013-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.467478080785885,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -9699,6 +11379,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2013-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4397672431357258,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2013-10-01",
       "product": "huevos",
       "region": "eu",
@@ -9808,6 +11504,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2013-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4197263422435993,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -9923,6 +11635,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2013-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2013-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4370952715617422,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2013-12-01",
       "product": "huevos",
       "region": "eu",
@@ -10032,6 +11760,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2014-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4327687812185208,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -10147,6 +11891,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2014-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4190969866525749,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2014-02-01",
       "product": "huevos",
       "region": "eu",
@@ -10256,6 +12016,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2014-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4219844330662286,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -10371,6 +12147,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2014-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.407739851398615,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2014-04-01",
       "product": "huevos",
       "region": "eu",
@@ -10483,6 +12275,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2014-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.413500818661266,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2014-05-01",
       "product": "huevos",
       "region": "eu",
@@ -10592,6 +12400,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:53.819Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2014-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4185882996692318,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -10723,6 +12547,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2014-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4280213498865661,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2014-07-01",
       "product": "huevos",
       "region": "eu",
@@ -10848,6 +12688,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:47.299Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2014-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4121471003392831,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -10979,6 +12835,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2014-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4112929229723121,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2014-09-01",
       "product": "huevos",
       "region": "eu",
@@ -11104,6 +12976,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:47.299Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2014-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.397586397057274,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -11235,6 +13123,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2014-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3559719319456986,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2014-11-01",
       "product": "huevos",
       "region": "eu",
@@ -11360,6 +13264,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:47.299Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2014-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2014-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3163822343029445,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -11507,6 +13427,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2015-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2197664609244045,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2015-01-01",
       "product": "huevos",
       "region": "eu",
@@ -11648,6 +13584,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2015-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1851955201812192,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -11795,6 +13747,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2015-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2792062734046523,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2015-03-01",
       "product": "huevos",
       "region": "eu",
@@ -11936,6 +13904,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2015-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.272625840586861,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -12083,6 +14067,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2015-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.305178016563009,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2015-05-01",
       "product": "huevos",
       "region": "eu",
@@ -12224,6 +14224,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2015-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3113823891699277,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -12371,6 +14387,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2015-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2932910478246897,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2015-07-01",
       "product": "huevos",
       "region": "eu",
@@ -12512,6 +14544,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2015-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2433772347987866,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -12659,6 +14707,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2015-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.187109884339755,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2015-09-01",
       "product": "huevos",
       "region": "eu",
@@ -12803,6 +14867,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2015-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1776014519428561,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2015-10-01",
       "product": "huevos",
       "region": "eu",
@@ -12944,6 +15024,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2015-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1726139547374679,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -13107,6 +15203,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2015-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2015-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1619213211482426,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2015-12-01",
       "product": "huevos",
       "region": "eu",
@@ -13264,6 +15376,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2016-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.090513818167745,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -13427,6 +15555,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2016-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0393939931405118,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2016-02-01",
       "product": "huevos",
       "region": "eu",
@@ -13584,6 +15728,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2016-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0591873346066079,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -13747,6 +15907,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2016-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0843130950824071,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2016-04-01",
       "product": "huevos",
       "region": "eu",
@@ -13904,6 +16080,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2016-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.116789089038617,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -14083,6 +16275,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2016-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1698809358990447,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2016-06-01",
       "product": "huevos",
       "region": "eu",
@@ -14259,6 +16467,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2016-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1529253235485517,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2016-07-01",
       "product": "huevos",
       "region": "eu",
@@ -14432,6 +16656,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2016-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1197184976418333,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -14624,6 +16864,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2016-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.138093636257005,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -14915,6 +17171,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2016-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1408496566034,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2016-10-01",
       "product": "huevos",
       "region": "eu",
@@ -15200,6 +17472,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2016-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1678759577634654,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -15491,6 +17779,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2016-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2016-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1854511260715352,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2016-12-01",
       "product": "huevos",
       "region": "eu",
@@ -15776,6 +18080,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2017-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.234119842690143,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -16067,6 +18387,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2017-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2421560851887732,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2017-02-01",
       "product": "huevos",
       "region": "eu",
@@ -16352,6 +18688,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2017-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2432356282034955,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -16643,6 +18995,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2017-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.212593949403683,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2017-04-01",
       "product": "huevos",
       "region": "eu",
@@ -16928,6 +19296,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2017-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2257177057668553,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -17219,6 +19603,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2017-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1923555064454525,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2017-06-01",
       "product": "huevos",
       "region": "eu",
@@ -17504,6 +19904,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2017-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1536825879067831,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -17795,6 +20211,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2017-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1753802329510736,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2017-08-01",
       "product": "huevos",
       "region": "eu",
@@ -18080,6 +20512,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2017-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.178717452982172,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -18371,6 +20819,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2017-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2191181849666035,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2017-10-01",
       "product": "huevos",
       "region": "us",
@@ -18640,6 +21104,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2017-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2340449123682165,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -18915,6 +21395,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2017-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2017-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.244566343663869,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2017-12-01",
       "product": "huevos",
       "region": "us",
@@ -19184,6 +21680,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2018-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2566428715807323,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -19459,6 +21971,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2018-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2796910452549792,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2018-02-01",
       "product": "huevos",
       "region": "us",
@@ -19728,6 +22256,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2018-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2540642485836715,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -20003,6 +22547,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2018-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2741277765652057,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2018-04-01",
       "product": "huevos",
       "region": "us",
@@ -20272,6 +22832,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2018-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3116240087564544,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -20547,6 +23123,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2018-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.369215518723755,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2018-06-01",
       "product": "huevos",
       "region": "us",
@@ -20816,6 +23408,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2018-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3447010968791073,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -21107,6 +23715,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2018-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3475880532426454,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2018-08-01",
       "product": "huevos",
       "region": "us",
@@ -21392,6 +24016,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2018-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.360846518299637,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -21683,6 +24323,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2018-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3808045569863863,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2018-10-01",
       "product": "huevos",
       "region": "us",
@@ -21971,6 +24627,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2018-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4287122198108844,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2018-11-01",
       "product": "huevos",
       "region": "us",
@@ -22256,6 +24928,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T12:30:51.419Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2018-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2018-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3616412279685137,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -22561,6 +25249,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2019-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2854393552635606,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_huevos_us:2019-01-01",
@@ -22883,6 +25587,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2019-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3101571556851472,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2019-02-01",
       "product": "huevos",
       "region": "us",
@@ -23201,6 +25921,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2019-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3438591564247817,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_huevos_us:2019-03-01",
@@ -23523,6 +26259,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2019-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3435837588692752,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2019-04-01",
       "product": "huevos",
       "region": "us",
@@ -23841,6 +26593,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2019-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3797421415657605,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_huevos_us:2019-05-01",
@@ -24163,6 +26931,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2019-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3667509728373275,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2019-06-01",
       "product": "huevos",
       "region": "us",
@@ -24481,6 +27265,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2019-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3242666581037712,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_huevos_us:2019-07-01",
@@ -24803,6 +27603,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2019-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3254188866316226,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2019-08-01",
       "product": "huevos",
       "region": "us",
@@ -25121,6 +27937,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2019-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3077763921185994,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_huevos_us:2019-09-01",
@@ -25443,6 +28275,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2019-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3332871280808472,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2019-10-01",
       "product": "huevos",
       "region": "us",
@@ -25761,6 +28609,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2019-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.333114295582129,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_huevos_us:2019-11-01",
@@ -26083,6 +28947,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2019-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2019-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3384393532199963,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2019-12-01",
       "product": "huevos",
       "region": "us",
@@ -26401,6 +29281,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2020-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3586602029052657,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_huevos_us:2020-01-01",
@@ -26723,6 +29619,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2020-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3109524547014197,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2020-02-01",
       "product": "huevos",
       "region": "us",
@@ -27041,6 +29953,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2020-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2741827013204097,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_huevos_us:2020-03-01",
@@ -27363,6 +30291,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2020-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1296711991628343,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2020-04-01",
       "product": "huevos",
       "region": "us",
@@ -27681,6 +30625,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2020-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0704949957897294,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_huevos_us:2020-05-01",
@@ -28003,6 +30963,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2020-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0910116033277995,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2020-06-01",
       "product": "huevos",
       "region": "us",
@@ -28321,6 +31297,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2020-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1255391766405092,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_huevos_us:2020-07-01",
@@ -28643,6 +31635,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2020-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1358955492605367,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2020-08-01",
       "product": "huevos",
       "region": "us",
@@ -28961,6 +31969,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2020-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.123985164496334,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_eurostat_cereals_output_index:2020-09-01",
@@ -29347,6 +32371,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2020-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.0999253266800595,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2020-10-01",
       "product": "huevos",
       "region": "us",
@@ -29667,6 +32707,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2020-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.093814817401992,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_huevos_us:2020-11-01",
       "product": "huevos",
       "region": "us",
@@ -29985,6 +33041,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2020-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2020-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.138326404333067,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_eurostat_cereals_output_index:2020-12-01",
@@ -30371,6 +33443,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2021-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.1969891625117417,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2021-01-01",
       "product": "huevos",
       "region": "eu",
@@ -30705,6 +33793,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2021-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2191125144543156,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_pienso_harina_soja_eu:2021-02-01",
@@ -31057,6 +34161,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2021-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2791939167085302,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_eurostat_cereals_output_index:2021-03-01",
@@ -31475,6 +34595,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2021-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2940377101533949,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2021-04-01",
       "product": "harina_soja",
       "region": "eu",
@@ -31827,6 +34963,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_diesel_eu:2021-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.2993392664082648,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2021-05-01",
       "product": "harina_soja",
       "region": "eu",
@@ -32177,6 +35329,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2021-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.328439731798656,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_eurostat_cereals_output_index:2021-06-01",
@@ -32593,6 +35761,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_diesel_eu:2021-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3641307596524288,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
     },
     {
       "id": "di_pienso_harina_soja_eu:2021-07-01",
@@ -33123,6 +36307,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2021-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3734345733661864,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2021-08-01",
       "product": "harina_soja",
       "region": "eu",
@@ -33648,6 +36848,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2021-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.3744272392056514,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -34227,6 +37443,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2021-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4321415218091371,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2021-10-01",
       "product": "harina_soja",
       "region": "eu",
@@ -34755,6 +37987,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2021-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5079629663535044,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2021-11-01",
       "product": "harina_soja",
       "region": "eu",
@@ -35280,6 +38528,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2021-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2021-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4835540360970068,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -35875,6 +39139,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2022-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4825037044879907,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2022-01-01",
       "product": "harina_soja",
       "region": "eu",
@@ -36403,6 +39683,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2022-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5656445553088036,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2022-02-01",
       "product": "harina_soja",
       "region": "eu",
@@ -36928,6 +40224,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2022-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.7789147692227154,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -37523,6 +40835,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2022-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.8742007791672624,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2022-04-01",
       "product": "harina_soja",
       "region": "eu",
@@ -38051,6 +41379,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2022-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.873461770220557,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2022-05-01",
       "product": "harina_soja",
       "region": "eu",
@@ -38576,6 +41920,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2022-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.9029818529465667,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -39171,6 +42531,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2022-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.9959500793132656,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2022-07-01",
       "product": "harina_soja",
       "region": "eu",
@@ -39699,6 +43075,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2022-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.8742559621956714,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2022-08-01",
       "product": "harina_soja",
       "region": "eu",
@@ -40224,6 +43616,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2022-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.900974630268279,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -40819,6 +44227,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2022-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.804889925699364,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2022-10-01",
       "product": "harina_soja",
       "region": "eu",
@@ -41347,6 +44771,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2022-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.9324376828273029,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2022-11-01",
       "product": "harina_soja",
       "region": "eu",
@@ -41872,6 +45312,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2022-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2022-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.77878811677021,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -42467,6 +45923,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2023-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.753499484357699,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2023-01-01",
       "product": "harina_soja",
       "region": "eu",
@@ -42995,6 +46467,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2023-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.7562281310993642,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2023-02-01",
       "product": "harina_soja",
       "region": "eu",
@@ -43520,6 +47008,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2023-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6941089006568242,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -44115,6 +47619,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2023-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6404298584860382,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2023-04-01",
       "product": "harina_soja",
       "region": "eu",
@@ -44643,6 +48163,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2023-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5773769337468713,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2023-05-01",
       "product": "harina_soja",
       "region": "eu",
@@ -45168,6 +48704,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2023-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5337807458860928,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -45763,6 +49315,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2023-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.561815501532079,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2023-07-01",
       "product": "harina_soja",
       "region": "eu",
@@ -46291,6 +49859,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2023-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6817245835612,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2023-08-01",
       "product": "harina_soja",
       "region": "eu",
@@ -46816,6 +50400,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2023-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.7328471790197695,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -47411,6 +51011,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2023-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.7824951419942052,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2023-10-01",
       "product": "harina_soja",
       "region": "eu",
@@ -47939,6 +51555,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2023-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.7459169266988435,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2023-11-01",
       "product": "harina_soja",
       "region": "eu",
@@ -48464,6 +52096,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2023-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2023-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6773652353738286,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -49059,6 +52707,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2024-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6267227481008804,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2024-01-01",
       "product": "harina_soja",
       "region": "eu",
@@ -49587,6 +53251,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2024-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6657063937680487,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2024-02-01",
       "product": "harina_soja",
       "region": "eu",
@@ -50112,6 +53792,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2024-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6876809106671342,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -50707,6 +54403,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2024-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6778024301623198,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2024-04-01",
       "product": "harina_soja",
       "region": "eu",
@@ -51235,6 +54947,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2024-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.645194212158339,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2024-05-01",
       "product": "harina_soja",
       "region": "eu",
@@ -51760,6 +55488,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2024-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6014368204069327,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -52355,6 +56099,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_diesel_eu:2024-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6257363380160894,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2024-07-01",
       "product": "harina_soja",
       "region": "eu",
@@ -52880,6 +56640,22 @@
       "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_diesel_eu:2024-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5908620262805135,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -53417,13 +57193,13 @@
       "sourceId": "eu_oil_bulletin",
       "observationDate": "2024-09-01",
       "snapshotDate": "2026-09-30",
-      "value": 1.5009550522471673,
+      "value": 1.5457222998119824,
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -54063,7 +57839,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -54079,7 +57855,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -54655,7 +58431,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -54671,7 +58447,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -55247,7 +59023,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -55263,7 +59039,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -55903,7 +59679,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -55919,7 +59695,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -56495,7 +60271,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -56511,7 +60287,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -57087,7 +60863,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -57103,7 +60879,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -57711,7 +61487,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -57727,7 +61503,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -58303,7 +62079,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -58319,7 +62095,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -58895,7 +62671,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -58911,7 +62687,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -59551,7 +63327,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -59567,7 +63343,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -60143,7 +63919,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -60159,7 +63935,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -60735,7 +64511,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -60751,7 +64527,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -61407,7 +65183,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -61423,7 +65199,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -62015,7 +65791,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -62031,7 +65807,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -62623,7 +66399,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -62639,7 +66415,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -63295,7 +67071,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -63311,7 +67087,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -63903,7 +67679,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -63919,7 +67695,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -64511,7 +68287,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -64527,7 +68303,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -65183,7 +68959,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -65199,7 +68975,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -65791,7 +69567,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -65807,7 +69583,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -66399,7 +70175,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -66415,7 +70191,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -67055,7 +70831,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -67071,7 +70847,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -67471,7 +71247,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -67487,7 +71263,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {
@@ -67839,7 +71615,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:04.602954Z",
+      "verifiedAt": "2026-09-30T12:32:25.428367Z",
       "comparability": "directional"
     },
     {
@@ -67855,7 +71631,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:17:01.726Z",
+      "verifiedAt": "2026-09-30T12:32:22.019Z",
       "comparability": "directional"
     },
     {

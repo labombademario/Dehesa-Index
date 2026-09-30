@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T12:31:02.650Z",
+  "generatedAt": "2026-09-30T12:32:26.013Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -26,6 +26,25 @@
     }
   },
   "series": [
+    {
+      "id": "di_diesel_eu",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "frequency": "weekly",
+      "unit": "litro",
+      "currency": "EUR",
+      "latest": 2.1084127823327123,
+      "observationDate": "2026-09-01",
+      "periodChangePct": 3.155264734604102,
+      "yoyPct": null,
+      "volatility": 0.03844754751833309,
+      "points": 261,
+      "coverageStart": "2005-01-01",
+      "coverageEnd": "2026-09-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
     {
       "id": "di_leche_eu",
       "product": "leche",
@@ -726,25 +745,6 @@
       "points": 60,
       "coverageStart": "2021-08-01",
       "coverageEnd": "2026-07-01",
-      "status": "verified",
-      "comparability": "directional"
-    },
-    {
-      "id": "di_diesel_eu",
-      "product": "diesel",
-      "region": "eu",
-      "sourceId": "eu_oil_bulletin",
-      "frequency": "weekly",
-      "unit": "litro",
-      "currency": "EUR",
-      "latest": 2.1084127823327123,
-      "observationDate": "2026-09-01",
-      "periodChangePct": 3.155264734604102,
-      "yoyPct": null,
-      "volatility": 0.07292627672731705,
-      "points": 25,
-      "coverageStart": "2024-09-01",
-      "coverageEnd": "2026-09-01",
       "status": "verified",
       "comparability": "directional"
     },
