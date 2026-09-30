@@ -1,0 +1,21 @@
+2026-09-30T14:34:45.210Z
+OK cerdo
+OK vaca
+OK cordero
+OK pollo
+OK huevos
+OK azucar
+OK oliva
+OK arroz
+OK maiz
+OK trigo
+OK cebada
+OK avena
+FALLO colza: Serie insuficiente para colza: 0 puntos
+OK centeno
+OK mantequilla
+OK leche_polvo
+OK dap
+OK potasa
+OK leche
+OK harina_soja

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T14:31:56.554Z",
+  "generatedAt": "2026-09-30T14:35:15.415Z",
   "status": "informational",
   "rules": [
     {
@@ -40,6 +40,14 @@
       "product": "cebada",
       "region": "us",
       "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "centeno",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
@@ -254,6 +262,15 @@
     },
     {
       "type": "period_move",
+      "product": "leche_polvo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": 9.05,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
       "product": "cerdo",
       "region": "eu",
       "sourceId": "eu_agrifood",
@@ -269,6 +286,15 @@
       "severity": "watch",
       "changePct": 8.04,
       "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "centeno",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": -6.42,
+      "observationDate": "2026-08-01"
     },
     {
       "type": "period_move",
