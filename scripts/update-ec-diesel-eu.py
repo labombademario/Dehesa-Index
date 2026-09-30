@@ -9,34 +9,26 @@ req=urllib.request.Request(URL,headers={'User-Agent':'Dehesa-Index-data-bot/1.0'
 with urllib.request.urlopen(req,timeout=90) as r: raw=r.read()
 tmp=ROOT/'.ec-oil.xlsx'; tmp.write_bytes(raw); wb=load_workbook(tmp,read_only=True,data_only=True)
 ws=wb[wb.sheetnames[0]]; rows=list(ws.iter_rows(values_only=True))
-# Locate EU-27 diesel series and its date/value columns heuristically.
-header=None
-for i,row in enumerate(rows[:40]):
-    txt=' | '.join(str(x or '') for x in row)
-    if 'EU-27' in txt and 'Diesel' in txt:
-        header=i; break
-if header is None: raise RuntimeError('EC Oil Bulletin EU-27 diesel header not found')
-hdr=[str(x or '').strip() for x in rows[header]]
-date_col=next((i for i,x in enumerate(hdr) if re.search(r'date|week',x,re.I)),0)
-diesel_col=next((i for i,x in enumerate(hdr) if re.search(r'diesel',x,re.I) and re.search(r'eu.?27',x,re.I)),None)
-if diesel_col is None:
-    # Search same column across first 12 rows for EU-27 Diesel
-    for c in range(len(hdr)):
-        coltxt=' '.join(str(rows[r][c] or '') for r in range(max(0,header-3),min(len(rows),header+2)))
-        if 'Diesel' in coltxt and 'EU-27' in coltxt: diesel_col=c; break
-if diesel_col is None: raise RuntimeError('EC Oil Bulletin diesel column not found')
+# Hoja "Prices with taxes": fila 0 = nombres de columna (EU_price_with_tax_diesel...),
+# columna 0 = fecha, columna 1 = código de país ('EU_' = media ponderada UE).
+ws=wb['Prices with taxes'] if 'Prices with taxes' in wb.sheetnames else wb[wb.sheetnames[0]]
+rows=list(ws.iter_rows(values_only=True))
+hdr=[str(x or '').strip().lower() for x in rows[0]]
+diesel_col=next((i for i,x in enumerate(hdr) if 'diesel' in x and 'with_tax' in x),None)
+if diesel_col is None: raise RuntimeError('EC Oil Bulletin: columna de diesel con impuestos no encontrada: '+str(hdr[:8]))
 points=[]
-for row in rows[header+1:]:
-    if date_col>=len(row) or diesel_col>=len(row): continue
-    d=row[date_col]; v=row[diesel_col]
-    if isinstance(d,datetime): ds=d.date().isoformat()
-    else:
-        m=re.search(r'(20\d{2})[-/](\d{2})[-/](\d{2})',str(d or '')); ds=f'{m.group(1)}-{m.group(2)}-{m.group(3)}' if m else None
-    if ds:
-        try: val=float(str(v).replace(',','.')); points.append((ds,val))
-        except: pass
+for row in rows[3:]:
+    if len(row)<=diesel_col: continue
+    d=row[0]; ctr=str(row[1] or '').strip()
+    if not ctr.startswith('EU'): continue
+    if not isinstance(d,datetime): continue
+    try: v=float(row[diesel_col])/1000.0  # EUR/1000 l -> EUR/litro
+    except (TypeError,ValueError): continue
+    points.append((d.date().isoformat(),v))
 points=sorted({d:v for d,v in points}.items())
 if len(points)<20: raise RuntimeError('EC Oil Bulletin returned insufficient EU-27 diesel history: '+str(len(points)))
 latest=points[-1]; prev=points[-2]; change=round((latest[1]/prev[1]-1)*100,4) if prev[1] else None
-obs={'id':'di_diesel_eu','product':'diesel','region':'eu','sourceId':'eu_oil_bulletin','observationDate':latest[0],'publicationDate':None,'status':'pending','verifiedAt':None,'comparability':'directional','value':latest[1],'currency':'EUR','unit':'litro','frequency':'weekly','changePct':change,'history':[{'period':d[5:],'year':int(d[:4]),'value':v} for d,v in points[-104:]]}
-SNAP.mkdir(parents=True,exist_ok=True); f=SNAP/(datetime.utcnow().date().isoformat()+'.json'); doc=json.loads(f.read_text()) if f.exists() else {'schemaVersion':'1.0','generatedAt':datetime.utcnow().isoformat()+'Z','observations':[]}; doc['observations']=[o for o in doc['observations'] if not(o.get('product')=='diesel' and o.get('region')=='eu')]+[obs]; f.write_text(json.dumps(doc,indent=2)+'\n'); tmp.unlink(missing_ok=True); print('EC diesel EU:',latest)
+obs={'id':'di_diesel_eu','product':'diesel','region':'eu','sourceId':'eu_oil_bulletin','observationDate':latest[0],'publicationDate':None,'status':'verified','verifiedAt':datetime.utcnow().isoformat()+'Z','methodology':'Weighted EU average for automotive gas oil, consumer price with taxes. The source expresses it in EUR/1,000 litres; value retained at source precision after division by 1,000.','comparability':'directional','value':latest[1],'currency':'EUR','unit':'litro','frequency':'weekly','changePct':change,'history':[{'period':d[5:],'year':int(d[:4]),'value':v} for d,v in points[-104:]]}
+SNAP.mkdir(parents=True,exist_ok=True); f=SNAP/(datetime.utcnow().date().isoformat()+'.json'); doc=json.loads(f.read_text()) if f.exists() else {'schemaVersion':'1.0','generatedAt':datetime.utcnow().isoformat()+'Z','observations':[]}; prev_obs=next((o for o in doc['observations'] if o.get('product')=='diesel' and o.get('region')=='eu' and o.get('observationDate')==obs['observationDate']),None)
+if prev_obs and prev_obs.get('publicationDate'): obs['publicationDate']=prev_obs['publicationDate']  # fecha de publicación ya verificada
+doc['observations']=[o for o in doc['observations'] if not(o.get('product')=='diesel' and o.get('region')=='eu')]+[obs]; f.write_text(json.dumps(doc,indent=2)+'\n'); tmp.unlink(missing_ok=True); print('EC diesel EU:',latest)
