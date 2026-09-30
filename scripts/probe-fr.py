@@ -33,17 +33,28 @@ def dump(fileurl,maxrows=14):
                     if k>=maxrows: break
                     P('   ',[ (round(c,2) if isinstance(c,float) else c) for c in row[:14]])
         except Exception as e: P(' ERR',e)
-import xlrd
-def dumpxls(fileurl,maxrows=14):
-    u=B+'OpenDocument.aspx?fileurl='+urllib.parse.quote(fileurl)+'&telechargersanscomptage=oui'
-    b=req(u,raw=True); P('DLXLS',fileurl[-60:],len(b),b[:4])
-    wb=xlrd.open_workbook(file_contents=b)
-    for sh in wb.sheets():
-        P(' SHEET',sh.name,sh.nrows,sh.ncols)
-        for k in range(min(maxrows,sh.nrows)): P('   ',[ (round(c,2) if isinstance(c,float) else c) for c in sh.row_values(k)[:14]])
-        if sh.nrows>maxrows:
-            for k in range(sh.nrows-3,sh.nrows): P('   END',[ (round(c,2) if isinstance(c,float) else c) for c in sh.row_values(k)[:14]])
-dumpxls('SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xls',18)
-dump('SeriesChronologiques/productions animales/viandes/séries hebdomadaires/synthèse toutes espèces/SCR-VIA-SYNTHESE_COT_NAT_HEBDO-A26.xlsx',14)
-dump('SeriesChronologiques/productions animales/viandes/gros bovins entrée abattoir/COT-VRO-GBEA-A26.xlsx',10)
-open('data/probe/fr7.txt','w').write('\n'.join(out))
+
+for sm in ['productions animales','productions vegetales','produits transformes','multi-filieres','contexte economique']:
+    h=req(B+'SeriesChronologiques.aspx?sousmenu='+urllib.parse.quote(sm))
+    ms=list(dict.fromkeys(re.findall(r'menuurl="([^"]+)"',h)))
+    P('#### SOUSMENU',sm,len(h),len(ms))
+    for m in ms[:120]: P('  M',m)
+# hojas de la sintesis de carnes
+b=req(B+'OpenDocument.aspx?fileurl='+urllib.parse.quote('SeriesChronologiques/productions animales/viandes/séries hebdomadaires/synthèse toutes espèces/SCR-VIA-SYNTHESE_COT_NAT_HEBDO-A26.xlsx')+'&telechargersanscomptage=oui',raw=True)
+wb=openpyxl.load_workbook(io.BytesIO(b),data_only=True)
+P('#### SYNTH SHEETS',len(wb.worksheets))
+for ws in wb.worksheets:
+    rows=list(ws.iter_rows(values_only=True))
+    hdr=[r for r in rows[:6] if r and r[0]]
+    P(' SH',ws.title,ws.max_row,'|',str(rows[0][0])[:150].replace('\n',' '),'| first',[c for c in rows[[k for k,r in enumerate(rows) if hasattr(r[0],'year')][0]][:3]] if any(hasattr(r[0],'year') for r in rows) else '', '| last',[c for c in [r for r in rows if r and hasattr(r[0],'year')][-1][:3]] if any(hasattr(r[0],'year') for r in rows) else '')
+# notas de la hoja Publication nacional de precios pagados
+g=json.loads(req('https://www.data.gouv.fr/api/1/datasets/historique-des-prix-moyens-mensuels-et-trimestriels-payes-aux-producteurs-depuis-2005-cereales-et-oleoproteagineux/'))
+b=req(g['resources'][0]['url'],raw=True)
+wb=openpyxl.load_workbook(io.BytesIO(b),data_only=True)
+P('#### PAGADOS SHEETS',[w.title for w in wb.worksheets])
+ws=wb['Publication nationale']
+for k,row in enumerate(ws.iter_rows(values_only=True)):
+    if k>=96 or k<10:
+        c=[x for x in row if x is not None]
+        if c: P('  R%d'%k,[ (round(x,1) if isinstance(x,float) else x) for x in c][:14])
+open('data/probe/fr8.txt','w').write('\n'.join(out))
