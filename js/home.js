@@ -213,11 +213,59 @@
     }
   };
 
+
+  // Bloque "Explora los datos": una tarjeta por página de datos, con enlace.
+  // Solo describe qué hay en cada página; no muestra cifras (las cifras viven en cada página).
+  var EXPLORE = {
+    title: { es: 'Explora los datos', en: 'Explore the data', fr: 'Explorer les données', it: 'Esplora i dati' },
+    sub: {
+      es: 'Además de los precios: sequía, costes, rendimientos, comercio y ganadería, con datos oficiales de EE. UU. y Europa.',
+      en: 'Beyond prices: drought, costs, yields, trade and livestock, with official data from the U.S. and Europe.',
+      fr: 'Au-delà des prix : sécheresse, coûts, rendements, commerce et élevage, avec des données officielles des États-Unis et d’Europe.',
+      it: 'Oltre ai prezzi: siccità, costi, rese, commercio e zootecnia, con dati ufficiali di Stati Uniti ed Europa.'
+    },
+    cards: [
+      { href: 'europa.html', tag: { es: 'UE', en: 'EU', fr: 'UE', it: 'UE' },
+        title: { es: 'Precios de la UE', en: 'EU prices', fr: 'Prix de l’UE', it: 'Prezzi UE' },
+        desc: { es: 'Cientos de series de la Comisión Europea, país por país: cereales, lácteos, carne, fruta y hortaliza, vino y fertilizantes.', en: 'Hundreds of European Commission series, country by country: grains, dairy, meat, fruit and vegetables, wine and fertilizers.', fr: 'Des centaines de séries de la Commission européenne, pays par pays : céréales, produits laitiers, viande, fruits et légumes, vin et engrais.', it: 'Centinaia di serie della Commissione europea, paese per paese: cereali, latticini, carne, frutta e ortaggi, vino e fertilizzanti.' } },
+      { href: 'producto.html?p=trigo', tag: { es: 'EE. UU. + UE', en: 'U.S. + EU', fr: 'É.-U. + UE', it: 'USA + UE' },
+        title: { es: 'Ficha de producto', en: 'Product page', fr: 'Fiche produit', it: 'Scheda prodotto' },
+        desc: { es: 'Todo de un producto en una página: precios por mercado, oferta y demanda, exportaciones, sequía y costes.', en: 'Everything about one product on a page: prices by market, supply and demand, exports, drought and costs.', fr: 'Tout sur un produit en une page : prix par marché, offre et demande, exportations, sécheresse et coûts.', it: 'Tutto su un prodotto in una pagina: prezzi per mercato, offerta e domanda, esportazioni, siccità e costi.' } },
+      { href: 'sequia.html', tag: { es: 'EE. UU.', en: 'U.S.', fr: 'É.-U.', it: 'USA' },
+        title: { es: 'Sequía', en: 'Drought', fr: 'Sécheresse', it: 'Siccità' },
+        desc: { es: 'Qué parte de cada estado está en sequía, semana a semana (U.S. Drought Monitor).', en: 'How much of each state is in drought, week by week (U.S. Drought Monitor).', fr: 'Quelle part de chaque État est en sécheresse, semaine après semaine (U.S. Drought Monitor).', it: 'Quanta parte di ogni stato è in siccità, settimana per settimana (U.S. Drought Monitor).' } },
+      { href: 'ganaderia.html', tag: { es: 'EE. UU.', en: 'U.S.', fr: 'É.-U.', it: 'USA' },
+        title: { es: 'Ganadería', en: 'Livestock', fr: 'Élevage', it: 'Zootecnia' },
+        desc: { es: 'Cerdos, vacuno y leche por estado, y existencias en frío (USDA NASS).', en: 'Hogs, cattle and milk by state, and cold storage stocks (USDA NASS).', fr: 'Porcs, bovins et lait par État, et stocks frigorifiques (USDA NASS).', it: 'Suini, bovini e latte per stato, e scorte frigorifere (USDA NASS).' } },
+      { href: 'insumos.html', tag: { es: 'EE. UU.', en: 'U.S.', fr: 'É.-U.', it: 'USA' },
+        title: { es: 'Insumos', en: 'Inputs', fr: 'Intrants', it: 'Input' },
+        desc: { es: 'Índices de precios que pagan los agricultores por sus insumos (USDA NASS).', en: 'Price indices paid by farmers for their inputs (USDA NASS).', fr: 'Indices des prix payés par les agriculteurs pour leurs intrants (USDA NASS).', it: 'Indici dei prezzi pagati dagli agricoltori per i loro input (USDA NASS).' } },
+      { href: 'costes.html', tag: { es: 'EE. UU.', en: 'U.S.', fr: 'É.-U.', it: 'USA' },
+        title: { es: 'Costes y rentabilidad', en: 'Costs and returns', fr: 'Coûts et rentabilité', it: 'Costi e redditività' },
+        desc: { es: 'Costes de producción con punto de equilibrio, previsión de precios de alimentos y renta agraria (USDA ERS).', en: 'Production costs with break-even, food price outlook and farm income (USDA ERS).', fr: 'Coûts de production avec seuil de rentabilité, prévisions des prix alimentaires et revenu agricole (USDA ERS).', it: 'Costi di produzione con punto di pareggio, previsioni dei prezzi alimentari e reddito agricolo (USDA ERS).' } },
+      { href: 'rendimientos.html', tag: { es: 'EE. UU.', en: 'U.S.', fr: 'É.-U.', it: 'USA' },
+        title: { es: 'Rendimientos', en: 'Yields', fr: 'Rendements', it: 'Rese' },
+        desc: { es: 'Rendimiento, superficie y producción por estado de 10 cultivos (USDA NASS).', en: 'Yield, area and production by state for 10 crops (USDA NASS).', fr: 'Rendement, superficie et production par État pour 10 cultures (USDA NASS).', it: 'Resa, superficie e produzione per stato di 10 colture (USDA NASS).' } },
+      { href: 'exportaciones.html', tag: { es: 'EE. UU.', en: 'U.S.', fr: 'É.-U.', it: 'USA' },
+        title: { es: 'Exportaciones', en: 'Exports', fr: 'Exportations', it: 'Esportazioni' },
+        desc: { es: 'Ventas semanales de exportación y comercio por país (USDA FAS).', en: 'Weekly export sales and trade by country (USDA FAS).', fr: 'Ventes hebdomadaires à l’exportation et commerce par pays (USDA FAS).', it: 'Vendite settimanali all’export e commercio per paese (USDA FAS).' } }
+    ]
+  };
+  function renderExplore(lang, esc) {
+    var el = document.getElementById('home-explora');
+    if (!el) return;
+    el.innerHTML = '<div class="di-section-head"><h2>' + esc(EXPLORE.title[lang] || EXPLORE.title.es) + '</h2><p>' + esc(EXPLORE.sub[lang] || EXPLORE.sub.es) + '</p></div>' +
+      '<div class="di-cat-grid">' + EXPLORE.cards.map(function (c) {
+        return '<a class="di-cat-card" href="' + c.href + '"><div class="di-cat-bar"></div><div class="di-cat-label serif">' + esc(c.title[lang] || c.title.es) + '</div><div class="di-cat-items">' + esc(c.tag[lang] || c.tag.es) + '</div><div class="di-cat-desc">' + esc(c.desc[lang] || c.desc.es) + '</div></a>';
+      }).join('') + '</div>';
+  }
+
   function render() {
     var lang = window.DehesaShared.getLang();
     var esc = window.DehesaShared.esc;
     var t = STRINGS[lang] || STRINGS.es;
     document.title = 'Dehesa Index — ' + (lang === 'es' ? 'Inicio' : (lang === 'fr' ? 'Accueil' : (lang === 'it' ? 'Home' : 'Home')));
+    renderExplore(lang, esc);
     document.getElementById('home-h1').textContent = t.h1;
     document.getElementById('home-sub').textContent = t.sub;
     document.getElementById('home-cta-primary').textContent = t.ctaPrimary;
