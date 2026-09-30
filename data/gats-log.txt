@@ -1,0 +1,10 @@
+file:///home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-gats.mjs:29
+  throw new Error(p + ' ' + err);
+        ^
+
+Error: /unitsOfMeasure HTTP 429
+    at get (file:///home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-gats.mjs:29:9)
+    at async Promise.all (index 1)
+    at async file:///home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-gats.mjs:35:27
+
+Node.js v20.20.2
