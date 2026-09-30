@@ -33,12 +33,17 @@ def dump(fileurl,maxrows=14):
                     if k>=maxrows: break
                     P('   ',[ (round(c,2) if isinstance(c,float) else c) for c in row[:14]])
         except Exception as e: P(' ERR',e)
-# 1) cotizaciones cereales
-files,html=listing('SeriesChronologiques/productions vegetales/grandes cultures/cotations')
-t=re.sub(r'<[^>]+>',' ',html); t=re.sub(r'&nbsp;|\s+',' ',t); P('LISTING TXT',t[t.find('classé par'):][:1800])
-dump('SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-GRC-Cotations_FR-A26.xlsx',16)
-# 2) carnes: listados
-for menu in ['SeriesChronologiques/productions animales/viandes/gros bovins entrée abattoir','SeriesChronologiques/productions animales/viandes/séries hebdomadaires/synthèse toutes espèces','SeriesChronologiques/productions animales/lait de vache']:
-    f,h=listing(menu); P('#### MENU',menu,len(f))
-    for x in f[:20]: P('  F',x)
-open('data/probe/fr6.txt','w').write('\n'.join(out))
+import xlrd
+def dumpxls(fileurl,maxrows=14):
+    u=B+'OpenDocument.aspx?fileurl='+urllib.parse.quote(fileurl)+'&telechargersanscomptage=oui'
+    b=req(u,raw=True); P('DLXLS',fileurl[-60:],len(b),b[:4])
+    wb=xlrd.open_workbook(file_contents=b)
+    for sh in wb.sheets():
+        P(' SHEET',sh.name,sh.nrows,sh.ncols)
+        for k in range(min(maxrows,sh.nrows)): P('   ',[ (round(c,2) if isinstance(c,float) else c) for c in sh.row_values(k)[:14]])
+        if sh.nrows>maxrows:
+            for k in range(sh.nrows-3,sh.nrows): P('   END',[ (round(c,2) if isinstance(c,float) else c) for c in sh.row_values(k)[:14]])
+dumpxls('SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xls',18)
+dump('SeriesChronologiques/productions animales/viandes/séries hebdomadaires/synthèse toutes espèces/SCR-VIA-SYNTHESE_COT_NAT_HEBDO-A26.xlsx',14)
+dump('SeriesChronologiques/productions animales/viandes/gros bovins entrée abattoir/COT-VRO-GBEA-A26.xlsx',10)
+open('data/probe/fr7.txt','w').write('\n'.join(out))
