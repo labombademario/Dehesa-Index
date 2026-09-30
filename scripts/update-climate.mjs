@@ -36,7 +36,11 @@ const LOCATIONS=[
  {id:'au-qld-darling-downs',name:'Darling Downs, Queensland (Toowoomba)',region:'au',country:'AU',lat:-27.56,lon:151.95,crops:['trigo','sorgo','vacuno']},
  {id:'au-qld-central',name:'Queensland central (Rockhampton)',region:'au',country:'AU',lat:-23.4,lon:150.5,crops:['vacuno']},
  {id:'eu-denmark-jutland',name:'Jutlandia (Dinamarca)',region:'eu',country:'DK',lat:56.2,lon:9.3,crops:['trigo','cebada','cerdo','leche']},
- {id:'eu-denmark-zealand',name:'Selandia (Dinamarca)',region:'eu',country:'DK',lat:55.4,lon:11.8,crops:['trigo','cebada','colza']}
+ {id:'eu-denmark-zealand',name:'Selandia (Dinamarca)',region:'eu',country:'DK',lat:55.4,lon:11.8,crops:['trigo','cebada','colza']},
+ {id:'eu-austria-marchfeld',name:'Marchfeld, Baja Austria (Austria)',region:'eu',country:'AT',lat:48.3,lon:16.6,crops:['trigo','maiz','remolacha']},
+ {id:'eu-austria-upper',name:'Alta Austria (Wels)',region:'eu',country:'AT',lat:48.15,lon:14.0,crops:['leche','maiz','cerdo']},
+ {id:'eu-portugal-alentejo',name:'Alentejo (Beja) · montado',region:'eu',country:'PT',lat:38.0,lon:-7.9,crops:['trigo','corcho','vacuno']},
+ {id:'eu-portugal-ribatejo',name:'Ribatejo (Santarém)',region:'eu',country:'PT',lat:39.2,lon:-8.7,crops:['maiz','arroz','tomate']}
 ];
 const MON=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 const round=(n,d=1)=>Number(n.toFixed(d));
