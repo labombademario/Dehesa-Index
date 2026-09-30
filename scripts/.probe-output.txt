@@ -1,0 +1,56 @@
+=== https://api.tech.ec.europa.eu/agrifood/api/sheepAndGoat/prices#group=memberStateCode,category
+STATUS: 200
+FILAS: 19015
+EJEMPLO: {"memberStateCode":"AT","memberStateName":"Austria","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€760.00","unit":"100kg","weekNumber":38,"category":"Heavy Lamb","marketName":"AT","marketingYear":2026}
+  GRUPO [AT | Heavy Lamb] n=619 ultimo=2026-09-20 precio=€760.00
+  GRUPO [BE | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€946.20
+  GRUPO [BG | Heavy Lamb] n=147 ultimo=2026-09-20 precio=€879.44
+  GRUPO [BG | Light Lamb] n=621 ultimo=2026-09-20 precio=€1181.28
+  GRUPO [CY | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€914.00
+  GRUPO [DE | Heavy Lamb] n=605 ultimo=2026-09-20 precio=€976.01
+  GRUPO [DK | Heavy Lamb] n=240 ultimo=2019-07-14 precio=€512.73
+  GRUPO [EE | Heavy Lamb] n=172 ultimo=2022-11-27 precio=€455.00
+  GRUPO [EE | Light Lamb] n=35 ultimo=2021-04-25 precio=€197.20
+  GRUPO [EL | Light Lamb] n=621 ultimo=2026-09-20 precio=€928.78
+  GRUPO [ES | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€1011.80
+  GRUPO [ES | Light Lamb] n=621 ultimo=2026-09-20 precio=€1094.40
+  GRUPO [EU | Heavy Lamb] n=614 ultimo=2026-09-20 precio=€903.18
+  GRUPO [EU | Light Lamb] n=614 ultimo=2026-09-20 precio=€996.38
+  GRUPO [EU+UK | Heavy Lamb] n=268 ultimo=2020-02-02 precio=€560.36
+  GRUPO [EU+UK | Light Lamb] n=268 ultimo=2020-02-02 precio=€566.77
+  GRUPO [FI | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€689.29
+  GRUPO [FR | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€911.00
+  GRUPO [HR | Heavy Lamb] n=510 ultimo=2026-09-20 precio=€1275.40
+  GRUPO [HR | Light Lamb] n=621 ultimo=2026-09-20 precio=€1292.33
+  GRUPO [HU | Heavy Lamb] n=294 ultimo=2026-09-13 precio=€1153.58
+  GRUPO [HU | Light Lamb] n=446 ultimo=2026-05-03 precio=€1274.57
+  GRUPO [IE | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€774.79
+  GRUPO [IT | Heavy Lamb] n=510 ultimo=2026-09-20 precio=€825.00
+  GRUPO [IT | Light Lamb] n=621 ultimo=2026-09-20 precio=€900.00
+  GRUPO [LT | Heavy Lamb] n=479 ultimo=2026-09-20 precio=€777.99
+  GRUPO [LV | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€687.40
+  GRUPO [LV | Light Lamb] n=510 ultimo=2026-09-20 precio=€683.12
+  GRUPO [NL | Heavy Lamb] n=449 ultimo=2026-03-01 precio=€1002.00
+  GRUPO [PL | Heavy Lamb] n=575 ultimo=2026-09-20 precio=€894.60
+  GRUPO [PL | Light Lamb] n=206 ultimo=2026-08-02 precio=€1058.84
+  GRUPO [PT | Heavy Lamb] n=401 ultimo=2026-09-20 precio=€971.67
+  GRUPO [PT | Light Lamb] n=621 ultimo=2026-09-20 precio=€1143.81
+  GRUPO [RO | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€646.39
+  GRUPO [RO | Light Lamb] n=262 ultimo=2026-06-28 precio=€837.40
+  GRUPO [SE | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€837.68
+  GRUPO [SI | Heavy Lamb] n=401 ultimo=2026-09-20 precio=€923.18
+  GRUPO [SI | Light Lamb] n=621 ultimo=2026-09-20 precio=€875.75
+  GRUPO [SK | Light Lamb] n=76 ultimo=2025-04-27 precio=€745.83
+  GRUPO [UK | Heavy Lamb] n=378 ultimo=2020-02-02 precio=€558.45
+
+=== https://api.tech.ec.europa.eu/agrifood/api/fertiliser/prices?memberStateCodes=ES
+STATUS: 200
+FILAS: 276
+  year -> [2026,2025,2024,2023,2022,2021,2020,2019]
+  quarter -> ["Q3","Q2","Q1","Q4"]
+  month -> ["Aug","Jul","Jun","May","Apr","Mar","Feb","Jan","Dec","Nov","Oct","Sep"]
+  memberStateName -> ["European Commission"]
+  product -> ["K (Potash)","N (Nitrogen)","P (Phosphorus)"]
+  price -> (217 valores; ej. [364,454,739])
+  unit -> ["€/tonne"]
+EJEMPLO: {"year":2026,"quarter":"Q3","month":"Aug","memberStateName":"European Commission","product":"K (Potash)","price":364,"unit":"€/tonne"}
