@@ -233,7 +233,7 @@
       ]
     },
     {
-      "id": "auto-91f1c1b5f3",
+      "id": "auto-a9a2b2ebb1",
       "date": "2026-09-23",
       "region": "global",
       "topic": "comercio",
@@ -247,12 +247,12 @@
       ],
       "source": "Xinhua",
       "headline": {
-        "en": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "es": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "fr": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "it": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn"
+        "en": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "es": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "fr": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "it": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua"
       },
-      "description": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming english.news.cn",
+      "description": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming Xinhua",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBNNFE5QXJFb3I0aC1rTWwyQ0xsMmFjY0M1WlZCaHBhMC1BQWlHcEFjaFBpeDNsbGp0MjJBVlVkcFNJdFRlQW1jWmdqX0hBdVYzbzRWanJ1bXJfdEJ6VWczYUZVX0x3Q1AxS2lpUW5WbVpSTGtXRktTSXlBV1Y?oc=5",
       "relevance": 81,
       "auto": true,
@@ -401,7 +401,7 @@
       ]
     },
     {
-      "id": "auto-e2ed9455c4",
+      "id": "auto-84cdf1edb2",
       "date": "2026-09-23",
       "region": "global",
       "topic": "oferta",
@@ -415,12 +415,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global"
+        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com"
       },
-      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report S&P Global",
+      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMmFIQ1RnTnhNSXpBOWRZZmRRNzJOU3JGRklCVDZNZW1ONDFDOHRvRk5xOEJ4OHhJYWl3UThHMGVLbnJIYVg1d0RscV9lMVhLdDVNcl83TVlxbFBRME5DdzhSMzBNYWlUblZ0YnNBOFhDR0tQUjh1bjFEMndqbmJ6bTd1NFQ0QW9FQ1R1LVY4cFZFdGNDMnJydGhReGtJemxyS0FDVjlRNTVVaFpRa0JzQW1sQkRvZFYzU2V0RmN4SjIzaERzSXBXMEpJRWJka0VFRXd0N3hTUTBsSkZJbmpWS0xNT3NWTWVmd3haNG1JOEE3cDBCQjdR?oc=5",
       "relevance": 81,
       "auto": true,
@@ -554,7 +554,7 @@
       ]
     },
     {
-      "id": "auto-b8310510df",
+      "id": "auto-3b3c38a662",
       "date": "2026-09-22",
       "region": "global",
       "topic": "energia",
@@ -567,12 +567,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "es": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "fr": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "it": "Fueling agriculture: biofuels as the catalyst - S&P Global"
+        "en": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "es": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "fr": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "it": "Fueling agriculture: biofuels as the catalyst - spglobal.com"
       },
-      "description": "Fueling agriculture: biofuels as the catalyst S&P Global",
+      "description": "Fueling agriculture: biofuels as the catalyst spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkZsWnN3dG43S2FsN2QxNEZOQkFXOFFVU2VrZXF3a1ZocWNJVE5COVJzWXNxblA5SUdJZUhJdks5elFDaEEwaXVMbTh2cEl0UEV5Tk1PeTJGOEswY3h0MWVqbWR4WkZIZEVhZGRUT2lGUDRwVzF0RmdJYWpxaTRSY2h5a1pGUTRvWGdkLWF6M2Zkb3VqWW9lV1hYRkJTeGttcHlId2M0Z0QyUS1jVlRKMDZsRU9hQzRLY19udDFPblpjdkt4Zmc?oc=5",
       "relevance": 73,
       "auto": true,
@@ -637,7 +637,7 @@
       ]
     },
     {
-      "id": "auto-10dd0660da",
+      "id": "auto-d434f704d3",
       "date": "2026-09-21",
       "region": "global",
       "topic": "comercio",
@@ -650,12 +650,12 @@
       ],
       "source": "Xinhua",
       "headline": {
-        "en": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "es": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "fr": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "it": "China's tech strategy for preserving precious black soil farmland - english.news.cn"
+        "en": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "es": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "fr": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "it": "China's tech strategy for preserving precious black soil farmland - Xinhua"
       },
-      "description": "China's tech strategy for preserving precious black soil farmland english.news.cn",
+      "description": "China's tech strategy for preserving precious black soil farmland Xinhua",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5IaTZYakFOcVlOWGRTTGN0N21lUFBCZTh5VG1mSFlmb0V3a0tyTW1EVWpHeWJ5MDVkY2I0dXNoWnVnalJBcmNzaVIxdDE5MnlOZFh1bmRjdUdKTHdCTTZwOW9UNkJjWFJESjlYYWx5TllkOG1zWk1wdjRldGQ?oc=5",
       "relevance": 73,
       "auto": true,
@@ -776,7 +776,7 @@
       ]
     },
     {
-      "id": "auto-f3469bfaed",
+      "id": "auto-fc9d8e7534",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -791,12 +791,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
@@ -1186,7 +1186,7 @@
       ]
     },
     {
-      "id": "auto-91f1c1b5f3",
+      "id": "auto-a9a2b2ebb1",
       "date": "2026-09-23",
       "region": "global",
       "topic": "comercio",
@@ -1200,12 +1200,12 @@
       ],
       "source": "Xinhua",
       "headline": {
-        "en": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "es": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "fr": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "it": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn"
+        "en": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "es": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "fr": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "it": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua"
       },
-      "description": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming english.news.cn",
+      "description": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming Xinhua",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBNNFE5QXJFb3I0aC1rTWwyQ0xsMmFjY0M1WlZCaHBhMC1BQWlHcEFjaFBpeDNsbGp0MjJBVlVkcFNJdFRlQW1jWmdqX0hBdVYzbzRWanJ1bXJfdEJ6VWczYUZVX0x3Q1AxS2lpUW5WbVpSTGtXRktTSXlBV1Y?oc=5",
       "relevance": 81,
       "auto": true,
@@ -1354,7 +1354,7 @@
       ]
     },
     {
-      "id": "auto-e2ed9455c4",
+      "id": "auto-84cdf1edb2",
       "date": "2026-09-23",
       "region": "global",
       "topic": "oferta",
@@ -1368,12 +1368,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global"
+        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com"
       },
-      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report S&P Global",
+      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMmFIQ1RnTnhNSXpBOWRZZmRRNzJOU3JGRklCVDZNZW1ONDFDOHRvRk5xOEJ4OHhJYWl3UThHMGVLbnJIYVg1d0RscV9lMVhLdDVNcl83TVlxbFBRME5DdzhSMzBNYWlUblZ0YnNBOFhDR0tQUjh1bjFEMndqbmJ6bTd1NFQ0QW9FQ1R1LVY4cFZFdGNDMnJydGhReGtJemxyS0FDVjlRNTVVaFpRa0JzQW1sQkRvZFYzU2V0RmN4SjIzaERzSXBXMEpJRWJka0VFRXd0N3hTUTBsSkZJbmpWS0xNT3NWTWVmd3haNG1JOEE3cDBCQjdR?oc=5",
       "relevance": 81,
       "auto": true,
@@ -1507,7 +1507,7 @@
       ]
     },
     {
-      "id": "auto-b8310510df",
+      "id": "auto-3b3c38a662",
       "date": "2026-09-22",
       "region": "global",
       "topic": "energia",
@@ -1520,12 +1520,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "es": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "fr": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "it": "Fueling agriculture: biofuels as the catalyst - S&P Global"
+        "en": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "es": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "fr": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "it": "Fueling agriculture: biofuels as the catalyst - spglobal.com"
       },
-      "description": "Fueling agriculture: biofuels as the catalyst S&P Global",
+      "description": "Fueling agriculture: biofuels as the catalyst spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkZsWnN3dG43S2FsN2QxNEZOQkFXOFFVU2VrZXF3a1ZocWNJVE5COVJzWXNxblA5SUdJZUhJdks5elFDaEEwaXVMbTh2cEl0UEV5Tk1PeTJGOEswY3h0MWVqbWR4WkZIZEVhZGRUT2lGUDRwVzF0RmdJYWpxaTRSY2h5a1pGUTRvWGdkLWF6M2Zkb3VqWW9lV1hYRkJTeGttcHlId2M0Z0QyUS1jVlRKMDZsRU9hQzRLY19udDFPblpjdkt4Zmc?oc=5",
       "relevance": 73,
       "auto": true,
@@ -1558,7 +1558,7 @@
       ]
     },
     {
-      "id": "auto-10dd0660da",
+      "id": "auto-d434f704d3",
       "date": "2026-09-21",
       "region": "global",
       "topic": "comercio",
@@ -1571,12 +1571,12 @@
       ],
       "source": "Xinhua",
       "headline": {
-        "en": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "es": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "fr": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "it": "China's tech strategy for preserving precious black soil farmland - english.news.cn"
+        "en": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "es": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "fr": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "it": "China's tech strategy for preserving precious black soil farmland - Xinhua"
       },
-      "description": "China's tech strategy for preserving precious black soil farmland english.news.cn",
+      "description": "China's tech strategy for preserving precious black soil farmland Xinhua",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5IaTZYakFOcVlOWGRTTGN0N21lUFBCZTh5VG1mSFlmb0V3a0tyTW1EVWpHeWJ5MDVkY2I0dXNoWnVnalJBcmNzaVIxdDE5MnlOZFh1bmRjdUdKTHdCTTZwOW9UNkJjWFJESjlYYWx5TllkOG1zWk1wdjRldGQ?oc=5",
       "relevance": 73,
       "auto": true,
@@ -1665,7 +1665,7 @@
       ]
     },
     {
-      "id": "auto-f3469bfaed",
+      "id": "auto-fc9d8e7534",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -1680,12 +1680,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
@@ -2043,7 +2043,7 @@
       ]
     },
     {
-      "id": "auto-e2ed9455c4",
+      "id": "auto-84cdf1edb2",
       "date": "2026-09-23",
       "region": "global",
       "topic": "oferta",
@@ -2057,12 +2057,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global"
+        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com"
       },
-      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report S&P Global",
+      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMmFIQ1RnTnhNSXpBOWRZZmRRNzJOU3JGRklCVDZNZW1ONDFDOHRvRk5xOEJ4OHhJYWl3UThHMGVLbnJIYVg1d0RscV9lMVhLdDVNcl83TVlxbFBRME5DdzhSMzBNYWlUblZ0YnNBOFhDR0tQUjh1bjFEMndqbmJ6bTd1NFQ0QW9FQ1R1LVY4cFZFdGNDMnJydGhReGtJemxyS0FDVjlRNTVVaFpRa0JzQW1sQkRvZFYzU2V0RmN4SjIzaERzSXBXMEpJRWJka0VFRXd0N3hTUTBsSkZJbmpWS0xNT3NWTWVmd3haNG1JOEE3cDBCQjdR?oc=5",
       "relevance": 81,
       "auto": true,
@@ -2095,7 +2095,7 @@
       ]
     },
     {
-      "id": "auto-b8310510df",
+      "id": "auto-3b3c38a662",
       "date": "2026-09-22",
       "region": "global",
       "topic": "energia",
@@ -2108,12 +2108,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "es": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "fr": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "it": "Fueling agriculture: biofuels as the catalyst - S&P Global"
+        "en": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "es": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "fr": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "it": "Fueling agriculture: biofuels as the catalyst - spglobal.com"
       },
-      "description": "Fueling agriculture: biofuels as the catalyst S&P Global",
+      "description": "Fueling agriculture: biofuels as the catalyst spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkZsWnN3dG43S2FsN2QxNEZOQkFXOFFVU2VrZXF3a1ZocWNJVE5COVJzWXNxblA5SUdJZUhJdks5elFDaEEwaXVMbTh2cEl0UEV5Tk1PeTJGOEswY3h0MWVqbWR4WkZIZEVhZGRUT2lGUDRwVzF0RmdJYWpxaTRSY2h5a1pGUTRvWGdkLWF6M2Zkb3VqWW9lV1hYRkJTeGttcHlId2M0Z0QyUS1jVlRKMDZsRU9hQzRLY19udDFPblpjdkt4Zmc?oc=5",
       "relevance": 73,
       "auto": true,
@@ -2146,7 +2146,7 @@
       ]
     },
     {
-      "id": "auto-10dd0660da",
+      "id": "auto-d434f704d3",
       "date": "2026-09-21",
       "region": "global",
       "topic": "comercio",
@@ -2159,12 +2159,12 @@
       ],
       "source": "Xinhua",
       "headline": {
-        "en": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "es": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "fr": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "it": "China's tech strategy for preserving precious black soil farmland - english.news.cn"
+        "en": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "es": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "fr": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "it": "China's tech strategy for preserving precious black soil farmland - Xinhua"
       },
-      "description": "China's tech strategy for preserving precious black soil farmland english.news.cn",
+      "description": "China's tech strategy for preserving precious black soil farmland Xinhua",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5IaTZYakFOcVlOWGRTTGN0N21lUFBCZTh5VG1mSFlmb0V3a0tyTW1EVWpHeWJ5MDVkY2I0dXNoWnVnalJBcmNzaVIxdDE5MnlOZFh1bmRjdUdKTHdCTTZwOW9UNkJjWFJESjlYYWx5TllkOG1zWk1wdjRldGQ?oc=5",
       "relevance": 73,
       "auto": true,
@@ -2197,7 +2197,7 @@
       ]
     },
     {
-      "id": "auto-f3469bfaed",
+      "id": "auto-fc9d8e7534",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -2212,12 +2212,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
@@ -2412,7 +2412,7 @@
       ]
     },
     {
-      "id": "auto-91f1c1b5f3",
+      "id": "auto-a9a2b2ebb1",
       "date": "2026-09-23",
       "region": "global",
       "topic": "comercio",
@@ -2426,12 +2426,12 @@
       ],
       "source": "Xinhua",
       "headline": {
-        "en": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "es": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "fr": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "it": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn"
+        "en": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "es": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "fr": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "it": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua"
       },
-      "description": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming english.news.cn",
+      "description": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming Xinhua",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBNNFE5QXJFb3I0aC1rTWwyQ0xsMmFjY0M1WlZCaHBhMC1BQWlHcEFjaFBpeDNsbGp0MjJBVlVkcFNJdFRlQW1jWmdqX0hBdVYzbzRWanJ1bXJfdEJ6VWczYUZVX0x3Q1AxS2lpUW5WbVpSTGtXRktTSXlBV1Y?oc=5",
       "relevance": 81,
       "auto": true,
@@ -2580,7 +2580,7 @@
       ]
     },
     {
-      "id": "auto-e2ed9455c4",
+      "id": "auto-84cdf1edb2",
       "date": "2026-09-23",
       "region": "global",
       "topic": "oferta",
@@ -2594,12 +2594,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global"
+        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com"
       },
-      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report S&P Global",
+      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMmFIQ1RnTnhNSXpBOWRZZmRRNzJOU3JGRklCVDZNZW1ONDFDOHRvRk5xOEJ4OHhJYWl3UThHMGVLbnJIYVg1d0RscV9lMVhLdDVNcl83TVlxbFBRME5DdzhSMzBNYWlUblZ0YnNBOFhDR0tQUjh1bjFEMndqbmJ6bTd1NFQ0QW9FQ1R1LVY4cFZFdGNDMnJydGhReGtJemxyS0FDVjlRNTVVaFpRa0JzQW1sQkRvZFYzU2V0RmN4SjIzaERzSXBXMEpJRWJka0VFRXd0N3hTUTBsSkZJbmpWS0xNT3NWTWVmd3haNG1JOEE3cDBCQjdR?oc=5",
       "relevance": 81,
       "auto": true,
@@ -2733,7 +2733,7 @@
       ]
     },
     {
-      "id": "auto-b8310510df",
+      "id": "auto-3b3c38a662",
       "date": "2026-09-22",
       "region": "global",
       "topic": "energia",
@@ -2746,12 +2746,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "es": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "fr": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "it": "Fueling agriculture: biofuels as the catalyst - S&P Global"
+        "en": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "es": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "fr": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "it": "Fueling agriculture: biofuels as the catalyst - spglobal.com"
       },
-      "description": "Fueling agriculture: biofuels as the catalyst S&P Global",
+      "description": "Fueling agriculture: biofuels as the catalyst spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkZsWnN3dG43S2FsN2QxNEZOQkFXOFFVU2VrZXF3a1ZocWNJVE5COVJzWXNxblA5SUdJZUhJdks5elFDaEEwaXVMbTh2cEl0UEV5Tk1PeTJGOEswY3h0MWVqbWR4WkZIZEVhZGRUT2lGUDRwVzF0RmdJYWpxaTRSY2h5a1pGUTRvWGdkLWF6M2Zkb3VqWW9lV1hYRkJTeGttcHlId2M0Z0QyUS1jVlRKMDZsRU9hQzRLY19udDFPblpjdkt4Zmc?oc=5",
       "relevance": 73,
       "auto": true,
@@ -2784,7 +2784,7 @@
       ]
     },
     {
-      "id": "auto-10dd0660da",
+      "id": "auto-d434f704d3",
       "date": "2026-09-21",
       "region": "global",
       "topic": "comercio",
@@ -2797,12 +2797,12 @@
       ],
       "source": "Xinhua",
       "headline": {
-        "en": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "es": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "fr": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "it": "China's tech strategy for preserving precious black soil farmland - english.news.cn"
+        "en": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "es": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "fr": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "it": "China's tech strategy for preserving precious black soil farmland - Xinhua"
       },
-      "description": "China's tech strategy for preserving precious black soil farmland english.news.cn",
+      "description": "China's tech strategy for preserving precious black soil farmland Xinhua",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5IaTZYakFOcVlOWGRTTGN0N21lUFBCZTh5VG1mSFlmb0V3a0tyTW1EVWpHeWJ5MDVkY2I0dXNoWnVnalJBcmNzaVIxdDE5MnlOZFh1bmRjdUdKTHdCTTZwOW9UNkJjWFJESjlYYWx5TllkOG1zWk1wdjRldGQ?oc=5",
       "relevance": 73,
       "auto": true,
@@ -2891,7 +2891,7 @@
       ]
     },
     {
-      "id": "auto-f3469bfaed",
+      "id": "auto-fc9d8e7534",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -2906,12 +2906,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
@@ -3308,7 +3308,7 @@
       ]
     },
     {
-      "id": "auto-91f1c1b5f3",
+      "id": "auto-a9a2b2ebb1",
       "date": "2026-09-23",
       "region": "global",
       "topic": "comercio",
@@ -3322,12 +3322,12 @@
       ],
       "source": "Xinhua",
       "headline": {
-        "en": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "es": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "fr": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "it": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn"
+        "en": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "es": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "fr": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "it": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua"
       },
-      "description": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming english.news.cn",
+      "description": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming Xinhua",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBNNFE5QXJFb3I0aC1rTWwyQ0xsMmFjY0M1WlZCaHBhMC1BQWlHcEFjaFBpeDNsbGp0MjJBVlVkcFNJdFRlQW1jWmdqX0hBdVYzbzRWanJ1bXJfdEJ6VWczYUZVX0x3Q1AxS2lpUW5WbVpSTGtXRktTSXlBV1Y?oc=5",
       "relevance": 81,
       "auto": true,
@@ -3476,7 +3476,7 @@
       ]
     },
     {
-      "id": "auto-e2ed9455c4",
+      "id": "auto-84cdf1edb2",
       "date": "2026-09-23",
       "region": "global",
       "topic": "oferta",
@@ -3490,12 +3490,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
-        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global"
+        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
+        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com"
       },
-      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report S&P Global",
+      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMmFIQ1RnTnhNSXpBOWRZZmRRNzJOU3JGRklCVDZNZW1ONDFDOHRvRk5xOEJ4OHhJYWl3UThHMGVLbnJIYVg1d0RscV9lMVhLdDVNcl83TVlxbFBRME5DdzhSMzBNYWlUblZ0YnNBOFhDR0tQUjh1bjFEMndqbmJ6bTd1NFQ0QW9FQ1R1LVY4cFZFdGNDMnJydGhReGtJemxyS0FDVjlRNTVVaFpRa0JzQW1sQkRvZFYzU2V0RmN4SjIzaERzSXBXMEpJRWJka0VFRXd0N3hTUTBsSkZJbmpWS0xNT3NWTWVmd3haNG1JOEE3cDBCQjdR?oc=5",
       "relevance": 81,
       "auto": true,
@@ -3629,7 +3629,7 @@
       ]
     },
     {
-      "id": "auto-b8310510df",
+      "id": "auto-3b3c38a662",
       "date": "2026-09-22",
       "region": "global",
       "topic": "energia",
@@ -3642,12 +3642,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "es": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "fr": "Fueling agriculture: biofuels as the catalyst - S&P Global",
-        "it": "Fueling agriculture: biofuels as the catalyst - S&P Global"
+        "en": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "es": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "fr": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
+        "it": "Fueling agriculture: biofuels as the catalyst - spglobal.com"
       },
-      "description": "Fueling agriculture: biofuels as the catalyst S&P Global",
+      "description": "Fueling agriculture: biofuels as the catalyst spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkZsWnN3dG43S2FsN2QxNEZOQkFXOFFVU2VrZXF3a1ZocWNJVE5COVJzWXNxblA5SUdJZUhJdks5elFDaEEwaXVMbTh2cEl0UEV5Tk1PeTJGOEswY3h0MWVqbWR4WkZIZEVhZGRUT2lGUDRwVzF0RmdJYWpxaTRSY2h5a1pGUTRvWGdkLWF6M2Zkb3VqWW9lV1hYRkJTeGttcHlId2M0Z0QyUS1jVlRKMDZsRU9hQzRLY19udDFPblpjdkt4Zmc?oc=5",
       "relevance": 73,
       "auto": true,
@@ -3680,7 +3680,7 @@
       ]
     },
     {
-      "id": "auto-10dd0660da",
+      "id": "auto-d434f704d3",
       "date": "2026-09-21",
       "region": "global",
       "topic": "comercio",
@@ -3693,12 +3693,12 @@
       ],
       "source": "Xinhua",
       "headline": {
-        "en": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "es": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "fr": "China's tech strategy for preserving precious black soil farmland - english.news.cn",
-        "it": "China's tech strategy for preserving precious black soil farmland - english.news.cn"
+        "en": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "es": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "fr": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "it": "China's tech strategy for preserving precious black soil farmland - Xinhua"
       },
-      "description": "China's tech strategy for preserving precious black soil farmland english.news.cn",
+      "description": "China's tech strategy for preserving precious black soil farmland Xinhua",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5IaTZYakFOcVlOWGRTTGN0N21lUFBCZTh5VG1mSFlmb0V3a0tyTW1EVWpHeWJ5MDVkY2I0dXNoWnVnalJBcmNzaVIxdDE5MnlOZFh1bmRjdUdKTHdCTTZwOW9UNkJjWFJESjlYYWx5TllkOG1zWk1wdjRldGQ?oc=5",
       "relevance": 73,
       "auto": true,
@@ -3787,7 +3787,7 @@
       ]
     },
     {
-      "id": "auto-f3469bfaed",
+      "id": "auto-fc9d8e7534",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -3802,12 +3802,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
@@ -4244,6 +4244,31 @@
       "marketLinks": []
     },
     {
+      "id": "auto-9dec927e3d",
+      "date": "2026-09-28",
+      "region": "global",
+      "topic": "comercio",
+      "topics": [
+        "comercio"
+      ],
+      "products": [
+        "pac"
+      ],
+      "source": "WTO",
+      "headline": {
+        "en": "WTO | News - What’s happening at the WTO - World Trade Organization",
+        "es": "WTO | News - What’s happening at the WTO - World Trade Organization",
+        "fr": "WTO | News - What’s happening at the WTO - World Trade Organization",
+        "it": "WTO | News - What’s happening at the WTO - World Trade Organization"
+      },
+      "description": "WTO | News - What’s happening at the WTO World Trade Organization",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBHeVdqTXpnTXZRTWlheEJYTFBkNkx6NVZnUjdnWks5c2lOX09hUkhuNjNUQzhYVFhELUEzWk92czc5SWVXWmpTbUFzRXp5S2FTNEs0ZWw1YnY?oc=5",
+      "relevance": 53,
+      "auto": true,
+      "impactChannel": "market_impact",
+      "marketLinks": []
+    },
+    {
       "id": "auto-8066797268",
       "date": "2026-09-28",
       "region": "uk",
@@ -4548,7 +4573,7 @@
       "marketLinks": []
     },
     {
-      "id": "auto-b6c5a8bb7c",
+      "id": "auto-08dfa1c6fb",
       "date": "2026-09-24",
       "region": "us",
       "topic": "oferta",
@@ -4566,7 +4591,7 @@
         "it": "World heads into food crises 'blind' as U.S. aid cuts squeeze UN food agency, experts warn - CNBC"
       },
       "description": "World heads into food crises 'blind' as U.S. aid cuts squeeze UN food agency, experts warn CNBC",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPX1pfMTY0VS1WZEVINGVtaWdZS2ZvUWtxejUwOWZsNERQZ3BLWmt2MlluU28wQ212MHZEVm93ejVib19JRzRPREJjQkVJdHFLZ3Y5eXVRcmd2OTRRNzAwVWFJWGVOTGRUc2x6TUNPY2VFNW1CbGg3YmdVcW9PLXc5TlRteGpMc2ZsQzQ2YTVGLXctYm8tQkszaVZVMNIBoAFBVV95cUxOUnRUTnZxUnlHQmo3M3h6VXlERDIzR0wxc09ISUtyZW8xWm5kUnBJS1V3NVhPNjRDYW1zODBIaldCUUg1QjlaUVRrWFY1UDczUjJNemR3Znc4aXpkSm00eURwZks0dW03UkFvUE9QZ0cyLUxUWDhkVE41SXNWcEFUZE0zcEoxdm5PZWxjWEp5SHY0cUp4bUo0NW5JcDFVS1B0?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPX1pfMTY0VS1WZEVINGVtaWdZS2ZvUWtxejUwOWZsNERQZ3BLWmt2MlluU28wQ212MHZEVm93ejVib19JRzRPREJjQkVJdHFLZ3Y5eXVRcmd2OTRRNzAwVWFJWGVOTGRUc2x6TUNPY2VFNW1CbGg3YmdVcW9PLXc5TlRteGpMc2ZsQzQ2YTVGLXctYm8tQkszaVZVMA?oc=5",
       "relevance": 45,
       "auto": true,
       "impactChannel": "market_impact",
@@ -4643,6 +4668,31 @@
       "description": "Australia must back shared critical mineral hubs: panel Argus Media",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNVVJPU1ZacGctTlU2QjlzS1pDYXBVNEhTeENlVEdjWVVrQXBkMzh2Q3lUZ2FwTjNMcGYzQ1JrOGF4U1c2U0Z4Q0FEZ3hyall1RlA2Z1RWWTEyc3JSdGZaTmlwSFpmMXdoQVdlU082blVBQlVDT3pqUHB0Q3Q3bFdVVjBVcE95WkxkWWk1NWtMSjAxV0hwcHFNUXA3dVg5ZWVuVU1Ia0RGaGp0aTExNk5MRDNRNjRRb2k4RUp5SWptd0c3VXI0anN4eg?oc=5",
       "relevance": 45,
+      "auto": true,
+      "impactChannel": "market_impact",
+      "marketLinks": []
+    },
+    {
+      "id": "auto-71d10313b1",
+      "date": "2026-09-24",
+      "region": "uk",
+      "topic": "oferta",
+      "topics": [
+        "oferta"
+      ],
+      "products": [
+        "pac"
+      ],
+      "source": "Farmers Guardian",
+      "headline": {
+        "en": "Moisture sets the pace for autumn drilling - Farmers Guardian",
+        "es": "Moisture sets the pace for autumn drilling - Farmers Guardian",
+        "fr": "Moisture sets the pace for autumn drilling - Farmers Guardian",
+        "it": "Moisture sets the pace for autumn drilling - Farmers Guardian"
+      },
+      "description": "Moisture sets the pace for autumn drilling Farmers Guardian",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbUlrYjNueEIwQjgybDVZa0lqTUlIRlJrdFhMQWxmZ0J4QVlELVVKeHdydkNmOHBjaG9fbEN1bnhnN0FnV3lWTmdXcGdaUS05XzJheW1Gelh4QUdFQUR2ZFUxOWtKUGMxS2Y4akdrSUxKcUFDVVZCeklheE9scE1kZjBIQ1Z5QQ?oc=5",
+      "relevance": 35,
       "auto": true,
       "impactChannel": "market_impact",
       "marketLinks": []
@@ -4749,32 +4799,7 @@
       "marketLinks": []
     },
     {
-      "id": "auto-469e7fc9d4",
-      "date": "2026-09-21",
-      "region": "eu",
-      "topic": "comercio",
-      "topics": [
-        "comercio"
-      ],
-      "products": [
-        "pac"
-      ],
-      "source": "Agriland",
-      "headline": {
-        "en": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland",
-        "es": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland",
-        "fr": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland",
-        "it": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland"
-      },
-      "description": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' Agriland",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNaDI0MGh6Q0JRUmRPY1dMRTRxV3F0eXBzWjBMbmhMTlAtTGpwVjRFTmVSbF8tVHF3ZXhHcmQ4REk0MS04MmZwSG1pYTJKT0NiMGVUSXY5MkdQbndLd0dDcDZIbkZ2Vmd5enY5Nzh3eHVNTmJxVC05bVNmUnQ0VXQ0dEF2cEpkZ0pWWk9LS01lS1RRZ1dlSUZqSlZHMkQtSmNUV3IxOE5HSWcwUQ?oc=5",
-      "relevance": 53,
-      "auto": true,
-      "impactChannel": "market_impact",
-      "marketLinks": []
-    },
-    {
-      "id": "auto-2bbcb1a53d",
+      "id": "auto-39b574b3ce",
       "date": "2026-09-18",
       "region": "global",
       "topic": "oferta",
@@ -4787,12 +4812,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Why food inflation is no longer just about supply and demand - S&P Global",
-        "es": "Why food inflation is no longer just about supply and demand - S&P Global",
-        "fr": "Why food inflation is no longer just about supply and demand - S&P Global",
-        "it": "Why food inflation is no longer just about supply and demand - S&P Global"
+        "en": "Why food inflation is no longer just about supply and demand - spglobal.com",
+        "es": "Why food inflation is no longer just about supply and demand - spglobal.com",
+        "fr": "Why food inflation is no longer just about supply and demand - spglobal.com",
+        "it": "Why food inflation is no longer just about supply and demand - spglobal.com"
       },
-      "description": "Why food inflation is no longer just about supply and demand S&P Global",
+      "description": "Why food inflation is no longer just about supply and demand spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxONjdUOWdTNjZJemtoVUhnYlhjTzlCU1pISW43RjgxTXFoRzdKNVR1RndaSVRUX3FKM1BKblRIaXl1aGpiYlU1akk0RnJkN2JwdXZyd1hqcFFtZTlfRW9aX3lHTXd1X0Vxd1JDRm9ncXdEZTBkUFlBRWRnbDVVOTE2ZGx6WG5BdExQc2RsdGRTeEloRllPVUpqTm9mTTNVMWxfZF84N3V2bGJ1WWxlVk82LVFLRmh1cURNTF9JR0FjWkRCSG51UlE3WlozaF8yOXJsOThKcU9RbHlxb0k?oc=5",
       "relevance": 61,
       "auto": true,
@@ -4902,7 +4927,7 @@
   ],
   "feed": [
     {
-      "id": "auto-b742548c2f",
+      "id": "auto-670849a660",
       "date": "2026-09-28",
       "region": "global",
       "topic": "oferta",
@@ -4914,12 +4939,12 @@
       ],
       "source": "Feed Strategy",
       "headline": {
-        "en": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - Feed Strategy",
-        "es": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - Feed Strategy",
-        "fr": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - Feed Strategy",
-        "it": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - Feed Strategy"
+        "en": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - feedstrategy.com",
+        "es": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - feedstrategy.com",
+        "fr": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - feedstrategy.com",
+        "it": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - feedstrategy.com"
       },
-      "description": "FEFAC calls for contingency plan to safeguard essential EU feed supplies Feed Strategy",
+      "description": "FEFAC calls for contingency plan to safeguard essential EU feed supplies feedstrategy.com",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRXlhX29lak5OZDZWN2dZN3p0bWNDVmdBRU5WejNsYk9oTXEyNWtfU2lLZW8yU2YyVFZZY2txejdTY2pkd0tSREdqT25iOUVsZjRWZTFqTjRULTBUckRJT3hXWlo0dmJVWV9ELVlOakdRa1pKb0l2Q0xITzRZay1WclBfZzloR1JTUGRLalZPcTFlT3RyNjBMLWZNQWZCOG5NOXJrVWppWWktd1dtN01lUWtqQ2U2Z00yWXd6SkxqTlNmRm52Sk1yNjVfMXc?oc=5",
       "relevance": 57,
       "auto": true,
@@ -4966,7 +4991,7 @@
       ]
     },
     {
-      "id": "auto-f3469bfaed",
+      "id": "auto-fc9d8e7534",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -4981,12 +5006,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
@@ -5094,7 +5119,7 @@
   ],
   "fertilizantes": [
     {
-      "id": "auto-91f1c1b5f3",
+      "id": "auto-a9a2b2ebb1",
       "date": "2026-09-23",
       "region": "global",
       "topic": "comercio",
@@ -5108,12 +5133,12 @@
       ],
       "source": "Xinhua",
       "headline": {
-        "en": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "es": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "fr": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn",
-        "it": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - english.news.cn"
+        "en": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "es": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "fr": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua",
+        "it": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming - Xinhua"
       },
-      "description": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming english.news.cn",
+      "description": "Xinhua Headlines: China secures bumper harvest with stable fertilizer supply, smart farming Xinhua",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBNNFE5QXJFb3I0aC1rTWwyQ0xsMmFjY0M1WlZCaHBhMC1BQWlHcEFjaFBpeDNsbGp0MjJBVlVkcFNJdFRlQW1jWmdqX0hBdVYzbzRWanJ1bXJfdEJ6VWczYUZVX0x3Q1AxS2lpUW5WbVpSTGtXRktTSXlBV1Y?oc=5",
       "relevance": 81,
       "auto": true,
@@ -5586,7 +5611,7 @@
   ],
   "azucar": [
     {
-      "id": "auto-f3469bfaed",
+      "id": "auto-fc9d8e7534",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -5601,12 +5626,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
