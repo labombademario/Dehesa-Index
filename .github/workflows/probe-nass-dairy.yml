@@ -1,4 +1,4 @@
-name: Probe MARS dairy
+name: Probe NASS dairy
 on:
   workflow_dispatch: {}
 concurrency:
@@ -15,11 +15,11 @@ jobs:
         with:
           node-version: '20'
       - env:
-          MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
-        run: node scripts/probe-mars-dairy.mjs
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+        run: node scripts/probe-nass-dairy.mjs
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/probe-mars-dairy.txt
-          git commit -m "probe: MARS dairy report list" || exit 0
+          git add data/probe-nass-dairy.txt
+          git commit -m "probe: NASS dairy report list" || exit 0
           git pull --rebase && git push
