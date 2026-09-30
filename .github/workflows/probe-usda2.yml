@@ -1,0 +1,46 @@
+name: probe-usda2
+on: workflow_dispatch
+concurrency:
+  group: probe-usda2
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe
+        env:
+          NK: ${{ secrets.NASS_API_KEY }}
+        run: |
+          mkdir -p .probe
+          node -e "
+          const NK=process.env.NK, out=[];
+          const N='https://quickstats.nass.usda.gov/api/';
+          async function q(label,url,n=500){try{const r=await fetch(url,{signal:AbortSignal.timeout(90000)});const t=await r.text();out.push('== '+label+'\n'+r.status+' '+t.length+' '+t.slice(0,n).replace(/\s+/g,' '));return t}catch(e){out.push('== '+label+' ERR '+e.message)}}
+          (async()=>{
+            const d=await q('drought state',\`https://usdmdataservices.unl.edu/api/StateStatistics/GetDroughtSeverityStatisticsByAreaPercent?aoi=IA&startdate=1/1/2026&enddate=9/30/2026&statisticsType=1\`,700);
+            await q('drought us',\`https://usdmdataservices.unl.edu/api/USStatistics/GetDroughtSeverityStatisticsByAreaPercent?aoi=us&startdate=9/1/2026&enddate=9/30/2026&statisticsType=1\`,500);
+            await q('drought conus json',\`https://usdmdataservices.unl.edu/api/USStatistics/GetDroughtSeverityStatisticsByAreaPercent?aoi=conus&startdate=9/1/2026&enddate=9/30/2026&statisticsType=1\`,300);
+            const P=(p,extra='')=>N+'get_param_values/?key='+NK+'&param='+p+extra;
+            await q('statisticcat PAID',P('statisticcat_desc','&source_desc=SURVEY&sector_desc=ECONOMICS'),3000);
+            await q('commodity for prices paid',P('commodity_desc','&statisticcat_desc=PRICE PAID INDEX'),1500);
+            await q('hogs inv count',N+'get_counts/?key='+NK+'&commodity_desc=HOGS&statisticcat_desc=INVENTORY&agg_level_desc=NATIONAL',200);
+            const hg=await q('hogs sample',N+'api_GET/?key='+NK+'&commodity_desc=HOGS&statisticcat_desc=INVENTORY&agg_level_desc=NATIONAL&year__GE=2025&format=JSON',1500);
+            await q('cattle on feed',N+'api_GET/?key='+NK+'&commodity_desc=CATTLE&class_desc=ON FEED&statisticcat_desc=INVENTORY&agg_level_desc=NATIONAL&year__GE=2026&format=JSON',1200);
+            await q('milk prod state',N+'api_GET/?key='+NK+'&commodity_desc=MILK&statisticcat_desc=PRODUCTION&agg_level_desc=STATE&freq_desc=MONTHLY&year__GE=2026&state_alpha=WI&format=JSON',1200);
+            await q('cold storage params',P('commodity_desc','&statisticcat_desc=STOCKS&sector_desc=ECONOMICS'),1500);
+            await q('cattle inv jan',N+'api_GET/?key='+NK+'&commodity_desc=CATTLE&class_desc=INCL CALVES&statisticcat_desc=INVENTORY&agg_level_desc=STATE&year=2026&state_alpha=TX&format=JSON',900);
+            await q('corn yield county count',N+'get_counts/?key='+NK+'&commodity_desc=CORN&statisticcat_desc=YIELD&agg_level_desc=COUNTY&year=2025&short_desc=CORN, GRAIN - YIELD, MEASURED IN BU / ACRE',200);
+            await q('corn yield state',N+'api_GET/?key='+NK+'&commodity_desc=CORN&statisticcat_desc=YIELD&agg_level_desc=STATE&year=2025&short_desc=CORN, GRAIN - YIELD, MEASURED IN BU / ACRE&format=JSON',600);
+            await q('ers food price outlook',\`https://www.ers.usda.gov/data-products/food-price-outlook/summary-findings\`,300);
+            await q('ers fpo csv',\`https://www.ers.usda.gov/media/5bbnjq3r/foodpriceoutlook.xlsx\`,100);
+            await q('ers costs returns',\`https://www.ers.usda.gov/data-products/commodity-costs-and-returns\`,300);
+            require('fs').writeFileSync('.probe/usda2.txt',out.join('\n'));
+          })()"
+      - name: Commit
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add -A .probe; git commit -m "probe usda2" || true
+          git pull --rebase origin main; git push origin HEAD:main
