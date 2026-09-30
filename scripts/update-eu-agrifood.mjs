@@ -348,5 +348,13 @@ if (process.argv[1] && process.argv[1].endsWith('update-eu-agrifood.mjs')) {
   const names = process.argv.slice(2);
   if (!names.length) { console.error('Uso: node scripts/update-eu-agrifood.mjs <producto...>'); process.exit(1); }
   const today = new Date().toISOString().slice(0, 10);
-  for (const n of names) await updateProduct(n, today);
+  // Un producto que falle no bloquea a los demás: se anota en data/eu-agrifood-log.txt (que se publica) y se sigue
+  const log = [new Date().toISOString()];
+  let failed = 0;
+  for (const n of names) {
+    try { await updateProduct(n, today); log.push('OK ' + n); }
+    catch (e) { failed++; log.push('FALLO ' + n + ': ' + e.message); console.error('FALLO ' + n + ': ' + e.message); }
+  }
+  await writeFile(path.join(root, 'data', 'eu-agrifood-log.txt'), log.join('\n') + '\n', 'utf8');
+  if (failed === names.length) process.exit(1);
 }

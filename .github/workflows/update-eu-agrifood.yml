@@ -50,6 +50,6 @@ jobs:
         run: |
           git config user.name "dehesa-index-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add js/data.js data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/alerts.json
+          git add data/eu-agrifood-log.txt js/data.js data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/alerts.json
           git diff --cached --quiet || git commit -m "data: refresh EU Agri-food prices"
           git push
