@@ -249,7 +249,8 @@ const HISTORY_POINTS = Number(process.env.EU_HISTORY_POINTS) || 1200;
 function euDate(d) { return d.toISOString().slice(0, 10).split('-').reverse().join('/'); }
 
 async function fetchRows(cfg, members) {
-  let url = BASE + '/' + cfg.commodity + '/prices?memberStateCodes=' + members.join(',');
+  // El agregado de la UE (código EU) se filtra después: se pide todo el conjunto sin lista de países
+  let url = BASE + '/' + cfg.commodity + '/prices' + (members.indexOf('EU') >= 0 ? '?x=1' : '?memberStateCodes=' + members.join(','));
   if (cfg.recent) url += '&beginDate=' + euDate(new Date(Date.now() - HISTORY_DAYS * 864e5));
   let res;
   for (let attempt = 1; attempt <= 3; attempt++) {

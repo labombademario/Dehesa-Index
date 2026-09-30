@@ -526,8 +526,8 @@
           us: { price: 0, changePct: 0, history: [0], currency: 'USD', kgPerUnit: 21.7724 },
           eu: { price: 0, changePct: 0, history: [0], currency: 'EUR', kgPerUnit: 1000 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'referencia', market: 'Comisión Europea (cebada pienso, mercado de Lleida, salida de silo)' } } },
-        { nameKey: 'avena', imperialUnitKey: 'bushel', imperialKgPerUnit: 14.5150, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
-          us: { price: 0, changePct: 0, history: [0], currency: 'USD', kgPerUnit: 14.5150 },
+        { nameKey: 'avena', imperialUnitKey: 'bushel', imperialKgPerUnit: 14.515, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          us: { price: 0, changePct: 0, history: [0], currency: 'USD', kgPerUnit: 14.515 },
           eu: { price: 0, changePct: 0, history: [0], currency: 'EUR', kgPerUnit: 1000 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS' }, eu: { type: 'referencia', market: 'Comisión Europea (avena pienso, agregado UE)' } } },
         // Sorgo: solo hay dato en EE. UU. (USDA NASS). El portal de la Comisión Europea no publica precio de sorgo, así que no hay región `eu`
