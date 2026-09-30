@@ -11,7 +11,7 @@ const GROUPS=[
  {id:'lacteos',weight:15,members:['leche']},
  {id:'pienso',weight:15,members:['harina_soja']},
  {id:'fertilizantes',weight:10,members:['dap','potasa']},
- {id:'energia',weight:10,members:['diesel']}
+ {id:'energia',weight:10,members:['diesel','petroleo_brent','gas_natural']}
 ];
 const BASE='2024-10'; // primer mes completo con todas las series semanales
 const pad=n=>String(n).padStart(2,'0');
