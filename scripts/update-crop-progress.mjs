@@ -17,7 +17,7 @@ const CROPS = {
   'WHEAT, SPRING, (EXCL DURUM)': 'wheat_spring',
   'COTTON, UPLAND': 'cotton',
   'SORGHUM': 'sorghum', 'SORGHUM, GRAIN': 'sorghum',
-  'BARLEY': 'barley', 'RICE': 'rice', 'OATS': 'oats'
+  'BARLEY': 'barley', 'RICE': 'rice', 'OATS': 'oats', 'PEANUTS': 'peanuts'
 };
 const CLASSES = { 'PCT VERY POOR': 've', 'PCT POOR': 'p', 'PCT FAIR': 'f', 'PCT GOOD': 'g', 'PCT EXCELLENT': 'e' };
 async function q(params) {
@@ -35,7 +35,7 @@ function parse(sd) { const m = /^(.*?) - (CONDITION|PROGRESS), MEASURED IN (.*)$
 const crops = {};
 const ensure = id => crops[id] || (crops[id] = { id, seasons: {}, states: {} });
 const seasonOf = (c, y) => c.seasons[y] || (c.seasons[y] = { condition: {}, progress: {} });
-for (const commodity of ['CORN', 'SOYBEANS', 'WHEAT', 'COTTON', 'SORGHUM', 'BARLEY', 'RICE', 'OATS']) {
+for (const commodity of ['CORN', 'SOYBEANS', 'WHEAT', 'COTTON', 'SORGHUM', 'BARLEY', 'RICE', 'OATS', 'PEANUTS']) {
   for (const cat of ['CONDITION', 'PROGRESS']) {
     const rows = await q({ commodity_desc: commodity, agg_level_desc: 'NATIONAL', statisticcat_desc: cat, year__GE: String(FROM) });
     for (const r of rows) {
@@ -48,7 +48,7 @@ for (const commodity of ['CORN', 'SOYBEANS', 'WHEAT', 'COTTON', 'SORGHUM', 'BARL
   }
 }
 // estados: última y penúltima semana de valoración de la campaña más reciente
-for (const commodity of ['CORN', 'SOYBEANS', 'WHEAT', 'COTTON', 'SORGHUM', 'BARLEY', 'RICE', 'OATS']) {
+for (const commodity of ['CORN', 'SOYBEANS', 'WHEAT', 'COTTON', 'SORGHUM', 'BARLEY', 'RICE', 'OATS', 'PEANUTS']) {
   const rows = await q({ commodity_desc: commodity, agg_level_desc: 'STATE', statisticcat_desc: 'CONDITION', year__GE: String(YEAR) });
   const by = {};
   for (const r of rows) {
@@ -79,7 +79,7 @@ for (const id of Object.keys(crops).sort()) {
 }
 // comprobaciones antes de sobrescribir
 const bad = [];
-for (const id of ['corn', 'soybeans', 'wheat_winter', 'wheat_spring', 'cotton', 'sorghum', 'barley', 'rice', 'oats']) {
+for (const id of ['corn', 'soybeans', 'wheat_winter', 'wheat_spring', 'cotton', 'sorghum', 'barley', 'rice', 'oats', 'peanuts']) {
   const c = out.find(x => x.id === id);
   if (!c) { bad.push(id + ' sin datos'); continue; }
   const full = Object.values(c.seasons).filter(s => s.condition.length >= 8).length;
