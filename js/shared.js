@@ -66,24 +66,34 @@
   };
 
   // Submenús de datos. Cada grupo agrupa páginas que cuelgan de él; el resto del menú no cambia.
-  var NAV_ORDER = ['home', 'precios', 'noticias', 'calendario', 'g:us', 'g:eu', 'g:tools', 'informacion', 'blog', 'empresas', 'contacto'];
+  var NAV_ORDER = ['home', 'precios', 'noticias', 'calendario', 'g:data', 'g:tools', 'informacion', 'blog', 'empresas', 'contacto'];
+  // Hojas: { file, query?, hash?, label }. Ramas: { items: [...], label } (se despliegan dentro del menú).
   var NAV_GROUPS = {
-    us: { label: { es: 'Datos EE. UU.', en: 'U.S. data', fr: 'Données É.-U.', it: 'Dati USA' }, items: [
-      { file: 'mercados.html', label: { es: 'Mercados USDA', en: 'USDA markets', fr: 'Marchés USDA', it: 'Mercati USDA' } },
-      { file: 'exportaciones.html', label: { es: 'Exportaciones', en: 'Exports', fr: 'Exportations', it: 'Esportazioni' } },
-      { file: 'oferta-demanda.html', label: { es: 'Oferta y demanda', en: 'Supply and demand', fr: 'Offre et demande', it: 'Offerta e domanda' } },
-      { file: 'cultivos.html', label: { es: 'Estado de los cultivos', en: 'Crop progress', fr: 'État des cultures', it: 'Stato delle colture' } },
-      { file: 'rendimientos.html', label: { es: 'Rendimientos', en: 'Yields', fr: 'Rendements', it: 'Rese' } },
-      { file: 'ganaderia.html', label: { es: 'Ganadería', en: 'Livestock', fr: 'Élevage', it: 'Zootecnia' } },
-      { file: 'sequia.html', label: { es: 'Sequía', en: 'Drought', fr: 'Sécheresse', it: 'Siccità' } },
-      { file: 'insumos.html', label: { es: 'Insumos', en: 'Inputs', fr: 'Intrants', it: 'Input' } },
-      { file: 'costes.html', label: { es: 'Costes', en: 'Costs', fr: 'Coûts', it: 'Costi' } }
-    ] },
-    eu: { label: { es: 'Datos UE', en: 'EU data', fr: 'Données UE', it: 'Dati UE' }, items: [
-      { file: 'europa.html', label: { es: 'Precios de la UE', en: 'EU prices', fr: 'Prix de l’UE', it: 'Prezzi UE' } },
-      { file: 'paises.html', label: { es: 'Producción por país', en: 'Production by country', fr: 'Production par pays', it: 'Produzione per paese' } },
-      { file: 'recan.html', label: { es: 'Costes y rentas (España)', en: 'Farm costs and incomes (Spain)', fr: 'Coûts et revenus (Espagne)', it: 'Costi e redditi (Spagna)' } },
-      { file: 'index.html', hash: '#home-dehesa-index', label: { es: 'Índice Dehesa (UE)', en: 'Dehesa Index (EU)', fr: 'Indice Dehesa (UE)', it: 'Indice Dehesa (UE)' }, noActive: true }
+    data: { label: { es: 'Datos', en: 'Data', fr: 'Données', it: 'Dati' }, items: [
+      { label: { es: 'EE. UU.', en: 'United States', fr: 'États-Unis', it: 'Stati Uniti' }, items: [
+        { file: 'mercados.html', label: { es: 'Mercados USDA', en: 'USDA markets', fr: 'Marchés USDA', it: 'Mercati USDA' } },
+        { file: 'exportaciones.html', label: { es: 'Exportaciones', en: 'Exports', fr: 'Exportations', it: 'Esportazioni' } },
+        { file: 'oferta-demanda.html', label: { es: 'Oferta y demanda', en: 'Supply and demand', fr: 'Offre et demande', it: 'Offerta e domanda' } },
+        { file: 'cultivos.html', label: { es: 'Estado de los cultivos', en: 'Crop progress', fr: 'État des cultures', it: 'Stato delle colture' } },
+        { file: 'rendimientos.html', label: { es: 'Rendimientos', en: 'Yields', fr: 'Rendements', it: 'Rese' } },
+        { file: 'ganaderia.html', label: { es: 'Ganadería', en: 'Livestock', fr: 'Élevage', it: 'Zootecnia' } },
+        { file: 'sequia.html', label: { es: 'Sequía', en: 'Drought', fr: 'Sécheresse', it: 'Siccità' } },
+        { file: 'insumos.html', label: { es: 'Insumos', en: 'Inputs', fr: 'Intrants', it: 'Input' } },
+        { file: 'costes.html', label: { es: 'Costes', en: 'Costs', fr: 'Coûts', it: 'Costi' } }
+      ] },
+      { label: { es: 'Europa', en: 'Europe', fr: 'Europe', it: 'Europa' }, items: [
+        { file: 'europa.html', label: { es: 'Precios de la UE (todos los países)', en: 'EU prices (all countries)', fr: 'Prix de l’UE (tous les pays)', it: 'Prezzi UE (tutti i paesi)' } },
+        { file: 'index.html', hash: '#home-dehesa-index', label: { es: 'Índice Dehesa (UE)', en: 'Dehesa Index (EU)', fr: 'Indice Dehesa (UE)', it: 'Indice Dehesa (UE)' }, noActive: true },
+        { label: { es: 'España', en: 'Spain', fr: 'Espagne', it: 'Spagna' }, items: [
+          { file: 'paises.html', query: '?c=ES', label: { es: 'Precios, insumos e índices (MAPA)', en: 'Prices, inputs and indices (MAPA)', fr: 'Prix, intrants et indices (MAPA)', it: 'Prezzi, input e indici (MAPA)' } },
+          { file: 'recan.html', label: { es: 'Costes y rentas de las explotaciones', en: 'Farm costs and incomes', fr: 'Coûts et revenus des exploitations', it: 'Costi e redditi delle aziende' } }
+        ] },
+        { file: 'paises.html', query: '?c=DK', label: { es: 'Dinamarca', en: 'Denmark', fr: 'Danemark', it: 'Danimarca' } },
+        { file: 'paises.html', query: '?c=NL', label: { es: 'Países Bajos', en: 'Netherlands', fr: 'Pays-Bas', it: 'Paesi Bassi' } }
+      ] },
+      { label: { es: 'Otros países', en: 'Other countries', fr: 'Autres pays', it: 'Altri paesi' }, items: [
+        { file: 'paises.html', query: '?c=AU', label: { es: 'Australia', en: 'Australia', fr: 'Australie', it: 'Australia' } }
+      ] }
     ] },
     tools: { label: { es: 'Herramientas', en: 'Tools', fr: 'Outils', it: 'Strumenti' }, items: [
       { file: 'producto.html', query: '?p=trigo', label: { es: 'Ficha de producto', en: 'Product page', fr: 'Fiche produit', it: 'Scheda prodotto' } },
@@ -92,7 +102,24 @@
     ] }
   };
   function currentFile() { var f = window.location.pathname.split('/').pop(); return f || 'index.html'; }
-  function groupIsActive(g) { var f = currentFile(); return g.items.some(function (i) { return !i.noActive && i.file === f; }); }
+  function leafActive(i) {
+    if (i.noActive || i.file !== currentFile()) return false;
+    if (i.query && i.query.indexOf('?c=') === 0) { var c = (new URLSearchParams(window.location.search).get('c') || 'ES').toUpperCase(); return c === i.query.slice(3); }
+    return true;
+  }
+  function branchActive(list) { return list.some(function (i) { return i.items ? branchActive(i.items) : leafActive(i); }); }
+  function groupIsActive(g) { return branchActive(g.items); }
+  // Menú recursivo: las ramas son acordeones; se abre sola la que contiene la página actual.
+  function navItems(list, cls, sub) {
+    return list.map(function (i) {
+      var lab = esc(i.label[lang] || i.label.es);
+      if (i.items) {
+        var on = branchActive(i.items);
+        return '<div class="di-nav-sub' + (on ? ' is-open' : '') + '"><button type="button" class="di-nav-subbtn' + (on ? ' active' : '') + '" aria-expanded="' + (on ? 'true' : 'false') + '">' + lab + ' <span aria-hidden="true">▾</span></button><div class="di-nav-subitems">' + navItems(i.items, cls, true) + '</div></div>';
+      }
+      return '<a class="' + cls + (leafActive(i) ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + (i.hash || '') + '">' + lab + '</a>';
+    }).join('');
+  }
 
   var FOOTER_STRINGS = {
     es: {
@@ -241,9 +268,7 @@
       if (k.indexOf('g:') === 0) {
         var g = NAV_GROUPS[k.slice(2)], on = groupIsActive(g);
         return '<div class="di-nav-group"><button type="button" class="di-nav-gbtn' + (on ? ' active' : '') + '" aria-haspopup="true" aria-expanded="false">' + esc(g.label[lang] || g.label.es) + ' <span aria-hidden="true">▾</span></button>' +
-          '<div class="di-nav-menu">' + g.items.map(function (i) {
-            return '<a class="' + (!i.noActive && i.file === curFile ? 'active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + (i.hash || '') + '">' + esc(i.label[lang] || i.label.es) + '</a>';
-          }).join('') + '</div></div>';
+          '<div class="di-nav-menu">' + navItems(g.items, '') + '</div></div>';
       }
       var isActive = k === activePage && !inGroup;
       return '<a class="' + (isActive ? 'active' : '') + '" href="' + sitePath(NAV_PAGES[k]) + '" role="button">' + esc(t[k]) + '</a>';
@@ -256,9 +281,7 @@
     var mobileHtml = NAV_ORDER.map(function (k) {
       if (k.indexOf('g:') === 0) {
         var g = NAV_GROUPS[k.slice(2)];
-        return '<div class="di-nav-mgroup">' + esc(g.label[lang] || g.label.es) + '</div>' + g.items.map(function (i) {
-          return '<a class="di-nav-msub' + (!i.noActive && i.file === curFile ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + (i.hash || '') + '">' + esc(i.label[lang] || i.label.es) + '</a>';
-        }).join('');
+        return '<div class="di-nav-mgroup">' + esc(g.label[lang] || g.label.es) + '</div>' + navItems(g.items, 'di-nav-msub');
       }
       var isActive = k === activePage && !inGroup;
       return '<a class="' + (isActive ? 'active' : '') + '" href="' + sitePath(NAV_PAGES[k]) + '">' + esc(t[k]) + '</a>';
@@ -295,6 +318,13 @@
         var open = b.parentNode.classList.contains('is-open');
         closeGroups();
         if (!open) { b.parentNode.classList.add('is-open'); b.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.di-nav-subbtn'), function (b) {
+      b.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var p = b.parentNode, open = p.classList.toggle('is-open');
+        b.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
     });
     document.addEventListener('click', closeGroups);

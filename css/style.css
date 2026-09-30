@@ -1163,3 +1163,15 @@ body.di-modal-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 .di-atl-date { color: var(--text-faint, #8a8471); }
 .di-atl-na { color: var(--text-faint, #8a8471); }
 .di-spread-card .di-map-spark { height: 34px; margin: 6px 0; }
+
+/* Submenús anidados (Datos > Europa > España) */
+.di-nav-sub{display:block}
+.di-nav-subbtn{display:flex;width:100%;justify-content:space-between;align-items:center;gap:10px;background:none;border:0;padding:8px 12px;border-radius:6px;font:inherit;font-size:14px;font-weight:600;color:var(--nav-inactive);cursor:pointer;text-align:left;white-space:nowrap}
+.di-nav-subbtn:hover,.di-nav-subbtn:focus-visible{background:var(--surface-alt);color:var(--accent)}
+.di-nav-subbtn.active{color:var(--accent)}
+.di-nav-subbtn span{font-size:11px;transition:transform .15s}
+.di-nav-sub:not(.is-open)>.di-nav-subbtn span{transform:rotate(-90deg)}
+.di-nav-subitems{display:none;padding-left:12px;border-left:2px solid var(--border);margin:0 0 4px 12px}
+.di-nav-sub.is-open>.di-nav-subitems{display:block}
+.di-nav-mobile-panel .di-nav-subbtn{min-height:44px;font-size:16px;padding:10px 4px;border-bottom:1px solid var(--border);border-radius:0}
+.di-nav-mobile-panel .di-nav-subitems{margin-left:8px}

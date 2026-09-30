@@ -29,7 +29,7 @@ const calendar = read('js/calendario.js');
 const prices = read('js/precios.js');
 
 check(shared.includes('function renderContextBar'), 'shared context bar exists');
-check(shared.includes('NAV_GROUPS') && shared.includes("'g:us'") && shared.includes("'g:eu'"), 'nav has the US data and EU data submenus');
+check(shared.includes('NAV_GROUPS') && shared.includes("'g:data'") && shared.includes('navItems'), 'nav has a single Data menu with nested US / Europe submenus');
 {
   const groupFiles = [...shared.matchAll(/file: '([a-z-]+\.html)'/g)].map(m => m[1]);
   check(groupFiles.length >= 12, 'submenus list their pages (' + groupFiles.length + ')');
