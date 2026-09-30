@@ -1,0 +1,33 @@
+name: probe-fas
+on: workflow_dispatch
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe
+        run: |
+          mkdir -p .probe
+          t() { echo "=== $1"; curl -sL -m 60 -o /tmp/o -w "%{http_code} %{content_type} %{size_download}\n" "$1"; head -c 600 /tmp/o | tr '\n' ' '; echo; }
+          {
+          t "https://api.fas.usda.gov/api/esr/commodities"
+          t "https://apps.fas.usda.gov/OpenData/api/esr/commodities"
+          t "https://apps.fas.usda.gov/opendataweb/home"
+          t "https://apps.fas.usda.gov/export-sales/esrd1.html"
+          t "https://apps.fas.usda.gov/export-sales/h101.htm"
+          t "https://apps.fas.usda.gov/gats/default.aspx"
+          t "https://api.fas.usda.gov/api/gats/countries"
+          t "https://apps.fas.usda.gov/gats/ExpressQuery1.aspx"
+          t "https://www.fas.usda.gov/data/export-sales-reporting"
+          t "https://apps.fas.usda.gov/psdonline/downloads/psd_grains_pulses_csv.zip"
+          } > .probe/fas.txt 2>&1
+      - name: Commit
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add .probe; git commit -m "probe fas" || true
+          git pull --rebase origin main; git push origin HEAD:main
