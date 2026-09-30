@@ -51,7 +51,14 @@ def parse_livestock(t):
     i = t.find("ALBERTA DIRECT SALES")
     if i >= 0:
         avgs = re.findall(r"\bAVERAGE\s+([\d,.]+)\s+[\d,.N/A]+", t[i:])
-        if avgs: out["novillo_ab"] = float(avgs[0].replace(",", ""))   # primera fila AVERAGE = novillos (STR); la segunda son vaquillas
+        if avgs:
+            v = float(avgs[0].replace(",", ""))   # primera fila AVERAGE = novillos (STR); la segunda son vaquillas
+            r = re.search(r"STR-RANGE\s+([\d,.]+)\s*-\s*([\d,.]+)", t[i:])
+            # si el propio informe publica un rango y la media cae fuera (p. ej. 3-abr-2026: media 540,20 con rango 323,50), es un error de origen: se descarta
+            if r and not (float(r.group(1).replace(",", "")) * 0.9 <= v <= float(r.group(2).replace(",", "")) * 1.1):
+                pass
+            else:
+                out["novillo_ab"] = v
     m = re.search(r"ALTA AVG\s+([\d,.]+)\s+[\d,.N/A]+", t)
     if m: out["cerdo_ab"] = num(m)
     return out
@@ -69,7 +76,7 @@ def issue_links(kind):
                 links[d.group(1)] = ("https://open.alberta.ca" + l) if l.startswith("/") else l
     return links
 
-PARSER_VERSION = 2  # súbelo al cambiar los lectores: fuerza a volver a leer todos los informes
+PARSER_VERSION = 3  # súbelo al cambiar los lectores: fuerza a volver a leer todos los informes
 cache = {"issues": {}}
 if CACHE.exists():
     cache = json.loads(CACHE.read_text(encoding="utf-8"))
