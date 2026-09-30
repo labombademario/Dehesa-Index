@@ -1,0 +1,252 @@
+CKAN ERR commodity prices Unterminated string starting at: line 1 column 195586 (char 195585)
+CKAN ERR agricultural commodity statistics Expecting value: line 1 column 199999 (char 199998)
+CKAN farm performance | Australian vegetable-growing farms: Farm financial performance web-report | cc-by-4.0
+    HTML http://www.agriculture.gov.au/abares/research-topics/surveys/vegetables#farm-financial-performance
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_avgff9absf20171114.xml
+CKAN farm performance | Farm performance and climate: Climate-adjusted productivity for broadacre cropping farms | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aas/2017/FarmPerformanceClimate/FarmPerformanceClimate_v1.0.0.pdf
+    microsoft excel http://data.daff.gov.au/data/warehouse/9aas/2017/FarmPerformanceClimate/FarmPerformanceClimate_v1.0.0.xlsx
+    Tableau Workbook https://public.tableau.com/views/Farmperformanceandclimate/HOME?:embed=y
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_fpac9aas20170509.xml
+CKAN farm performance | Australian sugarcane farm businesses: financial performance, 2013-14 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aab/9aabf/2015/asffpd9absf20151218/AustSugarcaneFrmFinPerform2013-14_v1.0.0.pdf
+    word http://data.daff.gov.au/data/warehouse/9aab/9aabf/2015/asffpd9absf20151218/AustSugarcaneFrmFinPerform2013-14_v1.0.0.docx
+    XLSM http://data.daff.gov.au/data/warehouse/9aab/9aabf/2015/asffpd9absf20151218/AustSugarcaneFrmFinPerform_areaPlanted_v1.0.0.xlsm
+    XLSM http://data.daff.gov.au/data/warehouse/9aab/9aabf/2015/asffpd9absf20151218/AustSugarcaneFrmFinPerform_rateOfReturn_v1.0.0.xlsm
+    XLSM http://data.daff.gov.au/data/warehouse/9aab/9aabf/2015/asffpd9absf20151218/AustSugarcaneFrmFinPerform_regions_v1.0.0.xlsm
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_asffpd9absf20151218.xml
+CKAN farm performance | Australian grains: financial performance of grain farms, 2014-15 to 2016-17 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aas/2017/FarmPerformanceGrains/AustGrainFinPerf_2014-16_2016-17_v.1.0.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_ffpgrd9aas20170518.xml
+CKAN farm performance | Australian Dairy: financial performance of dairy farms, 2013-14 to 2015-16 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aas/2016/adfpfd9aas20160802/AustDairyFinPerf_2013-14_2015-16_v.1.0.0.pdf
+    word http://data.daff.gov.au/data/warehouse/9aas/2016/adfpfd9aas20160802/AustDairyFinPerf_2013-14_2015-16_v.1.0.0.docx
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_adfpfd9aas20160802.xml
+CKAN farm performance | Australian dairy: financial performance of dairy farms, 2014-15 to 2016-17 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aas/2017/FarmPerformanceDairy/AustDairyFinPerf_2014-16_2016-17_v.1.0.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_ffpdryd9aas20170518.xml
+CKAN farm performance | Australian Dairy: financial performance of dairy farms, 2011-12 to 2013-14 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aas/2014/adfpfd9aas20141216/AustDairyFinPerf_v.1.0.0.pdf
+    word http://data.daff.gov.au/data/warehouse/9aas/2014/adfpfd9aas20141216/AustDairyFinPerf_v.1.0.0.docx
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_adfpfd9aas20141216_11a.xml
+CKAN farm performance | Australian beef: financial performance of beef farms, 2014-15 to 2016-17 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aas/2017/FarmPerformanceBeef/AustBeefFinPerf_2014-15_2016-17_v.1.0.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_ffpbfd9aas20170518.xml
+CKAN farm performance | Australian grains: financial performance of grain farms, 2013-14 to 2015-16 | cc-by-4.0
+    word http://data.daff.gov.au/data/warehouse/9aas/agfpg/agfpg2016/AustFinPerfGrnProdFrm2016_v.1.0.0.docx
+    PDF http://data.daff.gov.au/data/warehouse/9aas/agfpg/agfpg2016/AustFinPerfGrnProdFrm2016_v.1.0.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agfpgd9aasg20161012_11a.xml
+CKAN farm performance | Australian grains: financial performance of grain producing farms 2012-13 to 2014-15 | cc-by-4.0
+    word http://data.daff.gov.au/data/warehouse/9aas/agfpg/agfpg2015/AustFinPerfGrnProdFrm2015_v.1.0.0.docx
+    PDF http://data.daff.gov.au/data/warehouse/9aas/agfpg/agfpg2015/AustFinPerfGrnProdFrm2015_v.1.0.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agfpgd9aasg20150630_11a.xml
+CKAN farm performance | Australian beef: financial performance of beef farms, 2013-14 to 2015-16 | cc-by-4.0
+    word http://data.daff.gov.au/data/warehouse/9aab/9aabf/2016/abfpfd9aabf00420160913/AustBeef_2016_v1.0.0.docx
+    PDF http://data.daff.gov.au/data/warehouse/9aab/9aabf/2016/abfpfd9aabf00420160913/AustBeef_2016_v1.0.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_abfpfd9aabf00420160913.xml
+CKAN farm performance | Australian beef: Financial performance of beef cattle producing farms, 2012-13 to 2014-15 | cc-by-4.0
+    word http://data.daff.gov.au/data/warehouse/9aabf004/abfpf/abfpfd9aabf00420150805/AustBeef_2015_v1.0.0.docx
+    PDF http://data.daff.gov.au/data/warehouse/9aabf004/abfpf/abfpfd9aabf00420150805/AustBeef_2015_v1.0.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_abfpfd9aabf00420150805_11a.xml
+CKAN farm performance | Australian lamb: Financial performance of slaughter lamb producing farms, 2012-13 to 2014-15 | cc-by-4.0
+    word http://data.daff.gov.au/data/warehouse/9aabf003/alfpf/alfpfd9aabf20150722/AustLamb_2015_v1.0.0.docx
+    PDF http://data.daff.gov.au/data/warehouse/9aabf003/alfpf/alfpfd9aabf20150722/AustLamb_2015_v1.0.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_alfpfd9aabf20150722_11a.xml
+CKAN farm performance | Australian lamb: financial performance of lamb producers, 2014-15 to 2016-17 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aas/2017/FarmPerformanceGrains/AustGrainFinPerf_2014-16_2016-17_v.1.0.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_ffpgrd9aas20170518.xml
+CKAN farm performance | Australian vegetable-growing farms: Farm capital and investment web-report | cc-by-4.0
+    HTML http://www.agriculture.gov.au/abares/research-topics/surveys/vegetables#farm-capital-and-investment
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_avgfi9abs20171114.xml
+CKAN fertiliser | Indicators of Catchment Condition in the Intensive Land Use Zone of Australia – Soil acidification hazard | notspecified
+    plain http://data.gov.au/storage/f/2013-05-12T182723/tmp5CToukpa_iccilr9ab__07721axx.xml
+CKAN fertiliser | Mean annual concentration of mineral nitrogen in soil water (mgN / kgH20) in the pre 1788 scenario | notspecified
+    plain http://data.gov.au/storage/f/2013-05-12T215917/tmpnvBLvXcmnswr9cl__02811a02egfgeo___.zip
+    plain http://data.gov.au/storage/f/2013-05-12T215923/tmpqhDkQOcmnswr9cl__02811a02egageo___.zip
+CKAN fertiliser | Indicators of Catchment Condition in the Intensive Land Use Zone of Australia – Rivers in acidification hazard | notspecified
+    plain http://data.gov.au/storage/f/2013-05-12T193804/tmpSMnuH3pa_iccilr9ab__07621axx.xml
+CKAN fertiliser | Agricultural commodity statistics 2017 | cc-by-4.0
+    portable document format http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS_2017_v1.1.0.pdf
+    microsoft excel 2007 http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS2017_OverviewTables_v1.0.0.xlsx
+    microsoft excel 2007 http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS2017_MacroIndicatorsTables_v1.0.0.xlsx
+    microsoft excel 2007 http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS2017_MacroIndicatorsTables_v1.0.0.xlsx
+    microsoft excel 2007 http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS2017_FarmSectorTables_v1.0.0.xlsx
+    microsoft excel 2007 http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS2017_CoarseGrainsTables_v1.0.0.xlsx
+CKAN fertiliser | Agricultural commodities: March quarter 2018 | cc-by-4.0
+    PDF https://data.gov.au/data/dataset/6388134b-cb32-4451-97c6-8e605fa80f2a/resource/2b4efab1-1a79-4adf-a068-729990235344/download/agcommodities201803v1.0.01.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180306_6R2bY/AgCommodities201803_v1.0.0.pdf
+    XLSX http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180306_6R2bY/AgCommodities201803_Tables_v1.0.0.xlsx
+    XLSX http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180306_6R2bY/AgCommodities201803_Stats_v1.0.0.xlsx
+CKAN exports | Australia's cost recovery arrangements for export certification : implications for Australian agriculture | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aap/2015/craecd9aap_20151029/CostRcvryExprtCertAustAg_v1.0.0.pdf
+    word http://data.daff.gov.au/data/warehouse/9aap/2015/craecd9aap_20151029/CostRcvryExprtCertAustAg_v1.0.0.docx
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_craecd9aap_20151029.xml
+CKAN exports | South America: an emerging competitor for Australia's beef industry | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aat/2016/saabi9aat/SouthAmericaBeef_v1.0.0.pdf
+    word http://data.daff.gov.au/data/warehouse/9aat/2016/saabi9aat/SouthAmericaBeef_v1.0.0.docx
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_saabi9aat_20161216.xml
+CKAN exports | Agricultural commodities: December quarter 2014 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20141209/AgCommodities201412_1.0.1.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20141209/AgCommodities201412_1.0.1_lr.pdf
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20141209/AgCommodities201412_Tables_1.0.0.xls
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20141209/AgCommodities201412_Stats_1.0.0.xls
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agcomd9abcc20141209_11a.xml
+CKAN exports | Agricultural commodities: March quarter 2018 | cc-by-4.0
+    PDF https://data.gov.au/data/dataset/6388134b-cb32-4451-97c6-8e605fa80f2a/resource/2b4efab1-1a79-4adf-a068-729990235344/download/agcommodities201803v1.0.01.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180306_6R2bY/AgCommodities201803_v1.0.0.pdf
+    XLSX http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180306_6R2bY/AgCommodities201803_Tables_v1.0.0.xlsx
+    XLSX http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180306_6R2bY/AgCommodities201803_Stats_v1.0.0.xlsx
+CKAN exports | Agricultural commodities: September quarter 2018 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180918_xV5mH/AgCommodities201809_v1.0.0.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180918_xV5mH/AgCommodities201809_v1.0.0_lr.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agcomd9abcc20180918_xV5mH.xml
+CKAN exports | The ABARES bilateral trade decomposition model: Technical annex to ABARES report 'South America: an emerging competitor for Australia's beef industry' | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aat/2016/abtdm9aat/BilateralTradeModel_v1.0.0.pdf
+    word http://data.daff.gov.au/data/warehouse/9aat/2016/abtdm9aat/BilateralTradeModel_v1.0.0.docx
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_abtdm9aat_20161216.xml
+CKAN exports | Agricultural commodities: June quarter 2018 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180619_9saNT/AgCommodities201806_v1.0.0.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180619_9saNT/AgCommodities201806_v1.0.0_lr.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180619_9saNT/AgCommodities201806_infographic_v1.0.0.pdf
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180619_9saNT/AgCommodities201806_Tables_v1.0.0.xlsx
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180619_9saNT/AgCommodities201806_Stats_v1.0.0.xlsx
+    XML tp://data.daff.gov.au/anrdl/metadata_files/pb_agcomd9abcc20180619_9saNT.xml
+CKAN exports | Agricultural commodities: December quarter 2016 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20161213_e6rJc/AgCommodities201612_v1.0.0.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20161213_e6rJc/AgCommodities201612_v1.0.0_lr.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20161213_e6rJc/AgCommodities201612_infographic.pdf
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20161213_e6rJc/AgCommodities201612_Tables_v1.0.0.xlsx
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20161213_e6rJc/AgCommodities201612_Stats_v1.0.0.xlsx
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agcomd9abcc20161213_e6rJc.xml
+CKAN exports | Farm share and price spread in Australia's sugar supply chain | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aas/2017/FarmShareSugarSupplyChain/SugarPriceSpreadIndustryReport_V1.0.0.pdf
+    word http://data.daff.gov.au/data/warehouse/9aas/2017/FarmShareSugarSupplyChain/SugarPriceSpreadIndustryReport_V1.0.0.docx
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_fssugd9aas20170728.xml
+CKAN exports | Agricultural commodities: June quarter 2016 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20160621_5B9fz/AgCommodities201606_v1.1.0.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20160621_5B9fz/AgCommodities201606_v1.1.0_lr.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20160621_5B9fz/AgCommodities201606_infographic.pdf
+    Microsoft Excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20160621_5B9fz/AgCommodities201606_Tables_v1.0.0.xls
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20160621_5B9fz/AgCommodities201606_Stats_v1.0.0.xls
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agcomd9abcc20160621_5B9fz.xml
+CKAN exports | Australia's wheat supply chains: infrastructure issues and implications | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aaw/2015/awscfd9aaw20150305/AustWheatSC_InfrstrctIssuesImplctns_20150305_V1.1.0.pdf
+    word http://data.daff.gov.au/data/warehouse/9aaw/2015/awscfd9aaw20150305/AustWheatSC_InfrstrctIssuesImplctns_20150305_V1.1.0.docx
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_awscfd9aaw20150305_11a.xml
+CKAN exports | Agricultural commodities: June quarter 2017 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20170620_2hadt/AgCommodities201706_v1.0.0.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20170620_2hadt/AgCommodities201706_infographic.pdf
+    XLSX http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20170620_2hadt/AgCommodities201706_Tables_v1.0.0.xlsx
+    XLSX http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20170620_2hadt/AgCommodities201706_Stats_v1.0.0.xlsx
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agcomd9abcc20170620_2hadt.xml
+CKAN exports | Farm share and price spread in Australia's beef supply chain | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aas/2017/FarmShareBeefSupplyChain/BeefPriceSpreadIndustryReport_V1.0.0.pdf
+    word http://data.daff.gov.au/data/warehouse/9aas/2017/FarmShareBeefSupplyChain/BeefPriceSpreadIndustryReport_V1.0.0.docx
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_fsbefd9aas20170728.xml
+CKAN exports | Australia's agricultural industries 2016 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aal/2016/aaim16_20160830/AusAgIndMap2016_v.1.1.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_aaim16d9aal20160830.xml
+CKAN exports | Agricultural commodities: September quarter 2015 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20150915/AgCommodities201509_1.0.0.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20150915/AgCommodities201509_1.0.0_lr.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20150915/AgCom201509_infographic.pdf
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20150915/AgCommodities201509_Tables_1.0.0.xls
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20150915/AgCommodities201509_Stats_1.0.0.xls
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agcomd9abcc20150915_11a.xml
+CKAN ERR production Unterminated string starting at: line 1 column 199347 (char 199346)
+CKAN ERR crop report Unterminated string starting at: line 1 column 199943 (char 199942)
+CKAN livestock | Implementation of improvements to the National Livestock Identification System for sheep and goats: decision Regulation Impact Statement | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aab/ReportToClient/2014/ImpImprvNLIS/ImpImprvNLIS20141022_v1.1.0.pdf
+    word http://data.daff.gov.au/data/warehouse/9aab/ReportToClient/2014/ImpImprvNLIS/ImpImprvNLIS20141022_v1.1.0.docx
+    XML http://data.daff.gov.au/anrdl/metadata_files/pc_iNLISd9abbl20141022_11a.xml
+CKAN livestock | Agricultural commodity statistics 2016 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022016_Sn9Dg/ACS_2016_v1.1.0.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022016_Sn9Dg/ACS_2016_v1.1.0_lr.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agcstd9abcc0022016_Sn9Dg.xml
+CKAN livestock | Agricultural commodity statistics 2015 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022015/ACS_2015_1.0.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agcstd9abcc0022015_11a.xml
+CKAN livestock | Agricultural commodity statistics 2014 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022014/ACS_2014_1.0.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agcstd9abcc0022014_11a.xml
+CKAN livestock | Agricultural commodity statistics 2017 | cc-by-4.0
+    portable document format http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS_2017_v1.1.0.pdf
+    microsoft excel 2007 http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS2017_OverviewTables_v1.0.0.xlsx
+    microsoft excel 2007 http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS2017_MacroIndicatorsTables_v1.0.0.xlsx
+    microsoft excel 2007 http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS2017_MacroIndicatorsTables_v1.0.0.xlsx
+    microsoft excel 2007 http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS2017_FarmSectorTables_v1.0.0.xlsx
+    microsoft excel 2007 http://data.daff.gov.au/data/warehouse/agcstd9abcc002/agcstd9abcc0022017_IugZg/ACS2017_CoarseGrainsTables_v1.0.0.xlsx
+CKAN livestock | Agricultural commodities: June quarter 2018 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180619_9saNT/AgCommodities201806_v1.0.0.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180619_9saNT/AgCommodities201806_v1.0.0_lr.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180619_9saNT/AgCommodities201806_infographic_v1.0.0.pdf
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180619_9saNT/AgCommodities201806_Tables_v1.0.0.xlsx
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180619_9saNT/AgCommodities201806_Stats_v1.0.0.xlsx
+    XML tp://data.daff.gov.au/anrdl/metadata_files/pb_agcomd9abcc20180619_9saNT.xml
+CKAN livestock | Australian lamb: financial performance of lamb producers, 2015-16 to 2017-18 | cc-by-4.0
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_ffplmd9aas20180517.xml
+CKAN livestock | Australian beef: financial performance of beef farms, 2015-16 to 2017-18 | cc-by-4.0
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_ffpbfd9aas20180517.xml
+CKAN livestock | Australian farm survey results 2013-14 to 2015-16 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aas/FarmSurveyResults/2016/FarmSurveyResults2016_V1.1.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_afsr_p9absf20160427_11a.xml
+CKAN livestock | Australia's agricultural industries 2016 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/9aal/2016/aaim16_20160830/AusAgIndMap2016_v.1.1.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_aaim16d9aal20160830.xml
+CKAN livestock | Agricultural commodities: September quarter 2018 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180918_xV5mH/AgCommodities201809_v1.0.0.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180918_xV5mH/AgCommodities201809_v1.0.0_lr.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agcomd9abcc20180918_xV5mH.xml
+CKAN livestock | Agricultural commodities: December quarter 2014 | cc-by-4.0
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20141209/AgCommodities201412_1.0.1.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20141209/AgCommodities201412_1.0.1_lr.pdf
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20141209/AgCommodities201412_Tables_1.0.0.xls
+    microsoft excel http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20141209/AgCommodities201412_Stats_1.0.0.xls
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_agcomd9abcc20141209_11a.xml
+CKAN livestock | Indicators of Catchment Condition in the Intensive Land Use Zone of Australia – Nutrient point source hazard | notspecified
+    plain http://data.gov.au/storage/f/2013-05-12T180820/tmpzJ4VLlpa_iccilr9ab__06321axx.xml
+CKAN livestock | Australia's agricultural industries 2017 | cc-by-4.0
+    portable document format http://data.daff.gov.au/data/warehouse/9aal/2017/aaim17_20171121/AusAgIndMap2017_v.1.1.0.pdf
+    XML http://data.daff.gov.au/anrdl/metadata_files/pb_aaim17d9aal20171121.xml
+CKAN livestock | Agricultural commodities: March quarter 2018 | cc-by-4.0
+    PDF https://data.gov.au/data/dataset/6388134b-cb32-4451-97c6-8e605fa80f2a/resource/2b4efab1-1a79-4adf-a068-729990235344/download/agcommodities201803v1.0.01.pdf
+    PDF http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180306_6R2bY/AgCommodities201803_v1.0.0.pdf
+    XLSX http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180306_6R2bY/AgCommodities201803_Tables_v1.0.0.xlsx
+    XLSX http://data.daff.gov.au/data/warehouse/agcomd9abcc004/agcomd9abcc20180306_6R2bY/AgCommodities201803_Stats_v1.0.0.xlsx
+ABS https://data.api.abs.gov.au/rest/data/AG_BROADACRE/all?startPeriod=2020&format=csvfilewithlabels
+STRUCTURE,STRUCTURE_ID,STRUCTURE_NAME,ACTION,DATAITEM,Broadacre crops,REGION,Region,TIME_PERIOD,Time Period,OBS_VALUE,Observation Value,UNIT_MEASURE,Unit of Measure,OBS_STATUS,Observation Status,OBS_COMMENT,Observation Comment
+DATAFLOW,ABS:AG_BROADACRE(1.0.1),Australian Agriculture: Broadacre Crops,I,BroadBarley_Count,Barley for grain or seed - Number of levy payers,312011338,Broadsound - Nebo,2022-07-01/P1Y,,5,,NUM,Number,,,,
+DATAFLOW,ABS:AG_BROADACRE(1.0.1),Australian Agriculture: Broadacre Crops,I,BroadBarley_Count,Barley for grain or seed - Number of levy payers,312011338,Broadsound - Nebo,2023-07-01/P1Y,,,,NUM,Number,n,"not available for publication but included in totals where applicable, unless otherwise indicated",,
+DATAFLOW,ABS:AG_BROADACRE(1.0.1),Australian Agriculture: Broadacre Crops,I,BroadBarley_Count,Barley for grain or seed - Number of levy payers,312011338,Broadsound - Nebo,2024-07-01/P1Y,,,,NUM,Number,n,"not available for publication but included in totals where applicable, unless otherwise indicated",revised,
+DATAFLOW,ABS:AG_BROADACRE(1.0.1),Australian Agriculture: Broadacre Crops,I,BroadSugarcane_Count,Sugarcane for processing - Number of businesses,112011242,Lennox Head - Skennars Head,2022-07-01/P1Y,,,,NUM,Number,n,"not available for publication but included in totals where applicable, unless otherwise indicated",,
+DATAFLOW,ABS:AG_BROADACRE(1.0.1),Australian Agriculture: Broadacre Crops,I,BroadSugarcane_Count,Sugarcane for processing - Number of businesses,112011242,Lennox Head - Skennars Head,2023-07-01/P1Y,,,,NUM,Number,n,"not available for publication but included in totals where applicable, unless otherwise indicated",,
+DATAFLOW,ABS:AG_BROADACRE(1.0.1),Australian Agriculture: Broadacre Crops,I,BroadSugarcane_Count,Sugarcane for processing
+ABS https://data.api.abs.gov.au/rest/data/LSTOCK_SLAUGHT/all?startPeriod=2024&format=csvfilewithlabels
+STRUCTURE,STRUCTURE_ID,STRUCTURE_NAME,ACTION,LSTOCK_SLAUGHT,Livestock slaughtered,STATE,State,TSEST,Adjustment Type,FREQ,Frequency,TIME_PERIOD,Time Period,OBS_VALUE,Observation Value,UNIT_MEASURE,Unit of Measure,UNIT_MULT,Unit of Multiplier,OBS_STATUS,Observation Status,OBS_COMMENT,Observation Comment
+DATAFLOW,ABS:LSTOCK_SLAUGHT(1.0.0),Livestock slaughtered,I,10,"Bulls, bullocks and steers",7,Northern Territory,10,Original,Q,Quarterly,2024-Q1,,0,,NUM,Number,3,Thousands,,,,
+DATAFLOW,ABS:LSTOCK_SLAUGHT(1.0.0),Livestock slaughtered,I,10,"Bulls, bullocks and steers",7,Northern Territory,10,Original,Q,Quarterly,2024-Q2,,0,,NUM,Number,3,Thousands,,,,
+DATAFLOW,ABS:LSTOCK_SLAUGHT(1.0.0),Livestock slaughtered,I,10,"Bulls, bullocks and steers",7,Northern Territory,10,Original,Q,Quarterly,2024-Q3,,0,,NUM,Number,3,Thousands,,,,
+DATAFLOW,ABS:LSTOCK_SLAUGHT(1.0.0),Livestock slaughtered,I,10,"Bulls, bullocks and steers",7,Northern Territory,10,Original,Q,Quarterly,2024-Q4,,0,,NUM,Number,3,Thousands,,,,
+DATAFLOW,ABS:LSTOCK_SLAUGHT(1.0.0),Livestock slaughtered,I,10,"Bulls, bullocks and steers",7,Northern Territory,10,Original,Q,Quarterly,2025-Q1,,0,,NUM,Number,3,Thousands,,,,
+DATAFLOW,ABS:LSTOCK_SLAUGHT(1.0.0),Livestock slaughtered,I,10,"Bulls, bullocks and steers",7,Northern Territory,10,Original,Q,Quarterly,2025-Q2,,0,,NUM,Number,3,Thousands,,,,
+DATAFLOW,ABS:LSTOCK_SLAUGHT(1.0.0),Livestock slaughtered,I,10,"Bulls, bullocks and steers",7,Northern Territory,10,Original,Q,Quarterly,2025-Q3,,0,,NUM,Number,3,Thousands,,,,
+DATAFLOW,ABS:LSTOCK_SLAUGHT(1.0.0),Livestock slaughtered,I,10,"Bulls, bullocks and steers",7,Northern Territory,10,Original,Q,Quarterly,2025-Q4,,0,,NUM,Number,3,Thousands,,,,
+DATAFLOW,ABS:LSTOCK_SLAUGHT(1.0.0),Livestock slaughtered,I,10,"Bulls, bullocks and steer
+ABS https://data.api.abs.gov.au/rest/data/ITPI_EXP/all?startPeriod=2024&format=csvfilewithlabels
+STRUCTURE,STRUCTURE_ID,STRUCTURE_NAME,ACTION,MEASURE,Measure,INDEX,Index,FREQ,Frequency,TIME_PERIOD,Time Period,OBS_VALUE,Observation Value,UNIT_MEASURE,Unit of Measure,BASE_PERIOD,Reference Base Period,OBS_STATUS,Observation Status,OBS_COMMENT,Observation Comment,DECIMALS,Decimals
+DATAFLOW,ABS:ITPI_EXP(1.0.0),Export Price Index,I,3,Percentage Change from Corresponding Quarter of Previous Year,8093710,"03 Fish, crustaceans, molluscs and aquatic invertebrates and preparations thereof",Q,Quarterly,2024-Q1,,-1.3,,PCT,Percent,,,,,,,1,One
+DATAFLOW,ABS:ITPI_EXP(1.0.0),Export Price Index,I,3,Percentage Change from Corresponding Quarter of Previous Year,8093710,"03 Fish, crustaceans, molluscs and aquatic invertebrates and preparations thereof",Q,Quarterly,2024-Q2,,-5.1,,PCT,Percent,,,,,,,1,One
+DATAFLOW,ABS:ITPI_EXP(1.0.0),Export Price Index,I,3,Percentage Change from Corresponding Quarter of Previous Year,8093710,"03 Fish, crustaceans, molluscs and aquatic invertebrates and preparations thereof",Q,Quarterly,2024-Q3,,-5.4,,PCT,Percent,,,,,,,1,One
+DATAFLOW,ABS:ITPI_EXP(1.0.0),Export Price Index,I,3,Percentage Change from Corresponding Quarter of Previous Year,8093710,"03 Fish, crustaceans, molluscs and aquatic invertebrates and preparations thereof",Q,Quarterly,2024-Q4,,1.7,,PCT,Percent,,,,,,,1,One
+DATAFLOW,ABS:ITPI_EXP(1.0.0),Export Price Index,I,3,Percentage Change from Corresponding Quarter of Previous Year,8093710,"03 Fish, crustaceans, molluscs and aquatic invertebrates and preparations thereof",Q,Quarterly,2025-Q1,,6,,PCT,Percent,,,,,,,1,One
+DATAFLOW,ABS:ITPI_EXP(1.0.0),Export Price Index,I,3,Percentage Change from Corresponding Quarter of Previous Year,8093710,"03 Fish, crustaceans, molluscs and aquatic invertebrates and preparations thereof",Q,Quarterly,2025-Q2,,9.1
+MLA PAGE  MLA Statistics API | Meat & Livestock Australia " height="0" width="0" style="display:none;visibility:hidden"> Your browser is not supported. Upgrade to a different browser to experience this site. Skip to Navigation Skip to Content Integrity & Compliance Marketing Beef & Lamb About MLA Become a MLA Member myMLA Sign Up LOG OUT MENU BACK Prices & Markets Prices & Markets Prices & Markets Market Reports Trends & Analysis Global Market Data & Insights Statistics Database Subscriptions See all Prices & Markets Popular Reports Eastern Young Cattle Cattle Physical Sheep Physical Trade Lamb Over the hooks Slaughter Feeder Steer Research & Development Research & Development Pasture & Feedbase Pasture & Feedbase Grazing land management Weed control Pest management Digital agriculture Environmental sustainability Feedlot management Livestock Livestock Livestock production Genetics & genomics Animal health & welfare Biosecurity Market compliance Red meat Red meat Food safety and traceability Human nutrition Objective Measurement Participate in MLA research Product and packaging innovation Producer adoption Dealing with natural disasters Other content Other content Search R&D Reports Applying for MLA funding MLA Donor Company Project reporting templates Evaluation MLA agreements See all Research & Development Tools, Resources & Training Tools, Resources & Training Resource Hubs Resource Hubs Genetics Beef Sheep Goats Pasture Dieback Grazing land management Sustainability Transport Hub See all hubs Tools & calculators Tools & calculators Australian Feedbase Monitor Feed Calculators Pasture Tools and Calculators Cost of Production Calculators Climatic Impact tools Calving histogram calculator Environmental Credentials See all tools & calculators Training & Workshops Training & Workshops MeatUp forums BeefUp forums EDGEnetwork BredWell FedWell The Toolbox online training Productivity & Profitability series Profitable Grazing Systems (PGS) Producer Demonstration Sites (PDS) Livestock Advisor Updates Livestock Advisor Essentials See all training & workshops See all Tools, resources and training News & Events News & Events Latest news Latest news Bull breakdown could be costing your herd performance More beef from fewer cattle: how productivity is reshaping the herd Developing producer capability in tactical and strategic feed budgeting See all News Events Events By Location Australian Capital Territory New South Wales Northern Territory Queensland South Australia Tasmania Victoria Western Australia National International Online Events & workshops By Species Grainfed cattle Grassfed cattle Sheep & lamb Goat Events & workshops Subscribe Subscribe Feedback magazine e-Newsletters Media releases More to explore More to explore Feedback magazine From the MD's desk Request an MLA speaker for your event Apply for MLA sponsorship of your event See all News & Events Integrity & Compliance Marketing Beef & Lamb myMLA Sign Up Become a MLA Member About MLA Who we serve MLA at a glance How we are funded What we do Contact us Popular searches eNVD NLIS LPA NVD cattle prices ... Prices & Markets MLA Statistics MLA Statistics API MLA Statistics MLA Statistics API Back to Prices & Markets MLA Statistics API Overview The Meat and Livestock Statistics API allows users programmatic access to information related to the meat and livestock industry. Leveraging the rich data resources curated by MLA, this API empowers developers to create innovative applications, conduct rese
+MLA links ['https://fonts.googleapis.com', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap', 'https://www.mla.com.au/prices-markets/statistics/api/', '/news-and-events/industry-news/more-beef-from-fewer-cattle-how-productivity-is-reshaping-the-herd/', 'mailto:api-support@mla.com']
+GET https://api.mla.com.au/
+ERR <urlopen error [Errno 104] Connection reset by peer>
+GET https://api.mla.com.au/swagger/index.html
+ERR <urlopen error [Errno 104] Connection reset by peer>
+GET https://www.agriculture.gov.au/abares/data/weekly-commodity-price-update
+ERR The read operation timed out
+GET https://www.agriculture.gov.au/abares/research-topics/agricultural-commodities/data
+ERR The read operation timed out
