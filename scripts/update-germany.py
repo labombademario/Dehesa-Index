@@ -96,10 +96,20 @@ WANT = {('Jungbullenfleisch', 'R3'), ('Jungbullenfleisch', 'U3'), ('Jungbullenfl
         ('Färsenfleisch', 'R3'), ('Färsenfleisch', 'E-P'), ('Bullenfleisch', 'E-P'), ('Ochsenfleisch', 'E-P'), ('Jungrindfleisch', 'E-P'), ('Kalbfleisch', 'E-P'),
         ('Lammfleisch', 'geschlachtet pauschal'), ('Lammfleisch', 'lebend pauschal'), ('Schaffleisch', 'geschlachtet pauschal'), ('Schweinefleisch', 'E'), ('Schweinefleisch', 'M')}
 HALT = {'insgesamt': '', 'konventionell': ', conventional', 'ökologisch': ', organic'}
+SREG = {'Niedersachsen und Bremen': 'Lower Saxony and Bremen', 'Nordrhein-Westfalen': 'North Rhine-Westphalia', 'Bayern': 'Bavaria',
+        'Baden-Württemberg, Hessen und Rheinland-Pfalz': 'Baden-Württemberg, Hesse and Rhineland-Palatinate', 'Baden-Württemberg': 'Baden-Württemberg', 'Hessen und Rheinland-Pfalz': 'Hesse and Rhineland-Palatinate',
+        'Brandenburg, Thüringen, Sachsen und Mecklenburg-Vorpommern': 'Brandenburg, Thuringia, Saxony and Mecklenburg-Western Pomerania',
+        'Brandenburg, Mecklenburg-Vorpommern, Sachsen,Sachsen-Anhalt, Thüringen und Schleswig-Holstein': 'Brandenburg, Mecklenburg-Western Pomerania, Saxony, Saxony-Anhalt, Thuringia and Schleswig-Holstein',
+        'Schleswig-Holstein und Hamburg': 'Schleswig-Holstein and Hamburg'}
+RWANT = {('Jungbullenfleisch', 'R3'), ('Kuhfleisch', 'O3'), ('Färsenfleisch', 'R3'), ('Schweinefleisch', 'E'), ('Kalbfleisch', 'E-P')}
 def slaughter():
     t = dec(get(O + 'c4eb6408-8cb2-42f9-b341-79fb57f81788/resource/214ea514-205b-4857-a78d-e254fae0983c/download/schlachtpreise-woche.csv'))
-    acc = collections.defaultdict(list); n = 0
+    acc = collections.defaultdict(list); n = 0; racc = collections.defaultdict(list)
     for r in csv.reader(t.splitlines()):
+        if len(r) >= 9 and r[5] in SREG and r[6] == '€/100 kg' and r[7] == 'Kaltgewicht' and r[3] == 'insgesamt' and (r[2], r[4]) in RWANT and (r[1], r[2]) in ANIM:
+            v = num(r[8])
+            if v is not None and re.match(r'^\d{6}$', r[0]): racc[(r[1], r[2], r[4], r[5])].append((iso_monday(r[0]), v))
+            continue
         if len(r) < 9 or r[5] != 'Deutschland' or r[6] != '€/100 kg' or r[7] != 'Kaltgewicht': continue
         if (r[1], r[2]) not in ANIM or (r[2], r[4]) not in WANT or r[3] not in HALT: continue
         if r[3] != 'insgesamt' and r[4] != 'E-P': continue  # ecológico/convencional solo en E-P
@@ -110,7 +120,10 @@ def slaughter():
         cls = c.replace('geschlachtet pauschal', 'slaughtered, all classes').replace('lebend pauschal', 'live, all classes')
         label = '%s, %s%s (Germany, carcass)' % (ANIM[(a, k)], 'class ' + cls if not cls.startswith(('slaughtered', 'live')) else cls, HALT[h])
         put('de-meat-%s-%s-%s' % (re.sub(r'[^a-z0-9]+', '-', k.lower()), re.sub(r'[^a-z0-9]+', '-', c.lower()), h[:3]), 'prices_lv', label, '€/100 kg cold carcass', 'weekly', pts, {'sourceGroup': 'BLE – Schlachtpreise (Wochenbericht)'})
-    log('sacrificio', len(acc), 'series', n, 'filas')
+    for (a, k, c, g), pts in racc.items():
+        put('de-meatreg-%s-%s-%s' % (re.sub(r'[^a-z0-9]+', '-', k.lower()), re.sub(r'[^a-z0-9]+', '-', c.lower()), re.sub(r'[^a-z0-9]+', '-', g.lower())[:40]), 'meat_regions',
+            '%s, class %s: %s' % (ANIM[(a, k)], c, SREG[g]), '€/100 kg cold carcass', 'weekly', pts, {'sourceGroup': 'BLE – Schlachtpreise (Wochenbericht)'})
+    log('sacrificio', len(acc), 'series', n, 'filas; regionales', len(racc))
 
 # ---------------- Frutas y hortalizas ----------------
 GR = {'Äpfel': 'Apples', 'Birnen': 'Pears', 'Tomaten': 'Tomatoes', 'Orangen': 'Oranges', 'Gurken': 'Cucumbers', 'Tafeltrauben': 'Table grapes', 'Gemüsepaprika': 'Peppers', 'Kiwis': 'Kiwis', 'Mandarinen': 'Mandarins',
