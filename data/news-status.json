@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-09-30T15:23:49.105770+00:00",
+ "generatedAt": "2026-09-30T15:26:41.246563+00:00",
  "feedsOk": 131,
  "feedsTotal": 132,
- "publishers": 141,
+ "publishers": 142,
  "feeds": [
   {
    "source": "Reuters",
@@ -16,8 +16,8 @@
    "source": "Reuters",
    "url": "https://news.google.com/rss/search?q=site%3Areuters.com+energy+oil+diesel+agriculture+fertilizer+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 8,
-   "kept": 4,
+   "items": 9,
+   "kept": 5,
    "error": ""
   },
   {
@@ -160,7 +160,7 @@
    "source": "DTN",
    "url": "https://news.google.com/rss/search?q=site%3Adtnpf.com+agriculture+grains+fertilizer+energy+livestock+markets+when%3A14d&hl=en-US&gl=US&ceid=",
    "ok": true,
-   "items": 35,
+   "items": 36,
    "kept": 9,
    "error": ""
   },

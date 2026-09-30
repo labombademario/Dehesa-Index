@@ -523,40 +523,6 @@
    ]
   },
   {
-   "id": "auto-6fc28d0427",
-   "date": "2026-09-30",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "precios"
-   ],
-   "products": [
-    "arroz"
-   ],
-   "source": "Hindu BusinessLine",
-   "lang": "en",
-   "headline": {
-    "en": "India’s rice industry looks beyond raw grain to tap next billion-dollar opportunities",
-    "es": "India’s rice industry looks beyond raw grain to tap next billion-dollar opportunities",
-    "fr": "India’s rice industry looks beyond raw grain to tap next billion-dollar opportunities",
-    "it": "India’s rice industry looks beyond raw grain to tap next billion-dollar opportunities"
-   },
-   "description": "A new industry assessment will examine market demand, margins, investment needs and export potential across emerging rice-derived product categories.",
-   "url": "https://www.thehindubusinessline.com/economy/agri-business/indias-rice-industry-looks-beyond-raw-grain-to-tap-next-billion-dollar-opportunities/article71527837.ece",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-c16238921a",
    "date": "2026-09-30",
    "region": "global",
@@ -758,6 +724,39 @@
    ]
   },
   {
+   "id": "auto-6fc28d0427",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "comercio",
+   "topics": [
+    "comercio"
+   ],
+   "products": [
+    "arroz"
+   ],
+   "source": "Hindu BusinessLine",
+   "lang": "en",
+   "headline": {
+    "en": "India’s rice industry looks beyond raw grain to tap next billion-dollar opportunities",
+    "es": "India’s rice industry looks beyond raw grain to tap next billion-dollar opportunities",
+    "fr": "India’s rice industry looks beyond raw grain to tap next billion-dollar opportunities",
+    "it": "India’s rice industry looks beyond raw grain to tap next billion-dollar opportunities"
+   },
+   "description": "A new industry assessment will examine market demand, margins, investment needs and export potential across emerging rice-derived product categories.",
+   "url": "https://www.thehindubusinessline.com/economy/agri-business/indias-rice-industry-looks-beyond-raw-grain-to-tap-next-billion-dollar-opportunities/article71527837.ece",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "trade",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "trade",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-254dde8852",
    "date": "2026-09-30",
    "region": "global",
@@ -846,10 +845,8 @@
    "id": "auto-2cdee3dc91",
    "date": "2026-09-30",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "arroz"
    ],
@@ -6449,10 +6446,8 @@
    "id": "auto-5d749704a3",
    "date": "2026-09-28",
    "region": "uk",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "fertilizantes"
    ],
@@ -6558,10 +6553,8 @@
    "id": "auto-ce7f356a6d",
    "date": "2026-09-27",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "fertilizantes"
    ],
@@ -6717,10 +6710,8 @@
    "id": "auto-1cc83a8747",
    "date": "2026-09-26",
    "region": "uk",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "fertilizantes"
    ],
@@ -6827,10 +6818,8 @@
    "id": "auto-9f2a3f0159",
    "date": "2026-09-25",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "maiz",
     "fertilizantes"
@@ -7038,10 +7027,8 @@
    "id": "auto-dce676cbc2",
    "date": "2026-09-24",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "fertilizantes"
    ],
@@ -7089,10 +7076,8 @@
    "id": "auto-b12940802e",
    "date": "2026-09-24",
    "region": "uk",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "fertilizantes"
    ],
@@ -9260,40 +9245,6 @@
    ]
   },
   {
-   "id": "auto-7838b4f705",
-   "date": "2026-09-30",
-   "region": "global",
-   "topic": "oferta",
-   "topics": [
-    "oferta",
-    "precios"
-   ],
-   "products": [
-    "trigo"
-   ],
-   "source": "Hindu BusinessLine",
-   "lang": "en",
-   "headline": {
-    "en": "Cabinet approves 1-10% hike in rabi crops MSPs",
-    "es": "Cabinet approves 1-10% hike in rabi crops MSPs",
-    "fr": "Cabinet approves 1-10% hike in rabi crops MSPs",
-    "it": "Cabinet approves 1-10% hike in rabi crops MSPs"
-   },
-   "description": "MSP for wheat now stands at ₹2,610 per quintal against ₹2,585 per quintal announced for 2026-27 marketing season (April-March)",
-   "url": "https://www.thehindubusinessline.com/economy/agri-business/cabinet-approves-1-10-hike-in-rabi-crops-msps/article71528160.ece",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "supply",
-   "marketLinks": [
-    {
-     "market": "trigo",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-c16238921a",
    "date": "2026-09-30",
    "region": "global",
@@ -9495,6 +9446,39 @@
    ]
   },
   {
+   "id": "auto-7838b4f705",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "oferta",
+   "topics": [
+    "oferta"
+   ],
+   "products": [
+    "trigo"
+   ],
+   "source": "Hindu BusinessLine",
+   "lang": "en",
+   "headline": {
+    "en": "Cabinet approves 1-10% hike in rabi crops MSPs",
+    "es": "Cabinet approves 1-10% hike in rabi crops MSPs",
+    "fr": "Cabinet approves 1-10% hike in rabi crops MSPs",
+    "it": "Cabinet approves 1-10% hike in rabi crops MSPs"
+   },
+   "description": "MSP for wheat now stands at ₹2,610 per quintal against ₹2,585 per quintal announced for 2026-27 marketing season (April-March)",
+   "url": "https://www.thehindubusinessline.com/economy/agri-business/cabinet-approves-1-10-hike-in-rabi-crops-msps/article71528160.ece",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "supply",
+   "marketLinks": [
+    {
+     "market": "trigo",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-4b1b45bbc1",
    "date": "2026-09-30",
    "region": "global",
@@ -9649,10 +9633,8 @@
    "id": "auto-d48d2264ad",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "trigo"
    ],
@@ -9923,47 +9905,6 @@
    ]
   },
   {
-   "id": "auto-3980abce92",
-   "date": "2026-09-30",
-   "region": "eu",
-   "topic": "clima",
-   "topics": [
-    "clima",
-    "comercio",
-    "precios"
-   ],
-   "products": [
-    "leche"
-   ],
-   "source": "Agriland",
-   "lang": "en",
-   "headline": {
-    "en": "Agriland and Bord Bia to launch series on Ireland’s grass-fed dairy system",
-    "es": "Agriland and Bord Bia to launch series on Ireland’s grass-fed dairy system",
-    "fr": "Agriland and Bord Bia to launch series on Ireland’s grass-fed dairy system",
-    "it": "Agriland and Bord Bia to launch series on Ireland’s grass-fed dairy system"
-   },
-   "description": "Agriland is delighted to team up with Bord Bia for a series focusing on the central role a grass-fed diet plays in distinguishing Irish dairy produce on the world market. This summer’s drought conditions, and the pressure it put on grass growth and fodder supplies, showed just ho",
-   "url": "https://www.agriland.ie/farming-news/agriland-and-bord-bia-to-launch-series-on-irelands-grass-fed-dairy-system/",
-   "relevance": 66,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "leche",
-     "channel": "weather",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-19f5f441c5",
    "date": "2026-09-30",
    "region": "uk",
@@ -9991,6 +9932,46 @@
     {
      "market": "leche",
      "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-3980abce92",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "clima",
+   "topics": [
+    "clima",
+    "comercio"
+   ],
+   "products": [
+    "leche"
+   ],
+   "source": "Agriland",
+   "lang": "en",
+   "headline": {
+    "en": "Agriland and Bord Bia to launch series on Ireland’s grass-fed dairy system",
+    "es": "Agriland and Bord Bia to launch series on Ireland’s grass-fed dairy system",
+    "fr": "Agriland and Bord Bia to launch series on Ireland’s grass-fed dairy system",
+    "it": "Agriland and Bord Bia to launch series on Ireland’s grass-fed dairy system"
+   },
+   "description": "Agriland is delighted to team up with Bord Bia for a series focusing on the central role a grass-fed diet plays in distinguishing Irish dairy produce on the world market. This summer’s drought conditions, and the pressure it put on grass growth and fodder supplies, showed just ho",
+   "url": "https://www.agriland.ie/farming-news/agriland-and-bord-bia-to-launch-series-on-irelands-grass-fed-dairy-system/",
+   "relevance": 60,
+   "auto": true,
+   "impactChannel": "trade",
+   "marketLinks": [
+    {
+     "market": "leche",
+     "channel": "trade",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "leche",
+     "channel": "weather",
      "relation": null,
      "direction": "uncertain"
     }
@@ -10034,10 +10015,8 @@
    "id": "auto-7c18ba7949",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "leche",
     "vaca"
@@ -10107,10 +10086,8 @@
    "id": "auto-5d753de402",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "leche"
    ],
@@ -10140,10 +10117,8 @@
    "id": "auto-657eaba3d3",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "leche"
    ],
@@ -10214,10 +10189,8 @@
    "id": "auto-d31e225379",
    "date": "2026-09-29",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "leche",
@@ -10322,10 +10295,8 @@
    "id": "auto-b8ee64129f",
    "date": "2026-09-29",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "leche"
    ],
@@ -10355,10 +10326,8 @@
    "id": "auto-f4731d8034",
    "date": "2026-09-29",
    "region": "uk",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "leche"
    ],
@@ -10388,10 +10357,8 @@
    "id": "auto-ccfdcf18e9",
    "date": "2026-09-29",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "leche"
    ],
@@ -10625,10 +10592,8 @@
    "id": "auto-52f0634d0c",
    "date": "2026-09-25",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "leche",
     "cerdo"
@@ -10698,10 +10663,8 @@
    "id": "auto-8fcee3ffeb",
    "date": "2026-09-25",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "leche"
    ],
@@ -10731,10 +10694,8 @@
    "id": "auto-e12444e4ca",
    "date": "2026-09-25",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "leche"
    ],
@@ -10862,10 +10823,8 @@
    "id": "auto-22ca4f9d7c",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pienso"
    ],
@@ -10923,10 +10882,8 @@
    "id": "auto-d61adf01c9",
    "date": "2026-09-28",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "pienso"
@@ -10983,10 +10940,8 @@
    "id": "auto-7d57ec685c",
    "date": "2026-09-28",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pienso"
    ],
@@ -11009,10 +10964,8 @@
    "id": "auto-fea95eab6d",
    "date": "2026-09-25",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pienso"
    ],
@@ -11505,10 +11458,8 @@
    "id": "auto-0fdee4bc57",
    "date": "2026-09-29",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "colza",
     "pollo"
@@ -11535,39 +11486,6 @@
     },
     {
      "market": "pollo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-96d6cf724f",
-   "date": "2026-09-29",
-   "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "colza"
-   ],
-   "source": "Western Producer",
-   "lang": "en",
-   "headline": {
-    "en": "Closing market update: Canola corrects higher | Sept. 29, 2026",
-    "es": "Closing market update: Canola corrects higher | Sept. 29, 2026",
-    "fr": "Closing market update: Canola corrects higher | Sept. 29, 2026",
-    "it": "Closing market update: Canola corrects higher | Sept. 29, 2026"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOSzBfdENOTjd2QnhFVEExc3NyNzdJdnZSZlBnTWZlLVhaVXlkdXltSDh5WS1lSEZOS09mWEtVVlU3TGh4MEJhWFNDWHNkR1FxS3o0RzJmRzRkckFOOHpwV3h6Ym5SVDlmTzRrRU1IallXWDNrRGpJWmhwT3BseVlld0lRTnp2XzFTVFU3M1kycDh2QXc?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "colza",
      "channel": "market_impact",
      "relation": null,
      "direction": "uncertain"
@@ -11608,13 +11526,42 @@
    ]
   },
   {
+   "id": "auto-96d6cf724f",
+   "date": "2026-09-29",
+   "region": "global",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "colza"
+   ],
+   "source": "Western Producer",
+   "lang": "en",
+   "headline": {
+    "en": "Closing market update: Canola corrects higher | Sept. 29, 2026",
+    "es": "Closing market update: Canola corrects higher | Sept. 29, 2026",
+    "fr": "Closing market update: Canola corrects higher | Sept. 29, 2026",
+    "it": "Closing market update: Canola corrects higher | Sept. 29, 2026"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOSzBfdENOTjd2QnhFVEExc3NyNzdJdnZSZlBnTWZlLVhaVXlkdXltSDh5WS1lSEZOS09mWEtVVlU3TGh4MEJhWFNDWHNkR1FxS3o0RzJmRzRkckFOOHpwV3h6Ym5SVDlmTzRrRU1IallXWDNrRGpJWmhwT3BseVlld0lRTnp2XzFTVFU3M1kycDh2QXc?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "colza",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-293a593ea4",
    "date": "2026-09-29",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "colza"
    ],
@@ -11644,10 +11591,8 @@
    "id": "auto-1212b78bd3",
    "date": "2026-09-29",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "colza"
    ],
@@ -11677,10 +11622,8 @@
    "id": "auto-57c4873c98",
    "date": "2026-09-29",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "colza"
    ],
@@ -11710,10 +11653,8 @@
    "id": "auto-0370058557",
    "date": "2026-09-29",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "colza"
    ],
@@ -11790,10 +11731,8 @@
    "id": "auto-ecf9c23d6b",
    "date": "2026-09-28",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "soja",
     "colza"
@@ -11808,7 +11747,7 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOcGk1MGtiWGNiLWtjNGtTbkR3em83M29yQUJVOXBxd1dFelM3TXJEc1FRTHlPbmIwbm9WaG0xeVdhbG00VjItVzZGVGtiZWpRbUtfMUh3S1MtRWlTYUxQNnJSRFBDUlptT19XNHBQaEp2ZjM3UmZydEZMdE84NS1NalRqZmpabFUwS0hGWElxOWNtem8yaVEwU19xdGQ5Q2JocXdBbUJvLXRPRldLSG5wTDhxNEJMVUVDQ0E?oc=5",
-   "relevance": 64,
+   "relevance": 58,
    "auto": true,
    "impactChannel": "market_impact",
    "marketLinks": [
@@ -11830,10 +11769,8 @@
    "id": "auto-021f314820",
    "date": "2026-09-28",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "colza"
    ],
@@ -11847,7 +11784,7 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWnM1Y3JZYnh0ZHlCdkRDeUZXUzJzeU9TNTlDMEtVUE52akNQVXB3RzdnX1JnQ0lkWi1DVGhycVFBeDJuVGJBMnhZTkJobDJjNHpCSFhvUW1SeFAydUtJWTI0R005X2EwQXVQOV9kdkdMSE01TENuVjFTalpybGlBYlFxd2o2ZnNFZmdhRmphYVMzdFZuY0xndTlhbDk?oc=5",
-   "relevance": 54,
+   "relevance": 48,
    "auto": true,
    "impactChannel": "market_impact",
    "marketLinks": [
@@ -11863,10 +11800,8 @@
    "id": "auto-363c913ab7",
    "date": "2026-09-28",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "colza"
    ],
@@ -11896,10 +11831,8 @@
    "id": "auto-a3b429c03e",
    "date": "2026-09-28",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "colza"
    ],
@@ -11929,10 +11862,8 @@
    "id": "auto-5fd0646471",
    "date": "2026-09-28",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "colza"
    ],
@@ -11962,10 +11893,8 @@
    "id": "auto-c511434226",
    "date": "2026-09-28",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "colza"
    ],
@@ -12122,10 +12051,8 @@
    "id": "auto-7e4f45e4f3",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "soja",
     "ganado"
@@ -12222,10 +12149,8 @@
    "id": "auto-889c77eb12",
    "date": "2026-09-30",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "soja"
    ],
@@ -12255,10 +12180,8 @@
    "id": "auto-e5f2e9686a",
    "date": "2026-09-30",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "soja"
    ],
@@ -12479,47 +12402,11 @@
    ]
   },
   {
-   "id": "auto-ba8e43e1c6",
-   "date": "2026-09-29",
-   "region": "us",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "precios"
-   ],
-   "products": [
-    "soja"
-   ],
-   "source": "AgroLatam",
-   "lang": "en",
-   "headline": {
-    "en": "U.S. Grain Markets Turn Mixed as Soybeans Recover From Tariff-Driven Sell-Off",
-    "es": "U.S. Grain Markets Turn Mixed as Soybeans Recover From Tariff-Driven Sell-Off",
-    "fr": "U.S. Grain Markets Turn Mixed as Soybeans Recover From Tariff-Driven Sell-Off",
-    "it": "U.S. Grain Markets Turn Mixed as Soybeans Recover From Tariff-Driven Sell-Off"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNMzlzYTg4Z1I3MFB0bTl4WFZJVDFucjFoUzVxQlJyemM3QW5SLUZ0a0RjQkQ2OG9BaU1VZEJqTk1EbWJrZDh5LW5NZEd0R1NmUGFhYlVROWZsdjdnMHpfNW82a1BEZ1J3dmdKSTR4dE5JRER3U0NoUmxGSHc0Z19BdlFLeE1LNmJaaHVGR1kteHhYQQ?oc=5",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "soja",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-f06b6e076a",
    "date": "2026-09-29",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "maiz",
     "soja"
@@ -12718,6 +12605,39 @@
    ]
   },
   {
+   "id": "auto-ba8e43e1c6",
+   "date": "2026-09-29",
+   "region": "us",
+   "topic": "comercio",
+   "topics": [
+    "comercio"
+   ],
+   "products": [
+    "soja"
+   ],
+   "source": "AgroLatam",
+   "lang": "en",
+   "headline": {
+    "en": "U.S. Grain Markets Turn Mixed as Soybeans Recover From Tariff-Driven Sell-Off",
+    "es": "U.S. Grain Markets Turn Mixed as Soybeans Recover From Tariff-Driven Sell-Off",
+    "fr": "U.S. Grain Markets Turn Mixed as Soybeans Recover From Tariff-Driven Sell-Off",
+    "it": "U.S. Grain Markets Turn Mixed as Soybeans Recover From Tariff-Driven Sell-Off"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNMzlzYTg4Z1I3MFB0bTl4WFZJVDFucjFoUzVxQlJyemM3QW5SLUZ0a0RjQkQ2OG9BaU1VZEJqTk1EbWJrZDh5LW5NZEd0R1NmUGFhYlVROWZsdjdnMHpfNW82a1BEZ1J3dmdKSTR4dE5JRER3U0NoUmxGSHc0Z19BdlFLeE1LNmJaaHVGR1kteHhYQQ?oc=5",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "trade",
+   "marketLinks": [
+    {
+     "market": "soja",
+     "channel": "trade",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-d73889d41a",
    "date": "2026-09-29",
    "region": "global",
@@ -12878,46 +12798,6 @@
    ]
   },
   {
-   "id": "auto-ecf9c23d6b",
-   "date": "2026-09-28",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "soja",
-    "colza"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression",
-    "es": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression",
-    "fr": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression",
-    "it": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOcGk1MGtiWGNiLWtjNGtTbkR3em83M29yQUJVOXBxd1dFelM3TXJEc1FRTHlPbmIwbm9WaG0xeVdhbG00VjItVzZGVGtiZWpRbUtfMUh3S1MtRWlTYUxQNnJSRFBDUlptT19XNHBQaEp2ZjM3UmZydEZMdE84NS1NalRqZmpabFUwS0hGWElxOWNtem8yaVEwU19xdGQ5Q2JocXdBbUJvLXRPRldLSG5wTDhxNEJMVUVDQ0E?oc=5",
-   "relevance": 64,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "colza",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "soja",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-ab3566f4df",
    "date": "2026-09-28",
    "region": "global",
@@ -12945,6 +12825,44 @@
     {
      "market": "soja",
      "channel": "trade",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-ecf9c23d6b",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "soja",
+    "colza"
+   ],
+   "source": "reussir.fr",
+   "lang": "fr",
+   "headline": {
+    "en": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression",
+    "es": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression",
+    "fr": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression",
+    "it": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOcGk1MGtiWGNiLWtjNGtTbkR3em83M29yQUJVOXBxd1dFelM3TXJEc1FRTHlPbmIwbm9WaG0xeVdhbG00VjItVzZGVGtiZWpRbUtfMUh3S1MtRWlTYUxQNnJSRFBDUlptT19XNHBQaEp2ZjM3UmZydEZMdE84NS1NalRqZmpabFUwS0hGWElxOWNtem8yaVEwU19xdGQ5Q2JocXdBbUJvLXRPRldLSG5wTDhxNEJMVUVDQ0E?oc=5",
+   "relevance": 58,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "colza",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "soja",
+     "channel": "market_impact",
      "relation": null,
      "direction": "uncertain"
     }
@@ -13017,33 +12935,33 @@
    ]
   },
   {
-   "id": "auto-1dccaf159f",
+   "id": "auto-0362091b0a",
    "date": "2026-09-28",
-   "region": "us",
-   "topic": "precios",
+   "region": "global",
+   "topic": "comercio",
    "topics": [
-    "precios"
+    "comercio"
    ],
    "products": [
     "soja"
    ],
-   "source": "AgroLatam",
+   "source": "indiagazette.com",
    "lang": "en",
    "headline": {
-    "en": "Grain Markets Tumble as Soybeans Lead a Costly Selloff for U.S. Farmers",
-    "es": "Grain Markets Tumble as Soybeans Lead a Costly Selloff for U.S. Farmers",
-    "fr": "Grain Markets Tumble as Soybeans Lead a Costly Selloff for U.S. Farmers",
-    "it": "Grain Markets Tumble as Soybeans Lead a Costly Selloff for U.S. Farmers"
+    "en": "China lowers tariffs on US farm imports, but keeps soybeans subject to additional 10% duty",
+    "es": "China lowers tariffs on US farm imports, but keeps soybeans subject to additional 10% duty",
+    "fr": "China lowers tariffs on US farm imports, but keeps soybeans subject to additional 10% duty",
+    "it": "China lowers tariffs on US farm imports, but keeps soybeans subject to additional 10% duty"
    },
    "description": "",
-   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQX0poTHdIa1Z3bEhyakhmQmVlN2tpZjRKVDltN2JqcWp0UHd5aWlYd2htVUdFWU4zYzRHTkRDTVQ0dVdKUEtHMW9ORVlxMjA3c3huMklmaWlfanJVSlgzcktZNTJOZzZQMGpHNmZsVFdFTnYtRG9naVVQSnRWRXdDMUhGSFk4WnNZa2N3LVJZRQ?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxONjd4ajhBWEhzbEZsU3AtYWJpQnEyal83UEVrZE1HWnFMT0NUTVlqUVRQdzBRX0dPSXh4Ukh1TmxJUFRCcVR5RjJUUHpPWDk1WUpONVA3WmpTVXFMeFZFVjVSM3JTeWVScUExWjJnYmUzUUpZNUdUTTBuUVUzbU80Z3hPaHg1V2dlRnk0QnlyQ0JIN2xfRnlBampZYXgyb2J3UFVyamdIMmVjU2g2Y19MYlBJWTBhdkl4X2tVTWVXcjNUTmZpck1DdkVXUXQ?oc=5",
    "relevance": 54,
    "auto": true,
-   "impactChannel": "market_impact",
+   "impactChannel": "trade",
    "marketLinks": [
     {
      "market": "soja",
-     "channel": "market_impact",
+     "channel": "trade",
      "relation": null,
      "direction": "uncertain"
     }
@@ -13089,10 +13007,8 @@
    "id": "auto-7e4f45e4f3",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "soja",
     "ganado"
@@ -13123,10 +13039,8 @@
    "id": "auto-cec32519de",
    "date": "2026-09-30",
    "region": "uk",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "ganado"
    ],
@@ -13149,10 +13063,8 @@
    "id": "auto-7f932bbb78",
    "date": "2026-09-30",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "ganado"
    ],
@@ -13175,10 +13087,8 @@
    "id": "auto-ed34135b6b",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "ganado"
    ],
@@ -13277,10 +13187,8 @@
    "id": "auto-d31e225379",
    "date": "2026-09-29",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "leche",
@@ -13318,10 +13226,8 @@
    "id": "auto-5ec38e6b7a",
    "date": "2026-09-29",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "ganado"
@@ -13430,10 +13336,8 @@
    "id": "auto-519176f4e1",
    "date": "2026-09-29",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "ganado"
    ],
@@ -13557,10 +13461,8 @@
    "id": "auto-e7bb0979c3",
    "date": "2026-09-28",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "ganado"
@@ -13591,10 +13493,8 @@
    "id": "auto-d9aa3095d9",
    "date": "2026-09-28",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "ganado",
     "pac"
@@ -13670,10 +13570,8 @@
    "id": "auto-b729f37957",
    "date": "2026-09-27",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "cerdo",
     "ganado"
@@ -13704,10 +13602,8 @@
    "id": "auto-d4a58beac1",
    "date": "2026-09-26",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "ganado"
    ],
@@ -13730,10 +13626,8 @@
    "id": "auto-cf0dc80571",
    "date": "2026-09-26",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "ganado"
    ],
@@ -13798,10 +13692,8 @@
    "id": "auto-7df0accb5e",
    "date": "2026-09-25",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "cerdo",
@@ -13947,47 +13839,11 @@
    ]
   },
   {
-   "id": "auto-80558904b2",
-   "date": "2026-09-30",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "precios"
-   ],
-   "products": [
-    "vaca"
-   ],
-   "source": "Beef Central",
-   "lang": "en",
-   "headline": {
-    "en": "Australian beef’s best strategy in challenging export market conditions",
-    "es": "Australian beef’s best strategy in challenging export market conditions",
-    "fr": "Australian beef’s best strategy in challenging export market conditions",
-    "it": "Australian beef’s best strategy in challenging export market conditions"
-   },
-   "description": "While the quickly changing environment and uncertainty has been a big challenge for meat traders this year, a panel of industry leaders at last week’s BeefEx conference discussed how Australian beef can maintain its strong position in the challenging market. We need to stay out o",
-   "url": "https://www.beefcentral.com/lotfeeding/australian-beefs-best-strategy-in-challenging-export-market-conditions/",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "vaca",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-7c18ba7949",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "leche",
     "vaca"
@@ -14081,6 +13937,39 @@
     {
      "market": "vaca",
      "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-80558904b2",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "comercio",
+   "topics": [
+    "comercio"
+   ],
+   "products": [
+    "vaca"
+   ],
+   "source": "Beef Central",
+   "lang": "en",
+   "headline": {
+    "en": "Australian beef’s best strategy in challenging export market conditions",
+    "es": "Australian beef’s best strategy in challenging export market conditions",
+    "fr": "Australian beef’s best strategy in challenging export market conditions",
+    "it": "Australian beef’s best strategy in challenging export market conditions"
+   },
+   "description": "While the quickly changing environment and uncertainty has been a big challenge for meat traders this year, a panel of industry leaders at last week’s BeefEx conference discussed how Australian beef can maintain its strong position in the challenging market. We need to stay out o",
+   "url": "https://www.beefcentral.com/lotfeeding/australian-beefs-best-strategy-in-challenging-export-market-conditions/",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "trade",
+   "marketLinks": [
+    {
+     "market": "vaca",
+     "channel": "trade",
      "relation": null,
      "direction": "uncertain"
     }
@@ -14189,10 +14078,8 @@
    "id": "auto-1cff7ec5c0",
    "date": "2026-09-30",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca"
    ],
@@ -14222,10 +14109,8 @@
    "id": "auto-2ee823f953",
    "date": "2026-09-30",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca"
    ],
@@ -14255,10 +14140,8 @@
    "id": "auto-f75b8fb82a",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca"
    ],
@@ -14459,10 +14342,8 @@
    "id": "auto-d31e225379",
    "date": "2026-09-29",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "leche",
@@ -14491,40 +14372,6 @@
     {
      "market": "vaca",
      "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-925c5f8e6a",
-   "date": "2026-09-29",
-   "region": "us",
-   "topic": "oferta",
-   "topics": [
-    "oferta",
-    "precios"
-   ],
-   "products": [
-    "vaca"
-   ],
-   "source": "Morning Ag Clips",
-   "lang": "en",
-   "headline": {
-    "en": "In the Cattle Markets: The Impact of Heifer Slaughter on Herd Expansion & Beef Supply",
-    "es": "In the Cattle Markets: The Impact of Heifer Slaughter on Herd Expansion & Beef Supply",
-    "fr": "In the Cattle Markets: The Impact of Heifer Slaughter on Herd Expansion & Beef Supply",
-    "it": "In the Cattle Markets: The Impact of Heifer Slaughter on Herd Expansion & Beef Supply"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPaTNDeE9tcjVmYWZseGg4dnZrYUFEd0x5QjY2Tnh6am04eWFnXzJUZS04SDRpLW9Nbk9vcjZfSWp0QUIxWl9kRS1KdGc0NFJtWVZiRXhRRHdtOEp3cXFNalV2SVI0aFZwLTcxcmNjeHR5dm52a2N6WVVPQ3dtMjRKSXhsVkd6aTVpcU9RcXNjZ1o2OS02WnY1X2FLTDlDZDRGVndjWWd0Y0VjemZFMEtfUGtyVkw?oc=5",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "supply",
-   "marketLinks": [
-    {
-     "market": "vaca",
-     "channel": "supply",
      "relation": null,
      "direction": "uncertain"
     }
@@ -14568,10 +14415,8 @@
    "id": "auto-5ec38e6b7a",
    "date": "2026-09-29",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "ganado"
@@ -14602,10 +14447,8 @@
    "id": "auto-947b08fd9f",
    "date": "2026-09-29",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "pollo"
@@ -14639,33 +14482,33 @@
    ]
   },
   {
-   "id": "auto-cd69e55a9b",
+   "id": "auto-925c5f8e6a",
    "date": "2026-09-29",
    "region": "us",
-   "topic": "precios",
+   "topic": "oferta",
    "topics": [
-    "precios"
+    "oferta"
    ],
    "products": [
     "vaca"
    ],
-   "source": "drovers.com",
+   "source": "Morning Ag Clips",
    "lang": "en",
    "headline": {
-    "en": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027",
-    "es": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027",
-    "fr": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027",
-    "it": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027"
+    "en": "In the Cattle Markets: The Impact of Heifer Slaughter on Herd Expansion & Beef Supply",
+    "es": "In the Cattle Markets: The Impact of Heifer Slaughter on Herd Expansion & Beef Supply",
+    "fr": "In the Cattle Markets: The Impact of Heifer Slaughter on Herd Expansion & Beef Supply",
+    "it": "In the Cattle Markets: The Impact of Heifer Slaughter on Herd Expansion & Beef Supply"
    },
    "description": "",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNa1dOMkppQ3A1d01aMlF0V052STFkVzRZeXd2MGRHbjVvWlVvWDVmR3RrLXV3aDNZajI4X2NGT1BpTU96Y3lRTDM5cTNmTkpfUlp2Z0JTTGQyVEVfaVpxVk10VmNGTU05REVOWm9PbnVkaWhhVEJpTTM1NGc3QTBDemdHMFFDQmg1NGd4NUJrWHpIeFo2RDNZMEZEM2Y1Zw?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPaTNDeE9tcjVmYWZseGg4dnZrYUFEd0x5QjY2Tnh6am04eWFnXzJUZS04SDRpLW9Nbk9vcjZfSWp0QUIxWl9kRS1KdGc0NFJtWVZiRXhRRHdtOEp3cXFNalV2SVI0aFZwLTcxcmNjeHR5dm52a2N6WVVPQ3dtMjRKSXhsVkd6aTVpcU9RcXNjZ1o2OS02WnY1X2FLTDlDZDRGVndjWWd0Y0VjemZFMEtfUGtyVkw?oc=5",
    "relevance": 54,
    "auto": true,
-   "impactChannel": "market_impact",
+   "impactChannel": "supply",
    "marketLinks": [
     {
      "market": "vaca",
-     "channel": "market_impact",
+     "channel": "supply",
      "relation": null,
      "direction": "uncertain"
     }
@@ -14769,6 +14612,37 @@
      "direction": "uncertain"
     }
    ]
+  },
+  {
+   "id": "auto-cd69e55a9b",
+   "date": "2026-09-29",
+   "region": "us",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "vaca"
+   ],
+   "source": "drovers.com",
+   "lang": "en",
+   "headline": {
+    "en": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027",
+    "es": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027",
+    "fr": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027",
+    "it": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNa1dOMkppQ3A1d01aMlF0V052STFkVzRZeXd2MGRHbjVvWlVvWDVmR3RrLXV3aDNZajI4X2NGT1BpTU96Y3lRTDM5cTNmTkpfUlp2Z0JTTGQyVEVfaVpxVk10VmNGTU05REVOWm9PbnVkaWhhVEJpTTM1NGc3QTBDemdHMFFDQmg1NGd4NUJrWHpIeFo2RDNZMEZEM2Y1Zw?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
   }
  ],
  "oliva": [
@@ -14810,10 +14684,8 @@
    "id": "auto-f34027781d",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "oliva",
     "pac"
@@ -14910,10 +14782,8 @@
    "id": "auto-7e6398c1d8",
    "date": "2026-09-24",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "oliva"
    ],
@@ -14945,10 +14815,8 @@
    "id": "auto-f34027781d",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "oliva",
     "pac"
@@ -15005,10 +14873,8 @@
    "id": "auto-869dcb0287",
    "date": "2026-09-30",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pac"
    ],
@@ -15169,10 +15035,8 @@
    "id": "auto-3fe469e5db",
    "date": "2026-09-29",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pac"
    ],
@@ -15307,10 +15171,8 @@
    "id": "auto-d9aa3095d9",
    "date": "2026-09-28",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "ganado",
     "pac"
@@ -15334,10 +15196,8 @@
    "id": "auto-61068617d3",
    "date": "2026-09-28",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pac"
    ],
@@ -15360,9 +15220,8 @@
    "id": "auto-ec65aab0ac",
    "date": "2026-09-27",
    "region": "eu",
-   "topic": "precios",
+   "topic": "politica",
    "topics": [
-    "precios",
     "politica",
     "ayudas"
    ],
@@ -15379,7 +15238,7 @@
    },
    "description": "Llegan unas semanas que serán claves en las cosas de Bruselas. De entrada, hay que tener en cuenta estos factores: Se han terminado los trabajos técnicos en el Consejo de Ministros de Agricultura sobre los dos textos fundamentales de la futura PAC: los apoyos y ayudas directas y ",
    "url": "https://www.agropopular.com/pagos-claves-260926/",
-   "relevance": 58,
+   "relevance": 52,
    "auto": true,
    "impactChannel": "market_impact",
    "marketLinks": []
@@ -15531,10 +15390,8 @@
    "id": "auto-acec66a9d8",
    "date": "2026-09-30",
    "region": "uk",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -15564,10 +15421,8 @@
    "id": "auto-531ac564bc",
    "date": "2026-09-30",
    "region": "uk",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -15630,10 +15485,8 @@
    "id": "auto-6394ed181e",
    "date": "2026-09-30",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -15663,10 +15516,8 @@
    "id": "auto-0fdee4bc57",
    "date": "2026-09-29",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "colza",
     "pollo"
@@ -15703,10 +15554,8 @@
    "id": "auto-947b08fd9f",
    "date": "2026-09-29",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "pollo"
@@ -15776,10 +15625,8 @@
    "id": "auto-7c0c986c7e",
    "date": "2026-09-29",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -15809,10 +15656,8 @@
    "id": "auto-90668e388d",
    "date": "2026-09-29",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -15842,10 +15687,8 @@
    "id": "auto-ced39282ae",
    "date": "2026-09-29",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -15908,10 +15751,8 @@
    "id": "auto-1e492ea456",
    "date": "2026-09-28",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -15941,10 +15782,8 @@
    "id": "auto-2bc7b7aef8",
    "date": "2026-09-28",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -15974,10 +15813,8 @@
    "id": "auto-2580214d86",
    "date": "2026-09-28",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -16007,10 +15844,8 @@
    "id": "auto-aca64988af",
    "date": "2026-09-28",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -16040,10 +15875,8 @@
    "id": "auto-90de733c04",
    "date": "2026-09-28",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -16073,10 +15906,8 @@
    "id": "auto-c9589a0e5c",
    "date": "2026-09-25",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -16106,10 +15937,8 @@
    "id": "auto-7b63bc29be",
    "date": "2026-09-24",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "cerdo",
     "pollo"
@@ -16212,10 +16041,8 @@
    "id": "auto-a45e4819f1",
    "date": "2026-09-24",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -16245,10 +16072,8 @@
    "id": "auto-b07900e698",
    "date": "2026-09-24",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "pollo"
    ],
@@ -16416,46 +16241,11 @@
    ]
   },
   {
-   "id": "auto-8e716beb33",
-   "date": "2026-09-28",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "cerdo"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
-    "es": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
-    "fr": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
-    "it": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRXJlWG9yUFRNdDB2U05OZ3N1dFVkVzhvalMzNGZsWUJneFdkS2NWeTkwbENpOTJMd29RSllZZ19HTUdUdUhEbks2NXgtTW5PT0ptMXJLYlRTMWo3WTV2UlJnRmFBcmxVNjVnRU83ekF2cHB5QW0wblhzMjYwRVN4c0I1SzNaTzlHQWFDd251cGZvN1UxNWNXbklYbDFDNWM0a1RWT2d6aUV1R2c1VTk4TTVqZw?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-6fe40ce93f",
    "date": "2026-09-28",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "cerdo"
    ],
@@ -16485,10 +16275,8 @@
    "id": "auto-89463633d3",
    "date": "2026-09-28",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "cerdo"
    ],
@@ -16515,13 +16303,42 @@
    ]
   },
   {
+   "id": "auto-8e716beb33",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "cerdo"
+   ],
+   "source": "reussir.fr",
+   "lang": "fr",
+   "headline": {
+    "en": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
+    "es": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
+    "fr": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
+    "it": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRXJlWG9yUFRNdDB2U05OZ3N1dFVkVzhvalMzNGZsWUJneFdkS2NWeTkwbENpOTJMd29RSllZZ19HTUdUdUhEbks2NXgtTW5PT0ptMXJLYlRTMWo3WTV2UlJnRmFBcmxVNjVnRU83ekF2cHB5QW0wblhzMjYwRVN4c0I1SzNaTzlHQWFDd251cGZvN1UxNWNXbklYbDFDNWM0a1RWT2d6aUV1R2c1VTk4TTVqZw?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-b729f37957",
    "date": "2026-09-27",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "cerdo",
     "ganado"
@@ -16552,10 +16369,8 @@
    "id": "auto-7df0accb5e",
    "date": "2026-09-25",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "cerdo",
@@ -16600,10 +16415,8 @@
    "id": "auto-52f0634d0c",
    "date": "2026-09-25",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "leche",
     "cerdo"
@@ -16640,10 +16453,8 @@
    "id": "auto-f4ab7a9889",
    "date": "2026-09-25",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "cerdo"
    ],
@@ -16673,10 +16484,8 @@
    "id": "auto-dfb38681c2",
    "date": "2026-09-25",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "cerdo"
    ],
@@ -16706,10 +16515,8 @@
    "id": "auto-7b63bc29be",
    "date": "2026-09-24",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "cerdo",
     "pollo"
@@ -16845,10 +16652,8 @@
    "id": "auto-6d83f57e1a",
    "date": "2026-09-24",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "cerdo"
    ],
@@ -16878,10 +16683,8 @@
    "id": "auto-1219d1da11",
    "date": "2026-09-24",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "cerdo"
    ],
@@ -16911,10 +16714,8 @@
    "id": "auto-7d383f214e",
    "date": "2026-09-24",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "cerdo"
    ],
@@ -16946,10 +16747,8 @@
    "id": "auto-8021589a06",
    "date": "2026-09-30",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "azucar"
    ],
@@ -17060,10 +16859,8 @@
    "id": "auto-c9b2fdd364",
    "date": "2026-09-29",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "azucar"
    ],
@@ -17259,10 +17056,8 @@
    "id": "auto-6ec0c47c26",
    "date": "2026-09-25",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "azucar"
    ],
@@ -17276,7 +17071,7 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5tWGthbjdWYzl6S1pObkpxMlZxTUdvNXY3TzNWLUNhV3FRczFIR2x4QkFsd3lHZjI5dlUydzBjemRESGlKeVR5NXR4TDFzX05QTnlMdmFtLVk4d1VTYUo4VllsSC1SYmV2NXFLNA?oc=5",
-   "relevance": 62,
+   "relevance": 56,
    "auto": true,
    "impactChannel": "market_impact",
    "marketLinks": [
@@ -17292,10 +17087,8 @@
    "id": "auto-8c660b4108",
    "date": "2026-09-24",
    "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "azucar"
    ],
@@ -17462,10 +17255,8 @@
    "id": "auto-7df0accb5e",
    "date": "2026-09-25",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "vaca",
     "cerdo",
@@ -17512,10 +17303,8 @@
    "id": "auto-f30bd6596a",
    "date": "2026-09-29",
    "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "huevos"
    ],
@@ -17620,10 +17409,8 @@
    "id": "auto-37df928688",
    "date": "2026-09-28",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "huevos"
    ],
@@ -17720,10 +17507,8 @@
    "id": "auto-71690d446b",
    "date": "2026-09-25",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "huevos"
    ],
@@ -17753,10 +17538,8 @@
    "id": "auto-770c4aa069",
    "date": "2026-09-24",
    "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
+   "topic": "",
+   "topics": [],
    "products": [
     "huevos"
    ],
