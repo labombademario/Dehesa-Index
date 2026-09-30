@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:21:53.590Z",
+  "generatedAt": "2026-09-30T17:25:15.517Z",
   "policy": {
     "neverConvertQuoteBasis": true,
     "neverTreatIndexAsPrice": true,
@@ -181230,7 +181230,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -181251,7 +181251,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -181356,7 +181356,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -181902,7 +181902,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -182154,7 +182154,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -182301,7 +182301,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -182511,7 +182511,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -182532,7 +182532,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -182826,7 +182826,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -182847,7 +182847,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -182952,7 +182952,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -183498,7 +183498,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -183750,7 +183750,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -183897,7 +183897,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -184107,7 +184107,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -184128,7 +184128,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -184338,7 +184338,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -184443,7 +184443,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -184464,7 +184464,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -184548,7 +184548,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -185178,7 +185178,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -185430,7 +185430,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -185556,7 +185556,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -185766,7 +185766,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -185787,7 +185787,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -185976,7 +185976,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -186081,7 +186081,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -186102,7 +186102,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -186207,7 +186207,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -186753,7 +186753,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -187005,7 +187005,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -187152,7 +187152,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -187362,7 +187362,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -187383,7 +187383,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -187593,7 +187593,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -187698,7 +187698,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -187719,7 +187719,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -187824,7 +187824,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -188370,7 +188370,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -188622,7 +188622,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -188769,7 +188769,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -188979,7 +188979,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -189000,7 +189000,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -189210,7 +189210,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -189315,7 +189315,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -189336,7 +189336,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -189441,7 +189441,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -190071,7 +190071,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -190323,7 +190323,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -190470,7 +190470,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -190680,7 +190680,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -190701,7 +190701,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -190911,7 +190911,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -191016,7 +191016,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -191037,7 +191037,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -191142,7 +191142,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -191688,7 +191688,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -191940,7 +191940,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -192087,7 +192087,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -192297,7 +192297,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -192318,7 +192318,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -192528,7 +192528,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -192633,7 +192633,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -192654,7 +192654,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -192759,7 +192759,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -193305,7 +193305,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -193557,7 +193557,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -193704,7 +193704,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -193914,7 +193914,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -193935,7 +193935,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -194145,7 +194145,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -194250,7 +194250,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -194271,7 +194271,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -194376,7 +194376,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -195006,7 +195006,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -195258,7 +195258,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -195405,7 +195405,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -195615,7 +195615,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -195636,7 +195636,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -195846,7 +195846,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -195951,7 +195951,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -195972,7 +195972,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -196077,7 +196077,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -196623,7 +196623,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -196875,7 +196875,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -197022,7 +197022,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -197232,7 +197232,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -197253,7 +197253,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -197463,7 +197463,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -197568,7 +197568,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -197589,7 +197589,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -197694,7 +197694,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -198240,7 +198240,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -198492,7 +198492,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -198639,7 +198639,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -198849,7 +198849,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -198870,7 +198870,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -199080,7 +199080,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -199185,7 +199185,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -199206,7 +199206,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -199311,7 +199311,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -199941,7 +199941,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -200193,7 +200193,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -200340,7 +200340,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -200550,7 +200550,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -200571,7 +200571,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -200781,7 +200781,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -200886,7 +200886,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -200907,7 +200907,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -201012,7 +201012,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -201558,7 +201558,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -201810,7 +201810,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -201957,7 +201957,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -202167,7 +202167,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -202188,7 +202188,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -202398,7 +202398,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -202503,7 +202503,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -202524,7 +202524,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -202629,7 +202629,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -203175,7 +203175,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -203427,7 +203427,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -203574,7 +203574,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -203784,7 +203784,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -203805,7 +203805,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -204015,7 +204015,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -204120,7 +204120,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -204141,7 +204141,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -204246,7 +204246,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -204876,7 +204876,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -205128,7 +205128,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -205275,7 +205275,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -205485,7 +205485,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -205506,7 +205506,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -205716,7 +205716,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -205821,7 +205821,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -205842,7 +205842,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -205947,7 +205947,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -206493,7 +206493,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -206745,7 +206745,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -206892,7 +206892,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -207102,7 +207102,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -207123,7 +207123,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -207333,7 +207333,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -207438,7 +207438,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -207459,7 +207459,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -207564,7 +207564,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -208110,7 +208110,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -208362,7 +208362,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -208509,7 +208509,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -208719,7 +208719,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -208740,7 +208740,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -208950,7 +208950,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -209055,7 +209055,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -209076,7 +209076,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -209181,7 +209181,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -209811,7 +209811,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -210063,7 +210063,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -210210,7 +210210,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -210420,7 +210420,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -210441,7 +210441,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -210651,7 +210651,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -210735,7 +210735,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -210756,7 +210756,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -210861,7 +210861,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -211407,7 +211407,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -211659,7 +211659,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -211806,7 +211806,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -212016,7 +212016,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -212037,7 +212037,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -212247,7 +212247,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -212310,7 +212310,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -212331,7 +212331,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -212415,7 +212415,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -212646,7 +212646,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -212856,7 +212856,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -212940,7 +212940,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -213108,7 +213108,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -213129,7 +213129,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -213276,7 +213276,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -213297,7 +213297,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -213318,7 +213318,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -213360,7 +213360,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
@@ -213507,7 +213507,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -213633,7 +213633,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -213696,7 +213696,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -213801,7 +213801,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
@@ -213822,7 +213822,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:21:53Z",
+      "verifiedAt": "2026-09-30T17:25:14Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1000,
