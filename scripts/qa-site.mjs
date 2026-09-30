@@ -25,6 +25,7 @@ check('price URL restores popstate',prices.includes("addEventListener('popstate'
 check('price category ids are canonical',prices.includes("['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','energia','seguro','vino','madera']"));
 check('prices consume verified published observations',prices.includes("global.fetch('data/latest.json'"));
 check('unverified samples never show a value (only verified observations do)',prices.includes("var showValue = !!observation && observation.status === 'verified'"));
+check('every published observation is applied (no short-circuit some())',!prices.includes('observations.some(applyPublishedObservation)'));
 check('published prices enforce source contract',prices.includes("observationMatchesContract"));
 
 const news=await read('js/noticias.js');

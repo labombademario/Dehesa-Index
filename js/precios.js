@@ -185,7 +185,9 @@
       .then(function (response) { return response.ok ? response.json() : null; })
       .then(function (doc) {
         var observations = doc && Array.isArray(doc.observations) ? doc.observations : [];
-        var changed = observations.some(applyPublishedObservation);
+        var changed = false;
+        // forEach y no some(): some() se detiene en la primera observación aplicada y el resto nunca se superponía
+        observations.forEach(function (o) { if (applyPublishedObservation(o)) changed = true; });
         if (!changed) return;
         if (D.validateDataTrustRegistry) D.DATA_TRUST_HEALTH = D.validateDataTrustRegistry(D.DATA_TRUST);
         renderAll();
