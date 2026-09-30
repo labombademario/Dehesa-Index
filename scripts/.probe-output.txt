@@ -1,0 +1,15 @@
+GET /daily/point?parameters=PRECTOTCORR,T2M&longitude=-93.6&latitude=42.0&community=AG&format=JSON&start=20260722&end=20260929 -> 200 500ms len 2860
+{"title":"NASA/POWER Source Native Resolution Daily Data","api":{"version":"v2.10.0","name":"POWER Daily API"},"sources":["GEOSIT","MERRA2"],"fill_value":-999,"time_standard":"LST","start":"20260722","end":"20260929"}
+{"PRECTOTCORR":{"units":"mm/day","longname":"Precipitation Corrected"},"T2M":{"units":"C","longname":"Temperature at 2 Meters"}}
+PRECTOTCORR n=70 first=20260722,0.45 last3=20260927,-999 | 20260928,-999 | 20260929,-999
+T2M n=70 first=20260722,19.34 last3=20260927,-999 | 20260928,-999 | 20260929,-999
+messages []
+license ""
+GET /monthly/point?parameters=PRECTOTCORR,T2M&longitude=-93.6&latitude=42.0&community=AG&format=JSON&start=2025&end=2026 -> 200 447ms len 1198
+PRECTOTCORR {"202501":0.22,"202502":0.36,"202503":2.15,"202504":2.99,"202505":2.44,"202506":6.25,"202507":7.61,"202508":2.66,"202509":1.33,"202510":1.91,"202511":1.3,"202512":0.67,"202513":2.5,"202601":0.9,"202602":0.49,"202603":1.8,"202604":4.74,"202605":2.04,"202606":3.97,"202607":5.32,"202608":3.9,"202609":-999}
+T2M {"202501":-7.45,"202502":-5.35,"202503":5.93,"202504":10.46,"202505":16.07,"202506":22.9,"202507":24.57,"202508":21.92,"202509":19.79,"202510":13.64,"202511":4.31,"202512":-4.5,"202513":10.27,"202601":-7.07,"202602":-0.21,"202603":5.92,"202604":11.33,"202605":16.9,"202606":22.18,"202607":25.54,"202608":23.31,"202609":-999}
+GET /climatology/point?parameters=PRECTOTCORR,T2M&longitude=-93.6&latitude=42.0&community=AG&format=JSON -> 200 303ms len 1043
+PRECTOTCORR {"JAN":0.71,"FEB":1,"MAR":1.47,"APR":2.99,"MAY":3.79,"JUN":4.26,"JUL":3.01,"AUG":3.54,"SEP":2.86,"OCT":2.2,"NOV":1.34,"DEC":1.21,"ANN":2.37}
+T2M {"JAN":-6.44,"FEB":-4.87,"MAR":2.63,"APR":9.77,"MAY":16.01,"JUN":21.88,"JUL":24.25,"AUG":22.87,"SEP":18.53,"OCT":10.26,"NOV":3.11,"DEC":-3.71,"ANN":9.59}
+{"title":"NASA/POWER Source Native Resolution Climatology Climatologies","api":{"version":"v2.10.0","name":"POWER Climatology API"},"sources":["MERRA2"],"fill_value":-999,"time_standard":"LST","range":"20-year Meteorological and Solar Monthly & Annual Climatologies (January 2001 - December 2020)"}
+GET /daily/point?parameters=PRECTOTCORR,T2M&longitude=-93.6&latitude=42.0&community=AG&format=JSON&start=19910101&end=20201231 -> 200 636ms len 356450
