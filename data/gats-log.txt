@@ -1,10 +1,13 @@
-file:///home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-gats.mjs:29
-  throw new Error(p + ' ' + err);
-        ^
+file:///home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-gats.mjs:25
+      if (r.status === 429) { err = 'HTTP 429'; if (i >= 2) { const e = new Error('LIMIT'); e.limit = true; throw e; } await new Promise(z => setTimeout(z, 65000)); continue; }
+                                                                        ^
 
-Error: /unitsOfMeasure HTTP 429
-    at get (file:///home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-gats.mjs:29:9)
-    at async Promise.all (index 1)
-    at async file:///home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-gats.mjs:35:27
+Error: LIMIT
+    at get (file:///home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-gats.mjs:25:73)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 0)
+    at async file:///home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-gats.mjs:36:27 {
+  limit: true
+}
 
 Node.js v20.20.2
