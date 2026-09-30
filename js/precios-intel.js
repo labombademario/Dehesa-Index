@@ -316,7 +316,7 @@
   // todos los cuadros tienen el mismo tamaño; solo se dibujan productos con dato verificado.
   var MAP_GROUP = {
     'cereales-maiz': 'cereales', 'cereales-trigo': 'cereales', 'cereales-arroz': 'cereales', 'cereales-cebada': 'cereales',
-    'cereales-avena': 'cereales', 'cereales-centeno': 'cereales', 'cereales-sorgo': 'cereales', 'cereales-colza': 'cereales',
+    'cereales-avena': 'cereales', 'cereales-centeno': 'cereales', 'cereales-sorgo': 'cereales', 'cereales-colza': 'cereales', 'cereales-soja_grano': 'cereales', 'cereales-lenteja': 'cereales', 'cereales-guisante_seco': 'cereales', 'cereales-lino': 'cereales',
     'lacteos-leche': 'lacteos', 'lacteos-mantequilla': 'lacteos', 'lacteos-leche_polvo': 'lacteos',
     'ganado-vaca': 'ganaderia', 'ganado-cabra': 'ganaderia', 'porcino-cerdo': 'ganaderia', 'ovino-cordero': 'ganaderia',
     'avicultura-huevos': 'ganaderia', 'avicultura-pollo': 'ganaderia',

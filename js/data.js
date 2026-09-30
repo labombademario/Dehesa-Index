@@ -87,10 +87,10 @@
   };
 
   var NAMES = {
-    es: { gas_natural: 'Gas natural (Henry Hub / TTF)', petroleo_wti: 'Petróleo WTI (Texas)', petroleo_brent: 'Petróleo Brent', mantequilla: 'Mantequilla', leche_polvo: 'Leche desnatada en polvo', colza: 'Colza', centeno: 'Centeno', cebada: 'Cebada', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Maíz', trigo: 'Trigo', arroz: 'Arroz', leche: 'Leche', vaca: 'Vaca (vacuno)', cabra: 'Cabra', pienso: 'Pienso compuesto', harina_soja: 'Harina de soja', urea: 'Urea', dap: 'DAP (fosfato diamónico)', potasa: 'Potasa (MOP)', cerdo: 'Cerdo', cordero: 'Cordero', huevos: 'Huevos', pollo: 'Pollo', azucar: 'Azúcar', oliva: 'Aceite de oliva', diesel: 'Diésel agrícola' },
-    en: { gas_natural: 'Natural gas (Henry Hub / TTF)', petroleo_wti: 'WTI crude oil (Texas)', petroleo_brent: 'Brent crude oil', mantequilla: 'Butter', leche_polvo: 'Skim milk powder', colza: 'Rapeseed', centeno: 'Rye', cebada: 'Barley', avena: 'Oats', sorgo: 'Sorghum', maiz: 'Corn', trigo: 'Wheat', arroz: 'Rice', leche: 'Milk', vaca: 'Cattle', cabra: 'Goat', pienso: 'Compound feed', harina_soja: 'Soybean meal', urea: 'Urea', dap: 'DAP (diammonium phosphate)', potasa: 'Potash (MOP)', cerdo: 'Pork', cordero: 'Lamb', huevos: 'Eggs', pollo: 'Chicken', azucar: 'Sugar', oliva: 'Olive oil', diesel: 'Agricultural diesel' },
-    fr: { gas_natural: 'Gaz naturel (Henry Hub / TTF)', petroleo_wti: 'Pétrole WTI (Texas)', petroleo_brent: 'Pétrole Brent', mantequilla: 'Beurre', leche_polvo: 'Lait écrémé en poudre', colza: 'Colza', centeno: 'Seigle', cebada: 'Orge', avena: 'Avoine', sorgo: 'Sorgho', maiz: 'Maïs', trigo: 'Blé', arroz: 'Riz', leche: 'Lait', vaca: 'Bovins', cabra: 'Chèvre', pienso: 'Aliment composé', harina_soja: 'Tourteau de soja', urea: 'Urée', dap: 'DAP (phosphate diammonique)', potasa: 'Potasse (MOP)', cerdo: 'Porc', cordero: 'Agneau', huevos: 'Œufs', pollo: 'Poulet', azucar: 'Sucre', oliva: "Huile d'olive", diesel: 'Gazole agricole' },
-    it: { gas_natural: 'Gas naturale (Henry Hub / TTF)', petroleo_wti: 'Petrolio WTI (Texas)', petroleo_brent: 'Petrolio Brent', mantequilla: 'Burro', leche_polvo: 'Latte scremato in polvere', colza: 'Colza', centeno: 'Segale', cebada: 'Orzo', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Mais', trigo: 'Grano', arroz: 'Riso', leche: 'Latte', vaca: 'Bovini', cabra: 'Capra', pienso: 'Mangime composto', harina_soja: 'Farina di soia', urea: 'Urea', dap: 'DAP (fosfato diammonico)', potasa: 'Potassa (MOP)', cerdo: 'Maiale', cordero: 'Agnello', huevos: 'Uova', pollo: 'Pollo', azucar: 'Zucchero', oliva: "Olio d'oliva", diesel: 'Gasolio agricolo' }
+    es: { soja_grano: 'Soja en grano', lenteja: 'Lentejas', guisante_seco: 'Guisantes secos', lino: 'Lino (linaza)', gas_natural: 'Gas natural (Henry Hub / TTF)', petroleo_wti: 'Petróleo WTI (Texas)', petroleo_brent: 'Petróleo Brent', mantequilla: 'Mantequilla', leche_polvo: 'Leche desnatada en polvo', colza: 'Colza', centeno: 'Centeno', cebada: 'Cebada', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Maíz', trigo: 'Trigo', arroz: 'Arroz', leche: 'Leche', vaca: 'Vaca (vacuno)', cabra: 'Cabra', pienso: 'Pienso compuesto', harina_soja: 'Harina de soja', urea: 'Urea', dap: 'DAP (fosfato diamónico)', potasa: 'Potasa (MOP)', cerdo: 'Cerdo', cordero: 'Cordero', huevos: 'Huevos', pollo: 'Pollo', azucar: 'Azúcar', oliva: 'Aceite de oliva', diesel: 'Diésel agrícola' },
+    en: { soja_grano: 'Soybeans', lenteja: 'Lentils', guisante_seco: 'Dry peas', lino: 'Flaxseed', gas_natural: 'Natural gas (Henry Hub / TTF)', petroleo_wti: 'WTI crude oil (Texas)', petroleo_brent: 'Brent crude oil', mantequilla: 'Butter', leche_polvo: 'Skim milk powder', colza: 'Rapeseed', centeno: 'Rye', cebada: 'Barley', avena: 'Oats', sorgo: 'Sorghum', maiz: 'Corn', trigo: 'Wheat', arroz: 'Rice', leche: 'Milk', vaca: 'Cattle', cabra: 'Goat', pienso: 'Compound feed', harina_soja: 'Soybean meal', urea: 'Urea', dap: 'DAP (diammonium phosphate)', potasa: 'Potash (MOP)', cerdo: 'Pork', cordero: 'Lamb', huevos: 'Eggs', pollo: 'Chicken', azucar: 'Sugar', oliva: 'Olive oil', diesel: 'Agricultural diesel' },
+    fr: { soja_grano: 'Soja (grain)', lenteja: 'Lentilles', guisante_seco: 'Pois secs', lino: 'Lin (graines)', gas_natural: 'Gaz naturel (Henry Hub / TTF)', petroleo_wti: 'Pétrole WTI (Texas)', petroleo_brent: 'Pétrole Brent', mantequilla: 'Beurre', leche_polvo: 'Lait écrémé en poudre', colza: 'Colza', centeno: 'Seigle', cebada: 'Orge', avena: 'Avoine', sorgo: 'Sorgho', maiz: 'Maïs', trigo: 'Blé', arroz: 'Riz', leche: 'Lait', vaca: 'Bovins', cabra: 'Chèvre', pienso: 'Aliment composé', harina_soja: 'Tourteau de soja', urea: 'Urée', dap: 'DAP (phosphate diammonique)', potasa: 'Potasse (MOP)', cerdo: 'Porc', cordero: 'Agneau', huevos: 'Œufs', pollo: 'Poulet', azucar: 'Sucre', oliva: "Huile d'olive", diesel: 'Gazole agricole' },
+    it: { soja_grano: 'Soia in grani', lenteja: 'Lenticchie', guisante_seco: 'Piselli secchi', lino: 'Lino (semi)', gas_natural: 'Gas naturale (Henry Hub / TTF)', petroleo_wti: 'Petrolio WTI (Texas)', petroleo_brent: 'Petrolio Brent', mantequilla: 'Burro', leche_polvo: 'Latte scremato in polvere', colza: 'Colza', centeno: 'Segale', cebada: 'Orzo', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Mais', trigo: 'Grano', arroz: 'Riso', leche: 'Latte', vaca: 'Bovini', cabra: 'Capra', pienso: 'Mangime composto', harina_soja: 'Farina di soia', urea: 'Urea', dap: 'DAP (fosfato diammonico)', potasa: 'Potassa (MOP)', cerdo: 'Maiale', cordero: 'Agnello', huevos: 'Uova', pollo: 'Pollo', azucar: 'Zucchero', oliva: "Olio d'oliva", diesel: 'Gasolio agricolo' }
   };
 
   var SRC_URL = {
@@ -545,6 +545,18 @@
         { nameKey: 'centeno', imperialUnitKey: 'bushel', imperialKgPerUnit: 25.401, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           eu: { price: 170.89, changePct: -6.0683, history: [174.26, 177.97, 173.61, 166.62, 176.37, 173.91, 174.33, 182.62, 177.24, 182.95, 181.93, 170.89], currency: 'EUR', kgPerUnit: 1000 },
           quoteTypes: { eu: { type: 'referencia', market: 'Comisión Europea (centeno panificable, agregado UE)' } } },
+        { nameKey: 'soja_grano', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
+        { nameKey: 'lenteja', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
+        { nameKey: 'guisante_seco', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
+        { nameKey: 'lino', caUnitKey: 'tonelada', caKgPerUnit: 1000, imperialUnitKey: 'tonelada', imperialKgPerUnit: 1000, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
+          ca: { price: 0, changePct: 0, history: [0, 0], currency: 'CAD', kgPerUnit: 1000 },
+          quoteTypes: { ca: { type: 'referencia', market: 'Statistics Canada (precio pagado al productor, provincia de referencia)' } } },
         // Sorgo: solo hay dato en EE. UU. (USDA NASS). El portal de la Comisión Europea no publica precio de sorgo, así que no hay región `eu`
         { nameKey: 'sorgo', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 7.7, changePct: -3.99, history: [6.46, 6.94, 6.73, 7.5, 7.95, 8.02, 7.7], currency: 'USD', kgPerUnit: 45.359 },
@@ -1013,6 +1025,26 @@
       comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
     },
     'avicultura-huevos-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-soja_grano-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-lenteja-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-guisante_seco-ca': {
+      sourceId: 'statcan', frequency: 'monthly',
+      methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'cereales-lino-ca': {
       sourceId: 'statcan', frequency: 'monthly',
       methodology: 'Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en una provincia de referencia. Pendiente de la primera ejecución automática.',
       comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null

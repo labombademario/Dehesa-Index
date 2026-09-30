@@ -20,6 +20,10 @@ const SYN = {
   huevos: 'eggs oeufs uova huevo gallina', pollo: 'chicken broiler poulet aves avicultura', pienso: 'feed mangime aliment compuesto racion ración',
   harina_soja: 'soja soy soybean meal tourteau farina soia proteina pienso feed', urea: 'fertilizer fertilizante abono nitrogeno nitrógeno nitrogen engrais azote',
   dap: 'fosfato fósforo phosphate phosphorus fertilizer abono engrais fosforo', potasa: 'potassium potash potasio kali fertilizer abono engrais',
+  soja_grano: 'soybean soja soy soia grano grain oilseed oleaginosa',
+  lenteja: 'lentil lenteja lentille lenticchia pulse legumbre',
+  guisante_seco: 'peas pea guisante pois piselli pulse legumbre proteaginosa',
+  lino: 'flax flaxseed linseed lino linaza lin oilseed oleaginosa',
   gas_natural: 'natural gas gas natural henry hub ttf gaz naturel gas naturale lng energia energy', petroleo_wti: 'oil crude wti texas petróleo petroleo petrole petrolio barril barrel baril energia energy', petroleo_brent: 'oil crude brent petróleo petroleo petrole petrolio barril barrel baril energia energy',
   azucar: 'sugar sucre zucchero remolacha caña beet cane', oliva: 'olive oil aceite huile olio virgen extra', diesel: 'gasoil gasóleo gasoleo fuel carburante combustible energia energía energy gazole'
 };

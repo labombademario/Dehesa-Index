@@ -22,6 +22,10 @@ SPEC = {
     "colza":   ("Canola (including rapeseed)", ["Saskatchewan", "Alberta", "Manitoba"], "Dollars per metric tonne", "tonelada", 1.0),
     "maiz":    ("Corn for grain", ["Ontario", "Quebec"], "Dollars per metric tonne", "tonelada", 1.0),
     "centeno": ("Rye", ["Saskatchewan", "Alberta", "Manitoba"], "Dollars per metric tonne", "tonelada", 1.0),
+    "soja_grano": ("Soybeans", ["Ontario", "Quebec", "Manitoba"], "Dollars per metric tonne", "tonelada", 1.0),
+    "lenteja": ("Lentils", ["Saskatchewan", "Alberta"], "Dollars per metric tonne", "tonelada", 1.0),
+    "guisante_seco": ("Dry peas", ["Saskatchewan", "Alberta", "Manitoba"], "Dollars per metric tonne", "tonelada", 1.0),
+    "lino": ("Flaxseed", ["Saskatchewan", "Manitoba"], "Dollars per metric tonne", "tonelada", 1.0),
     # leche: $/kilolitro -> $/100 kg con densidad 1,03 kg/l (1 kl = 1.030 kg), igual que Defra
     "leche":   ("Unprocessed milk from bovine", ["Quebec", "Ontario"], "Dollars per kilolitre", "100kg", 100.0 / 1030.0),
     "vaca":    ("Steers for slaughter", ["Alberta", "Ontario"], "Dollars per hundredweight", "cwt", 1.0),
@@ -30,7 +34,7 @@ SPEC = {
     "pollo":   ("Chickens for meat", ["Ontario", "Quebec"], "Dollars per kilogram", "kg", 1.0),
     "huevos":  ("Eggs in shell", ["Ontario", "Quebec"], "Dollars per dozen", "docena", 1.0),
 }
-CAT = {"trigo": "cereales", "cebada": "cereales", "avena": "cereales", "colza": "cereales", "maiz": "cereales", "centeno": "cereales",
+CAT = {"soja_grano": "cereales", "lenteja": "cereales", "guisante_seco": "cereales", "lino": "cereales", "trigo": "cereales", "cebada": "cereales", "avena": "cereales", "colza": "cereales", "maiz": "cereales", "centeno": "cereales",
        "leche": "lacteos", "vaca": "ganado", "cerdo": "porcino", "cordero": "ovino", "pollo": "avicultura", "huevos": "avicultura"}
 
 def call(path, body=None):
