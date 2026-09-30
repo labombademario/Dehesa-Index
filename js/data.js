@@ -575,8 +575,9 @@
     {
       id: 'avicultura', nameKey: 'avicultura',
       products: [
-        { nameKey: 'huevos', imperialUnitKey: 'docena', imperialKgPerUnit: 1, metricUnitKey: '100kg', metricKgPerUnit: 100,
-          us: { price: 2.35, changePct: 0.6, history: [2.05, 2.15, 2.20, 2.28, 2.30, 2.33, 2.35], currency: 'USD', kgPerUnit: 1 },
+        // huevos: docena EE. UU. = 0,6804 kg (huevo grande, mínimo USDA de 24 oz/docena) para comparar con la UE en €/100 kg; es una aproximación por tamaño, no un peso medio real
+        { nameKey: 'huevos', imperialUnitKey: 'docena', imperialKgPerUnit: 0.6804, metricUnitKey: '100kg', metricKgPerUnit: 100,
+          us: { price: 2.35, changePct: 0.6, history: [2.05, 2.15, 2.20, 2.28, 2.30, 2.33, 2.35], currency: 'USD', kgPerUnit: 0.6804 },
           eu: { price: 242.27, changePct: 1.3173, history: [218.69, 218.69, 218.43, 205.63, 205.91, 205.91, 205.91, 207.22, 209.55, 230.04, 239.12, 242.27], currency: 'EUR', kgPerUnit: 100 },
           countryFactors: { es: 1, de: 0.907, fr: 1.088, it: 1.243 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (huevo)' }, eu: { type: 'referencia', market: 'Comisión Europea (huevos, España, gallinas en jaula)' } } },
