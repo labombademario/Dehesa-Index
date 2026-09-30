@@ -60,6 +60,18 @@ for (const [id, nm] of Object.entries(CROPS)) {
   add({ t: 'crop', u: 'cultivos.html?crop=' + id, n: Object.fromEntries(L.map(l => [l, CS[l] + ' · ' + nm[l]])), s: tri('EE. UU. · USDA NASS Crop Progress', 'U.S. · USDA NASS Crop Progress', 'États-Unis · USDA NASS Crop Progress', 'USA · USDA NASS Crop Progress'), k: CROPK[id] + ' cultivo crop condicion condición valoracion siembra cosecha planting harvest progress buena excelente good excellent semis récolte semina raccolta' });
   add({ t: 'map', u: 'mapa.html?layer=crops&crop=' + id, n: Object.fromEntries(L.map(l => [l, MAPW[l] + ' · ' + CS[l] + ' · ' + nm[l]])), s: tri('Mapa de EE. UU. por estados', 'U.S. state map', 'Carte des États-Unis', 'Mappa degli Stati USA'), k: CROPK[id] + ' estados states mapa map cultivo crop' });
 }
+// --- Mercados USDA (AMS): un resultado por informe, con las palabras de sus productos
+import { existsSync } from 'node:fs';
+if (existsSync(new URL('../data/ams/index.json', import.meta.url))) {
+  const ams = JSON.parse(read('data/ams/index.json'));
+  const MK = tri('Mercados USDA', 'USDA markets', 'Marchés USDA', 'Mercati USDA');
+  const FAMK = { feed: 'piensos feed subproductos byproducts', bio: 'etanol ethanol ddgs destilados distillers', grain: 'granos grains cereales bids ofertas', oilseed: 'oleaginosas girasol sunflower canola', pulse: 'legumbres pulses beans lentejas lentils', rice: 'arroz rice', poultry: 'aves pollo pavo chicken turkey huevos eggs', meat: 'carne meat subproductos cerdo pork beef', pig: 'cerdos recria feeder pigs ovino sheep lana wool', cattle: 'ganado cattle terneros feeder vacuno', hay: 'heno hay alfalfa forraje', dairy: 'lacteos dairy leche milk mantequilla butter queso cheese suero whey' };
+  for (const r of ams.reports) {
+    let words = '';
+    try { const d = JSON.parse(read('data/ams/' + r.id + '.json')); const seen = new Set(); for (let i = 0; i < Math.min(2, d.dn.length); i++) for (const sr of d.series) if (sr.v[i]) seen.add(sr.v[i]); words = [...seen].slice(0, 60).join(' '); } catch (e) {}
+    add({ t: 'market', u: 'mercados.html?r=' + r.id, n: Object.fromEntries(L.map(l => [l, MK[l] + ' · ' + r.title])), s: tri('EE. UU. · USDA AMS Market News', 'U.S. · USDA AMS Market News', 'États-Unis · USDA AMS Market News', 'USA · USDA AMS Market News'), k: (FAMK[r.fam] || '') + ' ' + r.title + ' ' + words });
+  }
+}
 // --- clima
 const clim = JSON.parse(read('data/climate.json'));
 const CL = tri('Clima', 'Climate', 'Climat', 'Clima');
