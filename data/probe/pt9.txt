@@ -1,0 +1,112 @@
+WMS cap len 231109
+LAYER isip.data:ocupacoes.solo.AML.2017jun10 | ocupacoes.solo.AML.2017jun10
+LAYER isip.data:ocupacoes.solo.Alentejo.2017jun10 | ocupacoes.solo.Alentejo.2017jun10
+LAYER isip.data:ocupacoes.solo.Algarve.2017jun10 | ocupacoes.solo.Algarve.2017jun10
+LAYER isip.data:ocupacoes.solo.Centro_N.2017jun10 | ocupacoes.solo.Centro_N.2017jun10
+LAYER isip.data:ocupacoes.solo.Centro_S.2017jun10 | ocupacoes.solo.Centro_S.2017jun10
+LAYER isip.data:ocupacoes.solo.Norte_S.2017jun10 | ocupacoes.solo.Norte_S.2017jun10
+LAYER isip.data:ocupacoes.solo.RAA.2017jun10 | ocupacoes.solo.RAA.2017jun10
+LAYER isip.data:ocupacoes.solo.RAM.2017jun10 | ocupacoes.solo.RAM.2017jun10
+LAYER isip.data:ocupacoes.solo.AML.2018jun10 | ocupacoes.solo.AML.2018jun10
+LAYER isip.data:ocupacoes.solo.Alentejo.2018jun10 | ocupacoes.solo.Alentejo.2018jun10
+LAYER isip.data:ocupacoes.solo.Algarve.2018jun10 | ocupacoes.solo.Algarve.2018jun10
+LAYER isip.data:ocupacoes.solo.Centro_N.2018jun10 | ocupacoes.solo.Centro_N.2018jun10
+LAYER isip.data:ocupacoes.solo.Centro_S.2018jun10 | ocupacoes.solo.Centro_S.2018jun10
+LAYER isip.data:ocupacoes.solo.Norte_N.2018jun10 | ocupacoes.solo.Norte_N.2018jun10
+LAYER isip.data:ocupacoes.solo.Norte_S.2018jun10 | ocupacoes.solo.Norte_S.2018jun10
+LAYER isip.data:ocupacoes.solo.RAA.2018jun10 | ocupacoes.solo.RAA.2018jun10
+LAYER isip.data:ocupacoes.solo.RAM.2018jun10 | ocupacoes.solo.RAM.2018jun10
+LAYER isip.data:ocupacoes.solo.AML.2019jun10 | ocupacoes.solo.AML.2019jun10
+LAYER isip.data:ocupacoes.solo.Alentejo.2019jun10 | ocupacoes.solo.Alentejo.2019jun10
+LAYER isip.data:ocupacoes.solo.Algarve.2019jun10 | ocupacoes.solo.Algarve.2019jun10
+LAYER isip.data:ocupacoes.solo.Centro_N.2019jun10 | ocupacoes.solo.Centro_N.2019jun10
+LAYER isip.data:ocupacoes.solo.Centro_S.2019jun10 | ocupacoes.solo.Centro_S.2019jun10
+LAYER isip.data:ocupacoes.solo.Norte_S.2019jun10 | ocupacoes.solo.Norte_S.2019jun10
+LAYER isip.data:ocupacoes.solo.RAA.2019jun10 | ocupacoes.solo.RAA.2019jun10
+LAYER isip.data:ocupacoes.solo.RAM.2019jun10 | ocupacoes.solo.RAM.2019jun10
+LAYER isip.data:parcelas.AML.2017jun10 | Parcelas (AML) 2017 Junho 10
+LAYER isip.data:parcelas.Algarve.2017jun10 | Parcelas (Algarve) 2017 Junho 10
+LAYER isip.data:parcelas.Centro.2017jun10 | Parcelas (Centro) 2017 Junho 10
+LAYER isip.data:parcelas.Norte.2017jun10 | Parcelas (Norte) 2017 Junho 10
+LAYER isip.data:parcelas.RAA.2017jun10 | Parcelas (RAA) 2017 Junho 10
+LAYER isip.data:parcelas.RAM.2017jun10 | Parcelas (RAM) 2017 Junho 10
+LAYER isip.data:parcelas.alentejo.2017jun10 | Parcelas (Alentejo) 2017 Junho 10
+LAYER isip.data:parcelas.AML.2018jun10 | parcelas.AML.2018jun10
+LAYER isip.data:parcelas.Algarve.2018jun10 | parcelas.Algarve.2018jun10
+LAYER isip.data:parcelas.Centro.2018jun10 | parcelas.Centro.2018jun10
+LAYER isip.data:parcelas.Norte.2018jun10 | parcelas.Norte.2018jun10
+LAYER isip.data:parcelas.RAA.2018jun10 | parcelas.RAA.2018jun10
+LAYER isip.data:parcelas.RAM.2018jun10 | parcelas.RAM.2018jun10
+LAYER isip.data:parcelas.alentejo.2018jun10 | parcelas.alentejo.2018jun10
+LAYER isip.data:parcelas.AML.2019jun10 | parcelas.AML.2019jun10
+LAYER isip.data:parcelas.Algarve.2019jun10 | parcelas.Algarve.2019jun10
+LAYER isip.data:parcelas.Centro.2019jun10 | parcelas.Centro.2019jun10
+LAYER isip.data:parcelas.Norte.2019jun10 | parcelas.Norte.2019jun10
+LAYER isip.data:parcelas.RAA.2019jun10 | parcelas.RAA.2019jun10
+LAYER isip.data:parcelas.RAM.2019jun10 | parcelas.RAM.2019jun10
+LAYER isip.data:parcelas.Alentejo.2019jun10 | parcelas.Alentejo.2019jun10
+LAYER PERIGOSIDADE_INCENDIO_RURAL | Carta perigosidade estrutural 2020-2030
+LAYER baldios.2022jun10 | Baldios - 2022 Junho 10
+LAYER baldios.2023jun10 | Baldios - 2023 Junho 10
+LAYER baldios.2024jun10 | Baldios - 2024 Junho 10
+LAYER baldios.atual | Baldios Atuais
+LAYER classificacao.automatica.2025 | Classificacao Automatica 2025
+LAYER compromissos.pepac.acores.central.oriental | Compromissos Plurianuais PEPAC (Acores Central Oriental)
+LAYER compromissos.pepac.acores.ocidental | Compromissos Plurianuais PEPAC (Acores Ocidental)
+LAYER compromissos.pepac.continente | Compromissos Plurianuais PEPAC (Continente)
+LAYER compromissos.pepac.madeira | Compromissos Plurianuais PEPAC (Madeira)
+LAYER culturas.2020jun10 | Culturas - 2020 Junho 10
+LAYER culturas.2021jun10 | Culturas - 2021 Junho 10
+LAYER culturas.2022jun10 | Culturas - 2022 Junho 10
+LAYER culturas.2023jun10 | Culturas - 2023 Junho 10
+LAYER culturas.2024jun10 | Culturas - 2024 Junho 10
+LAYER culturas.2025jun10 | Culturas - 2025 Junho 10
+LAYER distritos | Distritos
+LAYER elementos.lineares.atual | Elementos Lineares e de Paisagem Atuais
+LAYER elementos.lineares.atual.acores.central.oriental | Elementos Lineares e de Paisagem Atual (Acores Central Oriental)
+LAYER elementos.lineares.atual.acores.ocidental | Elementos Lineares e de Paisagem Atuais (Acores Ocidental)
+LAYER elementos.lineares.atual.madeira | Elementos Lineares e de Paisagem Atuais (Madeira)
+LAYER freguesias | Freguesias
+LAYER infraestruturas.projetos.investimento | Infraestruturas de Projetos de Investimento
+LAYER monitorizacao | Monitorização
+LAYER monitorizacao_2020 | Monitorização 2020
+LAYER monitorizacao_2021 | Monitorização 2021
+LAYER monitorizacao_2022 | Monitorização 2022
+LAYER monitorizacao_2023 | Monitorização 2023
+LAYER ocupacoes.solo.2020jun10 | Ocupações de Solo - 2020 Junho 10
+LAYER ocupacoes.solo.2021jun10 | Ocupações de Solo - 2021 Junho 10
+LAYER ocupacoes.solo.2022jun10 | Ocupações de Solo - 2022 Junho 10
+LAYER ocupacoes.solo.2023jun10 | Ocupações de Solo - 2023 Junho 10
+LAYER ocupacoes.solo.2024jun10 | Ocupações de Solo - 2024 Junho 10
+LAYER ocupacoes.solo.2025jun10 | Ocupações de Solo - 2025 Junho 10
+LAYER ocupacoes.solo.Norte_N1.2017jun10 | ocupacoes.solo.Norte_N1.2017jun10
+LAYER ocupacoes.solo.Norte_N1.2018jun10 | ocupacoes.solo.Norte_N1.2018jun10
+LAYER ocupacoes.solo.Norte_N1.2019jun10 | ocupacoes.solo.Norte_N1.2019jun10
+LAYER ocupacoes.solo.Norte_N2.2017jun10 | ocupacoes.solo.Norte_N2.2017jun10
+LAYER ocupacoes.solo.Norte_N2.2019jun10 | ocupacoes.solo.Norte_N2.2019jun10
+LAYER ocupacoes.solo.atual | Ocupações do Solo Atuais
+LAYER ocupacoes.solo.atual.acores.central.oriental | Ocupações do Solo Atuais (Acores Central Oriental)
+LAYER ocupacoes.solo.atual.acores.ocidental | Ocupações do Solo Atuais (Acores Ocidental)
+LAYER ocupacoes.solo.atual.madeira | Ocupações do Solo Atuais (Madeira)
+LAYER ocupacoes.solo.baldios.atual | Ocupações do Solo de Baldios Atuais
+LAYER parcelas.2020jun10 | Parcelas - 2020 Junho 10
+LAYER parcelas.2021jun10 | Parcelas - 2021 Junho 10
+LAYER parcelas.2022jun10 | Parcelas - 2022 Junho 10
+LAYER parcelas.2023jun10 | Parcelas - 2023 Junho 10
+LAYER parcelas.2024jun10 | Parcelas - 2024 Junho 10
+LAYER parcelas.2025jun10 | Parcelas - 2025 Junho 10
+LAYER parcelas.atual | Parcelas Atuais
+LAYER parcelas.atual.acores.central.oriental | Parcelas Atuais (Acores Central Oriental)
+LAYER parcelas.atual.acores.ocidental | Parcelas Atuais (Acores Ocidental)
+LAYER parcelas.atual.madeira | Parcelas Atuais (Madeira)
+LAYER parcelas.vitis | Parcelas Vitis
+LAYER projetos.investimento | Projetos de Investimento
+LAYER projetos.reap | Projetos REAP
+LAYER revisao_2021 | revisao_2021
+LAYER revisao_2022 | revisao_2022
+CRS CRS:84 EPSG:102160 EPSG:20790 EPSG:20791 EPSG:27492 EPSG:27493 EPSG:3763 EPSG:3785 EPSG:3857 EPSG:404000 EPSG:4326 EPSG:5014 EPSG:5015 EPSG:5016
+SCALE 
+GETMAP isip.data:culturas.2025jun10 ('image/png', 162926, None)
+GETMAP wide ('text/xml; charset=UTF-8', 457, None)
+GETMAP isip.data:ocupacoes.solo.2025jun10 ('image/png', 163699, None)
+GETMAP wide ('text/xml; charset=UTF-8', 457, None)
