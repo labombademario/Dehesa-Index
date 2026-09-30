@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T23:56:22.890Z",
-  "observationCount": 10,
+  "generatedAt": "2026-09-30T00:04:23.984Z",
+  "observationCount": 12,
   "products": [
     "arroz",
     "diesel",
@@ -19,6 +19,7 @@
     "us"
   ],
   "sources": [
+    "eia",
     "eu_oil_bulletin",
     "european_commission",
     "eurostat",
@@ -57,8 +58,23 @@
       "status": "verified",
       "verifiedAt": "2026-09-29T22:39:01Z",
       "comparability": "directional",
-      "points": 1,
-      "coverageStart": "2026-09-01",
+      "points": 25,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2026-09-28",
+      "unit": "gal",
+      "currency": "USD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "points": 24,
+      "coverageStart": "2024-10-01",
       "coverageEnd": "2026-09-01"
     },
     {

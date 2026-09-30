@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T23:56:23.124Z",
+  "generatedAt": "2026-09-30T00:04:24.218Z",
   "policy": {
     "neverConvertQuoteBasis": true,
     "neverTreatIndexAsPrice": true,
@@ -15,6 +15,7 @@
     "100kg",
     "bushel",
     "cwt",
+    "gal",
     "index_2020_100",
     "litro",
     "tonelada"
@@ -1365,6 +1366,27 @@
       }
     },
     {
+      "id": "di_diesel_eu:2024-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5009550522471673,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_eurostat_cereals_output_index:2024-09-01",
       "product": "eurostat_cereals_output_index",
       "region": "eu",
@@ -1446,6 +1468,132 @@
         "kgPerUnit": null,
         "baseUnit": "not_available",
         "method": "source-specific"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2024-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.510542342245054,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2024-10-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2024-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.584,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2024-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5245801784327129,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2024-11-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2024-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.536,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2024-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2024-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5652998894195294,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2024-12-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2024-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.54,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
       }
     },
     {
@@ -1533,6 +1681,132 @@
       }
     },
     {
+      "id": "di_diesel_eu:2025-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5940333095024302,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-01-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.561,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2025-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6255134463469063,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-02-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.66,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2025-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.6184053573518957,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-03-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.635,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_eurostat_cereals_output_index:2025-03-01",
       "product": "eurostat_cereals_output_index",
       "region": "eu",
@@ -1617,6 +1891,132 @@
       }
     },
     {
+      "id": "di_diesel_eu:2025-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.553305692533321,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-04-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.639,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2025-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4931369444660632,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-05-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.497,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2025-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4812813520836199,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-06-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.451,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_eurostat_cereals_output_index:2025-06-01",
       "product": "eurostat_cereals_output_index",
       "region": "eu",
@@ -1698,6 +2098,132 @@
         "kgPerUnit": null,
         "baseUnit": "not_available",
         "method": "source-specific"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2025-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.543952897034712,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-07-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.739,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2025-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5514458105578426,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-08-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.8,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2025-09-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5169374592498177,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-09-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.734,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
       }
     },
     {
@@ -1806,6 +2332,48 @@
       }
     },
     {
+      "id": "di_diesel_eu:2025-10-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5380958341153042,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-10-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.711,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_fertilizantes_urea_eu:2025-10-01",
       "product": "urea",
       "region": "eu",
@@ -1827,6 +2395,48 @@
       }
     },
     {
+      "id": "di_diesel_eu:2025-11-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5483107638099374,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-11-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.753,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_fertilizantes_urea_eu:2025-11-01",
       "product": "urea",
       "region": "eu",
@@ -1843,6 +2453,48 @@
       "comparability": "not_comparable",
       "normalization": {
         "kgPerUnit": 1000,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2025-12-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5887389299294952,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2025-12-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.758,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
         "baseUnit": "USD_per_kg_or_index",
         "method": "unit mass anchor only; currency and quote basis remain unchanged"
       }
@@ -1953,6 +2605,48 @@
       }
     },
     {
+      "id": "di_diesel_eu:2026-01-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5448893612910384,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2026-01-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.477,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-01-01",
       "product": "leche",
       "region": "eu",
@@ -2011,6 +2705,48 @@
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2026-02-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.5826182685844838,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2026-02-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.681,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
         "baseUnit": "USD_per_kg_or_index",
         "method": "unit mass anchor only; currency and quote basis remain unchanged"
       }
@@ -2116,6 +2852,48 @@
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2026-03-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.629222728844026,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2026-03-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 3.897,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
         "baseUnit": "USD_per_kg_or_index",
         "method": "unit mass anchor only; currency and quote basis remain unchanged"
       }
@@ -2310,6 +3088,48 @@
       }
     },
     {
+      "id": "di_diesel_eu:2026-04-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.1122746554519787,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2026-04-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 5.643,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-04-01",
       "product": "leche",
       "region": "eu",
@@ -2415,6 +3235,48 @@
       }
     },
     {
+      "id": "di_diesel_eu:2026-05-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.9753445404404522,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2026-05-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 5.64,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-05-01",
       "product": "leche",
       "region": "eu",
@@ -2515,6 +3377,48 @@
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_eu:2026-06-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.8437106637911858,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2026-06-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 5.35,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
         "baseUnit": "USD_per_kg_or_index",
         "method": "unit mass anchor only; currency and quote basis remain unchanged"
       }
@@ -2709,6 +3613,48 @@
       }
     },
     {
+      "id": "di_diesel_eu:2026-07-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.7661741779897588,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2026-07-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 4.578,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-07-01",
       "product": "leche",
       "region": "eu",
@@ -2814,6 +3760,48 @@
       }
     },
     {
+      "id": "di_diesel_eu:2026-08-01",
+      "product": "diesel",
+      "region": "eu",
+      "sourceId": "eu_oil_bulletin",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.0439216435120366,
+      "currency": "EUR",
+      "unit": "litro",
+      "frequency": "weekly",
+      "publicationDate": null,
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2026-08-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 5.348,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-08-01",
       "product": "leche",
       "region": "eu",
@@ -2903,17 +3891,38 @@
       "region": "eu",
       "sourceId": "eu_oil_bulletin",
       "observationDate": "2026-09-01",
-      "snapshotDate": "2026-09-29",
-      "value": 2.2264435149088713,
+      "snapshotDate": "2026-09-30",
+      "value": 2.1084127823327123,
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": "2026-09-24",
+      "publicationDate": null,
       "status": "verified",
-      "verifiedAt": "2026-09-29T22:39:01Z",
+      "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 1,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_diesel_us:2026-09-01",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 5.967,
+      "currency": "USD",
+      "unit": "gal",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-28",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 3.78541,
         "baseUnit": "USD_per_kg_or_index",
         "method": "unit mass anchor only; currency and quote basis remain unchanged"
       }

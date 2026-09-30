@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T23:56:23.007Z",
+  "generatedAt": "2026-09-30T00:04:24.102Z",
   "scope": {
-    "latestObservations": 10,
-    "historyObservations": 138,
-    "verified": 10,
+    "latestObservations": 11,
+    "historyObservations": 186,
+    "verified": 11,
     "pending": 0,
     "stale": 5,
     "regions": [
@@ -37,7 +37,7 @@
       "verifiedAt": "2026-09-29T23:53:33.765Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "ageDays": 59,
+      "ageDays": 60,
       "stale": true
     },
     {
@@ -51,8 +51,23 @@
       "publicationDate": "2026-09-24",
       "verifiedAt": "2026-09-29T22:39:01Z",
       "frequency": "weekly",
-      "historyPoints": 1,
-      "ageDays": 8,
+      "historyPoints": 25,
+      "ageDays": 9,
+      "stale": false
+    },
+    {
+      "id": "di_diesel_us",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-09-28",
+      "publicationDate": "2026-09-28",
+      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "frequency": "weekly",
+      "historyPoints": 24,
+      "ageDays": 2,
       "stale": false
     },
     {
@@ -67,7 +82,7 @@
       "verifiedAt": "2026-09-29T23:56:22.774Z",
       "frequency": "quarterly",
       "historyPoints": 24,
-      "ageDays": 91,
+      "ageDays": 92,
       "stale": false
     },
     {
@@ -82,7 +97,7 @@
       "verifiedAt": "2026-09-29T23:56:22.774Z",
       "frequency": "quarterly",
       "historyPoints": 24,
-      "ageDays": 91,
+      "ageDays": 92,
       "stale": false
     },
     {
@@ -97,7 +112,7 @@
       "verifiedAt": "2026-09-29T23:56:22.774Z",
       "frequency": "quarterly",
       "historyPoints": 24,
-      "ageDays": 91,
+      "ageDays": 92,
       "stale": false
     },
     {
@@ -112,7 +127,7 @@
       "verifiedAt": "2026-09-29T23:56:22.774Z",
       "frequency": "quarterly",
       "historyPoints": 24,
-      "ageDays": 91,
+      "ageDays": 92,
       "stale": false
     },
     {
@@ -127,7 +142,7 @@
       "verifiedAt": "2026-09-29T22:39:01Z",
       "frequency": "monthly",
       "historyPoints": 8,
-      "ageDays": 59,
+      "ageDays": 60,
       "stale": true
     },
     {
@@ -142,7 +157,7 @@
       "verifiedAt": "2026-09-29T23:53:33.240Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "ageDays": 59,
+      "ageDays": 60,
       "stale": true
     },
     {
@@ -157,7 +172,7 @@
       "verifiedAt": "2026-09-29T23:53:32.663Z",
       "frequency": "monthly",
       "historyPoints": 7,
-      "ageDays": 59,
+      "ageDays": 60,
       "stale": true
     },
     {
@@ -172,7 +187,7 @@
       "verifiedAt": "2026-09-29T17:47:20Z",
       "frequency": "monthly",
       "historyPoints": 12,
-      "ageDays": 59,
+      "ageDays": 60,
       "stale": true
     }
   ],
