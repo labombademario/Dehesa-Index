@@ -1,20 +1,25 @@
-name: Probe AT
-on: workflow_dispatch
+name: Update Portugal (INE)
+on:
+  schedule:
+    - cron: '40 16 * * 2,5'
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency:
   group: dehesa-data-writes
   cancel-in-progress: false
 jobs:
-  p:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/probe-at.py
+      - run: echo ok
+      - run: python3 scripts/update-portugal.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/probe
-          git commit -qm "probe at" || exit 0
+          git add data/portugal-stats.json data/portugal-log.txt
+          git diff --cached --quiet && exit 0
+          git commit -qm "Datos Portugal (INE)"
           git pull -q --rebase
           git push
