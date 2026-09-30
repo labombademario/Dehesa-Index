@@ -38,8 +38,10 @@
   function find(a, p) { for (var i = a.length - 1; i >= 0; i--) if (a[i][0] === p) return a[i][1]; return null; }
   function py(p) { return (Number(p.slice(0, 4)) - 1) + p.slice(4); }
   function pm(a) { return a.length > 1 ? a[a.length - 2][1] : null; }
+  var AXX = { es: ['Mes', 'Índice (2011 = 100)'], en: ['Month', 'Index (2011 = 100)'], fr: ['Mois', 'Indice (2011 = 100)'], it: ['Mese', 'Indice (2011 = 100)'] };
+  function axTitle(y, x, yx) { return '<text transform="translate(12 ' + yx + ') rotate(-90)" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(y) + '</text><text x="' + x[0] + '" y="' + x[1] + '" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(x[2]) + '</text>'; }
   function lineChart(a, cmp) {
-    var W = 720, H = 230, L = 48, R = 12, Tp = 12, Bt = 26, n = a.length, min = Infinity, max = -Infinity;
+    var W = 720, H = 252, L = 62, R = 12, Tp = 12, Bt = 48, n = a.length, min = Infinity, max = -Infinity;
     a.concat(cmp || []).forEach(function (x) { if (x[1] > max) max = x[1]; if (x[1] < min) min = x[1]; });
     if (n < 2) return '';
     var lo = Math.floor(min / 10) * 10 - 10 > 0 ? Math.floor(min / 10) * 10 - 10 : 0, hi = Math.ceil(max / 10) * 10 + 5;
@@ -47,8 +49,9 @@
     var g = ''; for (var k = 0; k <= 4; k++) { var vv = lo + (hi - lo) * k / 4; g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(vv) + '" y2="' + y(vv) + '" stroke="var(--border)"/><text x="' + (L - 6) + '" y="' + (y(vv) + 4) + '" font-size="11" text-anchor="end" fill="var(--text-faint)">' + nf(vv, 0) + '</text>'; }
     var d = a.map(function (p, i) { return (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(p[1]).toFixed(1); }).join(' ');
     var dots = n <= 40 ? a.map(function (p, i) { return '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(p[1]).toFixed(1) + '" r="3" fill="' + C1 + '"><title>' + esc(p[0] + ': ' + nf(p[1], 1)) + '</title></circle>'; }).join('') : '';
-    var xl = [0, Math.floor((n - 1) / 2), n - 1].map(function (i) { return '<text x="' + x(i) + '" y="' + (H - 8) + '" font-size="11" text-anchor="' + (i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle') + '" fill="var(--text-faint)">' + esc(a[i][0]) + '</text>'; }).join('');
-    return '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block" role="img">' + g + '<path d="' + d + '" fill="none" stroke="' + C1 + '" stroke-width="2.2" stroke-linejoin="round"/>' + dots + xl + '</svg>';
+    var xl = [0, Math.floor((n - 1) / 2), n - 1].map(function (i) { return '<text x="' + x(i) + '" y="' + (H - Bt + 17) + '" font-size="11" text-anchor="' + (i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle') + '" fill="var(--text-faint)">' + esc(a[i][0]) + '</text>'; }).join('') + axTitle((AXX[lang()] || AXX.es)[1], [(L + W - R) / 2, H - 5, (AXX[lang()] || AXX.es)[0]], (Tp + H - Bt) / 2);
+    var spec = { L: L, R: W - R, T: Tp, B: H - Bt, s: [{ n: '', c: C1, p: a.map(function (p, i) { return [+x(i).toFixed(1), +y(p[1]).toFixed(1), nf(p[1], 1), p[0]]; }) }] };
+    return '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img"' + window.DehesaChart.attr(spec).replace(' style="touch-action:pan-y"', '') + '>' + g + '<path d="' + d + '" fill="none" stroke="' + C1 + '" stroke-width="2.2" stroke-linejoin="round"/>' + dots + xl + '</svg>';
   }
   function card(l, v, sub) { return '<div class="di-card" style="padding:14px 16px;flex:1 1 200px;min-width:180px"><div style="font-size:11px;letter-spacing:.4px;color:var(--text-faint);font-weight:700">' + esc(l).toUpperCase() + '</div><div style="font-size:24px;font-weight:700;margin:4px 0 2px;font-family:\'Source Serif 4\',serif">' + v + '</div><div style="font-size:12.5px">' + sub + '</div></div>'; }
   function render() {

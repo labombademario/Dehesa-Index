@@ -164,6 +164,13 @@
     var history = numericHistory(observation);
     region.price = Number(observation.value);
     if (history) region.history = history;
+    // histórico con fechas reales para el modal (sin inventar nada)
+    var dated = (Array.isArray(observation.history) ? observation.history : []).map(function (point) {
+      return { ts: window.DehesaChart ? window.DehesaChart.histTs(point) : NaN, value: Number(point && point.value) };
+    }).filter(function (point) { return Number.isFinite(point.ts) && Number.isFinite(point.value); })
+      .sort(function (a, b) { return a.ts - b.ts; });
+    region.histPts = dated.length >= 2 ? dated : null;
+    region.histGran = observation.frequency === 'monthly' || observation.frequency === 'quarterly' ? 'month' : 'day';
     if (Number.isFinite(Number(observation.changePct))) region.changePct = Number(observation.changePct);
 
     var trustKey = contract.key.replace(':', '-') + '-' + observation.region;
@@ -868,7 +875,7 @@
   function openHistory(key) {
     var entry = PRODUCT_BY_KEY[key];
     if (!entry) return;
-    state.history = { key: key, region: defaultRegionFor(entry), range: '3m', compareMode: false, compareKey: '', yoy: false };
+    state.history = { key: key, region: defaultRegionFor(entry), range: '1y', compareMode: false, compareKey: '', yoy: false };
     lockProductModal();
     renderHistoryModal();
   }
@@ -890,60 +897,85 @@
     var t = ui();
     var entry = PRODUCT_BY_KEY[h.key];
     var avail = availableRegions(entry);
-    var days = D.HISTORY_RANGE_DAYS[h.range];
     var ro = regionObjFor(entry, h.region);
-    var seedKey = seedKeyFor(entry, h.region);
-    var view = D.buildHistoryView(ro.region, productName(entry.nameKey), ro.ccy, ro.kg, ro.unit, D.FX, seedKey, days, T());
+    var DAY = 86400000, RANGES = [['3m', 92], ['6m', 183], ['1y', 366], ['2y', 731], ['max', 0]];
+    var CH = window.DehesaChart, sym = (D.CCY_SYMBOL && D.CCY_SYMBOL[ro.ccy]) || (ro.ccy + ' ');
+    function win(pts, days) { if (!days || !pts.length) return pts; var last = pts[pts.length - 1].ts; return pts.filter(function (p) { return p.ts >= last - days * DAY; }); }
+    function daysOf(r) { for (var i = 0; i < RANGES.length; i++) if (RANGES[i][0] === r) return RANGES[i][1]; return 0; }
+    function dlabel(ts, gran) { return gran === 'month' ? CH.fmtMonth(ts) : CH.fmtDateFull(ts); }
+    function xfmt(gran) { return gran === 'month' ? function (ts) { return CH.fmtMonth(ts); } : undefined; }
+    function money(v) { var d = Math.abs(v) < 1 ? 3 : 2; try { return sym + v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return sym + v.toFixed(d); } }
+    function pctSer(pts, gran) { var base = pts[0].y || 1; return pts.map(function (p) { return { x: p.ts, y: (p.y - base) / base * 100, l: dlabel(p.ts, gran) }; }); }
+    function pctFmt(v) { return D.fmtChange(v); }
+    var real = D.realHistory(ro.region, ro.ccy, ro.kg, D.FX);
+    var opts = [];
+    if (real) { var prevN = 0; RANGES.forEach(function (r) { var n = win(real.pts, r[1]).length; if (n >= 2 && n > prevN) { opts.push(r[0]); prevN = n; } }); }
+    if (opts.length && opts.indexOf(h.range) < 0) h.range = opts[opts.length - 1];
+    var days = daysOf(h.range);
+    h.exp = null;
 
     var regionBtns = avail.map(function (r) {
       return '<button type="button" class="di-region-btn' + (r === h.region ? ' active' : '') + '" data-hregion="' + r + '">' + esc(D.REGION[lang()][r]) + '</button>';
     }).join('');
-    var rangeBtns = D.HISTORY_RANGE_ORDER.map(function (r) {
+    var rangeBtns = opts.map(function (r) {
       return '<button type="button" class="di-range-btn' + (r === h.range ? ' active' : '') + '" data-hrange="' + r + '">' + r.toUpperCase() + '</button>';
     }).join('');
 
+    var none = function (msg) { return '<div class="di-field-hint" style="padding:26px 12px;text-align:center">' + esc(msg) + '</div>'; };
     var chartHtml = '';
-    if (h.compareMode && h.compareKey && PRODUCT_BY_KEY[h.compareKey]) {
+    if (!real) {
+      chartHtml = none(t.historyNone);
+    } else if (h.compareMode && h.compareKey && PRODUCT_BY_KEY[h.compareKey]) {
       var cEntry = PRODUCT_BY_KEY[h.compareKey];
       var cRo = regionObjFor(cEntry, defaultRegionFor(cEntry));
-      var aRaw = D.rawHistorySlice(ro.region, seedKey, days, 0);
-      var bRaw = D.rawHistorySlice(cRo.region, seedKeyFor(cEntry, defaultRegionFor(cEntry)), days, 0);
-      var aPct = D.pctSeries(aRaw), bPct = D.pctSeries(bRaw);
-      var cmp = D.buildComparePair(aPct, productName(entry.nameKey), bPct, productName(cEntry.nameKey), T());
-      chartHtml =
-        '<div class="di-history-chart-wrap"><svg viewBox="0 0 560 170" preserveAspectRatio="none">' +
-          '<path d="' + cmp.comparePath + '" stroke="' + T().compareLine + '" fill="none" stroke-width="2"/>' +
-          '<path d="' + cmp.primaryPath + '" stroke="' + T().positive + '" fill="none" stroke-width="2"/>' +
-        '</svg></div>' +
-        '<div class="di-history-legend">' +
-          '<span><i style="background:' + T().positive + ';"></i>' + esc(cmp.primaryLabel) + ' <b style="color:' + cmp.primaryChangeColor + ';">' + esc(cmp.primaryChangeLabel) + '</b></span>' +
-          '<span><i style="background:' + T().compareLine + ';"></i>' + esc(cmp.compareLabel) + ' <b style="color:' + cmp.compareChangeColor + ';">' + esc(cmp.compareChangeLabel) + '</b></span>' +
-        '</div>' +
-        '<div class="di-compare-active-row"><span>' + esc(t.compareActiveLabel) + ' ' + esc(cmp.compareLabel) + '</span><button type="button" class="di-compare-clear" id="di-compare-clear">' + esc(t.compareClearLabel) + '</button></div>' +
-        '<div class="di-field-hint">' + esc(t.compareHint) + '</div>';
+      var cReal = D.realHistory(cRo.region, cRo.ccy, cRo.kg, D.FX);
+      if (!cReal) chartHtml = none(t.historyNone + ' (' + productName(cEntry.nameKey) + ')');
+      else {
+        var aW = win(real.pts, days), bW = win(cReal.pts, days);
+        if (aW.length < 2 || bW.length < 2) chartHtml = none(t.historyNone);
+        else {
+          var aS = pctSer(aW, real.gran), bS = pctSer(bW, cReal.gran);
+          chartHtml = CH.render({ xMode: 'time', xTitle: t.csvHeaderDate, yTitle: t.historyAxisPct, aria: productName(entry.nameKey) + ' / ' + productName(cEntry.nameKey), zero: true, noLegend: true, yFmt: function (v) { return v.toLocaleString(lang(), { maximumFractionDigits: 1 }) + ' %'; }, vFmt: pctFmt, xFmt: xfmt(real.gran),
+            series: [{ name: productName(cEntry.nameKey), color: T().compareLine, pts: bS }, { name: productName(entry.nameKey), color: T().positive, pts: aS }] }) +
+            '<div class="di-history-legend">' +
+              '<span><i style="background:' + T().positive + ';"></i>' + esc(productName(entry.nameKey)) + ' <b style="color:' + D.changeColor(aS[aS.length - 1].y, T()) + ';">' + esc(pctFmt(aS[aS.length - 1].y)) + '</b></span>' +
+              '<span><i style="background:' + T().compareLine + ';"></i>' + esc(productName(cEntry.nameKey)) + ' <b style="color:' + D.changeColor(bS[bS.length - 1].y, T()) + ';">' + esc(pctFmt(bS[bS.length - 1].y)) + '</b></span>' +
+            '</div>' +
+            '<div class="di-compare-active-row"><span>' + esc(t.compareActiveLabel) + ' ' + esc(productName(cEntry.nameKey)) + '</span><button type="button" class="di-compare-clear" id="di-compare-clear">' + esc(t.compareClearLabel) + '</button></div>' +
+            '<div class="di-field-hint">' + esc(t.compareHint) + '</div>';
+        }
+      }
     } else if (h.yoy) {
-      var thisYearRaw = D.rawHistorySlice(ro.region, seedKey, 365, 0);
-      var lastYearRaw = D.rawHistorySlice(ro.region, seedKey, 365, 365);
-      var tPct = D.pctSeries(thisYearRaw), lPct = D.pctSeries(lastYearRaw);
-      var cmp2 = D.buildComparePair(tPct, t.historyYoyThisYear, lPct, t.historyYoyLastYear, T());
-      chartHtml =
-        '<div class="di-history-chart-wrap"><svg viewBox="0 0 560 170" preserveAspectRatio="none">' +
-          '<path d="' + cmp2.comparePath + '" stroke="' + T().compareLine + '" fill="none" stroke-width="2"/>' +
-          '<path d="' + cmp2.primaryPath + '" stroke="' + T().positive + '" fill="none" stroke-width="2"/>' +
-        '</svg></div>' +
-        '<div class="di-history-legend">' +
-          '<span><i style="background:' + T().positive + ';"></i>' + esc(cmp2.primaryLabel) + ' <b style="color:' + cmp2.primaryChangeColor + ';">' + esc(cmp2.primaryChangeLabel) + '</b></span>' +
-          '<span><i style="background:' + T().compareLine + ';"></i>' + esc(cmp2.compareLabel) + ' <b style="color:' + cmp2.compareChangeColor + ';">' + esc(cmp2.compareChangeLabel) + '</b></span>' +
-        '</div>' +
-        '<div class="di-field-hint">' + esc(t.compareHint) + '</div>';
+      var tol = real.gran === 'month' ? 16 * DAY : 5 * DAY, cur = win(real.pts, 366), ly = [], curM = [];
+      cur.forEach(function (p) {
+        var tgt = p.ts - 365 * DAY, best = null, bd = Infinity;
+        real.pts.forEach(function (q) { var d = Math.abs(q.ts - tgt); if (d < bd) { bd = d; best = q; } });
+        if (best && bd <= tol) { curM.push(p); ly.push({ ts: p.ts, y: best.y, own: best.ts }); }
+      });
+      if (curM.length < 2) chartHtml = none(t.historyYoyNone);
+      else {
+        var tS = pctSer(curM, real.gran), base = ly[0].y || 1;
+        var lS = ly.map(function (p) { return { x: p.ts, y: (p.y - base) / base * 100, l: dlabel(p.own, real.gran) }; });
+        chartHtml = CH.render({ xMode: 'time', xTitle: t.csvHeaderDate, yTitle: t.historyAxisPct, aria: t.historyYoyThisYear + ' / ' + t.historyYoyLastYear, zero: true, noLegend: true, yFmt: function (v) { return v.toLocaleString(lang(), { maximumFractionDigits: 1 }) + ' %'; }, vFmt: pctFmt, xFmt: xfmt(real.gran),
+          series: [{ name: t.historyYoyLastYear, color: T().compareLine, pts: lS }, { name: t.historyYoyThisYear, color: T().positive, pts: tS }] }) +
+          '<div class="di-history-legend">' +
+            '<span><i style="background:' + T().positive + ';"></i>' + esc(t.historyYoyThisYear) + ' <b style="color:' + D.changeColor(tS[tS.length - 1].y, T()) + ';">' + esc(pctFmt(tS[tS.length - 1].y)) + '</b></span>' +
+            '<span><i style="background:' + T().compareLine + ';"></i>' + esc(t.historyYoyLastYear) + ' <b style="color:' + D.changeColor(lS[lS.length - 1].y, T()) + ';">' + esc(pctFmt(lS[lS.length - 1].y)) + '</b></span>' +
+          '</div>' +
+          '<div class="di-field-hint">' + esc(t.compareHint) + '</div>';
+      }
     } else {
-      chartHtml =
-        '<div class="di-history-chart-wrap"><svg viewBox="0 0 560 170" preserveAspectRatio="none"><path d="' + view.sparkPath + '" stroke="' + view.sparkColor + '" fill="none" stroke-width="2"/></svg></div>' +
+      var W2 = win(real.pts, days), vals = W2.map(function (p) { return p.y; });
+      var mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals), av = vals.reduce(function (s, v) { return s + v; }, 0) / vals.length;
+      var chg = vals[0] ? (vals[vals.length - 1] - vals[0]) / vals[0] * 100 : 0, unitTxt = ro.ccy + '/' + ro.unit;
+      h.exp = { pts: W2, gran: real.gran };
+      chartHtml = CH.render({ xMode: 'time', xTitle: t.csvHeaderDate, yTitle: unitTxt, aria: productName(entry.nameKey), xFmt: xfmt(real.gran), vFmt: function (v) { return money(v) + ' /' + ro.unit; },
+        series: [{ name: productName(entry.nameKey), color: D.trendColor(vals, T()), pts: W2.map(function (p) { return { x: p.ts, y: p.y, l: dlabel(p.ts, real.gran) }; }) }] }) +
         '<div class="di-history-stats">' +
-          '<span>' + esc(t.historyMin) + ' <b>' + esc(view.minLabel) + '</b></span>' +
-          '<span>' + esc(t.historyAvg) + ' <b>' + esc(view.avgLabel) + '</b></span>' +
-          '<span>' + esc(t.historyMax) + ' <b>' + esc(view.maxLabel) + '</b></span>' +
-          '<span style="margin-left:auto;color:' + view.changeColor + ';font-weight:700;">' + esc(view.changeLabel) + '</span>' +
+          '<span>' + esc(t.historyMin) + ' <b>' + esc(money(mn)) + '</b></span>' +
+          '<span>' + esc(t.historyAvg) + ' <b>' + esc(money(av)) + '</b></span>' +
+          '<span>' + esc(t.historyMax) + ' <b>' + esc(money(mx)) + '</b></span>' +
+          '<span style="margin-left:auto;color:' + D.changeColor(chg, T()) + ';font-weight:700;">' + esc(D.fmtChange(chg)) + '</span>' +
         '</div>';
     }
 
@@ -1021,10 +1053,9 @@
     if (clearBtn) clearBtn.addEventListener('click', function () { state.history.compareKey = ''; renderHistoryModal(); });
     document.getElementById('di-history-export').addEventListener('click', function () {
       var h = state.history, entry = PRODUCT_BY_KEY[h.key];
-      var ro = regionObjFor(entry, h.region);
-      var days = D.HISTORY_RANGE_DAYS[h.range];
-      var t = ui();
-      D.exportHistoryCsv(t.csvHeaderDate, t.csvHeaderPrice, entry.catId + '-' + entry.nameKey, ro.region, h.region, seedKeyFor(entry, h.region), days, ro.kg, ro.unit, ro.ccy, D.FX);
+      if (!h.exp || !h.exp.pts.length) return;
+      var ro = regionObjFor(entry, h.region), t = ui();
+      D.exportRealCsv(t.csvHeaderDate, t.csvHeaderPrice, entry.catId + '-' + entry.nameKey, h.region, h.exp.pts.map(function (p) { return { ts: p.ts, y: p.y }; }), h.exp.gran, ro.ccy, ro.unit);
     });
   }
 

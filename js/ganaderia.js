@@ -96,8 +96,10 @@
     if (tab === 'cold') { var ks = Object.keys(D.series).filter(function (k) { return /COLD STORAGE/.test(k); }); ks.sort(function (a, b) { var pa = COLD_ORDER.indexOf(a.split(', ')[0]), pb = COLD_ORDER.indexOf(b.split(', ')[0]); return pa - pb || a.split(', ').length - b.split(', ').length || a.localeCompare(b); }); return ks; }
     return GROUPS[tab].filter(function (k) { return D.series[k] && D.series[k].n.length; });
   }
+  var AXX = { es: 'Periodo', en: 'Period', fr: 'Période', it: 'Periodo' };
+  function axTitle(y, x, yx) { return '<text transform="translate(12 ' + yx + ') rotate(-90)" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(y) + '</text><text x="' + x[0] + '" y="' + x[1] + '" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(x[2]) + '</text>'; }
   function lineChart(a, u, t) {
-    var W = 720, H = 230, L = 62, R = 12, Tp = 12, Bt = 26, n = a.length, min = Infinity, max = -Infinity;
+    var W = 720, H = 252, L = 80, R = 12, Tp = 12, Bt = 48, n = a.length, min = Infinity, max = -Infinity;
     a.forEach(function (x) { if (x[1] > max) max = x[1]; if (x[1] < min) min = x[1]; });
     if (n < 2) return '';
     var lo = min >= 0 ? Math.max(0, min - (max - min) * 0.15) : min, hi = max + (max - min) * 0.1 || max * 1.1;
@@ -105,8 +107,9 @@
     var g = ''; for (var k = 0; k <= 4; k++) { var vv = lo + (hi - lo) * k / 4; g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(vv) + '" y2="' + y(vv) + '" stroke="var(--border)"/><text x="' + (L - 6) + '" y="' + (y(vv) + 4) + '" font-size="11" text-anchor="end" fill="var(--text-faint)">' + esc(fmt(u, vv, t)) + '</text>'; }
     var d = a.map(function (p, i) { return (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(p[1]).toFixed(1); }).join(' ');
     var dots = n <= 40 ? a.map(function (p, i) { return '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(p[1]).toFixed(1) + '" r="3" fill="' + C1 + '"><title>' + esc(p[0] + ': ' + fmt(u, p[1], t)) + '</title></circle>'; }).join('') : '';
-    var xl = [0, Math.floor((n - 1) / 2), n - 1].map(function (i) { return '<text x="' + x(i) + '" y="' + (H - 8) + '" font-size="11" text-anchor="' + (i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle') + '" fill="var(--text-faint)">' + esc(a[i][0]) + '</text>'; }).join('');
-    return '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block" role="img"><path d="' + d + '" fill="none" stroke="' + C1 + '" stroke-width="2.2" stroke-linejoin="round"/>' + g + dots + xl + '</svg>';
+    var xl = [0, Math.floor((n - 1) / 2), n - 1].map(function (i) { return '<text x="' + x(i) + '" y="' + (H - Bt + 17) + '" font-size="11" text-anchor="' + (i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle') + '" fill="var(--text-faint)">' + esc(a[i][0]) + '</text>'; }).join('') + axTitle(u === '$ / CWT' ? '$ / cwt' : unitNote(u, t), [(L + W - R) / 2, H - 5, AXX[lang()] || AXX.es], (Tp + H - Bt) / 2);
+    var spec = { L: L, R: W - R, T: Tp, B: H - Bt, s: [{ n: '', c: C1, p: a.map(function (p, i) { return [+x(i).toFixed(1), +y(p[1]).toFixed(1), fmt(u, p[1], t), p[0]]; }) }] };
+    return '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img"' + window.DehesaChart.attr(spec).replace(' style="touch-action:pan-y"', '') + '><path d="' + d + '" fill="none" stroke="' + C1 + '" stroke-width="2.2" stroke-linejoin="round"/>' + g + dots + xl + '</svg>';
   }
   function card(label2, value, sub) { return '<div class="di-card" style="padding:14px 16px;flex:1 1 200px;min-width:180px"><div style="font-size:11px;letter-spacing:.4px;color:var(--text-faint);font-weight:700">' + esc(label2).toUpperCase() + '</div><div style="font-size:24px;font-weight:700;margin:4px 0 2px;font-family:\'Source Serif 4\',serif">' + value + '</div><div style="font-size:12.5px">' + sub + '</div></div>'; }
   function statesBlock(k, s, t, nat) {

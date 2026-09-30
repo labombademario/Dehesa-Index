@@ -746,132 +746,36 @@
       price: rawEu.price * factor,
       changePct: rawEu.changePct,
       history: rawEu.history.map(function (v) { return v * factor; }),
+      histPts: rawEu.histPts ? rawEu.histPts.map(function (q) { return { ts: q.ts, value: q.value * factor }; }) : null,
+      histGran: rawEu.histGran,
       currency: rawEu.currency,
       kgPerUnit: rawEu.kgPerUnit
     };
   }
 
-  // --- Histórico ampliado (30/90/365/1825 días) -----------------------------
-  function mulberry32(seed) {
-    return function () {
-      seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
-      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-    };
-  }
-  function hashSeed(str) {
-    var h = 0;
-    for (var i = 0; i < str.length; i++) { h = (h * 31 + str.charCodeAt(i)) | 0; }
-    return h >>> 0;
-  }
-  function dateForOffset(offsetFromEnd) {
-    var d = new Date();
-    d.setDate(d.getDate() - offsetFromEnd);
-    return d;
-  }
-  function genLongHistory(region, seedKey) {
-    var days = 1825;
-    var rand = mulberry32(hashSeed(seedKey));
-    var diffs = [];
-    for (var i = 1; i < region.history.length; i++) {
-      var prevV = region.history[i - 1];
-      if (prevV) diffs.push(Math.abs(region.history[i] - prevV) / prevV);
-    }
-    var vol = diffs.length ? (diffs.reduce(function (a, b) { return a + b; }, 0) / diffs.length) : 0.01;
-    vol = Math.max(vol, 0.004);
-    var amp = Math.min(vol * 6, 0.12);
-    var phase = rand() * Math.PI * 2;
-    var base = new Array(days);
-    base[days - 1] = 1;
-    for (var d = days - 2; d >= 0; d--) {
-      var noise = (rand() - 0.5) * 2 * vol;
-      base[d] = base[d + 1] * (1 + noise);
-    }
-    var raw = base.map(function (v, d2) {
-      var seasonal = 1 + amp * Math.sin((2 * Math.PI * d2 / 365) + phase);
-      return v * seasonal;
-    });
-    var scale = region.price / raw[days - 1];
-    var floor = region.price * 0.15;
-    return raw.map(function (v) { return Math.max(v * scale, floor); });
-  }
-  function buildHistoryView(region, labelText, targetCcy, targetKgPerUnit, targetUnitLabel, fx, seedKey, days, T) {
+  // --- Histórico ampliado: solo datos reales -------------------------------
+  // Cada región con observación verificada guarda region.histPts = [{ ts, value }]
+  // (fecha UTC en milisegundos y valor en la moneda y unidad de origen) y
+  // region.histGran ('day' o 'month'). No se genera, interpola ni rellena nada:
+  // sin histPts no hay histórico y la interfaz lo dice.
+  function realHistory(region, targetCcy, targetKgPerUnit, fx) {
+    if (!region || !region.histPts || region.histPts.length < 2) return null;
     var factor = computeFactor(region, targetCcy, targetKgPerUnit, fx);
-    var full = genLongHistory(region, seedKey);
-    var slice = full.slice(full.length - days);
-    var converted = slice.map(function (v) { return v * factor; });
-    var symbol = CCY_SYMBOL[targetCcy] || targetCcy;
-    var minV = Math.min.apply(null, converted);
-    var maxV = Math.max.apply(null, converted);
-    var avgV = converted.reduce(function (a, b) { return a + b; }, 0) / converted.length;
-    var firstV = converted[0];
-    var lastV = converted[converted.length - 1];
-    var pctChange = firstV ? ((lastV - firstV) / firstV) * 100 : 0;
-    return {
-      label: labelText,
-      price: symbol + fmtNumber(lastV),
-      unit: '/' + targetUnitLabel,
-      changeLabel: fmtChange(pctChange),
-      changeColor: changeColor(pctChange, T),
-      sparkPath: spark(converted, 560, 170, 14),
-      sparkColor: trendColor(converted, T),
-      minLabel: symbol + fmtNumber(minV),
-      maxLabel: symbol + fmtNumber(maxV),
-      avgLabel: symbol + fmtNumber(avgV)
-    };
+    return { gran: region.histGran || 'day', pts: region.histPts.map(function (p) { return { ts: p.ts, y: p.value * factor }; }) };
   }
-  function pctSeries(arr) {
-    var base = arr[0] || 1;
-    return arr.map(function (v) { return ((v - base) / base) * 100; });
-  }
-  function rawHistorySlice(region, seedKey, days, offsetFromEnd) {
-    var full = genLongHistory(region, seedKey);
-    var end = full.length - (offsetFromEnd || 0);
-    var start = Math.max(0, end - days);
-    return full.slice(start, end);
-  }
-  function buildComparePair(a, aLabel, b, bLabel, T) {
-    var min = Math.min(Math.min.apply(null, a), Math.min.apply(null, b));
-    var max = Math.max(Math.max.apply(null, a), Math.max.apply(null, b));
-    return {
-      primaryPath: sparkShared(a, min, max, 560, 170, 14),
-      comparePath: sparkShared(b, min, max, 560, 170, 14),
-      primaryLabel: aLabel,
-      compareLabel: bLabel,
-      primaryChangeLabel: fmtChange(a[a.length - 1]),
-      primaryChangeColor: changeColor(a[a.length - 1], T),
-      compareChangeLabel: fmtChange(b[b.length - 1]),
-      compareChangeColor: changeColor(b[b.length - 1], T)
-    };
-  }
-  function exportHistoryCsv(csvHeaderDate, csvHeaderPrice, productKey, region, regionCode, seedKey, days, targetKgPerUnit, targetUnitLabel, targetCcy, fx) {
+  function isoDate(ts, gran) { var s = new Date(ts).toISOString(); return gran === 'month' ? s.slice(0, 7) : s.slice(0, 10); }
+  function exportRealCsv(csvHeaderDate, csvHeaderPrice, productKey, regionCode, pts, gran, targetCcy, targetUnitLabel) {
     try {
-      if (typeof document === 'undefined' || typeof Blob === 'undefined' || typeof URL === 'undefined') return;
-      var factor = computeFactor(region, targetCcy, targetKgPerUnit, fx);
-      var full = genLongHistory(region, seedKey);
-      var slice = full.slice(full.length - days);
+      if (typeof document === 'undefined' || typeof Blob === 'undefined' || typeof URL === 'undefined' || !pts || !pts.length) return;
       var lines = [csvHeaderDate + ',' + csvHeaderPrice + ' (' + targetCcy + '/' + targetUnitLabel + ')'];
-      for (var i = 0; i < slice.length; i++) {
-        var offset = slice.length - 1 - i;
-        var iso = dateForOffset(offset).toISOString().slice(0, 10);
-        lines.push(iso + ',' + (slice[i] * factor).toFixed(4));
-      }
-      var csv = '﻿' + lines.join('\n');
-      var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = 'dehesa-index-' + productKey + '-' + regionCode + '-' + days + 'd.csv';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+      pts.forEach(function (p) { lines.push(isoDate(p.ts, gran) + ',' + p.y.toFixed(4)); });
+      var blob = new Blob(['\uFEFF' + lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
+      var url = URL.createObjectURL(blob), a = document.createElement('a');
+      a.href = url; a.download = 'dehesa-index-' + productKey + '-' + regionCode + '.csv';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
       setTimeout(function () { try { URL.revokeObjectURL(url); } catch (e) {} }, 1000);
     } catch (e) {}
   }
-
-  var HISTORY_RANGE_ORDER = ['1d', '1w', '1m', '3m', 'ytd', '1y', '5y', 'max'];
-  var HISTORY_RANGE_DAYS = { '1d': 2, '1w': 7, '1m': 30, '3m': 90, 'ytd': 269, '1y': 365, '5y': 1825, 'max': 1825 };
   var HISTORY_COMPARE_PRESETS = [
     ['cereales-trigo', 'cereales-maiz'],
     ['lacteos-leche', 'pienso-pienso'],
@@ -1186,9 +1090,7 @@
     spark: spark, sparkShared: sparkShared, trendColor: trendColor, fmtChange: fmtChange, changeColor: changeColor,
     fmtNumber: fmtNumber, fmtTotal: fmtTotal, computeFactor: computeFactor, buildRegion: buildRegion,
     deriveCountryRaw: deriveCountryRaw,
-    mulberry32: mulberry32, hashSeed: hashSeed, dateForOffset: dateForOffset, genLongHistory: genLongHistory,
-    buildHistoryView: buildHistoryView, pctSeries: pctSeries, rawHistorySlice: rawHistorySlice,
-    buildComparePair: buildComparePair, exportHistoryCsv: exportHistoryCsv,
-    HISTORY_RANGE_ORDER: HISTORY_RANGE_ORDER, HISTORY_RANGE_DAYS: HISTORY_RANGE_DAYS, HISTORY_COMPARE_PRESETS: HISTORY_COMPARE_PRESETS
+    realHistory: realHistory, exportRealCsv: exportRealCsv, isoDate: isoDate,
+    HISTORY_COMPARE_PRESETS: HISTORY_COMPARE_PRESETS
   };
 })(window);

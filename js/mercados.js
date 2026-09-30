@@ -46,32 +46,23 @@
     var pts = [];
     s.p.forEach(function (p) { var v = val(p); if (v) pts.push({ d: p[0], v: v.v, lo: p[2], hi: p[3], mid: v.mid }); });
     if (pts.length < 2) return '<p class="di-movers-hint">' + esc(t().history) + ': ' + pts.length + ' ' + esc(t().pts) + '</p>';
-    var W = 640, H = 200, L = 52, R = 12, Tp = 12, B = 24, vs = pts.map(function (p) { return p.v; });
+    var W = 640, H = 232, L = 68, R = 14, Tp = 12, B = 48, vs = pts.map(function (p) { return p.v; }), unit = s.u || '';
     var mn = Math.min.apply(null, vs), mx = Math.max.apply(null, vs);
     if (mx === mn) { mx += 1; mn -= 1; } else { var pad = (mx - mn) * 0.12; mn -= pad; mx += pad; }
     var x = function (i) { return L + i * (W - L - R) / (pts.length - 1); }, y = function (v) { return Tp + (mx - v) / (mx - mn) * (H - Tp - B); };
-    var g = '', i, k;
-    for (k = 0; k <= 4; k++) { var gv = mn + (mx - mn) * k / 4; g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(gv) + '" y2="' + y(gv) + '" stroke="var(--border)"/><text x="' + (L - 6) + '" y="' + (y(gv) + 4) + '" text-anchor="end" font-size="10.5" fill="var(--text-faint)">' + fmt(gv) + '</text>'; }
-    [0, Math.floor((pts.length - 1) / 2), pts.length - 1].forEach(function (j, n) { g += '<text x="' + x(j) + '" y="' + (H - 6) + '" text-anchor="' + (n === 0 ? 'start' : n === 2 ? 'end' : 'middle') + '" font-size="10.5" fill="var(--text-faint)">' + esc(pts[j].d.slice(0, 7)) + '</text>'; });
-    var path = ''; pts.forEach(function (p, j) { path += (j ? ' L' : 'M') + x(j) + ',' + y(p.v); });
-    g += '<path d="' + path + '" fill="none" stroke="' + COL + '" stroke-width="2" stroke-linejoin="round"/><circle cx="' + x(pts.length - 1) + '" cy="' + y(pts[pts.length - 1].v) + '" r="4" fill="' + COL + '" stroke="var(--surface,#fff)" stroke-width="2"/>';
-    var h = '<div style="position:relative"><svg id="ms-ch" viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img" aria-label="' + esc(t().history) + '">' + g + '<line class="xh" x1="0" x2="0" y1="' + Tp + '" y2="' + (H - B) + '" stroke="var(--text-faint)" stroke-dasharray="3 3" style="display:none"/><rect class="hit" x="0" y="0" width="' + W + '" height="' + H + '" fill="transparent"/></svg><div class="tip" style="display:none;position:absolute;top:0;pointer-events:none;background:var(--surface,#fff);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:12.5px;box-shadow:0 2px 10px rgba(0,0,0,.12);white-space:nowrap"></div></div>';
+    var g = '', i, k, TX = 'font-size="11.5" fill="var(--text-faint)"';
+    var raw = (mx - mn) / 4, ex = Math.pow(10, Math.floor(Math.log(raw) / Math.LN10)), fr = raw / ex, step = (fr <= 1 ? 1 : fr <= 2 ? 2 : fr <= 2.5 ? 2.5 : fr <= 5 ? 5 : 10) * ex, sd = step >= 1 ? 0 : Math.min(4, Math.ceil(-Math.log(step) / Math.LN10 - 1e-9));
+    for (var gv = Math.ceil(mn / step) * step; gv <= mx + step / 1000; gv += step) { g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(gv).toFixed(1) + '" y2="' + y(gv).toFixed(1) + '" stroke="var(--border)"/><text x="' + (L - 7) + '" y="' + (y(gv) + 4).toFixed(1) + '" text-anchor="end" ' + TX + '>' + nf(gv, sd) + '</text>'; }
+    var t0 = Date.parse(pts[0].d + 'T12:00:00Z'), t1 = Date.parse(pts[pts.length - 1].d + 'T12:00:00Z'), tk = [], seen = {};
+    [0, 1, 2, 3].forEach(function (n) { var j = Math.round(n * (pts.length - 1) / 3); if (!seen[j]) { seen[j] = 1; tk.push(j); } });
+    tk.forEach(function (j, n) { var ts = Date.parse(pts[j].d + 'T12:00:00Z'); g += '<line x1="' + x(j).toFixed(1) + '" x2="' + x(j).toFixed(1) + '" y1="' + (H - B) + '" y2="' + (H - B + 4) + '" stroke="var(--border)"/><text x="' + x(j).toFixed(1) + '" y="' + (H - B + 17) + '" text-anchor="' + (n === 0 ? 'start' : n === tk.length - 1 ? 'end' : 'middle') + '" ' + TX + '>' + esc(window.DehesaChart ? window.DehesaChart.fmtDate(ts, t1 - t0) : pts[j].d) + '</text>'; });
+    var yt = unit.length > 26 ? unit.slice(0, 25) + '…' : unit;
+    g += '<text x="' + ((L + W - R) / 2) + '" y="' + (H - 6) + '" text-anchor="middle" ' + TX + ' font-weight="600">' + esc(t().date) + '</text><text transform="translate(13 ' + ((Tp + H - B) / 2) + ') rotate(-90)" text-anchor="middle" ' + TX + ' font-weight="600">' + esc(yt) + '</text>';
+    var path = ''; pts.forEach(function (p, j) { path += (j ? ' L' : 'M') + x(j).toFixed(1) + ',' + y(p.v).toFixed(1); });
+    g += '<path d="' + path + '" fill="none" stroke="' + COL + '" stroke-width="2" stroke-linejoin="round"/><circle cx="' + x(pts.length - 1).toFixed(1) + '" cy="' + y(pts[pts.length - 1].v).toFixed(1) + '" r="4" fill="' + COL + '" stroke="var(--surface,#fff)" stroke-width="2"/>';
+    var spec = { L: L, R: W - R, T: Tp, B: H - B, s: [{ n: yt, c: COL, p: pts.map(function (p, j) { return [+x(j).toFixed(1), +y(p.v).toFixed(1), fmt(p.v) + ' ' + unit + (p.mid ? ' (' + t().mid + ')' : '') + (p.lo !== null && p.hi !== null && !p.mid && p.lo !== p.hi ? ' · ' + t().range + ' ' + fmt(p.lo) + '–' + fmt(p.hi) : ''), dateTxt(p.d)]; }) }] };
+    var h = '<div><svg id="ms-ch" viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img" aria-label="' + esc(t().history) + '"' + (window.DehesaChart ? window.DehesaChart.attr(spec).replace(' style="touch-action:pan-y"', '') : '') + '>' + g + '</svg></div>';
     return { html: h, pts: pts, W: W, L: L, R: R };
-  }
-  function wireChart(c, unit) {
-    var svg = document.getElementById('ms-ch'); if (!svg || !c.pts) return;
-    var box = svg.parentNode, tip = box.querySelector('.tip'), xh = svg.querySelector('.xh'), hit = svg.querySelector('.hit'), n = c.pts.length;
-    function move(e) {
-      var pt = e.touches ? e.touches[0] : e, r = svg.getBoundingClientRect(), fx = (pt.clientX - r.left) / r.width * c.W;
-      var i = Math.round((fx - c.L) / (c.W - c.L - c.R) * (n - 1)); i = Math.max(0, Math.min(n - 1, i));
-      var xx = c.L + i * (c.W - c.L - c.R) / (n - 1), p = c.pts[i];
-      xh.setAttribute('x1', xx); xh.setAttribute('x2', xx); xh.style.display = '';
-      tip.innerHTML = '<strong>' + esc(dateTxt(p.d)) + '</strong><br>' + fmt(p.v) + ' ' + esc(unit) + (p.mid ? ' (' + esc(t().mid) + ')' : '') + (p.lo !== null && p.hi !== null && !p.mid ? '<br>' + esc(t().range) + ': ' + fmt(p.lo) + '–' + fmt(p.hi) : '');
-      tip.style.display = 'block';
-      var left = xx / c.W * r.width + 10; if (left + tip.offsetWidth > r.width) left = xx / c.W * r.width - tip.offsetWidth - 10; tip.style.left = Math.max(0, left) + 'px';
-    }
-    hit.addEventListener('mousemove', move); hit.addEventListener('touchstart', move); hit.addEventListener('touchmove', move);
-    hit.addEventListener('mouseleave', function () { tip.style.display = 'none'; xh.style.display = 'none'; });
   }
 
   function page() {
@@ -126,7 +117,6 @@
       Array.prototype.forEach.call(body.querySelectorAll('[data-dim]'), function (el) { el.onchange = function () { SEL.f[el.getAttribute('data-dim')] = el.value; SEL.lim = 60; page(); }; });
       Array.prototype.forEach.call(body.querySelectorAll('tr[data-s]'), function (tr) { tr.onclick = function () { SEL.sel = parseInt(tr.getAttribute('data-s'), 10); page(); window.scrollTo({ top: body.offsetTop - 20 }); }; });
       var mb = document.getElementById('ms-more'); if (mb) mb.onclick = function () { SEL.lim += 120; page(); };
-      if (SEL.sel !== null && doc.series[SEL.sel]) { var cc = chart(doc.series[SEL.sel]); wireChart(cc, doc.series[SEL.sel].u); }
     });
   }
   var HT = {

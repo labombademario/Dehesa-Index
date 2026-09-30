@@ -21,7 +21,7 @@
       tabEsr: 'Ventas semanales', tabGats: 'Comercio mensual', product: 'Producto', flow: 'Flujo', ex: 'Exportaciones de EE. UU.', im: 'Importaciones de EE. UU.', period: 'Periodo', p12: 'Últimos 12 meses', p1: 'Último mes',
       weekEnd: 'Semana al', my: 'Campaña', acc: 'Exportado en la campaña', out: 'Ventas pendientes de embarcar', com: 'Compromiso total', net: 'Ventas netas de la semana', vsPrev: 'frente a la misma semana de la campaña anterior',
       chartAcc: 'Exportaciones acumuladas por semana de campaña', cur: 'Campaña actual', prev: 'Campaña anterior', weekN: 'semana de campaña',
-      country: 'País', unknown: 'Destino sin asignar', others: 'Otros', total: 'Total', wk: 'Embarcado en la semana', mt: 't', kt: 'kt', mtt: 'Mt', bales: 'balas', noData: 'Sin datos.',
+      country: 'País', unknown: 'Destino sin asignar', others: 'Otros', total: 'Total', wk: 'Embarcado en la semana', mt: 't', kt: 'kt', mtt: 'Mt', bales: 'balas', yTons: 'Toneladas', noData: 'Sin datos.',
       value: 'Valor (USD)', qty: 'Cantidad (t)', chg: 'Variación', monthly: 'Valor mensual (millones de USD)', month: 'Mes', vsYear: 'frente a los 12 meses anteriores', vsYear1: 'frente al mismo mes del año anterior', mapLink: 'Ver en el mapa', usd: 'USD',
       esrNote: 'Fuente: USDA FAS, Export Sales Reporting (informe semanal de ventas de exportación, se publica los jueves). Toneladas métricas salvo el algodón (balas). Las ventas pendientes son ventas ya cerradas y aún no embarcadas. Los totales suman los destinos publicados; el agregado de la UE cuenta como un solo destino. Son cifras que las empresas declaran a USDA y pueden revisarse.',
       gatsNote: 'Fuente: USDA FAS GATS, con datos de comercio del Census Bureau de EE. UU. Solo comercio de EE. UU. con cada país (no los flujos entre terceros). Valor en dólares corrientes; la cantidad solo se muestra cuando el Census la mide en kilos. Los dos últimos meses pueden revisarse. Los códigos arancelarios (HS) agrupan productos de forma aproximada, por ejemplo «Lácteos» reúne los capítulos 0401-0406.',
@@ -30,7 +30,7 @@
       tabEsr: 'Weekly sales', tabGats: 'Monthly trade', product: 'Product', flow: 'Flow', ex: 'U.S. exports', im: 'U.S. imports', period: 'Period', p12: 'Last 12 months', p1: 'Latest month',
       weekEnd: 'Week ending', my: 'Marketing year', acc: 'Exported this marketing year', out: 'Outstanding sales (not yet shipped)', com: 'Total commitment', net: 'Net sales this week', vsPrev: 'vs. same week last marketing year',
       chartAcc: 'Accumulated exports by marketing-year week', cur: 'Current year', prev: 'Previous year', weekN: 'marketing-year week',
-      country: 'Country', unknown: 'Unassigned destination', others: 'Others', total: 'Total', wk: 'Shipped this week', mt: 't', kt: 'kt', mtt: 'Mt', bales: 'bales', noData: 'No data.',
+      country: 'Country', unknown: 'Unassigned destination', others: 'Others', total: 'Total', wk: 'Shipped this week', mt: 't', kt: 'kt', mtt: 'Mt', bales: 'bales', yTons: 'Metric tons', noData: 'No data.',
       value: 'Value (USD)', qty: 'Quantity (t)', chg: 'Change', monthly: 'Monthly value (million USD)', month: 'Month', vsYear: 'vs. the previous 12 months', vsYear1: 'vs. same month last year', mapLink: 'See on the map', usd: 'USD',
       esrNote: 'Source: USDA FAS, Export Sales Reporting (weekly export sales report, released on Thursdays). Metric tons except cotton (bales). Outstanding sales are sales already made but not yet shipped. Totals add up the published destinations; the EU aggregate counts as one destination. Figures are reported by companies to USDA and may be revised.',
       gatsNote: 'Source: USDA FAS GATS, using U.S. Census Bureau trade data. U.S. trade with each country only (not flows between third countries). Current-dollar values; quantity is shown only when the Census measures it in kilograms. The last two months may be revised. Tariff (HS) codes group products approximately; for example “Dairy” combines chapters 0401-0406.',
@@ -39,7 +39,7 @@
       tabEsr: 'Ventes hebdomadaires', tabGats: 'Commerce mensuel', product: 'Produit', flow: 'Flux', ex: 'Exportations des États-Unis', im: 'Importations des États-Unis', period: 'Période', p12: '12 derniers mois', p1: 'Dernier mois',
       weekEnd: 'Semaine au', my: 'Campagne', acc: 'Exporté sur la campagne', out: 'Ventes en attente d’expédition', com: 'Engagement total', net: 'Ventes nettes de la semaine', vsPrev: 'par rapport à la même semaine de la campagne précédente',
       chartAcc: 'Exportations cumulées par semaine de campagne', cur: 'Campagne en cours', prev: 'Campagne précédente', weekN: 'semaine de campagne',
-      country: 'Pays', unknown: 'Destination non attribuée', others: 'Autres', total: 'Total', wk: 'Expédié cette semaine', mt: 't', kt: 'kt', mtt: 'Mt', bales: 'balles', noData: 'Pas de données.',
+      country: 'Pays', unknown: 'Destination non attribuée', others: 'Autres', total: 'Total', wk: 'Expédié cette semaine', mt: 't', kt: 'kt', mtt: 'Mt', bales: 'balles', yTons: 'Tonnes', noData: 'Pas de données.',
       value: 'Valeur (USD)', qty: 'Quantité (t)', chg: 'Variation', monthly: 'Valeur mensuelle (millions d’USD)', month: 'Mois', vsYear: 'par rapport aux 12 mois précédents', vsYear1: 'par rapport au même mois de l’an dernier', mapLink: 'Voir sur la carte', usd: 'USD',
       esrNote: 'Source : USDA FAS, Export Sales Reporting (rapport hebdomadaire, publié le jeudi). Tonnes métriques sauf le coton (balles). Les ventes en attente sont des ventes conclues mais pas encore expédiées. Les totaux additionnent les destinations publiées ; l’agrégat UE compte comme une seule destination. Chiffres déclarés par les entreprises à l’USDA, susceptibles de révision.',
       gatsNote: 'Source : USDA FAS GATS, à partir des données commerciales du Census Bureau. Commerce des États-Unis avec chaque pays uniquement (pas les flux entre pays tiers). Valeurs en dollars courants ; la quantité n’apparaît que lorsque le Census la mesure en kilos. Les deux derniers mois peuvent être révisés. Les codes tarifaires (SH) regroupent les produits de façon approximative ; par exemple « Produits laitiers » réunit les chapitres 0401-0406.',
@@ -48,7 +48,7 @@
       tabEsr: 'Vendite settimanali', tabGats: 'Commercio mensile', product: 'Prodotto', flow: 'Flusso', ex: 'Esportazioni USA', im: 'Importazioni USA', period: 'Periodo', p12: 'Ultimi 12 mesi', p1: 'Ultimo mese',
       weekEnd: 'Settimana al', my: 'Campagna', acc: 'Esportato nella campagna', out: 'Vendite in attesa di spedizione', com: 'Impegno totale', net: 'Vendite nette della settimana', vsPrev: 'rispetto alla stessa settimana della campagna precedente',
       chartAcc: 'Esportazioni cumulate per settimana di campagna', cur: 'Campagna in corso', prev: 'Campagna precedente', weekN: 'settimana di campagna',
-      country: 'Paese', unknown: 'Destinazione non assegnata', others: 'Altri', total: 'Totale', wk: 'Spedito nella settimana', mt: 't', kt: 'kt', mtt: 'Mt', bales: 'balle', noData: 'Nessun dato.',
+      country: 'Paese', unknown: 'Destinazione non assegnata', others: 'Altri', total: 'Totale', wk: 'Spedito nella settimana', mt: 't', kt: 'kt', mtt: 'Mt', bales: 'balle', yTons: 'Tonnellate', noData: 'Nessun dato.',
       value: 'Valore (USD)', qty: 'Quantità (t)', chg: 'Variazione', monthly: 'Valore mensile (milioni di USD)', month: 'Mese', vsYear: 'rispetto ai 12 mesi precedenti', vsYear1: 'rispetto allo stesso mese dell’anno scorso', mapLink: 'Vedi sulla mappa', usd: 'USD',
       esrNote: 'Fonte: USDA FAS, Export Sales Reporting (rapporto settimanale, pubblicato il giovedì). Tonnellate metriche, tranne il cotone (balle). Le vendite in sospeso sono vendite concluse e non ancora spedite. I totali sommano le destinazioni pubblicate; l’aggregato UE conta come un’unica destinazione. Cifre dichiarate dalle imprese all’USDA, soggette a revisione.',
       gatsNote: 'Fonte: USDA FAS GATS, con dati commerciali del Census Bureau. Solo il commercio degli Stati Uniti con ciascun paese (non i flussi tra paesi terzi). Valori in dollari correnti; la quantità compare solo quando il Census la misura in chilogrammi. Gli ultimi due mesi possono essere rivisti. I codici tariffari (SA) raggruppano i prodotti in modo approssimativo; ad esempio «Latticini» riunisce i capitoli 0401-0406.',
@@ -68,8 +68,8 @@
   function th(s, right) { return '<th style="padding:10px 6px;font-size:10.5px;letter-spacing:.4px;text-align:' + (right ? 'right' : 'left') + '">' + esc(s).toUpperCase() + '</th>'; }
   function td(s, right, b) { return '<td style="padding:9px 6px;text-align:' + (right ? 'right' : 'left') + (b ? ';font-weight:600' : '') + '">' + s + '</td>'; }
 
-  function lineChart(series, labels, fmt) {
-    var W = 720, H = 240, L = 54, R = 12, Tp = 12, Bt = 28, max = 0, n = 0;
+  function lineChart(series, labels, fmt, o) {
+    o = o || {}; var W = 720, H = 240, L = o.yT ? 68 : 54, R = 12, Tp = 12, Bt = o.xT ? 48 : 28, max = 0, n = 0;
     series.forEach(function (s) { s.v.forEach(function (v) { if (v > max) max = v; }); if (s.v.length > n) n = s.v.length; });
     if (!n || !max) return '';
     var step = Math.pow(10, Math.floor(Math.log10(max))), nice = Math.ceil(max / step) * step; if (nice / step > 5) nice = Math.ceil(max / (step * 2)) * step * 2;
@@ -77,8 +77,11 @@
     var g = '';
     for (var k = 0; k <= 4; k++) { var vv = nice * k / 4; g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(vv) + '" y2="' + y(vv) + '" stroke="var(--border)" stroke-width="1"/><text x="' + (L - 6) + '" y="' + (y(vv) + 4) + '" font-size="11" text-anchor="end" fill="var(--text-faint)">' + esc(fmt(vv)) + '</text>'; }
     var paths = series.map(function (s) { var d = s.v.map(function (v, i) { return (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v).toFixed(1); }).join(' '); return '<path d="' + d + '" fill="none" stroke="' + s.color + '" stroke-width="2.2" stroke-linejoin="round"/>'; }).join('');
-    var xl = ''; [0, Math.floor((n - 1) / 2), n - 1].forEach(function (i) { if (labels[i] !== undefined) xl += '<text x="' + x(i) + '" y="' + (H - 8) + '" font-size="11" text-anchor="' + (i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle') + '" fill="var(--text-faint)">' + esc(labels[i]) + '</text>'; });
-    return '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block" role="img">' + g + paths + xl + '</svg>';
+    var xl = ''; [0, Math.floor((n - 1) / 2), n - 1].forEach(function (i) { if (labels[i] !== undefined) xl += '<text x="' + x(i) + '" y="' + (H - Bt + 17) + '" font-size="11" text-anchor="' + (i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle') + '" fill="var(--text-faint)">' + esc(labels[i]) + '</text>'; });
+    if (o.xT) xl += '<text x="' + ((L + W - R) / 2) + '" y="' + (H - 6) + '" font-size="11" text-anchor="middle" fill="var(--text-faint)" font-weight="600">' + esc(o.xT) + '</text>';
+    if (o.yT) xl += '<text transform="translate(13 ' + ((Tp + H - Bt) / 2) + ') rotate(-90)" font-size="11" text-anchor="middle" fill="var(--text-faint)" font-weight="600">' + esc(o.yT) + '</text>';
+    var spec = { L: L, R: W - R, T: Tp, B: H - Bt, s: series.map(function (s) { return { n: s.n || '', c: s.color, p: s.v.map(function (v, i) { return [+x(i).toFixed(1), +y(v).toFixed(1), o.vf ? o.vf(v) : fmt(v), s.l ? s.l[i] : String(labels[i])]; }) }; }) };
+    return '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img"' + (window.DehesaChart ? window.DehesaChart.attr(spec) : '') + ' style="width:100%;height:auto;display:block' + (window.DehesaChart ? ';touch-action:pan-y' : '') + '">' + g + paths + xl + '</svg>';
   }
   function barChart(vals, labels, fmt, color) {
     var W = 720, H = 220, L = 54, R = 8, Tp = 10, Bt = 26, max = Math.max.apply(null, vals.concat([1])), n = vals.length;
@@ -103,11 +106,11 @@
       card(t.com, qty(com, c, t), ps ? chgHtml(pct(com, ps.acc + ps.out)) + ' <span style="color:var(--text-faint)">' + esc(t.vsPrev) + '</span>' : '') +
       card(t.net, qty(tot.net, c, t), '<span style="color:var(--text-faint)">' + esc(t.wk) + ': ' + qty(tot.wk, c, t) + '</span>') + '</div>';
     var cur = c.weekly.map(function (w) { return w.acc; }), pr = c.weeklyPrev.map(function (w) { return w.acc; });
+    var wl = function (w, i) { var d = w.w.split('-'), ds; try { ds = new Date(Date.UTC(+d[0], +d[1] - 1, +d[2])).toLocaleDateString(lang(), { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { ds = w.w; } return t.weekN.charAt(0).toUpperCase() + t.weekN.slice(1) + ' ' + (i + 1) + ' · ' + ds; };
     var isB = /Bales/i.test(c.unit), fmt = function (v) { return v === 0 ? '0' : isB ? nf(v / 1e6, 1) + ' M' : (v >= 1e6 ? nf(v / 1e6, 1) + ' Mt' : nf(v / 1e3, 0) + ' kt'); };
     var chart = '<div class="di-card" style="padding:14px 16px"><div style="font-weight:600;margin-bottom:6px">' + esc(t.chartAcc) + '</div>' +
       '<div style="display:flex;gap:16px;font-size:12.5px;margin-bottom:6px"><span><span style="display:inline-block;width:14px;height:3px;background:' + C1 + ';vertical-align:middle;margin-right:6px"></span>' + esc(t.cur) + ' (' + esc(c.my) + ')</span><span><span style="display:inline-block;width:14px;height:3px;background:' + C2 + ';vertical-align:middle;margin-right:6px"></span>' + esc(t.prev) + '</span></div>' +
-      lineChart([{ v: pr, color: C2 }, { v: cur, color: C1 }], c.weekly.map(function (w, i) { return '#' + (i + 1); }), fmt) +
-      '<div style="font-size:11.5px;color:var(--text-faint);text-align:right">' + esc(t.weekN) + '</div></div>';
+      lineChart([{ v: pr, color: C2, n: t.prev, l: c.weeklyPrev.map(wl) }, { v: cur, color: C1, n: t.cur + ' (' + c.my + ')', l: c.weekly.map(wl) }], (cur.length >= pr.length ? cur : pr).map(function (w, i) { return '#' + (i + 1); }), fmt, { xT: t.weekN.charAt(0).toUpperCase() + t.weekN.slice(1), yT: isB ? t.bales.charAt(0).toUpperCase() + t.bales.slice(1) : t.yTons, vf: function (v) { return qty(v, c, t); } }) + '</div>';
     var rows = c.countries.slice(), tail = null;
     var top = rows.filter(function (r) { return r.i2 || r.c !== 9990; }).slice(0, SEL.top);
     var unk = rows.filter(function (r) { return r.c === 9990; })[0];

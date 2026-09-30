@@ -56,15 +56,19 @@
   function at(rows, off) { return rows.length > off ? rows[rows.length - 1 - off] : null; }
   function delta(d, t) { if (d === null) return '<span style="color:var(--text-faint)">—</span>'; var c = d > 0.05 ? '#a9491f' : d < -0.05 ? '#2f7d4f' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (d > 0.05 ? '+' : d < -0.05 ? '−' : '') + nf(Math.abs(d), 1) + ' ' + esc(t.pp) + '</span>'; }
   function cls(v) { return v <= 0 ? 0 : v < 10 ? 1 : v < 25 ? 2 : v < 45 ? 3 : v < 70 ? 4 : 5; }
-  function lineChart(a, b, labels, t) {
-    var W = 720, H = 230, L = 46, R = 12, Tp = 12, Bt = 26, n = Math.max(a.length, b.length), max = 0;
+  var AXX = { es: ['Semana', '% de la superficie'], en: ['Week', '% of area'], fr: ['Semaine', '% de la superficie'], it: ['Settimana', '% della superficie'] };
+  function axTitle(y, x, yx) { return '<text transform="translate(12 ' + yx + ') rotate(-90)" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(y) + '</text><text x="' + x[0] + '" y="' + x[1] + '" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(x[2]) + '</text>'; }
+  function lineChart(a, b, labels, t, plabels) {
+    var W = 720, H = 252, L = 62, R = 12, Tp = 12, Bt = 48, n = Math.max(a.length, b.length), max = 0;
     a.concat(b).forEach(function (v) { if (v > max) max = v; });
     var nice = max <= 10 ? 10 : max <= 25 ? 25 : max <= 50 ? 50 : 100;
     var x = function (i) { return L + (W - L - R) * (n > 1 ? i / (n - 1) : 0); }, y = function (v) { return Tp + (H - Tp - Bt) * (1 - v / nice); };
     var g = ''; for (var k = 0; k <= 4; k++) { var vv = nice * k / 4; g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(vv) + '" y2="' + y(vv) + '" stroke="var(--border)"/><text x="' + (L - 6) + '" y="' + (y(vv) + 4) + '" font-size="11" text-anchor="end" fill="var(--text-faint)">' + nf(vv, 0) + ' %</text>'; }
     var p = function (arr, col) { return '<path d="' + arr.map(function (v, i) { return (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v).toFixed(1); }).join(' ') + '" fill="none" stroke="' + col + '" stroke-width="2.2" stroke-linejoin="round"/>'; };
-    var xl = [0, Math.floor((n - 1) / 2), n - 1].map(function (i) { return '<text x="' + x(i) + '" y="' + (H - 8) + '" font-size="11" text-anchor="' + (i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle') + '" fill="var(--text-faint)">' + esc(labels[i] || '') + '</text>'; }).join('');
-    return '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block" role="img">' + g + p(b, '#b8a98a') + p(a, '#a9491f') + xl + '</svg>';
+    var xl = [0, Math.floor((n - 1) / 2), n - 1].map(function (i) { return '<text x="' + x(i) + '" y="' + (H - Bt + 17) + '" font-size="11" text-anchor="' + (i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle') + '" fill="var(--text-faint)">' + esc(labels[i] || '') + '</text>'; }).join('') + axTitle((AXX[lang()] || AXX.es)[1], [(L + W - R) / 2, H - 5, (AXX[lang()] || AXX.es)[0]], (Tp + H - Bt) / 2);
+    var hv = function (arr, col, nm, lb) { return { n: nm, c: col, p: arr.map(function (v, i) { return [+x(i).toFixed(1), +y(v).toFixed(1), nf(v, 1) + ' %', lb[i] || '']; }) }; };
+    var spec = { L: L, R: W - R, T: Tp, B: H - Bt, s: [hv(b, '#b8a98a', t.prev, plabels || []), hv(a, '#a9491f', t.cur, labels)] };
+    return '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img"' + window.DehesaChart.attr(spec).replace(' style="touch-action:pan-y"', '') + '>' + g + p(b, '#b8a98a') + p(a, '#a9491f') + xl + '</svg>';
   }
   function card(label, value, sub) { return '<div class="di-card" style="padding:14px 16px;flex:1 1 200px;min-width:180px"><div style="font-size:11px;letter-spacing:.4px;color:var(--text-faint);font-weight:700">' + esc(label).toUpperCase() + '</div><div style="font-size:24px;font-weight:700;margin:4px 0 2px;font-family:\'Source Serif 4\',serif">' + value + '</div><div style="font-size:12.5px">' + sub + '</div></div>'; }
   function rname(r, t) { return r === 'CONUS' ? t.conus : (ST[r] || r); }
@@ -91,7 +95,7 @@
     var wk = rows.slice(-52), pk = rows.slice(-104, -52);
     var chart = '<div class="di-card" style="padding:14px 16px;margin-top:14px"><div style="font-weight:600;margin-bottom:4px">' + esc(rname(SEL.region, t)) + ' · ' + esc(t.ms[m]) + '</div><div style="font-size:12.5px;color:var(--text-faint);margin-bottom:6px">' + esc(t.chart) + '</div>' +
       '<div style="display:flex;gap:16px;font-size:12.5px;margin-bottom:6px"><span><span style="display:inline-block;width:14px;height:3px;background:#a9491f;vertical-align:middle;margin-right:6px"></span>' + esc(t.cur) + '</span><span><span style="display:inline-block;width:14px;height:3px;background:#b8a98a;vertical-align:middle;margin-right:6px"></span>' + esc(t.prev) + '</span></div>' +
-      lineChart(wk.map(function (r) { return val(r, m); }), pk.map(function (r) { return val(r, m); }), wk.map(function (r) { return r[0]; }), t) + '</div>';
+      lineChart(wk.map(function (r) { return val(r, m); }), pk.map(function (r) { return val(r, m); }), wk.map(function (r) { return r[0]; }), t, pk.map(function (r) { return r[0]; })) + '</div>';
     var list = regs.map(function (s) { var r = D.states[s], l = r[r.length - 1], a = r.length > 1 ? r[r.length - 2] : null, y = r.length > 52 ? r[r.length - 53] : null; return { s: s, v: val(l, m), dw: a ? val(l, m) - val(a, m) : null, dy: y ? val(l, m) - val(y, m) : null }; }).sort(function (a, b) { return b.v - a.v; });
     var th = function (x, r) { return '<th style="padding:10px 6px;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:' + (r ? 'right' : 'left') + '">' + esc(x).toUpperCase() + '</th>'; };
     var table = '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><table style="border-collapse:collapse;width:100%;min-width:480px;font-size:14px"><tr>' + th(t.state) + '<th></th>' + th(t.now, 1) + th(t.dWeek, 1) + th(t.dYear, 1) + '</tr>' +
