@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T14:10:57.666Z",
+  "generatedAt": "2026-09-30T14:20:23.179Z",
   "status": "informational",
   "rules": [
     {
@@ -13,9 +13,25 @@
     },
     {
       "type": "stale_data",
+      "product": "avena",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
       "product": "azucar",
       "region": "eu",
       "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "cebada",
+      "region": "us",
+      "sourceId": "usda_nass",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
