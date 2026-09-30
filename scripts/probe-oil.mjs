@@ -6,9 +6,10 @@ for (const ms of ['ES','FR','DE']) {
   out.push('== ' + ms + ' HTTP ' + res.status);
   if (!res.ok) continue;
   const rows = await res.json();
+  out.push('sample: ' + JSON.stringify(rows[0]));
   const m = new Map();
   for (const r of rows) {
-    const k = [r.productName, r.marketName, r.stageName, r.unit].join(' | ');
+    const k = [r.product, r.productName, r.marketName, r.stageName, r.marketStage, r.sector, r.unit].join(' | ');
     const e = m.get(k) || { n: 0, last: '', lp: '' };
     e.n++; const key = (r.endDate || '').split('/').reverse().join('');
     if (key > e.last) { e.last = key; e.lp = r.price + ' @ ' + r.endDate; }
