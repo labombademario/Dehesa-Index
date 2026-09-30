@@ -1,56 +1,82 @@
-=== https://api.tech.ec.europa.eu/agrifood/api/sheepAndGoat/prices#group=memberStateCode,category
+=== https://api.tech.ec.europa.eu/agrifood/api/cereal/prices?memberStateCodes=ES#group=productName,marketName,stageName
 STATUS: 200
-FILAS: 19015
-EJEMPLO: {"memberStateCode":"AT","memberStateName":"Austria","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€760.00","unit":"100kg","weekNumber":38,"category":"Heavy Lamb","marketName":"AT","marketingYear":2026}
-  GRUPO [AT | Heavy Lamb] n=619 ultimo=2026-09-20 precio=€760.00
-  GRUPO [BE | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€946.20
-  GRUPO [BG | Heavy Lamb] n=147 ultimo=2026-09-20 precio=€879.44
-  GRUPO [BG | Light Lamb] n=621 ultimo=2026-09-20 precio=€1181.28
-  GRUPO [CY | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€914.00
-  GRUPO [DE | Heavy Lamb] n=605 ultimo=2026-09-20 precio=€976.01
-  GRUPO [DK | Heavy Lamb] n=240 ultimo=2019-07-14 precio=€512.73
-  GRUPO [EE | Heavy Lamb] n=172 ultimo=2022-11-27 precio=€455.00
-  GRUPO [EE | Light Lamb] n=35 ultimo=2021-04-25 precio=€197.20
-  GRUPO [EL | Light Lamb] n=621 ultimo=2026-09-20 precio=€928.78
-  GRUPO [ES | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€1011.80
-  GRUPO [ES | Light Lamb] n=621 ultimo=2026-09-20 precio=€1094.40
-  GRUPO [EU | Heavy Lamb] n=614 ultimo=2026-09-20 precio=€903.18
-  GRUPO [EU | Light Lamb] n=614 ultimo=2026-09-20 precio=€996.38
-  GRUPO [EU+UK | Heavy Lamb] n=268 ultimo=2020-02-02 precio=€560.36
-  GRUPO [EU+UK | Light Lamb] n=268 ultimo=2020-02-02 precio=€566.77
-  GRUPO [FI | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€689.29
-  GRUPO [FR | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€911.00
-  GRUPO [HR | Heavy Lamb] n=510 ultimo=2026-09-20 precio=€1275.40
-  GRUPO [HR | Light Lamb] n=621 ultimo=2026-09-20 precio=€1292.33
-  GRUPO [HU | Heavy Lamb] n=294 ultimo=2026-09-13 precio=€1153.58
-  GRUPO [HU | Light Lamb] n=446 ultimo=2026-05-03 precio=€1274.57
-  GRUPO [IE | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€774.79
-  GRUPO [IT | Heavy Lamb] n=510 ultimo=2026-09-20 precio=€825.00
-  GRUPO [IT | Light Lamb] n=621 ultimo=2026-09-20 precio=€900.00
-  GRUPO [LT | Heavy Lamb] n=479 ultimo=2026-09-20 precio=€777.99
-  GRUPO [LV | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€687.40
-  GRUPO [LV | Light Lamb] n=510 ultimo=2026-09-20 precio=€683.12
-  GRUPO [NL | Heavy Lamb] n=449 ultimo=2026-03-01 precio=€1002.00
-  GRUPO [PL | Heavy Lamb] n=575 ultimo=2026-09-20 precio=€894.60
-  GRUPO [PL | Light Lamb] n=206 ultimo=2026-08-02 precio=€1058.84
-  GRUPO [PT | Heavy Lamb] n=401 ultimo=2026-09-20 precio=€971.67
-  GRUPO [PT | Light Lamb] n=621 ultimo=2026-09-20 precio=€1143.81
-  GRUPO [RO | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€646.39
-  GRUPO [RO | Light Lamb] n=262 ultimo=2026-06-28 precio=€837.40
-  GRUPO [SE | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€837.68
-  GRUPO [SI | Heavy Lamb] n=401 ultimo=2026-09-20 precio=€923.18
-  GRUPO [SI | Light Lamb] n=621 ultimo=2026-09-20 precio=€875.75
-  GRUPO [SK | Light Lamb] n=76 ultimo=2025-04-27 precio=€745.83
-  GRUPO [UK | Heavy Lamb] n=378 ultimo=2020-02-02 precio=€558.45
-
-=== https://api.tech.ec.europa.eu/agrifood/api/fertiliser/prices?memberStateCodes=ES
-STATUS: 200
-FILAS: 276
-  year -> [2026,2025,2024,2023,2022,2021,2020,2019]
-  quarter -> ["Q3","Q2","Q1","Q4"]
-  month -> ["Aug","Jul","Jun","May","Apr","Mar","Feb","Jan","Dec","Nov","Oct","Sep"]
-  memberStateName -> ["European Commission"]
-  product -> ["K (Potash)","N (Nitrogen)","P (Phosphorus)"]
-  price -> (217 valores; ej. [364,454,739])
-  unit -> ["€/tonne"]
-EJEMPLO: {"year":2026,"quarter":"Q3","month":"Aug","memberStateName":"European Commission","product":"K (Potash)","price":364,"unit":"€/tonne"}
+FILAS: 22540
+EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€248,00","unit":"TONNES","weekNumber":12,"productName":"Feed maize","marketName":"Lerida","stageName":"Departure from silo - after some storage - on truck or other transport means","referencePeriod":"24/09/2026"}
+  GRUPO [Breadmaking common wheat | National Average | National Average - Not Specified] n=489 ultimo=2025-09-28 precio=€208,05
+  GRUPO [Durum wheat | Cadiz | Departure from silo - after some storage - on truck or other transport means] n=355 ultimo=2025-09-28 precio=€246,00
+  GRUPO [Durum wheat | Cordoba | Departure from silo - after some storage - on truck or other transport means] n=448 ultimo=2025-10-26 precio=€238,00
+  GRUPO [Durum wheat | National Average | National Average - Not Specified] n=490 ultimo=2025-09-28 precio=€255,00
+  GRUPO [Durum wheat | Sevilla | Departure from silo - after some storage - on truck or other transport means] n=433 ultimo=2026-09-20 precio=€268,00
+  GRUPO [Durum wheat | Zaragoza | Departure from silo - after some storage - on truck or other transport means] n=530 ultimo=2026-09-20 precio=€286,00
+  GRUPO [Feed barley | Albacete | Departure from silo - after some storage - on truck or other transport means] n=574 ultimo=2026-09-20 precio=€226,10
+  GRUPO [Feed barley | Burgos | Departure from silo - after some storage - on truck or other transport means] n=467 ultimo=2026-09-20 precio=€245,00
+  GRUPO [Feed barley | Ciudad Real | Departure from silo - after some storage - on truck or other transport means] n=574 ultimo=2026-09-20 precio=€233,50
+  GRUPO [Feed barley | Guadalajara | Departure from silo - after some storage - on truck or other transport means] n=467 ultimo=2026-09-20 precio=€228,60
+  GRUPO [Feed barley | Huesca | Departure from silo - after some storage - on truck or other transport means] n=566 ultimo=2026-09-20 precio=€234,00
+  GRUPO [Feed barley | Lerida | Departure from silo - after some storage - on truck or other transport means] n=565 ultimo=2026-09-20 precio=€235,00
+  GRUPO [Feed barley | Madrid | Delivered to processor after one intermediary] n=1 ultimo=2015-11-22 precio=€184,00
+  GRUPO [Feed barley | National Average | National Average - Not Specified] n=559 ultimo=2026-08-02 precio=€224,80
+  GRUPO [Feed barley | Navarra | Departure from silo - after some storage - on truck or other transport means] n=34 ultimo=2016-07-03 precio=€150,00
+  GRUPO [Feed barley | Palencia | Departure from silo - after some storage - on truck or other transport means] n=572 ultimo=2026-09-20 precio=€235,00
+  GRUPO [Feed barley | Segovia | Departure from silo - after some storage - on truck or other transport means] n=573 ultimo=2026-09-20 precio=€238,00
+  GRUPO [Feed barley | Toledo | Departure from silo - after some storage - on truck or other transport means] n=467 ultimo=2026-09-20 precio=€242,80
+  GRUPO [Feed barley | Valladolid | Departure from silo - after some storage - on truck or other transport means] n=568 ultimo=2026-09-20 precio=€242,00
+  GRUPO [Feed maize | Albacete | Departure from silo - after some storage - on truck or other transport means] n=467 ultimo=2026-09-20 precio=€245,60
+  GRUPO [Feed maize | Badajoz | Departure from silo - after some storage - on truck or other transport means] n=481 ultimo=2025-02-02 precio=€256,00
+  GRUPO [Feed maize | Barcelona | Delivered to processor after one intermediary] n=140 ultimo=2018-07-08 precio=€182,00
+  GRUPO [Feed maize | Huesca | Departure from silo - after some storage - on truck or other transport means] n=53 ultimo=2026-09-20 precio=€252,00
+  GRUPO [Feed maize | Leon | Departure from silo - after some storage - on truck or other transport means] n=573 ultimo=2026-09-20 precio=€254,00
+  GRUPO [Feed maize | Lerida | Departure from silo - after some storage - on truck or other transport means] n=564 ultimo=2026-09-20 precio=€248,00
+  GRUPO [Feed maize | Madrid | Delivered to processor after one intermediary] n=486 ultimo=2025-09-28 precio=€239,00
+  GRUPO [Feed maize | National Average | National Average - Not Specified] n=489 ultimo=2025-09-28 precio=€223,80
+  GRUPO [Feed maize | Navarra | Departure from silo - after some storage - on truck or other transport means] n=564 ultimo=2026-09-20 precio=€257,00
+  GRUPO [Feed maize | Sevilla | Departure from silo - after some storage - on truck or other transport means] n=403 ultimo=2026-09-20 precio=€258,00
+  GRUPO [Feed maize | Valencia | Delivered to port - grain delivered to a port silo by train or truck or barge] n=131 ultimo=2018-07-08 precio=€180,00
+  GRUPO [Feed maize | Valladolid | Departure from silo - after some storage - on truck or other transport means] n=466 ultimo=2026-09-20 precio=€255,80
+  GRUPO [Feed maize | Zaragoza | Departure from silo - after some storage - on truck or other transport means] n=555 ultimo=2026-09-20 precio=€259,00
+  GRUPO [Feed wheat | Burgos | Departure from silo - after some storage - on truck or other transport means] n=46 ultimo=2026-09-20 precio=€241,75
+  GRUPO [Feed wheat | Cordoba | Departure from silo - after some storage - on truck or other transport means] n=1 ultimo=2025-11-23 precio=€216,90
+  GRUPO [Feed wheat | Huesca | Departure from silo - after some storage - on truck or other transport means] n=45 ultimo=2026-09-20 precio=€251,80
+  GRUPO [Feed wheat | Lerida | Departure from silo - after some storage - on truck or other transport means] n=1 ultimo=2025-11-09 precio=€217,80
+  GRUPO [Feed wheat | Lleida | Departure from silo - after some storage - on truck or other transport means] n=45 ultimo=2026-09-20 precio=€250,40
+  GRUPO [Feed wheat | Navarra | Departure from silo - after some storage - on truck or other transport means] n=46 ultimo=2026-09-20 precio=€250,42
+  GRUPO [Feed wheat | Palencia | Departure from silo - after some storage - on truck or other transport means] n=43 ultimo=2026-09-20 precio=€241,85
+  GRUPO [Feed wheat | Segovia | Departure from silo - after some storage - on truck or other transport means] n=46 ultimo=2026-09-20 precio=€244,20
+  GRUPO [Feed wheat | Sevilla | Departure from silo - after some storage - on truck or other transport means] n=46 ultimo=2026-09-20 precio=€245,00
+  GRUPO [Feed wheat | Toledo | Departure from silo - after some storage - on truck or other transport means] n=46 ultimo=2026-09-20 precio=€253,20
+  GRUPO [Feed wheat | Valladolid | Departure from silo - after some storage - on truck or other transport means] n=46 ultimo=2026-09-20 precio=€247,80
+  GRUPO [Feed wheat | Zamora | Departure from silo - after some storage - on truck or other transport means] n=46 ultimo=2026-09-20 precio=€245,20
+  GRUPO [Feed wheat | Zaragoza | Departure from silo - after some storage - on truck or other transport means] n=45 ultimo=2026-09-20 precio=€258,20
+  GRUPO [Malting barley - M2RH | National Average | National Average - Not Specified] n=544 ultimo=2026-08-02 precio=€227,50
+  GRUPO [Malting barley | Badajoz | Departure from silo - after some storage - on truck or other transport means] n=1 ultimo=2016-01-24 precio=€179,00
+  GRUPO [Malting barley | Barcelona | Delivered to processor after one intermediary] n=1 ultimo=2016-01-24 precio=€173,00
+  GRUPO [Malting barley | Burgos | Departure from silo - after some storage - on truck or other transport means] n=432 ultimo=2024-12-01 precio=€218,50
+  GRUPO [Malting barley | Guadalajara | Departure from silo - after some storage - on truck or other transport means] n=313 ultimo=2024-06-30 precio=€178,00
+  GRUPO [Malting barley | Huesca | Departure from silo - after some storage - on truck or other transport means] n=479 ultimo=2026-09-20 precio=€230,00
+  GRUPO [Malting barley | Leon | Departure from silo - after some storage - on truck or other transport means] n=1 ultimo=2016-01-24 precio=€168,00
+  GRUPO [Malting barley | Lerida | Departure from silo - after some storage - on truck or other transport means] n=1 ultimo=2016-01-24 precio=€165,00
+  GRUPO [Malting barley | Madrid | Delivered to processor after one intermediary] n=198 ultimo=2023-07-23 precio=€252,00
+  GRUPO [Malting barley | National Average | National Average - Not Specified] n=15 ultimo=2016-02-28 precio=€180,87
+  GRUPO [Malting barley | Navarra | Departure from silo - after some storage - on truck or other transport means] n=463 ultimo=2026-09-20 precio=€238,00
+  GRUPO [Malting barley | Palencia | Departure from silo - after some storage - on truck or other transport means] n=414 ultimo=2024-06-30 precio=€190,00
+  GRUPO [Malting barley | Sevilla | Departure from silo - after some storage - on truck or other transport means] n=1 ultimo=2016-01-24 precio=€185,00
+  GRUPO [Malting barley | Valencia | Delivered to port - grain delivered to a port silo by train or truck or barge] n=1 ultimo=2016-01-24 precio=€174,00
+  GRUPO [Malting barley | Valladolid | Departure from silo - after some storage - on truck or other transport means] n=1 ultimo=2016-01-24 precio=€172,40
+  GRUPO [Malting barley | Zaragoza | Departure from silo - after some storage - on truck or other transport means] n=1 ultimo=2016-01-24 precio=€173,00
+  GRUPO [Milling wheat | Albacete | Departure from silo - after some storage - on truck or other transport means] n=521 ultimo=2025-09-28 precio=€203,20
+  GRUPO [Milling wheat | Barcelona | Delivered to processor after one intermediary] n=496 ultimo=2025-11-02 precio=€227,00
+  GRUPO [Milling wheat | Burgos | Departure from silo - after some storage - on truck or other transport means] n=528 ultimo=2025-11-02 precio=€201,40
+  GRUPO [Milling wheat | Cordoba | Departure from silo - after some storage - on truck or other transport means] n=1 ultimo=2025-12-07 precio=€220,40
+  GRUPO [Milling wheat | Cuenca | Departure from silo - after some storage - on truck or other transport means] n=261 ultimo=2025-11-02 precio=€199,00
+  GRUPO [Milling wheat | Huesca | Departure from silo - after some storage - on truck or other transport means] n=566 ultimo=2026-09-20 precio=€260,00
+  GRUPO [Milling wheat | Leon | Departure from silo - after some storage - on truck or other transport means] n=1 ultimo=2025-12-07 precio=€220,00
+  GRUPO [Milling wheat | Lleida | Departure from silo - after some storage - on truck or other transport means] n=46 ultimo=2026-09-20 precio=€255,60
+  GRUPO [Milling wheat | Navarra | Departure from silo - after some storage - on truck or other transport means] n=46 ultimo=2026-09-20 precio=€258,00
+  GRUPO [Milling wheat | Palencia | Departure from silo - after some storage - on truck or other transport means] n=520 ultimo=2025-11-02 precio=€201,40
+  GRUPO [Milling wheat | Segovia | Departure from silo - after some storage - on truck or other transport means] n=46 ultimo=2026-09-20 precio=€255,00
+  GRUPO [Milling wheat | Sevilla | Departure from silo - after some storage - on truck or other transport means] n=496 ultimo=2025-11-02 precio=€222,00
+  GRUPO [Milling wheat | Toledo | Departure from silo - after some storage - on truck or other transport means] n=1 ultimo=2026-02-01 precio=€224,95
+  GRUPO [Milling wheat | Valencia | Delivered to port - grain delivered to a port silo by train or truck or barge] n=27 ultimo=2016-07-03 precio=€172,00
+  GRUPO [Milling wheat | Valladolid | Departure from silo - after some storage - on truck or other transport means] n=528 ultimo=2025-11-02 precio=€206,40
+  GRUPO [Milling wheat | Zamora | Departure from silo - after some storage - on truck or other transport means] n=528 ultimo=2025-11-02 precio=€208,20
+  GRUPO [Milling wheat | Zaragoza | Departure from silo - after some storage - on truck or other transport means] n=456 ultimo=2026-09-20 precio=€262,70
