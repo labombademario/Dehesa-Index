@@ -1,0 +1,119 @@
+{
+ "schemaVersion": "1.0",
+ "source": "eu_agrifood",
+ "generatedAt": "2026-09-30T13:30:59.075Z",
+ "families": [
+  {
+   "id": "cereales",
+   "endpoint": "cereal",
+   "freq": "weekly",
+   "series": 20,
+   "points": 28183,
+   "latest": "2026-09-20"
+  },
+  {
+   "id": "oleaginosas",
+   "endpoint": "oilseeds",
+   "freq": "weekly",
+   "series": 131,
+   "points": 22260,
+   "latest": "2026-09-27"
+  },
+  {
+   "id": "lacteos",
+   "endpoint": "dairy",
+   "freq": "weekly",
+   "series": 11,
+   "points": 44426,
+   "latest": "2026-09-27"
+  },
+  {
+   "id": "vacuno",
+   "endpoint": "beef",
+   "freq": "weekly",
+   "series": 38,
+   "points": 199622,
+   "latest": "2026-09-27"
+  },
+  {
+   "id": "cerdo",
+   "endpoint": "pigmeat",
+   "freq": "weekly",
+   "series": 5,
+   "points": 48783,
+   "latest": "2026-09-27"
+  },
+  {
+   "id": "pollo",
+   "endpoint": "poultry",
+   "freq": "weekly",
+   "series": 3,
+   "points": 25925,
+   "latest": "2026-09-27"
+  },
+  {
+   "id": "huevos",
+   "endpoint": "poultry/egg",
+   "freq": "weekly",
+   "series": 4,
+   "points": 26883,
+   "latest": "2026-09-27"
+  },
+  {
+   "id": "ovino",
+   "endpoint": "sheepAndGoat",
+   "freq": "weekly",
+   "series": 2,
+   "points": 18749,
+   "latest": "2026-09-27"
+  },
+  {
+   "id": "arroz",
+   "endpoint": "rice",
+   "freq": "weekly",
+   "series": 151,
+   "points": 41992,
+   "latest": "2026-09-27"
+  },
+  {
+   "id": "leche",
+   "endpoint": "rawMilk",
+   "freq": "monthly",
+   "series": 2,
+   "points": 9428,
+   "latest": "2026-08-31"
+  },
+  {
+   "id": "aceite",
+   "endpoint": "oliveOil",
+   "freq": "weekly",
+   "series": 6,
+   "points": 43935,
+   "latest": "2026-09-27"
+  },
+  {
+   "id": "azucar",
+   "endpoint": "sugar",
+   "freq": "monthly",
+   "series": 2,
+   "points": 740,
+   "latest": "2026-06-01"
+  },
+  {
+   "id": "vino",
+   "endpoint": "wine",
+   "freq": "weekly",
+   "series": 37,
+   "points": 4081,
+   "latest": "2025-11-02"
+  },
+  {
+   "id": "fertilizantes",
+   "endpoint": "fertiliser",
+   "freq": "monthly",
+   "series": 3,
+   "points": 276,
+   "latest": "2026-08-01"
+  }
+ ]
+}
