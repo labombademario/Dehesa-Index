@@ -16,14 +16,7 @@ jobs:
           p(){ echo "=== $1" >> $o; curl -sL -m 60 -A "Mozilla/5.0 DehesaIndex probe" -w "\nHTTP %{http_code} %{content_type} %{size_download}\n" "$1" | head -c ${2:-3000} >> $o; echo >> $o; }
           p "https://data.gov.au/data/api/3/action/package_search?fq=organization:abares&rows=100&fl=name,title,license_id" 12000
           p "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs" 400
-          curl -sL -m 60 "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs" -H "Accept: application/vnd.sdmx.structure+json" | python3 -c "
-import sys,json
-try:
-  d=json.load(sys.stdin)
-  for f in d['data']['dataflows']:
-    n=f.get('name','')
-    if any(k in n.lower() for k in ['agri','crop','livestock','farm','commodit','export','trade in goods','price']): print(f['id'],n)
-except Exception as e: print('ERR',e)" >> $o
+          curl -sL -m 60 "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs" -H "Accept: application/vnd.sdmx.structure+json" | python3 scripts/probe-abs.py >> $o
           p "https://www.mla.com.au/prices-markets/statistics/api/" 6000
           p "https://www.agriculture.gov.au/abares/data/weekly-commodity-price-update/australian-agricultural-prices" 6000
           p "https://www.agriculture.gov.au/abares/research-topics/agricultural-outlook/data" 6000
