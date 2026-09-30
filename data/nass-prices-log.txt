@@ -1,8 +1,10 @@
 índices pagados nacional filas 3808 usadas 3808
 precio pagado FEED nacional filas 0 usadas 0
 precio pagado FEED estados filas 0 usadas 0
+precio pagado FEED región filas 0 usadas 0
 precio pagado FUELS nacional filas 0 usadas 0
 precio pagado FUELS estados filas 0 usadas 0
+precio pagado FUELS región filas 0 usadas 0
 precios pagados otros filas 0 usadas 0
  • AG SERVICES - INDEX FOR PRICE PAID, 2011 | INDEX | nac 68 2026-08 | estados 0
  • AG SERVICES, CUSTOM RATES - INDEX FOR PRICE PAID, 2011 | INDEX | nac 68 2026-08 | estados 0

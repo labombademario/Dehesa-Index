@@ -1,14 +1,14 @@
 cerdos inventario nacional filas 975 usadas 191
-cerdos camada y lechones filas 98 usadas 98
-cerdos camada litter filas 98 usadas 98
+cerdos camada y lechones filas 98 usadas 87
+cerdos camada litter filas 98 usadas 87
 cerdos inventario estados filas 29272 usadas 3702
 vacuno nacional INVENTORY filas 2619 usadas 168
 vacuno nacional PLACEMENTS filas 476 usadas 0
 vacuno nacional MARKETINGS filas 0 usadas 0
-ERROR {"commodity_desc":"CATTLE","statisticcat_desc":"INVENTORY","agg_level_desc":"STATE"} HTTP 413
-vacuno estados inventario filas 0 usadas 0
-ERROR {"commodity_desc":"CATTLE","statisticcat_desc":"INVENTORY","agg_level_desc":"STATE"} HTTP 413
-vacuno estados on feed filas 0 usadas 0
+vacuno estados CATTLE, INCL CALVES - INVENTORY filas 350 usadas 350
+vacuno estados CATTLE, COWS, BEEF - INVENTORY filas 314 usadas 314
+vacuno estados CATTLE, COWS, MILK - INVENTORY filas 314 usadas 314
+vacuno estados CATTLE, ON FEED - INVENTORY filas 198 usadas 195
 frigoríficos BEEF filas 204 usadas 204
 frigoríficos PORK filas 1020 usadas 1020
 frigoríficos BUTTER filas 68 usadas 68
@@ -22,7 +22,7 @@ frigoríficos MILK filas 261 usadas 0
 frigoríficos WHEY filas 737 usadas 0
 leche producción estados filas 5398 usadas 4252
 leche producción nacional filas 952 usadas 180
-leche precio recibido filas 198 usadas 193
+leche precio recibido filas 198 usadas 188
 vacas lecheras filas 0 usadas 0
 vacas lecheras nacional filas 0 usadas 0
  • BEEF, BONE-IN, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
@@ -35,9 +35,9 @@ vacas lecheras nacional filas 0 usadas 0
  • CATTLE, CALVES - INVENTORY | HEAD | nac 11 2026-07 | estados 0
  • CATTLE, COWS - INVENTORY | HEAD | nac 12 2026-07 | estados 0
  • CATTLE, COWS - OPERATIONS WITH INVENTORY | OPERATIONS | nac 1 2022-12 | estados 0
- • CATTLE, COWS, BEEF - INVENTORY | HEAD | nac 12 2026-07 | estados 0
+ • CATTLE, COWS, BEEF - INVENTORY | HEAD | nac 12 2026-07 | estados 51
  • CATTLE, COWS, BEEF - OPERATIONS WITH INVENTORY | OPERATIONS | nac 1 2022-12 | estados 0
- • CATTLE, COWS, MILK - INVENTORY | HEAD | nac 12 2026-07 | estados 0
+ • CATTLE, COWS, MILK - INVENTORY | HEAD | nac 12 2026-07 | estados 51
  • CATTLE, COWS, MILK - OPERATIONS WITH INVENTORY | OPERATIONS | nac 1 2022-12 | estados 0
  • CATTLE, HEIFERS, GE 500 LBS - INVENTORY | HEAD | nac 11 2026-07 | estados 0
  • CATTLE, HEIFERS, GE 500 LBS, (EXCL REPLACEMENT) - INVENTORY | HEAD | nac 11 2026-07 | estados 0
@@ -45,11 +45,11 @@ vacas lecheras nacional filas 0 usadas 0
  • CATTLE, HEIFERS, GE 500 LBS, BEEF REPLACEMENT, EXPECTED TO CALVE - INVENTORY | HEAD | nac 6 2026-01 | estados 0
  • CATTLE, HEIFERS, GE 500 LBS, MILK REPLACEMENT - INVENTORY | HEAD | nac 11 2026-07 | estados 0
  • CATTLE, HEIFERS, GE 500 LBS, MILK REPLACEMENT, EXPECTED TO CALVE - INVENTORY | HEAD | nac 6 2026-01 | estados 0
- • CATTLE, INCL CALVES - INVENTORY | HEAD | nac 12 2026-07 | estados 0
+ • CATTLE, INCL CALVES - INVENTORY | HEAD | nac 12 2026-07 | estados 50
  • CATTLE, INCL CALVES - INVENTORY, MEASURED IN $ | $ | nac 6 2026-01 | estados 0
  • CATTLE, INCL CALVES - INVENTORY, MEASURED IN $ / HEAD | $ / HEAD | nac 6 2026-01 | estados 0
  • CATTLE, INCL CALVES - OPERATIONS WITH INVENTORY | OPERATIONS | nac 1 2022-12 | estados 0
- • CATTLE, ON FEED - INVENTORY | HEAD | nac 12 2026-07 | estados 0
+ • CATTLE, ON FEED - INVENTORY | HEAD | nac 12 2026-07 | estados 42
  • CATTLE, ON FEED - OPERATIONS WITH INVENTORY | OPERATIONS | nac 1 2022-12 | estados 0
  • CATTLE, STEERS, GE 500 LBS - INVENTORY | HEAD | nac 11 2026-07 | estados 0
  • CHEESE, NATURAL, (EXCL AMERICAN & SWISS), COLD STORAGE, CHILLED - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
@@ -76,9 +76,9 @@ vacas lecheras nacional filas 0 usadas 0
  • HOGS - INVENTORY | HEAD | nac 23 2026-09 | estados 50
  • HOGS - INVENTORY, MEASURED IN $ | $ | nac 5 2025-12 | estados 49
  • HOGS - INVENTORY, MEASURED IN $ / HEAD | $ / HEAD | nac 5 2025-12 | estados 49
- • HOGS - LITTER RATE, MEASURED IN PIGS / LITTER | PIGS / LITTER | nac 69 2026-12 | estados 0
+ • HOGS - LITTER RATE, MEASURED IN PIGS / LITTER | PIGS / LITTER | nac 68 2026-08 | estados 0
  • HOGS - OPERATIONS WITH INVENTORY | OPERATIONS | nac 1 2022-12 | estados 0
- • HOGS - PIG CROP, MEASURED IN HEAD | HEAD | nac 69 2026-12 | estados 0
+ • HOGS - PIG CROP, MEASURED IN HEAD | HEAD | nac 68 2026-08 | estados 0
  • HOGS, BREEDING - INVENTORY | HEAD | nac 23 2026-09 | estados 49
  • HOGS, CONTRACT GROWER (CONTRACTEE) - INVENTORY | HEAD | nac 1 2022-12 | estados 0
  • HOGS, CONTRACT GROWER (CONTRACTEE) - OPERATIONS WITH INVENTORY | OPERATIONS | nac 1 2022-12 | estados 0
