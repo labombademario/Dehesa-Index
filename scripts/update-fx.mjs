@@ -47,8 +47,9 @@ async function fetchEcbRates() {
   var usdRate = rateFor('USD'); // 1 EUR = usdRate USD
   var gbpRate = rateFor('GBP'); // 1 EUR = gbpRate GBP
   var cadRate = rateFor('CAD'); // 1 EUR = cadRate CAD
+  var dkkRate = rateFor('DKK'); // 1 EUR = dkkRate DKK
 
-  return { quoteDate: quoteDate, usdRate: usdRate, gbpRate: gbpRate, cadRate: cadRate };
+  return { quoteDate: quoteDate, usdRate: usdRate, gbpRate: gbpRate, cadRate: cadRate, dkkRate: dkkRate };
 }
 
 async function main() {
@@ -57,10 +58,12 @@ async function main() {
   var eurUsd = fmt(rates.usdRate);
   var gbpUsd = fmt(rates.usdRate / rates.gbpRate);
   var cadUsd = fmt(rates.usdRate / rates.cadRate);
+  var dkkUsd = fmt(rates.usdRate / rates.dkkRate);
 
   console.log('Fecha de la cotización del BCE: ' + rates.quoteDate);
   console.log('EUR/USD = ' + eurUsd + '  (BCE: 1 EUR = ' + rates.usdRate + ' USD)');
   console.log('CAD/USD = ' + cadUsd + '  (derivado de 1 EUR = ' + rates.cadRate + ' CAD)');
+  console.log('DKK/USD = ' + dkkUsd + '  (derivado de 1 EUR = ' + rates.dkkRate + ' DKK)');
   console.log('GBP/USD = ' + gbpUsd + '  (derivado de 1 EUR = ' + rates.gbpRate + ' GBP)');
 
   var src = await readFile(DATA_JS_PATH, 'utf8');
@@ -69,6 +72,7 @@ async function main() {
   var reEurUsd = /var EURUSD = [\d.]+;/;
   var reGbpUsd = /var GBPUSD = [\d.]+;/;
   var reCadUsd = /var CADUSD = [\d.]+;/;
+  var reDkkUsd = /var DKKUSD = [\d.]+;/;
   var reFxDate = /var FX_DATE = '[\d-]+';.*/;
 
   if (!reEurUsd.test(src) || !reGbpUsd.test(src)) {
@@ -84,6 +88,7 @@ async function main() {
     .replace(reEurUsd, 'var EURUSD = ' + eurUsd + ';')
     .replace(reGbpUsd, 'var GBPUSD = ' + gbpUsd + ';')
     .replace(reCadUsd, 'var CADUSD = ' + cadUsd + ';')
+    .replace(reDkkUsd, 'var DKKUSD = ' + dkkUsd + ';')
     .replace(reFxDate, "var FX_DATE = '" + (rates.quoteDate || '') + "'; // fecha ISO de la cotización, la actualiza scripts/update-fx.mjs");
 
   if (updated === src) {

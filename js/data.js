@@ -12,8 +12,9 @@
   var GBPUSD = 1.3286;
   var FX_DATE = '2026-09-30'; // fecha ISO de la cotización, la actualiza scripts/update-fx.mjs
   var CADUSD = 0.7051;
-  var FX = { USD: 1, EUR: EURUSD, GBP: GBPUSD, CAD: CADUSD };
-  var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', CAD: 'C$' };
+  var DKKUSD = 0.1522; // corona danesa (ERM II, ~7,46 por EUR); la actualiza scripts/update-fx.mjs
+  var FX = { USD: 1, EUR: EURUSD, GBP: GBPUSD, CAD: CADUSD, DKK: DKKUSD };
+  var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', CAD: 'C$', DKK: 'kr ' };
 
   // Nombres de mes abreviados por idioma, para mostrar FX_DATE en el panel
   // sin depender de Intl (coherencia con el resto del sitio, que es ES5
@@ -40,10 +41,10 @@
   };
 
   var REGION = {
-    es: { us: 'EE. UU.', eu: 'Europa', uk: 'Reino Unido', ca: 'Canadá' },
-    en: { us: 'U.S.', eu: 'Europe', uk: 'U.K.', ca: 'Canada' },
-    fr: { us: 'États-Unis', eu: 'Europe', uk: 'Royaume-Uni', ca: 'Canada' },
-    it: { us: 'Stati Uniti', eu: 'Europa', uk: 'Regno Unito', ca: 'Canada' }
+    es: { us: 'EE. UU.', eu: 'Europa', uk: 'Reino Unido', ca: 'Canadá', dk: 'Dinamarca' },
+    en: { us: 'U.S.', eu: 'Europe', uk: 'U.K.', ca: 'Canada', dk: 'Denmark' },
+    fr: { us: 'États-Unis', eu: 'Europe', uk: 'Royaume-Uni', ca: 'Canada', dk: 'Danemark' },
+    it: { us: 'Stati Uniti', eu: 'Europa', uk: 'Regno Unito', ca: 'Canada', dk: 'Danimarca' }
   };
 
   var ENERGY_REGIONS = {

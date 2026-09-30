@@ -1008,6 +1008,11 @@
     if (product.ca && product.ca.price > 0 && product.caKgPerUnit && product.caUnitKey) {
       rows.push({ flag: '🇨🇦', mapCode: 'CA', label: lgMarketLabel(product, 'ca', RG.ca || 'Canada'), built: D.buildRegion(product.ca, lgMarketLabel(product, 'ca', RG.ca || 'Canada'), 'CAD', product.caKgPerUnit, UL[product.caUnitKey] || UL[product.metricUnitKey], D.FX, t) });
     }
+    // Dinamarca: dato nacional real de Statistics Denmark (si hay serie para este producto).
+    var dkRaw = global.DehesaDenmark && global.DehesaDenmark.raw(product.nameKey);
+    if (dkRaw) {
+      rows.push({ flag: '🇩🇰', mapCode: 'DK', label: RG.dk || 'Denmark', built: D.buildRegion(dkRaw, RG.dk || 'Denmark', 'EUR', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
+    }
     // Mismo criterio que el resto del panel: si el producto no tiene
     // countryFactors (o un país concreto no publica cotización propia), no
     // se inventa nada -- ese país simplemente no aparece en la lista ni en
