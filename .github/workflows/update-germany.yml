@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p
       - run: python3 scripts/update-germany.py
       - run: |
           git config user.name "github-actions[bot]"
