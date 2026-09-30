@@ -1,0 +1,691 @@
+{
+ "schemaVersion": "1.0",
+ "generatedAt": "2026-09-30T05:06:28.107Z",
+ "source": "USDA AMS Market News (MARS API)",
+ "reports": [
+  {
+   "id": 1034,
+   "title": "Dry Whey - Europe",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 29,
+   "kb": 4
+  },
+  {
+   "id": 1035,
+   "title": "Skim Milk Powder - Europe",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 29,
+   "kb": 4
+  },
+  {
+   "id": 1036,
+   "title": "Whole Milk Powder - Europe",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 29,
+   "kb": 4
+  },
+  {
+   "id": 1038,
+   "title": "Skim Milk Powder - Oceania",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 29,
+   "kb": 22
+  },
+  {
+   "id": 1039,
+   "title": "Whole Milk Powder - Oceania",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 29,
+   "kb": 22
+  },
+  {
+   "id": 1041,
+   "title": "Skim Milk Powder - South America",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 30,
+   "kb": 4
+  },
+  {
+   "id": 1042,
+   "title": "Whole Milk Powder - South America",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 30,
+   "kb": 4
+  },
+  {
+   "id": 1043,
+   "title": "Dry Buttermilk - West U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 57,
+   "kb": 8
+  },
+  {
+   "id": 1044,
+   "title": "Dry Buttermilk - East and Central U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 57,
+   "kb": 8
+  },
+  {
+   "id": 1045,
+   "title": "Dry Whey - Central U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 114,
+   "kb": 18
+  },
+  {
+   "id": 1046,
+   "title": "Dry Whey - West U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 57,
+   "kb": 8
+  },
+  {
+   "id": 1047,
+   "title": "Dry Whey - East U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 57,
+   "kb": 8
+  },
+  {
+   "id": 1050,
+   "title": "Dry Whole Milk - U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 57,
+   "kb": 8
+  },
+  {
+   "id": 1051,
+   "title": "Casein - U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 114,
+   "kb": 16
+  },
+  {
+   "id": 1052,
+   "title": "Lactose - Central and West U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 57,
+   "kb": 8
+  },
+  {
+   "id": 1053,
+   "title": "Whey Protein Concentrate - Central and West U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 57,
+   "kb": 8
+  },
+  {
+   "id": 1082,
+   "title": "Cheese - Oceania",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 29,
+   "kb": 24
+  },
+  {
+   "id": 1089,
+   "title": "Butter - Central U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 57,
+   "kb": 8
+  },
+  {
+   "id": 1090,
+   "title": "Butter - East U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 57,
+   "kb": 8
+  },
+  {
+   "id": 1091,
+   "title": "Butter - West U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 57,
+   "kb": 8
+  },
+  {
+   "id": 1098,
+   "title": "Butter/Butteroil - Europe",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 58,
+   "kb": 9
+  },
+  {
+   "id": 1099,
+   "title": "Butter - Oceania",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 29,
+   "kb": 22
+  },
+  {
+   "id": 1100,
+   "title": "Fluid Milk and Cream - Central U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 285,
+   "kb": 47
+  },
+  {
+   "id": 1101,
+   "title": "Fluid Milk And Cream - East U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 342,
+   "kb": 59
+  },
+  {
+   "id": 1102,
+   "title": "Fluid Milk and Cream - West U.S.",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 228,
+   "kb": 33
+  },
+  {
+   "id": 2707,
+   "title": "Texas Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 87,
+   "kb": 36
+  },
+  {
+   "id": 2708,
+   "title": "New Mexico Direct Cattle Report",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 94,
+   "kb": 18
+  },
+  {
+   "id": 2709,
+   "title": "Southeast Direct Cattle Report (AL/AR/FL/GA/LA/MS/TN)",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 288,
+   "kb": 35
+  },
+  {
+   "id": 2710,
+   "title": "Texas Direct Cattle Report",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 1049,
+   "kb": 196
+  },
+  {
+   "id": 2769,
+   "title": "Montana Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 100,
+   "kb": 19
+  },
+  {
+   "id": 2770,
+   "title": "Montana Direct Cattle Report",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-04-10",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 2807,
+   "title": "Iowa Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 123,
+   "kb": 30
+  },
+  {
+   "id": 2808,
+   "title": "Missouri Direct Cattle Report",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 36,
+   "kb": 5
+  },
+  {
+   "id": 2810,
+   "title": "National Direct Feeder Pig Report",
+   "fam": "pig",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2833,
+   "title": "USDA Beef & Pork Variety Meats Report (NW_LS440)",
+   "fam": "meat",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 42,
+   "kb": 13
+  },
+  {
+   "id": 2835,
+   "title": "USDA By-Product Drop Value Report-Hogs (NW_LS446)",
+   "fam": "meat",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 17,
+   "kb": 54
+  },
+  {
+   "id": 2838,
+   "title": "Weekly Pork & Beef Variety Meat Report (NW_LS905)",
+   "fam": "meat",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 56,
+   "kb": 60
+  },
+  {
+   "id": 2839,
+   "title": "Weekly Tallow & Protein Report (NW_LS906)",
+   "fam": "meat",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 16,
+   "kb": 15
+  },
+  {
+   "id": 2844,
+   "title": "Weekly California Shell Egg Report",
+   "fam": "poultry",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 9,
+   "kb": 22
+  },
+  {
+   "id": 2848,
+   "title": "Weekly Combined Regional Shell Egg Report",
+   "fam": "poultry",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 21,
+   "kb": 52
+  },
+  {
+   "id": 2885,
+   "title": "Kansas Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-11",
+   "series": 565,
+   "kb": 195
+  },
+  {
+   "id": 2904,
+   "title": "California Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 493,
+   "kb": 106
+  },
+  {
+   "id": 2905,
+   "title": "Colorado Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 353,
+   "kb": 75
+  },
+  {
+   "id": 2906,
+   "title": "Colorado Direct Cattle Report",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 329,
+   "kb": 51
+  },
+  {
+   "id": 2911,
+   "title": "National Wool Review (Fri)",
+   "fam": "meat",
+   "freq": "w",
+   "lastDate": "2026-05-15",
+   "series": 40,
+   "kb": 6
+  },
+  {
+   "id": 2920,
+   "title": "National Weekly Non-GMO/GE Grain Report",
+   "fam": "grain",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 9,
+   "kb": 23
+  },
+  {
+   "id": 2929,
+   "title": "Missouri Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 12,
+   "kb": 20
+  },
+  {
+   "id": 2935,
+   "title": "Nebraska Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 178,
+   "kb": 54
+  },
+  {
+   "id": 2939,
+   "title": "New Mexico Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 156,
+   "kb": 47
+  },
+  {
+   "id": 2940,
+   "title": "Southwest Direct Cattle Report (AZ/CA/NV)",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 57,
+   "kb": 10
+  },
+  {
+   "id": 3056,
+   "title": "Idaho Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 96,
+   "kb": 18
+  },
+  {
+   "id": 3057,
+   "title": "Oregon Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 190,
+   "kb": 41
+  },
+  {
+   "id": 3058,
+   "title": "Washington-Oregon (Columbia Basin) Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 153,
+   "kb": 30
+  },
+  {
+   "id": 3059,
+   "title": "Northwest Direct Cattle Report (WA/OR/ID/UT)",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 115,
+   "kb": 18
+  },
+  {
+   "id": 3095,
+   "title": "Oklahoma Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 112,
+   "kb": 31
+  },
+  {
+   "id": 3096,
+   "title": "Eastern Cornbelt Direct Cattle Report (IL/IN/MI/MN/OH/KY)",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 92,
+   "kb": 15
+  },
+  {
+   "id": 3097,
+   "title": "Kansas Direct Cattle Report",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 352,
+   "kb": 57
+  },
+  {
+   "id": 3098,
+   "title": "Oklahoma Direct Cattle Report",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 308,
+   "kb": 47
+  },
+  {
+   "id": 3184,
+   "title": "South Dakota Direct Cattle Report",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-08-07",
+   "series": 11,
+   "kb": 1
+  },
+  {
+   "id": 3236,
+   "title": "Wyoming Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 106,
+   "kb": 22
+  },
+  {
+   "id": 3237,
+   "title": "Wyoming-Nebraska Direct Cattle Report",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 60,
+   "kb": 10
+  },
+  {
+   "id": 3455,
+   "title": "Iowa Direct Cattle Report",
+   "fam": "cattle",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 29,
+   "kb": 3
+  },
+  {
+   "id": 3510,
+   "title": "National Animal By-Product Feedstuff Report",
+   "fam": "feed",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 31,
+   "kb": 62
+  },
+  {
+   "id": 3511,
+   "title": "National Grain and Oilseed Processor Feedstuff Report",
+   "fam": "feed",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 77,
+   "kb": 205
+  },
+  {
+   "id": 3512,
+   "title": "National Mill-Feeds and Miscellaneous Feedstuff Report",
+   "fam": "feed",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 20,
+   "kb": 52
+  },
+  {
+   "id": 3616,
+   "title": "National Weekly Ethanol Report",
+   "fam": "bio",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 59,
+   "kb": 147
+  },
+  {
+   "id": 3617,
+   "title": "National Daily Ethanol Report",
+   "fam": "bio",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 12,
+   "kb": 36
+  },
+  {
+   "id": 3618,
+   "title": "National Weekly Grain Co-Products Report",
+   "fam": "feed",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 52,
+   "kb": 148
+  },
+  {
+   "id": 3641,
+   "title": "Weekly Major Packer Hide Report",
+   "fam": "meat",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 18,
+   "kb": 15
+  },
+  {
+   "id": 3645,
+   "title": "Weekly Miscellaneous Poultry Report",
+   "fam": "poultry",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 19,
+   "kb": 52
+  },
+  {
+   "id": 3646,
+   "title": "Weekly National Chicken Report",
+   "fam": "poultry",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 43,
+   "kb": 109
+  },
+  {
+   "id": 3647,
+   "title": "Weekly National Turkey Report",
+   "fam": "poultry",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 117,
+   "kb": 84
+  },
+  {
+   "id": 3731,
+   "title": "Utah Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 89,
+   "kb": 24
+  },
+  {
+   "id": 3784,
+   "title": "Arizona Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 133,
+   "kb": 49
+  },
+  {
+   "id": 3793,
+   "title": "Tennessee Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 194,
+   "kb": 44
+  },
+  {
+   "id": 3926,
+   "title": "Nevada Direct Hay Report (Bi-Weekly)",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 20,
+   "kb": 3
+  }
+ ]
+}
