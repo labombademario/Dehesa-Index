@@ -34,7 +34,9 @@ const LOCATIONS=[
  {id:'au-nsw-central-west',name:'Nueva Gales del Sur centro-oeste (Dubbo)',region:'au',country:'AU',lat:-32.25,lon:148.6,crops:['trigo','cebada','colza']},
  {id:'au-nsw-north',name:'Nueva Gales del Sur norte (Moree)',region:'au',country:'AU',lat:-29.45,lon:149.85,crops:['trigo','sorgo','algodon']},
  {id:'au-qld-darling-downs',name:'Darling Downs, Queensland (Toowoomba)',region:'au',country:'AU',lat:-27.56,lon:151.95,crops:['trigo','sorgo','vacuno']},
- {id:'au-qld-central',name:'Queensland central (Rockhampton)',region:'au',country:'AU',lat:-23.4,lon:150.5,crops:['vacuno']}
+ {id:'au-qld-central',name:'Queensland central (Rockhampton)',region:'au',country:'AU',lat:-23.4,lon:150.5,crops:['vacuno']},
+ {id:'eu-denmark-jutland',name:'Jutlandia (Dinamarca)',region:'eu',country:'DK',lat:56.2,lon:9.3,crops:['trigo','cebada','cerdo','leche']},
+ {id:'eu-denmark-zealand',name:'Selandia (Dinamarca)',region:'eu',country:'DK',lat:55.4,lon:11.8,crops:['trigo','cebada','colza']}
 ];
 const MON=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 const round=(n,d=1)=>Number(n.toFixed(d));
