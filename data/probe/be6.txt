@@ -1,0 +1,94 @@
+INDICATORS 81
+   varkens | /marktinformatie/voorplanting-varken-centra | Voorplanting varken: centra
+   varkens | /marktinformatie/voorplanting-varken-sperma-jaarcijfers | Voorplanting varken: sperma (jaarcijfers)
+   varkens | /marktinformatie/productie-varkenskarkassen | Productie varkenskarkassen
+   varkens | /marktinformatie/karkasclassificatie-varkens | Karkasclassificatie varkens
+   varkens | /marktinformatie/prijzen-van-biggen | Prijzen van biggen
+   varkens | /marktinformatie/prijzen-van-varkens | Prijzen van varkens
+   varkens | /marktinformatie/prijzen-van-varkensdeelstukken | Prijzen van varkensdeelstukken
+   varkens | /marktinformatie/prijzen-van-mengvoeders-varkens | Prijzen van mengvoeders: varkens
+   varkens | /marktinformatie/voorplanting-varken-sperma-maandcijfers | Voorplanting varken: sperma (maandcijfers)
+   varkens | /marktinformatie/handel-varkensvlees | Handel in varkensvlees
+   varkens | /marktinformatie/handel-levende-varkens | Handel in levende varkens
+   zuivel | /marktinformatie/leveringen-van-rauwe-melk-en-rauwe-biomelk | Leveringen van rauwe melk en rauwe biomelk
+   zuivel | /marktinformatie/prijzen-van-melk | Prijzen van melk
+   zuivel | /marktinformatie/prijzen-van-zuivelproducten | Prijzen van zuivelproducten
+   zuivel | /marktinformatie/prijzen-van-mengvoeders-melkvee | Prijzen van mengvoeders: melkvee
+   zuivel | /marktinformatie/handel-zuivel | Handel in zuivel
+   granen | /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-soja | Veldproeven voor de Belgische rassenlijst – soja
+   granen | /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-korrelmais | Veldproeven voor de Belgische rassenlijst - korrelmaïs
+   granen | /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-spelt | Veldproeven voor de Belgische rassenlijst - spelt
+   granen | /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-wintertarwe | Veldproeven voor de Belgische rassenlijst - wintertarwe
+   granen | /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-wintergerst | Veldproeven voor de Belgische rassenlijst – wintergerst
+   granen | /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-triticale | Veldproeven voor de Belgische rassenlijst – triticale
+   granen | /marktinformatie/productie-granen | Productie granen
+   granen | /marktinformatie/prijzen-van-tarwebloem | Prijzen van tarwebloem
+   granen | /marktinformatie/prijzen-van-granen-voedertarwe-voedergerst-voedermais-triticale-en-haver | Prijzen van granen (voedertarwe, voedergerst, voedermaïs, triticale en haver)
+   granen | /marktinformatie/na-ti-o-na-le-stock-ge-ge-vens-granen | Na­ti­o­na­le stock­ge­ge­vens granen
+   granen | /marktinformatie/handel-granen | Handel in granen
+   aardappelen | /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-aardappel | Veldproeven voor de Belgische rassenlijst - aardappel
+   aardappelen | /marktinformatie/prijzen-van-aardappelen | Prijzen van aardappelen
+   aardappelen | /marktinformatie/handel-aardappelen | Handel in aardappelen
+   rundvee | /marktinformatie/rundvee/voortplanting-rundvee-centra | Voortplanting rundvee: centra
+   rundvee | /marktinformatie/rundvee/voortplanting-rundvee-embryos | Voortplanting rundvee: embryo&#039;s
+   rundvee | /marktinformatie/rundvee/voortplanting-rundvee-sperma | Voortplanting rundvee: sperma
+   rundvee | /marktinformatie/rundvee/productie-van-kalverkarkassen | Productie van kalverkarkassen
+   rundvee | /marktinformatie/rundvee/productie-runderkarkassen | Productie runderkarkassen
+   rundvee | /marktinformatie/rundvee/karkasclassificatie-runderen | Karkasclassificatie runderen
+   rundvee | /marktinformatie/rundvee/prijzen-van-levende-runderen | Prijzen van levende runderen
+   rundvee | /marktinformatie/rundvee/prijzen-van-runderkarkassen | Prijzen van runderkarkassen
+   rundvee | /marktinformatie/rundvee/prijzen-van-kalveren | Prijzen van kalveren
+   rundvee | /marktinformatie/rundvee/prijzen-van-mengvoeders-vleesvee | prijzen van mengvoeders: vleesvee
+   rundvee | /marktinformatie/rundvee/handel-levende-runderen | Handel in levende runderen
+   rundvee | /marktinformatie/rundvee/handel-rundvlees | Handel in rundvlees
+   pluimvee | /marktinformatie/productiegegevens-pluimvee | Productiegegevens pluimvee
+   pluimvee | /marktinformatie/prijzen-van-pluimveevlees | Prijzen van pluimveevlees
+   pluimvee | /marktinformatie/prijzen-van-mengvoeders-vleeskippen | Prijzen van mengvoeders: vleeskippen
+   pluimvee | /marktinformatie/handel-kippenvlees | Handel in kippenvlees
+   pluimvee | /marktinformatie/handel-kalkoenvlees | Handel in kalkoenvlees
+   pluimvee | /marktinformatie/handel-eendagskuikens | Handel in eendagskuikens
+   pluimvee | /marktinformatie/handel-levend-gevogelte | Handel in levend gevogelte
+   groenten | /marktinformatie/prijzen-van-groenten | Prijzen van groenten
+   groenten | /marktinformatie/prijzen-van-paddenstoelen | Prijzen van paddenstoelen
+   groenten | /marktinformatie/prijzen-van-witloof | Prijzen van witloof
+   groenten | /marktinformatie/prijzen-van-sla | Prijzen van sla
+   groenten | /marktinformatie/prijzen-van-asperges | Prijzen van asperges
+   groenten | /marktinformatie/prijzen-van-kolen | Prijzen van kolen
+   groenten | /marktinformatie/prijzen-van-prei | Prijzen van prei
+   groenten | /marktinformatie/prijzen-van-knolselder | Prijzen van knolselder
+   groenten | /marktinformatie/prijzen-van-tomaten-komkommer-en-paprika | Prijzen van tomaten, komkommer en paprika
+   groenten | /marktinformatie/handel-verse-groenten | Handel in verse groenten
+   groenten | /marktinformatie/handel-verwerkte-groenten | Handel in verwerkte groenten
+   fruit | /marktinformatie/prijzen-van-fruit | Prijzen van fruit
+   fruit | /marktinformatie/nationale-stockgegevens-appelen | Nationale stockgegevens appelen
+   fruit | /marktinformatie/nationale-stockgegevens-peren | Nationale stockgegevens peren
+   fruit | /marktinformatie/prijzen-van-aardbeien-kersen-en-bessen | Prijzen van aardbeien, kersen en bessen
+   fruit | /marktinformatie/prijzen-van-appelen-en-peren | Prijzen van appelen en peren
+   fruit | /marktinformatie/handel-vers-fruit | Handel in vers fruit
+   fruit | /marktinformatie/handel-verwerkt-fruit | Handel in verwerkt fruit
+   meststoffen | /marktinformatie/meststoffen/handel-meststoffen-0 | Handel in meststoffen
+   eieren | /marktinformatie/productiegegevens-eieren | Productiegegevens eieren
+   eieren | /marktinformatie/prijzen-van-eieren | Prijzen van eieren
+   eieren | /marktinformatie/prijzen-van-mengvoeders-legpluimvee | Prijzen van mengvoeders: legpluimvee
+   eieren | /marktinformatie/handel-eieren | Handel in eieren
+   kleine herkauwers | /marktinformatie/productie-schapenkarkassen | Productie schapenkarkassen
+   kleine herkauwers | /marktinformatie/prijzen-van-kleine-herkauwers | Prijzen van kleine herkauwers
+   kleine herkauwers | /marktinformatie/handel-geitenvlees | Handel in geitenvlees
+   kleine herkauwers | /marktinformatie/handel-schapenvlees | Handel in schapenvlees
+   suiker | /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-suikerbiet | Veldproeven voor de Belgische rassenlijst - suikerbiet
+   suiker | /marktinformatie/productiegegevens-suikerbiet | Productiegegevens suikerbiet
+   suiker | /marktinformatie/prijzen-van-witte-suiker | Prijzen van witte suiker
+   suiker | /marktinformatie/handel-suiker | Handel in suiker
+   oliehoudende | /marktinformatie/oliehoudende-zaden/handel-oliehoudende-zaden-en-producten | Handel in oliehoudende zaden en producten
+#### PAGE /marktinformatie/prijzen-van-varkens 200 87957
+TEXT agina zijn&nbsp;de verkoopprijzen franco slachthuis die de waarde van het karkas uitdrukken, exclusief btw, overeenkomstig de documenten die aan de leverancier zijn afgegeven door het slachthuis of aan de natuurlijke persoon of rechtspersoon die het dier in het slachthuis heeft laten slachten, dit volgens de EU-standaardaanbiedingsvormen (S: &gt;60% mager vlees - E: &gt;55%&lt;60% mager vlees). Gewogen gemiddelde S/E-klasse volgens marktaandeel. Volledig scherm Download figuur (PNG) Download data Volledig scherm Download figuur (PNG) Download De VEVA-producentenprijs wordt niet langer aangevuld. Volledig scherm Download figuur (PNG) Download data Metagegevens Bronnen Meldingsplichtige slachthuizen Vereniging van Varkenshouders (VEVA) Belgian Pork Group (BPG) Bronvermelding Vermelding bij gebruik van deze indicator Agentschap Landbouw en Zeevisserij – Landbouwcijfers: www.vlaanderen.be/landbouwcijfers Kopieer citaat Volgende update verwacht : wekelijks (op donderdag) Sec­tor Selecteer sector Aardappelen Bio Cichorei Eieren Fruit Granen Groenten Groenvoedergewassen Kleine herkauwers Paarden Pluimvee Rundvee Suiker Varkens Vis Vlas Zuivel Meststoffen Oliehoudende zaden The­ma Selecteer thema Handel (varkens) Prijzen (varkens) Productie (varkens) Indicator Prij­zen van biggen Prij­zen van meng­voe­ders: varkens Prij­zen van varkens Prij­zen van varkensdeelstukken Gerelateerd Prij­zen van biggen Varkens Hier kan u de recentste marktprijzen van biggen&nbsp;terugvinden. Prij­zen van varkensdeelstukken Varkens Hier kan u de recentste marktprijzen van prijzen van varkensdeelstukken terugvinden. Prij­zen van meng­voe­ders: varkens Varkens Hier kan u de recentste marktprijzen van mengvoeders terugvinden. Weg met de een­heids­worst? – Een ver­ken­ning van dif­fe­ren­ti­a­tie op de Bel­gi­sche markt voor varkensvlees Varkens De varkenshouderij is een belangrijke economische deelsector in de Vlaamse land- en tuinbouw qua toegevoegde waarde en levert een aantrekkelijk exportproduc
+ATTRS ['/search_api_autocomplete/search?filter=s&amp;display=search', '/search_api_autocomplete/search?filter=search_api_fulltext&amp;display=search', 'Download', 'Download', 'Download']
+SETTINGS none
+IFRAME ['<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWZ99ZR"\n                  height="0" width="0" style="display:none;visibility:hidden">']
+TABLES 0
+#### PAGE /marktinformatie/prijzen-van-biggen 200 81445
+TEXT r zijn&nbsp;voor een big van ongeveer 25 kg, exclusief btw,&nbsp;inclusief toeslagen.&nbsp;De gehanteerde toeslagen kunnen geraadpleegd worden via de downloadbare gegevens onder de figuur. Volledig scherm Download figuur (PNG) Download data Metagegevens Bronnen Biggencommissie van Sint-Truiden Vlaamse biggenprijs Bronvermelding Vermelding bij gebruik van deze indicator Agentschap Landbouw en Zeevisserij – Landbouwcijfers: www.vlaanderen.be/landbouwcijfers Kopieer citaat Volgende update verwacht : wekelijks (op donderdag) Sec­tor Selecteer sector Aardappelen Bio Cichorei Eieren Fruit Granen Groenten Groenvoedergewassen Kleine herkauwers Paarden Pluimvee Rundvee Suiker Varkens Vis Vlas Zuivel Meststoffen Oliehoudende zaden The­ma Selecteer thema Handel (varkens) Prijzen (varkens) Productie (varkens) Indicator Prij­zen van biggen Prij­zen van meng­voe­ders: varkens Prij­zen van varkens Prij­zen van varkensdeelstukken Gerelateerd Prij­zen van varkensdeelstukken Varkens Hier kan u de recentste marktprijzen van prijzen van varkensdeelstukken terugvinden. Prij­zen van varkens Varkens Hier kan u de recentste marktprijzen van varkens&nbsp;terugvinden. Prij­zen van meng­voe­ders: varkens Varkens Hier kan u de recentste marktprijzen van mengvoeders terugvinden. Weg met de een­heids­worst? – Een ver­ken­ning van dif­fe­ren­ti­a­tie op de Bel­gi­sche markt voor varkensvlees Varkens De varkenshouderij is een belangrijke economische deelsector in de Vlaamse land- en tuinbouw qua toegevoegde waarde en levert een aantrekkelijk exportproduct. Toch staan de marges al jaren onder druk. Tech­ni­sche en eco­no­mi­sche re­sul­ta­ten van de var­kens­hou­de­rij op ba­sis van het land­bouw­mo­ni­to­rings­net­werk – boek­ja­ren 2011 – 2013 Varkens Het rapport beschrijft de economische en technische resultaten voor de bedrijfstakken vermeerdering, afmesting en (bijna) gesloten bedrijven. Vlaam­se be­drijfs­eco­no­mi­sche stan­daard­waar­den var­kens­hou­de­rij&nbsp; 2013 Varkens Doel van de st
+ATTRS ['/search_api_autocomplete/search?filter=s&amp;display=search', '/search_api_autocomplete/search?filter=search_api_fulltext&amp;display=search', 'Download']
+SETTINGS none
+IFRAME ['<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWZ99ZR"\n                  height="0" width="0" style="display:none;visibility:hidden">']
+TABLES 0
