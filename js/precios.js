@@ -123,6 +123,10 @@
     'azucar:eu': { key: 'azucar:azucar', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'monthly' },
     'oliva:eu': { key: 'aceite:oliva', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
     'arroz:eu': { key: 'cereales:arroz', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'weekly' },
+    'maiz:eu': { key: 'cereales:maiz', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'weekly' },
+    'trigo:eu': { key: 'cereales:trigo', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'weekly' },
+    'dap:eu': { key: 'fertilizantes:dap', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'monthly' },
+    'potasa:eu': { key: 'fertilizantes:potasa', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'monthly' },
     'cerdo:eu': { key: 'porcino:cerdo', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
     'diesel:us': { key: 'energia:diesel', sourceId: 'eia', currency: 'USD', unit: 'gal', frequency: 'weekly' },
     'diesel:eu': { key: 'energia:diesel', sourceId: 'eu_oil_bulletin', currency: 'EUR', unit: 'litro', frequency: 'weekly' }

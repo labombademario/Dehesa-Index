@@ -59,6 +59,34 @@ export const PRODUCTS = {
     market: 'Comisión Europea (pollo, España, broiler entero 65 %)',
     methodology: 'Comisión Europea, Agri-food Data Portal: precio de venta semanal del pollo broiler entero (65 % de rendimiento) en España; el portal lo da en moneda nacional (EUR) por 100 kg y se divide entre 100 para expresarlo en EUR/kg.' + NOTE_PUB
   },
+  maiz: {
+    catId: 'cereales', id: 'di_cereales_maiz_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'cereal', member: 'ES', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
+    select: r => r.productName === 'Feed maize' && r.marketName === 'Zaragoza' && /^Departure from silo/.test(r.stageName), recent: true,
+    market: 'Comisión Europea (maíz pienso, mercado de Zaragoza, salida de silo)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del maíz pienso en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional (la media nacional del portal está desactualizada) ni un futuro de Euronext.' + NOTE_PUB
+  },
+  trigo: {
+    catId: 'cereales', id: 'di_cereales_trigo_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'cereal', member: 'ES', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
+    select: r => r.productName === 'Milling wheat' && r.marketName === 'Zaragoza' && /^Departure from silo/.test(r.stageName), recent: true,
+    market: 'Comisión Europea (trigo panificable, mercado de Zaragoza, salida de silo)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext.' + NOTE_PUB
+  },
+  dap: {
+    catId: 'fertilizantes', id: 'di_fertilizantes_dap_eu', sourceId: 'eu_agrifood', frequency: 'monthly',
+    commodity: 'fertiliser', member: null, unitExpected: '€/tonne', obsUnit: 'tonelada', divisor: 1, dateField: 'yearMonth',
+    select: r => r.product === 'P (Phosphorus)', comparability: 'not_comparable', quoteType: 'indice',
+    market: 'Comisión Europea (fósforo, precio agregado por nutriente)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio mensual agregado de los fertilizantes fosfatados (P) en varios mercados de la UE, EUR/tonelada, a partir de servicios de inteligencia de mercado. NO es DAP: la Comisión no especifica el producto, así que no es comparable con DAP ni con el índice DTN.' + NOTE_PUB
+  },
+  potasa: {
+    catId: 'fertilizantes', id: 'di_fertilizantes_potasa_eu', sourceId: 'eu_agrifood', frequency: 'monthly',
+    commodity: 'fertiliser', member: null, unitExpected: '€/tonne', obsUnit: 'tonelada', divisor: 1, dateField: 'yearMonth',
+    select: r => r.product === 'K (Potash)', comparability: 'not_comparable', quoteType: 'indice',
+    market: 'Comisión Europea (potasio, precio agregado por nutriente)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio mensual agregado de los fertilizantes potásicos (K) en varios mercados de la UE, EUR/tonelada, a partir de servicios de inteligencia de mercado. NO es MOP: la Comisión no especifica el producto, así que no es comparable con MOP ni con el índice DTN.' + NOTE_PUB
+  },
   huevos: {
     catId: 'avicultura', id: 'di_avicultura_huevos_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
     commodity: 'poultry/egg', member: 'ES', unitExpected: '€/100Kg', obsUnit: '100kg', divisor: 1, dateField: 'endDate',
@@ -104,10 +132,15 @@ export function parseEuDate(s) {
   return m ? `${m[3]}-${m[2]}-${m[1]}` : null;
 }
 export function parsePrice(s) {
-  const n = Number(String(s || '').replace(/[^0-9.\-]/g, ''));
+  let t = String(s || '').replace(/[^0-9.,\-]/g, '');
+  if (t.includes(',') && t.includes('.')) t = t.replace(/,/g, '');      // 1,234.50
+  else if (t.includes(',')) t = t.replace(',', '.');                    // 248,00 (formato del portal en cereales)
+  const n = Number(t);
   return Number.isFinite(n) && n > 0 ? n : null;
 }
+const MONTHS = { Jan: '01', Feb: '02', Mar: '03', Apr: '04', May: '05', Jun: '06', Jul: '07', Aug: '08', Sep: '09', Oct: '10', Nov: '11', Dec: '12' };
 function dateOf(r, cfg) {
+  if (cfg.dateField === 'yearMonth') return MONTHS[r.month] && r.year ? r.year + '-' + MONTHS[r.month] : null;
   if (cfg.dateField === 'ym') { const m = /^(\d{4})\/(\d{2})$/.exec(String(r.ym || '')); return m ? m[1] + '-' + m[2] : null; }
   return parseEuDate(r[cfg.dateField]);
 }
@@ -160,7 +193,7 @@ export function patchDataJs(data, cfg, name, o) {
   // 3) etiqueta del mercado de la UE
   const qRe = new RegExp("(nameKey: '" + name + "',(?:(?!\\{ nameKey:)[\\s\\S])*?quoteTypes: \\{[^\\n]*?eu: \\{ type: ')[^']*(', market: ')((?:[^'\\\\]|\\\\.)*)(')");
   m = qRe.exec(data);
-  if (m) data = data.slice(0, m.index) + m[0].replace(/eu: \{ type: '[^']*', market: '(?:[^'\\]|\\.)*'$/, () => "eu: { type: 'referencia', market: '" + jsString(cfg.market) + "'") + data.slice(m.index + m[0].length);
+  if (m) data = data.slice(0, m.index) + m[0].replace(/eu: \{ type: '[^']*', market: '(?:[^'\\]|\\.)*'$/, () => "eu: { type: '" + (cfg.quoteType || 'referencia') + "', market: '" + jsString(cfg.market) + "'") + data.slice(m.index + m[0].length);
 
   // 4) ficha de Data Trust (se crea si no existe)
   const trustKey = cfg.catId + '-' + name + '-eu';
@@ -175,8 +208,9 @@ export function patchDataJs(data, cfg, name, o) {
   }
   const fieldsRe = /comparability: '[^']*',\s*observationDate: [^,]+,\s*publicationDate: [^,]+,\s*status: '[^']*',\s*verifiedAt: [^\n]+/;
   if (!fieldsRe.test(t[2])) throw new Error('Formato de la ficha Data Trust de ' + trustKey + ' no reconocido');
-  const newFields = "comparability: 'directional', observationDate: '" + o.latest[0] + "', publicationDate: '" + o.publicationDate + "',\n      status: 'verified', verifiedAt: '" + o.verifiedAt + "'";
+  const newFields = "comparability: '" + (cfg.comparability || 'directional') + "', observationDate: '" + o.latest[0] + "', publicationDate: '" + o.publicationDate + "',\n      status: 'verified', verifiedAt: '" + o.verifiedAt + "'";
   let newBody = t[2].replace(fieldsRe, () => newFields);
+  newBody = newBody.replace(/sourceId: '[^']*', frequency: '[^']*'/, () => "sourceId: '" + cfg.sourceId + "', frequency: '" + cfg.frequency + "'");
   newBody = newBody.replace(/methodology: '(?:[^'\\]|\\.)*'/, () => "methodology: '" + jsString(cfg.methodology) + "'");
   return data.slice(0, t.index + t[1].length) + newBody + data.slice(t.index + t[1].length + t[2].length);
 }
@@ -234,7 +268,7 @@ async function updateProduct(name, today) {
   const obs = {
     id: cfg.id, product: name, region: 'eu', sourceId: cfg.sourceId,
     observationDate: latest[0], publicationDate, status: 'verified', verifiedAt,
-    comparability: 'directional', methodology: cfg.methodology,
+    comparability: cfg.comparability || 'directional', methodology: cfg.methodology,
     value: latest[1], currency: 'EUR', unit: cfg.obsUnit, frequency: cfg.frequency, changePct,
     history: series.slice(-104).map(([d, v]) => ({ period: d.slice(5), year: Number(d.slice(0, 4)), value: v }))
   };
