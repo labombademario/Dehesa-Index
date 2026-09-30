@@ -6,16 +6,13 @@ def get(u,n=8000000):
         with urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 DehesaIndex','Accept':'*/*','Accept-Language':'en'}),timeout=90) as r:
             return r.status,r.headers.get('content-type'),r.read(n).decode('utf-8','replace')
     except Exception as e: return 'ERR',str(e)[:200],''
-s,c,h=get('https://statbel.fgov.be/en/open-data')
-P('OPENDATA',s,len(h))
-# entradas: enlaces /en/open-data/<slug>
-ents=list(dict.fromkeys(re.findall(r'href="(/en/open-data/[^"]+)"',h)))
-P('ENTRIES',len(ents))
-for u in ents:
-    if re.search(r'agri|farm|milk|dairy|slaughter|livestock|cattle|pig|crop|cereal|potato|vegetable|fruit|price|land|rent|holding|fertil|feed|poultry|egg',u,re.I): P('  E',u)
-for v in ['e7c2b442-f7ae-45ed-bc55-aa1c17df520c','5624a6f6-69c7-481c-ad3b-b803522f5def','6abd3a15-93c7-4afc-97a4-18a90c0010c9']:
-    s,c,h=get('https://bestat.statbel.fgov.be/bestat/api/views/%s/result/CSV'%v); L=h.splitlines(); P('CSV',v[:8],len(L)); 
-    for l in L[:4]+['...']+L[-3:]: P('   ',l[:300])
-s,c,h=get('https://statbel.fgov.be/en/themes/agriculture-fishery'); P('THEME',s,len(h))
-for u in list(dict.fromkeys(re.findall(r'href="(/en/themes/agriculture[^"]+)"',h)))[:60]: P('  T',u)
-open('data/probe/be9.txt','w').write('\n'.join(out))
+def text(h):
+    t=re.sub(r'<script.*?</script>|<style.*?</style>','',h,flags=re.S); t=re.sub(r'<[^>]+>',' ',t); return re.sub(r'\s+',' ',t)
+for slug in ['agricultural-prices','milk-and-milk-product-statistics','animal-slaughtering','agricultural-land-renting-prices','supply-balance-sheets-meat','economic-accounts-agriculture']:
+    u='https://statbel.fgov.be/en/themes/agriculture-fishery/'+slug
+    s,c,h=get(u); P('####',slug,s,len(h))
+    t=text(h); i=t.find('Key figures'); 
+    P('TEXT',t[t.find('Agriculture')+0:][900:2400])
+    fl=[x for x in dict.fromkeys(re.findall(r'href="([^"]+)"',h)) if re.search(r'\.(xlsx?|csv|zip|ods|txt|json)|bestat|/download|/file|open-data|/sites/default/files',x,re.I)]
+    for x in fl[:30]: P('  F',x)
+open('data/probe/be10.txt','w').write('\n'.join(out))
