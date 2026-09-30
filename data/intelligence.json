@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T14:38:49.053Z",
+  "generatedAt": "2026-09-30T14:41:12.244Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -26,25 +26,6 @@
     }
   },
   "series": [
-    {
-      "id": "di_centeno_us",
-      "product": "centeno",
-      "region": "us",
-      "sourceId": "usda_nass",
-      "frequency": "monthly",
-      "unit": "bushel",
-      "currency": "USD",
-      "latest": 2.38,
-      "observationDate": "1976-05-01",
-      "periodChangePct": 1.7094017094017033,
-      "yoyPct": 11.214953271028016,
-      "volatility": 0.12262770067236538,
-      "points": 120,
-      "coverageStart": "1966-06-01",
-      "coverageEnd": "1976-05-01",
-      "status": "verified",
-      "comparability": "directional"
-    },
     {
       "id": "di_diesel_eu",
       "product": "diesel",

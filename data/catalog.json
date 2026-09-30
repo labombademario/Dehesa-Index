@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T14:38:48.802Z",
-  "observationCount": 59,
+  "generatedAt": "2026-09-30T14:41:11.845Z",
+  "observationCount": 58,
   "products": [
     "arroz",
     "avena",
@@ -183,21 +183,6 @@
       "points": 130,
       "coverageStart": "2015-11-01",
       "coverageEnd": "2026-08-01"
-    },
-    {
-      "product": "centeno",
-      "region": "us",
-      "sourceId": "usda_nass",
-      "observationDate": "1976-05",
-      "unit": "bushel",
-      "currency": "USD",
-      "frequency": "monthly",
-      "status": "verified",
-      "verifiedAt": "2026-09-30T14:31:50.998Z",
-      "comparability": "directional",
-      "points": 120,
-      "coverageStart": "1966-06-01",
-      "coverageEnd": "1976-05-01"
     },
     {
       "product": "cerdo",

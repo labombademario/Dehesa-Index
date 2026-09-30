@@ -16,7 +16,7 @@
  * Requiere la variable de entorno NASS_API_KEY (clave gratuita, se pide en
  * https://quickstats.nass.usda.gov/api).
  *
- * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz|cebada|avena|colza|centeno|sorgo|leche|huevos|cerdo|vaca|pollo>
+ * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz|cebada|avena|colza|sorgo|leche|huevos|cerdo|vaca|pollo>
  */
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
@@ -70,12 +70,6 @@ const PRODUCTS = {
     kgPerUnit: '45\\.359',
     obsUnit: 'cwt',
     trustMethodology: 'National USDA NASS PRICE RECEIVED for canola; USD/cwt.'
-  },
-  centeno: {
-    label: 'Centeno',
-    commodity: 'RYE',
-    shortDesc: 'RYE - PRICE RECEIVED, MEASURED IN $ / BU',
-    kgPerUnit: '25\\.401'
   },
   sorgo: {
     label: 'Sorgo',

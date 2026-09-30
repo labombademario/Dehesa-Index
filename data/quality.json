@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T14:38:48.987Z",
+  "generatedAt": "2026-09-30T14:41:12.146Z",
   "scope": {
-    "latestObservations": 53,
-    "historyObservations": 6249,
-    "verified": 53,
+    "latestObservations": 52,
+    "historyObservations": 6129,
+    "verified": 52,
     "pending": 0,
-    "stale": 31,
+    "stale": 30,
     "regions": [
       "eu",
       "us",
@@ -172,21 +172,6 @@
       "frequency": "weekly",
       "historyPoints": 130,
       "ageDays": 59,
-      "stale": true
-    },
-    {
-      "id": "di_centeno_us",
-      "product": "centeno",
-      "region": "us",
-      "sourceId": "usda_nass",
-      "status": "verified",
-      "comparability": "directional",
-      "observationDate": "1976-05",
-      "publicationDate": "1976-05-31",
-      "verifiedAt": "2026-09-30T14:31:50.998Z",
-      "frequency": "monthly",
-      "historyPoints": 120,
-      "ageDays": 18414,
       "stale": true
     },
     {

@@ -120,7 +120,6 @@
     'avena:eu': { key: 'cereales:avena', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'weekly' },
     'colza:us': { key: 'cereales:colza', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
     'colza:eu': { key: 'cereales:colza', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'weekly' },
-    'centeno:us': { key: 'cereales:centeno', sourceId: 'usda_nass', currency: 'USD', unit: 'bushel', frequency: 'monthly' },
     'centeno:eu': { key: 'cereales:centeno', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'weekly' },
     'mantequilla:eu': { key: 'lacteos:mantequilla', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
     'leche_polvo:eu': { key: 'lacteos:leche_polvo', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
