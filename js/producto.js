@@ -13,7 +13,12 @@
     vacuno: { eu: 'di_ganado_vaca_eu', us: 'di_vaca_us', uk: 'di_defra_cattle_output_index', psd: 'vacuno', es: 1701, gats: 'vacuno', inv: 'CATTLE, INCL CALVES - INVENTORY', live: ['CATTLE, INCL CALVES - INVENTORY', 'CATTLE, ON FEED - INVENTORY', 'BEEF, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB'], ers: 'cow-calf', kind: 'live', gan: 'vacuno' },
     cerdo: { eu: 'di_porcino_cerdo_eu', us: 'di_cerdo_us', uk: 'di_defra_pigs_output_index', psd: 'cerdo', es: 1702, gats: 'cerdo', inv: 'HOGS - INVENTORY', live: ['HOGS - INVENTORY', 'HOGS, BREEDING - INVENTORY', 'PORK, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB'], ers: 'hogs-all', kind: 'live', gan: 'cerdo' }
   };
-  var ORDER = ['trigo', 'maiz', 'vacuno', 'cerdo'];
+  CFG.soja = { eu: 'di_pienso_harina_soja_eu', us: 'di_pienso_harina_soja_us', meal: true, psd: 'soja', es: 801, gats: 'soja', cp: ['soybeans'], crop: { y: 'SOYBEANS - YIELD, MEASURED IN BU / ACRE', p: 'SOYBEANS - PRODUCTION, MEASURED IN BU', h: 'SOYBEANS - ACRES HARVESTED', yu: 'bu', pu: 'bu' }, ers: 'soybeans', rend: 'soybeans', kind: 'crop', pp: 'harina_soja' };
+  CFG.arroz = { eu: 'di_cereales_arroz_eu', us: 'di_arroz_us', psd: 'arroz', es: 1505, gats: 'arroz', cp: ['rice'], crop: { y: 'RICE - YIELD, MEASURED IN LB / ACRE', p: 'RICE - PRODUCTION, MEASURED IN CWT', h: 'RICE - ACRES HARVESTED', yu: 'lb', pu: 'cwt' }, ers: 'rice', rend: 'rice', kind: 'crop' };
+  CFG.leche = { eu: 'di_leche_eu', us: 'di_leche_us', ukP: 'di_lacteos_leche_uk', euIdx: 'di_eurostat_milk_output_index', euIdxMilk: true, uk: 'di_defra_milk_output_index', psd: 'leche', gats: 'lacteos', inv: 'MILK - PRODUCTION, MEASURED IN LB', live: ['CATTLE, COWS, MILK - INVENTORY', 'MILK - PRODUCTION, MEASURED IN LB', 'BUTTER, COLD STORAGE - STOCKS, MEASURED IN LB', 'CHEESE, NATURAL, COLD STORAGE, CHILLED - STOCKS, MEASURED IN LB'], ers: 'milk', kind: 'live' };
+  CFG.pollo = { eu: 'di_avicultura_pollo_eu', us: 'di_pollo_us', psd: 'pollo', gats: 'pollo', live: ['CHICKENS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB', 'CHICKENS, BREASTS & BREAST MEAT, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB', 'CHICKENS, WINGS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB'], kind: 'live' };
+  CFG.trigo.crop.yu = CFG.trigo.crop.pu = CFG.maiz.crop.yu = CFG.maiz.crop.pu = 'bu';
+  var ORDER = ['trigo', 'maiz', 'soja', 'arroz', 'vacuno', 'cerdo', 'leche', 'pollo'];
   var T = {
     es: {
       title: 'Ficha de producto', sub: 'Todo lo que tenemos de un producto en una sola página: precio, oferta y demanda, comercio, cultivo o ganado, sequía y costes. Cada mercado muestra solo lo que sus datos permiten.',
@@ -108,6 +113,8 @@
       src: 'Fonti: Commissione europea, Eurostat, Defra, USDA (NASS, FAS, ERS, AMS) e U.S. Drought Monitor. Ogni blocco rimanda alla sua pagina con la metodologia completa. Altro in', methodLink: 'Metodologia', updated: 'Prezzi aggiornati'
     }
   };
+  var XT = {"es": {"meal": "harina de soja", "idxm": "Europa · índice de leche (Eurostat)", "ukp": "Reino Unido", "lbac": "lb/acre", "mcwt": "millones de cwt", "usx": {"soja": "Harina de soja, Iowa FOB, 46,5-48 % de proteína (USDA AMS, MARS informe 3511), USD por tonelada corta. Es harina, no grano de soja.", "arroz": "Precio recibido por el agricultor (USDA NASS), media nacional mensual, USD por cwt (100 libras).", "leche": "Precio recibido por toda la leche vendida a plantas (USDA NASS), media nacional mensual, USD por cwt; no es el precio Class III.", "pollo": "Precio recibido por pollos broiler en peso vivo (USDA NASS), USD por libra. No equivale al precio del pollo entero en canal de la UE."}, "stg": {"blooming": "Floración", "setting_pods": "Formación de vainas", "dropping_leaves": "Caída de hojas"}, "crop": {"soybeans": "Soja", "rice": "Arroz"}, "lvn": {"CATTLE, COWS, MILK - INVENTORY": "Vacas lecheras (censo)", "MILK - PRODUCTION, MEASURED IN LB": "Producción de leche", "BUTTER, COLD STORAGE - STOCKS, MEASURED IN LB": "Mantequilla en cámaras", "CHEESE, NATURAL, COLD STORAGE, CHILLED - STOCKS, MEASURED IN LB": "Queso natural en cámaras", "CHICKENS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Pollo congelado en cámaras", "CHICKENS, BREASTS & BREAST MEAT, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Pechugas congeladas en cámaras", "CHICKENS, WINGS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Alas congeladas en cámaras"}}, "en": {"meal": "soybean meal", "idxm": "Europe · milk index (Eurostat)", "ukp": "United Kingdom", "lbac": "lb/acre", "mcwt": "million cwt", "usx": {"soja": "Soybean meal, Iowa FOB, 46.5-48 % protein (USDA AMS, MARS report 3511), USD per short ton. It is meal, not soybeans.", "arroz": "Price received by farmers (USDA NASS), monthly national average, USD per cwt (100 lb).", "leche": "Price received for all milk sold to plants (USDA NASS), monthly national average, USD per cwt; not the Class III price.", "pollo": "Price received for broilers, live weight (USDA NASS), USD per pound. Not equivalent to the EU whole-carcass chicken price."}, "stg": {"blooming": "Blooming", "setting_pods": "Setting pods", "dropping_leaves": "Dropping leaves"}, "crop": {"soybeans": "Soybeans", "rice": "Rice"}, "lvn": {"CATTLE, COWS, MILK - INVENTORY": "Milk cows (inventory)", "MILK - PRODUCTION, MEASURED IN LB": "Milk production", "BUTTER, COLD STORAGE - STOCKS, MEASURED IN LB": "Butter in cold storage", "CHEESE, NATURAL, COLD STORAGE, CHILLED - STOCKS, MEASURED IN LB": "Natural cheese in cold storage", "CHICKENS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Frozen chicken in cold storage", "CHICKENS, BREASTS & BREAST MEAT, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Frozen breasts in cold storage", "CHICKENS, WINGS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Frozen wings in cold storage"}}, "fr": {"meal": "tourteau de soja", "idxm": "Europe · indice du lait (Eurostat)", "ukp": "Royaume-Uni", "lbac": "lb/acre", "mcwt": "millions de cwt", "usx": {"soja": "Tourteau de soja, Iowa FOB, 46,5-48 % de protéines (USDA AMS, rapport MARS 3511), USD par tonne courte. C’est du tourteau, pas du soja en grain.", "arroz": "Prix reçu par l’agriculteur (USDA NASS), moyenne nationale mensuelle, USD par cwt (100 livres).", "leche": "Prix reçu pour tout le lait vendu aux laiteries (USDA NASS), moyenne nationale mensuelle, USD par cwt ; ce n’est pas le prix Class III.", "pollo": "Prix reçu pour les poulets de chair, poids vif (USDA NASS), USD par livre. Pas équivalent au prix du poulet entier en carcasse de l’UE."}, "stg": {"blooming": "Floraison", "setting_pods": "Formation des gousses", "dropping_leaves": "Chute des feuilles"}, "crop": {"soybeans": "Soja", "rice": "Riz"}, "lvn": {"CATTLE, COWS, MILK - INVENTORY": "Vaches laitières (effectif)", "MILK - PRODUCTION, MEASURED IN LB": "Production de lait", "BUTTER, COLD STORAGE - STOCKS, MEASURED IN LB": "Beurre en chambres froides", "CHEESE, NATURAL, COLD STORAGE, CHILLED - STOCKS, MEASURED IN LB": "Fromage naturel en chambres froides", "CHICKENS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Poulet congelé en chambres froides", "CHICKENS, BREASTS & BREAST MEAT, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Blancs congelés en chambres froides", "CHICKENS, WINGS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Ailes congelées en chambres froides"}}, "it": {"meal": "farina di soia", "idxm": "Europa · indice del latte (Eurostat)", "ukp": "Regno Unito", "lbac": "lb/acro", "mcwt": "milioni di cwt", "usx": {"soja": "Farina di soia, Iowa FOB, 46,5-48 % di proteine (USDA AMS, rapporto MARS 3511), USD per tonnellata corta. È farina, non soia in semi.", "arroz": "Prezzo ricevuto dall’agricoltore (USDA NASS), media nazionale mensile, USD per cwt (100 libbre).", "leche": "Prezzo ricevuto per tutto il latte venduto agli stabilimenti (USDA NASS), media nazionale mensile, USD per cwt; non è il prezzo Class III.", "pollo": "Prezzo ricevuto per i polli broiler, peso vivo (USDA NASS), USD per libbra. Non equivalente al prezzo del pollo intero in carcassa UE."}, "stg": {"blooming": "Fioritura", "setting_pods": "Formazione baccelli", "dropping_leaves": "Caduta foglie"}, "crop": {"soybeans": "Soia", "rice": "Riso"}, "lvn": {"CATTLE, COWS, MILK - INVENTORY": "Vacche da latte (consistenza)", "MILK - PRODUCTION, MEASURED IN LB": "Produzione di latte", "BUTTER, COLD STORAGE - STOCKS, MEASURED IN LB": "Burro in celle", "CHEESE, NATURAL, COLD STORAGE, CHILLED - STOCKS, MEASURED IN LB": "Formaggio naturale in celle", "CHICKENS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Pollo congelato in celle", "CHICKENS, BREASTS & BREAST MEAT, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Petti congelati in celle", "CHICKENS, WINGS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB": "Ali congelate in celle"}}};
+  Object.keys(XT).forEach(function (l) { var x = XT[l], t = T[l]; t.meal = x.meal; t.euIdxMilk = x.idxm; t.ukP = x.ukp; t.lbac = x.lbac; t.mcwt = x.mcwt; Object.keys(x.usx).forEach(function (k) { t.usTxt[k] = x.usx[k]; }); Object.keys(x.stg).forEach(function (k) { t.stg[k] = x.stg[k]; }); Object.keys(x.crop).forEach(function (k) { t.crop[k] = x.crop[k]; }); Object.keys(x.lvn).forEach(function (k) { t.lvN[k] = x.lvn[k]; }); });
   var MON = { JAN: 1, FEB: 2, MAR: 3, APR: 4, MAY: 5, JUN: 6, JUL: 7, AUG: 8, SEP: 9, OCT: 10, NOV: 11, DEC: 12 };
   var SEL = { p: 'trigo', ent: 'US' };
   var D = {}; // datos cargados
@@ -146,7 +153,7 @@
     series.forEach(function (s) { n = Math.max(n, s.pts.length); s.pts.forEach(function (v) { if (v < lo) lo = v; if (v > hi) hi = v; }); });
     if (!isFinite(lo) || n < 2) return '';
     if (lo === hi) { lo -= 1; hi += 1; }
-    var pad = (hi - lo) * 0.08; lo -= pad; hi += pad;
+    var pad = (hi - lo) * 0.08, nonneg = lo >= 0; lo -= pad; hi += pad; if (nonneg && lo < 0) lo = 0;
     var x = function (i) { return L + (W - L - R) * (i / (n - 1)); }, y = function (v) { return Tp + (H - Tp - Bt) * (1 - (v - lo) / (hi - lo)); };
     var g = ''; for (var k = 0; k <= 4; k++) { var vv = lo + (hi - lo) * k / 4; g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(vv).toFixed(1) + '" y2="' + y(vv).toFixed(1) + '" stroke="var(--border)"/><text x="' + (L - 6) + '" y="' + (y(vv) + 4).toFixed(1) + '" font-size="11" text-anchor="end" fill="var(--text-faint)">' + esc(fmt(vv)) + '</text>'; }
     var paths = series.map(function (s) { return '<path d="' + s.pts.map(function (v, i) { return (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v).toFixed(1); }).join(' ') + '" fill="none" stroke="' + s.col + '" stroke-width="2.2" stroke-linejoin="round"' + (s.dash ? ' stroke-dasharray="5 4"' : '') + '/>'; }).join('');
@@ -172,11 +179,13 @@
         '<p class="di-movers-hint" style="margin-top:8px"><strong>' + esc(t.method) + ':</strong> ' + esc(note) + '</p></div>');
     }
     var eu = obsById(cfg.eu), us = obsById(cfg.us);
-    one(eu, t.eu, (eu && eu.methodology) || '', false);
-    one(us, t.us, t.usTxt[pid], false);
-    one(obsById(cfg.euIdx), t.euIdx, t.idxNoteEu, true);
+    var sfx = cfg.meal ? ' · ' + t.meal : '';
+    one(eu, t.eu + sfx, (eu && eu.methodology) || '', false);
+    one(us, t.us + sfx, t.usTxt[pid], false);
+    var ukp = obsById(cfg.ukP); one(ukp, t.ukP, (ukp && ukp.methodology) || '', false);
+    one(obsById(cfg.euIdx), cfg.euIdxMilk ? t.euIdxMilk : t.euIdx, cfg.euIdxMilk ? t.idxNote : t.idxNoteEu, true);
     one(obsById(cfg.uk), t.ukIdx, t.idxNote, true);
-    return out.length ? sec(t.prices, t.pricesHint, out.join(''), lnk('precios.html?product=' + (pid === 'vacuno' ? 'vaca' : pid), t.lPrices)) : '';
+    return out.length ? sec(t.prices, t.pricesHint, out.join(''), lnk('precios.html?product=' + (cfg.pp || (pid === 'vacuno' ? 'vaca' : pid)), t.lPrices)) : '';
   }
 
   /* ---------- oferta y demanda ---------- */
@@ -193,11 +202,11 @@
     var Y = ents[SEL.ent], cur = Y[my], prev = Y[pm] || {};
     var attrs = ['production', 'imports', 'exports', 'consumption', 'endingStocks'].filter(function (a) { return typeof cur[a] === 'number'; });
     var rows = attrs.map(function (a) { var ch = prev[a] ? pct(cur[a], prev[a]) : null; return '<tr style="' + TR + '">' + td(esc(A[a]), 0, 1) + td(P.big(cur[a]), 1) + td(prev[a] !== undefined ? P.big(prev[a]) : '—', 1) + td(delta(ch, 1, ' %'), 1) + '</tr>'; }).join('');
-    var stu = cur.consumption ? cur.endingStocks / cur.consumption * 100 : null, stuP = prev.consumption ? prev.endingStocks / prev.consumption * 100 : null;
+    var stu = cur.consumption && typeof cur.endingStocks === 'number' ? cur.endingStocks / cur.consumption * 100 : null, stuP = prev.consumption && typeof prev.endingStocks === 'number' ? prev.endingStocks / prev.consumption * 100 : null;
     var sel = '<select id="pr-ent" class="di-compare-select" style="margin-bottom:8px">' + keys.map(function (k) { return '<option value="' + k + '"' + (k === SEL.ent ? ' selected' : '') + '>' + esc(names[k]) + '</option>'; }).join('') + '</select>';
     var yrs = c.marketYears.filter(function (y) { return Y[y] && typeof Y[y].production === 'number' && typeof Y[y].consumption === 'number'; }).slice(-10);
     var chart = line([{ pts: yrs.map(function (y) { return Y[y].production; }), col: '#2a6f97', name: A.production }, { pts: yrs.map(function (y) { return Y[y].consumption; }), col: '#b8651b', name: A.consumption }], yrs.map(function (y) { return P.myLabel(cfg.psd, y); }), function (v) { return P.big(v); }, t.sdChart);
-    var body = sel + cards([card(t.sdMy, esc(P.myLabel(cfg.psd, my)), '<span style="color:var(--text-faint)">' + esc(names[SEL.ent]) + '</span>'), card(t.stu, stu === null ? '—' : nf(stu, 1) + ' %', stuP === null ? '' : delta(stu - stuP, 1, ' pp') + ' <span style="color:var(--text-faint)">' + esc(P.myLabel(cfg.psd, pm)) + '</span>')]) +
+    var body = sel + cards([card(t.sdMy, esc(P.myLabel(cfg.psd, my)), '<span style="color:var(--text-faint)">' + esc(names[SEL.ent]) + '</span>')].concat(stu === null ? [] : [card(t.stu, stu === null ? '—' : nf(stu, 1) + ' %', stuP === null ? '' : delta(stu - stuP, 1, ' pp') + ' <span style="color:var(--text-faint)">' + esc(P.myLabel(cfg.psd, pm)) + '</span>')])) +
       table(th(t.sdItem) + th(P.myLabel(cfg.psd, my), 1) + th(t.sdPrev, 1) + th(t.sdChg, 1), rows) + '<div style="height:12px"></div>' + chart;
     return sec(t.sd, t.sdHint + ' · ' + (c.publishedMonth || ''), body, lnk('oferta-demanda.html', t.sdMore));
   }
@@ -205,7 +214,7 @@
   /* ---------- ventas de exportación ---------- */
   function tonsF(v) { return P.big(v / 1000); }
   function exBlock(t, cfg) {
-    var es = D.es; if (!es) return '';
+    var es = D.es; if (!es || !cfg.es) return '';
     var c = null; es.commodities.forEach(function (x) { if (x.code === cfg.es) c = x; });
     if (!c || !c.totals) return '';
     var tot = c.totals, ps = c.prevSameWeek;
@@ -287,8 +296,8 @@
     if (nc && nc[K.y] && nc[K.p]) {
       var Y = nc[K.y].n, Pn = nc[K.p].n, H = nc[K.h] && nc[K.h].n;
       var ly = Y[Y.length - 1], pyv = Y[Y.length - 2], lp = Pn[Pn.length - 1], ppv = Pn[Pn.length - 2];
-      var yc = [card(t.yield + ' ' + ly[0], nf(ly[1], 1) + ' <span style="font-size:13px;color:var(--text-faint)">' + esc(t.bu) + '</span>', pyv ? delta(pct(ly[1], pyv[1]), 1, ' %') + ' <span style="color:var(--text-faint)">vs ' + pyv[0] + '</span>' : ''),
-        card(t.prod + ' ' + lp[0], nf(lp[1] / 1e6, 0) + ' <span style="font-size:13px;color:var(--text-faint)">' + esc(t.mbu) + '</span>', ppv ? delta(pct(lp[1], ppv[1]), 1, ' %') + ' <span style="color:var(--text-faint)">vs ' + ppv[0] + '</span>' : '')];
+      var yc = [card(t.yield + ' ' + ly[0], nf(ly[1], K.yu === 'lb' ? 0 : 1) + ' <span style="font-size:13px;color:var(--text-faint)">' + esc(K.yu === 'lb' ? t.lbac : t.bu) + '</span>', pyv ? delta(pct(ly[1], pyv[1]), 1, ' %') + ' <span style="color:var(--text-faint)">vs ' + pyv[0] + '</span>' : ''),
+        card(t.prod + ' ' + lp[0], nf(lp[1] / 1e6, 0) + ' <span style="font-size:13px;color:var(--text-faint)">' + esc(K.pu === 'cwt' ? t.mcwt : t.mbu) + '</span>', ppv ? delta(pct(lp[1], ppv[1]), 1, ' %') + ' <span style="color:var(--text-faint)">vs ' + ppv[0] + '</span>' : '')];
       if (H && H.length) yc.push(card(t.harv + ' ' + H[H.length - 1][0], nf(H[H.length - 1][1] / 1e6, 1) + ' <span style="font-size:13px;color:var(--text-faint)">' + esc(t.acres) + '</span>', H.length > 1 ? delta(pct(H[H.length - 1][1], H[H.length - 2][1]), 1, ' %') + ' <span style="color:var(--text-faint)">vs ' + H[H.length - 2][0] + '</span>' : ''));
       var yrs = Y.slice(-8);
       body += '<div style="font-weight:700;font-size:14px;margin-top:14px">' + esc(t.yl) + '</div>' + cards(yc) + line([{ pts: yrs.map(function (r) { return r[1]; }), col: '#2a6f97', name: t.yield }], yrs.map(function (r) { return r[0]; }), function (v) { return nf(v, 0); }, t.yield) + '<p class="di-movers-hint" style="margin-top:6px">' + esc(ly[0]) + ': ' + esc(t.yrCur) + '.</p>';
@@ -320,7 +329,8 @@
     if (!s || !s.s || !s.n) return null;
     var cnt = {}, per = null;
     Object.keys(s.s).forEach(function (st) { if (st === 'OT') return; s.s[st].forEach(function (r) { cnt[r[0]] = (cnt[r[0]] || 0) + 1; }); });
-    Object.keys(cnt).forEach(function (k) { if (cnt[k] >= 20 && (per === null || k > per)) per = k; });
+    var mx = 0; Object.keys(cnt).forEach(function (k) { if (cnt[k] > mx) mx = cnt[k]; });
+    Object.keys(cnt).forEach(function (k) { if (cnt[k] >= Math.max(3, mx * 0.6) && (per === null || k > per)) per = k; });
     if (!per) return null;
     var tot = null, rows = [];
     s.n.forEach(function (r) { if (r[0] === per) tot = r[1]; });
@@ -357,7 +367,7 @@
     defs.forEach(function (d) {
       var a = get(yr, d[1], d[2]); if (!a) return; var b = get(yr - 1, d[1], d[2]);
       unit = a[2]; var neg = d[1] === 'Net value';
-      cs.push(card(d[0] + ' · ' + yr, (a[5] < 0 ? '−' : '') + nf(Math.abs(a[5]), 2), (t.pl[a[2]] || a[2]) + (b ? '<br>' + (d[1] === 'Costs listed' || d[1] === 'Operating costs' ? dtl(pct(a[5], b[5]), 1, ' %') : delta(pct(a[5], b[5]), 1, ' %')) + ' <span style="color:var(--text-faint)">vs ' + (yr - 1) + '</span>' : '')));
+      cs.push(card(d[0] + ' · ' + yr, (a[5] < 0 ? '−' : '') + nf(Math.abs(a[5]), 2), (t.pl[a[2]] || a[2]) + (b ? '<br>' + (d[1] === 'Net value' ? delta(a[5] - b[5], 2, '') : d[1] === 'Costs listed' || d[1] === 'Operating costs' ? dtl(pct(a[5], b[5]), 1, ' %') : delta(pct(a[5], b[5]), 1, ' %')) + ' <span style="color:var(--text-faint)">vs ' + (yr - 1) + '</span>' : '')));
     });
     if (!cs.length) return '';
     return sec(t.co, t.coHint + ' ' + yr, cards(cs) + '<p class="di-info-api-notice" style="margin:4px 0">' + esc(t.coNote) + '</p>', lnk('costes.html?tab=costs&prod=' + cfg.ers, t.coMore));
@@ -374,7 +384,7 @@
     document.getElementById('pg-h1').textContent = t.title + ': ' + (nm[SEL.p] || SEL.p);
     document.getElementById('pg-sub').textContent = t.sub;
     var parts = [priceBlock(t, cfg, SEL.p), sdBlock(t, cfg), exBlock(t, cfg), gatsBlock(t, cfg), cfg.kind === 'crop' ? cropBlock(t, cfg) : liveBlock(t, cfg), droughtBlock(t, cfg), costBlock(t, cfg)].filter(function (x) { return x; });
-    var links = '<p class="di-movers-hint" style="margin-top:26px"><strong>' + esc(t.links) + ':</strong> ' + lnk('mapa.html', t.lMap) + ' · ' + lnk('precios.html?product=' + (SEL.p === 'vacuno' ? 'vaca' : SEL.p), t.lPrices) + '</p>';
+    var links = '<p class="di-movers-hint" style="margin-top:26px"><strong>' + esc(t.links) + ':</strong> ' + lnk('mapa.html', t.lMap) + ' · ' + lnk('precios.html?product=' + (cfg.pp || (SEL.p === 'vacuno' ? 'vaca' : SEL.p)), t.lPrices) + '</p>';
     root.innerHTML = tabs(t) + (parts.length ? parts.join('') : '<p class="di-movers-hint">' + esc(t.noData) + '</p>') + links + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + ' <a href="metodologia.html">' + esc(t.methodLink) + '</a>.</p>';
     var sel = document.getElementById('pr-ent'); if (sel) sel.onchange = function (e) { SEL.ent = e.target.value; render(); };
   }
