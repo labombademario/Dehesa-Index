@@ -69,10 +69,15 @@ def issue_links(kind):
                 links[d.group(1)] = ("https://open.alberta.ca" + l) if l.startswith("/") else l
     return links
 
+PARSER_VERSION = 2  # súbelo al cambiar los lectores: fuerza a volver a leer todos los informes
 cache = {"issues": {}}
 if CACHE.exists():
     cache = json.loads(CACHE.read_text(encoding="utf-8"))
+if cache.get("parserVersion") != PARSER_VERSION:
+    cache = {"issues": {}}
+cache["parserVersion"] = PARSER_VERSION
 issues = cache.setdefault("issues", {})
+DEBUG = []
 new_count = 0
 for kind, parser in (("crop", parse_crop), ("livestock", parse_livestock)):
     for d, url in sorted(issue_links(kind).items()):
@@ -83,12 +88,19 @@ for kind, parser in (("crop", parse_crop), ("livestock", parse_livestock)):
                 pdf = Path(tmp) / "x.pdf"; pdf.write_bytes(get(url))
                 txt = Path(tmp) / "x.txt"
                 subprocess.run(["pdftotext", "-layout", str(pdf), str(txt)], check=True)
-                vals = parser(txt.read_text(errors="ignore"))
+                raw_text = txt.read_text(errors="ignore")
+                vals = parser(raw_text)
+                nv = vals.get("novillo_ab")
+                if nv is not None and not (150 <= nv <= 450):
+                    k0 = raw_text.find("ALBERTA DIRECT SALES")
+                    DEBUG.append("=== %s %s novillo_ab=%s\n%s\n" % (kind, d, nv, raw_text[max(0, k0 - 200):k0 + 2500]))
             issues.setdefault(d, {})[kind] = vals
             new_count += 1
         except Exception as e:
             print("FALLO", kind, d, e)
 print("informes nuevos:", new_count)
+if DEBUG:
+    (ROOT / "data" / "alberta-weekly-debug.txt").write_text("\n".join(DEBUG))
 CACHE.write_text(json.dumps(cache, indent=1, sort_keys=True) + "\n", encoding="utf-8")
 
 now = datetime.now(timezone.utc)
