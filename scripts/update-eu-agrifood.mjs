@@ -228,11 +228,15 @@ export function patchDataJs(data, cfg, name, o) {
   return data.slice(0, t.index + t[1].length) + newBody + data.slice(t.index + t[1].length + t[2].length);
 }
 
+// Histórico máximo que se pide al portal (por defecto ~20 años) y máximo de puntos que se guardan
+const HISTORY_DAYS = Number(process.env.EU_HISTORY_DAYS) || 7300;
+const HISTORY_POINTS = Number(process.env.EU_HISTORY_POINTS) || 1200;
+
 function euDate(d) { return d.toISOString().slice(0, 10).split('-').reverse().join('/'); }
 
 async function fetchRows(cfg, members) {
   let url = BASE + '/' + cfg.commodity + '/prices?memberStateCodes=' + members.join(',');
-  if (cfg.recent) url += '&beginDate=' + euDate(new Date(Date.now() - 800 * 864e5));
+  if (cfg.recent) url += '&beginDate=' + euDate(new Date(Date.now() - HISTORY_DAYS * 864e5));
   let res;
   for (let attempt = 1; attempt <= 3; attempt++) {
     res = await fetch(url, { headers: { Accept: 'application/json' } });
@@ -284,7 +288,7 @@ async function updateProduct(name, today) {
     observationDate: latest[0], publicationDate, status: 'verified', verifiedAt,
     comparability: cfg.comparability || 'directional', methodology: cfg.methodology,
     value: latest[1], currency: 'EUR', unit: cfg.obsUnit, frequency: cfg.frequency, changePct,
-    history: series.slice(-104).map(([d, v]) => ({ period: d.slice(5), year: Number(d.slice(0, 4)), value: v }))
+    history: series.slice(-HISTORY_POINTS).map(([d, v]) => ({ period: d.slice(5), year: Number(d.slice(0, 4)), value: v }))
   };
   await mkdir(SNAP_DIR, { recursive: true });
   const file = path.join(SNAP_DIR, verifiedAt.slice(0, 10) + '.json');

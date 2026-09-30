@@ -144,6 +144,8 @@
     var points = Array.isArray(observation.history) ? observation.history : [];
     var values = points.map(function (point) { return Number(point && point.value); })
       .filter(function (value) { return Number.isFinite(value); });
+    // El minigráfico de la tarjeta usa solo los últimos 104 puntos; el histórico completo va al modal (histPts)
+    if (values.length > 104) values = values.slice(-104);
     return values.length >= 2 ? values : null;
   }
 
