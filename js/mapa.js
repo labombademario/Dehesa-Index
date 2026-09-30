@@ -53,7 +53,7 @@
   var SD_ATTR = { prod: 'production', exp: 'exports', imp: 'imports', stock: 'endingStocks' };
   var SEQ = ['#e3edf3', '#b4cfe0', '#7fabc9', '#3f7fa8', '#1d5178'];
   var SEL = { layer: 'price', product: 'trigo', view: 'all', sd: 'trigo', my: null, crop: 'corn', esr: 401, metric: 'acc', flow: 'ex', group: 'maiz', period: '12' };
-  var VIEWS = { world: {}, all: { regions: ['US', 'GB', 'ES', 'FR', 'DE', 'IT', 'PL'] }, us: { coords: [39, -97], scale: 2.6 }, eu: { coords: [48, 9], scale: 4.2 } };
+  var VIEWS = { world: {}, all: { regions: ['US', 'GB', 'ES', 'FR', 'DE', 'IT', 'PL', 'CA'] }, us: { coords: [39, -97], scale: 2.6 }, eu: { coords: [48, 9], scale: 4.2 } };
   var SYM = { EUR: '€', USD: '$', GBP: '£', CAD: 'C$' };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tr() { return T[lang()] || T.es; }

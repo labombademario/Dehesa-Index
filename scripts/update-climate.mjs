@@ -17,13 +17,20 @@ const LOCATIONS=[
  {id:'eu-po-valley',name:'Valle del Po (Italia)',region:'eu',country:'IT',lat:45.0,lon:10.5,crops:['maiz','arroz']},
  {id:'eu-poland',name:'Cuyavia (Polonia)',region:'eu',country:'PL',lat:52.7,lon:18.5,crops:['trigo','maiz']},
  {id:'uk-lincolnshire',name:'Lincolnshire (Reino Unido)',region:'uk',country:'GB',lat:53.1,lon:-0.3,crops:['trigo']},
- {id:'uk-east-anglia',name:'East Anglia (Reino Unido)',region:'uk',country:'GB',lat:52.5,lon:0.9,crops:['trigo','cebada']}
+ {id:'uk-east-anglia',name:'East Anglia (Reino Unido)',region:'uk',country:'GB',lat:52.5,lon:0.9,crops:['trigo','cebada']},
+ {id:'ca-saskatchewan-south',name:'Saskatchewan sur (Regina)',region:'ca',country:'CA',lat:50.4,lon:-104.6,crops:['trigo','lenteja','guisante_seco']},
+ {id:'ca-saskatchewan-north',name:'Saskatchewan centro (Saskatoon)',region:'ca',country:'CA',lat:52.1,lon:-106.6,crops:['colza','trigo']},
+ {id:'ca-alberta-south',name:'Alberta sur (Lethbridge)',region:'ca',country:'CA',lat:49.7,lon:-112.8,crops:['trigo','cebada']},
+ {id:'ca-alberta-peace',name:'Alberta Peace River',region:'ca',country:'CA',lat:56.2,lon:-117.3,crops:['colza','trigo']},
+ {id:'ca-manitoba',name:'Manitoba (Winnipeg)',region:'ca',country:'CA',lat:49.9,lon:-97.2,crops:['colza','soja_grano','trigo']},
+ {id:'ca-ontario',name:'Ontario sur (London)',region:'ca',country:'CA',lat:43.0,lon:-81.2,crops:['maiz','soja_grano']},
+ {id:'ca-quebec',name:'Quebec (Montérégie)',region:'ca',country:'CA',lat:45.5,lon:-73.0,crops:['maiz','leche']}
 ];
 const MON=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 const round=(n,d=1)=>Number(n.toFixed(d));
 async function getJson(url){for(let i=0;i<3;i++){try{const r=await fetch(url);if(r.ok)return await r.json();console.error('HTTP',r.status,url)}catch(e){console.error(e.message)}await new Promise(r=>setTimeout(r,2000*(i+1)))}return null}
 const year=new Date().getUTCFullYear();
-const HIST_START=2000; // 26 años de historia mensual (la fuente cubre desde 1981)
+const HIST_START=1981; // toda la historia mensual que da la fuente (NASA POWER empieza en 1981)
 const out=[],missing=[],hist=[];
 for(const loc of LOCATIONS){
  const q=`parameters=PRECTOTCORR,T2M&community=AG&longitude=${loc.lon}&latitude=${loc.lat}&format=JSON`;
