@@ -24,7 +24,17 @@ const LOCATIONS=[
  {id:'ca-alberta-peace',name:'Alberta Peace River',region:'ca',country:'CA',lat:56.2,lon:-117.3,crops:['colza','trigo']},
  {id:'ca-manitoba',name:'Manitoba (Winnipeg)',region:'ca',country:'CA',lat:49.9,lon:-97.2,crops:['colza','soja_grano','trigo']},
  {id:'ca-ontario',name:'Ontario sur (London)',region:'ca',country:'CA',lat:43.0,lon:-81.2,crops:['maiz','soja_grano']},
- {id:'ca-quebec',name:'Quebec (Montérégie)',region:'ca',country:'CA',lat:45.5,lon:-73.0,crops:['maiz','leche']}
+ {id:'ca-quebec',name:'Quebec (Montérégie)',region:'ca',country:'CA',lat:45.5,lon:-73.0,crops:['maiz','leche']},
+ {id:'eu-netherlands-flevoland',name:'Flevoland (Países Bajos)',region:'eu',country:'NL',lat:52.5,lon:5.6,crops:['trigo','patata','remolacha']},
+ {id:'eu-netherlands-groningen',name:'Groningen (Países Bajos)',region:'eu',country:'NL',lat:53.2,lon:6.6,crops:['trigo','cebada','patata']},
+ {id:'eu-netherlands-brabant',name:'Brabante Septentrional (Países Bajos)',region:'eu',country:'NL',lat:51.5,lon:5.3,crops:['cerdo','leche','maiz']},
+ {id:'au-wheatbelt-wa',name:'Wheatbelt, Australia Occidental (Northam)',region:'au',country:'AU',lat:-31.65,lon:116.67,crops:['trigo','cebada','colza']},
+ {id:'au-sa-mallee',name:'Australia Meridional (Mid North, Clare)',region:'au',country:'AU',lat:-33.8,lon:138.6,crops:['trigo','cebada']},
+ {id:'au-vic-wimmera',name:'Wimmera, Victoria (Horsham)',region:'au',country:'AU',lat:-36.7,lon:142.2,crops:['trigo','cebada','colza']},
+ {id:'au-nsw-central-west',name:'Nueva Gales del Sur centro-oeste (Dubbo)',region:'au',country:'AU',lat:-32.25,lon:148.6,crops:['trigo','cebada','colza']},
+ {id:'au-nsw-north',name:'Nueva Gales del Sur norte (Moree)',region:'au',country:'AU',lat:-29.45,lon:149.85,crops:['trigo','sorgo','algodon']},
+ {id:'au-qld-darling-downs',name:'Darling Downs, Queensland (Toowoomba)',region:'au',country:'AU',lat:-27.56,lon:151.95,crops:['trigo','sorgo','vacuno']},
+ {id:'au-qld-central',name:'Queensland central (Rockhampton)',region:'au',country:'AU',lat:-23.4,lon:150.5,crops:['vacuno']}
 ];
 const MON=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 const round=(n,d=1)=>Number(n.toFixed(d));
