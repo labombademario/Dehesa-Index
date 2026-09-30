@@ -1,7 +1,7 @@
 {
  "schemaVersion": "1.0",
  "source": "eu_agrifood",
- "generatedAt": "2026-09-30T13:34:02.195Z",
+ "generatedAt": "2026-09-30T13:51:30.052Z",
  "families": [
   {
    "id": "cereales",
@@ -106,6 +106,14 @@
    "series": 34,
    "points": 4071,
    "latest": "2025-11-02"
+  },
+  {
+   "id": "fruta",
+   "endpoint": "fruitAndVegetable/pricesSupplyChain",
+   "freq": "weekly",
+   "series": 179,
+   "points": 105440,
+   "latest": "2026-09-27"
   },
   {
    "id": "fertilizantes",
