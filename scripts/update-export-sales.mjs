@@ -24,10 +24,11 @@ const d10 = s => String(s).slice(0, 10);
 const log = [];
 const [comms, countries, units, rel] = await Promise.all([get('/commodities'), get('/countries'), get('/unitsOfMeasure'), get('/datareleasedates')]);
 const unitName = Object.fromEntries(units.map(u => [u.unitId, u.unitNames]));
+const FIX = { 5800: 'KR', 7910: 'ZA', 3150: 'SR', 7480: 'CI', 4644: 'UZ', 4634: 'KZ', 4632: 'AZ', 4794: 'MK', 9110: 'VI' };
 const cInfo = {};
 for (const c of countries) {
   const g = (c.gencCode || '').trim();
-  cInfo[c.countryCode] = { name: (c.countryDescription || c.countryName || '').trim(), iso3: g || null, iso2: c.countryCode === 1 ? 'EU' : (ISO3TO2[g] || null), region: c.regionId };
+  cInfo[c.countryCode] = { name: (c.countryDescription || c.countryName || '').trim(), iso3: g || null, iso2: c.countryCode === 1 ? 'EU' : (FIX[c.countryCode] || ISO3TO2[g] || null), region: c.regionId };
 }
 const out = { schemaVersion: '1.0', source: 'USDA FAS Export Sales Reporting (ESR)', generatedAt: new Date().toISOString(), commodities: [] };
 for (const code of WANT) {
@@ -61,7 +62,7 @@ for (const code of WANT) {
     return { c: r.countryCode, n: ci.name, i2: ci.iso2, wk: r.weeklyExports, acc: r.accumulatedExports, out: r.outstandingSales, net: r.currentMYNetSales, gross: r.grossNewSales, com: r.currentMYTotalCommitment, nxt: r.nextMYOutstandingSales };
   }).filter(x => x.wk || x.acc || x.out || x.net || x.gross || x.nxt).sort((a, b) => (b.acc + b.out) - (a.acc + a.out));
   const unitId = latestRows[0].unitId;
-  out.commodities.push({ code, name: cm.commodityName, unit: unitName[unitId] || 'Metric Tons', myEnd: my, my: (my - 1) + '/' + String(my).slice(2), weekEnding: last, totals: { wk: tot.wk, acc: tot.acc, out: tot.out, net: tot.net, gross: tot.gross, com: sum(latestRows, 'currentMYTotalCommitment'), nxt: sum(latestRows, 'nextMYOutstandingSales') }, prevSameWeek: prevSame ? { w: prevSame.w, acc: prevSame.acc, out: prevSame.out } : null, weekly: H.slice(-60), weeklyPrev: HP.slice(-60), countries: ctry });
+  out.commodities.push({ code, name: cm.commodityName, unit: unitName[unitId] || 'Metric Tons', myEnd: my, my: (Number(weeks[0].slice(0, 4)) === my ? String(my) : (my - 1) + '/' + String(my).slice(2)), weekEnding: last, totals: { wk: tot.wk, acc: tot.acc, out: tot.out, net: tot.net, gross: tot.gross, com: sum(latestRows, 'currentMYTotalCommitment'), nxt: sum(latestRows, 'nextMYOutstandingSales') }, prevSameWeek: prevSame ? { w: prevSame.w, acc: prevSame.acc, out: prevSame.out } : null, weekly: H.slice(-60), weeklyPrev: HP.slice(-60), countries: ctry });
   log.push(code + ' OK ' + cm.commodityName + ' MY' + my + ' semana ' + last + ' destinos ' + ctry.length + ' exportado acumulado ' + tot.acc + ' pendiente ' + tot.out);
 }
 if (out.commodities.length < 8) { console.error(log.join('\n')); console.error('Demasiado pocos productos: no se escribe'); process.exit(1); }
