@@ -38,6 +38,13 @@ if not obs['publicationDate']:
             if o.get('id')==obs['id'] and o.get('observationDate')==obs['observationDate'] and o.get('publicationDate'): obs['publicationDate']=o['publicationDate']
     except Exception: pass
 if not obs['publicationDate']:
+    # 1b) cualquier snapshot anterior con la misma observación y fecha de publicación
+    for sf in sorted(SNAP.glob('*.json')):
+        try:
+            for o in json.loads(sf.read_text())['observations']:
+                if o.get('id')==obs['id'] and o.get('observationDate')==obs['observationDate'] and o.get('publicationDate'): obs['publicationDate']=o['publicationDate']
+        except Exception: pass
+if not obs['publicationDate']:
     # 2) el boletín no expone fecha de publicación: se registra el día en que se recuperó por primera vez
     obs['publicationDate']=datetime.utcnow().date().isoformat()
 doc['observations']=[o for o in doc['observations'] if not(o.get('product')=='diesel' and o.get('region')=='eu')]+[obs]; f.write_text(json.dumps(doc,indent=2)+'\n'); tmp.unlink(missing_ok=True); print('EC diesel EU:',latest)

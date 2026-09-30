@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:06:50.219Z",
+  "generatedAt": "2026-09-30T01:16:35.461Z",
   "observations": [
     {
       "id": "di_azucar_azucar_eu:2017-11-01",
@@ -5949,7 +5949,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -6237,7 +6237,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -6477,7 +6477,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -6717,7 +6717,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -7021,7 +7021,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -7261,7 +7261,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -7501,7 +7501,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -7773,7 +7773,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -8013,7 +8013,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -8253,7 +8253,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -8557,7 +8557,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -8797,7 +8797,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -9037,7 +9037,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -9357,7 +9357,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -9613,7 +9613,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -9869,7 +9869,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -10189,7 +10189,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -10461,7 +10461,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -10781,7 +10781,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -11165,7 +11165,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -11485,7 +11485,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -11805,7 +11805,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -12173,7 +12173,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -12477,7 +12477,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
@@ -12749,7 +12749,7 @@
       "currency": "EUR",
       "unit": "litro",
       "frequency": "weekly",
-      "publicationDate": null,
+      "publicationDate": "2026-09-24",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:23.839370Z",
       "comparability": "directional"
