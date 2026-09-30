@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: dehesa-data-writes
+  group: dehesa-ams-auctions
   cancel-in-progress: false
 
 permissions:
