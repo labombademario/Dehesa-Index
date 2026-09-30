@@ -60,6 +60,18 @@ for (const [id, nm] of Object.entries(CROPS)) {
   add({ t: 'crop', u: 'cultivos.html?crop=' + id, n: Object.fromEntries(L.map(l => [l, CS[l] + ' · ' + nm[l]])), s: tri('EE. UU. · USDA NASS Crop Progress', 'U.S. · USDA NASS Crop Progress', 'États-Unis · USDA NASS Crop Progress', 'USA · USDA NASS Crop Progress'), k: CROPK[id] + ' cultivo crop condicion condición valoracion siembra cosecha planting harvest progress buena excelente good excellent semis récolte semina raccolta' });
   add({ t: 'map', u: 'mapa.html?layer=crops&crop=' + id, n: Object.fromEntries(L.map(l => [l, MAPW[l] + ' · ' + CS[l] + ' · ' + nm[l]])), s: tri('Mapa de EE. UU. por estados', 'U.S. state map', 'Carte des États-Unis', 'Mappa degli Stati USA'), k: CROPK[id] + ' estados states mapa map cultivo crop' });
 }
+// --- Exportaciones de EE. UU. (FAS ESR y GATS)
+{
+  const EXS = tri('Ventas de exportación de EE. UU.', 'U.S. export sales', 'Ventes à l’exportation des États-Unis', 'Vendite all’esportazione USA');
+  const GTS = tri('Comercio de EE. UU. por país', 'U.S. trade by country', 'Commerce des États-Unis par pays', 'Commercio USA per paese');
+  const EN = { 107: ['Trigo', 'Wheat', 'Blé', 'Grano', 'trigo wheat blé grano'], 401: ['Maíz', 'Corn', 'Maïs', 'Mais', 'maiz corn maize'], 701: ['Sorgo', 'Sorghum', 'Sorgho', 'Sorgo', 'sorgo sorghum'], 301: ['Cebada', 'Barley', 'Orge', 'Orzo', 'cebada barley'], 801: ['Soja', 'Soybeans', 'Soja', 'Soia', 'soja soy soybeans'], 901: ['Harina de soja', 'Soybean meal', 'Tourteau de soja', 'Farina di soia', 'harina soja soybean meal'], 902: ['Aceite de soja', 'Soybean oil', 'Huile de soja', 'Olio di soia', 'aceite soja oil'], 1404: ['Algodón', 'Cotton', 'Coton', 'Cotone', 'algodon cotton'], 1505: ['Arroz', 'Rice', 'Riz', 'Riso', 'arroz rice'], 1701: ['Vacuno', 'Beef', 'Bœuf', 'Manzo', 'vacuno beef carne'], 1702: ['Cerdo', 'Pork', 'Porc', 'Maiale', 'cerdo pork carne'] };
+  for (const [code, v] of Object.entries(EN)) {
+    add({ t: 'supply', u: 'exportaciones.html?code=' + code, n: Object.fromEntries(L.map((l, i) => [l, EXS[l] + ' · ' + v[i]])), s: tri('EE. UU. · USDA FAS Export Sales (semanal)', 'U.S. · USDA FAS Export Sales (weekly)', 'États-Unis · USDA FAS Export Sales (hebdomadaire)', 'USA · USDA FAS Export Sales (settimanale)'), k: v[4] + ' exportaciones exports ventas sales compradores buyers pendientes outstanding embarques shipments' });
+    add({ t: 'map', u: 'mapa.html?layer=buyers&code=' + code, n: Object.fromEntries(L.map((l, i) => [l, MAPW[l] + ' · ' + tri('Compradores', 'Buyers', 'Acheteurs', 'Acquirenti')[l] + ' · ' + v[i]])), s: tri('Mapa mundial', 'World map', 'Carte du monde', 'Mappa del mondo'), k: v[4] + ' compradores buyers exportaciones exports mapa map' });
+  }
+  add({ t: 'supply', u: 'exportaciones.html?tab=gats', n: GTS, s: tri('EE. UU. · USDA FAS GATS (mensual)', 'U.S. · USDA FAS GATS (monthly)', 'États-Unis · USDA FAS GATS (mensuel)', 'USA · USDA FAS GATS (mensile)'), k: 'comercio trade importaciones importations exportaciones exports pais country socios partners census gats mensual monthly china mexico canada japon' });
+  add({ t: 'map', u: 'mapa.html?layer=trade', n: Object.fromEntries(L.map(l => [l, MAPW[l] + ' · ' + GTS[l]])), s: tri('Mapa mundial', 'World map', 'Carte du monde', 'Mappa del mondo'), k: 'comercio trade importaciones exportaciones exports imports socios partners mapa map gats' });
+}
 // --- Mercados USDA (AMS): un resultado por informe, con las palabras de sus productos
 import { existsSync } from 'node:fs';
 if (existsSync(new URL('../data/ams/index.json', import.meta.url))) {
@@ -99,6 +111,7 @@ const PAGES = [
   ['mapa.html', tri('Mapa agrícola', 'Agricultural map', 'Carte agricole', 'Mappa agricola'), 'mapa map carte mappa paises countries geografico'],
   ['oferta-demanda.html', OD, 'oferta demanda supply demand balance produccion consumo exportaciones importaciones existencias usda psd wasde'],
   ['mercados.html', tri('Mercados USDA', 'USDA markets', 'Marchés USDA', 'Mercati USDA'), 'mercados usda ams market news precios prices piensos feed etanol ethanol granos grains legumbres pulses aves poultry huevos eggs ganado cattle heno hay lacteos dairy'],
+  ['exportaciones.html', tri('Exportaciones de EE. UU.', 'U.S. exports', 'Exportations américaines', 'Esportazioni USA'), 'exportaciones exports ventas sales compradores buyers comercio trade fas gats census importaciones paises countries'],
   ['cultivos.html', CS, 'cultivos crops condicion valoracion siembra cosecha progress nass estados unidos']
 ];
 for (const [u, n, k] of PAGES) add({ t: 'page', u, n, s: tri('Página', 'Page', 'Page', 'Page'), k });

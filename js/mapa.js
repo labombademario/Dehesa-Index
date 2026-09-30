@@ -48,10 +48,11 @@
       names: { arroz: 'Riso', azucar: 'Zucchero', cerdo: 'Maiale', cordero: 'Agnello', dap: 'Fertilizzante fosfatico', diesel: 'Gasolio', harina_soja: 'Farina di soia', huevos: 'Uova', leche: 'Latte', maiz: 'Mais', oliva: 'Olio d’oliva', pollo: 'Pollo', potasa: 'Fertilizzante potassico', trigo: 'Grano', vaca: 'Bovino' },
       units: { tonelada: 'tonnellata', '100kg': '100 kg', cwt: 'cwt', bushel: 'bushel', docena: 'dozzina', litro: 'litro', gal: 'gallone', kg: 'kg', lb: 'lb' } }
   };
-  var LATEST = null, CLIMATE = null, SD = null, CROPS = null, MAP = null;
+  var LATEST = null, CLIMATE = null, SD = null, CROPS = null, MAP = null, ESR = null, GATS = null;
+  function isWorld(l) { return !!SD_ATTR[l] || l === 'buyers' || l === 'trade'; }
   var SD_ATTR = { prod: 'production', exp: 'exports', imp: 'imports', stock: 'endingStocks' };
   var SEQ = ['#e3edf3', '#b4cfe0', '#7fabc9', '#3f7fa8', '#1d5178'];
-  var SEL = { layer: 'price', product: 'trigo', view: 'all', sd: 'trigo', my: null, crop: 'corn' };
+  var SEL = { layer: 'price', product: 'trigo', view: 'all', sd: 'trigo', my: null, crop: 'corn', esr: 401, metric: 'acc', flow: 'ex', group: 'maiz', period: '12' };
   var VIEWS = { world: {}, all: { regions: ['US', 'GB', 'ES', 'FR', 'DE', 'IT', 'PL'] }, us: { coords: [39, -97], scale: 2.6 }, eu: { coords: [48, 9], scale: 4.2 } };
   var SYM = { EUR: '€', USD: '$', GBP: '£' };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
@@ -217,13 +218,87 @@
     document.getElementById('mapa-note').textContent = t.cropNote;
   }
 
+  var CT = {
+    es: { layers: { buyers: 'Compradores', trade: 'Comercio EE. UU.' }, prod: 'Producto', metric: 'Cifra', flow: 'Flujo', period: 'Periodo', ex: 'Exportaciones de EE. UU.', im: 'Importaciones de EE. UU.', p12: 'Últimos 12 meses', p1: 'Último mes',
+      mAcc: 'Exportado en la campaña', mOut: 'Ventas pendientes', mCom: 'Compromiso total', mNet: 'Ventas netas de la semana', week: 'Semana al', my: 'Campaña', country: 'País', usd: 'Valor', unassigned: 'Destino sin asignar (no se pinta)', more: 'Más detalle', less: 'menos', mre: 'más', noc: 'sin dato',
+      buyersNote: 'Compradores de EE. UU. según las ventas de exportación de USDA FAS: cada país se pinta según su cifra en la campaña actual; el color va por tramos de igual número de países. La UE es un agregado y se pinta en sus 27 países. Un país sin color no ha comprado o no figura.',
+      tradeNote: 'Comercio de EE. UU. con sus principales socios (USDA FAS GATS, datos del Census Bureau), valor en dólares corrientes. No incluye todos los países, solo los socios agrarios principales. El color va por tramos de igual número de países.',
+      names: { trigo: 'Trigo', maiz: 'Maíz', arroz: 'Arroz', sorgo: 'Sorgo', cebada: 'Cebada', soja: 'Soja (grano)', harina_soja: 'Harina de soja', aceite_soja: 'Aceite de soja', ddgs: 'DDGS', etanol: 'Etanol', vacuno: 'Vacuno', cerdo: 'Cerdo', pollo: 'Pollo y aves', lacteos: 'Lácteos', huevos: 'Huevos', algodon: 'Algodón', fertilizantes: 'Fertilizantes', ganado_vivo: 'Ganado vivo (vacuno)' },
+      cn: { 107: 'Trigo (todas las clases)', 101: 'Trigo duro rojo de invierno', 102: 'Trigo blando rojo de invierno', 103: 'Trigo duro rojo de primavera', 104: 'Trigo blanco', 105: 'Trigo duro (durum)', 401: 'Maíz', 701: 'Sorgo', 301: 'Cebada', 801: 'Soja (grano)', 901: 'Harina de soja', 902: 'Aceite de soja', 1404: 'Algodón upland', 1505: 'Arroz (todos)', 1701: 'Vacuno', 1702: 'Cerdo' } },
+    en: { layers: { buyers: 'Buyers', trade: 'U.S. trade' }, prod: 'Product', metric: 'Measure', flow: 'Flow', period: 'Period', ex: 'U.S. exports', im: 'U.S. imports', p12: 'Last 12 months', p1: 'Latest month',
+      mAcc: 'Exported this marketing year', mOut: 'Outstanding sales', mCom: 'Total commitment', mNet: 'Net sales this week', week: 'Week ending', my: 'Marketing year', country: 'Country', usd: 'Value', unassigned: 'Unassigned destination (not painted)', more: 'More detail', less: 'less', mre: 'more', noc: 'no data',
+      buyersNote: 'Buyers of U.S. goods according to USDA FAS export sales: each country is coloured by its figure in the current marketing year; colour bands hold an equal number of countries. The EU is an aggregate painted on its 27 members. A country without colour has not bought or is not listed.',
+      tradeNote: 'U.S. trade with its main partners (USDA FAS GATS, Census Bureau data), value in current dollars. Not every country: only the main agricultural partners. Colour bands hold an equal number of countries.',
+      names: { trigo: 'Wheat', maiz: 'Corn', arroz: 'Rice', sorgo: 'Sorghum', cebada: 'Barley', soja: 'Soybeans', harina_soja: 'Soybean meal', aceite_soja: 'Soybean oil', ddgs: 'DDGS', etanol: 'Ethanol', vacuno: 'Beef', cerdo: 'Pork', pollo: 'Poultry', lacteos: 'Dairy', huevos: 'Eggs', algodon: 'Cotton', fertilizantes: 'Fertilizers', ganado_vivo: 'Live cattle' },
+      cn: { 107: 'Wheat (all classes)', 101: 'Hard red winter wheat', 102: 'Soft red winter wheat', 103: 'Hard red spring wheat', 104: 'White wheat', 105: 'Durum wheat', 401: 'Corn', 701: 'Sorghum', 301: 'Barley', 801: 'Soybeans', 901: 'Soybean meal', 902: 'Soybean oil', 1404: 'Upland cotton', 1505: 'Rice (all)', 1701: 'Beef', 1702: 'Pork' } },
+    fr: { layers: { buyers: 'Acheteurs', trade: 'Commerce USA' }, prod: 'Produit', metric: 'Chiffre', flow: 'Flux', period: 'Période', ex: 'Exportations des États-Unis', im: 'Importations des États-Unis', p12: '12 derniers mois', p1: 'Dernier mois',
+      mAcc: 'Exporté sur la campagne', mOut: 'Ventes en attente', mCom: 'Engagement total', mNet: 'Ventes nettes de la semaine', week: 'Semaine au', my: 'Campagne', country: 'Pays', usd: 'Valeur', unassigned: 'Destination non attribuée (non colorée)', more: 'Plus de détails', less: 'moins', mre: 'plus', noc: 'pas de donnée',
+      buyersNote: 'Acheteurs des États-Unis d’après les ventes à l’exportation de l’USDA FAS : chaque pays est coloré selon son chiffre de la campagne en cours ; les tranches contiennent autant de pays. L’UE est un agrégat peint sur ses 27 pays. Un pays sans couleur n’a pas acheté ou n’apparaît pas.',
+      tradeNote: 'Commerce des États-Unis avec leurs principaux partenaires (USDA FAS GATS, données du Census Bureau), valeur en dollars courants. Pas tous les pays : seulement les principaux partenaires agricoles. Les tranches contiennent autant de pays.',
+      names: { trigo: 'Blé', maiz: 'Maïs', arroz: 'Riz', sorgo: 'Sorgho', cebada: 'Orge', soja: 'Soja (graines)', harina_soja: 'Tourteau de soja', aceite_soja: 'Huile de soja', ddgs: 'DDGS', etanol: 'Éthanol', vacuno: 'Bœuf', cerdo: 'Porc', pollo: 'Volaille', lacteos: 'Produits laitiers', huevos: 'Œufs', algodon: 'Coton', fertilizantes: 'Engrais', ganado_vivo: 'Bovins vivants' },
+      cn: { 107: 'Blé (toutes classes)', 101: 'Blé dur rouge d’hiver', 102: 'Blé tendre rouge d’hiver', 103: 'Blé dur rouge de printemps', 104: 'Blé blanc', 105: 'Blé dur (durum)', 401: 'Maïs', 701: 'Sorgho', 301: 'Orge', 801: 'Soja (graines)', 901: 'Tourteau de soja', 902: 'Huile de soja', 1404: 'Coton upland', 1505: 'Riz (tous)', 1701: 'Bœuf', 1702: 'Porc' } },
+    it: { layers: { buyers: 'Acquirenti', trade: 'Commercio USA' }, prod: 'Prodotto', metric: 'Cifra', flow: 'Flusso', period: 'Periodo', ex: 'Esportazioni USA', im: 'Importazioni USA', p12: 'Ultimi 12 mesi', p1: 'Ultimo mese',
+      mAcc: 'Esportato nella campagna', mOut: 'Vendite in sospeso', mCom: 'Impegno totale', mNet: 'Vendite nette della settimana', week: 'Settimana al', my: 'Campagna', country: 'Paese', usd: 'Valore', unassigned: 'Destinazione non assegnata (non colorata)', more: 'Più dettagli', less: 'meno', mre: 'più', noc: 'nessun dato',
+      buyersNote: 'Acquirenti degli Stati Uniti secondo le vendite all’esportazione dell’USDA FAS: ogni paese è colorato in base alla sua cifra nella campagna in corso; le fasce contengono lo stesso numero di paesi. La UE è un aggregato dipinto sui suoi 27 paesi. Un paese senza colore non ha acquistato o non compare.',
+      tradeNote: 'Commercio degli Stati Uniti con i principali partner (USDA FAS GATS, dati del Census Bureau), valore in dollari correnti. Non tutti i paesi: solo i principali partner agricoli. Le fasce contengono lo stesso numero di paesi.',
+      names: { trigo: 'Grano', maiz: 'Mais', arroz: 'Riso', sorgo: 'Sorgo', cebada: 'Orzo', soja: 'Soia (semi)', harina_soja: 'Farina di soia', aceite_soja: 'Olio di soia', ddgs: 'DDGS', etanol: 'Etanolo', vacuno: 'Manzo', cerdo: 'Maiale', pollo: 'Pollame', lacteos: 'Latticini', huevos: 'Uova', algodon: 'Cotone', fertilizantes: 'Fertilizzanti', ganado_vivo: 'Bovini vivi' },
+      cn: { 107: 'Grano (tutte le classi)', 101: 'Grano duro rosso invernale', 102: 'Grano tenero rosso invernale', 103: 'Grano duro rosso primaverile', 104: 'Grano bianco', 105: 'Grano duro (durum)', 401: 'Mais', 701: 'Sorgo', 301: 'Orzo', 801: 'Soia (semi)', 901: 'Farina di soia', 902: 'Olio di soia', 1404: 'Cotone upland', 1505: 'Riso (tutti)', 1701: 'Manzo', 1702: 'Maiale' } }
+  };
+  function ct() { return CT[lang()] || CT.es; }
+  function cnm(i2, fb) { if (i2 === 'EU') return tr().sdEu; try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(i2) || fb; } catch (e) { return fb; } }
+  function short(v, unit) { var a = Math.abs(v); if (unit === 'usd') return a >= 1e9 ? num(v / 1e9, 1) + ' Md $' : a >= 1e6 ? num(v / 1e6, 0) + ' M$' : num(v / 1e3, 0) + ' k$'; return a >= 1e6 ? num(v / 1e6, 1) + ' Mt' : a >= 1e3 ? num(v / 1e3, 0) + ' kt' : num(v, 0) + ' t'; }
+  function quint(rows) { var s = rows.map(function (r) { return r.v; }).sort(function (a, b) { return a - b; }), n = s.length, cuts = []; for (var q = 1; q < 5; q++) cuts.push(n ? s[Math.min(n - 1, Math.floor(n * q / 5))] : 0); return { cuts: cuts, cls: function (v) { var k = 0; while (k < 4 && v >= cuts[k]) k++; return k; } }; }
+  function worldMap(rows, htmlOf, fmt) {
+    var q = quint(rows), colors = {};
+    rows.forEach(function (r) { var codes = r.i2 === 'EU' ? EU27 : [r.i2]; codes.forEach(function (c) { colors[c] = { color: SEQ[q.cls(r.v)], html: htmlOf(r) }; }); });
+    var t = ct(), n = rows.length;
+    document.getElementById('mapa-legend').innerHTML = n ? legend([[SEQ[0], '< ' + fmt(q.cuts[0]) + ' (' + t.less + ')']].concat([1, 2, 3].map(function (k) { return [SEQ[k], fmt(q.cuts[k - 1]) + ' – ' + fmt(q.cuts[k])]; })).concat([[SEQ[4], '≥ ' + fmt(q.cuts[3]) + ' (' + t.mre + ')'], ['#e6e2d6', t.noc]])) : legend([['#e6e2d6', t.noc]]);
+    paintMap(colors, null);
+  }
+  function tableRows(rows, fmt, head, link) {
+    var top = rows.slice(0, 12), mx = top.length ? top[0].v : 1;
+    return top.length ? '<div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:420px;font-size:14px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:10px 6px">' + esc(ct().country.toUpperCase()) + '</th><th></th><th style="padding:10px 6px;text-align:right">' + esc(head.toUpperCase()) + '</th></tr>' +
+      top.map(function (r) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:9px 6px;font-weight:600;white-space:nowrap">' + esc(r.name) + '</td><td style="padding:9px 6px;width:40%"><div style="height:8px;border-radius:2px 4px 4px 2px;background:' + SEQ[3] + ';width:' + (r.v / mx * 100).toFixed(1) + '%"></div></td><td style="padding:9px 6px;text-align:right">' + fmt(r.v) + '</td></tr>'; }).join('') + '</table></div><p class="di-movers-hint" style="margin-top:8px"><a href="' + link + '">' + esc(ct().more) + ' →</a></p>' : '';
+  }
+  function renderBuyers(t) {
+    var c$ = ct(), cs = ESR.commodities, c = cs.filter(function (x) { return x.code === SEL.esr; })[0] || cs.filter(function (x) { return x.code === 401; })[0] || cs[0]; SEL.esr = c.code;
+    var M = { acc: c$.mAcc, out: c$.mOut, com: c$.mCom, net: c$.mNet }; if (!M[SEL.metric]) SEL.metric = 'acc';
+    var isB = /Bales/i.test(c.unit), fmt = function (v) { return isB ? num(v / 1000, 0) + ' k ' + (lang() === 'es' ? 'balas' : lang() === 'fr' ? 'balles' : lang() === 'it' ? 'balle' : 'bales') : short(v, 't'); };
+    var rows = [];
+    c.countries.forEach(function (r) { if (!r.i2) return; var v = SEL.metric === 'com' ? r.acc + r.out : r[SEL.metric]; if (v > 0) rows.push({ i2: r.i2, name: cnm(r.i2, r.n), v: v }); });
+    rows.sort(function (a, b) { return b.v - a.v; });
+    document.getElementById('mapa-controls').innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + c$.prod + '<br><select id="mapa-sel-esr" class="di-compare-select">' + cs.map(function (x) { return '<option value="' + x.code + '"' + (x.code === c.code ? ' selected' : '') + '>' + esc(c$.cn[x.code] || x.name) + '</option>'; }).join('') + '</select></label><label style="font-size:13px">' + c$.metric + '<br><select id="mapa-sel-met" class="di-compare-select">' + Object.keys(M).map(function (k) { return '<option value="' + k + '"' + (k === SEL.metric ? ' selected' : '') + '>' + esc(M[k]) + '</option>'; }).join('') + '</select></label></div>';
+    document.getElementById('mapa-sel-esr').onchange = function (e) { SEL.esr = parseInt(e.target.value, 10); render(); };
+    document.getElementById('mapa-sel-met').onchange = function (e) { SEL.metric = e.target.value; render(); };
+    worldMap(rows, function (r) { return '<strong>' + esc(r.name) + '</strong><br>' + esc(M[SEL.metric]) + ': ' + fmt(r.v) + '<br>' + esc(c$.week) + ' ' + esc(c.weekEnding) + ' · ' + esc(c$.my) + ' ' + esc(c.my); }, fmt);
+    document.getElementById('mapa-table').innerHTML = tableRows(rows, fmt, M[SEL.metric] + ' · ' + c.my, 'exportaciones.html?code=' + c.code);
+    document.getElementById('mapa-note').textContent = c$.buyersNote;
+  }
+  function renderTrade(t) {
+    var c$ = ct(), groups = GATS.groups; if (groups.indexOf(SEL.group) < 0) SEL.group = groups.indexOf('maiz') >= 0 ? 'maiz' : groups[0];
+    if (SEL.flow !== 'ex' && SEL.flow !== 'im') SEL.flow = 'ex'; if (SEL.period !== '12' && SEL.period !== '1') SEL.period = '12';
+    var months = GATS.months, cur = SEL.period === '12' ? months.slice(-12) : months.slice(-1);
+    var g = (GATS[SEL.flow] || {})[SEL.group] || {}, rows = [];
+    Object.keys(g).forEach(function (p) { var v = 0; cur.forEach(function (m) { if (g[p][m]) v += g[p][m][0]; }); var pi = GATS.partners[p]; if (v > 0 && pi && pi.i2) rows.push({ i2: pi.i2, name: cnm(pi.i2, pi.n), v: v }); });
+    rows.sort(function (a, b) { return b.v - a.v; });
+    var opt = function (arr, sel, lab) { return arr.map(function (k) { return '<option value="' + k + '"' + (k === sel ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; }).join(''); };
+    document.getElementById('mapa-controls').innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + c$.flow + '<br><select id="mapa-sel-flow" class="di-compare-select">' + opt(['ex', 'im'], SEL.flow, function (k) { return c$[k]; }) + '</select></label><label style="font-size:13px">' + c$.prod + '<br><select id="mapa-sel-grp" class="di-compare-select">' + opt(groups, SEL.group, function (k) { return c$.names[k] || k; }) + '</select></label><label style="font-size:13px">' + c$.period + '<br><select id="mapa-sel-per" class="di-compare-select">' + opt(['12', '1'], SEL.period, function (k) { return c$['p' + k]; }) + '</select></label></div>';
+    document.getElementById('mapa-sel-flow').onchange = function (e) { SEL.flow = e.target.value; render(); };
+    document.getElementById('mapa-sel-grp').onchange = function (e) { SEL.group = e.target.value; render(); };
+    document.getElementById('mapa-sel-per').onchange = function (e) { SEL.period = e.target.value; render(); };
+    var fmt = function (v) { return short(v, 'usd'); };
+    worldMap(rows, function (r) { return '<strong>' + esc(r.name) + '</strong><br>' + esc(c$[SEL.flow]) + ' · ' + esc(c$.names[SEL.group] || SEL.group) + ': ' + fmt(r.v) + '<br>' + esc(c$['p' + SEL.period]); }, fmt);
+    document.getElementById('mapa-table').innerHTML = tableRows(rows, fmt, c$.usd + ' · ' + c$['p' + SEL.period], 'exportaciones.html?tab=gats&flow=' + SEL.flow + '&group=' + SEL.group) || '<p class="di-movers-hint">' + t.noData + '</p>';
+    document.getElementById('mapa-note').textContent = c$.tradeNote;
+  }
+
   function shell() {
     var t = tr();
-    var btn = function (k) { return '<button type="button" class="di-link-btn" data-layer="' + k + '" aria-pressed="' + (SEL.layer === k) + '" style="' + (SEL.layer === k ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:14px">' + t.layers[k] + '</button>'; };
-    document.getElementById('mapa-body').innerHTML = '<div style="margin-bottom:12px">' + btn('price') + btn('precip') + btn('temp') + (SD ? btn('prod') + btn('exp') + btn('imp') + btn('stock') : '') + (CROPS && window.DEHESA_US_STATES ? btn('crops') : '') + '</div><div id="mapa-controls" style="margin-bottom:10px"></div><div id="mapa-legend"></div>' +
-      '<div style="margin:0 0 6px;font-size:13px">' + (SEL.layer === 'crops' ? [] : SD_ATTR[SEL.layer] ? ['world', 'us', 'eu'] : ['all', 'us', 'eu']).map(function (v) { return '<button type="button" class="di-link-btn" data-view="' + v + '" aria-pressed="' + (SEL.view === v) + '" style="' + (SEL.view === v ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:12px">' + t.views[v] + '</button>'; }).join('') + '</div><div class="di-card" style="padding:8px"><div id="mapa-canvas" style="height:420px;width:100%"></div><p id="mapa-fallback" class="di-movers-hint" style="display:none;padding:12px"></p></div><p id="mapa-note" class="di-info-api-notice" style="margin:10px 0 18px"></p><div id="mapa-table"></div>';
+    var btn = function (k) { return '<button type="button" class="di-link-btn" data-layer="' + k + '" aria-pressed="' + (SEL.layer === k) + '" style="' + (SEL.layer === k ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:14px">' + (t.layers[k] || ct().layers[k]) + '</button>'; };
+    document.getElementById('mapa-body').innerHTML = '<div style="margin-bottom:12px">' + btn('price') + btn('precip') + btn('temp') + (SD ? btn('prod') + btn('exp') + btn('imp') + btn('stock') : '') + (CROPS && window.DEHESA_US_STATES ? btn('crops') : '') + (ESR ? btn('buyers') : '') + (GATS ? btn('trade') : '') + '</div><div id="mapa-controls" style="margin-bottom:10px"></div><div id="mapa-legend"></div>' +
+      '<div style="margin:0 0 6px;font-size:13px">' + (SEL.layer === 'crops' ? [] : isWorld(SEL.layer) ? ['world', 'us', 'eu'] : ['all', 'us', 'eu']).map(function (v) { return '<button type="button" class="di-link-btn" data-view="' + v + '" aria-pressed="' + (SEL.view === v) + '" style="' + (SEL.view === v ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:12px">' + t.views[v] + '</button>'; }).join('') + '</div><div class="di-card" style="padding:8px"><div id="mapa-canvas" style="height:420px;width:100%"></div><p id="mapa-fallback" class="di-movers-hint" style="display:none;padding:12px"></p></div><p id="mapa-note" class="di-info-api-notice" style="margin:10px 0 18px"></p><div id="mapa-table"></div>';
     Array.prototype.forEach.call(document.querySelectorAll('#mapa-body [data-view]'), function (b) { b.onclick = function () { SEL.view = b.getAttribute('data-view'); shell(); render(); }; });
-    Array.prototype.forEach.call(document.querySelectorAll('#mapa-body [data-layer]'), function (b) { b.onclick = function () { SEL.layer = b.getAttribute('data-layer'); if (SD_ATTR[SEL.layer] && SEL.view === 'all') SEL.view = 'world'; else if (!SD_ATTR[SEL.layer] && SEL.view === 'world') SEL.view = 'all'; shell(); render(); }; });
+    Array.prototype.forEach.call(document.querySelectorAll('#mapa-body [data-layer]'), function (b) { b.onclick = function () { SEL.layer = b.getAttribute('data-layer'); if (isWorld(SEL.layer) && SEL.view === 'all') SEL.view = 'world'; else if (!isWorld(SEL.layer) && SEL.view === 'world') SEL.view = 'all'; shell(); render(); }; });
   }
   function render() {
     var t = tr();
@@ -231,7 +306,7 @@
     document.getElementById('pg-h1').textContent = t.title;
     document.getElementById('pg-sub').textContent = t.sub;
     if (!document.getElementById('mapa-canvas')) shell();
-    if (SEL.layer === 'price') renderPrice(t); else if (SEL.layer === 'crops') renderCrops(t); else if (SD_ATTR[SEL.layer]) renderSD(t, SEL.layer); else renderClimate(t, SEL.layer);
+    if (SEL.layer === 'price') renderPrice(t); else if (SEL.layer === 'crops') renderCrops(t); else if (SEL.layer === 'buyers' && ESR) renderBuyers(t); else if (SEL.layer === 'trade' && GATS) renderTrade(t); else if (SD_ATTR[SEL.layer]) renderSD(t, SEL.layer); else renderClimate(t, SEL.layer);
   }
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
@@ -240,15 +315,19 @@
     fetch('data/latest.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
     fetch('data/climate.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
     window.DehesaPSD ? window.DehesaPSD.load('data/supply-demand-map.json') : null,
-    fetch('data/crop-progress.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+    fetch('data/crop-progress.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    fetch('data/export-sales.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    fetch('data/gats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
   ]).then(function (a) {
+    ESR = a[4] && a[4].commodities && a[4].commodities.length ? a[4] : null; GATS = a[5] && a[5].months && a[5].months.length > 1 ? a[5] : null;
     SD = a[2] || null; CROPS = a[3] && a[3].crops && a[3].crops.length ? a[3] : null;
     LATEST = (a[0] && a[0].observations) || [];
     (function () { // enlaces profundos desde el buscador: ?layer=&product=&sd=&crop=
       var q = new URLSearchParams(window.location.search), ly = q.get('layer');
-      if (ly === 'price' || ly === 'precip' || ly === 'temp' || ly === 'crops' || SD_ATTR[ly]) SEL.layer = ly;
+      if (ly === 'price' || ly === 'precip' || ly === 'temp' || ly === 'crops' || SD_ATTR[ly] || (ly === 'buyers' && ESR) || (ly === 'trade' && GATS)) SEL.layer = ly;
+      if (q.get('code')) SEL.esr = parseInt(q.get('code'), 10); if (q.get('flow')) SEL.flow = q.get('flow'); if (q.get('group')) SEL.group = q.get('group');
       if (q.get('product')) SEL.product = q.get('product'); if (q.get('sd')) SEL.sd = q.get('sd'); if (q.get('crop')) SEL.crop = q.get('crop');
-      if (SD_ATTR[SEL.layer]) SEL.view = 'world';
+      if (isWorld(SEL.layer)) SEL.view = 'world';
     })(); CLIMATE = a[1] && a[1].locations && a[1].locations.length ? a[1] : null;
     if (!LATEST.length && !CLIMATE) return;
     shell(); render();
