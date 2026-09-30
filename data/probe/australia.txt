@@ -1,0 +1,181 @@
+=== https://data.gov.au/data/api/3/action/package_search?fq=organization:abares&rows=100&fl=name,title,license_id
+{"help": "https://data.gov.au/data/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 338, "facets": {}, "results": [{"name": "new-south-wales-dryland-salinity-assessment-2000-assessmet-of-dryland-salinity-extent-2020", "title": "New South Wales \u2013 Dryland Salinity Assessment 2000 \u2013 Assessmet of Dryland salinity extent 2020", "license_id": "cc-by"}, {"name": "australian-dryland-salinity-assessment-spatial-data-12500000-nlwra-2001", "title": "Australian Dryland Salinity Assessment Spatial Data (1:2,500,000) \u2013 NLWRA 2001", "license_id": "cc-by"}, {"name": "equivalent-fresh-water-head-difference-between-the-shallowest-and-deepest-aquifers", "title": "Equivalent Fresh Water Head Difference Between the Shallowest and Deepest Aquifers", "license_id": "cc-by"}, {"name": "elevation-of-the-pre-tertiary-basement-in-the-murray-basin", "title": "Elevation of the Pre-Tertiary Basement in the Murray Basin", "license_id": "cc-by"}, {"name": "australian-irrigation-areas-vector-version-1a-national-land-and-water-resources-audit", "title": "Australian Irrigation Areas (Vector), Version 1A, National Land and Water Resources Audit", "license_id": "cc-by"}, {"name": "cropping-management-practices-1998-1999", "title": "Cropping Management Practices, 1998-1999", "license_id": "cc-by"}, {"name": "farm-equity-ratio-1996-1997-to-1998-1999-three-year-average", "title": "Farm Equity Ratio, 1996-1997 to 1998-1999 (three year average)", "license_id": "cc-by"}, {"name": "annual-family-income-1996-1997-to-1998-1999-three-year-average", "title": "Annual Family Income, 1996-1997 to 1998-1999 (Three Year Average)", "license_id": "cc-by"}, {"name": "clum-dec2020", "title": "Catchment scale land use of Australia \u2013 Update December 2020", "license_id": "cc-by-4.0"}, {"name": "new-south-wales-dryland-salinity-assessment-2000-assessmet-of-dryland-salinity-extent-2050", "title": "New South Wales \u2013 Dryland Salinity Assessment 2000 \u2013 Assessmet of Dryland salinity extent 2050", "license_id": "cc-by"}, {"name": "farms-with-significant-degradation-problems-irrigation-salinity-1998-1999", "title": "Farms with significant degradation problems (irrigation salinity), 1998-1999", "license_id": "cc-by"}, {"name": "estimated-value-of-agricultural-operations-evao-1996-1997", "title": "Estimated Value of Agricultural Operations (EVAO), 1996-1997", "license_id": "cc-by"}, {"name": "farm-family-cash-income-1996-1997-to-1998-1999-three-year-average", "title": "Farm family Cash Income, 1996-1997 to 1998-1999 (three year average)", "license_id": "cc-by"}, {"name": "boreholes-in-the-murray-basin-southeastern-australia", "title": "Boreholes in the Murray Basin, Southeastern Australia", "license_id": "cc-by"}, {"name": "farms-with-significant-degradation-problems-soil-acidity-1998-1999", "title": "Farms with Significant Degradation Problems (Soil Acidity), 1998-1999", "license_id": "cc-by"}, {"name": "estimated-proportion-of-farms-carrying-out-landcare-related-work-1998-1999", "title": "Estimated Proportion of Farms Carrying Out Landcare Related Work, 1998-1999", "license_id": "cc-by"}, {"name": "major-water-resources-infrastructure-part-of-the-australian-water-resources-assessment-2000-database", "title": "Major Water Resources Infrastructure (Part of the Australian Water Resources Assessment 2000 Database)", "license_id": "cc-by"}, {"name": "new-south-wales-dryland-salinity-assessment-2000-assessmet-of-dryland-salinity-extent-2000", "title": "New South Wales \u2013 Dryland Salinity Assessment 2000 \u2013 Assessmet of Dryland salinity extent 2000", "license_id": "cc-by"}, {"name": "australian-agricultural-environments-aae-2012", "title": "Australian Agricultural Environments (AAE) 2012", "license_id": "cc-by-2.5"}, {"name": "farmer-population-1996", "title": "Farmer Population, 1996", "license_id": "cc-by"}, {"name": "coal-fields-in-the-murray-basin-southeastern-australia", "title": "Coal Fields in the Murray Basin, Southeastern Australia", "license_id": "cc-by"}, {"name": "higher-qualifications-of-farmers-and-farm-managers-1996", "title": "Higher Qualifications of Farmers and Farm Managers, 1996", "license_id": "cc-by"}, {"name": "statistical-local-areas-1996-for-agricultural-structure-classification", "title": "Statistical Local Areas 1996 for Agricultural Structure Classification", "license_id": "cc-by"}, {"name": "pb_luwa_g5pigi20181116", "title": "Catchment Scale Land Use Mapping for Western Australia 2018", "license_id": "cc-by-4.0"}, {"name": "catchment-scale-land-use-of-australia-commodities-september-2017", "title": "Catchment scale Land Use of Australia - Commodities - September 2017", "license_id": "cc-by-4.0"}, {"name": "surface-water-gauging-stations-part-of-the-australian-water-resources-assessment-2000-database", "title": "Surface Water Gauging Stations (Part of the Australian Water Resources Assessment 2000 Database)", "license_id": "cc-by"}, {"name": "land-use-of-australia-2010-11-to-2020-21", "title": "Land use of Australia 2010\u201311 to 2020\u201321 version 7.1", "license_id": "cc-by-4.0"}, {"name": "mcas-s-data-pack-update-2022", "title": "MCAS-S Data Pack-Update 2022", "license_id": "cc-by-4.0"}, {"name": "fires-in-australia-s-forests-2016-21-2024", "title": "Fires in Australia's forests 2016\u201321 (2024)", "license_id": "cc-by-4.0"}, {"name": "land_use_of_australia_2010_11_to_2015_16", "title": "Land use of Australia 2010\u201311 to 2015\u201316, 250 m", "license_id": "cc-by-4.0"}, {"name": "regional-forest-agreements-and-comprehensive-regional-assessment-boundaries", "title": "Regional Forest Agreements and Comprehensive Regional Assessment boundaries", "license_id": "cc-by-4.0"}, {"name": "australia-s-indigenous-land-and-forest-estate-2024", "title": "Australia's Indigenous land and forest estate (2024)", "license_id": "cc-by-4.0"}, {"name": "australia-s-indigenous-land-and-forest-estate-2020", "title": "Australia's Indigenous land and forest estate (2020)", "license_id": "cc-by-4.0"}, {"name": "land-tenure-of-australia-2010-11-to-2020-21", "title": "Land tenure of Australia 2010\u201311 to 2020\u201321", "license_id": "cc-by-4.0"}, {"name": "catchment-scale-land-use-of-australia-and-commodities-update-december-2023", "title": "Catchment scale land use of Australia and commodities \u2013 Update December 2023", "license_id": "cc-by-4.0"}, {"name": "clumc-dec2020", "title": "Catchment scale land use of Australia \u2013 Commodities \u2013 Update December 2020", "license_id": "cc-by-4.0"}, {"name": "pb_luausg9abll20190319", "title": "Catchment Scale Land Use of Australia - Update December 2018", "license_id": "cc-by-4.0"}, {"name": "fires-in-australia-s-forests-2011-16-2018", "title": "Fires in Australia's forests 2011\u201316 (2018)", "license_id": "cc-by-4.0"}, {"name": "forests-of-australia-2023", "title": "Forests of Australia (2023)", "license_id": "cc-by-4.0"}, {"name": "australia-s-indigenous-forest-estate-2020", "title": "Australia's Indigenous forest estate (2020)", "license_id": "cc-by-4.0"}, {"name": "australia-s-indigenous-forest-estate-2018", "title": "Australia's Indigenous forest estate (2018)", "license_id": "cc-by-4.0"}, {"name": "pb_aif13g9abfs20160527_11a", "title": "Australia's Indigenous forest estate (2013) v2.0", "license_id": "cc-by-4.0"}, {"name": "australia-s-indigenous-forest-estate-2013", "title": "Australia\u2019s Indigenous forest estate (2013)", "license_id": "cc-by"}, {"name": "tenure-of-australia-s-forests-2023", "title": "Tenure of Australia's forests (2023)", "license_id": "cc-by-4.0"}, {"name": "tenure-of-australia-s-forests-2013-v2", "title": "Tenure of Australia's forests (2013) v2.0", "license_id": "cc-by-4.0"}, {"name": "tenure-of-australia-s-forests-2013", "title": "Tenure of Australia's forests (2013)", "license_id": "cc-by"}, {"name": "forests-of-australia-2013-v2-0", "title": "Forests of Australia (2013) v2.0", "license_id": "cc-by-4.0"}, {"name": "forests-of-australia-2003", "title": "Forests of Australia (2003)", "license_id": "cc-by"}, {"name": "forests-of-australia-2013", "title": "Forests of Australia (2013)", "license_id": "cc-by"}, {"name": "tenure-of-australia-s-forests-2018", "title": "Tenure of Australia's forests (2018)", "license_id": "cc-by-4.0"}, {"name": "forests-of-australia-2018", "title": "Forests of Australia (2018)", "license_id": "cc-by-4.0"}, {"name": "victorian-dryland-salinity-assessment-2000-dc21cac_water_resources_new-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc21cac_water_resources_new.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-dc18cac_agric_cost_time-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc18cac_agric_cost_time.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-dc17cac_shallow_wt-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc17cac_shallow_wt.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-dc16cac_agric_cost-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc16cac_agric_cost.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-dc12cac_infrastructure-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc12cac_infrastructure.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-dc10cac_flora_dist_final-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc10cac_flora_dist_final.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-dc09cac_flora_final-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc09cac_flora_final.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-dc08cac_towns_final-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc08cac_towns_final.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-dc07cac_road_final-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc07cac_road_final.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-dc06cac_util_final-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc06cac_util_final.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-dc05cac_wetland_final-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc05cac_wetland_final.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-dc04cac_hydrol_final-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 dc04cac_hydrol_final.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-d03cac_fauna_dist_final-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 d03cac_fauna_dist_final.xls", "license_id": "notspecified"}, {"name": "victorian-dryland-salinity-assessment-2000-d02cac_fauna_final-xls", "title": "Victorian Dryland Salinity Assessment 2000 \u2013 d02cac_fauna_final.xls", "license_id": "notspecified"}, {"name": "pe_alumc9aal20161017", "title": "The Australian Land Use and Management Classification Version 8", "license_id": "cc-by-4.0"}, {"name": "pb_stfwp9abfe20160823", "title": "Short-term forecasts of selected wood product sales volume: Method and assumptions", "license_id": "cc-by-4.0"}, {"name": "pb_smdwm_d9aawr20161202", "title": "Lessons from the water market: The southern Murray-Darling Basin water allocation market 2000-01 to 2015-16", "license_id": "cc-by-4.0"}, {"name": "pb_saabi9aat_20161216", "title": "South America: an emerging competitor for Australia's beef industry", "license_id": "cc-by-4.0"}, {"name": "pb_pawms9aai20170502", "title": "Pest animal and Weed Management Survey: National landholder survey results", "license_id": "cc-by-4.0"}, {"name": "pb_myregr9ab__20161207", "title": "About My Re
+=== https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs
+<?xml version="1.0" encoding="utf-8"?>
+<!--NSI Web Service v8.19.9.0-->
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Header>
+    <message:ID>IDREF6366</message:ID>
+    <message:Test>false</m
+AG_BROADACRE Australian Agriculture: Broadacre Crops
+AG_HORTICULTURE Australian Agriculture: Horticulture
+BOP_FACTOR Balance of Payments and International Investment Position: Combined current price seasonal adjustment factors
+BOP_GOODS Balance of Payments: Goods Exports and Imports
+CPI Consumer Price Index (CPI)
+CPI_M Monthly Consumer Price Index (CPI) indicator
+CPI_Q Consumer Price Index (CPI) Quarterly
+CPI_WEIGHTS Consumer Price Index (CPI) Weights
+ITGS International Trade in Goods
+ITPI_EXP Export Price Index
+ITPI_IMP Import Price Index
+LSTOCK_SLAUGHT Livestock slaughtered
+MERCH_EXP Merchandise Exports by Commodity (SITC), Country and State
+MERCH_IMP Merchandise Imports by Commodity (SITC), Country and State
+PPI Producer Price Indexes by Industry
+PPI_FD Producer Price Indexes, Final Demand
+RES_DWELL_ST Residential Dwellings: Values, Mean Price and Number by State and Territories
+RPPI Residential Property Price Index
+WPI Wage Price Index
+=== https://www.mla.com.au/prices-markets/statistics/api/
+
+<!doctype html>
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    
+    
+    <!-- creating global dataLayer object for GTM -->
+    <script>
+        var dataLayer = window.dataLayer = window.dataLayer || [];
+    </script>
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                            new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl + '&<meta name="google-site-verification" content="q74NxaLu9CupuK-oVEPJZw2sZTpJw2K_qVAG7_V8WRw" />'; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-P2KQWH');
+        </script>
+        <!-- End Google Tag Manager -->
+
+    
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title> MLA Statistics API | Meat &amp; Livestock Australia </title>
+
+<meta property="og:title" content="MLA Statistics API | Meat &amp; Livestock Australia">
+<meta property="og:url" content="https://www.mla.com.au/prices-markets/statistics/api/">
+<meta property="og:site_name" content="MLA Corporate">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.mla.com.au/globalassets/mla-corporate/mla-logo-og.jpg" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+    <!-- Site Specific Meta Tags-->
+<meta name="google-site-verification" content="5DEa3ps1RlSCyKEg3LrR-VwP9ZrAEFnRa9a0oEg3cFk" /> <meta name="detectify-verification" content="1e57adbbe19f37ece1688acd09bb8d79" />    
+
+
+
+
+            <link rel="apple-touch-icon" href="/globalassets/mla-corporate/favicon/favicon.ico">
+            <link rel="apple-touch-icon-precomposed" href="/globalassets/mla-corporate/favicon/favicon.ico" />
+            <link rel="icon" href="/globalassets/mla-corporate/favicon/favicon.ico" />
+            <link rel="SHORTCUT ICON" href="/globalassets/mla-corporate/favicon/favicon.ico" />
+
+
+<link rel="preload stylesheet" href="/Site.Resource/MLACorporate/stylesheets/css/mdi/css/materialdesignicons.min.css" as="style" />
+<link rel="preload stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" as="style" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<!--[if lt IE 9]>
+    <link rel="stylesheet" href="/Site.Resource/MLACorporate/stylesheets/css/styles.ie.css">
+<![endif]-->
+
+<link rel="preload stylesheet" href="/Site.Resource/MLACorporate/stylesheets/css/minified/styles.css?v=1.1.10" as="style">
+
+<link rel="canonical" href="https://www.mla.com.au/prices-markets/statistics/api/">
+    
+<script src="//www.google.com/recaptcha/api.js" async></script>
+<script src="/Site.Resource/MLACorporate/js/minified/jquery-1.12.4.min.js"></script>
+<script src="/Site.Resource/MLACorporate/js/minified/jquery-ui.min.js"></script>
+<script src="/Site.Resource/Common/js/js.cookie.js"></script>
+
+<!--[if lt IE 9]>
+    <script src="/Site.Resource/MLACorporate/js/libs/ie/selectivizr.min.js"></script>
+    <script src="/Site.Resource/MLACorporate/js/libs/ie/respond.min.js"></script>
+<![endif]-->
+
+
+    
+
+
+<!-- Optimizely Experimentation code --> 
+<script src="https://cdn.optimizely.com/js/4776685376110592.js"></script>
+
+<!-- Optimizely Data Platform .js tag -->
+
+<script type='text/javascript'>
+  var zaius = window['zaius'] || (window['zaius'] = []);
+  zaius.methods = ['initialize', 'onload', 'customer', 'entity', 'event', 'subscribe', 'unsubscribe', 'consent', 'identify', 'anonymize', 'dispatch'];
+
+  // build queueing methods
+  zaius.factory = function (method) {
+    return function() {
+      var args = Array.prototype.slice.call(arguments);
+      args.unshift(method);
+      zaius.push(args);
+      return zaius;
+    };
+  };
+
+  (function() {
+    for (var i = 0; i < zaius.methods.length; i++) {
+      var method = zaius.methods[i];
+      zaius[method] = zaius.factory(method);
+    }
+
+    var script   = document.createElement('script');
+    script.type  = 'text/javascript';
+    script.async = true;
+    script.src   = ('https:' === document.location.protocol ? 'https://' : 'http://') +
+                  'd1igp3oop3iho5.cloudfront.net/v2/v4eN2TEC2cEVEVbSDkLxiw-au1/zaius.js';
+
+    var firstScript = document.getElementsByTagName('script')[0];
+    firstScript.parentNode.insertBefore(script, firstScript);
+  })();
+  // Edits to this script should only be made below this line.
+  zaius.event('pageview');
+</script>
+
+<!-- End of ODP tag -->
+
+<!-- Hotjar Tracking Code for www.mla.com.au -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1425844,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<meta name="ahrefs-site-verification" content="c7eaaaa4a78eb19d5b5b2461ed5eeac4a242cbd796bf21e81141ff05d805b085">
+
+<!-- Remove reCAPTCHA floating icon -->
+<style>
+.grecaptcha-badge {
+displa
+=== https://www.agriculture.gov.au/abares/data/weekly-commodity-price-update/australian-agricultural-prices
+
+HTTP 000  0
+
+=== https://www.agriculture.gov.au/abares/research-topics/agricultural-outlook/data
+
+HTTP 000  0
+
+=== https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=T2M&community=AG&longitude=147&latitude=-35&format=JSON
+{"type":"Feature","geometry":{"type":"Point","coordinates":[147.0,-35.0,190.08]},"properties":{"parameter":{"T2M":{"JAN":26.72,"FEB":25.08,"MAR":21.56,"APR":16.91,"MAY":11.94,"JUN":8.89,"JUL":7.95,"AUG":8.95,"SEP":12.47,"OCT":16.63,"NOV":20.87,"DEC":23.61,"ANN":16.76}}},"header":{"title":"NASA/POWER
