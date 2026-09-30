@@ -42,7 +42,7 @@ def put(sid, group, label, unit, freq, pts, extra=None):
     for p, v in pts:
         if v is not None: d[p] = v
     pts = [[p, round(v, 3)] for p, v in sorted(d.items())]
-    if len(pts) < 3: return
+    if len(pts) < 3 or int(pts[-1][0][:4]) < datetime.date.today().year - 2: return  # series discontinued / stale
     last, prev = pts[-1], pts[-2]
     ch = round((last[1] / prev[1] - 1) * 100, 2) if prev[1] else None
     s = dict(id=sid, group=group, label=label, unit=unit, frequency=freq, latestPeriod=last[0], latest=last[1], changePct=ch, points=pts)
