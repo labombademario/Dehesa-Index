@@ -27,7 +27,7 @@ INDEX_PER_KEY = 25
 UA = "DehesaIndex-NewsBot/1.0 (+https://dehesaindex.com)"
 
 _HL = {"en": ("en-US", "US", "US:en"), "es": ("es", "ES", "ES:es"), "fr": ("fr", "FR", "FR:fr"),
-       "it": ("it", "IT", "IT:it"), "es419": ("es-419", "AR", "AR:es-419")}
+       "it": ("it", "IT", "IT:it"), "de": ("de", "DE", "DE:de"), "nl": ("nl", "NL", "NL:nl"), "da": ("da", "DK", "DK:da"), "pt": ("pt-PT", "PT", "PT:pt-150"), "es419": ("es-419", "AR", "AR:es-419")}
 
 def google(q, lang="en", gl=None):
     hl, g, ceid = _HL[lang]
@@ -108,6 +108,127 @@ FEEDS = [
     F("ABC Rural", "global", google("site:abc.net.au/news/rural agriculture grain wheat cattle dairy fertilizer")),
     F("The Land", "global", google("site:theland.com.au agriculture grain wheat cattle dairy fertilizer")),
     F("Farm Online", "global", google("site:farmonline.com.au grain wheat canola cattle markets Australia")),
+
+    # ── Alemania (de) ──
+    F("Agrarheute", "eu", google("site:agrarheute.com Getreide Weizen Preise Dünger Milch Schwein Markt", "de"), "de"),
+    F("top agrar", "eu", google("site:topagrar.com Getreide Weizen Preise Dünger Milchpreis Schweinepreis", "de"), "de"),
+    F("Deutscher Bauernverband", "eu", google("site:bauernverband.de Landwirte Ernte Agrarpolitik Preise", "de"), "de"),
+    F("Agrarzeitung", "eu", google("site:agrarzeitung.de Agrarmärkte Getreide Milch Fleisch Preise", "de"), "de"),
+    F("Landwirtschaftsverlag", "eu", google("site:wochenblatt.com Landwirtschaft Preise Ernte Milch Schweine", "de"), "de"),
+    F("BauernZeitung", "eu", google("site:bauernzeitung.de Landwirtschaft Preise Getreide Milch Schweine Ernte", "de"), "de"),
+    F("Agrarmarkt", "eu", google("site:agrarmarkt.de OR site:agrarticker.de OR site:proplanta.de Getreide Preise Dünger Schlachtvieh", "de"), "de"),
+    F("Bundesministerium für Landwirtschaft", "eu", google("site:bmleh.de OR site:bmel.de Landwirtschaft Ernte Agrarpolitik Tierseuchen", "de"), "de"),
+    F("BLE", "eu", google("site:ble.de Markt Getreide Milch Fleisch Agrarmarkt", "de"), "de"),
+    F("dpa", "eu", google("dpa Landwirtschaft Getreide Ernte Milchpreis Bauern Schweinepreis", "de"), "de", pub=True),
+    F("Handelsblatt", "eu", google("site:handelsblatt.com Landwirtschaft Agrar Getreide Dünger Lebensmittelpreise", "de"), "de"),
+    F("", "eu", google("Vogelgrippe Schweinepest Blauzungenkrankheit Ausbruch Tierseuche Deutschland", "de"), "de", pub=True),
+    F("", "eu", google("Getreidepreise Weizen Raps Mais Ernte Matif Landwirte", "de"), "de", pub=True),
+    F("", "eu", google("Schweinepreis Rinderpreis Milchpreis Erzeugerpreise Landwirte", "de"), "de", pub=True),
+    # ── Austria (de) ──
+    F("Landwirt.com", "eu", google("site:landwirt.com Landwirtschaft Preise Getreide Milch Schweine Ernte Österreich", "de", "AT"), "de"),
+    F("Bauernzeitung Österreich", "eu", google("site:bauernzeitung.at Landwirtschaft Preise Getreide Milch Schweine Ernte", "de", "AT"), "de"),
+    F("Landwirtschaftskammer Österreich", "eu", google("site:lko.at Landwirtschaft Preise Markt Ernte Getreide", "de", "AT"), "de"),
+    F("Agrarmarkt Austria", "eu", google("site:ama.at Agrarmarkt Preise Getreide Milch Rindfleisch", "de", "AT"), "de"),
+    F("APA", "eu", google("APA Landwirtschaft Österreich Bauern Ernte Getreide Milch Preise", "de", "AT"), "de", pub=True),
+    F("Der Standard", "eu", google("site:derstandard.at Landwirtschaft Bauern Getreide Ernte Preise", "de", "AT"), "de"),
+    F("", "eu", google("Österreich Landwirtschaft Erntebilanz Getreide Milchpreis Schweinepreis", "de", "AT"), "de", pub=True),
+    # ── Bélgica (nl / fr) ──
+    F("Boerenbond", "eu", google("site:boerenbond.be landbouwers prijzen graan melk varkens", "nl", "BE"), "nl"),
+    F("Landbouwleven", "eu", google("site:landbouwleven.be landbouw prijzen graan melk varkens oogst", "nl", "BE"), "nl"),
+    F("Vilt", "eu", google("site:vilt.be landbouw prijzen graan melk varkens oogst", "nl", "BE"), "nl"),
+    F("Le Sillon Belge", "eu", google("site:sillonbelge.be agriculteurs prix céréales lait porcs récolte", "fr", "BE"), "fr"),
+    F("Agra Belgique", "eu", google("site:fwa.be OR site:filagri.be agriculteurs prix céréales lait viande Wallonie", "fr", "BE"), "fr"),
+    F("Belga", "eu", google("Belga landbouw landbouwers oogst prijzen melk graan varkenspest vogelgriep", "nl", "BE"), "nl", pub=True),
+    F("Brussels Times", "eu", google("site:brusselstimes.com farmers agriculture Belgium crops prices milk", "en", "BE")),
+    F("De Standaard", "eu", google("site:standaard.be landbouwers landbouw prijzen oogst", "nl", "BE"), "nl"),
+    F("De Tijd", "eu", google("site:tijd.be landbouw graan voeding prijzen meststoffen", "nl", "BE"), "nl"),
+    F("Le Soir", "eu", google("site:lesoir.be agriculteurs agriculture récolte prix lait céréales", "fr", "BE"), "fr"),
+    F("", "eu", google("landbouwers België graanprijzen melkprijs varkensprijs", "nl", "BE"), "nl", pub=True),
+    F("", "eu", google("agriculteurs Belgique prix lait viande céréales récolte", "fr", "BE"), "fr", pub=True),
+    # ── Países Bajos (nl) ──
+    F("Boerderij", "eu", google("site:boerderij.nl akkerbouw melkprijs varkensprijs prijzen graan", "nl"), "nl"),
+    F("Nieuwe Oogst", "eu", google("site:nieuweoogst.nl landbouw prijzen graan melk varkens", "nl"), "nl"),
+    F("Agrarisch Dagblad", "eu", google("site:agd.nl landbouw prijzen graan melk varkens oogst", "nl"), "nl"),
+    F("Foodagribusiness", "eu", google("site:foodagribusiness.nl OR site:foodholland.nl landbouw voedsel prijzen export", "nl"), "nl"),
+    F("Wageningen University", "eu", google("site:wur.nl landbouw voedsel prijzen markt onderzoek", "nl"), "nl"),
+    F("Rabobank", "global", google("site:rabobank.com agri commodities grains dairy protein fertilizer outlook RaboResearch")),
+    F("NOS", "eu", google("site:nos.nl boeren landbouw oogst prijzen vogelgriep", "nl"), "nl"),
+    F("ANP", "eu", google("ANP landbouw boeren oogst prijzen melk varkens vogelgriep", "nl"), "nl", pub=True),
+    F("DutchNews", "eu", google("site:dutchnews.nl farmers agriculture Netherlands crops prices nitrogen", "en")),
+    F("", "eu", google("graanprijzen melkprijs varkensprijs akkerbouwers veehouders", "nl"), "nl", pub=True),
+    F("", "eu", google("vogelgriep blauwtong varkenspest mond- en klauwzeer uitbraak", "nl"), "nl", pub=True),
+    # ── Dinamarca (da) ──
+    F("Landbrugsavisen", "eu", google("site:landbrugsavisen.dk landmænd priser korn mælk svin høst", "da"), "da"),
+    F("Effektivt Landbrug", "eu", google("site:effektivtlandbrug.landbrugsavisen.dk priser korn mælk svin", "da"), "da"),
+    F("Bondebladet", "eu", google("site:bondebladet.dk landmænd priser korn mælk svin", "da"), "da"),
+    F("Landbrug & Fødevarer", "eu", google("site:lf.dk landbrug fødevarer eksport priser", "da"), "da"),
+    F("SEGES", "eu", google("site:seges.dk OR site:landbrugsinfo.dk priser korn svin mælk marked", "da"), "da"),
+    F("Danish Agriculture & Food Council", "eu", google("site:agricultureandfood.dk Danish agriculture food exports pork dairy")),
+    F("Ritzau", "eu", google("Ritzau landmænd landbrug høst priser svin mælk fugleinfluenza", "da"), "da", pub=True),
+    F("Børsen", "eu", google("site:borsen.dk landbrug fødevarer korn gødning priser", "da"), "da"),
+    F("Danmarks Radio", "eu", google("site:dr.dk landmænd landbrug høst priser svin", "da"), "da"),
+    F("Food Supply DK", "eu", google("site:foodsupply.dk landbrug fødevarer svin mælk eksport", "da"), "da"),
+    F("", "eu", google("Denmark pork exports Danish Crown dairy Arla farmers prices"), pub=True),
+    F("", "eu", google("kornpriser svinepriser mælkepris landmænd gødningspriser", "da"), "da", pub=True),
+    # ── Portugal (pt) ──
+    F("Agroportal", "eu", google("site:agroportal.pt agricultura preços cereais leite carne vinho azeite", "pt"), "pt"),
+    F("Voz do Campo", "eu", google("site:vozdocampo.pt agricultura preços cereais leite carne azeite", "pt"), "pt"),
+    F("Vida Rural", "eu", google("site:vidarural.pt agricultura preços cereais leite carne", "pt"), "pt"),
+    F("Agricultura e Mar", "eu", google("site:agriculturaemar.com agricultura preços cereais leite carne azeite", "pt"), "pt"),
+    F("Lusa", "eu", google("Lusa agricultores agricultura colheita preços leite cereais azeite", "pt"), "pt", pub=True),
+    F("Público", "eu", google("site:publico.pt agricultura agricultores colheita preços leite cereais", "pt"), "pt"),
+    F("Jornal de Negócios", "eu", google("site:jornaldenegocios.pt agricultura agroalimentar preços cereais fertilizantes", "pt"), "pt"),
+    F("Expresso", "eu", google("site:expresso.pt agricultura agricultores colheita preços azeite cortiça", "pt"), "pt"),
+    F("Observador", "eu", google("site:observador.pt agricultura agricultores colheita preços leite azeite", "pt"), "pt"),
+    F("CAP Portugal", "eu", google("site:cap.pt agricultores agricultura preços PAC cereais leite", "pt"), "pt"),
+    F("GPP", "eu", google("site:gpp.pt agricultura mercados preços estatísticas", "pt"), "pt"),
+    F("Confagri", "eu", google("site:confagri.pt cooperativas agricultura leite azeite cereais preços", "pt"), "pt"),
+    F("APCOR", "eu", google("cortiça APCOR exportações preços sobreiro montado", "pt"), "pt", pub=True),
+    F("", "eu", google("azeite produção colheita preços Alentejo olivais", "pt"), "pt", pub=True),
+    F("", "eu", google("preços leite produtores bovinos suínos cereais Portugal", "pt"), "pt", pub=True),
+    F("", "eu", google("peste suína gripe aviária língua azul febre aftosa Portugal DGAV", "pt"), "pt", pub=True),
+    F("", "eu", google("Portugal farmers olive oil cork harvest agriculture prices"), pub=True),
+    # ── Francia (fr) ──
+    F("Réussir", "eu", google("site:reussir.fr éleveurs prix viande bovine lait porc céréales", "fr"), "fr"),
+    F("Agra Presse", "eu", google("site:agra.fr OR site:agrapresse.fr agriculteurs prix céréales lait viande", "fr"), "fr"),
+    F("FranceAgriMer", "eu", google("site:franceagrimer.fr marchés céréales lait viandes prix", "fr"), "fr"),
+    F("Agreste", "eu", google("site:agreste.agriculture.gouv.fr récolte production prix agricole", "fr"), "fr"),
+    F("FNSEA", "eu", google("site:fnsea.fr agriculteurs prix revenus politique agricole", "fr"), "fr"),
+    F("Les Echos", "eu", google("site:lesechos.fr agriculture agriculteurs céréales engrais prix", "fr"), "fr"),
+    F("Le Monde", "eu", google("site:lemonde.fr agriculteurs agriculture récolte prix céréales lait", "fr"), "fr"),
+    F("L'Agriculteur Normand", "eu", google("site:lagriculteurnormand.com agriculteurs prix lait céréales", "fr"), "fr"),
+    F("Ouest-France", "eu", google("site:ouest-france.fr agriculteurs éleveurs prix lait porc céréales", "fr"), "fr"),
+    F("Pleinchamp", "eu", google("site:pleinchamp.com céréales colza maïs prix marché", "fr"), "fr"),
+    F("Arvalis", "eu", google("site:arvalis.fr OR site:terresunivia.fr céréales oléagineux récolte prix", "fr"), "fr"),
+    F("Interbev", "eu", google("site:interbev.fr OR site:inaporc.fr OR site:cniel.com viande bovine porc lait filière", "fr"), "fr"),
+    F("", "eu", google("FranceAgriMer cotations blé Rouen maïs colza Euronext", "fr"), "fr", pub=True),
+    # ── Canadá francés y prensa nacional ──
+    F("La Terre de chez nous", "ca", google("site:laterre.ca agriculteurs prix grains porc lait Québec", "fr", "CA"), "fr"),
+    F("Le Bulletin des agriculteurs", "ca", google("site:lebulletin.com agriculteurs prix grains porc lait Québec", "fr", "CA"), "fr"),
+    F("La Presse", "ca", google("site:lapresse.ca agriculteurs agriculture récolte prix lait Québec", "fr", "CA"), "fr"),
+    F("Canadian Press", "ca", google("Canadian Press farmers agriculture canola wheat cattle prices", "en", "CA"), pub=True),
+    F("CBC", "ca", google("site:cbc.ca farmers agriculture crops cattle canola prices", "en", "CA")),
+    F("Top Crop Manager", "ca", google("site:topcropmanager.com canola wheat soybean corn crop prices Canada")),
+    F("Farmers Forum", "ca", google("site:farmersforum.com grain cattle canola prices Ontario")),
+    F("Saskatchewan Agriculture", "ca", google("site:saskatchewan.ca agriculture crop report cattle prices")),
+    F("Canola Council of Canada", "ca", google("site:canolacouncil.org canola prices exports crop")),
+    F("Canadian Federation of Agriculture", "ca", google("site:cfa-fca.ca farmers trade tariffs agriculture policy")),
+    F("Canada Beef", "ca", google("site:canadabeef.ca OR site:cattle.ca cattle beef prices exports Canada")),
+    F("Pulse Canada", "ca", google("site:pulsecanada.com pulses lentils peas exports prices Canada")),
+    # ── Australia ──
+    F("Farm Weekly", "global", google("site:farmweekly.com.au grain wheat canola sheep cattle prices Western Australia")),
+    F("Queensland Country Life", "global", google("site:queenslandcountrylife.com.au cattle grain sorghum prices Queensland")),
+    F("Stock & Land", "global", google("site:stockandland.com.au cattle sheep grain prices Victoria")),
+    F("The Weekly Times", "global", google("site:weeklytimesnow.com.au farmers grain cattle sheep dairy prices")),
+    F("Sheep Central", "global", google("site:sheepcentral.com lamb sheep prices Australia wool")),
+    F("Dairy News Australia", "global", google("site:dairynewsaustralia.com.au milk price dairy farmers Australia")),
+    F("Australian Financial Review", "global", google("site:afr.com agriculture farmers wheat beef exports Australia")),
+    F("ABARES", "global", google("site:agriculture.gov.au abares crop report commodities outlook exports")),
+    F("Meat & Livestock Australia", "global", google("site:mla.com.au cattle sheep market prices exports")),
+    F("GRDC", "global", google("site:grdc.com.au grains crop research prices")),
+    F("AAP", "global", google("AAP Australian farmers crop harvest drought cattle wheat exports", "en"), pub=True),
+    F("Grain Growers", "global", google("site:graingrowers.com.au grain growers wheat barley canola policy trade")),
+    F("Australian Wool Innovation", "global", google("wool prices Australia auction micron indicator AWEX"), pub=True),
 
     # ── Reino Unido ──
     F("AHDB", "uk", google("site:ahdb.org.uk agriculture wheat barley dairy livestock cereals market")),
@@ -235,6 +356,44 @@ TOPICS = {
  "sanidad": ["avian flu", "avian influenza", "bird flu", "swine fever", "foot-and-mouth", "foot and mouth", "bluetongue", "lumpy skin", "disease", "outbreak", "quarantine", "gripe aviar", "peste porcina", "fiebre aftosa", "lengua azul", "dermatosis nodular", "brote", "sanitario", "grippe aviaire", "peste porcine", "fievre aphteuse", "fievre catarrhale", "dermatose nodulaire", "epizootie", "influenza aviaria", "peste suina", "afta epizootica", "lingua blu", "dermatite nodulare", "focolaio"],
  "ayudas": ["subsidy", "subsidies", "farm aid", "bailout", "compensation", "support package", "ayuda", "ayudas", "subvencion", "subvenciones", "indemnizacion", "aide", "aides", "subvention", "indemnisation", "aiuti", "sussidi", "contributi", "indennizz"],
 }
+# ── Términos en alemán (de), neerlandés (nl), danés (da) y portugués (pt). Con prefijo = solo cuenta en ese idioma ──
+EXTRA_PRODUCTS = {
+ "maiz": ["de:mais", "nl:mais", "milho", "majs"],
+ "trigo": ["weizen", "tarwe", "hvede", "trigo mole", "trigo duro"],
+ "soja": ["sojabohnen", "sojabonen", "sojabonner", "sojaschrot"],
+ "arroz": ["de:reis", "rijst", "da:ris"],
+ "cebada": ["gerste", "gerst", "cevada", "byg"],
+ "colza": ["de:raps", "koolzaad", "rapsfro", "sonnenblume", "zonnebloem", "girassol", "solsikke"],
+ "azucar": ["zucker", "suiker", "acucar", "sukker"],
+ "leche": ["milch", "molkerei", "kase", "melk", "zuivel", "kaas", "leite", "laticinio", "queijo", "manteiga", "mælk", "mejeri", "ost"],
+ "vaca": ["de:rind", "de:rinder", "rindfleisch", "kalb", "nl:rund", "runderen", "rundvlees", "pt:bovinos", "pt:vaca", "pt:vitela", "kvæg", "oksekod", "de:milchkuh"],
+ "cerdo": ["schwein", "schweine", "schweinefleisch", "varken", "varkens", "suinos", "porco", "svin", "svinekod"],
+ "cordero": ["de:lamm", "schaf", "schapen", "nl:lam", "ovinos", "borrego", "cordeiro", "da:lam"],
+ "pollo": ["geflugel", "hahnchen", "huhn", "hühner", "pluimvee", "nl:kip", "frango", "fjerkræ", "kylling"],
+ "huevos": ["de:eier", "nl:eieren", "ovos", "pt:ovo"],
+ "ganado": ["de:vieh", "viehhaltung", "tierhaltung", "veehouderij", "pecuaria", "pt:gado", "husdyr"],
+ "oliva": ["olivenol", "olijfolie", "azeite", "azeitona", "azeitonas", "oliven", "cortica", "sobreiro", "montado"],
+ "fertilizantes": ["dunger", "dungemittel", "kunstdunger", "kunstmest", "meststof", "meststoffen", "adubo", "adubos", "gødning", "kvælstof", "stikstof", "stickstoff"],
+ "diesel": ["dieselpreis", "dieselprijs", "dieselpris"],
+ "energia": ["erdgas", "aardgas", "naturgas", "energipris", "energiepreis"],
+ "pienso": ["futtermittel", "tierfutter", "krachtvoer", "diervoeder", "racoes", "foder", "foderstof"],
+ "costes": ["produktionskosten", "productiekosten", "custos de producao", "produktionsomkostninger", "erzeugerkosten"],
+ "pac": ["gemeinsame agrarpolitik", "de:gap", "gemeenschappelijk landbouwbeleid", "nl:glb", "pt:pac", "politica agricola comum", "fælles landbrugspolitik"],
+}
+EXTRA_TOPICS = {
+ "clima": ["durre", "trockenheit", "hitzewelle", "frost", "hagel", "unwetter", "hochwasser", "droogte", "hittegolf", "vorst", "overstroming", "seca", "geada", "granizo", "onda de calor", "cheias", "tørke", "hedebølge", "oversvømmelse"],
+ "comercio": ["zoll", "zolle", "handelsabkommen", "einfuhr", "ausfuhr", "invoerheffing", "invoer", "uitvoer", "handelsakkoord", "exportacao", "importacao", "tarifas", "eksport", "toldsatser"],
+ "oferta": ["ernte", "ertrag", "anbau", "aussaat", "erntebilanz", "oogst", "opbrengst", "teelt", "colheita", "producao", "safra", "campanha", "høst", "udbytte", "avling"],
+ "precios": ["preis", "preise", "notierung", "notierungen", "erzeugerpreis", "prijs", "prijzen", "notering", "preco", "precos", "cotacao", "pris", "priser", "kurs"],
+ "politica": ["regierung", "agrarminister", "landwirtschaftsminister", "bundesregierung", "regering", "landbouwminister", "governo", "ministerio da agricultura", "regeringen", "landbrugsminister", "lovforslag"],
+ "sanidad": ["vogelgrippe", "schweinepest", "blauzungenkrankheit", "klauenseuche", "tierseuche", "vogelgriep", "varkenspest", "blauwtong", "klauwzeer", "febre aftosa", "lingua azul", "peste suina", "gripe das aves", "fugleinfluenza", "svinepest", "blåtunge", "mund- og klovsyge"],
+ "ayudas": ["forderung", "beihilfe", "agrarförderung", "subsidie", "subsidies", "steun", "apoio", "apoios", "ajudas", "indemnizacoes", "tilskud", "støtte", "kompensation"],
+}
+_STAR = {'schaf', 'hagel', 'oogst', 'durre', 'forderung', 'prijs', 'meststof', 'olijfolie', 'erdgas', 'gerste', 'klauenseuche', 'hittegolf', 'varkenspest', 'kunstmest', 'rindfleisch', 'minister', 'blauwtong', 'koolzaad', 'klauwzeer', 'pluimvee', 'krachtvoer', 'sojabonen', 'droogte', 'notering', 'mejeri', 'vogelgriep', 'ernte', 'blauzungenkrankheit', 'subsidie', 'aardgas', 'ertrag', 'sukker', 'hitzewelle', 'zucker', 'udbytte', 'sojabohnen', 'vogelgrippe', 'tierseuche', 'prisen', 'hvede', 'milch', 'rapsfro', 'varken', 'melk', 'svin', 'futtermittel', 'rundvlees', 'schwein', 'dunger', 'oksekod', 'tarwe', 'trockenheit', 'svinekod', 'fugleinfluenza', 'tørke', 'regierung', 'weizen', 'mælk', 'sonnenblume', 'schapen', 'geflugel', 'svinepest', 'notierung', 'olivenol', 'preis', 'beihilfe', 'suiker', 'schweinepest', 'opbrengst', 'priser', 'zonnebloem'}
+def _st(ts): return [("*" + t if t in _STAR else t) for t in ts]
+for _k, _v in EXTRA_PRODUCTS.items(): PRODUCTS[_k] = PRODUCTS[_k] + _st(_v)
+for _k, _v in EXTRA_TOPICS.items(): TOPICS[_k] = TOPICS[_k] + _st(_v)
+
 # Temas que por sí solos justifican una noticia de un medio agrario
 STRONG_TOPICS = {"sanidad", "oferta", "clima"}
 
@@ -242,12 +401,12 @@ BLOCK_HINTS = {
  "us": ["united states", "u.s.", "usa", "usda", "iowa", "illinois", "indiana", "kansas", "nebraska", "midwest", "corn belt", "washington", "estados unidos", "etats-unis", "stati uniti", "eeuu", "ee. uu.", "ee.uu."],
  "uk": ["united kingdom", "u.k.", "britain", "british", "england", "scotland", "wales", "northern ireland", "london", "defra", "ahdb", "nfu", "reino unido", "royaume-uni", "regno unito"],
  "ca": ["canada", "canadian", "saskatchewan", "alberta", "manitoba", "ontario farm", "quebec", "prairies", "canola council", "aafc", "statistics canada", "canadá", "canadien", "canadese"],
- "eu": ["european union", "eu ", "europe", "european", "brussels", "spain", "spanish", "france", "french", "germany", "german", "italy", "italian", "ireland", "poland", "netherlands", "espana", "espanol", "union europea", "bruselas", "francia", "alemania", "italia", "irlanda", "polonia", "union europeenne", "bruxelles", "allemagne", "unione europea", "bruxelles", "europa", "europe", "castilla", "andalucia", "cataluna", "aragon", "extremadura", "galicia", "lombardia", "veneto", "bretagne", "normandie"],
+ "eu": ["european union", "eu ", "europe", "european", "brussels", "spain", "spanish", "france", "french", "germany", "german", "italy", "italian", "ireland", "poland", "netherlands", "espana", "espanol", "union europea", "bruselas", "francia", "alemania", "italia", "irlanda", "polonia", "union europeenne", "bruxelles", "allemagne", "unione europea", "bruxelles", "europa", "europe", "deutschland", "bundesland", "bayern", "niedersachsen", "osterreich", "austria", "belgie", "belgique", "belgium", "vlaanderen", "wallonie", "nederland", "netherlands", "danmark", "denmark", "danish", "jylland", "portugal", "portugues", "alentejo", "ribatejo", "europese unie", "europaische union", "europeiske union", "uniao europeia", "castilla", "andalucia", "cataluna", "aragon", "extremadura", "galicia", "lombardia", "veneto", "bretagne", "normandie"],
 }
 GLOBAL_HINTS = ["brazil", "brasil", "argentina", "china", "chinese", "india", "australia", "ukraine", "ukrainian", "russia", "russian", "black sea", "kazakhstan", "vietnam", "thailand", "indonesia", "malaysia", "egypt", "turkey", "africa", "japan", "mexico", "paraguay", "uruguay", "ucrania", "rusia", "mar negro", "mer noire", "ucraina", "cina", "giappone", "japon", "inde"]
 
 TRUSTED = {"Reuters", "Associated Press", "AFP", "EFE", "Bloomberg", "Financial Times", "Wall Street Journal", "USDA", "USDA FAS", "USDA ERS", "USDA APHIS",
-           "European Commission", "FAO", "OECD", "WTO", "EIA", "IEA", "World Bank", "WOAH", "International Grains Council", "Defra", "AHDB"}
+           "European Commission", "FAO", "OECD", "WTO", "EIA", "IEA", "World Bank", "WOAH", "International Grains Council", "Defra", "AHDB", "Lusa", "APA", "dpa", "ANP", "Ritzau", "Belga", "Canadian Press", "AAP", "FranceAgriMer", "Agreste", "GPP", "ABARES", "BLE"}
 
 def norm(s):
     s = unicodedata.normalize("NFKD", (s or "").lower())
@@ -267,6 +426,10 @@ def hit_count(text_n, text_raw, terms, lang):
         if ":" in t[:3]:
             lg, t = t.split(":", 1)
             if lg != lang: continue
+        if t.startswith("*"):   # subcadena: compuestos tipo "Weizenpreise", "varkensprijs", "kornpriser"
+            t = t[1:]
+            if t in text_n or t in text_raw: n += 1
+            continue
         # los términos con acentos significativos (maïs, blé) se buscan en el texto original
         hay = text_raw if t != norm(t) else text_n
         if term_rx(t).search(hay): n += 1
