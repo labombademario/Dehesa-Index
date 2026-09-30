@@ -28,7 +28,6 @@ def main():
     recs = {}
     for r in rows:
         vid = r['id_variable'].strip()
-        if vid not in KEEP: continue
         y = int(r['ejercicio'])
         c = r['desc_ccaa'].strip()
         n1 = r['tipo_explotacion_n1'].strip(); n3 = r['tipo_explotacion_n3'].strip(); tid = r['id_tipo_explotacion_n3'].strip()
@@ -44,7 +43,7 @@ def main():
     def dkey(s):
         m = re.search(r'(\d[\d.]*)', s); return int(m.group(1).replace('.', '')) if m else 0
     D = sorted(dims, key=dkey)
-    V = [v for v in KEEP if v in vars_]
+    V = sorted(vars_)
     out = []
     for (y, c, t, d), rec in sorted(recs.items()):
         vals = [rec['v'].get(v) for v in V]
