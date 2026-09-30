@@ -12,7 +12,7 @@
   var GBPUSD = 1.3286;
   var FX_DATE = '2026-09-30'; // fecha ISO de la cotización, la actualiza scripts/update-fx.mjs
   var CADUSD = 0.7051;
-  var DKKUSD = 0.1522; // corona danesa (ERM II, ~7,46 por EUR); la actualiza scripts/update-fx.mjs
+  var DKKUSD = 0.1519; // corona danesa (ERM II, ~7,46 por EUR); la actualiza scripts/update-fx.mjs
   var FX = { USD: 1, EUR: EURUSD, GBP: GBPUSD, CAD: CADUSD, DKK: DKKUSD };
   var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', CAD: 'C$', DKK: 'kr ' };
 
