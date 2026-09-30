@@ -79,7 +79,10 @@ if not bm:
 verified_at = datetime.utcnow().isoformat(timespec="seconds") + "Z"
 trust_body = bm.group(2)
 trust_body = re.sub(r"methodology: '[^']*'", "methodology: 'World Bank Urea, E. Europe international commodity reference; USD/metric ton.'", trust_body)
-trust_body = re.sub(r"comparability: '[^']*', observationDate: [^,]+, publicationDate: [^\n]+", f"comparability: 'not_comparable', observationDate: '{obs_date}', publicationDate: {json.dumps(publication_date)}, status: 'verified', verifiedAt: '{verified_at}'", trust_body)
+trust_pattern = re.compile(r"comparability: '[^']*',\s*observationDate: [^,]+,\s*publicationDate: [^,]+,\s*status: '[^']*',\s*verifiedAt: '[^']*'")
+if not trust_pattern.search(trust_body):
+    raise RuntimeError("Data Trust EU urea: formato de campos no reconocido")
+trust_body = trust_pattern.sub(lambda _m: f"comparability: 'not_comparable', observationDate: '{obs_date}', publicationDate: {json.dumps(publication_date).replace(chr(34), chr(39))},\n      status: 'verified', verifiedAt: '{verified_at}'", trust_body)
 data = data[:bm.start(2)] + trust_body + data[bm.end(2):]
 DATA_JS.write_text(data, encoding="utf-8")
 
