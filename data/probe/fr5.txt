@@ -1,0 +1,28 @@
+VAR dossierRacine=$(this).attr("dossierracine");
+VAR dossierRacine= $('#'+$(this).attr("id")+' span').attr("menuid");
+VAR menuId=$(this).attr("menuid");
+VAR menuId==menuencours)) { var affDocs = document.getElementById("afficherListeDocs");
+VAR menuId=$('#'+$(this).attr("id")+' span').attr("menuid");
+VAR menuId==menuencours)) { rafraichir = false;
+VAR menuTitre=$(this).attr("menutitre");
+VAR menuTitre=$('#'+$(this).attr("id")+' span').attr("menutitre");
+VAR menuUrl=$(this).attr("menuurl");
+VAR menuUrl=$('#'+$(this).attr("id")+' span').attr("menuurl");
+VAR niveauMax=$(this).attr("niveaumax");
+VAR niveauMax=$('#'+$(this).attr("id")+' span').attr("niveaumax");
+POST {"niveau": "1", "dossierRacine": "SeriesChronologiques", "menuId": "", "menuTitre": "cotations", "menuUrl": "SeriesChronologiques/productions vegetale 58914
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xls
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xlsx
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A24.xls
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A25.xls
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-GRC-Cotations_FR-A24.xlsx
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-GRC-Cotations_FR-A26.xlsx
+  TXT  Compte système 0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390049E8FFD041BB644E90D8BB41A0EA2A61 user_extranet sans titre 1 VIDE &nbsp;Chargement en cours.... Veuillez patienter. &nbsp; --> &nbsp;&nbsp; &nbsp;&nbsp; ...&nbsp; 1 2 &nbsp;...&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; classé par : Titre &nbsp;&nbsp;&nbsp; - Publié le &nbsp;&nbsp;&nbsp; Description PRIX DES CÉRÉALES F
+POST {"niveau": "1", "dossierRacine": "SeriesChronologiques/productions vegetales/grandes cultures/cotations", "menuId": "", "menuTitre": "cotations", "men 59600
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xls
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xlsx
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A24.xls
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A25.xls
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-GRC-Cotations_FR-A24.xlsx
+  F fileurl=SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-GRC-Cotations_FR-A26.xlsx
+  TXT  Compte système 0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390049E8FFD041BB644E90D8BB41A0EA2A61 user_extranet sans titre 1 VIDE &nbsp;Chargement en cours.... Veuillez patienter. &nbsp; --> &nbsp;&nbsp; &nbsp;&nbsp; ...&nbsp; 1 2 &nbsp;...&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; classé par : Titre &nbsp;&nbsp;&nbsp; - Publié le &nbsp;&nbsp;&nbsp; Description PRIX DES CÉRÉALES F
