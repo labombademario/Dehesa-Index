@@ -553,7 +553,7 @@
       products: [
         { nameKey: 'cerdo', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
           us: { price: 96.50, changePct: 0.4, history: [92.0, 93.5, 94.0, 95.0, 95.8, 96.2, 96.5], currency: 'USD', kgPerUnit: 45.359 },
-          eu: { price: 192, changePct: 0.3, history: [186, 188, 189, 190, 191, 191.5, 192], currency: 'EUR', kgPerUnit: 100 },
+          eu: { price: 178.56, changePct: 0.5179, history: [172.71, 171.67, 170.59, 173.62, 168.63, 166.33, 169.1, 172.57, 175.96, 178.08, 177.64, 178.56], currency: 'EUR', kgPerUnit: 100 },
           uk: { price: 180.84, changePct: 0.2, history: [179.20, 179.50, 179.80, 180.10, 180.30, 180.40, 180.84], currency: 'GBP', kgPerUnit: 100 },
           footnoteKey: 'cerdo',
           countryFactors: { es: 1, de: 0.911, fr: 1.193, it: 1.353 },
@@ -956,8 +956,8 @@
     'porcino-cerdo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cerdo clasificada S (≥60 % magro) en España, EUR/100 kg de canal. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
-      comparability: 'directional', observationDate: null, publicationDate: null,
-      status: 'pending', verifiedAt: null
+      comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
+      status: 'verified', verifiedAt: '2026-09-30T00:07:07.439Z'
     }
   };
 

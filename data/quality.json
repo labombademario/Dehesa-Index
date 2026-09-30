@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T00:04:50.002Z",
+  "generatedAt": "2026-09-30T00:07:07.684Z",
   "scope": {
-    "latestObservations": 11,
-    "historyObservations": 186,
-    "verified": 11,
+    "latestObservations": 12,
+    "historyObservations": 211,
+    "verified": 12,
     "pending": 0,
     "stale": 5,
     "regions": [
@@ -13,6 +13,7 @@
     ],
     "products": [
       "arroz",
+      "cerdo",
       "diesel",
       "eurostat_cereals_output_index",
       "eurostat_energy_input_index",
@@ -39,6 +40,21 @@
       "historyPoints": 7,
       "ageDays": 60,
       "stale": true
+    },
+    {
+      "id": "di_porcino_cerdo_eu",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-09-20",
+      "publicationDate": "2026-09-30",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "frequency": "weekly",
+      "historyPoints": 25,
+      "ageDays": 10,
+      "stale": false
     },
     {
       "id": "di_diesel_eu",

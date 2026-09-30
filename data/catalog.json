@@ -1,9 +1,10 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T00:04:49.909Z",
-  "observationCount": 13,
+  "generatedAt": "2026-09-30T00:07:07.561Z",
+  "observationCount": 14,
   "products": [
     "arroz",
+    "cerdo",
     "diesel",
     "eurostat_cereals_output_index",
     "eurostat_energy_input_index",
@@ -20,6 +21,7 @@
   ],
   "sources": [
     "eia",
+    "eu_agrifood",
     "eu_oil_bulletin",
     "european_commission",
     "eurostat",
@@ -46,6 +48,21 @@
       "points": 7,
       "coverageStart": "2026-02-01",
       "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-09-20",
+      "unit": "100kg",
+      "currency": "EUR",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional",
+      "points": 25,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-09-01"
     },
     {
       "product": "diesel",

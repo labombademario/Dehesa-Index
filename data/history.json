@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T00:04:49.909Z",
+  "generatedAt": "2026-09-30T00:07:07.561Z",
   "observations": [
     {
       "id": "di_eurostat_cereals_output_index:2020-09-01",
@@ -1027,6 +1027,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2024-09-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2024-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 217.51,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2024-09-01",
       "product": "diesel",
       "region": "eu",
@@ -1107,6 +1123,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2024-10-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2024-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 214.78,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2024-10-01",
       "product": "diesel",
       "region": "eu",
@@ -1139,6 +1171,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2024-11-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2024-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 203.48,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2024-11-01",
       "product": "diesel",
       "region": "eu",
@@ -1168,6 +1216,22 @@
       "publicationDate": "2026-09-28",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_eu:2024-12-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2024-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 202.31,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
       "comparability": "directional"
     },
     {
@@ -1267,6 +1331,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2025-01-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 201.19,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2025-01-01",
       "product": "diesel",
       "region": "eu",
@@ -1299,6 +1379,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2025-02-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 198.56,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2025-02-01",
       "product": "diesel",
       "region": "eu",
@@ -1328,6 +1424,22 @@
       "publicationDate": "2026-09-28",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_eu:2025-03-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 205.11,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
       "comparability": "directional"
     },
     {
@@ -1427,6 +1539,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2025-04-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 221.04,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2025-04-01",
       "product": "diesel",
       "region": "eu",
@@ -1459,6 +1587,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2025-05-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 226.58,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2025-05-01",
       "product": "diesel",
       "region": "eu",
@@ -1488,6 +1632,22 @@
       "publicationDate": "2026-09-28",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_eu:2025-06-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 227.53,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
       "comparability": "directional"
     },
     {
@@ -1587,6 +1747,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2025-07-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 231.55,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2025-07-01",
       "product": "diesel",
       "region": "eu",
@@ -1619,6 +1795,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2025-08-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 227.15,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2025-08-01",
       "product": "diesel",
       "region": "eu",
@@ -1648,6 +1840,22 @@
       "publicationDate": "2026-09-28",
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_eu:2025-09-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 211.46,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
       "comparability": "directional"
     },
     {
@@ -1763,6 +1971,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_porcino_cerdo_eu:2025-10-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 197.02,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2025-10-01",
       "product": "diesel",
       "region": "eu",
@@ -1811,6 +2035,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_porcino_cerdo_eu:2025-11-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 179.54,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2025-11-01",
       "product": "diesel",
       "region": "eu",
@@ -1857,6 +2097,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:49Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_porcino_cerdo_eu:2025-12-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 154.97,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
     },
     {
       "id": "di_diesel_eu:2025-12-01",
@@ -1971,6 +2227,22 @@
       "comparability": "not_comparable"
     },
     {
+      "id": "di_porcino_cerdo_eu:2026-01-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 134.79,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2026-01-01",
       "product": "diesel",
       "region": "eu",
@@ -2048,6 +2320,22 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T23:53:33.765Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_eu:2026-02-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 130.37,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
       "comparability": "directional"
     },
     {
@@ -2160,6 +2448,22 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T23:53:33.765Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_eu:2026-03-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 136.24,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
       "comparability": "directional"
     },
     {
@@ -2339,6 +2643,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2026-04-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 165.92,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2026-04-01",
       "product": "diesel",
       "region": "eu",
@@ -2451,6 +2771,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2026-05-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 166.14,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2026-05-01",
       "product": "diesel",
       "region": "eu",
@@ -2560,6 +2896,22 @@
       "publicationDate": null,
       "status": "verified",
       "verifiedAt": "2026-09-29T23:53:33.765Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_eu:2026-06-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 168.13,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
       "comparability": "directional"
     },
     {
@@ -2739,6 +3091,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2026-07-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 172.71,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2026-07-01",
       "product": "diesel",
       "region": "eu",
@@ -2851,6 +3219,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_porcino_cerdo_eu:2026-08-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 168.63,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_diesel_eu:2026-08-01",
       "product": "diesel",
       "region": "eu",
@@ -2945,6 +3329,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T00:04:49Z",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_porcino_cerdo_eu:2026-09-01",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 178.08,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "comparability": "directional"
     },
     {
       "id": "di_diesel_eu:2026-09-01",
