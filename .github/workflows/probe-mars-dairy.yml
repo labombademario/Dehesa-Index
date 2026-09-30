@@ -1,0 +1,25 @@
+name: Probe MARS dairy
+on:
+  workflow_dispatch: {}
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - env:
+          MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
+        run: node scripts/probe-mars-dairy.mjs
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/probe-mars-dairy.txt
+          git commit -m "probe: MARS dairy report list" || exit 0
+          git pull --rebase && git push
