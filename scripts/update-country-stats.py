@@ -63,6 +63,74 @@ for id_, label, unit, tbl, vs, group in [
         if s: dk.append(s)
     except Exception as e:
         log.append("ERROR DK " + id_ + ": " + str(e)[:160])
+
+def dst_values(table, var):
+    info = json.loads(http("https://api.statbank.dk/v1/tableinfo", json.dumps({"table": table, "format": "JSON", "lang": "en"}).encode(), {"Content-Type": "application/json"}))
+    for v in info["variables"]:
+        if v["id"] == var:
+            return [(x["id"], x["text"]) for x in v["values"]]
+    return []
+
+def first_match(vals, rx):
+    import re
+    for i, t in vals:
+        if re.search(rx, t, re.I):
+            return i, t
+    return None, None
+
+def add(list_, id_, label, unit, freq, fetch, group, note=None):
+    try:
+        s = mk(id_, label, unit, freq, fetch(), group, note)
+        if s: list_.append(s)
+        else: log.append("VACIA " + id_)
+    except Exception as e:
+        log.append("ERROR " + id_ + ": " + str(e)[:160])
+
+# aves (trimestral) y huevos (trimestral)
+for code, id_, label, unit, enh in [("FJERKRIALT", "dk-poultry-prod", "Poultry: meat production (total)", "million kg", "PROD"), ("FJERKRIALT", "dk-poultry-slaught", "Poultry: slaughterings (total)", "1,000 head", "SLAGEKS"), ("KYLLING", "dk-chicken-slaught", "Chickens: slaughterings", "1,000 head", "SLAGEKS")]:
+    add(dk, id_, label, unit, "quarterly", lambda c=code, e=enh: dst("ANI61", [("DYRKAT", [c]), ("ENHED", [e])]), "production")
+add(dk, "dk-chicken-quote", "Chickens: quotation (live weight)", "DKK øre/kg", "quarterly", lambda: dst("ANI61", [("DYRKAT", ["KYLLING"]), ("ENHED", ["PRISKYL"])]), "prices")
+for code, id_, label in [("KON3", "dk-eggs-consumption", "Eggs for consumption, total"), ("BUR", "dk-eggs-caged", "Eggs: caged layers"), ("FRIT", "dk-eggs-freerange", "Eggs: free-range"), ("SKRAB", "dk-eggs-litter", "Eggs: deep litter"), ("OKOAEG", "dk-eggs-organic", "Eggs: organic")]:
+    add(dk, id_, label, "million kg", "quarterly", lambda c=code: dst("ANI81", [("ENHED", [c])]), "production")
+# cultivos: superficie por cultivo (AFG6, hectáreas, total explotaciones)
+try:
+    crops = dst_values("AFG6", "AFGRØDE")
+    for rx, key, label in [(r"common wheat$|^1\.1 common wheat", "wheat", "Wheat"), (r"^1\.2 barley", "barley", "Barley"), (r"^1\.3 rye", "rye", "Rye"), (r"^1\.4 oats", "oats", "Oats"), (r"grain maize", "maize", "Grain maize"), (r"rape", "rape", "Rapeseed"), (r"potatoes", "potatoes", "Potatoes"), (r"sugar beet", "sugarbeet", "Sugar beet")]:
+        cid, ctext = first_match(crops, rx)
+        if not cid:
+            log.append("AFG6 sin cultivo para " + key); continue
+        add(dk, "dk-area-" + key, label + ": area (" + ctext[:40] + ")", "ha", "annual", lambda c=cid: dst("AFG6", [("AFGRØDE", [c]), ("ENHED", ["HA"]), ("AREAL1", ["AIALT"])]), "crops")
+except Exception as e:
+    log.append("ERROR DK AFG6: " + str(e)[:160])
+# previsión de cosecha de invierno (superficie cosechada)
+for cid, key, label in [("H110", "winter-wheat", "Winter wheat"), ("H150", "winter-barley", "Winter barley"), ("H210", "winter-rape", "Winter rapeseed")]:
+    add(dk, "dk-harvarea-" + key, label + ": harvested area", "ha", "annual", lambda c=cid: dst("HST5", [("AFGRØDE", [c]), ("ENHED", ["4A"])]), "crops")
+# precio de cebada y trigo en granja, total Dinamarca (anual)
+for cid, key, label in [("HVEDE", "wheat", "Wheat"), ("BYG", "barley", "Barley")]:
+    add(dk, "dk-farmgate-" + key, label + ": farm gate price (all Denmark, KAPIT1)", "DKK (source unit, see table KAPIT1)", "annual", lambda c=cid: dst("KAPIT1", [("KAPIT", ["000"]), ("KORNART", [c])]), "prices")
+# costes de explotación (JORD1, agricultura, media, DKK por explotación)
+try:
+    items = dst_values("JORD1", "REGNSKPOSTER")
+    for rx, key, label in [(r"^[\d.]+\s*fertili[sz]er", "fert", "Fertiliser"), (r"^[\d.]+\s*feed", "feed", "Feed"), (r"^[\d.]+\s*(seed|seeds)", "seed", "Seed"), (r"^[\d.]+\s*pesticide|plant protection", "pest", "Pesticides"), (r"^[\d.]+\s*(energy|fuel)", "energy", "Energy and fuel"), (r"hired labour|wages", "wages", "Hired labour"), (r"^[\d.]+\s*(total )?revenue|^[\d.]+\s*output, total|^[\d.]+\.?\s*total output", "revenue", "Output / revenue"), (r"net profit", "netprofit", "Net profit")]:
+        cid, ctext = first_match(items, rx)
+        if not cid:
+            log.append("JORD1 sin partida para " + key); continue
+        add(dk, "dk-farm-" + key, "Farm accounts: " + ctext[:60], "DKK per farm (average, all agricultural holdings)", "annual", lambda c=cid: dst("JORD1", [("BEDRIFTSTAND", ["1"]), ("KVARTIL", ["1000"]), ("REGNSKPOSTER", [c])]), "costs")
+except Exception as e:
+    log.append("ERROR DK JORD1: " + str(e)[:160])
+# precios de insumos (LPRIS38, anual)
+try:
+    inp = dst_values("LPRIS38", "PRODUKT")
+    n = 0
+    import re
+    for i, t in inp:
+        if re.search(r"fertili[sz]er|nitrogen|npk|lime|diesel|gas oil|feed|pesticide|herbicide|fungicide", t, re.I) and n < 14:
+            n += 1
+            add(dk, "dk-input-" + i, t, "DKK (see label)", "annual", lambda c=i: dst("LPRIS38", [("PRODUKT", [c]), ("ENHED", ["320"])]), "inputs")
+    log.append("LPRIS38 insumos elegidos: " + str(n))
+except Exception as e:
+    log.append("ERROR DK LPRIS38: " + str(e)[:160])
+
 countries["DK"] = {"name": "Denmark", "source": {"name": "Statistics Denmark (StatBank)", "url": "https://www.statbank.dk/", "license": "CC BY 4.0"}, "series": dk}
 
 # ---------------- Países Bajos ----------------
@@ -95,6 +163,36 @@ for code, key, label in [("A042170", "wheat", "Wheat"), ("A042160", "barley", "B
             if s: nl.append(s)
     except Exception as e:
         log.append("ERROR NL crop " + key + ": " + str(e)[:160])
+
+def cbs_titles(table, dim):
+    d = json.loads(http("https://opendata.cbs.nl/ODataApi/odata/%s/%s?$format=json" % (table, dim)))
+    return {x["Key"].strip(): x["Title"] for x in d["value"]}
+try:
+    animals = cbs_titles("84952ENG", "FarmAnimals")
+    rows = json.loads(http("https://opendata.cbs.nl/ODataApi/odata/84952ENG/TypedDataSet?$format=json&$top=5000"))["value"]
+    by = {}
+    for r in rows:
+        if r.get("Livestock_1") is not None:
+            by.setdefault(r["FarmAnimals"].strip(), []).append((r["Periods"], float(r["Livestock_1"])))
+    for k, pts in list(by.items())[:40]:
+        s = mk("nl-animals-" + k, "Livestock on holdings: " + animals.get(k, k), "x 1,000 head", "semiannual", pts, "livestock", "1 April and 1 December")
+        if s: nl.append(s)
+except Exception as e:
+    log.append("ERROR NL animals: " + str(e)[:160])
+try:
+    mt = cbs_titles("83981ENG", "ManureAndNutrients")
+    rows = json.loads(http("https://opendata.cbs.nl/ODataApi/odata/83981ENG/TypedDataSet?$format=json&$top=5000"))["value"]
+    for col, lab in [("TotalExcretion_1", "total excretion"), ("AmmoniaEmissionsN_5", "ammonia emissions (N)"), ("UseOfLivestockManureInAgriculture_14", "use in agriculture")]:
+        by = {}
+        for r in rows:
+            if r.get(col) is not None:
+                by.setdefault(r["ManureAndNutrients"].strip(), []).append((r["Periods"], float(r[col])))
+        for k, pts in list(by.items())[:3]:
+            s = mk("nl-manure-%s-%s" % (col.split("_")[0].lower(), k), "Livestock manure (" + mt.get(k, k) + "): " + lab, "million kg", "annual", pts, "environment")
+            if s: nl.append(s)
+except Exception as e:
+    log.append("ERROR NL manure: " + str(e)[:160])
+
 countries["NL"] = {"name": "Netherlands", "source": {"name": "Statistics Netherlands (CBS StatLine)", "url": "https://opendata.cbs.nl/", "license": "CC BY 4.0"}, "series": nl}
 
 # ---------------- Australia ----------------
@@ -130,6 +228,17 @@ for code, id_, label in [("041", "au-exp-wheat", "Exports: wheat"), ("043", "au-
         if s: au.append(s)
     except Exception as e:
         log.append("ERROR AU " + id_ + ": " + str(e)[:200])
+
+for code, id_, label in [("3117007", "au-xpi-cereals", "Export price index: cereals"), ("3117002", "au-xpi-meat", "Export price index: meat and offal"), ("3117004", "au-xpi-dairy", "Export price index: dairy products"), ("3117009", "au-xpi-oilseeds", "Export price index: oil seeds"), ("3117001", "au-xpi-live", "Export price index: live animals"), ("3117012", "au-xpi-sugar", "Export price index: sugars"), ("3117034", "au-xpi-wool", "Export price index: wool and animal hair")]:
+    try:
+        rows = abs_csv("ITPI_EXP/1.%s.Q?format=csvfilewithlabels" % code)
+        pts = [(r["TIME_PERIOD"], float(r["OBS_VALUE"])) for r in rows if r.get("OBS_VALUE") not in (None, "")]
+        base = next((r.get("BASE_PERIOD") for r in rows if r.get("BASE_PERIOD")), "")
+        s = mk(id_, label, "index (AUD, see base)", "quarterly", pts, "prices", "Base period code " + str(base) + " (see ABS ITPI_EXP)")
+        if s: au.append(s)
+    except Exception as e:
+        log.append("ERROR AU " + id_ + ": " + str(e)[:200])
+
 countries["AU"] = {"name": "Australia", "source": {"name": "Australian Bureau of Statistics (ABS Data API)", "url": "https://www.abs.gov.au/", "license": "CC BY 4.0"}, "series": au}
 
 total = sum(len(c["series"]) for c in countries.values())
