@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T12:25:33.011Z",
+  "generatedAt": "2026-09-30T12:31:02.878Z",
   "status": "informational",
   "rules": [
     {
@@ -197,6 +197,33 @@
     },
     {
       "type": "period_move",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "high",
+      "changePct": 11.72,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "cerdo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": 5.6,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "cordero",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": 8.04,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
       "product": "arroz",
       "region": "us",
       "sourceId": "usda_nass",
@@ -251,38 +278,11 @@
     },
     {
       "type": "period_move",
-      "product": "cerdo",
-      "region": "eu",
-      "sourceId": "eu_agrifood",
-      "severity": "watch",
-      "changePct": 5.6,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "cordero",
-      "region": "eu",
-      "sourceId": "eu_agrifood",
-      "severity": "watch",
-      "changePct": 8.04,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
       "product": "harina_soja",
       "region": "us",
       "sourceId": "usda_ams_mars",
       "severity": "high",
       "changePct": 10.71,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "huevos",
-      "region": "eu",
-      "sourceId": "eu_agrifood",
-      "severity": "high",
-      "changePct": 11.72,
       "observationDate": "2026-09-01"
     },
     {

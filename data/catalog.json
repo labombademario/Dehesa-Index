@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T12:25:32.354Z",
+  "generatedAt": "2026-09-30T12:31:02.413Z",
   "observationCount": 48,
   "products": [
     "arroz",
@@ -66,10 +66,10 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:54.622Z",
+      "verifiedAt": "2026-09-30T12:30:56.277Z",
       "comparability": "directional",
-      "points": 25,
-      "coverageStart": "2024-09-01",
+      "points": 226,
+      "coverageStart": "2006-10-01",
       "coverageEnd": "2026-09-01"
     },
     {
@@ -96,10 +96,10 @@
       "currency": "EUR",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:53.512Z",
+      "verifiedAt": "2026-09-30T12:30:53.819Z",
       "comparability": "directional",
-      "points": 104,
-      "coverageStart": "2017-11-01",
+      "points": 240,
+      "coverageStart": "2006-07-01",
       "coverageEnd": "2026-06-01"
     },
     {
@@ -111,10 +111,10 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:50.442Z",
+      "verifiedAt": "2026-09-30T12:30:47.299Z",
       "comparability": "directional",
-      "points": 25,
-      "coverageStart": "2024-09-01",
+      "points": 147,
+      "coverageStart": "2014-07-01",
       "coverageEnd": "2026-09-01"
     },
     {
@@ -141,10 +141,10 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:52.091Z",
+      "verifiedAt": "2026-09-30T12:30:51.419Z",
       "comparability": "directional",
-      "points": 25,
-      "coverageStart": "2024-09-01",
+      "points": 141,
+      "coverageStart": "2015-01-01",
       "coverageEnd": "2026-09-01"
     },
     {
@@ -156,7 +156,7 @@
       "currency": "EUR",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:56.942Z",
+      "verifiedAt": "2026-09-30T12:31:00.658Z",
       "comparability": "not_comparable",
       "points": 92,
       "coverageStart": "2019-01-01",
@@ -426,10 +426,10 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "verifiedAt": "2026-09-30T12:31:02.264Z",
       "comparability": "directional",
-      "points": 25,
-      "coverageStart": "2024-09-01",
+      "points": 68,
+      "coverageStart": "2021-02-01",
       "coverageEnd": "2026-09-01"
     },
     {
@@ -456,10 +456,10 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:53.094Z",
+      "verifiedAt": "2026-09-30T12:30:53.222Z",
       "comparability": "directional",
-      "points": 25,
-      "coverageStart": "2024-09-01",
+      "points": 201,
+      "coverageStart": "2006-10-01",
       "coverageEnd": "2026-09-01"
     },
     {
@@ -486,10 +486,10 @@
       "currency": "EUR",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:57.787Z",
+      "verifiedAt": "2026-09-30T12:31:01.627Z",
       "comparability": "directional",
-      "points": 104,
-      "coverageStart": "2018-01-01",
+      "points": 260,
+      "coverageStart": "2005-01-01",
       "coverageEnd": "2026-08-01"
     },
     {
@@ -531,10 +531,10 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:55.280Z",
+      "verifiedAt": "2026-09-30T12:30:57.611Z",
       "comparability": "directional",
-      "points": 26,
-      "coverageStart": "2024-07-01",
+      "points": 129,
+      "coverageStart": "2015-11-01",
       "coverageEnd": "2026-09-01"
     },
     {
@@ -561,10 +561,10 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:54.175Z",
+      "verifiedAt": "2026-09-30T12:30:55.594Z",
       "comparability": "directional",
-      "points": 25,
-      "coverageStart": "2024-09-01",
+      "points": 240,
+      "coverageStart": "2006-10-01",
       "coverageEnd": "2026-09-01"
     },
     {
@@ -576,10 +576,10 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:52.668Z",
+      "verifiedAt": "2026-09-30T12:30:52.207Z",
       "comparability": "directional",
-      "points": 25,
-      "coverageStart": "2024-09-01",
+      "points": 240,
+      "coverageStart": "2006-10-01",
       "coverageEnd": "2026-09-01"
     },
     {
@@ -606,7 +606,7 @@
       "currency": "EUR",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:57.353Z",
+      "verifiedAt": "2026-09-30T12:31:01.125Z",
       "comparability": "not_comparable",
       "points": 92,
       "coverageStart": "2019-01-01",
@@ -621,10 +621,10 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:56.226Z",
+      "verifiedAt": "2026-09-30T12:31:00.174Z",
       "comparability": "directional",
-      "points": 26,
-      "coverageStart": "2024-07-01",
+      "points": 107,
+      "coverageStart": "2015-11-01",
       "coverageEnd": "2026-09-01"
     },
     {
@@ -666,10 +666,10 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:52:51.677Z",
+      "verifiedAt": "2026-09-30T12:30:50.598Z",
       "comparability": "directional",
-      "points": 25,
-      "coverageStart": "2024-09-01",
+      "points": 240,
+      "coverageStart": "2006-10-01",
       "coverageEnd": "2026-09-01"
     },
     {
