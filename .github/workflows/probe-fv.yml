@@ -16,7 +16,8 @@ jobs:
         run: |
           mkdir -p .probe
           for id in 2277 2278 2386 2279; do
-            curl -s -u "$K:" "https://marsapi.ams.usda.gov/services/v1.2/reports/$id?q=report_begin_date=09/22/2026:09/25/2026&allSections=true" | head -c 3500 > .probe/$id.json
+            curl -s -u "$K:" "https://marsapi.ams.usda.gov/services/v1.2/reports/$id?q=report_begin_date=09/25/2026:09/25/2026&allSections=true" -o /tmp/r$id.json
+            node -e "const j=require('/tmp/r$id.json');const d=j.find(x=>x.reportSection==='Report Details');console.log(JSON.stringify(d.results.slice(0,3),null,0))" > .probe/$id.json
           done
       - name: Commit
         run: |
