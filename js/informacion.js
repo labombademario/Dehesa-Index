@@ -31,7 +31,9 @@
         { text: 'Defra (Reino Unido: leche e índices de precios agrarios, Open Government Licence v3.0)', url: URLS.defra },
         { text: 'Eurostat (índices de precios agrarios de la UE)', url: URLS.eurostat },
         { text: 'EIA (diésel en EE. UU.) y Banco Mundial (urea)', url: URLS.eia },
-        { text: 'Banco Central Europeo (tipos de cambio de referencia)', url: URLS.ecb }
+        { text: 'Banco Central Europeo (tipos de cambio de referencia)', url: URLS.ecb },
+        { text: 'USDA FAS — PSD Online (CC BY 4.0)', url: 'https://apps.fas.usda.gov/psdonline/' },
+        { text: 'NASA POWER', url: 'https://power.larc.nasa.gov/' }
       ],
       disclaimer: 'Dehesa Index solo muestra un valor cuando se ha podido verificar en su fuente oficial, con su fecha. Lo que aún no tiene fuente verificada aparece como «pendiente» y sin cifra. Es información, no asesoramiento de inversión.',
       apiNotice: 'Los precios de EE. UU. proceden de USDA NASS Quick Stats y se consultan cada semana (NASS publica una vez al mes). This product uses the NASS API but is not endorsed or certified by NASS. Los tipos de cambio se actualizan cada día laborable con las cotizaciones de referencia del Banco Central Europeo, que las publica solo con fines informativos.'
@@ -52,7 +54,9 @@
         { text: 'Defra (UK: milk and agricultural price indices, Open Government Licence v3.0)', url: URLS.defra },
         { text: 'Eurostat (EU agricultural price indices)', url: URLS.eurostat },
         { text: 'EIA (U.S. diesel) and World Bank (urea)', url: URLS.eia },
-        { text: 'European Central Bank (reference exchange rates)', url: URLS.ecb }
+        { text: 'European Central Bank (reference exchange rates)', url: URLS.ecb },
+        { text: 'USDA FAS — PSD Online (CC BY 4.0)', url: 'https://apps.fas.usda.gov/psdonline/' },
+        { text: 'NASA POWER', url: 'https://power.larc.nasa.gov/' }
       ],
       disclaimer: 'Dehesa Index only shows a value once it has been verified at its official source, with its date. Anything without a verified source appears as “pending” with no figure. This is information, not investment advice.',
       apiNotice: 'U.S. prices come from USDA NASS Quick Stats and are checked every week (NASS publishes once a month). This product uses the NASS API but is not endorsed or certified by NASS. Exchange rates are updated every business day from the European Central Bank reference rates, which the ECB publishes for information purposes only.'
@@ -73,7 +77,9 @@
         { text: 'Defra (Royaume-Uni : lait et indices des prix agricoles, Open Government Licence v3.0)', url: URLS.defra },
         { text: 'Eurostat (indices des prix agricoles de l\'UE)', url: URLS.eurostat },
         { text: 'EIA (diesel aux États-Unis) et Banque mondiale (urée)', url: URLS.eia },
-        { text: 'Banque centrale européenne (taux de change de référence)', url: URLS.ecb }
+        { text: 'Banque centrale européenne (taux de change de référence)', url: URLS.ecb },
+        { text: 'USDA FAS — PSD Online (CC BY 4.0)', url: 'https://apps.fas.usda.gov/psdonline/' },
+        { text: 'NASA POWER', url: 'https://power.larc.nasa.gov/' }
       ],
       disclaimer: 'Dehesa Index n\'affiche une valeur que lorsqu\'elle a pu être vérifiée à sa source officielle, avec sa date. Ce qui n\'a pas encore de source vérifiée apparaît « en attente », sans chiffre. Information, non conseil en investissement.',
       apiNotice: 'Les prix américains proviennent d\'USDA NASS Quick Stats et sont consultés chaque semaine (NASS publie une fois par mois). This product uses the NASS API but is not endorsed or certified by NASS. Les taux de change sont mis à jour chaque jour ouvré à partir des taux de référence de la Banque centrale européenne, publiés à titre informatif uniquement.'
@@ -94,7 +100,9 @@
         { text: 'Defra (Regno Unito: latte e indici dei prezzi agricoli, Open Government Licence v3.0)', url: URLS.defra },
         { text: 'Eurostat (indici dei prezzi agricoli dell\'UE)', url: URLS.eurostat },
         { text: 'EIA (gasolio negli USA) e Banca mondiale (urea)', url: URLS.eia },
-        { text: 'Banca centrale europea (tassi di cambio di riferimento)', url: URLS.ecb }
+        { text: 'Banca centrale europea (tassi di cambio di riferimento)', url: URLS.ecb },
+        { text: 'USDA FAS — PSD Online (CC BY 4.0)', url: 'https://apps.fas.usda.gov/psdonline/' },
+        { text: 'NASA POWER', url: 'https://power.larc.nasa.gov/' }
       ],
       disclaimer: 'Dehesa Index mostra un valore solo quando è stato verificato alla fonte ufficiale, con la sua data. Ciò che non ha ancora una fonte verificata appare «in attesa», senza cifra. Informazione, non consulenza di investimento.',
       apiNotice: 'I prezzi USA provengono da USDA NASS Quick Stats e vengono controllati ogni settimana (NASS pubblica una volta al mese). This product uses the NASS API but is not endorsed or certified by NASS. I tassi di cambio sono aggiornati ogni giorno lavorativo dai tassi di riferimento della Banca centrale europea, pubblicati solo a scopo informativo.'

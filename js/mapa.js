@@ -12,7 +12,7 @@
   var TEMP_CLASSES = [[-Infinity, -1.5, '#1f6d6b'], [-1.5, -0.5, '#7fb5b3'], [-0.5, 0.5, '#cfcac0'], [0.5, 1.5, '#e0946f'], [1.5, Infinity, '#b4341f']];
   var T = {
     es: { title: 'Mapa agrícola', noVerified: 'sin dato verificado', sub: 'Dónde están los datos: precios verificados por país y cómo va el clima en las regiones productoras.',
-      views: { all: 'Atlántico', us: 'EE. UU.', eu: 'Europa' }, layers: { price: 'Precios', precip: 'Lluvia', temp: 'Temperatura' }, product: 'Producto', scopeEs: 'España (referencia UE)', scopeEu: 'Media UE', scopeUs: 'EE. UU.', scopeUk: 'Reino Unido',
+      views: { world: 'Mundo', all: 'Atlántico', us: 'EE. UU.', eu: 'Europa' }, layers: { price: 'Precios', precip: 'Lluvia', temp: 'Temperatura', prod: 'Producción', exp: 'Exportaciones', imp: 'Importaciones', stock: 'Existencias' }, sdNote: 'Datos de USDA (PSD), miles de toneladas. Cada país se pinta según su cifra de la campaña elegida; el color va por tramos de igual número de países. La UE aparece como un solo agregado y se pinta en sus 27 países. Un país sin color no tiene dato en PSD. La última campaña es una previsión.', sdMy: 'Campaña', sdForecast: 'previsión', sdMore: 'Balance completo y series', sdCountry: 'País', sdValue: 'Cifra', sdNoData: 'sin dato PSD', sdLess: 'menos', sdMore2: 'más', sdEu: 'Unión Europea (agregado)', product: 'Producto', scopeEs: 'España (referencia UE)', scopeEu: 'Media UE', scopeUs: 'EE. UU.', scopeUk: 'Reino Unido',
       change: 'Variación', date: 'Fecha', price: 'Precio', area: 'Ámbito', real: 'REAL', nc: 'NO COMPARABLE', up: 'sube', down: 'baja', flat: 'sin cambio',
       priceNote: 'Cada precio va en su moneda y unidad de origen: el mapa no convierte monedas. El color indica solo si el precio subió o bajó frente al periodo anterior (semanal o mensual según la fuente). Un país sin color no tiene dato verificado para este producto.',
       noData: 'Este producto no tiene datos verificados.', region: 'Región', vsNormal: 'vs. media 2001-2020', legendTitle: 'Leyenda',
@@ -21,7 +21,7 @@
       names: { arroz: 'Arroz', azucar: 'Azúcar', cerdo: 'Cerdo', cordero: 'Cordero', dap: 'Fertilizante fosfatado', diesel: 'Diésel', harina_soja: 'Harina de soja', huevos: 'Huevos', leche: 'Leche', maiz: 'Maíz', oliva: 'Aceite de oliva', pollo: 'Pollo', potasa: 'Fertilizante potásico', trigo: 'Trigo', vaca: 'Vacuno' },
       units: { tonelada: 'tonelada', '100kg': '100 kg', cwt: 'cwt', bushel: 'bushel', docena: 'docena', litro: 'litro', gal: 'galón', kg: 'kg', lb: 'lb' } },
     en: { title: 'Agricultural map', noVerified: 'no verified data', sub: 'Where the data is: verified prices by country and how the climate looks in producing regions.',
-      views: { all: 'Atlantic', us: 'U.S.', eu: 'Europe' }, layers: { price: 'Prices', precip: 'Rainfall', temp: 'Temperature' }, product: 'Product', scopeEs: 'Spain (EU reference)', scopeEu: 'EU average', scopeUs: 'United States', scopeUk: 'United Kingdom',
+      views: { world: 'World', all: 'Atlantic', us: 'U.S.', eu: 'Europe' }, layers: { price: 'Prices', precip: 'Rainfall', temp: 'Temperature', prod: 'Production', exp: 'Exports', imp: 'Imports', stock: 'Stocks' }, sdNote: 'USDA data (PSD), thousand tonnes. Each country is coloured by its figure for the chosen marketing year; colour bands hold an equal number of countries. The EU is a single aggregate painted on its 27 members. A country without colour has no PSD data. The latest year is a forecast.', sdMy: 'Marketing year', sdForecast: 'forecast', sdMore: 'Full balance and series', sdCountry: 'Country', sdValue: 'Figure', sdNoData: 'no PSD data', sdLess: 'less', sdMore2: 'more', sdEu: 'European Union (aggregate)', product: 'Product', scopeEs: 'Spain (EU reference)', scopeEu: 'EU average', scopeUs: 'United States', scopeUk: 'United Kingdom',
       change: 'Change', date: 'Date', price: 'Price', area: 'Scope', real: 'REAL', nc: 'NOT COMPARABLE', up: 'up', down: 'down', flat: 'unchanged',
       priceNote: 'Each price is in its original currency and unit: the map does not convert currencies. Colour only shows whether the price rose or fell versus the previous period (weekly or monthly depending on the source). A country without colour has no verified data for this product.',
       noData: 'This product has no verified data.', region: 'Region', vsNormal: 'vs. 2001-2020 average', legendTitle: 'Legend',
@@ -30,7 +30,7 @@
       names: { arroz: 'Rice', azucar: 'Sugar', cerdo: 'Pork', cordero: 'Lamb', dap: 'Phosphate fertiliser', diesel: 'Diesel', harina_soja: 'Soya meal', huevos: 'Eggs', leche: 'Milk', maiz: 'Corn', oliva: 'Olive oil', pollo: 'Chicken', potasa: 'Potash fertiliser', trigo: 'Wheat', vaca: 'Beef' },
       units: { tonelada: 'tonne', '100kg': '100 kg', cwt: 'cwt', bushel: 'bushel', docena: 'dozen', litro: 'litre', gal: 'gallon', kg: 'kg', lb: 'lb' } },
     fr: { title: 'Carte agricole', noVerified: 'pas de donnée vérifiée', sub: 'Où se trouvent les données : prix vérifiés par pays et état du climat dans les régions productrices.',
-      views: { all: 'Atlantique', us: 'États-Unis', eu: 'Europe' }, layers: { price: 'Prix', precip: 'Pluie', temp: 'Température' }, product: 'Produit', scopeEs: 'Espagne (référence UE)', scopeEu: 'Moyenne UE', scopeUs: 'États-Unis', scopeUk: 'Royaume-Uni',
+      views: { world: 'Monde', all: 'Atlantique', us: 'États-Unis', eu: 'Europe' }, layers: { price: 'Prix', precip: 'Pluie', temp: 'Température', prod: 'Production', exp: 'Exportations', imp: 'Importations', stock: 'Stocks' }, sdNote: 'Données USDA (PSD), milliers de tonnes. Chaque pays est coloré selon son chiffre de la campagne choisie ; les tranches de couleur contiennent autant de pays. L’UE est un agrégat unique peint sur ses 27 pays. Un pays sans couleur n’a pas de donnée PSD. La dernière campagne est une prévision.', sdMy: 'Campagne', sdForecast: 'prévision', sdMore: 'Bilan complet et séries', sdCountry: 'Pays', sdValue: 'Chiffre', sdNoData: 'pas de donnée PSD', sdLess: 'moins', sdMore2: 'plus', sdEu: 'Union européenne (agrégat)', product: 'Produit', scopeEs: 'Espagne (référence UE)', scopeEu: 'Moyenne UE', scopeUs: 'États-Unis', scopeUk: 'Royaume-Uni',
       change: 'Variation', date: 'Date', price: 'Prix', area: 'Périmètre', real: 'RÉEL', nc: 'NON COMPARABLE', up: 'hausse', down: 'baisse', flat: 'stable',
       priceNote: 'Chaque prix est dans sa devise et son unité d’origine : la carte ne convertit pas les devises. La couleur indique seulement si le prix a monté ou baissé par rapport à la période précédente (hebdomadaire ou mensuelle selon la source). Un pays sans couleur n’a pas de donnée vérifiée pour ce produit.',
       noData: 'Ce produit n’a pas de données vérifiées.', region: 'Région', vsNormal: 'vs. moyenne 2001-2020', legendTitle: 'Légende',
@@ -39,7 +39,7 @@
       names: { arroz: 'Riz', azucar: 'Sucre', cerdo: 'Porc', cordero: 'Agneau', dap: 'Engrais phosphaté', diesel: 'Diesel', harina_soja: 'Tourteau de soja', huevos: 'Œufs', leche: 'Lait', maiz: 'Maïs', oliva: 'Huile d’olive', pollo: 'Poulet', potasa: 'Engrais potassique', trigo: 'Blé', vaca: 'Bœuf' },
       units: { tonelada: 'tonne', '100kg': '100 kg', cwt: 'cwt', bushel: 'boisseau', docena: 'douzaine', litro: 'litre', gal: 'gallon', kg: 'kg', lb: 'lb' } },
     it: { title: 'Mappa agricola', noVerified: 'nessun dato verificato', sub: 'Dove sono i dati: prezzi verificati per paese e stato del clima nelle regioni produttrici.',
-      views: { all: 'Atlantico', us: 'USA', eu: 'Europa' }, layers: { price: 'Prezzi', precip: 'Pioggia', temp: 'Temperatura' }, product: 'Prodotto', scopeEs: 'Spagna (riferimento UE)', scopeEu: 'Media UE', scopeUs: 'Stati Uniti', scopeUk: 'Regno Unito',
+      views: { world: 'Mondo', all: 'Atlantico', us: 'USA', eu: 'Europa' }, layers: { price: 'Prezzi', precip: 'Pioggia', temp: 'Temperatura', prod: 'Produzione', exp: 'Esportazioni', imp: 'Importazioni', stock: 'Scorte' }, sdNote: 'Dati USDA (PSD), migliaia di tonnellate. Ogni paese è colorato in base al suo valore della campagna scelta; le fasce di colore contengono lo stesso numero di paesi. La UE è un unico aggregato dipinto sui suoi 27 paesi. Un paese senza colore non ha dati PSD. L’ultima campagna è una previsione.', sdMy: 'Campagna', sdForecast: 'previsione', sdMore: 'Bilancio completo e serie', sdCountry: 'Paese', sdValue: 'Valore', sdNoData: 'nessun dato PSD', sdLess: 'meno', sdMore2: 'più', sdEu: 'Unione europea (aggregato)', product: 'Prodotto', scopeEs: 'Spagna (riferimento UE)', scopeEu: 'Media UE', scopeUs: 'Stati Uniti', scopeUk: 'Regno Unito',
       change: 'Variazione', date: 'Data', price: 'Prezzo', area: 'Ambito', real: 'REALE', nc: 'NON COMPARABILE', up: 'in aumento', down: 'in calo', flat: 'invariato',
       priceNote: 'Ogni prezzo è nella sua valuta e unità di origine: la mappa non converte le valute. Il colore indica solo se il prezzo è salito o sceso rispetto al periodo precedente (settimanale o mensile secondo la fonte). Un paese senza colore non ha dati verificati per questo prodotto.',
       noData: 'Questo prodotto non ha dati verificati.', region: 'Regione', vsNormal: 'vs. media 2001-2020', legendTitle: 'Legenda',
@@ -48,9 +48,11 @@
       names: { arroz: 'Riso', azucar: 'Zucchero', cerdo: 'Maiale', cordero: 'Agnello', dap: 'Fertilizzante fosfatico', diesel: 'Gasolio', harina_soja: 'Farina di soia', huevos: 'Uova', leche: 'Latte', maiz: 'Mais', oliva: 'Olio d’oliva', pollo: 'Pollo', potasa: 'Fertilizzante potassico', trigo: 'Grano', vaca: 'Bovino' },
       units: { tonelada: 'tonnellata', '100kg': '100 kg', cwt: 'cwt', bushel: 'bushel', docena: 'dozzina', litro: 'litro', gal: 'gallone', kg: 'kg', lb: 'lb' } }
   };
-  var LATEST = null, CLIMATE = null, MAP = null;
-  var SEL = { layer: 'price', product: 'trigo', view: 'all' };
-  var VIEWS = { all: { regions: ['US', 'GB', 'ES', 'FR', 'DE', 'IT', 'PL'] }, us: { coords: [39, -97], scale: 2.6 }, eu: { coords: [48, 9], scale: 4.2 } };
+  var LATEST = null, CLIMATE = null, SD = null, MAP = null;
+  var SD_ATTR = { prod: 'production', exp: 'exports', imp: 'imports', stock: 'endingStocks' };
+  var SEQ = ['#e3edf3', '#b4cfe0', '#7fabc9', '#3f7fa8', '#1d5178'];
+  var SEL = { layer: 'price', product: 'trigo', view: 'all', sd: 'trigo', my: null };
+  var VIEWS = { world: {}, all: { regions: ['US', 'GB', 'ES', 'FR', 'DE', 'IT', 'PL'] }, us: { coords: [39, -97], scale: 2.6 }, eu: { coords: [48, 9], scale: 4.2 } };
   var SYM = { EUR: '€', USD: '$', GBP: '£' };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tr() { return T[lang()] || T.es; }
@@ -97,7 +99,7 @@
         onMarkerTooltipShow: function (e, tip, idx) { if (markers && markers[idx]) tip.text(markers[idx].html, true); },
         onRegionTooltipShow: function (e, tip, code) { var h = codesColors && codesColors[code] && codesColors[code].html; if (h) tip.text(h, true); }
       });
-      try { var vw = VIEWS[SEL.view] || VIEWS.all; MAP.setFocus(vw.regions ? { regions: vw.regions, animate: false } : { coords: vw.coords, scale: vw.scale, animate: false }); } catch (e) {}
+      try { var vw = VIEWS[SEL.view] || VIEWS.all; if (vw.regions || vw.coords) MAP.setFocus(vw.regions ? { regions: vw.regions, animate: false } : { coords: vw.coords, scale: vw.scale, animate: false }); } catch (e) {}
       Object.keys(codesColors || {}).forEach(function (code) {
         var r = MAP.regions && MAP.regions[code]; if (r) { try { r.element.setStyle('fill', codesColors[code].color); } catch (e) {} }
       });
@@ -148,13 +150,49 @@
     paintMap(null, markers);
   }
 
+
+  function sdCom() { for (var i = 0; i < SD.commodities.length; i++) if (SD.commodities[i].id === SEL.sd) return SD.commodities[i]; return SD.commodities[0]; }
+  function renderSD(t, kind) {
+    if (!SD) { SEL.layer = 'price'; return renderPrice(t); }
+    var P = window.DehesaPSD, attr = SD_ATTR[kind], c = sdCom(); SEL.sd = c.id;
+    var mys = []; Object.keys(c.countries).forEach(function (k) { Object.keys(c.countries[k].years).forEach(function (y) { if (mys.indexOf(+y) < 0) mys.push(+y); }); });
+    mys.sort(function (a, b) { return b - a; });
+    if (mys.indexOf(SEL.my) < 0) SEL.my = c.latestMarketYear;
+    var rows = [];
+    Object.keys(c.countries).forEach(function (iso) { var y = c.countries[iso].years[SEL.my], v = y && y[attr]; if (typeof v === 'number' && v > 0) rows.push({ iso: iso, name: iso === 'EU' ? t.sdEu : P.countryName(iso, c.countries[iso].name), v: v }); });
+    rows.sort(function (a, b) { return b.v - a.v; });
+    var sorted = rows.map(function (r) { return r.v; }).sort(function (a, b) { return a - b; }), n = sorted.length, cuts = [];
+    for (var q = 1; q < 5; q++) cuts.push(n ? sorted[Math.min(n - 1, Math.floor(n * q / 5))] : 0);
+    function cls(v) { var k = 0; while (k < 4 && v >= cuts[k]) k++; return k; }
+    var unitTxt = c.unit.indexOf('CWE') >= 0 ? 'kt CWE' : 'kt';
+    var colors = {};
+    rows.forEach(function (r) {
+      var html = '<strong>' + esc(r.name) + '</strong><br>' + esc(t.layers[kind]) + ': ' + P.nf(r.v, 0) + ' ' + unitTxt + '<br>' + esc(P.myLabel(c.id, SEL.my));
+      var codes = r.iso === 'EU' ? EU27 : [r.iso]; codes.forEach(function (code) { colors[code] = { color: SEQ[cls(r.v)], html: html }; });
+    });
+    var nm = P.names();
+    var opts = SD.commodities.map(function (d) { return '<option value="' + d.id + '"' + (d.id === c.id ? ' selected' : '') + '>' + esc(nm[d.id] || d.id) + '</option>'; }).join('');
+    var yopts = mys.map(function (y) { return '<option value="' + y + '"' + (y === SEL.my ? ' selected' : '') + '>' + P.myLabel(c.id, y) + (y === c.latestMarketYear ? ' (' + t.sdForecast + ')' : '') + '</option>'; }).join('');
+    document.getElementById('mapa-controls').innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + t.product + '<br><select id="mapa-sel-sd" class="di-compare-select">' + opts + '</select></label><label style="font-size:13px">' + t.sdMy + '<br><select id="mapa-sel-my" class="di-compare-select">' + yopts + '</select></label></div>';
+    document.getElementById('mapa-sel-sd').onchange = function (e) { SEL.sd = e.target.value; SEL.my = null; render(); };
+    document.getElementById('mapa-sel-my').onchange = function (e) { SEL.my = parseInt(e.target.value, 10); render(); };
+    function short(v) { return v >= 1000 ? P.nf(v / 1000, v >= 10000 ? 0 : 1) + ' Mt' : P.nf(v, 0) + ' kt'; }
+    var lg = n ? [[SEQ[0], '< ' + short(cuts[0]) + ' (' + t.sdLess + ')']].concat([1, 2, 3].map(function (k) { return [SEQ[k], short(cuts[k - 1]) + ' – ' + short(cuts[k])]; })).concat([[SEQ[4], '≥ ' + short(cuts[3]) + ' (' + t.sdMore2 + ')'], ['#e6e2d6', t.sdNoData]]) : [['#e6e2d6', t.sdNoData]];
+    document.getElementById('mapa-legend').innerHTML = legend(lg);
+    var top = rows.slice(0, 12), mx = top.length ? top[0].v : 1;
+    document.getElementById('mapa-table').innerHTML = top.length ? '<div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:420px;font-size:14px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:10px 6px">' + t.sdCountry.toUpperCase() + '</th><th></th><th style="padding:10px 6px;text-align:right">' + esc(t.layers[kind].toUpperCase()) + ' (' + unitTxt + ')</th></tr>' +
+      top.map(function (r) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:9px 6px;font-weight:600;white-space:nowrap">' + esc(r.name) + '</td><td style="padding:9px 6px;width:40%"><div style="height:8px;border-radius:2px 4px 4px 2px;background:' + SEQ[3] + ';width:' + (r.v / mx * 100).toFixed(1) + '%"></div></td><td style="padding:9px 6px;text-align:right">' + P.nf(r.v, 0) + '</td></tr>'; }).join('') + '</table></div><p class="di-movers-hint" style="margin-top:8px"><a href="oferta-demanda.html">' + t.sdMore + ' →</a></p>' : '<p class="di-movers-hint">' + t.noData + '</p>';
+    document.getElementById('mapa-note').textContent = t.sdNote;
+    paintMap(colors, null);
+  }
+
   function shell() {
     var t = tr();
     var btn = function (k) { return '<button type="button" class="di-link-btn" data-layer="' + k + '" aria-pressed="' + (SEL.layer === k) + '" style="' + (SEL.layer === k ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:14px">' + t.layers[k] + '</button>'; };
-    document.getElementById('mapa-body').innerHTML = '<div style="margin-bottom:12px">' + btn('price') + btn('precip') + btn('temp') + '</div><div id="mapa-controls" style="margin-bottom:10px"></div><div id="mapa-legend"></div>' +
-      '<div style="margin:0 0 6px;font-size:13px">' + ['all', 'us', 'eu'].map(function (v) { return '<button type="button" class="di-link-btn" data-view="' + v + '" aria-pressed="' + (SEL.view === v) + '" style="' + (SEL.view === v ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:12px">' + t.views[v] + '</button>'; }).join('') + '</div><div class="di-card" style="padding:8px"><div id="mapa-canvas" style="height:420px;width:100%"></div><p id="mapa-fallback" class="di-movers-hint" style="display:none;padding:12px"></p></div><p id="mapa-note" class="di-info-api-notice" style="margin:10px 0 18px"></p><div id="mapa-table"></div>';
+    document.getElementById('mapa-body').innerHTML = '<div style="margin-bottom:12px">' + btn('price') + btn('precip') + btn('temp') + (SD ? btn('prod') + btn('exp') + btn('imp') + btn('stock') : '') + '</div><div id="mapa-controls" style="margin-bottom:10px"></div><div id="mapa-legend"></div>' +
+      '<div style="margin:0 0 6px;font-size:13px">' + (SD_ATTR[SEL.layer] ? ['world', 'us', 'eu'] : ['all', 'us', 'eu']).map(function (v) { return '<button type="button" class="di-link-btn" data-view="' + v + '" aria-pressed="' + (SEL.view === v) + '" style="' + (SEL.view === v ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:12px">' + t.views[v] + '</button>'; }).join('') + '</div><div class="di-card" style="padding:8px"><div id="mapa-canvas" style="height:420px;width:100%"></div><p id="mapa-fallback" class="di-movers-hint" style="display:none;padding:12px"></p></div><p id="mapa-note" class="di-info-api-notice" style="margin:10px 0 18px"></p><div id="mapa-table"></div>';
     Array.prototype.forEach.call(document.querySelectorAll('#mapa-body [data-view]'), function (b) { b.onclick = function () { SEL.view = b.getAttribute('data-view'); shell(); render(); }; });
-    Array.prototype.forEach.call(document.querySelectorAll('#mapa-body [data-layer]'), function (b) { b.onclick = function () { SEL.layer = b.getAttribute('data-layer'); shell(); render(); }; });
+    Array.prototype.forEach.call(document.querySelectorAll('#mapa-body [data-layer]'), function (b) { b.onclick = function () { SEL.layer = b.getAttribute('data-layer'); if (SD_ATTR[SEL.layer] && SEL.view === 'all') SEL.view = 'world'; else if (!SD_ATTR[SEL.layer] && SEL.view === 'world') SEL.view = 'all'; shell(); render(); }; });
   }
   function render() {
     var t = tr();
@@ -162,15 +200,17 @@
     document.getElementById('pg-h1').textContent = t.title;
     document.getElementById('pg-sub').textContent = t.sub;
     if (!document.getElementById('mapa-canvas')) shell();
-    if (SEL.layer === 'price') renderPrice(t); else renderClimate(t, SEL.layer);
+    if (SEL.layer === 'price') renderPrice(t); else if (SD_ATTR[SEL.layer]) renderSD(t, SEL.layer); else renderClimate(t, SEL.layer);
   }
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); render(); };
   Promise.all([
     fetch('data/latest.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
-    fetch('data/climate.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+    fetch('data/climate.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    window.DehesaPSD ? window.DehesaPSD.load('data/supply-demand-map.json') : null
   ]).then(function (a) {
+    SD = a[2] || null;
     LATEST = (a[0] && a[0].observations) || []; CLIMATE = a[1] && a[1].locations && a[1].locations.length ? a[1] : null;
     if (!LATEST.length && !CLIMATE) return;
     shell(); render();

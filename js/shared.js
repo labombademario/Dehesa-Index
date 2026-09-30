@@ -123,7 +123,9 @@
     { text: 'Eurostat', url: FOOTER_URLS.eurostat },
     { text: 'EIA', url: FOOTER_URLS.eia },
     { text: 'World Bank', url: FOOTER_URLS.wb },
-    { text: 'ECB', url: FOOTER_URLS.ecb }
+    { text: 'ECB', url: FOOTER_URLS.ecb },
+    { text: 'USDA PSD', url: 'https://apps.fas.usda.gov/psdonline/' },
+    { text: 'NASA POWER', url: 'https://power.larc.nasa.gov/' }
   ];
   var FOOTER_EC_LABEL = {
     es: 'Comisión Europea — Agri-food Data Portal',
