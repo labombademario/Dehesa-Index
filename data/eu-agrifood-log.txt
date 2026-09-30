@@ -1,4 +1,4 @@
-2026-09-30T14:34:45.210Z
+2026-09-30T14:38:19.833Z
 OK cerdo
 OK vaca
 OK cordero
@@ -11,7 +11,7 @@ OK maiz
 OK trigo
 OK cebada
 OK avena
-FALLO colza: Serie insuficiente para colza: 0 puntos
+OK colza
 OK centeno
 OK mantequilla
 OK leche_polvo

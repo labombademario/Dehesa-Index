@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T14:35:15.119Z",
+  "generatedAt": "2026-09-30T14:38:49.053Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -744,6 +744,25 @@
       "volatility": 0.06917461366449307,
       "points": 68,
       "coverageStart": "2021-02-01",
+      "coverageEnd": "2026-09-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_colza_eu",
+      "product": "colza",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "frequency": "weekly",
+      "unit": "tonelada",
+      "currency": "EUR",
+      "latest": 437.35,
+      "observationDate": "2026-09-01",
+      "periodChangePct": -1.3043576377135269,
+      "yoyPct": null,
+      "volatility": 0.04734263810598768,
+      "points": 66,
+      "coverageStart": "2021-04-01",
       "coverageEnd": "2026-09-01",
       "status": "verified",
       "comparability": "directional"
