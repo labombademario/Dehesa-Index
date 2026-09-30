@@ -1,0 +1,86 @@
+keys: analytics_identifier,base_path,content_id,description,details,document_type,first_published_at,links,locale,phase,public_updated_at,publishing_app,publishing_request_id,publishing_scheduled_at,rendering_app,scheduled_publishing_delay_seconds,schema_name,title,updated_at,withdrawn_notice
+ods links: ['https://assets.publishing.service.gov.uk/media/6ab2674f8cb3c0580e500fa3/milkprice_dataset_20260924.ods']
+first_published_at: 2013-06-27T00:00:00+01:00
+public_updated_at: 2026-09-24T09:30:15+01:00
+bytes 62393
+== sheet Cover_sheet (18, 1)
+                                          0
+0   United Kingdom Milk Prices and Compo...
+1   This dataset contains UK monthly and...
+2                         Publication dates
+3   The data tables in this spreadsheet ...
+4   The next update to this publication ...
+5                           Contact Details
+6          Email: julie.rumsey@defra.gov.uk
+7     Telephone Number: ++44 (0)2080 266306
+8                                   Sources
+9   Eurostat (1970 to 1994), from Milk M...
+10                           Classification
+11                            Public Domain
+12                               Shorthand 
+13                   [x] - Data unavailable
+...tail
+                                          0
+14                             Useful links
+15  Link to UK government milk utilisati...
+16  Link to Scottish government economic...
+17    Link to DAERA milk statistics webpage
+== sheet Prices_Monthly (690, 6)
+                                          0                              1                       2                                       3             4           5
+0   United Kingdom Milk Prices - Monthly...                            NaN                     NaN                                     NaN           NaN         NaN
+1                                     Month  Price(pence per litre)[1,2,4]  Volume(million litres)  Weekly average volume (million litres)  Butterfat(%)  Protein(%)
+2                       1970-01-01 00:00:00                           4.08                     NaN                                     NaN           NaN         NaN
+3                       1970-02-01 00:00:00                           4.09                     NaN                                     NaN           NaN         NaN
+4                       1970-03-01 00:00:00                           4.07                     NaN                                     NaN           NaN         NaN
+5                       1970-04-01 00:00:00                           3.73                     NaN                                     NaN           NaN         NaN
+6                       1970-05-01 00:00:00                            2.9                     NaN                                     NaN           NaN         NaN
+7                       1970-06-01 00:00:00                           2.86                     NaN                                     NaN           NaN         NaN
+8                       1970-07-01 00:00:00                           3.31                     NaN                                     NaN           NaN         NaN
+9                       1970-08-01 00:00:00                           3.71                     NaN                                     NaN           N
+...tail
+                                           0    1    2    3    4    5
+686  2. The farm gate price is the averag...  NaN  NaN  NaN  NaN  NaN
+687  3. November and December 1994 prices...  NaN  NaN  NaN  NaN  NaN
+688  4. Prices exclude any retrospective ...  NaN  NaN  NaN  NaN  NaN
+689                  © Crown copyright, 2026  NaN  NaN  NaN  NaN  NaN
+== sheet Prices_Annual (72, 6)
+                                          0                       1                                        2                        3             4           5
+0   United Kingdom Milk Prices - Calenda...                     NaN                                      NaN                      NaN           NaN         NaN
+1                                      Year  Price(pence per litre)  Price including bonus payments(pence...  Volume (million litres)  Butterfat(%)  Protein(%)
+2                                      1960                     [x]                                      [x]                      [x]          3.74         [x]
+3                                      1961                     [x]                                      [x]                      [x]          3.77         [x]
+4                                      1962                     [x]                                      [x]                      [x]          3.79         [x]
+5                                      1963                     [x]                                      [x]                      [x]          3.79         [x]
+6                                      1964                     [x]                                      [x]                      [x]          3.75         [x]
+7                                      1965                     [x]                                      [x]                      [x]          3.75         [x]
+8                                      1966                     [x]                                      [x]                      [x]          3.75         [x]
+9                                      1967                     [x]                                      [x]                      [x]          3.75         [x]
+10                                     1
+...tail
+                                          0    1    2    3    4    5
+68                                      NaN  NaN  NaN  NaN  NaN  NaN
+69                  © Crown copyright, 2026  NaN  NaN  NaN  NaN  NaN
+70  1. The farm gate price is the averag...  NaN  NaN  NaN  NaN  NaN
+71  2. Prices exclude any retrospective ...  NaN  NaN  NaN  NaN  NaN
+== sheet Information (19, 1)
+                                          0
+0   Data users, methodology and revision...
+1                                Data users
+2   1. The milk price statistics accompa...
+3   2. The information in this notice is...
+4   3. Contact details are available on ...
+5                               Methodology
+6   1. Farm gate milk prices: Defra runs...
+7   2. Similar surveys are run by the Ru...
+8   3. Quarterly surveys of dairies that...
+9   4. The published farm gate prices ar...
+10  5. Composition of milk: The Rural Pa...
+11  6. The data are subject to a variety...
+12  7. Since February 2017, we are repor...
+13                         Revisions policy
+...tail
+                                          0
+15  a. if we have not received survey da...
+16  b. survey respondents occasionally s...
+17  c. receipt of amended data from Scot...
+18  d. payment of retrospective bonuses ...
