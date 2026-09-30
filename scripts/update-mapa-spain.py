@@ -45,9 +45,12 @@ def classify(grupo, prod):
         return None
     return GROUPS.get(grupo)
 
+ACC = {'acido': 'ácido', 'potasico': 'potásico', 'amonico': 'amónico', 'diamonico': 'diamónico', 'calcico': 'cálcico', 'fosforico': 'fosfórico', 'iberica': 'ibérica', 'azafran': 'azafrán', 'melocoton': 'melocotón', 'limon': 'limón', 'platano': 'plátano', 'sandia': 'sandía', 'melon': 'melón', 'maiz': 'maíz', 'judia': 'judía', 'judias': 'judías', 'esparrago': 'espárrago', 'calabacin': 'calabacín', 'nispero': 'níspero', 'algodon': 'algodón', 'subvencion': 'subvención', 'gestacion': 'gestación', 'lactacion': 'lactación', 'recria': 'recría', 'cria': 'cría', 'proteina': 'proteína', 'champiñon': 'champiñón', 'ros-clar': 'rosado/clarete', 'brocoli': 'brócoli', 'freson': 'fresón'}
+
 def title(s):
     s = s.replace('�', 'Ñ').strip().lower()
     s = re.sub(r'\s+', ' ', s)
+    s = ' '.join(ACC.get(w, w) for w in s.split(' '))
     return s[:1].upper() + s[1:]
 
 def series_from(rows, kind):
