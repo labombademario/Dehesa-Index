@@ -1,0 +1,40 @@
+CBS tables 1073
+CBS 80783eng | Agriculture; crops, livestock and land use by general farm type, region | 2000 - 2025 | Yearly | 2026-03-30
+CBS 80784eng | Agriculture; labour force by region | 2000 - 2025 | Yearly | 2026-03-30
+CBS 85636ENG | Arable crops; production, region | 1994 - 2026 | Fourtimesayear | 2026-09-30
+CBS 83981ENG | Livestock manure; production, transport and use, key figures | 1950-2025 | Yearly | 2026-06-29
+CBS 84952ENG | Livestock on agricultural holdings: reference date 1 April and 1 December | April 2018 - April 2026 | Twiceyearly | 2026-08-26
+CBS 7425eng | Milk supply and dairy production by dairy factories | January 1995 - July2026 | Monthly | 2026-09-17
+CBS 85332ENG | Caribbean Netherlands; births, fertility, age mother | 2011 - 2025 | Yearly | 2026-05-27
+CBS 84726ENG | Deaths; murder and manslaughter, crime committed in The Netherlands | 1996-2024 | Yearly | 2026-02-26
+CBS 85218ENG | Use of biological control agents in greenhouse horticulture  | 2012, 2016, 2020, 2024 | Fouryearly | 2026-02-12
+CBS 80274eng | Livestock cattle, 2008 - 2020 | December 2008 - December 2020 | Discontinued | 2021-04-23
+CBS 7373eng | Livestock pigs, 1981- 2020 | April 1981 - December 2020 | Discontinued | 2021-04-23
+CBS 80408ENG | Livestock manure; production, transport and use; key figures, 1950-2013 | 1950-2013 | Discontinued | 2014-05-23
+CBS 82504ENG | Livestock manure; production, transport and use; key figures, 1950-2017 | 1950-2017* | Discontinued | 2018-01-23
+CBS 7355ENG | Agricultural census; types of holdings, regional division | 1992 - 2000 | Discontinued | 2009-09-01
+CBS 81162eng | Agriculture and horticulture services; employment and finance, 2009-2013 | 2009-2013 | Discontinued | 2015-04-20
+CBS 71839eng | Agriculture and horticulture services; finance, SIC'93, 2006 - 2008  | 2006-2008 | Discontinued | 2010-07-01
+CBS 7100eng | Arable crops; production, to region 1994-2023 | 1994-2023 | Discontinued | 2023-08-31
+CBS 81453ENG | Deaths; murder and manslaughter, crime scene in The Netherlands, 1996-2018 | 1996-2018 | Discontinued | 2020-07-29
+CBS 37744eng | Birth; age mother (on 31-12), birth order and fertility rates 1950-2014 | 1950 - 2014 | Discontinued | 2015-09-30
+ABS ITGS dims ['MEASURE', 'DATA_ITEM', 'TSEST', 'REGION', 'FREQ']
+  codelist CL_FREQ 9 []
+  codelist CL_ITGS_H_MEASURE 2 []
+  codelist CL_UNIT_MEASURE 88 []
+ABS MERCH_EXP dims ['COMMODITY_SITC', 'COUNTRY_DEST', 'STATE_ORIGIN', 'FREQ']
+  codelist CL_FREQ 9 []
+  codelist CL_MERCH_SITC 349 [('0', 'Food and live animals'), ('00', 'Live animals (excl. fish (not marine mammals) crustaceans, molluscs and aquatic invertebrates of SITC Division 03)'), ('001', 'Live animals (excl. fish (not marine mammals) crustaceans, molluscs and aquatic invertebrates of SITC Division 03)'), ('01', 'Meat and meat preparations'), ('011', 'Meat of bovine animals, fresh, chilled or frozen'), ('012', 'Meat and edible meat offal, fresh, chilled or frozen (excl. meat and meat offal unfit or unsuitable for human consumption and meat of bovine animals)'), ('016', 'Meat and edible meat offal, salted, in brine, dried or smoked and edible flours and meals of meat or meat offal'), ('017', 'Meat and edible meat offal, prepared or preserved, nes'), ('02', 'Dairy products and birds eggs'), ('022', 'Milk and cream and milk products (excl. butter or cheese)'), ('023', 'Butter and other fats and oils derived from milk'), ('04', 'Cereals and cereal preparations'), ('041', 'Wheat (incl. spelt) and meslin, unmilled'), ('043', 'Barley, unmilled'), ('045', 'Cereals, unmilled (excl. wheat, rice, barley and maize)'), ('046', 'Meal and flour of wheat and flour of meslin'), ('047', 'Cereal meals and flours (excl. groats and meal of wheat and flour of wheat or of meslin)'), ('048', 'Cereal preparations and preparations of flour or starch of fruits or vegetables'), ('059', 'Fruit juices (including grape must) and vegetable juices, unfermented and not containing added spirit, whether or not containing added sugar or other sweetening matter'), ('08', 'Feeding stuff for animals (excl. unmilled cereals)'), ('081', 'Feeding stuff for animals (excl. unmilled cereals)'), ('27', 'Crude fertilizers (excl. those of Division 56) and crude minerals (excl. coal, petroleum and precious stones)'), ('272', 'Fertilizers, crude (excl. those of Division 56)'), ('56', 'Fertilisers (excl. those of group 272)'), ('562', 'Fertilisers (excl. those of group 272)'), ('592', 'Starches, inulin and wheat gluten; albuminoidal substances; glues')]
+  codelist CL_UNIT_MEASURE 88 []
+ABS ITPI_EXP dims ['MEASURE', 'INDEX', 'FREQ']
+  codelist CL_FREQ 9 []
+  codelist CL_INDEX_MEASURES 5 []
+  codelist CL_ITPI_INDEX 370 [('3115001', 'Live animals, animal products (01)'), ('3117001', 'Live animals'), ('3117002', 'Meat and edible meat offal'), ('3117004', 'Dairy products'), ('3117007', 'Cereals'), ('3117014', "Preparations of cereals, flour, starch or milk, pastrycooks' products"), ('3117011', 'Preparations of meat, of fish or of crustaceans, mollluscs or other aquatic invertebrates'), ('8093698', 'Food and live animals (0)'), ('8093708', '00 Live animals other than animals of division 03'), ('8093727', '01 Meat and meat preparations'), ('8093730', "02 Dairy products and birds' eggs"), ('8093710', '03 Fish, crustaceans, molluscs and aquatic invertebrates and preparations thereof'), ('8093713', '04 Cereals and cereal preparations'), ('8093717', '05 Vegetables and fruit'), ('8093721', '06 Sugars, sugar preparations and honey'), ('8093732', '07 Coffee, tea, cocoa, spices and manufactures thereof'), ('8093723', '08 Feeding stuff for animals (not including unmilled cereals)'), ('8093725', '09 Miscellaneous edible products and preparations'), ('8093743', '27 Crude fertilizers, other than those of division 56, and crude minerals (excluding coal, petroleum'), ('8093911', 'Meat and meat preparations'), ('8093912', 'Cereal grains and cereal preparations'), ('8093913', 'Wool and sheepskins'), ('8122599', '06 Coal mining'), ('8122601', '08 Metal ore mining'), ('6013001', '0 Food and live animals'), ('6015001', '02 Dairy products and eggs'), ('6015002', '03 Fish, crustaceans, molluscs and aquatic invertebrates and preparations thereof'), ('6015003', '05 Vegetables, fruit and nuts'), ('6015004', '07 Coffee, tea cocoa'), ('6015005', '09 Misc edible products'), ('6015012', '27 Crude fertilizers and minerals'), ('6015020', '56 Fertilizers (excluding crude)'), ('8094313', 'Live animals (1)'), ('8094332', '03 Fish, crustaceans and molluscs'), ('8094333', '04 Dairy products'), ('8094368', '07 Vegetables, roots and tubers'), ('8094369', '08 Fruits and nuts'), ('8094370', '09 Coffee, tea and spices'), ('8094335', '16 Preparations of meat / fish'), ('8094350', '31 Fertilisers')]
+  codelist CL_UNIT_MEASURE 88 []
+ABS CPI dims ['MEASURE', 'INDEX', 'TSEST', 'REGION', 'FREQ']
+  codelist CL_CPI_INDEX 166 [('30002', 'Bread and cereal products'), ('40007', 'Breakfast cereals'), ('40008', 'Other cereal products'), ('30003', 'Meat and seafoods'), ('40009', 'Beef and veal'), ('40010', 'Lamb and goat'), ('40014', 'Other meats'), ('30001', 'Dairy and related products'), ('40001', 'Milk'), ('40004', 'Ice cream and other dairy products'), ('40092', 'Therapeutic appliances and equipment')]
+  codelist CL_CPI_MEASURES 7 []
+  codelist CL_FREQ 9 []
+  codelist CL_UNIT_MEASURE 88 []
+FAO https://bulks-faostat.fao.org/production/Prices_E_All_Data_(Normalized).zip 200 11683910
+FAO https://bulks-faostat.fao.org/production/Trade_DetailedTradeMatrix_E_All_Data_(Normalized).zip 200 420650070
