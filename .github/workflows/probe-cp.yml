@@ -1,0 +1,19 @@
+name: probe-cp
+on: workflow_dispatch
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - env:
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+        run: node scripts/.probe-cp.mjs || true
+      - run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add -f scripts/.probe-output.txt; git commit -m "probe output" || true; git pull --rebase -q; git push
