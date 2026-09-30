@@ -1,0 +1,109 @@
+agrar-marktdaten-erhoben-durch-die-agrarmarkt-austria | AMA | Agrar-Marktdaten erhoben durch die Agrarmarkt Austria (AMA)
+amtliche-statistiken-der-agrarmarkt-austria | AMA | Amtliche Statistiken der Agrarmarkt Austria
+a2f3d228-f9f6-3fb5-9590-57f0022b0ea8 | Statistik Austria | Ausgaben für F&E im Unternehmenssektor 2019 nach Wirtschaftszweigen
+e4177933-860f-4358-b17f-cacd20a58390 | BMLUK | Benachteiligte landwirtschaftliche Gebiete Österreich
+2b839f18-6a5b-41b6-acdf-fbd64d554c1d | AMA | Bestandsliste der Agrarmarkt Austria gemäß IWG2022
+c5148777-4b41-3c6f-9076-9afee54de075 | Statistik Austria | CC
+5c74388f-200b-3deb-9043-eeb1e7d7b53a | Statistik Austria | Dauersiedlungsraum
+c0a5a8e6-ed89-3ad2-bf19-7d79d11e7896 | Statistik Austria | ECOICOP
+79b246cb-3b2f-39f7-b3e5-717094252cbb | Statistik Austria | Einkommensteuerstatistik 2008-2022 nach Bundesländern, Stufen des zu versteuernden Einkommens und Geschlecht
+66c111ae-660e-3b33-9df7-277ba1d92707 | Statistik Austria | Einkommensteuerstatistik 2008-2022 nach Bundesländern, Stufen des zu versteuernden Einkommens und schwerpunktmäßigen Einkünften
+005a9c1e-d550-3f5f-8183-f2a6c078dd61 | Statistik Austria | Einkommensteuerstatistik 2008-2022 nach Stufen des zu versteuernden Einkommens, Alter und Geschlecht
+12ba45f0-5301-34da-a8de-1e13b347f310 | Statistik Austria | Einkommensteuerstatistik ab 2008 nach Bundesländern, Stufen des zu versteuernden Einkommens und Geschlecht
+92c9fca5-7051-38bd-a0aa-a604c7ff7250 | Statistik Austria | Einkommensteuerstatistik ab 2008 nach Bundesländern, Stufen des zu versteuernden Einkommens und Geschlecht
+66fbfa85-73a2-30a9-be14-b8bb7a5fd185 | Statistik Austria | Einkommensteuerstatistik ab 2008 nach Bundesländern, Stufen des zu versteuernden Einkommens und schwerpunktmäßigen Einkünften
+43b9e3ad-6f08-3469-8b2c-80416934e722 | Statistik Austria | Einkommensteuerstatistik ab 2008 nach Bundesländern, Stufen des zu versteuernden Einkommens und schwerpunktmäßigen Einkünften
+2e97d867-a91b-3231-b520-3bbcd1a13325 | Statistik Austria | Einkommensteuerstatistik ab 2008 nach Stufen des zu versteuernden Einkommens, Alter und Geschlecht
+01f37814-2ff5-3e39-8a68-0d4026b270b0 | Statistik Austria | Einkommensteuerstatistik ab 2008 nach Stufen des zu versteuernden Einkommens, Alter und Geschlecht
+5a3b75fb-58a9-3d9e-bfbf-d103d0d1fc9b | Statistik Austria | Einkommensteuerstatistik ab 2023 nach Bundesländern, Stufen des zu versteuernden Einkommens und Geschlecht
+b6690de0-375a-3656-8bfe-c57bc89e9f02 | Statistik Austria | Einkommensteuerstatistik ab 2023 nach Bundesländern, Stufen des zu versteuernden Einkommens und schwerpunktmäßigen Einkünften
+aea547e1-52e5-3ade-a5d2-f8047285ad27 | Statistik Austria | Einkommensteuerstatistik ab 2023 nach Stufen des zu versteuernden Einkommens, Alter und Geschlecht
+c4b4a6c1-5f4a-3c45-b0b9-9ca633c3170a | Statistik Austria | Erzeugerpreisindex (2015 = 100) ÖCPA 2015
+9aa91f10-c11d-3b0f-a93a-561441256f97 | Statistik Austria | Erzeugerpreisindex (2021 = 100) ÖCPA 2015
+geschaeftseinteilungen-ama | AMA | Geschäftseinteilungen, Geschäftsordnungen und Tätigkeitsberichte der Agrarmarkt Austria
+9e52b8c0-d8fb-354c-9350-7bec49a19d5d | Statistik Austria | Gliederung Österreichs in Landwirtschaftliche Produktionsgebiete
+546e3dff-8a23-482a-814e-b1fb3dde5562 | AMA | INVEKOS Feldstücke Österreich 2015
+1653d49b-ac76-4efc-b03f-38a5df768f41 | AMA | INVEKOS Feldstücke Österreich 2016
+b6134075-0fb5-4278-bbbd-2cf48a776d2d | AMA | INVEKOS Feldstücke Österreich 2018
+c2412b1f-b77d-435a-b76a-d56f4609266e | AMA | INVEKOS Feldstücke Österreich 2019
+c27097c7-41fc-43ea-8536-534141c9d505 | AMA | INVEKOS Feldstücke Österreich 2021
+7d636728-bcf3-4f07-9f4a-3fe8ce8c8fce | AMA | INVEKOS Feldstücke Österreich 2022
+68055a59-f963-4518-9c61-234710531ad1 | AMA | INVEKOS Feldstücke Österreich 2022-2
+5f147bb9-7fe5-41ba-a91e-0a3595c8335e | AMA | INVEKOS Feldstücke Österreich 2023-2
+33078dd6-05e0-4263-a464-f35bd1607ecd | AMA | INVEKOS Feldstücke Österreich 2024-1
+560558dc-59a8-455c-9374-e2c39b9abda2 | AMA | INVEKOS Feldstücke Österreich 2024-2
+d76f8f0a-55a4-4b11-afea-fed43fa27b49 | AMA | INVEKOS Feldstücke Österreich 2025-1
+a638c04a-11cb-4ddc-a152-c53d3c2606b3 | AMA | INVEKOS Referenzflächen Österreich 2015
+c2721bd8-b021-4eb4-913a-0d4fac5e372c | AMA | INVEKOS Referenzflächen Österreich 2016
+904df4b4-e315-45b4-bf72-19f4dd0aafbd | AMA | INVEKOS Referenzflächen Österreich 2017
+6d1524bc-f610-486a-be54-ba5c956af068 | AMA | INVEKOS Referenzflächen Österreich 2018
+c5d236f0-6db3-42ec-8d7f-8cc87e179dae | AMA | INVEKOS Referenzflächen Österreich 2019
+73e6acd7-2d81-417b-b2fa-8a4d1bae65c9 | AMA | INVEKOS Referenzflächen Österreich 2020
+9db8a0c3-e92a-4df4-9d55-8210e326a7ed | AMA | INVEKOS Referenzflächen Österreich 2021
+e3d8c747-4717-4190-ba03-6f805a22bf3b | AMA | INVEKOS Referenzflächen Österreich 2022
+29f7bb6b-749f-4485-8da9-4e21ec67a22b | AMA | INVEKOS Referenzflächen Österreich 2022-2
+9028e056-22f4-46de-bb6b-66225fed8058 | AMA | INVEKOS Referenzflächen Österreich 2023-1
+f2342aad-cce7-4da7-a44e-b0a691a06739 | AMA | INVEKOS Referenzflächen Österreich 2023-2
+9feabade-987d-4faa-9780-e6bbaefd4e48 | AMA | INVEKOS Referenzflächen Österreich 2024-1
+d982e28a-6715-4576-89f3-280d7f20ec0a | AMA | INVEKOS Referenzflächen Österreich 2024-2
+ce83d9d5-9dd8-4094-bd3b-345cde487bc7 | AMA | INVEKOS Referenzflächen Österreich 2025-1
+b1fe144d-864c-4ff0-987d-37388e6bf902 | AMA | INVEKOS Referenzflächen Österreich 2025-2
+0edf9c82-b6cc-46ec-adf8-af6430801e33 | AMA | INVEKOS Referenzflächen Österreich 2026-1
+97725be7-e74d-4340-847a-178ae0d4f524 | AMA | INVEKOS Schläge Österreich 2015
+1a9a1ebc-73ad-4faf-8611-73a755d3735c | AMA | INVEKOS Schläge Österreich 2016
+d09ee341-ed3a-4e48-bb7d-73c7861cb94c | AMA | INVEKOS Schläge Österreich 2017
+bdddeedb-5381-43cd-8c48-88a946ae2d0b | AMA | INVEKOS Schläge Österreich 2018
+5a7739f5-866f-4f8a-91c6-8898a1ce52b2 | AMA | INVEKOS Schläge Österreich 2019
+e499eacb-df06-4a6a-8175-b9745eeeadc4 | AMA | INVEKOS Schläge Österreich 2020
+89e7d5e0-385f-40b2-9e42-fb3bb29e52a9 | AMA | INVEKOS Schläge Österreich 2021
+3ee31e14-a6ac-4fc6-913a-1a83995aec5a | AMA | INVEKOS Schläge Österreich 2022
+76e56152-abca-4611-b88a-6ee7d48f9a61 | AMA | INVEKOS Schläge Österreich 2022-2
+cf1600b1-56c5-45b6-95ee-1e7a9714acdf | AMA | INVEKOS Schläge Österreich 2023-1
+7175d2af-d188-4ec2-b079-d4c0e5417f77 | AMA | INVEKOS Schläge Österreich 2023-2
+bbd8ee1b-76a1-451f-88ef-84e9c7a1faaf | AMA | INVEKOS Schläge Österreich 2024-1
+b037d48d-06f3-4af2-ac48-ae07e7ca1e00 | AMA | INVEKOS Schläge Österreich 2024-2
+b2bd27c3-ccd9-4e5a-98ce-28deab1266f5 | AMA | INVEKOS Schläge Österreich 2025-1
+c6e594ce-e151-4ad5-8525-942208f956e8 | AMA | INVEKOS Schläge Österreich 2025-2
+ec67236b-f5cd-4017-adc1-76918f2a4f9d | AMA | INVEKOS Schläge Österreich 2026-1
+640bb6d5-e602-3a44-9d7b-9a086196d4a2 | Statistik Austria | Importpreisindex (2015 = 100)
+6d5d3aca-11e3-3e5c-ba5c-b79aa0aff949 | Statistik Austria | Importpreisindex (2021 = 100)
+bfdecece-abd3-3691-a583-157325d9ab37 | Statistik Austria | Integrierte Lohn- und Einkommensteuerdaten 2008-2020 nach Bundesländern, schwerpunktmäßige Einkünften, Alter und Geschlecht
+bd200eb4-4c34-3e21-bc7f-08f58081ad15 | Statistik Austria | Integrierte Lohn- und Einkommensteuerdaten 2008-2020 nach Bundesländern, schwerpunktmäßigen Einkünften, Stufen des Gesamteinkommens und Geschlecht
+e918eead-8a36-3788-a911-b488e061bb46 | Statistik Austria | Integrierte Lohn- und Einkommensteuerdaten 2008-2021 nach Bundesländern, schwerpunktmäßige Einkünften, Alter und Geschlecht
+b0ed8784-ff8f-3877-bfd6-187fe0e7a2f5 | Statistik Austria | Integrierte Lohn- und Einkommensteuerdaten 2008-2021 nach Bundesländern, schwerpunktmäßigen Einkünften, Stufen des Gesamteinkommens und Geschlecht
+83b03a69-90fd-3190-8ec3-0357f24f932e | Statistik Austria | Integrierte Lohn- und Einkommensteuerdaten 2015-2016
+291de123-9f7a-37d2-b5b3-25d3353be601 | Statistik Austria | Integrierte Lohn- und Einkommensteuerdaten ab 2022 nach Bundesländern, schwerpunktmäßige Einkünften, Alter und Geschlecht
+7b9e79e4-94a2-3d63-a37c-2d795bbfba22 | Statistik Austria | Integrierte Lohn- und Einkommensteuerdaten ab 2022 nach Bundesländern, schwerpunktmäßigen Einkünften, Stufen des Gesamteinkommens und Geschlecht
+686a7006-eeb5-3783-8fa3-bc76decc3a7d | Statistik Austria | Körperschaftsteuerstatistik ab 2008 nach Bundesländern, Fallart und Stufen des zu versteuernden Einkommens
+886a2697-3463-3165-a54b-88adda29c7aa | Statistik Austria | Körperschaftsteuerstatistik ab 2008 nach Bundesländern, Fallart und Wirtschaftsabschnitten
+7e0ea7bb-5ba2-3c5e-80a4-4ad8255e0816 | Statistik Austria | Luftemissionsrechnung ab 2008
+bfce64f2-3595-34da-9a2d-87308433f4d7 | Statistik Austria | Luftemissionsrechnung ab 2008 F-Gase
+f2d0073e-6921-41d3-9778-8c3d89f5f1a8 | AMA | Metadatensatz zur Kerndaten - Sammlung gemäß  BVergG 2018 von Agrarmarkt Austria Marketing GmbH
+07ab9a18-820d-4621-bc9a-e87067a4aade | AMA | Metadatensatz zur Kerndaten - Sammlung gemäß BVergG 2018 von Agrarmarkt Austria
+9c4f5e59-7aa3-3b48-8802-3072088b3a6c | Statistik Austria | Nicht-finanzielle Sektorkonten nach ESVG 2010, ausgewählte Ergebnisse und Indikatoren
+c06a8e29-3cc1-32db-9d9a-551c477d92ef | Statistik Austria | Primäres u. sekundäres Einkommensverteilungskonto der privaten Haushalte nach ESVG 2010
+d2c093b0-3e1c-371d-910d-add01d2c883d | Statistik Austria | Primäres u. sekundäres Einkommensverteilungskonto der privaten Haushalte nach ESVG 2010
+77d6f53d-7227-4d9e-a333-9d3572eec2b3 | AMA | Pufferstreifen belasteter Gewässer
+9d3363f6-1b3f-3e51-80bc-22cae7b21805 | Statistik Austria | Regionale Gliederungen WMS/WFS
+studien-gutachten-umfragen-stellungnahmen-der-agrarmarkt-austria | AMA | Studien, Gutachten, Umfragen, Stellungnahmen der Agrarmarkt Austria
+transparenzdatenbank-eu-der-agrarmarkt-austria | AMA | Transparenzdatenbank EU der Agrarmarkt Austria
+9fecd5bd-911a-3f78-939d-bca5cd5532d7 | Statistik Austria | Verbraucherpreisindex Basis 1986
+2026c266-75f3-3f09-85d4-a1e81b460ad2 | Statistik Austria | Verbraucherpreisindex Basis 1996
+9016a823-ef08-314d-8ef5-aa12c1800f76 | Statistik Austria | Verbraucherpreisindex Basis 2000
+f73ce192-998c-3218-acc4-745402c2abb1 | Statistik Austria | Verbraucherpreisindex Basis 2005, ECOICOP
+87c7a5cf-7da1-3b94-9c8f-463300774ceb | Statistik Austria | Verbraucherpreisindex Basis 2010
+e0d7cc1d-3f72-3a75-8bc2-5997ca56c9c7 | Statistik Austria | Verbraucherpreisindex Basis 2010, ECOICOP
+a6058e1e-5e37-3864-b37b-c379bd87832d | Statistik Austria | Verbraucherpreisindex Basis 2015, ECOICOP
+69fce19b-9576-3697-946d-2272a81a9aec | Statistik Austria | Verbraucherpreisindex Basis 2020, ECOICOP
+verlautbarungen-der-agrarmarkt-austria-amtsblaetter | AMA | Verlautbarungen der Agrarmarkt Austria (Amtsblätter)
+vertraege-der-agrarmarkt-austria | AMA | Verträge der Agrarmarkt Austria
+858eaff7-b0bc-3716-9538-14bb8b385e10 | Statistik Austria | Wirtschaftsatlas: Eckdaten Österreich und EU-Länder ab 1995
+af90d8fc-2ff3-39a7-88f9-bf8c61ab42f4 | Statistik Austria | Wirtschaftsatlas: Land- und Forstwirtschaft ab 1995
+=== portal list
+assets/favicon.png css/bootstrap.css css/custom.css ./ catalog.jsp ./?page=formats ./?page=terms ./?page=apps ./?page=contact https://www.data.gv.at/info/open-data-prinzipien?locale=de ./?page=terms mailto:open.data@statistik.gv.at ./?page=terms catalog.jsp ./?page=formats https://creativecommons.org/licenses/by/4.0/deed.de ./?page=terms https://www.statistik.at/statcube/sdb/prod/STATcube_Impressum_DE.html https://www.statistik.at/statcube/opendata/prod/117089_Datenschutzinformation_OpenData.pdf https://www.statistik.at/statcube/opendata/prod/124351_Barrierefreiheitserklaerung_OpenData.pdf # mailto:open.data@statistik.gv.at
+=== https://marktinformation.ama.at/
+<!doctype html><html lang="de" xml:lang="de" xmlns="http://www.w3.org/1999/xhtml"><head><title>Agrarmarkt Austria</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="icon" type="image/png" href="/favicon.png"></head><body><div id="root"></div></body></html>
+/favicon.png
+=== https://www.ama.at/marktinformationen/
+ <!doctype html> <html lang="de-AT"> <head> <!--Version: 2.0.303+a03ffa3e64--> <title>Marktinformationen</title> <meta title=""> <meta property="og:url" content="https://www.ama.at/marktinformationen"> <meta property="og:title" content="Marktinformationen"> <meta property="og:img" content="https://cms.ama.at/images/logo_ama.svg"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="stylesheet" href="/css/site.css?v=1TJrCOY1gzBqY-TmXWU3qDreu2ea4Er0sJxMBBsiZGg" /> <!-- Matomo Tag Manager --> <!-- End Matomo Tag Manager --> </head> <body class="body"> <!-- Header Section --> <nav class="c-skiplinks" aria-label="Skip-Navigation"> <ul> <li> <a href="#header-container" class="c-skiplinks__link">Zum Header springen</a> </li> <li> <a href="#main-container" class="c-skiplinks__link">Zum Hauptinhalt springen</a> </li> <li> <a href="#footer-container" class="c-skiplinks__link">Zum Footer springen</a> </li> </ul> </nav> <div class="c-header print_hide" id="header-container"> <div class="c-header-topbar"> <div class="c-topbar" id="topbar"> <div class="c-topbar-container"> <nav class="c-topbar-nav" role="navigation" aria-label="Meta-Navigation"> <a class="c-topbar-item c-topbar-item__withText c-topbar-item--external" href="https://services.ama.at" target=&quot;_blank&quot;>eAMA.at</a> <a class="c-topbar-item c-topbar-item__withText " href="/allgemein/newsletter" >Newsletter</a
+/css/site.css?v=1TJrCOY1gzBqY-TmXWU3qDreu2ea4Er0sJxMBBsiZGg #header-container #main-container #footer-container https://services.ama.at /allgemein/newsletter /allgemein/presse https://karriere.ama.at/ /allgemein/kontakt /fachliche-informationen/nachhaltigkeit /allgemein/veroeffentlichungen / /fachliche-informationen /marktinformationen /formulare-merkblaetter https://dfp.ama.at https://services.ama.at /allgemein/newsletter /allgemein/presse https://karriere.ama.at/ /allgemein/kontakt /fachliche-informationen/nachhaltigkeit /allgemein/veroeffentlichungen / /marktinformationen tel:05031510 mailto:office@ama.gv.at /fachliche-informationen/auszahlungstermine /allgemein/ueber-die-ama /fachliche-informationen/nachhaltigkeit /allgemein/veroeffentlichungen /fachliche-informationen https://services.ama.at https://karriere.ama.at/ https://dfp.ama.at https://amainfo.at/ / /allgemein/impressum /allgemein/datenschutzerklaerung /allgemein/barrierefreiheitserklaerung /allgemein/sitemap
