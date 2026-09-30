@@ -1,19 +1,21 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T00:07:07.684Z",
+  "generatedAt": "2026-09-30T00:22:22.385Z",
   "scope": {
-    "latestObservations": 12,
-    "historyObservations": 211,
-    "verified": 12,
+    "latestObservations": 18,
+    "historyObservations": 536,
+    "verified": 18,
     "pending": 0,
     "stale": 5,
     "regions": [
-      "us",
-      "eu"
+      "eu",
+      "us"
     ],
     "products": [
       "arroz",
+      "azucar",
       "cerdo",
+      "cordero",
       "diesel",
       "eurostat_cereals_output_index",
       "eurostat_energy_input_index",
@@ -21,11 +23,29 @@
       "eurostat_milk_output_index",
       "leche",
       "maiz",
+      "oliva",
+      "pollo",
       "trigo",
-      "urea"
+      "urea",
+      "vaca"
     ]
   },
   "observations": [
+    {
+      "id": "di_cereales_arroz_eu",
+      "product": "arroz",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-09-20",
+      "publicationDate": "2026-09-30",
+      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "frequency": "weekly",
+      "historyPoints": 25,
+      "ageDays": 10,
+      "stale": false
+    },
     {
       "id": "di_arroz_us",
       "product": "arroz",
@@ -42,6 +62,21 @@
       "stale": true
     },
     {
+      "id": "di_azucar_azucar_eu",
+      "product": "azucar",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-06",
+      "publicationDate": "2026-09-30",
+      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "frequency": "monthly",
+      "historyPoints": 104,
+      "ageDays": 121,
+      "stale": true
+    },
+    {
       "id": "di_porcino_cerdo_eu",
       "product": "cerdo",
       "region": "eu",
@@ -50,7 +85,22 @@
       "comparability": "directional",
       "observationDate": "2026-09-20",
       "publicationDate": "2026-09-30",
-      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "frequency": "weekly",
+      "historyPoints": 25,
+      "ageDays": 10,
+      "stale": false
+    },
+    {
+      "id": "di_ovino_cordero_eu",
+      "product": "cordero",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-09-20",
+      "publicationDate": "2026-09-30",
+      "verifiedAt": "2026-09-30T00:22:20.038Z",
       "frequency": "weekly",
       "historyPoints": 25,
       "ageDays": 10,
@@ -153,13 +203,13 @@
       "sourceId": "european_commission",
       "status": "verified",
       "comparability": "directional",
-      "observationDate": "2026-08",
-      "publicationDate": "2026-09-09",
-      "verifiedAt": "2026-09-29T22:39:01Z",
+      "observationDate": "2026-08-31",
+      "publicationDate": "2026-09-30",
+      "verifiedAt": "2026-09-30T00:22:22.141Z",
       "frequency": "monthly",
-      "historyPoints": 8,
-      "ageDays": 60,
-      "stale": true
+      "historyPoints": 104,
+      "ageDays": 30,
+      "stale": false
     },
     {
       "id": "di_maiz_us",
@@ -175,6 +225,36 @@
       "historyPoints": 7,
       "ageDays": 60,
       "stale": true
+    },
+    {
+      "id": "di_aceite_oliva_eu",
+      "product": "oliva",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-09-20",
+      "publicationDate": "2026-09-30",
+      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "frequency": "weekly",
+      "historyPoints": 25,
+      "ageDays": 10,
+      "stale": false
+    },
+    {
+      "id": "di_avicultura_pollo_eu",
+      "product": "pollo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-09-20",
+      "publicationDate": "2026-09-30",
+      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "frequency": "weekly",
+      "historyPoints": 25,
+      "ageDays": 10,
+      "stale": false
     },
     {
       "id": "di_trigo_us",
@@ -205,6 +285,21 @@
       "historyPoints": 12,
       "ageDays": 60,
       "stale": true
+    },
+    {
+      "id": "di_ganado_vaca_eu",
+      "product": "vaca",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-09-20",
+      "publicationDate": "2026-09-30",
+      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "frequency": "weekly",
+      "historyPoints": 25,
+      "ageDays": 10,
+      "stale": false
     }
   ],
   "policy": {

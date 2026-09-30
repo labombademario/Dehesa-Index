@@ -1,10 +1,12 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T00:07:07.561Z",
-  "observationCount": 14,
+  "generatedAt": "2026-09-30T00:22:22.268Z",
+  "observationCount": 21,
   "products": [
     "arroz",
+    "azucar",
     "cerdo",
+    "cordero",
     "diesel",
     "eurostat_cereals_output_index",
     "eurostat_energy_input_index",
@@ -12,8 +14,11 @@
     "eurostat_milk_output_index",
     "leche",
     "maiz",
+    "oliva",
+    "pollo",
     "trigo",
-    "urea"
+    "urea",
+    "vaca"
   ],
   "regions": [
     "eu",
@@ -36,6 +41,21 @@
   "latest": [
     {
       "product": "arroz",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-09-20",
+      "unit": "tonelada",
+      "currency": "EUR",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "comparability": "directional",
+      "points": 25,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "arroz",
       "region": "us",
       "sourceId": "usda_nass",
       "observationDate": "2026-08",
@@ -50,6 +70,21 @@
       "coverageEnd": "2026-08-01"
     },
     {
+      "product": "azucar",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-06",
+      "unit": "tonelada",
+      "currency": "EUR",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "comparability": "directional",
+      "points": 104,
+      "coverageStart": "2017-11-01",
+      "coverageEnd": "2026-06-01"
+    },
+    {
       "product": "cerdo",
       "region": "eu",
       "sourceId": "eu_agrifood",
@@ -58,7 +93,22 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:07:07.439Z",
+      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "comparability": "directional",
+      "points": 25,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "cordero",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-09-20",
+      "unit": "100kg",
+      "currency": "EUR",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:22:20.038Z",
       "comparability": "directional",
       "points": 25,
       "coverageStart": "2024-09-01",
@@ -158,15 +208,15 @@
       "product": "leche",
       "region": "eu",
       "sourceId": "european_commission",
-      "observationDate": "2026-08",
+      "observationDate": "2026-08-31",
       "unit": "100kg",
       "currency": "EUR",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-29T22:39:01Z",
+      "verifiedAt": "2026-09-30T00:22:22.141Z",
       "comparability": "directional",
-      "points": 8,
-      "coverageStart": "2026-01-01",
+      "points": 104,
+      "coverageStart": "2018-01-01",
       "coverageEnd": "2026-08-01"
     },
     {
@@ -183,6 +233,36 @@
       "points": 7,
       "coverageStart": "2026-02-01",
       "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "oliva",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-09-20",
+      "unit": "100kg",
+      "currency": "EUR",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "comparability": "directional",
+      "points": 25,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "pollo",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-09-20",
+      "unit": "kg",
+      "currency": "EUR",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "comparability": "directional",
+      "points": 25,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-09-01"
     },
     {
       "product": "trigo",
@@ -213,6 +293,21 @@
       "points": 12,
       "coverageStart": "2025-09-01",
       "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "vaca",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-09-20",
+      "unit": "100kg",
+      "currency": "EUR",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "comparability": "directional",
+      "points": 25,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-09-01"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T00:07:07.923Z",
+  "generatedAt": "2026-09-30T00:22:22.622Z",
   "status": "informational",
   "rules": [
     {
@@ -13,9 +13,9 @@
     },
     {
       "type": "stale_data",
-      "product": "leche",
+      "product": "azucar",
       "region": "eu",
-      "sourceId": "european_commission",
+      "sourceId": "eu_agrifood",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
@@ -68,6 +68,15 @@
       "sourceId": "eu_agrifood",
       "severity": "watch",
       "changePct": 5.6,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "cordero",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "changePct": 8.04,
       "observationDate": "2026-09-01"
     },
     {
