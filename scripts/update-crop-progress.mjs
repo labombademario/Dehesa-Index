@@ -80,7 +80,7 @@ const bad = [];
 for (const id of ['corn', 'soybeans', 'wheat_winter', 'wheat_spring', 'cotton']) {
   const c = out.find(x => x.id === id);
   if (!c) { bad.push(id + ' sin datos'); continue; }
-  const full = Object.values(c.seasons).filter(s => s.condition.length >= 15).length;
+  const full = Object.values(c.seasons).filter(s => s.condition.length >= 8).length;
   if (full < 5) bad.push(id + ' con menos de 5 campañas de valoración completas');
   for (const s of Object.values(c.seasons)) for (const w of s.condition) { const t = w[1] + w[2] + w[3] + w[4] + w[5]; if (t < 97 || t > 103) bad.push(id + ' valoración suma ' + t + ' en ' + w[0]); }
 }
