@@ -1,1053 +1,558 @@
-http 200
-1051 ['slug_id', 'slug_name', 'report_title', 'report_date', 'published_date', 'report_status', 'markets', 'market_types', 'offices', 'hasCorrectionsInLastThreeDays', 'sectionNames']
-1034 | Dry Whey - Europe | 09/21/2026 |  | 0
-1035 | Skim Milk Powder - Europe | 09/21/2026 |  | 0
-1036 | Whole Milk Powder - Europe | 09/21/2026 |  | 0
-1038 | Skim Milk Powder - Oceania | 09/21/2026 |  | 0
-1039 | Whole Milk Powder - Oceania | 09/21/2026 |  | 0
-1041 | Skim Milk Powder - South America | 09/14/2026 |  | 0
-1042 | Whole Milk Powder - South America | 09/14/2026 |  | 0
-1043 | Dry Buttermilk - West U.S. | 09/21/2026 |  | 0
-1044 | Dry Buttermilk - East and Central U.S. | 09/21/2026 |  | 0
-1045 | Dry Whey - Central U.S. | 09/21/2026 |  | 0
-1046 | Dry Whey - West U.S. | 09/21/2026 |  | 0
-1047 | Dry Whey - East U.S. | 09/21/2026 |  | 0
-1048 | Nonfat Dry Milk - West U.S. | 09/21/2026 |  | 0
-1049 | Nonfat Dry Milk - East and Central U.S. | 09/21/2026 |  | 0
-1050 | Dry Whole Milk - U.S. | 09/21/2026 |  | 0
-1051 | Casein - U.S. | 09/21/2026 |  | 0
-1052 | Lactose - Central and West U.S. | 09/21/2026 |  | 0
-1053 | Whey Protein Concentrate - Central and West U.S. | 09/21/2026 |  | 0
-1082 | Cheese - Oceania | 09/21/2026 |  | 0
-1083 | Cheese - Central U.S. | 09/21/2026 |  | 0
-1084 | Cheese - East U.S. | 09/21/2026 |  | 0
-1085 | Cheese - West U.S. | 09/21/2026 |  | 0
-1089 | Butter - Central U.S. | 09/21/2026 |  | 0
-1090 | Butter - East U.S. | 09/21/2026 |  | 0
-1091 | Butter - West U.S. | 09/21/2026 |  | 0
-1092 | Cheese - Foreign Type | 09/21/2026 |  | 0
-1095 | Weekly Cold Storage Holdings - U.S. | 09/21/2026 |  | 1
-1098 | Butter/Butteroil - Europe | 09/21/2026 |  | 0
-1099 | Butter - Oceania | 09/21/2026 |  | 0
-1100 | Fluid Milk and Cream - Central U.S. | 09/21/2026 |  | 0
-1101 | Fluid Milk And Cream - East U.S. | 09/21/2026 |  | 0
-1102 | Fluid Milk and Cream - West U.S. | 09/21/2026 |  | 0
-1234 | Green City Livestock Auction Replacement Cattle Special - Green City, MO | 02/14/2026 |  | 1
-1235 | New Cambria Livestock Market Replacement Cattle Special - New Cambria, MO | 02/14/2026 |  | 1
-1236 | Unionville Livestock Market LLC Replacement Cattle Special - Unionville, MO | 01/10/2026 |  | 1
-1237 | Unionville Livestock Market  - Unionville, MO | 09/29/2026 |  | 1
-1245 | Joplin Regional Stockyards Feeder Cattle - Carthage, MO | 09/28/2026 |  | 1
-1248 | New Cambria Livestock Market - New Cambria, MO | 09/17/2026 |  | 1
-1249 | Ozarks Regional Stockyards Feeder Cattle - West Plains, MO | 09/29/2026 |  | 1
-1254 | Green City Livestock Auction - Green City, MO | 09/02/2026 |  | 1
-1255 | Springfield Livestock Marketing Center Feeder Cattle - Springfield, MO | 09/23/2026 |  | 1
-1280 | Oklahoma National Stockyards Feeder Cattle - Oklahoma City, OK | 09/28/2026 |  | 1
-1281 | OKC West Livestock Auction  - El Reno, OK | 09/29/2026 |  | 1
-1290 | Santa Teresa Livestock Auction - Santa Teresa, NM | 09/04/2026 |  | 1
-1418 | Columbia Livestock Auction - Lake City, FL | 09/28/2026 |  | 1
-1419 | Okeechobee Livestock Auction - Okeechobee, FL (Tue) | 09/29/2026 |  | 1
-1420 | Townsend Livestock Auction - Madison, FL | 09/29/2026 |  | 1
-1421 | Sumter County Livestock Auction - Webster, FL | 07/16/2024 |  | 1
-1422 | Arcadia Livestock Auction - Arcadia, FL (Wed) | 09/23/2026 |  | 1
-1423 | North Florida Livestock Auction - Ellisville, FL | 06/09/2021 |  | 1
-1424 | Ocala Livestock Auction - Ocala, FL | 09/23/2024 |  | 1
-1427 | National Weekly Shell Egg Inventory | 09/28/2026 |  | 0
-1510 | St Joseph Stockyards Slaughter / Replacement Cattle - St Joseph, MO | 05/17/2021 |  | 1
-1512 | St Joseph Stockyards Feeder Cattle - St Joseph, MO | 05/19/2021 |  | 1
-1602 | CME Group - Weekly Recap | 09/21/2026 |  | 0
-1603 | CME Group - Daily Cash Trading - Week to Date | 09/29/2026 |  | 0
-1607 | Cattlemen's Livestock Auction - Lakeland, FL | 09/22/2026 |  | 1
-1608 | Okeechobee Livestock Auction - Okeechobee, FL (Mon) | 09/28/2026 |  | 1
-1609 | Arcadia Livestock Auction - Arcadia, FL (Mon) | 09/28/2026 |  | 1
-1613 | Forward Contracting Report | 08/01/2026 |  | 1
-1622 | Windsor Livestock Auction - Windsor, MO | 09/23/2026 |  | 1
-1623 | Dairy Monthly Averages | 01/01/2026 |  | 0
-1624 | Weekly Poultry & Egg Cold Storage Holdings - U.S. | 09/28/2026 |  | 1
-1625 | Daily Cotton Quality Summary by Office | 09/28/2026 |  | 1
-1626 | Florence Classing Office Weekly Quality Report | 02/19/2026 |  | 1
-1627 | Macon Classing Office Weekly Quality Report | 02/19/2026 |  | 1
-1628 | Rayville Classing Office Weekly Quality Report | 09/24/2026 |  | 1
-1629 | Dumas Classing Office Weekly Quality Report | 09/24/2026 |  | 1
-1630 | Memphis Classing Office Weekly Quality Report | 09/24/2026 |  | 1
-1631 | Abilene Classing Office Weekly Quality Report | 04/09/2026 |  | 1
-1632 | Corpus Christi Classing Office Weekly Quality Report | 09/24/2026 |  | 1
-1633 | Lubbock Classing Office Weekly Quality Report | 03/26/2026 |  | 1
-1634 | Lamesa Classing Office Weekly Quality Report | 03/26/2026 |  | 1
-1635 | Visalia Classing Office Weekly Quality Report | 03/12/2026 |  | 1
-1646 | Cotton Weekly Quality Report by Office | 09/18/2026 |  | 1
-1650 | Topeka Hay Auction - Topeka, IN | 09/29/2026 |  | 1
-1651 | Ozarks Regional Stockyards Slaughter / Replacement Cattle - West Plains, MO | 09/23/2026 |  | 1
-1652 | Daily Cotton Quality Summary by State | 09/28/2026 |  | 1
-1654 | Cotton Weekly Quality Report by State | 09/18/2026 |  | 1
-1655 | National Weekly Rice Summary | 09/28/2026 |  | 1
-1658 | Annual Cotton Quality Report | 06/25/2026 |  | 1
-1659 | Monthly Season to Date Cotton Quality Report | 09/24/2026 |  | 1
-1660 | Season To Date Quality Summary by Region | 09/25/2026 |  | 1
-1662 | SC National Shipping Point Trends Report | 09/28/2026 |  | 0
-1663 | SC National Ornamental Trends Report | 09/28/2026 |  | 0
-1664 | Monthly Dried Egg Inventory Report | 02/01/2020 |  | 0
-1665 | Weekly Shell Eggs Processed Under Federal Inspection | 09/14/2026 |  | 0
-1683 | Subasta de Ganado Santa Teresa - Santa Teresa, NM | 09/04/2026 |  | 1
-1684 | McGrew Livestock Auction  - Glenwood, AR | 05/01/2025 |  | 1
-1703 | Florida Daily Livestock Auction Summary | 09/28/2026 |  | 0
-1704 | Florida Weekly Livestock Auction Summary | 09/21/2026 |  | 0
-1716 | Wolgemuth Hay Auction - New Holland, PA (Monday) | 09/28/2026 |  | 1
-1725 | Wolgemuth Hay Auction - Leola, PA (Wednesday) | 09/23/2026 |  | 1
-1726 | Kirkwood Hay Auction - Kirkwood, PA (Tuesday) (Discontinued) | 02/07/2023 |  | 1
-1772 | Public Auction Yards Sheep & Goat Auction - Billings, MT | 09/21/2026 |  | 1
-1773 | Miles City Livestock Commission Auction - Miles City, MT | 09/29/2026 |  | 1
-1774 | Public Auction Yards Livestock Cattle Auction - Billings, MT (Wed) | 09/23/2026 |  | 1
-1775 | Billings Livestock Commission Cattle Auction - Billings, MT (Mon) | 04/16/2026 |  | 1
-1776 | Public Auction Yards Livestock Cattle Auction - Billings, MT (Fri) | 02/27/2026 |  | 1
-1777 | Billings Livestock Commission Cattle Auction - Billings, MT (Thu) | 09/24/2026 |  | 1
-1778 | Montana Weekly Livestock Auction Summary | 09/21/2026 |  | 0
-1779 | Clovis Livestock Auction Slaughter/Replacement Cattle - Clovis, NM | 08/30/2023 |  | 1
-1780 | Clovis Livestock Auction Slaughter/Replacement Cattle Special - Clovis, NM | 02/20/2025 |  | 1
-1781 | Clovis Livestock Auction - Clovis, NM | 09/23/2026 |  | 1
-1782 | Roswell Livestock Auction - Roswell, NM | 09/28/2026 |  | 1
-1783 | Cattlemen's Livestock Auction - Belen, NM | 09/25/2026 |  | 1
-1784 | New Mexico Weekly Cattle Summary | 09/21/2026 |  | 0
-1785 | Missouri (East Central) Weekly Cattle Auction Summary | 09/21/2026 |  | 2
-1786 | Green City Livestock Auction Thanksgiving Special - Green City, MO (Discontinued) | 11/26/2024 |  | 1
-1788 | Springfield Livestock Marketing Center Slaughter/Replacement Cattle - Springfield, MO | 09/28/2026 |  | 1
-1789 | F and T Livestock Market Slaughter Cattle - Palmyra, MO | 09/22/2026 |  | 1
-1790 | Show-Me-Select Special - Carthage, MO | 05/15/2026 |  | 1
-1791 | Show-Me-Select Special - Fruitland, MO | 05/01/2026 |  | 1
-1792 | Show-Me-Select Special - Palmyra, MO | 06/06/2026 |  | 1
-1793 | Show-Me-Select Special - Farmington, MO | 05/08/2026 |  | 1
-1794 | Show-Me-Select Special - Kingsville, MO | 11/22/2025 |  | 1
-1795 | Show-Me-Select Special - Kirksville, MO | 12/12/2025 |  | 1
-1796 | Thomasville Stockyard Feeder Cattle Board Sale - Thomasville, GA | 04/09/2024 |  | 1
-1797 | Joplin Regional Stockyards Slaughter/Replacement Cattle- Carthage, MO | 09/23/2026 |  | 1
-1798 | Joplin Regional Stockyards Replacement Cattle Special - Carthage, MO | 09/03/2026 |  | 1
-1799 | Springfield Livestock Marketing Center Replacement Cattle Special - Springfield, MO | 09/19/2026 |  | 1
-1800 | Callaway Livestock Center Replacement Cattle Special - Kingdom City, MO | 09/03/2026 |  | 1
-1801 | Lolli Brothers Livestock Market Replacement Cattle Special - Macon, MO | 02/28/2026 |  | 1
-1802 | Turner County Stockyard Feeder Cattle Board Sale - Ashburn, Ga | 08/06/2020 |  | 1
-1803 | SEMO Livestock Sales Sheep/Goat - Jackson, MO | 08/21/2026 |  | 1
-1804 | Buffalo Livestock Market Sheep/Goat - Buffalo, MO | 09/22/2026 |  | 1
-1805 | TS White Sheep/Goat - Diamond, MO | 09/17/2026 |  | 1
-1806 | Producers Auction Yards Sheep/Goat - Norwood, MO | 09/26/2026 |  | 1
-1807 | Montgomery County Livestock Auction Sheep/Goat - Montgomery City, MO | 09/10/2026 |  | 1
-1808 | Southeast Livestock Exchange Feeder Cattle Board Sale - Georgia | 11/10/2020 |  | 1
-1809 | Patton Junction Livestock Auction - Patton Junction, MO | 06/28/2021 |  | 1
-1810 | Eastern MO Commission Company - Bowling Green, MO | 09/25/2026 |  | 1
-1811 | MO-Kan Livestock Market - Butler, MO | 09/24/2026 |  | 1
-1812 | Farmington Regional Stockyards - Farmington, MO | 09/23/2026 |  | 1
-1813 | Lolli Brothers Livestock Market - Macon, MO | 09/29/2026 |  | 1
-1814 | Interstate Regional Stockyards - Cuba, MO | 09/29/2026 |  | 1
-1815 | Kingsville Livestock Auction - Kingsville, MO | 09/29/2026 |  | 1
-1816 | F and T Livestock Market Feeder/Replacement Cattle - Palmyra, MO | 09/15/2026 |  | 1
-1817 | South Central Regional Stockyards - Vienna, MO | 09/23/2026 |  | 1
-1818 | Central Missouri Sale Company - Sedalia, MO | 09/27/2021 |  | 1
-1819 | Callaway Livestock Center - Kingdom City, MO | 09/28/2026 |  | 1
-1820 | Douglas County Livestock Auction - Ava, MO | 08/04/2022 |  | 1
-1821 | Missouri Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-1822 | Joplin Regional Stockyards Feeder Cattle Special- Carthage, MO | 06/25/2026 |  | 1
-1823 | Oklahoma National Stockyards Slaughter/Replacement Cattle - Oklahoma City, OK | 09/29/2026 |  | 1
-1824 | Woodward Livestock Auction Slaughter/Replacement Cattle  - Woodward, OK | 09/29/2026 |  | 1
-1825 | OKC West Livestock Auction Slaughter/Replacement Cattle - El Reno, OK | 09/28/2026 |  | 1
-1826 | Pawnee Sale Barn Sheep/Goat – Pawnee, OK | 09/17/2026 |  | 1
-1827 | McAlester Union Livestock Auction - McAlester, OK | 09/22/2026 |  | 1
-1828 | Woodward Livestock Auction Feeder Cattle - Woodward, OK | 09/24/2026 |  | 1
-1829 | Apache Livestock Auction - Apache, OK | 09/24/2026 |  | 1
-1830 | Southern Oklahoma Livestock Auction Feeder Cattle- Ada, OK | 09/23/2026 |  | 1
-1831 | Oklahoma Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-1832 | Tulsa Livestock Auction - Tulsa, OK | 09/28/2026 |  | 1
-1833 | Missouri Weekly Sheep/Goat Auction Summary | 09/21/2026 |  | 6
-1834 | Apache Livestock Auction Replacement Cattle Special - Apache, OK | 04/25/2026 |  | 1
-1835 | Ericson Livestock Market Feeder/Replacement Cattle Special - Ericson, NE | 01/23/2024 |  | 1
-1836 | Valentine Livestock Auction Feeder/Replacement Cattle Special - Valentine, NE | 11/10/2025 |  | 1
-1837 | Missouri (North Central) Weekly Cattle Auction Summary | 09/14/2026 |  | 4
-1838 | Missouri (Northeast) Weekly Cattle Auction Summary | 09/21/2026 |  | 3
-1839 | Ozarks Regional Stockyards Cattle Special - West Plains, MO | 08/14/2026 |  | 1
-1840 | St Joseph Stockyards Sheep/Goat - St Joseph, MO | 05/13/2021 |  | 1
-1841 | Missouri (South Central) Weekly Cattle Summary | 09/21/2026 |  | 3
-1842 | Missouri (Southeast) Weekly Cattle Auction Summary | 09/21/2026 |  | 3
-1843 | Southern Oklahoma Livestock Auction Slaughter/Replacement Cattle - Ada, OK | 09/24/2026 |  | 1
-1844 | Southern Oklahoma Livestock Auction Slaughter/Replacement Cattle Special - Ada, OK | 03/06/2021 |  | 1
-1845 | Missouri (Southwest) Weekly Cattle Auction Summary | 09/21/2026 |  | 3
-1847 | Missouri (West Central) Weekly Cattle Auction Summary | 09/21/2026 |  | 5
-1848 | Huss Livestock Market - Kearney, NE | 09/23/2026 |  | 1
-1849 | Lexington Livestock Market - Lexington, NE | 09/18/2026 |  | 1
-1850 | Ogallala Livestock Auction - Ogallala, NE | 09/17/2026 |  | 1
-1851 | Burwell Livestock Market - Burwell, NE | 09/25/2026 |  | 1
-1852 | Bassett Livestock Auction - Bassett, NE | 09/16/2026 |  | 1
-1853 | Ericson Livestock Market - Ericson, NE | 09/12/2026 |  | 1
-1854 | Imperial Auction Market - Imperial, NE | 09/25/2026 |  | 1
-1855 | Tri-State Livestock Auction - McCook, NE | 10/20/2025 |  | 1
-1856 | Valentine Livestock Auction - Valentine, NE | 09/24/2026 |  | 1
-1857 | Crawford Livestock Market - Crawford, NE | 09/25/2026 |  | 1
-1858 | Gordon Livestock Market - Gordon, NE | 04/14/2026 |  | 1
-1859 | Sheridan Livestock Auction Co. - Rushville, NE | 08/31/2022 |  | 1
-1860 | Nebraska Weekly Livestock Auction Summary | 09/21/2026 |  | 14
-1861 | Buckhannon Stockyards Board Sale - Buckhannon, WV | 09/25/2026 |  | 1
-1863 | Centennial Livestock Auction Stock Show Special - Fort Collins, CO | 01/12/2026 |  | 1
-1864 | Jackson County Regional Livestock Market Board Sale - Ripley, WV | 01/11/2025 |  | 1
-1865 | Northeast Georgia Livestock Board Sales - Athens, GA | 09/23/2026 |  | 1
-1866 | South Branch Valley Livestock Exchange Board Sale - Moorefield, WV | 08/22/2026 |  | 1
-1867 | Sterling Livestock Commission Stock Show Special - Sterling, CO | 01/17/2026 |  | 1
-1868 | West Virginia Weekly Cattle Auction (Board Sale) Summary | 09/11/2023 |  | 0
-1869 | Weston Livestock Marketing Board Sale - Weston, WV | 07/31/2026 |  | 1
-1870 | Four States Livestock Sales - Hagerstown, MD | 11/19/2025 |  | 1
-1871 | Friends Livestock Auction - Accident, MD | 10/26/2024 |  | 1
-1872 | Buckhannon Stockyards Livestock Auction - Buckhannon, WV | 09/23/2026 |  | 1
-1873 | Cattlemen's Livestock Exchange - Caldwell, WV (Discontinued) | 12/15/2023 |  | 1
-1874 | Preston Farmers Market Special Graded Sale - Terra Alta, WV | 04/17/2026 |  | 1
-1876 | Preston Farmers Market - Terra Alta, WV | 09/25/2026 |  | 1
-1877 | Riverton Stockyards - Riverton, WV (Discontinued) | 11/02/2019 |  | 1
-1878 | South Branch Valley Livestock Exchange - Moorefield, WV | 09/26/2026 |  | 1
-1879 | Weston Livestock Marketing - Weston, WV | 09/26/2026 |  | 1
-1880 | Jackson County Regional Livestock Market - Ripley, WV | 09/19/2026 |  | 1
-1882 | South Branch Valley Livestock Exchange Slaughter Cattle Special - Moorefield, WV | 08/09/2023 |  | 1
-1883 | Parkersburg Livestock Market - Mineral Wells, WV | 05/15/2020 |  | 1
-1884 | Buckhannon Stockyards Special Graded Sale - Buckhannon, WV | 09/22/2026 |  | 1
-1886 | South Branch Valley Livestock Exchange Special Graded Sale - Moorefield, WV | 09/19/2026 |  | 1
-1887 | Weston Livestock Marketing Special Graded Sale - Weston, WV | 09/18/2025 |  | 1
-1888 | Pocahontas Producers Co-Op Association Special Graded Sale - Marlington, WV | 09/12/2025 |  | 1
-1889 | Winter Livestock - Dodge City, KS | 09/23/2026 |  | 1
-1890 | Winter Livestock Cattle Special - Pratt, KS (Discontinued) | 11/21/2022 |  | 1
-1891 | Winter Livestock - Pratt, KS | 09/24/2026 |  | 1
-1892 | Farmers and Ranchers Livestock Commission Co. - Salina, KS | 09/24/2026 |  | 1
-1893 | Farmers and Ranchers Livestock Commission Co. Replacement Cattle Special - Salina, KS | 08/18/2026 |  | 1
-1894 | Farmers and Ranchers Livestock Commission Co. Feeder Cattle Special - Salina, KS | 02/03/2026 |  | 1
-1895 | Kansas Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-1896 | Winter Livestock Stock Cow and Pair Special - La Junta, CO | 04/29/2025 |  | 1
-1897 | La Junta Livestock Stock Cow and Pair Special - La Junta, CO | 03/15/2025 |  | 1
-1898 | Centennial Livestock Monthly Dairy Feeder Cattle Sale - Fort Collins, CO | 08/31/2026 |  | 1
-1899 | Centennial Livestock Sheep and Goat Auction - Fort Collins, CO | 09/23/2026 |  | 1
-1900 | Sterling Livestock Commission - Sterling, CO | 02/11/2026 |  | 1
-1901 | Winter Livestock (Tuesday) - La Junta, CO | 09/29/2026 |  | 1
-1902 | Winter Livestock Seasonal Feeder Cattle Sale (Monday) - La Junta, CO | 11/17/2025 |  | 1
-1903 | La Junta Livestock Commision - La Junta, CO | 09/23/2026 |  | 1
-1904 | Centennial Livestock Auction Feeder Cattle Sale (Thursday) - Fort Collins, CO (Discontinued) | 03/06/2025 |  | 1
-1905 | Centennial Livestock Auction (Friday) - Fort Collins, CO (Discontinued) | 10/22/2020 |  | 1
-1906 | Livestock Exchange Feeder Cattle Auction (Friday) - Brush, CO | 01/16/2026 |  | 1
-1907 | Colorado Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-1908 | New Holland Livestock Cattle Auction (Monday) - New Holland, PA | 09/28/2026 |  | 1
-1909 | New Holland Livestock Cattle Auction (Thursday) - New Holland, PA | 09/24/2026 |  | 1
-1910 | New Holland Dairy Auction - New Holland, PA | 01/10/2024 |  | 1
-1911 | New Holland Feeder Cattle Special (Seasonal) - New Holland, PA | 05/05/2023 |  | 1
-1912 | New Holland Slaughter Hog Auction - New Holland, PA | 03/30/2026 |  | 1
-1913 | New Holland Sheep and Goat Auction - New Holland, PA | 09/28/2026 |  | 1
-1914 | Addison County Commission Sales - East Middlebury, VT (Discontinued) | 11/16/2020 |  | 1
-1915 | Vintage Livestock Auction (Tuesday) - Paradise, PA (Discontinued) | 02/25/2025 |  | 1
-1916 | Vintage Livestock Auction (Monday) - Paradise, PA | 12/30/2019 |  | 1
-1917 | Greencastle Livestock Auction (Monday) - Greencastle, PA | 09/28/2026 |  | 1
-1918 | Middleburg Livestock Auction - Middleburg, PA | 09/22/2026 |  | 1
-1919 | Pennsylvania Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-1920 | Greencastle Livestock Auction (Thursday) - Greencastle, PA | 01/29/2026 |  | 1
-1921 | Dewart Livestock Auction - Dewart, PA (Discontinued) | 02/25/2025 |  | 1
-1922 | Greencastle Monthly Feeder Cattle Sale - Greencastle, PA | 05/02/2026 |  | 1
-1923 | Middleburg Feeder Cattle Sale - Middleburg, PA | 09/19/2025 |  | 1
-1924 | Vintage Feeder Cattle Sale - Paradise, PA | 09/12/2025 |  | 1
-1925 | Pennsylvania Livestock Auction - Waynesburg, PA | 09/19/2024 |  | 1
-1926 | Carlisle Graded Feeder Pig Special - Carlisle, PA (Discontinued) | 12/14/2020 |  | 1
-1927 | Georgia Weekly Video Board Sale Summary | 09/21/2026 |  | 0
-1928 | Georgia Daily Livestock Auction Summary | 09/28/2026 |  | 0
-1929 | Jackson Regional Stockyard Dairy Sale - Jackson, GA | 06/05/2024 |  | 1
-1930 | Eastanollee Livestock - Eastanollee, GA | 09/28/2026 |  | 1
-1931 | Swainsboro Stockyard - Swainsboro, GA | 02/22/2021 |  | 1
-1932 | Upson County Livestock - Thomaston, GA | 09/28/2026 |  | 1
-1933 | Georgia Weekly Livestock Auction Summary | 09/21/2026 |  | 0
-1934 | Southern Livestock - Oak Park, GA | 09/29/2026 |  | 1
-1935 | Franklin County Livestock - Carnesville, GA | 09/22/2026 |  | 1
-1936 | Lanier Farmers Livestock - Gainesville, GA (Discontinued) | 01/30/2024 |  | 1
-1937 | Pulaski County Stockyard - Hawkinsville, GA | 09/29/2026 |  | 1
-1938 | Thomasville Stockyard - Thomasville, GA | 09/29/2026 |  | 1
-1939 | Turner County Stockyard - Ashburn, GA | 09/23/2026 |  | 1
-1940 | Northeast Georgia Livestock - Athens, GA | 09/23/2026 |  | 1
-1941 | Seminole Livestock Exchange - Donalsonville, GA | 09/28/2026 |  | 1
-1942 | Jackson Regional Stockyard - Jackson, GA | 09/23/2026 |  | 1
-1943 | Moultrie Livestock - Moultrie, GA | 04/02/2025 |  | 1
-1944 | Wilkes County Stockyard - Washington, GA | 09/29/2026 |  | 1
-1945 | Sumter County Stockyard - Americus, GA (Discontinued) | 11/04/2024 |  | 1
-1946 | Calhoun Stockyard - Calhoun, GA | 09/22/2026 |  | 1
-1947 | South Central Livestock - Fitzgerald, GA | 09/28/2026 |  | 1
-1948 | Duvall Livestock - Greensboro, GA | 09/28/2026 |  | 1
-1949 | Carroll County Livestock - Carrollton, GA | 09/28/2026 |  | 1
-1950 | Mosely Livestock Feeder Cattle Board Sale - Blakely, GA | 09/29/2026 |  | 1
-1952 | Amarillo Livestock Auction - Amarillo, TX (Discontinued) | 09/27/2021 |  | 1
-1953 | Cattlemen's Livestock Auction - Dalhart, TX | 09/24/2026 |  | 1
-1954 | Tulia Livestock Auction - Tulia, TX | 09/24/2026 |  | 1
-1955 | Texas Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-1956 | Low Country Livestock Exchange - Darlington, SC | 09/29/2026 |  | 1
-1958 | Upstate Livestock Exchange - Williamston, SC | 09/28/2026 |  | 1
-1959 | Laurens Livestock Exchange - Laurens, SC | 09/23/2026 |  | 1
-1960 | Chester Livestock Exchange - Chester, SC (Discontinued) | 06/28/2022 |  | 1
-1961 | Saluda Stockyards - Saluda, SC | 09/28/2026 |  | 1
-1962 | Cullman Stockyard Feeder Cattle Board Sale - Cullman, AL | 06/18/2024 |  | 1
-1963 | South Carolina Weekly Livestock Auction Summary | 09/21/2026 |  | 0
-1964 | Orangeburg Stockyards - Orangeburg, SC | 09/23/2026 |  | 1
-1965 | United Producers Inc. Livestock Auction - Vincennes, IN | 06/05/2025 |  | 1
-1966 | Indianapolis Stockyards - Rockville, IN | 06/05/2025 |  | 1
-1967 | White River Valley Feeder Cattle  Association Auction- Worthington, IN | 06/05/2025 |  | 1
-1968 | Springville Feeder Cattle Auction - Springville, IN | 09/04/2026 |  | 1
-1969 | Stoney Pike Livestock Auction - Logansport, IN | 06/05/2025 |  | 1
-1970 | Shipshewana Livestock Auction - Shipshewana, IN | 09/23/2026 |  | 1
-1971 | Boswell Livestock Auction - Boswell, IN | 02/11/2020 |  | 1
-1972 | Seymour Livestock Auction - De Kalb, NY (Discontinued) | 06/28/2021 |  | 1
-1973 | Empire Livestock Feeder and Replacement Cattle Sale - Bath, NY | 09/12/2026 |  | 1
-1974 | Canandaigua Stockyards Livestock Auction - Canandaigua, NY | 09/23/2026 |  | 1
-1975 | Cambridge Livestock Auction - Cambridge, NY | 02/11/2025 |  | 1
-1976 | Indiana Weekly Auction Summary | 09/21/2026 |  | 0
-1977 | Empire Livestock Auction - Cherry Creek, NY | 11/25/2023 |  | 1
-1978 | Maplehurst Livestock Auction - Hinsdale. NY | 06/28/2021 |  | 1
-1979 | Arab Livestock Market Feeder Cattle Board Sale - Arab, AL | 09/29/2026 |  | 1
-1980 | Canandaigua Stockyards Feeder and Replacement Cattle Sale - Canandaigua, NY | 09/19/2026 |  | 1
-1981 | Empire Feeder and Replacement Cattle Special - Cherry Creek, NY | 04/27/2024 |  | 1
-1982 | Maplehurst Dairy Replacement Sale - Hinsdale, NY | 06/28/2021 |  | 1
-1983 | Empire Livestock Feeder and Replacement Video/Board Sale - Bath, NY | 09/12/2026 |  | 1
-1984 | Frisco City Stockyard - Frisco City, AL | 09/23/2026 |  | 1
-1985 | Opp Livestock - Opp, AL | 09/29/2026 |  | 1
-1986 | Coffee County Stockyards - New Brockton, AL | 09/28/2026 |  | 1
-1987 | Valley Livestock - Moulton, AL | 09/23/2026 |  | 1
-1988 | Mid State Stockyards LLP - Letohatchee, AL | 09/29/2026 |  | 1
-1989 | Clay County Livestock Auction - Lineville, AL | 09/29/2026 |  | 1
-1990 | Alabama Association Board Sales (Seasonal) | 08/20/2026 |  | 1
-1991 | Arab Livestock Market - Arab, AL | 09/29/2026 |  | 1
-1992 | Alabama Daily Cattle Auction Summary | 09/28/2026 |  | 0
-1993 | Fort Payne Livestock - Ft. Payne, AL (Discontinued) | 08/02/2022 |  | 1
-1994 | Montgomery Stockyards Cattle Auction - Montgomery, AL (Discontinued) | 08/22/2022 |  | 1
-1995 | Alabama Livestock Auction - Uniontown, AL | 09/29/2026 |  | 1
-1996 | Dothan Livestock Co. - Dothan, AL | 09/28/2026 |  | 1
-1997 | Tennessee Valley Livestock - Florence, AL | 09/28/2026 |  | 1
-1998 | Sand Mountain Stockyards Inc. - Kilpatrick, AL | 09/23/2026 |  | 1
-1999 | Roanoke Stockyards - Roanoke, AL | 09/23/2026 |  | 1
-2000 | South Alabama Stockyards - Brundidge, AL | 09/23/2026 |  | 1
-2001 | Cullman Stockyard Cattle Auction - Cullman, AL | 09/29/2026 |  | 1
-2002 | Livingston Stockyard - Livingston, AL (Discontinued) | 04/17/2024 |  | 1
-2003 | Ashville Stockyard - Ashville, AL | 09/28/2026 |  | 1
-2004 | Escambia County Coop - Brewton, AL (Discontinued) | 05/23/2020 |  | 1
-2005 | Alabama Weekly Goat Auction Summary | 08/03/2026 |  | 0
-2006 | Alabama Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-2007 | Northwest Alabama Livestock Cattle Sale - Russellville, AL | 09/28/2026 |  | 1
-2008 | Northwest Alabama Livestock Sheep and Goat Sale - Russellville, AL | 08/08/2026 |  | 1
-2009 | Ft. Pierre Calf Auction (Wed-Seasonal) - Ft. Pierre, SD | 05/22/2026 |  | 1
-2010 | Mobridge Calf Auction (Tue-Seasonal) - Mobridge, SD | 10/28/2025 |  | 1
-2011 | New York Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-2012 | St. Onge Calf Auction (Wed-Seasonal) - St. Onge, SD | 11/05/2025 |  | 1
-2013 | Producers Livestock Special Feeder Calf Auction - San Angelo, TX | 10/12/2020 |  | 1
-2014 | Producers Livestock Sheep and Goat Auction - San Angelo, TX | 09/29/2026 |  | 1
-2015 | Producers Livestock Cattle Auction - San Angelo, TX | 09/24/2026 |  | 1
-2016 | Sioux Falls Regional Livestock Auction - Worthing, SD | 09/23/2026 |  | 1
-2017 | St. Onge-Newell Sheep Yards Auction - Newell, SD | 09/24/2026 |  | 1
-2018 | Central Plains Stockyards Livestock Auction - Humeston, IA | 09/23/2026 |  | 1
-2019 | St. Onge Livestock Auction - St. Onge, SD | 09/25/2026 |  | 1
-2020 | Hub City Livestock Auction - Aberdeen, SD | 09/23/2026 |  | 1
-2021 | Ft. Pierre Livestock Auction (Friday) - Ft. Pierre, SD | 09/25/2026 |  | 1
-2022 | Mitchell Livestock Auction - Mitchell, SD | 09/24/2026 |  | 1
-2023 | Philip Livestock Auction - Philip, SD | 09/29/2026 |  | 1
-2024 | Herreid Livestock Market - Herreid, SD | 09/25/2026 |  | 1
-2025 | Mobridge Livestock Exchange (Thursday) - Mobridge, SD | 09/24/2026 |  | 1
-2026 | Sioux Falls Regional Cattle Auction - Worthing, SD | 09/28/2026 |  | 1
-2027 | South Dakota Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-2028 | Fort Payne Livestock Feeder Cattle Board Sale - Ft. Payne, AL (Discontinued) | 08/02/2022 |  | 1
-2029 | Mid State Stockyards Feeder Cattle Board Sale - Letohatchee, AL | 09/29/2026 |  | 1
-2030 | Montgomery Stockyards Feeder Cattle Board Sale - Montgomery, AL (Discontinued) | 08/22/2022 |  | 1
-2031 | Opp Livestock Feeder Cattle Board Sale - Opp, AL | 10/10/2023 |  | 1
-2032 | Roanoke Stockyards Feeder Cattle Board Sale - Roanoke, AL | 02/25/2026 |  | 1
-2033 | Sand Mountain Stockyards Inc. Feeder Cattle Board Sale - Kilpatrick, AL | 03/18/2026 |  | 1
-2034 | Valley Livestock Feeder Cattle Board Sale - Moulton, AL | 08/12/2026 |  | 1
-2036 | Cedar Livestock Auction - Cedar, UT | 09/24/2026 |  | 1
-2037 | Producers Livestock Auction - Salina, UT | 09/29/2026 |  | 1
-2038 | Anderson Livestock Auction - Willard, UT | 02/01/2021 |  | 1
-2039 | Utah Weekly Livestock Auction Summary | 09/21/2026 |  | 0
-2040 | Cullman Stockyard Goat Auction - Cullman, AL | 07/29/2025 |  | 1
-2041 | Illinois Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-2042 | Fairview Sale Barn Replacement Cattle Special - Fairview, IL | 11/02/2021 |  | 1
-2043 | Greenville Livestock Cattle Special - Greenville, IL | 09/12/2026 |  | 1
-2044 | Walnut Auction Sales Feeder Cattle Special - Walnut, IL | 03/31/2026 |  | 1
-2045 | Reel Livestock Center Cattle Special - Congerville, IL | 10/15/2025 |  | 1
-2046 | Greenville Livestock Cattle Auction - Greenville, IL | 09/23/2026 |  | 1
-2047 | Walnut Auction Sales Slaughter Cattle - Walnut, IL | 09/23/2026 |  | 1
-2048 | Fairview Sale Barn Cattle Special - Fairview, IL | 09/17/2026 |  | 1
-2049 | Fairview Sale Barn Slaughter Cattle - Fairview, IL | 09/29/2026 |  | 1
-2050 | Green Forest Stockyards - Green Forest, AR | 09/23/2026 |  | 1
-2051 | Benton County Sale Barn - Siloam Springs, AR | 09/24/2026 |  | 1
-2052 | Arkansas Cattle Auction LLC - Searcy, AR | 09/29/2026 |  | 1
-2053 | I-40 Livestock - Ozark, AR | 09/24/2026 |  | 1
-2054 | Ouachita Livestock Auction - Ola, AR | 07/26/2022 |  | 1
-2055 | Cleburne County Livestock Auction - Heber Springs, AR | 09/28/2026 |  | 1
-2056 | Arkansas Weekly Livestock Auction Summary | 09/21/2026 |  | 0
-2057 | County Line Sale - Ratcliff, AR | 09/23/2026 |  | 1
-2058 | Hope Livestock Auction - Hope, AR | 09/24/2026 |  | 1
-2059 | Ash Flat Livestock Auction - Ash Flat, AR | 09/25/2026 |  | 1
-2060 | Athens Regional Stockyard - Athens, TN | 09/29/2026 |  | 1
-2061 | Crossville Stockyard - Crossville, TN | 09/26/2026 |  | 1
-2062 | Smith County Commission Co. - Carthage, TN | 09/26/2026 |  | 1
-2063 | Tennessee Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-2064 | Dickson Regional Livestock Center - Dickson, TN | 09/28/2026 |  | 1
-2065 | Dickson Regional Livestock West - Huntingdon, TN | 09/29/2026 |  | 1
-2066 | Knoxville Livestock Center - Knoxville, TN | 09/22/2026 |  | 1
-2067 | East Tennessee Livestock Center - Sweetwater, TN | 09/23/2026 |  | 1
-2068 | Hardin County Stockyard - Savannah, TN | 09/23/2026 |  | 1
-2069 | Mid-South Livestock Regional Center LLC - Unionville, TN | 09/28/2026 |  | 1
-2070 | Volunteer Stockyards - Greeneville, TN | 09/26/2026 |  | 1
-2071 | Browning Livestock Market - Lafayette, TN | 09/16/2026 |  | 1
-2072 | East Tennessee Livestock Center Graded Holstein Steer Sale - Sweetwater, TN | 09/11/2026 |  | 1
-2073 | East Tennessee Livestock Center Graded Feeder Cattle Sale - Sweetwater, TN | 09/18/2026 |  | 1
-2075 | East Tennessee Cattle Alliance Preconditioned Graded Feeder Sale - Greeneville, TN | 09/10/2026 |  | 1
-2077 | Hardin County Stockyard Graded Feeder Cattle Sale - Savannah, TN | 08/10/2026 |  | 1
-2078 | TLP Beef Alliance Sale - Columbia, TN | 08/19/2026 |  | 1
-2079 | Warren Co. Livestock Graded Sale - McMinnville, TN | 09/16/2026 |  | 1
-2080 | Pulaski Stockyard - Pulaski, TN | 09/29/2026 |  | 1
-2081 | Columbia Graded Sheep and Goat Sale - Columbia, TN | 09/28/2026 |  | 1
-2082 | Tennessee Daily Cattle Auction Summary | 09/28/2026 |  | 0
-2083 | North Carolina Graded Cattle Auction | 09/24/2026 |  | 1
-2084 | Powell Livestock Sheep and Goat Auction - Smithfield, NC | 09/16/2026 |  | 1
-2085 | Union County Livestock Graded Sheep and Goat Auction - Monroe, NC (Discontinued) | 11/01/2023 |  | 1
-2086 | Cleveland County Agriculture & Livestock Exchange Sheep and Goat Auction - Shelby, NC | 09/26/2026 |  | 1
-2087 | Carolina Stockyards Livestock Auction (Friday) - Siler City, NC | 09/25/2026 |  | 1
-2088 | Harward Brothers Livestock Market - Turnersburg, NC | 09/28/2026 |  | 1
-2089 | Wilkes Livestock Exchange - North Wilkesboro, NC | 09/23/2026 |  | 1
-2090 | WNC Regional Livestock Center - Canton, NC | 09/28/2026 |  | 1
-2091 | North Carolina Weekly Livestock Auction Summary | 09/21/2026 |  | 0
-2092 | Cleveland County Agriculture & Livestock Exchange - Shelby, NC | 09/22/2026 |  | 1
-2093 | Stanly County Livestock Market - Norwood, NC | 09/23/2026 |  | 1
-2094 | Powell Livestock Market - Smithfield, NC | 09/24/2026 |  | 1
-2095 | Carolina Stockyards Livestock Auction (Monday) - Siler City, NC | 09/28/2026 |  | 1
-2096 | West Fargo Feeder Cattle Auction - West Fargo, ND | 10/28/2020 |  | 0
-2097 | Kist Livestock Auction - Mandan, ND | 09/23/2026 |  | 1
-2098 | Napoleon Livestock Auction - Napoleon, ND | 09/17/2026 |  | 1
-2099 | Stockmen's Livestock Exchange - Dickinson, ND | 09/24/2026 |  | 1
-2100 | North Dakota Weekly Cattle Auction Summary | 05/18/2026 |  | 0
-2101 | Torrington Livestock Auction - Torrington, WY | 09/25/2026 |  | 1
-2102 | Winter Livestock Auction (Seasonal) - Riverton, WY (Discontinued) | 04/28/2026 |  | 1
-2103 | Torrington Livestock Feeder Cattle Auction - Torrington, WY | 09/23/2026 |  | 1
-2104 | Winter Livestock Auction - Riverton, WY | 09/29/2026 |  | 1
-2105 | Torrington Livestock Auction Special - Torrington, WY | 09/28/2026 |  | 1
-2106 | Wyoming Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-2110 | Eastanollee Goat Sale - Eastanollee, GA | 09/19/2026 |  | 1
-2111 | Mississippi Daily Auction Summary | 09/28/2026 |  | 0
-2112 | Meridian Stockyard - Meridian, MS | 09/28/2026 |  | 1
-2113 | Southeast Mississippi Livestock - Hattiesburg, MS | 09/28/2026 |  | 1
-2114 | Tadlock Stockyards - Forest, MS | 09/28/2026 |  | 1
-2115 | Mississippi Weekly Livestock Auction Summary | 09/21/2026 |  | 0
-2116 | Philadelphia Stockyard -Philadelphia, MS | 09/29/2026 |  | 1
-2117 | Brookhaven Stockyard - Brookhaven, MS | 09/29/2026 |  | 1
-2118 | Tylertown Stockyard - Tylertown, MS | 09/22/2026 |  | 1
-2119 | Winona Stockyard - Winona, MS | 09/29/2026 |  | 1
-2120 | Lucedale Stockyard - Lucedale, MS | 09/23/2026 |  | 1
-2121 | Senatobia Stockyard - Senatobia, MS (Discontinued) | 04/18/2023 |  | 0
-2122 | Macon Stockyard - Macon, MS | 09/28/2026 |  | 1
-2123 | Peoples Livestock Auction - Houston, MS | 09/28/2026 |  | 1
-2124 | Grenada Stockyard - Grenada, MS | 09/28/2026 |  | 1
-2125 | Cattlemens Livestock - West Point, MS | 09/28/2026 |  | 1
-2126 | Lipscomb Brother's Livestock Market, Inc.- Como, MS | 09/23/2026 |  | 1
-2127 | Blue Grass Stockyards (Monday) - Lexington, KY | 09/28/2026 |  | 1
-2128 | Blue Grass Stockyards (Tuesday) - Lexington, KY | 09/29/2026 |  | 1
-2129 | Blue Grass Stockyards Lexington - Replacement Livestock Sale - Lexington, KY | 09/23/2026 |  | 1
-2130 | Blue Grass Stockyards Lexington - Special Graded Feeder Cattle Sale - Lexington, KY | 07/27/2026 |  | 1
-2131 | Toppenish Dairy Replacement Auction - Toppenish, WA (Monthly) | 03/27/2026 |  | 1
-2132 | Toppenish Livestock Auction - Toppenish, WA | 09/24/2026 |  | 1
-2133 | Bloomfield Livestock IMBIO Feeder Cattle Special - Bloomfield, IA | 12/29/2025 |  | 1
-2134 | Culpeper Ag Enterprise Feeder Cattle Board Sale - Culpeper, VA | 11/03/2023 |  | 1
-2135 | Dunlap Livestock Feeder Cattle Special - Dunlap, IA | 06/07/2025 |  | 1
-2136 | Farmers Livestock Exchange Feeder Cattle Board Sale - Winchester, VA | 07/13/2026 |  | 1
-2137 | Fauquier Livestock Exchange Feeder Cattle Board Sale - Marshall, VA | 06/12/2026 |  | 1
-2139 | Narrows Feeder Cattle Board Sale - Narrows, VA | 04/25/2020 |  | 1
-2140 | Pulaski Livestock Feeder Cattle Board Sale - Dublin, VA | 08/12/2026 |  | 1
-2142 | Rockingham Feeder Cattle Board Sale - Harrisonburg, VA | 09/10/2026 |  | 1
-2144 | Tama Livestock Feeder Cattle Special - Tama, IA | 03/06/2026 |  | 1
-2145 | Tri-State Feeder Cattle Board Sale - Abingdon, VA | 09/22/2026 |  | 1
-2146 | Virginia Cattle Company Feeder Cattle Board Sale - Radiant, VA | 09/29/2026 |  | 1
-2147 | Virginia Livestock LLC Feeder Cattle Board Sale - Front Royal, VA | 08/15/2023 |  | 1
-2148 | Virginia Weekly Feeder Cattle Board Sale Summary | 09/21/2026 |  | 17
-2149 | Appalachian Regional Stockyard, LLC. Feeder Cattle Board Sale - Wytheville, VA | 09/21/2026 |  | 1
-2150 | Denison Livestock Feeder Cattle - Denison, IA | 09/24/2026 |  | 1
-2151 | Knoxville Regional Feeder Cattle - Knoxville, IA | 09/15/2026 |  | 1
-2152 | Keoco Feeder Cattle Auction - Sigourney, IA | 09/21/2026 |  | 1
-2153 | Kalona Sheep and Goat Auction - Kalona, IA | 09/23/2026 |  | 1
-2154 | Sheldon Livestock Slaughter Cattle - Sheldon, IA | 09/17/2026 |  | 1
-2155 | Dunlap Livestock Feeder Cattle - Dunlap, IA | 09/25/2026 |  | 1
-2156 | Tama Livestock Feeder Cattle - Tama, IA | 09/14/2026 |  | 1
-2157 | Sheldon Livestock Feeder Cattle Special - Sheldon, IA | 09/17/2026 |  | 1
-2158 | Lamoni Livestock Feeder Cattle - Lamoni, IA | 09/24/2026 |  | 1
-2159 | Russell Livestock Feeder Cattle - Russell, IA | 09/28/2026 |  | 1
-2160 | Creston Livestock Feeder Cattle - Creston, IA | 08/26/2026 |  | 1
-2161 | Tri-State Feeder Cattle Auction - Sioux Center, IA | 10/15/2021 |  | 1
-2162 | Bloomfield Livestock Feeder Cattle - Bloomfield, IA | 09/23/2026 |  | 1
-2163 | Appanoose County Livestock Feeder Cattle - Centerville, IA | 02/19/2026 |  | 1
-2164 | Dunlap Livestock Slaughter Cattle - Dunlap, IA | 09/29/2026 |  | 1
-2165 | Tama Livestock Slaughter Cattle - Tama, IA | 09/23/2026 |  | 1
-2166 | Clarinda Livestock Feeder Cattle - Clarinda, IA | 09/24/2026 |  | 1
-2167 | Iowa Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-2168 | Roanoke-Hollins Graded Feeder Cattle Sale - Roanoke, VA | 09/28/2026 |  | 1
-2169 | Shenandoah Valley Livestock Graded Feeder Cattle Sale - Harrisonburg, VA | 09/26/2026 |  | 1
-2170 | Virginia Feeder Cattle Tel-O-Auction | 09/28/2026 |  | 1
-2171 | Virginia Livestock LLC Graded Slaughter Cattle Sale - Front Royal, VA | 09/10/2026 |  | 1
-2172 | Staunton Livestock Auction Graded Slaughter Cattle Sale - Staunton, VA | 09/15/2026 |  | 1
-2173 | Fauquier Livestock Exchange Graded Feeder Cattle Sale - Marshall, VA | 09/11/2026 |  | 1
-2174 | Culpeper Ag Enterprise Graded Feeder Cattle Sale - Culpeper, VA | 09/04/2026 |  | 1
-2175 | Farmers Livestock Exchange Graded Feeder Cattle Sale - Winchester, VA | 09/28/2026 |  | 1
-2176 | Virginia Livestock LLC Graded Feeder Cattle Sale - Front Royal, VA | 09/17/2026 |  | 1
-2177 | Rockingham Graded Feeder Cattle Sale - Harrisonburg, VA | 09/10/2026 |  | 1
-2178 | Staunton Livestock Auction Graded Feeder Cattle Sale - Staunton, VA | 05/12/2020 |  | 1
-2180 | Pulaski Livestock Graded Feeder Cattle Sale - Dublin, VA | 09/23/2026 |  | 1
-2181 | Appalachian Regional Stockyard, LLC. Graded Feeder Cattle Sale - Wytheville, VA | 08/13/2026 |  | 1
-2182 | Virginia Cattle Company Graded Feeder Cattle Sale - Radiant, VA | 09/29/2026 |  | 1
-2183 | Southside Livestock Graded Feeder Cattle Sale - Blackstone, VA | 09/23/2026 |  | 1
-2184 | Lynchburg Graded Feeder Cattle Sale - Rustburg, VA | 09/28/2026 |  | 1
-2185 | Narrows Graded Feeder Cattle Sale - Narrows, VA | 05/30/2020 |  | 1
-2186 | Springlake Graded Feeder Cattle Sale - Moneta, VA | 09/26/2026 |  | 1
-2187 | Virginia Weekly Cattle Auction Summary | 09/21/2026 |  | 0
-2188 | United Producers Inc. - Bowling Green, KY | 09/29/2026 |  | 1
-2189 | Blue Grass Stockyards - Albany, KY | 09/23/2026 |  | 1
-2190 | Blue Grass South Stockyards (Monday) - Stanford, KY | 09/28/2026 |  | 1
-2191 | Blue Grass South Stockyards (Thursday) - Stanford, KY | 09/24/2026 |  | 1
-2192 | Blue Grass Stockyards (Saturday) - Campbellsville, KY | 09/26/2026 |  | 1
-2193 | Kentucky Weekly Livestock Auction Summary | 09/21/2026 |  | 0
-2194 | Lake Cumberland Livestock - Somerset, KY | 09/26/2026 |  | 1
-2195 | Farmers Stockyards - Flemingsburg, KY | 09/29/2026 |  | 1
-2196 | Livingston Co. Livestock Market - Ledbetter, KY | 09/22/2026 |  | 1
-2197 | Blue Grass Stockyards - Maysville, KY | 06/27/2023 |  | 1
-2198 | Farmers Regional Livestock Market - Glasgow, KY | 09/28/2026 |  | 1
-2199 | Farmers Regional Livestock Auction of Glasgow Dairy Auction - Smiths Grove, KY | 09/29/2026 |  | 1
-2200 | Christian Co. Livestock - Hopkinsville, KY | 09/23/2026 |  | 1
-2201 | Kentuckiana Livestock Market - Owensboro, KY | 09/28/2026 |  | 1
-2202 | Bluegrass Stockyard - Mt. Sterling, KY | 09/23/2026 |  | 1
-2203 | United Producers, Inc. - Owenton, KY | 09/23/2026 |  | 1
-2204 | Paris Stockyards - Paris, KY (Thursday) | 09/24/2026 |  | 1
-2205 | United Producers Inc. - Special Feeder Cattle Sale - Harned, KY (Discontinued) | 01/05/2023 |  | 1
-2206 | KY-TN Livestock Market - Guthrie, KY | 09/24/2026 |  | 1
-2207 | United Producers Inc. - Harned, KY | 09/28/2026 |  | 1
-2208 | Russell Co. Stockyard - Russell Springs, KY | 09/23/2026 |  | 1
-2209 | Washington Co. Cattle Sale - Springfield, KY | 09/29/2026 |  | 1
-2210 | Blue Grass Stockyards - Richmond, KY | 09/25/2026 |  | 1
-2211 | Mid-Kentucky Livestock Market - Upton, KY | 09/29/2026 |  | 1
-2212 | Blue Grass Stockyards (Wednesday) - Campbellsville, KY | 09/23/2026 |  | 1
-2213 | Cattleman's Livestock - Bowling Green, KY | 09/28/2026 |  | 1
-2214 | Wilson Livestock Market - London, KY | 10/26/2021 |  | 1
-2215 | United Producers Inc. Graded Sheep/Goat Sale - Bowling Green, KY | 09/29/2026 |  | 1
-2216 | West Kentucky Auction Barn Graded Sheep/Goat Sale - Mayfield, KY | 09/21/2026 |  | 1
-2217 | Blue Grass Stockyards of Richmond Graded Sheep/Goat Sale - Richmond, KY | 09/14/2026 |  | 1
-2218 | Paris Stockyards Graded Sheep/Goat Sale - Paris, KY | 09/15/2026 |  | 1
-2219 | Washington Co. Graded Sheep/Goat Sale  (Monthly 3rd Sat) - Springfield, KY | 09/19/2026 |  | 1
-2220 | Blue Grass Stockyards - Graded Feeder Cattle Sale - Stanford, KY | 05/14/2026 |  | 1
-2221 | Livingston Co. Livestock Market - Monthly Feeder Cattle Sale - Ledbetter, KY | 09/18/2026 |  | 1
-2222 | Kentuckiana Livestock Market - Special Graded Feeder Cattle Sale - Owensboro, KY | 08/13/2026 |  | 1
-2223 | Paris Stockyards - Special Feeder Cattle Sale - Paris, KY | 11/07/2019 |  | 1
-2224 | KY-TN Livestock Market - Special Graded Feeder Cattle Sale- Guthrie, KY | 08/11/2026 |  | 1
-2225 | Washington Co. Livestock - Special Feeder Cattle Sale - Springfield, KY | 06/08/2020 |  | 1
-2227 | Blue Grass Stockyards - Special Graded Feeder Cattle Sale - Richmond, KY | 12/08/2020 |  | 1
-2228 | East Tennessee Livestock Center Video/Board Sale - Sweetwater, TN | 08/12/2026 |  | 1
-2229 | Farmers Regional Livestock Market - Monthly Cattle Sale - Glasgow, KY (2nd/4th Thur) | 09/24/2026 |  | 1
-2230 | Toppenish Special Feeder Cattle Auction - Toppenish, WA | 09/29/2026 |  | 1
-2233 | Pennsylvania Livestock Auction Graded Feeder Cattle Special - Waynesburg, PA (Discontinued) | 10/04/2022 |  | 1
-2234 | 84 Livestock Auction - Eighty Four, PA | 04/07/2025 |  | 1
-2236 | New Wilmington Livestock Auction Special Feeder Cattle Sale – New Wilmington, PA | 03/25/2024 |  | 1
-2237 | Indiana Livestock Auction Special Feeder Cattle Sale – Homer City, PA (Discontinued) | 10/10/2021 |  | 1
-2238 | Springlake Feeder Cattle Board Sale - Moneta, VA | 09/13/2024 |  | 1
-2240 | West Virginia Weekly Auction Summary | 09/08/2025 |  | 0
-2241 | Volunteer Stockyards Feeder Cattle Video Board Sale - Greeneville, TN (Discontinued) | 12/07/2023 |  | 1
-2242 | Valley Video Hay Auction (Discontinued) | 01/27/2022 |  | 1
-2243 | Rock Valley Hay Auction (Mon) - Rock Valley, IA | 09/10/2026 |  | 1
-2244 | Rock Valley Hay Auction (Thur) - Rock Valley, IA | 09/24/2026 |  | 1
-2245 | Dakota Hay Auction - Corsica, SD (Monday) | 09/21/2026 |  | 1
-2246 | Pipestone Hay and Straw Auction - Pipestone, MN | 09/29/2026 |  | 1
-2247 | Alabama Livestock Auction Board Sale - Uniontown, AL | 09/08/2026 |  | 1
-2248 | West Point Livestock Feeder Cattle - West Point, NE | 09/14/2026 |  | 1
-2252 | Northeast Georgia Livestock Special Feeder Cattle Sale - Athens, GA | 09/10/2026 |  | 1
-2253 | Calhoun Stockyard Feeder Cattle Board Sale - Calhoun, GA | 10/07/2021 |  | 1
-2255 | Crawford Livestock Market Seasonal Slaughter Cattle - Crawford, NE (Discontinued) | 01/09/2020 |  | 1
-2256 | Frisco City Stockyard Feeder Cattle Board Sale - Frisco City, AL | 04/27/2022 |  | 1
-2257 | Public Auction Yards Replacement Cattle Special - Billings, MT (Seasonal) | 04/28/2026 |  | 1
-2258 | Carroll County Livestock Board Sale - Carrollton, GA | 10/07/2024 |  | 1
-2259 | South Alabama Stockyards Feeder Cattle Board Sale - Brundidge, AL | 05/18/2022 |  | 1
-2262 | Dothan Livestock Co. Cattle Special - Dothan, AL | 10/07/2022 |  | 1
-2263 | Washington Co. Livestock - Special Graded Feeder Cattle Sale - Springfield, KY (Discontinued) | 06/25/2020 |  | 1
-2266 | Davis Livestock Special Feeder Cattle Sale (Discontinued) | 10/30/2021 |  | 1
-2271 | Quarterly Tobacco Stocks | 01/01/2026 |  | 0
-2277 | Atlanta Terminal Market Fruit Prices (AJ_FV010) | 09/29/2026 |  | 1
-2278 | Atlanta Terminal Market Vegetables Prices (AJ_FV020) | 09/29/2026 |  | 1
-2279 | Atlanta Terminal Market Onions and Potatoes Prices (AJ_FV030) | 09/29/2026 |  | 1
-2280 | Atlanta Terminal Market Nuts Prices (AJ_FV040) | 09/29/2026 |  | 1
-2281 | Baltimore Terminal Market Fruit Prices (BP_FV010) | 09/29/2026 |  | 1
-2282 | Baltimore Terminal Market Vegetables Prices (BP_FV020) | 09/29/2026 |  | 1
-2283 | Baltimore Terminal Market Onions and Potatoes Prices (BP_FV030) | 09/29/2026 |  | 1
-2284 | Baltimore Terminal Market Nuts Prices (BP_FV040) | 09/29/2026 |  | 1
-2285 | Boston Terminal Market Fruit Prices (BH_FV010) | 09/29/2026 |  | 1
-2286 | Boston Terminal Market Vegetables Prices (BH_FV020) | 09/29/2026 |  | 1
-2287 | Boston Terminal Market Onions and Potatoes Prices (BH_FV030) | 09/29/2026 |  | 1
-2288 | Boston Terminal Market Nuts Prices (BH_FV040) | 09/29/2026 |  | 1
-2289 | Boston Terminal Market Ornamentals Prices (BH_FV201) | 09/29/2026 |  | 1
-2290 | Chicago Terminal Market Fruit Prices (HX_FV010) | 09/29/2026 |  | 1
-2291 | Chicago Terminal Market Vegetables Prices (HX_FV020) | 09/29/2026 |  | 1
-2292 | Chicago Terminal Market Onions and Potatoes Prices (HX_FV030) | 09/29/2026 |  | 1
-2293 | Chicago Terminal Market Nuts Prices (HX_FV040) | 09/29/2026 |  | 1
-2294 | Columbia Terminal Market Fruit Prices (CA_FV010) | 09/29/2026 |  | 1
-2295 | Columbia Terminal Market Vegetables Prices (CA_FV020) | 09/29/2026 |  | 1
-2296 | Columbia Terminal Market Onions and Potatoes Prices (CA_FV030) | 09/29/2026 |  | 1
-2297 | Columbia Terminal Market Nuts Prices (CA_FV040) | 09/29/2026 |  | 1
-2298 | Dallas Terminal Market Fruit Prices (DA_FV010) (Discontinued) | 05/26/2022 |  | 1
-2299 | Dallas Terminal Market Vegetables Prices (DA_FV020) (Discontinued) | 05/26/2022 |  | 1
-2300 | Dallas Terminal Market Onions and Potatoes Prices (DA_FV030) (Discontinued) | 05/26/2022 |  | 1
-2301 | Dallas Terminal Market Nuts Prices (DA_FV040) (Discontinued) | 05/26/2022 |  | 1
-2302 | Detroit Terminal Market Fruit Prices (DU_FV010) | 09/29/2026 |  | 1
-2303 | Detroit Terminal Market Vegetables Prices (DU_FV020) | 09/29/2026 |  | 1
-2304 | Detroit Terminal Market Onions and Potatoes Prices (DU_FV030) | 09/29/2026 |  | 1
-2305 | Detroit Terminal Market Nuts Prices (DU_FV040) | 09/29/2026 |  | 1
-2306 | Los Angeles Terminal Market Fruit Prices (HC_FV010) | 09/29/2026 |  | 1
-2307 | Los Angeles Terminal Market Vegetables Prices (HC_FV020) | 09/29/2026 |  | 1
-2308 | Los Angeles Terminal Market Onions and Potatoes Prices (HC_FV030) | 09/29/2026 |  | 1
-2309 | Los Angeles Terminal Market Nuts Prices (HC_FV040) | 09/29/2026 |  | 1
-2310 | Miami Terminal Market Fruit Prices (MH_FV010) | 09/29/2026 |  | 1
-2311 | Miami Terminal Market Vegetables Prices (MH_FV020) | 09/29/2026 |  | 1
-2312 | Miami Terminal Market Onions and Potatoes Prices (MH_FV030) | 09/29/2026 |  | 1
-2313 | Miami Terminal Market Nuts Prices (MH_FV040) | 09/29/2026 |  | 1
-2314 | New York Terminal Market Fruit Prices (NX_FV010) | 09/29/2026 |  | 1
-2315 | New York Terminal Market Vegetables Prices (NX_FV020) | 09/29/2026 |  | 1
-2316 | New York Terminal Market Onions and Potatoes Prices (NX_FV030) | 09/29/2026 |  | 1
-2317 | New York Terminal Market Nuts Prices (NX_FV040) | 09/29/2026 |  | 1
-2318 | Philadelphia Terminal Market Fruit Prices (NA_FV010) | 09/29/2026 |  | 1
-2319 | Philadelphia Terminal Market Vegetables Prices (NA_FV020) | 09/29/2026 |  | 1
-2320 | Philadelphia Terminal Market Onions and Potatoes Prices (NA_FV030) | 09/29/2026 |  | 1
-2321 | Philadelphia Terminal Market Nuts Prices (NA_FV040) | 09/29/2026 |  | 1
-2322 | San Francisco Terminal Market Fruit Prices (SX_FV010) (Discontinued) | 05/01/2025 |  | 1
-2323 | San Francisco Terminal Market Vegetables Prices (SX_FV020) (Discontinued) | 05/01/2025 |  | 1
-2324 | San Francisco Terminal Market Onions and Potatoes Prices (SX_FV030) (Discontinued) | 05/01/2025 |  | 1
-2325 | San Francisco Terminal Market Nuts Prices (SX_FV040) (Discontinued) | 05/01/2025 |  | 1
-2326 | SAINT LOUIS Terminal Market Fruit Prices (Discontinued) | 12/29/2017 |  | 1
-2327 | SAINT LOUIS Terminal Market Vegetables Prices (Discontinued) | 12/29/2017 |  | 1
-2328 | SAINT LOUIS Terminal Market Onions and Potatoes Prices (Discontinued) | 12/29/2017 |  | 1
-2329 | SAINT LOUIS Terminal Market Nuts Prices (Discontinued) | 12/29/2017 |  | 1
-2330 | Birmingham, United Kingdom Terminal Market Fruit Prices (BI_FV010) (Discontinued) | 02/02/2016 |  | 1
-2331 | Birmingham, United Kingdom Terminal Market Vegetables Prices (BI_FV020) (Discontinued) | 02/02/2016 |  | 1
-2332 | Birmingham, United Kingdom Terminal Market Onions and Potatoes Prices (BI_FV030) (Discontinued) | 02/02/2016 |  | 1
-2333 | Guadalajara, Mexico Terminal Market Fruit Prices (GU_FV010) (Discontinued) | 02/08/2024 |  | 1
-2334 | Guadalajara, Mexico Terminal Market Vegetables Prices (GU_FV020) (Discontinued) | 02/08/2024 |  | 1
-2335 | Guadalajara, Mexico Terminal Market Onions and Potatoes Prices (GU_FV030) (Discontinued) | 02/08/2024 |  | 1
-2336 | Mexico City, Mexico Terminal Market Fruit Prices (MX_FV010) (Discontinued) | 02/08/2024 |  | 1
-2337 | Mexico City, Mexico Terminal Market Vegetables Prices (MX_FV020) (Discontinued) | 02/08/2024 |  | 1
-2338 | Mexico City, Mexico Terminal Market Onions and Potatoes Prices (MX_FV030) (Discontinued) | 02/08/2024 |  | 1
-2339 | Monterrey, Mexico Terminal Market Fruit Prices (MT_FV010) (Discontinued) | 02/08/2024 |  | 1
-2340 | Monterrey, Mexico Terminal Market Vegetables Prices (MT_FV020) (Discontinued) | 02/08/2024 |  | 1
-2341 | Monterrey, Mexico Terminal Market Onions and Potatoes Prices (MT_FV030) (Discontinued) | 02/08/2024 |  | 1
-2342 | Montreal, Canada Terminal Market Fruit Prices (MO_FV010) (Discontinued) | 01/17/2023 |  | 1
-2343 | Montreal, Canada Terminal Market Vegetables Prices (MO_FV020) (Discontinued) | 12/18/2017 |  | 1
-2344 | Montreal, Canada Terminal Market Onions and Potatoes Prices (MO_FV030) (Discontinued) | 12/18/2017 |  | 1
-2345 | New Covent Garden, United Kingdom Terminal Market Fruit Prices (NC_FV010) (Discontinued) | 06/22/2018 |  | 1
-2346 | New Covent Garden, United Kingdom Terminal Market Vegetables Prices (NC_FV020) (Discontinued) | 06/22/2018 |  | 1
-2347 | New Covent Garden, United Kingdom Terminal Market Onions and Potatoes Prices (NC_FV030) (Discontinued) | 06/22/2018 |  | 1
-2348 | New Spitalfields, United Kingdom Terminal Market Fruit Prices (NS_FV010) (Discontinued) | 06/22/2018 |  | 1
-2349 | New Spitalfields, United Kingdom Terminal Market Vegetables Prices (NS_FV020) (Discontinued) | 06/22/2018 |  | 1
-2350 | New Spitalfields, United Kingdom Terminal Market Onions and Potatoes Prices (NS_FV030) (Discontinued) | 06/22/2018 |  | 1
-2351 | Paris (Rungis), France Terminal Market Fruit Prices (PA_FV010) (Discontinued) | 05/03/2018 |  | 1
-2352 | Paris (Rungis), France Terminal Market Vegetables Prices (PA_FV020) (Discontinued) | 05/03/2018 |  | 1
-2353 | Paris (Rungis), France Terminal Market Onions and Potatoes Prices (PA_FV030) (Discontinued) | 05/03/2018 |  | 1
-2354 | Plovdiv, Bulgaria Terminal Market Fruit Prices (PL_FV010) (Discontinued) | 05/22/2018 |  | 1
-2355 | Plovdiv, Bulgaria Terminal Market Vegetables Prices (PL_FV020) (Discontinued) | 05/22/2018 |  | 1
-2356 | Plovdiv, Bulgaria Terminal Market Onions and Potatoes Prices (PL_FV030) (Discontinued) | 05/22/2018 |  | 1
-2357 | Poznan, Poland Terminal Market Fruit Prices (PZ_FV010) (Discontinued) | 06/13/2018 |  | 1
-2358 | Poznan, Poland Terminal Market Vegetables Prices (PZ_FV020) (Discontinued) | 09/09/2020 |  | 1
-2359 | Poznan, Poland Terminal Market Onions and Potatoes Prices (PZ_FV030) (Discontinued) | 06/13/2018 |  | 1
-2360 | Rotterdam, The Netherlands Terminal Market Fruit Prices (RO_FV010) (Discontinued) | 02/02/2024 |  | 1
-2361 | Rotterdam, The Netherlands Terminal Market Vegetables Prices (RO_FV020) (Discontinued) | 02/02/2024 |  | 1
-2362 | Rotterdam, The Netherlands Terminal Market Onions and Potatoes Prices (RO_FV030) (Discontinued) | 12/01/2023 |  | 1
-2363 | Sofia, Bulgaria Terminal Market Fruit Prices (SO_FV010) (Discontinued) | 05/22/2018 |  | 1
-2364 | Sofia, Bulgaria Terminal Market Vegetables Prices (SO_FV020) (Discontinued) | 05/22/2018 |  | 1
-2365 | Sofia, Bulgaria Terminal Market Onions and Potatoes Prices (SO_FV030) (Discontinued) | 05/22/2018 |  | 1
-2366 | Toronto, Canada Terminal Market Fruit Prices (TO_FV010) (Discontinued) | 01/30/2024 |  | 1
-2367 | Toronto, Canada Terminal Market Vegetables Prices (TO_FV020) (Discontinued) | 01/30/2024 |  | 1
-2368 | Toronto, CanadaTerminal Market Onions and Potatoes Prices (TO_FV030) (Discontinued) | 01/30/2024 |  | 1
-2369 | Varna, Bulgaria Terminal Market Fruit Prices (VR_FV010) (Discontinued) | 05/22/2018 |  | 1
-2370 | Varna, Bulgaria Terminal Market Vegetables Prices (VR_FV020) (Discontinued) | 05/22/2018 |  | 1
-2371 | Varna, Bulgaria Terminal Market Onions and Potatoes Prices (VR_FV030) (Discontinued) | 05/22/2018 |  | 1
-2372 | Warsaw, Poland Terminal Market Fruit Prices (WR_FV010) (Discontinued) | 06/14/2018 |  | 1
-2373 | Warsaw, Poland Terminal Terminal Market Vegetables Prices (WR_FV020) (Discontinued) | 06/14/2018 |  | 1
-2374 | Warsaw, Poland Terminal Terminal Market Onions and Potatoes Prices (WR_FV030) (Discontinued) | 06/14/2018 |  | 1
-2375 | SC National Truck Rate Report (PDF) (FVWTRK) | 09/21/2026 |  | 0
-2378 | Producers Livestock Auction Feeder Cattle Special - Salina, UT | 10/01/2024 |  | 1
-2379 | Basin Livestock Market - Ballard, UT | 07/31/2020 |  | 1
-2383 | 'R' Livestock Connection - Monroe, UT | 09/23/2026 |  | 1
-2386 | Benton Harbor Shipping Point Fruit Prices (BR_FV110) | 09/29/2026 |  | 1
-2387 | Benton Harbor Shipping Point Vegetables Prices (BR_FV120) | 09/29/2026 |  | 1
-2388 | Benton Harbor Shipping Point Onions and Potatoes Prices (BR_FV130) | 07/06/2026 |  | 1
-2389 | Columbia Shipping Point Vegetables Prices (CA_FV120) | 09/29/2026 |  | 1
-2390 | Fresno Shipping Point Fruit Prices (FR_FV110) | 09/29/2026 |  | 1
-2391 | Fresno Shipping Point Vegetables Prices (FR_FV120) | 09/29/2026 |  | 2
-2392 | Idaho Falls Shipping Point Fruit Prices (IF_FV110) | 09/29/2026 |  | 1
-2393 | Idaho Falls Shipping Point Onions and Potatoes Prices (IF_FV130) | 09/29/2026 |  | 1
-2394 | Inwood Shipping Point Fruit Prices (MB_FV110) | 09/29/2026 |  | 1
-2395 | Miami Shipping Point Fruit Prices (MH_FV111) | 09/29/2026 |  | 2
-2396 | Miami Shipping Point Vegetables Prices (MH_FV121) | 09/29/2026 |  | 1
-2397 | Onley Shipping Point Vegetables Prices (ON_FV120) (Discontinued) | 07/15/2020 |  | 1
-2398 | Onley Shipping Point Onions and Potatoes Prices (ON_FV130) | 07/29/2025 |  | 1
-2399 | Orlando Shipping Point Fruit Prices (OR_FV110) | 09/29/2026 |  | 1
-2400 | Orlando Shipping Point Vegetables Prices (OR_FV120) | 09/29/2026 |  | 1
-2401 | Orlando Shipping Point Fruit Imports Prices (OR_FV111) | 09/29/2026 |  | 1
-2402 | Phoenix Shipping Point Fruit Prices (IX_FV110) | 09/29/2026 |  | 3
-2403 | Phoenix Shipping Point Vegetables Prices (IX_FV120) | 09/29/2026 |  | 3
-2404 | Raleigh Shipping Point Fruit Prices (RA_FV110) | 07/02/2026 |  | 1
-2405 | Raleigh Shipping Point Vegetables Prices (RA_FV120) | 09/28/2026 |  | 1
-2406 | Raleigh Shipping Point Onions and Potatoes Prices (RA_FV130) | 07/26/2022 |  | 1
-2407 | Seattle Shipping Point Fruit Prices (AR_FV110) (Discontinued) | 09/15/2023 |  | 1
-2409 | Thomasville Shipping Point Fruit Prices (TV_FV110) | 08/14/2023 |  | 1
-2410 | Thomasville Shipping Point Vegetables Prices (TV_FV120) | 09/29/2026 |  | 1
-2411 | Thomasville Shipping Point Vegetables Prices (TH_FV120) | 09/28/2026 |  | 1
-2412 | YAKIMA Shipping Point Fruit Prices (YA_FV110) | 09/29/2026 |  | 1
-2413 | YAKIMA Shipping Point Vegetables Prices (YA_FV120) | 09/10/2026 |  | 1
-2415 | Staunton Livestock Auction Feeder Cattle Board Sale - Staunton, VA | 04/14/2020 |  | 1
-2528 | Kalona Livestock Slaughter Cattle Auction - Kalona, IA | 09/24/2026 |  | 1
-2707 | Texas Direct Hay Report | 09/14/2026 |  | 1
-2708 | New Mexico Direct Cattle Report | 09/21/2026 |  | 1
-2709 | Southeast Direct Cattle Report (AL/AR/FL/GA/LA/MS/TN) | 09/21/2026 |  | 1
-2710 | Texas Direct Cattle Report | 09/21/2026 |  | 1
-2711 | Texas Daily Grain Bids | 09/29/2026 |  | 1
-2713 | Superior Livestock Video/Internet Auction - Fort Worth, TX | 09/17/2026 |  | 1
-2714 | Maryland Grain Bids | 06/23/2026 |  | 1
-2715 | Atlanta ORNAMENTAL Daily Movement Report (Discontinued) | 11/26/2024 |  | 0
-2717 | THOMASVILLE, GA TRUCK AIR, AND BOAT Daily Movement Report | 09/29/2026 |  | 2
-2718 | Atlanta, GA TRUCK, AIR, AND BOAT Daily Movement Report | 12/13/2024 |  | 1
-2720 | Shipping Point Pecan Report - Baton Rouge, LA (BO_FV140) | 07/24/2025 |  | 1
-2721 | Shipping Point Pecan Report - Thomasville, GA (TV_FV140) | 07/24/2025 |  | 2
-2723 | Wholesale Market Asian Vegetable Report - Atlanta, GA (AJ_FV057) (Discontinued) | 01/10/2024 |  | 1
-2724 | Wholesale Market Misc Herbs Report - Atlanta, GA (AJ_FV055) (Discontinued) | 01/10/2024 |  | 1
-2725 | Wholesale Market Tropical F&V Report - Atlanta, GA (AJ_FV056) (Discontinued) | 01/10/2024 |  | 1
-2734 | Daily New York Shell Egg | 09/29/2026 |  | 1
-2756 | Weekly Grocery Store Chicken Feature Activity | 09/21/2026 |  | 1
-2757 | Weekly Grocery Store Egg Feature Activity | 09/21/2026 |  | 1
-2762 | INWOOD, WV TRUCK AIR, AND BOAT Daily Movement Report | 09/28/2026 |  | 1
-2763 | Wholesale Market Asian Vegetable Report - Baltimore, MD (BP_FV057) (Discontinued) | 01/11/2024 |  | 1
-2764 | Wholesale Market Misc Herbs Report - Baltimore, MD (BP_FV055) (Discontinued) | 01/11/2024 |  | 1
-2765 | Wholesale Market Tropical F&V Report - Baltimore, MD (BP_FV056) (Discontinued) | 01/11/2024 |  | 1
-2768 | BENTON HARBOR, MI TRUCK AIR, AND BOAT Daily Movement Report | 09/29/2026 |  | 1
-2769 | Montana Direct Hay Report | 09/14/2026 |  | 1
-2770 | Montana Direct Cattle Report | 09/21/2026 |  | 1
-2771 | Montana Daily Elevator Grain Bids | 09/29/2026 |  | 1
-2772 | Northern Livestock Video/Internet Auction - Billings, MT | 09/14/2026 |  | 1
-2773 | Boston ORNAMENTAL Daily Movement Report (Discontinued) | 12/18/2024 |  | 0
-2774 | BOSTON, MA TRUCK AIR, AND BOAT Daily Movement Report (Discontinued) | 12/13/2024 |  | 1
-2776 | Wholesale Market Asian Vegetable Report - Boston, MA (BH_FV057) (Discontinued) | 01/03/2024 |  | 1
-2777 | Wholesale Market Misc Herbs Report - Boston, MA (BH_FV055) (Discontinued) | 01/03/2024 |  | 1
-2778 | Wholesale Market Tropical F&V Report - Boston, MA (BH_FV056) (Discontinued) | 01/03/2024 |  | 1
-2779 | Chicago ORNAMENTAL Daily Movement Report (Discontinued) | 11/29/2024 |  | 0
-2780 | CHICAGO, IL TRUCK AIR, AND BOAT Daily Movement Report (Discontinued) | 12/13/2024 |  | 1
-2782 | Wholesale Market Asian Vegetable Report - Chicago, IL (HX_FV057) (Discontinued) | 01/11/2024 |  | 1
-2783 | Wholesale Market Misc Herbs Report - Chicago, IL (HX_FV055) (Discontinued) | 01/11/2024 |  | 1
-2784 | Wholesale Market Tropical F&V Report - Chicago, IL (HX_FV056) (Discontinued) | 01/10/2024 |  | 1
-2787 | South Carolina Daily Grain Bids | 09/29/2026 |  | 1
-2793 | COLUMBIA, SC TRUCK AIR, AND BOAT Daily Movement Report | 09/22/2026 |  | 1
-2794 | Wholesale Market Asian Vegetable Report - Columbia, SC (CA_FV057) (Discontinued) | 01/03/2024 |  | 1
-2795 | Wholesale Market Misc Herbs Report - Columbia, SC (CA_FV055) (Discontinued) | 01/03/2024 |  | 1
-2796 | Wholesale Market Tropical F&V Report - Columbia, SC (CA_FV056) (Discontinued) | 01/03/2024 |  | 1
-2798 | Dallas ORNAMENTAL Daily Movement Report (Discontinued) | 11/29/2024 |  | 0
-2799 | Dallas, TX TRUCK AIR, AND BOAT Daily Movement Report (Discontinued) | 12/13/2024 |  | 1
-2801 | Wholesale Market Asian Vegetable Report - Dallas, TX (DA_FV057) (Discontinued) | 05/26/2022 |  | 1
-2802 | Wholesale Market Misc Herbs Report - Dallas, TX (DA_FV055) (Discontinued) | 05/26/2022 |  | 1
-2803 | Wholesale Market Tropical F&V Report - Dallas, TX (DA_FV056) (Discontinued) | 05/26/2022 |  | 1
-2807 | Iowa Direct Hay Report | 09/21/2026 |  | 1
-2808 | Missouri Direct Cattle Report | 09/21/2026 |  | 1
-2810 | National Direct Feeder Pig Report | 09/21/2026 |  | 1
-2823 | Import Beef Trade (NW_LS421) | 09/25/2026 |  | 1
-2829 | By-Product Drop Value (Steers) (Cattle) (NW_LS441 / 447) | 09/29/2026 |  | 1
-2830 | Major Packer Hide Report (NW_LS448) | 09/29/2026 |  | 1
-2833 | USDA Beef & Pork Variety Meats Report (NW_LS440) | 09/29/2026 |  | 1
-2834 | USDA By-Product Drop Value Report-Cow (NW_LS444) | 09/21/2026 |  | 1
-2835 | USDA By-Product Drop Value Report-Hogs (NW_LS446) | 09/21/2026 |  | 1
-2837 | USDA Tallow & Protein Report (NW_LS442) | 09/29/2026 |  | 1
-2838 | Weekly Pork & Beef Variety Meat Report (NW_LS905) | 09/21/2026 |  | 1
-2839 | Weekly Tallow & Protein Report (NW_LS906) | 09/21/2026 |  | 1
-2842 | Weekly National Egg Products | 09/21/2026 |  | 1
-2843 | Daily National Shell Egg Index Report (5-day rolling average) | 09/29/2026 |  | 1
-2844 | Weekly California Shell Egg Report | 09/21/2026 |  | 1
-2848 | Weekly Combined Regional Shell Egg Report | 09/21/2026 |  | 1
-2850 | Iowa Daily Cash Grain Bids | 09/29/2026 |  | 1
-2851 | Ohio Daily Grain Bids | 09/29/2026 |  | 1
-2863 | Iowa Production Cost Report (Bi-Weekly) | 09/14/2026 |  | 1
-2867 | Weekly Grocery Store Turkey Feature Activity | 09/21/2026 |  | 1
-2868 | Weekly Grocery Store Pork Feature Activity | 09/21/2026 |  | 1
-2882 | Wholesale Market Asian Vegetable Report - Detroit, MI (DU_FV057) (Discontinued) | 01/10/2024 |  | 1
-2883 | Wholesale Market Misc Herbs Report - Detroit, MI (DU_FV055) (Discontinued) | 01/10/2024 |  | 1
-2884 | Wholesale Market Tropical F&V Report - Detroit, MI (DU_FV056) (Discontinued) | 01/10/2024 |  | 1
-2885 | Kansas Direct Hay Report | 09/07/2026 |  | 1
-2886 | Kansas Daily Grain Bids | 09/29/2026 |  | 1
-2887 | National Daily Sunflower, Canola, Millet, and Flaxseed Report | 09/29/2026 |  | 1
-2890 | High Plains Video/Internet Auction - Enid, OK (Discontinued) | 09/01/2021 |  | 1
-2892 | Kentucky Daily Grain Bids | 09/29/2026 |  | 1
-2894 | Bluegrass Stockyards Livestock Video/Internet Auction – Albany, KY | 09/23/2026 |  | 1
-2895 | Farmers Region Livestock Video/Internet Auction – Glasgow, KY | 08/10/2026 |  | 1
-2896 | Bluegrass Stockyards Livestock Video/Internet Auction – Lexington, KY | 09/15/2026 |  | 1
-2897 | Washington County Livestock Video/Internet Auction – Springfield, KY | 09/29/2026 |  | 1
-2899 | FRESNO, CA TRUCK AIR, AND BOAT Daily Movement Report | 09/29/2026 |  | 1
-2904 | California Direct Hay Report | 09/21/2026 |  | 1
-2905 | Colorado Direct Hay Report | 09/21/2026 |  | 1
-2906 | Colorado Direct Cattle Report | 09/21/2026 |  | 1
-2907 | National Direct Sheep Report | 09/21/2026 |  | 1
-2911 | National Wool Review (Fri) | 09/21/2026 |  | 1
-2912 | Colorado Daily Grain Bids | 09/29/2026 |  | 1
-2914 | Weekly Bean, Pea, and Lentil Market Review | 09/28/2026 |  | 1
-2917 | Dry Edible Beans Daily Grower Bids (ND/MN and NE-CO/WY/W-NE) | 09/29/2026 |  | 1
-2920 | National Weekly Non-GMO/GE Grain Report | 09/25/2026 |  | 1
-2922 | Equity Cooperative Sheep & Lamb Video/Internet Auction - Baraboo, WI | 09/17/2026 |  | 1
-2925 | IDAHO FALLS, ID TRUCK AIR, AND BOAT Daily Movement Report | 09/29/2026 |  | 1
-2928 | Mississippi Daily Grain Bids | 09/24/2026 |  | 1
-2929 | Missouri Direct Hay Report | 09/14/2026 |  | 1
-2930 | National Quarterly Sod Report | 04/01/2026 |  | 1
-2932 | Missouri Daily Grain Bids | 09/29/2026 |  | 1
-2934 | Joplin Regional Stockyards Video Auction - Carthage, MO | 07/27/2026 |  | 1
-2935 | Nebraska Direct Hay Report | 09/21/2026 |  | 1
-2937 | Burwell Livestock Market Video Auction - Burwell, NE | 05/29/2026 |  | 1
-2938 | Huss and Lexington Livestock Video/Internet Auction | 08/26/2026 |  | 1
-2939 | New Mexico Direct Hay Report | 09/21/2026 |  | 1
-2940 | Southwest Direct Cattle Report (AZ/CA/NV) | 09/21/2026 |  | 1
-2960 | Arkansas Daily Grain Bids | 09/29/2026 |  | 1
-2963 | Wholesale Market Asian Vegetable Report - Los Angeles, CA (HC_FV057) (Discontinued) | 01/10/2024 |  | 1
-2964 | Wholesale Market Misc Herbs Report - Los Angeles, CA (HC_FV055) (Discontinued) | 01/10/2024 |  | 1
-2965 | Wholesale Market Tropical F&V Report - Los Angeles, CA (HC_FV056) (Discontinued) | 01/10/2024 |  | 1
-2995 | Weekly Grocery Store Dairy Feature Activity | 09/25/2026 |  | 1
-3031 | MIAMI, FL TRUCK AIR, AND BOAT Daily Movement Report | 09/29/2026 |  | 1
-3034 | Import Ornamental Shipping Point Report - Miami, FL (MH_FV221) | 09/28/2026 |  | 1
-3036 | Wholesale Market Asian Vegetable Report - Miami, FL (MH_FV057) (Discontinued) | 01/10/2024 |  | 1
-3037 | Wholesale Market Misc Herbs Report - Miami, FL (MH_FV055) (Discontinued) | 01/10/2024 |  | 1
-3038 | Wholesale Market Tropical F&V Report - Miami, FL (MH_FV056) (Discontinued) | 01/10/2024 |  | 1
-3043 | Iowa-Southern Minnesota Barge Terminal Grain Bids | 09/29/2026 |  | 1
-3046 | Minneapolis Daily Grain Report | 09/29/2026 |  | 1
-3049 | Southern Minnesota Daily Grain Bids | 09/29/2026 |  | 1
-3050 | Alabama Direct Report (Bi-Weekly) | 09/14/2026 |  | 1
-3056 | Idaho Direct Hay Report | 09/14/2026 |  | 1
-3057 | Oregon Direct Hay Report | 09/21/2026 |  | 1
-3058 | Washington-Oregon (Columbia Basin) Direct Hay Report | 09/14/2026 |  | 1
-3059 | Northwest Direct Cattle Report (WA/OR/ID/UT) | 09/21/2026 |  | 1
-3087 | Toppenish Livestock Video/Internet Auction - Toppenish, WA | 09/24/2026 |  | 1
-3088 | Tennessee Daily Grain Bids | 09/29/2026 |  | 1
-3090 | Livestock Exchange Cattle Auction (Thursday) - Brush, CO | 09/24/2026 |  | 1
-3091 | Pennsylvania Grain Bids | 09/29/2026 |  | 1
-3092 | Wholesale Market Asian Vegetable Report - New York, NY (NX_FV057) (Discontinued) | 01/03/2024 |  | 1
-3093 | Wholesale Market Misc Herbs Report - New York, NY (NX_FV055) (Discontinued) | 01/03/2024 |  | 1
-3094 | Wholesale Market Tropical F&V Report - New York, NY (NX_FV056) (Discontinued) | 01/03/2024 |  | 1
-3095 | Oklahoma Direct Hay Report | 09/14/2026 |  | 1
-3096 | Eastern Cornbelt Direct Cattle Report (IL/IN/MI/MN/OH/KY) | 09/21/2026 |  | 1
-3097 | Kansas Direct Cattle Report | 09/21/2026 |  | 1
-3098 | Oklahoma Direct Cattle Report | 09/21/2026 |  | 1
-3100 | Oklahoma Daily Grain Bids | 09/29/2026 |  | 1
-3102 | Apache Livestock Video/Internet Auction - Apache, OK | 09/23/2026 |  | 1
-3103 | Superior Livestock Video/Internet Auction (Website Catalog) - Fort Worth, TX | 08/17/2023 |  | 1
-3104 | Southern Oklahoma Livestock Video/Internet Auction - Ada, OK | 05/06/2020 |  | 2
-3105 | ORLANDO, FL TRUCK AIR, AND BOAT Daily Movement Report | 09/29/2026 |  | 1
-3114 | Philadelphia, PA TRUCK AIR, AND BOAT Daily Movement Report (Discontinued) | 12/13/2024 |  | 1
-3116 | Wholesale Market Asian Vegetable Report - Philadelphia, PA (NA_FV057) (Discontinued) | 01/10/2024 |  | 1
-3117 | Wholesale Market Misc Herbs Report - Philadelphia, PA (NA_FV055) (Discontinued) | 01/10/2024 |  | 1
-3118 | Wholesale Market Tropical F&V Report - Philadelphia, PA (NA_FV056) (Discontinued) | 01/10/2024 |  | 1
-3119 | EL CENTRO, CA TRUCK AIR, AND BOAT Daily Movement Report | 09/29/2026 |  | 1
-3122 | MCALLEN ORNAMENTAL Daily Movement Report (Discontinued) | 11/29/2024 |  | 1
-3123 | MCALLEN, TX TRUCK AIR, AND BOAT Daily Movement Report | 09/29/2026 |  | 1
-3124 | MIAMI ORNAMENTAL Daily Movement Report (Discontinued) | 11/29/2024 |  | 1
-3125 | NOGALES, AZ TRUCK AIR, AND BOAT Daily Movement Report | 07/10/2026 |  | 1
-3127 | PHOENIX, AZ TRUCK AIR, AND BOAT Daily Movement Report | 09/29/2026 |  | 1
-3129 | SAN FRANCISCO ORNAMENTAL Daily Movement Report (Discontinued) | 11/28/2024 |  | 0
-3133 | Shipping Point Pecan Report - Austin, TX (US_FV140) | 07/24/2025 |  | 1
-3134 | Shipping Point Pecan Report - Oklahoma City, OK (KO_FV140) | 07/24/2025 |  | 1
-3135 | Shipping Point Pecan Report - Phoenix, AZ (IX_FV140) | 07/24/2025 |  | 1
-3146 | California Grain Bids | 09/24/2026 |  | 1
-3147 | Louisiana and Texas Export Bids | 09/29/2026 |  | 1
-3148 | Portland Daily Grain Bids | 09/29/2026 |  | 1
-3156 | North Carolina Cash Grain Bids | 09/29/2026 |  | 1
-3159 | North Carolina Production Cost Report (Weekly) | 09/14/2026 |  | 1
-3161 | Mid-Atlantic Livestock Video/Internet Auction - Norwood, NC | 09/15/2026 |  | 1
-3162 | Southeast Livestock Exchange Video/Internet Auction - Canton, NC (Discontinued) | 08/03/2021 |  | 1
-3165 | RALEIGH, NC TRUCK AIR, AND BOAT Daily Movement Report | 09/28/2026 |  | 1
-3167 | Virginia Daily Grain Bids | 09/29/2026 |  | 1
-3170 | ONLEY, VA TRUCK AIR, AND BOAT Daily Movement Report | 08/11/2025 |  | 1
-3177 | Wholesale Market Asian Vegetable Report - San Francisco, CA (SX_FV057) (Discontinued) | 01/10/2024 |  | 1
-3178 | Wholesale Market Misc Herbs Report - San Francisco, CA (SX_FV055) (Discontinued) | 01/10/2024 |  | 1
-3179 | Wholesale Market Tropical F&V Report - San Francisco, CA (SX_FV056) (Discontinued) | 01/10/2024 |  | 1
-3180 | Seattle ORNAMENTAL Daily Movement Report (Discontinued) | 11/29/2024 |  | 1
-3181 | SEATTLE, WA TRUCK AIR, AND BOAT Daily Movement Report (Discontinued) | 12/13/2024 |  | 1
-3183 | South Dakota Direct Hay Report | 08/31/2026 |  | 1
-3184 | South Dakota Direct Cattle Report | 09/21/2026 |  | 1
-3186 | South Dakota Daily Grain Bids | 09/29/2026 |  | 1
-3192 | Illinois Grain Bids | 09/29/2026 |  | 1
-3195 | Illinois Production Cost Report (Bi-weekly) | 09/14/2026 |  | 1
-3208 | Daily Livestock and Poultry Slaughter | 09/29/2026 |  | 1
-3213 | Weekly Canadian Livestock and Poultry Summary | 09/14/2026 |  | 1
-3214 | USDA Monthly Japan Reports | 06/01/2026 |  | 1
-3223 | Kansas City Board of Trade Daily Wheat Bids | 09/29/2026 |  | 1
-3225 | Nebraska Daily Elevator Grain Bids | 09/29/2026 |  | 1
-3228 | Weekly Grocery Store Beef Feature Activity | 09/21/2026 |  | 1
-3229 | Weekly Grocery Store Lamb Feature Activity | 09/21/2026 |  | 1
-3236 | Wyoming Direct Hay Report | 09/14/2026 |  | 1
-3237 | Wyoming-Nebraska Direct Cattle Report | 09/21/2026 |  | 1
-3239 | Wyoming Daily Grain Bids | 09/29/2026 |  | 1
-3241 | Cattle Country Livestock Video/Internet Auction - Torrington, WY | 09/10/2026 |  | 1
-3242 | Western Video Market Livestock Video/Internet Auction - Cottonwood, CA | 09/15/2026 |  | 1
-3243 | WASHINGTON DC ORNAMENTAL Daily Movement Report | 09/29/2026 |  | 1
-3282 | NATIONAL RAIL Daily Movement Report (Discontinued) | 06/27/2025 |  | 1
-3283 | WASHINGTON, DC TRUCK, AIR AND BOAT Daily Movement Report | 09/29/2026 |  | 1
-3324 | Weekly Grocery Store Specialty Crops Feature Activity | 09/25/2026 |  | 1
-3332 | YAKIMA, WA TRUCK AIR, AND BOAT Daily Movement Report | 09/28/2026 |  | 1
-3338 | Paris Stockyards Livestock Video/Internet Auction – Paris, KY | 09/24/2026 |  | 1
-3339 | KY-TN Livestock Market Livestock Video/Internet Auction – Guthrie, KY | 08/13/2026 |  | 1
-3340 | Lower Middle Tennessee Cattlemen's Association - Video Board Sale - Columbia, TN | 09/11/2026 |  | 1
-3364 | Shipshewana Hay Auction - Shipshewana, IN | 09/23/2026 |  | 1
-3365 | Lonestar Stockyards - Wildorado, TX | 09/29/2026 |  | 1
-3366 | Upson County Stockyard - Special Cattle Sale (Seasonal) - Thomaston, GA (Discontinued) | 04/30/2024 |  | 1
-3368 | Producers Livestock Video/Internet Auction - Okeechobee, FL | 06/25/2026 |  | 1
-3369 | Show-Me-Select Special - Vienna, MO | 05/08/2026 |  | 1
-3370 | Coffee County Stockyards Feeder and Replacement Cattle Special - New Brockton, AL | 06/06/2020 |  | 1
-3371 | Clay County Livestock Auction Feeder and Replacement Cattle Special - Lineville, AL | 09/27/2025 |  | 1
-3407 | South Alabama Stockyards Replacement Cattle Special - Brundidge, AL | 10/12/2024 |  | 1
-3410 | Cullman Stockyards Annual Replacement Cow and Bred Heifer Special | 09/12/2026 |  | 1
-3411 | Superior Livestock Sheep Video Auction | 09/28/2023 |  | 1
-3412 | Crawford Livestock Video Auction - Crawford, NE | 08/21/2026 |  | 1
-3414 | United Producers, Inc. Cattle Video/Internet Auction - Owenton, KY | 11/18/2022 |  | 1
-3415 | Topeka Livestock Auction - Topeka, IN | 09/22/2026 |  | 1
-3416 | Ozarks Regional Stockyards Video Auction - West Plains, MO | 09/29/2026 |  | 1
-3417 | Bassett Livestock Auction Video Sale - Bassett, NE | 11/19/2025 |  | 1
-3418 | Valentine Livestock Auction Video Sale - Valentine, NE | 03/05/2026 |  | 1
-3429 | Seminole Livestock Exchange Board Sale - Donalsonville, GA | 08/03/2026 |  | 1
-3453 | Northern Livestock Sheep Video/Internet Auction - Billings, MT | 07/20/2026 |  | 1
-3454 | Western Video Sheep Video/Internet Auction - Cottonwood, CA | 09/15/2026 |  | 1
-3455 | Iowa Direct Cattle Report | 09/21/2026 |  | 1
-3456 | Knoxville Livestock Center Video Auction - Knoxville, TN | 09/29/2026 |  | 1
-3459 | Ericson Livestock Market Cattle Video Auction - Ericson, NE | 10/19/2024 |  | 1
-3460 | United Producers Inc Special Graded Feeder and Replacement Cattle Sale - Columbia, TN | 08/02/2022 |  | 1
-3463 | Indiana Grain Bids | 09/29/2026 |  | 1
-3465 | Fort Payne Livestock Replacement Cow and Heifer Special - Ft. Payne, AL (Discontinued) | 11/12/2021 |  | 1
-3467 | Browning Livestock Market Video/Internet Auction - Lafayette, TN | 09/16/2026 |  | 1
-3468 | Denison Livestock Feeder Cattle Special - Denison, IA | 01/05/2026 |  | 1
-3470 | Farmers Regional Livestock Market - Special Graded Feeder Cattle Sale - Glasgow, KY | 08/24/2023 |  | 1
-3473 | Calhoun Stockyard Special Feeder Cattle Sale - Calhoun, GA | 04/05/2022 |  | 1
-3474 | Dothan Livestock Co. Board Sale - Dothan, AL | 03/01/2021 |  | 1
-3475 | Cattlemen's Livestock Exchange - Cord, AR | 06/11/2026 |  | 1
-3476 | Monterey Stockyard LLC - Monterey, VA | 09/16/2026 |  | 1
-3477 | Central Plains Stockyards Livestock Auction Special Sheep & Goat - Humeston, IA | 04/20/2021 |  | 1
-3479 | Dickson Regional Livestock Center Video Auction - Dickson, TN | 08/03/2026 |  | 1
-3483 | Northwest Alabama Cattle Video/Board Sale - Russellville, AL | 06/07/2021 |  | 1
-3484 | SEMO Livestock Sales Cattle Auction - Jackson, MO | 09/29/2026 |  | 1
-3485 | WNC Livestock Exchange Video Auction - Canton, NC | 07/08/2025 |  | 1
-3486 | Mexico to United States Feeder Cattle Import Summary | 09/29/2026 |  | 1
-3488 | Mid State Stockyards LLP Replacement Cattle Special - Letohatchee, AL | 07/24/2021 |  | 1
-3489 | Rushville Hay Auction | 09/16/2026 |  | 1
-3490 | Monterey Stockyard LLC Board Sale - Monterey, VA | 09/16/2026 |  | 1
-3491 | Winter Livestock Anniversary Feeder Cattle Special - Dodge City, KS (Discontinued) | 07/27/2024 |  | 1
-3508 | Valley Livestock – Replacement Cattle Special – Moulton, AL (Discontinued) | 09/24/2021 |  | 1
-3509 | Hardin County Stockyard Video Auction - Savannah, TN | 04/01/2026 |  | 1
-3510 | National Animal By-Product Feedstuff Report | 09/21/2026 |  | 8
-3511 | National Grain and Oilseed Processor Feedstuff Report | 09/21/2026 |  | 8
-3512 | National Mill-Feeds and Miscellaneous Feedstuff Report | 09/21/2026 |  | 8
-3520 | SAN FRANCISCO, CA TRUCK AIR, AND BOAT Daily Movement Report (Discontinued) | 12/12/2024 |  | 1
-3615 | WNC Regional Livestock Center Sheep and Goat Auction - Canton, NC | 08/09/2025 |  | 1
-3616 | National Weekly Ethanol Report | 09/21/2026 |  | 1
-3617 | National Daily Ethanol Report | 09/29/2026 |  | 1
-3618 | National Weekly Grain Co-Products Report | 09/21/2026 |  | 0
-3619 | Ogallala Livestock Market Video Auction - Ogallala, NE (Discontinued) | 12/08/2022 |  | 1
-3620 | Lonestar Stockyards Video/Internet Auction - Wildorado, TX | 02/13/2024 |  | 1
-3621 | Oklahoma Production Cost Report (Bi-Weekly) | 09/14/2026 |  | 1
-3622 | Farmers Livestock Exchange Graded Sheep and Goat Sale - Winchester, VA | 05/18/2026 |  | 1
-3623 | Monterey Stockyard LLC Graded Sheep and Goat Sale - Monterey, VA | 08/05/2026 |  | 1
-3624 | Madison Livestock Market Graded Sheep and Goat Sale - Radiant, VA | 09/09/2026 |  | 1
-3626 | Pulaski County Stockyard  - Feeder Cattle Board/Video Sale – Hawkinsville, GA | 11/28/2023 |  | 1
-3627 | Livestock Exchange Monthly Hay Auction (3rd Sat) - Brush, CO | 07/19/2025 |  | 1
-3628 | Hope Livestock – Cattle Video Auction (Thu) | 09/24/2026 |  | 1
-3629 | U.S. – Mexico Livestock Imports/Exports | 09/14/2026 |  | 1
-3630 | Importacion y Exportacion de Ganado Mexicano | 09/14/2026 |  | 1
-3631 | Billings Livestock Commission Cattle Video Auction - Billings, MT | 03/31/2022 |  | 1
-3632 | Middleburg Livestock Auction Sheep and Goat Sale - Middleburg, PA | 09/22/2026 |  | 1
-3633 | Middleburg Livestock Auction Slaughter Hog Sale - Middleburg, PA | 09/22/2026 |  | 1
-3634 | Greencastle Livestock Auction Sheep and Goat Sale (Monday) - Greencastle, PA | 09/28/2026 |  | 1
-3635 | Tina Livestock Market Cattle Auction - Tina, MO | 09/28/2026 |  | 1
-3641 | Weekly Major Packer Hide Report | 09/21/2026 |  | 1
-3645 | Weekly Miscellaneous Poultry Report | 09/21/2026 |  | 1
-3646 | Weekly National Chicken Report | 09/21/2026 |  | 1
-3647 | Weekly National Turkey Report | 09/21/2026 |  | 1
-3648 | Tina Livestock Market Replacement Cattle Special - Tina, MO | 08/28/2026 |  | 1
-3649 | Monthly National Chicken Report | 08/01/2026 |  | 1
-3650 | Monthly National Turkey Report | 08/01/2026 |  | 1
-3651 | Monthly Miscellaneous Poultry Report (Discontinued) | 02/01/2025 |  | 1
-3652 | Arthur Sale Barn Hay Auction - Arthur, IL (Monday) | 09/21/2026 |  | 1
-3653 | North Platte Stockyards Livestock Auction - North Platte, NE | 09/22/2026 |  | 1
-3654 | Mid Missouri Stockyards Cattle Auction - Phillipsburg, MO | 09/24/2026 |  | 1
-3655 | Livingston Stockyard Cattle Video/Board Sale - Livingston, AL (Discontinued) | 05/17/2023 |  | 1
-3656 | Elite Livestock Sales Video Auction – Montgomery, AL (Discontinued) | 12/05/2024 |  | 1
-3658 | Actual Slaughter Under Federal Inspection | 09/07/2026 |  | 1
-3659 | Salem Stockyards - Sheep and Goat Auction - Salem, AR | 06/25/2026 |  | 1
-3660 | Madison County Ag Auction | 03/28/2026 |  | 1
-3662 | I-40 Livestock Feeder Cattle Pot Load Sale - Ozark, AR | 09/15/2026 |  | 1
-3665 | Warren Co. Livestock Video Auction - McMinnville, TN | 09/14/2026 |  | 1
-3666 | Orangeburg Stockyards Cattle Video Sale | 08/26/2026 |  | 1
-3667 | Monthly National Mill-Feeds and Miscellaneous Feedstuff Report | 08/01/2026 |  | 8
-3668 | Monthly National Grain and Oilseed Processor Feedstuff Report | 08/01/2026 |  | 8
-3669 | Monthly National Animal By-Product Feedstuff Report | 08/01/2026 |  | 8
-3670 | United Producers, Inc. Special Graded Sheep and Goat Sale - Owenton, KY | 10/06/2023 |  | 1
-3671 | Elite Livestock Sales Video Auction – Tallahassee, FL | 03/30/2023 |  | 1
-3672 | Beebe Livestock Auction- Sheep and Goat Sale | 09/12/2026 |  | 1
-3673 | Hilltop Acres Sheep & Goat Auction | 08/19/2023 |  | 1
-3674 | Mexico to United States Feeder Cattle Import Summary (Spanish) | 09/29/2026 |  | 1
-3675 | Warren Co. Livestock Auction - McMinnville, TN | 08/17/2026 |  | 1
-3676 | KY-TN Livestock Market - Cross Plains, TN | 10/30/2023 |  | 1
-3677 | United Producers Inc - Fayetteville, TN | 09/29/2026 |  | 1
-3678 | Alabama Herd Builder Replacement Female Sale - Uniontown, AL | 08/28/2026 |  | 1
-3679 | Centennial Monthly Hay Auction - Fort Collins, CO | 05/31/2025 |  | 1
-3686 | Low Country Livestock Exchange Video Auction - Darlington, SC | 09/22/2026 |  | 1
-3692 | Empire Livestock Sale - Bath, NY | 09/24/2026 |  | 1
-3694 | Producers Monthly Hay Auction - Greeley, CO | 07/12/2025 |  | 1
-3703 | Hamburg, Germany Terminal Fruit Prices (HA_FV010) (Discontinued) | 04/27/2009 |  | 1
-3704 | Hamburg, Germany Terminal Vegetable Prices (HA_FV020) (Discontinued) | 04/27/2009 |  | 1
-3705 | Hamburg, Germany Terminal Onions and Potatoes Prices (HA_FV030) (Discontinued) | 04/27/2009 |  | 1
-3706 | Hamburg, Germany Terminal Nut Prices (HA_FV201) (Discontinued) | 02/02/2006 |  | 1
-3715 | San Francisco Ornamental Terminal Prices (SX_FV201) (Discontinued) | 02/03/2006 |  | 1
-3716 | Tokyo, Japan  Terminal Market Fruit Prices (TK_FV010) (Discontinued) | 02/14/2005 |  | 1
-3717 | Tokyo, Japan Terminal Market Vegetable Prices (TK_FV020) (Discontinued) | 02/14/2005 |  | 1
-3718 | Tokyo, Japan Terminal Market Onions and Potatoes Prices (TK_FV030) (Discontinued) | 02/14/2005 |  | 1
-3719 | Tokyo, Japan Ornamental Terminal Prices (TK_FV201) (Discontinued) | 09/11/2004 |  | 1
-3720 | Wholesale Market Misc Herbs Report - St. Louis, MO (XX_FV055) (Discontinued) | 12/29/2017 |  | 1
-3721 | Wholesale Market Tropical F&V Report - St. Louis, MO (XX_FV056) (Discontinued) | 12/29/2017 |  | 1
-3722 | Wholesale Market Asian Vegetable Report - St. Louis, MO (XX_FV057) (Discontinued) | 12/29/2017 |  | 1
-3723 | Southwest Missouri Hay Auction - Golden City, MO | 09/05/2026 |  | 1
-3724 | Giddings Livestock Auction - Giddings, TX | 09/28/2026 |  | 1
-3729 | HPL Hay Auction - Union, IA | 05/09/2026 |  | 1
-3730 | High Plains Hay Exchange – Torrington, WY (Discontinued) | 03/25/2024 |  | 1
-3731 | Utah Direct Hay Report | 09/21/2026 |  | 1
-3775 | Southeastern Auction Co Inc – Chadbourn, NC | 09/28/2026 |  | 1
-3776 | Maryland Production Cost Report (Bi-Weekly) | 06/22/2026 |  | 1
-3777 | Y & R Livestock Sales - Sheep & Goat Auction - Booneville, MS | 09/19/2026 |  | 1
-3784 | Arizona Direct Hay Report | 09/14/2026 |  | 1
-3785 | Columbia Livestock Center (UPI) - Columbia TN | 09/23/2026 |  | 1
-3790 | Saluda Livestock Exchange - Saluda, SC | 09/28/2026 |  | 1
-3791 | Cattle Drive Livestock Video/Internet Auction - Salina, UT | 09/29/2026 |  | 1
-3792 | Athens Regional Stockyard Preconditioned Sale - Athens, TN | 09/17/2026 |  | 1
-3793 | Tennessee Direct Hay Report | 09/21/2026 |  | 1
-3794 | Beaver Livestock Auction Feeder Cattle - Beaver, OK | 09/29/2026 |  | 1
-3795 | Beaver Livestock Auction Slaughter/Replacement Cattle - Beaver, OK | 09/28/2026 |  | 1
-3796 | Weekly Grocery Store Veal Feature Activity | 09/21/2026 |  | 1
-3797 | Weekly Grocery Store Goat Feature Activity | 09/21/2026 |  | 1
-3801 | Gordon Livestock Auction - Feeder Cattle Special (Seasonal) - Gordon, NE | 11/02/2024 |  | 1
-3802 | National Organic Grain and Feedstuffs | 08/31/2026 |  | 1
-3804 | Daily Spot Cotton Quotations | 09/29/2026 |  | 1
-3870 | Dakota Hay Auction - Corsica, SD (Seasonal - Friday) | 04/25/2025 |  | 1
-3872 | Arthur Sale Barn - Hay Auction - Arthur, IL (Sat - Seasonal) | 09/28/2026 |  | 1
-3873 | Dickson Regional Livestock West Replacement Cattle Sale (Seasonal) - Huntingdon, TN | 11/23/2024 |  | 1
-3874 | Dickson Regional Livestock Center Yearling Special (Annual) - Dickson, TN | 11/21/2025 |  | 1
-3878 | North Dakota Daily Grain Bids | 09/29/2026 |  | 1
-3879 | Beaver Livestock Video / Internet Auction - Beaver, OK | 09/22/2026 |  | 1
-3880 | Producers Livestock Stock Show Sale - Greeley, CO | 01/06/2026 |  | 1
-3882 | Superior Livestock Holstein Video Auction | 04/01/2026 |  | 1
-3883 | Inter-Mountain West Production Cost Report (Monthly) | 09/28/2026 |  | 1
-3888 | Daily National Breaking Stock | 09/29/2026 |  | 1
-3891 | Tennessee Valley Livestock - Video/Board Sale - Florence, AL | 08/10/2026 |  | 1
-3892 | LiveAg Video Auction - Cattle Video Auction - Fort Worth, TX | 09/10/2026 |  | 1
-3893 | East Tennessee Livestock Center Replacement Cattle Sale (Seasonal) - Sweetwater TN | 04/24/2026 |  | 1
-3894 | Wilson Livestock Market Video/Internet Auction - Newport, TN | 09/03/2026 |  | 1
-3895 | Monthly Cotton Price Statistics | 08/01/2026 |  | 1
-3896 | Annual Cotton Price Statistics | 08/01/2025 |  | 1
-3900 | Johnson Stockyard - Kosciusko, Mississippi | 09/23/2026 |  | 1
-3902 | Wilson Livestock Market Replacement Cattle Auction (Seasonal) - Newport, TN | 11/29/2025 |  | 1
-3903 | Trenton Regional Stockyards - Trenton, TN | 09/23/2026 |  | 1
-3904 | Trenton Regional Stockyards Sheep and Goat Auction - Trenton TN | 09/02/2026 |  | 1
-3905 | Kentucky Direct Hay Report | 08/31/2026 |  | 1
-3906 | Farmers Livestock Exchange Graded Slaughter Cattle Sale - Winchester, VA | 09/07/2026 |  | 1
-3907 | CMS Video/Internet Livestock Auction - Amarillo, TX | 09/10/2026 |  | 1
-3909 | Cattle Drive Video Market- Sheep & Lamb Video Auction- Salina, UT | 08/31/2026 |  | 1
-3913 | Asheville, NC Terminal Market Fruit Prices (AS_FV010) | 09/28/2026 |  | 1
-3914 | Asheville, NC Terminal Market Vegetables Prices (AS_FV020) | 09/28/2026 |  | 1
-3915 | Asheville, NC Terminal Market Onions and Potatoes Prices (AS_FV030) | 09/28/2026 |  | 1
-3916 | Four State Stockyards – Cattle Auction - Exeter, MO | 09/29/2026 |  | 1
-3917 | Wheeler Livestock Auction - Cattle Auction - Osceola, MO | 09/24/2026 |  | 1
-3919 | Paris Stockyards - Paris, KY (Monday) | 09/28/2026 |  | 1
-3920 | Wilkes Livestock Exchange Replacement Cattle Sale - North Wilkesboro, NC (Seasonal) | 04/04/2026 |  | 1
-3921 | Producers Livestock Auction Sheep & Goat Sale (1st and 3rd Monday) - Salina, UT | 09/21/2026 |  | 1
-3922 | Overland Stockyard Video/Internet Auction - Hanford, CA | 09/09/2026 |  | 1
-3923 | Bluegrass Stockyards Livestock Video/Internet Auction – Campbellsville, KY | 08/19/2026 |  | 1
-3926 | Nevada Direct Hay Report (Bi-Weekly) | 09/14/2026 |  | 1
+== 3510 | National Animal By-Product Feedstuff Report | sections=['Report Header', 'Report Detail', 'Report Comprehensive Values'] | detail=52 | header=3
+  keys: report_begin_date,report_end_date,commodity,report_date,grp,category,trade Loc,quote_type,sale_type,basis_min_direction,basis_max_direction,price_unit,price_min,price_max,price_min_change,price_min_direction,price_max change,price_max_direction,avg_price,avg_price_year_ago,freight,trans_mode,variety,protein
+  commodity(5): Yellow Grease×15; Feathermeal×12; Meat and Bone Meal×10; Commodity Blood Meal×10; Choice White Grease×5
+  variety(2): Ruminant×16; Porcine×4
+  trade Loc(11): Minnesota×18; CA-South×6; Central US×6; CA-Central Coast×3; CA-San Joaquin Valley×3; Arkansas×3
+  price_unit(2): $ Per Ton×32; Cents Per Lb×20
+  quote_type(1): Price×52
+  sale_type(2): Ask×42; Trade×10
+  freight(2): F.O.B.×39; Delivered×13
+  trans_mode(3): Truck×45; Truck/Rail×6; Rail×1
+  category(1): Animal By-Products×52
+  grp(1): Feedstuffs×52
+  sample: {"report_begin_date": "09/21/2026", "report_end_date": "09/25/2026", "commodity": "Yellow Grease", "report_date": "09/21/2026", "grp": "Feedstuffs", "category": "Animal By-Products", "trade Loc": "Minnesota", "quote_type": "Price", "sale_type": "Ask", "basis_min_direction": "No Comp", "basis_max_direction": "No Comp", "price_unit": "Cents Per Lb", "price_min": 51, "price_max": 59, "price_min_change": 0, "price_min_direction": "UNCH", "price_max change": 6, "price_max_direction": "UP", "avg_price": 54, "avg_price_year_ago": 40, "freight": "F.O.B.", "trans_mode": "Truck"}
+== 3511 | National Grain and Oilseed Processor Feedstuff Report | sections=['Report Header', 'Report Detail', 'Report Comprehensive Values'] | detail=188 | header=3
+  keys: report_begin_date,report_end_date,commodity,report_date,grp,category,trade Loc,variety,quote_type,sale_type,basis_min_direction,basis_max_direction,price_unit,price_min,price_max,price_min_change,price_min_direction,price_max change,price_max_direction,avg_price,avg_price_year_ago,freight,trans_mode,protein,basis_unit,basis_min,min_basis_futures_month,basis_max,max_basis_futures_month,basis_min_change,basis_max_change
+  commodity(14): Corn Distillers×39; Soybean Hulls×33; Soybean Meal×31; Corn Gluten Feed×24; Corn Gluten Meal×12; Soybean Oil×12
+  variety(5): Dried Grain 10%×39; Pellets×38; Wet (50-60 % Moisture)×3; PIMA×3; Fuzzy×3
+  trade Loc(22): Illinois×22; CA-San Joaquin Valley×21; Central US×21; Indiana-Ohio×18; Iowa×15; Minnesota×13
+  price_unit(2): $ Per Ton×176; Cents Per Lb×12
+  quote_type(2): Price×142; Basis×46
+  sale_type(2): Ask×167; Bid/Ask/Trade×21
+  freight(2): F.O.B.×162; Delivered×26
+  trans_mode(4): Truck×113; Truck/Rail×43; Rail×26; Barge×6
+  category(3): Grain By-Products×164; Mast×15; Oil Seed By-Products×9
+  grp(1): Feedstuffs×188
+  sample: {"report_begin_date": "09/21/2026", "report_end_date": "09/25/2026", "commodity": "Soybean Hulls", "report_date": "09/21/2026", "grp": "Feedstuffs", "category": "Grain By-Products", "trade Loc": "Illinois", "variety": "Pellets", "quote_type": "Price", "sale_type": "Ask", "basis_min_direction": "No Comp", "basis_max_direction": "No Comp", "price_unit": "$ Per Ton", "price_min": 165, "price_max": 210, "price_min_change": 10, "price_min_direction": "UP", "price_max change": 10, "price_max_direction": "UP", "avg_price": 187.5, "avg_price_year_ago": 145, "freight": "F.O.B.", "trans_mode": "Truck"}
+== 3512 | National Mill-Feeds and Miscellaneous Feedstuff Report | sections=['Report Header', 'Report Detail', 'Report Comprehensive Values'] | detail=46 | header=3
+  keys: report_begin_date,report_end_date,commodity,report_date,grp,category,trade Loc,quote_type,sale_type,basis_min_direction,basis_max_direction,price_unit,price_min,price_max,price_min_change,price_min_direction,price_max change,price_max_direction,avg_price,avg_price_year_ago,freight,trans_mode,variety,protein
+  commodity(6): Wheat Middlings×19; Wheat Millrun×9; Almond Hulls×6; Alfalfa Pellets×6; Rice Bran×3; Alfalfa Meal×3
+  variety(2): Dehydrated×6; Suncured×3
+  trade Loc(12): KC Region×9; CA-South×6; Kansas×6; CA-San Joaquin Valley×3; CA-Sacramento Valley×3; Minnesota×3
+  price_unit(1): $ Per Ton×46
+  quote_type(1): Price×46
+  sale_type(1): Ask×46
+  freight(2): F.O.B.×31; Delivered×15
+  trans_mode(3): Truck×34; Truck/Rail×6; Rail×6
+  category(4): Grain By-Products×28; Hay (Processed)×9; Mast×6; Rice By-Products×3
+  grp(1): Feedstuffs×46
+  sample: {"report_begin_date": "09/21/2026", "report_end_date": "09/25/2026", "commodity": "Almond Hulls", "report_date": "09/21/2026", "grp": "Feedstuffs", "category": "Mast", "trade Loc": "CA-South", "quote_type": "Price", "sale_type": "Ask", "basis_min_direction": "No Comp", "basis_max_direction": "No Comp", "price_unit": "$ Per Ton", "price_min": 80, "price_max": 160, "price_min_change": 45, "price_min_direction": "DN", "price_max change": 20, "price_max_direction": "DN", "avg_price": 137.5, "avg_price_year_ago": 113.33, "freight": "Delivered", "trans_mode": "Truck"}
+== 3618 | National Weekly Grain Co-Products Report | sections=['Report Header', 'Report Input Cost', 'Report Detail', 'Report EPV'] | detail=137 | header=3
+  keys: report_begin_date,report_end_date,commodity,report_date,grp,cat,trade_loc,variety,application,price_unit,price,value_unit,value,value_change,value_week_ago,value_year_ago
+  commodity(6): Distillers Grain×51; Soybean Hulls×23; Distillers Corn Oil×23; Soybean Meal×19; Soybean Oil×12; Ethanol×9
+  variety(3): N/A×86; Dried 10%×33; Wet 65-70%×18
+  price_unit(3): $ Per Ton×84; Cents Per Lb×35; $ Per Gallon×9
+  grp(2): Bioenergy×83; Feedstuffs×45
+  sample: {"report_begin_date": "09/21/2026", "report_end_date": "09/25/2026", "commodity": "Soybean Oil", "report_date": "09/21/2026", "grp": "Feedstuffs", "cat": "Grain By-Products", "trade_loc": "Illinois", "variety": "N/A", "application": "N/A", "price_unit": "Cents Per Lb", "price": 69.68, "value_unit": "$/Bu", "value": 8.22, "value_change": "-0.17", "value_week_ago": 8.39, "value_year_ago": 5.84}
+== 3616 | National Weekly Ethanol Report | sections=['Report Header', 'Report Detail'] | detail=144 | header=3
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_state,market_location_city,grp,cat,commodity,quote_type,state/Province,region,variety,application,grade,pkg,price_unit,basis_unit,freight,sale Type,trans_mode,shipping_point,delivery_period,basis Min Futures Month,basis Max Futures Month,price Min,price Max,price Min Change,price Max Change,price Min Direction,price Max Direction,avg_price,avg_price_year_ago
+  commodity(3): Distillers Grain×96; Distillers Corn Oil×34; Ethanol×14
+  grade(1): N/A×144
+  variety(4): Dried 10%×57; N/A×48; Modified Wet 55-60%×21; Wet 65-70%×18
+  market_location_name(1): Ag Energy (By Products)×144
+  price_unit(3): $ Per Ton×96; Cents Per Lb×34; $ Per Gallon×14
+  quote_type(1): Price×144
+  freight(1): F.O.B.×144
+  trans_mode(3): Truck×118; Rail×20; Ocean Vessel×6
+  pkg(1): N/A×144
+  grp(1): Bioenergy×144
+  sample: {"report_date": "09/21/2026", "report_begin_date": "09/21/2026", "report_end_date": "09/25/2026", "market_location_name": "Ag Energy (By Products)", "market_location_state": "MO", "market_location_city": "Saint Joseph", "grp": "Bioenergy", "cat": "Fuels", "commodity": "Ethanol", "quote_type": "Price", "state/Province": "Illinois", "region": "N/A", "variety": "N/A", "application": "N/A", "grade": "N/A", "pkg": "N/A", "price_unit": "$ Per Gallon", "basis_unit": "N/A", "freight": "F.O.B.", "sale Type": "Trade", "trans_mode": "Rail", "shipping_point": "Ethanol Plant", "delivery_period": "Current",
+== 3617 | National Daily Ethanol Report | sections=['Report Header', 'Report Detail'] | detail=240 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_state,market_location_city,grp,cat,commodity,quote_type,state/Province,region,variety,application,class,grade,pkg,price_unit,basis_unit,freight,sale Type,trans_mode,shipping_point,delivery_period,basis Min Futures Month,basis Max Futures Month,basis Min,basis Max,basis Min Change,basis Max Change,basis Min Direction,basis Max Direction,price Min,price Max,price Min Change,price Max Change,price Min Direction,price Max Direction,avg_price,avg_price_year_ago
+  commodity(1): Corn×240
+  class(1): Yellow×240
+  grade(1): US #2×240
+  variety(1): N/A×240
+  market_location_name(1): Ag Energy (Grain)×240
+  price_unit(1): $ Per Bushel×240
+  quote_type(1): Basis×240
+  freight(1): Delivered×240
+  trans_mode(1): Truck×240
+  pkg(1): bulk×240
+  grp(1): Bioenergy×240
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Ag Energy (Grain)", "market_location_state": "MO", "market_location_city": "Saint Joseph", "grp": "Bioenergy", "cat": "Grain", "commodity": "Corn", "quote_type": "Basis", "state/Province": "Illinois", "region": "N/A", "variety": "N/A", "application": "N/A", "class": "Yellow", "grade": "US #2", "pkg": "bulk", "price_unit": "$ Per Bushel", "basis_unit": "\u00a2/Bu", "freight": "Delivered", "sale Type": "Bid", "trans_mode": "Truck", "shipping_point": "Ethanol Plant", "deliver
+== 2920 | National Weekly Non-GMO/GE Grain Report | sections=['Report Header', 'Report Detail'] | detail=22 | header=4
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,grade,application,pkg,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current,class
+  commodity(2): Corn×14; Soybeans×8
+  class(2): Yellow×10; White×4
+  grade(2): US #2×14; US #1×8
+  market_location_name(1): Grain - National Non-GMO/GE×22
+  price_unit(1): $ Per Bushel×22
+  quote_type(1): Basis×22
+  freight(1): Delivered×22
+  trans_mode(1): Truck×22
+  pkg(1): bulk×22
+  grp(1): Grains×22
+  sample: {"report_date": "09/25/2026", "report_begin_date": "09/25/2026", "report_end_date": "09/25/2026", "market_location_name": "Grain - National Non-GMO/GE", "market_location_city": "Greeley", "market_location_state": "CO", "grp": "Grains", "cat": "Coarse", "commodity": "Soybeans", "trade_loc": "West", "grade": "US #1", "application": "Feed Grade", "pkg": "bulk", "quote_type": "Basis", "delivery_point": "Country Elevators", "conventional": "Non-GMO", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": 25, "basis Min Futures Month": "November (X)", "basis Max": 190, "basis Max Futures Month"
+== 2887 | National Daily Sunflower, Canola, Millet, and Flaxseed Report | sections=['Report Header', 'Report Detail'] | detail=975 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,location_State,location_City,class,pkg,quote_type,delivery_point,conventional,sale Type,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,freight,trans_mode,current,grade,avg_price_year_ago,delivery_start,delivery_end,delivery Start Half,delivery End Half
+  commodity(4): Canola×513; Sunflower Seeds×288; Millet×114; Flaxseed×60
+  class(3): High Oleics×245; White×114; Nu Sun×43
+  grade(1): US #1×348
+  market_location_name(1): Grain - National Sunflower×975
+  price_unit(2): $ Per CWT×915; $ Per Bushel×60
+  quote_type(1): Price×975
+  freight(1): Delivered×975
+  trans_mode(1): Truck×975
+  pkg(1): bulk×975
+  grp(1): Grains×975
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - National Sunflower", "market_location_city": "Minneapolis", "market_location_state": "MN", "grp": "Grains", "cat": "Coarse", "commodity": "Millet", "location_State": "CO", "location_City": "Akron", "class": "White", "pkg": "bulk", "quote_type": "Price", "delivery_point": "Country Elevators", "conventional": "Conventional", "sale Type": "Bid", "price_unit": "$ Per CWT", "price Min": 17, "price Max": 17, "price Min Change": 0, "price Min Direction": "UNCH", "price Ma
+== 2914 | Weekly Bean, Pea, and Lentil Market Review | sections=['Report Header', 'Report Detail'] | detail=50 | header=3
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,class,grade,application,pkg,quote_type,delivery_point,conventional,sale Type,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,freight,trans_mode,current,avg_price_year_ago
+  commodity(3): Beans×32; Lentils×9; Peas×9
+  class(12): Black×6; Pea (Navy)×6; Pinto×6; Small Red×6; Whole Green×6; Garbanzo×4
+  grade(1): US #1×50
+  market_location_name(1): Grain - Weekly Bean/Peas/Lentils×50
+  price_unit(1): $ Per CWT×50
+  quote_type(1): Price×50
+  freight(1): Delivered×50
+  trans_mode(1): Truck×50
+  pkg(1): Bag / 100lb×50
+  grp(1): Grains×50
+  sample: {"report_date": "09/28/2026", "report_begin_date": "09/28/2026", "report_end_date": "09/28/2026", "market_location_name": "Grain - Weekly Bean/Peas/Lentils", "market_location_city": "Greeley", "market_location_state": "CO", "grp": "Grains", "cat": "Pulse", "commodity": "Beans", "trade_loc": "Michigan", "class": "Black", "grade": "US #1", "application": "Food Grade", "pkg": "Bag / 100lb", "quote_type": "Price", "delivery_point": "Del Warehouse (Grower)", "conventional": "Conventional", "sale Type": "Bid", "price_unit": "$ Per CWT", "price Min": 45, "price Max": 50, "price Min Change": 3, "price
+== 1655 | National Weekly Rice Summary | sections=['Report Header', 'Report Details'] | detail=0 | header=3
+  Report Details rows=312
+== 3046 | Minneapolis Daily Grain Report | sections=['Report Header', 'Report Detail'] | detail=317 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,grade,pkg,desc,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current,delivery_start,delivery_end,class,protein,application
+  commodity(4): Wheat×173; Soybeans×64; Corn×60; White Oats×20
+  class(4): NS/DNS×89; Northern Spring×60; Yellow×60; Hard Red Winter×24
+  grade(4): US #1×128; US #1 Milling×107; US #2×62; US #1/2×20
+  market_location_name(1): GR - MGEX×317
+  price_unit(1): $ Per Bushel×317
+  quote_type(1): Basis×317
+  freight(2): Delivered×313; F.O.B.×4
+  trans_mode(2): Truck×204; Rail×113
+  pkg(1): bulk×317
+  grp(1): Grains×317
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "GR - MGEX", "market_location_city": "Minneapolis", "market_location_state": "MN", "grp": "Grains", "cat": "Coarse", "commodity": "Soybeans", "grade": "US #1", "pkg": "bulk", "desc": "New Crop", "quote_type": "Basis", "delivery_point": "Terminal Elevators", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": -75, "basis Min Futures Month": "November (X)", "basis Max": -55, "basis Max Futures Month": "November (X)", "basis Min Change":
+== 3223 | Kansas City Board of Trade Daily Wheat Bids | sections=['Report Header', 'Report Detail'] | detail=340 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,class,grade,protein,pkg,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current
+  commodity(1): Wheat×340
+  class(1): Hard Red Winter×340
+  grade(1): US #1×340
+  market_location_name(1): Grain - Kansas City Wheat×340
+  price_unit(1): $ Per Bushel×340
+  quote_type(1): Basis×340
+  freight(1): F.O.B.×340
+  trans_mode(1): Rail×340
+  pkg(1): bulk×340
+  grp(1): Grains×340
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - Kansas City Wheat", "market_location_city": "Saint Joseph", "market_location_state": "MO", "grp": "Grains", "cat": "Coarse", "commodity": "Wheat", "class": "Hard Red Winter", "grade": "US #1", "protein": "11.0%", "pkg": "bulk", "quote_type": "Basis", "delivery_point": "Mills and Processors", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": 80, "basis Min Futures Month": "December (Z)", "basis Max": 90, "basis Max Futures M
+== 3043 | Iowa-Southern Minnesota Barge Terminal Grain Bids | sections=['Report Header', 'Report Detail'] | detail=348 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,grade,pkg,desc,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current,delivery_start,delivery_end,class
+  commodity(2): Soybeans×174; Corn×174
+  class(1): Yellow×174
+  grade(2): US #1×174; US #2×174
+  market_location_name(1): Grain - IA-MN Barge×348
+  price_unit(1): $ Per Bushel×348
+  quote_type(1): Basis×348
+  freight(1): Delivered×348
+  trans_mode(1): Truck×348
+  pkg(1): bulk×348
+  grp(1): Grains×348
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - IA-MN Barge", "market_location_city": "Minneapolis", "market_location_state": "MN", "grp": "Grains", "cat": "Coarse", "commodity": "Soybeans", "trade_loc": "North Iowa MS River", "grade": "US #1", "pkg": "bulk", "desc": "New Crop", "quote_type": "Basis", "delivery_point": "Barge Loading Elevators", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": -65, "basis Min Futures Month": "November (X)", "basis Max": -38, "basis Max 
+== 2917 | Dry Edible Beans Daily Grower Bids (ND/MN and NE-CO/WY/W-NE) | sections=['Report Header', 'Report Detail'] | detail=84 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,class,grade,application,pkg,quote_type,delivery_point,conventional,sale Type,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current
+  commodity(1): Beans×84
+  class(4): Pinto×32; Black×20; Pea (Navy)×20; Great Northern×12
+  grade(1): US #1×84
+  market_location_name(1): Grain - Daily Bean Bids×84
+  price_unit(1): $ Per CWT×84
+  quote_type(1): Price×84
+  freight(1): Delivered×84
+  trans_mode(1): Truck×84
+  pkg(1): Bag / 100lb×84
+  grp(1): Grains×84
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - Daily Bean Bids", "market_location_city": "Greeley", "market_location_state": "CO", "grp": "Grains", "cat": "Pulse", "commodity": "Beans", "trade_loc": "Min-Dak", "class": "Black", "grade": "US #1", "application": "Food Grade", "pkg": "Bag / 100lb", "quote_type": "Price", "delivery_point": "Del Warehouse (Grower)", "conventional": "Conventional", "sale Type": "Bid", "price_unit": "$ Per CWT", "price Min": 40, "price Max": 45, "price Min Change": 0, "price Min Direc
+== 3804 | Daily Spot Cotton Quotations | sections=['Report Header', 'Daily Spot Quotations Differences', 'Basis and Bales', 'ICE CN Futures Settlement Prices', 'Tenderable Differences - CLS', 'Tenderable Differences - Str'] | detail=0 | header=20
+  Daily Spot Quotations Differences rows=90960
+  Basis and Bales rows=180
+  ICE CN Futures Settlement Prices rows=200
+  Tenderable Differences - CLS rows=2600
+  Tenderable Differences - Str rows=20
+== 2850 | Iowa Daily Cash Grain Bids | sections=['Report Header', 'Report Detail'] | detail=300 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,grade,pkg,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current,class
+  commodity(2): Soybeans×160; Corn×140
+  class(1): Yellow×140
+  grade(2): US #1×160; US #2×140
+  market_location_name(1): Grain - Iowa×300
+  price_unit(1): $ Per Bushel×300
+  quote_type(1): Basis×300
+  freight(1): Delivered×300
+  trans_mode(1): Truck×300
+  pkg(1): bulk×300
+  grp(1): Grains×300
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - Iowa", "market_location_city": "Des Moines", "market_location_state": "IA", "grp": "Grains", "cat": "Coarse", "commodity": "Soybeans", "trade_loc": "North Central", "grade": "US #1", "pkg": "bulk", "quote_type": "Basis", "delivery_point": "Country Elevators", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": -70, "basis Min Futures Month": "November (X)", "basis Max": 0, "basis Max Futures Month": "November (X)", "basis Min
+== 2711 | Texas Daily Grain Bids | sections=['Report Header', 'Report Detail'] | detail=220 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,class,grade,pkg,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current,protein
+  commodity(3): Corn×80; Sorghum×80; Wheat×60
+  class(2): Yellow×80; Hard Red Winter×60
+  grade(1): US #1×220
+  market_location_name(1): Grain - Texas×220
+  price_unit(1): $ Per Bushel×220
+  quote_type(1): Basis×220
+  freight(1): Delivered×220
+  trans_mode(2): Truck×180; Truck/Rail×40
+  pkg(1): bulk×220
+  grp(1): Grains×220
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - Texas", "market_location_city": "Amarillo", "market_location_state": "TX", "grp": "Grains", "cat": "Coarse", "commodity": "Corn", "trade_loc": "Central Panhandle", "class": "Yellow", "grade": "US #1", "pkg": "bulk", "quote_type": "Basis", "delivery_point": "Country Elevators", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": 50, "basis Min Futures Month": "December (Z)", "basis Max": 50, "basis Max Futures Month": "Decembe
+== 2771 | Montana Daily Elevator Grain Bids | sections=['Report Header', 'Report Detail'] | detail=1040 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,class,grade,protein,pkg,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current
+  commodity(2): Wheat×1020; Barley×20
+  class(4): Hard Red Winter×600; Dark Northern Spring×360; Durum×60; Feed×20
+  grade(2): US #1×1020; US #2×20
+  market_location_name(1): Grain - Montana×1040
+  price_unit(1): $ Per Bushel×1040
+  quote_type(2): Basis×960; Price×80
+  freight(1): Delivered×1040
+  trans_mode(1): Truck×1040
+  pkg(1): bulk×1040
+  grp(1): Grains×1040
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - Montana", "market_location_city": "Billings", "market_location_state": "MT", "grp": "Grains", "cat": "Coarse", "commodity": "Wheat", "trade_loc": "Billings", "class": "Dark Northern Spring", "grade": "US #1", "protein": "13.0%", "pkg": "bulk", "quote_type": "Basis", "delivery_point": "Country Elevators", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": -102, "basis Min Futures Month": "December (Z)", "basis Max": -72, "bas
+== 2886 | Kansas Daily Grain Bids | sections=['Report Header', 'Report Detail'] | detail=968 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,grade,pkg,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current,class,protein
+  commodity(4): Wheat×284; Soybeans×262; Corn×220; Sorghum×202
+  class(3): Yellow×220; Hard Red Winter×200; Hard White×84
+  grade(2): US #1×546; US #2×422
+  market_location_name(1): Grain - Kansas×968
+  price_unit(2): $ Per Bushel×960; ¢/Bu×8
+  quote_type(1): Basis×968
+  freight(1): Delivered×968
+  trans_mode(1): Truck×968
+  pkg(1): bulk×968
+  grp(1): Grains×968
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - Kansas", "market_location_city": "Dodge City", "market_location_state": "KS", "grp": "Grains", "cat": "Coarse", "commodity": "Soybeans", "trade_loc": "Northwest", "grade": "US #1", "pkg": "bulk", "quote_type": "Basis", "delivery_point": "Country Elevators", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": -120, "basis Min Futures Month": "November (X)", "basis Max": -120, "basis Max Futures Month": "November (X)", "basis M
+== 3192 | Illinois Grain Bids | sections=['Report Header', 'Report Detail'] | detail=989 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,grade,pkg,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current,delivery_start,delivery_end,delivery Start Half,delivery End Half,class,protein
+  commodity(3): Soybeans×460; Corn×460; Wheat×69
+  class(2): Yellow×460; Soft Red Winter×69
+  grade(2): US #1×529; US #2×460
+  market_location_name(1): Grain - Illinois×989
+  price_unit(1): $ Per Bushel×989
+  quote_type(1): Basis×989
+  freight(1): Delivered×989
+  trans_mode(1): Truck×989
+  pkg(1): bulk×989
+  grp(1): Grains×989
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - Illinois", "market_location_city": "Springfield", "market_location_state": "IL", "grp": "Grains", "cat": "Coarse", "commodity": "Soybeans", "trade_loc": "Mississippi River", "grade": "US #1", "pkg": "bulk", "quote_type": "Basis", "delivery_point": "Barge Loading Elevators", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": -5, "basis Min Futures Month": "November (X)", "basis Max": -5, "basis Max Futures Month": "November (
+== 3225 | Nebraska Daily Elevator Grain Bids | sections=['Report Header', 'Report Detail'] | detail=454 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,grade,pkg,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current,class,protein
+  commodity(4): Corn×135; Soybeans×120; Wheat×100; Sorghum×99
+  class(2): Yellow×135; Hard Red Winter×100
+  grade(2): US #2×234; US #1×220
+  market_location_name(1): Grain - Nebraska×454
+  price_unit(1): $ Per Bushel×454
+  quote_type(1): Basis×454
+  freight(1): Delivered×454
+  trans_mode(1): Truck×454
+  pkg(1): bulk×454
+  grp(1): Grains×454
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - Nebraska", "market_location_city": "Kearney", "market_location_state": "NE", "grp": "Grains", "cat": "Coarse", "commodity": "Soybeans", "trade_loc": "Central", "grade": "US #1", "pkg": "bulk", "quote_type": "Basis", "delivery_point": "Country Elevators", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": -65, "basis Min Futures Month": "November (X)", "basis Max": -50, "basis Max Futures Month": "November (X)", "basis Min Ch
+== 3463 | Indiana Grain Bids | sections=['Report Header', 'Report Detail'] | detail=1095 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,grade,pkg,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current,delivery_start,delivery_end,class,protein
+  commodity(4): Soybeans×400; Corn×400; Wheat×275; Sorghum×20
+  class(3): Yellow×360; Soft Red Winter×275; White×40
+  grade(2): US #1×675; US #2×420
+  market_location_name(1): Grain - Indiana×1095
+  price_unit(1): $ Per Bushel×1095
+  quote_type(1): Basis×1095
+  freight(1): Delivered×1095
+  trans_mode(2): Truck×835; Truck/Rail×260
+  pkg(1): bulk×1095
+  grp(1): Grains×1095
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - Indiana", "market_location_city": "Indianapolis", "market_location_state": "IN", "grp": "Grains", "cat": "Coarse", "commodity": "Soybeans", "trade_loc": "Ohio River", "grade": "US #1", "pkg": "bulk", "quote_type": "Basis", "delivery_point": "Barge Loading Elevators", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": 20, "basis Min Futures Month": "November (X)", "basis Max": 20, "basis Max Futures Month": "November (X)", "b
+== 3878 | North Dakota Daily Grain Bids | sections=['Report Header', 'Report Detail'] | detail=311 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_state,grp,cat,commodity,trade_loc,class,grade,protein,pkg,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current
+  commodity(3): Wheat×111; Corn×100; Soybeans×100
+  class(3): Hard Red Spring×100; Yellow×100; Hard Red Winter×11
+  grade(2): US #2×200; US #1 Milling×111
+  market_location_name(1): Grain - North Dakota×311
+  price_unit(1): $ Per Bushel×311
+  quote_type(1): Basis×311
+  freight(1): F.O.B.×311
+  trans_mode(1): Truck×311
+  pkg(1): bulk×311
+  grp(1): Grains×311
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - North Dakota", "market_location_state": "ND", "grp": "Grains", "cat": "Coarse", "commodity": "Wheat", "trade_loc": "Central", "class": "Hard Red Spring", "grade": "US #1 Milling", "protein": "14.0%", "pkg": "bulk", "quote_type": "Basis", "delivery_point": "Country Elevators", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": -80, "basis Min Futures Month": "December (Z)", "basis Max": -65, "basis Max Futures Month": "Decemb
+== 3148 | Portland Daily Grain Bids | sections=['Report Header', 'Report Detail'] | detail=492 | header=20
+  keys: report_date,report_begin_date,report_end_date,market_location_name,market_location_city,market_location_state,grp,cat,commodity,trade_loc,class,grade,protein,pkg,quote_type,delivery_point,conventional,basis_unit,sale Type,basis Min,basis Min Futures Month,basis Max,basis Max Futures Month,basis Min Change,basis Min Direction,basis Max Change,basis Max Direction,price_unit,price Min,price Max,price Min Change,price Min Direction,price Max Change,price Max Direction,avg_price,avg_price_year_ago,freight,trans_mode,current,delivery_start,delivery_end,application
+  commodity(4): Wheat×460; White Oats×20; Barley×8; Corn×4
+  class(7): Hard Red Winter×180; NS/DNS×160; Soft White×100; Club White×20; Heavy×20; Feed×8
+  grade(2): US #1×460; US #2×32
+  market_location_name(1): Grain - Portland Grain×492
+  price_unit(2): $ Per Bushel×464; $ Per Ton×28
+  quote_type(2): Basis×344; Price×148
+  freight(1): Delivered×492
+  trans_mode(3): Rail/Barge×480; Truck×8; Rail×4
+  pkg(1): bulk×492
+  grp(1): Grains×492
+  sample: {"report_date": "09/29/2026", "report_begin_date": "09/29/2026", "report_end_date": "09/29/2026", "market_location_name": "Grain - Portland Grain", "market_location_city": "Portland", "market_location_state": "OR", "grp": "Grains", "cat": "Coarse", "commodity": "Wheat", "trade_loc": "Pacific Ports", "class": "Hard Red Winter", "grade": "US #1", "protein": "11.0%", "pkg": "bulk", "quote_type": "Basis", "delivery_point": "Export Elevators", "conventional": "Conventional", "basis_unit": "\u00a2/Bu", "sale Type": "Bid", "basis Min": 15, "basis Min Futures Month": "December (Z)", "basis Max": 25, "
+== 1034 | ? | sections=[None] | detail=0 | header=0
+  None rows=1
+== 1035 | ? | sections=[None] | detail=0 | header=0
+  None rows=1
+== 1036 | ? | sections=[None] | detail=0 | header=0
+  None rows=1
+== 1038 | ? | sections=[None] | detail=0 | header=0
+  None rows=1
+== 1039 | ? | sections=[None] | detail=0 | header=0
+  None rows=1
+== 1041 | ? | sections=[None] | detail=0 | header=0
+  None rows=1
+== 1043 | ? | sections=[None] | detail=0 | header=0
+  None rows=3
+== 1044 | ? | sections=[None] | detail=0 | header=0
+  None rows=3
+== 1045 | ? | sections=[None] | detail=0 | header=0
+  None rows=6
+== 1046 | ? | sections=[None] | detail=0 | header=0
+  None rows=3
+== 1047 | ? | sections=[None] | detail=0 | header=0
+  None rows=3
+== 1048 | ? | sections=[None] | detail=0 | header=0
+  None rows=6
+== 1049 | ? | sections=[None] | detail=0 | header=0
+  None rows=6
+== 1050 | ? | sections=[None] | detail=0 | header=0
+  None rows=3
+== 1051 | ? | sections=[None] | detail=0 | header=0
+  None rows=6
+== 1052 | ? | sections=[None] | detail=0 | header=0
+  None rows=3
+== 1053 | ? | sections=[None] | detail=0 | header=0
+  None rows=3
+== 1082 | ? | sections=[None] | detail=0 | header=0
+  None rows=1
+== 1083 | ? | sections=[None] | detail=0 | header=0
+  None rows=0
+== 1084 | ? | sections=[None] | detail=0 | header=0
+  None rows=0
+== 1085 | ? | sections=[None] | detail=0 | header=0
+  None rows=0
+== 1089 | ? | sections=[None] | detail=0 | header=0
+  None rows=3
+== 1090 | ? | sections=[None] | detail=0 | header=0
+  None rows=3
+== 1091 | ? | sections=[None] | detail=0 | header=0
+  None rows=3
+== 1092 | ? | sections=[None] | detail=0 | header=0
+  None rows=0
+== 1098 | ? | sections=[None] | detail=0 | header=0
+  None rows=2
+== 1099 | ? | sections=[None] | detail=0 | header=0
+  None rows=1
+== 1100 | ? | sections=[None] | detail=0 | header=0
+  None rows=15
+== 1095 | ? | sections=[None] | detail=0 | header=0
+  None rows=6
+== 1427 | ? | sections=[None] | detail=0 | header=0
+  None rows=312
+== 1624 | ? | sections=[None] | detail=0 | header=0
+  None rows=12
+== 1665 | ? | sections=[None] | detail=0 | header=0
+  None rows=176
+== 2734 | Daily New York Shell Egg | sections=['Report Header', 'Report Volume Weighted', 'Report Volume Simple', 'Report Detail Weighted', 'Report Detail Simple'] | detail=0 | header=20
+  Report Volume Weighted rows=0
+  Report Volume Simple rows=0
+  Report Detail Weighted rows=0
+  Report Detail Simple rows=60
+== 2842 | Weekly National Egg Products | sections=['Report Header', 'Report Volume Weighted', 'Report Volume Simple', 'Report Detail Weighted', 'Report Detail Simple'] | detail=0 | header=3
+  Report Volume Weighted rows=3
+  Report Volume Simple rows=0
+  Report Detail Weighted rows=20
+  Report Detail Simple rows=24
+== 2843 | Daily National Shell Egg Index Report (5-day rolling average) | sections=['Report Header', 'Report Volume Weighted', 'Report Volume Simple', 'Report Detail Weighted', 'Report Detail Simple'] | detail=0 | header=20
+  Report Volume Weighted rows=429
+  Report Volume Simple rows=0
+  Report Detail Weighted rows=465
+  Report Detail Simple rows=0
+== 2844 | Weekly California Shell Egg Report | sections=['Report Header', 'Report Volume Weighted', 'Report Volume Simple', 'Report Detail Weighted', 'Report Detail Simple'] | detail=0 | header=3
+  Report Volume Weighted rows=0
+  Report Volume Simple rows=0
+  Report Detail Weighted rows=0
+  Report Detail Simple rows=27
+== 2848 | Weekly Combined Regional Shell Egg Report | sections=['Report Header', 'Report Volume Weighted', 'Report Volume Simple', 'Report Detail Weighted', 'Report Detail Simple'] | detail=0 | header=3
+  Report Volume Weighted rows=0
+  Report Volume Simple rows=0
+  Report Detail Weighted rows=0
+  Report Detail Simple rows=63
+== 3645 | Weekly Miscellaneous Poultry Report | sections=['Report Header', 'Report Detail'] | detail=30 | header=2
+  keys: category,office_code,report_begin_date,report_end_date,commodity,final_ind,report_date,grp,item,region,trade_status,condition,size,package,grade,environment,freight,price_unit,low_price,high_price,avg_price,price_Change,wtd_avg_price_previous
+  commodity(4): Ducklings×18; Squabs×6; Chicken×4; Rabbits×2
+  grade(2): Plant Grade×20; U.S Grade A×10
+  price_unit(3): Cents Per Lb×22; Dollars Per Dozen×6; Dollars per Pound×2
+  freight(1): Delivered×30
+  category(1): Poultry×30
+  grp(1): Poultry×30
+  sample: {"category": "Poultry", "office_code": "LS-NW", "report_begin_date": "09/21/2026", "report_end_date": "09/25/2026", "commodity": "Chicken", "final_ind": "Final", "report_date": "09/21/2026", "grp": "Poultry", "item": "Roasters", "region": "National", "trade_status": "Domestic", "condition": "Fresh", "size": "5 lbs and Up", "package": "Ice Packed (12 Per Box)", "grade": "U.S Grade A", "environment": "Conventional", "freight": "Delivered", "price_unit": "Cents Per Lb", "low_price": "132.00", "high_price": "143.25", "avg_price": "137.63", "price_Change": "0.00", "wtd_avg_price_previous": "137.63"
+== 3646 | Weekly National Chicken Report | sections=['Report Header', 'Report Detail'] | detail=100 | header=3
+  keys: category,office_code,report_begin_date,report_end_date,commodity,final_ind,report_date,grp,primal,item,region,trade_status,condition,offer,size,grade,environment,freight,price_unit,volume_traded_unit,low_price,high_price,price_change,volume,wtd_avg_price,wtd_avg_price_previous,volume_previous
+  commodity(1): Chicken×100
+  grade(1): N/A×100
+  price_unit(1): Cents Per Lb×100
+  freight(2): Delivered×51; FOB×49
+  category(1): Poultry×100
+  grp(1): Poultry×100
+  sample: {"category": "Poultry", "office_code": "LS-NW", "report_begin_date": "09/21/2026", "report_end_date": "09/25/2026", "commodity": "Chicken", "final_ind": "Final", "report_date": "09/21/2026", "grp": "Poultry", "primal": "Part", "item": "Backs and Necks Stripped", "region": "National", "trade_status": "Domestic", "condition": "Fresh", "offer": "No", "size": "N/A", "grade": "N/A", "environment": "Conventional", "freight": "FOB", "price_unit": "Cents Per Lb", "volume_traded_unit": "Pounds", "low_price": "4.00", "high_price": "13.00", "price_change": -0.31, "volume": 1643, "wtd_avg_price": 10.41, "
+== 3647 | Weekly National Turkey Report | sections=['Report Header', 'Report Detail'] | detail=46 | header=3
+  keys: category,office_code,report_begin_date,report_end_date,commodity,final_ind,report_date,grp,primal,item,region,trade_status,class,description,condition,offer,size,grade,environment,freight,price_unit,volume_traded_unit,low_price,high_price,price_change,volume,wtd_avg_price,wtd_avg_price_previous,volume_previous
+  commodity(1): Turkey×46
+  class(3): Tom×24; N/A×17; Hen×5
+  grade(3): N/A×36; U.S. Grade A×9; Pet Food×1
+  price_unit(1): Cents Per Lb×46
+  freight(2): Delivered×36; FOB×10
+  category(1): Poultry×46
+  grp(1): Poultry×46
+  sample: {"category": "Poultry", "office_code": "LS-NW", "report_begin_date": "09/21/2026", "report_end_date": "09/25/2026", "commodity": "Turkey", "final_ind": "Final", "report_date": "09/21/2026", "grp": "Poultry", "primal": "Part", "item": "Breasts,Boneless/Skinless", "region": "National", "trade_status": "Domestic", "class": "Tom", "description": "N/A", "condition": "Fresh", "offer": "No", "size": "N/A", "grade": "N/A", "environment": "Conventional", "freight": "Delivered", "price_unit": "Cents Per Lb", "volume_traded_unit": "Pounds", "low_price": "290.00", "high_price": "310.00", "price_change": "
+== 3888 | Daily National Breaking Stock | sections=['Report Header', 'Report Volume Weighted', 'Report Volume Simple', 'Report Detail Weighted', 'Report Detail Simple'] | detail=0 | header=20
+  Report Volume Weighted rows=0
+  Report Volume Simple rows=0
+  Report Detail Weighted rows=0
+  Report Detail Simple rows=20
+== 2810 | National Direct Feeder Pig Report | sections=['Report Header', 'Report Receipts', 'Report Volume', 'Report Details', 'Report Comprehensive'] | detail=0 | header=3
+  Report Receipts rows=6
+  Report Volume rows=53
+  Report Details rows=29
+  Report Comprehensive rows=6
+== 2907 | National Direct Sheep Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=0
+  Report Receipts rows=0
+== 2911 | National Wool Review (Fri) | sections=['Report Header', 'Report Details - Domestic Volume', 'Report Details - Domestic Prices', 'Report Details - AUS AWEX', 'Report Details - AUS Price'] | detail=0 | header=3
+  Report Details - Domestic Volume rows=6
+  Report Details - Domestic Prices rows=0
+  Report Details - AUS AWEX rows=42
+  Report Details - AUS Price rows=12
+== 3641 | Weekly Major Packer Hide Report | sections=['Report Header', 'Report Details'] | detail=0 | header=3
+  Report Details rows=16
+== 2833 | USDA Beef & Pork Variety Meats Report (NW_LS440) | sections=['Report Header', 'Report Details'] | detail=0 | header=20
+  Report Details rows=80
+== 2838 | Weekly Pork & Beef Variety Meat Report (NW_LS905) | sections=['Report Header', 'Report Details'] | detail=0 | header=3
+  Report Details rows=60
+== 2839 | Weekly Tallow & Protein Report (NW_LS906) | sections=['Report Header', 'Report Details'] | detail=0 | header=3
+  Report Details rows=17
+== 2835 | USDA By-Product Drop Value Report-Hogs (NW_LS446) | sections=['Report Header', 'Report Details', 'Report Totals'] | detail=0 | header=3
+  Report Details rows=51
+  Report Totals rows=3
+== 3208 | Daily Livestock and Poultry Slaughter | sections=['Report Header', 'Report Livestock Commodity', 'Report Livestock Class', 'Report Poultry Commodity'] | detail=0 | header=21
+  Report Livestock Commodity rows=200
+  Report Livestock Class rows=52
+  Report Poultry Commodity rows=50
+== 3658 | Actual Slaughter Under Federal Inspection | sections=['Report Header', 'Report FIS Species', 'Report FIS Cattle', 'Report FIS Meat Production', 'Report FIS Head Percent', 'Report FIS Region'] | detail=0 | header=1
+  Report FIS Species rows=42
+  Report FIS Cattle rows=42
+  Report FIS Meat Production rows=22
+  Report FIS Head Percent rows=25
+  Report FIS Region rows=154
+== 3486 | Mexico to United States Feeder Cattle Import Summary | sections=['Report Header', 'Report Volume', 'Report Detail Current', 'Report Detail WTD'] | detail=0 | header=20
+  Report Volume rows=68
+  Report Detail Current rows=110
+  Report Detail WTD rows=110
+== 2708 | New Mexico Direct Cattle Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=9
+  Report Receipts rows=3
+== 2709 | Southeast Direct Cattle Report (AL/AR/FL/GA/LA/MS/TN) | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=32
+  Report Receipts rows=3
+== 2710 | Texas Direct Cattle Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=150
+  Report Receipts rows=8
+== 2770 | Montana Direct Cattle Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=0
+  Report Receipts rows=0
+== 2906 | Colorado Direct Cattle Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=28
+  Report Receipts rows=6
+== 2940 | Southwest Direct Cattle Report (AZ/CA/NV) | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=16
+  Report Receipts rows=7
+== 3059 | Northwest Direct Cattle Report (WA/OR/ID/UT) | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=9
+  Report Receipts rows=5
+== 3096 | Eastern Cornbelt Direct Cattle Report (IL/IN/MI/MN/OH/KY) | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=10
+  Report Receipts rows=3
+== 3097 | Kansas Direct Cattle Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=42
+  Report Receipts rows=6
+== 3098 | Oklahoma Direct Cattle Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=35
+  Report Receipts rows=7
+== 3184 | South Dakota Direct Cattle Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=0
+  Report Receipts rows=1
+== 3237 | Wyoming-Nebraska Direct Cattle Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=9
+  Report Receipts rows=8
+== 3455 | Iowa Direct Cattle Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=7
+  Report Receipts rows=5
+== 2808 | Missouri Direct Cattle Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=3
+  Report Details rows=4
+  Report Receipts rows=4
+== 2707 | Texas Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=1
+  Report Details rows=25
+  Report Receipts rows=1
+== 2769 | Montana Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=1
+  Report Details rows=13
+  Report Receipts rows=2
+== 2807 | Iowa Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=2
+  Report Details rows=23
+  Report Receipts rows=7
+== 2885 | Kansas Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=1
+  Report Details rows=114
+  Report Receipts rows=5
+== 2904 | California Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=2
+  Report Details rows=62
+  Report Receipts rows=6
+== 2905 | Colorado Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=2
+  Report Details rows=73
+  Report Receipts rows=6
+== 2929 | Missouri Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=1
+  Report Details rows=12
+  Report Receipts rows=0
+== 2935 | Nebraska Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=2
+  Report Details rows=35
+  Report Receipts rows=6
+== 2939 | New Mexico Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=2
+  Report Details rows=86
+  Report Receipts rows=2
+== 3056 | Idaho Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=1
+  Report Details rows=8
+  Report Receipts rows=3
+== 3057 | Oregon Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=2
+  Report Details rows=37
+  Report Receipts rows=4
+== 3058 | Washington-Oregon (Columbia Basin) Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=1
+  Report Details rows=15
+  Report Receipts rows=2
+== 3095 | Oklahoma Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=1
+  Report Details rows=20
+  Report Receipts rows=2
+== 3236 | Wyoming Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=1
+  Report Details rows=21
+  Report Receipts rows=3
+== 3731 | Utah Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=2
+  Report Details rows=18
+  Report Receipts rows=4
+== 3784 | Arizona Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=1
+  Report Details rows=40
+  Report Receipts rows=2
+== 3793 | Tennessee Direct Hay Report | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=1
+  Report Details rows=69
+  Report Receipts rows=3
+== 3926 | Nevada Direct Hay Report (Bi-Weekly) | sections=['Report Header', 'Report Details', 'Report Receipts'] | detail=0 | header=1
+  Report Details rows=7
+  Report Receipts rows=2
+== 2823 | Import Beef Trade (NW_LS421) | sections=['Report Header', 'Report Details', 'Report Volume', 'Report Detail Current', 'Report Detail WTD'] | detail=0 | header=4
+  Report Details rows=52
+  Report Volume rows=0
+  Report Detail Current rows=0
+  Report Detail WTD rows=0
+== 1602 | ? | sections=[None] | detail=0 | header=0
+  None rows=15
+== 1603 | ? | sections=[None] | detail=0 | header=0
+  None rows=100
+== 3159 | North Carolina Production Cost Report (Weekly) | sections=['Report Header', 'Report Details - Prices'] | detail=0 | header=1
+  Report Details - Prices rows=10
+== 2863 | Iowa Production Cost Report (Bi-Weekly) | sections=['Report Header', 'Report Details - Prices'] | detail=0 | header=1
+  Report Details - Prices rows=6
