@@ -46,7 +46,6 @@ pagado Faba beans 79 2006-Q3 ['2026-Q1', 245.8]
 pagado Soybeans 78 2006-Q4 ['2026-Q1', 391.2]
 carnes ficheros ['SeriesChronologiques/productions animales/viandes/séries hebdomadaires/synthèse toutes espèces/SCR-VIA-SYNTHESE_COT_NAT_HEBDO-A26.xlsx']
 carne Adult cattle at slaughterhouse gate: weighted avg price (standard) 218 2022-07-25 ['2026-09-21', 6.59]
-descartada (discontinuada) Adult cattle at slaughterhouse gate: weighted avg price (standard + quality labels, to Jul 2022) 2022-07-18
 carne Adult cattle at slaughterhouse gate: weighted avg price (standard + quality labels, to Jul 2022) 1072 2002-01-07 ['2022-07-18', 5.15]
 carne Cow, class R (standard) 218 2022-07-25 ['2026-09-21', 7.18]
 carne Cow, class O (standard) 218 2022-07-25 ['2026-09-21', 5.85]
@@ -56,9 +55,7 @@ carne Young bull, class O (standard) 218 2022-07-25 ['2026-09-21', 5.598]
 carne Young bull, class U (standard) 218 2022-07-25 ['2026-09-21', 6.475]
 carne Steer, class R (standard) 211 2022-07-25 ['2026-09-21', 6.81]
 carne Heifer, class R (standard) 218 2022-07-25 ['2026-09-21', 7.24]
-descartada (discontinuada) Cow, class R (standard + quality labels, to Jul 2022) 2022-07-18
 carne Cow, class R (standard + quality labels, to Jul 2022) 1072 2002-01-07 ['2022-07-18', 5.29]
-descartada (discontinuada) Young bull, class R (standard + quality labels, to Jul 2022) 2022-07-18
 carne Young bull, class R (standard + quality labels, to Jul 2022) 1072 2002-01-07 ['2022-07-18', 5.146]
 carne Feeder calf: Limousin U male, 6-12 months, 300 kg 1285 2002-01-07 ['2026-09-21', 5.11]
 carne Feeder calf: Charolais U male, 6-12 months, 350 kg 1279 2002-01-07 ['2026-09-21', 4.69]
