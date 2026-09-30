@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T01:34:16.060Z",
+  "generatedAt": "2026-09-30T01:52:58.519Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -286,6 +286,25 @@
       "periodChangePct": 3.155264734604102,
       "yoyPct": null,
       "volatility": 0.07292627672731705,
+      "points": 25,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-09-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_eu",
+      "product": "harina_soja",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "frequency": "weekly",
+      "unit": "tonelada",
+      "currency": "EUR",
+      "latest": 399.88,
+      "observationDate": "2026-09-01",
+      "periodChangePct": 4.527394395650353,
+      "yoyPct": null,
+      "volatility": 0.07480302548662568,
       "points": 25,
       "coverageStart": "2024-09-01",
       "coverageEnd": "2026-09-01",

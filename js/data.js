@@ -598,7 +598,7 @@
           quoteTypes: { us: { type: 'indice', market: 'USDA' }, eu: { type: 'indice', market: 'Comisión Europea (índices regionales)' } } },
         { nameKey: 'harina_soja', imperialUnitKey: 'ton_corta', imperialKgPerUnit: 907.185, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 335, changePct: 0.6, history: [325, 328, 330, 332, 331, 333, 335], currency: 'USD', kgPerUnit: 907.185 },
-          eu: { price: 485, changePct: 0.5, history: [470, 475, 478, 480, 482, 484, 485], currency: 'EUR', kgPerUnit: 1000 },
+          eu: { price: 409.67, changePct: 2.0501, history: [359.51, 364.81, 372.43, 384.13, 382.56, 374.51, 358.63, 375.86, 394.93, 399.88, 401.44, 409.67], currency: 'EUR', kgPerUnit: 1000 },
           footnoteKey: 'harina_soja',
           uk: { price: 355.00, changePct: 5.65, history: [340, 343, 346, 349, 351, 353, 355], currency: 'GBP', kgPerUnit: 1000 },
           quoteTypes: { us: { type: 'futuro', market: 'CME (harina de soja)' }, eu: { type: 'referencia', market: 'Comisión Europea (harina de soja, España, media nacional)' }, uk: { type: 'indice', market: 'Farmers Weekly (mercado del Reino Unido)' } } }
@@ -907,7 +907,7 @@
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. Los coeficientes de Francia, Alemania e Italia comparan un mercado de referencia de cada país (Rouen, Hamburgo, Bolonia) con Zaragoza la misma semana; las etapas de comercialización no son idénticas. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:48.565Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:56.226Z'
     },
     'cereales-maiz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
@@ -923,7 +923,7 @@
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del maíz pienso en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional (la media nacional del portal está desactualizada) ni un futuro de Euronext. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:47.348Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:55.280Z'
     },
     'lacteos-leche-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
@@ -934,7 +934,7 @@
       sourceId: 'european_commission', frequency: 'monthly',
       methodology: 'Comisión Europea, Milk Market Observatory (Agri-food Data Portal): precio mensual de la leche cruda de vaca pagada al productor en España, EUR/100 kg, último mes completo. Las cifras del último mes pueden ser provisionales. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-08-31', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:50.092Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:57.787Z'
     },
     'fertilizantes-urea-us': {
       sourceId: 'dtn_fertilizer', frequency: 'weekly',
@@ -966,7 +966,7 @@
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cerdo clasificada S (≥60 % magro) en España, EUR/100 kg de canal. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:41.535Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:50.442Z'
     },
     'ganado-vaca-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
@@ -977,13 +977,13 @@
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de macho joven (categoría A, conformación R3, la referencia UE) en España, EUR/100 kg de canal. No es vaca de desecho ni la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:42.979Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:51.677Z'
     },
     'ovino-cordero-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cordero pesado en España, EUR/100 kg de canal. No es la media de la UE ni cordero ligero. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:43.602Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:52.091Z'
     },
     'avicultura-pollo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
@@ -994,25 +994,25 @@
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio de venta semanal del pollo broiler entero (65 % de rendimiento) en España; el portal lo da en moneda nacional (EUR) por 100 kg y se divide entre 100 para expresarlo en EUR/kg. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:44.226Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:52.668Z'
     },
     'azucar-azucar-eu': {
       sourceId: 'eu_agrifood', frequency: 'monthly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio mensual medio del azúcar en la UE (contratos mensuales), EUR/tonelada. Es la media de la UE, no un precio de España. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-06', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:45.259Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:53.512Z'
     },
     'aceite-oliva-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal medio nacional del aceite de oliva virgen extra (hasta 0,8 %) en España, EUR/100 kg. No es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:45.969Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:54.175Z'
     },
     'cereales-arroz-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal medio del arroz cáscara (paddy) tipo japónica en España, EUR/tonelada. No es la media de la UE ni arroz índica. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:46.484Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:54.622Z'
     },
     'avicultura-huevos-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
@@ -1023,19 +1023,25 @@
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de los huevos de gallinas en jaula (Cage) en España, EUR/100 kg de huevos (el portal no lo da por docena). No es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:44.752Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:53.094Z'
     },
     'fertilizantes-dap-eu': {
       sourceId: 'eu_agrifood', frequency: 'monthly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio mensual agregado de los fertilizantes fosfatados (P) en varios mercados de la UE, EUR/tonelada, a partir de servicios de inteligencia de mercado. NO es DAP: la Comisión no especifica el producto, así que no es comparable con DAP ni con el índice DTN. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:49.084Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:56.942Z'
     },
     'fertilizantes-potasa-eu': {
       sourceId: 'eu_agrifood', frequency: 'monthly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio mensual agregado de los fertilizantes potásicos (K) en varios mercados de la UE, EUR/tonelada, a partir de servicios de inteligencia de mercado. NO es MOP: la Comisión no especifica el producto, así que no es comparable con MOP ni con el índice DTN. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T01:06:49.581Z'
+      status: 'verified', verifiedAt: '2026-09-30T01:52:57.353Z'
+    },
+    'pienso-harina_soja-eu': {
+      sourceId: 'eu_agrifood', frequency: 'weekly',
+      methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la harina de soja de 40-50 % de proteína en España (media, salida de fábrica), EUR/tonelada. Sustituye a la referencia anterior de colza en Euronext. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
+      comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
+      status: 'verified', verifiedAt: '2026-09-30T01:52:58.242Z'
     }
   };
 
