@@ -82,7 +82,7 @@ nl = []
 try:
     m = cbs("7425eng", "", ["Volume_1", "Cheese_5", "Butter_4"])
     for c, id_, label, unit in [("Volume_1", "nl-milk-supply", "Milk supply to dairy factories", "1,000 kg"), ("Cheese_5", "nl-cheese-prod", "Cheese production (dairy factories)", "1,000 kg"), ("Butter_4", "nl-butter-prod", "Butter production (dairy factories)", "1,000 kg")]:
-        s = mk(id_, label, unit, "monthly", m[c], "production")
+        s = mk(id_, label, unit, "monthly", [(p, v) for p, v in m[c] if p[4:6] == "MM"], "production")
         if s: nl.append(s)
 except Exception as e:
     log.append("ERROR NL milk: " + str(e)[:160])

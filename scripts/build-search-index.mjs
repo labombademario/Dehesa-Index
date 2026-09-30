@@ -130,6 +130,7 @@ const PAGES = [
   ['contacto.html', tri('Contacto', 'Contact', 'Contact', 'Contatti'), 'contacto contact contatti email correo escribir'],
   ['metodologia.html', tri('Metodología', 'Methodology', 'Méthodologie', 'Metodologia'), 'metodologia methodology méthodologie como se calcula how calculated fuentes verificacion'],
   ['legal.html', tri('Aviso legal y privacidad', 'Legal notice and privacy', 'Mentions légales et confidentialité', 'Note legali e privacy'), 'legal privacidad privacy cookies terminos terms rgpd gdpr aviso'],
+  ['paises.html', tri('Producción y comercio por país: Dinamarca, Países Bajos y Australia', 'Production and trade by country: Denmark, Netherlands and Australia', 'Production et commerce par pays : Danemark, Pays-Bas et Australie', 'Produzione e commercio per paese: Danimarca, Paesi Bassi e Australia'), 'paises country pais produccion production leche milk carne meat sacrificio slaughter exportaciones exports dinamarca denmark paises bajos netherlands holanda australia cbs abs statistics'],
   ['clima.html', tri('Clima agrícola', 'Agricultural climate', 'Climat agricole', 'Clima agricolo'), 'clima climate lluvia rain temperatura sequia nasa'],
   ['mapa.html', tri('Mapa agrícola', 'Agricultural map', 'Carte agricole', 'Mappa agricola'), 'mapa map carte mappa paises countries geografico'],
   ['oferta-demanda.html', OD, 'oferta demanda supply demand balance produccion consumo exportaciones importaciones existencias usda psd wasde'],

@@ -11,7 +11,7 @@ function read(p) { return fs.readFileSync(path.join(root,p),'utf8'); }
 function exists(p) { return fs.existsSync(path.join(root,p)); }
 function check(cond,msg){ if(cond) ok.push(msg); else failures.push(msg); }
 
-const htmlPages = ['index.html','precios.html','noticias.html','calendario.html','informacion.html','blog.html','empresas.html','contacto.html','metodologia.html','legal.html','clima.html','mapa.html','oferta-demanda.html','mercados.html','cultivos.html','exportaciones.html','sequia.html','ganaderia.html','insumos.html','costes.html','rendimientos.html','producto.html','europa.html'];
+const htmlPages = ['index.html','precios.html','noticias.html','calendario.html','informacion.html','blog.html','empresas.html','contacto.html','metodologia.html','legal.html','clima.html','paises.html','mapa.html','oferta-demanda.html','mercados.html','cultivos.html','exportaciones.html','sequia.html','ganaderia.html','insumos.html','costes.html','rendimientos.html','producto.html','europa.html'];
 for (const page of htmlPages) {
   check(exists(page), `page exists: ${page}`);
   if (!exists(page)) continue;
@@ -34,7 +34,7 @@ check(shared.includes('NAV_GROUPS') && shared.includes("'g:us'") && shared.inclu
   const groupFiles = [...shared.matchAll(/file: '([a-z-]+\.html)'/g)].map(m => m[1]);
   check(groupFiles.length >= 12, 'submenus list their pages (' + groupFiles.length + ')');
   for (const f of new Set(groupFiles)) check(exists(f), 'submenu target exists: ' + f);
-  for (const f of ['mercados.html','exportaciones.html','oferta-demanda.html','cultivos.html','rendimientos.html','ganaderia.html','sequia.html','insumos.html','costes.html','europa.html','producto.html','mapa.html','clima.html']) check(groupFiles.includes(f), 'submenu links ' + f);
+  for (const f of ['mercados.html','exportaciones.html','oferta-demanda.html','cultivos.html','rendimientos.html','ganaderia.html','sequia.html','insumos.html','costes.html','europa.html','producto.html','mapa.html','clima.html','paises.html']) check(groupFiles.includes(f), 'submenu links ' + f);
 }
 check(shared.includes('window.history.back()'), 'context back action exists');
 check(shared.includes("sitePath('assets/logo.png')"), 'footer logo uses nested-page-safe path');

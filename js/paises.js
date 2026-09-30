@@ -1,0 +1,84 @@
+/* Dehesa Index — Producción y comercio por país. Lee data/country-stats.json (Statistics Denmark, CBS, ABS; CC BY 4.0).
+   Solo series reales publicadas por la fuente; nada se estima ni se rellena. */
+(function () {
+  'use strict';
+  var T = {
+    es: { title: 'Producción y comercio por país', sub: 'Producción de leche y carne, sacrificio, cultivos y exportaciones de Dinamarca, Países Bajos y Australia, con datos oficiales y su histórico completo. No son precios: son volúmenes y valores.',
+      country: 'País', group: 'Tipo', series: 'Serie', range: 'Periodo', all: 'Todos', production: 'Producción y sacrificio', crops: 'Cultivos', trade: 'Exportaciones', latest: 'Último dato', change: 'Var. vs. anterior', period: 'Periodo', unit: 'Unidad',
+      r5: '5 años', r10: '10 años', r20: '20 años', rmax: 'Máximo', date: 'Fecha', table: 'Ver todas las series', src: 'Fuente', lic: 'Licencia', updated: 'Actualizado', note: 'Datos oficiales tal como los publica cada fuente; los nombres de las series se mantienen en inglés. Las exportaciones de Australia son valor en dólares australianos, no volumen. El último periodo puede ser provisional.', none: 'Sin datos disponibles.',
+      countries: { DK: 'Dinamarca', NL: 'Países Bajos', AU: 'Australia' }, freq: { monthly: 'mensual', quarterly: 'trimestral', annual: 'anual' } },
+    en: { title: 'Production and trade by country', sub: 'Milk and meat production, slaughter, crops and exports for Denmark, the Netherlands and Australia, from official data with full history. These are volumes and values, not prices.',
+      country: 'Country', group: 'Type', series: 'Series', range: 'Period', all: 'All', production: 'Production and slaughter', crops: 'Crops', trade: 'Exports', latest: 'Latest', change: 'Change vs. previous', period: 'Period', unit: 'Unit',
+      r5: '5 years', r10: '10 years', r20: '20 years', rmax: 'Max', date: 'Date', table: 'See all series', src: 'Source', lic: 'Licence', updated: 'Updated', note: 'Official data as published by each source. Australian exports are value in Australian dollars, not volume. The latest period may be provisional.', none: 'No data available.',
+      countries: { DK: 'Denmark', NL: 'Netherlands', AU: 'Australia' }, freq: { monthly: 'monthly', quarterly: 'quarterly', annual: 'annual' } },
+    fr: { title: 'Production et commerce par pays', sub: 'Production de lait et de viande, abattages, cultures et exportations du Danemark, des Pays-Bas et de l’Australie, avec données officielles et historique complet. Ce ne sont pas des prix : ce sont des volumes et des valeurs.',
+      country: 'Pays', group: 'Type', series: 'Série', range: 'Période', all: 'Tous', production: 'Production et abattages', crops: 'Cultures', trade: 'Exportations', latest: 'Dernière donnée', change: 'Var. vs précédent', period: 'Période', unit: 'Unité',
+      r5: '5 ans', r10: '10 ans', r20: '20 ans', rmax: 'Maximum', date: 'Date', table: 'Voir toutes les séries', src: 'Source', lic: 'Licence', updated: 'Mis à jour', note: 'Données officielles telles que publiées par chaque source ; les noms des séries restent en anglais. Les exportations australiennes sont en valeur (dollars australiens), pas en volume. La dernière période peut être provisoire.', none: 'Aucune donnée disponible.',
+      countries: { DK: 'Danemark', NL: 'Pays-Bas', AU: 'Australie' }, freq: { monthly: 'mensuelle', quarterly: 'trimestrielle', annual: 'annuelle' } },
+    it: { title: 'Produzione e commercio per paese', sub: 'Produzione di latte e carne, macellazioni, colture ed esportazioni di Danimarca, Paesi Bassi e Australia, con dati ufficiali e storico completo. Non sono prezzi: sono volumi e valori.',
+      country: 'Paese', group: 'Tipo', series: 'Serie', range: 'Periodo', all: 'Tutti', production: 'Produzione e macellazioni', crops: 'Colture', trade: 'Esportazioni', latest: 'Ultimo dato', change: 'Var. vs precedente', period: 'Periodo', unit: 'Unità',
+      r5: '5 anni', r10: '10 anni', r20: '20 anni', rmax: 'Massimo', date: 'Data', table: 'Vedi tutte le serie', src: 'Fonte', lic: 'Licenza', updated: 'Aggiornato', note: 'Dati ufficiali come pubblicati da ciascuna fonte; i nomi delle serie restano in inglese. Le esportazioni australiane sono in valore (dollari australiani), non in volume. L’ultimo periodo può essere provvisorio.', none: 'Nessun dato disponibile.',
+      countries: { DK: 'Danimarca', NL: 'Paesi Bassi', AU: 'Australia' }, freq: { monthly: 'mensile', quarterly: 'trimestrale', annual: 'annuale' } }
+  };
+  var DATA = null, ST = { c: 'DK', g: 'all', s: null, r: 'max' };
+  function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
+  function tt() { return T[lang()] || T.es; }
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
+  function dec(v) { var a = Math.abs(v); return a >= 1000 ? 0 : a >= 100 ? 1 : a >= 10 ? 1 : 2; }
+  function ts(p) { // "1995-01" | "2026-Q2" | "2026" -> ms UTC
+    var m;
+    if ((m = /^(\d{4})-(\d{2})$/.exec(p))) return Date.UTC(+m[1], +m[2] - 1, 1);
+    if ((m = /^(\d{4})-Q(\d)$/.exec(p))) return Date.UTC(+m[1], (+m[2] - 1) * 3, 1);
+    if ((m = /^(\d{4})$/.exec(p))) return Date.UTC(+m[1], 0, 1);
+    return NaN;
+  }
+  function plabel(p, freq) {
+    if (freq === 'monthly') { try { return new Date(ts(p)).toLocaleDateString(lang(), { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return p; } }
+    return p;
+  }
+  function chartFor(s) {
+    var t = tt(), years = { '5': 5, '10': 10, '20': 20 }[ST.r], pts = s.points.slice();
+    if (years) { var last = ts(pts[pts.length - 1][0]), from = last - years * 365.25 * 864e5; pts = pts.filter(function (p) { return ts(p[0]) >= from; }); }
+    var series = [{ name: s.label, color: '#2f6b4a', pts: pts.map(function (p) { return { x: ts(p[0]), y: p[1], l: plabel(p[0], s.frequency) }; }) }];
+    var d = dec(s.latest);
+    return window.DehesaChart.render({ series: series, xMode: 'time', xTitle: t.date, yTitle: s.unit, aria: s.label + ' (' + s.unit + ')', noLegend: true, vFmt: function (v) { return nf(v, d); },
+      xFmt: s.frequency === 'annual' ? function (x) { return new Date(x).getUTCFullYear(); } : undefined });
+  }
+  function build() {
+    var root = document.getElementById('paises-body'); if (!root || !DATA) return;
+    var t = tt(), c = DATA.countries[ST.c] || DATA.countries.DK;
+    var list = c.series.filter(function (s) { return ST.g === 'all' || s.group === ST.g; });
+    if (!list.some(function (s) { return s.id === ST.s; })) ST.s = list.length ? list[0].id : null;
+    var cur = list.filter(function (s) { return s.id === ST.s; })[0];
+    var countries = Object.keys(DATA.countries).filter(function (k) { return DATA.countries[k].series.length; });
+    var groups = ['all'].concat(['production', 'crops', 'trade'].filter(function (g) { return c.series.some(function (s) { return s.group === g; }); }));
+    var opt = function (arr, sel, lab) { return arr.map(function (k) { return '<option value="' + esc(k) + '"' + (k === sel ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; }).join(''); };
+    var sel = function (id, label, inner) { return '<label style="font-size:13px;flex:1;min-width:150px">' + label + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; };
+    var rng = ['5', '10', '20', 'max'];
+    var html = '<div style="display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px">' +
+      sel('ps-c', t.country, opt(countries, ST.c, function (k) { return t.countries[k] || k; })) +
+      sel('ps-g', t.group, opt(groups, ST.g, function (k) { return k === 'all' ? t.all : t[k]; })) +
+      sel('ps-s', t.series, opt(list.map(function (s) { return s.id; }), ST.s, function (id) { return list.filter(function (s) { return s.id === id; })[0].label; })) +
+      sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + '</div>';
+    if (cur) {
+      var ch = cur.changePct;
+      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(cur.label.toUpperCase()) + ' (' + esc(cur.unit) + ')</div>' + chartFor(cur) +
+        '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div></div>';
+    } else html += '<p class="di-movers-hint">' + t.none + '</p>';
+    html += '<details style="margin-top:14px"><summary style="cursor:pointer;font-size:13px">' + t.table + '</summary><div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.series.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.latest.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:8px 6px">' + t.period.toUpperCase() + '</th><th style="padding:8px 6px">' + t.unit.toUpperCase() + '</th></tr>' +
+      c.series.map(function (s) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px">' + esc(s.label) + '</td><td style="padding:8px 6px;text-align:right">' + nf(s.latest, dec(s.latest)) + '</td><td style="padding:8px 6px;text-align:right">' + (s.changePct == null ? '' : (s.changePct > 0 ? '+' : s.changePct < 0 ? '−' : '') + nf(Math.abs(s.changePct), 1) + ' %') + '</td><td style="padding:8px 6px">' + esc(plabel(s.latestPeriod, s.frequency)) + '</td><td style="padding:8px 6px">' + esc(s.unit) + '</td></tr>'; }).join('') + '</table></div></details>' +
+      '<p class="di-movers-hint" style="margin-top:12px">' + t.note + '</p><p class="di-movers-hint">' + t.src + ': <a href="' + esc(c.source.url) + '" target="_blank" rel="noopener">' + esc(c.source.name) + '</a> · ' + t.lic + ': ' + esc(c.source.license) + ' · ' + t.updated + ': ' + esc((DATA.generatedAt || '').slice(0, 10)) + '</p>';
+    root.innerHTML = html;
+    var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; } if (key === 'g') ST.s = null; build(); var n = document.getElementById(id); if (n) n.focus(); }; };
+    bind('ps-c', 'c'); bind('ps-g', 'g'); bind('ps-s', 's'); bind('ps-r', 'r');
+  }
+  function shell() { var t = tt(); var h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = 'Dehesa Index — ' + t.title; }
+  window.DehesaShared.init('informacion');
+  var prev = window.DehesaShared.onLangChange;
+  window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };
+  shell();
+  var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase();
+  fetch('data/country-stats.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) { DATA = d; if (!d.countries[ST.c] || !d.countries[ST.c].series.length) ST.c = 'DK'; build(); })
+    .catch(function () { var b = document.getElementById('paises-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
+})();

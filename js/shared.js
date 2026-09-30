@@ -81,6 +81,7 @@
     ] },
     eu: { label: { es: 'Datos UE', en: 'EU data', fr: 'Données UE', it: 'Dati UE' }, items: [
       { file: 'europa.html', label: { es: 'Precios de la UE', en: 'EU prices', fr: 'Prix de l’UE', it: 'Prezzi UE' } },
+      { file: 'paises.html', label: { es: 'Producción por país', en: 'Production by country', fr: 'Production par pays', it: 'Produzione per paese' } },
       { file: 'index.html', hash: '#home-dehesa-index', label: { es: 'Índice Dehesa (UE)', en: 'Dehesa Index (EU)', fr: 'Indice Dehesa (UE)', it: 'Indice Dehesa (UE)' }, noActive: true }
     ] },
     tools: { label: { es: 'Herramientas', en: 'Tools', fr: 'Outils', it: 'Strumenti' }, items: [
