@@ -1,0 +1,74 @@
+== FR HTTP 200
+35 | Milling wheat | La Pallice | Delivered to port - grain delivered to a port silo by train or truck or barge | TONNES | last €242,36 @ 20/09/2026
+36 | Milling wheat | Rouen | Delivered to port - grain delivered to a port silo by train or truck or barge | TONNES | last €238,56 @ 20/09/2026
+1 | Durum wheat | Rouen | Delivered to port - grain delivered to a port silo by train or truck or barge | TONNES | last €275,93 @ 30/08/2026
+25 | Durum wheat | La Pallice | Delivered to port - grain delivered to a port silo by train or truck or barge | TONNES | last €263,43 @ 30/08/2026
+30 | Breadmaking common wheat | National Average | National Average - Not Specified | TONNES | last €234,30 @ 26/07/2026
+25 | Durum wheat | National Average | National Average - Not Specified | TONNES | last €267,50 @ 26/07/2026
+4 | Durum wheat | Port-La-Nouvelle | Delivered to port - grain delivered to a port silo by train or truck or barge | TONNES | last €256,00 @ 17/05/2026
+sample keys: memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,productName,marketName,stageName,referencePeriod
+== DE HTTP 200
+25 | Milling wheat | Würzburg | Departure from silo - after some storage - on truck or other transport means | TONNES | last €206,00 @ 27/09/2026
+24 | Feed wheat | Würzburg | Departure from silo - after some storage - on truck or other transport means | TONNES | last €192,50 @ 27/09/2026
+29 | Milling wheat | Hamburg | Departure from silo - after some storage - on truck or other transport means | TONNES | last €244,00 @ 27/09/2026
+18 | Feed wheat | Mannheim | Departure from silo - after some storage - on truck or other transport means | TONNES | last €222,50 @ 20/09/2026
+9 | Milling wheat | Mannheim | Departure from silo - after some storage - on truck or other transport means | TONNES | last €227,50 @ 20/09/2026
+1 | Milling wheat | Stuttgart | Departure from silo - after some storage - on truck or other transport means | TONNES | last €252,00 @ 13/09/2026
+8 | Milling wheat | München | Departure from silo - after some storage - on truck or other transport means | TONNES | last €252,00 @ 13/09/2026
+22 | Wheat bran | Köln | Departure from silo - after some storage - on truck or other transport means | TONNES | last €195,00 @ 13/09/2026
+20 | Wheat bran | Hamburg | Departure from silo - after some storage - on truck or other transport means | TONNES | last €195,00 @ 06/09/2026
+29 | Feed wheat | Köln | Departure from silo - after some storage - on truck or other transport means | TONNES | last €234,00 @ 06/09/2026
+8 | Feed wheat | Bremen | Departure from silo - after some storage - on truck or other transport means | TONNES | last €245,00 @ 06/09/2026
+7 | Wheat bran | München | Departure from silo - after some storage - on truck or other transport means | TONNES | last €130,00 @ 06/09/2026
+8 | Wheat bran | Bremen | Departure from silo - after some storage - on truck or other transport means | TONNES | last €185,00 @ 06/09/2026
+5 | Milling wheat | Bremen | Departure from silo - after some storage - on truck or other transport means | TONNES | last €253,00 @ 06/09/2026
+7 | Feed wheat | München | Departure from silo - after some storage - on truck or other transport means | TONNES | last €220,00 @ 06/09/2026
+22 | Milling wheat | Köln | Departure from silo - after some storage - on truck or other transport means | TONNES | last €235,00 @ 16/08/2026
+17 | Wheat bran | Würzburg | Departure from silo - after some storage - on truck or other transport means | TONNES | last €105,00 @ 09/08/2026
+26 | Wheat bran | National Average | National Average - Not Specified | TONNES | last €165,00 @ 02/08/2026
+30 | Feed wheat | National Average | National Average - Not Specified | TONNES | last €214,25 @ 02/08/2026
+31 | Breadmaking common wheat | National Average | National Average - Not Specified | TONNES | last €233,00 @ 02/08/2026
+sample keys: memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,productName,marketName,stageName,referencePeriod
+== IT HTTP 200
+9 | Milling wheat | Roma | Departure from farm or from production area - on truck or other transport means | TONNES | last €267,50 @ 20/09/2026
+32 | Durum wheat | Bologna | Deliver to first customer - silo or processing plant - on truck or other transport means | TONNES | last €275,50 @ 20/09/2026
+30 | Durum wheat | Napoli | Deliver to first customer - silo or processing plant - on truck or other transport means | TONNES | last €276,50 @ 20/09/2026
+33 | Durum wheat | Foggia | Price at farm gate | TONNES | last €276,50 @ 20/09/2026
+35 | Milling wheat | Bologna | Deliver to first customer - silo or processing plant - on truck or other transport means | TONNES | last €254,00 @ 20/09/2026
+33 | Milling wheat | Milano | Deliver to first customer - silo or processing plant - on truck or other transport means | TONNES | last €251,00 @ 20/09/2026
+31 | Milling wheat | Verona | Departure from farm or from production area - on truck or other transport means | TONNES | last €239,00 @ 20/09/2026
+31 | Durum wheat | Milano | Deliver to first customer - silo or processing plant - on truck or other transport means | TONNES | last €275,50 @ 20/09/2026
+36 | Milling wheat | Firenze | Price at farm gate | TONNES | last €195,00 @ 20/09/2026
+31 | Milling wheat | Napoli | Deliver to first customer - silo or processing plant - on truck or other transport means | TONNES | last €282,50 @ 20/09/2026
+32 | Milling wheat | Treviso | Departure from farm or from production area - on truck or other transport means | TONNES | last €232,00 @ 20/09/2026
+28 | Milling wheat | Torino | Deliver to first customer - silo or processing plant - on truck or other transport means | TONNES | last €249,00 @ 20/09/2026
+32 | Milling wheat | Udine | Departure from farm or from production area - on truck or other transport means | TONNES | last €230,00 @ 20/09/2026
+29 | Milling wheat | Perugia | Price at farm gate | TONNES | last €222,60 @ 20/09/2026
+29 | Durum wheat | Roma | Departure from farm or from production area - on truck or other transport means | TONNES | last €302,50 @ 30/08/2026
+6 | Durum wheat | Grosseto | Price at farm gate | TONNES | last €302,50 @ 30/08/2026
+31 | Breadmaking common wheat | National Average | National Average - Not Specified | TONNES | last €219,31 @ 02/08/2026
+29 | Durum wheat | National Average | National Average - Not Specified | TONNES | last €271,83 @ 02/08/2026
+2 | Milling wheat | Grosseto | Price at farm gate | TONNES | last €240,16 @ 28/06/2026
+20 | Milling wheat | Alessandria | Price at farm gate | TONNES | last €215,50 @ 14/06/2026
+sample keys: memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,productName,marketName,stageName,referencePeriod
+== ES HTTP 200
+37 | Feed wheat | Valladolid | Departure from silo - after some storage - on truck or other transport means | TONNES | last €247,80 @ 20/09/2026
+37 | Feed wheat | Navarra | Departure from silo - after some storage - on truck or other transport means | TONNES | last €250,42 @ 20/09/2026
+36 | Feed wheat | Zaragoza | Departure from silo - after some storage - on truck or other transport means | TONNES | last €258,20 @ 20/09/2026
+37 | Feed wheat | Sevilla | Departure from silo - after some storage - on truck or other transport means | TONNES | last €245,00 @ 20/09/2026
+37 | Milling wheat | Huesca | Departure from silo - after some storage - on truck or other transport means | TONNES | last €260,00 @ 20/09/2026
+37 | Milling wheat | Segovia | Departure from silo - after some storage - on truck or other transport means | TONNES | last €255,00 @ 20/09/2026
+37 | Durum wheat | Sevilla | Departure from silo - after some storage - on truck or other transport means | TONNES | last €268,00 @ 20/09/2026
+37 | Milling wheat | Lleida | Departure from silo - after some storage - on truck or other transport means | TONNES | last €255,60 @ 20/09/2026
+37 | Feed wheat | Palencia | Departure from silo - after some storage - on truck or other transport means | TONNES | last €241,85 @ 20/09/2026
+37 | Feed wheat | Lleida | Departure from silo - after some storage - on truck or other transport means | TONNES | last €250,40 @ 20/09/2026
+37 | Milling wheat | Navarra | Departure from silo - after some storage - on truck or other transport means | TONNES | last €258,00 @ 20/09/2026
+36 | Durum wheat | Zaragoza | Departure from silo - after some storage - on truck or other transport means | TONNES | last €286,00 @ 20/09/2026
+37 | Feed wheat | Zamora | Departure from silo - after some storage - on truck or other transport means | TONNES | last €245,20 @ 20/09/2026
+37 | Feed wheat | Segovia | Departure from silo - after some storage - on truck or other transport means | TONNES | last €244,20 @ 20/09/2026
+36 | Milling wheat | Zaragoza | Departure from silo - after some storage - on truck or other transport means | TONNES | last €262,70 @ 20/09/2026
+37 | Feed wheat | Burgos | Departure from silo - after some storage - on truck or other transport means | TONNES | last €241,75 @ 20/09/2026
+37 | Feed wheat | Toledo | Departure from silo - after some storage - on truck or other transport means | TONNES | last €253,20 @ 20/09/2026
+37 | Feed wheat | Huesca | Departure from silo - after some storage - on truck or other transport means | TONNES | last €251,80 @ 20/09/2026
+1 | Milling wheat | Toledo | Departure from silo - after some storage - on truck or other transport means | TONNES | last €224,95 @ 01/02/2026
+sample keys: memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,productName,marketName,stageName,referencePeriod
