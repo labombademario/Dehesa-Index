@@ -29,6 +29,7 @@ check('published prices enforce source contract',prices.includes("observationMat
 const news=await read('js/noticias.js');
 check('news URL sync uses pushState',news.includes('history.pushState'));
 check('news URL restores popstate',news.includes("addEventListener('popstate'"));
+check('news filters show coverage and explain empty regions',news.includes('noRegionCoverage')&&news.includes('coverageCount'));
 check('news has direct price navigation',news.includes('di-news-item-price-link'));
 
 const cal=await read('js/calendario.js');

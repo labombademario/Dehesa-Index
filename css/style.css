@@ -1114,3 +1114,6 @@ body.di-modal-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
   .di-news-impact-story{display:block}
   .di-news-impact-story span{display:block;margin-top:5px}
 }
+
+.di-news-reset { margin-left: 8px; padding: 4px 12px; border: 1px solid var(--border-dashed); border-radius: 999px; background: transparent; color: var(--text); font: inherit; font-size: 12.5px; cursor: pointer; }
+.di-news-reset:hover { background: var(--surface-2, var(--surface)); }

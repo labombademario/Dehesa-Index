@@ -192,6 +192,7 @@
       intelEmpty: 'No hay suficiente cobertura para generar contexto con estos filtros.',
       filterSummary: 'Mostrando {count} noticias', tagMarket: 'Mercado', tagTopic: 'Tema',
       noResultsHint: 'No hay noticias en esta categoría por ahora. Prueba con otro filtro.',
+      noRegionCoverage: 'Todavía no hay noticias específicas de {region}. Los titulares globales que afectan a este mercado aparecen en "Global".', resetFilters: 'Quitar filtros',
       sourcesTitle: 'Fuentes',
       sources: [
         { text: 'Euronews — Agricultura', url: 'https://www.euronews.com/tag/agriculture' },
@@ -217,6 +218,7 @@
       intelEmpty: 'There is not enough coverage to build context with these filters.',
       filterSummary: 'Showing {count} stories', tagMarket: 'Market', tagTopic: 'Theme',
       noResultsHint: 'No headlines in this category right now. Try another filter.',
+      noRegionCoverage: 'There are no {region}-specific headlines yet. Global stories that affect this market appear under "Global".', resetFilters: 'Clear filters',
       sourcesTitle: 'Sources',
       sources: [
         { text: 'Euronews — Agriculture', url: 'https://www.euronews.com/tag/agriculture' },
@@ -242,6 +244,7 @@
       intelEmpty: 'Couverture insuffisante pour générer un contexte avec ces filtres.',
       filterSummary: '{count} actualités affichées', tagMarket: 'Marché', tagTopic: 'Thème',
       noResultsHint: "Aucune actualité dans cette catégorie pour l'instant. Essayez un autre filtre.",
+      noRegionCoverage: 'Il n\'y a pas encore d\'actualités spécifiques pour {region}. Les actualités mondiales qui touchent ce marché figurent sous « Global ».', resetFilters: 'Effacer les filtres',
       sourcesTitle: 'Sources',
       sources: [
         { text: 'Euronews — Agriculture', url: 'https://www.euronews.com/tag/agriculture' },
@@ -267,6 +270,7 @@
       intelEmpty: 'Copertura insufficiente per generare contesto con questi filtri.',
       filterSummary: 'Visualizzate {count} notizie', tagMarket: 'Mercato', tagTopic: 'Tema',
       noResultsHint: 'Nessuna notizia in questa categoria al momento. Prova un altro filtro.',
+      noRegionCoverage: 'Non ci sono ancora notizie specifiche per {region}. Le notizie globali che riguardano questo mercato compaiono sotto "Globale".', resetFilters: 'Rimuovi i filtri',
       sourcesTitle: 'Fonti',
       sources: [
         { text: 'Euronews — Agricoltura', url: 'https://www.euronews.com/tag/agriculture' },
@@ -305,9 +309,24 @@
     render();
   });
 
-  function optionHtml(value, label, selected) {
+  function optionHtml(value, label, selected, count) {
     var esc = window.DehesaShared.esc;
-    return '<option value="' + esc(value) + '"' + (selected ? ' selected' : '') + '>' + esc(label) + '</option>';
+    var hasCount = typeof count === 'number';
+    var disabled = hasCount && count === 0 && !selected;
+    return '<option value="' + esc(value) + '"' + (selected ? ' selected' : '') + (disabled ? ' disabled' : '') + '>' + esc(label) + (hasCount ? ' (' + count + ')' : '') + '</option>';
+  }
+
+  // Cuántas noticias habría si se eligiera `value` en el filtro `key`, manteniendo
+  // los otros dos filtros tal como están. Así cada opción muestra su cobertura real.
+  function coverageCount(key, value) {
+    return NEWS_ITEMS.filter(function(item) {
+      var r = key === 'region' ? value : state.region;
+      var p = key === 'product' ? value : state.product;
+      var tp = key === 'topic' ? value : state.topic;
+      return (r === 'all' || item.region === r) &&
+        (p === 'all' || item.products.indexOf(p) !== -1) &&
+        (tp === 'all' || item.topics.indexOf(tp) !== -1);
+    }).length;
   }
 
   function productPriceUrl(product) {
@@ -389,11 +408,11 @@
     products.sort(function(a,b){ return (productLabels[a] || a).localeCompare(productLabels[b] || b); });
     topics.sort(function(a,b){ return (topicLabels[a] || a).localeCompare(topicLabels[b] || b); });
 
-    document.getElementById('nw-region-filter').innerHTML = regions.map(function(v){ return optionHtml(v, regionLabels[v], state.region === v); }).join('');
+    document.getElementById('nw-region-filter').innerHTML = regions.map(function(v){ return optionHtml(v, regionLabels[v], state.region === v, v === 'all' ? undefined : coverageCount('region', v)); }).join('');
     document.getElementById('nw-product-filter').innerHTML = optionHtml('all', lang === 'es' ? 'Todos' : lang === 'fr' ? 'Tous' : lang === 'it' ? 'Tutti' : 'All', state.product === 'all') +
-      products.map(function(v){ return optionHtml(v, productLabels[v], state.product === v); }).join('');
+      products.map(function(v){ return optionHtml(v, productLabels[v], state.product === v, coverageCount('product', v)); }).join('');
     document.getElementById('nw-topic-filter').innerHTML = optionHtml('all', lang === 'es' ? 'Todos' : lang === 'fr' ? 'Tous' : lang === 'it' ? 'Tutti' : 'All', state.topic === 'all') +
-      topics.map(function(v){ return optionHtml(v, topicLabels[v], state.topic === v); }).join('');
+      topics.map(function(v){ return optionHtml(v, topicLabels[v], state.topic === v, coverageCount('topic', v)); }).join('');
 
     ['region','product','topic'].forEach(function(key) {
       var el = document.getElementById('nw-' + key + '-filter');
@@ -419,9 +438,13 @@
           '<a class="di-news-item-price-link" href="' + productPriceUrl(item.products[0] || 'trigo') + '">' + esc(lang === 'es' ? 'Ver precios' : lang === 'fr' ? 'Voir les prix' : lang === 'it' ? 'Vedi prezzi' : 'View prices') + ' →</a></article>';
       }).join('') + '</div>';
     } else {
-      itemsHtml = '<div class="di-news-empty">' + esc(t.noResultsHint) + '</div>';
+      var regionHasNothing = state.region !== 'all' && !NEWS_ITEMS.some(function(item) { return item.region === state.region; });
+      var emptyMsg = regionHasNothing ? t.noRegionCoverage.replace('{region}', regionLabels[state.region] || state.region) : t.noResultsHint;
+      itemsHtml = '<div class="di-news-empty">' + esc(emptyMsg) + ' <button type="button" class="di-news-reset" id="nw-reset">' + esc(t.resetFilters) + '</button></div>';
     }
     document.getElementById('nw-items').innerHTML = itemsHtml;
+    var resetBtn = document.getElementById('nw-reset');
+    if (resetBtn) resetBtn.onclick = function() { state.region = 'all'; state.product = 'all'; state.topic = 'all'; syncUrl(); render(); };
 
     document.getElementById('nw-sources-title').textContent = t.sourcesTitle;
     document.getElementById('nw-sources-list').innerHTML = t.sources.map(function(s) {
