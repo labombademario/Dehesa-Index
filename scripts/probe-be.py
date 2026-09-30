@@ -7,12 +7,12 @@ def get(u,n=3000000):
             return r.status,r.headers.get('content-type'),r.read(n).decode('utf-8','replace')
     except Exception as e: return 'ERR',str(e)[:150],''
 B='https://landbouwcijfers.vlaanderen.be'
-def links(h): return list(dict.fromkeys(m.group(1).replace('&amp;','&') for m in re.finditer(r'href="([^"#]+)"',h)))
-def text(h):
-    t=re.sub(r'<script.*?</script>|<style.*?</style>','',h,flags=re.S); t=re.sub(r'<[^>]+>',' ',t); return re.sub(r'\s+',' ',t)
-for p in ['/marktinformatie/varkens','/marktinformatie/zuivel','/marktinformatie/granen','/marktinformatie/aardappelen']:
-    s,c,h=get(B+p); P('####',p,s,len(h)); P('TEXT',text(h)[700:2500])
-    for l in links(h):
-        if l.startswith(B): l=l[len(B):]
-        if not l.startswith(('/sites','/themes','/core','/search')) and (l.startswith('/') or 'download' in l): P('  L',l)
-open('data/probe/be3.txt','w').write('\n'.join(out))
+s,c,h=get(B+'/marktinformatie')
+i=h.find('Actuele prijzen'); P('RAW',h[i:i+6000])
+for m in re.finditer(r'<(a|div|li|tr)[^>]*(href|data-[a-z-]+)="[^"]*"[^>]*>',h[i:i+60000]): pass
+P('DRUPALSETTINGS',re.findall(r'drupalSettings">(.*?)</script>',h,flags=re.S)[:1][0][:1500] if re.findall(r'drupalSettings">(.*?)</script>',h,flags=re.S) else 'none')
+hrefs=[x for x in re.findall(r'href="([^"]+)"',h[i:]) if not x.startswith(('/sites','/themes','/core'))]
+P('HREFS after',hrefs[:60])
+for q in ['?sector=varkens','?search_api_fulltext=varken','?field_sector=varkens']:
+    s2,c2,h2=get(B+'/marktinformatie'+q); P(q,s2,len(h2))
+open('data/probe/be4.txt','w').write('\n'.join(out))
