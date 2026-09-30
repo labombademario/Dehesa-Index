@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:16:44.459Z",
+  "generatedAt": "2026-09-30T01:17:04.851Z",
   "scope": {
     "latestObservations": 24,
     "historyObservations": 804,
@@ -133,7 +133,7 @@
       "comparability": "directional",
       "observationDate": "2026-09-21",
       "publicationDate": "2026-09-24",
-      "verifiedAt": "2026-09-30T00:04:23.839370Z",
+      "verifiedAt": "2026-09-30T01:17:04.602954Z",
       "frequency": "weekly",
       "historyPoints": 25,
       "ageDays": 9,
@@ -148,7 +148,7 @@
       "comparability": "directional",
       "observationDate": "2026-09-28",
       "publicationDate": "2026-09-28",
-      "verifiedAt": "2026-09-30T00:04:19.902Z",
+      "verifiedAt": "2026-09-30T01:17:01.726Z",
       "frequency": "weekly",
       "historyPoints": 24,
       "ageDays": 2,

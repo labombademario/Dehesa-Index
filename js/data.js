@@ -949,12 +949,12 @@
     'energia-diesel-us': {
       sourceId: 'eia', frequency: 'weekly',
       methodology: 'US national diesel fuel reference; USD/gallon. Observation dated 2026-09-28; EIA release dated 2026-09-28.',
-      comparability: 'directional', observationDate: '2026-09-28', publicationDate: '2026-09-28', status: 'verified', verifiedAt: '2026-09-30T00:04:19.902Z'
+      comparability: 'directional', observationDate: '2026-09-28', publicationDate: '2026-09-28', status: 'verified', verifiedAt: '2026-09-30T01:17:01.726Z'
     },
     'energia-diesel-eu': {
       sourceId: 'eu_oil_bulletin', frequency: 'weekly',
       methodology: 'Media ponderada de la UE de gasóleo de automoción, con impuestos, publicada en EUR/1.000 litros y almacenada sin convertir su precisión de origen. Es un precio semanal al consumidor; no equivale a una cotización agrícola en finca.',
-      comparability: 'directional', observationDate: '2026-09-21', publicationDate: '2026-09-24', status: 'verified', verifiedAt: '2026-09-30T00:04:23.839370Z'
+      comparability: 'directional', observationDate: '2026-09-21', publicationDate: '2026-09-24', status: 'verified', verifiedAt: '2026-09-30T01:17:04.602954Z'
     },
     'porcino-cerdo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
