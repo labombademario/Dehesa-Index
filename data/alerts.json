@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T16:56:06.151Z",
+  "generatedAt": "2026-09-30T17:05:28.080Z",
   "status": "informational",
   "rules": [
     {
@@ -8,6 +8,14 @@
       "product": "arroz",
       "region": "us",
       "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "avena",
+      "region": "ca",
+      "sourceId": "statcan",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
@@ -38,6 +46,14 @@
     {
       "type": "stale_data",
       "product": "cebada",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "cebada",
       "region": "us",
       "sourceId": "usda_nass",
       "severity": "watch",
@@ -54,6 +70,14 @@
     {
       "type": "stale_data",
       "product": "cerdo",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "cerdo",
       "region": "us",
       "sourceId": "usda_nass",
       "severity": "watch",
@@ -62,8 +86,24 @@
     {
       "type": "stale_data",
       "product": "colza",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "colza",
       "region": "us",
       "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "cordero",
+      "region": "ca",
+      "sourceId": "statcan",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
@@ -174,8 +214,24 @@
     {
       "type": "stale_data",
       "product": "huevos",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "huevos",
       "region": "us",
       "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "leche",
+      "region": "ca",
+      "sourceId": "statcan",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
@@ -198,8 +254,24 @@
     {
       "type": "stale_data",
       "product": "maiz",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "maiz",
       "region": "us",
       "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "pollo",
+      "region": "ca",
+      "sourceId": "statcan",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
@@ -230,6 +302,14 @@
     {
       "type": "stale_data",
       "product": "trigo",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "trigo",
       "region": "us",
       "sourceId": "usda_nass",
       "severity": "watch",
@@ -246,10 +326,27 @@
     {
       "type": "stale_data",
       "product": "vaca",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "vaca",
       "region": "us",
       "sourceId": "usda_nass",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "period_move",
+      "product": "cordero",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": -10.17,
+      "observationDate": "2026-07-01"
     },
     {
       "type": "period_move",

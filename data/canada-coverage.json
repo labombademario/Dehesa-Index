@@ -1,0 +1,290 @@
+{
+ "generatedAt": "2026-09-30T17:05:23Z",
+ "table": 32100077,
+ "tableMax": "2026-07",
+ "publicationDate": "2026-09-10",
+ "products": {
+  "trigo": {
+   "statcanProduct": "Wheat (except durum wheat)",
+   "candidates": {
+    "Saskatchewan": {
+     "last": "2026-07",
+     "points": 168,
+     "last36m": 36
+    },
+    "Alberta": {
+     "last": "2026-07",
+     "points": 168,
+     "last36m": 36
+    },
+    "Manitoba": {
+     "last": "2026-07",
+     "points": 168,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Saskatchewan",
+    "last": "2026-07",
+    "value": 298.0,
+    "unit": "tonelada"
+   }
+  },
+  "cebada": {
+   "statcanProduct": "Barley",
+   "candidates": {
+    "Alberta": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Saskatchewan": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Manitoba": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Alberta",
+    "last": "2026-07",
+    "value": 282.14,
+    "unit": "tonelada"
+   }
+  },
+  "avena": {
+   "statcanProduct": "Oats",
+   "candidates": {
+    "Saskatchewan": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Manitoba": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Alberta": {
+     "last": "2026-07",
+     "points": 468,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Saskatchewan",
+    "last": "2026-07",
+    "value": 227.84,
+    "unit": "tonelada"
+   }
+  },
+  "colza": {
+   "statcanProduct": "Canola (including rapeseed)",
+   "candidates": {
+    "Saskatchewan": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Alberta": {
+     "last": "2026-07",
+     "points": 498,
+     "last36m": 36
+    },
+    "Manitoba": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Saskatchewan",
+    "last": "2026-07",
+    "value": 731.13,
+    "unit": "tonelada"
+   }
+  },
+  "maiz": {
+   "statcanProduct": "Corn for grain",
+   "candidates": {
+    "Ontario": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Quebec": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Ontario",
+    "last": "2026-07",
+    "value": 261.78,
+    "unit": "tonelada"
+   }
+  },
+  "centeno": {
+   "statcanProduct": "Rye",
+   "candidates": {
+    "Saskatchewan": {
+     "last": "2026-07",
+     "points": 430,
+     "last36m": 15
+    },
+    "Alberta": {
+     "last": "2026-07",
+     "points": 392,
+     "last36m": 14
+    },
+    "Manitoba": {
+     "last": "2025-12",
+     "points": 417,
+     "last36m": 7
+    }
+   },
+   "result": "SIN DATO: ninguna provincia cumple (último dato <= 3 meses y >= 24 meses de los últimos 36)"
+  },
+  "leche": {
+   "statcanProduct": "Unprocessed milk from bovine",
+   "candidates": {
+    "Quebec": {
+     "last": "2026-07",
+     "points": 360,
+     "last36m": 36
+    },
+    "Ontario": {
+     "last": "2026-07",
+     "points": 360,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Quebec",
+    "last": "2026-07",
+    "value": 87.1388,
+    "unit": "100kg"
+   }
+  },
+  "vaca": {
+   "statcanProduct": "Steers for slaughter",
+   "candidates": {
+    "Alberta": {
+     "last": "2026-07",
+     "points": 415,
+     "last36m": 36
+    },
+    "Ontario": {
+     "last": "2026-07",
+     "points": 415,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Alberta",
+    "last": "2026-07",
+    "value": 340.59,
+    "unit": "cwt"
+   }
+  },
+  "cerdo": {
+   "statcanProduct": "Hogs",
+   "candidates": {
+    "Ontario": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Quebec": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Manitoba": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Ontario",
+    "last": "2026-07",
+    "value": 118.37,
+    "unit": "cwt"
+   }
+  },
+  "cordero": {
+   "statcanProduct": "Lambs",
+   "candidates": {
+    "Ontario": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Quebec": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Alberta": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Ontario",
+    "last": "2026-07",
+    "value": 363.8,
+    "unit": "cwt"
+   }
+  },
+  "pollo": {
+   "statcanProduct": "Chickens for meat",
+   "candidates": {
+    "Ontario": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Quebec": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Ontario",
+    "last": "2026-07",
+    "value": 2.77,
+    "unit": "kg"
+   }
+  },
+  "huevos": {
+   "statcanProduct": "Eggs in shell",
+   "candidates": {
+    "Ontario": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Quebec": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Ontario",
+    "last": "2026-07",
+    "value": 2.19,
+    "unit": "docena"
+   }
+  }
+ }
+}

@@ -1,15 +1,16 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T16:40:19.657Z",
+  "generatedAt": "2026-09-30T17:05:27.134Z",
   "scope": {
-    "latestObservations": 57,
-    "historyObservations": 6468,
-    "verified": 57,
+    "latestObservations": 68,
+    "historyObservations": 9036,
+    "verified": 68,
     "pending": 0,
-    "stale": 31,
+    "stale": 42,
     "regions": [
       "eu",
       "us",
+      "ca",
       "uk"
     ],
     "products": [
@@ -88,6 +89,21 @@
       "stale": true
     },
     {
+      "id": "di_cereales_avena_ca",
+      "product": "avena",
+      "region": "ca",
+      "sourceId": "statcan",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "frequency": "monthly",
+      "historyPoints": 240,
+      "ageDays": 91,
+      "stale": true
+    },
+    {
       "id": "di_cereales_avena_eu",
       "product": "avena",
       "region": "eu",
@@ -130,6 +146,21 @@
       "frequency": "monthly",
       "historyPoints": 240,
       "ageDays": 121,
+      "stale": true
+    },
+    {
+      "id": "di_cereales_cebada_ca",
+      "product": "cebada",
+      "region": "ca",
+      "sourceId": "statcan",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "frequency": "monthly",
+      "historyPoints": 240,
+      "ageDays": 91,
       "stale": true
     },
     {
@@ -178,6 +209,21 @@
       "stale": true
     },
     {
+      "id": "di_porcino_cerdo_ca",
+      "product": "cerdo",
+      "region": "ca",
+      "sourceId": "statcan",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "frequency": "monthly",
+      "historyPoints": 240,
+      "ageDays": 91,
+      "stale": true
+    },
+    {
       "id": "di_porcino_cerdo_eu",
       "product": "cerdo",
       "region": "eu",
@@ -208,6 +254,21 @@
       "stale": true
     },
     {
+      "id": "di_cereales_colza_ca",
+      "product": "colza",
+      "region": "ca",
+      "sourceId": "statcan",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "frequency": "monthly",
+      "historyPoints": 240,
+      "ageDays": 91,
+      "stale": true
+    },
+    {
       "id": "di_cereales_colza_eu",
       "product": "colza",
       "region": "eu",
@@ -235,6 +296,21 @@
       "frequency": "monthly",
       "historyPoints": 120,
       "ageDays": 60,
+      "stale": true
+    },
+    {
+      "id": "di_ovino_cordero_ca",
+      "product": "cordero",
+      "region": "ca",
+      "sourceId": "statcan",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "frequency": "monthly",
+      "historyPoints": 240,
+      "ageDays": 91,
       "stale": true
     },
     {
@@ -583,6 +659,21 @@
       "stale": false
     },
     {
+      "id": "di_avicultura_huevos_ca",
+      "product": "huevos",
+      "region": "ca",
+      "sourceId": "statcan",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "frequency": "monthly",
+      "historyPoints": 240,
+      "ageDays": 91,
+      "stale": true
+    },
+    {
       "id": "di_avicultura_huevos_eu",
       "product": "huevos",
       "region": "eu",
@@ -643,6 +734,21 @@
       "stale": false
     },
     {
+      "id": "di_lacteos_leche_ca",
+      "product": "leche",
+      "region": "ca",
+      "sourceId": "statcan",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "frequency": "monthly",
+      "historyPoints": 240,
+      "ageDays": 91,
+      "stale": true
+    },
+    {
       "id": "di_leche_eu",
       "product": "leche",
       "region": "eu",
@@ -685,6 +791,21 @@
       "frequency": "monthly",
       "historyPoints": 120,
       "ageDays": 60,
+      "stale": true
+    },
+    {
+      "id": "di_cereales_maiz_ca",
+      "product": "maiz",
+      "region": "ca",
+      "sourceId": "statcan",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "frequency": "monthly",
+      "historyPoints": 240,
+      "ageDays": 91,
       "stale": true
     },
     {
@@ -778,6 +899,21 @@
       "stale": false
     },
     {
+      "id": "di_avicultura_pollo_ca",
+      "product": "pollo",
+      "region": "ca",
+      "sourceId": "statcan",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "frequency": "monthly",
+      "historyPoints": 240,
+      "ageDays": 91,
+      "stale": true
+    },
+    {
       "id": "di_avicultura_pollo_eu",
       "product": "pollo",
       "region": "eu",
@@ -838,6 +974,21 @@
       "stale": true
     },
     {
+      "id": "di_cereales_trigo_ca",
+      "product": "trigo",
+      "region": "ca",
+      "sourceId": "statcan",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "frequency": "monthly",
+      "historyPoints": 168,
+      "ageDays": 91,
+      "stale": true
+    },
+    {
       "id": "di_cereales_trigo_eu",
       "product": "trigo",
       "region": "eu",
@@ -880,6 +1031,21 @@
       "frequency": "monthly",
       "historyPoints": 240,
       "ageDays": 60,
+      "stale": true
+    },
+    {
+      "id": "di_ganado_vaca_ca",
+      "product": "vaca",
+      "region": "ca",
+      "sourceId": "statcan",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "frequency": "monthly",
+      "historyPoints": 240,
+      "ageDays": 91,
       "stale": true
     },
     {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T16:40:19.496Z",
-  "observationCount": 63,
+  "generatedAt": "2026-09-30T17:05:26.841Z",
+  "observationCount": 74,
   "products": [
     "arroz",
     "avena",
@@ -46,6 +46,7 @@
     "vaca"
   ],
   "regions": [
+    "ca",
     "eu",
     "uk",
     "us"
@@ -57,6 +58,7 @@
     "eu_oil_bulletin",
     "european_commission",
     "eurostat",
+    "statcan",
     "usda_ams_mars",
     "usda_nass",
     "world_bank"
@@ -96,6 +98,21 @@
       "points": 120,
       "coverageStart": "2016-09-01",
       "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "avena",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "comparability": "directional",
+      "points": 240,
+      "coverageStart": "2006-08-01",
+      "coverageEnd": "2026-07-01"
     },
     {
       "product": "avena",
@@ -144,6 +161,21 @@
     },
     {
       "product": "cebada",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "comparability": "directional",
+      "points": 240,
+      "coverageStart": "2006-08-01",
+      "coverageEnd": "2026-07-01"
+    },
+    {
+      "product": "cebada",
       "region": "eu",
       "sourceId": "eu_agrifood",
       "observationDate": "2026-09-20",
@@ -189,6 +221,21 @@
     },
     {
       "product": "cerdo",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "unit": "cwt",
+      "currency": "CAD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "comparability": "directional",
+      "points": 240,
+      "coverageStart": "2006-08-01",
+      "coverageEnd": "2026-07-01"
+    },
+    {
+      "product": "cerdo",
       "region": "eu",
       "sourceId": "eu_agrifood",
       "observationDate": "2026-09-20",
@@ -219,6 +266,21 @@
     },
     {
       "product": "colza",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "comparability": "directional",
+      "points": 240,
+      "coverageStart": "2006-08-01",
+      "coverageEnd": "2026-07-01"
+    },
+    {
+      "product": "colza",
       "region": "eu",
       "sourceId": "eu_agrifood",
       "observationDate": "2026-09-20",
@@ -246,6 +308,21 @@
       "points": 120,
       "coverageStart": "2016-09-01",
       "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "cordero",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "unit": "cwt",
+      "currency": "CAD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "comparability": "directional",
+      "points": 240,
+      "coverageStart": "2006-08-01",
+      "coverageEnd": "2026-07-01"
     },
     {
       "product": "cordero",
@@ -594,6 +671,21 @@
     },
     {
       "product": "huevos",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "unit": "docena",
+      "currency": "CAD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "comparability": "directional",
+      "points": 240,
+      "coverageStart": "2006-08-01",
+      "coverageEnd": "2026-07-01"
+    },
+    {
+      "product": "huevos",
       "region": "eu",
       "sourceId": "eu_agrifood",
       "observationDate": "2026-09-20",
@@ -654,6 +746,21 @@
     },
     {
       "product": "leche",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "unit": "100kg",
+      "currency": "CAD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "comparability": "directional",
+      "points": 240,
+      "coverageStart": "2006-08-01",
+      "coverageEnd": "2026-07-01"
+    },
+    {
+      "product": "leche",
       "region": "eu",
       "sourceId": "european_commission",
       "observationDate": "2026-08-31",
@@ -696,6 +803,21 @@
       "points": 120,
       "coverageStart": "2016-09-01",
       "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "maiz",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "comparability": "directional",
+      "points": 240,
+      "coverageStart": "2006-08-01",
+      "coverageEnd": "2026-07-01"
     },
     {
       "product": "maiz",
@@ -789,6 +911,21 @@
     },
     {
       "product": "pollo",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "unit": "kg",
+      "currency": "CAD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "comparability": "directional",
+      "points": 240,
+      "coverageStart": "2006-08-01",
+      "coverageEnd": "2026-07-01"
+    },
+    {
+      "product": "pollo",
       "region": "eu",
       "sourceId": "eu_agrifood",
       "observationDate": "2026-09-20",
@@ -849,6 +986,21 @@
     },
     {
       "product": "trigo",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "comparability": "directional",
+      "points": 168,
+      "coverageStart": "2012-08-01",
+      "coverageEnd": "2026-07-01"
+    },
+    {
+      "product": "trigo",
       "region": "eu",
       "sourceId": "eu_agrifood",
       "observationDate": "2026-09-20",
@@ -891,6 +1043,21 @@
       "points": 240,
       "coverageStart": "2006-09-01",
       "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "vaca",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "unit": "cwt",
+      "currency": "CAD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:05:23Z",
+      "comparability": "directional",
+      "points": 240,
+      "coverageStart": "2006-08-01",
+      "coverageEnd": "2026-07-01"
     },
     {
       "product": "vaca",
