@@ -10,9 +10,9 @@ def log(*a):
     s = ' '.join(str(x) for x in a); LOG.append(s); print(s)
 def fetch(v):
     last = None
-    for i in range(3):
+    for i in range(2):
         try:
-            with urllib.request.urlopen(urllib.request.Request(BASE + v, headers={'User-Agent': 'Mozilla/5.0 DehesaIndex'}), timeout=180) as r:
+            with urllib.request.urlopen(urllib.request.Request(BASE + v, headers={'User-Agent': 'Mozilla/5.0 DehesaIndex'}), timeout=100) as r:
                 return json.loads(r.read().decode('utf-8'))[0]
         except Exception as e: last = e
     raise RuntimeError('%s: %s' % (v, last))
