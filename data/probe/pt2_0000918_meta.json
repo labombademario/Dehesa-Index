@@ -1,0 +1,104 @@
+[ {
+  "IndicadorCod" : "0000918",
+  "IndicadorNome" : "Produção de leite (t) por Tipo de leite; Anual - INE, Estatísticas da produção animal",
+  "Periodic" : "Anual",
+  "PrimeiroPeriodo" : "1938",
+  "UltimoPeriodo" : "2025",
+  "UnidadeMedida" : "Tonelada (t)",
+  "Potencia10" : "0",
+  "PrecisaoDecimal" : "0",
+  "Lingua" : "PT",
+  "DataUltimaAtualizacao" : "2026-09-29",
+  "DataExtracao" : "2026-09-30T22:16:12.710+01:00",
+  "Dimensoes" : {
+    "Descricao_Dim" : [ {
+      "dim_num" : "1",
+      "abrv" : "Período de referência dos dados",
+      "versao" : "XXXXX"
+    }, {
+      "dim_num" : "2",
+      "abrv" : "Localização geográfica (Portugal)",
+      "versao" : "05361",
+      "nota_dsg" : "Os dados da serie entre 1938 e 1979 dizem respeito unicamente ao Continente."
+    }, {
+      "dim_num" : "3",
+      "abrv" : "Tipo de leite",
+      "versao" : "00697"
+    } ],
+    "Categoria_Dim" : [ {
+      "Dim_Num1_S7A1938" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S7A1938",
+        "categ_cod" : "S7A1938",
+        "categ_dsg" : "1938",
+        "categ_ord" : "19380101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S7A1947" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S7A1947",
+        "categ_cod" : "S7A1947",
+        "categ_dsg" : "1947",
+        "categ_ord" : "19470101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S7A1948" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S7A1948",
+        "categ_cod" : "S7A1948",
+        "categ_dsg" : "1948",
+        "categ_ord" : "19480101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S7A1949" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S7A1949",
+        "categ_cod" : "S7A1949",
+        "categ_dsg" : "1949",
+        "categ_ord" : "19490101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S7A1950" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S7A1950",
+        "categ_cod" : "S7A1950",
+        "categ_dsg" : "1950",
+        "categ_ord" : "19500101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S7A1951" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S7A1951",
+        "categ_cod" : "S7A1951",
+        "categ_dsg" : "1951",
+        "categ_ord" : "19510101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S7A1952" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S7A1952",
+        "categ_cod" : "S7A1952",
+        "categ_dsg" : "1952",
+        "categ_ord" : "19520101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S7A1953" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S7A1953",
+        "categ_cod" : "S7A1953",
+        "categ_dsg" : "1953",
+        "categ_ord" : "19530101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S7A1954" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S7A1954",
+        "categ_cod" : "S7A1954",
+        "categ_dsg" : "1954",
+        "categ_ord" : "19540101",
+        "categ_nivel" : "1"
+      } ],
+      "Dim_Num1_S7A1955" : [ {
+        "dim_num" : "1",
+        "cat_id" : "S7A1955",
+        "categ_cod"
