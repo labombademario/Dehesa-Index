@@ -71,45 +71,59 @@
       sourcesTitle: 'FUENTES DE DATOS',
       linksTitle: 'ENLACES',
       noticeTitle: 'AVISO',
-      notice: 'Datos de muestra con fines de diseño. No constituyen asesoramiento de inversión ni reflejan precios de mercado en tiempo real.',
-      copyrightText: '© 2026 Dehesa Index'
+      notice: 'Datos oficiales verificados, con su fecha y fuente; lo que no se puede verificar se marca como pendiente. Informativo: no es asesoramiento de inversión ni precios en tiempo real.',
+      copyrightText: '© 2026 Dehesa Index',
+      methodologyLabel: 'Metodología',
+      legalLabel: 'Aviso legal y privacidad'
     },
     en: {
       blurb: 'A daily and weekly dashboard of U.S. and European farm prices: grains, dairy, livestock, feed and fertilizer, all in one place.',
       sourcesTitle: 'DATA SOURCES',
       linksTitle: 'LINKS',
       noticeTitle: 'DISCLAIMER',
-      notice: 'Sample data for design purposes only. Not investment advice and does not reflect real-time market prices.',
-      copyrightText: '© 2026 Dehesa Index'
+      notice: 'Verified official data with its date and source; anything we cannot verify is marked pending. For information only: not investment advice and not real-time prices.',
+      copyrightText: '© 2026 Dehesa Index',
+      methodologyLabel: 'Methodology',
+      legalLabel: 'Legal notice & privacy'
     },
     fr: {
       blurb: "Un tableau de bord quotidien et hebdomadaire des prix agricoles américains et européens : céréales, produits laitiers, bétail, aliments pour animaux et engrais, réunis en un seul endroit.",
       sourcesTitle: 'SOURCES DES DONNÉES',
       linksTitle: 'LIENS',
       noticeTitle: 'AVERTISSEMENT',
-      notice: "Données fictives à des fins de conception. Ne constitue pas un conseil en investissement et ne reflète pas les prix du marché en temps réel.",
-      copyrightText: '© 2026 Dehesa Index'
+      notice: "Données officielles vérifiées, avec leur date et leur source ; ce qui ne peut être vérifié est marqué en attente. À titre informatif : ni conseil en investissement ni prix en temps réel.",
+      copyrightText: '© 2026 Dehesa Index',
+      methodologyLabel: 'Méthodologie',
+      legalLabel: 'Mentions légales et confidentialité'
     },
     it: {
       blurb: 'Un pannello giornaliero e settimanale dei prezzi agricoli di Stati Uniti ed Europa: cereali, lattiero-caseario, bestiame, mangimi e fertilizzanti, tutto in un unico posto.',
       sourcesTitle: 'FONTI DEI DATI',
       linksTitle: 'LINK',
       noticeTitle: 'AVVISO',
-      notice: 'Dati campione a scopo di progettazione. Non costituiscono consulenza di investimento né riflettono prezzi di mercato in tempo reale.',
-      copyrightText: '© 2026 Dehesa Index'
+      notice: 'Dati ufficiali verificati, con data e fonte; ciò che non si può verificare è segnato come in attesa. Solo a scopo informativo: non è consulenza di investimento né prezzi in tempo reale.',
+      copyrightText: '© 2026 Dehesa Index',
+      methodologyLabel: 'Metodologia',
+      legalLabel: 'Note legali e privacy'
     }
   };
   var FOOTER_URLS = {
     nass: 'https://www.nass.usda.gov/',
     ec: 'https://agridata.ec.europa.eu/extensions/DataPortal/prices.html',
-    cme: 'https://www.cmegroup.com/markets/agriculture.html',
-    dtn: 'https://www.dtnpf.com/agriculture/web/ag/crops/article/2026/09/23/fertilizer-prices-rise-six-eight'
+    defra: 'https://www.gov.uk/government/collections/agriculture-in-the-united-kingdom',
+    eurostat: 'https://ec.europa.eu/eurostat/web/agriculture/database',
+    eia: 'https://www.eia.gov/petroleum/gasdiesel/',
+    wb: 'https://www.worldbank.org/en/research/commodity-markets',
+    ecb: 'https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html'
   };
   var FOOTER_SOURCES = [
     { text: 'USDA NASS / AMS', url: FOOTER_URLS.nass },
     { textKey: 'ec', url: FOOTER_URLS.ec },
-    { text: 'CME Group · Euronext', url: FOOTER_URLS.cme },
-    { text: 'DTN Fertilizer Index', url: FOOTER_URLS.dtn }
+    { text: 'Defra (UK)', url: FOOTER_URLS.defra },
+    { text: 'Eurostat', url: FOOTER_URLS.eurostat },
+    { text: 'EIA', url: FOOTER_URLS.eia },
+    { text: 'World Bank', url: FOOTER_URLS.wb },
+    { text: 'ECB', url: FOOTER_URLS.ecb }
   ];
   var FOOTER_EC_LABEL = {
     es: 'Comisión Europea — Agri-food Data Portal',
@@ -337,7 +351,7 @@
             '<p class="di-footer-notice">' + esc(t.notice) + '</p>' +
           '</div>' +
         '</div>' +
-        '<div class="di-footer-bottom">' + esc(t.copyrightText) + '</div>' +
+        '<div class="di-footer-bottom">' + esc(t.copyrightText) + ' · <a href="' + sitePath('metodologia.html') + '">' + esc(t.methodologyLabel) + '</a> · <a href="' + sitePath('legal.html') + '">' + esc(t.legalLabel) + '</a></div>' +
       '</footer>';
   }
 

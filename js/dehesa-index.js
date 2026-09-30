@@ -32,7 +32,7 @@
       '<span style="font-size:13px"><b>' + pct(DATA.changeMoMPct) + '</b> ' + t.mom + '<br><b>' + pct(DATA.changeYoYPct) + '</b> ' + t.yoy + '</span></div>' +
       chart(DATA.series) + '<div class="di-movers-hint" style="margin-top:6px">' + t.period + DATA.lastPeriod + '</div></div>' +
       '<div><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:6px">' + t.groups + '</div>' + rows + '</div></div>' +
-      '<p class="di-movers-hint" style="margin-top:10px">' + t.note + ' <a href="data/dehesa-index.json">' + t.link + '</a></p>' +
+      '<p class="di-movers-hint" style="margin-top:10px">' + t.note + ' <a href="metodologia.html#indice">' + t.link + '</a></p>' +
       '<details id="dix-custom" style="margin-top:18px"' + (document.getElementById('dix-custom') && document.getElementById('dix-custom').open ? ' open' : '') + '><summary style="cursor:pointer;font-weight:600">' + t.custom + '</summary><p class="di-movers-hint" style="margin:8px 0 12px">' + t.customHint + '</p><div class="di-card" style="padding:20px" id="dix-custom-body"></div></details>';
     renderCustom();
   }
