@@ -687,30 +687,47 @@
   var SEASON_MARGIN_LEFT = 40, SEASON_MARGIN_RIGHT = 12, SEASON_MARGIN_TOP = 14, SEASON_MARGIN_BOTTOM = 24;
   var seasonProductKey = 'cereales-trigo';
 
+  // Patrón estacional real: para cada año con >=9 meses de dato, desviación de cada mes respecto a la
+  // media de ese año (así se quita la tendencia); se promedia entre años (últimos 10, mínimo 2 por mes).
+  var SEASON_MIN_MONTHS_PER_YEAR = 9, SEASON_MIN_YEARS = 2, SEASON_MAX_YEARS = 10;
+  function seasonRaw(entry) {
+    var info = core().mapInfo ? core().mapInfo(entry) : null;
+    if (!info || !info.pts || info.pts.length < 24) return null;
+    if (Date.now() - info.pts[info.pts.length - 1].ts > 120 * 86400000) return null;
+    var byYM = {};
+    info.pts.forEach(function (p) {
+      var d = new Date(p.ts), y = d.getUTCFullYear(), m = d.getUTCMonth();
+      var o = byYM[y] || (byYM[y] = {});
+      (o[m] || (o[m] = [])).push(p.value);
+    });
+    var years = Object.keys(byYM).map(Number).sort().slice(-SEASON_MAX_YEARS - 1), acc = [], cnt = [], used = 0;
+    for (var m0 = 0; m0 < 12; m0++) { acc.push(0); cnt.push(0); }
+    years.forEach(function (y) {
+      var mm = byYM[y], months = Object.keys(mm);
+      if (months.length < SEASON_MIN_MONTHS_PER_YEAR) return;
+      var avgs = {}, tot = 0;
+      months.forEach(function (m) { var v = mm[m]; avgs[m] = v.reduce(function (a, b) { return a + b; }, 0) / v.length; tot += avgs[m]; });
+      var yearMean = tot / months.length;
+      if (!yearMean) return;
+      used++;
+      months.forEach(function (m) { acc[m] += (avgs[m] / yearMean - 1) * 100; cnt[m] += 1; });
+    });
+    if (used < SEASON_MIN_YEARS) return null;
+    var raw = acc.map(function (v, i) { return cnt[i] >= SEASON_MIN_YEARS ? v / cnt[i] : null; });
+    return raw.some(function (v) { return v !== null; }) ? { raw: raw, years: used } : null;
+  }
+  function seasonAvailable() {
+    var out = [];
+    core().PRODUCTS.forEach(function (e) { var k = e.catId + '-' + e.nameKey; if (MAP_GROUP[k] && seasonRaw(e)) out.push(k); });
+    return out;
+  }
+
   function buildSeasonality(dashKey) {
     var entry = entryByDashKey(dashKey);
     if (!entry) return { ready:false };
-    var rows = realObservationsFor(entry);
-    if (rows.length < 12) return { ready:false, count: rows.length };
-    var firstDate = new Date(rows[0].observationDate), lastDate = new Date(rows[rows.length - 1].observationDate);
-    if (isNaN(firstDate.getTime()) || isNaN(lastDate.getTime()) || (lastDate - firstDate) < 330 * 86400000) return { ready:false, count: rows.length };
-    var monthSum = [0,0,0,0,0,0,0,0,0,0,0,0], monthCount = [0,0,0,0,0,0,0,0,0,0,0,0];
-    var overallSum = 0;
-    for (var i = 0; i < rows.length; i++) {
-      var value = Number(rows[i].value);
-      var date = new Date(rows[i].observationDate);
-      if (!isFinite(value) || isNaN(date.getTime())) continue;
-      var m = date.getUTCMonth();
-      monthSum[m] += value; monthCount[m] += 1; overallSum += value;
-    }
-    var n = monthCount.reduce(function(a,b){return a+b;},0);
-    if (n < 3 || !isFinite(overallSum)) return { ready:false, count:n };
-    var overallAvg = overallSum / n;
-    var raw = [];
-    for (var mm = 0; mm < 12; mm++) {
-      var avg = monthCount[mm] ? (monthSum[mm] / monthCount[mm]) : null;
-      raw.push(avg === null || !overallAvg ? null : ((avg - overallAvg) / overallAvg) * 100);
-    }
+    var sr = seasonRaw(entry);
+    if (!sr) return { ready:false };
+    var raw = sr.raw, n = sr.years;
     var observedRaw = raw.filter(function (v) { return v !== null && isFinite(v); });
     var maxAbs = observedRaw.length ? Math.max.apply(null, observedRaw.map(function (v) { return Math.abs(v); })) : 0;
     var ticks = niceTicks(maxAbs, 3);
@@ -740,7 +757,7 @@
     });
     var yGrid = ticks.ticks.filter(function (v) { return v !== 0; }).map(function (v) { return { y: toPy(v), label: fmtTick(v) }; });
     return {
-      ready:true, count:n, plotX: plotX, plotY: plotY, plotW: plotW, plotH: plotH, plotBottom: plotBottom, originY: originY,
+      ready:true, count:n, years:n, plotX: plotX, plotY: plotY, plotW: plotW, plotH: plotH, plotBottom: plotBottom, originY: originY,
       months: months, yGrid: yGrid,
       peakText: monthNames[peakIdx] + ' (' + D.fmtChange(raw[peakIdx]) + ')', peakColor: D.changeColor(raw[peakIdx], P()),
       troughText: monthNames[troughIdx] + ' (' + D.fmtChange(raw[troughIdx]) + ')', troughColor: D.changeColor(raw[troughIdx], P())
@@ -751,12 +768,12 @@
     var t = ui();
     var Core = core();
     var p = P();
-    if (!entryByDashKey(seasonProductKey)) seasonProductKey = 'cereales-trigo';
+    var avail = seasonAvailable();
+    if (!avail.length) return intelPendingHtml(t.seasonTitle, t.seasonEmpty || 'Aún no hay productos con al menos 2 años de histórico verificado en este mercado.', 'di-intel-season');
+    if (avail.indexOf(seasonProductKey) === -1) seasonProductKey = avail[0];
     var s = buildSeasonality(seasonProductKey);
-    if (!s.ready) return '<div class="di-intel-section di-intel-pending" id="di-intel-season"><div class="di-intel-head"><h2>' + esc(t.seasonTitle) + '</h2><p>Histórico real insuficiente para calcular estacionalidad. No se utilizan series sintéticas.</p><span class="di-intel-state pending">PENDIENTE</span></div></div>';
-    var options = Core.PRODUCTS.map(function (e) {
-      var k = e.catId + '-' + e.nameKey;
-      return '<option value="' + k + '"' + (k === seasonProductKey ? ' selected' : '') + '>' + esc(productName(e.nameKey)) + '</option>';
+    var options = avail.map(function (k) {
+      return '<option value="' + k + '"' + (k === seasonProductKey ? ' selected' : '') + '>' + esc(productName(entryByDashKey(k).nameKey)) + '</option>';
     }).join('');
     var yGrid = s.yGrid.map(function (g) {
       return '<line x1="' + s.plotX + '" y1="' + g.y + '" x2="' + (s.plotX + s.plotW) + '" y2="' + g.y + '" stroke="' + p.border + '" stroke-width="1"/>' +
@@ -778,7 +795,7 @@
         '<div class="di-season-select-row"><label class="di-field-label">' + esc(t.seasonProductLabel) + '</label><select class="di-eu-country-select" id="di-season-select">' + options + '</select></div>' +
         '<div class="di-chart-svg-wrap">' + svg + '</div>' +
         '<div class="di-season-stats"><span>' + esc(t.seasonPeakLabel) + ' <b style="color:' + s.peakColor + ';">' + esc(s.peakText) + '</b></span><span>' + esc(t.seasonTroughLabel) + ' <b style="color:' + s.troughColor + ';">' + esc(s.troughText) + '</b></span></div>' +
-        '<div class="di-intel-disclaimer">' + esc(t.seasonDisclaimer) + '</div>' +
+        '<div class="di-intel-disclaimer">' + esc(t.seasonDisclaimer.replace('{years}', String(s.years))) + '</div>' +
       '</div>'
     );
   }
@@ -857,28 +874,62 @@
   // ---------------------------------------------------------------------
   // Margen del productor
   // ---------------------------------------------------------------------
-  var MARGIN_WINDOW_DAYS = 30;
-  function marginPctChange(dashKey) {
-    var entry = entryByDashKey(dashKey);
-    return rangePctChange(regionFor(entry), seedFor(entry), MARGIN_WINDOW_DAYS);
+  // Índice propio: variación a ~1 mes del coste de alimentación (harina de soja como referencia),
+  // energía (diésel) y fertilizante (media de urea, DAP y potasa disponibles), con pesos 50/25/25
+  // reponderados sobre los componentes que tienen dato verificado en el mercado. Se compara con la
+  // variación del precio de venta de cada producto animal. No es un coste absoluto.
+  var MARGIN_WEIGHTS = { feed: 50, energy: 25, fert: 25 };
+  var MARGIN_SECTORS = ['lacteos-leche', 'ganado-vaca', 'porcino-cerdo', 'avicultura-pollo', 'avicultura-huevos'];
+  function chgOfKey(dashKey) {
+    var e = entryByDashKey(dashKey), info = e && core().mapInfo ? core().mapInfo(e) : null;
+    return info && info.pts ? mapChange(info.pts, 27) : null;
   }
-  function buildMargin(label, dashKey, piensoChange, energiaChange, fertChange, costIndexChange) {
-    var t = ui();
-    var p = P();
-    var revenueChange = marginPctChange(dashKey);
-    var deltaPts = revenueChange - costIndexChange;
-    var verdict = deltaPts > 0 ? t.marginImproves : (deltaPts < 0 ? t.marginWorsens : t.marginFlat);
-    var verdictColor = deltaPts > 0 ? p.positive : (deltaPts < 0 ? p.negative : p.neutral);
-    var deltaSign = deltaPts > 0 ? '+' : (deltaPts < 0 ? '−' : '');
-    return {
-      label: label, revenueLabel: D.fmtChange(revenueChange), revenueColor: D.changeColor(revenueChange, p),
-      costLabel: D.fmtChange(costIndexChange), costColor: D.changeColor(-costIndexChange, p),
-      deltaLabel: deltaSign + Math.abs(deltaPts).toFixed(1) + ' pts', verdict: verdict, verdictColor: verdictColor
-    };
+  function buildMargin() {
+    var fert = ['fertilizantes-urea', 'fertilizantes-dap', 'fertilizantes-potasa'].map(chgOfKey).filter(function (v) { return v !== null; });
+    var comps = [
+      { id: 'feed', chg: chgOfKey('pienso-harina_soja') },
+      { id: 'energy', chg: chgOfKey('energia-diesel') },
+      { id: 'fert', chg: fert.length ? fert.reduce(function (a, b) { return a + b; }, 0) / fert.length : null }
+    ].filter(function (c) { return c.chg !== null; });
+    if (comps.length < 2) return null;
+    var wTot = comps.reduce(function (a, c) { return a + MARGIN_WEIGHTS[c.id]; }, 0);
+    comps.forEach(function (c) { c.w = MARGIN_WEIGHTS[c.id] / wTot * 100; });
+    var cost = comps.reduce(function (a, c) { return a + c.chg * c.w / 100; }, 0);
+    var t = ui(), p = P();
+    var rows = MARGIN_SECTORS.map(function (k) {
+      var rev = chgOfKey(k);
+      if (rev === null) return null;
+      var d = rev - cost;
+      return {
+        label: productName(entryByDashKey(k).nameKey), key: k, revenue: rev, delta: d,
+        verdict: d > 0.05 ? t.marginImproves : (d < -0.05 ? t.marginWorsens : t.marginFlat),
+        color: d > 0.05 ? p.positive : (d < -0.05 ? p.negative : p.neutral)
+      };
+    }).filter(Boolean);
+    return rows.length ? { rows: rows, cost: cost, comps: comps } : null;
   }
   function renderMarginHtml() {
-    var t = ui();
-    return '<div class="di-intel-section di-intel-pending" id="di-intel-margin"><div class="di-intel-head"><h2>' + esc(t.marginTitle) + '</h2><p>Margen pendiente: requiere series reales de ingresos y costes con cobertura temporal suficiente.</p><span class="di-intel-state pending">PENDIENTE</span></div></div>';
+    var t = ui(), p = P();
+    var m = buildMargin();
+    if (!m) return intelPendingHtml(t.marginTitle, t.marginEmpty || 'Aún no hay costes de alimentación, energía o fertilizante con dato verificado suficiente en este mercado.', 'di-intel-margin');
+    var names = { feed: t.marginCostPienso, energy: t.marginCostEnergia, fert: t.marginCostFert };
+    var breakdown = m.comps.map(function (c) {
+      return '<div class="di-margin-breakdown-row"><span>' + esc(names[c.id] + ' · ' + Math.round(c.w) + '%') + '</span><b style="color:' + D.changeColor(-c.chg, p) + ';">' + esc(D.fmtChange(c.chg)) + '</b></div>';
+    }).join('');
+    var cards = m.rows.map(function (r) {
+      var sign = r.delta > 0 ? '+' : (r.delta < 0 ? '−' : '');
+      return '<div class="di-card di-margin-card">' +
+        '<div class="di-product-name">' + esc(r.label) + '</div>' +
+        '<div class="di-margin-row"><span>' + esc(t.marginIngresoLabel) + '</span><b style="color:' + D.changeColor(r.revenue, p) + ';">' + esc(D.fmtChange(r.revenue)) + '</b></div>' +
+        '<div class="di-margin-row"><span>' + esc(t.marginCosteLabel) + '</span><b style="color:' + D.changeColor(-m.cost, p) + ';">' + esc(D.fmtChange(m.cost)) + '</b></div>' +
+        '<div class="di-margin-delta" style="color:' + r.color + ';">' + sign + Math.abs(r.delta).toFixed(1) + ' pts</div>' +
+        '<div class="di-margin-verdict" style="color:' + r.color + ';">' + esc(r.verdict) + '</div>' +
+      '</div>';
+    }).join('');
+    return '<div class="di-intel-section" id="di-intel-margin"><div class="di-intel-head"><h2>' + esc(t.marginTitle) + '</h2><p>' + esc(t.marginIntro) + '</p></div>' +
+      '<div class="di-margin-grid">' + cards + '</div>' +
+      '<div class="di-card di-margin-card di-margin-breakdown" style="margin-top:12px;"><div class="di-product-name">' + esc(t.marginBreakdownTitle) + '</div>' + breakdown + '</div>' +
+      '<div class="di-intel-disclaimer">' + esc(t.marginDisclaimer) + '</div></div>';
   }
 
 
