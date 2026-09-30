@@ -1,22 +1,22 @@
 {
  "schemaVersion": "1.0",
  "source": "eu_agrifood",
- "generatedAt": "2026-09-30T13:30:59.075Z",
+ "generatedAt": "2026-09-30T13:34:02.195Z",
  "families": [
   {
    "id": "cereales",
    "endpoint": "cereal",
    "freq": "weekly",
-   "series": 20,
-   "points": 28183,
+   "series": 19,
+   "points": 28171,
    "latest": "2026-09-20"
   },
   {
    "id": "oleaginosas",
    "endpoint": "oilseeds",
    "freq": "weekly",
-   "series": 131,
-   "points": 22260,
+   "series": 84,
+   "points": 22125,
    "latest": "2026-09-27"
   },
   {
@@ -71,8 +71,8 @@
    "id": "arroz",
    "endpoint": "rice",
    "freq": "weekly",
-   "series": 151,
-   "points": 41992,
+   "series": 112,
+   "points": 41856,
    "latest": "2026-09-27"
   },
   {
@@ -103,8 +103,8 @@
    "id": "vino",
    "endpoint": "wine",
    "freq": "weekly",
-   "series": 37,
-   "points": 4081,
+   "series": 34,
+   "points": 4071,
    "latest": "2025-11-02"
   },
   {
