@@ -20,6 +20,7 @@
           { b: 'Energía y fertilizantes.', t: 'Diésel de EE. UU. (EIA, semanal) y de la UE (Oil Bulletin, semanal); urea (Banco Mundial, mensual).' },
           { b: 'Clima — NASA POWER.', t: 'Lluvia y temperatura mensuales (reanálisis MERRA-2) en 12 puntos representativos de regiones productoras, comparadas con la media 2001-2020 del mismo mes, con histórico mensual desde 2000. Los meses más recientes los calcula NASA con otro flujo de procesamiento (GEOS-IT) que puede revisarse. Es contexto climático (una celda de unos 50 km, no una estación ni la región entera); no predice cosechas ni precios.' },
           { b: 'Oferta y demanda — USDA PSD.', t: 'Balances por país y campaña de cereales, oleaginosas, carne, leche y azúcar (licencia CC BY 4.0), mensuales con el WASDE.' },
+          { b: 'Harina de soja de EE. UU. — USDA AMS.', t: 'Precio semanal de la harina de soja (Iowa, FOB, 46,5-48 % de proteína) del informe 3511 de USDA AMS Market News, en tonelada corta. Es un mercado regional, no un futuro; la comparación con Europa es orientativa.' },
           { b: 'Tipos de cambio.', t: 'Cotizaciones de referencia del Banco Central Europeo, cada día laborable.' }
         ] },
         { h: 'Fechas: observación y publicación', p: ['Cada dato lleva dos fechas: la de observación (el periodo al que se refiere) y la de publicación (cuándo lo publicó la fuente). Algunas fuentes no informan de su fecha de publicación; en ese caso registramos el día en que recogimos el dato por primera vez y lo anotamos en la ficha.'] },
@@ -55,6 +56,7 @@
           { b: 'Energy and fertilisers.', t: 'U.S. diesel (EIA, weekly) and EU diesel (Oil Bulletin, weekly); urea (World Bank, monthly).' },
           { b: 'Climate — NASA POWER.', t: 'Monthly rainfall and temperature (MERRA-2 reanalysis) at 12 representative points in producing regions, compared with the 2001-2020 average for the same month, with monthly history since 2000. The most recent months are computed by NASA with a different processing stream (GEOS-IT) that may be revised. It is climate context (a ~50 km grid cell, not a station or the whole region); it does not forecast crops or prices.' },
           { b: 'Supply and demand — USDA PSD.', t: 'Country balances by marketing year for grains, oilseeds, meat, milk and sugar (CC BY 4.0 licence), monthly with the WASDE.' },
+          { b: 'US soybean meal — USDA AMS.', t: 'Weekly soybean meal price (Iowa, FOB, 46.5-48% protein) from USDA AMS Market News report 3511, per short ton. It is a regional market, not a futures price; the comparison with Europe is indicative.' },
           { b: 'Exchange rates.', t: 'European Central Bank reference rates, every business day.' }
         ] },
         { h: 'Dates: observation and publication', p: ['Each data point carries two dates: observation (the period it refers to) and publication (when the source released it). Some sources do not report a publication date; in that case we record the day we first collected the data and note it on the card.'] },
@@ -90,6 +92,7 @@
           { b: 'Énergie et engrais.', t: 'Diesel américain (EIA, hebdomadaire) et de l’UE (Oil Bulletin, hebdomadaire) ; urée (Banque mondiale, mensuelle).' },
           { b: 'Climat — NASA POWER.', t: 'Pluie et température mensuelles (réanalyse MERRA-2) en 12 points représentatifs de régions productrices, comparées à la moyenne 2001-2020 du même mois, avec un historique mensuel depuis 2000. Les mois les plus récents sont calculés par la NASA avec un autre flux de traitement (GEOS-IT), susceptible d’être révisé. C’est un contexte climatique (une maille d’environ 50 km, pas une station ni la région entière) ; il ne prévoit ni récoltes ni prix.' },
           { b: 'Offre et demande — USDA PSD.', t: 'Bilans par pays et par campagne des céréales, oléagineux, viandes, lait et sucre (licence CC BY 4.0), mensuels avec le WASDE.' },
+          { b: 'Tourteau de soja des États-Unis — USDA AMS.', t: 'Prix hebdomadaire du tourteau de soja (Iowa, FOB, 46,5-48 % de protéines) du rapport 3511 d’USDA AMS Market News, en tonne courte. C’est un marché régional, pas un contrat à terme ; la comparaison avec l’Europe est indicative.' },
           { b: 'Taux de change.', t: 'Taux de référence de la Banque centrale européenne, chaque jour ouvré.' }
         ] },
         { h: 'Dates : observation et publication', p: ['Chaque donnée porte deux dates : l’observation (la période concernée) et la publication (quand la source l’a diffusée). Certaines sources n’indiquent pas de date de publication ; nous enregistrons alors le jour où nous avons collecté la donnée pour la première fois et l’indiquons sur la fiche.'] },
@@ -125,6 +128,7 @@
           { b: 'Energia e fertilizzanti.', t: 'Gasolio USA (EIA, settimanale) e UE (Oil Bulletin, settimanale); urea (Banca mondiale, mensile).' },
           { b: 'Clima — NASA POWER.', t: 'Pioggia e temperatura mensili (rianalisi MERRA-2) in 12 punti rappresentativi di regioni produttrici, confrontate con la media 2001-2020 dello stesso mese, con storico mensile dal 2000. I mesi più recenti sono calcolati dalla NASA con un diverso flusso di elaborazione (GEOS-IT) che potrebbe essere rivisto. È contesto climatico (una cella di circa 50 km, non una stazione né l’intera regione); non prevede raccolti né prezzi.' },
           { b: 'Offerta e domanda — USDA PSD.', t: 'Bilanci per paese e campagna di cereali, semi oleosi, carne, latte e zucchero (licenza CC BY 4.0), mensili con il WASDE.' },
+          { b: 'Farina di soia degli Stati Uniti — USDA AMS.', t: 'Prezzo settimanale della farina di soia (Iowa, FOB, 46,5-48 % di proteine) dal rapporto 3511 di USDA AMS Market News, per tonnellata corta. È un mercato regionale, non un future; il confronto con l’Europa è indicativo.' },
           { b: 'Tassi di cambio.', t: 'Tassi di riferimento della Banca centrale europea, ogni giorno lavorativo.' }
         ] },
         { h: 'Date: osservazione e pubblicazione', p: ['Ogni dato ha due date: l’osservazione (il periodo a cui si riferisce) e la pubblicazione (quando la fonte l’ha diffuso). Alcune fonti non indicano la data di pubblicazione; in tal caso registriamo il giorno in cui abbiamo raccolto il dato la prima volta e lo annotiamo nella scheda.'] },

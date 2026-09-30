@@ -123,6 +123,7 @@
     'cerdo:us': { key: 'porcino:cerdo', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
     'vaca:us': { key: 'ganado:vaca', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
     'pollo:us': { key: 'avicultura:pollo', sourceId: 'usda_nass', currency: 'USD', unit: 'lb', frequency: 'monthly' },
+    'harina_soja:us': { key: 'pienso:harina_soja', sourceId: 'usda_ams_mars', currency: 'USD', unit: 'ton_corta', frequency: 'weekly' },
     'harina_soja:eu': { key: 'pienso:harina_soja', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'weekly' },
     'huevos:us': { key: 'avicultura:huevos', sourceId: 'usda_nass', currency: 'USD', unit: 'docena', frequency: 'monthly' },
     'huevos:eu': { key: 'avicultura:huevos', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },

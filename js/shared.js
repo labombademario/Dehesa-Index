@@ -125,6 +125,7 @@
     { text: 'World Bank', url: FOOTER_URLS.wb },
     { text: 'ECB', url: FOOTER_URLS.ecb },
     { text: 'USDA PSD', url: 'https://apps.fas.usda.gov/psdonline/' },
+    { text: 'USDA AMS', url: 'https://mymarketnews.ams.usda.gov/' },
     { text: 'NASA POWER', url: 'https://power.larc.nasa.gov/' }
   ];
   var FOOTER_EC_LABEL = {

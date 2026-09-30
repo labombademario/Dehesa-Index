@@ -95,6 +95,7 @@
   var SRC_URL = {
     nass: 'https://www.nass.usda.gov/Charts_and_Maps/Agricultural_Prices/index.php',
     amsDairy: 'https://www.ams.usda.gov/market-news/dairy',
+    amsMars: 'https://mymarketnews.ams.usda.gov/',
     ecPrices: 'https://agridata.ec.europa.eu/extensions/DataPortal/prices.html',
     cmeLiveCattle: 'https://www.cmegroup.com/markets/agriculture/livestock/live-cattle.html',
     euronext: 'https://www.euronext.com/en/products/commodities',
@@ -210,7 +211,7 @@
       vaca: 'EE. UU. cotiza en pie; Europa y Reino Unido, en canal (deadweight) — misma unidad de peso, pero no la misma base de medición.',
       cabra: 'Mercado con menor liquidez y bases distintas (en pie vs. canal) — cotización de referencia. La UE no publica precio de caprino por país, así que el selector de país no se aplica a este producto.',
       pienso: 'El precio del pienso varía mucho por lonja local — este es un índice de referencia, no un precio único.',
-      harina_soja: 'La cifra europea es la harina de soja en España (media nacional, salida de fábrica) de la Comisión Europea; la de EE. UU. sigue pendiente porque su fuente (CME) no se puede automatizar por licencia.',
+      harina_soja: 'La cifra europea es la harina de soja en España (media nacional, salida de fábrica, Comisión Europea); la de EE. UU. es la de Iowa (FOB, 46,5-48 % de proteína, USDA AMS) en tonelada corta. No es exactamente el mismo producto ni el mismo punto de venta, así que la comparación es orientativa.',
       cerdo: 'Esta es la referencia de mercado del porcino blanco (comodity) — el cerdo ibérico de bellota de la dehesa cotiza muy por encima y no tiene un índice público propio.',
       cordero: 'EE. UU. cotiza en vivo y Europa en canal — misma unidad de peso, pero no la misma base de medición.',
       azucar: 'El precio de EE. UU. es estructuralmente más alto por su sistema de cuotas de importación, no por una anomalía puntual del mercado.',
@@ -221,7 +222,7 @@
       vaca: 'The U.S. quotes live weight, while Europe and the U.K. quote carcass (deadweight) — same unit of weight, but not the same measurement basis.',
       cabra: 'A less liquid market with different bases (live weight vs. carcass) — a reference quote. The EU publishes no goat price by country, so the country selector does not apply to this product.',
       pienso: 'Feed prices vary widely by local market — this is a reference index, not a single price.',
-      harina_soja: 'The European figure is Spanish soybean meal (national average, ex-factory) from the European Commission; the US one stays pending because its source (CME) cannot be automated under its licence.',
+      harina_soja: 'The European figure is Spanish soybean meal (national average, ex-factory, European Commission); the US one is Iowa (FOB, 46.5-48% protein, USDA AMS) per short ton. It is not exactly the same product or delivery point, so the comparison is indicative.',
       cerdo: 'This is the standard (commodity) pork market reference — dehesa-raised, acorn-fed Iberian pork trades well above it and has no public index of its own.',
       cordero: 'The U.S. quotes live weight while Europe quotes carcass weight — same unit of weight, but not the same measurement basis.',
       azucar: 'The U.S. price is structurally higher due to its import quota system, not a one-off market anomaly.',
@@ -232,7 +233,7 @@
       vaca: "Les États-Unis cotent en poids vif ; l'Europe et le Royaume-Uni, en poids carcasse — même unité de poids, mais pas la même base de mesure.",
       cabra: "Marché moins liquide avec des bases différentes (poids vif vs. carcasse) — cotation de référence. L'UE ne publie pas de prix caprin par pays, le sélecteur de pays ne s'applique donc pas à ce produit.",
       pienso: "Le prix des aliments pour animaux varie fortement selon le marché local — il s'agit d'un indice de référence, pas d'un prix unique.",
-      harina_soja: "Le chiffre européen est le tourteau de soja en Espagne (moyenne nationale, départ usine) de la Commission européenne ; celui des États-Unis reste en attente car sa source (CME) ne peut pas être automatisée sous sa licence.",
+      harina_soja: "Le chiffre européen est le tourteau de soja en Espagne (moyenne nationale, départ usine, Commission européenne) ; celui des États-Unis est celui de l'Iowa (FOB, 46,5-48 % de protéines, USDA AMS) en tonne courte. Ce n'est pas exactement le même produit ni le même point de vente : la comparaison est indicative.",
       cerdo: "Il s'agit de la référence de marché du porc blanc (matière première) — le porc ibérique élevé en dehesa et nourri au gland se négocie bien au-dessus et n'a pas d'indice public propre.",
       cordero: "Les États-Unis cotent en poids vif et l'Europe en poids carcasse — même unité de poids, mais pas la même base de mesure.",
       azucar: "Le prix américain est structurellement plus élevé en raison de son système de quotas d'importation, et non d'une anomalie ponctuelle du marché.",
@@ -243,7 +244,7 @@
       vaca: 'Gli Stati Uniti quotano a peso vivo, mentre l\'Europa e il Regno Unito quotano a peso morto — stessa unità di peso, ma non la stessa base di misurazione.',
       cabra: 'Mercato con minore liquidità e basi diverse (peso vivo vs. peso morto) — quotazione di riferimento. L\'UE non pubblica un prezzo caprino per paese, quindi il selettore di paese non si applica a questo prodotto.',
       pienso: 'Il prezzo del mangime varia molto per mercato locale — questo è un indice di riferimento, non un prezzo unico.',
-      harina_soja: 'La cifra europea è la farina di soia in Spagna (media nazionale, franco fabbrica) della Commissione europea; quella degli Stati Uniti resta in attesa perché la sua fonte (CME) non è automatizzabile per licenza.',
+      harina_soja: 'La cifra europea è la farina di soia in Spagna (media nazionale, franco fabbrica, Commissione europea); quella degli Stati Uniti è quella dell\'Iowa (FOB, 46,5-48 % di proteine, USDA AMS) per tonnellata corta. Non è esattamente lo stesso prodotto né lo stesso punto di vendita: il confronto è indicativo.',
       cerdo: 'Questo è il riferimento di mercato del suino bianco (commodity) — il maiale iberico allevato allo stato brado e nutrito con ghiande quota molto al di sopra e non ha un indice pubblico proprio.',
       cordero: 'Gli Stati Uniti quotano a peso vivo mentre l\'Europa quota a peso morto — stessa unità di peso, ma non la stessa base di misurazione.',
       azucar: 'Il prezzo statunitense è strutturalmente più alto a causa del suo sistema di quote di importazione, non per un\'anomalia puntuale del mercato.',
@@ -602,7 +603,7 @@
           eu: { price: 409.67, changePct: 2.0501, history: [359.51, 364.81, 372.43, 384.13, 382.56, 374.51, 358.63, 375.86, 394.93, 399.88, 401.44, 409.67], currency: 'EUR', kgPerUnit: 1000 },
           footnoteKey: 'harina_soja',
           uk: { price: 355.00, changePct: 5.65, history: [340, 343, 346, 349, 351, 353, 355], currency: 'GBP', kgPerUnit: 1000 },
-          quoteTypes: { us: { type: 'futuro', market: 'CME (harina de soja)' }, eu: { type: 'referencia', market: 'Comisión Europea (harina de soja, España, media nacional)' }, uk: { type: 'indice', market: 'Farmers Weekly (mercado del Reino Unido)' } } }
+          quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (harina de soja, Iowa, FOB, 46,5-48 % de proteína)' }, eu: { type: 'referencia', market: 'Comisión Europea (harina de soja, España, media nacional)' }, uk: { type: 'indice', market: 'Farmers Weekly (mercado del Reino Unido)' } } }
       ]
     },
     {
@@ -896,7 +897,8 @@
     eia: { name: 'EIA', url: SRC_URL.eia, authority: 'official' },
     defra: { name: 'Defra (Reino Unido)', url: SRC_URL.defraMilk, authority: 'official' },
     eu_agrifood: { name: 'Comisión Europea — Agri-food Data Portal', url: 'https://agriculture.ec.europa.eu/data-and-analysis/markets/price-data_en', authority: 'official' },
-    eu_oil_bulletin: { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin, authority: 'official' }
+    eu_oil_bulletin: { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin, authority: 'official' },
+    usda_ams_mars: { name: 'USDA AMS Market News (MARS)', url: SRC_URL.amsMars, authority: 'official' }
   };
 
   var DATA_TRUST_PILOT = {
@@ -1044,6 +1046,12 @@
       methodology: 'Comisión Europea, Agri-food Data Portal: precio mensual agregado de los fertilizantes potásicos (K) en varios mercados de la UE, EUR/tonelada, a partir de servicios de inteligencia de mercado. NO es MOP: la Comisión no especifica el producto, así que no es comparable con MOP ni con el índice DTN. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-09-30',
       status: 'verified', verifiedAt: '2026-09-30T01:52:57.353Z'
+    },
+    'pienso-harina_soja-us': {
+      sourceId: 'usda_ams_mars', frequency: 'weekly',
+      methodology: 'Pendiente de la primera ejecución automática (USDA AMS, API MARS, informe 3511).',
+      comparability: 'directional', observationDate: null, publicationDate: null,
+      status: 'pending', verifiedAt: null
     },
     'pienso-harina_soja-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
