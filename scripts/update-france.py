@@ -86,7 +86,7 @@ def series(sid, group, label, unit, freq, pts, extra=None):
 OUT = []
 def add(s):
     if not s: return
-    if s['frequency'] == 'weekly':
+    if s['frequency'] == 'weekly' and 'to Jul 2022' not in s['label']:
         last = datetime.date.fromisoformat(s['latestPeriod'])
         if (datetime.date.today() - last).days > 550:
             log('descartada (discontinuada)', s['label'], s['latestPeriod']); return
