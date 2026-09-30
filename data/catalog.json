@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:34:40.768Z",
+  "generatedAt": "2026-09-30T17:35:21.704Z",
   "observationCount": 87,
   "products": [
     "arroz",
@@ -597,12 +597,12 @@
       "product": "diesel",
       "region": "eu",
       "sourceId": "eu_oil_bulletin",
-      "observationDate": "2026-09-21",
+      "observationDate": "2026-09-28",
       "unit": "litro",
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "verifiedAt": "2026-09-30T17:35:21.379660Z",
       "comparability": "directional",
       "points": 261,
       "coverageStart": "2005-01-01",
@@ -617,10 +617,10 @@
       "currency": "USD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T12:32:22.019Z",
+      "verifiedAt": "2026-09-30T17:35:16.952Z",
       "comparability": "directional",
-      "points": 24,
-      "coverageStart": "2024-10-01",
+      "points": 391,
+      "coverageStart": "1994-03-01",
       "coverageEnd": "2026-09-01"
     },
     {

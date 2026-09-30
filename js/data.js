@@ -751,7 +751,7 @@
   var LITRO_KG = 0.835;
   var GAL_KG = LITRO_KG * 3.78541;
   var DIESEL_US_NATIONAL = { price: 6.382, changePct: -2.2515, history: [5.454, 5.652, 5.599, 5.967, 6.285, 6.529, 6.382], currency: 'USD', kgPerUnit: GAL_KG };
-  var DIESEL_EU_NATIONAL = { price: 2.2264435149088713, changePct: 3.1364, history: [2.0331381469525867, 2.0633660614777103, 2.0391469620832607, 2.1084127823327123, 2.1587361941679264, 2.2264435149088713], currency: 'EUR', kgPerUnit: LITRO_KG };
+  var DIESEL_EU_NATIONAL = { price: 2.237184154724178, changePct: 0.4824, history: [2.0633660614777103, 2.0391469620832607, 2.1084127823327123, 2.1587361941679264, 2.2264435149088713, 2.237184154724178], currency: 'EUR', kgPerUnit: LITRO_KG };
   var DIESEL_UK_NATIONAL = { price: 1.9918, changePct: 0.4, history: [1.9300, 1.9450, 1.9580, 1.9690, 1.9760, 1.9840, 1.9918], currency: 'GBP', kgPerUnit: LITRO_KG };
   var DIESEL_US_REGIONS = [
     { key: 'usMidwest', price: 6.680, changePct: 0.9, history: [6.55, 6.58, 6.61, 6.60, 6.64, 6.67, 6.680], currency: 'USD', kgPerUnit: GAL_KG },
@@ -1125,12 +1125,12 @@
     'energia-diesel-us': {
       sourceId: 'eia', frequency: 'weekly',
       methodology: 'US national diesel fuel reference; USD/gallon. Observation dated 2026-09-28; EIA release dated 2026-09-28.',
-      comparability: 'directional', observationDate: '2026-09-28', publicationDate: '2026-09-28', status: 'verified', verifiedAt: '2026-09-30T12:32:22.019Z'
+      comparability: 'directional', observationDate: '2026-09-28', publicationDate: '2026-09-28', status: 'verified', verifiedAt: '2026-09-30T17:35:16.952Z'
     },
     'energia-diesel-eu': {
       sourceId: 'eu_oil_bulletin', frequency: 'weekly',
       methodology: 'Media ponderada de la UE de gasóleo de automoción, con impuestos, publicada en EUR/1.000 litros y almacenada sin convertir su precisión de origen. Es un precio semanal al consumidor; no equivale a una cotización agrícola en finca.',
-      comparability: 'directional', observationDate: '2026-09-21', publicationDate: '2026-09-24', status: 'verified', verifiedAt: '2026-09-30T12:32:25.428367Z'
+      comparability: 'directional', observationDate: '2026-09-28', publicationDate: '2026-09-30', status: 'verified', verifiedAt: '2026-09-30T17:35:21.379660Z'
     },
     'porcino-cerdo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',

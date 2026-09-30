@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:34:41.878Z",
+  "generatedAt": "2026-09-30T17:35:22.489Z",
   "status": "informational",
   "rules": [
     {
@@ -445,6 +445,15 @@
     },
     {
       "type": "period_move",
+      "product": "diesel",
+      "region": "us",
+      "sourceId": "eia",
+      "severity": "high",
+      "changePct": 11.57,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
       "product": "gas_natural",
       "region": "us",
       "sourceId": "eia",
@@ -540,15 +549,6 @@
       "sourceId": "usda_ams_mars",
       "severity": "high",
       "changePct": 10.71,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "diesel",
-      "region": "us",
-      "sourceId": "eia",
-      "severity": "high",
-      "changePct": 11.57,
       "observationDate": "2026-09-01"
     },
     {

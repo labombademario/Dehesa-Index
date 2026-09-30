@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:34:41.258Z",
+  "generatedAt": "2026-09-30T17:35:22.109Z",
   "scope": {
     "latestObservations": 81,
-    "historyObservations": 19581,
+    "historyObservations": 19948,
     "verified": 81,
     "pending": 0,
     "stale": 46,
@@ -588,12 +588,12 @@
       "sourceId": "eu_oil_bulletin",
       "status": "verified",
       "comparability": "directional",
-      "observationDate": "2026-09-21",
-      "publicationDate": "2026-09-24",
-      "verifiedAt": "2026-09-30T12:32:25.428367Z",
+      "observationDate": "2026-09-28",
+      "publicationDate": "2026-09-30",
+      "verifiedAt": "2026-09-30T17:35:21.379660Z",
       "frequency": "weekly",
       "historyPoints": 261,
-      "ageDays": 9,
+      "ageDays": 2,
       "stale": false
     },
     {
@@ -605,9 +605,9 @@
       "comparability": "directional",
       "observationDate": "2026-09-28",
       "publicationDate": "2026-09-28",
-      "verifiedAt": "2026-09-30T12:32:22.019Z",
+      "verifiedAt": "2026-09-30T17:35:16.952Z",
       "frequency": "weekly",
-      "historyPoints": 24,
+      "historyPoints": 391,
       "ageDays": 2,
       "stale": false
     },
