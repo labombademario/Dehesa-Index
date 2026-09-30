@@ -1,86 +1,19 @@
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/egg/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/egg?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggPrices/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggPrices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsPrices/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsPrices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggprices/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggprices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsprice/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsprice?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggPrice/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggPrice?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/egg-prices/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/egg-prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs-prices/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs-prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsAndPoultry/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsAndPoultry?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsandpoultry/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsandpoultry?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggAndPoultry/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggAndPoultry?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultryAndEggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultryAndEggs?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultryandeggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultryandeggs?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultryEggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultryEggs?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsPoultry/prices?memberStateCodes=ES
-ERR https://api.tech.ec.europa.eu/agrifood/api/eggsPoultry?memberStateCodes=ES fetch failed
-404 https://api.tech.ec.europa.eu/agrifood/api/hen/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/hen?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/henEggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/henEggs?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/table-eggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/table-eggs?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/tableEggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/tableEggs?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsMarket/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsMarket?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggMarket/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggMarket?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs_and_poultry/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs_and_poultry?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs_poultry/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs_poultry?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/egg_prices/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/egg_prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs_prices/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs_prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/Eggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/Eggs?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/EGGS/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/EGGS?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultry/eggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultry/eggs?memberStateCodes=ES
-200 https://api.tech.ec.europa.eu/agrifood/api/poultry/egg/prices?memberStateCodes=ES  [ { "beginDate" : "14/09/2026", "endDate" : "20/09/2026", "price" : "€242.27", "unit" : "€/100Kg", "farmingMethod" : "Cage", "marketingYear" : 2026, "weekNumber" : 38, "memberStateCode" : "ES", "memberStateName" : "Spain" }, { "beginDate" : "14/09/2026", "endDate" : "20/09/2026
-404 https://api.tech.ec.europa.eu/agrifood/api/poultry/egg?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs/eggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs/eggs?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs/egg/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs/egg?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs/price/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs/price?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs/prices/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/egg/prices/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/egg/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/egg/price/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/egg/price?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultry_and_eggs/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultry_and_eggs?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsandpoultrymeat/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsandpoultrymeat?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultrymeat/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultrymeat?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultryMeat/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/poultryMeat?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsProd/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsProd?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/henEggsPrices/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/henEggsPrices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsWeekly/prices?memberStateCodes=ES
-404 https://api.tech.ec.europa.eu/agrifood/api/eggsWeekly?memberStateCodes=ES
+STATUS 200
+FILAS 7614
+CAMPOS beginDate,endDate,price,unit,farmingMethod,marketingYear,weekNumber,memberStateCode,memberStateName
+unit -> ["€/100Kg"]
+farmingMethod -> ["Organic","Cage","Free range","Barn"]
+memberStateCode -> ["FR","DE","IT","ES"]
+memberStateName -> ["France","Germany","Italy","Spain"]
+GRUPO [DE | Barn] n=1382 ultimo=2026-09-20 precio=€225.99
+GRUPO [DE | Free range] n=300 ultimo=2026-09-20 precio=€378.20
+GRUPO [DE | Organic] n=253 ultimo=2026-09-20 precio=€545.13
+GRUPO [ES | Barn] n=258 ultimo=2026-09-20 precio=€249.26
+GRUPO [ES | Cage] n=1381 ultimo=2026-09-20 precio=€242.27
+GRUPO [ES | Free range] n=249 ultimo=2026-09-20 precio=€271.10
+GRUPO [ES | Organic] n=144 ultimo=2026-09-20 precio=€391.13
+GRUPO [FR | Cage] n=1384 ultimo=2026-09-20 precio=€263.56
+GRUPO [FR | Free range] n=302 ultimo=2026-09-20 precio=€321.75
+GRUPO [FR | Organic] n=302 ultimo=2026-09-20 precio=€505.34
+GRUPO [IT | Barn] n=277 ultimo=2026-09-20 precio=€338.88
+GRUPO [IT | Cage] n=1382 ultimo=2026-09-20 precio=€301.19
