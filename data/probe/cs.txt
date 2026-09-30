@@ -1,0 +1,236 @@
+## ANI61 Slaughterings and production of poultry
+  var DYRKAT | category | n= 11 | [('FJERKRIALT', 'Slaughtering of poultry, total'), ('FJERKREKS', 'Slaughtering and export of poultry, total'), ('KYLLING', 'Slaughtering of chickens'), ('HONS', 'Slaughtering of hens'), ('AENDER', 'Slaughtering of ducks'), ('GAES', 'Slaughtering of geese'), ('KALKUN', 'Slaughtering of turkeys'), ('EKSPORT', 'Exports of live poultry, total'), ('EKSPORTDAG', 'Export of day-old poultry'), ('EKSPORTANDET', 'Export of other poultry'), ('SLPRODUCENT', 'Slaughterings at producers')]
+  var ENHED | unit | n= 4 | [('SLAGEKS', 'Slaughterings and export of live animals (1,000 units)'), ('PROD', 'Production (m kg)'), ('PRISKYL', 'Quotations for poultry (DK øre per kg live weight)'), ('SALG', 'Sales value (DKK Million.)')]
+  var Tid | time | n= 126 | ([('1995K1', '1995Q1')], [('2026K2', '2026Q2')])
+## ANI81 Production of eggs and types of production
+  var ENHED | unit | n= 12 | [('BUR', 'Caged  layers (mill. kg)'), ('FRIT', 'Free-range eggs (mill. kg)'), ('SKRAB', 'Deep litter (million kg)'), ('OKOAEG', 'Organic eggs (million kg)'), ('KON1', 'Eggs for human consumption for sales to egg packing (mill. kg)'), ('KON2', 'Eggs for human consumption uses at producers and directly sale (millio'), ('KON3', 'Eggs for consumption, total (million kg)'), ('KON4', 'Sales value ex producent of eggs for human consumption, total (DKK Mil'), ('SALG1', 'Sales value ex producent of eggs for human consumption (DK øre per kg)'), ('SALG2', 'Sales value ex producent of deep litter for human consumption (DK øre '), ('SALG3', 'Sales value ex producent of organic eggs for human consumption (DK øre'), ('RUG', 'Hatchinh eggs (million kg)')]
+  var Tid | time | n= 126 | ([('1995K1', '1995Q1')], [('2026K2', '2026Q2')])
+## AFG6 Crops
+  var AFGRØDE | crop | n= 61 | [('000', 'Agriculture and horticulture total'), ('005', '1. Cereals for the production of grain'), ('010', '1.1 Common wheat'), ('015', '1.1.1 Common winter'), ('020', '1.1.2 Common spring wheat'), ('025', '1.2 Barley'), ('030', '1.2.1 Winter barley'), ('035', '1.2.2 Spring barley'), ('040', '1.3 Rye'), ('045', '1.4 Oats'), ('050', '1.5 Triticale'), ('055', '1.6 Grain maize and corn-cob mix'), ('060', '1.7 Mixed grains and other cereals'), ('065', '2. Pulses'), ('070', '2.1 Pulses for the production of grain'), ('075', '2.2 Horse beans'), ('080', '2.3 Other pulses'), ('085', '3. Root crops'), ('090', '3.1 Potatoes'), ('095', '3.1.1 Seed potatoes'), ('100', '3.1.2 Potatoes for manufacturing'), ('105', '3.1.3 Potatoes for human consumption'), ('110', '3.2 Sugar beets'), ('115', '3.3 Beets and other root crops for fodder'), ('120', '4. Industrial crops'), ('125', '4.1 Rape'), ('130', '4.1.1 Winter rape'), ('135', '4.1.2 Spring rape'), ('140', '4.2 Flax'), ('145', '4.3 Other industrial crops'), ('150', '5. Seeds for sowing'), ('155', '6. Temporary grass and green fodder'), ('160', '6.1 Lucerne'), ('165', '6.2 Green maize'), ('170', '6.3 Cereals and pulses harvested green'), ('175', '6.4 Temporary grass and clover'), ('180', '7. Horticultural crops'), ('185', '7.1 Vegetables grown outdoors'), ('190', '7.2 Peas for human consumption'), ('195', '7.3 fruits and berries'), ('200', '7.3.1 Apples'), ('205', '7.3.2 Pears'), ('210', '7.3.3 Strawberries'), ('215', '7.3.4 Cherries'), ('220', '7.3.5 Blackcurrants'), ('225', '7.3.6 Redcurrants'), ('230', '7.3.7 Other fruits and berries'), ('235', '7.4 Bulbs and flowers'), ('240', '7.5 Nursery area'), ('245', '8. Permanent grassland'), ('250', '9. Christmas trees and decorative greenery'), ('255', '10. Fallow land'), ('260', '10.1 Fallow land with subsidies'), ('265', '10.2 Fallow land without subsidies'), ('270', '11. Other crops'), ('275', 'A. Irrigable area'), ('280', 'A 1. Irrigated area in the past year'), ('285', 'B. Area with zero or low tillage'), ('290', 'B 1 Zero tillage (direct seeding)'), ('295', 'B 2 Conservation tillage (low tillage)'), ('300', 'C. Forest belonging to agricultural farms')]
+  var ENHED | unit | n= 2 | [('ANTAL', 'Farms (numbers)'), ('HA', 'Hectares')]
+  var AREAL1 | area | n= 9 | [('AIALT', 'Total'), ('A1', 'Less than 10.0 hectares'), ('A19', '10.0 - 19.9 hectares'), ('A29', '20.0 - 29.9 hectares'), ('A49', '30.0 - 49.9 hectares'), ('A62', '50.0 - 74.9 hectares'), ('A100', '75.0 - 99.9 hectares'), ('A210', '100.0 - 199.9 hectares'), ('A220', '200.0 hectares and over')]
+  var Tid | time | n= 44 | ([('1982', '1982')], [('2025', '2025')])
+## HST5 Forecast on winter crop products for harvest
+  var AFGRØDE | crop | n= 6 | [('H102', 'Total area of winterseed'), ('H110', 'Winter wheat'), ('H130', 'Rye'), ('H140', 'Triticale'), ('H150', 'Winter barley'), ('H210', 'Winter rape')]
+  var ENHED | unit | n= 2 | [('3A', 'Forecast'), ('4A', 'Harvested area')]
+  var Tid | time | n= 27 | ([('2000', '2000')], [('2026', '2026')])
+## HST89 Harvesting of grain, rapeseed and pulses
+  var AFGRØDE | crop | n= 16 | [('C0000', 'CEREALS, TOTAL'), ('C1111', 'Winter wheat and spelt'), ('C1112', 'Spring wheat and spelt'), ('C1210', 'Rye'), ('C1310', 'Winter barley'), ('C1320', 'Spring barley'), ('C1410', 'Oats'), ('C1420', 'Spring cereal mixtures'), ('C1500', 'Grain maize and corn-cob-mix'), ('C1600', 'Triticale'), ('C1990', 'Other cereals n.e.c.'), ('P0000', 'PULSES, TOTAL'), ('P1100', 'Field peas'), ('P1200', 'Broad and field beans'), ('P1300', 'Sweet lupins'), ('I1110', 'RAPE AND TURNIP RAPE SEEDS, TOTAL')]
+  var PRODFORM | production method | n= 3 | [('225', 'Organic and conventional production'), ('250', 'Organic production'), ('275', 'Conventional production')]
+  var MÆNGDE4 | unit | n= 3 | [('005', 'Area (hectare)'), ('020', 'Average yield (hkg per hectare)'), ('030', 'Production (million kg)')]
+  var Tid | time | n= 1 | ([('2025', '2025')], [('2025', '2025')])
+## JORD1 Profit and loss accounts for all farms (average)
+  var BEDRIFTSTAND | type of farm region standard output | n= 18 | [('0', 'All holdings'), ('1', 'Agriculture'), ('2', 'Agriculture, conventional'), ('3', 'Agriculture, organic'), ('4', 'Horticulture'), ('300', 'Region Hovedstaden'), ('302', 'Region Sjælland'), ('304', 'Region Syddanmark'), ('306', 'Province Fyn'), ('308', 'Province Sydjylland'), ('310', 'Region Midtjylland'), ('312', 'Province Østjylland'), ('314', 'Province Vestjylland'), ('316', 'Region Nordjylland'), ('318', 'Standardoutput 0-100.000 Euro'), ('320', 'Standardoutput 100.000-499.999 Euro'), ('322', 'Standardoutput 500.000-999.999 Euro'), ('324', 'Standardoutput 1.000.000+ Euro')]
+  var KVARTIL | quartile group | n= 5 | [('1000', 'Average, total'), ('1010', '1st quartile group by net profit'), ('1015', '2nd quartile group by net profit'), ('1020', '3rd quartile group by net profit'), ('1025', '4th quartile group by net profit')]
+  var REGNSKPOSTER | items | n= 244 | [('0000', '1. POPULATION, NUMBER OF FARMS'), ('0005', '2. SAMPLE, NUMBER OF FARMS'), ('0010', '3. AGRICULTURAL AREA, HECTARES, START OF YEAR'), ('0015', '3.1. Freehold, hectares start of year (agricultural area)'), ('0020', '3.2. Tenancy, hectares start of year (agricultural area)'), ('0022', '3.3 Rented out land, hectares start of year'), ('0025', '4. LAND USE, HECTARES'), ('0030', '4.1. Cereals, total area (land use), hectares'), ('0035', '4.1.1. Spring barley (land use), hectares'), ('0040', '4.1.2. Wheat (land use), hectares'), ('0045', '4.1.3. Other cereals (land use), hectares'), ('0050', '4.2. Other agricultural cash crops, (land use) hectares'), ('0055', '4.2.1. Peas (land use), hectares'), ('0060', '4.2.2. Rape seeds (land use), hectares'), ('0065', '4.2.3. Seeds (land use), hectares'), ('0070', '4.2.4. Potatoes (land use), hectares'), ('0075', '4.2.5. Potatoes for processing (land use), hectares'), ('0080', '4.2.6. Sugar beet (land use), hectares'), ('0085', '4.3. Horticultural cash crops (land use), hectares'), ('0090', '4.3.1. Vegetables in the open, (land use), hectares'), ('0095', '4.3.2. Flowers and ornamental plants (land use), hectares'), ('0100', '4.3.3. Fruit and berries (land use), hectares'), ('0105', '4.3.4. Nursery (land use), hectares'), ('0110', '4.4. Greenhouse (land use), square metres'), ('0115', '4.4.1. Vegetables including mushrooms (land use), square metres'), ('0120', '4.4.2. Flowers and ornamental plants (land use), square metres'), ('0125', '4.4.3. Nursery (land use), square metres'), ('0130', '4.4.4. Unused greenhouse (land use), square metres'), ('0135', '4.5. Grass and roughage (land use), hectares'), ('0140', '4.5.1. Maize for roughage (land use), hectares'), ('0145', '4.5.2. Cereals for roughage (land use), hectares'), ('0150', '4.5.3. Grass for roughage (land use), hectares'), ('0155', '4.5.4. Fodder beet (land use), hectares'), ('0160', '4.6. Christmas trees (land use), hectares'), ('0165', '4.7. Energy crops (land use), hectares'), ('0170', '4.8. Non cultivated area (land use), hectares'), ('0175', '5. LIVESTOCK'), ('0180', '5.1. Dairy cows, number, start of year'), ('0185', '5.2. Nurse cows, number, start of year'), ('0190', '5.3. Other cattle, number, start of year')]
+  var Tid | time | n= 18 | ([('2008', '2008')], [('2025', '2025')])
+## PGKONV1 Conventional agriculture - Contribution margin and land return
+  var PRODGREN1 | agricultural activities | n= 27 | [('1030', 'Cereals, total'), ('1031', 'Cereals, total 1-50 hectare'), ('1050', 'Cereals, total 50-100 hectare'), ('1055', 'Cereals, total 100-250 hectare'), ('1060', 'Cereals, total  250 hectare and over'), ('1005', 'Wheat'), ('1010', 'Spring barley'), ('1015', 'Winter barley'), ('1020', 'Rye and triticale'), ('1025', 'Oats and mixed cereals'), ('1070', 'Rape'), ('1071', 'Grass seed'), ('1072', 'Potatoes'), ('1073', 'Potatoes for starch'), ('1075', 'Sugar beets'), ('1090', 'Peas'), ('1094', 'Broad beans'), ('1126', 'Outdoor gardening'), ('1127', 'Greenhouse gardening'), ('1128', 'Other sales crops'), ('1129', 'Energy crops'), ('1130', 'Christmas trees'), ('1135', 'Maize (roughage)'), ('1140', 'Silage cereals (roughage)'), ('1145', 'Fodder roots (roughage)'), ('1150', 'Temporary grass (roughage)'), ('1155', 'Permanent pasture (roughage)')]
+  var REGNP | cost items for crops | n= 44 | [('000', 'Population, number of farms'), ('005', 'Sample, number of farms'), ('010', 'Area, ha'), ('020', 'Crop yield, hkg/FE per hectare'), ('026', 'Product price, DKK per hkg/100FE'), ('042', 'Labour input, hours/hectare'), ('050', 'AGRICULTURAL ASSETS, BEGINNING OF THE YEAR'), ('055', 'Stocks'), ('065', 'Equipment'), ('070', 'Buildings'), ('072', 'Land improvement'), ('075', 'Rights'), ('085', 'PRODUCTION VALUE'), ('090', 'Main product'), ('095', 'By-product'), ('098', 'Environmental subsidies'), ('110', 'COSTS I'), ('115', 'Seed'), ('120', 'Fertilizer and manure'), ('125', 'Pesticides etc.'), ('130', 'Energy'), ('135', 'Contract operation'), ('140', 'Other Crop costs'), ('141', 'Calculated interest, stocks'), ('180', 'CONTRIBUTION MARGIN I'), ('185', 'COSTS II'), ('190', 'Labour costs'), ('195', 'Maintenance, equipment'), ('200', 'Depreciation, equipment'), ('205', 'Calculated interest, equipment'), ('210', 'CONTRIBUTION MARGIN II'), ('215', 'COSTS III'), ('216', 'Land tax'), ('225', 'Insurances'), ('230', 'Miscellaneous costs'), ('235', 'Maintenance and depreciation, buildings'), ('236', 'Maintenance and depreciation, land improvements'), ('245', 'Calculated interest, buildings'), ('248', 'Calculated interest, land improvements'), ('250', 'TOTAL COSTS')]
+  var Tid | time | n= 4 | ([('2021', '2021')], [('2024', '2024')])
+## GOEDSALG Sale of mineral fertilizers
+  var GOED | fertilizer type | n= 3 | [('10', 'Total fertilizer type'), ('15', 'Inorganic fertilizer'), ('20', 'Organic fertilizer')]
+  var PRODUKT | product | n= 13 | [('100', '1 Total mineral fertilizers'), ('110', '1.1 Nitrogen fertilizer (N)'), ('120', '1.2 Phosphorus fertilizer (P)'), ('130', '1.3 Potassium fertilizer (K)'), ('140', '1.4 NK fertilizer'), ('150', '1.5 NP fertilizer'), ('160', '1.6 NPK fertilizer'), ('170', '1.7 PK fertilizer'), ('180', '1.8 Secondary nutrient fertilizer'), ('190', '1.9 Micronutrient fertilizer'), ('200', '2 Total soil improvers'), ('210', '2.1 Liming materials'), ('300', '3 Total growing media')]
+  var NSTOF | nutrients | n= 18 | [('1000', 'Total nutrient content'), ('1005', 'Nitrogen'), ('1010', 'Phosphorus'), ('1015', 'Potassium'), ('1020', 'Urea'), ('1025', 'Nitrate'), ('1030', 'Ammonium'), ('1035', 'Sulphur'), ('1040', 'Boron'), ('1045', 'Calcium'), ('1050', 'Magnesium'), ('1055', 'Manganese'), ('1060', 'Sodium'), ('1065', 'Cobalt'), ('1070', 'Copper'), ('1075', 'Iron'), ('1080', 'Zinc'), ('1085', 'Molybdenum')]
+  var MÅLEENHED | unit of measurement | n= 2 | [('1', 'Fertilizer amount'), ('2', 'Nutrient amount')]
+  var Tid | time | n= 2 | ([('2022:2023', '2022:2023')], [('2023:2024', '2023:2024')])
+## LPRIS38 Prices at agricultural input
+  var PRODUKT | product | n= 71 | [('1380', 'Soft wheat seeds, winter (DKK per 100 kg)'), ('1385', 'Soft wheat seeds, spring (DKK per 100 kg)'), ('1390', 'Rye seeds, winter (DKK per 100 kg)'), ('1392', 'Hybrid rye seeds  (DKK per 100 kg)'), ('1395', 'Barley seeds, winter (DKK per 100 kg)'), ('1400', 'Barley seeds, spring (DKK per 100 kg)'), ('1405', 'Oat seeds (DKK per 100 kg)'), ('1410', 'Maize seeds (DKK per 100 kg)'), ('1420', 'Pea seeds (DKK per 100 kg)'), ('1425', 'Rape seeds (DKK per 100 kg)'), ('1430', 'White clover seeds, sowing (DKK per 100 kg)'), ('1435', 'Perennial Ryegrass seeds, sowing (DKK per 100 kg)'), ('1440', 'Red fescue seeds, sowing (DKK per 100 kg)'), ('1445', 'Kentucky Bluegrass seeds, sowing (DKK per 100 kg)'), ('1450', 'Sugar beet seeds, sowing (DKK per unit)'), ('1460', 'Electricity incl. taxes (DKK per 100 kW)'), ('1465', 'CO2 og Nox- taxes, heating gas oil (DKK per 1000 l)'), ('1470', 'Heating gas oil incl. taxes (DKK per 1000 l)'), ('1485', 'Ammonsalpeter 24 S (NS 24-7) (DKK per 100 kg) (2005-2024)'), ('1486', 'N fertilizers (incl. secondary nutrients) (2025 - )'), ('1488', 'NS fertilizers, 27% nitrogen (2025 - )'), ('1490', 'Triple Superphosphate 19,8% P (DKK per 100 kg) (2005-2024)'), ('1492', 'NS fertilizers, 24¿26% nitrogen (2025 - )'), ('1494', 'Liquid nitrogen fertilizers, with and without sulfur (2025 - )'), ('1496', 'P fertilizers (2025 - )'), ('1498', 'K fertilizers (2025 - )'), ('1500', 'Potassiumsulfate 25 M Mg, S (DKK per 100 kg) (2005-2024)'), ('1502', 'NP and NPS fertilizers (2025 - )'), ('1504', 'PK fertilizers (2025 - )'), ('1505', 'Kieserite Gran BB (DKK per 100 kg) (2005-2024)'), ('1506', 'NPK fertilizers (2025 - )'), ('1510', 'NP 18-20-0 S (Diammonphosphate) (DKK per 100 kg) (2005-2024)'), ('1515', 'Other NP (DKK per 100 kg) (2005-2024)'), ('1520', 'PK with Cu total (DKK per 100 kg) (2005-2024)'), ('1525', 'NPK 21-3-10 m. Mg, S, B (DKK per 100 kg) (2005-2024)'), ('1530', 'Lime and marl (DKK per 100 kg)'), ('1535', 'Soft wheat, fodder (DKK per 100 kg)'), ('1540', 'Rye, fodder (DKK per 100 kg)'), ('1545', 'Barley, fodder (DKK per 100 kg)'), ('1550', 'Oats, fodder (DKK per 100 kg)'), ('1555', 'Maize, fodder (DKK per 100 kg)'), ('1565', 'Toasted extracted soyabean meal (DKK per 100 kg)'), ('1566', 'Rapeseed meal (DKK per 100 kg)'), ('1570', 'Fish meal (DKK per 100 kg)'), ('1575', 'Dried sugar beet pulp (DKK per 100 kg)'), ('1580', 'Peas, fodder (DKK per 100 kg)'), ('1585', 'Greenpills (DKK per 100 kg)'), ('1590', 'Compound feed for calves, low protein content (DKK per 100 kg)'), ('1595', 'Compound feed for calves, high protein content (DKK per 100 kg)'), ('1600', 'Compound feed for cattle, low protein content (DKK per 100 kg)'), ('1605', 'Compound feed for cattle, high protein content (DKK per 100 kg)'), ('1610', 'Compound feed for sows, complete (DKK per 100 kg)'), ('1615', 'Compound additives  for sows (DKK per 100 kg)'), ('1620', 'Compound feed, complete, for pigs for slaughter (DKK per 100 kg)'), ('1625', 'Compound additives  for pigs for slaughter (DKK per 100 kg)'), ('1630', 'Compound feed for piglets, complete (DKK per 100 kg)'), ('1635', 'Compound additives  for piglets (DKK per 100 kg)'), ('1640', 'Compound feed for chickens not for slaughter, complete (DKK per 100 kg'), ('1645', 'Compound feed for chickens for slaughter, complete (DKK per 100 kg)'), ('1650', 'Compound feed for hens, complete (DKK per 100 kg)'), ('1655', 'Other compound feeds for hens (DKK per 100 kg)'), ('1660', 'Miscellanous compound feed for poultry (DKK per 100 kg)'), ('1665', 'Compound mineral substances for pigs (DKK per 100 kg)'), ('1670', 'Compound mineral substances for cattle (DKK per 100 kg)'), ('1675', 'Insemination, cows (DKK per head)'), ('1680', 'Insemination, pigs (DKK per portion)'), ('1685', 'Cost of labour, tarif B (DKK per hour)'), ('1690', 'Cost of labour, tarif C (DKK per hour)'), ('1695', 'Rent of land (DKK per ha)'), ('1700', 'Property tax (DKK per ha)'), ('1705', 'Arable land, buying price (DKK per ha)')]
+  var ENHED | unit | n= 2 | [('320', 'Current prices'), ('315', 'Percentage change compared to previous year')]
+  var Tid | time | n= 6 | ([('2020', '2020')], [('2025', '2025')])
+## KAPIT1 Farm gate prices on barley and wheat
+  var KAPIT | defined districts | n= 9 | [('000', 'All Denmark'), ('099', 'Sealand with adjacent islands '), ('350X', 'Lolland-Falster with adjacent islands'), ('400', 'Bornholm'), ('420', 'Fyn with adjacent islands'), ('500', 'Sønderjylland'), ('600X', 'Østjylland'), ('550X', 'Vestjylland'), ('760X', 'Nordjylland')]
+  var KORNART | type of crop | n= 2 | [('BYG', 'Barley'), ('HVEDE', 'Wheat')]
+  var Tid | time | n= 41 | ([('1985', '1985')], [('2025', '2025')])
+CBS 84952ENG FarmAnimals | Farm animals | None | Dimension
+CBS 84952ENG Periods | Periods | None | TimeDimension
+CBS 84952ENG Livestock_1 | Livestock | x 1000 | Topic
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/84952ENG/$metadata#Cbs.OData.WebAPI.TypedDataSet","value":[
+    {
+      "ID":0,"FarmAnimals":"A028972","Periods":"2018MM04","Livestock_1":3897
+    },{
+      "ID":1,"FarmAnimals":"A028972","Periods":"2018MM12","Livestock_1":3690
+    },{
+      "ID":2,"FarmAnimals":"A028972","Periods":"2019MM04","Livestock_1":3750
+    }
+  ]
+}
+CBS 83981ENG ManureAndNutrients | Manure and nutrients | None | Dimension
+CBS 83981ENG Periods | Periods | None | TimeDimension
+CBS 83981ENG TotalExcretion_1 | Total excretion | million kg | Topic
+CBS 83981ENG ExcretionDuringHousing_2 | Excretion during housing | million kg | Topic
+CBS 83981ENG ExcretionDuringGrazing_3 | Excretion during grazing | million kg | Topic
+CBS 83981ENG  | Nitrogen losses in housing and storages | None | TopicGroup
+CBS 83981ENG TotalNitrogenLossesN_4 | Total nitrogen losses (N) | million kg | Topic
+CBS 83981ENG AmmoniaEmissionsN_5 | Ammonia emissions (N) | million kg | Topic
+CBS 83981ENG OtherGaseousNitrogenLossesN_6 | Other gaseous nitrogen losses (N) | million kg | Topic
+CBS 83981ENG EffluentAirScrubbersN_7 | Effluent air scrubbers (N) | million kg | Topic
+CBS 83981ENG StoredManureAndManureDuringGrazing_8 | Stored manure and manure during grazing | million kg | Topic
+CBS 83981ENG ManureRemovalFromFarms_9 | Manure removal from farms | million kg | Topic
+CBS 83981ENG ManureSupplyToFarms_10 | Manure supply to farms | million kg | Topic
+CBS 83981ENG ProcessedManureExcludingExports_11 | Processed manure (excluding exports) | million kg | Topic
+CBS 83981ENG NetManureExports_12 | Net manure exports | million kg | Topic
+CBS 83981ENG SpreadingAreaForManure_13 | Spreading area for manure | million kg | Topic
+CBS 83981ENG UseOfLivestockManureInAgriculture_14 | Use of livestock manure in agriculture | million kg | Topic
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/83981ENG/$metadata#Cbs.OData.WebAPI.TypedDataSet","value":[
+    {
+      "ID":0,"ManureAndNutrients":"T001263   ","Periods":"1950JJ00","TotalExcretion_1":49019.0,"ExcretionDuringHousing_2":null,"ExcretionDuringGrazing_3":null,"TotalNitrogenLossesN_4":null,"AmmoniaEmissionsN_5":null,"OtherGaseousNitrogenLossesN_6":null,"EffluentAirScrubbersN_7":null,"StoredManureAndManureDuringGrazing_8":49019.0,"ManureRemovalFromFarms_9":null,"ManureSupplyToFarms_10":null,"ProcessedManureExcludingExports_11":null,"NetManureExports_12":null,"Spreadi
+ABS ERR AG_BROADACRE ERR HTTP Error 404: Not Found
+ABS ITPI_EXP ['MEASURE', 'INDEX', 'FREQ']
+ CL CL_BASE_PERIOD 99
+     1 | 2000-01 = 100.0
+     2 | 2001-02 = 100.0
+     3 | 2002-03 = 100.0
+     4 | 2003-04 = 100.0
+     5 | 2004-05 = 100.0
+     6 | 2005-06 = 100.0
+     7 | 2006-07 = 100.0
+     8 | 2007-08 = 100.0
+     9 | 2008-09 = 100.0
+     10 | 2009-10 = 100.0
+     11 | 2010-11 = 100.0
+     12 | 2011-12 = 100.0
+     13 | 2012-13 = 100.0
+     14 | 2013-14 = 100.0
+     15 | 2014-15 = 100.0
+     16 | 2015-16 = 100.0
+     17 | 2016-17 = 100.0
+     18 | 2017-18 = 100.0
+     19 | 2018-19 = 100.0
+     20 | 2019-20 = 100.0
+     21 | 2020-21 = 100.0
+     22 | 2021-22 = 100.0
+     23 | 2022-23 = 100.0
+     24 | 2023-24 = 100.0
+     25 | 2024-25 = 100.0
+     26 | 2025-26 = 100.0
+     27 | 2026-27 = 100.0
+     28 | 2027-28 = 100.0
+     29 | 2028-29 = 100.0
+     30 | 2029-30 = 100.0
+     31 | 2030-31 = 100.0
+     32 | 2031-32 = 100.0
+     33 | 2032-33 = 100.0
+     34 | 2033-34 = 100.0
+     35 | 2034-35 = 100.0
+     36 | 2035-36 = 100.0
+     37 | 2036-37 = 100.0
+     38 | 2037-38 = 100.0
+     39 | 2038-39 = 100.0
+     40 | 2039-40 = 100.0
+     41 | 2040-41 = 100.0
+     42 | 2041-42 = 100.0
+     43 | 2042-43 = 100.0
+     44 | 2043-44 = 100.0
+     45 | 2044-45 = 100.0
+     46 | 2045-46 = 100.0
+     47 | 2046-47 = 100.0
+     48 | 2047-48 = 100.0
+     49 | 2048-49 = 100.0
+     50 | 2049-50 = 100.0
+     51 | 2050-51 = 100.0
+     52 | 2051-52 = 100.0
+     53 | 2052-53 = 100.0
+     54 | 2053-54 = 100.0
+     55 | 2054-55 = 100.0
+     56 | 2055-56 = 100.0
+     57 | 2056-57 = 100.0
+     58 | 2057-58 = 100.0
+     59 | 2058-59 = 100.0
+     60 | 2059-60 = 100.0
+     61 | 2060-61 = 100.0
+     62 | 2061-62 = 100.0
+     63 | 2062-63 = 100.0
+     64 | 2063-64 = 100.0
+     65 | 2064-65 = 100.0
+     66 | 2065-66 = 100.0
+     67 | 2066-67 = 100.0
+     68 | 2067-68 = 100.0
+     69 | 2068-69 = 100.0
+     70 | 2069-70 = 100.0
+     71 | 2070-71 = 100.0
+     72 | 2071-72 = 100.0
+     73 | 2072-73 = 100.0
+     74 | 2073-74 = 100.0
+     75 | 2074-75 = 100.0
+     76 | 2075-76 = 100.0
+     77 | 2076-77 = 100.0
+     78 | 2077-78 = 100.0
+     79 | 2078-79 = 100.0
+     80 | 2079-80 = 100.0
+     81 | 2080-81 = 100.0
+     82 | 2081-82 = 100.0
+     83 | 2082-83 = 100.0
+     84 | 2083-84 = 100.0
+     85 | 2084-85 = 100.0
+     86 | 2085-86 = 100.0
+     87 | 2086-87 = 100.0
+     88 | 2087-88 = 100.0
+     89 | 2088-89 = 100.0
+     90 | 2089-90 = 100.0
+     91 | 2090-91 = 100.0
+     92 | 2091-92 = 100.0
+     93 | 2092-93 = 100.0
+     94 | 2093-94 = 100.0
+     95 | 2094-95 = 100.0
+     96 | 2095-96 = 100.0
+     97 | 2096-97 = 100.0
+     98 | 2097-98 = 100.0
+     99 | 2098-99 = 100.0
+ CL CL_DECIMALS 9
+     0 | Zero
+     1 | One
+     2 | Two
+     3 | Three
+     4 | Four
+     5 | Five
+     6 | Six
+     7 | Seven
+     8 | Eight
+ CL CL_INDEX_MEASURES 5
+     1 | Index Number
+     2 | Percentage Change from Previous Period
+     3 | Percentage Change from Corresponding Quarter of Previous Year
+     4 | Points Contribution to Total Index
+     5 | Change in Contribution to Total Index
+ CL CL_ITPI_INDEX 370
+     3115001 | Live animals, animal products (01)
+     3117001 | Live animals
+     3117002 | Meat and edible meat offal
+     3117004 | Dairy products
+     3115002 | Vegetable products (02)
+     3117005 | Edible vegetables
+     3117006 | Edible fruit and nuts
+     3117007 | Cereals
+     3117009 | Oil seeds and other seeds
+     3115003 | Animal or vegetable fats and oils (03)
+     3117010 | Animal or vegetable fats and oils
+     3115004 | Prepared foodstuffs (04)
+     3117012 | Sugars and sugar confectionery
+     3117014 | Preparations of cereals, flour, starch or milk, pastrycooks' products
+     3117015 | Preparations of vegetables, fruit, nuts, or other parts of plants
+     3117017 | Residues and waste from the food industries
+     3117011 | Preparations of meat, of fish or of crustaceans, mollluscs or other aquatic invertebrates
+     3117020 | Mineral fuels, mineral oils and products of their distillation
+     3115008 | Raw hides and skins, leather, furskins and articles thereof (08)
+     3117030 | Raw hides and skins (other than furskins) and leather
+     3115011 | Wool and cotton fibres (11)
+     3117034 | Wool, fine or coarse animal hair
+     3117035 | Cotton
+     8093698 | Food and live animals (0)
+     8093702 | Animal and vegetable oils, fats and waxes (4)
+     8093708 | 00 Live animals other than animals of division 03
+     8093727 | 01 Meat and meat preparations
+     8093730 | 02 Dairy products and birds' eggs
+     8093713 | 04 Cereals and cereal preparations
+     8093717 | 05 Vegetables and fruit
+     8093721 | 06 Sugars, sugar preparations and honey
+     8093723 | 08 Feeding stuff for animals (not including unmilled cereals)
+     8093736 | 21 Hides, skins and furskins, raw
+     8093747 | 22 Oil seeds and oleaginous fruits
+     8093756 | 41 Animal oils and fats
+AGB hdr STRUCTURE,STRUCTURE_ID,STRUCTURE_NAME,ACTION,DATAITEM,Broadacre crops,REGION,Region,TIME_PERIOD,Time Period,OBS_VALUE,Observation Value,UNIT_MEASURE,Unit of Measure,OBS_STATUS,Observation Status,OBS_COMMENT,Observation Comment
+DATAFLOW,ABS:AG_BROADACRE(1.0.1),Australian Agriculture: Broadacre Crops
+AGB sample regions ['1', '101061542', '101061543', '103021062', '103021063', '103021064', '103021065', '103021066', '103021067', '103021068']
