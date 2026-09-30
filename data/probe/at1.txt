@@ -1,0 +1,139 @@
+=== landwirtschaft https://www.data.gv.at/api/hub/search/search?q=landwirtschaft&filter=dataset&limit=15
+- 38c54c39-699d-4c7e-b22d-d7a64165f5b3 | Ökosystemleistungen und Landwirtschaft | Umweltbundesamt GmbH | None
+- 510fb67a-1705-460a-afe3-0b69aadfec3f | Reduktion von Treibhausgasen in der Landwirtschaft. | Umweltbundesamt GmbH | None
+- 7b9f63eb-2eb0-482f-9c87-bf820a225cfd | Reduktionspotenzial im Sektor Landwirtschaft | Umweltbundesamt GmbH | None
+- 29ada4af-ba31-4495-8425-b69d96d95c55 | Praxisleitfaden Schalltechnik in der Landwirtschaft | Umweltbundesamt GmbH | None
+- 64b9e5ee-3df7-4662-a7eb-055941080cdf | Maßnahmenpotenziale zur Ammoniakreduktion in der Landwirtschaft. | Umweltbundesamt GmbH | None
+- 29a8fefc-3a8a-4efe-a43e-41d93230cfe0 | Digitale Technologien in der Landwirtschaft. | Umweltbundesamt GmbH | None
+- 82e5800e-fb85-44ea-a89e-e33dcd325681 | Landwirtschaftliche Schulen in Tirol | Land Tirol | None
+- cfc6924d-548e-5a13-9860-4382f31736c4 | expedition.nationalpark.2022 - Mallnitz: Landwirtschaft im Wandel | Nationalparks Austria | None
+- 0bd10611-2b4f-4a1a-8d7e-0d7271a2eee8 | Massnahmen zur Minderung sekundärer Partikelbildung durch Ammoniakemissionen aus der Landwirtschaft | Umweltbundesamt GmbH | None
+- 39eae1a4-d141-454b-a686-71b62c22fcb5 | Österreichische Stickstoff- und Phosphorbilanz der Landwirtschaft nach EUROSTAT-Vorgaben. | Umweltbundesamt GmbH | None
+- 36335a0d-3e4e-44df-8f3c-61faeda213f7 | Landwirtschaftliche Gunstlagen mit regionaler Bedeutung | Land Oberösterreich | None
+- e4177933-860f-4358-b17f-cacd20a58390 | Benachteiligte landwirtschaftliche Gebiete Österreich | BMLUK | None
+- 791ffdd2-b39f-4416-b3e8-46b0e1609350 | Umstellung der Österreichischen Stickstoff- und Phosphorbilanz der Landwirtschaft auf Eurostat-Vorgaben. | Umweltbundesamt GmbH | None
+- 9b21a018-35ba-44be-8b63-98409e3b8dfe | None | Umweltbundesamt GmbH | None
+- ankoe-foia-842 | Landwirtschaftliche Fachschule Klessheim - Gutshof - Fenster aus Holz | Land Salzburg - Amt der Salzburger Landesregierung | None
+=== agrar https://www.data.gv.at/api/hub/search/search?q=agrar&filter=dataset&limit=15
+- agrar-marktdaten-erhoben-durch-die-agrarmarkt-austria | Agrar-Marktdaten erhoben durch die Agrarmarkt Austria (AMA) | AMA | None
+- f2d770f6-5e79-43b9-b8c8-d9774e9aa7c7 | Gemeinsame Agrarpolitik 2020+ | Umweltbundesamt GmbH | None
+- vertraege-der-agrarmarkt-austria | Verträge der Agrarmarkt Austria | AMA | None
+- 520720d2-21ef-438c-96fc-08271d534afa | Agrarstrukturerhebungen - Überblick | Land Oberösterreich | None
+- 8cec5ab7-5458-4592-a6db-46fcc2461c96 | Agrarische Grundzusammenlegungen in Tirol | Land Tirol | None
+- 8cec5ab7-5458-4592-a6db-46fcc2461c96~~1 | Agrarische Grundzusammenlegungen in Tirol | Land Tirol | None
+- amtliche-statistiken-der-agrarmarkt-austria | Amtliche Statistiken der Agrarmarkt Austria | AMA | None
+- transparenzdatenbank-eu-der-agrarmarkt-austria | Transparenzdatenbank EU der Agrarmarkt Austria | AMA | None
+- 2b839f18-6a5b-41b6-acdf-fbd64d554c1d | Bestandsliste der Agrarmarkt Austria gemäß IWG2022 | AMA | None
+- verlautbarungen-der-agrarmarkt-austria-amtsblaetter | Verlautbarungen der Agrarmarkt Austria (Amtsblätter) | AMA | None
+- studien-gutachten-umfragen-stellungnahmen-der-agrarmarkt-austria | Studien, Gutachten, Umfragen, Stellungnahmen der Agrarmarkt Austria | AMA | None
+- 07ab9a18-820d-4621-bc9a-e87067a4aade | Metadatensatz zur Kerndaten - Sammlung gemäß BVergG 2018 von Agrarmarkt Austria | AMA | None
+- 4c8de149-6082-4d3d-a696-32bcd266398c | Regionale Raumordnungsprogramme - Agrarische Schwerpunkträume (ASR) in Niederösterreich | Land Niederösterreich | None
+- e9462fe5-b81e-45af-b303-5f1b099ec709 | Weiterentwicklung des Agrarumweltindikators 'High Nature Value Farmland' für Österreich | Umweltbundesamt GmbH | None
+- geschaeftseinteilungen-ama | Geschäftseinteilungen, Geschäftsordnungen und Tätigkeitsberichte der Agrarmarkt Austria | AMA | None
+=== milch https://www.data.gv.at/api/hub/search/search?q=milch&filter=dataset&limit=15
+- 8f7955900a0a805749033eb97b86c91f | Verordnung, Veranstaltung, Tirol Milch Biathlon Cup | Land Tirol | None
+- amtliche-statistiken-der-agrarmarkt-austria | Amtliche Statistiken der Agrarmarkt Austria | AMA | None
+- https-piveau-eu-set-data-coo_3000_105_2_2304803 | Koordination der Lebensmittelkontrolle | BMASGPK | None
+- agrar-marktdaten-erhoben-durch-die-agrarmarkt-austria | Agrar-Marktdaten erhoben durch die Agrarmarkt Austria (AMA) | AMA | None
+- 7ff1bea0-8376-5f8d-aea5-79a9d050b864 | Kosten und Leistungen der Almbewirtschaftung | Nationalparks Austria | None
+- 9037dfd2-9962-4d5d-b1cf-21d5f0d756dc | Lebensmittelbuch Hygieneleitlinien | BMASGPK | None
+- bef9fd84-86cf-41be-83b3-8bbb713daccf | Lebensmittelbuch Leitlinien, Richtlinien, Empfehlungen usw. der Codexkommission | BMASGPK | None
+- 75aca717-ed88-4e3a-93fc-1c7b509e5721 | Lebensmittelbuch - Codexkapitel des Österreichischen Lebensmittelbuches IV. Auflage | BMASGPK | None
+- 5c9d6ea4-e67d-42d0-b9bb-8132d2a42eff | Lebensmittelbuch - Codexkapitel des Österreichischen Lebensmittelbuches IV. Auflage | BMASGPK | None
+=== preise landwirtschaft https://www.data.gv.at/api/hub/search/search?q=preise%20landwirtschaft&filter=dataset&limit=15
+- entwicklung-der-preise | Entwicklung der Preise | Land Vorarlberg | None
+- 38c54c39-699d-4c7e-b22d-d7a64165f5b3 | Ökosystemleistungen und Landwirtschaft | Umweltbundesamt GmbH | None
+- 57f86e11-c694-4201-a39a-3ef39b976ebc | Preise von Solarthermie-Anlagen Wien | Stadt Wien | None
+- erleben-veranstaltungen-1906371 | Verleihung der Concordia Preise 2026 | Parlamentsdirektion | None
+- e38be7560a0a805797eaa4058e6f92dc | Preise und Statuten (Kulturfreundliche Gemeinde, Jakob Stainer Preis, Preis und Förderpreis für Zeitgenössische Kunst, Bildungsinnovationspreis) | Land Tirol | None
+- 510fb67a-1705-460a-afe3-0b69aadfec3f | Reduktion von Treibhausgasen in der Landwirtschaft. | Umweltbundesamt GmbH | None
+- 7b9f63eb-2eb0-482f-9c87-bf820a225cfd | Reduktionspotenzial im Sektor Landwirtschaft | Umweltbundesamt GmbH | None
+- 29ada4af-ba31-4495-8425-b69d96d95c55 | Praxisleitfaden Schalltechnik in der Landwirtschaft | Umweltbundesamt GmbH | None
+- 64b9e5ee-3df7-4662-a7eb-055941080cdf | Maßnahmenpotenziale zur Ammoniakreduktion in der Landwirtschaft. | Umweltbundesamt GmbH | None
+- 29a8fefc-3a8a-4efe-a43e-41d93230cfe0 | Digitale Technologien in der Landwirtschaft. | Umweltbundesamt GmbH | None
+- 651980cd-f66c-4d6f-8612-585d068274ee | Preise von Photovoltaik-Anlagen Wien | Stadt Wien | None
+- erleben-veranstaltungen-1266119 | Verleihung des Simon-Wiesenthal-Preises 2024 | Parlamentsdirektion | None
+- 1d8aa05a0a0a805a53546a99c68bfaa0 | Statut Preis des Landes Tirol für Darstellende Künste - Tobias Moretti Preis; | Land Tirol | None
+- services-informationsfreiheit-kis-1928215 | Kooperationsvereinbarung, 30.04.2026, Verleihung der Concordia Preise 2026 | Parlamentsdirektion | None
+- 82e5800e-fb85-44ea-a89e-e33dcd325681 | Landwirtschaftliche Schulen in Tirol | Land Tirol | None
+=== getreide https://www.data.gv.at/api/hub/search/search?q=getreide&filter=dataset&limit=15
+- amtliche-statistiken-der-agrarmarkt-austria | Amtliche Statistiken der Agrarmarkt Austria | AMA | None
+- df4da74f-8329-44cc-a3f7-d2890d0895e8 | Kulturlandschaftstypen Österreichs (1997) | Umweltbundesamt GmbH | None
+- agrar-marktdaten-erhoben-durch-die-agrarmarkt-austria | Agrar-Marktdaten erhoben durch die Agrarmarkt Austria (AMA) | AMA | None
+=== schlachtung https://www.data.gv.at/api/hub/search/search?q=schlachtung&filter=dataset&limit=15
+- bf31fc9b-0352-46b3-b35e-43203e0d9d1f | Tierische Nebenprodukte 2004-2006 | Umweltbundesamt GmbH | None
+- 9037dfd2-9962-4d5d-b1cf-21d5f0d756dc | Lebensmittelbuch Hygieneleitlinien | BMASGPK | None
+=== düngemittel https://www.data.gv.at/api/hub/search/search?q=d%C3%BCngemittel&filter=dataset&limit=15
+- agrar-marktdaten-erhoben-durch-die-agrarmarkt-austria | Agrar-Marktdaten erhoben durch die Agrarmarkt Austria (AMA) | AMA | None
+- a00ac29f-7ff7-4f24-92d5-5485cba0e648 | Mikroplastik in Klärschlämmen. | Umweltbundesamt GmbH | None
+=== biologisch https://www.data.gv.at/api/hub/search/search?q=biologisch&filter=dataset&limit=15
+- a1ef895a-79ed-4ebd-bacb-60b3074ea51f | sonstige Anlage zur biologischen Behandlung | Land Oberösterreich | None
+- 20656c04-895c-4752-b1eb-8a9adc372d59 | Entwicklungen zur Biologischen Vielfalt in Österreich | Umweltbundesamt GmbH | None
+- 17bb704f-0a83-434b-9b2c-16ed33c2c0bb | Sonstige biologische Erhebungen und Beschreibungen | Land Oberösterreich | None
+- eb8e8c5b-e2de-4184-bd46-7e3d87a8cde1 | Biologisches Untersuchungs Programm 2007-2016 | Land Oberösterreich | None
+- af28fb10-0e6e-4bea-925c-681a57251763 | Evaluierung des Abfallannahmeverfahrens für mechanisch-biologisch behandelte Abfälle zur Deponierung | Umweltbundesamt GmbH | None
+- 49406ac6-f47e-4d9f-9e82-78460c27d4af | Klimarelevanz der Abluftreinigung bei der Mechanisch-Biologischen Abfallbehandlung (MBA) | Umweltbundesamt GmbH | None
+- e1707d72-063a-4203-a5e9-3a358cb31d72 | Ist-Stand der Mechanisch-Biologischen Abfallbehandlung (MBA) in Österreich | Umweltbundesamt GmbH | None
+- 2b1f3201-b4ea-5845-b555-1257ea8bf79f | Vogelberingung auf der Biologischen Station Illmitz - Juli bis Oktober 2022 | Nationalparks Austria | None
+- 23b5fc5a-c066-51bc-bc92-77ffe789b6c4 | Vogelberingung auf der Biologischen Station Illmitz - Juli bis Oktober 2020 | Nationalparks Austria | None
+- 84184ec9-ca50-5ee6-9a82-28904b91da0e | Vogelberingung auf der Biologischen Station Illmitz - Juli bis Oktober 2021 | Nationalparks Austria | None
+- 873a7f9c-ea30-51fe-afd1-16471f6ff61c | Vogelberingung auf der Biologischen Station Illmitz - Juli bis Oktober 2023 | Nationalparks Austria | None
+- 14a9f27b-bfe4-5e4c-a3d6-395a81676072 | Vogelberingung auf der Biologischen Station Illmitz - Juli bis Oktober 2024 | Nationalparks Austria | None
+- 5b83f1c5-119f-5141-97f0-7a95370e9a15 | Biodiversitäts-Report. Dokumentation der biologischen Vielfalt in den Hohen Tauern. | Nationalparks Austria | None
+- 2a66a878-ca06-50e7-a1f6-9054ef60a7c1 | Biodiversitäts-Report. Dokumentation der biologischen Vielfalt in den Hohen Tauern. Anhänge | Nationalparks Austria | None
+- 00933ec6-ebcf-58e1-8c99-062f0b3e724d | Modul 05 - Hydrologische, chemische und biologische Signale in Micro-Catchments der alpinen Zone - Endbericht 2020-2023 | Nationalparks Austria | None
+=== agrarmarkt https://www.data.gv.at/api/hub/search/search?q=agrarmarkt&filter=dataset&limit=15
+- vertraege-der-agrarmarkt-austria | Verträge der Agrarmarkt Austria | AMA | None
+- amtliche-statistiken-der-agrarmarkt-austria | Amtliche Statistiken der Agrarmarkt Austria | AMA | None
+- verlautbarungen-der-agrarmarkt-austria-amtsblaetter | Verlautbarungen der Agrarmarkt Austria (Amtsblätter) | AMA | None
+- transparenzdatenbank-eu-der-agrarmarkt-austria | Transparenzdatenbank EU der Agrarmarkt Austria | AMA | None
+- 2b839f18-6a5b-41b6-acdf-fbd64d554c1d | Bestandsliste der Agrarmarkt Austria gemäß IWG2022 | AMA | None
+- geschaeftseinteilungen-ama | Geschäftseinteilungen, Geschäftsordnungen und Tätigkeitsberichte der Agrarmarkt Austria | AMA | None
+- agrar-marktdaten-erhoben-durch-die-agrarmarkt-austria | Agrar-Marktdaten erhoben durch die Agrarmarkt Austria (AMA) | AMA | None
+- studien-gutachten-umfragen-stellungnahmen-der-agrarmarkt-austria | Studien, Gutachten, Umfragen, Stellungnahmen der Agrarmarkt Austria | AMA | None
+- 07ab9a18-820d-4621-bc9a-e87067a4aade | Metadatensatz zur Kerndaten - Sammlung gemäß BVergG 2018 von Agrarmarkt Austria | AMA | None
+- f2d0073e-6921-41d3-9778-8c3d89f5f1a8 | Metadatensatz zur Kerndaten - Sammlung gemäß  BVergG 2018 von Agrarmarkt Austria Marketing GmbH | AMA | None
+- 56d93431-af47-4fc0-a014-012759d8db4e | OGC API Feature Dienst AMA - INVEKOS Daten Österreich | AMA | None
+- 77d6f53d-7227-4d9e-a333-9d3572eec2b3 | Pufferstreifen belasteter Gewässer | AMA | None
+- 97725be7-e74d-4340-847a-178ae0d4f524 | INVEKOS Schläge Österreich 2015 | AMA | None
+- 7175d2af-d188-4ec2-b079-d4c0e5417f77 | INVEKOS Schläge Österreich 2023-2 | AMA | None
+- f587df27-ef10-4a10-8b3a-7a84a5fd1b55 | INVEKOS Hofstellen Österreich 2015 | AMA | None
+=== erzeugerpreise https://www.data.gv.at/api/hub/search/search?q=erzeugerpreise&filter=dataset&limit=15
+- c4b4a6c1-5f4a-3c45-b0b9-9ca633c3170a | Erzeugerpreisindex (2015 = 100) ÖCPA 2015 | Statistik Austria | None
+- 835447bf-a9c4-37a9-8050-c42b4de39a19 | Erzeugerpreisindex (2015 = 100) ÖNACE 2008 | Statistik Austria | None
+- 89b38cd3-1a46-3b79-8b60-fee5b1d42bbc | Erzeugerpreisindex (2021 = 100) ÖNACE 2008 | Statistik Austria | None
+- 9aa91f10-c11d-3b0f-a93a-561441256f97 | Erzeugerpreisindex (2021 = 100) ÖCPA 2015 | Statistik Austria | None
+- agrar-marktdaten-erhoben-durch-die-agrarmarkt-austria | Agrar-Marktdaten erhoben durch die Agrarmarkt Austria (AMA) | AMA | None
+=== rinder https://www.data.gv.at/api/hub/search/search?q=rinder&filter=dataset&limit=15
+- 65335682-6a36-46f9-acdf-7d3538da626b | Bestandvertrag Rindermarkt | Stadtgemeinde Wolfsberg | None
+- 96da9cd1-9a82-5c3e-b759-41dfbac5bdb2 | Rinderzucht in der Nationalparkregion - Sommerausstellung 2007 - Tiere | Nationalparks Austria | None
+- 9ff19545-548c-5787-8506-685ad76cd1a9 | Flächenmanagement durch Rinderherden im Nationalpark Neusiedler See - Seewinkel | Nationalparks Austria | None
+- 7497bbcb-24c1-5e87-bf8f-4d18d1e48207 | Darstellung der Hutweidewirtschaft zur Schutzgebietspflege im Naturschutzgebiet Lange Lacke und Vergleich der Rinderrassen ungarisches Steppenrind und Fleckvieh, zur Eignung auf diesem Standort | Nationalparks Austria | None
+- https-piveau-eu-set-data-coo_3000_107_2_323930 | Tierdatenbanken | BMASGPK | None
+- 64b9e5ee-3df7-4662-a7eb-055941080cdf | Maßnahmenpotenziale zur Ammoniakreduktion in der Landwirtschaft. | Umweltbundesamt GmbH | None
+- 934d7958-e907-4b36-a3c5-d27d084355b1 | Technische Massnahmen zur Minderung der Staub und NOX Emissionen bei Wirbelschichtkesseln und Laugenverbrennungskessel | Umweltbundesamt GmbH | None
+- c8b21a84-1644-59db-a498-459e643441e7 | Ist die Beweidung ein Selektionsfaktor für Laufkäfer (Carabidae) im Nationalpark Neusiedler See - Seewinkel? | Nationalparks Austria | None
+- noe-ifg-82840f31-0efc-488f-a600-c59cba299423 | Rahmenvertrag Landhausküche - BIO Fleisch, Wurst- und Selchwaren sowie Geflügel | Land Niederösterreich, p.A. Amt der NÖ-Landesregierung, Abteilung Gebäude- und Liegenschaftsmanagement | None
+- af90d8fc-2ff3-39a7-88f9-bf8c61ab42f4 | Wirtschaftsatlas: Land- und Forstwirtschaft ab 1995 | Statistik Austria | None
+- 29ada4af-ba31-4495-8425-b69d96d95c55 | Praxisleitfaden Schalltechnik in der Landwirtschaft | Umweltbundesamt GmbH | None
+- 45edf33d-8936-58f2-af13-72f4f7094ac0 | Beweidungsmonitoring im Nationalpark Neusiedler See - Seewinkel Ergebnisse der vegetationsökologischen Langzeitmonitoring-Studie 1990 bis 2007 | Nationalparks Austria | None
+- 74401c58-b2ed-5439-8c31-6a6dc84239a7 | Endemitenkatalog des Nationalparks Gesäuse - Erstbearbeitung der Tiergruppe: Pseudoskorpione (Arachnida:Pseudoscorpiones) | Nationalparks Austria | None
+- 81ae78e8-1f15-593f-9d79-6401463a016c | 10 Jahre Nationalpark Flächenmanagement | Nationalparks Austria | None
+- https-piveau-eu-set-data-coo_3000_107_2_4766117 | Koordination der Lebensmittelkontrolle | BMASGPK | None
+=== schweine https://www.data.gv.at/api/hub/search/search?q=schweine&filter=dataset&limit=15
+- noe-ifg-01aa91e2-0032-4b8a-8ea2-06f577b8de39 | L5052.01 Noppenbach bei Schweinern | Land Niederösterreich, p.A. Amt der NÖ Landesregierung, Gruppe Straße - ST5 Brückenbau | None
+- 6449ca27-77d1-5275-ade5-fd4adbcf8583 | Schweine und Almfacken - Sommerausstellung 2007 - Tiere | Nationalparks Austria | None
+- 39cf4b8e-4224-4246-8c2a-05209e1d9ac7 | Kupfer und Zink im Wirtschaftsdünger von Schweine- und Geflügelmastbetrieben | Umweltbundesamt GmbH | None
+- ankoe-foia-270 | Schlachthof - Erneuerung Flachdachaufbau Schweinehalle und Kuttelei - Dachabdichtungs- und Bauspenglerarbeiten | Magistrat der Landeshauptstadt Klagenfurt am Wörthersee | None
+- https-piveau-eu-set-data-coo_3000_107_2_323930 | Tierdatenbanken | BMASGPK | None
+- 9e55dbe0-4c87-450e-9a17-27410dd00813 | Förderrichtlinie Besamungszuschuss | Marktgemeinde St. Ruprecht an der Raab | None
+- https-piveau-eu-set-data-coo_3000_107_2_323814 | Veterinärrecht | BMASGPK | None
+- af90d8fc-2ff3-39a7-88f9-bf8c61ab42f4 | Wirtschaftsatlas: Land- und Forstwirtschaft ab 1995 | Statistik Austria | None
+- 533ac12c-717a-47bc-8019-c5c79b2d312e | Leitfaden zur Umsetzung der BVT-Schlussfolgerungen Intensivtierhaltung. Aktualisierung März 2023. | Umweltbundesamt GmbH | None
+- 83e85ff6-7de2-42ca-93d1-5b05d769bf80 | Leitfaden zur Umsetzung der BVT-Schlussfolgerungen Intensivtierhaltung | Umweltbundesamt GmbH | None
+- 29ada4af-ba31-4495-8425-b69d96d95c55 | Praxisleitfaden Schalltechnik in der Landwirtschaft | Umweltbundesamt GmbH | None
+- 0bd10611-2b4f-4a1a-8d7e-0d7271a2eee8 | Massnahmen zur Minderung sekundärer Partikelbildung durch Ammoniakemissionen aus der Landwirtschaft | Umweltbundesamt GmbH | None
+- 7b9f63eb-2eb0-482f-9c87-bf820a225cfd | Reduktionspotenzial im Sektor Landwirtschaft | Umweltbundesamt GmbH | None
+- e10952d2-ce8d-540b-9b7e-4e24d207be5a | Beobachtungen und Anmerkungen zu den Tierknochenfunden im Sattelschacht | Nationalparks Austria | None
+=== STAT open data page
+ERR HTTP Error 404: Not Found
