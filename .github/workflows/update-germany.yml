@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p data/probe
-      - run: DE_LABELS=1 python3 scripts/update-germany.py
+      - run: mkdir -p
+      - run: python3 scripts/update-germany.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/germany-stats.json data/germany-log.txt data/probe
+          git add data/germany-stats.json data/germany-log.txt
           git diff --cached --quiet && exit 0
           git commit -qm "Datos Alemania (BLE, Destatis)"
           git pull -q --rebase

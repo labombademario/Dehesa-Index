@@ -89,6 +89,7 @@
           { file: 'recan.html', label: { es: 'Costes y rentas de las explotaciones', en: 'Farm costs and incomes', fr: 'Coûts et revenus des exploitations', it: 'Costi e redditi delle aziende' } }
         ] },
         { file: 'paises.html', query: '?c=FR', label: { es: 'Francia', en: 'France', fr: 'France', it: 'Francia' } },
+        { file: 'paises.html', query: '?c=DE', label: { es: 'Alemania', en: 'Germany', fr: 'Allemagne', it: 'Germania' } },
         { file: 'paises.html', query: '?c=DK', label: { es: 'Dinamarca', en: 'Denmark', fr: 'Danemark', it: 'Danimarca' } },
         { file: 'paises.html', query: '?c=NL', label: { es: 'Países Bajos', en: 'Netherlands', fr: 'Pays-Bas', it: 'Paesi Bassi' } }
       ] },
