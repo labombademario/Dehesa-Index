@@ -2,19 +2,19 @@
 O=scripts/.probe-output.txt
 : > $O
 B=https://marsapi.ams.usda.gov/services/v1.2/reports
-echo "== key set: ${MARS_API_KEY:+yes}" >> $O
-curl -s -m 60 -u "$MARS_API_KEY:" "$B" -o /tmp/list.json -w "list http %{http_code}\n" >> $O
+curl -s -m 90 -u "$MARS_API_KEY:" "$B/3511?q=report_begin_date=09/21/2026:09/25/2026&allSections=true" -o /tmp/r.json -w "http %{http_code}\n" >> $O
 python3 - >> $O <<'PY'
 import json
-try:
-    d=json.load(open('/tmp/list.json'))
-    r=d if isinstance(d,list) else d.get('results',d)
-    print("count",len(r))
+d=json.load(open('/tmp/r.json'))
+print(type(d).__name__, len(d))
+secs=d if isinstance(d,list) else [d]
+for s in secs:
+    print("SECTION",s.get('reportSection'),s.get('stats'))
+    r=s.get('results',[])
+    if r: print("KEYS",list(r[0].keys()))
+    n=0
     for x in r:
-        s=json.dumps(x)
-        if '3511' in s or 'meal' in s.lower() or 'soybean' in s.lower(): print(s[:300])
-except Exception as e:
-    print("ERR",e); print(open('/tmp/list.json').read()[:500])
+        if 'meal' in json.dumps(x).lower() and 'soy' in json.dumps(x).lower():
+            print(json.dumps(x)); n+=1
+            if n>=12: break
 PY
-curl -s -m 60 -u "$MARS_API_KEY:" "$B/3511" -o /tmp/r.json -w "3511 http %{http_code}\n" >> $O
-head -c 6000 /tmp/r.json >> $O
