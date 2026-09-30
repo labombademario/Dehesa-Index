@@ -53,6 +53,45 @@
       ]
     },
     {
+      "id": "auto-2272c61195",
+      "date": "2026-09-29",
+      "region": "uk",
+      "topic": "clima",
+      "topics": [
+        "clima"
+      ],
+      "products": [
+        "trigo",
+        "arroz"
+      ],
+      "source": "Farmers Guardian",
+      "headline": {
+        "en": "OPINION: Wheat prices have recovered but is £211/t enough? - Farmers Guardian",
+        "es": "OPINION: Wheat prices have recovered but is £211/t enough? - Farmers Guardian",
+        "fr": "OPINION: Wheat prices have recovered but is £211/t enough? - Farmers Guardian",
+        "it": "OPINION: Wheat prices have recovered but is £211/t enough? - Farmers Guardian"
+      },
+      "description": "OPINION: Wheat prices have recovered but is £211/t enough? Farmers Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNNFF6cXhVbTNGbUx0WXJXTG9TQUVkWTFiRjFKQnl4QzFHV092Qlh2THlzT2JJdDVQSzFGSTdaVUJsNkRzT3JxOXpyeHlYWEstNEgxZVo0LUhUTFRtUnF5TnA1VmtkZDRnRXA1aU42SUIwZEZLUW9yQ3RSNVBtUE1hd1ZLM0dDRUxGcEE?oc=5",
+      "relevance": 67,
+      "auto": true,
+      "impactChannel": "weather",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
       "id": "auto-9265242ab4",
       "date": "2026-09-25",
       "region": "us",
@@ -3121,6 +3160,45 @@
       ]
     },
     {
+      "id": "auto-2272c61195",
+      "date": "2026-09-29",
+      "region": "uk",
+      "topic": "clima",
+      "topics": [
+        "clima"
+      ],
+      "products": [
+        "trigo",
+        "arroz"
+      ],
+      "source": "Farmers Guardian",
+      "headline": {
+        "en": "OPINION: Wheat prices have recovered but is £211/t enough? - Farmers Guardian",
+        "es": "OPINION: Wheat prices have recovered but is £211/t enough? - Farmers Guardian",
+        "fr": "OPINION: Wheat prices have recovered but is £211/t enough? - Farmers Guardian",
+        "it": "OPINION: Wheat prices have recovered but is £211/t enough? - Farmers Guardian"
+      },
+      "description": "OPINION: Wheat prices have recovered but is £211/t enough? Farmers Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNNFF6cXhVbTNGbUx0WXJXTG9TQUVkWTFiRjFKQnl4QzFHV092Qlh2THlzT2JJdDVQSzFGSTdaVUJsNkRzT3JxOXpyeHlYWEstNEgxZVo0LUhUTFRtUnF5TnA1VmtkZDRnRXA1aU42SUIwZEZLUW9yQ3RSNVBtUE1hd1ZLM0dDRUxGcEE?oc=5",
+      "relevance": 67,
+      "auto": true,
+      "impactChannel": "weather",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
       "id": "auto-f777573262",
       "date": "2026-09-24",
       "region": "global",
@@ -4016,32 +4094,7 @@
       "marketLinks": []
     },
     {
-      "id": "auto-6c157d8695",
-      "date": "2026-09-29",
-      "region": "us",
-      "topic": "oferta",
-      "topics": [
-        "oferta"
-      ],
-      "products": [
-        "pac"
-      ],
-      "source": "DTN",
-      "headline": {
-        "en": "Reporter’s Notebook - DTN Progressive Farmer",
-        "es": "Reporter’s Notebook - DTN Progressive Farmer",
-        "fr": "Reporter’s Notebook - DTN Progressive Farmer",
-        "it": "Reporter’s Notebook - DTN Progressive Farmer"
-      },
-      "description": "Reporter’s Notebook DTN Progressive Farmer",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbC1PbUR3Y01zMzdwakV4STJWUGwxMjVnUlRLaXhncVlrTEpyYno0SUJLcGZCTTlyMUFIN1o4ZTlQLWcwbjBwNEZUUTluYlBEU3BkMHFwTmh3VGxVcHNmV2xCaXNyYjNWVFdkQTJLS3dVT0E4aFQ3QXRGNmhNMmI2NndOSnhtNklFQkVTQm1adWNhY0U4cndpbmM3TDQ4elBTNTZTX09QSGVwVWlrN2NDV2dtdEh4RUduSDZ1cTRKcG05YWlH?oc=5",
-      "relevance": 45,
-      "auto": true,
-      "impactChannel": "market_impact",
-      "marketLinks": []
-    },
-    {
-      "id": "auto-c87c3e7e2d",
+      "id": "auto-4034c3c7dc",
       "date": "2026-09-29",
       "region": "us",
       "topic": "oferta",
@@ -4059,7 +4112,7 @@
         "it": "Special Reports - DTN Progressive Farmer"
       },
       "description": "Special Reports DTN Progressive Farmer",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPTXdxejhwM2p3M1ZqZm5iWm9pTVU4SDZUeWFtUnUzN0ZaWkxuWFJnSE4zNHlQWTNRbmE2UlhYMGNtSkpaVlU4T0RoR2gzREY4SzdxYm9ucU96dkVkamRNNk80dUx2WUc4OEYxVmZ0U3ktclowZmJnODI2TTVJZHVnd1RVM3FFbXFSUFdlamtzTGYwazZTV0IyZGppZUM5SEF0TjgwUWQ5SUVBc19fczFV?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNN0dNcTlGcDlpa2ZEZ2pHLUk5WWJscW5CSjhEVjJDNTBDRTEwWTBrNzJ0R2JobjNmX1N2OFMyZDVOVjBhS1R1SmYxa0dkTnZpMkxBbzJkNDBURm56eDh5OWhfdWtvSUp4OFNaM2U4X2hxYTZPWWxRVnR3SGluWEdrY0RxVDJzcXhtQkVRSElGYUI1REMzNEFfUGlZdFloaElNeGhtQ0JuQ2Z1d3Jq?oc=5",
       "relevance": 45,
       "auto": true,
       "impactChannel": "market_impact",
@@ -4191,6 +4244,32 @@
       "marketLinks": []
     },
     {
+      "id": "auto-8066797268",
+      "date": "2026-09-28",
+      "region": "uk",
+      "topic": "clima",
+      "topics": [
+        "clima",
+        "oferta"
+      ],
+      "products": [
+        "pac"
+      ],
+      "source": "Farmers Guardian",
+      "headline": {
+        "en": "UK facing worst harvest on record after summer drought - Farmers Guardian",
+        "es": "UK facing worst harvest on record after summer drought - Farmers Guardian",
+        "fr": "UK facing worst harvest on record after summer drought - Farmers Guardian",
+        "it": "UK facing worst harvest on record after summer drought - Farmers Guardian"
+      },
+      "description": "UK facing worst harvest on record after summer drought Farmers Guardian",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUFdaT0thVHJ4bm9NTG80M0FQRnF6NnJJeFRxOTdVZEM1RU9ENXd5djhFVzFmZllKQlRhOGlRYlEyWTZGelVxT2t5a3dKSk5mN283anhuOTFLTVhYTVFMOU1UT29oUERzckUzSVlCZEVGRk1PcXlEN3l6bXhxdkFtRFdJa3hoRGxZSXI3ME5zVjlPU0c4?oc=5",
+      "relevance": 51,
+      "auto": true,
+      "impactChannel": "market_impact",
+      "marketLinks": []
+    },
+    {
       "id": "auto-35d96edca0",
       "date": "2026-09-28",
       "region": "us",
@@ -4316,7 +4395,7 @@
       "marketLinks": []
     },
     {
-      "id": "auto-03011815d1",
+      "id": "auto-29e4181469",
       "date": "2026-09-25",
       "region": "global",
       "topic": "clima",
@@ -4329,12 +4408,12 @@
       ],
       "source": "World Grain",
       "headline": {
-        "en": "Mexico’s grain production lags demand - world-grain.com",
-        "es": "Mexico’s grain production lags demand - world-grain.com",
-        "fr": "Mexico’s grain production lags demand - world-grain.com",
-        "it": "Mexico’s grain production lags demand - world-grain.com"
+        "en": "Mexico’s grain production lags demand - World Grain",
+        "es": "Mexico’s grain production lags demand - World Grain",
+        "fr": "Mexico’s grain production lags demand - World Grain",
+        "it": "Mexico’s grain production lags demand - World Grain"
       },
-      "description": "Mexico’s grain production lags demand world-grain.com",
+      "description": "Mexico’s grain production lags demand World Grain",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQWWV1LXdhNzBmZ28tanF5TldmOTR1b1dJeHhkZ0RFcEhleHo4Z2Y0VWJ0R3JOeGFxTkMtSDhXVjV1bnVsZTR5T1dvWXNlZHFmaDZtdXg0dERNTjlwbXBjRndoYXY4LVVBdk56M1pEZWxLS1JucHo4TnhnMWdodWlTYnFuMlJ4Zw?oc=5",
       "relevance": 61,
       "auto": true,
@@ -4342,57 +4421,7 @@
       "marketLinks": []
     },
     {
-      "id": "auto-ee2bb85ed2",
-      "date": "2026-09-25",
-      "region": "us",
-      "topic": "clima",
-      "topics": [
-        "clima"
-      ],
-      "products": [
-        "pac"
-      ],
-      "source": "DTN",
-      "headline": {
-        "en": "Remnants of Hurricane Polo Likely to Bring More Heavy Rain into Central US Next Week - DTN Progressive Farmer",
-        "es": "Remnants of Hurricane Polo Likely to Bring More Heavy Rain into Central US Next Week - DTN Progressive Farmer",
-        "fr": "Remnants of Hurricane Polo Likely to Bring More Heavy Rain into Central US Next Week - DTN Progressive Farmer",
-        "it": "Remnants of Hurricane Polo Likely to Bring More Heavy Rain into Central US Next Week - DTN Progressive Farmer"
-      },
-      "description": "Remnants of Hurricane Polo Likely to Bring More Heavy Rain into Central US Next Week DTN Progressive Farmer",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNdUpmdG5OTW5lbnFmWG5NUlVab3N0b0hGLVU0MGI2YXJUVkRzel9NcjNQUWg5N21hMUpUN1JMcjRiSHU3NnFXaVhPaHpyTEFLSW9FRjBFZWlXV213cFVlUXEtTXlZLXFRdWpYNHRfWFIwbDZyb2tFREdGU0FDbm1md204Si1DODNnaTJtZldSZW1YM0pfLWNvR1JQTEgtV2F5SExF?oc=5",
-      "relevance": 53,
-      "auto": true,
-      "impactChannel": "market_impact",
-      "marketLinks": []
-    },
-    {
-      "id": "auto-9dec927e3d",
-      "date": "2026-09-25",
-      "region": "global",
-      "topic": "comercio",
-      "topics": [
-        "comercio"
-      ],
-      "products": [
-        "pac"
-      ],
-      "source": "WTO",
-      "headline": {
-        "en": "WTO | News - What’s happening at the WTO - World Trade Organization",
-        "es": "WTO | News - What’s happening at the WTO - World Trade Organization",
-        "fr": "WTO | News - What’s happening at the WTO - World Trade Organization",
-        "it": "WTO | News - What’s happening at the WTO - World Trade Organization"
-      },
-      "description": "WTO | News - What’s happening at the WTO World Trade Organization",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBHeVdqTXpnTXZRTWlheEJYTFBkNkx6NVZnUjdnWks5c2lOX09hUkhuNjNUQzhYVFhELUEzWk92czc5SWVXWmpTbUFzRXp5S2FTNEs0ZWw1YnY?oc=5",
-      "relevance": 53,
-      "auto": true,
-      "impactChannel": "market_impact",
-      "marketLinks": []
-    },
-    {
-      "id": "auto-5ba185c597",
+      "id": "auto-40f32d2263",
       "date": "2026-09-25",
       "region": "us",
       "topic": "oferta",
@@ -4410,7 +4439,7 @@
         "it": "Interactive Commodity Futures Chart | Track Trends - DTN Progressive Farmer"
       },
       "description": "Interactive Commodity Futures Chart | Track Trends DTN Progressive Farmer",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZGpiLXg3T2daRkNrNFBBajBKRms5RDN1RUp2WlVJallYOGxaSmNsZ183ZTZsN3Z0RVZFZGZNVXFsRkZjNl82SU56QjlxWHFPdHlHOUVxZmcxR1lkZ3hjNEtBTmxUdExkYTIwTkhwQUhhWFZGSGFKcDBVSzlZZHVGbVZpUWtWUUNabFFRZ3VDMXM?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQcy13TVQ4OURhbjlrWDdiYTJjeFBmdWlTbDNjVEltV3FfTGhSQlFybjU5OTdFbFpXZDBnNFJGaUF2OVBXRkM1S0g0UUJXZ3kyR183MlFIVlpDS3NVZ0NRVzBxd01OYno1Ylk2QkpXbGhoVGoxRzBtYXExV0xpby05U19JV3dvaVBQQ1oxVmdVZk9vUjQ?oc=5",
       "relevance": 45,
       "auto": true,
       "impactChannel": "market_impact",
@@ -4538,6 +4567,31 @@
       },
       "description": "World heads into food crises 'blind' as U.S. aid cuts squeeze UN food agency, experts warn CNBC",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPX1pfMTY0VS1WZEVINGVtaWdZS2ZvUWtxejUwOWZsNERQZ3BLWmt2MlluU28wQ212MHZEVm93ejVib19JRzRPREJjQkVJdHFLZ3Y5eXVRcmd2OTRRNzAwVWFJWGVOTGRUc2x6TUNPY2VFNW1CbGg3YmdVcW9PLXc5TlRteGpMc2ZsQzQ2YTVGLXctYm8tQkszaVZVMNIBoAFBVV95cUxOUnRUTnZxUnlHQmo3M3h6VXlERDIzR0wxc09ISUtyZW8xWm5kUnBJS1V3NVhPNjRDYW1zODBIaldCUUg1QjlaUVRrWFY1UDczUjJNemR3Znc4aXpkSm00eURwZks0dW03UkFvUE9QZ0cyLUxUWDhkVE41SXNWcEFUZE0zcEoxdm5PZWxjWEp5SHY0cUp4bUo0NW5JcDFVS1B0?oc=5",
+      "relevance": 45,
+      "auto": true,
+      "impactChannel": "market_impact",
+      "marketLinks": []
+    },
+    {
+      "id": "auto-05bf028d24",
+      "date": "2026-09-24",
+      "region": "us",
+      "topic": "oferta",
+      "topics": [
+        "oferta"
+      ],
+      "products": [
+        "pac"
+      ],
+      "source": "DTN",
+      "headline": {
+        "en": "Reporter’s Notebook - DTN Progressive Farmer",
+        "es": "Reporter’s Notebook - DTN Progressive Farmer",
+        "fr": "Reporter’s Notebook - DTN Progressive Farmer",
+        "it": "Reporter’s Notebook - DTN Progressive Farmer"
+      },
+      "description": "Reporter’s Notebook DTN Progressive Farmer",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNc1Z4OXVrcUlmdHU1UlJJR3B6YzMydk5PcXpKMHBfVzV5QkRRNDdVNlRjNXBMUnlvZ0JZQlk3QWdSOGxuN01icHB2Q0dqTzhHN25mSkxEdi14S2RTSFFVVEIzUGZQVVRXQnN5VWFOSGJXWHdZYXI2amJSV243MjVxamhlaXotTjNsSVBXZWFfcE5VUGo4a3RBVEI2TVR3LUFLb3Z6WXdNM2xvWWFVVU1PUW1uSQ?oc=5",
       "relevance": 45,
       "auto": true,
       "impactChannel": "market_impact",
@@ -4695,6 +4749,31 @@
       "marketLinks": []
     },
     {
+      "id": "auto-469e7fc9d4",
+      "date": "2026-09-21",
+      "region": "eu",
+      "topic": "comercio",
+      "topics": [
+        "comercio"
+      ],
+      "products": [
+        "pac"
+      ],
+      "source": "Agriland",
+      "headline": {
+        "en": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland",
+        "es": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland",
+        "fr": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland",
+        "it": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland"
+      },
+      "description": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' Agriland",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNaDI0MGh6Q0JRUmRPY1dMRTRxV3F0eXBzWjBMbmhMTlAtTGpwVjRFTmVSbF8tVHF3ZXhHcmQ4REk0MS04MmZwSG1pYTJKT0NiMGVUSXY5MkdQbndLd0dDcDZIbkZ2Vmd5enY5Nzh3eHVNTmJxVC05bVNmUnQ0VXQ0dEF2cEpkZ0pWWk9LS01lS1RRZ1dlSUZqSlZHMkQtSmNUV3IxOE5HSWcwUQ?oc=5",
+      "relevance": 53,
+      "auto": true,
+      "impactChannel": "market_impact",
+      "marketLinks": []
+    },
+    {
       "id": "auto-2bbcb1a53d",
       "date": "2026-09-18",
       "region": "global",
@@ -4791,31 +4870,6 @@
       "description": "Key Accomplishments, FY 2015 USDA (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcWNZX2czSzhnUzJLYkVWTkQ0QUN5cEFpbUpDUEs0VV9nTjE3d1ljYWJxWnVQdFBzakFGZ3czZzJUWHZ1ZEx0STd2dE5mQThoZG9YV3BDMjZ0M251al84MkhwUkU2YVVJUW5SbGZQM295NmJlQklmWFl4NkRmdjlvX1hhX0pEMmFES2wweDR3c3k?oc=5",
       "relevance": 45,
-      "auto": true,
-      "impactChannel": "market_impact",
-      "marketLinks": []
-    },
-    {
-      "id": "auto-cf7f3443db",
-      "date": "2026-09-17",
-      "region": "uk",
-      "topic": "oferta",
-      "topics": [
-        "oferta"
-      ],
-      "products": [
-        "pac"
-      ],
-      "source": "Farmers Guardian",
-      "headline": {
-        "en": "Regenerative farming needs to move beyond the farm gate, says survey - Farmers Guardian",
-        "es": "Regenerative farming needs to move beyond the farm gate, says survey - Farmers Guardian",
-        "fr": "Regenerative farming needs to move beyond the farm gate, says survey - Farmers Guardian",
-        "it": "Regenerative farming needs to move beyond the farm gate, says survey - Farmers Guardian"
-      },
-      "description": "Regenerative farming needs to move beyond the farm gate, says survey Farmers Guardian",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcVQ3bHpMM3QtRDQ1RmlEZEg4X3RnMy1FVDRWN2NaZ2w1TVQ2WWtqdUFfQ1RZakt0VGg4R2R2MGFGZU1KWlpIM1llYjhJY0ZiUm5GcWxzNzEwaTRFd0dBRzE0OXFEM1cwamZWaXRZMWd1S2hPc2R1cUhYclVmZDBfMjdfMGxaQ1VZeGc?oc=5",
-      "relevance": 35,
       "auto": true,
       "impactChannel": "market_impact",
       "marketLinks": []
