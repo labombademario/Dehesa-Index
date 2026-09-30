@@ -924,8 +924,7 @@
     "trigo_pienso_ab": 226.93
    },
    "livestock": {
-    "cerdo_ab": 2.333,
-    "novillo_ab": 540.2
+    "cerdo_ab": 2.333
    }
   },
   "2026-04-10": {
@@ -1303,5 +1302,5 @@
    }
   }
  },
- "parserVersion": 2
+ "parserVersion": 3
 }

@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-30T17:25:14Z",
+ "generatedAt": "2026-09-30T17:31:08Z",
  "products": {
   "canola_elevador": {
    "points": 88,
@@ -51,7 +51,7 @@
    ]
   },
   "novillo_ab": {
-   "points": 86,
+   "points": 85,
    "last": [
     "2026-09-25",
     293.45
