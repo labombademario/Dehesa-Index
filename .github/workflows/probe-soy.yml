@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - run: |
-          (node scripts/update-eu-agrifood.mjs harina_soja 2>&1 | tail -20) > scripts/.probe-output.txt || true
+          node scripts/probe-oil.mjs || true
           git checkout -- js/data.js data 2>/dev/null || true
       - run: |
           git config user.name "github-actions[bot]"
