@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:47:32.216Z",
+  "generatedAt": "2026-09-30T22:25:26.948Z",
   "lastPeriod": "2026-08",
   "baseline": "2001-2020",
   "source": {
@@ -3804,6 +3804,498 @@
           "tempC": 17.9,
           "tempBaselineC": 17.7,
           "tempAnomalyC": 0.1
+        }
+      ]
+    },
+    {
+      "id": "eu-austria-marchfeld",
+      "name": "Marchfeld, Baja Austria (Austria)",
+      "region": "eu",
+      "country": "AT",
+      "lat": 48.3,
+      "lon": 16.6,
+      "crops": [
+        "trigo",
+        "maiz",
+        "remolacha"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 74.1,
+          "precipBaselineMm": 63.9,
+          "precipAnomalyPct": 16,
+          "tempC": 17.2,
+          "tempBaselineC": 15.7,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 28.8,
+          "precipBaselineMm": 46.5,
+          "precipAnomalyPct": -38,
+          "tempC": 9.7,
+          "tempBaselineC": 9.7,
+          "tempAnomalyC": 0
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 55.5,
+          "precipBaselineMm": 42.3,
+          "precipAnomalyPct": 31.2,
+          "tempC": 3.8,
+          "tempBaselineC": 4.5,
+          "tempAnomalyC": -0.7
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 22.9,
+          "precipBaselineMm": 41.2,
+          "precipAnomalyPct": -44.4,
+          "tempC": 1.1,
+          "tempBaselineC": -0.8,
+          "tempAnomalyC": 1.9
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 31,
+          "precipBaselineMm": 41.5,
+          "precipAnomalyPct": -25.4,
+          "tempC": -3.2,
+          "tempBaselineC": -2.1,
+          "tempAnomalyC": -1.1
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 40.3,
+          "precipBaselineMm": 35.3,
+          "precipAnomalyPct": 14.3,
+          "tempC": 1.2,
+          "tempBaselineC": -0.2,
+          "tempAnomalyC": 1.4
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 24.2,
+          "precipBaselineMm": 39.7,
+          "precipAnomalyPct": -39.1,
+          "tempC": 6.8,
+          "tempBaselineC": 4.3,
+          "tempAnomalyC": 2.5
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 9,
+          "precipBaselineMm": 34.8,
+          "precipAnomalyPct": -74.1,
+          "tempC": 9.7,
+          "tempBaselineC": 10.1,
+          "tempAnomalyC": -0.5
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 39.7,
+          "precipBaselineMm": 65.1,
+          "precipAnomalyPct": -39,
+          "tempC": 16.5,
+          "tempBaselineC": 15,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 43.8,
+          "precipBaselineMm": 66.3,
+          "precipAnomalyPct": -33.9,
+          "tempC": 22.7,
+          "tempBaselineC": 19.5,
+          "tempAnomalyC": 3.1
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 55.5,
+          "precipBaselineMm": 67.6,
+          "precipAnomalyPct": -17.9,
+          "tempC": 23.3,
+          "tempBaselineC": 21.8,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 43.7,
+          "precipBaselineMm": 65.1,
+          "precipAnomalyPct": -32.9,
+          "tempC": 24.9,
+          "tempBaselineC": 21.2,
+          "tempAnomalyC": 3.7
+        }
+      ]
+    },
+    {
+      "id": "eu-austria-upper",
+      "name": "Alta Austria (Wels)",
+      "region": "eu",
+      "country": "AT",
+      "lat": 48.15,
+      "lon": 14,
+      "crops": [
+        "leche",
+        "maiz",
+        "cerdo"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 104.1,
+          "precipBaselineMm": 114.9,
+          "precipAnomalyPct": -9.4,
+          "tempC": 15.1,
+          "tempBaselineC": 13.3,
+          "tempAnomalyC": 1.8
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 91.1,
+          "precipBaselineMm": 88.7,
+          "precipAnomalyPct": 2.8,
+          "tempC": 8.1,
+          "tempBaselineC": 8.8,
+          "tempAnomalyC": -0.7
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 75.9,
+          "precipBaselineMm": 69.6,
+          "precipAnomalyPct": 9.1,
+          "tempC": 3,
+          "tempBaselineC": 3.5,
+          "tempAnomalyC": -0.5
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 22.3,
+          "precipBaselineMm": 80.9,
+          "precipAnomalyPct": -72.4,
+          "tempC": 0.8,
+          "tempBaselineC": -0.8,
+          "tempAnomalyC": 1.6
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 40.6,
+          "precipBaselineMm": 94.2,
+          "precipAnomalyPct": -56.9,
+          "tempC": -2.6,
+          "tempBaselineC": -2.2,
+          "tempAnomalyC": -0.4
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 90.7,
+          "precipBaselineMm": 72,
+          "precipAnomalyPct": 26.1,
+          "tempC": 1.9,
+          "tempBaselineC": -1.3,
+          "tempAnomalyC": 3.1
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 42.2,
+          "precipBaselineMm": 84.6,
+          "precipAnomalyPct": -50.2,
+          "tempC": 4.8,
+          "tempBaselineC": 3,
+          "tempAnomalyC": 1.9
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 37.5,
+          "precipBaselineMm": 68.1,
+          "precipAnomalyPct": -44.9,
+          "tempC": 8.4,
+          "tempBaselineC": 8.2,
+          "tempAnomalyC": 0.2
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 90.8,
+          "precipBaselineMm": 132.1,
+          "precipAnomalyPct": -31.2,
+          "tempC": 14.3,
+          "tempBaselineC": 12.6,
+          "tempAnomalyC": 1.7
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 168.9,
+          "precipBaselineMm": 152.1,
+          "precipAnomalyPct": 11,
+          "tempC": 19.5,
+          "tempBaselineC": 16.6,
+          "tempAnomalyC": 2.8
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 73.8,
+          "precipBaselineMm": 149.1,
+          "precipAnomalyPct": -50.5,
+          "tempC": 20.5,
+          "tempBaselineC": 18.4,
+          "tempAnomalyC": 2.1
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 144.8,
+          "precipBaselineMm": 150.3,
+          "precipAnomalyPct": -3.7,
+          "tempC": 21.8,
+          "tempBaselineC": 18.1,
+          "tempAnomalyC": 3.7
+        }
+      ]
+    },
+    {
+      "id": "eu-portugal-alentejo",
+      "name": "Alentejo (Beja) · montado",
+      "region": "eu",
+      "country": "PT",
+      "lat": 38,
+      "lon": -7.9,
+      "crops": [
+        "trigo",
+        "corcho",
+        "vacuno"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 2.4,
+          "precipBaselineMm": 25.5,
+          "precipAnomalyPct": -90.6,
+          "tempC": 22.9,
+          "tempBaselineC": 22.8,
+          "tempAnomalyC": 0.1
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 23.3,
+          "precipBaselineMm": 72.2,
+          "precipAnomalyPct": -67.8,
+          "tempC": 21.6,
+          "tempBaselineC": 18.3,
+          "tempAnomalyC": 3.3
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 94.2,
+          "precipBaselineMm": 81.3,
+          "precipAnomalyPct": 15.9,
+          "tempC": 13.2,
+          "tempBaselineC": 12.7,
+          "tempAnomalyC": 0.6
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 124.6,
+          "precipBaselineMm": 58.6,
+          "precipAnomalyPct": 112.7,
+          "tempC": 10.1,
+          "tempBaselineC": 9.8,
+          "tempAnomalyC": 0.4
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 140.1,
+          "precipBaselineMm": 53.6,
+          "precipAnomalyPct": 161.3,
+          "tempC": 10.2,
+          "tempBaselineC": 9.1,
+          "tempAnomalyC": 1.1
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 152,
+          "precipBaselineMm": 46.8,
+          "precipAnomalyPct": 225.1,
+          "tempC": 12.1,
+          "tempBaselineC": 9.9,
+          "tempAnomalyC": 2.2
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 32.6,
+          "precipBaselineMm": 56.4,
+          "precipAnomalyPct": -42.3,
+          "tempC": 12.6,
+          "tempBaselineC": 12.3,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 15.3,
+          "precipBaselineMm": 53.7,
+          "precipAnomalyPct": -71.5,
+          "tempC": 16.1,
+          "tempBaselineC": 14.7,
+          "tempAnomalyC": 1.4
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 12.7,
+          "precipBaselineMm": 31.3,
+          "precipAnomalyPct": -59.4,
+          "tempC": 19.6,
+          "tempBaselineC": 18.6,
+          "tempAnomalyC": 1
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 3,
+          "precipBaselineMm": 9.6,
+          "precipAnomalyPct": -68.8,
+          "tempC": 25.3,
+          "tempBaselineC": 23,
+          "tempAnomalyC": 2.3
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 0,
+          "precipBaselineMm": 1.6,
+          "precipAnomalyPct": -100,
+          "tempC": 27.1,
+          "tempBaselineC": 25.3,
+          "tempAnomalyC": 1.8
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 6.5,
+          "precipBaselineMm": 4,
+          "precipAnomalyPct": 61.5,
+          "tempC": 25.6,
+          "tempBaselineC": 25.7,
+          "tempAnomalyC": -0.1
+        }
+      ]
+    },
+    {
+      "id": "eu-portugal-ribatejo",
+      "name": "Ribatejo (Santarém)",
+      "region": "eu",
+      "country": "PT",
+      "lat": 39.2,
+      "lon": -8.7,
+      "crops": [
+        "maiz",
+        "arroz",
+        "tomate"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 15.3,
+          "precipBaselineMm": 29.7,
+          "precipAnomalyPct": -48.5,
+          "tempC": 20.9,
+          "tempBaselineC": 21.6,
+          "tempAnomalyC": -0.7
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 45.9,
+          "precipBaselineMm": 83.7,
+          "precipAnomalyPct": -45.2,
+          "tempC": 20.6,
+          "tempBaselineC": 17.9,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 130.8,
+          "precipBaselineMm": 89.7,
+          "precipAnomalyPct": 45.8,
+          "tempC": 13.3,
+          "tempBaselineC": 12.8,
+          "tempAnomalyC": 0.5
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 130.2,
+          "precipBaselineMm": 65.1,
+          "precipAnomalyPct": 100,
+          "tempC": 10.3,
+          "tempBaselineC": 10,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 186.9,
+          "precipBaselineMm": 68.2,
+          "precipAnomalyPct": 174.1,
+          "tempC": 10.7,
+          "tempBaselineC": 9.6,
+          "tempAnomalyC": 1.1
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 208.6,
+          "precipBaselineMm": 53.8,
+          "precipAnomalyPct": 288,
+          "tempC": 12.3,
+          "tempBaselineC": 10.3,
+          "tempAnomalyC": 2
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 46.2,
+          "precipBaselineMm": 64.8,
+          "precipAnomalyPct": -28.7,
+          "tempC": 13,
+          "tempBaselineC": 12.6,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 15.9,
+          "precipBaselineMm": 56.7,
+          "precipAnomalyPct": -72,
+          "tempC": 16.6,
+          "tempBaselineC": 14.9,
+          "tempAnomalyC": 1.6
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 35,
+          "precipBaselineMm": 36.9,
+          "precipAnomalyPct": -5,
+          "tempC": 18.4,
+          "tempBaselineC": 18.1,
+          "tempAnomalyC": 0.4
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 5.1,
+          "precipBaselineMm": 15,
+          "precipAnomalyPct": -66,
+          "tempC": 22.1,
+          "tempBaselineC": 21.3,
+          "tempAnomalyC": 0.8
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 0,
+          "precipBaselineMm": 5,
+          "precipAnomalyPct": -100,
+          "tempC": 24.2,
+          "tempBaselineC": 23,
+          "tempAnomalyC": 1.2
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 22.9,
+          "precipBaselineMm": 6.8,
+          "precipAnomalyPct": 236.4,
+          "tempC": 23.4,
+          "tempBaselineC": 23.4,
+          "tempAnomalyC": 0
         }
       ]
     }
