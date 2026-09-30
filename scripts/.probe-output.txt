@@ -1,6 +1,36 @@
 == ES HTTP 200
-532 |  |  |  | national currency/ton | last €567.25 @ 20/09/2026
+sample: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€567.25","unit":"national currency/ton","weekNumber":12,"product":"Sunflower seed","productType":"High-oleic","marketStage":"DEPSILO","market":"National Average","marketingYear":"2026/2027"}
+304 | Sunflower seed |  |  |  | DEPSILO |  | national currency/ton | last €567.25 @ 20/09/2026
+76 | Crude sunflower oil |  |  |  | DEPPROC |  | national currency/ton | last €1596.21 @ 20/09/2026
+38 | Soya meal |  |  |  | DEPPROC |  | national currency/ton | last €409.67 @ 20/09/2026
+38 | Crude soya bean oil |  |  |  | DEPPROC |  | national currency/ton | last €1352.68 @ 20/09/2026
+38 | Rapeseed |  |  |  | DEPSILO |  | national currency/ton | last €476.36 @ 20/09/2026
+38 | Sunflower seed meal |  |  |  | DEPPROC |  | national currency/ton | last €226.00 @ 20/09/2026
 == FR HTTP 200
-203 |  |  |  | national currency/ton | last €439.00 @ 27/09/2026
+sample: {"memberStateCode":"FR","memberStateName":"France","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€439.00","unit":"national currency/ton","weekNumber":13,"product":"Soya meal","productType":"40-50% protein content","marketStage":"Départ","market":"Montoir","marketingYear":"2026/2027"}
+42 | Soya meal |  |  |  | Départ |  | national currency/ton | last €439.00 @ 27/09/2026
+70 | Rapeseed |  |  |  | DELPROC |  | national currency/ton | last €546.00 @ 27/09/2026
+15 | Rapeseed |  |  |  | FOB |  | national currency/ton | last €554.00 @ 27/09/2026
+60 | Sunflower seed |  |  |  | DELPROC |  | national currency/ton | last €597.00 @ 27/09/2026
+7 | Sunflower seed meal |  |  |  | Départ |  | national currency/ton | last €310.00 @ 23/08/2026
+3 | Rapeseed meal |  |  |  | Départ |  | national currency/ton | last €283.00 @ 16/08/2026
+2 | Sunflower seed |  |  |  | FOB |  | national currency/ton | last €576.00 @ 26/07/2026
+3 | Sunflower seed |  |  |  | DEPSILO |  | national currency/ton | last €560.00 @ 03/05/2026
+1 | Soya beans |  |  |  | DEPSILO |  | national currency/ton | last €443.00 @ 03/05/2026
 == DE HTTP 200
-541 |  |  |  | national currency/ton | last €417.27 @ 27/09/2026
+sample: {"memberStateCode":"DE","memberStateName":"Germany","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€417.27","unit":"national currency/ton","weekNumber":13,"product":"Sunflower seed","productType":"Standard","marketStage":"DEPSILO","market":"National Average","marketingYear":"2026/2027"}
+21 | Sunflower seed |  |  |  | DEPSILO |  | national currency/ton | last €417.27 @ 27/09/2026
+38 | Rapeseed |  |  |  | DEPSILO |  | national currency/ton | last €525.97 @ 27/09/2026
+35 | Sunflower seed meal |  |  |  | FOB |  | national currency/ton | last €286.00 @ 27/09/2026
+87 | Rapeseed |  |  |  | DEPSILO GEX |  | national currency/ton | last €521.00 @ 27/09/2026
+36 | Crude soya bean oil |  |  |  | FOB |  | national currency/ton | last €1165.00 @ 27/09/2026
+33 | Soya beans |  |  |  | DEPSILO |  | national currency/ton | last €443.33 @ 27/09/2026
+3 | Crude rape oil |  |  |  | FOB |  | national currency/ton | last €1260.00 @ 20/09/2026
+57 | Rapeseed meal |  |  |  | DEPSILO GEX |  | national currency/ton | last €286.50 @ 20/09/2026
+54 | Soya meal |  |  |  | DEPSILO GEX |  | national currency/ton | last €437.00 @ 20/09/2026
+64 | Soya meal |  |  |  | FOB |  | national currency/ton | last €446.00 @ 20/09/2026
+61 | Rapeseed meal |  |  |  | FOB |  | national currency/ton | last €290.00 @ 20/09/2026
+35 | Rapeseed meal |  |  |  | DEPPROD |  | national currency/ton | last €287.00 @ 20/09/2026
+8 | Soya meal |  |  |  | Köln - DEPSILO-GEX |  | national currency/ton | last €350.00 @ 09/08/2026
+6 | Rapeseed meal |  |  |  | Köln - DEPSILO-GEX |  | national currency/ton | last €243.50 @ 09/08/2026
+3 | Rapeseed |  |  |  | CIF GEX |  | national currency/ton | last €506.00 @ 19/04/2026
