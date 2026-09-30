@@ -71,6 +71,10 @@ export const FAMILIES = {
     parts: r => [r.contractType], region: r => r.sugarRegion, unitFixed: 'Tonne' },
   vino: { endpoint: 'wine', freq: 'weekly', since: null, date: 'endDate',
     parts: r => [r.description], region: r => r.memberStateCode },
+  // Precios a lo largo de la cadena (salida de envasado, finca, comercio): solo semanales y solo media nacional
+  fruta: { endpoint: 'fruitAndVegetable/pricesSupplyChain', path: 'fruitAndVegetable/pricesSupplyChain', freq: 'weekly', since: '01/01/2015', date: 'endDate',
+    parts: r => [r.variety, r.productStage], region: r => r.memberStateCode,
+    keep: r => r.periodType === 'Week' && /^National/i.test(r.market || '') },
   fertilizantes: { endpoint: 'fertiliser', freq: 'monthly', since: null, date: 'yearMonth',
     parts: r => [r.product], region: () => 'EU', unitFixed: '€/tonne' }
 };
@@ -82,7 +86,7 @@ async function fetchRows(fam) {
   if (process.env.EU_FIXTURE_DIR) {
     return JSON.parse(await readFile(path.join(process.env.EU_FIXTURE_DIR, fam.endpoint.replace(/\//g, '_') + '.json'), 'utf8'));
   }
-  let url = BASE + '/' + fam.endpoint + '/prices';
+  let url = BASE + '/' + (fam.path || fam.endpoint + '/prices');
   if (fam.since) url += '?beginDate=' + fam.since;
   let last = '';
   for (let attempt = 1; attempt <= 3; attempt++) {

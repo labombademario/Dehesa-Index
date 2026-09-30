@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: '20 14 * * 4'
   workflow_dispatch:
+    inputs:
+      families:
+        description: 'Familias a actualizar (vacío = todas), separadas por espacios'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -26,7 +31,9 @@ jobs:
         with:
           node-version: '20'
       - name: Update EU catalog
-        run: node scripts/update-eu-catalog.mjs
+        env:
+          FAMILIES: ${{ inputs.families }}
+        run: node scripts/update-eu-catalog.mjs $FAMILIES
       - name: Commit
         run: |
           git config user.name "dehesa-index-bot"
