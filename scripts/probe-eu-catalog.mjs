@@ -13,7 +13,8 @@ import { fileURLToPath } from 'node:url';
 const OUT = path.join(path.dirname(fileURLToPath(import.meta.url)), '.probe-catalog.txt');
 const BASE = 'https://api.tech.ec.europa.eu/agrifood/api';
 const BEGIN = '01/01/2021';
-const CANDIDATES = ['fruit-and-vegetable', 'fruit-and-vegetables', 'fruit_and_vegetables', 'fruitAndVegetables', 'fruitandvegetables', 'fruitAndVegetable', 'fruit_and_vegetable', 'fruitsAndVegetables', 'fruit-and-vegetables-supply-chain'];
+const CANDIDATES = ['@fruitAndVegetable/pricesSupplyChain','@fruitAndVegetable/pricesSupplyChain/productStages','@fruitAndVegetable/pricesSupplyChain/products','@fruitAndVegetable/pricesSupplyChain/varieties'];
+const X_CANDIDATES = ['fruit-and-vegetable', 'fruit-and-vegetables', 'fruit_and_vegetables', 'fruitAndVegetables', 'fruitandvegetables', 'fruitAndVegetable', 'fruit_and_vegetable', 'fruitsAndVegetables', 'fruit-and-vegetables-supply-chain'];
 const OLD_CANDIDATES = ['cereal', 'fruitAndVegetable', 'fruitsAndVegetables', 'fruitsandvegetables', 'fruits', 'vegetables', 'fruit', 'fruitAndVeg/prices', 'fruit-and-veg', 'fruitAndVegetablesPrices', 'fruitVeg', 'fruitsVegetables', 'produce'];
 const SKIP = new Set(['referencePeriod', 'marketingYear', 'marketingYearMonth', 'weight', 'price', 'endDate', 'beginDate', 'startDate', 'ym', 'year', 'month', 'quarter', 'week', 'weekNumber', 'weekNumberDay']);
 
@@ -42,13 +43,14 @@ async function get(url) {
 }
 
 async function probe(name) {
-  const url = BASE + '/' + name + '/prices?beginDate=' + BEGIN;
+  const url = name[0] === '@' ? BASE + '/' + name.slice(1) + (name.endsWith('pricesSupplyChain') ? '?beginDate=' + BEGIN : '') : BASE + '/' + name + '/prices?beginDate=' + BEGIN;
   const out = ['=== ' + name];
   const r = await get(url);
   out.push('STATUS ' + r.status);
   if (r.status !== 200) { out.push('  ' + String(r.text).replace(/\s+/g, ' ').slice(0, 160)); return out.join('\n'); }
   let rows;
   try { rows = JSON.parse(r.text); } catch (e) { out.push('  no es JSON: ' + r.text.slice(0, 120)); return out.join('\n'); }
+  if (name[0] === '@' && !name.endsWith('pricesSupplyChain')) { out.push('  ' + r.text.replace(/\s+/g, ' ').slice(0, 3000)); return out.join('\n'); }
   if (!Array.isArray(rows) || !rows.length) { out.push('  vacío'); return out.join('\n'); }
   out.push('FILAS ' + rows.length + ' CAMPOS ' + Object.keys(rows[0]).join(','));
   const fields = Object.keys(rows[0]).filter(f => !SKIP.has(f) && f !== 'memberStateCode' && f !== 'memberStateName' && f !== 'marketName' && f !== 'market');
@@ -72,7 +74,7 @@ async function probe(name) {
 }
 
 const parts = [];
-for (const n of ['fruit_and_vegetables', 'fruitandvegetables', 'fruit-and-vegetables']) {
+for (const n of []) {
   const r = await get('https://api.tech.ec.europa.eu/agrifood/v3/api-docs/' + n);
   let txt = String(r.text).slice(0, 300);
   try { const j = JSON.parse(r.text); txt = Object.entries(j.paths || {}).map(([k, v]) => k + ' ' + Object.entries(v).map(([m, o]) => m + '(' + (o.parameters || []).map(x => x.name).join(',') + ')').join(' ')).join('\n  '); } catch (e) {}
