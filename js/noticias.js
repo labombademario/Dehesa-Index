@@ -130,16 +130,16 @@
   var UPDATED_ISO = '2026-09-29';
 
   var PRODUCT_LABELS = {
-    es: { trigo: 'Trigo', maiz: 'Maíz', arroz: 'Arroz', cebada: 'Cebada', soja: 'Soja', fertilizantes: 'Fertilizantes', diesel: 'Diésel', energia: 'Energía', costes: 'Costes agrícolas', pac: 'PAC' },
-    en: { trigo: 'Wheat', maiz: 'Corn', arroz: 'Rice', cebada: 'Barley', soja: 'Soybeans', fertilizantes: 'Fertiliser', diesel: 'Diesel', energia: 'Energy', costes: 'Farm costs', pac: 'CAP' },
-    fr: { trigo: 'Blé', maiz: 'Maïs', arroz: 'Riz', cebada: 'Orge', soja: 'Soja', fertilizantes: 'Engrais', diesel: 'Gazole', energia: 'Énergie', costes: 'Coûts agricoles', pac: 'PAC' },
-    it: { trigo: 'Grano', maiz: 'Mais', arroz: 'Riso', cebada: 'Orzo', soja: 'Soia', fertilizantes: 'Fertilizzanti', diesel: 'Gasolio', energia: 'Energia', costes: 'Costi agricoli', pac: 'PAC' }
+    es: { trigo: 'Trigo', maiz: 'Maíz', arroz: 'Arroz', cebada: 'Cebada', soja: 'Soja', colza: 'Colza y girasol', azucar: 'Azúcar', leche: 'Leche y lácteos', vaca: 'Vacuno', cerdo: 'Porcino', cordero: 'Ovino', pollo: 'Aves', huevos: 'Huevos', ganado: 'Ganadería', oliva: 'Aceite de oliva', pienso: 'Piensos', fertilizantes: 'Fertilizantes', diesel: 'Diésel', energia: 'Energía', costes: 'Costes agrícolas', pac: 'PAC' },
+    en: { trigo: 'Wheat', maiz: 'Corn', arroz: 'Rice', cebada: 'Barley', soja: 'Soybeans', colza: 'Rapeseed & sunflower', azucar: 'Sugar', leche: 'Dairy', vaca: 'Cattle & beef', cerdo: 'Pork', cordero: 'Sheep & lamb', pollo: 'Poultry', huevos: 'Eggs', ganado: 'Livestock', oliva: 'Olive oil', pienso: 'Animal feed', fertilizantes: 'Fertiliser', diesel: 'Diesel', energia: 'Energy', costes: 'Farm costs', pac: 'CAP' },
+    fr: { trigo: 'Blé', maiz: 'Maïs', arroz: 'Riz', cebada: 'Orge', soja: 'Soja', colza: 'Colza et tournesol', azucar: 'Sucre', leche: 'Lait et produits laitiers', vaca: 'Bovins', cerdo: 'Porc', cordero: 'Ovins', pollo: 'Volaille', huevos: 'Œufs', ganado: 'Élevage', oliva: "Huile d'olive", pienso: 'Aliments du bétail', fertilizantes: 'Engrais', diesel: 'Gazole', energia: 'Énergie', costes: 'Coûts agricoles', pac: 'PAC' },
+    it: { trigo: 'Grano', maiz: 'Mais', arroz: 'Riso', cebada: 'Orzo', soja: 'Soia', colza: 'Colza e girasole', azucar: 'Zucchero', leche: 'Latte e latticini', vaca: 'Bovini', cerdo: 'Suini', cordero: 'Ovini', pollo: 'Avicoli', huevos: 'Uova', ganado: 'Zootecnia', oliva: "Olio d'oliva", pienso: 'Mangimi', fertilizantes: 'Fertilizzanti', diesel: 'Gasolio', energia: 'Energia', costes: 'Costi agricoli', pac: 'PAC' }
   };
   var TOPIC_LABELS = {
-    es: { clima: 'Clima', costes: 'Costes', comercio: 'Comercio', politica: 'Política agraria', oferta: 'Oferta y cosecha', tecnologia: 'Tecnología', energia: 'Energía', ayudas: 'Ayudas' },
-    en: { clima: 'Weather', costes: 'Costs', comercio: 'Trade', politica: 'Agricultural policy', oferta: 'Supply & harvest', tecnologia: 'Technology', energia: 'Energy', ayudas: 'Support & aid' },
-    fr: { clima: 'Climat', costes: 'Coûts', comercio: 'Commerce', politica: 'Politique agricole', oferta: 'Offre & récolte', tecnologia: 'Technologie', energia: 'Énergie', ayudas: 'Aides' },
-    it: { clima: 'Clima', costes: 'Costi', comercio: 'Commercio', politica: 'Politica agricola', oferta: 'Offerta e raccolto', tecnologia: 'Tecnologia', energia: 'Energia', ayudas: 'Aiuti' }
+    es: { clima: 'Clima', costes: 'Costes', comercio: 'Comercio', politica: 'Política agraria', oferta: 'Oferta y cosecha', tecnologia: 'Tecnología', energia: 'Energía', ayudas: 'Ayudas', precios: 'Precios y mercado', sanidad: 'Sanidad animal' },
+    en: { clima: 'Weather', costes: 'Costs', comercio: 'Trade', politica: 'Agricultural policy', oferta: 'Supply & harvest', tecnologia: 'Technology', energia: 'Energy', ayudas: 'Support & aid', precios: 'Prices & markets', sanidad: 'Animal health' },
+    fr: { clima: 'Climat', costes: 'Coûts', comercio: 'Commerce', politica: 'Politique agricole', oferta: 'Offre & récolte', tecnologia: 'Technologie', energia: 'Énergie', ayudas: 'Aides', precios: 'Prix et marchés', sanidad: 'Santé animale' },
+    it: { clima: 'Clima', costes: 'Costi', comercio: 'Commercio', politica: 'Politica agricola', oferta: 'Offerta e raccolto', tecnologia: 'Tecnologia', energia: 'Energia', ayudas: 'Aiuti', precios: 'Prezzi e mercati', sanidad: 'Sanità animale' }
   };
   var REGION_LABELS = {
     es: { all: 'Todas', us: 'EE. UU.', eu: 'Europa', uk: 'Reino Unido', global: 'Global' },
@@ -179,12 +179,25 @@
     item.topics = tags.topics;
   });
 
+  // Titulares automáticos (scripts/update_news.py → js/news-feed.js): texto original, sin traducir.
+  var FEED = window.DehesaNewsFeed || { generatedAt: null, items: [] };
+  var CURATED_COUNT = NEWS_ITEMS.length;
+  (FEED.items || []).forEach(function(a) {
+    var tr = { headline: a.h, summary: a.x || '' };
+    NEWS_ITEMS.push({ id: a.id, source: a.s, url: a.u, date: a.d, region: a.r, lang: a.l, auto: true,
+      products: a.p || [], topics: a.t || [], rel: a.v || 0, es: tr, en: tr, fr: tr, it: tr });
+  });
+  NEWS_ITEMS.sort(function(a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : (b.rel || 100) - (a.rel || 100); });
+  if (FEED.generatedAt) UPDATED_ISO = FEED.generatedAt.slice(0, 10);
+  var PAGE = 30;
+
   var STRINGS = {
     es: {
       title: 'Dehesa Index — Noticias', h1: 'Noticias',
+      origLang: 'Titular en idioma original', showMore: 'Mostrar {n} más',
       sub: 'Los titulares más recientes del mundo agrícola, seleccionados de agencias de noticias y fuentes oficiales.',
       badge: 'TITULARES REALES', updatedLabel: 'Actualizado',
-      disclaimer: 'Estos titulares son reales y verificados, cada uno enlazado directamente a su fuente original. Se actualizan periódicamente mediante una tarea programada, no mediante un feed en directo, así que puede haber un pequeño desfase entre una noticia y su publicación aquí.',
+      disclaimer: 'Estos titulares son reales y verificados, cada uno enlazado directamente a su fuente original. Se actualizan periódicamente mediante una tarea programada, no mediante un feed en directo, así que puede haber un pequeño desfase entre una noticia y su publicación aquí. Los titulares automáticos llegan en su idioma original (ES, EN, FR, IT) y no se traducen: una etiqueta te avisa del idioma. Automatic headlines keep their original language (ES, EN, FR, IT) and are not translated: a tag tells you which. Les titres automatiques restent dans leur langue d\'origine (ES, EN, FR, IT), sans traduction : une étiquette l\'indique. I titoli automatici restano nella lingua originale (ES, EN, FR, IT) e non vengono tradotti: un\'etichetta indica la lingua.',
       readMore: 'Leer en la fuente',
       filterAll: 'Todas', filterGlobal: 'Global', filterEuropa: 'Europa', filterAmerica: 'América',
       regionLabel: 'Región', productLabel: 'Producto / mercado', topicLabel: 'Tema',
@@ -208,6 +221,7 @@
     },
     en: {
       title: 'Dehesa Index — News', h1: 'News',
+      origLang: 'Headline in its original language', showMore: 'Show {n} more',
       sub: 'The most recent headlines from the agricultural world, curated from news agencies and official sources.',
       badge: 'REAL HEADLINES', updatedLabel: 'Updated',
       disclaimer: "These headlines are real and verified, each linking directly to its original source. They're refreshed periodically by a scheduled task rather than a live feed, so there can be a short delay between a story breaking and appearing here.",
@@ -234,6 +248,7 @@
     },
     fr: {
       title: 'Dehesa Index — Actualités', h1: 'Actualités',
+      origLang: 'Titre dans sa langue d\'origine', showMore: 'Afficher {n} de plus',
       sub: "Les derniers titres du monde agricole, sélectionnés auprès d'agences de presse et de sources officielles.",
       badge: 'TITRES RÉELS', updatedLabel: 'Mis à jour',
       disclaimer: "Ces titres sont réels et vérifiés, chacun renvoyant directement à sa source d'origine. Ils sont actualisés périodiquement par une tâche programmée plutôt que par un flux en direct : un léger décalage peut donc exister entre la publication d'une actualité et son apparition ici.",
@@ -260,6 +275,7 @@
     },
     it: {
       title: 'Dehesa Index — Notizie', h1: 'Notizie',
+      origLang: 'Titolo nella lingua originale', showMore: 'Mostra altre {n}',
       sub: 'I titoli più recenti dal mondo agricolo, selezionati da agenzie di stampa e fonti ufficiali.',
       badge: 'TITOLI REALI', updatedLabel: 'Aggiornato',
       disclaimer: "Questi titoli sono reali e verificati, ciascuno con un link diretto alla fonte originale. Vengono aggiornati periodicamente tramite un'attività pianificata anziché in tempo reale, quindi può trascorrere un breve intervallo tra la pubblicazione di una notizia e la sua comparsa qui.",
@@ -290,7 +306,8 @@
   var state = {
     region: initialParams.get('region') || 'all',
     product: initialParams.get('product') || 'all',
-    topic: initialParams.get('topic') || 'all'
+    topic: initialParams.get('topic') || 'all',
+    limit: PAGE
   };
   function syncUrl() {
     var params = [];
@@ -329,10 +346,12 @@
     }).length;
   }
 
-  function productPriceUrl(product) {
-    var map = { trigo:'trigo', maiz:'maiz', leche:'leche', fertilizantes:'urea', diesel:'diesel', arroz:'arroz' };
-    return 'precios.html?product=' + encodeURIComponent(map[product] || product);
+  var PRICE_IDS = { trigo:'trigo', maiz:'maiz', arroz:'arroz', cebada:'cebada', colza:'colza', azucar:'azucar', leche:'leche', vaca:'vaca', cerdo:'cerdo', cordero:'cordero', pollo:'pollo', huevos:'huevos', oliva:'oliva', pienso:'pienso', soja:'harina_soja', fertilizantes:'urea', diesel:'diesel', energia:'diesel', ganado:'vaca' };
+  function priceProduct(item) {
+    for (var i = 0; i < item.products.length; i++) if (PRICE_IDS[item.products[i]]) return PRICE_IDS[item.products[i]];
+    return null;
   }
+  function productPriceUrl(id) { return 'precios.html?product=' + encodeURIComponent(id); }
   function newsContextParams() {
     var p = [];
     if (state.region !== 'all') p.push('region=' + encodeURIComponent(state.region));
@@ -416,7 +435,7 @@
 
     ['region','product','topic'].forEach(function(key) {
       var el = document.getElementById('nw-' + key + '-filter');
-      el.onchange = function(){ state[key] = el.value; syncUrl(); render(); };
+      el.onchange = function(){ state[key] = el.value; state.limit = PAGE; syncUrl(); render(); };
     });
 
     var filteredItems = getFilteredItems();
@@ -425,31 +444,41 @@
 
     var itemsHtml;
     if (filteredItems.length > 0) {
-      itemsHtml = '<div class="di-news-list">' + filteredItems.map(function(item) {
+      var shown = filteredItems.slice(0, state.limit);
+      itemsHtml = '<div class="di-news-list">' + shown.map(function(item) {
         var tr = item[lang] || item.es;
-        var marketTags = item.products.map(function(p){ return '<span class="di-news-tag product">' + esc((PRODUCT_LABELS[lang] || PRODUCT_LABELS.es)[p]) + '</span>'; }).join('');
-        var topicTags = item.topics.map(function(topic){ return '<span class="di-news-tag topic">' + esc((TOPIC_LABELS[lang] || TOPIC_LABELS.es)[topic]) + '</span>'; }).join('');
+        var marketTags = item.products.map(function(p){ return '<span class="di-news-tag product">' + esc((PRODUCT_LABELS[lang] || PRODUCT_LABELS.es)[p] || p) + '</span>'; }).join('');
+        var topicTags = item.topics.map(function(topic){ return '<span class="di-news-tag topic">' + esc((TOPIC_LABELS[lang] || TOPIC_LABELS.es)[topic] || topic) + '</span>'; }).join('');
+        var langBadge = item.lang && item.lang !== lang ? '<span class="di-news-lang" title="' + esc(t.origLang) + '">' + esc(item.lang.toUpperCase()) + '</span>' : '';
+        var pid = priceProduct(item);
+        var summary = tr.summary ? '<p class="di-news-item-summary">' + esc(tr.summary) + '</p>' : '';
         return '<article class="di-card di-news-item">' +
-          '<div class="di-news-item-meta"><span class="di-news-item-source">' + esc(item.source) + '</span><span>·</span><span>' + esc(fmtNewsDate(item.date, lang)) + '</span></div>' +
-          '<div class="di-news-item-headline">' + esc(tr.headline) + '</div>' +
-          '<p class="di-news-item-summary">' + esc(tr.summary) + '</p>' +
+          '<div class="di-news-item-meta"><span class="di-news-item-source">' + esc(item.source) + '</span><span>·</span><span>' + esc(fmtNewsDate(item.date, lang)) + '</span>' + langBadge + '</div>' +
+          '<div class="di-news-item-headline">' + esc(tr.headline) + '</div>' + summary +
           '<div class="di-news-tags">' + marketTags + topicTags + '</div>' +
           '<a class="di-news-item-readmore" href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.readMore) + ' →</a>' +
-          '<a class="di-news-item-price-link" href="' + productPriceUrl(item.products[0] || 'trigo') + '">' + esc(lang === 'es' ? 'Ver precios' : lang === 'fr' ? 'Voir les prix' : lang === 'it' ? 'Vedi prezzi' : 'View prices') + ' →</a></article>';
-      }).join('') + '</div>';
+          (pid ? '<a class="di-news-item-price-link" href="' + productPriceUrl(pid) + '">' + esc(lang === 'es' ? 'Ver precios' : lang === 'fr' ? 'Voir les prix' : lang === 'it' ? 'Vedi prezzi' : 'View prices') + ' →</a>' : '') + '</article>';
+      }).join('') + '</div>' +
+      (filteredItems.length > shown.length ? '<div class="di-news-more"><button type="button" class="di-news-reset" id="nw-more">' + esc(t.showMore.replace('{n}', String(Math.min(PAGE, filteredItems.length - shown.length)))) + '</button></div>' : '');
     } else {
       var regionHasNothing = state.region !== 'all' && !NEWS_ITEMS.some(function(item) { return item.region === state.region; });
       var emptyMsg = regionHasNothing ? t.noRegionCoverage.replace('{region}', regionLabels[state.region] || state.region) : t.noResultsHint;
       itemsHtml = '<div class="di-news-empty">' + esc(emptyMsg) + ' <button type="button" class="di-news-reset" id="nw-reset">' + esc(t.resetFilters) + '</button></div>';
     }
     document.getElementById('nw-items').innerHTML = itemsHtml;
+    var moreBtn = document.getElementById('nw-more');
+    if (moreBtn) moreBtn.onclick = function() { state.limit += PAGE; render(); };
     var resetBtn = document.getElementById('nw-reset');
-    if (resetBtn) resetBtn.onclick = function() { state.region = 'all'; state.product = 'all'; state.topic = 'all'; syncUrl(); render(); };
+    if (resetBtn) resetBtn.onclick = function() { state.region = 'all'; state.product = 'all'; state.topic = 'all'; state.limit = PAGE; syncUrl(); render(); };
 
     document.getElementById('nw-sources-title').textContent = t.sourcesTitle;
+    var pubCount = {};
+    NEWS_ITEMS.forEach(function(it) { if (it.auto) pubCount[it.source] = (pubCount[it.source] || 0) + 1; });
+    var pubs = Object.keys(pubCount).sort(function(a, b) { return pubCount[b] - pubCount[a] || a.localeCompare(b); });
+    var pubLabel = lang === 'es' ? 'Medios en la última actualización' : lang === 'fr' ? 'Médias de la dernière mise à jour' : lang === 'it' ? 'Testate dell\'ultimo aggiornamento' : 'Publishers in the latest update';
     document.getElementById('nw-sources-list').innerHTML = t.sources.map(function(s) {
       return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.text) + '</a></li>';
-    }).join('');
+    }).join('') + (pubs.length ? '<li><strong>' + esc(pubLabel) + ' (' + pubs.length + '):</strong> ' + esc(pubs.map(function(n) { return n + ' (' + pubCount[n] + ')'; }).join(' · ')) + '</li>' : '');
   }
 
   window.DehesaShared.init('noticias');

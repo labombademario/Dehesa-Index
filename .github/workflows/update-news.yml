@@ -12,10 +12,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+
 jobs:
   update-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,12 +29,13 @@ jobs:
 
       - name: Commit generated news
         run: |
-          if git diff --quiet -- data/news.json js/news-index.js; then
+          if git diff --quiet -- data/news.json data/news-status.json js/news-index.js js/news-feed.js; then
             echo "No news changes."
             exit 0
           fi
           git config user.name "Dehesa Index News Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/news.json js/news-index.js
+          git add data/news.json data/news-status.json js/news-index.js js/news-feed.js
           git commit -m "chore: refresh agricultural market news"
+          git pull --rebase origin main
           git push

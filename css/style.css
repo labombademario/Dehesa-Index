@@ -1143,3 +1143,7 @@ body.di-modal-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 @media(min-width:701px){
   .di-nav-links{order:3;width:100%;justify-content:center}
 }
+
+/* Noticias: insignia de idioma y paginación */
+.di-news-lang{display:inline-block;margin-left:6px;padding:1px 6px;border:1px solid var(--border,#d0d5dd);border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.04em;color:var(--muted,#667085)}
+.di-news-more{display:flex;justify-content:center;margin:18px 0 6px}
