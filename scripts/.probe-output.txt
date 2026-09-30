@@ -1,10 +1,17 @@
-=== https://api.tech.ec.europa.eu/agrifood/api/sheepMeat/prices?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/sheepAndGoatMeat/prices?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+=== https://api.tech.ec.europa.eu/agrifood/api/rawMilk/prices?memberStateCodes=ES
+STATUS: 200
+FILAS: 329
+  memberStateCode -> ["ES"]
+  memberStateName -> ["Spain"]
+  beginDate -> (261 valores; ej. ["01/09/2026","01/08/2026","01/07/2026"])
+  endDate -> (261 valores; ej. ["30/09/2026","31/08/2026","31/07/2026"])
+  month -> [9,8,7,6,5,4,3,2,1,12,11,10]
+  monthName -> ["Sep","Aug","Jul","Jun","May","Apr","Mar","Feb","Jan","Dec","Nov","Oct"]
+  price -> (211 valores; ej. ["€45.53","€58.45","€45.05"])
+  unit -> ["100KG"]
+  year -> [2026,2025,2024,2023,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005]
+  product -> ["Raw milk","Organic raw milk"]
+EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"01/09/2026","endDate":"30/09/2026","month":9,"monthName":"Sep","price":"€45.53","unit":"100KG","year":2026,"product":"Raw milk"}
 
 === https://api.tech.ec.europa.eu/agrifood/api/sheepAndGoat/prices?memberStateCodes=ES
 STATUS: 200
@@ -21,66 +28,45 @@ FILAS: 1242
   marketingYear -> [2026,2025,2024,2023,2022,2021,2020,2019,2018,2017,2016,2015]
 EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€1011.80","unit":"100kg","weekNumber":38,"category":"Heavy Lamb","marketName":"ES","marketingYear":2026}
 
-=== https://api.tech.ec.europa.eu/agrifood/api/sheepGoat/prices?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/eggs/prices?memberStateCodes=ES&productCodes=X
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/eggsAndPoultry/prices?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/rawMilk/prices?memberStateCodes=ES
+=== https://api.tech.ec.europa.eu/agrifood/api/oliveOil/prices?memberStateCodes=ES
 STATUS: 200
-FILAS: 329
+FILAS: 31087
   memberStateCode -> ["ES"]
   memberStateName -> ["Spain"]
-  beginDate -> (261 valores; ej. ["01/09/2026","01/08/2026","01/07/2026"])
-  endDate -> (261 valores; ej. ["30/09/2026","31/08/2026","31/07/2026"])
-  month -> [9,8,7,6,5,4,3,2,1,12,11,10]
-  monthName -> ["Sep","Aug","Jul","Jun","May","Apr","Mar","Feb","Jan","Dec","Nov","Oct"]
-  price -> (211 valores; ej. ["€45.53","€58.45","€45.05"])
-  unit -> ["100KG"]
-  year -> [2026,2025,2024,2023,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005]
-  product -> ["Raw milk","Organic raw milk"]
-EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"01/09/2026","endDate":"30/09/2026","month":9,"monthName":"Sep","price":"€45.53","unit":"100KG","year":2026,"product":"Raw milk"}
+  beginDate -> (1781 valores; ej. ["14/09/2026","07/09/2026","31/08/2026"])
+  endDate -> (1781 valores; ej. ["20/09/2026","13/09/2026","06/09/2026"])
+  price -> (10294 valores; ej. ["€306.00","€303.50","€301.50"])
+  unit -> ["€/100kg"]
+  weekNumber -> (54 valores; ej. [51,50,49])
+  product -> ["Lampante olive oil (2%)","Refined olive oil (up to 0.3%)","Extra virgin olive oil (up to 0.8%)","Virgin olive oil (up to 2%)","Refined olive-pomace oil (up to 0.3%)","Crude olive-pomace oil (from 5 to 10%)","Olive-pomace oil (up to 1%)"]
+  market -> ["Córdoba (ES613)","Jaén (ES616)","Sevilla ","Málaga(ES617)","Tarragona (ES514)","Average national price","Toledo (ES425)","Granada (ES614)","Badajoz (ES431)"]
+  marketingYear -> (35 valores; ej. ["2025/2026","2024/2025","2023/2024"])
+EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€306.00","unit":"€/100kg","weekNumber":51,"product":"Lampante olive oil (2%)","market":"Córdoba (ES613)","marketingYear":"2025/2026"}
 
-=== https://api.tech.ec.europa.eu/agrifood/api/dairy/rawMilk/prices?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/milk/rawMilk/prices?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/rawmilk/price?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/eggs?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/sheepmeat?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/lambs/prices?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/pigmeat/prices?memberStateCodes=ES&pigClasses=S&beginDate=01/09/2026
+=== https://api.tech.ec.europa.eu/agrifood/api/rice/prices?memberStateCodes=ES
 STATUS: 200
-FILAS: 2
+FILAS: 7578
   memberStateCode -> ["ES"]
   memberStateName -> ["Spain"]
-  beginDate -> ["14/09/2026","07/09/2026"]
-  endDate -> ["20/09/2026","13/09/2026"]
-  price -> ["€178.56","€177.64"]
-  unit -> ["100 KG"]
-  weekNumber -> [38,37]
-  pigClass -> ["S"]
-EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€178.56","unit":"100 KG","weekNumber":38,"pigClass":"S"}
+  beginDate -> (1306 valores; ej. ["14/09/2026","07/09/2026","31/08/2026"])
+  endDate -> (1306 valores; ej. ["20/09/2026","13/09/2026","06/09/2026"])
+  price -> (1562 valores; ej. ["€1081.90","€344.07","€451.68"])
+  unit -> ["Tonne"]
+  weekNumber -> (54 valores; ej. [3,2,1])
+  marketingYear -> (28 valores; ej. ["2026/2027","2025/2026","2024/2025"])
+  stage -> ["Milled non parboiled","Paddy","Broken","Milled parboiled","Milled"]
+  type -> ["Japonica","Indica","N.A.","Not informed"]
+  variety -> ["Avg","Average","Gleva Valencia","Puntal Valencia","Sendra Andalucia","Puntal Andalucia","Valencia","Sirio Valencia","Sirio Andalucia","Andalucia","Sendra Valencia","Not informed","J. Sendra","Gleva","Puntal"]
+EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€1081.90","unit":"Tonne","weekNumber":3,"marketingYear":"2026/2027","stage":"Milled non parboiled","type":"Japonica","variety":"Avg"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/eggs/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/eggAndPoultry/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/eggsPoultry/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
