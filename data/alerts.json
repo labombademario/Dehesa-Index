@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T02:02:53.378Z",
+  "generatedAt": "2026-09-30T02:13:05.220Z",
   "status": "informational",
   "rules": [
     {
@@ -32,6 +32,94 @@
       "product": "dap",
       "region": "eu",
       "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "defra_barley_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "defra_cattle_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "defra_eggs_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "defra_energy_input_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "defra_feed_input_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "defra_fertiliser_input_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "defra_milk_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "defra_oilseed_rape_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "defra_pigs_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "defra_sheep_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "defra_wheat_output_index",
+      "region": "uk",
+      "sourceId": "defra",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
@@ -124,6 +212,24 @@
       "severity": "watch",
       "changePct": 7.95,
       "observationDate": "2026-06-01"
+    },
+    {
+      "type": "period_move",
+      "product": "defra_fertiliser_input_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "watch",
+      "changePct": -9.09,
+      "observationDate": "2026-07-01"
+    },
+    {
+      "type": "period_move",
+      "product": "defra_sheep_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "severity": "high",
+      "changePct": -10.99,
+      "observationDate": "2026-07-01"
     },
     {
       "type": "period_move",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T02:02:52.956Z",
+  "generatedAt": "2026-09-30T02:13:04.789Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -2746,6 +2746,3526 @@
           "period": "08",
           "year": 2026,
           "value": 739
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_defra_barley_output_index",
+      "product": "defra_barley_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-24",
+      "value": 117.37,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (cebada, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "changePct": 2.5693,
+      "history": [
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 123.17
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 131.9
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 144.55
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 160.64
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 174.09
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 177.83
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 171.42
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 190.13
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 205.78
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 211.08
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 207.43
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 178.78
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 178.24
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 182.29
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 189.02
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 188.06
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 173.38
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 165.66
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 157.01
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 150.46
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 137.4
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 129.29
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 128.95
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 129.11
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 142.49
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 137.01
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 135.81
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 138.79
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 141.01
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 145.21
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 135.62
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 129.84
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 134.61
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 144.55
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 154.21
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 135.3
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 131.79
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 119.53
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 122.22
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 119.48
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 121.4
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 122.13
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 124.19
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 120.49
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 119.96
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 119.31
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 118.07
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 110.83
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 111.53
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 109.37
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 110.33
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 112.26
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 114.84
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 116.63
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 115.1
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 115.07
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 117.02
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 118.18
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 114.43
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 117.37
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_defra_cattle_output_index",
+      "product": "defra_cattle_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-24",
+      "value": 186.23,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (ganado vacuno y terneros, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "changePct": 2.0606,
+      "history": [
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 118.2
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 117.35
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 115.18
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 116.97
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 119.43
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 116.5
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 120.48
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 123.64
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 129.19
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 127.91
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 129.53
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 129.25
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 127.56
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 127.69
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 125.79
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 127.5
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 131.72
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 133.72
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 139.49
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 141.44
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 144.23
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 144.48
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 141.22
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 133.01
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 134.17
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 134.6
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 131.71
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 133.1
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 138.59
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 141.93
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 143.32
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 143
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 141.97
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 141.34
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 142.02
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 142.54
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 146.07
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 146.44
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 146.03
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 155.25
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 158.58
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 171.84
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 186.67
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 200.9
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 207.43
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 199.99
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 192.59
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 195.3
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 196.43
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 192.51
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 197.58
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 201.35
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 197.43
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 197.14
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 197.79
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 197.07
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 190.91
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 183.61
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 182.47
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 186.23
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_defra_eggs_output_index",
+      "product": "defra_eggs_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-24",
+      "value": 180.37,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (huevos, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "changePct": 0,
+      "history": [
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 108.81
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 108.81
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 107.24
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 107.24
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 107.24
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 109.11
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 109.11
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 109.11
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 115.92
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 115.92
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 115.92
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 121.85
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 121.85
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 121.85
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 133.73
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 133.73
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 133.73
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 150.47
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 150.47
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 150.47
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 164.8
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 164.8
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 164.8
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 166.96
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 166.96
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 166.96
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 167.14
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 167.14
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 167.14
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 169.76
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 169.76
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 169.76
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 173.18
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 173.18
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 173.18
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 174.74
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 174.74
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 174.74
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 175.4
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 175.4
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 175.4
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 176.6
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 176.6
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 176.6
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 177.58
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 177.58
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 177.58
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 177.08
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 177.08
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 177.08
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 175.44
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 175.44
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 175.44
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 180.37
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 180.37
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 180.37
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 180.37
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 180.37
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 180.37
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 180.37
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_defra_energy_input_index",
+      "product": "defra_energy_input_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-24",
+      "value": 161.29,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (energía y lubricantes, precios pagados), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "changePct": -4.6918,
+      "history": [
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 118.03
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 118
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 127.07
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 132.95
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 132.53
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 132.22
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 134.3
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 152.07
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 176.87
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 180.25
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 189.68
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 196.79
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 185.75
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 183
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 194.12
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 199.37
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 191.11
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 184.57
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 182.94
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 180.58
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 175.67
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 169.78
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 161.23
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 153.34
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 158.44
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 165.49
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 164.52
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 162.65
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 155.19
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 153.93
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 156.22
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 159.14
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 156.3
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 155.97
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 150.13
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 146.47
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 144.44
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 138.37
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 140.01
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 141.23
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 143.21
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 144.63
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 147.35
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 146.03
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 144.89
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 142.5
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 141.06
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 141.74
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 142.92
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 142.39
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 144.88
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 145.76
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 147.54
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 146.08
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 144.94
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 160.66
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 185.61
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 180.61
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 169.23
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 161.29
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_defra_feed_input_index",
+      "product": "defra_feed_input_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-24",
+      "value": 120.3,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (piensos, precios pagados), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "changePct": -0.3892,
+      "history": [
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 113.71
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 113.72
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 118.14
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 119.63
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 120.56
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 126.8
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 127.87
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 131.87
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 152.15
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 153.47
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 152.54
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 153.18
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 152.9
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 154.73
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 156.07
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 154.71
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 153.27
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 153.11
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 154
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 152.29
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 143.12
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 140.93
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 141.25
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 135.59
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 133.13
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 133.87
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 130.92
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 132.47
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 131.99
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 130.01
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 128.87
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 128.84
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 125.75
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 126.48
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 126
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 123.13
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 120.96
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 121.88
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 121.58
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 120.65
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 120.68
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 122.04
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 121.76
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 122.09
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 119.82
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 118.17
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 118.28
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 115.86
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 115.18
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 117.19
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 116.94
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 118.03
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 118.1
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 117.46
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 117.36
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 118.57
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 120.81
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 121.02
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 120.77
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 120.3
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_defra_fertiliser_input_index",
+      "product": "defra_fertiliser_input_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-24",
+      "value": 197.84,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (fertilizantes y enmiendas, precios pagados), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "changePct": -9.0934,
+      "history": [
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 148.87
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 153.7
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 178.99
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 226.72
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 222.86
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 236.63
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 236.26
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 273.75
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 323.49
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 315.91
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 312.45
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 330.02
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 329.56
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 331.59
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 311.5
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 304.49
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 297.18
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 267.9
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 242.67
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 213.17
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 198.52
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 184.91
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 158.75
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 156.36
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 161.35
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 162.92
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 162.33
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 163.18
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 161.08
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 162.4
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 161.78
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 156.63
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 155.81
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 153.94
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 154.26
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 150.49
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 149.68
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 148.68
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 149.66
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 149.12
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 150.33
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 161.86
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 167.45
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 169.56
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 171.04
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 168.65
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 172.53
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 174.85
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 176.22
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 174.92
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 171.85
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 173.48
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 172.64
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 179.84
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 186.66
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 191.54
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 212.03
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 222.14
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 217.63
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 197.84
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_defra_milk_output_index",
+      "product": "defra_milk_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-24",
+      "value": 122.38,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (leche, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "changePct": 1.7206,
+      "history": [
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 109.37
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 110.45
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 114.26
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 118.13
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 120.73
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 124.06
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 126.48
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 131.12
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 134.95
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 142.69
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 152.48
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 162.99
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 166.43
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 172.36
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 177.21
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 179.27
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 180.51
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 173.07
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 164.95
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 152.47
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 137.99
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 128.98
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 126.22
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 124.8
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 126.85
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 127.4
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 129.7
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 132.3
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 132.72
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 134.48
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 135.55
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 135.74
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 134.31
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 132.97
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 136.13
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 140.13
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 145.45
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 152.03
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 159
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 161.76
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 162.49
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 160.65
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 160.32
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 156.89
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 152.98
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 151.32
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 151.14
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 152.28
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 155.95
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 159.36
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 158.4
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 148.44
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 138.28
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 130.48
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 124.52
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 122.82
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 120.66
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 120.29
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 120.31
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 122.38
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_defra_oilseed_rape_output_index",
+      "product": "defra_oilseed_rape_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-24",
+      "value": 131.02,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (colza, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "changePct": -0.9899,
+      "history": [
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 138.96
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 149.49
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 165.38
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 175.44
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 173.92
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 181.87
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 178.97
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 223.67
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 247.47
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 238.18
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 199.73
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 171.96
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 156.64
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 150.51
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 160.04
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 152.09
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 140.94
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 141.54
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 139.1
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 123.75
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 114.59
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 98.23
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 102.81
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 109.6
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 107.37
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 106.98
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 105.43
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 106.71
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 105.46
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 103.8
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 103.22
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 105.45
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 109.34
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 114.4
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 112.43
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 116.39
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 113.59
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 114.09
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 119.62
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 127.15
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 126.99
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 127.3
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 128.25
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 125.13
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 144.37
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 128.72
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 125.4
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 119.24
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 119.68
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 119.25
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 120.89
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 124.83
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 122.01
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 122.63
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 126.97
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 130.59
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 134.88
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 147.59
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 132.33
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 131.02
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_defra_pigs_output_index",
+      "product": "defra_pigs_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-24",
+      "value": 109.77,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (cerdos, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "changePct": 0.3199,
+      "history": [
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 98.79
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 95.62
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 90.89
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 88.9
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 87.31
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 85.16
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 84.87
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 89.46
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 102.17
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 109.23
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 114.83
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 119.86
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 122.73
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 124.27
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 124.23
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 124.15
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 124.46
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 126.12
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 129.46
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 133.32
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 136.47
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 138
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 139.78
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 141.05
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 141.23
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 139.92
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 137.36
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 135.4
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 134.05
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 132.43
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 132.14
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 132.38
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 132.02
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 132.1
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 131.54
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 131
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 131.02
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 130.66
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 129.38
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 128.59
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 128.39
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 126.7
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 125.81
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 126.37
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 127.39
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 128.04
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 128.78
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 128.88
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 128.92
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 128.33
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 126.27
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 124.04
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 122.25
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 118.51
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 115.41
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 113.26
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 111.81
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 110.26
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 109.42
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 109.77
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_defra_sheep_output_index",
+      "product": "defra_sheep_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-24",
+      "value": 172.46,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (ovino y corderos, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "changePct": -10.993,
+      "history": [
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 110.59
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 107.61
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 108.96
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 122.86
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 130.05
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 124.99
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 122.54
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 121.85
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 128.61
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 138.96
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 139.87
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 127.6
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 113.15
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 109.49
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 108.06
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 114.6
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 114.12
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 108.34
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 106.68
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 114.51
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 136.95
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 148
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 136.01
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 125.75
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 119.32
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 114.56
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 117.22
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 121.97
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 122.84
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 129.86
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 144.81
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 166.45
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 177.42
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 176.92
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 164.62
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 139.01
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 140.04
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 134.05
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 128.87
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 137.64
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 146.54
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 154.09
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 156.59
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 157.44
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 152.93
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 149.29
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 158.68
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 158.4
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 154.75
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 141.58
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 140.43
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 147.46
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 151.04
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 151.5
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 154.18
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 174.99
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 182.31
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 191.47
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 193.76
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 172.46
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_defra_wheat_output_index",
+      "product": "defra_wheat_output_index",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-24",
+      "value": 111.86,
+      "currency": "INDEX",
+      "unit": "index_2020_100",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:13:04.431508Z",
+      "comparability": "directional",
+      "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (trigo, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
+      "changePct": 2.1926,
+      "history": [
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 113.19
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 111.47
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 122.15
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 136.02
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 138.38
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 132.67
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 137.72
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 166.53
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 183
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 194.01
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 180.49
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 157.02
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 152.66
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 160.42
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 168.37
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 161.89
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 147.91
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 139.21
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 143.7
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 129.22
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 124.02
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 120.97
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 118.46
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 123.8
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 114.05
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 115.19
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 117.38
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 118.46
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 116.63
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 115.36
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 107.78
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 106.57
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 114.81
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 125.99
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 122.65
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 117.76
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 112.92
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 113.96
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 116.64
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 113.12
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 113.14
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 114.41
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 114.95
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 108.43
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 106.18
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 101.94
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 102.27
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 103.64
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 102.63
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 101.26
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 101.32
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 103.7
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 102.58
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 101.04
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 99.79
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 102.06
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 105.84
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 110.09
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 109.46
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 111.86
         }
       ],
       "snapshotDate": "2026-09-30"
@@ -6063,7 +9583,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "verifiedAt": "2026-09-30T02:13:02.264313Z",
       "methodology": "Defra (Open Government Licence v3.0): precio medio en granja de la leche en el Reino Unido, hoja Prices_Monthly, en peniques por litro; se expresa en GBP/100 kg con una densidad de 1,03 kg/l (estándar de la leche de vaca).",
       "comparability": "directional",
       "value": 35.82,
