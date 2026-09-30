@@ -85,7 +85,12 @@ def series(sid, group, label, unit, freq, pts, extra=None):
 
 OUT = []
 def add(s):
-    if s: OUT.append(s)
+    if not s: return
+    if s['frequency'] == 'weekly':
+        last = datetime.date.fromisoformat(s['latestPeriod'])
+        if (datetime.date.today() - last).days > 550:
+            log('descartada (discontinuada)', s['label'], s['latestPeriod']); return
+    OUT.append(s)
 
 def clean(h):
     return re.sub(r'\s+', ' ', str(h or '')).strip()
@@ -141,7 +146,7 @@ def cereals():
         pts = weekly(obs)
         label = '%s: %s' % (SPECIES[sp][0], en(k).replace(SPECIES[sp][0] + ' ', '').replace('  ', ' ').strip())
         sid = 'fr-cot-%s-%s' % (SPECIES[sp][1], re.sub(r'[^a-z0-9]+', '-', k.lower()).strip('-')[:40])
-        add(series(sid, 'prices', label, '€/t', 'weekly', pts, {'sourceGroup': 'FranceAgriMer – cotations des céréales'}))
+        add(series(sid, 'quotes', label, '€/t', 'weekly', pts, {'sourceGroup': 'FranceAgriMer – cotations des céréales'}))
         log('cereal', label, len(pts), pts[0][0], pts[-1])
 
 # ---------- 2) Precios pagados a productor (trimestral, campaña acumulada) ----------
