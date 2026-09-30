@@ -7,10 +7,10 @@
 (function (global) {
   'use strict';
 
-  // --- Tipos de cambio (Banco Central Europeo, referencia del 29 sep 2026) -
+  // --- Tipos de cambio (Banco Central Europeo, referencia del 30 sep 2026) -
   var EURUSD = 1.1355;
-  var GBPUSD = 1.3247;
-  var FX_DATE = '2026-09-29'; // fecha ISO de la cotización, la actualiza scripts/update-fx.mjs
+  var GBPUSD = 1.3286;
+  var FX_DATE = '2026-09-30'; // fecha ISO de la cotización, la actualiza scripts/update-fx.mjs
   var FX = { USD: 1, EUR: EURUSD, GBP: GBPUSD };
   var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£' };
 
