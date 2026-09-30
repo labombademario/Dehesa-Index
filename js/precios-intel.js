@@ -327,9 +327,9 @@
   var MAP_GROUP_ORDER = ['cereales', 'ganaderia', 'lacteos', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia'];
 
   // Variación del último dato frente al de ~1 mes antes, con fechas reales
-  function mapChange(pts) {
+  function mapChange(pts, days) {
     if (!pts || pts.length < 2) return null;
-    var last = pts[pts.length - 1], cutoff = last.ts - 27 * 86400000, ref = null;
+    var last = pts[pts.length - 1], cutoff = last.ts - (days || 27) * 86400000, ref = null;
     for (var i = pts.length - 2; i >= 0; i--) { if (pts[i].ts <= cutoff) { ref = pts[i]; break; } }
     if (!ref || !ref.value) return null;
     // un dato de hace más de 4 meses no es "actual"
@@ -434,13 +434,11 @@
     var Core = core();
     var raw = Core.PRODUCTS.map(function (e) {
       var key = e.catId + '-' + e.nameKey;
-      var meta = MAP_GROUP[key];
-      var region = regionFor(e);
-      var seed = seedFor(e);
-      var x = rangePctChange(e, 90), y = rangePctChange(e, 7);
+      var info = Core.mapInfo ? Core.mapInfo(e) : null;
+      if (!info || !info.pts) return null;
+      var x = mapChange(info.pts, 88), y = mapChange(info.pts, 27);
       return x === null || y === null ? null : {
-        key: key, name: productName(e.nameKey), group: meta || 'otros',
-        x: x, y: y
+        key: key, name: productName(e.nameKey), group: MAP_GROUP[key] || 'otros', x: x, y: y
       };
     });
     raw = raw.filter(function(p){ return !!p; });
@@ -460,7 +458,7 @@
       var nearRightEdge = px > plotRight - plotW * 0.15;
       return {
         key: p.key, name: p.name, color: MOMENTUM_GROUP_COLORS[p.group] || P().textFaint,
-        tileTitle: p.name + ' · 3M ' + D.fmtChange(p.x) + ' · 1W ' + D.fmtChange(p.y),
+        tileTitle: p.name + ' · 3M ' + D.fmtChange(p.x) + ' · 1M ' + D.fmtChange(p.y),
         cx: px, cy: py,
         labelX: nearRightEdge ? px - 8 : px + 8,
         labelY: Math.max(plotY + 10, Math.min(plotBottom - 4, py + 4)),
@@ -492,7 +490,8 @@
     });
     var xGrid = ticksX.ticks.filter(function (v) { return v !== 0; }).map(function (v) { return { x: toPx(v), label: fmtTick(v) }; });
     var yGrid = ticksY.ticks.filter(function (v) { return v !== 0; }).map(function (v) { return { y: toPy(v), label: fmtTick(v) }; });
-    var legend = MAP_GROUP_ORDER.map(function (g) { return { id: g, color: MOMENTUM_GROUP_COLORS[g], label: ui()['mapGroup' + capitalize(g)] }; });
+    var present = {}; raw.forEach(function (r) { present[r.group] = 1; });
+    var legend = MAP_GROUP_ORDER.filter(function (g) { return present[g]; }).map(function (g) { return { id: g, color: MOMENTUM_GROUP_COLORS[g], label: ui()['mapGroup' + capitalize(g)] }; });
     return {
       plotX: plotX, plotY: plotY, plotW: plotW, plotH: plotH, plotRight: plotRight, plotBottom: plotBottom,
       originX: originX, originY: originY, xGrid: xGrid, yGrid: yGrid, points: points, legend: legend
@@ -503,7 +502,7 @@
     var t = ui();
     var p = P();
     var m = buildMomentum();
-    if (!m.points.length) return intelPendingHtml(t.momentumTitle, 'Se necesitan observaciones reales con cadencia suficiente para calcular 3M vs 1W.', 'di-intel-momentum');
+    if (!m.points.length) return intelPendingHtml(t.momentumTitle, t.momentumEmpty || 'Aún no hay productos con al menos tres meses de dato verificado en este mercado.', 'di-intel-momentum');
     var gridX = m.xGrid.map(function (g) {
       return '<line x1="' + g.x + '" y1="' + m.plotY + '" x2="' + g.x + '" y2="' + m.plotBottom + '" stroke="' + p.border + '" stroke-width="1"/>' +
         '<text x="' + g.x + '" y="' + (m.plotBottom + 16) + '" font-size="9.5" text-anchor="middle" fill="' + p.textMuted + '">' + g.label + '</text>';
