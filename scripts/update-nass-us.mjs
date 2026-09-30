@@ -16,7 +16,7 @@
  * Requiere la variable de entorno NASS_API_KEY (clave gratuita, se pide en
  * https://quickstats.nass.usda.gov/api).
  *
- * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz|leche|huevos|cerdo|vaca|pollo>
+ * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz|sorgo|leche|huevos|cerdo|vaca|pollo>
  */
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
@@ -50,6 +50,14 @@ const PRODUCTS = {
     commodity: 'RICE',
     shortDesc: 'RICE - PRICE RECEIVED, MEASURED IN $ / CWT',
     kgPerUnit: '45\\.359'
+  },
+  sorgo: {
+    label: 'Sorgo',
+    commodity: 'SORGHUM',
+    shortDesc: 'SORGHUM, GRAIN - PRICE RECEIVED, MEASURED IN $ / CWT',
+    kgPerUnit: '45\\.359',
+    obsUnit: 'cwt',
+    trustMethodology: 'National USDA NASS PRICE RECEIVED for grain sorghum; USD/cwt.'
   },
   leche: {
     label: 'Leche',
@@ -128,6 +136,8 @@ async function fetchSeries() {
   var totals = matching.filter(function (r) { return r.domain_desc === 'TOTAL'; });
   if (totals.length) matching = totals;
   if (matching.length === 0) {
+    var avail = Array.from(new Set(rows.map(function (r) { return r.short_desc; }))).slice(0, 25).join(' ; ');
+    console.error('short_desc disponibles para ' + cfg.commodity + ': ' + avail);
     throw new Error(
       'Ningún registro con short_desc="' + cfg.shortDesc + '". NASS puede haber cambiado su nomenclatura -- ' +
       'revisar a mano la respuesta de ' + url.replace(API_KEY, 'XXXX') + ' y ajustar shortDesc en este script.'

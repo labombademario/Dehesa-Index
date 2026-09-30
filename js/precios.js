@@ -114,6 +114,7 @@
     'maiz:us': { key: 'cereales:maiz', sourceId: 'usda_nass', currency: 'USD', unit: 'bushel', frequency: 'monthly' },
     'trigo:us': { key: 'cereales:trigo', sourceId: 'usda_nass', currency: 'USD', unit: 'bushel', frequency: 'monthly' },
     'arroz:us': { key: 'cereales:arroz', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
+    'sorgo:us': { key: 'cereales:sorgo', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
     'leche:us': { key: 'lacteos:leche', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
     'leche:uk': { key: 'lacteos:leche', sourceId: 'defra', currency: 'GBP', unit: '100kg', frequency: 'monthly' },
     'leche:eu': { key: 'lacteos:leche', sourceId: 'european_commission', currency: 'EUR', unit: '100kg', frequency: 'monthly' },
