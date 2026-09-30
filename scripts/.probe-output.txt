@@ -1,21 +1,84 @@
-CMD: python scripts/update-worldbank-urea-eu.py && node scripts/validate-snapshots.mjs && node scripts/build-data-index.mjs && node scripts/build-csv.mjs && node scripts/build-data-quality.mjs && node scripts/build-intelligence.mjs && node scripts/build-normalized-data.mjs && node scripts/build-cross-market.mjs && node scripts/build-alert-signals.mjs && node scripts/qa-navigation.mjs
-/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-worldbank-urea-eu.py:79: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
-  verified_at = datetime.utcnow().isoformat(timespec="seconds") + "Z"
-/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-worldbank-urea-eu.py:86: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
-  snapshot_date = datetime.utcnow().date().isoformat()
-/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-worldbank-urea-eu.py:103: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
-  "verifiedAt": datetime.utcnow().isoformat(timespec="seconds") + "Z",
-/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-worldbank-urea-eu.py:115: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
-  snapshot.write_text(json.dumps({"schemaVersion":"1.0","generatedAt":datetime.utcnow().isoformat(timespec="seconds")+"Z","observations":[observation]}, indent=2) + "\n", encoding="utf-8")
-World Bank urea EU updated: 2026M08 = 390.0 USD/t; publication=2026-09-02
-Snapshot validation OK: 2 file(s).
-Generated latest.json, history.json and catalog.json from 2 snapshot(s).
-Generated data/history.csv with 138 observations.
-Data quality: 10 latest observations; 10 verified; 0 pending; 5 stale.
-Intelligence 2.0: 9 series.
-Normalized layer: 138 observations.
-Agricultural relationships: 6
-Alerts: 8 informational signals.
-Navigation QA: 84 checks passed, 1 failed.
-FAIL syntax error: js/data.js
-EXIT: 1
+=== https://api.tech.ec.europa.eu/agrifood/api/beef/prices?memberStateCodes=ES
+STATUS: 200
+FILAS: 43040
+  memberStateCode -> ["ES"]
+  memberStateName -> ["Spain"]
+  beginDate -> (1812 valores; ej. ["14/09/2026","07/09/2026","31/08/2026"])
+  endDate -> (1812 valores; ej. ["20/09/2026","13/09/2026","06/09/2026"])
+  price -> (25308 valores; ej. ["€625.45","€692.08","€651.82"])
+  unit -> ["€/100Kg"]
+  weekNumber -> (54 valores; ej. [38,37,36])
+  category -> ["Cows","Heifers","Young cattle","Young bulls","Adult male indicative price"]
+  productCode -> (28 valores; ej. ["DO4","ER3","ER4"])
+EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€625.45","unit":"€/100Kg","weekNumber":38,"category":"Cows","productCode":"DO4"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/sheepmeat/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/eggs/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/poultry/prices?memberStateCodes=ES
+STATUS: 200
+FILAS: 1679
+  memberStateCode -> ["ES"]
+  memberStateName -> ["Spain"]
+  beginDate -> (1404 valores; ej. ["14/09/2026","07/09/2026","31/08/2026"])
+  endDate -> (1404 valores; ej. ["20/09/2026","13/09/2026","06/09/2026"])
+  price -> (1343 valores; ej. ["€235.07","€220.09","€492.27"])
+  unit -> ["national currency/100kg"]
+  weekNumber -> (54 valores; ej. [38,37,36])
+  productName -> ["Whole broiler (65%)","Legs","Breast Fillet"]
+  priceType -> ["Selling price"]
+EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€235.07","unit":"national currency/100kg","weekNumber":38,"productName":"Whole broiler (65%)","priceType":"Selling price"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/sugar/prices?memberStateCodes=ES
+STATUS: 200
+FILAS: 740
+  sugarRegion -> ["EU Average","Region 1","Region 2","Region 3"]
+  price -> (727 valores; ej. ["501.4009","506.0622","436.7388"])
+  unit -> ["Tonne"]
+  ym -> (240 valores; ej. ["2026/06","2026/05","2026/04"])
+  marketingYear -> ["2025/2026","2024/2025","2023/2024","2022/2023","2021/2022","2020/2021","2019/2020","2018/2019","2017/2018","2016/2017","2015/2016","2014/2015","2013/2014","2012/2013","2011/2012","2010/2011","2009/2010","2008/2009","2007/2008","2006/2007","2005/2006"]
+  marketingYearMonth -> ["Jun","May","Apr","Mar","Feb","Jan","Dec","Nov","Oct","Sep","Aug","Jul"]
+  weight -> (603 valores; ej. [763148.7,173392.75,7789.12])
+  contractType -> ["Monthly data","Short term contracts"]
+EJEMPLO: {"sugarRegion":"EU Average","price":"501.4009","unit":"Tonne","ym":"2026/06","marketingYear":"2025/2026","marketingYearMonth":"Jun","weight":763148.7,"contractType":"Monthly data"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/oliveoil/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/cereal/prices?memberStateCodes=ES
+STATUS: 200
+FILAS: 22540
+  memberStateCode -> ["ES"]
+  memberStateName -> ["Spain"]
+  beginDate -> (565 valores; ej. ["14/09/2026","07/09/2026","31/08/2026"])
+  endDate -> (565 valores; ej. ["20/09/2026","13/09/2026","06/09/2026"])
+  price -> (3569 valores; ej. ["€248,00","€250,40","€268,00"])
+  unit -> ["TONNES"]
+  weekNumber -> (54 valores; ej. [12,11,10])
+  productName -> ["Feed maize","Feed wheat","Durum wheat","Feed barley","Milling wheat","Malting barley","Malting barley - M2RH","Breadmaking common wheat"]
+  marketName -> ["Lerida","Lleida","Sevilla","Guadalajara","Palencia","Zaragoza","Huesca","Segovia","Navarra","Toledo","Ciudad Real","Albacete","Valladolid","Burgos","Zamora","Leon","National Average","Cordoba","Barcelona","Cuenca","Cadiz","Madrid","Badajoz","Valencia"]
+  stageName -> ["Departure from silo - after some storage - on truck or other transport means","National Average - Not Specified","Delivered to processor after one intermediary","Delivered to port - grain delivered to a port silo by train or truck or barge"]
+  referencePeriod -> (565 valores; ej. ["24/09/2026","17/09/2026","10/09/2026"])
+EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€248,00","unit":"TONNES","weekNumber":12,"productName":"Feed maize","marketName":"Lerida","stageName":"Departure from silo - after some storage - on truck or other transport means","referencePeriod":"24/09/2026"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/cereals/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/fertiliser/prices?memberStateCodes=ES
+STATUS: 200
+FILAS: 276
+  year -> [2026,2025,2024,2023,2022,2021,2020,2019]
+  quarter -> ["Q3","Q2","Q1","Q4"]
+  month -> ["Aug","Jul","Jun","May","Apr","Mar","Feb","Jan","Dec","Nov","Oct","Sep"]
+  memberStateName -> ["European Commission"]
+  product -> ["K (Potash)","N (Nitrogen)","P (Phosphorus)"]
+  price -> (217 valores; ej. [364,454,739])
+  unit -> ["€/tonne"]
+EJEMPLO: {"year":2026,"quarter":"Q3","month":"Aug","memberStateName":"European Commission","product":"K (Potash)","price":364,"unit":"€/tonne"}
