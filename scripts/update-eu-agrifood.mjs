@@ -106,9 +106,9 @@ export const PRODUCTS = {
   harina_soja: {
     catId: 'pienso', id: 'di_pienso_harina_soja_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
     commodity: 'oilseeds', member: 'ES', unitExpected: 'national currency/ton', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
-    select: r => r.product === 'Soya meal' && r.market === 'National Average', recent: true,
+    select: r => r.product === 'Soya meal' && r.productType === '40-50% protein content' && r.market === 'Average', recent: true,
     market: 'Comisión Europea (harina de soja, España, media nacional)',
-    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la harina de soja en España (media nacional, salida de fábrica), EUR/tonelada. Sustituye a la referencia anterior de colza en Euronext.' + NOTE_PUB
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la harina de soja de 40-50 % de proteína en España (media, salida de fábrica), EUR/tonelada. Sustituye a la referencia anterior de colza en Euronext.' + NOTE_PUB
   },
   azucar: {
     catId: 'azucar', id: 'di_azucar_azucar_eu', sourceId: 'eu_agrifood', frequency: 'monthly',
