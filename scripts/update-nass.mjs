@@ -28,7 +28,7 @@ function period(r) {
   if (m) return y + '-' + String(MON[m[1]]).padStart(2, '0');
   m = rp.match(/^(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) THRU (JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$/);
   if (m && MON[m[2]] >= MON[m[1]]) return y + '-' + String(MON[m[2]]).padStart(2, '0'); // trimestre: se etiqueta con su último mes
-  if (ANNUAL && /^(YEAR|ANNUAL)/.test(rp)) return String(y);
+  if (ANNUAL && (rp === 'YEAR' || rp === 'ANNUAL')) return String(y);
   return null;
 }
 let ANNUAL = false;
@@ -73,6 +73,14 @@ if (MODE === 'livestock') {
     await job('precio pagado ' + c + ' región', { commodity_desc: c, statisticcat_desc: 'PRICE PAID', agg_level_desc: 'REGION : MULTI-STATE' });
   }
   await job('precios pagados otros', { commodity_desc: 'FERTILIZER', statisticcat_desc: 'PRICE PAID', agg_level_desc: 'NATIONAL' });
+} else if (MODE === 'crops') {
+  ANNUAL = true;
+  const Y10 = String(new Date().getUTCFullYear() - 10);
+  for (const c of ['CORN', 'SOYBEANS', 'WHEAT', 'COTTON', 'SORGHUM', 'BARLEY', 'OATS', 'RICE', 'PEANUTS', 'HAY']) {
+    for (const sc of ['YIELD', 'AREA HARVESTED', 'AREA PLANTED', 'PRODUCTION']) {
+      for (const lvl of ['NATIONAL', 'STATE']) await job(c + ' ' + sc + ' ' + lvl, { commodity_desc: c, statisticcat_desc: sc, agg_level_desc: lvl, source_desc: 'SURVEY', year__GE: Y10 }, r => !/IRRIGATED|SILAGE|SEED|ORGANIC|UTILIZED|FORAGE/.test(r.short_desc) && r.freq_desc === 'ANNUAL');
+    }
+  }
 } else { console.error('modo desconocido'); process.exit(1); }
 const out = { schemaVersion: '1.0', source: 'USDA NASS Quick Stats', mode: MODE, generatedAt: new Date().toISOString(), series: {} };
 let total = 0;

@@ -26,6 +26,11 @@ jobs:
         env:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
         run: node scripts/update-nass.mjs prices 2>&1 | tee data/nass-prices-log.txt; test ${PIPESTATUS[0]} -eq 0
+      - name: Rendimientos y superficie
+        if: always()
+        env:
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+        run: node scripts/update-nass.mjs crops 2>&1 | tee data/nass-crops-log.txt; test ${PIPESTATUS[0]} -eq 0
       - name: Commit
         if: always()
         run: |
