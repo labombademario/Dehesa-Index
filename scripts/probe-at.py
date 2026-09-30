@@ -7,8 +7,7 @@ def get(u):
     except Exception as e:
         return 'ERR %s'%e
 h=get('https://data.statistik.gv.at/catalog.jsp')
-out=[re.sub(r'\s+',' ',h)[3000:9800]]
-out.append('=== terms'); out.append(re.sub(r'\s+',' ',re.sub(r'<script.*?</script>|<[^>]+>',' ',get('https://data.statistik.gv.at/?page=terms')))[:3500])
-for u in ['https://www.data.gv.at/katalog/api/3/action/package_search?q=organization:statistik-austria+landwirtschaft&rows=5','https://data.statistik.gv.at/data/OGD_f1000_LW_1.csv']:
-    out.append('=== '+u); out.append(get(u)[:600])
-open('data/probe/at5.txt','w').write('\n'.join(out))
+out=['len %d'%len(h)]
+out+= sorted(set(re.findall(r'href="([^"]+)"',h)))
+out.append(re.sub(r'\s+',' ',re.sub(r'<script.*?</script>|<style.*?</style>','',h,flags=re.S))[:3000])
+open('data/probe/at6.txt','w').write('\n'.join(out))
