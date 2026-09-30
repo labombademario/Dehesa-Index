@@ -8,6 +8,7 @@ const KEY = process.env.FAS_API_KEY;
 if (!KEY) { console.error('falta FAS_API_KEY'); process.exit(1); }
 const B = 'https://api.fas.usda.gov/api/gats';
 const OUT = 'data/gats.json';
+const T0 = Date.now();
 const MONTHS_KEEP = 26;
 const GROUPS = [
   { id: 'trigo', hs: ['1001'] }, { id: 'maiz', hs: ['1005'] }, { id: 'arroz', hs: ['1006'] }, { id: 'sorgo', hs: ['1007'] }, { id: 'cebada', hs: ['1003'] },
@@ -18,11 +19,11 @@ const GROUPS = [
 function groupOf(h) { for (const g of GROUPS) for (const p of g.hs) if (h.startsWith(p)) return g.id; return null; }
 async function get(p, ok404 = true) {
   let err = '';
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 40; i++) {
     try {
       const r = await fetch(B + p, { headers: { 'X-Api-Key': KEY }, signal: AbortSignal.timeout(90000) });
       if (r.status === 404) return ok404 ? [] : null;
-      if (r.status === 429) { err = 'HTTP 429'; if (i >= 2) { const e = new Error('LIMIT'); e.limit = true; throw e; } await new Promise(z => setTimeout(z, 65000)); continue; }
+      if (r.status === 429) { err = 'HTTP 429'; if (Date.now() - T0 > 48 * 60000) { const e = new Error('LIMIT'); e.limit = true; throw e; } await new Promise(z => setTimeout(z, 70000)); continue; }
       if (!r.ok) { err = 'HTTP ' + r.status; await new Promise(z => setTimeout(z, 2500 * (i + 1))); continue; }
       return await r.json();
     } catch (e) { if (e.limit) throw e; err = e.message; await new Promise(z => setTimeout(z, 2500)); }
@@ -59,12 +60,12 @@ const stale = !doc.revisedAt || (Date.now() - new Date(doc.revisedAt).getTime())
 const queue = want.filter(m => !have.has(m));
 if (stale) for (const m of want.slice(0, 2)) if (have.has(m) && queue.indexOf(m) < 0) queue.unshift(m);
 console.log('meses pendientes:', queue.join(',') || 'ninguno');
-const BUDGET = 680; let used = 0;
+const BUDGET = 100000; let used = 0;
 async function pool(items, n, fn) { let i = 0; await Promise.all(Array.from({ length: n }, async () => { while (i < items.length) { const it = items[i++]; await fn(it); } })); }
 async function fetchMonth(mo) {
   const y = mo.slice(0, 4), mm = Number(mo.slice(4)), res = { ex: {}, im: {} }; let rows = 0;
   for (const [fk, ep] of [['ex', 'censusExports'], ['im', 'censusImports']]) {
-    await pool(plist, 5, async p => {
+    await pool(plist, 2, async p => {
       const arr = await get('/' + ep + '/partnerCode/' + p.code + '/year/' + y + '/month/' + mm); used++;
       for (const r of arr) {
         const g = groupOf(String(r.hS10Code || '').trim()); if (!g) continue;
@@ -88,7 +89,7 @@ function save() {
 doc.ex = doc.ex || {}; doc.im = doc.im || {}; doc.groups = GROUPS.map(g => g.id);
 let done = 0, stopped = '';
 for (const mo of queue) {
-  if (done && used + plist.length * 2 > BUDGET) { stopped = 'presupuesto de peticiones'; break; }
+  if (done && (used + plist.length * 2 > BUDGET || Date.now() - T0 > 45 * 60000)) { stopped = 'presupuesto de peticiones'; break; }
   try {
     const { res, rows } = await fetchMonth(mo);
     const tot = Object.values(res.ex).reduce((s, g) => s + Object.values(g).reduce((t, a) => t + a[0], 0), 0);
