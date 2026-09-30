@@ -1,5 +1,16 @@
-FPO error /data-products/food-price-outlook fetch failed
-costes error /data-products/commodity-costs-and-returns fetch failed
+FPO cpi 22 ppi 16 August 2025 to August 2026
+costes corn 759
+costes soybeans 825
+costes wheat 792
+costes cotton 764
+costes barley 605
+costes oats 616
+costes sorghum 479
+costes rice 583
+costes peanuts 595
+costes milk 781
+costes cow-calf 872
+costes hogs-all 624
 previsión costes 306
 renta agraria 4874 Data as of September 3, 2026.
-bytes 453755
+bytes 1308197
