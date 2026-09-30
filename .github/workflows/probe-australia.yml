@@ -1,0 +1,32 @@
+name: Probe Australia sources
+on: workflow_dispatch
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe
+        run: |
+          mkdir -p data/probe; o=data/probe/australia.txt; : > $o
+          p(){ echo "=== $1" >> $o; curl -sL -m 60 -A "Mozilla/5.0 DehesaIndex probe" -w "\nHTTP %{http_code} %{content_type} %{size_download}\n" "$1" | head -c ${2:-3000} >> $o; echo >> $o; }
+          p "https://data.gov.au/data/api/3/action/package_search?fq=organization:abares&rows=100&fl=name,title,license_id" 12000
+          p "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs" 400
+          curl -sL -m 60 "https://data.api.abs.gov.au/rest/dataflow/ABS?detail=allstubs" -H "Accept: application/vnd.sdmx.structure+json" | python3 -c "
+import sys,json
+try:
+  d=json.load(sys.stdin)
+  for f in d['data']['dataflows']:
+    n=f.get('name','')
+    if any(k in n.lower() for k in ['agri','crop','livestock','farm','commodit','export','trade in goods','price']): print(f['id'],n)
+except Exception as e: print('ERR',e)" >> $o
+          p "https://www.mla.com.au/prices-markets/statistics/api/" 6000
+          p "https://www.agriculture.gov.au/abares/data/weekly-commodity-price-update/australian-agricultural-prices" 6000
+          p "https://www.agriculture.gov.au/abares/research-topics/agricultural-outlook/data" 6000
+          p "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=T2M&community=AG&longitude=147&latitude=-35&format=JSON" 300
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/probe; git commit -qm "probe australia" ; git pull -q --rebase; git push
