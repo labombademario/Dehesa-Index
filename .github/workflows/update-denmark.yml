@@ -1,0 +1,29 @@
+name: Dehesa Data — Dinamarca (Statistics Denmark)
+on:
+  schedule:
+    - cron: '20 14 * * 2,5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Update Statistics Denmark prices
+        run: python scripts/update-dst-denmark.py | tee data/denmark-log.txt
+      - name: Commit
+        run: |
+          git config user.name "Dehesa Index Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/denmark-prices.json data/denmark-log.txt
+          git diff --cached --quiet || git commit -m "data: Dinamarca (Statistics Denmark, precios agrícolas)"
+          git pull --rebase origin main
+          git push
