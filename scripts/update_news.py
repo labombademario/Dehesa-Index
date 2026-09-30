@@ -19,10 +19,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]; DATA = ROOT / "data"; JS = ROOT / "js"
 DATA.mkdir(exist_ok=True)
 DAYS = 14            # ventana de antigüedad
-MAX_ITEMS = 400      # tope en news.json
-MAX_FEED = 300       # tope en js/news-feed.js (página Noticias)
+MAX_ITEMS = 600      # tope en news.json
+MAX_FEED = 450       # tope en js/news-feed.js (página Noticias)
 MAX_PER_FEED = 40    # máximo por feed antes de deduplicar
-MAX_PER_PUBLISHER = 18
+MAX_PER_PUBLISHER = 14
 INDEX_PER_KEY = 25
 UA = "DehesaIndex-NewsBot/1.0 (+https://dehesaindex.com)"
 
