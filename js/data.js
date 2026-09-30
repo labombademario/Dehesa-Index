@@ -139,7 +139,7 @@
   // isWood en precios.js).
   var CATS = {
     es: {
-      cereales: { label: 'Cereales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
+      cereales: { label: 'Cereales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
       lacteos: { label: 'Lácteos', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }] },
       ganado: { label: 'Ganado', sources: [{ name: 'CME Group (Live Cattle)', url: SRC_URL.cmeLiveCattle }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Porcino', sources: [{ name: 'USDA AMS (cerdo)', url: SRC_URL.usdaPork }, { name: 'Comisión Europea (porcino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
@@ -155,7 +155,7 @@
       madera: { label: 'Madera', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     en: {
-      cereales: { label: 'Grains', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
+      cereales: { label: 'Grains', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
       lacteos: { label: 'Dairy', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }] },
       ganado: { label: 'Livestock', sources: [{ name: 'CME Group (Live Cattle)', url: SRC_URL.cmeLiveCattle }, { name: 'European Commission', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Pork', sources: [{ name: 'USDA AMS (pork)', url: SRC_URL.usdaPork }, { name: 'European Commission (pigmeat)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
@@ -171,7 +171,7 @@
       madera: { label: 'Timber', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (UK)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     fr: {
-      cereales: { label: 'Céréales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
+      cereales: { label: 'Céréales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
       lacteos: { label: 'Produits laitiers', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }] },
       ganado: { label: 'Bétail', sources: [{ name: 'CME Group (Live Cattle)', url: SRC_URL.cmeLiveCattle }, { name: 'Commission européenne', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Porc', sources: [{ name: 'USDA AMS (porc)', url: SRC_URL.usdaPork }, { name: 'Commission européenne (porcin)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
@@ -187,7 +187,7 @@
       madera: { label: 'Bois', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
     it: {
-      cereales: { label: 'Cereali', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
+      cereales: { label: 'Cereali', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
       lacteos: { label: 'Lattiero-caseario', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }] },
       ganado: { label: 'Bestiame', sources: [{ name: 'CME Group (Live Cattle)', url: SRC_URL.cmeLiveCattle }, { name: 'Commissione europea', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Suini', sources: [{ name: 'USDA AMS (suino)', url: SRC_URL.usdaPork }, { name: 'Commissione europea (suino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
