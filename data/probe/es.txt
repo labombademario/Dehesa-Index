@@ -1,110 +1,156 @@
-LIC license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",             "schema:name": "precios-percibidos-csv",             "schema:url": "https://servicio.mapa.gob.es/ckan/datast
-LIC license": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",             "schema:name": "precios-percibidos-csv",             "schema:url": "https://servicio.mapa.gob.es/ckan/datast
-PERCIBIDO dump 6077312
- nrows 78973 cols ['_id', 'anio', 'mes', 'anio_base', 'categoria', 'grupo', 'producto', 'precio_mensual', 'precio_anual']
-  col _id 78973 ['1', '10', '100']
-  col anio 37 ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026']
-  col mes 12 ['1', '10', '11', '12', '2', '3', '4', '5', '6', '7', '8', '9']
-  col anio_base 7 ['1990', '1995', '2000', '2005', '2010', '2015', '2020']
-  col categoria 2 ['PRODUCTOS AGRICOLAS', 'PRODUCTOS ANIMALES']
-  col grupo 12 ['ACEITE DE OLIVA TOTAL', 'CEREALES', 'CULTIVOS FORRAJEROS', 'CULTIVOS INDUSTRIALES', 'FLORES Y PLANTAS ORNAMENTALES', 'FRUTAS', 'GANADO PARA ABASTO', 'HORTALIZAS', 'LEGUMINOSAS', 'PRODUCTOS GANADEROS', 'TUBERCULOS', 'VINO Y MOSTO']
-  col producto 132 ['ACEITE', 'ACEITUNA DE ALMAZARA', 'ACEITUNA PARA ADEREZO', 'ACELGA', 'AGUACATE', 'AJO SECO', 'ALBARICOQUE', 'ALBARICOQUE PARA CONSUMO FRESCO', 'ALCACHOFA', 'ALGODON BRUTO', 'ALGODON BRUTO SIN SUBVENCION', 'ALMENDRA', 'ARROZ', 'AVELLANA NEGRETTA', 'AVENA', 'AZAFRAN TOSTADO', 'A�OJOS', 'BATATA-BONIATO', 'BERENJENA', 'CABRITO LECHAL', 'CALABACIN', 'CAPRINO MAYOR (CABRAS)', 'CAQUI', 'CA�A DE AZUCAR', 'CEBADA', 'CEBOLLA', 'CENTENO', 'CERDAS DESVIEJE', 'CERDOS CEBADOS OTRAS RAZAS', 'CERDOS CEBADOS RAZA IBERICA', 'CEREZA', 'CHAMPI�ON', 'CHIRIMOYA', 'CHIVOS', 'CHUFA', 'CIRUELA', 'COL BROCULI', 'COL DE BRUSELAS', 'COL REPOLLO', 'COLIFLOR', 'CONEJOS', 'CORDERO LECHAL', 'CORDERO PASCUAL', 'CORDERO RECENTAL', 'ESCAROLA', 'ESPARRAGO', 'ESPINACA', 'FLOR CORTADA', 'FLOR CORTADA CLAVELES', 'FLOR CORTADA CRISANTEMOS', 'FLOR CORTADA ROSAS', 'FLOR EN TIESTO', 'FLOR EN TIESTO BEGONIAS', 'FLOR EN TIESTO GERANIOS', 'FLOR EN TIESTO PETUNIAS', 'FRESON', 'GALLINAS', 'GARBANZOS', 'GIRASOL', 'GRANADA', 'GUISANTE', 'HABA VERDE', 'HABAS SECAS', 'HENO DE ALFALFA', 'HENO DE VEZA', 'HIGOS Y BREVAS', 'HUEVOS DE GALLINA', 'JUDIA VERDE', 'JUDIAS SECAS', 'LANA', 'LECHE CABRA', 'LECHE OVEJA', 'LECHE VACA', 'LECHUGA', 'LENTEJAS', 'LIMON', 'LUPULO SECO', 'MAIZ', 'MANDARINA TOTAL', 'MANGO', 'MANZANA', 'MANZANA PARA CONSUMO FRESCO', 'MELOCOTON TOTAL', 'MELOCOTON TOTAL PARA CONSUMO FRESCO', 'MELON', 'MOSTO PARA CONSUMO DIRECTO', 'NARANJA', 'NARANJA  CONSUMO EN FRESCO', 'NISPERO', 'NOVILLAS (HEMB NO PARIDA >12M) ABASTO', 'NOVILLOS', 'OTRAS FLORES CORTADAS', 'OVINO MAYOR (OVEJAS)', 'PAPAYA', 'PATATA', 'PEPINO', 'PERA', 'PERA PARA CONSUMO FRESCO', 'PIMIENTO', 'PIMIENTO PARA PIMENTON (DESECADO)', 'PI�A TROPICAL', 'PLANTA ORNAMENTAL', 'PLANTA ORNAMENTAL CONIFERAS', 'PLANTA ORNAMENTAL HELECHOS', 'PLANTA ORNAMENTAL MIMOSA', 'PLANTA ORNAMENTAL ROSALES', 'PLATANO', 'POLLOS GRANJA', 'PUERRO', 'REMOLACHA AZUCARERA', 'SANDIA', 'SORGO', 'TABACO (SECO NO FERMENTADO)', 'TABACO SECO NO FERM. SIN SUBVENCION', 'TERNERAS', 'TERNEROS/AS<12M ABASTO', 'TOMATE', 'TOROS (MACHOS >12M) ABASTO', 'TRIGO', 'UVA DE MESA']
-  col precio_mensual 24393 ['0', '0.6', '1.12']
-  col precio_anual 5197 ['0', '1.89', '1.93']
-  row {'_id': '1', 'anio': '2026', 'mes': '1', 'anio_base': '2020', 'categoria': 'PRODUCTOS AGRICOLAS', 'grupo': 'CEREALES', 'producto': 'TRIGO', 'precio_mensual': '19.97', 'precio_anual': ''}
-  row {'_id': '2', 'anio': '2026', 'mes': '1', 'anio_base': '2020', 'categoria': 'PRODUCTOS AGRICOLAS', 'grupo': 'CEREALES', 'producto': 'ARROZ', 'precio_mensual': '30', 'precio_anual': ''}
-  row {'_id': '78972', 'anio': '1990', 'mes': '12', 'anio_base': '1990', 'categoria': 'PRODUCTOS ANIMALES', 'grupo': 'PRODUCTOS GANADEROS', 'producto': 'HUEVOS DE GALLINA', 'precio_mensual': '73.52', 'precio_anual': '69.84'}
-  row {'_id': '78973', 'anio': '1990', 'mes': '12', 'anio_base': '1990', 'categoria': 'PRODUCTOS ANIMALES', 'grupo': 'PRODUCTOS GANADEROS', 'producto': 'LANA', 'precio_mensual': '0', 'precio_anual': '43.5'}
- last year rows 760 [('TRIGO', '1', '19.97'), ('ARROZ', '1', '30'), ('CEBADA', '1', '19.73'), ('AVENA', '1', '16.93'), ('CENTENO', '1', '16.53'), ('MAIZ', '1', '21.71'), ('SORGO', '1', '21.38'), ('JUDIAS SECAS', '1', '411.29')]
-RECAN variables 55
-  var ('SE010', 'Mano de obra total (UTA) (SE010)', 'UTA/expl.')
-  var ('SE015', 'Mano de obra no asalariada (UTA) (SE015)', 'UTA/expl.')
-  var ('SE020', 'Mano de obra asalariada (UTA) (SE020)', 'UTA/expl.')
-  var ('SE025', 'Superficie Agraria Útil (SAU) (ha) (SE025)', 'ha/expl.')
-  var ('SE030', 'SAU en arrendamiento (ha) (SE030)', 'ha/expl.')
-  var ('SE080', 'Unidades de ganado (UG) (SE080)', 'UG/expl.')
-  var ('SE131', 'Producción Bruta Total (SE131)', '€/expl.')
-  var ('SE135', 'Producción Bruta Vegetal (SE135)', '€/expl.')
-  var ('SE136', 'Producción Bruta Vegetal/SAU (€/ha) (SE136)', '€/ha/expl.')
-  var ('SE206', 'Producción Bruta Animal (SE206)', '€/expl.')
-  var ('SE207', 'Producción Bruta Animal/UG (€/UG) (SE207)', '€/UG/expl.')
-  var ('SE256', 'Otra Producción Bruta (Incluye OAL) (SE256)', '€/expl.')
-  var ('SE270', 'Costes Totales (SE270)', '€/expl.')
-  var ('SE275', 'Consumos Intermedios (SE275)', '€/expl.')
-  var ('SE281', 'Costes específicos (SE281)', '€/expl.')
-  var ('SE282', 'Costes específicos de cultivos (SE282)', '€/expl.')
-  var ('SE283', 'Costes específicos de ganados (SE283)', '€/expl.')
-  var ('SE284', 'Costes Específicos Cultivos/SAU (€/ha) (SE284)', '€/ha/expl.')
-  var ('SE309', 'Costes Específicos Ganados/UG (€/UG) (SE309)', '€/UG/expl.')
-  var ('SE336', 'Costes generales (SE336)', '€/expl.')
-  var ('SE340', 'Mant. corriente maquinaria y edificios (SE340)', '€/expl.')
-  var ('SE345', 'Energía (SE345)', '€/expl.')
-  var ('SE350', 'Trabajos terceros y arrend. maquinaria (SE350)', '€/expl.')
-  var ('SE356', 'Otros costes generales (SE356)', '€/expl.')
-  var ('SE360', 'Amortizaciones (SE360)', '€/expl.')
-  var ('SE365', 'Costes factores externos (SE365)', '€/expl.')
-  var ('SE370', 'Salarios y cargas sociales (SE370)', '€/expl.')
-  var ('SE375', 'Arrendamientos pagados (SE375)', '€/expl.')
-  var ('SE380', 'Intereses pagados (SE380)', '€/expl.')
-  var ('SE410', 'Valor Añadido Bruto de explotación (SE410)', '€/expl.')
-  var ('SE415', 'Valor Añadido Neto de explotación (SE415)', '€/expl.')
-  var ('SE415M', 'Valor Añadido Neto de explotación (Mediana) (SE415M)', '€/expl.')
-  var ('SE420', 'Renta Neta de explotación (SE420)', '€/expl.')
-  var ('SE425', 'Valor Añadido Neto Explotación/UTA (SE425)', '€/UTA/expl.')
-  var ('SE425M', 'Valor Añadido Neto/UTA (euros/UTA) (Mediana) (SE425M)', '€/UTA/expl.')
-  var ('SE436', 'Activos totales (SE436)', '€/expl.')
-  var ('SE441', 'Capital Fijo (SE441)', '€/expl.')
-  var ('SE446', 'Tierras, cultivos permanentes y cuotas (SE446)', '€/expl.')
-  var ('SE450', 'Edificios y mejoras (SE450)', '€/expl.')
-  var ('SE455', 'Maquinaria y equipo (SE455)', '€/expl.')
-  var ('SE460', 'Ganado reproductor (SE460)', '€/expl.')
-  var ('SE465', 'Capital Circulante (SE465)', '€/expl.')
-  var ('SE485', 'Pasivos totales (SE485)', '€/expl.')
-  var ('SE490', 'Préstamos a Medio y Largo Plazo (SE490)', '€/expl.')
-  var ('SE495', 'Préstamos a Corto Plazo (SE495)', '€/expl.')
-  var ('SE600', 'Subvenciones corrientes Netas (SE600)', '€/expl.')
-  var ('SE605', 'Subvenciones Corrientes Totales (SE605)', '€/expl.')
-  var ('SE610', 'Cultivos (SE610)', '€/expl.')
-  var ('SE615', 'Ganados (SE615)', '€/expl.')
-  var ('SE624', 'Desarrollo Rural (SE624)', '€/expl.')
-  var ('SE630', 'Pagos desacoplados (SE630)', '€/expl.')
-  var ('SE689', 'Otras subvenciones (SE689)', '€/expl.')
-  var ('SE750', 'Costes de Otras Actividades Lucrativas (SE750)', '€/expl.')
-  var ('XSCVA', 'Subv. Corrientes Netas/Valor Añadido Neto (%)', '%/expl.')
-  var (None, None, None)
- tipos ['Aves', 'Bovinos de carne y cría de bovinos', 'Bovinos de carne, leche y cría de bovinos', 'Cereales, oleaginosas y proteaginosas', 'Cultivos permanentes combinados', 'Frutales', 'Granívoros diversos combinados', 'Horticultura', 'Mixto agricultura', 'Mixto agricultura y ganadería', 'Mixto ganadería', 'Olivar', 'Otros cultivos anuales extensivos', 'Ovino, caprino y otros herbívoros', 'Porcinos', 'Vacuno lechero', 'Vitivinicultura']
-INE 14 IPS Índices de Precios del Sector Servicios
-INE 15 IPV Índice de Precios de la Vivienda (IPV)
-INE 18 IPCA Índice de Precios de Consumo Armonizado (IPCA)
-INE 25 IPC Índice de Precios de Consumo (IPC)
-INE 27 IPRI Índices de Precios Industriales
-INE 48 IPRX-M Índices de Precios de Exportación y de Importación de Productos Industriales
-INE 61 IPAP Índice de Precios de Apartamentos Turísticos
-INE 62 IPAC Índice de Precios de Camping
-INE 63 IPTR Índice de Precios de Alojamientos de Turismo Rural
-INE 104 IMM Índices de Precios de Materiales y Energía e Índices Nacionales de la Mano de Obra
-INE 132 IPH Índice de Precios Hoteleros
-INE 137 IPT Índice de Precios del Trabajo
-INE 237 CNTR2010 Contabilidad Nacional Trimestral de España: Principales Agregados
-INE 241 EOTR Encuesta de Ocupación en Alojamientos de Turismo Rural
-INE 345 CNEAG Contabilidad nacional anual de España: agregados por rama de actividad
-INE 432 IPVA Índice de Precios de Vivienda en Alquiler
-DATOSGOB <!DOCTYPE html>
-<html>
-    <head>
-        <title>Página en mantenimiento</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Security-Policy" content="base-uri 'self'; default-src 'none'; form-action 'self'; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://use.fontawesome.com; frame-src 'self'; frame-ancestors 'none'; img-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net; media-src 'self'; script-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com;">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-        <!-- css -->
-        <link rel="stylesheet" href="maintenance.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-        
-    </head>
-    <body>
-        <div class="container">
-            <div>
-                <h1>Aviso de mantenimiento</h1>
-                <p>En estos momentos se están realizando tareas de mantenimiento. Volvemos pronto.</p>
-                <p>Perdonen las molestias.</p><br>
-                <i
+## esmapaindicespreciospreciopercibido
+NOTES Evolución nacional mensual y anual de los precios que percibe el agricultor y el ganadero por la venta de los productos agrarios que genera. Generalmente, los precios están referidos a salida de explotación agraria y no incluyen: gastos de transporte, subvenciones que pueden  recibir,  impuestos  indirectos ni tasas  que  pueden  gravar  las  transacciones  de  dichos productos en las que el agricultor o ganadero actúa como vendedor
+author None
+maintainer None
+url https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopercibido
+version 1.0
+license_url None
+temporal_start None
+frequency http://publications.europa.eu/resource/authority/frequency/MONTHLY
+extras [{"key": "keyword_translated_items", "value": "W3siZXMiOiAiUHJlY2lvIGRlIGxvcyBwcm9kdWN0b3MgYWdyYXJpb3MifSwgeyJlcyI6ICJBZ3JpY3VsdHVyYSJ9LCB7ImVzIjogIkdhbmFkZXLDrWEifSwgeyJlcyI6ICJFc3RhZMOtc3RpY2EgYWdyYXJpYSJ9LCB7ImVzIjogIkVzdGFkw61zdGljYXMifV0="}]
+RES {"created": "2026-09-29", "datastore_active": true, "description": "Distribución en CSV codificado en UTF-8", "id": "23939af3-475f-4a4b-b18e-48fa9dbc4f3b", "last_modified": null, "name": "precios-percibidos-csv"}
+FIELDS [{"id": "_id", "type": "int"}, {"id": "anio", "type": "int4"}, {"id": "mes", "type": "int4"}, {"id": "anio_base", "type": "int4"}, {"id": "categoria", "type": "text"}, {"id": "grupo", "type": "text"}, {"id": "producto", "type": "text"}, {"id": "precio_mensual", "type": "float8"}, {"id": "precio_anual", "type": "float8"}]
+## esmapaindicespreciospreciopagado
+NOTES Evolución nacional mensual  y anual de los índices de precios que percibe el agricultor y el ganadero por la venta de los productos agrarios que genera. Los índices constituyen una medida estadística que analiza las variaciones que se producen en los precios  con  respecto al año que se toma como base (años acabados en 0 y en 5).
+author None
+maintainer None
+url https://servicio.mapa.gob.es/ckan/dataset/esmapaindicespreciospreciopagado
+version 1.0
+license_url None
+temporal_start None
+frequency http://publications.europa.eu/resource/authority/frequency/MONTHLY
+extras [{"key": "keyword_translated_items", "value": "W3siZXMiOiAiUHJlY2lvIGRlIGxvcyBwcm9kdWN0b3MgYWdyYXJpb3MifSwgeyJlcyI6ICJBZ3JpY3VsdHVyYSJ9LCB7ImVzIjogIkdhbmFkZXLDrWEifSwgeyJlcyI6ICJFc3RhZMOtc3RpY2EgYWdyYXJpYSJ9LCB7ImVzIjogIkVzdGFkw61zdGljYXMifV0="}]
+RES {"created": "2026-09-29", "datastore_active": true, "description": "Distribución en CSV codificado en UTF-8", "id": "bb45def4-7841-4fa8-9a56-b7f959a9a951", "last_modified": null, "name": "precios-pagados-csv"}
+FIELDS [{"id": "_id", "type": "int"}, {"id": "anio", "type": "int4"}, {"id": "mes", "type": "int4"}, {"id": "anio_base", "type": "int4"}, {"id": "categoria", "type": "text"}, {"id": "grupo", "type": "text"}, {"id": "producto", "type": "text"}, {"id": "precio_mensual", "type": "float8"}, {"id": "precio_anual", "type": "float8"}]
+PROD ('ACEITE DE OLIVA TOTAL', 'ACEITE') n= 644 first (1995, 1) last (2026, 8, '0') nonzero 630
+PROD ('ACEITE DE OLIVA TOTAL', 'ACEITUNA DE ALMAZARA') n= 639 first (1995, 1) last (2026, 8, '0') nonzero 366
+PROD ('CEREALES', 'ARROZ') n= 787 first (1990, 1) last (2026, 8, '0') nonzero 645
+PROD ('CEREALES', 'AVENA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 733
+PROD ('CEREALES', 'CEBADA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 755
+PROD ('CEREALES', 'CENTENO') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 712
+PROD ('CEREALES', 'MAIZ') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 717
+PROD ('CEREALES', 'SORGO') n= 783 first (1990, 1) last (2026, 8, '0') nonzero 399
+PROD ('CEREALES', 'TRIGO') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 758
+PROD ('CULTIVOS FORRAJEROS', 'HENO DE ALFALFA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 756
+PROD ('CULTIVOS FORRAJEROS', 'HENO DE VEZA') n= 786 first (1990, 1) last (2026, 8, '0') nonzero 622
+PROD ('CULTIVOS INDUSTRIALES', 'ACEITUNA PARA ADEREZO') n= 782 first (1990, 1) last (2026, 8, '0') nonzero 241
+PROD ('CULTIVOS INDUSTRIALES', 'ALGODON BRUTO') n= 144 first (1990, 1) last (2001, 12, '94.28') nonzero 72
+PROD ('CULTIVOS INDUSTRIALES', 'ALGODON BRUTO SIN SUBVENCION') n= 639 first (1995, 1) last (2026, 8, '0') nonzero 198
+PROD ('CULTIVOS INDUSTRIALES', 'AZAFRAN TOSTADO') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 709
+PROD ('CULTIVOS INDUSTRIALES', 'CA�A DE AZUCAR') n= 360 first (1990, 1) last (2008, 12, '0') nonzero 78
+PROD ('CULTIVOS INDUSTRIALES', 'GIRASOL') n= 785 first (1990, 1) last (2026, 8, '0') nonzero 500
+PROD ('CULTIVOS INDUSTRIALES', 'LUPULO SECO') n= 484 first (1990, 1) last (2015, 10, '') nonzero 52
+PROD ('CULTIVOS INDUSTRIALES', 'PIMIENTO PARA PIMENTON (DESECADO)') n= 487 first (1990, 1) last (2015, 12, '') nonzero 190
+PROD ('CULTIVOS INDUSTRIALES', 'REMOLACHA AZUCARERA') n= 786 first (1990, 1) last (2026, 8, '0') nonzero 571
+PROD ('CULTIVOS INDUSTRIALES', 'TABACO (SECO NO FERMENTADO)') n= 144 first (1990, 1) last (2001, 12, '328.21') nonzero 72
+PROD ('CULTIVOS INDUSTRIALES', 'TABACO SECO NO FERM. SIN SUBVENCION') n= 639 first (1995, 1) last (2026, 8, '0') nonzero 300
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'FLOR CORTADA') n= 108 first (1995, 1) last (2003, 12, '340.43') nonzero 108
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'FLOR CORTADA CLAVELES') n= 680 first (1990, 1) last (2026, 8, '0') nonzero 666
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'FLOR CORTADA CRISANTEMOS') n= 384 first (1990, 1) last (2015, 12, '') nonzero 372
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'FLOR CORTADA ROSAS') n= 680 first (1990, 1) last (2026, 8, '0') nonzero 666
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'FLOR EN TIESTO') n= 404 first (1995, 1) last (2026, 8, '0') nonzero 399
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'FLOR EN TIESTO BEGONIAS') n= 384 first (1990, 1) last (2015, 12, '') nonzero 372
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'FLOR EN TIESTO GERANIOS') n= 384 first (1990, 1) last (2015, 12, '') nonzero 372
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'FLOR EN TIESTO PETUNIAS') n= 384 first (1990, 1) last (2015, 12, '') nonzero 372
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'OTRAS FLORES CORTADAS') n= 296 first (2010, 1) last (2026, 8, '0') nonzero 291
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'PLANTA ORNAMENTAL') n= 404 first (1995, 1) last (2026, 8, '0') nonzero 399
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'PLANTA ORNAMENTAL CONIFERAS') n= 384 first (1990, 1) last (2015, 12, '') nonzero 323
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'PLANTA ORNAMENTAL HELECHOS') n= 384 first (1990, 1) last (2015, 12, '') nonzero 372
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'PLANTA ORNAMENTAL MIMOSA') n= 384 first (1990, 1) last (2015, 12, '') nonzero 300
+PROD ('FLORES Y PLANTAS ORNAMENTALES', 'PLANTA ORNAMENTAL ROSALES') n= 384 first (1990, 1) last (2015, 12, '') nonzero 336
+PROD ('FRUTAS', 'AGUACATE') n= 644 first (1995, 1) last (2026, 8, '0') nonzero 613
+PROD ('FRUTAS', 'ALBARICOQUE') n= 487 first (1990, 1) last (2015, 8, '') nonzero 151
+PROD ('FRUTAS', 'ALBARICOQUE PARA CONSUMO FRESCO') n= 293 first (2010, 1) last (2026, 8, '0') nonzero 102
+PROD ('FRUTAS', 'ALMENDRA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 762
+PROD ('FRUTAS', 'AVELLANA NEGRETTA') n= 785 first (1990, 1) last (2026, 8, '0') nonzero 516
+PROD ('FRUTAS', 'CAQUI') n= 342 first (1995, 1) last (2015, 11, '') nonzero 84
+PROD ('FRUTAS', 'CEREZA') n= 780 first (1990, 1) last (2026, 8, '0') nonzero 250
+PROD ('FRUTAS', 'CHIRIMOYA') n= 638 first (1995, 1) last (2026, 8, '0') nonzero 276
+PROD ('FRUTAS', 'CIRUELA') n= 784 first (1990, 1) last (2026, 8, '0') nonzero 346
+PROD ('FRUTAS', 'FRESON') n= 785 first (1990, 1) last (2026, 8, '0') nonzero 620
+PROD ('FRUTAS', 'GRANADA') n= 343 first (1995, 1) last (2015, 11, '') nonzero 112
+PROD ('FRUTAS', 'HIGOS Y BREVAS') n= 640 first (1995, 1) last (2026, 8, '0') nonzero 319
+PROD ('FRUTAS', 'LIMON') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 771
+PROD ('FRUTAS', 'MANDARINA TOTAL') n= 785 first (1990, 1) last (2026, 8, '0') nonzero 603
+PROD ('FRUTAS', 'MANGO') n= 346 first (1995, 1) last (2015, 12, '') nonzero 207
+PROD ('FRUTAS', 'MANZANA') n= 489 first (1990, 1) last (2015, 12, '') nonzero 450
+PROD ('FRUTAS', 'MANZANA PARA CONSUMO FRESCO') n= 296 first (2010, 1) last (2026, 8, '0') nonzero 250
+PROD ('FRUTAS', 'MELOCOTON TOTAL') n= 490 first (1990, 1) last (2015, 10, '') nonzero 310
+PROD ('FRUTAS', 'MELOCOTON TOTAL PARA CONSUMO FRESCO') n= 295 first (2010, 1) last (2026, 8, '0') nonzero 178
+PROD ('FRUTAS', 'NARANJA') n= 492 first (1990, 1) last (2015, 12, '') nonzero 482
+PROD ('FRUTAS', 'NARANJA  CONSUMO EN FRESCO') n= 296 first (2010, 1) last (2026, 8, '0') nonzero 251
+PROD ('FRUTAS', 'NISPERO') n= 635 first (1995, 1) last (2026, 8, '0') nonzero 187
+PROD ('FRUTAS', 'PAPAYA') n= 348 first (1995, 1) last (2015, 12, '') nonzero 336
+PROD ('FRUTAS', 'PERA') n= 491 first (1990, 1) last (2015, 12, '') nonzero 479
+PROD ('FRUTAS', 'PERA PARA CONSUMO FRESCO') n= 296 first (2010, 1) last (2026, 8, '0') nonzero 275
+PROD ('FRUTAS', 'PI�A TROPICAL') n= 348 first (1995, 1) last (2015, 12, '') nonzero 336
+PROD ('FRUTAS', 'PLATANO') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('FRUTAS', 'UVA DE MESA') n= 786 first (1990, 1) last (2026, 8, '0') nonzero 424
+PROD ('FRUTAS', 'UVA PASA') n= 484 first (1990, 1) last (2015, 11, '') nonzero 64
+PROD ('GANADO PARA ABASTO', 'A�OJOS') n= 492 first (1990, 1) last (2015, 12, '') nonzero 480
+PROD ('GANADO PARA ABASTO', 'CABRITO LECHAL') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'CAPRINO MAYOR (CABRAS)') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'CERDAS DESVIEJE') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'CERDOS CEBADOS OTRAS RAZAS') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'CERDOS CEBADOS RAZA IBERICA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'CHIVOS') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'CONEJOS') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'CORDERO LECHAL') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'CORDERO PASCUAL') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'CORDERO RECENTAL') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'GALLINAS') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'NOVILLAS (HEMB NO PARIDA >12M) ABASTO') n= 296 first (2010, 1) last (2026, 8, '0') nonzero 291
+PROD ('GANADO PARA ABASTO', 'NOVILLOS') n= 492 first (1990, 1) last (2015, 12, '') nonzero 480
+PROD ('GANADO PARA ABASTO', 'OVINO MAYOR (OVEJAS)') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'POLLOS GRANJA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('GANADO PARA ABASTO', 'TERNERAS') n= 492 first (1990, 1) last (2015, 12, '') nonzero 480
+PROD ('GANADO PARA ABASTO', 'TERNEROS/AS<12M ABASTO') n= 296 first (2010, 1) last (2026, 8, '0') nonzero 291
+PROD ('GANADO PARA ABASTO', 'TOROS (MACHOS >12M) ABASTO') n= 296 first (2010, 1) last (2026, 8, '0') nonzero 291
+PROD ('GANADO PARA ABASTO', 'VACAS (PARIDAS) ABASTO') n= 296 first (2010, 1) last (2026, 8, '0') nonzero 291
+PROD ('GANADO PARA ABASTO', 'VACUNO MAYOR') n= 492 first (1990, 1) last (2015, 12, '') nonzero 480
+PROD ('HORTALIZAS', 'ACELGA') n= 296 first (2010, 1) last (2026, 8, '0') nonzero 291
+PROD ('HORTALIZAS', 'AJO SECO') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 662
+PROD ('HORTALIZAS', 'ALCACHOFA') n= 786 first (1990, 1) last (2026, 8, '0') nonzero 642
+PROD ('HORTALIZAS', 'BERENJENA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('HORTALIZAS', 'CALABACIN') n= 644 first (1995, 1) last (2026, 8, '0') nonzero 630
+PROD ('HORTALIZAS', 'CEBOLLA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 771
+PROD ('HORTALIZAS', 'CHAMPI�ON') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('HORTALIZAS', 'COL BROCULI') n= 348 first (1995, 1) last (2015, 12, '') nonzero 276
+PROD ('HORTALIZAS', 'COL DE BRUSELAS') n= 342 first (1995, 1) last (2015, 12, '') nonzero 162
+PROD ('HORTALIZAS', 'COL REPOLLO') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 755
+PROD ('HORTALIZAS', 'COLIFLOR') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 685
+PROD ('HORTALIZAS', 'ESCAROLA') n= 639 first (1995, 1) last (2026, 8, '0') nonzero 393
+PROD ('HORTALIZAS', 'ESPARRAGO') n= 780 first (1990, 1) last (2026, 8, '0') nonzero 394
+PROD ('HORTALIZAS', 'ESPINACA') n= 787 first (1990, 1) last (2026, 8, '0') nonzero 725
+PROD ('HORTALIZAS', 'GUISANTE') n= 780 first (1990, 1) last (2026, 8, '0') nonzero 507
+PROD ('HORTALIZAS', 'HABA VERDE') n= 783 first (1990, 1) last (2026, 8, '0') nonzero 513
+PROD ('HORTALIZAS', 'JUDIA VERDE') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 771
+PROD ('HORTALIZAS', 'LECHUGA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 771
+PROD ('HORTALIZAS', 'MELON') n= 786 first (1990, 1) last (2026, 8, '0') nonzero 539
+PROD ('HORTALIZAS', 'PEPINO') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('HORTALIZAS', 'PIMIENTO') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 771
+PROD ('HORTALIZAS', 'PUERRO') n= 644 first (1995, 1) last (2026, 8, '0') nonzero 630
+PROD ('HORTALIZAS', 'SANDIA') n= 781 first (1990, 1) last (2026, 8, '0') nonzero 401
+PROD ('HORTALIZAS', 'TOMATE') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 771
+PROD ('HORTALIZAS', 'ZANAHORIA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('LEGUMINOSAS', 'GARBANZOS') n= 786 first (1990, 1) last (2026, 8, '0') nonzero 535
+PROD ('LEGUMINOSAS', 'HABAS SECAS') n= 643 first (1995, 1) last (2026, 8, '0') nonzero 471
+PROD ('LEGUMINOSAS', 'JUDIAS SECAS') n= 787 first (1990, 1) last (2026, 8, '0') nonzero 619
+PROD ('LEGUMINOSAS', 'LENTEJAS') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 666
+PROD ('LEGUMINOSAS', 'VEZA GRANO') n= 643 first (1995, 1) last (2026, 8, '0') nonzero 468
+PROD ('LEGUMINOSAS', 'YEROS') n= 644 first (1995, 1) last (2026, 8, '0') nonzero 521
+PROD ('PRODUCTOS GANADEROS', 'HUEVOS DE GALLINA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 771
+PROD ('PRODUCTOS GANADEROS', 'LANA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 711
+PROD ('PRODUCTOS GANADEROS', 'LECHE CABRA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('PRODUCTOS GANADEROS', 'LECHE OVEJA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('PRODUCTOS GANADEROS', 'LECHE VACA') n= 788 first (1990, 1) last (2026, 8, '0') nonzero 774
+PROD ('TUBERCULOS', 'BATATA-BONIATO') n= 348 first (1995, 1) last (2015, 12, '') nonzero 337
+PROD ('TUBERCULOS', 'CHUFA') n= 345 first (1995, 1) last (2015, 12, '') nonzero 196
+PROD ('TUBERCULOS', 'PATATA') n= 644 first (1995, 1) last (2026, 8, '0') nonzero 627
+PROD ('VINO Y MOSTO', 'MOSTO PARA CONSUMO DIRECTO') n= 782 first (1990, 1) last (2026, 8, '0') nonzero 417
+PROD ('VINO Y MOSTO', 'VINO') n= 252 first (1990, 1) last (2003, 12, '3.69') nonzero 252
+PROD ('VINO Y MOSTO', 'VINO BLANCO') n= 296 first (2010, 1) last (2026, 8, '0') nonzero 292
+PROD ('VINO Y MOSTO', 'VINO NUEVO BLANCO') n= 240 first (2000, 1) last (2015, 12, '') nonzero 228
+PROD ('VINO Y MOSTO', 'VINO NUEVO TINTO') n= 240 first (2000, 1) last (2015, 12, '') nonzero 228
+PROD ('VINO Y MOSTO', 'VINO ROSADO Y CLARETE') n= 240 first (2000, 1) last (2015, 12, '') nonzero 228
+PROD ('VINO Y MOSTO', 'VINO TINTO Y ROS-CLAR') n= 296 first (2010, 1) last (2026, 8, '0') nonzero 292
