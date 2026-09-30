@@ -116,6 +116,7 @@ function build(cfg, sections) {
       dims[k] = sv;
     }
     let a = avg, l = lo, h = hi, u = unit;
+    if (!u && cfg.fam === 'fv') u = 'USD per package (see Package)';
     if (a === null && l === null && h === null) { if (blo !== null || bhi !== null) { l = blo; h = bhi; u = 'Basis ' + (bunit || unit || ''); } else { skippedSecs[sec] = (skippedSecs[sec] || 0) + 1; continue; } }
     const d = iso(r.report_end_date) || iso(r.report_date);
     if (!d || !u) { skippedSecs[sec] = (skippedSecs[sec] || 0) + 1; continue; }
@@ -126,7 +127,7 @@ function build(cfg, sections) {
   const names = new Set(); recs.forEach(x => Object.keys(x.dims).forEach(k => names.add(k)));
   const keep = [];
   for (const k of names) { const vals = new Set(recs.map(x => x.dims[k] === undefined ? '' : x.dims[k])); if (vals.size > 1) keep.push(k); }
-  const RANK = [/^commodity$|^commod$/, /^item$/, /^class$|^type$|^eggtype$|^variety$/, /^grade$|^protein$|^quality$|^primal$|^description$|^size$|^condition$|^color$|^environment$/, /location|region|state|market|origin|destination|^tradeloc/, /^quotetype$|^saletype$|^purchasetype$|^freight|^transmode$|^package|^pkg$|^sec$/];
+  const RANK = [/^commodity$|^commod$/, /^item$/, /^class$|^type$|^eggtype$|^variety$|^var$/, /^grade$|^protein$|^quality$|^primal$|^description$|^size$|^condition$|^color$|^environment$/, /location|region|state|market|origin|destination|^tradeloc/, /^quotetype$|^saletype$|^purchasetype$|^freight|^transmode$|^package|^pkg$|^sec$/];
   const rk = k => { const n = norm(k); for (let i = 0; i < RANK.length; i++) if (RANK[i].test(n)) return i; return 3.5; };
   keep.sort((a, b) => rk(a) - rk(b) || a.localeCompare(b));
   const map = new Map();
@@ -158,7 +159,7 @@ function build(cfg, sections) {
 
 function windowFor(cfg) {
   const t = new Date();
-  const f = new Date(t.getTime() - (cfg.f === 'd' ? 130 : 760) * 864e5);
+  const f = new Date(t.getTime() - (cfg.fam === 'fv' ? 40 : cfg.f === 'd' ? 130 : 760) * 864e5);
   const p = d => String(d.getUTCMonth() + 1).padStart(2, '0') + '/' + String(d.getUTCDate()).padStart(2, '0') + '/' + d.getUTCFullYear();
   return [p(f), p(t)];
 }
@@ -177,10 +178,10 @@ async function main() {
       const [from, to] = windowFor(cfg);
       const secs = await get(cfg.id, from, to);
       const b = build(cfg, secs);
-      const maxPts = cfg.f === 'd' ? 130 : 110;
+      const maxPts = cfg.fam === 'fv' ? 30 : cfg.f === 'd' ? 130 : 110;
       const latest = b.series.reduce((m, s) => s.p[s.p.length - 1][0] > m ? s.p[s.p.length - 1][0] : m, '');
-      const cutoff = new Date(Date.now() - (cfg.f === 'd' ? 150 : 400) * 864e5).toISOString().slice(0, 10);
-      const series = b.series.filter(s => s.p[s.p.length - 1][0] >= cutoff).map(s => ({ ...s, p: s.p.slice(-maxPts) }));
+      const cutoff = new Date(Date.now() - (cfg.fam === 'fv' ? 7 : cfg.f === 'd' ? 150 : 400) * 864e5).toISOString().slice(0, 10);
+      const series = b.series.filter(s => s.p[s.p.length - 1][0] >= cutoff && (cfg.fam !== 'fv' || s.p.length >= 3)).map(s => ({ ...s, p: s.p.slice(-maxPts) }));
       series.sort((x, y) => x.v.join('|').localeCompare(y.v.join('|')));
       if (!series.length) { log.push(cfg.id + ' SIN SERIES (filas ' + b.nrows + ', secciones sin precio ' + JSON.stringify(b.skippedSecs) + ')'); bad++; return; }
       const doc = { id: cfg.id, title: b.title || ('Informe ' + cfg.id), fam: cfg.fam, freq: cfg.f, dn: b.dn, lastDate: latest, updated: new Date().toISOString(), series };
