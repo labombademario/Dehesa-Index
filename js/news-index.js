@@ -300,6 +300,125 @@
    ]
   },
   {
+   "id": "auto-204009ea15",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "precios",
+    "energia"
+   ],
+   "products": [
+    "colza",
+    "energia"
+   ],
+   "source": "електронна зернова біржа України",
+   "lang": "en",
+   "headline": {
+    "en": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "es": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "fr": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "it": "Palm and sunflower oil prices fall due to seasonal supply increases"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNeXE1bVluUnRBYkFuUjNOelR1Rk5FNDhJNXpaRTZyRExUUzhScVNpS2tSbWw2cWVkWXF2SDJqWHVCajNNN1g1MFZJdThzY3UwNi0xR203UVJOMzcyRTVsd1VrOWMyU2RHT00ycFVkRU0zSmdWMTZRTzctQzA2WTlDTGJXMDZkcm5tbDlVcUhJMGpQUDhwWHhlMHJHa1doYXhWTHhZQnBQczhwS2lzRGlLeHlmYXBNcVgwZHdmTXdsMlB6Nk0tWXNyeFFuQTg?oc=5",
+   "relevance": 76,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "colza",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-6e5460a58f",
+   "date": "2026-09-30",
+   "region": "ca",
+   "topic": "energia",
+   "topics": [
+    "energia",
+    "costes"
+   ],
+   "products": [
+    "leche",
+    "diesel"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "es": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "fr": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "it": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNT05XN1R6bjB5U0xSYzB2TEkwTjQtWGJBSEZBOVNlMXVYbkpTT2QyanFhQTlpYmdDdzZmSHU4Um1pY2oyMmJueTlrREhfNGpISlJkMEt2ci0wMDY3T2Q4QVBOdkgwS055bFRHVzl4djh6MXBZTjJxaXVNV084VGNZOERKMEJrNmE5?oc=5",
+   "relevance": 70,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "leche",
+     "channel": "input_cost",
+     "relation": "energy-milk",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-c9954e9f64",
    "date": "2026-09-30",
    "region": "global",
@@ -790,6 +909,82 @@
    ]
   },
   {
+   "id": "auto-d374ee6375",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "costes"
+   ],
+   "products": [
+    "costes"
+   ],
+   "source": "Farmdoc Daily",
+   "lang": "en",
+   "headline": {
+    "en": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "es": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "fr": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "it": "Rethinking Phosphorus and Potassium, Part 3: Economics"
+   },
+   "description": "Grain nutrient concentrations can vary across the farm and may provide an opportunity to cut input costs this fall. Soil test values can vary due to sampling time and lab procedures; it may be worthwhile to monitor the variability of soil test values by sampling at different time",
+   "url": "https://farmdocdaily.illinois.edu/2026/09/rethinking-phosphorus-and-potassium-part-3-economics.html",
+   "relevance": 52,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-c7fd7788af",
    "date": "2026-09-30",
    "region": "eu",
@@ -945,6 +1140,56 @@
    "description": "A New South Wales red meat processor has implemented a staged heat recovery system that reduces natural gas consumption, improves refrigeration efficiency and removes the need for a major boiler upgrade.",
    "url": "https://www.beefcentral.com/processing/big-energy-savings-reduced-carbon-footprint-through-heat-recycling-at-gundagai-meat-processors/",
    "relevance": 46,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-a67e2b6d9f",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "clima",
+   "topics": [
+    "clima",
+    "oferta"
+   ],
+   "products": [],
+   "source": "Agriland",
+   "lang": "en",
+   "headline": {
+    "en": "Farmers alerted to worsening soil conditions",
+    "es": "Farmers alerted to worsening soil conditions",
+    "fr": "Farmers alerted to worsening soil conditions",
+    "it": "Farmers alerted to worsening soil conditions"
+   },
+   "description": "Farmers may need to factor deteriorating ground conditions into grazing, slurry spreading and fieldwork decisions with unsettled weather forecast. According to Met Éireann soils are saturated or close to saturation while moderately and poorly drained soils across the northwest, m",
+   "url": "https://www.agriland.ie/farming-news/farmers-alerted-to-worsening-soil-conditions/",
+   "relevance": 42,
    "auto": true,
    "impactChannel": "input_cost",
    "marketLinks": [
@@ -1225,256 +1470,6 @@
      "market": "maiz",
      "channel": "supply",
      "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-f2de77b642",
-   "date": "2026-09-29",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "oferta",
-    "energia",
-    "costes"
-   ],
-   "products": [
-    "fertilizantes",
-    "energia"
-   ],
-   "source": "AgroSpectrum India",
-   "lang": "en",
-   "headline": {
-    "en": "Global fertilizer trade hits $81 Bn as energy volatility, Strait of Hormuz disruptions and geopolitical risks reshape supply chains: FAO",
-    "es": "Global fertilizer trade hits $81 Bn as energy volatility, Strait of Hormuz disruptions and geopolitical risks reshape supply chains: FAO",
-    "fr": "Global fertilizer trade hits $81 Bn as energy volatility, Strait of Hormuz disruptions and geopolitical risks reshape supply chains: FAO",
-    "it": "Global fertilizer trade hits $81 Bn as energy volatility, Strait of Hormuz disruptions and geopolitical risks reshape supply chains: FAO"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxNTk00R0R6NnoyMGd4LWdGZmlmczNGZENEOWU0M0paaXpfcEJ0dEVZS29zQjBXNjV0S3hsR3pzSE1ucVFhNk9HcDlyMUc4aVpWNlRrX2JVTmtpQ3lkOGkzZ1ZtSWJBbElrUTZzaWlWOUw3RjRMZDNIelEtdTljVUZGSldUeERzQXVKWXZJeElBbnlBMDNKR0J5cXhiZ29NVnpqSGtUV3BzNEF5NWM5ZnlUVDJSbTh2Skd5QnZLWDhPb0UwdVpvNXY3WTI3TDFxR0duWENxMVBpVkZKRXM1ZWJsMDhFVGR4YlZFeVhhSDVER3NoR2k5Q1k2cGtRZGl3SER5Tmc0eWlzdVVKcHFuV2lv?oc=5",
-   "relevance": 82,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-7064b6d4c6",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "energia",
-   "topics": [
-    "energia",
-    "costes"
-   ],
-   "products": [
-    "vaca",
-    "cordero",
-    "diesel"
-   ],
-   "source": "Agriland",
-   "lang": "en",
-   "headline": {
-    "en": "ICSA demands scrapping carbon tax on green diesel in Budget 2027",
-    "es": "ICSA demands scrapping carbon tax on green diesel in Budget 2027",
-    "fr": "ICSA demands scrapping carbon tax on green diesel in Budget 2027",
-    "it": "ICSA demands scrapping carbon tax on green diesel in Budget 2027"
-   },
-   "description": "The Irish Cattle and Sheep Farmers’ Association (ICSA) has demanded the abolition of carbon tax for green diesel in Budget 2027. The farm organisation has set out a list of demands on fuel ahead of next week’s budget. Edmond Phelan, the association’s rural development chairperson",
-   "url": "https://www.agriland.ie/farming-news/icsa-demands-scrapping-carbon-tax-on-green-diesel-in-budget-2027/",
-   "relevance": 80,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-fec5177264",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "trigo",
-    "maiz",
-    "energia"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "Le prix du blé recule dans le sillage du pétrole, le maïs résiste mieux",
-    "es": "Le prix du blé recule dans le sillage du pétrole, le maïs résiste mieux",
-    "fr": "Le prix du blé recule dans le sillage du pétrole, le maïs résiste mieux",
-    "it": "Le prix du blé recule dans le sillage du pétrole, le maïs résiste mieux"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVTQ2ekxvM25heVh4ZVFIRWNiaXpqdjdzVmVncTBQSGdUSEhXUnpvWE9IOUNzTjlBMy1ZU2VOazR2b0VTbklDRXpyMTVBM1lkQ3RwWXNOV2lFX2NHbG1YLWZJQ1dUbDlfeXk5alBYV0RONGFOOEx4WHlZcnRfQy04SkFpemlfNGlaYU96RTZ0eXBQSktmS0M2anNFdHV3bU1iUm9WVg?oc=5",
-   "relevance": 74,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-6c70b01617",
-   "date": "2026-09-29",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "energia"
-   ],
-   "products": [
-    "energia"
-   ],
-   "source": "Reuters",
-   "lang": "en",
-   "headline": {
-    "en": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition",
-    "es": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition",
-    "fr": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition",
-    "it": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNW1fS1c5RmstV3VOaDMya3NQSjlTTE5NNGdteVU4b0JJdGM2aUpVaHk4LVRJRjdBeE9BejE3YjZoQ08yenNKNlBveXNIUXVhd0g5ajRtSlA2alQ0YkViZWx5WmRqbXQzandfS2VGWEszMFhKeHJkcWV6RGVpZnc4NTFXLWJ1Sk1UTkZHT1hHV2tfRlFnQ1Q4NGczUTVRLTRpSGxWRUlLckY2SHJCZFpFQzh5TFVGYlRKTWRlcWVhdzlkLUU1WVNzV1NVcmxqUQ?oc=5",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
      "direction": "uncertain"
     }
    ]
@@ -1817,6 +1812,125 @@
      "market": "colza",
      "channel": "supply",
      "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-204009ea15",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "precios",
+    "energia"
+   ],
+   "products": [
+    "colza",
+    "energia"
+   ],
+   "source": "електронна зернова біржа України",
+   "lang": "en",
+   "headline": {
+    "en": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "es": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "fr": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "it": "Palm and sunflower oil prices fall due to seasonal supply increases"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNeXE1bVluUnRBYkFuUjNOelR1Rk5FNDhJNXpaRTZyRExUUzhScVNpS2tSbWw2cWVkWXF2SDJqWHVCajNNN1g1MFZJdThzY3UwNi0xR203UVJOMzcyRTVsd1VrOWMyU2RHT00ycFVkRU0zSmdWMTZRTzctQzA2WTlDTGJXMDZkcm5tbDlVcUhJMGpQUDhwWHhlMHJHa1doYXhWTHhZQnBQczhwS2lzRGlLeHlmYXBNcVgwZHdmTXdsMlB6Nk0tWXNyeFFuQTg?oc=5",
+   "relevance": 76,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "colza",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-6e5460a58f",
+   "date": "2026-09-30",
+   "region": "ca",
+   "topic": "energia",
+   "topics": [
+    "energia",
+    "costes"
+   ],
+   "products": [
+    "leche",
+    "diesel"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "es": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "fr": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "it": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNT05XN1R6bjB5U0xSYzB2TEkwTjQtWGJBSEZBOVNlMXVYbkpTT2QyanFhQTlpYmdDdzZmSHU4Um1pY2oyMmJueTlrREhfNGpISlJkMEt2ci0wMDY3T2Q4QVBOdkgwS055bFRHVzl4djh6MXBZTjJxaXVNV084VGNZOERKMEJrNmE5?oc=5",
+   "relevance": 70,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "leche",
+     "channel": "input_cost",
+     "relation": "energy-milk",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
      "direction": "uncertain"
     }
    ]
@@ -2247,6 +2361,82 @@
    ]
   },
   {
+   "id": "auto-d374ee6375",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "costes"
+   ],
+   "products": [
+    "costes"
+   ],
+   "source": "Farmdoc Daily",
+   "lang": "en",
+   "headline": {
+    "en": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "es": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "fr": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "it": "Rethinking Phosphorus and Potassium, Part 3: Economics"
+   },
+   "description": "Grain nutrient concentrations can vary across the farm and may provide an opportunity to cut input costs this fall. Soil test values can vary due to sampling time and lab procedures; it may be worthwhile to monitor the variability of soil test values by sampling at different time",
+   "url": "https://farmdocdaily.illinois.edu/2026/09/rethinking-phosphorus-and-potassium-part-3-economics.html",
+   "relevance": 52,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-c7fd7788af",
    "date": "2026-09-30",
    "region": "eu",
@@ -2371,6 +2561,56 @@
    "description": "A New South Wales red meat processor has implemented a staged heat recovery system that reduces natural gas consumption, improves refrigeration efficiency and removes the need for a major boiler upgrade.",
    "url": "https://www.beefcentral.com/processing/big-energy-savings-reduced-carbon-footprint-through-heat-recycling-at-gundagai-meat-processors/",
    "relevance": 46,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-a67e2b6d9f",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "clima",
+   "topics": [
+    "clima",
+    "oferta"
+   ],
+   "products": [],
+   "source": "Agriland",
+   "lang": "en",
+   "headline": {
+    "en": "Farmers alerted to worsening soil conditions",
+    "es": "Farmers alerted to worsening soil conditions",
+    "fr": "Farmers alerted to worsening soil conditions",
+    "it": "Farmers alerted to worsening soil conditions"
+   },
+   "description": "Farmers may need to factor deteriorating ground conditions into grazing, slurry spreading and fieldwork decisions with unsettled weather forecast. According to Met Éireann soils are saturated or close to saturation while moderately and poorly drained soils across the northwest, m",
+   "url": "https://www.agriland.ie/farming-news/farmers-alerted-to-worsening-soil-conditions/",
+   "relevance": 42,
    "auto": true,
    "impactChannel": "input_cost",
    "marketLinks": [
@@ -2799,221 +3039,6 @@
      "direction": "uncertain"
     }
    ]
-  },
-  {
-   "id": "auto-fec5177264",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "trigo",
-    "maiz",
-    "energia"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "Le prix du blé recule dans le sillage du pétrole, le maïs résiste mieux",
-    "es": "Le prix du blé recule dans le sillage du pétrole, le maïs résiste mieux",
-    "fr": "Le prix du blé recule dans le sillage du pétrole, le maïs résiste mieux",
-    "it": "Le prix du blé recule dans le sillage du pétrole, le maïs résiste mieux"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVTQ2ekxvM25heVh4ZVFIRWNiaXpqdjdzVmVncTBQSGdUSEhXUnpvWE9IOUNzTjlBMy1ZU2VOazR2b0VTbklDRXpyMTVBM1lkQ3RwWXNOV2lFX2NHbG1YLWZJQ1dUbDlfeXk5alBYV0RONGFOOEx4WHlZcnRfQy04SkFpemlfNGlaYU96RTZ0eXBQSktmS0M2anNFdHV3bU1iUm9WVg?oc=5",
-   "relevance": 74,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-6c70b01617",
-   "date": "2026-09-29",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "energia"
-   ],
-   "products": [
-    "energia"
-   ],
-   "source": "Reuters",
-   "lang": "en",
-   "headline": {
-    "en": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition",
-    "es": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition",
-    "fr": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition",
-    "it": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNW1fS1c5RmstV3VOaDMya3NQSjlTTE5NNGdteVU4b0JJdGM2aUpVaHk4LVRJRjdBeE9BejE3YjZoQ08yenNKNlBveXNIUXVhd0g5ajRtSlA2alQ0YkViZWx5WmRqbXQzandfS2VGWEszMFhKeHJkcWV6RGVpZnc4NTFXLWJ1Sk1UTkZHT1hHV2tfRlFnQ1Q4NGczUTVRLTRpSGxWRUlLckY2SHJCZFpFQzh5TFVGYlRKTWRlcWVhdzlkLUU1WVNzV1NVcmxqUQ?oc=5",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-dae2edd41c",
-   "date": "2026-09-29",
-   "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios",
-    "costes"
-   ],
-   "products": [
-    "fertilizantes"
-   ],
-   "source": "Farmdoc Daily",
-   "lang": "en",
-   "headline": {
-    "en": "Changing Nitrogen Rates on PCM Farms: Implications for 2027 Nitrogen Decisions",
-    "es": "Changing Nitrogen Rates on PCM Farms: Implications for 2027 Nitrogen Decisions",
-    "fr": "Changing Nitrogen Rates on PCM Farms: Implications for 2027 Nitrogen Decisions",
-    "it": "Changing Nitrogen Rates on PCM Farms: Implications for 2027 Nitrogen Decisions"
-   },
-   "description": "Average nitrogen rates used on farms enrolled in Precision Conservation Management (PCM) have varied little across years. The high nitrogen fertilizer prices suggest that application rates above economically optimal levels…",
-   "url": "https://farmdocdaily.illinois.edu/2026/09/changing-nitrogen-rates-on-pcm-farms-implications-for-2027-nitrogen-decisions.html",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-df7a8baa75",
-   "date": "2026-09-29",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "costes"
-   ],
-   "products": [
-    "fertilizantes"
-   ],
-   "source": "Policy Magazine",
-   "lang": "en",
-   "headline": {
-    "en": "Trade, Fertilizer and Canadian Economic Security",
-    "es": "Trade, Fertilizer and Canadian Economic Security",
-    "fr": "Trade, Fertilizer and Canadian Economic Security",
-    "it": "Trade, Fertilizer and Canadian Economic Security"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNNm1GMnJiUGhaSmxNSFA2cmpTN0FvaWxPU04yYnhHdmc5dmhuSU1uY2hSRV9hUUgtc2VpNGpvU21MWm9ldWY5amg5UGlIa1pZRVk0WXRTcmp3bmltWnpDN09sOGJWdFlnRVJSbTBjZ1FWUk5QU184c1JaUEY5S0dnWEd6RkU?oc=5",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
   }
  ],
  "costes": [
@@ -3221,6 +3246,82 @@
    ]
   },
   {
+   "id": "auto-d374ee6375",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "costes"
+   ],
+   "products": [
+    "costes"
+   ],
+   "source": "Farmdoc Daily",
+   "lang": "en",
+   "headline": {
+    "en": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "es": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "fr": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "it": "Rethinking Phosphorus and Potassium, Part 3: Economics"
+   },
+   "description": "Grain nutrient concentrations can vary across the farm and may provide an opportunity to cut input costs this fall. Soil test values can vary due to sampling time and lab procedures; it may be worthwhile to monitor the variability of soil test values by sampling at different time",
+   "url": "https://farmdocdaily.illinois.edu/2026/09/rethinking-phosphorus-and-potassium-part-3-economics.html",
+   "relevance": 52,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-65fd3b2d6b",
    "date": "2026-09-29",
    "region": "eu",
@@ -3374,6 +3475,65 @@
      "market": "fertilizantes",
      "channel": "policy",
      "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-6e5460a58f",
+   "date": "2026-09-30",
+   "region": "ca",
+   "topic": "energia",
+   "topics": [
+    "energia",
+    "costes"
+   ],
+   "products": [
+    "leche",
+    "diesel"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "es": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "fr": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "it": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNT05XN1R6bjB5U0xSYzB2TEkwTjQtWGJBSEZBOVNlMXVYbkpTT2QyanFhQTlpYmdDdzZmSHU4Um1pY2oyMmJueTlrREhfNGpISlJkMEt2ci0wMDY3T2Q4QVBOdkgwS055bFRHVzl4djh6MXBZTjJxaXVNV084VGNZOERKMEJrNmE5?oc=5",
+   "relevance": 70,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "leche",
+     "channel": "input_cost",
+     "relation": "energy-milk",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
      "direction": "uncertain"
     }
    ]
@@ -4000,7 +4160,7 @@
   {
    "id": "auto-f756c5b53e",
    "date": "2026-09-28",
-   "region": "global",
+   "region": "ca",
    "topic": "precios",
    "topics": [
     "precios",
@@ -4019,6 +4179,58 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNT0NNR2l5dGszSUVsdTNSSTFKLVVuWUgtRXNFczRPT0ltcU1idTNqTmJCa2F4LUZYdDhrYTFJSUVjeUpzRG9JTnh4Z2F5OEp0SUZWVzF6QWtsWjRxWHdMeE04eFkxdW80emw1OEt6Qk9aaVRXb0FDc1I4Zkx1LW1FcDdyUndRaWVuSHI1dGppSjZEZHkzZHZuek5CdUVDZDA?oc=5",
+   "relevance": 52,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-17242a0f78",
+   "date": "2026-09-28",
+   "region": "ca",
+   "topic": "precios",
+   "topics": [
+    "precios",
+    "energia"
+   ],
+   "products": [
+    "diesel"
+   ],
+   "source": "Manitoba Co-operator",
+   "lang": "en",
+   "headline": {
+    "en": "Conservatives’ diesel price reduction plan scraps biofuel incentives",
+    "es": "Conservatives’ diesel price reduction plan scraps biofuel incentives",
+    "fr": "Conservatives’ diesel price reduction plan scraps biofuel incentives",
+    "it": "Conservatives’ diesel price reduction plan scraps biofuel incentives"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUjRtejMtT2FtVDlTVDNVSVZ1dzl3YlRPZmNvTkRTQVpReDQyNFpLdDFrUnlTNFBLVk1uWVR5RHJScWp3WnRWcnNwQ29HZ3htRk5PcXJLbkItaExmeVM4NDNQVUNYV1NaXzNINlhRNTZScWx0azJHM3NMcUlNNzZtbmEyOVJEWjNIdjAyOC1UdFpMd2hETGFITDhpYzVtX0pjcG84TjJmVjA3SUNr?oc=5",
    "relevance": 52,
    "auto": true,
    "impactChannel": "input_cost",
@@ -4156,7 +4368,7 @@
   {
    "id": "auto-67e6e9155c",
    "date": "2026-09-25",
-   "region": "global",
+   "region": "ca",
    "topic": "comercio",
    "topics": [
     "comercio",
@@ -4175,171 +4387,6 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOSGdhb195aGkweVVLRWp4REtTMEpRbmdxajdjNmstMUV0RHZBSnZXSUpmRlJMaWVPRjRnaEd2end0RFBpVndKcDcxZUJsWUxTMEdfRm9LR1IxbnVPM0w2ZEZNZmxiVjczVmlJeHF1VUlUaW1yQjV6WV9QYmNwSDFVcVR0cHFvODB3WDhQcF9UZ2pjNGU0U2tDZmtRakhfMElXb0g0Zk1aSmdsN0lsdG93dnFhTS1TdkNVNGFtOXVNckpUN29LSnJiZk5vN0NQUQ?oc=5",
-   "relevance": 52,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-a631af474d",
-   "date": "2026-09-24",
-   "region": "us",
-   "topic": "oferta",
-   "topics": [
-    "oferta",
-    "energia"
-   ],
-   "products": [
-    "maiz",
-    "diesel"
-   ],
-   "source": "Successful Farming",
-   "lang": "en",
-   "headline": {
-    "en": "Iowa Corn Growers Association Asks for Diesel Relief as Harvest Kicks Off",
-    "es": "Iowa Corn Growers Association Asks for Diesel Relief as Harvest Kicks Off",
-    "fr": "Iowa Corn Growers Association Asks for Diesel Relief as Harvest Kicks Off",
-    "it": "Iowa Corn Growers Association Asks for Diesel Relief as Harvest Kicks Off"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNYjFJQlV6SUdwYnRDcDBReUJUNUJHbUNVeDJWT2ZvalRKa1JKZ3NTcnp5WnhBalczUU9MSkJSeHZtZ0QxbUdxVk42X2JZaU1rbFdYWnQzSDBZX0ktX0wwMWExSHBKcTF6YXNDcUNnRUhkUHFDMHgtWnZyR1BzMlAzY1d6S0JIaGVBT0plOG1lX0hjZ0xONDZIc09iRkZqZWNITXE1MWNRMHRlZDRTcXNmUnd4WnhkbE1pQVVv?oc=5",
-   "relevance": 70,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-85e381b8c5",
-   "date": "2026-09-24",
-   "region": "us",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "oferta",
-    "precios",
-    "energia"
-   ],
-   "products": [
-    "diesel"
-   ],
-   "source": "AgroLatam",
-   "lang": "en",
-   "headline": {
-    "en": "Diesel Prices Hit Record High as U.S. Weighs Export Ban During Harvest",
-    "es": "Diesel Prices Hit Record High as U.S. Weighs Export Ban During Harvest",
-    "fr": "Diesel Prices Hit Record High as U.S. Weighs Export Ban During Harvest",
-    "it": "Diesel Prices Hit Record High as U.S. Weighs Export Ban During Harvest"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQUG43bkd4S3NYWTJuSzBjSTAySGh2bURKRHVRY0Z5NVRyY3B5dlE3Y0t5cWw2RWFvcUpTZTBOSU9CZ0RMdm4yZkNzRFJfVDlOZ2x6OWJJdXc2QW5NWUF3NDFvZ2FUNlRNbzVwckFpbEEyaXBseHE5VnhiMEs2azh2ZlpkWFprbjU3MEVkWlIzMA?oc=5",
-   "relevance": 64,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-8d7bfda048",
-   "date": "2026-09-24",
-   "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios",
-    "energia"
-   ],
-   "products": [
-    "diesel"
-   ],
-   "source": "The Autopian",
-   "lang": "en",
-   "headline": {
-    "en": "Here’s Why Biodiesel Isn’t Going To Stop The Rapid Climb Of The Price Of Diesel",
-    "es": "Here’s Why Biodiesel Isn’t Going To Stop The Rapid Climb Of The Price Of Diesel",
-    "fr": "Here’s Why Biodiesel Isn’t Going To Stop The Rapid Climb Of The Price Of Diesel",
-    "it": "Here’s Why Biodiesel Isn’t Going To Stop The Rapid Climb Of The Price Of Diesel"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOT1l1R0pWMTdQYjZBUTBtUWU1em1UVGVuUkF2MTVMX09XRnRyc0FIX08tZ2E4S1QyelUydE1ZZGUyZmJjaFo2Nlc1bnowM2xTYU0xX0ZWeV9Jc1ZaYnJlOEswX0VLb0prNEs3ZEZTeU52U0VRUHl4THVOYVY3OTZ5VW9BdFlZN1Q0WnlLazdmb1lrVGdGb09EWUV6RlRqR1pCbFNzbFkxNENxdw?oc=5",
    "relevance": 52,
    "auto": true,
    "impactChannel": "input_cost",
@@ -4588,6 +4635,66 @@
      "market": "colza",
      "channel": "trade",
      "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "colza",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-204009ea15",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "precios",
+    "energia"
+   ],
+   "products": [
+    "colza",
+    "energia"
+   ],
+   "source": "електронна зернова біржа України",
+   "lang": "en",
+   "headline": {
+    "en": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "es": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "fr": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "it": "Palm and sunflower oil prices fall due to seasonal supply increases"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNeXE1bVluUnRBYkFuUjNOelR1Rk5FNDhJNXpaRTZyRExUUzhScVNpS2tSbWw2cWVkWXF2SDJqWHVCajNNN1g1MFZJdThzY3UwNi0xR203UVJOMzcyRTVsd1VrOWMyU2RHT00ycFVkRU0zSmdWMTZRTzctQzA2WTlDTGJXMDZkcm5tbDlVcUhJMGpQUDhwWHhlMHJHa1doYXhWTHhZQnBQczhwS2lzRGlLeHlmYXBNcVgwZHdmTXdsMlB6Nk0tWXNyeFFuQTg?oc=5",
+   "relevance": 76,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
      "direction": "uncertain"
     },
     {
@@ -5342,6 +5449,108 @@
    ]
   },
   {
+   "id": "auto-8f39b5e7fd",
+   "date": "2026-09-25",
+   "region": "ca",
+   "topic": "energia",
+   "topics": [
+    "energia"
+   ],
+   "products": [
+    "energia"
+   ],
+   "source": "Manitoba Co-operator",
+   "lang": "en",
+   "headline": {
+    "en": "Canadian Financial Close: Loonie, crude oil end week on low notes",
+    "es": "Canadian Financial Close: Loonie, crude oil end week on low notes",
+    "fr": "Canadian Financial Close: Loonie, crude oil end week on low notes",
+    "it": "Canadian Financial Close: Loonie, crude oil end week on low notes"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTURjY2tKNUw0dGlJQmdMcU0wS1g0WlBISmQyQmpfMGNid0pLN3FkdG1FMy1kRHJ6V1dEZS1CZ1V1LTFNTGFuY3dJVEU5c25lbVRET29aOHVERVhMQmJBM0dGV3N1NV9raFlxb25TYUxNaHR4dzl0NHFQZXRNTDhKNUhNOXYwMlhNREpuVmowcHBwQWIyYjVfVFpELXZzRXY0NVJHZVJ3MkJscC1zWGhSZVR3?oc=5",
+   "relevance": 46,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-05587b60e0",
+   "date": "2026-09-25",
+   "region": "ca",
+   "topic": "energia",
+   "topics": [
+    "energia"
+   ],
+   "products": [
+    "energia"
+   ],
+   "source": "Canadian Cattlemen",
+   "lang": "en",
+   "headline": {
+    "en": "Canadian Dollar and Business Outlook: Loonie, crude oil move downward",
+    "es": "Canadian Dollar and Business Outlook: Loonie, crude oil move downward",
+    "fr": "Canadian Dollar and Business Outlook: Loonie, crude oil move downward",
+    "it": "Canadian Dollar and Business Outlook: Loonie, crude oil move downward"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNbmtxUnFXUGlSclowOGVsUElOSEY3V2lFLWtpZXpJLVVzNDgzMkdKUVRQalJqcFBSQ05LNWdqeWE3SWgyUGNpNDRPUkpFR1FjaHpJRWtzZE8yTWVvYVhKTG1lajRUbldxNjBxcFY1dlNXYi04RWgzRTN3SmxGM2t5X1czVk94ekd4WXIyQ2JZWGd5TmZNbEhGVDcxREQyUWc2UWpQclFQYUd2UllXWU9JNjNwYkEtTS1u?oc=5",
+   "relevance": 46,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-8bcb422a07",
    "date": "2026-09-24",
    "region": "eu",
@@ -5365,163 +5574,6 @@
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPNHNFT1dUSS10WU5rUVRxa1pXdDFpU1FTUjk2WTdZbmh6Q2ZXM1FVdVU5alBFUk5yOFJXaERsSmJFWEZ6OWFQZjNhczBLMlVtYVpEOXQ3T3dVb2ltTHV2a2FBYmtpdG1VRF9BU0VsU0pIVTFfSnBaSkZhOGNxU3lZRVFmOExwSVI5UGpNUGVUd0laWk1hNE54Z0djc2x3ZXVXbUh3NmlhdjVyd3lsWE1ULXdzWEJHNWRNRTlWYkVBTG9FY1BLM3hqeDNsOXA?oc=5",
    "relevance": 74,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-9cefd8618d",
-   "date": "2026-09-24",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "precios",
-    "energia"
-   ],
-   "products": [
-    "energia"
-   ],
-   "source": "ET Now",
-   "lang": "en",
-   "headline": {
-    "en": "Edible oil prices: Import duty cut on crude, refined oils - What's the impact?",
-    "es": "Edible oil prices: Import duty cut on crude, refined oils - What's the impact?",
-    "fr": "Edible oil prices: Import duty cut on crude, refined oils - What's the impact?",
-    "it": "Edible oil prices: Import duty cut on crude, refined oils - What's the impact?"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZEI1LXBDM3RhNENfcGhoYWR2WUpxVGtVT0NDSW5aYUI1b0RoOENPNDhaS1ZqOHZYTHlsOFVxQnZBMnZOem1SMDhaYl9MTWM0eEkzWUFYTVIzdjcxTGd5ZkxqaGpORWMwa2U0Yy01ZmRaNEpwNk40anVtTVE2Q1Bnc0RNRmFDaUJNQUhkem5NeFJZUE1PeTNxbEQyZE96YVlLMHZoVG9MSjNZc2JRcWY4d0xFR2QtdkMtSThMQkFQM2nSAcYBQVVfeXFMTUJBNFJ2WHFaU0g5OVNrY2JaNzlDVk1ORXlGcW56ZnNldzlTcVZoR2FoLWdscTAwQjlUb3luQ2ZpRjJFM0JRb0JPOVpleW4wc3FpNkpVc2FxejNFSXQ1eEJUWWtkQUZ4aWVJZU5MNUJwMlNLUlhzc2w1aUxSbDRrM1BOZ1dSdklfQmt0YWpiclYtVTVtU09PX0RleF9Va1R2amFBb1cyd0xaTDJkdWgtalJPZ1lzYkRtd0s0UUNIVDlsRElSRUN3?oc=5",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-4fde8b9178",
-   "date": "2026-09-24",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "energia"
-   ],
-   "products": [
-    "energia"
-   ],
-   "source": "LatestLY",
-   "lang": "en",
-   "headline": {
-    "en": "India News | Centre Reduces Customs Duty on Crude, Refined Edible Oils",
-    "es": "India News | Centre Reduces Customs Duty on Crude, Refined Edible Oils",
-    "fr": "India News | Centre Reduces Customs Duty on Crude, Refined Edible Oils",
-    "it": "India News | Centre Reduces Customs Duty on Crude, Refined Edible Oils"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPa2NMRS1tVFJPSTk0S3YzODZTOUNyc1dETXU2QXJid1VRVU4zZWg1Vko1QlhJeWI1MFN2VHVTZXNRN1ptUmpWYUxBMGV4YW43MWoxdmFlazU3Ym5MSjl3OVVpTjRWaElMdDdGNVdzN2d0LURkQ3NmUjhiZlVDcGJJYXMtb2Q4NFZGSmtIYUFSSUNPOHpaQ3RZSnBfbnFBV25kbi1vMlRIbjAwei0xZVFHWWphbzdsbUFy0gG-AUFVX3lxTE56SmtEcjdzWl94a1dwczdGUktiQ3pWSXdvOUtkT1UyZjFqRzlpY2JHWmZ2V1ZWLTBXVEI0RHBVNUhVOTUtT3l5dV94Nm5mcnZfcmhRRVowT016WXVIRmNzRm9mWHlvdFRFSG5jYXByUjNlc3g2djBzZEExRURuVC1jSzBkLU1OT1ZmMHFDVy0zTUQ5dFNyWVREdkZBVVBXcWZHOVdQWng2eWJOWWtYZkVheE1lV3dKdHhxeFJ4YXc?oc=5",
-   "relevance": 52,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-712a02e499",
-   "date": "2026-09-24",
-   "region": "us",
-   "topic": "oferta",
-   "topics": [
-    "oferta",
-    "energia"
-   ],
-   "products": [
-    "energia"
-   ],
-   "source": "Crude Oil Prices Today | OilPrice.com",
-   "lang": "en",
-   "headline": {
-    "en": "Global Biofuels Output Could Surge 70% Amid Energy Crisis",
-    "es": "Global Biofuels Output Could Surge 70% Amid Energy Crisis",
-    "fr": "Global Biofuels Output Could Surge 70% Amid Energy Crisis",
-    "it": "Global Biofuels Output Could Surge 70% Amid Energy Crisis"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPYkJTZkZEQzJybThDV1JfUVNwNTByZ0VFNEtJakpBbWNYTDVYWTh4bkQtOFJVamlwWGl4UGl3U3FLb05pcWZpU2dOVG83ZlZjUmdsMThPR2doRFRoMW93b3JJbjQzWnBrNkpnZDdWd0ZFWERiSDBXM05GY0FPWkc2U1J5dWtNMDd2b3Bybk9LLVM0X2lDVXEyVWZJVFZmblpOWEhVT240cUhYYkprS1RZ?oc=5",
-   "relevance": 52,
    "auto": true,
    "impactChannel": "input_cost",
    "marketLinks": [
@@ -6160,9 +6212,9 @@
    ]
   },
   {
-   "id": "auto-df7a8baa75",
+   "id": "auto-a258f79cea",
    "date": "2026-09-29",
-   "region": "global",
+   "region": "ca",
    "topic": "comercio",
    "topics": [
     "comercio",
@@ -6171,7 +6223,7 @@
    "products": [
     "fertilizantes"
    ],
-   "source": "Policy Magazine",
+   "source": "policymagazine.ca",
    "lang": "en",
    "headline": {
     "en": "Trade, Fertilizer and Canadian Economic Security",
@@ -6550,7 +6602,7 @@
    ]
   },
   {
-   "id": "auto-ce7f356a6d",
+   "id": "auto-c012272058",
    "date": "2026-09-27",
    "region": "global",
    "topic": "",
@@ -6558,7 +6610,7 @@
    "products": [
     "fertilizantes"
    ],
-   "source": "The Financial Express",
+   "source": "thefinancialexpress.com.bd",
    "lang": "en",
    "headline": {
     "en": "Govt to purchase 0.95 million tonnes of non-urea fertiliser",
@@ -6656,7 +6708,7 @@
    ]
   },
   {
-   "id": "auto-d19b26fe5c",
+   "id": "auto-59c4cf72be",
    "date": "2026-09-26",
    "region": "uk",
    "topic": "costes",
@@ -6666,7 +6718,7 @@
    "products": [
     "fertilizantes"
    ],
-   "source": "Farming Life",
+   "source": "farminglife.com",
    "lang": "en",
    "headline": {
     "en": "UFU calls for action on fertiliser costs",
@@ -6756,7 +6808,7 @@
    ]
   },
   {
-   "id": "auto-c61ddfa4dc",
+   "id": "auto-ab431ac356",
    "date": "2026-09-25",
    "region": "global",
    "topic": "oferta",
@@ -6768,7 +6820,7 @@
    "products": [
     "fertilizantes"
    ],
-   "source": "global-agriculture.com",
+   "source": "Global Agriculture",
    "lang": "en",
    "headline": {
     "en": "Global Fertilizer Prices Climb as Supply Stays Tight",
@@ -7024,73 +7076,24 @@
    ]
   },
   {
-   "id": "auto-dce676cbc2",
-   "date": "2026-09-24",
-   "region": "global",
+   "id": "auto-2c1d4f4850",
+   "date": "2026-09-25",
+   "region": "ca",
    "topic": "",
    "topics": [],
    "products": [
     "fertilizantes"
    ],
-   "source": "Argus Media",
+   "source": "Canadian Cattlemen",
    "lang": "en",
    "headline": {
-    "en": "Australia on edge for phosphate pricing ahead of 2027",
-    "es": "Australia on edge for phosphate pricing ahead of 2027",
-    "fr": "Australia on edge for phosphate pricing ahead of 2027",
-    "it": "Australia on edge for phosphate pricing ahead of 2027"
+    "en": "Canpotex declares $500M to revamp Port of Vancouver potash terminal",
+    "es": "Canpotex declares $500M to revamp Port of Vancouver potash terminal",
+    "fr": "Canpotex declares $500M to revamp Port of Vancouver potash terminal",
+    "it": "Canpotex declares $500M to revamp Port of Vancouver potash terminal"
    },
    "description": "",
-   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPeFZ2Q1ZaU2RJaVNNUHlQb2kzUzJZZk9KNFk1Y1RCX3dHRnFGNGwtU0FQQXVCWkZveWRieWFTYUZoZ3dIVlNwck9RNkdnel9FcGhLX3M5ZXBON1pUS2ZjOW44Zk9lUmtfXzZpYzZ0cENEbjk3dkhNNlN0UlBqVTBWQmFDejJFd1V4QXpSMXExdFFTejN1ZjR5Z05FRzZzZXNnQ1BRb05zQ3Q1ZlJUUHNUS1RsNmdscHdIcDNXbV9ma3YwUFlYOS1v?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-b12940802e",
-   "date": "2026-09-24",
-   "region": "uk",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "fertilizantes"
-   ],
-   "source": "Farmers Weekly",
-   "lang": "en",
-   "headline": {
-    "en": "Cost benefits of forward-planning liquid fertiliser storage",
-    "es": "Cost benefits of forward-planning liquid fertiliser storage",
-    "fr": "Cost benefits of forward-planning liquid fertiliser storage",
-    "it": "Cost benefits of forward-planning liquid fertiliser storage"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOcy1LVlJHRXFuNUgtR1pwWXhyUVN6c0NmSEROYjJjTWdQc01BSDk2eEl5ak0xcXlXZDE4MXh0MXpSa3VPb29lLTJOeXp6Mk1xZUpyLUQ1WXpmeVRfbWp4ZnRtY09JaFV6YzFuRXFpWjBDcUpxdk5lcVlvanI1cWdfQzFlRWhFYi1ndU0wWExLZ1dQZw?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNVlE5U2RpdW5NSnhlZlBSN1BadlFqMUN2SVZOWUlDY1MtSlVyZ3diSE5TWFZaMGFtQnc2N09FcGIybWMwSlVRYS10NG1DblQwRmZ1WXZZOXBXYXhuZGh5OUI5RWF4bjBFa04zSlB0MDdET2RNOXMxM05jZFR2bVh5dlNaS21EeVFKc3dJQkszMkFrX0s3azFvVHBIMndJSi1WdExKdDZOV1FkQQ?oc=5",
    "relevance": 48,
    "auto": true,
    "impactChannel": "input_cost",
@@ -7422,6 +7425,125 @@
    ]
   },
   {
+   "id": "auto-204009ea15",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "precios",
+    "energia"
+   ],
+   "products": [
+    "colza",
+    "energia"
+   ],
+   "source": "електронна зернова біржа України",
+   "lang": "en",
+   "headline": {
+    "en": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "es": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "fr": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "it": "Palm and sunflower oil prices fall due to seasonal supply increases"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNeXE1bVluUnRBYkFuUjNOelR1Rk5FNDhJNXpaRTZyRExUUzhScVNpS2tSbWw2cWVkWXF2SDJqWHVCajNNN1g1MFZJdThzY3UwNi0xR203UVJOMzcyRTVsd1VrOWMyU2RHT00ycFVkRU0zSmdWMTZRTzctQzA2WTlDTGJXMDZkcm5tbDlVcUhJMGpQUDhwWHhlMHJHa1doYXhWTHhZQnBQczhwS2lzRGlLeHlmYXBNcVgwZHdmTXdsMlB6Nk0tWXNyeFFuQTg?oc=5",
+   "relevance": 76,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "colza",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-6e5460a58f",
+   "date": "2026-09-30",
+   "region": "ca",
+   "topic": "energia",
+   "topics": [
+    "energia",
+    "costes"
+   ],
+   "products": [
+    "leche",
+    "diesel"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "es": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "fr": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "it": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNT05XN1R6bjB5U0xSYzB2TEkwTjQtWGJBSEZBOVNlMXVYbkpTT2QyanFhQTlpYmdDdzZmSHU4Um1pY2oyMmJueTlrREhfNGpISlJkMEt2ci0wMDY3T2Q4QVBOdkgwS055bFRHVzl4djh6MXBZTjJxaXVNV084VGNZOERKMEJrNmE5?oc=5",
+   "relevance": 70,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "leche",
+     "channel": "input_cost",
+     "relation": "energy-milk",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-c9954e9f64",
    "date": "2026-09-30",
    "region": "global",
@@ -7562,46 +7684,6 @@
    },
    "description": "Les prix du blé et du maïs retrouvent le chemin de la hausse sur le marché européen, dans un contexte encore tendu à l’international.",
    "url": "https://www.terre-net.fr/prix-des-cereales/article/904152/le-ble-euronext-tente-de-retrouver-les-240-t",
-   "relevance": 64,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "maiz",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-4dc6358548",
-   "date": "2026-09-30",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "trigo",
-    "maiz"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "Marché des céréales du 29 septembre 2026 : Nouvelle baisse du prix du maïs alors que le blé rebondit très timidement",
-    "es": "Marché des céréales du 29 septembre 2026 : Nouvelle baisse du prix du maïs alors que le blé rebondit très timidement",
-    "fr": "Marché des céréales du 29 septembre 2026 : Nouvelle baisse du prix du maïs alors que le blé rebondit très timidement",
-    "it": "Marché des céréales du 29 septembre 2026 : Nouvelle baisse du prix du maïs alors que le blé rebondit très timidement"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTGxNVDBVUlpfRF91cDZ0d1J5SnBWcE1FZlpUeHhYQTVtNE12amZsMkpmRGxQUVhGd1djbFpQSlBHSmt1UVhVNHp1MzRWRFJ6dHVUTzVxb1JuTU1CVDhzM043NnNCUGlERUFpUmhfdHp3cV9wUjZHQVlFOVF4VHlhejlRNGJyWnFrY1M1czNyekRORTdtSFF5c0UyczJkSkZibldpYzhoVHdzQVpTVW9SZmZBV241ZVN1UmktUlR3?oc=5",
    "relevance": 64,
    "auto": true,
    "impactChannel": "market_impact",
@@ -7870,6 +7952,44 @@
    ]
   },
   {
+   "id": "auto-44a8a05b6d",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "maiz",
+    "soja"
+   ],
+   "source": "agrolatam.com",
+   "lang": "en",
+   "headline": {
+    "en": "Corn and Soybeans Rise Ahead of Key USDA Grain Reports",
+    "es": "Corn and Soybeans Rise Ahead of Key USDA Grain Reports",
+    "fr": "Corn and Soybeans Rise Ahead of Key USDA Grain Reports",
+    "it": "Corn and Soybeans Rise Ahead of Key USDA Grain Reports"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5aZWdGZ1ZGVU9UMXlzSklTSTRPWkU3MmdYZGtVSnhfWXJFbTVRZFJINHhLb2I1U1VldDhRY21mTml3bHk3andhY0VkOG5aQW9XOWZUZDdTTFlBcE9lMkJRMFh3WjR3eGVsQ3VmTkNsdXlWNTlfZ2RPX1VLeV92UQ?oc=5",
+   "relevance": 58,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "maiz",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "soja",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-572820ec2d",
    "date": "2026-09-30",
    "region": "us",
@@ -8026,6 +8146,39 @@
    ]
   },
   {
+   "id": "auto-2db74ece80",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "oferta",
+   "topics": [
+    "oferta"
+   ],
+   "products": [
+    "maiz"
+   ],
+   "source": "Successful Farming",
+   "lang": "en",
+   "headline": {
+    "en": "USDA Pegs Corn Stocks Higher Than Expect in Latest Report",
+    "es": "USDA Pegs Corn Stocks Higher Than Expect in Latest Report",
+    "fr": "USDA Pegs Corn Stocks Higher Than Expect in Latest Report",
+    "it": "USDA Pegs Corn Stocks Higher Than Expect in Latest Report"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0wY1l2ZlJDT1dYY3pIY0xRS1FPaXVocDdaaDg0Q1Y0WmJMblRiYkV4MXh3VXROT29XN3lObTZveTIteVE4Rkk1VHZXTFl6cjlRemd5TVE0WmtRTnpWQjZmV1F5VUVscjVMWjFVNzd4UjZxUQ?oc=5",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "supply",
+   "marketLinks": [
+    {
+     "market": "maiz",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-0bb5330834",
    "date": "2026-09-30",
    "region": "eu",
@@ -8054,6 +8207,82 @@
      "market": "maiz",
      "channel": "market_impact",
      "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-d374ee6375",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "costes"
+   ],
+   "products": [
+    "costes"
+   ],
+   "source": "Farmdoc Daily",
+   "lang": "en",
+   "headline": {
+    "en": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "es": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "fr": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "it": "Rethinking Phosphorus and Potassium, Part 3: Economics"
+   },
+   "description": "Grain nutrient concentrations can vary across the farm and may provide an opportunity to cut input costs this fall. Soil test values can vary due to sampling time and lab procedures; it may be worthwhile to monitor the variability of soil test values by sampling at different time",
+   "url": "https://farmdocdaily.illinois.edu/2026/09/rethinking-phosphorus-and-potassium-part-3-economics.html",
+   "relevance": 52,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
      "direction": "uncertain"
     }
    ]
@@ -8208,352 +8437,6 @@
      "market": "trigo",
      "channel": "input_cost",
      "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-440d9b2525",
-   "date": "2026-09-29",
-   "region": "us",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "oferta",
-    "energia",
-    "politica"
-   ],
-   "products": [
-    "diesel",
-    "fertilizantes"
-   ],
-   "source": "Agropopular",
-   "lang": "es",
-   "headline": {
-    "en": "Tercer plan anticrisis del Gobierno con el sector agroalimentario en el foco",
-    "es": "Tercer plan anticrisis del Gobierno con el sector agroalimentario en el foco",
-    "fr": "Tercer plan anticrisis del Gobierno con el sector agroalimentario en el foco",
-    "it": "Tercer plan anticrisis del Gobierno con el sector agroalimentario en el foco"
-   },
-   "description": "El campo espera nuevas ayudas ante el encarecimiento del gasóleo y los fertilizantes, mientras muchos cerealistas se plantean reducir la siembra y Europa teme nuevas subidas del diésel si Estados Unidos limita sus exportaciones “Tercer plan anticrisis del Gobierno con el sector a",
-   "url": "https://www.agropopular.com/gobierno-sector-290926/",
-   "relevance": 88,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-e33806b121",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "energia",
-   "topics": [
-    "energia",
-    "costes",
-    "ayudas"
-   ],
-   "products": [
-    "maiz",
-    "fertilizantes",
-    "energia"
-   ],
-   "source": "Terra e Vita",
-   "lang": "it",
-   "headline": {
-    "en": "Agricoltura, in Emilia-Romagna 22,4 milioni contro i rincari",
-    "es": "Agricoltura, in Emilia-Romagna 22,4 milioni contro i rincari",
-    "fr": "Agricoltura, in Emilia-Romagna 22,4 milioni contro i rincari",
-    "it": "Agricoltura, in Emilia-Romagna 22,4 milioni contro i rincari"
-   },
-   "description": "Due misure per compensare l'aumento dei costi di fertilizzanti ed energia. Aiuti a cereali, mais, foraggere, barbabietola, frutta, ortaggi e vite L'articolo Agricoltura, in Emilia-Romagna 22,4 milioni contro i rincari è un contenuto originale di Terra e Vita .",
-   "url": "https://terraevita.edagricole.it/attualita/agricoltura-in-emilia-romagna-224-milioni-contro-i-rincari/",
-   "relevance": 86,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "energia",
-     "channel": "energy",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-b96ca1f725",
-   "date": "2026-09-29",
-   "region": "us",
-   "topic": "oferta",
-   "topics": [
-    "oferta",
-    "precios",
-    "energia",
-    "costes"
-   ],
-   "products": [
-    "maiz",
-    "diesel"
-   ],
-   "source": "Successful Farming",
-   "lang": "en",
-   "headline": {
-    "en": "Diesel Price Spike Squeezes Corn Harvest Margins as Combine Fuel Costs Up to $12.58 an Acre",
-    "es": "Diesel Price Spike Squeezes Corn Harvest Margins as Combine Fuel Costs Up to $12.58 an Acre",
-    "fr": "Diesel Price Spike Squeezes Corn Harvest Margins as Combine Fuel Costs Up to $12.58 an Acre",
-    "it": "Diesel Price Spike Squeezes Corn Harvest Margins as Combine Fuel Costs Up to $12.58 an Acre"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPUDA2LXZuUFk3dnI0RmQxNi16TWtZVGNhUlZnSGpiNE9WeXBLRDNVRzAxX0lsem5DcVpXYVN6dnVSQlpwWlNqTExJT3FMOEVKdTVPd0gxdXdLY1o1M0ZJcWliTXNXYmk2OEpITEY2UjlteGZuTjJfR1ZGOWFtWHAzT3hnZTIyd1g5eGdwRFQ5dGk3NktkZzNCclBKNEtmdjNGZVB5d2x0YXFrOUFYT1ZvZ3lvTDA1SUZ0cS1zM0xUSExhaF9QVlE?oc=5",
-   "relevance": 82,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-f2de77b642",
-   "date": "2026-09-29",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "oferta",
-    "energia",
-    "costes"
-   ],
-   "products": [
-    "fertilizantes",
-    "energia"
-   ],
-   "source": "AgroSpectrum India",
-   "lang": "en",
-   "headline": {
-    "en": "Global fertilizer trade hits $81 Bn as energy volatility, Strait of Hormuz disruptions and geopolitical risks reshape supply chains: FAO",
-    "es": "Global fertilizer trade hits $81 Bn as energy volatility, Strait of Hormuz disruptions and geopolitical risks reshape supply chains: FAO",
-    "fr": "Global fertilizer trade hits $81 Bn as energy volatility, Strait of Hormuz disruptions and geopolitical risks reshape supply chains: FAO",
-    "it": "Global fertilizer trade hits $81 Bn as energy volatility, Strait of Hormuz disruptions and geopolitical risks reshape supply chains: FAO"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxNTk00R0R6NnoyMGd4LWdGZmlmczNGZENEOWU0M0paaXpfcEJ0dEVZS29zQjBXNjV0S3hsR3pzSE1ucVFhNk9HcDlyMUc4aVpWNlRrX2JVTmtpQ3lkOGkzZ1ZtSWJBbElrUTZzaWlWOUw3RjRMZDNIelEtdTljVUZGSldUeERzQXVKWXZJeElBbnlBMDNKR0J5cXhiZ29NVnpqSGtUV3BzNEF5NWM5ZnlUVDJSbTh2Skd5QnZLWDhPb0UwdVpvNXY3WTI3TDFxR0duWENxMVBpVkZKRXM1ZWJsMDhFVGR4YlZFeVhhSDVER3NoR2k5Q1k2cGtRZGl3SER5Tmc0eWlzdVVKcHFuV2lv?oc=5",
-   "relevance": 82,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "supply",
-     "relation": null,
      "direction": "uncertain"
     }
    ]
@@ -8901,6 +8784,125 @@
    ]
   },
   {
+   "id": "auto-204009ea15",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "precios",
+    "energia"
+   ],
+   "products": [
+    "colza",
+    "energia"
+   ],
+   "source": "електронна зернова біржа України",
+   "lang": "en",
+   "headline": {
+    "en": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "es": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "fr": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "it": "Palm and sunflower oil prices fall due to seasonal supply increases"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNeXE1bVluUnRBYkFuUjNOelR1Rk5FNDhJNXpaRTZyRExUUzhScVNpS2tSbWw2cWVkWXF2SDJqWHVCajNNN1g1MFZJdThzY3UwNi0xR203UVJOMzcyRTVsd1VrOWMyU2RHT00ycFVkRU0zSmdWMTZRTzctQzA2WTlDTGJXMDZkcm5tbDlVcUhJMGpQUDhwWHhlMHJHa1doYXhWTHhZQnBQczhwS2lzRGlLeHlmYXBNcVgwZHdmTXdsMlB6Nk0tWXNyeFFuQTg?oc=5",
+   "relevance": 76,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "colza",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-6e5460a58f",
+   "date": "2026-09-30",
+   "region": "ca",
+   "topic": "energia",
+   "topics": [
+    "energia",
+    "costes"
+   ],
+   "products": [
+    "leche",
+    "diesel"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "es": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "fr": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "it": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNT05XN1R6bjB5U0xSYzB2TEkwTjQtWGJBSEZBOVNlMXVYbkpTT2QyanFhQTlpYmdDdzZmSHU4Um1pY2oyMmJueTlrREhfNGpISlJkMEt2ci0wMDY3T2Q4QVBOdkgwS055bFRHVzl4djh6MXBZTjJxaXVNV084VGNZOERKMEJrNmE5?oc=5",
+   "relevance": 70,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "leche",
+     "channel": "input_cost",
+     "relation": "energy-milk",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-c9954e9f64",
    "date": "2026-09-30",
    "region": "global",
@@ -9101,46 +9103,6 @@
    ]
   },
   {
-   "id": "auto-4dc6358548",
-   "date": "2026-09-30",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "trigo",
-    "maiz"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "Marché des céréales du 29 septembre 2026 : Nouvelle baisse du prix du maïs alors que le blé rebondit très timidement",
-    "es": "Marché des céréales du 29 septembre 2026 : Nouvelle baisse du prix du maïs alors que le blé rebondit très timidement",
-    "fr": "Marché des céréales du 29 septembre 2026 : Nouvelle baisse du prix du maïs alors que le blé rebondit très timidement",
-    "it": "Marché des céréales du 29 septembre 2026 : Nouvelle baisse du prix du maïs alors que le blé rebondit très timidement"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTGxNVDBVUlpfRF91cDZ0d1J5SnBWcE1FZlpUeHhYQTVtNE12amZsMkpmRGxQUVhGd1djbFpQSlBHSmt1UVhVNHp1MzRWRFJ6dHVUTzVxb1JuTU1CVDhzM043NnNCUGlERUFpUmhfdHp3cV9wUjZHQVlFOVF4VHlhejlRNGJyWnFrY1M1czNyekRORTdtSFF5c0UyczJkSkZibldpYzhoVHdzQVpTVW9SZmZBV241ZVN1UmktUlR3?oc=5",
-   "relevance": 64,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "maiz",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-61185f2059",
    "date": "2026-09-30",
    "region": "global",
@@ -9240,6 +9202,40 @@
      "market": "trigo",
      "channel": "input_cost",
      "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-6221c6abcd",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "precios"
+   ],
+   "products": [
+    "trigo"
+   ],
+   "source": "Hindu BusinessLine",
+   "lang": "en",
+   "headline": {
+    "en": "Indian Cabinet approves 1-10% hike in rabi crops minimum support price",
+    "es": "Indian Cabinet approves 1-10% hike in rabi crops minimum support price",
+    "fr": "Indian Cabinet approves 1-10% hike in rabi crops minimum support price",
+    "it": "Indian Cabinet approves 1-10% hike in rabi crops minimum support price"
+   },
+   "description": "MSP for wheat now stands at ₹2,610 per quintal against ₹2,585 per quintal announced for 2026-27 marketing season (April-March)",
+   "url": "https://www.thehindubusinessline.com/economy/agri-business/cabinet-approves-1-10-hike-in-rabi-crops-msps/article71528160.ece",
+   "relevance": 60,
+   "auto": true,
+   "impactChannel": "supply",
+   "marketLinks": [
+    {
+     "market": "trigo",
+     "channel": "supply",
+     "relation": null,
      "direction": "uncertain"
     }
    ]
@@ -9446,39 +9442,6 @@
    ]
   },
   {
-   "id": "auto-7838b4f705",
-   "date": "2026-09-30",
-   "region": "global",
-   "topic": "oferta",
-   "topics": [
-    "oferta"
-   ],
-   "products": [
-    "trigo"
-   ],
-   "source": "Hindu BusinessLine",
-   "lang": "en",
-   "headline": {
-    "en": "Cabinet approves 1-10% hike in rabi crops MSPs",
-    "es": "Cabinet approves 1-10% hike in rabi crops MSPs",
-    "fr": "Cabinet approves 1-10% hike in rabi crops MSPs",
-    "it": "Cabinet approves 1-10% hike in rabi crops MSPs"
-   },
-   "description": "MSP for wheat now stands at ₹2,610 per quintal against ₹2,585 per quintal announced for 2026-27 marketing season (April-March)",
-   "url": "https://www.thehindubusinessline.com/economy/agri-business/cabinet-approves-1-10-hike-in-rabi-crops-msps/article71528160.ece",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "supply",
-   "marketLinks": [
-    {
-     "market": "trigo",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-4b1b45bbc1",
    "date": "2026-09-30",
    "region": "global",
@@ -9573,6 +9536,82 @@
      "market": "trigo",
      "channel": "supply",
      "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-d374ee6375",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "costes"
+   ],
+   "products": [
+    "costes"
+   ],
+   "source": "Farmdoc Daily",
+   "lang": "en",
+   "headline": {
+    "en": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "es": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "fr": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+    "it": "Rethinking Phosphorus and Potassium, Part 3: Economics"
+   },
+   "description": "Grain nutrient concentrations can vary across the farm and may provide an opportunity to cut input costs this fall. Soil test values can vary due to sampling time and lab procedures; it may be worthwhile to monitor the variability of soil test values by sampling at different time",
+   "url": "https://farmdocdaily.illinois.edu/2026/09/rethinking-phosphorus-and-potassium-part-3-economics.html",
+   "relevance": 52,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "fertilizer-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
      "direction": "uncertain"
     }
    ]
@@ -9710,154 +9749,6 @@
      "direction": "uncertain"
     }
    ]
-  },
-  {
-   "id": "auto-d1d21aba9d",
-   "date": "2026-09-30",
-   "region": "uk",
-   "topic": "energia",
-   "topics": [
-    "energia"
-   ],
-   "products": [
-    "energia"
-   ],
-   "source": "Beef Central",
-   "lang": "en",
-   "headline": {
-    "en": "Big energy savings, reduced carbon footprint through heat recycling at Gundagai Meat Processors",
-    "es": "Big energy savings, reduced carbon footprint through heat recycling at Gundagai Meat Processors",
-    "fr": "Big energy savings, reduced carbon footprint through heat recycling at Gundagai Meat Processors",
-    "it": "Big energy savings, reduced carbon footprint through heat recycling at Gundagai Meat Processors"
-   },
-   "description": "A New South Wales red meat processor has implemented a staged heat recovery system that reduces natural gas consumption, improves refrigeration efficiency and removes the need for a major boiler upgrade.",
-   "url": "https://www.beefcentral.com/processing/big-energy-savings-reduced-carbon-footprint-through-heat-recycling-at-gundagai-meat-processors/",
-   "relevance": 46,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-440d9b2525",
-   "date": "2026-09-29",
-   "region": "us",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "oferta",
-    "energia",
-    "politica"
-   ],
-   "products": [
-    "diesel",
-    "fertilizantes"
-   ],
-   "source": "Agropopular",
-   "lang": "es",
-   "headline": {
-    "en": "Tercer plan anticrisis del Gobierno con el sector agroalimentario en el foco",
-    "es": "Tercer plan anticrisis del Gobierno con el sector agroalimentario en el foco",
-    "fr": "Tercer plan anticrisis del Gobierno con el sector agroalimentario en el foco",
-    "it": "Tercer plan anticrisis del Gobierno con el sector agroalimentario en el foco"
-   },
-   "description": "El campo espera nuevas ayudas ante el encarecimiento del gasóleo y los fertilizantes, mientras muchos cerealistas se plantean reducir la siembra y Europa teme nuevas subidas del diésel si Estados Unidos limita sus exportaciones “Tercer plan anticrisis del Gobierno con el sector a",
-   "url": "https://www.agropopular.com/gobierno-sector-290926/",
-   "relevance": 88,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "fertilizantes",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
   }
  ],
  "leche": [
@@ -9900,6 +9791,65 @@
      "market": "leche",
      "channel": "supply",
      "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-6e5460a58f",
+   "date": "2026-09-30",
+   "region": "ca",
+   "topic": "energia",
+   "topics": [
+    "energia",
+    "costes"
+   ],
+   "products": [
+    "leche",
+    "diesel"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "es": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "fr": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins",
+    "it": "dairy farm operational costs | Surging diesel costs squeeze US dairy producer margins"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNT05XN1R6bjB5U0xSYzB2TEkwTjQtWGJBSEZBOVNlMXVYbkpTT2QyanFhQTlpYmdDdzZmSHU4Um1pY2oyMmJueTlrREhfNGpISlJkMEt2ci0wMDY3T2Q4QVBOdkgwS055bFRHVzl4djh6MXBZTjJxaXVNV084VGNZOERKMEJrNmE5?oc=5",
+   "relevance": 70,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "leche",
+     "channel": "input_cost",
+     "relation": "energy-milk",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
      "direction": "uncertain"
     }
    ]
@@ -10050,6 +10000,39 @@
    ]
   },
   {
+   "id": "auto-3e198b2824",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "comercio",
+   "topics": [
+    "comercio"
+   ],
+   "products": [
+    "leche"
+   ],
+   "source": "Farmtario",
+   "lang": "en",
+   "headline": {
+    "en": "Ontario dairy goat product exports caught in U.S. ban",
+    "es": "Ontario dairy goat product exports caught in U.S. ban",
+    "fr": "Ontario dairy goat product exports caught in U.S. ban",
+    "it": "Ontario dairy goat product exports caught in U.S. ban"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOUmtXdFJOMDhaUGlxdlNhd2o5NDJfc0JCaXR1cGpJZ1RGRzNpSDhqd2xfUEZqQURwbmdBMjZBZXo0U2ZMLUxWU2cxdU9oVW9yTUI0MWZLOXpqeU9zX2tPR3h5RVotTzFRQzY3YkdOUWU2eVg3SHZkMzZPY2l3amdlQmFSUm03eGRrQWpYdHM0ZVM2RjFn?oc=5",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "trade",
+   "marketLinks": [
+    {
+     "market": "leche",
+     "channel": "trade",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-336f4614c7",
    "date": "2026-09-30",
    "region": "eu",
@@ -10071,6 +10054,37 @@
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1TUzVNRUVEUTFjUmpUNzdVR1paTlZvcXhVdXFxLUFHbVFicWN4UGZONEYtbXlYc3ZCaVhlNmxLRFhHUFVDa3JzTlZDV2J4Zw?oc=5",
    "relevance": 54,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "leche",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-62df16ea81",
+   "date": "2026-09-30",
+   "region": "ca",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "leche"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "Best Sustainable Dairy Farm Practices: 7 Proven Systems",
+    "es": "Best Sustainable Dairy Farm Practices: 7 Proven Systems",
+    "fr": "Best Sustainable Dairy Farm Practices: 7 Proven Systems",
+    "it": "Best Sustainable Dairy Farm Practices: 7 Proven Systems"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNaTk4SmI2SHlSZTJPNk5zQ0ljRXFaSDhYdWNNX3pRYi1pbTI4bkV1QkREc0o1eGptd3NBekJZVTNwUllpTGxjZWNfUDkyei04LTBKZ0VPMEd2dVg2RGhleGRSd3VsdlZwR2Z0RVZrSGdQOFlvaXR6eHZ0WVQ5em5PZ0o1eUk2QQ?oc=5",
+   "relevance": 48,
    "auto": true,
    "impactChannel": "market_impact",
    "marketLinks": [
@@ -10259,6 +10273,79 @@
    ]
   },
   {
+   "id": "auto-d9da77ff87",
+   "date": "2026-09-29",
+   "region": "ca",
+   "topic": "comercio",
+   "topics": [
+    "comercio",
+    "oferta"
+   ],
+   "products": [
+    "leche"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "North American trade measures disrupt dairy protein supply chains",
+    "es": "North American trade measures disrupt dairy protein supply chains",
+    "fr": "North American trade measures disrupt dairy protein supply chains",
+    "it": "North American trade measures disrupt dairy protein supply chains"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNzZINVJGTmVnRnliQWo2UkpUeXgyNW0wRVRLXzM1MUliZ2g3QjNEMzZSNUFYMWJnNlZuVTR2cFdhSUZ4cVJ6TzgxYVVFNFNlZlVDekplNlNubU4tMHhQOGNrWmNjOWhFa1djb3lMMXFnZHRNaWxhcTJSOEM0WXZ6ZncwUmphLU9iazc0OVZGYUpRNnhMYUtVSldHTmswQ0VxYko3M2ZfRUtoQTA?oc=5",
+   "relevance": 60,
+   "auto": true,
+   "impactChannel": "trade",
+   "marketLinks": [
+    {
+     "market": "leche",
+     "channel": "trade",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "leche",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-485ce490e6",
+   "date": "2026-09-29",
+   "region": "ca",
+   "topic": "oferta",
+   "topics": [
+    "oferta"
+   ],
+   "products": [
+    "leche"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "Ruminant Activity Monitoring Collars Market Forecast to 2035: Demand Accelerates on Dairy Herd Health Digitization",
+    "es": "Ruminant Activity Monitoring Collars Market Forecast to 2035: Demand Accelerates on Dairy Herd Health Digitization",
+    "fr": "Ruminant Activity Monitoring Collars Market Forecast to 2035: Demand Accelerates on Dairy Herd Health Digitization",
+    "it": "Ruminant Activity Monitoring Collars Market Forecast to 2035: Demand Accelerates on Dairy Herd Health Digitization"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQV1NSMTZTbE1va205Y2RmSldidTdzbmM3NjdhdnJvSnREOUtqd1RLWjQ4NDVUYnZWTTRtSC1HZENPZ1JjMTkxVmdhek1aQUxnY2ItOV9nUXJ4ZFNIb1VObEMwSnZ1ZTQwNXJGV3pxYjdnYjJGNkVESDJnOW03NGtOWm1XOXFsN01KbnUtTVVyQkxCWm1vRXlBdVAtZF9NaEh6R0ppaU0yclhnTmJDbTMtdUg3bGR1SmNaMERkY0dnVTBSTE5KUXl6VHVpeDlZN3pzajJ4QTJQZFppNGM?oc=5",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "supply",
+   "marketLinks": [
+    {
+     "market": "leche",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-eb74d7cb27",
    "date": "2026-09-29",
    "region": "eu",
@@ -10341,6 +10428,68 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPSzJDVkVWUW53SXNkblYwS0ljT1g2eFRIdEpncG5RcmxaTV9KZXhVN0xBcnJfb0EzU3pHN1QtdDVnOWtkLWw1VHhmRU52bGdTVnFnMFJLUS1ib0drY1BUc2JzU2pZdWFCVzBLU1JnajNmM0V4QlBXRTdsanRjYWRZNV83cTBpdGNkdTZCa2FZcjRVbVRPTFlV?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "leche",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-9b15277131",
+   "date": "2026-09-29",
+   "region": "ca",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "leche"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "Opinion: Whoever our next BFF is, we need to open up dairy",
+    "es": "Opinion: Whoever our next BFF is, we need to open up dairy",
+    "fr": "Opinion: Whoever our next BFF is, we need to open up dairy",
+    "it": "Opinion: Whoever our next BFF is, we need to open up dairy"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9ldEoyRGtQdTVaNGFKNF81UjAxcFNpZHNoNWZYZ0hDY2VMc0FWYXpWbnVFRW9GVGk3Sk92dC1NR2s4ek9aM05ncVpCT1FhVWNUb2tiaWhuenp4bVdxZEpkMDBQWWQyLWtVeVoxRi1HQmdpNzV3?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "leche",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-e7547af34e",
+   "date": "2026-09-29",
+   "region": "ca",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "leche"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "dairy processing enterprise integration | Sodiaal completes Canadian yogurt platform integration",
+    "es": "dairy processing enterprise integration | Sodiaal completes Canadian yogurt platform integration",
+    "fr": "dairy processing enterprise integration | Sodiaal completes Canadian yogurt platform integration",
+    "it": "dairy processing enterprise integration | Sodiaal completes Canadian yogurt platform integration"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcWRZc1hhXzd1M0V1Ni1TZm8zcHp4MDVIM1NKcGJsdTR0ZDc4cVdZWGZOeXZWd212b09IS2lCd1FtempybnpkaGhydlYtQ2g5bl8yWUxtMXZ3bm1TZFg0SE9aanVoV3dEUnV1M05yS0VKbUNUU3dtSEVweGNXa0pNSWlPb2NILVNH?oc=5",
    "relevance": 48,
    "auto": true,
    "impactChannel": "market_impact",
@@ -10480,296 +10629,40 @@
    ]
   },
   {
-   "id": "auto-d34536946e",
-   "date": "2026-09-26",
-   "region": "us",
-   "topic": "politica",
+   "id": "auto-c8dff270b0",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "comercio",
    "topics": [
-    "politica"
+    "comercio",
+    "oferta"
    ],
    "products": [
     "leche"
    ],
-   "source": "USDA ERS",
+   "source": "Dairy Farmers of Canada",
    "lang": "en",
    "headline": {
-    "en": "Dairy: Background for 1995 Farm Legislation",
-    "es": "Dairy: Background for 1995 Farm Legislation",
-    "fr": "Dairy: Background for 1995 Farm Legislation",
-    "it": "Dairy: Background for 1995 Farm Legislation"
+    "en": "imported infant formula market | China and Netherlands expand dairy supply chain pact",
+    "es": "imported infant formula market | China and Netherlands expand dairy supply chain pact",
+    "fr": "imported infant formula market | China and Netherlands expand dairy supply chain pact",
+    "it": "imported infant formula market | China and Netherlands expand dairy supply chain pact"
    },
    "description": "",
-   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE11S1pTd3VkcVpkaVZJdGdKTjhxM1BULV9FN0FsakNpcTE0dTVac2VTdk1GaVAtend1Z1dzS2oyMVFfTGdXOUhtT1FtQ2xXcTBtUWF1WG04c2tmZ2R1aE1aOUZVSWd5alpFZzAw?oc=5",
-   "relevance": 62,
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNQ2VhVllnalVBYlpaZnRWV1hFZEdtM3dJWm1qVm8yTW9DZnFDRVB6Z2ZkTzlSdUxONm12RG5GMVlabmhucXdHUUZXQThmaFZrUmRrOU9xSTVRVnpvMDNPNlY2aDcwY01QXzkxTnFqOGl1clJ4MG1tRG5nSkdtenBWNGVPZ0FCZw?oc=5",
+   "relevance": 60,
    "auto": true,
-   "impactChannel": "policy",
+   "impactChannel": "trade",
    "marketLinks": [
     {
      "market": "leche",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-5376c00777",
-   "date": "2026-09-25",
-   "region": "eu",
-   "topic": "costes",
-   "topics": [
-    "costes"
-   ],
-   "products": [
-    "leche",
-    "vaca",
-    "ganado",
-    "costes"
-   ],
-   "source": "Revista Frisona Española",
-   "lang": "es",
-   "headline": {
-    "en": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes",
-    "es": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes",
-    "fr": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes",
-    "it": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPQjRaZ3pjdmFOd0NEeGRCMndFNFlBOThteE1rYW9IWTIyVEpISDNocnFhMVE0LXZhSzNJWnBCYWdnbFZvQjdfem1hRm0yREJ3TXVLVzdHTjltd211YTlKaTdTMUFyVGRJWjRaaDRIZUlLRzU4X1I3RkZWTjE4QXF3akh0RjByZ295VU9yV2F1a1g0amZXc2dLRFVWZzJwcVoyMndSdEJFMDczY3F6dTE4NE1Fa3QySDBXRzJhb2pSNWRQMGtuNVBaWVh2ZDd0U0I5bE4zOHBRbTZLRVU2ZVhDc0pfTmJHTl83Yk1JRXlHWF9fQldu?oc=5",
-   "relevance": 84,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "vaca",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-01d2376443",
-   "date": "2026-09-25",
-   "region": "us",
-   "topic": "politica",
-   "topics": [
-    "politica"
-   ],
-   "products": [
-    "leche",
-    "pac"
-   ],
-   "source": "Agri-Pulse",
-   "lang": "en",
-   "headline": {
-    "en": "Sen. Hoeven, Economist Dan Basse and Krysta Harden on the farm bill timeline, the Trump-Xi meeting and the outlook for U.S. dairy.",
-    "es": "Sen. Hoeven, Economist Dan Basse and Krysta Harden on the farm bill timeline, the Trump-Xi meeting and the outlook for U.S. dairy.",
-    "fr": "Sen. Hoeven, Economist Dan Basse and Krysta Harden on the farm bill timeline, the Trump-Xi meeting and the outlook for U.S. dairy.",
-    "it": "Sen. Hoeven, Economist Dan Basse and Krysta Harden on the farm bill timeline, the Trump-Xi meeting and the outlook for U.S. dairy."
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxQZzZxY2lOaVdRZjFibkRlNU1sbm1TWU5KclpZQmhHTUtQWUhhWGhYTkdoNTlUWTVndTZLNmh6S3RIOFA0LXJxZGllbDhuSVNqeS1BdWVsbW5tQkdGRzlmLXN1d3ZMQ1NaeG5IRVBYOVZIcExVTU0zbWZRTGRMeUZxS2wybWxhNmRZbldWMnhFcEVxUEw2ajcxa2RzTlhIbmwtOEFZdF9lR2Y0SExDeDA2dGxiY3BBY0lPczZKMUZTQUJsVmNkU1l5RVppbGI5anB4aDBGS1BWUXlDLUwwY1RmQTNGUWJpZG9qOG5pZ24tN0Z6ZXEwUUhlZXpvX0FIRFZFLTZ1T001cnFBVmcxcG4xX3lLMXdneTJZNHBZVnFtdS1tYmc?oc=5",
-   "relevance": 64,
-   "auto": true,
-   "impactChannel": "policy",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-52f0634d0c",
-   "date": "2026-09-25",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "leche",
-    "cerdo"
-   ],
-   "source": "Journal Paysan Breton",
-   "lang": "fr",
-   "headline": {
-    "en": "L’embellie des dernières années en lait et en porc s’achève",
-    "es": "L’embellie des dernières années en lait et en porc s’achève",
-    "fr": "L’embellie des dernières années en lait et en porc s’achève",
-    "it": "L’embellie des dernières années en lait et en porc s’achève"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPaDM5Y3Yya2c3eE1SSmRJWEh3bEQ4TWM4VFY2a09qcFNqVTlSOUhXWlVFQlE2cnY0cVhFLXN4bFNTYU1tOFZxQjYyOVcxZzB3d2N1RmQ2VkZZcDNuM2ZtOFVJN21tb09GNm5lLXBmbzRoOWpDeWZJNlVoVWtYNXc2NDVVY3p0eGI3MUt2cDR2UGZoNE0tTkZSNlNUUQ?oc=5",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
+     "channel": "trade",
      "relation": null,
      "direction": "uncertain"
     },
     {
      "market": "leche",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-03652d0d90",
-   "date": "2026-09-25",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "leche"
-   ],
-   "source": "Web-agri",
-   "lang": "fr",
-   "headline": {
-    "en": "Le marché Spot entrevoit du lait disponible en octobre",
-    "es": "Le marché Spot entrevoit du lait disponible en octobre",
-    "fr": "Le marché Spot entrevoit du lait disponible en octobre",
-    "it": "Le marché Spot entrevoit du lait disponible en octobre"
-   },
-   "description": "Le prix du lait Spot se maintient en semaine 40. Les regards sont braqués sur une hausse, ou pas, de la collecte en octobre et sur le marché de la poudre. Le marché du Spot bio se tend.",
-   "url": "https://www.web-agri.fr/lait-spot/article/903939/le-marche-spot-entrevoit-du-lait-disponible-en-octobre",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-8fcee3ffeb",
-   "date": "2026-09-25",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "leche"
-   ],
-   "source": "Feedstuffs",
-   "lang": "en",
-   "headline": {
-    "en": "Higher-component dairy herds capture bigger milk checks",
-    "es": "Higher-component dairy herds capture bigger milk checks",
-    "fr": "Higher-component dairy herds capture bigger milk checks",
-    "it": "Higher-component dairy herds capture bigger milk checks"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNN3hDM2RvWjlZLWh2LV9GQlNHdmw5RXpRNkFUUVo5Vl9ITVRlc19sVlUwV2s2SmhFM2hJSjB4cGYyVS1fRFI4aGJndVhZdnhOajRKTmIwWlBCOWp3MXRqajVDSjBITGRwRkFnMi1mM09YOUhPVS1ndVloU2xwRXhDRVUwTEtaWG1RT2paU1RvaGZRQ1M0ODZ5ckVfYjRqQ3E0OV9Wc3NsZ0NmeGM5YjBFekdxVHRIM2s?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-e12444e4ca",
-   "date": "2026-09-25",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "leche"
-   ],
-   "source": "Feedstuffs",
-   "lang": "en",
-   "headline": {
-    "en": "Bigger milk checks from higher-component dairy herds",
-    "es": "Bigger milk checks from higher-component dairy herds",
-    "fr": "Bigger milk checks from higher-component dairy herds",
-    "it": "Bigger milk checks from higher-component dairy herds"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNa1lUbjJUSGp4SDdtVlg3UzFNUUxUY2QtLTZDeWZHRzl5ZzNPbUFralZFbFZaSHZyZnFHMFJjY0Nrbm41QzJJZE9NNlczRl9DOTJ6YUQzYVhyN181YWhYak51ZjZtVllqZ0xncjZCX290SDg4ZENUWjVuR0dHRWl4LWJEQXpmSEhwM2lGUFRNbHFmejhmWThsWFIwWmRjZw?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-7283402adb",
-   "date": "2026-09-24",
-   "region": "eu",
-   "topic": "clima",
-   "topics": [
-    "clima",
-    "politica"
-   ],
-   "products": [
-    "vaca",
-    "ganado",
-    "leche"
-   ],
-   "source": "Web-agri",
-   "lang": "fr",
-   "headline": {
-    "en": "Malgré la sécheresse, les vaches allaitantes ne prennent pas encore le chemin des abattoirs",
-    "es": "Malgré la sécheresse, les vaches allaitantes ne prennent pas encore le chemin des abattoirs",
-    "fr": "Malgré la sécheresse, les vaches allaitantes ne prennent pas encore le chemin des abattoirs",
-    "it": "Malgré la sécheresse, les vaches allaitantes ne prennent pas encore le chemin des abattoirs"
-   },
-   "description": "Dans les Tendances du 21 septembre 2026, l’Institut de l’élevage fait état d’un ralentissement de la décapitalisation bovine sur le segment des vaches allaitantes, alors que les abattages de réformes laitières vont bon train en raison du contexte fourrager. Reste à voir quels ser",
-   "url": "https://www.web-agri.fr/vaches-allaitantes-pmtva/article/903831/malgre-la-secheresse-les-vaches-allaitantes-ne-prennent-pas-encore-le-chemin-des",
-   "relevance": 80,
-   "auto": true,
-   "impactChannel": "weather",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "weather",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "vaca",
-     "channel": "weather",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "leche",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "vaca",
-     "channel": "policy",
+     "channel": "supply",
      "relation": null,
      "direction": "uncertain"
     }
@@ -10879,7 +10772,7 @@
    ]
   },
   {
-   "id": "auto-d61adf01c9",
+   "id": "auto-49925816c1",
    "date": "2026-09-28",
    "region": "us",
    "topic": "",
@@ -10888,7 +10781,7 @@
     "vaca",
     "pienso"
    ],
-   "source": "Al Jazeera",
+   "source": "aljazeera.com",
    "lang": "en",
    "headline": {
     "en": "Cattle to feed: Why a global meat crisis is looming",
@@ -10959,6 +10852,58 @@
    "auto": true,
    "impactChannel": "market_impact",
    "marketLinks": []
+  },
+  {
+   "id": "auto-980349b348",
+   "date": "2026-09-25",
+   "region": "ca",
+   "topic": "precios",
+   "topics": [
+    "precios",
+    "energia"
+   ],
+   "products": [
+    "pienso"
+   ],
+   "source": "Alberta Farmer Express",
+   "lang": "en",
+   "headline": {
+    "en": "Feed grain prices ‘stable’ as fuel cost rise on the Prairies",
+    "es": "Feed grain prices ‘stable’ as fuel cost rise on the Prairies",
+    "fr": "Feed grain prices ‘stable’ as fuel cost rise on the Prairies",
+    "it": "Feed grain prices ‘stable’ as fuel cost rise on the Prairies"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPVWF4dnNWR2VSdWthdHJXdElNelJiRWU5ZE5KdW4wSXF5NkprOUhpbjEzbHltSlNwalN6NXUzQnhmMy1tV2IyXzZ3SWRoNWtzLXhBRldqNmM5MDlzTEtDcGJXdl9GbTdDa3pQTzhFUnNYREZCcEE0RURGWW5SUHJRaFRzTXNmNjUtLW5EY1RHcTNsYnNYQjFSc3pnRG9TRmxf?oc=5",
+   "relevance": 52,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    }
+   ]
   },
   {
    "id": "auto-fea95eab6d",
@@ -11125,6 +11070,66 @@
    ]
   },
   {
+   "id": "auto-204009ea15",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "precios",
+    "energia"
+   ],
+   "products": [
+    "colza",
+    "energia"
+   ],
+   "source": "електронна зернова біржа України",
+   "lang": "en",
+   "headline": {
+    "en": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "es": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "fr": "Palm and sunflower oil prices fall due to seasonal supply increases",
+    "it": "Palm and sunflower oil prices fall due to seasonal supply increases"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNeXE1bVluUnRBYkFuUjNOelR1Rk5FNDhJNXpaRTZyRExUUzhScVNpS2tSbWw2cWVkWXF2SDJqWHVCajNNN1g1MFZJdThzY3UwNi0xR203UVJOMzcyRTVsd1VrOWMyU2RHT00ycFVkRU0zSmdWMTZRTzctQzA2WTlDTGJXMDZkcm5tbDlVcUhJMGpQUDhwWHhlMHJHa1doYXhWTHhZQnBQczhwS2lzRGlLeHlmYXBNcVgwZHdmTXdsMlB6Nk0tWXNyeFFuQTg?oc=5",
+   "relevance": 76,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "colza",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-c9954e9f64",
    "date": "2026-09-30",
    "region": "global",
@@ -11184,6 +11189,46 @@
     {
      "market": "colza",
      "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-e374b2f0ee",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "soja",
+    "colza"
+   ],
+   "source": "reussir.fr",
+   "lang": "fr",
+   "headline": {
+    "en": "Marché des oléagineux du 29 septembre 2026 : Les prix du soja et du colza européens rebondissent après leur forte baisse de lundi",
+    "es": "Marché des oléagineux du 29 septembre 2026 : Les prix du soja et du colza européens rebondissent après leur forte baisse de lundi",
+    "fr": "Marché des oléagineux du 29 septembre 2026 : Les prix du soja et du colza européens rebondissent après leur forte baisse de lundi",
+    "it": "Marché des oléagineux du 29 septembre 2026 : Les prix du soja et du colza européens rebondissent après leur forte baisse de lundi"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNk5XNDBKd3A4VTIxQzYxWVJxejZISE1UM01LeU9CX290TTllZEFEVnNLRU50SVI0ZVVwZ3RmSk9DN3Rtb3E2dmZzX3FlQTlZS2xSRXh4eVZBemJhUmJIVFpSdDBCY2lOcUNlTS1MRWoyZXU4NUU2QzFJN2xmdktOLWlla1JFUnFfZFFIRVlqOWdnS0UzcVVHRElROVFxRFpSZlVvajVpcHRpRjVpV3ZiTzU5Yw?oc=5",
+   "relevance": 64,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "colza",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "soja",
+     "channel": "market_impact",
      "relation": null,
      "direction": "uncertain"
     }
@@ -11528,7 +11573,7 @@
   {
    "id": "auto-96d6cf724f",
    "date": "2026-09-29",
-   "region": "global",
+   "region": "ca",
    "topic": "",
    "topics": [],
    "products": [
@@ -11559,7 +11604,7 @@
   {
    "id": "auto-293a593ea4",
    "date": "2026-09-29",
-   "region": "global",
+   "region": "ca",
    "topic": "",
    "topics": [],
    "products": [
@@ -11590,7 +11635,7 @@
   {
    "id": "auto-1212b78bd3",
    "date": "2026-09-29",
-   "region": "global",
+   "region": "ca",
    "topic": "",
    "topics": [],
    "products": [
@@ -11621,7 +11666,7 @@
   {
    "id": "auto-57c4873c98",
    "date": "2026-09-29",
-   "region": "global",
+   "region": "ca",
    "topic": "",
    "topics": [],
    "products": [
@@ -11652,7 +11697,7 @@
   {
    "id": "auto-0370058557",
    "date": "2026-09-29",
-   "region": "global",
+   "region": "ca",
    "topic": "",
    "topics": [],
    "products": [
@@ -11683,7 +11728,7 @@
   {
    "id": "auto-49838d06ad",
    "date": "2026-09-28",
-   "region": "global",
+   "region": "ca",
    "topic": "oferta",
    "topics": [
     "oferta"
@@ -11797,9 +11842,40 @@
    ]
   },
   {
+   "id": "auto-e3b978c389",
+   "date": "2026-09-28",
+   "region": "ca",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "colza"
+   ],
+   "source": "Western Producer",
+   "lang": "en",
+   "headline": {
+    "en": "Canadian canola cash bids – Sept. 28",
+    "es": "Canadian canola cash bids – Sept. 28",
+    "fr": "Canadian canola cash bids – Sept. 28",
+    "it": "Canadian canola cash bids – Sept. 28"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5qT0hVOTlobWJnV1NNdEJTeEVOczdWbS1DWXVnczF6QlBkT205UWNlMEFpb2dwUTByOTRiSy1NaGM5bkp6QlBVNjlCOFUwRlB1ZWFiQ2JsSGx3OHE2dURJUUdhWHBzdVRGa0NMTU5uNVhoN3dSUi1acWtidWVsZw?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "colza",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-363c913ab7",
    "date": "2026-09-28",
-   "region": "global",
+   "region": "ca",
    "topic": "",
    "topics": [],
    "products": [
@@ -11830,7 +11906,7 @@
   {
    "id": "auto-a3b429c03e",
    "date": "2026-09-28",
-   "region": "global",
+   "region": "ca",
    "topic": "",
    "topics": [],
    "products": [
@@ -11854,121 +11930,6 @@
      "market": "colza",
      "channel": "market_impact",
      "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-5fd0646471",
-   "date": "2026-09-28",
-   "region": "global",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "colza"
-   ],
-   "source": "Western Producer",
-   "lang": "en",
-   "headline": {
-    "en": "ICE Canadian Canola Board Margin Index Close – Sept. 25",
-    "es": "ICE Canadian Canola Board Margin Index Close – Sept. 25",
-    "fr": "ICE Canadian Canola Board Margin Index Close – Sept. 25",
-    "it": "ICE Canadian Canola Board Margin Index Close – Sept. 25"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbndrbzhVWFE2ZUpwMGpPdEpZMXZscjhadVFLd0w0NFFrQy1JS2ZBNngwYVo2NDVzVEV3Ml80d3RXLW9MSVNLcXFpVzcwbWFUc29aNENQbVhLYXhoaFY4YjRkRGtlN0dObG41S1hKWVFmbG1hZTVLNWxfRTBuYWRaWXZKRzZ2QlV0V1kteTJaS3cxSmtPMEVB?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "colza",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-c511434226",
-   "date": "2026-09-28",
-   "region": "global",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "colza"
-   ],
-   "source": "Western Producer",
-   "lang": "en",
-   "headline": {
-    "en": "ICE review: Canola drops Monday",
-    "es": "ICE review: Canola drops Monday",
-    "fr": "ICE review: Canola drops Monday",
-    "it": "ICE review: Canola drops Monday"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9VczZuREhqUTFtOUppanFyQnczOWpPLWhHU3ZzQ2FMYlQ5VGNraFB3LWxEMTdlSDVsczYxVTFhamxwZ2c1dXVxOXdXWUhzeGR5SkFKZE9xVGw0SS01Ujl2TjFwaFdoZnpwWEtDa1R0S2JaeXNVemZ1MHpR?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "colza",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-2668c8e2a7",
-   "date": "2026-09-25",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "soja",
-    "colza",
-    "energia"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "Marché des oléagineux du 24 septembre 2026 : Le soja termine en légère baisse à Chicago, le colza recule sur Euronext malgré la légère remontée du pétrole",
-    "es": "Marché des oléagineux du 24 septembre 2026 : Le soja termine en légère baisse à Chicago, le colza recule sur Euronext malgré la légère remontée du pétrole",
-    "fr": "Marché des oléagineux du 24 septembre 2026 : Le soja termine en légère baisse à Chicago, le colza recule sur Euronext malgré la légère remontée du pétrole",
-    "it": "Marché des oléagineux du 24 septembre 2026 : Le soja termine en légère baisse à Chicago, le colza recule sur Euronext malgré la légère remontée du pétrole"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOTUxzNS1IdWJqbmtwc3AzMlk0bmFoMHNUZGJUbVh2ZVJrVXJadHpwcmI2Qk5VX0VMUnZ0WEdyUWwwdlZLQnZFakZYUjU0cTAtTXEwWUR2QjBGa0c5eDFJYlNGYzZDQUxOS2tJbW45R2FJTE5Bcmh0UjFJUWFrZUJzc3NQbmF0UXR1WDJhOHo1MEI3Y3JsVUpQQllaVTlRZkRWQUJnMnYteFFrNmNKTFg1Z3ItemVVMU9HS3c?oc=5",
-   "relevance": 74,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
      "direction": "uncertain"
     }
    ]
@@ -12048,6 +12009,46 @@
    ]
   },
   {
+   "id": "auto-e374b2f0ee",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "soja",
+    "colza"
+   ],
+   "source": "reussir.fr",
+   "lang": "fr",
+   "headline": {
+    "en": "Marché des oléagineux du 29 septembre 2026 : Les prix du soja et du colza européens rebondissent après leur forte baisse de lundi",
+    "es": "Marché des oléagineux du 29 septembre 2026 : Les prix du soja et du colza européens rebondissent après leur forte baisse de lundi",
+    "fr": "Marché des oléagineux du 29 septembre 2026 : Les prix du soja et du colza européens rebondissent après leur forte baisse de lundi",
+    "it": "Marché des oléagineux du 29 septembre 2026 : Les prix du soja et du colza européens rebondissent après leur forte baisse de lundi"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNk5XNDBKd3A4VTIxQzYxWVJxejZISE1UM01LeU9CX290TTllZEFEVnNLRU50SVI0ZVVwZ3RmSk9DN3Rtb3E2dmZzX3FlQTlZS2xSRXh4eVZBemJhUmJIVFpSdDBCY2lOcUNlTS1MRWoyZXU4NUU2QzFJN2xmdktOLWlla1JFUnFfZFFIRVlqOWdnS0UzcVVHRElROVFxRFpSZlVvajVpcHRpRjVpV3ZiTzU5Yw?oc=5",
+   "relevance": 64,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "colza",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "soja",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-7e4f45e4f3",
    "date": "2026-09-30",
    "region": "eu",
@@ -12071,6 +12072,44 @@
    "auto": true,
    "impactChannel": "market_impact",
    "marketLinks": [
+    {
+     "market": "soja",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-44a8a05b6d",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "maiz",
+    "soja"
+   ],
+   "source": "agrolatam.com",
+   "lang": "en",
+   "headline": {
+    "en": "Corn and Soybeans Rise Ahead of Key USDA Grain Reports",
+    "es": "Corn and Soybeans Rise Ahead of Key USDA Grain Reports",
+    "fr": "Corn and Soybeans Rise Ahead of Key USDA Grain Reports",
+    "it": "Corn and Soybeans Rise Ahead of Key USDA Grain Reports"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5aZWdGZ1ZGVU9UMXlzSklTSTRPWkU3MmdYZGtVSnhfWXJFbTVRZFJINHhLb2I1U1VldDhRY21mTml3bHk3andhY0VkOG5aQW9XOWZUZDdTTFlBcE9lMkJRMFh3WjR3eGVsQ3VmTkNsdXlWNTlfZ2RPX1VLeV92UQ?oc=5",
+   "relevance": 58,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "maiz",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
     {
      "market": "soja",
      "channel": "market_impact",
@@ -12274,7 +12313,7 @@
    ]
   },
   {
-   "id": "auto-805e7d5635",
+   "id": "auto-260f5885ea",
    "date": "2026-09-29",
    "region": "global",
    "topic": "comercio",
@@ -12286,7 +12325,7 @@
     "trigo",
     "soja"
    ],
-   "source": "global-agriculture.com",
+   "source": "Global Agriculture",
    "lang": "en",
    "headline": {
     "en": "US-China Tariff Cuts Spare Corn and Wheat, Leave Soybeans Out",
@@ -12402,7 +12441,7 @@
    ]
   },
   {
-   "id": "auto-e5d0e58d94",
+   "id": "auto-f06b6e076a",
    "date": "2026-09-29",
    "region": "global",
    "topic": "",
@@ -12411,7 +12450,7 @@
     "maiz",
     "soja"
    ],
-   "source": "brownfieldagnews.com",
+   "source": "Brownfield Ag News",
    "lang": "en",
    "headline": {
     "en": "Soybeans rebound as corn drifts downward",
@@ -12508,7 +12547,7 @@
   {
    "id": "auto-3890d1b60a",
    "date": "2026-09-29",
-   "region": "global",
+   "region": "ca",
    "topic": "precios",
    "topics": [
     "precios"
@@ -12605,7 +12644,7 @@
    ]
   },
   {
-   "id": "auto-ba8e43e1c6",
+   "id": "auto-56a6137834",
    "date": "2026-09-29",
    "region": "us",
    "topic": "comercio",
@@ -12615,7 +12654,7 @@
    "products": [
     "soja"
    ],
-   "source": "AgroLatam",
+   "source": "agrolatam.com",
    "lang": "en",
    "headline": {
     "en": "U.S. Grain Markets Turn Mixed as Soybeans Recover From Tariff-Driven Sell-Off",
@@ -12871,7 +12910,7 @@
   {
    "id": "auto-41c27c1a75",
    "date": "2026-09-28",
-   "region": "global",
+   "region": "ca",
    "topic": "precios",
    "topics": [
     "precios"
@@ -12900,98 +12939,33 @@
      "direction": "uncertain"
     }
    ]
-  },
-  {
-   "id": "auto-2cd19834ab",
-   "date": "2026-09-28",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio"
-   ],
-   "products": [
-    "soja"
-   ],
-   "source": "brownfieldagnews.com",
-   "lang": "en",
-   "headline": {
-    "en": "Soybeans dive as China keeps import tariff in place",
-    "es": "Soybeans dive as China keeps import tariff in place",
-    "fr": "Soybeans dive as China keeps import tariff in place",
-    "it": "Soybeans dive as China keeps import tariff in place"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQjBFN20tVEl0cnlRVVpOU1kyanFOSVhZMkYwRVpwdjFYM1k1MTZuUi1vTzh4QTJrWTFUODhZTXRxdk9ma0pTaV9nYVNzemtBaFNpNGV1Mk5kRjFtVnFWLWQ2YW1uUDRVTTdHLW5nbUNNNWtHZlZEWkVUTWE3YUdFT2ZxUDFiOVdXZmxPSzR3d19HRGlTNTFjeEdNeS1FQQ?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "soja",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-0362091b0a",
-   "date": "2026-09-28",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio"
-   ],
-   "products": [
-    "soja"
-   ],
-   "source": "indiagazette.com",
-   "lang": "en",
-   "headline": {
-    "en": "China lowers tariffs on US farm imports, but keeps soybeans subject to additional 10% duty",
-    "es": "China lowers tariffs on US farm imports, but keeps soybeans subject to additional 10% duty",
-    "fr": "China lowers tariffs on US farm imports, but keeps soybeans subject to additional 10% duty",
-    "it": "China lowers tariffs on US farm imports, but keeps soybeans subject to additional 10% duty"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxONjd4ajhBWEhzbEZsU3AtYWJpQnEyal83UEVrZE1HWnFMT0NUTVlqUVRQdzBRX0dPSXh4Ukh1TmxJUFRCcVR5RjJUUHpPWDk1WUpONVA3WmpTVXFMeFZFVjVSM3JTeWVScUExWjJnYmUzUUpZNUdUTTBuUVUzbU80Z3hPaHg1V2dlRnk0QnlyQ0JIN2xfRnlBampZYXgyb2J3UFVyamdIMmVjU2g2Y19MYlBJWTBhdkl4X2tVTWVXcjNUTmZpck1DdkVXUXQ?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "soja",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
   }
  ],
- "ganado": [
+ "vaca": [
   {
-   "id": "auto-15b3f5123c",
+   "id": "auto-e1a1e35c6f",
    "date": "2026-09-30",
-   "region": "eu",
+   "region": "us",
    "topic": "clima",
    "topics": [
-    "clima"
+    "clima",
+    "precios",
+    "costes"
    ],
    "products": [
-    "vaca",
-    "ganado"
+    "vaca"
    ],
-   "source": "reussir.fr",
-   "lang": "fr",
+   "source": "agrolatam.com",
+   "lang": "en",
    "headline": {
-    "en": "Sécheresse : « La priorité pour les éleveurs sera de garder les vaches gestantes, il faut des veaux ! »",
-    "es": "Sécheresse : « La priorité pour les éleveurs sera de garder les vaches gestantes, il faut des veaux ! »",
-    "fr": "Sécheresse : « La priorité pour les éleveurs sera de garder les vaches gestantes, il faut des veaux ! »",
-    "it": "Sécheresse : « La priorité pour les éleveurs sera de garder les vaches gestantes, il faut des veaux ! »"
+    "en": "Cattle prices turn lower as drought and costs reshape the outlook through 2027",
+    "es": "Cattle prices turn lower as drought and costs reshape the outlook through 2027",
+    "fr": "Cattle prices turn lower as drought and costs reshape the outlook through 2027",
+    "it": "Cattle prices turn lower as drought and costs reshape the outlook through 2027"
    },
    "description": "",
-   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNLTBuNEVaRWU1aDBJX04ybmRVWXBQbVdnRDg0MlRmRFZXbDB5LVZLQkxMaFNqcEVXcEI4a3FzekpWODNrbl9Tc2ZxUHFlNDhRNFVKQ3NjMlZOTHg2MDN3TlYzOVZIUzFFbFBZR0VORDc2ZTF2MXhmZEJfZHFQMExpei1OZ29nYkNSbEl2cTBlVkVQMm1sMVhHZVU4VU5FVmhuYmw2d1Z6SGNiZjktU2tiaFB6VjJ1cWlENlNlamNn?oc=5",
-   "relevance": 64,
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNN21mUXVoZFdiaW5KU1czTlFtOEZnMk1HVmFocjhlMXN3Q3I4dmpNWllpSlgyV2JHNWRUYjlHYnlGeWNGY0IzUlpMbzZGcVVOTXBPNFc5RTZKSFpXQ1ZRWExpcnJ5SXI0Q2RPVGdTY1dwQ3J2OVUtZ1NBWVI3bUdFaFp4bTJfUQ?oc=5",
+   "relevance": 66,
    "auto": true,
    "impactChannel": "weather",
    "marketLinks": [
@@ -13003,767 +12977,6 @@
     }
    ]
   },
-  {
-   "id": "auto-7e4f45e4f3",
-   "date": "2026-09-30",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "soja",
-    "ganado"
-   ],
-   "source": "Agroinformación",
-   "lang": "es",
-   "headline": {
-    "en": "ASAJA Córdoba no puede seguir así",
-    "es": "ASAJA Córdoba no puede seguir así",
-    "fr": "ASAJA Córdoba no puede seguir así",
-    "it": "ASAJA Córdoba no puede seguir así"
-   },
-   "description": "José Jiménez Espejo / Agricultor y ganadero Miembro de la Junta Directiva de ASAJA Córdoba Soy agricultor y ganadero, miembro de la Junta Directiva de ASAJA Córdoba y una persona vinculada desde hace años a esta organización. He participado en numerosas reuniones y actos y he pod",
-   "url": "https://agroinformacion.com/asaja-cordoba-no-puede-seguir-asi/",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "soja",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-cec32519de",
-   "date": "2026-09-30",
-   "region": "uk",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "ganado"
-   ],
-   "source": "Defra",
-   "lang": "en",
-   "headline": {
-    "en": "Livestock keepers: update your details",
-    "es": "Livestock keepers: update your details",
-    "fr": "Livestock keepers: update your details",
-    "it": "Livestock keepers: update your details"
-   },
-   "description": "Who to contact when your registered details change if you keep livestock (including as pets).",
-   "url": "https://www.gov.uk/guidance/livestock-keepers-update-your-details",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-7f932bbb78",
-   "date": "2026-09-30",
-   "region": "global",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "ganado"
-   ],
-   "source": "Agriland",
-   "lang": "en",
-   "headline": {
-    "en": "Farmers raise almost €50k at Tullamore Mart for African farm families",
-    "es": "Farmers raise almost €50k at Tullamore Mart for African farm families",
-    "fr": "Farmers raise almost €50k at Tullamore Mart for African farm families",
-    "it": "Farmers raise almost €50k at Tullamore Mart for African farm families"
-   },
-   "description": "Farmers from several counties raised almost €50,000 at Tullamore Mart this week for farming families in Africa. The farmers from counties – including Offaly, Kildare, Roscommon and Kilkenny – responded to an appeal by Self Help Africa to donate animals for the sale that took plac",
-   "url": "https://www.agriland.ie/farming-news/farmers-raise-almost-e50k-at-tullamore-mart-for-african-farm-families/",
-   "relevance": 40,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-ed34135b6b",
-   "date": "2026-09-30",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "ganado"
-   ],
-   "source": "Terre-net",
-   "lang": "fr",
-   "headline": {
-    "en": "Innovagri revient dans les Hauts-de-France en juin 2027",
-    "es": "Innovagri revient dans les Hauts-de-France en juin 2027",
-    "fr": "Innovagri revient dans les Hauts-de-France en juin 2027",
-    "it": "Innovagri revient dans les Hauts-de-France en juin 2027"
-   },
-   "description": "Le salon change de date et renforce son ancrage régional. Rendez-vous au champ les 2 et 3 juin 2027 à Grugies, dans l’Aisne, avec un espace supplémentaire dédié à l’élevage. En 2028, direction la Bourgogne-Franche-Comté.",
-   "url": "https://www.terre-net.fr/innov-agri/article/904113/innovagri-revient-dans-les-hauts-de-france-en-juin-2027",
-   "relevance": 40,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-e7bdc627d3",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "vaca",
-    "cordero",
-    "ganado"
-   ],
-   "source": "La France Agricole",
-   "lang": "fr",
-   "headline": {
-    "en": "Comment le virus Shamonda s’est encore propagé en septembre",
-    "es": "Comment le virus Shamonda s’est encore propagé en septembre",
-    "fr": "Comment le virus Shamonda s’est encore propagé en septembre",
-    "it": "Comment le virus Shamonda s’est encore propagé en septembre"
-   },
-   "description": "En septembre 2026, l’orthobunyavirus a été détecté dans un élevage d’ovins en France et sur des foetus bovins avortés en Belgique. Il a désormais été identifié dans 47 départements français dont 7 nouveaux départements au cours de la dernière semaine.",
-   "url": "https://www.lafranceagricole.fr/maladies-animales/article/904092/comment-le-virus-shamonda-s-est-encore-propage-en-septembre",
-   "relevance": 74,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cordero",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "vaca",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-672b4ef259",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios",
-    "politica"
-   ],
-   "products": [
-    "vaca",
-    "ganado"
-   ],
-   "source": "Web-agri",
-   "lang": "fr",
-   "headline": {
-    "en": "Décapitalisation bovine : Annie Genevard et Culture Viande d’accord sur l’objectif, pas sur la méthode",
-    "es": "Décapitalisation bovine : Annie Genevard et Culture Viande d’accord sur l’objectif, pas sur la méthode",
-    "fr": "Décapitalisation bovine : Annie Genevard et Culture Viande d’accord sur l’objectif, pas sur la méthode",
-    "it": "Décapitalisation bovine : Annie Genevard et Culture Viande d’accord sur l’objectif, pas sur la méthode"
-   },
-   "description": "À l’occasion de son congrès annuel, Culture Viande, le syndicat des entreprises d’abattage et de découpe, a de nouveau tiré la sonnette d’alarme sur la décapitalisation du cheptel français. Une inquiétude partagée par Annie Genevard. Venue ouvrir l’événement, la ministre de l’agr",
-   "url": "https://www.web-agri.fr/abattage/article/904083/decapitalisation-bovine-annie-genevard-et-culture-viande-d-accord-sur-l-objectif",
-   "relevance": 70,
-   "auto": true,
-   "impactChannel": "policy",
-   "marketLinks": [
-    {
-     "market": "vaca",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-d31e225379",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "vaca",
-    "leche",
-    "ganado"
-   ],
-   "source": "Agriland",
-   "lang": "en",
-   "headline": {
-    "en": "Number of cattle in Ireland up 2.4% year-on-year",
-    "es": "Number of cattle in Ireland up 2.4% year-on-year",
-    "fr": "Number of cattle in Ireland up 2.4% year-on-year",
-    "it": "Number of cattle in Ireland up 2.4% year-on-year"
-   },
-   "description": "The number of both dairy cows and cattle in Ireland both grew in the 12 months to June 2026. This is according to the latest data from the the Central Statistics Office (CSO) livestock survey for June 2026 released today (September 29). The total cattle number increased by 164,80",
-   "url": "https://www.agriland.ie/farming-news/number-of-cattle-in-ireland-up-2-4-year-on-year/",
-   "relevance": 68,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "vaca",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-5ec38e6b7a",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "vaca",
-    "ganado"
-   ],
-   "source": "Web-agri",
-   "lang": "fr",
-   "headline": {
-    "en": "Graines d'agriculteurs : 2 éleveurs de bovins viande distingués pour leur approche du travail",
-    "es": "Graines d'agriculteurs : 2 éleveurs de bovins viande distingués pour leur approche du travail",
-    "fr": "Graines d'agriculteurs : 2 éleveurs de bovins viande distingués pour leur approche du travail",
-    "it": "Graines d'agriculteurs : 2 éleveurs de bovins viande distingués pour leur approche du travail"
-   },
-   "description": "​​​​Deux jeunes éleveurs de vaches allaitantes ont retenu cette année l'attention du jury de Graines d'agriculteurs : Mathieu Imbert dans l'Aveyron et Pierre-Henri Pomport dans la Loire. Même s'ils n'ont pas gagné, ce sont les coups de cœur de cette édition. Leur point commun ? L",
-   "url": "https://www.web-agri.fr/installation-transmission/article/904027/graines-d-agriculteurs-2-eleveurs-de-bovins-viande-distingues-pour-leur-approche",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "vaca",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-1966012cf3",
-   "date": "2026-09-29",
-   "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "ganado"
-   ],
-   "source": "Brownfield",
-   "lang": "en",
-   "headline": {
-    "en": "Closing Grain and Livestock Futures: September 29, 2026",
-    "es": "Closing Grain and Livestock Futures: September 29, 2026",
-    "fr": "Closing Grain and Livestock Futures: September 29, 2026",
-    "it": "Closing Grain and Livestock Futures: September 29, 2026"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNcWU0VkpDWnFxUVJrTlk3ODF2UDVuSFJxSm5majJTbHY1bFVIb0NLY0Fxc3FJRUdPZGNPVnNOMFlBbE9PRFBDMlVnWkFGTkFZOXBZRTFKSVMtY0g1eTIxa195VmlPYV9MM1k0b05MSXk2Z0ppa0pVamRRaHRsbG9JMUtadm1ZZU00NGcteUxrMkkzQ0hmenhKYVg1ZE80X3pl?oc=5",
-   "relevance": 46,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-d86fd18416",
-   "date": "2026-09-29",
-   "region": "global",
-   "topic": "oferta",
-   "topics": [
-    "oferta"
-   ],
-   "products": [
-    "ganado"
-   ],
-   "source": "Western Producer",
-   "lang": "en",
-   "headline": {
-    "en": "Livestock Production & Management",
-    "es": "Livestock Production & Management",
-    "fr": "Livestock Production & Management",
-    "it": "Livestock Production & Management"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9VX3l5RGhCd0VLREJNUGI3ZDhrdDk4UE1TT0o4bS1MRkZub2VoLTBpUWxlRTlEQWpVSW5HM1o1bHFVMjlBQTZERWhRTQ?oc=5",
-   "relevance": 46,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-fe45e5b622",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "oferta",
-   "topics": [
-    "oferta"
-   ],
-   "products": [
-    "ganado"
-   ],
-   "source": "Vietnam.vn",
-   "lang": "it",
-   "headline": {
-    "en": "La città di Ho Chi Minh soddisfa solo il 50% del proprio fabbisogno di carne con la produzione interna e sta promuovendo l'allevamento di bestiame ad alta tecnologia.",
-    "es": "La città di Ho Chi Minh soddisfa solo il 50% del proprio fabbisogno di carne con la produzione interna e sta promuovendo l'allevamento di bestiame ad alta tecnologia.",
-    "fr": "La città di Ho Chi Minh soddisfa solo il 50% del proprio fabbisogno di carne con la produzione interna e sta promuovendo l'allevamento di bestiame ad alta tecnologia.",
-    "it": "La città di Ho Chi Minh soddisfa solo il 50% del proprio fabbisogno di carne con la produzione interna e sta promuovendo l'allevamento di bestiame ad alta tecnologia."
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNb01jQVhPUjVsa205Znh5OFhDaWpkZjFPd0pGcU5sY01obFFFa2ZTcDI4bkxZU2J0WEdoYTFoSVBpQlhqZFVDSnNDdDdjdE8zUWxRZ3duWk12U1I0NFFmQ1k3UzZvbVNlZVZoeFpNaVRqRkJEYTdLTmJpV2dSZ2JrT3JaSXBSRHZ2X2FoQU1aUkpVTFg0cjdnaU1lRGM?oc=5",
-   "relevance": 46,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-519176f4e1",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "ganado"
-   ],
-   "source": "El Diario Montañés",
-   "lang": "es",
-   "headline": {
-    "en": "La ganadería, otra vez «alerta» ante el nuevo virus Shamonda",
-    "es": "La ganadería, otra vez «alerta» ante el nuevo virus Shamonda",
-    "fr": "La ganadería, otra vez «alerta» ante el nuevo virus Shamonda",
-    "it": "La ganadería, otra vez «alerta» ante el nuevo virus Shamonda"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQcTVNV2NLQmYwWjh0OWhiWXlWc2tsaXZjbWFLX1Q0YnZBblk4VUhYOFYzODhhel9DcGgzbXowc0QzZGZNelN6d2xCb05NNm5xc2tlMXRtbFItN25TRXUzZGdaWm5WQThTbHY2LXR0YWI5ZUlIOG9CeFhEZWZucnFhRmZFRk1aekdWTmNKeWdQdDFfQjY2cU5zYmV6VGQ?oc=5",
-   "relevance": 40,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-bff137b17d",
-   "date": "2026-09-28",
-   "region": "eu",
-   "topic": "oferta",
-   "topics": [
-    "oferta",
-    "energia"
-   ],
-   "products": [
-    "maiz",
-    "soja",
-    "ganado",
-    "energia"
-   ],
-   "source": "Terra e Vita",
-   "lang": "it",
-   "headline": {
-    "en": "Mais, soia ed energia: cresce la pressione su mangimi e allevamenti",
-    "es": "Mais, soia ed energia: cresce la pressione su mangimi e allevamenti",
-    "fr": "Mais, soia ed energia: cresce la pressione su mangimi e allevamenti",
-    "it": "Mais, soia ed energia: cresce la pressione su mangimi e allevamenti"
-   },
-   "description": "Produzione nazionale in calo, problemi qualitativi e tensioni sui mercati internazionali. Assalzoo: «Serve intervenire subito» L'articolo Mais, soia ed energia: cresce la pressione su mangimi e allevamenti è un contenuto originale di Terra e Vita .",
-   "url": "https://terraevita.edagricole.it/attualita/mais-soia-ed-energia-cresce-la-pressione-su-mangimi-e-allevamenti/",
-   "relevance": 90,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "soja",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "energia",
-     "channel": "energy",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-a9b9e080f2",
-   "date": "2026-09-28",
-   "region": "eu",
-   "topic": "clima",
-   "topics": [
-    "clima",
-    "politica",
-    "ayudas"
-   ],
-   "products": [
-    "ganado"
-   ],
-   "source": "Web-agri",
-   "lang": "fr",
-   "headline": {
-    "en": "Assurance prairie : les éleveurs de ruminants exigent « une totale transparence »",
-    "es": "Assurance prairie : les éleveurs de ruminants exigent « une totale transparence »",
-    "fr": "Assurance prairie : les éleveurs de ruminants exigent « une totale transparence »",
-    "it": "Assurance prairie : les éleveurs de ruminants exigent « une totale transparence »"
-   },
-   "description": "Dans une lettre ouverte à la ministre de l’agriculture et aux assureurs, les présidents de la FNPL, la FNB, la FNEC et la FNO demandent, à nouveau, davantage de visibilité sur les taux de pertes, alors que les éleveurs de ruminants sont en attente d’indemnisation après le manque ",
-   "url": "https://www.web-agri.fr/fnb/article/904017/assurance-prairie-les-eleveurs-de-ruminants-exigent-une-totale-transparence",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-e7bb0979c3",
-   "date": "2026-09-28",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "vaca",
-    "ganado"
-   ],
-   "source": "Web-agri",
-   "lang": "fr",
-   "headline": {
-    "en": "La tuberculose bovine, une maladie difficile à accepter",
-    "es": "La tuberculose bovine, une maladie difficile à accepter",
-    "fr": "La tuberculose bovine, une maladie difficile à accepter",
-    "it": "La tuberculose bovine, une maladie difficile à accepter"
-   },
-   "description": "La complexité de la tuberculose bovine, la difficulté à la dépister et l’absence de cas humain depuis vingt ans suscitent la crainte et l’incompréhension. Dans l’Orne, des éleveurs ont opté pour l’abattage soit total, soit sélectif de leur troupeau touché par la maladie.",
-   "url": "https://www.web-agri.fr/maladies/article/903757/la-tuberculose-bovine-une-maladie-difficile-a-accepter",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "vaca",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-d9aa3095d9",
-   "date": "2026-09-28",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "ganado",
-    "pac"
-   ],
-   "source": "Junta de Extremadura",
-   "lang": "es",
-   "headline": {
-    "en": "La Consejería de Agricultura adelanta por primera vez el anticipo de la PAC y abona 220 millones a agricultores y ganaderos",
-    "es": "La Consejería de Agricultura adelanta por primera vez el anticipo de la PAC y abona 220 millones a agricultores y ganaderos",
-    "fr": "La Consejería de Agricultura adelanta por primera vez el anticipo de la PAC y abona 220 millones a agricultores y ganaderos",
-    "it": "La Consejería de Agricultura adelanta por primera vez el anticipo de la PAC y abona 220 millones a agricultores y ganaderos"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE15WmViZHlCT3FGTWVhcDdLRVgtYkdIUXRZVHNIMUE0TjVadmtPTkJUbjJIdXlxZ2J6LVMzZ1NVNkJoandTeldzMmloRmNsZjBqWEltX0tTSjFlUQ?oc=5",
-   "relevance": 50,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-1207f1d7f6",
-   "date": "2026-09-28",
-   "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "ganado"
-   ],
-   "source": "Brownfield",
-   "lang": "en",
-   "headline": {
-    "en": "Closing Grain and Livestock Futures: September 28, 2026",
-    "es": "Closing Grain and Livestock Futures: September 28, 2026",
-    "fr": "Closing Grain and Livestock Futures: September 28, 2026",
-    "it": "Closing Grain and Livestock Futures: September 28, 2026"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVmRWTUh1YW1kRWdqZWp2RjFDSDZ5cXAxNnM0cVVZQzFVUkNsaWF4eGV4WEJMZ3NkbU8zLW5YRWZGZU9kcjRuTjhvTjR5WkY5X2dQdmtRY3NWWHBaNi03cXlLLUVQcmNibXlOVTBhOXNNWVdMZDRaVWladEQwWUhiMk1zV0NxcjY1VGtKbHBRNXVOMjd4ZTZrU2J4WnJUWkE4?oc=5",
-   "relevance": 46,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-b7b30648a5",
-   "date": "2026-09-28",
-   "region": "global",
-   "topic": "ayudas",
-   "topics": [
-    "ayudas"
-   ],
-   "products": [
-    "ganado"
-   ],
-   "source": "Hindu BusinessLine",
-   "lang": "en",
-   "headline": {
-    "en": "Bharatiya Kisan Sangh to hold conclave for women farmers",
-    "es": "Bharatiya Kisan Sangh to hold conclave for women farmers",
-    "fr": "Bharatiya Kisan Sangh to hold conclave for women farmers",
-    "it": "Bharatiya Kisan Sangh to hold conclave for women farmers"
-   },
-   "description": "The day-long event will also highlight contribution of women to farming, livestock and fisheries, and is likely to be attended by 7,000 women farmers from across the country",
-   "url": "https://www.thehindubusinessline.com/economy/agri-business/bharatiya-kisan-sangh-to-hold-conclave-for-women-farmers/article71520561.ece",
-   "relevance": 46,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-b729f37957",
-   "date": "2026-09-27",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo",
-    "ganado"
-   ],
-   "source": "La France Agricole",
-   "lang": "fr",
-   "headline": {
-    "en": "Comprendre le sanglier pour limiter ses dégâts",
-    "es": "Comprendre le sanglier pour limiter ses dégâts",
-    "fr": "Comprendre le sanglier pour limiter ses dégâts",
-    "it": "Comprendre le sanglier pour limiter ses dégâts"
-   },
-   "description": "En Bretagne, éleveurs de porcs et chasseurs ont collaboré à la création d’un guide visant à mieux comprendre le comportement du sanglier, afin de passer d’une logique de réaction à une stratégie de prévention de ses dégâts.",
-   "url": "https://www.lafranceagricole.fr/degats-de-gibiers/article/903889/comprendre-le-sanglier-pour-limiter-ses-degats",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-d4a58beac1",
-   "date": "2026-09-26",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "ganado"
-   ],
-   "source": "Agropopular",
-   "lang": "es",
-   "headline": {
-    "en": "Ganadores del concurso de AGROPOPULAR del 26 de septiembre de 2026",
-    "es": "Ganadores del concurso de AGROPOPULAR del 26 de septiembre de 2026",
-    "fr": "Ganadores del concurso de AGROPOPULAR del 26 de septiembre de 2026",
-    "it": "Ganadores del concurso de AGROPOPULAR del 26 de septiembre de 2026"
-   },
-   "description": "Estos son los ganadores del concurso de AGROPOPULAR del 26 de septiembre en el que preguntábamos por el nombre de la Comarca de Teruel a la que pertenece Cantavieja. La respuesta es: Maestrazgo. Estos son los ganadores: Correo/Web: Lourdes Monge García, desde Alicante Facebook: J",
-   "url": "https://www.agropopular.com/ganadores-concurso-2609/",
-   "relevance": 40,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-cf0dc80571",
-   "date": "2026-09-26",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "ganado"
-   ],
-   "source": "Agropopular",
-   "lang": "es",
-   "headline": {
-    "en": "Vuelve el concurso de AGROPOPULAR: recordamos las normas",
-    "es": "Vuelve el concurso de AGROPOPULAR: recordamos las normas",
-    "fr": "Vuelve el concurso de AGROPOPULAR: recordamos las normas",
-    "it": "Vuelve el concurso de AGROPOPULAR: recordamos las normas"
-   },
-   "description": "– El equipo del programa, o alguno de los invitados, elegirá a los ganadores libremente, entre los participantes que hayan dado la respuesta correcta. – Los ganadores se comunicarán antes de acabar la emisión del programa y en la página en internet www.agropopular.com – Los ganad",
-   "url": "https://www.agropopular.com/agropopular-concurso-260926/",
-   "relevance": 40,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  },
-  {
-   "id": "auto-5376c00777",
-   "date": "2026-09-25",
-   "region": "eu",
-   "topic": "costes",
-   "topics": [
-    "costes"
-   ],
-   "products": [
-    "leche",
-    "vaca",
-    "ganado",
-    "costes"
-   ],
-   "source": "Revista Frisona Española",
-   "lang": "es",
-   "headline": {
-    "en": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes",
-    "es": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes",
-    "fr": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes",
-    "it": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPQjRaZ3pjdmFOd0NEeGRCMndFNFlBOThteE1rYW9IWTIyVEpISDNocnFhMVE0LXZhSzNJWnBCYWdnbFZvQjdfem1hRm0yREJ3TXVLVzdHTjltd211YTlKaTdTMUFyVGRJWjRaaDRIZUlLRzU4X1I3RkZWTjE4QXF3akh0RjByZ295VU9yV2F1a1g0amZXc2dLRFVWZzJwcVoyMndSdEJFMDczY3F6dTE4NE1Fa3QySDBXRzJhb2pSNWRQMGtuNVBaWVh2ZDd0U0I5bE4zOHBRbTZLRVU2ZVhDc0pfTmJHTl83Yk1JRXlHWF9fQldu?oc=5",
-   "relevance": 84,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "vaca",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-7df0accb5e",
-   "date": "2026-09-25",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "vaca",
-    "cerdo",
-    "cordero",
-    "ganado"
-   ],
-   "source": "Madison's Country Q106",
-   "lang": "en",
-   "headline": {
-    "en": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
-    "es": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
-    "fr": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
-    "it": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVGZKektQcEF0YlFHLWRmSVYzUjZrVjZWQnpZV2NhTVdVQjVHWThVc1B3SkxyTG96eU9lMzRjTWpKLVlORENmRnYwVXNtc3hkMGpiWThwbFpZNWNrOGVJNEs5RTJSRU4zMGV1eFVSSU8wM09ZTm1NM2lVS1hvb3c1eTRNazhzalZFREpVblgzd0Y?oc=5",
-   "relevance": 78,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "cordero",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "vaca",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-80d1d4e048",
-   "date": "2026-09-25",
-   "region": "eu",
-   "topic": "politica",
-   "topics": [
-    "politica",
-    "ayudas"
-   ],
-   "products": [
-    "pac",
-    "ganado"
-   ],
-   "source": "Web-agri",
-   "lang": "fr",
-   "headline": {
-    "en": "Réforme de la Pac 2028 : les grandes orientations",
-    "es": "Réforme de la Pac 2028 : les grandes orientations",
-    "fr": "Réforme de la Pac 2028 : les grandes orientations",
-    "it": "Réforme de la Pac 2028 : les grandes orientations"
-   },
-   "description": "Alors que la future politique agricole commune (Pac) doit entrer en vigueur en 2028, les discussions s'accélèrent au niveau européen. Simplification des dispositifs, renforcement de la compétitivité, accompagnement de la transition environnementale et renouvellement des génératio",
-   "url": "https://www.web-agri.fr/politique-agricole-commune/article/903926/reforme-de-la-pac-2028-les-grandes-orientations",
-   "relevance": 62,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
-  }
- ],
- "vaca": [
   {
    "id": "auto-15b3f5123c",
    "date": "2026-09-30",
@@ -14062,6 +13275,39 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPV1BoX183Qk9zRzBDcC1qR1RZUnQwLVFxemlxVkRpU3dPM1pZQlcwYldtSnhQbUQyWUZlWmxyVEJHdDBBNy15b0JmdGxiSVlyekZUMFdwSHh0Nkh1YllsUTdMdmpOd2Q2S3hPUzNNcDY2TmdUbWQwNnZYekRMQVBzRjhvQ09GVXZTQmNBYlhjR2l3MDFK?oc=5",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-954d99389c",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "vaca"
+   ],
+   "source": "KIWA Radio",
+   "lang": "en",
+   "headline": {
+    "en": "Beef prices and herd retention decisions",
+    "es": "Beef prices and herd retention decisions",
+    "fr": "Beef prices and herd retention decisions",
+    "it": "Beef prices and herd retention decisions"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9sZTk5d2FyWXl0M2dPU1hFRHhkRjJMMFBNMkt6eVh0aXlBOWRuMUMyWDhpckt4b0NBc0NRZnZaNTJrNFlzSDlwVmV6RG9BMzctNm9Td3hYbjMzbk1sX2I5SWpRWEsyaWJlLTl1dnEycXRKNkVMak5z?oc=5",
    "relevance": 54,
    "auto": true,
    "impactChannel": "market_impact",
@@ -14577,62 +13823,283 @@
      "direction": "uncertain"
     }
    ]
-  },
+  }
+ ],
+ "ganado": [
   {
-   "id": "auto-939d010d89",
-   "date": "2026-09-29",
-   "region": "us",
-   "topic": "comercio",
+   "id": "auto-15b3f5123c",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "clima",
    "topics": [
-    "comercio"
+    "clima"
    ],
    "products": [
-    "vaca"
+    "vaca",
+    "ganado"
    ],
-   "source": "BusinessDesk | NZ",
-   "lang": "en",
+   "source": "reussir.fr",
+   "lang": "fr",
    "headline": {
-    "en": "US cattle industry: Trump can’t import his way to cheaper beef",
-    "es": "US cattle industry: Trump can’t import his way to cheaper beef",
-    "fr": "US cattle industry: Trump can’t import his way to cheaper beef",
-    "it": "US cattle industry: Trump can’t import his way to cheaper beef"
+    "en": "Sécheresse : « La priorité pour les éleveurs sera de garder les vaches gestantes, il faut des veaux ! »",
+    "es": "Sécheresse : « La priorité pour les éleveurs sera de garder les vaches gestantes, il faut des veaux ! »",
+    "fr": "Sécheresse : « La priorité pour les éleveurs sera de garder les vaches gestantes, il faut des veaux ! »",
+    "it": "Sécheresse : « La priorité pour les éleveurs sera de garder les vaches gestantes, il faut des veaux ! »"
    },
    "description": "",
-   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQVTVuNXJyQmwzQ0p4U0tpM3JGNDNDOVNMQVk5OWpKcUZ1N3RLcUZZLXAzQ21FbTVPOS1GQmhyM0tKQnlUTVl2MW5kMC1SSW1LNGtneHM4bmgyNFpHSnowSzBDcHJSM0k5Q241WS1BYVVhWERuTWp1NElWQ3d4aVBtTURVQ1c0LVhNYkM4MS1saDVnUzAtNmRKa3dUS3YtTUZzRUo5WU9RZlZHamtsZ3BR?oc=5",
-   "relevance": 54,
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNLTBuNEVaRWU1aDBJX04ybmRVWXBQbVdnRDg0MlRmRFZXbDB5LVZLQkxMaFNqcEVXcEI4a3FzekpWODNrbl9Tc2ZxUHFlNDhRNFVKQ3NjMlZOTHg2MDN3TlYzOVZIUzFFbFBZR0VORDc2ZTF2MXhmZEJfZHFQMExpei1OZ29nYkNSbEl2cTBlVkVQMm1sMVhHZVU4VU5FVmhuYmw2d1Z6SGNiZjktU2tiaFB6VjJ1cWlENlNlamNn?oc=5",
+   "relevance": 64,
    "auto": true,
-   "impactChannel": "trade",
+   "impactChannel": "weather",
    "marketLinks": [
     {
      "market": "vaca",
-     "channel": "trade",
+     "channel": "weather",
      "relation": null,
      "direction": "uncertain"
     }
    ]
   },
   {
-   "id": "auto-3b5046eb37",
+   "id": "auto-7e4f45e4f3",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "soja",
+    "ganado"
+   ],
+   "source": "Agroinformación",
+   "lang": "es",
+   "headline": {
+    "en": "ASAJA Córdoba no puede seguir así",
+    "es": "ASAJA Córdoba no puede seguir así",
+    "fr": "ASAJA Córdoba no puede seguir así",
+    "it": "ASAJA Córdoba no puede seguir así"
+   },
+   "description": "José Jiménez Espejo / Agricultor y ganadero Miembro de la Junta Directiva de ASAJA Córdoba Soy agricultor y ganadero, miembro de la Junta Directiva de ASAJA Córdoba y una persona vinculada desde hace años a esta organización. He participado en numerosas reuniones y actos y he pod",
+   "url": "https://agroinformacion.com/asaja-cordoba-no-puede-seguir-asi/",
+   "relevance": 58,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "soja",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-cec32519de",
+   "date": "2026-09-30",
+   "region": "uk",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "ganado"
+   ],
+   "source": "Defra",
+   "lang": "en",
+   "headline": {
+    "en": "Livestock keepers: update your details",
+    "es": "Livestock keepers: update your details",
+    "fr": "Livestock keepers: update your details",
+    "it": "Livestock keepers: update your details"
+   },
+   "description": "Who to contact when your registered details change if you keep livestock (including as pets).",
+   "url": "https://www.gov.uk/guidance/livestock-keepers-update-your-details",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-7f932bbb78",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "ganado"
+   ],
+   "source": "Agriland",
+   "lang": "en",
+   "headline": {
+    "en": "Farmers raise almost €50k at Tullamore Mart for African farm families",
+    "es": "Farmers raise almost €50k at Tullamore Mart for African farm families",
+    "fr": "Farmers raise almost €50k at Tullamore Mart for African farm families",
+    "it": "Farmers raise almost €50k at Tullamore Mart for African farm families"
+   },
+   "description": "Farmers from several counties raised almost €50,000 at Tullamore Mart this week for farming families in Africa. The farmers from counties – including Offaly, Kildare, Roscommon and Kilkenny – responded to an appeal by Self Help Africa to donate animals for the sale that took plac",
+   "url": "https://www.agriland.ie/farming-news/farmers-raise-almost-e50k-at-tullamore-mart-for-african-farm-families/",
+   "relevance": 40,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-ed34135b6b",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "ganado"
+   ],
+   "source": "Terre-net",
+   "lang": "fr",
+   "headline": {
+    "en": "Innovagri revient dans les Hauts-de-France en juin 2027",
+    "es": "Innovagri revient dans les Hauts-de-France en juin 2027",
+    "fr": "Innovagri revient dans les Hauts-de-France en juin 2027",
+    "it": "Innovagri revient dans les Hauts-de-France en juin 2027"
+   },
+   "description": "Le salon change de date et renforce son ancrage régional. Rendez-vous au champ les 2 et 3 juin 2027 à Grugies, dans l’Aisne, avec un espace supplémentaire dédié à l’élevage. En 2028, direction la Bourgogne-Franche-Comté.",
+   "url": "https://www.terre-net.fr/innov-agri/article/904113/innovagri-revient-dans-les-hauts-de-france-en-juin-2027",
+   "relevance": 40,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-e7bdc627d3",
    "date": "2026-09-29",
-   "region": "us",
+   "region": "eu",
    "topic": "precios",
    "topics": [
     "precios"
    ],
    "products": [
-    "vaca"
+    "vaca",
+    "cordero",
+    "ganado"
    ],
-   "source": "inkl",
+   "source": "La France Agricole",
+   "lang": "fr",
+   "headline": {
+    "en": "Comment le virus Shamonda s’est encore propagé en septembre",
+    "es": "Comment le virus Shamonda s’est encore propagé en septembre",
+    "fr": "Comment le virus Shamonda s’est encore propagé en septembre",
+    "it": "Comment le virus Shamonda s’est encore propagé en septembre"
+   },
+   "description": "En septembre 2026, l’orthobunyavirus a été détecté dans un élevage d’ovins en France et sur des foetus bovins avortés en Belgique. Il a désormais été identifié dans 47 départements français dont 7 nouveaux départements au cours de la dernière semaine.",
+   "url": "https://www.lafranceagricole.fr/maladies-animales/article/904092/comment-le-virus-shamonda-s-est-encore-propage-en-septembre",
+   "relevance": 74,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cordero",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-672b4ef259",
+   "date": "2026-09-29",
+   "region": "eu",
+   "topic": "precios",
+   "topics": [
+    "precios",
+    "politica"
+   ],
+   "products": [
+    "vaca",
+    "ganado"
+   ],
+   "source": "Web-agri",
+   "lang": "fr",
+   "headline": {
+    "en": "Décapitalisation bovine : Annie Genevard et Culture Viande d’accord sur l’objectif, pas sur la méthode",
+    "es": "Décapitalisation bovine : Annie Genevard et Culture Viande d’accord sur l’objectif, pas sur la méthode",
+    "fr": "Décapitalisation bovine : Annie Genevard et Culture Viande d’accord sur l’objectif, pas sur la méthode",
+    "it": "Décapitalisation bovine : Annie Genevard et Culture Viande d’accord sur l’objectif, pas sur la méthode"
+   },
+   "description": "À l’occasion de son congrès annuel, Culture Viande, le syndicat des entreprises d’abattage et de découpe, a de nouveau tiré la sonnette d’alarme sur la décapitalisation du cheptel français. Une inquiétude partagée par Annie Genevard. Venue ouvrir l’événement, la ministre de l’agr",
+   "url": "https://www.web-agri.fr/abattage/article/904083/decapitalisation-bovine-annie-genevard-et-culture-viande-d-accord-sur-l-objectif",
+   "relevance": 70,
+   "auto": true,
+   "impactChannel": "policy",
+   "marketLinks": [
+    {
+     "market": "vaca",
+     "channel": "policy",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-d31e225379",
+   "date": "2026-09-29",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "vaca",
+    "leche",
+    "ganado"
+   ],
+   "source": "Agriland",
    "lang": "en",
    "headline": {
-    "en": "US Beef Prices Could Rise as ICE Arrests Leave Meat Workers Too Afraid to Go to Work",
-    "es": "US Beef Prices Could Rise as ICE Arrests Leave Meat Workers Too Afraid to Go to Work",
-    "fr": "US Beef Prices Could Rise as ICE Arrests Leave Meat Workers Too Afraid to Go to Work",
-    "it": "US Beef Prices Could Rise as ICE Arrests Leave Meat Workers Too Afraid to Go to Work"
+    "en": "Number of cattle in Ireland up 2.4% year-on-year",
+    "es": "Number of cattle in Ireland up 2.4% year-on-year",
+    "fr": "Number of cattle in Ireland up 2.4% year-on-year",
+    "it": "Number of cattle in Ireland up 2.4% year-on-year"
    },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPY2FieFlxZk5yX1FLQVJURlBnOWo4UHdsQjlqMmMyOWNtNUJSZ01hTmN0ZE04a05JVF8yelRWb2lfNzVnVTJBZHJFZ0hOQnFSU2h6NFNtU0RKd3ZJT3BQZGJWeGJpYjA1d1hHWlJJQ1ZDZHNiSlc0aE5TUmV6MHZ3TFJaTldsbGI3eE9ORFY2WjBXUkNkNnNPOUw3RU92NkRjZFRNYkRzZHh4aDY5WWVF?oc=5",
-   "relevance": 54,
+   "description": "The number of both dairy cows and cattle in Ireland both grew in the 12 months to June 2026. This is according to the latest data from the the Central Statistics Office (CSO) livestock survey for June 2026 released today (September 29). The total cattle number increased by 164,80",
+   "url": "https://www.agriland.ie/farming-news/number-of-cattle-in-ireland-up-2-4-year-on-year/",
+   "relevance": 68,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "leche",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-5ec38e6b7a",
+   "date": "2026-09-29",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "vaca",
+    "ganado"
+   ],
+   "source": "Web-agri",
+   "lang": "fr",
+   "headline": {
+    "en": "Graines d'agriculteurs : 2 éleveurs de bovins viande distingués pour leur approche du travail",
+    "es": "Graines d'agriculteurs : 2 éleveurs de bovins viande distingués pour leur approche du travail",
+    "fr": "Graines d'agriculteurs : 2 éleveurs de bovins viande distingués pour leur approche du travail",
+    "it": "Graines d'agriculteurs : 2 éleveurs de bovins viande distingués pour leur approche du travail"
+   },
+   "description": "​​​​Deux jeunes éleveurs de vaches allaitantes ont retenu cette année l'attention du jury de Graines d'agriculteurs : Mathieu Imbert dans l'Aveyron et Pierre-Henri Pomport dans la Loire. Même s'ils n'ont pas gagné, ce sont les coups de cœur de cette édition. Leur point commun ? L",
+   "url": "https://www.web-agri.fr/installation-transmission/article/904027/graines-d-agriculteurs-2-eleveurs-de-bovins-viande-distingues-pour-leur-approche",
+   "relevance": 58,
    "auto": true,
    "impactChannel": "market_impact",
    "marketLinks": [
@@ -14643,6 +14110,514 @@
      "direction": "uncertain"
     }
    ]
+  },
+  {
+   "id": "auto-1966012cf3",
+   "date": "2026-09-29",
+   "region": "us",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "ganado"
+   ],
+   "source": "Brownfield",
+   "lang": "en",
+   "headline": {
+    "en": "Closing Grain and Livestock Futures: September 29, 2026",
+    "es": "Closing Grain and Livestock Futures: September 29, 2026",
+    "fr": "Closing Grain and Livestock Futures: September 29, 2026",
+    "it": "Closing Grain and Livestock Futures: September 29, 2026"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNcWU0VkpDWnFxUVJrTlk3ODF2UDVuSFJxSm5majJTbHY1bFVIb0NLY0Fxc3FJRUdPZGNPVnNOMFlBbE9PRFBDMlVnWkFGTkFZOXBZRTFKSVMtY0g1eTIxa195VmlPYV9MM1k0b05MSXk2Z0ppa0pVamRRaHRsbG9JMUtadm1ZZU00NGcteUxrMkkzQ0hmenhKYVg1ZE80X3pl?oc=5",
+   "relevance": 46,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-d86fd18416",
+   "date": "2026-09-29",
+   "region": "ca",
+   "topic": "oferta",
+   "topics": [
+    "oferta"
+   ],
+   "products": [
+    "ganado"
+   ],
+   "source": "Western Producer",
+   "lang": "en",
+   "headline": {
+    "en": "Livestock Production & Management",
+    "es": "Livestock Production & Management",
+    "fr": "Livestock Production & Management",
+    "it": "Livestock Production & Management"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9VX3l5RGhCd0VLREJNUGI3ZDhrdDk4UE1TT0o4bS1MRkZub2VoLTBpUWxlRTlEQWpVSW5HM1o1bHFVMjlBQTZERWhRTQ?oc=5",
+   "relevance": 46,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-fe45e5b622",
+   "date": "2026-09-29",
+   "region": "eu",
+   "topic": "oferta",
+   "topics": [
+    "oferta"
+   ],
+   "products": [
+    "ganado"
+   ],
+   "source": "Vietnam.vn",
+   "lang": "it",
+   "headline": {
+    "en": "La città di Ho Chi Minh soddisfa solo il 50% del proprio fabbisogno di carne con la produzione interna e sta promuovendo l'allevamento di bestiame ad alta tecnologia.",
+    "es": "La città di Ho Chi Minh soddisfa solo il 50% del proprio fabbisogno di carne con la produzione interna e sta promuovendo l'allevamento di bestiame ad alta tecnologia.",
+    "fr": "La città di Ho Chi Minh soddisfa solo il 50% del proprio fabbisogno di carne con la produzione interna e sta promuovendo l'allevamento di bestiame ad alta tecnologia.",
+    "it": "La città di Ho Chi Minh soddisfa solo il 50% del proprio fabbisogno di carne con la produzione interna e sta promuovendo l'allevamento di bestiame ad alta tecnologia."
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNb01jQVhPUjVsa205Znh5OFhDaWpkZjFPd0pGcU5sY01obFFFa2ZTcDI4bkxZU2J0WEdoYTFoSVBpQlhqZFVDSnNDdDdjdE8zUWxRZ3duWk12U1I0NFFmQ1k3UzZvbVNlZVZoeFpNaVRqRkJEYTdLTmJpV2dSZ2JrT3JaSXBSRHZ2X2FoQU1aUkpVTFg0cjdnaU1lRGM?oc=5",
+   "relevance": 46,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-519176f4e1",
+   "date": "2026-09-29",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "ganado"
+   ],
+   "source": "El Diario Montañés",
+   "lang": "es",
+   "headline": {
+    "en": "La ganadería, otra vez «alerta» ante el nuevo virus Shamonda",
+    "es": "La ganadería, otra vez «alerta» ante el nuevo virus Shamonda",
+    "fr": "La ganadería, otra vez «alerta» ante el nuevo virus Shamonda",
+    "it": "La ganadería, otra vez «alerta» ante el nuevo virus Shamonda"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQcTVNV2NLQmYwWjh0OWhiWXlWc2tsaXZjbWFLX1Q0YnZBblk4VUhYOFYzODhhel9DcGgzbXowc0QzZGZNelN6d2xCb05NNm5xc2tlMXRtbFItN25TRXUzZGdaWm5WQThTbHY2LXR0YWI5ZUlIOG9CeFhEZWZucnFhRmZFRk1aekdWTmNKeWdQdDFfQjY2cU5zYmV6VGQ?oc=5",
+   "relevance": 40,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-bff137b17d",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "oferta",
+   "topics": [
+    "oferta",
+    "energia"
+   ],
+   "products": [
+    "maiz",
+    "soja",
+    "ganado",
+    "energia"
+   ],
+   "source": "Terra e Vita",
+   "lang": "it",
+   "headline": {
+    "en": "Mais, soia ed energia: cresce la pressione su mangimi e allevamenti",
+    "es": "Mais, soia ed energia: cresce la pressione su mangimi e allevamenti",
+    "fr": "Mais, soia ed energia: cresce la pressione su mangimi e allevamenti",
+    "it": "Mais, soia ed energia: cresce la pressione su mangimi e allevamenti"
+   },
+   "description": "Produzione nazionale in calo, problemi qualitativi e tensioni sui mercati internazionali. Assalzoo: «Serve intervenire subito» L'articolo Mais, soia ed energia: cresce la pressione su mangimi e allevamenti è un contenuto originale di Terra e Vita .",
+   "url": "https://terraevita.edagricole.it/attualita/mais-soia-ed-energia-cresce-la-pressione-su-mangimi-e-allevamenti/",
+   "relevance": 90,
+   "auto": true,
+   "impactChannel": "input_cost",
+   "marketLinks": [
+    {
+     "market": "arroz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "cebada",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "input_cost",
+     "relation": "energy-cereals",
+     "direction": "uncertain"
+    },
+    {
+     "market": "maiz",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "soja",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "energia",
+     "channel": "energy",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-a9b9e080f2",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "clima",
+   "topics": [
+    "clima",
+    "politica",
+    "ayudas"
+   ],
+   "products": [
+    "ganado"
+   ],
+   "source": "Web-agri",
+   "lang": "fr",
+   "headline": {
+    "en": "Assurance prairie : les éleveurs de ruminants exigent « une totale transparence »",
+    "es": "Assurance prairie : les éleveurs de ruminants exigent « une totale transparence »",
+    "fr": "Assurance prairie : les éleveurs de ruminants exigent « une totale transparence »",
+    "it": "Assurance prairie : les éleveurs de ruminants exigent « une totale transparence »"
+   },
+   "description": "Dans une lettre ouverte à la ministre de l’agriculture et aux assureurs, les présidents de la FNPL, la FNB, la FNEC et la FNO demandent, à nouveau, davantage de visibilité sur les taux de pertes, alors que les éleveurs de ruminants sont en attente d’indemnisation après le manque ",
+   "url": "https://www.web-agri.fr/fnb/article/904017/assurance-prairie-les-eleveurs-de-ruminants-exigent-une-totale-transparence",
+   "relevance": 58,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-e7bb0979c3",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "vaca",
+    "ganado"
+   ],
+   "source": "Web-agri",
+   "lang": "fr",
+   "headline": {
+    "en": "La tuberculose bovine, une maladie difficile à accepter",
+    "es": "La tuberculose bovine, une maladie difficile à accepter",
+    "fr": "La tuberculose bovine, une maladie difficile à accepter",
+    "it": "La tuberculose bovine, une maladie difficile à accepter"
+   },
+   "description": "La complexité de la tuberculose bovine, la difficulté à la dépister et l’absence de cas humain depuis vingt ans suscitent la crainte et l’incompréhension. Dans l’Orne, des éleveurs ont opté pour l’abattage soit total, soit sélectif de leur troupeau touché par la maladie.",
+   "url": "https://www.web-agri.fr/maladies/article/903757/la-tuberculose-bovine-une-maladie-difficile-a-accepter",
+   "relevance": 58,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-d9aa3095d9",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "ganado",
+    "pac"
+   ],
+   "source": "Junta de Extremadura",
+   "lang": "es",
+   "headline": {
+    "en": "La Consejería de Agricultura adelanta por primera vez el anticipo de la PAC y abona 220 millones a agricultores y ganaderos",
+    "es": "La Consejería de Agricultura adelanta por primera vez el anticipo de la PAC y abona 220 millones a agricultores y ganaderos",
+    "fr": "La Consejería de Agricultura adelanta por primera vez el anticipo de la PAC y abona 220 millones a agricultores y ganaderos",
+    "it": "La Consejería de Agricultura adelanta por primera vez el anticipo de la PAC y abona 220 millones a agricultores y ganaderos"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE15WmViZHlCT3FGTWVhcDdLRVgtYkdIUXRZVHNIMUE0TjVadmtPTkJUbjJIdXlxZ2J6LVMzZ1NVNkJoandTeldzMmloRmNsZjBqWEltX0tTSjFlUQ?oc=5",
+   "relevance": 50,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-1207f1d7f6",
+   "date": "2026-09-28",
+   "region": "us",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "ganado"
+   ],
+   "source": "Brownfield",
+   "lang": "en",
+   "headline": {
+    "en": "Closing Grain and Livestock Futures: September 28, 2026",
+    "es": "Closing Grain and Livestock Futures: September 28, 2026",
+    "fr": "Closing Grain and Livestock Futures: September 28, 2026",
+    "it": "Closing Grain and Livestock Futures: September 28, 2026"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVmRWTUh1YW1kRWdqZWp2RjFDSDZ5cXAxNnM0cVVZQzFVUkNsaWF4eGV4WEJMZ3NkbU8zLW5YRWZGZU9kcjRuTjhvTjR5WkY5X2dQdmtRY3NWWHBaNi03cXlLLUVQcmNibXlOVTBhOXNNWVdMZDRaVWladEQwWUhiMk1zV0NxcjY1VGtKbHBRNXVOMjd4ZTZrU2J4WnJUWkE4?oc=5",
+   "relevance": 46,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-b7b30648a5",
+   "date": "2026-09-28",
+   "region": "global",
+   "topic": "ayudas",
+   "topics": [
+    "ayudas"
+   ],
+   "products": [
+    "ganado"
+   ],
+   "source": "Hindu BusinessLine",
+   "lang": "en",
+   "headline": {
+    "en": "Bharatiya Kisan Sangh to hold conclave for women farmers",
+    "es": "Bharatiya Kisan Sangh to hold conclave for women farmers",
+    "fr": "Bharatiya Kisan Sangh to hold conclave for women farmers",
+    "it": "Bharatiya Kisan Sangh to hold conclave for women farmers"
+   },
+   "description": "The day-long event will also highlight contribution of women to farming, livestock and fisheries, and is likely to be attended by 7,000 women farmers from across the country",
+   "url": "https://www.thehindubusinessline.com/economy/agri-business/bharatiya-kisan-sangh-to-hold-conclave-for-women-farmers/article71520561.ece",
+   "relevance": 46,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-b729f37957",
+   "date": "2026-09-27",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "cerdo",
+    "ganado"
+   ],
+   "source": "La France Agricole",
+   "lang": "fr",
+   "headline": {
+    "en": "Comprendre le sanglier pour limiter ses dégâts",
+    "es": "Comprendre le sanglier pour limiter ses dégâts",
+    "fr": "Comprendre le sanglier pour limiter ses dégâts",
+    "it": "Comprendre le sanglier pour limiter ses dégâts"
+   },
+   "description": "En Bretagne, éleveurs de porcs et chasseurs ont collaboré à la création d’un guide visant à mieux comprendre le comportement du sanglier, afin de passer d’une logique de réaction à une stratégie de prévention de ses dégâts.",
+   "url": "https://www.lafranceagricole.fr/degats-de-gibiers/article/903889/comprendre-le-sanglier-pour-limiter-ses-degats",
+   "relevance": 58,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-d4a58beac1",
+   "date": "2026-09-26",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "ganado"
+   ],
+   "source": "Agropopular",
+   "lang": "es",
+   "headline": {
+    "en": "Ganadores del concurso de AGROPOPULAR del 26 de septiembre de 2026",
+    "es": "Ganadores del concurso de AGROPOPULAR del 26 de septiembre de 2026",
+    "fr": "Ganadores del concurso de AGROPOPULAR del 26 de septiembre de 2026",
+    "it": "Ganadores del concurso de AGROPOPULAR del 26 de septiembre de 2026"
+   },
+   "description": "Estos son los ganadores del concurso de AGROPOPULAR del 26 de septiembre en el que preguntábamos por el nombre de la Comarca de Teruel a la que pertenece Cantavieja. La respuesta es: Maestrazgo. Estos son los ganadores: Correo/Web: Lourdes Monge García, desde Alicante Facebook: J",
+   "url": "https://www.agropopular.com/ganadores-concurso-2609/",
+   "relevance": 40,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-cf0dc80571",
+   "date": "2026-09-26",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "ganado"
+   ],
+   "source": "Agropopular",
+   "lang": "es",
+   "headline": {
+    "en": "Vuelve el concurso de AGROPOPULAR: recordamos las normas",
+    "es": "Vuelve el concurso de AGROPOPULAR: recordamos las normas",
+    "fr": "Vuelve el concurso de AGROPOPULAR: recordamos las normas",
+    "it": "Vuelve el concurso de AGROPOPULAR: recordamos las normas"
+   },
+   "description": "– El equipo del programa, o alguno de los invitados, elegirá a los ganadores libremente, entre los participantes que hayan dado la respuesta correcta. – Los ganadores se comunicarán antes de acabar la emisión del programa y en la página en internet www.agropopular.com – Los ganad",
+   "url": "https://www.agropopular.com/agropopular-concurso-260926/",
+   "relevance": 40,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-5376c00777",
+   "date": "2026-09-25",
+   "region": "eu",
+   "topic": "costes",
+   "topics": [
+    "costes"
+   ],
+   "products": [
+    "leche",
+    "vaca",
+    "ganado",
+    "costes"
+   ],
+   "source": "Revista Frisona Española",
+   "lang": "es",
+   "headline": {
+    "en": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes",
+    "es": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes",
+    "fr": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes",
+    "it": "Unión de Uniones anima a sus ganaderos de vacuno de leche a forzar una revisión al alza en los contratos para cubrir costes"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPQjRaZ3pjdmFOd0NEeGRCMndFNFlBOThteE1rYW9IWTIyVEpISDNocnFhMVE0LXZhSzNJWnBCYWdnbFZvQjdfem1hRm0yREJ3TXVLVzdHTjltd211YTlKaTdTMUFyVGRJWjRaaDRIZUlLRzU4X1I3RkZWTjE4QXF3akh0RjByZ295VU9yV2F1a1g0amZXc2dLRFVWZzJwcVoyMndSdEJFMDczY3F6dTE4NE1Fa3QySDBXRzJhb2pSNWRQMGtuNVBaWVh2ZDd0U0I5bE4zOHBRbTZLRVU2ZVhDc0pfTmJHTl83Yk1JRXlHWF9fQldu?oc=5",
+   "relevance": 84,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "leche",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-7df0accb5e",
+   "date": "2026-09-25",
+   "region": "us",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "vaca",
+    "cerdo",
+    "cordero",
+    "ganado"
+   ],
+   "source": "Madison's Country Q106",
+   "lang": "en",
+   "headline": {
+    "en": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
+    "es": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
+    "fr": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
+    "it": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVGZKektQcEF0YlFHLWRmSVYzUjZrVjZWQnpZV2NhTVdVQjVHWThVc1B3SkxyTG96eU9lMzRjTWpKLVlORENmRnYwVXNtc3hkMGpiWThwbFpZNWNrOGVJNEs5RTJSRU4zMGV1eFVSSU8wM09ZTm1NM2lVS1hvb3c1eTRNazhzalZFREpVblgzd0Y?oc=5",
+   "relevance": 78,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "cordero",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-80d1d4e048",
+   "date": "2026-09-25",
+   "region": "eu",
+   "topic": "politica",
+   "topics": [
+    "politica",
+    "ayudas"
+   ],
+   "products": [
+    "pac",
+    "ganado"
+   ],
+   "source": "Web-agri",
+   "lang": "fr",
+   "headline": {
+    "en": "Réforme de la Pac 2028 : les grandes orientations",
+    "es": "Réforme de la Pac 2028 : les grandes orientations",
+    "fr": "Réforme de la Pac 2028 : les grandes orientations",
+    "it": "Réforme de la Pac 2028 : les grandes orientations"
+   },
+   "description": "Alors que la future politique agricole commune (Pac) doit entrer en vigueur en 2028, les discussions s'accélèrent au niveau européen. Simplification des dispositifs, renforcement de la compétitivité, accompagnement de la transition environnementale et renouvellement des génératio",
+   "url": "https://www.web-agri.fr/politique-agricole-commune/article/903926/reforme-de-la-pac-2028-les-grandes-orientations",
+   "relevance": 62,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
   }
  ],
  "oliva": [
@@ -14777,37 +14752,6 @@
      "direction": "uncertain"
     }
    ]
-  },
-  {
-   "id": "auto-7e6398c1d8",
-   "date": "2026-09-24",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "oliva"
-   ],
-   "source": "Agronotizie",
-   "lang": "it",
-   "headline": {
-    "en": "Olio Evo, le regioni chiedono interventi su tutta la filiera",
-    "es": "Olio Evo, le regioni chiedono interventi su tutta la filiera",
-    "fr": "Olio Evo, le regioni chiedono interventi su tutta la filiera",
-    "it": "Olio Evo, le regioni chiedono interventi su tutta la filiera"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxObXlXS2oxYmdXSFMzYVFxeThibnRCQWJyRjY1S0FfNG5tWV9aVHpGVmxLMUVqVU1qdkRFVWlaeVYwWUN0OUNCWEphakJKMzVFdGg1dFF3TGplUS1iWGtpTDRmZ0VvUV90WGE3U1VzWlROeDg4WWlCVmY4Y3dJWUFSVE9uM3JqNWpyUVFTRjRXbmtsTy1FNjFqeEVjeUc2Z094SjZuZnRKM0NLd2xLa3RMRjlIRlhnODRMNnNfNlBjekYxOXhLU2k1MlhMb3M1ZHUyNEItYzZQU0I4VHZ5d1pISg?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "oliva",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
   }
  ],
  "pac": [
@@ -14864,6 +14808,32 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNalZjLVhvREt5cHFZYktkbzlwQjlEY210MnpsdENlRnFROEFiWXVPdDQ5MkR6MEo4bFcxX1M0WC0tZkZsSy05dk5wRzJKZjZXY21SZm8xZGlUVzFLREtFY0FlX1R0S3VLVVI3SDJET0E2a3hZX2pGUk5xNHBhRGtuY0RCUTRTTmYtRTE5RG1zZGZNY21NWnRfa2JGYk0?oc=5",
+   "relevance": 46,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
+   "id": "auto-90c807e7a4",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "politica",
+   "topics": [
+    "politica"
+   ],
+   "products": [
+    "pac"
+   ],
+   "source": "El Digital de Cuenca",
+   "lang": "es",
+   "headline": {
+    "en": "Castilla-La Mancha planta cara al futuro de la PAC: “Necesitamos una política fuerte, útil y sencilla”",
+    "es": "Castilla-La Mancha planta cara al futuro de la PAC: “Necesitamos una política fuerte, útil y sencilla”",
+    "fr": "Castilla-La Mancha planta cara al futuro de la PAC: “Necesitamos una política fuerte, útil y sencilla”",
+    "it": "Castilla-La Mancha planta cara al futuro de la PAC: “Necesitamos una política fuerte, útil y sencilla”"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQSTZPd0JzNWVvTjFtbGI5N19TVUNTWWNIcEdLN0RwbHYycHJnWkgwVDgxWjdNN0I0R1VDQzhZaHJEWVhZMUJaY3h2WlVfQW9kOEk4UXdpSjQ1QUlvMVNwYldycW5Ick1HdmR2UWhvT3FZYVF2OUV0eWxSbU02WWsxNV9pOGcxU29kcGxjcHhBakR1SmlCNGFyMG5TR2hReFR4RlQ2c1FBUVlzUjBwVGNrRkpVbnRmVklQME1jT3ZLYlZhOTV5YUt5ZF9RLWd4VWlXVHV2YnhYWQ?oc=5",
    "relevance": 46,
    "auto": true,
    "impactChannel": "market_impact",
@@ -15006,7 +14976,7 @@
    "marketLinks": []
   },
   {
-   "id": "auto-8e6e469fd0",
+   "id": "auto-56318d4076",
    "date": "2026-09-29",
    "region": "eu",
    "topic": "ayudas",
@@ -15016,7 +14986,7 @@
    "products": [
     "pac"
    ],
-   "source": "zamoranews.com",
+   "source": "Zamora News",
    "lang": "es",
    "headline": {
     "en": "La Junta flexibiliza los ecorregímenes de la PAC para adaptar las ayudas a la realidad del campo de Castilla y León",
@@ -15193,6 +15163,32 @@
    "marketLinks": []
   },
   {
+   "id": "auto-1db6424f40",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "ayudas",
+   "topics": [
+    "ayudas"
+   ],
+   "products": [
+    "pac"
+   ],
+   "source": "eComercio Agrario",
+   "lang": "es",
+   "headline": {
+    "en": "La futura PAC vuelve al debate europeo con el presupuesto y las ayudas aún por definir",
+    "es": "La futura PAC vuelve al debate europeo con el presupuesto y las ayudas aún por definir",
+    "fr": "La futura PAC vuelve al debate europeo con el presupuesto y las ayudas aún por definir",
+    "it": "La futura PAC vuelve al debate europeo con el presupuesto y las ayudas aún por definir"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOZnFUdEU2RW52dDdvalF6NGoweF9VaFQ3QS16bXVCblkzMnRPUXJpN1lGaktnQ1VuVXh1ZlU2YTVneHB0bjB4ZGhuckJKRXdGY0FIbnBocWg3TFpQcUtqVE9YM0ZiV29PQ1VjVWNzRnZmb1hqYlpsZWcteDZrdWJwOA?oc=5",
+   "relevance": 46,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
    "id": "auto-61068617d3",
    "date": "2026-09-28",
    "region": "eu",
@@ -15359,7 +15355,7 @@
    "marketLinks": []
   },
   {
-   "id": "auto-59197797f3",
+   "id": "auto-bd713dfbde",
    "date": "2026-09-25",
    "region": "eu",
    "topic": "politica",
@@ -15369,7 +15365,7 @@
    "products": [
     "pac"
    ],
-   "source": "comunidad.madrid",
+   "source": "Comunidad de Madrid |",
    "lang": "es",
    "headline": {
     "en": "Plan Estratégico de la Política Agrícola Común (PEPAC)",
@@ -15386,6 +15382,37 @@
   }
  ],
  "pollo": [
+  {
+   "id": "auto-aedf7f2e53",
+   "date": "2026-09-30",
+   "region": "uk",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "pollo"
+   ],
+   "source": "Defra",
+   "lang": "en",
+   "headline": {
+    "en": "Guidance: Poultry valuation tables",
+    "es": "Guidance: Poultry valuation tables",
+    "fr": "Guidance: Poultry valuation tables",
+    "it": "Guidance: Poultry valuation tables"
+   },
+   "description": "Poultry valuation tables outline the value of poultry in Great Britain.",
+   "url": "https://www.gov.uk/government/publications/poultry-valuation-tables",
+   "relevance": 56,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "pollo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
   {
    "id": "auto-acec66a9d8",
    "date": "2026-09-30",
@@ -15781,7 +15808,7 @@
   {
    "id": "auto-2bc7b7aef8",
    "date": "2026-09-28",
-   "region": "global",
+   "region": "ca",
    "topic": "",
    "topics": [],
    "products": [
@@ -15903,6 +15930,37 @@
    ]
   },
   {
+   "id": "auto-5bd6b2101c",
+   "date": "2026-09-26",
+   "region": "ca",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "pollo"
+   ],
+   "source": "Farmtario",
+   "lang": "en",
+   "headline": {
+    "en": "Land ownership rules create barrier for aspiring chicken farmers",
+    "es": "Land ownership rules create barrier for aspiring chicken farmers",
+    "fr": "Land ownership rules create barrier for aspiring chicken farmers",
+    "it": "Land ownership rules create barrier for aspiring chicken farmers"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPMUkyVjVZb0Flc1lUZ0Itb0hXZ0VfamFsNkdoWG9DMjZkX2NuSzcwNkEwdkY2U1QwZE1ZSVFTVXdtN3dCNlh2VjBma0JsRF93WTZWUHFlNUFoalBfbmVwSVZPSFc0aDNnNjd0eEc1VUx6UFA2SnhObzI3c3dMSUY0T3JxX0JTZXpGQmZaWEdqRmxnQlNxbTRsNllTeGFPQQ?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "pollo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-c9589a0e5c",
    "date": "2026-09-25",
    "region": "global",
@@ -15921,172 +15979,6 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQZ3FpR3dQR04xZXVxYWFUcWpiSWZJQmpfQVNWRGVSTzQwQzF3VjA0QllGcFV2aUtLcHhCRHg0azNlcmczUGtPQndpaXF6MzZIX1NsZ29qeDhEZkNWU0YwRFR5VjVQaGFQWkNHeGd1X1ZmSlRpek50OHZXR1JuYjMyd1VPYVE2N2Z4cGlYbW9laElPaXlpV3BDVFVxVTJKRjZscHJ5OWhBSkhSUEU?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "pollo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-7b63bc29be",
-   "date": "2026-09-24",
-   "region": "global",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo",
-    "pollo"
-   ],
-   "source": "WATTAgNet",
-   "lang": "en",
-   "headline": {
-    "en": "Olymel opens integrated pork, poultry plant in Quebec",
-    "es": "Olymel opens integrated pork, poultry plant in Quebec",
-    "fr": "Olymel opens integrated pork, poultry plant in Quebec",
-    "it": "Olymel opens integrated pork, poultry plant in Quebec"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNVUNVdjhRZEVkaEZGY2VEa0JCZFo5U25TTnRxMzJnNC1jbEI0ZEYzVXJRZWNSd2xGb0JZTGNsRnFnNWluY1dnb3owRU1kdkJtZGZJNHhPbVM4bVpzb0xLMUNEQXBtajVEM3B0YUlHYlIzcklXYWhyUzdKUHpvcF9YWG16dGZwVHdBRUNMY0ZNc3JrOUhlT2tiMlQ5aHlTMFNyYU5zMEZKRnZpQnFkTEtIS3J2ZFhodnZUZjdkZmY0TkIzWHVWbUtnUDZ3?oc=5",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "pollo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-bd2547604b",
-   "date": "2026-09-24",
-   "region": "us",
-   "topic": "sanidad",
-   "topics": [
-    "sanidad"
-   ],
-   "products": [
-    "pollo"
-   ],
-   "source": "Centers for Disease Control and Prevention | CDC (.gov)",
-   "lang": "en",
-   "headline": {
-    "en": "Salmonella Outbreaks Linked to Backyard Poultry",
-    "es": "Salmonella Outbreaks Linked to Backyard Poultry",
-    "fr": "Salmonella Outbreaks Linked to Backyard Poultry",
-    "it": "Salmonella Outbreaks Linked to Backyard Poultry"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5mcld1d3BRUzZoZlBrd0pLWXNjUkVlSWRNUEZjdDJBTGszWXVVSUpCTWNtS3pLR0YySVNMTzJzLWtjUXVZVzM0WHRjWEJFcWtUZjQ3dngzcUFPb1dXMHdDUmMzR3F4ellkLVVZZUtrVGxCYkVITFE?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "supply",
-   "marketLinks": [
-    {
-     "market": "pollo",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-62dbe0a83f",
-   "date": "2026-09-24",
-   "region": "us",
-   "topic": "sanidad",
-   "topics": [
-    "sanidad"
-   ],
-   "products": [
-    "pollo"
-   ],
-   "source": "Quality Assurance & Food Safety",
-   "lang": "en",
-   "headline": {
-    "en": "Texas A&M AgriLife Tests Far-Ultraviolet Light to Prevent Bird Flu in Poultry",
-    "es": "Texas A&M AgriLife Tests Far-Ultraviolet Light to Prevent Bird Flu in Poultry",
-    "fr": "Texas A&M AgriLife Tests Far-Ultraviolet Light to Prevent Bird Flu in Poultry",
-    "it": "Texas A&M AgriLife Tests Far-Ultraviolet Light to Prevent Bird Flu in Poultry"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcW4yelNsdHVsQU1uM0lPSldmOFdLSjVxUTVnb2VBTGNUUHBJeDBNY3hvaUpWLW15eVFPTWFoVW9MVlhCbU5VSW9YYW5tb3R2MmJIUWF4dm8wazYwV3VrN1ZYdWtqYW9CNllsTW4tdU5Obkg4VDdrWTl1cmdMejJpT1QyTXAzdGJWTVp3RTdIeERROGpfN1Q0R0Jzb2loYndYUTNVakdiSnJDNHoxUTIwUXdR?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "supply",
-   "marketLinks": [
-    {
-     "market": "pollo",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-a45e4819f1",
-   "date": "2026-09-24",
-   "region": "global",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "pollo"
-   ],
-   "source": "WATTAgNet",
-   "lang": "en",
-   "headline": {
-    "en": "Poultry scientist Dr. James (Jim) McKay dies",
-    "es": "Poultry scientist Dr. James (Jim) McKay dies",
-    "fr": "Poultry scientist Dr. James (Jim) McKay dies",
-    "it": "Poultry scientist Dr. James (Jim) McKay dies"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeGMzWUVkU3pnT2hCdGlteEJVV3FpeW5UMmhRLWd5R0ZVRmM4aUVveG1uY0VjZWxFS2dhMWRiTF9lQllRSmRsUmQ2Tk5SNFlUVy0zYlpFbERmU3F0WkYzZE5ITW1QczJhdDctLTNNR3BwblBaNWMweG1mdEJUVTZtVGJQZXZJMGl1ZTVfb0x6UVJTOG9NTllIdQ?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "pollo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-b07900e698",
-   "date": "2026-09-24",
-   "region": "global",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "pollo"
-   ],
-   "source": "WATTAgNet",
-   "lang": "en",
-   "headline": {
-    "en": "AI could track turkey weights for precision feeding",
-    "es": "AI could track turkey weights for precision feeding",
-    "fr": "AI could track turkey weights for precision feeding",
-    "it": "AI could track turkey weights for precision feeding"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQTW14TS1tdVY2a01WdTlEcDF2LTVFaUF2OFRVQXk3MmNvV0xiTFo1c1JOdlp6V3J0clF2SUZDc3BUck4tSDd4WGdSbHFSandnUW90eElvSE5SbFA1VXhpZmlBVnZRU2w2cEhray0wLUJrQ2ZsQjZkTFE0M3hLYjYzLWMtT3dSX2dYRW1yNVh6RERjMFFYX3RwMHRiNWhQRWlMVU02c1pSZnhuSG84UzBpd29FRUg1dw?oc=5",
    "relevance": 48,
    "auto": true,
    "impactChannel": "market_impact",
@@ -16412,6 +16304,47 @@
    ]
   },
   {
+   "id": "auto-ff518c01ce",
+   "date": "2026-09-25",
+   "region": "ca",
+   "topic": "precios",
+   "topics": [
+    "precios",
+    "politica"
+   ],
+   "products": [
+    "vaca",
+    "cerdo"
+   ],
+   "source": "Farmtario",
+   "lang": "en",
+   "headline": {
+    "en": "Government cool to mandatory pork, beef price reporting",
+    "es": "Government cool to mandatory pork, beef price reporting",
+    "fr": "Government cool to mandatory pork, beef price reporting",
+    "it": "Government cool to mandatory pork, beef price reporting"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPNl81cWZWNjJ1bEZjZFE4UEpBdEpmWklPOURxWTF6M2VZdHZJUmNmdVFwWUdqOW4zcEFCcjF2aXdEVnNsRnZ0cmJuVlBNdHdTeUk3TWVCak1OdTZLVFA2c0ZtZ0d5YXB6eGNNTDV2UVczdDJGOHBZdk1neTAxMThLQ1ZNeXJGTFhFVXdn?oc=5",
+   "relevance": 70,
+   "auto": true,
+   "impactChannel": "policy",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "policy",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "vaca",
+     "channel": "policy",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-52f0634d0c",
    "date": "2026-09-25",
    "region": "eu",
@@ -16510,236 +16443,6 @@
      "direction": "uncertain"
     }
    ]
-  },
-  {
-   "id": "auto-7b63bc29be",
-   "date": "2026-09-24",
-   "region": "global",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo",
-    "pollo"
-   ],
-   "source": "WATTAgNet",
-   "lang": "en",
-   "headline": {
-    "en": "Olymel opens integrated pork, poultry plant in Quebec",
-    "es": "Olymel opens integrated pork, poultry plant in Quebec",
-    "fr": "Olymel opens integrated pork, poultry plant in Quebec",
-    "it": "Olymel opens integrated pork, poultry plant in Quebec"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNVUNVdjhRZEVkaEZGY2VEa0JCZFo5U25TTnRxMzJnNC1jbEI0ZEYzVXJRZWNSd2xGb0JZTGNsRnFnNWluY1dnb3owRU1kdkJtZGZJNHhPbVM4bVpzb0xLMUNEQXBtajVEM3B0YUlHYlIzcklXYWhyUzdKUHpvcF9YWG16dGZwVHdBRUNMY0ZNc3JrOUhlT2tiMlQ5aHlTMFNyYU5zMEZKRnZpQnFkTEtIS3J2ZFhodnZUZjdkZmY0TkIzWHVWbUtnUDZ3?oc=5",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "pollo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-76774d34eb",
-   "date": "2026-09-24",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio"
-   ],
-   "products": [
-    "cerdo"
-   ],
-   "source": "Brownfield",
-   "lang": "en",
-   "headline": {
-    "en": "Pork export sales up on week, led by Mexico, China",
-    "es": "Pork export sales up on week, led by Mexico, China",
-    "fr": "Pork export sales up on week, led by Mexico, China",
-    "it": "Pork export sales up on week, led by Mexico, China"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSEhqMFUtbjR4SXZCMTBCS1FQeHRBQnRxNk5ZQlcwdExXWjcxZXdRTXlHQ3p5QVBFWTA1XzV3Y2c5YUhnVUtWUnd1ekxSendzU2xkMEJjZzluQ2lvdnZScGdyNWNfUkc4RVFKeWk1U3JxcUFlSXByNWUxQkxFWjVjTTNoXzZOdTgyMkwzXzNZUXM?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-b09683dbec",
-   "date": "2026-09-24",
-   "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "cerdo"
-   ],
-   "source": "The Pig Site",
-   "lang": "en",
-   "headline": {
-    "en": "Hog futures dip ahead of USDA herd data - CME",
-    "es": "Hog futures dip ahead of USDA herd data - CME",
-    "fr": "Hog futures dip ahead of USDA herd data - CME",
-    "it": "Hog futures dip ahead of USDA herd data - CME"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWTdQVU1EVzVBanhUSUdMUk5RN2pwRGVBdUVhV1BvVFVpRFp2dlFyLTlfdFVNOUFnRE0wUzFDbmFmTTZUeDU0WW5xNVlHYWotMk53enRoaW9saC0wOFYzZncyVExMYTNncGcxdXVQLWtHTlZRcmpnd3RIYjVCUmJNREZDMkVWZlNUXy1nN0lIdFQ0eGQyWjU0aXVxMml5VlJjbzBseXVEdlE?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-07292b68a5",
-   "date": "2026-09-24",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "cerdo"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "Le prix du porc français recule toujours après la chute en Allemagne",
-    "es": "Le prix du porc français recule toujours après la chute en Allemagne",
-    "fr": "Le prix du porc français recule toujours après la chute en Allemagne",
-    "it": "Le prix du porc français recule toujours après la chute en Allemagne"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOcmlCSHZxeTFBRzNOa2U4LTdYbUt1OFhuVU9qNXktS2dEdUlvR3lRWXVkN200V2o5UTBRb1pnMmJDNDQ0WEVjbVBiSWU3TVJXajNDYzZVQkVMTWFJU0o4dHYtcmhTTWl5eVdsTnlmTENTTm1RTWhMOVl2X1FUb0VmbmlKOFJ4N0FPZ2xlUlJGcnhfTTh1TXE2SVhtNkVmOURaamNhUA?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-6d83f57e1a",
-   "date": "2026-09-24",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo"
-   ],
-   "source": "Feedstuffs",
-   "lang": "en",
-   "headline": {
-    "en": "National Pork Board turns producer priorities into action",
-    "es": "National Pork Board turns producer priorities into action",
-    "fr": "National Pork Board turns producer priorities into action",
-    "it": "National Pork Board turns producer priorities into action"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPNTdqZlF4eDRNUnRRV0xYalZmZWhkMlYyR2UtNm1jcTVYWVhIYUdCU0l2TkY4T2pDYUEtUkp2RkNlSGFXZ3pDTTk1UzF4cENkb2hHMElhTDZYV3RzbllCN3k4c1ZhZG1oWFFHY0ZKa2FlSmVySy1NWUlwTVFQTllZQlFoWG80SFNfMVgzWWhNWXIyVEpYTEJNdXNXYlRiRW9UYkVhTQ?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-1219d1da11",
-   "date": "2026-09-24",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo"
-   ],
-   "source": "TradingView",
-   "lang": "en",
-   "headline": {
-    "en": "Hogs Slopping Back Ahead of USDA Data Release",
-    "es": "Hogs Slopping Back Ahead of USDA Data Release",
-    "fr": "Hogs Slopping Back Ahead of USDA Data Release",
-    "it": "Hogs Slopping Back Ahead of USDA Data Release"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOUHRRZ2FwbUhSbWd5bjJlblBZSFJjWXdKdkFRTlN0TlJEVlZ6QXoxQ3l6TG9LeXJJMDVCMzJ2X1pWdXlRcmhwMGZVTWl6LVZHc2Y2cU5ZUkc1R0o2ZVFhTDNHa21YalZrYkJ6OU1QcDVnU1R5di16VUp3MEJtUTdjMVBKdG5WdmsyTWZqNkhrbUh6bDl4MENON3l4M3lFRUxTcVpSY3VERQ?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-7d383f214e",
-   "date": "2026-09-24",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo"
-   ],
-   "source": "Barchart.com",
-   "lang": "en",
-   "headline": {
-    "en": "Hogs Fall Back on Thursday, with USDA Reporting Tighter Hog Inventory",
-    "es": "Hogs Fall Back on Thursday, with USDA Reporting Tighter Hog Inventory",
-    "fr": "Hogs Fall Back on Thursday, with USDA Reporting Tighter Hog Inventory",
-    "it": "Hogs Fall Back on Thursday, with USDA Reporting Tighter Hog Inventory"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQ1BuV0JFWTl1WEJjUnMwNmt4QldISmQwYlFGYjh1ZE40ZTZ2RXZCalkzcVpCdjBqYkFnc01OaXM0YldCaEs4aVNTRjU5bWhacFh1M0dyM3pJc25zaXMxd1BhZmh3UVNtdEk3WUpnY2sxQWJ6cm5jU0V4T29vQk9vdUZULWdHakVnWTFQbHVpNWNMcUxlRUpSSzlLR2VGUUdTQUZIOC1oUm1vMFV0cktpN21n?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
   }
  ],
  "azucar": [
@@ -16810,6 +16513,46 @@
     {
      "market": "azucar",
      "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-fa6b833444",
+   "date": "2026-09-29",
+   "region": "eu",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "trigo",
+    "azucar"
+   ],
+   "source": "reussir.fr",
+   "lang": "fr",
+   "headline": {
+    "en": "Marché des céréales et du sucre du 16 au 23 septembre 2026 – Les prix du blé tendre sont baissiers sur Euronext, dans un contexte de fortes disponibilités mondiales",
+    "es": "Marché des céréales et du sucre du 16 au 23 septembre 2026 – Les prix du blé tendre sont baissiers sur Euronext, dans un contexte de fortes disponibilités mondiales",
+    "fr": "Marché des céréales et du sucre du 16 au 23 septembre 2026 – Les prix du blé tendre sont baissiers sur Euronext, dans un contexte de fortes disponibilités mondiales",
+    "it": "Marché des céréales et du sucre du 16 au 23 septembre 2026 – Les prix du blé tendre sont baissiers sur Euronext, dans un contexte de fortes disponibilités mondiales"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWW5DdGlZc1lQTk1mU1R0X3NFZ3FiTUswalB6QWFQN1d0MnROamxvNVJ4UFc2YUltVlIwS0FsNFlPVWd3MnVDcVlxUjlXSGw4Z3FseDhURXUzRzZBT0pDVC1yQ2NhNWp4NkNlcHRrVkNwX0w4cXVXRnY3NTRyenRpbnZ4aGJoQXhveW55NHU2VjhJeVZfS0dfZUZaVVZIdmRxN0dHdy1xNjQ5eGEzMmZ0U0gyUWhVS0RWdkE?oc=5",
+   "relevance": 64,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "azucar",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "market_impact",
      "relation": null,
      "direction": "uncertain"
     }
@@ -16980,7 +16723,7 @@
    ]
   },
   {
-   "id": "auto-49144691f1",
+   "id": "auto-3ad26ede3e",
    "date": "2026-09-28",
    "region": "global",
    "topic": "comercio",
@@ -16991,7 +16734,7 @@
    "products": [
     "azucar"
    ],
-   "source": "CNBC TV18",
+   "source": "cnbctv18.com",
    "lang": "en",
    "headline": {
     "en": "India may have no sugar left to export next year as crop worries grow: ISMA",
@@ -17071,37 +16814,6 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5tWGthbjdWYzl6S1pObkpxMlZxTUdvNXY3TzNWLUNhV3FRczFIR2x4QkFsd3lHZjI5dlUydzBjemRESGlKeVR5NXR4TDFzX05QTnlMdmFtLVk4d1VTYUo4VllsSC1SYmV2NXFLNA?oc=5",
-   "relevance": 56,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "azucar",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-8c660b4108",
-   "date": "2026-09-24",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "azucar"
-   ],
-   "source": "WTO",
-   "lang": "en",
-   "headline": {
-    "en": "Members review farm policies in first meeting under new Chair",
-    "es": "Members review farm policies in first meeting under new Chair",
-    "fr": "Members review farm policies in first meeting under new Chair",
-    "it": "Members review farm policies in first meeting under new Chair"
-   },
-   "description": "At a meeting of the WTO Committee on Agriculture on 24-25 September, WTO members addressed matters raised regarding implementation of their commitments and members' specific notifications. They also discussed a counter-notification submitted by Australia on India's support polici",
-   "url": "https://www.wto.org/english/news_e/news26_e/agri_24sep26_497_e.htm",
    "relevance": 56,
    "auto": true,
    "impactChannel": "market_impact",
@@ -17482,37 +17194,6 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOSm1nc2x6Q1BwcGdudlA2ZmVTbkxMMkRfN0xBMS1IeWVIU1ZxY1prejBDTW1fRXJuakRXTk53ckFja3VQZ1NKdGxUYm5YQ25ZVlZzdUN1MjBrWllENVl3WVJzUkliTW91end4ejhKYjRxU3drbmdRNWc0YzNxb2RPU3ZhMmpmb3IyLWJrVmR1X0tyUk5OdTNlNXlRanl3NW8?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "huevos",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-770c4aa069",
-   "date": "2026-09-24",
-   "region": "global",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "huevos"
-   ],
-   "source": "WATTAgNet",
-   "lang": "en",
-   "headline": {
-    "en": "9 foes of cage-raised eggs arrested at Kroger headquarters",
-    "es": "9 foes of cage-raised eggs arrested at Kroger headquarters",
-    "fr": "9 foes of cage-raised eggs arrested at Kroger headquarters",
-    "it": "9 foes of cage-raised eggs arrested at Kroger headquarters"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNb0MwTm1VT0R5b0NudDR0c3BuN0J1R3lBV0lWMkRZRXA2NHdqclU4bDI3Wk5kN25TOG9lY3BDaUk2ZUQ4RUUwdUQ4QTlPWTB6QVNpRWFxelp2Wi13a29oWi04bld4NWU5MTRQZEFpOThCdGl0LTVrQ1FKRmwxTU9jWlZ0RUNMVzliNzVhSzlYdUFYeU43eXQ5ODZHZjVfZHNCdjcydU5rbXJVZWwxUmtvUnNPRmNJWDVPbm02ZXh3cWVZdzg?oc=5",
    "relevance": 48,
    "auto": true,
    "impactChannel": "market_impact",
