@@ -1,0 +1,28 @@
+name: update-drought
+on:
+  schedule:
+    - cron: '40 14 * * 4'
+    - cron: '40 12 * * 5'
+  workflow_dispatch:
+concurrency:
+  group: dehesa-drought
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  drought:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Actualizar monitor de sequía
+        run: node scripts/update-drought.mjs
+      - name: Commit
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add data/drought.json
+          git commit -m "data: monitor de sequía" || exit 0
+          git pull --rebase origin main; git push origin HEAD:main
