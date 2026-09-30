@@ -13,7 +13,7 @@ for t in ['culturas.2025jun10','ocupacoes.solo.2025jun10','freguesias','distrito
     h=get(B+'?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAMES=%s&resultType=hits'%T)
     out.append('HITS '+' '.join(re.findall(r'number\w+="\d+"',h)))
     d=get(B+'?SERVICE=WFS&REQUEST=DescribeFeatureType&VERSION=2.0.0&TYPENAMES=%s'%T)
-    out.append('FIELDS '+' | '.join(re.findall(r'name="(\w+)"[^>]*type="([\w:]+)"',d)))
+    out.append('FIELDS '+' | '.join(a+':'+b for a,b in re.findall(r'name="(\w+)"[^>]*type="([\w:]+)"',d)))
     o=get(B+'?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAMES=%s&count=3&outputFormat=application/json'%T)
     o=re.sub(r'"coordinates":\[[\[\]\d.,\- ]+\]','"coordinates":"..."',o)
     out.append('ONE '+o[:1500])
