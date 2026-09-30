@@ -179,7 +179,7 @@
     var ukp = obsById(cfg.ukP); one(ukp, t.ukP, (ukp && ukp.methodology) || '', false);
     one(obsById(cfg.euIdx), cfg.euIdxMilk ? t.euIdxMilk : t.euIdx, cfg.euIdxMilk ? t.idxNote : t.idxNoteEu, true);
     one(obsById(cfg.uk), t.ukIdx, t.idxNote, true);
-    return out.length ? sec(t.prices, t.pricesHint, out.join(''), lnk('precios.html?product=' + (cfg.pp || (pid === 'vacuno' ? 'vaca' : pid)), t.lPrices)) : '';
+    return out.length ? sec(t.prices, t.pricesHint, out.join(''), lnk('europa.html?f=' + ({ trigo: 'cereales', maiz: 'cereales', soja: 'oleaginosas', arroz: 'arroz', vacuno: 'vacuno', cerdo: 'cerdo', leche: 'lacteos', pollo: 'pollo' }[SEL.p] || 'cereales'), ({ es: 'Todos los precios de la UE', en: 'All EU prices', fr: 'Tous les prix de l’UE', it: 'Tutti i prezzi UE' }[lang()] || 'All EU prices')) + ' · ' + lnk('precios.html?product=' + (cfg.pp || (pid === 'vacuno' ? 'vaca' : pid)), t.lPrices)) : '';
   }
 
   /* ---------- oferta y demanda ---------- */

@@ -75,6 +75,7 @@ export const FAMILIES = {
     parts: r => [r.product], region: () => 'EU', unitFixed: '€/tonne' }
 };
 
+const MIN_POINTS = 10;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function fetchRows(fam) {
@@ -145,7 +146,8 @@ export function buildFamily(rows, fam, today) {
       if (!pts.length) continue;
       regions.push({ c: c.c, m: multi ? c.m : '', pts });
     }
-    if (!regions.length) continue;
+    // series residuales (menos de MIN_POINTS puntos en cualquier país) no aportan y ensucian el selector
+    if (!regions.length || Math.max.apply(null, regions.map(r => r.pts.length)) < MIN_POINTS) continue;
     regions.sort((a, b) => (a.c === 'EU' ? -1 : b.c === 'EU' ? 1 : a.c.localeCompare(b.c)) || a.m.localeCompare(b.m));
     let id = slug(s.parts.join('-')); let n = 2;
     while (used.has(id)) id = slug(s.parts.join('-')) + '-' + n++;
