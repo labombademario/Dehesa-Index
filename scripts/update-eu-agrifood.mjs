@@ -80,6 +80,34 @@ export const PRODUCTS = {
     market: 'Comisión Europea (avena pienso, agregado UE)',
     methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del agregado de la UE de avena pienso (media nacional de los Estados miembros que la publican), EUR/tonelada. España no publica avena en el portal. Es el agregado de la Comisión, no una media calculada por Dehesa Index.' + NOTE_PUB
   },
+  mantequilla: {
+    catId: 'lacteos', id: 'di_lacteos_mantequilla_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'dairy', member: 'EU', unitExpected: ['100KG', '100 KG', '€/100Kg', '100kg', '€/100kg'], obsUnit: '100kg', divisor: 1, dateField: 'endDate',
+    select: r => r.product === 'BUTTER', recent: true,
+    market: 'Comisión Europea (mantequilla, agregado UE)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la mantequilla, agregado de la UE calculado por la Comisión, EUR/100 kg. No es un futuro ni una media calculada por Dehesa Index. La serie de España tiene huecos de varias semanas.' + NOTE_PUB
+  },
+  leche_polvo: {
+    catId: 'lacteos', id: 'di_lacteos_leche_polvo_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'dairy', member: 'EU', unitExpected: ['100KG', '100 KG', '€/100Kg', '100kg', '€/100kg'], obsUnit: '100kg', divisor: 1, dateField: 'endDate',
+    select: r => r.product === 'SMP', recent: true,
+    market: 'Comisión Europea (leche desnatada en polvo, agregado UE)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la leche desnatada en polvo (SMP), agregado de la UE calculado por la Comisión, EUR/100 kg. No es un futuro ni una media calculada por Dehesa Index. La serie de España tiene huecos de varias semanas.' + NOTE_PUB
+  },
+  colza: {
+    catId: 'cereales', id: 'di_cereales_colza_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'oilseeds', member: 'ES', unitExpected: '€/t', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
+    select: r => r.product === 'Rapeseed' && r.marketStage === 'DEPSILO' && r.market === 'National Average' && (!r.productType || /^(N\.?A\.?|Not Defined)$/i.test(String(r.productType).trim())), recent: true,
+    market: 'Comisión Europea (colza, España, media nacional)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la colza en España (media nacional, salida de silo del agricultor), EUR/tonelada. No es la media de la UE ni el futuro de Euronext.' + NOTE_PUB
+  },
+  centeno: {
+    catId: 'cereales', id: 'di_cereales_centeno_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'cereal', member: 'EU', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
+    select: r => r.productName === 'Rye of breadmaking quality' && /^National Average/.test(r.stageName), recent: true,
+    market: 'Comisión Europea (centeno panificable, agregado UE)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del agregado de la UE de centeno panificable (media nacional de los Estados miembros que lo publican), EUR/tonelada. España no publica centeno en el portal. Es el agregado de la Comisión, no una media calculada por Dehesa Index.' + NOTE_PUB
+  },
   trigo: {
     catId: 'cereales', id: 'di_cereales_trigo_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
     commodity: 'cereal', member: 'ES', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
@@ -178,7 +206,7 @@ export function buildSeries(rows, cfg, member, today) {
   for (const r of rows) {
     if (member && r.memberStateCode !== member) continue;
     if (!cfg.select(r)) continue;
-    if (r.unit !== cfg.unitExpected) continue;
+    if (Array.isArray(cfg.unitExpected) ? cfg.unitExpected.indexOf(r.unit) < 0 : r.unit !== cfg.unitExpected) continue;
     const d = dateOf(r, cfg); const p = parsePrice(r.price);
     if (!d || p === null) continue;
     if (cfg.completedOnly && !(parseEuDate(r.endDate) < today)) continue;

@@ -14,7 +14,7 @@ const tri = (es, en, fr, it) => ({ es, en, fr, it });
 
 // --- productos de la página de precios
 const SYN = {
-  maiz: 'corn maize mais maïs cereal grano forraje', trigo: 'wheat blé ble frumento pan harina cereal candeal', arroz: 'rice riz riso paddy cereal', cebada: 'barley orge orzo cereal cerveza malta pienso', avena: 'oats avoine avena cereal pienso', sorgo: 'sorghum sorgho milo cereal grano forraje',
+  maiz: 'corn maize mais maïs cereal grano forraje', trigo: 'wheat blé ble frumento pan harina cereal candeal', arroz: 'rice riz riso paddy cereal', mantequilla: 'butter beurre burro lacteo lácteo', leche_polvo: 'skim milk powder smp lait poudre latte polvere desnatada', colza: 'rapeseed canola colza oleaginosa oilseed', centeno: 'rye seigle segale cereal', cebada: 'barley orge orzo cereal cerveza malta pienso', avena: 'oats avoine avena cereal pienso', sorgo: 'sorghum sorgho milo cereal grano forraje',
   leche: 'milk lait latte lacteo lácteo dairy vaca cruda', vaca: 'vacuno beef cattle bovino bovins bovini ternera buey novillo carne res vitello manzo',
   cabra: 'goat chevre chèvre capra caprino', cerdo: 'pork hogs pig porcino cochino cochinillo porc maiale swine', cordero: 'lamb sheep ovino oveja agneau agnello mouton',
   huevos: 'eggs oeufs uova huevo gallina', pollo: 'chicken broiler poulet aves avicultura', pienso: 'feed mangime aliment compuesto racion ración',
