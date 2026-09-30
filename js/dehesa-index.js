@@ -2,19 +2,20 @@
 (function () {
   'use strict';
   var T = {
-    es: { title: 'Dehesa Index · UE', hint: 'Índice compuesto, base 100 = oct. 2024', mom: 'vs. mes anterior', yoy: 'vs. hace 12 meses', groups: 'Peso y evolución por grupo', names: { cereales: 'Cereales', ganaderia: 'Ganadería', lacteos: 'Lácteos', pienso: 'Pienso', fertilizantes: 'Fertilizantes', energia: 'Energía' }, note: 'Solo series verificadas. Mide evolución, no es un precio. Mercado UE: EE. UU. y Reino Unido se añadirán cuando tengan historia suficiente.', link: 'Cómo se calcula', period: 'Último mes cerrado: ' },
-    en: { title: 'Dehesa Index · EU', hint: 'Composite index, base 100 = Oct 2024', mom: 'vs. previous month', yoy: 'vs. 12 months ago', groups: 'Weight and trend by group', names: { cereales: 'Cereals', ganaderia: 'Livestock', lacteos: 'Dairy', pienso: 'Feed', fertilizantes: 'Fertilisers', energia: 'Energy' }, note: 'Verified series only. It measures evolution, not a price. EU market: US and UK will be added once they have enough history.', link: 'How it is calculated', period: 'Last closed month: ' },
-    fr: { title: 'Dehesa Index · UE', hint: 'Indice composite, base 100 = oct. 2024', mom: 'vs. mois précédent', yoy: 'vs. il y a 12 mois', groups: 'Poids et évolution par groupe', names: { cereales: 'Céréales', ganaderia: 'Élevage', lacteos: 'Produits laitiers', pienso: 'Aliments', fertilizantes: 'Engrais', energia: 'Énergie' }, note: 'Séries vérifiées uniquement. Il mesure une évolution, pas un prix. Marché UE : les États-Unis et le Royaume-Uni seront ajoutés avec assez d’historique.', link: 'Méthode de calcul', period: 'Dernier mois clos : ' },
-    it: { title: 'Dehesa Index · UE', hint: 'Indice composito, base 100 = ott. 2024', mom: 'vs. mese precedente', yoy: 'vs. 12 mesi fa', groups: 'Peso e andamento per gruppo', names: { cereales: 'Cereali', ganaderia: 'Zootecnia', lacteos: 'Latticini', pienso: 'Mangimi', fertilizantes: 'Fertilizzanti', energia: 'Energia' }, note: 'Solo serie verificate. Misura un andamento, non un prezzo. Mercato UE: USA e Regno Unito saranno aggiunti con storico sufficiente.', link: 'Come si calcola', period: 'Ultimo mese chiuso: ' }
+    es: { title: 'Dehesa Index · UE', hint: 'Índice compuesto, base 100 = oct. 2024', mom: 'vs. mes anterior', yoy: 'vs. hace 12 meses', groups: 'Peso y evolución por grupo', names: { cereales: 'Cereales', ganaderia: 'Ganadería', lacteos: 'Lácteos', pienso: 'Pienso', fertilizantes: 'Fertilizantes', energia: 'Energía' }, note: 'Solo series verificadas. Mide evolución, no es un precio. Mercado UE: EE. UU. y Reino Unido se añadirán cuando tengan historia suficiente.', link: 'Cómo se calcula', custom: 'Crea tu propio índice', customHint: 'Ajusta el peso de cada grupo (0 lo excluye). Se compara con el índice oficial.', mine: 'Tu índice', official: 'Oficial', reset: 'Restablecer', allZero: 'Pon peso a al menos un grupo.', period: 'Último mes cerrado: ' },
+    en: { title: 'Dehesa Index · EU', hint: 'Composite index, base 100 = Oct 2024', mom: 'vs. previous month', yoy: 'vs. 12 months ago', groups: 'Weight and trend by group', names: { cereales: 'Cereals', ganaderia: 'Livestock', lacteos: 'Dairy', pienso: 'Feed', fertilizantes: 'Fertilisers', energia: 'Energy' }, note: 'Verified series only. It measures evolution, not a price. EU market: US and UK will be added once they have enough history.', link: 'How it is calculated', custom: 'Build your own index', customHint: 'Adjust each group weight (0 excludes it). Compared with the official index.', mine: 'Your index', official: 'Official', reset: 'Reset', allZero: 'Give weight to at least one group.', period: 'Last closed month: ' },
+    fr: { title: 'Dehesa Index · UE', hint: 'Indice composite, base 100 = oct. 2024', mom: 'vs. mois précédent', yoy: 'vs. il y a 12 mois', groups: 'Poids et évolution par groupe', names: { cereales: 'Céréales', ganaderia: 'Élevage', lacteos: 'Produits laitiers', pienso: 'Aliments', fertilizantes: 'Engrais', energia: 'Énergie' }, note: 'Séries vérifiées uniquement. Il mesure une évolution, pas un prix. Marché UE : les États-Unis et le Royaume-Uni seront ajoutés avec assez d’historique.', link: 'Méthode de calcul', custom: 'Créez votre indice', customHint: 'Réglez le poids de chaque groupe (0 l’exclut). Comparé à l’indice officiel.', mine: 'Votre indice', official: 'Officiel', reset: 'Réinitialiser', allZero: 'Donnez du poids à au moins un groupe.', period: 'Dernier mois clos : ' },
+    it: { title: 'Dehesa Index · UE', hint: 'Indice composito, base 100 = ott. 2024', mom: 'vs. mese precedente', yoy: 'vs. 12 mesi fa', groups: 'Peso e andamento per gruppo', names: { cereales: 'Cereali', ganaderia: 'Zootecnia', lacteos: 'Latticini', pienso: 'Mangimi', fertilizantes: 'Fertilizzanti', energia: 'Energia' }, note: 'Solo serie verificate. Misura un andamento, non un prezzo. Mercato UE: USA e Regno Unito saranno aggiunti con storico sufficiente.', link: 'Come si calcola', custom: 'Crea il tuo indice', customHint: 'Regola il peso di ogni gruppo (0 lo esclude). Confrontato con l’indice ufficiale.', mine: 'Il tuo indice', official: 'Ufficiale', reset: 'Ripristina', allZero: 'Assegna peso ad almeno un gruppo.', period: 'Ultimo mese chiuso: ' }
   };
   var DATA = null;
   function pct(v) { return (v > 0 ? '+' : '') + v.toFixed(1).replace('.', ',') + ' %'; }
-  function chart(series) {
-    var w = 640, h = 180, p = 8, vals = series.map(function (s) { return s.value; });
+  function chart(series, other) {
+    var w = 640, h = 180, p = 8, vals = series.map(function (s) { return s.value; }).concat(other ? other.map(function (s) { return s.value; }) : []);
     var min = Math.min.apply(null, vals) - 2, max = Math.max.apply(null, vals) + 2;
-    var pts = series.map(function (s, i) { return (p + i * (w - 2 * p) / (series.length - 1)).toFixed(1) + ',' + (h - p - (s.value - min) / (max - min) * (h - 2 * p)).toFixed(1); }).join(' ');
+    function line(arr) { return arr.map(function (s, i) { return (p + i * (w - 2 * p) / (arr.length - 1)).toFixed(1) + ',' + (h - p - (s.value - min) / (max - min) * (h - 2 * p)).toFixed(1); }).join(' '); }
+    var pts = line(series);
     var y100 = (h - p - (100 - min) / (max - min) * (h - 2 * p)).toFixed(1);
-    return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" role="img" aria-label="Dehesa Index" style="display:block"><line x1="' + p + '" x2="' + (w - p) + '" y1="' + y100 + '" y2="' + y100 + '" stroke="currentColor" stroke-opacity=".2" stroke-dasharray="4 4"/><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" points="' + pts + '"/></svg>';
+    return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" role="img" aria-label="Dehesa Index" style="display:block"><line x1="' + p + '" x2="' + (w - p) + '" y1="' + y100 + '" y2="' + y100 + '" stroke="currentColor" stroke-opacity=".2" stroke-dasharray="4 4"/><polyline fill="none" stroke="' + (other ? 'currentColor' : 'var(--accent)') + '" stroke-opacity="' + (other ? '.45' : '1') + '" stroke-width="2" stroke-linejoin="round" points="' + pts + '"/>' + (other ? '<polyline fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" points="' + line(other) + '"/>' : '') + '</svg>';
   }
   function render() {
     var el = document.getElementById('home-dehesa-index');
@@ -31,7 +32,36 @@
       '<span style="font-size:13px"><b>' + pct(DATA.changeMoMPct) + '</b> ' + t.mom + '<br><b>' + pct(DATA.changeYoYPct) + '</b> ' + t.yoy + '</span></div>' +
       chart(DATA.series) + '<div class="di-movers-hint" style="margin-top:6px">' + t.period + DATA.lastPeriod + '</div></div>' +
       '<div><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:6px">' + t.groups + '</div>' + rows + '</div></div>' +
-      '<p class="di-movers-hint" style="margin-top:10px">' + t.note + ' <a href="data/dehesa-index.json">' + t.link + '</a></p>';
+      '<p class="di-movers-hint" style="margin-top:10px">' + t.note + ' <a href="data/dehesa-index.json">' + t.link + '</a></p>' +
+      '<details id="dix-custom" style="margin-top:18px"' + (document.getElementById('dix-custom') && document.getElementById('dix-custom').open ? ' open' : '') + '><summary style="cursor:pointer;font-weight:600">' + t.custom + '</summary><p class="di-movers-hint" style="margin:8px 0 12px">' + t.customHint + '</p><div class="di-card" style="padding:20px" id="dix-custom-body"></div></details>';
+    renderCustom();
+  }
+  var W = null;
+  function customSeries() {
+    var sum = 0; Object.keys(W).forEach(function (k) { sum += W[k]; });
+    if (!sum) return null;
+    return DATA.series.map(function (s) { var v = 0; Object.keys(W).forEach(function (k) { v += W[k] * s.groups[k]; }); return { period: s.period, value: v / sum }; });
+  }
+  function fmt(v) { return v.toFixed(1).replace('.', ','); }
+  function resultHtml(t) {
+    var cs = customSeries();
+    if (!cs) return '<p class="di-movers-hint">' + t.allZero + '</p>';
+    var c = cs[cs.length - 1].value, pv = cs[cs.length - 2].value, yv = cs[cs.length - 13];
+    return '<div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap"><span class="di-stat-value" style="font-size:32px">' + fmt(c) + '</span><span style="font-size:13px"><b>' + pct(100 * (c / pv - 1)) + '</b> ' + t.mom + (yv ? '<br><b>' + pct(100 * (c / yv.value - 1)) + '</b> ' + t.yoy : '') + '</span></div>' + chart(DATA.series, cs) +
+      '<div class="di-movers-hint" style="margin-top:6px"><b style="color:var(--accent)">━</b> ' + t.mine + ' &nbsp; <b style="opacity:.45">━</b> ' + t.official + '</div>';
+  }
+  function renderCustom() {
+    var host = document.getElementById('dix-custom-body'); if (!host || !DATA) return;
+    var lang = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es';
+    var t = T[lang] || T.es;
+    if (!W) { W = {}; DATA.groups.forEach(function (g) { W[g.id] = g.weightPct; }); }
+    var inputs = DATA.groups.map(function (g) {
+      return '<label style="display:grid;grid-template-columns:1.2fr 2fr 40px;gap:8px;align-items:center;font-size:13px;padding:4px 0"><span>' + t.names[g.id] + '</span><input type="range" min="0" max="100" step="5" data-g="' + g.id + '" value="' + W[g.id] + '"><span style="text-align:right;font-weight:600">' + W[g.id] + '</span></label>';
+    }).join('');
+    var res = resultHtml(t);
+    host.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px"><div>' + inputs + '<button type="button" id="dix-reset" class="di-link-btn" style="margin-top:8px">' + t.reset + '</button></div><div id="dix-res">' + res + '</div></div>';
+    Array.prototype.forEach.call(host.querySelectorAll('input[data-g]'), function (i) { i.oninput = function () { W[i.getAttribute('data-g')] = Number(i.value); i.nextSibling.textContent = i.value; var r = document.getElementById('dix-res'); if (r) r.innerHTML = resultHtml(t); }; });
+    var rb = document.getElementById('dix-reset'); if (rb) rb.onclick = function () { W = null; renderCustom(); };
   }
   var box = document.getElementById('home-dehesa-index');
   if (!box) return;
