@@ -243,7 +243,13 @@
     fetch('data/crop-progress.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
   ]).then(function (a) {
     SD = a[2] || null; CROPS = a[3] && a[3].crops && a[3].crops.length ? a[3] : null;
-    LATEST = (a[0] && a[0].observations) || []; CLIMATE = a[1] && a[1].locations && a[1].locations.length ? a[1] : null;
+    LATEST = (a[0] && a[0].observations) || [];
+    (function () { // enlaces profundos desde el buscador: ?layer=&product=&sd=&crop=
+      var q = new URLSearchParams(window.location.search), ly = q.get('layer');
+      if (ly === 'price' || ly === 'precip' || ly === 'temp' || ly === 'crops' || SD_ATTR[ly]) SEL.layer = ly;
+      if (q.get('product')) SEL.product = q.get('product'); if (q.get('sd')) SEL.sd = q.get('sd'); if (q.get('crop')) SEL.crop = q.get('crop');
+      if (SD_ATTR[SEL.layer]) SEL.view = 'world';
+    })(); CLIMATE = a[1] && a[1].locations && a[1].locations.length ? a[1] : null;
     if (!LATEST.length && !CLIMATE) return;
     shell(); render();
   });

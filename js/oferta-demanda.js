@@ -151,7 +151,7 @@
   if (isPage) window.DehesaShared.init('informacion');
   P.load('data/supply-demand.json').then(function (d) {
     if (!d) { if (isPage) document.getElementById('od-body').innerHTML = '<p class="di-movers-hint">' + t().noData + '</p>'; return; }
-    DATA = d; SEL.c = 'trigo'; if (isPage) page(); teaser();
+    DATA = d; SEL.c = 'trigo'; if (isPage) { var qc = new URLSearchParams(window.location.search).get('c'); if (qc && DATA.commodities.some(function (x) { return x.id === qc; })) SEL.c = qc; page(); } teaser();
     var prev = window.DehesaShared.onLangChange;
     window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); if (isPage) page(); teaser(); };
   });

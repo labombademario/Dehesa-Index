@@ -133,7 +133,7 @@
   }
   function loadHist() {
     if (!document.getElementById('clima-hist')) return;
-    fetch('data/climate-history.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (h) { if (h && h.locations && h.locations.length) { HIST = h; SEL.loc = h.locations[0].id; histRender(); } }).catch(function (e) {  });
+    fetch('data/climate-history.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (h) { if (h && h.locations && h.locations.length) { HIST = h; SEL.loc = h.locations[0].id; var ql = new URLSearchParams(window.location.search).get('loc'); if (ql && h.locations.some(function (l) { return l.id === ql; })) SEL.loc = ql; histRender(); if (ql && document.getElementById('clima-hist') && window.location.hash !== '#clima-hist') { try { document.getElementById('clima-hist').scrollIntoView(); } catch (e) {} } } }).catch(function (e) {  });
   }
   function teaser() {
     var el = document.getElementById('home-clima'); if (!el || !DATA) return;

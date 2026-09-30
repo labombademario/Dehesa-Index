@@ -179,7 +179,7 @@
   if (!isPage && !document.getElementById('home-cultivos')) return;
   if (isPage) window.DehesaShared.init('informacion');
   fetch('data/crop-progress.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) {
-    if (!d || !d.crops || !d.crops.length) throw Error('x'); DATA = d;
+    if (!d || !d.crops || !d.crops.length) throw Error('x'); DATA = d; var qc = new URLSearchParams(window.location.search).get('crop'); if (qc && crop(qc)) SEL.crop = qc;
     if (isPage) page(); teaser();
     var prev = window.DehesaShared.onLangChange;
     window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); if (isPage) page(); teaser(); };
