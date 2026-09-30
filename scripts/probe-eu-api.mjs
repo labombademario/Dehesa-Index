@@ -28,8 +28,18 @@ if (!urls.length) {
   process.exit(1);
 }
 
-async function probe(url) {
-  var lines = ['=== ' + url];
+function dateKey(r) {
+  var d = r.endDate || r.ym || null;
+  if (r.endDate) { var m = /(\d{2})\/(\d{2})\/(\d{4})/.exec(r.endDate); return m ? m[3] + '-' + m[2] + '-' + m[1] : r.endDate; }
+  if (d) return String(d);
+  return String(r.year || '') + '-' + String(r.month || '') + '-' + String(r.quarter || '');
+}
+
+async function probe(rawUrl) {
+  var parts = rawUrl.split('#');
+  var url = parts[0];
+  var group = /group=([^&]+)/.exec(parts[1] || '');
+  var lines = ['=== ' + rawUrl];
   try {
     var res = await fetch(url, { headers: { Accept: 'application/json' } });
     lines.push('STATUS: ' + res.status);
@@ -38,11 +48,25 @@ async function probe(url) {
       var json = JSON.parse(text);
       if (Array.isArray(json) && json.length > 0 && typeof json[0] === 'object') {
         lines.push('FILAS: ' + json.length);
-        Object.keys(json[0]).forEach(function (f) {
+        if (!group) Object.keys(json[0]).forEach(function (f) {
           var values = Array.from(new Set(json.map(function (r) { return r[f]; })));
           lines.push('  ' + f + ' -> ' + (values.length <= 25 ? JSON.stringify(values) : '(' + values.length + ' valores; ej. ' + JSON.stringify(values.slice(0, 3)) + ')'));
         });
         lines.push('EJEMPLO: ' + JSON.stringify(json[0]));
+        if (group) {
+          var keys = group[1].split(',');
+          var groups = {};
+          json.forEach(function (r) {
+            var k = keys.map(function (f) { return r[f]; }).join(' | ');
+            var dk = dateKey(r);
+            var g = groups[k] || (groups[k] = { n: 0, last: '', price: null });
+            g.n++;
+            if (dk >= g.last) { g.last = dk; g.price = r.price; }
+          });
+          Object.keys(groups).sort().forEach(function (k) {
+            lines.push('  GRUPO [' + k + '] n=' + groups[k].n + ' ultimo=' + groups[k].last + ' precio=' + groups[k].price);
+          });
+        }
       } else {
         lines.push('BODY: ' + text.slice(0, 500));
       }
