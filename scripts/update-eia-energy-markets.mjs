@@ -22,7 +22,7 @@ for(const s of SERIES){
     const points=rows.map(x=>({period:String(x.period),value:Number(x.value)}));
     const latest=points[points.length-1], prev=points[points.length-2];
     const change=prev&&prev.value?Number(((latest.value/prev.value-1)*100).toFixed(4)):null;
-    const obs={id:s.id,product:s.product,region:s.region,sourceId:'eia',observationDate:latest.period,publicationDate:latest.period,status:'verified',verifiedAt,comparability:'directional',value:latest.value,currency:'USD',unit:s.unit,frequency:'weekly',changePct:change,history:points.slice(-104).map(x=>({period:x.period.slice(5),year:Number(x.period.slice(0,4)),value:x.value}))};
+    const obs={id:s.id,product:s.product,region:s.region,sourceId:'eia',observationDate:latest.period,publicationDate:latest.period,status:'verified',verifiedAt,comparability:'directional',value:latest.value,currency:'USD',unit:s.unit,frequency:'weekly',changePct:change,history:points.filter(x=>Number(x.period.slice(0,4))>=1980).map(x=>({period:x.period.slice(5),year:Number(x.period.slice(0,4)),value:x.value}))};
     doc.observations=(doc.observations||[]).filter(o=>!(o.product===s.product&&o.region===s.region)); doc.observations.push(obs);
     log.push('OK '+s.label+' '+s.series+': '+latest.period+' = '+latest.value+' ('+points.length+' pts)'); ok++;
   }catch(e){log.push('FAIL '+s.label+' '+s.series+': '+e.message)}

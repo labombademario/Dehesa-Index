@@ -93,7 +93,7 @@ for key, (sc_prod, provs, uom, unit, conv) in SPEC.items():
         continue
     prov, s = chosen
     periods = sorted(s)
-    pts = [(p, round(s[p] * conv, 4)) for p in periods][-240:]
+    pts = [(p, round(s[p] * conv, 4)) for p in periods if p >= "1980-01"]
     last, val = pts[-1]
     prev = pts[-2][1] if len(pts) > 1 and months_back(last, 1) == pts[-2][0] else None
     change = round((val / prev - 1) * 100, 4) if prev else None

@@ -53,7 +53,7 @@ for row in rows[header_row + 1:]:
     value = row[urea_col]
     if isinstance(value, (int, float)):
         points.append((period.upper(), float(value)))
-all_points = points[-240:]  # hasta 20 años para el histórico de la observación
+all_points = [p for p in points if int(p[0][:4]) >= 1980]  # toda la serie desde 1980 para el histórico de la observación
 points = points[-12:]
 if not points:
     raise RuntimeError("No World Bank urea observations found")

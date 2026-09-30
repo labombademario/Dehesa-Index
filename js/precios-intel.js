@@ -1003,6 +1003,11 @@
     if (product.uk) {
       rows.push({ flag: '🇬🇧', mapCode: 'GB', label: lgMarketLabel(product, 'uk', RG.uk), built: D.buildRegion(product.uk, lgMarketLabel(product, 'uk', RG.uk), 'GBP', product.metricKgPerUnit, UL[product.metricUnitKey], D.FX, t) });
     }
+    // Canadá: solo si el bloque ca ya tiene dato verificado (los marcadores
+    // iniciales tienen precio 0 y no se muestran).
+    if (product.ca && product.ca.price > 0 && product.caKgPerUnit && product.caUnitKey) {
+      rows.push({ flag: '🇨🇦', mapCode: 'CA', label: lgMarketLabel(product, 'ca', RG.ca || 'Canada'), built: D.buildRegion(product.ca, lgMarketLabel(product, 'ca', RG.ca || 'Canada'), 'CAD', product.caKgPerUnit, UL[product.caUnitKey] || UL[product.metricUnitKey], D.FX, t) });
+    }
     // Mismo criterio que el resto del panel: si el producto no tiene
     // countryFactors (o un país concreto no publica cotización propia), no
     // se inventa nada -- ese país simplemente no aparece en la lista ni en

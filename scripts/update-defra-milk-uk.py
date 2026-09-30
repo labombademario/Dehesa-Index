@@ -34,7 +34,7 @@ now=datetime.utcnow()
 obs={'id':'di_lacteos_leche_uk','product':'leche','region':'uk','sourceId':'defra','observationDate':latest[0],'publicationDate':pub,'status':'verified','verifiedAt':now.isoformat()+'Z',
  'methodology':'Defra (Open Government Licence v3.0): precio medio en granja de la leche en el Reino Unido, hoja Prices_Monthly, en peniques por litro; se expresa en GBP/100 kg con una densidad de 1,03 kg/l (estándar de la leche de vaca).',
  'comparability':'directional','value':latest[1],'currency':'GBP','unit':'100kg','frequency':'monthly','changePct':change,
- 'history':[{'period':d[5:],'year':int(d[:4]),'value':v} for d,v in pts[-24:]]}
+ 'history':[{'period':d[5:],'year':int(d[:4]),'value':v} for d,v in pts]}
 SNAP.mkdir(parents=True,exist_ok=True); f=SNAP/(now.date().isoformat()+'.json')
 doc=json.loads(f.read_text()) if f.exists() else {'schemaVersion':'1.0','generatedAt':now.isoformat()+'Z','observations':[]}
 doc['observations']=[o for o in doc['observations'] if not(o.get('product')=='leche' and o.get('region')=='uk')]+[obs]

@@ -63,7 +63,7 @@ observation = {
     "observationDate": obs_date, "publicationDate": publication_date or obs_date,
     "value": latest_value, "currency": "USD", "unit": "mmbtu", "frequency": "monthly",
     "status": "verified", "verifiedAt": now, "comparability": "directional", "changePct": change,
-    "history": [{"period": int(p[5:]), "year": int(p[:4]), "value": v} for p, v in points[-240:]]
+    "history": [{"period": int(p[5:]), "year": int(p[:4]), "value": v} for p, v in points if int(p[:4]) >= 1980]
 }
 SNAP_DIR.mkdir(parents=True, exist_ok=True)
 snap = SNAP_DIR / f"{datetime.utcnow().date().isoformat()}.json"

@@ -42,7 +42,7 @@ for pid,typ,cat,label in SERIES:
     (d,v)=pts[-1]
     obs.append({'id':'di_'+pid,'product':pid,'region':'uk','sourceId':'defra','observationDate':d,'publicationDate':pub,'value':v,'currency':'INDEX','unit':'index_2020_100','frequency':'monthly','status':'verified','verifiedAt':now.isoformat()+'Z','comparability':'directional',
      'methodology':'Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (%s, %s), base 2020=100. Es un índice de precios, no un precio en libras.'%(label,'precios percibidos' if typ=='output' else 'precios pagados'),
-     'changePct':round((v/pts[-2][1]-1)*100,4),'history':[{'period':x[5:],'year':int(x[:4]),'value':y} for x,y in pts[-60:]]})
+     'changePct':round((v/pts[-2][1]-1)*100,4),'history':[{'period':x[5:],'year':int(x[:4]),'value':y} for x,y in pts]})
 SNAP.mkdir(parents=True,exist_ok=True); f=SNAP/(now.date().isoformat()+'.json')
 doc=json.loads(f.read_text()) if f.exists() else {'schemaVersion':'1.0','generatedAt':now.isoformat()+'Z','observations':[]}
 ids={o['id'] for o in obs}

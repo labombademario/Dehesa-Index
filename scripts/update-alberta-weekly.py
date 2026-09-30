@@ -122,7 +122,6 @@ for key, (cat, unit, label) in PRODUCTS.items():
     report[key] = {"points": len(pts), "last": pts[-1] if pts else None}
     if len(pts) < 12:
         print("SIN DATO suficiente:", key, len(pts)); continue
-    pts = pts[-104:]
     d, val = pts[-1]
     prev = pts[-2][1]
     change = round((val / prev - 1) * 100, 4) if prev else None
