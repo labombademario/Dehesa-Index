@@ -44,14 +44,14 @@ const NAT = /^National Average/;
  * region(r): código del país o zona. keep(r): filtro de filas. since: 'dd/mm/aaaa' o null (histórico completo).
  */
 export const FAMILIES = {
-  cereales: { endpoint: 'cereal', freq: 'weekly', since: '01/01/2021', date: 'endDate',
+  cereales: { endpoint: 'cereal', freq: 'weekly', since: '01/01/2015', date: 'endDate',
     parts: r => [r.productName, r.stageName], region: r => r.memberStateCode,
     keep: r => NAT.test(r.stageName || '') || (r.memberStateCode === 'ES' && /^Departure from silo/.test(r.stageName || '')) },
   oleaginosas: { endpoint: 'oilseeds', freq: 'weekly', since: '01/01/2015', date: 'endDate',
     parts: r => [r.product, r.productType, r.marketStage], region: r => r.memberStateCode, market: r => r.market },
   lacteos: { endpoint: 'dairy', freq: 'weekly', since: '01/01/2015', date: 'endDate',
     parts: r => [r.product], region: r => r.memberStateCode },
-  vacuno: { endpoint: 'beef', freq: 'weekly', since: '01/01/2021', date: 'endDate',
+  vacuno: { endpoint: 'beef', freq: 'weekly', since: '01/01/2015', date: 'endDate',
     parts: r => [r.category, r.productCode], region: r => r.memberStateCode },
   cerdo: { endpoint: 'pigmeat', freq: 'weekly', since: '01/01/2015', date: 'endDate',
     parts: r => [r.pigClass], region: r => r.memberStateCode },
