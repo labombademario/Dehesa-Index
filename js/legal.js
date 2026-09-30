@@ -21,6 +21,7 @@
           { b: 'Comisión Europea.', t: 'Datos del Agri-food Data Portal y del Oil Bulletin, reutilizados según la política de reutilización de la Comisión.' },
           { b: 'Defra (Reino Unido).', t: 'Contains public sector information licensed under the Open Government Licence v3.0.' },
           { b: 'Eurostat, EIA y Banco Mundial.', t: 'Datos públicos, con su fuente citada en cada ficha.' },
+          { b: 'NASA POWER.', t: 'Datos de clima del proyecto Prediction Of Worldwide Energy Resources (NASA), reanálisis MERRA-2. Datos de NASA de uso libre; se cita la fuente.' },
           { b: 'Banco Central Europeo.', t: 'Tipos de cambio de referencia, que el BCE publica solo con fines informativos.' }
         ], after: 'No mostramos datos de fuentes que prohíben su uso automatizado o comercial (por ejemplo AHDB, CME o DTN); esas tarjetas figuran como pendientes.' },
         { h: 'Cambios', p: ['Podemos actualizar este texto cuando cambie el sitio. Última revisión: 30 de septiembre de 2026.'] }
@@ -46,6 +47,7 @@
           { b: 'European Commission.', t: 'Agri-food Data Portal and Oil Bulletin data, reused under the Commission’s reuse policy.' },
           { b: 'Defra (UK).', t: 'Contains public sector information licensed under the Open Government Licence v3.0.' },
           { b: 'Eurostat, EIA and World Bank.', t: 'Public data, with its source cited on each card.' },
+          { b: 'NASA POWER.', t: 'Climate data from NASA’s Prediction Of Worldwide Energy Resources project, MERRA-2 reanalysis. NASA data free to use; the source is cited.' },
           { b: 'European Central Bank.', t: 'Reference exchange rates, which the ECB publishes for information purposes only.' }
         ], after: 'We do not show data from sources that prohibit automated or commercial use (for example AHDB, CME or DTN); those cards appear as pending.' },
         { h: 'Changes', p: ['We may update this text when the site changes. Last reviewed: 30 September 2026.'] }
@@ -71,6 +73,7 @@
           { b: 'Commission européenne.', t: 'Données de l’Agri-food Data Portal et de l’Oil Bulletin, réutilisées selon la politique de réutilisation de la Commission.' },
           { b: 'Defra (Royaume-Uni).', t: 'Contains public sector information licensed under the Open Government Licence v3.0.' },
           { b: 'Eurostat, EIA et Banque mondiale.', t: 'Données publiques, avec leur source citée sur chaque fiche.' },
+          { b: 'NASA POWER.', t: 'Données climatiques du projet Prediction Of Worldwide Energy Resources de la NASA, réanalyse MERRA-2. Données NASA d’usage libre ; la source est citée.' },
           { b: 'Banque centrale européenne.', t: 'Taux de change de référence, publiés par la BCE à titre informatif uniquement.' }
         ], after: 'Nous n’affichons pas de données de sources qui interdisent l’usage automatisé ou commercial (par exemple AHDB, CME ou DTN) ; ces fiches apparaissent en attente.' },
         { h: 'Modifications', p: ['Nous pouvons mettre à jour ce texte lorsque le site évolue. Dernière révision : 30 septembre 2026.'] }
@@ -96,6 +99,7 @@
           { b: 'Commissione europea.', t: 'Dati dell’Agri-food Data Portal e dell’Oil Bulletin, riutilizzati secondo la politica di riutilizzo della Commissione.' },
           { b: 'Defra (Regno Unito).', t: 'Contains public sector information licensed under the Open Government Licence v3.0.' },
           { b: 'Eurostat, EIA e Banca mondiale.', t: 'Dati pubblici, con la fonte citata in ogni scheda.' },
+          { b: 'NASA POWER.', t: 'Dati climatici del progetto Prediction Of Worldwide Energy Resources della NASA, rianalisi MERRA-2. Dati NASA di uso libero; la fonte è citata.' },
           { b: 'Banca centrale europea.', t: 'Tassi di cambio di riferimento, che la BCE pubblica solo a scopo informativo.' }
         ], after: 'Non mostriamo dati di fonti che vietano l’uso automatizzato o commerciale (ad esempio AHDB, CME o DTN); queste schede appaiono in attesa.' },
         { h: 'Modifiche', p: ['Possiamo aggiornare questo testo quando il sito cambia. Ultima revisione: 30 settembre 2026.'] }

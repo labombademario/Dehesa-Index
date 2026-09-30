@@ -18,6 +18,7 @@
           { b: 'Reino Unido — Defra (Open Government Licence v3.0).', t: 'Leche e índices de precios agrarios, mensuales. Los precios semanales de cereales y ganado del Reino Unido los publica AHDB con términos que impiden su uso automático; por eso esas tarjetas figuran como pendientes.' },
           { b: 'Eurostat.', t: 'Índices de precios agrarios de la UE, trimestrales.' },
           { b: 'Energía y fertilizantes.', t: 'Diésel de EE. UU. (EIA, semanal) y de la UE (Oil Bulletin, semanal); urea (Banco Mundial, mensual).' },
+          { b: 'Clima — NASA POWER.', t: 'Lluvia y temperatura mensuales (reanálisis MERRA-2) en 12 puntos representativos de regiones productoras, comparadas con la media 2001-2020 del mismo mes. Es contexto climático (una celda de unos 50 km, no una estación ni la región entera); no predice cosechas ni precios.' },
           { b: 'Tipos de cambio.', t: 'Cotizaciones de referencia del Banco Central Europeo, cada día laborable.' }
         ] },
         { h: 'Fechas: observación y publicación', p: ['Cada dato lleva dos fechas: la de observación (el periodo al que se refiere) y la de publicación (cuándo lo publicó la fuente). Algunas fuentes no informan de su fecha de publicación; en ese caso registramos el día en que recogimos el dato por primera vez y lo anotamos en la ficha.'] },
@@ -31,7 +32,7 @@
         ] },
         { h: 'Datos abiertos y correcciones', p: ['Los archivos con los que se construye el panel están publicados en la carpeta de datos del sitio (JSON y CSV), con la fuente y la metodología de cada serie. Si ves un error o una definición mejorable, escríbenos a hola@dehesaindex.com.'] }
       ],
-      links: [{ href: 'data/', t: 'Datos abiertos' }, { href: 'legal.html', t: 'Aviso legal y privacidad' }, { href: 'informacion.html', t: 'Información' }]
+      links: [{ href: 'clima.html', t: 'Clima agrícola' }, { href: 'data/', t: 'Datos abiertos' }, { href: 'legal.html', t: 'Aviso legal y privacidad' }, { href: 'informacion.html', t: 'Información' }]
     },
     en: {
       title: 'Methodology',
@@ -49,6 +50,7 @@
           { b: 'UK — Defra (Open Government Licence v3.0).', t: 'Milk and agricultural price indices, monthly. Weekly UK cereal and livestock prices are published by AHDB under terms that prevent automated use, so those cards are shown as pending.' },
           { b: 'Eurostat.', t: 'EU agricultural price indices, quarterly.' },
           { b: 'Energy and fertilisers.', t: 'U.S. diesel (EIA, weekly) and EU diesel (Oil Bulletin, weekly); urea (World Bank, monthly).' },
+          { b: 'Climate — NASA POWER.', t: 'Monthly rainfall and temperature (MERRA-2 reanalysis) at 12 representative points in producing regions, compared with the 2001-2020 average for the same month. It is climate context (a ~50 km grid cell, not a station or the whole region); it does not forecast crops or prices.' },
           { b: 'Exchange rates.', t: 'European Central Bank reference rates, every business day.' }
         ] },
         { h: 'Dates: observation and publication', p: ['Each data point carries two dates: observation (the period it refers to) and publication (when the source released it). Some sources do not report a publication date; in that case we record the day we first collected the data and note it on the card.'] },
@@ -62,7 +64,7 @@
         ] },
         { h: 'Open data and corrections', p: ['The files behind the dashboard are published in the site’s data folder (JSON and CSV), with the source and methodology of each series. If you spot an error or a definition that could be better, write to hola@dehesaindex.com.'] }
       ],
-      links: [{ href: 'data/', t: 'Open data' }, { href: 'legal.html', t: 'Legal notice & privacy' }, { href: 'informacion.html', t: 'Information' }]
+      links: [{ href: 'clima.html', t: 'Agricultural climate' }, { href: 'data/', t: 'Open data' }, { href: 'legal.html', t: 'Legal notice & privacy' }, { href: 'informacion.html', t: 'Information' }]
     },
     fr: {
       title: 'Méthodologie',
@@ -80,6 +82,7 @@
           { b: 'Royaume-Uni — Defra (Open Government Licence v3.0).', t: 'Lait et indices des prix agricoles, mensuels. Les prix hebdomadaires britanniques des céréales et du bétail sont publiés par l’AHDB à des conditions qui interdisent l’usage automatisé ; ces fiches restent donc en attente.' },
           { b: 'Eurostat.', t: 'Indices des prix agricoles de l’UE, trimestriels.' },
           { b: 'Énergie et engrais.', t: 'Diesel américain (EIA, hebdomadaire) et de l’UE (Oil Bulletin, hebdomadaire) ; urée (Banque mondiale, mensuelle).' },
+          { b: 'Climat — NASA POWER.', t: 'Pluie et température mensuelles (réanalyse MERRA-2) en 12 points représentatifs de régions productrices, comparées à la moyenne 2001-2020 du même mois. C’est un contexte climatique (une maille d’environ 50 km, pas une station ni la région entière) ; il ne prévoit ni récoltes ni prix.' },
           { b: 'Taux de change.', t: 'Taux de référence de la Banque centrale européenne, chaque jour ouvré.' }
         ] },
         { h: 'Dates : observation et publication', p: ['Chaque donnée porte deux dates : l’observation (la période concernée) et la publication (quand la source l’a diffusée). Certaines sources n’indiquent pas de date de publication ; nous enregistrons alors le jour où nous avons collecté la donnée pour la première fois et l’indiquons sur la fiche.'] },
@@ -93,7 +96,7 @@
         ] },
         { h: 'Données ouvertes et corrections', p: ['Les fichiers à partir desquels le tableau de bord est construit sont publiés dans le dossier de données du site (JSON et CSV), avec la source et la méthodologie de chaque série. Si vous repérez une erreur ou une définition perfectible, écrivez à hola@dehesaindex.com.'] }
       ],
-      links: [{ href: 'data/', t: 'Données ouvertes' }, { href: 'legal.html', t: 'Mentions légales et confidentialité' }, { href: 'informacion.html', t: 'Informations' }]
+      links: [{ href: 'clima.html', t: 'Climat agricole' }, { href: 'data/', t: 'Données ouvertes' }, { href: 'legal.html', t: 'Mentions légales et confidentialité' }, { href: 'informacion.html', t: 'Informations' }]
     },
     it: {
       title: 'Metodologia',
@@ -111,6 +114,7 @@
           { b: 'Regno Unito — Defra (Open Government Licence v3.0).', t: 'Latte e indici dei prezzi agricoli, mensili. I prezzi settimanali britannici di cereali e bestiame sono pubblicati da AHDB con condizioni che vietano l’uso automatico; queste schede restano quindi in attesa.' },
           { b: 'Eurostat.', t: 'Indici dei prezzi agricoli dell’UE, trimestrali.' },
           { b: 'Energia e fertilizzanti.', t: 'Gasolio USA (EIA, settimanale) e UE (Oil Bulletin, settimanale); urea (Banca mondiale, mensile).' },
+          { b: 'Clima — NASA POWER.', t: 'Pioggia e temperatura mensili (rianalisi MERRA-2) in 12 punti rappresentativi di regioni produttrici, confrontate con la media 2001-2020 dello stesso mese. È contesto climatico (una cella di circa 50 km, non una stazione né l’intera regione); non prevede raccolti né prezzi.' },
           { b: 'Tassi di cambio.', t: 'Tassi di riferimento della Banca centrale europea, ogni giorno lavorativo.' }
         ] },
         { h: 'Date: osservazione e pubblicazione', p: ['Ogni dato ha due date: l’osservazione (il periodo a cui si riferisce) e la pubblicazione (quando la fonte l’ha diffuso). Alcune fonti non indicano la data di pubblicazione; in tal caso registriamo il giorno in cui abbiamo raccolto il dato la prima volta e lo annotiamo nella scheda.'] },
@@ -124,7 +128,7 @@
         ] },
         { h: 'Dati aperti e correzioni', p: ['I file con cui è costruito il pannello sono pubblicati nella cartella dei dati del sito (JSON e CSV), con la fonte e la metodologia di ogni serie. Se noti un errore o una definizione migliorabile, scrivi a hola@dehesaindex.com.'] }
       ],
-      links: [{ href: 'data/', t: 'Dati aperti' }, { href: 'legal.html', t: 'Note legali e privacy' }, { href: 'informacion.html', t: 'Informazioni' }]
+      links: [{ href: 'clima.html', t: 'Clima agricolo' }, { href: 'data/', t: 'Dati aperti' }, { href: 'legal.html', t: 'Note legali e privacy' }, { href: 'informacion.html', t: 'Informazioni' }]
     }
   };
   window.DehesaTextPage(STRINGS, 'informacion');
