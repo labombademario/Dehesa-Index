@@ -58,7 +58,7 @@ SPECS = [
  ('0014463', 'in', 'idx_pag', 'Input price index (prices paid by farmers): {c} (2020=100)', 'index 2020=100', 'monthly', 'INE – Agricultural production means price index (input)'),
  ('0000918', 'milk', 'milk', 'Milk production: {c}', 't', 'annual', 'INE – Animal production statistics'),
  ('0000920', 'cheese', 'milk', 'Cheese production: {c}', 't', 'annual', 'INE – Animal production statistics'),
- ('0000921', 'butter', 'milk', 'Butter production{c}', 't', 'annual', 'INE – Animal production statistics'),
+ ('0000921', 'butter', 'milk', 'Butter production', 't', 'annual', 'INE – Animal production statistics'),
  ('0000916', 'meat', 'production', 'Meat production: {c}', 't', 'annual', 'INE – Animal production statistics'),
  ('0000917', 'eggs', 'production', 'Egg production: {c}', 't', 'annual', 'INE – Animal production statistics'),
  ('0001330', 'slaughter-heads', 'production', 'Slaughterings (approved for consumption): {c} (head)', 'head', 'annual', 'INE – Slaughterhouse statistics'),
@@ -68,8 +68,7 @@ SPECS = [
  ('0000019', 'crop-area', 'crops', 'Area: {c}', 'ha', 'annual', 'INE – Vegetable production statistics'),
  ('0000021', 'crop-prod', 'crops', 'Production: {c}', 't', 'annual', 'INE – Vegetable production statistics'),
  ('0000023', 'crop-yield', 'crops', 'Yield: {c}', 'kg/ha', 'annual', 'INE – Vegetable production statistics'),
- ('0000704', 'olive', 'crops', 'Olive production{c}', 't', 'annual', 'INE – Olive oil production survey'),
- ('0013162', 'oliveoil', 'crops', 'Olive oil produced: {c}', 'hl', 'annual', 'INE – Olive oil production survey'),
+ ('0000704', 'olive', 'crops', 'Olive production', 't', 'annual', 'INE – Olive oil production survey'),
  ('0000537', 'cattle', 'livestock', 'Cattle livestock: {c}', 'thousand head', 'semiannual', 'INE – Livestock survey'),
  ('0000538', 'pigs', 'livestock', 'Pig livestock: {c}', 'thousand head', 'semiannual', 'INE – Livestock survey'),
  ('0000539', 'sheep', 'livestock', 'Sheep livestock: {c}', 'thousand head', 'annual', 'INE – Livestock survey'),
@@ -87,8 +86,7 @@ def run(spec):
     n = 0
     for c, d in by.items():
         if tag == 'oliveoil' and not re.search(r'^total', c, re.I) and len(by) > 1 and any(re.search(r'^total', x, re.I) for x in by): continue
-        lab = tpl.format(c=(': ' + c if c and '{c}' in tpl and tpl.endswith('{c}') else c) if c else '')
-        if tpl.endswith('{c}') and not c: lab = tpl.format(c='')
+        lab = tpl.format(c='Total' if c.lower() == 'meat' else c).strip().rstrip(':')
         f = freq
         put('pt-%s-%s' % (tag, slug(c) or 'total'), group, lab, unit, f, list(d.items()), {'sourceGroup': sg}); n += 1
     log(v, tag, n, 'series')
