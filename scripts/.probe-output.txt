@@ -1,9 +1,21 @@
-CMD: python scripts/update-ec-diesel-eu.py; git diff --stat; git diff data/snapshots | head -40
-/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-ec-diesel-eu.py:31: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
-  obs={'id':'di_diesel_eu','product':'diesel','region':'eu','sourceId':'eu_oil_bulletin','observationDate':latest[0],'publicationDate':None,'status':'verified','verifiedAt':datetime.utcnow().isoformat()+'Z','methodology':'Weighted EU average for automotive gas oil, consumer price with taxes. The source expresses it in EUR/1,000 litres; value retained at source precision after division by 1,000.','comparability':'directional','value':latest[1],'currency':'EUR','unit':'litro','frequency':'weekly','changePct':change,'history':[{'period':d[5:],'year':int(d[:4]),'value':v} for d,v in points[-104:]]}
-/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-ec-diesel-eu.py:32: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
-  SNAP.mkdir(parents=True,exist_ok=True); f=SNAP/(datetime.utcnow().date().isoformat()+'.json'); doc=json.loads(f.read_text()) if f.exists() else {'schemaVersion':'1.0','generatedAt':datetime.utcnow().isoformat()+'Z','observations':[]}; prev_obs=next((o for o in doc['observations'] if o.get('product')=='diesel' and o.get('region')=='eu' and o.get('observationDate')==obs['observationDate']),None)
-EC diesel EU: ('2026-09-21', 2.2264435149088713)
- scripts/.probe-output.txt | 25 +------------------------
- 1 file changed, 1 insertion(+), 24 deletions(-)
-EXIT: 0
+CMD: python scripts/update-worldbank-urea-eu.py && node scripts/validate-snapshots.mjs && node scripts/build-data-index.mjs && node scripts/build-csv.mjs && node scripts/build-data-quality.mjs && node scripts/build-intelligence.mjs && node scripts/build-normalized-data.mjs && node scripts/build-cross-market.mjs && node scripts/build-alert-signals.mjs && node scripts/qa-navigation.mjs
+/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-worldbank-urea-eu.py:79: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  verified_at = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-worldbank-urea-eu.py:86: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  snapshot_date = datetime.utcnow().date().isoformat()
+/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-worldbank-urea-eu.py:103: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "verifiedAt": datetime.utcnow().isoformat(timespec="seconds") + "Z",
+/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-worldbank-urea-eu.py:115: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  snapshot.write_text(json.dumps({"schemaVersion":"1.0","generatedAt":datetime.utcnow().isoformat(timespec="seconds")+"Z","observations":[observation]}, indent=2) + "\n", encoding="utf-8")
+World Bank urea EU updated: 2026M08 = 390.0 USD/t; publication=2026-09-02
+Snapshot validation OK: 2 file(s).
+Generated latest.json, history.json and catalog.json from 2 snapshot(s).
+Generated data/history.csv with 138 observations.
+Data quality: 10 latest observations; 10 verified; 0 pending; 5 stale.
+Intelligence 2.0: 9 series.
+Normalized layer: 138 observations.
+Agricultural relationships: 6
+Alerts: 8 informational signals.
+Navigation QA: 84 checks passed, 1 failed.
+FAIL syntax error: js/data.js
+EXIT: 1
