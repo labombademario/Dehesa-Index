@@ -1,0 +1,4 @@
+crop 38 pdf links
+crop latest https://open.alberta.ca/dataset/b23eeb3f-8059-4dce-b23b-cf552736dc61/resource/3e1188bd-9b6b-4850-ba6e-635955c459f1/download/agi-tedab-weekly-crop-market-review-2026-09-25.pdf
+livestock 38 pdf links
+livestock latest https://open.alberta.ca/dataset/90297161-7a1c-4de6-b192-16f6eea98bbf/resource/8661a6a9-b02e-481e-8c52-9717204e8a4e/download/agi-tedab-weekly-livestock-market-review-2026-09-25.pdf
