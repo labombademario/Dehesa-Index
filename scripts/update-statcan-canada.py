@@ -119,6 +119,6 @@ snap = SNAP_DIR / (now.date().isoformat() + ".json")
 doc = {"schemaVersion": "1.0", "generatedAt": verified_at, "observations": []}
 if snap.exists():
     doc = json.loads(snap.read_text(encoding="utf-8"))
-doc["observations"] = [o for o in doc.get("observations", []) if o.get("region") != "ca"] + observations
+doc["observations"] = [o for o in doc.get("observations", []) if not (o.get("region") == "ca" and o.get("sourceId") == "statcan")] + observations
 snap.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 print(len(observations), "observaciones de Canadá")
