@@ -576,27 +576,44 @@
   }
   function fmtCorr(r) { var sign = r > 0 ? '+' : (r < 0 ? '−' : ''); return sign + Math.abs(r).toFixed(2); }
 
+  // Retornos mensuales reales: último dato de cada mes, solo meses consecutivos (sin rellenar huecos).
+  var CORR_MONTHS = 60, CORR_MIN_RETURNS = 18, CORR_MIN_OVERLAP = 18;
+  function monthlyReturns(pts) {
+    var byMonth = {}, order = [];
+    var limit = Date.now() - CORR_MONTHS * 31 * 86400000;
+    pts.forEach(function (p) {
+      if (p.ts < limit) return;
+      var d = new Date(p.ts), k = d.getUTCFullYear() * 12 + d.getUTCMonth();
+      if (byMonth[k] === undefined) order.push(k);
+      byMonth[k] = p.value;
+    });
+    order.sort(function (x, y) { return x - y; });
+    var out = {};
+    for (var i = 1; i < order.length; i++) {
+      var k = order[i], prev = byMonth[order[i - 1]];
+      if (order[i - 1] === k - 1 && prev) out[k] = (byMonth[k] - prev) / prev;
+    }
+    return out;
+  }
   function buildCorrAndVol() {
     var Core = core();
-    var returnsByKey = {};
+    var returnsByKey = {}, keys = [];
     Core.PRODUCTS.forEach(function (e) {
       var key = e.catId + '-' + e.nameKey;
-      var region = regionFor(e);
-      var rows = realObservationsFor(e);
-      var vals = rows.map(function(o){return Number(o.value)});
-      if (rows.length >= 30 && rows.every(function(o){ return o.frequency === 'daily'; })) returnsByKey[key] = dailyReturns(vals, rows.length);
+      var info = Core.mapInfo ? Core.mapInfo(e) : null;
+      if (!info || !info.pts || !MAP_GROUP[key]) return;
+      if (Date.now() - info.pts[info.pts.length - 1].ts > 120 * 86400000) return;
+      var r = monthlyReturns(info.pts);
+      if (Object.keys(r).length >= CORR_MIN_RETURNS) { returnsByKey[key] = r; keys.push(key); }
     });
-    var keys = Core.PRODUCTS.filter(function(e){
-      var rows = realObservationsFor(e);
-      if (rows.length < 30) return false;
-      return rows.every(function(o){ return o.frequency === 'daily'; });
-    }).map(function (e) { return e.catId + '-' + e.nameKey; });
     var corrCache = {};
     function getCorr(a, b) {
       if (a === b) return 1;
       var ck = a < b ? a + '|' + b : b + '|' + a;
       if (corrCache.hasOwnProperty(ck)) return corrCache[ck];
-      var r = pearson(returnsByKey[a], returnsByKey[b]);
+      var ra = returnsByKey[a], rb = returnsByKey[b], xa = [], xb = [];
+      Object.keys(ra).forEach(function (m) { if (rb[m] !== undefined) { xa.push(ra[m]); xb.push(rb[m]); } });
+      var r = xa.length >= CORR_MIN_OVERLAP ? pearson(xa, xb) : null;
       corrCache[ck] = r;
       return r;
     }
@@ -605,16 +622,17 @@
       var cells = keys.map(function (colKey) {
         if (rowKey === colKey) return { bg: P().surfaceAlt, textColor: P().textFaint, title: productName(rowEntry.nameKey), value: '' };
         var r = getCorr(rowKey, colKey);
-        var style = tileStyle(r, 1, CORR_COLOR_GAMMA);
         var colEntry = entryByDashKey(colKey);
+        if (r === null) return { bg: P().surfaceAlt, textColor: P().textFaint, title: productName(rowEntry.nameKey) + ' × ' + productName(colEntry.nameKey) + ': —', value: '—' };
+        var style = tileStyle(r, 1, CORR_COLOR_GAMMA);
         return { bg: style.bg, textColor: style.textColor, title: productName(rowEntry.nameKey) + ' × ' + productName(colEntry.nameKey) + ': r = ' + fmtCorr(r), value: fmtCorr(r) };
       });
       return { key: rowKey, name: productName(rowEntry.nameKey), cells: cells };
     });
     var volList = keys.map(function (k) {
-      var dailyVol = stdDev(returnsByKey[k]);
+      var dailyVol = stdDev(Object.keys(returnsByKey[k]).map(function (m) { return returnsByKey[k][m]; }));
       var entry = entryByDashKey(k);
-      return { key: k, name: productName(entry.nameKey), annualPct: dailyVol * Math.sqrt(365) * 100 };
+      return { key: k, name: productName(entry.nameKey), annualPct: dailyVol * Math.sqrt(12) * 100 };
     });
     volList.sort(function (a, b) { return b.annualPct - a.annualPct; });
     var maxVol = volList.length ? volList[0].annualPct : 0;
@@ -626,8 +644,8 @@
 
   function renderCorrelationHtml(data) {
     var t = ui();
-    if (data.keys.length < 2) return intelPendingHtml(t.corrTitle, 'Se necesitan al menos dos series diarias con cobertura suficiente para calcular correlaciones.', 'di-intel-corr');
-    var headerCells = data.keys.map(function (k) { var e = entryByDashKey(k); return '<th title="' + esc(productName(e.nameKey)) + '">' + esc(productName(e.nameKey).slice(0, 3)) + '</th>'; }).join('');
+    if (data.keys.length < 2) return intelPendingHtml(t.corrTitle, t.corrEmpty || 'Aún no hay al menos dos productos con histórico verificado suficiente.', 'di-intel-corr');
+    var headerCells = data.keys.map(function (k) { var e = entryByDashKey(k); return '<th title="' + esc(productName(e.nameKey)) + '">' + esc(productName(e.nameKey).slice(0, 4)) + '</th>'; }).join('');
     var bodyRows = data.rows.map(function (row) {
       var cells = row.cells.map(function (c) {
         return '<td class="di-corr-cell" style="background:' + c.bg + ';color:' + c.textColor + ';" title="' + esc(c.title) + '">' + esc(c.value) + '</td>';
@@ -645,7 +663,7 @@
 
   function renderVolatilityHtml(data) {
     var t = ui();
-    if (!data.ranking.length) return intelPendingHtml(t.volTitle, 'Se necesita histórico diario suficiente para calcular volatilidad.', 'di-intel-vol');
+    if (!data.ranking.length) return intelPendingHtml(t.volTitle, t.corrEmpty || 'Aún no hay histórico verificado suficiente.', 'di-intel-vol');
     var rows = data.ranking.map(function (r) {
       return '<button type="button" class="di-vol-row" data-open="' + r.key + '">' +
         '<span class="di-vol-rank">' + r.rank + '</span>' +
