@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:33:40.025Z",
+  "generatedAt": "2026-09-30T17:34:41.878Z",
   "status": "informational",
   "rules": [
     {
@@ -382,6 +382,15 @@
     },
     {
       "type": "period_move",
+      "product": "gas_natural",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "severity": "high",
+      "changePct": 16.89,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
       "product": "vaca",
       "region": "us",
       "sourceId": "usda_nass",
@@ -397,6 +406,15 @@
       "severity": "high",
       "changePct": -10.17,
       "observationDate": "2026-07-01"
+    },
+    {
+      "type": "period_move",
+      "product": "petroleo_wti",
+      "region": "us",
+      "sourceId": "eia",
+      "severity": "high",
+      "changePct": 15.51,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
@@ -418,12 +436,21 @@
     },
     {
       "type": "period_move",
-      "product": "gas_natural",
+      "product": "petroleo_brent",
       "region": "eu",
-      "sourceId": "world_bank",
+      "sourceId": "eia",
       "severity": "high",
-      "changePct": 16.89,
-      "observationDate": "2026-08-01"
+      "changePct": 12.78,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "gas_natural",
+      "region": "us",
+      "sourceId": "eia",
+      "severity": "watch",
+      "changePct": 9.4,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
@@ -508,38 +535,11 @@
     },
     {
       "type": "period_move",
-      "product": "gas_natural",
-      "region": "us",
-      "sourceId": "eia",
-      "severity": "watch",
-      "changePct": 9.4,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
       "product": "harina_soja",
       "region": "us",
       "sourceId": "usda_ams_mars",
       "severity": "high",
       "changePct": 10.71,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "petroleo_brent",
-      "region": "eu",
-      "sourceId": "eia",
-      "severity": "high",
-      "changePct": 12.78,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "petroleo_wti",
-      "region": "us",
-      "sourceId": "eia",
-      "severity": "high",
-      "changePct": 15.51,
       "observationDate": "2026-09-01"
     },
     {
