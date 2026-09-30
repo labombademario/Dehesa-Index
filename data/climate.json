@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T22:25:26.948Z",
+  "generatedAt": "2026-09-30T22:59:54.814Z",
   "lastPeriod": "2026-08",
   "baseline": "2001-2020",
   "source": {
@@ -4296,6 +4296,252 @@
           "tempC": 23.4,
           "tempBaselineC": 23.4,
           "tempAnomalyC": 0
+        }
+      ]
+    },
+    {
+      "id": "eu-belgium-hesbaye",
+      "name": "Hesbaye (Lieja, Bélgica)",
+      "region": "eu",
+      "country": "BE",
+      "lat": 50.65,
+      "lon": 5.1,
+      "crops": [
+        "trigo",
+        "remolacha",
+        "patata"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 86.7,
+          "precipBaselineMm": 54.9,
+          "precipAnomalyPct": 57.9,
+          "tempC": 14.6,
+          "tempBaselineC": 14.3,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 78.7,
+          "precipBaselineMm": 63.5,
+          "precipAnomalyPct": 23.9,
+          "tempC": 10.8,
+          "tempBaselineC": 10.4,
+          "tempAnomalyC": 0.5
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 65.7,
+          "precipBaselineMm": 71.7,
+          "precipAnomalyPct": -8.4,
+          "tempC": 6.5,
+          "tempBaselineC": 5.9,
+          "tempAnomalyC": 0.6
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 31.3,
+          "precipBaselineMm": 82.1,
+          "precipAnomalyPct": -61.9,
+          "tempC": 4.5,
+          "tempBaselineC": 2.5,
+          "tempAnomalyC": 2
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 66.6,
+          "precipBaselineMm": 75,
+          "precipAnomalyPct": -11.2,
+          "tempC": 1.7,
+          "tempBaselineC": 1.6,
+          "tempAnomalyC": 0.1
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 110,
+          "precipBaselineMm": 65.8,
+          "precipAnomalyPct": 67.2,
+          "tempC": 5.8,
+          "tempBaselineC": 2.2,
+          "tempAnomalyC": 3.5
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 70.7,
+          "precipBaselineMm": 61.7,
+          "precipAnomalyPct": 14.6,
+          "tempC": 7.4,
+          "tempBaselineC": 5.2,
+          "tempAnomalyC": 2.2
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 14.1,
+          "precipBaselineMm": 44.7,
+          "precipAnomalyPct": -68.5,
+          "tempC": 10.1,
+          "tempBaselineC": 9.1,
+          "tempAnomalyC": 1
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 118.7,
+          "precipBaselineMm": 65.1,
+          "precipAnomalyPct": 82.4,
+          "tempC": 14.3,
+          "tempBaselineC": 12.8,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 63.9,
+          "precipBaselineMm": 67.8,
+          "precipAnomalyPct": -5.8,
+          "tempC": 19.1,
+          "tempBaselineC": 16.2,
+          "tempAnomalyC": 2.9
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 6.5,
+          "precipBaselineMm": 73.2,
+          "precipAnomalyPct": -91.1,
+          "tempC": 20.2,
+          "tempBaselineC": 18.1,
+          "tempAnomalyC": 2
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 67.9,
+          "precipBaselineMm": 81.8,
+          "precipAnomalyPct": -17,
+          "tempC": 20.1,
+          "tempBaselineC": 17.7,
+          "tempAnomalyC": 2.4
+        }
+      ]
+    },
+    {
+      "id": "eu-belgium-flanders",
+      "name": "Flandes Occidental (Roeselare, Bélgica)",
+      "region": "eu",
+      "country": "BE",
+      "lat": 50.95,
+      "lon": 3.1,
+      "crops": [
+        "patata",
+        "cerdo",
+        "maiz"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 35.7,
+          "precipBaselineMm": 57.6,
+          "precipAnomalyPct": -38,
+          "tempC": 15.7,
+          "tempBaselineC": 15,
+          "tempAnomalyC": 0.7
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 69.4,
+          "precipBaselineMm": 71,
+          "precipAnomalyPct": -2.2,
+          "tempC": 12.4,
+          "tempBaselineC": 11.5,
+          "tempAnomalyC": 0.9
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 70.8,
+          "precipBaselineMm": 77.1,
+          "precipAnomalyPct": -8.2,
+          "tempC": 8.3,
+          "tempBaselineC": 7.4,
+          "tempAnomalyC": 0.9
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 32.9,
+          "precipBaselineMm": 79.4,
+          "precipAnomalyPct": -58.6,
+          "tempC": 5.6,
+          "tempBaselineC": 4.2,
+          "tempAnomalyC": 1.4
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 71.6,
+          "precipBaselineMm": 67,
+          "precipAnomalyPct": 6.9,
+          "tempC": 3.8,
+          "tempBaselineC": 3.4,
+          "tempAnomalyC": 0.4
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 76.4,
+          "precipBaselineMm": 58.2,
+          "precipAnomalyPct": 31.3,
+          "tempC": 6.9,
+          "tempBaselineC": 3.8,
+          "tempAnomalyC": 3.1
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 33.8,
+          "precipBaselineMm": 53.6,
+          "precipAnomalyPct": -37,
+          "tempC": 8.5,
+          "tempBaselineC": 6.1,
+          "tempAnomalyC": 2.4
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 5.1,
+          "precipBaselineMm": 38.7,
+          "precipAnomalyPct": -86.8,
+          "tempC": 10.9,
+          "tempBaselineC": 9.4,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 49.6,
+          "precipBaselineMm": 58.3,
+          "precipAnomalyPct": -14.9,
+          "tempC": 15,
+          "tempBaselineC": 12.8,
+          "tempAnomalyC": 2.2
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 43.8,
+          "precipBaselineMm": 62.1,
+          "precipAnomalyPct": -29.5,
+          "tempC": 19.3,
+          "tempBaselineC": 15.9,
+          "tempAnomalyC": 3.4
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 3.4,
+          "precipBaselineMm": 74.4,
+          "precipAnomalyPct": -95.4,
+          "tempC": 20.9,
+          "tempBaselineC": 17.9,
+          "tempAnomalyC": 3.1
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 40,
+          "precipBaselineMm": 79.7,
+          "precipAnomalyPct": -49.8,
+          "tempC": 20.7,
+          "tempBaselineC": 17.7,
+          "tempAnomalyC": 3
         }
       ]
     }
