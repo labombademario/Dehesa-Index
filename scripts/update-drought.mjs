@@ -31,9 +31,9 @@ function parse(csv) {
 const q = (path, aoi) => D + path + '/GetDroughtSeverityStatisticsByAreaPercent?aoi=' + aoi + '&startdate=' + fmt(start) + '&enddate=' + fmt(now) + '&statisticsType=1';
 const doc = { schemaVersion: '1.0', source: 'U.S. Drought Monitor (NDMC, USDA, NOAA)', unit: '% de superficie; D0..D4 acumulado', states: {}, us: {} };
 for (const [k, aoi] of [['conus', 'conus']]) { doc.us[k] = parse(await get(q('USStatistics', aoi))); }
-const ids = Object.keys(FIPS);
+const ids = Object.keys(FIPS).map(k => String(k).padStart(2, '0'));
 let i = 0;
-await Promise.all(Array.from({ length: 4 }, async () => { while (i < ids.length) { const f = ids[i++]; try { const rows = parse(await get(q('StateStatistics', f))); if (rows.length) doc.states[FIPS[f]] = rows; else console.log('sin datos', FIPS[f]); } catch (e) { console.log('error', FIPS[f], e.message); } } }));
+await Promise.all(Array.from({ length: 4 }, async () => { while (i < ids.length) { const f = ids[i++]; try { const rows = parse(await get(q('StateStatistics', f))); if (rows.length) doc.states[FIPS[Number(f)]] = rows; else console.log('sin datos', FIPS[Number(f)]); } catch (e) { console.log('error', FIPS[Number(f)], e.message); } } }));
 const n = Object.keys(doc.states).length;
 if (n < 45 || doc.us.conus.length < 50) { console.error('Datos insuficientes: estados=' + n + ' conus=' + doc.us.conus.length); process.exit(1); }
 doc.latest = doc.us.conus[doc.us.conus.length - 1][0];
