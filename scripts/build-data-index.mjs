@@ -18,7 +18,7 @@ for (const file of files) {
     all.push(item);
     const key = observation.product + '-' + observation.region;
     const previous = byKey[key];
-    if (!previous || String(item.observationDate) > String(previous.observationDate)) byKey[key] = item;
+    if (!previous || String(item.observationDate) >= String(previous.observationDate)) byKey[key] = item; // >=: ante empate gana el snapshot más reciente (los ficheros están ordenados por fecha)
   }
 }
 
