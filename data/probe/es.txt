@@ -1,24 +1,234 @@
-## esmapaindicespreciospreciopercibido | Precios percibidos (mensual y anual nacional) | None | None | 2026-09-30T00:10:59.010079
-   Evolución nacional mensual y anual de los precios que percibe el agricultor y el ganadero por la venta de los productos agrarios que genera. Generalmente, los precios están referidos a salida de explotación agraria y no incluyen: gastos de transporte, subvenciones que pueden recibir, impuestos indirectos ni tasas que pueden gravar las transacciones de dichos productos en las que el agricultor o ganadero actúa como vendedor
-  RES precios-percibidos-csv | http://publications.europa.eu/resource/authority/file-type/CSV | https://servicio.mapa.gob.es/ckan/datastore/dump/23939af3-475f-4a4b-b18e-48fa9dbc4f3b | 0 | None
-## esmapaindicespreciospreciopagado | Precios pagados (mensual y anual nacional) | None | None | 2026-09-30T00:10:58.726527
-   Evolución nacional mensual y anual de los índices de precios que percibe el agricultor y el ganadero por la venta de los productos agrarios que genera. Los índices constituyen una medida estadística que analiza las variaciones que se producen en los precios con respecto al año que se toma como base (años acabados en 0 y en 5).
-  RES precios-pagados-csv | http://publications.europa.eu/resource/authority/file-type/CSV | https://servicio.mapa.gob.es/ckan/datastore/dump/bb45def4-7841-4fa8-9a56-b7f959a9a951 | 0 | None
-## esmapaindicespreciosindicepercibido | Indices percibidos (mensual  y anual nacional) | None | None | 2026-09-30T00:10:58.470610
-   Evolución nacional mensual de los índices de precios que percibe el agricultor y el ganadero por la venta de los productos agrarios que genera. Los índices constituyen una medida estadística que analiza las variaciones que se producen en los precios con respecto al año que se toma como base.
-  RES indices-percibidos-csv | http://publications.europa.eu/resource/authority/file-type/CSV | https://servicio.mapa.gob.es/ckan/datastore/dump/9172de03-2332-4832-9c11-3e2c39617f18 | 0 | None
-## esmapaindicespreciosindicepagado | Indices pagados (mensual  y anual nacional) | None | None | 2026-09-30T00:10:58.160439
-   Evolución mensual y anual de los índices de precios que pagan los agricultores y ganaderos por los medios de producción utilizados, a nivel nacional. Los índices constituyen una medida estadística que analiza las variaciones que se producen en los precios con respecto al año que se toma como base (años acabados en 0 y en 5).
-  RES indices-pagados-csv | http://publications.europa.eu/resource/authority/file-type/CSV | https://servicio.mapa.gob.es/ckan/datastore/dump/9c0c9db7-7855-4e8a-b460-88129eb589ad | 0 | None
-## esmaparecanredcontable | RECAN - Red Contable Agraria Nacional | None | None | 2026-09-30T00:10:59.289233
-   Datos de la Red Contable Agraria Nacional, instrumento que permite evaluar la renta de las explotaciones agrarias y el impacto que la política agraria produce en ellas.
-  RES recan-red-contable-agraria-nacional-csv | http://publications.europa.eu/resource/authority/file-type/CSV | https://servicio.mapa.gob.es/ckan/datastore/dump/687a7bb1-ddf2-4cdd-8525-05cec40c6734 | 0 | None
-## esmapasalasincubaciondatosincubacion | Encuesta de Salas de Incubación | None | None | 2026-09-30T00:10:59.568452
-   La Encuesta de Salas de Incubación elaborada por la Subdirección General de Análisis, Coordinación y Estadística del Ministerio de Agricultura, Pesca y Alimentación constituye un útil indicador de la situación del sector avícola, recogiendo mensualmente los huevos introducidos para incubar, así como las aves nacidas de todas las salas de incubación ubicadas en el territorio nacional. Su ejecución se enmarca dentro del el Plan Estadístico Nacional 2025-2028 y de la normativa comunitaria (Reglamen
-  RES encuesta-de-salas-de-incubacion-csv | http://publications.europa.eu/resource/authority/file-type/CSV | https://servicio.mapa.gob.es/ckan/datastore/dump/aea63a88-6e51-4786-bac7-effee027c2db | 0 | None
-AVISO Las presentes condiciones generales vincularán a cualquier agente reutilizador por el mero hecho de hacer uso de los documentos sometidos a ellas. Autorización de uso, cesión y reutilización no exclusiva de derechos de propiedad intelectual de la información: La información procedente del SIAR (Sistema de Información Agroclimática para el Regadío), su obtención, elaboración y medios de presentación, incluidas las aplicaciones y sus códigos fuente, están protegidos por los derechos de propiedad intelectual, al tratarse de una modalidad de la propiedad intelectual regulada en el artículo 10 del Real Decreto Legislativo 1/1996, de 12 de abril, por el que se aprueba el texto refundido de la Ley de Propiedad Intelectual, regularizando, aclarando y armonizando las disposiciones legales vigentes sobre la materia. Corresponde al Ministerio de Agricultura, Pesca y Alimentación (MAPA) la titularidad y el ejercicio de los derechos de autor, que configuran el derecho exclusivo de la explotación y divulgación de dicha información. Los canales de difusión del SIAR cumplen la función de poner a disposición información y canalizar la atención al ciudadano en los términos establecidos en el la Ley 27/2006, de 18 de julio, por la que se regulan los derechos de acceso a la información, de participación pública y de acceso a la justicia en materia de medioambiente; y en lo relativo a su reutilización a lo previsto en la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público y en el Real Decreto 1495/2011, de 24 de octubre, por el que se desarrolla la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público, para el ámbito del sector público estatal, en particular su artículo 7. Los datos agrometeorológicos del SIAR y sus productos asociados están diseñados con el objeto de prestar servicios de carácter agrario en los cultivos en regadío. El acceso y uso de estos datos y la información asociada, así como el uso de sus servicios, están sujetos a los términos detallados en este Aviso Legal y la normativa de aplicación, sin perjuicio de que alguno de dichos canales, servicios o contenidos pueda precisar de la aceptación de unas condiciones adicionales. La información generada que se pone a disposición del ciudadano a través del SIAR tiene carácter puramente orientativo. Los contenidos y servicios que el SIAR ofrece se actualizan periódicamente; se sugiere la comprobación de la vigencia y de la exactitud de la información, servicios y contenidos, así como de los términos legales vigentes en cada momento. Términos y condiciones de acceso a la web u otras modalidades por parte de los diferentes usuarios: El acceso a este portal web, así como el uso de la información que contiene y la interpretación que el usuario pueda darle, son de la exclusiva responsabilidad del usuario. El MAPA no es responsable de ningún perjuicio que pudiera derivarse de estos hechos, ni tampoco puede garantizar que el acceso no se vea interrumpido o que el contenido o software al que pueda accederse esté libre de error o de causar daño. El MAPA se reserva el derecho a realizar los cambios que procedan sin previo aviso, al objeto de actualizar, modificar o eliminar la información, y a realizar cuantos cambios y modificaciones estime pertinentes sobre el sitio web. Asimismo, el MAPA se reserva la facultad de modificar unilateralmente las condiciones y términos de uso de este sitio web. Cualquier modificación de los mismos se
-SIAR links ['#', '/siarweb/accesibilidad', '/siarweb/avisoLegal', '/siarweb/consultaDatos/inicio', '/siarweb/css/all.min.css', '/siarweb/css/datatables.min.css', '/siarweb/css/estilos-privada.css', '/siarweb/css/estilos.css', '/siarweb/css/jquery-ui.css', '/siarweb/css/waitMe.css', '/siarweb/documentos/manuales/ManualTecnico_WEB_API_SIAR.pdf', '/siarweb/documentos/manuales/ManualUsoWebSiAR.pdf', '/siarweb/energiasRenovables/inicio', '/siarweb/episodiosAgroclimaticos/inicio', '/siarweb/home', '/siarweb/images/favicon.ico', '/siarweb/informesDatos/inicio', '/siarweb/mapaWeb', '/siarweb/masInformacion', '/siarweb/necesidadesHidricas/inicio', '/siarweb/preLogin', '/siarweb/privado/home', '@{/privado/home}', 'https://apps.apple.com/es/app/siar/id1129186499', 'https://es.linkedin.com/company/ministeriodeagriculturapescayalimentaci-n', 'https://espaciosiar.es/', 'https://fonts.googleapis.com', 'https://fonts.gstatic.com', 'https://play.google.com/store/apps/details?id=com.tragsatec.mobile.siar', 'https://t.me/mapagob', 'https://www.espaciosiar.es/', 'https://www.espaciosiar.es/visor', 'https://www.facebook.com/mapagob/', 'https://www.flickr.com/photos/gobmapa/', 'https://www.instagram.com/gobmapa/', 'https://www.mapa.gob.es/es/', 'https://www.mapa.gob.es/es/desarrollo-rural/temas/default.aspx', 'https://www.youtube.com/channel/UCZ8MbJVbpAdwZ6JU0JK_1BA', 'https://x.com/mapagob']
-TRY https://servicio.mapa.gob.es/apisiar/api/v1/ ERR HTTP Error 404: Not Found
-TRY https://servicio.mapa.gob.es/apisiar/ ERR HTTP Error 404: Not Found
-TRY https://servicio.mapa.gob.es/siarweb/Api <!DOCTYPE html> <html xmlns="http://www.w3.org/1999/xhtml"       lang="es"> <head>     <meta charset="UTF-8">     <title>Prelogin - SiAR</title>      <meta content="width=device-width, initial-scale=1" name="viewport">     <meta content="Webflow" name="generator">     <meta name="_csrf" con
-TRY https://servicio.mapa.gob.es/siarweb/api <!DOCTYPE html> <html xmlns="http://www.w3.org/1999/xhtml"       lang="es"> <head>     <meta charset="UTF-8">     <title>Prelogin - SiAR</title>      <meta content="width=device-width, initial-scale=1" name="viewport">     <meta content="Webflow" name="generator">     <meta name="_csrf" con
+PAGE LICENCE  
+ 
+     
+      
+   
+     
+       
+       
+
+       
+       
+     Precios percibidos (mensual y anual nacional) - Conjunto de datos - Datos abiertos Ministerio de Agricultura, Pesca y Alimentación 
+
+    
+    
+
+    
+   
+    
+   
+
+
+    
+      
+           
+           
+           
+           
+      
+    
+
+  
+    
+  
+  
+  
+      
+      
+      
+    
+  
+
+
+  
+
+  
+
+    
+
+  
+
+
+    
+     
+ 
+ 
+ 
+ 
+ 
+  
+    
+  
+  
+  
+   
+  
+     
+  
+
+    
+  
+   
+   
+
+  
+    
+      
+           
+      
+  
+
+
+
+ 
+   
+
+  
+   
+
+   \nDUMP percibido 39\n  header ERR HTTP Error 503: Service Unavailable\n  csv ERR list index out of range\nDUMP pagado 4010206\n  header _id,anio,mes,anio_base,categoria,grupo,producto,precio_mensual,precio_anual
+1,2026,1,2020,BIENES Y SERVICIOS DE USO CORRIENTE (INPUT I),FERTILIZANTES,SULFATO AMONICO 21 %,33.55,
+2,2026,1,2020,BIENES Y SERVICIOS DE USO CORRIENTE (INPUT I),FERTILIZANTES,NITROSULFATO AMONICO 26 %,42.38,
+3,2026,1,2020,\n  nrows 35416 cols ['_id', 'anio', 'mes', 'anio_base', 'categoria', 'grupo', 'producto', 'precio_mensual', 'precio_anual']\n  col _id distinct 35416 ['1', '10', '100', '1000', '10000'] ['9997', '9998', '9999']\n  col anio 37 ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026']\n  col mes 12 ['1', '10', '11', '12', '2', '3', '4', '5', '6', '7', '8', '9']\n  col anio_base 7 ['1990', '1995', '2000', '2005', '2010', '2015', '2020']\n  col categoria 1 ['BIENES Y SERVICIOS DE USO CORRIENTE (INPUT I)']\n  col grupo 2 ['ALIMENTOS DE GANADO', 'FERTILIZANTES']\n  col producto 50 ['ACIDO FOSFORICO', 'ALFALFA DESHIDRATADA', 'AVENA (PIENSO)', 'CEBADA (PIENSO)', 'CERDAS GESTACION Y LACTACION', 'CERDOS CRECIMIENTO Y CEBO', 'CLORURO POTASICO 60 %', 'COMPLEJO 0-14-7', 'COMPLEJO 12-12-24', 'COMPLEJO 12-24-8', 'COMPLEJO 15-15-15', 'COMPLEJO 4-12-8', 'COMPLEJO 7-14-7', 'COMPLEJO 8-15-15', 'COMPLEJO 8-24-16', 'COMPLEJO 8-24-8', 'COMPLEJO 8-8-8', 'COMPLEJO 9-18-27', 'CONCENTRADO VACUNO DE CARNE', 'CONCENTRADO VACUNO DE LECHE', 'CONEJOS', 'CORDEROS Y CHIVOS CRIA', 'CORDEROS Y CHIVOS RECRIA-ENGORDE', 'D A P (FOSFATO DIAMONICO)', 'GALLINAS PONEDORAS', 'HARINA DE CARNE', 'HARINA DE PESCADO', 'LACTORREMPLAZANTES 20% PROTEINA', 'LECHONES', 'MAIZ (PIENSO)', 'NITRATO AMONICO 33,5', 'NITRATO AMONICO CALCICO 20,5 %', 'NITRATO AMONICO CALCICO 26 %', 'NITROSULFATO AMONICO 26 %', 'OVEJAS Y CABRAS LACTANTES', 'PAJA CEREALES', 'POLLITAS CRIA-RECRIA', 'POLLOS CARNE', 'PULPA DE REMOLACHA', 'SOLUCION NITROGENADA 32%', 'SULFATO AMONICO 21 %', 'SULFATO POTASICO 50 %', 'SUPERFOSFATO DE CAL 18 % (GRANO)', 'SUPERFOSFATO DE CAL 18 % (POLVO)', 'SUPERFOSFATO DE CAL TRIPLE', 'TERNEROS CRIA', 'TERNEROS RECRIA Y CEBO', 'TORTA DE GIRASOL', 'TRIGO (PIENSO)', 'UREA 46 %']\n  col precio_mensual distinct 6356 ['', '10', '10.01', '10.02', '10.03'] ['99.84', '99.87', '99.98']\n  col precio_anual distinct 2001 ['', '10.05', '10.07', '10.22', '10.26'] ['98.68', '98.95', '99.88']\nDUMP ind_percibido 3137406\n  header _id,anio,mes,anio_base,categoria_general,indice_mensual_general,indice_anual_general,categoria,indice_mensual_categoria,indice_anual_categoria,grupo,indice_mensual_grupo,indice_anual_grupo,subgrupo,indice_mensual_subgrupo,indice_anual_subgrupo,producto,indice_mensual_producto,indice_anual_producto
+\n  nrows 17485 cols ['_id', 'anio', 'mes', 'anio_base', 'categoria_general', 'indice_mensual_general', 'indice_anual_general', 'categoria', 'indice_mensual_categoria', 'indice_anual_categoria', 'grupo', 'indice_mensual_grupo', 'indice_anual_grupo', 'subgrupo', 'indice_mensual_subgrupo', 'indice_anual_subgrupo', 'producto', 'indice_mensual_producto', 'indice_anual_producto']\n  col _id distinct 17485 ['1', '10', '100', '1000', '10000'] ['9997', '9998', '9999']\n  col anio 37 ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026']\n  col mes 12 ['1', '10', '11', '12', '2', '3', '4', '5', '6', '7', '8', '9']\n  col anio_base 7 ['1990', '1995', '2000', '2005', '2010', '2015', '2020']\n  col categoria_general 1 ['GENERAL DE PRECIOS PERCIBIDOS']\n  col indice_mensual_general distinct 720 ['100', '100.01', '100.03', '100.04', '100.08'] ['99.72', '99.75', '99.84']\n  col categoria 2 ['PRODUCTOS AGRICOLAS', 'PRODUCTOS ANIMALES']\n  col indice_mensual_categoria distinct 1353 ['100', '100.01', '100.05', '100.09', '100.12'] ['99.92', '99.97', '99.99']\n  col indice_anual_categoria distinct 116 ['', '100', '100.01', '100.27', '100.32'] ['99.22', '99.31', '99.99']\n  col grupo 13 ['ACEITE DE OLIVA TOTAL', 'CEREALES', 'CULTIVOS FORRAJEROS', 'CULTIVOS INDUSTRIALES', 'FLORES Y PLANTAS ORNAMENTALES', 'FRUTAS', 'GANADO PARA ABASTO', 'HORTALIZAS', 'LEGUMINOSAS', 'PRODUCTOS GANADEROS', 'SEMILLAS', 'TUBERCULOS', 'VINO Y MOSTO']\n  col indice_mensual_grupo distinct 6099 ['100', '100.01', '100.03', '100.04', '100.05'] ['99.97', '99.98', '99.99']\n  col indice_anual_grupo distinct 670 ['', '100', '100.01', '100.02', '100.07'] ['99.85', '99.98', '99.99']\n  col subgrupo 23 ['ACEITE DE OLIVA TOTAL', 'AVES PARA ABASTO', 'CAPRINO PARA ABASTO', 'CEREALES', 'CITRICOS', 'CONEJOS PARA ABASTO', 'CULTIVOS FORRAJEROS', 'CULTIVOS INDUSTRIALES', 'FLORES Y PLANTAS ORNAMENTALES', 'FRUTAS FRESCAS NO CITRICAS', 'FRUTAS SECAS', 'HORTALIZAS', 'HUEVOS', 'LANA', 'LECHE', 'LEGUMINOSAS CONSUMO HUMANO', 'LEGUMINOSAS PIENSO', 'OVINO PARA ABASTO', 'PORCINO PARA ABASTO', 'SEMILLAS', 'TUBERCULOS', 'VACUNO PARA ABASTO', 'VINO Y MOSTO']\n  col indice_mensual_subgrupo distinct 8510 ['100', '100.01', '100.02', '100.03', '100.04'] ['99.97', '99.98', '99.99']\n  col indice_anual_subgrupo distinct 1153 ['', '100', '100.01', '100.02', '100.03'] ['99.96', '99.98', '99.99']\n  col producto 23 ['ACEITE DE OLIVA TOTAL', 'AVES PARA ABASTO', 'CAPRINO PARA ABASTO', 'CEREALES', 'CITRICOS', 'CONEJOS PARA ABASTO', 'CULTIVOS FORRAJEROS', 'CULTIVOS INDUSTRIALES', 'FLORES Y PLANTAS ORNAMENTALES', 'FRUTAS FRESCAS NO CITRICAS', 'FRUTAS SECAS', 'HORTALIZAS', 'HUEVOS', 'LANA', 'LECHE', 'LEGUMINOSAS CONSUMO HUMANO', 'LEGUMINOSAS PIENSO', 'OVINO PARA ABASTO', 'PORCINO PARA ABASTO', 'SEMILLAS', 'TUBERCULOS', 'VACUNO PARA ABASTO', 'VINO Y MOSTO']\n  col indice_mensual_producto distinct 8510 ['100', '100.01', '100.02', '100.03', '100.04'] ['99.97', '99.98', '99.99']\n  col indice_anual_producto distinct 1153 ['', '100', '100.01', '100.02', '100.03'] ['99.96', '99.98', '99.99']\nDUMP ind_pagado 3662711\n  header _id,anio,mes,anio_base,categoria_general,indice_mensual_general,indice_anual_general,categoria,indice_mensual_categoria,indice_anual_categoria,grupo,indice_mensual_grupo,indice_anual_grupo,subgrupo,indice_mensual_subgrupo,indice_anual_subgrupo,producto,indice_mensual_producto,indice_anual_producto
+\n  nrows 17574 cols ['_id', 'anio', 'mes', 'anio_base', 'categoria_general', 'indice_mensual_general', 'indice_anual_general', 'categoria', 'indice_mensual_categoria', 'indice_anual_categoria', 'grupo', 'indice_mensual_grupo', 'indice_anual_grupo', 'subgrupo', 'indice_mensual_subgrupo', 'indice_anual_subgrupo', 'producto', 'indice_mensual_producto', 'indice_anual_producto']\n  col _id distinct 17574 ['1', '10', '100', '1000', '10000'] ['9997', '9998', '9999']\n  col anio 37 ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026']\n  col mes 12 ['1', '10', '11', '12', '2', '3', '4', '5', '6', '7', '8', '9']\n  col anio_base 7 ['1990', '1995', '2000', '2005', '2010', '2015', '2020']\n  col categoria_general 1 ['INPUT TOTAL I Y II']\n  col indice_mensual_general distinct 508 ['', '100.03', '100.07', '100.09', '100.11'] ['99.91', '99.92', '99.93']\n  col categoria 2 ['BIENES DE INVERSION (INPUT II)', 'BIENES Y SERVICIOS DE USO CORRIENTE (INPUT I)']\n  col indice_mensual_categoria distinct 1276 ['100', '100.01', '100.02', '100.03', '100.05'] ['99.97', '99.98', '99.99']\n  col indice_anual_categoria distinct 114 ['', '100', '100.02', '100.24', '100.51'] ['98.77', '99', '99.99']\n  col grupo 12 ['ALIMENTOS DE GANADO', 'CONS. Y REP. DE EDIFICIOS', 'CONS. Y REP. DE MAQUINARIA', 'ENERGIA Y LUBRICANTES', 'FERTILIZANTES', 'GASTOS GENERALES', 'MAQUINARIA Y OTROS BIENES DE EQUIPO', 'MATERIAL Y PEQUE�O UTILLAJE', 'OBRAS DE INVERSION', 'PROTECCION FITOPATOLOGICA', 'SEMILLAS Y PLANTONES', 'TRATAMIENTOS ZOOSANITARIOS']\n  col indice_mensual_grupo distinct 4073 ['100', '100.01', '100.02', '100.03', '100.04'] ['99.97', '99.98', '99.99']\n  col indice_anual_grupo distinct 610 ['', '100', '100.03', '100.15', '100.3'] ['99.89', '99.9', '99.99']\n  col subgrupo 17 ['CARBURANTES', 'CONS. Y REP. DE EDIFICIOS', 'CONS. Y REP. DE MAQUINARIA', 'ELECTRICIDAD', 'FERTILIZANTES COMPUESTOS', 'FERTILIZANTES SIMPLES', 'GASTOS GENERALES', 'LUBRICANTES', 'MAQUINARIA Y OTROS BIENES DE EQUIPO', 'MATERIAL Y PEQUE�O UTILLAJE', 'OBRAS DE INVERSION', 'PIENSOS COMPUESTOS', 'PIENSOS SIMPLES', 'PLANTONES', 'PROTECCION FITOPATOLOGICA', 'SEMILLAS', 'TRATAMIENTOS ZOOSANITARIOS']\n  col indice_mensual_subgrupo distinct 4967 ['100', '100.01', '100.02', '100.03', '100.04'] ['99.97', '99.98', '99.99']\n  col indice_anual_subgrupo distinct 829 ['', '100', '100.03', '100.13', '100.18'] ['99.88', '99.9', '99.99']\n  col producto 23 ['CARBURANTES', 'CONS. Y REP. DE EDIFICIOS', 'CONS. Y REP. DE MAQUINARIA', 'ELECTRICIDAD', 'FERTILIZANTES COMPUESTOS', 'FERTILIZANTES FOSFATADOS', 'FERTILIZANTES NITROGENADOS', 'FERTILIZANTES POTASICOS', 'GASTOS GENERALES', 'LUBRICANTES', 'MAQUINARIA Y OTROS BIENES DE EQUIPO', 'MATERIAL Y PEQUE�O UTILLAJE', 'OBRAS DE INVERSION', 'PIENSOS COMPUESTOS PARA AVES', 'PIENSOS COMPUESTOS PARA BOVINO', 'PIENSOS COMPUESTOS PARA CONEJO', 'PIENSOS COMPUESTOS PARA OVINO Y CAPRINO', 'PIENSOS COMPUESTOS PARA PORCINO', 'PIENSOS SIMPLES', 'PLANTONES', 'PROTECCION FITOPATOLOGICA', 'SEMILLAS', 'TRATAMIENTOS ZOOSANITARIOS']\n  col indice_mensual_producto distinct 5866 ['100', '100.01', '100.02', '100.03', '100.04'] ['99.97', '99.98', '99.99']\n  col indice_anual_producto distinct 1095 ['', '100', '100.01', '100.03', '100.04'] ['99.9', '99.92', '99.99']\nDUMP recan 49095840\n  header _id,ejercicio,id_ccaa,desc_ccaa,id_tipo_explotacion_n1,tipo_explotacion_n1,id_tipo_explotacion_n2,tipo_explotacion_n2,id_tipo_explotacion_n3,tipo_explotacion_n3,dimension_economica,id_variable,variable,valor,unidades,num_explotaciones_muestra,num_explotaciones_representadas
+1,2024,1,Andalucía,15,"C\n  nrows 218637 cols ['_id', 'ejercicio', 'id_ccaa', 'desc_ccaa', 'id_tipo_explotacion_n1', 'tipo_explotacion_n1', 'id_tipo_explotacion_n2', 'tipo_explotacion_n2', 'id_tipo_explotacion_n3', 'tipo_explotacion_n3', 'dimension_economica', 'id_variable', 'variable', 'valor', 'unidades', 'num_explotaciones_muestra', 'num_explotaciones_representadas']\n  col _id distinct 218637 ['1', '10', '100', '1000', '10000'] ['99997', '99998', '99999']\n  col ejercicio 4 ['2021', '2022', '2023', '2024']\n  col id_ccaa 17 ['1', '10', '11', '12', '13', '14', '15', '16', '17', '2', '3', '4', '5', '6', '7', '8', '9']\n  col desc_ccaa 18 ['Andal', 'Andalucía', 'Aragón', 'Canarias', 'Cantabria', 'Castilla y León', 'Castilla-La Mancha', 'Cataluña', 'Comunidad Foral de Navarra', 'Comunidad Valenciana', 'Comunidad de Madrid', 'Extremadura', 'Galicia', 'Islas Baleares', 'La Rioja', 'País Vasco', 'Principado de Asturias', 'Región de Murcia']\n  csv ERR '<' not supported between instances of 'str' and 'NoneType'\nDUMP incubacion 78189\n  header _id,especie,tipo_producto,fecha,numero_aves_nacidas,numero_huevos_incubados
+1,Gallus gallus,Abuelas y madres para puesta,2026-01-01,340813,1200800
+2,Gallus gallus,Gallinas para producción de huevos de consumo humano,2026-02-01,2806145,6814209
+3,Gallus gallus,Abuelas y madres para carne,2026-03-01,1\n  nrows 1112 cols ['_id', 'especie', 'tipo_producto', 'fecha', 'numero_aves_nacidas', 'numero_huevos_incubados']\n  col _id distinct 1112 ['1', '10', '100', '1000', '1001'] ['997', '998', '999']\n  col especie 5 ['Gallus gallus', 'Ocas', 'Patos', 'Pavos', 'Pintadas']\n  col tipo_producto 5 ['Abuelas y madres para carne', 'Abuelas y madres para puesta', 'Gallinas para producción de huevos de consumo humano', 'Machos y hembras para engorde', 'Machos y hembras para engorde (broilers)']\n  col fecha distinct 148 ['2015-01-01', '2015-01-02', '2015-01-03', '2015-01-04', '2015-01-05'] ['2026-06-01', '2026-07-01', '2026-08-01']\n  col numero_aves_nacidas distinct 662 ['', '0', '1000', '1002756', '1007302'] ['954475', '95456', '991249']\n  col numero_huevos_incubados distinct 661 ['', '0', '1006961', '1008128', '1014765'] ['978289', '983010', '990677']\nAVISO Las presentes condiciones generales vincularán a cualquier agente reutilizador por el mero hecho de hacer uso de los documentos sometidos a ellas. 
+		 Autorización de uso, cesión y reutilización no exclusiva de derechos de propiedad intelectual de la información: 
+		 La información procedente del SIAR (Sistema de Información Agroclimática para el Regadío), su obtención, elaboración y medios de presentación, incluidas las aplicaciones y sus códigos fuente, están protegidos por los derechos de propiedad intelectual, al tratarse de una modalidad de la propiedad intelectual regulada en el artículo 10 del Real Decreto Legislativo 1/1996, de 12 de abril, por el que se aprueba el texto refundido de la Ley de Propiedad Intelectual, regularizando, aclarando y armonizando las disposiciones legales vigentes sobre la materia. Corresponde al Ministerio de Agricultura, Pesca y Alimentación (MAPA) la titularidad y el ejercicio de los derechos de autor, que configuran el derecho exclusivo de la explotación y divulgación de dicha información. 
+		 Los canales de difusión del SIAR cumplen la función de poner a disposición información y canalizar la atención al ciudadano en los términos establecidos en el la Ley 27/2006, de 18 de julio, por la que se regulan los derechos de acceso a la información, de participación pública y de acceso a la justicia en materia de medioambiente; y en lo relativo a su reutilización a lo previsto en la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público y en el Real Decreto 1495/2011, de 24 de octubre, por el que se desarrolla la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público, para el ámbito del sector público estatal, en particular su artículo 7. 
+		 Los datos agrometeorológicos del SIAR y sus productos asociados están diseñados con el objeto de prestar servicios de carácter agrario en los cultivos en regadío. El acceso y uso de estos datos y la información asociada, así como el uso de sus servicios, están sujetos a los términos detallados en este Aviso Legal y la normativa de aplicación, sin perjuicio de que alguno de dichos canales, servicios o contenidos pueda precisar de la aceptación de unas condiciones adicionales. La información generada que se pone a disposición del ciudadano a través del SIAR tiene carácter puramente orientativo. 
+		 Los contenidos y servicios que el SIAR ofrece se actualizan periódicamente; se sugiere la comprobación de la vigencia y de la exactitud de la información, servicios y contenidos, así como de los términos legales vigentes en cada momento. 
+		 Términos y condiciones de acceso a la web u otras modalidades por parte de los diferentes usuarios: 
+		 El acceso a este portal web, así como el uso de la información que contiene y la interpretación que el usuario pueda darle, son de la exclusiva responsabilidad del usuario. El MAPA no es responsable de ningún perjuicio que pudiera derivarse de estos hechos, ni tampoco puede garantizar que el acceso no se vea interrumpido o que el contenido o software al que pueda accederse esté libre de error o de causar daño. 
+		 El MAPA se reserva el derecho a realizar los cambios que procedan sin previo aviso, al objeto de actualizar, modificar o eliminar la información, y a realizar cuantos cambios y modificaciones estime pertinentes sobre el sitio web. 
+		 Asimismo, el MAPA se reserva la facultad de modificar unilateralmente las condiciones y términos de uso de este sitio web. Cualquier modificación de los mismos se anunciará convenientemente a través de esta página, y será efectiva desde el momento de su publicación. 
+		 Autorización de reutilización y condiciones generales de la misma: 
+		 Las presentes condiciones generales permiten la reutilización de la información del SIAR para fines comerciales y no comerciales. 
+		 Se entiende por reutilización el uso de documentos que obran en poder de los órganos de la Administración General del Estado y los demás organismos y entidades del sector público estatal referidos en el artículo 1.2 del Real Decreto 1495/2011, de 24 de octubre, por el que se desarrolla la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público estatal, así como lo establecido en el artículo 3 de la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público por personas físicas o jurídicas, con fines comerciales o no comerciales, siempre que dicho uso no constituya una actividad administrativa pública. La reutilización autorizada incluye, a modo ilustrativo, actividades como la copia, difusión, modificación, adaptación, extracción, reordenación y combinación de la información. 
+		 El concepto de documento es el establecido en el apartado 2 del artículo 3 de la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público, por lo que comprende toda información cualquiera que sea su soporte material o electrónico así como su forma de expresión gráfica, sonora o en imagen utilizada, incluyendo, en consecuencia, también los datos en sus niveles más desagregados o “en bruto”. 
+		 Esta autorización conlleva, asimismo, la cesión gratuita y no exclusiva de los derechos de propiedad intelectual, en su caso, correspondientes a tales documentos, autorizándose la realización de actividades de reproducción, distribución, comunicación pública o transformación, necesarias para desarrollar la actividad de reutilización autorizada, en cualquier modalidad y bajo cualquier formato, para todo el mundo y por el plazo máximo permitido por la Ley. 
+		 A estos efectos, son de aplicación las siguientes condiciones generales para la reutilización de los documentos sometidos a ellas: 
+		 
+			 Debe citarse expresamente al SIAR del MAPA como fuente de la información diciendo   "Fuente: Sistema de Información Agroclimática para el Regadío. Ministerio de Agricultura, Pesca y Alimentación "  , o en su lugar el texto:  "Información elabor\nMANUAL 1468185 Manual Web
+API SiAR
+Versión 2.2
+Mayo 2025
+                                                                                                                                          www.siar.es
+
+
+
+
+Índice
+
+Descripción de los servicios de la Web API.............................................................................................3
+
+       Acceso a la Web API............................................................................................................................. 3
+       Consideraciones generales................................................................................................................... 4
+       Servicio Obtener Token........................................................................................................................ 4
+
+               1. Cifrado del identificador del usuario:..................................................................................... 5
+               2. Cifrado de la contraseña:....................................................................................................... 5
+               3. Obtención del token:............................................................................................................. 5
+
+       Servicio Info......................................................................................................................................... 6
+
+               Descripción general.................................................................................................................... 6
+               Parámetros de entrada............................................................................................................... 6
+               Valores de salida......................................................................................................................... 6
+
+       Servicio Datos.................................................................................................................................... 11
+
+               Parámetros de ruta................................................................................................................... 11
+               Parámetros de consulta............................................................................................................ 12
+               Valores de salida....................................................................................................................... 13
+
+
+
+
+                                                                                                                                                Página 2 de 17
+                                                                                            www.siar.es
+
+
+
+
+Descripción de los servicios de la Web API
+API SiAR ofrece flexibilidad y autonomía a los usuarios mediante un servicio HTTPS que devuelve los
+datos en formato JSON. Lenguajes como JavaScript, Java o C# permiten fácilmente realizar peticiones y
+procesar las respuestas.
+
+
+
+Acceso a la Web API
+La solicitud de acceso a la Web API SiAR puede realizarse de dos maneras:
+• Usuarios nuevos del SiAR: Solicitando el acceso en el proceso de alta como usuario en el SiAR,
+  seleccionando la opción “Sí” en el desplegable “Deseo darme de alta en API SiAR”
+
+
+
+
+• Usuarios ya registrados en SiAR: para los usuarios ya registrados que no hubieran solicitado el alta en
+  API SiAR en el momento del registro, podrán realizar la solicitud a través de la opción “Editar perfil”
+  que se encuentra dentro de “Mi SiAR”, seleccionando el valor “Sí” dentro en el desplegable “Deseo
+  darme de alta en API SiAR”
+
+
+
+
+                                                                                               Página 3 de 17
+                                                                                              www.siar.es
+
+
+
+
+Consideraciones generales
+URL de los servicios de la Web API.
+A continuación, se presenta la URL de API SiAR:
+
+          Entorno                                  URL                               Observaciones
+
+Producción                    https://servicio.mapa.gob.es/siarapi
+
+A lo largo del documento, esta URL se indicará mediante el término {URL_Base}.
+
+
+Servicios protegidos por token
+Para acceder a los servicios ofrecidos por la Web API de SIAR, es necesario contar con un token de
+autenticación. Este token identifica de forma única al usuario. Todas las peticiones a servicios protegidos
+deben incluir el token como parámetro en la URL, utilizando la clave token.
+Para obtener el token, la Web API dispone de un conjunto de métodos específicos que permiten generar
+y recuperar esta información, los cuales se describen en el apartado correspondiente.
+
+  Ejemplo:
+  Supongamos que un usuario ha obtenido el siguiente token ficticio: 1Ab.
+  Si desea invocar un servicio cuya ruta es: {URL_Base}/API/V1/ServicioAPI?token={token}, la URL
+  completa sería
+  https://servicio.mapa.gob.es/siarapi/API/V1/ServicioAPI?token=1Ab
+  Importante: En los ejemplos se usará el token ficticio y no funcional 1Ab
+
+
+
+Servicio Obtener Token
+Para acceder a las funcionalidades protegidas que expone la Web API de SIAR, es obligatorio disponer
+de un token de autenticación. Este token identifica de forma única al usuario, permitiendo controlar el
+acceso y uso de los servicios.
+La Web API proporciona una serie de métodos que permiten obtener dicho token de forma segura. A
+continuación, se describen los pasos que deben seguirse de manera secuencial:
+
+
+
+
+                                                                                                 Página 4 de 17
+                                                                                                www.siar.es
+
+
+
+
+1. Cifrado del identificador del usuario:
+El usuario debe estar previamente dado de alta en el sistema REGEUS del MAPA.
+Para cifrar el identificador (por ejemplo, un NIF), se utiliza el siguiente método de la API:
+   Método HTTP: GET
+   Endpoint: {BaseURL}/API/V
