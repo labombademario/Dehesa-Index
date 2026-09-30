@@ -1507,14 +1507,15 @@
     getEuCountry: function () { return state.euCountry; },
     getActiveTab: function () { return state.activeTab; },
     // Datos de una tarjeta para el Market Map: solo observaciones verificadas del mercado elegido
-    mapInfo: function (entry) {
-      var disp = resolveDisplay(entry, state.location, state.euCountry);
-      if (disp.ukGap || disp.regionCode !== state.location) return null;
+    mapInfo: function (entry, loc) {
+      loc = loc || state.location;
+      var disp = resolveDisplay(entry, loc, state.euCountry);
+      if (disp.ukGap || disp.regionCode !== loc) return null;
       var obs = trustObservationFor(entry, disp);
       if (!obs || obs.status !== 'verified') return null;
       var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
       var base = entry.product[disp.regionCode];
-      return { price: built.price, unit: built.unit, date: obs.observationDate || null, pts: base && base.histPts ? base.histPts : null };
+      return { price: built.price, unit: built.unit, kg: disp.targetKgPerUnit, ccy: disp.targetCcy, date: obs.observationDate || null, pts: base && base.histPts ? base.histPts : null };
     },
     getLocation: function () { return state.location; },
     openHistory: function (key) { openHistory(key); }

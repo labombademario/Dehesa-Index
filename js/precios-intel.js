@@ -815,59 +815,96 @@
   }
 
   function renderAtlanticSpreadHtml() {
-    var labels = {
-      es:{title:'Dehesa Atlantic Spread',intro:'Comparación transatlántica normalizada: solo se calcula cuando las observaciones tienen base metodológica y fecha suficientes.',pending:'Pendiente de datos comparables',date:'Fecha de observación',method:'Metodología',basis:'Comparabilidad',note:'No mostramos un diferencial numérico si mezclar las dos cotizaciones podría inducir a una conclusión falsa.'},
-      en:{title:'Dehesa Atlantic Spread',intro:'Normalized transatlantic comparison: calculated only when observations have sufficient methodological and date coverage.',pending:'Comparable data pending',date:'Observation date',method:'Methodology',basis:'Comparability',note:'No numeric spread is shown when mixing the two quotations could produce a misleading conclusion.'},
-      fr:{title:'Dehesa Atlantic Spread',intro:'Comparaison transatlantique normalisée: calculée uniquement lorsque les observations sont suffisamment comparables et datées.',pending:'Données comparables en attente',date:"Date d'observation",method:'Méthodologie',basis:'Comparabilité',note:'Aucun différentiel numérique n’est affiché lorsque le mélange des deux cotations pourrait être trompeur.'},
-      it:{title:'Dehesa Atlantic Spread',intro:'Confronto transatlantico normalizzato: calcolato solo quando le osservazioni sono sufficientemente comparabili e datate.',pending:'Dati comparabili in attesa',date:'Data osservazione',method:'Metodologia',basis:'Comparabilità',note:'Nessun differenziale numerico viene mostrato quando combinare le due quotazioni potrebbe risultare fuorviante.'}
+    var L = {
+      es:{title:'Dehesa Atlantic Spread',intro:'Cómo se mueve el mismo producto a ambos lados del Atlántico: variación del último mes y de los últimos tres meses en EE. UU. y en Europa, cada una con su propia serie verificada.',
+        us:'EE. UU.',eu:'Europa',last:'Último dato',m1:'1 mes',m3:'3 meses',same:'Misma dirección',diverge:'Direcciones opuestas',flat:'Sin cambio claro',prod:'Producto',trend:'Lectura',
+        note:'Se comparan MOVIMIENTOS, no niveles: los precios no son equivalentes (EE. UU. es precio recibido por el agricultor o referencia nacional; Europa es lonja, precio de mercado o media de la UE, con otra etapa, calidad, unidad, moneda e impuestos), así que no se calcula ningún diferencial de precio entre ambos. Cada dato conserva su fecha.',empty:'Aún no hay productos con dato verificado en EE. UU. y en Europa a la vez.'},
+      en:{title:'Dehesa Atlantic Spread',intro:'How the same product moves on both sides of the Atlantic: the last-month and last-three-month change in the U.S. and in Europe, each from its own verified series.',
+        us:'U.S.',eu:'Europe',last:'Latest',m1:'1 month',m3:'3 months',same:'Same direction',diverge:'Opposite directions',flat:'No clear move',prod:'Product',trend:'Reading',
+        note:'MOVES are compared, not levels: prices are not equivalent (the U.S. is a price received by farmers or a national reference; Europe is a market quote or EU average, with a different stage, quality, unit, currency and taxes), so no price differential is computed between them. Each data point keeps its date.',empty:'No products with verified data in both the U.S. and Europe yet.'},
+      fr:{title:'Dehesa Atlantic Spread',intro:"Comment un même produit évolue des deux côtés de l'Atlantique : variation du dernier mois et des trois derniers mois aux États-Unis et en Europe, chacune issue de sa propre série vérifiée.",
+        us:'États-Unis',eu:'Europe',last:'Dernière donnée',m1:'1 mois',m3:'3 mois',same:'Même direction',diverge:'Directions opposées',flat:'Pas de mouvement net',prod:'Produit',trend:'Lecture',
+        note:"On compare des MOUVEMENTS, pas des niveaux : les prix ne sont pas équivalents (États-Unis : prix reçu par l'agriculteur ou référence nationale ; Europe : cotation de marché ou moyenne UE, avec une autre étape, qualité, unité, monnaie et fiscalité), donc aucun écart de prix n'est calculé. Chaque donnée garde sa date.",empty:'Pas encore de produits avec données vérifiées aux États-Unis et en Europe à la fois.'},
+      it:{title:'Dehesa Atlantic Spread',intro:"Come si muove lo stesso prodotto ai due lati dell'Atlantico: variazione dell'ultimo mese e degli ultimi tre mesi negli Stati Uniti e in Europa, ciascuna dalla propria serie verificata.",
+        us:'Stati Uniti',eu:'Europa',last:'Ultimo dato',m1:'1 mese',m3:'3 mesi',same:'Stessa direzione',diverge:'Direzioni opposte',flat:'Nessun movimento netto',prod:'Prodotto',trend:'Lettura',
+        note:"Si confrontano i MOVIMENTI, non i livelli: i prezzi non sono equivalenti (Stati Uniti: prezzo ricevuto dall'agricoltore o riferimento nazionale; Europa: quotazione di mercato o media UE, con fase, qualità, unità, valuta e imposte diverse), quindi non si calcola alcun differenziale di prezzo. Ogni dato conserva la sua data.",empty:'Ancora nessun prodotto con dati verificati sia negli Stati Uniti sia in Europa.'}
     };
-    var t=labels[lang()]||labels.es;
-    var products=[['cereales-trigo','Trigo','Wheat'],['cereales-maiz','Maíz','Corn'],['energia-diesel','Diésel','Diesel']];
-    var cards=products.map(function(p){
-      var us=trustForDashKey(p[0]+'-us'), eu=trustForDashKey(p[0]+'-eu');
-      if(!us||!eu) return '';
-      var comparable=us.comparability==='direct'&&eu.comparability==='direct';
-      var dated=!!us.observationDate&&!!eu.observationDate;
-      var ready=us.status==='verified'&&eu.status==='verified'&&comparable&&dated;
-      var status=ready ? 'Ready' : t.pending;
-      var basis=(us.comparability||'—')+' / '+(eu.comparability||'—');
-      return '<div class="di-card di-atlantic-card">'+
-        '<div class="di-product-name">'+esc(p[0]==='energia-diesel'?(lang()==='es'?'Diésel':lang()==='fr'?'Diesel':lang()==='it'?'Diesel':'Diesel'):(lang()==='es'?p[1]:lang()==='en'?p[2]:p[1]))+'</div>'+
-        '<div class="di-atlantic-status">'+esc(status)+'</div>'+
-        '<div class="di-atlantic-grid">'+
-          '<div><span>'+esc(t.date)+'</span><b>'+esc(us.observationDate||'—')+' / '+esc(eu.observationDate||'—')+'</b></div>'+
-          '<div><span>'+esc(t.basis)+'</span><b>'+esc(basis)+'</b></div>'+
-        '</div>'+
-        '<div class="di-atlantic-method">'+esc(t.method)+': '+esc(us.methodology||'—')+' · '+esc(eu.methodology||'—')+'</div>'+
-        '<div class="di-spread-note">'+esc(t.note)+'</div>'+
-      '</div>';
-    }).join('');
-    return '<div class="di-intel-section" id="di-intel-atlantic"><div class="di-intel-head"><h2>'+esc(t.title)+'</h2><p>'+esc(t.intro)+'</p></div><div class="di-atlantic-grid">'+cards+'</div></div>';
+    var t = L[lang()] || L.es, Core = core(), pl = P();
+    function cell(info) {
+      var c1 = mapChange(info.pts, 27), c3 = mapChange(info.pts, 88);
+      var d = new Date(info.pts[info.pts.length - 1].ts).toISOString().slice(0, 10);
+      function f(v) { return v === null ? '<span class="di-atl-na">—</span>' : '<b style="color:' + D.changeColor(v, pl) + ';">' + esc(D.fmtChange(v)) + '</b>'; }
+      return { c1: c1, html: '<td>' + esc(info.price) + ' <small>' + esc(info.unit) + '</small><br><small class="di-atl-date">' + esc(d) + '</small></td><td>' + f(c1) + '</td><td>' + f(c3) + '</td>' };
+    }
+    var rows = [];
+    Core.PRODUCTS.forEach(function (e) {
+      var k = e.catId + '-' + e.nameKey;
+      if (!MAP_GROUP[k] || !Core.mapInfo) return;
+      var us = Core.mapInfo(e, 'us'), eu = Core.mapInfo(e, 'eu');
+      if (!us || !eu || !us.pts || !eu.pts) return;
+      var cu = cell(us), ce = cell(eu), read = t.flat, col = pl.neutral;
+      if (cu.c1 !== null && ce.c1 !== null && Math.abs(cu.c1) > 0.5 && Math.abs(ce.c1) > 0.5) {
+        if ((cu.c1 > 0) === (ce.c1 > 0)) { read = t.same; col = pl.textMuted; } else { read = t.diverge; col = pl.textMuted; }
+      }
+      rows.push('<tr><th>' + esc(productName(e.nameKey)) + '</th>' + cu.html + ce.html + '<td><span style="color:' + col + ';font-weight:600;">' + esc(read) + '</span></td></tr>');
+    });
+    if (!rows.length) return intelPendingHtml(t.title, t.empty, 'di-intel-atlantic');
+    return '<div class="di-intel-section" id="di-intel-atlantic"><div class="di-intel-head"><h2>' + esc(t.title) + '</h2><p>' + esc(t.intro) + '</p></div>' +
+      '<div class="di-corr-scroll"><table class="di-atl-table"><thead><tr><th rowspan="2">' + esc(t.prod) + '</th><th colspan="3">' + esc(t.us) + '</th><th colspan="3">' + esc(t.eu) + '</th><th rowspan="2">' + esc(t.trend) + '</th></tr>' +
+      '<tr><th>' + esc(t.last) + '</th><th>' + esc(t.m1) + '</th><th>' + esc(t.m3) + '</th><th>' + esc(t.last) + '</th><th>' + esc(t.m1) + '</th><th>' + esc(t.m3) + '</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div>' +
+      '<div class="di-intel-disclaimer">' + esc(t.note) + '</div></div>';
   }
 
   // ---------------------------------------------------------------------
   // Ratios agrícolas (Spreads)
   // ---------------------------------------------------------------------
-  function spreadRatioSeries(numEntry, denEntry, native) {
-    return numEntry.history.map(function (v, i) {
-      if (native) return v / denEntry.history[i];
-      return (v / numEntry.kgPerUnit) / (denEntry.history[i] / denEntry.kgPerUnit);
-    });
+  // Ratios dentro de un mismo mercado: kg del insumo que se compran con 1 kg del producto (misma moneda,
+  // sin tipo de cambio). Series mensuales: último dato de cada mes; solo meses presentes en las dos series.
+  var SPREAD_DEFS = [
+    ['porcino-cerdo', 'cereales-maiz'], ['ganado-vaca', 'cereales-maiz'], ['avicultura-pollo', 'cereales-maiz'],
+    ['avicultura-huevos', 'cereales-maiz'], ['ovino-cordero', 'cereales-maiz'], ['lacteos-leche', 'pienso-harina_soja']
+  ];
+  function monthlyPerKg(info) {
+    var out = {};
+    info.pts.forEach(function (p) { var d = new Date(p.ts); out[d.getUTCFullYear() * 12 + d.getUTCMonth()] = p.value / info.kg; });
+    return out;
   }
-  function buildSpread(label, formula, numEntry, denEntry, native, note) {
-    var series = spreadRatioSeries(numEntry, denEntry, native);
-    var current = series[series.length - 1];
-    var first = series[0];
-    var pctChange = first ? ((current - first) / first) * 100 : 0;
-    var t = ui();
-    var p = P();
-    var trendText = pctChange > 0 ? t.spreadTrendUp : (pctChange < 0 ? t.spreadTrendDown : t.spreadTrendFlat);
-    var trendColor = pctChange > 0 ? p.positive : (pctChange < 0 ? p.negative : p.neutral);
-    return { label: label, value: D.fmtNumber(current), changeLabel: D.fmtChange(pctChange), changeColor: D.changeColor(pctChange, p), formula: formula, trendText: trendText, trendColor: trendColor, note: note || '' };
+  function buildSpreads() {
+    var Core = core(), t = ui(), p = P(), cards = [];
+    SPREAD_DEFS.forEach(function (def) {
+      var en = entryByDashKey(def[0]), ed = entryByDashKey(def[1]);
+      var inn = en && Core.mapInfo(en), ind = ed && Core.mapInfo(ed);
+      if (!inn || !ind || !inn.pts || !ind.pts || inn.ccy !== ind.ccy) return;
+      var a = monthlyPerKg(inn), b = monthlyPerKg(ind), ser = [];
+      Object.keys(a).map(Number).sort(function (x, y) { return x - y; }).forEach(function (m) { if (b[m]) ser.push({ m: m, v: a[m] / b[m] }); });
+      if (ser.length < 14) return;
+      var last = ser[ser.length - 1];
+      var nowM = new Date().getUTCFullYear() * 12 + new Date().getUTCMonth();
+      if (nowM - last.m > 4) return;
+      function at(m) { for (var i = ser.length - 1; i >= 0; i--) if (ser[i].m === m) return ser[i].v; return null; }
+      function chg(m) { var ref = at(last.m - m); return ref ? (last.v / ref - 1) * 100 : null; }
+      var c1 = chg(1), c12 = chg(12);
+      var pts = ser.slice(-36).map(function (x) { return { ts: Date.UTC(Math.floor(x.m / 12), x.m % 12, 1), value: x.v }; });
+      cards.push({ label: productName(en.nameKey) + ' / ' + productName(ed.nameKey), value: last.v, c1: c1, c12: c12,
+        formula: t.spreadFormulaGeneric.replace('{den}', productName(ed.nameKey).toLowerCase()).replace('{num}', productName(en.nameKey).toLowerCase()),
+        spark: sparkSvg(pts, c1 === null ? p.neutral : (c1 >= 0 ? p.positive : p.negative)) });
+    });
+    return cards;
   }
   function renderSpreadsHtml() {
-    var t = ui();
-    return '<div class="di-intel-section di-intel-pending" id="di-intel-spreads"><div class="di-intel-head"><h2>' + esc(t.spreadsTitle) + '</h2><p>Spreads pendientes: no se calcula un diferencial hasta disponer de observaciones reales compatibles para ambos componentes.</p><span class="di-intel-state pending">PENDIENTE</span></div></div>';
+    var t = ui(), p = P(), cards = buildSpreads();
+    if (!cards.length) return intelPendingHtml(t.spreadsTitle, t.spreadsEmpty || 'Aún no hay ratios calculables con dato verificado de ambos componentes en este mercado.', 'di-intel-spreads');
+    var html = cards.map(function (c) {
+      var trend = c.c1 === null ? '' : (c.c1 > 0.5 ? t.spreadTrendUp : (c.c1 < -0.5 ? t.spreadTrendDown : t.spreadTrendFlat));
+      var col = c.c1 === null ? p.neutral : (c.c1 > 0.5 ? p.positive : (c.c1 < -0.5 ? p.negative : p.neutral));
+      function line(l, v) { return '<div class="di-margin-row"><span>' + esc(l) + '</span>' + (v === null ? '<b>—</b>' : '<b style="color:' + D.changeColor(v, p) + ';">' + esc(D.fmtChange(v)) + '</b>') + '</div>'; }
+      return '<div class="di-card di-spread-card"><div class="di-product-name">' + esc(c.label) + '</div>' +
+        '<div class="di-spread-value">' + esc(D.fmtNumber(c.value)) + '</div>' + c.spark +
+        line(t.spreadChange1m, c.c1) + line(t.spreadChange12m, c.c12) +
+        '<div class="di-spread-trend" style="color:' + col + ';">' + esc(trend) + '</div>' +
+        '<div class="di-spread-note">' + esc(c.formula) + '</div></div>';
+    }).join('');
+    return '<div class="di-intel-section" id="di-intel-spreads"><div class="di-intel-head"><h2>' + esc(t.spreadsTitle) + '</h2><p>' + esc(t.spreadsIntro) + '</p></div><div class="di-spread-grid">' + html + '</div><div class="di-intel-disclaimer">' + esc(t.spreadsDisclaimer) + '</div></div>';
   }
 
 
