@@ -15,7 +15,7 @@
           { b: 'dehesaIndexTourSeen:', t: 'que ya has visto la bienvenida.' },
           { b: 'dehesaIndexFavorites, dehesaIndexAlerts:', t: 'tus productos favoritos y las alertas de prueba.' }
         ], after: 'Como son preferencias que tú eliges para usar el servicio y no se usan para rastrearte, no mostramos un aviso de cookies. Puedes borrarlas cuando quieras desde los ajustes de tu navegador (datos del sitio).' },
-        { h: 'Servicios de terceros', id: 'terceros', p: ['Al cargar la página, tu navegador pide las tipografías a Google Fonts (fonts.googleapis.com) y, en la página de precios, el mapa a jsDelivr (cdn.jsdelivr.net). Esos proveedores reciben tu dirección IP y los datos técnicos habituales de cualquier petición. Los enlaces a noticias y fuentes te llevan a sitios externos con sus propias políticas.'] },
+        { h: 'Servicios de terceros', id: 'terceros', p: ['Al cargar la página, tu navegador pide las tipografías a Google Fonts (fonts.googleapis.com), que recibe tu dirección IP y los datos técnicos habituales de cualquier petición. Las librerías, como la del mapa, se sirven desde este mismo sitio. Los enlaces a noticias y fuentes te llevan a sitios externos con sus propias políticas.'] },
         { h: 'Propiedad intelectual y datos de terceros', id: 'licencias', p: ['El diseño y el código de Dehesa Index son de sus autores. Los datos pertenecen a sus fuentes y se usan según sus condiciones; las mostramos con su atribución:'], ul: [
           { b: 'USDA NASS.', t: 'This product uses the NASS API but is not endorsed or certified by NASS.' },
           { b: 'Comisión Europea.', t: 'Datos del Agri-food Data Portal y del Oil Bulletin, reutilizados según la política de reutilización de la Comisión.' },
@@ -41,7 +41,7 @@
           { b: 'dehesaIndexTourSeen:', t: 'that you have already seen the welcome.' },
           { b: 'dehesaIndexFavorites, dehesaIndexAlerts:', t: 'your favourite products and preview alerts.' }
         ], after: 'Since these are preferences you choose to use the service and are not used to track you, we do not show a cookie banner. You can delete them at any time from your browser settings (site data).' },
-        { h: 'Third-party services', id: 'terceros', p: ['When the page loads, your browser requests fonts from Google Fonts (fonts.googleapis.com) and, on the prices page, the map from jsDelivr (cdn.jsdelivr.net). Those providers receive your IP address and the usual technical data of any request. Links to news and sources take you to external sites with their own policies.'] },
+        { h: 'Third-party services', id: 'terceros', p: ['When the page loads, your browser requests fonts from Google Fonts (fonts.googleapis.com), which receives your IP address and the usual technical data of any request. Libraries, such as the map one, are served from this same site. Links to news and sources take you to external sites with their own policies.'] },
         { h: 'Intellectual property and third-party data', id: 'licencias', p: ['The design and code of Dehesa Index belong to its authors. The data belongs to its sources and is used under their terms; we display it with attribution:'], ul: [
           { b: 'USDA NASS.', t: 'This product uses the NASS API but is not endorsed or certified by NASS.' },
           { b: 'European Commission.', t: 'Agri-food Data Portal and Oil Bulletin data, reused under the Commission’s reuse policy.' },
@@ -67,7 +67,7 @@
           { b: 'dehesaIndexTourSeen :', t: 'que vous avez déjà vu l’accueil.' },
           { b: 'dehesaIndexFavorites, dehesaIndexAlerts :', t: 'vos produits favoris et les alertes d’essai.' }
         ], after: 'Comme il s’agit de préférences que vous choisissez pour utiliser le service et qui ne servent pas à vous suivre, nous n’affichons pas de bandeau cookies. Vous pouvez les supprimer à tout moment dans les réglages de votre navigateur (données du site).' },
-        { h: 'Services tiers', id: 'terceros', p: ['Au chargement de la page, votre navigateur demande les polices à Google Fonts (fonts.googleapis.com) et, sur la page des prix, la carte à jsDelivr (cdn.jsdelivr.net). Ces fournisseurs reçoivent votre adresse IP et les données techniques habituelles de toute requête. Les liens vers des actualités et des sources mènent à des sites externes avec leurs propres politiques.'] },
+        { h: 'Services tiers', id: 'terceros', p: ['Au chargement de la page, votre navigateur demande les polices à Google Fonts (fonts.googleapis.com), qui reçoit votre adresse IP et les données techniques habituelles de toute requête. Les bibliothèques, comme celle de la carte, sont servies depuis ce même site. Les liens vers des actualités et des sources mènent à des sites externes avec leurs propres politiques.'] },
         { h: 'Propriété intellectuelle et données de tiers', id: 'licencias', p: ['La conception et le code de Dehesa Index appartiennent à leurs auteurs. Les données appartiennent à leurs sources et sont utilisées selon leurs conditions ; nous les affichons avec attribution :'], ul: [
           { b: 'USDA NASS.', t: 'This product uses the NASS API but is not endorsed or certified by NASS.' },
           { b: 'Commission européenne.', t: 'Données de l’Agri-food Data Portal et de l’Oil Bulletin, réutilisées selon la politique de réutilisation de la Commission.' },
@@ -93,7 +93,7 @@
           { b: 'dehesaIndexTourSeen:', t: 'che hai già visto il benvenuto.' },
           { b: 'dehesaIndexFavorites, dehesaIndexAlerts:', t: 'i tuoi prodotti preferiti e gli avvisi di prova.' }
         ], after: 'Trattandosi di preferenze che scegli per usare il servizio e che non servono a tracciarti, non mostriamo un banner cookie. Puoi eliminarle in qualsiasi momento dalle impostazioni del browser (dati del sito).' },
-        { h: 'Servizi di terze parti', id: 'terceros', p: ['Al caricamento della pagina, il tuo browser richiede i caratteri a Google Fonts (fonts.googleapis.com) e, nella pagina dei prezzi, la mappa a jsDelivr (cdn.jsdelivr.net). Questi fornitori ricevono il tuo indirizzo IP e i consueti dati tecnici di ogni richiesta. I link a notizie e fonti portano a siti esterni con proprie politiche.'] },
+        { h: 'Servizi di terze parti', id: 'terceros', p: ['Al caricamento della pagina, il tuo browser richiede i caratteri a Google Fonts (fonts.googleapis.com), che riceve il tuo indirizzo IP e i consueti dati tecnici di ogni richiesta. Le librerie, come quella della mappa, sono servite da questo stesso sito. I link a notizie e fonti portano a siti esterni con proprie politiche.'] },
         { h: 'Proprietà intellettuale e dati di terzi', id: 'licencias', p: ['Il design e il codice di Dehesa Index appartengono ai loro autori. I dati appartengono alle loro fonti e sono usati secondo le loro condizioni; li mostriamo con attribuzione:'], ul: [
           { b: 'USDA NASS.', t: 'This product uses the NASS API but is not endorsed or certified by NASS.' },
           { b: 'Commissione europea.', t: 'Dati dell’Agri-food Data Portal e dell’Oil Bulletin, riutilizzati secondo la politica di riutilizzo della Commissione.' },
