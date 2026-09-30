@@ -64,7 +64,7 @@ async function get(id, from, to) {
   let err = '';
   for (let i = 0; i < 3; i++) {
     try {
-      const r = await fetch(url, { headers: { Authorization: 'Basic ' + Buffer.from(KEY + ':').toString('base64'), Accept: 'application/json' } });
+      const r = await fetch(url, { signal: AbortSignal.timeout(120000), headers: { Authorization: 'Basic ' + Buffer.from(KEY + ':').toString('base64'), Accept: 'application/json' } });
       if (!r.ok) { err = 'HTTP ' + r.status; await new Promise(z => setTimeout(z, 1500)); continue; }
       const d = await r.json();
       return Array.isArray(d) ? d : [d];
@@ -158,8 +158,8 @@ async function main() {
   const byId = new Map((index.reports || []).map(r => [r.id, r]));
   const log = [];
   let ok = 0, bad = 0;
-  for (const cfg of REPORTS) {
-    if (only && !only.includes(cfg.id)) continue;
+  const list = REPORTS.filter(c => !only || only.includes(c.id));
+  async function one(cfg) {
     try {
       const [from, to] = windowFor(cfg);
       const secs = await get(cfg.id, from, to);
@@ -169,18 +169,20 @@ async function main() {
       const cutoff = new Date(Date.now() - (cfg.f === 'd' ? 150 : 400) * 864e5).toISOString().slice(0, 10);
       const series = b.series.filter(s => s.p[s.p.length - 1][0] >= cutoff).map(s => ({ ...s, p: s.p.slice(-maxPts) }));
       series.sort((x, y) => x.v.join('|').localeCompare(y.v.join('|')));
-      if (!series.length) { log.push(cfg.id + ' SIN SERIES (filas ' + b.nrows + ', secciones sin precio ' + JSON.stringify(b.skippedSecs) + ')'); bad++; continue; }
+      if (!series.length) { log.push(cfg.id + ' SIN SERIES (filas ' + b.nrows + ', secciones sin precio ' + JSON.stringify(b.skippedSecs) + ')'); bad++; return; }
       const doc = { id: cfg.id, title: b.title || ('Informe ' + cfg.id), fam: cfg.fam, freq: cfg.f, dn: b.dn, lastDate: latest, updated: new Date().toISOString(), series };
       const txt = JSON.stringify(doc);
       await writeFile(path.join(OUT, cfg.id + '.json'), txt + '\n', 'utf8');
       byId.set(cfg.id, { id: cfg.id, title: doc.title, fam: cfg.fam, freq: cfg.f, lastDate: latest, series: series.length, kb: Math.round(txt.length / 1024) });
-      log.push(cfg.id + ' OK ' + series.length + ' series, ' + b.nrows + ' filas, último ' + latest + ', ' + Math.round(txt.length / 1024) + ' KB, dims=' + b.dn.join(',') + (b.dup ? ' descartados_por_ambiguedad=' + b.dup : '') + (Object.keys(b.skippedSecs).length ? ' sin_precio=' + JSON.stringify(b.skippedSecs) : ''));
+      log.push(cfg.id + ' OK ' + series.length + ' series, ' + b.nrows + ' filas, ultimo ' + latest + ', ' + Math.round(txt.length / 1024) + ' KB, dims=' + b.dn.join(',') + (b.dup ? ' descartados_por_ambiguedad=' + b.dup : '') + (Object.keys(b.skippedSecs).length ? ' sin_precio=' + JSON.stringify(b.skippedSecs) : ''));
       ok++;
     } catch (e) { log.push(cfg.id + ' ERROR ' + e.message); bad++; }
   }
+  let next = 0;
+  await Promise.all(Array.from({ length: 5 }, async () => { while (next < list.length) { const c = list[next++]; await one(c); } }));
   const reports = [...byId.values()].sort((a, b) => a.id - b.id);
   await writeFile(path.join(OUT, 'index.json'), JSON.stringify({ schemaVersion: '1.0', generatedAt: new Date().toISOString(), source: 'USDA AMS Market News (MARS API)', reports }, null, 1) + '\n', 'utf8');
-  await writeFile(path.join(OUT, '_log.txt'), log.join('\n') + '\n', 'utf8');
+  await writeFile(path.join(OUT, '_log.txt'), log.sort().join('\n') + '\n', 'utf8');
   console.log(log.join('\n'));
   console.log('OK ' + ok + ' / fallos ' + bad);
   if (!only && ok < REPORTS.length * 0.5) { console.error('Menos de la mitad de los informes se leyeron bien: se aborta'); process.exit(1); }
