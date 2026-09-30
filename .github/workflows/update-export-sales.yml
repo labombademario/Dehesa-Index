@@ -1,0 +1,36 @@
+name: Dehesa Data — Ventas de exportación (USDA FAS ESR)
+
+on:
+  schedule:
+    - cron: '30 14 * * 4'   # el informe sale los jueves a las 8:30 (hora del Este)
+    - cron: '30 12 * * 5'   # respaldo por festivos y retrasos
+  workflow_dispatch: {}
+
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update-export-sales:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Update export sales
+        env:
+          FAS_API_KEY: ${{ secrets.FAS_API_KEY }}
+        run: node scripts/update-export-sales.mjs
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/export-sales.json data/export-sales-log.txt
+          git diff --cached --quiet || git commit -m "chore: update export sales (USDA FAS ESR)"
+          git pull --rebase origin main
+          git push origin HEAD:main
