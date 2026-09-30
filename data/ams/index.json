@@ -1,6 +1,6 @@
 {
  "schemaVersion": "1.0",
- "generatedAt": "2026-09-30T05:24:07.813Z",
+ "generatedAt": "2026-09-30T05:34:04.268Z",
  "source": "USDA AMS Market News (MARS API)",
  "reports": [
   {
@@ -247,6 +247,24 @@
    "kb": 14
   },
   {
+   "id": 1623,
+   "title": "Dairy Monthly Averages",
+   "fam": "dairy",
+   "freq": "w",
+   "lastDate": "2026-08-31",
+   "series": 553,
+   "kb": 180
+  },
+  {
+   "id": 1650,
+   "title": "Topeka Hay Auction - Topeka, IN",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 57,
+   "kb": 30
+  },
+  {
    "id": 1655,
    "title": "National Weekly Rice Summary",
    "fam": "rice",
@@ -254,6 +272,303 @@
    "lastDate": "2026-10-02",
    "series": 23,
    "kb": 53
+  },
+  {
+   "id": 1716,
+   "title": "Wolgemuth Hay Auction - New Holland, PA (Monday)",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 73,
+   "kb": 59
+  },
+  {
+   "id": 1725,
+   "title": "Wolgemuth Hay Auction - Leola, PA (Wednesday)",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 65,
+   "kb": 38
+  },
+  {
+   "id": 1778,
+   "title": "Montana Weekly Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 658,
+   "kb": 309
+  },
+  {
+   "id": 1784,
+   "title": "New Mexico Weekly Cattle Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 897,
+   "kb": 502
+  },
+  {
+   "id": 1785,
+   "title": "Missouri (East Central) Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 140,
+   "kb": 70
+  },
+  {
+   "id": 1821,
+   "title": "Missouri Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 767,
+   "kb": 460
+  },
+  {
+   "id": 1831,
+   "title": "Oklahoma Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 469,
+   "kb": 340
+  },
+  {
+   "id": 1833,
+   "title": "Missouri Weekly Sheep/Goat Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 257,
+   "kb": 87
+  },
+  {
+   "id": 1837,
+   "title": "Missouri (North Central) Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-19",
+   "series": 188,
+   "kb": 86
+  },
+  {
+   "id": 1838,
+   "title": "Missouri (Northeast) Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 258,
+   "kb": 147
+  },
+  {
+   "id": 1841,
+   "title": "Missouri (South Central) Weekly Cattle Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 256,
+   "kb": 173
+  },
+  {
+   "id": 1842,
+   "title": "Missouri (Southeast) Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 102,
+   "kb": 69
+  },
+  {
+   "id": 1845,
+   "title": "Missouri (Southwest) Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 479,
+   "kb": 251
+  },
+  {
+   "id": 1847,
+   "title": "Missouri (West Central) Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 270,
+   "kb": 119
+  },
+  {
+   "id": 1860,
+   "title": "Nebraska Weekly Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 150,
+   "kb": 54
+  },
+  {
+   "id": 1895,
+   "title": "Kansas Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 306,
+   "kb": 165
+  },
+  {
+   "id": 1907,
+   "title": "Colorado Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 202,
+   "kb": 124
+  },
+  {
+   "id": 1919,
+   "title": "Pennsylvania Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 129,
+   "kb": 158
+  },
+  {
+   "id": 2011,
+   "title": "New York Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 137,
+   "kb": 132
+  },
+  {
+   "id": 2039,
+   "title": "Utah Weekly Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 355,
+   "kb": 137
+  },
+  {
+   "id": 2041,
+   "title": "Illinois Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 318,
+   "kb": 180
+  },
+  {
+   "id": 2056,
+   "title": "Arkansas Weekly Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 361,
+   "kb": 248
+  },
+  {
+   "id": 2082,
+   "title": "Tennessee Daily Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 527,
+   "kb": 322
+  },
+  {
+   "id": 2091,
+   "title": "North Carolina Weekly Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 441,
+   "kb": 218
+  },
+  {
+   "id": 2106,
+   "title": "Wyoming Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 114,
+   "kb": 66
+  },
+  {
+   "id": 2167,
+   "title": "Iowa Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 171,
+   "kb": 140
+  },
+  {
+   "id": 2187,
+   "title": "Virginia Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 72,
+   "kb": 25
+  },
+  {
+   "id": 2193,
+   "title": "Kentucky Weekly Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 759,
+   "kb": 476
+  },
+  {
+   "id": 2240,
+   "title": "West Virginia Weekly Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2025-09-13",
+   "series": 51,
+   "kb": 9
+  },
+  {
+   "id": 2243,
+   "title": "Rock Valley Hay Auction (Mon) - Rock Valley, IA",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-10",
+   "series": 81,
+   "kb": 20
+  },
+  {
+   "id": 2244,
+   "title": "Rock Valley Hay Auction (Thur) - Rock Valley, IA",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 249,
+   "kb": 83
+  },
+  {
+   "id": 2245,
+   "title": "Dakota Hay Auction - Corsica, SD (Monday)",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-21",
+   "series": 40,
+   "kb": 16
+  },
+  {
+   "id": 2246,
+   "title": "Pipestone Hay and Straw Auction - Pipestone, MN",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 47,
+   "kb": 26
   },
   {
    "id": 2707,
@@ -299,6 +614,15 @@
    "lastDate": "2026-09-29",
    "series": 11,
    "kb": 33
+  },
+  {
+   "id": 2714,
+   "title": "Maryland Grain Bids",
+   "fam": "grain",
+   "freq": "d",
+   "lastDate": "2026-06-23",
+   "series": 25,
+   "kb": 7
   },
   {
    "id": 2734,
@@ -373,6 +697,24 @@
    "kb": 32
   },
   {
+   "id": 2829,
+   "title": "By-Product Drop Value (Steers) (Cattle) (NW_LS441 / 447)",
+   "fam": "meat",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 32,
+   "kb": 86
+  },
+  {
+   "id": 2830,
+   "title": "Major Packer Hide Report (NW_LS448)",
+   "fam": "meat",
+   "freq": "d",
+   "lastDate": "2026-09-24",
+   "series": 12,
+   "kb": 3
+  },
+  {
    "id": 2833,
    "title": "USDA Beef & Pork Variety Meats Report (NW_LS440)",
    "fam": "meat",
@@ -382,6 +724,15 @@
    "kb": 13
   },
   {
+   "id": 2834,
+   "title": "USDA By-Product Drop Value Report-Cow (NW_LS444)",
+   "fam": "meat",
+   "freq": "d",
+   "lastDate": "2026-09-25",
+   "series": 15,
+   "kb": 9
+  },
+  {
    "id": 2835,
    "title": "USDA By-Product Drop Value Report-Hogs (NW_LS446)",
    "fam": "meat",
@@ -389,6 +740,15 @@
    "lastDate": "2026-09-25",
    "series": 17,
    "kb": 54
+  },
+  {
+   "id": 2837,
+   "title": "USDA Tallow & Protein Report (NW_LS442)",
+   "fam": "meat",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 13,
+   "kb": 4
   },
   {
    "id": 2838,
@@ -461,6 +821,15 @@
    "lastDate": "2026-09-29",
    "series": 40,
    "kb": 91
+  },
+  {
+   "id": 2863,
+   "title": "Iowa Production Cost Report (Bi-Weekly)",
+   "fam": "costs",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 7,
+   "kb": 10
   },
   {
    "id": 2885,
@@ -661,6 +1030,15 @@
    "kb": 13
   },
   {
+   "id": 3050,
+   "title": "Alabama Direct Report (Bi-Weekly)",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 17,
+   "kb": 17
+  },
+  {
    "id": 3056,
    "title": "Idaho Direct Hay Report",
    "fam": "hay",
@@ -769,6 +1147,15 @@
    "kb": 3
   },
   {
+   "id": 3147,
+   "title": "Louisiana and Texas Export Bids",
+   "fam": "grain",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 61,
+   "kb": 67
+  },
+  {
    "id": 3148,
    "title": "Portland Daily Grain Bids",
    "fam": "grain",
@@ -787,6 +1174,15 @@
    "kb": 220
   },
   {
+   "id": 3159,
+   "title": "North Carolina Production Cost Report (Weekly)",
+   "fam": "costs",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 10,
+   "kb": 16
+  },
+  {
    "id": 3167,
    "title": "Virginia Daily Grain Bids",
    "fam": "grain",
@@ -794,6 +1190,15 @@
    "lastDate": "2026-09-29",
    "series": 52,
    "kb": 93
+  },
+  {
+   "id": 3183,
+   "title": "South Dakota Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-04",
+   "series": 29,
+   "kb": 9
   },
   {
    "id": 3184,
@@ -821,6 +1226,15 @@
    "lastDate": "2026-09-29",
    "series": 75,
    "kb": 161
+  },
+  {
+   "id": 3195,
+   "title": "Illinois Production Cost Report (Bi-weekly)",
+   "fam": "costs",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 10,
+   "kb": 15
   },
   {
    "id": 3223,
@@ -868,6 +1282,15 @@
    "kb": 12
   },
   {
+   "id": 3364,
+   "title": "Shipshewana Hay Auction - Shipshewana, IN",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 58,
+   "kb": 35
+  },
+  {
    "id": 3455,
    "title": "Iowa Direct Cattle Report",
    "fam": "cattle",
@@ -884,6 +1307,15 @@
    "lastDate": "2026-09-29",
    "series": 82,
    "kb": 187
+  },
+  {
+   "id": 3489,
+   "title": "Rushville Hay Auction",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-16",
+   "series": 51,
+   "kb": 7
   },
   {
    "id": 3510,
@@ -940,6 +1372,15 @@
    "kb": 148
   },
   {
+   "id": 3621,
+   "title": "Oklahoma Production Cost Report (Bi-Weekly)",
+   "fam": "costs",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 16,
+   "kb": 23
+  },
+  {
    "id": 3641,
    "title": "Weekly Major Packer Hide Report",
    "fam": "meat",
@@ -976,6 +1417,69 @@
    "kb": 84
   },
   {
+   "id": 3649,
+   "title": "Monthly National Chicken Report",
+   "fam": "poultry",
+   "freq": "w",
+   "lastDate": "2026-08-28",
+   "series": 44,
+   "kb": 29
+  },
+  {
+   "id": 3650,
+   "title": "Monthly National Turkey Report",
+   "fam": "poultry",
+   "freq": "w",
+   "lastDate": "2026-08-28",
+   "series": 123,
+   "kb": 46
+  },
+  {
+   "id": 3652,
+   "title": "Arthur Sale Barn Hay Auction - Arthur, IL (Monday)",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-21",
+   "series": 118,
+   "kb": 36
+  },
+  {
+   "id": 3660,
+   "title": "Madison County Ag Auction",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-03-28",
+   "series": 160,
+   "kb": 32
+  },
+  {
+   "id": 3667,
+   "title": "Monthly National Mill-Feeds and Miscellaneous Feedstuff Report",
+   "fam": "feed",
+   "freq": "w",
+   "lastDate": "2026-08-28",
+   "series": 20,
+   "kb": 15
+  },
+  {
+   "id": 3668,
+   "title": "Monthly National Grain and Oilseed Processor Feedstuff Report",
+   "fam": "feed",
+   "freq": "w",
+   "lastDate": "2026-08-28",
+   "series": 77,
+   "kb": 60
+  },
+  {
+   "id": 3669,
+   "title": "Monthly National Animal By-Product Feedstuff Report",
+   "fam": "feed",
+   "freq": "w",
+   "lastDate": "2026-08-28",
+   "series": 31,
+   "kb": 19
+  },
+  {
    "id": 3731,
    "title": "Utah Direct Hay Report",
    "fam": "hay",
@@ -983,6 +1487,15 @@
    "lastDate": "2026-09-25",
    "series": 89,
    "kb": 24
+  },
+  {
+   "id": 3776,
+   "title": "Maryland Production Cost Report (Bi-Weekly)",
+   "fam": "costs",
+   "freq": "w",
+   "lastDate": "2026-06-26",
+   "series": 9,
+   "kb": 13
   },
   {
    "id": 3784,
@@ -1003,6 +1516,15 @@
    "kb": 44
   },
   {
+   "id": 3802,
+   "title": "National Organic Grain and Feedstuffs",
+   "fam": "feed",
+   "freq": "w",
+   "lastDate": "2026-09-11",
+   "series": 1313,
+   "kb": 323
+  },
+  {
    "id": 3878,
    "title": "North Dakota Daily Grain Bids",
    "fam": "grain",
@@ -1012,6 +1534,15 @@
    "kb": 47
   },
   {
+   "id": 3883,
+   "title": "Inter-Mountain West Production Cost Report (Monthly)",
+   "fam": "costs",
+   "freq": "w",
+   "lastDate": "2026-10-02",
+   "series": 8,
+   "kb": 5
+  },
+  {
    "id": 3888,
    "title": "Daily National Breaking Stock",
    "fam": "poultry",
@@ -1019,6 +1550,15 @@
    "lastDate": "2026-09-29",
    "series": 1,
    "kb": 2
+  },
+  {
+   "id": 3905,
+   "title": "Kentucky Direct Hay Report",
+   "fam": "hay",
+   "freq": "w",
+   "lastDate": "2026-09-04",
+   "series": 124,
+   "kb": 18
   },
   {
    "id": 3926,
