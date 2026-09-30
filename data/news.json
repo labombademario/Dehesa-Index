@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-30T15:26:41.246563+00:00",
+ "generatedAt": "2026-09-30T15:30:29.179948+00:00",
  "count": 400,
  "items": [
   {
@@ -2378,6 +2378,37 @@
    "marketLinks": []
   },
   {
+   "id": "auto-10c198d034",
+   "date": "2026-09-30",
+   "region": "uk",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "vaca"
+   ],
+   "source": "Agriland",
+   "lang": "en",
+   "headline": {
+    "en": "Wildlife cannot be addressed ‘in isolation’ to cattle controls in bTB fight",
+    "es": "Wildlife cannot be addressed ‘in isolation’ to cattle controls in bTB fight",
+    "fr": "Wildlife cannot be addressed ‘in isolation’ to cattle controls in bTB fight",
+    "it": "Wildlife cannot be addressed ‘in isolation’ to cattle controls in bTB fight"
+   },
+   "description": "Wildlife intervention should aim to reduce bovine tuberculosis (bTB) “as rapidly as can be reasonably achieved”, according to a new study. AgriSearch has published a major review of the evidence behind wildlife intervention options by Northern Ireland’s Department of Agriculture,",
+   "url": "https://www.agriland.ie/farming-news/wildlife-cannot-be-addressed-in-isolation-to-cattle-controls-in-btb-fight/",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-5d753de402",
    "date": "2026-09-30",
    "region": "eu",
@@ -4242,46 +4273,6 @@
    ]
   },
   {
-   "id": "auto-555229cfd5",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "oferta"
-   ],
-   "products": [
-    "cordero"
-   ],
-   "source": "Agriland",
-   "lang": "en",
-   "headline": {
-    "en": "Trade for butcher type lambs at Kilkenny Mart labelled ‘excellent’",
-    "es": "Trade for butcher type lambs at Kilkenny Mart labelled ‘excellent’",
-    "fr": "Trade for butcher type lambs at Kilkenny Mart labelled ‘excellent’",
-    "it": "Trade for butcher type lambs at Kilkenny Mart labelled ‘excellent’"
-   },
-   "description": "Quality lots of sheep are considered to be in short supply in Kilkenny, as the mart got underway yesterday (Monday, September 28). Auctioneer George Candler commented that there seems to be a “significant lift” in trade because sheep numbers are in short supply. “The trade for bu",
-   "url": "https://www.agriland.ie/farming-news/trade-for-butcher-type-lambs-at-kilkenny-mart-labelled-excellent/",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "cordero",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "cordero",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-dae2edd41c",
    "date": "2026-09-29",
    "region": "us",
@@ -4663,7 +4654,7 @@
    ]
   },
   {
-   "id": "auto-f06b6e076a",
+   "id": "auto-e5d0e58d94",
    "date": "2026-09-29",
    "region": "global",
    "topic": "",
@@ -4672,7 +4663,7 @@
     "maiz",
     "soja"
    ],
-   "source": "Brownfield Ag News",
+   "source": "brownfieldagnews.com",
    "lang": "en",
    "headline": {
     "en": "Soybeans rebound as corn drifts downward",
@@ -6034,6 +6025,37 @@
    "marketLinks": [
     {
      "market": "trigo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-4e57448145",
+   "date": "2026-09-29",
+   "region": "us",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "maiz"
+   ],
+   "source": "TradingView",
+   "lang": "en",
+   "headline": {
+    "en": "Corn Slips Lower as Traders Square Up Ahead of USDA Report",
+    "es": "Corn Slips Lower as Traders Square Up Ahead of USDA Report",
+    "fr": "Corn Slips Lower as Traders Square Up Ahead of USDA Report",
+    "it": "Corn Slips Lower as Traders Square Up Ahead of USDA Report"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWF8tOEtRYzU1bmVYVV9kZkZ2TVlpdGdEdXVXcFZ1STdBUmUzNjd1U0tpMHdZUldBeGFWX0dmd3BRNE5fY0IxR2xRdlVUVGZEMFZxMWl3SWF2U0F4NVFyU3Z2bV94WDRlRG52YjJzaE5qbTh2SE9yVzdLaHd5YTBHb095akpTWDJvZ3U0V1UxU201RHpaNmZydklOZjRKcm9yR0RyM09xOXc4V2VWZkNtbDVKZTZwT2dW?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "maiz",
      "channel": "market_impact",
      "relation": null,
      "direction": "uncertain"
@@ -7956,7 +7978,7 @@
    ]
   },
   {
-   "id": "auto-5dbb0d3216",
+   "id": "auto-2cd19834ab",
    "date": "2026-09-28",
    "region": "global",
    "topic": "comercio",
@@ -7966,7 +7988,7 @@
    "products": [
     "soja"
    ],
-   "source": "Brownfield Ag News",
+   "source": "brownfieldagnews.com",
    "lang": "en",
    "headline": {
     "en": "Soybeans dive as China keeps import tariff in place",
@@ -11153,7 +11175,7 @@
    ]
   },
   {
-   "id": "auto-a0563137b5",
+   "id": "auto-1422326c28",
    "date": "2026-09-25",
    "region": "global",
    "topic": "",
@@ -11162,7 +11184,7 @@
     "maiz",
     "soja"
    ],
-   "source": "Brownfield Ag News",
+   "source": "brownfieldagnews.com",
    "lang": "en",
    "headline": {
     "en": "Soybeans, corn end session mixed, both up on the week",
@@ -13086,46 +13108,6 @@
    ]
   },
   {
-   "id": "auto-39b069b6c1",
-   "date": "2026-09-24",
-   "region": "us",
-   "topic": "clima",
-   "topics": [
-    "clima",
-    "oferta"
-   ],
-   "products": [
-    "maiz"
-   ],
-   "source": "PR Newswire",
-   "lang": "en",
-   "headline": {
-    "en": "PlantArcBio's Yield Increasing and Drought-Tolerance Genes Deliver Stronger Yields in First Open-Field Corn Trial",
-    "es": "PlantArcBio's Yield Increasing and Drought-Tolerance Genes Deliver Stronger Yields in First Open-Field Corn Trial",
-    "fr": "PlantArcBio's Yield Increasing and Drought-Tolerance Genes Deliver Stronger Yields in First Open-Field Corn Trial",
-    "it": "PlantArcBio's Yield Increasing and Drought-Tolerance Genes Deliver Stronger Yields in First Open-Field Corn Trial"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQQUtXVndDalhCRTlLTDV3Qk1UQkpwcTFrOGJwamJKRnBRRTdfZU5ydzhBM3JBcDNGcUZsX1FtM1Z3NTcxaUxTdGpSeFB3SGZHRDV0WHNlYmpONVI0LWZwdDE3NjJIUTFUWHVFWVdqcjZCZnp2R0xaZ1Z4YmZMdTktVjBtVmJIa1ZGQTBjcXJlYnQ0WFJ1RE1KQTJhalVaRGlaNjJLTExDUkRzWWVkeWJYWjlHYWFLWGNXWW9iUWY2RmdKYTVlMXFiR3czVDZjb04weUtyZGNObFZoZkRtZTJNWnhsM3lEbmM5LU82ZHoxcEFUZFREVkxjaDlyalhxRGVY?oc=5",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "weather",
-   "marketLinks": [
-    {
-     "market": "maiz",
-     "channel": "weather",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-f543ab7108",
    "date": "2026-09-24",
    "region": "us",
@@ -13616,7 +13598,7 @@
    ]
   },
   {
-   "id": "auto-704048ad0d",
+   "id": "auto-3f99837fe8",
    "date": "2026-09-24",
    "region": "us",
    "topic": "precios",
@@ -13626,7 +13608,7 @@
    "products": [
     "vaca"
    ],
-   "source": "Brownfield Ag News",
+   "source": "brownfieldagnews.com",
    "lang": "en",
    "headline": {
     "en": "Live cattle futures mixed ahead of direct business",

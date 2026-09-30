@@ -12402,7 +12402,7 @@
    ]
   },
   {
-   "id": "auto-f06b6e076a",
+   "id": "auto-e5d0e58d94",
    "date": "2026-09-29",
    "region": "global",
    "topic": "",
@@ -12411,7 +12411,7 @@
     "maiz",
     "soja"
    ],
-   "source": "Brownfield Ag News",
+   "source": "brownfieldagnews.com",
    "lang": "en",
    "headline": {
     "en": "Soybeans rebound as corn drifts downward",
@@ -12902,7 +12902,7 @@
    ]
   },
   {
-   "id": "auto-5dbb0d3216",
+   "id": "auto-2cd19834ab",
    "date": "2026-09-28",
    "region": "global",
    "topic": "comercio",
@@ -12912,7 +12912,7 @@
    "products": [
     "soja"
    ],
-   "source": "Brownfield Ag News",
+   "source": "brownfieldagnews.com",
    "lang": "en",
    "headline": {
     "en": "Soybeans dive as China keeps import tariff in place",
@@ -14075,6 +14075,37 @@
    ]
   },
   {
+   "id": "auto-10c198d034",
+   "date": "2026-09-30",
+   "region": "uk",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "vaca"
+   ],
+   "source": "Agriland",
+   "lang": "en",
+   "headline": {
+    "en": "Wildlife cannot be addressed ‘in isolation’ to cattle controls in bTB fight",
+    "es": "Wildlife cannot be addressed ‘in isolation’ to cattle controls in bTB fight",
+    "fr": "Wildlife cannot be addressed ‘in isolation’ to cattle controls in bTB fight",
+    "it": "Wildlife cannot be addressed ‘in isolation’ to cattle controls in bTB fight"
+   },
+   "description": "Wildlife intervention should aim to reduce bovine tuberculosis (bTB) “as rapidly as can be reasonably achieved”, according to a new study. AgriSearch has published a major review of the evidence behind wildlife intervention options by Northern Ireland’s Department of Agriculture,",
+   "url": "https://www.agriland.ie/farming-news/wildlife-cannot-be-addressed-in-isolation-to-cattle-controls-in-btb-fight/",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-1cff7ec5c0",
    "date": "2026-09-30",
    "region": "global",
@@ -14602,37 +14633,6 @@
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPY2FieFlxZk5yX1FLQVJURlBnOWo4UHdsQjlqMmMyOWNtNUJSZ01hTmN0ZE04a05JVF8yelRWb2lfNzVnVTJBZHJFZ0hOQnFSU2h6NFNtU0RKd3ZJT3BQZGJWeGJpYjA1d1hHWlJJQ1ZDZHNiSlc0aE5TUmV6MHZ3TFJaTldsbGI3eE9ORFY2WjBXUkNkNnNPOUw3RU92NkRjZFRNYkRzZHh4aDY5WWVF?oc=5",
    "relevance": 54,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "vaca",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-cd69e55a9b",
-   "date": "2026-09-29",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "vaca"
-   ],
-   "source": "drovers.com",
-   "lang": "en",
-   "headline": {
-    "en": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027",
-    "es": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027",
-    "fr": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027",
-    "it": "CattleFax Outlook: 7 Key Market Drivers Shaping Cow-Calf Profits into 2027"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNa1dOMkppQ3A1d01aMlF0V052STFkVzRZeXd2MGRHbjVvWlVvWDVmR3RrLXV3aDNZajI4X2NGT1BpTU96Y3lRTDM5cTNmTkpfUlp2Z0JTTGQyVEVfaVpxVk10VmNGTU05REVOWm9PbnVkaWhhVEJpTTM1NGc3QTBDemdHMFFDQmg1NGd4NUJrWHpIeFo2RDNZMEZEM2Y1Zw?oc=5",
-   "relevance": 48,
    "auto": true,
    "impactChannel": "market_impact",
    "marketLinks": [
@@ -17206,46 +17206,6 @@
     {
      "market": "vaca",
      "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-555229cfd5",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "comercio",
-   "topics": [
-    "comercio",
-    "oferta"
-   ],
-   "products": [
-    "cordero"
-   ],
-   "source": "Agriland",
-   "lang": "en",
-   "headline": {
-    "en": "Trade for butcher type lambs at Kilkenny Mart labelled ‘excellent’",
-    "es": "Trade for butcher type lambs at Kilkenny Mart labelled ‘excellent’",
-    "fr": "Trade for butcher type lambs at Kilkenny Mart labelled ‘excellent’",
-    "it": "Trade for butcher type lambs at Kilkenny Mart labelled ‘excellent’"
-   },
-   "description": "Quality lots of sheep are considered to be in short supply in Kilkenny, as the mart got underway yesterday (Monday, September 28). Auctioneer George Candler commented that there seems to be a “significant lift” in trade because sheep numbers are in short supply. “The trade for bu",
-   "url": "https://www.agriland.ie/farming-news/trade-for-butcher-type-lambs-at-kilkenny-mart-labelled-excellent/",
-   "relevance": 60,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "cordero",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "cordero",
-     "channel": "supply",
      "relation": null,
      "direction": "uncertain"
     }
