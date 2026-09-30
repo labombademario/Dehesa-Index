@@ -61,12 +61,79 @@
 2244 OK 249 series, 2720 filas, ultimo 2026-09-24, 83 KB, dims=commodity,class,quality,crop,desc,pkg sin_precio={"Volumes":321}
 2245 OK 40 series, 989 filas, ultimo 2026-09-21, 16 KB, dims=commodity,class,quality,crop,desc,pkg sin_precio={"Volumes":208}
 2246 OK 47 series, 1666 filas, ultimo 2026-09-29, 26 KB, dims=commodity,class,quality,pkg sin_precio={"Volumes":375}
+2277 SIN SERIES (filas 32611, secciones sin precio {"Report Details":32611})
+2278 SIN SERIES (filas 44662, secciones sin precio {"Report Details":44662})
+2279 SIN SERIES (filas 11813, secciones sin precio {"Report Details":11813})
+2280 SIN SERIES (filas 1632, secciones sin precio {"Report Details":1632})
+2281 SIN SERIES (filas 14272, secciones sin precio {"Report Details":14272})
+2282 SIN SERIES (filas 23709, secciones sin precio {"Report Details":23709})
+2283 SIN SERIES (filas 4697, secciones sin precio {"Report Details":4697})
+2284 SIN SERIES (filas 440, secciones sin precio {"Report Details":440})
+2285 SIN SERIES (filas 22308, secciones sin precio {"Report Details":22308})
+2286 SIN SERIES (filas 32480, secciones sin precio {"Report Details":32480})
+2287 SIN SERIES (filas 6949, secciones sin precio {"Report Details":6949})
+2288 SIN SERIES (filas 968, secciones sin precio {"Report Details":968})
+2290 SIN SERIES (filas 32239, secciones sin precio {"Report Details":32239})
+2291 SIN SERIES (filas 49200, secciones sin precio {"Report Details":49200})
+2292 SIN SERIES (filas 8212, secciones sin precio {"Report Details":8212})
+2293 SIN SERIES (filas 980, secciones sin precio {"Report Details":980})
+2294 SIN SERIES (filas 12023, secciones sin precio {"Report Details":12023})
+2295 SIN SERIES (filas 19595, secciones sin precio {"Report Details":19595})
+2296 SIN SERIES (filas 4317, secciones sin precio {"Report Details":4317})
+2297 SIN SERIES (filas 777, secciones sin precio {"Report Details":777})
+2302 SIN SERIES (filas 24793, secciones sin precio {"Report Details":24793})
+2303 SIN SERIES (filas 37512, secciones sin precio {"Report Details":37512})
+2304 SIN SERIES (filas 6382, secciones sin precio {"Report Details":6382})
+2305 SIN SERIES (filas 341, secciones sin precio {"Report Details":341})
+2306 SIN SERIES (filas 18334, secciones sin precio {"Report Details":18334})
+2307 SIN SERIES (filas 24218, secciones sin precio {"Report Details":24218})
+2308 SIN SERIES (filas 4420, secciones sin precio {"Report Details":4420})
+2309 SIN SERIES (filas 326, secciones sin precio {"Report Details":326})
+2310 SIN SERIES (filas 10332, secciones sin precio {"Report Details":10332})
+2311 SIN SERIES (filas 19291, secciones sin precio {"Report Details":19291})
+2312 SIN SERIES (filas 2660, secciones sin precio {"Report Details":2660})
+2313 SIN SERIES (filas 88, secciones sin precio {"Report Details":88})
+2314 SIN SERIES (filas 33583, secciones sin precio {"Report Details":33583})
+2315 SIN SERIES (filas 33707, secciones sin precio {"Report Details":33707})
+2316 SIN SERIES (filas 5617, secciones sin precio {"Report Details":5617})
+2317 SIN SERIES (filas 1627, secciones sin precio {"Report Details":1627})
+2318 SIN SERIES (filas 30034, secciones sin precio {"Report Details":30034})
+2319 SIN SERIES (filas 29012, secciones sin precio {"Report Details":29012})
+2320 SIN SERIES (filas 7257, secciones sin precio {"Report Details":7257})
+2321 SIN SERIES (filas 404, secciones sin precio {"Report Details":404})
+2386 SIN SERIES (filas 550, secciones sin precio {"Report Details":550})
+2387 SIN SERIES (filas 687, secciones sin precio {"Report Details":687})
+2388 SIN SERIES (filas 55, secciones sin precio {"Report Details":55})
+2389 SIN SERIES (filas 296, secciones sin precio {"Report Details":296})
+2390 SIN SERIES (filas 4514, secciones sin precio {"Report Details":4514})
+2391 SIN SERIES (filas 276, secciones sin precio {"Report Details":276})
+2392 SIN SERIES (filas 1255, secciones sin precio {"Report Details":1255})
+2393 SIN SERIES (filas 6697, secciones sin precio {"Report Details":6697})
+2394 SIN SERIES (filas 164, secciones sin precio {"Report Details":164})
+2395 SIN SERIES (filas 3799, secciones sin precio {"Report Details":3799})
+2396 SIN SERIES (filas 2848, secciones sin precio {"Report Details":2848})
+2398 SIN SERIES (filas 0, secciones sin precio {})
+2399 SIN SERIES (filas 1202, secciones sin precio {"Report Details":1202})
+2400 SIN SERIES (filas 1200, secciones sin precio {"Report Details":1200})
+2401 SIN SERIES (filas 2775, secciones sin precio {"Report Details":2775})
+2402 SIN SERIES (filas 10423, secciones sin precio {"Report Details":10423})
+2403 SIN SERIES (filas 13137, secciones sin precio {"Report Details":13137})
+2404 SIN SERIES (filas 21, secciones sin precio {"Report Details":21})
+2405 SIN SERIES (filas 61, secciones sin precio {"Report Details":61})
+2406 SIN SERIES (filas 0, secciones sin precio {})
+2409 SIN SERIES (filas 0, secciones sin precio {})
+2410 SIN SERIES (filas 517, secciones sin precio {"Report Details":517})
+2411 SIN SERIES (filas 30, secciones sin precio {"Report Details":30})
+2412 SIN SERIES (filas 8682, secciones sin precio {"Report Details":8682})
+2413 SIN SERIES (filas 55, secciones sin precio {"Report Details":55})
 2707 OK 87 series, 1412 filas, ultimo 2026-09-18, 36 KB, dims=class,quality,conventional,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":9}
 2708 OK 94 series, 621 filas, ultimo 2026-09-25, 18 KB, dims=class,frame,lot_desc,muscle_grade,weight_max,weight_min,freight descartados_por_ambiguedad=13 sin_precio={"Report Receipts":117}
 2709 OK 301 series, 1020 filas, ultimo 2026-09-25, 37 KB, dims=class,lot_desc,muscle_grade,weight_max,weight_min descartados_por_ambiguedad=23 sin_precio={"Report Receipts":110}
 2710 OK 1124 series, 5328 filas, ultimo 2026-09-25, 207 KB, dims=class,frame,lot_desc,muscle_grade,weight_max,weight_min,freight,purchase_type descartados_por_ambiguedad=277 sin_precio={"Report Receipts":291}
 2711 OK 11 series, 968 filas, ultimo 2026-09-29, 33 KB, dims=commodity,class,protein,delivery_point,trade_loc,sale Type,trans_mode
 2714 OK 25 series, 125 filas, ultimo 2026-06-23, 7 KB, dims=commodity,class,grade,protein,application,delivery_end,delivery_start,desc,trade_loc,quote_type
+2720 SIN SERIES (filas 0, secciones sin precio {})
+2721 SIN SERIES (filas 0, secciones sin precio {})
 2734 OK 3 series, 264 filas, ultimo 2026-09-29, 7 KB, dims=class
 2769 OK 100 series, 579 filas, ultimo 2026-09-18, 19 KB, dims=commodity,class,quality,crop_Age,desc,use,region,package,sale_Type sin_precio={"Report Receipts":119}
 2770 OK 1 series, 39 filas, ultimo 2026-04-10, 0 KB, dims=class,lot_desc,weight_max,weight_min sin_precio={"Report Receipts":29}
@@ -75,7 +142,6 @@
 2807 OK 123 series, 1119 filas, ultimo 2026-09-25, 30 KB, dims=commodity,class,quality,crop_Age,desc,freight,package,sale_Type sin_precio={"Report Receipts":207}
 2808 OK 36 series, 222 filas, ultimo 2026-09-25, 5 KB, dims=class,frame,lot_desc,muscle_grade,weight_max,weight_min descartados_por_ambiguedad=1 sin_precio={"Report Receipts":112}
 2810 OK 12 series, 3401 filas, ultimo 2026-09-25, 32 KB, dims=class,lot_size,weight_basis,purchase_type sin_precio={"Report Receipts":216,"Report Volume":1872,"Report Comprehensive":215}
-2823 SIN SERIES (filas 1486, secciones sin precio {"Report Details":1486})
 2829 OK 32 series, 3026 filas, ultimo 2026-09-29, 86 KB, dims=commodity,item,sub_Group sin_precio={"Report Totals":178}
 2830 OK 12 series, 98 filas, ultimo 2026-09-24, 3 KB, dims=class,hide_desc,hide_weight
 2833 OK 42 series, 343 filas, ultimo 2026-09-29, 13 KB, dims=commodity,item,class,export,item_description
@@ -98,7 +164,6 @@
 2904 OK 493 series, 2170 filas, ultimo 2026-09-25, 106 KB, dims=commodity,class,quality,conventional,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":260}
 2905 OK 353 series, 2101 filas, ultimo 2026-09-25, 75 KB, dims=commodity,class,quality,conventional,crop_Age,desc,use,region,freight,package,sale_Type sin_precio={"Report Receipts":201}
 2906 OK 330 series, 1387 filas, ultimo 2026-09-25, 52 KB, dims=class,frame,lot_desc,muscle_grade,weight_max,weight_min,freight descartados_por_ambiguedad=34 sin_precio={"Report Receipts":228}
-2907 SIN SERIES (filas 1, secciones sin precio {"Report Receipts":1})
 2911 OK 40 series, 2019 filas, ultimo 2026-05-15, 6 KB, dims=class,variety,micron/grade,region sin_precio={"Report Details - Domestic Volume":181,"Report Details - AUS AWEX":1344,"Report Details - AUS Price":384}
 2912 OK 40 series, 2551 filas, ultimo 2026-09-29, 89 KB, dims=commodity,class,grade,protein,delivery_end,delivery_start,trade_loc
 2914 OK 20 series, 1546 filas, ultimo 2026-09-28, 34 KB, dims=commodity,class,conventional,desc,trade_loc,freight
@@ -126,6 +191,9 @@
 3097 OK 354 series, 1838 filas, ultimo 2026-09-25, 58 KB, dims=class,lot_desc,muscle_grade,weight_max,weight_min,freight descartados_por_ambiguedad=69 sin_precio={"Report Receipts":220}
 3098 OK 310 series, 1429 filas, ultimo 2026-09-25, 48 KB, dims=class,lot_desc,muscle_grade,weight_max,weight_min,freight descartados_por_ambiguedad=23 sin_precio={"Report Receipts":217}
 3100 OK 65 series, 4416 filas, ultimo 2026-09-29, 155 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,desc,location_City,trade_loc sin_precio={"Report Detail":2}
+3133 SIN SERIES (filas 0, secciones sin precio {})
+3134 SIN SERIES (filas 0, secciones sin precio {})
+3135 SIN SERIES (filas 0, secciones sin precio {})
 3146 OK 4 series, 68 filas, ultimo 2026-09-24, 3 KB, dims=commodity,class,delivery_point,trade_loc,freight,trans_mode
 3147 OK 61 series, 1783 filas, ultimo 2026-09-29, 67 KB, dims=commodity,class,grade,protein,delivery End Half,delivery Start Half,delivery_end,delivery_start
 3148 OK 39 series, 2166 filas, ultimo 2026-09-29, 74 KB, dims=commodity,class,grade,protein,application,delivery_end,delivery_point,delivery_start,trade_loc,quote_type,trans_mode sin_precio={"Report Detail":1}
@@ -153,7 +221,6 @@
 3617 OK 12 series, 1056 filas, ultimo 2026-09-29, 36 KB, dims=region,state/Province
 3618 OK 52 series, 6113 filas, ultimo 2026-09-25, 148 KB, dims=commodity,class,variety,grade,application,cat,delivery_point,grp,shipping_point,trade_loc,Section,freight sin_precio={"Report Detail":281,"Report EPV":1042}
 3621 OK 16 series, 822 filas, ultimo 2026-09-18, 23 KB, dims=commod,class,material_type,shipping_point
-3627 SIN SERIES (filas 621, secciones sin precio {"Volumes":84})
 3641 OK 18 series, 553 filas, ultimo 2026-09-25, 15 KB, dims=class,hide_desc,hide_weight
 3645 OK 19 series, 1735 filas, ultimo 2026-09-25, 52 KB, dims=commodity,item,condition,grade,size,region,package
 3646 OK 43 series, 3771 filas, ultimo 2026-09-25, 109 KB, dims=item,condition,primal,size,trade_status,region,freight
@@ -173,6 +240,8 @@
 3878 OK 17 series, 1331 filas, ultimo 2026-09-29, 47 KB, dims=commodity,class,grade,protein,trade_loc
 3883 OK 8 series, 141 filas, ultimo 2026-10-02, 5 KB, dims=commod,class,material_type,shipping_point,freight
 3888 OK 1 series, 88 filas, ultimo 2026-09-29, 2 KB, dims=
-3895 SIN SERIES (filas 59496, secciones sin precio {"Monthly Summary":117,"Monthly Average Spot Quotations Differences":59124,"CCC Loan Activity":255})
 3905 OK 124 series, 187 filas, ultimo 2026-09-04, 18 KB, dims=class,quality,conventional,crop_Age,desc,use,package,sale_Type sin_precio={"Report Receipts":14}
+3913 SIN SERIES (filas 3664, secciones sin precio {"Report Details":3664})
+3914 SIN SERIES (filas 3583, secciones sin precio {"Report Details":3583})
+3915 SIN SERIES (filas 959, secciones sin precio {"Report Details":959})
 3926 OK 20 series, 37 filas, ultimo 2026-09-18, 3 KB, dims=class,quality,crop_Age,desc,use,region,package sin_precio={"Report Receipts":6}
