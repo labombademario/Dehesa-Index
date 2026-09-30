@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T14:50:10.654Z",
+  "generatedAt": "2026-09-30T14:51:47.061Z",
   "policy": {
     "neverConvertQuoteBasis": true,
     "neverTreatIndexAsPrice": true,
@@ -104535,7 +104535,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -105543,7 +105543,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -105627,7 +105627,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -106572,7 +106572,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -106656,7 +106656,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -107685,7 +107685,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -107769,7 +107769,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -108714,7 +108714,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -108798,7 +108798,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -109743,7 +109743,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -109827,7 +109827,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -110835,7 +110835,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -110919,7 +110919,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -111822,7 +111822,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -111906,7 +111906,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -112851,7 +112851,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -112935,7 +112935,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -113964,7 +113964,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -114048,7 +114048,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -114993,7 +114993,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -115077,7 +115077,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -116022,7 +116022,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -116106,7 +116106,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -117135,7 +117135,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -117219,7 +117219,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -118164,7 +118164,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -118248,7 +118248,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -119193,7 +119193,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -119277,7 +119277,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -120306,7 +120306,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -120390,7 +120390,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -121335,7 +121335,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -121419,7 +121419,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -122364,7 +122364,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -122448,7 +122448,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -123477,7 +123477,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -123561,7 +123561,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -124506,7 +124506,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -124590,7 +124590,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -125535,7 +125535,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -125619,7 +125619,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -126648,7 +126648,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -126732,7 +126732,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -127656,7 +127656,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -127740,7 +127740,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -128433,7 +128433,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -128517,7 +128517,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -129042,7 +129042,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "verifiedAt": "2026-09-30T14:51:46.500Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
@@ -129105,7 +129105,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-25",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "verifiedAt": "2026-09-30T14:51:46.571Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": null,
