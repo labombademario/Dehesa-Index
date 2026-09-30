@@ -52,7 +52,7 @@
     if (!list.some(function (s) { return s.id === ST.s; })) ST.s = list.length ? list[0].id : null;
     var cur = list.filter(function (s) { return s.id === ST.s; })[0];
     var countries = Object.keys(DATA.countries).filter(function (k) { return DATA.countries[k].series.length; }).sort(function (x, y) { return x === 'ES' ? -1 : y === 'ES' ? 1 : 0; });
-    var groups = ['all'].concat(['production', 'crops', 'livestock', 'trade', 'prices', 'prices_lv', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'incub', 'costs', 'environment'].filter(function (g) { return c.series.some(function (s) { return s.group === g; }); }));
+    var groups = ['all'].concat(['production', 'crops', 'livestock', 'trade', 'prices', 'prices_lv', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'costs', 'environment'].filter(function (g) { return c.series.some(function (s) { return s.group === g; }); }));
     var opt = function (arr, sel, lab) { return arr.map(function (k) { return '<option value="' + esc(k) + '"' + (k === sel ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; }).join(''); };
     var sel = function (id, label, inner) { return '<label style="font-size:13px;flex:1;min-width:150px">' + label + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; };
     var rng = ['5', '10', '20', 'max'];

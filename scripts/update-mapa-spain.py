@@ -172,11 +172,10 @@ def main():
         LOG.append('%s: %d filas' % (kind, len(rows)))
         series += series_from(rows, kind)
     for fn in (lambda: index_series('esmapaindicespreciosindicepercibido', 'idxperc', 'idx_perc'),
-               lambda: index_series('esmapaindicespreciosindicepagado', 'idxpag', 'idx_pag'),
-               incubation_series):
+               lambda: index_series('esmapaindicespreciosindicepagado', 'idxpag', 'idx_pag')):
         try: series += fn()
         except Exception as e: LOG.append('ERROR bloque extra: %s' % e)
-    order = {'idx_perc': 5, 'idx_pag': 6, 'incub': 7, 'prices': 0, 'prices_lv': 1, 'prices_fv': 2, 'inputs_f': 3, 'inputs_a': 4}
+    order = {'idx_perc': 5, 'idx_pag': 6, 'prices': 0, 'prices_lv': 1, 'prices_fv': 2, 'inputs_f': 3, 'inputs_a': 4}
     series.sort(key=lambda s: (order[s['group']], s['label']))
     if len(series) < 50: sys.exit('demasiado pocas series: %d' % len(series))
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
