@@ -83558,7 +83558,7 @@
       "observationDate": "2026-07",
       "publicationDate": "2026-09-10",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:05:23Z",
+      "verifiedAt": "2026-09-30T17:17:21Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Wheat (except durum wheat), publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 298.0,
@@ -84418,7 +84418,7 @@
       "observationDate": "2026-07",
       "publicationDate": "2026-09-10",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:05:23Z",
+      "verifiedAt": "2026-09-30T17:17:21Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Alberta, Barley, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 282.14,
@@ -85638,7 +85638,7 @@
       "observationDate": "2026-07",
       "publicationDate": "2026-09-10",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:05:23Z",
+      "verifiedAt": "2026-09-30T17:17:21Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Oats, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 227.84,
@@ -86858,7 +86858,7 @@
       "observationDate": "2026-07",
       "publicationDate": "2026-09-10",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:05:23Z",
+      "verifiedAt": "2026-09-30T17:17:21Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Canola (including rapeseed), publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 731.13,
@@ -88078,7 +88078,7 @@
       "observationDate": "2026-07",
       "publicationDate": "2026-09-10",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:05:23Z",
+      "verifiedAt": "2026-09-30T17:17:21Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Corn for grain, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 261.78,
@@ -89291,6 +89291,4886 @@
       ]
     },
     {
+      "id": "di_cereales_soja_grano_ca",
+      "product": "soja_grano",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:17:21Z",
+      "comparability": "directional",
+      "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Soybeans, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
+      "value": 611.45,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "changePct": 3.2297,
+      "province": "Ontario",
+      "history": [
+        {
+          "period": "08",
+          "year": 2006,
+          "value": 210.22
+        },
+        {
+          "period": "09",
+          "year": 2006,
+          "value": 208.66
+        },
+        {
+          "period": "10",
+          "year": 2006,
+          "value": 226.82
+        },
+        {
+          "period": "11",
+          "year": 2006,
+          "value": 249.0
+        },
+        {
+          "period": "12",
+          "year": 2006,
+          "value": 252.72
+        },
+        {
+          "period": "01",
+          "year": 2007,
+          "value": 263.38
+        },
+        {
+          "period": "02",
+          "year": 2007,
+          "value": 286.28
+        },
+        {
+          "period": "03",
+          "year": 2007,
+          "value": 288.26
+        },
+        {
+          "period": "04",
+          "year": 2007,
+          "value": 282.41
+        },
+        {
+          "period": "05",
+          "year": 2007,
+          "value": 282.12
+        },
+        {
+          "period": "06",
+          "year": 2007,
+          "value": 291.84
+        },
+        {
+          "period": "07",
+          "year": 2007,
+          "value": 298.94
+        },
+        {
+          "period": "08",
+          "year": 2007,
+          "value": 302.66
+        },
+        {
+          "period": "09",
+          "year": 2007,
+          "value": 316.73
+        },
+        {
+          "period": "10",
+          "year": 2007,
+          "value": 313.95
+        },
+        {
+          "period": "11",
+          "year": 2007,
+          "value": 330.14
+        },
+        {
+          "period": "12",
+          "year": 2007,
+          "value": 364.15
+        },
+        {
+          "period": "01",
+          "year": 2008,
+          "value": 379.18
+        },
+        {
+          "period": "02",
+          "year": 2008,
+          "value": 428.52
+        },
+        {
+          "period": "03",
+          "year": 2008,
+          "value": 433.26
+        },
+        {
+          "period": "04",
+          "year": 2008,
+          "value": 447.02
+        },
+        {
+          "period": "05",
+          "year": 2008,
+          "value": 459.83
+        },
+        {
+          "period": "06",
+          "year": 2008,
+          "value": 497.2
+        },
+        {
+          "period": "07",
+          "year": 2008,
+          "value": 487.45
+        },
+        {
+          "period": "08",
+          "year": 2008,
+          "value": 498.44
+        },
+        {
+          "period": "09",
+          "year": 2008,
+          "value": 416.25
+        },
+        {
+          "period": "10",
+          "year": 2008,
+          "value": 400.09
+        },
+        {
+          "period": "11",
+          "year": 2008,
+          "value": 392.52
+        },
+        {
+          "period": "12",
+          "year": 2008,
+          "value": 388.53
+        },
+        {
+          "period": "01",
+          "year": 2009,
+          "value": 413.78
+        },
+        {
+          "period": "02",
+          "year": 2009,
+          "value": 418.5
+        },
+        {
+          "period": "03",
+          "year": 2009,
+          "value": 407.53
+        },
+        {
+          "period": "04",
+          "year": 2009,
+          "value": 428.86
+        },
+        {
+          "period": "05",
+          "year": 2009,
+          "value": 457.36
+        },
+        {
+          "period": "06",
+          "year": 2009,
+          "value": 472.97
+        },
+        {
+          "period": "07",
+          "year": 2009,
+          "value": 467.0
+        },
+        {
+          "period": "08",
+          "year": 2009,
+          "value": 456.76
+        },
+        {
+          "period": "09",
+          "year": 2009,
+          "value": 413.8
+        },
+        {
+          "period": "10",
+          "year": 2009,
+          "value": 384.23
+        },
+        {
+          "period": "11",
+          "year": 2009,
+          "value": 386.77
+        },
+        {
+          "period": "12",
+          "year": 2009,
+          "value": 389.05
+        },
+        {
+          "period": "01",
+          "year": 2010,
+          "value": 385.28
+        },
+        {
+          "period": "02",
+          "year": 2010,
+          "value": 376.44
+        },
+        {
+          "period": "03",
+          "year": 2010,
+          "value": 359.24
+        },
+        {
+          "period": "04",
+          "year": 2010,
+          "value": 365.3
+        },
+        {
+          "period": "05",
+          "year": 2010,
+          "value": 365.03
+        },
+        {
+          "period": "06",
+          "year": 2010,
+          "value": 365.07
+        },
+        {
+          "period": "07",
+          "year": 2010,
+          "value": 374.62
+        },
+        {
+          "period": "08",
+          "year": 2010,
+          "value": 381.44
+        },
+        {
+          "period": "09",
+          "year": 2010,
+          "value": 366.16
+        },
+        {
+          "period": "10",
+          "year": 2010,
+          "value": 377.52
+        },
+        {
+          "period": "11",
+          "year": 2010,
+          "value": 401.25
+        },
+        {
+          "period": "12",
+          "year": 2010,
+          "value": 429.37
+        },
+        {
+          "period": "01",
+          "year": 2011,
+          "value": 427.61
+        },
+        {
+          "period": "02",
+          "year": 2011,
+          "value": 454.24
+        },
+        {
+          "period": "03",
+          "year": 2011,
+          "value": 450.52
+        },
+        {
+          "period": "04",
+          "year": 2011,
+          "value": 457.58
+        },
+        {
+          "period": "05",
+          "year": 2011,
+          "value": 463.02
+        },
+        {
+          "period": "06",
+          "year": 2011,
+          "value": 465.52
+        },
+        {
+          "period": "07",
+          "year": 2011,
+          "value": 463.22
+        },
+        {
+          "period": "08",
+          "year": 2011,
+          "value": 481.56
+        },
+        {
+          "period": "09",
+          "year": 2011,
+          "value": 463.58
+        },
+        {
+          "period": "10",
+          "year": 2011,
+          "value": 428.71
+        },
+        {
+          "period": "11",
+          "year": 2011,
+          "value": 424.62
+        },
+        {
+          "period": "12",
+          "year": 2011,
+          "value": 416.21
+        },
+        {
+          "period": "01",
+          "year": 2012,
+          "value": 432.73
+        },
+        {
+          "period": "02",
+          "year": 2012,
+          "value": 444.58
+        },
+        {
+          "period": "03",
+          "year": 2012,
+          "value": 466.52
+        },
+        {
+          "period": "04",
+          "year": 2012,
+          "value": 487.66
+        },
+        {
+          "period": "05",
+          "year": 2012,
+          "value": 497.12
+        },
+        {
+          "period": "06",
+          "year": 2012,
+          "value": 500.38
+        },
+        {
+          "period": "07",
+          "year": 2012,
+          "value": 539.97
+        },
+        {
+          "period": "08",
+          "year": 2012,
+          "value": 579.44
+        },
+        {
+          "period": "09",
+          "year": 2012,
+          "value": 499.47
+        },
+        {
+          "period": "10",
+          "year": 2012,
+          "value": 501.22
+        },
+        {
+          "period": "11",
+          "year": 2012,
+          "value": 506.74
+        },
+        {
+          "period": "12",
+          "year": 2012,
+          "value": 514.43
+        },
+        {
+          "period": "01",
+          "year": 2013,
+          "value": 511.19
+        },
+        {
+          "period": "02",
+          "year": 2013,
+          "value": 528.22
+        },
+        {
+          "period": "03",
+          "year": 2013,
+          "value": 534.99
+        },
+        {
+          "period": "04",
+          "year": 2013,
+          "value": 531.32
+        },
+        {
+          "period": "05",
+          "year": 2013,
+          "value": 551.25
+        },
+        {
+          "period": "06",
+          "year": 2013,
+          "value": 561.14
+        },
+        {
+          "period": "07",
+          "year": 2013,
+          "value": 577.66
+        },
+        {
+          "period": "08",
+          "year": 2013,
+          "value": 562.92
+        },
+        {
+          "period": "09",
+          "year": 2013,
+          "value": 491.63
+        },
+        {
+          "period": "10",
+          "year": 2013,
+          "value": 473.76
+        },
+        {
+          "period": "11",
+          "year": 2013,
+          "value": 486.76
+        },
+        {
+          "period": "12",
+          "year": 2013,
+          "value": 504.84
+        },
+        {
+          "period": "01",
+          "year": 2014,
+          "value": 502.51
+        },
+        {
+          "period": "02",
+          "year": 2014,
+          "value": 529.41
+        },
+        {
+          "period": "03",
+          "year": 2014,
+          "value": 549.4
+        },
+        {
+          "period": "04",
+          "year": 2014,
+          "value": 559.39
+        },
+        {
+          "period": "05",
+          "year": 2014,
+          "value": 567.52
+        },
+        {
+          "period": "06",
+          "year": 2014,
+          "value": 576.03
+        },
+        {
+          "period": "07",
+          "year": 2014,
+          "value": 536.08
+        },
+        {
+          "period": "08",
+          "year": 2014,
+          "value": 525.3
+        },
+        {
+          "period": "09",
+          "year": 2014,
+          "value": 467.34
+        },
+        {
+          "period": "10",
+          "year": 2014,
+          "value": 431.57
+        },
+        {
+          "period": "11",
+          "year": 2014,
+          "value": 432.39
+        },
+        {
+          "period": "12",
+          "year": 2014,
+          "value": 437.37
+        },
+        {
+          "period": "01",
+          "year": 2015,
+          "value": 439.2
+        },
+        {
+          "period": "02",
+          "year": 2015,
+          "value": 447.79
+        },
+        {
+          "period": "03",
+          "year": 2015,
+          "value": 444.44
+        },
+        {
+          "period": "04",
+          "year": 2015,
+          "value": 441.4
+        },
+        {
+          "period": "05",
+          "year": 2015,
+          "value": 430.47
+        },
+        {
+          "period": "06",
+          "year": 2015,
+          "value": 441.8
+        },
+        {
+          "period": "07",
+          "year": 2015,
+          "value": 457.66
+        },
+        {
+          "period": "08",
+          "year": 2015,
+          "value": 455.96
+        },
+        {
+          "period": "09",
+          "year": 2015,
+          "value": 425.22
+        },
+        {
+          "period": "10",
+          "year": 2015,
+          "value": 421.41
+        },
+        {
+          "period": "11",
+          "year": 2015,
+          "value": 420.24
+        },
+        {
+          "period": "12",
+          "year": 2015,
+          "value": 428.01
+        },
+        {
+          "period": "01",
+          "year": 2016,
+          "value": 435.31
+        },
+        {
+          "period": "02",
+          "year": 2016,
+          "value": 439.41
+        },
+        {
+          "period": "03",
+          "year": 2016,
+          "value": 439.94
+        },
+        {
+          "period": "04",
+          "year": 2016,
+          "value": 446.72
+        },
+        {
+          "period": "05",
+          "year": 2016,
+          "value": 468.38
+        },
+        {
+          "period": "06",
+          "year": 2016,
+          "value": 492.41
+        },
+        {
+          "period": "07",
+          "year": 2016,
+          "value": 488.12
+        },
+        {
+          "period": "08",
+          "year": 2016,
+          "value": 488.28
+        },
+        {
+          "period": "09",
+          "year": 2016,
+          "value": 460.91
+        },
+        {
+          "period": "10",
+          "year": 2016,
+          "value": 458.08
+        },
+        {
+          "period": "11",
+          "year": 2016,
+          "value": 472.5
+        },
+        {
+          "period": "12",
+          "year": 2016,
+          "value": 484.17
+        },
+        {
+          "period": "01",
+          "year": 2017,
+          "value": 482.27
+        },
+        {
+          "period": "02",
+          "year": 2017,
+          "value": 493.06
+        },
+        {
+          "period": "03",
+          "year": 2017,
+          "value": 495.16
+        },
+        {
+          "period": "04",
+          "year": 2017,
+          "value": 485.27
+        },
+        {
+          "period": "05",
+          "year": 2017,
+          "value": 480.97
+        },
+        {
+          "period": "06",
+          "year": 2017,
+          "value": 473.32
+        },
+        {
+          "period": "07",
+          "year": 2017,
+          "value": 470.57
+        },
+        {
+          "period": "08",
+          "year": 2017,
+          "value": 462.65
+        },
+        {
+          "period": "09",
+          "year": 2017,
+          "value": 450.67
+        },
+        {
+          "period": "10",
+          "year": 2017,
+          "value": 452.4
+        },
+        {
+          "period": "11",
+          "year": 2017,
+          "value": 453.68
+        },
+        {
+          "period": "12",
+          "year": 2017,
+          "value": 454.97
+        },
+        {
+          "period": "01",
+          "year": 2018,
+          "value": 449.85
+        },
+        {
+          "period": "02",
+          "year": 2018,
+          "value": 455.04
+        },
+        {
+          "period": "03",
+          "year": 2018,
+          "value": 473.85
+        },
+        {
+          "period": "04",
+          "year": 2018,
+          "value": 475.05
+        },
+        {
+          "period": "05",
+          "year": 2018,
+          "value": 481.87
+        },
+        {
+          "period": "06",
+          "year": 2018,
+          "value": 472.64
+        },
+        {
+          "period": "07",
+          "year": 2018,
+          "value": 464.01
+        },
+        {
+          "period": "08",
+          "year": 2018,
+          "value": 443.61
+        },
+        {
+          "period": "09",
+          "year": 2018,
+          "value": 448.76
+        },
+        {
+          "period": "10",
+          "year": 2018,
+          "value": 448.51
+        },
+        {
+          "period": "11",
+          "year": 2018,
+          "value": 443.44
+        },
+        {
+          "period": "12",
+          "year": 2018,
+          "value": 442.48
+        },
+        {
+          "period": "01",
+          "year": 2019,
+          "value": 443.23
+        },
+        {
+          "period": "02",
+          "year": 2019,
+          "value": 439.39
+        },
+        {
+          "period": "03",
+          "year": 2019,
+          "value": 439.93
+        },
+        {
+          "period": "04",
+          "year": 2019,
+          "value": 437.03
+        },
+        {
+          "period": "05",
+          "year": 2019,
+          "value": 412.13
+        },
+        {
+          "period": "06",
+          "year": 2019,
+          "value": 428.36
+        },
+        {
+          "period": "07",
+          "year": 2019,
+          "value": 432.76
+        },
+        {
+          "period": "08",
+          "year": 2019,
+          "value": 425.04
+        },
+        {
+          "period": "09",
+          "year": 2019,
+          "value": 422.81
+        },
+        {
+          "period": "10",
+          "year": 2019,
+          "value": 431.22
+        },
+        {
+          "period": "11",
+          "year": 2019,
+          "value": 431.09
+        },
+        {
+          "period": "12",
+          "year": 2019,
+          "value": 431.77
+        },
+        {
+          "period": "01",
+          "year": 2020,
+          "value": 438.81
+        },
+        {
+          "period": "02",
+          "year": 2020,
+          "value": 440.42
+        },
+        {
+          "period": "03",
+          "year": 2020,
+          "value": 446.25
+        },
+        {
+          "period": "04",
+          "year": 2020,
+          "value": 450.22
+        },
+        {
+          "period": "05",
+          "year": 2020,
+          "value": 450.12
+        },
+        {
+          "period": "06",
+          "year": 2020,
+          "value": 446.87
+        },
+        {
+          "period": "07",
+          "year": 2020,
+          "value": 453.64
+        },
+        {
+          "period": "08",
+          "year": 2020,
+          "value": 453.02
+        },
+        {
+          "period": "09",
+          "year": 2020,
+          "value": 460.44
+        },
+        {
+          "period": "10",
+          "year": 2020,
+          "value": 472.46
+        },
+        {
+          "period": "11",
+          "year": 2020,
+          "value": 499.0
+        },
+        {
+          "period": "12",
+          "year": 2020,
+          "value": 513.37
+        },
+        {
+          "period": "01",
+          "year": 2021,
+          "value": 527.13
+        },
+        {
+          "period": "02",
+          "year": 2021,
+          "value": 573.63
+        },
+        {
+          "period": "03",
+          "year": 2021,
+          "value": 585.89
+        },
+        {
+          "period": "04",
+          "year": 2021,
+          "value": 604.53
+        },
+        {
+          "period": "05",
+          "year": 2021,
+          "value": 619.16
+        },
+        {
+          "period": "06",
+          "year": 2021,
+          "value": 614.8
+        },
+        {
+          "period": "07",
+          "year": 2021,
+          "value": 618.98
+        },
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 639.55
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 544.02
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 543.44
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 561.54
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 585.8
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 605.78
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 686.21
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 698.87
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 721.14
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 746.79
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 745.51
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 748.2
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 743.91
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 663.73
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 664.52
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 700.26
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 715.6
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 714.42
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 748.66
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 750.91
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 748.09
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 721.32
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 722.01
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 722.91
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 715.32
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 659.91
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 634.46
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 644.58
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 642.33
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 623.49
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 594.92
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 586.37
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 594.27
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 598.36
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 602.15
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 590.58
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 553.92
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 526.16
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 503.26
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 497.15
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 506.19
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 515.35
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 532.09
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 525.0
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 532.55
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 525.76
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 530.87
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 534.24
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 531.2
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 516.16
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 513.54
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 551.04
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 560.35
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 535.59
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 554.7
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 578.06
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 584.69
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 593.09
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 592.32
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 611.45
+        }
+      ]
+    },
+    {
+      "id": "di_cereales_lenteja_ca",
+      "product": "lenteja",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:17:21Z",
+      "comparability": "directional",
+      "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Lentils, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
+      "value": 525.08,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "changePct": -6.2324,
+      "province": "Saskatchewan",
+      "history": [
+        {
+          "period": "08",
+          "year": 2006,
+          "value": 210.0
+        },
+        {
+          "period": "09",
+          "year": 2006,
+          "value": 245.0
+        },
+        {
+          "period": "10",
+          "year": 2006,
+          "value": 265.0
+        },
+        {
+          "period": "11",
+          "year": 2006,
+          "value": 275.0
+        },
+        {
+          "period": "12",
+          "year": 2006,
+          "value": 285.0
+        },
+        {
+          "period": "01",
+          "year": 2007,
+          "value": 285.0
+        },
+        {
+          "period": "02",
+          "year": 2007,
+          "value": 320.0
+        },
+        {
+          "period": "03",
+          "year": 2007,
+          "value": 310.0
+        },
+        {
+          "period": "04",
+          "year": 2007,
+          "value": 310.0
+        },
+        {
+          "period": "05",
+          "year": 2007,
+          "value": 335.0
+        },
+        {
+          "period": "06",
+          "year": 2007,
+          "value": 345.0
+        },
+        {
+          "period": "07",
+          "year": 2007,
+          "value": 365.0
+        },
+        {
+          "period": "08",
+          "year": 2007,
+          "value": 345.0
+        },
+        {
+          "period": "09",
+          "year": 2007,
+          "value": 395.0
+        },
+        {
+          "period": "10",
+          "year": 2007,
+          "value": 430.0
+        },
+        {
+          "period": "11",
+          "year": 2007,
+          "value": 450.0
+        },
+        {
+          "period": "12",
+          "year": 2007,
+          "value": 475.0
+        },
+        {
+          "period": "01",
+          "year": 2008,
+          "value": 495.0
+        },
+        {
+          "period": "02",
+          "year": 2008,
+          "value": 550.0
+        },
+        {
+          "period": "03",
+          "year": 2008,
+          "value": 555.0
+        },
+        {
+          "period": "04",
+          "year": 2008,
+          "value": 600.0
+        },
+        {
+          "period": "05",
+          "year": 2008,
+          "value": 600.0
+        },
+        {
+          "period": "06",
+          "year": 2008,
+          "value": 700.0
+        },
+        {
+          "period": "07",
+          "year": 2008,
+          "value": 750.0
+        },
+        {
+          "period": "08",
+          "year": 2008,
+          "value": 870.0
+        },
+        {
+          "period": "09",
+          "year": 2008,
+          "value": 830.0
+        },
+        {
+          "period": "10",
+          "year": 2008,
+          "value": 800.0
+        },
+        {
+          "period": "11",
+          "year": 2008,
+          "value": 755.0
+        },
+        {
+          "period": "12",
+          "year": 2008,
+          "value": 635.0
+        },
+        {
+          "period": "01",
+          "year": 2009,
+          "value": 665.0
+        },
+        {
+          "period": "02",
+          "year": 2009,
+          "value": 670.0
+        },
+        {
+          "period": "03",
+          "year": 2009,
+          "value": 700.0
+        },
+        {
+          "period": "04",
+          "year": 2009,
+          "value": 730.0
+        },
+        {
+          "period": "05",
+          "year": 2009,
+          "value": 750.0
+        },
+        {
+          "period": "06",
+          "year": 2009,
+          "value": 820.0
+        },
+        {
+          "period": "07",
+          "year": 2009,
+          "value": 850.0
+        },
+        {
+          "period": "08",
+          "year": 2009,
+          "value": 675.0
+        },
+        {
+          "period": "09",
+          "year": 2009,
+          "value": 645.0
+        },
+        {
+          "period": "10",
+          "year": 2009,
+          "value": 607.0
+        },
+        {
+          "period": "11",
+          "year": 2009,
+          "value": 635.0
+        },
+        {
+          "period": "12",
+          "year": 2009,
+          "value": 670.0
+        },
+        {
+          "period": "01",
+          "year": 2010,
+          "value": 745.0
+        },
+        {
+          "period": "02",
+          "year": 2010,
+          "value": 700.0
+        },
+        {
+          "period": "03",
+          "year": 2010,
+          "value": 695.0
+        },
+        {
+          "period": "04",
+          "year": 2010,
+          "value": 675.0
+        },
+        {
+          "period": "05",
+          "year": 2010,
+          "value": 630.0
+        },
+        {
+          "period": "06",
+          "year": 2010,
+          "value": 630.0
+        },
+        {
+          "period": "07",
+          "year": 2010,
+          "value": 630.0
+        },
+        {
+          "period": "08",
+          "year": 2010,
+          "value": 570.0
+        },
+        {
+          "period": "09",
+          "year": 2010,
+          "value": 600.0
+        },
+        {
+          "period": "10",
+          "year": 2010,
+          "value": 540.0
+        },
+        {
+          "period": "11",
+          "year": 2010,
+          "value": 500.0
+        },
+        {
+          "period": "12",
+          "year": 2010,
+          "value": 480.0
+        },
+        {
+          "period": "01",
+          "year": 2011,
+          "value": 450.0
+        },
+        {
+          "period": "02",
+          "year": 2011,
+          "value": 470.0
+        },
+        {
+          "period": "03",
+          "year": 2011,
+          "value": 510.0
+        },
+        {
+          "period": "04",
+          "year": 2011,
+          "value": 520.0
+        },
+        {
+          "period": "05",
+          "year": 2011,
+          "value": 500.0
+        },
+        {
+          "period": "06",
+          "year": 2011,
+          "value": 440.0
+        },
+        {
+          "period": "07",
+          "year": 2011,
+          "value": 430.0
+        },
+        {
+          "period": "08",
+          "year": 2011,
+          "value": 435.0
+        },
+        {
+          "period": "09",
+          "year": 2011,
+          "value": 515.0
+        },
+        {
+          "period": "10",
+          "year": 2011,
+          "value": 540.0
+        },
+        {
+          "period": "11",
+          "year": 2011,
+          "value": 500.0
+        },
+        {
+          "period": "12",
+          "year": 2011,
+          "value": 515.0
+        },
+        {
+          "period": "01",
+          "year": 2012,
+          "value": 450.0
+        },
+        {
+          "period": "02",
+          "year": 2012,
+          "value": 425.0
+        },
+        {
+          "period": "03",
+          "year": 2012,
+          "value": 425.0
+        },
+        {
+          "period": "04",
+          "year": 2012,
+          "value": 420.0
+        },
+        {
+          "period": "05",
+          "year": 2012,
+          "value": 450.0
+        },
+        {
+          "period": "06",
+          "year": 2012,
+          "value": 425.0
+        },
+        {
+          "period": "07",
+          "year": 2012,
+          "value": 410.0
+        },
+        {
+          "period": "08",
+          "year": 2012,
+          "value": 425.0
+        },
+        {
+          "period": "09",
+          "year": 2012,
+          "value": 440.0
+        },
+        {
+          "period": "10",
+          "year": 2012,
+          "value": 465.0
+        },
+        {
+          "period": "11",
+          "year": 2012,
+          "value": 445.0
+        },
+        {
+          "period": "12",
+          "year": 2012,
+          "value": 410.0
+        },
+        {
+          "period": "01",
+          "year": 2013,
+          "value": 420.86
+        },
+        {
+          "period": "02",
+          "year": 2013,
+          "value": 425.69
+        },
+        {
+          "period": "03",
+          "year": 2013,
+          "value": 447.36
+        },
+        {
+          "period": "04",
+          "year": 2013,
+          "value": 491.04
+        },
+        {
+          "period": "05",
+          "year": 2013,
+          "value": 502.74
+        },
+        {
+          "period": "06",
+          "year": 2013,
+          "value": 519.97
+        },
+        {
+          "period": "07",
+          "year": 2013,
+          "value": 524.84
+        },
+        {
+          "period": "08",
+          "year": 2013,
+          "value": 502.49
+        },
+        {
+          "period": "09",
+          "year": 2013,
+          "value": 474.35
+        },
+        {
+          "period": "10",
+          "year": 2013,
+          "value": 439.05
+        },
+        {
+          "period": "11",
+          "year": 2013,
+          "value": 422.47
+        },
+        {
+          "period": "12",
+          "year": 2013,
+          "value": 438.32
+        },
+        {
+          "period": "01",
+          "year": 2014,
+          "value": 424.41
+        },
+        {
+          "period": "02",
+          "year": 2014,
+          "value": 423.57
+        },
+        {
+          "period": "03",
+          "year": 2014,
+          "value": 425.1
+        },
+        {
+          "period": "04",
+          "year": 2014,
+          "value": 446.76
+        },
+        {
+          "period": "05",
+          "year": 2014,
+          "value": 465.99
+        },
+        {
+          "period": "06",
+          "year": 2014,
+          "value": 481.02
+        },
+        {
+          "period": "07",
+          "year": 2014,
+          "value": 484.31
+        },
+        {
+          "period": "08",
+          "year": 2014,
+          "value": 493.88
+        },
+        {
+          "period": "09",
+          "year": 2014,
+          "value": 457.72
+        },
+        {
+          "period": "10",
+          "year": 2014,
+          "value": 527.6
+        },
+        {
+          "period": "11",
+          "year": 2014,
+          "value": 614.65
+        },
+        {
+          "period": "12",
+          "year": 2014,
+          "value": 587.97
+        },
+        {
+          "period": "01",
+          "year": 2015,
+          "value": 651.02
+        },
+        {
+          "period": "02",
+          "year": 2015,
+          "value": 718.79
+        },
+        {
+          "period": "03",
+          "year": 2015,
+          "value": 695.09
+        },
+        {
+          "period": "04",
+          "year": 2015,
+          "value": 723.88
+        },
+        {
+          "period": "05",
+          "year": 2015,
+          "value": 711.87
+        },
+        {
+          "period": "06",
+          "year": 2015,
+          "value": 738.42
+        },
+        {
+          "period": "07",
+          "year": 2015,
+          "value": 834.94
+        },
+        {
+          "period": "08",
+          "year": 2015,
+          "value": 735.32
+        },
+        {
+          "period": "09",
+          "year": 2015,
+          "value": 726.37
+        },
+        {
+          "period": "10",
+          "year": 2015,
+          "value": 783.92
+        },
+        {
+          "period": "11",
+          "year": 2015,
+          "value": 880.02
+        },
+        {
+          "period": "12",
+          "year": 2015,
+          "value": 937.7
+        },
+        {
+          "period": "01",
+          "year": 2016,
+          "value": 1051.89
+        },
+        {
+          "period": "02",
+          "year": 2016,
+          "value": 1028.53
+        },
+        {
+          "period": "03",
+          "year": 2016,
+          "value": 1142.25
+        },
+        {
+          "period": "04",
+          "year": 2016,
+          "value": 1126.17
+        },
+        {
+          "period": "05",
+          "year": 2016,
+          "value": 1123.56
+        },
+        {
+          "period": "06",
+          "year": 2016,
+          "value": 1025.29
+        },
+        {
+          "period": "07",
+          "year": 2016,
+          "value": 870.78
+        },
+        {
+          "period": "08",
+          "year": 2016,
+          "value": 750.64
+        },
+        {
+          "period": "09",
+          "year": 2016,
+          "value": 723.45
+        },
+        {
+          "period": "10",
+          "year": 2016,
+          "value": 721.05
+        },
+        {
+          "period": "11",
+          "year": 2016,
+          "value": 742.59
+        },
+        {
+          "period": "12",
+          "year": 2016,
+          "value": 786.47
+        },
+        {
+          "period": "01",
+          "year": 2017,
+          "value": 765.19
+        },
+        {
+          "period": "02",
+          "year": 2017,
+          "value": 780.55
+        },
+        {
+          "period": "03",
+          "year": 2017,
+          "value": 642.12
+        },
+        {
+          "period": "04",
+          "year": 2017,
+          "value": 618.72
+        },
+        {
+          "period": "05",
+          "year": 2017,
+          "value": 608.04
+        },
+        {
+          "period": "06",
+          "year": 2017,
+          "value": 609.22
+        },
+        {
+          "period": "07",
+          "year": 2017,
+          "value": 629.58
+        },
+        {
+          "period": "08",
+          "year": 2017,
+          "value": 598.75
+        },
+        {
+          "period": "09",
+          "year": 2017,
+          "value": 598.55
+        },
+        {
+          "period": "10",
+          "year": 2017,
+          "value": 597.39
+        },
+        {
+          "period": "11",
+          "year": 2017,
+          "value": 577.05
+        },
+        {
+          "period": "12",
+          "year": 2017,
+          "value": 553.38
+        },
+        {
+          "period": "01",
+          "year": 2018,
+          "value": 432.74
+        },
+        {
+          "period": "02",
+          "year": 2018,
+          "value": 419.5
+        },
+        {
+          "period": "03",
+          "year": 2018,
+          "value": 427.12
+        },
+        {
+          "period": "04",
+          "year": 2018,
+          "value": 429.95
+        },
+        {
+          "period": "05",
+          "year": 2018,
+          "value": 421.82
+        },
+        {
+          "period": "06",
+          "year": 2018,
+          "value": 421.31
+        },
+        {
+          "period": "07",
+          "year": 2018,
+          "value": 388.28
+        },
+        {
+          "period": "08",
+          "year": 2018,
+          "value": 357.68
+        },
+        {
+          "period": "09",
+          "year": 2018,
+          "value": 376.92
+        },
+        {
+          "period": "10",
+          "year": 2018,
+          "value": 379.83
+        },
+        {
+          "period": "11",
+          "year": 2018,
+          "value": 371.04
+        },
+        {
+          "period": "12",
+          "year": 2018,
+          "value": 383.98
+        },
+        {
+          "period": "01",
+          "year": 2019,
+          "value": 407.45
+        },
+        {
+          "period": "02",
+          "year": 2019,
+          "value": 432.31
+        },
+        {
+          "period": "03",
+          "year": 2019,
+          "value": 439.9
+        },
+        {
+          "period": "04",
+          "year": 2019,
+          "value": 423.76
+        },
+        {
+          "period": "05",
+          "year": 2019,
+          "value": 418.63
+        },
+        {
+          "period": "06",
+          "year": 2019,
+          "value": 430.97
+        },
+        {
+          "period": "07",
+          "year": 2019,
+          "value": 427.6
+        },
+        {
+          "period": "08",
+          "year": 2019,
+          "value": 404.29
+        },
+        {
+          "period": "09",
+          "year": 2019,
+          "value": 388.5
+        },
+        {
+          "period": "10",
+          "year": 2019,
+          "value": 409.91
+        },
+        {
+          "period": "11",
+          "year": 2019,
+          "value": 416.08
+        },
+        {
+          "period": "12",
+          "year": 2019,
+          "value": 430.99
+        },
+        {
+          "period": "01",
+          "year": 2020,
+          "value": 478.63
+        },
+        {
+          "period": "02",
+          "year": 2020,
+          "value": 502.94
+        },
+        {
+          "period": "03",
+          "year": 2020,
+          "value": 510.29
+        },
+        {
+          "period": "04",
+          "year": 2020,
+          "value": 557.52
+        },
+        {
+          "period": "05",
+          "year": 2020,
+          "value": 587.63
+        },
+        {
+          "period": "06",
+          "year": 2020,
+          "value": 660.14
+        },
+        {
+          "period": "07",
+          "year": 2020,
+          "value": 658.77
+        },
+        {
+          "period": "08",
+          "year": 2020,
+          "value": 562.16
+        },
+        {
+          "period": "09",
+          "year": 2020,
+          "value": 572.36
+        },
+        {
+          "period": "10",
+          "year": 2020,
+          "value": 606.8
+        },
+        {
+          "period": "11",
+          "year": 2020,
+          "value": 631.88
+        },
+        {
+          "period": "12",
+          "year": 2020,
+          "value": 644.13
+        },
+        {
+          "period": "01",
+          "year": 2021,
+          "value": 629.1
+        },
+        {
+          "period": "02",
+          "year": 2021,
+          "value": 652.49
+        },
+        {
+          "period": "03",
+          "year": 2021,
+          "value": 659.4
+        },
+        {
+          "period": "04",
+          "year": 2021,
+          "value": 671.57
+        },
+        {
+          "period": "05",
+          "year": 2021,
+          "value": 703.36
+        },
+        {
+          "period": "06",
+          "year": 2021,
+          "value": 735.93
+        },
+        {
+          "period": "07",
+          "year": 2021,
+          "value": 759.96
+        },
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 745.8
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 923.33
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 980.96
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 1012.85
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 909.2
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 1139.45
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 1066.02
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 950.48
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 959.02
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 997.57
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 971.82
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 881.94
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 794.38
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 746.51
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 794.19
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 815.74
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 812.27
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 813.62
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 790.01
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 781.71
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 874.07
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 884.94
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 848.73
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 824.1
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 807.81
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 888.72
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 983.63
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 958.41
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 991.87
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 1082.39
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 933.01
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 894.66
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 825.03
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 831.73
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 819.31
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 808.08
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 765.71
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 780.06
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 784.66
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 799.17
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 821.86
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 884.8
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 893.28
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 918.44
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 832.78
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 779.28
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 753.34
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 713.8
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 642.06
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 589.17
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 548.4
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 542.24
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 535.69
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 516.45
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 524.32
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 535.86
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 548.02
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 552.53
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 559.98
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 525.08
+        }
+      ]
+    },
+    {
+      "id": "di_cereales_guisante_seco_ca",
+      "product": "guisante_seco",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:17:21Z",
+      "comparability": "directional",
+      "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Dry peas, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
+      "value": 296.07,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "changePct": -10.2301,
+      "province": "Saskatchewan",
+      "history": [
+        {
+          "period": "06",
+          "year": 2006,
+          "value": 134.0
+        },
+        {
+          "period": "07",
+          "year": 2006,
+          "value": 126.0
+        },
+        {
+          "period": "08",
+          "year": 2006,
+          "value": 125.0
+        },
+        {
+          "period": "09",
+          "year": 2006,
+          "value": 134.0
+        },
+        {
+          "period": "10",
+          "year": 2006,
+          "value": 153.0
+        },
+        {
+          "period": "11",
+          "year": 2006,
+          "value": 162.0
+        },
+        {
+          "period": "12",
+          "year": 2006,
+          "value": 173.0
+        },
+        {
+          "period": "01",
+          "year": 2007,
+          "value": 181.0
+        },
+        {
+          "period": "02",
+          "year": 2007,
+          "value": 193.0
+        },
+        {
+          "period": "03",
+          "year": 2007,
+          "value": 205.0
+        },
+        {
+          "period": "04",
+          "year": 2007,
+          "value": 224.0
+        },
+        {
+          "period": "05",
+          "year": 2007,
+          "value": 231.0
+        },
+        {
+          "period": "06",
+          "year": 2007,
+          "value": 235.0
+        },
+        {
+          "period": "07",
+          "year": 2007,
+          "value": 215.0
+        },
+        {
+          "period": "08",
+          "year": 2007,
+          "value": 202.0
+        },
+        {
+          "period": "09",
+          "year": 2007,
+          "value": 207.0
+        },
+        {
+          "period": "10",
+          "year": 2007,
+          "value": 223.0
+        },
+        {
+          "period": "11",
+          "year": 2007,
+          "value": 240.0
+        },
+        {
+          "period": "12",
+          "year": 2007,
+          "value": 268.0
+        },
+        {
+          "period": "01",
+          "year": 2008,
+          "value": 293.0
+        },
+        {
+          "period": "02",
+          "year": 2008,
+          "value": 326.0
+        },
+        {
+          "period": "03",
+          "year": 2008,
+          "value": 363.0
+        },
+        {
+          "period": "04",
+          "year": 2008,
+          "value": 350.0
+        },
+        {
+          "period": "05",
+          "year": 2008,
+          "value": 372.0
+        },
+        {
+          "period": "06",
+          "year": 2008,
+          "value": 363.0
+        },
+        {
+          "period": "07",
+          "year": 2008,
+          "value": 357.0
+        },
+        {
+          "period": "08",
+          "year": 2008,
+          "value": 305.0
+        },
+        {
+          "period": "09",
+          "year": 2008,
+          "value": 293.0
+        },
+        {
+          "period": "10",
+          "year": 2008,
+          "value": 294.0
+        },
+        {
+          "period": "11",
+          "year": 2008,
+          "value": 270.0
+        },
+        {
+          "period": "12",
+          "year": 2008,
+          "value": 240.0
+        },
+        {
+          "period": "01",
+          "year": 2009,
+          "value": 225.0
+        },
+        {
+          "period": "02",
+          "year": 2009,
+          "value": 220.0
+        },
+        {
+          "period": "03",
+          "year": 2009,
+          "value": 223.0
+        },
+        {
+          "period": "04",
+          "year": 2009,
+          "value": 224.0
+        },
+        {
+          "period": "05",
+          "year": 2009,
+          "value": 229.0
+        },
+        {
+          "period": "06",
+          "year": 2009,
+          "value": 225.0
+        },
+        {
+          "period": "07",
+          "year": 2009,
+          "value": 225.0
+        },
+        {
+          "period": "08",
+          "year": 2009,
+          "value": 229.0
+        },
+        {
+          "period": "09",
+          "year": 2009,
+          "value": 218.0
+        },
+        {
+          "period": "10",
+          "year": 2009,
+          "value": 208.0
+        },
+        {
+          "period": "11",
+          "year": 2009,
+          "value": 219.0
+        },
+        {
+          "period": "12",
+          "year": 2009,
+          "value": 218.0
+        },
+        {
+          "period": "01",
+          "year": 2010,
+          "value": 217.0
+        },
+        {
+          "period": "02",
+          "year": 2010,
+          "value": 205.0
+        },
+        {
+          "period": "03",
+          "year": 2010,
+          "value": 184.0
+        },
+        {
+          "period": "04",
+          "year": 2010,
+          "value": 167.0
+        },
+        {
+          "period": "05",
+          "year": 2010,
+          "value": 164.0
+        },
+        {
+          "period": "06",
+          "year": 2010,
+          "value": 164.0
+        },
+        {
+          "period": "07",
+          "year": 2010,
+          "value": 183.0
+        },
+        {
+          "period": "08",
+          "year": 2010,
+          "value": 187.0
+        },
+        {
+          "period": "09",
+          "year": 2010,
+          "value": 186.0
+        },
+        {
+          "period": "10",
+          "year": 2010,
+          "value": 196.0
+        },
+        {
+          "period": "11",
+          "year": 2010,
+          "value": 215.0
+        },
+        {
+          "period": "12",
+          "year": 2010,
+          "value": 225.0
+        },
+        {
+          "period": "01",
+          "year": 2011,
+          "value": 243.0
+        },
+        {
+          "period": "02",
+          "year": 2011,
+          "value": 256.0
+        },
+        {
+          "period": "03",
+          "year": 2011,
+          "value": 263.0
+        },
+        {
+          "period": "04",
+          "year": 2011,
+          "value": 268.0
+        },
+        {
+          "period": "05",
+          "year": 2011,
+          "value": 269.0
+        },
+        {
+          "period": "06",
+          "year": 2011,
+          "value": 281.0
+        },
+        {
+          "period": "07",
+          "year": 2011,
+          "value": 294.0
+        },
+        {
+          "period": "08",
+          "year": 2011,
+          "value": 303.0
+        },
+        {
+          "period": "09",
+          "year": 2011,
+          "value": 305.0
+        },
+        {
+          "period": "10",
+          "year": 2011,
+          "value": 313.0
+        },
+        {
+          "period": "11",
+          "year": 2011,
+          "value": 322.0
+        },
+        {
+          "period": "12",
+          "year": 2011,
+          "value": 317.0
+        },
+        {
+          "period": "01",
+          "year": 2012,
+          "value": 315.0
+        },
+        {
+          "period": "02",
+          "year": 2012,
+          "value": 316.86
+        },
+        {
+          "period": "03",
+          "year": 2012,
+          "value": 314.21
+        },
+        {
+          "period": "04",
+          "year": 2012,
+          "value": 319.8
+        },
+        {
+          "period": "05",
+          "year": 2012,
+          "value": 327.01
+        },
+        {
+          "period": "06",
+          "year": 2012,
+          "value": 320.66
+        },
+        {
+          "period": "07",
+          "year": 2012,
+          "value": 307.73
+        },
+        {
+          "period": "08",
+          "year": 2012,
+          "value": 305.05
+        },
+        {
+          "period": "09",
+          "year": 2012,
+          "value": 303.45
+        },
+        {
+          "period": "10",
+          "year": 2012,
+          "value": 309.81
+        },
+        {
+          "period": "11",
+          "year": 2012,
+          "value": 319.15
+        },
+        {
+          "period": "12",
+          "year": 2012,
+          "value": 326.13
+        },
+        {
+          "period": "01",
+          "year": 2013,
+          "value": 302.46
+        },
+        {
+          "period": "02",
+          "year": 2013,
+          "value": 326.44
+        },
+        {
+          "period": "03",
+          "year": 2013,
+          "value": 326.53
+        },
+        {
+          "period": "04",
+          "year": 2013,
+          "value": 322.52
+        },
+        {
+          "period": "05",
+          "year": 2013,
+          "value": 325.9
+        },
+        {
+          "period": "06",
+          "year": 2013,
+          "value": 329.38
+        },
+        {
+          "period": "07",
+          "year": 2013,
+          "value": 314.19
+        },
+        {
+          "period": "08",
+          "year": 2013,
+          "value": 280.72
+        },
+        {
+          "period": "09",
+          "year": 2013,
+          "value": 276.6
+        },
+        {
+          "period": "10",
+          "year": 2013,
+          "value": 295.68
+        },
+        {
+          "period": "11",
+          "year": 2013,
+          "value": 280.4
+        },
+        {
+          "period": "12",
+          "year": 2013,
+          "value": 274.17
+        },
+        {
+          "period": "01",
+          "year": 2014,
+          "value": 274.82
+        },
+        {
+          "period": "02",
+          "year": 2014,
+          "value": 239.96
+        },
+        {
+          "period": "03",
+          "year": 2014,
+          "value": 244.8
+        },
+        {
+          "period": "04",
+          "year": 2014,
+          "value": 250.91
+        },
+        {
+          "period": "05",
+          "year": 2014,
+          "value": 241.1
+        },
+        {
+          "period": "06",
+          "year": 2014,
+          "value": 237.44
+        },
+        {
+          "period": "07",
+          "year": 2014,
+          "value": 238.54
+        },
+        {
+          "period": "08",
+          "year": 2014,
+          "value": 229.45
+        },
+        {
+          "period": "09",
+          "year": 2014,
+          "value": 227.97
+        },
+        {
+          "period": "10",
+          "year": 2014,
+          "value": 229.37
+        },
+        {
+          "period": "11",
+          "year": 2014,
+          "value": 252.38
+        },
+        {
+          "period": "12",
+          "year": 2014,
+          "value": 248.52
+        },
+        {
+          "period": "01",
+          "year": 2015,
+          "value": 272.97
+        },
+        {
+          "period": "02",
+          "year": 2015,
+          "value": 282.8
+        },
+        {
+          "period": "03",
+          "year": 2015,
+          "value": 291.48
+        },
+        {
+          "period": "04",
+          "year": 2015,
+          "value": 299.83
+        },
+        {
+          "period": "05",
+          "year": 2015,
+          "value": 309.84
+        },
+        {
+          "period": "06",
+          "year": 2015,
+          "value": 309.66
+        },
+        {
+          "period": "09",
+          "year": 2015,
+          "value": 308.9
+        },
+        {
+          "period": "10",
+          "year": 2015,
+          "value": 284.02
+        },
+        {
+          "period": "11",
+          "year": 2015,
+          "value": 331.7
+        },
+        {
+          "period": "12",
+          "year": 2015,
+          "value": 342.57
+        },
+        {
+          "period": "01",
+          "year": 2016,
+          "value": 379.32
+        },
+        {
+          "period": "02",
+          "year": 2016,
+          "value": 399.38
+        },
+        {
+          "period": "03",
+          "year": 2016,
+          "value": 393.92
+        },
+        {
+          "period": "04",
+          "year": 2016,
+          "value": 410.91
+        },
+        {
+          "period": "05",
+          "year": 2016,
+          "value": 441.07
+        },
+        {
+          "period": "06",
+          "year": 2016,
+          "value": 430.66
+        },
+        {
+          "period": "07",
+          "year": 2016,
+          "value": 368.49
+        },
+        {
+          "period": "08",
+          "year": 2016,
+          "value": 321.01
+        },
+        {
+          "period": "09",
+          "year": 2016,
+          "value": 315.52
+        },
+        {
+          "period": "10",
+          "year": 2016,
+          "value": 315.95
+        },
+        {
+          "period": "11",
+          "year": 2016,
+          "value": 311.17
+        },
+        {
+          "period": "12",
+          "year": 2016,
+          "value": 313.85
+        },
+        {
+          "period": "01",
+          "year": 2017,
+          "value": 309.34
+        },
+        {
+          "period": "02",
+          "year": 2017,
+          "value": 310.03
+        },
+        {
+          "period": "03",
+          "year": 2017,
+          "value": 310.86
+        },
+        {
+          "period": "04",
+          "year": 2017,
+          "value": 318.19
+        },
+        {
+          "period": "05",
+          "year": 2017,
+          "value": 324.37
+        },
+        {
+          "period": "06",
+          "year": 2017,
+          "value": 336.06
+        },
+        {
+          "period": "07",
+          "year": 2017,
+          "value": 323.85
+        },
+        {
+          "period": "08",
+          "year": 2017,
+          "value": 295.12
+        },
+        {
+          "period": "09",
+          "year": 2017,
+          "value": 294.68
+        },
+        {
+          "period": "10",
+          "year": 2017,
+          "value": 298.07
+        },
+        {
+          "period": "11",
+          "year": 2017,
+          "value": 301.79
+        },
+        {
+          "period": "12",
+          "year": 2017,
+          "value": 287.4
+        },
+        {
+          "period": "01",
+          "year": 2018,
+          "value": 283.91
+        },
+        {
+          "period": "02",
+          "year": 2018,
+          "value": 257.64
+        },
+        {
+          "period": "03",
+          "year": 2018,
+          "value": 255.06
+        },
+        {
+          "period": "04",
+          "year": 2018,
+          "value": 253.2
+        },
+        {
+          "period": "05",
+          "year": 2018,
+          "value": 258.33
+        },
+        {
+          "period": "06",
+          "year": 2018,
+          "value": 256.84
+        },
+        {
+          "period": "07",
+          "year": 2018,
+          "value": 257.14
+        },
+        {
+          "period": "08",
+          "year": 2018,
+          "value": 235.79
+        },
+        {
+          "period": "09",
+          "year": 2018,
+          "value": 243.06
+        },
+        {
+          "period": "10",
+          "year": 2018,
+          "value": 260.58
+        },
+        {
+          "period": "11",
+          "year": 2018,
+          "value": 262.29
+        },
+        {
+          "period": "12",
+          "year": 2018,
+          "value": 266.88
+        },
+        {
+          "period": "01",
+          "year": 2019,
+          "value": 262.62
+        },
+        {
+          "period": "02",
+          "year": 2019,
+          "value": 274.74
+        },
+        {
+          "period": "03",
+          "year": 2019,
+          "value": 265.82
+        },
+        {
+          "period": "04",
+          "year": 2019,
+          "value": 276.15
+        },
+        {
+          "period": "05",
+          "year": 2019,
+          "value": 268.16
+        },
+        {
+          "period": "06",
+          "year": 2019,
+          "value": 269.14
+        },
+        {
+          "period": "07",
+          "year": 2019,
+          "value": 257.31
+        },
+        {
+          "period": "08",
+          "year": 2019,
+          "value": 230.53
+        },
+        {
+          "period": "09",
+          "year": 2019,
+          "value": 228.2
+        },
+        {
+          "period": "10",
+          "year": 2019,
+          "value": 238.33
+        },
+        {
+          "period": "11",
+          "year": 2019,
+          "value": 247.24
+        },
+        {
+          "period": "12",
+          "year": 2019,
+          "value": 258.1
+        },
+        {
+          "period": "01",
+          "year": 2020,
+          "value": 259.84
+        },
+        {
+          "period": "02",
+          "year": 2020,
+          "value": 280.24
+        },
+        {
+          "period": "03",
+          "year": 2020,
+          "value": 265.08
+        },
+        {
+          "period": "04",
+          "year": 2020,
+          "value": 271.9
+        },
+        {
+          "period": "05",
+          "year": 2020,
+          "value": 287.24
+        },
+        {
+          "period": "06",
+          "year": 2020,
+          "value": 288.82
+        },
+        {
+          "period": "07",
+          "year": 2020,
+          "value": 280.69
+        },
+        {
+          "period": "08",
+          "year": 2020,
+          "value": 252.51
+        },
+        {
+          "period": "09",
+          "year": 2020,
+          "value": 256.31
+        },
+        {
+          "period": "10",
+          "year": 2020,
+          "value": 273.68
+        },
+        {
+          "period": "11",
+          "year": 2020,
+          "value": 300.37
+        },
+        {
+          "period": "12",
+          "year": 2020,
+          "value": 308.35
+        },
+        {
+          "period": "01",
+          "year": 2021,
+          "value": 324.1
+        },
+        {
+          "period": "02",
+          "year": 2021,
+          "value": 341.91
+        },
+        {
+          "period": "03",
+          "year": 2021,
+          "value": 360.61
+        },
+        {
+          "period": "04",
+          "year": 2021,
+          "value": 358.78
+        },
+        {
+          "period": "05",
+          "year": 2021,
+          "value": 363.43
+        },
+        {
+          "period": "06",
+          "year": 2021,
+          "value": 364.26
+        },
+        {
+          "period": "07",
+          "year": 2021,
+          "value": 372.3
+        },
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 349.22
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 407.93
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 466.39
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 529.51
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 505.9
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 607.75
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 620.01
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 604.0
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 618.02
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 601.69
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 598.89
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 566.66
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 457.39
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 440.61
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 447.13
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 467.32
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 470.44
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 478.68
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 475.22
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 475.46
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 454.7
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 442.35
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 413.02
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 398.78
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 380.85
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 396.78
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 420.86
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 422.61
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 434.75
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 462.52
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 491.76
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 492.07
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 503.93
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 517.81
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 483.61
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 430.53
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 385.77
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 380.71
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 414.34
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 412.01
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 432.34
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 419.04
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 437.9
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 425.38
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 405.43
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 421.46
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 399.85
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 371.61
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 325.63
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 301.71
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 296.19
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 293.29
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 287.92
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 282.23
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 294.63
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 306.38
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 309.91
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 322.42
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 329.81
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 296.07
+        }
+      ]
+    },
+    {
+      "id": "di_cereales_lino_ca",
+      "product": "lino",
+      "region": "ca",
+      "sourceId": "statcan",
+      "observationDate": "2026-07",
+      "publicationDate": "2026-09-10",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:17:21Z",
+      "comparability": "directional",
+      "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Saskatchewan, Flaxseed, publicado en CAD per metric tonne. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
+      "value": 650.36,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "monthly",
+      "changePct": -2.6407,
+      "province": "Saskatchewan",
+      "history": [
+        {
+          "period": "08",
+          "year": 2006,
+          "value": 222.86
+        },
+        {
+          "period": "09",
+          "year": 2006,
+          "value": 222.66
+        },
+        {
+          "period": "10",
+          "year": 2006,
+          "value": 232.17
+        },
+        {
+          "period": "11",
+          "year": 2006,
+          "value": 234.25
+        },
+        {
+          "period": "12",
+          "year": 2006,
+          "value": 246.16
+        },
+        {
+          "period": "01",
+          "year": 2007,
+          "value": 247.01
+        },
+        {
+          "period": "02",
+          "year": 2007,
+          "value": 272.24
+        },
+        {
+          "period": "03",
+          "year": 2007,
+          "value": 286.57
+        },
+        {
+          "period": "04",
+          "year": 2007,
+          "value": 285.68
+        },
+        {
+          "period": "05",
+          "year": 2007,
+          "value": 282.54
+        },
+        {
+          "period": "06",
+          "year": 2007,
+          "value": 296.88
+        },
+        {
+          "period": "07",
+          "year": 2007,
+          "value": 310.44
+        },
+        {
+          "period": "08",
+          "year": 2007,
+          "value": 318.22
+        },
+        {
+          "period": "09",
+          "year": 2007,
+          "value": 360.62
+        },
+        {
+          "period": "10",
+          "year": 2007,
+          "value": 437.53
+        },
+        {
+          "period": "11",
+          "year": 2007,
+          "value": 473.19
+        },
+        {
+          "period": "12",
+          "year": 2007,
+          "value": 485.71
+        },
+        {
+          "period": "01",
+          "year": 2008,
+          "value": 520.69
+        },
+        {
+          "period": "02",
+          "year": 2008,
+          "value": 621.36
+        },
+        {
+          "period": "03",
+          "year": 2008,
+          "value": 683.22
+        },
+        {
+          "period": "04",
+          "year": 2008,
+          "value": 657.68
+        },
+        {
+          "period": "05",
+          "year": 2008,
+          "value": 666.01
+        },
+        {
+          "period": "06",
+          "year": 2008,
+          "value": 709.94
+        },
+        {
+          "period": "07",
+          "year": 2008,
+          "value": 758.23
+        },
+        {
+          "period": "08",
+          "year": 2008,
+          "value": 714.79
+        },
+        {
+          "period": "09",
+          "year": 2008,
+          "value": 620.0
+        },
+        {
+          "period": "10",
+          "year": 2008,
+          "value": 560.78
+        },
+        {
+          "period": "11",
+          "year": 2008,
+          "value": 510.41
+        },
+        {
+          "period": "12",
+          "year": 2008,
+          "value": 480.24
+        },
+        {
+          "period": "01",
+          "year": 2009,
+          "value": 467.49
+        },
+        {
+          "period": "02",
+          "year": 2009,
+          "value": 466.9
+        },
+        {
+          "period": "03",
+          "year": 2009,
+          "value": 460.97
+        },
+        {
+          "period": "04",
+          "year": 2009,
+          "value": 438.74
+        },
+        {
+          "period": "05",
+          "year": 2009,
+          "value": 443.76
+        },
+        {
+          "period": "06",
+          "year": 2009,
+          "value": 460.52
+        },
+        {
+          "period": "07",
+          "year": 2009,
+          "value": 430.11
+        },
+        {
+          "period": "08",
+          "year": 2009,
+          "value": 407.71
+        },
+        {
+          "period": "09",
+          "year": 2009,
+          "value": 393.67
+        },
+        {
+          "period": "10",
+          "year": 2009,
+          "value": 369.43
+        },
+        {
+          "period": "11",
+          "year": 2009,
+          "value": 356.02
+        },
+        {
+          "period": "12",
+          "year": 2009,
+          "value": 353.82
+        },
+        {
+          "period": "01",
+          "year": 2010,
+          "value": 353.2
+        },
+        {
+          "period": "02",
+          "year": 2010,
+          "value": 346.1
+        },
+        {
+          "period": "03",
+          "year": 2010,
+          "value": 334.98
+        },
+        {
+          "period": "04",
+          "year": 2010,
+          "value": 333.86
+        },
+        {
+          "period": "05",
+          "year": 2010,
+          "value": 330.83
+        },
+        {
+          "period": "06",
+          "year": 2010,
+          "value": 349.03
+        },
+        {
+          "period": "07",
+          "year": 2010,
+          "value": 432.92
+        },
+        {
+          "period": "08",
+          "year": 2010,
+          "value": 476.04
+        },
+        {
+          "period": "09",
+          "year": 2010,
+          "value": 488.82
+        },
+        {
+          "period": "10",
+          "year": 2010,
+          "value": 526.39
+        },
+        {
+          "period": "11",
+          "year": 2010,
+          "value": 566.7
+        },
+        {
+          "period": "12",
+          "year": 2010,
+          "value": 581.83
+        },
+        {
+          "period": "01",
+          "year": 2011,
+          "value": 580.67
+        },
+        {
+          "period": "02",
+          "year": 2011,
+          "value": 598.49
+        },
+        {
+          "period": "03",
+          "year": 2011,
+          "value": 568.31
+        },
+        {
+          "period": "04",
+          "year": 2011,
+          "value": 560.85
+        },
+        {
+          "period": "05",
+          "year": 2011,
+          "value": 549.36
+        },
+        {
+          "period": "06",
+          "year": 2011,
+          "value": 566.61
+        },
+        {
+          "period": "07",
+          "year": 2011,
+          "value": 556.22
+        },
+        {
+          "period": "08",
+          "year": 2011,
+          "value": 531.97
+        },
+        {
+          "period": "09",
+          "year": 2011,
+          "value": 531.66
+        },
+        {
+          "period": "10",
+          "year": 2011,
+          "value": 547.05
+        },
+        {
+          "period": "11",
+          "year": 2011,
+          "value": 553.71
+        },
+        {
+          "period": "12",
+          "year": 2011,
+          "value": 534.88
+        },
+        {
+          "period": "01",
+          "year": 2012,
+          "value": 530.98
+        },
+        {
+          "period": "02",
+          "year": 2012,
+          "value": 524.39
+        },
+        {
+          "period": "03",
+          "year": 2012,
+          "value": 534.23
+        },
+        {
+          "period": "04",
+          "year": 2012,
+          "value": 554.23
+        },
+        {
+          "period": "05",
+          "year": 2012,
+          "value": 563.51
+        },
+        {
+          "period": "06",
+          "year": 2012,
+          "value": 547.16
+        },
+        {
+          "period": "07",
+          "year": 2012,
+          "value": 529.84
+        },
+        {
+          "period": "08",
+          "year": 2012,
+          "value": 503.38
+        },
+        {
+          "period": "09",
+          "year": 2012,
+          "value": 548.05
+        },
+        {
+          "period": "10",
+          "year": 2012,
+          "value": 558.51
+        },
+        {
+          "period": "11",
+          "year": 2012,
+          "value": 558.04
+        },
+        {
+          "period": "12",
+          "year": 2012,
+          "value": 567.61
+        },
+        {
+          "period": "01",
+          "year": 2013,
+          "value": 571.0
+        },
+        {
+          "period": "02",
+          "year": 2013,
+          "value": 579.81
+        },
+        {
+          "period": "03",
+          "year": 2013,
+          "value": 598.79
+        },
+        {
+          "period": "04",
+          "year": 2013,
+          "value": 638.13
+        },
+        {
+          "period": "05",
+          "year": 2013,
+          "value": 640.78
+        },
+        {
+          "period": "06",
+          "year": 2013,
+          "value": 636.77
+        },
+        {
+          "period": "07",
+          "year": 2013,
+          "value": 609.56
+        },
+        {
+          "period": "08",
+          "year": 2013,
+          "value": 562.53
+        },
+        {
+          "period": "09",
+          "year": 2013,
+          "value": 549.8
+        },
+        {
+          "period": "10",
+          "year": 2013,
+          "value": 537.05
+        },
+        {
+          "period": "11",
+          "year": 2013,
+          "value": 535.46
+        },
+        {
+          "period": "12",
+          "year": 2013,
+          "value": 541.82
+        },
+        {
+          "period": "01",
+          "year": 2014,
+          "value": 546.32
+        },
+        {
+          "period": "02",
+          "year": 2014,
+          "value": 539.41
+        },
+        {
+          "period": "03",
+          "year": 2014,
+          "value": 531.16
+        },
+        {
+          "period": "04",
+          "year": 2014,
+          "value": 521.36
+        },
+        {
+          "period": "05",
+          "year": 2014,
+          "value": 544.07
+        },
+        {
+          "period": "06",
+          "year": 2014,
+          "value": 551.94
+        },
+        {
+          "period": "07",
+          "year": 2014,
+          "value": 543.14
+        },
+        {
+          "period": "08",
+          "year": 2014,
+          "value": 530.28
+        },
+        {
+          "period": "09",
+          "year": 2014,
+          "value": 493.59
+        },
+        {
+          "period": "10",
+          "year": 2014,
+          "value": 466.92
+        },
+        {
+          "period": "11",
+          "year": 2014,
+          "value": 470.21
+        },
+        {
+          "period": "12",
+          "year": 2014,
+          "value": 492.44
+        },
+        {
+          "period": "01",
+          "year": 2015,
+          "value": 514.25
+        },
+        {
+          "period": "02",
+          "year": 2015,
+          "value": 542.78
+        },
+        {
+          "period": "03",
+          "year": 2015,
+          "value": 550.85
+        },
+        {
+          "period": "04",
+          "year": 2015,
+          "value": 550.51
+        },
+        {
+          "period": "05",
+          "year": 2015,
+          "value": 545.02
+        },
+        {
+          "period": "06",
+          "year": 2015,
+          "value": 535.46
+        },
+        {
+          "period": "07",
+          "year": 2015,
+          "value": 548.27
+        },
+        {
+          "period": "08",
+          "year": 2015,
+          "value": 542.4
+        },
+        {
+          "period": "09",
+          "year": 2015,
+          "value": 511.36
+        },
+        {
+          "period": "10",
+          "year": 2015,
+          "value": 482.69
+        },
+        {
+          "period": "11",
+          "year": 2015,
+          "value": 465.76
+        },
+        {
+          "period": "12",
+          "year": 2015,
+          "value": 456.61
+        },
+        {
+          "period": "01",
+          "year": 2016,
+          "value": 475.69
+        },
+        {
+          "period": "02",
+          "year": 2016,
+          "value": 469.86
+        },
+        {
+          "period": "03",
+          "year": 2016,
+          "value": 474.32
+        },
+        {
+          "period": "04",
+          "year": 2016,
+          "value": 441.82
+        },
+        {
+          "period": "05",
+          "year": 2016,
+          "value": 445.44
+        },
+        {
+          "period": "06",
+          "year": 2016,
+          "value": 444.67
+        },
+        {
+          "period": "07",
+          "year": 2016,
+          "value": 443.97
+        },
+        {
+          "period": "08",
+          "year": 2016,
+          "value": 436.18
+        },
+        {
+          "period": "09",
+          "year": 2016,
+          "value": 429.33
+        },
+        {
+          "period": "10",
+          "year": 2016,
+          "value": 452.32
+        },
+        {
+          "period": "11",
+          "year": 2016,
+          "value": 456.37
+        },
+        {
+          "period": "12",
+          "year": 2016,
+          "value": 482.77
+        },
+        {
+          "period": "01",
+          "year": 2017,
+          "value": 497.85
+        },
+        {
+          "period": "02",
+          "year": 2017,
+          "value": 489.31
+        },
+        {
+          "period": "03",
+          "year": 2017,
+          "value": 485.62
+        },
+        {
+          "period": "04",
+          "year": 2017,
+          "value": 487.79
+        },
+        {
+          "period": "05",
+          "year": 2017,
+          "value": 481.04
+        },
+        {
+          "period": "06",
+          "year": 2017,
+          "value": 453.73
+        },
+        {
+          "period": "07",
+          "year": 2017,
+          "value": 432.91
+        },
+        {
+          "period": "08",
+          "year": 2017,
+          "value": 430.45
+        },
+        {
+          "period": "09",
+          "year": 2017,
+          "value": 450.86
+        },
+        {
+          "period": "10",
+          "year": 2017,
+          "value": 468.9
+        },
+        {
+          "period": "11",
+          "year": 2017,
+          "value": 474.88
+        },
+        {
+          "period": "12",
+          "year": 2017,
+          "value": 476.51
+        },
+        {
+          "period": "01",
+          "year": 2018,
+          "value": 469.8
+        },
+        {
+          "period": "02",
+          "year": 2018,
+          "value": 472.28
+        },
+        {
+          "period": "03",
+          "year": 2018,
+          "value": 477.63
+        },
+        {
+          "period": "04",
+          "year": 2018,
+          "value": 471.45
+        },
+        {
+          "period": "05",
+          "year": 2018,
+          "value": 477.83
+        },
+        {
+          "period": "06",
+          "year": 2018,
+          "value": 486.95
+        },
+        {
+          "period": "07",
+          "year": 2018,
+          "value": 489.74
+        },
+        {
+          "period": "08",
+          "year": 2018,
+          "value": 487.76
+        },
+        {
+          "period": "09",
+          "year": 2018,
+          "value": 479.74
+        },
+        {
+          "period": "10",
+          "year": 2018,
+          "value": 491.68
+        },
+        {
+          "period": "11",
+          "year": 2018,
+          "value": 486.88
+        },
+        {
+          "period": "12",
+          "year": 2018,
+          "value": 494.42
+        },
+        {
+          "period": "01",
+          "year": 2019,
+          "value": 503.67
+        },
+        {
+          "period": "02",
+          "year": 2019,
+          "value": 506.42
+        },
+        {
+          "period": "03",
+          "year": 2019,
+          "value": 515.92
+        },
+        {
+          "period": "04",
+          "year": 2019,
+          "value": 519.04
+        },
+        {
+          "period": "05",
+          "year": 2019,
+          "value": 527.39
+        },
+        {
+          "period": "06",
+          "year": 2019,
+          "value": 529.62
+        },
+        {
+          "period": "07",
+          "year": 2019,
+          "value": 534.47
+        },
+        {
+          "period": "08",
+          "year": 2019,
+          "value": 529.36
+        },
+        {
+          "period": "09",
+          "year": 2019,
+          "value": 511.87
+        },
+        {
+          "period": "10",
+          "year": 2019,
+          "value": 500.84
+        },
+        {
+          "period": "11",
+          "year": 2019,
+          "value": 498.71
+        },
+        {
+          "period": "12",
+          "year": 2019,
+          "value": 512.94
+        },
+        {
+          "period": "01",
+          "year": 2020,
+          "value": 514.22
+        },
+        {
+          "period": "02",
+          "year": 2020,
+          "value": 531.7
+        },
+        {
+          "period": "03",
+          "year": 2020,
+          "value": 526.81
+        },
+        {
+          "period": "04",
+          "year": 2020,
+          "value": 549.49
+        },
+        {
+          "period": "05",
+          "year": 2020,
+          "value": 571.27
+        },
+        {
+          "period": "06",
+          "year": 2020,
+          "value": 563.86
+        },
+        {
+          "period": "07",
+          "year": 2020,
+          "value": 582.89
+        },
+        {
+          "period": "08",
+          "year": 2020,
+          "value": 563.73
+        },
+        {
+          "period": "09",
+          "year": 2020,
+          "value": 562.82
+        },
+        {
+          "period": "10",
+          "year": 2020,
+          "value": 577.52
+        },
+        {
+          "period": "11",
+          "year": 2020,
+          "value": 620.53
+        },
+        {
+          "period": "12",
+          "year": 2020,
+          "value": 640.4
+        },
+        {
+          "period": "01",
+          "year": 2021,
+          "value": 680.64
+        },
+        {
+          "period": "02",
+          "year": 2021,
+          "value": 727.82
+        },
+        {
+          "period": "03",
+          "year": 2021,
+          "value": 766.3
+        },
+        {
+          "period": "04",
+          "year": 2021,
+          "value": 794.56
+        },
+        {
+          "period": "05",
+          "year": 2021,
+          "value": 821.19
+        },
+        {
+          "period": "06",
+          "year": 2021,
+          "value": 824.91
+        },
+        {
+          "period": "07",
+          "year": 2021,
+          "value": 850.7
+        },
+        {
+          "period": "08",
+          "year": 2021,
+          "value": 853.86
+        },
+        {
+          "period": "09",
+          "year": 2021,
+          "value": 891.31
+        },
+        {
+          "period": "10",
+          "year": 2021,
+          "value": 1087.93
+        },
+        {
+          "period": "11",
+          "year": 2021,
+          "value": 1138.43
+        },
+        {
+          "period": "12",
+          "year": 2021,
+          "value": 1096.49
+        },
+        {
+          "period": "01",
+          "year": 2022,
+          "value": 1243.34
+        },
+        {
+          "period": "02",
+          "year": 2022,
+          "value": 1372.77
+        },
+        {
+          "period": "03",
+          "year": 2022,
+          "value": 1264.39
+        },
+        {
+          "period": "04",
+          "year": 2022,
+          "value": 1381.23
+        },
+        {
+          "period": "05",
+          "year": 2022,
+          "value": 1320.05
+        },
+        {
+          "period": "06",
+          "year": 2022,
+          "value": 1383.61
+        },
+        {
+          "period": "07",
+          "year": 2022,
+          "value": 1341.54
+        },
+        {
+          "period": "08",
+          "year": 2022,
+          "value": 1230.9
+        },
+        {
+          "period": "09",
+          "year": 2022,
+          "value": 1077.56
+        },
+        {
+          "period": "10",
+          "year": 2022,
+          "value": 984.02
+        },
+        {
+          "period": "11",
+          "year": 2022,
+          "value": 1007.49
+        },
+        {
+          "period": "12",
+          "year": 2022,
+          "value": 903.79
+        },
+        {
+          "period": "01",
+          "year": 2023,
+          "value": 759.02
+        },
+        {
+          "period": "02",
+          "year": 2023,
+          "value": 709.43
+        },
+        {
+          "period": "03",
+          "year": 2023,
+          "value": 735.54
+        },
+        {
+          "period": "04",
+          "year": 2023,
+          "value": 738.91
+        },
+        {
+          "period": "05",
+          "year": 2023,
+          "value": 644.25
+        },
+        {
+          "period": "06",
+          "year": 2023,
+          "value": 602.46
+        },
+        {
+          "period": "07",
+          "year": 2023,
+          "value": 634.35
+        },
+        {
+          "period": "08",
+          "year": 2023,
+          "value": 614.39
+        },
+        {
+          "period": "09",
+          "year": 2023,
+          "value": 587.01
+        },
+        {
+          "period": "10",
+          "year": 2023,
+          "value": 632.42
+        },
+        {
+          "period": "11",
+          "year": 2023,
+          "value": 642.3
+        },
+        {
+          "period": "12",
+          "year": 2023,
+          "value": 668.51
+        },
+        {
+          "period": "01",
+          "year": 2024,
+          "value": 635.23
+        },
+        {
+          "period": "02",
+          "year": 2024,
+          "value": 611.19
+        },
+        {
+          "period": "03",
+          "year": 2024,
+          "value": 611.7
+        },
+        {
+          "period": "04",
+          "year": 2024,
+          "value": 624.29
+        },
+        {
+          "period": "05",
+          "year": 2024,
+          "value": 632.33
+        },
+        {
+          "period": "06",
+          "year": 2024,
+          "value": 648.73
+        },
+        {
+          "period": "07",
+          "year": 2024,
+          "value": 655.72
+        },
+        {
+          "period": "08",
+          "year": 2024,
+          "value": 647.88
+        },
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 632.1
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 649.82
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 659.81
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 680.36
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 688.25
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 710.67
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 725.98
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 735.92
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 779.98
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 814.07
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 811.4
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 745.34
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 681.88
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 695.25
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 676.96
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 651.67
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 653.37
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 655.56
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 660.54
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 667.78
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 672.31
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 668.0
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 650.36
+        }
+      ]
+    },
+    {
       "id": "di_lacteos_leche_ca",
       "product": "leche",
       "region": "ca",
@@ -89298,7 +94178,7 @@
       "observationDate": "2026-07",
       "publicationDate": "2026-09-10",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:05:23Z",
+      "verifiedAt": "2026-09-30T17:17:21Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Quebec, Unprocessed milk from bovine, publicado en CAD per kilolitre; expresado en CAD/100 kg con una densidad de 1,03 kg/l (estándar de la leche de vaca). Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 87.1388,
@@ -90518,7 +95398,7 @@
       "observationDate": "2026-07",
       "publicationDate": "2026-09-10",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:05:23Z",
+      "verifiedAt": "2026-09-30T17:17:21Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Alberta, Steers for slaughter, publicado en CAD per hundredweight. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 340.59,
@@ -91738,7 +96618,7 @@
       "observationDate": "2026-07",
       "publicationDate": "2026-09-10",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:05:23Z",
+      "verifiedAt": "2026-09-30T17:17:21Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Hogs, publicado en CAD per hundredweight. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 118.37,
@@ -92958,7 +97838,7 @@
       "observationDate": "2026-07",
       "publicationDate": "2026-09-10",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:05:23Z",
+      "verifiedAt": "2026-09-30T17:17:21Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Lambs, publicado en CAD per hundredweight. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 363.8,
@@ -94178,7 +99058,7 @@
       "observationDate": "2026-07",
       "publicationDate": "2026-09-10",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:05:23Z",
+      "verifiedAt": "2026-09-30T17:17:21Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Chickens for meat, publicado en CAD per kilogram. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 2.77,
@@ -95398,7 +100278,7 @@
       "observationDate": "2026-07",
       "publicationDate": "2026-09-10",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:05:23Z",
+      "verifiedAt": "2026-09-30T17:17:21Z",
       "comparability": "directional",
       "methodology": "Statistics Canada, tabla 32-10-0077-01 (Farm product prices, crops and livestock; Open Government Licence - Canada): precio mensual pagado al productor en Ontario, Eggs in shell, publicado en CAD per dozen. Canadá no publica total nacional en esta tabla: se usa la provincia de referencia.",
       "value": 2.19,

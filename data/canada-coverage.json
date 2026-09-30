@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-30T17:05:23Z",
+ "generatedAt": "2026-09-30T17:17:21Z",
  "table": 32100077,
  "tableMax": "2026-07",
  "publicationDate": "2026-09-10",
@@ -149,6 +149,100 @@
     }
    },
    "result": "SIN DATO: ninguna provincia cumple (último dato <= 3 meses y >= 24 meses de los últimos 36)"
+  },
+  "soja_grano": {
+   "statcanProduct": "Soybeans",
+   "candidates": {
+    "Ontario": {
+     "last": "2026-07",
+     "points": 415,
+     "last36m": 36
+    },
+    "Quebec": {
+     "last": "2026-07",
+     "points": 415,
+     "last36m": 36
+    },
+    "Manitoba": {
+     "last": "2026-07",
+     "points": 198,
+     "last36m": 36
+    }
+   },
+   "result": {
+    "province": "Ontario",
+    "last": "2026-07",
+    "value": 611.45,
+    "unit": "tonelada"
+   }
+  },
+  "lenteja": {
+   "statcanProduct": "Lentils",
+   "candidates": {
+    "Saskatchewan": {
+     "last": "2026-07",
+     "points": 475,
+     "last36m": 36
+    },
+    "Alberta": {
+     "last": "2026-07",
+     "points": 441,
+     "last36m": 35
+    }
+   },
+   "result": {
+    "province": "Saskatchewan",
+    "last": "2026-07",
+    "value": 525.08,
+    "unit": "tonelada"
+   }
+  },
+  "guisante_seco": {
+   "statcanProduct": "Dry peas",
+   "candidates": {
+    "Saskatchewan": {
+     "last": "2026-07",
+     "points": 473,
+     "last36m": 36
+    },
+    "Alberta": {
+     "last": "2026-07",
+     "points": 474,
+     "last36m": 36
+    },
+    "Manitoba": {
+     "last": "2026-07",
+     "points": 454,
+     "last36m": 35
+    }
+   },
+   "result": {
+    "province": "Saskatchewan",
+    "last": "2026-07",
+    "value": 296.07,
+    "unit": "tonelada"
+   }
+  },
+  "lino": {
+   "statcanProduct": "Flaxseed",
+   "candidates": {
+    "Saskatchewan": {
+     "last": "2026-07",
+     "points": 499,
+     "last36m": 36
+    },
+    "Manitoba": {
+     "last": "2026-04",
+     "points": 466,
+     "last36m": 10
+    }
+   },
+   "result": {
+    "province": "Saskatchewan",
+    "last": "2026-07",
+    "value": 650.36,
+    "unit": "tonelada"
+   }
   },
   "leche": {
    "statcanProduct": "Unprocessed milk from bovine",

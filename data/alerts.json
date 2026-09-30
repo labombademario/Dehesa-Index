@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:05:28.080Z",
+  "generatedAt": "2026-09-30T17:17:25.351Z",
   "status": "informational",
   "rules": [
     {
@@ -213,6 +213,14 @@
     },
     {
       "type": "stale_data",
+      "product": "guisante_seco",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
       "product": "huevos",
       "region": "ca",
       "sourceId": "statcan",
@@ -253,6 +261,22 @@
     },
     {
       "type": "stale_data",
+      "product": "lenteja",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "lino",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
       "product": "maiz",
       "region": "ca",
       "sourceId": "statcan",
@@ -288,6 +312,14 @@
       "product": "potasa",
       "region": "eu",
       "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "soja_grano",
+      "region": "ca",
+      "sourceId": "statcan",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
@@ -341,11 +373,29 @@
     },
     {
       "type": "period_move",
+      "product": "guisante_seco",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": -10.23,
+      "observationDate": "2026-07-01"
+    },
+    {
+      "type": "period_move",
       "product": "cordero",
       "region": "ca",
       "sourceId": "statcan",
       "severity": "high",
       "changePct": -10.17,
+      "observationDate": "2026-07-01"
+    },
+    {
+      "type": "period_move",
+      "product": "lenteja",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "watch",
+      "changePct": -6.23,
       "observationDate": "2026-07-01"
     },
     {
