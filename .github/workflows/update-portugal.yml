@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '40 16 * * 2,5'
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'olive = solo aceite de oliva (rápido); vacío = todo'
+        required: false
+        default: ''
 permissions:
   contents: write
 concurrency:
@@ -14,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo ok
-      - run: python3 scripts/update-portugal.py
+      - run: python3 scripts/update-portugal.py ${{ github.event.inputs.mode }}
         timeout-minutes: 25
       - run: |
           git config user.name "github-actions[bot]"

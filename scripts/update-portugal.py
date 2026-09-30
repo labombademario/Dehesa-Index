@@ -38,7 +38,7 @@ def rows(v):
             if 'valor' not in r: continue
             try: val = float(r['valor'])
             except ValueError: continue
-            out.append((p, r.get('geodsg', ''), r.get('dim_3_t', ''), val))
+            out.append((p, r.get('geodsg', ''), r.get('dim_3_t', ''), val, r.get('dim_4_t', ''), r.get('dim_5_t', '')))
     return out
 OUT = {}
 def put(sid, group, label, unit, freq, pts, extra=None):
@@ -81,7 +81,7 @@ def run(spec):
     nat = [g for g in geos if g.lower().startswith('portugal')]
     if not nat: log(v, tag, 'sin total nacional; geos:', geos[:8]); return
     g0 = nat[0]; by = {}
-    for p, g, c, val in rs:
+    for p, g, c, val, *_ in rs:
         if g == g0: by.setdefault(c, {})[p] = val
     n = 0
     for c, d in by.items():
@@ -90,10 +90,37 @@ def run(spec):
         f = freq
         put('pt-%s-%s' % (tag, slug(c) or 'total'), group, lab, unit, f, list(d.items()), {'sourceGroup': sg}); n += 1
     log(v, tag, n, 'series')
+def olive():
+    """Aceite de oliva: total nacional (0000709, Portugal, prensas/acidez/extracción = Total) y por acidez en el Continente (0013162)."""
+    rs = rows('0000709'); d = {}
+    for p, g, c, val, c4, c5 in rs:
+        if g.lower().startswith('portugal') and c.lower() == 'total' and c4.lower() == 'total' and c5.lower() == 'total': d[p] = val
+    put('pt-oliveoil-total', 'crops', 'Olive oil produced: Portugal total', 'hl', 'annual', list(d.items()), {'sourceGroup': 'INE – Olive oil production survey'})
+    rs = rows('0013162'); by = {}
+    for p, g, c, val, *_ in rs:
+        if g == 'Continente': by.setdefault(c, {})[p] = val
+    for c, dd in by.items():
+        if c.lower() == 'total': continue
+        put('pt-oliveoil-acidity-' + slug(c), 'crops', 'Olive oil produced (mainland): acidity %s %%' % c.replace('up to', '≤').replace('over', '>'), 'hl', 'annual', list(dd.items()), {'sourceGroup': 'INE – Olive oil production survey'})
+    log('azeite', len([k for k in OUT if k.startswith('pt-oliveoil')]), 'series')
+
+def merge_only(fn):
+    doc = json.load(open('data/portugal-stats.json'))
+    ser = {x['id']: x for x in doc['countries']['PT']['series']}
+    fn(); ser.update(OUT)
+    doc['countries']['PT']['series'] = list(ser.values())
+    doc['generatedAt'] = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'); doc['log'] = LOG[-30:]
+    json.dump(doc, open('data/portugal-stats.json', 'w'), ensure_ascii=False, separators=(',', ':'))
+    open('data/portugal-log.txt', 'w').write('\n'.join(LOG)); log('series', len(ser))
+
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == 'olive':
+        merge_only(olive); return
     for s in SPECS:
         try: run(s)
         except Exception as e: log('ERROR', s[0], repr(e))
+    try: olive()
+    except Exception as e: log('ERROR olive', repr(e))
     if UNPARSED: log('periodos no reconocidos:', sorted(UNPARSED)[:8])
     if len(OUT) < 30:
         log('demasiado pocas series'); open('data/portugal-log.txt', 'w').write('\n'.join(LOG)); sys.exit(1)
