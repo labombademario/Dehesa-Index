@@ -1,0 +1,42 @@
+RES HISTORIQUE DES PRIX (TRIMESTRIELS ET MENSUELS) MOYENS PAYÉS AUX PRODUCTEURS DEPU https://visionet.franceagrimer.fr/Pages/OpenDocument.aspx?fileurl=SeriesChronologiques%2fproductions%20vegetales%2fgrandes%20cultures%2fprix%20pay%c3%a9s%20aux%20producteurs%2fSCR-CER-HISTOPRIXTRIMESTRIELS-C25-26.xlsx&telechargersanscomptage=oui
+DL application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 258952 https://visionet.franceagrimer.fr/Pages/OpenDocument.aspx?fileurl=SeriesChronologiques%2fproductions%20vegetales%2fgrandes%20cultures%2fprix%20pay%c3%a9s%20aux%20producteurs%2fSCR-CER-HISTOPRIXTRIMESTRIELS-C25-26.xlsx&telechargersanscomptage=oui b'PK\x03\x04\x14\x00\x06\x00'
+SHEET Infos 19 13
+   [None, None, None, None, None, None, None, None, None, None]
+   ['HISTORIQUE_PRIX PAYES AUX PRODUCTEURS_TRIMESTRIELS', None, None, None, None, None, None, None, None, None]
+   ['Données arrêtées au : 31 mars 2026', None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   ["Le présent fichier contient l'historique des données des prix payés par les collecteurs aux producteurs issues de l'enquête trimestrielle FranceAgriMer. ", None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   ["Le but de l’enquête est d'obtenir un prix moyen payé au producteur consolidé au fil de la campagne, cumulé chaque trimestre, prenant en compte les compléments versés au cours de celle-ci et les réfactions et bonifications éventuelles, pour obtenir un prix « complet » en fin de campagne.", None, None, None, None, None, None, None, None, None]
+   ["L'enquête concerne les céréales et les oléoprotéagineux en agriculture conventionnelle. Elle s'appuie, dans chaque région sur les données issues de la comptabilité des collecteurs d'un panel (prix moyen = valeur des apports / tonnages collectés) afin de déduire un prix moyen régional par espèce depuis le début de la campagne. Ce prix est ensuite pondéré par la collecte au niveau régional pour l'obtention d'une moyenne nationale par espèce. ", None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   ['Campagnes : 2004/05-2025/26', None, None, None, None, None, None, None, None, None]
+   ['Périmètre géographique : France', None, None, None, None, None, None, None, None, None]
+   ['Espèces : Blé tendre;Blé dur;Orges;Maïs;Seigle;Avoine;Sorgho;Triticale;Colza;Pois;Tournesol;Féverole;Soja;Epeautre;Lentilles;Lin;Lupin;Riz;Sarrasin', None, None, None, None, None, None, None, None, None]
+SHEET Publication nationale 115 24
+   [None, None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   [None, None, None, None, None, None, None, None, None, None]
+   ['Trimestre *', 'Campagne **', 'Blé tendre', 'Blé dur', 'Orges', 'Maïs', 'Seigle', 'Avoine', 'Sorgho', 'Triticale']
+   [4, '2004/05', 95.3986737280077, 129.352093435596, 94.0346626204703, 82.2024777373577, 91.222468337553, 78.9617876610201, 82.1575143316825, 85.1639223676137]
+PAGE 101421 https://visionet.franceagrimer.fr/Pages/SeriesChronologiques.aspx?sousmenu=productions%20vegetales
+ F {fileurl:presentationurl,
+ F fileurl
+ F /Pages/OpenDocument.aspx?fileurl=
+ F +fileurl);
+ F +fileurl
+ F if(fileurl!=null)
+ F {fileurl:fileurl,
+ F {fileurl:fileurl},
+ F /*if(fileurl.indexOf(
+ F fileurl.substring(0,
+ F fileurl.length
+ FORMS ['__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTc4MDE0NTA0NQ9kFgJmD2QWAgIBD2QWAgIBD2QWAgIZD2'] ["__doPostBack('ctl00$ConfirmerValider','')"]
+ CTX tyle.position="absolute"; document.getElementById("afficherListeDocs").style.left="45%"; } //si on vient du search var search = "SeriesChronologiques/productions vegetales/grandes cultures/cotations"; //alert(search); //console.log(location.href); //console.log(search + ":" + location.href); //console.log(unescape(search)); if(search!="") { // if($.browser.msie) { if(location.href.indexOf("&menuurl")>0) { // WKH - 2018-01-29 - Fiche 55629 // search = location.href.substr(location.href.indexOf("&")+9); search = decodeURIComponent(location.href.substr(location.href.indexOf("&")+9).replace(/\+/g," ")); } $.ajax({ type: 'POST', url:"VisioCreateSession.aspx?action=set&param=reLoad&paramvalue=non", 
