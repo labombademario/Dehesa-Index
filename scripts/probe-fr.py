@@ -1,36 +1,34 @@
-import time,urllib.request,urllib.parse,re,http.cookiejar
+import time,urllib.request,urllib.parse,re,http.cookiejar,json,io
 cj=http.cookiejar.CookieJar()
 op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
-def get(u,n=3000000,raw=False):
+def get(u,n=8000000):
     last=''
     for i in range(3):
         try:
-            r=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) DehesaIndex','Accept':'text/html,*/*','Accept-Language':'fr,en'})
-            with op.open(r,timeout=90) as x:
+            r=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) DehesaIndex','Accept':'*/*','Accept-Language':'fr,en'})
+            with op.open(r,timeout=120) as x:
                 b=x.read(n); ct=x.headers.get('content-type')
-            if raw: return b,ct,x.geturl()
-            try: return b.decode('utf-8-sig'),ct,x.geturl()
-            except: return b.decode('latin-1'),ct,x.geturl()
+            return b,ct,x.geturl()
         except Exception as e: last='ERR %s'%e; time.sleep(5)
-    return last,None,None
+    return last.encode(),None,None
 out=[]
 def P(*a): out.append(' '.join(str(x) for x in a))
-def text(h):
-    t=re.sub(r'<script.*?</script>|<style.*?</style>','',h,flags=re.S); t=re.sub(r'<[^>]+>',' ',t); return re.sub(r'\s+',' ',t)
-s,ct,_=get('https://www.franceagrimer.fr/mentions-legales'); t=text(s)
-for m in re.finditer(r'(Licence Ouverte|réutilis|Réutilis)',t): pass
-i=t.find('éutilisation'); P('#### MENTIONS',len(t))
-for m in list(re.finditer(r'(?i)licence ouverte|réutilisation des (données|contenus)',t))[:4]: P(' ...',t[max(0,m.start()-300):m.start()+900]); 
-s,ct,_=get('https://agreste.agriculture.gouv.fr/agreste-web/mentions/mentions/'); P('#### AGRESTE',ct,len(s)); P(text(s)[:1500])
-pages=['https://visionet.franceagrimer.fr/Pages/SeriesChronologiques.aspx?menuurl=SeriesChronologiques/productions%20vegetales/grandes%20cultures/cotations',
-'https://visionet.franceagrimer.fr/Pages/SeriesChronologiques.aspx?menuurl=SeriesChronologiques/productions%20vegetales/grandes%20cultures/prix%20pay%C3%A9s%20aux%20producteurs',
-'https://visionet.franceagrimer.fr/Pages/SeriesChronologiques.aspx?menuurl=SeriesChronologiques/productions%20animales/viandes/gros%20bovins%20entr%C3%A9e%20abattoir',
-'https://visionet.franceagrimer.fr/Pages/SeriesChronologiques.aspx?menuurl=SeriesChronologiques%2Fproductions%20animales%2Fviandes%2Fs%C3%A9ries%20hebdomadaires%2Fsynth%C3%A8se%20toutes%20esp%C3%A8ces',
-'https://visionet.franceagrimer.fr/Pages/Statistiques.aspx?menuurl=Statistiques%2Fproductions%20animales%2Fviandes%2Fcotations%20en%20format%20csv%2Fporcs%20charcutiers']
-for u in pages:
-    s,ct,fu=get(u); P('####PAGE',u[60:200],'|',ct,len(s),'|',(fu or '')[:120])
-    if len(s)<300: P(s); continue
-    links=re.findall(r'href=["\']([^"\']*(?:OpenDocument|\.xlsx|\.xls|\.csv|\.zip)[^"\']*)["\']',s,flags=re.I)
-    for l in list(dict.fromkeys(links))[:40]: P(' LINK',urllib.parse.unquote(l)[:300])
-    P(' TEXT',text(s)[:500])
-open('data/probe/fr3.txt','w').write('\n'.join(out))
+# 1) el xlsx de precios pagados a productores
+g=json.loads(get('https://www.data.gouv.fr/api/1/datasets/historique-des-prix-moyens-mensuels-et-trimestriels-payes-aux-producteurs-depuis-2005-cereales-et-oleoproteagineux/')[0])
+for r in g['resources']: P('RES',r['title'][:80],r['url'])
+url=g['resources'][0]['url']
+b,ct,fu=get(url); P('DL',ct,len(b),fu,b[:8])
+try:
+    import openpyxl
+    wb=openpyxl.load_workbook(io.BytesIO(b),data_only=True)
+    for ws in wb.worksheets:
+        P('SHEET',ws.title,ws.max_row,ws.max_column)
+        for row in list(ws.iter_rows(values_only=True))[:12]: P('  ',[c for c in row[:10]])
+except Exception as e: P('XLSX ERR',e)
+# 2) pagina menu: buscar fileurl/xlsx en html
+for u in ['https://visionet.franceagrimer.fr/Pages/SeriesChronologiques.aspx?menuurl=SeriesChronologiques/productions%20vegetales/grandes%20cultures/cotations']:
+    b,ct,fu=get(u); s=b.decode('utf-8','replace'); P('PAGE',len(s),fu)
+    for m in list(dict.fromkeys(re.findall(r'[^"\'<>\s]*(?:fileurl|\.xlsx|\.csv)[^"\'<>\s]*',s,flags=re.I)))[:40]: P(' F',urllib.parse.unquote(m)[:250])
+    P(' FORMS',re.findall(r'__VIEWSTATE[^>]{0,80}',s)[:1],re.findall(r'__doPostBack\([^)]*\)',s)[:15])
+    i=s.find('cotations'); P(' CTX',re.sub(r'\s+',' ',s[i-200:i+600]))
+open('data/probe/fr4.txt','w').write('\n'.join(out))

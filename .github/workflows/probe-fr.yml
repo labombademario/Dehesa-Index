@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p data/probe && python3 scripts/probe-fr.py
+      - run: mkdir -p data/probe && pip install -q openpyxl && python3 scripts/probe-fr.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
