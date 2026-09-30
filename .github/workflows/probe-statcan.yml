@@ -1,0 +1,26 @@
+name: Probe Statistics Canada
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/probe-statcan.py 2>&1 | tee data/probe-statcan-log.txt
+        continue-on-error: true
+      - run: |
+          git config user.name "Dehesa Index Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/probe-statcan data/probe-statcan-log.txt
+          git diff --cached --quiet || git commit -m "probe: Statistics Canada tables"
+          git pull --rebase origin main
+          git push
