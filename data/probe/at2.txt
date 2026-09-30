@@ -1,0 +1,168 @@
+=== https://www.data.gv.at/api/hub/search/datasets/agrar-marktdaten-erhoben-durch-die-agrarmarkt-austria
+{"title": {"de": "Agrar-Marktdaten erhoben durch die Agrarmarkt Austria (AMA)"}, "description": {"de": "Der Bereich Marktinformation der Agrarmarkt Austria erhebt Marktdaten für bestimmte Produkte aus den einzelnen Marktsegmenten des Agrarsektors. Rechtliche Grundlage dafür bilden Meldeverpflichtungen basierend auf Agrarmarkttransparenzverordnung BGBl. II Nr. 312/2021 (AMTVO), Düngemittel-Meldeverordnung, AMA-Gesetz und Durchführungsverordnung (EU) 2017/1185 der Kommission.\n\nDaten aus den Bereichen Obst und Gemüse, Getreide und Ölsaaten, Vieh und Fleisch, Eier und Geflügel, Milch und Milchprodukte, Lebensmitteleinzelhandel und Verarbeitungsbetriebe, Düngemittel und Futtermittel werden als Zeitreihe angezeigt.\n\nZur Verfügung stehen Erzeugerpreise, Großhandelspreise, Börsenpreise, Schlachtzahlen, Erträge und Flächendaten als auch Milchanlieferungsdaten. Die Daten sind je nach Erhebungsintervall aktuell, Details siehe https://www.ama.at/marktinformationen/.\n\nDie in der Anwendung \"AMA Markdaten Vergleich\" downloadbaren Daten stammen aus unterschiedlichen Quellen. Nur jene von der AMA zur Verfügung gestellten Daten (siehe Quellenangabe: \"AMA\") werden von der AMA unter der Open Daten Lizenz CC-BY 4.0 bereitgestellt. Für alle nicht von der AMA stammenden Daten sind die Nutzungsbedingungen beim jeweiligen Datenbereitsteller zu erfragen.\n\nDie Anwendung kann unter https://marktinformation.ama.at/ aufgerufen werden."}, "license": null, "licence": null, "modified": "2025-10-0
+  DIST {'de': 'Anwendung "AMA Marktdaten Vergleich"'} | None | ['https://marktinformation.ama.at/'] | {"resource": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0"}
+=== https://www.data.gv.at/api/hub/search/datasets/amtliche-statistiken-der-agrarmarkt-austria
+{"title": {"de": "Amtliche Statistiken der Agrarmarkt Austria"}, "description": {"de": "Dieser IFG-Informationspool der Agrarmarkt Austria (AMA) enthält Auswertungen und Statistiken, unter anderem zu den Themenbereichen Eier und Geflügel, Getreide und Ölsaaten, Milch und Milchprodukte, Obst und Gemüse, Vieh und Fleisch, Zucker, Preise / Indices / Prognosen, Preistransparenz, sowie Anwendungen mit weiteren detaillierteren Datenauswertungen und Datenpräsentationen."}, "license": null, "licence": null, "modified": "2026-01-14"}
+  DIST {'de': 'Amtliche Statistiken der Agrarmarkt Austria'} | None | ['https://www.ama.at/marktinformationen/'] | {"resource": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0"}
+=== Preisindex Land- und Forstwirtschaft
+- af90d8fc-2ff3-39a7-88f9-bf8c61ab42f4 | {'de': 'Wirtschaftsatlas: Land- und Forstwirtschaft ab 1995'} | Statistik Austria
+- 0d977d41-5c0e-31ee-b618-e29ce99bbdcf | {'de': 'Preisindex für Ausrüstungsinvestitionen (2005=100)'} | Statistik Austria
+- 23f6d410-ad4c-337a-8fa7-73a40ab6e606 | {'de': 'Preisindex für Ausrüstungsinvestitionen (2015=100)'} | Statistik Austria
+- a5c89814-4dec-3d64-9f97-e59d7ad19e97 | {'de': 'Preisindex für Ausrüstungsinvestitionen (2010=100)'} | Statistik Austria
+- 9d7edd39-9d10-3daa-bf62-52a5ba3f93dc | {'de': 'Preisindex für Ausrüstungsinvestitionen (2020=100)'} | Statistik Austria
+- ad8cc7f0-d50d-3158-94ca-ea1a7d0e64e1 | {'de': 'Preisindex für Ausrüstungsinvestitionen (2025=100)'} | Statistik Austria
+=== Agrarpreisindex
+=== Milcherzeugung
+=== Schlachtungen
+=== Viehbestand
+=== Getreideernte
+=== Bio Betriebe
+=== Erzeugerpreise Getreide Schlachtvieh
+- c4b4a6c1-5f4a-3c45-b0b9-9ca633c3170a | {'de': 'Erzeugerpreisindex (2015 = 100) ÖCPA 2015'} | Statistik Austria
+- 835447bf-a9c4-37a9-8050-c42b4de39a19 | {'de': 'Erzeugerpreisindex (2015 = 100) ÖNACE 2008'} | Statistik Austria
+- 89b38cd3-1a46-3b79-8b60-fee5b1d42bbc | {'de': 'Erzeugerpreisindex (2021 = 100) ÖNACE 2008'} | Statistik Austria
+- 9aa91f10-c11d-3b0f-a93a-561441256f97 | {'de': 'Erzeugerpreisindex (2021 = 100) ÖCPA 2015'} | Statistik Austria
+- amtliche-statistiken-der-agrarmarkt-austria | {'de': 'Amtliche Statistiken der Agrarmarkt Austria'} | AMA
+- agrar-marktdaten-erhoben-durch-die-agrarmarkt-austria | {'de': 'Agrar-Marktdaten erhoben durch die Agrarmarkt Austria (AMA)'} | AMA
+=== Düngemittelpreise
+=== https://data.statistik.gv.at/
+
+
+
+
+<!DOCTYPE html>
+<html lang="de">
+	<!-- HEAD fragment -->
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="publisher" content="Statistik Austria"/>
+		<meta name="copyright" content="Statistik Austria"/>
+		<meta name="keywords" content="Österreich, Statistik, Open, Data, open.data"/>
+		<meta name="description" content="Open.data">
+		<meta name="author" content="HE,PW">
+		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="assets/favicon.png">
+
+		<title>Statistik Austria Open.data</title>
+
+		<!-- Bootstrap core CSS  -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"> 
+		
+		<!-- Custom styles for this template -->
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		
+<!-- TOPNAVI fragmet -->
+		<div class="navbar navbar-inverse navbar-fixed-top" id="topNavi" aria-labelledby="topNavi" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarTop">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class=
+=== https://www.statistik.at/services/tools/services/open-data
+ERR HTTP Error 404: Not Found
+=== https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_preisind_land_forst
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="de">
+	<!-- HEAD fragment -->
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="publisher" content="Statistik Austria"/>
+		<meta name="copyright" content="Statistik Austria"/>
+		<meta name="keywords" content="Österreich, Statistik, Open, Data, open.data"/>
+		<meta name="description" content="Open.data">
+		<meta name="author" content="HE,PW">
+		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="assets/favicon.png">
+
+		<title>Statistik Austria Open.data</title>
+
+		<!-- Bootstrap core CSS  -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"> 
+		
+		<!-- Custom styles for this template -->
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+
+		
+<!-- TOPNAVI fragmet -->
+		<div class="navbar navbar-inverse navbar-fixed-top" id="topNavi" aria-labelledby="topNavi" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarTop">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-b
+=== https://www.ama.at/marktinformationen
+
+<!doctype html>
+<html lang="de-AT">
+<head>
+    
+<!--Version: 2.0.303+a03ffa3e64-->
+<title>Marktinformationen</title>
+<meta title="">
+<meta property="og:url" content="https://www.ama.at/marktinformationen">
+<meta property="og:title" content="Marktinformationen">
+<meta property="og:img" content="https://cms.ama.at/images/logo_ama.svg">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/site.css?v=1TJrCOY1gzBqY-TmXWU3qDreu2ea4Er0sJxMBBsiZGg" />
+    
+
+    
+    
+    <!-- Matomo Tag Manager -->
+    <script>
+        var _mtm = window._mtm = window._mtm || [];
+        _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+        (function() {
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.async=true; g.src='https://stats.ama.at/js/container_EF8YElHy.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Tag Manager -->
+
+</head>
+
+<body class="body">
+    
+
+    
+<!-- Header Section -->
+<nav class="c-skiplinks" aria-label="Skip-Navigation">
+    <ul>
+        <li>
+            <a href="#header-container" class="c-skiplinks__link">Zum Header springen</a>
+        </li>
+        <li>
+            <a href="#main-container" class="c-skiplinks__link">Zum Hauptinhalt springen</a>
+        </li>
+        <li>
+            <
