@@ -5,4 +5,6 @@ meses pendientes: 202507,202506,202505,202504,202503,202502,202501,202412,202411
 mes 202507 listo; filas de interés 2797 ; peticiones usadas 134 ; exportaciones totales 6670 M USD
 mes 202506 listo; filas de interés 2713 ; peticiones usadas 268 ; exportaciones totales 6563 M USD
 mes 202505 listo; filas de interés 2805 ; peticiones usadas 402 ; exportaciones totales 7013 M USD
-meses en el fichero: 15 ; parada: límite de la API (429)
+mes 202504 listo; filas de interés 2845 ; peticiones usadas 536 ; exportaciones totales 7560 M USD
+mes 202503 listo; filas de interés 2962 ; peticiones usadas 670 ; exportaciones totales 8789 M USD
+meses en el fichero: 17 ; parada: límite de la API (429)
