@@ -1,47 +1,42 @@
-import urllib.request,urllib.parse,json,io,re,time
-import openpyxl
+import urllib.request,urllib.parse,json,io,re,time,os,http.cookiejar
 out=[]
 def P(*a): out.append(' '.join(str(x) for x in a))
-def get(u,data=None,raw=False,hdr=None):
+def get(u,raw=False):
     try:
-        d=urllib.parse.urlencode(data).encode() if data else None
-        h={'User-Agent':'Mozilla/5.0 DehesaIndex','Accept':'*/*'}; h.update(hdr or {})
-        with urllib.request.urlopen(urllib.request.Request(u,data=d,headers=h),timeout=90) as r: b=r.read(3000000)
+        with urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 DehesaIndex','Accept':'*/*'}),timeout=90) as r: b=r.read(40000000)
         return b if raw else b.decode('utf-8','replace')
     except Exception as e: return b'ERR %s'%str(e).encode() if raw else 'ERR %s'%e
-# --- Francia mensual
-P('#### FR monthly')
-try:
-    g=json.loads(get('https://www.data.gouv.fr/api/1/datasets/historique-des-prix-mensuels-moyens-payes-aux-producteurs-depuis-juillet-2005-cereales/'))
-    P(g.get('license'),g.get('temporal_coverage'))
-    for r in g['resources']: P(' RES',r['title'][:80],r['format'],r['url'])
-    for r in g['resources'][:2]:
-        b=get(r['url'],raw=True); P('DL',len(b),b[:4])
-        if b[:2]==b'PK':
-            wb=openpyxl.load_workbook(io.BytesIO(b),data_only=True,read_only=True)
-            for ws in wb.worksheets:
-                P(' SHEET',ws.title)
-                for k,row in enumerate(ws.iter_rows(values_only=True)):
-                    if k>=16: break
-                    c=[x for x in row if x is not None]
-                    if c: P('   ',[(round(x,1) if isinstance(x,float) else x) for x in c][:12])
-except Exception as e: P('ERR',e)
-# --- Alemania
-P('#### DE genesis')
-for u in ['https://www-genesis.destatis.de/genesisWS/rest/2020/helloworld/logincheck?username=GAST&password=GAST',
-          'https://www-genesis.destatis.de/genesisWS/rest/2020/helloworld/whoami',
-          'https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?username=GAST&password=GAST&name=61211-0003&area=all&format=ffcsv&language=en']:
-    r=get(u); P(u[:110],'->',len(r),r[:700].replace('\n','|'))
-r=get('https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile',data=dict(username='GAST',password='GAST',name='61211-0003',area='all',format='ffcsv',language='en'))
-P('POST tablefile',len(r),r[:1500].replace('\n','|'))
-P('#### DE govdata')
-for q in ['Kuhmilchpreise','Schlachtpreise','Erzeugerpreisindizes landwirtschaftlicher Produkte','Obst Gemüse Markt- und Preisbericht']:
-    r=get('https://www.govdata.de/ckan/api/3/action/package_search?rows=6&q='+urllib.parse.quote(q))
+P('#### packages')
+for n in ['kuhmilchpreise-und-mengen-monatsbericht','wochenbericht-uber-schlachtvieh-und-fleisch-nach-der-1-figdv','markt-und-preisbericht-obst-und-gemuse','erzeugerpreisindizes-landwirtschaftlicher-produkte-deutschland-jahre-landwirtschaftliche-produk']:
     try:
-        j=json.loads(r)
-        for d in j['result']['results']:
-            P(' DS',q,'|',d['name'],'|',d.get('license_id'),'|',d.get('organization',{}).get('title') if d.get('organization') else None)
-            for x in d.get('resources',[])[:8]: P('    RES',x.get('format'),x.get('name','')[:60],x.get('url'))
-    except Exception as e: P(' ERR',q,r[:200])
-import os;os.makedirs('data/probe',exist_ok=True)
-open('data/probe/de1.txt','w').write('\n'.join(out))
+        d=json.loads(get('https://www.govdata.de/ckan/api/3/action/package_show?id='+n))['result']
+        P('PKG',n[:60],'|',{k:d.get(k) for k in d if 'licen' in k},'|',d.get('metadata_modified'))
+        P('  extras',[ (e.get('key'),str(e.get('value'))[:80]) for e in d.get('extras',[])][:12])
+        for x in d.get('resources',[]): P('  RES',x.get('format'),x.get('url'),{k:x.get(k) for k in x if 'licen' in k})
+    except Exception as e: P('ERR',n,e)
+P('#### csv heads')
+for u in ['https://open-data.ble.de/dataset/a617636f-28eb-4e6c-abb0-c45cbe8b22f1/resource/a50035d4-a14c-4677-8e65-2fc5b6c1eaf9/download/kuhmilchpreise-mengen.csv',
+ 'https://open-data.ble.de/dataset/c4eb6408-8cb2-42f9-b341-79fb57f81788/resource/214ea514-205b-4857-a78d-e254fae0983c/download/schlachtpreise-woche.csv',
+ 'https://open-data.ble.de/dataset/c4eb6408-8cb2-42f9-b341-79fb57f81788/resource/7102aaa8-2401-4dff-b5ce-344b43b069b4/download/schlachtpreise-monat.csv',
+ 'https://open-data.ble.de/dataset/10824baf-7569-470c-95f2-c78f4facf5f1/resource/d92b81a6-af6a-482f-b1bc-0a7138bf11d1/download/marktundpreis-obstgemuese.csv']:
+    b=get(u,raw=True); 
+    try: t=b.decode('utf-8-sig')
+    except Exception: t=b.decode('cp1252','replace')
+    L=t.splitlines(); P('CSV',u.split('/')[-1],len(b),'lines',len(L))
+    for l in L[:8]+['...']+L[-4:]: P('   ',l[:300])
+    if 'schlacht' in u or 'milch' in u:
+        cols=L[0].split(';') if ';' in L[0] else L[0].split(',')
+        P('   NCOL',len(cols))
+# Francia: listado completo de precios pagados
+cj=http.cookiejar.CookieJar(); op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+def rq(u,data=None):
+    d=urllib.parse.urlencode(data).encode() if data else None
+    with op.open(urllib.request.Request(u,data=d,headers={'User-Agent':'Mozilla/5.0 DehesaIndex'}),timeout=90) as x: return x.read().decode('utf-8','replace')
+B='https://visionet.franceagrimer.fr/Pages/'
+for menu in ['SeriesChronologiques/productions vegetales/grandes cultures/prix payés aux producteurs']:
+    rq(B+'SeriesChronologiques.aspx?menuurl='+urllib.parse.quote(menu))
+    r=rq(B+'SeriesChronologiquesDetail.aspx',dict(niveau='1',dossierRacine='SeriesChronologiques',menuId='',menuTitre=menu.split('/')[-1],menuUrl=menu,niveauMax='4'))
+    P('#### FR listing');
+    for f in dict.fromkeys(urllib.parse.unquote(x) for x in re.findall(r'fileurl=([^"\'&<> ]+)',r)): P('  F',f)
+    txt=re.sub(r'<[^>]+>',' ',r); txt=re.sub(r'\s+',' ',txt); P(txt[:1800])
+os.makedirs('data/probe',exist_ok=True); open('data/probe/de2.txt','w').write('\n'.join(out))
