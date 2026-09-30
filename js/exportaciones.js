@@ -103,7 +103,7 @@
       card(t.com, qty(com, c, t), ps ? chgHtml(pct(com, ps.acc + ps.out)) + ' <span style="color:var(--text-faint)">' + esc(t.vsPrev) + '</span>' : '') +
       card(t.net, qty(tot.net, c, t), '<span style="color:var(--text-faint)">' + esc(t.wk) + ': ' + qty(tot.wk, c, t) + '</span>') + '</div>';
     var cur = c.weekly.map(function (w) { return w.acc; }), pr = c.weeklyPrev.map(function (w) { return w.acc; });
-    var isB = /Bales/i.test(c.unit), fmt = function (v) { return isB ? nf(v / 1e6, 1) + ' M' : (v >= 1e6 ? nf(v / 1e6, 1) + ' Mt' : nf(v / 1e3, 0) + ' kt'); };
+    var isB = /Bales/i.test(c.unit), fmt = function (v) { return v === 0 ? '0' : isB ? nf(v / 1e6, 1) + ' M' : (v >= 1e6 ? nf(v / 1e6, 1) + ' Mt' : nf(v / 1e3, 0) + ' kt'); };
     var chart = '<div class="di-card" style="padding:14px 16px"><div style="font-weight:600;margin-bottom:6px">' + esc(t.chartAcc) + '</div>' +
       '<div style="display:flex;gap:16px;font-size:12.5px;margin-bottom:6px"><span><span style="display:inline-block;width:14px;height:3px;background:' + C1 + ';vertical-align:middle;margin-right:6px"></span>' + esc(t.cur) + ' (' + esc(c.my) + ')</span><span><span style="display:inline-block;width:14px;height:3px;background:' + C2 + ';vertical-align:middle;margin-right:6px"></span>' + esc(t.prev) + '</span></div>' +
       lineChart([{ v: pr, color: C2 }, { v: cur, color: C1 }], c.weekly.map(function (w, i) { return '#' + (i + 1); }), fmt) +
