@@ -140,7 +140,7 @@
   var CATS = {
     es: {
       cereales: { label: 'Cereales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
-      lacteos: { label: 'Lácteos', sources: [{ name: 'USDA AMS (Class III)', url: SRC_URL.amsDairy }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }] },
+      lacteos: { label: 'Lácteos', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }] },
       ganado: { label: 'Ganado', sources: [{ name: 'CME Group (Live Cattle)', url: SRC_URL.cmeLiveCattle }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Porcino', sources: [{ name: 'USDA AMS (cerdo)', url: SRC_URL.usdaPork }, { name: 'Comisión Europea (porcino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
       ovino: { label: 'Ovino', sources: [{ name: 'USDA AMS (cordero)', url: SRC_URL.usdaLamb }, { name: 'Comisión Europea (ovino)', url: SRC_URL.ecSheep }] },
@@ -156,7 +156,7 @@
     },
     en: {
       cereales: { label: 'Grains', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
-      lacteos: { label: 'Dairy', sources: [{ name: 'USDA AMS (Class III)', url: SRC_URL.amsDairy }, { name: 'European Commission', url: SRC_URL.ecPrices }] },
+      lacteos: { label: 'Dairy', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }] },
       ganado: { label: 'Livestock', sources: [{ name: 'CME Group (Live Cattle)', url: SRC_URL.cmeLiveCattle }, { name: 'European Commission', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Pork', sources: [{ name: 'USDA AMS (pork)', url: SRC_URL.usdaPork }, { name: 'European Commission (pigmeat)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
       ovino: { label: 'Sheep & Lamb', sources: [{ name: 'USDA AMS (lamb)', url: SRC_URL.usdaLamb }, { name: 'European Commission (sheep)', url: SRC_URL.ecSheep }] },
@@ -172,7 +172,7 @@
     },
     fr: {
       cereales: { label: 'Céréales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
-      lacteos: { label: 'Produits laitiers', sources: [{ name: 'USDA AMS (Classe III)', url: SRC_URL.amsDairy }, { name: 'Commission européenne', url: SRC_URL.ecPrices }] },
+      lacteos: { label: 'Produits laitiers', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }] },
       ganado: { label: 'Bétail', sources: [{ name: 'CME Group (Live Cattle)', url: SRC_URL.cmeLiveCattle }, { name: 'Commission européenne', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Porc', sources: [{ name: 'USDA AMS (porc)', url: SRC_URL.usdaPork }, { name: 'Commission européenne (porcin)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
       ovino: { label: 'Ovins', sources: [{ name: 'USDA AMS (agneau)', url: SRC_URL.usdaLamb }, { name: 'Commission européenne (ovins)', url: SRC_URL.ecSheep }] },
@@ -188,7 +188,7 @@
     },
     it: {
       cereales: { label: 'Cereali', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Euronext (MATIF)', url: SRC_URL.euronext }] },
-      lacteos: { label: 'Lattiero-caseario', sources: [{ name: 'USDA AMS (Classe III)', url: SRC_URL.amsDairy }, { name: 'Commissione europea', url: SRC_URL.ecPrices }] },
+      lacteos: { label: 'Lattiero-caseario', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }] },
       ganado: { label: 'Bestiame', sources: [{ name: 'CME Group (Live Cattle)', url: SRC_URL.cmeLiveCattle }, { name: 'Commissione europea', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Suini', sources: [{ name: 'USDA AMS (suino)', url: SRC_URL.usdaPork }, { name: 'Commissione europea (suino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
       ovino: { label: 'Ovini', sources: [{ name: 'USDA AMS (agnello)', url: SRC_URL.usdaLamb }, { name: 'Commissione europea (ovini)', url: SRC_URL.ecSheep }] },
@@ -529,7 +529,7 @@
           eu: { price: 45.53, changePct: 1.0655, history: [51.36, 51.94, 52.62, 52.62, 52.52, 52.23, 51.84, 47.48, 46.31, 45.53, 45.05, 45.53], currency: 'EUR', kgPerUnit: 100 },
           countryFactors: { es: 1, de: 0.904, fr: 0.979, it: 1.016 },
           uk: { price: 35.82, changePct: 4.02, history: [34.20, 34.50, 34.80, 35.10, 35.35, 35.60, 35.82], currency: 'GBP', kgPerUnit: 100 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (Class III)' }, eu: { type: 'referencia', market: 'Comisión Europea (leche cruda de vaca, España)' }, uk: { type: 'referencia', market: 'AHDB (precio medio en granja del Reino Unido)' } } }
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, leche total)' }, eu: { type: 'referencia', market: 'Comisión Europea (leche cruda de vaca, España)' }, uk: { type: 'referencia', market: 'AHDB (precio medio en granja del Reino Unido)' } } }
       ]
     },
     {
@@ -925,8 +925,8 @@
       status: 'verified', verifiedAt: '2026-09-30T00:38:37.890Z'
     },
     'lacteos-leche-us': {
-      sourceId: 'usda_ams_dairy', frequency: 'monthly',
-      methodology: 'USDA AMS Class III milk reference; USD/cwt.',
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED for all milk sold to plants (not Class III); USD/cwt.',
       comparability: 'directional', observationDate: '2026-08', publicationDate: null, status: 'verified', verifiedAt: '2026-09-29T23:53:33.240Z'
     },
     'lacteos-leche-eu': {

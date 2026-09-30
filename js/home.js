@@ -31,7 +31,7 @@
       moversLabels: {
         trigo: { name: 'Trigo', unit: 'tonelada', market: 'Europa · Euronext (MATIF)' },
         maiz: { name: 'Maíz', unit: 'bushel', market: 'EE. UU. · USDA NASS' },
-        leche: { name: 'Leche', unit: 'cwt', market: 'EE. UU. · USDA AMS (Class III)' },
+        leche: { name: 'Leche', unit: 'cwt', market: 'EE. UU. · USDA NASS' },
         urea: { name: 'Urea', unit: 'ton corta', market: 'EE. UU. · DTN Fertilizer Index' }
       },
       stats: [
@@ -44,7 +44,7 @@
       coverSub: 'Once categorías clave de la agricultura, con precios de referencia de ambos lados del Atlántico.',
       categories: [
         { label: 'Cereales', items: 'Maíz · Trigo · Arroz', desc: 'Futuros CBOT y contratos Euronext (MATIF), comparables en la misma unidad.' },
-        { label: 'Lácteos', items: 'Leche', desc: 'Precios USDA AMS (Clase III) frente a referencias de la Comisión Europea.' },
+        { label: 'Lácteos', items: 'Leche', desc: 'Precios USDA NASS frente a referencias de la Comisión Europea.' },
         { label: 'Ganado', items: 'Vaca · Cabra', desc: 'Cotizaciones CME Group y lonjas europeas, en pie y en canal.' },
         { label: 'Porcino', items: 'Cerdo', desc: 'Referencia de porcino blanco de EE. UU. y la UE, más Mercolleida como lonja española.' },
         { label: 'Ovino', items: 'Cordero', desc: 'Precios de cordero en EE. UU. y referencias de canal en la Unión Europea.' },
@@ -79,7 +79,7 @@
       moversLabels: {
         trigo: { name: 'Wheat', unit: 'tonne', market: 'Europe · Euronext (MATIF)' },
         maiz: { name: 'Corn', unit: 'bushel', market: 'U.S. · USDA NASS' },
-        leche: { name: 'Milk', unit: 'cwt', market: 'U.S. · USDA AMS (Class III)' },
+        leche: { name: 'Milk', unit: 'cwt', market: 'U.S. · USDA NASS' },
         urea: { name: 'Urea', unit: 'short ton', market: 'U.S. · DTN Fertilizer Index' }
       },
       stats: [
@@ -92,7 +92,7 @@
       coverSub: 'Eleven key agricultural categories, with reference prices from both sides of the Atlantic.',
       categories: [
         { label: 'Grains', items: 'Corn · Wheat · Rice', desc: 'CBOT futures and Euronext (MATIF) contracts, comparable in the same unit.' },
-        { label: 'Dairy', items: 'Milk', desc: 'USDA AMS (Class III) prices against European Commission references.' },
+        { label: 'Dairy', items: 'Milk', desc: 'USDA NASS prices against European Commission references.' },
         { label: 'Livestock', items: 'Cattle · Goat', desc: 'CME Group quotes and European markets, live weight and carcass.' },
         { label: 'Pork', items: 'Pork', desc: 'Standard pork reference for the U.S. and EU, plus Mercolleida as a Spanish market.' },
         { label: 'Sheep & Lamb', items: 'Lamb', desc: 'U.S. lamb prices against EU carcass references.' },
@@ -127,7 +127,7 @@
       moversLabels: {
         trigo: { name: 'Blé', unit: 'tonne', market: 'Europe · Euronext (MATIF)' },
         maiz: { name: 'Maïs', unit: 'bushel', market: 'États-Unis · USDA NASS' },
-        leche: { name: 'Lait', unit: 'cwt', market: 'États-Unis · USDA AMS (Class III)' },
+        leche: { name: 'Lait', unit: 'cwt', market: 'États-Unis · USDA NASS' },
         urea: { name: 'Urée', unit: 'tonne courte', market: 'États-Unis · DTN Fertilizer Index' }
       },
       stats: [
@@ -140,7 +140,7 @@
       coverSub: "Onze catégories agricoles clés, avec des prix de référence des deux côtés de l'Atlantique.",
       categories: [
         { label: 'Céréales', items: 'Maïs · Blé · Riz', desc: 'Contrats à terme CBOT et contrats Euronext (MATIF), comparables dans la même unité.' },
-        { label: 'Produits laitiers', items: 'Lait', desc: 'Prix USDA AMS (Classe III) face aux références de la Commission européenne.' },
+        { label: 'Produits laitiers', items: 'Lait', desc: 'Prix USDA NASS face aux références de la Commission européenne.' },
         { label: 'Bétail', items: 'Bovins · Chèvre', desc: 'Cotations CME Group et marchés européens, sur pied et en carcasse.' },
         { label: 'Porc', items: 'Porc', desc: "Référence porc standard pour les États-Unis et l'UE, avec Mercolleida comme marché espagnol." },
         { label: 'Ovins', items: 'Agneau', desc: "Prix de l'agneau aux États-Unis face aux références carcasse dans l'UE." },
@@ -175,7 +175,7 @@
       moversLabels: {
         trigo: { name: 'Grano', unit: 'tonnellata', market: 'Europa · Euronext (MATIF)' },
         maiz: { name: 'Mais', unit: 'bushel', market: 'Stati Uniti · USDA NASS' },
-        leche: { name: 'Latte', unit: 'cwt', market: 'Stati Uniti · USDA AMS (Class III)' },
+        leche: { name: 'Latte', unit: 'cwt', market: 'Stati Uniti · USDA NASS' },
         urea: { name: 'Urea', unit: 'tonnellata corta', market: 'Stati Uniti · DTN Fertilizer Index' }
       },
       stats: [
@@ -188,7 +188,7 @@
       coverSub: "Undici categorie chiave dell'agricoltura, con prezzi di riferimento da entrambe le sponde dell'Atlantico.",
       categories: [
         { label: 'Cereali', items: 'Mais · Grano · Riso', desc: 'Futures CBOT e contratti Euronext (MATIF), comparabili nella stessa unità di misura.' },
-        { label: 'Lattiero-caseario', items: 'Latte', desc: 'Prezzi USDA AMS (Classe III) a confronto con i riferimenti della Commissione europea.' },
+        { label: 'Lattiero-caseario', items: 'Latte', desc: 'Prezzi USDA NASS a confronto con i riferimenti della Commissione europea.' },
         { label: 'Bestiame', items: 'Bovini · Capre', desc: 'Quotazioni CME Group e mercati europei, peso vivo e peso morto.' },
         { label: 'Suini', items: 'Maiale', desc: 'Riferimento del mercato suino standard per Stati Uniti e UE, più Mercolleida come mercato spagnolo.' },
         { label: 'Ovini', items: 'Agnello', desc: "Prezzi dell'agnello negli Stati Uniti a confronto con i riferimenti di peso morto nell'UE." },

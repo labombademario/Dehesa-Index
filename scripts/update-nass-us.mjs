@@ -16,7 +16,7 @@
  * Requiere la variable de entorno NASS_API_KEY (clave gratuita, se pide en
  * https://quickstats.nass.usda.gov/api).
  *
- * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz>
+ * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz|leche>
  */
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
@@ -49,6 +49,15 @@ const PRODUCTS = {
     commodity: 'RICE',
     shortDesc: 'RICE - PRICE RECEIVED, MEASURED IN $ / CWT',
     kgPerUnit: '45\\.359'
+  },
+  leche: {
+    label: 'Leche',
+    commodity: 'MILK',
+    shortDesc: 'MILK - PRICE RECEIVED, MEASURED IN $ / CWT',
+    kgPerUnit: '45\\.359',
+    trustKey: 'lacteos-leche-us',
+    obsUnit: 'cwt',
+    trustMethodology: 'National USDA NASS PRICE RECEIVED for all milk sold to plants (not Class III); USD/cwt.'
   }
 };
 
@@ -86,7 +95,9 @@ async function fetchSeries() {
   }
   const json = await res.json();
   const rows = json.data || [];
-  const matching = rows.filter(function (r) { return r.short_desc === cfg.shortDesc; });
+  var matching = rows.filter(function (r) { return r.short_desc === cfg.shortDesc; });
+  var totals = matching.filter(function (r) { return r.domain_desc === 'TOTAL'; });
+  if (totals.length) matching = totals;
   if (matching.length === 0) {
     throw new Error(
       'Ningún registro con short_desc="' + cfg.shortDesc + '". NASS puede haber cambiado su nomenclatura -- ' +
@@ -123,6 +134,16 @@ function observationDateFromNass(year, periodDesc, periodCode) {
   var m = String(periodCode || '').match(/^M(\\d{2})$/i);
   if (m) return y + '-' + m[1];
   return y;
+}
+
+// NASS publica el informe Agricultural Prices del mes M el último día hábil de ese
+// mes (p. ej. julio de 2026 -> 2026-07-31). Se usa como fecha de publicación.
+function publicationDateFor(observationDate) {
+  var m = String(observationDate).match(/^(\d{4})-(\d{2})$/);
+  if (!m) return null;
+  var d = new Date(Date.UTC(parseInt(m[1], 10), parseInt(m[2], 10), 0)); // último día del mes
+  while (d.getUTCDay() === 0 || d.getUTCDay() === 6) d = new Date(d.getTime() - 86400000);
+  return d.toISOString().slice(0, 10);
 }
 
 function fmt(v) {
@@ -173,18 +194,30 @@ async function main() {
     return pre + price + mid1 + changePct + mid2 + history.join(', ') + post;
   });
 
-  // Data Trust v2: actualiza únicamente la fecha de observación NASS.
-  // Publication date permanece null porque Quick Stats no la expone como
-  // fecha de publicación de la observación en este endpoint.
-  var trustKey = 'cereales-' + key + '-us';
+  // Data Trust v2: fecha de observación, fecha de publicación (último día hábil
+  // del mes, ver publicationDateFor) y estado de verificación.
+  var trustKey = cfg.trustKey || ('cereales-' + key + '-us');
   var verifiedAt = new Date().toISOString();
-  var trustRe = new RegExp("('" + trustKey + "': \\{[\\s\\S]*?observationDate: )null(, publicationDate: )null");
-  if (!trustRe.test(updated)) {
-    throw new Error('No se encontró el registro Data Trust \`' + trustKey + '\` en js/data.js. Se aborta para no actualizar el precio sin su trazabilidad.');
+  var publicationDate = publicationDateFor(observationDate);
+  var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var monthLabel = monthNames[parseInt(observationDate.slice(5, 7), 10) - 1] + ' ' + observationDate.slice(0, 4);
+  var trustBlockRe = new RegExp("('" + trustKey + "': \\{)([\\s\\S]*?)(\\n    \\})");
+  var tb = trustBlockRe.exec(updated);
+  if (!tb) {
+    throw new Error('No se encontró el registro Data Trust `' + trustKey + '` en js/data.js. Se aborta para no actualizar el precio sin su trazabilidad.');
   }
-  updated = updated.replace(trustRe, function (_, pre, pub) {
-    return pre + "'" + observationDate + "'" + pub + "null, status: 'verified', verifiedAt: '" + verifiedAt + "'";
+  var fieldsRe = /observationDate: [^,]+,\s*publicationDate: [^,]+,\s*status: '[^']*',\s*verifiedAt: [^\n]+/;
+  if (!fieldsRe.test(tb[2])) {
+    throw new Error('Formato del registro Data Trust `' + trustKey + '` no reconocido. Revisar a mano.');
+  }
+  var body = tb[2].replace(fieldsRe, function () {
+    return "observationDate: '" + observationDate + "', publicationDate: '" + publicationDate + "', status: 'verified', verifiedAt: '" + verifiedAt + "'";
   });
+  var baseMethod = cfg.trustMethodology || ('National USDA NASS PRICE RECEIVED observation; USD/' + (key === 'arroz' ? 'cwt' : 'bushel') + '.');
+  body = body.replace(/methodology: '(?:[^'\\]|\\.)*'/, function () {
+    return "methodology: '" + baseMethod + " Published in the " + monthLabel + " Agricultural Prices release.'";
+  });
+  updated = updated.slice(0, tb.index + tb[1].length) + body + updated.slice(tb.index + tb[1].length + tb[2].length);
 
   if (updated === src) {
     console.log('Sin cambios: el valor ya estaba actualizado.');
@@ -200,19 +233,19 @@ async function main() {
     region: 'us',
     sourceId: 'usda_nass',
     observationDate: observationDate,
-    publicationDate: null,
+    publicationDate: publicationDate,
     status: 'verified',
     verifiedAt: verifiedAt,
     comparability: 'directional',
     value: price,
     currency: 'USD',
-    unit: key === 'arroz' ? 'cwt' : 'bushel',
+    unit: cfg.obsUnit || (key === 'arroz' ? 'cwt' : 'bushel'),
     frequency: 'monthly',
     changePct: changePct,
     history: series.map(function (p) { return { year: p.year, period: p.period, value: fmt(p.value) }; })
   });
 
-  console.log('Data Trust: observationDate=' + observationDate + ' | publicationDate=pending');
+  console.log('Data Trust: observationDate=' + observationDate + ' | publicationDate=' + publicationDate);
 
   if (process.env.GITHUB_OUTPUT) {
     await writeFile(process.env.GITHUB_OUTPUT, 'price=' + price + '\nchange=' + changePct + '\nlabel=' + cfg.label + '\n', { flag: 'a' });
