@@ -114,7 +114,9 @@ function build(cfg, sections) {
   const names = new Set(); recs.forEach(x => Object.keys(x.dims).forEach(k => names.add(k)));
   const keep = [];
   for (const k of names) { const vals = new Set(recs.map(x => x.dims[k] === undefined ? '' : x.dims[k])); if (vals.size > 1) keep.push(k); }
-  keep.sort();
+  const RANK = [/^commodity$|^commod$/, /^item$/, /^class$|^type$|^eggtype$|^variety$/, /^grade$|^protein$|^quality$|^primal$|^description$|^size$|^condition$|^color$|^environment$/, /location|region|state|market|origin|destination|^tradeloc/, /^quotetype$|^saletype$|^purchasetype$|^freight|^transmode$|^package|^pkg$|^sec$/];
+  const rk = k => { const n = norm(k); for (let i = 0; i < RANK.length; i++) if (RANK[i].test(n)) return i; return 3.5; };
+  keep.sort((a, b) => rk(a) - rk(b) || a.localeCompare(b));
   const map = new Map();
   let dup = 0;
   for (const x of recs) {

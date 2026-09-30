@@ -37,6 +37,8 @@
     if (CACHE[id]) return Promise.resolve(CACHE[id]);
     return fetch('data/ams/' + id + '.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d) CACHE[id] = d; return d; }).catch(function () { return null; });
   }
+  function labelOf(doc, s) { var o = []; doc.dn.forEach(function (n, i) { if (n !== 'Section' && s.v[i]) o.push(s.v[i]); }); return o.join(' · '); }
+  function pretty(n) { n = String(n).replace(/[_]+/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2').trim(); return n.charAt(0).toUpperCase() + n.slice(1); }
   function reportsOf(fam) { return IDX.reports.filter(function (r) { return r.fam === fam; }).sort(function (a, b) { return a.title.localeCompare(b.title); }); }
   function cutoff(doc) { var d = new Date(doc.lastDate + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - (doc.freq === 'd' ? 10 : 24)); return d.toISOString().slice(0, 10); }
 
@@ -93,7 +95,7 @@
         var vals = {}; rows.forEach(function (r) { vals[r.s.v[di]] = 1; });
         var list = Object.keys(vals).filter(Boolean).sort();
         if (list.length < 2 || list.length > 60) return;
-        dimHtml += '<label style="font-size:13px">' + esc(name) + '<br><select class="di-compare-select" data-dim="' + di + '"><option value="">' + esc(x.allv) + '</option>' + list.map(function (v) { return '<option value="' + esc(v) + '"' + (SEL.f[di] === v ? ' selected' : '') + '>' + esc(v) + '</option>'; }).join('') + '</select></label>';
+        dimHtml += '<label style="font-size:13px">' + esc(pretty(name)) + '<br><select class="di-compare-select" data-dim="' + di + '"><option value="">' + esc(x.allv) + '</option>' + list.map(function (v) { return '<option value="' + esc(v) + '"' + (SEL.f[di] === v ? ' selected' : '') + '>' + esc(v) + '</option>'; }).join('') + '</select></label>';
       });
       Object.keys(SEL.f).forEach(function (di) { if (SEL.f[di]) rows = rows.filter(function (r) { return r.s.v[di] === SEL.f[di]; }); });
       var q = SEL.q.trim().toLowerCase();
@@ -101,13 +103,13 @@
       var total = rows.length, shown = rows.slice(0, SEL.lim);
       var trs = shown.map(function (r) {
         var pv = val(r.last), prev = r.s.p.length > 1 ? val(r.s.p[r.s.p.length - 2]) : null, ch = pv && prev && prev.v ? (pv.v / prev.v - 1) * 100 : null;
-        var desc = r.s.v.filter(Boolean).join(' · ') || doc.title, on = SEL.sel === r.i;
+        var desc = labelOf(doc, r.s) || doc.title, on = SEL.sel === r.i;
         return '<tr data-s="' + r.i + '" style="border-top:1px solid var(--border);cursor:pointer;' + (on ? 'background:var(--surface-2,rgba(0,0,0,.04))' : '') + '"><td style="padding:9px 6px;font-weight:' + (on ? '700' : '500') + '">' + esc(desc) + '</td><td style="padding:9px 6px;color:var(--text-faint);white-space:nowrap">' + esc(r.s.u) + '</td><td style="padding:9px 6px;white-space:nowrap">' + esc(dateTxt(r.last[0])) + '</td><td style="padding:9px 6px;text-align:right;white-space:nowrap;font-weight:600">' + (pv ? (pv.mid ? '≈ ' : '') + fmt(pv.v) : '—') + '</td><td style="padding:9px 6px;text-align:right;white-space:nowrap;color:var(--text-faint)">' + (r.last[2] !== null && r.last[3] !== null && r.last[2] !== r.last[3] ? fmt(r.last[2]) + '–' + fmt(r.last[3]) : '') + '</td><td style="padding:9px 6px;text-align:right;white-space:nowrap;color:' + (ch === null ? 'var(--text-faint)' : ch > 0 ? 'var(--up,#1b7f4b)' : ch < 0 ? 'var(--down,#b3261e)' : 'var(--text-faint)') + '">' + (ch === null ? '' : (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + '</td></tr>';
       }).join('');
       var detail = '';
       if (SEL.sel !== null && doc.series[SEL.sel]) {
         var s = doc.series[SEL.sel], c = chart(s);
-        detail = '<div class="di-card" style="padding:16px 18px;margin-bottom:14px"><h3 style="font-size:15px;margin:0 0 2px">' + esc(s.v.filter(Boolean).join(' · ') || doc.title) + '</h3><p class="di-movers-hint" style="margin:0 0 6px">' + esc(s.u) + ' · ' + s.p.length + ' ' + esc(x.pts) + '</p>' + (c.html || c) + '</div>';
+        detail = '<div class="di-card" style="padding:16px 18px;margin-bottom:14px"><h3 style="font-size:15px;margin:0 0 2px">' + esc(labelOf(doc, s) || doc.title) + '</h3><p class="di-movers-hint" style="margin:0 0 6px">' + esc(s.u) + ' · ' + s.p.length + ' ' + esc(x.pts) + '</p>' + (c.html || c) + '</div>';
         if (c.html) detail = detail.replace('</div></div>', '</div></div>');
       }
       body.innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px"><label style="font-size:13px">' + esc(x.family) + '<br><select id="ms-f" class="di-compare-select">' + fopts + '</select></label><label style="font-size:13px;flex:1;min-width:220px">' + esc(x.report) + '<br><select id="ms-r" class="di-compare-select" style="max-width:100%">' + ropts + '</select></label></div>' +
