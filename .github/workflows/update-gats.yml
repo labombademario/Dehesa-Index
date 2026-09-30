@@ -25,14 +25,14 @@ jobs:
       - name: Update GATS
         env:
           FAS_API_KEY: ${{ secrets.FAS_API_KEY }}
-        run: node scripts/update-gats.mjs 2>&1 | tee /tmp/gats.out
+        run: node scripts/update-gats.mjs > /tmp/gats.out 2>&1 || true
       - name: Commit
         if: always()
         run: |
           cp /tmp/gats.out data/gats-log.txt || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/gats.json data/gats-log.txt
+          git add -A data/gats.json data/gats-log.txt 2>/dev/null || git add data/gats-log.txt
           git diff --cached --quiet || git commit -m "chore: update trade by country (USDA FAS GATS)"
           git pull --rebase origin main
           git push origin HEAD:main
