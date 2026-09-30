@@ -216,7 +216,7 @@ TOPICS = {
  "clima": ["weather", "rain", "drought", "flood", "heat wave", "heatwave", "frost", "el nino", "la nina", "climate", "wildfire", "sequia", "lluvia", "ola de calor", "helada", "granizo", "secheresse", "pluie", "canicule", "grele", "siccita", "maltempo", "gelo", "grandine", "ondata di caldo"],
  "comercio": ["tariff", "trade", "export", "import", "china", "customs", "embargo", "quota", "mercosur", "sanction", "arancel", "exportacion", "importacion", "comercio", "aranceles", "echanges", "exportation", "importation", "douane", "droits de douane", "dazi", "commercio", "esportazion", "importazion"],
  "oferta": ["harvest", "crop", "production", "yield", "supply", "stocks", "planting", "acreage", "output", "forecast", "cosecha", "produccion", "siembra", "cultivo", "rendimiento", "recolte", "rendement", "semis", "semina", "raccolto", "resa", "produzione", "campagna"],
- "precios": ["price", "prices", "futures", "market", "rally", "slump", "precio", "precios", "cotizacion", "cotizaciones", "lonja", "mercado", "prix", "cours", "marche", "cotation", "prezzi", "prezzo", "mercato", "quotazion", "borsa", "cbot", "matif", "euronext"],
+ "precios": ["price", "prices", "futures", "rally", "slump", "precio", "precios", "cotizacion", "cotizaciones", "lonja", "prix", "cours", "cotation", "prezzi", "prezzo", "quotazion", "borsa", "cbot", "matif", "euronext"],
  "energia": ["oil", "diesel", "natural gas", "energy", "fuel", "crude", "gasoil", "gasoleo", "carburant", "gazole", "carburante", "gasolio", "energia", "energie"],
  "costes": ["input cost", "cost of", "costs", "inflation", "fertilizer", "coste", "costes", "inflacion", "cout", "couts", "inflation", "costo", "costi"],
  "politica": ["government", "policy", "minister", "commission", "regulation", "reform", "farm bill", "legislation", "gobierno", "ministerio", "ministro", "politica", "regulacion", "reforma", "ley", "gouvernement", "ministre", "reglement", "governo", "ministero", "regolamento", "legge"],
@@ -386,7 +386,7 @@ def classify(title, desc, source_region, lang, general):
         if blk: region = blk
         elif glob: region = "global"
     score = min(100, 30 + 10 * len(products[:4]) + 6 * len(topics) + (8 if specific else 0))
-    return products[:4], (topics[:4] or ["precios"]), region, score
+    return products[:4], topics[:4], region, score
 
 # ─────────────────────────── descarga ───────────────────────────
 def fetch(feed):
@@ -425,7 +425,7 @@ def fetch(feed):
         links = build_market_links(products, topics, title, desc)
         rows.append({
             "id": "auto-" + hashlib.sha1((pub + title + x["link"]).encode()).hexdigest()[:10],
-            "date": d, "region": reg, "topic": topics[0], "topics": topics, "products": products,
+            "date": d, "region": reg, "topic": topics[0] if topics else "", "topics": topics, "products": products,
             "source": pub, "lang": feed["lang"],
             "headline": {"en": title, "es": title, "fr": title, "it": title},
             "description": desc[:280], "url": x["link"], "relevance": score, "auto": True,
