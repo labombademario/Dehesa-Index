@@ -1,0 +1,28 @@
+=== 32100359 ERR The read operation timed out
+=== 32100007 size=129KB cols=['REF_DATE', 'GEO', 'DGUID', 'Type of stock', 'Type of crop', 'UOM', 'UOM_ID', 'SCALAR_FACTOR', 'SCALAR_ID', 'VECTOR', 'COORDINATE', 'VALUE', 'STATUS', 'SYMBOL', 'TERMINATED', 'DECIMALS']
+rows=20654 last=2026-07
+  GEO: ['Canada', 'Eastern Canada', 'Prince Edward Island', 'Nova Scotia', 'New Brunswick', 'Quebec', 'Ontario', 'Western Canada', 'Manitoba', 'Saskatchewan', 'Alberta', 'British Columbia']
+  Type of stock (3): ['Farm and commercial, total', 'Farm stocks', 'Commercial stocks']
+  Type of crop (16): ['Barley', 'Canary seed', 'Canola (rapeseed)', 'Chick peas', 'Corn for grain', 'Flaxseed', 'Lentils', 'Mustard seed', 'Oats', 'Peas, dry', 'Rye, all', 'Soybeans', 'Sunflower seed', 'Wheat, all', 'Wheat, durum', 'Wheat, all excluding durum wheat']
+  UOM (1): ['Metric tonnes']
+  SCALAR_FACTOR (2): ['thousands', 'units']
+=== 32100013 size=267KB cols=['REF_DATE', 'GEO', 'DGUID', 'Type of crop', 'Supply and disposition of grains', 'UOM', 'UOM_ID', 'SCALAR_FACTOR', 'SCALAR_ID', 'VECTOR', 'COORDINATE', 'VALUE', 'STATUS', 'SYMBOL', 'TERMINATED', 'DECIMALS']
+rows=21782 last=2026-07
+  GEO: ['Canada']
+  Type of crop (15): ['All wheat', 'Durum wheat', 'Wheat, excluding durum', 'Oats', 'Barley', 'Rye', 'Flaxseed', 'Canola', 'Soybeans', 'Dry peas', 'Lentils', 'Mustard seed', 'Canary seed', 'Sunflower seed', 'Chickpeas']
+  Supply and disposition of grains (20): ['Total supplies', 'Total beginning stocks', 'Beginning stocks on farms', 'Beginning stocks in commercial positions', 'Production', 'Imports', 'Total disposition', 'Total exports', 'Grain exports', 'Product exports', 'Total domestic disappearance', 'Human food', 'Seed requirements', 'Industrial use', 'Loss in handling', 'Animal feed, waste and dockage', 'Total ending stocks', 'Ending stocks on farms', 'Ending stocks in commercial positions', 'Other domestic disappearance']
+  UOM (1): ['Metric tonnes']
+  SCALAR_FACTOR (1): ['thousands']
+=== 32100351 size=319KB cols=['REF_DATE', 'GEO', 'DGUID', 'Type of grain', 'UOM', 'UOM_ID', 'SCALAR_FACTOR', 'SCALAR_ID', 'VECTOR', 'COORDINATE', 'VALUE', 'STATUS', 'SYMBOL', 'TERMINATED', 'DECIMALS']
+rows=42039 last=2026-06
+  GEO: ['Manitoba', 'Saskatchewan', 'Alberta', 'Western Canada', 'Prairie provinces', 'British Columbia', 'Canada', 'Eastern Canada', 'Quebec', 'Ontario']
+  Type of grain (9): ['All grains, total', 'Wheat, total', 'Wheat, excluding durum', 'Durum wheat', 'Oats', 'Barley', 'Rye', 'Flaxseed', 'Canola (rapeseed)']
+  UOM (1): ['Tonnes']
+  SCALAR_FACTOR (2): ['units ', 'units']
+=== 32100352 size=70KB cols=['REF_DATE', 'GEO', 'DGUID', 'Process', 'Commodity', 'UOM', 'UOM_ID', 'SCALAR_FACTOR', 'SCALAR_ID', 'VECTOR', 'COORDINATE', 'VALUE', 'STATUS', 'SYMBOL', 'TERMINATED', 'DECIMALS']
+rows=12636 last=2026-08
+  GEO: ['Canada']
+  Process (6): ['Seed crushed', 'Oil  produced', 'Oil produced (stocks)', 'Meal produced', 'Meal produced (stocks)', 'Seed crushed (stocks)']
+  Commodity (4): ['Canola (rapeseed)', 'Soybeans', 'Flaxseed', 'Sunflower seed']
+  UOM (1): ['Tonnes']
+  SCALAR_FACTOR (1): ['units']
