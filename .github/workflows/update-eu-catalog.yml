@@ -1,0 +1,36 @@
+name: Dehesa Data — EU price catalog
+
+# Catálogo completo de precios de la UE (todas las series y países del Agri-food
+# Data Portal de la Comisión Europea, API pública sin clave).
+# Ver scripts/update-eu-catalog.mjs. Escribe solo data/eu/.
+
+on:
+  schedule:
+    - cron: '20 14 * * 4'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Update EU catalog
+        run: node scripts/update-eu-catalog.mjs
+      - name: Commit
+        run: |
+          git config user.name "dehesa-index-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/eu
+          git diff --cached --quiet || git commit -m "data: refresh EU price catalog"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
