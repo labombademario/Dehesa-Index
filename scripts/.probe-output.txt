@@ -1,142 +1,451 @@
-=== https://api.tech.ec.europa.eu/agrifood/api/oliveOil/prices?memberStateCodes=ES,IT#group=memberStateCode,product,market
+=== https://api.tech.ec.europa.eu/agrifood/api/cereal/prices?memberStateCodes=ES,DE,FR,IT#group=memberStateCode,productName,marketName
 STATUS: 200
-FILAS: 54642
-EJEMPLO: {"memberStateCode":"IT","memberStateName":"Italy","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€670.00","unit":"€/100kg","weekNumber":51,"product":"Extra virgin olive oil (up to 0.8%)","market":"Trapani (ITG11)","marketingYear":"2025/2026"}
-  GRUPO [ES | Crude olive-pomace oil (from 5 to 10%) | Average national price] n=858 ultimo=2026-09-20 precio=€126.53
-  GRUPO [ES | Crude olive-pomace oil (from 5 to 10%) | Córdoba (ES613)] n=857 ultimo=2026-09-20 precio=€129.00
-  GRUPO [ES | Crude olive-pomace oil (from 5 to 10%) | Jaén (ES616)] n=857 ultimo=2026-09-20 precio=€115.00
-  GRUPO [ES | Crude olive-pomace oil (from 5 to 10%) | Tarragona (ES514)] n=857 ultimo=2026-09-20 precio=€115.00
-  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Average national price] n=1810 ultimo=2026-09-20 precio=€346.89
-  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Córdoba (ES613)] n=858 ultimo=2026-09-20 precio=€350.50
-  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Jaén (ES616)] n=858 ultimo=2026-09-20 precio=€342.50
-  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Málaga(ES617)] n=857 ultimo=2026-09-20 precio=€351.50
-  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Sevilla ] n=858 ultimo=2026-09-20 precio=€343.00
-  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Tarragona (ES514)] n=858 ultimo=2026-09-20 precio=€375.00
-  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Toledo (ES425)] n=858 ultimo=2026-09-20 precio=€350.00
-  GRUPO [ES | Lampante olive oil (2%) | Average national price] n=1208 ultimo=2026-09-20 precio=€303.38
-  GRUPO [ES | Lampante olive oil (2%) | Badajoz (ES431)] n=830 ultimo=2026-07-26 precio=€173.00
-  GRUPO [ES | Lampante olive oil (2%) | Córdoba (ES613)] n=858 ultimo=2026-09-20 precio=€306.00
-  GRUPO [ES | Lampante olive oil (2%) | Jaén (ES616)] n=858 ultimo=2026-09-20 precio=€303.50
-  GRUPO [ES | Lampante olive oil (2%) | Málaga(ES617)] n=857 ultimo=2026-09-20 precio=€299.50
-  GRUPO [ES | Lampante olive oil (2%) | Sevilla ] n=852 ultimo=2026-09-20 precio=€301.00
-  GRUPO [ES | Lampante olive oil (2%) | Tarragona (ES514)] n=858 ultimo=2026-09-20 precio=€295.00
-  GRUPO [ES | Olive-pomace oil (up to 1%) | Average national price] n=2 ultimo=2010-07-04 precio=€107.17
-  GRUPO [ES | Olive-pomace oil (up to 1%) | Córdoba (ES613)] n=2 ultimo=2010-07-04 precio=€106.35
-  GRUPO [ES | Olive-pomace oil (up to 1%) | Jaén (ES616)] n=2 ultimo=2010-07-04 precio=€106.98
-  GRUPO [ES | Olive-pomace oil (up to 1%) | Tarragona (ES514)] n=2 ultimo=2010-07-04 precio=€108.18
-  GRUPO [ES | Refined olive oil (up to 0.3%) | Average national price] n=858 ultimo=2026-09-20 precio=€314.50
-  GRUPO [ES | Refined olive oil (up to 0.3%) | Córdoba (ES613)] n=857 ultimo=2026-09-20 precio=€301.50
-  GRUPO [ES | Refined olive oil (up to 0.3%) | Jaén (ES616)] n=858 ultimo=2026-09-20 precio=€299.50
-  GRUPO [ES | Refined olive oil (up to 0.3%) | Sevilla ] n=561 ultimo=2026-09-20 precio=€333.00
-  GRUPO [ES | Refined olive oil (up to 0.3%) | Tarragona (ES514)] n=858 ultimo=2026-09-20 precio=€320.00
-  GRUPO [ES | Refined olive-pomace oil (up to 0.3%) | Average national price] n=856 ultimo=2026-09-20 precio=€191.89
-  GRUPO [ES | Refined olive-pomace oil (up to 0.3%) | Córdoba (ES613)] n=584 ultimo=2026-01-11 precio=€208.00
-  GRUPO [ES | Refined olive-pomace oil (up to 0.3%) | Jaén (ES616)] n=584 ultimo=2026-01-11 precio=€212.50
-  GRUPO [ES | Refined olive-pomace oil (up to 0.3%) | Tarragona (ES514)] n=584 ultimo=2026-01-11 precio=€200.00
-  GRUPO [ES | Virgin olive oil (up to 2%) | Average national price] n=1810 ultimo=2026-09-20 precio=€320.71
-  GRUPO [ES | Virgin olive oil (up to 2%) | Badajoz (ES431)] n=827 ultimo=2026-07-26 precio=€363.00
-  GRUPO [ES | Virgin olive oil (up to 2%) | Córdoba (ES613)] n=858 ultimo=2026-09-20 precio=€321.50
-  GRUPO [ES | Virgin olive oil (up to 2%) | Granada (ES614)] n=858 ultimo=2026-09-20 precio=€311.00
-  GRUPO [ES | Virgin olive oil (up to 2%) | Jaén (ES616)] n=858 ultimo=2026-09-20 precio=€321.00
-  GRUPO [ES | Virgin olive oil (up to 2%) | Sevilla ] n=845 ultimo=2026-09-20 precio=€321.00
-  GRUPO [ES | Virgin olive oil (up to 2%) | Tarragona (ES514)] n=858 ultimo=2026-09-20 precio=€345.00
-  GRUPO [ES | Virgin olive oil (up to 2%) | Toledo (ES425)] n=858 ultimo=2026-09-20 precio=€325.00
-  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Average national price] n=1679 ultimo=2026-09-20 precio=€482.00
-  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Bari (ITF42)] n=786 ultimo=2026-09-20 precio=€455.00
-  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Catanzaro (ITF63)] n=790 ultimo=2026-09-20 precio=€400.00
-  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Cosenza (ITF61)] n=788 ultimo=2026-09-20 precio=€405.00
-  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Foggia (ITF41)] n=796 ultimo=2026-09-20 precio=€445.00
-  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Palermo (ITG12)] n=762 ultimo=2026-09-20 precio=€670.00
-  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Salerno (ITF35)] n=211 ultimo=2015-09-13 precio=€630.00
-  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Taranto (ITF43)] n=794 ultimo=2026-09-20 precio=€460.00
-  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Trapani (ITG11)] n=758 ultimo=2026-09-20 precio=€670.00
-  GRUPO [IT | Lampante olive oil (2%) | Average national price] n=1095 ultimo=2026-09-20 precio=€284.00
-  GRUPO [IT | Lampante olive oil (2%) | Bari (ITF42)] n=1 ultimo=2011-01-23 precio=€153.00
-  GRUPO [IT | Lampante olive oil (2%) | Brindisi (ITF44)] n=796 ultimo=2026-09-20 precio=€300.00
-  GRUPO [IT | Lampante olive oil (2%) | Catanzaro (ITF63)] n=752 ultimo=2026-09-20 precio=€275.00
-  GRUPO [IT | Lampante olive oil (2%) | Gioia Tauro] n=781 ultimo=2026-09-20 precio=€270.00
-  GRUPO [IT | Lampante olive oil (2%) | Lecce (ITF45)] n=797 ultimo=2026-09-20 precio=€300.00
-  GRUPO [IT | Lampante olive oil (2%) | Taranto (ITF43)] n=796 ultimo=2026-09-20 precio=€300.00
-  GRUPO [IT | Olive-pomace oil (up to 1%) | Average national price] n=1 ultimo=2010-06-27 precio=€119.67
-  GRUPO [IT | Olive-pomace oil (up to 1%) | Bari (ITF42)] n=1 ultimo=2010-06-27 precio=€117.00
-  GRUPO [IT | Olive-pomace oil (up to 1%) | Foggia (ITF41)] n=1 ultimo=2010-06-27 precio=€118.00
-  GRUPO [IT | Olive-pomace oil (up to 1%) | Milano ] n=1 ultimo=2010-06-27 precio=€124.00
-  GRUPO [IT | Refined olive oil (up to 0.3%) | Average national price] n=798 ultimo=2026-09-20 precio=€334.00
-  GRUPO [IT | Refined olive oil (up to 0.3%) | Bari (ITF42)] n=349 ultimo=2017-12-31 precio=€356.00
-  GRUPO [IT | Refined olive oil (up to 0.3%) | Foggia (ITF41)] n=797 ultimo=2026-09-20 precio=€323.00
-  GRUPO [IT | Refined olive oil (up to 0.3%) | Milano ] n=778 ultimo=2026-09-20 precio=€345.00
-  GRUPO [IT | Refined olive-pomace oil (up to 0.3%) | Average national price] n=797 ultimo=2026-09-20 precio=€207.00
-  GRUPO [IT | Refined olive-pomace oil (up to 0.3%) | Bari (ITF42)] n=348 ultimo=2017-12-31 precio=€226.00
-  GRUPO [IT | Refined olive-pomace oil (up to 0.3%) | Foggia (ITF41)] n=796 ultimo=2026-09-20 precio=€210.00
-  GRUPO [IT | Refined olive-pomace oil (up to 0.3%) | Milano ] n=777 ultimo=2026-09-20 precio=€209.00
-  GRUPO [IT | Virgin olive oil (up to 2%) | Average national price] n=1667 ultimo=2026-09-20 precio=€330.00
-  GRUPO [IT | Virgin olive oil (up to 2%) | Bari (ITF42)] n=348 ultimo=2017-12-31 precio=€352.00
-  GRUPO [IT | Virgin olive oil (up to 2%) | Brindisi (ITF44)] n=796 ultimo=2026-09-20 precio=€330.00
-  GRUPO [IT | Virgin olive oil (up to 2%) | Catanzaro (ITF63)] n=561 ultimo=2026-02-22 precio=€590.00
-  GRUPO [IT | Virgin olive oil (up to 2%) | Cosenza (ITF61)] n=549 ultimo=2026-02-22 precio=€590.00
-  GRUPO [IT | Virgin olive oil (up to 2%) | Lecce (ITF45)] n=797 ultimo=2026-09-20 precio=€330.00
-  GRUPO [IT | Virgin olive oil (up to 2%) | Salerno (ITF35)] n=215 ultimo=2020-12-27 precio=€255.00
-  GRUPO [IT | Virgin olive oil (up to 2%) | Taranto (ITF43)] n=796 ultimo=2026-09-20 precio=€330.00
+FILAS: 66331
+EJEMPLO: {"memberStateCode":"DE","memberStateName":"Germany","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€192,50","unit":"TONNES","weekNumber":13,"productName":"Feed wheat","marketName":"Würzburg","stageName":"Departure from silo - after some storage - on truck or other transport means","referencePeriod":"01/10/2026"}
+  GRUPO [DE | Breadmaking common wheat | National Average] n=562 ultimo=2026-08-02 precio=€233,00
+  GRUPO [DE | Durum wheat | Bremen] n=1 ultimo=2023-04-09 precio=€220,00
+  GRUPO [DE | Durum wheat | National Average] n=1 ultimo=2023-04-09 precio=€220,00
+  GRUPO [DE | Feed barley | Bremen] n=124 ultimo=2026-09-06 precio=€227,00
+  GRUPO [DE | Feed barley | Dresden] n=149 ultimo=2019-04-21 precio=€166,00
+  GRUPO [DE | Feed barley | Erfurt] n=147 ultimo=2019-04-21 precio=€166,00
+  GRUPO [DE | Feed barley | Hamburg] n=493 ultimo=2026-09-27 precio=€214,00
+  GRUPO [DE | Feed barley | Hannover] n=186 ultimo=2021-09-05 precio=€172,00
+  GRUPO [DE | Feed barley | Köln] n=4 ultimo=2026-04-26 precio=€192,00
+  GRUPO [DE | Feed barley | Mannheim] n=442 ultimo=2026-09-20 precio=€202,50
+  GRUPO [DE | Feed barley | München] n=298 ultimo=2026-09-06 precio=€195,00
+  GRUPO [DE | Feed barley | National Average] n=560 ultimo=2026-08-02 precio=€192,75
+  GRUPO [DE | Feed barley | Stuttgart] n=142 ultimo=2019-05-12 precio=€184,00
+  GRUPO [DE | Feed barley | Würzburg] n=393 ultimo=2026-09-27 precio=€182,50
+  GRUPO [DE | Feed maize | Bremen] n=104 ultimo=2026-09-06 precio=€290,00
+  GRUPO [DE | Feed maize | Dresden] n=92 ultimo=2019-04-21 precio=€177,00
+  GRUPO [DE | Feed maize | Erfurt] n=42 ultimo=2018-11-25 precio=€185,00
+  GRUPO [DE | Feed maize | Hamburg] n=45 ultimo=2025-03-09 precio=€240,00
+  GRUPO [DE | Feed maize | Köln] n=399 ultimo=2026-09-13 precio=€282,00
+  GRUPO [DE | Feed maize | Mannheim] n=352 ultimo=2026-02-15 precio=€201,50
+  GRUPO [DE | Feed maize | München] n=342 ultimo=2026-08-30 precio=€252,50
+  GRUPO [DE | Feed maize | National Average] n=541 ultimo=2026-08-02 precio=€261,00
+  GRUPO [DE | Feed maize | Stuttgart] n=120 ultimo=2019-04-21 precio=€174,00
+  GRUPO [DE | Feed maize | Würzburg] n=386 ultimo=2026-09-20 precio=€255,00
+  GRUPO [DE | Feed oats | Bremen] n=90 ultimo=2026-09-06 precio=€200,00
+  GRUPO [DE | Feed oats | Dresden] n=22 ultimo=2019-04-21 precio=€180,00
+  GRUPO [DE | Feed oats | Erfurt] n=10 ultimo=2018-09-16 precio=€195,00
+  GRUPO [DE | Feed oats | Hamburg] n=1 ultimo=2025-05-25 precio=€255,00
+  GRUPO [DE | Feed oats | Köln] n=126 ultimo=2026-08-02 precio=€230,00
+  GRUPO [DE | Feed oats | München] n=5 ultimo=2022-10-02 precio=€347,00
+  GRUPO [DE | Feed oats | National Average] n=216 ultimo=2026-08-02 precio=€230,00
+  GRUPO [DE | Feed oats | Stuttgart] n=2 ultimo=2019-06-30 precio=€181,50
+  GRUPO [DE | Feed rye | Bremen] n=124 ultimo=2026-09-06 precio=€210,00
+  GRUPO [DE | Feed rye | Dresden] n=13 ultimo=2017-11-19 precio=€140,00
+  GRUPO [DE | Feed rye | Erfurt] n=4 ultimo=2018-06-10 precio=€140,00
+  GRUPO [DE | Feed rye | Hamburg] n=16 ultimo=2022-07-31 precio=€293,00
+  GRUPO [DE | Feed rye | Hannover] n=114 ultimo=2021-08-29 precio=€210,50
+  GRUPO [DE | Feed rye | Köln] n=51 ultimo=2026-08-02 precio=€201,00
+  GRUPO [DE | Feed rye | Mannheim] n=1 ultimo=2026-09-06 precio=€210,00
+  GRUPO [DE | Feed rye | München] n=6 ultimo=2022-02-20 precio=€252,50
+  GRUPO [DE | Feed rye | National Average] n=250 ultimo=2026-08-02 precio=€201,00
+  GRUPO [DE | Feed rye | Stuttgart] n=1 ultimo=2026-09-06 precio=€210,00
+  GRUPO [DE | Feed wheat | Bremen] n=126 ultimo=2026-09-06 precio=€245,00
+  GRUPO [DE | Feed wheat | Dresden] n=65 ultimo=2019-04-21 precio=€180,00
+  GRUPO [DE | Feed wheat | Erfurt] n=82 ultimo=2019-04-21 precio=€174,50
+  GRUPO [DE | Feed wheat | Hamburg] n=374 ultimo=2025-11-16 precio=€188,50
+  GRUPO [DE | Feed wheat | Hannover] n=191 ultimo=2021-09-05 precio=€189,00
+  GRUPO [DE | Feed wheat | Köln] n=450 ultimo=2026-09-06 precio=€234,00
+  GRUPO [DE | Feed wheat | Mannheim] n=375 ultimo=2026-09-20 precio=€222,50
+  GRUPO [DE | Feed wheat | München] n=294 ultimo=2026-09-06 precio=€220,00
+  GRUPO [DE | Feed wheat | National Average] n=557 ultimo=2026-08-02 precio=€214,25
+  GRUPO [DE | Feed wheat | Stuttgart] n=138 ultimo=2019-06-30 precio=€177,50
+  GRUPO [DE | Feed wheat | Würzburg] n=334 ultimo=2026-09-27 precio=€192,50
+  GRUPO [DE | Malting barley | Hannover] n=1 ultimo=2017-03-12 precio=€158,50
+  GRUPO [DE | Malting barley | Mannheim] n=359 ultimo=2026-07-05 precio=€203,00
+  GRUPO [DE | Malting barley | München] n=140 ultimo=2026-08-16 precio=€235,00
+  GRUPO [DE | Malting barley | National Average] n=473 ultimo=2026-07-05 precio=€206,00
+  GRUPO [DE | Malting barley | Stuttgart] n=166 ultimo=2026-05-10 precio=€208,50
+  GRUPO [DE | Malting barley | Würzburg] n=358 ultimo=2026-09-27 precio=€233,50
+  GRUPO [DE | Milling rye | Bremen] n=93 ultimo=2026-09-06 precio=€217,00
+  GRUPO [DE | Milling rye | Dresden] n=131 ultimo=2019-03-31 precio=€160,00
+  GRUPO [DE | Milling rye | Erfurt] n=44 ultimo=2019-03-17 precio=€172,50
+  GRUPO [DE | Milling rye | Hamburg] n=345 ultimo=2025-05-25 precio=€209,00
+  GRUPO [DE | Milling rye | Hannover] n=106 ultimo=2021-08-29 precio=€229,00
+  GRUPO [DE | Milling rye | Köln] n=349 ultimo=2026-09-27 precio=€209,00
+  GRUPO [DE | Milling rye | Mannheim] n=409 ultimo=2026-09-20 precio=€198,50
+  GRUPO [DE | Milling rye | München] n=254 ultimo=2026-08-16 precio=€200,00
+  GRUPO [DE | Milling rye | Stuttgart] n=39 ultimo=2019-12-08 precio=€162,50
+  GRUPO [DE | Milling rye | Würzburg] n=354 ultimo=2026-09-27 precio=€195,00
+  GRUPO [DE | Milling wheat | Bremen] n=95 ultimo=2026-09-06 precio=€253,00
+  GRUPO [DE | Milling wheat | Dresden] n=144 ultimo=2019-04-21 precio=€180,00
+  GRUPO [DE | Milling wheat | Erfurt] n=139 ultimo=2019-04-21 precio=€174,00
+  GRUPO [DE | Milling wheat | Hamburg] n=490 ultimo=2026-09-27 precio=€244,00
+  GRUPO [DE | Milling wheat | Hannover] n=185 ultimo=2021-09-05 precio=€189,00
+  GRUPO [DE | Milling wheat | Köln] n=455 ultimo=2026-08-16 precio=€235,00
+  GRUPO [DE | Milling wheat | Mannheim] n=397 ultimo=2026-09-20 precio=€227,50
+  GRUPO [DE | Milling wheat | München] n=353 ultimo=2026-09-13 precio=€252,00
+  GRUPO [DE | Milling wheat | Stuttgart] n=206 ultimo=2026-09-13 precio=€252,00
+  GRUPO [DE | Milling wheat | Würzburg] n=414 ultimo=2026-09-27 precio=€206,00
+  GRUPO [DE | Rye of breadmaking quality | National Average] n=551 ultimo=2026-08-02 precio=€197,50
+  GRUPO [DE | Triticale | Bremen] n=124 ultimo=2026-09-06 precio=€228,00
+  GRUPO [DE | Triticale | Dresden] n=100 ultimo=2019-04-14 precio=€165,00
+  GRUPO [DE | Triticale | Erfurt] n=57 ultimo=2018-07-15 precio=€155,00
+  GRUPO [DE | Triticale | Köln] n=258 ultimo=2026-07-12 precio=€173,00
+  GRUPO [DE | Triticale | Mannheim] n=158 ultimo=2019-04-07 precio=€176,00
+  GRUPO [DE | Triticale | München] n=20 ultimo=2019-06-16 precio=€177,00
+  GRUPO [DE | Triticale | National Average] n=444 ultimo=2026-07-26 precio=€167,50
+  GRUPO [DE | Triticale | Würzburg] n=314 ultimo=2026-09-27 precio=€172,50
+  GRUPO [DE | Wheat bran | Bremen] n=122 ultimo=2026-09-06 precio=€185,00
+  GRUPO [DE | Wheat bran | Dresden] n=3 ultimo=2017-08-27 precio=€108,00
+  GRUPO [DE | Wheat bran | Erfurt] n=16 ultimo=2017-10-29 precio=€99,00
+  GRUPO [DE | Wheat bran | Hamburg] n=422 ultimo=2026-09-06 precio=€195,00
+  GRUPO [DE | Wheat bran | Hannover] n=90 ultimo=2021-09-05 precio=€130,00
+  GRUPO [DE | Wheat bran | Köln] n=368 ultimo=2026-09-13 precio=€195,00
+  GRUPO [DE | Wheat bran | Mannheim] n=370 ultimo=2025-11-02 precio=€121,50
+  GRUPO [DE | Wheat bran | München] n=327 ultimo=2026-09-06 precio=€130,00
+  GRUPO [DE | Wheat bran | National Average] n=545 ultimo=2026-08-02 precio=€165,00
+  GRUPO [DE | Wheat bran | Stuttgart] n=151 ultimo=2019-06-30 precio=€119,00
+  GRUPO [DE | Wheat bran | Würzburg] n=380 ultimo=2026-08-09 precio=€105,00
+  GRUPO [ES | Breadmaking common wheat | National Average] n=489 ultimo=2025-09-28 precio=€208,05
+  GRUPO [ES | Durum wheat | Cadiz] n=355 ultimo=2025-09-28 precio=€246,00
+  GRUPO [ES | Durum wheat | Cordoba] n=448 ultimo=2025-10-26 precio=€238,00
+  GRUPO [ES | Durum wheat | National Average] n=490 ultimo=2025-09-28 precio=€255,00
+  GRUPO [ES | Durum wheat | Sevilla] n=433 ultimo=2026-09-20 precio=€268,00
+  GRUPO [ES | Durum wheat | Zaragoza] n=530 ultimo=2026-09-20 precio=€286,00
+  GRUPO [ES | Feed barley | Albacete] n=574 ultimo=2026-09-20 precio=€226,10
+  GRUPO [ES | Feed barley | Burgos] n=467 ultimo=2026-09-20 precio=€245,00
+  GRUPO [ES | Feed barley | Ciudad Real] n=574 ultimo=2026-09-20 precio=€233,50
+  GRUPO [ES | Feed barley | Guadalajara] n=467 ultimo=2026-09-20 precio=€228,60
+  GRUPO [ES | Feed barley | Huesca] n=566 ultimo=2026-09-20 precio=€234,00
+  GRUPO [ES | Feed barley | Lerida] n=565 ultimo=2026-09-20 precio=€235,00
+  GRUPO [ES | Feed barley | Madrid] n=1 ultimo=2015-11-22 precio=€184,00
+  GRUPO [ES | Feed barley | National Average] n=559 ultimo=2026-08-02 precio=€224,80
+  GRUPO [ES | Feed barley | Navarra] n=34 ultimo=2016-07-03 precio=€150,00
+  GRUPO [ES | Feed barley | Palencia] n=572 ultimo=2026-09-20 precio=€235,00
+  GRUPO [ES | Feed barley | Segovia] n=573 ultimo=2026-09-20 precio=€238,00
+  GRUPO [ES | Feed barley | Toledo] n=467 ultimo=2026-09-20 precio=€242,80
+  GRUPO [ES | Feed barley | Valladolid] n=568 ultimo=2026-09-20 precio=€242,00
+  GRUPO [ES | Feed maize | Albacete] n=467 ultimo=2026-09-20 precio=€245,60
+  GRUPO [ES | Feed maize | Badajoz] n=481 ultimo=2025-02-02 precio=€256,00
+  GRUPO [ES | Feed maize | Barcelona] n=140 ultimo=2018-07-08 precio=€182,00
+  GRUPO [ES | Feed maize | Huesca] n=53 ultimo=2026-09-20 precio=€252,00
+  GRUPO [ES | Feed maize | Leon] n=573 ultimo=2026-09-20 precio=€254,00
+  GRUPO [ES | Feed maize | Lerida] n=564 ultimo=2026-09-20 precio=€248,00
+  GRUPO [ES | Feed maize | Madrid] n=486 ultimo=2025-09-28 precio=€239,00
+  GRUPO [ES | Feed maize | National Average] n=489 ultimo=2025-09-28 precio=€223,80
+  GRUPO [ES | Feed maize | Navarra] n=564 ultimo=2026-09-20 precio=€257,00
+  GRUPO [ES | Feed maize | Sevilla] n=403 ultimo=2026-09-20 precio=€258,00
+  GRUPO [ES | Feed maize | Valencia] n=131 ultimo=2018-07-08 precio=€180,00
+  GRUPO [ES | Feed maize | Valladolid] n=466 ultimo=2026-09-20 precio=€255,80
+  GRUPO [ES | Feed maize | Zaragoza] n=555 ultimo=2026-09-20 precio=€259,00
+  GRUPO [ES | Feed wheat | Burgos] n=46 ultimo=2026-09-20 precio=€241,75
+  GRUPO [ES | Feed wheat | Cordoba] n=1 ultimo=2025-11-23 precio=€216,90
+  GRUPO [ES | Feed wheat | Huesca] n=45 ultimo=2026-09-20 precio=€251,80
+  GRUPO [ES | Feed wheat | Lerida] n=1 ultimo=2025-11-09 precio=€217,80
+  GRUPO [ES | Feed wheat | Lleida] n=45 ultimo=2026-09-20 precio=€250,40
+  GRUPO [ES | Feed wheat | Navarra] n=46 ultimo=2026-09-20 precio=€250,42
+  GRUPO [ES | Feed wheat | Palencia] n=43 ultimo=2026-09-20 precio=€241,85
+  GRUPO [ES | Feed wheat | Segovia] n=46 ultimo=2026-09-20 precio=€244,20
+  GRUPO [ES | Feed wheat | Sevilla] n=46 ultimo=2026-09-20 precio=€245,00
+  GRUPO [ES | Feed wheat | Toledo] n=46 ultimo=2026-09-20 precio=€253,20
+  GRUPO [ES | Feed wheat | Valladolid] n=46 ultimo=2026-09-20 precio=€247,80
+  GRUPO [ES | Feed wheat | Zamora] n=46 ultimo=2026-09-20 precio=€245,20
+  GRUPO [ES | Feed wheat | Zaragoza] n=45 ultimo=2026-09-20 precio=€258,20
+  GRUPO [ES | Malting barley - M2RH | National Average] n=544 ultimo=2026-08-02 precio=€227,50
+  GRUPO [ES | Malting barley | Badajoz] n=1 ultimo=2016-01-24 precio=€179,00
+  GRUPO [ES | Malting barley | Barcelona] n=1 ultimo=2016-01-24 precio=€173,00
+  GRUPO [ES | Malting barley | Burgos] n=432 ultimo=2024-12-01 precio=€218,50
+  GRUPO [ES | Malting barley | Guadalajara] n=313 ultimo=2024-06-30 precio=€178,00
+  GRUPO [ES | Malting barley | Huesca] n=479 ultimo=2026-09-20 precio=€230,00
+  GRUPO [ES | Malting barley | Leon] n=1 ultimo=2016-01-24 precio=€168,00
+  GRUPO [ES | Malting barley | Lerida] n=1 ultimo=2016-01-24 precio=€165,00
+  GRUPO [ES | Malting barley | Madrid] n=198 ultimo=2023-07-23 precio=€252,00
+  GRUPO [ES | Malting barley | National Average] n=15 ultimo=2016-02-28 precio=€180,87
+  GRUPO [ES | Malting barley | Navarra] n=463 ultimo=2026-09-20 precio=€238,00
+  GRUPO [ES | Malting barley | Palencia] n=414 ultimo=2024-06-30 precio=€190,00
+  GRUPO [ES | Malting barley | Sevilla] n=1 ultimo=2016-01-24 precio=€185,00
+  GRUPO [ES | Malting barley | Valencia] n=1 ultimo=2016-01-24 precio=€174,00
+  GRUPO [ES | Malting barley | Valladolid] n=1 ultimo=2016-01-24 precio=€172,40
+  GRUPO [ES | Malting barley | Zaragoza] n=1 ultimo=2016-01-24 precio=€173,00
+  GRUPO [ES | Milling wheat | Albacete] n=521 ultimo=2025-09-28 precio=€203,20
+  GRUPO [ES | Milling wheat | Barcelona] n=496 ultimo=2025-11-02 precio=€227,00
+  GRUPO [ES | Milling wheat | Burgos] n=528 ultimo=2025-11-02 precio=€201,40
+  GRUPO [ES | Milling wheat | Cordoba] n=1 ultimo=2025-12-07 precio=€220,40
+  GRUPO [ES | Milling wheat | Cuenca] n=261 ultimo=2025-11-02 precio=€199,00
+  GRUPO [ES | Milling wheat | Huesca] n=566 ultimo=2026-09-20 precio=€260,00
+  GRUPO [ES | Milling wheat | Leon] n=1 ultimo=2025-12-07 precio=€220,00
+  GRUPO [ES | Milling wheat | Lleida] n=46 ultimo=2026-09-20 precio=€255,60
+  GRUPO [ES | Milling wheat | Navarra] n=46 ultimo=2026-09-20 precio=€258,00
+  GRUPO [ES | Milling wheat | Palencia] n=520 ultimo=2025-11-02 precio=€201,40
+  GRUPO [ES | Milling wheat | Segovia] n=46 ultimo=2026-09-20 precio=€255,00
+  GRUPO [ES | Milling wheat | Sevilla] n=496 ultimo=2025-11-02 precio=€222,00
+  GRUPO [ES | Milling wheat | Toledo] n=1 ultimo=2026-02-01 precio=€224,95
+  GRUPO [ES | Milling wheat | Valencia] n=27 ultimo=2016-07-03 precio=€172,00
+  GRUPO [ES | Milling wheat | Valladolid] n=528 ultimo=2025-11-02 precio=€206,40
+  GRUPO [ES | Milling wheat | Zamora] n=528 ultimo=2025-11-02 precio=€208,20
+  GRUPO [ES | Milling wheat | Zaragoza] n=456 ultimo=2026-09-20 precio=€262,70
+  GRUPO [FR | Breadmaking common wheat - TVT | National Average] n=15 ultimo=2020-09-06 precio=€187,11
+  GRUPO [FR | Breadmaking common wheat | National Average] n=543 ultimo=2026-07-26 precio=€234,30
+  GRUPO [FR | Durum wheat | La Pallice] n=253 ultimo=2026-08-30 precio=€263,43
+  GRUPO [FR | Durum wheat | Loiret] n=2 ultimo=2018-11-04 precio=€200,79
+  GRUPO [FR | Durum wheat | National Average] n=307 ultimo=2026-07-26 precio=€267,50
+  GRUPO [FR | Durum wheat | Port-La-Nouvelle] n=231 ultimo=2026-05-17 precio=€256,00
+  GRUPO [FR | Durum wheat | Rouen] n=40 ultimo=2026-08-30 precio=€275,93
+  GRUPO [FR | Durum wheat | Sud-Ouest] n=11 ultimo=2024-02-25 precio=€309,44
+  GRUPO [FR | Feed barley | Dunkerque] n=115 ultimo=2024-03-03 precio=€184,44
+  GRUPO [FR | Feed barley | Eure-et-Loir] n=89 ultimo=2021-09-12 precio=€227,93
+  GRUPO [FR | Feed barley | La Pallice] n=94 ultimo=2024-03-03 precio=€184,44
+  GRUPO [FR | Feed barley | Metz] n=1 ultimo=2021-07-25 precio=€195,00
+  GRUPO [FR | Feed barley | National Average] n=518 ultimo=2026-07-26 precio=€209,50
+  GRUPO [FR | Feed barley | Rouen] n=516 ultimo=2026-08-30 precio=€218,93
+  GRUPO [FR | Feed maize | Bayonne] n=56 ultimo=2024-02-25 precio=€174,19
+  GRUPO [FR | Feed maize | Bordeaux] n=413 ultimo=2026-08-02 precio=€250,00
+  GRUPO [FR | Feed maize | Creil] n=11 ultimo=2024-03-03 precio=€173,44
+  GRUPO [FR | Feed maize | La Pallice] n=43 ultimo=2024-03-03 precio=€175,44
+  GRUPO [FR | Feed maize | Marne] n=21 ultimo=2023-06-11 precio=€234,16
+  GRUPO [FR | Feed maize | National Average] n=518 ultimo=2026-07-26 precio=€228,50
+  GRUPO [FR | Feed maize | Rhin] n=457 ultimo=2026-08-23 precio=€254,36
+  GRUPO [FR | Feed maize | Sud-Ouest] n=11 ultimo=2023-10-01 precio=€214,72
+  GRUPO [FR | Feed wheat | Cote-D'or] n=3 ultimo=2022-12-11 precio=€,00
+  GRUPO [FR | Feed wheat | Creil] n=6 ultimo=2022-12-11 precio=€,00
+  GRUPO [FR | Feed wheat | Dunkerque] n=3 ultimo=2022-12-11 precio=€,00
+  GRUPO [FR | Feed wheat | Eure-et-Loir] n=110 ultimo=2022-12-11 precio=€,00
+  GRUPO [FR | Feed wheat | La Pallice] n=4 ultimo=2022-12-11 precio=€,00
+  GRUPO [FR | Feed wheat | Metz] n=3 ultimo=2022-12-11 precio=€,00
+  GRUPO [FR | Feed wheat | National Average] n=110 ultimo=2020-09-06 precio=€187,11
+  GRUPO [FR | Feed wheat | Port-La-Nouvelle] n=4 ultimo=2022-12-11 precio=€,00
+  GRUPO [FR | Feed wheat | Rouen] n=3 ultimo=2022-12-11 precio=€,00
+  GRUPO [FR | Malting barley - M2RH | National Average] n=3 ultimo=2017-05-28 precio=€164,30
+  GRUPO [FR | Malting barley - M2RP | National Average] n=76 ultimo=2018-12-09 precio=€220,72
+  GRUPO [FR | Malting barley - M6RH | National Average] n=71 ultimo=2018-12-09 precio=€212,72
+  GRUPO [FR | Malting barley | Creil] n=75 ultimo=2018-12-09 precio=€213,72
+  GRUPO [FR | Malting barley | Rouen] n=66 ultimo=2018-12-09 precio=€219,72
+  GRUPO [FR | Milling wheat | Cote-D'or] n=3 ultimo=2022-12-11 precio=€,00
+  GRUPO [FR | Milling wheat | Creil] n=11 ultimo=2024-03-03 precio=€187,44
+  GRUPO [FR | Milling wheat | Dunkerque] n=195 ultimo=2024-03-24 precio=€190,44
+  GRUPO [FR | Milling wheat | Eure-et-Loir] n=139 ultimo=2022-12-11 precio=€,00
+  GRUPO [FR | Milling wheat | La Pallice] n=494 ultimo=2026-09-20 precio=€242,36
+  GRUPO [FR | Milling wheat | Metz] n=11 ultimo=2024-03-03 precio=€181,44
+  GRUPO [FR | Milling wheat | Port-La-Nouvelle] n=7 ultimo=2022-12-11 precio=€,00
+  GRUPO [FR | Milling wheat | Rouen] n=546 ultimo=2026-09-20 precio=€238,56
+  GRUPO [IT | Breadmaking common wheat | National Average] n=510 ultimo=2026-08-02 precio=€219,31
+  GRUPO [IT | Durum wheat | Bologna] n=483 ultimo=2026-09-20 precio=€275,50
+  GRUPO [IT | Durum wheat | Catania] n=185 ultimo=2022-07-17 precio=€540,00
+  GRUPO [IT | Durum wheat | Foggia] n=427 ultimo=2026-09-20 precio=€276,50
+  GRUPO [IT | Durum wheat | Grosseto] n=111 ultimo=2026-08-30 precio=€302,50
+  GRUPO [IT | Durum wheat | Milano] n=468 ultimo=2026-09-20 precio=€275,50
+  GRUPO [IT | Durum wheat | Napoli] n=342 ultimo=2026-09-20 precio=€276,50
+  GRUPO [IT | Durum wheat | National Average] n=515 ultimo=2026-08-02 precio=€271,83
+  GRUPO [IT | Durum wheat | Roma] n=447 ultimo=2026-08-30 precio=€302,50
+  GRUPO [IT | Feed barley | Alessandria] n=272 ultimo=2026-07-12 precio=€182,00
+  GRUPO [IT | Feed barley | Bologna] n=467 ultimo=2026-09-20 precio=€234,50
+  GRUPO [IT | Feed barley | Foggia] n=442 ultimo=2026-09-20 precio=€202,50
+  GRUPO [IT | Feed barley | Grosseto] n=107 ultimo=2026-06-28 precio=€235,16
+  GRUPO [IT | Feed barley | Milano] n=438 ultimo=2026-09-20 precio=€243,00
+  GRUPO [IT | Feed barley | Napoli] n=187 ultimo=2026-09-20 precio=€247,50
+  GRUPO [IT | Feed barley | National Average] n=504 ultimo=2026-08-02 precio=€205,60
+  GRUPO [IT | Feed barley | Roma] n=414 ultimo=2026-09-20 precio=€215,50
+  GRUPO [IT | Feed maize | Alessandria] n=387 ultimo=2026-07-12 precio=€217,00
+  GRUPO [IT | Feed maize | Bologna] n=514 ultimo=2026-09-20 precio=€267,00
+  GRUPO [IT | Feed maize | Mantova] n=517 ultimo=2026-09-20 precio=€255,50
+  GRUPO [IT | Feed maize | Milano] n=506 ultimo=2026-09-20 precio=€257,50
+  GRUPO [IT | Feed maize | Napoli] n=351 ultimo=2026-05-10 precio=€221,00
+  GRUPO [IT | Feed maize | National Average] n=522 ultimo=2026-08-02 precio=€243,39
+  GRUPO [IT | Feed maize | Perugia] n=491 ultimo=2026-09-20 precio=€226,60
+  GRUPO [IT | Feed maize | Reggio Emilia] n=486 ultimo=2026-09-20 precio=€256,00
+  GRUPO [IT | Feed maize | Roma] n=502 ultimo=2026-09-20 precio=€302,00
+  GRUPO [IT | Feed maize | Treviso] n=498 ultimo=2026-09-20 precio=€247,00
+  GRUPO [IT | Feed maize | Udine] n=505 ultimo=2026-09-20 precio=€246,00
+  GRUPO [IT | Milling wheat | Alessandria] n=364 ultimo=2026-06-14 precio=€215,50
+  GRUPO [IT | Milling wheat | Bologna] n=484 ultimo=2026-09-20 precio=€254,00
+  GRUPO [IT | Milling wheat | Firenze] n=453 ultimo=2026-09-20 precio=€195,00
+  GRUPO [IT | Milling wheat | Grosseto] n=60 ultimo=2026-06-28 precio=€240,16
+  GRUPO [IT | Milling wheat | Milano] n=469 ultimo=2026-09-20 precio=€251,00
+  GRUPO [IT | Milling wheat | Napoli] n=345 ultimo=2026-09-20 precio=€282,50
+  GRUPO [IT | Milling wheat | Perugia] n=454 ultimo=2026-09-20 precio=€222,60
+  GRUPO [IT | Milling wheat | Roma] n=376 ultimo=2026-09-20 precio=€267,50
+  GRUPO [IT | Milling wheat | Torino] n=453 ultimo=2026-09-20 precio=€249,00
+  GRUPO [IT | Milling wheat | Treviso] n=464 ultimo=2026-09-20 precio=€232,00
+  GRUPO [IT | Milling wheat | Udine] n=449 ultimo=2026-09-20 precio=€230,00
+  GRUPO [IT | Milling wheat | Verona] n=332 ultimo=2026-09-20 precio=€239,00
 
-=== https://api.tech.ec.europa.eu/agrifood/api/rice/prices?memberStateCodes=ES#group=stage,type,variety
+=== https://api.tech.ec.europa.eu/agrifood/api/beef/prices?memberStateCodes=ES,DE,FR,IT#group=memberStateCode,category,productCode
 STATUS: 200
-FILAS: 7578
-EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€1081.90","unit":"Tonne","weekNumber":3,"marketingYear":"2026/2027","stage":"Milled non parboiled","type":"Japonica","variety":"Avg"}
-  GRUPO [Broken | N.A. | Average] n=275 ultimo=2026-09-20 precio=€432.23
-  GRUPO [Broken | N.A. | Avg] n=275 ultimo=2026-09-20 precio=€432.23
-  GRUPO [Broken | Not informed | Not informed] n=76 ultimo=2017-07-09 precio=€312.62
-  GRUPO [Milled non parboiled | Indica | Average] n=402 ultimo=2025-03-02 precio=€1150.00
-  GRUPO [Milled non parboiled | Indica | Avg] n=405 ultimo=2025-03-02 precio=€1150.00
-  GRUPO [Milled non parboiled | Indica | Not informed] n=80 ultimo=2017-07-30 precio=€576.53
-  GRUPO [Milled non parboiled | Indica | Puntal Valencia] n=7 ultimo=2017-11-26 precio=€550.00
-  GRUPO [Milled non parboiled | Japonica | Average] n=484 ultimo=2026-09-20 precio=€1081.90
-  GRUPO [Milled non parboiled | Japonica | Avg] n=487 ultimo=2026-09-20 precio=€1081.90
-  GRUPO [Milled non parboiled | Japonica | Gleva Valencia] n=7 ultimo=2017-11-26 precio=€565.00
-  GRUPO [Milled non parboiled | Japonica | Not informed] n=80 ultimo=2017-07-30 precio=€579.34
-  GRUPO [Milled parboiled | Indica | Andalucia] n=7 ultimo=2017-11-26 precio=€612.00
-  GRUPO [Milled parboiled | Indica | Average] n=400 ultimo=2025-03-02 precio=€925.86
-  GRUPO [Milled parboiled | Indica | Avg] n=403 ultimo=2025-03-02 precio=€925.86
-  GRUPO [Milled parboiled | Indica | Not informed] n=80 ultimo=2017-07-30 precio=€621.45
-  GRUPO [Milled parboiled | Indica | Valencia] n=7 ultimo=2017-11-26 precio=€595.00
-  GRUPO [Milled parboiled | Japonica | Not informed] n=1 ultimo=2016-03-06 precio=€715.19
-  GRUPO [Milled parboiled | N.A. | Average] n=1 ultimo=2022-07-24 precio=€695.50
-  GRUPO [Milled parboiled | N.A. | Avg] n=1 ultimo=2022-07-24 precio=€695.50
-  GRUPO [Milled | Japonica | Average] n=694 ultimo=2015-11-15 precio=€586.65
-  GRUPO [Paddy | Indica | Average] n=1053 ultimo=2026-09-20 precio=€344.07
-  GRUPO [Paddy | Indica | Avg] n=487 ultimo=2026-09-20 precio=€344.07
-  GRUPO [Paddy | Indica | Not informed] n=18 ultimo=2016-05-29 precio=€305.32
-  GRUPO [Paddy | Indica | Puntal] n=10 ultimo=2017-03-12 precio=€295.00
-  GRUPO [Paddy | Indica | Puntal Andalucia] n=7 ultimo=2017-11-26 precio=€295.00
-  GRUPO [Paddy | Indica | Sirio Andalucia] n=7 ultimo=2017-11-26 precio=€295.00
-  GRUPO [Paddy | Indica | Sirio Valencia] n=7 ultimo=2017-11-26 precio=€260.00
-  GRUPO [Paddy | Japonica | Average] n=1228 ultimo=2026-09-20 precio=€451.68
-  GRUPO [Paddy | Japonica | Avg] n=486 ultimo=2026-09-20 precio=€451.68
-  GRUPO [Paddy | Japonica | Gleva] n=32 ultimo=2017-05-14 precio=€325.00
-  GRUPO [Paddy | Japonica | Gleva Valencia] n=7 ultimo=2017-11-26 precio=€285.00
-  GRUPO [Paddy | Japonica | J. Sendra] n=32 ultimo=2017-05-14 precio=€325.00
-  GRUPO [Paddy | Japonica | Not informed] n=18 ultimo=2016-05-29 precio=€320.77
-  GRUPO [Paddy | Japonica | Sendra Andalucia] n=7 ultimo=2017-11-26 precio=€310.00
-  GRUPO [Paddy | Japonica | Sendra Valencia] n=7 ultimo=2017-11-26 precio=€285.00
+FILAS: 180841
+EJEMPLO: {"memberStateCode":"FR","memberStateName":"France","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€720.00","unit":"€/100Kg","weekNumber":38,"category":"Heifers","productCode":"ER3"}
+  GRUPO [DE | Adult male indicative price | ACZURO] n=1213 ultimo=2026-09-20 precio=€636.28
+  GRUPO [DE | Bulls | BR3] n=1487 ultimo=2026-09-20 precio=€572.93
+  GRUPO [DE | Calves slaughtered <8M | CALVES-LT8MONTHS] n=551 ultimo=2026-08-02 precio=€629.00
+  GRUPO [DE | Cows | DO2] n=1469 ultimo=2026-09-20 precio=€525.61
+  GRUPO [DE | Cows | DO3] n=1815 ultimo=2026-09-20 precio=€534.59
+  GRUPO [DE | Cows | DO4] n=1196 ultimo=2026-09-20 precio=€537.77
+  GRUPO [DE | Cows | DP2] n=1681 ultimo=2026-09-20 precio=€462.11
+  GRUPO [DE | Cows | DP3] n=1212 ultimo=2026-09-20 precio=€467.16
+  GRUPO [DE | Cows | DR3] n=1815 ultimo=2026-09-20 precio=€547.75
+  GRUPO [DE | Cows | DR4] n=1185 ultimo=2026-09-20 precio=€551.22
+  GRUPO [DE | Heifers | EO2] n=1469 ultimo=2026-09-20 precio=€518.40
+  GRUPO [DE | Heifers | EO3] n=1815 ultimo=2026-09-20 precio=€529.17
+  GRUPO [DE | Heifers | EO4] n=1109 ultimo=2026-09-20 precio=€534.11
+  GRUPO [DE | Heifers | ER2] n=1259 ultimo=2026-09-20 precio=€633.29
+  GRUPO [DE | Heifers | ER3] n=1815 ultimo=2026-09-20 precio=€640.26
+  GRUPO [DE | Heifers | ER4] n=1218 ultimo=2026-09-20 precio=€637.17
+  GRUPO [DE | Heifers | EU2] n=1255 ultimo=2026-09-20 precio=€639.96
+  GRUPO [DE | Heifers | EU3] n=1815 ultimo=2026-09-20 precio=€644.79
+  GRUPO [DE | Heifers | EU4] n=270 ultimo=2026-09-20 precio=€638.58
+  GRUPO [DE | Steers | CO3] n=1427 ultimo=2026-09-20 precio=€569.86
+  GRUPO [DE | Steers | CO4] n=22 ultimo=2023-10-15 precio=€394.87
+  GRUPO [DE | Steers | CR3] n=1430 ultimo=2026-09-20 precio=€649.26
+  GRUPO [DE | Steers | CR4] n=287 ultimo=2026-09-20 precio=€688.40
+  GRUPO [DE | Steers | CU2] n=78 ultimo=2026-05-10 precio=€737.32
+  GRUPO [DE | Steers | CU3] n=802 ultimo=2026-09-20 precio=€692.51
+  GRUPO [DE | Steers | CU4] n=134 ultimo=2026-09-20 precio=€694.25
+  GRUPO [DE | Young bulls | AO2] n=1815 ultimo=2026-09-20 precio=€611.03
+  GRUPO [DE | Young bulls | AO3] n=1815 ultimo=2026-09-20 precio=€619.86
+  GRUPO [DE | Young bulls | AR2] n=1815 ultimo=2026-09-20 precio=€653.93
+  GRUPO [DE | Young bulls | AR3] n=1815 ultimo=2026-09-20 precio=€652.65
+  GRUPO [DE | Young bulls | AU2] n=1815 ultimo=2026-09-20 precio=€660.54
+  GRUPO [DE | Young bulls | AU3] n=1815 ultimo=2026-09-20 precio=€657.31
+  GRUPO [DE | Young cattle | ZO2] n=554 ultimo=2026-09-20 precio=€449.38
+  GRUPO [DE | Young cattle | ZO3] n=38 ultimo=2024-09-29 precio=€472.10
+  GRUPO [DE | Young cattle | ZR2] n=358 ultimo=2025-08-17 precio=€448.45
+  GRUPO [DE | Young cattle | ZU2] n=22 ultimo=2025-08-24 precio=€999.00
+  GRUPO [ES | Adult male indicative price | ACZURO] n=1213 ultimo=2026-09-20 precio=€624.06
+  GRUPO [ES | Cows | DO2] n=1815 ultimo=2026-09-20 precio=€462.34
+  GRUPO [ES | Cows | DO3] n=1815 ultimo=2026-09-20 precio=€521.88
+  GRUPO [ES | Cows | DO4] n=1709 ultimo=2026-09-20 precio=€625.45
+  GRUPO [ES | Cows | DP2] n=1815 ultimo=2026-09-20 precio=€418.38
+  GRUPO [ES | Cows | DP3] n=1815 ultimo=2026-09-20 precio=€418.46
+  GRUPO [ES | Cows | DR3] n=1815 ultimo=2026-09-20 precio=€527.74
+  GRUPO [ES | Cows | DR4] n=1815 ultimo=2026-09-20 precio=€614.22
+  GRUPO [ES | Heifers | EO2] n=1813 ultimo=2026-09-20 precio=€522.23
+  GRUPO [ES | Heifers | EO3] n=1813 ultimo=2026-09-20 precio=€555.58
+  GRUPO [ES | Heifers | EO4] n=1807 ultimo=2026-09-20 precio=€560.26
+  GRUPO [ES | Heifers | ER2] n=1813 ultimo=2026-09-20 precio=€694.90
+  GRUPO [ES | Heifers | ER3] n=1813 ultimo=2026-09-20 precio=€692.08
+  GRUPO [ES | Heifers | ER4] n=1807 ultimo=2026-09-20 precio=€651.82
+  GRUPO [ES | Heifers | EU2] n=1813 ultimo=2026-09-20 precio=€708.01
+  GRUPO [ES | Heifers | EU3] n=1813 ultimo=2026-09-20 precio=€701.83
+  GRUPO [ES | Young bulls | AO2] n=1815 ultimo=2026-09-20 precio=€588.80
+  GRUPO [ES | Young bulls | AO3] n=1815 ultimo=2026-09-20 precio=€585.92
+  GRUPO [ES | Young bulls | AR2] n=1815 ultimo=2026-09-20 precio=€618.57
+  GRUPO [ES | Young bulls | AR3] n=1815 ultimo=2026-09-20 precio=€614.67
+  GRUPO [ES | Young bulls | AU2] n=1815 ultimo=2026-09-20 precio=€624.65
+  GRUPO [ES | Young bulls | AU3] n=1815 ultimo=2026-09-20 precio=€632.15
+  GRUPO [ES | Young cattle | ZO2] n=641 ultimo=2026-09-20 precio=€582.27
+  GRUPO [ES | Young cattle | ZO3] n=641 ultimo=2026-09-20 precio=€568.50
+  GRUPO [ES | Young cattle | ZR2] n=641 ultimo=2026-09-20 precio=€642.88
+  GRUPO [ES | Young cattle | ZR3] n=641 ultimo=2026-09-20 precio=€667.51
+  GRUPO [ES | Young cattle | ZU2] n=641 ultimo=2026-09-20 precio=€671.03
+  GRUPO [ES | Young cattle | ZU3] n=641 ultimo=2026-09-20 precio=€687.38
+  GRUPO [FR | Adult male indicative price | ACZURO] n=1213 ultimo=2026-09-20 precio=€626.54
+  GRUPO [FR | Bulls | BR3] n=1643 ultimo=2026-08-09 precio=€644.00
+  GRUPO [FR | Calves slaughtered <8M | CALVES-LT8MONTHS] n=641 ultimo=2026-09-20 precio=€783.10
+  GRUPO [FR | Cows | DO2] n=1815 ultimo=2026-09-20 precio=€637.00
+  GRUPO [FR | Cows | DO3] n=1815 ultimo=2026-09-20 precio=€585.00
+  GRUPO [FR | Cows | DO4] n=1815 ultimo=2026-09-20 precio=€560.00
+  GRUPO [FR | Cows | DP2] n=1815 ultimo=2026-09-20 precio=€517.00
+  GRUPO [FR | Cows | DP3] n=1815 ultimo=2026-09-20 precio=€536.00
+  GRUPO [FR | Cows | DR3] n=1815 ultimo=2026-09-20 precio=€719.00
+  GRUPO [FR | Cows | DR4] n=1815 ultimo=2026-09-20 precio=€702.00
+  GRUPO [FR | Heifers | EO2] n=1667 ultimo=2025-02-09 precio=€479.00
+  GRUPO [FR | Heifers | EO3] n=1815 ultimo=2026-09-20 precio=€639.00
+  GRUPO [FR | Heifers | EO4] n=1651 ultimo=2026-08-30 precio=€665.00
+  GRUPO [FR | Heifers | ER2] n=1815 ultimo=2026-09-20 precio=€708.00
+  GRUPO [FR | Heifers | ER3] n=1815 ultimo=2026-09-20 precio=€720.00
+  GRUPO [FR | Heifers | ER4] n=1815 ultimo=2026-09-20 precio=€693.00
+  GRUPO [FR | Heifers | EU2] n=1703 ultimo=2026-08-16 precio=€808.00
+  GRUPO [FR | Heifers | EU3] n=1815 ultimo=2026-09-20 precio=€787.00
+  GRUPO [FR | Heifers | EU4] n=1147 ultimo=2013-12-22 precio=€458.00
+  GRUPO [FR | Steers | CO3] n=1815 ultimo=2026-09-20 precio=€611.00
+  GRUPO [FR | Steers | CO4] n=1616 ultimo=2023-07-02 precio=€498.00
+  GRUPO [FR | Steers | CR3] n=1815 ultimo=2026-09-20 precio=€687.00
+  GRUPO [FR | Steers | CR4] n=1570 ultimo=2022-10-02 precio=€436.00
+  GRUPO [FR | Steers | CU2] n=1158 ultimo=2021-08-22 precio=€311.00
+  GRUPO [FR | Steers | CU3] n=1616 ultimo=2024-07-28 precio=€558.00
+  GRUPO [FR | Steers | CU4] n=1183 ultimo=2018-07-01 precio=€369.00
+  GRUPO [FR | Young bulls | AO2] n=1815 ultimo=2026-09-20 precio=€570.00
+  GRUPO [FR | Young bulls | AO3] n=1815 ultimo=2026-09-20 precio=€559.00
+  GRUPO [FR | Young bulls | AR2] n=1815 ultimo=2026-09-20 precio=€634.00
+  GRUPO [FR | Young bulls | AR3] n=1815 ultimo=2026-09-20 precio=€624.00
+  GRUPO [FR | Young bulls | AU2] n=1815 ultimo=2026-09-20 precio=€670.00
+  GRUPO [FR | Young bulls | AU3] n=1815 ultimo=2026-09-20 precio=€643.00
+  GRUPO [IT | Adult male indicative price | ACZURO] n=1213 ultimo=2026-09-20 precio=€636.91
+  GRUPO [IT | Bulls | BR3] n=666 ultimo=2026-09-20 precio=€543.34
+  GRUPO [IT | Calves slaughtered <8M | CALVES-LT8MONTHS] n=641 ultimo=2026-09-20 precio=€665.34
+  GRUPO [IT | Cows | DO2] n=1815 ultimo=2026-09-20 precio=€445.86
+  GRUPO [IT | Cows | DO3] n=1815 ultimo=2026-09-20 precio=€448.06
+  GRUPO [IT | Cows | DO4] n=679 ultimo=2026-09-20 precio=€505.45
+  GRUPO [IT | Cows | DP2] n=1815 ultimo=2026-09-20 precio=€398.49
+  GRUPO [IT | Cows | DP3] n=1813 ultimo=2026-09-20 precio=€418.06
+  GRUPO [IT | Cows | DR3] n=1815 ultimo=2026-09-20 precio=€511.18
+  GRUPO [IT | Cows | DR4] n=677 ultimo=2026-09-20 precio=€508.67
+  GRUPO [IT | Heifers | EO2] n=1815 ultimo=2026-09-20 precio=€522.06
+  GRUPO [IT | Heifers | EO3] n=1815 ultimo=2026-09-20 precio=€468.07
+  GRUPO [IT | Heifers | EO4] n=662 ultimo=2026-09-20 precio=€504.71
+  GRUPO [IT | Heifers | ER2] n=1815 ultimo=2026-09-20 precio=€753.59
+  GRUPO [IT | Heifers | ER3] n=1815 ultimo=2026-09-20 precio=€758.83
+  GRUPO [IT | Heifers | ER4] n=664 ultimo=2026-09-20 precio=€692.38
+  GRUPO [IT | Heifers | EU2] n=1815 ultimo=2026-09-20 precio=€748.38
+  GRUPO [IT | Heifers | EU3] n=1815 ultimo=2026-09-20 precio=€735.65
+  GRUPO [IT | Heifers | EU4] n=266 ultimo=2026-09-20 precio=€475.00
+  GRUPO [IT | Steers | CO3] n=548 ultimo=2026-09-20 precio=€452.34
+  GRUPO [IT | Steers | CO4] n=79 ultimo=2026-05-31 precio=€600.00
+  GRUPO [IT | Steers | CR3] n=550 ultimo=2026-09-20 precio=€637.48
+  GRUPO [IT | Steers | CR4] n=150 ultimo=2026-04-19 precio=€795.97
+  GRUPO [IT | Steers | CU2] n=648 ultimo=2026-09-20 precio=€721.10
+  GRUPO [IT | Steers | CU3] n=585 ultimo=2026-09-20 precio=€812.25
+  GRUPO [IT | Steers | CU4] n=141 ultimo=2026-02-22 precio=€1058.00
+  GRUPO [IT | Young bulls | AO2] n=1815 ultimo=2026-09-20 precio=€541.52
+  GRUPO [IT | Young bulls | AO3] n=1815 ultimo=2026-09-20 precio=€574.89
+  GRUPO [IT | Young bulls | AR2] n=1815 ultimo=2026-09-20 precio=€568.07
+  GRUPO [IT | Young bulls | AR3] n=1815 ultimo=2026-09-20 precio=€668.34
+  GRUPO [IT | Young bulls | AU2] n=1815 ultimo=2026-09-20 precio=€682.78
+  GRUPO [IT | Young bulls | AU3] n=1815 ultimo=2026-09-20 precio=€686.19
+  GRUPO [IT | Young cattle | ZO2] n=666 ultimo=2026-09-20 precio=€584.50
+  GRUPO [IT | Young cattle | ZO3] n=651 ultimo=2026-09-20 precio=€489.57
+  GRUPO [IT | Young cattle | ZR2] n=666 ultimo=2026-09-20 precio=€556.27
+  GRUPO [IT | Young cattle | ZR3] n=666 ultimo=2026-09-20 precio=€712.55
+  GRUPO [IT | Young cattle | ZU2] n=666 ultimo=2026-09-20 precio=€756.17
+  GRUPO [IT | Young cattle | ZU3] n=665 ultimo=2026-09-20 precio=€840.44
 
-=== https://api.tech.ec.europa.eu/agrifood/api/rawMilk/prices?memberStateCodes=EU,ES,DE,FR,IT#group=memberStateCode,product
+=== https://api.tech.ec.europa.eu/agrifood/api/sheepAndGoat/prices?memberStateCodes=ES,DE,FR,IT#group=memberStateCode,category
 STATUS: 200
-FILAS: 1980
-EJEMPLO: {"memberStateCode":"FR","memberStateName":"France","beginDate":"01/09/2026","endDate":"30/09/2026","month":9,"monthName":"Sep","price":"€44.39","unit":"100KG","year":2026,"product":"Raw milk"}
-  GRUPO [DE | Organic raw milk] n=68 ultimo=2026-08-31 precio=€63.35
-  GRUPO [DE | Raw milk] n=260 ultimo=2026-09-30 precio=€41.15
-  GRUPO [ES | Organic raw milk] n=68 ultimo=2026-08-31 precio=€58.45
-  GRUPO [ES | Raw milk] n=261 ultimo=2026-09-30 precio=€45.53
-  GRUPO [EU-UK | Organic raw milk] n=69 ultimo=2026-08-31 precio=€58.80
-  GRUPO [EU-UK | Raw milk] n=596 ultimo=2026-08-31 precio=€42.75
-  GRUPO [FR | Organic raw milk] n=68 ultimo=2026-08-31 precio=€53.40
-  GRUPO [FR | Raw milk] n=261 ultimo=2026-09-30 precio=€44.39
-  GRUPO [IT | Organic raw milk] n=68 ultimo=2026-08-31 precio=€60.50
-  GRUPO [IT | Raw milk] n=261 ultimo=2026-09-30 precio=€46.27
+FILAS: 3599
+EJEMPLO: {"memberStateCode":"FR","memberStateName":"France","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€911.00","unit":"100kg","weekNumber":38,"category":"Heavy Lamb","marketName":"FR","marketingYear":2026}
+  GRUPO [DE | Heavy Lamb] n=605 ultimo=2026-09-20 precio=€976.01
+  GRUPO [ES | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€1011.80
+  GRUPO [ES | Light Lamb] n=621 ultimo=2026-09-20 precio=€1094.40
+  GRUPO [FR | Heavy Lamb] n=621 ultimo=2026-09-20 precio=€911.00
+  GRUPO [IT | Heavy Lamb] n=510 ultimo=2026-09-20 precio=€825.00
+  GRUPO [IT | Light Lamb] n=621 ultimo=2026-09-20 precio=€900.00
 
-=== https://api.tech.ec.europa.eu/agrifood/api/poultryeggs/prices?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+=== https://api.tech.ec.europa.eu/agrifood/api/poultry/prices?memberStateCodes=ES,DE,FR,IT#group=memberStateCode,productName
+STATUS: 200
+FILAS: 7969
+EJEMPLO: {"memberStateCode":"FR","memberStateName":"France","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€370.00","unit":"national currency/100kg","weekNumber":38,"productName":"Whole broiler (65%)","priceType":"Selling price"}
+  GRUPO [DE | Breast Fillet] n=300 ultimo=2026-09-20 precio=€825.00
+  GRUPO [DE | Legs] n=300 ultimo=2026-09-20 precio=€340.00
+  GRUPO [DE | Whole broiler (65%)] n=1868 ultimo=2026-09-20 precio=€461.00
+  GRUPO [ES | Breast Fillet] n=134 ultimo=2026-09-20 precio=€492.27
+  GRUPO [ES | Legs] n=134 ultimo=2026-09-20 precio=€220.09
+  GRUPO [ES | Whole broiler (65%)] n=1411 ultimo=2026-09-20 precio=€235.07
+  GRUPO [FR | Breast Fillet] n=302 ultimo=2026-09-20 precio=€790.00
+  GRUPO [FR | Legs] n=302 ultimo=2026-09-20 precio=€270.00
+  GRUPO [FR | Whole broiler (65%)] n=1385 ultimo=2026-09-20 precio=€370.00
+  GRUPO [IT | Breast Fillet] n=302 ultimo=2026-09-20 precio=€853.00
+  GRUPO [IT | Legs] n=302 ultimo=2026-09-20 precio=€309.00
+  GRUPO [IT | Whole broiler (65%)] n=1229 ultimo=2026-09-20 precio=€370.00
 
-=== https://api.tech.ec.europa.eu/agrifood/api/eggs/prices?memberStateCodes=ES,DE
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+=== https://api.tech.ec.europa.eu/agrifood/api/pigmeat/prices?memberStateCodes=ES,DE,FR,IT#group=memberStateCode,pigClass
+STATUS: 200
+FILAS: 17946
+EJEMPLO: {"memberStateCode":"FR","memberStateName":"France","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€206.00","unit":"100 KG","weekNumber":38,"pigClass":"E"}
+  GRUPO [DE | E] n=1894 ultimo=2026-09-20 precio=€159.88
+  GRUPO [DE | Piglet] n=1891 ultimo=2026-09-20 precio=€46.70
+  GRUPO [DE | R] n=508 ultimo=2026-09-20 precio=€132.84
+  GRUPO [DE | S] n=673 ultimo=2026-09-20 precio=€162.63
+  GRUPO [ES | E] n=1894 ultimo=2026-09-20 precio=€172.73
+  GRUPO [ES | Piglet] n=1894 ultimo=2026-09-20 precio=€38.07
+  GRUPO [ES | R] n=647 ultimo=2026-09-20 precio=€180.01
+  GRUPO [ES | S] n=647 ultimo=2026-09-20 precio=€178.56
+  GRUPO [FR | E] n=1894 ultimo=2026-09-20 precio=€206.00
+  GRUPO [FR | Piglet] n=1395 ultimo=2026-09-20 precio=€57.25
+  GRUPO [FR | S] n=660 ultimo=2026-09-20 precio=€213.00
+  GRUPO [IT | E] n=1380 ultimo=2017-12-10 precio=€167.99
+  GRUPO [IT | Piglet] n=1894 ultimo=2026-09-20 precio=€75.50
+  GRUPO [IT | R] n=675 ultimo=2026-09-20 precio=€243.60
