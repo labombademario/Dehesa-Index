@@ -1,0 +1,162 @@
+[
+ {
+  "pid": 18100115,
+  "title": "Farm input price index, crop production",
+  "freq": 9,
+  "start": "1961-01-01T05:00:00Z",
+  "end": "1992-01-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100002,
+  "title": "Estimated areas, yield and production of principal field crops by Small Area Data Regions, in metric and imperial units",
+  "freq": 12,
+  "start": "1976-01-01T05:00:00Z",
+  "end": "2025-01-01T05:00:00Z",
+  "archived": "2"
+ },
+ {
+  "pid": 32100006,
+  "title": "Estimated stocks of grains on farms, end of crop year at July 31",
+  "freq": 12,
+  "start": "1961-01-01T05:00:00Z",
+  "end": "1984-01-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100007,
+  "title": "Stocks of grain and oilseeds at March 31, July 31 and December 31",
+  "freq": 20,
+  "start": "1980-03-01T05:00:00Z",
+  "end": "2026-07-01T04:00:00Z",
+  "archived": "2"
+ },
+ {
+  "pid": 32100077,
+  "title": "Farm product prices, crops and livestock",
+  "freq": 6,
+  "start": "1980-01-01T05:00:00Z",
+  "end": "2026-07-01T04:00:00Z",
+  "archived": "2"
+ },
+ {
+  "pid": 32100098,
+  "title": "Farm product price index (FPPI), monthly",
+  "freq": 6,
+  "start": "1935-01-01T05:00:00Z",
+  "end": "2026-06-01T04:00:00Z",
+  "archived": "2"
+ },
+ {
+  "pid": 32100099,
+  "title": "Farm product price index (FPPI), annual (2007=100)",
+  "freq": 12,
+  "start": "1935-01-01T05:00:00Z",
+  "end": "2025-01-01T05:00:00Z",
+  "archived": "2"
+ },
+ {
+  "pid": 32100100,
+  "title": "Farm product price index (FPPI), monthly weights",
+  "freq": 6,
+  "start": "2009-01-01T05:00:00Z",
+  "end": "2026-06-01T04:00:00Z",
+  "archived": "2"
+ },
+ {
+  "pid": 32100257,
+  "title": "Estimated area, yield, production, average farm price and total farm value for field roots, in imperial units",
+  "freq": 12,
+  "start": "1908-01-01T05:00:00Z",
+  "end": "1976-01-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100283,
+  "title": "Farm product price index (FPPI), monthly (1997=100)",
+  "freq": 6,
+  "start": "1935-01-01T05:00:00Z",
+  "end": "2012-12-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100284,
+  "title": "Farm product price index (FPPI), annual (1997=100)",
+  "freq": 12,
+  "start": "1935-01-01T05:00:00Z",
+  "end": "2012-01-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100322,
+  "title": "Average prices for selected classes and grades of cattle, monthly",
+  "freq": 6,
+  "start": "1930-01-01T05:00:00Z",
+  "end": "1990-12-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100323,
+  "title": "Average prices for selected classes and grades of cattle, annual",
+  "freq": 12,
+  "start": "1930-01-01T05:00:00Z",
+  "end": "1990-01-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100324,
+  "title": "Average prices for selected livestock, monthly",
+  "freq": 6,
+  "start": "1901-01-01T05:00:00Z",
+  "end": "1990-12-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100325,
+  "title": "Average prices for selected livestock, annual",
+  "freq": 12,
+  "start": "1901-01-01T05:00:00Z",
+  "end": "1990-01-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100334,
+  "title": "Cattle prices, steers",
+  "freq": 6,
+  "start": "1976-01-01T05:00:00Z",
+  "end": "2010-12-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100335,
+  "title": "Cattle, weighted average prices, steers",
+  "freq": 12,
+  "start": "1976-01-01T05:00:00Z",
+  "end": "2010-01-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100339,
+  "title": "Hogs statistics, prices",
+  "freq": 6,
+  "start": "1976-01-01T05:00:00Z",
+  "end": "2011-03-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100340,
+  "title": "Hogs statistics, weighted average prices",
+  "freq": 12,
+  "start": "1976-01-01T05:00:00Z",
+  "end": "2010-01-01T05:00:00Z",
+  "archived": "1"
+ },
+ {
+  "pid": 32100359,
+  "title": "Estimated areas, yield, production, average farm price and total farm value of principal field crops, in metric and imperial units",
+  "freq": 12,
+  "start": "1908-01-01T05:00:00Z",
+  "end": "2026-01-01T05:00:00Z",
+  "archived": "2"
+ }
+]
