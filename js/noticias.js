@@ -142,10 +142,10 @@
     it: { clima: 'Clima', costes: 'Costi', comercio: 'Commercio', politica: 'Politica agricola', oferta: 'Offerta e raccolto', tecnologia: 'Tecnologia', energia: 'Energia', ayudas: 'Aiuti', precios: 'Prezzi e mercati', sanidad: 'Sanità animale' }
   };
   var REGION_LABELS = {
-    es: { all: 'Todas', us: 'EE. UU.', eu: 'Europa', uk: 'Reino Unido', global: 'Global' },
-    en: { all: 'All', us: 'U.S.', eu: 'Europe', uk: 'United Kingdom', global: 'Global' },
-    fr: { all: 'Toutes', us: 'États-Unis', eu: 'Europe', uk: 'Royaume-Uni', global: 'Mondial' },
-    it: { all: 'Tutte', us: 'Stati Uniti', eu: 'Europa', uk: 'Regno Unito', global: 'Globale' }
+    es: { all: 'Todas', us: 'EE. UU.', eu: 'Europa', uk: 'Reino Unido', ca: 'Canadá', global: 'Global' },
+    en: { all: 'All', us: 'U.S.', eu: 'Europe', uk: 'United Kingdom', ca: 'Canada', global: 'Global' },
+    fr: { all: 'Toutes', us: 'États-Unis', eu: 'Europe', uk: 'Royaume-Uni', ca: 'Canada', global: 'Mondial' },
+    it: { all: 'Tutte', us: 'Stati Uniti', eu: 'Europa', uk: 'Regno Unito', ca: 'Canada', global: 'Globale' }
   };
 
   function inferTags(item) {
@@ -417,7 +417,7 @@
     document.getElementById('nw-product-label').textContent = t.productLabel;
     document.getElementById('nw-topic-label').textContent = t.topicLabel;
 
-    var regions = ['all','us','eu','uk','global'];
+    var regions = ['all','us','eu','uk','ca','global'];
     var products = [];
     var topics = [];
     NEWS_ITEMS.forEach(function(item) {

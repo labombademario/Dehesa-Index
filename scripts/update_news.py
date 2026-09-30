@@ -60,8 +60,8 @@ FEEDS = [
     F("Xinhua", "global", google("site:english.news.cn agriculture grains food fertilizer trade soybean corn wheat")),
     F("Nikkei Asia", "global", google("site:asia.nikkei.com rice wheat soybean grain fertilizer food prices")),
     F("South China Morning Post", "global", google("site:scmp.com soybean grain pork corn China imports food")),
-    F("Financial Post", "global", google("site:financialpost.com wheat canola grain farmers Canada agriculture")),
-    F("Globe and Mail", "global", google("site:theglobeandmail.com grain canola wheat farmers Canada agriculture")),
+    F("Financial Post", "ca", google("site:financialpost.com wheat canola grain farmers Canada agriculture")),
+    F("Globe and Mail", "ca", google("site:theglobeandmail.com grain canola wheat farmers Canada agriculture")),
 
     # ── Prensa especializada agro ──
     F("DTN", "us", google("site:dtnpf.com agriculture grains fertilizer energy livestock markets")),
@@ -78,14 +78,26 @@ FEEDS = [
     F("Pig Progress", "global", google("site:pigprogress.net pork pig prices African swine fever feed markets")),
     F("The Pig Site", "global", google("site:thepigsite.com pig pork prices disease markets")),
     F("WATTAgNet", "global", google("site:wattagnet.com poultry chicken eggs avian influenza markets")),
-    F("Western Producer", "global", google("site:producer.com wheat canola grain cattle markets Canada")),
-    F("RealAgriculture", "global", google("site:realagriculture.com wheat canola corn soybean markets Canada")),
+    F("Western Producer", "ca", google("site:producer.com wheat canola grain cattle markets Canada")),
+    F("RealAgriculture", "ca", google("site:realagriculture.com wheat canola corn soybean markets Canada")),
     F("Fastmarkets", "global", google("site:fastmarkets.com agriculture grains oilseeds biofuels feedstocks sugar fertilizer")),
     F("S&P Global", "global", google("site:spglobal.com agriculture food commodities grains fertilizer soybean sugar biofuels")),
     F("Argus Media", "global", google("site:argusmedia.com agriculture fertilizer grains biofuels vegetable oils")),
     F("FoodNavigator", "global", google("site:foodnavigator.com food commodity prices agriculture dairy sugar grains supply")),
     F("Farmers Weekly", "uk", google("site:fwi.co.uk agriculture farmers crops wheat barley fertilizer dairy trade")),
     F("Farmers Guardian", "uk", google("site:fginsight.com agriculture crops wheat barley fertilizer dairy livestock")),
+    F("Manitoba Co-operator", "ca", google("site:manitobacooperator.ca grain canola wheat cattle hogs prices Prairies")),
+    F("Alberta Farmer Express", "ca", google("site:albertafarmexpress.ca grain canola wheat cattle prices Alberta")),
+    F("Grainews", "ca", google("site:grainews.ca grain canola wheat markets Prairies")),
+    F("Canadian Cattlemen", "ca", google("site:canadiancattlemen.ca cattle beef feeder prices markets")),
+    F("Farmtario", "ca", google("site:farmtario.com corn soybean wheat hogs dairy Ontario prices")),
+    F("Country Guide", "ca", google("site:country-guide.ca farm markets grain cattle canola prices")),
+    F("Canadian Grain Commission", "ca", google("site:grainscanada.gc.ca grain exports canola wheat quality")),
+    F("Agriculture and Agri-Food Canada", "ca", google("site:agriculture.canada.ca agriculture markets grains livestock prices outlook")),
+    F("Statistics Canada", "ca", google("site:statcan.gc.ca farm product prices crops livestock")),
+    F("Dairy Farmers of Canada", "ca", google("Canada dairy farmers milk price supply management"), "en"),
+    F("", "ca", google("Canada farmers canola wheat prices Saskatchewan Alberta", gl="CA"), pub=True),
+    F("", "ca", google("Canada cattle hogs prices beef Alberta Ontario", gl="CA"), pub=True),
     F("Agriland", "eu", google("site:agriland.ie agriculture dairy grain fertilizer trade")),
     F("Irish Farmers Journal", "eu", google("site:farmersjournal.ie beef dairy grain prices fertilizer")),
     F("AGRA", "eu", google("site:agra.fr agriculture PAC céréales lait engrais commerce", "fr"), "fr"),
@@ -229,9 +241,10 @@ STRONG_TOPICS = {"sanidad", "oferta", "clima"}
 BLOCK_HINTS = {
  "us": ["united states", "u.s.", "usa", "usda", "iowa", "illinois", "indiana", "kansas", "nebraska", "midwest", "corn belt", "washington", "estados unidos", "etats-unis", "stati uniti", "eeuu", "ee. uu.", "ee.uu."],
  "uk": ["united kingdom", "u.k.", "britain", "british", "england", "scotland", "wales", "northern ireland", "london", "defra", "ahdb", "nfu", "reino unido", "royaume-uni", "regno unito"],
+ "ca": ["canada", "canadian", "saskatchewan", "alberta", "manitoba", "ontario farm", "quebec", "prairies", "canola council", "aafc", "statistics canada", "canadá", "canadien", "canadese"],
  "eu": ["european union", "eu ", "europe", "european", "brussels", "spain", "spanish", "france", "french", "germany", "german", "italy", "italian", "ireland", "poland", "netherlands", "espana", "espanol", "union europea", "bruselas", "francia", "alemania", "italia", "irlanda", "polonia", "union europeenne", "bruxelles", "allemagne", "unione europea", "bruxelles", "europa", "europe", "castilla", "andalucia", "cataluna", "aragon", "extremadura", "galicia", "lombardia", "veneto", "bretagne", "normandie"],
 }
-GLOBAL_HINTS = ["brazil", "brasil", "argentina", "china", "chinese", "india", "australia", "canada", "canadian", "ukraine", "ukrainian", "russia", "russian", "black sea", "kazakhstan", "vietnam", "thailand", "indonesia", "malaysia", "egypt", "turkey", "africa", "japan", "mexico", "paraguay", "uruguay", "ucrania", "rusia", "mar negro", "mer noire", "ucraina", "cina", "giappone", "japon", "inde"]
+GLOBAL_HINTS = ["brazil", "brasil", "argentina", "china", "chinese", "india", "australia", "ukraine", "ukrainian", "russia", "russian", "black sea", "kazakhstan", "vietnam", "thailand", "indonesia", "malaysia", "egypt", "turkey", "africa", "japan", "mexico", "paraguay", "uruguay", "ucrania", "rusia", "mar negro", "mer noire", "ucraina", "cina", "giappone", "japon", "inde"]
 
 TRUSTED = {"Reuters", "Associated Press", "AFP", "EFE", "Bloomberg", "Financial Times", "Wall Street Journal", "USDA", "USDA FAS", "USDA ERS", "USDA APHIS",
            "European Commission", "FAO", "OECD", "WTO", "EIA", "IEA", "World Bank", "WOAH", "International Grains Council", "Defra", "AHDB"}
@@ -377,7 +390,7 @@ def classify(title, desc, source_region, lang, general):
     # Región
     title_n = norm(title); region = source_region
     blk = None
-    for r in ("us", "uk", "eu"):
+    for r in ("us", "uk", "eu", "ca"):
         if any(term_rx(norm(x).strip()).search(text) for x in BLOCK_HINTS[r]): blk = r; break
     glob = any(term_rx(g).search(title_n) for g in GLOBAL_HINTS)
     if source_region == "global":
