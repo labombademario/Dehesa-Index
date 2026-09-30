@@ -168,7 +168,7 @@ FEEDS = [
     F("Børsen", "eu", google("site:borsen.dk (landbrug OR fødevarer OR korn OR gødning OR priser)", "da"), "da"),
     F("Danmarks Radio", "eu", google("site:dr.dk (landmænd OR landbrug OR høst OR priser OR svin)", "da"), "da"),
     F("Food Supply DK", "eu", google("site:foodsupply.dk (landbrug OR fødevarer OR svin OR mælk OR eksport)", "da"), "da"),
-    F("", "eu", google("Denmark Danish Crown Arla (pork OR exports OR dairy OR farmers OR prices)"), pub=True),
+    F("", "eu", google("Danish (pork OR dairy OR farmers OR exports OR prices)"), pub=True),
     F("", "eu", google("(kornpriser OR svinepriser OR mælkepris OR landmænd OR gødningspriser)", "da"), "da", pub=True),
     # ── Portugal (pt) ──
     F("Agroportal", "eu", google("site:agroportal.pt (agricultura OR preços OR cereais OR leite OR carne OR vinho)", "pt"), "pt"),
@@ -275,6 +275,26 @@ FEEDS = [
     F("La France Agricole", "eu", "https://www.lafranceagricole.fr/rss", "fr"),
     F("Terra e Vita", "eu", "https://terraevita.edagricole.it/feed/", "it"),
     F("Agronotizie", "eu", "https://agronotizie.imagelinenetwork.com/rss", "it"),
+
+    # ── RSS directos de los países nuevos (comprobados con sonda el 30-sep) ──
+    F("Landbrugsavisen", "eu", "https://landbrugsavisen.dk/rss.xml", "da"),
+    F("DR Penge", "eu", "https://www.dr.dk/nyheder/service/feeds/penge", "da", general=True),
+    F("Agrarheute", "eu", "https://www.agrarheute.com/rss", "de"),
+    F("Foodagribusiness", "eu", "https://www.foodagribusiness.nl/feed", "nl", general=True),
+    F("NU.nl", "eu", "https://www.nu.nl/rss/Economie", "nl", general=True),
+    F("DutchNews", "eu", "https://www.dutchnews.nl/feed/", "en", general=True),
+    F("Vida Rural", "eu", "https://www.vidarural.pt/feed", "pt"),
+    F("Agricultura e Mar", "eu", "https://www.agriculturaemar.com/feed", "pt"),
+    F("CAP Portugal", "eu", "https://www.cap.pt/feed", "pt"),
+    F("Portugal Resident", "eu", "https://www.portugalresident.com/feed/", "en", general=True),
+    F("Réussir", "eu", "https://www.reussir.fr/rss.xml", "fr"),
+    F("La Terre de chez nous", "ca", "https://www.laterre.ca/feed", "fr"),
+    F("Top Crop Manager", "ca", "https://www.topcropmanager.com/feed", "en"),
+    F("Canola Council of Canada", "ca", "https://www.canolacouncil.org/feed", "en"),
+    F("Farm Weekly", "global", "https://www.farmweekly.com.au/rss.xml", "en"),
+    F("Queensland Country Life", "global", "https://www.queenslandcountrylife.com.au/rss.xml", "en"),
+    F("Stock & Land", "global", "https://www.stockandland.com.au/rss.xml", "en"),
+    F("Sheep Central", "global", "https://www.sheepcentral.com/feed/", "en"),
 
     # ── Cobertura global por temas (el editor se lee de cada noticia) ──
     F("", "global", google("Black Sea wheat exports Ukraine Russia grain corridor"), pub=True),
