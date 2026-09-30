@@ -1,75 +1,142 @@
-=== https://api.tech.ec.europa.eu/agrifood/api/beef/prices?memberStateCodes=ES#group=category,productCode
+=== https://api.tech.ec.europa.eu/agrifood/api/oliveOil/prices?memberStateCodes=ES,IT#group=memberStateCode,product,market
 STATUS: 200
-FILAS: 43040
-EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€625.45","unit":"€/100Kg","weekNumber":38,"category":"Cows","productCode":"DO4"}
-  GRUPO [Adult male indicative price | ACZURO] n=1213 ultimo=2026-09-20 precio=€624.06
-  GRUPO [Cows | DO2] n=1815 ultimo=2026-09-20 precio=€462.34
-  GRUPO [Cows | DO3] n=1815 ultimo=2026-09-20 precio=€521.88
-  GRUPO [Cows | DO4] n=1709 ultimo=2026-09-20 precio=€625.45
-  GRUPO [Cows | DP2] n=1815 ultimo=2026-09-20 precio=€418.38
-  GRUPO [Cows | DP3] n=1815 ultimo=2026-09-20 precio=€418.46
-  GRUPO [Cows | DR3] n=1815 ultimo=2026-09-20 precio=€527.74
-  GRUPO [Cows | DR4] n=1815 ultimo=2026-09-20 precio=€614.22
-  GRUPO [Heifers | EO2] n=1813 ultimo=2026-09-20 precio=€522.23
-  GRUPO [Heifers | EO3] n=1813 ultimo=2026-09-20 precio=€555.58
-  GRUPO [Heifers | EO4] n=1807 ultimo=2026-09-20 precio=€560.26
-  GRUPO [Heifers | ER2] n=1813 ultimo=2026-09-20 precio=€694.90
-  GRUPO [Heifers | ER3] n=1813 ultimo=2026-09-20 precio=€692.08
-  GRUPO [Heifers | ER4] n=1807 ultimo=2026-09-20 precio=€651.82
-  GRUPO [Heifers | EU2] n=1813 ultimo=2026-09-20 precio=€708.01
-  GRUPO [Heifers | EU3] n=1813 ultimo=2026-09-20 precio=€701.83
-  GRUPO [Young bulls | AO2] n=1815 ultimo=2026-09-20 precio=€588.80
-  GRUPO [Young bulls | AO3] n=1815 ultimo=2026-09-20 precio=€585.92
-  GRUPO [Young bulls | AR2] n=1815 ultimo=2026-09-20 precio=€618.57
-  GRUPO [Young bulls | AR3] n=1815 ultimo=2026-09-20 precio=€614.67
-  GRUPO [Young bulls | AU2] n=1815 ultimo=2026-09-20 precio=€624.65
-  GRUPO [Young bulls | AU3] n=1815 ultimo=2026-09-20 precio=€632.15
-  GRUPO [Young cattle | ZO2] n=641 ultimo=2026-09-20 precio=€582.27
-  GRUPO [Young cattle | ZO3] n=641 ultimo=2026-09-20 precio=€568.50
-  GRUPO [Young cattle | ZR2] n=641 ultimo=2026-09-20 precio=€642.88
-  GRUPO [Young cattle | ZR3] n=641 ultimo=2026-09-20 precio=€667.51
-  GRUPO [Young cattle | ZU2] n=641 ultimo=2026-09-20 precio=€671.03
-  GRUPO [Young cattle | ZU3] n=641 ultimo=2026-09-20 precio=€687.38
+FILAS: 54642
+EJEMPLO: {"memberStateCode":"IT","memberStateName":"Italy","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€670.00","unit":"€/100kg","weekNumber":51,"product":"Extra virgin olive oil (up to 0.8%)","market":"Trapani (ITG11)","marketingYear":"2025/2026"}
+  GRUPO [ES | Crude olive-pomace oil (from 5 to 10%) | Average national price] n=858 ultimo=2026-09-20 precio=€126.53
+  GRUPO [ES | Crude olive-pomace oil (from 5 to 10%) | Córdoba (ES613)] n=857 ultimo=2026-09-20 precio=€129.00
+  GRUPO [ES | Crude olive-pomace oil (from 5 to 10%) | Jaén (ES616)] n=857 ultimo=2026-09-20 precio=€115.00
+  GRUPO [ES | Crude olive-pomace oil (from 5 to 10%) | Tarragona (ES514)] n=857 ultimo=2026-09-20 precio=€115.00
+  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Average national price] n=1810 ultimo=2026-09-20 precio=€346.89
+  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Córdoba (ES613)] n=858 ultimo=2026-09-20 precio=€350.50
+  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Jaén (ES616)] n=858 ultimo=2026-09-20 precio=€342.50
+  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Málaga(ES617)] n=857 ultimo=2026-09-20 precio=€351.50
+  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Sevilla ] n=858 ultimo=2026-09-20 precio=€343.00
+  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Tarragona (ES514)] n=858 ultimo=2026-09-20 precio=€375.00
+  GRUPO [ES | Extra virgin olive oil (up to 0.8%) | Toledo (ES425)] n=858 ultimo=2026-09-20 precio=€350.00
+  GRUPO [ES | Lampante olive oil (2%) | Average national price] n=1208 ultimo=2026-09-20 precio=€303.38
+  GRUPO [ES | Lampante olive oil (2%) | Badajoz (ES431)] n=830 ultimo=2026-07-26 precio=€173.00
+  GRUPO [ES | Lampante olive oil (2%) | Córdoba (ES613)] n=858 ultimo=2026-09-20 precio=€306.00
+  GRUPO [ES | Lampante olive oil (2%) | Jaén (ES616)] n=858 ultimo=2026-09-20 precio=€303.50
+  GRUPO [ES | Lampante olive oil (2%) | Málaga(ES617)] n=857 ultimo=2026-09-20 precio=€299.50
+  GRUPO [ES | Lampante olive oil (2%) | Sevilla ] n=852 ultimo=2026-09-20 precio=€301.00
+  GRUPO [ES | Lampante olive oil (2%) | Tarragona (ES514)] n=858 ultimo=2026-09-20 precio=€295.00
+  GRUPO [ES | Olive-pomace oil (up to 1%) | Average national price] n=2 ultimo=2010-07-04 precio=€107.17
+  GRUPO [ES | Olive-pomace oil (up to 1%) | Córdoba (ES613)] n=2 ultimo=2010-07-04 precio=€106.35
+  GRUPO [ES | Olive-pomace oil (up to 1%) | Jaén (ES616)] n=2 ultimo=2010-07-04 precio=€106.98
+  GRUPO [ES | Olive-pomace oil (up to 1%) | Tarragona (ES514)] n=2 ultimo=2010-07-04 precio=€108.18
+  GRUPO [ES | Refined olive oil (up to 0.3%) | Average national price] n=858 ultimo=2026-09-20 precio=€314.50
+  GRUPO [ES | Refined olive oil (up to 0.3%) | Córdoba (ES613)] n=857 ultimo=2026-09-20 precio=€301.50
+  GRUPO [ES | Refined olive oil (up to 0.3%) | Jaén (ES616)] n=858 ultimo=2026-09-20 precio=€299.50
+  GRUPO [ES | Refined olive oil (up to 0.3%) | Sevilla ] n=561 ultimo=2026-09-20 precio=€333.00
+  GRUPO [ES | Refined olive oil (up to 0.3%) | Tarragona (ES514)] n=858 ultimo=2026-09-20 precio=€320.00
+  GRUPO [ES | Refined olive-pomace oil (up to 0.3%) | Average national price] n=856 ultimo=2026-09-20 precio=€191.89
+  GRUPO [ES | Refined olive-pomace oil (up to 0.3%) | Córdoba (ES613)] n=584 ultimo=2026-01-11 precio=€208.00
+  GRUPO [ES | Refined olive-pomace oil (up to 0.3%) | Jaén (ES616)] n=584 ultimo=2026-01-11 precio=€212.50
+  GRUPO [ES | Refined olive-pomace oil (up to 0.3%) | Tarragona (ES514)] n=584 ultimo=2026-01-11 precio=€200.00
+  GRUPO [ES | Virgin olive oil (up to 2%) | Average national price] n=1810 ultimo=2026-09-20 precio=€320.71
+  GRUPO [ES | Virgin olive oil (up to 2%) | Badajoz (ES431)] n=827 ultimo=2026-07-26 precio=€363.00
+  GRUPO [ES | Virgin olive oil (up to 2%) | Córdoba (ES613)] n=858 ultimo=2026-09-20 precio=€321.50
+  GRUPO [ES | Virgin olive oil (up to 2%) | Granada (ES614)] n=858 ultimo=2026-09-20 precio=€311.00
+  GRUPO [ES | Virgin olive oil (up to 2%) | Jaén (ES616)] n=858 ultimo=2026-09-20 precio=€321.00
+  GRUPO [ES | Virgin olive oil (up to 2%) | Sevilla ] n=845 ultimo=2026-09-20 precio=€321.00
+  GRUPO [ES | Virgin olive oil (up to 2%) | Tarragona (ES514)] n=858 ultimo=2026-09-20 precio=€345.00
+  GRUPO [ES | Virgin olive oil (up to 2%) | Toledo (ES425)] n=858 ultimo=2026-09-20 precio=€325.00
+  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Average national price] n=1679 ultimo=2026-09-20 precio=€482.00
+  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Bari (ITF42)] n=786 ultimo=2026-09-20 precio=€455.00
+  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Catanzaro (ITF63)] n=790 ultimo=2026-09-20 precio=€400.00
+  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Cosenza (ITF61)] n=788 ultimo=2026-09-20 precio=€405.00
+  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Foggia (ITF41)] n=796 ultimo=2026-09-20 precio=€445.00
+  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Palermo (ITG12)] n=762 ultimo=2026-09-20 precio=€670.00
+  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Salerno (ITF35)] n=211 ultimo=2015-09-13 precio=€630.00
+  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Taranto (ITF43)] n=794 ultimo=2026-09-20 precio=€460.00
+  GRUPO [IT | Extra virgin olive oil (up to 0.8%) | Trapani (ITG11)] n=758 ultimo=2026-09-20 precio=€670.00
+  GRUPO [IT | Lampante olive oil (2%) | Average national price] n=1095 ultimo=2026-09-20 precio=€284.00
+  GRUPO [IT | Lampante olive oil (2%) | Bari (ITF42)] n=1 ultimo=2011-01-23 precio=€153.00
+  GRUPO [IT | Lampante olive oil (2%) | Brindisi (ITF44)] n=796 ultimo=2026-09-20 precio=€300.00
+  GRUPO [IT | Lampante olive oil (2%) | Catanzaro (ITF63)] n=752 ultimo=2026-09-20 precio=€275.00
+  GRUPO [IT | Lampante olive oil (2%) | Gioia Tauro] n=781 ultimo=2026-09-20 precio=€270.00
+  GRUPO [IT | Lampante olive oil (2%) | Lecce (ITF45)] n=797 ultimo=2026-09-20 precio=€300.00
+  GRUPO [IT | Lampante olive oil (2%) | Taranto (ITF43)] n=796 ultimo=2026-09-20 precio=€300.00
+  GRUPO [IT | Olive-pomace oil (up to 1%) | Average national price] n=1 ultimo=2010-06-27 precio=€119.67
+  GRUPO [IT | Olive-pomace oil (up to 1%) | Bari (ITF42)] n=1 ultimo=2010-06-27 precio=€117.00
+  GRUPO [IT | Olive-pomace oil (up to 1%) | Foggia (ITF41)] n=1 ultimo=2010-06-27 precio=€118.00
+  GRUPO [IT | Olive-pomace oil (up to 1%) | Milano ] n=1 ultimo=2010-06-27 precio=€124.00
+  GRUPO [IT | Refined olive oil (up to 0.3%) | Average national price] n=798 ultimo=2026-09-20 precio=€334.00
+  GRUPO [IT | Refined olive oil (up to 0.3%) | Bari (ITF42)] n=349 ultimo=2017-12-31 precio=€356.00
+  GRUPO [IT | Refined olive oil (up to 0.3%) | Foggia (ITF41)] n=797 ultimo=2026-09-20 precio=€323.00
+  GRUPO [IT | Refined olive oil (up to 0.3%) | Milano ] n=778 ultimo=2026-09-20 precio=€345.00
+  GRUPO [IT | Refined olive-pomace oil (up to 0.3%) | Average national price] n=797 ultimo=2026-09-20 precio=€207.00
+  GRUPO [IT | Refined olive-pomace oil (up to 0.3%) | Bari (ITF42)] n=348 ultimo=2017-12-31 precio=€226.00
+  GRUPO [IT | Refined olive-pomace oil (up to 0.3%) | Foggia (ITF41)] n=796 ultimo=2026-09-20 precio=€210.00
+  GRUPO [IT | Refined olive-pomace oil (up to 0.3%) | Milano ] n=777 ultimo=2026-09-20 precio=€209.00
+  GRUPO [IT | Virgin olive oil (up to 2%) | Average national price] n=1667 ultimo=2026-09-20 precio=€330.00
+  GRUPO [IT | Virgin olive oil (up to 2%) | Bari (ITF42)] n=348 ultimo=2017-12-31 precio=€352.00
+  GRUPO [IT | Virgin olive oil (up to 2%) | Brindisi (ITF44)] n=796 ultimo=2026-09-20 precio=€330.00
+  GRUPO [IT | Virgin olive oil (up to 2%) | Catanzaro (ITF63)] n=561 ultimo=2026-02-22 precio=€590.00
+  GRUPO [IT | Virgin olive oil (up to 2%) | Cosenza (ITF61)] n=549 ultimo=2026-02-22 precio=€590.00
+  GRUPO [IT | Virgin olive oil (up to 2%) | Lecce (ITF45)] n=797 ultimo=2026-09-20 precio=€330.00
+  GRUPO [IT | Virgin olive oil (up to 2%) | Salerno (ITF35)] n=215 ultimo=2020-12-27 precio=€255.00
+  GRUPO [IT | Virgin olive oil (up to 2%) | Taranto (ITF43)] n=796 ultimo=2026-09-20 precio=€330.00
 
-=== https://api.tech.ec.europa.eu/agrifood/api/poultry/prices?memberStateCodes=ES#group=productName,priceType
+=== https://api.tech.ec.europa.eu/agrifood/api/rice/prices?memberStateCodes=ES#group=stage,type,variety
 STATUS: 200
-FILAS: 1679
-EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€235.07","unit":"national currency/100kg","weekNumber":38,"productName":"Whole broiler (65%)","priceType":"Selling price"}
-  GRUPO [Breast Fillet | Selling price] n=134 ultimo=2026-09-20 precio=€492.27
-  GRUPO [Legs | Selling price] n=134 ultimo=2026-09-20 precio=€220.09
-  GRUPO [Whole broiler (65%) | Selling price] n=1411 ultimo=2026-09-20 precio=€235.07
+FILAS: 7578
+EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€1081.90","unit":"Tonne","weekNumber":3,"marketingYear":"2026/2027","stage":"Milled non parboiled","type":"Japonica","variety":"Avg"}
+  GRUPO [Broken | N.A. | Average] n=275 ultimo=2026-09-20 precio=€432.23
+  GRUPO [Broken | N.A. | Avg] n=275 ultimo=2026-09-20 precio=€432.23
+  GRUPO [Broken | Not informed | Not informed] n=76 ultimo=2017-07-09 precio=€312.62
+  GRUPO [Milled non parboiled | Indica | Average] n=402 ultimo=2025-03-02 precio=€1150.00
+  GRUPO [Milled non parboiled | Indica | Avg] n=405 ultimo=2025-03-02 precio=€1150.00
+  GRUPO [Milled non parboiled | Indica | Not informed] n=80 ultimo=2017-07-30 precio=€576.53
+  GRUPO [Milled non parboiled | Indica | Puntal Valencia] n=7 ultimo=2017-11-26 precio=€550.00
+  GRUPO [Milled non parboiled | Japonica | Average] n=484 ultimo=2026-09-20 precio=€1081.90
+  GRUPO [Milled non parboiled | Japonica | Avg] n=487 ultimo=2026-09-20 precio=€1081.90
+  GRUPO [Milled non parboiled | Japonica | Gleva Valencia] n=7 ultimo=2017-11-26 precio=€565.00
+  GRUPO [Milled non parboiled | Japonica | Not informed] n=80 ultimo=2017-07-30 precio=€579.34
+  GRUPO [Milled parboiled | Indica | Andalucia] n=7 ultimo=2017-11-26 precio=€612.00
+  GRUPO [Milled parboiled | Indica | Average] n=400 ultimo=2025-03-02 precio=€925.86
+  GRUPO [Milled parboiled | Indica | Avg] n=403 ultimo=2025-03-02 precio=€925.86
+  GRUPO [Milled parboiled | Indica | Not informed] n=80 ultimo=2017-07-30 precio=€621.45
+  GRUPO [Milled parboiled | Indica | Valencia] n=7 ultimo=2017-11-26 precio=€595.00
+  GRUPO [Milled parboiled | Japonica | Not informed] n=1 ultimo=2016-03-06 precio=€715.19
+  GRUPO [Milled parboiled | N.A. | Average] n=1 ultimo=2022-07-24 precio=€695.50
+  GRUPO [Milled parboiled | N.A. | Avg] n=1 ultimo=2022-07-24 precio=€695.50
+  GRUPO [Milled | Japonica | Average] n=694 ultimo=2015-11-15 precio=€586.65
+  GRUPO [Paddy | Indica | Average] n=1053 ultimo=2026-09-20 precio=€344.07
+  GRUPO [Paddy | Indica | Avg] n=487 ultimo=2026-09-20 precio=€344.07
+  GRUPO [Paddy | Indica | Not informed] n=18 ultimo=2016-05-29 precio=€305.32
+  GRUPO [Paddy | Indica | Puntal] n=10 ultimo=2017-03-12 precio=€295.00
+  GRUPO [Paddy | Indica | Puntal Andalucia] n=7 ultimo=2017-11-26 precio=€295.00
+  GRUPO [Paddy | Indica | Sirio Andalucia] n=7 ultimo=2017-11-26 precio=€295.00
+  GRUPO [Paddy | Indica | Sirio Valencia] n=7 ultimo=2017-11-26 precio=€260.00
+  GRUPO [Paddy | Japonica | Average] n=1228 ultimo=2026-09-20 precio=€451.68
+  GRUPO [Paddy | Japonica | Avg] n=486 ultimo=2026-09-20 precio=€451.68
+  GRUPO [Paddy | Japonica | Gleva] n=32 ultimo=2017-05-14 precio=€325.00
+  GRUPO [Paddy | Japonica | Gleva Valencia] n=7 ultimo=2017-11-26 precio=€285.00
+  GRUPO [Paddy | Japonica | J. Sendra] n=32 ultimo=2017-05-14 precio=€325.00
+  GRUPO [Paddy | Japonica | Not informed] n=18 ultimo=2016-05-29 precio=€320.77
+  GRUPO [Paddy | Japonica | Sendra Andalucia] n=7 ultimo=2017-11-26 precio=€310.00
+  GRUPO [Paddy | Japonica | Sendra Valencia] n=7 ultimo=2017-11-26 precio=€285.00
 
-=== https://api.tech.ec.europa.eu/agrifood/api/sheepAndGoat/prices?memberStateCodes=ES#group=category,marketName
+=== https://api.tech.ec.europa.eu/agrifood/api/rawMilk/prices?memberStateCodes=EU,ES,DE,FR,IT#group=memberStateCode,product
 STATUS: 200
-FILAS: 1242
-EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€1011.80","unit":"100kg","weekNumber":38,"category":"Heavy Lamb","marketName":"ES","marketingYear":2026}
-  GRUPO [Heavy Lamb | ES] n=621 ultimo=2026-09-20 precio=€1011.80
-  GRUPO [Light Lamb | ES] n=621 ultimo=2026-09-20 precio=€1094.40
+FILAS: 1980
+EJEMPLO: {"memberStateCode":"FR","memberStateName":"France","beginDate":"01/09/2026","endDate":"30/09/2026","month":9,"monthName":"Sep","price":"€44.39","unit":"100KG","year":2026,"product":"Raw milk"}
+  GRUPO [DE | Organic raw milk] n=68 ultimo=2026-08-31 precio=€63.35
+  GRUPO [DE | Raw milk] n=260 ultimo=2026-09-30 precio=€41.15
+  GRUPO [ES | Organic raw milk] n=68 ultimo=2026-08-31 precio=€58.45
+  GRUPO [ES | Raw milk] n=261 ultimo=2026-09-30 precio=€45.53
+  GRUPO [EU-UK | Organic raw milk] n=69 ultimo=2026-08-31 precio=€58.80
+  GRUPO [EU-UK | Raw milk] n=596 ultimo=2026-08-31 precio=€42.75
+  GRUPO [FR | Organic raw milk] n=68 ultimo=2026-08-31 precio=€53.40
+  GRUPO [FR | Raw milk] n=261 ultimo=2026-09-30 precio=€44.39
+  GRUPO [IT | Organic raw milk] n=68 ultimo=2026-08-31 precio=€60.50
+  GRUPO [IT | Raw milk] n=261 ultimo=2026-09-30 precio=€46.27
 
-=== https://api.tech.ec.europa.eu/agrifood/api/rawMilk/prices?memberStateCodes=ES#group=product
-STATUS: 200
-FILAS: 329
-EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"01/09/2026","endDate":"30/09/2026","month":9,"monthName":"Sep","price":"€45.53","unit":"100KG","year":2026,"product":"Raw milk"}
-  GRUPO [Organic raw milk] n=68 ultimo=2026-08-31 precio=€58.45
-  GRUPO [Raw milk] n=261 ultimo=2026-09-30 precio=€45.53
+=== https://api.tech.ec.europa.eu/agrifood/api/poultryeggs/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
 
-=== https://api.tech.ec.europa.eu/agrifood/api/fertiliser/prices?memberStateCodes=ES#group=product,memberStateName
-STATUS: 200
-FILAS: 276
-EJEMPLO: {"year":2026,"quarter":"Q3","month":"Aug","memberStateName":"European Commission","product":"K (Potash)","price":364,"unit":"€/tonne"}
-  GRUPO [K (Potash) | European Commission] n=92 ultimo=2026-May-Q2 precio=370
-  GRUPO [N (Nitrogen) | European Commission] n=92 ultimo=2026-May-Q2 precio=541
-  GRUPO [P (Phosphorus) | European Commission] n=92 ultimo=2026-May-Q2 precio=717
-
-=== https://api.tech.ec.europa.eu/agrifood/api/sugar/prices?memberStateCodes=ES#group=sugarRegion,contractType
-STATUS: 200
-FILAS: 740
-EJEMPLO: {"sugarRegion":"EU Average","price":"501.4009","unit":"Tonne","ym":"2026/06","marketingYear":"2025/2026","marketingYearMonth":"Jun","weight":763148.7,"contractType":"Monthly data"}
-  GRUPO [EU Average | Monthly data] n=240 ultimo=2026/06 precio=501.4009
-  GRUPO [EU Average | Short term contracts] n=52 ultimo=2026/04 precio=488.7805
-  GRUPO [Region 1 | Monthly data] n=102 ultimo=2026/06 precio=506.0622
-  GRUPO [Region 1 | Short term contracts] n=54 ultimo=2026/06 precio=436.7388
-  GRUPO [Region 2 | Monthly data] n=102 ultimo=2026/06 precio=494.0552
-  GRUPO [Region 2 | Short term contracts] n=22 ultimo=2024/11 precio=655.4912
-  GRUPO [Region 3 | Monthly data] n=102 ultimo=2026/06 precio=547.2198
-  GRUPO [Region 3 | Short term contracts] n=66 ultimo=2026/06 precio=527.8299
+=== https://api.tech.ec.europa.eu/agrifood/api/eggs/prices?memberStateCodes=ES,DE
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
