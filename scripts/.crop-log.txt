@@ -1,0 +1,2 @@
+No se sobrescribe data/crop-progress.json:
+wheat_spring con menos de 5 campañas de valoración completas
