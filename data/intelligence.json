@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T12:32:26.013Z",
+  "generatedAt": "2026-09-30T12:33:19.970Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -82,6 +82,25 @@
       "coverageEnd": "2026-06-01",
       "status": "verified",
       "comparability": "directional"
+    },
+    {
+      "id": "di_fertilizantes_urea_eu",
+      "product": "urea",
+      "region": "eu",
+      "sourceId": "world_bank",
+      "frequency": "monthly",
+      "unit": "tonelada",
+      "currency": "USD",
+      "latest": 390,
+      "observationDate": "2026-08-01",
+      "periodChangePct": -2.500000000000002,
+      "yoyPct": -23.182982076029145,
+      "volatility": 0.14006216271996336,
+      "points": 240,
+      "coverageStart": "2006-09-01",
+      "coverageEnd": "2026-08-01",
+      "status": "verified",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_cereales_arroz_eu",
@@ -804,25 +823,6 @@
       "coverageEnd": "2026-09-01",
       "status": "verified",
       "comparability": "directional"
-    },
-    {
-      "id": "di_fertilizantes_urea_eu",
-      "product": "urea",
-      "region": "eu",
-      "sourceId": "world_bank",
-      "frequency": "monthly",
-      "unit": "tonelada",
-      "currency": "USD",
-      "latest": 390,
-      "observationDate": "2026-08-01",
-      "periodChangePct": -2.500000000000002,
-      "yoyPct": null,
-      "volatility": 0.22574120067151696,
-      "points": 12,
-      "coverageStart": "2025-09-01",
-      "coverageEnd": "2026-08-01",
-      "status": "verified",
-      "comparability": "not_comparable"
     }
   ]
 }

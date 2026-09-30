@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T12:32:25.664Z",
+  "generatedAt": "2026-09-30T12:33:19.440Z",
   "observationCount": 48,
   "products": [
     "arroz",
@@ -651,10 +651,10 @@
       "currency": "USD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:04:49Z",
+      "verifiedAt": "2026-09-30T12:33:18Z",
       "comparability": "not_comparable",
-      "points": 12,
-      "coverageStart": "2025-09-01",
+      "points": 240,
+      "coverageStart": "2006-09-01",
       "coverageEnd": "2026-08-01"
     },
     {
