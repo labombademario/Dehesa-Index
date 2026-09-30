@@ -1,0 +1,51 @@
+name: probe-usda3
+on: workflow_dispatch
+concurrency:
+  group: probe-usda3
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe
+        env:
+          NK: ${{ secrets.NASS_API_KEY }}
+        run: |
+          mkdir -p .probe
+          node -e "
+          const NK=process.env.NK, out=[];
+          const N='https://quickstats.nass.usda.gov/api/';
+          async function q(label,url,n=800){try{const r=await fetch(url,{signal:AbortSignal.timeout(90000)});const t=await r.text();out.push('== '+label+'\n'+r.status+' '+t.length+' '+t.slice(0,n).replace(/\s+/g,' '));return t}catch(e){out.push('== '+label+' ERR '+e.message)}}
+          (async()=>{
+            const P=(p,extra='')=>N+'get_param_values/?key='+NK+'&param='+p+extra;
+            await q('hogs commodity all short',P('short_desc','&commodity_desc=HOGS&agg_level_desc=NATIONAL'),3500);
+            await q('hogs freq',P('freq_desc','&commodity_desc=HOGS&statisticcat_desc=INVENTORY'),300);
+            await q('hogs refper',P('reference_period_desc','&commodity_desc=HOGS&statisticcat_desc=INVENTORY'),400);
+            await q('cattle short national',P('short_desc','&commodity_desc=CATTLE&agg_level_desc=NATIONAL&year=2026'),3500);
+            await q('cattle refper',P('reference_period_desc','&commodity_desc=CATTLE&statisticcat_desc=INVENTORY&year=2026'),400);
+            await q('cattle domain',P('domaincat_desc','&commodity_desc=CATTLE&statisticcat_desc=INVENTORY&year=2026'),800);
+            await q('stocks commodities',P('commodity_desc','&statisticcat_desc=STOCKS&year=2026&source_desc=SURVEY&sector_desc=ANIMALS %26 PRODUCTS'),1500);
+            await q('stocks short_desc BEEF',P('short_desc','&statisticcat_desc=STOCKS&year=2026&commodity_desc=BEEF'),800);
+            await q('stocks short_desc BUTTER',P('short_desc','&statisticcat_desc=STOCKS&year=2026&commodity_desc=BUTTER'),800);
+            await q('milk cows inv',P('short_desc','&commodity_desc=MILK&agg_level_desc=NATIONAL&year=2026&freq_desc=MONTHLY'),2500);
+            await q('fertilizer price short',P('short_desc','&commodity_desc=FERTILIZER&statisticcat_desc=PRICE PAID'),3500);
+            await q('fuels price short',P('short_desc','&commodity_desc=FUELS&statisticcat_desc=PRICE PAID'),1500);
+            await q('feed price short',P('short_desc','&commodity_desc=FEED&statisticcat_desc=PRICE PAID'),3000);
+            await q('index short national',P('short_desc','&statisticcat_desc=INDEX FOR PRICE PAID, 2011&year=2026&agg_level_desc=NATIONAL'),3000);
+            await q('fert data sample',N+'api_GET/?key='+NK+'&commodity_desc=FERTILIZER&statisticcat_desc=PRICE PAID&year=2026&format=CSV',1500);
+            await q('yield states sample',P('short_desc','&commodity_desc=CORN&statisticcat_desc=YIELD&agg_level_desc=STATE&year=2025'),800);
+            await q('area states sample',P('short_desc','&commodity_desc=CORN&statisticcat_desc=AREA HARVESTED&agg_level_desc=STATE&year=2025'),800);
+            for (const u of ['https://www.ers.usda.gov/data-products/food-price-outlook','https://www.ers.usda.gov/data-products/food-price-outlook/summary-findings','https://www.ers.usda.gov/data-products/food-price-outlook/food-price-outlook-forecasts']) {
+              const h=await fetch(u).then(r=>r.text()).catch(e=>'ERR '+e.message);
+              out.push('== ERS '+u+' len '+h.length+'\n'+[...new Set((h.match(/href=\"[^\"]*(?:media|csv|xlsx|zip|xls)[^\"]*\"/gi)||[]))].slice(0,40).join('\n'));
+            }
+            require('fs').writeFileSync('.probe/usda3.txt',out.join('\n'));
+          })()"
+      - name: Commit
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add -A .probe; git commit -m "probe usda3" || true
+          git pull --rebase origin main; git push origin HEAD:main
