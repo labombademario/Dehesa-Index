@@ -1,8 +1,10 @@
 apri_ap_crpouta 58 series
 apri_ap_anouta 25 series
 apri_ap_ina 36 series
+apri_pi_outq 45 series
+apri_pi_inq 14 series
 leche 10 series
 sacrificio 56 series
 cultivos 42 series
 censo 7 series
-ecologico 5 series
+ecologico 35 series
