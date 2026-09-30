@@ -1,48 +1,45 @@
-=== https://api.fas.usda.gov/api/esr/commodities
-200 application/json; charset=utf-8 3264
-[{"commodityCode":101,"commodityName":"Wheat - HRW","unitId":1},{"commodityCode":102,"commodityName":"Wheat - SRW","unitId":1},{"commodityCode":103,"commodityName":"Wheat - HRS","unitId":1},{"commodityCode":104,"commodityName":"Wheat - White","unitId":1},{"commodityCode":105,"commodityName":"Wheat - Durum","unitId":1},{"commodityCode":106,"commodityName":"Wheat - Mixed","unitId":1},{"commodityCode":107,"commodityName":"All Wheat","unitId":1},{"commodityCode":201,"commodityName":"Wheat Products","unitId":1},{"commodityCode":301,"commodityName":"Barley","unitId":1},{"commodityCode":401,"commodityName":"Corn","unitId":1},{"commodityCode":501,"commodityName":"Rye","unitId":1},{"commodityCode":601,"commodityName":"Oats","unitId":1},{"commodityCode":701,"commodityName":"Sorghum","unitId":1},{"commodityCode":801,"commodityName":"Soybeans","unitId":1},{"commodityCode":901,"commodityName":"Soybean cake & meal","unitId":1},{"commodityCode":902,"commodityName":"Soybean Oil","unitId":1},{"commodityCode":1001,"commodityName":"Flaxseed","unitId":1},{"commodityCode":1101,"commodityName":"Linseed Oil","unitId":1},{"commodityCode":1110,"commodityName":"Sunflowerseed Oil","unitId":1},{"commodityCode":1201,"commodityName":"Cottonseed","unitId":1},{"commodityCode":1202,"commodityName":"Cottonseed cake & meal","unitId":1},{"commodityCode":1203,"commodityName":"Cottonseed Oil","unitId":1},{"commodityCode":1301,"commodityName":"Cotton- Am Pima","unitId":2},{"commodityCode":1401,"commodityName":"Cot
-=== https://api.fas.usda.gov/api/esr/countries
-200 application/json; charset=utf-8 27651
-[{"countryCode":1,"countryName":"EUROPEAN","countryDescription":"EUROPEAN UNION - 27","regionId":1,"gencCode":null},{"countryCode":1010,"countryName":"GREENLD ","countryDescription":"GREENLAND                      ","regionId":11,"gencCode":"GRL"},{"countryCode":1220,"countryName":"CANADA  ","countryDescription":"CANADA                         ","regionId":11,"gencCode":"CAN"},{"countryCode":1610,"countryName":"MIGUEL  ","countryDescription":"ST. PIERRE AND MIQUELON        ","regionId":11,"gencCode":null},{"countryCode":2010,"countryName":"MEXICO  ","countryDescription":"MEXICO                
-=== https://api.fas.usda.gov/api/esr/unitsOfMeasure
-200 application/json; charset=utf-8 183
-[{"unitId":1,"unitNames":"Metric Tons"},{"unitId":2,"unitNames":"Running Bales"},{"unitId":3,"unitNames":"Pieces"},{"unitId":4,"unitNames":"NUMBER"},{"unitId":5,"unitNames":"Pounds"}]
-=== https://api.fas.usda.gov/api/esr/datareleasedates
-200 application/json; charset=utf-8 7201
-[{"commodityCode":101,"marketYearStart":"2026-06-01T00:00:00","marketYearEnd":"2027-05-31T00:00:00","marketYear":2027,"releaseTimeStamp":"2026-09-24T08:30:24.933"},{"commodityCode":102,"marketYearStart":"2026-06-01T00:00:00","marketYearEnd":"2027-05-31T00:00:00","marketYear":2027,"releaseTimeStamp":"2026-09-24T08:30:24.933"},{"commodityCode":103,"marketYearStart":"2026-06-01T00:00:00","marketYearEnd":"2027-05-31T00:00:00","marketYear":2027,"releaseTimeStamp":"2026-09-24T08:30:24.933"},{"commodityCode":104,"marketYearStart":"2026-06-01T00:00:00","marketYearEnd":"2027-05-31T00:00:00","marketYear
-=== https://api.fas.usda.gov/api/esr/exports/commodityCode/107/allCountries/marketYear/2026
-200 application/json; charset=utf-8 810340
-[{"commodityCode":107,"countryCode":1220,"weeklyExports":514,"accumulatedExports":514,"outstandingSales":7136,"grossNewSales":7650,"currentMYNetSales":7650,"currentMYTotalCommitment":7650,"nextMYOutstandingSales":0,"nextMYNetSales":0,"unitId":1,"weekEndingDate":"2025-06-05T00:00:00"},{"commodityCode":107,"countryCode":2010,"weeklyExports":19004,"accumulatedExports":19004,"outstandingSales":1108774,"grossNewSales":193449,"currentMYNetSales":190961,"currentMYTotalCommitment":1127778,"nextMYOutstandingSales":0,"nextMYNetSales":0,"unitId":1,"weekEndingDate":"2025-06-05T00:00:00"},{"commodityCode":107,"countryCode":2050,"weeklyExports":0,"accumulatedExports":0,"outstandingSales":196496,"grossNewSales":0,"currentMYNetSales":0,"currentMYTotalCommitment":196496,"nextMYOutstandingSales":0,"nextMYNetSales":0,"unitId":1,"weekEndingDate":"2025-06-05T00:00:00"},{"commodityCode":107,"countryCode":2080,"weeklyExports":0,"accumulatedExports":0,"outstandingSales":6500,"grossNewSales":0,"currentMYNetSales":0,"currentMYTotalCommitment":6500,"nextMYOutstandingSales":0,"nextMYNetSales":0,"unitId":1,"weekEndingDate":"2025-06-05T00:00:00"},{"commodityCode":107,"countryCode":2110,"weeklyExports":0,"accumulatedExports":0,"outstandingSales":15640,"grossNewSales":0,"currentMYNetSales":0,"currentMYTotalCommitment":15640,"nextMYOutstandingSales":0,"nextMYNetSales":0,"unitId":1,"weekEndingDate":"2025-06-05T00:00:00"},{"commodityCode":107,"countryCode":2150,"weeklyExports":0,"accumulatedExports":0,"outstan
-=== https://api.fas.usda.gov/api/esr/exports/commodityCode/401/allCountries/marketYear/2026
-200 application/json; charset=utf-8 723915
-[{"commodityCode":401,"countryCode":1220,"weeklyExports":1878,"accumulatedExports":1878,"outstandingSales":204648,"grossNewSales":30462,"currentMYNetSales":28227,"currentMYTotalCommitment":206526,"nextMYOutstandingSales":0,"nextMYNetSales":0,"unitId":1,"weekEndingDate":"2025-09-04T00:00:00"},{"commodityCode":401,"countryCode":2010,"weeklyExports":185534,"accumulatedExports":185534,"outstandingSales":7417795,"grossNewSales":717074,"currentMYNetSales":718348,"currentMYTotalCommitment":7603329,"nextMYOutstandingSales":68580,"nextMYNetSales":0,"unitId":1,"weekEndingDate":"2025-09-04T00:00:00"},{"c
-=== https://api.fas.usda.gov/api/gats/countries
-200 application/json; charset=utf-8 54604
-[{"countryCode":"01","regionCode":"R99","countryParentCode":"01","countryName":"Caribbean,nes","description":null,"isO3Code":"X21","discontinuedOn":null,"gencCode":null},{"countryCode":"02","regionCode":"R99","countryParentCode":"02","countryName":"Eastern Europe,nes","description":null,"isO3Code":"X22","discontinuedOn":null,"gencCode":null},{"countryCode":"03","regionCode":"R99","countryParentCode":"03","countryName":"Northern Africa,nes","description":null,"isO3Code":"X23","discontinuedOn":null,"gencCode":null},{"countryCode":"04","regionCode":"R99","countryParentCode":"04","countryName":"Ce
-=== https://api.fas.usda.gov/api/gats/commodities
-200 application/json; charset=utf-8 7592916
-[{"hS10Code":"0011010   ","startDate":"196701","endDtate":null,"productType":"B","commodityName":"CTL,DAIRY,BREDNG","commodityDescription":null,"isAgCommodity":false,"censusUOMId1":78,"censusUOMId2":78,"fasConvertedUOMId":78,"fasNonConvertedUOMId":78},{"hS10Code":"0011020   ","startDate":"196701","endDtate":null,"productType":"B","commodityName":"CTL,BF,BRG,X BUL","commodityDescription":null,"isAgCommodity":false,"censusUOMId1":78,"censusUOMId2":78,"fasConvertedUOMId":78,"fasNonConvertedUOMId":78},{"hS10Code":"0011030   ","startDate":"196701","endDtate":null,"productType":"B","commodityName":"
-=== https://api.fas.usda.gov/api/gats/HS6Commodities
-200 application/json; charset=utf-8 661146
-[{"hS6Code":"010110","commodityName":"Purebred Breeding Animal","commodityDescription":"Purebred Breeding Animal","censusUOMId1":78,"censusUOMId2":78,"fasConvertedUOMId":78,"fasNonConvertedUOMId":78},{"hS6Code":"010111","commodityName":"Horses, Live, Purebred Breeding","commodityDescription":"Horses, Live, Purebred Breeding","censusUOMId1":78,"censusUOMId2":78,"fasConvertedUOMId":78,"fasNonConvertedUOMId":78},{"hS6Code":"010119","commodityName":"Horses, Live, ex. Purebred Breeding","commodityDescription":"Horses, Live, Except Purebred Breeding Animals","censusUOMId1":78,"censusUOMId2":78,"fasC
-=== https://api.fas.usda.gov/api/gats/regions
-200 application/json; charset=utf-8 768
-[{"regionCode":"R05","regionName":"North America"},{"regionCode":"R10","regionName":"Caribbean"},{"regionCode":"R15","regionName":"Central America"},{"regionCode":"R20","regionName":"South America"},{"regionCode":"R25","regionName":"European Union-27"},{"regionCode":"R30","regionName":"Other Europe"},{"regionCode":"R35","regionName":"Former Soviet Union-12"},{"regionCode":"R40","regionName":"East 
-=== https://api.fas.usda.gov/api/gats/unitsOfMeasure
-200 application/json; charset=utf-8 14029
-[{"unitOfMeasureId":0,"unitOfMeasureCode":"NONE","unitOfMeasureName":"NONE","unitOfMeasureDescription":"NONE"},{"unitOfMeasureId":1,"unitOfMeasureCode":"24LBC","unitOfMeasureName":"24-Pound Cartons","unitOfMeasureDescription":"24-Pound Cartons"},{"unitOfMeasureId":2,"unitOfMeasureCode":"24PCS","unitOfMeasureName":"24-Pound Cases","unitOfMeasureDescription":"24-Pound Cases"},{"unitOfMeasureId":3,"u
+=== https://api.fas.usda.gov/swagger/docs/v1
+404 application/json 110
+{   "error": {     "code": "NOT_FOUND",     "message": "The requested URL was not found on this server."   } }
+=== https://api.fas.usda.gov/swagger/ui/index
+404 application/json 110
+{   "error": {     "code": "NOT_FOUND",     "message": "The requested URL was not found on this server."   } }
+=== https://api.fas.usda.gov/api/gats/censusExports/partnerCode/-1/year/2025/month/6
+200 application/json; charset=utf-8 2
+[]
+=== https://api.fas.usda.gov/api/gats/censusExports/partnerCode/5700/year/2025/month/6
+404 text/plain; charset=utf-8 0
+
+=== https://api.fas.usda.gov/api/gats/censusExports/partnerCode/-1/year/2025/month/6/HS10Code/1001990000
+404 text/plain; charset=utf-8 0
+
+=== https://api.fas.usda.gov/api/gats/censusExports/reporterCode/US/partnerCode/-1/year/2025/month/6
+404 text/plain; charset=utf-8 0
+
+=== https://api.fas.usda.gov/api/gats/censusExports/partnerCode/5700/year/2025/month/6/HS10Code/1005902030
+404 text/plain; charset=utf-8 0
+
+=== https://api.fas.usda.gov/api/gats/censusImports/partnerCode/5700/year/2025/month/6
+404 text/plain; charset=utf-8 0
+
+=== https://api.fas.usda.gov/api/gats/UNTradeExports/reporterCode/5700/partnerCode/0000/year/2024/month/12
+404 text/plain; charset=utf-8 0
+
+=== https://api.fas.usda.gov/api/gats/UNTradeExports/reporterCode/US/partnerCode/-1/year/2024/month/12/HS6Code/100199
+404 text/plain; charset=utf-8 0
+
+=== https://api.fas.usda.gov/api/gats/UNTradeExports/reporterCode/-1/partnerCode/-1/year/2024/month/12/HS6Code/100199
+404 text/plain; charset=utf-8 0
+
+=== https://api.fas.usda.gov/api/gats/customsDistricts
+200 application/json; charset=utf-8 7808
+[{"customsDistrictId":0,"customsDistrictName":"Z UNKNOW CDIST CODES","customsDistrictRegionCode":"EC","customsDistrictRegionName":"EAST COAST DISTRICTS"},{"customsDistrictId":1,"customsDistrictName":"PORTLAND,MAINE","customsDistrictRegionCode":"EC","customsDistrictRegionName":"EAST COAST DISTRICTS"}
+=== https://api.fas.usda.gov/api/gats/censusReleaseDates
+404 application/json; charset=utf-8 135
+{"message":"No HTTP resource was found that matches the request URI 'https://apps.fas.usda.gov/OpenData/api/gats/censusReleaseDates'."}
+=== https://api.fas.usda.gov/api/gats/UNReleaseDates
+404 application/json; charset=utf-8 131
+{"message":"No HTTP resource was found that matches the request URI 'https://apps.fas.usda.gov/OpenData/api/gats/UNReleaseDates'."}
 === https://api.fas.usda.gov/api/gats/dataReleaseDates
 404 application/json; charset=utf-8 133
 {"message":"No HTTP resource was found that matches the request URI 'https://apps.fas.usda.gov/OpenData/api/gats/dataReleaseDates'."}
-=== https://api.fas.usda.gov/api/gats/censusExports/partnerCode/CH/year/2026/month/6/HS10Code/1001990000
-404 text/plain; charset=utf-8 0
-
-=== https://api.fas.usda.gov/api/gats/censusExports/partnerCode/-1/year/2026/month/6
-200 application/json; charset=utf-8 2
-[]
-=== https://api.fas.usda.gov/api/gats/UNTradeExports/reporterCode/ES/partnerCode/-1/year/2024/month/12
-404 text/plain; charset=utf-8 0
-
-=== https://api.fas.usda.gov/api/gats/UNTradeExports/reporterCode/US/partnerCode/CH/year/2025/month/12/HS6Code/100199
-404 text/plain; charset=utf-8 0
-
