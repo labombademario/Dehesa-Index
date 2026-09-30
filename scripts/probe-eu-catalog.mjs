@@ -13,7 +13,8 @@ import { fileURLToPath } from 'node:url';
 const OUT = path.join(path.dirname(fileURLToPath(import.meta.url)), '.probe-catalog.txt');
 const BASE = 'https://api.tech.ec.europa.eu/agrifood/api';
 const BEGIN = '01/01/2021';
-const CANDIDATES = ['cereal', 'fruitAndVegetable', 'fruitsAndVegetables', 'fruitsandvegetables', 'fruits', 'vegetables', 'fruit', 'fruitAndVeg/prices', 'fruit-and-veg', 'fruitAndVegetablesPrices', 'fruitVeg', 'fruitsVegetables', 'produce'];
+const CANDIDATES = ['fruit-and-vegetable', 'fruit-and-vegetables', 'fruit_and_vegetables', 'fruitAndVegetables', 'fruitandvegetables', 'fruitAndVegetable', 'fruit_and_vegetable', 'fruitsAndVegetables', 'fruit-and-vegetables-supply-chain'];
+const OLD_CANDIDATES = ['cereal', 'fruitAndVegetable', 'fruitsAndVegetables', 'fruitsandvegetables', 'fruits', 'vegetables', 'fruit', 'fruitAndVeg/prices', 'fruit-and-veg', 'fruitAndVegetablesPrices', 'fruitVeg', 'fruitsVegetables', 'produce'];
 const SKIP = new Set(['referencePeriod', 'marketingYear', 'marketingYearMonth', 'weight', 'price', 'endDate', 'beginDate', 'startDate', 'ym', 'year', 'month', 'quarter', 'week', 'weekNumber', 'weekNumberDay']);
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -71,7 +72,12 @@ async function probe(name) {
 }
 
 const parts = [];
-for (const d of ['', '/swagger-ui/index.html', '/v3/api-docs', '/openapi.json', '/swagger.json', '/../swagger/v1/swagger.json']) { const r = await get(BASE + d); parts.push('=== DOC ' + d + ' STATUS ' + r.status + ' ' + String(r.text).replace(/\s+/g, ' ').slice(0, 1500)); await sleep(1500); }
+for (const n of ['fruit_and_vegetables', 'fruitandvegetables', 'fruit-and-vegetables']) {
+  const r = await get('https://api.tech.ec.europa.eu/agrifood/v3/api-docs/' + n);
+  let txt = String(r.text).slice(0, 300);
+  try { const j = JSON.parse(r.text); txt = Object.entries(j.paths || {}).map(([k, v]) => k + ' ' + Object.entries(v).map(([m, o]) => m + '(' + (o.parameters || []).map(x => x.name).join(',') + ')').join(' ')).join('\n  '); } catch (e) {}
+  parts.push('=== SPEC ' + n + ' STATUS ' + r.status + '\n  ' + txt); await sleep(1500);
+}
 for (const c of CANDIDATES) { parts.push(await probe(c)); await sleep(2500); }
 await writeFile(OUT, parts.join('\n\n') + '\n', 'utf8');
 console.log('escrito ' + OUT);
