@@ -50,6 +50,7 @@ ACC = {'acido': 'ácido', 'potasico': 'potásico', 'amonico': 'amónico', 'diamo
 def title(s):
     s = s.replace('�', 'Ñ').strip().lower()
     s = re.sub(r'\s+', ' ', s)
+    if s == 'aceite': return 'Aceite de oliva (total)'
     s = ' '.join(ACC.get(w, w) for w in s.split(' '))
     return s[:1].upper() + s[1:]
 
