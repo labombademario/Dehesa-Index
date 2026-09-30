@@ -40,7 +40,9 @@ const LOCATIONS=[
  {id:'eu-austria-marchfeld',name:'Marchfeld, Baja Austria (Austria)',region:'eu',country:'AT',lat:48.3,lon:16.6,crops:['trigo','maiz','remolacha']},
  {id:'eu-austria-upper',name:'Alta Austria (Wels)',region:'eu',country:'AT',lat:48.15,lon:14.0,crops:['leche','maiz','cerdo']},
  {id:'eu-portugal-alentejo',name:'Alentejo (Beja) · montado',region:'eu',country:'PT',lat:38.0,lon:-7.9,crops:['trigo','corcho','vacuno']},
- {id:'eu-portugal-ribatejo',name:'Ribatejo (Santarém)',region:'eu',country:'PT',lat:39.2,lon:-8.7,crops:['maiz','arroz','tomate']}
+ {id:'eu-portugal-ribatejo',name:'Ribatejo (Santarém)',region:'eu',country:'PT',lat:39.2,lon:-8.7,crops:['maiz','arroz','tomate']},
+ {id:'eu-belgium-hesbaye',name:'Hesbaye (Lieja, Bélgica)',region:'eu',country:'BE',lat:50.65,lon:5.1,crops:['trigo','remolacha','patata']},
+ {id:'eu-belgium-flanders',name:'Flandes Occidental (Roeselare, Bélgica)',region:'eu',country:'BE',lat:50.95,lon:3.1,crops:['patata','cerdo','maiz']}
 ];
 const MON=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 const round=(n,d=1)=>Number(n.toFixed(d));

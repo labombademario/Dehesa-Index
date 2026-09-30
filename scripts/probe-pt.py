@@ -1,19 +1,19 @@
-import os, json, urllib.request, urllib.parse
+import os, re, urllib.request
 os.makedirs('data/probe', exist_ok=True)
-def get(u):
-    try: return urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 DehesaIndex'}),timeout=90).read().decode('utf8','replace')
+B='https://www.ifap.pt/isip/ows/isip.data/ows'
+def get(u, n=6000):
+    try:
+        r=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 DehesaIndex'}),timeout=90)
+        return r.read(n*50).decode('utf8','replace')
     except Exception as e: return 'ERR %s'%e
-out=[]; seen=set()
-for q in ['iSIP','Sistema de Identificação Parcelar','IFAP parcelas','ocupação cultural','culturas declaradas IFAP','ocupação do solo IFAP']:
-    j=get('https://dados.gov.pt/api/1/datasets/?q=%s&page_size=20'%urllib.parse.quote(q))
-    try: data=json.loads(j).get('data',[])
-    except Exception: out.append(q+' '+j[:200]); continue
-    for d in data:
-        org=(d.get('organization') or {}).get('name','')
-        if d['id'] in seen or 'IFAP' not in org and 'Financiamento' not in org: continue
-        seen.add(d['id'])
-        out.append('%s | %s | %s | lic=%s | updated %s'%(d['id'],d.get('title'),org,d.get('license'),d.get('last_modified')))
-        out.append('   '+(d.get('description') or '')[:300].replace('\n',' '))
-        for r in d.get('resources',[]):
-            out.append('   RES %s | %s | %s | %s bytes | %s'%(r.get('title'),r.get('format'),r.get('filesize'),r.get('filesize'),r.get('url')))
-open('data/probe/pt6.txt','w').write('\n'.join(out))
+out=[]
+cap=get(B+'?SERVICE=WFS&REQUEST=GetCapabilities&VERSION=2.0.0')
+out.append('CAP len %d'%len(cap)); out.append(cap[:200])
+names=re.findall(r'<(?:wfs:)?Name>([^<]+)</',cap)
+out.append('NAMES: '+', '.join(names[:60]))
+for t in names[:8]:
+    out.append('=== '+t)
+    out.append('HITS '+get(B+'?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAMES=%s&resultType=hits'%t)[:400])
+    out.append('DESC '+get(B+'?SERVICE=WFS&REQUEST=DescribeFeatureType&VERSION=2.0.0&TYPENAMES=%s'%t)[:1800])
+    out.append('ONE '+get(B+'?SERVICE=WFS&REQUEST=GetFeature&VERSION=2.0.0&TYPENAMES=%s&count=1&outputFormat=application/json'%t)[:1500])
+open('data/probe/pt7.txt','w').write('\n'.join(out))
