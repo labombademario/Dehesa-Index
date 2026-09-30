@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-09-30T23:10:47.833127+00:00",
- "feedsOk": 254,
- "feedsTotal": 255,
- "publishers": 161,
+ "generatedAt": "2026-09-30T23:16:04.643799+00:00",
+ "feedsOk": 272,
+ "feedsTotal": 273,
+ "publishers": 160,
  "feeds": [
   {
    "source": "Reuters",
@@ -193,7 +193,7 @@
    "url": "https://news.google.com/rss/search?q=site%3Afarmprogress.com+agriculture+corn+soybean+wheat+fertilizer+dairy+feed+when%3A14d&hl=en-US&gl=US&",
    "ok": true,
    "items": 100,
-   "kept": 10,
+   "kept": 9,
    "error": ""
   },
   {
@@ -256,7 +256,7 @@
    "source": "The Pig Site",
    "url": "https://news.google.com/rss/search?q=site%3Athepigsite.com+pig+pork+prices+disease+markets+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 22,
+   "items": 21,
    "kept": 9,
    "error": ""
   },
@@ -368,8 +368,8 @@
    "source": "Farmtario",
    "url": "https://news.google.com/rss/search?q=site%3Afarmtario.com+corn+soybean+wheat+hogs+dairy+Ontario+prices+when%3A14d&hl=en-US&gl=US&ceid=US%3Ae",
    "ok": true,
-   "items": 86,
-   "kept": 39,
+   "items": 87,
+   "kept": 40,
    "error": ""
   },
   {
@@ -408,8 +408,8 @@
    "source": "Dairy Farmers of Canada",
    "url": "https://news.google.com/rss/search?q=Canada+dairy+farmers+milk+price+supply+management+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 26,
-   "kept": 20,
+   "items": 27,
+   "kept": 21,
    "error": ""
   },
   {
@@ -632,7 +632,7 @@
    "source": "Bauernzeitung Österreich",
    "url": "https://news.google.com/rss/search?q=site%3Abauernzeitung.at+%28Landwirtschaft+OR+Preise+OR+Getreide+OR+Milch+OR+Schweine+OR+Ernte%29+when%3",
    "ok": true,
-   "items": 65,
+   "items": 66,
    "kept": 19,
    "error": ""
   },
@@ -641,7 +641,7 @@
    "url": "https://news.google.com/rss/search?q=site%3Alko.at+%28Landwirtschaft+OR+Preise+OR+Markt+OR+Ernte+OR+Getreide%29+when%3A14d&hl=de&gl=AT&ceid=",
    "ok": true,
    "items": 100,
-   "kept": 18,
+   "kept": 19,
    "error": ""
   },
   {
@@ -656,7 +656,7 @@
    "source": "APA",
    "url": "https://news.google.com/rss/search?q=APA+%C3%96sterreich+%28Landwirtschaft+OR+Bauern+OR+Ernte+OR+Getreide+OR+Milch+OR+Preise%29+when%3A14d&h",
    "ok": true,
-   "items": 38,
+   "items": 39,
    "kept": 12,
    "error": ""
   },
@@ -704,7 +704,7 @@
    "source": "Le Sillon Belge",
    "url": "https://news.google.com/rss/search?q=site%3Asillonbelge.be+%28agriculteurs+OR+prix+OR+c%C3%A9r%C3%A9ales+OR+lait+OR+porcs+OR+r%C3%A9colte%29",
    "ok": true,
-   "items": 53,
+   "items": 52,
    "kept": 19,
    "error": ""
   },
@@ -928,7 +928,7 @@
    "source": "Danmarks Radio",
    "url": "https://news.google.com/rss/search?q=site%3Adr.dk+%28landm%C3%A6nd+OR+landbrug+OR+h%C3%B8st+OR+priser+OR+svin%29+when%3A14d&hl=da&gl=DK&ceid",
    "ok": true,
-   "items": 37,
+   "items": 38,
    "kept": 3,
    "error": ""
   },
@@ -942,10 +942,10 @@
   },
   {
    "source": "(temático)",
-   "url": "https://news.google.com/rss/search?q=Denmark+Danish+Crown+Arla+%28pork+OR+exports+OR+dairy+OR+farmers+OR+prices%29+when%3A14d&hl=en-US&gl=US",
+   "url": "https://news.google.com/rss/search?q=Danish+%28pork+OR+dairy+OR+farmers+OR+exports+OR+prices%29+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 0,
-   "kept": 0,
+   "items": 23,
+   "kept": 9,
    "error": ""
   },
   {
@@ -1080,7 +1080,7 @@
    "source": "(temático)",
    "url": "https://news.google.com/rss/search?q=Portugal+%28peste+OR+su%C3%ADna+OR+gripe+OR+avi%C3%A1ria+OR+l%C3%ADngua+OR+azul+OR+febre%29+when%3A14d&",
    "ok": true,
-   "items": 74,
+   "items": 73,
    "kept": 7,
    "error": ""
   },
@@ -1224,8 +1224,8 @@
    "source": "Canadian Press",
    "url": "https://news.google.com/rss/search?q=Canadian+Press+%28farmers+OR+agriculture+OR+canola+OR+wheat+OR+cattle+OR+prices%29+when%3A14d&hl=en-US&",
    "ok": true,
-   "items": 40,
-   "kept": 27,
+   "items": 39,
+   "kept": 26,
    "error": ""
   },
   {
@@ -1296,7 +1296,7 @@
    "source": "Farm Weekly",
    "url": "https://news.google.com/rss/search?q=site%3Afarmweekly.com.au+%28grain+OR+wheat+OR+canola+OR+sheep+OR+cattle+OR+prices%29+when%3A14d&hl=en-U",
    "ok": true,
-   "items": 40,
+   "items": 39,
    "kept": 6,
    "error": ""
   },
@@ -1717,11 +1717,155 @@
    "error": "HTTP Error 403: Forbidden"
   },
   {
+   "source": "Landbrugsavisen",
+   "url": "https://landbrugsavisen.dk/rss.xml",
+   "ok": true,
+   "items": 10,
+   "kept": 3,
+   "error": ""
+  },
+  {
+   "source": "DR Penge",
+   "url": "https://www.dr.dk/nyheder/service/feeds/penge",
+   "ok": true,
+   "items": 20,
+   "kept": 1,
+   "error": ""
+  },
+  {
+   "source": "Agrarheute",
+   "url": "https://www.agrarheute.com/rss",
+   "ok": true,
+   "items": 10,
+   "kept": 6,
+   "error": ""
+  },
+  {
+   "source": "Foodagribusiness",
+   "url": "https://www.foodagribusiness.nl/feed",
+   "ok": true,
+   "items": 100,
+   "kept": 0,
+   "error": ""
+  },
+  {
+   "source": "NU.nl",
+   "url": "https://www.nu.nl/rss/Economie",
+   "ok": true,
+   "items": 30,
+   "kept": 1,
+   "error": ""
+  },
+  {
+   "source": "DutchNews",
+   "url": "https://www.dutchnews.nl/feed/",
+   "ok": true,
+   "items": 10,
+   "kept": 0,
+   "error": ""
+  },
+  {
+   "source": "Vida Rural",
+   "url": "https://www.vidarural.pt/feed",
+   "ok": true,
+   "items": 10,
+   "kept": 5,
+   "error": ""
+  },
+  {
+   "source": "Agricultura e Mar",
+   "url": "https://www.agriculturaemar.com/feed",
+   "ok": true,
+   "items": 10,
+   "kept": 3,
+   "error": ""
+  },
+  {
+   "source": "CAP Portugal",
+   "url": "https://www.cap.pt/feed",
+   "ok": true,
+   "items": 10,
+   "kept": 1,
+   "error": ""
+  },
+  {
+   "source": "Portugal Resident",
+   "url": "https://www.portugalresident.com/feed/",
+   "ok": true,
+   "items": 10,
+   "kept": 0,
+   "error": ""
+  },
+  {
+   "source": "Réussir",
+   "url": "https://www.reussir.fr/rss.xml",
+   "ok": true,
+   "items": 20,
+   "kept": 3,
+   "error": ""
+  },
+  {
+   "source": "La Terre de chez nous",
+   "url": "https://www.laterre.ca/feed",
+   "ok": true,
+   "items": 10,
+   "kept": 9,
+   "error": ""
+  },
+  {
+   "source": "Top Crop Manager",
+   "url": "https://www.topcropmanager.com/feed",
+   "ok": true,
+   "items": 32,
+   "kept": 8,
+   "error": ""
+  },
+  {
+   "source": "Canola Council of Canada",
+   "url": "https://www.canolacouncil.org/feed",
+   "ok": true,
+   "items": 10,
+   "kept": 1,
+   "error": ""
+  },
+  {
+   "source": "Farm Weekly",
+   "url": "https://www.farmweekly.com.au/rss.xml",
+   "ok": true,
+   "items": 20,
+   "kept": 8,
+   "error": ""
+  },
+  {
+   "source": "Queensland Country Life",
+   "url": "https://www.queenslandcountrylife.com.au/rss.xml",
+   "ok": true,
+   "items": 20,
+   "kept": 3,
+   "error": ""
+  },
+  {
+   "source": "Stock & Land",
+   "url": "https://www.stockandland.com.au/rss.xml",
+   "ok": true,
+   "items": 20,
+   "kept": 8,
+   "error": ""
+  },
+  {
+   "source": "Sheep Central",
+   "url": "https://www.sheepcentral.com/feed/",
+   "ok": true,
+   "items": 10,
+   "kept": 5,
+   "error": ""
+  },
+  {
    "source": "(temático)",
    "url": "https://news.google.com/rss/search?q=Black+Sea+wheat+exports+Ukraine+Russia+grain+corridor+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 20,
-   "kept": 10,
+   "items": 19,
+   "kept": 9,
    "error": ""
   },
   {
@@ -1800,8 +1944,8 @@
    "source": "(temático)",
    "url": "https://news.google.com/rss/search?q=sugar+prices+Brazil+India+cane+crop+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 19,
-   "kept": 18,
+   "items": 18,
+   "kept": 17,
    "error": ""
   },
   {
@@ -1880,7 +2024,7 @@
    "source": "(temático)",
    "url": "https://news.google.com/rss/search?q=corn+soybean+wheat+futures+CBOT+prices+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 23,
+   "items": 24,
    "kept": 16,
    "error": ""
   },
@@ -1904,8 +2048,8 @@
    "source": "(temático)",
    "url": "https://news.google.com/rss/search?q=EU+Ukraine+agricultural+imports+quotas+farmers+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 10,
-   "kept": 4,
+   "items": 9,
+   "kept": 3,
    "error": ""
   },
   {
