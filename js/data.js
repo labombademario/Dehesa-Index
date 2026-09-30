@@ -32,10 +32,10 @@
   }
 
   var UNIT_LABELS = {
-    es: { bushel: 'bushel', cwt: 'cwt', lb: 'lb', ton_corta: 'ton corta', tonelada: 'tonelada', kg: 'kg', '100kg': '100 kg', gal: 'galón', docena: 'docena', litro: 'litro' },
-    en: { bushel: 'bushel', cwt: 'cwt', lb: 'lb', ton_corta: 'short ton', tonelada: 'tonne', kg: 'kg', '100kg': '100 kg', gal: 'gallon', docena: 'dozen', litro: 'liter' },
-    fr: { bushel: 'bushel', cwt: 'cwt', lb: 'lb', ton_corta: 'tonne courte', tonelada: 'tonne', kg: 'kg', '100kg': '100 kg', gal: 'gallon', docena: 'douzaine', litro: 'litre' },
-    it: { bushel: 'bushel', cwt: 'cwt', lb: 'lb', ton_corta: 'tonnellata corta', tonelada: 'tonnellata', kg: 'kg', '100kg': '100 kg', gal: 'gallone', docena: 'dozzina', litro: 'litro' }
+    es: { bushel: 'bushel', mmbtu: 'MMBtu', barril: 'barril', cwt: 'cwt', lb: 'lb', ton_corta: 'ton corta', tonelada: 'tonelada', kg: 'kg', '100kg': '100 kg', gal: 'galón', docena: 'docena', litro: 'litro' },
+    en: { bushel: 'bushel', mmbtu: 'MMBtu', barril: 'barrel', cwt: 'cwt', lb: 'lb', ton_corta: 'short ton', tonelada: 'tonne', kg: 'kg', '100kg': '100 kg', gal: 'gallon', docena: 'dozen', litro: 'liter' },
+    fr: { bushel: 'bushel', mmbtu: 'MMBtu', barril: 'baril', cwt: 'cwt', lb: 'lb', ton_corta: 'tonne courte', tonelada: 'tonne', kg: 'kg', '100kg': '100 kg', gal: 'gallon', docena: 'douzaine', litro: 'litre' },
+    it: { bushel: 'bushel', mmbtu: 'MMBtu', barril: 'barile', cwt: 'cwt', lb: 'lb', ton_corta: 'tonnellata corta', tonelada: 'tonnellata', kg: 'kg', '100kg': '100 kg', gal: 'gallone', docena: 'dozzina', litro: 'litro' }
   };
 
   var REGION = {
@@ -86,10 +86,10 @@
   };
 
   var NAMES = {
-    es: { mantequilla: 'Mantequilla', leche_polvo: 'Leche desnatada en polvo', colza: 'Colza', centeno: 'Centeno', cebada: 'Cebada', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Maíz', trigo: 'Trigo', arroz: 'Arroz', leche: 'Leche', vaca: 'Vaca (vacuno)', cabra: 'Cabra', pienso: 'Pienso compuesto', harina_soja: 'Harina de soja', urea: 'Urea', dap: 'DAP (fosfato diamónico)', potasa: 'Potasa (MOP)', cerdo: 'Cerdo', cordero: 'Cordero', huevos: 'Huevos', pollo: 'Pollo', azucar: 'Azúcar', oliva: 'Aceite de oliva', diesel: 'Diésel agrícola' },
-    en: { mantequilla: 'Butter', leche_polvo: 'Skim milk powder', colza: 'Rapeseed', centeno: 'Rye', cebada: 'Barley', avena: 'Oats', sorgo: 'Sorghum', maiz: 'Corn', trigo: 'Wheat', arroz: 'Rice', leche: 'Milk', vaca: 'Cattle', cabra: 'Goat', pienso: 'Compound feed', harina_soja: 'Soybean meal', urea: 'Urea', dap: 'DAP (diammonium phosphate)', potasa: 'Potash (MOP)', cerdo: 'Pork', cordero: 'Lamb', huevos: 'Eggs', pollo: 'Chicken', azucar: 'Sugar', oliva: 'Olive oil', diesel: 'Agricultural diesel' },
-    fr: { mantequilla: 'Beurre', leche_polvo: 'Lait écrémé en poudre', colza: 'Colza', centeno: 'Seigle', cebada: 'Orge', avena: 'Avoine', sorgo: 'Sorgho', maiz: 'Maïs', trigo: 'Blé', arroz: 'Riz', leche: 'Lait', vaca: 'Bovins', cabra: 'Chèvre', pienso: 'Aliment composé', harina_soja: 'Tourteau de soja', urea: 'Urée', dap: 'DAP (phosphate diammonique)', potasa: 'Potasse (MOP)', cerdo: 'Porc', cordero: 'Agneau', huevos: 'Œufs', pollo: 'Poulet', azucar: 'Sucre', oliva: "Huile d'olive", diesel: 'Gazole agricole' },
-    it: { mantequilla: 'Burro', leche_polvo: 'Latte scremato in polvere', colza: 'Colza', centeno: 'Segale', cebada: 'Orzo', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Mais', trigo: 'Grano', arroz: 'Riso', leche: 'Latte', vaca: 'Bovini', cabra: 'Capra', pienso: 'Mangime composto', harina_soja: 'Farina di soia', urea: 'Urea', dap: 'DAP (fosfato diammonico)', potasa: 'Potassa (MOP)', cerdo: 'Maiale', cordero: 'Agnello', huevos: 'Uova', pollo: 'Pollo', azucar: 'Zucchero', oliva: "Olio d'oliva", diesel: 'Gasolio agricolo' }
+    es: { gas_natural: 'Gas natural (Henry Hub / TTF)', petroleo_wti: 'Petróleo WTI (Texas)', petroleo_brent: 'Petróleo Brent', mantequilla: 'Mantequilla', leche_polvo: 'Leche desnatada en polvo', colza: 'Colza', centeno: 'Centeno', cebada: 'Cebada', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Maíz', trigo: 'Trigo', arroz: 'Arroz', leche: 'Leche', vaca: 'Vaca (vacuno)', cabra: 'Cabra', pienso: 'Pienso compuesto', harina_soja: 'Harina de soja', urea: 'Urea', dap: 'DAP (fosfato diamónico)', potasa: 'Potasa (MOP)', cerdo: 'Cerdo', cordero: 'Cordero', huevos: 'Huevos', pollo: 'Pollo', azucar: 'Azúcar', oliva: 'Aceite de oliva', diesel: 'Diésel agrícola' },
+    en: { gas_natural: 'Natural gas (Henry Hub / TTF)', petroleo_wti: 'WTI crude oil (Texas)', petroleo_brent: 'Brent crude oil', mantequilla: 'Butter', leche_polvo: 'Skim milk powder', colza: 'Rapeseed', centeno: 'Rye', cebada: 'Barley', avena: 'Oats', sorgo: 'Sorghum', maiz: 'Corn', trigo: 'Wheat', arroz: 'Rice', leche: 'Milk', vaca: 'Cattle', cabra: 'Goat', pienso: 'Compound feed', harina_soja: 'Soybean meal', urea: 'Urea', dap: 'DAP (diammonium phosphate)', potasa: 'Potash (MOP)', cerdo: 'Pork', cordero: 'Lamb', huevos: 'Eggs', pollo: 'Chicken', azucar: 'Sugar', oliva: 'Olive oil', diesel: 'Agricultural diesel' },
+    fr: { gas_natural: 'Gaz naturel (Henry Hub / TTF)', petroleo_wti: 'Pétrole WTI (Texas)', petroleo_brent: 'Pétrole Brent', mantequilla: 'Beurre', leche_polvo: 'Lait écrémé en poudre', colza: 'Colza', centeno: 'Seigle', cebada: 'Orge', avena: 'Avoine', sorgo: 'Sorgho', maiz: 'Maïs', trigo: 'Blé', arroz: 'Riz', leche: 'Lait', vaca: 'Bovins', cabra: 'Chèvre', pienso: 'Aliment composé', harina_soja: 'Tourteau de soja', urea: 'Urée', dap: 'DAP (phosphate diammonique)', potasa: 'Potasse (MOP)', cerdo: 'Porc', cordero: 'Agneau', huevos: 'Œufs', pollo: 'Poulet', azucar: 'Sucre', oliva: "Huile d'olive", diesel: 'Gazole agricole' },
+    it: { gas_natural: 'Gas naturale (Henry Hub / TTF)', petroleo_wti: 'Petrolio WTI (Texas)', petroleo_brent: 'Petrolio Brent', mantequilla: 'Burro', leche_polvo: 'Latte scremato in polvere', colza: 'Colza', centeno: 'Segale', cebada: 'Orzo', avena: 'Avena', sorgo: 'Sorgo', maiz: 'Mais', trigo: 'Grano', arroz: 'Riso', leche: 'Latte', vaca: 'Bovini', cabra: 'Capra', pienso: 'Mangime composto', harina_soja: 'Farina di soia', urea: 'Urea', dap: 'DAP (fosfato diammonico)', potasa: 'Potassa (MOP)', cerdo: 'Maiale', cordero: 'Agnello', huevos: 'Uova', pollo: 'Pollo', azucar: 'Zucchero', oliva: "Olio d'oliva", diesel: 'Gasolio agricolo' }
   };
 
   var SRC_URL = {
@@ -674,6 +674,24 @@
           footnoteKey: 'aceite',
           countryFactors: { es: 1, it: 1.389 } }
       ]
+    },
+    {
+      id: 'energia', nameKey: 'energia',
+      // Las cifras de abajo son solo marcador de posición: la ficha permanece oculta hasta que
+      // data/latest.json aporta una observación verificada (EIA / Banco Mundial). kgPerUnit=1:
+      // MMBtu y barril no son unidades de masa, así que no se aplica conversión de unidad.
+      products: [
+        { nameKey: 'gas_natural', imperialUnitKey: 'mmbtu', imperialKgPerUnit: 1, metricUnitKey: 'mmbtu', metricKgPerUnit: 1,
+          us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 1 },
+          eu: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 1 },
+          quoteTypes: { us: { type: 'referencia', market: 'EIA (Henry Hub, spot)' }, eu: { type: 'referencia', market: 'Banco Mundial (gas natural, Europa / TTF)' } } },
+        { nameKey: 'petroleo_wti', imperialUnitKey: 'barril', imperialKgPerUnit: 1, metricUnitKey: 'barril', metricKgPerUnit: 1,
+          us: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 1 },
+          quoteTypes: { us: { type: 'referencia', market: 'EIA (WTI Cushing, spot)' } } },
+        { nameKey: 'petroleo_brent', imperialUnitKey: 'barril', imperialKgPerUnit: 1, metricUnitKey: 'barril', metricKgPerUnit: 1,
+          eu: { price: 0, changePct: 0, history: [0, 0], currency: 'USD', kgPerUnit: 1 },
+          quoteTypes: { eu: { type: 'referencia', market: 'EIA (Brent Europa, spot FOB)' } } }
+      ]
     }
   ];
 
@@ -909,6 +927,26 @@
       methodology: 'World Bank Urea, E. Europe international commodity reference; USD/metric ton.',
       comparability: 'not_comparable', observationDate: '2026-08-01', publicationDate: '2026-09-02',
       status: 'verified', verifiedAt: '2026-09-30T12:33:18Z'
+    },
+    'energia-gas_natural-us': {
+      sourceId: 'eia', frequency: 'weekly',
+      methodology: 'Henry Hub natural gas spot price (EIA); USD/MMBtu. Wholesale benchmark, not a farm-gate price.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'energia-gas_natural-eu': {
+      sourceId: 'world_bank', frequency: 'monthly',
+      methodology: 'World Bank Pink Sheet, Natural gas, Europe (TTF); USD/MMBtu, monthly average. Wholesale benchmark, not a farm-gate price.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'energia-petroleo_wti-us': {
+      sourceId: 'eia', frequency: 'weekly',
+      methodology: 'WTI crude oil spot price, Cushing, Oklahoma (EIA); USD/barrel. Global benchmark for US crude.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
+    },
+    'energia-petroleo_brent-eu': {
+      sourceId: 'eia', frequency: 'weekly',
+      methodology: 'Brent crude oil spot price, Europe, FOB (EIA); USD/barrel. Global benchmark for European crude.',
+      comparability: 'directional', observationDate: null, publicationDate: null, status: 'pending', verifiedAt: null
     },
     'energia-diesel-us': {
       sourceId: 'eia', frequency: 'weekly',

@@ -147,6 +147,10 @@
     'dap:eu': { key: 'fertilizantes:dap', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'monthly' },
     'potasa:eu': { key: 'fertilizantes:potasa', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'monthly' },
     'cerdo:eu': { key: 'porcino:cerdo', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
+    'gas_natural:us': { key: 'energia:gas_natural', sourceId: 'eia', currency: 'USD', unit: 'mmbtu', frequency: 'weekly' },
+    'gas_natural:eu': { key: 'energia:gas_natural', sourceId: 'world_bank', currency: 'USD', unit: 'mmbtu', frequency: 'monthly' },
+    'petroleo_wti:us': { key: 'energia:petroleo_wti', sourceId: 'eia', currency: 'USD', unit: 'barril', frequency: 'weekly' },
+    'petroleo_brent:eu': { key: 'energia:petroleo_brent', sourceId: 'eia', currency: 'USD', unit: 'barril', frequency: 'weekly' },
     'diesel:us': { key: 'energia:diesel', sourceId: 'eia', currency: 'USD', unit: 'gal', frequency: 'weekly' },
     'diesel:eu': { key: 'energia:diesel', sourceId: 'eu_oil_bulletin', currency: 'EUR', unit: 'litro', frequency: 'weekly' }
   };

@@ -322,7 +322,7 @@
     'avicultura-huevos': 'ganaderia', 'avicultura-pollo': 'ganaderia',
     'pienso-pienso': 'pienso', 'pienso-harina_soja': 'pienso',
     'fertilizantes-urea': 'fertilizantes', 'fertilizantes-dap': 'fertilizantes', 'fertilizantes-potasa': 'fertilizantes',
-    'azucar-azucar': 'azucar', 'aceite-oliva': 'aceite', 'energia-diesel': 'energia'
+    'azucar-azucar': 'azucar', 'aceite-oliva': 'aceite', 'energia-diesel': 'energia', 'energia-gas_natural': 'energia', 'energia-petroleo_wti': 'energia', 'energia-petroleo_brent': 'energia'
   };
   var MAP_GROUP_ORDER = ['cereales', 'ganaderia', 'lacteos', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia'];
 
