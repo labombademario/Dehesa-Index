@@ -53,6 +53,7 @@ for row in rows[header_row + 1:]:
     value = row[urea_col]
     if isinstance(value, (int, float)):
         points.append((period.upper(), float(value)))
+all_points = points[-240:]  # hasta 20 años para el histórico de la observación
 points = points[-12:]
 if not points:
     raise RuntimeError("No World Bank urea observations found")
@@ -88,7 +89,7 @@ DATA_JS.write_text(data, encoding="utf-8")
 
 snapshot_date = datetime.utcnow().date().isoformat()
 history = []
-for period, value in points:
+for period, value in all_points:
     y, mo = int(period[:4]), int(period[5:])
     history.append({"period": mo, "year": y, "value": value})
 observation = {
