@@ -2,8 +2,7 @@ name: Dehesa Data — Comercio por país (USDA FAS GATS)
 
 on:
   schedule:
-    - cron: '0 15 10 * *'   # el Census publica hacia el día 5-8; se consulta el día 10 y el 20
-    - cron: '0 15 20 * *'
+    - cron: '17 * * * *'   # cada hora: la API limita las peticiones, así que la carga inicial se hace por tramos
   workflow_dispatch: {}
 
 concurrency:
@@ -27,12 +26,8 @@ jobs:
           FAS_API_KEY: ${{ secrets.FAS_API_KEY }}
         run: node scripts/update-gats.mjs > /tmp/gats.out 2>&1 || true
       - name: Commit
-        if: always()
         run: |
-          cp /tmp/gats.out data/gats-log.txt || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data/gats.json data/gats-log.txt 2>/dev/null || git add data/gats-log.txt
-          git diff --cached --quiet || git commit -m "chore: update trade by country (USDA FAS GATS)"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git add data/gats.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then cp /tmp/gats.out data/gats-log.txt; git add data/gats-log.txt; git commit -m "chore: update trade by country (USDA FAS GATS)"; git pull --rebase origin main; git push origin HEAD:main; else if [ ! -f data/gats.json ]; then cp /tmp/gats.out data/gats-log.txt; git add data/gats-log.txt; git commit -m "chore: GATS log"; git pull --rebase origin main; git push origin HEAD:main; fi; fi
