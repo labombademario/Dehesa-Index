@@ -1,0 +1,64 @@
+psd_alldata_csv.zip -> 200 10444053 application/x-zip-compressed
+psd_grains_pulses_csv.zip -> 200 2871937 application/x-zip-compressed
+psd_oilseeds_csv.zip -> 200 3842357 application/x-zip-compressed
+psd_livestock_csv.zip -> 200 842658 application/x-zip-compressed
+psd_dairy_csv.zip -> 200 444504 application/x-zip-compressed
+psd_sugar_csv.zip -> 200 760052 application/x-zip-compressed
+unzipped psd_grains_pulses_csv.zip
+unzipped psd_oilseeds_csv.zip
+unzipped psd_livestock_csv.zip
+unzipped psd_dairy_csv.zip
+total 150200
+drwxr-xr-x  2 runner runner     4096 Sep 30 03:04 .
+drwxrwxrwt 15 root   root       4096 Sep 30 03:04 ..
+-rw-r--r--  1 runner runner  8241073 Jul 23 15:00 psd_dairy.csv
+-rw-r--r--  1 runner runner 51637576 Sep 11 11:38 psd_grains_pulses.csv
+-rw-r--r--  1 runner runner 15549650 Apr  9 15:00 psd_livestock.csv
+-rw-r--r--  1 runner runner 78363195 Sep 11 11:38 psd_oilseeds.csv
+== /tmp/psd/psd_dairy.csv
+Commodity_Code,Commodity_Description,Country_Code,Country_Name,Market_Year,Calendar_Year,Month,Attribute_ID,Attribute_Description,Unit_ID,Unit_Description,Value
+0230000,"Dairy, Butter",AF,"Afghanistan",1998,2007,12,020,"Beginning Stocks",08,"(1000 MT)",0.0000
+0230000,"Dairy, Butter",AF,"Afghanistan",1998,2007,12,125,"Domestic Consumption",08,"(1000 MT)",0.0000
+80875 /tmp/psd/psd_dairy.csv
+== /tmp/psd/psd_grains_pulses.csv
+Commodity_Code,Commodity_Description,Country_Code,Country_Name,Market_Year,Calendar_Year,Month,Attribute_ID,Attribute_Description,Unit_ID,Unit_Description,Value
+0430000,"Barley",AF,"Afghanistan",1960,2006,07,004,"Area Harvested",04,"(1000 HA)",350.0000
+0430000,"Barley",AF,"Afghanistan",1960,2006,07,020,"Beginning Stocks",08,"(1000 MT)",0.0000
+581536 /tmp/psd/psd_grains_pulses.csv
+== /tmp/psd/psd_livestock.csv
+Commodity_Code,Commodity_Description,Country_Code,Country_Name,Market_Year,Calendar_Year,Month,Attribute_ID,Attribute_Description,Unit_ID,Unit_Description,Value
+0011000,"Animal Numbers, Cattle",AG,"Algeria",1985,1985,00,025,"Beef Cows Beg. Stocks",05,"(1000 HEAD)",661.0000
+0011000,"Animal Numbers, Cattle",AG,"Algeria",1985,1985,00,020,"Beginning Stocks",05,"(1000 HEAD)",1592.0000
+148238 /tmp/psd/psd_livestock.csv
+== /tmp/psd/psd_oilseeds.csv
+Commodity_Code,Commodity_Description,Country_Code,Country_Name,Market_Year,Calendar_Year,Month,Attribute_ID,Attribute_Description,Unit_ID,Unit_Description,Value
+0813700,"Meal, Copra",AS,"Australia",1964,2006,06,020,"Beginning Stocks",08,"(1000 MT)",0.0000
+0813700,"Meal, Copra",AS,"Australia",1964,2006,06,007,"Crush",08,"(1000 MT)",33.0000
+801670 /tmp/psd/psd_oilseeds.csv
+== wheat US rows sample
+0410000,"Wheat",US,"United States",2025,2026,08,130,"Feed Dom. Consumption",08,"(1000 MT)",3244.0000
+0410000,"Wheat",US,"United States",2025,2026,08,192,"FSI Consumption",08,"(1000 MT)",27679.0000
+0410000,"Wheat",US,"United States",2025,2026,08,057,"Imports",08,"(1000 MT)",3398.0000
+0410000,"Wheat",US,"United States",2025,2026,08,028,"Production",08,"(1000 MT)",54010.0000
+0410000,"Wheat",US,"United States",2025,2026,08,178,"Total Distribution",08,"(1000 MT)",80670.0000
+0410000,"Wheat",US,"United States",2025,2026,08,086,"Total Supply",08,"(1000 MT)",80670.0000
+0410000,"Wheat",US,"United States",2025,2026,08,113,"TY Exports",08,"(1000 MT)",24411.0000
+0410000,"Wheat",US,"United States",2025,2026,08,084,"TY Imp. from U.S.",08,"(1000 MT)",0.0000
+0410000,"Wheat",US,"United States",2025,2026,08,081,"TY Imports",08,"(1000 MT)",3391.0000
+0410000,"Wheat",US,"United States",2025,2026,08,184,"Yield",26,"(MT/HA)",3.5800
+0410000,"Wheat",US,"United States",2026,2026,09,004,"Area Harvested",04,"(1000 HA)",12971.0000
+0410000,"Wheat",US,"United States",2026,2026,09,020,"Beginning Stocks",08,"(1000 MT)",25041.0000
+0410000,"Wheat",US,"United States",2026,2026,09,125,"Domestic Consumption",08,"(1000 MT)",29909.0000
+0410000,"Wheat",US,"United States",2026,2026,09,176,"Ending Stocks",08,"(1000 MT)",19506.0000
+0410000,"Wheat",US,"United States",2026,2026,09,088,"Exports",08,"(1000 MT)",21092.0000
+0410000,"Wheat",US,"United States",2026,2026,09,130,"Feed Dom. Consumption",08,"(1000 MT)",2177.0000
+0410000,"Wheat",US,"United States",2026,2026,09,192,"FSI Consumption",08,"(1000 MT)",27732.0000
+0410000,"Wheat",US,"United States",2026,2026,09,057,"Imports",08,"(1000 MT)",3810.0000
+0410000,"Wheat",US,"United States",2026,2026,09,028,"Production",08,"(1000 MT)",41656.0000
+0410000,"Wheat",US,"United States",2026,2026,09,178,"Total Distribution",08,"(1000 MT)",70507.0000
+0410000,"Wheat",US,"United States",2026,2026,09,086,"Total Supply",08,"(1000 MT)",70507.0000
+0410000,"Wheat",US,"United States",2026,2026,09,113,"TY Exports",08,"(1000 MT)",21500.0000
+0410000,"Wheat",US,"United States",2026,2026,09,084,"TY Imp. from U.S.",08,"(1000 MT)",0.0000
+0410000,"Wheat",US,"United States",2026,2026,09,081,"TY Imports",08,"(1000 MT)",3800.0000
+0410000,"Wheat",US,"United States",2026,2026,09,184,"Yield",26,"(MT/HA)",3.2100
+== attributes wheat
