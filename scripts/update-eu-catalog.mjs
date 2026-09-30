@@ -45,7 +45,7 @@ const NAT = /^National Average/;
  */
 export const FAMILIES = {
   cereales: { endpoint: 'cereal', freq: 'weekly', since: '01/01/2015', date: 'endDate',
-    parts: r => [r.productName, r.stageName], region: r => r.memberStateCode,
+    parts: r => [r.productName, r.stageName], region: r => r.memberStateCode, market: r => r.marketName,
     keep: r => NAT.test(r.stageName || '') || (r.memberStateCode === 'ES' && /^Departure from silo/.test(r.stageName || '')) },
   oleaginosas: { endpoint: 'oilseeds', freq: 'weekly', since: '01/01/2015', date: 'endDate',
     parts: r => [r.product, r.productType, r.marketStage], region: r => r.memberStateCode, market: r => r.market },
