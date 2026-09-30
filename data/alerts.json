@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T04:11:41.000Z",
+  "generatedAt": "2026-09-30T12:25:33.011Z",
   "status": "informational",
   "rules": [
     {
@@ -197,6 +197,24 @@
     },
     {
       "type": "period_move",
+      "product": "arroz",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "changePct": 8.47,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "changePct": -6.02,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
       "product": "eurostat_energy_input_index",
       "region": "eu",
       "sourceId": "eurostat",
@@ -275,24 +293,6 @@
       "severity": "high",
       "changePct": 11.57,
       "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "arroz",
-      "region": "us",
-      "sourceId": "usda_nass",
-      "severity": "watch",
-      "changePct": 8.47,
-      "observationDate": "2026-08-01"
-    },
-    {
-      "type": "period_move",
-      "product": "vaca",
-      "region": "us",
-      "sourceId": "usda_nass",
-      "severity": "watch",
-      "changePct": -6.02,
-      "observationDate": "2026-08-01"
     }
   ],
   "policy": {
