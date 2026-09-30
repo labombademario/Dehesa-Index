@@ -1,14 +1,14 @@
 {
  "schemaVersion": "1.0",
  "source": "eu_agrifood",
- "generatedAt": "2026-09-30T13:57:09.895Z",
+ "generatedAt": "2026-09-30T14:16:09.971Z",
  "families": [
   {
    "id": "cereales",
    "endpoint": "cereal",
    "freq": "weekly",
    "series": 22,
-   "points": 61655,
+   "points": 76993,
    "latest": "2026-09-20"
   },
   {
