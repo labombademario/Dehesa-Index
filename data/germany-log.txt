@@ -1,7 +1,7 @@
 leche 23 combinaciones
-sacrificio 30 series 4965 filas
+sacrificio 30 series 4965 filas; regionales 30
 fruta-hortaliza candidatas 187 incluidas 45
 destatis 61211-0001 49 series
 destatis 61211-0003 49 series
 destatis 61221-0003 38 series
-series 244
+series 274
