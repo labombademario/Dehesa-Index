@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: pip install openpyxl xlrd
       - run: python3 scripts/probe-be.py
       - run: |
           git config user.name "github-actions[bot]"
