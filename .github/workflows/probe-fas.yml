@@ -15,7 +15,6 @@ jobs:
           K: ${{ secrets.FAS_API_KEY }}
         run: |
           mkdir -p .probe
-          git rm -q --cached .probe/* 2>/dev/null; rm -f .probe/*
           node -e "
           const K=process.env.K,B='https://api.fas.usda.gov/api/gats';
           const out=[];
