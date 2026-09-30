@@ -1,25 +1,38 @@
-import json,re,html,urllib.request,urllib.parse,sys
-def get(u,n=200000,t=60,h=None):
+import json,re,urllib.request,urllib.parse
+def get(u,n=3000000,t=90,h=None):
     try:
         r=urllib.request.Request(u,headers=h or {'User-Agent':'Mozilla/5.0 DehesaIndex'})
         with urllib.request.urlopen(r,timeout=t) as x: return x.read(n).decode('utf8','replace')
     except Exception as e: return 'ERR %s'%e
 out=[]
 def P(*a): out.append(' '.join(str(x) for x in a))
-for q in ['commodity prices','agricultural commodity statistics','farm performance','fertiliser','exports','production','crop report','livestock']:
-    u='https://data.gov.au/data/api/3/action/package_search?rows=15&q='+urllib.parse.quote(q)+'&fq=organization:abares'
+# CBS catalog
+rows=[];u='https://opendata.cbs.nl/ODataCatalog/Tables?$format=json&$select=Identifier,Title,Period,Frequency,Language,Modified,Summary&$filter=Language%20eq%20%27en%27'
+for _ in range(20):
+    s=get(u)
+    try: d=json.loads(s)
+    except Exception as e: P('CBS ERR',s[:200]); break
+    rows+=d['value']; u=d.get('odata.nextLink')
+    if not u: break
+P('CBS tables',len(rows))
+kw=re.compile(r'milk|dairy|crop|cereal|wheat|barley|potato|livestock|cattle|pigs|slaughter|agricultur|horticult|farm|fertili|manure|price|land use|arable|meat|egg|poultry|export',re.I)
+for r in rows:
+    if kw.search(r['Title']) and re.search(r'agri|farm|milk|dairy|crop|livestock|cattle|pig|slaught|potato|cereal|fertil|horticult|meat|egg|poultry',r['Title'],re.I):
+        P('CBS',r['Identifier'],'|',r['Title'],'|',r.get('Period'),'|',r.get('Frequency'),'|',r.get('Modified','')[:10])
+# ABS structures
+for df in ['ITGS','MERCH_EXP','ITPI_EXP','CPI']:
+    s=get('https://data.api.abs.gov.au/rest/datastructure/ABS/%s?references=codelist'%df,2000000,90,{'Accept':'application/vnd.sdmx.structure+json','User-Agent':'Mozilla/5.0'})
     try:
-        d=json.loads(get(u))
-        for r in d['result']['results']:
-            P('CKAN',q,'|',r['title'],'|',r.get('license_id'))
-            for x in r['resources'][:6]: P('   ',x.get('format'),x.get('url'))
-    except Exception as e: P('CKAN ERR',q,e)
-for u in ['https://data.api.abs.gov.au/rest/data/AG_BROADACRE/all?startPeriod=2020&format=csvfilewithlabels','https://data.api.abs.gov.au/rest/data/LSTOCK_SLAUGHT/all?startPeriod=2024&format=csvfilewithlabels','https://data.api.abs.gov.au/rest/data/ITPI_EXP/all?startPeriod=2024&format=csvfilewithlabels']:
-    s=get(u,4000); P('ABS',u); P(s[:1800])
-s=get('https://www.mla.com.au/prices-markets/statistics/api/',400000)
-txt=re.sub(r'\s+',' ',html.unescape(re.sub(r'<[^>]+>',' ',re.sub(r'<script.*?</script>|<style.*?</style>','',s,flags=re.S))))
-P('MLA PAGE',txt[:3500])
-P('MLA links',re.findall(r'href="([^"]*(?:api|swagger|terms|licen)[^"]*)"',s)[:20])
-for u in ['https://api.mla.com.au/','https://api.mla.com.au/swagger/index.html','https://www.agriculture.gov.au/abares/data/weekly-commodity-price-update','https://www.agriculture.gov.au/abares/research-topics/agricultural-commodities/data']:
-    P('GET',u); P(get(u,1500,90)[:900])
-open('data/probe/australia2.txt','w').write('\n'.join(out))
+        d=json.loads(s); P('ABS',df,'dims',[x['id'] for x in d['data']['dataStructures'][0]['dataStructureComponents']['dimensionList']['dimensions']])
+        for cl in d['data']['codelists']:
+            if re.search(r'commod|sitc|index|measure|freq',cl['id'],re.I):
+                its=[(c['id'],c['name']) for c in cl['codes'] if re.search(r'cereal|wheat|barley|meat|cattle|beef|sheep|lamb|dairy|milk|grain|oilseed|canola|rape|fertili|live animals|^0[0-9] |^04|^01|^02|^05',c['name'],re.I)]
+                P('  codelist',cl['id'],len(cl['codes']),its[:40])
+    except Exception as e: P('ABS',df,'ERR',s[:200])
+# FAOSTAT
+for u in ['https://bulks-faostat.fao.org/production/Prices_E_All_Data_(Normalized).zip','https://bulks-faostat.fao.org/production/Trade_DetailedTradeMatrix_E_All_Data_(Normalized).zip']:
+    try:
+        r=urllib.request.Request(u,method='HEAD',headers={'User-Agent':'Mozilla/5.0'}); x=urllib.request.urlopen(r,timeout=60); P('FAO',u,x.status,x.headers.get('Content-Length'))
+    except Exception as e: P('FAO',u,'ERR',e)
+# Eurostat apro for NL exists already in project. CBS sample: milk
+open('data/probe/australia3.txt','w').write('\n'.join(out))
