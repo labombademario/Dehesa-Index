@@ -1,0 +1,35 @@
+name: Dehesa Data — Crop Progress (NASS)
+
+on:
+  schedule:
+    - cron: '30 21 * * 1'   # el informe sale los lunes por la tarde (hora de EE. UU.)
+    - cron: '30 13 * * 2'   # segunda oportunidad por retrasos y festivos
+  workflow_dispatch: {}
+
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update-crop-progress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Update crop progress
+        env:
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+        run: node scripts/update-crop-progress.mjs
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/crop-progress.json
+          git diff --cached --quiet || git commit -m "chore: update crop progress (NASS)"
+          git pull --rebase -q
+          git push
