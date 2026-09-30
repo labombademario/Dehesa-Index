@@ -957,11 +957,23 @@
       methodology: 'Media ponderada de la UE de gasóleo de automoción, con impuestos, publicada en EUR/1.000 litros y almacenada sin convertir su precisión de origen. Es un precio semanal al consumidor; no equivale a una cotización agrícola en finca.',
       comparability: 'directional', observationDate: '2026-09-21', publicationDate: '2026-09-24', status: 'verified', verifiedAt: '2026-09-30T01:17:04.602954Z'
     },
+    'porcino-cerdo-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED for all hogs, live weight. Pending first automated run.',
+      comparability: 'not_comparable', observationDate: null, publicationDate: null,
+      status: 'pending', verifiedAt: null
+    },
     'porcino-cerdo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cerdo clasificada S (≥60 % magro) en España, EUR/100 kg de canal. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
       status: 'verified', verifiedAt: '2026-09-30T01:06:41.535Z'
+    },
+    'ganado-vaca-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED for steers and heifers, live weight. Pending first automated run.',
+      comparability: 'not_comparable', observationDate: null, publicationDate: null,
+      status: 'pending', verifiedAt: null
     },
     'ganado-vaca-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -974,6 +986,12 @@
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cordero pesado en España, EUR/100 kg de canal. No es la media de la UE ni cordero ligero. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
       status: 'verified', verifiedAt: '2026-09-30T01:06:43.602Z'
+    },
+    'avicultura-pollo-us': {
+      sourceId: 'usda_nass', frequency: 'monthly',
+      methodology: 'National USDA NASS PRICE RECEIVED for broilers, live weight. Pending first automated run.',
+      comparability: 'not_comparable', observationDate: null, publicationDate: null,
+      status: 'pending', verifiedAt: null
     },
     'avicultura-pollo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',

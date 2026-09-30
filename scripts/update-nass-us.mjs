@@ -16,7 +16,7 @@
  * Requiere la variable de entorno NASS_API_KEY (clave gratuita, se pide en
  * https://quickstats.nass.usda.gov/api).
  *
- * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz|leche|huevos>
+ * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz|leche|huevos|cerdo|vaca|pollo>
  */
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
@@ -67,6 +67,25 @@ const PRODUCTS = {
     trustKey: 'avicultura-huevos-us',
     obsUnit: 'docena',
     trustMethodology: 'National USDA NASS PRICE RECEIVED for table eggs (producer price, not retail); USD/dozen.'
+  },
+  // Precios al productor en PESO VIVO: reales pero NO equivalentes a la canal (UE) -> NO COMPARABLE
+  cerdo: {
+    label: 'Cerdo', commodity: 'HOGS', shortDesc: 'HOGS - PRICE RECEIVED, MEASURED IN $ / CWT',
+    kgPerUnit: '45\\.359', trustKey: 'porcino-cerdo-us', obsUnit: 'cwt', comparability: 'not_comparable',
+    market: 'USDA NASS (precio recibido, cerdos vivos)',
+    trustMethodology: 'National USDA NASS PRICE RECEIVED for all hogs, live weight; USD/cwt. Not comparable with the EU carcass price (class S).'
+  },
+  vaca: {
+    label: 'Vacuno', commodity: 'CATTLE', shortDesc: 'CATTLE, STEERS & HEIFERS, GE 500 LBS - PRICE RECEIVED, MEASURED IN $ / CWT',
+    kgPerUnit: '45\\.359', trustKey: 'ganado-vaca-us', obsUnit: 'cwt', comparability: 'not_comparable', quoteType: 'referencia',
+    market: 'USDA NASS (precio recibido, novillos y novillas, peso vivo)',
+    trustMethodology: 'National USDA NASS PRICE RECEIVED for steers and heifers of 500 lb or more, live weight; USD/cwt. Not comparable with the EU carcass price (young bulls A-R3).'
+  },
+  pollo: {
+    label: 'Pollo', commodity: 'CHICKENS', shortDesc: 'CHICKENS, BROILERS - PRICE RECEIVED, MEASURED IN $ / LB',
+    kgPerUnit: '0\\.453592', trustKey: 'avicultura-pollo-us', obsUnit: 'lb', comparability: 'not_comparable',
+    market: 'USDA NASS (precio recibido, broilers, peso vivo)',
+    trustMethodology: 'National USDA NASS PRICE RECEIVED for broilers, live weight; USD/lb. Not comparable with the EU whole-carcass price (65 % yield).'
   }
 };
 
@@ -219,6 +238,7 @@ async function main() {
   if (!fieldsRe.test(tb[2])) {
     throw new Error('Formato del registro Data Trust `' + trustKey + '` no reconocido. Revisar a mano.');
   }
+  if (cfg.comparability) tb[2] = tb[2].replace(/comparability: '[^']*'/, "comparability: '" + cfg.comparability + "'");
   var body = tb[2].replace(fieldsRe, function () {
     return "observationDate: '" + observationDate + "', publicationDate: '" + publicationDate + "', status: 'verified', verifiedAt: '" + verifiedAt + "'";
   });
@@ -227,6 +247,12 @@ async function main() {
     return "methodology: '" + baseMethod + " Published in the " + monthLabel + " Agricultural Prices release.'";
   });
   updated = updated.slice(0, tb.index + tb[1].length) + body + updated.slice(tb.index + tb[1].length + tb[2].length);
+
+  if (cfg.market) {
+    var qRe = new RegExp("(nameKey: '" + key + "'[\\s\\S]*?quoteTypes: \\{ us: \\{ type: ')[^']*(', market: ')[^']*(')");
+    if (!qRe.test(updated)) throw new Error('quoteTypes.us de ' + key + ' no encontrado');
+    updated = updated.replace(qRe, function (_m, a, b, c) { return a + (cfg.quoteType || 'referencia') + b + cfg.market + c; });
+  }
 
   if (updated === src) {
     console.log('Sin cambios: el valor ya estaba actualizado.');
@@ -245,7 +271,7 @@ async function main() {
     publicationDate: publicationDate,
     status: 'verified',
     verifiedAt: verifiedAt,
-    comparability: 'directional',
+    comparability: cfg.comparability || 'directional',
     value: price,
     currency: 'USD',
     unit: cfg.obsUnit || (key === 'arroz' ? 'cwt' : 'bushel'),
