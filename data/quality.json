@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T14:41:12.146Z",
+  "generatedAt": "2026-09-30T14:50:10.504Z",
   "scope": {
-    "latestObservations": 52,
-    "historyObservations": 6129,
-    "verified": 52,
+    "latestObservations": 53,
+    "historyObservations": 6153,
+    "verified": 53,
     "pending": 0,
     "stale": 30,
     "regions": [
@@ -592,6 +592,21 @@
       "frequency": "weekly",
       "historyPoints": 240,
       "ageDays": 10,
+      "stale": false
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-09-25",
+      "publicationDate": "2026-09-25",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "frequency": "weekly",
+      "historyPoints": 24,
+      "ageDays": 5,
       "stale": false
     },
     {

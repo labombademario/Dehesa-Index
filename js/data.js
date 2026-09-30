@@ -558,8 +558,9 @@
           eu: { price: 416.42, changePct: -0.8665, history: [383.31, 386.98, 396.1, 399.52, 409.9, 394.24, 397.79, 403.61, 413.82, 410.77, 420.06, 416.42], currency: 'EUR', kgPerUnit: 100 },
           quoteTypes: { eu: { type: 'referencia', market: 'Comisión Europea (mantequilla, agregado UE)' } } },
         { nameKey: 'leche_polvo', imperialUnitKey: 'lb', imperialKgPerUnit: 0.453592, metricUnitKey: '100kg', metricKgPerUnit: 100,
+          us: { price: 2.03, changePct: 6.56, history: [1.7, 1.635, 1.585, 1.51, 1.53, 1.575, 1.75, 1.76, 1.84, 1.87, 1.905, 2.03], currency: 'USD', kgPerUnit: 0.453592 },
           eu: { price: 308.73, changePct: 0.1752, history: [268.92, 270.22, 273.78, 277.62, 280.68, 280.74, 289, 291.39, 301.62, 306.09, 308.19, 308.73], currency: 'EUR', kgPerUnit: 100 },
-          quoteTypes: { eu: { type: 'referencia', market: 'Comisión Europea (leche desnatada en polvo, agregado UE)' } } }
+          quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (leche desnatada en polvo, Este y Centro, calor bajo/medio, punto medio del rango)' }, eu: { type: 'referencia', market: 'Comisión Europea (leche desnatada en polvo, agregado UE)' } } }
       ]
     },
     {
@@ -1033,6 +1034,11 @@
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la mantequilla, agregado de la UE calculado por la Comisión, EUR/100 kg. No es un futuro ni una media calculada por Dehesa Index. La serie de España tiene huecos de varias semanas. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
       status: 'verified', verifiedAt: '2026-09-30T14:38:44.919Z'
+    },
+    'lacteos-leche_polvo-us': {
+      sourceId: 'usda_ams_mars', frequency: 'weekly',
+      methodology: 'USDA AMS Market News (API MARS, informe 1049 «Nonfat Dry Milk - East and Central U.S.», semanal): leche desnatada en polvo de calor bajo y medio, en USD por libra. El informe publica un rango semanal (mínimo y máximo) y el valor mostrado es el punto medio de ese rango, calculado por Dehesa Index. Es un mercado regional (Este y Centro de EE. UU.), no un futuro; el producto es equivalente en tipo al SMP europeo, pero no es idéntico.',
+      comparability: 'directional', observationDate: '2026-09-25', publicationDate: '2026-09-25', status: 'verified', verifiedAt: '2026-09-30T14:50:04.018Z'
     },
     'lacteos-leche_polvo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',

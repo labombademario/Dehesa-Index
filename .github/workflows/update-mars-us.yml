@@ -30,6 +30,9 @@ jobs:
           MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
         run: node scripts/update-mars-us.mjs
 
+      - name: Update AMS nonfat dry milk (US)
+        run: node scripts/update-ams-nfdm.mjs
+
       - name: Validate snapshots
         run: node scripts/validate-snapshots.mjs
 

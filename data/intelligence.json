@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T14:41:12.244Z",
+  "generatedAt": "2026-09-30T14:50:10.587Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -1008,6 +1008,25 @@
       "periodChangePct": 11.574420344053848,
       "yoyPct": null,
       "volatility": 0.10864802483212638,
+      "points": 24,
+      "coverageStart": "2024-10-01",
+      "coverageEnd": "2026-09-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "frequency": "weekly",
+      "unit": "lb",
+      "currency": "USD",
+      "latest": 1.84,
+      "observationDate": "2026-09-01",
+      "periodChangePct": 20.261437908496728,
+      "yoyPct": null,
+      "volatility": 0.10174865790731613,
       "points": 24,
       "coverageStart": "2024-10-01",
       "coverageEnd": "2026-09-01",

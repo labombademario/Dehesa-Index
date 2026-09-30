@@ -1,3 +1,0 @@
-commodity_desc=BUTTER -> HTTP 400
-commodity_desc=MILK&class_desc=NONFAT DRY -> HTTP 400
-commodity_desc=DAIRY PRODUCTS -> HTTP 400

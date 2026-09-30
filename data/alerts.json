@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T14:41:12.583Z",
+  "generatedAt": "2026-09-30T14:50:10.858Z",
   "status": "informational",
   "rules": [
     {
@@ -358,6 +358,15 @@
       "sourceId": "eia",
       "severity": "high",
       "changePct": 11.57,
+      "observationDate": "2026-09-01"
+    },
+    {
+      "type": "period_move",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "severity": "high",
+      "changePct": 20.26,
       "observationDate": "2026-09-01"
     }
   ],

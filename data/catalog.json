@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T14:41:11.845Z",
-  "observationCount": 58,
+  "generatedAt": "2026-09-30T14:50:10.266Z",
+  "observationCount": 59,
   "products": [
     "arroz",
     "avena",
@@ -602,6 +602,21 @@
       "comparability": "directional",
       "points": 240,
       "coverageStart": "2006-10-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-09-25",
+      "unit": "lb",
+      "currency": "USD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional",
+      "points": 24,
+      "coverageStart": "2024-10-01",
       "coverageEnd": "2026-09-01"
     },
     {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T14:41:11.843Z",
+  "generatedAt": "2026-09-30T14:50:10.264Z",
   "observations": [
     {
       "id": "di_diesel_eu:2005-01-01",
@@ -80451,6 +80451,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2024-10-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2024-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.35,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2024-10-01",
       "product": "leche",
       "region": "eu",
@@ -81216,6 +81232,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:46.778Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us:2024-11-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2024-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.355,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
       "comparability": "directional"
     },
     {
@@ -82051,6 +82083,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2024-12-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2024-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.4,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2024-12-01",
       "product": "leche",
       "region": "eu",
@@ -82819,6 +82867,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2025-01-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.405,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-01-01",
       "product": "leche",
       "region": "eu",
@@ -83584,6 +83648,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:46.778Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us:2025-02-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.33,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
       "comparability": "directional"
     },
     {
@@ -84403,6 +84483,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2025-03-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.23,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-03-01",
       "product": "leche",
       "region": "eu",
@@ -85136,6 +85232,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:46.778Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us:2025-04-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.165,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
       "comparability": "directional"
     },
     {
@@ -85904,6 +86016,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:46.778Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us:2025-05-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.18,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
       "comparability": "directional"
     },
     {
@@ -86739,6 +86867,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2025-06-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.265,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-06-01",
       "product": "leche",
       "region": "eu",
@@ -87507,6 +87651,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2025-07-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.26,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-07-01",
       "product": "leche",
       "region": "eu",
@@ -88272,6 +88432,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:46.778Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us:2025-08-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.29,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
       "comparability": "directional"
     },
     {
@@ -89107,6 +89283,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2025-09-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.26,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-09-01",
       "product": "leche",
       "region": "eu",
@@ -89875,6 +90067,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2025-10-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.185,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-10-01",
       "product": "leche",
       "region": "eu",
@@ -90640,6 +90848,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:46.778Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us:2025-11-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.18,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
       "comparability": "directional"
     },
     {
@@ -91475,6 +91699,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2025-12-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.185,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-12-01",
       "product": "leche",
       "region": "eu",
@@ -92243,6 +92483,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2026-01-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.195,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-01-01",
       "product": "leche",
       "region": "eu",
@@ -93008,6 +93264,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:46.778Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us:2026-02-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.49,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
       "comparability": "directional"
     },
     {
@@ -93843,6 +94115,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2026-03-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.69,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-03-01",
       "product": "leche",
       "region": "eu",
@@ -94611,6 +94899,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2026-04-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.975,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-04-01",
       "product": "leche",
       "region": "eu",
@@ -95376,6 +95680,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:46.778Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us:2026-05-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.265,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
       "comparability": "directional"
     },
     {
@@ -96211,6 +96531,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2026-06-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.085,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-06-01",
       "product": "leche",
       "region": "eu",
@@ -96963,6 +97299,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2026-07-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.665,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-07-01",
       "product": "leche",
       "region": "eu",
@@ -97539,6 +97891,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_lacteos_leche_polvo_us:2026-08-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.53,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-08-01",
       "product": "leche",
       "region": "eu",
@@ -97968,6 +98336,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:46.778Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_polvo_us:2026-09-01",
+      "product": "leche_polvo",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.84,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T14:50:04.018Z",
       "comparability": "directional"
     },
     {
