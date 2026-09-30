@@ -1,20 +1,24 @@
-name: Probe ES
-on: workflow_dispatch
+name: Update Spain (MAPA)
+on:
+  schedule:
+    - cron: '35 14 * * 2,5'
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency:
   group: dehesa-data-writes
   cancel-in-progress: false
 jobs:
-  probe:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p data/probe && python3 scripts/probe-es.py
+      - run: python3 scripts/update-mapa-spain.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/probe
-          git commit -qm "probe es"
+          git add data/spain-stats.json data/spain-log.txt
+          git diff --cached --quiet && exit 0
+          git commit -qm "Datos España (MAPA)"
           git pull -q --rebase
           git push
