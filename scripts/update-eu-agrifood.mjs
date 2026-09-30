@@ -103,6 +103,13 @@ export const PRODUCTS = {
     market: 'Comisión Europea (huevos, España, gallinas en jaula)',
     methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de los huevos de gallinas en jaula (Cage) en España, EUR/100 kg de huevos (el portal no lo da por docena). No es la media de la UE.' + NOTE_PUB
   },
+  harina_soja: {
+    catId: 'pienso', id: 'di_pienso_harina_soja_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'oilseeds', member: 'ES', unitExpected: 'national currency/ton', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
+    select: r => r.product === 'Soya meal' && r.market === 'National Average', recent: true,
+    market: 'Comisión Europea (harina de soja, España, media nacional)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la harina de soja en España (media nacional, salida de fábrica), EUR/tonelada. Sustituye a la referencia anterior de colza en Euronext.' + NOTE_PUB
+  },
   azucar: {
     catId: 'azucar', id: 'di_azucar_azucar_eu', sourceId: 'eu_agrifood', frequency: 'monthly',
     commodity: 'sugar', member: null, unitExpected: 'Tonne', obsUnit: 'tonelada', divisor: 1, dateField: 'ym',
