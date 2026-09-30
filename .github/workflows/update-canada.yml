@@ -1,0 +1,48 @@
+name: Dehesa Data — Canadá (Statistics Canada)
+on:
+  schedule:
+    - cron: '40 13 * * 1,4'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Update Statistics Canada farm prices
+        run: python scripts/update-statcan-canada.py
+      - name: Validate snapshots
+        run: node scripts/validate-snapshots.mjs
+      - name: Build data index
+        run: node scripts/build-data-index.mjs
+      - name: Build CSV
+        run: node scripts/build-csv.mjs
+      - name: Build quality
+        run: node scripts/build-data-quality.mjs
+      - name: Build Intelligence 2.0
+        run: node scripts/build-intelligence.mjs
+      - name: Build normalization
+        run: node scripts/build-normalized-data.mjs
+      - name: Build cross-market
+        run: node scripts/build-cross-market.mjs && node scripts/build-dehesa-index.mjs
+      - name: Build alert signals
+        run: node scripts/build-alert-signals.mjs
+      - name: Commit
+        run: |
+          git config user.name "Dehesa Index Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/alerts.json data/canada-coverage.json
+          git diff --cached --quiet || git commit -m "data: Canadá (Statistics Canada, precios agrícolas)"
+          git pull --rebase origin main
+          git push

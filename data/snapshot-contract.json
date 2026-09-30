@@ -11,7 +11,7 @@
     "frequency",
     "status"
   ],
-  "allowedRegions": ["us", "eu", "uk"],
+  "allowedRegions": ["us", "eu", "uk", "ca"],
   "allowedFrequencies": ["daily", "weekly", "monthly", "quarterly", "annual", "source-dependent"],
   "allowedStatuses": ["pending", "verified"]
 }
