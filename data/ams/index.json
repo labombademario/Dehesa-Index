@@ -1,6 +1,6 @@
 {
  "schemaVersion": "1.0",
- "generatedAt": "2026-09-30T05:48:14.862Z",
+ "generatedAt": "2026-09-30T08:36:34.958Z",
  "source": "USDA AMS Market News (MARS API)",
  "reports": [
   {
@@ -247,6 +247,150 @@
    "kb": 14
   },
   {
+   "id": 1237,
+   "title": "Unionville Livestock Market  - Unionville, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 10,
+   "kb": 3
+  },
+  {
+   "id": 1245,
+   "title": "Joplin Regional Stockyards Feeder Cattle - Carthage, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 8,
+   "kb": 2
+  },
+  {
+   "id": 1248,
+   "title": "New Cambria Livestock Market - New Cambria, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-17",
+   "series": 12,
+   "kb": 4
+  },
+  {
+   "id": 1249,
+   "title": "Ozarks Regional Stockyards Feeder Cattle - West Plains, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 16,
+   "kb": 4
+  },
+  {
+   "id": 1254,
+   "title": "Green City Livestock Auction - Green City, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-02",
+   "series": 4,
+   "kb": 1
+  },
+  {
+   "id": 1255,
+   "title": "Springfield Livestock Marketing Center Feeder Cattle - Springfield, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 10,
+   "kb": 2
+  },
+  {
+   "id": 1280,
+   "title": "Oklahoma National Stockyards Feeder Cattle - Oklahoma City, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 14,
+   "kb": 3
+  },
+  {
+   "id": 1281,
+   "title": "OKC West Livestock Auction  - El Reno, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 14,
+   "kb": 4
+  },
+  {
+   "id": 1418,
+   "title": "Columbia Livestock Auction - Lake City, FL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 15,
+   "kb": 7
+  },
+  {
+   "id": 1419,
+   "title": "Okeechobee Livestock Auction - Okeechobee, FL (Tue)",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 7,
+   "kb": 6
+  },
+  {
+   "id": 1420,
+   "title": "Townsend Livestock Auction - Madison, FL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 11,
+   "kb": 5
+  },
+  {
+   "id": 1422,
+   "title": "Arcadia Livestock Auction - Arcadia, FL (Wed)",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 7,
+   "kb": 5
+  },
+  {
+   "id": 1607,
+   "title": "Cattlemen's Livestock Auction - Lakeland, FL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-22",
+   "series": 18,
+   "kb": 8
+  },
+  {
+   "id": 1608,
+   "title": "Okeechobee Livestock Auction - Okeechobee, FL (Mon)",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 14,
+   "kb": 9
+  },
+  {
+   "id": 1609,
+   "title": "Arcadia Livestock Auction - Arcadia, FL (Mon)",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 7,
+   "kb": 4
+  },
+  {
+   "id": 1622,
+   "title": "Windsor Livestock Auction - Windsor, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 23,
+   "kb": 10
+  },
+  {
    "id": 1623,
    "title": "Dairy Monthly Averages",
    "fam": "dairy",
@@ -265,6 +409,15 @@
    "kb": 30
   },
   {
+   "id": 1651,
+   "title": "Ozarks Regional Stockyards Slaughter / Replacement Cattle - West Plains, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 49,
+   "kb": 33
+  },
+  {
    "id": 1655,
    "title": "National Weekly Rice Summary",
    "fam": "rice",
@@ -272,6 +425,24 @@
    "lastDate": "2026-10-02",
    "series": 23,
    "kb": 53
+  },
+  {
+   "id": 1703,
+   "title": "Florida Daily Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 26,
+   "kb": 16
+  },
+  {
+   "id": 1704,
+   "title": "Florida Weekly Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 24,
+   "kb": 15
   },
   {
    "id": 1716,
@@ -292,6 +463,42 @@
    "kb": 38
   },
   {
+   "id": 1772,
+   "title": "Public Auction Yards Sheep & Goat Auction - Billings, MT",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-21",
+   "series": 20,
+   "kb": 5
+  },
+  {
+   "id": 1773,
+   "title": "Miles City Livestock Commission Auction - Miles City, MT",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 46,
+   "kb": 22
+  },
+  {
+   "id": 1774,
+   "title": "Public Auction Yards Livestock Cattle Auction - Billings, MT (Wed)",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 62,
+   "kb": 30
+  },
+  {
+   "id": 1777,
+   "title": "Billings Livestock Commission Cattle Auction - Billings, MT (Thu)",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 67,
+   "kb": 27
+  },
+  {
    "id": 1778,
    "title": "Montana Weekly Livestock Auction Summary",
    "fam": "auction",
@@ -299,6 +506,33 @@
    "lastDate": "2026-09-26",
    "series": 658,
    "kb": 309
+  },
+  {
+   "id": 1781,
+   "title": "Clovis Livestock Auction - Clovis, NM",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 216,
+   "kb": 85
+  },
+  {
+   "id": 1782,
+   "title": "Roswell Livestock Auction - Roswell, NM",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 154,
+   "kb": 58
+  },
+  {
+   "id": 1783,
+   "title": "Cattlemen's Livestock Auction - Belen, NM",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 97,
+   "kb": 45
   },
   {
    "id": 1784,
@@ -319,6 +553,186 @@
    "kb": 70
   },
   {
+   "id": 1788,
+   "title": "Springfield Livestock Marketing Center Slaughter/Replacement Cattle - Springfield, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 43,
+   "kb": 25
+  },
+  {
+   "id": 1789,
+   "title": "F and T Livestock Market Slaughter Cattle - Palmyra, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 18,
+   "kb": 8
+  },
+  {
+   "id": 1797,
+   "title": "Joplin Regional Stockyards Slaughter/Replacement Cattle- Carthage, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 53,
+   "kb": 29
+  },
+  {
+   "id": 1798,
+   "title": "Joplin Regional Stockyards Replacement Cattle Special - Carthage, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-03",
+   "series": 9,
+   "kb": 2
+  },
+  {
+   "id": 1799,
+   "title": "Springfield Livestock Marketing Center Replacement Cattle Special - Springfield, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-19",
+   "series": 19,
+   "kb": 5
+  },
+  {
+   "id": 1800,
+   "title": "Callaway Livestock Center Replacement Cattle Special - Kingdom City, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-03",
+   "series": 12,
+   "kb": 3
+  },
+  {
+   "id": 1803,
+   "title": "SEMO Livestock Sales Sheep/Goat - Jackson, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-21",
+   "series": 1,
+   "kb": 1
+  },
+  {
+   "id": 1804,
+   "title": "Buffalo Livestock Market Sheep/Goat - Buffalo, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-22",
+   "series": 6,
+   "kb": 2
+  },
+  {
+   "id": 1805,
+   "title": "TS White Sheep/Goat - Diamond, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-17",
+   "series": 23,
+   "kb": 7
+  },
+  {
+   "id": 1806,
+   "title": "Producers Auction Yards Sheep/Goat - Norwood, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 23,
+   "kb": 6
+  },
+  {
+   "id": 1807,
+   "title": "Montgomery County Livestock Auction Sheep/Goat - Montgomery City, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-10",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 1810,
+   "title": "Eastern MO Commission Company - Bowling Green, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 40,
+   "kb": 19
+  },
+  {
+   "id": 1811,
+   "title": "MO-Kan Livestock Market - Butler, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 18,
+   "kb": 8
+  },
+  {
+   "id": 1812,
+   "title": "Farmington Regional Stockyards - Farmington, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 20,
+   "kb": 9
+  },
+  {
+   "id": 1813,
+   "title": "Lolli Brothers Livestock Market - Macon, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 24,
+   "kb": 10
+  },
+  {
+   "id": 1814,
+   "title": "Interstate Regional Stockyards - Cuba, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 24,
+   "kb": 10
+  },
+  {
+   "id": 1815,
+   "title": "Kingsville Livestock Auction - Kingsville, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 29,
+   "kb": 14
+  },
+  {
+   "id": 1816,
+   "title": "F and T Livestock Market Feeder/Replacement Cattle - Palmyra, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 4,
+   "kb": 1
+  },
+  {
+   "id": 1817,
+   "title": "South Central Regional Stockyards - Vienna, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 18,
+   "kb": 7
+  },
+  {
+   "id": 1819,
+   "title": "Callaway Livestock Center - Kingdom City, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 31,
+   "kb": 14
+  },
+  {
    "id": 1821,
    "title": "Missouri Weekly Cattle Auction Summary",
    "fam": "auction",
@@ -328,6 +742,78 @@
    "kb": 460
   },
   {
+   "id": 1823,
+   "title": "Oklahoma National Stockyards Slaughter/Replacement Cattle - Oklahoma City, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 54,
+   "kb": 25
+  },
+  {
+   "id": 1824,
+   "title": "Woodward Livestock Auction Slaughter/Replacement Cattle  - Woodward, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 45,
+   "kb": 26
+  },
+  {
+   "id": 1825,
+   "title": "OKC West Livestock Auction Slaughter/Replacement Cattle - El Reno, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 70,
+   "kb": 33
+  },
+  {
+   "id": 1826,
+   "title": "Pawnee Sale Barn Sheep/Goat – Pawnee, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-17",
+   "series": 5,
+   "kb": 1
+  },
+  {
+   "id": 1827,
+   "title": "McAlester Union Livestock Auction - McAlester, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 28,
+   "kb": 20
+  },
+  {
+   "id": 1828,
+   "title": "Woodward Livestock Auction Feeder Cattle - Woodward, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 10,
+   "kb": 2
+  },
+  {
+   "id": 1829,
+   "title": "Apache Livestock Auction - Apache, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 42,
+   "kb": 24
+  },
+  {
+   "id": 1830,
+   "title": "Southern Oklahoma Livestock Auction Feeder Cattle- Ada, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 4,
+   "kb": 1
+  },
+  {
    "id": 1831,
    "title": "Oklahoma Weekly Cattle Auction Summary",
    "fam": "auction",
@@ -335,6 +821,15 @@
    "lastDate": "2026-09-26",
    "series": 469,
    "kb": 340
+  },
+  {
+   "id": 1832,
+   "title": "Tulsa Livestock Auction - Tulsa, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 60,
+   "kb": 27
   },
   {
    "id": 1833,
@@ -382,6 +877,15 @@
    "kb": 69
   },
   {
+   "id": 1843,
+   "title": "Southern Oklahoma Livestock Auction Slaughter/Replacement Cattle - Ada, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 69,
+   "kb": 43
+  },
+  {
    "id": 1845,
    "title": "Missouri (Southwest) Weekly Cattle Auction Summary",
    "fam": "auction",
@@ -400,6 +904,69 @@
    "kb": 119
   },
   {
+   "id": 1848,
+   "title": "Huss Livestock Market - Kearney, NE",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 8,
+   "kb": 2
+  },
+  {
+   "id": 1849,
+   "title": "Lexington Livestock Market - Lexington, NE",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-18",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 1851,
+   "title": "Burwell Livestock Market - Burwell, NE",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-11",
+   "series": 6,
+   "kb": 2
+  },
+  {
+   "id": 1853,
+   "title": "Ericson Livestock Market - Ericson, NE",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-12",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 1854,
+   "title": "Imperial Auction Market - Imperial, NE",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 2,
+   "kb": 0
+  },
+  {
+   "id": 1856,
+   "title": "Valentine Livestock Auction - Valentine, NE",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 1857,
+   "title": "Crawford Livestock Market - Crawford, NE",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 1,
+   "kb": 0
+  },
+  {
    "id": 1860,
    "title": "Nebraska Weekly Livestock Auction Summary",
    "fam": "auction",
@@ -407,6 +974,96 @@
    "lastDate": "2026-09-26",
    "series": 150,
    "kb": 54
+  },
+  {
+   "id": 1865,
+   "title": "Northeast Georgia Livestock Board Sales - Athens, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 4,
+   "kb": 1
+  },
+  {
+   "id": 1872,
+   "title": "Buckhannon Stockyards Livestock Auction - Buckhannon, WV",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 19,
+   "kb": 6
+  },
+  {
+   "id": 1876,
+   "title": "Preston Farmers Market - Terra Alta, WV",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 16,
+   "kb": 5
+  },
+  {
+   "id": 1878,
+   "title": "South Branch Valley Livestock Exchange - Moorefield, WV",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 32,
+   "kb": 10
+  },
+  {
+   "id": 1879,
+   "title": "Weston Livestock Marketing - Weston, WV",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 6,
+   "kb": 2
+  },
+  {
+   "id": 1880,
+   "title": "Jackson County Regional Livestock Market - Ripley, WV",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-19",
+   "series": 40,
+   "kb": 18
+  },
+  {
+   "id": 1889,
+   "title": "Winter Livestock - Dodge City, KS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 52,
+   "kb": 23
+  },
+  {
+   "id": 1891,
+   "title": "Winter Livestock - Pratt, KS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 31,
+   "kb": 14
+  },
+  {
+   "id": 1892,
+   "title": "Farmers and Ranchers Livestock Commission Co. - Salina, KS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 8,
+   "kb": 2
+  },
+  {
+   "id": 1893,
+   "title": "Farmers and Ranchers Livestock Commission Co. Replacement Cattle Special - Salina, KS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-18",
+   "series": 8,
+   "kb": 2
   },
   {
    "id": 1895,
@@ -418,6 +1075,15 @@
    "kb": 165
   },
   {
+   "id": 1899,
+   "title": "Centennial Livestock Sheep and Goat Auction - Fort Collins, CO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 14,
+   "kb": 5
+  },
+  {
    "id": 1907,
    "title": "Colorado Weekly Cattle Auction Summary",
    "fam": "auction",
@@ -425,6 +1091,51 @@
    "lastDate": "2026-09-26",
    "series": 202,
    "kb": 124
+  },
+  {
+   "id": 1908,
+   "title": "New Holland Livestock Cattle Auction (Monday) - New Holland, PA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 60,
+   "kb": 31
+  },
+  {
+   "id": 1909,
+   "title": "New Holland Livestock Cattle Auction (Thursday) - New Holland, PA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 49,
+   "kb": 21
+  },
+  {
+   "id": 1913,
+   "title": "New Holland Sheep and Goat Auction - New Holland, PA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 23,
+   "kb": 6
+  },
+  {
+   "id": 1917,
+   "title": "Greencastle Livestock Auction (Monday) - Greencastle, PA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 41,
+   "kb": 25
+  },
+  {
+   "id": 1918,
+   "title": "Middleburg Livestock Auction - Middleburg, PA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-22",
+   "series": 37,
+   "kb": 19
   },
   {
    "id": 1919,
@@ -436,6 +1147,474 @@
    "kb": 158
   },
   {
+   "id": 1927,
+   "title": "Georgia Weekly Video Board Sale Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-19",
+   "series": 4,
+   "kb": 1
+  },
+  {
+   "id": 1928,
+   "title": "Georgia Daily Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 52,
+   "kb": 41
+  },
+  {
+   "id": 1930,
+   "title": "Eastanollee Livestock - Eastanollee, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 27,
+   "kb": 14
+  },
+  {
+   "id": 1932,
+   "title": "Upson County Livestock - Thomaston, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 7,
+   "kb": 2
+  },
+  {
+   "id": 1933,
+   "title": "Georgia Weekly Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 51,
+   "kb": 38
+  },
+  {
+   "id": 1934,
+   "title": "Southern Livestock - Oak Park, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 30,
+   "kb": 18
+  },
+  {
+   "id": 1935,
+   "title": "Franklin County Livestock - Carnesville, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-22",
+   "series": 35,
+   "kb": 24
+  },
+  {
+   "id": 1937,
+   "title": "Pulaski County Stockyard - Hawkinsville, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 22,
+   "kb": 13
+  },
+  {
+   "id": 1938,
+   "title": "Thomasville Stockyard - Thomasville, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 20,
+   "kb": 12
+  },
+  {
+   "id": 1939,
+   "title": "Turner County Stockyard - Ashburn, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 25,
+   "kb": 18
+  },
+  {
+   "id": 1940,
+   "title": "Northeast Georgia Livestock - Athens, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 24,
+   "kb": 17
+  },
+  {
+   "id": 1941,
+   "title": "Seminole Livestock Exchange - Donalsonville, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 24,
+   "kb": 16
+  },
+  {
+   "id": 1942,
+   "title": "Jackson Regional Stockyard - Jackson, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 19,
+   "kb": 8
+  },
+  {
+   "id": 1944,
+   "title": "Wilkes County Stockyard - Washington, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 23,
+   "kb": 11
+  },
+  {
+   "id": 1946,
+   "title": "Calhoun Stockyard - Calhoun, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 37,
+   "kb": 20
+  },
+  {
+   "id": 1947,
+   "title": "South Central Livestock - Fitzgerald, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 1,
+   "kb": 1
+  },
+  {
+   "id": 1948,
+   "title": "Duvall Livestock - Greensboro, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 27,
+   "kb": 16
+  },
+  {
+   "id": 1949,
+   "title": "Carroll County Livestock - Carrollton, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 26,
+   "kb": 15
+  },
+  {
+   "id": 1950,
+   "title": "Mosely Livestock Feeder Cattle Board Sale - Blakely, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 3,
+   "kb": 1
+  },
+  {
+   "id": 1953,
+   "title": "Cattlemen's Livestock Auction - Dalhart, TX",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 33,
+   "kb": 13
+  },
+  {
+   "id": 1954,
+   "title": "Tulia Livestock Auction - Tulia, TX",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 26,
+   "kb": 9
+  },
+  {
+   "id": 1955,
+   "title": "Texas Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 118,
+   "kb": 58
+  },
+  {
+   "id": 1956,
+   "title": "Low Country Livestock Exchange - Darlington, SC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 79,
+   "kb": 30
+  },
+  {
+   "id": 1958,
+   "title": "Upstate Livestock Exchange - Williamston, SC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 54,
+   "kb": 20
+  },
+  {
+   "id": 1959,
+   "title": "Laurens Livestock Exchange - Laurens, SC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 72,
+   "kb": 27
+  },
+  {
+   "id": 1961,
+   "title": "Saluda Stockyards - Saluda, SC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 51,
+   "kb": 17
+  },
+  {
+   "id": 1963,
+   "title": "South Carolina Weekly Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 132,
+   "kb": 50
+  },
+  {
+   "id": 1964,
+   "title": "Orangeburg Stockyards - Orangeburg, SC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 58,
+   "kb": 22
+  },
+  {
+   "id": 1970,
+   "title": "Shipshewana Livestock Auction - Shipshewana, IN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 53,
+   "kb": 29
+  },
+  {
+   "id": 1973,
+   "title": "Empire Livestock Feeder and Replacement Cattle Sale - Bath, NY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-12",
+   "series": 3,
+   "kb": 1
+  },
+  {
+   "id": 1974,
+   "title": "Canandaigua Stockyards Livestock Auction - Canandaigua, NY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 51,
+   "kb": 31
+  },
+  {
+   "id": 1976,
+   "title": "Indiana Weekly Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 63,
+   "kb": 33
+  },
+  {
+   "id": 1979,
+   "title": "Arab Livestock Market Feeder Cattle Board Sale - Arab, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 1980,
+   "title": "Canandaigua Stockyards Feeder and Replacement Cattle Sale - Canandaigua, NY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-19",
+   "series": 8,
+   "kb": 3
+  },
+  {
+   "id": 1984,
+   "title": "Frisco City Stockyard - Frisco City, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 18,
+   "kb": 6
+  },
+  {
+   "id": 1985,
+   "title": "Opp Livestock - Opp, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 23,
+   "kb": 10
+  },
+  {
+   "id": 1986,
+   "title": "Coffee County Stockyards - New Brockton, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 18,
+   "kb": 9
+  },
+  {
+   "id": 1987,
+   "title": "Valley Livestock - Moulton, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 28,
+   "kb": 17
+  },
+  {
+   "id": 1988,
+   "title": "Mid State Stockyards LLP - Letohatchee, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 22,
+   "kb": 13
+  },
+  {
+   "id": 1989,
+   "title": "Clay County Livestock Auction - Lineville, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 20,
+   "kb": 9
+  },
+  {
+   "id": 1991,
+   "title": "Arab Livestock Market - Arab, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 19,
+   "kb": 12
+  },
+  {
+   "id": 1992,
+   "title": "Alabama Daily Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 67,
+   "kb": 45
+  },
+  {
+   "id": 1995,
+   "title": "Alabama Livestock Auction - Uniontown, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 21,
+   "kb": 13
+  },
+  {
+   "id": 1996,
+   "title": "Dothan Livestock Co. - Dothan, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 24,
+   "kb": 13
+  },
+  {
+   "id": 1997,
+   "title": "Tennessee Valley Livestock - Florence, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 27,
+   "kb": 16
+  },
+  {
+   "id": 1998,
+   "title": "Sand Mountain Stockyards Inc. - Kilpatrick, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 21,
+   "kb": 11
+  },
+  {
+   "id": 1999,
+   "title": "Roanoke Stockyards - Roanoke, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 28,
+   "kb": 17
+  },
+  {
+   "id": 2000,
+   "title": "South Alabama Stockyards - Brundidge, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 27,
+   "kb": 15
+  },
+  {
+   "id": 2001,
+   "title": "Cullman Stockyard Cattle Auction - Cullman, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 23,
+   "kb": 14
+  },
+  {
+   "id": 2003,
+   "title": "Ashville Stockyard - Ashville, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 20,
+   "kb": 10
+  },
+  {
+   "id": 2006,
+   "title": "Alabama Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 66,
+   "kb": 40
+  },
+  {
+   "id": 2007,
+   "title": "Northwest Alabama Livestock Cattle Sale - Russellville, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 17,
+   "kb": 10
+  },
+  {
    "id": 2011,
    "title": "New York Weekly Cattle Auction Summary",
    "fam": "auction",
@@ -443,6 +1622,150 @@
    "lastDate": "2026-09-26",
    "series": 137,
    "kb": 132
+  },
+  {
+   "id": 2014,
+   "title": "Producers Livestock Sheep and Goat Auction - San Angelo, TX",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 13,
+   "kb": 4
+  },
+  {
+   "id": 2015,
+   "title": "Producers Livestock Cattle Auction - San Angelo, TX",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 28,
+   "kb": 14
+  },
+  {
+   "id": 2016,
+   "title": "Sioux Falls Regional Livestock Auction - Worthing, SD",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 49,
+   "kb": 20
+  },
+  {
+   "id": 2017,
+   "title": "St. Onge-Newell Sheep Yards Auction - Newell, SD",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 15,
+   "kb": 5
+  },
+  {
+   "id": 2019,
+   "title": "St. Onge Livestock Auction - St. Onge, SD",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2020,
+   "title": "Hub City Livestock Auction - Aberdeen, SD",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 3,
+   "kb": 1
+  },
+  {
+   "id": 2021,
+   "title": "Ft. Pierre Livestock Auction (Friday) - Ft. Pierre, SD",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 6,
+   "kb": 1
+  },
+  {
+   "id": 2022,
+   "title": "Mitchell Livestock Auction - Mitchell, SD",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 7,
+   "kb": 2
+  },
+  {
+   "id": 2023,
+   "title": "Philip Livestock Auction - Philip, SD",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 2024,
+   "title": "Herreid Livestock Market - Herreid, SD",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 3,
+   "kb": 1
+  },
+  {
+   "id": 2026,
+   "title": "Sioux Falls Regional Cattle Auction - Worthing, SD",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 10,
+   "kb": 2
+  },
+  {
+   "id": 2027,
+   "title": "South Dakota Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 29,
+   "kb": 12
+  },
+  {
+   "id": 2029,
+   "title": "Mid State Stockyards Feeder Cattle Board Sale - Letohatchee, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 2034,
+   "title": "Valley Livestock Feeder Cattle Board Sale - Moulton, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-12",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2036,
+   "title": "Cedar Livestock Auction - Cedar, UT",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 51,
+   "kb": 19
+  },
+  {
+   "id": 2037,
+   "title": "Producers Livestock Auction - Salina, UT",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 37,
+   "kb": 20
   },
   {
    "id": 2039,
@@ -463,6 +1786,87 @@
    "kb": 180
   },
   {
+   "id": 2046,
+   "title": "Greenville Livestock Cattle Auction - Greenville, IL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 24,
+   "kb": 11
+  },
+  {
+   "id": 2047,
+   "title": "Walnut Auction Sales Slaughter Cattle - Walnut, IL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 18,
+   "kb": 7
+  },
+  {
+   "id": 2048,
+   "title": "Fairview Sale Barn Cattle Special - Fairview, IL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-17",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2049,
+   "title": "Fairview Sale Barn Slaughter Cattle - Fairview, IL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 40,
+   "kb": 22
+  },
+  {
+   "id": 2050,
+   "title": "Green Forest Stockyards - Green Forest, AR",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 37,
+   "kb": 20
+  },
+  {
+   "id": 2051,
+   "title": "Benton County Sale Barn - Siloam Springs, AR",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 32,
+   "kb": 18
+  },
+  {
+   "id": 2052,
+   "title": "Arkansas Cattle Auction LLC - Searcy, AR",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 58,
+   "kb": 24
+  },
+  {
+   "id": 2053,
+   "title": "I-40 Livestock - Ozark, AR",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 51,
+   "kb": 23
+  },
+  {
+   "id": 2055,
+   "title": "Cleburne County Livestock Auction - Heber Springs, AR",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 50,
+   "kb": 19
+  },
+  {
    "id": 2056,
    "title": "Arkansas Weekly Livestock Auction Summary",
    "fam": "auction",
@@ -470,6 +1874,159 @@
    "lastDate": "2026-09-26",
    "series": 361,
    "kb": 248
+  },
+  {
+   "id": 2057,
+   "title": "County Line Sale - Ratcliff, AR",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 38,
+   "kb": 15
+  },
+  {
+   "id": 2058,
+   "title": "Hope Livestock Auction - Hope, AR",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 32,
+   "kb": 16
+  },
+  {
+   "id": 2059,
+   "title": "Ash Flat Livestock Auction - Ash Flat, AR",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 39,
+   "kb": 18
+  },
+  {
+   "id": 2060,
+   "title": "Athens Regional Stockyard - Athens, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 43,
+   "kb": 21
+  },
+  {
+   "id": 2061,
+   "title": "Crossville Stockyard - Crossville, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 44,
+   "kb": 20
+  },
+  {
+   "id": 2062,
+   "title": "Smith County Commission Co. - Carthage, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 17,
+   "kb": 11
+  },
+  {
+   "id": 2063,
+   "title": "Tennessee Weekly Cattle Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 150,
+   "kb": 69
+  },
+  {
+   "id": 2064,
+   "title": "Dickson Regional Livestock Center - Dickson, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 51,
+   "kb": 23
+  },
+  {
+   "id": 2065,
+   "title": "Dickson Regional Livestock West - Huntingdon, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 21,
+   "kb": 9
+  },
+  {
+   "id": 2066,
+   "title": "Knoxville Livestock Center - Knoxville, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-22",
+   "series": 50,
+   "kb": 23
+  },
+  {
+   "id": 2067,
+   "title": "East Tennessee Livestock Center - Sweetwater, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 28,
+   "kb": 12
+  },
+  {
+   "id": 2068,
+   "title": "Hardin County Stockyard - Savannah, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 33,
+   "kb": 16
+  },
+  {
+   "id": 2069,
+   "title": "Mid-South Livestock Regional Center LLC - Unionville, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 26,
+   "kb": 15
+  },
+  {
+   "id": 2070,
+   "title": "Volunteer Stockyards - Greeneville, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 42,
+   "kb": 17
+  },
+  {
+   "id": 2071,
+   "title": "Browning Livestock Market - Lafayette, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-16",
+   "series": 16,
+   "kb": 6
+  },
+  {
+   "id": 2080,
+   "title": "Pulaski Stockyard - Pulaski, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 42,
+   "kb": 18
+  },
+  {
+   "id": 2081,
+   "title": "Columbia Graded Sheep and Goat Sale - Columbia, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 24,
+   "kb": 7
   },
   {
    "id": 2082,
@@ -481,6 +2038,51 @@
    "kb": 322
   },
   {
+   "id": 2084,
+   "title": "Powell Livestock Sheep and Goat Auction - Smithfield, NC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-16",
+   "series": 9,
+   "kb": 2
+  },
+  {
+   "id": 2087,
+   "title": "Carolina Stockyards Livestock Auction (Friday) - Siler City, NC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 26,
+   "kb": 13
+  },
+  {
+   "id": 2088,
+   "title": "Harward Brothers Livestock Market - Turnersburg, NC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 21,
+   "kb": 15
+  },
+  {
+   "id": 2089,
+   "title": "Wilkes Livestock Exchange - North Wilkesboro, NC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 25,
+   "kb": 11
+  },
+  {
+   "id": 2090,
+   "title": "WNC Regional Livestock Center - Canton, NC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 35,
+   "kb": 17
+  },
+  {
    "id": 2091,
    "title": "North Carolina Weekly Livestock Auction Summary",
    "fam": "auction",
@@ -488,6 +2090,60 @@
    "lastDate": "2026-09-26",
    "series": 441,
    "kb": 218
+  },
+  {
+   "id": 2092,
+   "title": "Cleveland County Agriculture & Livestock Exchange - Shelby, NC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-22",
+   "series": 22,
+   "kb": 14
+  },
+  {
+   "id": 2093,
+   "title": "Stanly County Livestock Market - Norwood, NC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 19,
+   "kb": 13
+  },
+  {
+   "id": 2094,
+   "title": "Powell Livestock Market - Smithfield, NC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 24,
+   "kb": 10
+  },
+  {
+   "id": 2095,
+   "title": "Carolina Stockyards Livestock Auction (Monday) - Siler City, NC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 15,
+   "kb": 8
+  },
+  {
+   "id": 2101,
+   "title": "Torrington Livestock Auction - Torrington, WY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 9,
+   "kb": 6
+  },
+  {
+   "id": 2104,
+   "title": "Winter Livestock Auction - Riverton, WY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 20,
+   "kb": 9
   },
   {
    "id": 2106,
@@ -499,6 +2155,303 @@
    "kb": 66
   },
   {
+   "id": 2110,
+   "title": "Eastanollee Goat Sale - Eastanollee, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-19",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2111,
+   "title": "Mississippi Daily Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 160,
+   "kb": 87
+  },
+  {
+   "id": 2112,
+   "title": "Meridian Stockyard - Meridian, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 27,
+   "kb": 11
+  },
+  {
+   "id": 2113,
+   "title": "Southeast Mississippi Livestock - Hattiesburg, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 44,
+   "kb": 20
+  },
+  {
+   "id": 2114,
+   "title": "Tadlock Stockyards - Forest, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 15,
+   "kb": 10
+  },
+  {
+   "id": 2115,
+   "title": "Mississippi Weekly Livestock Auction Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 150,
+   "kb": 72
+  },
+  {
+   "id": 2116,
+   "title": "Philadelphia Stockyard -Philadelphia, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 26,
+   "kb": 11
+  },
+  {
+   "id": 2117,
+   "title": "Brookhaven Stockyard - Brookhaven, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 30,
+   "kb": 15
+  },
+  {
+   "id": 2118,
+   "title": "Tylertown Stockyard - Tylertown, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 31,
+   "kb": 15
+  },
+  {
+   "id": 2119,
+   "title": "Winona Stockyard - Winona, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 18,
+   "kb": 6
+  },
+  {
+   "id": 2120,
+   "title": "Lucedale Stockyard - Lucedale, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 25,
+   "kb": 12
+  },
+  {
+   "id": 2122,
+   "title": "Macon Stockyard - Macon, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 25,
+   "kb": 11
+  },
+  {
+   "id": 2123,
+   "title": "Peoples Livestock Auction - Houston, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 16,
+   "kb": 5
+  },
+  {
+   "id": 2124,
+   "title": "Grenada Stockyard - Grenada, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 18,
+   "kb": 7
+  },
+  {
+   "id": 2125,
+   "title": "Cattlemens Livestock - West Point, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 68,
+   "kb": 33
+  },
+  {
+   "id": 2126,
+   "title": "Lipscomb Brother's Livestock Market, Inc.- Como, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 19,
+   "kb": 8
+  },
+  {
+   "id": 2127,
+   "title": "Blue Grass Stockyards (Monday) - Lexington, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 44,
+   "kb": 17
+  },
+  {
+   "id": 2128,
+   "title": "Blue Grass Stockyards (Tuesday) - Lexington, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 33,
+   "kb": 14
+  },
+  {
+   "id": 2129,
+   "title": "Blue Grass Stockyards Lexington - Replacement Livestock Sale - Lexington, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 21,
+   "kb": 5
+  },
+  {
+   "id": 2132,
+   "title": "Toppenish Livestock Auction - Toppenish, WA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 41,
+   "kb": 17
+  },
+  {
+   "id": 2142,
+   "title": "Rockingham Feeder Cattle Board Sale - Harrisonburg, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-10",
+   "series": 2,
+   "kb": 0
+  },
+  {
+   "id": 2146,
+   "title": "Virginia Cattle Company Feeder Cattle Board Sale - Radiant, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 4,
+   "kb": 1
+  },
+  {
+   "id": 2148,
+   "title": "Virginia Weekly Feeder Cattle Board Sale Summary",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-19",
+   "series": 8,
+   "kb": 2
+  },
+  {
+   "id": 2150,
+   "title": "Denison Livestock Feeder Cattle - Denison, IA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 2,
+   "kb": 0
+  },
+  {
+   "id": 2153,
+   "title": "Kalona Sheep and Goat Auction - Kalona, IA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 36,
+   "kb": 10
+  },
+  {
+   "id": 2154,
+   "title": "Sheldon Livestock Slaughter Cattle - Sheldon, IA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-17",
+   "series": 30,
+   "kb": 11
+  },
+  {
+   "id": 2155,
+   "title": "Dunlap Livestock Feeder Cattle - Dunlap, IA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 4,
+   "kb": 1
+  },
+  {
+   "id": 2157,
+   "title": "Sheldon Livestock Feeder Cattle Special - Sheldon, IA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-17",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2158,
+   "title": "Lamoni Livestock Feeder Cattle - Lamoni, IA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2159,
+   "title": "Russell Livestock Feeder Cattle - Russell, IA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 2162,
+   "title": "Bloomfield Livestock Feeder Cattle - Bloomfield, IA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2164,
+   "title": "Dunlap Livestock Slaughter Cattle - Dunlap, IA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 13,
+   "kb": 5
+  },
+  {
+   "id": 2165,
+   "title": "Tama Livestock Slaughter Cattle - Tama, IA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 22,
+   "kb": 14
+  },
+  {
    "id": 2167,
    "title": "Iowa Weekly Cattle Auction Summary",
    "fam": "auction",
@@ -506,6 +2459,105 @@
    "lastDate": "2026-09-26",
    "series": 171,
    "kb": 140
+  },
+  {
+   "id": 2169,
+   "title": "Shenandoah Valley Livestock Graded Feeder Cattle Sale - Harrisonburg, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-12",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2170,
+   "title": "Virginia Feeder Cattle Tel-O-Auction",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-14",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 2171,
+   "title": "Virginia Livestock LLC Graded Slaughter Cattle Sale - Front Royal, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-10",
+   "series": 3,
+   "kb": 1
+  },
+  {
+   "id": 2172,
+   "title": "Staunton Livestock Auction Graded Slaughter Cattle Sale - Staunton, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-15",
+   "series": 3,
+   "kb": 1
+  },
+  {
+   "id": 2173,
+   "title": "Fauquier Livestock Exchange Graded Feeder Cattle Sale - Marshall, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-11",
+   "series": 4,
+   "kb": 1
+  },
+  {
+   "id": 2174,
+   "title": "Culpeper Ag Enterprise Graded Feeder Cattle Sale - Culpeper, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-04",
+   "series": 5,
+   "kb": 1
+  },
+  {
+   "id": 2175,
+   "title": "Farmers Livestock Exchange Graded Feeder Cattle Sale - Winchester, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 8,
+   "kb": 2
+  },
+  {
+   "id": 2176,
+   "title": "Virginia Livestock LLC Graded Feeder Cattle Sale - Front Royal, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-17",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2177,
+   "title": "Rockingham Graded Feeder Cattle Sale - Harrisonburg, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-10",
+   "series": 3,
+   "kb": 1
+  },
+  {
+   "id": 2182,
+   "title": "Virginia Cattle Company Graded Feeder Cattle Sale - Radiant, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 16,
+   "kb": 4
+  },
+  {
+   "id": 2183,
+   "title": "Southside Livestock Graded Feeder Cattle Sale - Blackstone, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-16",
+   "series": 3,
+   "kb": 1
   },
   {
    "id": 2187,
@@ -517,6 +2569,51 @@
    "kb": 25
   },
   {
+   "id": 2188,
+   "title": "United Producers Inc. - Bowling Green, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 25,
+   "kb": 9
+  },
+  {
+   "id": 2189,
+   "title": "Blue Grass Stockyards - Albany, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 38,
+   "kb": 17
+  },
+  {
+   "id": 2190,
+   "title": "Blue Grass South Stockyards (Monday) - Stanford, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 21,
+   "kb": 9
+  },
+  {
+   "id": 2191,
+   "title": "Blue Grass South Stockyards (Thursday) - Stanford, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 30,
+   "kb": 15
+  },
+  {
+   "id": 2192,
+   "title": "Blue Grass Stockyards (Saturday) - Campbellsville, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 33,
+   "kb": 14
+  },
+  {
    "id": 2193,
    "title": "Kentucky Weekly Livestock Auction Summary",
    "fam": "auction",
@@ -524,6 +2621,231 @@
    "lastDate": "2026-09-26",
    "series": 759,
    "kb": 476
+  },
+  {
+   "id": 2194,
+   "title": "Lake Cumberland Livestock - Somerset, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-26",
+   "series": 61,
+   "kb": 25
+  },
+  {
+   "id": 2195,
+   "title": "Farmers Stockyards - Flemingsburg, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 21,
+   "kb": 10
+  },
+  {
+   "id": 2196,
+   "title": "Livingston Co. Livestock Market - Ledbetter, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 46,
+   "kb": 21
+  },
+  {
+   "id": 2198,
+   "title": "Farmers Regional Livestock Market - Glasgow, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 92,
+   "kb": 48
+  },
+  {
+   "id": 2199,
+   "title": "Farmers Regional Livestock Auction of Glasgow Dairy Auction - Smiths Grove, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 93,
+   "kb": 46
+  },
+  {
+   "id": 2200,
+   "title": "Christian Co. Livestock - Hopkinsville, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 13,
+   "kb": 4
+  },
+  {
+   "id": 2201,
+   "title": "Kentuckiana Livestock Market - Owensboro, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 26,
+   "kb": 11
+  },
+  {
+   "id": 2202,
+   "title": "Bluegrass Stockyard - Mt. Sterling, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 46,
+   "kb": 19
+  },
+  {
+   "id": 2203,
+   "title": "United Producers, Inc. - Owenton, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 26,
+   "kb": 11
+  },
+  {
+   "id": 2204,
+   "title": "Paris Stockyards - Paris, KY (Thursday)",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 34,
+   "kb": 20
+  },
+  {
+   "id": 2206,
+   "title": "KY-TN Livestock Market - Guthrie, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 61,
+   "kb": 29
+  },
+  {
+   "id": 2207,
+   "title": "United Producers Inc. - Harned, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 26,
+   "kb": 13
+  },
+  {
+   "id": 2208,
+   "title": "Russell Co. Stockyard - Russell Springs, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 54,
+   "kb": 22
+  },
+  {
+   "id": 2209,
+   "title": "Washington Co. Cattle Sale - Springfield, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 23,
+   "kb": 13
+  },
+  {
+   "id": 2210,
+   "title": "Blue Grass Stockyards - Richmond, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-25",
+   "series": 43,
+   "kb": 17
+  },
+  {
+   "id": 2211,
+   "title": "Mid-Kentucky Livestock Market - Upton, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 56,
+   "kb": 26
+  },
+  {
+   "id": 2212,
+   "title": "Blue Grass Stockyards (Wednesday) - Campbellsville, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 36,
+   "kb": 16
+  },
+  {
+   "id": 2213,
+   "title": "Cattleman's Livestock - Bowling Green, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 30,
+   "kb": 12
+  },
+  {
+   "id": 2215,
+   "title": "United Producers Inc. Graded Sheep/Goat Sale - Bowling Green, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 19,
+   "kb": 5
+  },
+  {
+   "id": 2216,
+   "title": "West Kentucky Auction Barn Graded Sheep/Goat Sale - Mayfield, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-21",
+   "series": 12,
+   "kb": 3
+  },
+  {
+   "id": 2217,
+   "title": "Blue Grass Stockyards of Richmond Graded Sheep/Goat Sale - Richmond, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-14",
+   "series": 15,
+   "kb": 4
+  },
+  {
+   "id": 2218,
+   "title": "Paris Stockyards Graded Sheep/Goat Sale - Paris, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-15",
+   "series": 20,
+   "kb": 5
+  },
+  {
+   "id": 2219,
+   "title": "Washington Co. Graded Sheep/Goat Sale  (Monthly 3rd Sat) - Springfield, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-19",
+   "series": 7,
+   "kb": 2
+  },
+  {
+   "id": 2228,
+   "title": "East Tennessee Livestock Center Video/Board Sale - Sweetwater, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-12",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 2229,
+   "title": "Farmers Regional Livestock Market - Monthly Cattle Sale - Glasgow, KY (2nd/4th Thur)",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 6,
+   "kb": 2
   },
   {
    "id": 2240,
@@ -931,6 +3253,15 @@
    "kb": 4
   },
   {
+   "id": 2383,
+   "title": "'R' Livestock Connection - Monroe, UT",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 33,
+   "kb": 13
+  },
+  {
    "id": 2386,
    "title": "Benton Harbor Shipping Point Fruit Prices (BR_FV110)",
    "fam": "fv",
@@ -1093,6 +3424,15 @@
    "kb": 98
   },
   {
+   "id": 2528,
+   "title": "Kalona Livestock Slaughter Cattle Auction - Kalona, IA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 33,
+   "kb": 20
+  },
+  {
    "id": 2707,
    "title": "Texas Direct Hay Report",
    "fam": "hay",
@@ -1136,6 +3476,15 @@
    "lastDate": "2026-09-29",
    "series": 11,
    "kb": 33
+  },
+  {
+   "id": 2713,
+   "title": "Superior Livestock Video/Internet Auction - Fort Worth, TX",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-17",
+   "series": 19,
+   "kb": 5
   },
   {
    "id": 2714,
@@ -1390,6 +3739,33 @@
    "kb": 157
   },
   {
+   "id": 2895,
+   "title": "Farmers Region Livestock Video/Internet Auction – Glasgow, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-10",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 2896,
+   "title": "Bluegrass Stockyards Livestock Video/Internet Auction – Lexington, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-15",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 2897,
+   "title": "Washington County Livestock Video/Internet Auction – Springfield, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 1,
+   "kb": 1
+  },
+  {
    "id": 2904,
    "title": "California Direct Hay Report",
    "fam": "hay",
@@ -1460,6 +3836,15 @@
    "lastDate": "2026-09-25",
    "series": 9,
    "kb": 23
+  },
+  {
+   "id": 2922,
+   "title": "Equity Cooperative Sheep & Lamb Video/Internet Auction - Baraboo, WI",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-17",
+   "series": 1,
+   "kb": 1
   },
   {
    "id": 2928,
@@ -1597,6 +3982,15 @@
    "kb": 18
   },
   {
+   "id": 3087,
+   "title": "Toppenish Livestock Video/Internet Auction - Toppenish, WA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 2,
+   "kb": 1
+  },
+  {
    "id": 3088,
    "title": "Tennessee Daily Grain Bids",
    "fam": "grain",
@@ -1660,6 +4054,15 @@
    "kb": 155
   },
   {
+   "id": 3102,
+   "title": "Apache Livestock Video/Internet Auction - Apache, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 4,
+   "kb": 1
+  },
+  {
    "id": 3146,
    "title": "California Grain Bids",
    "fam": "grain",
@@ -1703,6 +4106,15 @@
    "lastDate": "2026-09-18",
    "series": 10,
    "kb": 16
+  },
+  {
+   "id": 3161,
+   "title": "Mid-Atlantic Livestock Video/Internet Auction - Norwood, NC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-15",
+   "series": 2,
+   "kb": 1
   },
   {
    "id": 3167,
@@ -1804,6 +4216,42 @@
    "kb": 12
   },
   {
+   "id": 3241,
+   "title": "Cattle Country Livestock Video/Internet Auction - Torrington, WY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-10",
+   "series": 1,
+   "kb": 1
+  },
+  {
+   "id": 3242,
+   "title": "Western Video Market Livestock Video/Internet Auction - Cottonwood, CA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-15",
+   "series": 1,
+   "kb": 1
+  },
+  {
+   "id": 3338,
+   "title": "Paris Stockyards Livestock Video/Internet Auction – Paris, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 3339,
+   "title": "KY-TN Livestock Market Livestock Video/Internet Auction – Guthrie, KY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-13",
+   "series": 1,
+   "kb": 0
+  },
+  {
    "id": 3364,
    "title": "Shipshewana Hay Auction - Shipshewana, IN",
    "fam": "hay",
@@ -1811,6 +4259,60 @@
    "lastDate": "2026-09-23",
    "series": 58,
    "kb": 35
+  },
+  {
+   "id": 3365,
+   "title": "Lonestar Stockyards - Wildorado, TX",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 54,
+   "kb": 22
+  },
+  {
+   "id": 3412,
+   "title": "Crawford Livestock Video Auction - Crawford, NE",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-21",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 3415,
+   "title": "Topeka Livestock Auction - Topeka, IN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-22",
+   "series": 29,
+   "kb": 15
+  },
+  {
+   "id": 3416,
+   "title": "Ozarks Regional Stockyards Video Auction - West Plains, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 7,
+   "kb": 3
+  },
+  {
+   "id": 3429,
+   "title": "Seminole Livestock Exchange Board Sale - Donalsonville, GA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-03",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 3454,
+   "title": "Western Video Sheep Video/Internet Auction - Cottonwood, CA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-15",
+   "series": 1,
+   "kb": 1
   },
   {
    "id": 3455,
@@ -1822,6 +4324,15 @@
    "kb": 3
   },
   {
+   "id": 3456,
+   "title": "Knoxville Livestock Center Video Auction - Knoxville, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 2,
+   "kb": 1
+  },
+  {
    "id": 3463,
    "title": "Indiana Grain Bids",
    "fam": "grain",
@@ -1829,6 +4340,15 @@
    "lastDate": "2026-09-29",
    "series": 82,
    "kb": 187
+  },
+  {
+   "id": 3484,
+   "title": "SEMO Livestock Sales Cattle Auction - Jackson, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 22,
+   "kb": 11
   },
   {
    "id": 3489,
@@ -1903,6 +4423,60 @@
    "kb": 23
   },
   {
+   "id": 3624,
+   "title": "Madison Livestock Market Graded Sheep and Goat Sale - Radiant, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-09",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 3628,
+   "title": "Hope Livestock – Cattle Video Auction (Thu)",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 3632,
+   "title": "Middleburg Livestock Auction Sheep and Goat Sale - Middleburg, PA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-22",
+   "series": 7,
+   "kb": 2
+  },
+  {
+   "id": 3633,
+   "title": "Middleburg Livestock Auction Slaughter Hog Sale - Middleburg, PA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-08",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 3634,
+   "title": "Greencastle Livestock Auction Sheep and Goat Sale (Monday) - Greencastle, PA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 6,
+   "kb": 2
+  },
+  {
+   "id": 3635,
+   "title": "Tina Livestock Market Cattle Auction - Tina, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 26,
+   "kb": 12
+  },
+  {
    "id": 3641,
    "title": "Weekly Major Packer Hide Report",
    "fam": "meat",
@@ -1939,6 +4513,15 @@
    "kb": 84
   },
   {
+   "id": 3648,
+   "title": "Tina Livestock Market Replacement Cattle Special - Tina, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-28",
+   "series": 3,
+   "kb": 1
+  },
+  {
    "id": 3649,
    "title": "Monthly National Chicken Report",
    "fam": "poultry",
@@ -1966,6 +4549,15 @@
    "kb": 36
   },
   {
+   "id": 3654,
+   "title": "Mid Missouri Stockyards Cattle Auction - Phillipsburg, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 41,
+   "kb": 19
+  },
+  {
    "id": 3660,
    "title": "Madison County Ag Auction",
    "fam": "hay",
@@ -1973,6 +4565,15 @@
    "lastDate": "2026-03-28",
    "series": 160,
    "kb": 32
+  },
+  {
+   "id": 3662,
+   "title": "I-40 Livestock Feeder Cattle Pot Load Sale - Ozark, AR",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-15",
+   "series": 1,
+   "kb": 0
   },
   {
    "id": 3667,
@@ -2002,6 +4603,42 @@
    "kb": 19
   },
   {
+   "id": 3672,
+   "title": "Beebe Livestock Auction- Sheep and Goat Sale",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-12",
+   "series": 10,
+   "kb": 2
+  },
+  {
+   "id": 3677,
+   "title": "United Producers Inc - Fayetteville, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 30,
+   "kb": 16
+  },
+  {
+   "id": 3692,
+   "title": "Empire Livestock Sale - Bath, NY",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 48,
+   "kb": 21
+  },
+  {
+   "id": 3724,
+   "title": "Giddings Livestock Auction - Giddings, TX",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 63,
+   "kb": 35
+  },
+  {
    "id": 3731,
    "title": "Utah Direct Hay Report",
    "fam": "hay",
@@ -2009,6 +4646,15 @@
    "lastDate": "2026-09-25",
    "series": 89,
    "kb": 24
+  },
+  {
+   "id": 3775,
+   "title": "Southeastern Auction Co Inc – Chadbourn, NC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 53,
+   "kb": 17
   },
   {
    "id": 3776,
@@ -2020,6 +4666,15 @@
    "kb": 13
   },
   {
+   "id": 3777,
+   "title": "Y & R Livestock Sales - Sheep & Goat Auction - Booneville, MS",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-19",
+   "series": 9,
+   "kb": 2
+  },
+  {
    "id": 3784,
    "title": "Arizona Direct Hay Report",
    "fam": "hay",
@@ -2029,6 +4684,42 @@
    "kb": 49
   },
   {
+   "id": 3785,
+   "title": "Columbia Livestock Center (UPI) - Columbia TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 17,
+   "kb": 8
+  },
+  {
+   "id": 3790,
+   "title": "Saluda Livestock Exchange - Saluda, SC",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 85,
+   "kb": 33
+  },
+  {
+   "id": 3791,
+   "title": "Cattle Drive Livestock Video/Internet Auction - Salina, UT",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 10,
+   "kb": 4
+  },
+  {
+   "id": 3792,
+   "title": "Athens Regional Stockyard Preconditioned Sale - Athens, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-20",
+   "series": 1,
+   "kb": 0
+  },
+  {
    "id": 3793,
    "title": "Tennessee Direct Hay Report",
    "fam": "hay",
@@ -2036,6 +4727,24 @@
    "lastDate": "2026-09-25",
    "series": 194,
    "kb": 44
+  },
+  {
+   "id": 3794,
+   "title": "Beaver Livestock Auction Feeder Cattle - Beaver, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-22",
+   "series": 10,
+   "kb": 2
+  },
+  {
+   "id": 3795,
+   "title": "Beaver Livestock Auction Slaughter/Replacement Cattle - Beaver, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 83,
+   "kb": 41
   },
   {
    "id": 3802,
@@ -2056,6 +4765,15 @@
    "kb": 47
   },
   {
+   "id": 3879,
+   "title": "Beaver Livestock Video / Internet Auction - Beaver, OK",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-22",
+   "series": 1,
+   "kb": 0
+  },
+  {
    "id": 3883,
    "title": "Inter-Mountain West Production Cost Report (Monthly)",
    "fam": "costs",
@@ -2074,6 +4792,51 @@
    "kb": 2
   },
   {
+   "id": 3891,
+   "title": "Tennessee Valley Livestock - Video/Board Sale - Florence, AL",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-10",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 3892,
+   "title": "LiveAg Video Auction - Cattle Video Auction - Fort Worth, TX",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-10",
+   "series": 6,
+   "kb": 2
+  },
+  {
+   "id": 3894,
+   "title": "Wilson Livestock Market Video/Internet Auction - Newport, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-03",
+   "series": 1,
+   "kb": 0
+  },
+  {
+   "id": 3900,
+   "title": "Johnson Stockyard - Kosciusko, Mississippi",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 26,
+   "kb": 9
+  },
+  {
+   "id": 3903,
+   "title": "Trenton Regional Stockyards - Trenton, TN",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-23",
+   "series": 33,
+   "kb": 12
+  },
+  {
    "id": 3905,
    "title": "Kentucky Direct Hay Report",
    "fam": "hay",
@@ -2081,6 +4844,33 @@
    "lastDate": "2026-09-04",
    "series": 124,
    "kb": 18
+  },
+  {
+   "id": 3906,
+   "title": "Farmers Livestock Exchange Graded Slaughter Cattle Sale - Winchester, VA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-07",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 3907,
+   "title": "CMS Video/Internet Livestock Auction - Amarillo, TX",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-10",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 3909,
+   "title": "Cattle Drive Video Market- Sheep & Lamb Video Auction- Salina, UT",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-08-31",
+   "series": 1,
+   "kb": 1
   },
   {
    "id": 3913,
@@ -2108,6 +4898,51 @@
    "lastDate": "2026-09-28",
    "series": 20,
    "kb": 8
+  },
+  {
+   "id": 3916,
+   "title": "Four State Stockyards – Cattle Auction - Exeter, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-29",
+   "series": 57,
+   "kb": 26
+  },
+  {
+   "id": 3917,
+   "title": "Wheeler Livestock Auction - Cattle Auction - Osceola, MO",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-24",
+   "series": 50,
+   "kb": 22
+  },
+  {
+   "id": 3919,
+   "title": "Paris Stockyards - Paris, KY (Monday)",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-28",
+   "series": 26,
+   "kb": 15
+  },
+  {
+   "id": 3921,
+   "title": "Producers Livestock Auction Sheep & Goat Sale (1st and 3rd Monday) - Salina, UT",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-21",
+   "series": 9,
+   "kb": 2
+  },
+  {
+   "id": 3922,
+   "title": "Overland Stockyard Video/Internet Auction - Hanford, CA",
+   "fam": "auction",
+   "freq": "w",
+   "lastDate": "2026-09-09",
+   "series": 14,
+   "kb": 3
   },
   {
    "id": 3926,

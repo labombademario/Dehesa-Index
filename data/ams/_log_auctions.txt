@@ -552,3 +552,4 @@
 3921 OK 9 series, 452 filas, ultimo 2026-09-21, 2 KB, dims=commodity,class,age,category,dressing,frame,lot_desc,muscle_grade,offspring_weight_est,pregnancy_stage,quality_grade_name,yield_grade descartados_por_ambiguedad=101
 3922 OK 14 series, 643 filas, ultimo 2026-09-09, 3 KB, dims=class,frame,lot_desc,muscle_Grade,region_name,state_code descartados_por_ambiguedad=144 sin_precio={"Report Receipts":10}
 3923 SIN SERIES (filas 3, secciones sin precio {"Report Receipts":1})
+OK 315 / fallos 239
