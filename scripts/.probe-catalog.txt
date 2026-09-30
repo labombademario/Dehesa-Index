@@ -1,0 +1,701 @@
+=== cereal
+STATUS 200
+FILAS 93240 CAMPOS memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,productName,marketName,stageName,referencePeriod
+CAMPOS_DE_GRUPO unit | productName | stageName | referencePeriod
+GRUPOS 19719
+  [TONNES | Feed barley | National Average - Not Specified | 06/07/2023] n=38 países=BE,BG,CY,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO mercados=1 2023-07-02→2023-07-02 último=€244,41
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 07/07/2022] n=38 países=BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IT,LT,PT,RO,SE,SI,SK mercados=1 2022-07-03→2022-07-03 último=€347,06
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 08/07/2021] n=38 países=AT,BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,IT,LT,PL,RO,SE,SI,SK mercados=1 2021-07-04→2021-07-04 último=€211,31
+  [TONNES | Milling wheat | Departure from silo - after some storage - on truck or other transport means | 08/07/2021] n=38 países=AT,DE,ES,HR,RO mercados=19 2021-07-04→2021-07-04 último=€219,80
+  [TONNES | Feed barley | National Average - Not Specified | 09/07/2026] n=36 países=AT,BE,BG,DE,DK,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO mercados=1 2026-07-05→2026-07-05 último=€204,40
+  [TONNES | Feed barley | National Average - Not Specified | 07/07/2022] n=36 países=AT,BE,BG,CY,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,IE,IT,NL,PT,RO mercados=1 2022-07-03→2022-07-03 último=€349,61
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 09/07/2026] n=34 países=AT,DE,ES,HR,RO mercados=17 2026-07-05→2026-07-05 último=€200,00
+  [TONNES | Feed barley | National Average - Not Specified | 10/07/2025] n=34 países=AT,BE,BG,DE,DK,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,LT,NL,PT,RO mercados=1 2025-07-06→2025-07-06 último=€189,10
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 10/07/2025] n=34 países=AT,DE,ES,HR,RO mercados=17 2025-07-06→2025-07-06 último=€187,60
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 06/07/2023] n=34 países=CY,DE,ES,RO mercados=17 2023-07-02→2023-07-02 último=€240,50
+  [TONNES | Feed maize | National Average - Not Specified | 07/07/2022] n=34 países=AT,BE,BG,CY,DE,DK,EL,ES,EU,EU+UK,FR,HR,IT,NL,PT,RO,SI,SK mercados=1 2022-07-03→2022-07-03 último=€374,61
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 07/07/2022] n=34 países=AT,CY,DE,ES,HR,RO mercados=17 2022-07-03→2022-07-03 último=€349,00
+  [TONNES | Feed barley | National Average - Not Specified | 08/07/2021] n=34 países=BE,BG,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,IE,IT,LT,NL,PL,PT,RO mercados=1 2021-07-04→2021-07-04 último=€205,63
+  [TONNES | Milling wheat | Departure from silo - after some storage - on truck or other transport means | 10/07/2025] n=32 países=AT,DE,ES,HR,RO mercados=16 2025-07-06→2025-07-06 último=€204,40
+  [TONNES | Feed maize | National Average - Not Specified | 06/07/2023] n=32 países=AT,BE,BG,CY,DE,DK,EL,ES,EU,EU+UK,FR,HR,IT,NL,PT,RO,SI mercados=1 2023-07-02→2023-07-02 último=€263,58
+  [TONNES | Feed maize | Departure from silo - after some storage - on truck or other transport means | 06/07/2023] n=32 países=AT,CY,DE,ES,HR,RO mercados=16 2023-07-02→2023-07-02 último=€261,86
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 06/07/2023] n=32 países=BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IT,LT,PT,RO,SI mercados=1 2023-07-02→2023-07-02 último=€266,10
+  [TONNES | Feed maize | Departure from silo - after some storage - on truck or other transport means | 08/07/2021] n=32 países=AT,DE,ES,HR,RO mercados=16 2021-07-04→2021-07-04 último=€268,60
+  [TONNES | Feed maize | National Average - Not Specified | 08/07/2021] n=32 países=AT,BE,BG,DE,EL,ES,EU,EU+UK,FR,HR,IT,NL,PL,PT,RO,SI,SK mercados=1 2021-07-04→2021-07-04 último=€269,00
+  [TONNES | Feed wheat | Departure from silo - after some storage - on truck or other transport means | 09/07/2026] n=30 países=DE,ES,RO mercados=15 2026-07-05→2026-07-05 último=€224,40
+  [TONNES | Milling wheat | Departure from silo - after some storage - on truck or other transport means | 06/07/2023] n=30 países=DE,ES,HR,RO mercados=15 2023-07-02→2023-07-02 último=€278,00
+  [TONNES | Feed maize | Departure from silo - after some storage - on truck or other transport means | 07/07/2022] n=30 países=AT,CY,DE,ES,HR,RO mercados=15 2022-07-03→2022-07-03 último=€369,60
+  [TONNES | Milling wheat | Departure from silo - after some storage - on truck or other transport means | 07/07/2022] n=30 países=DE,ES,HR,RO mercados=15 2022-07-03→2022-07-03 último=€378,20
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 08/07/2021] n=30 países=DE,ES,HR,RO mercados=15 2021-07-04→2021-07-04 último=€200,00
+  [TONNES | Feed maize | National Average - Not Specified | 09/07/2026] n=28 países=BE,BG,DE,DK,EL,EU,EU+UK,FR,HR,HU,IT,NL,PT,RO,SI mercados=1 2026-07-05→2026-07-05 último=€226,28
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 09/07/2026] n=28 países=BG,CZ,DE,EL,EU,EU+UK,FI,FR,HR,HU,IT,LT,PT,RO,SI mercados=1 2026-07-05→2026-07-05 último=€201,85
+  [TONNES | Feed maize | Departure from silo - after some storage - on truck or other transport means | 09/07/2026] n=28 países=DE,ES,HR,RO mercados=14 2026-07-05→2026-07-05 último=€225,00
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 10/07/2025] n=28 países=AT,BG,CZ,DE,EL,EU,EU+UK,FI,FR,HR,HU,LT,PT,RO,SI mercados=1 2025-07-06→2025-07-06 último=€191,71
+  [TONNES | Feed maize | Departure from silo - after some storage - on truck or other transport means | 10/07/2025] n=26 países=AT,DE,ES,HR,RO mercados=13 2025-07-06→2025-07-06 último=€225,00
+  [TONNES | Feed wheat | National Average - Not Specified | 07/07/2022] n=26 países=AT,BE,BG,DE,DK,EE,EL,EU,EU+UK,IE,LT,NL,PT,RO mercados=1 2022-07-03→2022-07-03 último=€314,87
+  [TONNES | Feed wheat | National Average - Not Specified | 08/07/2021] n=26 países=AT,BE,BG,DE,EE,EL,EU,EU+UK,IE,LT,NL,PL,PT,RO mercados=1 2021-07-04→2021-07-04 último=€167,59
+  [TONNES | Feed maize | National Average - Not Specified | 10/07/2025] n=24 países=AT,BG,DE,DK,EL,EU,EU+UK,FR,HR,NL,PT,RO,SI mercados=1 2025-07-06→2025-07-06 último=€228,04
+  [TONNES | Feed wheat | National Average - Not Specified | 10/07/2025] n=24 países=BG,DE,DK,EL,EU,EU+UK,FI,HU,IE,LT,NL,PT,RO mercados=1 2025-07-06→2025-07-06 último=€165,98
+  [TONNES | Feed wheat | National Average - Not Specified | 06/07/2023] n=24 países=BE,BG,DE,DK,EE,EL,EU,EU+UK,IE,LT,NL,PT,RO mercados=1 2023-07-02→2023-07-02 último=€185,61
+  [TONNES | Milling wheat | Departure from farm or from production area - on truck or other transport means | 07/07/2022] n=24 países=BE,BG,IT,PT,SK mercados=12 2022-07-03→2022-07-03 último=€328,70
+  [TONNES | Feed barley | Deliver to first customer - silo or processing plant - on truck or other transport means | 08/07/2021] n=24 países=EE,FI,HR,IE,IT,LT,LV,PL mercados=12 2021-07-04→2021-07-04 último=€202,22
+  [TONNES | Feed barley | National Average - Not Specified | 20/07/2023] n=23 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2023-07-16→2023-07-16 último=€236,71
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 11/03/2021] n=23 países=AT,BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IT,LT,LV,PL,PT,RO,SE,SI,SK mercados=1 2021-03-07→2021-03-07 último=€221,36
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 18/02/2021] n=23 países=AT,BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IT,LT,LV,PL,PT,RO,SE,SI,SK mercados=1 2021-02-14→2021-02-14 último=€219,49
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 04/02/2021] n=23 países=AT,BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IT,LT,LV,PL,PT,RO,SE,SI,SK mercados=1 2021-01-31→2021-01-31 último=€218,75
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 28/01/2021] n=23 países=AT,BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IT,LT,LV,PL,PT,RO,SE,SI,SK mercados=1 2021-01-24→2021-01-24 último=€218,91
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 21/01/2021] n=23 países=AT,BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IT,LT,LV,PL,PT,RO,SE,SI,SK mercados=1 2021-01-17→2021-01-17 último=€216,57
+  [TONNES | Feed wheat | National Average - Not Specified | 09/07/2026] n=22 países=BG,DE,DK,EL,EU,EU+UK,FI,IE,LT,NL,PT,RO mercados=1 2026-07-05→2026-07-05 último=€161,43
+  [TONNES | Milling wheat | Departure from silo - after some storage - on truck or other transport means | 09/07/2026] n=22 países=DE,ES,HR,RO mercados=11 2026-07-05→2026-07-05 último=€229,30
+  [TONNES | Feed barley | Deliver to first customer - silo or processing plant - on truck or other transport means | 09/07/2026] n=22 países=FI,HR,IE,IT,LT,PL mercados=11 2026-07-05→2026-07-05 último=€161,30
+  [TONNES | Milling wheat | Deliver to first customer - silo or processing plant - on truck or other transport means | 09/07/2026] n=22 países=CZ,FI,HR,IT,LT,LV,PL,SI mercados=10 2026-07-05→2026-07-05 último=€201,85
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 05/12/2024] n=22 países=AT,CY,DE,ES,HR,RO mercados=22 2024-12-01→2024-12-01 último=€212,60
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 24/10/2024] n=22 países=AT,CY,DE,ES,HR,RO mercados=22 2024-10-20→2024-10-20 último=€212,00
+  [TONNES | Feed barley | National Average - Not Specified | 05/09/2024] n=22 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO mercados=1 2024-09-01→2024-09-01 último=€193,12
+  [TONNES | Feed barley | National Average - Not Specified | 01/08/2024] n=22 países=BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2024-07-28→2024-07-28 último=€196,70
+  [TONNES | Feed barley | National Average - Not Specified | 25/07/2024] n=22 países=AT,BE,BG,CY,CZ,DE,DK,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2024-07-21→2024-07-21 último=€193,46
+  [TONNES | Feed barley | National Average - Not Specified | 18/07/2024] n=22 países=AT,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2024-07-14→2024-07-14 último=€192,92
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 07/12/2023] n=22 países=AT,CY,DE,ES,HR,RO mercados=22 2023-12-03→2023-12-03 último=€218,00
+  [TONNES | Feed barley | National Average - Not Specified | 14/09/2023] n=22 países=AT,BE,BG,CY,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2023-09-10→2023-09-10 último=€237,37
+  [TONNES | Feed barley | National Average - Not Specified | 07/09/2023] n=22 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,IE,IT,LT,NL,PT,RO,SK mercados=1 2023-09-03→2023-09-03 último=€237,08
+  [TONNES | Feed barley | National Average - Not Specified | 31/08/2023] n=22 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,IE,IT,LT,NL,PT,RO,SK mercados=1 2023-08-27→2023-08-27 último=€237,45
+  [TONNES | Feed barley | National Average - Not Specified | 03/08/2023] n=22 países=BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2023-07-30→2023-07-30 último=€252,15
+  [TONNES | Feed barley | National Average - Not Specified | 27/07/2023] n=22 países=AT,BE,BG,CY,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2023-07-23→2023-07-23 último=€236,47
+  [TONNES | Feed maize | Departure from farm or from production area - on truck or other transport means | 06/07/2023] n=22 países=BE,BG,IT mercados=11 2023-07-02→2023-07-02 último=€233,50
+  [TONNES | Feed barley | National Average - Not Specified | 24/11/2022] n=22 países=AT,BE,BG,CY,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2022-11-20→2022-11-20 último=€341,37
+  [TONNES | Feed barley | National Average - Not Specified | 28/07/2022] n=22 países=AT,BE,BG,CY,CZ,DE,DK,EE,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2022-07-24→2022-07-24 último=€330,95
+  [TONNES | Feed maize | Departure from farm or from production area - on truck or other transport means | 07/07/2022] n=22 países=BE,BG,IT,SK mercados=11 2022-07-03→2022-07-03 último=€298,80
+  [TONNES | Milling wheat | Deliver to first customer - silo or processing plant - on truck or other transport means | 07/07/2022] n=22 países=CZ,EE,HR,IT,LT,LV,PL,SI mercados=10 2022-07-03→2022-07-03 último=€383,92
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 16/09/2021] n=22 países=AT,CY,DE,ES,FR,HR,RO mercados=22 2021-09-12→2021-09-12 último=€231,00
+  [TONNES | Milling wheat | Departure from farm or from production area - on truck or other transport means | 08/07/2021] n=22 países=BE,BG,IT,SK mercados=11 2021-07-04→2021-07-04 último=€183,67
+  [TONNES | Feed maize | Departure from farm or from production area - on truck or other transport means | 08/07/2021] n=22 países=BE,BG,IT,SK mercados=11 2021-07-04→2021-07-04 último=€189,97
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 01/04/2021] n=22 países=AT,BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,IT,LT,LV,PL,PT,RO,SE,SI,SK mercados=1 2021-03-28→2021-03-28 último=€214,47
+  [TONNES | Feed barley | National Average - Not Specified | 05/12/2024] n=21 países=AT,BE,BG,CY,CZ,DE,DK,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO mercados=1 2024-12-01→2024-12-01 último=€209,30
+  [TONNES | Feed barley | National Average - Not Specified | 29/08/2024] n=21 países=BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,IE,IT,LT,NL,PT,RO,SK mercados=1 2024-08-25→2024-08-25 último=€193,66
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 11/07/2024] n=21 países=AT,CY,DE,ES,RO mercados=21 2024-07-07→2024-07-07 último=€190,20
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 04/07/2024] n=21 países=AT,CY,DE,ES,HR,RO mercados=21 2024-06-30→2024-06-30 último=€196,00
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 21/12/2023] n=21 países=AT,CY,DE,ES,HR,RO mercados=21 2023-12-17→2023-12-17 último=€246,80
+  [TONNES | Feed barley | National Average - Not Specified | 07/12/2023] n=21 países=AT,BE,BG,CY,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO mercados=1 2023-12-03→2023-12-03 último=€228,00
+  [TONNES | Feed barley | National Average - Not Specified | 26/10/2023] n=21 países=AT,BE,BG,CY,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO mercados=1 2023-10-22→2023-10-22 último=€235,87
+  [TONNES | Feed barley | National Average - Not Specified | 12/10/2023] n=21 países=AT,BE,BG,CY,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2023-10-08→2023-10-08 último=€240,37
+  [TONNES | Feed barley | National Average - Not Specified | 28/09/2023] n=21 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,IE,IT,LT,NL,PT,RO,SK mercados=1 2023-09-24→2023-09-24 último=€240,37
+  [TONNES | Feed barley | National Average - Not Specified | 17/08/2023] n=21 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,LT,NL,PT,RO mercados=1 2023-08-13→2023-08-13 último=€242,41
+  [TONNES | Feed barley | National Average - Not Specified | 10/08/2023] n=21 países=BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,RO,SK mercados=1 2023-08-06→2023-08-06 último=€245,73
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 13/07/2023] n=21 países=AT,CY,DE,ES,HR,RO mercados=21 2023-07-09→2023-07-09 último=€256,40
+  [TONNES | Feed barley | National Average - Not Specified | 01/12/2022] n=21 países=AT,BE,BG,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2022-11-27→2022-11-27 último=€331,57
+  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means | 24/11/2022] n=21 países=AT,CY,DE,ES,HR,RO mercados=21 2022-11-20→2022-11-20 último=€345,00
+  [TONNES | Feed barley | National Average - Not Specified | 06/10/2022] n=21 países=AT,BE,BG,CY,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,IE,IT,LT,NL,PT,RO,SK mercados=1 2022-10-02→2022-10-02 último=€338,31
+  [TONNES | Feed barley | National Average - Not Specified | 29/09/2022] n=21 países=AT,BG,CY,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2022-09-25→2022-09-25 último=€335,34
+  [TONNES | Feed barley | National Average - Not Specified | 15/09/2022] n=21 países=AT,BE,BG,CY,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2022-09-11→2022-09-11 último=€330,90
+  [TONNES | Feed barley | National Average - Not Specified | 04/08/2022] n=21 países=AT,BE,BG,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,NL,PT,RO,SK mercados=1 2022-07-31→2022-07-31 último=€330,75
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 14/07/2022] n=21 países=AT,BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IT,LT,PT,RO,SE,SI,SK mercados=1 2022-07-10→2022-07-10 último=€347,54
+  [TONNES | Milling wheat | Departure from silo - after some storage - on truck or other transport means | 17/02/2022] n=21 países=AT,DE,ES,FR,HR,RO mercados=21 2022-02-13→2022-02-13 último=€291,80
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 14/10/2021] n=21 países=AT,BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IT,LT,PT,RO,SE,SI,SK mercados=1 2021-10-10→2021-10-10 último=€252,03
+  [TONNES | Milling wheat | Departure from silo - after some storage - on truck or other transport means | 14/10/2021] n=21 países=AT,DE,ES,FR,HR,RO mercados=21 2021-10-10→2021-10-10 último=€255,60
+  [TONNES | Breadmaking common wheat | National Average - Not Specified | 07/10/2021] n=21 países=AT,BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IT,LT,PT,RO,SE,SI,SK mercados=1 2021-10-03→2021-10-03 último=€246,70
+  … (recortado)
+EJEMPLO {"memberStateCode":"AT","memberStateName":"Austria","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€215,00","unit":"TONNES","weekNumber":13,"productName":"Feed wheat","marketName":"Wien","stageName":"Departure from silo - after some storage - on truck or other transport means","referencePeriod":"01/10/2026"}
+
+=== oilseeds
+STATUS 200
+FILAS 22605 CAMPOS memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,product,productType,marketStage,market,marketingYear
+CAMPOS_DE_GRUPO unit | product | productType | marketStage | marketingYear
+GRUPOS 536
+  [national currency/ton | Sunflower seed | Standard | DEPSILO | 2024/2025] n=248 países=DE,ES,RO mercados=4 2024-07-07→2025-07-06 último=€429.03
+  [national currency/ton | Sunflower seed | Standard | DEPSILO | 2025/2026] n=243 países=DE,ES mercados=4 2025-07-06→2026-07-05 último=€452.95
+  [national currency/ton | Rapeseed | N.A. | Not Defined | 2021/2022] n=231 países=AT,CZ,DK,HU,LT,PL,RO,SK mercados=2 2021-07-04→2022-07-03 último=€670.99
+  [national currency/ton | Sunflower seed | Standard | DEPSILO | 2022/2023] n=230 países=DE,ES mercados=4 2022-07-03→2023-07-02 último=€594.94
+  [national currency/ton | Sunflower seed | Standard | DEPSILO | 2023/2024] n=227 países=DE,ES mercados=4 2023-07-02→2024-06-30 último=€385.16
+  [national currency/ton | Sunflower seed | High-oleic | DEPSILO | 2021/2022] n=219 países=ES,FR mercados=5 2021-07-04→2022-07-03 último=€624.17
+  [national currency/ton | Sunflower seed | High-oleic | DEPSILO | 2025/2026] n=217 países=ES,FR mercados=5 2025-07-06→2026-07-05 último=€537.63
+  [national currency/ton | Sunflower seed | Standard | DEPSILO | 2021/2022] n=215 países=DE,ES mercados=4 2021-07-04→2022-07-03 último=€616.02
+  [national currency/ton | Sunflower seed | High-oleic | DEPSILO | 2022/2023] n=214 países=ES,FR mercados=5 2022-07-03→2023-07-02 último=€683.19
+  [national currency/ton | Sunflower seed | High-oleic | DEPSILO | 2024/2025] n=213 países=ES,FR mercados=5 2024-07-07→2025-07-06 último=€456.50
+  [national currency/ton | Sunflower seed | High-oleic | DEPSILO | 2023/2024] n=212 países=ES mercados=4 2023-07-02→2024-06-30 último=€516.39
+  [national currency/ton | Rapeseed | N.A. | Not Defined | 2023/2024] n=187 países=DK,HU,LT,PL,SK mercados=1 2023-07-02→2024-06-30 último=€439.85
+  [national currency/ton | Rapeseed | N.A. | Not Defined | 2022/2023] n=179 países=AT,DK,HU,LT,PL,RO,SK mercados=2 2022-07-03→2023-07-02 último=€413.36
+  [national currency/ton | Rapeseed meal | 30-35% protein content | Not Defined | 2022/2023] n=172 países=AT,BE,CZ,LT mercados=2 2022-07-03→2023-07-02 último=€342.24
+  [national currency/ton | Rapeseed | Standard | FGATE | 2021/2022] n=169 países=BG,DE mercados=7 2021-07-04→2022-04-03 último=€980.00
+  [national currency/ton | Rapeseed meal | N.A. | Not Defined | 2021/2022] n=166 países=DK,HU,NL,PL,RO mercados=1 2021-07-04→2022-07-03 último=€351.88
+  [national currency/ton | Rapeseed | N.A. | Not Defined | 2024/2025] n=165 países=DK,HU,LT,PL,SK mercados=1 2024-07-07→2025-07-06 último=€501.41
+  [national currency/ton | Rapeseed | N.A. | Not Defined | 2025/2026] n=158 países=DK,HU,LT,SK mercados=1 2025-07-06→2026-07-05 último=€528.25
+  [national currency/ton | Sunflower seed meal | N.A. | Not Defined | 2025/2026] n=157 países=HU,NL,RO mercados=1 2025-07-06→2026-07-05 último=€279.53
+  [national currency/ton | Sunflower seed meal | N.A. | Not Defined | 2024/2025] n=156 países=HU,NL,RO mercados=1 2024-07-07→2025-07-06 último=€249.63
+  [national currency/ton | Sunflower seed meal | N.A. | Not Defined | 2023/2024] n=156 países=HU,NL,RO mercados=1 2023-07-02→2024-06-30 último=€265.42
+  [national currency/ton | Rapeseed meal | N.A. | Not Defined | 2023/2024] n=156 países=HU,NL,PL,RO mercados=1 2023-07-02→2024-06-30 último=€270.70
+  [national currency/ton | Sunflower seed meal | N.A. | Not Defined | 2022/2023] n=155 países=HU,NL,RO mercados=1 2022-07-03→2023-07-02 último=€318.46
+  [national currency/ton | Rapeseed meal | 30-35% protein content | Not Defined | 2023/2024] n=147 países=AT,BE,CZ,DK,LT mercados=1 2023-07-02→2024-06-30 último=€316.77
+  [national currency/ton | Rapeseed | N.A. | DELPROC | 2024/2025] n=146 países=FR mercados=4 2024-07-07→2025-07-06 último=€461.00
+  [national currency/ton | Rapeseed meal | N.A. | Not Defined | 2025/2026] n=144 países=HU,NL,RO mercados=1 2025-07-06→2026-07-05 último=€193.10
+  [national currency/ton | Rapeseed | Standard | DEPSILO GEX | 2022/2023] n=141 países=DE mercados=4 2022-07-03→2023-07-02 último=€425.00
+  [national currency/ton | Rapeseed meal | N.A. | Not Defined | 2024/2025] n=140 países=HU,NL,PL,RO mercados=1 2024-07-07→2025-07-06 último=€249.87
+  [national currency/ton | Soya meal | 40-50% protein content | Départ | 2021/2022] n=132 países=FR mercados=4 2021-07-04→2022-06-26 último=€533.00
+  [national currency/ton | Rapeseed meal | N.A. | Not Defined | 2022/2023] n=129 países=HU,NL,PL,RO mercados=1 2022-07-03→2023-07-02 último=€354.82
+  [national currency/ton | Sunflower seed meal | N.A. | Not Defined | 2021/2022] n=124 países=HU,NL,RO mercados=1 2021-07-04→2022-07-03 último=€488.19
+  [national currency/ton | Rapeseed | Standard | DEPSILO GEX | 2024/2025] n=123 países=DE mercados=4 2024-07-07→2025-07-06 último=€490.00
+  [national currency/ton | Rapeseed | Standard | DEPSILO GEX | 2023/2024] n=119 países=DE mercados=4 2023-07-02→2024-06-30 último=€466.00
+  [national currency/ton | Rapeseed | N.A. | DELPROC | 2022/2023] n=118 países=FR mercados=4 2022-07-03→2023-07-02 último=€433.00
+  [national currency/ton | Rapeseed | Standard | DEPSILO GEX | 2025/2026] n=117 países=DE mercados=4 2025-07-06→2026-07-05 último=€507.00
+  [national currency/ton | Rapeseed meal | Standard | DEPSILO GEX | 2023/2024] n=112 países=DE mercados=4 2023-07-02→2024-06-30 último=€306.00
+  [national currency/ton | Rapeseed | N.A. | DELPROC | 2025/2026] n=110 países=FR mercados=4 2025-07-06→2026-07-05 último=€502.00
+  [national currency/ton | Sunflower seed | High-oleic | DELPROC | 2024/2025] n=110 países=FR mercados=3 2024-07-07→2025-07-06 último=€497.00
+  [national currency/ton | Rapeseed meal | Standard | DEPSILO GEX | 2022/2023] n=110 países=DE mercados=4 2022-07-03→2023-07-02 último=€386.50
+  [national currency/ton | Soya meal | 40-50% protein content | DEPSILO GEX | 2022/2023] n=109 países=DE mercados=4 2022-07-03→2023-07-02 último=€471.00
+  [national currency/ton | Rapeseed | N.A. | DELPROC | 2023/2024] n=108 países=FR mercados=4 2023-07-02→2024-06-30 último=€464.00
+  [national currency/ton | Rapeseed meal | Standard | FOB | 2021/2022] n=108 países=DE mercados=5 2021-07-04→2022-07-03 último=€331.00
+  [national currency/ton | Soya beans | N.A. | DELFIRST | 2025/2026] n=107 países=HR,IT mercados=3 2025-07-06→2026-07-05 último=€424.50
+  [national currency/ton | Soya meal | 40-50% protein content | DEPSILO GEX | 2023/2024] n=107 países=DE mercados=4 2023-07-02→2024-06-30 último=€458.50
+  [national currency/ton | Soya beans | N.A. | DELFIRST | 2022/2023] n=105 países=HR,IT mercados=3 2022-07-03→2023-07-02 último=€464.50
+  [national currency/ton | Rapeseed | N.A. | DELFIRST | 2022/2023] n=104 países=EE,HR,LV mercados=2 2022-07-03→2023-07-02 último=€399.48
+  [national currency/ton | Soya meal | N.A. | Not Defined | 2022/2023] n=104 países=NL,RO mercados=1 2022-07-03→2023-07-02 último=€599.05
+  [national currency/ton | Soya beans | N.A. | DEPSILO | 2021/2022] n=103 países=FR,HR,RO mercados=3 2021-07-11→2022-07-03 último=€568.26
+  [national currency/ton | Rapeseed meal | 30-35% protein content | Not Defined | 2024/2025] n=102 países=AT,BE,CZ,LT mercados=2 2024-07-07→2025-07-06 último=€328.20
+  [national currency/ton | Soya beans | N.A. | DEPSILO | 2023/2024] n=102 países=FR,HR,RO mercados=3 2023-07-02→2024-06-23 último=€381.77
+  [national currency/ton | Soya beans | N.A. | DELFIRST | 2021/2022] n=102 países=HR,IT mercados=3 2021-09-19→2022-07-03 último=€643.50
+  [national currency/ton | Rapeseed | N.A. | DEPSILO | 2025/2026] n=101 países=ES,HR,RO mercados=2 2025-07-06→2026-07-05 último=€444.78
+  [national currency/ton | Soya beans | N.A. | DEPSILO | 2022/2023] n=101 países=DE,FR,HR,RO mercados=3 2022-07-03→2023-07-02 último=€443.52
+  [national currency/ton | Rapeseed | N.A. | DEPSILO | 2023/2024] n=100 países=DE,ES,HR,RO mercados=2 2023-07-02→2024-06-30 último=€416.00
+  [national currency/ton | Rapeseed | N.A. | DELPROC | 2021/2022] n=100 países=FR mercados=4 2021-07-04→2022-07-03 último=€681.00
+  [national currency/ton | Rapeseed | N.A. | Not Defined | 2020/2021] n=100 países=DE,DK,ES,HU,LT,PL,SK mercados=1 2021-01-10→2021-07-04 último=€549.09
+  [national currency/ton | Soya meal | 40-50% protein content | FOB | 2021/2022] n=99 países=DE mercados=4 2021-07-04→2022-07-03 último=€520.00
+  [national currency/ton | Soya beans | N.A. | DELFIRST | 2023/2024] n=98 países=HR,IT mercados=3 2023-07-02→2024-06-30 último=€485.50
+  [national currency/ton | Rapeseed | N.A. | DEPSILO | 2022/2023] n=98 países=DE,ES,HR,RO mercados=3 2022-07-03→2023-07-02 último=€463.00
+  [national currency/ton | Rapeseed meal | 30-35% protein content | Not Defined | 2021/2022] n=98 países=AT,BE,DK,LT mercados=2 2021-07-04→2022-07-03 último=€392.90
+  [national currency/ton | Rapeseed | N.A. | DELFIRST | 2021/2022] n=98 países=EE,FI,HR,LV mercados=3 2021-07-04→2022-07-03 último=€698.40
+  [national currency/ton | Soya beans | N.A. | DELFIRST | 2024/2025] n=97 países=HR,IT mercados=3 2024-07-07→2025-07-06 último=€393.00
+  [national currency/ton | Soya meal | N.A. | DELFIRST | 2024/2025] n=95 países=IT mercados=2 2024-07-07→2025-07-06 último=€392.50
+  [national currency/ton | Soya meal | N.A. | Not Defined | 2023/2024] n=95 países=NL,RO mercados=1 2023-07-02→2024-06-30 último=€468.23
+  [national currency/ton | Crude sunflower oil | N.A. | Not Defined | 2023/2024] n=95 países=HU,NL,RO mercados=1 2023-07-02→2024-06-30 último=€1039.22
+  [national currency/ton | Rapeseed | N.A. | DEPSILO | 2024/2025] n=94 países=ES,HR,RO mercados=2 2024-07-07→2025-07-06 último=€420.15
+  [national currency/ton | Rapeseed meal | N.A. | DELFIRST | 2023/2024] n=94 países=IT mercados=2 2023-07-02→2024-06-30 último=€373.50
+  [national currency/ton | Rapeseed meal | N.A. | DELFIRST | 2025/2026] n=93 países=IT mercados=2 2025-07-06→2026-07-05 último=€301.00
+  [national currency/ton | Soya meal | N.A. | DELFIRST | 2025/2026] n=93 países=IT mercados=2 2025-07-06→2026-07-05 último=€430.50
+  [national currency/ton | Rapeseed meal | Standard | DEPSILO GEX | 2024/2025] n=93 países=DE mercados=4 2024-07-07→2025-07-06 último=€243.50
+  [national currency/ton | Soya meal | 40-50% protein content | DEPSILO GEX | 2024/2025] n=93 países=DE mercados=4 2024-07-07→2025-07-06 último=€283.50
+  [national currency/ton | Rapeseed meal | N.A. | DELFIRST | 2024/2025] n=93 países=IT mercados=2 2024-07-07→2025-07-06 último=€281.50
+  [national currency/ton | Rapeseed meal | N.A. | DELFIRST | 2022/2023] n=92 países=IT mercados=2 2022-07-03→2023-07-02 último=€392.00
+  [national currency/ton | Soya beans | N.A. | DEPSILO | 2024/2025] n=91 países=FR,HR,RO mercados=3 2024-07-07→2025-06-08 último=€370.91
+  [national currency/ton | Soya meal | N.A. | DELFIRST | 2023/2024] n=91 países=IT mercados=2 2023-07-02→2024-06-30 último=€577.50
+  [national currency/ton | Soya meal | 40-50% protein content | FOB | 2022/2023] n=91 países=DE mercados=3 2022-07-03→2023-07-02 último=€440.00
+  [national currency/ton | Soya meal | 40-50% protein content | DEPSILO GEX | 2025/2026] n=89 países=DE mercados=4 2025-07-06→2026-07-05 último=€364.50
+  [national currency/ton | Soya meal | 40-50% protein content | DEPPROC | 2021/2022] n=89 países=DE,ES mercados=1 2021-07-04→2022-07-03 último=€527.84
+  [national currency/ton | Soya meal | 40-50% protein content | Départ | 2024/2025] n=88 países=FR mercados=4 2024-07-07→2025-07-06 último=€303.00
+  [national currency/ton | Soya meal | 40-50% protein content | FOB | 2024/2025] n=88 países=DE mercados=2 2024-07-07→2025-07-06 último=€279.00
+  [national currency/ton | Rapeseed meal | Standard | DEPSILO GEX | 2025/2026] n=87 países=DE mercados=4 2025-07-06→2026-07-05 último=€257.50
+  [national currency/ton | Sunflower seed | High-oleic | DELPROC | 2025/2026] n=85 países=FR mercados=3 2025-07-06→2026-07-05 último=€565.00
+  [national currency/ton | Rapeseed | Standard | Not Defined | 2024/2025] n=84 países=AT,CZ,PL mercados=2 2024-07-07→2025-07-06 último=€545.45
+  [national currency/ton | Rapeseed | N.A. | DELFIRST | 2023/2024] n=84 países=EE,HR,LV mercados=2 2023-07-02→2024-06-30 último=€460.92
+  [national currency/ton | Rapeseed | Standard | Not Defined | 2023/2024] n=83 países=CZ,PL mercados=1 2023-07-02→2024-06-30 último=€465.05
+  [national currency/ton | Sunflower seed | High-oleic | DELPROC | 2021/2022] n=83 países=FR mercados=3 2021-07-04→2022-07-03 último=€723.00
+  [national currency/ton | Crude rape oil | N.A. | Not Defined | 2021/2022] n=83 países=HU,LT,PL,RO mercados=1 2021-07-04→2022-07-03 último=€1762.03
+  [national currency/ton | Rapeseed meal | N.A. | DELFIRST | 2021/2022] n=81 países=IT mercados=2 2021-07-04→2022-07-03 último=€416.50
+  [national currency/ton | Soya meal | 40-50% protein content | FOB | 2025/2026] n=80 países=DE mercados=2 2025-07-06→2026-07-05 último=€340.00
+  [national currency/ton | Rapeseed | Standard | Not Defined | 2025/2026] n=80 países=CZ,PL mercados=1 2025-07-06→2026-07-05 último=€540.65
+  … (recortado)
+EJEMPLO {"memberStateCode":"AT","memberStateName":"Austria","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€251.00","unit":"national currency/ton","weekNumber":13,"product":"Sunflower seed meal","productType":"Above 35% protein content","marketStage":"Not Defined","market":"Not Defined","marketingYear":"2026/2027"}
+
+=== oilseeds/cakes
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== dairy
+STATUS 200
+FILAS 21348 CAMPOS memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,year,product
+CAMPOS_DE_GRUPO unit | product
+GRUPOS 10
+  [100KG | BUTTER] n=3865 países=BE,CZ,DE,DK,EE,ES,EU,FR,HR,IE,IT,NL,PL,PT,SK mercados=0 2021-01-10→2026-09-27 último=€396.06
+  [100KG | SMP] n=2643 países=BE,CZ,DE,DK,EE,ES,EU,FR,IE,NL,PL,SK mercados=0 2021-01-10→2026-09-27 último=€277.74
+  [100KG | DRINKING MILK] n=2551 países=AT,CZ,DE,EE,ES,EU,HU,IE,IT,PL,PT,SK mercados=0 2021-01-10→2026-09-27 último=€76.80
+  [100KG | WMP] n=2420 países=BE,CZ,DE,DK,ES,EU,FR,IE,NL,PL,PT,SK mercados=0 2021-01-10→2026-09-27 último=€332.64
+  [100KG | WHEYPOWDER] n=2330 países=CZ,DE,ES,EU,FR,HU,IE,NL,PL,PT mercados=0 2021-01-10→2026-09-27 último=€126.81
+  [100KG | EDAM] n=2205 países=CZ,DE,EE,EU,HR,LV,NL,PL,SI,SK mercados=0 2021-01-10→2026-09-27 último=€498.75
+  [100KG | CREAM] n=1701 países=BE,CZ,DE,EE,ES,EU,IT,PL,RO mercados=0 2021-01-10→2026-09-27 último=€211.84
+  [100KG | GOUDA] n=1509 países=CZ,DE,EE,EU,HR,LV,NL,PL,SI mercados=0 2021-01-10→2026-09-27 último=€365.74
+  [100KG | EMMENTAL] n=1504 países=AT,CZ,DE,EU,LV,SI mercados=0 2021-01-10→2026-09-20 último=€847.31
+  [100KG | CHEDDAR] n=620 países=BE,EE,EU,IE,LV mercados=0 2021-01-10→2026-09-27 último=€315.14
+EJEMPLO {"memberStateCode":"BE","memberStateName":"Belgium","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€211.84","unit":"100KG","weekNumber":39,"year":2026,"product":"CREAM"}
+
+=== dairy/products
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== beef
+STATUS 200
+FILAS 201578 CAMPOS memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,category,productCode
+CAMPOS_DE_GRUPO unit | category | productCode
+GRUPOS 38
+  [€/100Kg | Young bulls | AO2] n=7922 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€582.78
+  [€/100Kg | Cows | DP2] n=7868 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€430.36
+  [€/100Kg | Cows | DO3] n=7636 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€516.34
+  [€/100Kg | Cows | DO2] n=7632 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€486.56
+  [€/100Kg | Cows | DP3] n=7480 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€502.33
+  [€/100Kg | Heifers | EO3] n=7377 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€584.02
+  [€/100Kg | Adult male indicative price | ACZURO] n=7377 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€607.30
+  [€/100Kg | Young bulls | AR2] n=7373 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€630.00
+  [€/100Kg | Young bulls | AO3] n=7257 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€584.27
+  [€/100Kg | Cows | DR3] n=7159 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€529.13
+  [€/100Kg | Young bulls | AR3] n=6992 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€638.01
+  [€/100Kg | Heifers | EO2] n=6888 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€579.58
+  [€/100Kg | Cows | DO4] n=6816 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€519.33
+  [€/100Kg | Heifers | ER3] n=6815 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€649.85
+  [€/100Kg | Heifers | ER2] n=6780 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€642.85
+  [€/100Kg | Young bulls | AU2] n=6705 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€639.24
+  [€/100Kg | Cows | DR4] n=6292 países=AT,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€556.61
+  [€/100Kg | Young bulls | AU3] n=6181 países=AT,BE,BG,CZ,DE,DK,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€653.33
+  [€/100Kg | Heifers | ER4] n=5940 países=AT,BG,CZ,DE,DK,EE,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€614.64
+  [€/100Kg | Heifers | EO4] n=5748 países=AT,BG,CY,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€627.25
+  [€/100Kg | Heifers | EU3] n=5449 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€655.16
+  [€/100Kg | Bulls | BR3] n=5102 países=AT,BG,CZ,DE,DK,EE,EU,FI,FR,HR,IE,IT,LT,LU,LV,MT,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€582.63
+  [€/100Kg | Heifers | EU2] n=4792 países=AT,BE,BG,CZ,DE,DK,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LU,LV,MT,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€654.91
+  [€/100Kg | Young cattle | ZO2] n=4653 países=AT,BG,CZ,DE,DK,EE,EL,ES,EU,HR,IE,IT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€584.12
+  [€/100Kg | Young cattle | ZR2] n=4219 países=AT,BG,DE,DK,EL,ES,EU,HR,IE,IT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€600.86
+  [€/100Kg | Young cattle | ZR3] n=3833 países=AT,BG,DK,EL,ES,EU,HR,IE,IT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€599.12
+  [€/100Kg | Young cattle | ZO3] n=3797 países=AT,BG,DE,DK,EL,ES,EU,HR,IE,IT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€626.97
+  [€/100Kg | Steers | CR3] n=3490 países=AT,BG,CZ,DE,DK,EU,FR,HR,IE,IT,LU,LV,PL,PT,RO,SE,SI mercados=0 2021-01-10→2026-09-27 último=€650.00
+  [€/100Kg | Steers | CO3] n=3359 países=AT,DE,DK,EE,EL,EU,FR,IE,IT,LU,LV,PL,PT,RO,SE,SI mercados=0 2021-01-10→2026-09-27 último=€640.00
+  [€/100Kg | Young cattle | ZU2] n=3241 países=AT,CZ,DE,DK,EL,ES,EU,HR,IE,IT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€610.19
+  [€/100Kg | Heifers | EU4] n=3218 países=AT,BG,CZ,DE,DK,EU,HR,IE,IT,LT,LV,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€559.82
+  [€/100Kg | Young cattle | ZU3] n=2879 países=AT,BG,DK,ES,EU,HR,IE,IT,LV,MT,NL,PL,PT,RO,SE,SI mercados=0 2021-01-10→2026-09-27 último=€614.76
+  [€/100Kg | Steers | CR4] n=2613 países=AT,DE,DK,EU,FR,IE,IT,LU,LV,PL,PT,RO,SE,SI mercados=0 2021-01-10→2026-09-27 último=€650.00
+  [€/100Kg | Steers | CU3] n=2525 países=AT,DE,DK,EU,FR,IE,IT,LU,LV,PL,PT,RO,SE,SI mercados=0 2021-01-10→2026-09-20 último=€784.78
+  [€/100Kg | Calves slaughtered <8M | CALVES-LT8MONTHS] n=2178 países=BE,DE,EU,FR,HR,IT,NL,PT,SI mercados=0 2021-01-10→2026-09-27 último=€637.37
+  [€/100Kg | Steers | CU2] n=2007 países=AT,DE,DK,EU,FR,IE,IT,LU,PL,PT,RO,SE,SI mercados=0 2021-01-10→2026-09-20 último=€767.63
+  [€/100Kg | Steers | CO4] n=2005 países=AT,DE,DK,EU,FR,IE,IT,LU,LV,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-20 último=€745.14
+  [€/100Kg | Steers | CU4] n=1980 países=AT,DE,DK,EU,IE,IT,LV,PL,PT,RO,SE,SI mercados=0 2021-01-10→2026-09-20 último=€851.18
+EJEMPLO {"memberStateCode":"CY","memberStateName":"Cyprus","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€460.00","unit":"€/100Kg","weekNumber":39,"category":"Cows","productCode":"DP2"}
+
+=== pigmeat
+STATUS 200
+FILAS 22423 CAMPOS memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,pigClass
+CAMPOS_DE_GRUPO unit | pigClass
+GRUPOS 5
+  [100 KG | E] n=7948 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€184.88
+  [100 KG | S] n=7265 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€184.49
+  [P | Piglet] n=4235 países=BE,CZ,DE,DK,EE,ES,EU,FI,FR,HR,HU,IT,LV,NL,PL,PT,SE mercados=0 2021-01-10→2026-09-20 último=€93.55
+  [100 KG | R] n=2673 países=BG,CZ,DE,DK,EE,EL,ES,EU,FI,IT,LT,LU,LV,MT,PL,RO,SI,SK mercados=0 2021-01-10→2026-09-20 último=€180.01
+  [100 KG | Average S + E] n=302 países=EU mercados=0 2021-01-10→2026-09-20 último=€167.10
+EJEMPLO {"memberStateCode":"CY","memberStateName":"Cyprus","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€195.43","unit":"100 KG","weekNumber":39,"pigClass":"E"}
+
+=== poultry
+STATUS 200
+FILAS 18197 CAMPOS memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,productName,priceType
+CAMPOS_DE_GRUPO unit | productName | priceType
+GRUPOS 3
+  [national currency/100kg | Whole broiler (65%) | Selling price] n=6597 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€239.03
+  [national currency/100kg | Breast Fillet | Selling price] n=5842 países=AT,BE,BG,CY,CZ,DE,EE,EL,ES,EU,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€438.93
+  [national currency/100kg | Legs | Selling price] n=5758 países=AT,BE,BG,CY,CZ,DE,EE,EL,ES,EU,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2026-09-27 último=€231.42
+EJEMPLO {"memberStateCode":"HR","memberStateName":"Croatia","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€676.04","unit":"national currency/100kg","weekNumber":39,"productName":"Breast Fillet","priceType":"Selling price"}
+
+=== poultry/egg
+STATUS 200
+FILAS 23077 CAMPOS beginDate,endDate,price,unit,farmingMethod,marketingYear,weekNumber,memberStateCode,memberStateName
+CAMPOS_DE_GRUPO unit | farmingMethod | marketingYear
+GRUPOS 24
+  [€/100Kg | Barn | 2023] n=1266 países=AT,BE,BG,CY,CZ,DE,EE,ES,EU,FI,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2023-01-01→2023-12-31 último=€242.54
+  [€/100Kg | Barn | 2025] n=1244 países=AT,BE,BG,CY,CZ,DE,EE,EL,ES,EU,FI,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2025-01-05→2026-01-04 último=€283.01
+  [€/100Kg | Barn | 2022] n=1228 países=AT,BE,BG,CY,CZ,DE,DK,EE,ES,EU,FI,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2022-01-02→2023-01-01 último=€248.64
+  [€/100Kg | Barn | 2024] n=1219 países=AT,BE,BG,CY,CZ,DE,EE,EL,ES,EU,FI,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2024-01-07→2025-01-05 último=€276.03
+  [€/100Kg | Cage | 2022] n=1175 países=BE,BG,CY,CZ,DK,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,MT,PL,PT,RO,SE,SI,SK mercados=0 2022-01-02→2023-01-01 último=€207.61
+  [€/100Kg | Cage | 2023] n=1165 países=BE,BG,CY,CZ,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,MT,PL,PT,RO,SI,SK mercados=0 2023-01-01→2023-12-31 último=€201.75
+  [€/100Kg | Cage | 2025] n=1158 países=BE,BG,CY,CZ,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,MT,PL,PT,RO,SI,SK mercados=0 2025-01-05→2026-01-04 último=€302.02
+  [€/100Kg | Cage | 2024] n=1158 países=BE,BG,CY,CZ,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,MT,PL,PT,RO,SI,SK mercados=0 2024-01-07→2025-01-05 último=€229.11
+  [€/100Kg | Cage | 2021] n=1130 países=BE,BG,CY,CZ,DK,EE,EL,ES,FI,FR,HR,HU,IE,IT,LT,LV,MT,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2022-01-02 último=€145.33
+  [€/100Kg | Barn | 2021] n=1027 países=AT,BE,BG,CZ,DE,DK,EE,EL,ES,FI,HR,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-10→2022-01-02 último=€188.35
+  [€/100Kg | Free range | 2025] n=959 países=AT,BE,BG,CY,DE,EE,EL,ES,EU,FR,IE,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2025-01-05→2026-01-04 último=€303.16
+  [€/100Kg | Free range | 2024] n=944 países=AT,BE,BG,CY,DE,EE,EL,ES,EU,FR,IE,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2024-01-07→2025-01-05 último=€307.37
+  [€/100Kg | Free range | 2023] n=937 países=AT,BE,BG,CY,DE,EE,ES,EU,FR,IE,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2023-01-01→2023-12-31 último=€287.18
+  [€/100Kg | Organic | 2025] n=902 países=AT,BE,CY,CZ,DE,EE,EL,ES,EU,FI,FR,IE,LT,LV,NL,PL,PT,RO,SE,SI mercados=0 2025-01-05→2026-01-04 último=€398.48
+  [€/100Kg | Organic | 2023] n=902 países=AT,BE,CY,CZ,DE,EE,EU,FI,FR,IE,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2023-01-01→2023-12-31 último=€362.28
+  [€/100Kg | Organic | 2024] n=900 países=AT,BE,BG,CY,CZ,DE,EE,EL,ES,EU,FI,FR,IE,LT,LV,NL,PL,PT,RO,SE,SI mercados=0 2024-01-07→2025-01-05 último=€371.47
+  [€/100Kg | Barn | 2026] n=880 países=AT,BE,BG,CY,CZ,DE,EE,ES,EU,FI,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2026-01-04→2026-09-27 último=€240.40
+  [€/100Kg | Free range | 2022] n=853 países=AT,BE,BG,CY,DE,EE,ES,EU,FR,IE,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2022-01-02→2023-01-01 último=€287.40
+  [€/100Kg | Organic | 2022] n=841 países=AT,BE,BG,CY,DE,EE,EU,FI,FR,IE,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2022-01-02→2023-01-01 último=€351.70
+  [€/100Kg | Cage | 2026] n=791 países=BE,BG,CY,CZ,EE,EL,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,MT,PL,PT,RO,SI,SK mercados=0 2026-01-04→2026-09-27 último=€208.11
+  [€/100Kg | Free range | 2026] n=682 países=AT,BE,BG,CY,CZ,DE,EE,ES,EU,FR,IE,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2026-01-04→2026-09-27 último=€319.54
+  [€/100Kg | Free range | 2021] n=611 países=AT,BE,BG,DE,EE,EL,FR,IE,LT,LV,NL,PL,PT,RO,SE,SI mercados=0 2021-01-10→2022-01-02 último=€233.71
+  [€/100Kg | Organic | 2026] n=593 países=AT,BE,CY,CZ,DE,ES,EU,FI,FR,IE,LV,NL,PL,PT,RO,SE,SI mercados=0 2026-01-04→2026-09-27 último=€402.37
+  [€/100Kg | Organic | 2021] n=512 países=AT,BE,DE,EE,EL,FI,FR,IE,NL,PL,RO,SE,SI mercados=0 2021-01-10→2022-01-02 último=€320.64
+EJEMPLO {"beginDate":"21/09/2026","endDate":"27/09/2026","price":"€268.11","unit":"€/100Kg","farmingMethod":"Cage","marketingYear":2026,"weekNumber":39,"memberStateCode":"HR","memberStateName":"Croatia"}
+
+=== sheepAndGoat
+STATUS 200
+FILAS 8938 CAMPOS memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,category,marketName,marketingYear
+CAMPOS_DE_GRUPO unit | category | marketingYear
+GRUPOS 12
+  [100kg | Heavy Lamb | 2025] n=1013 países=AT,BE,BG,CY,DE,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI mercados=21 2025-01-05→2026-01-04 último=€863.35
+  [100kg | Heavy Lamb | 2024] n=1012 países=AT,BE,BG,CY,DE,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,PL,PT,RO,SE,SI mercados=20 2024-01-07→2025-01-05 último=€678.84
+  [100kg | Heavy Lamb | 2023] n=1010 países=AT,BE,BG,CY,DE,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI mercados=21 2023-01-01→2023-12-31 último=€644.40
+  [100kg | Heavy Lamb | 2021] n=1010 países=AT,BE,CY,DE,EE,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI mercados=21 2021-01-10→2022-01-02 último=€598.54
+  [100kg | Heavy Lamb | 2022] n=999 países=AT,BE,CY,DE,EE,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI mercados=21 2022-01-02→2023-01-01 último=€615.53
+  [100kg | Heavy Lamb | 2026] n=741 países=AT,BE,BG,CY,DE,ES,EU,FI,FR,HR,HU,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI mercados=21 2026-01-04→2026-09-27 último=€1001.67
+  [100kg | Light Lamb | 2021] n=583 países=BG,EE,EL,ES,EU,HR,HU,IT,LV,PL,PT,RO,SI,SK mercados=14 2021-01-10→2022-01-02 último=€773.46
+  [100kg | Light Lamb | 2024] n=561 países=BG,EL,ES,EU,HR,HU,IT,LV,PL,PT,RO,SI,SK mercados=13 2024-01-07→2025-01-05 último=€986.40
+  [100kg | Light Lamb | 2023] n=554 países=BG,EL,ES,EU,HR,HU,IT,LV,PL,PT,RO,SI,SK mercados=13 2023-01-01→2023-12-31 último=€916.40
+  [100kg | Light Lamb | 2022] n=552 países=BG,EL,ES,EU,HR,HU,IT,LV,PL,PT,RO,SI,SK mercados=13 2022-01-02→2023-01-01 último=€765.31
+  [100kg | Light Lamb | 2025] n=523 países=BG,EL,ES,EU,HR,HU,IT,LV,PL,PT,RO,SI,SK mercados=13 2025-01-05→2026-01-04 último=€1130.50
+  [100kg | Light Lamb | 2026] n=380 países=BG,EL,ES,EU,HR,HU,IT,LV,PL,PT,RO,SI mercados=12 2026-01-04→2026-09-27 último=€1154.01
+EJEMPLO {"memberStateCode":"CY","memberStateName":"Cyprus","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€919.00","unit":"100kg","weekNumber":39,"category":"Heavy Lamb","marketName":"CY","marketingYear":2026}
+
+=== fruitAndVeg
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== fruitAndVegetables
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== fruitandveg
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== fruitVegetable
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== wine
+STATUS 200
+FILAS 1776 CAMPOS memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,description
+CAMPOS_DE_GRUPO unit | description
+GRUPOS 33
+  [Euro / HL. | Blancs / Vin IGP] n=61 países=FR mercados=0 2021-02-07→2025-11-02 último=€113.68
+  [Euro / HL. | Blancs / Vin sans IG avec mention de cépages] n=61 países=FR mercados=0 2021-02-07→2025-11-02 último=€101.14
+  [Euro / HL. | Rouges et Rosés / Vin sans IG sans mention de cépages] n=61 países=FR mercados=0 2021-02-07→2025-11-02 último=€65.42
+  [Euro / HL. | Rouges et Rosés / Vin IGP] n=61 países=FR mercados=0 2021-02-07→2025-11-02 último=€91.80
+  [Euro / HL. | Rouges et Rosés / Vin sans IG avec mention de cépages] n=61 países=FR mercados=0 2021-02-07→2025-11-02 último=€84.42
+  [Euro / HL. | Blancs / Vin sans IG sans mention de cépages] n=61 países=FR mercados=0 2021-02-07→2025-11-02 último=€69.21
+  [Euro / HL. | Rouges et Rosés / Vin AOP] n=58 países=FR mercados=0 2021-02-07→2025-11-02 último=€110.32
+  [Euro / HL. | Toledo vino blanco sin DOP/IGP] n=57 países=ES mercados=0 2021-02-07→2025-07-06 último=€47.65
+  [Euro / HL. | Ciudad Real vino tinto sin DOP/IGP] n=57 países=ES mercados=0 2021-02-07→2025-07-06 último=€43.43
+  [Euro / HL. | Ciudad Real vino blanco sin DOP/IGP] n=57 países=ES mercados=0 2021-02-07→2025-07-06 último=€46.46
+  [Euro / HL. | Badajoz vino blanco sin DOP/IGP] n=57 países=ES mercados=0 2021-02-07→2025-07-06 último=€51.04
+  [Euro / HL. | Albacete vino tinto sin DOP/IGP] n=57 países=ES mercados=0 2021-02-07→2025-07-06 último=€48.19
+  [Euro / HL. | Albacete vino blanco sin DOP/IGP] n=57 países=ES mercados=0 2021-02-07→2025-07-06 último=€59.07
+  [Euro / HL. | Toledo vino tinto sin DOP/IGP] n=57 países=ES mercados=0 2021-02-07→2025-07-06 último=€40.89
+  [Euro / HL. | Blancs / Vin AOP] n=56 países=FR mercados=0 2021-02-07→2025-11-02 último=€139.12
+  [Euro / HL. | Trapani Vino rosso senza DOP/IGP] n=54 países=IT mercados=0 2021-02-07→2025-07-06 último=€61.00
+  [Euro / HL. | Trapani Vino bianco senza DOP/IGP] n=54 países=IT mercados=0 2021-02-07→2025-07-06 último=€71.88
+  [Euro / HL. | Pescara Vino rosso senza DOP/IGP] n=54 países=IT mercados=0 2021-02-07→2025-07-06 último=€70.88
+  [Euro / HL. | Pescara Vino bianco senza DOP/IGP] n=54 países=IT mercados=0 2021-02-07→2025-07-06 último=€61.75
+  [Euro / HL. | Bari Vino rosso senza DOP/IGP] n=54 países=IT mercados=0 2021-02-07→2025-07-06 último=€43.70
+  [Euro / HL. | Lugo Vino bianco senza DOP/IGP] n=54 países=IT mercados=0 2021-02-07→2025-07-06 último=€53.40
+  [Euro / HL. | Lugo Vino rosso DOP] n=54 países=IT mercados=0 2021-02-07→2025-07-06 último=€79.20
+  [Euro / HL. | Bari Vino bianco senza DOP/IGP] n=54 países=IT mercados=0 2021-02-07→2025-07-06 último=€50.05
+  [Euro / HL. | Mosel Qba Weiß] n=53 países=DE mercados=0 2021-02-07→2025-07-06 último=€130.00
+  [Euro / HL. | Verona Vino rosso senza DOP/IGP] n=53 países=IT mercados=0 2021-02-07→2025-07-06 último=€53.50
+  [Euro / HL. | Rheingau Qba Weiß] n=52 países=DE mercados=0 2021-02-07→2025-07-06 último=€70.00
+  [Euro / HL. | Valencia vino tinto sin DOP/IGP] n=52 países=ES mercados=0 2021-02-07→2025-07-06 último=€51.91
+  [Euro / HL. | Verona Vino bianco DOP] n=46 países=IT mercados=0 2021-02-07→2025-07-06 último=€100.00
+  [Euro / HL. | Pfalz Qba Weiß] n=44 países=DE mercados=0 2021-02-07→2025-02-02 último=€70.00
+  [Euro / HL. | Rheinhessen ohne Rebsorteangabe] n=42 países=DE mercados=0 2021-02-07→2025-05-04 último=€45.00
+  [Euro / HL. | Rheinhessen Qba Weiß] n=42 países=DE mercados=0 2021-02-07→2025-03-02 último=€62.50
+  [Euro / HL. | Pfalz ohne Rebsorteangabe] n=42 países=DE mercados=0 2021-02-07→2025-01-05 último=€55.00
+  [Euro / HL. | Pfalz QbA Rot Dornfelder] n=39 países=DE mercados=0 2021-02-07→2025-02-02 último=€62.50
+EJEMPLO {"memberStateCode":"FR","memberStateName":"France","beginDate":"27/10/2025","endDate":"02/11/2025","price":"€139.12","unit":"Euro / HL.","weekNumber":13,"description":"Blancs / Vin AOP"}
+
+=== wine/prices
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== sugar
+STATUS 200
+FILAS 740 CAMPOS sugarRegion,price,unit,ym,marketingYear,marketingYearMonth,weight,contractType
+CAMPOS_DE_GRUPO sugarRegion | unit | marketingYear | marketingYearMonth | weight | contractType
+GRUPOS 740
+  [EU Average | Tonne | 2025/2026 | Jun | 763148.7 | Monthly data] n=1 países= mercados=0 2026/06→2026/06 último=501.4009
+  [Region 1 | Tonne | 2025/2026 | Jun | 173392.75 | Monthly data] n=1 países= mercados=0 2026/06→2026/06 último=506.0622
+  [Region 1 | Tonne | 2025/2026 | Jun | 7789.12 | Short term contracts] n=1 países= mercados=0 2026/06→2026/06 último=436.7388
+  [Region 2 | Tonne | 2025/2026 | Jun | 523473.09 | Monthly data] n=1 países= mercados=0 2026/06→2026/06 último=494.0552
+  [Region 3 | Tonne | 2025/2026 | Jun | 4332.87 | Short term contracts] n=1 países= mercados=0 2026/06→2026/06 último=527.8299
+  [Region 3 | Tonne | 2025/2026 | Jun | 66282.86 | Monthly data] n=1 países= mercados=0 2026/06→2026/06 último=547.2198
+  [EU Average | Tonne | 2025/2026 | May | 698591.36 | Monthly data] n=1 países= mercados=0 2026/05→2026/05 último=504.8693
+  [Region 1 | Tonne | 2025/2026 | May | 6161.45 | Short term contracts] n=1 países= mercados=0 2026/05→2026/05 último=433.3407
+  [Region 1 | Tonne | 2025/2026 | May | 165220.05 | Monthly data] n=1 países= mercados=0 2026/05→2026/05 último=505.2653
+  [Region 2 | Tonne | 2025/2026 | May | 465773.8 | Monthly data] n=1 países= mercados=0 2026/05→2026/05 último=497.3828
+  [Region 3 | Tonne | 2025/2026 | May | 6222.05 | Short term contracts] n=1 países= mercados=0 2026/05→2026/05 último=534.7911
+  [Region 3 | Tonne | 2025/2026 | May | 67597.51 | Monthly data] n=1 países= mercados=0 2026/05→2026/05 último=555.4863
+  [EU Average | Tonne | 2025/2026 | Apr | 727647.48 | Monthly data] n=1 países= mercados=0 2026/04→2026/04 último=502.1113
+  [EU Average | Tonne | 2025/2026 | Apr | 15621.25 | Short term contracts] n=1 países= mercados=0 2026/04→2026/04 último=488.7805
+  [Region 1 | Tonne | 2025/2026 | Apr | 164007.01 | Monthly data] n=1 países= mercados=0 2026/04→2026/04 último=502.3408
+  [Region 1 | Tonne | 2025/2026 | Apr | 7451.8 | Short term contracts] n=1 países= mercados=0 2026/04→2026/04 último=419.1388
+  [Region 2 | Tonne | 2025/2026 | Apr | 503137.3 | Monthly data] n=1 países= mercados=0 2026/04→2026/04 último=495.3363
+  [Region 3 | Tonne | 2025/2026 | Apr | 7425.51 | Short term contracts] n=1 países= mercados=0 2026/04→2026/04 último=548.3003
+  [Region 3 | Tonne | 2025/2026 | Apr | 60503.17 | Monthly data] n=1 países= mercados=0 2026/04→2026/04 último=557.8295
+  [EU Average | Tonne | 2025/2026 | Mar | 787057.96 | Monthly data] n=1 países= mercados=0 2026/03→2026/03 último=510.1677
+  [Region 1 | Tonne | 2025/2026 | Mar | 178792.87 | Monthly data] n=1 países= mercados=0 2026/03→2026/03 último=503.2841
+  [Region 1 | Tonne | 2025/2026 | Mar | 6013.78 | Short term contracts] n=1 países= mercados=0 2026/03→2026/03 último=418.1857
+  [Region 2 | Tonne | 2025/2026 | Mar | 539296.19 | Monthly data] n=1 países= mercados=0 2026/03→2026/03 último=506.3575
+  [Region 3 | Tonne | 2025/2026 | Mar | 7350.53 | Short term contracts] n=1 países= mercados=0 2026/03→2026/03 último=544.8158
+  [Region 3 | Tonne | 2025/2026 | Mar | 68968.9 | Monthly data] n=1 países= mercados=0 2026/03→2026/03 último=557.8055
+  [EU Average | Tonne | 2025/2026 | Feb | 690746.96 | Monthly data] n=1 países= mercados=0 2026/02→2026/02 último=512.9793
+  [Region 1 | Tonne | 2025/2026 | Feb | 160508.58 | Monthly data] n=1 países= mercados=0 2026/02→2026/02 último=524.5827
+  [Region 1 | Tonne | 2025/2026 | Feb | 6199.74 | Short term contracts] n=1 países= mercados=0 2026/02→2026/02 último=414.0459
+  [Region 2 | Tonne | 2025/2026 | Feb | 475044.33 | Monthly data] n=1 países= mercados=0 2026/02→2026/02 último=502.6389
+  [Region 3 | Tonne | 2025/2026 | Feb | 55194.05 | Monthly data] n=1 países= mercados=0 2026/02→2026/02 último=568.233
+  [Region 3 | Tonne | 2025/2026 | Feb | 4114.95 | Short term contracts] n=1 países= mercados=0 2026/02→2026/02 último=546.0269
+  [EU Average | Tonne | 2025/2026 | Jan | 723748.7 | Monthly data] n=1 países= mercados=0 2026/01→2026/01 último=516.2968
+  [Region 1 | Tonne | 2025/2026 | Jan | 153464.23 | Monthly data] n=1 países= mercados=0 2026/01→2026/01 último=515.1061
+  [Region 1 | Tonne | 2025/2026 | Jan | 5532.22 | Short term contracts] n=1 países= mercados=0 2026/01→2026/01 último=421.4057
+  [Region 2 | Tonne | 2025/2026 | Jan | 513109.53 | Monthly data] n=1 países= mercados=0 2026/01→2026/01 último=511.4451
+  [Region 3 | Tonne | 2025/2026 | Jan | 5426.27 | Short term contracts] n=1 países= mercados=0 2026/01→2026/01 último=572.4225
+  [Region 3 | Tonne | 2025/2026 | Jan | 57174.94 | Monthly data] n=1 países= mercados=0 2026/01→2026/01 último=563.0344
+  [EU Average | Tonne | 2025/2026 | Dec | 18948.63 | Short term contracts] n=1 países= mercados=0 2025/12→2025/12 último=512.6076
+  [EU Average | Tonne | 2025/2026 | Dec | 621447.03 | Monthly data] n=1 países= mercados=0 2025/12→2025/12 último=518.3146
+  [Region 1 | Tonne | 2025/2026 | Dec | 7094.75 | Short term contracts] n=1 países= mercados=0 2025/12→2025/12 último=454.7416
+  [Region 1 | Tonne | 2025/2026 | Dec | 115846.16 | Monthly data] n=1 países= mercados=0 2025/12→2025/12 último=527.8359
+  [Region 2 | Tonne | 2025/2026 | Dec | 442157.07 | Monthly data] n=1 países= mercados=0 2025/12→2025/12 último=508.7253
+  [Region 3 | Tonne | 2025/2026 | Dec | 8712.59 | Short term contracts] n=1 países= mercados=0 2025/12→2025/12 último=578.1614
+  [Region 3 | Tonne | 2025/2026 | Dec | 63443.8 | Monthly data] n=1 países= mercados=0 2025/12→2025/12 último=567.7592
+  [EU Average | Tonne | 2025/2026 | Nov | 30564.48 | Short term contracts] n=1 países= mercados=0 2025/11→2025/11 último=503.1192
+  [EU Average | Tonne | 2025/2026 | Nov | 740366.06 | Monthly data] n=1 países= mercados=0 2025/11→2025/11 último=525.4319
+  [Region 1 | Tonne | 2025/2026 | Nov | 16727.42 | Short term contracts] n=1 países= mercados=0 2025/11→2025/11 último=485.5046
+  [Region 1 | Tonne | 2025/2026 | Nov | 160743.01 | Monthly data] n=1 países= mercados=0 2025/11→2025/11 último=527.5436
+  [Region 2 | Tonne | 2025/2026 | Nov | 508089.53 | Monthly data] n=1 países= mercados=0 2025/11→2025/11 último=517.044
+  [Region 3 | Tonne | 2025/2026 | Nov | 7200.68 | Short term contracts] n=1 países= mercados=0 2025/11→2025/11 último=554.3628
+  [Region 3 | Tonne | 2025/2026 | Nov | 71533.52 | Monthly data] n=1 países= mercados=0 2025/11→2025/11 último=580.2649
+  [EU Average | Tonne | 2025/2026 | Oct | 785974.54 | Monthly data] n=1 países= mercados=0 2025/10→2025/10 último=531.6697
+  [EU Average | Tonne | 2025/2026 | Oct | 20170.67 | Short term contracts] n=1 países= mercados=0 2025/10→2025/10 último=546.7177
+  [Region 1 | Tonne | 2025/2026 | Oct | 174521.66 | Monthly data] n=1 países= mercados=0 2025/10→2025/10 último=537.6567
+  [Region 1 | Tonne | 2025/2026 | Oct | 10635.93 | Short term contracts] n=1 países= mercados=0 2025/10→2025/10 último=543.14
+  [Region 2 | Tonne | 2025/2026 | Oct | 540723.69 | Monthly data] n=1 países= mercados=0 2025/10→2025/10 último=521.5307
+  [Region 3 | Tonne | 2025/2026 | Oct | 70729.19 | Monthly data] n=1 países= mercados=0 2025/10→2025/10 último=594.41
+  [Region 3 | Tonne | 2025/2026 | Oct | 6900.24 | Short term contracts] n=1 países= mercados=0 2025/10→2025/10 último=564.317
+  [EU Average | Tonne | 2024/2025 | Sep | 794968.31 | Monthly data] n=1 países= mercados=0 2025/09→2025/09 último=528.9824
+  [Region 1 | Tonne | 2024/2025 | Sep | 194253.17 | Monthly data] n=1 países= mercados=0 2025/09→2025/09 último=531.646
+  [Region 1 | Tonne | 2024/2025 | Sep | 6786.76 | Short term contracts] n=1 países= mercados=0 2025/09→2025/09 último=524.9067
+  [Region 2 | Tonne | 2024/2025 | Sep | 527902.12 | Monthly data] n=1 países= mercados=0 2025/09→2025/09 último=520.2078
+  [Region 3 | Tonne | 2024/2025 | Sep | 72813.02 | Monthly data] n=1 países= mercados=0 2025/09→2025/09 último=585.4927
+  [Region 3 | Tonne | 2024/2025 | Sep | 6676.75 | Short term contracts] n=1 países= mercados=0 2025/09→2025/09 último=582.5621
+  [EU Average | Tonne | 2024/2025 | Aug | 718116.53 | Monthly data] n=1 países= mercados=0 2025/08→2025/08 último=535.8926
+  [Region 1 | Tonne | 2024/2025 | Aug | 3968.92 | Short term contracts] n=1 países= mercados=0 2025/08→2025/08 último=533.7205
+  [Region 1 | Tonne | 2024/2025 | Aug | 172277.52 | Monthly data] n=1 países= mercados=0 2025/08→2025/08 último=539.2653
+  [Region 2 | Tonne | 2024/2025 | Aug | 472218.7 | Monthly data] n=1 países= mercados=0 2025/08→2025/08 último=525.1524
+  [Region 3 | Tonne | 2024/2025 | Aug | 7043.42 | Short term contracts] n=1 países= mercados=0 2025/08→2025/08 último=536.8039
+  [Region 3 | Tonne | 2024/2025 | Aug | 73620.31 | Monthly data] n=1 países= mercados=0 2025/08→2025/08 último=596.8904
+  [EU Average | Tonne | 2024/2025 | Jul | 21404.51 | Short term contracts] n=1 países= mercados=0 2025/07→2025/07 último=566.1255
+  [EU Average | Tonne | 2024/2025 | Jul | 831363.83 | Monthly data] n=1 países= mercados=0 2025/07→2025/07 último=537.8029
+  [Region 1 | Tonne | 2024/2025 | Jul | 8971.84 | Short term contracts] n=1 países= mercados=0 2025/07→2025/07 último=529.6183
+  [Region 1 | Tonne | 2024/2025 | Jul | 190022.83 | Monthly data] n=1 países= mercados=0 2025/07→2025/07 último=533.1314
+  [Region 2 | Tonne | 2024/2025 | Jul | 563120.75 | Monthly data] n=1 países= mercados=0 2025/07→2025/07 último=532.0275
+  [Region 3 | Tonne | 2024/2025 | Jul | 9086.67 | Short term contracts] n=1 países= mercados=0 2025/07→2025/07 último=612.5183
+  [Region 3 | Tonne | 2024/2025 | Jul | 78220.25 | Monthly data] n=1 países= mercados=0 2025/07→2025/07 último=590.7294
+  [EU Average | Tonne | 2024/2025 | Jun | 789922.19 | Monthly data] n=1 países= mercados=0 2025/06→2025/06 último=536.3391
+  [EU Average | Tonne | 2024/2025 | Jun | 21846.69 | Short term contracts] n=1 países= mercados=0 2025/06→2025/06 último=556.4749
+  [Region 1 | Tonne | 2024/2025 | Jun | 8916.95 | Short term contracts] n=1 países= mercados=0 2025/06→2025/06 último=516.3252
+  [Region 1 | Tonne | 2024/2025 | Jun | 176100.09 | Monthly data] n=1 países= mercados=0 2025/06→2025/06 último=536.9305
+  [Region 2 | Tonne | 2024/2025 | Jun | 540141.74 | Monthly data] n=1 países= mercados=0 2025/06→2025/06 último=524.4871
+  [Region 3 | Tonne | 2024/2025 | Jun | 73680.36 | Monthly data] n=1 países= mercados=0 2025/06→2025/06 último=621.8117
+  [Region 3 | Tonne | 2024/2025 | Jun | 11654.14 | Short term contracts] n=1 países= mercados=0 2025/06→2025/06 último=585.1406
+  [EU Average | Tonne | 2024/2025 | May | 765615.33 | Monthly data] n=1 países= mercados=0 2025/05→2025/05 último=540.1505
+  [EU Average | Tonne | 2024/2025 | May | 18724.94 | Short term contracts] n=1 países= mercados=0 2025/05→2025/05 último=541.6725
+  [Region 1 | Tonne | 2024/2025 | May | 184682.74 | Monthly data] n=1 países= mercados=0 2025/05→2025/05 último=538.3113
+  [Region 1 | Tonne | 2024/2025 | May | 8775.36 | Short term contracts] n=1 países= mercados=0 2025/05→2025/05 último=493.725
+  [Region 2 | Tonne | 2024/2025 | May | 502138.62 | Monthly data] n=1 países= mercados=0 2025/05→2025/05 último=530.1606
+  [Region 3 | Tonne | 2024/2025 | May | 9013.54 | Short term contracts] n=1 países= mercados=0 2025/05→2025/05 último=596.2803
+  … (recortado)
+EJEMPLO {"sugarRegion":"EU Average","price":"501.4009","unit":"Tonne","ym":"2026/06","marketingYear":"2025/2026","marketingYearMonth":"Jun","weight":763148.7,"contractType":"Monthly data"}
+
+=== rice
+STATUS 200
+FILAS 18001 CAMPOS memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,marketingYear,stage,type,variety
+CAMPOS_DE_GRUPO unit | marketingYear | stage | type | variety
+GRUPOS 397
+  [Tonne | 2023/2024 | Milled non parboiled | Japonica | Avg] n=236 países=BG,EL,ES,FR,IT,RO mercados=0 2023-09-03→2024-09-01 último=€1343.37
+  [Tonne | 2022/2023 | Milled non parboiled | Japonica | Avg] n=234 países=BG,EL,ES,FR,IT mercados=0 2022-09-04→2023-09-03 último=€1152.22
+  [Tonne | 2021/2022 | Milled non parboiled | Japonica | Avg] n=221 países=BG,EL,ES,FR,IT mercados=0 2021-09-05→2022-09-04 último=€763.71
+  [Tonne | 2021/2022 | Paddy | Japonica | Avg] n=218 países=BG,EL,ES,IT,PT mercados=0 2021-09-05→2022-09-04 último=€413.88
+  [Tonne | 2023/2024 | Paddy | Japonica | Avg] n=212 países=BG,EL,ES,IT,PT mercados=0 2023-09-03→2024-09-01 último=€598.22
+  [Tonne | 2024/2025 | Milled non parboiled | Japonica | Avg] n=211 países=BG,EL,ES,FR,IT,RO mercados=0 2024-09-01→2025-08-31 último=€1112.07
+  [Tonne | 2022/2023 | Paddy | Japonica | Avg] n=206 países=BG,EL,ES,IT,PT mercados=0 2022-09-04→2023-09-03 último=€646.21
+  [Tonne | 2025/2026 | Broken | N.A. | Avg] n=205 países=BG,EL,ES,FR,IT mercados=0 2025-09-07→2026-09-06 último=€432.23
+  [Tonne | 2025/2026 | Milled non parboiled | Japonica | Avg] n=204 países=BG,EL,ES,FR,RO mercados=0 2025-09-07→2026-09-06 último=€1081.90
+  [Tonne | 2024/2025 | Paddy | Japonica | Avg] n=195 países=BG,EL,ES,IT,PT,RO mercados=0 2024-09-01→2025-08-31 último=€536.35
+  [Tonne | 2023/2024 | Broken | N.A. | Avg] n=195 países=BG,EL,ES,IT mercados=0 2023-09-03→2024-09-01 último=€585.00
+  [Tonne | 2024/2025 | Broken | N.A. | Avg] n=192 países=BG,EL,ES,IT mercados=0 2024-09-01→2025-08-31 último=€456.59
+  [Tonne | 2025/2026 | Paddy | Japonica | Avg] n=190 países=BG,EL,ES,IT,PT,RO mercados=0 2025-09-07→2026-09-06 último=€451.68
+  [Tonne | 2022/2023 | Broken | N.A. | Avg] n=185 países=BG,EL,ES,IT mercados=0 2022-09-04→2023-09-03 último=€420.85
+  [Tonne | 2023/2024 | Milled parboiled | Japonica | Avg] n=184 países=DE,EL,FR,IT mercados=0 2023-09-03→2024-09-01 último=€890.00
+  [Tonne | 2021/2022 | Broken | N.A. | Avg] n=177 países=BG,EL,ES,IT mercados=0 2021-09-05→2022-09-04 último=€403.01
+  [Tonne | 2022/2023 | Milled parboiled | Japonica | Avg] n=175 países=DE,EL,FR,IT mercados=0 2022-09-04→2023-09-03 último=€1360.00
+  [Tonne | 2021/2022 | Paddy | Indica | Avg] n=162 países=EL,ES,IT,PT mercados=0 2021-09-05→2022-09-04 último=€412.40
+  [Tonne | 2025/2026 | Milled non parboiled | Japonica | Average] n=156 países=BG,EL,ES,RO mercados=0 2025-09-07→2026-09-06 último=€1081.90
+  [Tonne | 2025/2026 | Broken | N.A. | Average] n=155 países=BG,EL,ES mercados=0 2025-09-07→2026-09-06 último=€432.23
+  [Tonne | 2024/2025 | Milled non parboiled | Japonica | Average] n=155 países=BG,EL,ES,FR,RO mercados=0 2024-09-01→2025-08-31 último=€1112.07
+  [Tonne | 2023/2024 | Paddy | Indica | Avg] n=151 países=EL,ES,IT,PT mercados=0 2023-09-03→2024-08-25 último=€540.45
+  [Tonne | 2022/2023 | Paddy | Indica | Avg] n=151 países=EL,ES,IT,PT mercados=0 2022-09-04→2023-09-03 último=€558.71
+  [Tonne | 2024/2025 | Broken | N.A. | Average] n=147 países=BG,EL,ES mercados=0 2024-09-01→2025-08-31 último=€456.59
+  [Tonne | 2024/2025 | Paddy | Japonica | Average] n=144 países=BG,EL,ES,RO mercados=0 2024-09-01→2025-08-31 último=€536.35
+  [Tonne | 2025/2026 | Paddy | Japonica | Average] n=142 países=BG,EL,ES,RO mercados=0 2025-09-07→2026-09-06 último=€451.68
+  [Tonne | 2020/2021 | Paddy | Japonica | Avg] n=141 países=BG,EL,ES,IT,PT mercados=0 2021-01-10→2021-09-05 último=€375.00
+  [Tonne | 2024/2025 | Paddy | Indica | Avg] n=138 países=EL,ES,IT,PT mercados=0 2024-09-08→2025-08-31 último=€460.49
+  [Tonne | 2023/2024 | Milled non parboiled | Indica | Avg] n=138 países=EL,ES,IT,RO mercados=0 2023-09-03→2024-09-01 último=€1509.76
+  [Tonne | 2023/2024 | Milled parboiled | Indica | Avg] n=136 países=EL,ES,IT mercados=0 2023-09-03→2024-09-01 último=€1050.00
+  [Tonne | 2020/2021 | Milled non parboiled | Japonica | Avg] n=136 países=BG,EL,ES,FR,IT mercados=0 2021-01-10→2021-09-05 último=€643.32
+  [Tonne | 2021/2022 | Milled parboiled | Japonica | Avg] n=132 países=DE,EL,FR,IT mercados=0 2021-09-05→2022-09-04 último=€1325.00
+  [Tonne | 2022/2023 | Milled parboiled | Indica | Avg] n=129 países=EL,ES,FR,IT mercados=0 2022-09-04→2023-09-03 último=€708.94
+  [Tonne | 2022/2023 | Milled non parboiled | Indica | Avg] n=128 países=EL,ES,IT mercados=0 2022-09-04→2023-09-03 último=€677.85
+  [Tonne | 2025/2026 | Paddy | Indica | Avg] n=126 países=EL,ES,IT,PT mercados=0 2025-09-07→2026-09-06 último=€344.07
+  [Tonne | 2024/2025 | Milled parboiled | Japonica | Avg] n=125 países=DE,EL,FR,IT mercados=0 2024-09-01→2025-08-31 último=€1176.47
+  [Tonne | 2021/2022 | Milled non parboiled | Indica | Avg] n=119 países=EL,ES,IT mercados=0 2021-09-05→2022-09-04 último=€642.18
+  [Tonne | 2021/2022 | Milled parboiled | Indica | Avg] n=117 países=EL,ES,IT mercados=0 2021-09-05→2022-09-04 último=€703.69
+  [Tonne | 2023/2024 | Milled non parboiled | Japonica | Average] n=108 países=BG,EL,ES,FR,RO mercados=0 2023-09-03→2024-09-01 último=€1343.37
+  [Tonne | 2021/2022 | Milled non parboiled | Japonica | Average] n=106 países=BG,ES mercados=0 2021-09-05→2022-09-04 último=€763.71
+  [Tonne | 2021/2022 | Paddy | Japonica | Average] n=106 países=BG,ES mercados=0 2021-09-05→2022-09-04 último=€413.88
+  [Tonne | 2023/2024 | Paddy | Japonica | Average] n=105 países=BG,EL,ES mercados=0 2023-09-03→2024-09-01 último=€598.22
+  [Tonne | 2022/2023 | Milled non parboiled | Japonica | Average] n=104 países=BG,ES mercados=0 2022-09-04→2023-09-03 último=€1152.22
+  [Tonne | 2022/2023 | Paddy | Japonica | Average] n=103 países=BG,ES mercados=0 2022-09-04→2023-09-03 último=€646.21
+  [Tonne | 2025/2026 | Milled parboiled | Japonica | Avg] n=99 países=DE,FR mercados=0 2025-09-07→2026-09-06 último=€1578.95
+  [Tonne | 2023/2024 | Broken | N.A. | Not informed] n=94 países=BG,EL mercados=0 2023-09-03→2024-08-25 último=€613.56
+  [Tonne | 2024/2025 | Paddy | Indica | Average] n=89 países=EL,ES mercados=0 2024-09-08→2025-08-31 último=€460.49
+  [Tonne | 2025/2026 | Paddy | Indica | Average] n=88 países=EL,ES mercados=0 2025-09-07→2026-09-06 último=€344.07
+  [Tonne | 2022/2023 | Broken | N.A. | Not informed] n=85 países=BG,EL mercados=0 2022-09-04→2023-09-03 último=€443.00
+  [Tonne | 2024/2025 | Milled non parboiled | Indica | Avg] n=84 países=EL,ES,FR,IT,RO mercados=0 2024-09-01→2025-08-17 último=€850.00
+  [Tonne | 2024/2025 | Milled parboiled | Indica | Avg] n=83 países=EL,ES,IT mercados=0 2024-09-01→2025-08-17 último=€1000.00
+  [Tonne | 2024/2025 | Milled non parboiled | Indica | Average] n=74 países=EL,ES,RO mercados=0 2024-09-01→2025-08-17 último=€850.00
+  [Tonne | 2021/2022 | Broken | N.A. | Not informed] n=74 países=BG,EL mercados=0 2021-09-05→2022-09-04 último=€417.00
+  [Tonne | 2024/2025 | Milled parboiled | Indica | Average] n=73 países=EL,ES mercados=0 2024-09-01→2025-08-17 último=€1000.00
+  [Tonne | 2020/2021 | Paddy | Indica | Avg] n=72 países=EL,ES,IT,PT mercados=0 2021-01-10→2021-09-05 último=€359.19
+  [Tonne | 2020/2021 | Paddy | Japonica | Average] n=70 países=BG,ES mercados=0 2021-01-10→2021-09-05 último=€375.00
+  [Tonne | 2020/2021 | Milled non parboiled | Japonica | Average] n=70 países=BG,ES mercados=0 2021-01-10→2021-09-05 último=€643.32
+  [Tonne | 2020/2021 | Milled parboiled | Japonica | Avg] n=69 países=DE,EL,IT mercados=0 2021-01-10→2021-09-05 último=€635.00
+  [Tonne | 2020/2021 | Milled non parboiled | Indica | Avg] n=69 países=EL,ES,IT mercados=0 2021-01-10→2021-09-05 último=€610.83
+  [Tonne | 2020/2021 | Milled parboiled | Indica | Avg] n=69 países=EL,ES,IT mercados=0 2021-01-10→2021-09-05 último=€667.55
+  [Tonne | 2024/2025 | Milled parboiled | Japonica | Average] n=68 países=DE,EL,FR mercados=0 2024-09-01→2025-08-31 último=€1176.47
+  [Tonne | 2023/2024 | Milled parboiled | Japonica | Average] n=56 países=DE,EL,FR mercados=0 2023-09-03→2024-09-01 último=€890.00
+  [Tonne | 2023/2024 | Milled non parboiled | Indica | Average] n=56 países=EL,ES,RO mercados=0 2023-09-03→2024-09-01 último=€1509.76
+  [Tonne | 2023/2024 | Broken | N.A. | Average] n=54 países=BG,EL,ES mercados=0 2023-09-03→2024-09-01 último=€613.56
+  [Tonne | 2023/2024 | Milled parboiled | Indica | Average] n=54 países=EL,ES mercados=0 2023-09-03→2024-09-01 último=€1050.00
+  [Tonne | 2023/2024 | Paddy | Indica | Average] n=53 países=EL,ES mercados=0 2023-09-03→2024-08-25 último=€540.45
+  [Tonne | 2022/2023 | Milled parboiled | Japonica | Average] n=53 países=DE mercados=0 2022-09-04→2023-09-03 último=€1176.47
+  [Tonne | 2022/2023 | Milled non parboiled | Indica | Average] n=53 países=ES mercados=0 2022-09-04→2023-09-03 último=€677.85
+  [Tonne | 2022/2023 | Paddy | Indica | Average] n=53 países=ES mercados=0 2022-09-04→2023-09-03 último=€558.71
+  [Tonne | 2022/2023 | Milled parboiled | Indica | Average] n=53 países=ES mercados=0 2022-09-04→2023-09-03 último=€708.94
+  [Tonne | 2022/2023 | Broken | N.A. | Average] n=53 países=ES mercados=0 2022-09-04→2023-09-03 último=€420.85
+  [Tonne | 2021/2022 | Milled parboiled | Japonica | Average] n=53 países=DE mercados=0 2021-09-05→2022-09-04 último=€1531.53
+  [Tonne | 2021/2022 | Paddy | Japonica | Not informed] n=53 países=EL mercados=0 2021-09-05→2022-09-04 último=€472.00
+  [Tonne | 2021/2022 | Paddy | Indica | Not informed] n=53 países=EL mercados=0 2021-09-05→2022-09-04 último=€442.00
+  [Tonne | 2021/2022 | Milled non parboiled | Japonica | Roma] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€1280.00
+  [Tonne | 2021/2022 | Milled non parboiled | Japonica | Augusto] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€1300.00
+  [Tonne | 2021/2022 | Milled parboiled | Indica | Long B] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€1120.00
+  [Tonne | 2021/2022 | Paddy | Indica | Long B] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€.00
+  [Tonne | 2021/2022 | Broken | N.A. | Mezzagrana] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€570.00
+  [Tonne | 2021/2022 | Milled non parboiled | Japonica | S. Andrea] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€1280.00
+  [Tonne | 2021/2022 | Paddy | Japonica | Baldo] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€.00
+  [Tonne | 2021/2022 | Paddy | Japonica | Augusto] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€.00
+  [Tonne | 2021/2022 | Paddy | Japonica | S. Andrea] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€.00
+  [Tonne | 2021/2022 | Milled parboiled | Japonica | Baldo] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€1380.00
+  [Tonne | 2021/2022 | Milled non parboiled | Indica | Long B] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€1030.00
+  [Tonne | 2021/2022 | Milled non parboiled | Japonica | Ribe] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€1200.00
+  [Tonne | 2021/2022 | Paddy | Japonica | Sole Cl] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€.00
+  [Tonne | 2021/2022 | Paddy | Japonica | Loto] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€.00
+  [Tonne | 2021/2022 | Milled non parboiled | Japonica | Baldo] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€1280.00
+  [Tonne | 2021/2022 | Paddy | Japonica | Selenio] n=53 países=IT mercados=0 2021-09-05→2022-09-04 último=€.00
+  … (recortado)
+EJEMPLO {"memberStateCode":"FR","memberStateName":"France","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€1250.00","unit":"Tonne","weekNumber":4,"marketingYear":"2026/2027","stage":"Milled parboiled","type":"Japonica","variety":"Avg"}
+
+=== rawMilk
+STATUS 200
+FILAS 3295 CAMPOS memberStateCode,memberStateName,beginDate,endDate,month,monthName,price,unit,year,product
+CAMPOS_DE_GRUPO monthName | unit | product
+GRUPOS 24
+  [Apr | 100KG | Raw milk] n=162 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-04-30→2026-04-30 último=€43.66
+  [Mar | 100KG | Raw milk] n=162 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-03-31→2026-03-31 último=€44.51
+  [Feb | 100KG | Raw milk] n=162 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-02-28→2026-02-28 último=€46.54
+  [Jan | 100KG | Raw milk] n=162 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-31→2026-01-31 último=€48.21
+  [Aug | 100KG | Raw milk] n=161 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-08-31→2026-08-31 último=€44.45
+  [Jul | 100KG | Raw milk] n=161 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-07-31→2026-07-31 último=€43.56
+  [Jun | 100KG | Raw milk] n=161 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-06-30→2026-06-30 último=€42.96
+  [May | 100KG | Raw milk] n=161 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-05-31→2026-05-31 último=€44.56
+  [Sep | 100KG | Raw milk] n=158 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-09-30→2026-09-30 último=€45.53
+  [Dec | 100KG | Raw milk] n=135 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-12-31→2025-12-31 último=€50.85
+  [Nov | 100KG | Raw milk] n=135 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-11-30→2025-11-30 último=€54.31
+  [Oct | 100KG | Raw milk] n=135 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FI,FR,HR,HU,IE,IT,LT,LV,MT,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-10-31→2025-10-31 último=€56.43
+  [Jul | 100KG | Organic raw milk] n=129 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-07-31→2026-07-31 último=€56.87
+  [Jun | 100KG | Organic raw milk] n=128 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-06-30→2026-06-30 último=€56.37
+  [May | 100KG | Organic raw milk] n=128 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-05-31→2026-05-31 último=€58.37
+  [Aug | 100KG | Organic raw milk] n=127 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-08-31→2026-08-31 último=€58.45
+  [Apr | 100KG | Organic raw milk] n=127 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-04-30→2026-04-30 último=€59.16
+  [Mar | 100KG | Organic raw milk] n=126 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-03-31→2026-03-31 último=€60.12
+  [Feb | 100KG | Organic raw milk] n=124 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-02-28→2026-02-28 último=€64.32
+  [Jan | 100KG | Organic raw milk] n=122 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-01-31→2026-01-31 último=€63.94
+  [Dec | 100KG | Organic raw milk] n=108 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-12-31→2025-12-31 último=€66.27
+  [Nov | 100KG | Organic raw milk] n=108 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-11-30→2025-11-30 último=€66.69
+  [Oct | 100KG | Organic raw milk] n=107 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-10-31→2025-10-31 último=€66.36
+  [Sep | 100KG | Organic raw milk] n=106 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU-UK,FR,IE,IT,LT,LV,NL,PL,PT,RO,SE,SI,SK mercados=0 2021-09-30→2025-09-30 último=€64.45
+EJEMPLO {"memberStateCode":"AT","memberStateName":"Austria","beginDate":"01/09/2026","endDate":"30/09/2026","month":9,"monthName":"Sep","price":"€47.20","unit":"100KG","year":2026,"product":"Raw milk"}
+
+=== oliveOil
+STATUS 200
+FILAS 20799 CAMPOS memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,product,market,marketingYear
+CAMPOS_DE_GRUPO unit | product | marketingYear
+GRUPOS 36
+  [€/100kg | Extra virgin olive oil (up to 0.8%) | 2021/2022] n=1168 países=EL,ES,HR,IT,PT mercados=24 2021-10-03→2022-10-02 último=€400.00
+  [€/100kg | Extra virgin olive oil (up to 0.8%) | 2025/2026] n=1162 países=EL,ES,HR,IT,PT mercados=22 2025-10-05→2026-09-27 último=€346.22
+  [€/100kg | Extra virgin olive oil (up to 0.8%) | 2022/2023] n=1144 países=EL,ES,HR,IT,PT mercados=23 2022-10-02→2023-10-01 último=€830.00
+  [€/100kg | Extra virgin olive oil (up to 0.8%) | 2023/2024] n=1138 países=EL,ES,HR,IT,PT mercados=22 2023-10-01→2024-10-06 último=€728.00
+  [€/100kg | Extra virgin olive oil (up to 0.8%) | 2024/2025] n=1113 países=EL,ES,HR,IT,PT mercados=22 2024-10-06→2025-10-05 último=€436.50
+  [€/100kg | Virgin olive oil (up to 2%) | 2023/2024] n=958 países=EL,ES,HR,IT,PT mercados=19 2023-10-01→2024-10-06 último=€698.00
+  [€/100kg | Extra virgin olive oil (up to 0.8%) | 2020/2021] n=895 países=EL,ES,HR,IT,PT mercados=22 2021-01-10→2021-10-03 último=€317.66
+  [€/100kg | Virgin olive oil (up to 2%) | 2021/2022] n=891 países=EL,ES,HR,IT,PT mercados=20 2021-10-03→2022-10-02 último=€386.00
+  [€/100kg | Virgin olive oil (up to 2%) | 2022/2023] n=842 países=EL,ES,HR,IT,PT mercados=18 2022-10-02→2023-10-01 último=€762.50
+  [€/100kg | Virgin olive oil (up to 2%) | 2024/2025] n=811 países=EL,ES,HR,IT,PT mercados=17 2024-10-06→2025-10-05 último=€369.00
+  [€/100kg | Lampante olive oil (2%) | 2023/2024] n=788 países=EL,ES,IT,PT mercados=17 2023-10-01→2024-10-06 último=€662.50
+  [€/100kg | Lampante olive oil (2%) | 2022/2023] n=766 países=EL,ES,IT,PT mercados=15 2022-10-02→2023-10-01 último=€733.50
+  [€/100kg | Lampante olive oil (2%) | 2024/2025] n=760 países=EL,ES,IT,PT mercados=15 2024-10-06→2025-10-05 último=€347.50
+  [€/100kg | Lampante olive oil (2%) | 2021/2022] n=758 países=EL,ES,IT,PT mercados=16 2021-10-03→2022-10-02 último=€382.50
+  [€/100kg | Virgin olive oil (up to 2%) | 2025/2026] n=727 países=EL,ES,HR,IT,PT mercados=19 2025-10-05→2026-09-27 último=€325.00
+  [€/100kg | Lampante olive oil (2%) | 2025/2026] n=696 países=EL,ES,IT mercados=13 2025-10-05→2026-09-27 último=€280.00
+  [€/100kg | Virgin olive oil (up to 2%) | 2020/2021] n=693 países=EL,ES,HR,IT,PT mercados=18 2021-01-10→2021-10-03 último=€304.00
+  [€/100kg | Lampante olive oil (2%) | 2020/2021] n=577 países=EL,ES,IT mercados=14 2021-01-10→2021-10-03 último=€292.48
+  [€/100kg | Refined olive oil (up to 0.3%) | 2023/2024] n=423 países=ES,IT mercados=7 2023-10-01→2024-10-06 último=€660.00
+  [€/100kg | Refined olive oil (up to 0.3%) | 2024/2025] n=419 países=EL,ES,IT mercados=8 2024-10-06→2025-10-05 último=€347.50
+  [€/100kg | Refined olive oil (up to 0.3%) | 2022/2023] n=418 países=ES,IT mercados=7 2022-10-02→2023-10-01 último=€722.50
+  [€/100kg | Refined olive oil (up to 0.3%) | 2025/2026] n=410 países=ES,IT mercados=7 2025-10-05→2026-09-27 último=€345.00
+  [€/100kg | Refined olive oil (up to 0.3%) | 2021/2022] n=396 países=ES,IT mercados=7 2021-10-03→2022-10-02 último=€378.71
+  [€/100kg | Refined olive oil (up to 0.3%) | 2020/2021] n=311 países=ES,IT mercados=7 2021-01-10→2021-10-03 último=€301.00
+  [€/100kg | Crude olive-pomace oil (from 5 to 10%) | 2021/2022] n=273 países=EL,ES mercados=5 2021-10-03→2022-10-02 último=€181.00
+  [€/100kg | Refined olive-pomace oil (up to 0.3%) | 2020/2021] n=230 países=ES,IT mercados=6 2021-01-10→2021-10-03 último=€157.95
+  [€/100kg | Crude olive-pomace oil (from 5 to 10%) | 2023/2024] n=218 países=EL,ES mercados=5 2023-10-01→2024-10-06 último=€215.00
+  [€/100kg | Crude olive-pomace oil (from 5 to 10%) | 2024/2025] n=212 países=ES mercados=4 2024-10-06→2025-10-05 último=€126.35
+  [€/100kg | Crude olive-pomace oil (from 5 to 10%) | 2022/2023] n=212 países=ES mercados=4 2022-10-02→2023-10-01 último=€225.00
+  [€/100kg | Refined olive-pomace oil (up to 0.3%) | 2025/2026] n=209 países=ES,IT mercados=6 2025-10-05→2026-09-27 último=€207.00
+  [€/100kg | Refined olive-pomace oil (up to 0.3%) | 2022/2023] n=209 países=ES,IT mercados=6 2022-10-02→2023-10-01 último=€310.14
+  [€/100kg | Refined olive-pomace oil (up to 0.3%) | 2023/2024] n=207 países=ES,IT mercados=3 2023-10-01→2024-10-06 último=€368.78
+  [€/100kg | Crude olive-pomace oil (from 5 to 10%) | 2025/2026] n=206 países=EL,ES mercados=5 2025-10-05→2026-09-20 último=€115.00
+  [€/100kg | Refined olive-pomace oil (up to 0.3%) | 2024/2025] n=205 países=ES,IT mercados=3 2024-10-06→2025-10-05 último=€204.52
+  [€/100kg | Refined olive-pomace oil (up to 0.3%) | 2021/2022] n=198 países=ES,IT mercados=6 2021-10-03→2022-10-02 último=€271.39
+  [€/100kg | Crude olive-pomace oil (from 5 to 10%) | 2020/2021] n=156 países=ES mercados=4 2021-01-10→2021-10-03 último=€113.63
+EJEMPLO {"memberStateCode":"IT","memberStateName":"Italy","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€323.00","unit":"€/100kg","weekNumber":52,"product":"Refined olive oil (up to 0.3%)","market":"Foggia (ITF41)","marketingYear":"2025/2026"}
+
+=== fertiliser
+STATUS 200
+FILAS 276 CAMPOS year,quarter,month,memberStateName,product,price,unit
+CAMPOS_DE_GRUPO product | unit
+GRUPOS 3
+  [K (Potash) | €/tonne] n=92 países= mercados=0 2019-Apr→2026-May último=370
+  [N (Nitrogen) | €/tonne] n=92 países= mercados=0 2019-Apr→2026-May último=541
+  [P (Phosphorus) | €/tonne] n=92 países= mercados=0 2019-Apr→2026-May último=717
+EJEMPLO {"year":2026,"quarter":"Q3","month":"Aug","memberStateName":"European Commission","product":"K (Potash)","price":364,"unit":"€/tonne"}
+
+=== feed
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== proteinCrops
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== pulses
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== potatoes
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== flowers
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== honey
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
