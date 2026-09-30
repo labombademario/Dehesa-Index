@@ -27,7 +27,7 @@ function csv(text) {
   return rows.filter(r => r.length > 1);
 }
 const numv = v => { const s = String(v).replace(/,/g, '').trim(); return /^-?\d+(\.\d+)?$/.test(s) ? Number(s) : null; };
-async function link(page, re) { const h = await get(page); const m = [...h.matchAll(/href="([^"]+)"/g)].map(x => x[1]).filter(x => re.test(x)); return m; }
+async function link(page, re) { const h = await get(page); const m = [...h.matchAll(/href="([^"]+)"/g)].map(x => x[1]).map(x => x.split('?')[0]).filter(x => re.test(x)); return [...new Set(m)]; }
 const doc = { schemaVersion: '1.0', source: 'USDA Economic Research Service (ERS)', generatedAt: new Date().toISOString() };
 // 1) Food Price Outlook
 try {

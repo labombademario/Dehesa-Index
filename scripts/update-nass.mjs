@@ -23,11 +23,15 @@ async function q(params) {
   console.log('ERROR', JSON.stringify(params), err); return [];
 }
 function period(r) {
-  const y = r.year, rp = String(r.reference_period_desc || '').toUpperCase();
-  const m = rp.match(/(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)/);
+  const y = r.year, rp = String(r.reference_period_desc || '').toUpperCase().trim();
+  let m = rp.match(/^(?:FIRST OF |END OF )?(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$/);
   if (m) return y + '-' + String(MON[m[1]]).padStart(2, '0');
-  return null; // anual o campaña: no se incluye
+  m = rp.match(/^(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) THRU (JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$/);
+  if (m && MON[m[2]] >= MON[m[1]]) return y + '-' + String(MON[m[2]]).padStart(2, '0'); // trimestre: se etiqueta con su último mes
+  if (ANNUAL && /^(YEAR|ANNUAL)/.test(rp)) return String(y);
+  return null;
 }
+let ANNUAL = false;
 const num = v => { const s = String(v).replace(/,/g, '').trim(); return /^-?\d+(\.\d+)?$/.test(s) ? Number(s) : null; };
 const store = {};
 function add(rows, keep) {
@@ -39,6 +43,7 @@ function add(rows, keep) {
     const k = r.short_desc;
     const s = store[k] = store[k] || { d: k, u: r.unit_desc, n: {}, s: {} };
     if (r.agg_level_desc === 'NATIONAL') s.n[p] = v;
+    else if (/REGION/.test(r.agg_level_desc)) { const st = r.location_desc; (s.s[st] = s.s[st] || {})[p] = v; }
     else if (r.agg_level_desc === 'STATE') { const st = r.state_alpha; if (!st) continue; (s.s[st] = s.s[st] || {})[p] = v; }
     else continue;
     n++;
@@ -52,8 +57,7 @@ if (MODE === 'livestock') {
   await job('cerdos camada litter', { commodity_desc: 'HOGS', statisticcat_desc: 'LITTER RATE', agg_level_desc: 'NATIONAL' });
   await job('cerdos inventario estados', { commodity_desc: 'HOGS', statisticcat_desc: 'INVENTORY', agg_level_desc: 'STATE' }, r => /^HOGS( & PIGS)?( - INVENTORY|, (BREEDING|MARKET)[^-]* - INVENTORY)/.test(r.short_desc));
   for (const sc of ['INVENTORY', 'PLACEMENTS', 'MARKETINGS']) await job('vacuno nacional ' + sc, { commodity_desc: 'CATTLE', statisticcat_desc: sc, agg_level_desc: 'NATIONAL' });
-  await job('vacuno estados inventario', { commodity_desc: 'CATTLE', statisticcat_desc: 'INVENTORY', agg_level_desc: 'STATE' }, r => /^CATTLE(, (INCL CALVES|COWS|COWS, BEEF|COWS, MILK|CALVES))? - INVENTORY$/.test(r.short_desc));
-  await job('vacuno estados on feed', { commodity_desc: 'CATTLE', statisticcat_desc: 'INVENTORY', agg_level_desc: 'STATE' }, r => /ON FEED/.test(r.short_desc));
+  for (const sd of ['CATTLE, INCL CALVES - INVENTORY', 'CATTLE, COWS, BEEF - INVENTORY', 'CATTLE, COWS, MILK - INVENTORY', 'CATTLE, ON FEED - INVENTORY']) await job('vacuno estados ' + sd, { commodity_desc: 'CATTLE', short_desc: sd, agg_level_desc: 'STATE', domain_desc: 'TOTAL' });
   for (const c of ['BEEF', 'PORK', 'BUTTER', 'CHEESE', 'EGGS', 'TURKEYS', 'CHICKENS', 'LAMB & MUTTON', 'VEAL', 'MILK', 'WHEY']) await job('frigoríficos ' + c, { commodity_desc: c, statisticcat_desc: 'STOCKS', agg_level_desc: 'NATIONAL' }, r => /COLD STORAGE/.test(r.short_desc));
   await job('leche producción estados', { commodity_desc: 'MILK', statisticcat_desc: 'PRODUCTION', agg_level_desc: 'STATE' }, r => /^MILK - PRODUCTION/.test(r.short_desc));
   await job('leche producción nacional', { commodity_desc: 'MILK', statisticcat_desc: 'PRODUCTION', agg_level_desc: 'NATIONAL' }, r => /^MILK - PRODUCTION/.test(r.short_desc));
@@ -61,10 +65,12 @@ if (MODE === 'livestock') {
   await job('vacas lecheras', { commodity_desc: 'MILK', statisticcat_desc: 'INVENTORY', agg_level_desc: 'STATE' });
   await job('vacas lecheras nacional', { commodity_desc: 'MILK', statisticcat_desc: 'INVENTORY', agg_level_desc: 'NATIONAL' });
 } else if (MODE === 'prices') {
+  ANNUAL = true;
   await job('índices pagados nacional', { statisticcat_desc: 'INDEX FOR PRICE PAID, 2011', agg_level_desc: 'NATIONAL', freq_desc: 'MONTHLY' });
   for (const c of ['FEED', 'FUELS']) {
-    await job('precio pagado ' + c + ' nacional', { commodity_desc: c, statisticcat_desc: 'PRICE PAID', agg_level_desc: 'NATIONAL', freq_desc: 'MONTHLY' });
-    await job('precio pagado ' + c + ' estados', { commodity_desc: c, statisticcat_desc: 'PRICE PAID', agg_level_desc: 'STATE', freq_desc: 'MONTHLY' });
+    await job('precio pagado ' + c + ' nacional', { commodity_desc: c, statisticcat_desc: 'PRICE PAID', agg_level_desc: 'NATIONAL' });
+    await job('precio pagado ' + c + ' estados', { commodity_desc: c, statisticcat_desc: 'PRICE PAID', agg_level_desc: 'STATE' });
+    await job('precio pagado ' + c + ' región', { commodity_desc: c, statisticcat_desc: 'PRICE PAID', agg_level_desc: 'REGION : MULTI-STATE' });
   }
   await job('precios pagados otros', { commodity_desc: 'FERTILIZER', statisticcat_desc: 'PRICE PAID', agg_level_desc: 'NATIONAL' });
 } else { console.error('modo desconocido'); process.exit(1); }
