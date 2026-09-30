@@ -1,14 +1,20 @@
 cereales ficheros ['SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xls', 'SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xlsx', 'SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A24.xls', 'SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A25.xls']
 usando SeriesChronologiques/productions vegetales/grandes cultures/cotations/SCR-COT-CER_FR-A26.xls
 cereal Soft wheat: delivered Rouen Superior (A2) July basis 1250 2001-09-11 ['2026-09-29', 235.0]
+descartada (discontinuada) Soft wheat: delivered Rouen Medium (A3) July basis 2016-07-27
 cereal Soft wheat: delivered Rouen Medium (A3) July basis 608 2002-01-04 ['2016-07-27', 162.5]
+descartada (discontinuada) Soft wheat: delivered Rouen Access (A4) July basis 2015-06-19
 cereal Soft wheat: delivered Rouen Access (A4) July basis 38 2014-09-05 ['2015-06-19', 150.0]
 cereal Soft wheat: delivered Pallice Superior (A2) July basis 1184 2003-02-11 ['2026-09-24', 241.5]
+descartada (discontinuada) Soft wheat: delivered Pallice Medium (A3) July basis 2008-07-01
 cereal Soft wheat: delivered Pallice Medium (A3) July basis 81 2002-01-04 ['2008-07-01', 199.0]
 cereal Soft wheat: Rouen FCW 1 FOB 1250 2001-09-11 ['2026-09-29', 241.86]
+descartada (discontinuada) Soft wheat: Rouen FCW 2 FOB 2016-07-27
 cereal Soft wheat: Rouen FCW 2 FOB 630 2001-07-03 ['2016-07-27', 166.3]
+descartada (discontinuada) Soft wheat: Rouen FCW 3 FOB 2015-06-19
 cereal Soft wheat: Rouen FCW 3 FOB 38 2014-09-05 ['2015-06-19', 164.03]
 cereal Soft wheat: La Pallice FAW 1 FOB 1177 2003-07-18 ['2026-09-24', 248.36]
+descartada (discontinuada) Soft wheat: La Pallice FAW 2 FOB 2003-07-15
 cereal Soft wheat: La Pallice FAW 2 FOB 104 2001-07-03 ['2003-07-15', 121.0]
 cereal Feed barley: delivered Rouen July basis 977 2007-06-01 ['2026-09-29', 216.2]
 cereal Feed barley: Rouen Fob 977 2007-06-01 ['2026-09-29', 223.06]
@@ -40,6 +46,7 @@ pagado Faba beans 79 2006-Q3 ['2026-Q1', 245.8]
 pagado Soybeans 78 2006-Q4 ['2026-Q1', 391.2]
 carnes ficheros ['SeriesChronologiques/productions animales/viandes/séries hebdomadaires/synthèse toutes espèces/SCR-VIA-SYNTHESE_COT_NAT_HEBDO-A26.xlsx']
 carne Adult cattle at slaughterhouse gate: weighted avg price (standard) 218 2022-07-25 ['2026-09-21', 6.59]
+descartada (discontinuada) Adult cattle at slaughterhouse gate: weighted avg price (standard + quality labels, to Jul 2022) 2022-07-18
 carne Adult cattle at slaughterhouse gate: weighted avg price (standard + quality labels, to Jul 2022) 1072 2002-01-07 ['2022-07-18', 5.15]
 carne Cow, class R (standard) 218 2022-07-25 ['2026-09-21', 7.18]
 carne Cow, class O (standard) 218 2022-07-25 ['2026-09-21', 5.85]
@@ -49,7 +56,9 @@ carne Young bull, class O (standard) 218 2022-07-25 ['2026-09-21', 5.598]
 carne Young bull, class U (standard) 218 2022-07-25 ['2026-09-21', 6.475]
 carne Steer, class R (standard) 211 2022-07-25 ['2026-09-21', 6.81]
 carne Heifer, class R (standard) 218 2022-07-25 ['2026-09-21', 7.24]
+descartada (discontinuada) Cow, class R (standard + quality labels, to Jul 2022) 2022-07-18
 carne Cow, class R (standard + quality labels, to Jul 2022) 1072 2002-01-07 ['2022-07-18', 5.29]
+descartada (discontinuada) Young bull, class R (standard + quality labels, to Jul 2022) 2022-07-18
 carne Young bull, class R (standard + quality labels, to Jul 2022) 1072 2002-01-07 ['2022-07-18', 5.146]
 carne Feeder calf: Limousin U male, 6-12 months, 300 kg 1285 2002-01-07 ['2026-09-21', 5.11]
 carne Feeder calf: Charolais U male, 6-12 months, 350 kg 1279 2002-01-07 ['2026-09-21', 4.69]
