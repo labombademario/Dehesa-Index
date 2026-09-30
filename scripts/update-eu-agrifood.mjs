@@ -96,8 +96,8 @@ export const PRODUCTS = {
   },
   colza: {
     catId: 'cereales', id: 'di_cereales_colza_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
-    commodity: 'oilseeds', member: 'ES', unitExpected: '€/t', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
-    select: r => r.product === 'Rapeseed' && r.marketStage === 'DEPSILO' && r.market === 'National Average' && (!r.productType || /^(N\.?A\.?|Not Defined)$/i.test(String(r.productType).trim())), recent: true,
+    commodity: 'oilseeds', member: 'ES', unitExpected: ['€/t', 'TONNES', 'Tonne', '€/tonne', 'national currency/ton'], obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
+    select: r => r.product === 'Rapeseed' && r.marketStage === 'DEPSILO' && r.market === 'National Average', recent: true,
     market: 'Comisión Europea (colza, España, media nacional)',
     methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la colza en España (media nacional, salida de silo del agricultor), EUR/tonelada. No es la media de la UE ni el futuro de Euronext.' + NOTE_PUB
   },
