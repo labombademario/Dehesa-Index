@@ -1,0 +1,1481 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-30T02:43:55.843Z",
+  "lastPeriod": "2026-08",
+  "baseline": "2001-2020",
+  "source": {
+    "name": "NASA POWER (Prediction Of Worldwide Energy Resources), reanálisis MERRA-2",
+    "url": "https://power.larc.nasa.gov/",
+    "license": "Datos de NASA de uso libre; se cita la fuente.",
+    "parameters": {
+      "precipitation": "PRECTOTCORR (mm/día, convertido a mm/mes)",
+      "temperature": "T2M (°C, media mensual a 2 m)"
+    }
+  },
+  "methodology": {
+    "es": "Para cada punto representativo de una región productora se toma la precipitación y la temperatura media mensuales del reanálisis MERRA-2 (NASA POWER) y se comparan con la climatología 2001-2020 del mismo mes. La precipitación se expresa como % sobre la media y la temperatura como diferencia en °C. Son datos de reanálisis en una celda de malla (~50 km), no de estaciones ni promedios de la región entera, y solo se publican los meses cerrados con dato válido. Miden desviación climática, no predicen cosechas ni precios.",
+    "en": "For each representative point in a producing region, monthly precipitation and mean temperature from the MERRA-2 reanalysis (NASA POWER) are compared with the 2001-2020 climatology for the same month. Precipitation is shown as % of the mean and temperature as a difference in °C. It is reanalysis data for a grid cell (~50 km), not station data or a whole-region average, and only closed months with valid data are published. They measure climatic deviation and do not forecast crops or prices."
+  },
+  "missing": [],
+  "locations": [
+    {
+      "id": "us-iowa",
+      "name": "Iowa",
+      "region": "us",
+      "country": "US",
+      "lat": 42,
+      "lon": -93.6,
+      "crops": [
+        "maiz",
+        "soja"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 39.9,
+          "precipBaselineMm": 85.8,
+          "precipAnomalyPct": -53.5,
+          "tempC": 19.8,
+          "tempBaselineC": 18.5,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 59.2,
+          "precipBaselineMm": 68.2,
+          "precipAnomalyPct": -13.2,
+          "tempC": 13.6,
+          "tempBaselineC": 10.3,
+          "tempAnomalyC": 3.4
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 39,
+          "precipBaselineMm": 40.2,
+          "precipAnomalyPct": -3,
+          "tempC": 4.3,
+          "tempBaselineC": 3.1,
+          "tempAnomalyC": 1.2
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 20.8,
+          "precipBaselineMm": 37.5,
+          "precipAnomalyPct": -44.6,
+          "tempC": -4.5,
+          "tempBaselineC": -3.7,
+          "tempAnomalyC": -0.8
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 27.9,
+          "precipBaselineMm": 22,
+          "precipAnomalyPct": 26.8,
+          "tempC": -7.1,
+          "tempBaselineC": -6.4,
+          "tempAnomalyC": -0.6
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 13.7,
+          "precipBaselineMm": 28,
+          "precipAnomalyPct": -51,
+          "tempC": -0.2,
+          "tempBaselineC": -4.9,
+          "tempAnomalyC": 4.7
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 55.8,
+          "precipBaselineMm": 45.6,
+          "precipAnomalyPct": 22.4,
+          "tempC": 5.9,
+          "tempBaselineC": 2.6,
+          "tempAnomalyC": 3.3
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 142.2,
+          "precipBaselineMm": 89.7,
+          "precipAnomalyPct": 58.5,
+          "tempC": 11.3,
+          "tempBaselineC": 9.8,
+          "tempAnomalyC": 1.6
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 63.2,
+          "precipBaselineMm": 117.5,
+          "precipAnomalyPct": -46.2,
+          "tempC": 16.9,
+          "tempBaselineC": 16,
+          "tempAnomalyC": 0.9
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 119.1,
+          "precipBaselineMm": 127.8,
+          "precipAnomalyPct": -6.8,
+          "tempC": 22.2,
+          "tempBaselineC": 21.9,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 164.9,
+          "precipBaselineMm": 93.3,
+          "precipAnomalyPct": 76.7,
+          "tempC": 25.5,
+          "tempBaselineC": 24.3,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 120.9,
+          "precipBaselineMm": 109.7,
+          "precipAnomalyPct": 10.2,
+          "tempC": 23.3,
+          "tempBaselineC": 22.9,
+          "tempAnomalyC": 0.4
+        }
+      ]
+    },
+    {
+      "id": "us-illinois",
+      "name": "Illinois",
+      "region": "us",
+      "country": "US",
+      "lat": 40,
+      "lon": -89,
+      "crops": [
+        "maiz",
+        "soja"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 27.9,
+          "precipBaselineMm": 81.9,
+          "precipAnomalyPct": -65.9,
+          "tempC": 21.8,
+          "tempBaselineC": 19.7,
+          "tempAnomalyC": 2
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 45.9,
+          "precipBaselineMm": 93.9,
+          "precipAnomalyPct": -51.2,
+          "tempC": 15.6,
+          "tempBaselineC": 12.4,
+          "tempAnomalyC": 3.2
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 48,
+          "precipBaselineMm": 71.4,
+          "precipAnomalyPct": -32.8,
+          "tempC": 6.1,
+          "tempBaselineC": 5.4,
+          "tempAnomalyC": 0.8
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 44.3,
+          "precipBaselineMm": 64.5,
+          "precipAnomalyPct": -31.3,
+          "tempC": -1.7,
+          "tempBaselineC": -0.5,
+          "tempAnomalyC": -1.2
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 29.8,
+          "precipBaselineMm": 57.4,
+          "precipAnomalyPct": -48.1,
+          "tempC": -4.7,
+          "tempBaselineC": -3.2,
+          "tempAnomalyC": -1.4
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 15.4,
+          "precipBaselineMm": 55.2,
+          "precipAnomalyPct": -72.1,
+          "tempC": 1.1,
+          "tempBaselineC": -1.6,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 175.8,
+          "precipBaselineMm": 70.1,
+          "precipAnomalyPct": 150.9,
+          "tempC": 9,
+          "tempBaselineC": 4.9,
+          "tempAnomalyC": 4.1
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 138.9,
+          "precipBaselineMm": 103.5,
+          "precipAnomalyPct": 34.2,
+          "tempC": 14.7,
+          "tempBaselineC": 11.7,
+          "tempAnomalyC": 3.1
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 65.7,
+          "precipBaselineMm": 114.7,
+          "precipAnomalyPct": -42.7,
+          "tempC": 16.8,
+          "tempBaselineC": 17.4,
+          "tempAnomalyC": -0.6
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 217.5,
+          "precipBaselineMm": 120,
+          "precipAnomalyPct": 81.3,
+          "tempC": 22.1,
+          "tempBaselineC": 22.3,
+          "tempAnomalyC": -0.2
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 64.5,
+          "precipBaselineMm": 99.2,
+          "precipAnomalyPct": -35,
+          "tempC": 24.6,
+          "tempBaselineC": 24.2,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 192.2,
+          "precipBaselineMm": 84,
+          "precipAnomalyPct": 128.8,
+          "tempC": 23.7,
+          "tempBaselineC": 23.5,
+          "tempAnomalyC": 0.2
+        }
+      ]
+    },
+    {
+      "id": "us-kansas",
+      "name": "Kansas",
+      "region": "us",
+      "country": "US",
+      "lat": 38.5,
+      "lon": -98.5,
+      "crops": [
+        "trigo"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 118.8,
+          "precipBaselineMm": 58.8,
+          "precipAnomalyPct": 102,
+          "tempC": 21.4,
+          "tempBaselineC": 21.2,
+          "tempAnomalyC": 0.2
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 67.6,
+          "precipBaselineMm": 58,
+          "precipAnomalyPct": 16.6,
+          "tempC": 16.1,
+          "tempBaselineC": 13.2,
+          "tempAnomalyC": 2.9
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 49.5,
+          "precipBaselineMm": 23.1,
+          "precipAnomalyPct": 114.3,
+          "tempC": 7.8,
+          "tempBaselineC": 6.3,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 1.6,
+          "precipBaselineMm": 26.3,
+          "precipAnomalyPct": -94.1,
+          "tempC": 2.9,
+          "tempBaselineC": 0.2,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 25.1,
+          "precipBaselineMm": 15.8,
+          "precipAnomalyPct": 58.8,
+          "tempC": -0.2,
+          "tempBaselineC": -0.6,
+          "tempAnomalyC": 0.4
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 13.2,
+          "precipBaselineMm": 23.2,
+          "precipAnomalyPct": -43.4,
+          "tempC": 6.2,
+          "tempBaselineC": 0.8,
+          "tempAnomalyC": 5.4
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 3.1,
+          "precipBaselineMm": 40.6,
+          "precipAnomalyPct": -92.4,
+          "tempC": 11.3,
+          "tempBaselineC": 7.2,
+          "tempAnomalyC": 4.1
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 31.2,
+          "precipBaselineMm": 65.7,
+          "precipAnomalyPct": -52.5,
+          "tempC": 15.8,
+          "tempBaselineC": 12.9,
+          "tempAnomalyC": 2.9
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 102,
+          "precipBaselineMm": 117.2,
+          "precipAnomalyPct": -13,
+          "tempC": 19.7,
+          "tempBaselineC": 18.7,
+          "tempAnomalyC": 1
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 168.9,
+          "precipBaselineMm": 97.8,
+          "precipAnomalyPct": 72.7,
+          "tempC": 24.3,
+          "tempBaselineC": 24.9,
+          "tempAnomalyC": -0.5
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 41.9,
+          "precipBaselineMm": 89,
+          "precipAnomalyPct": -53,
+          "tempC": 29,
+          "tempBaselineC": 27.7,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 44,
+          "precipBaselineMm": 102.3,
+          "precipAnomalyPct": -57,
+          "tempC": 29.4,
+          "tempBaselineC": 25.9,
+          "tempAnomalyC": 3.4
+        }
+      ]
+    },
+    {
+      "id": "us-north-dakota",
+      "name": "North Dakota",
+      "region": "us",
+      "country": "US",
+      "lat": 47.5,
+      "lon": -100,
+      "crops": [
+        "trigo"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 74.4,
+          "precipBaselineMm": 52.2,
+          "precipAnomalyPct": 42.5,
+          "tempC": 18,
+          "tempBaselineC": 15.1,
+          "tempAnomalyC": 2.9
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 101.4,
+          "precipBaselineMm": 39.1,
+          "precipAnomalyPct": 159.5,
+          "tempC": 9.6,
+          "tempBaselineC": 6,
+          "tempAnomalyC": 3.6
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 30,
+          "precipBaselineMm": 15,
+          "precipAnomalyPct": 100,
+          "tempC": -0.3,
+          "tempBaselineC": -1.4,
+          "tempAnomalyC": 1.1
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 24.5,
+          "precipBaselineMm": 19.5,
+          "precipAnomalyPct": 25.4,
+          "tempC": -9.8,
+          "tempBaselineC": -8.5,
+          "tempAnomalyC": -1.3
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 7.8,
+          "precipBaselineMm": 15.2,
+          "precipAnomalyPct": -49,
+          "tempC": -11.3,
+          "tempBaselineC": -11.2,
+          "tempAnomalyC": -0.1
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 21.6,
+          "precipBaselineMm": 12.9,
+          "precipAnomalyPct": 67.4,
+          "tempC": -4.5,
+          "tempBaselineC": -9.9,
+          "tempAnomalyC": 5.4
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 14.3,
+          "precipBaselineMm": 24.5,
+          "precipAnomalyPct": -41.8,
+          "tempC": -0.5,
+          "tempBaselineC": -1.7,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 35.4,
+          "precipBaselineMm": 36.6,
+          "precipAnomalyPct": -3.3,
+          "tempC": 4.5,
+          "tempBaselineC": 5.6,
+          "tempAnomalyC": -1.1
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 58,
+          "precipBaselineMm": 80.6,
+          "precipAnomalyPct": -28.1,
+          "tempC": 13.8,
+          "tempBaselineC": 12.5,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 128.7,
+          "precipBaselineMm": 97.5,
+          "precipAnomalyPct": 32,
+          "tempC": 18.5,
+          "tempBaselineC": 18.4,
+          "tempAnomalyC": 0.1
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 29.4,
+          "precipBaselineMm": 70.1,
+          "precipAnomalyPct": -58,
+          "tempC": 25.1,
+          "tempBaselineC": 22.2,
+          "tempAnomalyC": 2.9
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 66,
+          "precipBaselineMm": 58,
+          "precipAnomalyPct": 13.9,
+          "tempC": 22,
+          "tempBaselineC": 20.6,
+          "tempAnomalyC": 1.4
+        }
+      ]
+    },
+    {
+      "id": "eu-aragon",
+      "name": "Aragón (Zaragoza)",
+      "region": "eu",
+      "country": "ES",
+      "lat": 41.65,
+      "lon": -0.9,
+      "crops": [
+        "trigo",
+        "cebada"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 40.8,
+          "precipBaselineMm": 31.2,
+          "precipAnomalyPct": 30.8,
+          "tempC": 21.3,
+          "tempBaselineC": 20.5,
+          "tempAnomalyC": 0.8
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 39.4,
+          "precipBaselineMm": 40,
+          "precipAnomalyPct": -1.6,
+          "tempC": 16.7,
+          "tempBaselineC": 15.9,
+          "tempAnomalyC": 0.8
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 32.1,
+          "precipBaselineMm": 38.1,
+          "precipAnomalyPct": -15.7,
+          "tempC": 10.4,
+          "tempBaselineC": 9.7,
+          "tempAnomalyC": 0.6
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 40,
+          "precipBaselineMm": 18.9,
+          "precipAnomalyPct": 111.5,
+          "tempC": 7.4,
+          "tempBaselineC": 6.4,
+          "tempAnomalyC": 1
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 58,
+          "precipBaselineMm": 25.7,
+          "precipAnomalyPct": 125.3,
+          "tempC": 6.2,
+          "tempBaselineC": 6.1,
+          "tempAnomalyC": 0.1
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 45.6,
+          "precipBaselineMm": 20.2,
+          "precipAnomalyPct": 126.4,
+          "tempC": 10,
+          "tempBaselineC": 6.7,
+          "tempAnomalyC": 3.3
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 54.3,
+          "precipBaselineMm": 35.3,
+          "precipAnomalyPct": 53.5,
+          "tempC": 10.3,
+          "tempBaselineC": 10.2,
+          "tempAnomalyC": 0.1
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 20.1,
+          "precipBaselineMm": 45.9,
+          "precipAnomalyPct": -56.2,
+          "tempC": 16.6,
+          "tempBaselineC": 13.4,
+          "tempAnomalyC": 3.2
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 53.9,
+          "precipBaselineMm": 43.7,
+          "precipAnomalyPct": 23.4,
+          "tempC": 18.9,
+          "tempBaselineC": 17.4,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 10.8,
+          "precipBaselineMm": 32.1,
+          "precipAnomalyPct": -66.4,
+          "tempC": 25.4,
+          "tempBaselineC": 22.4,
+          "tempAnomalyC": 3
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 0.9,
+          "precipBaselineMm": 17.7,
+          "precipAnomalyPct": -94.7,
+          "tempC": 29.1,
+          "tempBaselineC": 25.1,
+          "tempAnomalyC": 4.1
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 17.4,
+          "precipBaselineMm": 18,
+          "precipAnomalyPct": -3.4,
+          "tempC": 28.2,
+          "tempBaselineC": 24.9,
+          "tempAnomalyC": 3.3
+        }
+      ]
+    },
+    {
+      "id": "eu-castilla-leon",
+      "name": "Castilla y León (Valladolid)",
+      "region": "eu",
+      "country": "ES",
+      "lat": 41.65,
+      "lon": -4.7,
+      "crops": [
+        "trigo",
+        "cebada"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 9,
+          "precipBaselineMm": 24.9,
+          "precipAnomalyPct": -63.9,
+          "tempC": 18.1,
+          "tempBaselineC": 18.4,
+          "tempAnomalyC": -0.3
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 29.4,
+          "precipBaselineMm": 58.6,
+          "precipAnomalyPct": -49.7,
+          "tempC": 15.5,
+          "tempBaselineC": 13.3,
+          "tempAnomalyC": 2.2
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 70.5,
+          "precipBaselineMm": 47.7,
+          "precipAnomalyPct": 47.8,
+          "tempC": 7.7,
+          "tempBaselineC": 7.4,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 46.5,
+          "precipBaselineMm": 37.5,
+          "precipAnomalyPct": 24,
+          "tempC": 5,
+          "tempBaselineC": 4.3,
+          "tempAnomalyC": 0.7
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 87.4,
+          "precipBaselineMm": 40.9,
+          "precipAnomalyPct": 113.6,
+          "tempC": 3.4,
+          "tempBaselineC": 3.9,
+          "tempAnomalyC": -0.5
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 87.9,
+          "precipBaselineMm": 30.2,
+          "precipAnomalyPct": 190.7,
+          "tempC": 7.4,
+          "tempBaselineC": 4.7,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 36,
+          "precipBaselineMm": 38.8,
+          "precipAnomalyPct": -7.2,
+          "tempC": 8.1,
+          "tempBaselineC": 7.7,
+          "tempAnomalyC": 0.4
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 45,
+          "precipBaselineMm": 48.6,
+          "precipAnomalyPct": -7.4,
+          "tempC": 14,
+          "tempBaselineC": 10.7,
+          "tempAnomalyC": 3.3
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 43.7,
+          "precipBaselineMm": 40.9,
+          "precipAnomalyPct": 6.8,
+          "tempC": 16.3,
+          "tempBaselineC": 14.7,
+          "tempAnomalyC": 1.6
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 15.3,
+          "precipBaselineMm": 27.6,
+          "precipAnomalyPct": -44.6,
+          "tempC": 23,
+          "tempBaselineC": 19.7,
+          "tempAnomalyC": 3.3
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 2.5,
+          "precipBaselineMm": 13.3,
+          "precipAnomalyPct": -81.4,
+          "tempC": 25.1,
+          "tempBaselineC": 22.4,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 12.7,
+          "precipBaselineMm": 13,
+          "precipAnomalyPct": -2.4,
+          "tempC": 23.9,
+          "tempBaselineC": 22.2,
+          "tempAnomalyC": 1.8
+        }
+      ]
+    },
+    {
+      "id": "eu-beauce",
+      "name": "Beauce (Francia)",
+      "region": "eu",
+      "country": "FR",
+      "lat": 48.3,
+      "lon": 1.8,
+      "crops": [
+        "trigo"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 23.4,
+          "precipBaselineMm": 39.6,
+          "precipAnomalyPct": -40.9,
+          "tempC": 15.7,
+          "tempBaselineC": 15.6,
+          "tempAnomalyC": 0.1
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 27.9,
+          "precipBaselineMm": 59.2,
+          "precipAnomalyPct": -52.9,
+          "tempC": 12.1,
+          "tempBaselineC": 11.6,
+          "tempAnomalyC": 0.5
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 34.5,
+          "precipBaselineMm": 60.9,
+          "precipAnomalyPct": -43.3,
+          "tempC": 7.8,
+          "tempBaselineC": 7,
+          "tempAnomalyC": 0.8
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 26,
+          "precipBaselineMm": 64.8,
+          "precipAnomalyPct": -59.8,
+          "tempC": 5.5,
+          "tempBaselineC": 3.6,
+          "tempAnomalyC": 1.9
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 31.3,
+          "precipBaselineMm": 51.5,
+          "precipAnomalyPct": -39.2,
+          "tempC": 4.1,
+          "tempBaselineC": 3.1,
+          "tempAnomalyC": 1
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 54.6,
+          "precipBaselineMm": 45.4,
+          "precipAnomalyPct": 20.4,
+          "tempC": 8.1,
+          "tempBaselineC": 3.7,
+          "tempAnomalyC": 4.4
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 19.2,
+          "precipBaselineMm": 51.5,
+          "precipAnomalyPct": -62.7,
+          "tempC": 8.9,
+          "tempBaselineC": 6.7,
+          "tempAnomalyC": 2.3
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 4.5,
+          "precipBaselineMm": 40.8,
+          "precipAnomalyPct": -89,
+          "tempC": 12.6,
+          "tempBaselineC": 10.2,
+          "tempAnomalyC": 2.4
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 39.4,
+          "precipBaselineMm": 62.9,
+          "precipAnomalyPct": -37.4,
+          "tempC": 16.8,
+          "tempBaselineC": 13.6,
+          "tempAnomalyC": 3.2
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 11.7,
+          "precipBaselineMm": 58.2,
+          "precipAnomalyPct": -79.9,
+          "tempC": 23.2,
+          "tempBaselineC": 17.3,
+          "tempAnomalyC": 5.9
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 5.3,
+          "precipBaselineMm": 52.1,
+          "precipAnomalyPct": -89.9,
+          "tempC": 24.4,
+          "tempBaselineC": 19.3,
+          "tempAnomalyC": 5.1
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 18,
+          "precipBaselineMm": 54.6,
+          "precipAnomalyPct": -67,
+          "tempC": 23.3,
+          "tempBaselineC": 18.9,
+          "tempAnomalyC": 4.4
+        }
+      ]
+    },
+    {
+      "id": "eu-saxony-anhalt",
+      "name": "Sajonia-Anhalt (Alemania)",
+      "region": "eu",
+      "country": "DE",
+      "lat": 52,
+      "lon": 11.5,
+      "crops": [
+        "trigo"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 43.5,
+          "precipBaselineMm": 54,
+          "precipAnomalyPct": -19.4,
+          "tempC": 15.6,
+          "tempBaselineC": 14.8,
+          "tempAnomalyC": 0.8
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 73.2,
+          "precipBaselineMm": 49.3,
+          "precipAnomalyPct": 48.4,
+          "tempC": 10.2,
+          "tempBaselineC": 9.6,
+          "tempAnomalyC": 0.5
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 46.2,
+          "precipBaselineMm": 51.3,
+          "precipAnomalyPct": -9.9,
+          "tempC": 4.6,
+          "tempBaselineC": 4.8,
+          "tempAnomalyC": -0.1
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 28.2,
+          "precipBaselineMm": 54.6,
+          "precipAnomalyPct": -48.3,
+          "tempC": 2.4,
+          "tempBaselineC": 1.2,
+          "tempAnomalyC": 1.2
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 45.9,
+          "precipBaselineMm": 55.8,
+          "precipAnomalyPct": -17.8,
+          "tempC": -2.3,
+          "tempBaselineC": -0.1,
+          "tempAnomalyC": -2.2
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 52.4,
+          "precipBaselineMm": 36.1,
+          "precipAnomalyPct": 45,
+          "tempC": 0.7,
+          "tempBaselineC": 0.8,
+          "tempAnomalyC": -0.1
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 30.1,
+          "precipBaselineMm": 42.8,
+          "precipAnomalyPct": -29.7,
+          "tempC": 6.5,
+          "tempBaselineC": 4,
+          "tempAnomalyC": 2.5
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 56.7,
+          "precipBaselineMm": 32.7,
+          "precipAnomalyPct": 73.4,
+          "tempC": 8.6,
+          "tempBaselineC": 9.1,
+          "tempAnomalyC": -0.5
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 77.8,
+          "precipBaselineMm": 60.4,
+          "precipAnomalyPct": 28.7,
+          "tempC": 14.3,
+          "tempBaselineC": 13.4,
+          "tempAnomalyC": 0.9
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 59.4,
+          "precipBaselineMm": 54.6,
+          "precipAnomalyPct": 8.8,
+          "tempC": 19.8,
+          "tempBaselineC": 17.1,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 64.5,
+          "precipBaselineMm": 79,
+          "precipAnomalyPct": -18.4,
+          "tempC": 19.6,
+          "tempBaselineC": 19.3,
+          "tempAnomalyC": 0.4
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 77.8,
+          "precipBaselineMm": 57.4,
+          "precipAnomalyPct": 35.7,
+          "tempC": 19.9,
+          "tempBaselineC": 19,
+          "tempAnomalyC": 0.9
+        }
+      ]
+    },
+    {
+      "id": "eu-po-valley",
+      "name": "Valle del Po (Italia)",
+      "region": "eu",
+      "country": "IT",
+      "lat": 45,
+      "lon": 10.5,
+      "crops": [
+        "maiz",
+        "arroz"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 153.3,
+          "precipBaselineMm": 62.1,
+          "precipAnomalyPct": 146.9,
+          "tempC": 20.6,
+          "tempBaselineC": 20.8,
+          "tempAnomalyC": -0.2
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 248,
+          "precipBaselineMm": 77.2,
+          "precipAnomalyPct": 221.3,
+          "tempC": 14.2,
+          "tempBaselineC": 15.2,
+          "tempAnomalyC": -1
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 466.8,
+          "precipBaselineMm": 93.9,
+          "precipAnomalyPct": 397.1,
+          "tempC": 8.6,
+          "tempBaselineC": 9.2,
+          "tempAnomalyC": -0.5
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 97.3,
+          "precipBaselineMm": 54.9,
+          "precipAnomalyPct": 77.4,
+          "tempC": 6.3,
+          "tempBaselineC": 4.1,
+          "tempAnomalyC": 2.1
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 494.8,
+          "precipBaselineMm": 40.9,
+          "precipAnomalyPct": 1109.1,
+          "tempC": 3,
+          "tempBaselineC": 3.4,
+          "tempAnomalyC": -0.3
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 78.1,
+          "precipBaselineMm": 58,
+          "precipAnomalyPct": 34.8,
+          "tempC": 8.3,
+          "tempBaselineC": 5.1,
+          "tempAnomalyC": 3.2
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 31.3,
+          "precipBaselineMm": 57,
+          "precipAnomalyPct": -45.1,
+          "tempC": 10.3,
+          "tempBaselineC": 9.2,
+          "tempAnomalyC": 1.1
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 27.6,
+          "precipBaselineMm": 66.6,
+          "precipAnomalyPct": -58.6,
+          "tempC": 15.4,
+          "tempBaselineC": 13.6,
+          "tempAnomalyC": 1.7
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 80,
+          "precipBaselineMm": 74.7,
+          "precipAnomalyPct": 7.1,
+          "tempC": 19.6,
+          "tempBaselineC": 18.4,
+          "tempAnomalyC": 1.2
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 62.1,
+          "precipBaselineMm": 57.6,
+          "precipAnomalyPct": 7.8,
+          "tempC": 26.8,
+          "tempBaselineC": 23.7,
+          "tempAnomalyC": 3.1
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 64.2,
+          "precipBaselineMm": 47.7,
+          "precipAnomalyPct": 34.4,
+          "tempC": 28.9,
+          "tempBaselineC": 26.7,
+          "tempAnomalyC": 2.1
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 77.8,
+          "precipBaselineMm": 55.8,
+          "precipAnomalyPct": 39.4,
+          "tempC": 29.8,
+          "tempBaselineC": 26.3,
+          "tempAnomalyC": 3.6
+        }
+      ]
+    },
+    {
+      "id": "eu-poland",
+      "name": "Cuyavia (Polonia)",
+      "region": "eu",
+      "country": "PL",
+      "lat": 52.7,
+      "lon": 18.5,
+      "crops": [
+        "trigo",
+        "maiz"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 66.3,
+          "precipBaselineMm": 49.2,
+          "precipAnomalyPct": 34.8,
+          "tempC": 16,
+          "tempBaselineC": 14.7,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 72.2,
+          "precipBaselineMm": 47.7,
+          "precipAnomalyPct": 51.3,
+          "tempC": 8.6,
+          "tempBaselineC": 8.7,
+          "tempAnomalyC": -0.1
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 56.4,
+          "precipBaselineMm": 41.7,
+          "precipAnomalyPct": 35.3,
+          "tempC": 3,
+          "tempBaselineC": 3.8,
+          "tempAnomalyC": -0.8
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 18.9,
+          "precipBaselineMm": 44,
+          "precipAnomalyPct": -57,
+          "tempC": 0.2,
+          "tempBaselineC": -0.8,
+          "tempAnomalyC": 1
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 21.7,
+          "precipBaselineMm": 44,
+          "precipAnomalyPct": -50.7,
+          "tempC": -6,
+          "tempBaselineC": -3.2,
+          "tempAnomalyC": -2.8
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 26,
+          "precipBaselineMm": 35,
+          "precipAnomalyPct": -25.6,
+          "tempC": -4.2,
+          "tempBaselineC": -1.4,
+          "tempAnomalyC": -2.8
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 8.7,
+          "precipBaselineMm": 37.5,
+          "precipAnomalyPct": -76.9,
+          "tempC": 5.5,
+          "tempBaselineC": 2.7,
+          "tempAnomalyC": 2.9
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 13.8,
+          "precipBaselineMm": 32.7,
+          "precipAnomalyPct": -57.8,
+          "tempC": 7.7,
+          "tempBaselineC": 8.7,
+          "tempAnomalyC": -1
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 49.6,
+          "precipBaselineMm": 65.7,
+          "precipAnomalyPct": -24.5,
+          "tempC": 14.6,
+          "tempBaselineC": 14.1,
+          "tempAnomalyC": 0.5
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 73.5,
+          "precipBaselineMm": 62.1,
+          "precipAnomalyPct": 18.4,
+          "tempC": 19.9,
+          "tempBaselineC": 17.7,
+          "tempAnomalyC": 2.2
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 80.9,
+          "precipBaselineMm": 79,
+          "precipAnomalyPct": 2.4,
+          "tempC": 19.5,
+          "tempBaselineC": 20.1,
+          "tempAnomalyC": -0.6
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 97,
+          "precipBaselineMm": 58.3,
+          "precipAnomalyPct": 66.5,
+          "tempC": 19.9,
+          "tempBaselineC": 19.6,
+          "tempAnomalyC": 0.3
+        }
+      ]
+    },
+    {
+      "id": "uk-lincolnshire",
+      "name": "Lincolnshire (Reino Unido)",
+      "region": "uk",
+      "country": "GB",
+      "lat": 53.1,
+      "lon": -0.3,
+      "crops": [
+        "trigo"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 51.9,
+          "precipBaselineMm": 48.3,
+          "precipAnomalyPct": 7.5,
+          "tempC": 14.6,
+          "tempBaselineC": 14.3,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 57.4,
+          "precipBaselineMm": 70.7,
+          "precipAnomalyPct": -18.9,
+          "tempC": 11.2,
+          "tempBaselineC": 11.2,
+          "tempAnomalyC": 0.1
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 127.2,
+          "precipBaselineMm": 65.7,
+          "precipAnomalyPct": 93.6,
+          "tempC": 8.2,
+          "tempBaselineC": 7.3,
+          "tempAnomalyC": 0.9
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 84.3,
+          "precipBaselineMm": 63.2,
+          "precipAnomalyPct": 33.3,
+          "tempC": 6.7,
+          "tempBaselineC": 4.8,
+          "tempAnomalyC": 1.9
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 105.1,
+          "precipBaselineMm": 58.3,
+          "precipAnomalyPct": 80.3,
+          "tempC": 3.8,
+          "tempBaselineC": 4.1,
+          "tempAnomalyC": -0.4
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 82,
+          "precipBaselineMm": 50.1,
+          "precipAnomalyPct": 63.7,
+          "tempC": 6,
+          "tempBaselineC": 4.3,
+          "tempAnomalyC": 1.8
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 26,
+          "precipBaselineMm": 49,
+          "precipAnomalyPct": -46.8,
+          "tempC": 7.7,
+          "tempBaselineC": 5.9,
+          "tempAnomalyC": 1.8
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 9.6,
+          "precipBaselineMm": 42.3,
+          "precipAnomalyPct": -77.3,
+          "tempC": 9.7,
+          "tempBaselineC": 8.6,
+          "tempAnomalyC": 1.2
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 22.3,
+          "precipBaselineMm": 55.8,
+          "precipAnomalyPct": -60,
+          "tempC": 13.4,
+          "tempBaselineC": 11.8,
+          "tempAnomalyC": 1.7
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 39,
+          "precipBaselineMm": 70.5,
+          "precipAnomalyPct": -44.7,
+          "tempC": 17.2,
+          "tempBaselineC": 14.8,
+          "tempAnomalyC": 2.3
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 4,
+          "precipBaselineMm": 68.8,
+          "precipAnomalyPct": -94.1,
+          "tempC": 19,
+          "tempBaselineC": 16.9,
+          "tempAnomalyC": 2
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 31.3,
+          "precipBaselineMm": 71,
+          "precipAnomalyPct": -55.9,
+          "tempC": 18.5,
+          "tempBaselineC": 16.8,
+          "tempAnomalyC": 1.7
+        }
+      ]
+    },
+    {
+      "id": "uk-east-anglia",
+      "name": "East Anglia (Reino Unido)",
+      "region": "uk",
+      "country": "GB",
+      "lat": 52.5,
+      "lon": 0.9,
+      "crops": [
+        "trigo",
+        "cebada"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 41.4,
+          "precipBaselineMm": 47.7,
+          "precipAnomalyPct": -13.2,
+          "tempC": 14.9,
+          "tempBaselineC": 14.4,
+          "tempAnomalyC": 0.5
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 66,
+          "precipBaselineMm": 68.5,
+          "precipAnomalyPct": -3.6,
+          "tempC": 11.3,
+          "tempBaselineC": 11.1,
+          "tempAnomalyC": 0.2
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 108.9,
+          "precipBaselineMm": 64.8,
+          "precipAnomalyPct": 68.1,
+          "tempC": 8.3,
+          "tempBaselineC": 7.1,
+          "tempAnomalyC": 1.1
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 69.1,
+          "precipBaselineMm": 63.2,
+          "precipAnomalyPct": 9.3,
+          "tempC": 6.6,
+          "tempBaselineC": 4.5,
+          "tempAnomalyC": 2.1
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 97.6,
+          "precipBaselineMm": 59.2,
+          "precipAnomalyPct": 64.9,
+          "tempC": 3.8,
+          "tempBaselineC": 3.9,
+          "tempAnomalyC": -0.1
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 68.6,
+          "precipBaselineMm": 50.7,
+          "precipAnomalyPct": 35.4,
+          "tempC": 6.4,
+          "tempBaselineC": 4.1,
+          "tempAnomalyC": 2.3
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 26.3,
+          "precipBaselineMm": 49.3,
+          "precipAnomalyPct": -46.5,
+          "tempC": 7.8,
+          "tempBaselineC": 5.9,
+          "tempAnomalyC": 1.9
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 8.7,
+          "precipBaselineMm": 39.3,
+          "precipAnomalyPct": -77.9,
+          "tempC": 10,
+          "tempBaselineC": 8.7,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 22.6,
+          "precipBaselineMm": 57.4,
+          "precipAnomalyPct": -60.5,
+          "tempC": 13.7,
+          "tempBaselineC": 12,
+          "tempAnomalyC": 1.7
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 51,
+          "precipBaselineMm": 68.7,
+          "precipAnomalyPct": -25.8,
+          "tempC": 17.8,
+          "tempBaselineC": 15.1,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 3.4,
+          "precipBaselineMm": 67.6,
+          "precipAnomalyPct": -95,
+          "tempC": 19.9,
+          "tempBaselineC": 17.2,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 27.3,
+          "precipBaselineMm": 69.1,
+          "precipAnomalyPct": -60.5,
+          "tempC": 19.4,
+          "tempBaselineC": 17,
+          "tempAnomalyC": 2.4
+        }
+      ]
+    }
+  ]
+}
