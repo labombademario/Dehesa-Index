@@ -1,0 +1,110 @@
+DISCLAIMER pnemen met de beheerder&nbsp;van de website via het vragenformulier . De Vlaamse overheid spant zich in om onderbrekingen van technische aard zo veel mogelijk te voorkomen. De Vlaamse overheid kan echter niet garanderen dat de website www.vlaanderen.be/landbouwcijfers volledig vrij van onderbreking is en niet door andere technische problemen wordt getroffen. De Vlaamse overheid kan niet aansprakelijk worden gesteld voor rechtstreekse of onrechtstreekse schade die ontstaat uit het gebruik van de website, met inbegrip, zonder beperking, van alle verliezen, werkonderbrekingen, beschadiging van uw programma's of andere gegevens op het computersysteem, of van uw apparatuur of programma's. Op deze website kan je bij de indicatoren de data downloaden onder de meeste figuren. Daarnaast worden ook downloadbare datasets aangeboden in het luik Data . Het gebruik van deze data valt onder de Vlaamse Modellicentie voor Gratis Hergebruik . Bij elk gebruik ervan moet de bronvermelding worden opgenomen die je onderaan de indicatoren- en datapagina's kan terugvinden (onder Bronvermelding).&nbsp; 4 Bescherming van persoonsgegevens De Vlaamse overheid hecht veel belang aan de eerbiediging van uw persoonsgegevens. De meeste informatie is op of via de website beschikbaar zonder dat persoonsgegevens moeten worden verstrekt. In bepaalde gevallen, kan&nbsp;evenwel persoonlijke informatie worden gevraagd. In dat geval worden de gegevens behandeld in overeenstemming met de bepalingen van de wet van 8 december 1992 tot bescherming van de persoonlijke levenssfeer ten opzichte van de verwerking van persoonsgegevens en in overeenstemming met de Algemene verordening gegevensbescherming van 27 april 2016. 4.1 Garanties De Vlaamse overheid geeft u daarbij de volgende garanties: Uw persoonsgegevens worden enkel ingezameld en verwerkt om de door u gevraagde informatie te verstrekken of om de door u gewenste dienstverlening on line te realiseren. De verwerking van uw persoonsgegevens blijft beperkt tot de beoogde doelstelling. Uw persoonsgegevens worden niet bekendgemaakt aan derden noch voor direct-marketingdoeleinden aangewend. U hebt steeds toegang tot uw persoonsgegevens en u kunt de juistheid ervan verifiëren. U hebt de mogelijkheid om onjuistheden in verband met uw persoonsgegevens te laten verbeteren. Hiertoe kunt u contact opnemen met de beheerder van de site. Klik voor verdere informat
+CRAWLED 90
+ PAGE /data 200 43103
+ PAGE /marktinformatie 200 61597
+ PAGE /landbouw 200 83525
+ PAGE /keten 200 34441
+ PAGE /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-soja 200 77626
+ PAGE /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-suikerbiet 200 73637
+ PAGE /marktinformatie/groenvoedergewassen/veldproeven-voor-de-belgische-rassenlijst-voederbiet 200 84129
+ PAGE /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-korrelmais 200 77551
+ PAGE /marktinformatie/groenvoedergewassen/veldproeven-voor-de-belgische-rassenlijst-kuilmais 200 84259
+ PAGE /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-spelt 200 77753
+ PAGE /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-wintertarwe 200 77813
+ PAGE /marktinformatie/paarden/voortplanting-paarden-sperma 200 64117
+ PAGE /landbouw/totale-landbouw 200 80391
+ PAGE /landbouw/akkerbouw 200 71855
+ PAGE /landbouw/groenten 200 50991
+ PAGE /landbouw/groenten-openlucht 200 65933
+ PAGE /landbouw/groenten-onder-glas 200 66769
+ PAGE /landbouw/pluimvee 200 66787
+ PAGE /landbouw/fruit 200 68781
+ PAGE /landbouw/paarden 200 45801
+ PAGE /landbouw/sierteelt 200 50926
+ PAGE /landbouw/varkens 200 75561
+ PAGE /landbouw/vleesvee 200 66752
+ PAGE /landbouw/melkvee 200 78987
+ PAGE /landbouw/insecten 200 50025
+ PAGE /landbouw/fruit/wijnbouw 200 56288
+ PAGE /landbouw/totale-landbouw/biolandbouw-veestapel 200 96507
+ PAGE /landbouw/totale-landbouw/biolandbouw-areaal 200 94695
+ PAGE /landbouw/totale-landbouw/biolandbouw-bedrijven 200 97383
+ PAGE /landbouw/totale-landbouw/opleidingsgraad-landbouwers-land-bouw-mo-ni-rings-net-werk 200 45070
+ PAGE /landbouw/totale-landbouw/eu-benchmarking-structurele-kenmerken 200 125093
+ PAGE /landbouw/totale-landbouw/eu-benchmarking-sociale-kenmerken 200 75587
+ PAGE /landbouw/totale-landbouw/eu-benchmarking-omgevingskenmerken 200 105943
+ PAGE /keten/totale-keten/biolandbouw-biologische-keten 200 40811
+ PAGE /keten/totale-keten/vlaam-se-agrohandel 200 64787
+ PAGE /keten/totale-keten/belgische-agrohandelsstromen 200 48650
+ PAGE /marktinformatie/groenvoedergewassen/veldproeven-voor-de-belgische-rassenlijst-voedererwt 200 83933
+ PAGE /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-aardappel 200 72581
+ PAGE /marktinformatie/cichorei/veldproeven-voor-de-belgische-rassenlijst-industriele-cichorei 200 77919
+ PAGE /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-triticale 200 77642
+ PAGE /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-wintergerst 200 77743
+ PAGE /marktinformatie/groenvoedergewassen/veldproeven-voor-de-belgische-rassenlijst-gele-mosterd 200 83686
+ PAGE /marktinformatie/groenvoedergewassen/veldproeven-voor-de-belgische-rassenlijst-timothee 200 84067
+ PAGE /marktinformatie/groenvoedergewassen/veldproeven-voor-de-belgische-rassenlijst-veldboon 200 83956
+ PAGE /marktinformatie/groenvoedergewassen/veldproeven-voor-de-belgische-rassenlijst-engels-raaigras 200 85319
+ PAGE /marktinformatie/groenvoedergewassen 200 27577
+ PAGE /marktinformatie/aardappelen 200 61597
+ PAGE /marktinformatie/bio 200 27430
+ PAGE /marktinformatie/cichorei 200 27506
+ PAGE /marktinformatie/eieren 200 61597
+ PAGE /marktinformatie/fruit 200 61597
+ PAGE /marktinformatie/granen 200 61597
+ PAGE /marktinformatie/groenten 200 61597
+ PAGE /marktinformatie/kleine-herkauwers 200 61597
+ PAGE /marktinformatie/paarden 200 27469
+ PAGE /marktinformatie/pluimvee 200 61597
+ PAGE /marktinformatie/rundvee 200 27469
+ PAGE /marktinformatie/suiker 200 61597
+ PAGE /marktinformatie/varkens 200 61597
+ PAGE /marktinformatie/vis 200 27432
+ PAGE /marktinformatie/vlas 200 61597
+ PAGE /marktinformatie/zuivel 200 61597
+ PAGE /marktinformatie/paarden/voortplanting-paarden-embryo-en-eicelwinning 200 65092
+ PAGE /marktinformatie/paarden/voortplanting-paarden-centra 200 59805
+ PAGE /landbouw/paarden/ruimtelijke-spreiding-paarden 200 80572
+ PAGE /marktinformatie/paarden/prijzen-van-mengvoeders-paarden 200 54242
+ PAGE /landbouw/totale-landbouw/ruimte-voor-landbouw-paardenpistes-ai-data 200 94467
+ PAGE /landbouw/totale-landbouw/eu-benchmarking-economische-kenmerken 200 114453
+ PAGE /landbouw/akkerbouw/aantal-bedrijven-akkerbouw 200 141686
+ PAGE /landbouw/akkerbouw/eiwitgewassen 200 52943
+ PAGE /landbouw/akkerbouw/re-sul-ta-ten-re-ke-ning-vol-le-dig-bedrijf-akkerbouwbedrijven 200 73648
+ PAGE /landbouw/akkerbouw/opbouw-van-de-kosten-akkerbouw 200 108539
+ PAGE /landbouw/akkerbouw/financiele-inkomensindicatoren-akkerbouw 200 180802
+ PAGE /landbouw/akkerbouw/bedrijfseconomische-inkomensindicatoren-akkerbouw 200 217677
+ PAGE /landbouw/akkerbouw/ruimtelijke-spreiding-akkerbouw 200 66115
+ PAGE /landbouw/akkerbouw/productiewaarde-akkerbouw 200 74872
+ PAGE /landbouw/groenten/aantal-bedrijven-groenten 200 158338
+ PAGE /landbouw/groenten-openlucht/aantal-bedrijven-groenten-openlucht 200 143086
+ PAGE /landbouw/groenten-openlucht/resultatenrekening-volledig-bedrijf-groenten-openlucht 200 73848
+ PAGE /landbouw/groenten-openlucht/opbouw-van-de-kosten-groenten-openlucht 200 132185
+ PAGE /landbouw/groenten-openlucht/financiele-inkomensindicatoren-groenten-openlucht 200 199867
+ PAGE /landbouw/groenten-openlucht/bedrijfseconomische-inkomensindicatoren-groenten-openlucht 200 212180
+ PAGE /landbouw/groenten-openlucht/ruimtelijke-spreiding-groenten-openlucht 200 66113
+ PAGE /landbouw/groenten-openlucht/productiewaarde-groenten-openlucht 200 114827
+ PAGE /landbouw/groenten-openlucht/bedrijfstakresultaten-groenten-openlucht 200 173753
+ PAGE /landbouw/groenten-onder-glas/aantal-bedrijven-groenten-onder-glas 200 141952
+ PAGE /landbouw/groenten-onder-glas/resultatenrekening-volledig-bedrijf-glasgroenten 200 73728
+ PAGE /landbouw/groenten-onder-glas/opbouw-van-de-kosten-groenten-onder-glas 200 140405
+ PAGE /landbouw/groenten-onder-glas/financiele-inkomensindicatoren-groenten-onder-glas 200 204282
+ PAGE /landbouw/groenten-onder-glas/bedrijfseconomische-inkomensindicatoren-groenten-onder-glas 200 220744
+DL /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-soja ['https://lv.vlaanderen.be/media/6496/download']
+DL /marktinformatie/veldproeven-voor-de-belgische-rassenlijst-korrelmais ['https://lv.vlaanderen.be/media/6710/download']
+DL /marktinformatie/groenvoedergewassen/veldproeven-voor-de-belgische-rassenlijst-kuilmais ['https://lv.vlaanderen.be/media/6512/download']
+DL /marktinformatie/groenvoedergewassen/veldproeven-voor-de-belgische-rassenlijst-timothee ['https://lv.vlaanderen.be/media/5369/download']
+DL /marktinformatie/groenvoedergewassen/veldproeven-voor-de-belgische-rassenlijst-engels-raaigras ['https://lv.vlaanderen.be/media/5369/download']
+VIEWS 1341
+  V 86477230-455f-4204-be52-41ccabfd4f68 | Yearly Dairy Statistics: products based on other than cow’s milk | 96ee1626-227b-4497-b54c-f18f74774415
+  V 9f37c9c2-783f-4dc1-bcc4-d0d661c9f789 | Animal slaughtering per animal type - last year | 3488f928-86af-4067-92db-4fbe45c9a251
+  V f318c184-8bf1-4f2b-a45b-821c9c237e13 | Animal slaughtering per animal type for Belgium and the regions, 2012, 2013 and 2014 | 3488f928-86af-4067-92db-4fbe45c9a251
+  V e7c2b442-f7ae-45ed-bc55-aa1c17df520c | Monthly Dairy Statistics: collection of cow’s milk, quantity, fat and protein content | 53d457c5-94e9-474f-b01b-2ecc794a5197
+  V 6abd3a15-93c7-4afc-97a4-18a90c0010c9 | Animal slaughtering per animal type for Belgium, last 10 available months | ed16cb2c-7118-4980-a82a-64d29cc95c31
+  V 18723ec3-f020-4d1c-8bca-519edfab4c9d | Monthly Dairy Statistics: produced dairy products based on cow’s milk such as milk, cream, butter, yoghurt, desserts, powders, cheese, ice cream, … | b44b5479-46c3-40ff-ac7c-8b574e76b95f
+  V d97ce22e-0c49-4add-9cd6-97f72eb2ba89 | Animal slaughtering per animal type for Walloon Région, last year | 3488f928-86af-4067-92db-4fbe45c9a251
+  V a94c3ba3-fe82-4919-8ad6-96295ada705f | Animal slaughtering per animal type for Belgium, last year | 3488f928-86af-4067-92db-4fbe45c9a251
+  V 8ede875b-1c7f-4b21-821d-89cb635325f0 | Yearly Dairy Statistics: stock of dairy products | 5ce5369f-a140-4ca8-9283-b4c0acd8327a
+  V 5624a6f6-69c7-481c-ad3b-b803522f5def | Animal slaughtering per animal type for Belgium and the regions, last 3 years | 3488f928-86af-4067-92db-4fbe45c9a251
+  V cd51ed68-e46c-40fe-b108-e7a580086625 | Monthly Dairy Statistics: other dairy products used based on cow’s milk, amounts per month and product | 2c6ac768-b5fc-46ff-a599-8a102940ccb2
+  V 27ed5ada-acb8-46c0-a798-94dcfab983b1 | Animal slaughtering per animal type for Flanders Région and Brussels, last year | 3488f928-86af-4067-92db-4fbe45c9a251
