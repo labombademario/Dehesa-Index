@@ -116,6 +116,12 @@
     'arroz:us': { key: 'cereales:arroz', sourceId: 'usda_nass', currency: 'USD', unit: 'cwt', frequency: 'monthly' },
     'leche:eu': { key: 'lacteos:leche', sourceId: 'european_commission', currency: 'EUR', unit: '100kg', frequency: 'monthly' },
     'urea:eu': { key: 'fertilizantes:urea', sourceId: 'world_bank', currency: 'USD', unit: 'tonelada', frequency: 'monthly' },
+    'vaca:eu': { key: 'ganado:vaca', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
+    'cordero:eu': { key: 'ovino:cordero', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
+    'pollo:eu': { key: 'avicultura:pollo', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'kg', frequency: 'weekly' },
+    'azucar:eu': { key: 'azucar:azucar', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'monthly' },
+    'oliva:eu': { key: 'aceite:oliva', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
+    'arroz:eu': { key: 'cereales:arroz', sourceId: 'eu_agrifood', currency: 'EUR', unit: 'tonelada', frequency: 'weekly' },
     'cerdo:eu': { key: 'porcino:cerdo', sourceId: 'eu_agrifood', currency: 'EUR', unit: '100kg', frequency: 'weekly' },
     'diesel:us': { key: 'energia:diesel', sourceId: 'eia', currency: 'USD', unit: 'gal', frequency: 'weekly' },
     'diesel:eu': { key: 'energia:diesel', sourceId: 'eu_oil_bulletin', currency: 'EUR', unit: 'litro', frequency: 'weekly' }

@@ -2,7 +2,8 @@ name: Dehesa Data — EU Agri-food Data Portal
 
 # Precios semanales de la UE desde el Agri-food Data Portal de la Comisión
 # Europea (API pública, sin clave). Ver scripts/update-eu-agrifood.mjs.
-# Productos activos: cerdo (España, clase S).
+# Productos activos: cerdo, vaca, cordero, pollo, azúcar, aceite de oliva, arroz y
+# leche cruda (ver PRODUCTS en el script para la serie exacta de cada uno).
 
 on:
   schedule:
@@ -25,7 +26,7 @@ jobs:
         with:
           node-version: '20'
       - name: Update EU Agri-food prices
-        run: node scripts/update-eu-agrifood.mjs cerdo
+        run: node scripts/update-eu-agrifood.mjs cerdo vaca cordero pollo azucar oliva arroz leche
       - name: Validate snapshots
         run: node scripts/validate-snapshots.mjs
       - name: Build data index
@@ -49,5 +50,5 @@ jobs:
           git config user.name "dehesa-index-bot"
           git config user.email "actions@users.noreply.github.com"
           git add js/data.js data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/alerts.json
-          git diff --cached --quiet || git commit -m "data: refresh EU Agri-food prices (cerdo)"
+          git diff --cached --quiet || git commit -m "data: refresh EU Agri-food prices"
           git push

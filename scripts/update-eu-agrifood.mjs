@@ -1,18 +1,24 @@
 #!/usr/bin/env node
 /*
- * Precios semanales de la UE desde el Agri-food Data Portal de la Comisión
- * Europea (API pública, sin clave): https://api.tech.ec.europa.eu/agrifood
+ * Precios de la UE desde el Agri-food Data Portal de la Comisión Europea
+ * (API pública, sin clave): https://api.tech.ec.europa.eu/agrifood
  *
- * Uso: node scripts/update-eu-agrifood.mjs cerdo
+ * Uso: node scripts/update-eu-agrifood.mjs cerdo vaca cordero ...
  *
- * Por cada producto configurado en PRODUCTS:
- *   1. descarga la serie del Estado miembro indicado (y clase, si aplica),
- *   2. escribe la observación en data/snapshots/<hoy>.json (formato del contrato),
- *   3. actualiza en js/data.js el bloque eu: del producto y su ficha de Data Trust
- *      mediante expresiones regulares ancladas (si no encuentra el bloque, falla
- *      en lugar de escribir a ciegas).
- * No inventa nada: si la API no devuelve datos válidos, el script termina con error
- * y no toca ningún archivo.
+ * Convención de la web: la tarjeta "eu" de cada producto es la referencia de
+ * ESPAÑA (la vista de España usa p.eu tal cual) y los demás países se derivan
+ * con countryFactors = precio del país / precio de España en la MISMA fecha.
+ * Por eso este script, además del precio, recalcula esos factores con datos
+ * reales cuando el portal publica todos los países para esa fecha.
+ *
+ * Por cada producto de PRODUCTS:
+ *   1. descarga la serie (Estado miembro base + países de countryFactors),
+ *   2. escribe la observación en data/snapshots/<hoy>.json,
+ *   3. actualiza en js/data.js el bloque eu:, los countryFactors, la etiqueta
+ *      de mercado y la ficha de Data Trust con expresiones regulares ancladas
+ *      (si no encuentra un bloque, falla en lugar de escribir a ciegas).
+ * No inventa nada: si la API no devuelve datos válidos termina con error sin
+ * tocar ningún archivo.
  */
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
@@ -21,19 +27,65 @@ const root = process.cwd();
 const DATA_JS = path.join(root, 'js', 'data.js');
 const SNAP_DIR = path.join(root, 'data', 'snapshots');
 const BASE = 'https://api.tech.ec.europa.eu/agrifood/api';
+const COUNTRY_CODE = { es: 'ES', de: 'DE', fr: 'FR', it: 'IT' };
+const NOTE_PUB = ' La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.';
 
 export const PRODUCTS = {
   cerdo: {
-    commodity: 'pigmeat',
-    member: 'ES',
-    filter: { pigClass: 'S' },
-    unitExpected: '100 KG',
-    obsUnit: '100kg',
-    rawNameKey: 'cerdo',
-    trustKey: 'porcino-cerdo-eu',
-    id: 'di_porcino_cerdo_eu',
-    product: 'cerdo',
-    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cerdo clasificada S (≥60 % magro) en España, EUR/100 kg de canal. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.'
+    catId: 'porcino', id: 'di_porcino_cerdo_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'pigmeat', member: 'ES', unitExpected: '100 KG', obsUnit: '100kg', divisor: 1, dateField: 'endDate',
+    select: r => r.pigClass === 'S', recent: true,
+    market: 'Comisión Europea (porcino, España, clase S)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cerdo clasificada S (≥60 % magro) en España, EUR/100 kg de canal. Es la referencia española; no es la media de la UE.' + NOTE_PUB
+  },
+  vaca: {
+    catId: 'ganado', id: 'di_ganado_vaca_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'beef', member: 'ES', unitExpected: '€/100Kg', obsUnit: '100kg', divisor: 1, dateField: 'endDate',
+    select: r => r.category === 'Young bulls' && r.productCode === 'AR3', recent: true,
+    market: 'Comisión Europea (vacuno, España, machos jóvenes A-R3)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de macho joven (categoría A, conformación R3, la referencia UE) en España, EUR/100 kg de canal. No es vaca de desecho ni la media de la UE.' + NOTE_PUB
+  },
+  cordero: {
+    catId: 'ovino', id: 'di_ovino_cordero_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'sheepAndGoat', member: 'ES', unitExpected: '100kg', obsUnit: '100kg', divisor: 1, dateField: 'endDate',
+    select: r => r.category === 'Heavy Lamb', recent: true,
+    market: 'Comisión Europea (ovino, España, cordero pesado)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cordero pesado en España, EUR/100 kg de canal. No es la media de la UE ni cordero ligero.' + NOTE_PUB
+  },
+  pollo: {
+    catId: 'avicultura', id: 'di_avicultura_pollo_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'poultry', member: 'ES', unitExpected: 'national currency/100kg', obsUnit: 'kg', divisor: 100, dateField: 'endDate',
+    select: r => r.productName === 'Whole broiler (65%)' && r.priceType === 'Selling price', recent: true,
+    market: 'Comisión Europea (pollo, España, broiler entero 65 %)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio de venta semanal del pollo broiler entero (65 % de rendimiento) en España; el portal lo da en moneda nacional (EUR) por 100 kg y se divide entre 100 para expresarlo en EUR/kg.' + NOTE_PUB
+  },
+  azucar: {
+    catId: 'azucar', id: 'di_azucar_azucar_eu', sourceId: 'eu_agrifood', frequency: 'monthly',
+    commodity: 'sugar', member: null, unitExpected: 'Tonne', obsUnit: 'tonelada', divisor: 1, dateField: 'ym',
+    select: r => r.sugarRegion === 'EU Average' && r.contractType === 'Monthly data',
+    market: 'Comisión Europea (azúcar blanco, media UE)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio mensual medio del azúcar en la UE (contratos mensuales), EUR/tonelada. Es la media de la UE, no un precio de España.' + NOTE_PUB
+  },
+  oliva: {
+    catId: 'aceite', id: 'di_aceite_oliva_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'oliveOil', member: 'ES', unitExpected: '€/100kg', obsUnit: '100kg', divisor: 1, dateField: 'endDate',
+    select: r => r.product === 'Extra virgin olive oil (up to 0.8%)' && r.market === 'Average national price', recent: true,
+    market: 'Comisión Europea (aceite de oliva virgen extra, España, media nacional)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal medio nacional del aceite de oliva virgen extra (hasta 0,8 %) en España, EUR/100 kg. No es la media de la UE.' + NOTE_PUB
+  },
+  arroz: {
+    catId: 'cereales', id: 'di_cereales_arroz_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'rice', member: 'ES', unitExpected: 'Tonne', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
+    select: r => r.stage === 'Paddy' && r.type === 'Japonica' && (r.variety === 'Avg' || r.variety === 'Average'), recent: true,
+    market: 'Comisión Europea (arroz cáscara japónica, España)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal medio del arroz cáscara (paddy) tipo japónica en España, EUR/tonelada. No es la media de la UE ni arroz índica.' + NOTE_PUB
+  },
+  leche: {
+    catId: 'lacteos', id: 'di_leche_eu', sourceId: 'european_commission', frequency: 'monthly',
+    commodity: 'rawMilk', member: 'ES', unitExpected: '100KG', obsUnit: '100kg', divisor: 1, dateField: 'endDate',
+    select: r => r.product === 'Raw milk', completedOnly: true,
+    market: 'Comisión Europea (leche cruda de vaca, España)',
+    methodology: 'Comisión Europea, Milk Market Observatory (Agri-food Data Portal): precio mensual de la leche cruda de vaca pagada al productor en España, EUR/100 kg, último mes completo. Las cifras del último mes pueden ser provisionales. Es la referencia española; no es la media de la UE.' + NOTE_PUB
   }
 };
 
@@ -45,81 +97,141 @@ export function parsePrice(s) {
   const n = Number(String(s || '').replace(/[^0-9.\-]/g, ''));
   return Number.isFinite(n) && n > 0 ? n : null;
 }
+function dateOf(r, cfg) {
+  if (cfg.dateField === 'ym') { const m = /^(\d{4})\/(\d{2})$/.exec(String(r.ym || '')); return m ? m[1] + '-' + m[2] : null; }
+  return parseEuDate(r[cfg.dateField]);
+}
 
-export function buildSeries(rows, cfg) {
+/** Serie [[fecha, precio], ...] ordenada, de un Estado miembro (o null = sin filtro). */
+export function buildSeries(rows, cfg, member, today) {
   const byDate = new Map();
   for (const r of rows) {
-    if (r.memberStateCode !== cfg.member) continue;
-    if (cfg.filter && Object.entries(cfg.filter).some(([k, v]) => r[k] !== v)) continue;
+    if (member && r.memberStateCode !== member) continue;
+    if (!cfg.select(r)) continue;
     if (r.unit !== cfg.unitExpected) continue;
-    const end = parseEuDate(r.endDate); const price = parsePrice(r.price);
-    if (end && price !== null) byDate.set(end, price);
+    const d = dateOf(r, cfg); const p = parsePrice(r.price);
+    if (!d || p === null) continue;
+    if (cfg.completedOnly && !(parseEuDate(r.endDate) < today)) continue;
+    byDate.set(d, Number((p / cfg.divisor).toFixed(4)));
   }
   return [...byDate.entries()].sort((a, b) => a[0].localeCompare(b[0]));
 }
 
-export function patchDataJs(data, cfg, latest, changePct, history, verifiedAt, publicationDate) {
-  const euRe = new RegExp("(nameKey: '" + cfg.rawNameKey + "',[\\s\\S]*?\\n\\s*eu: \\{)([^\\n]*?)(\\},\\n\\s*uk: \\{)");
-  const m = euRe.exec(data);
-  if (!m) throw new Error('Bloque eu: de ' + cfg.rawNameKey + ' no encontrado en js/data.js');
-  const body = ' price: ' + latest[1] + ', changePct: ' + changePct + ', history: [' + history.join(', ') + "], currency: 'EUR', kgPerUnit: 100 ";
+function esc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+function jsString(s) { return s.replace(/\\/g, '\\\\').replace(/'/g, "\\'"); }
+
+export function patchDataJs(data, cfg, name, o) {
+  // 1) bloque eu: (conserva moneda y kgPerUnit existentes)
+  const euRe = new RegExp("(nameKey: '" + name + "',(?:(?!\\{ nameKey:)[\\s\\S])*?\\n\\s*eu: \\{)([^\\n]*?)(\\},\\n)");
+  let m = euRe.exec(data);
+  if (!m) throw new Error('Bloque eu: de ' + name + ' no encontrado en js/data.js');
+  const keep = /currency: '([A-Z]+)', kgPerUnit: ([\d.]+)/.exec(m[2]);
+  if (!keep) throw new Error('Formato del bloque eu: de ' + name + ' no reconocido');
+  const body = ' price: ' + o.latest[1] + ', changePct: ' + o.changePct + ', history: [' + o.history.join(', ') + "], currency: '" + keep[1] + "', kgPerUnit: " + keep[2] + ' ';
   data = data.slice(0, m.index + m[1].length) + body + data.slice(m.index + m[1].length + m[2].length);
-  const trustRe = new RegExp("('" + cfg.trustKey + "': \\{)([\\s\\S]*?)(\\n    \\})");
-  const t = trustRe.exec(data);
-  if (!t) throw new Error("Ficha Data Trust '" + cfg.trustKey + "' no encontrada en js/data.js");
+
+  // 2) countryFactors reales (solo si existen en el producto y hay datos de todos los países)
+  if (o.factors) {
+    const cfRe = new RegExp("(nameKey: '" + name + "',(?:(?!\\{ nameKey:)[\\s\\S])*?countryFactors: \\{)([^}]*)(\\})");
+    m = cfRe.exec(data);
+    if (m) {
+      const text = Object.keys(o.factors).map(k => k + ': ' + o.factors[k]).join(', ');
+      data = data.slice(0, m.index + m[1].length) + ' ' + text + ' ' + data.slice(m.index + m[1].length + m[2].length);
+    }
+  }
+
+  // 3) etiqueta del mercado de la UE
+  const qRe = new RegExp("(nameKey: '" + name + "',(?:(?!\\{ nameKey:)[\\s\\S])*?quoteTypes: \\{[^\\n]*?eu: \\{ type: ')[^']*(', market: ')((?:[^'\\\\]|\\\\.)*)(')");
+  m = qRe.exec(data);
+  if (m) data = data.slice(0, m.index) + m[0].replace(/eu: \{ type: '[^']*', market: '(?:[^'\\]|\\.)*'$/, () => "eu: { type: 'referencia', market: '" + jsString(cfg.market) + "'") + data.slice(m.index + m[0].length);
+
+  // 4) ficha de Data Trust (se crea si no existe)
+  const trustKey = cfg.catId + '-' + name + '-eu';
+  const trustRe = new RegExp("('" + esc(trustKey) + "': \\{)([\\s\\S]*?)(\\n    \\})");
+  let t = trustRe.exec(data);
+  if (!t) {
+    const anchor = '\n    }\n  };\n\n  function buildTrustObservation';
+    if (data.split(anchor).length !== 2) throw new Error('No encuentro dónde insertar la ficha Data Trust de ' + trustKey);
+    const entry = "\n    },\n    '" + trustKey + "': {\n      sourceId: '" + cfg.sourceId + "', frequency: '" + cfg.frequency + "',\n      methodology: '" + jsString(cfg.methodology) + "',\n      comparability: 'directional', observationDate: null, publicationDate: null,\n      status: 'pending', verifiedAt: null\n    }\n  };\n\n  function buildTrustObservation";
+    data = data.replace(anchor, () => entry);
+    t = trustRe.exec(data);
+  }
   const fieldsRe = /comparability: '[^']*',\s*observationDate: [^,]+,\s*publicationDate: [^,]+,\s*status: '[^']*',\s*verifiedAt: [^\n]+/;
-  if (!fieldsRe.test(t[2])) throw new Error('Formato de la ficha Data Trust no reconocido');
-  const newFields = "comparability: 'directional', observationDate: '" + latest[0] + "', publicationDate: '" + publicationDate + "',\n      status: 'verified', verifiedAt: '" + verifiedAt + "'";
-  const newBody = t[2].replace(fieldsRe, () => newFields);
+  if (!fieldsRe.test(t[2])) throw new Error('Formato de la ficha Data Trust de ' + trustKey + ' no reconocido');
+  const newFields = "comparability: 'directional', observationDate: '" + o.latest[0] + "', publicationDate: '" + o.publicationDate + "',\n      status: 'verified', verifiedAt: '" + o.verifiedAt + "'";
+  let newBody = t[2].replace(fieldsRe, () => newFields);
+  newBody = newBody.replace(/methodology: '(?:[^'\\]|\\.)*'/, () => "methodology: '" + jsString(cfg.methodology) + "'");
   return data.slice(0, t.index + t[1].length) + newBody + data.slice(t.index + t[1].length + t[2].length);
 }
 
-async function updateProduct(name) {
-  const cfg = PRODUCTS[name];
-  if (!cfg) throw new Error('Producto no configurado: ' + name + ' (' + Object.keys(PRODUCTS).join(', ') + ')');
-  const url = BASE + '/' + cfg.commodity + '/prices?memberStateCodes=' + cfg.member;
+function euDate(d) { return d.toISOString().slice(0, 10).split('-').reverse().join('/'); }
+
+async function fetchRows(cfg, members) {
+  let url = BASE + '/' + cfg.commodity + '/prices?memberStateCodes=' + members.join(',');
+  if (cfg.recent) url += '&beginDate=' + euDate(new Date(Date.now() - 800 * 864e5));
   let res;
   for (let attempt = 1; attempt <= 3; attempt++) {
     res = await fetch(url, { headers: { Accept: 'application/json' } });
     if (res.ok) break;
     await new Promise(r => setTimeout(r, 15000 * attempt));
   }
-  if (!res.ok) throw new Error('Agri-food API HTTP ' + res.status);
-  const rows = await res.json();
-  const series = buildSeries(rows, cfg);
-  if (series.length < 30) throw new Error('Serie insuficiente para ' + name + ': ' + series.length + ' semanas');
+  if (!res.ok) throw new Error('Agri-food API HTTP ' + res.status + ' (' + cfg.commodity + ')');
+  return res.json();
+}
+
+async function updateProduct(name, today) {
+  const cfg = PRODUCTS[name];
+  if (!cfg) throw new Error('Producto no configurado: ' + name + ' (' + Object.keys(PRODUCTS).join(', ') + ')');
+  let data = await readFile(DATA_JS, 'utf8');
+  const cfM = new RegExp("nameKey: '" + name + "',(?:(?!\\{ nameKey:)[\\s\\S])*?countryFactors: \\{([^}]*)\\}").exec(data);
+  const countries = cfM ? [...cfM[1].matchAll(/(\w+):\s*[\d.]+/g)].map(x => x[1]).filter(k => COUNTRY_CODE[k]) : [];
+  const members = cfg.member ? [...new Set([cfg.member, ...countries.map(k => COUNTRY_CODE[k])])] : ['ES'];
+  const rows = await fetchRows(cfg, members);
+  const series = buildSeries(rows, cfg, cfg.member, today);
+  if (series.length < 12) throw new Error('Serie insuficiente para ' + name + ': ' + series.length + ' puntos');
   const latest = series[series.length - 1], prev = series[series.length - 2];
   const changePct = Number(((latest[1] / prev[1] - 1) * 100).toFixed(4));
+
+  // countryFactors reales: precio del país en la misma fecha / precio base
+  let factors = null;
+  if (cfg.member && countries.length) {
+    factors = {};
+    for (const k of countries) {
+      const s = k === 'es' ? series : buildSeries(rows, cfg, COUNTRY_CODE[k], today);
+      const hit = s.find(x => x[0] === latest[0]);
+      if (!hit) { factors = null; console.log('  aviso: sin dato de ' + COUNTRY_CODE[k] + ' para ' + latest[0] + ', se conservan los countryFactors'); break; }
+      factors[k] = Number((hit[1] / latest[1]).toFixed(3));
+    }
+  }
+
   const verifiedAt = new Date().toISOString();
-  // La API no expone fecha de publicación: se reutiliza la ya registrada para esta
-  // misma observación o, si es nueva, el día en que se recuperó por primera vez.
   let publicationDate = verifiedAt.slice(0, 10);
   try {
     const prevDoc = JSON.parse(await readFile(path.join(root, 'data', 'latest.json'), 'utf8'));
     const prevObs = (prevDoc.observations || []).find(o => o.id === cfg.id && o.observationDate === latest[0] && o.publicationDate);
     if (prevObs) publicationDate = prevObs.publicationDate;
   } catch (e) {}
-  const last104 = series.slice(-104);
   const obs = {
-    id: cfg.id, product: cfg.product, region: 'eu', sourceId: 'eu_agrifood',
+    id: cfg.id, product: name, region: 'eu', sourceId: cfg.sourceId,
     observationDate: latest[0], publicationDate, status: 'verified', verifiedAt,
     comparability: 'directional', methodology: cfg.methodology,
-    value: latest[1], currency: 'EUR', unit: cfg.obsUnit, frequency: 'weekly', changePct,
-    history: last104.map(([d, v]) => ({ period: d.slice(5), year: Number(d.slice(0, 4)), value: v }))
+    value: latest[1], currency: 'EUR', unit: cfg.obsUnit, frequency: cfg.frequency, changePct,
+    history: series.slice(-104).map(([d, v]) => ({ period: d.slice(5), year: Number(d.slice(0, 4)), value: v }))
   };
   await mkdir(SNAP_DIR, { recursive: true });
   const file = path.join(SNAP_DIR, verifiedAt.slice(0, 10) + '.json');
   let doc = { schemaVersion: '1.0', generatedAt: verifiedAt, observations: [] };
   try { doc = JSON.parse(await readFile(file, 'utf8')); } catch (e) {}
-  doc.observations = (doc.observations || []).filter(o => !(o.product === cfg.product && o.region === 'eu')).concat([obs]);
-  const data = patchDataJs(await readFile(DATA_JS, 'utf8'), cfg, latest, changePct, series.slice(-12).map(x => x[1]), verifiedAt, publicationDate);
+  doc.observations = (doc.observations || []).filter(o => !(o.product === name && o.region === 'eu')).concat([obs]);
+  data = patchDataJs(data, cfg, name, { latest, changePct, history: series.slice(-12).map(x => x[1]), factors, verifiedAt, publicationDate });
   await writeFile(DATA_JS, data, 'utf8');
   await writeFile(file, JSON.stringify(doc, null, 2) + '\n', 'utf8');
-  console.log(name + ' UE (' + cfg.member + '): ' + latest[0] + ' = ' + latest[1] + ' EUR/100kg (' + changePct + '%)');
+  console.log(name + ' UE: ' + latest[0] + ' = ' + latest[1] + ' ' + cfg.obsUnit + ' (' + changePct + '%)' + (factors ? ' factores ' + JSON.stringify(factors) : ''));
 }
 
 if (process.argv[1] && process.argv[1].endsWith('update-eu-agrifood.mjs')) {
   const names = process.argv.slice(2);
   if (!names.length) { console.error('Uso: node scripts/update-eu-agrifood.mjs <producto...>'); process.exit(1); }
-  for (const n of names) await updateProduct(n);
+  const today = new Date().toISOString().slice(0, 10);
+  for (const n of names) await updateProduct(n, today);
 }
