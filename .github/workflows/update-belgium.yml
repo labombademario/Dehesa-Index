@@ -1,21 +1,25 @@
-name: Probe BE
-on: workflow_dispatch
+name: Update Belgium (Statbel)
+on:
+  schedule:
+    - cron: '45 15 * * 2,5'
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency:
   group: dehesa-data-writes
   cancel-in-progress: false
 jobs:
-  p:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: pip install openpyxl xlrd
-      - run: python3 scripts/probe-be.py
+      - run: python3 scripts/update-belgium.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/probe
-          git commit -qm "probe be" || exit 0
+          git add data/belgium-stats.json data/belgium-log.txt
+          git diff --cached --quiet && exit 0
+          git commit -qm "Datos Bélgica (Statbel)"
           git pull -q --rebase
           git push
