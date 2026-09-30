@@ -13,12 +13,8 @@ import { fileURLToPath } from 'node:url';
 const OUT = path.join(path.dirname(fileURLToPath(import.meta.url)), '.probe-catalog.txt');
 const BASE = 'https://api.tech.ec.europa.eu/agrifood/api';
 const BEGIN = '01/01/2021';
-const CANDIDATES = [
-  'cereal', 'oilseeds', 'oilseeds/cakes', 'dairy', 'dairy/products', 'beef', 'pigmeat', 'poultry', 'poultry/egg',
-  'sheepAndGoat', 'fruitAndVeg', 'fruitAndVegetables', 'fruitandveg', 'fruitVegetable', 'wine', 'wine/prices',
-  'sugar', 'rice', 'rawMilk', 'oliveOil', 'fertiliser', 'feed', 'proteinCrops', 'pulses', 'potatoes', 'flowers', 'honey'
-];
-const SKIP = new Set(['price', 'endDate', 'beginDate', 'startDate', 'ym', 'year', 'month', 'quarter', 'week', 'weekNumber', 'weekNumberDay']);
+const CANDIDATES = ['cereal', 'fruitAndVegetable', 'fruitsAndVegetables', 'fruitsandvegetables', 'fruits', 'vegetables', 'fruit', 'fruitAndVeg/prices', 'fruit-and-veg', 'fruitAndVegetablesPrices', 'fruitVeg', 'fruitsVegetables', 'produce'];
+const SKIP = new Set(['referencePeriod', 'marketingYear', 'marketingYearMonth', 'weight', 'price', 'endDate', 'beginDate', 'startDate', 'ym', 'year', 'month', 'quarter', 'week', 'weekNumber', 'weekNumberDay']);
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 function isoOf(r) {
@@ -67,7 +63,7 @@ async function probe(name) {
   out.push('GRUPOS ' + groups.size);
   let i = 0;
   for (const [k, g] of [...groups.entries()].sort((a, b) => b[1].n - a[1].n)) {
-    if (i++ >= 90) { out.push('  … (recortado)'); break; }
+    if (i++ >= 60) { out.push('  … (recortado)'); break; }
     out.push('  [' + k + '] n=' + g.n + ' países=' + [...g.members].sort().join(',') + ' mercados=' + g.markets.size + ' ' + g.first + '→' + g.last + ' último=' + g.price);
   }
   out.push('EJEMPLO ' + JSON.stringify(rows[0]));
@@ -75,6 +71,7 @@ async function probe(name) {
 }
 
 const parts = [];
+for (const d of ['', '/swagger-ui/index.html', '/v3/api-docs', '/openapi.json', '/swagger.json', '/../swagger/v1/swagger.json']) { const r = await get(BASE + d); parts.push('=== DOC ' + d + ' STATUS ' + r.status + ' ' + String(r.text).replace(/\s+/g, ' ').slice(0, 1500)); await sleep(1500); }
 for (const c of CANDIDATES) { parts.push(await probe(c)); await sleep(2500); }
 await writeFile(OUT, parts.join('\n\n') + '\n', 'utf8');
 console.log('escrito ' + OUT);
