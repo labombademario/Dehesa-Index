@@ -17,13 +17,9 @@
 1052 OK 1 series, 108 filas, ultimo 2026-09-25, 3 KB, dims=
 1053 OK 2 series, 108 filas, ultimo 2026-09-25, 3 KB, dims=grade
 1082 OK 1 series, 54 filas, ultimo 2026-09-25, 2 KB, dims=
-1083 SIN SERIES (filas 0, secciones sin precio {})
-1084 SIN SERIES (filas 0, secciones sin precio {})
-1085 SIN SERIES (filas 0, secciones sin precio {})
 1089 OK 1 series, 108 filas, ultimo 2026-09-25, 3 KB, dims=
 1090 OK 1 series, 108 filas, ultimo 2026-09-25, 3 KB, dims=
 1091 OK 1 series, 108 filas, ultimo 2026-09-25, 3 KB, dims=
-1092 SIN SERIES (filas 0, secciones sin precio {})
 1098 OK 2 series, 110 filas, ultimo 2026-09-25, 3 KB, dims=commodity,lot_Desc
 1099 OK 1 series, 54 filas, ultimo 2026-09-25, 2 KB, dims=
 1100 OK 13 series, 514 filas, ultimo 2026-09-25, 16 KB, dims=commodity,group,trade_Activity,region
@@ -39,7 +35,6 @@
 2769 OK 100 series, 579 filas, ultimo 2026-09-18, 19 KB, dims=commodity,class,quality,crop_Age,desc,use,region,package,sale_Type sin_precio={"Report Receipts":119}
 2770 OK 1 series, 39 filas, ultimo 2026-04-10, 0 KB, dims=class,lot_desc,weight_max,weight_min sin_precio={"Report Receipts":29}
 2771 OK 53 series, 4512 filas, ultimo 2026-09-29, 154 KB, dims=commodity,class,grade,protein,trade_loc,quote_type
-2786 ERROR HTTP 404
 2787 OK 61 series, 2219 filas, ultimo 2026-09-29, 82 KB, dims=commodity,class,grade,protein,application,delivery End Half,delivery Start Half,delivery_end,delivery_point,delivery_start,desc,location_City,trade_loc,quote_type
 2807 OK 123 series, 1119 filas, ultimo 2026-09-25, 30 KB, dims=commodity,class,quality,crop_Age,desc,freight,package,sale_Type sin_precio={"Report Receipts":207}
 2808 OK 36 series, 222 filas, ultimo 2026-09-25, 5 KB, dims=class,frame,lot_desc,muscle_grade,weight_max,weight_min descartados_por_ambiguedad=1 sin_precio={"Report Receipts":112}
@@ -102,7 +97,6 @@
 3239 OK 6 series, 352 filas, ultimo 2026-09-29, 12 KB, dims=commodity,class,grade,protein,delivery_end,delivery_start
 3455 OK 30 series, 161 filas, ultimo 2026-09-25, 3 KB, dims=class,lot_desc,muscle_grade,weight_max,weight_min,freight sin_precio={"Report Receipts":111}
 3463 OK 82 series, 5202 filas, ultimo 2026-09-29, 187 KB, dims=commodity,class,grade,protein,delivery_end,delivery_point,delivery_start,trade_loc,trans_mode
-3486 SIN SERIES (filas 354, secciones sin precio {"Report Volume":86})
 3510 OK 31 series, 2197 filas, ultimo 2026-09-25, 62 KB, dims=commodity,variety,protein,trade Loc,freight,sale_type,trans_mode
 3511 OK 77 series, 6945 filas, ultimo 2026-09-25, 205 KB, dims=commodity,variety,protein,category,market_location_name,trade Loc,trade_loc,Section,freight,quote_type,sale_type,trans_mode
 3512 OK 20 series, 1858 filas, ultimo 2026-09-25, 52 KB, dims=commodity,variety,protein,category,trade Loc,freight,sale_type,trans_mode
