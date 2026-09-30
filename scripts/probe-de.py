@@ -43,4 +43,5 @@ for q in ['Kuhmilchpreise','Schlachtpreise','Erzeugerpreisindizes landwirtschaft
             P(' DS',q,'|',d['name'],'|',d.get('license_id'),'|',d.get('organization',{}).get('title') if d.get('organization') else None)
             for x in d.get('resources',[])[:8]: P('    RES',x.get('format'),x.get('name','')[:60],x.get('url'))
     except Exception as e: P(' ERR',q,r[:200])
+import os;os.makedirs('data/probe',exist_ok=True)
 open('data/probe/de1.txt','w').write('\n'.join(out))
