@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:17:24.555Z",
+  "generatedAt": "2026-09-30T17:21:53.262Z",
   "observations": [
     {
       "id": "di_diesel_eu:2005-01-01",
@@ -138051,6 +138051,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-01-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 607.99,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-01-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 258.23,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-01-01",
       "product": "cebada",
       "region": "ca",
@@ -138112,6 +138144,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-01-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.096,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -138515,6 +138563,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-01-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 609.22,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-01-01",
       "product": "harina_soja",
       "region": "eu",
@@ -138691,6 +138755,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-01-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1309.54,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-01-01",
       "product": "lenteja",
       "region": "ca",
@@ -138784,6 +138864,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-01-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 266.8,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -138928,6 +139024,38 @@
       "publicationDate": "2026-08-31",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:31:51.684Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-01-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 292.27,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-01-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 238.36,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -139139,6 +139267,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-02-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 627.26,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-02-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 260.25,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-02-01",
       "product": "cebada",
       "region": "ca",
@@ -139200,6 +139360,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-02-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.214,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -139603,6 +139779,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-02-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 622.99,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-02-01",
       "product": "harina_soja",
       "region": "eu",
@@ -139779,6 +139971,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-02-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1287.49,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-02-01",
       "product": "lenteja",
       "region": "ca",
@@ -139872,6 +140080,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-02-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 275.74,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -140019,6 +140243,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-02-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 309.27,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-02-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 238.36,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2025-02-01",
       "product": "trigo",
       "region": "ca",
@@ -140163,6 +140419,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2025-03-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 275,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2025-03-01",
       "product": "avena",
       "region": "ca",
@@ -140227,6 +140499,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-03-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 608.51,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-03-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 263.44,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-03-01",
       "product": "cebada",
       "region": "ca",
@@ -140272,6 +140576,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-03-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.314,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -140739,6 +141059,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-03-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 613.62,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-03-01",
       "product": "harina_soja",
       "region": "eu",
@@ -140915,6 +141251,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-03-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1259.94,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-03-01",
       "product": "lenteja",
       "region": "ca",
@@ -140992,6 +141344,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-03-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 274.34,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -141139,6 +141507,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-03-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 293.96,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-03-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 247.63,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2025-03-01",
       "product": "trigo",
       "region": "ca",
@@ -141267,6 +141667,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2025-04-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 298,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2025-04-01",
       "product": "avena",
       "region": "ca",
@@ -141331,6 +141747,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-04-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 603.25,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-04-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 264.25,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-04-01",
       "product": "cebada",
       "region": "ca",
@@ -141392,6 +141840,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-04-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.289,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -141795,6 +142259,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-04-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 567.69,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-04-01",
       "product": "harina_soja",
       "region": "eu",
@@ -141971,6 +142451,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-04-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1138.68,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-04-01",
       "product": "lenteja",
       "region": "ca",
@@ -142064,6 +142560,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-04-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 282.03,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -142211,6 +142723,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-04-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 299.03,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-04-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 258.76,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2025-04-01",
       "product": "trigo",
       "region": "ca",
@@ -142355,6 +142899,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2025-05-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 275,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2025-05-01",
       "product": "avena",
       "region": "ca",
@@ -142419,6 +142979,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-05-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 688.82,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-05-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 258.83,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-05-01",
       "product": "cebada",
       "region": "ca",
@@ -142480,6 +143072,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-05-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.191,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -142883,6 +143491,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-05-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 567.69,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-05-01",
       "product": "harina_soja",
       "region": "eu",
@@ -143059,6 +143683,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-05-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1078.05,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-05-01",
       "product": "lenteja",
       "region": "ca",
@@ -143152,6 +143792,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-05-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 288.83,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -143299,6 +143955,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-05-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 300.87,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-05-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 259.21,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2025-05-01",
       "product": "trigo",
       "region": "ca",
@@ -143443,6 +144131,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2025-06-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 291.51,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2025-06-01",
       "product": "avena",
       "region": "ca",
@@ -143507,6 +144211,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-06-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 689.21,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-06-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 280.35,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-06-01",
       "product": "cebada",
       "region": "ca",
@@ -143568,6 +144304,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-06-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.427,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -144035,6 +144787,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-06-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 581.65,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-06-01",
       "product": "harina_soja",
       "region": "eu",
@@ -144211,6 +144979,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-06-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 973.34,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-06-01",
       "product": "lenteja",
       "region": "ca",
@@ -144304,6 +145088,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-06-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 299.9,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -144451,6 +145251,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-06-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 318.99,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-06-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 278.52,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2025-06-01",
       "product": "trigo",
       "region": "ca",
@@ -144595,6 +145427,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2025-07-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 291,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2025-07-01",
       "product": "avena",
       "region": "ca",
@@ -144659,6 +145507,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-07-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 689.52,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-07-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 260.06,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-07-01",
       "product": "cebada",
       "region": "ca",
@@ -144720,6 +145600,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-07-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.749,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -145123,6 +146019,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-07-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 586.06,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-07-01",
       "product": "harina_soja",
       "region": "eu",
@@ -145299,6 +146211,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-07-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 918.22,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-07-01",
       "product": "lenteja",
       "region": "ca",
@@ -145392,6 +146320,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-07-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 298.88,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -145539,6 +146483,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-07-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 312.54,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-07-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 287.68,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2025-07-01",
       "product": "trigo",
       "region": "ca",
@@ -145683,6 +146659,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2025-08-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 269,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2025-08-01",
       "product": "avena",
       "region": "ca",
@@ -145747,6 +146739,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-08-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 640.03,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-08-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 241.88,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-08-01",
       "product": "cebada",
       "region": "ca",
@@ -145808,6 +146832,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-08-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.71,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -146211,6 +147251,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-08-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 470.87,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-08-01",
       "product": "harina_soja",
       "region": "eu",
@@ -146387,6 +147443,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-08-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 780.43,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-08-01",
       "product": "lenteja",
       "region": "ca",
@@ -146480,6 +147552,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-08-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 299.16,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -146627,6 +147715,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-08-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 273.51,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-08-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 223.35,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2025-08-01",
       "product": "trigo",
       "region": "ca",
@@ -146771,6 +147891,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2025-09-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 265.91,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2025-09-01",
       "product": "avena",
       "region": "ca",
@@ -146835,6 +147971,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-09-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 569.27,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-09-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 223.64,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-09-01",
       "product": "cebada",
       "region": "ca",
@@ -146896,6 +148064,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-09-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.636,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -147363,6 +148547,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-09-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 386.73,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-09-01",
       "product": "harina_soja",
       "region": "eu",
@@ -147539,6 +148739,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-09-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 521.39,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-09-01",
       "product": "lenteja",
       "region": "ca",
@@ -147632,6 +148848,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-09-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 308.69,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -147779,6 +149011,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-09-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 255.62,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-09-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 209.16,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2025-09-01",
       "product": "trigo",
       "region": "ca",
@@ -147923,6 +149187,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2025-10-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 236.8,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2025-10-01",
       "product": "avena",
       "region": "ca",
@@ -147987,6 +149267,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-10-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 559.4,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-10-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 215.82,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-10-01",
       "product": "cebada",
       "region": "ca",
@@ -148048,6 +149360,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-10-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.622,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -148451,6 +149779,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-10-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 363.03,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-10-01",
       "product": "harina_soja",
       "region": "eu",
@@ -148627,6 +149971,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-10-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 609.58,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-10-01",
       "product": "lenteja",
       "region": "ca",
@@ -148720,6 +150080,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-10-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 312.75,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -148867,6 +150243,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-10-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 258.97,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-10-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 198.63,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2025-10-01",
       "product": "trigo",
       "region": "ca",
@@ -149011,6 +150419,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2025-11-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 227.1,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2025-11-01",
       "product": "avena",
       "region": "ca",
@@ -149075,6 +150499,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-11-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 587.84,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-11-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 222.01,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-11-01",
       "product": "cebada",
       "region": "ca",
@@ -149136,6 +150592,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-11-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.282,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -149539,6 +151011,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-11-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 373.32,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-11-01",
       "product": "harina_soja",
       "region": "eu",
@@ -149715,6 +151203,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-11-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 598.55,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-11-01",
       "product": "lenteja",
       "region": "ca",
@@ -149808,6 +151312,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-11-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 300.45,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -149955,6 +151475,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-11-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 270.8,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-11-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 214.43,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2025-11-01",
       "product": "trigo",
       "region": "ca",
@@ -150099,6 +151651,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2025-12-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 227.1,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2025-12-01",
       "product": "avena",
       "region": "ca",
@@ -150163,6 +151731,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2025-12-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 573.5,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2025-12-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 229.2,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2025-12-01",
       "product": "cebada",
       "region": "ca",
@@ -150224,6 +151824,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2025-12-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.223,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -150691,6 +152307,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2025-12-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 363.03,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2025-12-01",
       "product": "harina_soja",
       "region": "eu",
@@ -150867,6 +152499,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2025-12-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 593.04,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2025-12-01",
       "product": "lenteja",
       "region": "ca",
@@ -150960,6 +152608,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2025-12-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 285.8,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -151107,6 +152771,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2025-12-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 271.84,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2025-12-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 214.43,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2025-12-01",
       "product": "trigo",
       "region": "ca",
@@ -151251,6 +152947,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2026-01-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 226.99,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2026-01-01",
       "product": "avena",
       "region": "ca",
@@ -151315,6 +153027,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2026-01-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 576.53,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2026-01-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 236.01,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2026-01-01",
       "product": "cebada",
       "region": "ca",
@@ -151376,6 +153120,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2026-01-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.18,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -151779,6 +153539,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2026-01-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 367.07,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2026-01-01",
       "product": "harina_soja",
       "region": "eu",
@@ -151955,6 +153731,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2026-01-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 559.97,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2026-01-01",
       "product": "lenteja",
       "region": "ca",
@@ -152048,6 +153840,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2026-01-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 298.53,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -152195,6 +154003,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2026-01-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 267.26,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2026-01-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 215.04,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2026-01-01",
       "product": "trigo",
       "region": "ca",
@@ -152339,6 +154179,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2026-02-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 195.01,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2026-02-01",
       "product": "avena",
       "region": "ca",
@@ -152403,6 +154259,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2026-02-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 627.26,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2026-02-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 244.55,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2026-02-01",
       "product": "cebada",
       "region": "ca",
@@ -152464,6 +154352,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2026-02-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.175,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -152867,6 +154771,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2026-02-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 379.93,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2026-02-01",
       "product": "harina_soja",
       "region": "eu",
@@ -153043,6 +154963,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2026-02-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 565.48,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2026-02-01",
       "product": "lenteja",
       "region": "ca",
@@ -153136,6 +155072,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2026-02-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 305.3,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -153283,6 +155235,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2026-02-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 270.93,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2026-02-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 231.8,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2026-02-01",
       "product": "trigo",
       "region": "ca",
@@ -153427,6 +155411,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2026-03-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 213.44,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2026-03-01",
       "product": "avena",
       "region": "ca",
@@ -153491,6 +155491,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2026-03-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 687.28,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2026-03-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 248.35,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2026-03-01",
       "product": "cebada",
       "region": "ca",
@@ -153552,6 +155584,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2026-03-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.261,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -154019,6 +156067,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2026-03-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 370.74,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2026-03-01",
       "product": "harina_soja",
       "region": "eu",
@@ -154195,6 +156259,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2026-03-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 537.92,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2026-03-01",
       "product": "lenteja",
       "region": "ca",
@@ -154288,6 +156368,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2026-03-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 320.15,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -154435,6 +156531,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2026-03-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 284.53,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2026-03-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 219.4,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2026-03-01",
       "product": "trigo",
       "region": "ca",
@@ -154579,6 +156707,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2026-04-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 243.16,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2026-04-01",
       "product": "avena",
       "region": "ca",
@@ -154643,6 +156787,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2026-04-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 693.62,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2026-04-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 274.13,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2026-04-01",
       "product": "cebada",
       "region": "ca",
@@ -154704,6 +156880,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2026-04-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.333,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -155107,6 +157299,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2026-04-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 352.19,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2026-04-01",
       "product": "harina_soja",
       "region": "eu",
@@ -155283,6 +157491,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2026-04-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 532.41,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2026-04-01",
       "product": "lenteja",
       "region": "ca",
@@ -155376,6 +157600,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2026-04-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 540.2,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -155523,6 +157763,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2026-04-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 295.71,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2026-04-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 226.93,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2026-04-01",
       "product": "trigo",
       "region": "ca",
@@ -155667,6 +157939,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2026-05-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 243.16,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2026-05-01",
       "product": "avena",
       "region": "ca",
@@ -155731,6 +158019,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2026-05-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 715.04,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2026-05-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 272.59,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2026-05-01",
       "product": "cebada",
       "region": "ca",
@@ -155792,6 +158112,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2026-05-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.3,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -156195,6 +158531,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2026-05-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 357.7,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2026-05-01",
       "product": "harina_soja",
       "region": "eu",
@@ -156371,6 +158723,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2026-05-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 518.74,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2026-05-01",
       "product": "lenteja",
       "region": "ca",
@@ -156464,6 +158832,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2026-05-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 333.39,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -156611,6 +158995,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2026-05-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 311.03,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2026-05-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 263.99,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2026-05-01",
       "product": "trigo",
       "region": "ca",
@@ -156755,6 +159171,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2026-06-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 249.37,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2026-06-01",
       "product": "avena",
       "region": "ca",
@@ -156819,6 +159251,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_canola_elevador_ca:2026-06-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 726.77,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2026-06-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 283.06,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_ca:2026-06-01",
       "product": "cebada",
       "region": "ca",
@@ -156880,6 +159344,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2026-06-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.334,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -157347,6 +159827,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2026-06-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 348.52,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2026-06-01",
       "product": "harina_soja",
       "region": "eu",
@@ -157523,6 +160019,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2026-06-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 510.37,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2026-06-01",
       "product": "lenteja",
       "region": "ca",
@@ -157616,6 +160128,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2026-06-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 352.95,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -157763,6 +160291,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2026-06-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 291.36,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2026-06-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 259.98,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2026-06-01",
       "product": "trigo",
       "region": "ca",
@@ -157907,6 +160467,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2026-07-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 246.4,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_ca:2026-07-01",
       "product": "avena",
       "region": "ca",
@@ -157952,6 +160528,38 @@
       "publicationDate": "2026-08-31",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:31:47.757Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_canola_elevador_ca:2026-07-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 709.07,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2026-07-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 270.7,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -158016,6 +160624,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2026-07-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.363,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -158419,6 +161043,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2026-07-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 323.9,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2026-07-01",
       "product": "harina_soja",
       "region": "eu",
@@ -158595,6 +161235,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2026-07-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 504.85,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_lenteja_ca:2026-07-01",
       "product": "lenteja",
       "region": "ca",
@@ -158688,6 +161344,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2026-07-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 356,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -158835,6 +161507,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2026-07-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 299.91,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2026-07-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 257.2,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_ca:2026-07-01",
       "product": "trigo",
       "region": "ca",
@@ -158979,6 +161683,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2026-08-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 233.43,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_avena_eu:2026-08-01",
       "product": "avena",
       "region": "eu",
@@ -159008,6 +161728,38 @@
       "publicationDate": "2026-08-31",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:31:47.757Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_canola_elevador_ca:2026-08-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 749.18,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2026-08-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 230.72,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -159056,6 +161808,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:43.114Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2026-08-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.494,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -159219,6 +161987,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2026-08-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 322.43,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2026-08-01",
       "product": "harina_soja",
       "region": "eu",
@@ -159363,6 +162147,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2026-08-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 499.35,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_maiz_eu:2026-08-01",
       "product": "maiz",
       "region": "eu",
@@ -159408,6 +162208,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2026-08-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 323.61,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -159523,6 +162339,38 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2026-08-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 310.63,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2026-08-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 252.2,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_trigo_eu:2026-08-01",
       "product": "trigo",
       "region": "eu",
@@ -159619,6 +162467,54 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_avena_pienso_ab_ca:2026-09-01",
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 256.11,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_canola_elevador_ca:2026-09-01",
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 770.63,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_cebada_pienso_ab_ca:2026-09-01",
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 254.68,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_cebada_eu:2026-09-01",
       "product": "cebada",
       "region": "eu",
@@ -159632,6 +162528,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:32.361Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_porcino_cerdo_ab_ca:2026-09-01",
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 2.313,
+      "currency": "CAD",
+      "unit": "kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -159731,6 +162643,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_guisante_verde_ab_ca:2026-09-01",
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 318.39,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_pienso_harina_soja_eu:2026-09-01",
       "product": "harina_soja",
       "region": "eu",
@@ -159811,6 +162739,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cereales_lenteja_laird_ab_ca:2026-09-01",
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 526.9,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_cereales_maiz_eu:2026-09-01",
       "product": "maiz",
       "region": "eu",
@@ -159840,6 +162784,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:44.919Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_ganado_novillo_ab_ca:2026-09-01",
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 299.02,
+      "currency": "CAD",
+      "unit": "cwt",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {
@@ -159904,6 +162864,38 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T14:38:24.825Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_cwrs_ab_ca:2026-09-01",
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 333.11,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_cereales_trigo_pienso_ab_ca:2026-09-01",
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 235.22,
+      "currency": "CAD",
+      "unit": "tonelada",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
       "comparability": "directional"
     },
     {

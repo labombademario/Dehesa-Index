@@ -1,0 +1,1306 @@
+{
+ "issues": {
+  "2025-01-10": {
+   "crop": {
+    "canola_elevador": 607.99,
+    "cebada_pienso_ab": 258.23,
+    "guisante_verde_ab": 609.22,
+    "lenteja_laird_ab": 1309.54,
+    "trigo_cwrs_ab": 292.27,
+    "trigo_pienso_ab": 238.36
+   },
+   "livestock": {
+    "cerdo_ab": 2.096
+   }
+  },
+  "2025-01-17": {
+   "crop": {
+    "canola_elevador": 581.67,
+    "cebada_pienso_ab": 258.88,
+    "guisante_verde_ab": 613.81,
+    "lenteja_laird_ab": 1320.56,
+    "trigo_cwrs_ab": 294.04,
+    "trigo_pienso_ab": 238.36
+   },
+   "livestock": {
+    "novillo_ab": 266.8
+   }
+  },
+  "2025-01-24": {
+   "crop": {
+    "canola_elevador": 606.69,
+    "cebada_pienso_ab": 258.88,
+    "guisante_verde_ab": 618.4,
+    "lenteja_laird_ab": 1339.3,
+    "trigo_cwrs_ab": 301.58,
+    "trigo_pienso_ab": 240.52
+   },
+   "livestock": {
+    "novillo_ab": 269.26
+   }
+  },
+  "2025-01-31": {
+   "crop": {
+    "canola_elevador": 606.09,
+    "cebada_pienso_ab": 258.88,
+    "guisante_verde_ab": 618.4,
+    "lenteja_laird_ab": 1276.47,
+    "trigo_cwrs_ab": 309.17,
+    "trigo_pienso_ab": 233.9
+   },
+   "livestock": {
+    "novillo_ab": 267.93
+   }
+  },
+  "2025-02-07": {
+   "crop": {
+    "canola_elevador": 627.26,
+    "cebada_pienso_ab": 260.25,
+    "guisante_verde_ab": 622.99,
+    "lenteja_laird_ab": 1287.49,
+    "trigo_cwrs_ab": 309.27,
+    "trigo_pienso_ab": 238.36
+   },
+   "livestock": {
+    "novillo_ab": 275.74
+   }
+  },
+  "2025-02-14": {
+   "crop": {
+    "canola_elevador": 635.44,
+    "cebada_pienso_ab": 266.42,
+    "guisante_verde_ab": 618.4,
+    "lenteja_laird_ab": 1265.45,
+    "trigo_cwrs_ab": 311.22,
+    "trigo_pienso_ab": 234.62
+   },
+   "livestock": {
+    "cerdo_ab": 2.214,
+    "novillo_ab": 276.41
+   }
+  },
+  "2025-02-21": {
+   "crop": {
+    "canola_elevador": 640.44,
+    "cebada_pienso_ab": 261.92,
+    "guisante_verde_ab": 618.4,
+    "lenteja_laird_ab": 1265.45,
+    "trigo_cwrs_ab": 308.43,
+    "trigo_pienso_ab": 243.01
+   },
+   "livestock": {
+    "cerdo_ab": 2.283,
+    "novillo_ab": 274.78
+   }
+  },
+  "2025-02-28": {
+   "crop": {
+    "canola_elevador": 610.74,
+    "cebada_pienso_ab": 264.17,
+    "guisante_verde_ab": 618.4,
+    "lenteja_laird_ab": 1265.45,
+    "trigo_cwrs_ab": 292.94,
+    "trigo_pienso_ab": 243.01
+   },
+   "livestock": {
+    "cerdo_ab": 2.311,
+    "novillo_ab": 275.3
+   }
+  },
+  "2025-03-07": {
+   "crop": {
+    "canola_elevador": 608.51,
+    "cebada_pienso_ab": 263.44,
+    "guisante_verde_ab": 613.62,
+    "lenteja_laird_ab": 1259.94,
+    "trigo_cwrs_ab": 293.96,
+    "trigo_pienso_ab": 247.63
+   },
+   "livestock": {
+    "cerdo_ab": 2.314,
+    "novillo_ab": 274.34
+   }
+  },
+  "2025-03-14": {
+   "crop": {
+    "avena_pienso_ab": 275.0,
+    "canola_elevador": 525.15,
+    "cebada_pienso_ab": 257.0,
+    "guisante_verde_ab": 558.5,
+    "lenteja_laird_ab": 1199.31,
+    "trigo_cwrs_ab": 299.43,
+    "trigo_pienso_ab": 247.63
+   },
+   "livestock": {
+    "cerdo_ab": 2.33,
+    "novillo_ab": 264.78
+   }
+  },
+  "2025-03-21": {
+   "crop": {
+    "avena_pienso_ab": 275.3,
+    "canola_elevador": 538.21,
+    "cebada_pienso_ab": 261.54,
+    "guisante_verde_ab": 567.69,
+    "lenteja_laird_ab": 1182.77,
+    "trigo_cwrs_ab": 299.45,
+    "trigo_pienso_ab": 247.63
+   },
+   "livestock": {
+    "cerdo_ab": 2.325,
+    "novillo_ab": 270.76
+   }
+  },
+  "2025-03-28": {
+   "crop": {
+    "avena_pienso_ab": 275.3,
+    "canola_elevador": 589.53,
+    "cebada_pienso_ab": 259.04,
+    "guisante_verde_ab": 567.69,
+    "lenteja_laird_ab": 1160.73,
+    "trigo_cwrs_ab": 294.51,
+    "trigo_pienso_ab": 247.63
+   },
+   "livestock": {
+    "cerdo_ab": 2.298,
+    "novillo_ab": 272.97
+   }
+  },
+  "2025-04-04": {
+   "crop": {
+    "avena_pienso_ab": 298.0,
+    "canola_elevador": 603.25,
+    "cebada_pienso_ab": 264.25,
+    "guisante_verde_ab": 567.69,
+    "lenteja_laird_ab": 1138.68,
+    "trigo_cwrs_ab": 299.03,
+    "trigo_pienso_ab": 258.76
+   },
+   "livestock": {
+    "cerdo_ab": 2.289,
+    "novillo_ab": 282.03
+   }
+  },
+  "2025-04-11": {
+   "crop": {
+    "avena_pienso_ab": 275.0,
+    "canola_elevador": 643.32,
+    "cebada_pienso_ab": 258.2,
+    "guisante_verde_ab": 567.69,
+    "lenteja_laird_ab": 1138.68,
+    "trigo_cwrs_ab": 304.47,
+    "trigo_pienso_ab": 258.76
+   },
+   "livestock": {
+    "cerdo_ab": 2.268,
+    "novillo_ab": 283.89
+   }
+  },
+  "2025-04-18": {
+   "crop": {
+    "avena_pienso_ab": 275.31,
+    "canola_elevador": 653.06,
+    "cebada_pienso_ab": 258.66,
+    "guisante_verde_ab": 558.69,
+    "lenteja_laird_ab": 1105.61,
+    "trigo_cwrs_ab": 306.4,
+    "trigo_pienso_ab": 258.76
+   },
+   "livestock": {
+    "cerdo_ab": 2.198,
+    "novillo_ab": 283.99
+   }
+  },
+  "2025-04-25": {
+   "crop": {
+    "avena_pienso_ab": 275.0,
+    "canola_elevador": 681.9,
+    "cebada_pienso_ab": 257.38,
+    "guisante_verde_ab": 567.69,
+    "lenteja_laird_ab": 1105.61,
+    "trigo_cwrs_ab": 303.59,
+    "trigo_pienso_ab": 258.76
+   },
+   "livestock": {
+    "cerdo_ab": 2.134,
+    "novillo_ab": 283.8
+   }
+  },
+  "2025-05-02": {
+   "crop": {
+    "avena_pienso_ab": 275.0,
+    "canola_elevador": 688.82,
+    "cebada_pienso_ab": 258.83,
+    "guisante_verde_ab": 567.69,
+    "lenteja_laird_ab": 1078.05,
+    "trigo_cwrs_ab": 300.87,
+    "trigo_pienso_ab": 259.21
+   },
+   "livestock": {
+    "cerdo_ab": 2.191,
+    "novillo_ab": 288.83
+   }
+  },
+  "2025-05-09": {
+   "crop": {
+    "avena_pienso_ab": 280.0,
+    "canola_elevador": 690.42,
+    "cebada_pienso_ab": 260.64,
+    "guisante_verde_ab": 586.06,
+    "lenteja_laird_ab": 1067.03,
+    "trigo_cwrs_ab": 306.66,
+    "trigo_pienso_ab": 259.21
+   },
+   "livestock": {
+    "cerdo_ab": 2.236,
+    "novillo_ab": 292.5
+   }
+  },
+  "2025-05-16": {
+   "crop": {
+    "avena_pienso_ab": 280.0,
+    "canola_elevador": 680.97,
+    "cebada_pienso_ab": 261.77,
+    "guisante_verde_ab": 581.47,
+    "lenteja_laird_ab": 1044.99,
+    "trigo_cwrs_ab": 300.47,
+    "trigo_pienso_ab": 259.21
+   },
+   "livestock": {
+    "cerdo_ab": 2.245,
+    "novillo_ab": 293.86
+   }
+  },
+  "2025-05-23": {
+   "crop": {
+    "avena_pienso_ab": 280.0,
+    "canola_elevador": 696.26,
+    "cebada_pienso_ab": 261.77,
+    "guisante_verde_ab": 609.22,
+    "lenteja_laird_ab": 1011.92,
+    "trigo_cwrs_ab": 309.66,
+    "trigo_pienso_ab": 259.21
+   },
+   "livestock": {
+    "cerdo_ab": 2.291,
+    "novillo_ab": 297.85
+   }
+  },
+  "2025-05-30": {
+   "crop": {
+    "avena_pienso_ab": 280.0,
+    "canola_elevador": 686.49,
+    "cebada_pienso_ab": 262.75,
+    "guisante_verde_ab": 590.84,
+    "lenteja_laird_ab": 984.36,
+    "trigo_cwrs_ab": 316.77,
+    "trigo_pienso_ab": 278.52
+   },
+   "livestock": {
+    "cerdo_ab": 2.315,
+    "novillo_ab": 299.55
+   }
+  },
+  "2025-06-06": {
+   "crop": {
+    "avena_pienso_ab": 291.51,
+    "canola_elevador": 689.21,
+    "cebada_pienso_ab": 280.35,
+    "guisante_verde_ab": 581.65,
+    "lenteja_laird_ab": 973.34,
+    "trigo_cwrs_ab": 318.99,
+    "trigo_pienso_ab": 278.52
+   },
+   "livestock": {
+    "novillo_ab": 299.9
+   }
+  },
+  "2025-06-13": {
+   "crop": {
+    "avena_pienso_ab": 291.5,
+    "canola_elevador": 705.27,
+    "cebada_pienso_ab": 271.55,
+    "guisante_verde_ab": 600.03,
+    "lenteja_laird_ab": 973.34,
+    "trigo_cwrs_ab": 314.58,
+    "trigo_pienso_ab": 278.52
+   },
+   "livestock": {
+    "cerdo_ab": 2.427,
+    "novillo_ab": 301.11
+   }
+  },
+  "2025-06-20": {
+   "crop": {
+    "avena_pienso_ab": 291.51,
+    "canola_elevador": 714.15,
+    "cebada_pienso_ab": 271.72,
+    "guisante_verde_ab": 600.03,
+    "lenteja_laird_ab": 940.27,
+    "trigo_cwrs_ab": 326.27,
+    "trigo_pienso_ab": 278.52
+   },
+   "livestock": {
+    "cerdo_ab": 2.533,
+    "novillo_ab": 301.14
+   }
+  },
+  "2025-06-27": {
+   "crop": {
+    "avena_pienso_ab": 291.51,
+    "canola_elevador": 661.36,
+    "cebada_pienso_ab": 264.12,
+    "guisante_verde_ab": 590.84,
+    "lenteja_laird_ab": 929.25,
+    "trigo_cwrs_ab": 309.59,
+    "trigo_pienso_ab": 287.68
+   },
+   "livestock": {
+    "cerdo_ab": 2.677,
+    "novillo_ab": 299.72
+   }
+  },
+  "2025-07-04": {
+   "crop": {
+    "avena_pienso_ab": 291.0,
+    "canola_elevador": 689.52,
+    "cebada_pienso_ab": 260.06,
+    "guisante_verde_ab": 586.06,
+    "lenteja_laird_ab": 918.22,
+    "trigo_cwrs_ab": 312.54,
+    "trigo_pienso_ab": 287.68
+   },
+   "livestock": {
+    "cerdo_ab": 2.749,
+    "novillo_ab": 298.88
+   }
+  },
+  "2025-07-11": {
+   "crop": {
+    "avena_pienso_ab": 291.0,
+    "canola_elevador": 651.95,
+    "cebada_pienso_ab": 246.69,
+    "guisante_verde_ab": 590.84,
+    "lenteja_laird_ab": 846.57,
+    "trigo_cwrs_ab": 302.68,
+    "trigo_pienso_ab": 272.42
+   },
+   "livestock": {
+    "cerdo_ab": 2.662,
+    "novillo_ab": 298.03
+   }
+  },
+  "2025-07-18": {
+   "crop": {
+    "avena_pienso_ab": 291.0,
+    "canola_elevador": 670.4,
+    "cebada_pienso_ab": 248.43,
+    "guisante_verde_ab": 554.1,
+    "lenteja_laird_ab": 846.57,
+    "trigo_cwrs_ab": 283.85,
+    "trigo_pienso_ab": 272.42
+   },
+   "livestock": {
+    "cerdo_ab": 2.638,
+    "novillo_ab": 297.31
+   }
+  },
+  "2025-07-25": {
+   "crop": {
+    "avena_pienso_ab": 269.0,
+    "canola_elevador": 661.4,
+    "cebada_pienso_ab": 245.09,
+    "guisante_verde_ab": 470.87,
+    "lenteja_laird_ab": 785.94,
+    "trigo_cwrs_ab": 279.3,
+    "trigo_pienso_ab": 222.81
+   },
+   "livestock": {
+    "cerdo_ab": 2.664,
+    "novillo_ab": 298.73
+   }
+  },
+  "2025-08-01": {
+   "crop": {
+    "avena_pienso_ab": 269.0,
+    "canola_elevador": 640.03,
+    "cebada_pienso_ab": 241.88,
+    "guisante_verde_ab": 470.87,
+    "lenteja_laird_ab": 780.43,
+    "trigo_cwrs_ab": 273.51,
+    "trigo_pienso_ab": 223.35
+   },
+   "livestock": {
+    "cerdo_ab": 2.71,
+    "novillo_ab": 299.16
+   }
+  },
+  "2025-08-08": {
+   "crop": {
+    "avena_pienso_ab": 269.0,
+    "canola_elevador": 629.15,
+    "cebada_pienso_ab": 241.88,
+    "guisante_verde_ab": 461.69,
+    "lenteja_laird_ab": 758.38,
+    "trigo_cwrs_ab": 264.45,
+    "trigo_pienso_ab": 213.93
+   },
+   "livestock": {
+    "cerdo_ab": 2.729,
+    "novillo_ab": 301.84
+   }
+  },
+  "2025-08-15": {
+   "crop": {
+    "avena_pienso_ab": 269.0,
+    "canola_elevador": 622.36,
+    "cebada_pienso_ab": 233.75,
+    "guisante_verde_ab": 467.01,
+    "lenteja_laird_ab": 741.85,
+    "trigo_cwrs_ab": 266.14,
+    "trigo_pienso_ab": 213.93
+   },
+   "livestock": {
+    "cerdo_ab": 2.723,
+    "novillo_ab": 301.12
+   }
+  },
+  "2025-08-22": {
+   "crop": {
+    "avena_pienso_ab": 269.0,
+    "canola_elevador": 623.61,
+    "cebada_pienso_ab": 234.42,
+    "guisante_verde_ab": 454.15,
+    "lenteja_laird_ab": 725.32,
+    "trigo_cwrs_ab": 266.09,
+    "trigo_pienso_ab": 213.93
+   },
+   "livestock": {
+    "cerdo_ab": 2.715,
+    "novillo_ab": 302.23
+   }
+  },
+  "2025-08-29": {
+   "crop": {
+    "avena_pienso_ab": 269.0,
+    "canola_elevador": 581.18,
+    "cebada_pienso_ab": 219.19,
+    "guisante_verde_ab": 397.38,
+    "lenteja_laird_ab": 559.97,
+    "trigo_cwrs_ab": 256.29,
+    "trigo_pienso_ab": 210.25
+   },
+   "livestock": {
+    "cerdo_ab": 2.683,
+    "novillo_ab": 304.22
+   }
+  },
+  "2025-09-05": {
+   "crop": {
+    "avena_pienso_ab": 265.91,
+    "canola_elevador": 569.27,
+    "cebada_pienso_ab": 223.64,
+    "guisante_verde_ab": 386.73,
+    "lenteja_laird_ab": 521.39,
+    "trigo_cwrs_ab": 255.62,
+    "trigo_pienso_ab": 209.16
+   },
+   "livestock": {
+    "cerdo_ab": 2.636,
+    "novillo_ab": 308.69
+   }
+  },
+  "2025-09-12": {
+   "crop": {
+    "avena_pienso_ab": 246.52,
+    "canola_elevador": 592.81,
+    "cebada_pienso_ab": 221.37,
+    "guisante_verde_ab": 362.29,
+    "lenteja_laird_ab": 521.39,
+    "trigo_cwrs_ab": 258.09,
+    "trigo_pienso_ab": 209.16
+   },
+   "livestock": {
+    "cerdo_ab": 2.63,
+    "novillo_ab": 313.93
+   }
+  },
+  "2025-09-19": {
+   "crop": {
+    "avena_pienso_ab": 243.28,
+    "canola_elevador": 569.64,
+    "cebada_pienso_ab": 221.37,
+    "guisante_verde_ab": 358.99,
+    "lenteja_laird_ab": 537.92,
+    "trigo_cwrs_ab": 258.28,
+    "trigo_pienso_ab": 209.16
+   },
+   "livestock": {
+    "cerdo_ab": 2.644,
+    "novillo_ab": 317.26
+   }
+  },
+  "2025-09-26": {
+   "crop": {
+    "avena_pienso_ab": 236.8,
+    "canola_elevador": 566.93,
+    "cebada_pienso_ab": 220.3,
+    "guisante_verde_ab": 363.03,
+    "lenteja_laird_ab": 570.99,
+    "trigo_cwrs_ab": 260.41,
+    "trigo_pienso_ab": 209.16
+   },
+   "livestock": {
+    "cerdo_ab": 2.614,
+    "novillo_ab": 312.52
+   }
+  },
+  "2025-10-03": {
+   "crop": {
+    "avena_pienso_ab": 236.8,
+    "canola_elevador": 559.4,
+    "cebada_pienso_ab": 215.82,
+    "guisante_verde_ab": 363.03,
+    "lenteja_laird_ab": 609.58,
+    "trigo_cwrs_ab": 258.97,
+    "trigo_pienso_ab": 198.63
+   },
+   "livestock": {
+    "cerdo_ab": 2.622,
+    "novillo_ab": 312.75
+   }
+  },
+  "2025-10-10": {
+   "crop": {
+    "avena_pienso_ab": 236.8,
+    "canola_elevador": 561.51,
+    "cebada_pienso_ab": 219.41,
+    "guisante_verde_ab": 363.03,
+    "lenteja_laird_ab": 609.58,
+    "trigo_cwrs_ab": 261.04,
+    "trigo_pienso_ab": 200.62
+   },
+   "livestock": {
+    "cerdo_ab": 2.577,
+    "novillo_ab": 307.45
+   }
+  },
+  "2025-10-17": {
+   "crop": {
+    "avena_pienso_ab": 236.8,
+    "canola_elevador": 574.25,
+    "cebada_pienso_ab": 219.07,
+    "guisante_verde_ab": 372.21,
+    "lenteja_laird_ab": 609.58,
+    "trigo_cwrs_ab": 260.47,
+    "trigo_pienso_ab": 200.62
+   },
+   "livestock": {
+    "cerdo_ab": 2.495,
+    "novillo_ab": 304.26
+   }
+  },
+  "2025-10-24": {
+   "crop": {
+    "avena_pienso_ab": 236.8,
+    "canola_elevador": 577.92,
+    "cebada_pienso_ab": 220.97,
+    "guisante_verde_ab": 372.21,
+    "lenteja_laird_ab": 609.57,
+    "trigo_cwrs_ab": 264.2,
+    "trigo_pienso_ab": 200.62
+   },
+   "livestock": {
+    "cerdo_ab": 2.338,
+    "novillo_ab": 302.09
+   }
+  },
+  "2025-10-31": {
+   "crop": {
+    "avena_pienso_ab": 220.59,
+    "canola_elevador": 582.3,
+    "cebada_pienso_ab": 222.76,
+    "guisante_verde_ab": 372.21,
+    "lenteja_laird_ab": 620.6,
+    "trigo_cwrs_ab": 261.7,
+    "trigo_pienso_ab": 214.43
+   },
+   "livestock": {
+    "cerdo_ab": 2.345,
+    "novillo_ab": 299.98
+   }
+  },
+  "2025-11-07": {
+   "crop": {
+    "avena_pienso_ab": 227.1,
+    "canola_elevador": 587.84,
+    "cebada_pienso_ab": 222.01,
+    "guisante_verde_ab": 373.32,
+    "lenteja_laird_ab": 598.55,
+    "trigo_cwrs_ab": 270.8,
+    "trigo_pienso_ab": 214.43
+   },
+   "livestock": {
+    "cerdo_ab": 2.282,
+    "novillo_ab": 300.45
+   }
+  },
+  "2025-11-14": {
+   "crop": {
+    "avena_pienso_ab": 227.1,
+    "canola_elevador": 599.87,
+    "cebada_pienso_ab": 226.05,
+    "guisante_verde_ab": 368.54,
+    "lenteja_laird_ab": 598.55,
+    "trigo_cwrs_ab": 276.43,
+    "trigo_pienso_ab": 214.43
+   },
+   "livestock": {
+    "cerdo_ab": 2.273,
+    "novillo_ab": 295.77
+   }
+  },
+  "2025-11-21": {
+   "crop": {
+    "avena_pienso_ab": 227.1,
+    "canola_elevador": 593.16,
+    "cebada_pienso_ab": 226.43,
+    "guisante_verde_ab": 368.54,
+    "lenteja_laird_ab": 598.55,
+    "trigo_cwrs_ab": 276.4,
+    "trigo_pienso_ab": 214.43
+   },
+   "livestock": {
+    "cerdo_ab": 2.275,
+    "novillo_ab": 296.02
+   }
+  },
+  "2025-11-28": {
+   "crop": {
+    "avena_pienso_ab": 227.1,
+    "canola_elevador": 602.76,
+    "cebada_pienso_ab": 229.5,
+    "guisante_verde_ab": 363.03,
+    "lenteja_laird_ab": 604.06,
+    "trigo_cwrs_ab": 277.16,
+    "trigo_pienso_ab": 214.43
+   },
+   "livestock": {
+    "cerdo_ab": 2.203,
+    "novillo_ab": 294.38
+   }
+  },
+  "2025-12-05": {
+   "crop": {
+    "avena_pienso_ab": 227.1,
+    "canola_elevador": 573.5,
+    "cebada_pienso_ab": 229.2,
+    "guisante_verde_ab": 363.03,
+    "lenteja_laird_ab": 593.04,
+    "trigo_cwrs_ab": 271.84,
+    "trigo_pienso_ab": 214.43
+   },
+   "livestock": {
+    "cerdo_ab": 2.223,
+    "novillo_ab": 285.8
+   }
+  },
+  "2025-12-12": {
+   "crop": {
+    "avena_pienso_ab": 227.1,
+    "canola_elevador": 561.16,
+    "cebada_pienso_ab": 228.24,
+    "guisante_verde_ab": 358.99,
+    "lenteja_laird_ab": 565.48,
+    "trigo_cwrs_ab": 270.29,
+    "trigo_pienso_ab": 214.43
+   },
+   "livestock": {
+    "cerdo_ab": 2.21,
+    "novillo_ab": 291.45
+   }
+  },
+  "2025-12-19": {
+   "crop": {
+    "avena_pienso_ab": 227.1,
+    "canola_elevador": 535.96,
+    "cebada_pienso_ab": 231.29,
+    "guisante_verde_ab": 363.58,
+    "lenteja_laird_ab": 554.46,
+    "trigo_cwrs_ab": 268.62,
+    "trigo_pienso_ab": 222.97
+   },
+   "livestock": {
+    "cerdo_ab": 2.232,
+    "novillo_ab": 294.94
+   }
+  },
+  "2026-01-09": {
+   "crop": {
+    "avena_pienso_ab": 226.99,
+    "canola_elevador": 576.53,
+    "cebada_pienso_ab": 236.01,
+    "guisante_verde_ab": 367.07,
+    "lenteja_laird_ab": 559.97,
+    "trigo_pienso_ab": 215.04
+   },
+   "livestock": {
+    "cerdo_ab": 2.18
+   }
+  },
+  "2026-01-16": {
+   "crop": {
+    "avena_pienso_ab": 195.01,
+    "canola_elevador": 595.14,
+    "cebada_pienso_ab": 237.26,
+    "guisante_verde_ab": 362.84,
+    "lenteja_laird_ab": 571.0,
+    "trigo_cwrs_ab": 267.26,
+    "trigo_pienso_ab": 215.04
+   },
+   "livestock": {
+    "cerdo_ab": 2.108,
+    "novillo_ab": 298.53
+   }
+  },
+  "2026-01-23": {
+   "crop": {
+    "avena_pienso_ab": 195.01,
+    "canola_elevador": 607.4,
+    "cebada_pienso_ab": 238.04,
+    "guisante_verde_ab": 371.66,
+    "lenteja_laird_ab": 559.97,
+    "trigo_cwrs_ab": 271.58,
+    "trigo_pienso_ab": 215.04
+   },
+   "livestock": {
+    "cerdo_ab": 2.17,
+    "novillo_ab": 302.96
+   }
+  },
+  "2026-01-30": {
+   "crop": {
+    "avena_pienso_ab": 195.01,
+    "canola_elevador": 606.69,
+    "cebada_pienso_ab": 242.5,
+    "guisante_verde_ab": 377.54,
+    "lenteja_laird_ab": 576.5,
+    "trigo_cwrs_ab": 270.98,
+    "trigo_pienso_ab": 219.64
+   },
+   "livestock": {
+    "cerdo_ab": 2.153,
+    "novillo_ab": 303.19
+   }
+  },
+  "2026-02-06": {
+   "crop": {
+    "avena_pienso_ab": 195.01,
+    "canola_elevador": 627.26,
+    "cebada_pienso_ab": 244.55,
+    "guisante_verde_ab": 379.93,
+    "lenteja_laird_ab": 565.48,
+    "trigo_cwrs_ab": 270.93,
+    "trigo_pienso_ab": 231.8
+   },
+   "livestock": {
+    "cerdo_ab": 2.175,
+    "novillo_ab": 305.3
+   }
+  },
+  "2026-02-13": {
+   "crop": {
+    "avena_pienso_ab": 233.44,
+    "canola_elevador": 629.39,
+    "cebada_pienso_ab": 245.38,
+    "guisante_verde_ab": 375.34,
+    "lenteja_laird_ab": 559.97,
+    "trigo_cwrs_ab": 271.36,
+    "trigo_pienso_ab": 231.8
+   },
+   "livestock": {
+    "cerdo_ab": 2.188,
+    "novillo_ab": 307.51
+   }
+  },
+  "2026-02-20": {
+   "crop": {
+    "avena_pienso_ab": 233.44,
+    "canola_elevador": 640.76,
+    "cebada_pienso_ab": 241.35,
+    "guisante_verde_ab": 367.62,
+    "lenteja_laird_ab": 559.97,
+    "trigo_cwrs_ab": 276.15,
+    "trigo_pienso_ab": 219.4
+   },
+   "livestock": {
+    "cerdo_ab": 2.192,
+    "novillo_ab": 310.57
+   }
+  },
+  "2026-02-27": {
+   "crop": {
+    "avena_pienso_ab": 233.44,
+    "canola_elevador": 642.39,
+    "cebada_pienso_ab": 241.6,
+    "guisante_verde_ab": 365.97,
+    "lenteja_laird_ab": 543.43,
+    "trigo_cwrs_ab": 278.07,
+    "trigo_pienso_ab": 219.4
+   },
+   "livestock": {
+    "cerdo_ab": 2.227,
+    "novillo_ab": 315.25
+   }
+  },
+  "2026-03-06": {
+   "crop": {
+    "avena_pienso_ab": 213.44,
+    "canola_elevador": 687.28,
+    "cebada_pienso_ab": 248.35,
+    "guisante_verde_ab": 370.74,
+    "lenteja_laird_ab": 537.92,
+    "trigo_cwrs_ab": 284.53,
+    "trigo_pienso_ab": 219.4
+   },
+   "livestock": {
+    "cerdo_ab": 2.261,
+    "novillo_ab": 320.15
+   }
+  },
+  "2026-03-13": {
+   "crop": {
+    "avena_pienso_ab": 213.44,
+    "canola_elevador": 688.55,
+    "cebada_pienso_ab": 260.45,
+    "guisante_verde_ab": 362.29,
+    "lenteja_laird_ab": 532.41,
+    "trigo_cwrs_ab": 284.82,
+    "trigo_pienso_ab": 219.23
+   },
+   "livestock": {
+    "cerdo_ab": 2.285,
+    "novillo_ab": 320.0
+   }
+  },
+  "2026-03-20": {
+   "crop": {
+    "avena_pienso_ab": 213.44,
+    "canola_elevador": 675.15,
+    "cebada_pienso_ab": 269.06,
+    "guisante_verde_ab": 358.25,
+    "lenteja_laird_ab": 526.9,
+    "trigo_cwrs_ab": 287.66,
+    "trigo_pienso_ab": 219.23
+   },
+   "livestock": {
+    "cerdo_ab": 2.305,
+    "novillo_ab": 321.58
+   }
+  },
+  "2026-03-27": {
+   "crop": {
+    "avena_pienso_ab": 213.44,
+    "canola_elevador": 669.15,
+    "cebada_pienso_ab": 270.5,
+    "guisante_verde_ab": 352.19,
+    "lenteja_laird_ab": 532.41,
+    "trigo_cwrs_ab": 293.15,
+    "trigo_pienso_ab": 219.23
+   },
+   "livestock": {
+    "cerdo_ab": 2.32,
+    "novillo_ab": 322.57
+   }
+  },
+  "2026-04-03": {
+   "crop": {
+    "avena_pienso_ab": 243.16,
+    "canola_elevador": 693.62,
+    "cebada_pienso_ab": 274.13,
+    "guisante_verde_ab": 352.19,
+    "lenteja_laird_ab": 532.41,
+    "trigo_cwrs_ab": 295.71,
+    "trigo_pienso_ab": 226.93
+   },
+   "livestock": {
+    "cerdo_ab": 2.333,
+    "novillo_ab": 540.2
+   }
+  },
+  "2026-04-10": {
+   "crop": {
+    "avena_pienso_ab": 243.16,
+    "canola_elevador": 668.84,
+    "cebada_pienso_ab": 263.4,
+    "guisante_verde_ab": 367.44,
+    "lenteja_laird_ab": 521.39,
+    "trigo_cwrs_ab": 284.17,
+    "trigo_pienso_ab": 228.99
+   },
+   "livestock": {
+    "cerdo_ab": 2.293,
+    "novillo_ab": 325.55
+   }
+  },
+  "2026-04-17": {
+   "crop": {
+    "avena_pienso_ab": 243.16,
+    "canola_elevador": 665.75,
+    "cebada_pienso_ab": 258.43,
+    "guisante_verde_ab": 353.29,
+    "lenteja_laird_ab": 524.26,
+    "trigo_cwrs_ab": 296.09,
+    "trigo_pienso_ab": 228.99
+   },
+   "livestock": {
+    "cerdo_ab": 2.302,
+    "novillo_ab": 329.03
+   }
+  },
+  "2026-04-24": {
+   "crop": {
+    "avena_pienso_ab": 243.16,
+    "canola_elevador": 693.68,
+    "cebada_pienso_ab": 262.81,
+    "guisante_verde_ab": 357.7,
+    "lenteja_laird_ab": 518.74,
+    "trigo_cwrs_ab": 305.01,
+    "trigo_pienso_ab": 228.99
+   },
+   "livestock": {
+    "cerdo_ab": 2.287,
+    "novillo_ab": 331.75
+   }
+  },
+  "2026-05-01": {
+   "crop": {
+    "avena_pienso_ab": 243.16,
+    "canola_elevador": 715.04,
+    "cebada_pienso_ab": 272.59,
+    "guisante_verde_ab": 357.7,
+    "lenteja_laird_ab": 518.74,
+    "trigo_cwrs_ab": 311.03,
+    "trigo_pienso_ab": 263.99
+   },
+   "livestock": {
+    "cerdo_ab": 2.3,
+    "novillo_ab": 333.39
+   }
+  },
+  "2026-05-08": {
+   "crop": {
+    "avena_pienso_ab": 249.64,
+    "canola_elevador": 715.13,
+    "cebada_pienso_ab": 270.28,
+    "guisante_verde_ab": 357.7,
+    "lenteja_laird_ab": 521.39,
+    "trigo_cwrs_ab": 301.09,
+    "trigo_pienso_ab": 263.99
+   },
+   "livestock": {
+    "cerdo_ab": 2.281,
+    "novillo_ab": 335.4
+   }
+  },
+  "2026-05-15": {
+   "crop": {
+    "avena_pienso_ab": 249.64,
+    "canola_elevador": 701.9,
+    "cebada_pienso_ab": 273.04,
+    "guisante_verde_ab": 349.98,
+    "lenteja_laird_ab": 543.44,
+    "trigo_cwrs_ab": 312.5,
+    "trigo_pienso_ab": 263.99
+   },
+   "livestock": {
+    "cerdo_ab": 2.268,
+    "novillo_ab": 340.83
+   }
+  },
+  "2026-05-22": {
+   "crop": {
+    "avena_pienso_ab": 249.64,
+    "canola_elevador": 715.37,
+    "cebada_pienso_ab": 271.58,
+    "guisante_verde_ab": 358.62,
+    "lenteja_laird_ab": 532.41,
+    "trigo_cwrs_ab": 308.62,
+    "trigo_pienso_ab": 263.99
+   },
+   "livestock": {
+    "cerdo_ab": 2.281,
+    "novillo_ab": 346.38
+   }
+  },
+  "2026-05-29": {
+   "crop": {
+    "avena_pienso_ab": 249.64,
+    "canola_elevador": 722.65,
+    "cebada_pienso_ab": 274.64,
+    "guisante_verde_ab": 349.43,
+    "lenteja_laird_ab": 521.39,
+    "trigo_cwrs_ab": 304.42,
+    "trigo_pienso_ab": 263.99
+   },
+   "livestock": {
+    "cerdo_ab": 2.291,
+    "novillo_ab": 344.83
+   }
+  },
+  "2026-06-05": {
+   "crop": {
+    "avena_pienso_ab": 249.37,
+    "canola_elevador": 726.77,
+    "cebada_pienso_ab": 283.06,
+    "guisante_verde_ab": 348.52,
+    "lenteja_laird_ab": 510.37,
+    "trigo_cwrs_ab": 291.36,
+    "trigo_pienso_ab": 259.98
+   },
+   "livestock": {
+    "cerdo_ab": 2.334,
+    "novillo_ab": 352.95
+   }
+  },
+  "2026-06-12": {
+   "crop": {
+    "avena_pienso_ab": 252.0,
+    "canola_elevador": 723.09,
+    "cebada_pienso_ab": 278.39,
+    "guisante_verde_ab": 343.92,
+    "lenteja_laird_ab": 521.39,
+    "trigo_cwrs_ab": 287.84,
+    "trigo_pienso_ab": 259.98
+   },
+   "livestock": {
+    "cerdo_ab": 2.367,
+    "novillo_ab": 350.61
+   }
+  },
+  "2026-06-19": {
+   "crop": {
+    "avena_pienso_ab": 251.37,
+    "canola_elevador": 693.02,
+    "cebada_pienso_ab": 275.31,
+    "guisante_verde_ab": 334.74,
+    "lenteja_laird_ab": 521.39,
+    "trigo_cwrs_ab": 296.09,
+    "trigo_pienso_ab": 259.98
+   },
+   "livestock": {
+    "cerdo_ab": 2.35,
+    "novillo_ab": 350.25
+   }
+  },
+  "2026-06-26": {
+   "crop": {
+    "avena_pienso_ab": 246.4,
+    "canola_elevador": 715.23,
+    "cebada_pienso_ab": 274.45,
+    "guisante_verde_ab": 334.74,
+    "lenteja_laird_ab": 504.85,
+    "trigo_cwrs_ab": 286.93,
+    "trigo_pienso_ab": 259.98
+   },
+   "livestock": {
+    "cerdo_ab": 2.356,
+    "novillo_ab": 353.89
+   }
+  },
+  "2026-07-03": {
+   "crop": {
+    "avena_pienso_ab": 246.4,
+    "canola_elevador": 709.07,
+    "cebada_pienso_ab": 270.7,
+    "guisante_verde_ab": 323.9,
+    "lenteja_laird_ab": 504.85,
+    "trigo_cwrs_ab": 299.91,
+    "trigo_pienso_ab": 257.2
+   },
+   "livestock": {
+    "cerdo_ab": 2.363,
+    "novillo_ab": 356.0
+   }
+  },
+  "2026-07-10": {
+   "crop": {
+    "avena_pienso_ab": 246.4,
+    "canola_elevador": 750.63,
+    "cebada_pienso_ab": 269.73,
+    "guisante_verde_ab": 312.69,
+    "lenteja_laird_ab": 504.85,
+    "trigo_cwrs_ab": 314.04,
+    "trigo_pienso_ab": 257.2
+   },
+   "livestock": {
+    "cerdo_ab": 2.373,
+    "novillo_ab": 357.87
+   }
+  },
+  "2026-07-17": {
+   "crop": {
+    "avena_pienso_ab": 246.0,
+    "canola_elevador": 769.08,
+    "cebada_pienso_ab": 273.8,
+    "guisante_verde_ab": 312.69,
+    "lenteja_laird_ab": 504.85,
+    "trigo_cwrs_ab": 323.94,
+    "trigo_pienso_ab": 257.2
+   },
+   "livestock": {
+    "cerdo_ab": 2.411,
+    "novillo_ab": 353.42
+   }
+  },
+  "2026-07-24": {
+   "crop": {
+    "avena_pienso_ab": 233.43,
+    "canola_elevador": 786.56,
+    "cebada_pienso_ab": 276.42,
+    "guisante_verde_ab": 322.43,
+    "lenteja_laird_ab": 502.21,
+    "trigo_cwrs_ab": 339.48,
+    "trigo_pienso_ab": 257.2
+   },
+   "livestock": {
+    "cerdo_ab": 2.464,
+    "novillo_ab": 340.26
+   }
+  },
+  "2026-07-31": {
+   "crop": {
+    "avena_pienso_ab": 233.43,
+    "canola_elevador": 725.92,
+    "cebada_pienso_ab": 255.41,
+    "guisante_verde_ab": 322.43,
+    "lenteja_laird_ab": 499.35,
+    "trigo_cwrs_ab": 327.74,
+    "trigo_pienso_ab": 257.2
+   },
+   "livestock": {
+    "cerdo_ab": 2.516,
+    "novillo_ab": 331.29
+   }
+  },
+  "2026-08-07": {
+   "crop": {
+    "avena_pienso_ab": 233.43,
+    "canola_elevador": 749.18,
+    "cebada_pienso_ab": 230.72,
+    "guisante_verde_ab": 322.43,
+    "lenteja_laird_ab": 499.35,
+    "trigo_cwrs_ab": 310.63,
+    "trigo_pienso_ab": 252.2
+   },
+   "livestock": {
+    "cerdo_ab": 2.494,
+    "novillo_ab": 323.61
+   }
+  },
+  "2026-08-14": {
+   "crop": {
+    "avena_pienso_ab": 233.43,
+    "canola_elevador": 788.33,
+    "cebada_pienso_ab": 227.57,
+    "guisante_verde_ab": 318.39,
+    "lenteja_laird_ab": 499.35,
+    "trigo_cwrs_ab": 310.88,
+    "trigo_pienso_ab": 252.2
+   },
+   "livestock": {
+    "cerdo_ab": 2.425,
+    "novillo_ab": 315.85
+   }
+  },
+  "2026-08-21": {
+   "crop": {
+    "avena_pienso_ab": 233.43,
+    "canola_elevador": 750.48,
+    "cebada_pienso_ab": 246.92,
+    "guisante_verde_ab": 318.39,
+    "lenteja_laird_ab": 515.88,
+    "trigo_cwrs_ab": 316.28,
+    "trigo_pienso_ab": 252.2
+   },
+   "livestock": {
+    "cerdo_ab": 2.412,
+    "novillo_ab": 320.77
+   }
+  },
+  "2026-08-28": {
+   "crop": {
+    "avena_pienso_ab": 233.43,
+    "canola_elevador": 775.08,
+    "cebada_pienso_ab": 242.49,
+    "guisante_verde_ab": 318.39,
+    "lenteja_laird_ab": 504.86,
+    "trigo_cwrs_ab": 328.9,
+    "trigo_pienso_ab": 252.2
+   },
+   "livestock": {
+    "novillo_ab": 309.96
+   }
+  },
+  "2026-09-04": {
+   "crop": {
+    "avena_pienso_ab": 256.11,
+    "canola_elevador": 770.63,
+    "cebada_pienso_ab": 254.68,
+    "guisante_verde_ab": 318.39,
+    "lenteja_laird_ab": 526.9,
+    "trigo_cwrs_ab": 333.11,
+    "trigo_pienso_ab": 235.22
+   },
+   "livestock": {
+    "cerdo_ab": 2.313,
+    "novillo_ab": 299.02
+   }
+  },
+  "2026-09-11": {
+   "crop": {
+    "avena_pienso_ab": 256.11,
+    "canola_elevador": 765.63,
+    "cebada_pienso_ab": 254.45,
+    "guisante_verde_ab": 316.37,
+    "lenteja_laird_ab": 554.46,
+    "trigo_cwrs_ab": 330.32,
+    "trigo_pienso_ab": 235.22
+   },
+   "livestock": {
+    "cerdo_ab": 2.296,
+    "novillo_ab": 296.75
+   }
+  },
+  "2026-09-18": {
+   "crop": {
+    "avena_pienso_ab": 256.11,
+    "canola_elevador": 773.71,
+    "cebada_pienso_ab": 253.67,
+    "guisante_verde_ab": 325.55,
+    "lenteja_laird_ab": 565.48,
+    "trigo_cwrs_ab": 332.96,
+    "trigo_pienso_ab": 234.4
+   },
+   "livestock": {
+    "cerdo_ab": 2.201,
+    "novillo_ab": 295.65
+   }
+  },
+  "2026-09-25": {
+   "crop": {
+    "avena_pienso_ab": 255.85,
+    "canola_elevador": 776.8,
+    "cebada_pienso_ab": 251.25,
+    "guisante_verde_ab": 335.29,
+    "lenteja_laird_ab": 601.64,
+    "trigo_cwrs_ab": 324.18,
+    "trigo_pienso_ab": 234.4
+   },
+   "livestock": {
+    "cerdo_ab": 2.146,
+    "novillo_ab": 293.45
+   }
+  }
+ }
+}

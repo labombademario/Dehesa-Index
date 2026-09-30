@@ -1,14 +1,18 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:17:24.557Z",
-  "observationCount": 78,
+  "generatedAt": "2026-09-30T17:21:53.263Z",
+  "observationCount": 87,
   "products": [
     "arroz",
     "avena",
+    "avena_pienso_ab",
     "azucar",
+    "canola_elevador",
     "cebada",
+    "cebada_pienso_ab",
     "centeno",
     "cerdo",
+    "cerdo_ab",
     "colza",
     "cordero",
     "dap",
@@ -30,14 +34,17 @@
     "eurostat_milk_output_index",
     "gas_natural",
     "guisante_seco",
+    "guisante_verde_ab",
     "harina_soja",
     "huevos",
     "leche",
     "leche_polvo",
     "lenteja",
+    "lenteja_laird_ab",
     "lino",
     "maiz",
     "mantequilla",
+    "novillo_ab",
     "oliva",
     "petroleo_brent",
     "petroleo_wti",
@@ -46,6 +53,8 @@
     "soja_grano",
     "sorgo",
     "trigo",
+    "trigo_cwrs_ab",
+    "trigo_pienso_ab",
     "urea",
     "vaca"
   ],
@@ -56,6 +65,7 @@
     "us"
   ],
   "sources": [
+    "alberta_ag",
     "defra",
     "eia",
     "eu_agrifood",
@@ -102,6 +112,21 @@
       "points": 120,
       "coverageStart": "2016-09-01",
       "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "avena_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-25",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional",
+      "points": 19,
+      "coverageStart": "2025-03-01",
+      "coverageEnd": "2026-09-01"
     },
     {
       "product": "avena",
@@ -164,6 +189,36 @@
       "coverageEnd": "2026-06-01"
     },
     {
+      "product": "canola_elevador",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-25",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional",
+      "points": 21,
+      "coverageStart": "2025-01-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "cebada_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-25",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional",
+      "points": 21,
+      "coverageStart": "2025-01-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
       "product": "cebada",
       "region": "ca",
       "sourceId": "statcan",
@@ -222,6 +277,21 @@
       "points": 130,
       "coverageStart": "2015-11-01",
       "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "cerdo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-25",
+      "unit": "kg",
+      "currency": "CAD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional",
+      "points": 21,
+      "coverageStart": "2025-01-01",
+      "coverageEnd": "2026-09-01"
     },
     {
       "product": "cerdo",
@@ -659,6 +729,21 @@
       "coverageEnd": "2026-07-01"
     },
     {
+      "product": "guisante_verde_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-25",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional",
+      "points": 21,
+      "coverageStart": "2025-01-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
       "product": "harina_soja",
       "region": "eu",
       "sourceId": "eu_agrifood",
@@ -824,6 +909,21 @@
       "coverageEnd": "2026-08-01"
     },
     {
+      "product": "lenteja_laird_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-25",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional",
+      "points": 21,
+      "coverageStart": "2025-01-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
       "product": "lenteja",
       "region": "ca",
       "sourceId": "statcan",
@@ -911,6 +1011,21 @@
       "comparability": "directional",
       "points": 240,
       "coverageStart": "2006-10-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "novillo_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-25",
+      "unit": "cwt",
+      "currency": "CAD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional",
+      "points": 21,
+      "coverageStart": "2025-01-01",
       "coverageEnd": "2026-09-01"
     },
     {
@@ -1047,6 +1162,36 @@
       "points": 120,
       "coverageStart": "2016-09-01",
       "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "trigo_cwrs_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-25",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional",
+      "points": 21,
+      "coverageStart": "2025-01-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "trigo_pienso_ab",
+      "region": "ca",
+      "sourceId": "alberta_ag",
+      "observationDate": "2026-09-25",
+      "unit": "tonelada",
+      "currency": "CAD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T17:21:53Z",
+      "comparability": "directional",
+      "points": 21,
+      "coverageStart": "2025-01-01",
+      "coverageEnd": "2026-09-01"
     },
     {
       "product": "trigo",
