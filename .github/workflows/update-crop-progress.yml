@@ -24,7 +24,12 @@ jobs:
       - name: Update crop progress
         env:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
-        run: node scripts/update-crop-progress.mjs
+        run: node scripts/update-crop-progress.mjs 2>&1 | tee /tmp/cp.log; test ${PIPESTATUS[0]} -eq 0
+      - name: Debug log
+        if: failure()
+        run: |
+          git config user.name x; git config user.email x@x.com
+          cp /tmp/cp.log scripts/.crop-log.txt; git add -f scripts/.crop-log.txt; git commit -m dbg; git pull --rebase -q; git push
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
