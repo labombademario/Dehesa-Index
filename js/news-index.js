@@ -2,6 +2,116 @@
 (function(global){'use strict';global.DehesaNewsIndex={
   "arroz": [
     {
+      "id": "auto-8ab6d34b1b",
+      "date": "2026-09-30",
+      "region": "global",
+      "topic": "clima",
+      "topics": [
+        "clima",
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "arroz",
+        "diesel"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "A California farmer feels the strain of record diesel prices - Reuters",
+        "es": "A California farmer feels the strain of record diesel prices - Reuters",
+        "fr": "A California farmer feels the strain of record diesel prices - Reuters",
+        "it": "A California farmer feels the strain of record diesel prices - Reuters"
+      },
+      "description": "A California farmer feels the strain of record diesel prices Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1xOEJEUm9TbEpHaXFMei0taEJLZG9jdkt1T0h5amJ2c0MwaWt2dXJ4V2RzYUlnV3NuR0JoSzBWTDdwc19uTzIwUERzeEFVRzNLY21TTFl1TGs0cHdTQ3V5bURYU2hDdXc?oc=5",
+      "relevance": 93,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "arroz",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-051883d4bb",
+      "date": "2026-09-30",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia"
+      ],
+      "products": [
+        "arroz",
+        "energia"
+      ],
+      "source": "Argus Media",
+      "headline": {
+        "en": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "es": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "fr": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "it": "QatarEnergy drops October sulphur price by $45/t - Argus Media"
+      },
+      "description": "QatarEnergy drops October sulphur price by $45/t Argus Media",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNmtvcUxfUDF3bFNadkNkV2Z6UTI3M2ZNUGRETEZWRGl2N211U3BTZlh5aEg2cmhSTWl4VnVDdko0aTR1YUFBb2xKWTRlajJGem1ZcGNlNW9aWVFTeDEzVGF3ck5oNmVxM2l4WFdsa2QwRFNfaUxEQ1BKVXliUUJ3TjZWZXpqVWRzMUNJUzdJYkNNQzFKUDJSZUllcE5EdjVZUHl5NXExclc2dHllMzY1QjJjTXRzMzQzVkt1S1FsQQ?oc=5",
+      "relevance": 77,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
       "id": "auto-64aa7b5738",
       "date": "2026-09-29",
       "region": "global",
@@ -85,6 +195,38 @@
         },
         {
           "market": "trigo",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-03bee2e337",
+      "date": "2026-09-29",
+      "region": "eu",
+      "topic": "clima",
+      "topics": [
+        "clima"
+      ],
+      "products": [
+        "arroz"
+      ],
+      "source": "Agriland",
+      "headline": {
+        "en": "Global grain prices come under pressure as Black Sea talks progress - Agriland",
+        "es": "Global grain prices come under pressure as Black Sea talks progress - Agriland",
+        "fr": "Global grain prices come under pressure as Black Sea talks progress - Agriland",
+        "it": "Global grain prices come under pressure as Black Sea talks progress - Agriland"
+      },
+      "description": "Global grain prices come under pressure as Black Sea talks progress Agriland",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNMjBLaVoteVJRdjduQTU1QWRiTTRhZWdTa0dFZUdvQ05NVFVyWFZFd1I2MWttRExOanJhZlVEMEM3Ynlzckk4Y0pGck9VSHB3ZHItb0xIMjlMM3dEN0ZYRzBUWjY1WjFIeUUwZVpzM0JIcVhTOUU2MG1heTZLX2t1R1VQTTEtZ2pNUkJQMGtncjl6SFk5c2d0NXlmR0JYR2ptbGpsM3FDcFc?oc=5",
+      "relevance": 65,
+      "auto": true,
+      "impactChannel": "weather",
+      "marketLinks": [
+        {
+          "market": "arroz",
           "channel": "weather",
           "relation": null,
           "direction": "uncertain"
@@ -401,7 +543,7 @@
       ]
     },
     {
-      "id": "auto-84cdf1edb2",
+      "id": "auto-e2ed9455c4",
       "date": "2026-09-23",
       "region": "global",
       "topic": "oferta",
@@ -415,12 +557,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com"
+        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global"
       },
-      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report spglobal.com",
+      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report S&P Global",
       "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMmFIQ1RnTnhNSXpBOWRZZmRRNzJOU3JGRklCVDZNZW1ONDFDOHRvRk5xOEJ4OHhJYWl3UThHMGVLbnJIYVg1d0RscV9lMVhLdDVNcl83TVlxbFBRME5DdzhSMzBNYWlUblZ0YnNBOFhDR0tQUjh1bjFEMndqbmJ6bTd1NFQ0QW9FQ1R1LVY4cFZFdGNDMnJydGhReGtJemxyS0FDVjlRNTVVaFpRa0JzQW1sQkRvZFYzU2V0RmN4SjIzaERzSXBXMEpJRWJka0VFRXd0N3hTUTBsSkZJbmpWS0xNT3NWTWVmd3haNG1JOEE3cDBCQjdR?oc=5",
       "relevance": 81,
       "auto": true,
@@ -554,7 +696,7 @@
       ]
     },
     {
-      "id": "auto-3b3c38a662",
+      "id": "auto-b8310510df",
       "date": "2026-09-22",
       "region": "global",
       "topic": "energia",
@@ -567,12 +709,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "es": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "fr": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "it": "Fueling agriculture: biofuels as the catalyst - spglobal.com"
+        "en": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "es": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "fr": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "it": "Fueling agriculture: biofuels as the catalyst - S&P Global"
       },
-      "description": "Fueling agriculture: biofuels as the catalyst spglobal.com",
+      "description": "Fueling agriculture: biofuels as the catalyst S&P Global",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkZsWnN3dG43S2FsN2QxNEZOQkFXOFFVU2VrZXF3a1ZocWNJVE5COVJzWXNxblA5SUdJZUhJdks5elFDaEEwaXVMbTh2cEl0UEV5Tk1PeTJGOEswY3h0MWVqbWR4WkZIZEVhZGRUT2lGUDRwVzF0RmdJYWpxaTRSY2h5a1pGUTRvWGdkLWF6M2Zkb3VqWW9lV1hYRkJTeGttcHlId2M0Z0QyUS1jVlRKMDZsRU9hQzRLY19udDFPblpjdkt4Zmc?oc=5",
       "relevance": 73,
       "auto": true,
@@ -776,7 +918,7 @@
       ]
     },
     {
-      "id": "auto-fc9d8e7534",
+      "id": "auto-f3469bfaed",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -791,12 +933,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
@@ -1026,6 +1168,116 @@
   ],
   "cebada": [
     {
+      "id": "auto-8ab6d34b1b",
+      "date": "2026-09-30",
+      "region": "global",
+      "topic": "clima",
+      "topics": [
+        "clima",
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "arroz",
+        "diesel"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "A California farmer feels the strain of record diesel prices - Reuters",
+        "es": "A California farmer feels the strain of record diesel prices - Reuters",
+        "fr": "A California farmer feels the strain of record diesel prices - Reuters",
+        "it": "A California farmer feels the strain of record diesel prices - Reuters"
+      },
+      "description": "A California farmer feels the strain of record diesel prices Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1xOEJEUm9TbEpHaXFMei0taEJLZG9jdkt1T0h5amJ2c0MwaWt2dXJ4V2RzYUlnV3NuR0JoSzBWTDdwc19uTzIwUERzeEFVRzNLY21TTFl1TGs0cHdTQ3V5bURYU2hDdXc?oc=5",
+      "relevance": 93,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "arroz",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-051883d4bb",
+      "date": "2026-09-30",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia"
+      ],
+      "products": [
+        "arroz",
+        "energia"
+      ],
+      "source": "Argus Media",
+      "headline": {
+        "en": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "es": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "fr": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "it": "QatarEnergy drops October sulphur price by $45/t - Argus Media"
+      },
+      "description": "QatarEnergy drops October sulphur price by $45/t Argus Media",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNmtvcUxfUDF3bFNadkNkV2Z6UTI3M2ZNUGRETEZWRGl2N211U3BTZlh5aEg2cmhSTWl4VnVDdko0aTR1YUFBb2xKWTRlajJGem1ZcGNlNW9aWVFTeDEzVGF3ck5oNmVxM2l4WFdsa2QwRFNfaUxEQ1BKVXliUUJ3TjZWZXpqVWRzMUNJUzdJYkNNQzFKUDJSZUllcE5EdjVZUHl5NXExclc2dHllMzY1QjJjTXRzMzQzVkt1S1FsQQ?oc=5",
+      "relevance": 77,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
       "id": "auto-64aa7b5738",
       "date": "2026-09-29",
       "region": "global",
@@ -1354,7 +1606,7 @@
       ]
     },
     {
-      "id": "auto-84cdf1edb2",
+      "id": "auto-e2ed9455c4",
       "date": "2026-09-23",
       "region": "global",
       "topic": "oferta",
@@ -1368,12 +1620,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com"
+        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global"
       },
-      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report spglobal.com",
+      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report S&P Global",
       "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMmFIQ1RnTnhNSXpBOWRZZmRRNzJOU3JGRklCVDZNZW1ONDFDOHRvRk5xOEJ4OHhJYWl3UThHMGVLbnJIYVg1d0RscV9lMVhLdDVNcl83TVlxbFBRME5DdzhSMzBNYWlUblZ0YnNBOFhDR0tQUjh1bjFEMndqbmJ6bTd1NFQ0QW9FQ1R1LVY4cFZFdGNDMnJydGhReGtJemxyS0FDVjlRNTVVaFpRa0JzQW1sQkRvZFYzU2V0RmN4SjIzaERzSXBXMEpJRWJka0VFRXd0N3hTUTBsSkZJbmpWS0xNT3NWTWVmd3haNG1JOEE3cDBCQjdR?oc=5",
       "relevance": 81,
       "auto": true,
@@ -1507,7 +1759,7 @@
       ]
     },
     {
-      "id": "auto-3b3c38a662",
+      "id": "auto-b8310510df",
       "date": "2026-09-22",
       "region": "global",
       "topic": "energia",
@@ -1520,12 +1772,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "es": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "fr": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "it": "Fueling agriculture: biofuels as the catalyst - spglobal.com"
+        "en": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "es": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "fr": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "it": "Fueling agriculture: biofuels as the catalyst - S&P Global"
       },
-      "description": "Fueling agriculture: biofuels as the catalyst spglobal.com",
+      "description": "Fueling agriculture: biofuels as the catalyst S&P Global",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkZsWnN3dG43S2FsN2QxNEZOQkFXOFFVU2VrZXF3a1ZocWNJVE5COVJzWXNxblA5SUdJZUhJdks5elFDaEEwaXVMbTh2cEl0UEV5Tk1PeTJGOEswY3h0MWVqbWR4WkZIZEVhZGRUT2lGUDRwVzF0RmdJYWpxaTRSY2h5a1pGUTRvWGdkLWF6M2Zkb3VqWW9lV1hYRkJTeGttcHlId2M0Z0QyUS1jVlRKMDZsRU9hQzRLY19udDFPblpjdkt4Zmc?oc=5",
       "relevance": 73,
       "auto": true,
@@ -1665,7 +1917,7 @@
       ]
     },
     {
-      "id": "auto-fc9d8e7534",
+      "id": "auto-f3469bfaed",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -1680,12 +1932,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
@@ -1881,81 +2133,31 @@
       ]
     }
   ],
-  "energia": [
+  "diesel": [
     {
-      "id": "auto-64aa7b5738",
-      "date": "2026-09-29",
-      "region": "global",
-      "topic": "comercio",
-      "topics": [
-        "comercio",
-        "energia"
-      ],
-      "products": [
-        "energia"
-      ],
-      "source": "Reuters",
-      "headline": {
-        "en": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition - Reuters",
-        "es": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition - Reuters",
-        "fr": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition - Reuters",
-        "it": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition - Reuters"
-      },
-      "description": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNW1fS1c5RmstV3VOaDMya3NQSjlTTE5NNGdteVU4b0JJdGM2aUpVaHk4LVRJRjdBeE9BejE3YjZoQ08yenNKNlBveXNIUXVhd0g5ajRtSlA2alQ0YkViZWx5WmRqbXQzandfS2VGWEszMFhKeHJkcWV6RGVpZnc4NTFXLWJ1Sk1UTkZHT1hHV2tfRlFnQ1Q4NGczUTVRLTRpSGxWRUlLckY2SHJCZFpFQzh5TFVGYlRKTWRlcWVhdzlkLUU1WVNzV1NVcmxqUQ?oc=5",
-      "relevance": 73,
-      "auto": true,
-      "impactChannel": "input_cost",
-      "marketLinks": [
-        {
-          "market": "arroz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "cebada",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "maiz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        }
-      ]
-    },
-    {
-      "id": "auto-f777573262",
-      "date": "2026-09-24",
+      "id": "auto-8ab6d34b1b",
+      "date": "2026-09-30",
       "region": "global",
       "topic": "clima",
       "topics": [
         "clima",
-        "energia"
+        "energia",
+        "costes"
       ],
       "products": [
         "arroz",
-        "energia"
+        "diesel"
       ],
       "source": "Reuters",
       "headline": {
-        "en": "What’s behind the latest surge in grain and oilseed prices? - Reuters",
-        "es": "What’s behind the latest surge in grain and oilseed prices? - Reuters",
-        "fr": "What’s behind the latest surge in grain and oilseed prices? - Reuters",
-        "it": "What’s behind the latest surge in grain and oilseed prices? - Reuters"
+        "en": "A California farmer feels the strain of record diesel prices - Reuters",
+        "es": "A California farmer feels the strain of record diesel prices - Reuters",
+        "fr": "A California farmer feels the strain of record diesel prices - Reuters",
+        "it": "A California farmer feels the strain of record diesel prices - Reuters"
       },
-      "description": "What’s behind the latest surge in grain and oilseed prices? Reuters",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdExvYXd5NzB0b0ExT2RvbUdlUWE0Q1ZVR0wxUHNIVGZ2dWJkUWw4aHZ1c3N6R2tNWEI0OFRwTHc5UmJmOGlMUXZwbVRwWTVWV0JwT1ZnN0pMS3RkVlJISkEzSDJLT1V4d201MGlmWFM5b2pudE9YTDVCQXdham1lWm5xMHRLNmRnWXY0WU5lNA?oc=5",
-      "relevance": 85,
+      "description": "A California farmer feels the strain of record diesel prices Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1xOEJEUm9TbEpHaXFMei0taEJLZG9jdkt1T0h5amJ2c0MwaWt2dXJ4V2RzYUlnV3NuR0JoSzBWTDdwc19uTzIwUERzeEFVRzNLY21TTFl1TGs0cHdTQ3V5bURYU2hDdXc?oc=5",
+      "relevance": 93,
       "auto": true,
       "impactChannel": "input_cost",
       "marketLinks": [
@@ -1992,78 +2194,27 @@
       ]
     },
     {
-      "id": "auto-2a181aaaba",
-      "date": "2026-09-24",
-      "region": "us",
-      "topic": "energia",
-      "topics": [
-        "energia",
-        "costes"
-      ],
-      "products": [
-        "energia"
-      ],
-      "source": "Wall Street Journal",
-      "headline": {
-        "en": "Quenching the World’s Biofuels Thirst Could Require a Montana-Size Chunk of Land - WSJ",
-        "es": "Quenching the World’s Biofuels Thirst Could Require a Montana-Size Chunk of Land - WSJ",
-        "fr": "Quenching the World’s Biofuels Thirst Could Require a Montana-Size Chunk of Land - WSJ",
-        "it": "Quenching the World’s Biofuels Thirst Could Require a Montana-Size Chunk of Land - WSJ"
-      },
-      "description": "Quenching the World’s Biofuels Thirst Could Require a Montana-Size Chunk of Land WSJ",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQV9ZeDhhUVRQdlpta0M4OFBDVkpLMU9JZTdRSHNYTm1GaEpsQThRU0R3TWpaZzBZMzM2dTloNjBseWF6V0hTZ21zSThxckVleXR4YkN2Uzd0Z08zTE9ocGM1OHY5TFdaZ29jS3NZOWJyaDE4OHdGZi1SUXdqVTc0VHZyNkVMSk5UV21BSGp6eUo2U1VQRDV1TWZBUzRLeWoxU2VpRkZEU0pUNmJmMmNUeUI5Z1lGdVlPODdKeWJmWFhjc0JhVk5J?oc=5",
-      "relevance": 73,
-      "auto": true,
-      "impactChannel": "input_cost",
-      "marketLinks": [
-        {
-          "market": "arroz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "cebada",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "maiz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        }
-      ]
-    },
-    {
-      "id": "auto-84cdf1edb2",
+      "id": "auto-277f33a72f",
       "date": "2026-09-23",
-      "region": "global",
-      "topic": "oferta",
+      "region": "us",
+      "topic": "comercio",
       "topics": [
-        "oferta",
+        "comercio",
         "energia",
         "costes"
       ],
       "products": [
-        "energia"
+        "diesel"
       ],
-      "source": "S&P Global",
+      "source": "DTN",
       "headline": {
-        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com"
+        "en": "Economists Debate Diesel Export Ban While USDA Questions Ad-Hoc Relief - DTN Progressive Farmer",
+        "es": "Economists Debate Diesel Export Ban While USDA Questions Ad-Hoc Relief - DTN Progressive Farmer",
+        "fr": "Economists Debate Diesel Export Ban While USDA Questions Ad-Hoc Relief - DTN Progressive Farmer",
+        "it": "Economists Debate Diesel Export Ban While USDA Questions Ad-Hoc Relief - DTN Progressive Farmer"
       },
-      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report spglobal.com",
-      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMmFIQ1RnTnhNSXpBOWRZZmRRNzJOU3JGRklCVDZNZW1ONDFDOHRvRk5xOEJ4OHhJYWl3UThHMGVLbnJIYVg1d0RscV9lMVhLdDVNcl83TVlxbFBRME5DdzhSMzBNYWlUblZ0YnNBOFhDR0tQUjh1bjFEMndqbmJ6bTd1NFQ0QW9FQ1R1LVY4cFZFdGNDMnJydGhReGtJemxyS0FDVjlRNTVVaFpRa0JzQW1sQkRvZFYzU2V0RmN4SjIzaERzSXBXMEpJRWJka0VFRXd0N3hTUTBsSkZJbmpWS0xNT3NWTWVmd3haNG1JOEE3cDBCQjdR?oc=5",
+      "description": "Economists Debate Diesel Export Ban While USDA Questions Ad-Hoc Relief DTN Progressive Farmer",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONGotcTU0OHNoLWg3Slh3YzluWFFNOFgxVW1hVjhkbU1aSURGc1Joc0FxQWhjMHk2cUVVN1FRS2dESTNBd2tzMWIycFZaeFJteTQwWFlxSjhOamFqWDhoU29UQ2ZETV96NGpqUVR1UVNfNEV0VUswNno3QWxsZ1NIMV9lemM2ZjhxWlg4ODNoU1RBQWZ3Q3g3R3Z0Mi1SYlY4NFVyWmZ3ZWNvZGUtV0JkbFA5cUNsLWs?oc=5",
       "relevance": 81,
       "auto": true,
       "impactChannel": "input_cost",
@@ -2095,27 +2246,28 @@
       ]
     },
     {
-      "id": "auto-3b3c38a662",
-      "date": "2026-09-22",
-      "region": "global",
-      "topic": "energia",
+      "id": "auto-6b15a55f8c",
+      "date": "2026-09-23",
+      "region": "us",
+      "topic": "oferta",
       "topics": [
+        "oferta",
         "energia",
         "costes"
       ],
       "products": [
-        "energia"
+        "diesel"
       ],
-      "source": "S&P Global",
+      "source": "AgWeb",
       "headline": {
-        "en": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "es": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "fr": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "it": "Fueling agriculture: biofuels as the catalyst - spglobal.com"
+        "en": "Storms, Disease and $6 Diesel Squeeze Illinois Farmer’s Harvest - AgWeb",
+        "es": "Storms, Disease and $6 Diesel Squeeze Illinois Farmer’s Harvest - AgWeb",
+        "fr": "Storms, Disease and $6 Diesel Squeeze Illinois Farmer’s Harvest - AgWeb",
+        "it": "Storms, Disease and $6 Diesel Squeeze Illinois Farmer’s Harvest - AgWeb"
       },
-      "description": "Fueling agriculture: biofuels as the catalyst spglobal.com",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkZsWnN3dG43S2FsN2QxNEZOQkFXOFFVU2VrZXF3a1ZocWNJVE5COVJzWXNxblA5SUdJZUhJdks5elFDaEEwaXVMbTh2cEl0UEV5Tk1PeTJGOEswY3h0MWVqbWR4WkZIZEVhZGRUT2lGUDRwVzF0RmdJYWpxaTRSY2h5a1pGUTRvWGdkLWF6M2Zkb3VqWW9lV1hYRkJTeGttcHlId2M0Z0QyUS1jVlRKMDZsRU9hQzRLY19udDFPblpjdkt4Zmc?oc=5",
-      "relevance": 73,
+      "description": "Storms, Disease and $6 Diesel Squeeze Illinois Farmer’s Harvest AgWeb",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNMnMtNENqRzZzbWhELV9BMnA3el9IRkJ2T1JTQ214UURDUEVtdVpqLUpIckFhWUVwS3N5aW9QbUV2Vk1MOVROaFBkb0hDU09BNWVlaXVnMkhzUzdVbUQtcFRka3hNVGFWZVQ3STcwZ3JaWF9kbFZrWDl0OGJZOVR4VmJFNzBMU1VVTXc?oc=5",
+      "relevance": 81,
       "auto": true,
       "impactChannel": "input_cost",
       "marketLinks": [
@@ -2146,27 +2298,28 @@
       ]
     },
     {
-      "id": "auto-d434f704d3",
-      "date": "2026-09-21",
+      "id": "auto-077b1f85e2",
+      "date": "2026-09-18",
       "region": "global",
-      "topic": "comercio",
+      "topic": "energia",
       "topics": [
-        "comercio",
-        "energia"
+        "energia",
+        "costes"
       ],
       "products": [
-        "energia"
+        "arroz",
+        "diesel"
       ],
-      "source": "Xinhua",
+      "source": "Reuters",
       "headline": {
-        "en": "China's tech strategy for preserving precious black soil farmland - Xinhua",
-        "es": "China's tech strategy for preserving precious black soil farmland - Xinhua",
-        "fr": "China's tech strategy for preserving precious black soil farmland - Xinhua",
-        "it": "China's tech strategy for preserving precious black soil farmland - Xinhua"
+        "en": "Record US diesel prices squeeze farmers; food prices may rise - Reuters",
+        "es": "Record US diesel prices squeeze farmers; food prices may rise - Reuters",
+        "fr": "Record US diesel prices squeeze farmers; food prices may rise - Reuters",
+        "it": "Record US diesel prices squeeze farmers; food prices may rise - Reuters"
       },
-      "description": "China's tech strategy for preserving precious black soil farmland Xinhua",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5IaTZYakFOcVlOWGRTTGN0N21lUFBCZTh5VG1mSFlmb0V3a0tyTW1EVWpHeWJ5MDVkY2I0dXNoWnVnalJBcmNzaVIxdDE5MnlOZFh1bmRjdUdKTHdCTTZwOW9UNkJjWFJESjlYYWx5TllkOG1zWk1wdjRldGQ?oc=5",
-      "relevance": 73,
+      "description": "Record US diesel prices squeeze farmers; food prices may rise Reuters",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUXFFeEk2NVZjZU9WbTQ3QUZObDgyZ2JZdVlPRjd5dzNVdk13OFNCN2tiR0c1MElNMFFZVGdRelI5UnZkNnlMNmRQZXM1Um1sQUZQRkh2R3JvSHNkZnhtV2JzVFB4SDVoam0tZUE3WHljQWdSbXFPTEdOTkxSQXdvcTZQdXloOEpXMlVWUnprbS0ycUJ3aU1qRkVKZTc0UTFxa2h0bG43TlpCRnM5N1pVN09R?oc=5",
+      "relevance": 85,
       "auto": true,
       "impactChannel": "input_cost",
       "marketLinks": [
@@ -2197,29 +2350,30 @@
       ]
     },
     {
-      "id": "auto-fc9d8e7534",
-      "date": "2026-09-19",
-      "region": "global",
-      "topic": "energia",
+      "id": "auto-7e2e130ddb",
+      "date": "2026-09-16",
+      "region": "us",
+      "topic": "oferta",
       "topics": [
+        "oferta",
         "energia",
         "costes"
       ],
       "products": [
-        "azucar",
-        "energia",
-        "feed"
+        "arroz",
+        "diesel",
+        "costes"
       ],
-      "source": "S&P Global",
+      "source": "DTN",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
+        "en": "Nebraska Farmers: Record Diesel Costs Erode Gains From Higher Crop Prices - DTN Progressive Farmer",
+        "es": "Nebraska Farmers: Record Diesel Costs Erode Gains From Higher Crop Prices - DTN Progressive Farmer",
+        "fr": "Nebraska Farmers: Record Diesel Costs Erode Gains From Higher Crop Prices - DTN Progressive Farmer",
+        "it": "Nebraska Farmers: Record Diesel Costs Erode Gains From Higher Crop Prices - DTN Progressive Farmer"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
-      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
-      "relevance": 97,
+      "description": "Nebraska Farmers: Record Diesel Costs Erode Gains From Higher Crop Prices DTN Progressive Farmer",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNbXZrazhKRnZuLWJJZlgwa0Roa0tuM2dTYkc3TmpObTQ4bTlnOVlZalRGazVqaHpIZmQ5blRvQ0JrRkVHMmdRQ25IX2xLUDRSR1ltYS04RzlscnR4N045WV9MUWJXdFlZRzBEVlBsbmhLalNZZVhaVk1XUV94Rk93bzJmdG1pRVQ1V01iX2t0ME9JVHhSMTE0MHBKMGFjekFVLTd0S3MtNlpyV3NrbC1jM2ZoTE5TSExP?oc=5",
+      "relevance": 100,
       "auto": true,
       "impactChannel": "input_cost",
       "marketLinks": [
@@ -2245,12 +2399,128 @@
           "market": "trigo",
           "channel": "input_cost",
           "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "arroz",
+          "channel": "supply",
+          "relation": null,
           "direction": "uncertain"
         }
       ]
     }
   ],
   "maiz": [
+    {
+      "id": "auto-8ab6d34b1b",
+      "date": "2026-09-30",
+      "region": "global",
+      "topic": "clima",
+      "topics": [
+        "clima",
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "arroz",
+        "diesel"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "A California farmer feels the strain of record diesel prices - Reuters",
+        "es": "A California farmer feels the strain of record diesel prices - Reuters",
+        "fr": "A California farmer feels the strain of record diesel prices - Reuters",
+        "it": "A California farmer feels the strain of record diesel prices - Reuters"
+      },
+      "description": "A California farmer feels the strain of record diesel prices Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1xOEJEUm9TbEpHaXFMei0taEJLZG9jdkt1T0h5amJ2c0MwaWt2dXJ4V2RzYUlnV3NuR0JoSzBWTDdwc19uTzIwUERzeEFVRzNLY21TTFl1TGs0cHdTQ3V5bURYU2hDdXc?oc=5",
+      "relevance": 93,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "arroz",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-051883d4bb",
+      "date": "2026-09-30",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia"
+      ],
+      "products": [
+        "arroz",
+        "energia"
+      ],
+      "source": "Argus Media",
+      "headline": {
+        "en": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "es": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "fr": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "it": "QatarEnergy drops October sulphur price by $45/t - Argus Media"
+      },
+      "description": "QatarEnergy drops October sulphur price by $45/t Argus Media",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNmtvcUxfUDF3bFNadkNkV2Z6UTI3M2ZNUGRETEZWRGl2N211U3BTZlh5aEg2cmhSTWl4VnVDdko0aTR1YUFBb2xKWTRlajJGem1ZcGNlNW9aWVFTeDEzVGF3ck5oNmVxM2l4WFdsa2QwRFNfaUxEQ1BKVXliUUJ3TjZWZXpqVWRzMUNJUzdJYkNNQzFKUDJSZUllcE5EdjVZUHl5NXExclc2dHllMzY1QjJjTXRzMzQzVkt1S1FsQQ?oc=5",
+      "relevance": 77,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ]
+    },
     {
       "id": "auto-64aa7b5738",
       "date": "2026-09-29",
@@ -2580,7 +2850,7 @@
       ]
     },
     {
-      "id": "auto-84cdf1edb2",
+      "id": "auto-e2ed9455c4",
       "date": "2026-09-23",
       "region": "global",
       "topic": "oferta",
@@ -2594,12 +2864,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com"
+        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global"
       },
-      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report spglobal.com",
+      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report S&P Global",
       "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMmFIQ1RnTnhNSXpBOWRZZmRRNzJOU3JGRklCVDZNZW1ONDFDOHRvRk5xOEJ4OHhJYWl3UThHMGVLbnJIYVg1d0RscV9lMVhLdDVNcl83TVlxbFBRME5DdzhSMzBNYWlUblZ0YnNBOFhDR0tQUjh1bjFEMndqbmJ6bTd1NFQ0QW9FQ1R1LVY4cFZFdGNDMnJydGhReGtJemxyS0FDVjlRNTVVaFpRa0JzQW1sQkRvZFYzU2V0RmN4SjIzaERzSXBXMEpJRWJka0VFRXd0N3hTUTBsSkZJbmpWS0xNT3NWTWVmd3haNG1JOEE3cDBCQjdR?oc=5",
       "relevance": 81,
       "auto": true,
@@ -2733,7 +3003,7 @@
       ]
     },
     {
-      "id": "auto-3b3c38a662",
+      "id": "auto-b8310510df",
       "date": "2026-09-22",
       "region": "global",
       "topic": "energia",
@@ -2746,12 +3016,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "es": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "fr": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "it": "Fueling agriculture: biofuels as the catalyst - spglobal.com"
+        "en": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "es": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "fr": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "it": "Fueling agriculture: biofuels as the catalyst - S&P Global"
       },
-      "description": "Fueling agriculture: biofuels as the catalyst spglobal.com",
+      "description": "Fueling agriculture: biofuels as the catalyst S&P Global",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkZsWnN3dG43S2FsN2QxNEZOQkFXOFFVU2VrZXF3a1ZocWNJVE5COVJzWXNxblA5SUdJZUhJdks5elFDaEEwaXVMbTh2cEl0UEV5Tk1PeTJGOEswY3h0MWVqbWR4WkZIZEVhZGRUT2lGUDRwVzF0RmdJYWpxaTRSY2h5a1pGUTRvWGdkLWF6M2Zkb3VqWW9lV1hYRkJTeGttcHlId2M0Z0QyUS1jVlRKMDZsRU9hQzRLY19udDFPblpjdkt4Zmc?oc=5",
       "relevance": 73,
       "auto": true,
@@ -2891,7 +3161,7 @@
       ]
     },
     {
-      "id": "auto-fc9d8e7534",
+      "id": "auto-f3469bfaed",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -2906,12 +3176,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
@@ -3108,6 +3378,116 @@
     }
   ],
   "trigo": [
+    {
+      "id": "auto-8ab6d34b1b",
+      "date": "2026-09-30",
+      "region": "global",
+      "topic": "clima",
+      "topics": [
+        "clima",
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "arroz",
+        "diesel"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "A California farmer feels the strain of record diesel prices - Reuters",
+        "es": "A California farmer feels the strain of record diesel prices - Reuters",
+        "fr": "A California farmer feels the strain of record diesel prices - Reuters",
+        "it": "A California farmer feels the strain of record diesel prices - Reuters"
+      },
+      "description": "A California farmer feels the strain of record diesel prices Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1xOEJEUm9TbEpHaXFMei0taEJLZG9jdkt1T0h5amJ2c0MwaWt2dXJ4V2RzYUlnV3NuR0JoSzBWTDdwc19uTzIwUERzeEFVRzNLY21TTFl1TGs0cHdTQ3V5bURYU2hDdXc?oc=5",
+      "relevance": 93,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "arroz",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-051883d4bb",
+      "date": "2026-09-30",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia"
+      ],
+      "products": [
+        "arroz",
+        "energia"
+      ],
+      "source": "Argus Media",
+      "headline": {
+        "en": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "es": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "fr": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "it": "QatarEnergy drops October sulphur price by $45/t - Argus Media"
+      },
+      "description": "QatarEnergy drops October sulphur price by $45/t Argus Media",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNmtvcUxfUDF3bFNadkNkV2Z6UTI3M2ZNUGRETEZWRGl2N211U3BTZlh5aEg2cmhSTWl4VnVDdko0aTR1YUFBb2xKWTRlajJGem1ZcGNlNW9aWVFTeDEzVGF3ck5oNmVxM2l4WFdsa2QwRFNfaUxEQ1BKVXliUUJ3TjZWZXpqVWRzMUNJUzdJYkNNQzFKUDJSZUllcE5EdjVZUHl5NXExclc2dHllMzY1QjJjTXRzMzQzVkt1S1FsQQ?oc=5",
+      "relevance": 77,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ]
+    },
     {
       "id": "auto-64aa7b5738",
       "date": "2026-09-29",
@@ -3476,7 +3856,7 @@
       ]
     },
     {
-      "id": "auto-84cdf1edb2",
+      "id": "auto-e2ed9455c4",
       "date": "2026-09-23",
       "region": "global",
       "topic": "oferta",
@@ -3490,12 +3870,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com",
-        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - spglobal.com"
+        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global"
       },
-      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report spglobal.com",
+      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report S&P Global",
       "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMmFIQ1RnTnhNSXpBOWRZZmRRNzJOU3JGRklCVDZNZW1ONDFDOHRvRk5xOEJ4OHhJYWl3UThHMGVLbnJIYVg1d0RscV9lMVhLdDVNcl83TVlxbFBRME5DdzhSMzBNYWlUblZ0YnNBOFhDR0tQUjh1bjFEMndqbmJ6bTd1NFQ0QW9FQ1R1LVY4cFZFdGNDMnJydGhReGtJemxyS0FDVjlRNTVVaFpRa0JzQW1sQkRvZFYzU2V0RmN4SjIzaERzSXBXMEpJRWJka0VFRXd0N3hTUTBsSkZJbmpWS0xNT3NWTWVmd3haNG1JOEE3cDBCQjdR?oc=5",
       "relevance": 81,
       "auto": true,
@@ -3629,7 +4009,7 @@
       ]
     },
     {
-      "id": "auto-3b3c38a662",
+      "id": "auto-b8310510df",
       "date": "2026-09-22",
       "region": "global",
       "topic": "energia",
@@ -3642,12 +4022,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "es": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "fr": "Fueling agriculture: biofuels as the catalyst - spglobal.com",
-        "it": "Fueling agriculture: biofuels as the catalyst - spglobal.com"
+        "en": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "es": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "fr": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "it": "Fueling agriculture: biofuels as the catalyst - S&P Global"
       },
-      "description": "Fueling agriculture: biofuels as the catalyst spglobal.com",
+      "description": "Fueling agriculture: biofuels as the catalyst S&P Global",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkZsWnN3dG43S2FsN2QxNEZOQkFXOFFVU2VrZXF3a1ZocWNJVE5COVJzWXNxblA5SUdJZUhJdks5elFDaEEwaXVMbTh2cEl0UEV5Tk1PeTJGOEswY3h0MWVqbWR4WkZIZEVhZGRUT2lGUDRwVzF0RmdJYWpxaTRSY2h5a1pGUTRvWGdkLWF6M2Zkb3VqWW9lV1hYRkJTeGttcHlId2M0Z0QyUS1jVlRKMDZsRU9hQzRLY19udDFPblpjdkt4Zmc?oc=5",
       "relevance": 73,
       "auto": true,
@@ -3787,7 +4167,7 @@
       ]
     },
     {
-      "id": "auto-fc9d8e7534",
+      "id": "auto-f3469bfaed",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -3802,12 +4182,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
@@ -4042,6 +4422,492 @@
       ]
     }
   ],
+  "energia": [
+    {
+      "id": "auto-051883d4bb",
+      "date": "2026-09-30",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia"
+      ],
+      "products": [
+        "arroz",
+        "energia"
+      ],
+      "source": "Argus Media",
+      "headline": {
+        "en": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "es": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "fr": "QatarEnergy drops October sulphur price by $45/t - Argus Media",
+        "it": "QatarEnergy drops October sulphur price by $45/t - Argus Media"
+      },
+      "description": "QatarEnergy drops October sulphur price by $45/t Argus Media",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNmtvcUxfUDF3bFNadkNkV2Z6UTI3M2ZNUGRETEZWRGl2N211U3BTZlh5aEg2cmhSTWl4VnVDdko0aTR1YUFBb2xKWTRlajJGem1ZcGNlNW9aWVFTeDEzVGF3ck5oNmVxM2l4WFdsa2QwRFNfaUxEQ1BKVXliUUJ3TjZWZXpqVWRzMUNJUzdJYkNNQzFKUDJSZUllcE5EdjVZUHl5NXExclc2dHllMzY1QjJjTXRzMzQzVkt1S1FsQQ?oc=5",
+      "relevance": 77,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-64aa7b5738",
+      "date": "2026-09-29",
+      "region": "global",
+      "topic": "comercio",
+      "topics": [
+        "comercio",
+        "energia"
+      ],
+      "products": [
+        "energia"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition - Reuters",
+        "es": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition - Reuters",
+        "fr": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition - Reuters",
+        "it": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition - Reuters"
+      },
+      "description": "COMMENTARY: China's metal-heavy commodity imports map a messy energy transition Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNW1fS1c5RmstV3VOaDMya3NQSjlTTE5NNGdteVU4b0JJdGM2aUpVaHk4LVRJRjdBeE9BejE3YjZoQ08yenNKNlBveXNIUXVhd0g5ajRtSlA2alQ0YkViZWx5WmRqbXQzandfS2VGWEszMFhKeHJkcWV6RGVpZnc4NTFXLWJ1Sk1UTkZHT1hHV2tfRlFnQ1Q4NGczUTVRLTRpSGxWRUlLckY2SHJCZFpFQzh5TFVGYlRKTWRlcWVhdzlkLUU1WVNzV1NVcmxqUQ?oc=5",
+      "relevance": 73,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-f777573262",
+      "date": "2026-09-24",
+      "region": "global",
+      "topic": "clima",
+      "topics": [
+        "clima",
+        "energia"
+      ],
+      "products": [
+        "arroz",
+        "energia"
+      ],
+      "source": "Reuters",
+      "headline": {
+        "en": "What’s behind the latest surge in grain and oilseed prices? - Reuters",
+        "es": "What’s behind the latest surge in grain and oilseed prices? - Reuters",
+        "fr": "What’s behind the latest surge in grain and oilseed prices? - Reuters",
+        "it": "What’s behind the latest surge in grain and oilseed prices? - Reuters"
+      },
+      "description": "What’s behind the latest surge in grain and oilseed prices? Reuters",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdExvYXd5NzB0b0ExT2RvbUdlUWE0Q1ZVR0wxUHNIVGZ2dWJkUWw4aHZ1c3N6R2tNWEI0OFRwTHc5UmJmOGlMUXZwbVRwWTVWV0JwT1ZnN0pMS3RkVlJISkEzSDJLT1V4d201MGlmWFM5b2pudE9YTDVCQXdham1lWm5xMHRLNmRnWXY0WU5lNA?oc=5",
+      "relevance": 85,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "arroz",
+          "channel": "weather",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-2a181aaaba",
+      "date": "2026-09-24",
+      "region": "us",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia"
+      ],
+      "source": "Wall Street Journal",
+      "headline": {
+        "en": "Quenching the World’s Biofuels Thirst Could Require a Montana-Size Chunk of Land - WSJ",
+        "es": "Quenching the World’s Biofuels Thirst Could Require a Montana-Size Chunk of Land - WSJ",
+        "fr": "Quenching the World’s Biofuels Thirst Could Require a Montana-Size Chunk of Land - WSJ",
+        "it": "Quenching the World’s Biofuels Thirst Could Require a Montana-Size Chunk of Land - WSJ"
+      },
+      "description": "Quenching the World’s Biofuels Thirst Could Require a Montana-Size Chunk of Land WSJ",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQV9ZeDhhUVRQdlpta0M4OFBDVkpLMU9JZTdRSHNYTm1GaEpsQThRU0R3TWpaZzBZMzM2dTloNjBseWF6V0hTZ21zSThxckVleXR4YkN2Uzd0Z08zTE9ocGM1OHY5TFdaZ29jS3NZOWJyaDE4OHdGZi1SUXdqVTc0VHZyNkVMSk5UV21BSGp6eUo2U1VQRDV1TWZBUzRLeWoxU2VpRkZEU0pUNmJmMmNUeUI5Z1lGdVlPODdKeWJmWFhjc0JhVk5J?oc=5",
+      "relevance": 73,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-e2ed9455c4",
+      "date": "2026-09-23",
+      "region": "global",
+      "topic": "oferta",
+      "topics": [
+        "oferta",
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia"
+      ],
+      "source": "S&P Global",
+      "headline": {
+        "en": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "es": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "fr": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global",
+        "it": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report - S&P Global"
+      },
+      "description": "Accelerated biofuel mandates risk tightening global crop markets through 2030: report S&P Global",
+      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOMmFIQ1RnTnhNSXpBOWRZZmRRNzJOU3JGRklCVDZNZW1ONDFDOHRvRk5xOEJ4OHhJYWl3UThHMGVLbnJIYVg1d0RscV9lMVhLdDVNcl83TVlxbFBRME5DdzhSMzBNYWlUblZ0YnNBOFhDR0tQUjh1bjFEMndqbmJ6bTd1NFQ0QW9FQ1R1LVY4cFZFdGNDMnJydGhReGtJemxyS0FDVjlRNTVVaFpRa0JzQW1sQkRvZFYzU2V0RmN4SjIzaERzSXBXMEpJRWJka0VFRXd0N3hTUTBsSkZJbmpWS0xNT3NWTWVmd3haNG1JOEE3cDBCQjdR?oc=5",
+      "relevance": 81,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-b8310510df",
+      "date": "2026-09-22",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "energia"
+      ],
+      "source": "S&P Global",
+      "headline": {
+        "en": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "es": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "fr": "Fueling agriculture: biofuels as the catalyst - S&P Global",
+        "it": "Fueling agriculture: biofuels as the catalyst - S&P Global"
+      },
+      "description": "Fueling agriculture: biofuels as the catalyst S&P Global",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkZsWnN3dG43S2FsN2QxNEZOQkFXOFFVU2VrZXF3a1ZocWNJVE5COVJzWXNxblA5SUdJZUhJdks5elFDaEEwaXVMbTh2cEl0UEV5Tk1PeTJGOEswY3h0MWVqbWR4WkZIZEVhZGRUT2lGUDRwVzF0RmdJYWpxaTRSY2h5a1pGUTRvWGdkLWF6M2Zkb3VqWW9lV1hYRkJTeGttcHlId2M0Z0QyUS1jVlRKMDZsRU9hQzRLY19udDFPblpjdkt4Zmc?oc=5",
+      "relevance": 73,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-d434f704d3",
+      "date": "2026-09-21",
+      "region": "global",
+      "topic": "comercio",
+      "topics": [
+        "comercio",
+        "energia"
+      ],
+      "products": [
+        "energia"
+      ],
+      "source": "Xinhua",
+      "headline": {
+        "en": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "es": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "fr": "China's tech strategy for preserving precious black soil farmland - Xinhua",
+        "it": "China's tech strategy for preserving precious black soil farmland - Xinhua"
+      },
+      "description": "China's tech strategy for preserving precious black soil farmland Xinhua",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5IaTZYakFOcVlOWGRTTGN0N21lUFBCZTh5VG1mSFlmb0V3a0tyTW1EVWpHeWJ5MDVkY2I0dXNoWnVnalJBcmNzaVIxdDE5MnlOZFh1bmRjdUdKTHdCTTZwOW9UNkJjWFJESjlYYWx5TllkOG1zWk1wdjRldGQ?oc=5",
+      "relevance": 73,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-f3469bfaed",
+      "date": "2026-09-19",
+      "region": "global",
+      "topic": "energia",
+      "topics": [
+        "energia",
+        "costes"
+      ],
+      "products": [
+        "azucar",
+        "energia",
+        "feed"
+      ],
+      "source": "S&P Global",
+      "headline": {
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
+      },
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
+      "relevance": 97,
+      "auto": true,
+      "impactChannel": "input_cost",
+      "marketLinks": [
+        {
+          "market": "arroz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "cebada",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "maiz",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        },
+        {
+          "market": "trigo",
+          "channel": "input_cost",
+          "relation": "energy-cereals",
+          "direction": "uncertain"
+        }
+      ]
+    }
+  ],
+  "leche": [
+    {
+      "id": "auto-6256d1d46a",
+      "date": "2026-09-29",
+      "region": "us",
+      "topic": "oferta",
+      "topics": [
+        "oferta"
+      ],
+      "products": [
+        "leche"
+      ],
+      "source": "Dairy Herd",
+      "headline": {
+        "en": "Farmer Resilience - Dairy Herd",
+        "es": "Farmer Resilience - Dairy Herd",
+        "fr": "Farmer Resilience - Dairy Herd",
+        "it": "Farmer Resilience - Dairy Herd"
+      },
+      "description": "Farmer Resilience Dairy Herd",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9vWnFpQXFnc3V5VXkxeDVIMDFLYndYOEQwbGxXN0V3Y1VsZjJVYzlWOTNOM2VjS01aVm5jRU8wbHEya2N5c2RZRWg2QlZ3bTJvMExDSE1EdHluZXRmZ2J5UUtsckI?oc=5",
+      "relevance": 57,
+      "auto": true,
+      "impactChannel": "supply",
+      "marketLinks": [
+        {
+          "market": "leche",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ]
+    },
+    {
+      "id": "auto-89cc059bde",
+      "date": "2026-09-25",
+      "region": "us",
+      "topic": "oferta",
+      "topics": [
+        "oferta"
+      ],
+      "products": [
+        "leche"
+      ],
+      "source": "Dairy Herd",
+      "headline": {
+        "en": "News - Dairy Herd",
+        "es": "News - Dairy Herd",
+        "fr": "News - Dairy Herd",
+        "it": "News - Dairy Herd"
+      },
+      "description": "News Dairy Herd",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE8yaHhKWlRTV21TQmE4S3V6U0dPVkc5UUtCenRDSzFLVDI5RENGZ2VxQTl0QnJMcmtKN0Nhb3FkTm5yRkVJd2tPWU1ham96X3RVRGFaUEdjWQ?oc=5",
+      "relevance": 57,
+      "auto": true,
+      "impactChannel": "supply",
+      "marketLinks": [
+        {
+          "market": "leche",
+          "channel": "supply",
+          "relation": null,
+          "direction": "uncertain"
+        }
+      ]
+    }
+  ],
   "pac": [
     {
       "id": "auto-a5cc04d005",
@@ -4113,6 +4979,31 @@
       },
       "description": "Special Reports DTN Progressive Farmer",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNN0dNcTlGcDlpa2ZEZ2pHLUk5WWJscW5CSjhEVjJDNTBDRTEwWTBrNzJ0R2JobjNmX1N2OFMyZDVOVjBhS1R1SmYxa0dkTnZpMkxBbzJkNDBURm56eDh5OWhfdWtvSUp4OFNaM2U4X2hxYTZPWWxRVnR3SGluWEdrY0RxVDJzcXhtQkVRSElGYUI1REMzNEFfUGlZdFloaElNeGhtQ0JuQ2Z1d3Jq?oc=5",
+      "relevance": 45,
+      "auto": true,
+      "impactChannel": "market_impact",
+      "marketLinks": []
+    },
+    {
+      "id": "auto-0d1305785f",
+      "date": "2026-09-29",
+      "region": "us",
+      "topic": "oferta",
+      "topics": [
+        "oferta"
+      ],
+      "products": [
+        "pac"
+      ],
+      "source": "DTN",
+      "headline": {
+        "en": "Sponsor Content - DTN Progressive Farmer",
+        "es": "Sponsor Content - DTN Progressive Farmer",
+        "fr": "Sponsor Content - DTN Progressive Farmer",
+        "it": "Sponsor Content - DTN Progressive Farmer"
+      },
+      "description": "Sponsor Content DTN Progressive Farmer",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPT0NnelNFcnRaam92eEVuaFZPbHBFc2x1a0xJNTltTlc5cy1neGpJTUU5Z0U0SFM4aEFqVzZtaWprdHZwbVNCZE5FQi1IT2E4aFA0dWpRaEZhSDlWQ3B4elVIR1k4Vm1hd1pxSG9LNW83SWY0QW04aERfWnU5ZnNjY2Jnc0lDazZHUS1BREZuREM0Q2FiR0hmeEhzbHNVc1gyTWZ3bzFheUxzdUJj?oc=5",
       "relevance": 45,
       "auto": true,
       "impactChannel": "market_impact",
@@ -4345,6 +5236,31 @@
       "marketLinks": []
     },
     {
+      "id": "auto-a9d805a728",
+      "date": "2026-09-28",
+      "region": "global",
+      "topic": "oferta",
+      "topics": [
+        "oferta"
+      ],
+      "products": [
+        "pac"
+      ],
+      "source": "FAO",
+      "headline": {
+        "en": "Home | Food and Agriculture Organization of the United Nations - Food and Agriculture Organization",
+        "es": "Home | Food and Agriculture Organization of the United Nations - Food and Agriculture Organization",
+        "fr": "Home | Food and Agriculture Organization of the United Nations - Food and Agriculture Organization",
+        "it": "Home | Food and Agriculture Organization of the United Nations - Food and Agriculture Organization"
+      },
+      "description": "Home | Food and Agriculture Organization of the United Nations Food and Agriculture Organization",
+      "url": "https://news.google.com/rss/articles/CBMiQEFVX3lxTE8zcFVHVkFZSXJpRVZNaGt3Q0FZTjFkVkNCZzZid1pKbElMeF8xX0tOdnpsTHdLa2ZYY240Mjl2Mkc?oc=5",
+      "relevance": 45,
+      "auto": true,
+      "impactChannel": "market_impact",
+      "marketLinks": []
+    },
+    {
       "id": "auto-933b21144f",
       "date": "2026-09-27",
       "region": "us",
@@ -4389,31 +5305,6 @@
       },
       "description": "America’s Farmers Are Rethinking Their Loyalty to the GOP WSJ",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOSGpEandRQXRydlZ3UURrQ2c0RDdSRGtVTXFPeVhUMEFpVGh4X3RTZmZ5TTVJSXFDOG1sZk5pMS1TOTRULVFMQW9OZ01zc2kzdWQ0TzBBMDh5ZWJyRS1VVTAxUzIxLXdHQVg4QlVqd09lUHZvQmVDVUM5b3VlNHo0TTg0MTRiMzFGNjVpSmdvZWlyTzZ6dzk1R1VDRWhsblp0bVM4M0lzQQ?oc=5",
-      "relevance": 45,
-      "auto": true,
-      "impactChannel": "market_impact",
-      "marketLinks": []
-    },
-    {
-      "id": "auto-a0abc6be40",
-      "date": "2026-09-26",
-      "region": "us",
-      "topic": "oferta",
-      "topics": [
-        "oferta"
-      ],
-      "products": [
-        "pac"
-      ],
-      "source": "DTN",
-      "headline": {
-        "en": "Sponsor Content - DTN Progressive Farmer",
-        "es": "Sponsor Content - DTN Progressive Farmer",
-        "fr": "Sponsor Content - DTN Progressive Farmer",
-        "it": "Sponsor Content - DTN Progressive Farmer"
-      },
-      "description": "Sponsor Content DTN Progressive Farmer",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTnJlX0VBNkdHdF9IYmw1Zmk2TU5RS25NRGNXcDRnUXA0dTJZY0NzckN2YUZOYUlqajBlVEwzNEE1c1JEU3Eya050ZHlGME5KaFNlZzRUWFhEWHFURzhPLUljbDZNSlBGRFk3cWNWeWh1UDExcU5oaC1QYl8xbC1UaElmSTJWdnAzRzJ6REJobEVpTkcxQ3BkbFp0TFZCcm1LMWZFUkpCSnFzN3NCZVU0?oc=5",
       "relevance": 45,
       "auto": true,
       "impactChannel": "market_impact",
@@ -4799,7 +5690,32 @@
       "marketLinks": []
     },
     {
-      "id": "auto-39b574b3ce",
+      "id": "auto-469e7fc9d4",
+      "date": "2026-09-21",
+      "region": "eu",
+      "topic": "comercio",
+      "topics": [
+        "comercio"
+      ],
+      "products": [
+        "pac"
+      ],
+      "source": "Agriland",
+      "headline": {
+        "en": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland",
+        "es": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland",
+        "fr": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland",
+        "it": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' - Agriland"
+      },
+      "description": "Factory quotes: Beef trade firm but warning store trade is 'out of kilter' Agriland",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNaDI0MGh6Q0JRUmRPY1dMRTRxV3F0eXBzWjBMbmhMTlAtTGpwVjRFTmVSbF8tVHF3ZXhHcmQ4REk0MS04MmZwSG1pYTJKT0NiMGVUSXY5MkdQbndLd0dDcDZIbkZ2Vmd5enY5Nzh3eHVNTmJxVC05bVNmUnQ0VXQ0dEF2cEpkZ0pWWk9LS01lS1RRZ1dlSUZqSlZHMkQtSmNUV3IxOE5HSWcwUQ?oc=5",
+      "relevance": 53,
+      "auto": true,
+      "impactChannel": "market_impact",
+      "marketLinks": []
+    },
+    {
+      "id": "auto-2bbcb1a53d",
       "date": "2026-09-18",
       "region": "global",
       "topic": "oferta",
@@ -4812,12 +5728,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Why food inflation is no longer just about supply and demand - spglobal.com",
-        "es": "Why food inflation is no longer just about supply and demand - spglobal.com",
-        "fr": "Why food inflation is no longer just about supply and demand - spglobal.com",
-        "it": "Why food inflation is no longer just about supply and demand - spglobal.com"
+        "en": "Why food inflation is no longer just about supply and demand - S&P Global",
+        "es": "Why food inflation is no longer just about supply and demand - S&P Global",
+        "fr": "Why food inflation is no longer just about supply and demand - S&P Global",
+        "it": "Why food inflation is no longer just about supply and demand - S&P Global"
       },
-      "description": "Why food inflation is no longer just about supply and demand spglobal.com",
+      "description": "Why food inflation is no longer just about supply and demand S&P Global",
       "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxONjdUOWdTNjZJemtoVUhnYlhjTzlCU1pISW43RjgxTXFoRzdKNVR1RndaSVRUX3FKM1BKblRIaXl1aGpiYlU1akk0RnJkN2JwdXZyd1hqcFFtZTlfRW9aX3lHTXd1X0Vxd1JDRm9ncXdEZTBkUFlBRWRnbDVVOTE2ZGx6WG5BdExQc2RsdGRTeEloRllPVUpqTm9mTTNVMWxfZF84N3V2bGJ1WWxlVk82LVFLRmh1cURNTF9JR0FjWkRCSG51UlE3WlozaF8yOXJsOThKcU9RbHlxb0k?oc=5",
       "relevance": 61,
       "auto": true,
@@ -4927,7 +5843,7 @@
   ],
   "feed": [
     {
-      "id": "auto-670849a660",
+      "id": "auto-b742548c2f",
       "date": "2026-09-28",
       "region": "global",
       "topic": "oferta",
@@ -4939,12 +5855,12 @@
       ],
       "source": "Feed Strategy",
       "headline": {
-        "en": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - feedstrategy.com",
-        "es": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - feedstrategy.com",
-        "fr": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - feedstrategy.com",
-        "it": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - feedstrategy.com"
+        "en": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - Feed Strategy",
+        "es": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - Feed Strategy",
+        "fr": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - Feed Strategy",
+        "it": "FEFAC calls for contingency plan to safeguard essential EU feed supplies - Feed Strategy"
       },
-      "description": "FEFAC calls for contingency plan to safeguard essential EU feed supplies feedstrategy.com",
+      "description": "FEFAC calls for contingency plan to safeguard essential EU feed supplies Feed Strategy",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRXlhX29lak5OZDZWN2dZN3p0bWNDVmdBRU5WejNsYk9oTXEyNWtfU2lLZW8yU2YyVFZZY2txejdTY2pkd0tSREdqT25iOUVsZjRWZTFqTjRULTBUckRJT3hXWlo0dmJVWV9ELVlOakdRa1pKb0l2Q0xITzRZay1WclBfZzloR1JTUGRLalZPcTFlT3RyNjBMLWZNQWZCOG5NOXJrVWppWWktd1dtN01lUWtqQ2U2Z00yWXd6SkxqTlNmRm52Sk1yNjVfMXc?oc=5",
       "relevance": 57,
       "auto": true,
@@ -4991,7 +5907,7 @@
       ]
     },
     {
-      "id": "auto-fc9d8e7534",
+      "id": "auto-f3469bfaed",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -5006,12 +5922,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
@@ -5077,40 +5993,6 @@
         {
           "market": "trigo",
           "channel": "weather",
-          "relation": null,
-          "direction": "uncertain"
-        }
-      ]
-    }
-  ],
-  "leche": [
-    {
-      "id": "auto-89cc059bde",
-      "date": "2026-09-25",
-      "region": "us",
-      "topic": "oferta",
-      "topics": [
-        "oferta"
-      ],
-      "products": [
-        "leche"
-      ],
-      "source": "Dairy Herd",
-      "headline": {
-        "en": "News - Dairy Herd",
-        "es": "News - Dairy Herd",
-        "fr": "News - Dairy Herd",
-        "it": "News - Dairy Herd"
-      },
-      "description": "News Dairy Herd",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE8yaHhKWlRTV21TQmE4S3V6U0dPVkc5UUtCenRDSzFLVDI5RENGZ2VxQTl0QnJMcmtKN0Nhb3FkTm5yRkVJd2tPWU1ham96X3RVRGFaUEdjWQ?oc=5",
-      "relevance": 57,
-      "auto": true,
-      "impactChannel": "supply",
-      "marketLinks": [
-        {
-          "market": "leche",
-          "channel": "supply",
           "relation": null,
           "direction": "uncertain"
         }
@@ -5391,227 +6273,9 @@
       ]
     }
   ],
-  "diesel": [
-    {
-      "id": "auto-277f33a72f",
-      "date": "2026-09-23",
-      "region": "us",
-      "topic": "comercio",
-      "topics": [
-        "comercio",
-        "energia",
-        "costes"
-      ],
-      "products": [
-        "diesel"
-      ],
-      "source": "DTN",
-      "headline": {
-        "en": "Economists Debate Diesel Export Ban While USDA Questions Ad-Hoc Relief - DTN Progressive Farmer",
-        "es": "Economists Debate Diesel Export Ban While USDA Questions Ad-Hoc Relief - DTN Progressive Farmer",
-        "fr": "Economists Debate Diesel Export Ban While USDA Questions Ad-Hoc Relief - DTN Progressive Farmer",
-        "it": "Economists Debate Diesel Export Ban While USDA Questions Ad-Hoc Relief - DTN Progressive Farmer"
-      },
-      "description": "Economists Debate Diesel Export Ban While USDA Questions Ad-Hoc Relief DTN Progressive Farmer",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONGotcTU0OHNoLWg3Slh3YzluWFFNOFgxVW1hVjhkbU1aSURGc1Joc0FxQWhjMHk2cUVVN1FRS2dESTNBd2tzMWIycFZaeFJteTQwWFlxSjhOamFqWDhoU29UQ2ZETV96NGpqUVR1UVNfNEV0VUswNno3QWxsZ1NIMV9lemM2ZjhxWlg4ODNoU1RBQWZ3Q3g3R3Z0Mi1SYlY4NFVyWmZ3ZWNvZGUtV0JkbFA5cUNsLWs?oc=5",
-      "relevance": 81,
-      "auto": true,
-      "impactChannel": "input_cost",
-      "marketLinks": [
-        {
-          "market": "arroz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "cebada",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "maiz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        }
-      ]
-    },
-    {
-      "id": "auto-6b15a55f8c",
-      "date": "2026-09-23",
-      "region": "us",
-      "topic": "oferta",
-      "topics": [
-        "oferta",
-        "energia",
-        "costes"
-      ],
-      "products": [
-        "diesel"
-      ],
-      "source": "AgWeb",
-      "headline": {
-        "en": "Storms, Disease and $6 Diesel Squeeze Illinois Farmer’s Harvest - AgWeb",
-        "es": "Storms, Disease and $6 Diesel Squeeze Illinois Farmer’s Harvest - AgWeb",
-        "fr": "Storms, Disease and $6 Diesel Squeeze Illinois Farmer’s Harvest - AgWeb",
-        "it": "Storms, Disease and $6 Diesel Squeeze Illinois Farmer’s Harvest - AgWeb"
-      },
-      "description": "Storms, Disease and $6 Diesel Squeeze Illinois Farmer’s Harvest AgWeb",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNMnMtNENqRzZzbWhELV9BMnA3el9IRkJ2T1JTQ214UURDUEVtdVpqLUpIckFhWUVwS3N5aW9QbUV2Vk1MOVROaFBkb0hDU09BNWVlaXVnMkhzUzdVbUQtcFRka3hNVGFWZVQ3STcwZ3JaWF9kbFZrWDl0OGJZOVR4VmJFNzBMU1VVTXc?oc=5",
-      "relevance": 81,
-      "auto": true,
-      "impactChannel": "input_cost",
-      "marketLinks": [
-        {
-          "market": "arroz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "cebada",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "maiz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        }
-      ]
-    },
-    {
-      "id": "auto-077b1f85e2",
-      "date": "2026-09-18",
-      "region": "global",
-      "topic": "energia",
-      "topics": [
-        "energia",
-        "costes"
-      ],
-      "products": [
-        "arroz",
-        "diesel"
-      ],
-      "source": "Reuters",
-      "headline": {
-        "en": "Record US diesel prices squeeze farmers; food prices may rise - Reuters",
-        "es": "Record US diesel prices squeeze farmers; food prices may rise - Reuters",
-        "fr": "Record US diesel prices squeeze farmers; food prices may rise - Reuters",
-        "it": "Record US diesel prices squeeze farmers; food prices may rise - Reuters"
-      },
-      "description": "Record US diesel prices squeeze farmers; food prices may rise Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUXFFeEk2NVZjZU9WbTQ3QUZObDgyZ2JZdVlPRjd5dzNVdk13OFNCN2tiR0c1MElNMFFZVGdRelI5UnZkNnlMNmRQZXM1Um1sQUZQRkh2R3JvSHNkZnhtV2JzVFB4SDVoam0tZUE3WHljQWdSbXFPTEdOTkxSQXdvcTZQdXloOEpXMlVWUnprbS0ycUJ3aU1qRkVKZTc0UTFxa2h0bG43TlpCRnM5N1pVN09R?oc=5",
-      "relevance": 85,
-      "auto": true,
-      "impactChannel": "input_cost",
-      "marketLinks": [
-        {
-          "market": "arroz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "cebada",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "maiz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        }
-      ]
-    },
-    {
-      "id": "auto-7e2e130ddb",
-      "date": "2026-09-16",
-      "region": "us",
-      "topic": "oferta",
-      "topics": [
-        "oferta",
-        "energia",
-        "costes"
-      ],
-      "products": [
-        "arroz",
-        "diesel",
-        "costes"
-      ],
-      "source": "DTN",
-      "headline": {
-        "en": "Nebraska Farmers: Record Diesel Costs Erode Gains From Higher Crop Prices - DTN Progressive Farmer",
-        "es": "Nebraska Farmers: Record Diesel Costs Erode Gains From Higher Crop Prices - DTN Progressive Farmer",
-        "fr": "Nebraska Farmers: Record Diesel Costs Erode Gains From Higher Crop Prices - DTN Progressive Farmer",
-        "it": "Nebraska Farmers: Record Diesel Costs Erode Gains From Higher Crop Prices - DTN Progressive Farmer"
-      },
-      "description": "Nebraska Farmers: Record Diesel Costs Erode Gains From Higher Crop Prices DTN Progressive Farmer",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNbXZrazhKRnZuLWJJZlgwa0Roa0tuM2dTYkc3TmpObTQ4bTlnOVlZalRGazVqaHpIZmQ5blRvQ0JrRkVHMmdRQ25IX2xLUDRSR1ltYS04RzlscnR4N045WV9MUWJXdFlZRzBEVlBsbmhLalNZZVhaVk1XUV94Rk93bzJmdG1pRVQ1V01iX2t0ME9JVHhSMTE0MHBKMGFjekFVLTd0S3MtNlpyV3NrbC1jM2ZoTE5TSExP?oc=5",
-      "relevance": 100,
-      "auto": true,
-      "impactChannel": "input_cost",
-      "marketLinks": [
-        {
-          "market": "arroz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "cebada",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "maiz",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "trigo",
-          "channel": "input_cost",
-          "relation": "energy-cereals",
-          "direction": "uncertain"
-        },
-        {
-          "market": "arroz",
-          "channel": "supply",
-          "relation": null,
-          "direction": "uncertain"
-        }
-      ]
-    }
-  ],
   "azucar": [
     {
-      "id": "auto-fc9d8e7534",
+      "id": "auto-f3469bfaed",
       "date": "2026-09-19",
       "region": "global",
       "topic": "energia",
@@ -5626,12 +6290,12 @@
       ],
       "source": "S&P Global",
       "headline": {
-        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com",
-        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - spglobal.com"
+        "en": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "es": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "fr": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global",
+        "it": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend - S&P Global"
       },
-      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend spglobal.com",
+      "description": "Indonesia targets sugarcane as key feedstock for E20 ethanol fuel blend S&P Global",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUThyOGMwT2ZralpZV0pXUkZwSGdZSm5mZGdzMmhRdXF2dmExcWhRWWl6Mk1QX3lkeUZGSndpd2NsLTlSdjZzQk1XTUZsUnlJdlZiRG5pbFdhU3hQSWxNMGVRaVE2R0psSVZTcTRxYWpDdVpEYnFkSTRUemdmQ3FCTHE4SXpVeUhXLVlteEFIc0JQRHVxZ3lfUUVac0xNVTZ4NWRWd1hQRV9EZS1GcnZpdkF6bGdaU2xkamVhaEg2VTNHbkhsU3NLUWFUNVpZRWQ2anZEbkFOZXVrNGN3Rnd6dk1JbldCZw?oc=5",
       "relevance": 97,
       "auto": true,
