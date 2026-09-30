@@ -426,9 +426,28 @@
   // ---------------------------------------------------------------------
   // Render: pestañas
   // ---------------------------------------------------------------------
+  // Cada mercado enseña todo lo que tiene: un producto sin dato verificado en el mercado elegido no se rellena
+  // con otro mercado (p. ej. el Reino Unido ya no muestra la referencia europea), va a una lista aparte.
+  function trustReady() { return !!(global.DehesaDataTrust && D.DATA_TRUST); }
+  function entryHasData(entry) {
+    if (!trustReady()) return true;
+    var key = entry.catId + ':' + entry.nameKey;
+    if (state.deepLinkProduct === key) return true;
+    var disp = resolveDisplay(entry, state.location, state.euCountry);
+    if (state.location === 'uk' && disp.ukGap) return false;
+    var obs = trustObservationFor(entry, disp);
+    return !!obs && obs.status === 'verified';
+  }
+  function catHasData(catId) {
+    if (INFO_CATS[catId]) return true;
+    var list = productsInCat(catId);
+    return !trustReady() || !list.length || list.some(entryHasData);
+  }
+  function visibleCats() { var v = CAT_ORDER.filter(function (c) { return catHasData(c) || c === state.activeTab; }); return v; }
+
   function renderTabs() {
     var root = document.getElementById('pr-tabs');
-    root.innerHTML = CAT_ORDER.map(function (catId) {
+    root.innerHTML = visibleCats().map(function (catId) {
       return '<button type="button" class="di-tab-btn' + (catId === state.activeTab ? ' active' : '') + '" data-tab="' + catId + '">' + esc(catLabel(catId)) + '</button>';
     }).join('');
   }
@@ -775,8 +794,10 @@
       root.innerHTML = renderInfoCategoryHtml(state.activeTab);
       return;
     }
-    var entries = productsInCat(state.activeTab);
-    root.innerHTML = '<div class="di-product-grid">' + entries.map(function (e) { return productCardHtml(e, {}); }).join('') + '</div>';
+    var all = productsInCat(state.activeTab), t = ui();
+    var entries = all.filter(entryHasData), missing = all.filter(function (e) { return entries.indexOf(e) < 0; });
+    root.innerHTML = (entries.length ? '<div class="di-product-grid">' + entries.map(function (e) { return productCardHtml(e, {}); }).join('') + '</div>' : '<p class="di-movers-hint">' + esc(t.noDataHereAll) + '</p>') +
+      (missing.length ? '<details class="di-nodata-list" style="margin-top:14px"><summary style="cursor:pointer;font-size:13px;color:var(--text-faint)">' + esc(t.noDataHere) + ' (' + missing.length + ')</summary><p class="di-movers-hint" style="margin-top:6px">' + missing.map(function (e) { return esc(productName(e.nameKey)); }).join(' · ') + '</p></details>' : '');
     wireCardEvents(root);
   }
 
@@ -1343,6 +1364,7 @@
   }
 
   function renderTabsAndCategory() {
+    if (!state.deepLinkProduct && !catHasData(state.activeTab)) { var vc = visibleCats(); for (var vi = 0; vi < vc.length; vi++) if (catHasData(vc[vi])) { state.activeTab = vc[vi]; break; } }
     renderTabs();
     renderCategory();
   }
