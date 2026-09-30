@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:33:06.923Z",
+  "generatedAt": "2026-09-30T17:33:40.025Z",
   "status": "informational",
   "rules": [
     {
@@ -391,20 +391,20 @@
     },
     {
       "type": "period_move",
-      "product": "guisante_seco",
-      "region": "ca",
-      "sourceId": "statcan",
-      "severity": "high",
-      "changePct": -10.23,
-      "observationDate": "2026-07-01"
-    },
-    {
-      "type": "period_move",
       "product": "cordero",
       "region": "ca",
       "sourceId": "statcan",
       "severity": "high",
       "changePct": -10.17,
+      "observationDate": "2026-07-01"
+    },
+    {
+      "type": "period_move",
+      "product": "guisante_seco",
+      "region": "ca",
+      "sourceId": "statcan",
+      "severity": "high",
+      "changePct": -10.23,
       "observationDate": "2026-07-01"
     },
     {

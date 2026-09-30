@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:33:06.028Z",
+  "generatedAt": "2026-09-30T17:33:39.030Z",
   "observationCount": 87,
   "products": [
     "arroz",
@@ -137,10 +137,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 499,
+      "coverageStart": "1985-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -227,10 +227,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 499,
+      "coverageStart": "1985-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -302,10 +302,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 499,
+      "coverageStart": "1985-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -347,10 +347,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 499,
+      "coverageStart": "1985-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -392,10 +392,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 499,
+      "coverageStart": "1985-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -722,10 +722,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-06-01",
+      "points": 473,
+      "coverageStart": "1987-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -782,10 +782,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 499,
+      "coverageStart": "1985-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -857,10 +857,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 360,
+      "coverageStart": "1996-08-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -932,10 +932,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 475,
+      "coverageStart": "1987-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -947,10 +947,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 499,
+      "coverageStart": "1985-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -962,10 +962,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 499,
+      "coverageStart": "1985-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -1082,10 +1082,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 499,
+      "coverageStart": "1985-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -1142,10 +1142,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 415,
+      "coverageStart": "1992-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
@@ -1202,7 +1202,7 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
       "points": 168,
       "coverageStart": "2012-08-01",
@@ -1262,10 +1262,10 @@
       "currency": "CAD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:17:21Z",
+      "verifiedAt": "2026-09-30T17:33:37Z",
       "comparability": "directional",
-      "points": 240,
-      "coverageStart": "2006-08-01",
+      "points": 415,
+      "coverageStart": "1992-01-01",
       "coverageEnd": "2026-07-01"
     },
     {
