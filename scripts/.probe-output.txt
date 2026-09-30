@@ -1,84 +1,95 @@
-=== https://api.tech.ec.europa.eu/agrifood/api/beef/prices?memberStateCodes=ES
-STATUS: 200
-FILAS: 43040
-  memberStateCode -> ["ES"]
-  memberStateName -> ["Spain"]
-  beginDate -> (1812 valores; ej. ["14/09/2026","07/09/2026","31/08/2026"])
-  endDate -> (1812 valores; ej. ["20/09/2026","13/09/2026","06/09/2026"])
-  price -> (25308 valores; ej. ["€625.45","€692.08","€651.82"])
-  unit -> ["€/100Kg"]
-  weekNumber -> (54 valores; ej. [38,37,36])
-  category -> ["Cows","Heifers","Young cattle","Young bulls","Adult male indicative price"]
-  productCode -> (28 valores; ej. ["DO4","ER3","ER4"])
-EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€625.45","unit":"€/100Kg","weekNumber":38,"category":"Cows","productCode":"DO4"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/sheepmeat/prices?memberStateCodes=ES
+=== https://api.tech.ec.europa.eu/agrifood/api/sheep/prices?memberStateCodes=ES
 STATUS: 404
 BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
 
-=== https://api.tech.ec.europa.eu/agrifood/api/eggs/prices?memberStateCodes=ES
+=== https://api.tech.ec.europa.eu/agrifood/api/sheepandgoat/prices?memberStateCodes=ES
 STATUS: 404
 BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
 
-=== https://api.tech.ec.europa.eu/agrifood/api/poultry/prices?memberStateCodes=ES
+=== https://api.tech.ec.europa.eu/agrifood/api/sheepgoat/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/sheep-goat/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/lamb/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/egg/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/eggsandpoultry/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/olive-oil/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/olive/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/oliveOil/prices?memberStateCodes=ES
 STATUS: 200
-FILAS: 1679
+FILAS: 31087
   memberStateCode -> ["ES"]
   memberStateName -> ["Spain"]
-  beginDate -> (1404 valores; ej. ["14/09/2026","07/09/2026","31/08/2026"])
-  endDate -> (1404 valores; ej. ["20/09/2026","13/09/2026","06/09/2026"])
-  price -> (1343 valores; ej. ["€235.07","€220.09","€492.27"])
-  unit -> ["national currency/100kg"]
-  weekNumber -> (54 valores; ej. [38,37,36])
-  productName -> ["Whole broiler (65%)","Legs","Breast Fillet"]
-  priceType -> ["Selling price"]
-EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€235.07","unit":"national currency/100kg","weekNumber":38,"productName":"Whole broiler (65%)","priceType":"Selling price"}
+  beginDate -> (1781 valores; ej. ["14/09/2026","07/09/2026","31/08/2026"])
+  endDate -> (1781 valores; ej. ["20/09/2026","13/09/2026","06/09/2026"])
+  price -> (10294 valores; ej. ["€306.00","€303.50","€301.50"])
+  unit -> ["€/100kg"]
+  weekNumber -> (54 valores; ej. [51,50,49])
+  product -> ["Lampante olive oil (2%)","Refined olive oil (up to 0.3%)","Extra virgin olive oil (up to 0.8%)","Virgin olive oil (up to 2%)","Refined olive-pomace oil (up to 0.3%)","Crude olive-pomace oil (from 5 to 10%)","Olive-pomace oil (up to 1%)"]
+  market -> ["Córdoba (ES613)","Jaén (ES616)","Sevilla ","Málaga(ES617)","Tarragona (ES514)","Average national price","Toledo (ES425)","Granada (ES614)","Badajoz (ES431)"]
+  marketingYear -> (35 valores; ej. ["2025/2026","2024/2025","2023/2024"])
+EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€306.00","unit":"€/100kg","weekNumber":51,"product":"Lampante olive oil (2%)","market":"Córdoba (ES613)","marketingYear":"2025/2026"}
 
-=== https://api.tech.ec.europa.eu/agrifood/api/sugar/prices?memberStateCodes=ES
+=== https://api.tech.ec.europa.eu/agrifood/api/rice/prices?memberStateCodes=ES
 STATUS: 200
-FILAS: 740
-  sugarRegion -> ["EU Average","Region 1","Region 2","Region 3"]
-  price -> (727 valores; ej. ["501.4009","506.0622","436.7388"])
+FILAS: 7578
+  memberStateCode -> ["ES"]
+  memberStateName -> ["Spain"]
+  beginDate -> (1306 valores; ej. ["14/09/2026","07/09/2026","31/08/2026"])
+  endDate -> (1306 valores; ej. ["20/09/2026","13/09/2026","06/09/2026"])
+  price -> (1562 valores; ej. ["€1081.90","€344.07","€451.68"])
   unit -> ["Tonne"]
-  ym -> (240 valores; ej. ["2026/06","2026/05","2026/04"])
-  marketingYear -> ["2025/2026","2024/2025","2023/2024","2022/2023","2021/2022","2020/2021","2019/2020","2018/2019","2017/2018","2016/2017","2015/2016","2014/2015","2013/2014","2012/2013","2011/2012","2010/2011","2009/2010","2008/2009","2007/2008","2006/2007","2005/2006"]
-  marketingYearMonth -> ["Jun","May","Apr","Mar","Feb","Jan","Dec","Nov","Oct","Sep","Aug","Jul"]
-  weight -> (603 valores; ej. [763148.7,173392.75,7789.12])
-  contractType -> ["Monthly data","Short term contracts"]
-EJEMPLO: {"sugarRegion":"EU Average","price":"501.4009","unit":"Tonne","ym":"2026/06","marketingYear":"2025/2026","marketingYearMonth":"Jun","weight":763148.7,"contractType":"Monthly data"}
+  weekNumber -> (54 valores; ej. [3,2,1])
+  marketingYear -> (28 valores; ej. ["2026/2027","2025/2026","2024/2025"])
+  stage -> ["Milled non parboiled","Paddy","Broken","Milled parboiled","Milled"]
+  type -> ["Japonica","Indica","N.A.","Not informed"]
+  variety -> ["Avg","Average","Gleva Valencia","Puntal Valencia","Sendra Andalucia","Puntal Andalucia","Valencia","Sirio Valencia","Sirio Andalucia","Andalucia","Sendra Valencia","Not informed","J. Sendra","Gleva","Puntal"]
+EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€1081.90","unit":"Tonne","weekNumber":3,"marketingYear":"2026/2027","stage":"Milled non parboiled","type":"Japonica","variety":"Avg"}
 
-=== https://api.tech.ec.europa.eu/agrifood/api/oliveoil/prices?memberStateCodes=ES
+=== https://api.tech.ec.europa.eu/agrifood/api/milk/prices?memberStateCodes=ES
 STATUS: 404
 BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
 
-=== https://api.tech.ec.europa.eu/agrifood/api/cereal/prices?memberStateCodes=ES
+=== https://api.tech.ec.europa.eu/agrifood/api/rawmilk/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/raw_milk/prices?memberStateCodes=ES
+STATUS: 404
+BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== https://api.tech.ec.europa.eu/agrifood/api/oilseeds/prices?memberStateCodes=ES
 STATUS: 200
-FILAS: 22540
+FILAS: 4232
   memberStateCode -> ["ES"]
   memberStateName -> ["Spain"]
-  beginDate -> (565 valores; ej. ["14/09/2026","07/09/2026","31/08/2026"])
-  endDate -> (565 valores; ej. ["20/09/2026","13/09/2026","06/09/2026"])
-  price -> (3569 valores; ej. ["€248,00","€250,40","€268,00"])
-  unit -> ["TONNES"]
+  beginDate -> (299 valores; ej. ["14/09/2026","07/09/2026","31/08/2026"])
+  endDate -> (299 valores; ej. ["20/09/2026","13/09/2026","06/09/2026"])
+  price -> (2999 valores; ej. ["€579.68","€409.67","€1352.68"])
+  unit -> ["national currency/ton"]
   weekNumber -> (54 valores; ej. [12,11,10])
-  productName -> ["Feed maize","Feed wheat","Durum wheat","Feed barley","Milling wheat","Malting barley","Malting barley - M2RH","Breadmaking common wheat"]
-  marketName -> ["Lerida","Lleida","Sevilla","Guadalajara","Palencia","Zaragoza","Huesca","Segovia","Navarra","Toledo","Ciudad Real","Albacete","Valladolid","Burgos","Zamora","Leon","National Average","Cordoba","Barcelona","Cuenca","Cadiz","Madrid","Badajoz","Valencia"]
-  stageName -> ["Departure from silo - after some storage - on truck or other transport means","National Average - Not Specified","Delivered to processor after one intermediary","Delivered to port - grain delivered to a port silo by train or truck or barge"]
-  referencePeriod -> (565 valores; ej. ["24/09/2026","17/09/2026","10/09/2026"])
-EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€248,00","unit":"TONNES","weekNumber":12,"productName":"Feed maize","marketName":"Lerida","stageName":"Departure from silo - after some storage - on truck or other transport means","referencePeriod":"24/09/2026"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/cereals/prices?memberStateCodes=ES
-STATUS: 404
-BODY: {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== https://api.tech.ec.europa.eu/agrifood/api/fertiliser/prices?memberStateCodes=ES
-STATUS: 200
-FILAS: 276
-  year -> [2026,2025,2024,2023,2022,2021,2020,2019]
-  quarter -> ["Q3","Q2","Q1","Q4"]
-  month -> ["Aug","Jul","Jun","May","Apr","Mar","Feb","Jan","Dec","Nov","Oct","Sep"]
-  memberStateName -> ["European Commission"]
-  product -> ["K (Potash)","N (Nitrogen)","P (Phosphorus)"]
-  price -> (217 valores; ej. [364,454,739])
-  unit -> ["€/tonne"]
-EJEMPLO: {"year":2026,"quarter":"Q3","month":"Aug","memberStateName":"European Commission","product":"K (Potash)","price":364,"unit":"€/tonne"}
+  product -> ["Sunflower seed","Soya meal","Crude soya bean oil","Crude sunflower oil","Sunflower seed meal","Rapeseed"]
+  productType -> ["High-oleic","40-50% protein content","N.A.","Standard","From dehulled seeds"]
+  marketStage -> ["DEPSILO","DEPPROC","Not Defined","buyer warehouse","ex-factory"]
+  market -> ["Sur","Average","National Average","Centro","Norte","Not Defined","SUR","CENTRO","NORTE"]
+  marketingYear -> ["2026/2027","2025/2026","2024/2025","2023/2024","2022/2023","2021/2022","2020/2021"]
+EJEMPLO: {"memberStateCode":"ES","memberStateName":"Spain","beginDate":"14/09/2026","endDate":"20/09/2026","price":"€579.68","unit":"national currency/ton","weekNumber":12,"product":"Sunflower seed","productType":"High-oleic","marketStage":"DEPSILO","market":"Sur","marketingYear":"2026/2027"}
