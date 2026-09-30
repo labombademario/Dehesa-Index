@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T02:13:04.828Z",
-  "observationCount": 47,
+  "generatedAt": "2026-09-30T04:11:40.229Z",
+  "observationCount": 48,
   "products": [
     "arroz",
     "azucar",
@@ -47,6 +47,7 @@
     "eu_oil_bulletin",
     "european_commission",
     "eurostat",
+    "usda_ams_mars",
     "usda_nass",
     "world_bank"
   ],
@@ -426,6 +427,21 @@
       "frequency": "weekly",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "comparability": "directional",
+      "points": 25,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-09-25",
+      "unit": "ton_corta",
+      "currency": "USD",
+      "frequency": "weekly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
       "comparability": "directional",
       "points": 25,
       "coverageStart": "2024-09-01",

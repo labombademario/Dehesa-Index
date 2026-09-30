@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T02:13:04.983Z",
+  "generatedAt": "2026-09-30T04:11:40.500Z",
   "scope": {
-    "latestObservations": 41,
-    "historyObservations": 1541,
-    "verified": 41,
+    "latestObservations": 42,
+    "historyObservations": 1566,
+    "verified": 42,
     "pending": 0,
     "stale": 24,
     "regions": [
@@ -420,6 +420,21 @@
       "frequency": "weekly",
       "historyPoints": 25,
       "ageDays": 10,
+      "stale": false
+    },
+    {
+      "id": "di_pienso_harina_soja_us",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-09-25",
+      "publicationDate": "2026-09-25",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "frequency": "weekly",
+      "historyPoints": 25,
+      "ageDays": 5,
       "stale": false
     },
     {

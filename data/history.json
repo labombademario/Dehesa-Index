@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T02:13:04.828Z",
+  "generatedAt": "2026-09-30T04:11:40.229Z",
   "observations": [
     {
       "id": "di_azucar_azucar_eu:2017-11-01",
@@ -12723,6 +12723,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2024-09-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2024-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 337.9,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2024-09-01",
       "product": "huevos",
       "region": "eu",
@@ -13171,6 +13187,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2024-10-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2024-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 337.43,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2024-10-01",
       "product": "huevos",
       "region": "eu",
@@ -13616,6 +13648,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_us:2024-11-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2024-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 308.7,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
       "comparability": "directional"
     },
     {
@@ -14131,6 +14179,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2024-12-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2024-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 284.64,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2024-12-01",
       "product": "huevos",
       "region": "eu",
@@ -14579,6 +14643,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2025-01-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 298.5,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2025-01-01",
       "product": "huevos",
       "region": "eu",
@@ -15024,6 +15104,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_us:2025-02-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 277.5,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
       "comparability": "directional"
     },
     {
@@ -15539,6 +15635,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2025-03-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 273.7,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2025-03-01",
       "product": "huevos",
       "region": "eu",
@@ -15952,6 +16064,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_us:2025-04-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 262.7,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
       "comparability": "directional"
     },
     {
@@ -16400,6 +16528,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_us:2025-05-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 274.78,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
       "comparability": "directional"
     },
     {
@@ -16915,6 +17059,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2025-06-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 275.5,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2025-06-01",
       "product": "huevos",
       "region": "eu",
@@ -17363,6 +17523,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2025-07-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 246.22,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2025-07-01",
       "product": "huevos",
       "region": "eu",
@@ -17808,6 +17984,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_us:2025-08-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 239.17,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
       "comparability": "directional"
     },
     {
@@ -18323,6 +18515,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2025-09-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 285.89,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2025-09-01",
       "product": "huevos",
       "region": "eu",
@@ -18787,6 +18995,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2025-10-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 289.1,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2025-10-01",
       "product": "huevos",
       "region": "eu",
@@ -19248,6 +19472,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_us:2025-11-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 300.3,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
       "comparability": "directional"
     },
     {
@@ -19779,6 +20019,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2025-12-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 299.53,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2025-12-01",
       "product": "huevos",
       "region": "eu",
@@ -20240,6 +20496,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_us:2026-01-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 291.4,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
       "comparability": "directional"
     },
     {
@@ -20736,6 +21008,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_us:2026-02-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 298,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
       "comparability": "directional"
     },
     {
@@ -21395,6 +21683,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2026-03-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 296.86,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2026-03-01",
       "product": "huevos",
       "region": "eu",
@@ -21987,6 +22291,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2026-04-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 311.3,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2026-04-01",
       "product": "huevos",
       "region": "eu",
@@ -22576,6 +22896,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_us:2026-05-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 326.03,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
       "comparability": "directional"
     },
     {
@@ -23235,6 +23571,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2026-06-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 316.3,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2026-06-01",
       "product": "huevos",
       "region": "eu",
@@ -23811,6 +24163,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2026-07-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 308.06,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2026-07-01",
       "product": "huevos",
       "region": "eu",
@@ -24211,6 +24579,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pienso_harina_soja_us:2026-08-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 317.9,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_avicultura_huevos_eu:2026-08-01",
       "product": "huevos",
       "region": "eu",
@@ -24560,6 +24944,22 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_us:2026-09-01",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 351.96,
+      "currency": "USD",
+      "unit": "ton_corta",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-25",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T04:11:40.075Z",
       "comparability": "directional"
     },
     {

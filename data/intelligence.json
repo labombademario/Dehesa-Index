@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T02:13:05.049Z",
+  "generatedAt": "2026-09-30T04:11:40.731Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -514,6 +514,25 @@
       "periodChangePct": 4.527394395650353,
       "yoyPct": null,
       "volatility": 0.07480302548662568,
+      "points": 25,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-09-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_pienso_harina_soja_us",
+      "product": "harina_soja",
+      "region": "us",
+      "sourceId": "usda_ams_mars",
+      "frequency": "weekly",
+      "unit": "ton_corta",
+      "currency": "USD",
+      "latest": 351.96,
+      "observationDate": "2026-09-01",
+      "periodChangePct": 10.714061025479715,
+      "yoyPct": null,
+      "volatility": 0.06327804941160285,
       "points": 25,
       "coverageStart": "2024-09-01",
       "coverageEnd": "2026-09-01",

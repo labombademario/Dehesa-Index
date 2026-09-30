@@ -599,7 +599,7 @@
           footnoteKey: 'pienso',
           quoteTypes: { us: { type: 'indice', market: 'USDA' }, eu: { type: 'indice', market: 'Comisión Europea (índices regionales)' } } },
         { nameKey: 'harina_soja', imperialUnitKey: 'ton_corta', imperialKgPerUnit: 907.185, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
-          us: { price: 335, changePct: 0.6, history: [325, 328, 330, 332, 331, 333, 335], currency: 'USD', kgPerUnit: 907.185 },
+          us: { price: 384.14, changePct: 1.33, history: [318.41, 323.9, 334.5, 318.9, 317.9, 313.7, 324, 344, 351.96, 351.8, 379.08, 384.14], currency: 'USD', kgPerUnit: 907.185 },
           eu: { price: 409.67, changePct: 2.0501, history: [359.51, 364.81, 372.43, 384.13, 382.56, 374.51, 358.63, 375.86, 394.93, 399.88, 401.44, 409.67], currency: 'EUR', kgPerUnit: 1000 },
           footnoteKey: 'harina_soja',
           uk: { price: 355.00, changePct: 5.65, history: [340, 343, 346, 349, 351, 353, 355], currency: 'GBP', kgPerUnit: 1000 },
@@ -1049,9 +1049,8 @@
     },
     'pienso-harina_soja-us': {
       sourceId: 'usda_ams_mars', frequency: 'weekly',
-      methodology: 'Pendiente de la primera ejecución automática (USDA AMS, API MARS, informe 3511).',
-      comparability: 'directional', observationDate: null, publicationDate: null,
-      status: 'pending', verifiedAt: null
+      methodology: 'USDA AMS Market News (API MARS, informe 3511 «National Grain and Oilseed Processor Feedstuff Report», semanal): precio medio semanal de la harina de soja de 46,5-48 % de proteína en Iowa, FOB, cotización de venta (ask), en USD por tonelada. El informe solo indica «$ Per Ton»; se trata como tonelada corta (2.000 lb) porque el precio se expresa como base sobre el futuro de harina de soja de CBOT, que cotiza en toneladas cortas. Es un mercado regional, no un futuro ni la media nacional, y no es exactamente el mismo producto que la referencia europea (España, 40-50 % de proteína, salida de fábrica, EUR/t).',
+      comparability: 'directional', observationDate: '2026-09-25', publicationDate: '2026-09-25', status: 'verified', verifiedAt: '2026-09-30T04:11:40.075Z'
     },
     'pienso-harina_soja-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
