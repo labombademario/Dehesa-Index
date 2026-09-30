@@ -380,7 +380,8 @@
       }).join('') + '</select>';
       html += '<div class="di-eu-country-hint">' + esc(t.euCountryHint) + '</div>';
     }
-    html += '<div class="di-fx-label">' + esc(fxLabelText(t)) + '</div>';
+    var fxTxt = fxLabelText(t);
+    if (fxTxt) html += '<div class="di-fx-label">' + esc(fxTxt) + '</div>';
     root.innerHTML = html;
   }
 
@@ -394,10 +395,12 @@
     return lang() === 'en' ? fixed : fixed.replace('.', ',');
   }
   function fxLabelText(t) {
-    var eur = fmtFxRate(D.FX.EUR);
-    var gbp = fmtFxRate(D.FX.GBP);
+    // Base de referencia siempre USD: solo se muestra el cambio de la moneda de la región elegida.
+    // En EE. UU. no hay cambio que mostrar (ya está en USD).
     var date = D.formatFxDate(D.FX_DATE, lang());
-    return t.fxLabel.replace('{eur}', eur).replace('{gbp}', gbp).replace('{date}', date);
+    if (state.location === 'eu') return t.fxLabelEu.replace('{eur}', fmtFxRate(D.FX.EUR)).replace('{date}', date);
+    if (state.location === 'uk') return t.fxLabelUk.replace('{gbp}', fmtFxRate(D.FX.GBP)).replace('{date}', date);
+    return '';
   }
 
   // ---------------------------------------------------------------------
