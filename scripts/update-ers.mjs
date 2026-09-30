@@ -7,11 +7,11 @@ const U = 'https://www.ers.usda.gov';
 const UA = { 'User-Agent': 'Mozilla/5.0 (compatible; DehesaIndex/1.0)' };
 async function get(path, bin) {
   let err = '';
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 6; i++) {
     try { const r = await fetch(path.startsWith('http') ? path : U + path, { headers: UA, signal: AbortSignal.timeout(120000) }); if (r.ok) return bin ? Buffer.from(await r.arrayBuffer()) : await r.text(); err = 'HTTP ' + r.status; } catch (e) { err = e.message; }
-    await new Promise(z => setTimeout(z, 3000 * (i + 1)));
+    await new Promise(z => setTimeout(z, 5000 * (i + 1)));
   }
-  throw new Error(path + ' ' + err);
+  throw new Error(path + ' ' + err + (err ? '' : ''));
 }
 function csv(text) {
   const rows = []; let row = [], f = '', q = false;
@@ -28,6 +28,7 @@ function csv(text) {
 }
 const numv = v => { const s = String(v).replace(/,/g, '').trim(); return /^-?\d+(\.\d+)?$/.test(s) ? Number(s) : null; };
 async function link(page, re) { const h = await get(page); const m = [...h.matchAll(/href="([^"]+)"/g)].map(x => x[1]).map(x => x.split('?')[0]).filter(x => re.test(x)); return [...new Set(m)]; }
+let OLD = {}; try { OLD = JSON.parse(await readFile('data/ers.json', 'utf8')); } catch (e) {}
 const doc = { schemaVersion: '1.0', source: 'USDA Economic Research Service (ERS)', generatedAt: new Date().toISOString() };
 // 1) Food Price Outlook
 try {
@@ -95,6 +96,7 @@ try {
   }
   doc.income = { asOf, rows }; console.log('renta agraria', rows.length, asOf);
 } catch (e) { console.log('renta error', e.message); }
+for (const k of ['fpo', 'costs', 'forecast', 'income']) if (!doc[k] && OLD[k]) { doc[k] = OLD[k]; console.log('se conserva la última versión de', k); }
 if (!doc.fpo && !doc.costs && !doc.income) { console.error('nada descargado'); process.exit(1); }
 await writeFile('data/ers.json', JSON.stringify(doc) + '\n', 'utf8');
 console.log('bytes', JSON.stringify(doc).length);
