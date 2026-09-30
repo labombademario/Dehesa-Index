@@ -51,6 +51,7 @@ check('latest has observations',Array.isArray(latest.observations)&&latest.obser
 try {
  const intelligence=JSON.parse(await read('data/intelligence.json')); check('intelligence has schema v2',intelligence.schemaVersion==='2.0');
  const normalized=JSON.parse(await read('data/normalized.json')); check('normalized has policy',normalized.policy&&normalized.policy.neverTreatIndexAsPrice===true);
+ const dix=JSON.parse(await read('data/dehesa-index.json')); const latestObs=JSON.parse(await read('data/latest.json')).observations; check('Dehesa Index weights add up to 100',Math.abs(Object.values(dix.weights).reduce((a,b)=>a+b,0)-100)<0.05); check('Dehesa Index only uses verified EU series',dix.included.every(i=>latestObs.some(o=>o.product===i.product&&o.region==='eu'&&o.status==='verified'))); check('Dehesa Index base month is 100 for every group',Object.values(dix.series[0].groups).every(v=>Math.abs(v-100)<0.5)&&Math.abs(dix.series[0].value-100)<0.5); check('Dehesa Index declares its limits and methodology',!!dix.limits&&!!dix.methodology.es&&!!dix.methodology.en);
  const relationships=JSON.parse(await read('data/cross-market.json')); check('relationship engine has v2 schema',relationships.schemaVersion==='2.0'); check('relationship engine documents causality caveat',relationships.methodology&&relationships.methodology.causality==='No causal inference.');
  const alerts=JSON.parse(await read('data/alerts.json')); check('alerts are informational',alerts.status==='informational');
 } catch(e) { if(e.code!=='ENOENT') throw e; }
