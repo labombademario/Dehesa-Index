@@ -108,13 +108,13 @@ def slaughter():
     for r in csv.reader(t.splitlines()):
         if len(r) >= 9 and r[5] in SREG and r[6] == '€/100 kg' and r[7] == 'Kaltgewicht' and r[3] == 'insgesamt' and (r[2], r[4]) in RWANT and (r[1], r[2]) in ANIM:
             v = num(r[8])
-            if v is not None and re.match(r'^\d{6}$', r[0]): racc[(r[1], r[2], r[4], r[5])].append((iso_monday(r[0]), v))
+            if v is not None and v > 0 and re.match(r'^\d{6}$', r[0]): racc[(r[1], r[2], r[4], r[5])].append((iso_monday(r[0]), v))
             continue
         if len(r) < 9 or r[5] != 'Deutschland' or r[6] != '€/100 kg' or r[7] != 'Kaltgewicht': continue
         if (r[1], r[2]) not in ANIM or (r[2], r[4]) not in WANT or r[3] not in HALT: continue
         if r[3] != 'insgesamt' and r[4] != 'E-P': continue  # ecológico/convencional solo en E-P
         v = num(r[8]); 
-        if v is None or not re.match(r'^\d{6}$', r[0]): continue
+        if v is None or v <= 0 or not re.match(r'^\d{6}$', r[0]): continue
         acc[(r[1], r[2], r[3], r[4])].append((iso_monday(r[0]), v)); n += 1
     for (a, k, h, c), pts in acc.items():
         cls = c.replace('geschlachtet pauschal', 'slaughtered, all classes').replace('lebend pauschal', 'live, all classes')
