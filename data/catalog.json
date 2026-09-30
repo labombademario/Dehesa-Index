@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:52:58.353Z",
-  "observationCount": 35,
+  "generatedAt": "2026-09-30T02:02:52.992Z",
+  "observationCount": 36,
   "products": [
     "arroz",
     "azucar",
@@ -26,9 +26,11 @@
   ],
   "regions": [
     "eu",
+    "uk",
     "us"
   ],
   "sources": [
+    "defra",
     "eia",
     "eu_agrifood",
     "eu_oil_bulletin",
@@ -296,6 +298,21 @@
       "comparability": "directional",
       "points": 104,
       "coverageStart": "2018-01-01",
+      "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-08",
+      "unit": "100kg",
+      "currency": "GBP",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "points": 24,
+      "coverageStart": "2024-09-01",
       "coverageEnd": "2026-08-01"
     },
     {

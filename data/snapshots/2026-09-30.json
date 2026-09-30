@@ -1590,7 +1590,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:50.442Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cerdo clasificada S (≥60 % magro) en España, EUR/100 kg de canal. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio semanal de la canal de cerdo clasificada S (\u226560 % magro) en Espa\u00f1a, EUR/100 kg de canal. Es la referencia espa\u00f1ola; no es la media de la UE. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 178.56,
       "currency": "EUR",
       "unit": "100kg",
@@ -2129,7 +2129,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:51.677Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la canal de macho joven (categoría A, conformación R3, la referencia UE) en España, EUR/100 kg de canal. No es vaca de desecho ni la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio semanal de la canal de macho joven (categor\u00eda A, conformaci\u00f3n R3, la referencia UE) en Espa\u00f1a, EUR/100 kg de canal. No es vaca de desecho ni la media de la UE. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 614.67,
       "currency": "EUR",
       "unit": "100kg",
@@ -2668,7 +2668,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:52.091Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cordero pesado en España, EUR/100 kg de canal. No es la media de la UE ni cordero ligero. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio semanal de la canal de cordero pesado en Espa\u00f1a, EUR/100 kg de canal. No es la media de la UE ni cordero ligero. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 1011.8,
       "currency": "EUR",
       "unit": "100kg",
@@ -3207,7 +3207,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:52.668Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio de venta semanal del pollo broiler entero (65 % de rendimiento) en España; el portal lo da en moneda nacional (EUR) por 100 kg y se divide entre 100 para expresarlo en EUR/kg. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio de venta semanal del pollo broiler entero (65 % de rendimiento) en Espa\u00f1a; el portal lo da en moneda nacional (EUR) por 100 kg y se divide entre 100 para expresarlo en EUR/kg. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 2.3507,
       "currency": "EUR",
       "unit": "kg",
@@ -3746,7 +3746,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:53.094Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de los huevos de gallinas en jaula (Cage) en España, EUR/100 kg de huevos (el portal no lo da por docena). No es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio semanal de los huevos de gallinas en jaula (Cage) en Espa\u00f1a, EUR/100 kg de huevos (el portal no lo da por docena). No es la media de la UE. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 242.27,
       "currency": "EUR",
       "unit": "100kg",
@@ -4285,7 +4285,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:53.512Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio mensual medio del azúcar en la UE (contratos mensuales), EUR/tonelada. Es la media de la UE, no un precio de España. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio mensual medio del az\u00facar en la UE (contratos mensuales), EUR/tonelada. Es la media de la UE, no un precio de Espa\u00f1a. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 501.4009,
       "currency": "EUR",
       "unit": "tonelada",
@@ -4824,7 +4824,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:54.175Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal medio nacional del aceite de oliva virgen extra (hasta 0,8 %) en España, EUR/100 kg. No es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio semanal medio nacional del aceite de oliva virgen extra (hasta 0,8 %) en Espa\u00f1a, EUR/100 kg. No es la media de la UE. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 346.89,
       "currency": "EUR",
       "unit": "100kg",
@@ -5363,7 +5363,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:54.622Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal medio del arroz cáscara (paddy) tipo japónica en España, EUR/tonelada. No es la media de la UE ni arroz índica. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio semanal medio del arroz c\u00e1scara (paddy) tipo jap\u00f3nica en Espa\u00f1a, EUR/tonelada. No es la media de la UE ni arroz \u00edndica. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 451.68,
       "currency": "EUR",
       "unit": "tonelada",
@@ -5902,7 +5902,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:55.280Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal del maíz pienso en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional (la media nacional del portal está desactualizada) ni un futuro de Euronext. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio semanal del ma\u00edz pienso en el mercado de Zaragoza (Espa\u00f1a), salida de silo tras almacenamiento en cami\u00f3n, EUR/tonelada. Es un mercado regional, no la media nacional (la media nacional del portal est\u00e1 desactualizada) ni un futuro de Euronext. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 259,
       "currency": "EUR",
       "unit": "tonelada",
@@ -6441,7 +6441,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:56.226Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. Los coeficientes de Francia, Alemania e Italia comparan un mercado de referencia de cada país (Rouen, Hamburgo, Bolonia) con Zaragoza la misma semana; las etapas de comercialización no son idénticas. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (Espa\u00f1a), salida de silo tras almacenamiento en cami\u00f3n, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. Los coeficientes de Francia, Alemania e Italia comparan un mercado de referencia de cada pa\u00eds (Rouen, Hamburgo, Bolonia) con Zaragoza la misma semana; las etapas de comercializaci\u00f3n no son id\u00e9nticas. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 262.7,
       "currency": "EUR",
       "unit": "tonelada",
@@ -6975,7 +6975,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:56.942Z",
       "comparability": "not_comparable",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio mensual agregado de los fertilizantes fosfatados (P) en varios mercados de la UE, EUR/tonelada, a partir de servicios de inteligencia de mercado. NO es DAP: la Comisión no especifica el producto, así que no es comparable con DAP ni con el índice DTN. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio mensual agregado de los fertilizantes fosfatados (P) en varios mercados de la UE, EUR/tonelada, a partir de servicios de inteligencia de mercado. NO es DAP: la Comisi\u00f3n no especifica el producto, as\u00ed que no es comparable con DAP ni con el \u00edndice DTN. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 739,
       "currency": "EUR",
       "unit": "tonelada",
@@ -7454,7 +7454,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.353Z",
       "comparability": "not_comparable",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio mensual agregado de los fertilizantes potásicos (K) en varios mercados de la UE, EUR/tonelada, a partir de servicios de inteligencia de mercado. NO es MOP: la Comisión no especifica el producto, así que no es comparable con MOP ni con el índice DTN. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio mensual agregado de los fertilizantes pot\u00e1sicos (K) en varios mercados de la UE, EUR/tonelada, a partir de servicios de inteligencia de mercado. NO es MOP: la Comisi\u00f3n no especifica el producto, as\u00ed que no es comparable con MOP ni con el \u00edndice DTN. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 364,
       "currency": "EUR",
       "unit": "tonelada",
@@ -7933,7 +7933,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.787Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Milk Market Observatory (Agri-food Data Portal): precio mensual de la leche cruda de vaca pagada al productor en España, EUR/100 kg, último mes completo. Las cifras del último mes pueden ser provisionales. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Milk Market Observatory (Agri-food Data Portal): precio mensual de la leche cruda de vaca pagada al productor en Espa\u00f1a, EUR/100 kg, \u00faltimo mes completo. Las cifras del \u00faltimo mes pueden ser provisionales. Es la referencia espa\u00f1ola; no es la media de la UE. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 45.53,
       "currency": "EUR",
       "unit": "100kg",
@@ -8472,7 +8472,7 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:58.242Z",
       "comparability": "directional",
-      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la harina de soja de 40-50 % de proteína en España (media, salida de fábrica), EUR/tonelada. Sustituye a la referencia anterior de colza en Euronext. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "methodology": "Comisi\u00f3n Europea, Agri-food Data Portal: precio semanal de la harina de soja de 40-50 % de prote\u00edna en Espa\u00f1a (media, salida de f\u00e1brica), EUR/tonelada. Sustituye a la referencia anterior de colza en Euronext. La API no publica fecha de publicaci\u00f3n: se registra el d\u00eda en que se recuper\u00f3 por primera vez.",
       "value": 409.67,
       "currency": "EUR",
       "unit": "tonelada",
@@ -8998,6 +8998,145 @@
           "period": "09-20",
           "year": 2026,
           "value": 409.67
+        }
+      ]
+    },
+    {
+      "id": "di_lacteos_leche_uk",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "methodology": "Defra (Open Government Licence v3.0): precio medio en granja de la leche en el Reino Unido, hoja Prices_Monthly, en peniques por litro; se expresa en GBP/100 kg con una densidad de 1,03 kg/l (est\u00e1ndar de la leche de vaca).",
+      "comparability": "directional",
+      "value": 35.82,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "changePct": 4.007,
+      "history": [
+        {
+          "period": "09",
+          "year": 2024,
+          "value": 42.21
+        },
+        {
+          "period": "10",
+          "year": 2024,
+          "value": 44.15
+        },
+        {
+          "period": "11",
+          "year": 2024,
+          "value": 44.91
+        },
+        {
+          "period": "12",
+          "year": 2024,
+          "value": 45.12
+        },
+        {
+          "period": "01",
+          "year": 2025,
+          "value": 44.61
+        },
+        {
+          "period": "02",
+          "year": 2025,
+          "value": 44.52
+        },
+        {
+          "period": "03",
+          "year": 2025,
+          "value": 43.56
+        },
+        {
+          "period": "04",
+          "year": 2025,
+          "value": 42.48
+        },
+        {
+          "period": "05",
+          "year": 2025,
+          "value": 42.02
+        },
+        {
+          "period": "06",
+          "year": 2025,
+          "value": 41.97
+        },
+        {
+          "period": "07",
+          "year": 2025,
+          "value": 42.28
+        },
+        {
+          "period": "08",
+          "year": 2025,
+          "value": 43.3
+        },
+        {
+          "period": "09",
+          "year": 2025,
+          "value": 44.25
+        },
+        {
+          "period": "10",
+          "year": 2025,
+          "value": 43.98
+        },
+        {
+          "period": "11",
+          "year": 2025,
+          "value": 41.22
+        },
+        {
+          "period": "12",
+          "year": 2025,
+          "value": 38.39
+        },
+        {
+          "period": "01",
+          "year": 2026,
+          "value": 36.23
+        },
+        {
+          "period": "02",
+          "year": 2026,
+          "value": 34.57
+        },
+        {
+          "period": "03",
+          "year": 2026,
+          "value": 34.1
+        },
+        {
+          "period": "04",
+          "year": 2026,
+          "value": 33.5
+        },
+        {
+          "period": "05",
+          "year": 2026,
+          "value": 33.4
+        },
+        {
+          "period": "06",
+          "year": 2026,
+          "value": 33.88
+        },
+        {
+          "period": "07",
+          "year": 2026,
+          "value": 34.44
+        },
+        {
+          "period": "08",
+          "year": 2026,
+          "value": 35.82
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:52:58.666Z",
+  "generatedAt": "2026-09-30T02:02:53.378Z",
   "status": "informational",
   "rules": [
     {
@@ -40,6 +40,14 @@
       "product": "huevos",
       "region": "us",
       "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },

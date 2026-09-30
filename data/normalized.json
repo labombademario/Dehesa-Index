@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:52:58.566Z",
+  "generatedAt": "2026-09-30T02:02:53.260Z",
   "policy": {
     "neverConvertQuoteBasis": true,
     "neverTreatIndexAsPrice": true,
@@ -8,6 +8,7 @@
   },
   "currencies": [
     "EUR",
+    "GBP",
     "INDEX",
     "USD"
   ],
@@ -7984,6 +7985,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2024-09-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2024-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 42.21,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_cereales_maiz_eu:2024-09-01",
       "product": "maiz",
       "region": "eu",
@@ -8320,6 +8342,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2024-10-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2024-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 44.15,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_cereales_maiz_eu:2024-10-01",
       "product": "maiz",
       "region": "eu",
@@ -8648,6 +8691,27 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.787Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_lacteos_leche_uk:2024-11-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2024-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 44.91,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,
@@ -9076,6 +9140,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2024-12-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2024-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 45.12,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_cereales_maiz_eu:2024-12-01",
       "product": "maiz",
       "region": "eu",
@@ -9412,6 +9497,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2025-01-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 44.61,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_cereales_maiz_eu:2025-01-01",
       "product": "maiz",
       "region": "eu",
@@ -9740,6 +9846,27 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.787Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_lacteos_leche_uk:2025-02-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 44.52,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,
@@ -10168,6 +10295,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2025-03-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 43.56,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_aceite_oliva_eu:2025-03-01",
       "product": "oliva",
       "region": "eu",
@@ -10454,6 +10602,27 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.787Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_lacteos_leche_uk:2025-04-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 42.48,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,
@@ -10790,6 +10959,27 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.787Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_lacteos_leche_uk:2025-05-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 42.02,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,
@@ -11218,6 +11408,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2025-06-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 41.97,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_cereales_maiz_eu:2025-06-01",
       "product": "maiz",
       "region": "eu",
@@ -11554,6 +11765,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2025-07-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 42.28,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_cereales_maiz_eu:2025-07-01",
       "product": "maiz",
       "region": "eu",
@@ -11882,6 +12114,27 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.787Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_lacteos_leche_uk:2025-08-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 43.3,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,
@@ -12310,6 +12563,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2025-09-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 44.25,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_cereales_maiz_eu:2025-09-01",
       "product": "maiz",
       "region": "eu",
@@ -12667,6 +12941,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2025-10-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 43.98,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_cereales_maiz_eu:2025-10-01",
       "product": "maiz",
       "region": "eu",
@@ -13016,6 +13311,27 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.787Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_lacteos_leche_uk:2025-11-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 41.22,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,
@@ -13465,6 +13781,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2025-12-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 38.39,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_cereales_maiz_eu:2025-12-01",
       "product": "maiz",
       "region": "eu",
@@ -13814,6 +14151,27 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.787Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_lacteos_leche_uk:2026-01-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 36.23,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,
@@ -14234,6 +14592,27 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.787Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_lacteos_leche_uk:2026-02-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 34.57,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,
@@ -14851,6 +15230,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2026-03-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 34.1,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_leche_us:2026-03-01",
       "product": "leche",
       "region": "us",
@@ -15376,6 +15776,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2026-04-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 33.5,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_leche_us:2026-04-01",
       "product": "leche",
       "region": "us",
@@ -15893,6 +16314,27 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.787Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_lacteos_leche_uk:2026-05-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 33.4,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,
@@ -16510,6 +16952,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2026-06-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 33.88,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_leche_us:2026-06-01",
       "product": "leche",
       "region": "us",
@@ -17014,6 +17477,27 @@
       }
     },
     {
+      "id": "di_lacteos_leche_uk:2026-07-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 34.44,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
       "id": "di_leche_us:2026-07-01",
       "product": "leche",
       "region": "us",
@@ -17510,6 +17994,27 @@
       "publicationDate": "2026-09-30",
       "status": "verified",
       "verifiedAt": "2026-09-30T01:52:57.787Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": 100,
+        "baseUnit": "USD_per_kg_or_index",
+        "method": "unit mass anchor only; currency and quote basis remain unchanged"
+      }
+    },
+    {
+      "id": "di_lacteos_leche_uk:2026-08-01",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 35.82,
+      "currency": "GBP",
+      "unit": "100kg",
+      "frequency": "monthly",
+      "publicationDate": "2026-09-24",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 100,

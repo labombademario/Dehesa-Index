@@ -1,15 +1,16 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:52:58.461Z",
+  "generatedAt": "2026-09-30T02:02:53.134Z",
   "scope": {
-    "latestObservations": 29,
-    "historyObservations": 857,
-    "verified": 29,
+    "latestObservations": 30,
+    "historyObservations": 881,
+    "verified": 30,
     "pending": 0,
-    "stale": 12,
+    "stale": 13,
     "regions": [
       "eu",
-      "us"
+      "us",
+      "uk"
     ],
     "products": [
       "arroz",
@@ -289,6 +290,21 @@
       "historyPoints": 104,
       "ageDays": 30,
       "stale": false
+    },
+    {
+      "id": "di_lacteos_leche_uk",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-09-24",
+      "verifiedAt": "2026-09-30T02:02:52.621710Z",
+      "frequency": "monthly",
+      "historyPoints": 24,
+      "ageDays": 60,
+      "stale": true
     },
     {
       "id": "di_leche_us",

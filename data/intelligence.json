@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T01:52:58.519Z",
+  "generatedAt": "2026-09-30T02:02:53.200Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -327,6 +327,25 @@
       "points": 25,
       "coverageStart": "2024-09-01",
       "coverageEnd": "2026-09-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_lacteos_leche_uk",
+      "product": "leche",
+      "region": "uk",
+      "sourceId": "defra",
+      "frequency": "monthly",
+      "unit": "100kg",
+      "currency": "GBP",
+      "latest": 35.82,
+      "observationDate": "2026-08-01",
+      "periodChangePct": 4.006968641114983,
+      "yoyPct": -17.274826789838325,
+      "volatility": 0.029782662170763384,
+      "points": 24,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-08-01",
       "status": "verified",
       "comparability": "directional"
     },
