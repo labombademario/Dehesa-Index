@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T14:25:53.859Z",
+  "generatedAt": "2026-09-30T14:31:56.301Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -26,6 +26,25 @@
     }
   },
   "series": [
+    {
+      "id": "di_centeno_us",
+      "product": "centeno",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "frequency": "monthly",
+      "unit": "bushel",
+      "currency": "USD",
+      "latest": 2.38,
+      "observationDate": "1976-05-01",
+      "periodChangePct": 1.7094017094017033,
+      "yoyPct": 11.214953271028016,
+      "volatility": 0.12262770067236538,
+      "points": 120,
+      "coverageStart": "1966-06-01",
+      "coverageEnd": "1976-05-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
     {
       "id": "di_diesel_eu",
       "product": "diesel",
@@ -386,6 +405,25 @@
       "coverageEnd": "2026-08-01",
       "status": "verified",
       "comparability": "not_comparable"
+    },
+    {
+      "id": "di_colza_us",
+      "product": "colza",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "frequency": "monthly",
+      "unit": "cwt",
+      "currency": "USD",
+      "latest": 25.7,
+      "observationDate": "2026-08-01",
+      "periodChangePct": -3.383458646616544,
+      "yoyPct": 18.433179723502313,
+      "volatility": 0.0659809127712365,
+      "points": 120,
+      "coverageStart": "2016-09-01",
+      "coverageEnd": "2026-08-01",
+      "status": "verified",
+      "comparability": "directional"
     },
     {
       "id": "di_huevos_us",

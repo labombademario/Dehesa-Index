@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T14:25:54.143Z",
+  "generatedAt": "2026-09-30T14:31:56.554Z",
   "status": "informational",
   "rules": [
     {
@@ -45,7 +45,23 @@
     },
     {
       "type": "stale_data",
+      "product": "centeno",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
       "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "colza",
       "region": "us",
       "sourceId": "usda_nass",
       "severity": "watch",
