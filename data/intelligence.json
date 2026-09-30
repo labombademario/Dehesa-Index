@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T00:38:39.803Z",
+  "generatedAt": "2026-09-30T00:44:50.560Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -419,6 +419,25 @@
       "periodChangePct": 8.47457627118644,
       "yoyPct": null,
       "volatility": 0.0441424999883346,
+      "points": 7,
+      "coverageStart": "2026-02-01",
+      "coverageEnd": "2026-08-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_leche_us",
+      "product": "leche",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "frequency": "monthly",
+      "unit": "cwt",
+      "currency": "USD",
+      "latest": 19.8,
+      "observationDate": "2026-08-01",
+      "periodChangePct": -2.463054187192115,
+      "yoyPct": null,
+      "volatility": 0.04181754388674673,
       "points": 7,
       "coverageStart": "2026-02-01",
       "coverageEnd": "2026-08-01",

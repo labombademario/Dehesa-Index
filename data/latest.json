@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T00:38:39.638Z",
+  "generatedAt": "2026-09-30T00:44:50.355Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -4888,6 +4888,60 @@
           "period": "08-31",
           "year": 2026,
           "value": 45.53
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_leche_us",
+      "product": "leche",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:44:50.229Z",
+      "comparability": "directional",
+      "value": 19.8,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "changePct": -2.46,
+      "history": [
+        {
+          "year": 2026,
+          "period": "FEB",
+          "value": 18.3
+        },
+        {
+          "year": 2026,
+          "period": "MAR",
+          "value": 19.7
+        },
+        {
+          "year": 2026,
+          "period": "APR",
+          "value": 20.8
+        },
+        {
+          "year": 2026,
+          "period": "MAY",
+          "value": 21.3
+        },
+        {
+          "year": 2026,
+          "period": "JUN",
+          "value": 21.1
+        },
+        {
+          "year": 2026,
+          "period": "JUL",
+          "value": 20.3
+        },
+        {
+          "year": 2026,
+          "period": "AUG",
+          "value": 19.8
         }
       ],
       "snapshotDate": "2026-09-30"

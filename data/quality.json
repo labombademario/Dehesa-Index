@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T00:38:39.750Z",
+  "generatedAt": "2026-09-30T00:44:50.497Z",
   "scope": {
-    "latestObservations": 23,
-    "historyObservations": 797,
-    "verified": 23,
+    "latestObservations": 24,
+    "historyObservations": 804,
+    "verified": 24,
     "pending": 0,
-    "stale": 7,
+    "stale": 8,
     "regions": [
       "eu",
       "us"
@@ -243,6 +243,21 @@
       "historyPoints": 104,
       "ageDays": 30,
       "stale": false
+    },
+    {
+      "id": "di_leche_us",
+      "product": "leche",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "status": "verified",
+      "comparability": "directional",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-08-31",
+      "verifiedAt": "2026-09-30T00:44:50.229Z",
+      "frequency": "monthly",
+      "historyPoints": 7,
+      "ageDays": 60,
+      "stale": true
     },
     {
       "id": "di_cereales_maiz_eu",

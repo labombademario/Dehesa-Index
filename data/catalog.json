@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T00:38:39.649Z",
-  "observationCount": 26,
+  "generatedAt": "2026-09-30T00:44:50.369Z",
+  "observationCount": 30,
   "products": [
     "arroz",
     "azucar",
@@ -250,6 +250,21 @@
       "comparability": "directional",
       "points": 104,
       "coverageStart": "2018-01-01",
+      "coverageEnd": "2026-08-01"
+    },
+    {
+      "product": "leche",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08",
+      "unit": "cwt",
+      "currency": "USD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:44:50.229Z",
+      "comparability": "directional",
+      "points": 7,
+      "coverageStart": "2026-02-01",
       "coverageEnd": "2026-08-01"
     },
     {

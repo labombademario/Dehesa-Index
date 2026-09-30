@@ -525,7 +525,7 @@
       id: 'lacteos', nameKey: 'lacteos',
       products: [
         { nameKey: 'leche', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
-          us: { price: 18.45, changePct: 0.5, history: [17.80, 17.95, 18.10, 18.05, 18.20, 18.35, 18.45], currency: 'USD', kgPerUnit: 45.359 },
+          us: { price: 19.8, changePct: -2.46, history: [18.3, 19.7, 20.8, 21.3, 21.1, 20.3, 19.8], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 45.53, changePct: 1.0655, history: [51.36, 51.94, 52.62, 52.62, 52.52, 52.23, 51.84, 47.48, 46.31, 45.53, 45.05, 45.53], currency: 'EUR', kgPerUnit: 100 },
           countryFactors: { es: 1, de: 0.904, fr: 0.979, it: 1.016 },
           uk: { price: 35.82, changePct: 4.02, history: [34.20, 34.50, 34.80, 35.10, 35.35, 35.60, 35.82], currency: 'GBP', kgPerUnit: 100 },
@@ -899,8 +899,8 @@
   var DATA_TRUST_PILOT = {
     'cereales-trigo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
-      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the July 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-07', publicationDate: '2026-07-31', status: 'verified', verifiedAt: '2026-09-29T16:54:10.032Z'
+      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the August 2026 Agricultural Prices release.',
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T00:44:47.986Z'
     },
     'cereales-trigo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -910,13 +910,13 @@
     },
     'cereales-maiz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
-      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the July 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-07', publicationDate: '2026-07-31', status: 'verified', verifiedAt: '2026-09-29T16:54:10.345Z'
+      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the August 2026 Agricultural Prices release.',
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T00:44:48.316Z'
     },
     'cereales-arroz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
-      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/cwt. Published in the July 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-07', publicationDate: '2026-07-31', status: 'verified', verifiedAt: '2026-09-29T16:54:10.660Z'
+      methodology: 'National USDA NASS PRICE RECEIVED observation; USD/cwt. Published in the August 2026 Agricultural Prices release.',
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T00:44:48.618Z'
     },
     'cereales-maiz-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -926,8 +926,8 @@
     },
     'lacteos-leche-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
-      methodology: 'National USDA NASS PRICE RECEIVED for all milk sold to plants (not Class III); USD/cwt.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: null, status: 'verified', verifiedAt: '2026-09-29T23:53:33.240Z'
+      methodology: 'National USDA NASS PRICE RECEIVED for all milk sold to plants (not Class III); USD/cwt. Published in the August 2026 Agricultural Prices release.',
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T00:44:50.229Z'
     },
     'lacteos-leche-eu': {
       sourceId: 'european_commission', frequency: 'monthly',
