@@ -1,6 +1,6 @@
 {
  "schemaVersion": "1.0",
- "generatedAt": "2026-09-30T05:42:10.888Z",
+ "generatedAt": "2026-09-30T05:48:14.862Z",
  "source": "USDA AMS Market News (MARS API)",
  "reports": [
   {
@@ -569,6 +569,528 @@
    "lastDate": "2026-09-29",
    "series": 47,
    "kb": 26
+  },
+  {
+   "id": 2277,
+   "title": "Atlanta Terminal Market Fruit Prices (AJ_FV010)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 316,
+   "kb": 235
+  },
+  {
+   "id": 2278,
+   "title": "Atlanta Terminal Market Vegetables Prices (AJ_FV020)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 485,
+   "kb": 367
+  },
+  {
+   "id": 2279,
+   "title": "Atlanta Terminal Market Onions and Potatoes Prices (AJ_FV030)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 142,
+   "kb": 106
+  },
+  {
+   "id": 2280,
+   "title": "Atlanta Terminal Market Nuts Prices (AJ_FV040)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 15,
+   "kb": 12
+  },
+  {
+   "id": 2281,
+   "title": "Baltimore Terminal Market Fruit Prices (BP_FV010)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 158,
+   "kb": 104
+  },
+  {
+   "id": 2282,
+   "title": "Baltimore Terminal Market Vegetables Prices (BP_FV020)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 300,
+   "kb": 197
+  },
+  {
+   "id": 2283,
+   "title": "Baltimore Terminal Market Onions and Potatoes Prices (BP_FV030)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 50,
+   "kb": 31
+  },
+  {
+   "id": 2284,
+   "title": "Baltimore Terminal Market Nuts Prices (BP_FV040)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 5,
+   "kb": 4
+  },
+  {
+   "id": 2285,
+   "title": "Boston Terminal Market Fruit Prices (BH_FV010)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 253,
+   "kb": 185
+  },
+  {
+   "id": 2286,
+   "title": "Boston Terminal Market Vegetables Prices (BH_FV020)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 400,
+   "kb": 321
+  },
+  {
+   "id": 2287,
+   "title": "Boston Terminal Market Onions and Potatoes Prices (BH_FV030)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 84,
+   "kb": 60
+  },
+  {
+   "id": 2288,
+   "title": "Boston Terminal Market Nuts Prices (BH_FV040)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 11,
+   "kb": 9
+  },
+  {
+   "id": 2290,
+   "title": "Chicago Terminal Market Fruit Prices (HX_FV010)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 367,
+   "kb": 251
+  },
+  {
+   "id": 2291,
+   "title": "Chicago Terminal Market Vegetables Prices (HX_FV020)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 557,
+   "kb": 406
+  },
+  {
+   "id": 2292,
+   "title": "Chicago Terminal Market Onions and Potatoes Prices (HX_FV030)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 103,
+   "kb": 78
+  },
+  {
+   "id": 2293,
+   "title": "Chicago Terminal Market Nuts Prices (HX_FV040)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 11,
+   "kb": 9
+  },
+  {
+   "id": 2294,
+   "title": "Columbia Terminal Market Fruit Prices (CA_FV010)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 155,
+   "kb": 89
+  },
+  {
+   "id": 2295,
+   "title": "Columbia Terminal Market Vegetables Prices (CA_FV020)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 308,
+   "kb": 184
+  },
+  {
+   "id": 2296,
+   "title": "Columbia Terminal Market Onions and Potatoes Prices (CA_FV030)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 60,
+   "kb": 39
+  },
+  {
+   "id": 2297,
+   "title": "Columbia Terminal Market Nuts Prices (CA_FV040)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 12,
+   "kb": 9
+  },
+  {
+   "id": 2302,
+   "title": "Detroit Terminal Market Fruit Prices (DU_FV010)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 308,
+   "kb": 229
+  },
+  {
+   "id": 2303,
+   "title": "Detroit Terminal Market Vegetables Prices (DU_FV020)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 463,
+   "kb": 387
+  },
+  {
+   "id": 2304,
+   "title": "Detroit Terminal Market Onions and Potatoes Prices (DU_FV030)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 80,
+   "kb": 58
+  },
+  {
+   "id": 2305,
+   "title": "Detroit Terminal Market Nuts Prices (DU_FV040)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 4,
+   "kb": 4
+  },
+  {
+   "id": 2306,
+   "title": "Los Angeles Terminal Market Fruit Prices (HC_FV010)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 230,
+   "kb": 165
+  },
+  {
+   "id": 2307,
+   "title": "Los Angeles Terminal Market Vegetables Prices (HC_FV020)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 309,
+   "kb": 240
+  },
+  {
+   "id": 2308,
+   "title": "Los Angeles Terminal Market Onions and Potatoes Prices (HC_FV030)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 59,
+   "kb": 40
+  },
+  {
+   "id": 2309,
+   "title": "Los Angeles Terminal Market Nuts Prices (HC_FV040)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 4,
+   "kb": 4
+  },
+  {
+   "id": 2310,
+   "title": "Miami Terminal Market Fruit Prices (MH_FV010)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 111,
+   "kb": 78
+  },
+  {
+   "id": 2311,
+   "title": "Miami Terminal Market Vegetables Prices (MH_FV020)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 235,
+   "kb": 175
+  },
+  {
+   "id": 2312,
+   "title": "Miami Terminal Market Onions and Potatoes Prices (MH_FV030)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 29,
+   "kb": 23
+  },
+  {
+   "id": 2313,
+   "title": "Miami Terminal Market Nuts Prices (MH_FV040)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 1,
+   "kb": 1
+  },
+  {
+   "id": 2314,
+   "title": "New York Terminal Market Fruit Prices (NX_FV010)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 524,
+   "kb": 286
+  },
+  {
+   "id": 2315,
+   "title": "New York Terminal Market Vegetables Prices (NX_FV020)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 435,
+   "kb": 278
+  },
+  {
+   "id": 2316,
+   "title": "New York Terminal Market Onions and Potatoes Prices (NX_FV030)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 102,
+   "kb": 52
+  },
+  {
+   "id": 2317,
+   "title": "New York Terminal Market Nuts Prices (NX_FV040)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 17,
+   "kb": 14
+  },
+  {
+   "id": 2318,
+   "title": "Philadelphia Terminal Market Fruit Prices (NA_FV010)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 445,
+   "kb": 215
+  },
+  {
+   "id": 2319,
+   "title": "Philadelphia Terminal Market Vegetables Prices (NA_FV020)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 416,
+   "kb": 262
+  },
+  {
+   "id": 2320,
+   "title": "Philadelphia Terminal Market Onions and Potatoes Prices (NA_FV030)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 91,
+   "kb": 61
+  },
+  {
+   "id": 2321,
+   "title": "Philadelphia Terminal Market Nuts Prices (NA_FV040)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 5,
+   "kb": 4
+  },
+  {
+   "id": 2386,
+   "title": "Benton Harbor Shipping Point Fruit Prices (BR_FV110)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2387,
+   "title": "Benton Harbor Shipping Point Vegetables Prices (BR_FV120)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 15,
+   "kb": 8
+  },
+  {
+   "id": 2389,
+   "title": "Columbia Shipping Point Vegetables Prices (CA_FV120)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 8,
+   "kb": 2
+  },
+  {
+   "id": 2390,
+   "title": "Fresno Shipping Point Fruit Prices (FR_FV110)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 35,
+   "kb": 17
+  },
+  {
+   "id": 2391,
+   "title": "Fresno Shipping Point Vegetables Prices (FR_FV120)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-28",
+   "series": 5,
+   "kb": 2
+  },
+  {
+   "id": 2392,
+   "title": "Idaho Falls Shipping Point Fruit Prices (IF_FV110)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 3,
+   "kb": 1
+  },
+  {
+   "id": 2393,
+   "title": "Idaho Falls Shipping Point Onions and Potatoes Prices (IF_FV130)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 75,
+   "kb": 48
+  },
+  {
+   "id": 2394,
+   "title": "Inwood Shipping Point Fruit Prices (MB_FV110)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 12,
+   "kb": 5
+  },
+  {
+   "id": 2395,
+   "title": "Miami Shipping Point Fruit Prices (MH_FV111)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 60,
+   "kb": 32
+  },
+  {
+   "id": 2396,
+   "title": "Miami Shipping Point Vegetables Prices (MH_FV121)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 49,
+   "kb": 22
+  },
+  {
+   "id": 2399,
+   "title": "Orlando Shipping Point Fruit Prices (OR_FV110)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 11,
+   "kb": 4
+  },
+  {
+   "id": 2400,
+   "title": "Orlando Shipping Point Vegetables Prices (OR_FV120)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 14,
+   "kb": 12
+  },
+  {
+   "id": 2401,
+   "title": "Orlando Shipping Point Fruit Imports Prices (OR_FV111)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 40,
+   "kb": 21
+  },
+  {
+   "id": 2402,
+   "title": "Phoenix Shipping Point Fruit Prices (IX_FV110)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 93,
+   "kb": 72
+  },
+  {
+   "id": 2403,
+   "title": "Phoenix Shipping Point Vegetables Prices (IX_FV120)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 161,
+   "kb": 99
+  },
+  {
+   "id": 2405,
+   "title": "Raleigh Shipping Point Vegetables Prices (RA_FV120)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-28",
+   "series": 2,
+   "kb": 1
+  },
+  {
+   "id": 2410,
+   "title": "Thomasville Shipping Point Vegetables Prices (TV_FV120)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 12,
+   "kb": 4
+  },
+  {
+   "id": 2412,
+   "title": "YAKIMA Shipping Point Fruit Prices (YA_FV110)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-29",
+   "series": 110,
+   "kb": 98
   },
   {
    "id": 2707,
@@ -1559,6 +2081,33 @@
    "lastDate": "2026-09-04",
    "series": 124,
    "kb": 18
+  },
+  {
+   "id": 3913,
+   "title": "Asheville, NC Terminal Market Fruit Prices (AS_FV010)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-28",
+   "series": 67,
+   "kb": 29
+  },
+  {
+   "id": 3914,
+   "title": "Asheville, NC Terminal Market Vegetables Prices (AS_FV020)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-28",
+   "series": 77,
+   "kb": 30
+  },
+  {
+   "id": 3915,
+   "title": "Asheville, NC Terminal Market Onions and Potatoes Prices (AS_FV030)",
+   "fam": "fv",
+   "freq": "d",
+   "lastDate": "2026-09-28",
+   "series": 20,
+   "kb": 8
   },
   {
    "id": 3926,
