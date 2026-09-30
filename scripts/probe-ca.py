@@ -11,7 +11,7 @@ TAG=sys.argv[2]
 for pid in IDS:
     try:
         info=call("getFullTableDownloadCSV/%d/en"%pid)
-        raw=urllib.request.urlopen(urllib.request.Request(info["object"],headers={"User-Agent":UA["User-Agent"]}),timeout=80).read()
+        raw=urllib.request.urlopen(urllib.request.Request(info["object"],headers={"User-Agent":UA["User-Agent"]}),timeout=240).read()
         z=zipfile.ZipFile(io.BytesIO(raw)); name=[n for n in z.namelist() if n.endswith('.csv') and 'MetaData' not in n][0]
         rd=csv.reader(io.TextIOWrapper(z.open(name),encoding='utf-8-sig'))
         hdr=next(rd); out.append('=== %d size=%dKB cols=%s'%(pid,len(raw)//1024,hdr))
