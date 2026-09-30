@@ -1,0 +1,25 @@
+name: Update Portugal (Eurostat)
+on:
+  schedule:
+    - cron: '55 16 * * 2,5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo ok
+      - run: python3 scripts/update-portugal-eurostat.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/portugal-eurostat-stats.json data/portugal-eurostat-log.txt
+          git diff --cached --quiet && exit 0
+          git commit -qm "Datos Portugal (Eurostat)"
+          git pull -q --rebase
+          git push
