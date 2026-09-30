@@ -305,6 +305,7 @@
     var root = document.getElementById('pr-ticker');
     var items = PRODUCTS.map(function (entry) {
       var disp = resolveDisplay(entry, state.location, state.euCountry);
+      if (!disp.region) return ''; // producto sin dato en este mercado (p. ej. sorgo fuera de EE. UU.)
       var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
       return (
         '<span class="di-ticker-item">' +
@@ -443,8 +444,9 @@
   function entryHasData(entry) {
     if (!trustReady()) return true;
     var key = entry.catId + ':' + entry.nameKey;
-    if (state.deepLinkProduct === key) return true;
     var disp = resolveDisplay(entry, state.location, state.euCountry);
+    if (!disp.region) return false;
+    if (state.deepLinkProduct === key) return true;
     if (state.location === 'uk' && disp.ukGap) return false;
     var obs = trustObservationFor(entry, disp);
     return !!obs && obs.status === 'verified';
@@ -1314,6 +1316,15 @@
     else window.history.pushState({ dehesa:'prices' }, '', next);
   }
 
+  // Un producto sin dato en el mercado elegido (p. ej. el sorgo, solo EE. UU.) abre en el mercado que sí lo tiene
+  function fixDeepLinkLocation(explicitRegion) {
+    var e = state.deepLinkProduct && PRODUCT_BY_KEY[state.deepLinkProduct];
+    if (!e || explicitRegion) return;
+    var p = e.product;
+    if (state.location === 'eu' && !p.eu && !p.uk) state.location = p.us ? 'us' : state.location;
+    else if (state.location === 'uk' && !p.uk && !p.eu) state.location = p.us ? 'us' : state.location;
+  }
+
   function restorePriceUrl() {
     var qs = new URLSearchParams(window.location.search);
     var validTabs = ['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','energia','seguro','vino','madera'];
@@ -1331,6 +1342,7 @@
       state.location = region;
       writeLS('dehesaIndexLocation', region);
     }
+    fixDeepLinkLocation(region);
     S.renderContextBar('precios');
     renderAll();
   }
@@ -1446,6 +1458,7 @@
       state.location = requestedRegion;
       writeLS('dehesaIndexLocation', requestedRegion);
     }
+    fixDeepLinkLocation(requestedRegion);
     wireGlobalControls();
     document.addEventListener('dehesa:intel-ready', function () { renderMarketNewsIntel(); });
     window.addEventListener('popstate', restorePriceUrl);

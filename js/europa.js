@@ -46,7 +46,6 @@
     'Feed rye': ['Centeno forrajero', 'Feed rye', 'Seigle fourrager', 'Segale da foraggio'],
     'Triticale': ['Triticale', 'Triticale', 'Triticale', 'Triticale'],
     'Wheat bran': ['Salvado de trigo', 'Wheat bran', 'Son de blé', 'Crusca di frumento'],
-    'Sorghum': ['Sorgo', 'Sorghum', 'Sorgho', 'Sorgo'], 'Feed sorghum': ['Sorgo forrajero', 'Feed sorghum', 'Sorgho fourrager', 'Sorgo da foraggio'],
     'National Average - Not Specified': ['Media nacional', 'National average', 'Moyenne nationale', 'Media nazionale'],
     'Departure from silo - after some storage - on truck or other transport means': ['Salida de silo (tras almacenamiento), en camión', 'Ex-silo (after storage), on truck', 'Départ silo (après stockage), camion', 'Franco silo (dopo stoccaggio), camion'],
     'Departure from farm or from production area - on truck or other transport means': ['Salida de explotación o zona de producción, en camión', 'Ex-farm or production area, on truck', 'Départ ferme ou zone de production, camion', 'Franco azienda o zona di produzione, camion'],
