@@ -21,7 +21,7 @@ def norm_period(p):
     if "M" in p and len(p) == 7 and p[4] == "M": return p[:4] + "-" + p[5:]
     if len(p) == 8 and p[4:6] == "MM": return p[:4] + "-" + p[6:]
     if len(p) == 8 and p[4:6] == "JJ": return p[:4]
-    if len(p) == 6 and p[4] == "Q": return p[:4] + "-Q" + p[5]
+    if len(p) == 6 and p[4] in ("Q", "K"): return p[:4] + "-Q" + p[5]
     return p
 
 def mk(id_, label, unit, freq, pts, group, note=None):
@@ -71,10 +71,10 @@ def dst_values(table, var):
             return [(x["id"], x["text"]) for x in v["values"]]
     return []
 
-def first_match(vals, rx):
+def first_match(vals, rx, must=None):
     import re
     for i, t in vals:
-        if re.search(rx, t, re.I):
+        if re.search(rx, t, re.I) and (must is None or must in t):
             return i, t
     return None, None
 
@@ -104,18 +104,18 @@ except Exception as e:
     log.append("ERROR DK AFG6: " + str(e)[:160])
 # previsión de cosecha de invierno (superficie cosechada)
 for cid, key, label in [("H110", "winter-wheat", "Winter wheat"), ("H150", "winter-barley", "Winter barley"), ("H210", "winter-rape", "Winter rapeseed")]:
-    add(dk, "dk-harvarea-" + key, label + ": harvested area", "ha", "annual", lambda c=cid: dst("HST5", [("AFGRØDE", [c]), ("ENHED", ["4A"])]), "crops")
+    add(dk, "dk-harvarea-" + key, label + ": harvested area", "1,000 ha", "annual", lambda c=cid: dst("HST5", [("AFGRØDE", [c]), ("ENHED", ["4A"])]), "crops")
 # precio de cebada y trigo en granja, total Dinamarca (anual)
 for cid, key, label in [("HVEDE", "wheat", "Wheat"), ("BYG", "barley", "Barley")]:
     add(dk, "dk-farmgate-" + key, label + ": farm gate price (all Denmark, KAPIT1)", "DKK (source unit, see table KAPIT1)", "annual", lambda c=cid: dst("KAPIT1", [("KAPIT", ["000"]), ("KORNART", [c])]), "prices")
 # costes de explotación (JORD1, agricultura, media, DKK por explotación)
 try:
     items = dst_values("JORD1", "REGNSKPOSTER")
-    for rx, key, label in [(r"^[\d.]+\s*fertili[sz]er", "fert", "Fertiliser"), (r"^[\d.]+\s*feed", "feed", "Feed"), (r"^[\d.]+\s*(seed|seeds)", "seed", "Seed"), (r"^[\d.]+\s*pesticide|plant protection", "pest", "Pesticides"), (r"^[\d.]+\s*(energy|fuel)", "energy", "Energy and fuel"), (r"hired labour|wages", "wages", "Hired labour"), (r"^[\d.]+\s*(total )?revenue|^[\d.]+\s*output, total|^[\d.]+\.?\s*total output", "revenue", "Output / revenue"), (r"net profit", "netprofit", "Net profit")]:
-        cid, ctext = first_match(items, rx)
+    for rx, key, label in [(r"fertili[sz]ers? \(costs\)", "fert", "Fertiliser"), (r"feed stuffs? \(costs\)", "feed", "Feed"), (r"seeds? \(costs\)", "seed", "Seed"), (r"pesticides? \(costs\)|plant protection", "pest", "Pesticides"), (r"(energy|fuel).*\(costs\)", "energy", "Energy and fuel"), (r"(wages|hired labour).*\(costs\)", "wages", "Hired labour"), (r"^[\d.]+\s*(total )?(output|revenue|turnover)", "revenue", "Output / revenue"), (r"net profit", "netprofit", "Net profit")]:
+        cid, ctext = first_match(items, rx, "DKK 1 000")
         if not cid:
             log.append("JORD1 sin partida para " + key); continue
-        add(dk, "dk-farm-" + key, "Farm accounts: " + ctext[:60], "DKK per farm (average, all agricultural holdings)", "annual", lambda c=cid: dst("JORD1", [("BEDRIFTSTAND", ["1"]), ("KVARTIL", ["1000"]), ("REGNSKPOSTER", [c])]), "costs")
+        add(dk, "dk-farm-" + key, "Farm accounts: " + ctext[:60], "DKK 1,000 per farm (average, agricultural holdings)", "annual", lambda c=cid: dst("JORD1", [("BEDRIFTSTAND", ["1"]), ("KVARTIL", ["1000"]), ("REGNSKPOSTER", [c])]), "costs")
 except Exception as e:
     log.append("ERROR DK JORD1: " + str(e)[:160])
 # precios de insumos (LPRIS38, anual)
@@ -126,7 +126,7 @@ try:
     for i, t in inp:
         if re.search(r"fertili[sz]er|nitrogen|npk|lime|diesel|gas oil|feed|pesticide|herbicide|fungicide", t, re.I) and n < 14:
             n += 1
-            add(dk, "dk-input-" + i, t, "DKK (see label)", "annual", lambda c=i: dst("LPRIS38", [("PRODUKT", [c]), ("ENHED", ["320"])]), "inputs")
+            add(dk, "dk-input-" + i, t, "DKK (unit as in source label)", "annual", lambda c=i: dst("LPRIS38", [("PRODUKT", [c]), ("ENHED", ["320"])]), "inputs")
     log.append("LPRIS38 insumos elegidos: " + str(n))
 except Exception as e:
     log.append("ERROR DK LPRIS38: " + str(e)[:160])

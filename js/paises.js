@@ -4,21 +4,21 @@
   'use strict';
   var T = {
     es: { title: 'Producción y comercio por país', sub: 'Producción de leche y carne, sacrificio, cultivos y exportaciones de Dinamarca, Países Bajos y Australia, con datos oficiales y su histórico completo. No son precios: son volúmenes y valores.',
-      country: 'País', group: 'Tipo', series: 'Serie', range: 'Periodo', all: 'Todos', production: 'Producción y sacrificio', crops: 'Cultivos', trade: 'Exportaciones', latest: 'Último dato', change: 'Var. vs. anterior', period: 'Periodo', unit: 'Unidad',
-      r5: '5 años', r10: '10 años', r20: '20 años', rmax: 'Máximo', date: 'Fecha', table: 'Ver todas las series', src: 'Fuente', lic: 'Licencia', updated: 'Actualizado', note: 'Datos oficiales tal como los publica cada fuente; los nombres de las series se mantienen en inglés. Las exportaciones de Australia son valor en dólares australianos, no volumen. El último periodo puede ser provisional.', none: 'Sin datos disponibles.',
-      countries: { DK: 'Dinamarca', NL: 'Países Bajos', AU: 'Australia' }, freq: { monthly: 'mensual', quarterly: 'trimestral', annual: 'anual' } },
+      country: 'País', group: 'Tipo', series: 'Serie', range: 'Periodo', all: 'Todos', production: 'Producción y sacrificio', crops: 'Cultivos', trade: 'Exportaciones', costs: 'Costes de explotación', inputs: 'Insumos (precios)', prices: 'Precios e índices', livestock: 'Censo ganadero', environment: 'Estiércol y medio ambiente', latest: 'Último dato', change: 'Var. vs. anterior', period: 'Periodo', unit: 'Unidad',
+      r5: '5 años', r10: '10 años', r20: '20 años', rmax: 'Máximo', date: 'Fecha', table: 'Ver todas las series', src: 'Fuente', lic: 'Licencia', updated: 'Actualizado', note: 'Datos oficiales tal como los publica cada fuente; los nombres de las series se mantienen en inglés. Las exportaciones de Australia son valor en dólares australianos, no volumen. Los índices australianos usan la base que publica el ABS. El último periodo puede ser provisional.', none: 'Sin datos disponibles.',
+      countries: { DK: 'Dinamarca', NL: 'Países Bajos', AU: 'Australia' }, freq: { monthly: 'mensual', quarterly: 'trimestral', annual: 'anual', semiannual: 'semestral' } },
     en: { title: 'Production and trade by country', sub: 'Milk and meat production, slaughter, crops and exports for Denmark, the Netherlands and Australia, from official data with full history. These are volumes and values, not prices.',
-      country: 'Country', group: 'Type', series: 'Series', range: 'Period', all: 'All', production: 'Production and slaughter', crops: 'Crops', trade: 'Exports', latest: 'Latest', change: 'Change vs. previous', period: 'Period', unit: 'Unit',
+      country: 'Country', group: 'Type', series: 'Series', range: 'Period', all: 'All', production: 'Production and slaughter', crops: 'Crops', trade: 'Exports', costs: 'Farm costs', inputs: 'Input prices', prices: 'Prices and indices', livestock: 'Livestock census', environment: 'Manure and environment', latest: 'Latest', change: 'Change vs. previous', period: 'Period', unit: 'Unit',
       r5: '5 years', r10: '10 years', r20: '20 years', rmax: 'Max', date: 'Date', table: 'See all series', src: 'Source', lic: 'Licence', updated: 'Updated', note: 'Official data as published by each source. Australian exports are value in Australian dollars, not volume. The latest period may be provisional.', none: 'No data available.',
-      countries: { DK: 'Denmark', NL: 'Netherlands', AU: 'Australia' }, freq: { monthly: 'monthly', quarterly: 'quarterly', annual: 'annual' } },
+      countries: { DK: 'Denmark', NL: 'Netherlands', AU: 'Australia' }, freq: { monthly: 'monthly', quarterly: 'quarterly', annual: 'annual', semiannual: 'twice a year' } },
     fr: { title: 'Production et commerce par pays', sub: 'Production de lait et de viande, abattages, cultures et exportations du Danemark, des Pays-Bas et de l’Australie, avec données officielles et historique complet. Ce ne sont pas des prix : ce sont des volumes et des valeurs.',
-      country: 'Pays', group: 'Type', series: 'Série', range: 'Période', all: 'Tous', production: 'Production et abattages', crops: 'Cultures', trade: 'Exportations', latest: 'Dernière donnée', change: 'Var. vs précédent', period: 'Période', unit: 'Unité',
+      country: 'Pays', group: 'Type', series: 'Série', range: 'Période', all: 'Tous', production: 'Production et abattages', crops: 'Cultures', trade: 'Exportations', costs: 'Coûts d’exploitation', inputs: 'Prix des intrants', prices: 'Prix et indices', livestock: 'Recensement du cheptel', environment: 'Fumier et environnement', latest: 'Dernière donnée', change: 'Var. vs précédent', period: 'Période', unit: 'Unité',
       r5: '5 ans', r10: '10 ans', r20: '20 ans', rmax: 'Maximum', date: 'Date', table: 'Voir toutes les séries', src: 'Source', lic: 'Licence', updated: 'Mis à jour', note: 'Données officielles telles que publiées par chaque source ; les noms des séries restent en anglais. Les exportations australiennes sont en valeur (dollars australiens), pas en volume. La dernière période peut être provisoire.', none: 'Aucune donnée disponible.',
-      countries: { DK: 'Danemark', NL: 'Pays-Bas', AU: 'Australie' }, freq: { monthly: 'mensuelle', quarterly: 'trimestrielle', annual: 'annuelle' } },
+      countries: { DK: 'Danemark', NL: 'Pays-Bas', AU: 'Australie' }, freq: { monthly: 'mensuelle', quarterly: 'trimestrielle', annual: 'annuelle', semiannual: 'semestrielle' } },
     it: { title: 'Produzione e commercio per paese', sub: 'Produzione di latte e carne, macellazioni, colture ed esportazioni di Danimarca, Paesi Bassi e Australia, con dati ufficiali e storico completo. Non sono prezzi: sono volumi e valori.',
-      country: 'Paese', group: 'Tipo', series: 'Serie', range: 'Periodo', all: 'Tutti', production: 'Produzione e macellazioni', crops: 'Colture', trade: 'Esportazioni', latest: 'Ultimo dato', change: 'Var. vs precedente', period: 'Periodo', unit: 'Unità',
+      country: 'Paese', group: 'Tipo', series: 'Serie', range: 'Periodo', all: 'Tutti', production: 'Produzione e macellazioni', crops: 'Colture', trade: 'Esportazioni', costs: 'Costi aziendali', inputs: 'Prezzi degli input', prices: 'Prezzi e indici', livestock: 'Censimento del bestiame', environment: 'Letame e ambiente', latest: 'Ultimo dato', change: 'Var. vs precedente', period: 'Periodo', unit: 'Unità',
       r5: '5 anni', r10: '10 anni', r20: '20 anni', rmax: 'Massimo', date: 'Data', table: 'Vedi tutte le serie', src: 'Fonte', lic: 'Licenza', updated: 'Aggiornato', note: 'Dati ufficiali come pubblicati da ciascuna fonte; i nomi delle serie restano in inglese. Le esportazioni australiane sono in valore (dollari australiani), non in volume. L’ultimo periodo può essere provvisorio.', none: 'Nessun dato disponibile.',
-      countries: { DK: 'Danimarca', NL: 'Paesi Bassi', AU: 'Australia' }, freq: { monthly: 'mensile', quarterly: 'trimestrale', annual: 'annuale' } }
+      countries: { DK: 'Danimarca', NL: 'Paesi Bassi', AU: 'Australia' }, freq: { monthly: 'mensile', quarterly: 'trimestrale', annual: 'annuale', semiannual: 'semestrale' } }
   };
   var DATA = null, ST = { c: 'DK', g: 'all', s: null, r: 'max' };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
@@ -34,7 +34,7 @@
     return NaN;
   }
   function plabel(p, freq) {
-    if (freq === 'monthly') { try { return new Date(ts(p)).toLocaleDateString(lang(), { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return p; } }
+    if (freq === 'monthly' || /^\d{4}-\d{2}$/.test(p)) { try { return new Date(ts(p)).toLocaleDateString(lang(), { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return p; } }
     return p;
   }
   function chartFor(s) {
@@ -52,7 +52,7 @@
     if (!list.some(function (s) { return s.id === ST.s; })) ST.s = list.length ? list[0].id : null;
     var cur = list.filter(function (s) { return s.id === ST.s; })[0];
     var countries = Object.keys(DATA.countries).filter(function (k) { return DATA.countries[k].series.length; });
-    var groups = ['all'].concat(['production', 'crops', 'trade'].filter(function (g) { return c.series.some(function (s) { return s.group === g; }); }));
+    var groups = ['all'].concat(['production', 'crops', 'livestock', 'trade', 'prices', 'inputs', 'costs', 'environment'].filter(function (g) { return c.series.some(function (s) { return s.group === g; }); }));
     var opt = function (arr, sel, lab) { return arr.map(function (k) { return '<option value="' + esc(k) + '"' + (k === sel ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; }).join(''); };
     var sel = function (id, label, inner) { return '<label style="font-size:13px;flex:1;min-width:150px">' + label + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; };
     var rng = ['5', '10', '20', 'max'];
