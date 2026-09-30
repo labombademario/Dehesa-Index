@@ -448,13 +448,18 @@ img { max-width: 100%; }
 @media (max-width: 780px) { .di-intel-grid-2 { grid-template-columns: 1fr; } }
 
 /* Market Map */
-.di-map-wrap { position: relative; width: 100%; aspect-ratio: 1000 / 480; background: var(--surface-alt); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
-.di-map-group { position: absolute; }
-.di-map-group-label { position: absolute; top: 3px; left: 6px; font-size: 9.5px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: rgba(0,0,0,0.4); pointer-events: none; z-index: 2; }
-html[data-theme="dark"] .di-map-group-label { color: rgba(255,255,255,0.5); }
-.di-map-tile { position: absolute; border: 1px solid rgba(0,0,0,0.12); padding: 3px 6px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; overflow: hidden; cursor: pointer; text-align: left; font: inherit; }
-.di-map-tile-name { font-size: 11px; font-weight: 700; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
-.di-map-tile-change { font-size: 10px; font-weight: 600; }
+/* Dehesa Market Map: familias con cuadrícula de cuadros iguales */
+.di-map-wrap { display: flex; flex-wrap: wrap; gap: 16px 18px; }
+.di-map-group { min-width: 0; max-width: 100%; }
+.di-map-group-label { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--text-muted, #6b6a60); margin: 0 0 6px 2px; }
+.di-map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; }
+.di-map-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-height: 92px; padding: 9px 10px; border: 1px solid rgba(0,0,0,.10); border-radius: 8px; cursor: pointer; text-align: left; font: inherit; overflow: hidden; transition: transform .12s, box-shadow .12s; }
+.di-map-tile:hover { transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,.16); }
+.di-map-tile-name { font-size: 12.5px; font-weight: 700; line-height: 1.2; max-width: 100%; }
+.di-map-tile-change { font-size: 17px; font-weight: 700; line-height: 1.15; }
+.di-map-spark { width: 100%; height: 22px; margin: 2px 0; opacity: .85; }
+.di-map-tile-price { font-size: 11px; font-weight: 600; opacity: .9; margin-top: auto; }
+.di-map-tile-price small { font-weight: 500; opacity: .8; }
 
 /* Momentum / Seasonality (SVG charts) */
 .di-chart-svg-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 8px; }

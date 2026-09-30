@@ -312,127 +312,60 @@
   // ---------------------------------------------------------------------
   // Dehesa Market Map (treemap squarified, Bruls/Huizing/van Wijk 1999)
   // ---------------------------------------------------------------------
-  var TREEMAP_WEIGHTS = {
-    'cereales-maiz': { w: 191, group: 'cereales' },
-    'cereales-trigo': { w: 168, group: 'cereales' },
-    'cereales-arroz': { w: 332, group: 'cereales' },
-    'lacteos-leche': { w: 238, group: 'lacteos' },
-    'ganado-vaca': { w: 269, group: 'ganaderia' },
-    'ganado-cabra': { w: 16, group: 'ganaderia' },
-    'porcino-cerdo': { w: 280, group: 'ganaderia' },
-    'ovino-cordero': { w: 40.4, group: 'ganaderia' },
-    'avicultura-huevos': { w: 93.6, group: 'ganaderia' },
-    'avicultura-pollo': { w: 192, group: 'ganaderia' },
-    'pienso-pienso': { w: 621, group: 'pienso' },
-    'pienso-harina_soja': { w: 103.3, group: 'pienso' },
-    'fertilizantes-urea': { w: 138.4, group: 'fertilizantes' },
-    'fertilizantes-dap': { w: 26.0, group: 'fertilizantes' },
-    'fertilizantes-potasa': { w: 63.1, group: 'fertilizantes' },
-    'azucar-azucar': { w: 87.3, group: 'azucar' },
-    'aceite-oliva': { w: 19.9, group: 'aceite' },
-    'energia-diesel': { w: 60, group: 'energia' }
+  // Agrupación por familia (clave catId-nameKey). Sin ponderaciones inventadas:
+  // todos los cuadros tienen el mismo tamaño; solo se dibujan productos con dato verificado.
+  var MAP_GROUP = {
+    'cereales-maiz': 'cereales', 'cereales-trigo': 'cereales', 'cereales-arroz': 'cereales', 'cereales-cebada': 'cereales',
+    'cereales-avena': 'cereales', 'cereales-centeno': 'cereales', 'cereales-sorgo': 'cereales', 'cereales-colza': 'cereales',
+    'lacteos-leche': 'lacteos', 'lacteos-mantequilla': 'lacteos', 'lacteos-leche_polvo': 'lacteos',
+    'ganado-vaca': 'ganaderia', 'ganado-cabra': 'ganaderia', 'porcino-cerdo': 'ganaderia', 'ovino-cordero': 'ganaderia',
+    'avicultura-huevos': 'ganaderia', 'avicultura-pollo': 'ganaderia',
+    'pienso-pienso': 'pienso', 'pienso-harina_soja': 'pienso',
+    'fertilizantes-urea': 'fertilizantes', 'fertilizantes-dap': 'fertilizantes', 'fertilizantes-potasa': 'fertilizantes',
+    'azucar-azucar': 'azucar', 'aceite-oliva': 'aceite', 'energia-diesel': 'energia'
   };
-  var TREEMAP_GROUP_ORDER = ['cereales', 'ganaderia', 'lacteos', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia'];
-  var TREEMAP_CANVAS_W = 1000, TREEMAP_CANVAS_H = 480;
+  var MAP_GROUP_ORDER = ['cereales', 'ganaderia', 'lacteos', 'pienso', 'fertilizantes', 'azucar', 'aceite', 'energia'];
 
-  function squarify(items, rectX, rectY, rectW, rectH) {
-    var totalWeight = 0;
-    for (var i = 0; i < items.length; i++) totalWeight += items[i].weight;
-    var totalArea = rectW * rectH;
-    var scale = totalWeight > 0 ? totalArea / totalWeight : 0;
-    var x = rectX, y = rectY, w = rectW, h = rectH;
-    var remaining = items.slice();
-    function rowWorst(row, sideLen) {
-      var areas = row.map(function (it) { return it.weight * scale; });
-      var sum = 0, max = -Infinity, min = Infinity;
-      for (var k = 0; k < areas.length; k++) { sum += areas[k]; if (areas[k] > max) max = areas[k]; if (areas[k] < min) min = areas[k]; }
-      var s2 = sum * sum, l2 = sideLen * sideLen;
-      return Math.max((l2 * max) / s2, s2 / (l2 * min));
-    }
-    while (remaining.length > 0) {
-      var side = Math.min(w, h);
-      var row = [remaining[0]];
-      var bestWorst = rowWorst(row, side);
-      var ri = 1;
-      while (ri < remaining.length) {
-        var trial = row.concat([remaining[ri]]);
-        var trialWorst = rowWorst(trial, side);
-        if (trialWorst <= bestWorst) { row = trial; bestWorst = trialWorst; ri++; } else break;
-      }
-      var rowAreas = row.map(function (it) { return it.weight * scale; });
-      var rowAreaSum = rowAreas.reduce(function (a, b) { return a + b; }, 0);
-      if (w >= h) {
-        var stripW = h > 0 ? rowAreaSum / h : 0;
-        var cy = y;
-        for (var j = 0; j < row.length; j++) {
-          var itemH = rowAreaSum > 0 ? (rowAreas[j] / rowAreaSum) * h : 0;
-          row[j].x = x; row[j].y = cy; row[j].w = stripW; row[j].h = itemH;
-          cy += itemH;
-        }
-        x += stripW; w -= stripW;
-      } else {
-        var stripH = w > 0 ? rowAreaSum / w : 0;
-        var cx = x;
-        for (var j2 = 0; j2 < row.length; j2++) {
-          var itemW = rowAreaSum > 0 ? (rowAreas[j2] / rowAreaSum) * w : 0;
-          row[j2].x = cx; row[j2].y = y; row[j2].w = itemW; row[j2].h = stripH;
-          cx += itemW;
-        }
-        y += stripH; h -= stripH;
-      }
-      remaining = remaining.slice(row.length);
-    }
+  // Variación del último dato frente al de ~1 mes antes, con fechas reales
+  function mapChange(pts) {
+    if (!pts || pts.length < 2) return null;
+    var last = pts[pts.length - 1], cutoff = last.ts - 27 * 86400000, ref = null;
+    for (var i = pts.length - 2; i >= 0; i--) { if (pts[i].ts <= cutoff) { ref = pts[i]; break; } }
+    if (!ref || !ref.value) return null;
+    // un dato de hace más de 4 meses no es "actual"
+    if (Date.now() - last.ts > 120 * 86400000) return null;
+    return ((last.value - ref.value) / ref.value) * 100;
+  }
+  function sparkSvg(pts, color) {
+    var v = pts.slice(-26).map(function (p) { return p.value; });
+    if (v.length < 2) return '';
+    var mn = Math.min.apply(null, v), mx = Math.max.apply(null, v), W = 100, H = 26, rng = mx - mn || 1;
+    var d = v.map(function (y, i) { return (i ? 'L' : 'M') + (i / (v.length - 1) * W).toFixed(1) + ' ' + (H - 2 - (y - mn) / rng * (H - 4)).toFixed(1); }).join('');
+    return '<svg class="di-map-spark" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" aria-hidden="true"><path d="' + d + '" fill="none" stroke="' + color + '" stroke-width="1.6" vector-effect="non-scaling-stroke"/></svg>';
   }
 
   function buildMarketMap() {
-    var Core = core();
-    var maxAbs = 0;
-    var regionByKey = {};
+    var Core = core(), t = ui(), byGroup = {}, maxAbs = 0, items = [];
     Core.PRODUCTS.forEach(function (e) {
-      var key = e.catId + '-' + e.nameKey;
-      if (!TREEMAP_WEIGHTS[key]) return;
-      var changePct = rangePctChange(e, 30);
-      if (changePct === null) return;
-      regionByKey[key] = { changePct: changePct };
-      if (Math.abs(changePct) > maxAbs) maxAbs = Math.abs(changePct);
+      var key = e.catId + '-' + e.nameKey, g = MAP_GROUP[key];
+      if (!g || !Core.mapInfo) return;
+      var info = Core.mapInfo(e);
+      if (!info || !info.pts) return;
+      var chg = mapChange(info.pts);
+      if (chg !== null && Math.abs(chg) > maxAbs) maxAbs = Math.abs(chg);
+      items.push({ key: key, g: g, entry: e, info: info, chg: chg });
     });
-    var byGroup = {};
-    Core.PRODUCTS.forEach(function (e) {
-      var key = e.catId + '-' + e.nameKey;
-      var meta = TREEMAP_WEIGHTS[key];
-      if (!meta) return;
-            if (!byGroup[meta.group]) byGroup[meta.group] = [];
-      if (!regionByKey[key]) return;
-      byGroup[meta.group].push({ key: key, entry: e, weight: 1 });
-    });
-    var groupItems = TREEMAP_GROUP_ORDER.filter(function (g) { return byGroup[g] && byGroup[g].length; }).map(function (g) {
-      var total = byGroup[g].reduce(function (s, it) { return s + it.weight; }, 0);
-      return { id: g, weight: total };
-    });
-    groupItems.sort(function (a, b) { return b.weight - a.weight; });
-    squarify(groupItems, 0, 0, TREEMAP_CANVAS_W, TREEMAP_CANVAS_H);
-    var t = ui();
-    return groupItems.map(function (gi) {
-      var items = byGroup[gi.id].slice();
-      items.sort(function (a, b) { return b.weight - a.weight; });
-      squarify(items, 0, 0, gi.w, gi.h);
-      var products = items.map(function (it) {
-        var region = regionByKey[it.key];
-        var style = tileStyle(region.changePct, maxAbs);
-        var changeLabel = D.fmtChange(region.changePct);
-        var name = productName(it.entry.nameKey);
-        return {
-          key: it.key, name: name, changeLabel: changeLabel, bg: style.bg, textColor: style.textColor,
-          tileTitle: name + ' · ' + changeLabel,
-          xPct: gi.w ? (it.x / gi.w) * 100 : 0, yPct: gi.h ? (it.y / gi.h) * 100 : 0,
-          wPct: gi.w ? (it.w / gi.w) * 100 : 0, hPct: gi.h ? (it.h / gi.h) * 100 : 0
-        };
-      });
+    items.forEach(function (it) { (byGroup[it.g] = byGroup[it.g] || []).push(it); });
+    return MAP_GROUP_ORDER.filter(function (g) { return byGroup[g]; }).map(function (g) {
       return {
-        id: gi.id, label: t['mapGroup' + capitalize(gi.id)],
-        xPct: (gi.x / TREEMAP_CANVAS_W) * 100, yPct: (gi.y / TREEMAP_CANVAS_H) * 100,
-        wPct: (gi.w / TREEMAP_CANVAS_W) * 100, hPct: (gi.h / TREEMAP_CANVAS_H) * 100,
-        products: products
+        id: g, label: t['mapGroup' + capitalize(g)],
+        products: byGroup[g].map(function (it) {
+          var name = productName(it.entry.nameKey);
+          var style = it.chg === null ? { bg: P().surfaceAlt, textColor: P().textFaint || '#5b5a52' } : tileStyle(it.chg, maxAbs);
+          var changeLabel = it.chg === null ? '—' : D.fmtChange(it.chg);
+          return { key: it.key, name: name, price: it.info.price, unit: it.info.unit, changeLabel: changeLabel, bg: style.bg, textColor: style.textColor,
+            spark: sparkSvg(it.info.pts, style.textColor), tileTitle: name + ' · ' + it.info.price + ' ' + it.info.unit + ' · ' + changeLabel + (it.info.date ? ' · ' + it.info.date : '') };
+        })
       };
     });
   }
@@ -446,16 +379,17 @@
   function renderMarketMapHtml() {
     var t = ui();
     var groups = buildMarketMap();
-    if (!groups.length) return intelPendingHtml(t.mapTitle, 'Histórico real insuficiente para calcular este mapa sin extrapolaciones.', 'di-intel-map');
+    if (!groups.length) return intelPendingHtml(t.mapTitle, t.mapEmpty || 'Aún no hay productos con dato verificado en este mercado.', 'di-intel-map');
     var groupsHtml = groups.map(function (g) {
       var tilesHtml = g.products.map(function (p) {
-        return '<button type="button" class="di-map-tile" data-open="' + p.key + '" title="' + esc(p.tileTitle) + '" ' +
-          'style="left:' + p.xPct + '%;top:' + p.yPct + '%;width:' + p.wPct + '%;height:' + p.hPct + '%;background:' + p.bg + ';color:' + p.textColor + ';">' +
-          '<span class="di-map-tile-name">' + esc(p.name) + '</span><span class="di-map-tile-change">' + esc(p.changeLabel) + '</span>' +
+        return '<button type="button" class="di-map-tile" data-open="' + p.key + '" title="' + esc(p.tileTitle) + '" style="background:' + p.bg + ';color:' + p.textColor + ';">' +
+          '<span class="di-map-tile-name">' + esc(p.name) + '</span>' +
+          '<span class="di-map-tile-change">' + esc(p.changeLabel) + '</span>' +
+          p.spark +
+          '<span class="di-map-tile-price">' + esc(p.price) + ' <small>' + esc(p.unit) + '</small></span>' +
           '</button>';
       }).join('');
-      return '<div class="di-map-group" style="left:' + g.xPct + '%;top:' + g.yPct + '%;width:' + g.wPct + '%;height:' + g.hPct + '%;">' +
-        '<div class="di-map-group-label">' + esc(g.label) + '</div>' + tilesHtml + '</div>';
+      return '<div class="di-map-group" style="flex:' + g.products.length + ' 1 ' + (g.products.length * 156) + 'px;"><div class="di-map-group-label">' + esc(g.label) + '</div><div class="di-map-grid">' + tilesHtml + '</div></div>';
     }).join('');
     return (
       '<div class="di-intel-section" id="di-intel-map">' +
@@ -500,12 +434,12 @@
     var Core = core();
     var raw = Core.PRODUCTS.map(function (e) {
       var key = e.catId + '-' + e.nameKey;
-      var meta = TREEMAP_WEIGHTS[key];
+      var meta = MAP_GROUP[key];
       var region = regionFor(e);
       var seed = seedFor(e);
       var x = rangePctChange(e, 90), y = rangePctChange(e, 7);
       return x === null || y === null ? null : {
-        key: key, name: productName(e.nameKey), group: meta ? meta.group : 'otros',
+        key: key, name: productName(e.nameKey), group: meta || 'otros',
         x: x, y: y
       };
     });
@@ -558,7 +492,7 @@
     });
     var xGrid = ticksX.ticks.filter(function (v) { return v !== 0; }).map(function (v) { return { x: toPx(v), label: fmtTick(v) }; });
     var yGrid = ticksY.ticks.filter(function (v) { return v !== 0; }).map(function (v) { return { y: toPy(v), label: fmtTick(v) }; });
-    var legend = TREEMAP_GROUP_ORDER.map(function (g) { return { id: g, color: MOMENTUM_GROUP_COLORS[g], label: ui()['mapGroup' + capitalize(g)] }; });
+    var legend = MAP_GROUP_ORDER.map(function (g) { return { id: g, color: MOMENTUM_GROUP_COLORS[g], label: ui()['mapGroup' + capitalize(g)] }; });
     return {
       plotX: plotX, plotY: plotY, plotW: plotW, plotH: plotH, plotRight: plotRight, plotBottom: plotBottom,
       originX: originX, originY: originY, xGrid: xGrid, yGrid: yGrid, points: points, legend: legend
