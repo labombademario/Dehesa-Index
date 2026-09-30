@@ -34,7 +34,6 @@ export const REPORTS = [
   { id: 2887, fam: 'oilseed', f: 'd' },
   { id: 2914, fam: 'pulse', f: 'w' }, { id: 2917, fam: 'pulse', f: 'd' },
   { id: 1655, fam: 'rice', f: 'w' },
-  { id: 3804, fam: 'grain', f: 'd' },
   ...[2843, 2734, 3888].map(id => ({ id, fam: 'poultry', f: 'd' })),
   ...[2842, 2844, 2848, 3645, 3646, 3647].map(id => ({ id, fam: 'poultry', f: 'w' })),
   { id: 2833, fam: 'meat', f: 'd' },
@@ -43,29 +42,28 @@ export const REPORTS = [
   ...[2708, 2709, 2710, 2770, 2906, 2940, 3059, 3096, 3097, 3098, 3184, 3237, 3455, 2808].map(id => ({ id, fam: 'cattle', f: 'w' })),
   { id: 3486, fam: 'cattle', f: 'd' },
   ...[2707, 2769, 2807, 2885, 2904, 2905, 2929, 2935, 2939, 3056, 3057, 3058, 3095, 3236, 3731, 3784, 3793, 3926].map(id => ({ id, fam: 'hay', f: 'w' })),
-  ...[1034, 1035, 1036, 1038, 1039, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1082, 1083, 1084, 1085, 1089, 1090, 1091, 1092, 1098, 1099, 1100, 1101, 1102, 1602].map(id => ({ id, fam: 'dairy', f: 'w' })),
-  { id: 1603, fam: 'dairy', f: 'd' }
+  ...[1034, 1035, 1036, 1038, 1039, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1082, 1083, 1084, 1085, 1089, 1090, 1091, 1092, 1098, 1099, 1100, 1101, 1102].map(id => ({ id, fam: 'dairy', f: 'w' })),
 ];
 
 const norm = k => String(k).toLowerCase().replace(/[^a-z0-9]/g, '');
 const num = v => { if (v === null || v === undefined || v === '') return null; const n = Number(String(v).replace(/[$,]/g, '')); return Number.isFinite(n) ? n : null; };
 const iso = s => { const m = /^(\d\d)\/(\d\d)\/(\d{4})/.exec(String(s || '')); return m ? m[3] + '-' + m[1] + '-' + m[2] : null; };
-const AVG = new Set(['avgprice', 'wtdavgprice', 'price', 'priceavg', 'weightedavgprice', 'averageprice', 'wtdavg', 'avgpricewtd']);
+const AVG = new Set(['weeklyav', 'avgprice', 'wtdavgprice', 'price', 'priceavg', 'weightedavgprice', 'averageprice', 'wtdavg', 'avgpricewtd']);
 const LO = new Set(['pricemin', 'pricelow', 'lowprice', 'priceminimum', 'minprice', 'pricelo']);
 const HI = new Set(['pricemax', 'pricehigh', 'highprice', 'pricemaximum', 'maxprice']);
 const BLO = new Set(['basismin']), BHI = new Set(['basismax']);
 const UNIT = ['priceunit', 'unit', 'basisunit'];
 const META = /^(reportdate|reportbegindate|reportenddate|publisheddate|officename|officecode|officecity|officestate|slugid|slugname|reporttitle|markettype|markettypecategory|finalind|revision|reportstatus|marketlocationcity|marketlocationstate|reportsection)$/;
-const NOISE = /(change|direction|previous|lastyear|lastrep|lastreported|yearago|weekago|volume|loads|receipts|quantity|headcount|lotsize|lotdesc|count|pct|percent|futuresmonth|deliveryperiod|deliverymonth|slaughter|value|epv|current$|comment|note|narrative)/;
+const NOISE = /(change|direction|previous|lastyear|lastrep|lastreported|yearago|weekago|volume|loads|receipts|quantity|headcount|count|pct|percent|futuresmonth|deliverymonth|slaughter|value|epv|current$|comment|note|narrative|methodology|secondary|source|mostly)/;
 const NUMOK = new Set(['weightmin', 'weightmax']);
 
 async function get(id, from, to) {
   const url = BASE + id + '?q=report_begin_date=' + from + ':' + to + '&allSections=true';
   let err = '';
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 5; i++) {
     try {
       const r = await fetch(url, { signal: AbortSignal.timeout(120000), headers: { Authorization: 'Basic ' + Buffer.from(KEY + ':').toString('base64'), Accept: 'application/json' } });
-      if (!r.ok) { err = 'HTTP ' + r.status; await new Promise(z => setTimeout(z, 1500)); continue; }
+      if (!r.ok) { err = 'HTTP ' + r.status; await new Promise(z => setTimeout(z, 3000 * (i + 1))); continue; }
       const d = await r.json();
       return Array.isArray(d) ? d : [d];
     } catch (e) { err = e.message; }
@@ -85,6 +83,7 @@ function build(cfg, sections) {
   const recs = [];
   for (const { sec, r } of rows) {
     if (!title && r.report_title) title = r.report_title;
+    if (r.period && !/^current$/i.test(String(r.period))) continue; // Year Ago / Previous no son la serie actual
     let avg = null, lo = null, hi = null, blo = null, bhi = null, unit = null, bunit = null;
     const dims = {};
     for (const [k, v] of Object.entries(r)) {
@@ -100,7 +99,7 @@ function build(cfg, sections) {
       if (META.test(n) || NOISE.test(n)) continue;
       if (typeof v === 'number') continue;
       const sv = String(v).trim();
-      if (!sv || sv === 'N/A' || sv === 'None') continue;
+      if (!sv || sv === 'N/A' || sv === 'None' || sv.length > 60) continue;
       if (num(sv) !== null && !NUMOK.has(n)) continue;
       dims[k] = sv;
     }
@@ -179,7 +178,7 @@ async function main() {
     } catch (e) { log.push(cfg.id + ' ERROR ' + e.message); bad++; }
   }
   let next = 0;
-  await Promise.all(Array.from({ length: 5 }, async () => { while (next < list.length) { const c = list[next++]; await one(c); } }));
+  await Promise.all(Array.from({ length: 3 }, async () => { while (next < list.length) { const c = list[next++]; await one(c); } }));
   const reports = [...byId.values()].sort((a, b) => a.id - b.id);
   await writeFile(path.join(OUT, 'index.json'), JSON.stringify({ schemaVersion: '1.0', generatedAt: new Date().toISOString(), source: 'USDA AMS Market News (MARS API)', reports }, null, 1) + '\n', 'utf8');
   await writeFile(path.join(OUT, '_log.txt'), log.sort().join('\n') + '\n', 'utf8');
