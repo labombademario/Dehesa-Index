@@ -171,7 +171,7 @@ def organic():
         if r['agriprod'] in ('UAAXK0000_ORG', 'ARAT_ORG', 'C0000T_ORG'): by.setdefault((r['agriprod'], r['unit']), []).append((r['time'], v))
     for (a, u), pts in by.items():
         nm = {'UAAXK0000_ORG': 'utilised agricultural area', 'ARAT_ORG': 'arable land', 'C0000T_ORG': 'cereals'}[a]
-        put('at-organic-fss-%s-%s' % (a.lower(), u.lower()), 'organic', 'Organic %s (farm structure survey): %s' % ('holdings with' if u == 'HLD' else 'area of', nm), 'holdings' if u == 'HLD' else 'ha', 'annual', pts, {'sourceGroup': 'Eurostat ef_lus_org'}, max_age=4)
+        put('at-organic-fss-%s-%s' % (a.lower(), u.lower()), 'organic', ('Organic holdings: %s (farm structure survey)' if u == 'HLD' else 'Organic area: %s (farm structure survey)') % nm, 'holdings' if u == 'HLD' else 'ha', 'annual', pts, {'sourceGroup': 'Eurostat ef_lus_org'}, max_age=4)
     log('ecologico', len(OUT) - n0 + len(by), 'series')
 
 def main():
