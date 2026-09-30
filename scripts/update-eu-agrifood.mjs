@@ -70,8 +70,14 @@ export const PRODUCTS = {
     catId: 'cereales', id: 'di_cereales_trigo_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
     commodity: 'cereal', member: 'ES', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
     select: r => r.productName === 'Milling wheat' && r.marketName === 'Zaragoza' && /^Departure from silo/.test(r.stageName), recent: true,
+    // Coeficientes por país: un mercado de referencia de trigo panificable por país (misma semana), sobre el de Zaragoza
+    countryMarkets: {
+      fr: r => r.productName === 'Milling wheat' && r.marketName === 'Rouen',
+      de: r => r.productName === 'Milling wheat' && r.marketName === 'Hamburg',
+      it: r => r.productName === 'Milling wheat' && r.marketName === 'Bologna'
+    },
     market: 'Comisión Europea (trigo panificable, mercado de Zaragoza, salida de silo)',
-    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext.' + NOTE_PUB
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del trigo blando panificable (milling wheat) en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. Los coeficientes de Francia, Alemania e Italia comparan un mercado de referencia de cada país (Rouen, Hamburgo, Bolonia) con Zaragoza la misma semana; las etapas de comercialización no son idénticas.' + NOTE_PUB
   },
   dap: {
     catId: 'fertilizantes', id: 'di_fertilizantes_dap_eu', sourceId: 'eu_agrifood', frequency: 'monthly',
@@ -248,9 +254,10 @@ async function updateProduct(name, today) {
   if (cfg.member && countries.length) {
     factors = {};
     for (const k of countries) {
-      const vcfg = cfg.countryVariants && cfg.countryVariants[k] ? { ...cfg, select: cfg.countryVariants[k] } : cfg;
+      const mk = cfg.countryMarkets && cfg.countryMarkets[k];
+      const vcfg = mk ? { ...cfg, select: mk } : (cfg.countryVariants && cfg.countryVariants[k] ? { ...cfg, select: cfg.countryVariants[k] } : cfg);
       const s = k === 'es' ? series : buildSeries(rows, vcfg, COUNTRY_CODE[k], today);
-      const baseS = vcfg === cfg ? series : buildSeries(rows, vcfg, cfg.member, today);
+      const baseS = (mk || vcfg === cfg) ? series : buildSeries(rows, vcfg, cfg.member, today);
       const hit = s.find(x => x[0] === latest[0]);
       const baseHit = baseS.find(x => x[0] === latest[0]);
       if (!hit || !baseHit) { factors = null; console.log('  aviso: sin dato de ' + COUNTRY_CODE[k] + ' para ' + latest[0] + ', se conservan los countryFactors'); break; }
