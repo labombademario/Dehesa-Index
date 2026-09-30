@@ -980,7 +980,7 @@
       sourceId: 'world_bank', frequency: 'monthly',
       methodology: 'World Bank Urea, E. Europe international commodity reference; USD/metric ton.',
       comparability: 'not_comparable', observationDate: '2026-08-01', publicationDate: '2026-09-02',
-      status: 'verified', verifiedAt: '2026-09-30T12:33:18Z'
+      status: 'verified', verifiedAt: '2026-09-30T17:35:54Z'
     },
     'energia-gas_natural-us': {
       sourceId: 'eia', frequency: 'weekly',
