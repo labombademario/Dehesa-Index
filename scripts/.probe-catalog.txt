@@ -1,84 +1,48 @@
-=== DOC  STATUS 404 {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+=== SPEC fruit_and_vegetables STATUS 200
+  /api/fruitAndVegetable/pricesSupplyChain get(memberStateCodes,years,beginDate,endDate,productStages,products,varieties)
+  /api/fruitAndVegetable/pricesSupplyChain/productStages get()
+  /api/fruitAndVegetable/pricesSupplyChain/products get()
+  /api/fruitAndVegetable/pricesSupplyChain/varieties get()
 
-=== DOC /swagger-ui/index.html STATUS 404 {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+=== SPEC fruitandvegetables STATUS 500
+  {
+  "error" : "Internal Server Error",
+  "status" : "500",
+  "message" : "An internal error occurred on the server.",
+  "technicalErrorMessage" : "The API cannot provide results. Possibly it does not 
 
-=== DOC /v3/api-docs STATUS 404 {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+=== SPEC fruit-and-vegetables STATUS 500
+  {
+  "error" : "Internal Server Error",
+  "status" : "500",
+  "message" : "An internal error occurred on the server.",
+  "technicalErrorMessage" : "The API cannot provide results. Possibly it does not 
 
-=== DOC /openapi.json STATUS 404 {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+=== fruit-and-vegetable
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
 
-=== DOC /swagger.json STATUS 404 {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+=== fruit-and-vegetables
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
 
-=== DOC /../swagger/v1/swagger.json STATUS 404 {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+=== fruit_and_vegetables
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
 
-=== cereal
-STATUS 200
-FILAS 93240 CAMPOS memberStateCode,memberStateName,beginDate,endDate,price,unit,weekNumber,productName,marketName,stageName,referencePeriod
-CAMPOS_DE_GRUPO unit | productName | stageName
-GRUPOS 94
-  [TONNES | Feed barley | National Average - Not Specified] n=5426 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IE,IT,LT,LV,NL,PL,PT,RO,SK mercados=1 2021-01-10→2026-08-02 último=€224,80
-  [TONNES | Breadmaking common wheat | National Average - Not Specified] n=5424 países=AT,BE,BG,CZ,DE,EE,EL,ES,EU,EU+UK,FI,FR,HR,HU,IT,LT,LV,PL,PT,RO,SE,SI,SK mercados=1 2021-01-10→2026-08-02 último=€215,49
-  [TONNES | Feed barley | Departure from silo - after some storage - on truck or other transport means] n=5083 países=AT,CY,DE,ES,FR,HR,RO mercados=27 2021-01-10→2026-09-27 último=€178,66
-  [TONNES | Milling wheat | Departure from silo - after some storage - on truck or other transport means] n=4842 países=AT,DE,ES,FR,HR,RO mercados=31 2021-01-10→2026-09-27 último=€196,86
-  [TONNES | Feed maize | National Average - Not Specified] n=4782 países=AT,BE,BG,CY,DE,DK,EL,ES,EU,EU+UK,FR,HR,HU,IT,LT,NL,PL,PT,RO,SI,SK mercados=1 2021-01-10→2026-08-02 último=€170,00
-  [TONNES | Feed maize | Departure from silo - after some storage - on truck or other transport means] n=4460 países=AT,CY,DE,ES,FR,HR,RO mercados=26 2021-01-10→2026-09-27 último=€192,69
-  [TONNES | Feed wheat | National Average - Not Specified] n=4059 países=AT,BE,BG,CY,CZ,DE,DK,EE,EL,EU,EU+UK,FI,HU,IE,LT,LV,NL,PL,PT,RO,SK mercados=1 2021-01-10→2026-08-02 último=€164,91
-  [TONNES | Feed maize | Departure from farm or from production area - on truck or other transport means] n=3352 países=BE,BG,IT,PT,SK mercados=17 2021-01-10→2026-09-27 último=€255,50
-  [TONNES | Milling wheat | Departure from farm or from production area - on truck or other transport means] n=3284 países=BE,BG,IT,PT,SK mercados=16 2021-01-10→2026-09-27 último=€267,50
-  [TONNES | Milling wheat | Deliver to first customer - silo or processing plant - on truck or other transport means] n=3122 países=CZ,EE,EU,EU+UK,FI,HR,IT,LT,LV,PL,SI mercados=17 2021-01-10→2026-09-27 último=€256,00
-  [TONNES | Feed barley | Deliver to first customer - silo or processing plant - on truck or other transport means] n=2959 países=CZ,EE,EU,EU+UK,FI,HR,IE,IT,LT,LV,PL mercados=17 2021-01-10→2026-09-27 último=€234,50
-  [TONNES | Feed wheat | Deliver to first customer - silo or processing plant - on truck or other transport means] n=2249 países=CZ,EE,EU,EU+UK,FI,IE,LT,LV,PL mercados=15 2021-01-10→2026-09-27 último=€192,00
-  [TONNES | Feed wheat | Departure from farm or from production area - on truck or other transport means] n=2223 países=BE,BG,PT,SK mercados=11 2021-01-10→2026-09-27 último=€209,80
-  [TONNES | Feed wheat | Departure from silo - after some storage - on truck or other transport means] n=2190 países=AT,CY,DE,ES,FR,RO mercados=29 2021-01-10→2026-09-27 último=€172,59
-  [TONNES | Milling wheat | Price at farm gate] n=1929 países=EL,HU,IT mercados=11 2021-01-10→2026-09-27 último=€224,60
-  [TONNES | Malting barley | National Average - Not Specified] n=1793 países=CZ,DE,DK,EL,EU,EU+UK,FI,HR,LT,LV,NL,PL,PT,RO,SK mercados=1 2021-01-10→2026-08-02 último=€194,54
-  [TONNES | Durum wheat | National Average - Not Specified] n=1695 países=AT,CZ,DE,EL,ES,EU,EU+UK,FR,HU,IE,IT,PT,RO,SK mercados=1 2021-01-10→2026-08-02 último=€271,83
-  [TONNES | Feed maize | Deliver to first customer - silo or processing plant - on truck or other transport means] n=1653 países=EU,EU+UK,HR,IT,LT,PL,SI mercados=9 2021-01-10→2026-09-27 último=€255,50
-  [TONNES | Feed maize | Price at farm gate] n=1625 países=EL,HU,IT mercados=10 2021-01-10→2026-09-27 último=€226,60
-  [TONNES | Feed oats | National Average - Not Specified] n=1619 países=AT,BE,DE,DK,EE,EU,EU+UK,FI,HR,LT,LV,PL,PT,RO mercados=1 2021-01-10→2026-08-02 último=€230,00
-  [TONNES | Malting barley | Departure from silo - after some storage - on truck or other transport means] n=1465 países=DE,ES,HR,RO mercados=13 2021-01-10→2026-09-27 último=€233,50
-  [TONNES | Feed barley | Departure from farm or from production area - on truck or other transport means] n=1402 países=BE,BG,IT,SK mercados=10 2021-01-10→2026-09-27 último=€215,50
-  [TONNES | Feed barley | Price at farm gate] n=1390 países=EL,HU,IT mercados=12 2021-01-10→2026-09-27 último=€202,50
-  [TONNES | Rye of breadmaking quality | National Average - Not Specified] n=1337 países=AT,CZ,DE,EE,EU,EU+UK,LT,LV,PL,PT mercados=1 2021-01-10→2026-08-02 último=€197,50
-  [TONNES | Triticale | National Average - Not Specified] n=1144 países=AT,DE,EE,EU,EU+UK,LT,LV,PT mercados=1 2021-01-10→2026-08-02 último=€161,68
-  [TONNES | Feed rye | National Average - Not Specified] n=1128 países=AT,CZ,DE,DK,EE,EU,EU+UK,LT,LV,PL,PT mercados=1 2021-01-10→2026-08-02 último=€121,91
-  [TONNES | Feed wheat | Price at farm gate] n=1098 países=EL,HU mercados=7 2021-01-10→2026-09-20 último=€197,72
-  [TONNES | Milling wheat | Delivered to port - grain delivered to a port silo by train or truck or barge] n=973 países=FI,FR mercados=5 2021-01-10→2026-09-27 último=€244,36
-  [TONNES | Durum wheat | Departure from silo - after some storage - on truck or other transport means] n=955 países=AT,DE,ES,FR,RO mercados=8 2021-01-10→2026-09-27 último=€242,50
-  [TONNES | Wheat bran | National Average - Not Specified] n=875 países=CY,DE,DK,EU,EU+UK mercados=1 2021-01-10→2026-08-02 último=€165,00
-  [TONNES | Malting barley - M2RH | National Average - Not Specified] n=867 países=ES,EU,EU+UK mercados=1 2021-01-10→2026-08-02 último=€227,50
-  [TONNES | Milling rye | Departure from silo - after some storage - on truck or other transport means] n=860 países=AT,DE mercados=9 2021-01-10→2026-09-27 último=€209,00
-  [TONNES | Durum wheat | Price at farm gate] n=847 países=EL,HU,IT mercados=8 2021-01-10→2026-09-27 último=€278,50
-  [TONNES | Feed oats | Deliver to first customer - silo or processing plant - on truck or other transport means] n=835 países=EE,EU,EU+UK,FI,HR,LT,LV,PL mercados=9 2021-01-10→2026-09-27 último=€161,00
-  [TONNES | Wheat bran | Departure from silo - after some storage - on truck or other transport means] n=794 países=CY,DE mercados=8 2021-01-10→2026-09-13 último=€195,00
-  [TONNES | Milling rye | Deliver to first customer - silo or processing plant - on truck or other transport means] n=768 países=CZ,EE,EU,EU+UK,LT,LV,PL mercados=8 2021-01-10→2026-09-20 último=€150,96
-  [TONNES | Durum wheat | Deliver to first customer - silo or processing plant - on truck or other transport means] n=708 países=CZ,IE,IT mercados=7 2021-01-10→2026-09-27 último=€277,50
-  [TONNES | Triticale | Deliver to first customer - silo or processing plant - on truck or other transport means] n=661 países=EE,EU,EU+UK,LT,LV,PL mercados=6 2021-01-10→2026-09-20 último=€172,85
-  [TONNES | Feed barley | Delivered to port - grain delivered to a port silo by train or truck or barge] n=647 países=FI,FR mercados=4 2021-01-10→2026-09-27 último=€222,86
-  [TONNES | Milling oats | National Average - Not Specified] n=615 países=AT,EE,EU,EU+UK,PT mercados=1 2021-01-17→2026-08-02 último=null
-  [TONNES | Feed rye | Deliver to first customer - silo or processing plant - on truck or other transport means] n=610 países=CZ,EE,EU,EU+UK,LT,LV,PL mercados=6 2021-01-10→2026-09-20 último=€155,08
-  [TONNES | Feed oats | Delivered to port - grain delivered to a port silo by train or truck or barge] n=605 países=FI mercados=2 2021-01-10→2026-09-27 último=€163,00
-  [TONNES | Milling wheat | Free On Board - Incoterm] n=594 países=BG,FR,RO,SE mercados=6 2021-01-10→2026-09-27 último=€239,35
-  [TONNES | Malting barley | Deliver to first customer - silo or processing plant - on truck or other transport means] n=500 países=CZ,EU,EU+UK,HR,LT,LV,PL mercados=7 2021-01-17→2026-09-20 último=€175,51
-  [TONNES | Feed maize | Free On Board - Incoterm] n=488 países=BG,FR,RO mercados=5 2021-01-10→2026-09-27 último=€222,47
-  [TONNES | Durum wheat | Departure from farm or from production area - on truck or other transport means] n=333 países=IT,PT,SK mercados=4 2021-01-17→2026-09-27 último=€312,50
-  [TONNES | Feed maize | Shipped to the place (port), unloaded, on truck leaving port] n=333 países=PT mercados=3 2021-01-10→2026-09-20 último=€251,00
-  [TONNES | Feed wheat | Shipped to the place (port), unloaded, on truck leaving port] n=314 países=PT mercados=3 2021-01-10→2026-09-20 último=€260,00
-  [TONNES | Malting barley | Departure from farm or from production area - on truck or other transport means] n=308 países=PT,SK mercados=2 2021-01-17→2026-09-20 último=€188,00
-  [TONNES | Durum wheat | Delivered to port - grain delivered to a port silo by train or truck or barge] n=300 países=FR mercados=3 2021-02-14→2026-09-27 último=€281,36
-  [TONNES | Feed wheat | Cost, Insurance and Freight - Incoterm] n=300 países=NL mercados=1 2021-01-10→2026-09-20 último=€251,00
-  [TONNES | Feed barley | Shipped to the place (port), unloaded, on truck leaving port] n=300 países=PT mercados=3 2021-01-10→2026-09-13 último=€258,00
-  [TONNES | Feed barley | Cost, Insurance and Freight - Incoterm] n=299 países=NL mercados=1 2021-01-10→2026-09-20 último=€232,00
-  [TONNES | Feed maize | Cost, Insurance and Freight - Incoterm] n=291 países=NL mercados=1 2021-01-10→2026-09-06 último=€278,00
-  [TONNES | Triticale | Departure from silo - after some storage - on truck or other transport means] n=282 países=AT,DE mercados=4 2021-01-10→2026-09-27 último=€172,50
-  [TONNES | Milling oats | Deliver to first customer - silo or processing plant - on truck or other transport means] n=277 países=EE,EU,EU+UK,LV,PL mercados=2 2021-03-07→2026-09-20 último=€129,07
-  [TONNES | Milling wheat | Shipped to the place (port), unloaded, on truck leaving port] n=256 países=PT mercados=3 2021-01-10→2026-09-20 último=€280,00
-  [TONNES | Feed maize | Delivered to port - grain delivered to a port silo by train or truck or barge] n=251 países=FR mercados=3 2021-01-10→2026-08-02 último=€250,00
-  [TONNES | Feed barley | Rendu Port - Delivered] n=243 países=DK mercados=1 2022-03-06→2026-09-27 último=€178,14
-  [TONNES | Feed wheat | Rendu Port - Delivered] n=243 países=DK mercados=1 2022-03-06→2026-09-27 último=€198,00
-  … (recortado)
-EJEMPLO {"memberStateCode":"AT","memberStateName":"Austria","beginDate":"21/09/2026","endDate":"27/09/2026","price":"€215,00","unit":"TONNES","weekNumber":13,"productName":"Feed wheat","marketName":"Wien","stageName":"Departure from silo - after some storage - on truck or other transport means","referencePeriod":"01/10/2026"}
+=== fruitAndVegetables
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== fruitandvegetables
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
 
 === fruitAndVegetable
+STATUS 404
+  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
+
+=== fruit_and_vegetable
 STATUS 404
   {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
 
@@ -86,42 +50,6 @@ STATUS 404
 STATUS 404
   {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
 
-=== fruitsandvegetables
-STATUS 404
-  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== fruits
-STATUS 404
-  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== vegetables
-STATUS 404
-  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== fruit
-STATUS 404
-  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== fruitAndVeg/prices
-STATUS 404
-  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== fruit-and-veg
-STATUS 404
-  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== fruitAndVegetablesPrices
-STATUS 404
-  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== fruitVeg
-STATUS 404
-  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== fruitsVegetables
-STATUS 404
-  {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
-
-=== produce
+=== fruit-and-vegetables-supply-chain
 STATUS 404
   {"code":"404","type":"Status report","message":"Runtime Error","description":"No matching resource found for given API Request"}
