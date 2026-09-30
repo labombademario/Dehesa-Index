@@ -557,7 +557,7 @@
           uk: { price: 180.84, changePct: 0.2, history: [179.20, 179.50, 179.80, 180.10, 180.30, 180.40, 180.84], currency: 'GBP', kgPerUnit: 100 },
           footnoteKey: 'cerdo',
           countryFactors: { es: 1, de: 0.911, fr: 1.193, it: 1.353 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (cerdo)' }, eu: { type: 'referencia', market: 'Comisión Europea (porcino)' }, uk: { type: 'referencia', market: 'AHDB (SPP, especificación UE, GB)' } } }
+          quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (cerdo)' }, eu: { type: 'referencia', market: 'Comisión Europea (porcino, España, clase S)' }, uk: { type: 'referencia', market: 'AHDB (SPP, especificación UE, GB)' } } }
       ]
     },
     {
@@ -892,6 +892,7 @@
     world_bank: { name: 'Banco Mundial', url: SRC_URL.worldBank, authority: 'official' },
     eurostat: { name: 'Eurostat', url: 'https://ec.europa.eu/eurostat/web/agriculture/information-data', authority: 'official' },
     eia: { name: 'EIA', url: SRC_URL.eia, authority: 'official' },
+    eu_agrifood: { name: 'Comisión Europea — Agri-food Data Portal', url: 'https://agriculture.ec.europa.eu/data-and-analysis/markets/price-data_en', authority: 'official' },
     eu_oil_bulletin: { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin, authority: 'official' }
   };
 
@@ -951,6 +952,12 @@
       sourceId: 'eu_oil_bulletin', frequency: 'weekly',
       methodology: 'Media ponderada de la UE de gasóleo de automoción, con impuestos, publicada en EUR/1.000 litros y almacenada sin convertir su precisión de origen. Es un precio semanal al consumidor; no equivale a una cotización agrícola en finca.',
       comparability: 'directional', observationDate: '2026-09-21', publicationDate: '2026-09-24', status: 'verified', verifiedAt: '2026-09-29T22:39:01Z'
+    },
+    'porcino-cerdo-eu': {
+      sourceId: 'eu_agrifood', frequency: 'weekly',
+      methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cerdo clasificada S (≥60 % magro) en España, EUR/100 kg de canal. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
+      comparability: 'directional', observationDate: null, publicationDate: null,
+      status: 'pending', verifiedAt: null
     }
   };
 

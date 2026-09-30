@@ -55,6 +55,7 @@ try {
 for(const o of latest.observations){
  check(o.id+' verified',o.status==='verified');
  check(o.id+' has source',!!o.sourceId);
+ if(o.unit!=='index_2020_100') check(o.id+' is wired to a visible price card (LIVE_OBSERVATION_MAP)',prices.includes("'"+o.product+':'+o.region+"':"));
  check(o.id+' has observation date',/^\d{4}-\d{2}/.test(o.observationDate||''));
 }
 const passed=checks.filter(x=>x[1]).length;

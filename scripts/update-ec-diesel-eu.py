@@ -31,4 +31,13 @@ latest=points[-1]; prev=points[-2]; change=round((latest[1]/prev[1]-1)*100,4) if
 obs={'id':'di_diesel_eu','product':'diesel','region':'eu','sourceId':'eu_oil_bulletin','observationDate':latest[0],'publicationDate':None,'status':'verified','verifiedAt':datetime.utcnow().isoformat()+'Z','methodology':'Weighted EU average for automotive gas oil, consumer price with taxes. The source expresses it in EUR/1,000 litres; value retained at source precision after division by 1,000.','comparability':'directional','value':latest[1],'currency':'EUR','unit':'litro','frequency':'weekly','changePct':change,'history':[{'period':d[5:],'year':int(d[:4]),'value':v} for d,v in points[-104:]]}
 SNAP.mkdir(parents=True,exist_ok=True); f=SNAP/(datetime.utcnow().date().isoformat()+'.json'); doc=json.loads(f.read_text()) if f.exists() else {'schemaVersion':'1.0','generatedAt':datetime.utcnow().isoformat()+'Z','observations':[]}; prev_obs=next((o for o in doc['observations'] if o.get('product')=='diesel' and o.get('region')=='eu' and o.get('observationDate')==obs['observationDate']),None)
 if prev_obs and prev_obs.get('publicationDate'): obs['publicationDate']=prev_obs['publicationDate']  # fecha de publicación ya verificada
+if not obs['publicationDate']:
+    # 1) reutiliza la fecha de publicación ya registrada para esta misma observación
+    try:
+        for o in json.loads((ROOT/'data'/'latest.json').read_text())['observations']:
+            if o.get('id')==obs['id'] and o.get('observationDate')==obs['observationDate'] and o.get('publicationDate'): obs['publicationDate']=o['publicationDate']
+    except Exception: pass
+if not obs['publicationDate']:
+    # 2) el boletín no expone fecha de publicación: se registra el día en que se recuperó por primera vez
+    obs['publicationDate']=datetime.utcnow().date().isoformat()
 doc['observations']=[o for o in doc['observations'] if not(o.get('product')=='diesel' and o.get('region')=='eu')]+[obs]; f.write_text(json.dumps(doc,indent=2)+'\n'); tmp.unlink(missing_ok=True); print('EC diesel EU:',latest)
