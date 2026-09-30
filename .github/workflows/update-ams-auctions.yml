@@ -1,0 +1,38 @@
+name: Dehesa Data — USDA AMS subastas de ganado (MARS)
+
+on:
+  schedule:
+    - cron: '20 15 * * 6'   # semanal: son ~550 informes y mucho volumen
+  workflow_dispatch: {}
+
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update-auctions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Read MARS auction reports
+        env:
+          MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
+        run: node scripts/update-ams.mjs auc 2>&1 | tee /tmp/ams-auc.out
+      - name: Rebuild search index
+        run: node scripts/build-search-index.mjs
+      - name: Commit
+        run: |
+          cp /tmp/ams-auc.out data/ams/_log_auctions.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ams data/search-index.json
+          git diff --cached --quiet || git commit -m "data: update USDA AMS auctions"
+          git pull --rebase origin main
+          git push origin HEAD:main
