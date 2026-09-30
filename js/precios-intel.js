@@ -993,8 +993,9 @@
 
   function renderLocalGlobalHtml() {
     var t = ui();
-    return '<div class="di-intel-section di-intel-pending" id="di-intel-localglobal"><div class="di-intel-head"><h2>🌍 ' + esc(t.localGlobalTitle) + '</h2><p>Comparación local/global pendiente: requiere observaciones reales por mercado y país con fechas y bases comparables.</p><span class="di-intel-state pending">PENDIENTE</span></div></div>';
+    return '<div class="di-intel-section" id="di-intel-localglobal"><div class="di-intel-head"><h2>🌍 ' + esc(t.localGlobalTitle) + '</h2><p>' + esc(t.localGlobalText) + '</p><a class="di-link-btn" href="mapa.html?layer=price">' + esc(t.localGlobalLink) + ' →</a></div></div>';
   }
+
 
 
   // ---------------------------------------------------------------------
