@@ -5549,59 +5549,6 @@
      "direction": "uncertain"
     }
    ]
-  },
-  {
-   "id": "auto-8bcb422a07",
-   "date": "2026-09-24",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "soja",
-    "colza",
-    "energia"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "COTidienne | Marché des oléagineux du 24 septembre 2026 - Les cours du soja sont encore en baisse sur le CBOT malgré la hausse du pétrole, le colza reprend le chemin de la hausse",
-    "es": "COTidienne | Marché des oléagineux du 24 septembre 2026 - Les cours du soja sont encore en baisse sur le CBOT malgré la hausse du pétrole, le colza reprend le chemin de la hausse",
-    "fr": "COTidienne | Marché des oléagineux du 24 septembre 2026 - Les cours du soja sont encore en baisse sur le CBOT malgré la hausse du pétrole, le colza reprend le chemin de la hausse",
-    "it": "COTidienne | Marché des oléagineux du 24 septembre 2026 - Les cours du soja sont encore en baisse sur le CBOT malgré la hausse du pétrole, le colza reprend le chemin de la hausse"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPNHNFT1dUSS10WU5rUVRxa1pXdDFpU1FTUjk2WTdZbmh6Q2ZXM1FVdVU5alBFUk5yOFJXaERsSmJFWEZ6OWFQZjNhczBLMlVtYVpEOXQ3T3dVb2ltTHV2a2FBYmtpdG1VRF9BU0VsU0pIVTFfSnBaSkZhOGNxU3lZRVFmOExwSVI5UGpNUGVUd0laWk1hNE54Z0djc2x3ZXVXbUh3NmlhdjVyd3lsWE1ULXdzWEJHNWRNRTlWYkVBTG9FY1BLM3hqeDNsOXA?oc=5",
-   "relevance": 74,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
   }
  ],
  "fertilizantes": [
@@ -6212,7 +6159,7 @@
    ]
   },
   {
-   "id": "auto-a258f79cea",
+   "id": "auto-df7a8baa75",
    "date": "2026-09-29",
    "region": "ca",
    "topic": "comercio",
@@ -6223,7 +6170,7 @@
    "products": [
     "fertilizantes"
    ],
-   "source": "policymagazine.ca",
+   "source": "Policy Magazine",
    "lang": "en",
    "headline": {
     "en": "Trade, Fertilizer and Canadian Economic Security",
@@ -6602,7 +6549,7 @@
    ]
   },
   {
-   "id": "auto-c012272058",
+   "id": "auto-ce7f356a6d",
    "date": "2026-09-27",
    "region": "global",
    "topic": "",
@@ -6610,7 +6557,7 @@
    "products": [
     "fertilizantes"
    ],
-   "source": "thefinancialexpress.com.bd",
+   "source": "The Financial Express",
    "lang": "en",
    "headline": {
     "en": "Govt to purchase 0.95 million tonnes of non-urea fertiliser",
@@ -6708,7 +6655,7 @@
    ]
   },
   {
-   "id": "auto-59c4cf72be",
+   "id": "auto-d19b26fe5c",
    "date": "2026-09-26",
    "region": "uk",
    "topic": "costes",
@@ -6718,7 +6665,7 @@
    "products": [
     "fertilizantes"
    ],
-   "source": "farminglife.com",
+   "source": "Farming Life",
    "lang": "en",
    "headline": {
     "en": "UFU calls for action on fertiliser costs",
@@ -7485,6 +7432,53 @@
    ]
   },
   {
+   "id": "auto-ceba537b06",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "trigo",
+    "maiz",
+    "soja"
+   ],
+   "source": "terre-net.fr",
+   "lang": "fr",
+   "headline": {
+    "en": "Blé, maïs, soja : les cours reculent sur fond d’attentisme",
+    "es": "Blé, maïs, soja : les cours reculent sur fond d’attentisme",
+    "fr": "Blé, maïs, soja : les cours reculent sur fond d’attentisme",
+    "it": "Blé, maïs, soja : les cours reculent sur fond d’attentisme"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVUNyVDVhTFFYVm9yWDlxNVZMQkZnc0toeGZCRFFEbDJNdV9vZVFjRkVwSVFrUDNPaklQa1Vndno3UE42blpud0xKbmlRQlN1bEItVjFrRk9pLTdfMTMtaHNDTTdNbzFxM3ZiTW83U0gzTS1CYzJibzZHS0lNVC0yWmFTN29xQlhjenBIVUdFS0NhYzF2SnFRcHZaQWl3aHN4NzRTbGVieXNHWUFiSDdZSXF5aXVUZTdyYVdhZm92akPSAcYBQVVfeXFMTy1FSXBDOFFRWHlxQ2l6RER4MVBEenNTdzFnTGRpSl9LaTl5WVE1VkFIRFV3NDdqT0Fzc2E1QWhGZXNQNDhRSjZoelRNaUFET3F3a2paRFhyNE1SNm1wZ251d3VxSXFmTENHOUU2MWpaR3dXckpaOUQteHJBSnA1dElDc2I0MnN2anU2VFBtdGlYTzJBQzFwOWZWOHdJdTRKcDdGYW9YbDhWRmNENm5BckZ2RlFSNTlmT1lzekJfTno0Z0dHU0h3?oc=5",
+   "relevance": 74,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "maiz",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "soja",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-6e5460a58f",
    "date": "2026-09-30",
    "region": "ca",
@@ -7697,6 +7691,46 @@
     {
      "market": "trigo",
      "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-fac8df3516",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "oferta",
+   "topics": [
+    "oferta"
+   ],
+   "products": [
+    "maiz",
+    "soja"
+   ],
+   "source": "95.1 The Bull",
+   "lang": "en",
+   "headline": {
+    "en": "Corn and Soybean Markets Await USDA’s September Crop Estimates",
+    "es": "Corn and Soybean Markets Await USDA’s September Crop Estimates",
+    "fr": "Corn and Soybean Markets Await USDA’s September Crop Estimates",
+    "it": "Corn and Soybean Markets Await USDA’s September Crop Estimates"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQX3RNOVlDbHZfOG10RlFBTURKMWNsY1BjQUt1Rk8zMFBmTVZJMGlkQzFfQ2RrZHU5YVhvOTJXRTVHU293dUotLXVuOVdxbUxEZndXb0FtcGV4WHFZTV92Rng4UEhKcllQbC15V0dlQm9CUVRGd3QwUGF4M0xaNVpPNWdHZ2o5N2xla09XWWpBcEk2bHN0LXZPMG1NZFE?oc=5",
+   "relevance": 64,
+   "auto": true,
+   "impactChannel": "supply",
+   "marketLinks": [
+    {
+     "market": "maiz",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "soja",
+     "channel": "supply",
      "relation": null,
      "direction": "uncertain"
     }
@@ -7952,7 +7986,7 @@
    ]
   },
   {
-   "id": "auto-44a8a05b6d",
+   "id": "auto-8a258d1c0a",
    "date": "2026-09-30",
    "region": "us",
    "topic": "",
@@ -7961,7 +7995,7 @@
     "maiz",
     "soja"
    ],
-   "source": "agrolatam.com",
+   "source": "AgroLatam",
    "lang": "en",
    "headline": {
     "en": "Corn and Soybeans Rise Ahead of Key USDA Grain Reports",
@@ -8212,6 +8246,39 @@
    ]
   },
   {
+   "id": "auto-1a893df85d",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "maiz"
+   ],
+   "source": "Investing.com - Quotazioni, Borsa, Economia e Finanza",
+   "lang": "it",
+   "headline": {
+    "en": "Il grano Euronext scende mentre le scorte di mais USA pesano sui cereali",
+    "es": "Il grano Euronext scende mentre le scorte di mais USA pesano sui cereali",
+    "fr": "Il grano Euronext scende mentre le scorte di mais USA pesano sui cereali",
+    "it": "Il grano Euronext scende mentre le scorte di mais USA pesano sui cereali"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQWGg2TXR6T0szX3pPcHRWemwtMi1nZTZWSGcyMFlQdUFIVG9mQXdlZjFkeGNuai1sUFZtaTREUXRCdmFOZEVEa3hoRS1fR191aFlTcUJlZmw0WmtXWFgxN0hJa1h1elphMUs3YkhzT241bGlyVk0yaFIwZlIxVTBGczFDUnkyNExIam52RlB3MkhaN1JHVTZ0dnhHcFJLNGV5OWJlY2xTNmRydTVBa05MblV3OXI1NTRoWVVpUldWQUN3Mkc0Q0dFZDZyUFg?oc=5",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "maiz",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-d374ee6375",
    "date": "2026-09-30",
    "region": "us",
@@ -8277,160 +8344,6 @@
      "market": "trigo",
      "channel": "input_cost",
      "relation": "fertilizer-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-c7fd7788af",
-   "date": "2026-09-30",
-   "region": "eu",
-   "topic": "energia",
-   "topics": [
-    "energia",
-    "costes"
-   ],
-   "products": [
-    "diesel"
-   ],
-   "source": "Terra e Vita",
-   "lang": "it",
-   "headline": {
-    "en": "Gasolio agricolo, come ottenere il credito d’imposta",
-    "es": "Gasolio agricolo, come ottenere il credito d’imposta",
-    "fr": "Gasolio agricolo, come ottenere il credito d’imposta",
-    "it": "Gasolio agricolo, come ottenere il credito d’imposta"
-   },
-   "description": "L’agevolazione, che riguarda gli acquisti effettuati tra marzo e maggio 2026, può coprire fino al 20% dei costi sostenuti L'articolo Gasolio agricolo, come ottenere il credito d’imposta è un contenuto originale di Terra e Vita .",
-   "url": "https://terraevita.edagricole.it/leggi-lavoro-fisco/gasolio-agricolo-come-ottenere-il-credito-dimposta/",
-   "relevance": 52,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-7bfa8705bc",
-   "date": "2026-09-30",
-   "region": "us",
-   "topic": "energia",
-   "topics": [
-    "energia"
-   ],
-   "products": [
-    "energia"
-   ],
-   "source": "Agri-Pulse",
-   "lang": "en",
-   "headline": {
-    "en": "USDA sued over limits on rural energy program's solar funding",
-    "es": "USDA sued over limits on rural energy program's solar funding",
-    "fr": "USDA sued over limits on rural energy program's solar funding",
-    "it": "USDA sued over limits on rural energy program's solar funding"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYUU3YjRaS21NWHRfQ2QyOE9wY3pIYjRPUXByQjVJQTNRTEl1dmJXcmhoTkZPVWkwdzl2WVJCVzM2ZzUxZVdoMlg1by1iZ1NWejRQSGhoTzA1bDNucHJUWFBtemIycF80bmFPOUxDdkk5VHRXR2dIR0NKUU5nSU9aOWdjOHU5TDE3Ym1lMHFHbDRtaWZTWnZ5ZXBXN0NFSnVxb1JaVg?oc=5",
-   "relevance": 46,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-d1d21aba9d",
-   "date": "2026-09-30",
-   "region": "uk",
-   "topic": "energia",
-   "topics": [
-    "energia"
-   ],
-   "products": [
-    "energia"
-   ],
-   "source": "Beef Central",
-   "lang": "en",
-   "headline": {
-    "en": "Big energy savings, reduced carbon footprint through heat recycling at Gundagai Meat Processors",
-    "es": "Big energy savings, reduced carbon footprint through heat recycling at Gundagai Meat Processors",
-    "fr": "Big energy savings, reduced carbon footprint through heat recycling at Gundagai Meat Processors",
-    "it": "Big energy savings, reduced carbon footprint through heat recycling at Gundagai Meat Processors"
-   },
-   "description": "A New South Wales red meat processor has implemented a staged heat recovery system that reduces natural gas consumption, improves refrigeration efficiency and removes the need for a major boiler upgrade.",
-   "url": "https://www.beefcentral.com/processing/big-energy-savings-reduced-carbon-footprint-through-heat-recycling-at-gundagai-meat-processors/",
-   "relevance": 46,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
      "direction": "uncertain"
     },
     {
@@ -8838,6 +8751,53 @@
     {
      "market": "colza",
      "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-ceba537b06",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "trigo",
+    "maiz",
+    "soja"
+   ],
+   "source": "terre-net.fr",
+   "lang": "fr",
+   "headline": {
+    "en": "Blé, maïs, soja : les cours reculent sur fond d’attentisme",
+    "es": "Blé, maïs, soja : les cours reculent sur fond d’attentisme",
+    "fr": "Blé, maïs, soja : les cours reculent sur fond d’attentisme",
+    "it": "Blé, maïs, soja : les cours reculent sur fond d’attentisme"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVUNyVDVhTFFYVm9yWDlxNVZMQkZnc0toeGZCRFFEbDJNdV9vZVFjRkVwSVFrUDNPaklQa1Vndno3UE42blpud0xKbmlRQlN1bEItVjFrRk9pLTdfMTMtaHNDTTdNbzFxM3ZiTW83U0gzTS1CYzJibzZHS0lNVC0yWmFTN29xQlhjenBIVUdFS0NhYzF2SnFRcHZaQWl3aHN4NzRTbGVieXNHWUFiSDdZSXF5aXVUZTdyYVdhZm92akPSAcYBQVVfeXFMTy1FSXBDOFFRWHlxQ2l6RER4MVBEenNTdzFnTGRpSl9LaTl5WVE1VkFIRFV3NDdqT0Fzc2E1QWhGZXNQNDhRSjZoelRNaUFET3F3a2paRFhyNE1SNm1wZ251d3VxSXFmTENHOUU2MWpaR3dXckpaOUQteHJBSnA1dElDc2I0MnN2anU2VFBtdGlYTzJBQzFwOWZWOHdJdTRKcDdGYW9YbDhWRmNENm5BckZ2RlFSNTlmT1lzekJfTno0Z0dHU0h3?oc=5",
+   "relevance": 74,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "maiz",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "soja",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "market_impact",
      "relation": null,
      "direction": "uncertain"
     }
@@ -9698,57 +9658,6 @@
      "direction": "uncertain"
     }
    ]
-  },
-  {
-   "id": "auto-7bfa8705bc",
-   "date": "2026-09-30",
-   "region": "us",
-   "topic": "energia",
-   "topics": [
-    "energia"
-   ],
-   "products": [
-    "energia"
-   ],
-   "source": "Agri-Pulse",
-   "lang": "en",
-   "headline": {
-    "en": "USDA sued over limits on rural energy program's solar funding",
-    "es": "USDA sued over limits on rural energy program's solar funding",
-    "fr": "USDA sued over limits on rural energy program's solar funding",
-    "it": "USDA sued over limits on rural energy program's solar funding"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYUU3YjRaS21NWHRfQ2QyOE9wY3pIYjRPUXByQjVJQTNRTEl1dmJXcmhoTkZPVWkwdzl2WVJCVzM2ZzUxZVdoMlg1by1iZ1NWejRQSGhoTzA1bDNucHJUWFBtemIycF80bmFPOUxDdkk5VHRXR2dIR0NKUU5nSU9aOWdjOHU5TDE3Ym1lMHFHbDRtaWZTWnZ5ZXBXN0NFSnVxb1JaVg?oc=5",
-   "relevance": 46,
-   "auto": true,
-   "impactChannel": "input_cost",
-   "marketLinks": [
-    {
-     "market": "arroz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "cebada",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "maiz",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "input_cost",
-     "relation": "energy-cereals",
-     "direction": "uncertain"
-    }
-   ]
   }
  ],
  "leche": [
@@ -10239,40 +10148,6 @@
    ]
   },
   {
-   "id": "auto-5a84d99adb",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "politica",
-   "topics": [
-    "politica"
-   ],
-   "products": [
-    "leche",
-    "pac"
-   ],
-   "source": "Agriland",
-   "lang": "en",
-   "headline": {
-    "en": "ICMSA doubtful over Heydon comments on CAP deal",
-    "es": "ICMSA doubtful over Heydon comments on CAP deal",
-    "fr": "ICMSA doubtful over Heydon comments on CAP deal",
-    "it": "ICMSA doubtful over Heydon comments on CAP deal"
-   },
-   "description": "The Irish Creamery Milk Suppliers’ Association (ICMSA) has expressed scepticism over comments from Minister for Agriculture, Food and the Marine Martin Heydon on the Common Agricultural Policy (CAP) this week. Speaking yesterday (Monday, September 28) after a meeting of EU agricu",
-   "url": "https://www.agriland.ie/farming-news/icmsa-doubtful-over-heydon-comments-on-cap-deal/",
-   "relevance": 64,
-   "auto": true,
-   "impactChannel": "policy",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-d9da77ff87",
    "date": "2026-09-29",
    "region": "ca",
@@ -10667,6 +10542,39 @@
      "direction": "uncertain"
     }
    ]
+  },
+  {
+   "id": "auto-9a2a2491c7",
+   "date": "2026-09-28",
+   "region": "us",
+   "topic": "comercio",
+   "topics": [
+    "comercio"
+   ],
+   "products": [
+    "leche"
+   ],
+   "source": "Dairy Farmers of Canada",
+   "lang": "en",
+   "headline": {
+    "en": "Unpacking the Realities of U.S.–Canada Dairy Trade: Market Access, Quotas, and the Myth of Protectionism",
+    "es": "Unpacking the Realities of U.S.–Canada Dairy Trade: Market Access, Quotas, and the Myth of Protectionism",
+    "fr": "Unpacking the Realities of U.S.–Canada Dairy Trade: Market Access, Quotas, and the Myth of Protectionism",
+    "it": "Unpacking the Realities of U.S.–Canada Dairy Trade: Market Access, Quotas, and the Myth of Protectionism"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQc0tqMFdLNHFqdFRYZlZzYnpYNzdDMjZrSDN3anVHN29oVE0wOC1TOXRmWWpXMlZJMjRNS0tYaFp0VVpqSGFlWUVQUjRrNlFJMW5uYVI5X3l3UkJKcWYxRXNpWW9xclhsalRDMDhCRjZ6endxOExiTm5GY2p6V0xmRDRIQktHSGppTkJ1TFdjSHR3SV9ZOFNURlo5VVVIS1VHR0tzWWc1R0E0R3h5eTB1b2M3M2xvbkJzbGNkRHVpdTg1ekxCWmlRTFgtS1pnQ2ZT?oc=5",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "trade",
+   "marketLinks": [
+    {
+     "market": "leche",
+     "channel": "trade",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
   }
  ],
  "pienso": [
@@ -10772,7 +10680,7 @@
    ]
   },
   {
-   "id": "auto-49925816c1",
+   "id": "auto-d61adf01c9",
    "date": "2026-09-28",
    "region": "us",
    "topic": "",
@@ -10781,7 +10689,7 @@
     "vaca",
     "pienso"
    ],
-   "source": "aljazeera.com",
+   "source": "Al Jazeera",
    "lang": "en",
    "headline": {
     "en": "Cattle to feed: Why a global meat crisis is looming",
@@ -12009,6 +11917,134 @@
    ]
   },
   {
+   "id": "auto-ceba537b06",
+   "date": "2026-09-30",
+   "region": "eu",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "trigo",
+    "maiz",
+    "soja"
+   ],
+   "source": "terre-net.fr",
+   "lang": "fr",
+   "headline": {
+    "en": "Blé, maïs, soja : les cours reculent sur fond d’attentisme",
+    "es": "Blé, maïs, soja : les cours reculent sur fond d’attentisme",
+    "fr": "Blé, maïs, soja : les cours reculent sur fond d’attentisme",
+    "it": "Blé, maïs, soja : les cours reculent sur fond d’attentisme"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVUNyVDVhTFFYVm9yWDlxNVZMQkZnc0toeGZCRFFEbDJNdV9vZVFjRkVwSVFrUDNPaklQa1Vndno3UE42blpud0xKbmlRQlN1bEItVjFrRk9pLTdfMTMtaHNDTTdNbzFxM3ZiTW83U0gzTS1CYzJibzZHS0lNVC0yWmFTN29xQlhjenBIVUdFS0NhYzF2SnFRcHZaQWl3aHN4NzRTbGVieXNHWUFiSDdZSXF5aXVUZTdyYVdhZm92akPSAcYBQVVfeXFMTy1FSXBDOFFRWHlxQ2l6RER4MVBEenNTdzFnTGRpSl9LaTl5WVE1VkFIRFV3NDdqT0Fzc2E1QWhGZXNQNDhRSjZoelRNaUFET3F3a2paRFhyNE1SNm1wZ251d3VxSXFmTENHOUU2MWpaR3dXckpaOUQteHJBSnA1dElDc2I0MnN2anU2VFBtdGlYTzJBQzFwOWZWOHdJdTRKcDdGYW9YbDhWRmNENm5BckZ2RlFSNTlmT1lzekJfTno0Z0dHU0h3?oc=5",
+   "relevance": 74,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "maiz",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "soja",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "trigo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-41a16639d5",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "comercio",
+   "topics": [
+    "comercio",
+    "oferta",
+    "precios"
+   ],
+   "products": [
+    "soja"
+   ],
+   "source": "Farmtario",
+   "lang": "en",
+   "headline": {
+    "en": "Soybean futures drop after U.S-China deal omits crop",
+    "es": "Soybean futures drop after U.S-China deal omits crop",
+    "fr": "Soybean futures drop after U.S-China deal omits crop",
+    "it": "Soybean futures drop after U.S-China deal omits crop"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNYUJYaVl6RHZOSmwzcEFzNlN2ZEgyWHlSVTJ6MGFYTWdnLXJoV2hUbmlNRTl2c3lCazhzVDdkblNGQnlCWllYUjU3UEN2Nk9yaGhJVVpzcE8zUDNWVVNycjAzYXJFOFNsSkZia1I1TjJYdXV4b1M4endWUTdJNE5CMWg0RFFiSUlJZ0FGbllfUTNZeGpHa29IeQ?oc=5",
+   "relevance": 66,
+   "auto": true,
+   "impactChannel": "trade",
+   "marketLinks": [
+    {
+     "market": "soja",
+     "channel": "trade",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "soja",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-fac8df3516",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "oferta",
+   "topics": [
+    "oferta"
+   ],
+   "products": [
+    "maiz",
+    "soja"
+   ],
+   "source": "95.1 The Bull",
+   "lang": "en",
+   "headline": {
+    "en": "Corn and Soybean Markets Await USDA’s September Crop Estimates",
+    "es": "Corn and Soybean Markets Await USDA’s September Crop Estimates",
+    "fr": "Corn and Soybean Markets Await USDA’s September Crop Estimates",
+    "it": "Corn and Soybean Markets Await USDA’s September Crop Estimates"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQX3RNOVlDbHZfOG10RlFBTURKMWNsY1BjQUt1Rk8zMFBmTVZJMGlkQzFfQ2RrZHU5YVhvOTJXRTVHU293dUotLXVuOVdxbUxEZndXb0FtcGV4WHFZTV92Rng4UEhKcllQbC15V0dlQm9CUVRGd3QwUGF4M0xaNVpPNWdHZ2o5N2xla09XWWpBcEk2bHN0LXZPMG1NZFE?oc=5",
+   "relevance": 64,
+   "auto": true,
+   "impactChannel": "supply",
+   "marketLinks": [
+    {
+     "market": "maiz",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "soja",
+     "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
    "id": "auto-e374b2f0ee",
    "date": "2026-09-30",
    "region": "eu",
@@ -12081,7 +12117,7 @@
    ]
   },
   {
-   "id": "auto-44a8a05b6d",
+   "id": "auto-8a258d1c0a",
    "date": "2026-09-30",
    "region": "us",
    "topic": "",
@@ -12090,7 +12126,7 @@
     "maiz",
     "soja"
    ],
-   "source": "agrolatam.com",
+   "source": "AgroLatam",
    "lang": "en",
    "headline": {
     "en": "Corn and Soybeans Rise Ahead of Key USDA Grain Reports",
@@ -12644,7 +12680,7 @@
    ]
   },
   {
-   "id": "auto-56a6137834",
+   "id": "auto-ba8e43e1c6",
    "date": "2026-09-29",
    "region": "us",
    "topic": "comercio",
@@ -12654,7 +12690,7 @@
    "products": [
     "soja"
    ],
-   "source": "agrolatam.com",
+   "source": "AgroLatam",
    "lang": "en",
    "headline": {
     "en": "U.S. Grain Markets Turn Mixed as Soybeans Recover From Tariff-Driven Sell-Off",
@@ -12835,115 +12871,11 @@
      "direction": "uncertain"
     }
    ]
-  },
-  {
-   "id": "auto-ab3566f4df",
-   "date": "2026-09-28",
-   "region": "global",
-   "topic": "comercio",
-   "topics": [
-    "comercio"
-   ],
-   "products": [
-    "soja"
-   ],
-   "source": "Reuters",
-   "lang": "en",
-   "headline": {
-    "en": "China to cut tariffs on US farm goods, but list excludes soybeans",
-    "es": "China to cut tariffs on US farm goods, but list excludes soybeans",
-    "fr": "China to cut tariffs on US farm goods, but list excludes soybeans",
-    "it": "China to cut tariffs on US farm goods, but list excludes soybeans"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOcS1oNDFMWG5pMzdiVDYzYlpoWmx2dXh2Z3FDbUJ5T09CbEFBV251Rkc2cFZTcnlPTDZ6N2hJbThrNTRrc255d0NZUWJhendkbXBNc3M4cWRWV1RaVkg3ZXg5Q2ZQVEZxWW1hX1V3UjJUOEJMZGlCRXJEdUpvZzUtQzdreVY5azNfSGxwakVfZFJOa0F0Y1NDWVllMHhaZEQybjRTdg?oc=5",
-   "relevance": 62,
-   "auto": true,
-   "impactChannel": "trade",
-   "marketLinks": [
-    {
-     "market": "soja",
-     "channel": "trade",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-ecf9c23d6b",
-   "date": "2026-09-28",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "soja",
-    "colza"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression",
-    "es": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression",
-    "fr": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression",
-    "it": "Marché des oléagineux du 25 septembre 2026 : Le soja a effacé ses pertes en séance à Chicago, tandis que le colza et l’huile de palme sont restés sous pression"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOcGk1MGtiWGNiLWtjNGtTbkR3em83M29yQUJVOXBxd1dFelM3TXJEc1FRTHlPbmIwbm9WaG0xeVdhbG00VjItVzZGVGtiZWpRbUtfMUh3S1MtRWlTYUxQNnJSRFBDUlptT19XNHBQaEp2ZjM3UmZydEZMdE84NS1NalRqZmpabFUwS0hGWElxOWNtem8yaVEwU19xdGQ5Q2JocXdBbUJvLXRPRldLSG5wTDhxNEJMVUVDQ0E?oc=5",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "colza",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "soja",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-41c27c1a75",
-   "date": "2026-09-28",
-   "region": "ca",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "soja"
-   ],
-   "source": "Western Producer",
-   "lang": "en",
-   "headline": {
-    "en": "CBOT review: Soybeans, grains sharply lower",
-    "es": "CBOT review: Soybeans, grains sharply lower",
-    "fr": "CBOT review: Soybeans, grains sharply lower",
-    "it": "CBOT review: Soybeans, grains sharply lower"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObU5ybkYtX3czUjdHeXd2M2RTVVJpZGlSY0tUb3l3QktrYklUVDdfUTAxU2h0aUxmNFUyWm5pWV81bEx1REV2V19TY2Q1VmNJUEI4VjNfMFhGZ1cwUThjMTVobUFrMV9naVNzSTNnaVBCQVNUZHFhTE1RazB0LVY5QW5hZlpUNmNF?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "soja",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
   }
  ],
  "vaca": [
   {
-   "id": "auto-e1a1e35c6f",
+   "id": "auto-d3b191a499",
    "date": "2026-09-30",
    "region": "us",
    "topic": "clima",
@@ -12955,7 +12887,7 @@
    "products": [
     "vaca"
    ],
-   "source": "agrolatam.com",
+   "source": "AgroLatam",
    "lang": "en",
    "headline": {
     "en": "Cattle prices turn lower as drought and costs reshape the outlook through 2027",
@@ -12972,6 +12904,46 @@
     {
      "market": "vaca",
      "channel": "weather",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-0e5cbaa861",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "vaca",
+    "cerdo"
+   ],
+   "source": "AgWeb",
+   "lang": "en",
+   "headline": {
+    "en": "Cattle Rally on Technical Buying, Strong Beef But Into Resistance: Can Hogs Bottom?",
+    "es": "Cattle Rally on Technical Buying, Strong Beef But Into Resistance: Can Hogs Bottom?",
+    "fr": "Cattle Rally on Technical Buying, Strong Beef But Into Resistance: Can Hogs Bottom?",
+    "it": "Cattle Rally on Technical Buying, Strong Beef But Into Resistance: Can Hogs Bottom?"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPM1c4OFc0R052bDBtYnFYbkRPMVJQdmJlQ2dfUDdMZ0p6NkRiN29uaWd0WUdXNDBLRjg4RE9qVzloclhVaXptOTV5ZjI1S1locUdmRmhqbUE3Qnl0UDd0dnNsenJpbHZoWHkzczlvcm51VFp6WEtueEdBb0tZNWQ5WmY3WkhSQm9CU0dlUDl4U0Ixejc0dGxTOWNDRmVpUHM?oc=5",
+   "relevance": 64,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "vaca",
+     "channel": "market_impact",
      "relation": null,
      "direction": "uncertain"
     }
@@ -13790,35 +13762,495 @@
      "direction": "uncertain"
     }
    ]
+  }
+ ],
+ "cerdo": [
+  {
+   "id": "auto-0e5cbaa861",
+   "date": "2026-09-30",
+   "region": "us",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "vaca",
+    "cerdo"
+   ],
+   "source": "AgWeb",
+   "lang": "en",
+   "headline": {
+    "en": "Cattle Rally on Technical Buying, Strong Beef But Into Resistance: Can Hogs Bottom?",
+    "es": "Cattle Rally on Technical Buying, Strong Beef But Into Resistance: Can Hogs Bottom?",
+    "fr": "Cattle Rally on Technical Buying, Strong Beef But Into Resistance: Can Hogs Bottom?",
+    "it": "Cattle Rally on Technical Buying, Strong Beef But Into Resistance: Can Hogs Bottom?"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPM1c4OFc0R052bDBtYnFYbkRPMVJQdmJlQ2dfUDdMZ0p6NkRiN29uaWd0WUdXNDBLRjg4RE9qVzloclhVaXptOTV5ZjI1S1locUdmRmhqbUE3Qnl0UDd0dnNsenJpbHZoWHkzczlvcm51VFp6WEtueEdBb0tZNWQ5WmY3WkhSQm9CU0dlUDl4U0Ixejc0dGxTOWNDRmVpUHM?oc=5",
+   "relevance": 64,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
   },
   {
-   "id": "auto-825278dd44",
+   "id": "auto-f5f389b283",
+   "date": "2026-09-30",
+   "region": "global",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "cerdo"
+   ],
+   "source": "The Pig Site",
+   "lang": "en",
+   "headline": {
+    "en": "Hog futures gain as pork belly prices jump $6.73 - CME",
+    "es": "Hog futures gain as pork belly prices jump $6.73 - CME",
+    "fr": "Hog futures gain as pork belly prices jump $6.73 - CME",
+    "it": "Hog futures gain as pork belly prices jump $6.73 - CME"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQVhlUU54VGpBd0F1bDRqbDkzZGR0R251cVBhWG5uWGZwTjVzRklaQlA0SEVZeDdMUTVZTTVSMUt1WWZQbU9xbUVVSUFTYUNHWUhfTnNsRDNoYW54OFVQcGNiRHZYWHRyWTBPT1VoaTJCMHRJVDg3LTllUTJSMy1zVTlUTnQ0ZFRKa3NEWDktUXhOUXRkX3EweW1nbw?oc=5",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-51b5681181",
    "date": "2026-09-29",
-   "region": "us",
+   "region": "global",
    "topic": "oferta",
    "topics": [
     "oferta"
    ],
    "products": [
-    "vaca"
+    "cerdo"
    ],
-   "source": "politicstoday.org",
+   "source": "The Pig Site",
    "lang": "en",
    "headline": {
-    "en": "Global Meat Supply Faces Growing Pressure as Cattle Herds Shrink",
-    "es": "Global Meat Supply Faces Growing Pressure as Cattle Herds Shrink",
-    "fr": "Global Meat Supply Faces Growing Pressure as Cattle Herds Shrink",
-    "it": "Global Meat Supply Faces Growing Pressure as Cattle Herds Shrink"
+    "en": "South Africa's pork production set to grow 2% in 2027",
+    "es": "South Africa's pork production set to grow 2% in 2027",
+    "fr": "South Africa's pork production set to grow 2% in 2027",
+    "it": "South Africa's pork production set to grow 2% in 2027"
    },
    "description": "",
-   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOZ3doaElibkh3RDYzMkFrTk1FTjNUSHk3MHRXQTQwdXdZcDdDdnNGdkNyYUZtVmxfQzJEMmE1cUhLTDhXN2lndFlhOXlqZ2UwR2FOZXV5cWhhNkZKSERoUnVKaS1pc3djeXNVVl9USDU3V0pqaTJ5Xy1iY0gyckhnZGYwNW80TFFZclE1bEtjOUVmaXVrNVE?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQdmF3a3RhRmx4MmpZY1k0R0xVWmt0UXpjT0FsTzlod2d0cV9fdnBUSkRod3JOc0lhSllTc1pFdmJQYVg1bm81bThNb3laZXJVVDJfUHFiQ3c3clktelBJOXJtUnM1YllqMXpMZWxtYks0cFlOSHloQnJ5OFh5M2FKWnFtbGNWbFRWS1ZXQ1ZHUmNOZDhnVWc?oc=5",
    "relevance": 54,
    "auto": true,
    "impactChannel": "supply",
    "marketLinks": [
     {
-     "market": "vaca",
+     "market": "cerdo",
      "channel": "supply",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-1cf53fdf99",
+   "date": "2026-09-29",
+   "region": "global",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "cerdo"
+   ],
+   "source": "The Pig Site",
+   "lang": "en",
+   "headline": {
+    "en": "Hog futures mixed as December contract hits fresh lows - CME",
+    "es": "Hog futures mixed as December contract hits fresh lows - CME",
+    "fr": "Hog futures mixed as December contract hits fresh lows - CME",
+    "it": "Hog futures mixed as December contract hits fresh lows - CME"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPaTNpcEV6T3hMQmQxVzNEOGJySlMzODJyTC1Oc09mRnJFZlplQ281LUFQMk9jVG5aTk5JWlgxOUcxTzJyUk5ReU50V0lXWmM5eDRRWGpTaTVOYUM4aEhUV3p4Qm94YVRYcEZLMXJOTkZ0a1JxWEYybnRPY3BqTUtGVTVXMTQtNWlISHM4N180alpqWHBqVXE4?oc=5",
+   "relevance": 54,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-d4d52a4680",
+   "date": "2026-09-28",
+   "region": "us",
+   "topic": "precios",
+   "topics": [
+    "precios"
+   ],
+   "products": [
+    "vaca",
+    "cerdo"
+   ],
+   "source": "Yahoo Finance",
+   "lang": "en",
+   "headline": {
+    "en": "Cattle Futures Bulls Regain Some Footing While Lean Hogs See More Technical Selling",
+    "es": "Cattle Futures Bulls Regain Some Footing While Lean Hogs See More Technical Selling",
+    "fr": "Cattle Futures Bulls Regain Some Footing While Lean Hogs See More Technical Selling",
+    "it": "Cattle Futures Bulls Regain Some Footing While Lean Hogs See More Technical Selling"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOb2pkN2FwOVBFNkdjdzFYLU1rcDB4RjdyV1l2VktNUFVkc3lXY2hWbjJDczFLbzdDQlpkMWRJX3JfVk1oSFhrQjZIUE5tcmpaeGxRUC0tLVJWOTVxZ1ZjbXN3TURpLU05TnhzcHFfNzNObFhiN1BvY3Q2RVc2dEc4U0ZObzZ0QkQzdDNmY3IxaUZYTTJXd0dpTklkOHpoU0M0Y25nbnAzZGM?oc=5",
+   "relevance": 64,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-6fe40ce93f",
+   "date": "2026-09-28",
+   "region": "us",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "cerdo"
+   ],
+   "source": "Farmdoc Daily",
+   "lang": "en",
+   "headline": {
+    "en": "Managing the Herd: Balancing Anticipated Productivity with Softening Demand",
+    "es": "Managing the Herd: Balancing Anticipated Productivity with Softening Demand",
+    "fr": "Managing the Herd: Balancing Anticipated Productivity with Softening Demand",
+    "it": "Managing the Herd: Balancing Anticipated Productivity with Softening Demand"
+   },
+   "description": "The USDA’s September Hogs and Pigs report places the September 1st inventory of all hogs and pigs at 74.3 million head, up 1.60% from revised estimates for last quarter but…",
+   "url": "https://farmdocdaily.illinois.edu/2026/09/managing-the-herd-balancing-anticipated-productivity-with-softening-demand.html",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-89463633d3",
+   "date": "2026-09-28",
+   "region": "us",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "cerdo"
+   ],
+   "source": "Pork Business",
+   "lang": "en",
+   "headline": {
+    "en": "Weaner Pig Breakeven at $10.20, Down $0.24 From Last Week",
+    "es": "Weaner Pig Breakeven at $10.20, Down $0.24 From Last Week",
+    "fr": "Weaner Pig Breakeven at $10.20, Down $0.24 From Last Week",
+    "it": "Weaner Pig Breakeven at $10.20, Down $0.24 From Last Week"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSU9MWnBJeEJMZC1lM3o1REJyMERCTzJPLXd3N2NhZ284OFJZZjlVdEJKSnN6TktzVlZsMm5PTVRHLUVNc0Y2UVlSWGhja2ZWUVVtUzJyMmVsSXk4VFZoSDRPcHhSSjN2YTFUenNiZkJuSGZscTdpT2FLd1lzSzlSRlhxVEE1T2RWS2M0?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-8e716beb33",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "cerdo"
+   ],
+   "source": "reussir.fr",
+   "lang": "fr",
+   "headline": {
+    "en": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
+    "es": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
+    "fr": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
+    "it": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRXJlWG9yUFRNdDB2U05OZ3N1dFVkVzhvalMzNGZsWUJneFdkS2NWeTkwbENpOTJMd29RSllZZ19HTUdUdUhEbks2NXgtTW5PT0ptMXJLYlRTMWo3WTV2UlJnRmFBcmxVNjVnRU83ekF2cHB5QW0wblhzMjYwRVN4c0I1SzNaTzlHQWFDd251cGZvN1UxNWNXbklYbDFDNWM0a1RWT2d6aUV1R2c1VTk4TTVqZw?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-b729f37957",
+   "date": "2026-09-27",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "cerdo",
+    "ganado"
+   ],
+   "source": "La France Agricole",
+   "lang": "fr",
+   "headline": {
+    "en": "Comprendre le sanglier pour limiter ses dégâts",
+    "es": "Comprendre le sanglier pour limiter ses dégâts",
+    "fr": "Comprendre le sanglier pour limiter ses dégâts",
+    "it": "Comprendre le sanglier pour limiter ses dégâts"
+   },
+   "description": "En Bretagne, éleveurs de porcs et chasseurs ont collaboré à la création d’un guide visant à mieux comprendre le comportement du sanglier, afin de passer d’une logique de réaction à une stratégie de prévention de ses dégâts.",
+   "url": "https://www.lafranceagricole.fr/degats-de-gibiers/article/903889/comprendre-le-sanglier-pour-limiter-ses-degats",
+   "relevance": 58,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-7df0accb5e",
+   "date": "2026-09-25",
+   "region": "us",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "vaca",
+    "cerdo",
+    "cordero",
+    "ganado"
+   ],
+   "source": "Madison's Country Q106",
+   "lang": "en",
+   "headline": {
+    "en": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
+    "es": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
+    "fr": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
+    "it": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVGZKektQcEF0YlFHLWRmSVYzUjZrVjZWQnpZV2NhTVdVQjVHWThVc1B3SkxyTG96eU9lMzRjTWpKLVlORENmRnYwVXNtc3hkMGpiWThwbFpZNWNrOGVJNEs5RTJSRU4zMGV1eFVSSU8wM09ZTm1NM2lVS1hvb3c1eTRNazhzalZFREpVblgzd0Y?oc=5",
+   "relevance": 78,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "cordero",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "vaca",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-ff518c01ce",
+   "date": "2026-09-25",
+   "region": "ca",
+   "topic": "precios",
+   "topics": [
+    "precios",
+    "politica"
+   ],
+   "products": [
+    "vaca",
+    "cerdo"
+   ],
+   "source": "Farmtario",
+   "lang": "en",
+   "headline": {
+    "en": "Government cool to mandatory pork, beef price reporting",
+    "es": "Government cool to mandatory pork, beef price reporting",
+    "fr": "Government cool to mandatory pork, beef price reporting",
+    "it": "Government cool to mandatory pork, beef price reporting"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPNl81cWZWNjJ1bEZjZFE4UEpBdEpmWklPOURxWTF6M2VZdHZJUmNmdVFwWUdqOW4zcEFCcjF2aXdEVnNsRnZ0cmJuVlBNdHdTeUk3TWVCak1OdTZLVFA2c0ZtZ0d5YXB6eGNNTDV2UVczdDJGOHBZdk1neTAxMThLQ1ZNeXJGTFhFVXdn?oc=5",
+   "relevance": 70,
+   "auto": true,
+   "impactChannel": "policy",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "policy",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "vaca",
+     "channel": "policy",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-52f0634d0c",
+   "date": "2026-09-25",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "leche",
+    "cerdo"
+   ],
+   "source": "Journal Paysan Breton",
+   "lang": "fr",
+   "headline": {
+    "en": "L’embellie des dernières années en lait et en porc s’achève",
+    "es": "L’embellie des dernières années en lait et en porc s’achève",
+    "fr": "L’embellie des dernières années en lait et en porc s’achève",
+    "it": "L’embellie des dernières années en lait et en porc s’achève"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPaDM5Y3Yya2c3eE1SSmRJWEh3bEQ4TWM4VFY2a09qcFNqVTlSOUhXWlVFQlE2cnY0cVhFLXN4bFNTYU1tOFZxQjYyOVcxZzB3d2N1RmQ2VkZZcDNuM2ZtOFVJN21tb09GNm5lLXBmbzRoOWpDeWZJNlVoVWtYNXc2NDVVY3p0eGI3MUt2cDR2UGZoNE0tTkZSNlNUUQ?oc=5",
+   "relevance": 58,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    },
+    {
+     "market": "leche",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-f4ab7a9889",
+   "date": "2026-09-25",
+   "region": "us",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "cerdo"
+   ],
+   "source": "The Pig Site",
+   "lang": "en",
+   "headline": {
+    "en": "Hog herd shrinks more than expected, USDA data shows - CME",
+    "es": "Hog herd shrinks more than expected, USDA data shows - CME",
+    "fr": "Hog herd shrinks more than expected, USDA data shows - CME",
+    "it": "Hog herd shrinks more than expected, USDA data shows - CME"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNSGZJa1psX0p5WFZ1bnVXYnQ1MDVGeHZUdDhaNlUxZWNjeHpGZFhsR2FXSE5ubWhmVUhVd0JnNDJVRUZvdzNkVzZkUU1DOWN2NHJtTzJYcmdvV0cxUkZxbFNJZ0xnQ2lTZlBrb2FJX2pTSFRERlVhc3J1aWRzMTVDaTlZYzY0dW56anZhRk1peHV0d3l2QTNiZ2tpOXBZUQ?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
+     "relation": null,
+     "direction": "uncertain"
+    }
+   ]
+  },
+  {
+   "id": "auto-dfb38681c2",
+   "date": "2026-09-25",
+   "region": "us",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "cerdo"
+   ],
+   "source": "inkl",
+   "lang": "en",
+   "headline": {
+    "en": "Hogs Look to React to Hogs & Pigs Report",
+    "es": "Hogs Look to React to Hogs & Pigs Report",
+    "fr": "Hogs Look to React to Hogs & Pigs Report",
+    "it": "Hogs Look to React to Hogs & Pigs Report"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1iemJQYUoxOGlUSHVqaVloSy1laW44TlpVb2s1eDFxQjVFaHU4N081SG5oeDI5RG12QkZTaFpqcWxoc2xWZmVseExKdWppOE9aaldrZnZ6R190c0lRU3ZwYlZUNExzMkdqWVdkNTliUTZKUQ?oc=5",
+   "relevance": 48,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": [
+    {
+     "market": "cerdo",
+     "channel": "market_impact",
      "relation": null,
      "direction": "uncertain"
     }
@@ -14372,6 +14804,31 @@
    "marketLinks": []
   },
   {
+   "id": "auto-c24a811349",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "ganado",
+    "pac"
+   ],
+   "source": "salamanca24horas.com",
+   "lang": "es",
+   "headline": {
+    "en": "Los agricultores y ganaderos de Castilla y León comenzarán a recibir el pago de la PAC a partir de este miércoles",
+    "es": "Los agricultores y ganaderos de Castilla y León comenzarán a recibir el pago de la PAC a partir de este miércoles",
+    "fr": "Los agricultores y ganaderos de Castilla y León comenzarán a recibir el pago de la PAC a partir de este miércoles",
+    "it": "Los agricultores y ganaderos de Castilla y León comenzarán a recibir el pago de la PAC a partir de este miércoles"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNDZ6eUZOWG9RcWtISG1ZQzhZNGJtNzZQem4zZVo4ZUVoUWhrbHlfNFlULWpCdXlqY0xNM2ZBOVZQZzZaRkpHQlExZk9uUTAyanZsdkt2eEszc2pDSlBuYlN2RXQ1WVFMc3pGMnhqbk9ncDN1MHJlODJLOGdZeDdKWGRKSU02Z181akFmQjR1dnhQQ2RESUhad1plOU95OS02ZG5jTFFYY01xaTNzUWZVaERnSS1qbjBGSGJSM2RDamVCOVk?oc=5",
+   "relevance": 50,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
    "id": "auto-1207f1d7f6",
    "date": "2026-09-28",
    "region": "us",
@@ -14590,34 +15047,6 @@
      "direction": "uncertain"
     }
    ]
-  },
-  {
-   "id": "auto-80d1d4e048",
-   "date": "2026-09-25",
-   "region": "eu",
-   "topic": "politica",
-   "topics": [
-    "politica",
-    "ayudas"
-   ],
-   "products": [
-    "pac",
-    "ganado"
-   ],
-   "source": "Web-agri",
-   "lang": "fr",
-   "headline": {
-    "en": "Réforme de la Pac 2028 : les grandes orientations",
-    "es": "Réforme de la Pac 2028 : les grandes orientations",
-    "fr": "Réforme de la Pac 2028 : les grandes orientations",
-    "it": "Réforme de la Pac 2028 : les grandes orientations"
-   },
-   "description": "Alors que la future politique agricole commune (Pac) doit entrer en vigueur en 2028, les discussions s'accélèrent au niveau européen. Simplification des dispositifs, renforcement de la compétitivité, accompagnement de la transition environnementale et renouvellement des génératio",
-   "url": "https://www.web-agri.fr/politique-agricole-commune/article/903926/reforme-de-la-pac-2028-les-grandes-orientations",
-   "relevance": 62,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": []
   }
  ],
  "oliva": [
@@ -14864,40 +15293,6 @@
    "marketLinks": []
   },
   {
-   "id": "auto-5a84d99adb",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "politica",
-   "topics": [
-    "politica"
-   ],
-   "products": [
-    "leche",
-    "pac"
-   ],
-   "source": "Agriland",
-   "lang": "en",
-   "headline": {
-    "en": "ICMSA doubtful over Heydon comments on CAP deal",
-    "es": "ICMSA doubtful over Heydon comments on CAP deal",
-    "fr": "ICMSA doubtful over Heydon comments on CAP deal",
-    "it": "ICMSA doubtful over Heydon comments on CAP deal"
-   },
-   "description": "The Irish Creamery Milk Suppliers’ Association (ICMSA) has expressed scepticism over comments from Minister for Agriculture, Food and the Marine Martin Heydon on the Common Agricultural Policy (CAP) this week. Speaking yesterday (Monday, September 28) after a meeting of EU agricu",
-   "url": "https://www.agriland.ie/farming-news/icmsa-doubtful-over-heydon-comments-on-cap-deal/",
-   "relevance": 64,
-   "auto": true,
-   "impactChannel": "policy",
-   "marketLinks": [
-    {
-     "market": "leche",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
    "id": "auto-3fe7bcd3a9",
    "date": "2026-09-29",
    "region": "eu",
@@ -14950,7 +15345,7 @@
    "marketLinks": []
   },
   {
-   "id": "auto-0557b5520c",
+   "id": "auto-d518074afe",
    "date": "2026-09-29",
    "region": "eu",
    "topic": "politica",
@@ -14960,7 +15355,7 @@
    "products": [
     "pac"
    ],
-   "source": "Traders Union",
+   "source": "tradersunion.com",
    "lang": "en",
    "headline": {
     "en": "European Commission advances CAP reforms for greener EU farming",
@@ -15163,6 +15558,31 @@
    "marketLinks": []
   },
   {
+   "id": "auto-c24a811349",
+   "date": "2026-09-28",
+   "region": "eu",
+   "topic": "",
+   "topics": [],
+   "products": [
+    "ganado",
+    "pac"
+   ],
+   "source": "salamanca24horas.com",
+   "lang": "es",
+   "headline": {
+    "en": "Los agricultores y ganaderos de Castilla y León comenzarán a recibir el pago de la PAC a partir de este miércoles",
+    "es": "Los agricultores y ganaderos de Castilla y León comenzarán a recibir el pago de la PAC a partir de este miércoles",
+    "fr": "Los agricultores y ganaderos de Castilla y León comenzarán a recibir el pago de la PAC a partir de este miércoles",
+    "it": "Los agricultores y ganaderos de Castilla y León comenzarán a recibir el pago de la PAC a partir de este miércoles"
+   },
+   "description": "",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNDZ6eUZOWG9RcWtISG1ZQzhZNGJtNzZQem4zZVo4ZUVoUWhrbHlfNFlULWpCdXlqY0xNM2ZBOVZQZzZaRkpHQlExZk9uUTAyanZsdkt2eEszc2pDSlBuYlN2RXQ1WVFMc3pGMnhqbk9ncDN1MHJlODJLOGdZeDdKWGRKSU02Z181akFmQjR1dnhQQ2RESUhad1plOU95OS02ZG5jTFFYY01xaTNzUWZVaERnSS1qbjBGSGJSM2RDamVCOVk?oc=5",
+   "relevance": 50,
+   "auto": true,
+   "impactChannel": "market_impact",
+   "marketLinks": []
+  },
+  {
    "id": "auto-1db6424f40",
    "date": "2026-09-28",
    "region": "eu",
@@ -15189,7 +15609,7 @@
    "marketLinks": []
   },
   {
-   "id": "auto-61068617d3",
+   "id": "auto-a1d2e6ba50",
    "date": "2026-09-28",
    "region": "eu",
    "topic": "",
@@ -15197,7 +15617,7 @@
    "products": [
     "pac"
    ],
-   "source": "El Conciso",
+   "source": "elconciso.es",
    "lang": "es",
    "headline": {
     "en": "Planas pide cerrar el presupuesto de la UE antes de acordar el reglamento de la futura PAC",
@@ -15206,7 +15626,7 @@
     "it": "Planas pide cerrar el presupuesto de la UE antes de acordar el reglamento de la futura PAC"
    },
    "description": "",
-   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQVmlQcThjQzFiVXZTakZoSUdSQ1h0T2tlLUhaQ3B5SnUxVW82QWttdWdhR0RneFhVQzFwZEhlR2wtU1ZiOXo1eF9WTldrcDZ3NVJmNlhDZ0hIbkp1MzJoOGRuT1RfeUltQjZMRG5uZUo4OEVBTjlqcU5jRlFBVHo1YmN2VE5KZlJGWnpxcVhWRFJSX3BJX1U0RzVJSFFYTU5GMWNTWjhicHM3YmZB0gGsAUFVX3lxTFBWaVBxOGNDMWJVdlNqRmhJR1JDWHRPa2UtSFpDcHlKdTFVbzZBa211Z2FHRGd4WFVDMXBkSGVHbC1TVmI5ejV4X1ZOV2twNnc1UmY2WENnSEhuSnUzMmg4ZG5PVF95SW1CNkxEbm5lSjg4RUFOOWpxTmNGUUFUejViY3ZUTkpmUkZaenFxWFZEUlJfcElfVTRHNUlIUVhNTkYxY1NaOGJwczdiZkE?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPWjJpZjRwWWlBbnFmXzdkQ05nenBuZDhraXFsZ1V0bzMtUDhPTTZXYjZBUVZ1ellvcFZ4YXd6WVA5U1FkYzRBdGFxR0RxeEoxU1hTOU9xeWE5N25VaWw0b21pZGdvMnBweDJZUmExRGowUUhHMTE1V1dVSGpiTllyT25OS25WVG52UjBTV1lCRWpKMmxTbE40T2dSbXhIdjN2UTAwVTZKc9IBrAFBVV95cUxQVmlQcThjQzFiVXZTakZoSUdSQ1h0T2tlLUhaQ3B5SnUxVW82QWttdWdhR0RneFhVQzFwZEhlR2wtU1ZiOXo1eF9WTldrcDZ3NVJmNlhDZ0hIbkp1MzJoOGRuT1RfeUltQjZMRG5uZUo4OEVBTjlqcU5jRlFBVHo1YmN2VE5KZlJGWnpxcVhWRFJSX3BJX1U0RzVJSFFYTU5GMWNTWjhicHM3YmZB?oc=5",
    "relevance": 40,
    "auto": true,
    "impactChannel": "market_impact",
@@ -15992,459 +16412,6 @@
    ]
   }
  ],
- "cerdo": [
-  {
-   "id": "auto-f5f389b283",
-   "date": "2026-09-30",
-   "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "cerdo"
-   ],
-   "source": "The Pig Site",
-   "lang": "en",
-   "headline": {
-    "en": "Hog futures gain as pork belly prices jump $6.73 - CME",
-    "es": "Hog futures gain as pork belly prices jump $6.73 - CME",
-    "fr": "Hog futures gain as pork belly prices jump $6.73 - CME",
-    "it": "Hog futures gain as pork belly prices jump $6.73 - CME"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQVhlUU54VGpBd0F1bDRqbDkzZGR0R251cVBhWG5uWGZwTjVzRklaQlA0SEVZeDdMUTVZTTVSMUt1WWZQbU9xbUVVSUFTYUNHWUhfTnNsRDNoYW54OFVQcGNiRHZYWHRyWTBPT1VoaTJCMHRJVDg3LTllUTJSMy1zVTlUTnQ0ZFRKa3NEWDktUXhOUXRkX3EweW1nbw?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-51b5681181",
-   "date": "2026-09-29",
-   "region": "global",
-   "topic": "oferta",
-   "topics": [
-    "oferta"
-   ],
-   "products": [
-    "cerdo"
-   ],
-   "source": "The Pig Site",
-   "lang": "en",
-   "headline": {
-    "en": "South Africa's pork production set to grow 2% in 2027",
-    "es": "South Africa's pork production set to grow 2% in 2027",
-    "fr": "South Africa's pork production set to grow 2% in 2027",
-    "it": "South Africa's pork production set to grow 2% in 2027"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQdmF3a3RhRmx4MmpZY1k0R0xVWmt0UXpjT0FsTzlod2d0cV9fdnBUSkRod3JOc0lhSllTc1pFdmJQYVg1bm81bThNb3laZXJVVDJfUHFiQ3c3clktelBJOXJtUnM1YllqMXpMZWxtYks0cFlOSHloQnJ5OFh5M2FKWnFtbGNWbFRWS1ZXQ1ZHUmNOZDhnVWc?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "supply",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "supply",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-1cf53fdf99",
-   "date": "2026-09-29",
-   "region": "global",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "cerdo"
-   ],
-   "source": "The Pig Site",
-   "lang": "en",
-   "headline": {
-    "en": "Hog futures mixed as December contract hits fresh lows - CME",
-    "es": "Hog futures mixed as December contract hits fresh lows - CME",
-    "fr": "Hog futures mixed as December contract hits fresh lows - CME",
-    "it": "Hog futures mixed as December contract hits fresh lows - CME"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPaTNpcEV6T3hMQmQxVzNEOGJySlMzODJyTC1Oc09mRnJFZlplQ281LUFQMk9jVG5aTk5JWlgxOUcxTzJyUk5ReU50V0lXWmM5eDRRWGpTaTVOYUM4aEhUV3p4Qm94YVRYcEZLMXJOTkZ0a1JxWEYybnRPY3BqTUtGVTVXMTQtNWlISHM4N180alpqWHBqVXE4?oc=5",
-   "relevance": 54,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-d4d52a4680",
-   "date": "2026-09-28",
-   "region": "us",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "vaca",
-    "cerdo"
-   ],
-   "source": "Yahoo Finance",
-   "lang": "en",
-   "headline": {
-    "en": "Cattle Futures Bulls Regain Some Footing While Lean Hogs See More Technical Selling",
-    "es": "Cattle Futures Bulls Regain Some Footing While Lean Hogs See More Technical Selling",
-    "fr": "Cattle Futures Bulls Regain Some Footing While Lean Hogs See More Technical Selling",
-    "it": "Cattle Futures Bulls Regain Some Footing While Lean Hogs See More Technical Selling"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOb2pkN2FwOVBFNkdjdzFYLU1rcDB4RjdyV1l2VktNUFVkc3lXY2hWbjJDczFLbzdDQlpkMWRJX3JfVk1oSFhrQjZIUE5tcmpaeGxRUC0tLVJWOTVxZ1ZjbXN3TURpLU05TnhzcHFfNzNObFhiN1BvY3Q2RVc2dEc4U0ZObzZ0QkQzdDNmY3IxaUZYTTJXd0dpTklkOHpoU0M0Y25nbnAzZGM?oc=5",
-   "relevance": 64,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "vaca",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-6fe40ce93f",
-   "date": "2026-09-28",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo"
-   ],
-   "source": "Farmdoc Daily",
-   "lang": "en",
-   "headline": {
-    "en": "Managing the Herd: Balancing Anticipated Productivity with Softening Demand",
-    "es": "Managing the Herd: Balancing Anticipated Productivity with Softening Demand",
-    "fr": "Managing the Herd: Balancing Anticipated Productivity with Softening Demand",
-    "it": "Managing the Herd: Balancing Anticipated Productivity with Softening Demand"
-   },
-   "description": "The USDA’s September Hogs and Pigs report places the September 1st inventory of all hogs and pigs at 74.3 million head, up 1.60% from revised estimates for last quarter but…",
-   "url": "https://farmdocdaily.illinois.edu/2026/09/managing-the-herd-balancing-anticipated-productivity-with-softening-demand.html",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-89463633d3",
-   "date": "2026-09-28",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo"
-   ],
-   "source": "Pork Business",
-   "lang": "en",
-   "headline": {
-    "en": "Weaner Pig Breakeven at $10.20, Down $0.24 From Last Week",
-    "es": "Weaner Pig Breakeven at $10.20, Down $0.24 From Last Week",
-    "fr": "Weaner Pig Breakeven at $10.20, Down $0.24 From Last Week",
-    "it": "Weaner Pig Breakeven at $10.20, Down $0.24 From Last Week"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSU9MWnBJeEJMZC1lM3o1REJyMERCTzJPLXd3N2NhZ284OFJZZjlVdEJKSnN6TktzVlZsMm5PTVRHLUVNc0Y2UVlSWGhja2ZWUVVtUzJyMmVsSXk4VFZoSDRPcHhSSjN2YTFUenNiZkJuSGZscTdpT2FLd1lzSzlSRlhxVEE1T2RWS2M0?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-8e716beb33",
-   "date": "2026-09-28",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
-    "es": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
-    "fr": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran",
-    "it": "Le Marché du porc français veut renforcer la dynamique autour du marché au cadran"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRXJlWG9yUFRNdDB2U05OZ3N1dFVkVzhvalMzNGZsWUJneFdkS2NWeTkwbENpOTJMd29RSllZZ19HTUdUdUhEbks2NXgtTW5PT0ptMXJLYlRTMWo3WTV2UlJnRmFBcmxVNjVnRU83ekF2cHB5QW0wblhzMjYwRVN4c0I1SzNaTzlHQWFDd251cGZvN1UxNWNXbklYbDFDNWM0a1RWT2d6aUV1R2c1VTk4TTVqZw?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-b729f37957",
-   "date": "2026-09-27",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo",
-    "ganado"
-   ],
-   "source": "La France Agricole",
-   "lang": "fr",
-   "headline": {
-    "en": "Comprendre le sanglier pour limiter ses dégâts",
-    "es": "Comprendre le sanglier pour limiter ses dégâts",
-    "fr": "Comprendre le sanglier pour limiter ses dégâts",
-    "it": "Comprendre le sanglier pour limiter ses dégâts"
-   },
-   "description": "En Bretagne, éleveurs de porcs et chasseurs ont collaboré à la création d’un guide visant à mieux comprendre le comportement du sanglier, afin de passer d’une logique de réaction à une stratégie de prévention de ses dégâts.",
-   "url": "https://www.lafranceagricole.fr/degats-de-gibiers/article/903889/comprendre-le-sanglier-pour-limiter-ses-degats",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-7df0accb5e",
-   "date": "2026-09-25",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "vaca",
-    "cerdo",
-    "cordero",
-    "ganado"
-   ],
-   "source": "Madison's Country Q106",
-   "lang": "en",
-   "headline": {
-    "en": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
-    "es": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
-    "fr": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower",
-    "it": "Wisconsin Livestock Sales: Beef Steady, Hogs & Lambs Lower"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVGZKektQcEF0YlFHLWRmSVYzUjZrVjZWQnpZV2NhTVdVQjVHWThVc1B3SkxyTG96eU9lMzRjTWpKLVlORENmRnYwVXNtc3hkMGpiWThwbFpZNWNrOGVJNEs5RTJSRU4zMGV1eFVSSU8wM09ZTm1NM2lVS1hvb3c1eTRNazhzalZFREpVblgzd0Y?oc=5",
-   "relevance": 78,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "cordero",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "vaca",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-ff518c01ce",
-   "date": "2026-09-25",
-   "region": "ca",
-   "topic": "precios",
-   "topics": [
-    "precios",
-    "politica"
-   ],
-   "products": [
-    "vaca",
-    "cerdo"
-   ],
-   "source": "Farmtario",
-   "lang": "en",
-   "headline": {
-    "en": "Government cool to mandatory pork, beef price reporting",
-    "es": "Government cool to mandatory pork, beef price reporting",
-    "fr": "Government cool to mandatory pork, beef price reporting",
-    "it": "Government cool to mandatory pork, beef price reporting"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPNl81cWZWNjJ1bEZjZFE4UEpBdEpmWklPOURxWTF6M2VZdHZJUmNmdVFwWUdqOW4zcEFCcjF2aXdEVnNsRnZ0cmJuVlBNdHdTeUk3TWVCak1OdTZLVFA2c0ZtZ0d5YXB6eGNNTDV2UVczdDJGOHBZdk1neTAxMThLQ1ZNeXJGTFhFVXdn?oc=5",
-   "relevance": 70,
-   "auto": true,
-   "impactChannel": "policy",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "vaca",
-     "channel": "policy",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-52f0634d0c",
-   "date": "2026-09-25",
-   "region": "eu",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "leche",
-    "cerdo"
-   ],
-   "source": "Journal Paysan Breton",
-   "lang": "fr",
-   "headline": {
-    "en": "L’embellie des dernières années en lait et en porc s’achève",
-    "es": "L’embellie des dernières années en lait et en porc s’achève",
-    "fr": "L’embellie des dernières années en lait et en porc s’achève",
-    "it": "L’embellie des dernières années en lait et en porc s’achève"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPaDM5Y3Yya2c3eE1SSmRJWEh3bEQ4TWM4VFY2a09qcFNqVTlSOUhXWlVFQlE2cnY0cVhFLXN4bFNTYU1tOFZxQjYyOVcxZzB3d2N1RmQ2VkZZcDNuM2ZtOFVJN21tb09GNm5lLXBmbzRoOWpDeWZJNlVoVWtYNXc2NDVVY3p0eGI3MUt2cDR2UGZoNE0tTkZSNlNUUQ?oc=5",
-   "relevance": 58,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "leche",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-f4ab7a9889",
-   "date": "2026-09-25",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo"
-   ],
-   "source": "The Pig Site",
-   "lang": "en",
-   "headline": {
-    "en": "Hog herd shrinks more than expected, USDA data shows - CME",
-    "es": "Hog herd shrinks more than expected, USDA data shows - CME",
-    "fr": "Hog herd shrinks more than expected, USDA data shows - CME",
-    "it": "Hog herd shrinks more than expected, USDA data shows - CME"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNSGZJa1psX0p5WFZ1bnVXYnQ1MDVGeHZUdDhaNlUxZWNjeHpGZFhsR2FXSE5ubWhmVUhVd0JnNDJVRUZvdzNkVzZkUU1DOWN2NHJtTzJYcmdvV0cxUkZxbFNJZ0xnQ2lTZlBrb2FJX2pTSFRERlVhc3J1aWRzMTVDaTlZYzY0dW56anZhRk1peHV0d3l2QTNiZ2tpOXBZUQ?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-dfb38681c2",
-   "date": "2026-09-25",
-   "region": "us",
-   "topic": "",
-   "topics": [],
-   "products": [
-    "cerdo"
-   ],
-   "source": "inkl",
-   "lang": "en",
-   "headline": {
-    "en": "Hogs Look to React to Hogs & Pigs Report",
-    "es": "Hogs Look to React to Hogs & Pigs Report",
-    "fr": "Hogs Look to React to Hogs & Pigs Report",
-    "it": "Hogs Look to React to Hogs & Pigs Report"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1iemJQYUoxOGlUSHVqaVloSy1laW44TlpVb2s1eDFxQjVFaHU4N081SG5oeDI5RG12QkZTaFpqcWxoc2xWZmVseExKdWppOE9aaldrZnZ6R190c0lRU3ZwYlZUNExzMkdqWVdkNTliUTZKUQ?oc=5",
-   "relevance": 48,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "cerdo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  }
- ],
  "azucar": [
   {
    "id": "auto-8021589a06",
@@ -16478,7 +16445,7 @@
    ]
   },
   {
-   "id": "auto-2750a9cc21",
+   "id": "auto-64ed7b0bae",
    "date": "2026-09-29",
    "region": "global",
    "topic": "clima",
@@ -16490,7 +16457,7 @@
    "products": [
     "azucar"
    ],
-   "source": "Reuters",
+   "source": "reuters.com",
    "lang": "en",
    "headline": {
     "en": "Weather, not price, to drive Brazil mills on sugar production",
@@ -16500,7 +16467,7 @@
    },
    "description": "",
    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPZ01sTTFSWmx1VkdYd1phZXZ3TXExU19FaXFIRjM5eTNZc3ZYM29BTUFwWTRhbTNOajBxX2lfb1Q5LV9sZHFZdjFWZEJGZGxIc2QtYnVlZnJhaTYtSHNNdTZ4WW5ESE03U2VHNjQ2VTlyTkRKRFpBLU03NEsyMzYzbEh3VEVWc2V1OHFLT1JQdHE1NXo3aGJQQW43SEF6djdYd21rVjQ4TQ?oc=5",
-   "relevance": 74,
+   "relevance": 66,
    "auto": true,
    "impactChannel": "weather",
    "marketLinks": [
@@ -16519,47 +16486,7 @@
    ]
   },
   {
-   "id": "auto-fa6b833444",
-   "date": "2026-09-29",
-   "region": "eu",
-   "topic": "precios",
-   "topics": [
-    "precios"
-   ],
-   "products": [
-    "trigo",
-    "azucar"
-   ],
-   "source": "reussir.fr",
-   "lang": "fr",
-   "headline": {
-    "en": "Marché des céréales et du sucre du 16 au 23 septembre 2026 – Les prix du blé tendre sont baissiers sur Euronext, dans un contexte de fortes disponibilités mondiales",
-    "es": "Marché des céréales et du sucre du 16 au 23 septembre 2026 – Les prix du blé tendre sont baissiers sur Euronext, dans un contexte de fortes disponibilités mondiales",
-    "fr": "Marché des céréales et du sucre du 16 au 23 septembre 2026 – Les prix du blé tendre sont baissiers sur Euronext, dans un contexte de fortes disponibilités mondiales",
-    "it": "Marché des céréales et du sucre du 16 au 23 septembre 2026 – Les prix du blé tendre sont baissiers sur Euronext, dans un contexte de fortes disponibilités mondiales"
-   },
-   "description": "",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWW5DdGlZc1lQTk1mU1R0X3NFZ3FiTUswalB6QWFQN1d0MnROamxvNVJ4UFc2YUltVlIwS0FsNFlPVWd3MnVDcVlxUjlXSGw4Z3FseDhURXUzRzZBT0pDVC1yQ2NhNWp4NkNlcHRrVkNwX0w4cXVXRnY3NTRyenRpbnZ4aGJoQXhveW55NHU2VjhJeVZfS0dfZUZaVVZIdmRxN0dHdy1xNjQ5eGEzMmZ0U0gyUWhVS0RWdkE?oc=5",
-   "relevance": 64,
-   "auto": true,
-   "impactChannel": "market_impact",
-   "marketLinks": [
-    {
-     "market": "azucar",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    },
-    {
-     "market": "trigo",
-     "channel": "market_impact",
-     "relation": null,
-     "direction": "uncertain"
-    }
-   ]
-  },
-  {
-   "id": "auto-ce21c28301",
+   "id": "auto-00a2092a23",
    "date": "2026-09-29",
    "region": "global",
    "topic": "clima",
@@ -16570,7 +16497,7 @@
    "products": [
     "azucar"
    ],
-   "source": "Traders Union",
+   "source": "tradersunion.com",
    "lang": "en",
    "headline": {
     "en": "Brazil mills keep ethanol-heavy output mix as weather limits sugar gains",
@@ -16723,7 +16650,7 @@
    ]
   },
   {
-   "id": "auto-3ad26ede3e",
+   "id": "auto-49144691f1",
    "date": "2026-09-28",
    "region": "global",
    "topic": "comercio",
@@ -16734,7 +16661,7 @@
    "products": [
     "azucar"
    ],
-   "source": "cnbctv18.com",
+   "source": "CNBC TV18",
    "lang": "en",
    "headline": {
     "en": "India may have no sugar left to export next year as crop worries grow: ISMA",
