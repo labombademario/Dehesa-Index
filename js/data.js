@@ -99,6 +99,7 @@
     cmeLiveCattle: 'https://www.cmegroup.com/markets/agriculture/livestock/live-cattle.html',
     euronext: 'https://www.euronext.com/en/products/commodities',
     euronextColza: 'https://live.euronext.com/en/product/commodities-futures/ECO-DPAR',
+    defraMilk: 'https://www.gov.uk/government/statistics/uk-milk-prices-and-composition-of-milk',
     cmeSoybeanMeal: 'https://www.cmegroup.com/markets/agriculture/oilseeds/soybean-meal',
     dtnFertilizer: 'https://www.dtnpf.com/agriculture/web/ag/crops/article/2026/09/23/fertilizer-prices-rise-six-eight',
     worldBank: 'https://www.worldbank.org/en/research/commodity-markets',
@@ -140,7 +141,7 @@
   var CATS = {
     es: {
       cereales: { label: 'Cereales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
-      lacteos: { label: 'Lácteos', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }] },
+      lacteos: { label: 'Lácteos', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }] },
       ganado: { label: 'Ganado', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Porcino', sources: [{ name: 'USDA NASS (cerdo)', url: SRC_URL.nass }, { name: 'Comisión Europea (porcino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
       ovino: { label: 'Ovino', sources: [{ name: 'USDA AMS (cordero)', url: SRC_URL.usdaLamb }, { name: 'Comisión Europea (ovino)', url: SRC_URL.ecSheep }] },
@@ -156,7 +157,7 @@
     },
     en: {
       cereales: { label: 'Grains', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
-      lacteos: { label: 'Dairy', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }] },
+      lacteos: { label: 'Dairy', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }] },
       ganado: { label: 'Livestock', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'European Commission', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Pork', sources: [{ name: 'USDA NASS (pork)', url: SRC_URL.nass }, { name: 'European Commission (pigmeat)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
       ovino: { label: 'Sheep & Lamb', sources: [{ name: 'USDA AMS (lamb)', url: SRC_URL.usdaLamb }, { name: 'European Commission (sheep)', url: SRC_URL.ecSheep }] },
@@ -172,7 +173,7 @@
     },
     fr: {
       cereales: { label: 'Céréales', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
-      lacteos: { label: 'Produits laitiers', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }] },
+      lacteos: { label: 'Produits laitiers', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }] },
       ganado: { label: 'Bétail', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commission européenne', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Porc', sources: [{ name: 'USDA NASS (porc)', url: SRC_URL.nass }, { name: 'Commission européenne (porcin)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
       ovino: { label: 'Ovins', sources: [{ name: 'USDA AMS (agneau)', url: SRC_URL.usdaLamb }, { name: 'Commission européenne (ovins)', url: SRC_URL.ecSheep }] },
@@ -188,7 +189,7 @@
     },
     it: {
       cereales: { label: 'Cereali', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Comisión Europea (Agri-food)', url: SRC_URL.ecPrices }] },
-      lacteos: { label: 'Lattiero-caseario', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }] },
+      lacteos: { label: 'Lattiero-caseario', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }, { name: 'Defra (UK)', url: SRC_URL.defraMilk }] },
       ganado: { label: 'Bestiame', sources: [{ name: 'USDA NASS', url: SRC_URL.nass }, { name: 'Commissione europea', url: SRC_URL.ecPrices }] },
       porcino: { label: 'Suini', sources: [{ name: 'USDA NASS (suino)', url: SRC_URL.nass }, { name: 'Commissione europea (suino)', url: SRC_URL.ecPigmeat }, { name: 'Mercolleida', url: SRC_URL.mercolleida }] },
       ovino: { label: 'Ovini', sources: [{ name: 'USDA AMS (agnello)', url: SRC_URL.usdaLamb }, { name: 'Commissione europea (ovini)', url: SRC_URL.ecSheep }] },
@@ -529,7 +530,7 @@
           eu: { price: 45.53, changePct: 1.0655, history: [51.36, 51.94, 52.62, 52.62, 52.52, 52.23, 51.84, 47.48, 46.31, 45.53, 45.05, 45.53], currency: 'EUR', kgPerUnit: 100 },
           countryFactors: { es: 1, de: 0.904, fr: 0.979, it: 1.016 },
           uk: { price: 35.82, changePct: 4.02, history: [34.20, 34.50, 34.80, 35.10, 35.35, 35.60, 35.82], currency: 'GBP', kgPerUnit: 100 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, leche total)' }, eu: { type: 'referencia', market: 'Comisión Europea (leche cruda de vaca, España)' }, uk: { type: 'referencia', market: 'AHDB (precio medio en granja del Reino Unido)' } } }
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, leche total)' }, eu: { type: 'referencia', market: 'Comisión Europea (leche cruda de vaca, España)' }, uk: { type: 'referencia', market: 'Defra (precio medio en granja del Reino Unido)' } } }
       ]
     },
     {
@@ -893,6 +894,7 @@
     world_bank: { name: 'Banco Mundial', url: SRC_URL.worldBank, authority: 'official' },
     eurostat: { name: 'Eurostat', url: 'https://ec.europa.eu/eurostat/web/agriculture/information-data', authority: 'official' },
     eia: { name: 'EIA', url: SRC_URL.eia, authority: 'official' },
+    defra: { name: 'Defra (Reino Unido)', url: SRC_URL.defraMilk, authority: 'official' },
     eu_agrifood: { name: 'Comisión Europea — Agri-food Data Portal', url: 'https://agriculture.ec.europa.eu/data-and-analysis/markets/price-data_en', authority: 'official' },
     eu_oil_bulletin: { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin, authority: 'official' }
   };
@@ -929,6 +931,12 @@
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED for all milk sold to plants (not Class III); USD/cwt. Published in the August 2026 Agricultural Prices release.',
       comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:34:09.723Z'
+    },
+    'lacteos-leche-uk': {
+      sourceId: 'defra', frequency: 'monthly',
+      methodology: 'Defra (Open Government Licence v3.0): precio medio en granja de la leche en el Reino Unido, en GBP/100 kg. Pendiente de la primera ejecución automática.',
+      comparability: 'directional', observationDate: null, publicationDate: null,
+      status: 'pending', verifiedAt: null
     },
     'lacteos-leche-eu': {
       sourceId: 'european_commission', frequency: 'monthly',
