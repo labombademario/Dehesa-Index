@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:17:04.938Z",
+  "generatedAt": "2026-09-30T01:28:01.547Z",
   "policy": {
     "neverConvertQuoteBasis": true,
     "neverTreatIndexAsPrice": true,
@@ -15,6 +15,7 @@
     "100kg",
     "bushel",
     "cwt",
+    "docena",
     "gal",
     "index_2020_100",
     "kg",
@@ -13643,7 +13644,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.618Z",
+      "verifiedAt": "2026-09-30T01:28:00.527Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -13799,6 +13800,27 @@
       }
     },
     {
+      "id": "di_huevos_us:2026-02-01",
+      "product": "huevos",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.98,
+      "currency": "USD",
+      "unit": "docena",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-02-01",
       "product": "leche",
       "region": "eu",
@@ -13832,7 +13854,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:50.229Z",
+      "verifiedAt": "2026-09-30T01:28:00.867Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -13874,7 +13896,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.316Z",
+      "verifiedAt": "2026-09-30T01:28:00.190Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -13979,7 +14001,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:47.986Z",
+      "verifiedAt": "2026-09-30T01:27:59.852Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -14063,7 +14085,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.618Z",
+      "verifiedAt": "2026-09-30T01:28:00.527Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -14303,6 +14325,27 @@
       }
     },
     {
+      "id": "di_huevos_us:2026-03-01",
+      "product": "huevos",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 1.26,
+      "currency": "USD",
+      "unit": "docena",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-03-01",
       "product": "leche",
       "region": "eu",
@@ -14336,7 +14379,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:50.229Z",
+      "verifiedAt": "2026-09-30T01:28:00.867Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -14378,7 +14421,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.316Z",
+      "verifiedAt": "2026-09-30T01:28:00.190Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -14483,7 +14526,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:47.986Z",
+      "verifiedAt": "2026-09-30T01:27:59.852Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -14567,7 +14610,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.618Z",
+      "verifiedAt": "2026-09-30T01:28:00.527Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -14723,6 +14766,27 @@
       }
     },
     {
+      "id": "di_huevos_us:2026-04-01",
+      "product": "huevos",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.56,
+      "currency": "USD",
+      "unit": "docena",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-04-01",
       "product": "leche",
       "region": "eu",
@@ -14756,7 +14820,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:50.229Z",
+      "verifiedAt": "2026-09-30T01:28:00.867Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -14798,7 +14862,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.316Z",
+      "verifiedAt": "2026-09-30T01:28:00.190Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -14903,7 +14967,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:47.986Z",
+      "verifiedAt": "2026-09-30T01:27:59.852Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -14987,7 +15051,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.618Z",
+      "verifiedAt": "2026-09-30T01:28:00.527Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -15143,6 +15207,27 @@
       }
     },
     {
+      "id": "di_huevos_us:2026-05-01",
+      "product": "huevos",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.56,
+      "currency": "USD",
+      "unit": "docena",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-05-01",
       "product": "leche",
       "region": "eu",
@@ -15176,7 +15261,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:50.229Z",
+      "verifiedAt": "2026-09-30T01:28:00.867Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -15218,7 +15303,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.316Z",
+      "verifiedAt": "2026-09-30T01:28:00.190Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -15323,7 +15408,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:47.986Z",
+      "verifiedAt": "2026-09-30T01:27:59.852Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -15407,7 +15492,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.618Z",
+      "verifiedAt": "2026-09-30T01:28:00.527Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -15647,6 +15732,27 @@
       }
     },
     {
+      "id": "di_huevos_us:2026-06-01",
+      "product": "huevos",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.53,
+      "currency": "USD",
+      "unit": "docena",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-06-01",
       "product": "leche",
       "region": "eu",
@@ -15680,7 +15786,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:50.229Z",
+      "verifiedAt": "2026-09-30T01:28:00.867Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -15722,7 +15828,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.316Z",
+      "verifiedAt": "2026-09-30T01:28:00.190Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -15827,7 +15933,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:47.986Z",
+      "verifiedAt": "2026-09-30T01:27:59.852Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -15911,7 +16017,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.618Z",
+      "verifiedAt": "2026-09-30T01:28:00.527Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -16046,6 +16152,27 @@
       }
     },
     {
+      "id": "di_huevos_us:2026-07-01",
+      "product": "huevos",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.78,
+      "currency": "USD",
+      "unit": "docena",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-07-01",
       "product": "leche",
       "region": "eu",
@@ -16079,7 +16206,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:50.229Z",
+      "verifiedAt": "2026-09-30T01:28:00.867Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -16121,7 +16248,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.316Z",
+      "verifiedAt": "2026-09-30T01:28:00.190Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -16226,7 +16353,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:47.986Z",
+      "verifiedAt": "2026-09-30T01:27:59.852Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -16310,7 +16437,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.618Z",
+      "verifiedAt": "2026-09-30T01:28:00.527Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -16445,6 +16572,27 @@
       }
     },
     {
+      "id": "di_huevos_us:2026-08-01",
+      "product": "huevos",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.77,
+      "currency": "USD",
+      "unit": "docena",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "comparability": "directional",
+      "normalization": {
+        "kgPerUnit": null,
+        "baseUnit": "not_available",
+        "method": "source-specific"
+      }
+    },
+    {
       "id": "di_leche_eu:2026-08-01",
       "product": "leche",
       "region": "eu",
@@ -16478,7 +16626,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:50.229Z",
+      "verifiedAt": "2026-09-30T01:28:00.867Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 45.3592,
@@ -16520,7 +16668,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:48.316Z",
+      "verifiedAt": "2026-09-30T01:28:00.190Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,
@@ -16625,7 +16773,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:44:47.986Z",
+      "verifiedAt": "2026-09-30T01:27:59.852Z",
       "comparability": "directional",
       "normalization": {
         "kgPerUnit": 27.2155,

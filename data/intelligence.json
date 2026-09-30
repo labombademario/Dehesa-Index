@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T01:17:04.898Z",
+  "generatedAt": "2026-09-30T01:28:01.489Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -419,6 +419,25 @@
       "periodChangePct": 8.47457627118644,
       "yoyPct": null,
       "volatility": 0.0441424999883346,
+      "points": 7,
+      "coverageStart": "2026-02-01",
+      "coverageEnd": "2026-08-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_huevos_us",
+      "product": "huevos",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "frequency": "monthly",
+      "unit": "docena",
+      "currency": "USD",
+      "latest": 0.77,
+      "observationDate": "2026-08-01",
+      "periodChangePct": -1.2820512820512886,
+      "yoyPct": null,
+      "volatility": 0.3195699050469861,
       "points": 7,
       "coverageStart": "2026-02-01",
       "coverageEnd": "2026-08-01",

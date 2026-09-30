@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:17:05.024Z",
+  "generatedAt": "2026-09-30T01:28:01.659Z",
   "status": "informational",
   "rules": [
     {
@@ -24,6 +24,14 @@
       "product": "dap",
       "region": "eu",
       "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "huevos",
+      "region": "us",
+      "sourceId": "usda_nass",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
