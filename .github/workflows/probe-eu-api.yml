@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       url:
-        description: 'URL completa a consultar (GET)'
+        description: 'URLs completas a consultar (GET), separadas por espacios'
         required: true
 
 permissions:
@@ -31,12 +31,16 @@ jobs:
           node-version: '20'
 
       - name: Consultar la URL indicada
-        run: node scripts/probe-eu-api.mjs "${{ github.event.inputs.url }}"
+        env:
+          URLS: ${{ github.event.inputs.url }}
+        run: |
+          set -f
+          node scripts/probe-eu-api.mjs $URLS
 
       - name: Commit y push del resultado
         run: |
           git config user.name "dehesa-index-bot"
           git config user.email "actions@users.noreply.github.com"
           git add scripts/.probe-output.txt
-          git commit -m "Probe: ${{ github.event.inputs.url }}" || echo "Sin cambios"
+          git commit -m "Probe: resultado" || echo "Sin cambios"
           git push

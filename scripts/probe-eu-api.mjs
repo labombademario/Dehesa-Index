@@ -22,46 +22,42 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = path.join(__dirname, '.probe-output.txt');
 
-const url = process.argv[2];
-if (!url) {
-  console.error('Uso: node scripts/probe-eu-api.mjs "<url>"');
+const urls = process.argv.slice(2).join(' ').split(/\s+/).filter(Boolean);
+if (!urls.length) {
+  console.error('Uso: node scripts/probe-eu-api.mjs "<url> [<url> ...]"');
   process.exit(1);
 }
 
-async function main() {
-  var lines = [];
-  lines.push('URL: ' + url);
-  lines.push('Fecha: ' + new Date().toISOString());
+async function probe(url) {
+  var lines = ['=== ' + url];
   try {
     var res = await fetch(url, { headers: { Accept: 'application/json' } });
-    lines.push('STATUS: ' + res.status + ' ' + res.statusText);
+    lines.push('STATUS: ' + res.status);
     var text = await res.text();
-    lines.push('LONGITUD TOTAL: ' + text.length + ' caracteres');
-    // Si el cuerpo es un array JSON de objetos, además de recortarlo
-    // resumimos qué valores únicos toma cada campo -- mucho más útil que
-    // solo ver los primeros 6000 caracteres cuando hay cientos de filas.
     try {
       var json = JSON.parse(text);
       if (Array.isArray(json) && json.length > 0 && typeof json[0] === 'object') {
         lines.push('FILAS: ' + json.length);
-        var fields = Object.keys(json[0]);
-        lines.push('CAMPOS: ' + fields.join(', '));
-        fields.forEach(function (f) {
+        Object.keys(json[0]).forEach(function (f) {
           var values = Array.from(new Set(json.map(function (r) { return r[f]; })));
-          if (values.length <= 40) {
-            lines.push('  ' + f + ' -> ' + JSON.stringify(values));
-          } else {
-            lines.push('  ' + f + ' -> (' + values.length + ' valores distintos, no se listan)');
-          }
+          lines.push('  ' + f + ' -> ' + (values.length <= 25 ? JSON.stringify(values) : '(' + values.length + ' valores; ej. ' + JSON.stringify(values.slice(0, 3)) + ')'));
         });
+        lines.push('EJEMPLO: ' + JSON.stringify(json[0]));
+      } else {
+        lines.push('BODY: ' + text.slice(0, 500));
       }
-    } catch (e) { /* no era JSON o no era un array -- seguimos con el recorte de texto */ }
-    lines.push('BODY (primeros 6000 caracteres):');
-    lines.push(text.slice(0, 6000));
-  } catch (err) {
-    lines.push('ERROR: ' + err.message);
+    } catch (e) { lines.push('BODY: ' + text.slice(0, 300)); }
+  } catch (err) { lines.push('ERROR: ' + err.message); }
+  return lines.join('\n');
+}
+
+async function main() {
+  var out = [];
+  for (var i = 0; i < urls.length; i++) {
+    out.push(await probe(urls[i]));
+    if (i < urls.length - 1) await new Promise(function (r) { setTimeout(r, 2500); });
   }
-  await writeFile(OUT_PATH, lines.join('\n') + '\n', 'utf8');
+  await writeFile(OUT_PATH, out.join('\n\n') + '\n', 'utf8');
   console.log('Resultado escrito en ' + OUT_PATH);
 }
 
