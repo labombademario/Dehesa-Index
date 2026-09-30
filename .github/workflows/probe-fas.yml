@@ -19,22 +19,26 @@ jobs:
           t() { echo "=== $1"; curl -sL -m 90 -H "X-Api-Key: $K" -o /tmp/o -w "%{http_code} %{content_type} %{size_download}\n" "$1"; head -c "${2:-700}" /tmp/o | tr '\n' ' '; echo; }
           {
           B=https://api.fas.usda.gov/api
-          t "$B/esr/commodities" 1500
-          t "$B/esr/countries" 600
-          t "$B/esr/unitsOfMeasure" 600
-          t "$B/esr/datareleasedates" 600
-          t "$B/esr/exports/commodityCode/107/allCountries/marketYear/2026" 1500
-          t "$B/esr/exports/commodityCode/401/allCountries/marketYear/2026" 600
-          t "$B/gats/countries" 600
-          t "$B/gats/commodities" 600
-          t "$B/gats/HS6Commodities" 600
-          t "$B/gats/regions" 400
-          t "$B/gats/unitsOfMeasure" 400
-          t "$B/gats/dataReleaseDates" 600
-          t "$B/gats/censusExports/partnerCode/CH/year/2026/month/6/HS10Code/1001990000" 800
-          t "$B/gats/censusExports/partnerCode/-1/year/2026/month/6" 800
-          t "$B/gats/UNTradeExports/reporterCode/ES/partnerCode/-1/year/2024/month/12" 800
-          t "$B/gats/UNTradeExports/reporterCode/US/partnerCode/CH/year/2025/month/12/HS6Code/100199" 800
+          curl -s -H "X-Api-Key: $K" $B/esr/commodities -o .probe/esr_commodities.json
+          curl -s -H "X-Api-Key: $K" $B/esr/countries -o .probe/esr_countries.json
+          curl -s -H "X-Api-Key: $K" $B/gats/countries -o .probe/gats_countries.json
+          curl -s -H "X-Api-Key: $K" $B/gats/regions -o .probe/gats_regions.json
+          curl -s -H "X-Api-Key: $K" $B/gats/HS6Commodities -o .probe/gats_hs6.json
+          t "https://api.fas.usda.gov/swagger/docs/v1" 300
+          t "https://api.fas.usda.gov/swagger/ui/index" 300
+          t "$B/gats/censusExports/partnerCode/-1/year/2025/month/6" 500
+          t "$B/gats/censusExports/partnerCode/5700/year/2025/month/6" 500
+          t "$B/gats/censusExports/partnerCode/-1/year/2025/month/6/HS10Code/1001990000" 500
+          t "$B/gats/censusExports/reporterCode/US/partnerCode/-1/year/2025/month/6" 500
+          t "$B/gats/censusExports/partnerCode/5700/year/2025/month/6/HS10Code/1005902030" 500
+          t "$B/gats/censusImports/partnerCode/5700/year/2025/month/6" 500
+          t "$B/gats/UNTradeExports/reporterCode/5700/partnerCode/0000/year/2024/month/12" 500
+          t "$B/gats/UNTradeExports/reporterCode/US/partnerCode/-1/year/2024/month/12/HS6Code/100199" 500
+          t "$B/gats/UNTradeExports/reporterCode/-1/partnerCode/-1/year/2024/month/12/HS6Code/100199" 500
+          t "$B/gats/customsDistricts" 300
+          t "$B/gats/censusReleaseDates" 300
+          t "$B/gats/UNReleaseDates" 300
+          t "$B/gats/dataReleaseDates" 300
           } > .probe/fas.txt 2>&1; fi
       - name: Commit
         run: |
