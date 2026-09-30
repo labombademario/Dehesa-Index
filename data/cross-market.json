@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T17:31:09.760Z",
+  "generatedAt": "2026-09-30T17:33:06.803Z",
   "methodology": {
     "method": "Pearson correlation of period returns on common dates after tested lag offsets.",
     "minimumPeriods": 6,
@@ -9,6 +9,60 @@
     "causality": "No causal inference."
   },
   "relationships": [
+    {
+      "id": "fertiliser_to_cereal__urea|eu|world_bank|monthly__maiz|us|usda_nass|monthly",
+      "label": "Fertilizante → cereal",
+      "seriesA": {
+        "product": "urea",
+        "region": "eu",
+        "sourceId": "world_bank"
+      },
+      "seriesB": {
+        "product": "maiz",
+        "region": "us",
+        "sourceId": "usda_nass"
+      },
+      "frequency": "monthly",
+      "lagPeriods": 2,
+      "commonPeriods": 237,
+      "window": "24+ periods",
+      "correlationReturns": 0.1229,
+      "direction": "positive",
+      "strength": "weak",
+      "confidence": "low",
+      "confidenceScore": 12,
+      "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
+      "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
+      "coverageStart": "2006-12-01",
+      "coverageEnd": "2026-08-01"
+    },
+    {
+      "id": "fertiliser_to_cereal__urea|eu|world_bank|monthly__trigo|us|usda_nass|monthly",
+      "label": "Fertilizante → cereal",
+      "seriesA": {
+        "product": "urea",
+        "region": "eu",
+        "sourceId": "world_bank"
+      },
+      "seriesB": {
+        "product": "trigo",
+        "region": "us",
+        "sourceId": "usda_nass"
+      },
+      "frequency": "monthly",
+      "lagPeriods": 3,
+      "commonPeriods": 236,
+      "window": "24+ periods",
+      "correlationReturns": 0.1246,
+      "direction": "positive",
+      "strength": "weak",
+      "confidence": "low",
+      "confidenceScore": 12,
+      "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
+      "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
+      "coverageStart": "2007-01-01",
+      "coverageEnd": "2026-08-01"
+    },
     {
       "id": "fertiliser_to_cereal__urea|eu|world_bank|monthly__maiz|ca|statcan|monthly",
       "label": "Fertilizante → cereal",
@@ -62,60 +116,6 @@
       "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
       "coverageStart": "2012-09-01",
       "coverageEnd": "2026-07-01"
-    },
-    {
-      "id": "fertiliser_to_cereal__urea|eu|world_bank|monthly__maiz|us|usda_nass|monthly",
-      "label": "Fertilizante → cereal",
-      "seriesA": {
-        "product": "urea",
-        "region": "eu",
-        "sourceId": "world_bank"
-      },
-      "seriesB": {
-        "product": "maiz",
-        "region": "us",
-        "sourceId": "usda_nass"
-      },
-      "frequency": "monthly",
-      "lagPeriods": 3,
-      "commonPeriods": 119,
-      "window": "24+ periods",
-      "correlationReturns": 0.0893,
-      "direction": "positive",
-      "strength": "weak",
-      "confidence": "low",
-      "confidenceScore": 9,
-      "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
-      "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
-      "coverageStart": "2016-10-01",
-      "coverageEnd": "2026-08-01"
-    },
-    {
-      "id": "fertiliser_to_cereal__urea|eu|world_bank|monthly__trigo|us|usda_nass|monthly",
-      "label": "Fertilizante → cereal",
-      "seriesA": {
-        "product": "urea",
-        "region": "eu",
-        "sourceId": "world_bank"
-      },
-      "seriesB": {
-        "product": "trigo",
-        "region": "us",
-        "sourceId": "usda_nass"
-      },
-      "frequency": "monthly",
-      "lagPeriods": 0,
-      "commonPeriods": 119,
-      "window": "24+ periods",
-      "correlationReturns": 0.1431,
-      "direction": "positive",
-      "strength": "weak",
-      "confidence": "low",
-      "confidenceScore": 14,
-      "hypothesis": "La variación del coste del fertilizante y la variación del cereal pueden mostrar co-movimiento con rezagos, pero la relación depende de mercado, estructura de costes y otras variables.",
-      "interpretation": "Asociación estadística descriptiva en cambios; no es una predicción ni demuestra causalidad.",
-      "coverageStart": "2016-10-01",
-      "coverageEnd": "2026-08-01"
     },
     {
       "id": "energy_to_cereal__eurostat_energy_input_index|eu|eurostat|quarterly__eurostat_cereals_output_index|eu|eurostat|quarterly",

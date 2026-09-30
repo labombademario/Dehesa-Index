@@ -678,7 +678,7 @@
           us: { price: 318, changePct: 0.3, history: [310, 312, 315, 313, 316, 317, 318], currency: 'USD', kgPerUnit: 907.185 },
           eu: { price: 312, changePct: 0.3, history: [305, 307, 309, 308, 310, 311, 312], currency: 'EUR', kgPerUnit: 1000 },
           footnoteKey: 'pienso',
-          quoteTypes: { us: { type: 'indice', market: 'USDA' }, eu: { type: 'indice', market: 'Comisión Europea (índices regionales)' } } },
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, broilers, peso vivo)' }, eu: { type: 'indice', market: 'Comisión Europea (índices regionales)' } } },
         { nameKey: 'harina_soja', imperialUnitKey: 'ton_corta', imperialKgPerUnit: 907.185, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 384.14, changePct: 1.33, history: [318.41, 323.9, 334.5, 318.9, 317.9, 313.7, 324, 344, 351.96, 351.8, 379.08, 384.14], currency: 'USD', kgPerUnit: 907.185 },
           eu: { price: 409.67, changePct: 2.0501, history: [359.51, 364.81, 372.43, 384.13, 382.56, 374.51, 358.63, 375.86, 394.93, 399.88, 401.44, 409.67], currency: 'EUR', kgPerUnit: 1000 },
@@ -910,7 +910,7 @@
     'cereales-trigo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:44.822Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:32:56.483Z'
     },
     'cereales-trigo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -921,32 +921,32 @@
     'cereales-maiz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:45.597Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:32:57.293Z'
     },
     'cereales-arroz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED observation; USD/cwt. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:46.349Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:32:58.121Z'
     },
     'cereales-cebada-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:47.113Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:32:59.018Z'
     },
     'cereales-avena-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:47.757Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:32:59.771Z'
     },
     'cereales-colza-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED for canola; USD/cwt. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:49.640Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:33:00.689Z'
     },
     'cereales-sorgo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED for grain sorghum; USD/cwt. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:51.684Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:33:01.562Z'
     },
     'cereales-maiz-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -957,7 +957,7 @@
     'lacteos-leche-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED for all milk sold to plants (not Class III); USD/cwt. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:52.510Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:33:02.461Z'
     },
     'lacteos-leche-uk': {
       sourceId: 'defra', frequency: 'monthly',
@@ -1135,7 +1135,7 @@
     'porcino-cerdo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED for all hogs, live weight; USD/cwt. Not comparable with the EU carcass price (class S). Published in the August 2026 Agricultural Prices release.',
-      comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:54.263Z'
+      comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:33:04.023Z'
     },
     'porcino-cerdo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -1146,7 +1146,7 @@
     'ganado-vaca-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED for steers and heifers of 500 lb or more, live weight; USD/cwt. Not comparable with the EU carcass price (young bulls A-R3). Published in the August 2026 Agricultural Prices release.',
-      comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:55.284Z'
+      comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:33:05.115Z'
     },
     'ganado-vaca-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -1163,7 +1163,7 @@
     'avicultura-pollo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED for broilers, live weight; USD/lb. Not comparable with the EU whole-carcass price (65 % yield). Published in the August 2026 Agricultural Prices release.',
-      comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:55.854Z'
+      comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:33:05.754Z'
     },
     'avicultura-pollo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -1192,7 +1192,7 @@
     'avicultura-huevos-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED for table eggs (producer price, not retail); USD/dozen. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T14:31:53.221Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T17:33:03.122Z'
     },
     'avicultura-huevos-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
