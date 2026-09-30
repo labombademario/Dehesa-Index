@@ -6,8 +6,8 @@ Series: {'DK': 7, 'NL': 20, 'AU': 12}
   dk-milk-prod | Milk ex farm, total | 2026-07 524.55 | n= 379 | first 1995-01
   dk-butter-prod | Butter production | 2026-07 10.4 | n= 379 | first 1995-01
   dk-cheese-prod | Cheese production | 2026-07 45.5 | n= 379 | first 1995-01
-  nl-milk-supply | Milk supply to dairy factories | 2026-07 1194774.0 | n= 410 | first 1995
-  nl-cheese-prod | Cheese production (dairy factories) | 2026-07 78431.0 | n= 410 | first 1995
+  nl-milk-supply | Milk supply to dairy factories | 2026-07 1194774.0 | n= 379 | first 1995-01
+  nl-cheese-prod | Cheese production (dairy factories) | 2026-07 78431.0 | n= 379 | first 1995-01
   nl-wheat-prod | Wheat: production | 2026 1069291.0 | n= 33 | first 1994
   nl-wheat-area | Wheat: area under cultivation | 2026 114214.0 | n= 33 | first 1994
   nl-wheat-yield | Wheat: gross yield per ha | 2026 9.4 | n= 33 | first 1994
