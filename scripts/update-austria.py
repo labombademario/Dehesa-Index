@@ -37,12 +37,12 @@ def records(j):
         out.append((rec, v))
     return out, labs
 OUT = {}
-def put(sid, group, label, unit, freq, pts, extra=None):
+def put(sid, group, label, unit, freq, pts, extra=None, max_age=2):
     d = {}
     for p, v in pts:
         if v is not None: d[p] = v
     pts = [[p, round(v, 3)] for p, v in sorted(d.items())]
-    if len(pts) < 3 or int(pts[-1][0][:4]) < datetime.date.today().year - 2: return  # series discontinued / stale
+    if len(pts) < 3 or int(pts[-1][0][:4]) < datetime.date.today().year - max_age: return  # series discontinued / stale
     last, prev = pts[-1], pts[-2]
     ch = round((last[1] / prev[1] - 1) * 100, 2) if prev[1] else None
     s = dict(id=sid, group=group, label=label, unit=unit, frequency=freq, latestPeriod=last[0], latest=last[1], changePct=ch, points=pts)
@@ -117,17 +117,65 @@ def herds():
         except Exception as e: log('ERROR', ds, repr(e))
     log('censo', n, 'series')
 
+def quarterly():
+    """Índices trimestrales de precios agrícolas (Eurostat apri_pi_outq / apri_pi_inq), base 2020=100, índice nominal.
+    Solo agrupaciones de 2.º nivel (código acabado en 000) para no inundar la lista."""
+    for ds, tag, group, what in (('apri_pi_outq', 'out', 'idx_perc', 'output price index'), ('apri_pi_inq', 'in', 'idx_pag', 'input price index')):
+        j = fetch(ds, p_adj='NI', unit='I20'); recs, labs = records(j); by = {}
+        for r, v in recs:
+            c = r['am_item']
+            if c.endswith('000'): by.setdefault(c, []).append((r['time'], v))
+        n = 0
+        for c, pts in by.items():
+            name = re.sub(r'\s*\(Input \d\)$', '', labs['am_item'][c])
+            put('at-q-%s-%s' % (tag, c.lower()), group, '%s: %s' % (name, what), 'index (2020=100)', 'quarterly', pts, {'sourceGroup': 'Eurostat ' + ds}); n += 1
+        log(ds, n, 'series')
+
 def organic():
+    """Agricultura ecológica. La superficie por cultivo (org_cropar) se queda en 2020 para Austria; se complementa con
+    ganado ecológico (apro_mt_lsorg, hasta 2025), productos (org_aprod), operadores (org_coptyp), huevos (apro_ec_eggorg)
+    y la superficie ecológica de la encuesta de estructura de explotaciones (ef_lus_org, 2010-2023)."""
     j = fetch('org_cropar', agprdmet='TOTAL'); recs, labs = records(j); by = {}
     keep = {'UAAXK0000': 'Utilised agricultural area', 'ARA': 'Arable land', 'C0000': 'Cereals', 'I1100': 'Oilseeds', 'R1000': 'Potatoes'}
     for r, v in recs:
         if r['crops'] in keep and r['unit'] == 'HA': by.setdefault(r['crops'], []).append((r['time'], v))
     for c, pts in by.items():
         put('at-organic-%s' % c.lower(), 'organic', 'Organic area (converted + in conversion): %s' % keep[c], 'ha', 'annual', pts, {'sourceGroup': 'Eurostat org_cropar'})
-    log('ecologico', len(by), 'series')
+    n0 = len(OUT)
+    # ganado ecológico
+    j = fetch('apro_mt_lsorg'); recs, labs = records(j); by = {}
+    for r, v in recs: by.setdefault((r['animals'], r['unit']), []).append((r['time'], v))
+    for (a, u), pts in by.items():
+        name = labs['animals'][a]
+        if u == 'THS_HD': put('at-organic-ls-%s' % a.lower(), 'organic', 'Organic livestock: %s' % name, 'thousand head', 'annual', pts, {'sourceGroup': 'Eurostat apro_mt_lsorg'})
+        elif u == 'PC_ORG': put('at-organic-lsshare-%s' % a.lower(), 'organic', 'Organic share of total: %s' % name, '%', 'annual', pts, {'sourceGroup': 'Eurostat apro_mt_lsorg'})
+    # productos ecológicos
+    j = fetch('org_aprod'); recs, labs = records(j); by = {}
+    for r, v in recs: by.setdefault((r['agriprod'], r['unit']), []).append((r['time'], v))
+    for (a, u), pts in by.items():
+        put('at-organic-prod-%s' % a.lower(), 'organic', 'Organic production: %s' % labs['agriprod'][a], 'thousand' if u == 'THS' else 't', 'annual', pts, {'sourceGroup': 'Eurostat org_aprod'})
+    # huevos ecológicos
+    j = fetch('apro_ec_eggorg'); recs, labs = records(j); by = {}
+    for r, v in recs: by.setdefault(r['unit'], []).append((r['time'], v))
+    for u, pts in by.items():
+        if u == 'MIO': put('at-organic-eggs', 'organic', 'Organic hens\' eggs', 'million', 'annual', pts, {'sourceGroup': 'Eurostat apro_ec_eggorg'})
+        elif u == 'PC_ORG': put('at-organic-eggs-share', 'organic', 'Organic share of total: hens\' eggs', '%', 'annual', pts, {'sourceGroup': 'Eurostat apro_ec_eggorg'})
+    # operadores ecológicos (registrados a fin de año)
+    j = fetch('org_coptyp', procstat='REG_END'); recs, labs = records(j); by = {}
+    for r, v in recs: by.setdefault(r['operator'], []).append((r['time'], v))
+    for o, pts in by.items():
+        put('at-organic-op-%s' % o.lower(), 'organic', 'Organic operators registered: %s' % labs['operator'][o], 'number', 'annual', pts, {'sourceGroup': 'Eurostat org_coptyp'})
+    # encuesta de estructura (2010, 2013, 2016, 2020, 2023): superficie ecológica y nº de explotaciones
+    j = fetch('ef_lus_org', statinfo='TOTAL', so_eur='TOTAL', uaarea='TOTAL'); recs, labs = records(j); by = {}
+    for r, v in recs:
+        if r['agriprod'] in ('UAAXK0000_ORG', 'ARAT_ORG', 'C0000T_ORG'): by.setdefault((r['agriprod'], r['unit']), []).append((r['time'], v))
+    for (a, u), pts in by.items():
+        nm = {'UAAXK0000_ORG': 'utilised agricultural area', 'ARAT_ORG': 'arable land', 'C0000T_ORG': 'cereals'}[a]
+        put('at-organic-fss-%s-%s' % (a.lower(), u.lower()), 'organic', 'Organic %s (farm structure survey): %s' % ('holdings with' if u == 'HLD' else 'area of', nm), 'holdings' if u == 'HLD' else 'ha', 'annual', pts, {'sourceGroup': 'Eurostat ef_lus_org'}, max_age=4)
+    log('ecologico', len(OUT) - n0 + len(by), 'series')
 
 def main():
-    for fn in (prices, milk, slaughter, crops, herds, organic):
+    for fn in (prices, quarterly, milk, slaughter, crops, herds, organic):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e))
     if len(OUT) < 20:
