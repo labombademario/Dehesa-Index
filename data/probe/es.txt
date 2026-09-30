@@ -1,0 +1,18 @@
+package_list {"help": "https://servicio.mapa.gob.es/ckan/api/3/action/help_show?name=package_list", "success": tr
+n packages 7
+PKG esmapacuadernilloflotasituacionflota
+PKG esmapaindicespreciosindicepagado
+PKG esmapaindicespreciosindicepercibido
+PKG esmapaindicespreciospreciopagado
+PKG esmapaindicespreciospreciopercibido
+PKG esmaparecanredcontable
+PKG esmapasalasincubaciondatosincubacion
+PERCIBIDO ERR ERR HTTP Error 503: Service Unavailable
+GET https://servicio.mapa.gob.es/siarweb/avisoLegal
+ Aviso legal - SiAR Mi SiAR API SiAR Manual Web Espacio SiAR GestSiAR --> Inicio Consultas Consulta de datos Necesidades netas Informes de datos Energías renovables Episodios agroclimáticos ¿Está seguro de que desea cerrar su sesión? Aceptar Cancelar Inicio Aviso legal Aviso legal Las presentes condiciones generales vincularán a cualquier agente reutilizador por el mero hecho de hacer uso de los documentos sometidos a ellas. Autorización de uso, cesión y reutilización no exclusiva de derechos de propiedad intelectual de la información: La información procedente del SIAR (Sistema de Información Agroclimática para el Regadío), su obtención, elaboración y medios de presentación, incluidas las aplicaciones y sus códigos fuente, están protegidos por los derechos de propiedad intelectual, al tratarse de una modalidad de la propiedad intelectual regulada en el artículo 10 del Real Decreto Legislativo 1/1996, de 12 de abril, por el que se aprueba el texto refundido de la Ley de Propiedad Intelectual, regularizando, aclarando y armonizando las disposiciones legales vigentes sobre la materia. Corresponde al Ministerio de Agricultura, Pesca y Alimentación (MAPA) la titularidad y el ejercicio de los derechos de autor, que configuran el derecho exclusivo de la explotación y divulgación de dicha información. Los canales de difusión del SIAR cumplen la función de poner a disposición información y canalizar la atención al ciudadano en los términos establecidos en el la Ley 27/2006, de 18 de 
+GET https://servicio.mapa.gob.es/apisiar/
+ERR HTTP Error 404: Not Found
+GET https://servicio.mapa.gob.es/apisiar/swagger-ui/index.html
+ERR HTTP Error 404: Not Found
+GET https://servicio.mapa.gob.es/siarweb/
+ SiAR Mi SiAR API SiAR Manual Web Espacio SiAR GestSiAR --> Inicio Consultas Consulta de datos Necesidades netas Informes de datos Energías renovables Episodios agroclimáticos ¿Está seguro de que desea cerrar su sesión? Aceptar Cancelar Sistema de Información Agroclimática para el Regadío (SiAR) El Ministerio de Agricultura, Pesca y Alimentación , a través de la Subdirección General de Regadíos, Caminos Naturales e Infraestructuras Rurales , pone a disposición de los usuarios toda la información recogida a través de la Red de estaciones agrometeorológicas del SiAR. La red del SiAR está formada por más de 500 estaciones y está fundamentada en los siguientes principios: Acceso libre y gratuito Fiabilidad de los datos agroclimáticos Accesibilidad Esta información de alto valor es fundamental para el sector del regadío en España, ya que ofrece un asesoramiento y recomendación a los regantes y profesionales de este sector para planificar y gestionar de una forma más eficiente los recursos hídricos disponibles, con el consiguiente beneficio económico y medioambiental. Más información CONSULTA DE DATOS NECESIDADES NETAS INFORMES DE DATOS ENERGÍAS RENOVABLES EPISODIOS AGROCLIMÁTICOS Área personal Accede a los servicios del área privada del Sistema de Información Agroclimática para el Regadío. Mi SiAR API SiAR Espacio SiAR Acceso a todos los productos generados en Espacio SiAR. Acceso al Visor Descarga SiAR app SiAR dispone de una aplicación para dispositivos móviles, la cual le ayuda
