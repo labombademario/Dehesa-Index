@@ -107,7 +107,7 @@ for cid, key, label in [("H110", "winter-wheat", "Winter wheat"), ("H150", "wint
     add(dk, "dk-harvarea-" + key, label + ": harvested area", "1,000 ha", "annual", lambda c=cid: dst("HST5", [("AFGRØDE", [c]), ("ENHED", ["4A"])]), "crops")
 # precio de cebada y trigo en granja, total Dinamarca (anual)
 for cid, key, label in [("HVEDE", "wheat", "Wheat"), ("BYG", "barley", "Barley")]:
-    add(dk, "dk-farmgate-" + key, label + ": farm gate price (all Denmark, KAPIT1)", "DKK (source unit, see table KAPIT1)", "annual", lambda c=cid: dst("KAPIT1", [("KAPIT", ["000"]), ("KORNART", [c])]), "prices")
+    add(dk, "dk-farmgate-" + key, label + ": farm gate price (all Denmark, KAPIT1)", "DKK per 100 kg (table KAPIT1)", "annual", lambda c=cid: dst("KAPIT1", [("KAPIT", ["000"]), ("KORNART", [c])]), "prices")
 # costes de explotación (JORD1, agricultura, media, DKK por explotación)
 try:
     items = dst_values("JORD1", "REGNSKPOSTER")
