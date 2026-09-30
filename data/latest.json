@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:28:01.282Z",
+  "generatedAt": "2026-09-30T01:34:15.602Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -550,7 +550,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.527Z",
+      "verifiedAt": "2026-09-30T01:34:09.359Z",
       "comparability": "directional",
       "value": 12.8,
       "currency": "USD",
@@ -1672,6 +1672,60 @@
           "period": "09-20",
           "year": 2026,
           "value": 178.56
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_cerdo_us",
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:11.615Z",
+      "comparability": "not_comparable",
+      "value": 70.5,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "changePct": -0.7,
+      "history": [
+        {
+          "year": 2026,
+          "period": "FEB",
+          "value": 65.9
+        },
+        {
+          "year": 2026,
+          "period": "MAR",
+          "value": 68.7
+        },
+        {
+          "year": 2026,
+          "period": "APR",
+          "value": 67.8
+        },
+        {
+          "year": 2026,
+          "period": "MAY",
+          "value": 68.5
+        },
+        {
+          "year": 2026,
+          "period": "JUN",
+          "value": 69.4
+        },
+        {
+          "year": 2026,
+          "period": "JUL",
+          "value": 71
+        },
+        {
+          "year": 2026,
+          "period": "AUG",
+          "value": 70.5
         }
       ],
       "snapshotDate": "2026-09-30"
@@ -4875,7 +4929,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "verifiedAt": "2026-09-30T01:34:09.991Z",
       "comparability": "directional",
       "value": 0.77,
       "currency": "USD",
@@ -5469,7 +5523,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.867Z",
+      "verifiedAt": "2026-09-30T01:34:09.723Z",
       "comparability": "directional",
       "value": 19.8,
       "currency": "USD",
@@ -6063,7 +6117,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.190Z",
+      "verifiedAt": "2026-09-30T01:34:09.040Z",
       "comparability": "directional",
       "value": 4.45,
       "currency": "USD",
@@ -7190,6 +7244,60 @@
       "snapshotDate": "2026-09-30"
     },
     {
+      "id": "di_pollo_us",
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:14.942Z",
+      "comparability": "not_comparable",
+      "value": 0.65,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "monthly",
+      "changePct": -1.36,
+      "history": [
+        {
+          "year": 2026,
+          "period": "FEB",
+          "value": 0.66
+        },
+        {
+          "year": 2026,
+          "period": "MAR",
+          "value": 0.67
+        },
+        {
+          "year": 2026,
+          "period": "APR",
+          "value": 0.68
+        },
+        {
+          "year": 2026,
+          "period": "MAY",
+          "value": 0.71
+        },
+        {
+          "year": 2026,
+          "period": "JUN",
+          "value": 0.7
+        },
+        {
+          "year": 2026,
+          "period": "JUL",
+          "value": 0.66
+        },
+        {
+          "year": 2026,
+          "period": "AUG",
+          "value": 0.65
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
       "id": "di_fertilizantes_potasa_eu",
       "product": "potasa",
       "region": "eu",
@@ -8212,7 +8320,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:27:59.852Z",
+      "verifiedAt": "2026-09-30T01:34:08.699Z",
       "comparability": "directional",
       "value": 6.23,
       "currency": "USD",
@@ -8872,6 +8980,60 @@
           "period": "09-20",
           "year": 2026,
           "value": 614.67
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
+      "id": "di_vaca_us",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:13.785Z",
+      "comparability": "not_comparable",
+      "value": 234,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "changePct": -6.02,
+      "history": [
+        {
+          "year": 2026,
+          "period": "FEB",
+          "value": 243
+        },
+        {
+          "year": 2026,
+          "period": "MAR",
+          "value": 240
+        },
+        {
+          "year": 2026,
+          "period": "APR",
+          "value": 245
+        },
+        {
+          "year": 2026,
+          "period": "MAY",
+          "value": 256
+        },
+        {
+          "year": 2026,
+          "period": "JUN",
+          "value": 258
+        },
+        {
+          "year": 2026,
+          "period": "JUL",
+          "value": 249
+        },
+        {
+          "year": 2026,
+          "period": "AUG",
+          "value": 234
         }
       ],
       "snapshotDate": "2026-09-30"

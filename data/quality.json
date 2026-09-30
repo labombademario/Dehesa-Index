@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:28:01.423Z",
+  "generatedAt": "2026-09-30T01:34:15.996Z",
   "scope": {
-    "latestObservations": 25,
-    "historyObservations": 811,
-    "verified": 25,
+    "latestObservations": 28,
+    "historyObservations": 832,
+    "verified": 28,
     "pending": 0,
-    "stale": 9,
+    "stale": 12,
     "regions": [
       "eu",
       "us"
@@ -58,7 +58,7 @@
       "comparability": "directional",
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
-      "verifiedAt": "2026-09-30T01:28:00.527Z",
+      "verifiedAt": "2026-09-30T01:34:09.359Z",
       "frequency": "monthly",
       "historyPoints": 7,
       "ageDays": 60,
@@ -93,6 +93,21 @@
       "historyPoints": 25,
       "ageDays": 10,
       "stale": false
+    },
+    {
+      "id": "di_cerdo_us",
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "status": "verified",
+      "comparability": "not_comparable",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-08-31",
+      "verifiedAt": "2026-09-30T01:34:11.615Z",
+      "frequency": "monthly",
+      "historyPoints": 7,
+      "ageDays": 60,
+      "stale": true
     },
     {
       "id": "di_ovino_cordero_eu",
@@ -238,7 +253,7 @@
       "comparability": "directional",
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
-      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "verifiedAt": "2026-09-30T01:34:09.991Z",
       "frequency": "monthly",
       "historyPoints": 7,
       "ageDays": 60,
@@ -268,7 +283,7 @@
       "comparability": "directional",
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
-      "verifiedAt": "2026-09-30T01:28:00.867Z",
+      "verifiedAt": "2026-09-30T01:34:09.723Z",
       "frequency": "monthly",
       "historyPoints": 7,
       "ageDays": 60,
@@ -298,7 +313,7 @@
       "comparability": "directional",
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
-      "verifiedAt": "2026-09-30T01:28:00.190Z",
+      "verifiedAt": "2026-09-30T01:34:09.040Z",
       "frequency": "monthly",
       "historyPoints": 7,
       "ageDays": 60,
@@ -333,6 +348,21 @@
       "historyPoints": 25,
       "ageDays": 10,
       "stale": false
+    },
+    {
+      "id": "di_pollo_us",
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "status": "verified",
+      "comparability": "not_comparable",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-08-31",
+      "verifiedAt": "2026-09-30T01:34:14.942Z",
+      "frequency": "monthly",
+      "historyPoints": 7,
+      "ageDays": 60,
+      "stale": true
     },
     {
       "id": "di_fertilizantes_potasa_eu",
@@ -373,7 +403,7 @@
       "comparability": "directional",
       "observationDate": "2026-08",
       "publicationDate": "2026-08-31",
-      "verifiedAt": "2026-09-30T01:27:59.852Z",
+      "verifiedAt": "2026-09-30T01:34:08.699Z",
       "frequency": "monthly",
       "historyPoints": 7,
       "ageDays": 60,
@@ -408,6 +438,21 @@
       "historyPoints": 25,
       "ageDays": 10,
       "stale": false
+    },
+    {
+      "id": "di_vaca_us",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "status": "verified",
+      "comparability": "not_comparable",
+      "observationDate": "2026-08",
+      "publicationDate": "2026-08-31",
+      "verifiedAt": "2026-09-30T01:34:13.785Z",
+      "frequency": "monthly",
+      "historyPoints": 7,
+      "ageDays": 60,
+      "stale": true
     }
   ],
   "policy": {

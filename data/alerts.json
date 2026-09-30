@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:28:01.659Z",
+  "generatedAt": "2026-09-30T01:34:16.237Z",
   "status": "informational",
   "rules": [
     {
@@ -16,6 +16,14 @@
       "product": "azucar",
       "region": "eu",
       "sourceId": "eu_agrifood",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
@@ -53,6 +61,14 @@
     },
     {
       "type": "stale_data",
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
       "product": "potasa",
       "region": "eu",
       "sourceId": "eu_agrifood",
@@ -72,6 +88,14 @@
       "product": "urea",
       "region": "eu",
       "sourceId": "world_bank",
+      "severity": "watch",
+      "message": "Latest observation is older than the configured freshness threshold."
+    },
+    {
+      "type": "stale_data",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
       "severity": "watch",
       "message": "Latest observation is older than the configured freshness threshold."
     },
@@ -136,6 +160,15 @@
       "sourceId": "usda_nass",
       "severity": "watch",
       "changePct": 8.47,
+      "observationDate": "2026-08-01"
+    },
+    {
+      "type": "period_move",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "severity": "watch",
+      "changePct": -6.02,
       "observationDate": "2026-08-01"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T01:28:01.489Z",
+  "generatedAt": "2026-09-30T01:34:16.060Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -426,6 +426,25 @@
       "comparability": "directional"
     },
     {
+      "id": "di_cerdo_us",
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "frequency": "monthly",
+      "unit": "cwt",
+      "currency": "USD",
+      "latest": 70.5,
+      "observationDate": "2026-08-01",
+      "periodChangePct": -0.7042253521126751,
+      "yoyPct": null,
+      "volatility": 0.018470100031086897,
+      "points": 7,
+      "coverageStart": "2026-02-01",
+      "coverageEnd": "2026-08-01",
+      "status": "verified",
+      "comparability": "not_comparable"
+    },
+    {
       "id": "di_huevos_us",
       "product": "huevos",
       "region": "us",
@@ -483,6 +502,25 @@
       "comparability": "directional"
     },
     {
+      "id": "di_pollo_us",
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "frequency": "monthly",
+      "unit": "lb",
+      "currency": "USD",
+      "latest": 0.65,
+      "observationDate": "2026-08-01",
+      "periodChangePct": -1.5151515151515138,
+      "yoyPct": null,
+      "volatility": 0.03179938885497352,
+      "points": 7,
+      "coverageStart": "2026-02-01",
+      "coverageEnd": "2026-08-01",
+      "status": "verified",
+      "comparability": "not_comparable"
+    },
+    {
       "id": "di_trigo_us",
       "product": "trigo",
       "region": "us",
@@ -500,6 +538,25 @@
       "coverageEnd": "2026-08-01",
       "status": "verified",
       "comparability": "directional"
+    },
+    {
+      "id": "di_vaca_us",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "frequency": "monthly",
+      "unit": "cwt",
+      "currency": "USD",
+      "latest": 234,
+      "observationDate": "2026-08-01",
+      "periodChangePct": -6.024096385542165,
+      "yoyPct": null,
+      "volatility": 0.034922098548492285,
+      "points": 7,
+      "coverageStart": "2026-02-01",
+      "coverageEnd": "2026-08-01",
+      "status": "verified",
+      "comparability": "not_comparable"
     }
   ]
 }

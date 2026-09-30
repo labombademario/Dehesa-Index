@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:28:01.296Z",
-  "observationCount": 31,
+  "generatedAt": "2026-09-30T01:34:15.616Z",
+  "observationCount": 34,
   "products": [
     "arroz",
     "azucar",
@@ -66,7 +66,7 @@
       "currency": "USD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.527Z",
+      "verifiedAt": "2026-09-30T01:34:09.359Z",
       "comparability": "directional",
       "points": 7,
       "coverageStart": "2026-02-01",
@@ -101,6 +101,21 @@
       "points": 25,
       "coverageStart": "2024-09-01",
       "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08",
+      "unit": "cwt",
+      "currency": "USD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:11.615Z",
+      "comparability": "not_comparable",
+      "points": 7,
+      "coverageStart": "2026-02-01",
+      "coverageEnd": "2026-08-01"
     },
     {
       "product": "cordero",
@@ -246,7 +261,7 @@
       "currency": "USD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "verifiedAt": "2026-09-30T01:34:09.991Z",
       "comparability": "directional",
       "points": 7,
       "coverageStart": "2026-02-01",
@@ -276,7 +291,7 @@
       "currency": "USD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.867Z",
+      "verifiedAt": "2026-09-30T01:34:09.723Z",
       "comparability": "directional",
       "points": 7,
       "coverageStart": "2026-02-01",
@@ -306,7 +321,7 @@
       "currency": "USD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.190Z",
+      "verifiedAt": "2026-09-30T01:34:09.040Z",
       "comparability": "directional",
       "points": 7,
       "coverageStart": "2026-02-01",
@@ -341,6 +356,21 @@
       "points": 25,
       "coverageStart": "2024-09-01",
       "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08",
+      "unit": "lb",
+      "currency": "USD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:14.942Z",
+      "comparability": "not_comparable",
+      "points": 7,
+      "coverageStart": "2026-02-01",
+      "coverageEnd": "2026-08-01"
     },
     {
       "product": "potasa",
@@ -381,7 +411,7 @@
       "currency": "USD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:27:59.852Z",
+      "verifiedAt": "2026-09-30T01:34:08.699Z",
       "comparability": "directional",
       "points": 7,
       "coverageStart": "2026-02-01",
@@ -416,6 +446,21 @@
       "points": 25,
       "coverageStart": "2024-09-01",
       "coverageEnd": "2026-09-01"
+    },
+    {
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08",
+      "unit": "cwt",
+      "currency": "USD",
+      "frequency": "monthly",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:13.785Z",
+      "comparability": "not_comparable",
+      "points": 7,
+      "coverageStart": "2026-02-01",
+      "coverageEnd": "2026-08-01"
     }
   ]
 }

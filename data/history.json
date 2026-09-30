@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T01:28:01.296Z",
+  "generatedAt": "2026-09-30T01:34:15.615Z",
   "observations": [
     {
       "id": "di_azucar_azucar_eu:2017-11-01",
@@ -10383,7 +10383,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.527Z",
+      "verifiedAt": "2026-09-30T01:34:09.359Z",
       "comparability": "directional"
     },
     {
@@ -10417,6 +10417,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:41.535Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_cerdo_us:2026-02-01",
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 65.9,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:11.615Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_ovino_cordero_eu:2026-02-01",
@@ -10511,7 +10527,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "verifiedAt": "2026-09-30T01:34:09.991Z",
       "comparability": "directional"
     },
     {
@@ -10543,7 +10559,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.867Z",
+      "verifiedAt": "2026-09-30T01:34:09.723Z",
       "comparability": "directional"
     },
     {
@@ -10575,7 +10591,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.190Z",
+      "verifiedAt": "2026-09-30T01:34:09.040Z",
       "comparability": "directional"
     },
     {
@@ -10609,6 +10625,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:44.226Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_pollo_us:2026-02-01",
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.66,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:14.942Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_fertilizantes_potasa_eu:2026-02-01",
@@ -10655,7 +10687,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:27:59.852Z",
+      "verifiedAt": "2026-09-30T01:34:08.699Z",
       "comparability": "directional"
     },
     {
@@ -10691,6 +10723,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_vaca_us:2026-02-01",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 243,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:13.785Z",
+      "comparability": "not_comparable"
+    },
+    {
       "id": "di_cereales_arroz_eu:2026-03-01",
       "product": "arroz",
       "region": "eu",
@@ -10719,7 +10767,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.527Z",
+      "verifiedAt": "2026-09-30T01:34:09.359Z",
       "comparability": "directional"
     },
     {
@@ -10753,6 +10801,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:41.535Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_cerdo_us:2026-03-01",
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 68.7,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:11.615Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_ovino_cordero_eu:2026-03-01",
@@ -10911,7 +10975,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "verifiedAt": "2026-09-30T01:34:09.991Z",
       "comparability": "directional"
     },
     {
@@ -10943,7 +11007,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.867Z",
+      "verifiedAt": "2026-09-30T01:34:09.723Z",
       "comparability": "directional"
     },
     {
@@ -10975,7 +11039,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.190Z",
+      "verifiedAt": "2026-09-30T01:34:09.040Z",
       "comparability": "directional"
     },
     {
@@ -11009,6 +11073,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:44.226Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_pollo_us:2026-03-01",
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.67,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:14.942Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_fertilizantes_potasa_eu:2026-03-01",
@@ -11055,7 +11135,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:27:59.852Z",
+      "verifiedAt": "2026-09-30T01:34:08.699Z",
       "comparability": "directional"
     },
     {
@@ -11091,6 +11171,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_vaca_us:2026-03-01",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 240,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:13.785Z",
+      "comparability": "not_comparable"
+    },
+    {
       "id": "di_cereales_arroz_eu:2026-04-01",
       "product": "arroz",
       "region": "eu",
@@ -11119,7 +11215,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.527Z",
+      "verifiedAt": "2026-09-30T01:34:09.359Z",
       "comparability": "directional"
     },
     {
@@ -11153,6 +11249,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:41.535Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_cerdo_us:2026-04-01",
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 67.8,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:11.615Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_ovino_cordero_eu:2026-04-01",
@@ -11247,7 +11359,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "verifiedAt": "2026-09-30T01:34:09.991Z",
       "comparability": "directional"
     },
     {
@@ -11279,7 +11391,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.867Z",
+      "verifiedAt": "2026-09-30T01:34:09.723Z",
       "comparability": "directional"
     },
     {
@@ -11311,7 +11423,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.190Z",
+      "verifiedAt": "2026-09-30T01:34:09.040Z",
       "comparability": "directional"
     },
     {
@@ -11345,6 +11457,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:44.226Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_pollo_us:2026-04-01",
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.68,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:14.942Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_fertilizantes_potasa_eu:2026-04-01",
@@ -11391,7 +11519,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:27:59.852Z",
+      "verifiedAt": "2026-09-30T01:34:08.699Z",
       "comparability": "directional"
     },
     {
@@ -11427,6 +11555,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_vaca_us:2026-04-01",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 245,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:13.785Z",
+      "comparability": "not_comparable"
+    },
+    {
       "id": "di_cereales_arroz_eu:2026-05-01",
       "product": "arroz",
       "region": "eu",
@@ -11455,7 +11599,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.527Z",
+      "verifiedAt": "2026-09-30T01:34:09.359Z",
       "comparability": "directional"
     },
     {
@@ -11489,6 +11633,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:41.535Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_cerdo_us:2026-05-01",
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 68.5,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:11.615Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_ovino_cordero_eu:2026-05-01",
@@ -11583,7 +11743,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "verifiedAt": "2026-09-30T01:34:09.991Z",
       "comparability": "directional"
     },
     {
@@ -11615,7 +11775,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.867Z",
+      "verifiedAt": "2026-09-30T01:34:09.723Z",
       "comparability": "directional"
     },
     {
@@ -11647,7 +11807,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.190Z",
+      "verifiedAt": "2026-09-30T01:34:09.040Z",
       "comparability": "directional"
     },
     {
@@ -11681,6 +11841,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:44.226Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_pollo_us:2026-05-01",
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.71,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:14.942Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_fertilizantes_potasa_eu:2026-05-01",
@@ -11727,7 +11903,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:27:59.852Z",
+      "verifiedAt": "2026-09-30T01:34:08.699Z",
       "comparability": "directional"
     },
     {
@@ -11763,6 +11939,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_vaca_us:2026-05-01",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 256,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:13.785Z",
+      "comparability": "not_comparable"
+    },
+    {
       "id": "di_cereales_arroz_eu:2026-06-01",
       "product": "arroz",
       "region": "eu",
@@ -11791,7 +11983,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.527Z",
+      "verifiedAt": "2026-09-30T01:34:09.359Z",
       "comparability": "directional"
     },
     {
@@ -11825,6 +12017,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:41.535Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_cerdo_us:2026-06-01",
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 69.4,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:11.615Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_ovino_cordero_eu:2026-06-01",
@@ -11983,7 +12191,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "verifiedAt": "2026-09-30T01:34:09.991Z",
       "comparability": "directional"
     },
     {
@@ -12015,7 +12223,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.867Z",
+      "verifiedAt": "2026-09-30T01:34:09.723Z",
       "comparability": "directional"
     },
     {
@@ -12047,7 +12255,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.190Z",
+      "verifiedAt": "2026-09-30T01:34:09.040Z",
       "comparability": "directional"
     },
     {
@@ -12081,6 +12289,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:44.226Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_pollo_us:2026-06-01",
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.7,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:14.942Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_fertilizantes_potasa_eu:2026-06-01",
@@ -12127,7 +12351,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:27:59.852Z",
+      "verifiedAt": "2026-09-30T01:34:08.699Z",
       "comparability": "directional"
     },
     {
@@ -12163,6 +12387,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_vaca_us:2026-06-01",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 258,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:13.785Z",
+      "comparability": "not_comparable"
+    },
+    {
       "id": "di_cereales_arroz_eu:2026-07-01",
       "product": "arroz",
       "region": "eu",
@@ -12191,7 +12431,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.527Z",
+      "verifiedAt": "2026-09-30T01:34:09.359Z",
       "comparability": "directional"
     },
     {
@@ -12209,6 +12449,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:41.535Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_cerdo_us:2026-07-01",
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 71,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:11.615Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_ovino_cordero_eu:2026-07-01",
@@ -12303,7 +12559,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "verifiedAt": "2026-09-30T01:34:09.991Z",
       "comparability": "directional"
     },
     {
@@ -12335,7 +12591,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.867Z",
+      "verifiedAt": "2026-09-30T01:34:09.723Z",
       "comparability": "directional"
     },
     {
@@ -12367,7 +12623,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.190Z",
+      "verifiedAt": "2026-09-30T01:34:09.040Z",
       "comparability": "directional"
     },
     {
@@ -12401,6 +12657,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:44.226Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_pollo_us:2026-07-01",
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.66,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:14.942Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_fertilizantes_potasa_eu:2026-07-01",
@@ -12447,7 +12719,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:27:59.852Z",
+      "verifiedAt": "2026-09-30T01:34:08.699Z",
       "comparability": "directional"
     },
     {
@@ -12483,6 +12755,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_vaca_us:2026-07-01",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 249,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:13.785Z",
+      "comparability": "not_comparable"
+    },
+    {
       "id": "di_cereales_arroz_eu:2026-08-01",
       "product": "arroz",
       "region": "eu",
@@ -12511,7 +12799,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.527Z",
+      "verifiedAt": "2026-09-30T01:34:09.359Z",
       "comparability": "directional"
     },
     {
@@ -12529,6 +12817,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:41.535Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_cerdo_us:2026-08-01",
+      "product": "cerdo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 70.5,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:11.615Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_ovino_cordero_eu:2026-08-01",
@@ -12623,7 +12927,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:01.146Z",
+      "verifiedAt": "2026-09-30T01:34:09.991Z",
       "comparability": "directional"
     },
     {
@@ -12655,7 +12959,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.867Z",
+      "verifiedAt": "2026-09-30T01:34:09.723Z",
       "comparability": "directional"
     },
     {
@@ -12687,7 +12991,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:28:00.190Z",
+      "verifiedAt": "2026-09-30T01:34:09.040Z",
       "comparability": "directional"
     },
     {
@@ -12721,6 +13025,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:44.226Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_pollo_us:2026-08-01",
+      "product": "pollo",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 0.65,
+      "currency": "USD",
+      "unit": "lb",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:14.942Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_fertilizantes_potasa_eu:2026-08-01",
@@ -12767,7 +13087,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-08-31",
       "status": "verified",
-      "verifiedAt": "2026-09-30T01:27:59.852Z",
+      "verifiedAt": "2026-09-30T01:34:08.699Z",
       "comparability": "directional"
     },
     {
@@ -12801,6 +13121,22 @@
       "status": "verified",
       "verifiedAt": "2026-09-30T01:06:42.979Z",
       "comparability": "directional"
+    },
+    {
+      "id": "di_vaca_us:2026-08-01",
+      "product": "vaca",
+      "region": "us",
+      "sourceId": "usda_nass",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 234,
+      "currency": "USD",
+      "unit": "cwt",
+      "frequency": "monthly",
+      "publicationDate": "2026-08-31",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T01:34:13.785Z",
+      "comparability": "not_comparable"
     },
     {
       "id": "di_cereales_arroz_eu:2026-09-01",

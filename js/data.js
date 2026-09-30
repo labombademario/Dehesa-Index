@@ -536,12 +536,12 @@
       id: 'ganado', nameKey: 'ganado',
       products: [
         { nameKey: 'vaca', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
-          us: { price: 186.50, changePct: 0.3, history: [180, 182, 184, 183, 185, 186, 186.5], currency: 'USD', kgPerUnit: 45.359 },
+          us: { price: 234, changePct: -6.02, history: [243, 240, 245, 256, 258, 249, 234], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 614.67, changePct: 0.7309, history: [624.07, 614.52, 608.54, 600.3, 592.41, 616.07, 611.57, 612.58, 612.58, 605.95, 610.21, 614.67], currency: 'EUR', kgPerUnit: 100 },
           footnoteKey: 'vaca',
           countryFactors: { es: 1, de: 1.062, fr: 1.015, it: 1.087 },
           uk: { price: 620.00, changePct: 0.4, history: [610, 612, 614, 616, 618, 619, 620], currency: 'GBP', kgPerUnit: 100 },
-          quoteTypes: { us: { type: 'futuro', market: 'CME Group (Live Cattle)' }, eu: { type: 'referencia', market: 'Comisión Europea (vacuno, España, machos jóvenes A-R3)' }, uk: { type: 'referencia', market: 'AHDB (GB deadweight, todas las categorías prime)' } } },
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, novillos y novillas, peso vivo)' }, eu: { type: 'referencia', market: 'Comisión Europea (vacuno, España, machos jóvenes A-R3)' }, uk: { type: 'referencia', market: 'AHDB (GB deadweight, todas las categorías prime)' } } },
         { nameKey: 'cabra', imperialUnitKey: 'lb', imperialKgPerUnit: 0.453592, metricUnitKey: 'kg', metricKgPerUnit: 1,
           us: { price: 2.15, changePct: 0.5, history: [2.05, 2.08, 2.10, 2.09, 2.12, 2.14, 2.15], currency: 'USD', kgPerUnit: 0.453592 },
           eu: { price: 6.85, changePct: 0.4, history: [6.60, 6.65, 6.70, 6.75, 6.78, 6.82, 6.85], currency: 'EUR', kgPerUnit: 1 },
@@ -552,12 +552,12 @@
       id: 'porcino', nameKey: 'porcino',
       products: [
         { nameKey: 'cerdo', imperialUnitKey: 'cwt', imperialKgPerUnit: 45.359, metricUnitKey: '100kg', metricKgPerUnit: 100,
-          us: { price: 96.50, changePct: 0.4, history: [92.0, 93.5, 94.0, 95.0, 95.8, 96.2, 96.5], currency: 'USD', kgPerUnit: 45.359 },
+          us: { price: 70.5, changePct: -0.7, history: [65.9, 68.7, 67.8, 68.5, 69.4, 71, 70.5], currency: 'USD', kgPerUnit: 45.359 },
           eu: { price: 178.56, changePct: 0.5179, history: [172.71, 171.67, 170.59, 173.62, 168.63, 166.33, 169.1, 172.57, 175.96, 178.08, 177.64, 178.56], currency: 'EUR', kgPerUnit: 100 },
           uk: { price: 180.84, changePct: 0.2, history: [179.20, 179.50, 179.80, 180.10, 180.30, 180.40, 180.84], currency: 'GBP', kgPerUnit: 100 },
           footnoteKey: 'cerdo',
           countryFactors: { es: 1, de: 0.911, fr: 1.193, it: 1.353 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (cerdo)' }, eu: { type: 'referencia', market: 'Comisión Europea (porcino, España, clase S)' }, uk: { type: 'referencia', market: 'AHDB (SPP, especificación UE, GB)' } } }
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, cerdos vivos)' }, eu: { type: 'referencia', market: 'Comisión Europea (porcino, España, clase S)' }, uk: { type: 'referencia', market: 'AHDB (SPP, especificación UE, GB)' } } }
       ]
     },
     {
@@ -582,10 +582,10 @@
           countryFactors: { es: 1, de: 0.907, fr: 1.088, it: 1.243 },
           quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, huevos de mesa)' }, eu: { type: 'referencia', market: 'Comisión Europea (huevos, España, gallinas en jaula)' } } },
         { nameKey: 'pollo', imperialUnitKey: 'lb', imperialKgPerUnit: 0.453592, metricUnitKey: 'kg', metricKgPerUnit: 1,
-          us: { price: 1.35, changePct: 0.3, history: [1.28, 1.30, 1.31, 1.33, 1.34, 1.345, 1.35], currency: 'USD', kgPerUnit: 0.453592 },
+          us: { price: 0.65, changePct: -1.36, history: [0.66, 0.67, 0.68, 0.71, 0.7, 0.66, 0.65], currency: 'USD', kgPerUnit: 0.453592 },
           eu: { price: 2.3507, changePct: 0.034, history: [2.274, 2.2764, 2.2357, 2.2321, 2.2321, 2.2263, 2.239, 2.2644, 2.2764, 2.3051, 2.3499, 2.3507], currency: 'EUR', kgPerUnit: 1 },
           countryFactors: { es: 1, de: 1.961, fr: 1.574, it: 1.574 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (aves)' }, eu: { type: 'referencia', market: 'Comisión Europea (pollo, España, broiler entero 65 %)' } } }
+          quoteTypes: { us: { type: 'referencia', market: 'USDA NASS (precio recibido, broilers, peso vivo)' }, eu: { type: 'referencia', market: 'Comisión Europea (pollo, España, broiler entero 65 %)' } } }
       ]
     },
     {
@@ -901,7 +901,7 @@
     'cereales-trigo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:27:59.852Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:34:08.699Z'
     },
     'cereales-trigo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -912,12 +912,12 @@
     'cereales-maiz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED observation; USD/bushel. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:28:00.190Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:34:09.040Z'
     },
     'cereales-arroz-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED observation; USD/cwt. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:28:00.527Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:34:09.359Z'
     },
     'cereales-maiz-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -928,7 +928,7 @@
     'lacteos-leche-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED for all milk sold to plants (not Class III); USD/cwt. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:28:00.867Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:34:09.723Z'
     },
     'lacteos-leche-eu': {
       sourceId: 'european_commission', frequency: 'monthly',
@@ -959,9 +959,8 @@
     },
     'porcino-cerdo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
-      methodology: 'National USDA NASS PRICE RECEIVED for all hogs, live weight. Pending first automated run.',
-      comparability: 'not_comparable', observationDate: null, publicationDate: null,
-      status: 'pending', verifiedAt: null
+      methodology: 'National USDA NASS PRICE RECEIVED for all hogs, live weight; USD/cwt. Not comparable with the EU carcass price (class S). Published in the August 2026 Agricultural Prices release.',
+      comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:34:11.615Z'
     },
     'porcino-cerdo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -971,9 +970,8 @@
     },
     'ganado-vaca-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
-      methodology: 'National USDA NASS PRICE RECEIVED for steers and heifers, live weight. Pending first automated run.',
-      comparability: 'not_comparable', observationDate: null, publicationDate: null,
-      status: 'pending', verifiedAt: null
+      methodology: 'National USDA NASS PRICE RECEIVED for steers and heifers of 500 lb or more, live weight; USD/cwt. Not comparable with the EU carcass price (young bulls A-R3). Published in the August 2026 Agricultural Prices release.',
+      comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:34:13.785Z'
     },
     'ganado-vaca-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -989,9 +987,8 @@
     },
     'avicultura-pollo-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
-      methodology: 'National USDA NASS PRICE RECEIVED for broilers, live weight. Pending first automated run.',
-      comparability: 'not_comparable', observationDate: null, publicationDate: null,
-      status: 'pending', verifiedAt: null
+      methodology: 'National USDA NASS PRICE RECEIVED for broilers, live weight; USD/lb. Not comparable with the EU whole-carcass price (65 % yield). Published in the August 2026 Agricultural Prices release.',
+      comparability: 'not_comparable', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:34:14.942Z'
     },
     'avicultura-pollo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
@@ -1020,7 +1017,7 @@
     'avicultura-huevos-us': {
       sourceId: 'usda_nass', frequency: 'monthly',
       methodology: 'National USDA NASS PRICE RECEIVED for table eggs (producer price, not retail); USD/dozen. Published in the August 2026 Agricultural Prices release.',
-      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:28:01.146Z'
+      comparability: 'directional', observationDate: '2026-08', publicationDate: '2026-08-31', status: 'verified', verifiedAt: '2026-09-30T01:34:09.991Z'
     },
     'avicultura-huevos-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
