@@ -59,6 +59,16 @@ export const PRODUCTS = {
     market: 'Comisión Europea (pollo, España, broiler entero 65 %)',
     methodology: 'Comisión Europea, Agri-food Data Portal: precio de venta semanal del pollo broiler entero (65 % de rendimiento) en España; el portal lo da en moneda nacional (EUR) por 100 kg y se divide entre 100 para expresarlo en EUR/kg.' + NOTE_PUB
   },
+  huevos: {
+    catId: 'avicultura', id: 'di_avicultura_huevos_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'poultry/egg', member: 'ES', unitExpected: '€/100Kg', obsUnit: '100kg', divisor: 1, dateField: 'endDate',
+    select: r => r.farmingMethod === 'Cage', recent: true,
+    // Alemania no publica huevos de jaula: su factor se calcula como cociente Alemania/España con el MISMO método (suelo).
+    countryVariants: { de: r => r.farmingMethod === 'Barn' },
+    metricUnit: { key: '100kg', kg: 100 },
+    market: 'Comisión Europea (huevos, España, gallinas en jaula)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de los huevos de gallinas en jaula (Cage) en España, EUR/100 kg de huevos (el portal no lo da por docena). No es la media de la UE.' + NOTE_PUB
+  },
   azucar: {
     catId: 'azucar', id: 'di_azucar_azucar_eu', sourceId: 'eu_agrifood', frequency: 'monthly',
     commodity: 'sugar', member: null, unitExpected: 'Tonne', obsUnit: 'tonelada', divisor: 1, dateField: 'ym',
@@ -127,8 +137,15 @@ export function patchDataJs(data, cfg, name, o) {
   if (!m) throw new Error('Bloque eu: de ' + name + ' no encontrado en js/data.js');
   const keep = /currency: '([A-Z]+)', kgPerUnit: ([\d.]+)/.exec(m[2]);
   if (!keep) throw new Error('Formato del bloque eu: de ' + name + ' no reconocido');
-  const body = ' price: ' + o.latest[1] + ', changePct: ' + o.changePct + ', history: [' + o.history.join(', ') + "], currency: '" + keep[1] + "', kgPerUnit: " + keep[2] + ' ';
+  const body = ' price: ' + o.latest[1] + ', changePct: ' + o.changePct + ', history: [' + o.history.join(', ') + "], currency: '" + keep[1] + "', kgPerUnit: " + (cfg.metricUnit ? cfg.metricUnit.kg : keep[2]) + ' ';
   data = data.slice(0, m.index + m[1].length) + body + data.slice(m.index + m[1].length + m[2].length);
+
+  // 1b) unidad métrica propia del producto (p. ej. huevos: el portal publica EUR/100 kg, no por docena)
+  if (cfg.metricUnit) {
+    const muRe = new RegExp("(nameKey: '" + name + "',(?:(?!\\{ nameKey:)[\\s\\S])*?)metricUnitKey: '[^']*', metricKgPerUnit: [\\d.]+");
+    if (!muRe.test(data)) throw new Error('metricUnitKey de ' + name + ' no encontrado');
+    data = data.replace(muRe, (_m, a) => a + "metricUnitKey: '" + cfg.metricUnit.key + "', metricKgPerUnit: " + cfg.metricUnit.kg);
+  }
 
   // 2) countryFactors reales (solo si existen en el producto y hay datos de todos los países)
   if (o.factors) {
@@ -197,10 +214,13 @@ async function updateProduct(name, today) {
   if (cfg.member && countries.length) {
     factors = {};
     for (const k of countries) {
-      const s = k === 'es' ? series : buildSeries(rows, cfg, COUNTRY_CODE[k], today);
+      const vcfg = cfg.countryVariants && cfg.countryVariants[k] ? { ...cfg, select: cfg.countryVariants[k] } : cfg;
+      const s = k === 'es' ? series : buildSeries(rows, vcfg, COUNTRY_CODE[k], today);
+      const baseS = vcfg === cfg ? series : buildSeries(rows, vcfg, cfg.member, today);
       const hit = s.find(x => x[0] === latest[0]);
-      if (!hit) { factors = null; console.log('  aviso: sin dato de ' + COUNTRY_CODE[k] + ' para ' + latest[0] + ', se conservan los countryFactors'); break; }
-      factors[k] = Number((hit[1] / latest[1]).toFixed(3));
+      const baseHit = baseS.find(x => x[0] === latest[0]);
+      if (!hit || !baseHit) { factors = null; console.log('  aviso: sin dato de ' + COUNTRY_CODE[k] + ' para ' + latest[0] + ', se conservan los countryFactors'); break; }
+      factors[k] = Number((hit[1] / baseHit[1]).toFixed(3));
     }
   }
 

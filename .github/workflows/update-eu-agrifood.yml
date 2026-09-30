@@ -2,7 +2,7 @@ name: Dehesa Data — EU Agri-food Data Portal
 
 # Precios semanales de la UE desde el Agri-food Data Portal de la Comisión
 # Europea (API pública, sin clave). Ver scripts/update-eu-agrifood.mjs.
-# Productos activos: cerdo, vaca, cordero, pollo, azúcar, aceite de oliva, arroz y
+# Productos activos: cerdo, vaca, cordero, pollo, huevos, azúcar, aceite de oliva, arroz y
 # leche cruda (ver PRODUCTS en el script para la serie exacta de cada uno).
 
 on:
@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: '20'
       - name: Update EU Agri-food prices
-        run: node scripts/update-eu-agrifood.mjs cerdo vaca cordero pollo azucar oliva arroz leche
+        run: node scripts/update-eu-agrifood.mjs cerdo vaca cordero pollo huevos azucar oliva arroz leche
       - name: Validate snapshots
         run: node scripts/validate-snapshots.mjs
       - name: Build data index
