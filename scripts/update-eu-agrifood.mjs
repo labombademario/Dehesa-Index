@@ -66,6 +66,20 @@ export const PRODUCTS = {
     market: 'Comisión Europea (maíz pienso, mercado de Zaragoza, salida de silo)',
     methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del maíz pienso en el mercado de Zaragoza (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional (la media nacional del portal está desactualizada) ni un futuro de Euronext.' + NOTE_PUB
   },
+  cebada: {
+    catId: 'cereales', id: 'di_cereales_cebada_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'cereal', member: 'ES', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
+    select: r => r.productName === 'Feed barley' && r.marketName === 'Lerida' && /^Departure from silo/.test(r.stageName), recent: true,
+    market: 'Comisión Europea (cebada pienso, mercado de Lleida, salida de silo)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la cebada pienso en el mercado de Lleida (España), salida de silo tras almacenamiento en camión, EUR/tonelada. Es un mercado regional, no la media nacional ni un futuro de Euronext. El portal no publica cebada pienso en Zaragoza.' + NOTE_PUB
+  },
+  avena: {
+    catId: 'cereales', id: 'di_cereales_avena_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
+    commodity: 'cereal', member: 'EU', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',
+    select: r => r.productName === 'Feed oats' && /^National Average/.test(r.stageName), recent: true,
+    market: 'Comisión Europea (avena pienso, agregado UE)',
+    methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal del agregado de la UE de avena pienso (media nacional de los Estados miembros que la publican), EUR/tonelada. España no publica avena en el portal. Es el agregado de la Comisión, no una media calculada por Dehesa Index.' + NOTE_PUB
+  },
   trigo: {
     catId: 'cereales', id: 'di_cereales_trigo_eu', sourceId: 'eu_agrifood', frequency: 'weekly',
     commodity: 'cereal', member: 'ES', unitExpected: 'TONNES', obsUnit: 'tonelada', divisor: 1, dateField: 'endDate',

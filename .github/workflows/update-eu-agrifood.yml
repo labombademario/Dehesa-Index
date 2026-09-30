@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: '20'
       - name: Update EU Agri-food prices
-        run: node scripts/update-eu-agrifood.mjs cerdo vaca cordero pollo huevos azucar oliva arroz maiz trigo dap potasa leche harina_soja
+        run: node scripts/update-eu-agrifood.mjs cerdo vaca cordero pollo huevos azucar oliva arroz maiz trigo cebada avena dap potasa leche harina_soja
       - name: Validate snapshots
         run: node scripts/validate-snapshots.mjs
       - name: Build data index

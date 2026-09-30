@@ -16,7 +16,7 @@
  * Requiere la variable de entorno NASS_API_KEY (clave gratuita, se pide en
  * https://quickstats.nass.usda.gov/api).
  *
- * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz|sorgo|leche|huevos|cerdo|vaca|pollo>
+ * Uso: NASS_API_KEY=xxxx node scripts/update-nass-us.mjs <trigo|maiz|arroz|cebada|avena|sorgo|leche|huevos|cerdo|vaca|pollo>
  */
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
@@ -50,6 +50,18 @@ const PRODUCTS = {
     commodity: 'RICE',
     shortDesc: 'RICE - PRICE RECEIVED, MEASURED IN $ / CWT',
     kgPerUnit: '45\\.359'
+  },
+  cebada: {
+    label: 'Cebada',
+    commodity: 'BARLEY',
+    shortDesc: 'BARLEY - PRICE RECEIVED, MEASURED IN $ / BU',
+    kgPerUnit: '21\\.7724'
+  },
+  avena: {
+    label: 'Avena',
+    commodity: 'OATS',
+    shortDesc: 'OATS - PRICE RECEIVED, MEASURED IN $ / BU',
+    kgPerUnit: '14\\.515'
   },
   sorgo: {
     label: 'Sorgo',
