@@ -1,16 +1,5 @@
-FPO cpi 22 ppi 16 August 2025 to August 2026
-sin CSV corn
-sin CSV soybeans
-sin CSV wheat
-sin CSV cotton
-sin CSV barley
-sin CSV oats
-sin CSV sorghum
-sin CSV rice
-sin CSV peanuts
-sin CSV milk
-sin CSV cow-calf
-sin CSV hogs-all
+FPO error /data-products/food-price-outlook fetch failed
+costes error /data-products/commodity-costs-and-returns fetch failed
 previsión costes 306
 renta agraria 4874 Data as of September 3, 2026.
-bytes 474470
+bytes 453755
