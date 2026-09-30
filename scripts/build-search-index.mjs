@@ -86,6 +86,7 @@ const PAGES = [
   ['clima.html', tri('Clima agrícola', 'Agricultural climate', 'Climat agricole', 'Clima agricolo'), 'clima climate lluvia rain temperatura sequia nasa'],
   ['mapa.html', tri('Mapa agrícola', 'Agricultural map', 'Carte agricole', 'Mappa agricola'), 'mapa map carte mappa paises countries geografico'],
   ['oferta-demanda.html', OD, 'oferta demanda supply demand balance produccion consumo exportaciones importaciones existencias usda psd wasde'],
+  ['mercados.html', tri('Mercados USDA', 'USDA markets', 'Marchés USDA', 'Mercati USDA'), 'mercados usda ams market news precios prices piensos feed etanol ethanol granos grains legumbres pulses aves poultry huevos eggs ganado cattle heno hay lacteos dairy'],
   ['cultivos.html', CS, 'cultivos crops condicion valoracion siembra cosecha progress nass estados unidos']
 ];
 for (const [u, n, k] of PAGES) add({ t: 'page', u, n, s: tri('Página', 'Page', 'Page', 'Page'), k });
