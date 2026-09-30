@@ -43,6 +43,9 @@ def main():
     def dkey(s):
         m = re.search(r'(\d[\d.]*)', s); return int(m.group(1).replace('.', '')) if m else 0
     D = sorted(dims, key=dkey)
+    OVR = {'SE610': 'Subvenciones corrientes: cultivos', 'SE615': 'Subvenciones corrientes: ganados', 'SE624': 'Subvenciones: desarrollo rural'}
+    for k, v in OVR.items():
+        if k in vars_: vars_[k][0] = v
     V = sorted(vars_)
     out = []
     for (y, c, t, d), rec in sorted(recs.items()):
