@@ -80,7 +80,7 @@
     var xl = ''; [0, Math.floor((n - 1) / 2), n - 1].forEach(function (i) { if (labels[i] !== undefined) xl += '<text x="' + x(i) + '" y="' + (H - Bt + 17) + '" font-size="11" text-anchor="' + (i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle') + '" fill="var(--text-faint)">' + esc(labels[i]) + '</text>'; });
     if (o.xT) xl += '<text x="' + ((L + W - R) / 2) + '" y="' + (H - 6) + '" font-size="11" text-anchor="middle" fill="var(--text-faint)" font-weight="600">' + esc(o.xT) + '</text>';
     if (o.yT) xl += '<text transform="translate(13 ' + ((Tp + H - Bt) / 2) + ') rotate(-90)" font-size="11" text-anchor="middle" fill="var(--text-faint)" font-weight="600">' + esc(o.yT) + '</text>';
-    var spec = { L: L, R: W - R, T: Tp, B: H - Bt, s: series.map(function (s) { return { n: s.n || '', c: s.color, p: s.v.map(function (v, i) { return [+x(i).toFixed(1), +y(v).toFixed(1), o.vf ? o.vf(v) : fmt(v), s.l ? s.l[i] : String(labels[i])]; }) }; }) };
+    var spec = { L: L, R: W - R, T: Tp, B: H - Bt, s: series.map(function (s) { return { n: s.n || '', c: s.color, p: s.v.map(function (v, i) { return [+x(i).toFixed(1), +y(v).toFixed(1), o.vf ? o.vf(v) : fmt(v), s.l ? s.l[i] : String(labels[i]), v]; }) }; }) };
     return '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img"' + (window.DehesaChart ? window.DehesaChart.attr(spec) : '') + ' style="width:100%;height:auto;display:block' + (window.DehesaChart ? ';touch-action:pan-y' : '') + '">' + g + paths + xl + '</svg>';
   }
   function barChart(vals, labels, fmt, color) {

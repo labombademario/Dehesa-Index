@@ -950,7 +950,7 @@
         if (aW.length < 2 || bW.length < 2) chartHtml = none(t.historyNone);
         else {
           var aS = pctSer(aW, real.gran), bS = pctSer(bW, cReal.gran);
-          chartHtml = CH.render({ xMode: 'time', xTitle: t.csvHeaderDate, yTitle: t.historyAxisPct, aria: productName(entry.nameKey) + ' / ' + productName(cEntry.nameKey), zero: true, noLegend: true, yFmt: function (v) { return v.toLocaleString(lang(), { maximumFractionDigits: 1 }) + ' %'; }, vFmt: pctFmt, xFmt: xfmt(real.gran),
+          chartHtml = CH.render({ measurePp: true, xMode: 'time', xTitle: t.csvHeaderDate, yTitle: t.historyAxisPct, aria: productName(entry.nameKey) + ' / ' + productName(cEntry.nameKey), zero: true, noLegend: true, yFmt: function (v) { return v.toLocaleString(lang(), { maximumFractionDigits: 1 }) + ' %'; }, vFmt: pctFmt, xFmt: xfmt(real.gran),
             series: [{ name: productName(cEntry.nameKey), color: T().compareLine, pts: bS }, { name: productName(entry.nameKey), color: T().positive, pts: aS }] }) +
             '<div class="di-history-legend">' +
               '<span><i style="background:' + T().positive + ';"></i>' + esc(productName(entry.nameKey)) + ' <b style="color:' + D.changeColor(aS[aS.length - 1].y, T()) + ';">' + esc(pctFmt(aS[aS.length - 1].y)) + '</b></span>' +

@@ -64,7 +64,7 @@
     xTicks.forEach(function (tk) { g += '<text x="' + X(tk[0]) + '" y="' + (H - B + 17) + '" text-anchor="middle" font-size="10.5" fill="var(--text-faint)">' + esc(tk[1]) + '</text>'; });
     if (o.xT) g += '<text x="' + ((L + W - R) / 2) + '" y="' + (H - 6) + '" text-anchor="middle" font-size="10.5" fill="var(--text-faint)" font-weight="600">' + esc(o.xT) + '</text>';
     if (o.yT) g += '<text transform="translate(12 ' + ((Tp + H - B) / 2) + ') rotate(-90)" text-anchor="middle" font-size="10.5" fill="var(--text-faint)" font-weight="600">' + esc(o.yT) + '</text>';
-    var spec = { L: L, R: W - R, T: Tp, B: H - B, s: series.map(function (s) { return { n: s.name, c: s.color, p: s.pts.map(function (p) { return [+X(p[0]).toFixed(1), +Y(p[1]).toFixed(1), nf(p[1], 0) + ' %', o.lab ? o.lab(s, p) : String(p[0])]; }) }; }) };
+    var spec = { m: 'pp', L: L, R: W - R, T: Tp, B: H - B, s: series.map(function (s) { return { n: s.name, c: s.color, p: s.pts.map(function (p) { return [+X(p[0]).toFixed(1), +Y(p[1]).toFixed(1), nf(p[1], 0) + ' %', o.lab ? o.lab(s, p) : String(p[0]), p[1]]; }) }; }) };
     series.forEach(function (s) {
       var d = s.pts.map(function (p, i) { return (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ',' + Y(p[1]).toFixed(1); }).join(' ');
       g += '<path d="' + d + '" fill="none" stroke="' + s.color + '" stroke-width="' + (s.w || 2) + '"' + (s.dash ? ' stroke-dasharray="5 4"' : '') + ' stroke-linejoin="round"/>';

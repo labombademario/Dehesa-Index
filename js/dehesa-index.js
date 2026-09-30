@@ -33,7 +33,7 @@
     });
     g += '<text x="' + ((L + w - R) / 2) + '" y="' + (h - 6) + '" text-anchor="middle" ' + TX + ' font-weight="600">' + t.xTitle + '</text><text transform="translate(13 ' + ((Tp + h - B) / 2) + ') rotate(-90)" text-anchor="middle" ' + TX + ' font-weight="600">' + t.yTitle + '</text>';
     function line(arr) { return arr.map(function (s, k) { return X(k).toFixed(1) + ',' + Y(s.value).toFixed(1); }).join(' '); }
-    function ser(arr, name, c) { return { n: name, c: c, p: arr.map(function (s, k) { return [+X(k).toFixed(1), +Y(s.value).toFixed(1), nf(s.value, 1), mon(s.period)]; }) }; }
+    function ser(arr, name, c) { return { n: name, c: c, p: arr.map(function (s, k) { return [+X(k).toFixed(1), +Y(s.value).toFixed(1), nf(s.value, 1), mon(s.period), s.value]; }) }; }
     var spec = { L: L, R: w - R, T: Tp, B: h - B, s: other ? [ser(series, t.official, '#8a8578'), ser(other, t.mine, 'var(--accent)')] : [ser(series, 'Dehesa Index', 'var(--accent)')] };
     var dh = window.DehesaChart ? window.DehesaChart.attr(spec) : '';
     return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" role="img" aria-label="Dehesa Index" style="display:block;touch-action:pan-y"' + dh.replace(' style="touch-action:pan-y"', '') + '>' + g + '<polyline fill="none" stroke="' + (other ? 'currentColor' : 'var(--accent)') + '" stroke-opacity="' + (other ? '.45' : '1') + '" stroke-width="2" stroke-linejoin="round" points="' + line(series) + '"/>' + (other ? '<polyline fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" points="' + line(other) + '"/>' : '') + '</svg>';
