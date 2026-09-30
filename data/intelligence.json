@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-09-30T00:22:22.447Z",
+  "generatedAt": "2026-09-30T00:33:20.976Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -210,6 +210,25 @@
       "periodChangePct": 3.155264734604102,
       "yoyPct": null,
       "volatility": 0.07292627672731705,
+      "points": 25,
+      "coverageStart": "2024-09-01",
+      "coverageEnd": "2026-09-01",
+      "status": "verified",
+      "comparability": "directional"
+    },
+    {
+      "id": "di_avicultura_huevos_eu",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "frequency": "weekly",
+      "unit": "100kg",
+      "currency": "EUR",
+      "latest": 230.04,
+      "observationDate": "2026-09-01",
+      "periodChangePct": 11.718712058666414,
+      "yoyPct": null,
+      "volatility": 0.08747924129749368,
       "points": 25,
       "coverageStart": "2024-09-01",
       "coverageEnd": "2026-09-01",

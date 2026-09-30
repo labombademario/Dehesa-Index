@@ -575,11 +575,11 @@
     {
       id: 'avicultura', nameKey: 'avicultura',
       products: [
-        { nameKey: 'huevos', imperialUnitKey: 'docena', imperialKgPerUnit: 1, metricUnitKey: 'docena', metricKgPerUnit: 1,
+        { nameKey: 'huevos', imperialUnitKey: 'docena', imperialKgPerUnit: 1, metricUnitKey: '100kg', metricKgPerUnit: 100,
           us: { price: 2.35, changePct: 0.6, history: [2.05, 2.15, 2.20, 2.28, 2.30, 2.33, 2.35], currency: 'USD', kgPerUnit: 1 },
-          eu: { price: 1.55, changePct: 0.4, history: [1.42, 1.46, 1.48, 1.50, 1.52, 1.54, 1.55], currency: 'EUR', kgPerUnit: 1 },
+          eu: { price: 242.27, changePct: 1.3173, history: [218.69, 218.69, 218.43, 205.63, 205.91, 205.91, 205.91, 207.22, 209.55, 230.04, 239.12, 242.27], currency: 'EUR', kgPerUnit: 100 },
           countryFactors: { es: 1, de: 0.907, fr: 1.088, it: 1.243 },
-          quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (huevo)' }, eu: { type: 'referencia', market: 'Comisión Europea (huevo)' } } },
+          quoteTypes: { us: { type: 'referencia', market: 'USDA AMS (huevo)' }, eu: { type: 'referencia', market: 'Comisión Europea (huevos, España, gallinas en jaula)' } } },
         { nameKey: 'pollo', imperialUnitKey: 'lb', imperialKgPerUnit: 0.453592, metricUnitKey: 'kg', metricKgPerUnit: 1,
           us: { price: 1.35, changePct: 0.3, history: [1.28, 1.30, 1.31, 1.33, 1.34, 1.345, 1.35], currency: 'USD', kgPerUnit: 0.453592 },
           eu: { price: 2.3507, changePct: 0.034, history: [2.274, 2.2764, 2.2357, 2.2321, 2.2321, 2.2263, 2.239, 2.2644, 2.2764, 2.3051, 2.3499, 2.3507], currency: 'EUR', kgPerUnit: 1 },
@@ -931,7 +931,7 @@
       sourceId: 'european_commission', frequency: 'monthly',
       methodology: 'Comisión Europea, Milk Market Observatory (Agri-food Data Portal): precio mensual de la leche cruda de vaca pagada al productor en España, EUR/100 kg, último mes completo. Las cifras del último mes pueden ser provisionales. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-08-31', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T00:22:22.141Z'
+      status: 'verified', verifiedAt: '2026-09-30T00:33:20.656Z'
     },
     'fertilizantes-urea-us': {
       sourceId: 'dtn_fertilizer', frequency: 'weekly',
@@ -958,43 +958,49 @@
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cerdo clasificada S (≥60 % magro) en España, EUR/100 kg de canal. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T00:22:18.691Z'
+      status: 'verified', verifiedAt: '2026-09-30T00:33:16.665Z'
     },
     'ganado-vaca-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de macho joven (categoría A, conformación R3, la referencia UE) en España, EUR/100 kg de canal. No es vaca de desecho ni la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T00:22:19.696Z'
+      status: 'verified', verifiedAt: '2026-09-30T00:33:17.684Z'
     },
     'ovino-cordero-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cordero pesado en España, EUR/100 kg de canal. No es la media de la UE ni cordero ligero. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T00:22:20.038Z'
+      status: 'verified', verifiedAt: '2026-09-30T00:33:18.002Z'
     },
     'avicultura-pollo-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio de venta semanal del pollo broiler entero (65 % de rendimiento) en España; el portal lo da en moneda nacional (EUR) por 100 kg y se divide entre 100 para expresarlo en EUR/kg. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T00:22:20.502Z'
+      status: 'verified', verifiedAt: '2026-09-30T00:33:18.518Z'
     },
     'azucar-azucar-eu': {
       sourceId: 'eu_agrifood', frequency: 'monthly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio mensual medio del azúcar en la UE (contratos mensuales), EUR/tonelada. Es la media de la UE, no un precio de España. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-06', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T00:22:20.824Z'
+      status: 'verified', verifiedAt: '2026-09-30T00:33:19.271Z'
     },
     'aceite-oliva-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal medio nacional del aceite de oliva virgen extra (hasta 0,8 %) en España, EUR/100 kg. No es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T00:22:21.389Z'
+      status: 'verified', verifiedAt: '2026-09-30T00:33:19.812Z'
     },
     'cereales-arroz-eu': {
       sourceId: 'eu_agrifood', frequency: 'weekly',
       methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal medio del arroz cáscara (paddy) tipo japónica en España, EUR/tonelada. No es la media de la UE ni arroz índica. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
       comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
-      status: 'verified', verifiedAt: '2026-09-30T00:22:21.710Z'
+      status: 'verified', verifiedAt: '2026-09-30T00:33:20.318Z'
+    },
+    'avicultura-huevos-eu': {
+      sourceId: 'eu_agrifood', frequency: 'weekly',
+      methodology: 'Comisión Europea, Agri-food Data Portal: precio semanal de los huevos de gallinas en jaula (Cage) en España, EUR/100 kg de huevos (el portal no lo da por docena). No es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.',
+      comparability: 'directional', observationDate: '2026-09-20', publicationDate: '2026-09-30',
+      status: 'verified', verifiedAt: '2026-09-30T00:33:18.939Z'
     }
   };
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T00:22:22.255Z",
+  "generatedAt": "2026-09-30T00:33:20.774Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -10,7 +10,7 @@
       "observationDate": "2026-09-20",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal medio del arroz cáscara (paddy) tipo japónica en España, EUR/tonelada. No es la media de la UE ni arroz índica. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 451.68,
@@ -604,7 +604,7 @@
       "observationDate": "2026-06",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio mensual medio del azúcar en la UE (contratos mensuales), EUR/tonelada. Es la media de la UE, no un precio de España. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 501.4009,
@@ -1144,7 +1144,7 @@
       "observationDate": "2026-09-20",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cerdo clasificada S (≥60 % magro) en España, EUR/100 kg de canal. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 178.56,
@@ -1684,7 +1684,7 @@
       "observationDate": "2026-09-20",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la canal de cordero pesado en España, EUR/100 kg de canal. No es la media de la UE ni cordero ligero. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 1011.8,
@@ -3333,6 +3333,546 @@
       "snapshotDate": "2026-09-29"
     },
     {
+      "id": "di_avicultura_huevos_eu",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-09-20",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional",
+      "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de los huevos de gallinas en jaula (Cage) en España, EUR/100 kg de huevos (el portal no lo da por docena). No es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
+      "value": 242.27,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "changePct": 1.3173,
+      "history": [
+        {
+          "period": "09-29",
+          "year": 2024,
+          "value": 195.06
+        },
+        {
+          "period": "10-06",
+          "year": 2024,
+          "value": 197.6
+        },
+        {
+          "period": "10-13",
+          "year": 2024,
+          "value": 201.19
+        },
+        {
+          "period": "10-20",
+          "year": 2024,
+          "value": 205.44
+        },
+        {
+          "period": "10-27",
+          "year": 2024,
+          "value": 219.17
+        },
+        {
+          "period": "11-03",
+          "year": 2024,
+          "value": 223.7
+        },
+        {
+          "period": "11-10",
+          "year": 2024,
+          "value": 226.72
+        },
+        {
+          "period": "11-17",
+          "year": 2024,
+          "value": 230.33
+        },
+        {
+          "period": "11-24",
+          "year": 2024,
+          "value": 231.33
+        },
+        {
+          "period": "12-01",
+          "year": 2024,
+          "value": 233.51
+        },
+        {
+          "period": "12-08",
+          "year": 2024,
+          "value": 233.71
+        },
+        {
+          "period": "12-15",
+          "year": 2024,
+          "value": 232.51
+        },
+        {
+          "period": "12-22",
+          "year": 2024,
+          "value": 231.55
+        },
+        {
+          "period": "12-29",
+          "year": 2024,
+          "value": 230.29
+        },
+        {
+          "period": "01-05",
+          "year": 2025,
+          "value": 229.11
+        },
+        {
+          "period": "01-12",
+          "year": 2025,
+          "value": 225.21
+        },
+        {
+          "period": "01-19",
+          "year": 2025,
+          "value": 216.3
+        },
+        {
+          "period": "01-26",
+          "year": 2025,
+          "value": 214.46
+        },
+        {
+          "period": "02-02",
+          "year": 2025,
+          "value": 212.25
+        },
+        {
+          "period": "02-09",
+          "year": 2025,
+          "value": 212.79
+        },
+        {
+          "period": "02-16",
+          "year": 2025,
+          "value": 214.31
+        },
+        {
+          "period": "02-23",
+          "year": 2025,
+          "value": 221.63
+        },
+        {
+          "period": "03-02",
+          "year": 2025,
+          "value": 232.5
+        },
+        {
+          "period": "03-09",
+          "year": 2025,
+          "value": 254.55
+        },
+        {
+          "period": "03-16",
+          "year": 2025,
+          "value": 263.67
+        },
+        {
+          "period": "03-23",
+          "year": 2025,
+          "value": 272.09
+        },
+        {
+          "period": "03-30",
+          "year": 2025,
+          "value": 270.18
+        },
+        {
+          "period": "04-06",
+          "year": 2025,
+          "value": 265.7
+        },
+        {
+          "period": "04-13",
+          "year": 2025,
+          "value": 269.17
+        },
+        {
+          "period": "04-20",
+          "year": 2025,
+          "value": 264.48
+        },
+        {
+          "period": "04-27",
+          "year": 2025,
+          "value": 264.48
+        },
+        {
+          "period": "05-04",
+          "year": 2025,
+          "value": 242.04
+        },
+        {
+          "period": "05-11",
+          "year": 2025,
+          "value": 236.26
+        },
+        {
+          "period": "05-18",
+          "year": 2025,
+          "value": 233.1
+        },
+        {
+          "period": "05-25",
+          "year": 2025,
+          "value": 233.48
+        },
+        {
+          "period": "06-01",
+          "year": 2025,
+          "value": 232.49
+        },
+        {
+          "period": "06-08",
+          "year": 2025,
+          "value": 228.97
+        },
+        {
+          "period": "06-15",
+          "year": 2025,
+          "value": 224.37
+        },
+        {
+          "period": "06-22",
+          "year": 2025,
+          "value": 221.91
+        },
+        {
+          "period": "06-29",
+          "year": 2025,
+          "value": 219.39
+        },
+        {
+          "period": "07-06",
+          "year": 2025,
+          "value": 219.69
+        },
+        {
+          "period": "07-13",
+          "year": 2025,
+          "value": 226.88
+        },
+        {
+          "period": "07-20",
+          "year": 2025,
+          "value": 229.31
+        },
+        {
+          "period": "07-27",
+          "year": 2025,
+          "value": 232.08
+        },
+        {
+          "period": "08-03",
+          "year": 2025,
+          "value": 232.34
+        },
+        {
+          "period": "08-10",
+          "year": 2025,
+          "value": 232.08
+        },
+        {
+          "period": "08-17",
+          "year": 2025,
+          "value": 232.08
+        },
+        {
+          "period": "08-24",
+          "year": 2025,
+          "value": 234.52
+        },
+        {
+          "period": "08-31",
+          "year": 2025,
+          "value": 235.15
+        },
+        {
+          "period": "09-07",
+          "year": 2025,
+          "value": 236.69
+        },
+        {
+          "period": "09-14",
+          "year": 2025,
+          "value": 239.41
+        },
+        {
+          "period": "09-21",
+          "year": 2025,
+          "value": 246.7
+        },
+        {
+          "period": "09-28",
+          "year": 2025,
+          "value": 258.05
+        },
+        {
+          "period": "10-05",
+          "year": 2025,
+          "value": 268.41
+        },
+        {
+          "period": "10-12",
+          "year": 2025,
+          "value": 291.37
+        },
+        {
+          "period": "10-19",
+          "year": 2025,
+          "value": 294.41
+        },
+        {
+          "period": "10-26",
+          "year": 2025,
+          "value": 303.72
+        },
+        {
+          "period": "11-02",
+          "year": 2025,
+          "value": 302.35
+        },
+        {
+          "period": "11-09",
+          "year": 2025,
+          "value": 299.38
+        },
+        {
+          "period": "11-16",
+          "year": 2025,
+          "value": 298.26
+        },
+        {
+          "period": "11-23",
+          "year": 2025,
+          "value": 306.92
+        },
+        {
+          "period": "11-30",
+          "year": 2025,
+          "value": 310.03
+        },
+        {
+          "period": "12-07",
+          "year": 2025,
+          "value": 310.6
+        },
+        {
+          "period": "12-14",
+          "year": 2025,
+          "value": 308.54
+        },
+        {
+          "period": "12-21",
+          "year": 2025,
+          "value": 302.02
+        },
+        {
+          "period": "12-28",
+          "year": 2025,
+          "value": 302.02
+        },
+        {
+          "period": "01-04",
+          "year": 2026,
+          "value": 302.02
+        },
+        {
+          "period": "01-11",
+          "year": 2026,
+          "value": 279.45
+        },
+        {
+          "period": "01-18",
+          "year": 2026,
+          "value": 268.02
+        },
+        {
+          "period": "01-25",
+          "year": 2026,
+          "value": 274.42
+        },
+        {
+          "period": "02-01",
+          "year": 2026,
+          "value": 276.58
+        },
+        {
+          "period": "02-08",
+          "year": 2026,
+          "value": 285.1
+        },
+        {
+          "period": "02-15",
+          "year": 2026,
+          "value": 291.32
+        },
+        {
+          "period": "02-22",
+          "year": 2026,
+          "value": 296.93
+        },
+        {
+          "period": "03-01",
+          "year": 2026,
+          "value": 300.87
+        },
+        {
+          "period": "03-08",
+          "year": 2026,
+          "value": 306.28
+        },
+        {
+          "period": "03-15",
+          "year": 2026,
+          "value": 307.31
+        },
+        {
+          "period": "03-22",
+          "year": 2026,
+          "value": 313.29
+        },
+        {
+          "period": "03-29",
+          "year": 2026,
+          "value": 313.15
+        },
+        {
+          "period": "04-05",
+          "year": 2026,
+          "value": 317.86
+        },
+        {
+          "period": "04-12",
+          "year": 2026,
+          "value": 314.79
+        },
+        {
+          "period": "04-19",
+          "year": 2026,
+          "value": 301.65
+        },
+        {
+          "period": "04-26",
+          "year": 2026,
+          "value": 294.4
+        },
+        {
+          "period": "05-03",
+          "year": 2026,
+          "value": 290.47
+        },
+        {
+          "period": "05-10",
+          "year": 2026,
+          "value": 285.72
+        },
+        {
+          "period": "05-17",
+          "year": 2026,
+          "value": 274.01
+        },
+        {
+          "period": "05-24",
+          "year": 2026,
+          "value": 266.63
+        },
+        {
+          "period": "05-31",
+          "year": 2026,
+          "value": 259.78
+        },
+        {
+          "period": "06-07",
+          "year": 2026,
+          "value": 241.36
+        },
+        {
+          "period": "06-14",
+          "year": 2026,
+          "value": 240.46
+        },
+        {
+          "period": "06-21",
+          "year": 2026,
+          "value": 225.79
+        },
+        {
+          "period": "06-28",
+          "year": 2026,
+          "value": 222.27
+        },
+        {
+          "period": "07-05",
+          "year": 2026,
+          "value": 218.69
+        },
+        {
+          "period": "07-12",
+          "year": 2026,
+          "value": 218.69
+        },
+        {
+          "period": "07-19",
+          "year": 2026,
+          "value": 218.43
+        },
+        {
+          "period": "07-26",
+          "year": 2026,
+          "value": 205.63
+        },
+        {
+          "period": "08-02",
+          "year": 2026,
+          "value": 205.91
+        },
+        {
+          "period": "08-09",
+          "year": 2026,
+          "value": 205.91
+        },
+        {
+          "period": "08-16",
+          "year": 2026,
+          "value": 205.91
+        },
+        {
+          "period": "08-23",
+          "year": 2026,
+          "value": 207.22
+        },
+        {
+          "period": "08-30",
+          "year": 2026,
+          "value": 209.55
+        },
+        {
+          "period": "09-06",
+          "year": 2026,
+          "value": 230.04
+        },
+        {
+          "period": "09-13",
+          "year": 2026,
+          "value": 239.12
+        },
+        {
+          "period": "09-20",
+          "year": 2026,
+          "value": 242.27
+        }
+      ],
+      "snapshotDate": "2026-09-30"
+    },
+    {
       "id": "di_leche_eu",
       "product": "leche",
       "region": "eu",
@@ -3340,7 +3880,7 @@
       "observationDate": "2026-08-31",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Milk Market Observatory (Agri-food Data Portal): precio mensual de la leche cruda de vaca pagada al productor en España, EUR/100 kg, último mes completo. Las cifras del último mes pueden ser provisionales. Es la referencia española; no es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 45.53,
@@ -3934,7 +4474,7 @@
       "observationDate": "2026-09-20",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal medio nacional del aceite de oliva virgen extra (hasta 0,8 %) en España, EUR/100 kg. No es la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 346.89,
@@ -4474,7 +5014,7 @@
       "observationDate": "2026-09-20",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio de venta semanal del pollo broiler entero (65 % de rendimiento) en España; el portal lo da en moneda nacional (EUR) por 100 kg y se divide entre 100 para expresarlo en EUR/kg. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 2.3507,
@@ -5145,7 +5685,7 @@
       "observationDate": "2026-09-20",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional",
       "methodology": "Comisión Europea, Agri-food Data Portal: precio semanal de la canal de macho joven (categoría A, conformación R3, la referencia UE) en España, EUR/100 kg de canal. No es vaca de desecho ni la media de la UE. La API no publica fecha de publicación: se registra el día en que se recuperó por primera vez.",
       "value": 614.67,

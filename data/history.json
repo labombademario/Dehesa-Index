@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T00:22:22.267Z",
+  "generatedAt": "2026-09-30T00:33:20.787Z",
   "observations": [
     {
       "id": "di_azucar_azucar_eu:2017-11-01",
@@ -15,7 +15,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -31,7 +31,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -47,7 +47,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -63,7 +63,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -79,7 +79,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -95,7 +95,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -111,7 +111,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -127,7 +127,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -143,7 +143,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -159,7 +159,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -175,7 +175,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -191,7 +191,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -207,7 +207,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -223,7 +223,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -239,7 +239,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -255,7 +255,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -271,7 +271,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -287,7 +287,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -303,7 +303,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -319,7 +319,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -335,7 +335,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -351,7 +351,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -367,7 +367,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -383,7 +383,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -399,7 +399,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -415,7 +415,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -431,7 +431,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -447,7 +447,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -463,7 +463,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -479,7 +479,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -495,7 +495,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -511,7 +511,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -527,7 +527,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -543,7 +543,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -559,7 +559,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -575,7 +575,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -591,7 +591,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -607,7 +607,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -623,7 +623,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -639,7 +639,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -655,7 +655,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -671,7 +671,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -687,7 +687,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -703,7 +703,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -719,7 +719,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -735,7 +735,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -751,7 +751,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -767,7 +767,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -783,7 +783,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -799,7 +799,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -815,7 +815,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -831,7 +831,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -847,7 +847,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -863,7 +863,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -879,7 +879,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -895,7 +895,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -911,7 +911,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -927,7 +927,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -943,7 +943,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -959,7 +959,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -975,7 +975,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -991,7 +991,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1007,7 +1007,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1023,7 +1023,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1039,7 +1039,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1055,7 +1055,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1071,7 +1071,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1151,7 +1151,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1167,7 +1167,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1183,7 +1183,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1199,7 +1199,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1215,7 +1215,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1231,7 +1231,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1311,7 +1311,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1327,7 +1327,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1343,7 +1343,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1359,7 +1359,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1375,7 +1375,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1391,7 +1391,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1471,7 +1471,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1487,7 +1487,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1503,7 +1503,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1519,7 +1519,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1535,7 +1535,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1551,7 +1551,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1631,7 +1631,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1647,7 +1647,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1663,7 +1663,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1679,7 +1679,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1695,7 +1695,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1711,7 +1711,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1791,7 +1791,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1807,7 +1807,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1823,7 +1823,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1839,7 +1839,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1855,7 +1855,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1871,7 +1871,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1951,7 +1951,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1967,7 +1967,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -1983,7 +1983,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -1999,7 +1999,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2015,7 +2015,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2031,7 +2031,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2111,7 +2111,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2127,7 +2127,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2143,7 +2143,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2159,7 +2159,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2175,7 +2175,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2191,7 +2191,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2271,7 +2271,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2287,7 +2287,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2303,7 +2303,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2319,7 +2319,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2335,7 +2335,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2351,7 +2351,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2431,7 +2431,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2447,7 +2447,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2463,7 +2463,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2479,7 +2479,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2495,7 +2495,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2511,7 +2511,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2591,7 +2591,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2607,7 +2607,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2623,7 +2623,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2639,7 +2639,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2655,7 +2655,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2671,7 +2671,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2751,7 +2751,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2767,7 +2767,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2783,7 +2783,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2799,7 +2799,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2815,7 +2815,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2831,7 +2831,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2911,7 +2911,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2927,7 +2927,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2943,7 +2943,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2959,7 +2959,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -2975,7 +2975,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -2991,7 +2991,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3071,7 +3071,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3087,7 +3087,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3103,7 +3103,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3119,7 +3119,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3135,7 +3135,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3151,7 +3151,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3231,7 +3231,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3247,7 +3247,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3263,7 +3263,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3279,7 +3279,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3295,7 +3295,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3311,7 +3311,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3391,7 +3391,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3407,7 +3407,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3423,7 +3423,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3439,7 +3439,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3455,7 +3455,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3471,7 +3471,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3551,7 +3551,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3567,7 +3567,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3583,7 +3583,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3599,7 +3599,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3615,7 +3615,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3631,7 +3631,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -3647,7 +3647,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3663,7 +3663,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -3679,7 +3679,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -3763,6 +3763,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2024-09-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2024-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 195.06,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2024-09-01",
       "product": "leche",
       "region": "eu",
@@ -3775,7 +3791,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3791,7 +3807,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -3807,7 +3823,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -3823,7 +3839,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -3839,7 +3855,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -3855,7 +3871,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -3871,7 +3887,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -3887,7 +3903,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -3923,6 +3939,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2024-10-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2024-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 197.6,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2024-10-01",
       "product": "leche",
       "region": "eu",
@@ -3935,7 +3967,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -3951,7 +3983,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -3967,7 +3999,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -3983,7 +4015,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -3999,7 +4031,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -4015,7 +4047,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -4031,7 +4063,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -4047,7 +4079,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -4083,6 +4115,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2024-11-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2024-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 223.7,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2024-11-01",
       "product": "leche",
       "region": "eu",
@@ -4095,7 +4143,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -4111,7 +4159,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -4127,7 +4175,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -4143,7 +4191,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -4159,7 +4207,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -4175,7 +4223,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -4191,7 +4239,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -4207,7 +4255,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -4307,6 +4355,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2024-12-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2024-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 233.51,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2024-12-01",
       "product": "leche",
       "region": "eu",
@@ -4319,7 +4383,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -4335,7 +4399,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -4351,7 +4415,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -4367,7 +4431,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -4383,7 +4447,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -4399,7 +4463,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -4415,7 +4479,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -4431,7 +4495,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -4467,6 +4531,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-01-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 229.11,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-01-01",
       "product": "leche",
       "region": "eu",
@@ -4479,7 +4559,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -4495,7 +4575,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -4511,7 +4591,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -4527,7 +4607,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -4543,7 +4623,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -4559,7 +4639,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -4575,7 +4655,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -4591,7 +4671,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -4627,6 +4707,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-02-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 212.25,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-02-01",
       "product": "leche",
       "region": "eu",
@@ -4639,7 +4735,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -4655,7 +4751,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -4671,7 +4767,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -4687,7 +4783,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -4703,7 +4799,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -4719,7 +4815,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -4735,7 +4831,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -4751,7 +4847,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -4851,6 +4947,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-03-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 232.5,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-03-01",
       "product": "leche",
       "region": "eu",
@@ -4863,7 +4975,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -4879,7 +4991,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -4895,7 +5007,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -4911,7 +5023,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -4927,7 +5039,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -4943,7 +5055,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -4959,7 +5071,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -4975,7 +5087,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -5011,6 +5123,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-04-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 265.7,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-04-01",
       "product": "leche",
       "region": "eu",
@@ -5023,7 +5151,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -5039,7 +5167,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -5055,7 +5183,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -5071,7 +5199,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -5087,7 +5215,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -5103,7 +5231,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -5119,7 +5247,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -5135,7 +5263,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -5171,6 +5299,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-05-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 242.04,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-05-01",
       "product": "leche",
       "region": "eu",
@@ -5183,7 +5327,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -5199,7 +5343,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -5215,7 +5359,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -5231,7 +5375,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -5247,7 +5391,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -5263,7 +5407,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -5279,7 +5423,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -5295,7 +5439,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -5395,6 +5539,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-06-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 232.49,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-06-01",
       "product": "leche",
       "region": "eu",
@@ -5407,7 +5567,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -5423,7 +5583,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -5439,7 +5599,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -5455,7 +5615,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -5471,7 +5631,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -5487,7 +5647,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -5503,7 +5663,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -5519,7 +5679,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -5555,6 +5715,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-07-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 219.69,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-07-01",
       "product": "leche",
       "region": "eu",
@@ -5567,7 +5743,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -5583,7 +5759,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -5599,7 +5775,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -5615,7 +5791,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -5631,7 +5807,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -5647,7 +5823,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -5663,7 +5839,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -5679,7 +5855,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -5715,6 +5891,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-08-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 232.34,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-08-01",
       "product": "leche",
       "region": "eu",
@@ -5727,7 +5919,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -5743,7 +5935,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -5759,7 +5951,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -5775,7 +5967,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -5791,7 +5983,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -5807,7 +5999,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -5823,7 +6015,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -5839,7 +6031,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -5939,6 +6131,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-09-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 236.69,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-09-01",
       "product": "leche",
       "region": "eu",
@@ -5951,7 +6159,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -5967,7 +6175,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -5983,7 +6191,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -6015,7 +6223,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -6031,7 +6239,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -6047,7 +6255,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -6063,7 +6271,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -6079,7 +6287,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -6115,6 +6323,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-10-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-10-01",
+      "snapshotDate": "2026-09-30",
+      "value": 268.41,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-10-01",
       "product": "leche",
       "region": "eu",
@@ -6127,7 +6351,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -6143,7 +6367,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -6159,7 +6383,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -6191,7 +6415,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -6207,7 +6431,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -6223,7 +6447,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -6239,7 +6463,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -6255,7 +6479,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -6291,6 +6515,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-11-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-11-01",
+      "snapshotDate": "2026-09-30",
+      "value": 302.35,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-11-01",
       "product": "leche",
       "region": "eu",
@@ -6303,7 +6543,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -6319,7 +6559,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -6335,7 +6575,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -6367,7 +6607,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -6383,7 +6623,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -6399,7 +6639,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -6415,7 +6655,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -6431,7 +6671,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -6531,6 +6771,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2025-12-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2025-12-01",
+      "snapshotDate": "2026-09-30",
+      "value": 310.6,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2025-12-01",
       "product": "leche",
       "region": "eu",
@@ -6543,7 +6799,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -6559,7 +6815,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -6575,7 +6831,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -6607,7 +6863,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -6623,7 +6879,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -6639,7 +6895,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -6655,7 +6911,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -6671,7 +6927,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -6707,6 +6963,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2026-01-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-01-01",
+      "snapshotDate": "2026-09-30",
+      "value": 302.02,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-01-01",
       "product": "leche",
       "region": "eu",
@@ -6719,7 +6991,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -6735,7 +7007,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -6751,7 +7023,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -6783,7 +7055,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -6799,7 +7071,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -6831,7 +7103,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -6847,7 +7119,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -6863,7 +7135,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -6899,6 +7171,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2026-02-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-02-01",
+      "snapshotDate": "2026-09-30",
+      "value": 276.58,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-02-01",
       "product": "leche",
       "region": "eu",
@@ -6911,7 +7199,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -6943,7 +7231,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -6959,7 +7247,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -7007,7 +7295,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -7023,7 +7311,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -7055,7 +7343,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -7071,7 +7359,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -7087,7 +7375,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -7187,6 +7475,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2026-03-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-03-01",
+      "snapshotDate": "2026-09-30",
+      "value": 300.87,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-03-01",
       "product": "leche",
       "region": "eu",
@@ -7199,7 +7503,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -7231,7 +7535,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -7247,7 +7551,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -7295,7 +7599,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -7311,7 +7615,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -7343,7 +7647,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -7359,7 +7663,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -7375,7 +7679,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -7411,6 +7715,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2026-04-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-04-01",
+      "snapshotDate": "2026-09-30",
+      "value": 317.86,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-04-01",
       "product": "leche",
       "region": "eu",
@@ -7423,7 +7743,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -7455,7 +7775,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -7471,7 +7791,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -7519,7 +7839,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -7535,7 +7855,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -7567,7 +7887,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -7583,7 +7903,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -7599,7 +7919,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -7635,6 +7955,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2026-05-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-05-01",
+      "snapshotDate": "2026-09-30",
+      "value": 290.47,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-05-01",
       "product": "leche",
       "region": "eu",
@@ -7647,7 +7983,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -7679,7 +8015,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -7695,7 +8031,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -7743,7 +8079,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -7759,7 +8095,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -7791,7 +8127,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.824Z",
+      "verifiedAt": "2026-09-30T00:33:19.271Z",
       "comparability": "directional"
     },
     {
@@ -7807,7 +8143,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -7823,7 +8159,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -7923,6 +8259,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2026-06-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-06-01",
+      "snapshotDate": "2026-09-30",
+      "value": 241.36,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-06-01",
       "product": "leche",
       "region": "eu",
@@ -7935,7 +8287,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -7967,7 +8319,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -7983,7 +8335,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -8031,7 +8383,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -8047,7 +8399,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -8079,7 +8431,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -8095,7 +8447,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -8131,6 +8483,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2026-07-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-07-01",
+      "snapshotDate": "2026-09-30",
+      "value": 218.69,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-07-01",
       "product": "leche",
       "region": "eu",
@@ -8143,7 +8511,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -8175,7 +8543,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -8191,7 +8559,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -8239,7 +8607,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -8255,7 +8623,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -8287,7 +8655,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -8303,7 +8671,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -8339,6 +8707,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2026-08-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-08-01",
+      "snapshotDate": "2026-09-30",
+      "value": 205.91,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_leche_eu:2026-08-01",
       "product": "leche",
       "region": "eu",
@@ -8351,7 +8735,7 @@
       "frequency": "monthly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:22.141Z",
+      "verifiedAt": "2026-09-30T00:33:20.656Z",
       "comparability": "directional"
     },
     {
@@ -8383,7 +8767,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -8399,7 +8783,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -8447,7 +8831,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     },
     {
@@ -8463,7 +8847,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.710Z",
+      "verifiedAt": "2026-09-30T00:33:20.318Z",
       "comparability": "directional"
     },
     {
@@ -8479,7 +8863,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:18.691Z",
+      "verifiedAt": "2026-09-30T00:33:16.665Z",
       "comparability": "directional"
     },
     {
@@ -8495,7 +8879,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.038Z",
+      "verifiedAt": "2026-09-30T00:33:18.002Z",
       "comparability": "directional"
     },
     {
@@ -8531,6 +8915,22 @@
       "comparability": "directional"
     },
     {
+      "id": "di_avicultura_huevos_eu:2026-09-01",
+      "product": "huevos",
+      "region": "eu",
+      "sourceId": "eu_agrifood",
+      "observationDate": "2026-09-01",
+      "snapshotDate": "2026-09-30",
+      "value": 230.04,
+      "currency": "EUR",
+      "unit": "100kg",
+      "frequency": "weekly",
+      "publicationDate": "2026-09-30",
+      "status": "verified",
+      "verifiedAt": "2026-09-30T00:33:18.939Z",
+      "comparability": "directional"
+    },
+    {
       "id": "di_aceite_oliva_eu:2026-09-01",
       "product": "oliva",
       "region": "eu",
@@ -8543,7 +8943,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:21.389Z",
+      "verifiedAt": "2026-09-30T00:33:19.812Z",
       "comparability": "directional"
     },
     {
@@ -8559,7 +8959,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:20.502Z",
+      "verifiedAt": "2026-09-30T00:33:18.518Z",
       "comparability": "directional"
     },
     {
@@ -8575,7 +8975,7 @@
       "frequency": "weekly",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-09-30T00:22:19.696Z",
+      "verifiedAt": "2026-09-30T00:33:17.684Z",
       "comparability": "directional"
     }
   ]
