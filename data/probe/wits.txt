@@ -1,37 +1,56 @@
-pbcatcol
-pbcatedt
-pbcatfmt
-pbcattbl
-pbcatvld
-TPHS
-
-== TABLE pbcatcol
-pbc_tnam,pbc_tid,pbc_ownr,pbc_cnam,pbc_cid,pbc_labl,pbc_lpos,pbc_hdr,pbc_hpos,pbc_jtfy,pbc_mask,pbc_case,pbc_hght,pbc_wdth,pbc_ptrn,pbc_bmap,pbc_init,pbc_cmnt,pbc_edit,pbc_tag
-
-== TABLE pbcatedt
-pbe_name,pbe_edit,pbe_type,pbe_cntr,pbe_seqn,pbe_flag,pbe_work
-"###,###.00","###,###.00",90,1,1,32,"10                              "
-"#####","#####",90,1,1,32,"10                              "
-"###-##-####","###-##-####",90,1,1,32,"00                              "
-
-== TABLE pbcatfmt
-pbf_name,pbf_frmt,pbf_type,pbf_cntr
-"[General]","[General]",81,0
-"0","0",81,0
-"0.00","0.00",81,0
-
-== TABLE pbcattbl
-pbt_tnam,pbt_tid,pbt_ownr,pbd_fhgt,pbd_fwgt,pbd_fitl,pbd_funl,pbd_fchr,pbd_fptc,pbd_ffce,pbh_fhgt,pbh_fwgt,pbh_fitl,pbh_funl,pbh_fchr,pbh_fptc,pbh_ffce,pbl_fhgt,pbl_fwgt,pbl_fitl,pbl_funl,pbl_fchr,pbl_fptc,pbl_ffce,pbt_cmnt
-
-== TABLE pbcatvld
-pbv_name,pbv_vald,pbv_type,pbv_cntr,pbv_msg
-
-== TABLE TPHS
-TARIFF,EFF_DATE,CHANGE,SUB_CHAP,DESC1,DESC2,DESC3,FOOTNOTE,UOM,MFN,AUT,NZT,CCCT,LDCT,GPT,UST,MXT,CIAT,CT,CRT,IT,NT,SLT,PT,COLT,JT,PAT,HNT,KRT,CEUT,CPTPT,UKT,row_id,UAT,General Tariff,CPUKT
-"0101.2","01/01/12 00:00:00",0,,"Horses:",,,,,,,,,,,,,,,,,,,,,,,,,,,,26837,,,
-"0101.21.00","09/01/26 00:00:00",1,,"Pure-bred breeding animals",,,,,"Free",,,"Free","Free","Free","Free","Free","Free","Free","Free","Free",,,"Free","Free","Free","Free","Free","Free","Free","Free","Free",26838,"Free","35%","Free"
-"0101.21.00.00","01/01/12 00:00:00",0,,"Pure-bred breeding animals",,,,"NMB","Free",,,,,,,,,,,,,,,,,,,,,,,26839,,"35%",
-
-EU zip 78528848 bytes
-[('Declarable codes.xlsx', 588404), ('Measure conditions.xlsx', 2358159), ('Nomenclature EN.xlsx', 1300061), ('Duties Export 01-99.xlsx', 1066425), ('Additional codes descriptions.xlsx', 2017329), ('Taric measures 15092026.xlsx', 67995277), ('Legal basis.xlsx', 122684), ('Measure exclusions.xlsx', 1311435), ('Nomenclature FR.xlsx', 1343056), ('Geographical areas description.xlsx', 249866), ('Nomenclature DE.xlsx', 1326964), ('Measure footnotes.xlsx', 5348637), ('CCT Exchange rates.xlsx', 59260), ('Duties Import 01-99.xlsx', 7862401), ('Box 44 codes of the SAD.xlsx', 1185800), ('Geographical areas composition.xlsx', 137690), ('Nomenclature footnotes.xlsx', 28978), ('Footnotes descriptions.xlsx', 5904434)]
-HEAD Measure conditions.xlsx b'PK\x03\x04\x14\x00\x00\x00\x08\x00\x969!]F\xc7MH\x95\x00\x00\x00\xcd\x00\x00\x00\x10\x00\x00\x00docProps/app.xmlM\xcfM\x0b\xc20\x0c\x06\xe0\xbfRv\xb7\x99\x8a\x1e\xa4\x0eD=\x8a\x9e\xbc\xcf.u\x85\xb6)m\x84\xfa\xef\xed\x04?nyy\xc8\x1b\xa2.\x89"&\xb6\x98E\xf1.\xe4m32\xc7\r@\xd6#\xfa>\xcb\xca\xa1\x8a\xa1\xe4{\xae1\xdd\x81\x8c\xb1\x1a\x0f\xa4\x1f\x1e\x03\xc3\xa2m\xd7\x80\x851\x0c8\xcc\xe2\xb7\xb0\xe9\xd4.Fgu\xcf\x96Bw\xb2:Q&\xc3\xe2X4:\xb1\'\x1f\xab\xdc\x1c\n\x10\xe7z%>\x8b\x13K9\x97+\x05\xff\x8bS\xcb\x15S\x9e\xe6\xcao\xfcd\x05\xbf\x07\xba\x17PK\x03\x04\x14\x00\x00\x00\x08\x00\x969!]B\x97\xa6G\xef\x00\x00\x00\xcb\x01\x00\x00\x11\x00\x00\x00docProps/core.xml\x95\x91MO\xc30\x0c\x86\xff\xca\x94{\xeb\xb4e\x13D]/ N !1\t\xc4-J\xbc-\xa2\xf9Pb\xd4\xee\xdf\xd3\x96\xad\x1b\x82\xcb\x8e\xf1\xfb\xf8\xb1\xad\xd4*\x08\xe5#\xbeD\x1f0\x92\xc1\xb4\xe8m\xeb\x92Pa\xcd\xf6DA\x00$\xb5G+S>\x10n\x08\xb7>ZI\xc33\xee H\xf5)w\x08%\xe7+\xb0HRK\x920\n\xb30\x1b\xd9Q\xa9\xd5\xac\x0c_\xb1\x9d\x04Z\x01\xb6h\xd1Q\x82"/\xe0\xcc\x12F\x9b\xfem\x98\x92\x99\xec\x93\x99\xa9\xae\xeb\xf2\xae\x9a\xb8a\xa3\x02\xde\x9f\x9f^\xa7\xe53\xe3\x12I\xa7\x905\xb5VBE\x94\xe4c3^\x14\x0e}[\xc3E\xb1>\xce\xfe)\xa0^\x0c\x13\x04\x1d\x02\xae\xd9)y\xab\xee\x1f6\x8f\xac)y\xb9\xca\xf8]\xc6\x8b\r_\x8a\xa2\x14\xd5\xed\xc7\xe8\xfa\xd5\x7f\x16Z\xaf\xcd\xd6\\g\xbcY^\x18O\x82\xa6\x86?\xff\xd6|\x03PK\x03\x04\x14\x00\x00\x00\x08\x00\x969!]\x99\\\x9c#\x10\x06\x00\x00\x9c\'\x00\x00\x13\x00\x00\x00xl/theme/theme1.xml\xedZ[s\xda8\x14~\xef\xaf\xd0xg\xf6m\x0b\xc66\x81\xb6\xb4\x13siv\xdb\xb4\x99\x84\xedN\x1f\x85\x11X\x8dlyd\x91\x84\x7f\xbfG6\x10\xcb\x96\r\xed\x92M\xba\x9b<\x04,\xe9\xfb\xceEG\xe7\xe88y\xf3\xee.b\xe8\x86\x88\x94\xf2x`\xd9/\xdb\xd6\xbb\xb7/\xde\xe0W2$\x11A0\x19\xa7\xaf\xf0\xc0\n\xa5L^\xb5Zi\x00\xc38}\xc9\x13\x12\xc3\xdc\x82\x8b\x08Kx\x14\xcb\xd6\\\xe0[\x1a/#\xd6\xea\xb4\xdb\xddV\x84il\xa1\x18Gd`}^,h@\xd0TQZo_ \xb4\xe5\x1f3\xf8\x15\xcbT\x8de\xa3\x01\x13WA&\xb9\x88\xb4\xf2\xf9l\xc5\xfc\xda\xde>e\xcf\xe9:\x1d2\x81n0\x1bX \x7f\xceo\xa7\xe4NZ\x88\xe1T\xc2\xc4\xc0jg?Vk\xc7\xd1\xd2H\x80\x82\xc9}\x94\x05\xbaI\xf6\xa3\xd3\x15\x082\r;:\x9dX\xcev|\xf6\xc4\xed\x9f\x8c\xca\xdat4m\x1a\xe0\xe3\xf1x8\xb6\xcb\xd2\x8bp\x1c\x04\xe0Q\xbb\x9e\xc2\x9d\xf4l\xbf\xa4A\t\xb4\xa3i\xd0d\xd8\xf6\xda\xae\x91\xa6\xaa\x8dSO\xd3\xf7}\xdf\xeb\x9bh\x9c\n\x8d[O\xd3kw\xdd\xd3\x8e\x89\xc6\xad\xd0x\r\xbe\xf1O\x87\xc3\xae\x89\xc6\xab\xd0t\xebi&\'\xfd\xaek\xa4\xe9\x16hBF\xe3\xebz\x12\x15\xb5\xe5@\xd3 \x00Xpv\xd6\xcc\xd2\x03\x96^)\xfau\x94\x1a\xd9\x1d\xbb\xddA\\\xf0X\xee9\x89\x11\xfe\xc6\xc5\x04\xd6i\xd2\x19\x964Fr\x9d\x90\x05\x0e\x007\xc4\xd1LP|\xafA\xb6\x8a\xe0\xc2\x92\xd2\\\x90\xd6\xcf)\xb5P\x1a\x08\x9a\xc8\x81\xf5G\x82!\xc5\xdc\xaf\xfd\xf5\x97\xbb\xc9\xa43z\x9d}:\xcek\x94\x7fi\xab\x01\xa7\xed\xbb\x9b\xcf\x93\xfcs\xe8\xe4\x9f\xa7\x93\xd7MB\xcep\xbc,\t\xf1\xfb#[a\x87\'n;\x13r:\x1cgB|\xcf\xf6\xf6\x91\xa5%2\xcf\xef\xf9\n\xebN<g\x1fV\x96\xb0]\xcf\xcf\xe4\x9e\x8cr#\xbb\xdd\xf6X}\xf6OGn#\xd7\xa9\xc0\xb3"\xd7\x94F$E\x9f\xc8-\xba\xe4\x118\xb5I\r2\x13?\x08\x9d\x86\x98jP\x1c\x02\xa4\t1\x96\xa1\x86\xf8\xb4\xc6\xac\x11\xe0\x13}\xb7\xbe\x08\xc8\xdf\x8d\x88\xf7\xabo\x9a=W\xa1XI\xda\x84\xf8\x10F\x1a\xe2\x9cs\xe6s\xd1l\xfb\x07\xa5F\xd1\xf6U\xbc\xdc\xa3\x97X\x15\x01\x97\x18\xdf4\xaa5,\xc5\xd6x\x95\xc0\xf1\xad\x9c<\x1d\x13\x12\xcd\x94\x0b\x06A\x86\x97$&\x12\xa99~MH\x13\xfe+\xa5\xda\xfe\x9c\xd3@\xf0\x94/$\xfaJ\x91\x8fi\xb3#\xa7t&\xcd\xe83\x1a\xc1F\xaf\x1bu\x87h\xd2<z\xfe\x05\xf9\x9c5\n\x1c\x91\x1b\x1d\x02g\x1b\xb3F!\x84i\xbb\xf0\x1e\xaf$\x8e\x9a\xad\xc2\x11+B>b\x196\x1ar\xb5\x16\x81\xb6q\xa9\x84`Z\x12\xc6\xd1xN\xd2\xb4\x11\xfcY\xac5\x93>`\xc8\xec\xcd\x91u\xce\xd6\x91\x0e\x11\x92^7B>b\xce\x8b\x90\x11\xbf\x1e\x868J\x9a\xed\xa2qX\x04\xfd\x9e^\xc3I\xc1\xe8\x82\xcbf\xfd\xb8~\x86\xd53l,\x8e\xf7G\xd4\x17J\xe4\x0f&\xa7?\xe924\x07\xa3\x9aY\t\xbd\x84Vj\x9f\xaa\x874>\xa8\x1e2\n\x05\xf1\xb9\x1e>\xe5zx\n7\x96\xc6\xbcP\xae\x82{\x01\xff\xd1\xda7\xc2\xab\xf8\x82\xc09\x7f.}\xcf\xa5\xef\xb9\xf4=\xa1\xd2\xb77#}g\xc1\xd3\x8b[\xdeFn[\xc4\xfb\xae1\xda\xd74.(cWr\xcd\xc8\xc7T\xaf\x93)\xd89\x9f\xc0\xec\xfdh>\x9e\xf1\xed\xfa\xd9$\x84\xaf\x9aY-#\x16\x90K\x81\xb3A$\xb8\xfc\x8b\xca\xf0*\xc4\t\xe8d[%\t\xcbT\xd3e7\x8a\x12\x9eB\x1bn\xe9S\xf5J\x95\xd7\xe5\xaf\xb9(\xb8<[\xe4\xe9\xaf\xa1t>,\xcf\xf9<_\xe7\xb4\xcd\x0b3C\xb7rK\xea\xb6\x94\xbe\xb5&8J\xf4\xb1\xccpN\x1e\xcb\x0c;g<\x92\x1d\xb6w\xa0\x1d5\xfb\xf6]v\xe4#\xa50S\x97C\xb8\x1aB\xbe\x03m\xba\x9d\xdc:8\x9e\x98\x91\xb9\n\xd3R\x90o\xc3\xf9\xe9\xc5x\x1a\xe29\xd9\x04\xb9}\x98Wm\xe7\xd8\xd1\xd1\xfb\xe7\xc1Q\xb0\xa3\xef<\x96\x1d\xc7\x88\xf2\xa2!\xee\xa1\x86\x98\xcf\xc3C\x87y{_\x98g\x95\xc6P4\x14ml\xac$,F\xb7`\xb8\xd7\xf1,\x14\xe0d`-\xa0\x07\x83\xafQ\x02\xf2RU`1[\xc6\x03+\x90\xa2|L\x8cE\xe8p\xe7\x97\\_\xe3\xd1\x92\xe3\xdb\xa6e\xb5n\xaf)w\x19m"R9\xc2i\x98\x13g\xab\xca\xdee\xb1\xc1U\x1d\xcfU[\xf2\xb0\xbej=\xb4\x15N\xcf\xfeY\xad\xc8\x9f\x0c\x11N\x16\x0b\x12Hc\x94\x17\xa6J\xa2\xf3\x19S\xbe\xe7+I\xc4U8\xbfE3\xb6\x12\x97\x18\xbc\xe3\xe6\xc7qNS\xb8\x12v\xb6\x0f\x022\xb9\xbb9\xa9ze1g\xa6\xf2\xdf-\x0c\t,[\x88Y\x12\xe2M]\xed\xd5\xe7\x9b\x9c\xaez"v\xfa\x97w\xc1`\xf2\xfdp\xc9G\x0f\xe5;\xe7_\xf4]C\xae~\xf6\xdd\xe3\xfan\x93;'
+== Duties Import 01-99.xlsx / Export Worksheet
+('Goods code', 'Add code', 'Order No.', 'Start date', 'End date', 'RED_IND', 'Origin', 'Measure type', 'Legal base', 'Duty', 'Origin code', 'Meas. type code')
+('0100000000', None, None, '01-01-2021', None, None, 'United Kingdom', 'Tariff preference', 'Decision 2253/20', '0.000 % ', 'GB', '142')
+('0100000000', None, None, '01-01-2022', None, None, 'ERGA OMNES', 'Import control of organic products', 'Regulation 2306/21', 'Cond:  B cert: C-644 (29):; B cert: Y-929 (29):; B (09):', '1011', '750')
+('0100000000', None, None, '01-08-2020', None, None, 'Viet Nam', 'Tariff preference', 'Decision 0753/20', '0.000 % ', 'VN', '142')
+('0100000000', None, None, '20-07-2025', None, None, 'Belarus', 'Additional duties', 'Regulation 1227/25', '50.000 % ', 'BY', '695')
+('0100000000', None, None, '20-07-2025', None, None, 'Russian Federation', 'Additional duties', 'Regulation 1227/25', '50.000 % ', 'RU', '695')
+('1005900000', 'G007', None, '29-10-2025', None, None, 'ERGA OMNES', 'Official control - plants', 'Regulation 2072/19', 'Cond:  B cert: C-085 (29):; B cert: Y-146 (29):; B cert: Y-979 (29):; B cert: Y-171 (29):; B (09):', '1011', '415')
+('1005900000', 'G999', None, '29-10-2025', None, None, 'ERGA OMNES', 'Official control - plants', 'Regulation 2072/19', None, '1011', '415')
+('1005900000', None, '094131', '01-07-2024', None, None, 'ERGA OMNES', 'Non preferential tariff quota', 'Regulation 0761/20', '0.000 % ', '1011', '122')
+('1005900000', None, '094308', '01-01-2026', '31-12-2026', None, 'Ukraine', 'Preferential tariff quota', 'Regulation 0761/20', '0.000 % ', 'UA', '143')
+('1005900000', None, '094910', '01-05-2026', '31-12-2026', None, 'Mercosur', 'Preferential tariff quota', 'Regulation 0761/20', '0.000 % ', '5500', '143')
+('1005900000', None, '097216', '01-01-2026', '31-12-2026', None, 'Peru', 'Preferential tariff quota', 'Regulation 0405/13', '0.000 % ', 'PE', '143')
+('1005900000', None, '097529', '01-01-2026', '31-12-2026', None, 'Ecuador', 'Preferential tariff quota', 'Regulation 0754/17', '0.000 % ', 'EC', '143')
+('1005900000', None, None, '01-01-2009', None, None, 'North Macedonia', 'Tariff preference', 'Decision 0239/04', '0.000 % ', 'MK', '142')
+('1005900000', None, None, '01-01-2009', None, None, 'Bosnia and Herzegovina', 'Tariff preference', 'Decision 0474/08', '0.000 % ', 'BA', '142')
+('1005900000', None, None, '01-01-2012', None, None, 'Occupied palestinian Territory', 'Tariff preference', 'Decision 0824/11', '0.000 % ', 'PS', '142')
+('1005900000', None, None, '01-01-2026', '31-12-2026', None, 'New Zealand', 'Tariff preference', 'Decision 0244/24', '23.500 EUR TNE ', 'NZ', '142')
+('1005900000', None, None, '01-01-2026', '31-12-2026', None, 'Chile', 'Tariff preference', 'Decision 3016/24', '70.500 EUR TNE ', 'CL', '142')
+('1005900000', None, None, '01-02-2010', None, None, 'Serbia', 'Tariff preference', 'Decision 0036/10', '0.000 % ', 'XS', '142')
+('1005900000', None, None, '01-02-2020', None, None, 'Japan', 'Tariff preference', 'Decision 1907/18', '0.000 % ', 'JP', '142')
+('1005900000', None, None, '01-04-2009', None, None, 'Albania', 'Tariff preference', 'Decision 0332/09', '0.000 % ', 'AL', '142')
+('1005900000', None, None, '01-04-2016', None, None, 'Kosovo', 'Tariff preference', 'Decision 0342/16', '0.000 % ', 'XK', '142')
+('1005900000', None, None, '01-05-2010', None, None, 'Montenegro', 'Tariff preference', 'Decision 0224/10', '0.000 % ', 'ME', '142')
+('1005900000', None, None, '01-07-2024', None, None, 'Belarus', 'Third country duty', 'Regulation 1652/24', '94.000 EUR TNE ', 'BY', '103')
+('1005900000', None, None, '01-07-2024', None, None, 'Russian Federation', 'Third country duty', 'Regulation 1652/24', '94.000 EUR TNE ', 'RU', '103')
+('1005900000', None, None, '01-09-2014', None, None, 'Georgia', 'Tariff preference', 'Decision 0494/14', '0.000 % ', 'GE', '142')
+('1005900000', None, None, '01-09-2014', None, None, 'Moldova, Republic of', 'Tariff preference', 'Decision 0492/14', '0.000 % ', 'MD', '142')
+('1005900000', None, None, '21-09-2017', None, None, 'EU-Canada agreement: re-imported goods', 'Tariff preference', 'Decision 0037/17', '0.000 % ', '1006', '142')
+('1005900000', None, None, '21-09-2017', None, None, 'Canada', 'Tariff preference', 'Decision 0037/17', '0.000 % ', 'CA', '142')
+('1005900020', '2550', None, '01-07-2024', None, None, 'ERGA OMNES', 'Non preferential duty under end-use', 'Regulation 1652/24', 'Cond:  B cert: Y-155 (01):94.000 EUR TNE ; B (01):0.000 EUR TNE ; H cert: N-990 (28):; H (08):', '1011', '105')
+('1005900020', '2551', None, '01-07-2024', None, None, 'ERGA OMNES', 'Non preferential duty under end-use', 'Regulation 1652/24', 'Cond:  B cert: Y-155 (01):94.000 EUR TNE ; B (01):0.000 EUR TNE ; H cert: N-990 (28):; H (08):', '1011', '105')
+('1005900020', '2552', None, '01-07-2024', None, None, 'ERGA OMNES', 'Non preferential duty under end-use', 'Regulation 1652/24', 'Cond:  B cert: Y-155 (01):94.000 EUR TNE ; B (01):0.000 EUR TNE ; H cert: N-990 (28):; H (08):', '1011', '105')
+('1005900090', '2550', None, '01-07-2024', None, None, 'ERGA OMNES', 'Third country duty', 'Regulation 1652/24', 'Cond:  B cert: Y-155 (01):94.000 EUR TNE ; B (01):0.000 EUR TNE ', '1011', '103')
+('1005900090', '2551', None, '01-07-2024', None, None, 'ERGA OMNES', 'Third country duty', 'Regulation 1652/24', 'Cond:  B cert: Y-155 (01):94.000 EUR TNE ; B (01):0.000 EUR TNE ', '1011', '103')
+('1005900090', '2552', None, '01-07-2024', None, None, 'ERGA OMNES', 'Third country duty', 'Regulation 1652/24', 'Cond:  B cert: Y-155 (01):94.000 EUR TNE ; B (01):0.000 EUR TNE ', '1011', '103')
+rows 145996
+== Nomenclature EN.xlsx / Export Worksheet
+('Goods code', 'Start date', 'End date', 'Language', 'Hier. Pos.', 'Indent', 'Description', 'Descr. start date')
+('0100000000 80', '31-12-1971', None, 'EN', 2, None, 'LIVE ANIMALS', '31-12-1971')
+('0101000000 80', '01-01-1972', None, 'EN', 4, None, 'Live horses, asses, mules and hinnies', '01-01-1972')
+('0101210000 10', '01-01-2012', None, 'EN', 6, '- ', 'Horses', '01-01-2019')
+('0101210000 80', '01-01-2012', None, 'EN', 6, '- - ', 'Pure-bred breeding animals', '01-01-2019')
+('0101290000 80', '01-01-2012', None, 'EN', 6, '- - ', 'Other', '01-01-2021')
+('1005900000 80', '01-01-1972', None, 'EN', 6, '- ', 'Other', '01-01-2017')
+('1005900020 80', '24-04-2017', None, 'EN', 10, '- - ', 'Flint maize of specific weight equal to or more than 75,5\xa0kg/hl, with a vitreous grain content equal to or more than 92% by weight and with a maximum flotation index 26 and intended for processing', '24-04-2017')
+('1005900090 80', '24-04-2017', None, 'EN', 10, '- - ', 'Other', '24-04-2017')
+rows 25847
+== Geographical areas description.xlsx / Export Worksheet
+('Or./Dest.', 'Language', 'Abbrev.', 'Description', 'Start date', 'Descr. start date', 'End date')
+('1005', 'BG', 'SURV', 'Статистическо наблюдение', '01-01-2005', '01-01-2005', None)
+('1005', 'CS', 'SURV', 'Statistický dohled', '01-01-2005', '01-01-2005', None)
+('1005', 'DA', 'SURV', 'Statistisk overvågning', '01-01-2005', '01-01-2005', None)
+('1005', 'DE', 'SURV', 'Statistische Überwachung', '01-01-2005', '01-01-2005', None)
+('1005', 'EL', 'SURV', 'Στατιστική επιτήρηση', '01-01-2005', '01-01-2005', None)
+rows 6887
