@@ -170,5 +170,27 @@ const CON = [
   ['metodologia.html#indice', tri('Dehesa Index: el índice compuesto', 'Dehesa Index: the composite index', 'Dehesa Index : l’indice composite', 'Dehesa Index: l’indice composito'), 'indice índice index composite base 100 crea tu propio indice personalizado']
 ];
 for (const [u, n, k] of CON) add({ t: 'concept', u, n, s: tri('Cómo se calcula', 'How it works', 'Comment ça marche', 'Come funziona'), k });
+
+// --- país × categoría (perfiles de país: paises.html?c=XX&g=grupo) y páginas nuevas
+{
+  const pl = read('js/paises.js').split('\n'), GL = {};
+  L.forEach((l, i) => { const ln = pl.find(x => /^\s+country: '/.test(x) && x.indexOf('production: \'') > -1 && pl.indexOf(x) === [9, 13, 17, 21][i]) || pl[[9, 13, 17, 21][i]]; const seg = ln.slice(ln.indexOf("production: '")), re = /(\w+): '((?:[^'\\]|\\.)*)'/g; let m; while ((m = re.exec(seg))) { if (m[1] === 'latest') break; (GL[m[1]] = GL[m[1]] || {})[l] = m[2].replace(/\\'/g, '’'); } });
+  const CN = { ES: ['España', 'Spain', 'Espagne', 'Spagna', 'spain españa espanol'], FR: ['Francia', 'France', 'France', 'Francia', 'francia france'], DE: ['Alemania', 'Germany', 'Allemagne', 'Germania', 'alemania germany deutschland'], BE: ['Bélgica', 'Belgium', 'Belgique', 'Belgio', 'belgica belgium belgique'], AT: ['Austria', 'Austria', 'Autriche', 'Austria', 'austria osterreich'], PT: ['Portugal', 'Portugal', 'Portugal', 'Portogallo', 'portugal'], DK: ['Dinamarca', 'Denmark', 'Danemark', 'Danimarca', 'dinamarca denmark'], NL: ['Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi', 'paises bajos netherlands holanda'], CA: ['Canadá', 'Canada', 'Canada', 'Canada', 'canada canadá'], AU: ['Australia', 'Australia', 'Australie', 'Australia', 'australia'], US: ['EE. UU.', 'United States', 'États-Unis', 'Stati Uniti', 'eeuu usa united states estados unidos'], EU: ['Unión Europea', 'European Union', 'Union européenne', 'Unione europea', 'ue eu union europea european union europe'] };
+  const files = ['country-stats', 'spain-stats', 'france-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'portugal-stats', 'portugal-eurostat-stats', 'canada-stats', 'australia-trade-stats', 'eu-trade-stats', 'interest-rates-stats'];
+  const acc = {};
+  for (const f of files) { let d; try { d = JSON.parse(read('data/' + f + '.json')); } catch (e) { continue; } for (const [cc, c] of Object.entries(d.countries || {})) for (const sr of c.series) { const k = cc + '|' + sr.group; (acc[k] = acc[k] || []).push(sr.label); } }
+  for (const [k, labels] of Object.entries(acc)) {
+    const [cc, g] = k.split('|'); if (!CN[cc] || !GL[g]) continue;
+    const n = Object.fromEntries(L.map((l, i) => [l, CN[cc][i] + ' · ' + GL[g][l]]));
+    const kw = CN[cc][4] + ' ' + g.replace(/_/g, ' ') + ' ' + L.map(l => GL[g][l]).join(' ') + ' ' + [...new Set(labels.slice(0, 40).map(x => x.replace(/[()·:,]/g, ' ').toLowerCase()))].join(' ').slice(0, 600);
+    add({ t: 'country', u: 'paises.html?c=' + cc + '&g=' + g, n, s: tri('Datos por país', 'Country data', 'Données par pays', 'Dati per paese'), k: kw });
+  }
+  const P2 = [
+    ['perfiles.html', tri('Perfiles de país y comparador', 'Country profiles and comparison', 'Profils de pays et comparateur', 'Profili paese e confronto'), 'perfiles perfil profile profiles comparar compare comparador comparison paises countries ue eu union europea'],
+    ['aranceles.html', tri('Aranceles agroalimentarios (EE. UU., UE, Canadá, México)', 'Agri-food tariffs (US, EU, Canada, Mexico)', 'Droits de douane agroalimentaires (États-Unis, UE, Canada, Mexique)', 'Dazi agroalimentari (USA, UE, Canada, Messico)'), 'aranceles arancel tariff tariffs duties derechos aduana customs hts taric usitc cbsa mexico canada ue eu usa trump seccion 122 301 ieepa'],
+    ['status.html', tri('Estado de los datos', 'Data status', 'État des données', 'Stato dei dati'), 'estado status pipeline pipelines actualizacion update datos data calidad quality workflow errores']
+  ];
+  for (const [u, n, k] of P2) add({ t: 'page', u, n, s: tri('Página', 'Page', 'Page', 'Page'), k });
+}
 fs.writeFileSync('data/search-index.json', JSON.stringify({ schemaVersion: '1.0', generatedAt: new Date().toISOString().slice(0, 10), entries: out.map((e, i) => ({ i, ...e })) }) + '\n');
 console.log('entradas', out.length, Object.entries(out.reduce((a, e) => (a[e.t] = (a[e.t] || 0) + 1, a), {})).map(x => x.join(':')).join(' '));
