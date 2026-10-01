@@ -22,7 +22,7 @@
   // Tema (colores de gráfico) -- mismos hex que css/style.css
   // ---------------------------------------------------------------------
   var THEME = {
-    light: { positive: '#2F7D4F', negative: '#B23A34', neutral: '#8A8471', compareLine: '#3B6EA8' },
+    light: { positive: '#276A43', negative: '#B23A34', neutral: '#6B6652', compareLine: '#3B6EA8' },
     dark: { positive: '#4FCB77', negative: '#E8776D', neutral: '#8F8A74', compareLine: '#7FB2E8' }
   };
   function T() { return THEME[S.getTheme()] || THEME.light; }

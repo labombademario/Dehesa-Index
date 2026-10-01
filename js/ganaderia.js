@@ -87,7 +87,7 @@
   }
   function unitNote(u, t) { return u === 'HEAD' ? t.heads : u === 'PIGS / LITTER' ? t.pigs : u === '$ / CWT' ? t.cwt : u === 'LB' || u === 'LB / HEAD' ? t.lb : u; }
   function pct(a, b) { return b ? (a / b - 1) * 100 : null; }
-  function chgHtml(p) { if (p === null) return '<span style="color:var(--text-faint)">—</span>'; var c = p > 0.05 ? '#2f7d4f' : p < -0.05 ? '#a9491f' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (p > 0.05 ? '+' : p < -0.05 ? '−' : '') + nf(Math.abs(p), 1) + ' %</span>'; }
+  function chgHtml(p) { if (p === null) return '<span style="color:var(--text-faint)">—</span>'; var c = p > 0.05 ? 'var(--positive)' : p < -0.05 ? '#a9491f' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (p > 0.05 ? '+' : p < -0.05 ? '−' : '') + nf(Math.abs(p), 1) + ' %</span>'; }
   function plabel(p) { return p.length === 7 ? p : p; }
   function prevYear(p) { return (Number(p.slice(0, 4)) - 1) + p.slice(4); }
   function pts(arr, k) { return QONLY[k] ? arr.filter(function (x) { return /-(02|05|08|11)$/.test(x[0]); }) : arr; }

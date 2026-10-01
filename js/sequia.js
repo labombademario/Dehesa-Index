@@ -54,7 +54,7 @@
   function series(region) { return region === 'CONUS' ? D.us.conus : D.states[region] || []; }
   function val(row, m) { return row[1 + m]; }
   function at(rows, off) { return rows.length > off ? rows[rows.length - 1 - off] : null; }
-  function delta(d, t) { if (d === null) return '<span style="color:var(--text-faint)">—</span>'; var c = d > 0.05 ? '#a9491f' : d < -0.05 ? '#2f7d4f' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (d > 0.05 ? '+' : d < -0.05 ? '−' : '') + nf(Math.abs(d), 1) + ' ' + esc(t.pp) + '</span>'; }
+  function delta(d, t) { if (d === null) return '<span style="color:var(--text-faint)">—</span>'; var c = d > 0.05 ? '#a9491f' : d < -0.05 ? 'var(--positive)' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (d > 0.05 ? '+' : d < -0.05 ? '−' : '') + nf(Math.abs(d), 1) + ' ' + esc(t.pp) + '</span>'; }
   function cls(v) { return v <= 0 ? 0 : v < 10 ? 1 : v < 25 ? 2 : v < 45 ? 3 : v < 70 ? 4 : 5; }
   var AXX = { es: ['Semana', '% de la superficie'], en: ['Week', '% of area'], fr: ['Semaine', '% de la superficie'], it: ['Settimana', '% della superficie'] };
   function axTitle(y, x, yx) { return '<text transform="translate(12 ' + yx + ') rotate(-90)" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(y) + '</text><text x="' + x[0] + '" y="' + x[1] + '" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(x[2]) + '</text>'; }

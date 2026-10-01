@@ -112,7 +112,7 @@
     var byC = {}; p.series.forEach(function (s) { byC[s.c] = s; });
     var fresh = codes.filter(function (c) { return !isOld(byC[c], p); }), hist = codes.filter(function (c) { return isOld(byC[c], p); });
     var chip = function (c) { var on = ST.c.indexOf(c) > -1, o = isOld(byC[c], p); return '<button type="button" data-c="' + c + '" aria-pressed="' + on + '" style="' + chipStyle(on) + (o ? ';opacity:.8' : '') + '">' + flag(c) + ' ' + esc(cname(c)) + (o ? ' <span style="font-size:11px;color:var(--text-faint)">· ' + esc(byC[c].latest[0].slice(0, 4)) + '</span>' : '') + '</button>'; };
-    h += '<div style="font-size:13px;margin-bottom:4px">' + esc(t.countries) + '</div><div role="group" aria-label="' + esc(t.countries) + '">' + fresh.map(chip).join('') + '<span style="' + chipStyle(false) + ';opacity:.6;cursor:default" title="' + esc(t.au) + '">🇦🇺 ' + esc(cname('AU')) + ' · ' + esc(t.noprice) + '</span></div>';
+    h += '<div style="font-size:13px;margin-bottom:4px">' + esc(t.countries) + '</div><div role="group" aria-label="' + esc(t.countries) + '">' + fresh.map(chip).join('') + '<span style="' + chipStyle(false) + ';cursor:default;border-style:dashed;color:var(--text-muted)" title="' + esc(t.au) + '">🇦🇺 ' + esc(cname('AU')) + ' · ' + esc(t.noprice) + '</span></div>';
     if (hist.length) {
       h += '<div style="margin:6px 0 4px"><label style="font-size:13px;cursor:pointer"><input type="checkbox" id="cp-old"' + (ST.old ? ' checked' : '') + '> ' + esc(t.showOld) + ' (' + hist.length + ')</label></div>';
       if (ST.old) h += '<div style="font-size:12px;color:var(--text-faint);margin-bottom:2px">' + esc(t.oldL) + '</div><div role="group" aria-label="' + esc(t.oldL) + '">' + hist.map(chip).join('') + '</div>';

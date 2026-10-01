@@ -46,7 +46,7 @@
   }
   function unitLabel(u) { return u === '480 LB BALES' ? (lang() === 'es' ? 'pacas de 480 lb' : lang() === 'fr' ? 'balles de 480 lb' : lang() === 'it' ? 'balle da 480 lb' : '480-lb bales') : u.toLowerCase(); }
   function pct(a, b) { return b ? (a / b - 1) * 100 : null; }
-  function chg(p) { if (p === null) return '<span style="color:var(--text-faint)">—</span>'; var c = p > 0.05 ? '#2f7d4f' : p < -0.05 ? '#a9491f' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (p > 0.05 ? '+' : p < -0.05 ? '−' : '') + nf(Math.abs(p), 1) + ' %</span>'; }
+  function chg(p) { if (p === null) return '<span style="color:var(--text-faint)">—</span>'; var c = p > 0.05 ? 'var(--positive)' : p < -0.05 ? '#a9491f' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (p > 0.05 ? '+' : p < -0.05 ? '−' : '') + nf(Math.abs(p), 1) + ' %</span>'; }
   function val(arr, y) { for (var i = 0; i < arr.length; i++) if (arr[i][0] === y) return arr[i][1]; return null; }
   var AXX = { es: 'Campaña', en: 'Crop year', fr: 'Campagne', it: 'Campagna' };
   function axTitle(y, x, yx) { return '<text transform="translate(12 ' + yx + ') rotate(-90)" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(y) + '</text><text x="' + x[0] + '" y="' + x[1] + '" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(x[2]) + '</text>'; }

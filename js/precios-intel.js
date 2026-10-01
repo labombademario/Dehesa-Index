@@ -26,7 +26,7 @@
   // estos gráficos dibujan directamente en SVG/inline-style.
   // ---------------------------------------------------------------------
   var PALETTE = {
-    light: { border: '#E6E0CF', borderStrong: '#DAD3C2', textMuted: '#6B6550', textFaint: '#8A8471', text: '#241F14', surface: '#FFFFFF', surfaceAlt: '#EFEADB', positive: '#2F7D4F', negative: '#B23A34', neutral: '#8A8471' },
+    light: { border: '#E6E0CF', borderStrong: '#DAD3C2', textMuted: '#6B6550', textFaint: '#6B6652', text: '#241F14', surface: '#FFFFFF', surfaceAlt: '#EFEADB', positive: '#276A43', negative: '#B23A34', neutral: '#6B6652' },
     dark: { border: '#3A3D2C', borderStrong: '#484A37', textMuted: '#ABA68F', textFaint: '#8F8A74', text: '#F2EFE3', surface: '#23261B', surfaceAlt: '#2B2E20', positive: '#4FCB77', negative: '#E8776D', neutral: '#8F8A74' }
   };
   function P() { return PALETTE[global.DehesaShared.getTheme()] || PALETTE.light; }
@@ -50,7 +50,9 @@
     if (gamma && gamma !== 1) tt = Math.pow(tt, gamma);
     var endpoint = pct >= 0 ? p.positive : p.negative;
     var bg = lerpColor(p.surfaceAlt, endpoint, tt);
-    return { bg: bg, textColor: relLuminance(bg) > 0.45 ? '#1C1912' : '#FFFFFF' };
+    var L = relLuminance(bg);
+    // texto con el mayor contraste (WCAG) entre oscuro y blanco
+    return { bg: bg, textColor: (L + 0.05) / (relLuminance('#000000') + 0.05) >= 1.05 / (L + 0.05) ? '#000000' : '#FFFFFF' };
   }
   function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
   function entryByDashKey(dashKey) { return core().PRODUCT_BY_KEY[dashKey.replace('-', ':')]; }

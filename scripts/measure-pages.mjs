@@ -16,7 +16,7 @@ const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM 
 const results = []; const fails = [];
 for (const pg of PAGES) {
   const ctx = await browser.newContext({ viewport: pg.mobile ? { width: 390, height: 800 } : { width: 1280, height: 900 }, serviceWorkers: 'block' });
-  await ctx.addInitScript(() => { try { localStorage.setItem('dehesaIndexLang', 'es'); localStorage.setItem('di-tour-done', '1'); } catch (e) {} });
+  await ctx.addInitScript(() => { try { localStorage.setItem('dehesaIndexLang', 'es'); localStorage.setItem('dehesaIndexTourSeen', '1'); } catch (e) {} });
   const page = await ctx.newPage(); const files = [];
   page.on('response', async r => {
     const u = new URL(r.url()); if (u.origin !== new URL(BASE).origin) return;

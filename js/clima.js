@@ -37,7 +37,7 @@
   }
   function spark(months) {
     var m = months.slice(-12), w = 96, h = 26, bw = w / m.length;
-    return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="96" height="26" role="img" aria-label="">' + m.map(function (x, i) {
+    return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="96" height="26" aria-hidden="true" focusable="false">' + m.map(function (x, i) {
       var v = Math.max(-100, Math.min(100, x.precipAnomalyPct)), hh = Math.abs(v) / 100 * (h / 2 - 1);
       return '<rect x="' + (i * bw + 0.5).toFixed(1) + '" y="' + (v >= 0 ? (h / 2 - hh) : h / 2).toFixed(1) + '" width="' + (bw - 1.5).toFixed(1) + '" height="' + Math.max(hh, 0.8).toFixed(1) + '" fill="' + (v >= 0 ? WET : DRY) + '"><title>' + x.period + ': ' + sgn(x.precipAnomalyPct, 0, ' %') + '</title></rect>';
     }).join('') + '<line x1="0" x2="' + w + '" y1="' + h / 2 + '" y2="' + h / 2 + '" stroke="currentColor" stroke-opacity=".3"/></svg>';
@@ -89,7 +89,7 @@
     }
     return out;
   }
-  function yearsChart(rows, key, pos, neg, unit, dec) {
+  function yearsChart(rows, key, pos, neg, unit, dec, label) {
     var w = 720, h = 190, pl = 40, pr = 8, pt = 10, pb = 22, n = rows.length;
     var vals = rows.map(function (r) { return r[key]; });
     var mx = Math.max.apply(null, vals.concat([1])), mn = Math.min.apply(null, vals.concat([-1]));
@@ -106,7 +106,7 @@
       g += '<rect x="' + x.toFixed(1) + '" y="' + y1.toFixed(1) + '" width="' + (bw - 2).toFixed(1) + '" height="' + hh.toFixed(1) + '" fill="' + (v >= 0 ? pos : neg) + '"' + (last ? ' stroke="currentColor" stroke-width="1.5"' : '') + '><title>' + r.year + ': ' + sgn(v, dec, unit) + '</title></rect>';
       if ((r.year % 5 === 0 && r.year <= rows[n - 1].year - 2) || last) g += '<text x="' + (x + (bw - 2) / 2).toFixed(1) + '" y="' + (h - 6) + '" text-anchor="middle" font-size="10" fill="currentColor" fill-opacity=".7">' + r.year + '</text>';
     });
-    return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" role="img" style="display:block;max-width:760px">' + g + '</svg>';
+    return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" role="img" aria-label="' + String(label || '').replace(/"/g, '&quot;') + '" style="display:block;max-width:760px">' + g + '</svg>';
   }
   function rank(rows, key, desc) { var cur = rows[rows.length - 1][key]; var r = 1; rows.forEach(function (x) { if (desc ? x[key] > cur : x[key] < cur) r++; }); return r; }
   function fill(str, o) { return str.replace(/\{(\w+)\}/g, function (_, k) { return o[k]; }); }
@@ -124,9 +124,9 @@
       rows.slice().reverse().map(function (r) { return '<tr><td style="padding:3px 8px">' + r.year + '</td><td style="text-align:right;padding:3px 8px">' + num(r.precipMm, 0) + '</td><td style="text-align:right;padding:3px 8px">' + sgn(r.precipPct, 0, '') + '</td><td style="text-align:right;padding:3px 8px">' + num(r.tempC, 1) + '</td><td style="text-align:right;padding:3px 8px">' + sgn(r.tempDiff, 1, '') + '</td></tr>'; }).join('') + '</table>';
     el.innerHTML = '<section class="di-info-section"><h2>' + t.histTitle + '</h2><p>' + t.histSub + '</p>' +
       '<div style="display:flex;gap:16px;flex-wrap:wrap;margin:0 0 14px"><label style="font-size:13px">' + t.selRegion + '<br><select id="clima-sel-loc" class="di-compare-select">' + opt + '</select></label><label style="font-size:13px">' + t.selPeriod + '<br><select id="clima-sel-per" class="di-compare-select">' + per + '</select></label></div>' +
-      '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + t.histPrecip.toUpperCase() + ' (%)</div>' + yearsChart(rows, 'precipPct', WET, DRY, ' %', 0) +
+      '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + t.histPrecip.toUpperCase() + ' (%)</div>' + yearsChart(rows, 'precipPct', WET, DRY, ' %', 0, t.histPrecip) +
       '<div class="di-movers-hint" style="margin:4px 0 16px">' + cur.year + ': <b>' + sgn(cur.precipPct, 0, ' %') + '</b> · ' + fill(t.rankP, { r: rank(rows, 'precipPct', false), n: N }) + '</div>' +
-      '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + t.histTemp.toUpperCase() + ' (°C)</div>' + yearsChart(rows, 'tempDiff', HOT, COOL, ' °C', 1) +
+      '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + t.histTemp.toUpperCase() + ' (°C)</div>' + yearsChart(rows, 'tempDiff', HOT, COOL, ' °C', 1, t.histTemp) +
       '<div class="di-movers-hint" style="margin-top:4px">' + cur.year + ': <b>' + sgn(cur.tempDiff, 1, ' °C') + '</b> · ' + fill(t.rankT, { r: rank(rows, 'tempDiff', true), n: N }) + '</div></div>' +
       '<p class="di-movers-hint" style="margin-top:8px">' + t.histNote + '</p>' +
       '<details style="margin-top:8px"><summary style="cursor:pointer;font-size:13px">' + t.tableView + '</summary><div style="margin-top:8px">' + tbl + '</div></details></section>';

@@ -40,6 +40,7 @@
 
   function applyThemeAttr() {
     document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute('lang', lang); // WCAG 3.1.1: el idioma de la pagina sigue al selector
   }
   applyThemeAttr();
 
@@ -273,7 +274,17 @@
         if (heads.length >= 3 && heads.length <= 8 && rows.length) t.classList.add('di-cards-m');
       }
     }
-    function run() { fix(document); try { new MutationObserver(function () { clearTimeout(run.t); run.t = setTimeout(function () { fix(document); }, 120); }).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
+    // Regiones con scroll horizontal: accesibles por teclado (WCAG 2.1.1) si no contienen nada enfocable.
+    function scrollRegions() {
+      var els = document.querySelectorAll('main *, .di-ticker, .di-chart-svg-wrap'), n = Math.min(els.length, 4000);
+      for (var i = 0; i < n; i++) {
+        var e = els[i]; if (e.hasAttribute('tabindex') || e.scrollWidth <= e.clientWidth + 1 || !e.clientWidth) continue;
+        var ox = getComputedStyle(e).overflowX; if (ox !== 'auto' && ox !== 'scroll' && !(ox === 'hidden' && e.classList.contains('di-ticker'))) continue;
+        if (e.querySelector('a[href],button,input,select,textarea,[tabindex]')) continue;
+        e.setAttribute('tabindex', '0');
+      }
+    }
+    function run() { fix(document); scrollRegions(); try { new MutationObserver(function () { clearTimeout(run.t); run.t = setTimeout(function () { fix(document); scrollRegions(); }, 150); }).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
   })();
 

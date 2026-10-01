@@ -43,7 +43,7 @@
   function nf(v, d) { if (v == null) return '–'; try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
   function chn(c) { var x = CH[c]; return x ? (lang() === 'es' ? x[0] : x[1]) : c; }
   function dt(s) { if (!s) return ''; try { var p = s.split('-'); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).toLocaleDateString(lang(), { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return s; } }
-  var COL = { active: '#1a7f4b', ended: '#8a8a8a', expired: '#8a8a8a', pending: '#b7791f' };
+  var COL = { active: '#17703f', ended: '#8a8a8a', expired: '#8a8a8a', pending: '#8f5f12' };
   function sel(id, label, inner) { return '<label style="font-size:13px;flex:1;min-width:150px">' + label + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; }
   function filtered() {
     var q = ST.q.trim().toLowerCase();

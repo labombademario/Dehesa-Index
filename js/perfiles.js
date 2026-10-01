@@ -41,7 +41,7 @@
     });
     return h;
   }
-  function covChip(c) { var v = c.summary ? c.summary.coverage : (window.DIProfile.coverage && c.series && window.DIProfile.coverage(c.series)); if (!v) return ''; return '<span title="Coverage score" style="font-size:11.5px;font-weight:700;border:1px solid var(--border);border-radius:10px;padding:1px 8px;color:' + (v.score >= 75 ? '#2f6b4a' : v.score >= 50 ? '#b7791f' : '#a33') + '">' + v.score + '/100</span>'; }
+  function covChip(c) { var v = c.summary ? c.summary.coverage : (window.DIProfile.coverage && c.series && window.DIProfile.coverage(c.series)); if (!v) return ''; return '<span title="Coverage score" style="font-size:11.5px;font-weight:700;border:1px solid var(--border);border-radius:10px;padding:1px 8px;color:' + (v.score >= 75 ? 'var(--positive)' : v.score >= 50 ? 'var(--footnote)' : 'var(--negative)') + '">' + v.score + '/100</span>'; }
   function stats(c) {
     if (!c.series && c.summary) return { n: c.summary.n, g: {}, nc: c.summary.categories, mn: c.summary.first, mx: c.summary.latestPeriod };  // tarjeta: resumen del manifiesto, sin bajar el catalogo
     var S = c.series, groups = {}, mn = null, mx = null;

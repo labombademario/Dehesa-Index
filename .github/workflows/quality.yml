@@ -97,3 +97,32 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/measure-pages.mjs --check
+
+  e2e:
+    # Navegador real (escritorio y movil): errores de consola/pagina, 4xx/5xx, JSON invalido, componentes criticos vacios,
+    # flujos de usuario y accesibilidad (axe-core, WCAG 2 A/AA: critical y serious bloquean).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Playwright, Chromium y axe-core
+        run: |
+          npm install --no-save --no-audit --no-fund playwright axe-core
+          npx playwright install --with-deps chromium
+      - name: Servidor estatico
+        run: |
+          python3 -m http.server 8123 >/dev/null 2>&1 &
+          for i in $(seq 1 20); do curl -sf http://localhost:8123/ >/dev/null && break; sleep 1; done
+      - name: E2E + accesibilidad
+        env:
+          CHROMIUM: ''
+        run: node scripts/e2e.mjs --json e2e-report.json
+      - name: Informe E2E
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-report
+          path: e2e-report.json
+          if-no-files-found: ignore

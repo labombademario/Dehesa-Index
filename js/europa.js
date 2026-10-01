@@ -3,7 +3,7 @@
    No convierte ni promedia: cada línea es lo que publica el portal, en su unidad. */
 (function () {
   'use strict';
-  var COLORS = ['#2a6f97', '#a9491f', '#2f7d4f', '#b8891b', '#7a4a9a', '#3a8f9a'];
+  var COLORS = ['#2a6f97', '#a9491f', 'var(--positive)', '#b8891b', '#7a4a9a', '#3a8f9a'];
   var MAXSEL = 6;
   var LI = { es: 0, en: 1, fr: 2, it: 3 };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
@@ -166,7 +166,7 @@
   function setUrl() { try { var q = new URLSearchParams(); q.set('f', ST.fam); if (ST.sid) q.set('s', ST.sid); if (ST.sel && ST.sel.length) q.set('r', ST.sel.join(',')); history.replaceState(null, '', 'europa.html?' + q.toString()); } catch (e) {} }
 
   function pct(a, b) { return b ? (a / b - 1) * 100 : null; }
-  function delta(v) { if (v === null || v === undefined || isNaN(v)) return '<span style="color:var(--text-faint)">—</span>'; var c = v > 0.05 ? '#2f7d4f' : v < -0.05 ? '#a9491f' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1) + ' %</span>'; }
+  function delta(v) { if (v === null || v === undefined || isNaN(v)) return '<span style="color:var(--text-faint)">—</span>'; var c = v > 0.05 ? 'var(--positive)' : v < -0.05 ? '#a9491f' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1) + ' %</span>'; }
   function famOf(id) { for (var i = 0; i < ST.idx.families.length; i++) if (ST.idx.families[i].id === id) return ST.idx.families[i]; return null; }
   function curSeriesMeta() { var f = ST.fams[ST.fam]; if (!f) return null; for (var i = 0; i < f.series.length; i++) if (f.series[i].id === ST.sid) return f.series[i]; return null; }
 

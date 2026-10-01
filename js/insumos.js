@@ -33,7 +33,7 @@
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
   function pct(a, b) { return b ? (a / b - 1) * 100 : null; }
   // Para costes, subir es malo: rojo si sube, verde si baja
-  function chg(p) { if (p === null) return '<span style="color:var(--text-faint)">—</span>'; var c = p > 0.05 ? '#a9491f' : p < -0.05 ? '#2f7d4f' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (p > 0.05 ? '+' : p < -0.05 ? '−' : '') + nf(Math.abs(p), 1) + ' %</span>'; }
+  function chg(p) { if (p === null) return '<span style="color:var(--text-faint)">—</span>'; var c = p > 0.05 ? '#a9491f' : p < -0.05 ? 'var(--positive)' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (p > 0.05 ? '+' : p < -0.05 ? '−' : '') + nf(Math.abs(p), 1) + ' %</span>'; }
   function ser(k) { var s = D.series[k + SFX]; return s ? s.n : null; }
   function find(a, p) { for (var i = a.length - 1; i >= 0; i--) if (a[i][0] === p) return a[i][1]; return null; }
   function py(p) { return (Number(p.slice(0, 4)) - 1) + p.slice(4); }
