@@ -74,6 +74,50 @@
     var up = pts[pts.length - 1] >= pts[0];
     return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '" aria-hidden="true"><polyline fill="none" stroke="' + (up ? '#2f6b4a' : '#a33') + '" stroke-width="1.6" points="' + d + '"/></svg>';
   }
+
+  // Country Profile 2.0: resumen por bloques y "qué ha cambiado" (solo movimientos inusuales para cada serie)
+  var W = {
+    es: { blocks: 'Resumen', B: { markets: 'Mercados', production: 'Producción', trade: 'Comercio', inputs: 'Insumos y costes' }, ser: 'series', upto: 'hasta', changed: 'Qué ha cambiado', changedHint: 'Solo variaciones del último periodo que son inusualmente grandes para esa serie (más de 2,5 desviaciones típicas de su propio historial) y recientes.', none: 'Sin movimientos inusuales en los datos recientes.', vs: 'frente al periodo anterior', rare: 'x su variación habitual' },
+    en: { blocks: 'Summary', B: { markets: 'Markets', production: 'Production', trade: 'Trade', inputs: 'Inputs and costs' }, ser: 'series', upto: 'to', changed: 'What changed', changedHint: 'Only last-period moves that are unusually large for that series (more than 2.5 standard deviations of its own history) and recent.', none: 'No unusual moves in recent data.', vs: 'vs. previous period', rare: 'x its usual move' },
+    fr: { blocks: 'Résumé', B: { markets: 'Marchés', production: 'Production', trade: 'Commerce', inputs: 'Intrants et coûts' }, ser: 'séries', upto: 'jusqu’à', changed: 'Ce qui a changé', changedHint: 'Seulement les variations de la dernière période inhabituellement fortes pour la série (plus de 2,5 écarts-types de son propre historique) et récentes.', none: 'Aucun mouvement inhabituel dans les données récentes.', vs: 'vs. période précédente', rare: 'x sa variation habituelle' },
+    it: { blocks: 'Riepilogo', B: { markets: 'Mercati', production: 'Produzione', trade: 'Commercio', inputs: 'Input e costi' }, ser: 'serie', upto: 'fino a', changed: 'Cosa è cambiato', changedHint: 'Solo variazioni dell’ultimo periodo insolitamente grandi per quella serie (oltre 2,5 deviazioni standard del suo storico) e recenti.', none: 'Nessun movimento insolito nei dati recenti.', vs: 'vs. periodo precedente', rare: 'x la sua variazione abituale' }
+  };
+  var BLK = { markets: ['quotes', 'prices', 'prices_lv', 'prices_fv', 'milk', 'milk_regions', 'meat_regions'], production: ['production', 'crops', 'livestock', 'stocks', 'environment', 'organic'], trade: ['trade', 'partners'], inputs: ['inputs', 'inputs_f', 'inputs_a', 'costs', 'prices_paid', 'idx_perc', 'idx_pag', 'income'] };
+  var MAXAGE = { daily: 10, weekly: 25, monthly: 80, quarterly: 160, semiannual: 220, annual: 520 };
+  function pms(p) { var m = /^(\d{4})(?:-(\d{2}|Q[1-4]|S[12]))?(?:-(\d{2}))?$/.exec(p); if (!m) return NaN; var mo = 0; if (m[2]) mo = m[2][0] === 'Q' ? (+m[2][1] - 1) * 3 : m[2][0] === 'S' ? (+m[2][1] - 1) * 6 : +m[2] - 1; return Date.UTC(+m[1], mo, m[3] ? +m[3] : 1); }
+  function unusual(S) {
+    var out = [], now = Date.now();
+    S.forEach(function (s) {
+      if (s.group === 'rates' || s.group === 'partners' || s.points.length < 24) return;
+      var P = s.points, ch = [], i, a, b;
+      for (i = 1; i < P.length; i++) { a = P[i - 1][1]; b = P[i][1]; if (a != null && b != null && a !== 0 && a > 0 && b >= 0) ch.push((b - a) / a * 100); }
+      if (ch.length < 20) return;
+      var last = ch[ch.length - 1], hist = ch.slice(0, -1), mu = 0, sd = 0; hist.forEach(function (v) { mu += v; }); mu /= hist.length; hist.forEach(function (v) { sd += (v - mu) * (v - mu); }); sd = Math.sqrt(sd / hist.length);
+      if (!sd || Math.abs(last) < 2) return;
+      var rv = P.slice(-24).map(function (q) { return Math.abs(q[1] || 0); }).sort(function (u, v) { return u - v; }), med = rv[rv.length >> 1], pv = P[P.length - 2][1];
+      if (!(pv >= 0.1 * med) || med < 1e-9) return;  // base minúscula: el porcentaje engaña
+      var age = (now - pms(s.latestPeriod)) / 864e5; if (!(age <= (MAXAGE[s.frequency] || 80))) return;
+      var z = Math.abs(last - mu) / sd; if (z >= 2.5) out.push({ s: s, ch: last, z: z });
+    });
+    return out.sort(function (a, b) { return b.z - a.z; }).slice(0, 6);
+  }
+  function summary(S, x) {
+    var w = W[x.lang] || W.es, esc = x.esc, h = '', tiles = '';
+    ['markets', 'production', 'trade', 'inputs'].forEach(function (k) {
+      var l = S.filter(function (s) { return BLK[k].indexOf(s.group) > -1; }); if (!l.length) return;
+      var last = l.reduce(function (m, s) { return s.latestPeriod > m ? s.latestPeriod : m; }, '');
+      tiles += '<div class="di-card" style="padding:10px 14px"><div style="font-size:11px;font-weight:700;color:var(--text-faint);letter-spacing:.4px">' + esc(w.B[k].toUpperCase()) + '</div><div style="font-size:20px;font-weight:700">' + l.length + ' <span style="font-size:12px;font-weight:500;color:var(--text-muted)">' + esc(w.ser) + '</span></div><div style="font-size:11.5px;color:var(--text-muted)">' + esc(w.upto) + ' ' + esc(x.plabel(last, /^\d{4}-\d{2}/.test(last) ? 'monthly' : 'annual')) + '</div></div>';
+    });
+    if (tiles) h += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px">' + tiles + '</div>';
+    var u = unusual(S);
+    h += '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 4px">' + esc(w.changed.toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 8px">' + esc(w.changedHint) + '</div>';
+    if (!u.length) h += '<div class="di-movers-hint" style="margin-bottom:20px">' + esc(w.none) + '</div>';
+    else h += '<div class="di-card" style="padding:6px 16px;margin-bottom:20px">' + u.map(function (r) {
+      var s = r.s, col = r.ch >= 0 ? '#2f6b4a' : '#a33';
+      return '<button type="button" data-ps="' + esc(s.id) + '" style="display:flex;justify-content:space-between;gap:10px;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--border);padding:8px 0;cursor:pointer;font:inherit;color:inherit"><span>' + esc(s.label.length > 70 ? s.label.slice(0, 68) + '…' : s.label) + '<span style="display:block;font-size:11.5px;color:var(--text-muted)">' + esc(x.plabel(s.latestPeriod, s.frequency)) + ' · ' + x.nf(s.latest, x.dec(s.latest)) + ' ' + esc(s.unit) + '</span></span><span style="white-space:nowrap;color:' + col + ';font-weight:700">' + (r.ch > 0 ? '+' : '−') + x.nf(Math.abs(r.ch), 1) + ' %<span style="display:block;font-size:11px;font-weight:400;color:var(--text-muted)">' + x.nf(r.z, 1) + ' ' + esc(w.rare) + '</span></span></button>';
+    }).join('') + '</div>';
+    return h;
+  }
   function html(cc, c, x) {
     var t = T[x.lang] || T.es, esc = x.esc, nf = x.nf, S = c.series, groups = {}, i;
     S.forEach(function (s) { (groups[s.group] = groups[s.group] || []).push(s); });
@@ -90,6 +134,7 @@
       '<div style="font-size:13px;color:var(--text-muted);text-align:right"><b>' + S.length + '</b> ' + t.total + ' <b>' + gk.length + '</b> ' + t.cats + '<br>' + esc(t.from) + ' ' + esc(x.plabel(minP, 'annual')) + ' ' + t.to + ' ' + esc(x.plabel(maxP, /^\d{4}-\d{2}$/.test(maxP) ? 'monthly' : 'annual')) + '</div></div>';
     h += macroStrip(x.macro, x);
     h += '<div style="margin-top:10px;font-size:12.5px;color:var(--text-muted)">' + esc(t.freq) + ': ' + Object.keys(freqs).map(function (k) { return freqs[k] + ' ' + esc((x.t.freq && x.t.freq[k]) || k); }).join(' · ') + (srcList.length ? '<br>' + esc(t.sources) + ': ' + srcList.map(esc).join(' · ') : '') + '</div></section>';
+    h += summary(S, x);
     // KPIs
     var kp = kpis(cc, S, groups);
     if (kp.length) {
