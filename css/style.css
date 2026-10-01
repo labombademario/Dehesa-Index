@@ -1462,3 +1462,15 @@ html[data-theme="dark"] [style*="color:#b4341f"],html[data-theme="dark"] [style*
 html[data-theme="dark"] .di-news-lang{color:var(--text-faint)}
 html[data-theme="dark"] .di-step-n{color:var(--accent-2,#C9A227)}
 html[data-theme="dark"] .di-data-trust summary,html[data-theme="dark"] .di-data-trust-label,html[data-theme="dark"] .di-data-health-kicker,html[data-theme="dark"] .di-data-health-stats span{color:var(--text-faint)}
+
+/* Contraste AA en el resto de páginas: colores fijos escritos en línea (oscuro) y chips de región */
+html[data-theme="dark"] [style*="color:#a9491f"],html[data-theme="dark"] [style*="color: #a9491f"]{color:#f0a06a!important}
+html[data-theme="dark"] [style*="color:#1b7f4b"],html[data-theme="dark"] [style*="color:#17703f"],html[data-theme="dark"] [style*="color:#2e7d4f"]{color:#7fcf9b!important}
+html[data-theme="dark"] [style*="color:#b3261e"],html[data-theme="dark"] [style*="color:#b3402a"]{color:#f3aaa2!important}
+html[data-theme="dark"] [style*="color:#8f5f12"]{color:#e0b04a!important}
+html[data-theme="dark"] [style*="color:#8a8a8a"]{color:#b0b0b0!important}
+html[data-theme="light"] [style*="color:#8a8a8a"],html:not([data-theme]) [style*="color:#8a8a8a"]{color:#6b6b6b!important}
+.di-region-btn.active[style*="a9491f"],.di-region-btn.active[style*="2a6f97"]{color:#fff!important}
+.di-region-btn.active[style*="b8891b"]{color:#14201a!important}
+:root{--up:#1b7f4b;--down:#b3261e}
+html[data-theme="dark"]{--up:#7fcf9b;--down:#f3aaa2}
