@@ -1,8 +1,0 @@
-NON2 [('EXT_EA', 'Extra-euro area'), ('EXT_EA21', 'Extra-euro area - 21 countries (from 2026)'), ('EXT_EU', 'Extra-EU'), ('EXT_EU27_2020', 'Extra-EU27 (from 2020)'), ('INT_EA', 'Intra-euro area'), ('INT_EA21', 'Intra-euro area - 21 countries (from 2026)'), ('INT_EU', 'Intra-EU'), ('INT_EU27_2020', 'Intra-EU27 (from 2020)'), ('WORLD', 'All countries of the world')]
-VALS_NON2 [('EXT_EA', 171466944), ('EXT_EA21', 170891298), ('EXT_EU', 151320670), ('EXT_EU27_2020', 151320670), ('INT_EA', 347300381), ('INT_EA21', 347876027), ('INT_EU', 367446655), ('INT_EU27_2020', 367446655), ('WORLD', 518767325)]
-EU27_2020 OK []
-EXT_EU27_2020 OK [151320670]
-EU27_2020_EXTRA OK []
-EXTRA_EU27_2020 OK []
-EU27_2020_INTRA OK []
-INT_EU27_2020 OK [367446655]
