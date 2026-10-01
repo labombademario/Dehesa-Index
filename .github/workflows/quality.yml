@@ -63,6 +63,9 @@ jobs:
       - name: Unit Engine (FX historico, bushel por cultivo, ha/acre)
         run: node scripts/test-unit-engine.mjs
 
+      - name: Smart Watchlist 2.0 (reglas combinables, Transmission Watch, importacion validada)
+        run: node scripts/test-watchlist.mjs
+
       - name: Freshness Engine parity (JS vs Python)
         run: node scripts/test-freshness-parity.mjs
 

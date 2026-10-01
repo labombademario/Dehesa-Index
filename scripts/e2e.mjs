@@ -29,6 +29,7 @@ const PAGES = [
   { n: 'calculadora', url: '/calculadora.html', crit: ['#cc-body'] },
   { n: 'relaciones', url: '/relaciones.html', crit: ['#rl-body .rl-card'] },
   { n: 'observatorio', url: '/observatorio.html', crit: ['#ob-body #moves'] },
+  { n: 'mi-seguimiento', url: '/mi-seguimiento.html', crit: ['#ms-body #series'] },
   { n: 'catalogo', url: '/catalogo.html', crit: ['#cat-body'] },
   { n: 'brief', url: '/brief.html', crit: ['#brief-body'] },
   { n: 'noticias', url: '/noticias.html', crit: ['#nw-items'] },
@@ -186,6 +187,41 @@ for (const w of [1280, 390]) {
       await page.goto(BASE + '/observatorio.html?c=eu&t=INPUT&w=d30#freshness', { waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 });
       if (!(await page.$('#moves [data-f=w][aria-pressed=true][data-v=d30]'))) throw new Error('?w=d30 no abre la ventana mensual');
       const rows = await page.$$eval('#moves tbody tr', (e) => e.length); if (rows < 1) throw new Error('ventana mensual sin filas con filtros eu+INPUT');
+    });
+    await flow('mi-seguimiento: reglas, alertas, historial, exportar e importar', w, async (page) => {
+      const seed = [{ c: 'P', s: 'trigo/eu', r: [{ t: 'new' }, { t: 'pct', v: 0.01 }], seen: { p: '2000-01', v: 1 }, ack: '2000-01' }, { c: 'P', s: 'urea/eu', r: [{ t: 'fresh', v: 'STALE' }, { t: 'tw' }], m: 'all' }];
+      await page.addInitScript((v) => { if (!localStorage.getItem('di-watchlist-v1')) localStorage.setItem('di-watchlist-v1', JSON.stringify(v)); }, seed);
+      await page.goto(BASE + '/mi-seguimiento.html', { waitUntil: 'load' }); await page.waitForSelector('#ms-body #series .ms-item', { timeout: 10000 });
+      await page.waitForSelector('#alertas .ms-alert', { timeout: 10000 });
+      const items = await page.$$eval('.ms-item', (e) => e.length); if (items !== 2) throw new Error('deberia haber 2 elementos, hay ' + items);
+      if (!/Transmission|elevado|elevated|élevé|elevato/i.test(await page.innerText('#series'))) throw new Error('la regla Transmission Watch no se muestra');
+      if (!/todas|all must|toutes|tutte/i.test(await page.innerText('#series'))) throw new Error('el modo "todas las reglas" no se muestra');
+      // marcar como visto: la alerta desaparece y pasa al historial
+      await page.click('#alertas [data-seen="0"]'); await page.waitForTimeout(600);
+      if ((await page.$$eval('#alertas .ms-alert', (e) => e.length)) !== 0) throw new Error('la alerta no desaparece tras marcarla vista');
+      if (!/trigo|wheat|blé|frumento/i.test(await page.innerText('#historial'))) throw new Error('la alerta vista no aparece en el historial');
+      const stamp = await page.evaluate(() => JSON.parse(localStorage.getItem('di-watchlist-meta-v1') || 'null'));
+      if (!stamp || !stamp.lastEval) throw new Error('no se guarda la ultima evaluacion');
+      // anadir una regla desde el editor completo
+      await page.click('.ms-item:first-child details > summary'); await page.selectOption('.ms-item:first-child [data-k=t]', 'rev'); await page.click('.ms-item:first-child [data-add]'); await page.waitForTimeout(700);
+      const rules = await page.evaluate(() => JSON.parse(localStorage.getItem('di-watchlist-v1')).find((x) => x.s === 'trigo/eu').r.map((r) => r.t));
+      if (!rules.includes('rev')) throw new Error('la regla de revision no se guarda: ' + rules);
+      // exportar
+      const [dl] = await Promise.all([page.waitForEvent('download', { timeout: 8000 }), page.click('[data-export=dl]')]);
+      const fs = await import('node:fs'); const doc = JSON.parse(fs.readFileSync(await dl.path(), 'utf8'));
+      if (doc.app !== 'dehesa-index' || doc.kind !== 'watchlist' || doc.items.length !== 2) throw new Error('exportacion invalida');
+      // importar basura: se rechaza sin tocar nada
+      await page.setInputFiles('#ms-file', { name: 'x.json', mimeType: 'application/json', buffer: Buffer.from('{"app":"otra","items":[]}') }); await page.waitForTimeout(300);
+      await page.click('#ms-import'); await page.waitForTimeout(500);
+      if (!/no es una lista|not a valid|pas une liste|non è una lista/i.test(await page.innerText('#datos'))) throw new Error('importar un JSON ajeno debe rechazarse');
+      { const n = await page.$$eval('.ms-item', (e) => e.length); if (n !== 2) throw new Error('el import rechazado cambio la lista (' + n + '): ' + (await page.evaluate(() => localStorage.getItem('di-watchlist-v1'))).slice(0, 400)); }
+      // importar valido con items mezclados: fusiona y descarta lo invalido
+      const good = { app: 'dehesa-index', kind: 'watchlist', version: 2, items: [{ c: 'P', s: 'maiz/us', r: [{ t: 'cross', v: 5, d: 'above' }, { t: 'hack', v: 1 }] }, { c: '<x>', s: 'a' }, { c: 'P', s: 'trigo/eu', r: [{ t: 'new' }] }] };
+      await page.setInputFiles('#ms-file', { name: 'ok.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(good)) }); await page.waitForTimeout(300);
+      await page.click('#ms-import'); await page.waitForTimeout(700);
+      if (!/1 nuevos, 1 actualizados, 1 descartados|1 new, 1 updated, 1 discarded|1 nouveaux, 1 mis à jour, 1 écartés|1 nuovi, 1 aggiornati, 1 scartati/.test(await page.innerText('#datos'))) throw new Error('resumen de importacion inesperado: ' + (await page.innerText('#datos')).slice(0, 300));
+      const stored = await page.evaluate(() => JSON.parse(localStorage.getItem('di-watchlist-v1')));
+      if (JSON.stringify(stored).includes('hack')) throw new Error('el import dejo pasar una regla desconocida');
     });
     await flow('paises: cambiar de pais', w, async (page, errs) => {
       await page.goto(BASE + '/paises.html?c=FR', { waitUntil: 'load' }); await page.waitForTimeout(2500);

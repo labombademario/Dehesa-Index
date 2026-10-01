@@ -271,6 +271,7 @@
     if (on && W.editor) {
       h += '<div class="pt-follow">' + CTX.inst.map(function (o) { return '<div style="margin:0 0 10px"><strong style="font-size:13px">' + esc(reg(o.region)) + '</strong>' + W.editor('P', obsKey(o), LANGS[li()]) + '</div>'; }).join('') + '</div>';
     } else h += '<div class="pt-src" style="margin-top:0">' + esc(t('followHint')) + '</div>';
+    if (on) h += '<p class="pt-src"><a href="mi-seguimiento.html">' + esc(t('myWatch')) + ' →</a></p>';
     return h;
   }
   function headHtml() {
