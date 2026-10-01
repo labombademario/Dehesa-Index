@@ -1,0 +1,38 @@
+== ext_st_eu27_2020sitc geo=ES&sinceTimePeriod=2026-06 200 7078
+id ['freq', 'stk_flow', 'indic_et', 'partner', 'sitc06', 'geo', 'time'] size [1, 3, 11, 56, 16, 0, 2]
+   freq 1 [('M', 'Monthly')]
+   stk_flow 3 [('IMP', 'Imports'), ('EXP', 'Exports'), ('BAL_RT', 'Balance for values/ratio for indices')]
+   indic_et 11 [('TRD_VAL', 'Trade value in million ECU/EURO'), ('TRD_VAL_RT12', 'Growth rate M/M-12 of the trade value'), ('TRD_VAL_SCA', 'Seasonally and calendar adjusted trade value in million ECU/EURO'), ('TRD_VAL_SCA_RT1', 'Growth rate M/M-1 of the seasonally and calendar adjusted trade value'), ('IVU', 'Unit value index (2021=100)'), ('IVU_RT1', 'Growth rate M/M-1 of the unit-value indices'), ('IVU_RT12', 'Growth rate M/M-12 of the unit-value indices'), ('IVOL_NSA', 'Volume indices - unadjusted data (2021=100)'), ('IVOL_NSA_RT12', 'Growth rate M/M-12 of the volume Indices - unadjusted data'), ('IVOL_SCA', 'Seasonally and calendar adjusted volume indices (2021=100)'), ('IVOL_SCA_RT1', 'Growth rate M/M-1 of the seasonally and calendar adjusted volume Indices')]
+   partner 56 [('EU27_2020', 'European Union - 27 countries (from 2020)'), ('EFTA', 'European Free Trade Association'), ('NO', 'Norway'), ('CH', 'Switzerland'), ('UK', 'United Kingdom'), ('CC9_23', 'Candidate countries from 2023 (9 countries)'), ('TR', 'Türkiye'), ('UA', 'Ukraine'), ('WBC', 'WBC - Western Balkan Countries (aggregate changing according to the context)'), ('RU', 'Russia'), ('CIS', 'Commonwealth of Independent States (Former Soviet Union except BAL)'), ('EXT_EU27_2020', 'Extra-EU27 (from 2020)'), ('EUR_NEU27_2020', 'European non-EU27 countries (from 2020)'), ('AFR', 'Africa'), ('DZ', 'Algeria'), ('EG', 'Egypt'), ('LY', 'Libya'), ('MA', 'Morocco'), ('TN', 'Tunisia'), ('ZA', 'South Africa'), ('NG', 'Nigeria'), ('AME', 'America'), ('CA', 'Canada'), ('US', 'United States'), ('AME_LAT', 'Latin American countries')]
+   sitc06 16 [('TOTAL', 'Total - all products'), ('SITC0_1', 'Food, drinks and tobacco'), ('SITC0', 'Food and live animals'), ('SITC1', 'Beverages and tobacco'), ('SITC2_4', 'Raw materials'), ('SITC2', 'Crude materials, inedible, except fuels'), ('SITC3', 'Mineral fuels, lubricants and related materials'), ('SITC33', 'Petroleum, petroleum products and related materials'), ('SITC4', 'Animal and vegetable oils, fats and waxes'), ('SITC5-8', 'Manufactured goods'), ('SITC5', 'Chemicals and related products, n.e.s.'), ('SITC6_8', 'Other manufactured goods'), ('SITC6', 'Manufactured goods classified chiefly by material'), ('SITC7', 'Machinery and transport equipment'), ('SITC8', 'Miscellaneous manufactured articles'), ('SITC9', 'Commodities and transactions not classified elsewhere in the SITC')]
+   geo 0 []
+   time 2 [('2026-06', '2026-06'), ('2026-07', '2026-07')]
+  value count 0
+== ext_lt_intratrd geo=ES&sinceTimePeriod=2024 200 8270
+id ['freq', 'indic_et', 'sitc06', 'partner', 'geo', 'time'] size [1, 9, 8, 3, 1, 2]
+   freq 1 [('A', 'Annual')]
+   indic_et 9 [('PC_TOT_IMP', 'Share of imports by partner in total imports (%)'), ('PC_TOT_EXP', 'Share of exports by partner in total exports (%)'), ('CONT_IMP_EU', 'Share of imports by Member State (%)'), ('CONT_EXP_EU', 'Share of exports by Member State (%)'), ('MIO_BAL_VAL', 'Trade balance in million ECU/EURO'), ('MIO_EXP_VAL', 'Exports in million of ECU/EURO'), ('MIO_IMP_VAL', 'Imports in million of ECU/EURO'), ('PC_IMP_PROD', 'Share of imports by product (%)'), ('PC_EXP_PROD', 'Share of exports by product (%)')]
+   sitc06 8 [('TOTAL', 'Total - all products'), ('SITC0_1', 'Food, drinks and tobacco'), ('SITC2_4', 'Raw materials'), ('SITC3', 'Mineral fuels, lubricants and related materials'), ('SITC5', 'Chemicals and related products, n.e.s.'), ('SITC6_8', 'Other manufactured goods'), ('SITC7', 'Machinery and transport equipment'), ('SITC9', 'Commodities and transactions not classified elsewhere in the SITC')]
+   partner 3 [('EU27_2020', 'European Union - 27 countries (from 2020)'), ('EXT_EU27_2020', 'Extra-EU27 (from 2020)'), ('WORLD', 'All countries of the world')]
+   geo 1 [('ES', 'Spain')]
+   time 2 [('2024', '2024'), ('2025', '2025')]
+  value count 368
+== ext_st_27_2020msbec geo=ES&sinceTimePeriod=2026-06 200 20684
+id ['freq', 'stk_flow', 'indic_et', 'partner', 'bclas_bec', 'geo', 'time'] size [1, 3, 11, 6, 5, 1, 2]
+   freq 1 [('M', 'Monthly')]
+   stk_flow 3 [('IMP', 'Imports'), ('EXP', 'Exports'), ('BAL_RT', 'Balance for values/ratio for indices')]
+   indic_et 11 [('TRD_VAL', 'Trade value in million ECU/EURO'), ('TRD_VAL_RT12', 'Growth rate M/M-12 of the trade value'), ('TRD_VAL_SCA', 'Seasonally and calendar adjusted trade value in million ECU/EURO'), ('TRD_VAL_SCA_RT1', 'Growth rate M/M-1 of the seasonally and calendar adjusted trade value'), ('IVU', 'Unit value index (2021=100)'), ('IVU_RT1', 'Growth rate M/M-1 of the unit-value indices'), ('IVU_RT12', 'Growth rate M/M-12 of the unit-value indices'), ('IVOL_NSA', 'Volume indices - unadjusted data (2021=100)'), ('IVOL_NSA_RT12', 'Growth rate M/M-12 of the volume Indices - unadjusted data'), ('IVOL_SCA', 'Seasonally and calendar adjusted volume indices (2021=100)'), ('IVOL_SCA_RT1', 'Growth rate M/M-1 of the seasonally and calendar adjusted volume Indices')]
+   partner 6 [('EU27_2020', 'European Union - 27 countries (from 2020)'), ('EA21', 'Euro area – 21 countries (from 2026)'), ('EU27_2020_NEA21', 'EU27 countries (from 2020) not in EA21 (from 2026) - 6 countries'), ('EXT_EU27_2020', 'Extra-EU27 (from 2020)'), ('EXT_EA21', 'Extra-euro area - 21 countries (from 2026)'), ('WORLD', 'All countries of the world')]
+   bclas_bec 5 [('TOTAL', 'Total'), ('INT', 'Intermediate goods'), ('CAP', 'Capital goods'), ('CONS', 'Consumption goods'), ('CONS_TRA', 'Consumption goods, motor spirit and passenger motor cars')]
+   geo 1 [('ES', 'Spain')]
+   time 2 [('2026-06', '2026-06'), ('2026-07', '2026-07')]
+  value count 1110
+== ext_lt_maineu sinceTimePeriod=2024&geo=EU27_2020&partner=US 200 3222
+id ['freq', 'indic_et', 'sitc06', 'partner', 'geo', 'time'] size [1, 5, 1, 1, 1, 2]
+   freq 1 [('A', 'Annual')]
+   indic_et 5 [('MIO_BAL_VAL', 'Trade balance in million ECU/EURO'), ('MIO_EXP_VAL', 'Exports in million of ECU/EURO'), ('MIO_IMP_VAL', 'Imports in million of ECU/EURO'), ('PC_IMP_PART', 'Share of imports by partner (%)'), ('PC_EXP_PART', 'Share of exports by partner (%)')]
+   sitc06 1 [('TOTAL', 'Total - all products')]
+   partner 1 [('US', 'United States')]
+   geo 1 [('EU27_2020', 'European Union - 27 countries (from 2020)')]
+   time 2 [('2024', '2024'), ('2025', '2025')]
+  value count 10
