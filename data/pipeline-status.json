@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-01T12:33:00Z",
+ "generatedAt": "2026-10-01T12:45:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 43,
   "late": 0,
   "error": 0,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "ok",
  "pipelines": [
@@ -959,32 +959,32 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-01T09:29:18Z"
+     "lastChange": "2026-10-01T12:34:25Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-01T09:29:18Z"
+     "lastChange": "2026-10-01T12:34:25Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-01T09:29:18Z"
+     "lastChange": "2026-10-01T12:34:25Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-01T09:29:18Z"
+     "lastChange": "2026-10-01T12:34:25Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-01T09:28:31Z",
-    "durationSec": 52,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36842967077"
+    "startedAt": "2026-10-01T12:33:59Z",
+    "durationSec": 32,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36862612980"
    },
    "recent": {
     "runs": 10,
-    "success": 7,
-    "failed": 3
+    "success": 8,
+    "failed": 2
    },
    "status": "ok",
    "expectedEveryHours": 3.0
@@ -1022,11 +1022,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-01T09:28:20Z"
+     "lastChange": "2026-10-01T12:33:42Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-01T09:28:20Z"
+     "lastChange": "2026-10-01T12:33:42Z"
     },
     {
      "path": "data/series-registry.json",
@@ -1038,11 +1038,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-01T11:41:11Z"
+     "lastChange": "2026-10-01T12:33:51Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-01T11:13:02Z"
+     "lastChange": "2026-10-01T12:33:51Z"
     },
     {
      "path": "data/catalog"
@@ -1055,38 +1055,38 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-01T11:41:11Z"
+     "lastChange": "2026-10-01T12:33:51Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-01T11:41:11Z"
+     "lastChange": "2026-10-01T12:33:51Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-01T11:00:37Z"
+     "lastChange": "2026-10-01T12:33:51Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-01T11:41:11Z"
+     "lastChange": "2026-10-01T12:33:51Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-01T11:41:11Z"
+     "lastChange": "2026-10-01T12:33:51Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-01T09:27:41Z",
-    "durationSec": 50,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36842877115"
+    "startedAt": "2026-10-01T12:33:03Z",
+    "durationSec": 52,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36862508085"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -1250,6 +1250,40 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-us-cash-bids.yml",
+   "name": "Update US local cash bids (USDA AMS MARS)",
+   "crons": [
+    "15 14 * * 1-5",
+    "30 23 * * 1-5"
+   ],
+   "nextRun": "2026-10-01T14:15:00Z",
+   "files": [
+    {
+     "path": "data/us-cash-bids/manifest.json"
+    },
+    {
+     "path": "data/us-cash-bids/reports.json"
+    },
+    {
+     "path": "data/us-cash-bids/ingestion-status.json"
+    },
+    {
+     "path": "data/us-cash-bids/revisions.json"
+    },
+    {
+     "path": "data/us-cash-bids"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 62.8
   },
   {
    "workflow": "update-us-tariffs.yml",
