@@ -1,0 +1,48 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "US cash bids ZIP to state table",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "sourceId",
+  "zips",
+  "prefix",
+  "exceptions"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string"
+  },
+  "sourceId": {
+   "type": "string"
+  },
+  "note": {
+   "type": "string"
+  },
+  "zips": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "prefix": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "string",
+    "pattern": "^[A-Z]{2}$"
+   }
+  },
+  "exceptions": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "string",
+    "pattern": "^[A-Z]{2}$"
+   }
+  }
+ }
+}

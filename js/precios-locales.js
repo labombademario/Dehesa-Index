@@ -31,7 +31,8 @@
       break: 'USDA cambió la definición de este informe el {d} ({k}); los valores anteriores y posteriores pueden no ser comparables.', k_NEW_DIMENSION: 'nueva dimensión', k_TITLE_CHANGE: 'cambio de título',
       bench: 'Precio local frente a referencia nacional', benchText: 'No se calcula «prima/descuento local»: la referencia nacional de Dehesa es el precio mensual recibido por el agricultor (USDA NASS, todas las calidades), que no es comparable con una oferta diaria de un mercado concreto. Solo se mostrará cuando exista una referencia comparable (mismo producto, mismo día y mismo contrato) y nunca se llamará basis salvo que sea el basis oficial del informe.', benchLink: 'Ver la ficha de producto',
       mapTitle: 'Cobertura por estado', mapNote: 'Cada estado coloreado tiene informes de precios locales de USDA para este producto. Las regiones dentro de un estado no tienen coordenadas oficiales, así que no se dibujan puntos.', mapLegend: 'Con datos', mapNone: 'Sin datos', clickState: 'Haz clic en un estado para verlo.',
-      nearMe: 'Próximamente: «cerca de mí» (código postal o condado) cuando la cobertura geográfica lo justifique. Por ahora: estado → mercado.', alerts: 'Avisos de este mercado', cls: 'Clase', grade: 'Grado', protein: 'Proteína',
+      zipL: 'Código postal', zipGo: 'Ir a mi estado', zipBad: 'Introduce un código postal de EE. UU. de 5 dígitos.', zipNone: 'No reconocemos ese código postal: elige tu estado en la lista.', zipOk: 'Estado según tu código postal: {0}. El código se procesa en tu navegador y no se guarda ni se envía.', zipWhy: 'USDA publica precios por región o terminal, no por código postal: te llevamos a tu estado.', zipNoState: '{0} aún no tiene informes locales de USDA en Dehesa Index.',
+      nearMe: 'Cerca de mí: el código postal te lleva a tu estado. Por condado o ubicación exacta solo cuando USDA publique una geografía más fina; no se inventan distancias.', alerts: 'Avisos de este mercado', cls: 'Clase', grade: 'Grado', protein: 'Proteína',
       foot: 'Fuente: USDA AMS Market News (MARS). Datos de dominio público estadounidense; crédito: U.S. Department of Agriculture. Cada fila enlaza a su informe original.', method: 'Metodología', pending: 'Licencia del dataset concreto pendiente de revisión adicional: ver Metodología.', basisFooter: 'El basis solo aparece cuando el informe de USDA lo publica.', coverage: 'cobertura', openMap: 'Mapa de cobertura' },
     en: { title: 'Local grain prices in the United States', sub: 'What buyers are paying for corn, soybeans, wheat and other grains in each state, from USDA AMS Market News daily reports. Cash bids, not futures.',
       state: 'State', commodity: 'Commodity', spec: 'Specification', buyer: 'Buyer type', market: 'Market', allMarkets: 'All available', allBuyers: 'All',
@@ -57,7 +58,8 @@
       break: 'USDA changed the definition of this report on {d} ({k}); values before and after may not be comparable.', k_NEW_DIMENSION: 'new dimension', k_TITLE_CHANGE: 'title change',
       bench: 'Local price vs national reference', benchText: 'No “local premium/discount” is computed: Dehesa’s national reference is the monthly price received by farmers (USDA NASS, all grades), which is not comparable with a daily bid in a specific market. It will only be shown when a comparable reference exists (same product, same day, same contract) and will never be called basis unless it is the report’s official basis.', benchLink: 'See the product page',
       mapTitle: 'Coverage by state', mapNote: 'Each coloured state has USDA local price reports for this commodity. Regions inside a state have no official coordinates, so no points are drawn.', mapLegend: 'Has data', mapNone: 'No data', clickState: 'Click a state to view it.',
-      nearMe: 'Coming later: “near me” (ZIP or county) once geographic coverage justifies it. For now: state → market.', alerts: 'Alerts for this market', cls: 'Class', grade: 'Grade', protein: 'Protein',
+      zipL: 'ZIP code', zipGo: 'Go to my state', zipBad: 'Enter a 5-digit US ZIP code.', zipNone: 'We do not recognise that ZIP code: pick your state from the list.', zipOk: 'State from your ZIP code: {0}. The code is processed in your browser and is neither stored nor sent.', zipWhy: 'USDA publishes prices by region or terminal, not by ZIP code: we take you to your state.', zipNoState: '{0} has no USDA local reports in Dehesa Index yet.',
+      nearMe: 'Near me: your ZIP code takes you to your state. County or exact location only once USDA publishes finer geography; no distances are invented.', alerts: 'Alerts for this market', cls: 'Class', grade: 'Grade', protein: 'Protein',
       foot: 'Source: USDA AMS Market News (MARS). U.S. public-domain data; credit: U.S. Department of Agriculture. Every row links to its original report.', method: 'Methodology', pending: 'Licence of this specific dataset is pending further review: see Methodology.', basisFooter: 'Basis only appears when the USDA report publishes it.', coverage: 'coverage', openMap: 'Coverage map' },
     fr: { title: 'Prix locaux des grains aux États-Unis', sub: 'Ce que paient les acheteurs pour le maïs, le soja, le blé et d’autres grains dans chaque État, d’après les rapports quotidiens USDA AMS (Market News). Prix au comptant (cash bids), pas des contrats à terme.',
       state: 'État', commodity: 'Produit', spec: 'Spécification', buyer: 'Type d’acheteur', market: 'Marché', allMarkets: 'Tous les disponibles', allBuyers: 'Tous',
@@ -83,7 +85,8 @@
       break: 'L’USDA a modifié la définition de ce rapport le {d} ({k}) ; les valeurs avant et après peuvent ne pas être comparables.', k_NEW_DIMENSION: 'nouvelle dimension', k_TITLE_CHANGE: 'changement de titre',
       bench: 'Prix local et référence nationale', benchText: 'Aucune « prime/décote locale » n’est calculée : la référence nationale de Dehesa est le prix mensuel perçu par les agriculteurs (USDA NASS, toutes qualités), non comparable à une offre quotidienne sur un marché précis. Elle ne sera affichée que lorsqu’une référence comparable existera (même produit, même jour, même contrat) et ne sera jamais appelée base sauf s’il s’agit de la base officielle du rapport.', benchLink: 'Voir la fiche produit',
       mapTitle: 'Couverture par État', mapNote: 'Chaque État coloré a des rapports de prix locaux de l’USDA pour ce produit. Les régions d’un État n’ont pas de coordonnées officielles : aucun point n’est dessiné.', mapLegend: 'Avec données', mapNone: 'Sans données', clickState: 'Cliquez sur un État pour l’afficher.',
-      nearMe: 'Plus tard : « près de moi » (code postal ou comté) quand la couverture géographique le justifiera. Pour l’instant : État → marché.', alerts: 'Alertes de ce marché', cls: 'Classe', grade: 'Grade', protein: 'Protéines',
+      zipL: 'Code postal', zipGo: 'Aller à mon État', zipBad: 'Saisissez un code postal américain à 5 chiffres.', zipNone: 'Code postal non reconnu : choisissez votre État dans la liste.', zipOk: 'État d’après votre code postal : {0}. Le code est traité dans votre navigateur et n’est ni conservé ni envoyé.', zipWhy: 'L’USDA publie des prix par région ou terminal, pas par code postal : nous vous menons à votre État.', zipNoState: '{0} n’a pas encore de rapports locaux USDA dans Dehesa Index.',
+      nearMe: 'Près de moi : le code postal vous mène à votre État. Par comté ou position exacte seulement quand l’USDA publiera une géographie plus fine ; aucune distance n’est inventée.', alerts: 'Alertes de ce marché', cls: 'Classe', grade: 'Grade', protein: 'Protéines',
       foot: 'Source : USDA AMS Market News (MARS). Données publiques américaines ; crédit : U.S. Department of Agriculture. Chaque ligne renvoie à son rapport d’origine.', method: 'Méthodologie', pending: 'La licence de ce jeu de données précis reste à revoir : voir la Méthodologie.', basisFooter: 'La base n’apparaît que si le rapport USDA la publie.', coverage: 'couverture', openMap: 'Carte de couverture' },
     it: { title: 'Prezzi locali dei cereali negli Stati Uniti', sub: 'Quanto pagano gli acquirenti per mais, soia, frumento e altri cereali in ogni Stato, secondo i rapporti giornalieri USDA AMS (Market News). Prezzi a pronti (cash bids), non future.',
       state: 'Stato', commodity: 'Prodotto', spec: 'Specifica', buyer: 'Tipo di acquirente', market: 'Mercato', allMarkets: 'Tutti i disponibili', allBuyers: 'Tutti',
@@ -109,7 +112,8 @@
       break: 'L’USDA ha cambiato la definizione di questo rapporto il {d} ({k}); i valori prima e dopo possono non essere confrontabili.', k_NEW_DIMENSION: 'nuova dimensione', k_TITLE_CHANGE: 'cambio di titolo',
       bench: 'Prezzo locale e riferimento nazionale', benchText: 'Non si calcola alcun «premio/sconto locale»: il riferimento nazionale di Dehesa è il prezzo mensile ricevuto dagli agricoltori (USDA NASS, tutte le qualità), non confrontabile con un’offerta giornaliera in un mercato specifico. Verrà mostrato solo quando esisterà un riferimento confrontabile (stesso prodotto, stesso giorno, stesso contratto) e non sarà mai chiamato basis se non è il basis ufficiale del rapporto.', benchLink: 'Vedi la scheda prodotto',
       mapTitle: 'Copertura per Stato', mapNote: 'Ogni Stato colorato ha rapporti USDA sui prezzi locali per questo prodotto. Le regioni all’interno di uno Stato non hanno coordinate ufficiali: non si disegnano punti.', mapLegend: 'Con dati', mapNone: 'Senza dati', clickState: 'Clicca su uno Stato per vederlo.',
-      nearMe: 'In futuro: «vicino a me» (CAP o contea) quando la copertura geografica lo giustificherà. Per ora: Stato → mercato.', alerts: 'Avvisi di questo mercato', cls: 'Classe', grade: 'Grado', protein: 'Proteine',
+      zipL: 'CAP', zipGo: 'Vai al mio stato', zipBad: 'Inserisci un CAP statunitense di 5 cifre.', zipNone: 'CAP non riconosciuto: scegli il tuo stato dall’elenco.', zipOk: 'Stato dal tuo CAP: {0}. Il codice è elaborato nel browser e non viene salvato né inviato.', zipWhy: 'USDA pubblica prezzi per regione o terminale, non per CAP: ti portiamo al tuo stato.', zipNoState: '{0} non ha ancora rapporti locali USDA in Dehesa Index.',
+      nearMe: 'Vicino a me: il CAP ti porta al tuo stato. Per contea o posizione esatta solo quando USDA pubblicherà una geografia più fine; nessuna distanza è inventata.', alerts: 'Avvisi di questo mercato', cls: 'Classe', grade: 'Grado', protein: 'Proteine',
       foot: 'Fonte: USDA AMS Market News (MARS). Dati pubblici statunitensi; credito: U.S. Department of Agriculture. Ogni riga rimanda al rapporto originale.', method: 'Metodologia', pending: 'La licenza di questo specifico dataset è in attesa di ulteriore verifica: vedi la Metodologia.', basisFooter: 'Il basis compare solo se il rapporto USDA lo pubblica.', coverage: 'copertura', openMap: 'Mappa di copertura' }
   };
   var CN = { corn: { es: 'Maíz', en: 'Corn', fr: 'Maïs', it: 'Mais' }, soybeans: { es: 'Soja', en: 'Soybeans', fr: 'Soja', it: 'Soia' }, wheat: { es: 'Trigo', en: 'Wheat', fr: 'Blé', it: 'Frumento' },
@@ -197,6 +201,24 @@
 
   /* ---------- pintado ---------- */
   function opt(v, label, sel) { return '<option value="' + esc(v) + '"' + (sel ? ' selected' : '') + '>' + esc(label) + '</option>'; }
+  var ZIP = null, ZMSG = '';
+  function zipRow() {
+    var t = tt();
+    return '<div style="display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;margin:-4px 0 12px"><label style="font-size:13px">' + esc(t.zipL) + '<br><input id="pl-zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" size="6" style="font:inherit;padding:6px 8px;border:1px solid var(--border);border-radius:6px;background:var(--surface,transparent);color:inherit;width:90px"></label>' +
+      '<button type="button" id="pl-zip-go" class="di-range-btn">' + esc(t.zipGo) + '</button><span id="pl-zip-msg" class="di-movers-hint" role="status" aria-live="polite" style="flex:1;min-width:200px">' + esc(ZMSG || t.zipWhy) + '</span></div>';
+  }
+  function zipState(z) { var e = ZIP.exceptions[z]; return e || ZIP.prefix[z.slice(0, 3)] || null; }
+  function zipGo(doc) {
+    var t = tt(), el = document.getElementById('pl-zip'), z = el ? el.value.replace(/\s+/g, '') : '', msg = document.getElementById('pl-zip-msg');
+    function say(m) { ZMSG = m; if (msg) msg.textContent = m; }
+    if (!/^[0-9]{5}$/.test(z)) { say(t.zipBad); return; }
+    (ZIP ? Promise.resolve(ZIP) : get('zip-state.json').then(function (d) { ZIP = d; return d; })).then(function () {
+      var st = zipState(z); if (!st) { say(t.zipNone); return; }
+      if (!M.states[st]) { say(t.zipNoState.replace('{0}', st)); return; }
+      if (!M.states[st].commodities[ST.c]) ST.c = M.states[st].commodities.corn ? 'corn' : Object.keys(M.states[st].commodities)[0];
+      ZMSG = t.zipOk.replace('{0}', M.states[st].name); ST.s = st; ST.spec = null; ST.buyer = ''; ST.market = ''; ST.id = null; load();
+    }).catch(function () { say(t.zipNone); });
+  }
   function controls(doc, R) {
     var t = tt(), st = Object.keys(M.states).sort(function (a, b) { return M.states[a].name.localeCompare(M.states[b].name); });
     var coms = Object.keys(M.states[ST.s].commodities).sort(function (a, b) { return cname(a).localeCompare(cname(b)); });
@@ -209,7 +231,7 @@
       lab('pl-c', t.commodity, coms.map(function (k) { return opt(k, cname(k), k === ST.c); }).join('')) +
       (sp_.length > 1 ? lab('pl-spec', t.spec, sp_.map(function (x) { return opt(x.key, specLabel(x.s) + ' (' + Object.keys(x.mk).length + ')', x.key === cur); }).join('')) : '') +
       (Object.keys(buyers).length > 1 ? lab('pl-buyer', t.buyer, opt('', t.allBuyers, !ST.buyer) + Object.keys(buyers).sort().map(function (b) { return opt(b, b || '—', b === ST.buyer); }).join('')) : '') +
-      lab('pl-m', t.market, opt('', t.allMarkets, !ST.market) + Object.keys(markets).sort().map(function (m) { return opt(m, m || '—', m === ST.market); }).join('')) + '</div>';
+      lab('pl-m', t.market, opt('', t.allMarkets, !ST.market) + Object.keys(markets).sort().map(function (m) { return opt(m, m || '—', m === ST.market); }).join('')) + '</div>' + zipRow();
   }
   function specFor(R) { if (ST.spec && R.specs.some(function (x) { return x.key === ST.spec; })) return ST.spec; return R.specs.length ? R.specs[0].key : null; }
   function mapHtml() {
@@ -268,6 +290,7 @@
   }
   function bind(doc, shown) {
     var on = function (id, fn) { var el = document.getElementById(id); if (el) el.onchange = fn; };
+    var zg = document.getElementById('pl-zip-go'); if (zg) zg.onclick = function () { zipGo(doc); }; var zi = document.getElementById('pl-zip'); if (zi) zi.onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); zipGo(doc); } };
     on('pl-s', function (e) { ST.s = e.target.value; if (!M.states[ST.s].commodities[ST.c]) ST.c = M.states[ST.s].commodities.corn ? 'corn' : Object.keys(M.states[ST.s].commodities)[0]; ST.spec = null; ST.buyer = ''; ST.market = ''; ST.id = null; load(); });
     on('pl-c', function (e) { ST.c = e.target.value; ST.spec = null; ST.buyer = ''; ST.market = ''; ST.id = null; load(); });
     on('pl-spec', function (e) { ST.spec = e.target.value; ST.buyer = ''; ST.market = ''; render(doc); sync(); });

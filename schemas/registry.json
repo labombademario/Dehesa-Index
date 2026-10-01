@@ -303,6 +303,12 @@
    [
     "us_cashbids_watch"
    ]
+  ],
+  "us-cash-bids/zip-state.json": [
+   "us-cash-bids-zip-state",
+   [
+    "us_cashbids_zip"
+   ]
   ]
  },
  "globs": {

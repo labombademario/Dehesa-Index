@@ -189,6 +189,16 @@ try:
     check("serie que se aparta de sus pares: PEER_OUTLIER", by["M4"]["changeFlag"] == "PEER_OUTLIER", by["M4"])
     two = L.empty_store("IA", "corn"); two["series"]["a"] = mk("A", 5.0, 4.0); two["series"]["b"] = mk("B", 5.0, 5.5)
     check("sin pares suficientes no se afirma nada", all(x["changeFlag"] is None and x["peerMedianPct"] is None for x in L.shard_of(two, lambda r: "daily", None, "t")["series"]))
+    # --- 20. Tabla ZIP -> estado (cerca de mi): prefijo dominante + excepciones exactas, sin coordenadas
+    import importlib.util
+    sp = importlib.util.spec_from_file_location("bzs", str(ROOT / "scripts/build-zip-state.py")); bzs = importlib.util.module_from_spec(sp); sp.loader.exec_module(bzs)
+    rows = [{"zipcode": z, "state_abbr": st} for z, st in [("50010", "IA"), ("50011", "IA"), ("50012", "IA"), ("50099", "MN"), ("6820", "IL"), ("XXXXX", "IA"), ("12345", "ZZ")]]
+    pre, exc, n = bzs.build(rows)
+    check("zip: prefijo dominante y excepcion exacta; ZIP/estado invalidos ignorados", pre == {"500": "IA", "068": "IL"} and exc == {"50099": "MN"} and n == 5, (pre, exc, n))
+    tab = json.loads((ROOT / "data/us-cash-bids/zip-state.json").read_text())
+    look = lambda z: tab["exceptions"].get(z) or tab["prefix"].get(z[:3])
+    check("zip: ciudades de referencia", [look(z) for z in ("50010", "66502", "68501", "55401", "61820", "65201")] == ["IA", "KS", "NE", "MN", "IL", "MO"])
+    check("zip: sin coordenadas ni ciudades", set(tab) == {"schemaVersion", "generatedAt", "sourceId", "note", "zips", "prefix", "exceptions"})
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
 if fails:

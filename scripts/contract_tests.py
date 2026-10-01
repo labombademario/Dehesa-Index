@@ -375,6 +375,23 @@ def us_cashbids_manifest(doc, errs, warns, stats):
     lic = json.loads((D / "license-registry.json").read_text(encoding="utf-8"))["sources"].get(doc["sourceId"])
     if not lic or lic["status"] in ("RESTRICTED", "BLOCKED") or doc["license"]["status"] != lic["status"]: errs.append("el manifiesto declara una licencia distinta de la del registro (%s)" % (lic or {}).get("status"))
     stats["series"] += ser
+def us_cashbids_zip(doc, errs, warns, stats):
+    ok = set("AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY PR".split())
+    _cb_secret_scan(doc, errs)
+    import re as _re
+    for k in doc["prefix"]:
+        if not _re.match(r"^[0-9]{3}$", k): errs.append("zip-state: prefijo invalido %r" % k)
+    for k in doc["exceptions"]:
+        if not _re.match(r"^[0-9]{5}$", k): errs.append("zip-state: ZIP invalido %r" % k)
+    if len(doc["prefix"]) < 800: errs.append("zip-state: solo %d prefijos (se esperan >= 800)" % len(doc["prefix"]))
+    for k, s in list(doc["prefix"].items()) + list(doc["exceptions"].items()):
+        if s not in ok: errs.append("zip-state: estado desconocido %s para %s" % (s, k))
+    for z, s in doc["exceptions"].items():
+        if z[:3] not in doc["prefix"]: errs.append("zip-state: excepcion %s sin prefijo" % z)
+        elif doc["prefix"][z[:3]] == s: errs.append("zip-state: la excepcion %s es redundante" % z)
+    for z, s in (("50010", "IA"), ("66502", "KS"), ("68501", "NE"), ("55401", "MN"), ("61820", "IL"), ("65201", "MO")):
+        if doc["exceptions"].get(z) or doc["prefix"].get(z[:3]) != s: errs.append("zip-state: %s deberia ser %s" % (z, s))
+
 def us_cashbids_watch(doc, errs, warns, stats):
     _cb_secret_scan(doc, errs); base = D / "us-cash-bids"; stats["series"] += len(doc["series"]); live = {}
     for f in sorted(base.glob("*/*.json")):
