@@ -1,0 +1,72 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "ECB monthly FX history",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "base",
+  "quote",
+  "source",
+  "currencies"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "base": {
+   "type": "string",
+   "enum": [
+    "EUR"
+   ]
+  },
+  "quote": {
+   "type": "string",
+   "minLength": 1
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {
+    "name": {
+     "type": "string",
+     "minLength": 1
+    },
+    "url": {
+     "type": "string",
+     "pattern": "^https?://"
+    },
+    "license": {
+     "type": "string",
+     "minLength": 1
+    }
+   }
+  },
+  "currencies": {
+   "type": "object",
+   "required": [],
+   "properties": {},
+   "minProperties": 4,
+   "additionalSchema": {
+    "type": "array",
+    "items": {
+     "type": "array",
+     "minItems": 2,
+     "maxItems": 2
+    },
+    "minItems": 24
+   }
+  }
+ }
+}

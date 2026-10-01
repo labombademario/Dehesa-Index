@@ -1,0 +1,36 @@
+name: Motor de precios (construir y validar)
+description: >
+  Cadena unica del motor de precios (snapshots -> latest/history/catalog -> CSV -> calidad -> inteligencia -> normalizado -> cross-market -> alertas)
+  seguida de la validacion de contratos y de consistencia. Falla CERRADO: si algo falla no se llega al paso de publicacion.
+runs:
+  using: composite
+  steps:
+    - name: Validar snapshots
+      shell: bash
+      run: node scripts/validate-snapshots.mjs
+    - name: Construir indice de datos (latest, history, catalog)
+      shell: bash
+      run: node scripts/build-data-index.mjs
+    - name: Construir CSV
+      shell: bash
+      run: node scripts/build-csv.mjs
+    - name: Construir informe de calidad
+      shell: bash
+      run: node scripts/build-data-quality.mjs
+    - name: Construir Intelligence
+      shell: bash
+      run: node scripts/build-intelligence.mjs
+    - name: Construir capa normalizada
+      shell: bash
+      run: node scripts/build-normalized-data.mjs
+    - name: Construir cross-market y Dehesa Index
+      shell: bash
+      run: node scripts/build-cross-market.mjs && node scripts/build-dehesa-index.mjs
+    - name: Construir senales de alerta
+      shell: bash
+      run: node scripts/build-alert-signals.mjs
+    - name: Validar contratos y consistencia (antes de cualquier commit)
+      shell: bash
+      run: |
+        python3 scripts/validate-data.py --no-report --files data/latest.json data/history.json data/normalized.json data/quality.json data/intelligence.json data/cross-market.json data/catalog.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json
+        python3 scripts/validate-data.py --consistency

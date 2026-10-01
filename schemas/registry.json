@@ -1,0 +1,222 @@
+{
+ "files": {
+  "latest.json": [
+   "latest",
+   [
+    "obs_latest"
+   ]
+  ],
+  "history.json": [
+   "history",
+   [
+    "obs_history"
+   ]
+  ],
+  "normalized.json": [
+   "normalized",
+   [
+    "obs_history"
+   ]
+  ],
+  "quality.json": [
+   "quality",
+   [
+    "quality"
+   ]
+  ],
+  "intelligence.json": [
+   "intelligence",
+   [
+    "intelligence"
+   ]
+  ],
+  "cross-market.json": [
+   "cross-market",
+   [
+    "cross_market"
+   ]
+  ],
+  "supply-demand.json": [
+   "supply-demand",
+   [
+    "supply_demand"
+   ]
+  ],
+  "supply-demand-map.json": [
+   "supply-demand-map",
+   []
+  ],
+  "export-sales.json": [
+   "export-sales",
+   [
+    "export_sales"
+   ]
+  ],
+  "gats.json": [
+   "gats",
+   [
+    "gats"
+   ]
+  ],
+  "climate.json": [
+   "climate",
+   [
+    "climate"
+   ]
+  ],
+  "climate-history.json": [
+   "climate-history",
+   [
+    "climate_history"
+   ]
+  ],
+  "crop-progress.json": [
+   "crop-progress",
+   [
+    "crop_progress"
+   ]
+  ],
+  "drought.json": [
+   "drought",
+   [
+    "drought"
+   ]
+  ],
+  "ers.json": [
+   "ers",
+   []
+  ],
+  "recan.json": [
+   "recan",
+   [
+    "recan"
+   ]
+  ],
+  "fx-history.json": [
+   "fx-history",
+   [
+    "fx_history"
+   ]
+  ],
+  "product-compare.json": [
+   "product-compare",
+   [
+    "product_compare"
+   ]
+  ],
+  "watch-index.json": [
+   "watch-index",
+   [
+    "watch_index"
+   ]
+  ],
+  "daily-brief.json": [
+   "daily-brief",
+   [
+    "daily_brief"
+   ]
+  ],
+  "pipeline-status.json": [
+   "pipeline-status",
+   [
+    "pipeline_status"
+   ]
+  ],
+  "series-registry.json": [
+   "series-registry",
+   [
+    "series_registry"
+   ]
+  ],
+  "revisions.json": [
+   "revisions",
+   []
+  ],
+  "search-index.json": [
+   "search-index",
+   [
+    "search_index"
+   ]
+  ],
+  "catalog.json": [
+   "catalog-obs",
+   []
+  ],
+  "dehesa-index.json": [
+   "dehesa-index",
+   []
+  ],
+  "dehesa-index-us.json": [
+   "dehesa-index",
+   []
+  ],
+  "news.json": [
+   "news",
+   []
+  ],
+  "alerts.json": [
+   "alerts",
+   []
+  ],
+  "denmark-prices.json": [
+   "denmark-prices",
+   []
+  ],
+  "nass-prices.json": [
+   "nass-quickstats",
+   []
+  ],
+  "nass-crops.json": [
+   "nass-quickstats",
+   []
+  ],
+  "nass-livestock.json": [
+   "nass-quickstats",
+   []
+  ],
+  "eu-trade-products.json": [
+   "trade-products",
+   []
+  ],
+  "au-trade-products.json": [
+   "trade-products",
+   []
+  ],
+  "catalog/manifest.json": [
+   "catalog-manifest",
+   [
+    "catalog_manifest"
+   ]
+  ]
+ },
+ "globs": {
+  "catalog/[A-Z]*.json": [
+   "catalog-country",
+   []
+  ],
+  "catalog/eu/*.json": [
+   "catalog-country",
+   []
+  ],
+  "series/*/*.json": [
+   "series-shard",
+   [
+    "series_shard"
+   ]
+  ]
+ },
+ "derived": [
+  "product-compare.json",
+  "watch-index.json",
+  "daily-brief.json",
+  "pipeline-status.json",
+  "series-registry.json",
+  "revisions.json",
+  "search-index.json",
+  "catalog/manifest.json",
+  "catalog.json",
+  "quality.json",
+  "intelligence.json",
+  "cross-market.json"
+ ]
+}

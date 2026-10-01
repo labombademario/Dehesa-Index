@@ -1,0 +1,66 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "USDA PSD map layer",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "commodities"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {
+    "name": {
+     "type": "string",
+     "minLength": 1
+    },
+    "url": {
+     "type": "string",
+     "pattern": "^https?://"
+    },
+    "license": {
+     "type": "string",
+     "minLength": 1
+    }
+   }
+  },
+  "commodities": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "unit",
+     "latestMarketYear",
+     "countries"
+    ],
+    "properties": {
+     "countries": {
+      "type": "object",
+      "required": [],
+      "properties": {},
+      "minProperties": 5
+     }
+    }
+   },
+   "minItems": 5
+  }
+ }
+}

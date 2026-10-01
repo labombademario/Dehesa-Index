@@ -24,6 +24,11 @@ jobs:
           done
       - name: Build supply and demand data
         run: node scripts/update-usda-psd.mjs
+      - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/supply-demand.json data/supply-demand-map.json
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -33,3 +38,6 @@ jobs:
           git commit -m "chore: update USDA supply and demand (PSD)"
           git pull --rebase origin main
           git push
+      - name: Cierre (rojo si hubo datos invalidos)
+        if: always()
+        uses: ./.github/actions/finish

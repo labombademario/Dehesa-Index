@@ -1,0 +1,20 @@
+name: Validar ficheros de datos (contrato)
+description: >
+  Valida los ficheros con sus esquemas y tests semanticos (scripts/validate-data.py). Si alguno es invalido, DESCARTA el cambio de esos ficheros
+  (git checkout) para que nunca se publiquen y deja marcada la ejecucion; el paso final 'finish' la pone en rojo.
+inputs:
+  files:
+    description: Rutas data/*.json separadas por espacios
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        FILES: ${{ inputs.files }}
+      run: |
+        if ! python3 scripts/validate-data.py --no-report --files $FILES; then
+          echo "::error::datos invalidos: se descarta el cambio de $FILES"
+          git checkout -- $FILES
+          echo "DATA_INVALID=1" >> "$GITHUB_ENV"
+        fi

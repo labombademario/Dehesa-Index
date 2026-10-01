@@ -27,9 +27,14 @@ jobs:
           MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
         run: node scripts/update-ams.mjs 2>&1 | tee /tmp/ams.out
       - name: Ofertas diarias de grano (resumen para la ficha)
-        run: python3 scripts/build-ams-daily.py || true
+        run: python3 scripts/build-ams-daily.py
       - name: Rebuild search index
         run: node scripts/build-search-index.mjs
+      - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/ams-grain-daily.json data/search-index.json
       - name: Commit updated data
         if: always()
         run: |
@@ -40,3 +45,6 @@ jobs:
           git commit -m "data: update USDA AMS markets"
           git pull --rebase origin main
           git push origin HEAD:main
+      - name: Cierre (rojo si hubo datos invalidos)
+        if: always()
+        uses: ./.github/actions/finish

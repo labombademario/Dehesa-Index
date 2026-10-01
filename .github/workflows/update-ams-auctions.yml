@@ -27,6 +27,10 @@ jobs:
         run: node scripts/update-ams.mjs auc 2>&1 | tee /tmp/ams-auc.out
       - name: Rebuild search index
         run: node scripts/build-search-index.mjs
+      - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/search-index.json
       - name: Commit
         run: |
           cp /tmp/ams-auc.out data/ams/_log_auctions.txt
@@ -36,3 +40,6 @@ jobs:
           git diff --cached --quiet || git commit -m "data: update USDA AMS auctions"
           git pull --rebase origin main
           git push origin HEAD:main
+      - name: Cierre (rojo si hubo datos invalidos)
+        if: always()
+        uses: ./.github/actions/finish

@@ -20,6 +20,11 @@ jobs:
           node-version: '20'
       - name: Actualizar monitor de sequía
         run: node scripts/update-drought.mjs 2>&1 | tee data/drought-log.txt; test ${PIPESTATUS[0]} -eq 0
+      - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/drought.json
       - name: Commit
         if: always()
         run: |
@@ -27,3 +32,6 @@ jobs:
           git add data/drought.json data/drought-log.txt
           git commit -m "data: monitor de sequía" || exit 0
           git pull --rebase origin main; git push origin HEAD:main
+      - name: Cierre (rojo si hubo datos invalidos)
+        if: always()
+        uses: ./.github/actions/finish

@@ -33,11 +33,17 @@ jobs:
           pip install pyyaml
           python3 scripts/gen-workflows.py --check
 
-      - name: Validate data contracts and data tests
-        run: python3 scripts/validate-data.py
+      - name: Workflow hygiene (fail closed, no "|| true", explicit paths)
+        run: python3 scripts/check-workflows.py
+
+      - name: Data contracts (schemas), semantic tests and cross-file consistency, all families
+        run: python3 scripts/validate-data.py --all --no-report
+
+      - name: Contract tests bite (corrupted real data must be rejected)
+        run: python3 scripts/test-contracts.py
 
       - name: Data catalog integrity (manifest, catalogs, shards)
-        run: python3 scripts/check-catalog.py
+        run: python3 scripts/check-catalog.py --strict
 
       - name: Service worker version matches the code
         run: node scripts/stamp-sw.mjs --check

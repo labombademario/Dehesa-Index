@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Contratos de esquema y tests de datos de Dehesa Index (solo libreria estandar).
 Uso:  python3 scripts/validate-data.py [--files data/a.json data/b.json] [--strict] [--no-report]
+      python3 scripts/validate-data.py --derived      # contratos + tests semanticos + consistencia de los ficheros derivados (los ejecutan los workflows antes del commit)
+      python3 scripts/validate-data.py --all          # TODAS las familias (schemas/registry.json) + consistencia entre ficheros (CI)
+      python3 scripts/validate-data.py --consistency  # solo consistencia entre ficheros
  - Valida cada archivo contra su JSON Schema (schemas/*.schema.json; subconjunto: type, required, properties, items, enum, pattern,
    minimum, minItems, maxItems, minProperties, minLength, additionalSchema = esquema para cada valor de un objeto).
  - Tests de datos: sin NaN/Infinity, sin fechas futuras, series ordenadas y sin periodos repetidos, periodo coherente con la frecuencia,
@@ -9,6 +12,8 @@ Uso:  python3 scripts/validate-data.py [--files data/a.json data/b.json] [--stri
 Los workflows lo ejecutan ANTES de hacer commit: un fichero roto no llega a main."""
 import datetime, json, math, re, sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import contract_tests as CT
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"; SCH = ROOT / "schemas"
 JUMP = 25.0          # salto maximo respecto a la mediana de los 12 puntos previos antes de avisar
@@ -33,7 +38,9 @@ def check(v, s, path, errs, limit=40):
     if isinstance(v, str):
         if "pattern" in s and not re.search(s["pattern"], v): errs.append("%s: %r no cumple %s" % (path, v[:40], s["pattern"]))
         if "minLength" in s and len(v) < s["minLength"]: errs.append("%s: cadena demasiado corta" % path)
+    if isinstance(v, str) and "maxLength" in s and len(v) > s["maxLength"]: errs.append("%s: cadena demasiado larga" % path)
     if is_type(v, "number") and "minimum" in s and v < s["minimum"]: errs.append("%s: %s < %s" % (path, v, s["minimum"]))
+    if is_type(v, "number") and "maximum" in s and v > s["maximum"]: errs.append("%s: %s > %s" % (path, v, s["maximum"]))
     if isinstance(v, list):
         if "minItems" in s and len(v) < s["minItems"]: errs.append("%s: %d elementos (< %d)" % (path, len(v), s["minItems"]))
         if "maxItems" in s and len(v) > s["maxItems"]: errs.append("%s: %d elementos (> %d)" % (path, len(v), s["maxItems"]))
@@ -115,15 +122,84 @@ def validate_file(path):
     res["status"] = "error" if errs else ("warning" if warns else "ok")
     res["errors"] = errs[:25]; res["warnings"] = warns[:25]; res["nWarnings"] = len(warns); res["nErrors"] = len(errs)
     return res
+REG = json.loads((SCH / "registry.json").read_text())
+_SCHEMAS = {}
+def _schema(name):
+    if name not in _SCHEMAS: _SCHEMAS[name] = json.loads((SCH / (name + ".schema.json")).read_text())
+    return _SCHEMAS[name]
+def contract_targets(derived_only=False):
+    """[(ruta, familia, esquema, tests)] segun schemas/registry.json."""
+    out = []
+    for rel, (sch, tests) in REG["files"].items():
+        if derived_only and rel not in REG["derived"]: continue
+        if (DATA / rel).exists() or True: out.append((DATA / rel, rel, sch, tests))
+    if not derived_only:
+        for pat, (sch, tests) in REG["globs"].items():
+            for f in sorted(DATA.glob(pat)):
+                if f.name in ("manifest.json",): continue
+                out.append((f, str(f.relative_to(DATA)), sch, tests))
+    return out
+def validate_contract(path, rel, sch, tests):
+    res = {"file": rel, "schema": sch, "status": "ok", "errors": [], "warnings": [], "stats": {"series": 0}}
+    errs, warns = res["errors"], res["warnings"]
+    if not path.exists(): errs.append("archivo inexistente"); res["status"] = "error"; return res
+    try: doc = json.loads(path.read_text(encoding="utf-8"), parse_constant=lambda c: (_ for _ in ()).throw(ValueError("constante no valida " + c)))
+    except Exception as e: errs.append("JSON invalido: %s" % str(e)[:200]); res["status"] = "error"; return res
+    check(doc, _schema(sch), "$", errs)
+    if not errs:
+        for t in tests:
+            try: getattr(CT, t)(doc, errs, warns, res["stats"])
+            except Exception as e: errs.append("test %s fallo: %r" % (t, e)[:200])
+    if isinstance(doc, dict) and doc.get("generatedAt"):
+        try:
+            g = datetime.datetime.strptime(doc["generatedAt"][:19], "%Y-%m-%dT%H:%M:%S")
+            if g > datetime.datetime.utcnow() + datetime.timedelta(hours=26): errs.append("generatedAt en el futuro")
+        except Exception: pass
+    res["status"] = "error" if errs else ("warning" if warns else "ok")
+    res["nErrors"] = len(errs); res["nWarnings"] = len(warns); res["errors"] = errs[:25]; res["warnings"] = warns[:25]
+    return res
+def run_contracts(derived_only, quiet_ok=True):
+    results = [validate_contract(*t) for t in contract_targets(derived_only)]
+    fam = {}
+    for r in results: fam.setdefault(r["schema"], []).append(r)
+    for r in results:
+        if r["status"] != "ok" or not quiet_ok or "/" not in r["file"]:
+            print("%-8s %-40s %s" % (r["status"].upper(), r["file"], "; ".join(r["errors"][:3] + r["warnings"][:1])[:230]))
+    n_ok = sum(1 for r in results if r["status"] == "ok")
+    print("Contratos: %d ficheros, %d familias, %d ok" % (len(results), len(fam), n_ok))
+    return results
+def run_consistency():
+    errs, warns = [], []; CT.consistency(errs, warns)
+    for e in errs: print("ERROR    consistencia  %s" % e[:230])
+    for w in warns: print("WARNING  consistencia  %s" % w[:230])
+    print("Consistencia: %d errores, %d avisos" % (len(errs), len(warns)))
+    return errs, warns
 def main():
-    a = sys.argv[1:]; strict = "--strict" in a; report = "--no-report" not in a
+    a = sys.argv[1:]
+    if "--derived" in a or "--all" in a or "--consistency" in a:
+        strict = "--strict" in a; results = []
+        if "--all" in a:
+            files = [DATA / (n + ".json") for n in FAMILY if (DATA / (n + ".json")).exists()]
+            results += [validate_file(f) for f in files]
+            for r in results:
+                if r["status"] != "ok": print("%-8s %-40s %s" % (r["status"].upper(), r["file"], "; ".join(r["errors"][:3] + r["warnings"][:1])[:230]))
+        if "--consistency" not in a: results += run_contracts("--derived" in a and "--all" not in a)
+        ce, cw = run_consistency()
+        bad = [r for r in results if r["status"] == "error"]; warn = [r for r in results if r["status"] == "warning"]
+        print("Resumen: %d ficheros, %d con errores, %d con avisos, consistencia %d errores" % (len(results), len(bad), len(warn), len(ce)))
+        sys.exit(1 if bad or ce or (strict and (warn or cw)) else 0)
+    strict = "--strict" in a; report = "--no-report" not in a
     if "--files" in a:
         i = a.index("--files"); files = []
         for x in a[i + 1:]:
             if x.startswith("--"): break
             files.append(Path(x) if Path(x).is_absolute() else ROOT / x)
     else: files = [DATA / (n + ".json") for n in FAMILY if (DATA / (n + ".json")).exists()]
-    results = [validate_file(f) for f in files if f.exists()]
+    def one(f):
+        rel = str(f.relative_to(DATA)) if str(f).startswith(str(DATA)) else f.name
+        if rel in REG["files"]: sch, tests = REG["files"][rel]; return validate_contract(f, rel, sch, tests)
+        return validate_file(f)
+    results = [one(f) for f in files if f.exists()]
     for f in files:
         if not f.exists(): results.append({"file": f.name, "status": "error", "errors": ["archivo inexistente"], "warnings": [], "stats": {}})
     bad = [r for r in results if r["status"] == "error"]; warn = [r for r in results if r["status"] == "warning"]

@@ -31,8 +31,7 @@ def main():
     for pid, cfg in PRODUCTS.items():
         series = []
         fam, sid = cfg['eu']
-        try: f = json.loads((D / 'eu' / fam / (sid + '.json')).read_text())
-        except Exception: f = None
+        f = json.loads((D / 'eu' / fam / (sid + '.json')).read_text())  # estricto: la serie UE configurada debe existir
         if f:
             for r in f['regions']:
                 c = r['c']

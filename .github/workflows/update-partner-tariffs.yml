@@ -14,22 +14,29 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - run: |
+      - id: fetch
+        run: |
           sudo apt-get install -y -qq mdbtools >/dev/null
           pip install openpyxl --break-system-packages -q
           python3 scripts/update-partner-tariffs.py
         continue-on-error: true
-      - name: Validar datos (esquema y tests) antes de commit
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
         if: always()
-        run: |
-          python3 scripts/validate-data.py --no-report --files data/tariffs-eu.json data/tariffs-mx.json data/tariffs-ca.json || { echo '::error::datos invalidos: se descarta el cambio'; git checkout -- data/tariffs-eu.json data/tariffs-mx.json data/tariffs-ca.json; }
-          python3 scripts/detect-revisions.py data/tariffs-eu.json data/tariffs-mx.json data/tariffs-ca.json || true
-      - if: always()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data/
-          git diff --cached --quiet && exit 0
-          git commit -qm "Aranceles México, Canadá y UE"
-          git pull -q --rebase
-          git push
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/tariffs-eu.json data/tariffs-mx.json data/tariffs-ca.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/tariffs-eu.json data/tariffs-mx.json data/tariffs-ca.json
+      - name: Publicar
+        if: always()
+        uses: ./.github/actions/publish
+        with:
+          paths: data/tariffs-eu.json data/tariffs-mx.json data/tariffs-ca.json data/revisions.json
+          optional: data/partner-tariffs-log.txt
+          message: "Aranceles México, Canadá y UE"
+      - name: Cierre (rojo si hubo datos invalidos o el paso de descarga fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

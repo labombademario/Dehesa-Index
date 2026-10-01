@@ -30,14 +30,12 @@ def write_if_changed(path, text, written):
     path.write_text(text); return True
 def main():
     reg = {}
-    try:
-        for r in json.loads((ROOT / 'data/series-registry.json').read_text())['series']: reg[(r['country'], r['id'])] = r
-    except Exception: pass
+    # estricto: sin registro no sabemos que series duplicadas excluir; se detiene el build en vez de publicar un catalogo distinto
+    for r in json.loads((ROOT / 'data/series-registry.json').read_text())['series']: reg[(r['country'], r['id'])] = r
     by_c = {}; names = {}; srcs = {}
     for n in STATS:
         p = ROOT / 'data' / (n + '.json')
-        if not p.exists(): continue
-        d = json.loads(p.read_text())
+        d = json.loads(p.read_text())  # estricto: todos los *-stats.json deben existir
         for cc, c in d.get('countries', {}).items():
             names.setdefault(cc, c.get('name', cc))
             sn = (c.get('source') or {}).get('name')
@@ -56,8 +54,7 @@ def main():
         if re.match(r'^\d\d$', p): return '%d-%s' % (y, p)
         if re.match(r'^\d\d-\d\d$', p): return ('%d-%s' % (y, p)) if freq == 'weekly' else '%d-%s' % (y, p[:2])
         return None
-    try: obs = json.loads((ROOT / 'data/latest.json').read_text()).get('observations', [])
-    except Exception: obs = []
+    obs = json.loads((ROOT / 'data/latest.json').read_text())['observations']
     nprod = 0
     for o in obs:
         cc = o['region'].upper(); pts = []
@@ -71,14 +68,12 @@ def main():
         by_c.setdefault(cc, []).append(('latest', sr, None)); nprod += 1
     # --- catalogo Agri-food UE (data/eu): solo metadatos, apuntan a los ficheros que ya existen (formato 'eu-regions')
     eu_rows = {}
-    try: fams = json.loads((ROOT / 'data/eu/index.json').read_text())['families']
-    except Exception: fams = []
+    fams = json.loads((ROOT / 'data/eu/index.json').read_text())['families']
     for fam in fams:
-        try: fd = json.loads((ROOT / 'data/eu' / (fam['id'] + '.json')).read_text())
-        except Exception: continue
+        fd = json.loads((ROOT / 'data/eu' / (fam['id'] + '.json')).read_text())
         for se in fd.get('series', []):
             f = 'eu/%s/%s.json' % (fam['id'], se['id'])
-            if not (ROOT / 'data' / f).exists(): continue
+            if not (ROOT / 'data' / f).exists(): raise FileNotFoundError('data/' + f)  # estricto: el catalogo UE apunta a ficheros que deben existir
             seen = {}
             for rg in se.get('regions', []):
                 cc = rg['c']; seen[cc] = seen.get(cc, 0) + 1

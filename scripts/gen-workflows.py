@@ -21,21 +21,24 @@ def render(x):
     L += ["    steps:", "      - uses: actions/checkout@v4"]
     for p in x.get("pre", []): L.append("      - run: " + p)
     cmd = (x.get("runner", "python3") + " " + x["script"] + (" " + x["args"] if x.get("args") else "")).strip()
-    L.append("      - run: " + cmd)
+    L.append("      - id: fetch"); L.append("        run: " + cmd)
     if x.get("env"):
         L.append("        env:"); L += ["          %s: %s" % (k, v) for k, v in x["env"].items()]
     if x.get("script_timeout"): L.append("        timeout-minutes: %d" % x["script_timeout"])
     if x.get("continue"): L.append("        continue-on-error: true")
     always = ["        if: always()"] if x.get("continue") else []
-    files = " ".join("data/" + f for f in x["data"])
-    if x["data"]:
-        L += ["      - name: Validar datos (esquema y tests) antes de commit"] + always + ["        run: |",
-              "          python3 scripts/validate-data.py --no-report --files %s || { echo '::error::datos invalidos: se descarta el cambio'; git checkout -- %s; }" % (files, files),
-              "          python3 scripts/detect-revisions.py %s || true" % files]
-    adds = " ".join([(f[1:] if f.startswith("!") else "data/" + f) for f in x["data"] + x.get("extra", [])] + (["data/" + x["log"]] if x.get("log") else []) + (["data/revisions.json"] if x["data"] else []))
+    reg = json.loads((ROOT / "schemas" / "registry.json").read_text())["files"]
+    vlist = list(x["data"]) + [e for e in x.get("extra", []) if not e.startswith("!") and e in reg]  # tambien los ficheros extra con contrato
+    files = " ".join("data/" + f for f in vlist)
+    if vlist:
+        L += ["      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo"] + always + ["        uses: ./.github/actions/validate-files", "        with:", "          files: " + files,
+              "      - name: Detectar revisiones oficiales"] + always + ["        run: python3 scripts/detect-revisions.py " + files]
+    adds = " ".join([(f[1:] if f.startswith("!") else "data/" + f) for f in x["data"] + x.get("extra", [])] + (["data/" + x["log"]] if x.get("log") else []) + (["data/revisions.json"] if vlist else []))
     L += ["      - name: Publicar"] + always + ["        run: |", '          git config user.name "github-actions[bot]"', '          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"',
           "          git add " + adds, "          git diff --cached --quiet && exit 0", "          git commit -qm " + json.dumps(x["message"], ensure_ascii=False),
-          "          for i in 1 2 3; do", "            git pull -q --rebase --autostash && git push && exit 0", "            sleep $((i * 5))", "          done", "          exit 1"]
+          "          for i in 1 2 3; do", "            git pull -q --rebase --autostash && git push && exit 0", "            sleep $((i * 5))", "          done", "          echo '::error::no se pudo publicar tras 3 intentos'; exit 1"]
+    if vlist or x.get("continue"):
+        L += ["      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)", "        if: always()", "        uses: ./.github/actions/finish", "        with:", "          outcomes: ${{ steps.fetch.outcome }}"]
     return "\n".join(L) + "\n"
 def main():
     cfg = yaml.safe_load((ROOT / "sources.yml").read_text(encoding="utf-8")); bad = 0

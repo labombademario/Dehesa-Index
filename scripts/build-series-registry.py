@@ -14,8 +14,7 @@ def toks(label): return frozenset(re.findall(r"[a-z0-9]+", re.sub(r"\([^)]*\)", 
 def main():
     rows = []
     for f, tier in FILES.items():
-        try: d = json.loads((ROOT / "data" / (f + ".json")).read_text())
-        except Exception: continue
+        d = json.loads((ROOT / "data" / (f + ".json")).read_text())  # estricto: un fichero fuente ausente o roto detiene el build (no se publica nada)
         for cc, c in d.get("countries", {}).items():
             for s in c["series"]:
                 t = TIER_OVERRIDE.get(s["id"], tier); tk = toks(s["label"])

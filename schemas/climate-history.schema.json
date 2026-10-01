@@ -1,0 +1,109 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Climate monthly history",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "start",
+  "baseline",
+  "source",
+  "units",
+  "locations"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "start": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}$"
+  },
+  "baseline": {
+   "type": "string",
+   "minLength": 1
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {}
+  },
+  "units": {
+   "type": "object",
+   "required": [
+    "precipMmDay",
+    "tempC"
+   ],
+   "properties": {}
+  },
+  "locations": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "precipMmDay",
+     "tempC",
+     "baselinePrecipMmDay",
+     "baselineTempC"
+    ],
+    "properties": {
+     "precipMmDay": {
+      "type": "array",
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      },
+      "minItems": 12
+     },
+     "tempC": {
+      "type": "array",
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      },
+      "minItems": 12
+     },
+     "baselinePrecipMmDay": {
+      "type": "array",
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      },
+      "minItems": 12,
+      "maxItems": 12
+     },
+     "baselineTempC": {
+      "type": "array",
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      },
+      "minItems": 12,
+      "maxItems": 12
+     }
+    }
+   },
+   "minItems": 10
+  }
+ }
+}

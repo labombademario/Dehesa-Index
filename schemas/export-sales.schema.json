@@ -1,0 +1,96 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "USDA FAS export sales",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "commodities"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "string",
+   "minLength": 1
+  },
+  "commodities": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "code",
+     "name",
+     "unit",
+     "my",
+     "weekEnding",
+     "totals",
+     "weekly",
+     "countries"
+    ],
+    "properties": {
+     "code": {
+      "type": "integer"
+     },
+     "my": {
+      "type": "string",
+      "pattern": "^\\d{4}(/\\d{2})?$"
+     },
+     "weekEnding": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     },
+     "totals": {
+      "type": "object",
+      "required": [
+       "wk",
+       "acc",
+       "out"
+      ],
+      "properties": {}
+     },
+     "weekly": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "w",
+        "wk",
+        "acc"
+       ],
+       "properties": {
+        "w": {
+         "type": "string",
+         "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+       }
+      },
+      "minItems": 1
+     },
+     "countries": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "n",
+        "wk",
+        "acc"
+       ],
+       "properties": {}
+      }
+     }
+    }
+   },
+   "minItems": 5
+  }
+ }
+}

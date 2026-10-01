@@ -1,0 +1,131 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Cross-market relationships",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "methodology",
+  "relationships",
+  "relationshipFamilies"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "methodology": {
+   "type": "object",
+   "required": [
+    "minimumPeriods"
+   ],
+   "properties": {
+    "minimumPeriods": {
+     "type": "integer",
+     "minimum": 2
+    }
+   }
+  },
+  "relationships": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "label",
+     "seriesA",
+     "seriesB",
+     "frequency",
+     "lagPeriods",
+     "commonPeriods",
+     "correlationReturns",
+     "direction",
+     "strength",
+     "confidence",
+     "confidenceScore"
+    ],
+    "properties": {
+     "seriesA": {
+      "type": "object",
+      "required": [
+       "product",
+       "region",
+       "sourceId"
+      ],
+      "properties": {}
+     },
+     "seriesB": {
+      "type": "object",
+      "required": [
+       "product",
+       "region",
+       "sourceId"
+      ],
+      "properties": {}
+     },
+     "lagPeriods": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "commonPeriods": {
+      "type": "integer",
+      "minimum": 2
+     },
+     "correlationReturns": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1
+     },
+     "direction": {
+      "type": "string",
+      "enum": [
+       "positive",
+       "negative",
+       "neutral"
+      ]
+     },
+     "strength": {
+      "type": "string",
+      "enum": [
+       "weak",
+       "moderate",
+       "strong"
+      ]
+     },
+     "confidence": {
+      "type": "string",
+      "enum": [
+       "low",
+       "medium",
+       "high"
+      ]
+     },
+     "confidenceScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+     }
+    }
+   },
+   "minItems": 1
+  },
+  "relationshipFamilies": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "label"
+    ],
+    "properties": {}
+   },
+   "minItems": 1
+  }
+ }
+}

@@ -4,6 +4,7 @@ import json, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib_index import ROOT, STATS
+STRICT = '--strict' in sys.argv  # en el pipeline: cualquier descuadre con los datos reales es un error (no solo un aviso)
 MAX = 600_000  # bytes por fichero de puntos (el generador parte a ~450 KB)
 D = ROOT / 'data'; err = []
 try: man = json.loads((D / 'catalog/manifest.json').read_text())
@@ -42,6 +43,7 @@ for cc, c in man['countries'].items():
     for s in cat['series']:
         if not (D / s['file']).exists(): err.append('%s/%s apunta a fichero inexistente %s' % (cc, s['id'], s['file']))
 if tot != man['seriesTotal']: err.append('suma de catalogos %d != seriesTotal %d' % (tot, man['seriesTotal']))
-if warn: print('AVISO:', '; '.join(warn))
+if warn and STRICT: err.extend(warn)
+elif warn: print('AVISO:', '; '.join(warn))
 if err: print('\n'.join(err[:30])); sys.exit(1)
 print('Catalogo OK: %d series, %d paises' % (tot, len(man['countries'])))

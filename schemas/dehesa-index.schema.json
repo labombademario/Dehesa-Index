@@ -1,0 +1,89 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index (composite)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "region",
+  "base",
+  "lastPeriod",
+  "value",
+  "weights",
+  "groups",
+  "included",
+  "series"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "region": {
+   "type": "string",
+   "minLength": 1
+  },
+  "base": {
+   "type": "object",
+   "required": [
+    "period",
+    "value"
+   ],
+   "properties": {}
+  },
+  "lastPeriod": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}$"
+  },
+  "value": {
+   "type": "number"
+  },
+  "weights": {
+   "type": "object",
+   "required": [],
+   "properties": {},
+   "minProperties": 3
+  },
+  "groups": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "weightPct",
+     "value",
+     "members"
+    ],
+    "properties": {
+     "weightPct": {
+      "type": "number"
+     }
+    }
+   },
+   "minItems": 3
+  },
+  "included": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "group",
+     "product",
+     "sourceId"
+    ],
+    "properties": {}
+   },
+   "minItems": 3
+  },
+  "series": {
+   "type": "array",
+   "minItems": 12
+  }
+ }
+}

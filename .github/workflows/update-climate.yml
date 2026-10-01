@@ -17,6 +17,11 @@ jobs:
         with: { node-version: '22' }
       - name: Fetch NASA POWER monthly anomalies
         run: node scripts/update-climate.mjs
+      - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/climate.json data/climate-history.json
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -26,3 +31,6 @@ jobs:
           git commit -m "chore: update agricultural climate anomalies"
           git pull --rebase origin main
           git push
+      - name: Cierre (rojo si hubo datos invalidos)
+        if: always()
+        uses: ./.github/actions/finish

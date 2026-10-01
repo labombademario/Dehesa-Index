@@ -32,17 +32,24 @@ def products(doc):
         out['P/%s/%s' % (o['product'], o['region'])] = {'l': '%s (%s)' % (o['product'], o['region'].upper()), 'u': ((o.get('currency') or '') + '/' + (o.get('unit') or '')).strip('/'), 'f': o.get('frequency', ''),
                                                        'g': 'product', 'p': o.get('observationDate'), 'v': o.get('value'), 'c': o.get('changePct')}
     return out
-def load_all(loader):
-    """loader(path) -> texto JSON o None. Devuelve (series, ficheros_presentes)."""
+def load_all(loader, strict=False):
+    """loader(path) -> texto JSON o None. Devuelve (series, ficheros_presentes).
+    strict=True (estado actual): un fichero ausente o ilegible es un error, no se ignora. En versiones antiguas (git) puede faltar legitimamente."""
     series, present = {}, set()
     for n in STATS:
         t = loader('data/%s.json' % n)
-        if not t: continue
+        if not t:
+            if strict: raise FileNotFoundError('data/%s.json' % n)
+            continue
         try: d = json.loads(t)
-        except Exception: continue
+        except Exception:
+            if strict: raise
+            continue
         present.add(n); series.update(stats_series(d))
     t = loader('data/latest.json')
     if t:
         try: series.update(products(json.loads(t))); present.add('latest')
-        except Exception: pass
+        except Exception:
+            if strict: raise
+    elif strict: raise FileNotFoundError('data/latest.json')
     return series, present

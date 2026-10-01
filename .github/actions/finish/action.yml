@@ -1,0 +1,20 @@
+name: Cierre de la ejecucion (falla en rojo si hubo datos invalidos o fallo parcial)
+description: >
+  Ultimo paso (if: always()). Los pasos tolerantes (continue-on-error) y la validacion permiten publicar lo que si es bueno,
+  pero la ejecucion NO puede quedar en verde si algo fallo: este paso la pone en rojo para que pipeline-status lo vea.
+inputs:
+  outcomes:
+    description: Resultados (steps.<id>.outcome) de pasos tolerantes, separados por espacios; cualquier 'failure' pone la ejecucion en rojo
+    required: false
+    default: ''
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        OUTCOMES: ${{ inputs.outcomes }}
+      run: |
+        rc=0
+        if [ "${DATA_INVALID:-}" = "1" ]; then echo "::error::hubo datos invalidos descartados"; rc=1; fi
+        for o in $OUTCOMES; do if [ "$o" = "failure" ]; then echo "::error::un paso de actualizacion fallo (se publico lo que estaba bien)"; rc=1; fi; done
+        exit $rc

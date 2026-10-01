@@ -22,12 +22,41 @@ jobs:
         with:
           node-version: '20'
       - name: Update GATS
+        id: gats
         env:
           FAS_API_KEY: ${{ secrets.FAS_API_KEY }}
-        run: timeout 52m node scripts/update-gats.mjs > /tmp/gats.out 2>&1 || true
+        run: |
+          # La carga es incremental y guarda progreso: un timeout (124) es parcial y esperado; cualquier otro codigo distinto de 0 es un error real (se comprueba en el cierre).
+          set +e
+          timeout 52m node scripts/update-gats.mjs > /tmp/gats.out 2>&1
+          rc=$?
+          tail -n 5 /tmp/gats.out
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/gats.json
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/gats.json 2>/dev/null || true
-          if ! git diff --cached --quiet; then cp /tmp/gats.out data/gats-log.txt; git add data/gats-log.txt; git commit -m "chore: update trade by country (USDA FAS GATS)"; for i in 1 2 3; do git pull --rebase -X theirs origin main && git push origin HEAD:main && break; sleep 5; done; else if [ ! -f data/gats.json ]; then cp /tmp/gats.out data/gats-log.txt; git add data/gats-log.txt; git commit -m "chore: GATS log"; git pull --rebase origin main; git push origin HEAD:main; fi; fi
+          git add data/gats.json
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          cp /tmp/gats.out data/gats-log.txt
+          git add data/gats-log.txt
+          git commit -m "chore: update trade by country (USDA FAS GATS)"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          echo "::error::no se pudo publicar tras 3 intentos"; exit 1
+      - name: Cierre (rojo si hubo datos invalidos o el script fallo de verdad)
+        if: always()
+        env:
+          RC: ${{ steps.gats.outputs.rc }}
+        run: |
+          rc=0
+          if [ "${DATA_INVALID:-}" = "1" ]; then echo "::error::datos invalidos descartados"; rc=1; fi
+          if [ -n "$RC" ] && [ "$RC" != "0" ] && [ "$RC" != "124" ]; then echo "::error::update-gats.mjs termino con codigo $RC"; rc=1; fi
+          exit $rc

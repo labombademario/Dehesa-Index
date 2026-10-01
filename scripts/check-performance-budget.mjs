@@ -9,10 +9,14 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const KB = 1024;
 const BUDGET = { data: 900 * KB, js: 120 * KB, css: 60 * KB };   // gzip, por fichero
 // Deuda conocida: ficheros que ya superan el presupuesto (se cargan solo bajo demanda). Cada uno con su limite propio.
-const KNOWN_DEBT = { 'data/eu-trade-stats.json': 1100 * KB, 'data/us-tariffs.json': 2500 * KB };
+// Sin deuda conocida: ningun fichero grande se excusa aqui. Si hiciera falta una excepcion, debe ir con su motivo documentado en ARCHITECTURE.md.
+const KNOWN_DEBT = {};
+// Presupuestos mas estrictos para los arboles que el navegador baja bajo demanda (gzip, por fichero).
+const DIR_BUDGET = [['data/series/', 200 * KB], ['data/catalog/', 150 * KB], ['data/prices/', 250 * KB], ['data/views/', 100 * KB], ['data/eu/', 120 * KB]];
+// Recorre TODO el arbol (data/catalog/**, data/series/**, data/eu/**...). Antes se saltaba los subdirectorios y no medía justo lo nuevo.
 async function walk(dir, ext, out) {
   for (const e of await readdir(path.join(root, dir), { withFileTypes: true })) {
-    if (e.isDirectory()) continue;
+    if (e.isDirectory()) { await walk(dir + '/' + e.name, ext, out); continue; }
     if (e.name.endsWith(ext)) out.push(dir + '/' + e.name);
   }
   return out;
@@ -24,7 +28,8 @@ for (const f of await walk('css', '.css', [])) items.push([f, 'css']);
 const rows = []; const bad = [];
 for (const [f, kind] of items) {
   const buf = await readFile(path.join(root, f)); const gz = gzipSync(buf, { level: 9 }).length;
-  const limit = KNOWN_DEBT[f] || BUDGET[kind];
+  const dirLimit = (DIR_BUDGET.find(([d]) => f.startsWith(d)) || [])[1];
+  const limit = KNOWN_DEBT[f] || (kind === 'data' && dirLimit) || BUDGET[kind];
   rows.push({ file: f, kind, raw: buf.length, gzip: gz, limit, debt: !!KNOWN_DEBT[f] && gz > BUDGET[kind] });
   if (gz > limit) bad.push(f + ': ' + Math.round(gz / KB) + ' KB gzip > ' + Math.round(limit / KB) + ' KB');
 }

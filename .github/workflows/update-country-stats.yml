@@ -19,15 +19,18 @@ jobs:
           python-version: '3.12'
       - name: Update country statistics
         run: python scripts/update-country-stats.py | tee data/country-stats-log.txt
-      - name: Validar datos (esquema y tests) antes de commit
-        run: |
-          python3 scripts/validate-data.py --no-report --files data/country-stats.json || { echo '::error::datos invalidos: se descarta el cambio'; git checkout -- data/country-stats.json; }
-          python3 scripts/detect-revisions.py data/country-stats.json || true
-      - name: Commit
-        run: |
-          git config user.name "Dehesa Index Bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/country-stats.json data/country-stats-log.txt data/revisions.json
-          git diff --cached --quiet || git commit -m "data: estadísticas por país (DK, NL, AU)"
-          git pull --rebase origin main
-          git push
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/country-stats.json
+      - name: Detectar revisiones oficiales
+        run: python3 scripts/detect-revisions.py data/country-stats.json
+      - name: Publicar
+        uses: ./.github/actions/publish
+        with:
+          paths: data/country-stats.json data/country-stats-log.txt data/revisions.json
+          message: "data: estadísticas por país (DK, NL, AU)"
+          user: "Dehesa Index Bot"
+      - name: Cierre (rojo si hubo datos invalidos)
+        if: always()
+        uses: ./.github/actions/finish

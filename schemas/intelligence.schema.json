@@ -1,0 +1,114 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Intelligence engine output",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "series",
+  "engine",
+  "methodology",
+  "thresholds"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "engine": {
+   "type": "string",
+   "minLength": 1
+  },
+  "methodology": {
+   "type": "object",
+   "required": [],
+   "properties": {}
+  },
+  "thresholds": {
+   "type": "object",
+   "required": [],
+   "properties": {}
+  },
+  "series": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "product",
+     "region",
+     "sourceId",
+     "frequency",
+     "unit",
+     "currency",
+     "latest",
+     "observationDate",
+     "points",
+     "coverageStart",
+     "coverageEnd",
+     "status",
+     "comparability"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "minLength": 1
+     },
+     "region": {
+      "type": "string",
+      "enum": [
+       "eu",
+       "us",
+       "ca",
+       "uk"
+      ]
+     },
+     "latest": {
+      "type": "number"
+     },
+     "observationDate": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$"
+     },
+     "periodChangePct": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "yoyPct": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "volatility": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "points": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "coverageStart": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     },
+     "coverageEnd": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     }
+    }
+   },
+   "minItems": 40
+  }
+ }
+}

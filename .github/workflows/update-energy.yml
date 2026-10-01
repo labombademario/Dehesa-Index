@@ -24,28 +24,13 @@ jobs:
         run: node scripts/update-eia-diesel-us.mjs
       - name: Update EU Oil Bulletin diesel
         run: python scripts/update-ec-diesel-eu.py
-      - name: Validate snapshots
-        run: node scripts/validate-snapshots.mjs
-      - name: Build data index
-        run: node scripts/build-data-index.mjs
+      - uses: ./.github/actions/price-engine
       - name: Sync diesel Data Trust card
         run: node scripts/sync-diesel-trust.mjs
-      - name: Build CSV
-        run: node scripts/build-csv.mjs
-      - name: Build quality
-        run: node scripts/build-data-quality.mjs
-      - name: Build Intelligence 2.0
-        run: node scripts/build-intelligence.mjs
-      - name: Build normalization
-        run: node scripts/build-normalized-data.mjs
-      - name: Build cross-market
-        run: node scripts/build-cross-market.mjs && node scripts/build-dehesa-index.mjs
-      - name: Build alert signals
-        run: node scripts/build-alert-signals.mjs
-      - name: Commit
-        run: |
-          git config user.name "Dehesa Index Bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add js/data.js data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json
-          git diff --cached --quiet || git commit -m "data: refresh diesel energy series"
-          git push
+      - name: Publicar
+        uses: ./.github/actions/publish
+        with:
+          paths: >-
+            js/data.js data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json
+          message: "data: refresh diesel energy series"
+          user: "Dehesa Index Bot"

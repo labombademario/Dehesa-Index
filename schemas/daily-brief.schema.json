@@ -1,0 +1,167 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Daily brief",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "windowHours",
+  "since",
+  "counts",
+  "datasets",
+  "newDatasets",
+  "movers",
+  "newData",
+  "revisions",
+  "stale",
+  "upcoming"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "windowHours": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "since": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "counts": {
+   "type": "object",
+   "required": [
+    "datasetsUpdated",
+    "newPeriods",
+    "newSeries",
+    "newDatasets",
+    "revisions",
+    "stale",
+    "upcoming"
+   ],
+   "properties": {
+    "datasetsUpdated": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "newPeriods": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "newSeries": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "newDatasets": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "revisions": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "stale": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "upcoming": {
+     "type": "integer",
+     "minimum": 0
+    }
+   }
+  },
+  "datasets": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "file",
+     "name",
+     "changed"
+    ],
+    "properties": {}
+   }
+  },
+  "newDatasets": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "file",
+     "name"
+    ],
+    "properties": {}
+   }
+  },
+  "movers": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "k",
+     "label",
+     "period",
+     "value",
+     "changePct"
+    ],
+    "properties": {}
+   }
+  },
+  "newData": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "k",
+     "label",
+     "period",
+     "value"
+    ],
+    "properties": {}
+   }
+  },
+  "revisions": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "series",
+     "period",
+     "old",
+     "new",
+     "detectedAt"
+    ],
+    "properties": {}
+   }
+  },
+  "stale": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "workflow",
+     "status"
+    ],
+    "properties": {}
+   }
+  },
+  "upcoming": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "workflow",
+     "nextRun"
+    ],
+    "properties": {}
+   }
+  }
+ }
+}

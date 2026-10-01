@@ -1,0 +1,72 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Search index",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "entries"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}"
+  },
+  "entries": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "i",
+     "t",
+     "u",
+     "n",
+     "s",
+     "k"
+    ],
+    "properties": {
+     "i": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "t": {
+      "type": "string",
+      "minLength": 1
+     },
+     "u": {
+      "type": "string",
+      "minLength": 1
+     },
+     "n": {
+      "type": "object",
+      "required": [
+       "es",
+       "en",
+       "fr",
+       "it"
+      ],
+      "properties": {}
+     },
+     "s": {
+      "type": "object",
+      "required": [
+       "es",
+       "en"
+      ],
+      "properties": {}
+     },
+     "k": {
+      "type": "string"
+     }
+    }
+   },
+   "minItems": 100
+  }
+ }
+}

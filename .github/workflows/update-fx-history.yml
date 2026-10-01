@@ -15,18 +15,32 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/update-fx-history.py
+      - id: fetch
+        run: python3 scripts/update-fx-history.py
         continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/fx-history.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/fx-history.json
       - name: Publicar
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/fx-history.json data/fx-history-log.txt
+          git add data/fx-history.json data/fx-history-log.txt data/revisions.json
           git diff --cached --quiet && exit 0
           git commit -qm "Tipos de cambio históricos (BCE)"
           for i in 1 2 3; do
             git pull -q --rebase --autostash && git push && exit 0
             sleep $((i * 5))
           done
-          exit 1
+          echo '::error::no se pudo publicar tras 3 intentos'; exit 1
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

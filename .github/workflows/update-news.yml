@@ -27,6 +27,11 @@ jobs:
       - name: Update news index
         run: python3 scripts/update_news.py
 
+      - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/news.json
+
       - name: Commit generated news
         run: |
           if git diff --quiet -- data/news.json data/news-status.json js/news-index.js js/news-feed.js; then
@@ -41,4 +46,8 @@ jobs:
             git pull -q --rebase --autostash origin main && git push && exit 0
             sleep $((i * 5))
           done
-          exit 1
+          echo '::error::no se pudo publicar tras 3 intentos'; exit 1
+
+      - name: Cierre (rojo si hubo datos invalidos)
+        if: always()
+        uses: ./.github/actions/finish

@@ -15,14 +15,18 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/update-au-trade.py
+      - id: fetch
+        run: python3 scripts/update-au-trade.py
         timeout-minutes: 20
         continue-on-error: true
-      - name: Validar datos (esquema y tests) antes de commit
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
         if: always()
-        run: |
-          python3 scripts/validate-data.py --no-report --files data/australia-trade-stats.json || { echo '::error::datos invalidos: se descarta el cambio'; git checkout -- data/australia-trade-stats.json; }
-          python3 scripts/detect-revisions.py data/australia-trade-stats.json || true
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/australia-trade-stats.json data/au-trade-products.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/australia-trade-stats.json data/au-trade-products.json
       - name: Publicar
         if: always()
         run: |
@@ -35,4 +39,9 @@ jobs:
             git pull -q --rebase --autostash && git push && exit 0
             sleep $((i * 5))
           done
-          exit 1
+          echo '::error::no se pudo publicar tras 3 intentos'; exit 1
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

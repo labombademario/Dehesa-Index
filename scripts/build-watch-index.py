@@ -6,7 +6,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib_index import ROOT, load_all
 def main():
-    series, present = load_all(lambda p: (ROOT / p).read_text() if (ROOT / p).exists() else None)
+    series, present = load_all(lambda p: (ROOT / p).read_text() if (ROOT / p).exists() else None, strict=True)
     out = {k: [v['l'][:90], v['u'], v['f'], v['g'], v['p'], v['v'], v['c']] for k, v in sorted(series.items()) if v['p'] is not None and v['v'] is not None}
     path = ROOT / 'data' / 'watch-index.json'
     new = json.dumps({'schemaVersion': 1, 'series': out}, ensure_ascii=False, separators=(',', ':'))

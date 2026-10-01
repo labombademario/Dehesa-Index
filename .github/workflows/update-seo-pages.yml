@@ -15,7 +15,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - run: node scripts/build-seo-pages.mjs
+      - id: fetch
+        run: node scripts/build-seo-pages.mjs
         continue-on-error: true
       - name: Publicar
         if: always()
@@ -29,4 +30,9 @@ jobs:
             git pull -q --rebase --autostash && git push && exit 0
             sleep $((i * 5))
           done
-          exit 1
+          echo '::error::no se pudo publicar tras 3 intentos'; exit 1
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

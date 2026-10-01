@@ -19,6 +19,11 @@ jobs:
           node-version: '20'
       - name: ERS
         run: node scripts/update-ers.mjs 2>&1 | tee data/ers-log.txt; test ${PIPESTATUS[0]} -eq 0
+      - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/ers.json
       - name: Commit
         if: always()
         run: |
@@ -26,3 +31,6 @@ jobs:
           git add data/ers.json data/ers-log.txt
           git commit -m "data: ERS (precios de alimentos, costes, renta agraria)" || exit 0
           git pull --rebase origin main; git push origin HEAD:main
+      - name: Cierre (rojo si hubo datos invalidos)
+        if: always()
+        uses: ./.github/actions/finish

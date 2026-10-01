@@ -13,9 +13,7 @@ def main():
     files = ['data/%s.json' % n for n in STATS] + ['data/latest.json']
     updated, new_data, new_ds = [], [], []
     names = {}
-    try:
-        ps = json.loads((ROOT / 'data/pipeline-status.json').read_text())
-    except Exception: ps = {}
+    ps = json.loads((ROOT / 'data/pipeline-status.json').read_text())  # estricto: sin estado de pipelines no hay brief
     for p in ps.get('pipelines', []):
         for f in p.get('files', []): names.setdefault(f['path'], p.get('name', p.get('workflow', '')).replace('Dehesa Data — ', ''))
     for f in files:

@@ -1,0 +1,115 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Product comparator series",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "products"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "products": {
+   "type": "object",
+   "required": [],
+   "properties": {},
+   "minProperties": 4,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "label",
+     "per",
+     "series"
+    ],
+    "properties": {
+     "label": {
+      "type": "object",
+      "required": [
+       "es",
+       "en",
+       "fr",
+       "it"
+      ],
+      "properties": {}
+     },
+     "per": {
+      "type": "number",
+      "minimum": 1
+     },
+     "series": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "c",
+        "cur",
+        "unit",
+        "kg",
+        "freq",
+        "src",
+        "latest",
+        "points",
+        "comp"
+       ],
+       "properties": {
+        "c": {
+         "type": "string",
+         "minLength": 1
+        },
+        "cur": {
+         "type": "string",
+         "minLength": 3,
+         "maxLength": 3
+        },
+        "unit": {
+         "type": "string",
+         "minLength": 1
+        },
+        "kg": {
+         "type": "number",
+         "minimum": 1
+        },
+        "freq": {
+         "type": "string",
+         "minLength": 1
+        },
+        "src": {
+         "type": "string",
+         "minLength": 1
+        },
+        "latest": {
+         "type": "array",
+         "minItems": 2,
+         "maxItems": 2
+        },
+        "points": {
+         "type": "array",
+         "items": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2
+         },
+         "minItems": 6
+        },
+        "comp": {
+         "type": "string",
+         "minLength": 1
+        }
+       }
+      },
+      "minItems": 2
+     }
+    }
+   }
+  }
+ }
+}

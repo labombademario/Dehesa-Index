@@ -28,28 +28,13 @@ jobs:
           node-version: '20'
       - name: Update EU Agri-food prices
         run: node scripts/update-eu-agrifood.mjs cerdo vaca cordero pollo huevos azucar oliva arroz maiz trigo cebada avena colza centeno mantequilla leche_polvo dap potasa leche harina_soja
-      - name: Validate snapshots
-        run: node scripts/validate-snapshots.mjs
-      - name: Build data index
-        run: node scripts/build-data-index.mjs
-      - name: Build CSV
-        run: node scripts/build-csv.mjs
-      - name: Build quality
-        run: node scripts/build-data-quality.mjs
-      - name: Build Intelligence 2.0
-        run: node scripts/build-intelligence.mjs
-      - name: Build normalization
-        run: node scripts/build-normalized-data.mjs
-      - name: Build cross-market
-        run: node scripts/build-cross-market.mjs && node scripts/build-dehesa-index.mjs
-      - name: Build alert signals
-        run: node scripts/build-alert-signals.mjs
+      - uses: ./.github/actions/price-engine
       - name: Site QA
         run: node scripts/qa-site.mjs
-      - name: Commit
-        run: |
-          git config user.name "dehesa-index-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/eu-agrifood-log.txt js/data.js data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json
-          git diff --cached --quiet || git commit -m "data: refresh EU Agri-food prices"
-          git push
+      - name: Publicar
+        uses: ./.github/actions/publish
+        with:
+          paths: >-
+            data/eu-agrifood-log.txt js/data.js data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json
+          message: "data: refresh EU Agri-food prices"
+          user: "dehesa-index-bot"
