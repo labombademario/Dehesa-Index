@@ -18,8 +18,13 @@ jobs:
       - id: fetch
         run: node scripts/build-seo-pages.mjs
         continue-on-error: true
-      - name: Publicar
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
         if: always()
+        run: node scripts/qa-seo.mjs
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -35,4 +40,4 @@ jobs:
         if: always()
         uses: ./.github/actions/finish
         with:
-          outcomes: ${{ steps.fetch.outcome }}
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

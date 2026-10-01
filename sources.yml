@@ -142,4 +142,5 @@ sources:
     continue: true
     data: []
     extra: ['!datos', '!sitemap.xml']
+    check: node scripts/qa-seo.mjs
     message: Páginas SEO por país y categoría

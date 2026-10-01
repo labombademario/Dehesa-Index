@@ -33,12 +33,16 @@ def render(x):
     if vlist:
         L += ["      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo"] + always + ["        uses: ./.github/actions/validate-files", "        with:", "          files: " + files,
               "      - name: Detectar revisiones oficiales"] + always + ["        run: python3 scripts/detect-revisions.py " + files]
+    qa = x.get("check")  # control previo a publicar (falla cerrado: si falla, no se publica y la ejecucion queda en rojo)
+    if qa:
+        L += ["      - id: qa", "        name: Control de calidad antes de publicar (si falla, no se publica)"] + always + ["        run: " + qa, "        continue-on-error: true"]
     adds = " ".join([(f[1:] if f.startswith("!") else "data/" + f) for f in x["data"] + x.get("extra", [])] + (["data/" + x["log"]] if x.get("log") else []) + (["data/revisions.json"] if vlist else []))
-    L += ["      - name: Publicar"] + always + ["        run: |", '          git config user.name "github-actions[bot]"', '          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"',
+    pub_if = ["        if: always() && steps.qa.outcome != 'failure'"] if qa else always
+    L += ["      - name: Publicar"] + pub_if + ["        run: |", '          git config user.name "github-actions[bot]"', '          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"',
           "          git add " + adds, "          git diff --cached --quiet && exit 0", "          git commit -qm " + json.dumps(x["message"], ensure_ascii=False),
           "          for i in 1 2 3; do", "            git pull -q --rebase --autostash && git push && exit 0", "            sleep $((i * 5))", "          done", "          echo '::error::no se pudo publicar tras 3 intentos'; exit 1"]
     if vlist or x.get("continue"):
-        L += ["      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)", "        if: always()", "        uses: ./.github/actions/finish", "        with:", "          outcomes: ${{ steps.fetch.outcome }}"]
+        L += ["      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)", "        if: always()", "        uses: ./.github/actions/finish", "        with:", "          outcomes: ${{ steps.fetch.outcome }}" + (" ${{ steps.qa.outcome }}" if qa else "")]
     return "\n".join(L) + "\n"
 def main():
     cfg = yaml.safe_load((ROOT / "sources.yml").read_text(encoding="utf-8")); bad = 0

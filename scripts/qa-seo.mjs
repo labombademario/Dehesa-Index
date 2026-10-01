@@ -13,6 +13,12 @@ const toFile = u => { const p = u.replace(ORIGIN, '').split('#')[0].split('?')[0
 const sm = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
 const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 ok(new Set(locs).size === locs.length, 'sitemap: URLs duplicadas');
+ok((sm.match(/<url>/g) || []).length === locs.length, 'sitemap: numero de <url> distinto del de <loc> (XML mal formado)');
+ok(locs.length <= 50000 && Buffer.byteLength(sm) <= 50 * 1024 * 1024, 'sitemap: supera los limites del protocolo (50.000 URLs / 50 MB)');
+for (const m of sm.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)) ok(/^\d{4}-\d{2}-\d{2}(T[\d:.+Z-]+)?$/.test(m[1]) && new Date(m[1]) <= new Date(Date.now() + 864e5), 'sitemap: lastmod invalido o en el futuro ' + m[1]);
+const robots = await readFile(path.join(root, 'robots.txt'), 'utf8').catch(() => '');
+ok(/^Sitemap:\s*https:\/\/dehesaindex\.com\/sitemap\.xml/mi.test(robots), 'robots.txt: no declara el sitemap');
+ok(!/^Disallow:\s*\/\s*$/mi.test(robots), 'robots.txt: bloquea todo el sitio');
 const canon = new Map(); const pages = new Map();
 for (const u of locs) {
   ok(u.startsWith(ORIGIN), u + ': fuera del dominio'); const f = toFile(u);
@@ -22,6 +28,7 @@ for (const u of locs) {
   ok(cs.length === 1, u + ': ' + cs.length + ' canonicals');
   if (cs.length === 1 && u.includes('?')) { const js = await readFile(path.join(root, 'js/' + path.basename(f, '.html') + '.js'), 'utf8').catch(() => ''); ok(/canonical/.test(js), u + ': URL con parametros sin canonical dinamica en js/' + path.basename(f, '.html') + '.js'); ok(cs[0] === u.split('?')[0], u + ': canonical base = ' + cs[0]); }
   else if (cs.length === 1) { ok(cs[0] === u, u + ': canonical = ' + cs[0]); if (!u.includes('?') && canon.has(cs[0])) ok(false, u + ': canonical repetida con ' + canon.get(cs[0])); canon.set(cs[0], u); }
+  ok(!/<meta[^>]+name="robots"[^>]+noindex/i.test(h), u + ': esta en el sitemap pero tiene noindex');
   ok(/<title>[^<]{5,}<\/title>/.test(h), u + ': sin <title>'); ok(/<meta name="description" content="[^"]{20,}"/.test(h), u + ': sin meta description');
   for (const m of h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) { try { const j = JSON.parse(m[1]); ok(!!(j['@context'] || j['@graph']), u + ': JSON-LD sin @context'); } catch (e) { ok(false, u + ': JSON-LD invalido (' + e.message.slice(0, 40) + ')'); } }
   const body = h.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
