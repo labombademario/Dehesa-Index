@@ -43,7 +43,11 @@
           { b: 'U.S. Drought Monitor.', t: 'Datos de sequía por estado del U.S. Drought Monitor (National Drought Mitigation Center de la Universidad de Nebraska-Lincoln, USDA y NOAA); datos públicos, se cita la fuente.' },
           { b: 'USDA ERS.', t: 'Previsión de precios de alimentos, costes de producción y renta agraria del Economic Research Service del USDA; datos públicos del Gobierno de EE. UU., se cita la fuente.' },
           { b: 'NASA POWER.', t: 'Datos de clima del proyecto Prediction Of Worldwide Energy Resources (NASA), reanálisis MERRA-2. Datos de NASA de uso libre; se cita la fuente.' },
-          { b: 'Banco Central Europeo.', t: 'Tipos de cambio de referencia, que el BCE publica solo con fines informativos.' }
+          { b: 'Banco Central Europeo.', t: 'Tipos de cambio de referencia, que el BCE publica solo con fines informativos.' },
+          { b: 'Banco Central Europeo (tipos oficiales).', t: 'Tipo de la facilidad de depósito y tipos de cambio históricos mensuales (API de datos del BCE); se cita la fuente. Los tipos de cambio son de referencia y solo informativos.' },
+          { b: 'Bank of Canada.', t: 'Tipo de interés oficial y tipos de cambio a través de la API Valet del Banco de Canadá; se cita la fuente conforme a sus condiciones de uso.' },
+          { b: 'Reserve Bank of Australia.', t: 'Tipo de efectivo (cash rate) de la tabla F1.1 del RBA; se cita la fuente conforme a sus condiciones de uso.' },
+          { b: 'Bank for International Settlements.', t: 'Tipos de interés de los bancos centrales (conjunto WS_CBPOL, BIS Data Portal; de ahí sale el tipo de EE. UU.); se cita la fuente. Pendiente de confirmar por escrito el alcance de reutilización.' }
         ], after: 'No mostramos datos de fuentes que prohíben su uso automatizado o comercial (por ejemplo AHDB, CME o DTN); esas tarjetas figuran como pendientes.' },
         { h: 'Cambios', p: ['Podemos actualizar este texto cuando cambie el sitio. Última revisión: 30 de septiembre de 2026.'] }
       ],
@@ -90,7 +94,11 @@
           { b: 'U.S. Drought Monitor.', t: 'State drought data from the U.S. Drought Monitor (National Drought Mitigation Center at the University of Nebraska-Lincoln, USDA and NOAA); public data, source credited.' },
           { b: 'USDA ERS.', t: 'Food price outlook, production costs and farm income from USDA’s Economic Research Service; public U.S. Government data, source credited.' },
           { b: 'NASA POWER.', t: 'Climate data from NASA’s Prediction Of Worldwide Energy Resources project, MERRA-2 reanalysis. NASA data free to use; the source is cited.' },
-          { b: 'European Central Bank.', t: 'Reference exchange rates, which the ECB publishes for information purposes only.' }
+          { b: 'European Central Bank.', t: 'Reference exchange rates, which the ECB publishes for information purposes only.' },
+          { b: 'European Central Bank (policy rates).', t: 'Deposit facility rate and monthly historical exchange rates (ECB Data API); the source is cited. Exchange rates are reference rates for information only.' },
+          { b: 'Bank of Canada.', t: 'Policy rate and exchange rates through the Bank of Canada Valet API; the source is cited under its terms of use.' },
+          { b: 'Reserve Bank of Australia.', t: 'Cash rate target from RBA table F1.1; the source is cited under its terms of use.' },
+          { b: 'Bank for International Settlements.', t: 'Central bank policy rates (WS_CBPOL dataset, BIS Data Portal; the US rate comes from here); the source is cited. Written confirmation of the reuse scope is pending.' }
         ], after: 'We do not show data from sources that prohibit automated or commercial use (for example AHDB, CME or DTN); those cards appear as pending.' },
         { h: 'Changes', p: ['We may update this text when the site changes. Last reviewed: 30 September 2026.'] }
       ],
@@ -137,7 +145,11 @@
           { b: 'U.S. Drought Monitor.', t: 'Données de sécheresse par État du U.S. Drought Monitor (National Drought Mitigation Center de l’Université du Nebraska-Lincoln, USDA et NOAA) ; données publiques, source citée.' },
           { b: 'USDA ERS.', t: 'Prévision des prix alimentaires, coûts de production et revenu agricole de l’Economic Research Service de l’USDA ; données publiques du gouvernement américain, source citée.' },
           { b: 'NASA POWER.', t: 'Données climatiques du projet Prediction Of Worldwide Energy Resources de la NASA, réanalyse MERRA-2. Données NASA d’usage libre ; la source est citée.' },
-          { b: 'Banque centrale européenne.', t: 'Taux de change de référence, publiés par la BCE à titre informatif uniquement.' }
+          { b: 'Banque centrale européenne.', t: 'Taux de change de référence, publiés par la BCE à titre informatif uniquement.' },
+          { b: 'Banque centrale européenne (taux directeurs).', t: 'Taux de la facilité de dépôt et taux de change historiques mensuels (API de données de la BCE) ; la source est citée. Les taux de change sont des taux de référence, à titre informatif uniquement.' },
+          { b: 'Banque du Canada.', t: 'Taux directeur et taux de change via l’API Valet de la Banque du Canada ; la source est citée selon ses conditions d’utilisation.' },
+          { b: 'Reserve Bank of Australia.', t: 'Taux du marché monétaire (cash rate) du tableau F1.1 de la RBA ; la source est citée selon ses conditions d’utilisation.' },
+          { b: 'Banque des règlements internationaux.', t: 'Taux directeurs des banques centrales (jeu WS_CBPOL, portail de données de la BRI ; le taux des États-Unis en provient) ; la source est citée. La confirmation écrite du périmètre de réutilisation est en attente.' }
         ], after: 'Nous n’affichons pas de données de sources qui interdisent l’usage automatisé ou commercial (par exemple AHDB, CME ou DTN) ; ces fiches apparaissent en attente.' },
         { h: 'Modifications', p: ['Nous pouvons mettre à jour ce texte lorsque le site évolue. Dernière révision : 30 septembre 2026.'] }
       ],
@@ -184,7 +196,11 @@
           { b: 'U.S. Drought Monitor.', t: 'Dati di siccità per Stato dell’U.S. Drought Monitor (National Drought Mitigation Center dell’Università del Nebraska-Lincoln, USDA e NOAA); dati pubblici, fonte citata.' },
           { b: 'USDA ERS.', t: 'Previsione dei prezzi alimentari, costi di produzione e reddito agricolo dell’Economic Research Service dell’USDA; dati pubblici del governo USA, fonte citata.' },
           { b: 'NASA POWER.', t: 'Dati climatici del progetto Prediction Of Worldwide Energy Resources della NASA, rianalisi MERRA-2. Dati NASA di uso libero; la fonte è citata.' },
-          { b: 'Banca centrale europea.', t: 'Tassi di cambio di riferimento, che la BCE pubblica solo a scopo informativo.' }
+          { b: 'Banca centrale europea.', t: 'Tassi di cambio di riferimento, che la BCE pubblica solo a scopo informativo.' },
+          { b: 'Banca centrale europea (tassi ufficiali).', t: 'Tasso sui depositi e tassi di cambio storici mensili (API dati della BCE); la fonte è citata. I tassi di cambio sono di riferimento e solo a scopo informativo.' },
+          { b: 'Bank of Canada.', t: 'Tasso ufficiale e tassi di cambio tramite l’API Valet della Banca del Canada; la fonte è citata secondo le sue condizioni d’uso.' },
+          { b: 'Reserve Bank of Australia.', t: 'Tasso di riferimento (cash rate) della tabella F1.1 della RBA; la fonte è citata secondo le sue condizioni d’uso.' },
+          { b: 'Banca dei regolamenti internazionali.', t: 'Tassi di riferimento delle banche centrali (set WS_CBPOL, portale dati BRI; da qui viene il tasso USA); la fonte è citata. La conferma scritta dell’ambito di riutilizzo è in sospeso.' }
         ], after: 'Non mostriamo dati di fonti che vietano l’uso automatizzato o commerciale (ad esempio AHDB, CME o DTN); queste schede appaiono in attesa.' },
         { h: 'Modifiche', p: ['Possiamo aggiornare questo testo quando il sito cambia. Ultima revisione: 30 settembre 2026.'] }
       ],
