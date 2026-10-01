@@ -1,31 +1,19 @@
-import os, re, io, json, urllib.request, zipfile, subprocess
+import os, io, urllib.request, zipfile
 os.makedirs('data/probe', exist_ok=True)
 out = []
-H = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) Chrome/124 Safari/537.36'}
-def get(u):
-    with urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=300) as r:
-        return r.read()
-def sh(c):
-    p = subprocess.run(c, shell=True, capture_output=True, text=True); return (p.stdout + p.stderr)
-try:
-    zf = zipfile.ZipFile(io.BytesIO(get('https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/01-99-2026-2-eng.zip')))
-    zf.extract(zf.namelist()[0], '/tmp/ca'); f = '/tmp/ca/' + zf.namelist()[0]
-    out.append(sh('mdb-tables -1 "%s"' % f))
-    for t in sh('mdb-tables -1 "%s"' % f).split():
-        out.append('== TABLE %s' % t)
-        out.append(sh('mdb-export "%s" %s | head -4' % (f, t))[:900])
-except Exception as e:
-    out.append('CA ERR %s' % e)
-try:
-    b = get('https://github.com/rousseauxy/taric-opendata/releases/download/eu-2026-09/eu-taric-2026-09.zip')
-    out.append('EU zip %d bytes' % len(b))
-    zf = zipfile.ZipFile(io.BytesIO(b))
-    out.append(str([(i.filename, i.file_size) for i in zf.infolist()][:40]))
-    for i in zf.infolist():
-        if re.search(r'measure|nomencl|goods', i.filename, re.I) and not i.filename.endswith('/'):
-            d = zf.read(i.filename)[:1800]
-            out.append('HEAD %s %r' % (i.filename, d))
-            break
-except Exception as e:
-    out.append('EU ERR %s' % e)
+req = urllib.request.Request('https://github.com/rousseauxy/taric-opendata/releases/download/eu-2026-09/eu-taric-2026-09.zip', headers={'User-Agent': 'Mozilla/5.0'})
+b = urllib.request.urlopen(req, timeout=300).read()
+zf = zipfile.ZipFile(io.BytesIO(b))
+import openpyxl
+for name in ['Duties Import 01-99.xlsx', 'Nomenclature EN.xlsx', 'Geographical areas description.xlsx']:
+    wb = openpyxl.load_workbook(io.BytesIO(zf.read(name)), read_only=True)
+    for ws in wb.worksheets[:3]:
+        out.append('== %s / %s' % (name, ws.title))
+        n = 0
+        for row in ws.iter_rows(values_only=True):
+            n += 1
+            if n <= 6 or (row and any(str(c).startswith('10059000') or str(c).startswith('1005900000') for c in row[:3] if c)):
+                out.append(str(row)[:600])
+            if n > 40000 and 'Duties' not in name: break
+        out.append('rows %d' % n)
 open('data/probe/wits.txt', 'w').write('\n'.join(out))
