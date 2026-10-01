@@ -238,6 +238,8 @@ def trade():
             im = by[(nm, "Import")]
             bal = [(p, v - im[p]) for p, v in pts if p in im]
             put("ca-trade-bal-%s" % slug(want[nm]), "trade", "Trade balance: %s (monthly)" % want[nm], "CAD million", "monthly", bal, "StatCan 12-10-0163"); n += 1
+    for k in OUT:
+        if k.startswith("ca-trade-bal-"): OUT[k]["changePct"] = None
     log("comercio", n)
 def main():
     import os
