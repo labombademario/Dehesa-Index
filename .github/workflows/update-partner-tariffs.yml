@@ -23,7 +23,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/tariffs-mx.json data/tariffs-ca.json data/tariffs-eu.json data/partner-tariffs-log.txt
+          git add -A data/
           git diff --cached --quiet && exit 0
           git commit -qm "Aranceles México, Canadá y UE"
           git pull -q --rebase
