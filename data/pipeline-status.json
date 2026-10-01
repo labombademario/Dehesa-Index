@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-01T03:14:00Z",
+ "generatedAt": "2026-10-01T03:15:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 39,
   "late": 0,
   "error": 1,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "pipelines": [
@@ -1350,6 +1350,28 @@
    "expectedEveryHours": 744.0
   },
   {
+   "workflow": "update-pipeline-status.yml",
+   "name": "Update pipeline status",
+   "crons": [
+    "10 */3 * * *"
+   ],
+   "nextRun": "2026-10-01T06:10:00Z",
+   "files": [
+    {
+     "path": "data/pipeline-status.json",
+     "lastChange": "2026-10-01T03:15:16Z"
+    },
+    {
+     "path": "data/data-quality.json",
+     "lastChange": "2026-10-01T03:15:16Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 3.0
+  },
+  {
    "workflow": "update-portugal-eurostat.yml",
    "name": "Update Portugal (Eurostat)",
    "crons": [
@@ -1487,7 +1509,7 @@
      "series": 0,
      "points": 0,
      "lines": 2186,
-     "lastChange": "2026-10-01T01:53:11Z"
+     "lastChange": "2026-10-01T03:15:16Z"
     }
    ],
    "last": {
