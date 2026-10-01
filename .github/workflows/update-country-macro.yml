@@ -1,0 +1,27 @@
+name: Update country macro indicators
+on:
+  schedule:
+    - cron: '15 7 3 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/update-country-macro.py
+        continue-on-error: true
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/country-macro.json data/country-macro-log.txt
+          git diff --cached --quiet && exit 0
+          git commit -qm "Indicadores macro por país"
+          git pull -q --rebase
+          git push
