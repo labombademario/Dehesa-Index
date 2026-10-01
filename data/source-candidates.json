@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-01T23:04:56Z",
+ "generatedAt": "2026-10-01T23:26:31Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 66,
+  "total": 67,
   "byStatus": {
-   "ACTIVE": 35,
+   "ACTIVE": 36,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -2829,6 +2829,43 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "usda_oce_wasde",
+   "registryId": "usda_oce_wasde",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: U.S. Department of Agriculture (WASDE release schedule)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,

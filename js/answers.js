@@ -18,25 +18,25 @@
       localHead: 'Precios locales (cash bids)', range: 'Rango entre mercados', markets: 'mercados', on: 'el', localLink: 'Ver todos los mercados', noLocal: 'No hay precios locales publicados de {p} en {s}.', localNoProd: 'Precios locales de grano en {s}',
       localNote: 'Precio al contado de compradores locales; no se calcula una media del estado.', premHead: 'Prima orgánica frente a convencional', prem: 'Orgánico', conv: 'Convencional', premium: 'Prima', sample: 'series', premNote: 'Comparación indicativa entre dos informes USDA (cobertura geográfica distinta); no es un precio oficial.', premNone: 'Todavía no hay datos suficientes para calcular la prima orgánica de {p}.',
       costHead: 'Coste de producción (USDA ERS, EE. UU., media nacional)', costTotal: 'Total de costes listados', perAcre: 'USD por acre sembrado', imputed: 'Imputados (tierra y mano de obra no remunerada)', yld: 'rendimiento', costNote: 'Es una referencia nacional, no el coste de tu explotación. Puedes cargarla en la calculadora.', costLink: 'Abrir la calculadora',
-      calHead: 'Calendario de publicaciones', calText: 'Las fechas de los informes oficiales están en el calendario.', calLink: 'Abrir el calendario', countryHead: 'Perfil de país', countryText: 'Producción, comercio, costes y precios de {c}.', countryLink: 'Abrir el perfil', month: 'Datos mensuales', multi: 'Dos productos distintos: pregunta por uno cada vez.' },
+      calHead: 'Calendario de publicaciones', calText: 'Las fechas de los informes oficiales están en el calendario.', calLink: 'Abrir el calendario', calNone: 'No hay una fecha de {r} en el calendario oficial cargado.', calSrc: 'Fechas del calendario oficial de USDA (NASS y WASDE), en hora del este de EE. UU. (ET).', countryHead: 'Perfil de país', countryText: 'Producción, comercio, costes y precios de {c}.', countryLink: 'Abrir el perfil', month: 'Datos mensuales', multi: 'Dos productos distintos: pregunta por uno cada vez.' },
     en: { head: 'Answer', tradeHead: 'Agri-food trade', tExp: 'Exports to', tImp: 'Imports from', tTopExp: 'Largest destination country', tTopImp: 'Largest source country', tNone: 'We have no published trade for {c}.', tNote: 'Annual values from the official source, in its currency and unit; not a forecast.', tOpen: 'See trade of {c}', price: 'Latest published figure', since: 'vs previous reading', y12: 'over 12 months', noY12: 'less than 12 months of history', date: 'Data from', src: 'Source', open: 'Open the product page', directional: 'Indicative',
       notComp: 'Each price is in the unit and currency of its source: they are not compared across regions.', none: 'We do not have that figure published', noneReg: 'We have no published {p} for {r}.', noneProd: 'We have {p} for: {r}.',
       localHead: 'Local prices (cash bids)', range: 'Range across markets', markets: 'markets', on: 'on', localLink: 'See all markets', noLocal: 'No local prices published for {p} in {s}.', localNoProd: 'Local grain prices in {s}',
       localNote: 'Spot prices from local buyers; no state average is computed.', premHead: 'Organic premium over conventional', prem: 'Organic', conv: 'Conventional', premium: 'Premium', sample: 'series', premNote: 'Indicative comparison between two USDA reports (different geographic coverage); not an official price.', premNone: 'There is not yet enough data to compute the organic premium for {p}.',
       costHead: 'Production cost (USDA ERS, U.S., national average)', costTotal: 'Total costs listed', perAcre: 'USD per planted acre', imputed: 'Imputed (land and unpaid labour)', yld: 'yield', costNote: 'A national reference, not the cost of any particular farm. You can load it in the calculator.', costLink: 'Open the calculator',
-      calHead: 'Release calendar', calText: 'The dates of official reports are in the calendar.', calLink: 'Open the calendar', countryHead: 'Country profile', countryText: 'Production, trade, costs and prices for {c}.', countryLink: 'Open the profile', month: 'Monthly data', multi: 'Two different products: ask about one at a time.' },
+      calHead: 'Release calendar', calText: 'The dates of official reports are in the calendar.', calLink: 'Open the calendar', calNone: 'There is no date for {r} in the official calendar loaded.', calSrc: 'Dates from the official USDA calendar (NASS and WASDE), in U.S. Eastern time (ET).', countryHead: 'Country profile', countryText: 'Production, trade, costs and prices for {c}.', countryLink: 'Open the profile', month: 'Monthly data', multi: 'Two different products: ask about one at a time.' },
     fr: { head: 'Réponse', tradeHead: 'Commerce agroalimentaire', tExp: 'Exportations vers', tImp: 'Importations depuis', tTopExp: 'Premier pays de destination', tTopImp: 'Premier pays d’origine', tNone: 'Nous n’avons pas ce commerce publié pour {c}.', tNote: 'Valeurs annuelles de la source officielle, dans sa devise et son unité ; ce n’est pas une prévision.', tOpen: 'Voir le commerce de {c}', price: 'Dernière donnée publiée', since: 'vs donnée précédente', y12: 'sur 12 mois', noY12: 'moins de 12 mois d’historique', date: 'Donnée :', src: 'Source', open: 'Ouvrir la fiche', directional: 'Indicative',
       notComp: 'Chaque prix est dans l’unité et la devise de sa source : ils ne sont pas comparés entre régions.', none: 'Nous n’avons pas cette donnée', noneReg: 'Nous n’avons pas de {p} publié pour {r}.', noneProd: 'Nous avons {p} pour : {r}.',
       localHead: 'Prix locaux (cash bids)', range: 'Fourchette entre marchés', markets: 'marchés', on: 'le', localLink: 'Voir tous les marchés', noLocal: 'Pas de prix locaux publiés pour {p} en {s}.', localNoProd: 'Prix locaux des grains : {s}',
       localNote: 'Prix comptant d’acheteurs locaux ; aucune moyenne de l’État n’est calculée.', premHead: 'Prime bio par rapport au conventionnel', prem: 'Bio', conv: 'Conventionnel', premium: 'Prime', sample: 'séries', premNote: 'Comparaison indicative entre deux rapports de l’USDA (couverture géographique différente) ; ce n’est pas un prix officiel.', premNone: 'Pas encore assez de données pour calculer la prime bio de {p}.',
       costHead: 'Coût de production (USDA ERS, États-Unis, moyenne nationale)', costTotal: 'Total des coûts listés', perAcre: 'USD par acre semé', imputed: 'Imputés (terre et travail non rémunéré)', yld: 'rendement', costNote: 'Une référence nationale, pas le coût d’une exploitation précise. Vous pouvez la charger dans le calculateur.', costLink: 'Ouvrir le calculateur',
-      calHead: 'Calendrier des publications', calText: 'Les dates des rapports officiels sont dans le calendrier.', calLink: 'Ouvrir le calendrier', countryHead: 'Profil de pays', countryText: 'Production, commerce, coûts et prix : {c}.', countryLink: 'Ouvrir le profil', month: 'Données mensuelles', multi: 'Deux produits différents : posez la question pour un seul à la fois.' },
+      calHead: 'Calendrier des publications', calText: 'Les dates des rapports officiels sont dans le calendrier.', calLink: 'Ouvrir le calendrier', calNone: 'Aucune date pour {r} dans le calendrier officiel chargé.', calSrc: 'Dates du calendrier officiel de l\'USDA (NASS et WASDE), en heure de l\'Est des États-Unis (ET).', countryHead: 'Profil de pays', countryText: 'Production, commerce, coûts et prix : {c}.', countryLink: 'Ouvrir le profil', month: 'Données mensuelles', multi: 'Deux produits différents : posez la question pour un seul à la fois.' },
     it: { head: 'Risposta', tradeHead: 'Commercio agroalimentare', tExp: 'Esportazioni verso', tImp: 'Importazioni da', tTopExp: 'Primo paese di destinazione', tTopImp: 'Primo paese di origine', tNone: 'Non abbiamo questo commercio pubblicato per {c}.', tNote: 'Valori annuali della fonte ufficiale, nella sua valuta e unità; non è una previsione.', tOpen: 'Vedi il commercio di {c}', price: 'Ultimo dato pubblicato', since: 'vs dato precedente', y12: 'in 12 mesi', noY12: 'meno di 12 mesi di storico', date: 'Dato:', src: 'Fonte', open: 'Apri la scheda', directional: 'Indicativa',
       notComp: 'Ogni prezzo è nell’unità e nella valuta della sua fonte: non si confrontano tra regioni.', none: 'Non abbiamo questo dato', noneReg: 'Non abbiamo {p} pubblicato per {r}.', noneProd: 'Abbiamo {p} per: {r}.',
       localHead: 'Prezzi locali (cash bids)', range: 'Intervallo tra mercati', markets: 'mercati', on: 'il', localLink: 'Vedi tutti i mercati', noLocal: 'Nessun prezzo locale pubblicato per {p} in {s}.', localNoProd: 'Prezzi locali dei cereali: {s}',
       localNote: 'Prezzo a pronti di acquirenti locali; nessuna media dello stato viene calcolata.', premHead: 'Premio biologico rispetto al convenzionale', prem: 'Biologico', conv: 'Convenzionale', premium: 'Premio', sample: 'serie', premNote: 'Confronto indicativo tra due rapporti USDA (copertura geografica diversa); non è un prezzo ufficiale.', premNone: 'Non ci sono ancora dati sufficienti per calcolare il premio biologico di {p}.',
       costHead: 'Costo di produzione (USDA ERS, USA, media nazionale)', costTotal: 'Totale dei costi elencati', perAcre: 'USD per acro seminato', imputed: 'Imputati (terra e lavoro non retribuito)', yld: 'resa', costNote: 'Un riferimento nazionale, non il costo di una specifica azienda. Puoi caricarlo nel calcolatore.', costLink: 'Apri il calcolatore',
-      calHead: 'Calendario delle pubblicazioni', calText: 'Le date dei rapporti ufficiali sono nel calendario.', calLink: 'Apri il calendario', countryHead: 'Profilo paese', countryText: 'Produzione, commercio, costi e prezzi: {c}.', countryLink: 'Apri il profilo', month: 'Dati mensili', multi: 'Due prodotti diversi: chiedi di uno alla volta.' }
+      calHead: 'Calendario delle pubblicazioni', calText: 'Le date dei rapporti ufficiali sono nel calendario.', calLink: 'Apri il calendario', calNone: 'Nessuna data per {r} nel calendario ufficiale caricato.', calSrc: 'Date del calendario ufficiale USDA (NASS e WASDE), in ora della costa orientale USA (ET).', countryHead: 'Profilo paese', countryText: 'Produzione, commercio, costi e prezzi: {c}.', countryLink: 'Apri il profilo', month: 'Dati mensili', multi: 'Due prodotti diversi: chiedi di uno alla volta.' }
   };
   var REGN = { eu: { es: 'Unión Europea', en: 'European Union', fr: 'Union européenne', it: 'Unione europea' }, us: { es: 'EE. UU.', en: 'United States', fr: 'États-Unis', it: 'Stati Uniti' }, ca: { es: 'Canadá', en: 'Canada', fr: 'Canada', it: 'Canada' }, uk: { es: 'Reino Unido', en: 'United Kingdom', fr: 'Royaume-Uni', it: 'Regno Unito' } };
   var UNIT = { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg', kg: 'kg', litro: 'L', mmbtu: 'MMBtu', barril: 'bbl', docena: { es: 'docena', en: 'dozen', fr: 'douzaine', it: 'dozzina' }, lb: 'lb', gal: 'gal', ton_corta: 'short ton', index_2020_100: '2020 = 100' };
@@ -72,7 +72,13 @@
     cost: 'coste costes costo costos costi costs cout couts',
     calendar: 'cuando sale salen publica publican publicacion publicaciones calendario informe informes wasde release releases publie publient quand uscita esce calendrier calendar report reports'
   };
-  var FILLER = 'vers verso depuis desde hacia principal principales mayor mayores main largest biggest top premier première principale principaux plus grand grande primo prima principali maggiore della delle degli dei qui quien quienes who whom chi quoi an ans locales local locali locaux perfil perfiles profile profil profilo does do did sur sul sulla sullo nel nella nello negli dans au aux pour avec con per at from durante en el sobre hace precio precios price prices prix prezzo prezzi cuanto cuesta cuestan vale valen costar cost costa combien coute quanto how much is are what whats the cual cuales que quel quelle quali che es son hoy actual actuales ultimo ultima ultimos ultimas reciente recientes latest current now today aujourd hui dernier derniere derniers attuale oggi dato datos data dame dime muestrame muestra show me tell give donne dimmi mostrami ahora del de la el los las en of in for por para al y and et e le les du des di il lo da un una un l a to el cuando sale when what\'s del sobre about on a ver vs versus frente contra entre between con with compara comparar compare comparer confronta confronto'.split(' ');
+  var REPORT_WORDS = [ // informes oficiales de USDA que se pueden preguntar por su nombre (solo se reconocen si la pregunta lleva palabras de calendario)
+    ['wasde', ['wasde']], ['crop-progress', ['crop progress', 'progreso de cultivos', 'progreso de los cultivos', 'estado de los cultivos']],
+    ['crop-production', ['crop production', 'produccion de cultivos']], ['cattle-on-feed', ['cattle on feed', 'ganado en cebo', 'cebaderos']],
+    ['milk-production', ['milk production', 'produccion de leche', 'production de lait', 'produzione di latte']], ['hogs-and-pigs', ['hogs and pigs']],
+    ['grain-stocks', ['grain stocks', 'existencias de granos', 'existencias de cereales']], ['agricultural-prices', ['agricultural prices', 'precios agricolas']], ['cold-storage', ['cold storage']]
+  ];
+  var FILLER = 'vers verso depuis desde hacia principal principales mayor mayores main largest biggest top premier première principale principaux plus grand grande primo prima principali maggiore della delle degli dei qui quien quienes who whom chi quoi an ans locales local locali locaux perfil perfiles profile profil profilo does do did sur sul sulla sullo nel nella nello negli dans au aux pour avec con per at from durante en el sobre hace precio precios price prices prix prezzo prezzi cuanto cuesta cuestan vale valen costar cost costa combien coute quanto how much is are what whats the cual cuales que quel quelle quali che es son hoy actual actuales ultimo ultima ultimos ultimas reciente recientes latest current now today aujourd hui dernier derniere derniers attuale oggi dato datos data dame dime muestrame muestra show me tell give donne dimmi mostrami ahora del de la el los las en of in for por para al y and et e le les du des di il lo da un una un l a to el cuando sale when what\'s del sobre about on a ver vs versus frente contra entre between con with compara comparar compare comparer confronta confronto when next is quand sort rapport quando prossimo prochain proximo proxima'.split(' ');
 
   var TRADE_EXP = toSet('exportaciones exportacion exportar exporta exportan exports export exportations exportation exporte exportent esportazioni esportazione esporta esportano destino destinos destination destinations destinazione destinazioni vende venden vender sell sells selling vend vendent vendre vendono');
   var TRADE_IMP = toSet('importaciones importacion importar importa importan imports import importations importation importe importent importazioni importazione importano origen origenes origin origins origine origini compra compran comprar buy buys buying achete achetent acheter comprano');
@@ -143,6 +149,8 @@
     parties.sort(function (a, b) { return a.pos - b.pos; });
     m = takePhrases(n, REGION_WORDS); n = m.n; var regions = m.found;
     var cm = takePhrases(n, COUNTRY_WORDS.map(function (c) { return [c[0], c[2]]; })); n = cm.n; var countries = cm.found;
+    var calHit = n.trim().split(' ').some(function (w) { return KW.calendar && KW.calendar[w]; });
+    var rp = calHit ? takePhrases(n, REPORT_WORDS) : { found: [], n: n }; n = rp.n; var reports = rp.found;
     var words = n.trim() ? n.trim().split(' ') : [], kinds = {}, rest = [], prodW = false, weakCost = false, tdir = {};
     words.forEach(function (w) {
       if (TRADE_EXP[w]) { tdir.exp = 1; return; } if (TRADE_IMP[w]) { tdir.imp = 1; return; } if (TRADE_GEN[w]) { tdir.gen = 1; return; }
@@ -152,6 +160,7 @@
       if (hit || FILL[w] || /^\d+$/.test(w) || w.length < 2) return;
       rest.push(w);
     });
+    if (reports.length) kinds.calendar = 1;
     if (weakCost && prodW) kinds.cost = 1;
     var product = rest.length ? bestProduct(rest, env) : null;
     if (rest.length && !product) return null; // palabras que no entendemos: mejor no responder
@@ -169,7 +178,7 @@
     else if (kinds.calendar) kind = 'calendar';
     if (!kind) return null;
     if (kind === 'price' && countries.length && !regions.length) kind = 'country';
-    return { kind: kind, product: product, regions: regions, states: states, countries: countries, parties: parties.map(function (x) { return x.code; }), tdir: tdir };
+    return { kind: kind, reports: reports, product: product, regions: regions, states: states, countries: countries, parties: parties.map(function (x) { return x.code; }), tdir: tdir };
   }
 
   /* ---------- lectura de datos ---------- */
@@ -278,7 +287,20 @@
         notes: [t.costNote], link: { href: env.href('calculadora.html'), label: t.costLink } };
     });
   }
-  function rCalendar(intent, lang, env) { var t = tx(lang); return Promise.resolve({ kind: 'calendar', heading: t.calHead, cards: [], notes: [t.calText], link: { href: env.href('calendario.html'), label: t.calLink } }); }
+  function rCalendar(intent, lang, env) {
+    var t = tx(lang), U = root.DIUsdaCal, link = { href: env.href('calendario.html'), label: t.calLink };
+    var base = { kind: 'calendar', heading: t.calHead, cards: [], notes: [t.calText], link: link };
+    if (!U) return Promise.resolve(base);
+    return J(env, 'usda-calendar.json').then(function (doc) {
+      if (!doc) return base;
+      var td = env.today || U.today(), ids = intent.reports && intent.reports.length ? intent.reports : null, rel = [], notes = [];
+      function line(r) { return ((U.NAMES[r.id] || {})[lang] || r.name) + ': ' + U.fmtDate(r.date, lang) + (r.time ? ' · ' + r.time + ' ET' : ''); }
+      if (ids) ids.forEach(function (id) { var n = U.next(doc, id, td); if (n) { rel.push(n); notes.push(line(n)); } else notes.push(fmt(t.calNone, { r: (U.NAMES[id] || {})[lang] || id })); });
+      else { rel = U.upcoming(doc, td, 14).slice(0, 8); rel.forEach(function (r) { notes.push(line(r)); }); if (!rel.length) return base; }
+      notes.push(t.calSrc);
+      return { kind: 'calendar', heading: t.calHead, cards: [], notes: notes, releases: rel, link: link };
+    });
+  }
   var REGN2 = null;
   function partnerName(en, lang) { // nombre del país socio en el idioma de la pantalla (Intl.DisplayNames), o el original si no se reconoce
     try {

@@ -48,16 +48,32 @@
     it: { t: 'Pubblicazioni ufficiali della settimana', h: 'Rapporti settimanali USDA nel loro giorno abituale; un giorno festivo può spostarli. Le date ufficiali dei rapporti mensili e trimestrali sono nel Calendario.', cp: 'USDA Crop Progress (stato delle colture)', es: 'USDA Export Sales (vendite all’export)', today: 'oggi', tom: 'domani', inN: 'tra {0} giorni', cal: 'Calendario completo' }
   };
   var RLS = [['cp', 1, 'crop-progress'], ['es', 4, 'export-sales']];
+  var RH = { es: 'Fechas oficiales de NASS y WASDE (hora ET, costa este de EE. UU.). Export Sales se calcula por su día habitual (jueves) y un festivo puede moverlo.', en: 'Official NASS and WASDE dates (ET, U.S. Eastern time). Export Sales is computed from its usual weekday (Thursday) and a holiday can move it.',
+    fr: 'Dates officielles du NASS et du WASDE (heure ET, côte Est des États-Unis). Export Sales est calculé d’après son jour habituel (jeudi) et un jour férié peut le décaler.', it: 'Date ufficiali di NASS e WASDE (ora ET, costa orientale USA). Export Sales è calcolato in base al giorno abituale (giovedì) e un giorno festivo può spostarlo.' };
+  var CAL = null;
+  function relRow(n, label, when, name) {
+    return { n: n, html: '<div style="display:flex;gap:10px;border-top:1px solid var(--border);padding:6px 0;flex-wrap:wrap"><span style="min-width:170px;color:var(--text-faint);font-size:12.5px">' + esc(label) + ' · ' + esc(when) + '</span><span>' + esc(name) + '</span></div>' };
+  }
   function releases() {
-    var t = RL[lang()] || RL.es, now = new Date(), d0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    var rows = RLS.map(function (r) {
+    var t = RL[lang()] || RL.es, U = window.DIUsdaCal, now = new Date(), d0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    function whenTxt(n) { return n === 0 ? t.today : n === 1 ? t.tom : t.inN.replace('{0}', n); }
+    function lab(d) { try { return d.toLocaleDateString(lang(), { weekday: 'long', day: 'numeric', month: 'short' }); } catch (e) { return d.toDateString(); } }
+    var rows = [], official = !!(CAL && U);
+    if (official) {
+      var td = U.today();
+      U.upcoming(CAL, td, 7).forEach(function (r) {
+        var p = r.date.split('-'), d = new Date(+p[0], +p[1] - 1, +p[2]), n = U.days(td, r.date);
+        rows.push(relRow(n, lab(d) + (r.time ? ' ' + r.time + ' ET' : ''), whenTxt(n), (U.NAMES[r.id] || {})[lang()] || r.name));
+      });
+    }
+    RLS.forEach(function (r) {
+      if (official && r[2] === 'crop-progress') return; // con calendario oficial, Crop Progress sale de él (un festivo ya viene reflejado)
       var d = new Date(d0.getTime()); while (d.getDay() !== r[1]) d.setDate(d.getDate() + 1);
       var n = Math.round((d - d0) / 86400000);
-      var when = n === 0 ? t.today : n === 1 ? t.tom : t.inN.replace('{0}', n);
-      var label = ''; try { label = d.toLocaleDateString(lang(), { weekday: 'long', day: 'numeric', month: 'short' }); } catch (e) { label = d.toDateString(); }
-      return { n: n, html: '<div style="display:flex;gap:10px;border-top:1px solid var(--border);padding:6px 0;flex-wrap:wrap"><span style="min-width:170px;color:var(--text-faint);font-size:12.5px">' + esc(label) + ' · ' + esc(when) + '</span><span>' + esc(t[r[0]]) + '</span></div>' };
-    }).sort(function (a, b) { return a.n - b.n; });
-    return '<div class="di-movers-hint" style="margin:0 0 6px">' + esc(t.h) + '</div>' + rows.map(function (r) { return r.html; }).join('') + '<div style="padding-top:6px"><a href="calendario.html" style="color:inherit">' + esc(t.cal) + ' →</a></div>';
+      rows.push(relRow(n, lab(d), whenTxt(n), t[r[0]]));
+    });
+    rows.sort(function (a, b) { return a.n - b.n; });
+    return '<div class="di-movers-hint" style="margin:0 0 6px">' + esc(official ? (RH[lang()] || RH.es) : t.h) + '</div>' + rows.map(function (r) { return r.html; }).join('') + '<div style="padding-top:6px"><a href="calendario.html" style="color:inherit">' + esc(t.cal) + ' →</a></div>';
   }
   function cashBids() {
     var C = B && B.cashBids, t = CT[lang()] || CT.es; if (!C || (!C.groups.length && !C.newBids.length && !C.revisions.length)) return '';
@@ -136,5 +152,5 @@
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
   render();
-  Promise.all([fetch('data/daily-brief.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), window.DIWatch ? window.DIWatch.loadIndex() : Promise.resolve(null)]).then(function (a) { B = a[0]; IDX = a[1] || {}; render(); if (location.hash === '#watch') { var e = document.getElementById('watch'); if (e && e.scrollIntoView) e.scrollIntoView(); } });
+  Promise.all([fetch('data/daily-brief.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), window.DIWatch ? window.DIWatch.loadIndex() : Promise.resolve(null), window.DIUsdaCal ? window.DIUsdaCal.load() : Promise.resolve(null)]).then(function (a) { B = a[0]; IDX = a[1] || {}; CAL = a[2]; render(); if (location.hash === '#watch') { var e = document.getElementById('watch'); if (e && e.scrollIntoView) e.scrollIntoView(); } });
 })();

@@ -61,7 +61,7 @@ DATASETS = {
     'data/latest.json': ('PRICE', 'Precios de mercado (latest)'), 'data/nass-prices.json': ('PRICE', 'USDA NASS precios'), 'data/ams-grain-daily.json': ('PRICE', 'USDA AMS granos (diario)'),
     'data/ams': ('PRICE', 'USDA AMS mercados (MARS)'), 'data/us-cash-bids': ('PRICE', 'Precios locales de grano EE. UU. (USDA AMS)'), 'data/denmark-prices.json': ('PRICE', 'Dinamarca precios'), 'data/alberta-weekly.json': ('PRICE', 'Alberta semanal'),
     'data/eu': ('PRICE', 'Agri-food Data Portal UE'),
-    'data/supply-demand.json': ('PRODUCTION', 'USDA PSD oferta y demanda'), 'data/nass-crops.json': ('PRODUCTION', 'USDA NASS cultivos'), 'data/nass-livestock.json': ('PRODUCTION', 'USDA NASS ganaderia'),
+    'data/supply-demand.json': ('PRODUCTION', 'USDA PSD oferta y demanda'), 'data/nass-crops.json': ('PRODUCTION', 'USDA NASS cultivos'), 'data/nass-livestock.json': ('PRODUCTION', 'USDA NASS ganaderia'), 'data/cattle-on-feed.json': ('PRODUCTION', 'USDA Cattle on Feed'),
     'data/ers.json': ('PRODUCTION', 'USDA ERS'), 'data/recan.json': ('PRODUCTION', 'RECAN (Espana)'),
     'data/export-sales.json': ('TRADE', 'USDA exportaciones semanales'), 'data/gats.json': ('TRADE', 'USDA GATS'), 'data/eu-trade-products.json': ('TRADE', 'Comercio UE por producto'), 'data/au-trade-products.json': ('TRADE', 'Comercio Australia por producto'),
     'data/crop-progress.json': ('CROP', 'USDA Crop Progress'),
@@ -85,11 +85,11 @@ WORKFLOW_KINDS = {
     'update-alberta-weekly.yml': ['PRICE'], 'update-ams-auctions.yml': ['PRICE'], 'update-ams.yml': ['PRICE'], 'update-au-trade.yml': ['TRADE'], 'update-austria.yml': ['PRODUCTION', 'TRADE', 'INPUT'],
     'update-belgium.yml': ['PRODUCTION', 'INPUT'], 'update-canada-stats.yml': ['PRODUCTION', 'TRADE'], 'update-canada.yml': ['PRICE'], 'update-climate.yml': ['CLIMATE'], 'update-country-macro.yml': ['MACRO'],
     'update-country-stats.yml': ['PRODUCTION', 'TRADE'], 'update-crop-progress.yml': ['CROP'], 'update-defra-milk.yml': ['PRICE'], 'update-denmark.yml': ['PRICE'], 'update-drought.yml': ['CLIMATE'],
-    'update-energy-markets.yml': ['INPUT'], 'update-energy.yml': ['INPUT'], 'update-ers.yml': ['PRODUCTION'], 'update-eu-agrifood.yml': ['PRICE'], 'update-eu-catalog.yml': ['PRICE'], 'update-eu-trade.yml': ['TRADE'],
+    'update-energy-markets.yml': ['INPUT'], 'update-energy.yml': ['INPUT'], 'update-ers.yml': ['PRODUCTION'], 'update-cattle-on-feed.yml': ['PRODUCTION'], 'update-eu-agrifood.yml': ['PRICE'], 'update-eu-catalog.yml': ['PRICE'], 'update-eu-trade.yml': ['TRADE'],
     'update-eurostat.yml': ['PRICE', 'INPUT'], 'update-export-sales.yml': ['TRADE'], 'update-france.yml': ['PRICE', 'PRODUCTION'], 'update-fx-history.yml': ['MACRO'], 'update-fx.yml': ['MACRO'], 'update-gats.yml': ['TRADE'],
     'update-germany.yml': ['PRICE', 'PRODUCTION'], 'update-interest-rates.yml': ['MACRO'], 'update-mars-us.yml': ['PRICE'], 'update-nass-data.yml': ['PRICE', 'PRODUCTION'], 'update-nass.yml': ['PRICE'],
     'update-partner-tariffs.yml': ['TARIFF'], 'update-portugal-eurostat.yml': ['PRODUCTION'], 'update-portugal.yml': ['PRODUCTION', 'PRICE'], 'update-recan.yml': ['PRODUCTION'], 'update-spain.yml': ['PRICE', 'INPUT', 'PRODUCTION'],
-    'update-us-cash-bids.yml': ['PRICE'], 'update-us-tariffs.yml': ['TARIFF'], 'update-usda-psd.yml': ['PRODUCTION'], 'update-worldbank-urea.yml': ['INPUT'],
+    'update-us-cash-bids.yml': ['PRICE'], 'update-us-tariffs.yml': ['TARIFF'], 'update-usda-calendar.yml': [], 'update-usda-psd.yml': ['PRODUCTION'], 'update-worldbank-urea.yml': ['INPUT'],
     # no son datos agricolas: noticias (no entran en el brief) y trabajos internos
     'update-news.yml': [], 'update-pipeline-status.yml': [], 'update-seo-pages.yml': [],
 }

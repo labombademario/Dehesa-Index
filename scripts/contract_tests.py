@@ -159,6 +159,45 @@ def crop_progress(doc, errs, warns, stats):
                         t = sum(x or 0 for x in r[1:])
                         if not 90 <= t <= 110: errs.append("%s %s: condicion suma %s%%" % (c["id"], r[0], t)); break
                     if any(x is not None and not 0 <= x <= 100 for x in r[1:]): errs.append("%s %s: porcentaje fuera de 0..100" % (c["id"], r[0])); break
+def usda_calendar(doc, errs, warns, stats):
+    rel = doc["releases"]; seen = set()
+    for r in rel:
+        d = _date(r["date"])
+        if d is None: errs.append("fecha invalida %s" % r["date"]); continue
+        k = (r["date"], r.get("time", ""), r["id"])
+        if k in seen: errs.append("publicacion repetida %s" % (k,))
+        seen.add(k)
+        if d.weekday() >= 5: errs.append("%s %s cae en fin de semana" % (r["id"], r["date"]))
+    if [(r["date"], r.get("time", ""), r["id"]) for r in rel] != sorted(k for k in seen): errs.append("publicaciones no ordenadas por fecha")
+    w = [r["date"] for r in rel if r["agency"] == "OCE" and r["id"] == "wasde"]
+    if w and len({x[:4] for x in w}) == 1 and len(w) != 12: warns.append("WASDE: %d fechas en el ano (esperadas 12)" % len(w))
+    fut = [r for r in rel if r["date"] >= TODAY.isoformat()]
+    if not fut: warns.append("el calendario no tiene publicaciones futuras")
+    stats["releases"] = len(rel); stats["upcoming"] = len(fut)
+def cattle_on_feed(doc, errs, warns, stats):
+    keys = ["onFeedStart", "placed", "marketed", "otherDisappearance", "onFeedEnd"]
+    prev = None
+    for r in doc["reports"]:
+        lab = r["inventoryDate"]; d = _date(r["inventoryDate"]); rl = _date(r["release"])
+        if d is None or rl is None: errs.append("%s: fecha invalida" % lab); continue
+        if rl < d: errs.append("%s: publicado (%s) antes del inventario" % (lab, r["release"]))
+        if rl > TODAY: errs.append("%s: publicacion futura" % lab)
+        if r["flowMonth"] != (d - datetime.timedelta(days=1)).strftime("%Y-%m"): errs.append("%s: flowMonth %s incoherente" % (lab, r["flowMonth"]))
+        n = r["national"]
+        for blk in ("current", "yearAgo"):
+            b = n[blk]
+            if any(not isinstance(b.get(k), int) or b[k] < 0 for k in keys): errs.append("%s %s: cifras nacionales invalidas" % (lab, blk)); continue
+            if abs(b["onFeedStart"] + b["placed"] - b["marketed"] - b["otherDisappearance"] - b["onFeedEnd"]) > 2: errs.append("%s %s: balance de existencias no cuadra" % (lab, blk))
+        us = [s for s in r["states"] if s["state"] == "United States"]
+        if len(us) != 1: errs.append("%s: falta la fila United States" % lab)
+        else:
+            if abs(us[0]["current"] - n["current"]["onFeedEnd"]) > 1: errs.append("%s: total por estado distinto del nacional" % lab)
+            tot = sum(s["current"] for s in r["states"] if s["state"] != "United States")
+            if abs(tot - us[0]["current"]) > max(3, us[0]["current"] * 0.005): errs.append("%s: suma de estados no cuadra" % lab)
+        if prev and r["inventoryDate"] <= prev: errs.append("informes no ordenados (%s tras %s)" % (lab, prev))
+        if prev and not (0.7 < n["current"]["onFeedEnd"] / max(1, n["yearAgo"]["onFeedEnd"]) < 1.4): warns.append("%s: existencias muy distintas de hace un ano" % lab)
+        prev = r["inventoryDate"]
+    stats["reports"] = len(doc["reports"])
 def drought(doc, errs, warns, stats):
     for st, rows in list(doc["states"].items()) + [("US", doc["us"]["conus"])]:
         _asc(rows, st, errs, key=lambda r: r[0])

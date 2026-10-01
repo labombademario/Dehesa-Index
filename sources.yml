@@ -92,6 +92,24 @@ sources:
     data: [us-tariffs.json]
     log: us-tariffs-log.txt
     message: Datos aranceles EE. UU. (USITC HTS)
+  - id: usda-calendar
+    name: Update USDA release calendar (NASS + WASDE)
+    cron: ['40 6 * * 1-5']
+    script: scripts/update-usda-calendar.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [usda-calendar.json]
+    message: Calendario oficial USDA (NASS y WASDE)
+  - id: cattle-on-feed
+    name: Update USDA Cattle on Feed (NASS)
+    cron: ['50 21 * * 5']
+    script: scripts/update-cattle-on-feed.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [cattle-on-feed.json]
+    message: Datos Cattle on Feed (USDA NASS)
   - id: au-trade
     name: Update Australia trade (ABS)
     cron: ['25 11 5 * *']

@@ -7,10 +7,11 @@ globalThis.window = undefined;
 globalThis.document = undefined;
 require(path.join(ROOT, 'js/search.js'));
 const DIIdentity = require(path.join(ROOT, 'js/instrument-identity.js')); globalThis.DIIdentity = DIIdentity;
+globalThis.DIUsdaCal = require(path.join(ROOT, 'js/usda-calendar.js'));
 const A = require(path.join(ROOT, 'js/answers.js'));
 const idx = JSON.parse(fs.readFileSync(D('search-index.json'), 'utf8')).entries;
 const products = idx.filter(e => e.t === 'product').map(e => ({ slug: decodeURIComponent(e.u.split('product=')[1]).split(':')[1], names: e.n, kw: e.k, u: e.u }));
-const env = { products, tokScore: globalThis.DehesaSearch._tokScore, href: u => u,
+const env = { today: '2026-10-01', products, tokScore: globalThis.DehesaSearch._tokScore, href: u => u,
   provider: { json: p => new Promise((res, rej) => { try { res(JSON.parse(fs.readFileSync(D(p), 'utf8'))); } catch (e) { rej(e); } }) } };
 const cases = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/answers-cases.json'), 'utf8'));
 const latest = r => JSON.parse(fs.readFileSync(D('prices/latest/' + r + '.json'), 'utf8')).observations;
@@ -33,6 +34,15 @@ for (const c of cases) {
   if (e.nCards !== undefined && a.cards.length !== e.nCards) bad(c, 'tarjetas ' + a.cards.length + ' != ' + e.nCards);
   if (e.tradeCheck) { // cada cifra de comercio es la última observación del catálogo del país
     for (const k of a.cards) { const cat = JSON.parse(fs.readFileSync(D('catalog/' + k.cc + '.json'), 'utf8')).series.find(x => x.id === k.id); if (!cat || cat.latest !== k.value || cat.latestPeriod !== k.date) bad(c, 'cifra de comercio distinta del dato ' + k.id); }
+  }
+  if (e.calendarCheck) { // cada fecha mostrada es la del fichero oficial (la primera >= hoy)
+    const doc = JSON.parse(fs.readFileSync(D('usda-calendar.json'), 'utf8'));
+    for (const [id, want] of Object.entries(e.calendarCheck)) {
+      const first = doc.releases.filter(r => r.id === id && r.date >= '2026-10-01')[0];
+      const got = (a.releases || []).find(r => r.id === id);
+      if (!first || first.date !== want) bad(c, 'fecha esperada ' + want + ' no es la del fichero (' + (first && first.date) + ')');
+      else if (!got || got.date !== first.date) bad(c, 'respuesta sin la fecha oficial de ' + id);
+    }
   }
   if (e.hasLink && !a.link) bad(c, 'sin enlace');
   const html = A.render(a, c.lang, s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'));

@@ -569,5 +569,62 @@
   "q": "exportaciones de trigo de España",
   "lang": "es",
   "expect": null
+ },
+ {
+  "q": "cuándo sale el WASDE",
+  "lang": "es",
+  "expect": {
+   "kind": "calendar",
+   "hasLink": true,
+   "calendarCheck": {
+    "wasde": "2026-10-09"
+   }
+  }
+ },
+ {
+  "q": "when is the next cattle on feed report",
+  "lang": "en",
+  "expect": {
+   "kind": "calendar",
+   "calendarCheck": {
+    "cattle-on-feed": "2026-10-23"
+   }
+  }
+ },
+ {
+  "q": "quand sort le rapport crop production",
+  "lang": "fr",
+  "expect": {
+   "kind": "calendar",
+   "calendarCheck": {
+    "crop-production": "2026-10-09"
+   }
+  }
+ },
+ {
+  "q": "quando esce milk production",
+  "lang": "it",
+  "expect": {
+   "kind": "calendar",
+   "calendarCheck": {
+    "milk-production": "2026-10-22"
+   }
+  }
+ },
+ {
+  "q": "calendario informes WASDE y cattle on feed",
+  "lang": "es",
+  "expect": {
+   "kind": "calendar",
+   "calendarCheck": {
+    "wasde": "2026-10-09",
+    "cattle-on-feed": "2026-10-23"
+   }
+  }
+ },
+ {
+  "q": "cattle on feed",
+  "lang": "en",
+  "expect": null
  }
 ]

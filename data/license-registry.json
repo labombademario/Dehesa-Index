@@ -1050,6 +1050,29 @@
    "used": false,
    "aliases": [],
    "notes": null
+  },
+  "usda_oce_wasde": {
+   "name": "USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates)",
+   "url": "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/about-usda/policies-and-links",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Source: U.S. Department of Agriculture (WASDE release schedule)",
+   "additionalRestrictions": "Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release dates are used. No USDA logo/name to imply endorsement.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "USDA says some materials are protected and used with permission; they are labelled as such. Only agency-produced series are used.",
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "USDA policies page (read 2026-10-01): \"Most information presented on the USDA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Only the published release dates are used, not report content.",
+   "used": true,
+   "aliases": [],
+   "notes": null
   }
  },
  "files": {
@@ -1313,6 +1336,17 @@
   "data/us-cash-bids/": {
    "default": "usda_ams_mars",
    "notes": "US Local Cash Bids (scripts/update-us-cash-bids.py): precios de grano al contado de informes estatales de USDA AMS Market News (MARS). Mismo origen, API y clase de datos que data/ams/ (ya publicado bajo esta fuente). Cada observacion enlaza al informe original. Evidencia leida el 2026-10-01: el informe 2850 (Iowa Daily Cash Grain Bids, ams_2850.pdf) lleva la cabecera «AMS Livestock, Poultry and Grain Market News / IA Dept. of Ag Market News», se publica bajo la autoridad de Voluntary Price Reporting de AMS y recoge ofertas por telefono, correo y webs de empresas; contacto mymarketnews@usda.gov. La cabecera apunta a produccion junto a un departamento estatal de agricultura: no se ha verificado que eso cambie la condicion de obra del gobierno federal, por lo que la confianza sigue siendo media. Accion pendiente: preguntar a AMS Market News (mymarketnews@usda.gov, (202) 720-1990) si los informes estatales en cooperacion pueden reutilizarse comercialmente y con obras derivadas, y registrar la respuesta aqui. Excepcion: data/us-cash-bids/zip-state.json NO viene de AMS; es una tabla codigo postal -> estado derivada de los ZCTA del Censo de EE. UU. (Censo 2000, via copia CSV scpike/us-state-county-zip) para el selector «cerca de mi». Es un hecho geografico sin coordenadas. Evidencia leida el 2026-10-01: census.gov/data/developers/about/terms-of-service.html (terminos de la Census Data API, que Dehesa NO usa) permite el uso comercial y exige no presentar contenido modificado como si lo avalase el Census Bureau; no declara el estado de copyright. La pagina census.gov/about/policies/open-gov/open-data.html solo habla de compartir datos publicos como datos abiertos, sin condiciones de reutilizacion. Conclusion: no hay restriccion conocida, pero tampoco una declaracion explicita de dominio publico para estos ficheros; la tabla es una derivacion propia y no se presenta como producto del Census Bureau. Confianza: baja-media. Accion pendiente (opcional): buscar la politica de citacion/copyright de census.gov/about/policies si se quiere cerrar del todo."
+  },
+  "data/usda-calendar.json": {
+   "sources": [
+    "usda_nass",
+    "usda_oce_wasde"
+   ]
+  },
+  "data/cattle-on-feed.json": {
+   "sources": [
+    "usda_nass"
+   ]
   }
  },
  "derived": [

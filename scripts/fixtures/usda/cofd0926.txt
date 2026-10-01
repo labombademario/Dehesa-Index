@@ -1,0 +1,84 @@
+Cattle on Feed
+
+ISSN: 1948-9080
+
+Released September 18, 2026, by the National Agricultural Statistics Service 
+(NASS), Agricultural Statistics Board, United States Department of 
+Agriculture (USDA).
+
+United States Cattle on Feed Up 1 Percent
+
+Cattle and calves on feed for the slaughter market in the United States for 
+feedlots with capacity of 1,000 or more head totaled 11.2 million head on 
+September 1, 2026. The inventory was 1 percent above September 1, 2025.
+
+Placements in feedlots during August totaled 1.62 million head, 9 percent 
+below 2025. Net placements were 1.57 million head. Placements were the lowest 
+for August since the series began in 1996. During August, placements of 
+cattle and calves weighing less than 600 pounds were 320,000 head, 
+600-699 pounds were 240,000 head, 700-799 pounds were 355,000 head, 
+800-899 pounds were 387,000 head, 900-999 pounds were 230,000 head, and 
+1,000 pounds and greater were 85,000 head.
+
+Marketings of fed cattle during August totaled 1.52 million head, 3 percent 
+below 2025. Marketings were the lowest for August since the series began in 
+1996.
+
+Other disappearance totaled 52,000 head during August, 2 percent above 2025.
+
+Cattle on Feed Inventory, Placements, Marketings, and Other Disappearance on
+1,000+ Capacity Feedlots - United States: September 1, 2025 and 2026
+-----------------------------------------------------------------------------------
+                                        :             :             :  Percent of  
+                  Item                  :    2025     :    2026     :previous year 
+-----------------------------------------------------------------------------------
+                                        :   ---- 1,000 head ----        percent    
+                                        :                                          
+On feed August 1 .......................:   10,922        11,117          102      
+Placed on feed during August ...........:    1,780         1,617           91      
+Fed cattle marketed during August ......:    1,571         1,519           97      
+Other disappearance during August ......:       51            52          102      
+On feed September 1 ....................:   11,080        11,163          101      
+-----------------------------------------------------------------------------------
+
+Cattle on Feed Inventory, Placements, Marketings, and Other Disappearance on
+1,000+ Capacity Feedlots - United States: August 1, 2025 and 2026
+-----------------------------------------------------------------------------------
+                                        :             :             :  Percent of  
+                  Item                  :    2025     :    2026     :previous year 
+-----------------------------------------------------------------------------------
+                                        :   ---- 1,000 head ----        percent    
+                                        :                                          
+On feed July 1 .........................:   11,124        11,370          102      
+Placed on feed during July .............:    1,598         1,422           89      
+Fed cattle marketed during July ........:    1,749         1,620           93      
+Other disappearance during July ........:       51            55          108      
+On feed August 1 .......................:   10,922        11,117          102      
+-----------------------------------------------------------------------------------
+
+Cattle on Feed Inventory on 1,000+ Capacity Feedlots by Month - States and United States:
+2025 and 2026
+---------------------------------------------------------------------------------------------------
+                  :                 :                 :             September 1, 2026              
+                  :                 :                 :--------------------------------------------
+       State      :September 1, 2025: August 1, 2026  :              :  Percent of  :  Percent of  
+                  :                 :                 :  Inventory   :previous year :previous month
+---------------------------------------------------------------------------------------------------
+                  :     --------------- 1,000 head --------------          ----- percent ----      
+                  :                                                                                
+Arizona ..........:        220               217              218           99            100      
+California .......:        475               485              480          101             99      
+Colorado .........:        890               905              905          102            100      
+Idaho ............:        330               325              320           97             98      
+Iowa .............:        690               670              670           97            100      
+Kansas ...........:      2,350             2,260            2,320           99            103      
+Nebraska .........:      2,430             2,470            2,470          102            100      
+Oklahoma .........:        315               335              350          111            104      
+South Dakota .....:        195               210              205          105             98      
+Texas ............:      2,500             2,510            2,500          100            100      
+Washington .......:        265               265              270          102            102      
+                  :                                                                                
+Other States .....:        420               465              455          108             98      
+                  :                                                                                
+United States ....:     11,080            11,117           11,163          101            100      
+---------------------------------------------------------------------------------------------------

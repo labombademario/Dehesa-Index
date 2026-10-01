@@ -110,6 +110,42 @@
       it: { name: 'USDA WASDE', desc: 'Il rapporto agricolo mensile più seguito: produzione, offerta, domanda e scorte finali delle principali colture, negli Stati Uniti e nel mondo.' }
     },
     {
+      id: 'cattle-on-feed', market: 'us', freq: 'monthly', type: 'publication', crops: [], impact: 'oferta',
+      hasDate: false, nextDate: null, isToday: false, lastDate: null,
+      sourceUrl: 'https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php',
+      es: { name: 'USDA Cattle on Feed', desc: 'Existencias de ganado vacuno en cebaderos de 1.000 o más cabezas, entradas, salidas y bajas, para EE. UU. y por estado.' },
+      en: { name: 'USDA Cattle on Feed', desc: 'U.S. cattle on feed in feedlots of 1,000 or more head: inventory, placements, marketings and other disappearance, nationally and by state.' },
+      fr: { name: 'USDA Cattle on Feed', desc: "Bovins en engraissement dans les parcs de 1 000 têtes ou plus aux États-Unis : effectifs, entrées, sorties et autres pertes, au niveau national et par État." },
+      it: { name: 'USDA Cattle on Feed', desc: "Bovini in ingrasso negli allevamenti da 1.000 capi o più negli Stati Uniti: consistenza, ingressi, uscite e altre perdite, a livello nazionale e per Stato." }
+    },
+    {
+      id: 'crop-production', market: 'us', freq: 'monthly', type: 'publication', crops: ['trigo','maiz','soja'], impact: 'oferta',
+      hasDate: false, nextDate: null, isToday: false, lastDate: null,
+      sourceUrl: 'https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php',
+      es: { name: 'USDA Crop Production', desc: 'Estimaciones de superficie, rendimiento y producción de los cultivos de EE. UU.; en los meses de cosecha sale el mismo día que el WASDE.' },
+      en: { name: 'USDA Crop Production', desc: 'Area, yield and production estimates for U.S. crops; in harvest months it is released the same day as the WASDE.' },
+      fr: { name: 'USDA Crop Production', desc: "Estimations de surface, de rendement et de production des cultures américaines ; pendant la récolte, elles sortent le même jour que le WASDE." },
+      it: { name: 'USDA Crop Production', desc: "Stime di superficie, resa e produzione delle colture statunitensi; nei mesi del raccolto esce lo stesso giorno del WASDE." }
+    },
+    {
+      id: 'milk-production', market: 'us', freq: 'monthly', type: 'publication', crops: ['leche'], impact: 'lacteos',
+      hasDate: false, nextDate: null, isToday: false, lastDate: null,
+      sourceUrl: 'https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php',
+      es: { name: 'USDA Milk Production', desc: 'Producción mensual de leche y número de vacas lecheras de EE. UU., por estado.' },
+      en: { name: 'USDA Milk Production', desc: 'Monthly U.S. milk production and number of milk cows, by state.' },
+      fr: { name: 'USDA Milk Production', desc: "Production mensuelle de lait et nombre de vaches laitières aux États-Unis, par État." },
+      it: { name: 'USDA Milk Production', desc: "Produzione mensile di latte e numero di vacche da latte negli Stati Uniti, per Stato." }
+    },
+    {
+      id: 'hogs-and-pigs', market: 'us', freq: 'quarterly', type: 'publication', crops: [], impact: 'oferta',
+      hasDate: false, nextDate: null, isToday: false, lastDate: null,
+      sourceUrl: 'https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php',
+      es: { name: 'USDA Hogs and Pigs', desc: 'Inventario trimestral de cerdos en EE. UU.: reproductoras, cerdos de engorde y camadas.' },
+      en: { name: 'USDA Hogs and Pigs', desc: 'Quarterly U.S. hog inventory: breeding herd, market hogs and litters.' },
+      fr: { name: 'USDA Hogs and Pigs', desc: "Inventaire trimestriel des porcs aux États-Unis : truies reproductrices, porcs d'engraissement et portées." },
+      it: { name: 'USDA Hogs and Pigs', desc: "Inventario trimestrale dei suini negli Stati Uniti: riproduttori, suini da ingrasso e nidiate." }
+    },
+    {
       id: 'eu-cereals', market: 'eu', freq: 'weekly', type: 'publication', crops: ['trigo','maiz','cebada'], impact: 'precios',
       hasDate: false, nextDate: null, isToday: false, lastDate: null,
       sourceUrl: 'https://agridata.ec.europa.eu/extensions/DashboardCereals/ExtCerealsPrice.html',
@@ -147,6 +183,19 @@
   });
 
 
+  // Fechas oficiales: el fichero data/usda-calendar.json (leído de las páginas de NASS y de USDA) manda sobre las escritas a mano.
+  var OFFICIAL = { 'us-agricultural-prices': 'agricultural-prices', 'crop-progress': 'crop-progress', 'grain-stocks': 'grain-stocks', 'wasde': 'wasde', 'cattle-on-feed': 'cattle-on-feed', 'crop-production': 'crop-production', 'milk-production': 'milk-production', 'hogs-and-pigs': 'hogs-and-pigs' };
+  function applyOfficial(doc) {
+    var U = window.DIUsdaCal; if (!doc || !U) return false;
+    var t = U.today(), any = false;
+    CALENDAR_EVENTS.forEach(function (ev) {
+      var rid = OFFICIAL[ev.id]; if (!rid) return;
+      var n = U.next(doc, rid, t), l = U.last(doc, rid, t);
+      if (n) { ev.hasDate = true; ev.nextDate = n.date; ev.timeEt = U.timeTxt(n); ev.patternDate = false; ev.staleDate = false; ev.isToday = n.date === t; ev.officialDate = true; any = true; }
+      if (l) ev.lastDate = l.date;
+    });
+    return any;
+  }
   var UPDATED_ISO = '2026-09-29';
 
   var STRINGS = {
@@ -154,7 +203,7 @@
       title: 'Dehesa Index — Calendario agrícola', h1: 'Calendario agrícola',
       sub: 'Las próximas publicaciones de datos oficiales que mueven los mercados agrícolas de EE. UU., Europa, Canadá y Australia — para saber qué esperar antes de que salga el dato, como un calendario económico pero para el campo.',
       badge: 'FECHAS OFICIALES', updatedLabel: 'Actualizado',
-      disclaimer: 'Las fechas de EE. UU. (USDA) siguen el calendario oficial que publica cada organismo — exacto para WASDE y Grain Stocks, y calculado a partir de su patrón habitual (lunes / jueves) para los semanales. Los informes de la Comisión Europea se publican con periodicidad conocida (semanal o trimestral) pero sin un día fijo anunciado con antelación, así que se muestran sin fecha exacta. A diferencia de un calendario económico financiero, aquí no hay columna de "consenso de mercado": ningún organismo publica gratis una previsión de consenso para estos informes agrícolas, así que no se inventa una.',
+      disclaimer: 'Las fechas de EE. UU. (USDA) se leen del calendario oficial de NASS y de las fechas WASDE que publica USDA, se renuevan cada día laborable e incluyen la hora (ET, hora del este de EE. UU.). Solo Export Sales (FAS) se calcula a partir de su día habitual (jueves) y un festivo puede moverlo. Los informes de la Comisión Europea se publican con periodicidad conocida (semanal o trimestral) pero sin un día fijo anunciado con antelación, así que se muestran sin fecha exacta. A diferencia de un calendario económico financiero, aquí no hay columna de "consenso de mercado": ningún organismo publica gratis una previsión de consenso para estos informes agrícolas, así que no se inventa una.',
       filterAll: 'Todos', filterUs: 'EE. UU.', filterEu: 'Europa',
       freqWeekly: 'Semanal', freqMonthly: 'Mensual', freqQuarterly: 'Trimestral', freqAnnual: 'Anual', filterType: 'Tipo', filterCrop: 'Cultivo', filterImpact: 'Impacto', allCrops: 'Todos los cultivos', allTypes: 'Todos los eventos', allImpacts: 'Todos los impactos', typePublication: 'Publicación', typeHarvest: 'Cosecha / producción', impactLabels: {oferta:'Oferta',stocks:'Stocks',comercio:'Comercio', 'oferta-demanda':'Oferta / demanda',precios:'Precios',lacteos:'Lácteos',cosecha:'Cosecha'}, harvestStatus:'Ventana de cosecha / producción', relevance:'Por qué importa:',
       marketUs: '🇺🇸 EE. UU.', marketEu: '🇪🇺 Europa', todayTag: 'Hoy',
@@ -166,6 +215,7 @@
       sourcesTitle: 'Fuentes',
       sources: [
         { text: 'USDA — WASDE (Office of the Chief Economist)', url: 'https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report' },
+        { text: 'USDA NASS — Reports by Date', url: 'https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php' },
         { text: 'USDA NASS — Crop Progress', url: 'https://www.nass.usda.gov/Publications/National_Crop_Progress/' },
         { text: 'USDA NASS — Grain Stocks', url: 'https://www.nass.usda.gov/Surveys/Guide_to_NASS_Surveys/Off-Farm_Grain_Stocks/index.php' },
         { text: 'USDA FAS — Export Sales Reporting Program', url: 'https://www.fas.usda.gov/programs/export-sales-reporting-program/about-export-sales-reporting-program' },
@@ -177,7 +227,7 @@
       title: 'Dehesa Index — Agricultural Calendar', h1: 'Agricultural Calendar',
       sub: "Upcoming official data releases that move agricultural markets in the U.S., Europe, Canada and Australia — know what's coming before the number lands, like an economic calendar for farming.",
       badge: 'OFFICIAL DATES', updatedLabel: 'Updated',
-      disclaimer: "U.S. (USDA) dates follow each agency's own published schedule — exact for WASDE and Grain Stocks, and computed from their usual weekday pattern (Monday / Thursday) for the weekly ones. European Commission reports have a known cadence (weekly or quarterly) but no fixed day announced in advance, so they're shown without an exact date. Unlike a financial economic calendar, there's no \"market consensus\" column here: no agency publishes a free consensus forecast for these agricultural reports, so we don't invent one.",
+      disclaimer: "U.S. (USDA) dates are read from the official NASS calendar and the WASDE dates published by USDA, refreshed every business day and shown with the time (ET, U.S. Eastern). Only Export Sales (FAS) is computed from its usual weekday (Thursday) and a holiday can move it. European Commission reports have a known cadence (weekly or quarterly) but no fixed day announced in advance, so they're shown without an exact date. Unlike a financial economic calendar, there's no \"market consensus\" column here: no agency publishes a free consensus forecast for these agricultural reports, so we don't invent one.",
       filterAll: 'All', filterUs: 'U.S.', filterEu: 'Europe',
       freqWeekly: 'Weekly', freqMonthly: 'Monthly', freqQuarterly: 'Quarterly', freqAnnual: 'Annual', filterType: 'Type', filterCrop: 'Crop', filterImpact: 'Impact', allCrops: 'All crops', allTypes: 'All events', allImpacts: 'All impacts', typePublication: 'Publication', typeHarvest: 'Harvest / production', impactLabels: {oferta:'Supply',stocks:'Stocks',comercio:'Trade','oferta-demanda':'Supply / demand',precios:'Prices',lacteos:'Dairy',cosecha:'Harvest'}, harvestStatus:'Harvest / production window', relevance:'Why it matters:',
       marketUs: '🇺🇸 U.S.', marketEu: '🇪🇺 Europe', todayTag: 'Today',
@@ -189,6 +239,7 @@
       sourcesTitle: 'Sources',
       sources: [
         { text: 'USDA — WASDE (Office of the Chief Economist)', url: 'https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report' },
+        { text: 'USDA NASS — Reports by Date', url: 'https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php' },
         { text: 'USDA NASS — Crop Progress', url: 'https://www.nass.usda.gov/Publications/National_Crop_Progress/' },
         { text: 'USDA NASS — Grain Stocks', url: 'https://www.nass.usda.gov/Surveys/Guide_to_NASS_Surveys/Off-Farm_Grain_Stocks/index.php' },
         { text: 'USDA FAS — Export Sales Reporting Program', url: 'https://www.fas.usda.gov/programs/export-sales-reporting-program/about-export-sales-reporting-program' },
@@ -200,7 +251,7 @@
       title: 'Dehesa Index — Calendrier agricole', h1: 'Calendrier agricole',
       sub: "Les prochaines publications de données officielles qui font bouger les marchés agricoles des États-Unis, d’Europe, du Canada et d’Australie — pour savoir à quoi s'attendre avant la sortie du chiffre, comme un calendrier économique mais pour le monde agricole.",
       badge: 'DATES OFFICIELLES', updatedLabel: 'Mis à jour',
-      disclaimer: "Les dates américaines (USDA) suivent le calendrier officiel publié par chaque agence — exact pour le WASDE et le Grain Stocks, et calculé à partir de leur jour habituel (lundi / jeudi) pour les rapports hebdomadaires. Les rapports de la Commission européenne ont une périodicité connue (hebdomadaire ou trimestrielle) mais sans jour fixe annoncé à l'avance, ils sont donc affichés sans date exacte. Contrairement à un calendrier économique financier, il n'y a pas ici de colonne « consensus de marché » : aucune agence ne publie gratuitement une prévision de consensus pour ces rapports agricoles, nous n'en inventons donc pas.",
+      disclaimer: "Les dates américaines (USDA) sont lues dans le calendrier officiel du NASS et dans les dates WASDE publiées par l'USDA, actualisées chaque jour ouvré et indiquées avec l'heure (ET, heure de l'Est). Seul Export Sales (FAS) est calculé d'après son jour habituel (jeudi) et un jour férié peut le décaler. Les rapports de la Commission européenne ont une périodicité connue (hebdomadaire ou trimestrielle) mais sans jour fixe annoncé à l'avance, ils sont donc affichés sans date exacte. Contrairement à un calendrier économique financier, il n'y a pas ici de colonne « consensus de marché » : aucune agence ne publie gratuitement une prévision de consensus pour ces rapports agricoles, nous n'en inventons donc pas.",
       filterAll: 'Tous', filterUs: 'É.-U.', filterEu: 'Europe',
       freqWeekly: 'Hebdomadaire', freqMonthly: 'Mensuel', freqQuarterly: 'Trimestriel', freqAnnual: 'Annuel', filterType: 'Type', filterCrop: 'Culture', filterImpact: 'Impact', allCrops: 'Toutes les cultures', allTypes: 'Tous les événements', allImpacts: 'Tous les impacts', typePublication: 'Publication', typeHarvest: 'Récolte / production', impactLabels: {oferta:'Offre',stocks:'Stocks',comercio:'Commerce','oferta-demanda':'Offre / demande',precios:'Prix',lacteos:'Lait',cosecha:'Récolte'}, harvestStatus:'Fenêtre de récolte / production', relevance:'Pourquoi c’est important :',
       marketUs: '🇺🇸 É.-U.', marketEu: '🇪🇺 Europe', todayTag: "Aujourd'hui",
@@ -212,6 +263,7 @@
       sourcesTitle: 'Sources',
       sources: [
         { text: 'USDA — WASDE (Office of the Chief Economist)', url: 'https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report' },
+        { text: 'USDA NASS — Reports by Date', url: 'https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php' },
         { text: 'USDA NASS — Crop Progress', url: 'https://www.nass.usda.gov/Publications/National_Crop_Progress/' },
         { text: 'USDA NASS — Grain Stocks', url: 'https://www.nass.usda.gov/Surveys/Guide_to_NASS_Surveys/Off-Farm_Grain_Stocks/index.php' },
         { text: 'USDA FAS — Export Sales Reporting Program', url: 'https://www.fas.usda.gov/programs/export-sales-reporting-program/about-export-sales-reporting-program' },
@@ -223,7 +275,7 @@
       title: 'Dehesa Index — Calendario agricolo', h1: 'Calendario agricolo',
       sub: 'Le prossime pubblicazioni di dati ufficiali che muovono i mercati agricoli di Stati Uniti, Europa, Canada e Australia — per sapere cosa aspettarsi prima che esca il dato, come un calendario economico ma per il mondo agricolo.',
       badge: 'DATE UFFICIALI', updatedLabel: 'Aggiornato',
-      disclaimer: "Le date statunitensi (USDA) seguono il calendario ufficiale pubblicato da ciascuna agenzia — esatto per il WASDE e il Grain Stocks, e calcolato in base al giorno abituale (lunedì / giovedì) per quelli settimanali. I rapporti della Commissione europea hanno una periodicità nota (settimanale o trimestrale) ma senza un giorno fisso annunciato in anticipo, quindi vengono mostrati senza data esatta. A differenza di un calendario economico finanziario, qui non c'è una colonna \"consenso di mercato\": nessuna agenzia pubblica gratuitamente una previsione di consenso per questi rapporti agricoli, quindi non ne inventiamo una.",
+      disclaimer: "Le date statunitensi (USDA) sono lette dal calendario ufficiale del NASS e dalle date WASDE pubblicate dall'USDA, aggiornate ogni giorno lavorativo e indicate con l'ora (ET, ora della costa orientale). Solo Export Sales (FAS) è calcolato in base al giorno abituale (giovedì) e un giorno festivo può spostarlo. I rapporti della Commissione europea hanno una periodicità nota (settimanale o trimestrale) ma senza un giorno fisso annunciato in anticipo, quindi vengono mostrati senza data esatta. A differenza di un calendario economico finanziario, qui non c'è una colonna \"consenso di mercato\": nessuna agenzia pubblica gratuitamente una previsione di consenso per questi rapporti agricoli, quindi non ne inventiamo una.",
       filterAll: 'Tutti', filterUs: 'USA', filterEu: 'Europa',
       freqWeekly: 'Settimanale', freqMonthly: 'Mensile', freqQuarterly: 'Trimestrale', freqAnnual: 'Annuale', filterType: 'Tipo', filterCrop: 'Coltura', filterImpact: 'Impatto', allCrops: 'Tutte le colture', allTypes: 'Tutti gli eventi', allImpacts: 'Tutti gli impatti', typePublication: 'Pubblicazione', typeHarvest: 'Raccolta / produzione', impactLabels: {oferta:'Offerta',stocks:'Scorte',comercio:'Commercio','oferta-demanda':'Offerta / domanda',precios:'Prezzi',lacteos:'Lattiero-caseario',cosecha:'Raccolta'}, harvestStatus:'Finestra di raccolta / produzione', relevance:'Perché conta:',
       marketUs: '🇺🇸 USA', marketEu: '🇪🇺 Europa', todayTag: 'Oggi',
@@ -235,6 +287,7 @@
       sourcesTitle: 'Fonti',
       sources: [
         { text: 'USDA — WASDE (Office of the Chief Economist)', url: 'https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report' },
+        { text: 'USDA NASS — Reports by Date', url: 'https://www.nass.usda.gov/Publications/Calendar/reports_by_date.php' },
         { text: 'USDA NASS — Crop Progress', url: 'https://www.nass.usda.gov/Publications/National_Crop_Progress/' },
         { text: 'USDA NASS — Grain Stocks', url: 'https://www.nass.usda.gov/Surveys/Guide_to_NASS_Surveys/Off-Farm_Grain_Stocks/index.php' },
         { text: 'USDA FAS — Export Sales Reporting Program', url: 'https://www.fas.usda.gov/programs/export-sales-reporting-program/about-export-sales-reporting-program' },
@@ -333,7 +386,7 @@
         var freqLabel = FREQ_LABEL[ev.freq] || ev.freq;
         var dateHtml = '';
         if (ev.hasDate) {
-          var dateDisplay = ev.isToday ? (t.todayTag + ' · ' + fmtDate(ev.nextDate, lang)) : fmtDate(ev.nextDate, lang);
+          var dateDisplay = ev.isToday ? (t.todayTag + ' · ' + fmtDate(ev.nextDate, lang)) : fmtDate(ev.nextDate, lang); if (ev.timeEt) dateDisplay += ' · ' + ev.timeEt;
           dateHtml = '<span class="di-cal-date' + (ev.isToday ? ' today' : '') + '">' + esc(dateDisplay) + '</span>';
         }
         var lastHtml = ev.lastDate ? '<div class="di-cal-last">' + esc(t.lastLabelText) + ' ' + esc(fmtDate(ev.lastDate, lang)) + '</div>' : '';
@@ -365,4 +418,7 @@
   window.DehesaShared.init('calendario');
   window.DehesaShared.onLangChange = render;
   render();
+  if (window.DIUsdaCal) window.DIUsdaCal.load().then(function (doc) {
+    if (doc && applyOfficial(doc)) { if (doc.generatedAt) UPDATED_ISO = String(doc.generatedAt).slice(0, 10); render(); }
+  });
 })();

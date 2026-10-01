@@ -48,6 +48,11 @@ jobs:
       - name: Search answers (every figure shown must equal the source data)
         run: node scripts/test-answers.mjs
 
+      - name: USDA release calendar and Cattle on Feed parsers (real samples, offline)
+        run: |
+          python3 scripts/test-usda-calendar.py
+          python3 scripts/test-cattle-on-feed.py
+
       - name: US local cash bids parser, merge, revisions and failure safety (offline fixtures, no API)
         run: python3 scripts/test-us-cash-bids.py
 

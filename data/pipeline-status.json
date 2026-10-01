@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-01T21:25:00Z",
+ "generatedAt": "2026-10-01T23:26:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 43,
   "late": 0,
   "error": 1,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 2
  },
  "global": "error",
  "pipelines": [
@@ -271,6 +271,27 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-cattle-on-feed.yml",
+   "name": "Update USDA Cattle on Feed (NASS)",
+   "crons": [
+    "50 21 * * 5"
+   ],
+   "nextRun": "2026-10-02T21:50:00Z",
+   "files": [
+    {
+     "path": "data/cattle-on-feed.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-climate.yml",
@@ -959,27 +980,27 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-01T19:27:36Z"
+     "lastChange": "2026-10-01T21:26:11Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-01T19:27:36Z"
+     "lastChange": "2026-10-01T21:26:11Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-01T19:27:36Z"
+     "lastChange": "2026-10-01T21:26:11Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-01T19:27:36Z"
+     "lastChange": "2026-10-01T21:26:11Z"
     }
    ],
    "last": {
     "conclusion": "success",
-    "event": "push",
-    "startedAt": "2026-10-01T19:27:01Z",
-    "durationSec": 41,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36914361453"
+    "event": "schedule",
+    "startedAt": "2026-10-01T21:25:39Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36928600545"
    },
    "recent": {
     "runs": 10,
@@ -1022,11 +1043,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-01T18:31:49Z"
+     "lastChange": "2026-10-01T21:25:30Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-01T18:31:49Z"
+     "lastChange": "2026-10-01T21:25:30Z"
     },
     {
      "path": "data/series-registry.json",
@@ -1038,7 +1059,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-01T18:31:57Z"
+     "lastChange": "2026-10-01T21:25:39Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1055,7 +1076,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-01T18:31:57Z"
+     "lastChange": "2026-10-01T21:25:39Z"
     },
     {
      "path": "data/products"
@@ -1066,27 +1087,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-01T18:31:57Z"
+     "lastChange": "2026-10-01T21:25:39Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-01T18:31:57Z"
+     "lastChange": "2026-10-01T23:05:26Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-01T18:31:57Z"
+     "lastChange": "2026-10-01T21:25:39Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-01T18:31:57Z"
+     "lastChange": "2026-10-01T21:25:39Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-01T18:31:57Z"
+     "lastChange": "2026-10-01T21:25:39Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-01T18:39:17Z"
+     "lastChange": "2026-10-01T21:25:39Z"
     },
     {
      "path": "data/snapshots"
@@ -1095,13 +1116,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-01T18:30:55Z",
-    "durationSec": 66,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36907398761"
+    "startedAt": "2026-10-01T21:24:50Z",
+    "durationSec": 54,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36928506761"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -1349,6 +1370,27 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-usda-calendar.yml",
+   "name": "Update USDA release calendar (NASS + WASDE)",
+   "crons": [
+    "40 6 * * 1-5"
+   ],
+   "nextRun": "2026-10-02T06:40:00Z",
+   "files": [
+    {
+     "path": "data/usda-calendar.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-usda-psd.yml",

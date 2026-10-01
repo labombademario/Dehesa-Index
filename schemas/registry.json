@@ -327,6 +327,18 @@
    [
     "ers_cost_reference"
    ]
+  ],
+  "usda-calendar.json": [
+   "usda-calendar",
+   [
+    "usda_calendar"
+   ]
+  ],
+  "cattle-on-feed.json": [
+   "cattle-on-feed",
+   [
+    "cattle_on_feed"
+   ]
   ]
  },
  "globs": {

@@ -151,7 +151,7 @@
   function script(src) { return new Promise(function (res, rej) { var s = document.createElement('script'); s.src = href(src); s.onload = res; s.onerror = rej; document.head.appendChild(s); }); }
   function ansReady() {
     if (ANS.mod) return Promise.resolve(ANS.mod);
-    if (!ANS.p) ANS.p = (global.DIIdentity ? Promise.resolve() : script('js/instrument-identity.js')).then(function () { return global.DehesaAnswers ? 0 : script('js/answers.js'); }).then(function () {
+    if (!ANS.p) ANS.p = (global.DIIdentity ? Promise.resolve() : script('js/instrument-identity.js')).then(function () { return global.DIUsdaCal ? 0 : script('js/usda-calendar.js'); }).then(function () { return global.DehesaAnswers ? 0 : script('js/answers.js'); }).then(function () {
       ANS.env = {
         products: (IDX || []).filter(function (e) { return e.t === 'product'; }).map(function (e) { var m = /product=([^&]+)/.exec(e.u); return m ? { slug: decodeURIComponent(m[1]).split(':')[1], names: e.n, kw: e.k, u: e.u } : null; }).filter(Boolean),
         tokScore: tokScore, href: href,
