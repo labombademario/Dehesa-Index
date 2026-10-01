@@ -3,21 +3,12 @@ os.makedirs("data/probe", exist_ok=True)
 out=[]
 def p(*a):
     out.append(" ".join(str(x) for x in a)); open("data/probe/eu-trade.txt","w").write("\n".join(out))
-B="https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
 def get(u, to=120):
     try:
         r=urllib.request.urlopen(urllib.request.Request(u,headers={"User-Agent":"Dehesa-Index-data-bot/1.0"}),timeout=to); return r.status, r.read()
     except Exception as e: return "ERR", repr(e)[:300].encode()
-def dims(ds, q):
-    s,b=get(B+ds+"?format=JSON&lang=EN&"+q)
-    p("==",ds,q,s,len(b))
-    if s!=200: p(b[:300]); return
-    j=json.loads(b); p("id",j["id"],"size",j["size"])
-    for d in j["id"]:
-        c=j["dimension"][d]["category"]; lab=c.get("label",{})
-        p("  ",d,len(c["index"]),list(lab.items())[:25])
-    p("  value count",len(j.get("value",{})))
-dims("ext_st_eu27_2020sitc","geo=ES&sinceTimePeriod=2026-06")
-dims("ext_lt_intratrd","geo=ES&sinceTimePeriod=2024")
-dims("ext_st_27_2020msbec","geo=ES&sinceTimePeriod=2026-06")
-dims("ext_lt_maineu","sinceTimePeriod=2024&geo=EU27_2020&partner=US")
+for u in ("https://ec.europa.eu/eurostat/api/comext/dissemination/statistics/1.0/data/DS-045409?format=JSON&lang=EN&reporter=ES&partner=US&product=1001&flow=2&indicators=VALUE_IN_EUROS&freq=A&time=2024",
+          "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/2.1/dataflow/ESTAT/DS-045409/1.0?detail=full",
+          "https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/2.1/data/DS-045409/A.ES.US.1001.2.VALUE_IN_EUROS?startPeriod=2023&format=JSON",
+          "https://ec.europa.eu/eurostat/api/comext/dissemination/statistics/1.0/data/DS-059341?format=JSON&lang=EN&reporter=ES&partner=US&product=10&flow=2&indicators=VALUE_IN_EUROS&freq=A&time=2024"):
+    s,b=get(u); p("URL",u[:170],s,len(b)); p(b[:1800].decode("utf-8","ignore"))
