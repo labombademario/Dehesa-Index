@@ -384,6 +384,7 @@
     document.getElementById('pr-subtitle').textContent = t.pageSubtitle;
     document.getElementById('pr-updated').textContent = t.updated;
     document.getElementById('pr-banner').textContent = t.banner;
+    var fs = document.getElementById('pr-fold-sum'); if (fs) fs.textContent = ({ es: 'Estado y verificación de los datos', en: 'Data status and verification', fr: 'État et vérification des données', it: 'Stato e verifica dei dati' })[lang()] || 'Estado y verificación de los datos';
   }
 
   // ---------------------------------------------------------------------

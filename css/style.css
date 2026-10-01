@@ -1423,3 +1423,23 @@ html[data-theme="dark"] .rl-st-WEAK_OR_UNSTABLE { color: #e0b04a; }
   .di-nav-links a,.di-nav-gbtn{font-size:14px}
   .di-nav-logo img{height:44px}
 }
+
+/* Precios: primero los precios; verificación plegada y noticias/relaciones debajo */
+.pr-fold{margin:10px 0 0}
+.pr-fold>summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--text-muted);padding:6px 0;min-height:32px}
+.pr-fold[open]>summary{margin-bottom:8px}
+.pr-flow{display:flex;flex-direction:column}
+.pr-flow>*{order:0}
+.pr-flow>#pr-news-intel{order:20}
+.pr-flow>#pr-intel{order:21}
+.pr-flow>#pr-relationships{order:22}
+@media (min-width:761px){.pr-flow{padding-left:32px;padding-right:32px}}
+
+/* Precios: ubicación visible en móvil, procedencia sin id técnico, favoritos vacíos compactos */
+@media (max-width:760px){
+  .di-location-bar{flex-wrap:wrap!important;overflow:visible!important}
+  .di-location-bar>.di-location-label{flex:0 0 100%!important;width:100%}
+  .di-location-bar>.di-location-btn{flex:0 0 auto}
+}
+.di-data-trust-id{display:none}
+.di-data-trust>summary{display:flex;align-items:center;gap:6px}
