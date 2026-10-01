@@ -1,0 +1,25 @@
+== partners ES wheat 2024 exp reporter=ES&product=1001&flow=2&freq=A&time=2024 200 13252 1.5s
+size {'freq': 1, 'reporter': 1, 'partner': 278, 'product': 1, 'flow': 1, 'indicators': 1, 'time': 1} values 51
+  partner 278 [('AD', 'Andorra'), ('AE', 'United Arab Emirates'), ('AF', 'Afghanistan'), ('AG', 'Antigua and Barbuda'), ('AI', 'Anguilla'), ('AL', 'Albania'), ('AM', 'Armenia'), ('AN', "Netherlands Antilles (incl. Aruba 'AW' -> 1986)"), ('AO', 'Angola'), ('AQ', 'Antarctica'), ('AR', 'Argentina'), ('AS', 'American Samoa'), ('AT', 'Austria'), ('AU', 'Australia'), ('AW', 'Aruba'), ('AZ', 'Azerbaijan'), ('BA', 'Bosnia and Herzegovina'), ('BB', 'Barbados'), ('BD', 'Bangladesh'), ('BE', "Belgium (incl. Luxembourg 'LU' -> 1998)"), ('BF', 'Burkina Faso'), ('BG', 'Bulgaria'), ('BH', 'Bahrain'), ('BI', 'Burundi'), ('BJ', 'Benin'), ('BL', 'Saint Barthélemy'), ('BM', 'Bermuda'), ('BN', 'Brunei Darussalam'), ('BO', 'Bolivia, Plurinational State of'), ('BQ', 'Bonaire, Sint Eustatius and Saba'), ('BR', 'Brazil'), ('BS', 'Bahamas'), ('BT', 'Bhutan'), ('BV', 'Bouvet Island'), ('BW', 'Botswana'), ('BY', 'Belarus (Belorussia)'), ('BZ', 'Belize'), ('CA', 'Canada'), ('CC', 'Cocos Islands (or Keeling Islands)'), ('CD', 'Congo, Democratic Republic of')]
+  product 1 [('1001', 'Wheat and meslin')]
+  reporter 1 [('ES', "Spain (incl. Canary Islands 'XB' from 1997)")]
+== monthly world reporter=ES&partner=WORLD&product=10&flow=2&freq=M&sinceTimePeriod=2025-01 200 2789 1.4s
+size {'freq': 1, 'reporter': 1, 'partner': 1, 'product': 1, 'flow': 1, 'indicators': 1, 'time': 24} values 19
+  partner 1 [('WORLD', 'All countries of the world')]
+  product 1 [('10', 'CEREALS')]
+  reporter 1 [('ES', "Spain (incl. Canary Islands 'XB' from 1997)")]
+== multi products reporter=ES&partner=WORLD&product=01&product=02&product=10&product=31&flow=2&freq=M&sinceTimePeriod=2025-01 200 3719 1.4s
+size {'freq': 1, 'reporter': 1, 'partner': 1, 'product': 4, 'flow': 1, 'indicators': 1, 'time': 24} values 76
+  partner 1 [('WORLD', 'All countries of the world')]
+  product 4 [('01', 'LIVE ANIMALS'), ('02', 'MEAT AND EDIBLE MEAT OFFAL'), ('10', 'CEREALS'), ('31', 'FERTILISERS')]
+  reporter 1 [('ES', "Spain (incl. Canary Islands 'XB' from 1997)")]
+== all HS2 monthly long reporter=DK&partner=WORLD&product=10&flow=1&freq=M&sinceTimePeriod=1988-01 200 24194 3.7s
+size {'freq': 1, 'reporter': 1, 'partner': 1, 'product': 1, 'flow': 1, 'indicators': 1, 'time': 468} values 462
+  partner 1 [('WORLD', 'All countries of the world')]
+  product 1 [('10', 'CEREALS')]
+  reporter 1 [('DK', 'Denmark')]
+== DK NL partners total chapter reporter=NL&product=02&flow=2&freq=A&time=2024 200 14465 1.7s
+size {'freq': 1, 'reporter': 1, 'partner': 278, 'product': 1, 'flow': 1, 'indicators': 1, 'time': 1} values 164
+  partner 278 [('AD', 'Andorra'), ('AE', 'United Arab Emirates'), ('AF', 'Afghanistan'), ('AG', 'Antigua and Barbuda'), ('AI', 'Anguilla'), ('AL', 'Albania'), ('AM', 'Armenia'), ('AN', "Netherlands Antilles (incl. Aruba 'AW' -> 1986)"), ('AO', 'Angola'), ('AQ', 'Antarctica'), ('AR', 'Argentina'), ('AS', 'American Samoa'), ('AT', 'Austria'), ('AU', 'Australia'), ('AW', 'Aruba'), ('AZ', 'Azerbaijan'), ('BA', 'Bosnia and Herzegovina'), ('BB', 'Barbados'), ('BD', 'Bangladesh'), ('BE', "Belgium (incl. Luxembourg 'LU' -> 1998)"), ('BF', 'Burkina Faso'), ('BG', 'Bulgaria'), ('BH', 'Bahrain'), ('BI', 'Burundi'), ('BJ', 'Benin'), ('BL', 'Saint Barthélemy'), ('BM', 'Bermuda'), ('BN', 'Brunei Darussalam'), ('BO', 'Bolivia, Plurinational State of'), ('BQ', 'Bonaire, Sint Eustatius and Saba'), ('BR', 'Brazil'), ('BS', 'Bahamas'), ('BT', 'Bhutan'), ('BV', 'Bouvet Island'), ('BW', 'Botswana'), ('BY', 'Belarus (Belorussia)'), ('BZ', 'Belize'), ('CA', 'Canada'), ('CC', 'Cocos Islands (or Keeling Islands)'), ('CD', 'Congo, Democratic Republic of')]
+  product 1 [('02', 'MEAT AND EDIBLE MEAT OFFAL')]
+  reporter 1 [('NL', 'Netherlands')]
