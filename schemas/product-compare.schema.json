@@ -58,7 +58,10 @@
         "src",
         "latest",
         "points",
-        "comp"
+        "comp",
+        "sourceId",
+        "aggregation",
+        "fs"
        ],
        "properties": {
         "c": {
@@ -103,6 +106,37 @@
         "comp": {
          "type": "string",
          "minLength": 1
+        },
+        "fs": {
+         "enum": [
+          "LIVE",
+          "FRESH",
+          "EXPECTED_DELAY",
+          "DELAYED",
+          "STALE",
+          "PENDING"
+         ]
+        },
+        "aggregation": {
+         "type": "object",
+         "required": [
+          "points",
+          "of",
+          "latest"
+         ],
+         "properties": {
+          "points": {
+           "enum": [
+            "monthly_mean",
+            "monthly_value"
+           ]
+          },
+          "latest": {
+           "enum": [
+            "last_quote"
+           ]
+          }
+         }
         }
        }
       },

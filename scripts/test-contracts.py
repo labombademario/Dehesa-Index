@@ -52,6 +52,8 @@ CASES = [
  ("data-anomalies.json", "serie inexistente", lambda d: d["anomalies"][0].__setitem__("series", "AT/no-existe")),
  ("daily-brief.json", "byKind incoherente", lambda d: d["byKind"]["PRICE"].__setitem__("datasets", 99)),
  ("daily-brief.json", "pipeline sin clasificar", lambda d: d["pipelinesCovered"].__setitem__("total", d["pipelinesCovered"]["total"] + 1)),
+ ("product-compare.json", "sin aggregation", lambda d: d["products"]["trigo"]["series"][0].pop("aggregation")),
+ ("product-compare.json", "estado de frescura inventado", lambda d: d["products"]["trigo"]["series"][0].__setitem__("fs", "OK")),
  ("views/home-summary.json", "mover con historico", lambda d: d["movers"][0].__setitem__("history", [1, 2])),
  ("views/home-summary.json", "markets.total incoherente", lambda d: d["markets"].__setitem__("total", d["markets"]["total"] + 1)),
  ("views/news-index.json", "clave fuera de rango", lambda d: d["keys"].__setitem__("trigo", [10 ** 6])),

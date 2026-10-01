@@ -57,6 +57,9 @@ jobs:
       - name: SEO QA (sitemap, canonical, hreflang, JSON-LD)
         run: node scripts/qa-seo.mjs
 
+      - name: Unit Engine (FX historico, bushel por cultivo, ha/acre)
+        run: node scripts/test-unit-engine.mjs
+
       - name: Freshness Engine parity (JS vs Python)
         run: node scripts/test-freshness-parity.mjs
 
