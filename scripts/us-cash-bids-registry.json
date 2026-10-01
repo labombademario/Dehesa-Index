@@ -314,7 +314,7 @@
    "market": "South Carolina",
    "frequency": "daily",
    "tier": "extended",
-   "enabled": false,
+   "enabled": true,
    "expectedTitle": "South Carolina Daily Grain Bids",
    "provenance": "id y titulo verificados en data/ams/2787.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
   },
@@ -325,7 +325,7 @@
    "market": "Kentucky",
    "frequency": "daily",
    "tier": "extended",
-   "enabled": false,
+   "enabled": true,
    "expectedTitle": "Kentucky Daily Grain Bids",
    "provenance": "id y titulo verificados en data/ams/2892.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
   },
@@ -336,7 +336,7 @@
    "market": "Mississippi",
    "frequency": "daily",
    "tier": "extended",
-   "enabled": false,
+   "enabled": true,
    "expectedTitle": "Mississippi Daily Grain Bids",
    "provenance": "id y titulo verificados en data/ams/2928.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
   },
@@ -347,7 +347,7 @@
    "market": "Arkansas",
    "frequency": "daily",
    "tier": "extended",
-   "enabled": false,
+   "enabled": true,
    "expectedTitle": "Arkansas Daily Grain Bids",
    "provenance": "id y titulo verificados en data/ams/2960.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
   },
@@ -358,7 +358,7 @@
    "market": "Tennessee",
    "frequency": "daily",
    "tier": "extended",
-   "enabled": false,
+   "enabled": true,
    "expectedTitle": "Tennessee Daily Grain Bids",
    "provenance": "id y titulo verificados en data/ams/3088.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
   },
@@ -369,7 +369,7 @@
    "market": "Pennsylvania",
    "frequency": "daily",
    "tier": "extended",
-   "enabled": false,
+   "enabled": true,
    "expectedTitle": "Pennsylvania Grain Bids",
    "provenance": "id y titulo verificados en data/ams/3091.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
   },
@@ -380,7 +380,7 @@
    "market": "California",
    "frequency": "daily",
    "tier": "extended",
-   "enabled": false,
+   "enabled": true,
    "expectedTitle": "California Grain Bids",
    "provenance": "id y titulo verificados en data/ams/3146.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
   },
@@ -391,7 +391,7 @@
    "market": "Wyoming",
    "frequency": "daily",
    "tier": "extended",
-   "enabled": false,
+   "enabled": true,
    "expectedTitle": "Wyoming Daily Grain Bids",
    "provenance": "id y titulo verificados en data/ams/3239.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
   },
@@ -402,7 +402,7 @@
    "market": "Maryland",
    "frequency": "daily",
    "tier": "extended",
-   "enabled": false,
+   "enabled": true,
    "expectedTitle": "Maryland Grain Bids",
    "provenance": "id y titulo verificados en data/ams/2714.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
   },
