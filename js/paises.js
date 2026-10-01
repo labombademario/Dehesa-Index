@@ -50,6 +50,13 @@
     return window.DehesaChart.render({ series: series, xMode: 'time', xTitle: t.date, yTitle: s.unit, aria: s.label + ' (' + s.unit + ')', noLegend: true, vFmt: function (v) { return nf(v, d); },
       xFmt: s.frequency === 'annual' ? function (x) { return new Date(x).getUTCFullYear(); } : undefined });
   }
+  var REV = [], RV = { es: ['Revisiones oficiales detectadas', 'antes', 'ahora', 'detectado'], en: ['Official revisions detected', 'was', 'now', 'detected'], fr: ['Révisions officielles détectées', 'avant', 'maintenant', 'détecté'], it: ['Revisioni ufficiali rilevate', 'prima', 'ora', 'rilevato'] };
+  function revBox(cur) {
+    var r = REV.filter(function (x) { return x.series === ST.c + '/' + cur.id; }).slice(0, 5); if (!r.length) return '';
+    var v = RV[lang()] || RV.es;
+    return '<div class="di-movers-hint" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px"><b>' + v[0] + '</b>' + r.map(function (x) { return '<div>' + esc(plabel(x.period, cur.frequency)) + ': ' + v[1] + ' ' + nf(x.old, dec(x.old)) + ' → ' + v[2] + ' <b>' + nf(x.new, dec(x.new)) + '</b>' + (x.pct == null ? '' : ' (' + (x.pct > 0 ? '+' : '') + nf(x.pct, 1) + ' %)') + ' · ' + v[3] + ' ' + esc(String(x.detectedAt).slice(0, 10)) + '</div>'; }).join('') + '</div>';
+  }
+  fetch('data/revisions.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.revisions) { REV = d.revisions; if (DATA) build(); } }).catch(function () {});
   function build() {
     var root = document.getElementById('paises-body'); if (!root || !DATA) return;
     var t = tt(), c = DATA.countries[ST.c] || DATA.countries.ES || DATA.countries.DK;
@@ -70,7 +77,7 @@
     if (cur) {
       var ch = cur.changePct;
       html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(cur.label.toUpperCase()) + ' (' + esc(cur.unit) + ')</div>' + chartFor(cur) +
-        '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div></div>';
+        '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div>' + revBox(cur) + '</div>';
     } else html += '<p class="di-movers-hint">' + t.none + '</p>';
     html += '<details style="margin-top:14px"><summary style="cursor:pointer;font-size:13px">' + t.table + '</summary><div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.series.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.latest.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:8px 6px">' + t.period.toUpperCase() + '</th><th style="padding:8px 6px">' + t.unit.toUpperCase() + '</th></tr>' +
       c.series.map(function (s) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px">' + esc(s.label) + '</td><td style="padding:8px 6px;text-align:right">' + nf(s.latest, dec(s.latest)) + '</td><td style="padding:8px 6px;text-align:right">' + (s.changePct == null ? '' : (s.changePct > 0 ? '+' : s.changePct < 0 ? '−' : '') + nf(Math.abs(s.changePct), 1) + ' %') + '</td><td style="padding:8px 6px">' + esc(plabel(s.latestPeriod, s.frequency)) + '</td><td style="padding:8px 6px">' + esc(s.unit) + '</td></tr>'; }).join('') + '</table></div></details>' +

@@ -18,10 +18,11 @@ jobs:
       - name: Validar datos (esquema y tests) antes de commit
         run: |
           python3 scripts/validate-data.py --no-report --files data/belgium-stats.json || { echo '::error::datos invalidos: se descarta el cambio'; git checkout -- data/belgium-stats.json; }
+          python3 scripts/detect-revisions.py data/belgium-stats.json || true
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/belgium-stats.json data/belgium-log.txt
+          git add data/belgium-stats.json data/belgium-log.txt data/revisions.json
           git diff --cached --quiet && exit 0
           git commit -qm "Datos Bélgica (Statbel)"
           git pull -q --rebase
