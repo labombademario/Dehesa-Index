@@ -1,22 +1,22 @@
 {
  "schemaVersion": "1.0",
  "source": "eu_agrifood",
- "generatedAt": "2026-09-30T14:16:09.971Z",
+ "generatedAt": "2026-10-01T14:35:38.577Z",
  "families": [
   {
    "id": "cereales",
    "endpoint": "cereal",
    "freq": "weekly",
    "series": 22,
-   "points": 76993,
-   "latest": "2026-09-20"
+   "points": 77031,
+   "latest": "2026-09-27"
   },
   {
    "id": "oleaginosas",
    "endpoint": "oilseeds",
    "freq": "weekly",
    "series": 84,
-   "points": 22125,
+   "points": 22162,
    "latest": "2026-09-27"
   },
   {
@@ -24,7 +24,7 @@
    "endpoint": "dairy",
    "freq": "weekly",
    "series": 11,
-   "points": 44426,
+   "points": 44474,
    "latest": "2026-09-27"
   },
   {
@@ -32,7 +32,7 @@
    "endpoint": "beef",
    "freq": "weekly",
    "series": 38,
-   "points": 420657,
+   "points": 421223,
    "latest": "2026-09-27"
   },
   {
@@ -40,7 +40,7 @@
    "endpoint": "pigmeat",
    "freq": "weekly",
    "series": 5,
-   "points": 48783,
+   "points": 48846,
    "latest": "2026-09-27"
   },
   {
@@ -48,7 +48,7 @@
    "endpoint": "poultry",
    "freq": "weekly",
    "series": 3,
-   "points": 25925,
+   "points": 25967,
    "latest": "2026-09-27"
   },
   {
@@ -56,7 +56,7 @@
    "endpoint": "poultry/egg",
    "freq": "weekly",
    "series": 4,
-   "points": 26883,
+   "points": 26935,
    "latest": "2026-09-27"
   },
   {
@@ -64,7 +64,7 @@
    "endpoint": "sheepAndGoat",
    "freq": "weekly",
    "series": 2,
-   "points": 18749,
+   "points": 18769,
    "latest": "2026-09-27"
   },
   {
@@ -72,7 +72,7 @@
    "endpoint": "rice",
    "freq": "weekly",
    "series": 112,
-   "points": 41856,
+   "points": 41878,
    "latest": "2026-09-27"
   },
   {
@@ -88,7 +88,7 @@
    "endpoint": "oliveOil",
    "freq": "weekly",
    "series": 6,
-   "points": 43935,
+   "points": 43983,
    "latest": "2026-09-27"
   },
   {
@@ -112,7 +112,7 @@
    "endpoint": "fruitAndVegetable/pricesSupplyChain",
    "freq": "weekly",
    "series": 179,
-   "points": 105440,
+   "points": 105613,
    "latest": "2026-09-27"
   },
   {
