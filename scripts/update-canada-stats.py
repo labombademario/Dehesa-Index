@@ -200,8 +200,31 @@ def fertilizer():
         put("ca-fert-%s" % slug(nm), "inputs_f", "Fertilizer shipments to Canadian agriculture: %s (Jul-Jun year)" % nm.lower(), "thousand t", "annual", pts, "StatCan 32-10-0038")
     log("fertilizantes", len(by))
 
+# ───────── 7. Comercio exterior ─────────
+def trade():
+    rows = load(12100163)
+    ck = [k for k in rows[0] if k.startswith("North American Product")][0]
+    rows = [r for r in rows if r["GEO"] == "Canada" and r["Basis"] == "Customs" and r["Seasonal adjustment"] == "Unadjusted"]
+    want = {"Farm, fishing and intermediate food products": "farm, fishing and food (total)", "Farm and fishing products": "farm and fishing products", "Live animals": "live animals", "Wheat": "wheat", "Canola (including rapeseed)": "canola",
+            "Fresh fruit, nuts and vegetables, and pulse crops": "fruit, nuts, vegetables and pulses", "Other crop products": "other crop products", "Other animal products": "other animal products", "Animal feed": "animal feed",
+            "Fertilizers, pesticides and other chemical products": "fertilizers, pesticides and chemicals", "Potash": "potash", "Agricultural, lawn and garden machinery and equipment": "agricultural machinery",
+            "Meat products": "meat products", "Dairy products": "dairy products", "Other food products": "other food products", "Food, beverage and tobacco products": "food, beverage and tobacco"}
+    n = 0; by = {}
+    for r in rows:
+        nm = re.sub(r"\s*\[.*?\]\s*$", "", r[ck]).strip()
+        if nm in want and r["Trade"] in ("Export", "Import"):
+            v = num(r)
+            if v is not None: by.setdefault((nm, r["Trade"]), {})[r["REF_DATE"]] = v / 1e6
+    for (nm, tr), d in by.items():
+        pts = sorted(d.items())
+        put("ca-trade-%s-%s" % ("exp" if tr == "Export" else "imp", slug(want[nm])), "trade", "%s: %s (monthly)" % ("Exports" if tr == "Export" else "Imports", want[nm]), "CAD million", "monthly", pts, "StatCan 12-10-0163"); n += 1
+        if tr == "Export" and (nm, "Import") in by:
+            im = by[(nm, "Import")]
+            bal = [(p, v - im[p]) for p, v in pts if p in im]
+            put("ca-trade-bal-%s" % slug(want[nm]), "trade", "Trade balance: %s (monthly)" % want[nm], "CAD million", "monthly", bal, "StatCan 12-10-0163"); n += 1
+    log("comercio", n)
 def main():
-    for fn in (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer):
+    for fn in (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, trade):
         try: fn()
         except Exception as e: log("ERROR", fn.__name__, repr(e))
     if len(OUT) < 40:
