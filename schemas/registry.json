@@ -188,6 +188,12 @@
     "catalog_manifest"
    ]
   ],
+  "catalog/series-index.json": [
+   "catalog-index",
+   [
+    "catalog_index"
+   ]
+  ],
   "views/eu-preview.json": [
    "views-eu-preview",
    [

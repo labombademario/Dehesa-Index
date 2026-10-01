@@ -267,6 +267,25 @@ def search_index(doc, errs, warns, stats):
         if not x["u"] or x["u"].startswith("http"): errs.append("%s: URL no local %s" % (x["i"], x["u"][:40])); break
         if not (x["n"].get("es") and x["n"].get("en")): errs.append("%s: sin nombre es/en" % x["i"]); break
     stats["entries"] = len(e)
+def catalog_index(doc, errs, warns, stats):
+    # el indice global debe ser exactamente el catalogo: mismas series, ids unicos, indices dentro del diccionario y punteros a ficheros existentes
+    D_ = doc["dict"]; rows = doc["rows"]; man = json.loads((D / "catalog/manifest.json").read_text(encoding="utf-8"))
+    if doc["total"] != len(rows): errs.append("total %d != filas %d" % (doc["total"], len(rows)))
+    if len(rows) != man["seriesTotal"]: errs.append("indice con %d series, manifiesto %d" % (len(rows), man["seriesTotal"]))
+    seen = set(); fsok = {"LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "HISTORICAL", "DISCONTINUED", "PENDING"}
+    for r in rows:
+        if len(r) != 11: errs.append("fila con %d columnas" % len(r)); break
+        k = (D_["cc"][r[2]] if r[2] < len(D_["cc"]) else None, r[0])
+        if k[0] is None or r[3] >= len(D_["group"]) or r[4] >= len(D_["unit"]) or r[5] >= len(D_["freq"]) or r[7] >= len(D_["fs"]) or any(t >= len(D_["tag"]) for t in r[8]): errs.append("%s: indice fuera del diccionario" % r[0]); break
+        if k in seen: errs.append("serie repetida %s/%s" % k); break
+        seen.add(k)
+        if D_["fs"][r[7]] not in fsok: errs.append("%s: estado de frescura %r invalido" % (r[0], D_["fs"][r[7]])); break
+        c = man["countries"].get(k[0])
+        if not c or r[10] not in (0, 1) or (r[10] == 1 and not c.get("catalogEu")): errs.append("%s: puntero a catalogo invalido" % r[0]); break
+    n = {0: 0, 1: 0}
+    for r in rows: n[r[10]] = n.get(r[10], 0) + 1
+    if n[1] != sum(c.get("nEu", 0) for c in man["countries"].values()): errs.append("series UE del indice != manifiesto")
+    stats["series"] = len(rows)
 def catalog_manifest(doc, errs, warns, stats):
     k = doc["seriesByKind"]
     if sum(k.values()) != doc["seriesTotal"]: errs.append("seriesTotal %d != suma de seriesByKind %d" % (doc["seriesTotal"], sum(k.values())))

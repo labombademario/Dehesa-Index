@@ -199,6 +199,26 @@ def main():
         'role': 'Todas las series del catalogo son la representacion preferida (primary); los duplicados no preferidos se excluyen (data/series-registry.json, nonPreferred=0).'}
     man.update({'entities': {**ents, 'total': len(man['countries'])}, 'schemaVersion': 1, 'seriesTotal': total, 'tiers': {'1': 'national official body', '2': 'Eurostat harmonised', '3': 'international organisation', '4': 'secondary / aggregator'},
                 'seriesByKind': {'stats': total - neu - nprod, 'product': nprod, 'eu-regions': neu}, 'layout': 'manifest -> catalog/<CC>.json (metadata) -> series/<CC>/<metric>.json (points)', 'products': {k: sorted(v) for k, v in sorted(prods.items())}, 'tagsNote': 'products are keyword tags derived from series labels (heuristic), not an official classification'})
+    # indice global compacto (solo lo necesario para buscar): la busqueda global no descarga ningun catalogo de pais
+    idx_rows, DICT = [], {k: [] for k in ('cc', 'group', 'unit', 'freq', 'fs', 'tag')}
+    def di(k, v):
+        if v not in DICT[k]: DICT[k].append(v)
+        return DICT[k].index(v)
+    for cc in sorted(man['countries']):
+        c = man['countries'][cc]
+        for rel, kind in ((c['catalog'], 0), (c.get('catalogEu'), 1)):
+            if not rel: continue
+            for x in json.loads((ROOT / 'data' / rel).read_text(encoding='utf-8'))['series']:
+                idx_rows.append([x['id'], x['label'], di('cc', cc), di('group', x['group']), di('unit', x['unit']), di('freq', x['freq']), x['latestPeriod'], di('fs', x['fs']), [di('tag', t) for t in x['tags']], x['canonical'], kind])
+    ig = ''
+    try: ig = json.loads((ROOT / 'data/catalog/series-index.json').read_text()).get('generatedAt', '')
+    except Exception: pass
+    ibody = {'schemaVersion': 1, 'doc': 'Indice global de busqueda: una fila por serie [id, label, cc, group, unit, freq, latestPeriod, fs, tags, canonicalSeriesId, kind]; cc/group/unit/freq/fs/tags son indices en dict. kind 0 = catalog/<cc>.json, kind 1 = catalog/eu/<cc>.json (puntero al catalogo de la entidad; los puntos viven en el shard de la fila). Sin puntos ni valores.', 'total': len(idx_rows), 'dict': DICT, 'rows': idx_rows}
+    old_i = None
+    try: old_i = json.loads((ROOT / 'data/catalog/series-index.json').read_text()); og = old_i.pop('generatedAt', None)
+    except Exception: og = None
+    ibody['generatedAt'] = og if old_i is not None and dump(old_i) == dump(ibody) else datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+    changed += write_if_changed(ROOT / 'data/catalog/series-index.json', dump(ibody), written)
     # el manifiesto solo cambia de generatedAt si cambia algo mas
     mp = ROOT / 'data/catalog/manifest.json'; body = dump(man)
     try: old = json.loads(mp.read_text()); g0 = old.pop('generatedAt', None); same = dump(old) == body
