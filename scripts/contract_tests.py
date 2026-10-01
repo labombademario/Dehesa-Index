@@ -975,3 +975,16 @@ def premium_tracker(doc, errs, warns, stats):
             if not (x["min"] - 1e-9 <= x["median"] <= x["max"] + 1e-9): errs.append("premium %s: mediana fuera de rango" % c["id"])
         if c["unit"] != "bu": errs.append("premium %s: unidad no comparable %s" % (c["id"], c["unit"]))
     stats["cells"] = len(doc["cells"])
+
+
+def ers_cost_reference(doc, errs, warns, stats):
+    """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""
+    keys = set(doc["map"])
+    for crop, c in doc["crops"].items():
+        if set(c["costs"]) != keys: errs.append("ers-ref %s: partidas distintas del mapa" % crop); continue
+        if any(v < 0 for v in c["costs"].values()): errs.append("ers-ref %s: partida negativa" % crop)
+        if abs(sum(c["costs"].values()) - c["totalCostsListed"]) > 0.06: errs.append("ers-ref %s: partidas (%.2f) no suman el total publicado (%.2f)" % (crop, sum(c["costs"].values()), c["totalCostsListed"]))
+        if not (0 <= c["imputed"] <= c["totalCostsListed"]): errs.append("ers-ref %s: costes imputados fuera de rango" % crop)
+        if not (c["yieldBuPerAcre"] > 0) or not (1990 <= c["year"] <= 2100): errs.append("ers-ref %s: rendimiento o ano invalidos" % crop)
+        if c.get("operatingCosts") is not None and c["operatingCosts"] > c["totalCostsListed"] + 0.01: errs.append("ers-ref %s: costes operativos mayores que el total" % crop)
+    stats["crops"] = len(doc["crops"])

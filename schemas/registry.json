@@ -315,6 +315,12 @@
    [
     "premium_tracker"
    ]
+  ],
+  "ers-cost-reference.json": [
+   "ers-cost-reference",
+   [
+    "ers_cost_reference"
+   ]
   ]
  },
  "globs": {
@@ -393,6 +399,7 @@
   "source-candidates.json",
   "coverage-gaps.json",
   "premium-tracker.json",
+  "ers-cost-reference.json",
   "series-lifecycle.json",
   "instrument-identity.json",
   "us-cash-bids/manifest.json",

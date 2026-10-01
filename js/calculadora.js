@@ -32,6 +32,9 @@
     costs: ['Costes', 'Costs', 'Coûts', 'Costi'],
     costsHint: ['por unidad de superficie; lo que dejes en blanco cuenta como 0', 'per area unit; anything left blank counts as 0', 'par unité de surface ; ce qui reste vide compte pour 0', 'per unità di superficie; ciò che lasci vuoto vale 0'],
     c_fert: ['Fertilizantes', 'Fertiliser', 'Engrais', 'Fertilizzanti'], c_seed: ['Semilla', 'Seed', 'Semences', 'Sementi'], c_prot: ['Fitosanitarios', 'Crop protection', 'Produits phytosanitaires', 'Fitosanitari'],
+    ersLoad: ['Cargar referencia USDA ERS ({0}, EE. UU.)', 'Load USDA ERS reference ({0}, U.S.)', 'Charger la référence USDA ERS ({0}, É.-U.)', 'Carica il riferimento USDA ERS ({0}, USA)'],
+    ersNote: ['Media nacional de EE. UU. por acre sembrado, en dólares: rellena las partidas, pasa el caso a USD y acres y, si el rendimiento está vacío, pone el de ERS ({0} bu/acre). Incluye costes imputados (coste de oportunidad de la tierra y del trabajo no remunerado: {1} $/acre), que no son desembolsos. Es una referencia, no tu explotación: sustituye cada cifra por la tuya.', 'U.S. national average per planted acre, in dollars: fills the items, switches the case to USD and acres and, if yield is empty, sets the ERS yield ({0} bu/acre). Includes imputed costs (opportunity cost of land and unpaid labour: ${1}/acre), which are not cash outlays. A reference, not your farm: replace each figure with your own.', 'Moyenne nationale des É.-U. par acre planté, en dollars : remplit les postes, passe le cas en USD et acres et, si le rendement est vide, met celui de l’ERS ({0} bu/acre). Inclut des coûts imputés (coût d’opportunité de la terre et du travail non rémunéré : {1} $/acre), qui ne sont pas des décaissements. Une référence, pas votre exploitation : remplacez chaque chiffre par le vôtre.', 'Media nazionale USA per acro seminato, in dollari: compila le voci, passa il caso a USD e acri e, se la resa è vuota, imposta quella ERS ({0} bu/acro). Include costi imputati (costo opportunità di terra e lavoro non retribuito: {1} $/acro), che non sono esborsi. Un riferimento, non la tua azienda: sostituisci ogni cifra con la tua.'],
+    ersSrc: ['Fuente: USDA ERS, Commodity Costs and Returns', 'Source: USDA ERS, Commodity Costs and Returns', 'Source : USDA ERS, Commodity Costs and Returns', 'Fonte: USDA ERS, Commodity Costs and Returns'],
     c_feed: ['Pienso / alimentación comprada', 'Feed / purchased feed', 'Aliments achetés', 'Mangimi acquistati'], c_energy: ['Energía y gasóleo', 'Energy and diesel', 'Énergie et gazole', 'Energia e gasolio'], c_mach: ['Maquinaria', 'Machinery', 'Machines', 'Macchinari'],
     c_labour: ['Mano de obra', 'Labour', 'Main-d’œuvre', 'Manodopera'], c_rent: ['Alquiler de tierra', 'Land rent', 'Fermage', 'Affitto terreno'], c_other: ['Otros costes', 'Other costs', 'Autres coûts', 'Altri costi'],
     results: ['Resultados', 'Results', 'Résultats', 'Risultati'],
@@ -190,7 +193,7 @@
     if (c.pSrc === 'manual') h += '<div class="cc-grid">' + field('cc-p', t('price') + ' (' + CURS[c.cur] + ' ' + (c.pUnit === 't' ? t('pt') : t('pbu')) + ')', '<div class="cc-row">' + inputHtml('cc-p', c.p, '0') + seg('pUnit', [['t', t('pt')]].concat(kgBu ? [['bu', t('pbu')]] : []), kgBu ? c.pUnit : 't') + '</div>') + '</div>';
     else h += '<div id="cc-ref" class="pt-skel">' + esc(t('loading')) + '</div>';
     h += '</fieldset>';
-    h += '<fieldset class="cc-fs"><legend>' + esc(t('costs')) + ' (' + esc(CURS[c.cur]) + '/' + esc(au) + ')</legend><p class="pt-src" style="margin:0 0 8px">' + esc(t('costsHint')) + '</p><div class="cc-grid">' + COSTS.map(function (k) { return field('cc-c-' + k, t('c_' + k), inputHtml('cc-c-' + k, c.costs[k], '0')); }).join('') + '</div></fieldset>';
+    h += '<fieldset class="cc-fs"><legend>' + esc(t('costs')) + ' (' + esc(CURS[c.cur]) + '/' + esc(au) + ')</legend><p class="pt-src" style="margin:0 0 8px">' + esc(t('costsHint')) + '</p><div id="cc-ers"></div><div class="cc-grid">' + COSTS.map(function (k) { return field('cc-c-' + k, t('c_' + k), inputHtml('cc-c-' + k, c.costs[k], '0')); }).join('') + '</div></fieldset>';
     h += '<p class="pt-src">' + esc(t('notInc')) + '</p>';
     h += '<div class="pt-bar-ctl"><label style="font-size:13px"><input type="checkbox" id="cc-remember"' + (S.remember ? ' checked' : '') + '> ' + esc(t('remember')) + '</label>' + (S.remember ? '<button type="button" class="pt-chip" data-forget="1">' + esc(t('forget')) + '</button>' : '') + '</div>';
     return h;
@@ -252,9 +255,33 @@
       sec('cc-sens-sec', t('sens'), t('sensHint'), '<div id="cc-sens">' + sensHtml() + '</div>') +
       sec('cc-cmp-sec', t('compare'), '', '<div id="cc-cmp">' + compareHtml() + '</div>') + '</div>';
     if (C().pSrc === 'dehesa') drawRef();
+    drawErs();
   }
   function update() { var r = document.getElementById('cc-results'); if (r) r.innerHTML = resultsHtml(); var s = document.getElementById('cc-sens'); if (s) s.innerHTML = sensHtml(); var c = document.getElementById('cc-cmp'); if (c) c.innerHTML = compareHtml(); save(); }
 
+  var ERSREF = null;
+  function loadErs() {
+    if (ERSREF) return ERSREF;
+    return ERSREF = fetch((window.DehesaShared && window.DehesaShared.sitePath ? window.DehesaShared.sitePath('data/ers-cost-reference.json') : 'data/ers-cost-reference.json')).then(function (r) { if (!r.ok) throw new Error('ers'); return r.json(); }).catch(function (e) { ERSREF = null; throw e; });
+  }
+  function drawErs() {
+    var c = C(), el = document.getElementById('cc-ers'); if (!el) return;
+    loadErs().then(function (d) {
+      el = document.getElementById('cc-ers'); var e = d.crops && d.crops[c.crop]; if (!el || C() !== c || !e) return;
+      el.innerHTML = '<div class="pt-bar-ctl"><button type="button" class="pt-chip" data-ers="1">' + esc(tf('ersLoad', e.year)) + '</button></div><p class="pt-src" style="margin:4px 0 8px">' + esc(tf('ersNote', nf(e.yieldBuPerAcre, 0), nf(e.imputed, 0))) + ' ' + esc(t('ersSrc')) + '.</p>';
+    }, function () { /* sin referencia: la calculadora funciona igual */ });
+  }
+  function applyErs() {
+    var c = C();
+    loadErs().then(function (d) {
+      var e = d.crops && d.crops[c.crop]; if (!e || C() !== c) return;
+      c.cur = 'USD'; c.areaU = 'ac';
+      COSTS.forEach(function (k) { c.costs[k] = e.costs[k] ? String(e.costs[k]) : ''; });
+      if (!num(c.y) && bushelKg(c.crop)) { c.yU = 'bu_ac'; c.y = String(e.yieldBuPerAcre); }
+      if (c.pSrc === 'dehesa') { c.pSrc = 'manual'; c.inst = ''; }
+      save(); shell();
+    });
+  }
   function drawRef() {
     var c = C(), el = document.getElementById('cc-ref'); if (!el) return;
     loadRef(c.crop).then(function (obs) {
@@ -290,11 +317,12 @@
     }
   }
   function onClick(e) {
-    var el = e.target; while (el && el !== document && !(el.getAttribute && (el.getAttribute('data-seg') || el.getAttribute('data-case') || el.getAttribute('data-copy') || el.getAttribute('data-forget')))) el = el.parentNode;
+    var el = e.target; while (el && el !== document && !(el.getAttribute && (el.getAttribute('data-seg') || el.getAttribute('data-case') || el.getAttribute('data-copy') || el.getAttribute('data-forget') || el.getAttribute('data-ers')))) el = el.parentNode;
     if (!el || el === document) return;
     var c = C(), seg2 = el.getAttribute('data-seg'), v = el.getAttribute('data-v');
     if (el.getAttribute('data-case')) { S.cur = el.getAttribute('data-case'); save(); shell(); return; }
     if (el.getAttribute('data-copy')) { var to = el.getAttribute('data-copy'); S.cases[to] = JSON.parse(JSON.stringify(c)); S.cur = to; save(); shell(); return; }
+    if (el.getAttribute('data-ers')) { applyErs(); return; }
     if (el.getAttribute('data-forget')) { wipe(); S.remember = false; shell(); return; }
     if (seg2 === 'areaU' || seg2 === 'yU' || seg2 === 'pUnit') { if (c[seg2] !== v) { convertCase(c, seg2, v); save(); shell(); } return; }
     if (seg2 === 'pSrc') { c.pSrc = v; if (v === 'manual') c.inst = ''; save(); shell(); return; }

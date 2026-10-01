@@ -1,0 +1,158 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-01T15:33:18Z",
+ "sourceIds": [
+  "usda_ers"
+ ],
+ "doc": "USDA ERS Commodity Costs and Returns, U.S. total, ultimo ano publicado. Cada partida es la suma de lineas ERS (ver map). La partida rent es el coste de oportunidad de la tierra y parte de labour es mano de obra no remunerada: costes imputados, no desembolsos. Media nacional: no representa ninguna explotacion concreta.",
+ "map": {
+  "fert": [
+   "Fertilizer"
+  ],
+  "seed": [
+   "Seed"
+  ],
+  "prot": [
+   "Chemicals"
+  ],
+  "energy": [
+   "Fuel, lube, and electricity"
+  ],
+  "mach": [
+   "Repairs",
+   "Capital recovery of machinery and equipment"
+  ],
+  "labour": [
+   "Hired labor",
+   "Opportunity cost of unpaid labor"
+  ],
+  "rent": [
+   "Opportunity cost of land"
+  ],
+  "other": [
+   "Custom services",
+   "Purchased irrigation water",
+   "Interest on operating capital",
+   "Interest on operating inputs",
+   "Taxes and insurance",
+   "General farm overhead",
+   "Other variable expenses"
+  ]
+ },
+ "imputedLines": [
+  "Opportunity cost of land",
+  "Opportunity cost of unpaid labor"
+ ],
+ "crops": {
+  "maiz": {
+   "ersCommodity": "corn",
+   "year": 2025,
+   "region": "U.S. total",
+   "unit": "USD per planted acre",
+   "costs": {
+    "fert": 158.88,
+    "seed": 111.11,
+    "prot": 48.86,
+    "energy": 26.71,
+    "mach": 220.64,
+    "labour": 36.03,
+    "rent": 190.3,
+    "other": 92.89
+   },
+   "totalCostsListed": 885.43,
+   "operatingCosts": 440.11,
+   "yieldBuPerAcre": 198,
+   "priceUsdPerBu": 3.93,
+   "enterpriseAcres": 296,
+   "imputed": 221.67
+  },
+  "soja": {
+   "ersCommodity": "soybeans",
+   "year": 2025,
+   "region": "U.S. total",
+   "unit": "USD per planted acre",
+   "costs": {
+    "fert": 54.7,
+    "seed": 61.94,
+    "prot": 48.57,
+    "energy": 16.86,
+    "mach": 212.52,
+    "labour": 25.98,
+    "rent": 184.23,
+    "other": 50.33
+   },
+   "totalCostsListed": 655.13,
+   "operatingCosts": 244.8,
+   "yieldBuPerAcre": 58,
+   "priceUsdPerBu": 9.76,
+   "enterpriseAcres": 374,
+   "imputed": 200.81
+  },
+  "trigo": {
+   "ersCommodity": "wheat",
+   "year": 2025,
+   "region": "U.S. total",
+   "unit": "USD per planted acre",
+   "costs": {
+    "fert": 58.76,
+    "seed": 16.32,
+    "prot": 16.63,
+    "energy": 12.2,
+    "mach": 164.48,
+    "labour": 20.14,
+    "rent": 68.11,
+    "other": 39.77
+   },
+   "totalCostsListed": 396.41,
+   "operatingCosts": 155.52,
+   "yieldBuPerAcre": 52,
+   "priceUsdPerBu": 5.05,
+   "enterpriseAcres": 451,
+   "imputed": 85.18
+  },
+  "cebada": {
+   "ersCommodity": "barley",
+   "year": 2025,
+   "region": "U.S. total",
+   "unit": "USD per planted acre",
+   "costs": {
+    "fert": 68.13,
+    "seed": 24.2,
+    "prot": 24.87,
+    "energy": 20.46,
+    "mach": 185.45,
+    "labour": 26.57,
+    "rent": 92.15,
+    "other": 56.14
+   },
+   "totalCostsListed": 497.97,
+   "operatingCosts": 189.34,
+   "yieldBuPerAcre": 68,
+   "priceUsdPerBu": 5.28,
+   "enterpriseAcres": 282,
+   "imputed": 113.09
+  },
+  "avena": {
+   "ersCommodity": "oats",
+   "year": 2025,
+   "region": "U.S. total",
+   "unit": "USD per planted acre",
+   "costs": {
+    "fert": 64.56,
+    "seed": 25.26,
+    "prot": 5.85,
+    "energy": 21.4,
+    "mach": 174.49,
+    "labour": 35.15,
+    "rent": 124.3,
+    "other": 41.92
+   },
+   "totalCostsListed": 492.93,
+   "operatingCosts": 169.26,
+   "yieldBuPerAcre": 64,
+   "priceUsdPerBu": 3.34,
+   "enterpriseAcres": 76,
+   "imputed": 156.89
+  }
+ }
+}

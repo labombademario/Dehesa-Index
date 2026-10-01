@@ -1,0 +1,48 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "ERS cost reference for the calculator",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "sourceIds",
+  "doc",
+  "map",
+  "crops"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string"
+  },
+  "sourceIds": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "minItems": 1
+  },
+  "doc": {
+   "type": "string",
+   "minLength": 20
+  },
+  "map": {
+   "type": "object"
+  },
+  "imputedLines": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "crops": {
+   "type": "object",
+   "minProperties": 1
+  }
+ }
+}
