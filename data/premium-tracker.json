@@ -1,0 +1,117 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-01T15:11:38Z",
+ "sourceIds": [
+  "usda_ams_mars"
+ ],
+ "method": "Mediana de ofertas organicas (AMS 3802, tipo Bid, elevador) menos mediana de ofertas convencionales (AMS cash bids, mismo producto, clase, grado y punto de entrega) en la misma fecha.",
+ "caveats": [
+  "La cobertura geografica no es la misma: 3802 publica ofertas nacionales o de regiones amplias y los cash bids son estatales; el mes de entrega puede diferir.",
+  "Es una comparacion indicativa de dos informes distintos; no es un precio organico oficial ni un diferencial contractual.",
+  "No se calcula si no hay al menos 3 series organicas y 5 convencionales comparables en la misma fecha."
+ ],
+ "cells": [
+  {
+   "id": "corn-yellow",
+   "commodity": "corn",
+   "class": "Yellow",
+   "grade": "US #2",
+   "deliveryPoint": "Country Elevators",
+   "unit": "bu",
+   "saleType": "Bid",
+   "organicReportId": 3802,
+   "organicSeries": 65,
+   "conventionalSeries": 84,
+   "date": "2026-09-25",
+   "organic": {
+    "median": 11.25,
+    "min": 9.75,
+    "max": 13.5,
+    "n": 6
+   },
+   "conventional": {
+    "median": 4.93,
+    "min": 4.42,
+    "max": 6.0233,
+    "n": 84
+   },
+   "premium": 6.32,
+   "premiumPct": 128.2,
+   "reason": null
+  },
+  {
+   "id": "soybeans",
+   "commodity": "soybeans",
+   "class": null,
+   "grade": "US #1",
+   "deliveryPoint": "Country Elevators",
+   "unit": "bu",
+   "saleType": "Bid",
+   "organicReportId": 3802,
+   "organicSeries": 50,
+   "conventionalSeries": 80,
+   "date": "2026-09-25",
+   "organic": {
+    "median": 22.0,
+    "min": 22,
+    "max": 25.1,
+    "n": 6
+   },
+   "conventional": {
+    "median": 12.6662,
+    "min": 11.94,
+    "max": 13.19,
+    "n": 80
+   },
+   "premium": 9.3338,
+   "premiumPct": 73.7,
+   "reason": null
+  },
+  {
+   "id": "wheat-hrw",
+   "commodity": "wheat",
+   "class": "Hard Red Winter",
+   "grade": "US #1",
+   "deliveryPoint": "Country Elevators",
+   "unit": "bu",
+   "saleType": "Bid",
+   "organicReportId": 3802,
+   "organicSeries": 22,
+   "conventionalSeries": 57,
+   "date": "2026-09-11",
+   "organic": {
+    "median": 14.5,
+    "min": 14.5,
+    "max": 15.5,
+    "n": 6
+   },
+   "conventional": {
+    "median": 6.8975,
+    "min": 5.919,
+    "max": 7.81,
+    "n": 57
+   },
+   "premium": 7.6025,
+   "premiumPct": 110.2,
+   "reason": null
+  },
+  {
+   "id": "wheat-srw",
+   "commodity": "wheat",
+   "class": "Soft Red Winter",
+   "grade": "US #1",
+   "deliveryPoint": "Country Elevators",
+   "unit": "bu",
+   "saleType": "Bid",
+   "organicReportId": 3802,
+   "organicSeries": 0,
+   "conventionalSeries": 0,
+   "date": null,
+   "organic": null,
+   "conventional": null,
+   "premium": null,
+   "premiumPct": null,
+   "reason": "sin series organicas con esa especificacion"
+  }
+ ]
+}

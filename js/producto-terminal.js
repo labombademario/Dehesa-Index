@@ -29,6 +29,12 @@
     localMk: ['{0} mercados · último dato {1}', '{0} markets · latest {1}', '{0} marchés · dernière donnée {1}', '{0} mercati · ultimo dato {1}'],
     localCta: ['Explorar precios locales →', 'Explore local cash bids →', 'Explorer les prix locaux →', 'Esplora i prezzi locali →'],
     localNone: ['Sin informes locales disponibles todavía.', 'No local reports available yet.', 'Aucun rapport local disponible pour le moment.', 'Nessun rapporto locale disponibile al momento.'],
+    prem: ['Premium orgánico frente a convencional (EE. UU.)', 'Organic premium vs conventional (US)', 'Prime bio par rapport au conventionnel (É.-U.)', 'Premio biologico rispetto al convenzionale (USA)'],
+    premHint: ['USDA AMS, misma especificación', 'USDA AMS, same specification', 'USDA AMS, même spécification', 'USDA AMS, stessa specifica'],
+    premIntro: ['Mediana de ofertas orgánicas (USDA AMS 3802) frente a mediana de ofertas convencionales con la misma especificación (producto, clase, grado y elevador) en la misma fecha. Es indicativo: son dos informes distintos y su cobertura regional no coincide.', 'Median organic bids (USDA AMS 3802) versus median conventional bids with the same specification (product, class, grade and elevator) on the same date. Indicative only: two different reports whose regional coverage does not match.', 'Médiane des offres bio (USDA AMS 3802) face à la médiane des offres conventionnelles de même spécification (produit, classe, qualité et silo) à la même date. Indicatif : deux rapports distincts dont la couverture régionale diffère.', 'Mediana delle offerte biologiche (USDA AMS 3802) rispetto alla mediana delle offerte convenzionali con la stessa specifica (prodotto, classe, grado ed elevatore) nella stessa data. Indicativo: due rapporti diversi con copertura regionale non coincidente.'],
+    premOrg: ['Orgánico', 'Organic', 'Bio', 'Biologico'], premConv: ['Convencional', 'Conventional', 'Conventionnel', 'Convenzionale'], premDiff: ['Diferencial', 'Premium', 'Écart', 'Differenziale'],
+    premN: ['{0} series orgánicas · {1} convencionales · dato de {2}', '{0} organic series · {1} conventional · data for {2}', '{0} séries bio · {1} conventionnelles · donnée du {2}', '{0} serie biologiche · {1} convenzionali · dato del {2}'],
+    premNone: ['Sin comparación posible hoy: no hay series suficientes con la misma especificación.', 'No comparison possible today: not enough series with the same specification.', 'Comparaison impossible aujourd’hui : pas assez de séries de même spécification.', 'Nessun confronto possibile oggi: non ci sono abbastanza serie con la stessa specifica.'],
     follow: ['☆ Seguir producto', '☆ Follow product', '☆ Suivre le produit', '☆ Segui prodotto'],
     following: ['★ Siguiendo', '★ Following', '★ Suivi', '★ Segui già'],
     followHint: ['Crea avisos en este navegador (sin cuenta): dato nuevo y cambio ≥ 5 %. Puedes ajustarlos aquí o en Mi seguimiento.', 'Creates alerts in this browser (no account): new data point and change ≥ 5 %. Adjust them here or in My watchlist.', 'Crée des alertes dans ce navigateur (sans compte) : nouvelle donnée et variation ≥ 5 %. Ajustez-les ici ou dans Mon suivi.', 'Crea avvisi in questo browser (senza account): nuovo dato e variazione ≥ 5 %. Modificali qui o in Il mio seguito.'],
@@ -601,9 +607,22 @@
     }).join('') + '</div><p style="margin:10px 0 0"><a class="pt-chip on" href="precios-locales.html?c=' + c + '">' + esc(t('localCta')) + '</a></p><p class="pt-src">USDA AMS Market News · <a href="metodologia.html#precios-locales">' + esc(t('methLink')) + ' →</a></p>';
   }
 
+  var PRMAP = { trigo: ['wheat-hrw', 'wheat-srw'], maiz: ['corn-yellow'], soja: ['soybeans'] };
+  function blkPrem() { return J('premium-tracker.json'); }
+  function htmlPrem(d) {
+    var ids = PRMAP[CTX.pid] || [], cells = ((d && d.cells) || []).filter(function (c) { return ids.indexOf(c.id) >= 0 && c.premium != null; });
+    if (!cells.length) return '<div class="pt-note">' + esc(t('premNone')) + '</div>';
+    function usd(v) { return '$' + Number(v).toFixed(2); }
+    return '<p class="pt-sub">' + esc(t('premIntro')) + '</p><div class="pt-cards">' + cells.map(function (c) {
+      var lab = [c.class, c.grade].filter(Boolean).join(' · ');
+      return '<div class="pt-card"><div class="pt-card-h"><strong>' + esc(lab) + '</strong></div><div class="pt-sub">' + esc(t('premOrg')) + ' ' + usd(c.organic.median) + '/bu · ' + esc(t('premConv')) + ' ' + usd(c.conventional.median) + '/bu</div><div><strong>' + esc(t('premDiff')) + ' ' + (c.premium >= 0 ? '+' : '') + usd(c.premium) + '/bu (' + (c.premiumPct >= 0 ? '+' : '') + String(c.premiumPct).replace('.', ',') + ' %)</strong></div><div class="pt-sub">' + esc(tf('premN', c.organic.n, c.conventional.n, dstr(c.date))) + '</div></div>';
+    }).join('') + '</div><p class="pt-src">USDA AMS Market News · <a href="metodologia.html#precios-locales">' + esc(t('methLink')) + ' →</a></p>';
+  }
+
   /* ---------- armazon de bloques y carga diferida ---------- */
   function blocks() {
     var loc = CBMAP[CTX.pid] ? [{ id: 'local', title: t('local'), hint: t('localHint'), load: blkLocal, html: htmlLocal }] : [];
+    var prm = PRMAP[CTX.pid] ? [{ id: 'prem', title: t('prem'), hint: t('premHint'), load: blkPrem, html: htmlPrem }] : [];
     var all = [
       { id: 'changed', title: tf('changed', nm(CTX.pid)), hint: t('changedHint'), load: blkChanged, html: htmlChanged },
       { id: 'compare', title: t('compare'), hint: t('compareHint'), load: loadCompare, html: htmlCompare },
@@ -616,7 +635,7 @@
       { id: 'drivers', title: t('drivers'), hint: t('driversHint'), load: loadDrivers, html: htmlDrivers },
       { id: 'news', title: t('news'), hint: t('newsHint'), load: blkNews, html: htmlNews }
     ];
-    return all.slice(0, 1).concat(loc, all.slice(1));
+    return all.slice(0, 1).concat(loc, prm, all.slice(1));
   }
   function secHtml(b) { return '<section class="pt-sec" id="pt-' + b.id + '" data-blk="' + b.id + '" aria-labelledby="pt-' + b.id + '-h"><div class="di-movers-head-row"><h2 id="pt-' + b.id + '-h">' + esc(b.title) + '</h2><span class="di-movers-hint">' + esc(b.hint) + '</span></div><div class="pt-body"><div class="pt-skel">' + esc(t('loading')) + '</div></div></section>'; }
   function paint(b) {

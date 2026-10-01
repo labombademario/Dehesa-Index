@@ -951,3 +951,27 @@ def data_anomalies(doc, errs, warns, stats):
             for k in ("evidence", "verifiedAt", "sourceUrl"):
                 if not a.get(k): errs.append("%s: KNOWN_VERIFIED_ANOMALY sin %s" % (a["series"], k))
         elif not a.get("hypothesis") or not a.get("nextAction"): errs.append("%s: UNEXPLAINED_ANOMALY sin hipotesis y accion siguiente" % a["series"])
+
+
+def premium_tracker(doc, errs, warns, stats):
+    """Premium Tracker: el diferencial debe recalcularse de las medianas, respetar los minimos de muestra y no existir sin las dos partes."""
+    MIN_ORG, MIN_CONV = 3, 5
+    ids = set()
+    for c in doc["cells"]:
+        if c["id"] in ids: errs.append("premium: celda duplicada %s" % c["id"])
+        ids.add(c["id"])
+        o, v = c.get("organic"), c.get("conventional")
+        has = [x is not None for x in (o, v, c.get("premium"), c.get("premiumPct"))]
+        if any(has) and not all(has): errs.append("premium %s: diferencial a medias (organico/convencional/premium/pct)" % c["id"]); continue
+        if not any(has):
+            if not c.get("reason"): errs.append("premium %s: celda vacia sin motivo" % c["id"])
+            continue
+        if c.get("reason"): errs.append("premium %s: tiene valor y tambien motivo de ausencia" % c["id"])
+        if o["n"] < MIN_ORG or v["n"] < MIN_CONV: errs.append("premium %s: muestra por debajo del minimo (%d org, %d conv)" % (c["id"], o["n"], v["n"]))
+        if o["n"] != c["organicSeries"] and o["n"] > c["organicSeries"]: errs.append("premium %s: n organico mayor que las series" % c["id"])
+        if abs((o["median"] - v["median"]) - c["premium"]) > 0.0002: errs.append("premium %s: premium no cuadra con las medianas" % c["id"])
+        if v["median"] <= 0 or abs((o["median"] / v["median"] - 1) * 100 - c["premiumPct"]) > 0.06: errs.append("premium %s: porcentaje no cuadra" % c["id"])
+        for x in (o, v):
+            if not (x["min"] - 1e-9 <= x["median"] <= x["max"] + 1e-9): errs.append("premium %s: mediana fuera de rango" % c["id"])
+        if c["unit"] != "bu": errs.append("premium %s: unidad no comparable %s" % (c["id"], c["unit"]))
+    stats["cells"] = len(doc["cells"])

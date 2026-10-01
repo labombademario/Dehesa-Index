@@ -1344,6 +1344,7 @@
   "product-metadata.json",
   "source-candidates.json",
   "coverage-gaps.json",
+  "premium-tracker.json",
   "series-lifecycle.json",
   "instrument-identity.json"
  ],

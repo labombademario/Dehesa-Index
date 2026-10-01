@@ -1,0 +1,38 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Premium Tracker (organico vs convencional)",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "sourceIds", "method", "caveats", "cells"],
+ "properties": {
+  "schemaVersion": {"type": ["integer", "string"]},
+  "generatedAt": {"type": "string"},
+  "sourceIds": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+  "method": {"type": "string", "minLength": 20},
+  "caveats": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+  "cells": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["id", "commodity", "grade", "deliveryPoint", "unit", "saleType", "organicReportId", "organicSeries", "conventionalSeries", "date", "organic", "conventional", "premium", "premiumPct", "reason"],
+    "properties": {
+     "id": {"type": "string"},
+     "commodity": {"type": "string"},
+     "class": {"type": ["string", "null"]},
+     "grade": {"type": "string"},
+     "deliveryPoint": {"type": "string"},
+     "unit": {"type": "string"},
+     "saleType": {"type": "string"},
+     "organicReportId": {"type": "integer"},
+     "organicSeries": {"type": "integer", "minimum": 0},
+     "conventionalSeries": {"type": "integer", "minimum": 0},
+     "date": {"type": ["string", "null"]},
+     "organic": {"type": ["object", "null"]},
+     "conventional": {"type": ["object", "null"]},
+     "premium": {"type": ["number", "null"]},
+     "premiumPct": {"type": ["number", "null"]},
+     "reason": {"type": ["string", "null"]}
+    }
+   }
+  }
+ }
+}
