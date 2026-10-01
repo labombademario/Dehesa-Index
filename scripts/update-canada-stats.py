@@ -241,10 +241,51 @@ def trade():
     for k in OUT:
         if k.startswith("ca-trade-bal-"): OUT[k]["changePct"] = None
     log("comercio", n)
+# ───────── 8. Socios comerciales ─────────
+def load_filtered(pid, pred):
+    """Descarga el CSV completo pero solo guarda las filas que cumplen pred (tablas enormes)."""
+    last = None
+    for i in range(2):
+        try:
+            info = json.loads(urllib.request.urlopen(urllib.request.Request(WDS + "getFullTableDownloadCSV/%d/en" % pid, headers=UA), timeout=60).read())
+            raw = fetch_resume(info["object"]); log("descargada", pid, len(raw) // 1024, "KB")
+            z = zipfile.ZipFile(io.BytesIO(raw)); name = [n for n in z.namelist() if n.endswith(".csv") and "MetaData" not in n][0]
+            rows = [r for r in csv.DictReader(io.TextIOWrapper(z.open(name), encoding="utf-8-sig")) if pred(r)]
+            log("tabla", pid, len(rows), "filas filtradas"); return rows
+        except Exception as e: last = e; time.sleep(5)
+    raise RuntimeError("%s: %s" % (pid, last))
+def partners():
+    n = 0
+    # a) Total mercancías por socio, mensual (12-10-0011)
+    rows = [r for r in load(12100011) if r["GEO"] == "Canada" and r["Basis"] == "Customs" and r["Seasonal adjustment"] == "Unadjusted" and r["Trade"] in ("Import", "Export")]
+    pk = [k for k in rows[0] if k.startswith("Principal trading")][0]
+    by = {}
+    for r in rows:
+        v = num(r)
+        if v is not None: by.setdefault((r[pk], r["Trade"]), {})[r["REF_DATE"]] = v / 1e6
+    skip = ("All countries", "European Union")
+    for tr, tag, word in (("Export", "exp", "Exports to"), ("Import", "imp", "Imports from")):
+        cand = {k[0]: sorted(d.items())[-12:] for k, d in by.items() if k[1] == tr and k[0] not in skip}
+        top = sorted(cand, key=lambda k: -sum(v for _, v in cand[k]))[:12] + ["European Union"]
+        for c in top:
+            d = by.get((c, tr))
+            if d: put("ca-tp-%s-%s" % (tag, slug(c)), "partners", "%s %s: all goods (monthly)" % (word, c), "CAD million", "monthly", sorted(d.items()), "StatCan 12-10-0011"); n += 1
+    # b) Agro-alimentario por socio, anual (12-10-0173)
+    rows = load_filtered(12100173, lambda r: r["GEO"] == "Canada" and r["Trade"] in ("Export", "Import") and r[[k for k in r if k.startswith("North American Product")][0]].startswith("Farm, fishing and intermediate"))
+    pk = "Trading partner"; by = {}
+    for r in rows:
+        v = num(r)
+        if v is not None: by.setdefault((r[pk], r["Trade"]), {})[r["REF_DATE"]] = v / 1e6
+    for tr, tag, word in (("Export", "exp", "Exports to"), ("Import", "imp", "Imports from")):
+        cand = {k[0]: sorted(d.items()) for k, d in by.items() if k[1] == tr and k[0] != "All countries" and d}
+        top = sorted(cand, key=lambda k: -(cand[k][-1][1] if cand[k][-1][0] >= str(datetime.date.today().year - 2) else 0))[:12]
+        for c in top:
+            put("ca-tpa-%s-%s" % (tag, slug(c)), "partners", "%s %s: farm, fishing and food (annual)" % (word, c), "CAD million", "annual", cand[c], "StatCan 12-10-0173"); n += 1
+    log("socios", n)
 def main():
     import os
     only = [x for x in os.environ.get("ONLY", "").replace(",", " ").split() if x]
-    allf = (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, trade)
+    allf = (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, trade, partners)
     if only:
         try:
             for x in json.loads((ROOT / "data" / "canada-stats.json").read_text())["countries"]["CA"]["series"]: OUT[x["id"]] = x
