@@ -108,7 +108,8 @@
     tools: { label: { es: 'Herramientas', en: 'Tools', fr: 'Outils', it: 'Strumenti' }, items: [
       { file: 'producto.html', query: '?p=trigo', label: { es: 'Ficha de producto', en: 'Product page', fr: 'Fiche produit', it: 'Scheda prodotto' } },
       { file: 'mapa.html', label: { es: 'Mapa agrícola', en: 'Farm map', fr: 'Carte agricole', it: 'Mappa agricola' } },
-      { file: 'clima.html', label: { es: 'Clima agrícola', en: 'Farm weather', fr: 'Météo agricole', it: 'Meteo agricolo' } }
+      { file: 'clima.html', label: { es: 'Clima agrícola', en: 'Farm weather', fr: 'Météo agricole', it: 'Meteo agricolo' } },
+      { file: 'status.html', label: { es: 'Estado de los datos', en: 'Data status', fr: 'État des données', it: 'Stato dei dati' } }
     ] }
   };
   function currentFile() { var f = window.location.pathname.split('/').pop(); return f || 'index.html'; }

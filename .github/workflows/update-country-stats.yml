@@ -19,6 +19,9 @@ jobs:
           python-version: '3.12'
       - name: Update country statistics
         run: python scripts/update-country-stats.py | tee data/country-stats-log.txt
+      - name: Validar datos (esquema y tests) antes de commit
+        run: |
+          python3 scripts/validate-data.py --no-report --files data/country-stats.json || { echo '::error::datos invalidos: se descarta el cambio'; git checkout -- data/country-stats.json; }
       - name: Commit
         run: |
           git config user.name "Dehesa Index Bot"

@@ -48,6 +48,7 @@ def main():
             stack = {k: v for k, v in stack.items() if k < ind}; stack[ind] = desc
             no = r.get("htsno") or ""
             if len(no) == 4: heading = no; names[no] = desc
+            elif re.match(r"^\d{4}", no) and not heading.startswith(no[:4]): heading = no[:4]; names.setdefault(heading, desc)  # partida sin fila propia de 4 digitos
             g = (r.get("general") or "").strip()
             if not g or len(re.sub(r"\D", "", no)) < 8: continue
             # unidades: del propio registro o del primer sufijo estadistico hijo

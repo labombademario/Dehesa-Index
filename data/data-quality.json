@@ -1,0 +1,284 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-01T03:14:14Z",
+ "summary": {
+  "files": 17,
+  "errors": 0,
+  "warnings": 3
+ },
+ "files": [
+  {
+   "file": "country-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 133,
+    "points": 11262,
+    "lines": 0
+   },
+   "generatedAt": "2026-09-30T18:27:45Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "spain-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 219,
+    "points": 58767,
+    "lines": 0
+   },
+   "generatedAt": "2026-09-30T19:00:57Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "france-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 47,
+    "points": 29259,
+    "lines": 0
+   },
+   "generatedAt": "2026-09-30T19:36:29Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "germany-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 265,
+    "points": 25240,
+    "lines": 0
+   },
+   "generatedAt": "2026-09-30T20:09:44Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "belgium-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 123,
+    "points": 20813,
+    "lines": 0
+   },
+   "generatedAt": "2026-09-30T20:36:07Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "austria-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01)"
+   ],
+   "stats": {
+    "series": 244,
+    "points": 9053,
+    "lines": 0
+   },
+   "generatedAt": "2026-09-30T23:24:33Z",
+   "nWarnings": 1,
+   "nErrors": 0
+  },
+  {
+   "file": "portugal-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 547,
+    "points": 24356,
+    "lines": 0
+   },
+   "generatedAt": "2026-09-30T22:43:53Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "portugal-eurostat-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 223,
+    "points": 10562,
+    "lines": 0
+   },
+   "generatedAt": "2026-09-30T22:37:22Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "canada-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "CA/ca-trade-imp-wheat: salto 2.5 -> 2.8 en 1996-01 (mediana previa 0.1)",
+    "CA/ca-trade-imp-wheat: salto 5.3 -> 10.1 en 2002-12 (mediana previa 0.4)"
+   ],
+   "stats": {
+    "series": 276,
+    "points": 64476,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-01T01:46:41Z",
+   "nWarnings": 2,
+   "nErrors": 0
+  },
+  {
+   "file": "australia-trade-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "AU/au-imp-wheat: salto 0.004 -> 8.944 en 2003-01 (mediana previa 0.013)",
+    "AU/au-imp-wheat: salto 8.944 -> 9.325 en 2003-02 (mediana previa 0.013)",
+    "AU/au-imp-wheat: salto 9.325 -> 8.87 en 2003-03 (mediana previa 0.016)",
+    "AU/au-imp-wheat: salto 8.87 -> 17.755 en 2003-04 (mediana previa 0.019)",
+    "AU/au-imp-wheat: salto 0.013 -> 6.544 en 2003-06 (mediana previa 0.024)",
+    "AU/au-imp-wheat: salto 0.165 -> 42.413 en 2019-06 (mediana previa 0.091)",
+    "AU/au-imp-wheat: salto 42.413 -> 21.487 en 2019-07 (mediana previa 0.116)",
+    "AU/au-imp-wheat: salto 21.487 -> 21.632 en 2019-08 (mediana previa 0.117)",
+    "AU/au-imp-wheat: salto 21.632 -> 21.438 en 2019-09 (mediana previa 0.154)",
+    "AU/au-imp-wheat: salto 21.438 -> 20.285 en 2019-10 (mediana previa 0.165)",
+    "AU/au-imp-wheat: salto 20.285 -> 20.145 en 2019-11 (mediana previa 0.247)",
+    "AU/au-imp-maize: salto 0.002 -> 10.36 en 2003-01 (mediana previa 0.015)"
+   ],
+   "stats": {
+    "series": 57,
+    "points": 12271,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-01T01:41:52Z",
+   "nWarnings": 12,
+   "nErrors": 0
+  },
+  {
+   "file": "eu-trade-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 513,
+    "points": 116201,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-01T01:18:42Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "interest-rates-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 5,
+    "points": 1193,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-01T02:16:25Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "us-tariffs.json",
+   "schema": "tariffs",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 0,
+    "points": 0,
+    "lines": 2186
+   },
+   "generatedAt": "2026-10-01T01:53:11Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "tariffs-mx.json",
+   "schema": "tariffs",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 0,
+    "points": 0,
+    "lines": 1184
+   },
+   "generatedAt": "2026-10-01T03:06:35Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "tariffs-ca.json",
+   "schema": "tariffs",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 0,
+    "points": 0,
+    "lines": 1688
+   },
+   "generatedAt": "2026-10-01T03:06:36Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "tariffs-eu.json",
+   "schema": "tariffs",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 0,
+    "points": 0,
+    "lines": 2315
+   },
+   "generatedAt": "2026-10-01T03:06:30Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "country-macro.json",
+   "schema": "country-macro",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 0,
+    "points": 0,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-01T02:16:11Z",
+   "nWarnings": 0,
+   "nErrors": 0
+  }
+ ]
+}

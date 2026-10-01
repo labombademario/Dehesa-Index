@@ -17,6 +17,10 @@ jobs:
       - run: python3 scripts/update-eu-trade.py
         timeout-minutes: 20
         continue-on-error: true
+      - name: Validar datos (esquema y tests) antes de commit
+        if: always()
+        run: |
+          python3 scripts/validate-data.py --no-report --files data/eu-trade-stats.json || { echo '::error::datos invalidos: se descarta el cambio'; git checkout -- data/eu-trade-stats.json; }
       - if: always()
         run: |
           git config user.name "github-actions[bot]"

@@ -15,6 +15,9 @@ jobs:
       - uses: actions/checkout@v4
       - run: pip install openpyxl xlrd
       - run: python3 scripts/update-france.py
+      - name: Validar datos (esquema y tests) antes de commit
+        run: |
+          python3 scripts/validate-data.py --no-report --files data/france-stats.json || { echo '::error::datos invalidos: se descarta el cambio'; git checkout -- data/france-stats.json; }
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

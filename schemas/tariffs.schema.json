@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dehesa Index - tariff schedule file",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "release", "source", "headings", "chapters", "headingStats", "lines"],
+  "properties": {
+    "schemaVersion": {"type": ["integer", "string"]},
+    "generatedAt": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T"},
+    "release": {"type": "object", "required": ["name"]},
+    "source": {"type": "object", "required": ["name", "url"]},
+    "headings": {"type": "object", "minProperties": 10},
+    "chapters": {"type": "object", "minProperties": 10},
+    "headingStats": {"type": "object", "minProperties": 10},
+    "lines": {
+      "type": "array", "minItems": 800,
+      "items": {
+        "type": "object", "required": ["h", "c", "hd", "d", "g", "r"],
+        "properties": {
+          "h": {"type": "string", "pattern": "^[\\d.]{6,14}$"},
+          "c": {"type": "string", "pattern": "^\\d{2}$"},
+          "hd": {"type": "string", "pattern": "^\\d{4}$"},
+          "d": {"type": "string", "minLength": 1},
+          "g": {"type": "string"},
+          "r": {"type": "string", "enum": ["free", "adv", "spec", "comp", "other"]},
+          "a": {"type": ["number", "null"], "minimum": 0}
+        }
+      }
+    }
+  }
+}

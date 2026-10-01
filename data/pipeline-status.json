@@ -1,0 +1,1607 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-01T03:14:00Z",
+ "repo": "labombademario/Dehesa-Index",
+ "summary": {
+  "ok": 39,
+  "late": 0,
+  "error": 1,
+  "unknown": 0
+ },
+ "global": "error",
+ "pipelines": [
+  {
+   "workflow": "update-alberta-weekly.yml",
+   "name": "Dehesa Data — Alberta semanal (Weekly Market Review)",
+   "crons": [
+    "30 21 * * 5,6"
+   ],
+   "nextRun": "2026-10-02T21:30:00Z",
+   "files": [
+    {
+     "path": "data/snapshots"
+    },
+    {
+     "path": "data/latest.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/catalog.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.csv"
+    },
+    {
+     "path": "data/quality.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/intelligence.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/normalized.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/cross-market.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/dehesa-index.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/alerts.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/alberta-weekly.json",
+     "lastChange": "2026-09-30T17:31:10Z"
+    },
+    {
+     "path": "data/alberta-weekly-report.json",
+     "lastChange": "2026-09-30T17:31:10Z"
+    },
+    {
+     "path": "data/alberta-weekly-debug.txt"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T17:29:14Z",
+    "durationSec": 123,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36751716409"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 3,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 144.0
+  },
+  {
+   "workflow": "update-ams-auctions.yml",
+   "name": "Dehesa Data — USDA AMS subastas de ganado (MARS)",
+   "crons": [
+    "20 15 * * 6"
+   ],
+   "nextRun": "2026-10-03T15:20:00Z",
+   "files": [
+    {
+     "path": "data/ams"
+    },
+    {
+     "path": "data/search-index.json",
+     "lastChange": "2026-10-01T00:05:15Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T08:34:32Z",
+    "durationSec": 128,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36690554381"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-ams.yml",
+   "name": "Dehesa Data — USDA AMS Mercados (MARS)",
+   "crons": [
+    "45 23 * * 1-5",
+    "30 13 * * 6"
+   ],
+   "nextRun": "2026-10-01T23:45:00Z",
+   "files": [
+    {
+     "path": "data/ams"
+    },
+    {
+     "path": "data/search-index.json",
+     "lastChange": "2026-10-01T00:05:15Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "schedule",
+    "startedAt": "2026-09-30T23:50:38Z",
+    "durationSec": 472,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36793162577"
+   },
+   "recent": {
+    "runs": 9,
+    "success": 7,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-au-trade.yml",
+   "name": "Update Australia trade (ABS)",
+   "crons": [
+    "25 11 5 * *"
+   ],
+   "nextRun": "2026-10-05T11:25:00Z",
+   "files": [
+    {
+     "path": "data/australia-trade-stats.json",
+     "valid": "warning",
+     "series": 57,
+     "points": 12271,
+     "lines": 0,
+     "lastChange": "2026-10-01T01:41:52Z"
+    },
+    {
+     "path": "data/au-trade-products.json",
+     "lastChange": "2026-10-01T01:41:52Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-01T01:40:13Z",
+    "durationSec": 104,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36802199816"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-austria.yml",
+   "name": "Update Austria (Eurostat)",
+   "crons": [
+    "25 16 * * 2,5"
+   ],
+   "nextRun": "2026-10-02T16:25:00Z",
+   "files": [
+    {
+     "path": "data/austria-stats.json",
+     "valid": "warning",
+     "series": 244,
+     "points": 9053,
+     "lines": 0,
+     "lastChange": "2026-09-30T23:25:01Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T23:24:14Z",
+    "durationSec": 23,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36790897204"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 3,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-belgium.yml",
+   "name": "Update Belgium (Statbel)",
+   "crons": [
+    "45 15 * * 2,5"
+   ],
+   "nextRun": "2026-10-02T15:45:00Z",
+   "files": [
+    {
+     "path": "data/belgium-stats.json",
+     "valid": "ok",
+     "series": 123,
+     "points": 20813,
+     "lines": 0,
+     "lastChange": "2026-09-30T20:36:08Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T20:35:15Z",
+    "durationSec": 58,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36773668179"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-canada-stats.yml",
+   "name": "Update Canada stats (Statistics Canada)",
+   "crons": [
+    "35 15 * * 1,4"
+   ],
+   "nextRun": "2026-10-01T15:35:00Z",
+   "files": [
+    {
+     "path": "data/canada-stats.json",
+     "valid": "warning",
+     "series": 276,
+     "points": 64476,
+     "lines": 0,
+     "lastChange": "2026-10-01T01:46:41Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-01T01:45:39Z",
+    "durationSec": 66,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36802622017"
+   },
+   "recent": {
+    "runs": 6,
+    "success": 4,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-canada.yml",
+   "name": "Dehesa Data — Canadá (Statistics Canada)",
+   "crons": [
+    "40 13 * * 1,4"
+   ],
+   "nextRun": "2026-10-01T13:40:00Z",
+   "files": [
+    {
+     "path": "data/snapshots"
+    },
+    {
+     "path": "data/latest.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/catalog.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.csv"
+    },
+    {
+     "path": "data/quality.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/intelligence.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/normalized.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/cross-market.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/dehesa-index.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/alerts.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/canada-coverage.json",
+     "lastChange": "2026-09-30T17:33:40Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T17:33:24Z",
+    "durationSec": 24,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36752225492"
+   },
+   "recent": {
+    "runs": 4,
+    "success": 3,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-climate.yml",
+   "name": "Update agricultural climate (NASA POWER)",
+   "crons": [
+    "0 10 * * 2"
+   ],
+   "nextRun": "2026-10-06T10:00:00Z",
+   "files": [
+    {
+     "path": "data/climate.json",
+     "lastChange": "2026-09-30T22:59:55Z"
+    },
+    {
+     "path": "data/climate-history.json",
+     "lastChange": "2026-09-30T22:59:55Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T22:59:22Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36788660056"
+   },
+   "recent": {
+    "runs": 7,
+    "success": 6,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-country-macro.yml",
+   "name": "Update country macro indicators",
+   "crons": [
+    "15 7 3 * *"
+   ],
+   "nextRun": "2026-10-03T07:15:00Z",
+   "files": [
+    {
+     "path": "data/country-macro.json",
+     "valid": "ok",
+     "series": 0,
+     "points": 0,
+     "lines": 0,
+     "lastChange": "2026-10-01T02:16:12Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-01T02:15:56Z",
+    "durationSec": 19,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36805009053"
+   },
+   "recent": {
+    "runs": 4,
+    "success": 4,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-country-stats.yml",
+   "name": "Dehesa Data — Estadísticas por país (DK, NL, AU)",
+   "crons": [
+    "50 14 * * 3"
+   ],
+   "nextRun": "2026-10-07T14:50:00Z",
+   "files": [
+    {
+     "path": "data/country-stats.json",
+     "valid": "ok",
+     "series": 133,
+     "points": 11262,
+     "lines": 0,
+     "lastChange": "2026-09-30T18:27:45Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T18:24:06Z",
+    "durationSec": 225,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36758297799"
+   },
+   "recent": {
+    "runs": 6,
+    "success": 6,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-crop-progress.yml",
+   "name": "Dehesa Data — Crop Progress (NASS)",
+   "crons": [
+    "30 21 * * 1",
+    "30 13 * * 2"
+   ],
+   "nextRun": "2026-10-05T21:30:00Z",
+   "files": [
+    {
+     "path": "data/crop-progress.json",
+     "lastChange": "2026-09-30T03:53:41Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T03:53:24Z",
+    "durationSec": 26,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36666419074"
+   },
+   "recent": {
+    "runs": 5,
+    "success": 3,
+    "failed": 2
+   },
+   "status": "ok",
+   "expectedEveryHours": 152.0
+  },
+  {
+   "workflow": "update-defra-milk.yml",
+   "name": "Dehesa Data — Defra UK milk and price indices",
+   "crons": [
+    "30 9 * * 5"
+   ],
+   "nextRun": "2026-10-02T09:30:00Z",
+   "files": [
+    {
+     "path": "data/snapshots"
+    },
+    {
+     "path": "data/latest.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/catalog.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.csv"
+    },
+    {
+     "path": "data/quality.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/intelligence.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/normalized.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/cross-market.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/dehesa-index.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/alerts.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T17:36:11Z",
+    "durationSec": 39,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36752563747"
+   },
+   "recent": {
+    "runs": 4,
+    "success": 3,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-denmark.yml",
+   "name": "Dehesa Data — Dinamarca (Statistics Denmark)",
+   "crons": [
+    "20 14 * * 2,5"
+   ],
+   "nextRun": "2026-10-02T14:20:00Z",
+   "files": [
+    {
+     "path": "data/denmark-prices.json",
+     "lastChange": "2026-09-30T17:56:38Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T17:56:19Z",
+    "durationSec": 25,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36754979464"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-drought.yml",
+   "name": "update-drought",
+   "crons": [
+    "40 14 * * 4",
+    "40 12 * * 5"
+   ],
+   "nextRun": "2026-10-01T14:40:00Z",
+   "files": [
+    {
+     "path": "data/drought.json",
+     "lastChange": "2026-09-30T07:49:35Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T07:49:21Z",
+    "durationSec": 18,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36685930024"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 146.0
+  },
+  {
+   "workflow": "update-energy-markets.yml",
+   "name": "Dehesa Data — Gas natural y petróleo (EIA + Banco Mundial)",
+   "crons": [
+    "15 15 * * 3,5"
+   ],
+   "nextRun": "2026-10-02T15:15:00Z",
+   "files": [
+    {
+     "path": "data/snapshots"
+    },
+    {
+     "path": "data/latest.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/catalog.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.csv"
+    },
+    {
+     "path": "data/quality.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/intelligence.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/normalized.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/cross-market.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/dehesa-index.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/alerts.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/energy-markets-log-eu.txt"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T17:34:02Z",
+    "durationSec": 50,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36752301492"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 120.0
+  },
+  {
+   "workflow": "update-energy.yml",
+   "name": "Dehesa Data — EIA and EU Oil Bulletin",
+   "crons": [
+    "30 12 * * 5"
+   ],
+   "nextRun": "2026-10-02T12:30:00Z",
+   "files": [
+    {
+     "path": "data/snapshots"
+    },
+    {
+     "path": "data/latest.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/catalog.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.csv"
+    },
+    {
+     "path": "data/quality.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/intelligence.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/normalized.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/cross-market.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/dehesa-index.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/alerts.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T17:34:55Z",
+    "durationSec": 36,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36752411053"
+   },
+   "recent": {
+    "runs": 7,
+    "success": 4,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-ers.yml",
+   "name": "update-ers",
+   "crons": [
+    "50 20 * * 1"
+   ],
+   "nextRun": "2026-10-05T20:50:00Z",
+   "files": [
+    {
+     "path": "data/ers.json",
+     "lastChange": "2026-09-30T08:03:47Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T08:02:18Z",
+    "durationSec": 93,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36687230349"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 3,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-eu-agrifood.yml",
+   "name": "Dehesa Data — EU Agri-food Data Portal",
+   "crons": [
+    "0 14 * * 4"
+   ],
+   "nextRun": "2026-10-01T14:00:00Z",
+   "files": [
+    {
+     "path": "data/snapshots"
+    },
+    {
+     "path": "data/latest.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/catalog.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.csv"
+    },
+    {
+     "path": "data/quality.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/intelligence.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/normalized.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/cross-market.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/dehesa-index.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/alerts.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T14:38:07Z",
+    "durationSec": 49,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36730595591"
+   },
+   "recent": {
+    "runs": 10,
+    "success": 5,
+    "failed": 5
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-eu-catalog.yml",
+   "name": "Dehesa Data — EU price catalog",
+   "crons": [
+    "20 14 * * 4"
+   ],
+   "nextRun": "2026-10-01T14:20:00Z",
+   "files": [
+    {
+     "path": "data/eu"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T14:15:52Z",
+    "durationSec": 31,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36727790056"
+   },
+   "recent": {
+    "runs": 5,
+    "success": 5,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-eu-trade.yml",
+   "name": "Update EU trade (Eurostat Comext)",
+   "crons": [
+    "40 9 16,18,22 * *"
+   ],
+   "nextRun": "2026-10-16T09:40:00Z",
+   "files": [
+    {
+     "path": "data/eu-trade-stats.json",
+     "valid": "ok",
+     "series": 513,
+     "points": 116201,
+     "lines": 0,
+     "lastChange": "2026-10-01T01:18:43Z"
+    },
+    {
+     "path": "data/eu-trade-products.json",
+     "lastChange": "2026-10-01T01:18:43Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-01T01:15:30Z",
+    "durationSec": 198,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36800226817"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 600.0
+  },
+  {
+   "workflow": "update-eurostat.yml",
+   "name": "Dehesa Data — Eurostat agricultural indices",
+   "crons": [
+    "30 13 5 * *"
+   ],
+   "nextRun": "2026-10-05T13:30:00Z",
+   "files": [
+    {
+     "path": "data/snapshots"
+    },
+    {
+     "path": "data/latest.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/catalog.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.csv"
+    },
+    {
+     "path": "data/quality.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/intelligence.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/normalized.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/cross-market.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/dehesa-index.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/alerts.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-29T23:56:10Z",
+    "durationSec": 17,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36647771518"
+   },
+   "recent": {
+    "runs": 10,
+    "success": 2,
+    "failed": 7
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-export-sales.yml",
+   "name": "Dehesa Data — Ventas de exportación (USDA FAS ESR)",
+   "crons": [
+    "30 14 * * 4",
+    "30 12 * * 5"
+   ],
+   "nextRun": "2026-10-01T14:30:00Z",
+   "files": [
+    {
+     "path": "data/export-sales.json",
+     "lastChange": "2026-09-30T07:30:53Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T07:30:17Z",
+    "durationSec": 41,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36684063785"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 146.0
+  },
+  {
+   "workflow": "update-france.yml",
+   "name": "Update France (FranceAgriMer)",
+   "crons": [
+    "10 15 * * 2,5"
+   ],
+   "nextRun": "2026-10-02T15:10:00Z",
+   "files": [
+    {
+     "path": "data/france-stats.json",
+     "valid": "ok",
+     "series": 47,
+     "points": 29259,
+     "lines": 0,
+     "lastChange": "2026-09-30T19:36:30Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T19:36:01Z",
+    "durationSec": 33,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36766795696"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 3,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-fx.yml",
+   "name": "Actualizar tipos de cambio (BCE)",
+   "crons": [
+    "0 17 * * 1-5"
+   ],
+   "nextRun": "2026-10-01T17:00:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T17:58:54Z",
+    "durationSec": 24,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36755278601"
+   },
+   "recent": {
+    "runs": 7,
+    "success": 5,
+    "failed": 2
+   },
+   "status": "ok",
+   "expectedEveryHours": 72.0
+  },
+  {
+   "workflow": "update-gats.yml",
+   "name": "Dehesa Data — Comercio por país (USDA FAS GATS)",
+   "crons": [
+    "17 6 * * *"
+   ],
+   "nextRun": "2026-10-01T06:17:00Z",
+   "files": [
+    {
+     "path": "data/gats.json",
+     "lastChange": "2026-09-30T13:36:22Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "schedule",
+    "startedAt": "2026-09-30T13:34:13Z",
+    "durationSec": 134,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36722583764"
+   },
+   "recent": {
+    "runs": 10,
+    "success": 7,
+    "failed": 2
+   },
+   "status": "ok",
+   "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-germany.yml",
+   "name": "Update Germany (BLE, Destatis)",
+   "crons": [
+    "30 15 * * 1,4"
+   ],
+   "nextRun": "2026-10-01T15:30:00Z",
+   "files": [
+    {
+     "path": "data/germany-stats.json",
+     "valid": "ok",
+     "series": 265,
+     "points": 25240,
+     "lines": 0,
+     "lastChange": "2026-09-30T20:09:44Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T20:08:16Z",
+    "durationSec": 92,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36770505185"
+   },
+   "recent": {
+    "runs": 6,
+    "success": 4,
+    "failed": 2
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-interest-rates.yml",
+   "name": "Update interest rates",
+   "crons": [
+    "45 6 * * 1-5"
+   ],
+   "nextRun": "2026-10-01T06:45:00Z",
+   "files": [
+    {
+     "path": "data/interest-rates-stats.json",
+     "valid": "ok",
+     "series": 5,
+     "points": 1193,
+     "lines": 0,
+     "lastChange": "2026-10-01T02:16:26Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-01T02:15:58Z",
+    "durationSec": 32,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36805010646"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 72.0
+  },
+  {
+   "workflow": "update-mars-us.yml",
+   "name": "Dehesa Data — USDA AMS MARS (harina de soja)",
+   "crons": [
+    "30 22 * * 5",
+    "30 12 * * 1"
+   ],
+   "nextRun": "2026-10-02T22:30:00Z",
+   "files": [
+    {
+     "path": "data/snapshots"
+    },
+    {
+     "path": "data/latest.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/catalog.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.csv"
+    },
+    {
+     "path": "data/quality.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/intelligence.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/normalized.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/cross-market.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/dehesa-index.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/alerts.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T14:51:23Z",
+    "durationSec": 29,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36732258426"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 2,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 106.0
+  },
+  {
+   "workflow": "update-nass-data.yml",
+   "name": "Dehesa Data — NASS snapshot",
+   "crons": [
+    "0 12 * * 1"
+   ],
+   "nextRun": "2026-10-05T12:00:00Z",
+   "files": [
+    {
+     "path": "data/snapshots"
+    },
+    {
+     "path": "data/latest.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/catalog.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.csv"
+    },
+    {
+     "path": "data/quality.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/intelligence.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/normalized.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/cross-market.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/dehesa-index.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/alerts.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T17:32:42Z",
+    "durationSec": 32,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36752138996"
+   },
+   "recent": {
+    "runs": 10,
+    "success": 7,
+    "failed": 3
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-nass.yml",
+   "name": "update-nass",
+   "crons": [
+    "20 20 * * 1"
+   ],
+   "nextRun": "2026-10-05T20:20:00Z",
+   "files": [],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T08:07:52Z",
+    "durationSec": 181,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36687803251"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 3,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-news.yml",
+   "name": "Update Dehesa agricultural news",
+   "crons": [
+    "17 */3 * * *"
+   ],
+   "nextRun": "2026-10-01T03:17:00Z",
+   "files": [
+    {
+     "path": "data/news.json",
+     "lastChange": "2026-09-30T23:27:18Z"
+    },
+    {
+     "path": "data/news-status.json",
+     "lastChange": "2026-09-30T23:27:18Z"
+    }
+   ],
+   "last": {
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-10-01T00:35:30Z",
+    "durationSec": 30,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36796940020"
+   },
+   "recent": {
+    "runs": 10,
+    "success": 5,
+    "failed": 5
+   },
+   "status": "error",
+   "expectedEveryHours": 3.0
+  },
+  {
+   "workflow": "update-partner-tariffs.yml",
+   "name": "Update partner tariffs (MX, CA, EU)",
+   "crons": [
+    "30 8 6 * *"
+   ],
+   "nextRun": "2026-10-06T08:30:00Z",
+   "files": [
+    {
+     "path": "data/"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-01T03:05:37Z",
+    "durationSec": 63,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36808894807"
+   },
+   "recent": {
+    "runs": 5,
+    "success": 4,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-portugal-eurostat.yml",
+   "name": "Update Portugal (Eurostat)",
+   "crons": [
+    "55 16 * * 2,5"
+   ],
+   "nextRun": "2026-10-02T16:55:00Z",
+   "files": [
+    {
+     "path": "data/portugal-eurostat-stats.json",
+     "valid": "ok",
+     "series": 223,
+     "points": 10562,
+     "lines": 0,
+     "lastChange": "2026-09-30T22:37:22Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T22:37:06Z",
+    "durationSec": 20,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36786601962"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-portugal.yml",
+   "name": "Update Portugal (INE)",
+   "crons": [
+    "40 16 * * 2,5"
+   ],
+   "nextRun": "2026-10-02T16:40:00Z",
+   "files": [
+    {
+     "path": "data/portugal-stats.json",
+     "valid": "ok",
+     "series": 547,
+     "points": 24356,
+     "lines": 0,
+     "lastChange": "2026-09-30T22:43:53Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T22:43:33Z",
+    "durationSec": 24,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36787204631"
+   },
+   "recent": {
+    "runs": 6,
+    "success": 2,
+    "failed": 1
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-recan.yml",
+   "name": "Update RECAN (MAPA)",
+   "crons": [
+    "50 14 * * 4"
+   ],
+   "nextRun": "2026-10-01T14:50:00Z",
+   "files": [
+    {
+     "path": "data/recan.json",
+     "lastChange": "2026-09-30T19:08:53Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T19:08:26Z",
+    "durationSec": 33,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36763565204"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 3,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-spain.yml",
+   "name": "Update Spain (MAPA)",
+   "crons": [
+    "35 14 * * 2,5"
+   ],
+   "nextRun": "2026-10-02T14:35:00Z",
+   "files": [
+    {
+     "path": "data/spain-stats.json",
+     "valid": "ok",
+     "series": 219,
+     "points": 58767,
+     "lines": 0,
+     "lastChange": "2026-09-30T19:00:57Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T19:00:36Z",
+    "durationSec": 26,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36762636133"
+   },
+   "recent": {
+    "runs": 5,
+    "success": 5,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-us-tariffs.yml",
+   "name": "Update US tariffs (USITC HTS)",
+   "crons": [
+    "20 8 * * 2,5"
+   ],
+   "nextRun": "2026-10-02T08:20:00Z",
+   "files": [
+    {
+     "path": "data/us-tariffs.json",
+     "valid": "ok",
+     "series": 0,
+     "points": 0,
+     "lines": 2186,
+     "lastChange": "2026-10-01T01:53:11Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-01T01:52:55Z",
+    "durationSec": 21,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36803191281"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-usda-psd.yml",
+   "name": "Update USDA supply and demand (PSD)",
+   "crons": [
+    "0 16 13,17 * *"
+   ],
+   "nextRun": "2026-10-13T16:00:00Z",
+   "files": [
+    {
+     "path": "data/supply-demand.json",
+     "lastChange": "2026-09-30T03:09:54Z"
+    },
+    {
+     "path": "data/supply-demand-map.json",
+     "lastChange": "2026-09-30T03:09:54Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T03:09:38Z",
+    "durationSec": 21,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36663141048"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 648.0
+  },
+  {
+   "workflow": "update-worldbank-urea.yml",
+   "name": "Dehesa Data — World Bank urea EU",
+   "crons": [
+    "0 13 3 * *"
+   ],
+   "nextRun": "2026-10-03T13:00:00Z",
+   "files": [
+    {
+     "path": "data/snapshots"
+    },
+    {
+     "path": "data/latest.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/catalog.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/history.csv"
+    },
+    {
+     "path": "data/quality.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/intelligence.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/normalized.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/cross-market.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/dehesa-index.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    },
+    {
+     "path": "data/alerts.json",
+     "lastChange": "2026-09-30T17:36:41Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-09-30T17:35:33Z",
+    "durationSec": 32,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36752489617"
+   },
+   "recent": {
+    "runs": 7,
+    "success": 3,
+    "failed": 2
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  }
+ ]
+}

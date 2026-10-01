@@ -1,0 +1,32 @@
+name: Update pipeline status
+on:
+  schedule:
+    - cron: '10 */3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validar todos los datos (informe)
+        run: python3 scripts/validate-data.py || true
+      - name: Estado de los pipelines
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/build-pipeline-status.py
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pipeline-status.json data/data-quality.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "Estado de pipelines y calidad de datos"
+          git pull -q --rebase
+          git push
