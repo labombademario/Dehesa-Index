@@ -137,7 +137,7 @@ def supply():
 def dairy():
     n = 0
     by = series_of([r for r in load(32100113) if r["GEO"] == "Canada"], lambda r: r["Dairy distribution"] if r["Dairy distribution"] in ("Milk production, total", "Milk sold off farms, total", "Industrial purposes", "Fluid purposes") else None)
-    for k, pts in by.items(): put("ca-milk-%s" % slug(k), "milk", "Milk: %s (monthly)" % k.lower().replace(", total", ""), "million litres", "monthly", [(p, v / 1e6) for p, v in pts], "StatCan 32-10-0113"); n += 1
+    for k, pts in by.items(): put("ca-milk-%s" % slug(k), "milk", "Milk: %s (monthly)" % k.lower().replace(", total", ""), "million litres", "monthly", [(p, v / 1e3) for p, v in pts], "StatCan 32-10-0113"); n += 1
     rows = [r for r in load(32100480) if r["GEO"] == "Canada" and r["Stocks"] == "Total stocks" and r["Commodity"] in ("Creamery butter", "Cheddar cheese", "Skim milk powder", "Whole milk powder")]
     by = series_of(rows, lambda r: r["Commodity"])
     for k, pts in by.items(): put("ca-dairystock-%s" % slug(k), "stocks", "Dairy stocks: %s (quarterly)" % k.lower(), "t", "quarterly", [(re.sub(r"-(\d\d)$", lambda m: "-Q%d" % ((int(m.group(1)) - 1) // 3 + 1), p), v) for p, v in pts], "StatCan 32-10-0480"); n += 1
@@ -157,7 +157,7 @@ def eggs_poultry():
         put("ca-egg-%s" % tag, "production" if tag != "price" else "prices", lab, unit or ("CAD/dozen" if "dozen" in u.lower() and "cent" not in u.lower() else "cents/dozen"), "monthly", [(p, v * f) for p, v in pts], "StatCan 32-10-0121"); n += 1
     rows = [r for r in load(32100122) if r["GEO"] == "Canada" and r["Commodity"] in ("All poultry meat, total", "Chickens, total", "Turkeys, total")]
     by = series_of(rows, lambda r: r["Commodity"])
-    for k, pts in by.items(): put("ca-poultrystock-%s" % slug(k), "stocks", "Frozen poultry stocks: %s (monthly)" % k.lower().replace(", total", ""), "thousand t", "monthly", [(p, v / 1e6) for p, v in pts], "StatCan 32-10-0122"); n += 1
+    for k, pts in by.items(): put("ca-poultrystock-%s" % slug(k), "stocks", "Frozen poultry stocks: %s (monthly)" % k.lower().replace(", total", ""), "thousand t", "monthly", [(p, v / 1e3) for p, v in pts], "StatCan 32-10-0122"); n += 1
     rows = [r for r in load(32100117) if r["GEO"] == "Canada" and r["Production and disposition"] == "Production, total" and r["Estimates"] == "Weight (kilograms)"]
     by = series_of(rows, lambda r: r["Commodity"])
     for k, pts in by.items(): put("ca-poultry-%s" % slug(k), "production", "Poultry meat production: %s" % k.lower().replace(" (including stewing hen)", ""), "thousand t", "annual", [(p, v / 1e6) for p, v in pts], "StatCan 32-10-0117"); n += 1
