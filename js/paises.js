@@ -50,6 +50,15 @@
     return window.DehesaChart.render({ series: series, xMode: 'time', xTitle: t.date, yTitle: s.unit, aria: s.label + ' (' + s.unit + ')', noLegend: true, vFmt: function (v) { return nf(v, d); },
       xFmt: s.frequency === 'annual' ? function (x) { return new Date(x).getUTCFullYear(); } : undefined });
   }
+  var PS = null, CF = { ES: 'spain-stats', FR: 'france-stats', DE: 'germany-stats', BE: 'belgium-stats', AT: 'austria-stats', PT: 'portugal-stats', CA: 'canada-stats', AU: 'country-stats', DK: 'country-stats', NL: 'country-stats', US: 'interest-rates-stats', EU: 'interest-rates-stats' },
+    LV = { es: ['Linaje del dato', 'Fichero', 'último cambio', 'próxima ejecución prevista', 'última ejecución'], en: ['Data lineage', 'File', 'last change', 'next run due', 'last run'], fr: ['Lignage de la donnée', 'Fichier', 'dernier changement', 'prochaine exécution prévue', 'dernière exécution'], it: ['Lignaggio del dato', 'File', 'ultima modifica', 'prossima esecuzione prevista', 'ultima esecuzione'] };
+  function dshort(i) { try { return new Date(i).toLocaleDateString(lang(), { day: 'numeric', month: 'short', year: 'numeric' }); } catch (e) { return String(i).slice(0, 10); } }
+  function lineage(cc) {
+    if (!PS || !CF[cc]) return ''; var f = 'data/' + CF[cc] + '.json', p = null, e = null, v = LV[lang()] || LV.es;
+    PS.pipelines.forEach(function (x) { (x.files || []).forEach(function (y) { if (y.path === f && !p) { p = x; e = y; } }); }); if (!p) return '';
+    return '<p class="di-movers-hint">' + v[0] + ': ' + v[1] + ' <code>' + esc(f) + '</code>' + (e.lastChange ? ' · ' + v[2] + ' ' + esc(dshort(e.lastChange)) : '') + (p.last ? ' · ' + v[4] + ' ' + esc(dshort(p.last.startedAt)) : '') + (p.nextRun ? ' · ' + v[3] + ' ' + esc(dshort(p.nextRun)) : '') + ' · <a href="status.html">status</a></p>';
+  }
+  fetch('data/pipeline-status.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d) { PS = d; if (DATA) build(); } }).catch(function () {});
   var REV = [], RV = { es: ['Revisiones oficiales detectadas', 'antes', 'ahora', 'detectado'], en: ['Official revisions detected', 'was', 'now', 'detected'], fr: ['Révisions officielles détectées', 'avant', 'maintenant', 'détecté'], it: ['Revisioni ufficiali rilevate', 'prima', 'ora', 'rilevato'] };
   function revBox(cur) {
     var r = REV.filter(function (x) { return x.series === ST.c + '/' + cur.id; }).slice(0, 5); if (!r.length) return '';
@@ -81,7 +90,7 @@
     } else html += '<p class="di-movers-hint">' + t.none + '</p>';
     html += '<details style="margin-top:14px"><summary style="cursor:pointer;font-size:13px">' + t.table + '</summary><div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.series.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.latest.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:8px 6px">' + t.period.toUpperCase() + '</th><th style="padding:8px 6px">' + t.unit.toUpperCase() + '</th></tr>' +
       c.series.map(function (s) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px">' + esc(s.label) + '</td><td style="padding:8px 6px;text-align:right">' + nf(s.latest, dec(s.latest)) + '</td><td style="padding:8px 6px;text-align:right">' + (s.changePct == null ? '' : (s.changePct > 0 ? '+' : s.changePct < 0 ? '−' : '') + nf(Math.abs(s.changePct), 1) + ' %') + '</td><td style="padding:8px 6px">' + esc(plabel(s.latestPeriod, s.frequency)) + '</td><td style="padding:8px 6px">' + esc(s.unit) + '</td></tr>'; }).join('') + '</table></div></details>' +
-      '<p class="di-movers-hint" style="margin-top:12px">' + t.note + '</p><p class="di-movers-hint">' + t.src + ': <a href="' + esc(c.source.url) + '" target="_blank" rel="noopener">' + esc(c.source.name) + '</a> · ' + t.lic + ': ' + esc(c.source.license) + ' · ' + t.updated + ': ' + esc((DATA.generatedAt || '').slice(0, 10)) + '</p>';
+      '<p class="di-movers-hint" style="margin-top:12px">' + t.note + '</p><p class="di-movers-hint">' + t.src + ': <a href="' + esc(c.source.url) + '" target="_blank" rel="noopener">' + esc(c.source.name) + '</a> · ' + t.lic + ': ' + esc(c.source.license) + ' · ' + t.updated + ': ' + esc((DATA.generatedAt || '').slice(0, 10)) + '</p>' + lineage(ST.c);
     if (ST.c === 'PT') html += '<div id="ps-ifap"></div>'; html += '<div id="ps-tp"></div>';
     root.innerHTML = html;
     if (window.DITradePartners) { var tpn = document.getElementById('ps-tp'); if (tpn) window.DITradePartners.mount(tpn, ST.c, lang()); } if (ST.c === 'PT' && window.DIIfapMap) { var im = document.getElementById('ps-ifap'); if (im) window.DIIfapMap.mount(im, lang()); }
