@@ -25,6 +25,8 @@ Bloques precalculados (`build-product-profiles.py`, esquema `product-profile`): 
 La pagina (`js/producto-terminal.js`) carga cada bloque al acercarse a la vista y descarga el historico solo de ese producto; el detalle antiguo de EE. UU. (USDA/ERS/NASS, varios MB) solo a peticion.
 
 ## Comparador (`data/product-compare.json`)
+**Comparador 2.0** (`comparador.html`, `js/comparador.js`): filtros de producto, paises, periodo, unidad (original / €/t / USD/t / indice 100), datos (solo al dia = estados `okStates` del Freshness Engine; o incluir historicos) y comparabilidad (todas / exacta / direccional; hoy las 129 series son direccionales y el filtro «exacta» lo dice en vez de mostrar otras). Tabla Pais | Original | Normalizado | Fecha | Frescura | Fuente | Comparabilidad. Estado en la URL (`?p=trigo&c=ES,FR,DE,CA,US&u=eur&r=3&f=all&k=exact`) y conservado al recargar; la ficha de producto enlaza con `p` y `u`.
+
 Por producto y pais: unidad y moneda ORIGINALES, `kg` por unidad de precio, puntos mensuales (`aggregation`: media del mes de la frecuencia original), `latest`, `comp` (comparabilidad), `sourceId`, `fs`. La normalizacion (€/t, USD/t, indice 100) se calcula en el navegador con el Unit Engine. Los productos y series configuradas estan en `data/product-metadata.json`.
 
 ## Relaciones entre mercados (`data/relationships.json`, `relaciones.html`)

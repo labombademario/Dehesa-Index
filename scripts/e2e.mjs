@@ -233,6 +233,20 @@ for (const w of [1280, 390]) {
       await page.goto(BASE + '/comparador.html', { waitUntil: 'load' }); await page.waitForTimeout(2500);
       const sel = await page.$$('#cmp-body select'); if (!sel.length) throw new Error('comparador sin selectores');
       if ((await textLen(page, '#cmp-body')) < 100) throw new Error('comparador sin contenido');
+      // Comparador 2.0: URL profunda, tabla con las 7 columnas, filtros de frescura y comparabilidad, estado tras recargar
+      await page.goto(BASE + '/comparador.html?p=trigo&c=FR,DE,CA,US&u=eur', { waitUntil: 'load' }); await page.waitForSelector('#cmp-body table', { timeout: 8000 });
+      const heads = (await page.$$eval('#cmp-body table thead th', (e) => e.map((x) => x.textContent.trim()))).length;
+      if (heads !== 7) throw new Error('la tabla del comparador debe tener 7 columnas, tiene ' + heads);
+      const rows0 = await page.$$eval('#cmp-body table tbody tr', (e) => e.length); if (rows0 < 2) throw new Error('comparador: pocas filas con FR,DE,CA,US');
+      if (!/€\/t/.test(await page.innerText('#cmp-body table'))) throw new Error('la columna normalizada no muestra €/t');
+      await page.click('[data-k=exact]'); await page.waitForTimeout(250);
+      if (!/ninguna serie|No series|Aucune série|Nessuna serie/i.test(await page.innerText('#cmp-body'))) throw new Error('filtro exacta: debe decir que no hay series exactas en lugar de mostrar direccionales');
+      if (!/k=exact/.test(page.url())) throw new Error('el filtro de comparabilidad no queda en la URL');
+      await page.reload({ waitUntil: 'load' }); await page.waitForSelector('#cmp-body [data-k=exact][aria-checked=true]', { timeout: 8000 });
+      await page.click('[data-k=all]'); await page.click('[data-f=all]'); await page.waitForTimeout(250);
+      if (!/f=all/.test(page.url())) throw new Error('incluir historicos no queda en la URL');
+      await page.click('[data-u=usd]'); await page.waitForTimeout(250);
+      if (!/USD\/t/.test(await page.innerText('#cmp-body table'))) throw new Error('unidad USD/t no se aplica a la tabla');
     });
     await flow('catalogo: buscar', w, async (page) => {
       await page.goto(BASE + '/catalogo.html', { waitUntil: 'load' }); await page.waitForTimeout(2500);

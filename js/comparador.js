@@ -29,8 +29,16 @@
       none: 'Nessun dato per questa selezione.', stale: 'dato datato', showOld: 'Mostra dati vecchi', oldL: 'Dati vecchi (ultimo dato oltre 6 mesi indietro)', hiddenOld: 'nascosti perché datati', oldNote: 'Alcuni paesi hanno l’ultimo dato molto indietro; non sono confrontati sullo stesso piano dei mercati attuali.', small: 'Un grafico per paese, ciascuno nella sua unità originale.', conv: 'convertito', origL: 'originale', eu: 'UE (media)', directional: 'direzionale', exact: 'confrontabile', noprice: 'nessun prezzo',
       sumLabel: 'Riepilogo', meth: 'Metodologia', pt: 'per', fxMiss: 'Se un mese non ha il cambio si usa quello del mese precedente (al massimo 2 mesi indietro); altrimenti il punto non viene convertito e appare «conversione non disponibile». Mai un cambio successivo né quello di oggi.', cLast: 'Ultima quotazione', cAvg: 'Media del mese', noConv: 'conversione non disponibile', cFresh: 'Freschezza', aggNote: 'Ultima quotazione = l’ultimo valore pubblicato dalla fonte (al cambio del suo mese). Media del mese = media delle quotazioni del mese più recente, quella che disegna il grafico; possono differire.', obs: 'quotazioni', skipN: 'punti senza conversione omessi', t: 't', kg100: '100 kg' }
   };
+
+  var X = {
+    es: { fFresh: 'Datos', fOnly: 'Solo datos al día', fAll: 'Incluir históricos', kLbl: 'Comparabilidad', kAll: 'Todas', kExact: 'Exacta', kDir: 'Direccional', cOrigH: 'Original', cNormH: 'Normalizado', cDate: 'Fecha', kHelp: 'Exacta: mismo producto, unidad y punto de la cadena. Direccional: producto parecido pero con definiciones distintas (variedad, calidad, punto de venta): sirve para ver el orden de magnitud y la tendencia, no para restar precios.', noKExact: 'Ninguna serie de este producto tiene comparabilidad exacta: las fuentes definen el producto de forma distinta. Prueba con «Direccional» o «Todas».', noKDir: 'Ninguna serie de este producto es solo direccional con los filtros actuales.', normNote: 'Normalizado = convertido a la unidad elegida con el tipo de cambio mensual del BCE; en «Unidades originales» y «Índice 100» se muestra en €/t como referencia. Si no hay tipo de cambio válido, se indica en lugar de rellenarlo.', staleHid: 'Ocultos por no estar al día', shown: 'Mostrando', of: 'de', share: 'Copiar enlace', copied: 'Enlace copiado', link: 'Enlace a esta comparación' },
+    en: { fFresh: 'Data', fOnly: 'Fresh data only', fAll: 'Include historical', kLbl: 'Comparability', kAll: 'All', kExact: 'Exact', kDir: 'Directional', cOrigH: 'Original', cNormH: 'Normalised', cDate: 'Date', kHelp: 'Exact: same product, unit and point in the chain. Directional: similar product with different definitions (variety, quality, point of sale): useful for order of magnitude and trend, not for subtracting prices.', noKExact: 'No series for this product has exact comparability: sources define the product differently. Try “Directional” or “All”.', noKDir: 'No series for this product is directional-only with the current filters.', normNote: 'Normalised = converted to the chosen unit with the monthly ECB exchange rate; under “Original units” and “Index 100” it is shown in €/t for reference. Where no valid exchange rate exists it says so instead of filling it in.', staleHid: 'Hidden because not up to date', shown: 'Showing', of: 'of', share: 'Copy link', copied: 'Link copied', link: 'Link to this comparison' },
+    fr: { fFresh: 'Données', fOnly: 'Données à jour seulement', fAll: 'Inclure l’historique', kLbl: 'Comparabilité', kAll: 'Toutes', kExact: 'Exacte', kDir: 'Indicative', cOrigH: 'Origine', cNormH: 'Normalisé', cDate: 'Date', kHelp: 'Exacte : même produit, unité et stade de la chaîne. Indicative : produit voisin mais définitions différentes (variété, qualité, point de vente) : utile pour l’ordre de grandeur et la tendance, pas pour soustraire des prix.', noKExact: 'Aucune série de ce produit n’a une comparabilité exacte : les sources définissent le produit différemment. Essayez « Indicative » ou « Toutes ».', noKDir: 'Aucune série de ce produit n’est seulement indicative avec les filtres actuels.', normNote: 'Normalisé = converti dans l’unité choisie avec le taux mensuel de la BCE ; sous « Unités d’origine » et « Indice 100 » il s’affiche en €/t à titre de référence. Sans taux de change valide, c’est indiqué au lieu de combler.', staleHid: 'Masqués car pas à jour', shown: 'Affichage', of: 'sur', share: 'Copier le lien', copied: 'Lien copié', link: 'Lien vers cette comparaison' },
+    it: { fFresh: 'Dati', fOnly: 'Solo dati aggiornati', fAll: 'Includi storici', kLbl: 'Confrontabilità', kAll: 'Tutte', kExact: 'Esatta', kDir: 'Indicativa', cOrigH: 'Originale', cNormH: 'Normalizzato', cDate: 'Data', kHelp: 'Esatta: stesso prodotto, unità e punto della filiera. Indicativa: prodotto simile ma con definizioni diverse (varietà, qualità, punto vendita): utile per ordine di grandezza e tendenza, non per sottrarre prezzi.', noKExact: 'Nessuna serie di questo prodotto ha confrontabilità esatta: le fonti definiscono il prodotto in modo diverso. Prova «Indicativa» o «Tutte».', noKDir: 'Nessuna serie di questo prodotto è solo indicativa con i filtri attuali.', normNote: 'Normalizzato = convertito nell’unità scelta con il cambio mensile BCE; in «Unità originali» e «Indice 100» è mostrato in €/t come riferimento. Se manca un cambio valido lo dice invece di riempire.', staleHid: 'Nascosti perché non aggiornati', shown: 'Mostrati', of: 'su', share: 'Copia link', copied: 'Link copiato', link: 'Link a questo confronto' }
+  };
+  Object.keys(X).forEach(function (l) { for (var k in X[l]) T[l][k] = X[l][k]; });
   var COL = ['#2f6b4a', '#c0662d', '#3b6fa8', '#8c5a9e', '#b08a1f', '#5f6b70'];
-  var ST = { old: false, p: 'trigo', c: ['ES', 'FR', 'DE', 'CA', 'US'], u: 'eur', r: 10 }, D = null, FX = null, SKIP = 0;
+  var OKST = ['LIVE', 'FRESH', 'EXPECTED_DELAY'], ST = { old: false, k: 'all', p: 'trigo', c: ['ES', 'FR', 'DE', 'CA', 'US'], u: 'eur', r: 10 }, D = null, FX = null, SKIP = 0;
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -49,8 +57,8 @@
   // Frescura: un dato esta "antiguo" si su ultimo punto va mas de ~6 meses por detras del mas reciente del producto.
   var OLD_DAYS = 180;
   function refDate(p) { return p.series.reduce(function (a, s) { return s.latest[0] > a ? s.latest[0] : a; }, ''); }
-  function isOld(s, p) { return (Date.parse(refDate(p)) - Date.parse(s.latest[0])) / 864e5 > OLD_DAYS; }
-  function sel() { var p = D.products[ST.p]; return ST.c.map(function (c) { return p.series.filter(function (s) { return s.c === c; })[0]; }).filter(function (s) { return s && (ST.old || !isOld(s, p)); }); }
+  function isOld(s, p) { if (s.fs) return OKST.indexOf(s.fs) < 0; return (Date.parse(refDate(p)) - Date.parse(s.latest[0])) / 864e5 > OLD_DAYS; }
+  function sel() { var p = D.products[ST.p]; return ST.c.map(function (c) { return p.series.filter(function (s) { return s.c === c; })[0]; }).filter(function (s) { return s && (ST.old || !isOld(s, p)) && (ST.k === 'all' || s.comp === ST.k); }); }
   function chartHtml(list, p, t) {
     var mode = ST.u, per = p.per, ser = [], vf = {}, i = 0; SKIP = 0;
     var base = null;
@@ -84,21 +92,24 @@
     var col = st === 'LIVE' || st === 'FRESH' ? '#2f6b4a' : st === 'EXPECTED_DELAY' ? '#8a6d1f' : '#a33';
     return '<span title="' + esc(st) + '" style="font-size:11px;border:1px solid ' + col + ';color:' + col + ';border-radius:999px;padding:0 6px;white-space:nowrap">' + esc((F.label[st] || {})[lg] || st) + '</span>';
   }
+  function compBadge(s, t) {
+    var k = s.comp, lab = k === 'exact' ? t.kExact : k === 'directional' ? t.kDir : (k || '—'), col = k === 'exact' ? '#2f6b4a' : k === 'directional' ? '#8a6d1f' : '#a33';
+    return '<span title="' + esc(t.kHelp) + '" style="font-size:11px;border:1px solid ' + col + ';color:' + col + ';border-radius:999px;padding:0 6px;white-space:nowrap">' + esc(lab) + '</span>';
+  }
   function table(list, p, t) {
-    var mode = ST.u, cu = (mode === 'usd') ? unitLbl('usd', p.per) : unitLbl('eur', p.per), cmode = (mode === 'idx' || mode === 'orig') ? 'eur' : mode;
+    var mode = ST.u, cmode = (mode === 'idx' || mode === 'orig') ? 'eur' : mode, cu = unitLbl(cmode, p.per);
     var rows = list.map(function (s) {
-      var l = s.points[s.points.length - 1], ym = s.latest[0].slice(0, 7), cv = convert(s, s.latest[1], ym, cmode, p.per), ca = convert(s, l[1], l[0], cmode, p.per), ag = s.aggregation || {};
-      var conv = function (v) { return v == null ? '<span style="color:var(--text-faint);font-size:12px">' + esc(t.noConv) + '</span>' : nf(v) + ' ' + esc(cu); };
+      var ym = s.latest[0].slice(0, 7), cv = convert(s, s.latest[1], ym, cmode, p.per);
+      var conv = cv == null ? '<span style="color:var(--text-faint);font-size:12px">' + esc(t.noConv) + '</span>' : '<strong>' + nf(cv) + '</strong> ' + esc(cu);
       return '<tr><th scope="row" style="text-align:left;font-weight:600">' + flag(s.c) + ' ' + esc(cname(s.c)) + '</th>' +
-        '<td data-label="' + esc(t.cLast) + '"><strong>' + esc(orgTxt(s)) + '</strong><div style="font-size:11.5px;color:var(--text-faint)">' + esc(s.latest[0]) + (isOld(s, p) ? ' · ' + esc(t.stale) : '') + '</div></td>' +
-        '<td data-label="' + esc(t.cLast) + ' (' + esc(cu) + ')">' + conv(cv) + '</td>' +
-        '<td data-label="' + esc(t.cAvg) + '">' + esc(nf(l[1], 2) + ' ' + s.unit) + '<div style="font-size:11.5px;color:var(--text-faint)">' + esc(l[0]) + (ag.lastMonthObs ? ' · ' + ag.lastMonthObs + ' ' + esc(t.obs) : '') + '</div></td>' +
-        '<td data-label="' + esc(t.cAvg) + ' (' + esc(cu) + ')">' + conv(ca) + '</td>' +
-        '<td data-label="' + esc(t.cChg) + '">' + pc(chg12(s)) + '</td><td data-label="' + esc(t.cSrc) + '">' + esc(s.src) + '</td>' +
-        '<td data-label="' + esc(t.cFresh) + '">' + fsBadge(s) + '</td><td data-label="' + esc(t.cComp) + '">' + esc(s.comp === 'directional' ? t.directional : t.exact) + '</td></tr>';
+        '<td data-label="' + esc(t.cOrigH) + '"><strong>' + esc(orgTxt(s)) + '</strong></td>' +
+        '<td data-label="' + esc(t.cNormH) + ' (' + esc(cu) + ')">' + conv + '</td>' +
+        '<td data-label="' + esc(t.cDate) + '">' + esc(s.latest[0]) + '</td>' +
+        '<td data-label="' + esc(t.cFresh) + '">' + fsBadge(s) + '</td><td data-label="' + esc(t.cSrc) + '">' + esc(s.src) + '</td>' +
+        '<td data-label="' + esc(t.cComp) + '">' + compBadge(s, t) + '</td></tr>';
     }).join('');
     var th = function (x) { return '<th scope="col" style="text-align:left;font-size:11px;color:var(--text-faint);padding:4px 8px;border-bottom:1px solid var(--border)">' + esc(x) + '</th>'; };
-    return '<div class="di-table-wrap"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr>' + th(t.countries) + th(t.cLast) + th(t.cConv + ' · ' + t.cLast) + th(t.cAvg) + th(t.cConv + ' · ' + t.cAvg) + th(t.cChg) + th(t.cSrc) + th(t.cFresh) + th(t.cComp) + '</tr></thead><tbody>' + rows + '</tbody></table></div><p class="di-movers-hint">' + esc(t.aggNote) + '</p>';
+    return '<div class="di-table-wrap"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr>' + th(t.countries.replace(/s$/, '')) + th(t.cOrigH) + th(t.cNormH + ' (' + cu + ')') + th(t.cDate) + th(t.cFresh) + th(t.cSrc) + th(t.cComp) + '</tr></thead><tbody>' + rows + '</tbody></table></div><p class="di-movers-hint">' + esc(t.normNote) + '</p>';
   }
   function chipStyle(on) { return 'display:inline-flex;align-items:center;gap:6px;margin:0 6px 6px 0;padding:4px 11px;border:1px solid ' + (on ? '#2f6b3a' : 'var(--border)') + ';border-radius:999px;background:' + (on ? '#e3f0e5' : 'transparent') + ';color:inherit;font:inherit;font-size:13px;cursor:pointer'; }
   function render() {
@@ -114,24 +125,25 @@
     var chip = function (c) { var on = ST.c.indexOf(c) > -1, o = isOld(byC[c], p); return '<button type="button" data-c="' + c + '" aria-pressed="' + on + '" style="' + chipStyle(on) + (o ? ';opacity:.8' : '') + '">' + flag(c) + ' ' + esc(cname(c)) + (o ? ' <span style="font-size:11px;color:var(--text-faint)">· ' + esc(byC[c].latest[0].slice(0, 4)) + '</span>' : '') + '</button>'; };
     h += '<div style="font-size:13px;margin-bottom:4px">' + esc(t.countries) + '</div><div role="group" aria-label="' + esc(t.countries) + '">' + fresh.map(chip).join('') + '<span style="' + chipStyle(false) + ';cursor:default;border-style:dashed;color:var(--text-muted)" title="' + esc(t.au) + '">🇦🇺 ' + esc(cname('AU')) + ' · ' + esc(t.noprice) + '</span></div>';
     if (hist.length) {
-      h += '<div style="margin:6px 0 4px"><label style="font-size:13px;cursor:pointer"><input type="checkbox" id="cp-old"' + (ST.old ? ' checked' : '') + '> ' + esc(t.showOld) + ' (' + hist.length + ')</label></div>';
       if (ST.old) h += '<div style="font-size:12px;color:var(--text-faint);margin-bottom:2px">' + esc(t.oldL) + '</div><div role="group" aria-label="' + esc(t.oldL) + '">' + hist.map(chip).join('') + '</div>';
       else if (ST.c.some(function (c) { return byC[c] && isOld(byC[c], p); })) h += '<div class="di-movers-hint" style="margin:0 0 6px">' + ST.c.filter(function (c) { return byC[c] && isOld(byC[c], p); }).map(function (c) { return flag(c) + ' ' + cname(c); }).join(', ') + ' — ' + esc(t.hiddenOld) + '. ' + esc(t.oldNote) + '</div>';
     }
     var modes = [['orig', t.orig], ['eur', '€/' + (p.per === 1000 ? t.t : t.kg100)], ['usd', 'USD/' + (p.per === 1000 ? t.t : t.kg100)], ['idx', t.idx]];
-    h += '<div style="font-size:13px;margin:6px 0 4px">' + esc(t.unit) + '</div><div role="radiogroup" aria-label="' + esc(t.unit) + '">' + modes.map(function (m) { var on = ST.u === m[0]; return '<button type="button" role="radio" aria-checked="' + on + '" data-u="' + m[0] + '" style="' + chipStyle(on) + '">' + esc(m[1]) + '</button>'; }).join('') + '</div></div>';
-    if (!list.length) h += '<p class="di-movers-hint">' + esc(t.none) + '</p>';
+    var rg = function (lbl, attr, opts, cur) { return '<div style="font-size:13px;margin:6px 0 4px">' + esc(lbl) + '</div><div role="radiogroup" aria-label="' + esc(lbl) + '">' + opts.map(function (m) { var on = cur === m[0]; return '<button type="button" role="radio" aria-checked="' + on + '" data-' + attr + '="' + m[0] + '" style="' + chipStyle(on) + '">' + esc(m[1]) + '</button>'; }).join('') + '</div>'; };
+    h += rg(t.unit, 'u', modes, ST.u) + rg(t.fFresh, 'f', [['fresh', t.fOnly], ['all', t.fAll + (hist.length ? ' (' + hist.length + ')' : '')]], ST.old ? 'all' : 'fresh') + rg(t.kLbl, 'k', [['all', t.kAll], ['exact', t.kExact], ['directional', t.kDir]], ST.k) + '<div class="di-movers-hint" style="margin-top:2px">' + esc(t.kHelp) + '</div></div>';
+    if (!list.length) h += '<p class="di-movers-hint">' + esc(ST.k === 'exact' ? t.noKExact : ST.k === 'directional' ? t.noKDir : t.none) + '</p>';
     else {
       h += '<div class="di-card" style="padding:12px 14px;margin-bottom:16px">' + (ST.u === 'orig' ? '<div class="di-movers-hint" style="margin:0 0 8px">' + esc(t.small) + '</div>' + smallMultiples(list, p, t) : (chartHtml(list, p, t) || '<p class="di-movers-hint">' + esc(t.none) + '</p>')) + '</div>';
       h += '<div class="di-card" style="padding:12px 14px;margin-bottom:16px">' + table(list, p, t) + '</div>';
     }
     h += '<p class="di-movers-hint">' + (ST.u === 'idx' ? esc(t.baseNote) + ' ' : '') + esc(t.fxNote) + ' ' + esc(t.fxMiss) + (SKIP ? ' <strong>' + SKIP + ' ' + esc(t.skipN) + '.</strong>' : '') + ' <a href="metodologia.html" style="color:inherit">' + esc(t.meth) + '</a></p><p class="di-movers-hint">' + esc(t.au) + '</p>';
     root.innerHTML = h; bind(root, p);
-    try { var q = new URLSearchParams(); q.set('p', ST.p); q.set('c', ST.c.join(',')); q.set('u', ST.u); q.set('r', ST.r_i != null ? ST.r_i : 3); if (ST.old) q.set('h', '1'); history.replaceState(null, '', '?' + q.toString()); } catch (e) {}
+    try { var q = new URLSearchParams(); q.set('p', ST.p); q.set('c', ST.c.join(',')); q.set('u', ST.u); q.set('r', ST.r_i != null ? ST.r_i : 3); if (ST.old) q.set('f', 'all'); if (ST.k !== 'all') q.set('k', ST.k); history.replaceState(null, '', '?' + q.toString()); } catch (e) {}
   }
   function bind(root, p) {
     root.querySelector('#cp-p').onchange = function (e) { ST.p = e.target.value; var codes = D.products[ST.p].series.map(function (s) { return s.c; }); var keep = ST.c.filter(function (c) { return codes.indexOf(c) > -1; }); ST.c = keep.length ? keep : ['ES', 'FR', 'DE', 'CA', 'US'].filter(function (c) { return codes.indexOf(c) > -1; }); render(); };
-    var oc = root.querySelector('#cp-old'); if (oc) oc.onchange = function () { ST.old = oc.checked; render(); };
+    Array.prototype.forEach.call(root.querySelectorAll('[data-f]'), function (b) { b.onclick = function () { ST.old = b.getAttribute('data-f') === 'all'; render(); }; });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-k]'), function (b) { b.onclick = function () { ST.k = b.getAttribute('data-k'); render(); }; });
     root.querySelector('#cp-r').onchange = function (e) { ST.r_i = +e.target.value; render(); };
     Array.prototype.forEach.call(root.querySelectorAll('[data-c]'), function (b) { b.onclick = function () { var c = b.getAttribute('data-c'), i = ST.c.indexOf(c); if (i > -1) ST.c.splice(i, 1); else if (ST.c.length < 6) ST.c.push(c); render(); }; });
     Array.prototype.forEach.call(root.querySelectorAll('[data-u]'), function (b) { b.onclick = function () { ST.u = b.getAttribute('data-u'); render(); }; });
@@ -139,7 +151,7 @@
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
-  var q = new URLSearchParams(location.search); if (q.get('h') === '1') ST.old = true; if (q.get('p')) ST.p = q.get('p'); if (q.get('c')) ST.c = q.get('c').toUpperCase().split(',').slice(0, 6); if (/^(orig|eur|usd|idx)$/.test(q.get('u') || '')) ST.u = q.get('u'); if (q.get('r') != null && /^[0-4]$/.test(q.get('r'))) ST.r_i = +q.get('r');
+  var q = new URLSearchParams(location.search); if (q.get('h') === '1' || q.get('f') === 'all') ST.old = true; if (/^(exact|directional)$/.test(q.get('k') || '')) ST.k = q.get('k'); if (q.get('p')) ST.p = q.get('p'); if (q.get('c')) ST.c = q.get('c').toUpperCase().split(',').slice(0, 6); if (/^(orig|eur|usd|idx)$/.test(q.get('u') || '')) ST.u = q.get('u'); if (q.get('r') != null && /^[0-4]$/.test(q.get('r'))) ST.r_i = +q.get('r');
   Promise.all([fetch('data/product-compare.json').then(function (r) { return r.json(); }), fetch('data/fx-history.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })]).then(function (a) {
     D = a[0]; FX = a[1]; window.DIUnits.setFx(FX);
     if (!D.products[ST.p]) ST.p = 'trigo'; render();
