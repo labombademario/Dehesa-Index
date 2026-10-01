@@ -3,7 +3,7 @@
 MERCH_EXP / MERCH_IMP: clave COMMODITY_SITC.COUNTRY.STATE.FREQ. Escribe data/australia-trade-stats.json (extend AU),
 data/au-trade-products.json (producto x socio, mismo esquema que eu-trade-products.json) y data/australia-trade-log.txt.
 Las exportaciones de los 8 productos que ya trae update-country-stats.py no se repiten aquí."""
-import csv, datetime, io, json, re, sys, time, urllib.request
+import csv, datetime, io, json, re, sys, time, urllib.error, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://data.api.abs.gov.au/rest/data/"
@@ -18,6 +18,10 @@ def abs_csv(path, tries=3):
         try:
             req = urllib.request.Request(BASE + path, headers={"Accept": "application/vnd.sdmx.data+csv", "User-Agent": "Dehesa-Index-data-bot/1.0"})
             return list(csv.DictReader(io.StringIO(urllib.request.urlopen(req, timeout=120).read().decode("utf-8-sig"))))
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code == 404: break
+            time.sleep(4 * (i + 1))
         except Exception as e: last = e; time.sleep(4 * (i + 1))
     raise RuntimeError(repr(last)[:160])
 EXISTING = {"041": "wheat", "043": "barley", "044": "maize", "222": "oilseeds", "011": "beef", "012": "sheepmeat", "024": "cheese", "001": "live"}
@@ -52,11 +56,11 @@ def split(v):
 def by_country(ds, code, since):
     """Devuelve ({pais: {ano: valor A$ M}}, {codigo: nombre}) para un producto, todos los paises, anual."""
     dim = "COUNTRY_DEST" if ds == "MERCH_EXP" else "COUNTRY_ORIGIN"
-    rows = abs_csv("%s/%s..TOT.A?format=csvfilewithlabels&startPeriod=%s" % (ds, code, since))
+    rows = abs_csv("%s/%s..TOT.M?format=csvfilewithlabels&startPeriod=%s" % (ds, code, since))
     if rows and not by_country.__dict__.get("shown"): by_country.shown = True; log("columnas", ",".join(rows[0].keys()))
     res = {}; names = {}
     for r in rows:
-        if r.get("OBS_VALUE") in (None, ""): continue
+        if r.get("OBS_VALUE") in (None, "") or r["TIME_PERIOD"][:4] >= str(datetime.date.today().year): continue
         c, nm = split(r.get(dim, ""))
         if not nm or nm == c:
             for k, v in r.items():
