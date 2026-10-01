@@ -1,0 +1,56 @@
+12100011 2026-07-01T04:00:00Z International merchandise trade for all countries and by Principal Trading Partners, monthly
+12100127 2026-04-01T04:00:00Z International merchandise trade for all countries and by Principal Trading Partners, quarterly
+12100143 2025-01-01T05:00:00Z International merchandise trade by Broad Economic Categories and top sixty trading partners
+12100163 2026-07-01T04:00:00Z International merchandise trade by commodity, monthly
+12100164 2026-04-01T04:00:00Z International merchandise trade by commodity, quarterly
+12100166 2026-07-01T04:00:00Z International merchandise trade by commodity, chained 2017 dollars, monthly
+12100167 2026-04-01T04:00:00Z International merchandise trade by commodity, chained 2017 dollars, quarterly
+12100168 2026-07-01T04:00:00Z International merchandise trade, by commodity, price and volume indexes, monthly
+12100169 2026-04-01T04:00:00Z International merchandise trade, by commodity, price and volume indexes, quarterly
+12100170 2025-01-01T05:00:00Z International merchandise trade, by commodity, price and volume indexes, annual
+12100171 2025-01-01T05:00:00Z Canadian international merchandise trade by country and by product section, customs-based, annual
+12100172 2025-01-01T05:00:00Z Canadian international merchandise trade by principal trading partner, and by product section and group, customs-based, annual
+12100173 2025-01-01T05:00:00Z Canadian international merchandise trade by province and country, and by product sections, customs-based, annual
+12100174 2026-07-01T04:00:00Z Merchandise imports and exports, customs-based, by free trade agreement and by commodity
+12100175 2026-07-01T04:00:00Z International merchandise trade by province, commodity, and Principal Trading Partners
+12100176 2026-07-01T04:00:00Z Canadian international merchandise trade by industry for all countries, monthly
+12100177 2026-07-01T04:00:00Z Canadian international merchandise trade by mode of transport, customs-based, monthly
+12100178 2026-07-01T04:00:00Z Canadian international merchandise trade for imports by country of origin and country of export, customs-based, monthly
+12100182 2026-07-01T04:00:00Z Canadian international merchandise trade for total exports, domestic exports and re-exports, by country of destination and country of origin, customs-
+20100015 2023-01-01T05:00:00Z Wholesale trade, commodities based on North American Product Classification System Canada 2022
+33100904 2024-01-01T05:00:00Z Impact expected on business' or organization's trade due to international events over the next 12 months, fourth quarter of 2024
+33100941 2023-01-01T05:00:00Z Businesses' interprovincial trade activities conducted within Canada over the last 12 months
+33100957 2023-01-01T05:00:00Z Businesses' international trade activities conducted over the last 12 months
+33100962 2023-01-01T05:00:00Z Businesses' interprovincial and international trade activities involving food products conducted over the last 12 months
+33100965 2023-01-01T05:00:00Z Businesses' future interprovincial trade plans within Canada over the next 12 months
+33101109 2025-01-01T05:00:00Z Level of impact of tariffs or trade barriers on business or organization over the last 12 months, first quarter of 2026
+33101148 2026-01-01T05:00:00Z Expected level of impact of tariffs or trade barriers on business or organization over the next 12 months, second quarter of 2026
+33101159 2026-01-01T05:00:00Z Business' or organization's likelihood to trade credits on carbon markets over the next 12 months, second quarter of 2026
+33101188 2026-01-01T05:00:00Z Expected level of impact of tariffs or trade barriers on business or organization over the next 12 months, third quarter of 2026
+META 12100011 International merchandise trade for all countries and by Principal Trading Partners, monthly 1997-01-01 2026-07-01 6
+  DIM Geography 1 ['Canada']
+  DIM Trade 3 ['Import', 'Export', 'Trade Balance']
+  DIM Basis 2 ['Customs', 'Balance of payments']
+  DIM Seasonal adjustment 2 ['Unadjusted', 'Seasonally adjusted']
+  DIM Principal trading partners 29 ['All countries', 'United States', 'European Union', 'Germany', 'Netherlands', 'France', 'Italy', 'Belgium', 'Spain', 'China', 'United Kingdom', 'Mexico']
+META 12100119 International merchandise trade by province, commodity, and Principal Trading Partners, inactive 1997-01-01 2023-09-01 6
+  DIM Geography 15 ['Canada', 'Newfoundland and Labrador', 'Prince Edward Island', 'Nova Scotia', 'New Brunswick', 'Quebec', 'Ontario', 'Manitoba', 'Saskatchewan', 'Alberta', 'British Columbia', 'Yukon']
+  DIM Trade 3 ['Import', 'Domestic export', 'Re-export']
+  DIM North American Product Classification System (NAPCS) 14 ['Total of all merchandise', 'Farm, fishing and intermediate food products', 'Energy products', 'Metal ores and non-metallic minerals', 'Metal and non-metallic mineral products', 'Basic and industrial chemical, plastic and rubber products', 'Forestry products and building and packaging materials', 'Industrial machinery, equipment and parts', 'Electronic and electrical equipment and parts', 'Motor vehicles and parts', 'Aircraft and other transportation equipment and parts', 'Consumer goods']
+  DIM Principal trading partners 29 ['All countries', 'United States', 'China', 'Mexico', 'United Kingdom', 'Japan', 'Germany', 'South Korea', 'Italy', 'France', 'Netherlands', 'Belgium']
+META 12100121 International merchandise trade by commodity, monthly, inactive 1988-01-01 2023-09-01 6
+  DIM Geography 1 ['Canada']
+  DIM Trade 2 ['Import', 'Export']
+  DIM Basis 2 ['Customs', 'Balance of payments']
+  DIM Seasonal adjustment 2 ['Unadjusted', 'Seasonally adjusted']
+  DIM North American Product Classification System (NAPCS) 153 ['Total of all merchandise', 'Farm, fishing and intermediate food products', 'Farm and fishing products', 'Live animals', 'Wheat', 'Canola (including rapeseed)', 'Fresh fruit, nuts and vegetables, and pulse crops', 'Other crop products', 'Other animal products', 'Fish, crustaceans, shellfish and other fishery products', 'Animal feed', 'Intermediate food products']
+META 12100099 Merchandise imports and exports, customs-based, by Harmonized commodity description and coding system (HS) section, Canada, provinces and territories, United States, states 1990-01-01 2026-07-01 6
+  DIM Geography 15 ['Canada', 'Newfoundland and Labrador', 'Prince Edward Island', 'Nova Scotia', 'New Brunswick', 'Quebec', 'Ontario', 'Manitoba', 'Saskatchewan', 'Alberta', 'British Columbia', 'Yukon']
+  DIM Trade 4 ['Total exports', 'Domestic exports', 'Re-exports', 'Total imports']
+  DIM United States 53 ['Total United States', 'Alaska', 'Alabama', 'Arkansas', 'Arizona', 'California', 'Colorado', 'Connecticut', 'District of Columbia', 'Delaware', 'Florida', 'Georgia']
+  DIM Harmonized System (HS) Sections 22 ['Total Harmonized System (HS) sections', 'I - Live animals and animal products', 'II - Vegetable products', 'III - Animal or vegetable fats and oils and their cleavage products, prepared edible fats, animal or vegetable waxes', 'IV - Prepared foodstuffs, beverages, spirits and vinegar, tobacco and manufactures tobacco substitutes', 'V - Mineral products', 'VI - Products of the chemical or allied industries', 'VII - Plastics and articles thereof, rubber and articles thereof', 'VIII - Raw hides and skins, leather, furskins and articles thereof, saddlery and harness, travel goods, handbags and similar containers, articles of animal gut (other than silk-worm gut)', 'IX - Wood and articles of wood, wood charcoal, cork and articles of cork, manufactures of straw, of esparto or of other plaiting materials, basketware and wickerwork', 'X - Pulp of wood or of other fibrous cellulosic material, recovered (waste and scrap) paper or paperboard', 'XI - Textiles and textile articles']
+META 12100173 Canadian international merchandise trade by province and country, and by product sections, customs-based, annual 1999-01-01 2025-01-01 12
+  DIM Geography 14 ['Canada', 'Newfoundland and Labrador', 'Prince Edward Island', 'Nova Scotia', 'New Brunswick', 'Quebec', 'Ontario', 'Manitoba', 'Saskatchewan', 'Alberta', 'British Columbia', 'Yukon']
+  DIM Trading partner 259 ['All countries', 'Afghanistan', 'Aland Islands', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica', 'Antigua and Barbuda', 'Argentina']
+  DIM North American Product Classification System (NAPCS) 13 ['All sections', 'Farm, fishing and intermediate food products', 'Energy products', 'Metal ores and non-metallic minerals', 'Metal and non-metallic mineral products', 'Basic and industrial chemical, plastic and rubber products', 'Forestry products and building and packaging materials', 'Industrial machinery, equipment and parts', 'Electronic and electrical equipment and parts', 'Motor vehicles and parts', 'Aircraft and other transportation equipment and parts', 'Consumer goods']
+  DIM Trade 2 ['Export', 'Import']
