@@ -46,6 +46,7 @@ BLO = {"basismin", "basislow", "basislo"}
 BHI = {"basismax", "basishigh", "basishi"}
 BAVG = {"basisavg", "basisaverage", "avgbasis", "basis"}
 FUT = {"futuresmonth", "futuremonth", "futurescontract", "futuresmth"}
+FUT_MIN, FUT_MAX = "basisminfuturesmonth", "basismaxfuturesmonth"  # nombres reales del API (basis Min/Max Futures Month)
 FIELDS = {"commodity": {"commodity", "commod"}, "cls": {"class"}, "grade": {"grade"}, "protein": {"protein"}, "dpoint": {"deliverypoint"},
           "loc": {"tradeloc", "tradelocation", "marketlocation"}, "freight": {"freight"}, "sale": {"saletype"}, "dstart": {"deliverystart"}, "dend": {"deliveryend"},
           "unit": {"priceunit"}, "bunit": {"basisunit"}, "trans": {"transmode"}, "app": {"application"}, "desc": {"desc"}, "end": {"reportenddate"}, "begin": {"reportbegindate"}, "rdate": {"reportdate"},
@@ -130,6 +131,9 @@ def normalize_rows(rows, rcfg, reg, ingested_at):
             elif k in BHI and bhi is None: bhi = _n(v)
             elif k in BAVG and bavg is None: bavg = _n(v)
         fut = next((_s(r[k]) for k in FUT if k in r and _s(r[k])), None)
+        if not fut:
+            fa, fb = _s(r.get(FUT_MIN)), _s(r.get(FUT_MAX))
+            fut = fa if fa and (not fb or fa == fb) else (fb if fb and not fa else ("%s / %s" % (fa, fb) if fa and fb else None))
         cur, unit = unit_of(f.get("unit"))
         if avg is None and lo is None and hi is None: bad("no_price"); continue
         if not unit: bad("no_unit"); continue

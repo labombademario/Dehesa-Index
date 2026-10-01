@@ -162,6 +162,12 @@ try:
     check("filas invalidas rechazadas", not obs and rej == {"implausible_price": 3, "no_price": 1, "no_date": 1, "no_unit": 1, "non_bid_sale_type": 1, "not_current_period": 1}, rej)
     obs, _ = L.normalize_rows([{"commodity": "Corn", "report_end_date": "09/30/2026", "price_unit": "$ Per Bushel", "avg_price": "4.1"}], {"reportId": 1, "state": "IA", "scope": "STATE_REPORT"}, reg, "t")
     check("sin geografia en informe estatal: STATE con el nombre del estado, no un elevador", obs[0]["locationType"] == "STATE" and obs[0]["locationName"] == "Iowa", obs[0])
+    base = {"commodity": "Corn", "report_end_date": "09/30/2026", "price_unit": "$ Per Bushel", "avg_price": "4.1", "basis Min": "-50", "basis Max": "-24", "basis_unit": "\u00a2/Bu"}
+    rc = {"reportId": 1, "state": "IA", "scope": "STATE_REPORT"}
+    f1 = L.normalize_rows([dict(base, **{"basis Min Futures Month": "Dec", "basis Max Futures Month": "Dec"})], rc, reg, "t")[0][0]["futuresContract"]
+    f2 = L.normalize_rows([dict(base, **{"basis Min Futures Month": "Dec", "basis Max Futures Month": "Mar"})], rc, reg, "t")[0][0]["futuresContract"]
+    f3 = L.normalize_rows([base], rc, reg, "t")[0][0]["futuresContract"]
+    check("futuros del API real: igual -> uno, distinto -> ambos, ausente -> null", f1 == "Dec" and f2 == "Dec / Mar" and f3 is None, (f1, f2, f3))
     check("unidad no convertida", L.unit_of("$ Per Bushel") == ("USD", "bu") and L.unit_of("Cents Per Bushel") == (None, "Cents Per Bushel"))
     # --- 17. discover: solo candidatos de grano que aun no estan en el registro
     cand = U.discover(reg, None, [{"slug_id": 9001, "report_title": "Example Daily Grain Bids"}, {"slug_id": 2850, "report_title": "Iowa Daily Cash Grain Bids"}, {"slug_id": 9002, "report_title": "Retail Grain Prices"}, {"slug_id": 9003, "report_title": "Hog Report"}])
