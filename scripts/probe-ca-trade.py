@@ -1,6 +1,7 @@
 import json, urllib.request, re, sys
 W="https://www150.statcan.gc.ca/t1/wds/rest/"
 H={"User-Agent":"Dehesa-Index-data-bot/1.0","Content-Type":"application/json"}
+import os; os.makedirs("data/probe",exist_ok=True)
 out=[]
 def p(*a):
     out.append(" ".join(str(x) for x in a)); open("data/probe/ca-trade.txt","w").write("\n".join(out))
