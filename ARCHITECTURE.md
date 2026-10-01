@@ -40,3 +40,12 @@ Sintaxis JS · workflows sincronizados e higienicos · contratos de datos (`vali
 
 ## Convenciones que no se negocian
 No inventar datos ni rellenar huecos · no asumir licencias (`PENDING` antes que certeza inventada) · correlacion ≠ prediccion · cada dato lleva fuente, fecha y frescura · el JS es ES5 (sin transpilar) · cambios reversibles y commits pequenos.
+
+## US Local Cash Bids (`precios-locales.html`, `data/us-cash-bids/`)
+Pregunta que responde: ¿que pagan por mi grano en mi zona?
+- **Flujo**: `scripts/us-cash-bids-registry.json` (unico lugar con report IDs) → MARS API (`update-us-cash-bids.yml`, 14:15 y 23:30 UTC L–V, `USDA_MMN_API_KEY` solo como Secret) → normalizacion (`scripts/lib_cashbids.py`, un parser y una config para todos los estados) → fusion/deduplicacion/revisiones → shards `data/us-cash-bids/<ST>/<commodity>.json` (+ `history/<ST>/<commodity>.json`, `manifest.json`, `reports.json`, `revisions.json`, `watch.json`, `ingestion-status.json`) → UI. El navegador descarga solo estado + producto; el historico solo al abrir el detalle.
+- **Sin clave**: el pipeline termina en `NO_KEY` (aviso, rc 0) y no publica ni inventa nada. `AUTH_FAILURE` falla la ejecucion; un informe `UNAVAILABLE/ERROR` conserva el ultimo dataset valido. La clave nunca se escribe en ficheros ni logs (lo verifica `scripts/test-us-cash-bids.py` y el contrato `_cb_secret_scan`).
+- **Carga inicial (bootstrap)**: mientras no haya clave, `--from-ams-compact` construye las series con los resumenes ya ingeridos en `data/ams` (valores reales, sin fecha de publicacion, sin base). La primera ejecucion con API las reconcilia en la misma serie.
+- **Granularidad**: `locationType` = geografia que representa el precio (REGION, TERMINAL, EXPORT_MARKET, STATE, CITY solo por override explicito, ELEVATOR solo si el informe identifica un elevador). La UI lo explica en cada fila y el mapa colorea estados; no hay puntos sin coordenadas oficiales.
+- **Integraciones**: Smart Watchlist (`c='CB'`, reglas new/above/below/pct/basis), Daily Brief (`cashBids`: rango por grupo, nunca una variacion combinada; revisiones «USDA revised …»), Ficha de producto 3.0 (bloque «Mercados locales» en maiz, trigo y soja), Freshness Engine (diario / semanal), License Gate (ver DATA_SOURCES.md).
+- **Preparado, no construido**: «cerca de mi» (codigo postal/condado/coordenadas) y premio/descuento local frente a la referencia nacional (hoy no comparable: la referencia de Dehesa es el precio mensual recibido NASS).

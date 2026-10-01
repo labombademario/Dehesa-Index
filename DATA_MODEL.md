@@ -61,3 +61,13 @@ Generados por `scripts/build-source-candidates.py` y `scripts/build-coverage-gap
 | `PENDING` | motor | sin fecha de observación válida |
 
 Propagación: `archiveStates` (`HISTORICAL`, `DISCONTINUED`) quedan fuera del denominador de frescura del Coverage Score, no cuentan como retraso en el Observatorio ni disparan reglas `fresh` de la Watchlist, se muestran en gris en el Comparador y en la página de estado, y en la matriz de cobertura una celda con solo series archivadas es `HISTORICAL_ONLY` (no `STALE`). `data/freshness.json` publica `staleTotal`, `historicalTotal`, `discontinuedTotal`, `archiveTotal` y `activeTotal`.
+
+## US Local Cash Bids (`data/us-cash-bids/`, esquemas `schemas/us-cash-bids-*.schema.json`)
+- **Serie** (`id = us-cb:<reportId>:<sha1[:10]>`): identidad = producto, clase, calidad, proteina, tipo de comprador (`deliveryPoint`), localizacion, periodo de entrega, unidad, descripcion/aplicacion + dimensiones `splitBy` del registro (p. ej. flete, tipo de venta, transporte en el informe 3046). Nunca se mezclan clases de trigo (HRW, SRW, HRS, durum) ni periodos de entrega.
+- **Campos canonicos**: `reportId, state, locationName, locationType (ELEVATOR|TERMINAL|CITY|REGION|STATE|EXPORT_MARKET|UNKNOWN), commodity, commodityClass, grade, protein, deliveryPeriod, currency, unit, priceKind (AVERAGE|EXACT|RANGE|NONE), avg, lo, hi, bLo/bHi (base, solo si USDA la publica), futuresContract, basisUnit, date, pub (publicacion, null en la carga inicial), prevDate/prevAvg/changePct, freshness, sourceUrl`. `null` antes que inventar.
+- **Cabecera de precio**: el promedio publicado; el precio exacto si min = max; si solo hay rango se muestra el rango, nunca un punto medio calculado.
+- **Variacion**: `changePct` solo entre observaciones separadas ≤ 7 dias (diario) o ≤ 14 (semanal).
+- **Basis**: se guarda y se muestra solo si el informe la publica; nunca se calcula. Los nombres de campo crudos de base/futuros se confirman en la primera ejecucion con API (`ingestion-status.json` → `fieldsSeen`).
+- **Historico** (`history/<ST>/<commodity>.json`): puntos `[fecha, avg, lo, hi, basisLo, basisHi, pub]` por serie; los cambios de definicion (`NEW_DIMENSION`, `TITLE_CHANGE`) se marcan en `breaks` del shard y se dibujan como discontinuidad.
+- **Revisiones** (`revisions.json`): publicacion posterior con valor distinto ⇒ `{oldValue, newValue, detectedAt}`; mismo `pub` con valores distintos ⇒ ambiguo, se descarta y se cuenta; los puntos de carga inicial se reconcilian, no son revisiones.
+- **Registro de informes** (`reports.json`): `reportId, slugId, slugName, reportName, state, market, marketType, frequency, commodities, active, sourceUrl, lastPublished, ingestionStatus`.

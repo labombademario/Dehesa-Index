@@ -24,6 +24,8 @@ for o in ORDER:
     L += ['## %s (%d)' % (o, len(items)), '', reg['policy']['statuses'][o] + '.', '', '| sourceId | Fuente | Pais | Licencia | Comercial/derivados | Atribucion | Series | Restricciones adicionales |', '|---|---|---|---|---|---|---|---|']
     L += [row(k, s) for k, s in items] + ['']
 L += ['## Como anadir una fuente', '', '1. Leer los terminos y anotar la evidencia en `data/license-registry.json` (`status`, `licenseId`, `attributionText`, `evidence`, `verifiedAt`).', '2. Si no se puede verificar: `PENDING`, nunca `VERIFIED`.', '3. Anadir el workflow en `sources.yml` (se genera con `scripts/gen-workflows.py`) y el contrato en `schemas/registry.json`.', '4. `python3 scripts/check-licenses.py` y `python3 scripts/validate-data.py --all` deben pasar.', '']
+L += ['## Datasets derivados de una fuente ya registrada', '',
+      '- **`data/us-cash-bids/`** (ofertas locales de grano de EE. UU.): se lee de USDA AMS Market News (MARS API, `usda_ams_mars`). No hay una fuente propia en el registro porque el License Gate estricto no admite fuentes PENDING nuevas en uso; la nota `files["data/us-cash-bids/"]` de `data/license-registry.json` deja constancia de que la licencia especifica del dataset (algunos informes estatales se elaboran en cooperacion con agencias estatales) **no esta verificada**. Revisar antes de cualquier uso comercial ampliado. La clave de la API (`USDA_MMN_API_KEY`, o `MARS_API_KEY` como alternativa) solo existe como GitHub Actions Secret.', '']
 out = '\n'.join(L)
 f = ROOT / 'DATA_SOURCES.md'
 if '--check' in sys.argv:
