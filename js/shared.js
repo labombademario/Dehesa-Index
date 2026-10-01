@@ -582,12 +582,129 @@
     if (typeof global.DehesaShared.onLangChange === 'function') global.DehesaShared.onLangChange(lang);
   }
 
+
+  // ── Tablas ordenables: clic en la cabecera (A-Z, mayor-menor, fecha), otro clic invierte, un tercero restaura ──
+  var SORT_T = {
+    es: { tip: 'Ordenar por esta columna', asc: 'ascendente', desc: 'descendente' },
+    en: { tip: 'Sort by this column', asc: 'ascending', desc: 'descending' },
+    fr: { tip: 'Trier par cette colonne', asc: 'croissant', desc: 'décroissant' },
+    it: { tip: 'Ordina per questa colonna', asc: 'crescente', desc: 'decrescente' }
+  };
+  var MONTHS = { ene: 1, jan: 1, janv: 1, gen: 1, feb: 2, fev: 2, 'févr': 2, mar: 3, abr: 4, apr: 4, avr: 4, may: 5, mai: 5, mag: 5, jun: 6, juin: 6, giu: 6, jul: 7, juil: 7, lug: 7, ago: 8, aug: 8, 'août': 8, set: 9, sep: 9, sept: 9, oct: 10, ott: 10, nov: 11, dic: 12, dec: 12, 'déc': 12 };
+  var sortState = {}, sortBusy = false;
+  function cellText(c) { return (c.getAttribute('data-sort') || c.textContent || '').replace(/\s+/g, ' ').trim(); }
+  function parseDate(s) {
+    var m;
+    if ((m = /^(\d{4})-(\d{2})(?:-(\d{2}))?(?!\d)/.exec(s))) return +m[1] * 10000 + +m[2] * 100 + (m[3] ? +m[3] : 0);
+    if ((m = /^(\d{4})-?Q([1-4])$/i.exec(s))) return +m[1] * 10000 + (+m[2] * 3 - 2) * 100;
+    if ((m = /^(\d{1,2})[\/.](\d{1,2})[\/.](\d{4})$/.exec(s))) return +m[3] * 10000 + +m[2] * 100 + +m[1];
+    if ((m = /^(\d{1,2})?\s*([A-Za-zéûÉ]{3,5})\.?\s+(?:de\s+)?(\d{4})$/.exec(s)) && MONTHS[m[2].toLowerCase()]) return +m[3] * 10000 + MONTHS[m[2].toLowerCase()] * 100 + (m[1] ? +m[1] : 0);
+    return null;
+  }
+  function parseNum(s) {
+    var m = /^[+\-−–]?\s*[$€£]?\s*\d[\d.,   ]*/.exec(s);
+    if (!m) return null;
+    var neg = /^[\-−–]/.test(m[0].trim()), x = m[0].replace(/[^\d.,]/g, '');
+    var dot = x.lastIndexOf('.'), com = x.lastIndexOf(',');
+    if (dot > -1 && com > -1) x = dot > com ? x.replace(/,/g, '') : x.replace(/\./g, '').replace(',', '.');
+    else if (com > -1) x = (lang === 'en' && /^\d{1,3}(,\d{3})+$/.test(x)) ? x.replace(/,/g, '') : x.replace(',', '.');
+    else if (dot > -1) { if (/^\d{1,3}(\.\d{3})+$/.test(x) && lang !== 'en') x = x.replace(/\./g, ''); }
+    var v = parseFloat(x);
+    return isNaN(v) ? null : (neg ? -v : v);
+  }
+  function sortableTable(tb) {
+    if (!tb || tb.classList.contains('di-nosort') || tb.classList.contains('di-corr-table') || tb.closest('.di-nosort')) return null;
+    var hr = null, rows = tb.rows, i, j;
+    for (i = 0; i < rows.length; i++) { if (rows[i].querySelector('th')) { hr = rows[i]; break; } }
+    if (!hr || hr.querySelector('[rowspan],[colspan]')) return null;
+    var body = [];
+    for (i = 0; i < rows.length; i++) {
+      if (rows[i] === hr) continue;
+      if (rows[i].querySelector('th') && !rows[i].querySelector('td')) return null;
+      if (rows[i].querySelector('[colspan]')) return null;
+      if (rows[i].cells.length !== hr.cells.length) return null;
+      body.push(rows[i]);
+    }
+    if (body.length < 3) return null;
+    for (j = 0; j < hr.cells.length; j++) if (hr.cells[j].tagName !== 'TH') return null;
+    return { hr: hr, body: body };
+  }
+  function tableSig(tb, hr) { var h = []; for (var i = 0; i < hr.cells.length; i++) { var c = hr.cells[i].cloneNode(true), ind = c.querySelector('.di-sort-ind'); if (ind) ind.parentNode.removeChild(ind); h.push(c.textContent.trim()); } return location.pathname + location.search.split('&')[0] + '|' + h.join('|'); }
+  function colType(body, col) {
+    var n = 0, d = 0, nu = 0, i, v;
+    for (i = 0; i < body.length; i++) { v = cellText(body[i].cells[col]); if (!v || /^[–—\-]+$|^n\.?[dsa]\.?$/i.test(v)) continue; n++; if (parseDate(v) != null) d++; else if (parseNum(v) != null) nu++; }
+    if (!n) return 'text';
+    return d / n >= 0.6 ? 'date' : nu / n >= 0.6 ? 'num' : 'text';
+  }
+  function applySort(tb, info, col, dir) {
+    var type = colType(info.body, col), keyed = info.body.map(function (r, idx) {
+      var v = cellText(r.cells[col]), k = null;
+      if (type === 'date') k = parseDate(v); else if (type === 'num') k = parseNum(v);
+      if (r.getAttribute('data-i0') == null) r.setAttribute('data-i0', idx);
+      return { r: r, k: type === 'text' ? v.toLowerCase() : k, empty: type === 'text' ? !v : k == null, o: +r.getAttribute('data-i0') };
+    });
+    keyed.sort(function (a, b) {
+      if (dir === 0) return a.o - b.o;
+      if (a.empty !== b.empty) return a.empty ? 1 : -1;
+      if (a.empty) return a.o - b.o;
+      var c = type === 'text' ? a.k.localeCompare(b.k, lang, { numeric: true, sensitivity: 'base' }) : a.k - b.k;
+      return c === 0 ? a.o - b.o : c * (dir === 'asc' ? 1 : -1);
+    });
+    keyed.forEach(function (x) { x.r.parentNode.appendChild(x.r); });
+    paintHeaders(tb, info, col, dir);
+  }
+  function paintHeaders(tb, info, col, dir) {
+    var t = SORT_T[lang] || SORT_T.es;
+    for (var j = 0; j < info.hr.cells.length; j++) {
+      var th = info.hr.cells[j], ind = th.querySelector('.di-sort-ind');
+      if (!ind) { ind = document.createElement('span'); ind.className = 'di-sort-ind'; ind.setAttribute('aria-hidden', 'true'); th.appendChild(ind); }
+      th.classList.add('di-sortable'); th.setAttribute('tabindex', '0'); th.setAttribute('role', 'button');
+      if (!th.getAttribute('title')) th.setAttribute('title', t.tip);
+      if (j === col && dir) { ind.textContent = dir === 'asc' ? ' ▲' : ' ▼'; th.setAttribute('aria-sort', dir === 'asc' ? 'ascending' : 'descending'); }
+      else { ind.textContent = ''; th.removeAttribute('aria-sort'); }
+    }
+    tb.setAttribute('data-sort-ready', '1');
+  }
+  function ensureSortable() {
+    if (sortBusy) return; sortBusy = true;
+    try {
+      var tbs = document.querySelectorAll('main table, #app table, .di-card table, table');
+      for (var i = 0; i < tbs.length; i++) {
+        var tb = tbs[i]; if (tb.getAttribute('data-sort-ready')) continue;
+        var info = sortableTable(tb); if (!info) { tb.setAttribute('data-sort-ready', '0'); continue; }
+        var st = sortState[tableSig(tb, info.hr)];
+        if (st) applySort(tb, info, st.col, st.dir); else paintHeaders(tb, info, -1, 0);
+      }
+    } catch (e) { }
+    sortBusy = false;
+  }
+  function onSortClick(ev) {
+    if (ev.type === 'keydown' && ev.key !== 'Enter' && ev.key !== ' ') return;
+    var th = ev.target.closest ? ev.target.closest('th.di-sortable') : null; if (!th) return;
+    var tb = th.closest('table'), info = tb && sortableTable(tb); if (!info) return;
+    if (ev.type === 'keydown') ev.preventDefault();
+    var col = th.cellIndex, sig = tableSig(tb, info.hr), st = sortState[sig], type = colType(info.body, col), first = type === 'text' ? 'asc' : 'desc', next;
+    if (!st || st.col !== col) next = first; else if (st.dir === first) next = first === 'asc' ? 'desc' : 'asc'; else next = 0;
+    sortState[sig] = next ? { col: col, dir: next } : null;
+    applySort(tb, info, col, next);
+  }
+  function initTableSort() {
+    var css = document.createElement('style');
+    css.textContent = 'th.di-sortable{cursor:pointer;user-select:none;-webkit-user-select:none}th.di-sortable:hover{color:var(--text-primary,inherit)}th.di-sortable:focus-visible{outline:2px solid var(--accent,#2f6b4a);outline-offset:-2px}.di-sort-ind{font-size:9px;white-space:nowrap}';
+    document.head.appendChild(css);
+    document.addEventListener('click', onSortClick); document.addEventListener('keydown', onSortClick);
+    var timer = null;
+    new MutationObserver(function () { if (sortBusy) return; clearTimeout(timer); timer = setTimeout(ensureSortable, 60); }).observe(document.body, { childList: true, subtree: true });
+    ensureSortable();
+  }
+
   function init(activePage) {
     global.DehesaShared.activePage = activePage;
     renderNav(activePage);
     renderContextBar(activePage);
     renderFooter();
     renderWelcomeAndTour();
+    initTableSort();
   }
 
   global.DehesaShared = {
