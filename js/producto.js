@@ -17,8 +17,15 @@
   CFG.arroz = { eu: 'di_cereales_arroz_eu', us: 'di_arroz_us', psd: 'arroz', es: 1505, gats: 'arroz', cp: ['rice'], crop: { y: 'RICE - YIELD, MEASURED IN LB / ACRE', p: 'RICE - PRODUCTION, MEASURED IN CWT', h: 'RICE - ACRES HARVESTED', yu: 'lb', pu: 'cwt' }, ers: 'rice', rend: 'rice', kind: 'crop' };
   CFG.leche = { eu: 'di_leche_eu', us: 'di_leche_us', ukP: 'di_lacteos_leche_uk', euIdx: 'di_eurostat_milk_output_index', euIdxMilk: true, uk: 'di_defra_milk_output_index', psd: 'leche', gats: 'lacteos', inv: 'MILK - PRODUCTION, MEASURED IN LB', live: ['CATTLE, COWS, MILK - INVENTORY', 'MILK - PRODUCTION, MEASURED IN LB', 'BUTTER, COLD STORAGE - STOCKS, MEASURED IN LB', 'CHEESE, NATURAL, COLD STORAGE, CHILLED - STOCKS, MEASURED IN LB'], ers: 'milk', kind: 'live' };
   CFG.pollo = { eu: 'di_avicultura_pollo_eu', us: 'di_pollo_us', psd: 'pollo', gats: 'pollo', live: ['CHICKENS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB', 'CHICKENS, BREASTS & BREAST MEAT, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB', 'CHICKENS, WINGS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB'], kind: 'live' };
+  CFG.cebada = { eu: 'di_cereales_cebada_eu', us: 'di_cebada_us', uk: 'di_defra_barley_output_index', euIdx: 'di_eurostat_cereals_output_index', psd: 'cebada', es: 301, gats: 'cebada', ers: 'barley', kind: 'other' };
+  CFG.colza = { eu: 'di_cereales_colza_eu', us: 'di_colza_us', psd: 'colza', kind: 'other' };
+  CFG.oliva = { eu: 'di_aceite_oliva_eu', psd: 'oliva', kind: 'other' };
+  CFG.azucar = { eu: 'di_azucar_azucar_eu', psd: 'azucar', kind: 'other' };
+  CFG.huevos = { eu: 'di_avicultura_huevos_eu', us: 'di_huevos_us', uk: 'di_defra_eggs_output_index', gats: 'huevos', kind: 'other' };
+  var NMX = { es: { huevos: 'Huevos' }, en: { huevos: 'Eggs' }, fr: { huevos: 'Œufs' }, it: { huevos: 'Uova' } };
+  function names() { var n = P.names(), x = NMX[lang()] || NMX.es, o = {}, k; for (k in n) o[k] = n[k]; for (k in x) o[k] = x[k]; return o; }
   CFG.trigo.crop.yu = CFG.trigo.crop.pu = CFG.maiz.crop.yu = CFG.maiz.crop.pu = 'bu';
-  var ORDER = ['trigo', 'maiz', 'soja', 'arroz', 'vacuno', 'cerdo', 'leche', 'pollo'];
+  var ORDER = ['trigo', 'maiz', 'soja', 'arroz', 'cebada', 'colza', 'vacuno', 'cerdo', 'leche', 'pollo', 'huevos', 'oliva', 'azucar'];
   var T = {
     es: {
       title: 'Ficha de producto', sub: 'Todo lo que tenemos de un producto en una sola página: precio, oferta y demanda, comercio, cultivo o ganado, sequía y costes. Cada mercado muestra solo lo que sus datos permiten.',
@@ -326,7 +333,7 @@
 
   /* ---------- ganado ---------- */
   function liveBlock(t, cfg) {
-    var nl = D.live && D.live.series; if (!nl) return '';
+    var nl = D.live && D.live.series; if (!nl || !cfg.live) return '';
     var cs = [];
     cfg.live.forEach(function (k) {
       var s = nl[k]; if (!s || !s.n || s.n.length < 2) return;
@@ -399,8 +406,8 @@
     fr: { news: 'Actualités du produit', newsHint: 'Derniers titres de la rubrique Actualités qui mentionnent ce produit.', newsMore: 'Toutes les actualités', inp: 'Intrants et énergie dans l’actualité', inpHint: 'Engrais, diesel et aliments : le dernier sur les coûts de production.', rel: 'Relations : où poursuivre', relHint: 'Droits de douane du chapitre douanier de ce produit, données par pays, pages intrants et climat.', tar: 'Droits de douane (chapitre %c)', mk: { us: 'États-Unis', eu: 'UE', ca: 'Canada', mx: 'Mexique' }, ctry: 'Données par pays', ctrys: 'Commerce extérieur et prix par pays', inputs: 'Coûts des intrants (É.-U.)', fert: 'Engrais (UE)', clim: 'Météo agricole', trade: 'Commerce par partenaire' },
     it: { news: 'Notizie sul prodotto', newsHint: 'Ultimi titoli della sezione Notizie che citano questo prodotto.', newsMore: 'Tutte le notizie', inp: 'Input ed energia nelle notizie', inpHint: 'Fertilizzanti, gasolio e mangimi: le ultime sui costi di produzione.', rel: 'Relazioni: dove proseguire', relHint: 'Dazi del capitolo doganale di questo prodotto, dati per paese, pagine input e clima.', tar: 'Dazi (capitolo %c)', mk: { us: 'USA', eu: 'UE', ca: 'Canada', mx: 'Messico' }, ctry: 'Dati per paese', ctrys: 'Commercio estero e prezzi per paese', inputs: 'Costi degli input (USA)', fert: 'Fertilizzanti (UE)', clim: 'Meteo agricolo', trade: 'Commercio per partner' }
   };
-  var NK = { trigo: ['trigo'], maiz: ['maiz'], soja: ['soja'], arroz: ['arroz'], vacuno: ['vaca', 'ganado'], cerdo: ['cerdo'], leche: ['leche'], pollo: ['pollo'] };
-  var HS = { trigo: '10', maiz: '10', arroz: '10', soja: '12', vacuno: '02', cerdo: '02', pollo: '02', leche: '04' };
+  var NK = { cebada: ['cebada'], colza: ['colza'], oliva: ['oliva'], azucar: ['azucar'], huevos: ['huevos'], trigo: ['trigo'], maiz: ['maiz'], soja: ['soja'], arroz: ['arroz'], vacuno: ['vaca', 'ganado'], cerdo: ['cerdo'], leche: ['leche'], pollo: ['pollo'] };
+  var HS = { cebada: '10', colza: '12', oliva: '15', azucar: '17', huevos: '04', trigo: '10', maiz: '10', arroz: '10', soja: '12', vacuno: '02', cerdo: '02', pollo: '02', leche: '04' };
   function newsList(items, t, x, more) {
     if (!items.length) return '';
     return items.map(function (n) {
@@ -423,12 +430,12 @@
   }
 
   function tabs(t) {
-    var nm = P.names();
+    var nm = names();
     return '<div style="display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px">' + ORDER.map(function (k) { return '<a class="di-link-btn" href="producto.html?p=' + k + '" data-p="' + k + '" style="' + (k === SEL.p ? 'font-weight:700;border-color:var(--gold,#a9491f);' : '') + '">' + esc(nm[k] || k) + '</a>'; }).join('') + '</div>';
   }
 
   function render() {
-    var t = tr(), root = document.getElementById('pr-body'), cfg = CFG[SEL.p], nm = P.names();
+    var t = tr(), root = document.getElementById('pr-body'), cfg = CFG[SEL.p], nm = names();
     document.title = 'Dehesa Index — ' + t.title + ': ' + (nm[SEL.p] || SEL.p);
     document.getElementById('pg-h1').textContent = t.title + ': ' + (nm[SEL.p] || SEL.p);
     document.getElementById('pg-sub').textContent = t.sub;
