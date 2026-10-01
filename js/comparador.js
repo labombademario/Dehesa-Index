@@ -36,8 +36,8 @@
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d) { if (typeof v !== 'number' || !isFinite(v)) return '–'; var dd = d != null ? d : (Math.abs(v) >= 1000 ? 0 : Math.abs(v) >= 100 ? 1 : 2); try { return v.toLocaleString(lang(), { minimumFractionDigits: dd, maximumFractionDigits: dd }); } catch (e) { return v.toFixed(dd); } }
   function iso(c) { return c === 'EL' ? 'GR' : c === 'UK' ? 'GB' : c; }
-  function flag(c) { if (c === 'EU') return '🇪🇺'; var i = iso(c); if (!/^[A-Z]{2}$/.test(i)) return ''; return String.fromCodePoint(127397 + i.charCodeAt(0), 127397 + i.charCodeAt(1)); }
-  function cname(c) { if (c === 'EU') return tt().eu; try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(iso(c)) || c; } catch (e) { return c; } }
+  function flag(c) { if (c === 'EU') return '🇪🇺'; if (window.DIAgg && DIAgg.flag(c)) return DIAgg.flag(c); var i = iso(c); if (!/^[A-Z]{2}$/.test(i)) return ''; return String.fromCodePoint(127397 + i.charCodeAt(0), 127397 + i.charCodeAt(1)); }
+  function cname(c) { if (c === 'EU') return tt().eu; var ag = window.DIAgg && DIAgg.label(c, lang()); if (ag) return ag; try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(iso(c)) || c; } catch (e) { return c; } }
   function ts(ym) { return Date.UTC(+ym.slice(0, 4), +ym.slice(5, 7) - 1, 1); }
   function fxRate(cur, ym) { if (cur === 'EUR') return 1; var m = FXM[cur]; if (!m) return null; if (m[ym] != null) return m[ym]; return m._last; }
   // Unit Engine: valor original (por unidad de precio) -> moneda destino por t o por 100 kg

@@ -24,9 +24,9 @@
   function tt() { return T[lang()] || T.es; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v) { if (typeof v !== 'number') return esc(v == null ? '–' : v); var d = Math.abs(v) >= 1000 ? 0 : Math.abs(v) >= 10 ? 1 : 2; try { return v.toLocaleString(lang(), { maximumFractionDigits: d }); } catch (e) { return String(v); } }
-  function cname(c, d) { try { var n = new Intl.DisplayNames([lang()], { type: 'region' }).of(c === 'EL' ? 'GR' : c); return n && n !== c ? n : d; } catch (e) { return d; } }
+  function cname(c, d) { var ag = window.DIAgg && DIAgg.label(c, lang()); if (ag) return ag; try { var n = new Intl.DisplayNames([lang()], { type: 'region' }).of(c === 'EL' ? 'GR' : c); return n && n !== c ? n : d; } catch (e) { return d; } }
   function mlab(g) { var t = tt(); if (/^eu_/.test(g)) return (lang() === 'es' ? 'UE Agri-food' : 'EU Agri-food') + ': ' + g.slice(3); return (t.mm && t.mm[g]) || T.en.mm[g] || g; }
-  function flag(cc) { return window.DIProfile && window.DIProfile.flag ? window.DIProfile.flag(cc) : ''; }
+  function flag(cc) { var f = window.DIProfile && window.DIProfile.flag ? window.DIProfile.flag(cc) : ''; return f || (window.DIAgg ? DIAgg.flag(cc) : ''); }
   function ts(p) { var y = +p.slice(0, 4), m = p.length >= 7 ? +p.slice(5, 7) - 1 : 0, d = p.length >= 10 ? +p.slice(8, 10) : 1; if (/Q/.test(p)) { m = (+p.split('Q')[1] - 1) * 3; } return Date.UTC(y, m || 0, d || 1); }
   function sel(id, label, inner) { return '<label style="font-size:13px;flex:1;min-width:150px">' + esc(label) + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; }
   function filterRows() { var t = tt(); return DISeries.find({ cc: ST.cc || null, group: ST.g || null, tag: ST.tag || null, q: ST.q }).then(function (r) { ROWS = r; }); }

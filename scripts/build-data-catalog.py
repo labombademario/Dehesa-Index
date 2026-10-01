@@ -19,7 +19,7 @@ TAGS = [('wheat', r'wheat|trigo|blé|\bble\b|frumento'), ('maize', r'maize|corn|
         ('fruit', r'fruit|apple|orange|tomato|vegetable|lettuce|hortaliza|fruta')]
 TAGS = [(k, re.compile(v, re.I)) for k, v in TAGS]
 def tags(label): return [k for k, rx in TAGS if rx.search(label)]
-SPECIAL = {'EL': 'Greece', 'UK': 'United Kingdom', 'EU': 'European Union', 'EU+UK': 'EU + United Kingdom', 'EU-UK': 'EU - United Kingdom', 'EU Average': 'EU average', 'EU13': 'EU13 (Member States since 2004)', 'EU14': 'EU14', 'EU15': 'EU15'}
+SPECIAL = {'EL': 'Greece', 'UK': 'United Kingdom', 'EU': 'European Union', 'EU+UK': 'EU and UK (average)', 'EU-UK': 'EU excluding UK (average)', 'EU Average': 'EU average', 'EU13': 'EU-13 (Member States since 2004)', 'EU14': 'EU-14 (EU-15 without UK)', 'EU15': 'EU-15 (members before 2004)', 'Region 1': 'Sugar region 1', 'Region 2': 'Sugar region 2', 'Region 3': 'Sugar region 3'}
 def slug(cc): return re.sub(r'[^A-Za-z0-9]+', '_', cc.replace('+', 'plus')).strip('_')
 def dump(o): return json.dumps(o, ensure_ascii=False, separators=(',', ':'))
 def write_if_changed(path, text, written):
