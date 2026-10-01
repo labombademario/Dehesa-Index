@@ -1,0 +1,12 @@
+02:08:33   error https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS: The read operation timed out
+02:09:35   error https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS: The read operation timed out
+02:10:37   error https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS: The read operation timed out
+02:10:41 us-policy-rate: 440 puntos, ultimo 2026-08=3.625 (BIS (respaldo))
+02:11:41   error https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU: The read operation timed out
+02:12:43   error https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU: The read operation timed out
+02:13:45   error https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU: The read operation timed out
+02:13:47 us-target-upper: sin datos
+02:13:48 eu-policy-rate: 46 puntos, ultimo 2026-09=2.65 (primaria)
+02:13:49 eu-deposit-rate: 64 puntos, ultimo 2026-09=2.5 (primaria)
+02:13:49 ca-policy-rate: 210 puntos, ultimo 2026-09=2.25 (primaria)
+02:13:50 au-policy-rate: 433 puntos, ultimo 2026-08=4.35 (primaria)
