@@ -1,0 +1,5 @@
+USD 333 meses, ultimo ('2026-09', 1.151323)
+CAD 333 meses, ultimo ('2026-09', 1.607273)
+AUD 333 meses, ultimo ('2026-09', 1.616586)
+GBP 333 meses, ultimo ('2026-09', 0.858125)
+DKK 333 meses, ultimo ('2026-09', 7.475173)
