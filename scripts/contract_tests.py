@@ -274,7 +274,82 @@ def series_shard(doc, errs, warns, stats):
     stats["series"] += len(doc["series"])
 
 # ---------- consistencia entre ficheros ----------
+
+# ---------- vistas pequenas y capa de precios (data/views, data/prices) ----------
+def views_home_summary(doc, errs, warns, stats):
+    for m in doc["movers"]:
+        if "history" in m: errs.append("mover %s lleva historico completo (la vista debe ser ligera)" % m["id"])
+    for c in doc["cropProgress"]["crops"]:
+        if not c.get("seasons"): errs.append("cropProgress %s sin temporadas" % c.get("id"))
+    for c in doc["supplyDemand"]["commodities"]:
+        if not c.get("world"): errs.append("supplyDemand %s sin datos mundiales" % c.get("id"))
+    if doc["markets"]["total"] != sum(doc["markets"]["families"].values()): errs.append("markets.total != suma de familias")
+    if doc["stats"]["observations"] < 1: errs.append("stats.observations vacio")
+    stats["series"] = len(doc["movers"])
+
+def views_news_index(doc, errs, warns, stats):
+    n = len(doc["stories"]); stats["series"] = n
+    for k, ids in doc["keys"].items():
+        if not isinstance(ids, list) or any((not isinstance(i, int)) or i < 0 or i >= n for i in ids): errs.append("clave %s apunta fuera de stories" % k)
+    seen = set()
+    for s_ in doc["stories"]:
+        if s_["id"] in seen: errs.append("noticia duplicada %s" % s_["id"])
+        seen.add(s_["id"])
+        if not _date(s_["date"]): errs.append("%s: fecha invalida %s" % (s_["id"], s_["date"]))
+        elif _date(s_["date"]) > TODAY + datetime.timedelta(days=2): errs.append("%s: noticia en el futuro" % s_["id"])
+    if not doc["keys"]: errs.append("indice sin claves")
+
+def views_news_feed(doc, errs, warns, stats):
+    stats["series"] = len(doc["items"]); seen = set()
+    if len(doc["items"]) > 600: errs.append("feed demasiado grande (%d > 600)" % len(doc["items"]))
+    for a in doc["items"]:
+        if a["id"] in seen: errs.append("noticia duplicada %s" % a["id"])
+        seen.add(a["id"])
+        if not _date(a["d"]): errs.append("%s: fecha invalida %s" % (a["id"], a["d"]))
+    if len(doc["items"]) < 20: warns.append("feed con solo %d titulares" % len(doc["items"]))
+
+def prices_manifest(doc, errs, warns, stats):
+    tot = 0
+    for r, m in doc["regions"].items():
+        for f in ("latest", "intelligence"):
+            if not (D / m[f]).exists(): errs.append("%s: falta %s" % (r, m[f]))
+        for p in m["products"]:
+            if not (D / m["historyDir"] / (p + ".json")).exists(): errs.append("%s/%s: falta su historico" % (r, p))
+        if m["observations"] != len(m["products"]): errs.append("%s: observations %d != products %d" % (r, m["observations"], len(m["products"])))
+        tot += m["observations"]
+    if tot != doc["totals"]["observations"]: errs.append("totals.observations %d != suma de regiones %d" % (doc["totals"]["observations"], tot))
+    stats["series"] = tot
+
+def prices_latest(doc, errs, warns, stats):
+    stats["series"] = len(doc["observations"]); seen = set()
+    for o in doc["observations"]:
+        if o["region"] != doc["region"]: errs.append("%s: region %s != %s" % (o["id"], o["region"], doc["region"]))
+        if o["id"] in seen: errs.append("id duplicado %s" % o["id"])
+        seen.add(o["id"])
+        if "history" in o: errs.append("%s: lleva history completo (debe ir en prices/history)" % o["id"])
+        if any(not _num(v) for v in o.get("spark", [])): errs.append("%s: spark con no numericos" % o["id"])
+        if len(o.get("spark", [])) > 104: errs.append("%s: spark > 104 valores" % o["id"])
+        if len(o.get("recent", [])) > 30: errs.append("%s: recent > 30 puntos" % o["id"])
+
+def prices_history(doc, errs, warns, stats):
+    h = doc["history"]; stats["series"] = len(h)
+    keys = [(x["year"], _pnum(x["period"])) for x in h]
+    if keys != sorted(keys): errs.append("%s/%s: historico no ordenado" % (doc["region"], doc["product"]))
+    if len(set(keys)) != len(keys): warns.append("%s/%s: periodos repetidos" % (doc["region"], doc["product"]))
+    if any(not _num(x["value"]) for x in h): errs.append("%s/%s: valores no numericos" % (doc["region"], doc["product"]))
+
+def prices_intelligence(doc, errs, warns, stats):
+    stats["series"] = len(doc["series"])
+    for k, s_ in doc["series"].items():
+        pts = s_["points"]
+        if any(not (isinstance(p, list) and len(p) == 2 and _date(p[0]) and _num(p[1])) for p in pts): errs.append("%s: puntos invalidos" % k); continue
+        if [p[0] for p in pts] != sorted(p[0] for p in pts): errs.append("%s: puntos no ordenados" % k)
+        if s_["comparability"] == "not_comparable": errs.append("%s: serie no comparable en el motor de relaciones" % k)
+
 def consistency(errs, warns):
+    consistency_prices(errs, warns)
+    _consistency(errs, warns)
+def _consistency(errs, warns):
     def ld(n):
         try: return load(n)
         except Exception as e: errs.append("consistencia: no se puede leer %s (%s)" % (n, str(e)[:80])); return None
@@ -307,3 +382,36 @@ def consistency(errs, warns):
         wf = {p.name for p in (ROOT / ".github/workflows").glob("update-*.yml")}
         miss = sorted(wf - {p["workflow"] for p in ps["pipelines"]})
         if miss: errs.append("workflows sin entrada en pipeline-status: %s" % miss[:5])
+
+def consistency_prices(errs, warns):
+    """data/prices (capa ligera) frente a latest.json/history.json y al Relationship Engine del cliente."""
+    try: pm = json.loads((D / "prices/manifest.json").read_text(encoding="utf-8")); lat = load("latest.json")
+    except Exception as e: errs.append("consistencia prices: no se puede leer (%s)" % str(e)[:80]); return
+    want = {o["id"]: o for o in lat["observations"]}; got = {}
+    for r, m in pm["regions"].items():
+        try: doc = json.loads((D / m["latest"]).read_text(encoding="utf-8")); it = json.loads((D / m["intelligence"]).read_text(encoding="utf-8"))
+        except Exception as e: errs.append("prices/%s: %s" % (r, str(e)[:80])); continue
+        for o in doc["observations"]: got[o["id"]] = o
+        if len(it["series"]) != m["intelligenceSeries"]: errs.append("prices/%s: intelligenceSeries %d != %d series" % (r, m["intelligenceSeries"], len(it["series"])))
+        for o in doc["observations"]:
+            h = D / m["historyDir"] / (o["product"] + ".json")
+            if not h.exists(): continue
+            hd = json.loads(h.read_text(encoding="utf-8"))
+            if hd["id"] != o["id"]: errs.append("%s: historico de otro id (%s)" % (o["id"], hd["id"]))
+            if len(hd["history"]) != o["n"]: errs.append("%s: n=%d != %d puntos del historico" % (o["id"], o["n"], len(hd["history"])))
+            if o.get("spark") and abs(o["spark"][-1] - hd["history"][-1]["value"]) > 1e-9: errs.append("%s: spark no termina en el ultimo punto del historico" % o["id"])
+    if set(got) != set(want): errs.append("prices vs latest.json: %d ids solo en prices, %d solo en latest" % (len(set(got) - set(want)), len(set(want) - set(got))))
+    for i, o in got.items():
+        w = want.get(i)
+        if w and (w["value"] != o["value"] or w["observationDate"] != o["observationDate"]): errs.append("%s: valor/fecha distinto de latest.json" % i)
+    # Relationship Engine: cada par (a, b) de cada region debe tener sus dos series en prices/intelligence/<region>.json; si no, queda 'pending' (se avisa, no se rompe)
+    js = (ROOT / "js/precios-intel.js").read_text(encoding="utf-8")
+    block = js[js.index("var REGIONAL_RELATIONSHIP_DEFS"):js.index("var RELATIONSHIP_DEFS = REGIONAL_RELATIONSHIP_DEFS")]
+    defs = re.findall(r"region:'(\w+)',\s*id:'([\w-]+)',\s*a:'(\w+)',\s*b:'(\w+)'", block)
+    if len(defs) < 8: errs.append("no se han podido leer las relaciones de js/precios-intel.js (%d)" % len(defs))
+    pend = []
+    for reg, rid, a, b in defs:
+        f = D / ("prices/intelligence/%s.json" % reg)
+        ser = json.loads(f.read_text(encoding="utf-8"))["series"] if f.exists() else {}
+        if a not in ser or b not in ser: pend.append("%s/%s" % (reg, rid))
+    if pend: warns.append("relaciones sin las dos series en prices/intelligence (quedan 'pending'): %d de %d (%s)" % (len(pend), len(defs), ", ".join(pend[:6])))

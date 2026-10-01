@@ -1,0 +1,42 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Prices manifest (data/prices)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "regions",
+  "totals"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "regions": {
+   "type": "object",
+   "minProperties": 1
+  },
+  "totals": {
+   "type": "object",
+   "required": [
+    "observations",
+    "regions"
+   ],
+   "properties": {
+    "observations": {
+     "type": "integer"
+    },
+    "regions": {
+     "type": "integer"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,20 @@
+{
+  "_doc": "Presupuesto de carga inicial por pagina (scripts/measure-pages.mjs --check). Cifras en KB. Se mide con navegador real: JSON de datos (crudo), JS (crudo) y total comprimido (gzip). 'forbid' son peticiones que NO deben ocurrir al abrir la pagina. Subir un limite exige justificarlo en el commit.",
+  "pages": [
+    { "url": "/", "maxDataRawKB": 120, "maxJsRawKB": 320, "maxTotalGzKB": 190,
+      "forbid": ["/data/(latest|history|normalized|catalog)\\.json", "news-(index|feed)\\.js(\\?|$)", "/data/prices/history/", "-stats\\.json"] },
+    { "url": "/", "mobile": true, "maxDataRawKB": 120, "maxTotalGzKB": 190, "forbid": ["/data/(latest|history|normalized)\\.json"] },
+    { "url": "/precios.html", "maxDataRawKB": 650, "maxJsRawKB": 560, "maxTotalGzKB": 360,
+      "forbid": ["/data/(latest|history|normalized)\\.json", "news-(index|feed)\\.js(\\?|$)", "/data/prices/history/", "-stats\\.json"] },
+    { "url": "/precios.html", "mobile": true, "maxDataRawKB": 650, "maxTotalGzKB": 360, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/prices/history/"] },
+    { "url": "/paises.html?c=ES", "maxDataRawKB": 1350, "maxTotalGzKB": 500, "forbid": ["-stats\\.json", "/data/(latest|history|normalized)\\.json"] },
+    { "url": "/paises.html?c=ES", "mobile": true, "maxDataRawKB": 1350, "maxTotalGzKB": 500, "forbid": ["-stats\\.json"] },
+    { "url": "/perfiles.html", "maxDataRawKB": 120, "maxJsRawKB": 180, "maxTotalGzKB": 140,
+      "forbid": ["-stats\\.json", "/data/(latest|history|normalized)\\.json", "/data/catalog/[A-Z]{2}\\.json"] },
+    { "url": "/comparador.html", "maxDataRawKB": 450, "maxTotalGzKB": 240, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
+    { "url": "/catalogo.html", "maxDataRawKB": 2800, "maxTotalGzKB": 400, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"], "wait": 5000 },
+    { "url": "/brief.html", "maxDataRawKB": 420, "maxTotalGzKB": 180, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
+    { "url": "/noticias.html", "maxDataRawKB": 300, "maxTotalGzKB": 210, "forbid": ["/data/news\\.json", "news-feed\\.js(\\?|$)"] },
+    { "url": "/producto.html?p=trigo", "maxDataRawKB": 5000, "maxTotalGzKB": 1100, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/news\\.json"] }
+  ]
+}

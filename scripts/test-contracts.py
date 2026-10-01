@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Pruebas negativas de los contratos: parte de datos REALES, los corrompe de una forma concreta y exige que validate-data los rechace.
 Garantiza que los esquemas y tests semanticos 'muerden' (un validador que siempre dice OK es peor que ninguno). Uso: python3 scripts/test-contracts.py"""
-import copy, importlib.util, json, sys, tempfile
+import copy, fnmatch, importlib.util, json, sys, tempfile
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]; D = ROOT / "data"
 spec = importlib.util.spec_from_file_location("vd", ROOT / "scripts" / "validate-data.py")
@@ -9,8 +9,7 @@ src = (ROOT / "scripts" / "validate-data.py").read_text().rsplit("\nmain()", 1)[
 vd = type(sys)("vd"); vd.__file__ = str(ROOT / "scripts" / "validate-data.py"); exec(compile(src, "validate-data.py", "exec"), vd.__dict__)
 def run(rel, mutate):
     doc = json.loads((D / rel).read_text()); mutate(doc)
-    reg = {k: v for k, v in vd.REG["files"].items()}
-    sch, tests = reg[rel]
+    sch, tests = vd.REG["files"].get(rel) or next(v for pat, v in vd.REG["globs"].items() if fnmatch.fnmatchcase(rel, pat))
     with tempfile.TemporaryDirectory() as t:
         p = Path(t) / "x.json"; p.write_text(json.dumps(doc))
         return vd.validate_contract(p, rel, sch, tests)
@@ -44,6 +43,21 @@ CASES = [
  ("catalog/manifest.json", "total incoherente", lambda d: d.__setitem__("seriesTotal", d["seriesTotal"] + 5)),
  ("export-sales.json", "semana desordenada", lambda d: d["commodities"][0]["weekly"].reverse()),
  ("gats.json", "mes futuro", lambda d: d["months"].append("209901")),
+ ("views/home-summary.json", "mover con historico", lambda d: d["movers"][0].__setitem__("history", [1, 2])),
+ ("views/home-summary.json", "markets.total incoherente", lambda d: d["markets"].__setitem__("total", d["markets"]["total"] + 1)),
+ ("views/news-index.json", "clave fuera de rango", lambda d: d["keys"].__setitem__("trigo", [10 ** 6])),
+ ("views/news-index.json", "enlace no http", lambda d: d["stories"][0].__setitem__("url", "javascript:alert(1)")),
+ ("views/news-feed.json", "noticia repetida", lambda d: d["items"].append(copy.deepcopy(d["items"][0]))),
+ ("views/news-feed.json", "fecha invalida", lambda d: d["items"][0].__setitem__("d", "ayer")),
+ ("prices/manifest.json", "total incoherente", lambda d: d["totals"].__setitem__("observations", 1)),
+ ("prices/manifest.json", "producto sin historico", lambda d: next(iter(d["regions"].values()))["products"].append("no-existe")),
+ ("prices/latest/us.json", "historico dentro de latest", lambda d: first(d).__setitem__("history", [1])),
+ ("prices/latest/us.json", "region cruzada", lambda d: first(d).__setitem__("region", "eu")),
+ ("prices/latest/us.json", "spark no numerico", lambda d: first(d).__setitem__("spark", ["x"])),
+ ("prices/history/us/trigo.json", "historico desordenado", lambda d: d["history"].reverse()),
+ ("prices/history/us/trigo.json", "valor no numerico", lambda d: d["history"][3].__setitem__("value", "n/a")),
+ ("prices/intelligence/uk.json", "puntos desordenados", lambda d: next(iter(d["series"].values()))["points"].reverse()),
+ ("prices/intelligence/uk.json", "serie no comparable", lambda d: next(iter(d["series"].values())).__setitem__("comparability", "not_comparable")),
 ]
 bad = 0
 for rel, name, fn in CASES:

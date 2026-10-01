@@ -10,7 +10,7 @@ Uso:  python3 scripts/validate-data.py [--files data/a.json data/b.json] [--stri
    latest = ultimo punto, unidad no vacia, saltos absurdos (> JUMP x la mediana reciente) como aviso, y conjunto de datos no vacio.
  - Escribe data/data-quality.json (resumen por archivo) salvo --no-report. Sale con codigo 1 si hay errores (los avisos no fallan salvo --strict).
 Los workflows lo ejecutan ANTES de hacer commit: un fichero roto no llega a main."""
-import datetime, json, math, re, sys
+import fnmatch, datetime, json, math, re, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import contract_tests as CT
@@ -198,6 +198,8 @@ def main():
     def one(f):
         rel = str(f.relative_to(DATA)) if str(f).startswith(str(DATA)) else f.name
         if rel in REG["files"]: sch, tests = REG["files"][rel]; return validate_contract(f, rel, sch, tests)
+        for pat, (sch, tests) in REG["globs"].items():
+            if fnmatch.fnmatchcase(rel, pat): return validate_contract(f, rel, sch, tests)
         return validate_file(f)
     results = [one(f) for f in files if f.exists()]
     for f in files:

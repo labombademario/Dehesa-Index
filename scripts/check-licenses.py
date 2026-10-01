@@ -65,6 +65,10 @@ for n in ("latest", "history", "normalized"):
     for sid in sorted({o["sourceId"] for o in doc["observations"]}):
         k = res(sid, "data/%s.json" % n)
         if k: used(k, "data/%s.json" % n)
+for f in sorted((D / "prices/latest").glob("*.json")):  # capa ligera de precios: cada observacion lleva su sourceId
+    for sid in sorted({o["sourceId"] for o in json.loads(f.read_text())["observations"]}):
+        k = res(sid, "data/prices/latest/%s" % f.name)
+        if k: used(k, "data/prices/")
 for path, m in reg["files"].items():
     if not (m.get("byCountry") or m.get("bySourceGroupPrefix")): continue
     f = ROOT / path

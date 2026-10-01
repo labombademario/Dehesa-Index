@@ -29,7 +29,7 @@ jobs:
         uses: ./.github/actions/publish
         with:
           paths: >-
-            data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json data/alberta-weekly.json data/alberta-weekly-report.json
+            data/snapshots data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json data/alberta-weekly.json data/alberta-weekly-report.json
           message: "data: Alberta semanal"
           user: "Dehesa Index Bot"
           optional: data/alberta-weekly-debug.txt

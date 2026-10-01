@@ -1,6 +1,6 @@
 name: Motor de precios (construir y validar)
 description: >
-  Cadena unica del motor de precios (snapshots -> latest/history/catalog -> CSV -> calidad -> inteligencia -> normalizado -> cross-market -> alertas)
+  Cadena unica del motor de precios (snapshots -> latest/history/catalog -> CSV -> calidad -> inteligencia -> normalizado -> cross-market -> alertas -> capa ligera data/prices)
   seguida de la validacion de contratos y de consistencia. Falla CERRADO: si algo falla no se llega al paso de publicacion.
 runs:
   using: composite
@@ -29,8 +29,11 @@ runs:
     - name: Construir senales de alerta
       shell: bash
       run: node scripts/build-alert-signals.mjs
+    - name: Construir capa ligera de precios (data/prices)
+      shell: bash
+      run: python3 scripts/build-price-views.py
     - name: Validar contratos y consistencia (antes de cualquier commit)
       shell: bash
       run: |
-        python3 scripts/validate-data.py --no-report --files data/latest.json data/history.json data/normalized.json data/quality.json data/intelligence.json data/cross-market.json data/catalog.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json
+        python3 scripts/validate-data.py --no-report --files data/latest.json data/history.json data/normalized.json data/quality.json data/intelligence.json data/cross-market.json data/catalog.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json data/prices/manifest.json data/prices/latest/*.json data/prices/intelligence/*.json data/prices/history/*/*.json
         python3 scripts/validate-data.py --consistency

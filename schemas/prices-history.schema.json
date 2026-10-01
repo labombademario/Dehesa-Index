@@ -1,0 +1,66 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Price history of ONE product (lazy)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "region",
+  "product",
+  "id",
+  "history"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "region": {
+   "type": "string",
+   "minLength": 1
+  },
+  "product": {
+   "type": "string",
+   "minLength": 1
+  },
+  "id": {
+   "type": "string",
+   "minLength": 1
+  },
+  "unit": {
+   "type": "string",
+   "minLength": 1
+  },
+  "frequency": {
+   "type": "string",
+   "minLength": 1
+  },
+  "history": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "period",
+     "year",
+     "value"
+    ],
+    "properties": {
+     "period": {
+      "type": [
+       "string",
+       "integer"
+      ]
+     },
+     "year": {
+      "type": "integer"
+     },
+     "value": {
+      "type": "number"
+     }
+    }
+   }
+  }
+ }
+}

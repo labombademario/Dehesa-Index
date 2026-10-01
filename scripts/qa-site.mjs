@@ -15,7 +15,7 @@ for(const product of ['trigo','maiz','leche','urea','diesel']){
  check(product+' landing -> calendar',c.includes('calendario.html?crop='));
 }
 const shared=await read('js/shared.js');
-check('nested footer logo uses sitePath',shared.includes("sitePath('assets/logo.png')"));
+check('nested footer logo uses sitePath',shared.includes("sitePath('assets/logo-nav.png')"));
 check('context bar exists',shared.includes('function renderContextBar'));
 check('context back uses history.back',shared.includes('window.history.back()'));
 
@@ -23,7 +23,9 @@ const prices=await read('js/precios.js');
 check('price URL sync uses pushState',prices.includes('history.pushState'));
 check('price URL restores popstate',prices.includes("addEventListener('popstate', restorePriceUrl)"));
 check('price category ids are canonical',prices.includes("['cereales','lacteos','ganado','porcino','ovino','avicultura','pienso','fertilizantes','azucar','aceite','energia','seguro','vino','madera']"));
-check('prices consume verified published observations',prices.includes("global.fetch('data/latest.json'"));
+check('prices consume verified published observations from the light layer (DIPrices)',prices.includes("global.DIPrices.latest()"));
+check('prices never download data/latest.json or data/history.json at entry',!/fetch\('data\/(latest|history)\.json'/.test(prices) && !/fetch\('data\/(latest|history)\.json'/.test(await read('js/precios-intel.js')));
+check('news come from data/views (no 600 KB blocking script)',!/news-(index|feed)\.js/.test((await read('precios.html'))+(await read('noticias.html'))));
 check('unverified samples never show a value (only verified observations do)',prices.includes("var showValue = !!observation && observation.status === 'verified'"));
 check('every published observation is applied (no short-circuit some())',!prices.includes('observations.some(applyPublishedObservation)'));
 check('published prices enforce source contract',prices.includes("observationMatchesContract"));

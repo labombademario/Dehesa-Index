@@ -33,6 +33,6 @@ jobs:
         uses: ./.github/actions/publish
         with:
           paths: >-
-            data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json
+            data/snapshots data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json
           message: "data: refresh UK Defra series"
           user: "dehesa-index-bot"

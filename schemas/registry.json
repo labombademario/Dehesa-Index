@@ -193,6 +193,30 @@
    [
     "views_eu_preview"
    ]
+  ],
+  "views/home-summary.json": [
+   "views-home-summary",
+   [
+    "views_home_summary"
+   ]
+  ],
+  "views/news-index.json": [
+   "views-news-index",
+   [
+    "views_news_index"
+   ]
+  ],
+  "views/news-feed.json": [
+   "views-news-feed",
+   [
+    "views_news_feed"
+   ]
+  ],
+  "prices/manifest.json": [
+   "prices-manifest",
+   [
+    "prices_manifest"
+   ]
   ]
  },
  "globs": {
@@ -209,6 +233,24 @@
    [
     "series_shard"
    ]
+  ],
+  "prices/latest/*.json": [
+   "prices-latest",
+   [
+    "prices_latest"
+   ]
+  ],
+  "prices/history/*/*.json": [
+   "prices-history",
+   [
+    "prices_history"
+   ]
+  ],
+  "prices/intelligence/*.json": [
+   "prices-intelligence",
+   [
+    "prices_intelligence"
+   ]
   ]
  },
  "derived": [
@@ -224,6 +266,10 @@
   "quality.json",
   "intelligence.json",
   "cross-market.json",
-  "views/eu-preview.json"
+  "views/eu-preview.json",
+  "views/home-summary.json",
+  "views/news-index.json",
+  "views/news-feed.json",
+  "prices/manifest.json"
  ]
 }

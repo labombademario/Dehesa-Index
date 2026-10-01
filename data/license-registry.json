@@ -1282,7 +1282,23 @@
    "sources": [
     "eu_agrifood"
    ],
-   "notes": "Vistas pequenas derivadas (scripts/build-views.py); cada vista nombra aqui las fuentes de las que se deriva."
+   "notes": "Vistas pequenas derivadas (scripts/build-views.py y scripts/update_news.py). home-summary y eu-preview citan las fuentes de las que se derivan; news-index y news-feed solo guardan titular, enlace y medio (la fuente es el medio enlazado, sin reproducir el texto de la noticia)."
+  },
+  "data/prices/": {
+   "sources": [
+    "alberta_ag",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "european_commission",
+    "eurostat",
+    "statcan",
+    "usda_ams_mars",
+    "usda_nass",
+    "world_bank"
+   ],
+   "notes": "Capa ligera de precios (scripts/build-price-views.py): reparto por region/producto de data/latest.json y data/history.json; cada observacion conserva su sourceId, que es lo que fija la licencia."
   }
  },
  "derived": [
