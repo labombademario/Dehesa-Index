@@ -8,6 +8,7 @@ CHAPTERS = ["%02d" % i for i in range(1, 25)] + ["31"]
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) Chrome/124 Safari/537.36 DehesaIndex/1.0"}
 TODAY = datetime.date.today()
 LOG = []
+NAMES = {}
 def log(*a):
     m = datetime.datetime.utcnow().strftime("%H:%M:%S ") + " ".join(str(x) for x in a); LOG.append(m); print(m)
 def fetch(u, timeout=300):
@@ -42,6 +43,12 @@ def stats(out):
 
 def write(name, out, names, source, release, note, minimum=1200):
     if len(out) < minimum: raise RuntimeError("pocas lineas %d" % len(out))
+    for k, v in names.items():
+        if v: NAMES.setdefault(k, v)
+    for l in out:
+        nm = names.get(l["hd"]) or NAMES.get(l["hd"])
+        if nm and not l["d"].lower().startswith(nm.lower()[:25]): l["d"] = nm + (" › " + l["d"] if l["d"] else "")
+    names = {k: (names.get(k) or NAMES.get(k, "")) for k in set(names) | {l["hd"] for l in out}}
     chs, hds = stats(out)
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "release": release, "source": source, "note": note,
            "headings": {k: names.get(k, "") for k in hds}, "chapters": chs, "headingStats": hds, "lines": out}
@@ -172,7 +179,7 @@ def eu():
           {"name": name, "title": "TARIC"}, "Arancel de tercer país (NMF, erga omnes). 'cond.' = el derecho depende de condiciones (p. ej. precio de entrada); 'TRQ' = existe contingente arancelario. Preferencias solo de Canadá, México, Reino Unido, Japón, Corea, Ucrania, Nueva Zelanda y Chile.")
 
 ok = 0
-for fn in (mexico, canada, eu):
+for fn in (eu, mexico, canada):
     try: fn(); ok += 1
     except Exception as e: log("ERROR", fn.__name__, repr(e)[:300])
 (ROOT / "data" / "partner-tariffs-log.txt").write_text("\n".join(LOG) + "\n")
