@@ -241,6 +241,12 @@
    [
     "product_metadata"
    ]
+  ],
+  "relationships.json": [
+   "relationships",
+   [
+    "relationships"
+   ]
   ]
  },
  "globs": {
@@ -296,6 +302,7 @@
   "quality.json",
   "intelligence.json",
   "cross-market.json",
+  "relationships.json",
   "views/eu-preview.json",
   "views/home-summary.json",
   "views/news-index.json",

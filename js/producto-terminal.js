@@ -97,6 +97,15 @@
     why_fertilizer: ['Insumo: fertilizante', 'Input: fertiliser', 'Intrant : engrais', 'Input: fertilizzante'], why_energy: ['Insumo: energía', 'Input: energy', 'Intrant : énergie', 'Input: energia'], why_feed: ['Insumo: pienso', 'Input: feed', 'Intrant : aliment du bétail', 'Input: mangime'],
     usedBy: ['Se usa como insumo en', 'Used as an input in', 'Utilisé comme intrant pour', 'Usato come input per'],
     costsNote: ['Que un insumo y un producto aparezcan juntos no es una relación causal medida: la relación observada entre ambos mercados se describe (sin predecir) en Precios → relaciones agrícolas.', 'An input and a product appearing together is not a measured causal link: the observed relationship between both markets is described (without predicting) in Prices → agricultural relationships.', 'Qu’un intrant et un produit apparaissent ensemble n’est pas un lien causal mesuré : la relation observée entre les deux marchés est décrite (sans prédire) dans Prix → relations agricoles.', 'Il fatto che un input e un prodotto compaiano insieme non è un legame causale misurato: la relazione osservata tra i due mercati è descritta (senza prevedere) in Prezzi → relazioni agricole.'],
+    rels: ['Relaciones observadas con otros mercados', 'Observed relationships with other markets', 'Relations observées avec d’autres marchés', 'Relazioni osservate con altri mercati'],
+    relsHint: ['Cómo se han movido juntos insumos y precios; descriptivo, no predictivo', 'How inputs and prices moved together; descriptive, not predictive', 'Comment intrants et prix ont évolué ensemble ; descriptif, pas prédictif', 'Come input e prezzi si sono mossi insieme; descrittivo, non predittivo'],
+    relsNone: ['Dehesa no tiene relaciones documentadas para este producto; no se buscan correlaciones al azar.', 'Dehesa has no documented relationships for this product; correlations are not mined at random.', 'Dehesa n’a pas de relations documentées pour ce produit ; les corrélations ne sont pas cherchées au hasard.', 'Dehesa non ha relazioni documentate per questo prodotto; le correlazioni non si cercano a caso.'],
+    relsDisc: ['Descriptivo, no predictivo: la correlación no prueba causas y no anticipa precios.', 'Descriptive, not predictive: correlation does not prove causes and does not anticipate prices.', 'Descriptif, pas prédictif : la corrélation ne prouve pas de causes et n’anticipe pas les prix.', 'Descrittivo, non predittivo: la correlazione non prova cause e non anticipa i prezzi.'],
+    relsAll: ['Ver todas las relaciones', 'See all relationships', 'Voir toutes les relations', 'Vedi tutte le relazioni'],
+    relsDetail: ['detalle', 'details', 'détail', 'dettaglio'], relsCorr: ['r', 'r', 'r', 'r'], relsLag0: ['mismo periodo', 'same period', 'même période', 'stesso periodo'],
+    relsLag: ['rezago {0}', 'lag {0}', 'décalage {0}', 'ritardo {0}'],
+    relsLagH: ['Rezago', 'Lag', 'Décalage', 'Ritardo'], relsPair: ['Insumo → mercado', 'Input → market', 'Intrant → marché', 'Input → mercato'], relsSt: ['Estado', 'Status', 'Statut', 'Stato'],
+    relsConf: ['confianza', 'confidence', 'confiance', 'confidenza'],
     calcLink: ['Calcula tu margen y tu precio de equilibrio', 'Calculate your margin and break-even price', 'Calculez votre marge et votre prix d’équilibre', 'Calcola il tuo margine e il prezzo di pareggio'],
     drivers: ['Factores observados', 'Observed factors', 'Facteurs observés', 'Fattori osservati'],
     driversHint: ['Hechos medidos en los datos de arriba. No son previsiones ni causas demostradas', 'Facts measured in the data above. They are not forecasts or proven causes', 'Faits mesurés dans les données ci-dessus. Ce ne sont ni des prévisions ni des causes démontrées', 'Fatti misurati nei dati sopra. Non sono previsioni né cause dimostrate'],
@@ -480,6 +489,25 @@
     return h + '<p class="pt-src">' + esc(t('costsNote')) + ' <a href="precios.html">' + esc(t('drivers')) + ' →</a></p>' + srcLine(rel.reduce(function (a, r) { return a.concat(relObs(r.product).obs.map(function (o) { return o.sourceId; })); }, []));
   }
 
+  /* Relaciones observadas (data/relationships.json): solo las que tocan a este producto (como insumo o como mercado). Descriptivo; se carga al llegar al bloque. */
+  function loadRels() { return J('relationships.json'); }
+  function htmlRels(doc) {
+    var m = CTX.meta, ids = {}, lg = LANGS[li()];
+    ids[CTX.pid] = 1; if (CTX.pid === 'soja') ids.harina_soja = 1; if (CTX.pid === 'vacuno') ids.vaca = 1;
+    (m.instruments || []).concat(m.indices || []).forEach(function (x) { ids[x.product] = 1; });
+    var list = (doc.relationships || []).filter(function (r) { return ids[r.input.product] || ids[r.market.product]; });
+    if (!list.length) return '<div class="pt-note">' + esc(t('relsNone')) + '</div>';
+    var h = '<div class="pt-note">' + esc(t('relsDisc')) + '</div><div class="pt-tblwrap"><table class="pt-table rs"><thead><tr><th>' + esc(t('relsPair')) + '</th><th>' + esc(t('relsSt')) + '</th><th class="r">r</th><th>' + esc(t('relsLagH')) + '</th><th class="r">n</th><th>' + esc(t('cDate')) + '</th><th>' + esc(t('relsConf')) + '</th><th></th></tr></thead><tbody>';
+    list.slice(0, 8).forEach(function (r) {
+      var s = r.stat, rg = function (x) { return reg(x.region); };
+      h += '<tr><td data-l="' + esc(t('relsPair')) + '"><strong>' + esc(r.input.label[lg]) + '</strong> <span class="pt-sub">' + esc(rg(r.input)) + '</span><div class="pt-sub">→ ' + esc(r.market.label[lg]) + ' ' + esc(rg(r.market)) + '</div></td>' +
+        '<td data-l="' + esc(t('relsSt')) + '"><span class="pt-badge">' + esc(r.status.replace(/_/g, ' ')) + '</span></td>' +
+        '<td class="r" data-l="r">' + (s.correlation === null ? '—' : nf(s.correlation, 2)) + '</td><td data-l="lag">' + esc(s.lag === 0 ? t('relsLag0') : tf('relsLag', s.lag + (r.frequency === 'monthly' ? 'm' : 'T'))) + '</td><td class="r" data-l="n">' + s.n + '</td>' +
+        '<td data-l="' + esc(t('cDate')) + '">' + esc(s.periodStart + '–' + s.periodEnd) + '</td><td data-l="' + esc(t('relsConf')) + '">' + esc(r.confidence) + '</td><td><a href="relaciones.html?id=' + encodeURIComponent(r.id) + '">' + esc(t('relsDetail')) + ' →</a></td></tr>';
+    });
+    return h + '</tbody></table></div><p class="pt-src"><a href="relaciones.html?p=' + encodeURIComponent(CTX.pid) + '">' + esc(t('relsAll')) + ' →</a></p>';
+  }
+
   function loadDrivers() { return loadHist(); }
   function htmlDrivers() {
     var items = [], prof = CTX.prof;
@@ -537,6 +565,7 @@
       { id: 'trade', title: t('trade'), hint: t('tradeHint'), load: blkSd, html: htmlTrade },
       { id: 'tariffs', title: t('tariffs'), hint: t('tariffsHint'), load: blkSd, html: htmlTariffs },
       { id: 'costs', title: t('costs'), hint: t('costsHint'), load: function () { return Promise.resolve(); }, html: htmlCosts },
+      { id: 'rels', title: t('rels'), hint: t('relsHint'), load: loadRels, html: htmlRels },
       { id: 'drivers', title: t('drivers'), hint: t('driversHint'), load: loadDrivers, html: htmlDrivers },
       { id: 'news', title: t('news'), hint: t('newsHint'), load: blkNews, html: htmlNews }
     ];

@@ -27,6 +27,7 @@ const PAGES = [
   { n: 'perfiles', url: '/perfiles.html', crit: ['#perfiles-body'] },
   { n: 'comparador', url: '/comparador.html', crit: ['#cmp-body'] },
   { n: 'calculadora', url: '/calculadora.html', crit: ['#cc-body'] },
+  { n: 'relaciones', url: '/relaciones.html', crit: ['#rl-body .rl-card'] },
   { n: 'catalogo', url: '/catalogo.html', crit: ['#cat-body'] },
   { n: 'brief', url: '/brief.html', crit: ['#brief-body'] },
   { n: 'noticias', url: '/noticias.html', crit: ['#nw-items'] },
@@ -129,6 +130,7 @@ for (const w of [1280, 390]) {
       await page.click('[data-follow="1"]'); await page.waitForTimeout(700);
       if (!(await page.$('#pt-follow .di-wl-ed'))) throw new Error('seguir producto no abre los avisos');
       await page.goto(BASE + '/producto.html?p=diesel', { waitUntil: 'load' }); await page.waitForSelector('#pt-head .pt-card', { timeout: 8000 }); await scrollAll();
+      await page.waitForSelector('#pt-rels table, #pt-rels .pt-note', { timeout: 8000 });
       if (!/no publica un balance|does not publish|ne publie pas|non pubblica/.test(await page.innerText('#pt-sd'))) throw new Error('diesel deberia declarar que no hay balance PSD');
       // el detalle pesado no se descarga sin pedirlo
       const heavy = await page.evaluate(() => performance.getEntriesByType('resource').filter(e => /\/data\/(ers|gats|nass-crops|supply-demand)\.json/.test(e.name)).length);
@@ -150,6 +152,23 @@ for (const w of [1280, 390]) {
       await page.click('[data-seg=pSrc][data-v=dehesa]'); await page.waitForSelector('#cc-ref .pt-card', { timeout: 8000 });
       if (!/EN DIRECTO|AL DÍA|RETRASO|RETRASADO|DESACTUALIZADO/.test(await page.innerText('#cc-ref'))) throw new Error('el precio de Dehesa no muestra su frescura');
       if (!/Fuente:/.test(await page.innerText('#cc-ref'))) throw new Error('el precio de Dehesa no muestra la fuente');
+    });
+    await flow('relaciones: filtros, descargo y enlace profundo', w, async (page) => {
+      await page.goto(BASE + '/relaciones.html', { waitUntil: 'load' }); await page.waitForSelector('#rl-body .rl-card', { timeout: 8000 });
+      const all = await page.$$eval('.rl-card', (e) => e.length);
+      const tx0 = await page.innerText('#rl-body');
+      if (!/no predictivo|not predictive|pas prédictif|non predittivo/i.test(tx0)) throw new Error('falta el descargo descriptivo/no predictivo');
+      if (!/OBSERVED RELATIONSHIP/.test(tx0)) throw new Error('falta el estado OBSERVED RELATIONSHIP');
+      for (const must of ['INPUT', 'CHANNEL', 'MARKET'].map((k) => ({ INPUT: /INSUMO|INPUT|INTRANT/, CHANNEL: /CANAL|CHANNEL/, MARKET: /MERCADO|MARKET|MARCH/ }[k]))) if (!must.test(tx0)) throw new Error('falta el esquema INSUMO>CANAL>MERCADO');
+      await page.click('[data-f=ch][data-v=fertilizer]'); await page.waitForTimeout(150);
+      const fert = await page.$$eval('.rl-card', (e) => e.length);
+      if (!(fert > 0 && fert < all)) throw new Error('el filtro de canal no filtra (' + fert + ' de ' + all + ')');
+      if (!/ch=fertilizer/.test(page.url())) throw new Error('el filtro no queda en la URL');
+      await page.reload({ waitUntil: 'load' }); await page.waitForSelector('#rl-body .rl-card', { timeout: 8000 });
+      if ((await page.$$eval('.rl-card', (e) => e.length)) !== fert) throw new Error('el filtro no se conserva al recargar');
+      await page.goto(BASE + '/relaciones.html?id=fertiliser_to_grain__urea-eu__trigo-eu', { waitUntil: 'load' }); await page.waitForSelector('#rl-body .rl-card', { timeout: 8000 });
+      if ((await page.$$eval('.rl-card', (e) => e.length)) !== 1) throw new Error('el enlace profundo ?id= no abre una sola relacion');
+      if (!(await page.$('.rl-hyp')) || !(await page.$('.rl-expl'))) throw new Error('la correlacion y la hipotesis deben mostrarse separadas');
     });
     await flow('paises: cambiar de pais', w, async (page, errs) => {
       await page.goto(BASE + '/paises.html?c=FR', { waitUntil: 'load' }); await page.waitForTimeout(2500);

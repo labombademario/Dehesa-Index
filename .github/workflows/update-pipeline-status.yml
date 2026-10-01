@@ -56,6 +56,8 @@ jobs:
         run: python3 scripts/build-product-compare.py
       - name: Fichas de producto (comercio mundial y aranceles precalculados)
         run: python3 scripts/build-product-profiles.py
+      - name: Relaciones entre mercados (Cross-Market Intelligence 2.0, solo descriptivo)
+        run: python3 scripts/build-relationships.py
       - name: Brief diario
         run: python3 scripts/build-daily-brief.py
       - name: Comprobar coherencia de lo construido (catalogo estricto, contratos de los derivados)
@@ -69,7 +71,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/series-registry.json data/watch-index.json data/daily-brief.json data/product-compare.json data/catalog data/series data/views data/freshness.json data/products
+          git add data/series-registry.json data/watch-index.json data/daily-brief.json data/product-compare.json data/catalog data/series data/views data/freshness.json data/products data/relationships.json
           git diff --cached --quiet && exit 0
           git commit -qm "Datos derivados: catalogo, registro, watchlist, comparador y brief"
           for i in 1 2 3; do git pull -q --rebase --autostash && git push && exit 0; sleep $((i * 5)); done

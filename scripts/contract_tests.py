@@ -494,6 +494,49 @@ def product_profile(doc, errs, warns, stats):
             if v["free"] + v["adv"] + v["spec"] > v["n"] + v["trq"]: errs.append("%s/%s: tipos de derecho mayores que las lineas" % (h["hs"], mk))
     stats["series"] = 1
 
+def relationships(doc, errs, warns, stats):
+    """Coherencia de data/relationships.json: reglas de estado/fuerza/direccion/confianza y recalculo independiente desde el historico."""
+    import importlib.util
+    sp = importlib.util.spec_from_file_location("relationships_engine", ROOT / "scripts" / "relationships_engine.py"); RE = importlib.util.module_from_spec(sp); sp.loader.exec_module(RE)
+    ids = [r["id"] for r in doc["relationships"]]
+    if len(ids) != len(set(ids)): errs.append("ids de relacion repetidos")
+    stats["series"] = len(ids); recomputed = 0
+    for r in doc["relationships"]:
+        s = r["stat"]; f = r["frequency"]; rid = r["id"]; c = s["correlation"]
+        if r["family"] not in doc["families"]: errs.append("%s: familia desconocida" % rid); continue
+        if doc["families"][r["family"]]["frequency"] != f: errs.append("%s: frecuencia distinta de la de su familia" % rid)
+        if r["input"]["key"] == r["market"]["key"]: errs.append("%s: entrada y mercado son la misma serie" % rid)
+        if r["status"] != RE.status_of(s["n"], c, s["signStability"], f): errs.append("%s: status %s no sigue la regla (n=%s r=%s estab=%s)" % (rid, r["status"], s["n"], c, s["signStability"]))
+        if r["confidence"] != RE.confidence(s["n"], c, s["signStability"], s["coverage"], f): errs.append("%s: confianza %s no sigue la regla" % (rid, r["confidence"]))
+        if c is not None:
+            if s["strength"] != RE.strength(c): errs.append("%s: strength incoherente con r=%s" % (rid, c))
+            if s["direction"] != ("none" if abs(c) < 0.1 else "positive" if c > 0 else "negative"): errs.append("%s: direction incoherente con r=%s" % (rid, c))
+        prof = {p[0]: p for p in s["lagProfile"]}
+        if s["lag"] not in prof: errs.append("%s: el rezago elegido no esta en lagProfile" % rid)
+        elif prof[s["lag"]][1] != c or prof[s["lag"]][2] != s["n"]: errs.append("%s: lagProfile no coincide con la correlacion/n publicados" % rid)
+        if s["lagsTested"] != len(s["lagProfile"]) or sorted(prof) != sorted(doc["families"][r["family"]]["lagsTested"]): errs.append("%s: lagProfile distinto de los rezagos de la familia" % rid)
+        if r["status"] != "INSUFFICIENT_DATA":
+            ok = [p for p in s["lagProfile"] if p[1] is not None and p[2] >= RE.MIN_N[f]]
+            if ok and max(abs(p[1]) for p in ok) > abs(c) + 1e-9: errs.append("%s: hay un rezago con mayor |r| que el publicado" % rid)
+        if s["n"] > 0 and s["periodStart"] > s["periodEnd"]: errs.append("%s: periodo invertido" % rid)
+        if s["signStability"] is not None and s["windows"] < 3: errs.append("%s: estabilidad publicada con menos de 3 ventanas" % rid)
+        if c is not None and ("%d" % s["n"]) not in r["explanation"]["es"]: errs.append("%s: la explicacion no cita n" % rid)
+        if c is not None and r["status"] != "INSUFFICIENT_DATA" and ("%.2f" % c).replace(".", ",") not in r["explanation"]["es"]: errs.append("%s: la explicacion no cita r" % rid)
+        if "predic" not in r["explanation"]["es"].lower() and r["status"] != "INSUFFICIENT_DATA": errs.append("%s: la explicacion no declara que no es una prediccion" % rid)
+        # recalculo independiente (solo cuando ambas series estan en su moneda original: no depende del tipo de cambio)
+        if s["currencyTreatment"] == "original" and recomputed < 40:
+            hs = []
+            for side in ("input", "market"):
+                fh = D / "prices" / "history" / r[side]["region"] / (r[side]["product"] + ".json")
+                if not fh.exists(): errs.append("%s: falta el historico de %s" % (rid, r[side]["key"])); break
+                hs.append(json.loads(fh.read_text(encoding="utf-8")))
+            else:
+                res = RE.analyse(RE.aggregate(hs[0]["history"], f), RE.aggregate(hs[1]["history"], f), f, doc["families"][r["family"]]["lagsTested"])
+                recomputed += 1
+                if not res: errs.append("%s: el recalculo no encuentra pares" % rid)
+                elif res["lag"] != s["lag"] or res["n"] != s["n"] or (res["r"] is not None and c is not None and abs(res["r"] - c) > 1e-3): errs.append("%s: el recalculo desde el historico (lag %s n %s r %s) difiere del publicado (lag %s n %s r %s)" % (rid, res["lag"], res["n"], res["r"], s["lag"], s["n"], c))
+    stats["recomputed"] = recomputed
+
 def freshness_policy(doc, errs, warns, stats):
     if set(doc["states"]) != {"LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "PENDING"}: errs.append("estados distintos de los 6 definidos")
     if not set(doc["okStates"]) <= set(doc["states"]): errs.append("okStates fuera de states")
