@@ -20,7 +20,7 @@ for o in lat:
 cat = Counter(); by_src = {}; late = []
 man = json.loads((D / "catalog/manifest.json").read_text(encoding="utf-8"))
 for f in sorted(glob.glob(str(D / "catalog/*.json")) + glob.glob(str(D / "catalog/eu/*.json"))):
-    if f.endswith("manifest.json"): continue
+    if f.endswith(("manifest.json", "series-index.json")): continue
     for s in json.loads(Path(f).read_text(encoding="utf-8"))["series"]:
         cat[s["fs"]] += 1; by_src.setdefault(s["sourceId"], Counter())[s["fs"]] += 1
         if s["fs"] in ("DELAYED", "STALE"):

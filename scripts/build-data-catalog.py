@@ -154,7 +154,7 @@ def main():
                 for n, s, r in ch:
                     pts = s.get('points', [])
                     cat.append({'id': s['id'], 'label': s.get('label', ''), 'unit': s.get('unit', ''), 'freq': s.get('frequency', ''), 'group': g, 'latestPeriod': s.get('latestPeriod'), 'latest': s.get('latest'), 'changePct': s.get('changePct'),
-                                'first': pts[0][0] if pts else None, 'n': len(pts), 'tier': r['tier'] if r else None, 'canonical': r['canonicalSeriesId'] if r else None, 'tags': tags(s.get('label', '')), 'source': n + '.json', 'file': rel,
+                                'first': pts[0][0] if pts else None, 'n': len(pts), 'tier': r['tier'] if r else None, 'canonical': r['canonicalSeriesId'] if r else None, 'tags': tags(s.get('label', ''), g), 'source': n + '.json', 'file': rel,
                                 'sourceId': lic(s['_sid'] if n == 'latest' else stats_source(n, cc, s))[0], 'licenseId': lic(s['_sid'] if n == 'latest' else stats_source(n, cc, s))[1]})
             gs = [x for x in cat if x['group'] == g]
             mg[g] = {'n': len(gs), 'files': files, 'latestPeriod': max([x['latestPeriod'] for x in gs if x['latestPeriod']] or [None]), 'tags': sorted({t for x in gs for t in x['tags']})}
@@ -190,7 +190,7 @@ def main():
     for c in man['countries'].values(): ents[c['entityType']] = ents.get(c['entityType'], 0) + 1
     srcs_used = {}
     for f in sorted((ROOT / 'data/catalog').glob('*.json')) + sorted((ROOT / 'data/catalog/eu').glob('*.json')):
-        if f.name == 'manifest.json': continue
+        if f.name in ('manifest.json', 'series-index.json'): continue
         for x in json.loads(f.read_text())['series']: srcs_used[x['sourceId']] = srcs_used.get(x['sourceId'], 0) + 1
     man['provenance'] = {
         'doc': 'Procedencia por serie = fila del catalogo (sourceId, licenseId, source=fichero de origen, canonical, latestPeriod=observationDate, fs=frescura) + este bloque (nombre, URL oficial y licencia de la fuente; transformacion y agregacion por tipo de dato). El catalogo se genera en generatedAt. publicationDate no la publican la mayoria de las fuentes estadisticas: se omite en vez de inventarla.',

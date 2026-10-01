@@ -87,7 +87,7 @@ for path, m in reg["files"].items():
 # 4) catalogo
 n_cat = 0; per_src = {}
 for f in sorted((D / "catalog").glob("*.json")) + sorted((D / "catalog" / "eu").glob("*.json")):
-    if f.name == "manifest.json": continue
+    if f.name in ("manifest.json", "series-index.json"): continue
     for s in json.loads(f.read_text()).get("series", []):
         n_cat += 1
         sid = s.get("sourceId")

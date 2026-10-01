@@ -718,11 +718,14 @@ def coverage_gaps(doc, errs, warns, stats):
     if set(mx) != set(ents): errs.append("entidades de la matriz != entidades del catalogo")
     n = collections.Counter(); stale = collections.defaultdict(lambda: [0, set()])
     for cc, (c0, name, et, files) in sorted(ents.items()):
-        cnt = collections.defaultdict(lambda: [0, 0, 0])
+        cnt = collections.defaultdict(lambda: [0, 0, 0]); ing = collections.Counter(); trk = collections.Counter(); unt = collections.Counter()
         for sr in CM.load_series(files):
             m = CM.GROUP_METRIC.get(sr["group"])
             if m in (None, "other"): continue
             ok = sr.get("fs") in ("LIVE", "FRESH", "EXPECTED_DELAY")
+            ing[m] += 1
+            if not [t for t in (sr.get("tags") or []) if t in CM.KIND_OF]: unt[m] += 1
+            for t in [t for t in (sr.get("tags") or []) if t in CM.KIND_OF]: trk[t] += 1
             for t in sr.get("tags") or []:
                 if t in CM.KIND_OF:
                     cnt[(t, m)][0] += 1; cnt[(t, m)][1] += 1 if ok else 0; cnt[(t, m)][2] += 1 if sr.get("fs") in ("HISTORICAL", "DISCONTINUED") else 0
@@ -736,6 +739,14 @@ def coverage_gaps(doc, errs, warns, stats):
                 if cell["series"] != ns or cell["fresh"] != nf: errs.append("%s/%s/%s: series/fresh (%d/%d) no se reproducen desde el catalogo (%d/%d)" % (cc, p, m, cell["series"], cell["fresh"], ns, nf)); continue
                 ext = cell.get("external") or []; cl = cell.get("candidates") or []
                 if st == "AVAILABLE" and nf == 0: errs.append("%s/%s/%s: AVAILABLE sin series frescas" % (cc, p, m))
+                if cell.get("confidence") not in ("high", "medium", "low"): errs.append("%s/%s/%s: sin confidence valida" % (cc, p, m))
+                elif st == "MISSING":
+                    b = cell.get("basis") or {}
+                    peers = sum(1 for c2, r2 in mx.items() if c2 != cc and r2[p][m]["state"] in ("AVAILABLE", "AVAILABLE_OUTSIDE_CATALOG"))
+                    if b != {"metricIngested": ing[m] > 0, "productTracked": trk[p] > 0, "peers": peers, "untaggedCandidates": unt[m]}: errs.append("%s/%s/%s: basis de la confianza no se reproduce desde el catalogo y la matriz" % (cc, p, m))
+                    exp = "high" if ing[m] > 0 and trk[p] > 0 and peers > 0 and unt[m] == 0 else "medium" if peers > 0 and (ing[m] > 0 or trk[p] > 0) else "low"
+                    if cell["confidence"] != exp: errs.append("%s/%s/%s: confidence %s != %s segun su evidencia" % (cc, p, m, cell["confidence"], exp))
+                elif cell.get("basis"): errs.append("%s/%s/%s: basis solo aplica a MISSING" % (cc, p, m))
                 if cell.get("archive", 0) != na: errs.append("%s/%s/%s: archive %d no se reproduce desde el catalogo (%d)" % (cc, p, m, cell.get("archive", 0), na))
                 if st == "STALE" and (ns == 0 or nf > 0 or na == ns): errs.append("%s/%s/%s: STALE incoherente" % (cc, p, m))
                 if st == "HISTORICAL_ONLY" and (ns == 0 or nf > 0 or na != ns): errs.append("%s/%s/%s: HISTORICAL_ONLY incoherente (todas las series deben ser historicas)" % (cc, p, m))
@@ -758,6 +769,10 @@ def coverage_gaps(doc, errs, warns, stats):
         if cs["cells"] != tot or sum(cs["byState"].values()) != tot: errs.append("%s: recuento de celdas por pais incoherente" % cc)
         if cs["covered"] != cs["byState"]["AVAILABLE"] + cs["byState"]["AVAILABLE_OUTSIDE_CATALOG"]: errs.append("%s: covered != AVAILABLE + AVAILABLE_OUTSIDE_CATALOG" % cc)
     if doc["summary"]["cells"] != sum(n.values()) or doc["summary"]["byState"] != {s: n.get(s, 0) for s in ST}: errs.append("summary.byState/cells no cuadra con la matriz")
+    hc = sorted([cc, p, m] for cc, r in mx.items() for p, ms in r.items() for m, cell in ms.items() if cell["state"] == "MISSING" and cell.get("confidence") == "high")
+    if doc["summary"].get("highConfidenceMissing") != hc: errs.append("summary.highConfidenceMissing no coincide con la matriz")
+    mc = {k: sum(1 for r in mx.values() for ms in r.values() for cell in ms.values() if cell["state"] == "MISSING" and cell.get("confidence") == k) for k in ("high", "medium", "low")}
+    if doc["summary"].get("missingByConfidence") != mc or sum(mc.values()) != doc["summary"]["byState"]["MISSING"]: errs.append("summary.missingByConfidence no cuadra con la matriz")
     for sr in doc["ranking"]["staleSources"]:
         s = stale.get(sr["sourceId"])
         if not s or s[0] != sr["staleSeries"] or len(s[1]) != sr["staleCells"]: errs.append("ranking.staleSources[%s] no se reproduce desde el catalogo" % sr["sourceId"])

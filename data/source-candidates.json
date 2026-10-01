@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-01T10:47:33Z",
+ "generatedAt": "2026-10-01T11:38:01Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1376,6 +1376,7 @@
    "dataset": "Ya integrada (9 series en el catalogo unificado)",
    "products": [
     "barley",
+    "cattle",
     "oats",
     "pigs",
     "rapeseed",
@@ -1546,6 +1547,7 @@
     "barley",
     "cattle",
     "cheese",
+    "eggs",
     "fertilizer",
     "maize",
     "milk",
@@ -1640,6 +1642,7 @@
     "fertilizer",
     "milk",
     "pigs",
+    "rapeseed",
     "sheep",
     "wheat"
    ],
@@ -1938,7 +1941,6 @@
    "institution": "European Commission — Weekly Oil Bulletin (DG ENER)",
    "dataset": "Ya integrada (1 series en el catalogo unificado)",
    "products": [
-    "cattle",
     "energy"
    ],
    "productsConfirmed": true,
@@ -2032,6 +2034,7 @@
     "pigs",
     "potato",
     "poultry",
+    "rapeseed",
     "rice",
     "rye",
     "sheep",
@@ -2801,6 +2804,7 @@
    "dataset": "Ya integrada (12 series en el catalogo unificado)",
    "products": [
     "barley",
+    "cattle",
     "eggs",
     "maize",
     "milk",

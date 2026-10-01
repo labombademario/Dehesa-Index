@@ -74,7 +74,9 @@
     "byState",
     "byMetric",
     "byProduct",
-    "notInMatrix"
+    "notInMatrix",
+    "missingByConfidence",
+    "highConfidenceMissing"
    ],
    "properties": {
     "entities": {
@@ -101,6 +103,22 @@
       "untaggedSeriesByGroup",
       "unmappedGroups"
      ]
+    },
+    "missingByConfidence": {
+     "type": "object",
+     "required": [
+      "high",
+      "medium",
+      "low"
+     ]
+    },
+    "highConfidenceMissing": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+     }
     }
    }
   },

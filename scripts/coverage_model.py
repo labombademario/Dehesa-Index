@@ -46,6 +46,16 @@ PSD_PRODUCT = {'trigo': 'wheat', 'maiz': 'maize', 'arroz': 'rice', 'cebada': 'ba
 PSD_METRIC = {'production': 'production', 'area': 'production', 'endingStocks': 'stocks', 'exports': 'trade', 'imports': 'trade'}
 GATS_PRODUCT = {'trigo': 'wheat', 'maiz': 'maize', 'arroz': 'rice', 'soja': 'soy', 'cebada': 'barley', 'vacuno': 'cattle', 'cerdo': 'pigs', 'pollo': 'poultry', 'huevos': 'eggs',
                 'lacteos': 'milk', 'fertilizantes': 'fertilizer'}
+# ficheros USDA con formato propio (fuera del catalogo unificado): la clave de cada serie nombra producto y metrica; se mapea SOLO lo que el fichero contiene de verdad
+NASS_CROP_PRODUCT = {'WHEAT': 'wheat', 'CORN': 'maize', 'SOYBEANS': 'soy', 'BARLEY': 'barley', 'OATS': 'oats', 'RICE': 'rice'}   # nass-crops.json: area, produccion, rendimiento
+NASS_LIVESTOCK_PRODUCT = {'HOGS': 'pigs', 'PORK': 'pigs', 'CATTLE': 'cattle', 'BEEF': 'cattle', 'VEAL': 'cattle', 'CHICKENS': 'poultry', 'TURKEYS': 'poultry', 'EGGS': 'eggs', 'MILK': 'milk',
+                          'CHEESE': 'cheese', 'BUTTER': 'butter', 'LAMB & MUTTON': 'sheep'}
+NASS_LIVESTOCK_METRIC = (('STOCKS', 'stocks'), ('PRICE RECEIVED', 'price'), ('INVENTORY', 'production'), ('PRODUCTION', 'production'), ('PIG CROP', 'production'))  # 'OPERATIONS WITH INVENTORY' cuenta explotaciones, no se mapea
+AMS_GRAIN_PRODUCT = {'maiz': 'maize', 'soja': 'soy', 'trigo': 'wheat'}                         # ams-grain-daily.json: precios diarios USDA AMS
+NASS_PRICES_PRODUCT = (('FERTILIZER', 'fertilizer'), ('FUELS', 'energy'), ('ENERGY', 'energy'))  # nass-prices.json: indices de precios pagados (price_index)
+OUTSIDE_NOT_MAPPED = {'ers.json': 'costes de produccion, prevision de renta y IPC/IPP de alimentos del ERS: la metrica input_price no aplica a cereales/ganado en la matriz y la renta/IPC no son un producto',
+                      'crop-progress.json': 'progreso y condicion semanal del cultivo (porcentajes): no corresponde a ninguna metrica de la matriz (precio, indice, produccion, comercio, existencias)',
+                      'drought.json': 'Drought Monitor por estado: no es un producto ni una metrica de la matriz'}
 LIC_RANK = {'VERIFIED': 0, 'PENDING': 1, 'RESTRICTED': 2, 'BLOCKED': 3}
 
 def J(rel, default=None):

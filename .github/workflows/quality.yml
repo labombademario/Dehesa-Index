@@ -45,6 +45,13 @@ jobs:
       - name: Anomaly verifier (promotes only when the primary source reproduces the value; offline fixtures)
         run: python3 scripts/test-verify-anomalies.py
 
+      - name: Derived builders run end-to-end on the committed data (the same chain update-pipeline-status.yml runs; a crash here would turn that pipeline red)
+        run: |
+          set -e
+          for s in build-series-registry build-watch-index build-data-catalog build-freshness build-views build-product-compare build-product-profiles build-relationships build-daily-brief build-observatory build-source-candidates build-coverage-gaps; do
+            python3 scripts/$s.py > /dev/null
+          done
+
       - name: Data catalog integrity (manifest, catalogs, shards)
         run: python3 scripts/check-catalog.py --strict
 
