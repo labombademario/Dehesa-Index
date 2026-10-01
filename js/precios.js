@@ -180,11 +180,9 @@
   };
 
   function numericHistory(observation) {
-    var points = Array.isArray(observation.history) ? observation.history : [];
-    var values = points.map(function (point) { return Number(point && point.value); })
-      .filter(function (value) { return Number.isFinite(value); });
-    // El minigráfico de la tarjeta usa solo los últimos 104 puntos; el histórico completo va al modal (histPts)
-    if (values.length > 104) values = values.slice(-104);
+    // El minigráfico de la tarjeta usa solo los últimos 104 valores (`spark`, ya recortados en data/prices/latest/<region>.json);
+    // el histórico completo con fechas (histPts) se descarga aparte, solo cuando se abre el gráfico (loadHistory).
+    var values = (Array.isArray(observation.spark) ? observation.spark : []).map(Number).filter(function (value) { return Number.isFinite(value); });
     return values.length >= 2 ? values : null;
   }
 
@@ -205,12 +203,11 @@
     var history = numericHistory(observation);
     region.price = Number(observation.value);
     if (history) region.history = history;
-    // histórico con fechas reales para el modal (sin inventar nada)
-    var dated = (Array.isArray(observation.history) ? observation.history : []).map(function (point) {
-      return { ts: window.DehesaChart ? window.DehesaChart.histTs(point) : NaN, value: Number(point && point.value) };
-    }).filter(function (point) { return Number.isFinite(point.ts) && Number.isFinite(point.value); })
-      .sort(function (a, b) { return a.ts - b.ts; });
-    region.histPts = dated.length >= 2 ? dated : null;
+    // el histórico con fechas reales (modal, mapa de mercado, estacionalidad) se descarga bajo demanda (loadHistory); aquí solo se anota de dónde
+    region.histSrc = { region: observation.region, product: observation.product };
+    // hasta que se descargue el historico completo, histPts = ultimos 30 puntos con fecha (suficientes para variaciones a 1-3 meses y el mapa de mercado)
+    var recent = datedPoints(observation.recent);
+    region.histPts = recent.length >= 2 ? recent : null; region.histFull = false; region.histP = null; region.histDone = false;
     region.histGran = observation.frequency === 'monthly' || observation.frequency === 'quarterly' ? 'month' : 'day';
     if (Number.isFinite(Number(observation.changePct))) region.changePct = Number(observation.changePct);
 
@@ -228,15 +225,61 @@
     return true;
   }
 
+  function datedPoints(list) {
+    return (Array.isArray(list) ? list : []).map(function (point) {
+      return { ts: window.DehesaChart ? window.DehesaChart.histTs(point) : NaN, value: Number(point && point.value) };
+    }).filter(function (point) { return Number.isFinite(point.ts) && Number.isFinite(point.value); }).sort(function (a, b) { return a.ts - b.ts; });
+  }
+  // Histórico completo con fechas de UNA región de producto (data/prices/history/<region>/<producto>.json), solo cuando hace falta.
+  function loadHistory(region) {
+    if (!region || !region.histSrc) return Promise.resolve();
+    if (region.histFull) return Promise.resolve();
+    if (region.histP) return region.histP;
+    return region.histP = window.DIPrices.history(region.histSrc.region, region.histSrc.product).then(function (doc) {
+      var dated = datedPoints(doc && doc.history);
+      if (dated.length >= 2) { region.histPts = dated; region.histFull = true; }
+      region.histDone = true;
+    }).catch(function () { region.histDone = true; });
+  }
+  // Regiones base (us/eu/ca/uk) con dato publicado de un producto o de todos
+  function historyRegions(entries) {
+    var out = [];
+    entries.forEach(function (e) { ['us', 'eu', 'ca', 'uk'].forEach(function (rc) { var r = e.product[rc]; if (r && r.histSrc && out.indexOf(r) < 0) out.push(r); }); });
+    return out;
+  }
+  function ensureHistory(keys) {
+    var entries = (keys || []).map(function (k) { return PRODUCT_BY_KEY[k]; }).filter(Boolean);
+    return Promise.all(historyRegions(entries).map(loadHistory));
+  }
+  // Para el mapa de mercado y la inteligencia: todos los productos (concurrencia limitada en DIPrices.histories)
+  var ALL_HIST = null, PRICES_DONE = null, pricesDone = function () {};
+  PRICES_DONE = new Promise(function (res) { pricesDone = res; });  // se cumple cuando ya se aplico (o fallo) la carga de data/prices/latest
+  function ensureAllHistory() {
+    if (ALL_HIST) return ALL_HIST;
+    return ALL_HIST = PRICES_DONE.then(allHistory);
+  }
+  function allHistory() {
+    var regs = historyRegions(PRODUCTS), pending = regs.filter(function (r) { return !r.histFull && !r.histP; });
+    var list = pending.map(function (r) { return r.histSrc; });
+    return window.DIPrices.histories(list).then(function (docs) {
+      docs.forEach(function (doc, i) {
+        var region = pending[i]; if (!doc) { region.histP = null; return; }
+        var dated = datedPoints(doc.history);
+        if (dated.length >= 2) { region.histPts = dated; region.histFull = true; region.histP = Promise.resolve(); }
+        region.histDone = true;
+      });
+      return Promise.all(regs.map(loadHistory));  // lo que haya fallado se reintenta una vez de forma individual
+    });
+  }
+
   function loadPublishedPrices() {
-    if (typeof global.fetch !== 'function') return;
-    global.fetch('data/latest.json', { cache: 'no-store', headers: { Accept: 'application/json' } })
-      .then(function (response) { return response.ok ? response.json() : null; })
-      .then(function (doc) {
-        var observations = doc && Array.isArray(doc.observations) ? doc.observations : [];
+    if (typeof global.fetch !== 'function' || !global.DIPrices) return;
+    global.DIPrices.latest()
+      .then(function (observations) {
         var changed = false;
         // forEach y no some(): some() se detiene en la primera observación aplicada y el resto nunca se superponía
         observations.forEach(function (o) { if (applyPublishedObservation(o)) changed = true; });
+        pricesDone();
         if (!changed) return;
         if (D.validateDataTrustRegistry) D.DATA_TRUST_HEALTH = D.validateDataTrustRegistry(D.DATA_TRUST);
         renderAll();
@@ -244,6 +287,7 @@
       })
       .catch(function () {
         // El respaldo integrado mantiene la página utilizable sin red.
+        pricesDone();
       });
   }
 
@@ -952,6 +996,14 @@
     if (!h) return;
     var t = ui();
     var entry = PRODUCT_BY_KEY[h.key];
+    // el histórico completo de este producto (y del de comparación) se descarga ahora, no al cargar la página
+    var needHist = historyRegions([entry, PRODUCT_BY_KEY[h.compareKey]].filter(Boolean)).filter(function (r) { return !r.histDone; });
+    if (needHist.length) {
+      document.getElementById('pr-modal-root').innerHTML = '<div class="di-modal-overlay" id="di-history-overlay"><div class="di-big-modal-card"><div class="di-modal-head"><h2 class="di-modal-title">' + esc(productName(entry.nameKey)) + ' · ' + esc(t.historyButtonTitle) + '</h2><button type="button" class="di-modal-close" id="di-history-close">✕</button></div><div class="di-field-hint" style="padding:40px 12px;text-align:center" role="status">…</div></div></div>';
+      var ov = document.getElementById('di-history-overlay'); ov.addEventListener('mousedown', function (e) { if (e.target === ov) closeHistory(); }); document.getElementById('di-history-close').addEventListener('click', closeHistory); bindModalKeyboard(closeHistory);
+      Promise.all(needHist.map(loadHistory)).then(function () { if (state.history === h) renderHistoryModal(); });
+      return;
+    }
     var avail = availableRegions(entry);
     var ro = regionObjFor(entry, h.region);
     var DAY = 86400000, RANGES = [['3m', 92], ['6m', 183], ['1y', 366], ['2y', 731], ['5y', 1827], ['10y', 3653], ['max', 0]];
@@ -1517,6 +1569,11 @@
     window.addEventListener('popstate', restorePriceUrl);
     renderAll();
     loadPublishedPrices();
+    if (global.DINews) global.DINews.index().then(function (idx) {
+      if (!idx || !Object.keys(idx).length) return;
+      renderAll();
+      document.dispatchEvent(new CustomEvent('dehesa:news-ready'));
+    });
     S.onLangChange = function () { renderAll(); };
     maybeShowLocationWelcomeWhenFree();
   }
@@ -1558,9 +1615,12 @@
       if (!obs || obs.status !== 'verified') return null;
       var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
       var base = entry.product[disp.regionCode];
-      return { price: built.price, unit: built.unit, kg: disp.targetKgPerUnit, ccy: disp.targetCcy, date: obs.observationDate || null, pts: base && base.histPts ? base.histPts : null };
+      return { price: built.price, unit: built.unit, kg: disp.targetKgPerUnit, ccy: disp.targetCcy, date: obs.observationDate || null, pts: base && base.histPts ? base.histPts : null, full: !!(base && base.histFull) };
     },
     getLocation: function () { return state.location; },
-    openHistory: function (key) { openHistory(key); }
+    openHistory: function (key) { openHistory(key); },
+    ensureHistory: ensureHistory,
+    ensureAllHistory: ensureAllHistory,
+    pricesReady: PRICES_DONE
   };
 })(window);

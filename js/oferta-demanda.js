@@ -132,7 +132,7 @@
   var isPage = !!document.getElementById('od-body');
   if (!isPage && !document.getElementById('home-oferta')) return;
   if (isPage) window.DehesaShared.init('informacion');
-  P.load('data/supply-demand.json').then(function (d) {
+  (isPage || !window.DIHome ? P.load('data/supply-demand.json') : window.DIHome.summary().then(function (s) { return s.supplyDemand; }).catch(function () { return null; })).then(function (d) {
     if (!d) { if (isPage) document.getElementById('od-body').innerHTML = '<p class="di-movers-hint">' + t().noData + '</p>'; return; }
     DATA = d; SEL.c = 'trigo'; if (isPage) { var qc = new URLSearchParams(window.location.search).get('c'); if (qc && DATA.commodities.some(function (x) { return x.id === qc; })) SEL.c = qc; page(); } teaser();
     var prev = window.DehesaShared.onLangChange;

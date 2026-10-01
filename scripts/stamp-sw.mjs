@@ -11,7 +11,7 @@ const files = [];
 for (const e of await readdir(root, { withFileTypes: true })) if (e.isFile() && /\.(html|webmanifest)$/.test(e.name)) files.push(e.name);
 for (const d of ['js', 'css']) for (const e of await readdir(path.join(root, d), { withFileTypes: true })) if (e.isFile()) files.push(d + '/' + e.name);
 // Ficheros que los bots regeneran con datos (no son codigo estructural): no entran en el hash, o Dehesa Quality fallaria tras cada refresco de noticias/FX/diesel.
-const GENERATED = new Set(['js/data.js', 'js/news-index.js', 'js/news-feed.js']);
+const GENERATED = new Set(['js/data.js']);
 for (let i = files.length - 1; i >= 0; i--) if (GENERATED.has(files[i])) files.splice(i, 1);
 files.sort();
 const h = createHash('sha256');

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """data/views/*.json — vistas pequenas para las paginas de entrada. Cada pagina descarga SOLO su vista (KB), nunca el dataset entero.
+  home-summary.json cifras, 4 ultimos movimientos y los datos justos de las tarjetas de la Home (cultivos, oferta y demanda, clima, mercados USDA)
   eu-preview.json   tarjetas de la vista previa de la UE de perfiles.html (media UE publicada por la Comision; sin recalcular)
 Se regenera junto con el catalogo (update-pipeline-status.yml) y es estricto: si una fuente falta, falla en lugar de publicar una vista incompleta."""
 import datetime, json, sys
@@ -31,6 +32,31 @@ def eu_preview():
         if not r: raise KeyError('eu/%s/%s: region %s no existe' % (fam, sid, cc))
         cards.append({'k': k, 'family': fam, 'series': sid, 'c': cc, 'unit': se['unit'], 'freq': se.get('freq'), 'last': r['last'], 'prev': r.get('prev'), 'yoy': r.get('yoy')})
     return {'schemaVersion': 1, 'generatedAt': now(), 'cards': cards}
+HOME_CROPS = ['corn', 'soybeans', 'wheat_spring', 'cotton']   # js/cultivos.js (teaser)
+HOME_PSD = ['trigo', 'maiz', 'soja', 'azucar']                 # js/oferta-demanda.js (teaser)
+def load(rel): return json.loads((D / rel).read_text())      # estricto: si falta una fuente, falla
+def home_summary():
+    latest = load('latest.json')['observations']; cat = load('catalog.json')
+    rows = sorted(latest, key=lambda o: str(o.get('observationDate')), reverse=True)[:4]
+    movers = [{k: v for k, v in o.items() if k != 'history'} for o in rows]
+    cp = load('crop-progress.json')
+    crops = []
+    for c in cp['crops']:
+        if c['id'] in HOME_CROPS: crops.append({'id': c['id'], 'seasons': {s: {'condition': v['condition']} for s, v in c['seasons'].items() if v.get('condition')}})
+    sd = load('supply-demand.json'); comm = []
+    for c in sd['commodities']:
+        if c['id'] not in HOME_PSD: continue
+        my = c['latestMarketYear']; w = {str(y): {a: c['world'][str(y)][a] for a in ('production', 'endingStocks', 'consumption') if a in c['world'].get(str(y), {})} for y in (my, my - 1) if str(y) in c['world']}
+        comm.append({'id': c['id'], 'unit': c.get('unit'), 'latestMarketYear': my, 'world': w})
+    cl = load('climate.json')
+    locs = [{'id': l['id'], 'name': l['name'], 'months': l['months'][-1:]} for l in cl['locations'] if l.get('months')]
+    ams = load('ams/index.json')
+    return {'schemaVersion': 1, 'generatedAt': now(),
+            'stats': {'observations': len(latest), 'products': len(cat['products']), 'sources': len(cat['sources']), 'catalogObservations': cat.get('observationCount')},
+            'movers': movers, 'cropProgress': {'lastWeekEnding': cp.get('lastWeekEnding'), 'crops': crops},
+            'supplyDemand': {'commodities': comm}, 'climate': {'lastPeriod': cl['lastPeriod'], 'locations': locs},
+            'markets': {'total': len(ams['reports']), 'families': {f: sum(1 for r in ams['reports'] if r['fam'] == f) for f in sorted({r['fam'] for r in ams['reports']})}}}
 def main():
+    write('home-summary.json', home_summary())
     write('eu-preview.json', eu_preview())
 main()

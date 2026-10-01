@@ -1,4 +1,4 @@
-/* Dehesa Index — Mapa agrícola. Capas: precios verificados (data/latest.json) y clima (data/climate.json).
+/* Dehesa Index — Mapa agrícola. Capas: precios verificados (data/prices/latest/<region>.json) y clima (data/climate.json).
    Solo pinta lo que tiene dato verificado; cada valor va en su moneda y unidad (no se convierten monedas en el mapa). */
 (function () {
   'use strict';
@@ -334,7 +334,7 @@
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); render(); };
   Promise.all([
-    fetch('data/latest.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    (window.DIPrices ? window.DIPrices.latest().then(function (obs) { return { observations: obs }; }) : Promise.resolve(null)).catch(function () { return null; }),
     fetch('data/climate.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
     window.DehesaPSD ? window.DehesaPSD.load('data/supply-demand-map.json') : null,
     fetch('data/crop-progress.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),

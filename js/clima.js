@@ -151,7 +151,7 @@
   var _first = true;
   if (!document.getElementById('clima-body') && !document.getElementById('home-clima')) return;
   if (document.getElementById('clima-body')) window.DehesaShared.init('informacion');
-  fetch('data/climate.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) {
+  (document.getElementById('clima-body') || !window.DIHome ? fetch('data/climate.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }) : window.DIHome.summary().then(function (s) { return s.climate; })).then(function (d) {
     if (!d || !d.locations || !d.locations.length) return;
     DATA = d; render(); loadHist();
     var prev = window.DehesaShared.onLangChange;

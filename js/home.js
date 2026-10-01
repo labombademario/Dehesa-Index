@@ -8,7 +8,13 @@
   // instantánea que hay que actualizar a mano si cambian mucho los precios
   // de referencia -- no se recalcula sola.
   var MOVERS_DATA = [];
-  var HOME_DATA = { status: 'loading', rows: [], catalog: null };
+  var HOME_DATA = { status: 'loading', rows: [], stats: null };
+  // Resumen unico de la Home (data/views/home-summary.json). Lo comparten las tarjetas (cultivos, oferta y demanda, clima, mercados) para no bajar sus datasets completos.
+  var SUMMARY = null;
+  window.DIHome = { summary: function () {
+    if (!SUMMARY) SUMMARY = fetch('data/views/home-summary.json').then(function (r) { if (!r.ok) throw new Error('home-summary'); return r.json(); }).catch(function (e) { SUMMARY = null; throw e; });
+    return SUMMARY;
+  } };
   var PRODUCT_NAMES = { trigo: 'Trigo', maiz: 'Maíz', arroz: 'Arroz', leche: 'Leche', urea: 'Urea', diesel: 'Diésel' };
   function fmtMoverPrice(v) {
     var n = Number(v);
@@ -271,9 +277,9 @@
     document.getElementById('home-cta-primary').textContent = t.ctaPrimary;
     document.getElementById('home-cta-secondary').textContent = t.ctaSecondary;
 
-    var realCount = HOME_DATA.rows.length;
-    var sourceCount = HOME_DATA.catalog ? (HOME_DATA.catalog.sources || []).length : 0;
-    var productCount = HOME_DATA.catalog ? (HOME_DATA.catalog.products || []).length : 0;
+    var realCount = HOME_DATA.stats ? HOME_DATA.stats.observations : 0;
+    var sourceCount = HOME_DATA.stats ? HOME_DATA.stats.sources : 0;
+    var productCount = HOME_DATA.stats ? HOME_DATA.stats.products : 0;
     var stats = [
       { value: String(productCount || '—'), label: lang === 'es' ? 'productos con datos' : 'products with data' },
       { value: String(realCount || '—'), label: lang === 'es' ? 'observaciones reales' : 'real observations' },
@@ -322,16 +328,14 @@
     document.getElementById('home-cta-button').textContent = t.ctaButton;
   }
 
+  // Una sola peticion pequena (data/views/home-summary.json, ~45 KB) alimenta toda la Home; ya no se baja latest.json (3,7 MB) ni los datasets completos de cada tarjeta.
   function loadHomeData() {
-    Promise.all([
-      fetch('data/latest.json').then(function(r){ if(!r.ok) throw Error('latest'); return r.json(); }),
-      fetch('data/catalog.json').then(function(r){ if(!r.ok) throw Error('catalog'); return r.json(); })
-    ]).then(function(all) {
-      HOME_DATA.rows = (all[0].observations || []).sort(function(a,b){ return String(b.observationDate).localeCompare(String(a.observationDate)); });
-      HOME_DATA.catalog = all[1];
-      HOME_DATA.loaded = true;
+    window.DIHome.summary().then(function(s) {
+      HOME_DATA.rows = s.movers || [];
+      HOME_DATA.stats = s.stats;
+      HOME_DATA.loaded = true; HOME_DATA.status = 'live';
       render();
-    }).catch(function(){ HOME_DATA.status = 'unavailable'; HOME_DATA.rows = []; HOME_DATA.catalog = null; render(); });
+    }).catch(function(){ HOME_DATA.status = 'unavailable'; HOME_DATA.rows = []; HOME_DATA.stats = null; render(); });
   }
 
   window.DehesaShared.init('home');

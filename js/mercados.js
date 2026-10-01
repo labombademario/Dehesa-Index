@@ -130,17 +130,18 @@
   function teaser() {
     var el = document.getElementById('home-mercados'); if (!el || !IDX) return;
     var h = HT[lang()] || HT.es, x = t();
-    var chips = FAM_ORDER.filter(function (f) { return IDX.reports.some(function (r) { return r.fam === f; }); }).map(function (f) {
-      var n = IDX.reports.filter(function (r) { return r.fam === f; }).length;
+    var cnt = function (f) { return IDX.families ? (IDX.families[f] || 0) : IDX.reports.filter(function (r) { return r.fam === f; }).length; };
+    var chips = FAM_ORDER.filter(function (f) { return cnt(f) > 0; }).map(function (f) {
+      var n = cnt(f);
       return '<a class="di-link-btn" href="mercados.html?fam=' + f + '" style="display:inline-block;margin:0 14px 8px 0">' + esc(x.fams[f]) + ' <span style="color:var(--text-faint)">(' + n + ')</span></a>';
     }).join('');
-    el.innerHTML = '<div class="di-movers-head-row"><h2>' + esc(h.h) + '</h2><span class="di-movers-hint">' + esc(h.hint) + '</span></div><div class="di-card" style="padding:18px 20px">' + chips + '</div><p class="di-movers-hint" style="margin-top:10px"><a href="mercados.html">' + esc(h.more) + ' →</a> · ' + IDX.reports.length + ' ' + esc(h.n) + '</p>';
+    el.innerHTML = '<div class="di-movers-head-row"><h2>' + esc(h.h) + '</h2><span class="di-movers-hint">' + esc(h.hint) + '</span></div><div class="di-card" style="padding:18px 20px">' + chips + '</div><p class="di-movers-hint" style="margin-top:10px"><a href="mercados.html">' + esc(h.more) + ' →</a> · ' + (IDX.total || IDX.reports.length) + ' ' + esc(h.n) + '</p>';
   }
   var isPage = !!document.getElementById('ms-body');
   if (!isPage && !document.getElementById('home-mercados')) return;
   if (!isPage) {
-    fetch('data/ams/index.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (!d || !d.reports || !d.reports.length) return; IDX = d; teaser();
+    (window.DIHome ? window.DIHome.summary().then(function (s) { return s.markets; }) : fetch('data/ams/index.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; })).then(function (d) {
+      if (!d || !((d.reports && d.reports.length) || d.total)) return; IDX = d; teaser();
       var prev = window.DehesaShared.onLangChange;
       window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); teaser(); };
     }).catch(function () {});

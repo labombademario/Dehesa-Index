@@ -348,7 +348,7 @@
     root.innerHTML =
       '<header class="di-header">' +
         '<div class="di-header-inner">' +
-          '<a class="di-nav-logo" href="' + sitePath('index.html') + '"><img src="' + sitePath('assets/logo.png') + '" alt="Dehesa Index"></a>' +
+          '<a class="di-nav-logo" href="' + sitePath('index.html') + '"><img src="' + sitePath('assets/logo-nav.png') + '" width="116" height="100" alt="Dehesa Index"></a>' +
           '<nav class="di-nav-links">' + linksHtml + '</nav>' +
           '<div class="di-nav-side">' +
             '<button type="button" class="di-search-btn" id="di-search-btn" title="' + esc(t.search) + ' ( / )" aria-label="' + esc(t.search) + '">🔍</button>' +
@@ -496,7 +496,7 @@
       '<footer class="di-footer">' +
         '<div class="di-footer-grid">' +
           '<div>' +
-            '<img src="' + sitePath('assets/logo.png') + '" alt="Dehesa Index">' +
+            '<img src="' + sitePath('assets/logo-nav.png') + '" width="116" height="100" alt="Dehesa Index">' +
             '<p>' + esc(t.blurb) + '</p>' +
           '</div>' +
           '<div>' +

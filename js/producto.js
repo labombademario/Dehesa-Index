@@ -478,6 +478,17 @@
     var sel = document.getElementById('pr-ent'); if (sel) sel.onchange = function (e) { SEL.ent = e.target.value; render(); };
   }
 
+  // Ultimo dato de todas las regiones (sin historico) + historico completo SOLO de las series de este producto
+  function latestFor(cfg) {
+    if (!window.DIPrices) return Promise.resolve(null);
+    return window.DIPrices.latest().then(function (obs) {
+      var ids = [cfg.eu, cfg.us, cfg.ukP, cfg.euIdx, cfg.uk].filter(Boolean), rows = obs.filter(function (o) { return ids.indexOf(o.id) > -1; });
+      return window.DIPrices.histories(rows.map(function (o) { return { region: o.region, product: o.product }; })).then(function (hs) {
+        rows.forEach(function (o, i) { o.history = hs[i] && hs[i].history ? hs[i].history : (o.recent || []); });
+        return { observations: obs };
+      });
+    }).catch(function () { return null; });
+  }
   function get(file) { return fetch(file).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
   window.DehesaShared.init('informacion');
   var prevCb = window.DehesaShared.onLangChange;
@@ -485,8 +496,8 @@
   var q = new URLSearchParams(window.location.search);
   if (q.get('p') && CFG[q.get('p')]) SEL.p = q.get('p');
   var cfg0 = CFG[SEL.p];
-  Promise.all([get('data/latest.json'), get('data/supply-demand.json'), get('data/export-sales.json'), get('data/gats.json'), get('data/drought.json'), get('data/ers.json'),
-    cfg0.kind === 'crop' ? get('data/crop-progress.json') : Promise.resolve(null), get('data/nass-crops.json'), get('data/nass-livestock.json'), get('data/news.json'), get('data/ams-grain-daily.json')]).then(function (r) {
+  Promise.all([latestFor(cfg0), get('data/supply-demand.json'), get('data/export-sales.json'), get('data/gats.json'), get('data/drought.json'), get('data/ers.json'),
+    cfg0.kind === 'crop' ? get('data/crop-progress.json') : Promise.resolve(null), get('data/nass-crops.json'), get('data/nass-livestock.json'), (window.DINews ? window.DINews.items().then(function (it) { return { items: it }; }) : Promise.resolve(null)), get('data/ams-grain-daily.json')]).then(function (r) {
     D.latest = r[0]; D.sd = r[1]; D.es = r[2]; D.gats = r[3]; D.dr = r[4]; D.ers = r[5]; D.cp = r[6]; D.crops = r[7]; D.live = r[8]; D.news = r[9]; D.ams = r[10];
     render();
   });

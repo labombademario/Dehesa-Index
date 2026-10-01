@@ -59,7 +59,6 @@
     return Core.resolveDisplay(entry, Core.getLocation(), Core.getEuCountry()).region;
   }
   function seedFor(entry) { return core().seedKeyFor(entry, core().defaultRegionFor(entry)); }
-  var REAL_HISTORY = {};
   var REAL_HISTORY_READY = false;
   var INTEL20 = null;
 
@@ -268,45 +267,60 @@
     var region=activeRegion();
     return TRANSMISSION_DEFS.filter(function(d){return d.region===region;});
   }
-  function realObservationsFor(entry) {
-    var key = entry.catId + '-' + entry.nameKey;
-    return REAL_HISTORY[key] || [];
-  }
-  function rangePctChange(entry, days) {
-    var rows = realObservationsFor(entry);
-    if (rows.length < 2) return null;
-    var last = rows[rows.length - 1];
-    var lastTime = new Date(last.observationDate).getTime();
-    var cutoff = lastTime - days * 86400000;
-    var first = null;
-    for (var i = rows.length - 1; i >= 0; i--) {
-      if (new Date(rows[i].observationDate).getTime() <= cutoff) { first = rows[i]; break; }
-    }
-    if (!first || !isFinite(Number(first.value)) || !isFinite(Number(last.value))) return null;
-    return Number(first.value) ? ((Number(last.value) - Number(first.value)) / Number(first.value)) * 100 : null;
-  }
+  // Los datos de la inteligencia se descargan SOLO cuando la seccion esta cerca de la pantalla (no al abrir Precios):
+  //  - data/prices/intelligence/<region>.json: indices mensuales/trimestrales para el Relationship Engine (decenas de KB)
+  //  - historico de cada producto (data/prices/history/...): mapa de mercado, estacionalidad, volatilidad (DehesaPreciosCore.ensureAllHistory)
+  //  - data/intelligence.json
   function loadRealHistory(done) {
     function finish() {
       done();
       try { document.dispatchEvent(new CustomEvent('dehesa:intel-ready')); } catch (e) {}
     }
     if (REAL_HISTORY_READY) { finish(); return; }
-    fetch('data/history.json').then(function(r){ if(!r.ok) throw Error('history'); return r.json(); }).then(function(d){
-      buildRawSeries(d.observations || []);
-      REAL_HISTORY = {};
-      (d.observations || []).forEach(function(o){
-        var key = 'cereales-' + o.product;
-        var dashKey = key;
-        if (!REAL_HISTORY[dashKey]) REAL_HISTORY[dashKey] = [];
-        REAL_HISTORY[dashKey].push(o);
+    var P = global.DIPrices, Core = core();
+    if (!P) { REAL_HISTORY_READY = true; INTEL20 = {series:[]}; INTEL20_READY = true; finish(); return; }
+    P.manifest().then(function(m){
+      var regs = Object.keys(m.regions).filter(function(r){ return m.regions[r].intelligenceSeries > 0; });
+      return Promise.all([
+        Promise.all(regs.map(function(r){ return P.intelligence(r); })),
+        Core && Core.pricesReady ? Core.pricesReady : Promise.resolve()
+      ]);
+    }).then(function(res){
+      var obs = [];
+      res[0].forEach(function(doc){
+        Object.keys(doc.series).forEach(function(pid){
+          var s = doc.series[pid];
+          s.points.forEach(function(p){ obs.push({product:pid, region:doc.region, observationDate:p[0], value:p[1], frequency:s.frequency, unit:s.unit, currency:s.currency, comparability:s.comparability, sourceId:s.sourceId, status:'verified'}); });
+        });
       });
-      Object.keys(REAL_HISTORY).forEach(function(k){ REAL_HISTORY[k].sort(function(a,b){return String(a.observationDate).localeCompare(String(b.observationDate));}); });
+      buildRawSeries(obs);
       REAL_HISTORY_READY = true;
       buildRelationshipEngine();
       fetch('data/intelligence.json').then(function(r){ if(!r.ok) throw Error('intelligence'); return r.json(); }).then(function(d){
         INTEL20=d; INTEL20_READY=true; finish();
       }).catch(function(){ INTEL20={series:[]}; INTEL20_READY=true; finish(); });
     }).catch(function(){ REAL_HISTORY_READY = true; RELATIONSHIP_RESULTS=REGIONAL_RELATIONSHIP_DEFS.map(function(d){return {id:d.id,region:d.region,label:d.label[lang()]||d.label.es,status:'pending',reason:'history_unavailable'};}); INTEL20={series:[]}; INTEL20_READY=true; finish(); });
+  }
+  var INTEL_WAIT = false;
+  // El historico COMPLETO de cada producto solo lo necesitan correlaciones/volatilidad y estacionalidad (el resto usa los ultimos 30 puntos que ya trae
+  // data/prices/latest): se descarga cuando esos bloques estan cerca de la pantalla.
+  var FULL_READY = false, FULL_WAIT = false;
+  function fullPendingHtml(title, id) {
+    return '<div class="di-intel-section di-intel-pending" id="'+id+'" data-intel-full="1"><div class="di-intel-head"><h2>'+esc(title)+'</h2><p>…</p></div></div>';
+  }
+  function armFull(root) {
+    if (FULL_READY || FULL_WAIT) return;
+    var el = root.querySelector('[data-intel-full]'); if (!el) return;
+    FULL_WAIT = true;
+    whenNear(el, function(){
+      var Core = core();
+      (Core && Core.ensureAllHistory ? Core.ensureAllHistory() : Promise.resolve()).then(function(){ FULL_READY = true; render(); }, function(){ FULL_READY = true; render(); });
+    });
+  }
+  function whenNear(el, fn) {
+    if (!global.IntersectionObserver) { fn(); return; }
+    var io = new IntersectionObserver(function(es){ if (es.some(function(e){ return e.isIntersecting; })) { io.disconnect(); fn(); } }, { rootMargin: '500px' });
+    io.observe(el);
   }
 
   // ---------------------------------------------------------------------
@@ -597,6 +611,7 @@
   }
   function buildCorrAndVol() {
     var Core = core();
+    if (!FULL_READY) return { pending: true, keys: [], rows: [], ranking: [] };
     var returnsByKey = {}, keys = [];
     Core.PRODUCTS.forEach(function (e) {
       var key = e.catId + '-' + e.nameKey;
@@ -644,6 +659,7 @@
 
   function renderCorrelationHtml(data) {
     var t = ui();
+    if (data.pending) return fullPendingHtml(t.corrTitle, 'di-intel-corr');
     if (data.keys.length < 2) return intelPendingHtml(t.corrTitle, t.corrEmpty || 'Aún no hay al menos dos productos con histórico verificado suficiente.', 'di-intel-corr');
     var headerCells = data.keys.map(function (k) { var e = entryByDashKey(k); return '<th title="' + esc(productName(e.nameKey)) + '">' + esc(productName(e.nameKey).slice(0, 4)) + '</th>'; }).join('');
     var bodyRows = data.rows.map(function (row) {
@@ -663,6 +679,7 @@
 
   function renderVolatilityHtml(data) {
     var t = ui();
+    if (data.pending) return fullPendingHtml(t.volTitle, 'di-intel-vol');
     if (!data.ranking.length) return intelPendingHtml(t.volTitle, t.corrEmpty || 'Aún no hay histórico verificado suficiente.', 'di-intel-vol');
     var rows = data.ranking.map(function (r) {
       return '<button type="button" class="di-vol-row" data-open="' + r.key + '">' +
@@ -766,6 +783,7 @@
 
   function renderSeasonalityHtml() {
     var t = ui();
+    if (!FULL_READY) return fullPendingHtml(t.seasonTitle, 'di-intel-season');
     var Core = core();
     var p = P();
     var avail = seasonAvailable();
@@ -1275,7 +1293,7 @@
     if (!root) return;
     if (!REAL_HISTORY_READY) {
       root.innerHTML = '<div class="di-intel-section"><div class="di-intel-head"><h2>Inteligencia basada en histórico real</h2><p>Cargando observaciones normalizadas. Las series sintéticas no se utilizan para estos cálculos.</p></div></div>';
-      loadRealHistory(function(){ render(); });
+      if (!INTEL_WAIT) { INTEL_WAIT = true; whenNear(root, function(){ loadRealHistory(function(){ render(); }); }); }
       return;
     }
     var corrVolData = buildCorrAndVol();
@@ -1292,6 +1310,7 @@
       renderSpreadsHtml() +
       renderMarginHtml();
     wireOpenTargets(root);
+    armFull(root);
     var seasonSelect = document.getElementById('di-season-select');
     if (seasonSelect) seasonSelect.addEventListener('change', function (e) {
       seasonProductKey = e.target.value;
@@ -1316,6 +1335,7 @@
     buildTransmissionAlerts().forEach(function(a){ out[a.id] = a; });
     return out;
   }
+  document.addEventListener('dehesa:news-ready', function(){ if (REAL_HISTORY_READY) render(); });
   global.DehesaPreciosIntel = {
     render: render,
     getRelationships: relationshipSnapshot,

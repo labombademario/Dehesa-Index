@@ -1,5 +1,5 @@
-/* Dehesa Index — página de Noticias */
-(function () {
+/* Dehesa Index — página de Noticias. Los titulares automaticos se cargan de data/views/news-feed.json (DINews) antes de pintar. */
+window.DINews.feed().then(function () {
   'use strict';
 
   var MONTHS = {
@@ -179,7 +179,7 @@
     item.topics = tags.topics;
   });
 
-  // Titulares automáticos (scripts/update_news.py → js/news-feed.js): texto original, sin traducir.
+  // Titulares automáticos (scripts/update_news.py → data/views/news-feed.json): texto original, sin traducir.
   var FEED = window.DehesaNewsFeed || { generatedAt: null, items: [] };
   var CURATED_COUNT = NEWS_ITEMS.length;
   (FEED.items || []).forEach(function(a) {
@@ -484,4 +484,4 @@
   window.DehesaShared.init('noticias');
   window.DehesaShared.onLangChange = render;
   render();
-})();
+});

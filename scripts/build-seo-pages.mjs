@@ -50,7 +50,7 @@ for (const [k, list] of Object.entries(acc)) {
 <link rel="alternate" hreflang="${lang}" href="${url}">
 <link rel="alternate" hreflang="${lang === 'es' ? 'en' : 'es'}" href="${alt}">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="Dehesa Index">
-<link rel="icon" href="${up}assets/logo.png">
+<link rel="icon" href="${up}assets/icon-192.png">
 <link rel="stylesheet" href="${up}css/style.css">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>

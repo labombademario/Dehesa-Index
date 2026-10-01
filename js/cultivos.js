@@ -166,7 +166,8 @@
   var isPage = !!document.getElementById('cu-body');
   if (!isPage && !document.getElementById('home-cultivos')) return;
   if (isPage) window.DehesaShared.init('informacion');
-  fetch('data/crop-progress.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) {
+  // En la Home basta el resumen (condicion de 4 cultivos); la pagina completa baja crop-progress.json
+  (isPage || !window.DIHome ? fetch('data/crop-progress.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }) : window.DIHome.summary().then(function (s) { return s.cropProgress; })).then(function (d) {
     if (!d || !d.crops || !d.crops.length) throw Error('x'); DATA = d; var qc = new URLSearchParams(window.location.search).get('crop'); if (qc && crop(qc)) SEL.crop = qc;
     if (isPage) page(); teaser();
     var prev = window.DehesaShared.onLangChange;
