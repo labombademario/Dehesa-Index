@@ -277,6 +277,32 @@
    [
     "instrument_identity"
    ]
+  ],
+  "us-cash-bids/manifest.json": [
+   "us-cash-bids-manifest",
+   [
+    "us_cashbids_manifest"
+   ]
+  ],
+  "us-cash-bids/reports.json": [
+   "us-cash-bids-reports",
+   [
+    "us_cashbids_reports"
+   ]
+  ],
+  "us-cash-bids/ingestion-status.json": [
+   "us-cash-bids-ingestion",
+   []
+  ],
+  "us-cash-bids/revisions.json": [
+   "us-cash-bids-revisions",
+   []
+  ],
+  "us-cash-bids/watch.json": [
+   "us-cash-bids-watch",
+   [
+    "us_cashbids_watch"
+   ]
   ]
  },
  "globs": {
@@ -317,6 +343,18 @@
    [
     "product_profile"
    ]
+  ],
+  "us-cash-bids/history/*/*.json": [
+   "us-cash-bids-history",
+   [
+    "us_cashbids_history"
+   ]
+  ],
+  "us-cash-bids/*/*.json": [
+   "us-cash-bids-shard",
+   [
+    "us_cashbids_shard"
+   ]
   ]
  },
  "derived": [
@@ -343,12 +381,16 @@
   "source-candidates.json",
   "coverage-gaps.json",
   "series-lifecycle.json",
-  "instrument-identity.json"
+  "instrument-identity.json",
+  "us-cash-bids/manifest.json",
+  "us-cash-bids/reports.json",
+  "us-cash-bids/watch.json"
  ],
  "derivedGlobs": [
   "products/*.json",
   "series/*/*.json",
   "catalog/[A-Z]*.json",
-  "catalog/eu/*.json"
+  "catalog/eu/*.json",
+  "us-cash-bids/*/*.json"
  ]
 }

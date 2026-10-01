@@ -1,0 +1,88 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "US cash bids USDA revisions",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "revisions"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "revisions": {
+   "type": "array",
+   "maxItems": 300,
+   "items": {
+    "type": "object",
+    "required": [
+     "seriesId",
+     "reportId",
+     "observationDate",
+     "oldValue",
+     "newValue",
+     "oldPublicationDate",
+     "newPublicationDate",
+     "detectedAt",
+     "unit"
+    ],
+    "properties": {
+     "seriesId": {
+      "type": "string"
+     },
+     "reportId": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "state": {
+      "type": "string"
+     },
+     "commodity": {
+      "type": "string"
+     },
+     "locationName": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "observationDate": {
+      "type": "string"
+     },
+     "oldValue": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "newValue": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "oldPublicationDate": {
+      "type": "string"
+     },
+     "newPublicationDate": {
+      "type": "string"
+     },
+     "detectedAt": {
+      "type": "string"
+     },
+     "unit": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ }
+}

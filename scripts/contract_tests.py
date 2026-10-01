@@ -226,6 +226,14 @@ def daily_brief(doc, errs, warns, stats):
             if x.get("kind") not in doc["byKind"]: errs.append("%s: kind %r desconocido" % (lst, x.get("kind"))); break
     m = [abs(x["changePct"]) for x in doc["movers"] if _num(x["changePct"])]
     if m != sorted(m, reverse=True): errs.append("movers sin ordenar por |cambio|")
+    cb = doc.get("cashBids")
+    if cb:
+        if sum(g["markets"] for g in cb["groups"]) > cb["marketsUpdated"]: errs.append("cashBids: mas mercados en los grupos que mercados actualizados")
+        for g in cb["groups"]:
+            if g["min"] > g["max"] or not (g["min"] <= g["lead"]["pct"] <= g["max"]): errs.append("cashBids %s/%s: rango de cambios incoherente (min/max/lead)" % (g["state"], g["commodity"])); break
+        ab = [max(abs(g["min"]), abs(g["max"])) for g in cb["groups"]]
+        if ab != sorted(ab, reverse=True): errs.append("cashBids: grupos sin ordenar por |cambio|")
+        if cb["groups"] and not cb["asOf"]: errs.append("cashBids: grupos sin fecha")
 def pipeline_status(doc, errs, warns, stats):
     s = doc["summary"]; pl = doc["pipelines"]; names = [p["workflow"] for p in pl]; stats["pipelines"] = len(pl)
     if len(set(names)) != len(names): errs.append("workflows repetidos en pipeline-status")
@@ -286,6 +294,99 @@ def catalog_index(doc, errs, warns, stats):
     for r in rows: n[r[10]] = n.get(r[10], 0) + 1
     if n[1] != sum(c.get("nEu", 0) for c in man["countries"].values()): errs.append("series UE del indice != manifiesto")
     stats["series"] = len(rows)
+
+# ---------- US Local Cash Bids (data/us-cash-bids) ----------
+_CB_SECRET = re.compile(r"authorization|basic [A-Za-z0-9+/=]{16,}|api[_-]?key|apikey|secret|token=", re.I)
+def _cb_secret_scan(doc, errs):
+    if _CB_SECRET.search(json.dumps(doc)): errs.append("el fichero contiene texto que parece una credencial (authorization/api key/secret): las claves solo viven en GitHub Secrets")
+def _cb_pt(sid, p, errs, unit):
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", str(p[0])): errs.append("%s: fecha %r invalida" % (sid, p[0])); return False
+    for i, v in enumerate(p[1:4], 1):
+        if v is not None and (not _num(v) or v <= 0 or (unit == "bu" and v > 100)): errs.append("%s %s: precio %r fuera de rango" % (sid, p[0], v)); return False
+    if p[2] is not None and p[3] is not None and p[2] > p[3]: errs.append("%s %s: minimo %s > maximo %s" % (sid, p[0], p[2], p[3])); return False
+    if p[1] is None and p[2] is None and p[3] is None: errs.append("%s %s: punto sin ningun precio" % (sid, p[0])); return False
+    if p[4] is not None and p[5] is not None and p[4] > p[5]: errs.append("%s %s: basis minimo > maximo" % (sid, p[0])); return False
+    return True
+def us_cashbids_shard(doc, errs, warns, stats):
+    _cb_secret_scan(doc, errs); seen = set(); stats["series"] += len(doc["series"])
+    for s in doc["series"]:
+        sid = s["id"]
+        if sid in seen: errs.append("serie repetida %s" % sid); break
+        seen.add(sid)
+        if not sid.startswith("us-cb:%d:" % s["reportId"]): errs.append("%s: el id no corresponde al informe %d" % (sid, s["reportId"])); break
+        if s["state"] != doc["state"] or s["commodity"] != doc["commodity"]: errs.append("%s: serie en el shard equivocado (%s/%s)" % (sid, s["state"], s["commodity"])); break
+        pts = s["pts"]
+        if not _asc(pts, sid, errs, key=lambda p: str(p[0])): break
+        if not all(_cb_pt(sid, p, errs, s["unit"]) for p in pts): break
+        last = pts[-1]
+        if s["date"] != last[0] or (s["avg"], s["lo"], s["hi"], s["bLo"], s["bHi"]) != tuple(last[1:6]): errs.append("%s: la ultima observacion no coincide con el ultimo punto" % sid); break
+        if s["n"] < len(pts): errs.append("%s: n < puntos" % sid); break
+        if s["first"] > pts[0][0]: errs.append("%s: first posterior al primer punto" % sid); break
+        hl = last[1] if last[1] is not None else (last[2] if last[2] is not None and last[2] == last[3] else None)
+        kind = "AVERAGE" if last[1] is not None else "EXACT" if hl is not None else "RANGE" if (last[2] is not None or last[3] is not None) else "NONE"
+        if s["priceKind"] != kind: errs.append("%s: priceKind %s != %s" % (sid, s["priceKind"], kind)); break
+        if len(pts) > 1:
+            pv = pts[-2]; hp = pv[1] if pv[1] is not None else (pv[2] if pv[2] is not None and pv[2] == pv[3] else None)
+            if (datetime.date.fromisoformat(last[0]) - datetime.date.fromisoformat(pv[0])).days > {"daily": 7, "weekly": 14}.get(s["frequency"], 7): hp = None  # = lib_cashbids.MAX_GAP_DAYS
+            exp = round((hl / hp - 1) * 100, 2) if hl is not None and hp else None
+            if s["prevDate"] != pv[0] or (s["changePct"] is None) != (exp is None) or (exp is not None and abs(s["changePct"] - exp) > 0.011): errs.append("%s: changePct %s no cuadra con los dos ultimos puntos (%s)" % (sid, s["changePct"], exp)); break
+        elif s["changePct"] is not None or s["prevDate"] is not None: errs.append("%s: cambio sin observacion previa" % sid); break
+        if last[4] is not None or last[5] is not None:
+            if not s.get("basisUnit"): warns.append("%s: basis publicado sin unidad de basis (no se muestra con unidad inventada)" % sid)
+        if s["locationType"] == "ELEVATOR" and not s["locationName"]: errs.append("%s: ELEVATOR sin nombre de instalacion" % sid); break
+        if _num(s["avg"]) and _num(s["lo"]) and _num(s["hi"]) and not (s["lo"] - 1e-9 <= s["avg"] <= s["hi"] + 1e-9): warns.append("%s: promedio fuera del rango publicado" % sid)
+        if abs(s["changePct"] or 0) > 8: warns.append("%s: cambio diario %.1f %% (revisar contra el informe original: puede ser un cambio de periodo de entrega o de cosecha)" % (sid, s["changePct"]))
+def us_cashbids_history(doc, errs, warns, stats):
+    _cb_secret_scan(doc, errs); stats["series"] += len(doc["series"])
+    for sid, s in doc["series"].items():
+        if not sid.startswith("us-cb:%d:" % s["reportId"]): errs.append("%s: id/informe inconsistente" % sid); break
+        if not _asc(s["pts"], sid, errs, key=lambda p: str(p[0])): break
+        if not all(_cb_pt(sid, p, errs, s["unit"]) for p in s["pts"]): break
+        if s["state"] != doc["state"] or s["commodity"] != doc["commodity"]: errs.append("%s: serie en el almacen equivocado" % sid); break
+def us_cashbids_reports(doc, errs, warns, stats):
+    _cb_secret_scan(doc, errs); ids = [r["reportId"] for r in doc["reports"]]
+    if len(ids) != len(set(ids)): errs.append("reportId repetido")
+    reg = json.loads((ROOT / "scripts/us-cash-bids-registry.json").read_text(encoding="utf-8"))
+    if set(ids) != {r["reportId"] for r in reg["reports"]}: errs.append("reports.json no coincide con scripts/us-cash-bids-registry.json (registro central)")
+    on = {r["reportId"]: r["enabled"] for r in reg["reports"]}
+    for r in doc["reports"]:
+        if r["active"] != on.get(r["reportId"]): errs.append("%d: active != registro" % r["reportId"]); break
+        if r["hasData"] != (r["observations"] > 0) or (r["hasData"] and not r["commodities"]): errs.append("%d: hasData incoherente" % r["reportId"]); break
+        if not r["active"] and r["ingestionStatus"] not in ("DISABLED",) and not r["hasData"]: errs.append("%d: informe sin habilitar con estado %s" % (r["reportId"], r["ingestionStatus"])); break
+        if r["hasBasis"] and not r["hasData"]: errs.append("%d: basis sin datos" % r["reportId"]); break
+    stats["series"] += len(doc["reports"])
+def us_cashbids_manifest(doc, errs, warns, stats):
+    _cb_secret_scan(doc, errs); base = D / "us-cash-bids"; ser = 0; hist = 0
+    for st, e in doc["states"].items():
+        for com, c in e["commodities"].items():
+            p = base / c["shard"]; h = base / c["history"]
+            if not p.exists() or not h.exists(): errs.append("%s/%s: shard o historico inexistente" % (st, com)); continue
+            sh = json.loads(p.read_text(encoding="utf-8")); hi = json.loads(h.read_text(encoding="utf-8"))
+            if len(sh["series"]) != c["series"] or len({x["locationName"] for x in sh["series"]}) != c["markets"]: errs.append("%s/%s: series/mercados del manifiesto no cuadran con el shard" % (st, com))
+            if set(hi["series"]) != {x["id"] for x in sh["series"]}: errs.append("%s/%s: shard e historico con distintas series" % (st, com)); continue
+            for x in sh["series"]:
+                hp = hi["series"][x["id"]]["pts"]
+                if x["n"] != len(hp) or x["pts"][-1][:6] != hp[-1][:6] or x["first"] != hp[0][0]: errs.append("%s: shard vs historico (n/ultimo/primero)" % x["id"]); break
+            ser += c["series"]; hist += sum(len(v["pts"]) for v in hi["series"].values())
+    t = doc["totals"]
+    if t["series"] != ser or t["historicalObservations"] != hist: errs.append("totals (%d series, %d obs) no cuadran con los ficheros (%d, %d)" % (t["series"], t["historicalObservations"], ser, hist))
+    if t["states"] != len(doc["states"]) or t["commodities"] != len(doc["commodities"]): errs.append("totals.states/commodities no cuadran")
+    if t["reportsWithBasis"] > t["reportsWithData"] or t["reportsWithData"] > t["reportsEnabled"]: errs.append("totals de informes incoherentes")
+    lic = json.loads((D / "license-registry.json").read_text(encoding="utf-8"))["sources"].get(doc["sourceId"])
+    if not lic or lic["status"] in ("RESTRICTED", "BLOCKED") or doc["license"]["status"] != lic["status"]: errs.append("el manifiesto declara una licencia distinta de la del registro (%s)" % (lic or {}).get("status"))
+    stats["series"] += ser
+def us_cashbids_watch(doc, errs, warns, stats):
+    _cb_secret_scan(doc, errs); base = D / "us-cash-bids"; stats["series"] += len(doc["series"]); live = {}
+    for f in sorted(base.glob("*/*.json")):
+        sh = json.loads(f.read_text(encoding="utf-8"))
+        for x in sh["series"]: live["%s/%s/%s" % (sh["state"], sh["commodity"], x["id"])] = x
+    for k, a in doc["series"].items():
+        x = live.get(k)
+        if not x: errs.append("%s: serie que no existe en los shards" % k); break
+        if a[4] != x["date"] or a[5] != (x["avg"] if x["avg"] is not None else x["lo"]) or a[6] != x["changePct"]: errs.append("%s: fecha/valor/cambio no coinciden con el shard" % k); break
+        if x["freshness"] not in ("LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED"): errs.append("%s: una serie %s no debe estar en el indice de seguimiento" % (k, x["freshness"])); break
+        if a[7] is not None and (x["bLo"] != a[7] or x["bHi"] != a[7]): errs.append("%s: basis del indice no es un basis unico publicado" % k); break
+        if not isinstance(a[5], (int, float)) or a[5] <= 0: errs.append("%s: valor no valido" % k); break
 def catalog_manifest(doc, errs, warns, stats):
     k = doc["seriesByKind"]
     if sum(k.values()) != doc["seriesTotal"]: errs.append("seriesTotal %d != suma de seriesByKind %d" % (doc["seriesTotal"], sum(k.values())))

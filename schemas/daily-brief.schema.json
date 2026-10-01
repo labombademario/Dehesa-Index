@@ -286,6 +286,180 @@
     "withKind",
     "internal"
    ]
+  },
+  "cashBids": {
+   "type": "object",
+   "required": [
+    "asOf",
+    "run",
+    "marketsUpdated",
+    "groups",
+    "revisions",
+    "newBids"
+   ],
+   "properties": {
+    "asOf": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "run": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "marketsUpdated": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "groups": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "state",
+       "commodity",
+       "markets",
+       "min",
+       "max",
+       "lead",
+       "unit",
+       "date"
+      ],
+      "properties": {
+       "state": {
+        "type": "string"
+       },
+       "stateName": {
+        "type": "string"
+       },
+       "commodity": {
+        "type": "string"
+       },
+       "commodityName": {
+        "type": "string"
+       },
+       "commodityClass": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "grade": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "deliveryPoint": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "unit": {
+        "type": "string"
+       },
+       "date": {
+        "type": "string"
+       },
+       "markets": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "min": {
+        "type": "number"
+       },
+       "max": {
+        "type": "number"
+       },
+       "lead": {
+        "type": "object",
+        "required": [
+         "market",
+         "pct"
+        ],
+        "properties": {
+         "market": {
+          "type": [
+           "string",
+           "null"
+          ]
+         },
+         "locationType": {
+          "type": "string"
+         },
+         "pct": {
+          "type": "number"
+         },
+         "value": {
+          "type": [
+           "number",
+           "null"
+          ]
+         }
+        }
+       }
+      }
+     }
+    },
+    "revisions": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "seriesId",
+       "oldValue",
+       "newValue",
+       "detectedAt"
+      ],
+      "properties": {
+       "seriesId": {
+        "type": "string"
+       },
+       "oldValue": {
+        "type": [
+         "number",
+         "null"
+        ]
+       },
+       "newValue": {
+        "type": [
+         "number",
+         "null"
+        ]
+       },
+       "detectedAt": {
+        "type": "string"
+       }
+      }
+     }
+    },
+    "newBids": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "state",
+       "commodity",
+       "date"
+      ],
+      "properties": {
+       "state": {
+        "type": "string"
+       },
+       "commodity": {
+        "type": "string"
+       },
+       "date": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
   }
  }
 }
