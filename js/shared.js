@@ -254,6 +254,17 @@
   }
   function sitePath(path) { return sitePrefix() + path; }
 
+  /* PWA: manifiesto y service worker (cache parcial; sin conexion se sirven las paginas ya vistas) */
+  (function pwa() {
+    try {
+      if (!document.querySelector('link[rel="manifest"]')) { var l = document.createElement('link'); l.rel = 'manifest'; l.href = '/manifest.webmanifest'; document.head.appendChild(l); }
+      if (!document.querySelector('meta[name="theme-color"]')) { var m = document.createElement('meta'); m.name = 'theme-color'; m.content = '#2f6b3a'; document.head.appendChild(m); }
+      if ('serviceWorker' in navigator && (location.protocol === 'https:' || (location.hostname === 'localhost' && /pwa=1/.test(location.search)))) {
+        window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+      }
+    } catch (e) {}
+  })();
+
   // ---------------------------------------------------------------------
   // Nav
   // ---------------------------------------------------------------------
