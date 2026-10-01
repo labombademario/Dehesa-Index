@@ -69,7 +69,7 @@ jobs:
       - name: Comprobar coherencia de lo construido (catalogo estricto, contratos de los derivados)
         run: |
           python3 scripts/check-catalog.py --strict
-          python3 scripts/check-licenses.py
+          python3 scripts/check-licenses.py --strict
           python3 scripts/validate-data.py --derived --no-report
 
       # 3) Commit: solo se llega aqui si todo lo anterior ha ido bien.

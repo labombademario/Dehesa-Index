@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-01T09:28:25Z",
+ "generatedAt": "2026-10-01T10:47:33Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1429,18 +1429,18 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
+   "licenseStatus": "VERIFIED",
    "licenseId": "CUSTOM",
    "commercialReuse": "conditional",
-   "derivatives": "conditional",
-   "attribution": "Source: Bank of Canada (note any modifications)",
+   "derivatives": "yes",
+   "attribution": "Source: Bank of Canada",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "VERIFIED pero con condiciones no inequivocas: uso comercial conditional"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -1448,8 +1448,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "bis",
@@ -1807,10 +1806,10 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
+   "licenseStatus": "VERIFIED",
    "licenseId": "ESCB-REUSE",
    "commercialReuse": "yes",
-   "derivatives": "unclear",
+   "derivatives": "conditional",
    "attribution": "Source: ECB statistics",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
@@ -1818,7 +1817,7 @@
    "gate": {
     "result": "NOT_READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "VERIFIED pero con condiciones no inequivocas: derivados conditional"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -1826,8 +1825,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "eia",
@@ -1911,18 +1909,18 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
-   "licenseId": "UNKNOWN",
-   "commercialReuse": "unclear",
-   "derivatives": "unclear",
-   "attribution": "Source: European Commission, DG AGRI, Agri-food Data Portal",
+   "licenseStatus": "VERIFIED",
+   "licenseId": "EU-REUSE-2011-833",
+   "commercialReuse": "yes",
+   "derivatives": "conditional",
+   "attribution": "Source: European Commission (Agri-food data portal)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "VERIFIED pero con condiciones no inequivocas: derivados conditional"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -1930,8 +1928,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "eu_oil_bulletin",
@@ -1954,18 +1951,18 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
+   "licenseStatus": "VERIFIED",
    "licenseId": "EU-REUSE-2011-833",
-   "commercialReuse": "unclear",
-   "derivatives": "unclear",
-   "attribution": "Source: European Commission, DG ENER, Weekly Oil Bulletin",
+   "commercialReuse": "yes",
+   "derivatives": "conditional",
+   "attribution": "Source: European Commission (Weekly Oil Bulletin)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "VERIFIED pero con condiciones no inequivocas: derivados conditional"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -1973,8 +1970,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "eu_taric",
@@ -1992,18 +1988,18 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
-   "licenseId": "UNKNOWN",
-   "commercialReuse": "unclear",
-   "derivatives": "unclear",
-   "attribution": "Source: European Commission, DG TAXUD, TARIC (via mirror rousseauxy/taric-opendata; not an authentic source)",
+   "licenseStatus": "VERIFIED",
+   "licenseId": "EU-REUSE-2011-833",
+   "commercialReuse": "yes",
+   "derivatives": "conditional",
+   "attribution": "Source: European Commission (TARIC / Customs Tariff)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "VERIFIED pero con condiciones no inequivocas: derivados conditional"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -2011,8 +2007,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "eurostat",
@@ -2628,18 +2623,18 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
+   "licenseStatus": "VERIFIED",
    "licenseId": "US-PD",
    "commercialReuse": "yes",
    "derivatives": "yes",
-   "attribution": "Source: USDA Agricultural Marketing Service, Market News",
+   "attribution": "Source: U.S. Department of Agriculture (AMS Market News (MARS))",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
-    "result": "NOT_READY",
+    "result": "READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -2647,8 +2642,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "usda_ers",
@@ -2666,18 +2660,18 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
+   "licenseStatus": "VERIFIED",
    "licenseId": "US-PD",
    "commercialReuse": "yes",
    "derivatives": "yes",
-   "attribution": "U.S. Department of Agriculture (USDA), Economic Research Service (ERS). <product name>",
+   "attribution": "Source: U.S. Department of Agriculture (ERS data products)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
-    "result": "NOT_READY",
+    "result": "READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -2685,8 +2679,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "usda_fas_esr",
@@ -2704,18 +2697,18 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
+   "licenseStatus": "VERIFIED",
    "licenseId": "US-PD",
    "commercialReuse": "yes",
    "derivatives": "yes",
-   "attribution": "Source: USDA Foreign Agricultural Service, Export Sales Reporting",
+   "attribution": "Source: U.S. Department of Agriculture (FAS Export Sales Reporting)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
-    "result": "NOT_READY",
+    "result": "READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -2723,8 +2716,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "usda_fas_gats",

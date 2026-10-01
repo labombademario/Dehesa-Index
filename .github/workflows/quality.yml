@@ -49,7 +49,9 @@ jobs:
         run: node scripts/test-coverage-parity.mjs
 
       - name: License gate (registry, file coverage, catalog propagation, legal text)
-        run: python3 scripts/check-licenses.py
+        run: |
+          python3 scripts/check-licenses.py --strict
+          python3 scripts/test-license-gate.py
 
       - name: DATA_SOURCES.md generated from the license registry
         run: python3 scripts/build-docs.py --check

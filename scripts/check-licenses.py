@@ -8,16 +8,18 @@ Falla (exit 1) si:
    o apunta a una fuente RESTRICTED/BLOCKED, o a una fuente marcada used:false;
  - el catalogo (data/catalog/**) no propaga sourceId/licenseId coherentes con el registro;
  - hay texto legal categorico incompatible con el registro (p. ej. afirmar que FAOSTAT es "no comercial": sus terminos actuales son CC BY 4.0 con una restriccion de promocion comercial).
-Avisa (no falla salvo --strict) de las fuentes PENDING en uso y de verificaciones antiguas. Uso: python3 scripts/check-licenses.py [--strict] [--report]"""
-import datetime, json, re, sys
+Avisa de las fuentes PENDING en uso declaradas en registro.pendingBaseline y de verificaciones antiguas.
+--strict: ademas FALLA si una fuente PENDING en uso NO esta en pendingBaseline (ninguna fuente nueva puede publicarse sin verificar) o si la lista esta desfasada.
+--strict-all: falla mientras quede cualquier PENDING en uso. Uso: python3 scripts/check-licenses.py [--strict|--strict-all] [--report] [--inventory]"""
+import datetime, json, os, re, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]; D = ROOT / "data"
-STRICT = "--strict" in sys.argv
+STRICT = "--strict" in sys.argv or "--strict-all" in sys.argv; STRICT_ALL = "--strict-all" in sys.argv
 REQ = ["name", "url", "country", "licenseId", "licenseName", "licenseUrl", "commercialUse", "derivatives", "redistribution", "attributionRequired", "attributionText",
        "additionalRestrictions", "thirdPartyExceptions", "thirdPartyNote", "verifiedAt", "status", "confidence", "evidence", "used", "aliases"]
 YNC = {"yes", "no", "conditional", "unclear"}; STATUS = {"VERIFIED", "PENDING", "RESTRICTED", "BLOCKED"}
 errs, warns = [], []
-reg = json.loads((D / "license-registry.json").read_text(encoding="utf-8"))
+reg = json.loads(Path(os.environ.get("DEHESA_LICENSE_REGISTRY") or (D / "license-registry.json")).read_text(encoding="utf-8"))
 S = reg["sources"]; alias = {}
 for k, v in S.items():
     alias[k] = k
@@ -107,7 +109,15 @@ for f in list((ROOT / "js").glob("*.js")) + list(ROOT.glob("*.html")) + [ROOT / 
         if re.search(rx, t, re.I): errs.append("%s: %s" % (f.name, msg))
 # informe
 pend = sorted(k for k, v in S.items() if v["used"] and v["status"] == "PENDING")
-for k in pend: warns.append("PENDING en uso: %s (%d series en catalogo) — %s" % (k, per_src.get(k, 0), S[k]["licenseName"][:70]))
+base = reg.get("pendingBaseline", {}).get("sources", {})
+for k in pend: warns.append("PENDING en uso%s: %s (%d series en catalogo) — %s" % ("" if k in base else " NO DECLARADA", k, per_src.get(k, 0), S[k]["licenseName"][:70]))
+if STRICT:
+    for k in pend:
+        if k not in base: errs.append("registro/%s: PENDING en uso y fuera de pendingBaseline: una fuente nueva no puede publicarse sin verificar (VERIFIED) ni declararse" % k)
+    for k in base:
+        if k not in S: errs.append("pendingBaseline/%s: no existe en el registro" % k)
+        elif S[k]["status"] != "PENDING" or not S[k]["used"]: errs.append("pendingBaseline/%s: ya no es PENDING en uso (%s, used=%s): quitarla de la lista" % (k, S[k]["status"], S[k]["used"]))
+        elif not base[k].get("nextAction"): errs.append("pendingBaseline/%s: falta nextAction" % k)
 cnt = {}
 for v in S.values(): cnt[v["status"]] = cnt.get(v["status"], 0) + 1
 for e in errs: print("ERROR  ", e)
@@ -116,4 +126,7 @@ print("Licencias: %d fuentes %s; %d series de catalogo revisadas; %d PENDING en 
 if "--report" in sys.argv:
     tot = sum(per_src.values()) or 1
     for k, n in sorted(per_src.items(), key=lambda x: -x[1]): print("  %-18s %5d series  %-9s %s" % (k, n, S[k]["status"], S[k]["licenseId"]))
-sys.exit(1 if errs or (STRICT and pend) else 0)
+if "--inventory" in sys.argv:
+    print("\nInventario de PENDING en uso (series de catalogo y ficheros que dependen de cada fuente):")
+    for k in pend: print("  %-18s %5d series | ficheros: %s" % (k, per_src.get(k, 0), ", ".join(sorted(used_by.get(k, []))) or "-"))
+sys.exit(1 if errs or (STRICT_ALL and pend) else 0)
