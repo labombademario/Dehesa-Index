@@ -249,7 +249,8 @@
 
   function sitePrefix() {
     var path = (window.location && window.location.pathname) || '';
-    return /\/precios\/[^/]+\/?$/.test(path) ? '../../' : '';
+    if (/\/datos\/en\/[^/]+\/?$/.test(path)) return '../../../';
+    return /\/(precios|datos)\/[^/]+\/?$/.test(path) ? '../../' : '';
   }
   function sitePath(path) { return sitePrefix() + path; }
 

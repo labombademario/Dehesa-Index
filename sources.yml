@@ -133,3 +133,13 @@ sources:
     extra: [fx-history.json]
     log: fx-history-log.txt
     message: Tipos de cambio históricos (BCE)
+  - id: seo-pages
+    name: Rebuild SEO landing pages
+    cron: ['10 5 * * 1']
+    runner: node
+    script: scripts/build-seo-pages.mjs
+    timeout: 10
+    continue: true
+    data: []
+    extra: ['!datos', '!sitemap.xml']
+    message: Páginas SEO por país y categoría
