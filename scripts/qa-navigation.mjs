@@ -11,7 +11,7 @@ function read(p) { return fs.readFileSync(path.join(root,p),'utf8'); }
 function exists(p) { return fs.existsSync(path.join(root,p)); }
 function check(cond,msg){ if(cond) ok.push(msg); else failures.push(msg); }
 
-const htmlPages = ['index.html','precios.html','noticias.html','calendario.html','informacion.html','blog.html','empresas.html','contacto.html','metodologia.html','legal.html','clima.html','paises.html','recan.html','mapa.html','oferta-demanda.html','mercados.html','cultivos.html','exportaciones.html','sequia.html','ganaderia.html','insumos.html','costes.html','rendimientos.html','producto.html','europa.html','aranceles.html','perfiles.html','status.html','brief.html'];
+const htmlPages = ['index.html','precios.html','noticias.html','calendario.html','informacion.html','blog.html','empresas.html','contacto.html','metodologia.html','legal.html','clima.html','paises.html','recan.html','mapa.html','oferta-demanda.html','mercados.html','cultivos.html','exportaciones.html','sequia.html','ganaderia.html','insumos.html','costes.html','rendimientos.html','producto.html','europa.html','aranceles.html','perfiles.html','status.html','brief.html','comparador.html'];
 for (const page of htmlPages) {
   check(exists(page), `page exists: ${page}`);
   if (!exists(page)) continue;

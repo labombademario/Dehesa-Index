@@ -82,7 +82,7 @@
         var px = x(p.x), py = y(p.y);
         d += (pen ? 'L' : 'M') + px.toFixed(1) + ' ' + py.toFixed(1) + ' '; pen = true;
         var lab = p.l || (time ? fmtDateFull(p.x) : (labelsIdx && labelsIdx[p.x] !== undefined ? labelsIdx[p.x] : String(p.x)));
-        pts.push([+px.toFixed(1), +py.toFixed(1), (o.vFmtS && o.vFmtS[s.name] ? o.vFmtS[s.name](p.y) : vFmt(p.y)), lab, p.y]);
+        pts.push([+px.toFixed(1), +py.toFixed(1), (o.vFmtS && o.vFmtS[s.name] ? o.vFmtS[s.name](p.y, p) : vFmt(p.y)), lab, p.y]);
       });
       g += '<path d="' + d + '" fill="none" stroke="' + s.color + '" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"' + (s.dash ? ' stroke-dasharray="6 4"' : '') + '/>';
       spec.s.push({ n: s.name, c: s.color, p: pts });
