@@ -8,7 +8,7 @@
   var UI = {
     es: {
       pageTitle: 'Panel de precios',
-      pageSubtitle: 'Precios agrícolas diarios y semanales — EE. UU. y Europa',
+      pageSubtitle: 'Precios agrícolas diarios y semanales — EE. UU., Europa, Reino Unido y Canadá',
       badge: 'ESTADO DE DATOS',
       updated: 'Verificación de observaciones y procedencia activa',
       banner: 'Cada producto muestra explícitamente si el dato está REAL, PENDIENTE o NO COMPARABLE. Las cifras no verificadas no se presentan como precios de mercado activos. La procedencia y metodología están disponibles en cada tarjeta.',
@@ -166,7 +166,7 @@
     },
     en: {
       pageTitle: 'Price dashboard',
-      pageSubtitle: 'Daily and weekly agricultural prices — U.S. and Europe',
+      pageSubtitle: 'Daily and weekly agricultural prices — U.S., Europe, UK and Canada',
       badge: 'DATA STATUS',
       updated: 'Observation and provenance verification active',
       banner: 'Each product is explicitly marked REAL, PENDING or NOT COMPARABLE. Unverified figures are not presented as active market prices. Provenance and methodology are available on each card.',
@@ -324,7 +324,7 @@
     },
     fr: {
       pageTitle: 'Tableau des prix',
-      pageSubtitle: 'Prix agricoles quotidiens et hebdomadaires — États-Unis et Europe',
+      pageSubtitle: 'Prix agricoles quotidiens et hebdomadaires — États-Unis, Europe, Royaume-Uni et Canada',
       badge: 'STATUT DES DONNÉES',
       updated: 'Vérification des observations et de la provenance active',
       banner: "Chaque produit indique explicitement RÉEL, EN ATTENTE ou NON COMPARABLE. Les chiffres non vérifiés ne sont pas présentés comme des prix de marché actifs. La provenance et la méthodologie sont disponibles sur chaque carte.",
@@ -482,7 +482,7 @@
     },
     it: {
       pageTitle: 'Pannello dei prezzi',
-      pageSubtitle: 'Prezzi agricoli giornalieri e settimanali — Stati Uniti ed Europa',
+      pageSubtitle: 'Prezzi agricoli giornalieri e settimanali — Stati Uniti, Europa, Regno Unito e Canada',
       badge: 'STATO DEI DATI',
       updated: 'Verifica di osservazioni e provenienza attiva',
       banner: 'Ogni prodotto indica esplicitamente REALE, IN ATTESA o NON COMPARABILE. I valori non verificati non vengono presentati come prezzi di mercato attivi. Provenienza e metodologia sono disponibili in ogni scheda.',

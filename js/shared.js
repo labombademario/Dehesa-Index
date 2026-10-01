@@ -135,7 +135,7 @@
 
   var FOOTER_STRINGS = {
     es: {
-      blurb: 'Un panel diario y semanal de precios agrícolas de EE. UU. y Europa: cereales, lácteos, ganado, pienso y fertilizantes, todo en un mismo sitio.',
+      blurb: 'Un panel diario y semanal de precios agrícolas de EE. UU., Europa, Reino Unido y Canadá: cereales, lácteos, ganado, pienso y fertilizantes, todo en un mismo sitio.',
       sourcesTitle: 'FUENTES DE DATOS',
       linksTitle: 'ENLACES',
       noticeTitle: 'AVISO',
@@ -145,7 +145,7 @@
       legalLabel: 'Aviso legal y privacidad'
     },
     en: {
-      blurb: 'A daily and weekly dashboard of U.S. and European farm prices: grains, dairy, livestock, feed and fertilizer, all in one place.',
+      blurb: 'A daily and weekly dashboard of U.S., European, UK and Canadian farm prices: grains, dairy, livestock, feed and fertilizer, all in one place.',
       sourcesTitle: 'DATA SOURCES',
       linksTitle: 'LINKS',
       noticeTitle: 'DISCLAIMER',
@@ -155,7 +155,7 @@
       legalLabel: 'Legal notice & privacy'
     },
     fr: {
-      blurb: "Un tableau de bord quotidien et hebdomadaire des prix agricoles américains et européens : céréales, produits laitiers, bétail, aliments pour animaux et engrais, réunis en un seul endroit.",
+      blurb: "Un tableau de bord quotidien et hebdomadaire des prix agricoles des États-Unis, d’Europe, du Royaume-Uni et du Canada : céréales, produits laitiers, bétail, aliments pour animaux et engrais, réunis en un seul endroit.",
       sourcesTitle: 'SOURCES DES DONNÉES',
       linksTitle: 'LIENS',
       noticeTitle: 'AVERTISSEMENT',
@@ -165,7 +165,7 @@
       legalLabel: 'Mentions légales et confidentialité'
     },
     it: {
-      blurb: 'Un pannello giornaliero e settimanale dei prezzi agricoli di Stati Uniti ed Europa: cereali, lattiero-caseario, bestiame, mangimi e fertilizzanti, tutto in un unico posto.',
+      blurb: 'Un pannello giornaliero e settimanale dei prezzi agricoli di Stati Uniti, Europa, Regno Unito e Canada: cereali, lattiero-caseario, bestiame, mangimi e fertilizzanti, tutto in un unico posto.',
       sourcesTitle: 'FONTI DEI DATI',
       linksTitle: 'LINK',
       noticeTitle: 'AVVISO',

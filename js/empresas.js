@@ -9,11 +9,11 @@
       h1: 'Datos agrícolas listos para integrar en tu operación',
       sub: 'Dehesa Index está construyendo una API de precios agrícolas por producto y región — pensada para quien necesita estos datos dentro de su propio sistema, no solo en una web para consultar a mano.',
       whatTitle: 'QUÉ HAY DETRÁS',
-      whatP1: 'El panel público ya cubre 18 líneas de producto (cereales, ganado, lácteos, fertilizantes, pienso, vino a granel) en EE. UU. y Europa, con desglose por país dentro de la UE (Alemania, Francia, España, Italia) y hasta 5 años de histórico diario simulado por producto y región.',
+      whatP1: 'El panel público ya cubre 18 líneas de producto (cereales, ganado, lácteos, fertilizantes, pienso, vino a granel) en EE. UU., Europa, Reino Unido y Canadá, con desglose por país dentro de la UE (Alemania, Francia, España, Italia) y hasta 5 años de histórico diario simulado por producto y región.',
       whatP2: 'La API llevará ese mismo modelo interno de datos — cada precio identificado por producto y región — a un formato pensado para integrarse en hojas de cálculo, ERPs o sistemas de gestión de riesgo, en lugar de tener que copiarlo a mano desde el panel.',
       stats: [
         { value: '18', label: 'líneas de producto' },
-        { value: '2', label: 'regiones (EE. UU. y Europa)' },
+        { value: '2', label: 'regiones (EE. UU., Europa, Reino Unido y Canadá)' },
         { value: '5', label: 'años de histórico por producto' }
       ],
       audienceTitle: 'PENSADO PARA',
@@ -83,11 +83,11 @@
       h1: 'Des données agricoles prêtes à intégrer dans votre activité',
       sub: "Dehesa Index construit une API de prix agricoles par produit et par région — pensée pour ceux qui ont besoin de ces données dans leurs propres systèmes, pas seulement d'un tableau de bord à consulter à la main.",
       whatTitle: 'CE QUI EST DÉJÀ LÀ',
-      whatP1: "Le tableau de bord public couvre déjà 18 lignes de produits (céréales, élevage, produits laitiers, engrais, aliments pour bétail, vin en vrac) aux États-Unis et en Europe, avec une répartition par pays au sein de l'UE (Allemagne, France, Espagne, Italie) et jusqu'à 5 ans d'historique quotidien simulé par produit et région.",
+      whatP1: "Le tableau de bord public couvre déjà 18 lignes de produits (céréales, élevage, produits laitiers, engrais, aliments pour bétail, vin en vrac) aux États-Unis, en Europe, au Royaume-Uni et au Canada, avec une répartition par pays au sein de l'UE (Allemagne, France, Espagne, Italie) et jusqu'à 5 ans d'historique quotidien simulé par produit et région.",
       whatP2: "L'API reprendra ce même modèle de données interne — chaque prix identifié par produit et région — dans un format pensé pour s'intégrer dans des tableurs, des ERP ou des systèmes de gestion des risques, plutôt que de devoir le recopier à la main depuis le tableau de bord.",
       stats: [
         { value: '18', label: 'lignes de produits' },
-        { value: '2', label: 'régions (États-Unis et Europe)' },
+        { value: '2', label: 'régions (États-Unis, Europe, Royaume-Uni et Canada)' },
         { value: '5', label: "ans d'historique par produit" }
       ],
       audienceTitle: 'CONÇU POUR',
@@ -124,7 +124,7 @@
       whatP2: "L'API porterà questo stesso modello di dati interno — ogni prezzo identificato per prodotto e regione — in un formato pensato per integrarsi in fogli di calcolo, ERP o sistemi di gestione del rischio, invece di doverlo copiare a mano dalla dashboard.",
       stats: [
         { value: '18', label: 'linee di prodotto' },
-        { value: '2', label: 'regioni (Stati Uniti ed Europa)' },
+        { value: '2', label: 'regioni (Stati Uniti, Europa, Regno Unito e Canada)' },
         { value: '5', label: 'anni di storico per prodotto' }
       ],
       audienceTitle: 'PENSATO PER',

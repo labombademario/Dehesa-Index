@@ -1,7 +1,7 @@
 {
   "name": "Dehesa Index",
   "short_name": "Dehesa Index",
-  "description": "Precios y estadísticas agrarias de Europa y EE. UU.",
+  "description": "Precios y estadísticas agrarias de EE. UU., Europa, Canadá y Australia",
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",

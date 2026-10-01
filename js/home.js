@@ -21,7 +21,7 @@
   var STRINGS = {
     es: {
       h1: 'El pulso de la agricultura, en un solo panel',
-      sub: 'Precios diarios y semanales de cereales, lácteos, ganado, pienso y fertilizantes en EE. UU. y Europa — comparables al instante en la misma moneda y la misma unidad.',
+      sub: 'Precios diarios y semanales de cereales, lácteos, ganado, pienso y fertilizantes en EE. UU., Europa, Reino Unido y Canadá — siempre con el valor original, y convertidos a otra moneda o unidad cuando la serie es comparable.',
       ctaPrimary: 'Ver el panel de precios →',
       ctaSecondary: 'Cómo funciona',
       moversTitle: 'PANEL DE MERCADO',
@@ -37,7 +37,7 @@
       stats: [
         { value: '11', label: 'categorías de producto' },
         { value: '18', label: 'mercados seguidos' },
-        { value: '2', label: 'continentes — EE. UU. y Europa' },
+        { value: '4', label: 'mercados de precios — EE. UU., Europa, Reino Unido y Canadá' },
         { value: 'Diario', label: 'ritmo de actualización' }
       ],
       coverTitle: 'Qué cubrimos',
@@ -56,7 +56,7 @@
         { label: 'Energía', items: 'Diésel agrícola', desc: 'Precio del gasóleo en EE. UU. (por región) y Europa (por país) — clave para el coste de la maquinaria.' }
       ],
       howTitle: 'Cómo funciona',
-      howSub: 'Tres pasos para comparar precios de EE. UU. y Europa como si fueran uno solo.',
+      howSub: 'Tres pasos para comparar precios de distintos mercados con la unidad y la moneda a la vista.',
       steps: [
         { n: '01', title: 'Elige categoría y mercado', desc: 'Cereales, lácteos, ganado, pienso o fertilizantes — en EE. UU. o Europa.' },
         { n: '02', title: 'Compara en la misma base', desc: 'Cambia moneda (USD/EUR) y unidad (imperial/métrica) para comparar directamente.' },
@@ -69,7 +69,7 @@
     },
     en: {
       h1: 'The pulse of agriculture, in one dashboard',
-      sub: 'Daily and weekly prices for grains, dairy, livestock, feed and fertilizer in the U.S. and Europe — instantly comparable in the same currency and the same unit.',
+      sub: 'Daily and weekly prices for grains, dairy, livestock, feed and fertilizer in the U.S., Europe, the UK and Canada — always with the original value, and converted to another currency or unit when the series are comparable.',
       ctaPrimary: 'View the price dashboard →',
       ctaSecondary: 'How it works',
       moversTitle: 'MARKET SNAPSHOT',
@@ -85,7 +85,7 @@
       stats: [
         { value: '11', label: 'product categories' },
         { value: '18', label: 'markets tracked' },
-        { value: '2', label: 'continents — U.S. and Europe' },
+        { value: '4', label: 'price markets — U.S., Europe, UK and Canada' },
         { value: 'Daily', label: 'update pace' }
       ],
       coverTitle: 'What we cover',
@@ -104,7 +104,7 @@
         { label: 'Energy', items: 'Agricultural diesel', desc: 'Diesel prices in the U.S. (by region) and Europe (by country) — key to machinery running costs.' }
       ],
       howTitle: 'How it works',
-      howSub: 'Three steps to compare U.S. and European prices as if they were one.',
+      howSub: 'Three steps to compare prices across markets with the unit and currency in view.',
       steps: [
         { n: '01', title: 'Choose category and market', desc: 'Grains, dairy, livestock, feed or fertilizer — in the U.S. or Europe.' },
         { n: '02', title: 'Compare on the same basis', desc: 'Switch currency (USD/EUR) and unit (imperial/metric) to compare directly.' },
@@ -117,7 +117,7 @@
     },
     fr: {
       h1: "Le pouls de l'agriculture, en un seul tableau de bord",
-      sub: "Prix quotidiens et hebdomadaires des céréales, produits laitiers, bétail, aliments pour animaux et engrais aux États-Unis et en Europe — comparables instantanément dans la même devise et la même unité.",
+      sub: "Prix quotidiens et hebdomadaires des céréales, produits laitiers, bétail, aliments pour animaux et engrais aux États-Unis, en Europe, au Royaume-Uni et au Canada — toujours avec la valeur d’origine, et convertis dans une autre devise ou unité quand les séries sont comparables.",
       ctaPrimary: 'Voir le tableau des prix →',
       ctaSecondary: 'Comment ça marche',
       moversTitle: 'LES MOUVEMENTS AGRICOLES DU JOUR',
@@ -133,7 +133,7 @@
       stats: [
         { value: '11', label: 'catégories de produits' },
         { value: '18', label: 'marchés suivis' },
-        { value: '2', label: 'continents — États-Unis et Europe' },
+        { value: '4', label: 'marchés de prix — États-Unis, Europe, Royaume-Uni et Canada' },
         { value: 'Quotidien', label: 'rythme de mise à jour' }
       ],
       coverTitle: 'Ce que nous couvrons',
@@ -152,7 +152,7 @@
         { label: 'Énergie', items: 'Gazole agricole', desc: 'Prix du gazole aux États-Unis (par région) et en Europe (par pays) — un poste clé du coût de la machinerie.' }
       ],
       howTitle: 'Comment ça marche',
-      howSub: "Trois étapes pour comparer les prix américains et européens comme s'ils n'en faisaient qu'un.",
+      howSub: "Trois étapes pour comparer les prix entre marchés, unité et devise d'origine toujours visibles.",
       steps: [
         { n: '01', title: 'Choisissez catégorie et marché', desc: 'Céréales, produits laitiers, bétail, aliments ou engrais — aux États-Unis ou en Europe.' },
         { n: '02', title: 'Comparez sur la même base', desc: "Changez la devise (USD/EUR) et l'unité (impérial/métrique) pour comparer directement." },
@@ -165,7 +165,7 @@
     },
     it: {
       h1: "Il polso dell'agricoltura, in un unico pannello",
-      sub: "Prezzi giornalieri e settimanali di cereali, lattiero-caseario, bestiame, mangimi e fertilizzanti negli Stati Uniti e in Europa — comparabili all'istante nella stessa valuta e nella stessa unità di misura.",
+      sub: "Prezzi giornalieri e settimanali di cereali, lattiero-caseario, bestiame, mangimi e fertilizzanti negli Stati Uniti, in Europa, nel Regno Unito e in Canada — sempre con il valore originale, e convertiti in un'altra valuta o unità quando le serie sono confrontabili.",
       ctaPrimary: 'Vedi il pannello dei prezzi →',
       ctaSecondary: 'Come funziona',
       moversTitle: 'I MOVIMENTI AGRICOLI DI OGGI',
@@ -181,7 +181,7 @@
       stats: [
         { value: '11', label: 'categorie di prodotto' },
         { value: '18', label: 'mercati monitorati' },
-        { value: '2', label: 'continenti — Stati Uniti ed Europa' },
+        { value: '4', label: 'mercati dei prezzi — Stati Uniti, Europa, Regno Unito e Canada' },
         { value: 'Giornaliero', label: 'ritmo di aggiornamento' }
       ],
       coverTitle: 'Cosa copriamo',
@@ -200,7 +200,7 @@
         { label: 'Energia', items: 'Gasolio agricolo', desc: 'Prezzo del gasolio negli Stati Uniti (per regione) e in Europa (per paese) — una voce chiave nel costo dei macchinari.' }
       ],
       howTitle: 'Come funziona',
-      howSub: 'Tre passi per confrontare i prezzi di Stati Uniti ed Europa come se fossero un unico mercato.',
+      howSub: 'Tre passi per confrontare i prezzi tra mercati con unità e valuta in vista.',
       steps: [
         { n: '01', title: 'Scegli categoria e mercato', desc: 'Cereali, lattiero-caseario, bestiame, mangimi o fertilizzanti — negli Stati Uniti o in Europa.' },
         { n: '02', title: 'Confronta sulla stessa base', desc: 'Cambia valuta (USD/EUR) e unità di misura (imperiale/metrica) per confrontare direttamente.' },
@@ -219,10 +219,10 @@
   var EXPLORE = {
     title: { es: 'Explora los datos', en: 'Explore the data', fr: 'Explorer les données', it: 'Esplora i dati' },
     sub: {
-      es: 'Además de los precios: sequía, costes, rendimientos, comercio y ganadería, con datos oficiales de EE. UU. y Europa.',
-      en: 'Beyond prices: drought, costs, yields, trade and livestock, with official data from the U.S. and Europe.',
-      fr: 'Au-delà des prix : sécheresse, coûts, rendements, commerce et élevage, avec des données officielles des États-Unis et d’Europe.',
-      it: 'Oltre ai prezzi: siccità, costi, rese, commercio e zootecnia, con dati ufficiali di Stati Uniti ed Europa.'
+      es: 'Además de los precios: sequía, costes, rendimientos, comercio y ganadería, con datos oficiales de EE. UU., Europa, Canadá y Australia.',
+      en: 'Beyond prices: drought, costs, yields, trade and livestock, with official data from the U.S., Europe, Canada and Australia.',
+      fr: 'Au-delà des prix : sécheresse, coûts, rendements, commerce et élevage, avec des données officielles des États-Unis, d’Europe, du Canada et d’Australie.',
+      it: 'Oltre ai prezzi: siccità, costi, rese, commercio e zootecnia, con dati ufficiali di Stati Uniti, Europa, Canada e Australia.'
     },
     cards: [
       { href: 'europa.html', tag: { es: 'UE', en: 'EU', fr: 'UE', it: 'UE' },
