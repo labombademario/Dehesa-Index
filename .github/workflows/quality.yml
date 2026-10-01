@@ -42,6 +42,9 @@ jobs:
       - name: Contract tests bite (corrupted real data must be rejected)
         run: python3 scripts/test-contracts.py
 
+      - name: Search answers (every figure shown must equal the source data)
+        run: node scripts/test-answers.mjs
+
       - name: US local cash bids parser, merge, revisions and failure safety (offline fixtures, no API)
         run: python3 scripts/test-us-cash-bids.py
 

@@ -1,0 +1,500 @@
+[
+ {
+  "q": "precio del maíz",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "maiz",
+   "regions": [],
+   "cardRegions": [
+    "ca",
+    "eu",
+    "us"
+   ],
+   "mustMatchData": true,
+   "hasLink": true
+  }
+ },
+ {
+  "q": "precio del trigo en Canadá",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "trigo",
+   "regions": [
+    "ca"
+   ],
+   "cardRegions": [
+    "ca"
+   ],
+   "mustMatchData": true
+  }
+ },
+ {
+  "q": "wheat price EU",
+  "lang": "en",
+  "expect": {
+   "kind": "price",
+   "product": "trigo",
+   "regions": [
+    "eu"
+   ],
+   "cardRegions": [
+    "eu"
+   ],
+   "mustMatchData": true
+  }
+ },
+ {
+  "q": "cuánto cuesta la leche en EEUU",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "leche",
+   "regions": [
+    "us"
+   ],
+   "cardRegions": [
+    "us"
+   ],
+   "mustMatchData": true
+  }
+ },
+ {
+  "q": "prix du blé",
+  "lang": "fr",
+  "expect": {
+   "kind": "price",
+   "product": "trigo",
+   "regions": [],
+   "mustMatchData": true
+  }
+ },
+ {
+  "q": "prezzo del mais",
+  "lang": "it",
+  "expect": {
+   "kind": "price",
+   "product": "maiz",
+   "regions": [],
+   "mustMatchData": true
+  }
+ },
+ {
+  "q": "urea",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "urea",
+   "cardRegions": [
+    "eu"
+   ],
+   "mustMatchData": true
+  }
+ },
+ {
+  "q": "trigo UE",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "trigo",
+   "regions": [
+    "eu"
+   ],
+   "cardRegions": [
+    "eu"
+   ]
+  }
+ },
+ {
+  "q": "cerdo Reino Unido",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "cerdo",
+   "regions": [
+    "uk"
+   ],
+   "noCards": true
+  }
+ },
+ {
+  "q": "precio del azúcar",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "azucar",
+   "cardRegions": [
+    "eu"
+   ]
+  }
+ },
+ {
+  "q": "maíz EE.UU.",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "maiz",
+   "regions": [
+    "us"
+   ],
+   "cardRegions": [
+    "us"
+   ]
+  }
+ },
+ {
+  "q": "corn in the united states",
+  "lang": "en",
+  "expect": {
+   "kind": "price",
+   "product": "maiz",
+   "regions": [
+    "us"
+   ],
+   "cardRegions": [
+    "us"
+   ]
+  }
+ },
+ {
+  "q": "huevos",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "huevos",
+   "mustMatchData": true
+  }
+ },
+ {
+  "q": "aceite de oliva",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "oliva",
+   "cardRegions": [
+    "eu"
+   ]
+  }
+ },
+ {
+  "q": "trgio",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "trigo"
+  }
+ },
+ {
+  "q": "leche en polvo",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "leche_polvo",
+   "mustMatchData": true
+  }
+ },
+ {
+  "q": "wheat",
+  "lang": "en",
+  "expect": {
+   "kind": "price",
+   "product": "trigo",
+   "mustMatchData": true
+  }
+ },
+ {
+  "q": "trigo UE vs EEUU",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "trigo",
+   "regions": [
+    "eu",
+    "us"
+   ],
+   "cardRegions": [
+    "eu",
+    "us"
+   ]
+  }
+ },
+ {
+  "q": "cuánto ha subido el trigo en un año",
+  "lang": "es",
+  "expect": {
+   "kind": "change",
+   "product": "trigo"
+  }
+ },
+ {
+  "q": "evolución del maíz en EEUU",
+  "lang": "es",
+  "expect": {
+   "kind": "change",
+   "product": "maiz",
+   "regions": [
+    "us"
+   ],
+   "cardRegions": [
+    "us"
+   ]
+  }
+ },
+ {
+  "q": "milk price change canada",
+  "lang": "en",
+  "expect": {
+   "kind": "change",
+   "product": "leche",
+   "regions": [
+    "ca"
+   ],
+   "cardRegions": [
+    "ca"
+   ]
+  }
+ },
+ {
+  "q": "variation du blé sur un an",
+  "lang": "fr",
+  "expect": {
+   "kind": "change",
+   "product": "trigo"
+  }
+ },
+ {
+  "q": "precio del maíz en Iowa",
+  "lang": "es",
+  "expect": {
+   "kind": "local",
+   "product": "maiz",
+   "state": "IA",
+   "hasLink": true
+  }
+ },
+ {
+  "q": "soja Illinois",
+  "lang": "es",
+  "expect": {
+   "kind": "local",
+   "product": "soja_grano",
+   "state": "IL"
+  }
+ },
+ {
+  "q": "wheat Kansas",
+  "lang": "en",
+  "expect": {
+   "kind": "local",
+   "product": "trigo",
+   "state": "KS"
+  }
+ },
+ {
+  "q": "prix du maïs au Nebraska",
+  "lang": "fr",
+  "expect": {
+   "kind": "local",
+   "product": "maiz",
+   "state": "NE"
+  }
+ },
+ {
+  "q": "mais Texas",
+  "lang": "it",
+  "expect": {
+   "kind": "local",
+   "product": "maiz",
+   "state": "TX"
+  }
+ },
+ {
+  "q": "precios locales Iowa",
+  "lang": "es",
+  "expect": {
+   "kind": "local",
+   "state": "IA"
+  }
+ },
+ {
+  "q": "corn North Dakota",
+  "lang": "en",
+  "expect": {
+   "kind": "local",
+   "product": "maiz",
+   "state": "ND"
+  }
+ },
+ {
+  "q": "maiz IA",
+  "lang": "es",
+  "expect": {
+   "kind": "local",
+   "product": "maiz",
+   "state": "IA"
+  }
+ },
+ {
+  "q": "prima orgánica del maíz",
+  "lang": "es",
+  "expect": {
+   "kind": "premium",
+   "product": "maiz",
+   "hasLink": true
+  }
+ },
+ {
+  "q": "organic wheat premium",
+  "lang": "en",
+  "expect": {
+   "kind": "premium",
+   "product": "trigo"
+  }
+ },
+ {
+  "q": "premium bio soja",
+  "lang": "es",
+  "expect": {
+   "kind": "premium",
+   "product": "soja_grano"
+  }
+ },
+ {
+  "q": "coste de producir maíz",
+  "lang": "es",
+  "expect": {
+   "kind": "cost",
+   "product": "maiz",
+   "hasLink": true
+  }
+ },
+ {
+  "q": "cost of producing wheat",
+  "lang": "en",
+  "expect": {
+   "kind": "cost",
+   "product": "trigo"
+  }
+ },
+ {
+  "q": "coûts du soja",
+  "lang": "fr",
+  "expect": {
+   "kind": "cost",
+   "product": "soja_grano"
+  }
+ },
+ {
+  "q": "cuánto cuesta el maíz",
+  "lang": "es",
+  "expect": {
+   "kind": "price",
+   "product": "maiz"
+  }
+ },
+ {
+  "q": "how much does corn cost",
+  "lang": "en",
+  "expect": {
+   "kind": "price",
+   "product": "maiz"
+  }
+ },
+ {
+  "q": "cuándo sale el WASDE",
+  "lang": "es",
+  "expect": {
+   "kind": "calendar",
+   "hasLink": true
+  }
+ },
+ {
+  "q": "release calendar",
+  "lang": "en",
+  "expect": {
+   "kind": "calendar"
+  }
+ },
+ {
+  "q": "España",
+  "lang": "es",
+  "expect": {
+   "kind": "country"
+  }
+ },
+ {
+  "q": "perfil de Francia",
+  "lang": "es",
+  "expect": {
+   "kind": "country"
+  }
+ },
+ {
+  "q": "trigo en España",
+  "lang": "es",
+  "expect": {
+   "kind": "country"
+  }
+ },
+ {
+  "q": "metodología trigo",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "calculadora",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "chocolate",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "contacto",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "legal",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "xyzzy",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "precio",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "oferta y demanda soja",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "exportaciones soja",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "mapa de sequía",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "how to contact",
+  "lang": "en",
+  "expect": null
+ }
+]
