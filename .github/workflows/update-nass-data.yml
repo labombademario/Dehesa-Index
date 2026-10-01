@@ -38,6 +38,7 @@ jobs:
         uses: ./.github/actions/publish
         with:
           paths: >-
-            js/data.js data/snapshots data/latest.json data/prices data/catalog.json data/history.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json
+            js/data.js
+          preset: price-engine
           message: "data: update NASS observations and snapshots"
           user: "dehesa-index-bot"

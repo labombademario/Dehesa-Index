@@ -27,6 +27,7 @@ jobs:
         uses: ./.github/actions/publish
         with:
           paths: >-
-            data/snapshots data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json data/canada-coverage.json
+            data/canada-coverage.json
+          preset: price-engine
           message: "data: Canadá (Statistics Canada, precios agrícolas)"
           user: "Dehesa Index Bot"

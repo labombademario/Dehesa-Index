@@ -34,7 +34,8 @@ jobs:
         uses: ./.github/actions/publish
         with:
           paths: >-
-            data/snapshots data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json data/energy-markets-log.txt data/energy-markets-log-eu.txt
+            data/energy-markets-log.txt data/energy-markets-log-eu.txt
+          preset: price-engine
           message: "data: gas natural y petróleo"
           user: "Dehesa Index Bot"
       - name: Cierre (rojo si el paso tolerante fallo)

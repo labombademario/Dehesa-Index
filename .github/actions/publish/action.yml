@@ -3,7 +3,12 @@ description: Hace git add de las rutas indicadas, commit y push con reintentos. 
 inputs:
   paths:
     description: Rutas obligatorias separadas por espacios (git add falla si no existen)
-    required: true
+    required: false
+    default: ''
+  preset:
+    description: "'price-engine' anade las rutas que produce la accion price-engine (snapshots, latest, prices, history, catalog.json, quality, intelligence, normalized, cross-market, dehesa-index, alerts)"
+    required: false
+    default: ''
   optional:
     description: Rutas opcionales separadas por espacios (se anaden solo si existen)
     required: false
@@ -21,12 +26,18 @@ runs:
     - shell: bash
       env:
         PATHS: ${{ inputs.paths }}
+        PRESET: ${{ inputs.preset }}
         OPTIONAL: ${{ inputs.optional }}
         MESSAGE: ${{ inputs.message }}
         AUTHOR: ${{ inputs.user }}
       run: |
         git config user.name "$AUTHOR"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        case "$PRESET" in
+          '') ;;
+          price-engine) PATHS="$PATHS data/snapshots data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json" ;;
+          *) echo "::error::preset desconocido: $PRESET"; exit 1 ;;
+        esac
         git add -- $PATHS
         for p in $OPTIONAL; do [ -e "$p" ] && git add -- "$p"; done
         if git diff --cached --quiet; then echo "Sin cambios que publicar"; exit 0; fi

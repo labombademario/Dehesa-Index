@@ -24,7 +24,6 @@ jobs:
       - name: Publicar
         uses: ./.github/actions/publish
         with:
-          paths: >-
-            data/snapshots data/latest.json data/prices data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json
+          preset: price-engine
           message: "data: refresh Eurostat agricultural indices"
           user: "Dehesa Index Bot"
