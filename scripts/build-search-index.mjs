@@ -188,6 +188,7 @@ for (const [u, n, k] of CON) add({ t: 'concept', u, n, s: tri('Cómo se calcula'
   const P2 = [
     ['perfiles.html', tri('Perfiles de país y comparador', 'Country profiles and comparison', 'Profils de pays et comparateur', 'Profili paese e confronto'), 'perfiles perfil profile profiles comparar compare comparador comparison paises countries ue eu union europea'],
     ['aranceles.html', tri('Aranceles agroalimentarios (EE. UU., UE, Canadá, México)', 'Agri-food tariffs (US, EU, Canada, Mexico)', 'Droits de douane agroalimentaires (États-Unis, UE, Canada, Mexique)', 'Dazi agroalimentari (USA, UE, Canada, Messico)'), 'aranceles arancel tariff tariffs duties derechos aduana customs hts taric usitc cbsa mexico canada ue eu usa trump seccion 122 301 ieepa'],
+    ['brief.html', tri('Qué ha cambiado hoy', 'What changed today', 'Ce qui a changé aujourd’hui', 'Cosa è cambiato oggi'), 'brief resumen diario que ha cambiado hoy cambios novedades avisos alertas lista seguimiento watchlist daily what changed alerts revisiones nuevos datos'],
     ['status.html', tri('Estado de los datos', 'Data status', 'État des données', 'Stato dei dati'), 'estado status pipeline pipelines actualizacion update datos data calidad quality workflow errores']
   ];
   for (const [u, n, k] of P2) add({ t: 'page', u, n, s: tri('Página', 'Page', 'Page', 'Page'), k });

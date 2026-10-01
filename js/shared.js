@@ -107,6 +107,7 @@
       { file: 'producto.html', query: '?p=trigo', label: { es: 'Ficha de producto', en: 'Product page', fr: 'Fiche produit', it: 'Scheda prodotto' } },
       { file: 'mapa.html', label: { es: 'Mapa agrícola', en: 'Farm map', fr: 'Carte agricole', it: 'Mappa agricola' } },
       { file: 'clima.html', label: { es: 'Clima agrícola', en: 'Farm weather', fr: 'Météo agricole', it: 'Meteo agricolo' } },
+      { file: 'brief.html', label: { es: 'Qué ha cambiado hoy', en: 'What changed today', fr: 'Ce qui a changé aujourd’hui', it: 'Cosa è cambiato oggi' } },
       { file: 'status.html', label: { es: 'Estado de los datos', en: 'Data status', fr: 'État des données', it: 'Stato dei dati' } }
     ] }
   };
@@ -272,6 +273,18 @@
     }
     function run() { fix(document); try { new MutationObserver(function () { clearTimeout(run.t); run.t = setTimeout(function () { fix(document); }, 120); }).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+  })();
+
+  /* Avisos de la lista de seguimiento: solo si hay reglas guardadas se carga watchlist.js y se muestra el aviso flotante */
+  (function watchPill() {
+    try {
+      var raw = window.localStorage.getItem('di-watchlist-v1') || ''; if (raw.indexOf('"r":[{') < 0) return;
+      window.addEventListener('load', function () {
+        var go = function () { if (window.DIWatch && window.DIWatch.pill) window.DIWatch.pill(global.DehesaShared && global.DehesaShared.getLang ? global.DehesaShared.getLang() : 'es'); };
+        if (window.DIWatch && window.DIWatch.pill) return go();
+        var sc = document.createElement('script'); sc.src = sitePath('js/watchlist.js?v=20261001'); sc.onload = go; document.body.appendChild(sc);
+      });
+    } catch (e) {}
   })();
 
   /* PWA: manifiesto y service worker (cache parcial; sin conexion se sirven las paginas ya vistas) */
