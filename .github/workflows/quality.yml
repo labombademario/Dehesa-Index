@@ -33,7 +33,7 @@ jobs:
           pip install pyyaml
           python3 scripts/gen-workflows.py --check
 
-      - name: Workflow hygiene (fail closed, no "|| true", explicit paths)
+      - name: Workflow hygiene (fail closed, explicit paths)
         run: python3 scripts/check-workflows.py
 
       - name: Data contracts (schemas), semantic tests and cross-file consistency, all families
