@@ -88,9 +88,38 @@ def partners(cc):
             nm = re.sub(r"\s*\(.*", "", names.get(p, p)).strip()
             put(cc, "eu-%s-tp-%s-%s" % (cc.lower(), tag, p.lower()), "partners", "%s %s: agri-food, HS 01-24 (annual)" % (word, nm), "EUR million", "annual", sorted(ser.get(p, {}).items()), "Eurostat Comext"); n += 1
     return n
+def extra_intra(cc):
+    n = 0
+    for flow, tag, word in (("2", "exp", "Exports"), ("1", "imp", "Imports")):
+        j = get({"reporter": cc, "partner": ["EXT_EU27_2020", "INT_EU27_2020"], "product": CH, "flow": flow, "freq": "M", "sinceTimePeriod": "2000-01"})
+        tot = {}
+        for r, v in cells(j): d = tot.setdefault(r["partner"], {}); d[r["time"]] = d.get(r["time"], 0) + v
+        for pc, nm in (("EXT_EU27_2020", "extra-EU"), ("INT_EU27_2020", "intra-EU")):
+            put(cc, "eu-%s-trade-%s-agrifood-%s" % (cc.lower(), tag, nm.replace("-EU", "")), "trade", "%s: agri-food total, %s (monthly)" % (word, nm), "EUR million", "monthly", sorted(tot.get(pc, {}).items()), "Eurostat Comext"); n += 1
+    return n
+PRODS = {}
+def products(cc):
+    """Producto x socio, anual (ultimos 6 anos completos): top 10 socios + agregados extra/intra/mundo."""
+    yr = datetime.date.today().year - 1; years = [str(y) for y in range(yr - 5, yr + 1)]
+    label = dict(KEY); label.update(EXTRA.get(cc, {})); n = 0
+    for flow, tag in (("2", "exp"), ("1", "imp")):
+        j = get({"reporter": cc, "product": list(label), "flow": flow, "freq": "A", "sinceTimePeriod": years[0], "untilTimePeriod": years[-1]})
+        names = j["dimension"]["partner"]["category"]["label"]
+        by = {}
+        for r, v in cells(j): by.setdefault(r["product"], {}).setdefault(r["partner"], {})[r["time"]] = v
+        for c in label:
+            d = by.get(c, {})
+            cand = {k: v for k, v in d.items() if len(k) == 2 and k != cc and v.get(years[-1])}
+            top = sorted(cand, key=lambda k: -cand[k][years[-1]])[:10]
+            if not top: continue
+            row = lambda k: [round(d[k].get(y, 0), 3) if d.get(k, {}).get(y) is not None else None for y in years]
+            PRODS.setdefault(cc, {}).setdefault(c, {"name": label[c]})[tag] = {
+                "world": row("WORLD") if "WORLD" in d else None, "extra": row("EXT_EU27_2020") if "EXT_EU27_2020" in d else None, "intra": row("INT_EU27_2020") if "INT_EU27_2020" in d else None,
+                "partners": [{"c": k, "n": re.sub(r"\s*\(.*", "", names.get(k, k)).strip(), "v": row(k)} for k in top]}; n += 1
+    return n
 def main():
     for cc in REP:
-        for fn in (monthly, partners):
+        for fn in (monthly, extra_intra, partners, products):
             try: log(cc, fn.__name__, fn(cc))
             except Exception as e: log("ERROR", cc, fn.__name__, repr(e))
     tot = sum(len(v) for v in OUT.values()); log("series", tot)
@@ -98,5 +127,6 @@ def main():
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "countries": {
         cc: {"name": REP[cc], "extend": True, "source": {"name": "Eurostat (Comext)", "url": "https://ec.europa.eu/eurostat/web/international-trade-in-goods/data/database", "license": "Eurostat reuse policy (CC BY 4.0); cite source"}, "series": list(s.values())} for cc, s in OUT.items()}, "log": LOG[-30:]}
     (ROOT / "data" / "eu-trade-stats.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
+    (ROOT / "data" / "eu-trade-products.json").write_text(json.dumps({"schemaVersion": 1, "generatedAt": doc["generatedAt"], "years": [str(y) for y in range(datetime.date.today().year - 6, datetime.date.today().year)], "unit": "EUR million", "source": {"name": "Eurostat (Comext)", "url": "https://ec.europa.eu/eurostat/web/international-trade-in-goods/data/database", "license": "Eurostat reuse policy (CC BY 4.0); cite source"}, "reporters": PRODS}, ensure_ascii=False, separators=(",", ":")))
     (ROOT / "data" / "eu-trade-log.txt").write_text("\n".join(LOG))
 main()
