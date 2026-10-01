@@ -1443,3 +1443,12 @@ html[data-theme="dark"] .rl-st-WEAK_OR_UNSTABLE { color: #e0b04a; }
 }
 .di-data-trust-id{display:none}
 .di-data-trust>summary{display:flex;align-items:center;gap:6px}
+
+/* Anchura única: las páginas "estrechas" usan la misma columna y el mismo borde izquierdo que el resto; el texto corrido mantiene medida legible */
+.di-main.di-content-narrow{max-width:1200px}
+.di-content-narrow .di-page-head p,.di-content-narrow .di-disclaimer,.di-content-narrow .di-banner{max-width:78ch}
+.di-content-narrow .di-disclaimer{text-align:left}
+#cal-filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#cal-filters .di-location-btn{align-self:center}
+#cal-filters .di-cal-filter-row{flex:1 1 560px;margin-top:0}
+.di-cal-watch-card a[href^="noticias"]{text-transform:none;letter-spacing:0}

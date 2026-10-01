@@ -277,7 +277,10 @@
     document.getElementById('cal-updated').textContent = t.updatedLabel + ': ' + fmtDate(UPDATED_ISO, lang);
     document.getElementById('cal-h1').textContent = t.h1;
     document.getElementById('cal-sub').textContent = t.sub;
-    document.getElementById('cal-disclaimer').textContent = t.disclaimer;
+    var dEl = document.getElementById('cal-disclaimer'), dSum = ({ es: 'Cómo se obtienen las fechas', en: 'How the dates are obtained', fr: 'D’où viennent les dates', it: 'Come si ottengono le date' })[lang] || 'How the dates are obtained';
+    dEl.textContent = ''; var dd = document.createElement('details'), ds = document.createElement('summary'), dp = document.createElement('p');
+    ds.textContent = dSum; ds.style.cssText = 'cursor:pointer;font-weight:600;min-height:32px'; dp.textContent = t.disclaimer; dp.style.margin = '8px 0 0';
+    if (window.innerWidth > 760) dd.open = true; dd.appendChild(ds); dd.appendChild(dp); dEl.appendChild(dd);
 
     var FILTER_OPTIONS = [
       { id: 'all', label: t.filterAll },
@@ -310,7 +313,7 @@
           var pr=priorityFor(ev), tr=ev[lang]||ev.es;
           var map={trigo:'trigo',maiz:'maiz',leche:'leche',fertilizantes:'urea',diesel:'diesel',arroz:'arroz'};
           var pLinks=(ev.crops||[]).slice(0,4).map(function(p){return '<a href="' + (map[p] ? 'precios.html?product=' + encodeURIComponent(map[p]) + '&region=' + encodeURIComponent(ev.market) : 'precios.html?region=' + encodeURIComponent(ev.market)) + '">' + esc(p) + '</a>';}).join('');
-          var newsLinks=(ev.crops||[]).slice(0,2).map(function(p){return '<a href="noticias.html?product=' + encodeURIComponent(p) + '&region=' + ev.market + '">News Intelligence</a>';}).join('');
+          var newsLinks=(ev.crops||[]).slice(0,2).map(function(p){return '<a href="noticias.html?product=' + encodeURIComponent(p) + '&region=' + ev.market + '">' + esc(({es:'Noticias',en:'News',fr:'Actualités',it:'Notizie'})[lang] || 'News') + ': ' + esc(({trigo:'Trigo',maiz:'Maíz',arroz:'Arroz',cebada:'Cebada',soja:'Soja',leche:'Leche',fertilizantes:'Fertilizantes',diesel:'Diésel'})[p] || p) + '</a>';}).join('');
           return '<article class="di-cal-watch-card priority-' + pr + '"><div class="di-cal-watch-top"><span class="di-cal-priority">' + esc(priorityLabels[pr][lang]) + '</span><span>' + esc(fmtDate(ev.nextDate,lang)) + '</span></div><h3>' + esc(tr.name) + '</h3><p>' + esc(tr.desc) + '</p><div class="di-cal-watch-crops">' + pLinks + '</div><div class="di-cal-watch-links">' + newsLinks + '</div></article>';
         }).join('') + '</div>' : '<div class="di-cal-watch-empty">' + esc(lang==='es'?'No hay publicaciones fechadas dentro de los próximos 7 días con los filtros actuales.':'No dated publications fall within the next 7 days under the current filters.') + '</div>') + '</section>';
     }
