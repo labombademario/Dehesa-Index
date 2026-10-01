@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-01T04:15:00Z",
+ "generatedAt": "2026-10-01T04:25:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 42,
@@ -54,7 +54,11 @@
     },
     {
      "path": "data/dehesa-index.json",
-     "lastChange": "2026-09-30T17:36:41Z"
+     "lastChange": "2026-10-01T04:20:39Z"
+    },
+    {
+     "path": "data/dehesa-index-us.json",
+     "lastChange": "2026-10-01T04:20:39Z"
     },
     {
      "path": "data/alerts.json",
@@ -346,7 +350,11 @@
     },
     {
      "path": "data/dehesa-index.json",
-     "lastChange": "2026-09-30T17:36:41Z"
+     "lastChange": "2026-10-01T04:20:39Z"
+    },
+    {
+     "path": "data/dehesa-index-us.json",
+     "lastChange": "2026-10-01T04:20:39Z"
     },
     {
      "path": "data/alerts.json",
@@ -549,7 +557,11 @@
     },
     {
      "path": "data/dehesa-index.json",
-     "lastChange": "2026-09-30T17:36:41Z"
+     "lastChange": "2026-10-01T04:20:39Z"
+    },
+    {
+     "path": "data/dehesa-index-us.json",
+     "lastChange": "2026-10-01T04:20:39Z"
     },
     {
      "path": "data/alerts.json",
@@ -672,7 +684,11 @@
     },
     {
      "path": "data/dehesa-index.json",
-     "lastChange": "2026-09-30T17:36:41Z"
+     "lastChange": "2026-10-01T04:20:39Z"
+    },
+    {
+     "path": "data/dehesa-index-us.json",
+     "lastChange": "2026-10-01T04:20:39Z"
     },
     {
      "path": "data/alerts.json",
@@ -741,7 +757,11 @@
     },
     {
      "path": "data/dehesa-index.json",
-     "lastChange": "2026-09-30T17:36:41Z"
+     "lastChange": "2026-10-01T04:20:39Z"
+    },
+    {
+     "path": "data/dehesa-index-us.json",
+     "lastChange": "2026-10-01T04:20:39Z"
     },
     {
      "path": "data/alerts.json",
@@ -835,7 +855,11 @@
     },
     {
      "path": "data/dehesa-index.json",
-     "lastChange": "2026-09-30T17:36:41Z"
+     "lastChange": "2026-10-01T04:20:39Z"
+    },
+    {
+     "path": "data/dehesa-index-us.json",
+     "lastChange": "2026-10-01T04:20:39Z"
     },
     {
      "path": "data/alerts.json",
@@ -968,7 +992,11 @@
     },
     {
      "path": "data/dehesa-index.json",
-     "lastChange": "2026-09-30T17:36:41Z"
+     "lastChange": "2026-10-01T04:20:39Z"
+    },
+    {
+     "path": "data/dehesa-index-us.json",
+     "lastChange": "2026-10-01T04:20:39Z"
     },
     {
      "path": "data/alerts.json",
@@ -1251,7 +1279,11 @@
     },
     {
      "path": "data/dehesa-index.json",
-     "lastChange": "2026-09-30T17:36:41Z"
+     "lastChange": "2026-10-01T04:20:39Z"
+    },
+    {
+     "path": "data/dehesa-index-us.json",
+     "lastChange": "2026-10-01T04:20:39Z"
     },
     {
      "path": "data/alerts.json",
@@ -1317,7 +1349,11 @@
     },
     {
      "path": "data/dehesa-index.json",
-     "lastChange": "2026-09-30T17:36:41Z"
+     "lastChange": "2026-10-01T04:20:39Z"
+    },
+    {
+     "path": "data/dehesa-index-us.json",
+     "lastChange": "2026-10-01T04:20:39Z"
     },
     {
      "path": "data/alerts.json",
@@ -1431,11 +1467,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-01T04:11:04Z"
+     "lastChange": "2026-10-01T04:16:27Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-01T04:11:04Z"
+     "lastChange": "2026-10-01T04:16:27Z"
     },
     {
      "path": "data/series-registry.json",
@@ -1447,7 +1483,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-01T04:11:04Z"
+     "lastChange": "2026-10-01T04:16:27Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1463,13 +1499,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-01T04:10:16Z",
-    "durationSec": 51,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36813859414"
+    "startedAt": "2026-10-01T04:15:30Z",
+    "durationSec": 62,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36814259085"
    },
    "recent": {
-    "runs": 3,
-    "success": 3,
+    "runs": 4,
+    "success": 4,
     "failed": 0
    },
    "status": "ok",
@@ -1736,7 +1772,11 @@
     },
     {
      "path": "data/dehesa-index.json",
-     "lastChange": "2026-09-30T17:36:41Z"
+     "lastChange": "2026-10-01T04:20:39Z"
+    },
+    {
+     "path": "data/dehesa-index-us.json",
+     "lastChange": "2026-10-01T04:20:39Z"
     },
     {
      "path": "data/alerts.json",
