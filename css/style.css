@@ -1175,3 +1175,6 @@ body.di-modal-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 .di-nav-sub.is-open>.di-nav-subitems{display:block}
 .di-nav-mobile-panel .di-nav-subbtn{min-height:44px;font-size:16px;padding:10px 4px;border-bottom:1px solid var(--border);border-radius:0}
 .di-nav-mobile-panel .di-nav-subitems{margin-left:8px}
+
+/* submenús: se abren al pasar el ratón en escritorio, sin necesidad de clic */
+@media (hover:hover) and (min-width:900px){.di-nav-menu .di-nav-sub:hover>.di-nav-subitems{display:block}.di-nav-menu .di-nav-sub:hover>.di-nav-subbtn{background:var(--surface-alt);color:var(--accent)}.di-nav-menu .di-nav-sub:hover>.di-nav-subbtn span{transform:none}}

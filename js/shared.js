@@ -72,6 +72,7 @@
     data: { label: { es: 'Datos', en: 'Data', fr: 'Données', it: 'Dati' }, items: [
       { file: 'perfiles.html', label: { es: 'Perfiles de país y comparador', en: 'Country profiles and comparison', fr: 'Profils de pays et comparateur', it: 'Profili paese e confronto' } },
       { label: { es: 'EE. UU.', en: 'United States', fr: 'États-Unis', it: 'Stati Uniti' }, items: [
+        { file: 'paises.html', query: '?c=US', label: { es: 'Perfil de EE. UU. (macro y tipos de interés)', en: 'US profile (macro and interest rates)', fr: 'Profil des États-Unis (macro et taux)', it: 'Profilo USA (macro e tassi)' } },
         { file: 'mercados.html', label: { es: 'Mercados USDA', en: 'USDA markets', fr: 'Marchés USDA', it: 'Mercati USDA' } },
         { file: 'exportaciones.html', label: { es: 'Exportaciones', en: 'Exports', fr: 'Exportations', it: 'Esportazioni' } },
         { file: 'oferta-demanda.html', label: { es: 'Oferta y demanda', en: 'Supply and demand', fr: 'Offre et demande', it: 'Offerta e domanda' } },
@@ -84,6 +85,7 @@
         { file: 'aranceles.html', label: { es: 'Aranceles', en: 'Tariffs', fr: 'Droits de douane', it: 'Dazi' } }
       ] },
       { label: { es: 'Europa', en: 'Europe', fr: 'Europe', it: 'Europa' }, items: [
+        { file: 'paises.html', query: '?c=EU', label: { es: 'Perfil de la Unión Europea (macro y tipos)', en: 'European Union profile (macro and rates)', fr: 'Profil de l’Union européenne (macro et taux)', it: 'Profilo Unione europea (macro e tassi)' } },
         { file: 'europa.html', label: { es: 'Precios de la UE (todos los países)', en: 'EU prices (all countries)', fr: 'Prix de l’UE (tous les pays)', it: 'Prezzi UE (tutti i paesi)' } },
         { file: 'index.html', hash: '#home-dehesa-index', label: { es: 'Índice Dehesa (UE)', en: 'Dehesa Index (EU)', fr: 'Indice Dehesa (UE)', it: 'Indice Dehesa (UE)' }, noActive: true },
         { label: { es: 'España', en: 'Spain', fr: 'Espagne', it: 'Spagna' }, items: [
@@ -99,7 +101,7 @@
         { file: 'paises.html', query: '?c=NL', label: { es: 'Países Bajos', en: 'Netherlands', fr: 'Pays-Bas', it: 'Paesi Bassi' } }
       ] },
       { label: { es: 'Otros países', en: 'Other countries', fr: 'Autres pays', it: 'Altri paesi' }, items: [
-        { file: 'paises.html', query: '?c=CA', label: { es: 'Canadá (producción y renta)', en: 'Canada (production and income)', fr: 'Canada (production et revenu)', it: 'Canada (produzione e reddito)' } },
+        { file: 'paises.html', query: '?c=CA', label: { es: 'Canadá (producción, renta y tipos)', en: 'Canada (production and income)', fr: 'Canada (production et revenu)', it: 'Canada (produzione e reddito)' } },
         { file: 'paises.html', query: '?c=AU', label: { es: 'Australia', en: 'Australia', fr: 'Australie', it: 'Australia' } }
       ] }
     ] },

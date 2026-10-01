@@ -11,7 +11,7 @@ def log(m):
 def fetch(url, tries=3):
     for i in range(tries):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': UA}), timeout=60) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': UA}), timeout=30) as r:
                 return r.read().decode('utf-8-sig')
         except Exception as e:
             log('  error %s: %s' % (url[:100], e)); time.sleep(2)
@@ -67,15 +67,14 @@ def bis(area):
     return sorted(pts) or None
 
 SRC = {
-    'US': ('Federal Reserve (FRED)', 'https://fred.stlouisfed.org/series/FEDFUNDS', 'Public domain (U.S. Government work); FRED terms of use'),
+    'US': ('BIS — central bank policy rates (Federal Reserve)', 'https://data.bis.org/topics/CBPOL', 'BIS terms of use (attribution)'),
     'EU': ('European Central Bank (ECB Data Portal)', 'https://data.ecb.europa.eu/', 'ECB reuse policy (attribution)'),
     'CA': ('Bank of Canada (Valet API)', 'https://www.bankofcanada.ca/valet/', 'Bank of Canada terms of use (attribution)'),
     'AU': ('Reserve Bank of Australia (F1.1)', 'https://www.rba.gov.au/statistics/tables/', 'RBA copyright notice (attribution)')
 }
 BISAREA = {'US': 'US', 'EU': 'XM', 'CA': 'CA', 'AU': 'AU'}
 LABEL = {
-    'US': [('us-policy-rate', 'Federal funds rate (effective, monthly)', lambda: us_fred('FEDFUNDS'), 'FEDFUNDS'),
-           ('us-target-upper', 'Federal funds target range: upper limit (monthly)', lambda: us_fred('DFEDTARU'), 'DFEDTARU')],
+    'US': [('us-policy-rate', 'Federal funds rate (effective, monthly; BIS)', lambda: bis('US'), 'US')],
     'EU': [('eu-policy-rate', 'ECB main refinancing operations rate (monthly)', lambda: eu_ecb('MRR_FR'), 'MRR'),
            ('eu-deposit-rate', 'ECB deposit facility rate (monthly)', lambda: eu_ecb('DFR'), 'DFR')],
     'CA': [('ca-policy-rate', 'Bank of Canada target overnight rate (monthly)', ca_boc, 'CA')],

@@ -1,6 +1,43 @@
-# Dehesa-Index
-Dehesa Index
+# Dehesa Index
 
+[dehesaindex.com](https://dehesaindex.com) is a Bloomberg-style tracker of agricultural prices and statistics: livestock, dairy, grains, oilseeds, fertilisers, feed and energy for the United States, the European Union and a growing set of countries. It is a static site (vanilla ES5 HTML, CSS and JavaScript, no build step) fed by scheduled GitHub Actions pipelines that commit JSON files to `data/`. Interface in Spanish, English, French and Italian.
+
+## What it covers
+
+| Area | Pages | Main sources |
+|---|---|---|
+| Prices | `precios.html`, `producto.html`, `europa.html`, `mercados.html` | USDA AMS, NASS, EU Agri-food Data Portal, national price reports |
+| Supply and demand | `oferta-demanda.html`, `cultivos.html`, `rendimientos.html`, `ganaderia.html`, `exportaciones.html` | USDA PSD, NASS, ERS, FAS GATS, export sales |
+| Country statistics | `paises.html`, `perfiles.html`, `recan.html` | MAPA, INE, Statbel, Destatis, BLE, FranceAgriMer, Statistics Canada, ABS, CBS, Statistics Denmark, Eurostat |
+| Foreign trade | inside `paises.html` | Eurostat Comext (8 European countries, extra/intra-EU, product by partner), Statistics Canada, ABS |
+| Tariffs | `aranceles.html` | USITC Harmonized Tariff Schedule (chapters 01-24 and 31) plus a dated layer of recent measures |
+| Country profiles | `perfiles.html`, `paises.html?c=XX` | Key indicators, trade partners, macro (World Bank, Eurostat), policy interest rates (Fed, ECB, Bank of Canada, RBA), median wages |
+| Costs and inputs | `costes.html`, `insumos.html` | ERS, World Bank, fertiliser and energy series |
+| Weather and drought | `clima.html`, `sequia.html`, `mapa.html` | NASA POWER, US Drought Monitor, MARS |
+| News and calendar | `noticias.html`, `calendario.html` | RSS pipeline (below), release calendars |
+
+Countries with profiles: Spain, France, Germany, Belgium, Austria, Portugal, Denmark, Netherlands, United States, Canada, Australia and a European Union preview.
+
+## How it works
+
+- `scripts/update-*.py|js` fetch and normalise one source each and write to `data/` (about 60 scripts, 40 workflows in `.github/workflows/`).
+- All data workflows share the concurrency group `dehesa-data-writes` so they commit one at a time. Each writes a `*-log.txt` next to its output.
+- Country files share one schema: `{ schemaVersion, generatedAt, countries: { XX: { name, source, extend?, series: [{ id, group, label, unit, frequency, latestPeriod, latest, changePct, points }] } } }`. `js/country-data.js` loads and merges them; `js/paises.js` renders the explorer and `js/perfil-pais.js` the profiles.
+- Only real series published by each source are shown: nothing is estimated or filled in. Licences and citations are in `legal.html` and `metodologia.html`.
+- Tables are sortable site-wide (`initTableSort` in `js/shared.js`).
+
+## Quality checks
+
+```
+node scripts/qa-site.mjs
+node scripts/qa-navigation.mjs
+```
+
+Both also run in GitHub Actions (`qa-site.yml`, `qa-navigation.yml`).
+
+## Data and licences
+
+Each series keeps its source and licence in the JSON and on the page. Sources include public-domain US government data, CC BY 4.0 open data (Eurostat, World Bank, INE Portugal, ABS, among others) and attribution-only national terms. Items still pending a licence confirmation are flagged in the project notes, not republished silently.
 
 ## Automated News Pipeline
 
@@ -8,7 +45,7 @@ Dehesa Index now maintains an automated agricultural market-news pipeline:
 
 RSS/Atom -> normalize -> deduplicate -> classify -> relevance score -> data/news.json -> js/news-index.js
 
-- Sources currently queried: Reuters, Associated Press, AFP, EFE, Bloomberg, Financial Times, Wall Street Journal, CNBC, POLITICO, Euractiv, Xinhua, DTN, AgWeb, Farm Progress, Successful Farming, World Grain, Feed Strategy, Dairy Herd, Fastmarkets, S&P Global, Argus Media, FoodNavigator, Farmers Weekly, Farmers Guardian, Agriland, AGRA, Agroeuropa, ABC Rural, Grain Central, The Land, USDA, USDA ERS, European Commission Agriculture, FAO, OECD, WTO, EIA, IEA and International Grains Council via Google News RSS search feeds.n Commission Agriculture and FAO via RSS search feeds.
+- Sources currently queried: Reuters, Associated Press, AFP, EFE, Bloomberg, Financial Times, Wall Street Journal, CNBC, POLITICO, Euractiv, Xinhua, DTN, AgWeb, Farm Progress, Successful Farming, World Grain, Feed Strategy, Dairy Herd, Fastmarkets, S&P Global, Argus Media, FoodNavigator, Farmers Weekly, Farmers Guardian, Agriland, AGRA, Agroeuropa, ABC Rural, Grain Central, The Land, USDA, USDA ERS, European Commission Agriculture, FAO, OECD, WTO, EIA, IEA and International Grains Council via Google News RSS search feeds.
 - Retention window: 14 days; maximum 120 stories.
 - Classification maps stories to maize, wheat, soybeans, rice, barley, sugar, fertilizer, diesel, energy, dairy, feed, farm costs and CAP.
 - Topics include weather, trade, supply, energy, costs and policy, with source-region tagging for US, EU and global coverage.

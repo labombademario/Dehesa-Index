@@ -67,6 +67,28 @@ for c in WB:
             y = max(vals); out[c]['debt'] = {'v': vals[y], 'y': int(y), 'src': 'eurostat'}; log('debt %s Eurostat %s' % (c, y))
         except Exception as e:
             log('debt %s sin dato (%s)' % (c, e))
+
+# salario mediano horario armonizado (Eurostat SES, cada 4 años)
+geos = [c for c in WB if c not in ('US', 'CA', 'AU')]
+d = get('https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_ses_pub2s?format=JSON&lang=EN&sex=T&unit=EUR&sizeclas=GE10&sinceTimePeriod=2018&' + '&'.join('geo=' + ('EU27_2020' if g == 'EU' else g) for g in geos))
+try:
+    dim = d['dimension']; ids = d['id']; sizes = d['size']
+    gi = dim['geo']['category']['index']; ti = dim['time']['category']['index']
+    gpos = ids.index('geo'); tpos = ids.index('time')
+    inv_t = {v: k for k, v in ti.items()}
+    got = {}
+    for key, val in d['value'].items():
+        idx = int(key); coords = []
+        for sz in reversed(sizes): coords.append(idx % sz); idx //= sz
+        coords.reverse()
+        g = [k for k, v in gi.items() if v == coords[gpos]][0]; y = inv_t[coords[tpos]]
+        if g not in got or y > got[g][0]: got[g] = (y, val)
+    for g, (y, v) in got.items():
+        c = 'EU' if g == 'EU27_2020' else g
+        if c in out: out[c]['wageh'] = {'v': v, 'y': int(y), 'cur': 'EUR'}
+    log('wageh Eurostat: %d paises' % len(got))
+except Exception as e:
+    log('wageh sin dato: %s' % e)
 tot = sum(len(v) - 1 for v in out.values())
 os.makedirs('data', exist_ok=True)
 open('data/country-macro-log.txt', 'w').write('\n'.join(LOG) + '\n')

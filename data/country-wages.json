@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "asOf": "2026-09-30",
+ "note": {
+  "es": "Salarios de los institutos nacionales de estadística. Las definiciones difieren entre países (bruto/neto, periodo, colectivo), así que no son comparables entre sí.",
+  "en": "Wages from national statistics institutes. Definitions differ by country (gross/net, period, coverage), so they are not comparable with each other.",
+  "fr": "Salaires des instituts nationaux de statistique. Les définitions diffèrent selon les pays (brut/net, période, population) : ils ne sont pas comparables entre eux.",
+  "it": "Salari degli istituti nazionali di statistica. Le definizioni differiscono tra paesi (lordo/netto, periodo, collettivo): non sono confrontabili tra loro."
+ },
+ "countries": {
+  "ES": {
+   "v": 23349,
+   "cur": "EUR",
+   "per": "year",
+   "basis": "median",
+   "tax": "gross",
+   "y": "2023",
+   "scope": {
+    "es": "todos los asalariados",
+    "en": "all employees",
+    "fr": "tous les salariés",
+    "it": "tutti i dipendenti"
+   },
+   "src": "INE — Encuesta de Estructura Salarial",
+   "url": "https://www.ine.es/dyngs/Prensa/EAES2023.htm"
+  },
+  "FR": {
+   "v": 2183,
+   "cur": "EUR",
+   "per": "month",
+   "basis": "median",
+   "tax": "net",
+   "y": "2023",
+   "scope": {
+    "es": "equivalente a tiempo completo, sector privado",
+    "en": "full-time equivalent, private sector",
+    "fr": "équivalent temps plein, secteur privé",
+    "it": "equivalente a tempo pieno, settore privato"
+   },
+   "src": "INSEE",
+   "url": "https://www.insee.fr/fr/statistiques/8270416"
+  },
+  "DE": {
+   "v": 52159,
+   "cur": "EUR",
+   "per": "year",
+   "basis": "median",
+   "tax": "gross",
+   "y": "2024",
+   "scope": {
+    "es": "tiempo completo, con primas",
+    "en": "full-time, including bonuses",
+    "fr": "temps plein, primes incluses",
+    "it": "tempo pieno, con premi"
+   },
+   "src": "Destatis",
+   "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/04/PD25_134_621.html"
+  },
+  "BE": {
+   "v": 3728,
+   "cur": "EUR",
+   "per": "month",
+   "basis": "median",
+   "tax": "gross",
+   "y": "2022",
+   "scope": {
+    "es": "tiempo completo, empresas de 10 o más empleados",
+    "en": "full-time, firms with 10+ employees",
+    "fr": "temps plein, entreprises de 10 salariés ou plus",
+    "it": "tempo pieno, imprese con 10 o più dipendenti"
+   },
+   "src": "Statbel",
+   "url": "https://statbel.fgov.be/en/themes/work-training/wages-and-labourcost/overview-belgian-wages-and-salaries"
+  },
+  "AT": {
+   "v": 38043,
+   "cur": "EUR",
+   "per": "year",
+   "basis": "median",
+   "tax": "gross",
+   "y": "2024",
+   "scope": {
+    "es": "todos los asalariados (estadística fiscal)",
+    "en": "all employees (wage-tax statistics)",
+    "fr": "tous les salariés (statistique fiscale)",
+    "it": "tutti i dipendenti (statistica fiscale)"
+   },
+   "src": "Statistik Austria",
+   "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/einkommen-und-soziale-lage/jaehrliche-personeneinkommen"
+  },
+  "PT": {
+   "v": 1406.81,
+   "cur": "EUR",
+   "per": "month",
+   "basis": "mean",
+   "tax": "gross",
+   "y": "2024",
+   "scope": {
+    "es": "ganancia media mensual (no hay mediana oficial localizada)",
+    "en": "average monthly earnings (no official median located)",
+    "fr": "gain moyen mensuel (pas de médiane officielle trouvée)",
+    "it": "guadagno medio mensile (nessuna mediana ufficiale trovata)"
+   },
+   "src": "INE Portugal / GEP",
+   "url": "https://www.gep.mtsss.gov.pt/"
+  },
+  "DK": {
+   "v": 48700,
+   "cur": "DKK",
+   "per": "month",
+   "basis": "median",
+   "tax": "gross",
+   "y": "2025",
+   "scope": {
+    "es": "mensual estandarizado (37 h/semana), con pensión y primas",
+    "en": "standardised monthly (37 h/week), incl. pension and bonuses",
+    "fr": "mensuel standardisé (37 h/semaine), pension et primes incluses",
+    "it": "mensile standardizzato (37 h/settimana), con pensione e premi"
+   },
+   "src": "Statistics Denmark",
+   "url": "https://www.dst.dk/da/Statistik/udgivelser/NytHtml?cid=54629"
+  },
+  "CA": {
+   "v": 37.06,
+   "cur": "CAD",
+   "per": "hour",
+   "basis": "mean",
+   "tax": "gross",
+   "y": "oct 2025",
+   "scope": {
+    "es": "media horaria (no hay mediana nacional localizada)",
+    "en": "average hourly wage (no national median located)",
+    "fr": "salaire horaire moyen (pas de médiane nationale trouvée)",
+    "it": "salario orario medio (nessuna mediana nazionale trovata)"
+   },
+   "src": "Statistics Canada — Labour Force Survey",
+   "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410011601"
+  },
+  "AU": {
+   "v": 1436,
+   "cur": "AUD",
+   "per": "week",
+   "basis": "median",
+   "tax": "gross",
+   "y": "may 2025",
+   "scope": {
+    "es": "todos los asalariados",
+    "en": "all employees",
+    "fr": "tous les salariés",
+    "it": "tutti i dipendenti"
+   },
+   "src": "ABS — Employee Earnings and Hours",
+   "url": "https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/employee-earnings-and-hours-australia/latest-release"
+  },
+  "US": {
+   "v": 1251,
+   "cur": "USD",
+   "per": "week",
+   "basis": "median",
+   "tax": "gross",
+   "y": "Q2 2026",
+   "scope": {
+    "es": "asalariados a tiempo completo",
+    "en": "full-time wage and salary workers",
+    "fr": "salariés à temps plein",
+    "it": "dipendenti a tempo pieno"
+   },
+   "src": "BLS — Current Population Survey",
+   "url": "https://www.bls.gov/news.release/wkyeng.nr0.htm"
+  }
+ }
+}
