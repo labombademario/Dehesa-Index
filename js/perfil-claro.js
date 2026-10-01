@@ -110,39 +110,45 @@
     var mn = Infinity, mx = -Infinity, prior = W.slice(0, -1);
     prior.forEach(function (p) { if (p[1] < mn) mn = p[1]; if (p[1] > mx) mx = p[1]; });
     var v = last[1], lo = Math.min(mn, v), hi = Math.max(mx, v), pos = hi > lo ? (v - lo) / (hi - lo) : 0.5;
-    return { min: lo, max: hi, v: v, pos: pos, n: W.length, isMax: v >= mx && v > mn, isMin: v <= mn && v < mx, years: Math.round((t1 - ts(W[0][0])) / (365.25 * 864e5) * 10) / 10 };
+    return { min: lo, max: hi, v: v, pos: pos, n: W.length, isMax: v >= mx && v > mn, isMin: v <= mn && v < mx, years: Math.round((t1 - ts(W[0][0])) / (365.25 * 864e5) * 10) / 10, yrs: Math.min(5, (t1 - ts(W[0][0])) / (365.25 * 864e5) >= 4.75 ? 5 : Math.floor((t1 - ts(W[0][0])) / (365.25 * 864e5))) };
   }
   var CT = {
-    es: { range: 'Rango de 5 años', max: 'Máximo de 5 años', min: 'Mínimo de 5 años', to: 'a', aria: function (a) { return 'Último dato dentro del rango de los últimos 5 años, de ' + a.lo + ' a ' + a.hi; } },
-    en: { range: '5-year range', max: '5-year high', min: '5-year low', to: 'to', aria: function (a) { return 'Latest value within its last 5-year range, from ' + a.lo + ' to ' + a.hi; } },
-    fr: { range: 'Plage sur 5 ans', max: 'Plus haut sur 5 ans', min: 'Plus bas sur 5 ans', to: 'à', aria: function (a) { return 'Dernière donnée dans sa plage des 5 dernières années, de ' + a.lo + ' à ' + a.hi; } },
-    it: { range: 'Intervallo a 5 anni', max: 'Massimo a 5 anni', min: 'Minimo a 5 anni', to: 'a', aria: function (a) { return 'Ultimo dato nell’intervallo degli ultimi 5 anni, da ' + a.lo + ' a ' + a.hi; } }
+    es: { range: 'Rango de {n} años', max: 'Máximo de {n} años', min: 'Mínimo de {n} años', to: 'a', aria: function (a) { return 'Último dato dentro del rango de los últimos ' + a.n + ' años, de ' + a.lo + ' a ' + a.hi; } },
+    en: { range: '{n}-year range', max: '{n}-year high', min: '{n}-year low', to: 'to', aria: function (a) { return 'Latest value within its last ' + a.n + '-year range, from ' + a.lo + ' to ' + a.hi; } },
+    fr: { range: 'Plage sur {n} ans', max: 'Plus haut sur {n} ans', min: 'Plus bas sur {n} ans', to: 'à', aria: function (a) { return 'Dernière donnée dans sa plage des ' + a.n + ' dernières années, de ' + a.lo + ' à ' + a.hi; } },
+    it: { range: 'Intervallo a {n} anni', max: 'Massimo a {n} anni', min: 'Minimo a {n} anni', to: 'a', aria: function (a) { return 'Ultimo dato nell’intervallo degli ultimi ' + a.n + ' anni, da ' + a.lo + ' a ' + a.hi; } }
   };
   function ctxHtml(s, lang, esc) {
     var c = ctx(s); if (!c) return ''; var t = CT[lang] || CT.es, d = dec(Math.max(Math.abs(c.min), Math.abs(c.max))), lo = nfmt(c.min, d, lang), hi = nfmt(c.max, d, lang);
-    var tag = c.isMax ? t.max : c.isMin ? t.min : '';
-    return '<div class="pp-rng" role="img" aria-label="' + esc(t.aria({ lo: lo, hi: hi })) + '"><div class="pp-rng-t"><span class="pp-rng-d" style="left:' + Math.round(c.pos * 100) + '%"></span></div>' +
+    var tag = (c.isMax ? t.max : c.isMin ? t.min : '').replace('{n}', c.yrs);
+    t = { range: t.range.replace('{n}', c.yrs), aria: t.aria };
+    return '<div class="pp-rng" role="img" aria-label="' + esc(t.aria({ lo: lo, hi: hi, n: c.yrs })) + '"><div class="pp-rng-t"><span class="pp-rng-d" style="left:' + Math.round(c.pos * 100) + '%"></span></div>' +
       '<div class="pp-rng-l"><span>' + esc(lo) + '</span>' + (tag ? '<b>' + esc(tag) + '</b>' : '<span>' + esc(t.range) + '</span>') + '<span>' + esc(hi) + '</span></div></div>';
   }
 
   // ---------- resumen en lenguaje llano ----------
   var PR = {
-    es: { cmp: { daily: 'frente al día anterior', weekly: 'frente a la semana anterior', monthly: 'frente al mes anterior', quarterly: 'frente al trimestre anterior', 'half-year': 'frente al semestre anterior', annual: 'frente al año anterior' }, same: 'sin cambio ', dst: 'Principal destino agroalimentario', org: 'Principal origen', unusual: 'Lo que más se ha movido de lo habitual', head: 'En pocas palabras', note: 'Resumen automático de los últimos datos publicados; no es una previsión.' },
-    en: { cmp: { daily: 'from the previous day', weekly: 'from the previous week', monthly: 'from the previous month', quarterly: 'from the previous quarter', 'half-year': 'from the previous half-year', annual: 'from the previous year' }, same: 'unchanged ', dst: 'Largest agri-food destination', org: 'Largest source', unusual: 'The biggest move beyond what is usual', head: 'In a nutshell', note: 'Automatic summary of the latest published data; not a forecast.' },
-    fr: { cmp: { daily: 'par rapport à la veille', weekly: 'par rapport à la semaine précédente', monthly: 'par rapport au mois précédent', quarterly: 'par rapport au trimestre précédent', 'half-year': 'par rapport au semestre précédent', annual: 'par rapport à l’année précédente' }, same: 'sans changement ', dst: 'Première destination agroalimentaire', org: 'Première origine', unusual: 'Ce qui a le plus bougé par rapport à l’habitude', head: 'En bref', note: 'Résumé automatique des dernières données publiées ; ce n’est pas une prévision.' },
-    it: { cmp: { daily: 'rispetto al giorno precedente', weekly: 'rispetto alla settimana precedente', monthly: 'rispetto al mese precedente', quarterly: 'rispetto al trimestre precedente', 'half-year': 'rispetto al semestre precedente', annual: 'rispetto all’anno precedente' }, same: 'invariato ', dst: 'Prima destinazione agroalimentare', org: 'Prima origine', unusual: 'Ciò che si è mosso di più rispetto al solito', head: 'In breve', note: 'Riepilogo automatico degli ultimi dati pubblicati; non è una previsione.' }
+    es: { cmp: { daily: 'frente al día anterior', weekly: 'frente a la semana anterior', monthly: 'frente al mes anterior', quarterly: 'frente al trimestre anterior', 'half-year': 'frente al semestre anterior', annual: 'frente al año anterior' }, same: 'sin cambio ', hi: 'su máximo de los últimos {n} años', lo: 'su mínimo de los últimos {n} años', alsoHi: 'También en su máximo de los últimos {n} años: ', alsoLo: 'También en su mínimo de los últimos {n} años: ', dst: 'Principal destino agroalimentario', org: 'Principal origen', unusual: 'Lo que más se ha movido de lo habitual', head: 'En pocas palabras', note: 'Resumen automático de los últimos datos publicados; no es una previsión.' },
+    en: { cmp: { daily: 'from the previous day', weekly: 'from the previous week', monthly: 'from the previous month', quarterly: 'from the previous quarter', 'half-year': 'from the previous half-year', annual: 'from the previous year' }, same: 'unchanged ', hi: 'its highest in {n} years', lo: 'its lowest in {n} years', alsoHi: 'Also at a {n}-year high: ', alsoLo: 'Also at a {n}-year low: ', dst: 'Largest agri-food destination', org: 'Largest source', unusual: 'The biggest move beyond what is usual', head: 'In a nutshell', note: 'Automatic summary of the latest published data; not a forecast.' },
+    fr: { cmp: { daily: 'par rapport à la veille', weekly: 'par rapport à la semaine précédente', monthly: 'par rapport au mois précédent', quarterly: 'par rapport au trimestre précédent', 'half-year': 'par rapport au semestre précédent', annual: 'par rapport à l’année précédente' }, same: 'sans changement ', hi: 'son plus haut niveau depuis {n} ans', lo: 'son plus bas niveau depuis {n} ans', alsoHi: 'Aussi à leur plus haut depuis {n} ans : ', alsoLo: 'Aussi à leur plus bas depuis {n} ans : ', dst: 'Première destination agroalimentaire', org: 'Première origine', unusual: 'Ce qui a le plus bougé par rapport à l’habitude', head: 'En bref', note: 'Résumé automatique des dernières données publiées ; ce n’est pas une prévision.' },
+    it: { cmp: { daily: 'rispetto al giorno precedente', weekly: 'rispetto alla settimana precedente', monthly: 'rispetto al mese precedente', quarterly: 'rispetto al trimestre precedente', 'half-year': 'rispetto al semestre precedente', annual: 'rispetto all’anno precedente' }, same: 'invariato ', hi: 'il suo massimo degli ultimi {n} anni', lo: 'il suo minimo degli ultimi {n} anni', alsoHi: 'Anche al massimo degli ultimi {n} anni: ', alsoLo: 'Anche al minimo degli ultimi {n} anni: ', dst: 'Prima destinazione agroalimentare', org: 'Prima origine', unusual: 'Ciò che si è mosso di più rispetto al solito', head: 'In breve', note: 'Riepilogo automatico degli ultimi dati pubblicati; non è una previsione.' }
   };
   // in: { lang, kpis:[series], partners:[series], unusual:[{s,ch}], plabel(p,freq) }  -> { head, sentences:[], note } | null
   function plain(inp) {
     var lang = inp.lang, t = PR[lang] || PR.es, out = [], k = (inp.kpis || []).filter(function (s) { return s && s.latest != null && s.latestPeriod; });
     var lead = k.filter(function (s) { return /^(prices|quotes|milk|prices_lv|prices_fv|idx_perc)$/.test(s.group); })[0] || k[0], second = k.filter(function (s) { return s !== lead && s.unit !== (lead && lead.unit); })[0];
     var clean = function (l) { return tl(String(l).replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, ''), lang); };
+    var done = {};
     [lead, second].forEach(function (s) {
       if (!s) return;
       var txt = clean(s.label) + ' — ' + unitTxt(s.latest, s.unit, lang) + ' (' + inp.plabel(s.latestPeriod, s.frequency) + ')';
       if (s.changePct != null) { var c = Math.abs(s.changePct) < 0.05; txt += ', ' + (c ? t.same : pct(s.changePct, lang) + ' ') + (t.cmp[s.frequency] || t.cmp.monthly); }
-      out.push(txt + '.');
+      var cx = ctx(s); if (cx && (cx.isMax || cx.isMin)) txt += ', ' + (cx.isMax ? t.hi : t.lo).replace('{n}', cx.yrs);
+      out.push(txt + '.'); done[s.id] = 1;
     });
+    // otros indicadores clave que también están en su máximo o mínimo del periodo
+    var ext = { hi: [], lo: [] }; k.forEach(function (s) { if (done[s.id]) return; var cx = ctx(s); if (!cx) return; if (cx.isMax) ext.hi.push({ s: s, n: cx.yrs }); else if (cx.isMin) ext.lo.push({ s: s, n: cx.yrs }); });
+    ['hi', 'lo'].forEach(function (w) { if (ext[w].length) out.push(t[w === 'hi' ? 'alsoHi' : 'alsoLo'].replace('{n}', ext[w][0].n) + ext[w].slice(0, 3).map(function (e) { return clean(e.s.label); }).join('; ') + '.'); });
     var side = function (tag, lab) {
       var l = (inp.partners || []).filter(function (s) { return s.id.indexOf('-' + tag + '-') > -1; }), an = l.filter(function (s) { return s.frequency === 'annual'; }); if (an.length) l = an;
       l = l.filter(function (s) { return s.latest != null; }).sort(function (a, b) { return b.latest - a.latest; });
@@ -243,6 +249,33 @@
     links.forEach(function (a) { var el = document.getElementById(a.getAttribute('data-pp')); if (el) io.observe(el); });
   }
 
-  var API = { tl: tl, ctx: ctx, ctxHtml: ctxHtml, plain: plain, help: help, bindHelp: bindHelp, questions: questions, nav: nav, bindNav: bindNav, _country: country };
+  // ---------- compartir: copiar el enlace a una sección ----------
+  var SH = { es: ['Copiar el enlace a esta sección', 'Enlace copiado', 'No se pudo copiar'], en: ['Copy link to this section', 'Link copied', 'Could not copy'], fr: ['Copier le lien vers cette section', 'Lien copié', 'Copie impossible'], it: ['Copia il link a questa sezione', 'Link copiato', 'Copia non riuscita'] };
+  function share(id, lang, esc) {
+    var t = SH[lang] || SH.es;
+    return '<button type="button" class="pp-share" data-share="' + esc(id) + '" data-ok="' + esc(t[1]) + '" data-err="' + esc(t[2]) + '" aria-label="' + esc(t[0]) + '" title="' + esc(t[0]) + '"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>';
+  }
+  // enlace a una sección: el país (y, en el explorador, también la serie y el periodo elegidos) + ancla
+  function shareUrl(loc, id) {
+    var u = new URL(loc.href), q = new URLSearchParams(u.search), keep = new URLSearchParams();
+    if (q.get('c')) keep.set('c', q.get('c'));
+    if (id === 'ps-explorer') ['g', 's', 'r', 'fx'].forEach(function (k) { if (q.get(k)) keep.set(k, q.get(k)); });
+    u.search = keep.toString() ? '?' + keep.toString() : ''; u.hash = '#' + id; return u.toString();
+  }
+  function copyText(txt) {
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(txt);
+    return new Promise(function (res, rej) { try { var ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(ta); ta.select(); var ok = document.execCommand('copy'); document.body.removeChild(ta); ok ? res() : rej(); } catch (e) { rej(e); } });
+  }
+  function bindShare() {
+    if (root.__ppShare || typeof document === 'undefined') return; root.__ppShare = 1;
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.pp-share') : null; if (!b) return;
+      var live = document.getElementById('pp-live'); if (!live) { live = document.createElement('div'); live.id = 'pp-live'; live.className = 'pp-live'; live.setAttribute('role', 'status'); document.body.appendChild(live); }
+      var done = function (msg, bad) { live.textContent = msg; live.className = 'pp-live is-on' + (bad ? ' is-bad' : ''); clearTimeout(live._t); live._t = setTimeout(function () { live.className = 'pp-live'; }, 2200); };
+      copyText(shareUrl(location, b.getAttribute('data-share'))).then(function () { done(b.getAttribute('data-ok')); }, function () { done(b.getAttribute('data-err'), true); });
+    });
+  }
+
+  var API = { share: share, shareUrl: shareUrl, bindShare: bindShare, tl: tl, ctx: ctx, ctxHtml: ctxHtml, plain: plain, help: help, bindHelp: bindHelp, questions: questions, nav: nav, bindNav: bindNav, _country: country };
   if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.DIClear = API;
 })(typeof window !== 'undefined' ? window : globalThis);

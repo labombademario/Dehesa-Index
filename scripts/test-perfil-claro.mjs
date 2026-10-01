@@ -29,6 +29,21 @@ for (const lang of ['es', 'en', 'fr', 'it']) {
   nums.forEach(n => { if (allowed.indexOf(n) < 0) bad('cifra no procedente del dato en ' + lang + ': ' + n + ' en «' + txt + '»'); });
   if (txt.indexOf('Francia') < 0 && txt.indexOf('France') < 0) bad('plain ' + lang + ' sin destino');
 }
+// máximos y mínimos del histórico en el resumen: solo si el último dato lo es de verdad, y con los años reales de histórico
+const mk = (vals, start) => vals.map((v, i) => [(start + Math.floor(i / 12)) + '-' + String(i % 12 + 1).padStart(2, '0'), v]);
+const rising = mk(Array.from({ length: 72 }, (_, i) => 100 + i), 2021), flat = mk(Array.from({ length: 72 }, (_, i) => 100 + (i % 7)), 2021), short = mk(Array.from({ length: 40 }, (_, i) => 100 + i), 2023);
+const mkS = (id, points, extra) => Object.assign({ id, label: 'Leche vaca', unit: '€/100 L', group: 'prices_lv', frequency: 'monthly', latestPeriod: points[points.length - 1][0], latest: points[points.length - 1][1], changePct: 1.2, points }, extra || {});
+const tx = (lang, kp) => (C.plain({ lang, kpis: kp, partners: [], unusual: [], plabel: p => p }) || { sentences: [] }).sentences.join(' ');
+if (!/máximo de los últimos 5 años/.test(tx('es', [mkS('a', rising)]))) bad('resumen: debía decir máximo de 5 años: ' + tx('es', [mkS('a', rising)]));
+if (!/highest in 5 years/.test(tx('en', [mkS('a', rising)]))) bad('resumen en: máximo');
+if (/máximo|mínimo/.test(tx('es', [mkS('a', flat)]))) bad('resumen: no debía decir máximo en una serie plana: ' + tx('es', [mkS('a', flat)]));
+if (!/mínimo de los últimos 5 años/.test(tx('es', [mkS('a', rising.map(p => [p[0], 300 - p[1]]))]))) bad('resumen: mínimo');
+const t3 = tx('es', [mkS('a', short)]); if (/de los últimos 5 años/.test(t3) || !/de los últimos [23] años/.test(t3)) bad('resumen: con ~3 años de histórico no puede decir 5: ' + t3);
+if (/máximo|mínimo/.test(tx('es', [mkS('a', rising.slice(-4))]))) bad('resumen: sin histórico suficiente no se afirma máximo');
+const two = tx('es', [mkS('a', rising), mkS('b', rising, { label: 'Trigo', unit: '€/t', group: 'quotes' }), mkS('c', rising, { label: 'Maíz', unit: '$/bu' })]); if (!/También en su máximo/.test(two) || !/Maíz/.test(two)) bad('resumen: faltan «también en su máximo»: ' + two);
+// enlace de sección
+const u = C.shareUrl({ href: 'https://dehesaindex.com/paises.html?c=ES&g=prices&s=x&r=5&zz=1#old' }, 'pp-kpi'); eq(u, 'https://dehesaindex.com/paises.html?c=ES#pp-kpi', 'shareUrl sección');
+const u2 = C.shareUrl({ href: 'https://dehesaindex.com/paises.html?c=ES&g=prices&s=x&r=5&zz=1' }, 'ps-explorer'); eq(u2, 'https://dehesaindex.com/paises.html?c=ES&g=prices&s=x&r=5#ps-explorer', 'shareUrl explorador');
 if (C.plain({ lang: 'es', kpis: [], partners: [], unusual: [], plabel: p => p })) bad('plain sin datos debe ser null');
 // preguntas guía: solo con datos
 const q = C.questions({ prices_lv: [1, 2], inputs_f: [1] }, 'es'); if (q.length !== 2 || q[0].group !== 'prices_lv') bad('preguntas ' + JSON.stringify(q));

@@ -12,6 +12,7 @@
   var KEY = /exports?: agri|total|milk|leche|lait|cattle|bovine|beef|wheat|cereal|all goods|agri-food|general|pig|hog/i;
   // series con puntos (paises.html) o solo metadatos del catalogo (perfiles.html: n, first)
   function TL(x, label) { return window.DIClear ? window.DIClear.tl(label, x.lang) : label; }
+  function SHR(x, id) { return window.DIClear ? window.DIClear.share(id, x.lang, x.esc) : ''; }
   function HP(x, k) { return window.DIClear ? window.DIClear.help(k, x.lang, x.esc) : ''; }
   function plen(s) { return s.points ? s.points.length : (s.n || 0); }
   function pfirst(s) { return s.points ? s.points[0][0] : s.first; }
@@ -176,12 +177,12 @@
     var qs = C ? C.questions(groups, x.lang) : []; present.ask = qs.length > 0;
     var pl = C ? C.plain({ lang: x.lang, kpis: kp, partners: groups.partners || [], unusual: partial(S) ? [] : unusual(S), plabel: x.plabel }) : null;
     if (C) h += C.nav(present, x.lang, esc);
-    if (pl) h += '<section id="pp-sum" class="di-card pp-plain"><div class="pp-plain-h">' + esc(pl.head) + '</div><p>' + pl.sentences.map(esc).join(' ') + '</p><div class="di-movers-hint">' + esc(pl.note) + (/^(ES|FR|DE|BE|AT|PT|DK|NL|CA|AU)$/.test(cc) ? ' · <a href="perfiles.html?a=' + cc + '">' + esc({ es: 'Comparar con otro país', en: 'Compare with another country', fr: 'Comparer avec un autre pays', it: 'Confronta con un altro paese' }[x.lang] || '') + '</a>' : '') + '</div></section>';
+    if (pl) h += '<section id="pp-sum" class="di-card pp-plain"><div class="pp-plain-h">' + esc(pl.head) + ' ' + SHR(x, 'pp-sum') + '</div><p>' + pl.sentences.map(esc).join(' ') + '</p><div class="di-movers-hint">' + esc(pl.note) + (/^(ES|FR|DE|BE|AT|PT|DK|NL|CA|AU)$/.test(cc) ? ' · <a href="perfiles.html?a=' + cc + '">' + esc({ es: 'Comparar con otro país', en: 'Compare with another country', fr: 'Comparer avec un autre pays', it: 'Confronta con un altro paese' }[x.lang] || '') + '</a>' : '') + '</div></section>';
     else h += '<span id="pp-sum"></span>';
     h += coverageBox(S, x) + summary(S, x);
     // KPIs
     if (kp.length) {
-      h += '<div id="pp-kpi" class="pp-anchor" style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 8px">' + esc(t.kpi.toUpperCase()) + ' ' + HP(x, 'range') + '</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:20px">';
+      h += '<div id="pp-kpi" class="pp-anchor" style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 8px">' + esc(t.kpi.toUpperCase()) + ' ' + HP(x, 'range') + ' ' + SHR(x, 'pp-kpi') + '</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:20px">';
       kp.forEach(function (s) {
         var ch = s.changePct, col = ch == null ? 'inherit' : ch >= 0 ? '#2f6b4a' : '#a33';
         h += '<button type="button" class="di-card" data-ps="' + esc(s.id) + '" style="text-align:left;padding:12px 14px;cursor:pointer;border:1px solid var(--border);font:inherit;color:inherit"><div style="font-size:11px;color:var(--text-faint);min-height:30px">' + esc((x.t[s.group] || s.group)) + '</div><div style="font-size:12.5px;font-weight:600;line-height:1.3;min-height:34px">' + esc(TL(x, s.label.replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, ''))) + '</div>' +
@@ -202,11 +203,11 @@
           l.map(function (s) { var nm = s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, ''); nm = (window.DIClear && window.DIClear._country(nm, x.lang)) || nm; return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + esc(nm) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(s.latest, x.dec(s.latest)) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(s.latest / tot * 100)) + '%"></div></div>'; }).join('') + '</div>';
       };
       var a = side('exp', t.dest), b = side('imp', t.orig);
-      if (a || b) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + ' ' + HP(x, 'hs') + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div></div>';
+      if (a || b) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + ' ' + HP(x, 'hs') + ' ' + SHR(x, 'pp-trade') + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div></div>';
     }
     // categorías
     var QT = { es: ['Empieza por una pregunta', 'Cada botón te lleva al gráfico con los datos que responden.', 'Ver todas las categorías', 'series'], en: ['Start with a question', 'Each button takes you to the chart with the data that answers it.', 'See all categories', 'series'], fr: ['Commencez par une question', 'Chaque bouton vous mène au graphique avec les données qui y répondent.', 'Voir toutes les catégories', 'séries'], it: ['Inizia da una domanda', 'Ogni pulsante porta al grafico con i dati che rispondono.', 'Vedi tutte le categorie', 'serie'] }[x.lang] || [];
-    if (qs.length) h += '<div id="pp-ask" class="pp-anchor" style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 4px">' + esc(QT[0].toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 8px">' + esc(QT[1]) + '</div><div class="pp-qs">' + qs.map(function (q) { return '<button type="button" class="di-card pp-qb" data-pg="' + esc(q.group) + '"><span>' + esc(q.q) + '</span><small>' + esc(x.t[q.group] || q.group) + ' · ' + q.n + ' ' + esc(QT[3]) + ' →</small></button>'; }).join('') + '</div>';
+    if (qs.length) h += '<div id="pp-ask" class="pp-anchor" style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 4px">' + esc(QT[0].toUpperCase()) + ' ' + SHR(x, 'pp-ask') + '</div><div class="di-movers-hint" style="margin:0 0 8px">' + esc(QT[1]) + '</div><div class="pp-qs">' + qs.map(function (q) { return '<button type="button" class="di-card pp-qb" data-pg="' + esc(q.group) + '"><span>' + esc(q.q) + '</span><small>' + esc(x.t[q.group] || q.group) + ' · ' + q.n + ' ' + esc(QT[3]) + ' →</small></button>'; }).join('') + '</div>';
     h += (qs.length ? '<details class="pp-all"><summary>' + esc(QT[2]) + ' (' + gk.length + ')</summary>' : '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 4px">' + esc(t.explore.toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 8px">' + esc(t.hint) + '</div>') + '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:8px 0 22px">';
     gk.forEach(function (g) {
       var l = groups[g].slice().sort(function (a, b) { return score(b) - score(a); }), last = l.reduce(function (m, s) { return s.latestPeriod > m ? s.latestPeriod : m; }, '');
@@ -216,7 +217,7 @@
         '<div style="font-size:12px;color:var(--text-muted);line-height:1.4">' + esc(t.examples) + ': ' + ex.map(function (e) { return esc(e.length > 46 ? e.slice(0, 44) + '…' : e); }).join(' · ') + '</div>' +
         '<div style="font-size:12px;font-weight:700;color:#2f6b4a;margin-top:8px">' + esc(t.go) + ' →</div></button>';
     });
-    h += '</div>' + (qs.length ? '</details>' : '') + '<h2 id="ps-explorer" class="pp-anchor" style="margin:6px 0 12px;font-size:19px">' + esc(t.exploreTitle) + ' ' + esc(x.t.countries[cc] || c.name) + '</h2>';
+    h += '</div>' + (qs.length ? '</details>' : '') + '<h2 id="ps-explorer" class="pp-anchor" style="margin:6px 0 12px;font-size:19px">' + esc(t.exploreTitle) + ' ' + esc(x.t.countries[cc] || c.name) + ' ' + SHR(x, 'ps-explorer') + '</h2>';
     return h;
   }
   window.DIProfile = { coverage: coverage, html: html, macroStrip: macroStrip, rateOf: rateOf, kpis: kpis, spark: spark, flag: function (cc) { return FLAG[cc] || ''; } };
