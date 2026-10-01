@@ -19,5 +19,10 @@ Politica en `data/freshness-policy.json`: periodo y rezago por frecuencia y fuen
 ## Licencias (`data/license-registry.json`)
 Por fuente: `status` (`VERIFIED|PENDING|RESTRICTED|BLOCKED`), `licenseId`, `commercialUse`, `derivatives`, `attributionRequired/Text`, `verifiedAt`, `evidence`, `used`. Ver `DATA_SOURCES.md`.
 
+## Ficha de producto 3.0 (`data/product-metadata.json` v2, `data/products/<id>.json`)
+Metadatos (a mano): por producto, nombre en 4 idiomas, grupo, `kind`, `instruments` (region+producto de `prices/latest`), `indices`, `psd`, `hs`, `related` (solo relaciones economicas justificables: `input|feed`, `why`) y `compare`.
+Bloques precalculados (`build-product-profiles.py`, esquema `product-profile`): `trade` (exportadores/importadores top 8, cuota sobre el total PSD, `top3Share`, `hhiLowerBound` = cota inferior porque los paises listados no suman 100 %), `supplyDemand` (3 ultimas campanas de EE. UU./UE/mundo; `stockToUse` = existencias finales / consumo, calculado) y `tariffs` (resumen por partida HS en US/EU/CA/MX con la fuente de cada una). Si un producto no tiene PSD o HS, el bloque es `null` y la pagina lo dice.
+La pagina (`js/producto-terminal.js`) carga cada bloque al acercarse a la vista y descarga el historico solo de ese producto; el detalle antiguo de EE. UU. (USDA/ERS/NASS, varios MB) solo a peticion.
+
 ## Comparador (`data/product-compare.json`)
 Por producto y pais: unidad y moneda ORIGINALES, `kg` por unidad de precio, puntos mensuales (`aggregation`: media del mes de la frecuencia original), `latest`, `comp` (comparabilidad), `sourceId`, `fs`. La normalizacion (€/t, USD/t, indice 100) se calcula en el navegador con el Unit Engine. Los productos y series configuradas estan en `data/product-metadata.json`.

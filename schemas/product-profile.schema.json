@@ -7,6 +7,7 @@
   "generatedAt",
   "product",
   "trade",
+  "supplyDemand",
   "tariffs"
  ],
  "properties": {
@@ -198,6 +199,62 @@
     },
     "note": {
      "type": "string"
+    }
+   }
+  },
+  "supplyDemand": {
+   "type": [
+    "object",
+    "null"
+   ],
+   "properties": {
+    "psd": {
+     "type": "string"
+    },
+    "marketYear": {
+     "type": "integer"
+    },
+    "unit": {
+     "type": "string"
+    },
+    "sourceId": {
+     "enum": [
+      "usda_fas_psd"
+     ]
+    },
+    "note": {
+     "type": "string",
+     "minLength": 10
+    },
+    "entities": {
+     "type": "object",
+     "additionalSchema": {
+      "type": "object",
+      "additionalSchema": {
+       "type": "object",
+       "properties": {
+        "production": {
+         "type": "number"
+        },
+        "imports": {
+         "type": "number"
+        },
+        "exports": {
+         "type": "number"
+        },
+        "consumption": {
+         "type": "number"
+        },
+        "endingStocks": {
+         "type": "number"
+        },
+        "stockToUse": {
+         "type": "number",
+         "minimum": 0
+        }
+       }
+      }
+     }
     }
    }
   }

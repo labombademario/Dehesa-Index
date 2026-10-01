@@ -468,13 +468,17 @@
   }
   function render() {
     setCanonical();
-    var t = tr(), root = document.getElementById('pr-body'), cfg = CFG[SEL.p], nm = names();
-    document.title = 'Dehesa Index — ' + t.title + ': ' + (nm[SEL.p] || SEL.p);
-    document.getElementById('pg-h1').textContent = t.title + ': ' + (nm[SEL.p] || SEL.p);
-    document.getElementById('pg-sub').textContent = t.sub;
-    var parts = [priceBlock(t, cfg, SEL.p), sdBlock(t, cfg), depBlock(t, cfg), amsBlock(t, cfg), exBlock(t, cfg), gatsBlock(t, cfg), cfg.kind === 'crop' ? cropBlock(t, cfg) : liveBlock(t, cfg), droughtBlock(t, cfg), costBlock(t, cfg), newsBlock(t, XN[lang()] || XN.es), relBlock(t, XN[lang()] || XN.es)].filter(function (x) { return x; });
+    var t = tr(), root = document.getElementById(TERM ? 'pr-legacy-body' : 'pr-body'), cfg = CFG[SEL.p], nm = names();
+    if (!root) return;
+    if (!TERM) {
+      document.title = 'Dehesa Index — ' + t.title + ': ' + (nm[SEL.p] || SEL.p);
+      document.getElementById('pg-h1').textContent = t.title + ': ' + (nm[SEL.p] || SEL.p);
+      document.getElementById('pg-sub').textContent = t.sub;
+    }
+    // con la terminal de producto 3.0 el precio, la oferta y demanda y las noticias los pinta ella; aqui queda el detalle ampliado de EE. UU.
+    var parts = [TERM ? '' : priceBlock(t, cfg, SEL.p), TERM ? '' : sdBlock(t, cfg), depBlock(t, cfg), amsBlock(t, cfg), exBlock(t, cfg), gatsBlock(t, cfg), cfg.kind === 'crop' ? cropBlock(t, cfg) : liveBlock(t, cfg), droughtBlock(t, cfg), costBlock(t, cfg), TERM ? '' : newsBlock(t, XN[lang()] || XN.es), TERM ? '' : relBlock(t, XN[lang()] || XN.es)].filter(function (x) { return x; });
     var links = '<p class="di-movers-hint" style="margin-top:26px"><strong>' + esc(t.links) + ':</strong> ' + lnk('mapa.html', t.lMap) + ' · ' + lnk('precios.html?product=' + (cfg.pp || (SEL.p === 'vacuno' ? 'vaca' : SEL.p)), t.lPrices) + '</p>';
-    root.innerHTML = tabs(t) + (parts.length ? parts.join('') : '<p class="di-movers-hint">' + esc(t.noData) + '</p>') + links + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + ' <a href="metodologia.html">' + esc(t.methodLink) + '</a>.</p>';
+    root.innerHTML = (TERM ? '' : tabs(t)) + (parts.length ? parts.join('') : '<p class="di-movers-hint">' + esc(t.noData) + '</p>') + links + (TERM ? '' : '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + ' <a href="metodologia.html">' + esc(t.methodLink) + '</a>.</p>');
     var sel = document.getElementById('pr-ent'); if (sel) sel.onchange = function (e) { SEL.ent = e.target.value; render(); };
   }
 
@@ -491,14 +495,30 @@
   }
   function get(file) { return fetch(file).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
   window.DehesaShared.init('informacion');
+  var TERM = false, LEGACY_LOADED = false, PT = window.DIProductTerminal;
   var prevCb = window.DehesaShared.onLangChange;
-  window.DehesaShared.onLangChange = function () { if (prevCb) prevCb.apply(this, arguments); render(); };
+  window.DehesaShared.onLangChange = function () {
+    if (prevCb) prevCb.apply(this, arguments);
+    if (TERM) { PT.relang(); } else render();
+  };
   var q = new URLSearchParams(window.location.search);
-  if (q.get('p') && CFG[q.get('p')]) SEL.p = q.get('p');
-  var cfg0 = CFG[SEL.p];
-  Promise.all([latestFor(cfg0), get('data/supply-demand.json'), get('data/export-sales.json'), get('data/gats.json'), get('data/drought.json'), get('data/ers.json'),
-    cfg0.kind === 'crop' ? get('data/crop-progress.json') : Promise.resolve(null), get('data/nass-crops.json'), get('data/nass-livestock.json'), (window.DINews ? window.DINews.items().then(function (it) { return { items: it }; }) : Promise.resolve(null)), get('data/ams-grain-daily.json')]).then(function (r) {
-    D.latest = r[0]; D.sd = r[1]; D.es = r[2]; D.gats = r[3]; D.dr = r[4]; D.ers = r[5]; D.cp = r[6]; D.crops = r[7]; D.live = r[8]; D.news = r[9]; D.ams = r[10];
-    render();
+  var wanted = q.get('p') || 'trigo';
+  // Carga pesada (varios MB de USDA/ERS/NASS): solo la ficha clasica (pollo, azucar) o el "detalle ampliado" de la terminal, y este ultimo a peticion
+  function loadLegacy() {
+    var cfg0 = CFG[SEL.p];
+    if (LEGACY_LOADED) return Promise.resolve();
+    return Promise.all([latestFor(cfg0), get('data/supply-demand.json'), get('data/export-sales.json'), get('data/gats.json'), get('data/drought.json'), get('data/ers.json'),
+      cfg0.kind === 'crop' ? get('data/crop-progress.json') : Promise.resolve(null), get('data/nass-crops.json'), get('data/nass-livestock.json'), (window.DINews ? window.DINews.items().then(function (it) { return { items: it }; }) : Promise.resolve(null)), get('data/ams-grain-daily.json')]).then(function (r) {
+      D.latest = r[0]; D.sd = r[1]; D.es = r[2]; D.gats = r[3]; D.dr = r[4]; D.ers = r[5]; D.cp = r[6]; D.crops = r[7]; D.live = r[8]; D.news = r[9]; D.ams = r[10];
+      LEGACY_LOADED = true;
+    });
+  }
+  PT.ready().then(function () { return true; }, function () { return false; }).then(function (ok) {
+    if (ok && PT.has(wanted)) {
+      TERM = true; SEL.p = wanted; setCanonical();
+      return PT.mount(wanted, { legacy: { has: !!CFG[wanted], loaded: function () { return LEGACY_LOADED; }, load: loadLegacy, render: function () { render(); } } });
+    }
+    if (CFG[wanted]) SEL.p = wanted;
+    return loadLegacy().then(render);
   });
 })();

@@ -480,6 +480,14 @@ def product_profile(doc, errs, warns, stats):
         if abs(sum(sh[:3]) - f["top3Share"]) > 0.3: errs.append("%s: top3Share incoherente" % flow)
         for x in f["top"]:
             if abs(x["value"] / f["world"] * 100 - x["share"]) > 0.02: errs.append("%s: cuota de %s no es valor/mundo" % (flow, x["name"]))
+    sd = doc.get("supplyDemand")
+    if bool(m.get("psd")) != bool(sd): errs.append("supplyDemand %s pero psd=%r en los metadatos" % ("presente" if sd else "ausente", m.get("psd")))
+    for ent, years in ((sd or {}).get("entities") or {}).items():
+        if ent not in ("US", "EU", "WORLD"): errs.append("supplyDemand: entidad desconocida %s" % ent)
+        for y, r in years.items():
+            if int(y) > sd["marketYear"] or int(y) < sd["marketYear"] - 2: errs.append("supplyDemand %s: campana %s fuera de la ventana" % (ent, y))
+            if "stockToUse" in r:
+                if "endingStocks" not in r or not r.get("consumption") or abs(r["endingStocks"] / r["consumption"] * 100 - r["stockToUse"]) > 0.06: errs.append("supplyDemand %s/%s: stockToUse no es existencias/consumo" % (ent, y))
     for h in (doc["tariffs"] or {}).get("headings", []):
         for mk, v in h["markets"].items():
             if mk not in ("US", "EU", "CA", "MX"): errs.append("mercado de arancel desconocido %s" % mk)

@@ -15,6 +15,7 @@
     { "url": "/catalogo.html", "maxDataRawKB": 2800, "maxTotalGzKB": 400, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"], "wait": 5000 },
     { "url": "/brief.html", "maxDataRawKB": 420, "maxTotalGzKB": 180, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
     { "url": "/noticias.html", "maxDataRawKB": 300, "maxTotalGzKB": 210, "forbid": ["/data/news\\.json", "news-feed\\.js(\\?|$)"] },
-    { "url": "/producto.html?p=trigo", "maxDataRawKB": 5000, "maxTotalGzKB": 1100, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/news\\.json"] }
+    { "url": "/producto.html?p=trigo", "maxDataRawKB": 800, "maxTotalGzKB": 450, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/news\\.json", "/data/(supply-demand|ers|gats|nass-crops|nass-livestock|drought|export-sales)\\.json"], "wait": 3000 },
+    { "url": "/producto.html?p=pollo", "maxDataRawKB": 5000, "maxTotalGzKB": 1100, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/news\\.json"] }
   ]
 }

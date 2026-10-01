@@ -36,6 +36,31 @@ def trade(psd):
                      'listedCountries': len(rows), 'coveredShare': round(sum(shares), 1), 'hhiLowerBound': hhi(shares), 'top3Share': round(sum(shares[:3]), 1)}
     return out if (out.get('exports') or out.get('imports')) else None
 
+SD_ATTRS = ('production', 'imports', 'exports', 'consumption', 'endingStocks')
+SD_ENT = (('US', 'United States'), ('EU', 'European Union'))
+
+def supply_demand(psd):
+    # Balance de USDA PSD de las 3 ultimas campanas para EE. UU., UE y el total mundial. Solo cifras publicadas; stockToUse = existencias finales / consumo (calculado, se declara).
+    c = next((x for x in SD['commodities'] if x['id'] == psd), None)
+    if not c: return None
+    my = c['latestMarketYear']; yrs = [y for y in (my - 2, my - 1, my)]
+    ents = {}
+    for key, name in SD_ENT + (('WORLD', None),):
+        src = c['world'] if key == 'WORLD' else (c['countries'].get(name) or {}).get('years')
+        if not src: continue
+        rows = {}
+        for y in yrs:
+            r = src.get(str(y))
+            if not r: continue
+            row = {a: r[a] for a in SD_ATTRS if isinstance(r.get(a), (int, float))}
+            if isinstance(row.get('endingStocks'), (int, float)) and isinstance(row.get('consumption'), (int, float)) and row['consumption'] > 0:
+                row['stockToUse'] = round(row['endingStocks'] / row['consumption'] * 100, 1)
+            if row: rows[str(y)] = row
+        if rows: ents[key] = rows
+    if not ents: return None
+    return {'psd': psd, 'marketYear': my, 'unit': c['unit'], 'publishedMonth': c.get('publishedMonth'), 'sourceId': 'usda_fas_psd', 'entities': ents,
+            'note': 'Cifras publicadas por USDA PSD; la campana mas reciente es una prevision. stockToUse = existencias finales / consumo (calculado por Dehesa). El mundo es la suma de los paises de la base de PSD.'}
+
 def tariffs(hs_list):
     if not hs_list: return None
     heads = []
@@ -56,7 +81,7 @@ def tariffs(hs_list):
 def main():
     OUT.mkdir(exist_ok=True)
     for pid, m in META['products'].items():
-        doc = {'schemaVersion': 1, 'generatedAt': NOW, 'product': pid, 'trade': trade(m['psd']) if m.get('psd') else None, 'tariffs': tariffs(m['hs'])}
+        doc = {'schemaVersion': 1, 'generatedAt': NOW, 'product': pid, 'trade': trade(m['psd']) if m.get('psd') else None, 'supplyDemand': supply_demand(m['psd']) if m.get('psd') else None, 'tariffs': tariffs(m['hs'])}
         (OUT / (pid + '.json')).write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')) + '\n')
     print('productos:', len(META['products']))
 main()

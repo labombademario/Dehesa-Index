@@ -51,6 +51,8 @@ CASES = [
  ("product-metadata.json", "relacion inventada", lambda d: d["products"]["trigo"]["related"].append({"product": "no-existe", "relation": "input", "why": "energy"})),
  ("products/trigo.json", "cuota que no es valor/mundo", lambda d: d["trade"]["exports"]["top"][0].__setitem__("share", 55.5)),
  ("products/trigo.json", "producto desconocido", lambda d: d.__setitem__("product", "no-existe")),
+ ("products/trigo.json", "stock-to-use inventado", lambda d: d["supplyDemand"]["entities"]["US"][str(d["supplyDemand"]["marketYear"])].__setitem__("stockToUse", 5.0)),
+ ("products/trigo.json", "campana fuera de ventana", lambda d: d["supplyDemand"]["entities"]["EU"].__setitem__("2010", {"production": 1})),
  ("products/trigo.json", "top desordenado", lambda d: d["trade"]["exports"]["top"].reverse()),
  ("freshness-policy.json", "rezago sin evidencia", lambda d: d["sources"]["statcan"].__setitem__("evidence", "x")),
  ("freshness-policy.json", "rezago absurdo", lambda d: d["sources"]["statcan"]["lagDays"].__setitem__("monthly", 9999)),

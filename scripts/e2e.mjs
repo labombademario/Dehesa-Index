@@ -111,6 +111,28 @@ for (const w of [1280, 390]) {
       const href = await link.getAttribute('href'); await page.goto(BASE + '/' + href.replace(/^\//, ''), { waitUntil: 'load' }); await page.waitForTimeout(2500);
       if ((await textLen(page, '#pr-body')) < 100) throw new Error('la ficha de producto no pinta contenido: ' + href);
     });
+    await flow('producto 3.0: bloques, unidad y seguimiento', w, async (page) => {
+      const scrollAll = async () => { await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight + 1500; y += 500) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 90)); } }); await page.waitForTimeout(700); };
+      await page.goto(BASE + '/producto.html?p=trigo', { waitUntil: 'load' }); await page.waitForSelector('#pt-head .pt-card', { timeout: 8000 });
+      await scrollAll();
+      for (const id of ['changed', 'compare', 'hist', 'sd', 'trade', 'tariffs', 'costs', 'drivers']) {
+        if ((await textLen(page, '#pt-' + id + ' .pt-body')) < 30) throw new Error('bloque ' + id + ' vacio');
+        if (await page.$('#pt-' + id + ' .pt-err')) throw new Error('bloque ' + id + ' con error de carga');
+      }
+      if (!(await page.$('#pt-hist svg'))) throw new Error('el historico no dibuja la grafica');
+      await page.click('#pt-compare [data-u=usd]'); await page.waitForTimeout(300);
+      if (!/USD\/t/.test(await page.innerText('#pt-compare tbody'))) throw new Error('la unidad USD/t no se aplica a la comparacion');
+      if (!/u=usd/.test(page.url())) throw new Error('la unidad no queda en la URL');
+      await page.click('#pt-hist [data-r="6m"]'); await page.waitForTimeout(300);
+      if (!/r=6m/.test(page.url())) throw new Error('el periodo no queda en la URL');
+      await page.click('[data-follow="1"]'); await page.waitForTimeout(700);
+      if (!(await page.$('#pt-follow .di-wl-ed'))) throw new Error('seguir producto no abre los avisos');
+      await page.goto(BASE + '/producto.html?p=diesel', { waitUntil: 'load' }); await page.waitForSelector('#pt-head .pt-card', { timeout: 8000 }); await scrollAll();
+      if (!/no publica un balance|does not publish|ne publie pas|non pubblica/.test(await page.innerText('#pt-sd'))) throw new Error('diesel deberia declarar que no hay balance PSD');
+      // el detalle pesado no se descarga sin pedirlo
+      const heavy = await page.evaluate(() => performance.getEntriesByType('resource').filter(e => /\/data\/(ers|gats|nass-crops|supply-demand)\.json/.test(e.name)).length);
+      if (heavy) throw new Error('la ficha descargo ficheros pesados sin pedirlos');
+    });
     await flow('paises: cambiar de pais', w, async (page, errs) => {
       await page.goto(BASE + '/paises.html?c=FR', { waitUntil: 'load' }); await page.waitForTimeout(2500);
       if ((await textLen(page, '#paises-body')) < 100) throw new Error('paises.html?c=FR vacio');
