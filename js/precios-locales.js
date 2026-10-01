@@ -22,6 +22,7 @@
       repr_EXPORT_MARKET: 'Ofertas de elevadores o puertos de exportación en «{loc}». No es un precio local del agricultor.',
       repr_STATE: 'Cifra para todo el estado ({loc}); el informe no detalla ubicaciones más concretas.', repr_CITY: 'Cifra para la ciudad de «{loc}».', repr_ELEVATOR: 'Oferta de un elevador concreto: «{loc}».', repr_UNKNOWN: 'USDA no identifica la ubicación exacta en esta fila del informe.',
       buyerLine: 'Tipo de comprador en el informe', delivery: 'Entrega', basisNone: 'USDA no publica basis en este informe (o aún no se captura)', basisNoUnit: 'unidad no indicada por USDA', futures: 'contrato de referencia',
+      peerOut: 'Se aparta mucho de los demás mercados del mismo grupo (mediana {0}): compárala con el informe original, puede ser un cambio de periodo de entrega o de definición.', peerMove: 'Movimiento compartido por el grupo (mediana {0}). Es un cambio de mercado, no de un solo punto.', peerMed: 'mediana del grupo',
       bigMove: 'Variación diaria muy grande: compárala con el informe original (puede reflejar un cambio de periodo de entrega o de cosecha).', noChange: 'Sin observación consecutiva para calcular el cambio', vs: 'vs',
       trust: 'De dónde sale este precio', tSource: 'Fuente', tReport: 'Informe', tPub: 'Publicación', tObs: 'Observación', tMarket: 'Mercado', tSpec: 'Producto y especificación', tUnit: 'Unidad', tMethod: 'Metodología', tFreq: 'Calendario', tOpen: 'Abrir el informe original en USDA AMS',
       tNotCaptured: 'no capturada todavía (carga inicial desde el resumen de USDA AMS; la API la rellenará)', daily: 'diario (días laborables)', weekly: 'semanal',
@@ -47,6 +48,7 @@
       repr_EXPORT_MARKET: 'Bids from export elevators or ports in “{loc}”. It is not a local farmer price.',
       repr_STATE: 'A statewide figure ({loc}); the report does not break it down further.', repr_CITY: 'A figure for the city of “{loc}”.', repr_ELEVATOR: 'The bid of a specific elevator: “{loc}”.', repr_UNKNOWN: 'USDA does not identify the exact location in this report row.',
       buyerLine: 'Buyer type in the report', delivery: 'Delivery', basisNone: 'USDA does not publish basis in this report (or it is not captured yet)', basisNoUnit: 'unit not stated by USDA', futures: 'reference contract',
+      peerOut: 'It differs a lot from the other markets in its group (median {0}): compare it with the original report; it may be a delivery-period or definition change.', peerMove: 'Move shared across the group (median {0}). It reflects the market, not a single point.', peerMed: 'group median',
       bigMove: 'Very large one-day move: compare it with the original report (it may reflect a delivery-period or crop-year change).', noChange: 'No consecutive observation to compute a change', vs: 'vs',
       trust: 'Where this price comes from', tSource: 'Source', tReport: 'Report', tPub: 'Publication', tObs: 'Observation', tMarket: 'Market', tSpec: 'Commodity and specification', tUnit: 'Unit', tMethod: 'Methodology', tFreq: 'Calendar', tOpen: 'Open the original report at USDA AMS',
       tNotCaptured: 'not captured yet (initial load from the USDA AMS summary; the API run will fill it in)', daily: 'daily (business days)', weekly: 'weekly',
@@ -72,6 +74,7 @@
       repr_EXPORT_MARKET: 'Offres de silos ou ports d’exportation à « {loc} ». Ce n’est pas un prix local payé à l’agriculteur.',
       repr_STATE: 'Chiffre pour tout l’État ({loc}) ; le rapport ne le détaille pas davantage.', repr_CITY: 'Chiffre pour la ville de « {loc} ».', repr_ELEVATOR: 'Offre d’un silo précis : « {loc} ».', repr_UNKNOWN: 'L’USDA n’identifie pas l’emplacement exact dans cette ligne du rapport.',
       buyerLine: 'Type d’acheteur dans le rapport', delivery: 'Livraison', basisNone: 'L’USDA ne publie pas de base dans ce rapport (ou elle n’est pas encore captée)', basisNoUnit: 'unité non indiquée par l’USDA', futures: 'contrat de référence',
+      peerOut: 'Elle s’écarte fortement des autres marchés du même groupe (médiane {0}) : comparez avec le rapport d’origine, il peut s’agir d’un changement de période de livraison ou de définition.', peerMove: 'Mouvement partagé par le groupe (médiane {0}). Il reflète le marché, pas un seul point.', peerMed: 'médiane du groupe',
       bigMove: 'Très forte variation quotidienne : comparez avec le rapport d’origine (elle peut refléter un changement de période de livraison ou de récolte).', noChange: 'Pas d’observation consécutive pour calculer la variation', vs: 'vs',
       trust: 'D’où vient ce prix', tSource: 'Source', tReport: 'Rapport', tPub: 'Publication', tObs: 'Observation', tMarket: 'Marché', tSpec: 'Produit et spécification', tUnit: 'Unité', tMethod: 'Méthodologie', tFreq: 'Calendrier', tOpen: 'Ouvrir le rapport original sur USDA AMS',
       tNotCaptured: 'pas encore captée (chargement initial depuis le résumé USDA AMS ; l’API la complétera)', daily: 'quotidien (jours ouvrés)', weekly: 'hebdomadaire',
@@ -97,6 +100,7 @@
       repr_EXPORT_MARKET: 'Offerte di elevatori o porti di esportazione a «{loc}». Non è un prezzo locale pagato all’agricoltore.',
       repr_STATE: 'Un dato per tutto lo Stato ({loc}); il rapporto non lo dettaglia ulteriormente.', repr_CITY: 'Un dato per la città di «{loc}».', repr_ELEVATOR: 'Offerta di un elevatore specifico: «{loc}».', repr_UNKNOWN: 'L’USDA non identifica l’ubicazione esatta in questa riga del rapporto.',
       buyerLine: 'Tipo di acquirente nel rapporto', delivery: 'Consegna', basisNone: 'L’USDA non pubblica il basis in questo rapporto (o non è ancora acquisito)', basisNoUnit: 'unità non indicata dall’USDA', futures: 'contratto di riferimento',
+      peerOut: 'Si discosta molto dagli altri mercati dello stesso gruppo (mediana {0}): confrontala con il rapporto originale, può essere un cambio di periodo di consegna o di definizione.', peerMove: 'Movimento condiviso dal gruppo (mediana {0}). Riflette il mercato, non un singolo punto.', peerMed: 'mediana del gruppo',
       bigMove: 'Variazione giornaliera molto ampia: confrontala con il rapporto originale (può riflettere un cambio di periodo di consegna o di raccolto).', noChange: 'Nessuna osservazione consecutiva per calcolare la variazione', vs: 'vs',
       trust: 'Da dove viene questo prezzo', tSource: 'Fonte', tReport: 'Rapporto', tPub: 'Pubblicazione', tObs: 'Osservazione', tMarket: 'Mercato', tSpec: 'Prodotto e specifica', tUnit: 'Unità', tMethod: 'Metodologia', tFreq: 'Calendario', tOpen: 'Apri il rapporto originale su USDA AMS',
       tNotCaptured: 'non ancora acquisita (caricamento iniziale dal riepilogo USDA AMS; l’API la completerà)', daily: 'giornaliero (giorni lavorativi)', weekly: 'settimanale',
@@ -150,10 +154,11 @@
     var v = s.bLo === s.bHi ? bsign(s.bLo) : bsign(s.bLo) + ' / ' + bsign(s.bHi);
     return v + ' <span class="di-movers-hint">' + esc(s.basisUnit || t.basisNoUnit) + '</span>' + (s.futuresContract ? '<div class="di-movers-hint">' + esc(t.futures) + ': ' + esc(s.futuresContract) + '</div>' : '');
   }
+  function pctTxt(v) { return v == null ? '' : (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1) + ' %'; }
   function changeHtml(s) {
     var t = tt(); if (s.changePct == null) return '<span title="' + esc(t.noChange) + '" style="color:var(--text-faint)">—</span>';
-    var c = s.changePct >= 0 ? '#2f6b4a' : '#a33', big = Math.abs(s.changePct) >= 4;
-    return '<span style="color:' + c + ';font-weight:600">' + (s.changePct > 0 ? '+' : s.changePct < 0 ? '−' : '') + nf(Math.abs(s.changePct), 1) + ' %</span>' + (big ? ' <span title="' + esc(t.bigMove) + '" aria-label="' + esc(t.bigMove) + '">⚠</span>' : '') + '<div class="di-movers-hint">' + esc(t.vs) + ' ' + esc(dtxt(s.prevDate)) + '</div>';
+    var c = s.changePct >= 0 ? '#2f6b4a' : '#a33', med = s.peerMedianPct, big = s.changeFlag === 'PEER_OUTLIER' || (med == null && Math.abs(s.changePct) >= 8), msg = s.changeFlag === 'PEER_OUTLIER' ? t.peerOut.replace('{0}', pctTxt(med)) : t.bigMove;
+    return '<span style="color:' + c + ';font-weight:600">' + (s.changePct > 0 ? '+' : s.changePct < 0 ? '−' : '') + nf(Math.abs(s.changePct), 1) + ' %</span>' + (big ? ' <span title="' + esc(msg) + '" aria-label="' + esc(msg) + '">⚠</span>' : '') + (!big && med != null && Math.abs(med) >= 3 && Math.abs(s.changePct - med) < 5 ? ' <span class="di-movers-hint" title="' + esc(t.peerMove.replace('{0}', pctTxt(med))) + '">≈ ' + esc(t.peerMed) + ' ' + esc(pctTxt(med)) + '</span>' : '') + '<div class="di-movers-hint">' + esc(t.vs) + ' ' + esc(dtxt(s.prevDate)) + '</div>';
   }
   function bidHtml(s) {
     var t = tt(), u = per(s);

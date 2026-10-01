@@ -273,6 +273,22 @@
        "null"
       ]
      },
+     "peerMedianPct": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "changeFlag": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "enum": [
+       "PEER_OUTLIER",
+       null
+      ]
+     },
      "freshness": {
       "type": "string",
       "enum": [

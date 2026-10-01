@@ -9,6 +9,8 @@ OUT = ROOT / "data" / "us-cash-bids"
 SOURCE_ID = "usda_ams_mars"
 MAX_GAP_DAYS = {"daily": 7, "weekly": 14}  # el cambio solo se calcula entre observaciones consecutivas razonablemente proximas (si no, null)
 HIST_WINDOW = 130  # puntos por serie en el shard "corriente" (el historico completo va aparte)
+PEER_MIN = 3  # pares minimos para hablar de movimiento del grupo
+PEER_OUTLIER_PTS = 5.0  # puntos porcentuales respecto a la mediana de sus pares
 LOCATION_TYPES = ("ELEVATOR", "TERMINAL", "CITY", "REGION", "STATE", "EXPORT_MARKET", "UNKNOWN")
 
 IDENTITY_FIELDS = {"commodity", "class", "grade", "protein", "deliverypoint", "tradeloc", "deliverystart", "deliveryend", "desc", "application", "freight", "saletype", "transmode"}
@@ -233,6 +235,17 @@ def shard_of(store, freq_of, now_day=None, generated_at=None):
              "prevDate": prev[0] if prev else None, "prevAvg": hp, "changePct": round((hl / hp - 1) * 100, 2) if hl is not None and hp else None,
              "freshness": freshness(last[0], freq, now_day), "n": len(pts), "first": pts[0][0], "pts": [p[:6] for p in pts[-HIST_WINDOW:]]}
         series.append(e)
+    # Contexto de pares: un movimiento compartido por todo el grupo es mercado; uno que se aparta mucho de sus pares puede ser un cambio de definicion
+    groups = {}
+    for e in series:
+        if e["changePct"] is not None: groups.setdefault((e["commodityClass"], e["grade"], e["deliveryPoint"], e["unit"], e["date"]), []).append(e)
+    for e in series:
+        e["peerMedianPct"] = None; e["changeFlag"] = None
+        g = groups.get((e["commodityClass"], e["grade"], e["deliveryPoint"], e["unit"], e["date"])) if e["changePct"] is not None else None
+        if g and len(g) >= PEER_MIN:
+            vals = sorted(x["changePct"] for x in g); n = len(vals); med = vals[n // 2] if n % 2 else (vals[n // 2 - 1] + vals[n // 2]) / 2
+            e["peerMedianPct"] = round(med, 2)
+            if abs(e["changePct"] - med) >= PEER_OUTLIER_PTS: e["changeFlag"] = "PEER_OUTLIER"
     return {"schemaVersion": 1, "generatedAt": generated_at, "state": store["state"], "commodity": store["commodity"], "sourceId": SOURCE_ID, "series": series}
 
 def history_of(store, generated_at=None):

@@ -176,6 +176,19 @@ try:
     check("discontinuidad registrada", {b["kind"] for b in brk} == {"NEW_DIMENSION", "TITLE_CHANGE"} and all(b["reportId"] == 2850 for b in brk), brk)
     sids = J(o18 / "IA/corn.json")["series"]
     check("la serie 'New Crop' es otra serie, no continua la anterior", len(sids) == 4 and len({x["id"] for x in sids}) == 4 and sum(1 for x in sids if x["description"] == "New Crop") == 2, [(x["locationName"], x["description"]) for x in sids])
+    # --- 19. Contexto de pares: movimiento de grupo no es anomalia; un punto que se aparta de sus pares si
+    st19 = L.empty_store("IA", "corn")
+    def mk(loc, prev, last):
+        base = {"reportId": 1, "state": "IA", "commodity": "corn", "commodityName": "Corn", "commodityClass": "Yellow", "grade": "US #2", "protein": None, "deliveryPoint": "Country Elevators", "locationName": loc, "locationType": "REGION", "freight": None, "saleType": None, "transMode": None, "description": None, "application": None, "deliveryPeriod": None, "currency": "USD", "unit": "bu"}
+        base["pts"] = [["2026-09-29", prev, None, None, None, None, None], ["2026-09-30", last, None, None, None, None, None]]
+        return base
+    for i, (a, b) in enumerate([(5.0, 4.8), (5.0, 4.79), (5.0, 4.81), (5.0, 4.8), (5.0, 5.6)]): st19["series"]["s%d" % i] = mk("M%d" % i, a, b)
+    sh = L.shard_of(st19, lambda r: "daily", now_day=None, generated_at="t")["series"]
+    by = {x["locationName"]: x for x in sh}
+    check("caida compartida por el grupo: sin aviso", all(by["M%d" % i]["changeFlag"] is None for i in range(4)) and by["M0"]["peerMedianPct"] == -4.0, [(x["locationName"], x["changePct"], x["peerMedianPct"], x["changeFlag"]) for x in sh])
+    check("serie que se aparta de sus pares: PEER_OUTLIER", by["M4"]["changeFlag"] == "PEER_OUTLIER", by["M4"])
+    two = L.empty_store("IA", "corn"); two["series"]["a"] = mk("A", 5.0, 4.0); two["series"]["b"] = mk("B", 5.0, 5.5)
+    check("sin pares suficientes no se afirma nada", all(x["changeFlag"] is None and x["peerMedianPct"] is None for x in L.shard_of(two, lambda r: "daily", None, "t")["series"]))
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
 if fails:
