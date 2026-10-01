@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-01T02:03:52Z",
+ "generatedAt": "2026-10-01T02:14:08Z",
  "sources": {
   "wb": {
    "name": "World Bank Open Data",
@@ -19,6 +19,34 @@
   }
  },
  "countries": {
+  "US": {
+   "currency": "USD",
+   "gdp": {
+    "v": 30769700000000,
+    "y": 2025
+   },
+   "gdppc": {
+    "v": 90026.5163005744,
+    "y": 2025
+   },
+   "pop": {
+    "v": 341784857,
+    "y": 2025
+   },
+   "unemp": {
+    "v": 4.198,
+    "y": 2025
+   },
+   "agri": {
+    "v": 0.942961672907101,
+    "y": 2021
+   },
+   "debt": {
+    "v": 115.768352618316,
+    "y": 2024,
+    "src": "wb-central"
+   }
+  },
   "ES": {
    "currency": "EUR",
    "gdp": {
