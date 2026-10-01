@@ -1309,6 +1309,10 @@
     "cbsa_tariff"
    ],
    "notes": "Bloques precalculados de la ficha de producto (scripts/build-product-profiles.py): estructura del comercio mundial (USDA PSD) y resumen de aranceles por partida HS. Cada bloque cita su fuente; la licencia la fija esa fuente."
+  },
+  "data/us-cash-bids/": {
+   "default": "usda_ams_mars",
+   "notes": "US Local Cash Bids (scripts/update-us-cash-bids.py): precios de grano al contado de informes estatales de USDA AMS Market News (MARS). Mismo origen, API y clase de datos que data/ams/ (ya publicado bajo esta fuente). Cada observacion enlaza al informe original; los informes estatales pueden indicar que se elaboran con un departamento estatal de agricultura: no se ha verificado que eso cambie la condicion de obra del gobierno federal, por lo que la confianza sigue siendo media y la licencia especifica del dataset esta pendiente de revisar (ver nextAction del informe final)."
   }
  },
  "derived": [

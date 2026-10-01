@@ -59,7 +59,7 @@ KINDS = ['PRICE', 'PRODUCTION', 'TRADE', 'CROP', 'CLIMATE', 'INPUT', 'TARIFF', '
 # fichero o carpeta -> (tipo, nombre corto). Los *-stats.json se leen serie a serie (STATS) y se clasifican por su grupo; aqui van el resto de datasets.
 DATASETS = {
     'data/latest.json': ('PRICE', 'Precios de mercado (latest)'), 'data/nass-prices.json': ('PRICE', 'USDA NASS precios'), 'data/ams-grain-daily.json': ('PRICE', 'USDA AMS granos (diario)'),
-    'data/ams': ('PRICE', 'USDA AMS mercados (MARS)'), 'data/denmark-prices.json': ('PRICE', 'Dinamarca precios'), 'data/alberta-weekly.json': ('PRICE', 'Alberta semanal'),
+    'data/ams': ('PRICE', 'USDA AMS mercados (MARS)'), 'data/us-cash-bids': ('PRICE', 'Precios locales de grano EE. UU. (USDA AMS)'), 'data/denmark-prices.json': ('PRICE', 'Dinamarca precios'), 'data/alberta-weekly.json': ('PRICE', 'Alberta semanal'),
     'data/eu': ('PRICE', 'Agri-food Data Portal UE'),
     'data/supply-demand.json': ('PRODUCTION', 'USDA PSD oferta y demanda'), 'data/nass-crops.json': ('PRODUCTION', 'USDA NASS cultivos'), 'data/nass-livestock.json': ('PRODUCTION', 'USDA NASS ganaderia'),
     'data/ers.json': ('PRODUCTION', 'USDA ERS'), 'data/recan.json': ('PRODUCTION', 'RECAN (Espana)'),
@@ -89,7 +89,7 @@ WORKFLOW_KINDS = {
     'update-eurostat.yml': ['PRICE', 'INPUT'], 'update-export-sales.yml': ['TRADE'], 'update-france.yml': ['PRICE', 'PRODUCTION'], 'update-fx-history.yml': ['MACRO'], 'update-fx.yml': ['MACRO'], 'update-gats.yml': ['TRADE'],
     'update-germany.yml': ['PRICE', 'PRODUCTION'], 'update-interest-rates.yml': ['MACRO'], 'update-mars-us.yml': ['PRICE'], 'update-nass-data.yml': ['PRICE', 'PRODUCTION'], 'update-nass.yml': ['PRICE'],
     'update-partner-tariffs.yml': ['TARIFF'], 'update-portugal-eurostat.yml': ['PRODUCTION'], 'update-portugal.yml': ['PRODUCTION', 'PRICE'], 'update-recan.yml': ['PRODUCTION'], 'update-spain.yml': ['PRICE', 'INPUT', 'PRODUCTION'],
-    'update-us-tariffs.yml': ['TARIFF'], 'update-usda-psd.yml': ['PRODUCTION'], 'update-worldbank-urea.yml': ['INPUT'],
+    'update-us-cash-bids.yml': ['PRICE'], 'update-us-tariffs.yml': ['TARIFF'], 'update-usda-psd.yml': ['PRODUCTION'], 'update-worldbank-urea.yml': ['INPUT'],
     # no son datos agricolas: noticias (no entran en el brief) y trabajos internos
     'update-news.yml': [], 'update-pipeline-status.yml': [], 'update-seo-pages.yml': [],
 }

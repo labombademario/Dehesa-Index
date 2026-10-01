@@ -1,0 +1,140 @@
+[
+ {
+  "reportSection": "Report Header",
+  "results": [
+   {
+    "report_title": "Nebraska Daily Elevator Grain Bids",
+    "slug_id": 3225,
+    "slug_name": "FIXTURE_SLUG",
+    "market_types": [
+     "FIXTURE"
+    ]
+   }
+  ]
+ },
+ {
+  "reportSection": "Report Detail",
+  "results": [
+   {
+    "report_begin_date": "09/24/2026",
+    "report_end_date": "09/24/2026",
+    "published_date": "09/24/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 12.635,
+    "price_min": 12.525,
+    "price_max": 12.675,
+    "commodity": "Soybeans",
+    "grade": "US #1",
+    "trade_loc": "Central"
+   },
+   {
+    "report_begin_date": "09/25/2026",
+    "report_end_date": "09/25/2026",
+    "published_date": "09/25/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 12.65,
+    "price_min": 12.54,
+    "price_max": 12.69,
+    "commodity": "Soybeans",
+    "grade": "US #1",
+    "trade_loc": "Central"
+   },
+   {
+    "report_begin_date": "09/28/2026",
+    "report_end_date": "09/28/2026",
+    "published_date": "09/28/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 12.3425,
+    "price_min": 12.2325,
+    "price_max": 12.3825,
+    "commodity": "Soybeans",
+    "grade": "US #1",
+    "trade_loc": "Central"
+   },
+   {
+    "report_begin_date": "09/29/2026",
+    "report_end_date": "09/29/2026",
+    "published_date": "09/29/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 12.4375,
+    "price_min": 12.3275,
+    "price_max": 12.4775,
+    "commodity": "Soybeans",
+    "grade": "US #1",
+    "trade_loc": "Central"
+   },
+   {
+    "report_begin_date": "09/30/2026",
+    "report_end_date": "09/30/2026",
+    "published_date": "09/30/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 12.39,
+    "price_min": 12.28,
+    "price_max": 12.43,
+    "commodity": "Soybeans",
+    "grade": "US #1",
+    "trade_loc": "Central"
+   },
+   {
+    "report_begin_date": "09/24/2026",
+    "report_end_date": "09/24/2026",
+    "published_date": "09/24/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 12.6794,
+    "price_min": 12.635,
+    "price_max": 12.725,
+    "commodity": "Soybeans",
+    "grade": "US #1",
+    "trade_loc": "East"
+   },
+   {
+    "report_begin_date": "09/25/2026",
+    "report_end_date": "09/25/2026",
+    "published_date": "09/25/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 12.6944,
+    "price_min": 12.65,
+    "price_max": 12.74,
+    "commodity": "Soybeans",
+    "grade": "US #1",
+    "trade_loc": "East"
+   },
+   {
+    "report_begin_date": "09/28/2026",
+    "report_end_date": "09/28/2026",
+    "published_date": "09/28/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 12.3992,
+    "price_min": 12.3825,
+    "price_max": 12.4525,
+    "commodity": "Soybeans",
+    "grade": "US #1",
+    "trade_loc": "East"
+   },
+   {
+    "report_begin_date": "09/29/2026",
+    "report_end_date": "09/29/2026",
+    "published_date": "09/29/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 12.4942,
+    "price_min": 12.4775,
+    "price_max": 12.5475,
+    "commodity": "Soybeans",
+    "grade": "US #1",
+    "trade_loc": "East"
+   },
+   {
+    "report_begin_date": "09/30/2026",
+    "report_end_date": "09/30/2026",
+    "published_date": "09/30/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 12.3967,
+    "price_min": 12.38,
+    "price_max": 12.45,
+    "commodity": "Soybeans",
+    "grade": "US #1",
+    "trade_loc": "East"
+   }
+  ]
+ }
+]

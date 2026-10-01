@@ -1,0 +1,128 @@
+[
+ {
+  "reportSection": "Report Header",
+  "results": [
+   {
+    "report_title": "Southern Minnesota Daily Grain Bids",
+    "slug_id": 3049,
+    "slug_name": "FIXTURE_SLUG",
+    "market_types": [
+     "FIXTURE"
+    ]
+   }
+  ]
+ },
+ {
+  "reportSection": "Report Detail",
+  "results": [
+   {
+    "report_begin_date": "09/25/2026",
+    "report_end_date": "09/25/2026",
+    "published_date": "09/25/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 4.7592,
+    "price_min": 4.6825,
+    "price_max": 4.8825,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2"
+   },
+   {
+    "report_begin_date": "09/28/2026",
+    "report_end_date": "09/28/2026",
+    "published_date": "09/28/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 4.7083,
+    "price_min": 4.64,
+    "price_max": 4.83,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2"
+   },
+   {
+    "report_begin_date": "09/29/2026",
+    "report_end_date": "09/29/2026",
+    "published_date": "09/29/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 4.6983,
+    "price_min": 4.63,
+    "price_max": 4.82,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2"
+   },
+   {
+    "report_begin_date": "09/30/2026",
+    "report_end_date": "09/30/2026",
+    "published_date": "09/30/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 4.4858,
+    "price_min": 4.4175,
+    "price_max": 4.6075,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2"
+   },
+   {
+    "report_begin_date": "09/25/2026",
+    "report_end_date": "09/25/2026",
+    "published_date": "09/25/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 4.7425,
+    "price_min": 4.6925,
+    "price_max": 4.7725,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_start": "2026-10-01",
+    "delivery_end": "2026-10-01",
+    "desc": "New Crop"
+   },
+   {
+    "report_begin_date": "09/28/2026",
+    "report_end_date": "09/28/2026",
+    "published_date": "09/28/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 4.69,
+    "price_min": 4.64,
+    "price_max": 4.72,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_start": "2026-10-01",
+    "delivery_end": "2026-10-01",
+    "desc": "New Crop"
+   },
+   {
+    "report_begin_date": "09/29/2026",
+    "report_end_date": "09/29/2026",
+    "published_date": "09/29/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 4.68,
+    "price_min": 4.63,
+    "price_max": 4.71,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_start": "2026-10-01",
+    "delivery_end": "2026-10-01",
+    "desc": "New Crop"
+   },
+   {
+    "report_begin_date": "09/30/2026",
+    "report_end_date": "09/30/2026",
+    "published_date": "09/30/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "avg_price": 4.4675,
+    "price_min": 4.4175,
+    "price_max": 4.4975,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_start": "2026-10-01",
+    "delivery_end": "2026-10-01",
+    "desc": "New Crop"
+   }
+  ]
+ }
+]

@@ -1,0 +1,462 @@
+{
+ "schemaVersion": 1,
+ "doc": "Registro central de informes USDA AMS (MyMarketNews / MARS) para precios de grano al contado (cash bids). UNICO lugar con IDs de informe: scripts/update-us-cash-bids.py, el generador de reports.json y los tests lo leen de aqui. Para ampliar cobertura se anade una entrada (o se pone enabled:true); no hay un parser por informe. tier: mvp (IA IL KS NE MN MO) | priority (resto de estados prioritarios) | extended (cobertura oficial real ya identificada, sin habilitar). Los informes extended y los candidatos de --discover no se ingieren hasta revisarlos.",
+ "apiBase": "https://marsapi.ams.usda.gov/services/v1.2/reports/",
+ "viewUrl": "https://mymarketnews.ams.usda.gov/viewReport/",
+ "keyEnv": [
+  "USDA_MMN_API_KEY",
+  "MARS_API_KEY"
+ ],
+ "auth": "HTTP Basic: usuario = clave, contrasena vacia (igual que scripts/update-ams.mjs). La clave solo existe como GitHub Actions Secret.",
+ "sourceId": "usda_ams_mars",
+ "states": {
+  "IA": "Iowa",
+  "IL": "Illinois",
+  "KS": "Kansas",
+  "NE": "Nebraska",
+  "MN": "Minnesota",
+  "MO": "Missouri",
+  "OH": "Ohio",
+  "ND": "North Dakota",
+  "SD": "South Dakota",
+  "TX": "Texas",
+  "IN": "Indiana",
+  "CO": "Colorado",
+  "MT": "Montana",
+  "OK": "Oklahoma",
+  "NC": "North Carolina",
+  "VA": "Virginia",
+  "SC": "South Carolina",
+  "KY": "Kentucky",
+  "MS": "Mississippi",
+  "AR": "Arkansas",
+  "TN": "Tennessee",
+  "PA": "Pennsylvania",
+  "CA": "California",
+  "WY": "Wyoming",
+  "MD": "Maryland"
+ },
+ "commodities": {
+  "corn": {
+   "name": "Corn",
+   "raw": [
+    "corn"
+   ]
+  },
+  "soybeans": {
+   "name": "Soybeans",
+   "raw": [
+    "soybeans",
+    "soybean"
+   ]
+  },
+  "wheat": {
+   "name": "Wheat",
+   "raw": [
+    "wheat"
+   ]
+  },
+  "sorghum": {
+   "name": "Sorghum",
+   "raw": [
+    "sorghum",
+    "milo",
+    "grain sorghum"
+   ]
+  },
+  "barley": {
+   "name": "Barley",
+   "raw": [
+    "barley"
+   ]
+  },
+  "oats": {
+   "name": "Oats",
+   "raw": [
+    "oats",
+    "white oats"
+   ]
+  },
+  "canola": {
+   "name": "Canola",
+   "raw": [
+    "canola"
+   ]
+  },
+  "sunflower": {
+   "name": "Sunflower",
+   "raw": [
+    "sunflower",
+    "sunflowers",
+    "sunflower seed"
+   ]
+  },
+  "flaxseed": {
+   "name": "Flaxseed",
+   "raw": [
+    "flaxseed",
+    "flax"
+   ]
+  }
+ },
+ "deliveryPointTypes": {
+  "country elevators": "REGION",
+  "mills and processors": "REGION",
+  "livestock feeding operations": "REGION",
+  "terminal elevators": "TERMINAL",
+  "barge loading elevators": "TERMINAL",
+  "terminals/mills/processors": "TERMINAL",
+  "delivered chicago / beyond": "TERMINAL",
+  "export elevators": "EXPORT_MARKET"
+ },
+ "locationTypeDoc": "locationType describe la GEOGRAFIA que representa el precio, no el comprador. Un informe estatal con trade_loc ('North Central') publica el promedio/rango de varios elevadores de una REGION del estado, nunca un elevador concreto. TERMINAL = terminales y cargaderos de barcaza; EXPORT_MARKET = elevadores/puertos de exportacion. ELEVATOR solo se usa si una fila identifica una instalacion concreta (ningun informe actual lo hace); CITY solo por locationOverrides explicitos; sin geografia se usa STATE (informe de un estado entero) o UNKNOWN.",
+ "reports": [
+  {
+   "reportId": 2850,
+   "state": "IA",
+   "scope": "STATE_REPORT",
+   "market": "Iowa",
+   "frequency": "daily",
+   "tier": "mvp",
+   "enabled": true,
+   "expectedTitle": "Iowa Daily Cash Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2850.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3192,
+   "state": "IL",
+   "scope": "STATE_REPORT",
+   "market": "Illinois",
+   "frequency": "daily",
+   "tier": "mvp",
+   "enabled": true,
+   "expectedTitle": "Illinois Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3192.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 2886,
+   "state": "KS",
+   "scope": "STATE_REPORT",
+   "market": "Kansas",
+   "frequency": "daily",
+   "tier": "mvp",
+   "enabled": true,
+   "expectedTitle": "Kansas Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2886.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3225,
+   "state": "NE",
+   "scope": "STATE_REPORT",
+   "market": "Nebraska",
+   "frequency": "daily",
+   "tier": "mvp",
+   "enabled": true,
+   "expectedTitle": "Nebraska Daily Elevator Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3225.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3049,
+   "state": "MN",
+   "scope": "REGION_REPORT",
+   "market": "Southern Minnesota",
+   "frequency": "daily",
+   "tier": "mvp",
+   "enabled": true,
+   "expectedTitle": "Southern Minnesota Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3049.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)",
+   "defaultLocationType": "REGION",
+   "defaultLocationName": "Southern Minnesota"
+  },
+  {
+   "reportId": 3046,
+   "state": "MN",
+   "scope": "MARKET_REPORT",
+   "market": "Minneapolis",
+   "frequency": "daily",
+   "tier": "mvp",
+   "enabled": true,
+   "expectedTitle": "Minneapolis Daily Grain Report",
+   "provenance": "id y titulo verificados en data/ams/3046.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)",
+   "defaultLocationType": "TERMINAL",
+   "defaultLocationName": "Minneapolis",
+   "splitBy": [
+    "freight",
+    "saleType",
+    "transMode"
+   ]
+  },
+  {
+   "reportId": 2932,
+   "state": "MO",
+   "scope": "STATE_REPORT",
+   "market": "Missouri",
+   "frequency": "daily",
+   "tier": "mvp",
+   "enabled": true,
+   "expectedTitle": "Missouri Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2932.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 2851,
+   "state": "OH",
+   "scope": "STATE_REPORT",
+   "market": "Ohio",
+   "frequency": "daily",
+   "tier": "priority",
+   "enabled": true,
+   "expectedTitle": "Ohio Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2851.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3878,
+   "state": "ND",
+   "scope": "STATE_REPORT",
+   "market": "North Dakota",
+   "frequency": "daily",
+   "tier": "priority",
+   "enabled": true,
+   "expectedTitle": "North Dakota Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3878.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3186,
+   "state": "SD",
+   "scope": "STATE_REPORT",
+   "market": "South Dakota",
+   "frequency": "daily",
+   "tier": "priority",
+   "enabled": true,
+   "expectedTitle": "South Dakota Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3186.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 2711,
+   "state": "TX",
+   "scope": "STATE_REPORT",
+   "market": "Texas",
+   "frequency": "daily",
+   "tier": "priority",
+   "enabled": true,
+   "expectedTitle": "Texas Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2711.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3463,
+   "state": "IN",
+   "scope": "STATE_REPORT",
+   "market": "Indiana",
+   "frequency": "daily",
+   "tier": "priority",
+   "enabled": true,
+   "expectedTitle": "Indiana Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3463.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 2912,
+   "state": "CO",
+   "scope": "STATE_REPORT",
+   "market": "Colorado",
+   "frequency": "daily",
+   "tier": "priority",
+   "enabled": true,
+   "expectedTitle": "Colorado Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2912.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 2771,
+   "state": "MT",
+   "scope": "STATE_REPORT",
+   "market": "Montana",
+   "frequency": "daily",
+   "tier": "priority",
+   "enabled": true,
+   "expectedTitle": "Montana Daily Elevator Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2771.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3100,
+   "state": "OK",
+   "scope": "STATE_REPORT",
+   "market": "Oklahoma",
+   "frequency": "daily",
+   "tier": "priority",
+   "enabled": true,
+   "expectedTitle": "Oklahoma Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3100.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3156,
+   "state": "NC",
+   "scope": "STATE_REPORT",
+   "market": "North Carolina",
+   "frequency": "daily",
+   "tier": "priority",
+   "enabled": true,
+   "expectedTitle": "North Carolina Cash Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3156.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3167,
+   "state": "VA",
+   "scope": "STATE_REPORT",
+   "market": "Virginia",
+   "frequency": "daily",
+   "tier": "priority",
+   "enabled": true,
+   "expectedTitle": "Virginia Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3167.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 2787,
+   "state": "SC",
+   "scope": "STATE_REPORT",
+   "market": "South Carolina",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "South Carolina Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2787.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 2892,
+   "state": "KY",
+   "scope": "STATE_REPORT",
+   "market": "Kentucky",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "Kentucky Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2892.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 2928,
+   "state": "MS",
+   "scope": "STATE_REPORT",
+   "market": "Mississippi",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "Mississippi Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2928.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 2960,
+   "state": "AR",
+   "scope": "STATE_REPORT",
+   "market": "Arkansas",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "Arkansas Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2960.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3088,
+   "state": "TN",
+   "scope": "STATE_REPORT",
+   "market": "Tennessee",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "Tennessee Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3088.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3091,
+   "state": "PA",
+   "scope": "STATE_REPORT",
+   "market": "Pennsylvania",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "Pennsylvania Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3091.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3146,
+   "state": "CA",
+   "scope": "STATE_REPORT",
+   "market": "California",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "California Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3146.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3239,
+   "state": "WY",
+   "scope": "STATE_REPORT",
+   "market": "Wyoming",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "Wyoming Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3239.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 2714,
+   "state": "MD",
+   "scope": "STATE_REPORT",
+   "market": "Maryland",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "Maryland Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/2714.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)"
+  },
+  {
+   "reportId": 3223,
+   "state": null,
+   "scope": "MARKET_REPORT",
+   "market": "Kansas City",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "Kansas City Board of Trade Daily Wheat Bids",
+   "provenance": "id y titulo verificados en data/ams/3223.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)",
+   "defaultLocationType": "TERMINAL",
+   "defaultLocationName": "Kansas City"
+  },
+  {
+   "reportId": 3043,
+   "state": null,
+   "scope": "MARKET_REPORT",
+   "market": "Upper Mississippi barge terminals",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "Iowa-Southern Minnesota Barge Terminal Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3043.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)",
+   "defaultLocationType": "TERMINAL",
+   "defaultLocationName": "Upper Mississippi barge terminals"
+  },
+  {
+   "reportId": 3148,
+   "state": null,
+   "scope": "MARKET_REPORT",
+   "market": "Portland",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "Portland Daily Grain Bids",
+   "provenance": "id y titulo verificados en data/ams/3148.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)",
+   "defaultLocationType": "TERMINAL",
+   "defaultLocationName": "Portland"
+  },
+  {
+   "reportId": 3147,
+   "state": null,
+   "scope": "MARKET_REPORT",
+   "market": "Gulf export",
+   "frequency": "daily",
+   "tier": "extended",
+   "enabled": false,
+   "expectedTitle": "Louisiana and Texas Export Bids",
+   "provenance": "id y titulo verificados en data/ams/3147.json (ingestado por CI desde la API MARS; ultimo dato 2026-09-30)",
+   "defaultLocationType": "EXPORT_MARKET",
+   "defaultLocationName": "Gulf export"
+  }
+ ]
+}

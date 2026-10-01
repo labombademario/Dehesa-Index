@@ -144,3 +144,18 @@ sources:
     extra: ['!datos', '!sitemap.xml']
     check: node scripts/qa-seo.mjs
     message: Páginas SEO por país y categoría
+  - id: us-cash-bids
+    name: Update US local cash bids (USDA AMS MARS)
+    cron: ['15 14 * * 1-5', '30 23 * * 1-5']
+    script: scripts/update-us-cash-bids.py
+    args: '--discover --backfill-days ${{ github.event.inputs.backfill_days || 0 }}'
+    env: {USDA_MMN_API_KEY: '${{ secrets.USDA_MMN_API_KEY }}', MARS_API_KEY: '${{ secrets.MARS_API_KEY }}'}
+    dispatch_inputs:
+      backfill_days: {description: 'Dias de historico a pedir por informe (0 = ventana normal de 21 dias; la primera carga de cada informe pide 400). Ej. 1100 para tres anos', required: false, default: '0'}
+    timeout: 40
+    script_timeout: 30
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/us-cash-bids)
+    data: [us-cash-bids/manifest.json, us-cash-bids/reports.json, us-cash-bids/ingestion-status.json, us-cash-bids/revisions.json]
+    extra: ['!data/us-cash-bids']
+    message: Datos precios locales de grano EE. UU. (USDA AMS MARS)

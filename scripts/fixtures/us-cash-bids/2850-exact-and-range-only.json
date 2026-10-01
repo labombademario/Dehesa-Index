@@ -1,0 +1,150 @@
+[
+ {
+  "reportSection": "Report Header",
+  "results": [
+   {
+    "report_title": "Iowa Daily Cash Grain Bids",
+    "slug_id": 2850,
+    "slug_name": "FIXTURE_SLUG",
+    "market_types": [
+     "FIXTURE"
+    ]
+   }
+  ]
+ },
+ {
+  "reportSection": "Report Detail",
+  "results": [
+   {
+    "report_begin_date": "09/24/2026",
+    "report_end_date": "09/24/2026",
+    "published_date": "09/24/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "price_min": 4.83,
+    "price_max": 4.83,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_point": "Country Elevators",
+    "trade_loc": "North Central"
+   },
+   {
+    "report_begin_date": "09/25/2026",
+    "report_end_date": "09/25/2026",
+    "published_date": "09/25/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "price_min": 4.8375,
+    "price_max": 4.8375,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_point": "Country Elevators",
+    "trade_loc": "North Central"
+   },
+   {
+    "report_begin_date": "09/28/2026",
+    "report_end_date": "09/28/2026",
+    "published_date": "09/28/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "price_min": 4.785,
+    "price_max": 4.785,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_point": "Country Elevators",
+    "trade_loc": "North Central"
+   },
+   {
+    "report_begin_date": "09/29/2026",
+    "report_end_date": "09/29/2026",
+    "published_date": "09/29/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "price_min": 4.796,
+    "price_max": 4.796,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_point": "Country Elevators",
+    "trade_loc": "North Central"
+   },
+   {
+    "report_begin_date": "09/30/2026",
+    "report_end_date": "09/30/2026",
+    "published_date": "09/30/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "price_min": 4.5835,
+    "price_max": 4.5835,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_point": "Country Elevators",
+    "trade_loc": "North Central"
+   },
+   {
+    "report_begin_date": "09/24/2026",
+    "report_end_date": "09/24/2026",
+    "published_date": "09/24/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "price_min": 4.775,
+    "price_max": 5.025,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_point": "Country Elevators",
+    "trade_loc": "Southwest"
+   },
+   {
+    "report_begin_date": "09/25/2026",
+    "report_end_date": "09/25/2026",
+    "published_date": "09/25/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "price_min": 4.6825,
+    "price_max": 5.0325,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_point": "Country Elevators",
+    "trade_loc": "Southwest"
+   },
+   {
+    "report_begin_date": "09/28/2026",
+    "report_end_date": "09/28/2026",
+    "published_date": "09/28/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "price_min": 4.78,
+    "price_max": 4.95,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_point": "Country Elevators",
+    "trade_loc": "Southwest"
+   },
+   {
+    "report_begin_date": "09/29/2026",
+    "report_end_date": "09/29/2026",
+    "published_date": "09/29/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "price_min": 4.77,
+    "price_max": 4.94,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_point": "Country Elevators",
+    "trade_loc": "Southwest"
+   },
+   {
+    "report_begin_date": "09/30/2026",
+    "report_end_date": "09/30/2026",
+    "published_date": "09/30/2026 15:30:00",
+    "price_unit": "$ Per Bushel",
+    "price_min": 4.5575,
+    "price_max": 5.0175,
+    "commodity": "Corn",
+    "class": "Yellow",
+    "grade": "US #2",
+    "delivery_point": "Country Elevators",
+    "trade_loc": "Southwest"
+   }
+  ]
+ }
+]
