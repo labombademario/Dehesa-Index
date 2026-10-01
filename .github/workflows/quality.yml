@@ -39,6 +39,12 @@ jobs:
       - name: Data catalog integrity (manifest, catalogs, shards)
         run: python3 scripts/check-catalog.py
 
+      - name: Service worker version matches the code
+        run: node scripts/stamp-sw.mjs --check
+
+      - name: SEO QA (sitemap, canonical, hreflang, JSON-LD)
+        run: node scripts/qa-seo.mjs
+
       - name: Performance budget (gzip)
         run: node scripts/check-performance-budget.mjs
 

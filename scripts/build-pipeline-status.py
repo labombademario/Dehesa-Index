@@ -93,9 +93,11 @@ def main():
                 if r.get("conclusion") == "failure": item["status"] = "error"
                 elif gap and age_h is not None and age_h > max(gap * 2.5, 30): item["status"] = "late"
                 else: item["status"] = "ok"
+        # NOT_RUN_YET: la API respondio y el workflow no tiene ninguna ejecucion (distinto de "unknown": no hemos podido consultarlo)
+        if runs is not None and not runs.get("workflow_runs"): item["status"] = "not_run"
         if any(f.get("valid") == "error" for f in item["files"]): item["status"] = "error"
         out.append(item)
-    cnt = {k: sum(1 for i in out if i["status"] == k) for k in ("ok", "late", "error", "unknown")}
+    cnt = {k: sum(1 for i in out if i["status"] == k) for k in ("ok", "late", "error", "not_run", "unknown")}
     doc = {"schemaVersion": 1, "generatedAt": iso(NOW), "repo": REPO, "summary": cnt, "global": "error" if cnt["error"] else ("late" if cnt["late"] else ("ok" if cnt["ok"] else "unknown")), "pipelines": out}
     (ROOT / "data" / "pipeline-status.json").write_text(json.dumps(doc, ensure_ascii=False, indent=1))
     print("pipelines", len(out), cnt)

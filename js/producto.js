@@ -461,7 +461,13 @@
     return '<div style="display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px">' + ORDER.map(function (k) { return '<a class="di-link-btn" href="producto.html?p=' + k + '" data-p="' + k + '" style="' + (k === SEL.p ? 'font-weight:700;border-color:var(--gold,#a9491f);' : '') + '">' + esc(nm[k] || k) + '</a>'; }).join('') + '</div>';
   }
 
+  // canonical y og:url propios por producto (la pagina es una sola con ?p=): cada URL del sitemap se declara a si misma
+  function setCanonical() {
+    var u = 'https://dehesaindex.com/producto.html?p=' + SEL.p, c = document.querySelector('link[rel="canonical"]'), o = document.querySelector('meta[property="og:url"]');
+    if (c) c.setAttribute('href', u); if (o) o.setAttribute('content', u);
+  }
   function render() {
+    setCanonical();
     var t = tr(), root = document.getElementById('pr-body'), cfg = CFG[SEL.p], nm = names();
     document.title = 'Dehesa Index — ' + t.title + ': ' + (nm[SEL.p] || SEL.p);
     document.getElementById('pg-h1').textContent = t.title + ': ' + (nm[SEL.p] || SEL.p);

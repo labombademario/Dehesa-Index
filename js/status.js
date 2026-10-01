@@ -3,35 +3,35 @@
   'use strict';
   var T = {
     es: { title: 'Estado de los datos', sub: 'Cada fuente se actualiza con un proceso automático. Aquí se ve cuándo se ejecutó por última vez, si terminó bien, cuándo toca la siguiente y si los datos pasaron las comprobaciones antes de publicarse.',
-      all: 'Procesos', ok: 'Correctos', late: 'Con retraso', error: 'Con error', unknown: 'Sin información', filter: 'Mostrar', fall: 'Todos', fprob: 'Solo con problemas',
+      all: 'Procesos', ok: 'Correctos', late: 'Con retraso', error: 'Con error', not_run: 'Aún sin ejecutar', unknown: 'Sin información', filter: 'Mostrar', fall: 'Todos', fprob: 'Solo con problemas',
       proc: 'Proceso', stat: 'Estado', last: 'Última ejecución', next: 'Próxima', dur: 'Duración', rec: 'Últimas 10', files: 'Datos que escribe', change: 'último cambio', valid: 'validación',
-      s: { ok: 'Correcto', late: 'Retraso', error: 'Error', unknown: 'Sin datos' }, v: { ok: 'válido', warning: 'avisos', error: 'inválido' },
+      s: { ok: 'Correcto', late: 'Retraso', error: 'Error', not_run: 'Sin ejecutar', unknown: 'Sin datos' }, v: { ok: 'válido', warning: 'avisos', error: 'inválido' },
       upd: 'Estado generado', never: 'sin ejecuciones recientes', sec: 's', min: 'min', series: 'series', lines: 'líneas', run: 'Ver ejecución',
       qtitle: 'Comprobaciones de datos', qtxt: 'Antes de guardar un fichero se comprueba su estructura (contrato de esquema) y su contenido: sin valores no numéricos, sin fechas futuras, series ordenadas y sin periodos repetidos, periodo coherente con la frecuencia, último valor igual al último punto y saltos extremos señalados. Si falla, el cambio se descarta y se conserva el dato anterior.',
       qfiles: 'Ficheros comprobados', qerr: 'Con errores', qwarn: 'Con avisos', warns: 'Avisos', none: 'Ninguno', ago: 'hace', h: 'h', d: 'd', in_: 'en', now: 'ahora' },
     en: { title: 'Data status', sub: 'Each source is refreshed by an automated job. This page shows when it last ran, whether it succeeded, when the next run is due and whether the data passed checks before publishing.',
-      all: 'Jobs', ok: 'Healthy', late: 'Late', error: 'Failing', unknown: 'No information', filter: 'Show', fall: 'All', fprob: 'Only with problems',
+      all: 'Jobs', ok: 'Healthy', late: 'Late', error: 'Failing', not_run: 'Not run yet', unknown: 'No information', filter: 'Show', fall: 'All', fprob: 'Only with problems',
       proc: 'Job', stat: 'Status', last: 'Last run', next: 'Next', dur: 'Duration', rec: 'Last 10', files: 'Data it writes', change: 'last change', valid: 'validation',
-      s: { ok: 'OK', late: 'Late', error: 'Error', unknown: 'No data' }, v: { ok: 'valid', warning: 'warnings', error: 'invalid' },
+      s: { ok: 'OK', late: 'Late', error: 'Error', not_run: 'Not run', unknown: 'No data' }, v: { ok: 'valid', warning: 'warnings', error: 'invalid' },
       upd: 'Status generated', never: 'no recent runs', sec: 's', min: 'min', series: 'series', lines: 'lines', run: 'View run',
       qtitle: 'Data checks', qtxt: 'Before a file is saved its structure (schema contract) and content are checked: no non-numeric values, no future dates, sorted series without repeated periods, period consistent with frequency, latest value equal to the last point, extreme jumps flagged. If a check fails, the change is discarded and the previous data is kept.',
       qfiles: 'Files checked', qerr: 'With errors', qwarn: 'With warnings', warns: 'Warnings', none: 'None', ago: '', h: 'h ago', d: 'd ago', in_: 'in', now: 'now' },
     fr: { title: 'État des données', sub: 'Chaque source est actualisée par un processus automatique. Cette page indique la dernière exécution, son résultat, la prochaine échéance et si les données ont passé les contrôles avant publication.',
-      all: 'Processus', ok: 'Corrects', late: 'En retard', error: 'En erreur', unknown: 'Sans information', filter: 'Afficher', fall: 'Tous', fprob: 'Seulement les problèmes',
+      all: 'Processus', ok: 'Corrects', late: 'En retard', error: 'En erreur', not_run: 'Pas encore exécuté', unknown: 'Sans information', filter: 'Afficher', fall: 'Tous', fprob: 'Seulement les problèmes',
       proc: 'Processus', stat: 'État', last: 'Dernière exécution', next: 'Prochaine', dur: 'Durée', rec: '10 dernières', files: 'Données écrites', change: 'dernier changement', valid: 'validation',
-      s: { ok: 'Correct', late: 'Retard', error: 'Erreur', unknown: 'Sans données' }, v: { ok: 'valide', warning: 'avertissements', error: 'invalide' },
+      s: { ok: 'Correct', late: 'Retard', error: 'Erreur', not_run: 'Pas exécuté', unknown: 'Sans données' }, v: { ok: 'valide', warning: 'avertissements', error: 'invalide' },
       upd: 'État généré', never: 'aucune exécution récente', sec: 's', min: 'min', series: 'séries', lines: 'lignes', run: 'Voir l’exécution',
       qtitle: 'Contrôles des données', qtxt: 'Avant d’enregistrer un fichier, on vérifie sa structure (contrat de schéma) et son contenu : pas de valeurs non numériques, pas de dates futures, séries triées sans périodes répétées, période cohérente avec la fréquence, dernière valeur égale au dernier point, sauts extrêmes signalés. En cas d’échec, la modification est écartée et la donnée précédente est conservée.',
       qfiles: 'Fichiers contrôlés', qerr: 'Avec erreurs', qwarn: 'Avec avertissements', warns: 'Avertissements', none: 'Aucun', ago: 'il y a', h: 'h', d: 'j', in_: 'dans', now: 'maintenant' },
     it: { title: 'Stato dei dati', sub: 'Ogni fonte è aggiornata da un processo automatico. Qui si vede l’ultima esecuzione, l’esito, la prossima scadenza e se i dati hanno superato i controlli prima della pubblicazione.',
-      all: 'Processi', ok: 'Corretti', late: 'In ritardo', error: 'In errore', unknown: 'Senza informazioni', filter: 'Mostra', fall: 'Tutti', fprob: 'Solo con problemi',
+      all: 'Processi', ok: 'Corretti', late: 'In ritardo', error: 'In errore', not_run: 'Non ancora eseguito', unknown: 'Senza informazioni', filter: 'Mostra', fall: 'Tutti', fprob: 'Solo con problemi',
       proc: 'Processo', stat: 'Stato', last: 'Ultima esecuzione', next: 'Prossima', dur: 'Durata', rec: 'Ultime 10', files: 'Dati scritti', change: 'ultima modifica', valid: 'validazione',
-      s: { ok: 'Corretto', late: 'Ritardo', error: 'Errore', unknown: 'Senza dati' }, v: { ok: 'valido', warning: 'avvisi', error: 'non valido' },
+      s: { ok: 'Corretto', late: 'Ritardo', error: 'Errore', not_run: 'Non eseguito', unknown: 'Senza dati' }, v: { ok: 'valido', warning: 'avvisi', error: 'non valido' },
       upd: 'Stato generato', never: 'nessuna esecuzione recente', sec: 's', min: 'min', series: 'serie', lines: 'righe', run: 'Vedi esecuzione',
       qtitle: 'Controlli sui dati', qtxt: 'Prima di salvare un file se ne verificano struttura (contratto di schema) e contenuto: nessun valore non numerico, nessuna data futura, serie ordinate senza periodi ripetuti, periodo coerente con la frequenza, ultimo valore uguale all’ultimo punto, salti estremi segnalati. Se il controllo fallisce, la modifica è scartata e si conserva il dato precedente.',
       qfiles: 'File controllati', qerr: 'Con errori', qwarn: 'Con avvisi', warns: 'Avvisi', none: 'Nessuno', ago: '', h: 'h fa', d: 'g fa', in_: 'tra', now: 'ora' }
   };
-  var COL = { ok: '#1a7f4b', late: '#b7791f', error: '#c0392b', unknown: '#8a8a8a' };
+  var COL = { ok: '#1a7f4b', late: '#b7791f', error: '#c0392b', not_run: '#6b7fa3', unknown: '#8a8a8a' };
   var P = null, Q = null, only = false;
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
@@ -51,7 +51,7 @@
     if (!P) { root.innerHTML = ''; return; }
     var sm = P.summary, h = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:10px">';
     h += '<div class="di-card" style="padding:12px 16px"><div style="font-size:11px;font-weight:700;color:var(--text-faint)">' + esc(t.all).toUpperCase() + '</div><div style="font-size:26px;font-weight:700">' + P.pipelines.length + '</div></div>';
-    ['ok', 'late', 'error'].forEach(function (k) { h += '<div class="di-card" style="padding:12px 16px;border-left:4px solid ' + COL[k] + '"><div style="font-size:11px;font-weight:700;color:' + COL[k] + '">' + esc(t[k]).toUpperCase() + '</div><div style="font-size:26px;font-weight:700">' + (sm[k] || 0) + '</div></div>'; });
+    ['ok', 'late', 'error', 'not_run', 'unknown'].filter(function (k) { return k === 'ok' || k === 'late' || k === 'error' || sm[k]; }).forEach(function (k) { h += '<div class="di-card" style="padding:12px 16px;border-left:4px solid ' + COL[k] + '"><div style="font-size:11px;font-weight:700;color:' + COL[k] + '">' + esc(t[k]).toUpperCase() + '</div><div style="font-size:26px;font-weight:700">' + (sm[k] || 0) + '</div></div>'; });
     h += '</div><div style="font-size:12px;color:var(--text-faint);margin-bottom:12px">' + esc(t.upd) + ': ' + esc(when(P.generatedAt)) + ' · <label style="cursor:pointer"><input type="checkbox" id="st-only"' + (only ? ' checked' : '') + '> ' + esc(t.fprob) + '</label></div>';
     var th = 'padding:8px 6px;text-align:left';
     h += '<div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:820px;font-size:13px"><thead><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)"><th style="' + th + '">' + esc(t.proc).toUpperCase() + '</th><th style="' + th + '">' + esc(t.stat).toUpperCase() + '</th><th style="' + th + '">' + esc(t.last).toUpperCase() + '</th><th style="' + th + '">' + esc(t.next).toUpperCase() + '</th><th style="' + th + '">' + esc(t.dur).toUpperCase() + '</th><th style="' + th + '">' + esc(t.rec).toUpperCase() + '</th><th style="' + th + '">' + esc(t.files).toUpperCase() + '</th></tr></thead><tbody>';
