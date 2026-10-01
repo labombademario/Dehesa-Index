@@ -168,6 +168,9 @@ try:
     f2 = L.normalize_rows([dict(base, **{"basis Min Futures Month": "Dec", "basis Max Futures Month": "Mar"})], rc, reg, "t")[0][0]["futuresContract"]
     f3 = L.normalize_rows([base], rc, reg, "t")[0][0]["futuresContract"]
     check("futuros del API real: igual -> uno, distinto -> ambos, ausente -> null", f1 == "Dec" and f2 == "Dec / Mar" and f3 is None, (f1, f2, f3))
+    hub = [r for r in reg["reports"] if r["reportId"] == 3223][0]
+    ho = L.normalize_rows([{"commodity": "Wheat", "report_end_date": "09/30/2026", "price_unit": "$ Per Bushel", "avg_price": "5.5"}], hub, reg, "t")[0]
+    check("mercado sin estado: codigo X.. del registro, no se descarta ni se confunde con un estado", ho and ho[0]["state"] == "XK" and ho[0]["locationType"] == "TERMINAL" and set(reg["hubs"]) - {"doc"} == {"XK", "XU", "XP", "XG"} and all(k in reg["states"] for k in reg["hubs"] if k != "doc"), ho)
     check("unidad no convertida", L.unit_of("$ Per Bushel") == ("USD", "bu") and L.unit_of("Cents Per Bushel") == (None, "Cents Per Bushel"))
     # --- 17. discover: solo candidatos de grano que aun no estan en el registro
     cand = U.discover(reg, None, [{"slug_id": 9001, "report_title": "Example Daily Grain Bids"}, {"slug_id": 2850, "report_title": "Iowa Daily Cash Grain Bids"}, {"slug_id": 9002, "report_title": "Retail Grain Prices"}, {"slug_id": 9003, "report_title": "Hog Report"}])
