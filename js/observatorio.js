@@ -34,6 +34,7 @@
     ty_PRICE: ['Precios', 'Prices', 'Prix', 'Prezzi'], ty_INPUT: ['Insumos y energía', 'Inputs and energy', 'Intrants et énergie', 'Input ed energia'],
     cProd: ['Producto', 'Product', 'Produit', 'Prodotto'], cMkt: ['Mercado', 'Market', 'Marché', 'Mercato'], cObs: ['Observación', 'Observation', 'Observation', 'Osservazione'], cPub: ['Publicada', 'Published', 'Publiée', 'Pubblicata'], cVal: ['Valor', 'Value', 'Valeur', 'Valore'], cChg: ['Cambio', 'Change', 'Variation', 'Variazione'], cFresh: ['Frescura', 'Freshness', 'Fraîcheur', 'Freschezza'], cSrc: ['Fuente', 'Source', 'Source', 'Fonte'],
     cFrom: ['Desde', 'From', 'De', 'Da'], cDays: ['Días', 'Days', 'Jours', 'Giorni'], cExp: ['Esperada', 'Expected', 'Attendue', 'Attesa'], cFreq: ['Frecuencia', 'Frequency', 'Fréquence', 'Frequenza'], cAge: ['Antigüedad', 'Age', 'Ancienneté', 'Età'],
+    more: ['Mostrar 20 más', 'Show 20 more', 'Afficher 20 de plus', 'Mostra altri 20'], showing: ['Mostrando {0} de {1}', 'Showing {0} of {1}', 'Affichage de {0} sur {1}', 'Mostro {0} di {1}'],
     retrieved: ['recuperada', 'retrieved', 'récupérée', 'recuperata'], none: ['Ningún resultado con estos filtros.', 'No results with these filters.', 'Aucun résultat avec ces filtres.', 'Nessun risultato con questi filtri.'],
     err: ['No se pudo cargar data/observatory.json.', 'Could not load data/observatory.json.', 'Impossible de charger data/observatory.json.', 'Impossibile caricare data/observatory.json.'],
     freq_daily: ['diaria', 'daily', 'quotidienne', 'giornaliera'], freq_weekly: ['semanal', 'weekly', 'hebdomadaire', 'settimanale'], freq_monthly: ['mensual', 'monthly', 'mensuelle', 'mensile'], freq_quarterly: ['trimestral', 'quarterly', 'trimestrielle', 'trimestrale'], freq_annual: ['anual', 'annual', 'annuelle', 'annuale'],
@@ -43,6 +44,8 @@
   };
   function t(k) { var a = TX[k]; if (!a) return k; var v = a[li()]; return v === undefined ? a[0] : v; }
   function tf(k, x) { return t(k).replace('{0}', x); }
+  var STEP = 20, LIM = { new: STEP, moves: STEP, late: STEP, up: STEP };  // render perezoso: 20 iniciales + 'Mostrar 20 mas'; los filtros se aplican a TODO el conjunto antes de paginar
+  function pager(key, total) { var n = LIM[key]; return total > n ? '<p class="pt-sub" aria-live="polite">' + esc(t('showing').replace('{0}', n).replace('{1}', total)) + ' <button type="button" class="pt-chip" data-more="' + key + '">' + esc(t('more')) + '</button></p>' : ''; }
   function esc(s) { return String(s === null || s === undefined ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
   function dstr(iso) { if (!iso) return '—'; var p = String(iso).slice(0, 10).split('-'); return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : iso; }
@@ -78,21 +81,21 @@
   function secNew(obs) {
     var l = obs.filter(function (o) { return o.isNew; }).sort(function (a, b) { return (b.publicationDate || b.snapshotDate || '') < (a.publicationDate || a.snapshotDate || '') ? -1 : 1; });
     if (!l.length) return sec('new', t('newObs'), tf('newHint', DOC.newDays), '<p class="pt-note">' + esc(t('none')) + '</p>');
-    var rows = l.slice(0, 40).map(function (o) {
+    var rows = l.slice(0, LIM.new).map(function (o) {
       return '<tr>' + td(t('cProd'), '<strong>' + prodLink(o) + '</strong>') + td(t('cMkt'), esc(rg(o.region))) + td(t('cObs'), esc(dstr(o.observationDate))) +
         td(t('cPub'), esc(dstr(o.publicationDate || o.snapshotDate)) + (o.pubKnown ? '' : ' <span class="pt-sub">(' + esc(t('retrieved')) + ')</span>')) + td(t('cVal'), oVal(o), true) + td(t('cChg'), chg(o.changePct), true) + td(t('cFresh'), fsB(o.freshness)) + td(t('cSrc'), esc(srcName(o.sourceId))) + '</tr>';
     });
-    return sec('new', t('newObs') + ' (' + l.length + ')', tf('newHint', DOC.newDays), table([[t('cProd')], [t('cMkt')], [t('cObs')], [t('cPub')], [t('cVal'), 1], [t('cChg'), 1], [t('cFresh')], [t('cSrc')]], rows) + (l.length > 40 ? '<p class="pt-sub">+ ' + (l.length - 40) + '</p>' : ''));
+    return sec('new', t('newObs') + ' (' + l.length + ')', tf('newHint', DOC.newDays), table([[t('cProd')], [t('cMkt')], [t('cObs')], [t('cPub')], [t('cVal'), 1], [t('cChg'), 1], [t('cFresh')], [t('cSrc')]], rows) + pager('new', l.length));
   }
   function secMoves(obs) {
     var w = F.w, l = obs.filter(function (o) { return o.moves[w]; }).sort(function (a, b) { return Math.abs(b.moves[w].pct) - Math.abs(a.moves[w].pct); });
     var ctl = '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('moves')) + '">' + ['d1', 'd7', 'd30'].map(function (k) { return chip('w', k, t('w_' + k), F.w === k); }).join('') + '</div>';
     if (!l.length) return sec('moves', t('moves'), t('movesHint'), ctl + '<p class="pt-note">' + esc(t('noMoves')) + '</p>');
-    var rows = l.slice(0, 12).map(function (o) {
+    var rows = l.slice(0, LIM.moves).map(function (o) {
       var m = o.moves[w];
       return '<tr>' + td(t('cProd'), '<strong>' + prodLink(o) + '</strong>') + td(t('cMkt'), esc(rg(o.region))) + td(t('cFrom'), esc(dstr(m.from)) + ' → ' + esc(dstr(m.to))) + td(t('cDays'), m.days, true) + td(t('cChg'), chg(m.pct), true) + td(t('cVal'), oVal(o), true) + td(t('cFresh'), fsB(o.freshness)) + td(t('cSrc'), esc(srcName(o.sourceId))) + '</tr>';
     });
-    return sec('moves', t('moves'), t('movesHint'), ctl + table([[t('cProd')], [t('cMkt')], [t('cFrom')], [t('cDays'), 1], [t('cChg'), 1], [t('cVal'), 1], [t('cFresh')], [t('cSrc')]], rows) + '<p class="pt-sub">' + l.length + ' / ' + obs.length + '</p>');
+    return sec('moves', t('moves'), t('movesHint'), ctl + table([[t('cProd')], [t('cMkt')], [t('cFrom')], [t('cDays'), 1], [t('cChg'), 1], [t('cVal'), 1], [t('cFresh')], [t('cSrc')]], rows) + pager('moves', l.length) + '<p class="pt-sub">' + l.length + ' / ' + obs.length + '</p>');
   }
   function secRev() {
     var r = DOC.revisions, b = '<p><strong>' + esc(tf('revCount', r.count)) + '</strong></p><p class="pt-sub">' + esc(r.note) + '</p>';
@@ -111,13 +114,14 @@
     var late = obs.filter(function (o) { return o.freshness !== 'LIVE' && o.freshness !== 'FRESH'; });
     h += '<h3 class="rl-h">' + esc(t('notFresh')) + '</h3>';
     if (!late.length) h += '<p class="pt-note">' + esc(t('allFresh')) + '</p>';
-    else h += table([[t('cProd')], [t('cMkt')], [t('cObs')], [t('cAge'), 1], [t('cExp')], [t('cFresh')], [t('cSrc')]], late.map(function (o) { return '<tr>' + td(t('cProd'), '<strong>' + prodLink(o) + '</strong>') + td(t('cMkt'), esc(rg(o.region))) + td(t('cObs'), esc(dstr(o.observationDate))) + td(t('cAge'), o.ageDays === null ? '—' : o.ageDays + ' d', true) + td(t('cExp'), esc(dstr(o.expectedNext))) + td(t('cFresh'), fsB(o.freshness)) + td(t('cSrc'), esc(srcName(o.sourceId))) + '</tr>'; }));
+    else h += table([[t('cProd')], [t('cMkt')], [t('cObs')], [t('cAge'), 1], [t('cExp')], [t('cFresh')], [t('cSrc')]], late.slice(0, LIM.late).map(function (o) { return '<tr>' + td(t('cProd'), '<strong>' + prodLink(o) + '</strong>') + td(t('cMkt'), esc(rg(o.region))) + td(t('cObs'), esc(dstr(o.observationDate))) + td(t('cAge'), o.ageDays === null ? '—' : o.ageDays + ' d', true) + td(t('cExp'), esc(dstr(o.expectedNext))) + td(t('cFresh'), fsB(o.freshness)) + td(t('cSrc'), esc(srcName(o.sourceId))) + '</tr>'; })) + pager('late', late.length);
     return sec('freshness', t('freshness'), t('freshHint'), h);
   }
   function secUp(obs) {
     var keys = {}; obs.forEach(function (o) { keys[o.k] = o; });
-    var l = DOC.upcoming.filter(function (u) { return keys[u.k]; }).slice(0, 15), h = '';
+    var all = DOC.upcoming.filter(function (u) { return keys[u.k]; }), l = all.slice(0, LIM.up), h = '';
     if (l.length) h += table([[t('cProd')], [t('cMkt')], [t('cExp')], [t('cFreq')], [t('cFresh')], [t('cSrc')]], l.map(function (u) { var o = keys[u.k]; return '<tr>' + td(t('cProd'), '<strong>' + prodLink(o) + '</strong>') + td(t('cMkt'), esc(rg(o.region))) + td(t('cExp'), esc(dstr(u.expectedNext))) + td(t('cFreq'), esc(t('freq_' + u.frequency))) + td(t('cFresh'), fsB(u.freshness)) + td(t('cSrc'), esc(srcName(u.sourceId))) + '</tr>'; }));
+    if (l.length) h += pager('up', all.length);
     else h += '<p class="pt-note">' + esc(t('none')) + '</p>';
     h += '<h3 class="rl-h">' + esc(t('pipeRuns')) + '</h3><ul class="pt-list">' + DOC.pipelines.next.slice(0, 8).map(function (p) { return '<li>' + esc(p.name) + ' · ' + esc(p.nextRun.replace('T', ' ').replace('Z', ' UTC')) + '</li>'; }).join('') + '</ul>';
     return sec('upcoming', t('upcoming'), t('upHint'), h);
@@ -140,7 +144,7 @@
     else h += '<h3 class="rl-h">' + esc(t('attention')) + '</h3><ul class="pt-list">' + p.attention.map(function (x) { return '<li><span class="pt-badge ' + (x.status === 'error' ? 'pt-fs-STALE' : 'pt-fs-DELAYED') + '">' + esc(t(x.status)) + '</span> ' + (x.url ? '<a href="' + esc(x.url) + '" rel="noopener">' + esc(x.name) + '</a>' : esc(x.name)) + (x.lastAt ? ' <span class="pt-sub">· ' + esc(dstr(x.lastAt)) + '</span>' : '') + '</li>'; }).join('') + '</ul>';
     return sec('pipelines', t('pipelines'), '', h);
   }
-  function render() {
+  function render(keep) {
     var body = document.getElementById('ob-body'); if (!body) return;
     document.getElementById('ob-h1').textContent = t('title'); document.getElementById('ob-sub').textContent = t('sub'); document.title = 'Dehesa Index — ' + t('title');
     if (!DOC) return;
@@ -150,14 +154,18 @@
     h += '<nav class="pt-tabs" aria-label="' + esc(t('title')) + '">' + [['new', 'newObs'], ['moves', 'moves'], ['revisions', 'revisions'], ['freshness', 'freshness'], ['upcoming', 'upcoming'], ['coverage', 'coverage'], ['quality', 'quality'], ['pipelines', 'pipelines']].map(function (x) { return '<a class="pt-chip" href="#' + x[0] + '">' + esc(t(x[1])) + '</a>'; }).join('') + '</nav>';
     h += secNew(obs) + secMoves(obs) + secRev() + secFresh(obs) + secUp(obs) + secCov() + secQ() + secPipes();
     body.innerHTML = h;
-    if (location.hash && /^#[a-z]+$/.test(location.hash)) { var el = document.getElementById(location.hash.slice(1)); if (el && el.scrollIntoView) el.scrollIntoView(); }
+    if (!keep && location.hash && /^#[a-z]+$/.test(location.hash)) { var el = document.getElementById(location.hash.slice(1)); if (el && el.scrollIntoView) el.scrollIntoView(); }
   }
+  function resetLim() { LIM = { new: STEP, moves: STEP, late: STEP, up: STEP }; }
   function onClick(e) {
+    var mb = e.target.closest ? e.target.closest('button[data-more]') : null;
+    if (mb) { var key = mb.getAttribute('data-more'); LIM[key] += STEP; render(true); var nb = document.querySelector('button[data-more="' + key + '"]'); if (nb && nb.focus) nb.focus({ preventScroll: true }); return; }
     var b = e.target.closest ? e.target.closest('button[data-f],button[data-reset]') : null; if (!b) return;
+    resetLim();
     if (b.getAttribute('data-reset')) { F = { c: '', p: '', s: '', t: '', w: F.w }; } else F[b.getAttribute('data-f')] = b.getAttribute('data-v');
     writeUrl(); render();
   }
-  function onChange(e) { var el = e.target, f = el.getAttribute && el.getAttribute('data-f'); if (f && el.tagName === 'SELECT') { F[f] = el.value; writeUrl(); render(); } }
+  function onChange(e) { var el = e.target, f = el.getAttribute && el.getAttribute('data-f'); if (f && el.tagName === 'SELECT') { resetLim(); F[f] = el.value; writeUrl(); render(); } }
   var prevCb = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prevCb) prevCb.apply(this, arguments); render(); };
   window.DehesaShared.init('informacion');
