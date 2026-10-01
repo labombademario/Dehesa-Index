@@ -60,10 +60,10 @@
     if (!D) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; return; }
     var all = []; G.forEach(function (g) { Object.keys(g.k).forEach(function (k) { if (ser(k)) all.push({ k: k, g: g, l: g.k[k][P] }); }); });
     if (!all.some(function (x) { return x.k === SEL.key; })) SEL.key = all[0].k;
-    var a = ser(SEL.key), last = a[a.length - 1], prev = pm(a), yv = find(a, py(last[0])), shown = a.slice(-SEL.span);
+    var a = ser(SEL.key), last = a[a.length - 1], prev = pm(a), yv = find(a, py(last[0])), shown = DIRange.cut(a, SEL.span);
     var cur = all.filter(function (x) { return x.k === SEL.key; })[0];
     var opts = G.map(function (g) { return '<optgroup label="' + esc(g.l[P]) + '">' + all.filter(function (x) { return x.g === g; }).map(function (x) { return '<option value="' + esc(x.k) + '"' + (x.k === SEL.key ? ' selected' : '') + '>' + esc(x.l) + '</option>'; }).join('') + '</optgroup>'; }).join('');
-    var sp = [12, 36, 60].map(function (n) { return '<option value="' + n + '"' + (n === SEL.span ? ' selected' : '') + '>' + esc(t['s' + n]) + '</option>'; }).join('');
+    var sp = DIRange.options(SEL.span, lang(), a);
     var cards = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:14px 0">' + card(t.latest + ' · ' + last[0], nf(last[1], 1), '<span style="color:var(--text-faint)">2011 = 100</span>') + card(t.vsPrev, prev !== null ? chg(pct(last[1], prev)) : '—', prev !== null ? '<span style="color:var(--text-faint)">' + nf(prev, 1) + '</span>' : '') + card(t.vsYear, yv !== null ? chg(pct(last[1], yv)) : '—', yv !== null ? '<span style="color:var(--text-faint)">' + esc(py(last[0])) + ': ' + nf(yv, 1) + '</span>' : '') + '</div>';
     var chart = '<div class="di-card" style="padding:14px 16px"><div style="font-weight:600;margin-bottom:6px">' + esc(cur.l) + ' · ' + esc(t.hist) + '</div>' + lineChart(shown) + '</div>';
     var th = function (x, r) { return '<th style="padding:10px 6px;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:' + (r ? 'right' : 'left') + '">' + esc(x).toUpperCase() + '</th>'; };

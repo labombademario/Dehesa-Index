@@ -1,7 +1,7 @@
 /* Dehesa Index — Mercados USDA. Lee data/ams/*.json (USDA AMS Market News, API MARS). */
 (function () {
   'use strict';
-  var IDX = null, CACHE = {}, SEL = { fam: null, id: null, f: {}, q: '', all: false, sel: null, lim: 60 };
+  var IDX = null, CACHE = {}, SEL = { fam: null, id: null, f: {}, q: '', all: false, sel: null, lim: 60, span: 0 };
   var COL = '#2a6f97';
   var T = {
     es: { title: 'Mercados USDA', sub: 'Precios de mercado de EE. UU. tal como los publica USDA AMS Market News: piensos y subproductos, etanol, granos, legumbres, aves, huevos, ganado, heno, lácteos, frutas y hortalizas. Unidades y monedas originales, sin convertir.',
@@ -45,6 +45,7 @@
   function chart(s) {
     var pts = [];
     s.p.forEach(function (p) { var v = val(p); if (v) pts.push({ d: p[0], v: v.v, lo: p[2], hi: p[3], mid: v.mid }); });
+    if (SEL.span && pts.length > 2) { var kk = DIRange.cut(pts.map(function (p) { return [p.d]; }), SEL.span).length; pts = pts.slice(-kk); }
     if (pts.length < 2) return '<p class="di-movers-hint">' + esc(t().history) + ': ' + pts.length + ' ' + esc(t().pts) + '</p>';
     var W = 640, H = 232, L = 68, R = 14, Tp = 12, B = 48, vs = pts.map(function (p) { return p.v; }), unit = s.u || '';
     var mn = Math.min.apply(null, vs), mx = Math.max.apply(null, vs);
@@ -100,7 +101,7 @@
       var detail = '';
       if (SEL.sel !== null && doc.series[SEL.sel]) {
         var s = doc.series[SEL.sel], c = chart(s);
-        detail = '<div class="di-card" style="padding:16px 18px;margin-bottom:14px"><h3 style="font-size:15px;margin:0 0 2px">' + esc(labelOf(doc, s) || doc.title) + '</h3><p class="di-movers-hint" style="margin:0 0 6px">' + esc(s.u) + ' · ' + s.p.length + ' ' + esc(x.pts) + '</p>' + (c.html || c) + '</div>';
+        detail = '<div class="di-card" style="padding:16px 18px;margin-bottom:14px"><h3 style="font-size:15px;margin:0 0 2px">' + esc(labelOf(doc, s) || doc.title) + '</h3><p class="di-movers-hint" style="margin:0 0 6px">' + esc(s.u) + ' · ' + s.p.length + ' ' + esc(x.pts) + '</p><label style="font-size:13px;display:inline-block;margin:0 0 6px">' + esc(DIRange.title(lang())) + ' <select id="ms-span" class="di-compare-select">' + DIRange.options(SEL.span, lang(), s.p.length > 1 ? DIRange.span([[s.p[0][0]], [s.p[s.p.length - 1][0]]]) : 0) + '</select></label>' + (c.html || c) + '</div>';
         if (c.html) detail = detail.replace('</div></div>', '</div></div>');
       }
       body.innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px"><label style="font-size:13px">' + esc(x.family) + '<br><select id="ms-f" class="di-compare-select">' + fopts + '</select></label><label style="font-size:13px;flex:1;min-width:220px">' + esc(x.report) + '<br><select id="ms-r" class="di-compare-select" style="max-width:100%">' + ropts + '</select></label></div>' +
@@ -109,6 +110,7 @@
         detail + '<div class="di-card" style="padding:6px 16px;overflow-x:auto">' + (total ? '<table style="border-collapse:collapse;width:100%;min-width:560px;font-size:14px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:10px 6px">' + esc(x.desc.toUpperCase()) + '</th><th style="padding:10px 6px">' + esc(x.unit.toUpperCase()) + '</th><th style="padding:10px 6px">' + esc(x.date.toUpperCase()) + '</th><th style="padding:10px 6px;text-align:right">' + esc(x.price.toUpperCase()) + '</th><th style="padding:10px 6px;text-align:right">' + esc(x.range.toUpperCase()) + '</th><th style="padding:10px 6px;text-align:right">' + esc(x.chg.toUpperCase()) + '</th></tr>' + trs + '</table>' : '<p class="di-movers-hint" style="padding:14px 0">' + esc(x.none) + '</p>') + '</div>' +
         '<p class="di-movers-hint" style="margin-top:6px">' + shown.length + ' ' + esc(x.of) + ' ' + total + ' ' + esc(x.shown) + (total > shown.length ? ' · <button type="button" class="di-link-btn" id="ms-more">' + esc(x.more) + '</button>' : '') + '</p>' +
         '<p class="di-info-api-notice" style="margin:14px 0">' + esc(x.caveat) + '</p><p class="di-movers-hint">' + esc(x.src) + ' <a href="metodologia.html#mercados">' + esc(x.methodLink) + '</a>.</p>';
+      var spEl = document.getElementById('ms-span'); if (spEl) spEl.onchange = function (e) { SEL.span = parseInt(e.target.value, 10); page(); };
       document.getElementById('ms-f').onchange = function (e) { SEL.fam = e.target.value; SEL.id = null; SEL.q = ''; SEL.lim = 60; page(); };
       document.getElementById('ms-r').onchange = function (e) { SEL.id = parseInt(e.target.value, 10); SEL.f = {}; SEL.sel = null; SEL.q = ''; SEL.lim = 60; page(); };
       document.getElementById('ms-all').onchange = function (e) { SEL.all = e.target.checked; page(); };

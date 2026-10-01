@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   var D = null;
-  var SEL = { tab: 'hogs', key: null, state: null };
+  var SEL = { tab: 'hogs', key: null, state: null, span: 0 };
   var C1 = '#1d5178', SEQ = ['#eef2f5', '#c6d5e0', '#8fb0c8', '#4f82a6', '#1d5178'];
   var ST = { AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California', CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', DC: 'District of Columbia', FL: 'Florida', GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa', KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland', MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi', MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey', NM: 'New Mexico', NY: 'New York', NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio', OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina', SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont', VA: 'Virginia', WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming' };
   var P = 0; // índice de idioma en las tablas de etiquetas: es, en, fr, it
@@ -142,11 +142,12 @@
     var cards = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:14px 0">' + card(t.latest + ' · ' + last[0], esc(fmt(s.u, last[1], t)), '<span style="color:var(--text-faint)">' + esc(unitNote(s.u, t)) + '</span>') +
       card(t.vsPrev, prev ? chgHtml(pct(last[1], prev[1])) : '—', prev ? '<span style="color:var(--text-faint)">' + esc(prev[0] + ': ' + fmt(s.u, prev[1], t)) + '</span>' : '') +
       card(t.vsYear, py !== null ? chgHtml(pct(last[1], py)) : '—', py !== null ? '<span style="color:var(--text-faint)">' + esc(prevYear(last[0]) + ': ' + fmt(s.u, py, t)) + '</span>' : '') + '</div>';
-    var chart = '<div class="di-card" style="padding:14px 16px"><div style="font-weight:600;margin-bottom:6px">' + esc(label(SEL.key)) + ' · ' + esc(t.hist) + '</div>' + lineChart(a, s.u, t) + '</div>';
+    var chart = '<div class="di-card" style="padding:14px 16px"><div style="font-weight:600;margin-bottom:6px">' + esc(label(SEL.key)) + ' · ' + esc(t.hist) + '</div>' + lineChart(DIRange.cut(a, SEL.span), s.u, t) + '</div>';
     var st = Object.keys(s.s).length ? statesBlock(SEL.key, s, t) : '';
-    root.innerHTML = '<div style="margin-bottom:14px">' + tabHtml + '</div><label style="font-size:13px">' + esc(t.series) + '<br><select id="gn-sel" class="di-compare-select" style="max-width:100%">' + opts + '</select></label>' + cards + chart + st +
+    root.innerHTML = '<div style="margin-bottom:14px">' + tabHtml + '</div><label style="font-size:13px">' + esc(t.series) + '<br><select id="gn-sel" class="di-compare-select" style="max-width:100%">' + opts + '</select></label> <label style="font-size:13px;margin-left:12px">' + esc(DIRange.title(lang())) + '<br><select id="gn-span" class="di-compare-select">' + DIRange.options(SEL.span, lang(), a) + '</select></label>' + cards + chart + st +
       '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.note) + '</p><p class="di-movers-hint">' + esc(t.src) + '</p>';
     Array.prototype.forEach.call(root.querySelectorAll('[data-tab]'), function (b) { b.onclick = function () { SEL.tab = b.getAttribute('data-tab'); SEL.key = null; render(); }; });
+    document.getElementById('gn-span').onchange = function (e) { SEL.span = parseInt(e.target.value, 10); render(); };
     document.getElementById('gn-sel').onchange = function (e) { SEL.key = e.target.value; render(); };
     var box = document.getElementById('gn-map'), tip = document.getElementById('gn-tip');
     if (box) { var wrap = tip.parentNode; Array.prototype.forEach.call(box.querySelectorAll('path'), function (p) {
