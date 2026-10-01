@@ -50,6 +50,32 @@
     return window.DehesaChart.render({ series: series, xMode: 'time', xTitle: t.date, yTitle: s.unit, aria: s.label + ' (' + s.unit + ')', noLegend: true, vFmt: function (v) { return nf(v, d); },
       xFmt: s.frequency === 'annual' ? function (x) { return new Date(x).getUTCFullYear(); } : undefined });
   }
+
+  /* Local vs nacional: prima o descuento de cada región frente al precio nacional publicado por la misma fuente */
+  var LV2 = { es: ['Local frente a nacional', 'Prima (+) o descuento (−) de cada región sobre el precio nacional de la misma fuente, mismo periodo.', 'Región', 'Región', 'Nacional', 'Prima / descuento', 'Esta serie en el tiempo', 'Sin comparación nacional publicada para esta serie.'],
+    en: ['Local vs national', 'Premium (+) or discount (−) of each region over the national price from the same source, same period.', 'Region', 'Region', 'National', 'Premium / discount', 'This series over time', 'No published national benchmark for this series.'],
+    fr: ['Local vs national', 'Prime (+) ou décote (−) de chaque région par rapport au prix national de la même source, même période.', 'Région', 'Région', 'National', 'Prime / décote', 'Cette série dans le temps', 'Pas de référence nationale publiée pour cette série.'],
+    it: ['Locale vs nazionale', 'Premio (+) o sconto (−) di ogni regione sul prezzo nazionale della stessa fonte, stesso periodo.', 'Regione', 'Regione', 'Nazionale', 'Premio / sconto', 'Questa serie nel tempo', 'Nessun riferimento nazionale pubblicato per questa serie.'] };
+  function lvKey(sr) {
+    var m;
+    if (sr.group === 'milk_regions') { m = /^(.+?), (organic|conventional) milk: (.*)$/.exec(sr.label); return m ? { key: m[2] + '|' + m[3], reg: m[1], nat: new RegExp('^' + m[2].charAt(0).toUpperCase() + m[2].slice(1) + ' milk: ' + m[3].replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$', 'i') } : null; }
+    if (sr.group === 'meat_regions') { m = /^(.+?): (.+)$/.exec(sr.label); return m ? { key: m[1], reg: m[2], nat: new RegExp('^' + m[1].replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ' \\(Germany, carcass\\)$', 'i') } : null; }
+    return null;
+  }
+  function ptAt(sr, per) { for (var i = sr.points.length - 1; i >= 0; i--) if (sr.points[i][0] === per) return sr.points[i][1]; return null; }
+  function localBox(cur, c) {
+    var k = lvKey(cur); if (!k) return ''; var w = LV2[lang()] || LV2.es, nat = null;
+    c.series.forEach(function (x) { if (!nat && x.group !== cur.group && k.nat.test(x.label)) nat = x; });
+    if (!nat) return '<div class="di-movers-hint" style="margin-top:6px">' + esc(w[7]) + '</div>';
+    var rows = [];
+    c.series.forEach(function (x) { if (x.group !== cur.group) return; var kk = lvKey(x); if (!kk || kk.key !== k.key || x.latestPeriod !== cur.latestPeriod) return; var nv = ptAt(nat, x.latestPeriod); if (nv == null || !nv) return; rows.push({ x: x, reg: kk.reg, nv: nv, pr: (x.latest - nv) / nv * 100 }); });
+    if (rows.length < 2) return '';
+    rows.sort(function (a, b) { return b.pr - a.pr; });
+    var mx = Math.max.apply(null, rows.map(function (r) { return Math.abs(r.pr); })) || 1, d = dec(cur.latest);
+    return '<div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px"><b>' + esc(w[0]) + '</b><div class="di-movers-hint" style="margin:2px 0 6px">' + esc(w[1]) + ' ' + esc(plabel(cur.latestPeriod, cur.frequency)) + ' · ' + esc(cur.unit) + '</div>' +
+      '<table style="border-collapse:collapse;width:100%;font-size:13px"><tr style="font-size:10.5px;font-weight:700;color:var(--text-faint);text-align:left"><th style="padding:4px 6px">' + esc(w[3].toUpperCase()) + '</th><th style="padding:4px 6px;text-align:right">' + esc(cur.unit.toUpperCase()) + '</th><th style="padding:4px 6px;text-align:right">' + esc(w[4].toUpperCase()) + ' ' + nf(rows[0].nv, d) + '</th><th style="padding:4px 6px;min-width:130px">' + esc(w[5].toUpperCase()) + '</th></tr>' +
+      rows.map(function (r) { var col = r.pr >= 0 ? '#2f6b4a' : '#a33', cur2 = r.x.id === cur.id; return '<tr style="border-top:1px solid var(--border);' + (cur2 ? 'font-weight:700;background:var(--surface-alt)' : '') + '"><td style="padding:5px 6px">' + esc(r.reg) + '</td><td style="padding:5px 6px;text-align:right">' + nf(r.x.latest, d) + '</td><td style="padding:5px 6px;text-align:right;color:var(--text-muted)">' + nf(r.nv, d) + '</td><td style="padding:5px 6px"><span style="display:inline-block;height:8px;width:' + Math.round(Math.abs(r.pr) / mx * 80) + 'px;background:' + col + ';vertical-align:middle;border-radius:2px"></span> <span style="color:' + col + '">' + (r.pr > 0 ? '+' : r.pr < 0 ? '−' : '') + nf(Math.abs(r.pr), 1) + ' %</span></td></tr>'; }).join('') + '</table></div>';
+  }
   var PS = null, CF = { ES: 'spain-stats', FR: 'france-stats', DE: 'germany-stats', BE: 'belgium-stats', AT: 'austria-stats', PT: 'portugal-stats', CA: 'canada-stats', AU: 'country-stats', DK: 'country-stats', NL: 'country-stats', US: 'interest-rates-stats', EU: 'interest-rates-stats' },
     LV = { es: ['Linaje del dato', 'Fichero', 'último cambio', 'próxima ejecución prevista', 'última ejecución'], en: ['Data lineage', 'File', 'last change', 'next run due', 'last run'], fr: ['Lignage de la donnée', 'Fichier', 'dernier changement', 'prochaine exécution prévue', 'dernière exécution'], it: ['Lignaggio del dato', 'File', 'ultima modifica', 'prossima esecuzione prevista', 'ultima esecuzione'] };
   function dshort(i) { try { return new Date(i).toLocaleDateString(lang(), { day: 'numeric', month: 'short', year: 'numeric' }); } catch (e) { return String(i).slice(0, 10); } }
@@ -90,7 +116,7 @@
     if (cur) {
       var ch = cur.changePct;
       html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(cur.label.toUpperCase()) + ' (' + esc(cur.unit) + ')' + watchBtn(cur) + '</div>' + chartFor(cur) +
-        '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div>' + revBox(cur) + '</div>';
+        '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div>' + localBox(cur, c) + revBox(cur) + '</div>';
     } else html += '<p class="di-movers-hint">' + t.none + '</p>';
     html += '<details style="margin-top:14px"><summary style="cursor:pointer;font-size:13px">' + t.table + '</summary><div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.series.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.latest.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:8px 6px">' + t.period.toUpperCase() + '</th><th style="padding:8px 6px">' + t.unit.toUpperCase() + '</th></tr>' +
       c.series.map(function (s) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px">' + esc(s.label) + '</td><td style="padding:8px 6px;text-align:right">' + nf(s.latest, dec(s.latest)) + '</td><td style="padding:8px 6px;text-align:right">' + (s.changePct == null ? '' : (s.changePct > 0 ? '+' : s.changePct < 0 ? '−' : '') + nf(Math.abs(s.changePct), 1) + ' %') + '</td><td style="padding:8px 6px">' + esc(plabel(s.latestPeriod, s.frequency)) + '</td><td style="padding:8px 6px">' + esc(s.unit) + '</td></tr>'; }).join('') + '</table></div></details>' +
