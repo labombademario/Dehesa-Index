@@ -41,7 +41,7 @@
   },
   "sources": {
    "type": "object",
-   "additionalProperties": {
+   "additionalSchema": {
     "type": "object",
     "required": [
      "lagDays",

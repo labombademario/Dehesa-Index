@@ -189,8 +189,27 @@ def run_consistency():
     for w in warns: print("WARNING  consistencia  %s" % w[:230])
     print("Consistencia: %d errores, %d avisos" % (len(errs), len(warns)))
     return errs, warns
+SCHEMA_KEYWORDS = {"$schema", "title", "type", "enum", "items", "maxItems", "minItems", "maxLength", "minLength", "maximum", "minimum", "minProperties", "pattern", "properties", "required", "additionalSchema"}
+def schema_lint():
+    """Un esquema con una palabra clave que este validador NO implementa se ignoraria en silencio (falsa seguridad): se rechaza."""
+    bad = []
+    def walk(o, where):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if k not in SCHEMA_KEYWORDS: bad.append("%s: palabra clave no soportada '%s'" % (where, k))
+                if k == "properties":
+                    for pk, pv in v.items(): walk(pv, where + "." + pk)
+                elif k not in ("enum", "required"): walk(v, where)
+        elif isinstance(o, list):
+            for x in o: walk(x, where)
+    for f in sorted(SCH.glob("*.schema.json")): walk(json.loads(f.read_text()), f.name)
+    return bad
 def main():
     a = sys.argv[1:]
+    if "--all" in a:
+        lint = schema_lint()
+        for m in lint[:10]: print("ERROR    esquema  " + m)
+        if lint: sys.exit(1)
     if "--derived" in a or "--all" in a or "--consistency" in a:
         strict = "--strict" in a; results = []
         if "--all" in a:

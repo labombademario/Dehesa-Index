@@ -1,0 +1,102 @@
+{
+ "schemaVersion": 1,
+ "_doc": "Metadatos curados de producto (no son datos de una fuente). Los lee scripts/build-product-compare.py (series comparables) y, en la ficha de producto, la capa de relaciones. Anadir un producto aqui lo incorpora al comparador sin tocar codigo.",
+ "bushelKg": {
+  "trigo": 27.2155,
+  "maiz": 25.4012,
+  "cebada": 21.7724,
+  "avena": 14.5149
+ },
+ "products": {
+  "trigo": {
+   "compare": {
+    "eu": [
+     "cereales",
+     "breadmaking-common-wheat-national-average-not-specified"
+    ],
+    "per": 1000
+   },
+   "label": {
+    "es": "Trigo blando",
+    "en": "Bread wheat",
+    "fr": "Blé tendre",
+    "it": "Frumento tenero"
+   }
+  },
+  "maiz": {
+   "compare": {
+    "eu": [
+     "cereales",
+     "feed-maize-national-average-not-specified"
+    ],
+    "per": 1000
+   },
+   "label": {
+    "es": "Maíz",
+    "en": "Maize (corn)",
+    "fr": "Maïs",
+    "it": "Mais"
+   }
+  },
+  "cebada": {
+   "compare": {
+    "eu": [
+     "cereales",
+     "feed-barley-national-average-not-specified"
+    ],
+    "per": 1000
+   },
+   "label": {
+    "es": "Cebada forrajera",
+    "en": "Feed barley",
+    "fr": "Orge fourragère",
+    "it": "Orzo da foraggio"
+   }
+  },
+  "avena": {
+   "compare": {
+    "eu": [
+     "cereales",
+     "feed-oats-national-average-not-specified"
+    ],
+    "per": 1000
+   },
+   "label": {
+    "es": "Avena",
+    "en": "Oats",
+    "fr": "Avoine",
+    "it": "Avena"
+   }
+  },
+  "colza": {
+   "compare": {
+    "eu": [
+     "oleaginosas",
+     "rapeseed"
+    ],
+    "per": 1000
+   },
+   "label": {
+    "es": "Colza",
+    "en": "Rapeseed (canola)",
+    "fr": "Colza",
+    "it": "Colza"
+   }
+  },
+  "leche": {
+   "compare": {
+    "eu": [
+     "leche",
+     "raw-milk"
+    ],
+    "per": 100
+   },
+   "label": {
+    "es": "Leche cruda",
+    "en": "Raw milk",
+    "fr": "Lait cru",
+    "it": "Latte crudo"
+   }
+  }
+ }
+}

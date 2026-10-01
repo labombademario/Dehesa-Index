@@ -25,7 +25,7 @@
   },
   "series": {
    "type": "object",
-   "additionalProperties": {
+   "additionalSchema": {
     "type": "object",
     "required": [
      "frequency",

@@ -443,6 +443,14 @@ def consistency_prices(errs, warns):
         if a not in ser or b not in ser: pend.append("%s/%s" % (reg, rid))
     if pend: warns.append("relaciones sin las dos series en prices/intelligence (quedan 'pending'): %d de %d (%s)" % (len(pend), len(defs), ", ".join(pend[:6])))
 
+def product_metadata(doc, errs, warns, stats):
+    for pid, m in doc["products"].items():
+        c = m.get("compare")
+        if c and not (D / "eu" / c["eu"][0] / (c["eu"][1] + ".json")).exists(): errs.append("%s: serie UE %s/%s inexistente" % (pid, c["eu"][0], c["eu"][1]))
+    for pid in doc["bushelKg"]:
+        if pid not in doc["products"]: errs.append("bushelKg de un producto desconocido: %s" % pid)
+    stats["series"] = len(doc["products"])
+
 def freshness_policy(doc, errs, warns, stats):
     if set(doc["states"]) != {"LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "PENDING"}: errs.append("estados distintos de los 6 definidos")
     if not set(doc["okStates"]) <= set(doc["states"]): errs.append("okStates fuera de states")

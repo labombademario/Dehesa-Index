@@ -235,6 +235,12 @@
    [
     "data_anomalies"
    ]
+  ],
+  "product-metadata.json": [
+   "product-metadata",
+   [
+    "product_metadata"
+   ]
   ]
  },
  "globs": {

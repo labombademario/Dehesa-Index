@@ -1324,6 +1324,7 @@
   "alberta-weekly-debug.json",
   "freshness.json",
   "freshness-policy.json",
-  "data-anomalies.json"
+  "data-anomalies.json",
+  "product-metadata.json"
  ]
 }

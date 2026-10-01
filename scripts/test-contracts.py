@@ -45,6 +45,8 @@ CASES = [
  ("gats.json", "mes futuro", lambda d: d["months"].append("209901")),
  ("freshness.json", "recuento incoherente", lambda d: d["catalog"]["byState"].__setitem__("LIVE", d["catalog"]["byState"]["LIVE"] + 1)),
  ("freshness.json", "estado inventado", lambda d: d["latest"]["observations"][0].__setitem__("state", "MAYBE")),
+ ("product-metadata.json", "serie UE inexistente", lambda d: d["products"]["trigo"]["compare"].__setitem__("eu", ["cereales", "no-existe"])),
+ ("product-metadata.json", "sin etiqueta en un idioma", lambda d: d["products"]["trigo"]["label"].pop("it")),
  ("freshness-policy.json", "rezago sin evidencia", lambda d: d["sources"]["statcan"].__setitem__("evidence", "x")),
  ("freshness-policy.json", "rezago absurdo", lambda d: d["sources"]["statcan"]["lagDays"].__setitem__("monthly", 9999)),
  ("quality.json", "freshness incoherente", lambda d: d["observations"][0].__setitem__("freshness", "STALE")),

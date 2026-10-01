@@ -11,15 +11,9 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import freshness as FR
 NOW = FR.today_ord()
 FROM = '2008-01'
-BU = {'trigo': 27.2155, 'maiz': 25.4012, 'cebada': 21.7724, 'avena': 14.5149}
-PRODUCTS = {
-    'trigo': dict(eu=('cereales', 'breadmaking-common-wheat-national-average-not-specified'), per=1000, label=dict(es='Trigo blando', en='Bread wheat', fr='Blé tendre', it='Frumento tenero')),
-    'maiz': dict(eu=('cereales', 'feed-maize-national-average-not-specified'), per=1000, label=dict(es='Maíz', en='Maize (corn)', fr='Maïs', it='Mais')),
-    'cebada': dict(eu=('cereales', 'feed-barley-national-average-not-specified'), per=1000, label=dict(es='Cebada forrajera', en='Feed barley', fr='Orge fourragère', it='Orzo da foraggio')),
-    'avena': dict(eu=('cereales', 'feed-oats-national-average-not-specified'), per=1000, label=dict(es='Avena', en='Oats', fr='Avoine', it='Avena')),
-    'colza': dict(eu=('oleaginosas', 'rapeseed'), per=1000, label=dict(es='Colza', en='Rapeseed (canola)', fr='Colza', it='Colza')),
-    'leche': dict(eu=('leche', 'raw-milk'), per=100, label=dict(es='Leche cruda', en='Raw milk', fr='Lait cru', it='Latte crudo')),
-}
+META = json.loads((D / 'product-metadata.json').read_text())  # productos y series UE configuradas: data/product-metadata.json (no en el codigo)
+BU = META['bushelKg']
+PRODUCTS = {pid: dict(eu=tuple(m['compare']['eu']), per=m['compare']['per'], label=m['label']) for pid, m in META['products'].items() if m.get('compare')}
 KG = {'tonelada': 1000.0, '100kg': 100.0, 'cwt': 45.3592}
 MON = {m: i + 1 for i, m in enumerate('JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC'.split())}
 EPOCH = datetime.date(2000, 1, 1)

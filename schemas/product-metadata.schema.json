@@ -1,0 +1,71 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Product metadata",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "bushelKg",
+  "products"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "bushelKg": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "number",
+    "minimum": 0.0001
+   }
+  },
+  "products": {
+   "type": "object",
+   "minProperties": 1,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "label"
+    ],
+    "properties": {
+     "label": {
+      "type": "object",
+      "required": [
+       "es",
+       "en",
+       "fr",
+       "it"
+      ],
+      "additionalSchema": {
+       "type": "string",
+       "minLength": 1
+      }
+     },
+     "compare": {
+      "type": "object",
+      "required": [
+       "eu",
+       "per"
+      ],
+      "properties": {
+       "eu": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+         "type": "string",
+         "minLength": 1
+        }
+       },
+       "per": {
+        "enum": [
+         100,
+         1000
+        ]
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
