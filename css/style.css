@@ -1295,3 +1295,10 @@ html[data-theme="dark"] .rl-st-WEAK_OR_UNSTABLE { color: #e0b04a; }
 .rl-barwrap i { display: block; height: 10px; background: var(--accent); border-radius: 3px; min-width: 1px; }
 .rl-barwrap i.neg { background: #a9491f; }
 @media (max-width: 640px) { .rl-flow { grid-template-columns: 1fr; } .rl-arrow { justify-self: center; transform: rotate(90deg); } .rl-list { grid-template-columns: 1fr; } }
+
+/* ---------- Observatorio de datos: observatorio.html ---------- */
+.ob-selrow { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 4px 0 8px; }
+.ob-sel { display: flex; gap: 8px; align-items: center; width: 100%; max-width: 360px; min-width: 0; }
+.ob-sel select { font: inherit; font-size: 13px; padding: 6px 8px; min-height: 36px; flex: 1; min-width: 0; }
+.rl-prod select { min-width: 0; }
+#ob-body .pt-sec { scroll-margin-top: 70px; }

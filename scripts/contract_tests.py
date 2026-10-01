@@ -537,6 +537,61 @@ def relationships(doc, errs, warns, stats):
                 elif res["lag"] != s["lag"] or res["n"] != s["n"] or (res["r"] is not None and c is not None and abs(res["r"] - c) > 1e-3): errs.append("%s: el recalculo desde el historico (lag %s n %s r %s) difiere del publicado (lag %s n %s r %s)" % (rid, res["lag"], res["n"], res["r"], s["lag"], s["n"], c))
     stats["recomputed"] = recomputed
 
+def observatory(doc, errs, warns, stats):
+    """Coherencia de data/observatory.json con sus fuentes (freshness, pipeline-status, anomalias, historicos de precios)."""
+    ob = doc["observations"]; ks = [o["k"] for o in ob]; stats["series"] = len(ob)
+    if len(ks) != len(set(ks)): errs.append("claves de observacion repetidas")
+    if ks != sorted(ks, key=lambda k: (k.split("/")[2], k.split("/")[1])): errs.append("observaciones sin ordenar por region y producto")
+    fr = doc["freshness"]
+    if fr["latest"]["total"] != len(ob): errs.append("freshness.latest.total %s != %d observaciones" % (fr["latest"]["total"], len(ob)))
+    for blk in ("latest", "catalog"):
+        if sum(fr[blk]["byState"].values()) != fr[blk]["total"]: errs.append("freshness.%s: la suma de estados no es el total" % blk)
+    if sum(1 for o in ob if o["freshness"] == "STALE") > 3 * max(1, fr["latest"]["byState"].get("STALE", 0)) + 3: warns.append("muchas observaciones STALE frente a freshness.json")
+    ps = json.loads((D / "pipeline-status.json").read_text(encoding="utf-8")); pl = doc["pipelines"]
+    if sum(pl["summary"].values()) != pl["total"] or pl["total"] != len(ps["pipelines"]): errs.append("pipelines: resumen y total no coinciden con pipeline-status.json")
+    if sorted(x["workflow"] for x in pl["attention"]) != sorted(p["workflow"] for p in ps["pipelines"] if p["status"] != "ok"): errs.append("pipelines.attention no es exactamente lo que no esta ok")
+    q = doc["quality"]
+    if q["unexplained"] != sum(1 for a in q["anomalies"] if a["status"] == "UNEXPLAINED_ANOMALY") or q["verified"] != sum(1 for a in q["anomalies"] if a["status"] == "KNOWN_VERIFIED_ANOMALY"): errs.append("quality: recuentos de anomalias incoherentes")
+    an = json.loads((D / "data-anomalies.json").read_text(encoding="utf-8"))["anomalies"]
+    if len(an) != len(q["anomalies"]): errs.append("quality.anomalies no coincide con data-anomalies.json")
+    for a, b in zip(doc["upcoming"], doc["upcoming"][1:]):
+        if a["expectedNext"] > b["expectedNext"]: errs.append("upcoming sin ordenar por fecha"); break
+    cv = doc["coverage"]; sn = cv["snapshots"]
+    if [x["date"] for x in sn] != sorted(x["date"] for x in sn) or len({x["date"] for x in sn}) != len(sn): errs.append("instantaneas de cobertura desordenadas o repetidas")
+    if sn[-1]["date"] != doc["today"]: errs.append("la ultima instantanea no es la de hoy")
+    if len(sn) >= 2:
+        a, b = sn[-2], sn[-1]; exp = 0
+        if a["series"] != b["series"]: exp += 1
+        for kk in ("countries", "sources"): exp += sum(1 for k in set(a[kk]) | set(b[kk]) if a[kk].get(k, 0) != b[kk].get(k, 0))
+        if exp != len(cv["changes"]): errs.append("coverage.changes (%d) no coincide con la diferencia entre las dos ultimas instantaneas (%d)" % (len(cv["changes"]), exp))
+    elif cv["changes"]: errs.append("coverage.changes sin instantanea previa con la que comparar")
+    if cv["priceLayer"] != len(ob): errs.append("coverage.priceLayer != observaciones")
+    today = datetime.date.fromisoformat(doc["today"]); done = 0
+    for o in ob:
+        if o["pubKnown"] != bool(o["publicationDate"]): errs.append("%s: pubKnown incoherente" % o["k"])
+        fs = o.get("firstSeen")
+        if o["isNew"] != (bool(fs) and (today - datetime.date.fromisoformat(fs)).days <= doc["newDays"]): errs.append("%s: isNew no sigue la regla de %d dias sobre firstSeen" % (o["k"], doc["newDays"]))
+        if fs and fs > doc["today"]: errs.append("%s: firstSeen en el futuro" % o["k"])
+        for w, m in o["moves"].items():
+            if not m: continue
+            lo, hi = doc["windows"][w]["minDays"], doc["windows"][w]["maxDays"]
+            d0, d1 = datetime.date.fromisoformat(m["from"]), datetime.date.fromisoformat(m["to"])
+            if (d1 - d0).days != m["days"] or not lo <= m["days"] <= hi: errs.append("%s/%s: dias fuera de la ventana (%s)" % (o["k"], w, m["days"]))
+            if m["pct"] < -100: errs.append("%s/%s: variacion < -100 %%" % (o["k"], w))
+        if done < 12 and o["moves"]["d30"]:  # recalculo independiente de un movimiento desde el historico publicado
+            h = json.loads((D / "prices" / "history" / o["region"] / (o["product"] + ".json")).read_text(encoding="utf-8")); m = o["moves"]["d30"]; byd = {}
+            for r in h["history"]:
+                p = str(r["period"]).upper()
+                try:
+                    if len(p) == 5 and p[2] == "-": dt = datetime.date(r["year"], int(p[:2]), int(p[3:]))
+                    elif p[0] == "Q": dt = datetime.date(r["year"], (int(p[1]) - 1) * 3 + 1, 1)
+                    else: dt = datetime.date(r["year"], int(p) if p.isdigit() else _MON[p], 1)
+                except Exception: continue
+                byd[dt.isoformat()] = r["value"]
+            if m["from"] not in byd or m["to"] not in byd: errs.append("%s: las fechas del movimiento no estan en el historico" % o["k"])
+            elif abs((byd[m["to"]] / byd[m["from"]] - 1) * 100 - m["pct"]) > 0.011: errs.append("%s: el movimiento d30 (%s %%) no se reproduce desde el historico" % (o["k"], m["pct"]))
+            done += 1
+
 def freshness_policy(doc, errs, warns, stats):
     if set(doc["states"]) != {"LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "PENDING"}: errs.append("estados distintos de los 6 definidos")
     if not set(doc["okStates"]) <= set(doc["states"]): errs.append("okStates fuera de states")

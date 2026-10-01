@@ -247,6 +247,12 @@
    [
     "relationships"
    ]
+  ],
+  "observatory.json": [
+   "observatory",
+   [
+    "observatory"
+   ]
   ]
  },
  "globs": {
@@ -303,6 +309,7 @@
   "intelligence.json",
   "cross-market.json",
   "relationships.json",
+  "observatory.json",
   "views/eu-preview.json",
   "views/home-summary.json",
   "views/news-index.json",

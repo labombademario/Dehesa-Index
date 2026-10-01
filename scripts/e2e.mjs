@@ -28,6 +28,7 @@ const PAGES = [
   { n: 'comparador', url: '/comparador.html', crit: ['#cmp-body'] },
   { n: 'calculadora', url: '/calculadora.html', crit: ['#cc-body'] },
   { n: 'relaciones', url: '/relaciones.html', crit: ['#rl-body .rl-card'] },
+  { n: 'observatorio', url: '/observatorio.html', crit: ['#ob-body #moves'] },
   { n: 'catalogo', url: '/catalogo.html', crit: ['#cat-body'] },
   { n: 'brief', url: '/brief.html', crit: ['#brief-body'] },
   { n: 'noticias', url: '/noticias.html', crit: ['#nw-items'] },
@@ -169,6 +170,22 @@ for (const w of [1280, 390]) {
       await page.goto(BASE + '/relaciones.html?id=fertiliser_to_grain__urea-eu__trigo-eu', { waitUntil: 'load' }); await page.waitForSelector('#rl-body .rl-card', { timeout: 8000 });
       if ((await page.$$eval('.rl-card', (e) => e.length)) !== 1) throw new Error('el enlace profundo ?id= no abre una sola relacion');
       if (!(await page.$('.rl-hyp')) || !(await page.$('.rl-expl'))) throw new Error('la correlacion y la hipotesis deben mostrarse separadas');
+    });
+    await flow('observatorio: filtros, ventanas y enlace profundo', w, async (page) => {
+      await page.goto(BASE + '/observatorio.html', { waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 });
+      for (const id of ['new', 'moves', 'revisions', 'freshness', 'upcoming', 'coverage', 'quality', 'pipelines']) if (!(await page.$('#ob-body #' + id))) throw new Error('falta la seccion ' + id);
+      const total = parseInt((await page.innerText('#ob-body .rl-filters + p')).trim(), 10);
+      await page.click('[data-f=c][data-v=us]'); await page.waitForTimeout(150);
+      const us = parseInt((await page.innerText('#ob-body .rl-filters + p')).trim(), 10);
+      if (!(us > 0 && us < total)) throw new Error('el filtro de pais no filtra (' + us + ' de ' + total + ')');
+      if (!/c=us/.test(page.url())) throw new Error('el filtro no queda en la URL');
+      await page.reload({ waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 });
+      if (parseInt((await page.innerText('#ob-body .rl-filters + p')).trim(), 10) !== us) throw new Error('el filtro no se conserva al recargar');
+      await page.click('[data-f=w][data-v=d1]'); await page.waitForTimeout(150);
+      if (!/ninguna serie|No series|Aucune série|Nessuna serie/i.test(await page.innerText('#moves'))) throw new Error('la ventana diaria vacia debe decirlo en vez de rellenarse');
+      await page.goto(BASE + '/observatorio.html?c=eu&t=INPUT&w=d30#freshness', { waitUntil: 'load' }); await page.waitForSelector('#ob-body #moves', { timeout: 8000 });
+      if (!(await page.$('#moves [data-f=w][aria-pressed=true][data-v=d30]'))) throw new Error('?w=d30 no abre la ventana mensual');
+      const rows = await page.$$eval('#moves tbody tr', (e) => e.length); if (rows < 1) throw new Error('ventana mensual sin filas con filtros eu+INPUT');
     });
     await flow('paises: cambiar de pais', w, async (page, errs) => {
       await page.goto(BASE + '/paises.html?c=FR', { waitUntil: 'load' }); await page.waitForTimeout(2500);

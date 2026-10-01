@@ -1,0 +1,453 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Data observatory (derived)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "today",
+  "newDays",
+  "windows",
+  "methodology",
+  "kinds",
+  "observations",
+  "datasets",
+  "revisions",
+  "freshness",
+  "upcoming",
+  "coverage",
+  "quality",
+  "pipelines",
+  "labels",
+  "regions"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "today": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "newDays": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "windows": {
+   "type": "object"
+  },
+  "methodology": {
+   "type": "string",
+   "minLength": 20
+  },
+  "kinds": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "observations": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "k",
+     "id",
+     "product",
+     "region",
+     "sourceId",
+     "type",
+     "unit",
+     "currency",
+     "frequency",
+     "observationDate",
+     "pubKnown",
+     "isNew",
+     "value",
+     "freshness",
+     "moves"
+    ],
+    "properties": {
+     "k": {
+      "type": "string",
+      "pattern": "^P/.+/.+"
+     },
+     "id": {
+      "type": "string"
+     },
+     "product": {
+      "type": "string"
+     },
+     "region": {
+      "type": "string"
+     },
+     "sourceId": {
+      "type": "string"
+     },
+     "type": {
+      "enum": [
+       "PRICE",
+       "INPUT"
+      ]
+     },
+     "unit": {
+      "type": "string"
+     },
+     "currency": {
+      "type": "string"
+     },
+     "frequency": {
+      "enum": [
+       "daily",
+       "weekly",
+       "monthly",
+       "quarterly",
+       "annual",
+       "semiannual"
+      ]
+     },
+     "observationDate": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}(-\\d{2})?"
+     },
+     "publicationDate": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "pubKnown": {
+      "type": "boolean"
+     },
+     "isNew": {
+      "type": "boolean"
+     },
+     "value": {
+      "type": "number"
+     },
+     "changePct": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "freshness": {
+      "enum": [
+       "LIVE",
+       "FRESH",
+       "EXPECTED_DELAY",
+       "DELAYED",
+       "STALE",
+       "PENDING"
+      ]
+     },
+     "ageDays": {
+      "type": [
+       "integer",
+       "null"
+      ]
+     },
+     "expectedNext": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "moves": {
+      "type": "object",
+      "required": [
+       "d1",
+       "d7",
+       "d30"
+      ],
+      "properties": {
+       "d1": {
+        "type": [
+         "object",
+         "null"
+        ],
+        "properties": {
+         "pct": {
+          "type": "number"
+         },
+         "from": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}(-\\d{2})?"
+         },
+         "to": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}(-\\d{2})?"
+         },
+         "days": {
+          "type": "integer",
+          "minimum": 1
+         }
+        }
+       },
+       "d7": {
+        "type": [
+         "object",
+         "null"
+        ],
+        "properties": {
+         "pct": {
+          "type": "number"
+         },
+         "from": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}(-\\d{2})?"
+         },
+         "to": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}(-\\d{2})?"
+         },
+         "days": {
+          "type": "integer",
+          "minimum": 1
+         }
+        }
+       },
+       "d30": {
+        "type": [
+         "object",
+         "null"
+        ],
+        "properties": {
+         "pct": {
+          "type": "number"
+         },
+         "from": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}(-\\d{2})?"
+         },
+         "to": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}(-\\d{2})?"
+         },
+         "days": {
+          "type": "integer",
+          "minimum": 1
+         }
+        }
+       }
+      }
+     },
+     "firstSeen": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    }
+   }
+  },
+  "datasets": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "file",
+     "name",
+     "kind",
+     "status"
+    ],
+    "properties": {
+     "file": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "kind": {
+      "type": "string"
+     },
+     "status": {
+      "enum": [
+       "changed",
+       "new",
+       "unchanged"
+      ]
+     }
+    }
+   }
+  },
+  "revisions": {
+   "type": "object",
+   "required": [
+    "count",
+    "items",
+    "note"
+   ],
+   "properties": {
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "items": {
+     "type": "array"
+    },
+    "note": {
+     "type": "string"
+    }
+   }
+  },
+  "freshness": {
+   "type": "object",
+   "required": [
+    "latest",
+    "catalog"
+   ],
+   "properties": {
+    "latest": {
+     "type": "object",
+     "required": [
+      "total",
+      "byState"
+     ]
+    },
+    "catalog": {
+     "type": "object",
+     "required": [
+      "total",
+      "byState",
+      "bySource"
+     ]
+    }
+   }
+  },
+  "upcoming": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "k",
+     "expectedNext",
+     "frequency",
+     "sourceId",
+     "freshness"
+    ]
+   }
+  },
+  "coverage": {
+   "type": "object",
+   "required": [
+    "series",
+    "entities",
+    "byCountry",
+    "bySource",
+    "priceLayer",
+    "changes",
+    "snapshots",
+    "note"
+   ],
+   "properties": {
+    "series": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "priceLayer": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "changes": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "scope",
+       "key",
+       "from",
+       "to"
+      ]
+     }
+    },
+    "snapshots": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 60,
+     "items": {
+      "type": "object",
+      "required": [
+       "date",
+       "series",
+       "countries",
+       "sources",
+       "latest",
+       "catalog"
+      ]
+     }
+    }
+   }
+  },
+  "quality": {
+   "type": "object",
+   "required": [
+    "anomalies",
+    "unexplained",
+    "verified"
+   ],
+   "properties": {
+    "unexplained": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "verified": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "anomalies": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "series",
+       "status",
+       "detected"
+      ]
+     }
+    }
+   }
+  },
+  "pipelines": {
+   "type": "object",
+   "required": [
+    "summary",
+    "global",
+    "total",
+    "attention",
+    "next"
+   ],
+   "properties": {
+    "total": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "attention": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "workflow",
+       "name",
+       "status"
+      ]
+     }
+    },
+    "next": {
+     "type": "array"
+    }
+   }
+  },
+  "labels": {
+   "type": "object"
+  },
+  "regions": {
+   "type": "object"
+  }
+ }
+}

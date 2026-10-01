@@ -110,6 +110,7 @@
       { file: 'clima.html', label: { es: 'Clima agrícola', en: 'Farm weather', fr: 'Météo agricole', it: 'Meteo agricolo' } },
       { file: 'catalogo.html', label: { es: 'Catálogo de datos', en: 'Data catalogue', fr: 'Catalogue de données', it: 'Catalogo dei dati' } },
       { file: 'calculadora.html', label: { es: 'Calculadora de margen', en: 'Margin calculator', fr: 'Calculateur de marge', it: 'Calcolatore di margine' } },
+      { file: 'observatorio.html', label: { es: 'Observatorio de datos', en: 'Data observatory', fr: 'Observatoire des données', it: 'Osservatorio dei dati' } },
       { file: 'relaciones.html', label: { es: 'Relaciones entre mercados', en: 'Cross-market relationships', fr: 'Relations entre marchés', it: 'Relazioni tra mercati' } },
       { file: 'comparador.html', label: { es: 'Comparador por producto y país', en: 'Product and country comparator', fr: 'Comparateur par produit et pays', it: 'Confronto per prodotto e paese' } },
       { file: 'brief.html', label: { es: 'Qué ha cambiado hoy', en: 'What changed today', fr: 'Ce qui a changé aujourd’hui', it: 'Cosa è cambiato oggi' } },
