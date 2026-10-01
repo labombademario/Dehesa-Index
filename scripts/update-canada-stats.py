@@ -282,45 +282,10 @@ def partners():
         for c in top:
             put("ca-tpa-%s-%s" % (tag, slug(c)), "partners", "%s %s: farm, fishing and food (annual)" % (word, c), "CAD million", "annual", cand[c], "StatCan 12-10-0173"); n += 1
     log("socios", n)
-# ───────── 9. Producto x acuerdo comercial (12-10-0174) ─────────
-def trade_blocs():
-    want = {"Wheat": "5", "Canola (including rapeseed)": "6", "Live animals": "4", "Fresh fruit, nuts and vegetables, and pulse crops": "7", "Other crop products": "8", "Other animal products": "9", "Animal feed": "11",
-            "Farm, fishing and intermediate food products": "0", "Meat products": "123", "Dairy products": "125", "Other food products": "126", "Food, beverage and tobacco products": "122", "Fertilizers, pesticides and other chemical products": "62", "Potash": "36"}
-    names = {"0": "Farm, fishing and food (total)", "5": "Wheat", "6": "Canola", "4": "Live animals", "7": "Fruit, nuts, vegetables and pulses", "8": "Other crop products", "9": "Other animal products", "11": "Animal feed",
-             "123": "Meat products", "125": "Dairy products", "126": "Other food products", "122": "Food, beverage and tobacco", "62": "Fertilizers, pesticides and chemicals", "36": "Potash"}
-    yr = datetime.date.today().year - 1; years = [str(y) for y in range(yr - 5, yr + 1)]
-    probe = None
-    def pred(r):
-        nonlocal probe
-        if probe is None:
-            probe = [k for k in r if k.startswith("North American Product")][0]
-        return r["GEO"] == "Canada" and r["REF_DATE"][:4] in years and re.sub(r"\s*\[.*?\]\s*$", "", r[probe]).strip() in want
-    rows = load_filtered(12100174, pred)
-    ck = [k for k in rows[0] if k.startswith("North American Product")][0]; fk = [k for k in rows[0] if k.startswith("Free Trade")][0]
-    by = {}
-    for r in rows:
-        v = num(r)
-        if v is None: continue
-        code = want[re.sub(r"\s*\[.*?\]\s*$", "", r[ck]).strip()]
-        tr = "exp" if r["Trade"] == "Export" else "imp"
-        d = by.setdefault(code, {}).setdefault(tr, {}).setdefault(re.sub(r"\s*\[.*?\]\s*$", "", r[fk]).strip(), {})
-        d[r["REF_DATE"][:4]] = d.get(r["REF_DATE"][:4], 0) + v / 1e6
-    out = {}; short = lambda n: re.sub(r",\s*(in force|inactive|negotiations|superseded|signed|not yet).*$", "", n).replace("Canada-", "").replace(" Free Trade Agreement", "").replace(" Agreement", "").strip()
-    for code, flows in by.items():
-        for tr, d in flows.items():
-            world = d.get("Total of all countries")
-            row = lambda v: [round(v[y], 3) if y in v else None for y in years]
-            cand = {k: v for k, v in d.items() if k != "Total of all countries" and v.get(years[-1])}
-            top = sorted(cand, key=lambda k: -cand[k][years[-1]])[:10]
-            if not top: continue
-            out.setdefault(code, {"name": names[code]})[tr] = {"world": row(world) if world else None, "extra": None, "intra": None, "partners": [{"c": k[:12], "n": short(k), "v": row(cand[k])} for k in top]}
-    now = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-    (ROOT / "data" / "ca-trade-products.json").write_text(json.dumps({"schemaVersion": 1, "generatedAt": now, "years": years, "unit": "CAD million", "source": {"name": "Statistics Canada (12-10-0174)", "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1210017401", "license": "Statistics Canada Open Licence"}, "reporters": {"CA": out}}, ensure_ascii=False, separators=(",", ":")))
-    log("acuerdos comerciales", len(out))
 def main():
     import os
     only = [x for x in os.environ.get("ONLY", "").replace(",", " ").split() if x]
-    allf = (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, trade, partners, trade_blocs)
+    allf = (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, trade, partners)
     if only:
         try:
             for x in json.loads((ROOT / "data" / "canada-stats.json").read_text())["countries"]["CA"]["series"]: OUT[x["id"]] = x
