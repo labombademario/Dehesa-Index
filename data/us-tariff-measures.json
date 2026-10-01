@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-30",
+  "note": {
+    "es": "Capa manual y fechada. Estas medidas se modifican por orden ejecutiva o proclamación y no están en la tabla HTS base. Revisadas por última vez en la fecha indicada; confirma siempre en la fuente oficial.",
+    "en": "Manual, dated layer. These measures change by executive order or proclamation and are not in the base HTS table. Last reviewed on the date shown; always confirm with the official source.",
+    "fr": "Couche manuelle et datée. Ces mesures changent par décret ou proclamation et ne figurent pas dans le tableau HTS de base. Dernière révision à la date indiquée ; vérifiez toujours la source officielle.",
+    "it": "Livello manuale e datato. Queste misure cambiano per ordine esecutivo o proclamazione e non sono nella tabella HTS di base. Ultima revisione alla data indicata; verifica sempre la fonte ufficiale."
+  },
+  "items": [
+    {
+      "id": "ieepa",
+      "status": "ended",
+      "from": null,
+      "to": "2026-02-20",
+      "title": {"es": "Aranceles recíprocos IEEPA", "en": "IEEPA reciprocal tariffs", "fr": "Droits réciproques IEEPA", "it": "Dazi reciproci IEEPA"},
+      "text": {
+        "es": "El Tribunal Supremo los declaró inválidos el 20-02-2026. Dejan de ser la base de los aranceles adicionales.",
+        "en": "The Supreme Court ruled them invalid on 20 Feb 2026. They no longer underpin the additional tariffs.",
+        "fr": "La Cour suprême les a invalidés le 20-02-2026. Ils ne fondent plus les droits additionnels.",
+        "it": "La Corte suprema li ha dichiarati invalidi il 20-02-2026. Non sono più la base dei dazi aggiuntivi."
+      }
+    },
+    {
+      "id": "s122",
+      "status": "expired",
+      "from": "2026-02-24",
+      "to": "2026-07-24",
+      "title": {"es": "Sección 122: recargo del 10 %", "en": "Section 122: 10% surcharge", "fr": "Section 122 : surtaxe de 10 %", "it": "Sezione 122: sovrapprezzo del 10%"},
+      "text": {
+        "es": "Recargo temporal del 10 % con exenciones agrícolas (entre ellas carne de vacuno, tomates y naranjas). Periodo máximo de 150 días: terminó el 24-07-2026.",
+        "en": "Temporary 10% surcharge with agricultural exemptions (including beef, tomatoes and oranges). 150-day maximum: ended 24 Jul 2026.",
+        "fr": "Surtaxe temporaire de 10 % avec exemptions agricoles (dont bœuf, tomates et oranges). Maximum de 150 jours : terminée le 24-07-2026.",
+        "it": "Sovrapprezzo temporaneo del 10% con esenzioni agricole (tra cui manzo, pomodori e arance). Massimo 150 giorni: terminato il 24-07-2026."
+      }
+    },
+    {
+      "id": "s301",
+      "status": "active",
+      "from": "2026-07-24",
+      "to": null,
+      "title": {"es": "Sección 301: aranceles por trabajo forzoso", "en": "Section 301: forced-labor tariffs", "fr": "Section 301 : droits pour travail forcé", "it": "Sezione 301: dazi per lavoro forzato"},
+      "text": {
+        "es": "10 % y 12,5 % desde el 24-07-2026 sobre unas 60 economías. Si las exenciones agrícolas de la Sección 122 se mantienen bajo esta acción no está confirmado: comprueba el anexo vigente.",
+        "en": "10% and 12.5% from 24 Jul 2026 on about 60 economies. Whether the Section 122 agricultural exemptions carry over to this action is unconfirmed: check the current annex.",
+        "fr": "10 % et 12,5 % depuis le 24-07-2026 sur une soixantaine d’économies. Le maintien des exemptions agricoles de la Section 122 sous cette action n’est pas confirmé : consultez l’annexe en vigueur.",
+        "it": "10% e 12,5% dal 24-07-2026 su circa 60 economie. Non è confermato se le esenzioni agricole della Sezione 122 valgano anche per questa azione: controlla l’allegato vigente."
+      }
+    },
+    {
+      "id": "eu",
+      "status": "active",
+      "from": "2026-07-01",
+      "to": null,
+      "title": {"es": "Unión Europea: tope del 15 %", "en": "European Union: 15% cap", "fr": "Union européenne : plafond de 15 %", "it": "Unione europea: tetto del 15%"},
+      "text": {
+        "es": "Los productos de la UE tienen un techo del 15 % todo incluido desde el 01-07-2026 y quedan excluidos de la acción de la Sección 301.",
+        "en": "EU goods face a 15% all-in ceiling from 1 Jul 2026 and are excluded from the Section 301 action.",
+        "fr": "Les produits de l’UE sont plafonnés à 15 % tout compris depuis le 01-07-2026 et exclus de l’action de la Section 301.",
+        "it": "I prodotti UE hanno un tetto del 15% tutto compreso dal 01-07-2026 e sono esclusi dall’azione della Sezione 301."
+      }
+    },
+    {
+      "id": "suit",
+      "status": "pending",
+      "from": "2026-08-03",
+      "to": null,
+      "title": {"es": "Demanda de varios estados", "en": "Lawsuit by several states", "fr": "Recours de plusieurs États", "it": "Causa di diversi stati"},
+      "text": {
+        "es": "Varios estados presentaron una demanda el 03-08-2026 contra los nuevos aranceles. Pendiente de resolución.",
+        "en": "Several states filed a lawsuit on 3 Aug 2026 against the new tariffs. Pending.",
+        "fr": "Plusieurs États ont déposé un recours le 03-08-2026 contre les nouveaux droits. En cours.",
+        "it": "Diversi stati hanno presentato una causa il 03-08-2026 contro i nuovi dazi. In corso."
+      }
+    }
+  ],
+  "sources": [
+    {"name": "USTR", "url": "https://ustr.gov/"},
+    {"name": "CBP — Trade remedies", "url": "https://www.cbp.gov/trade/programs-administration/trade-remedies"},
+    {"name": "USITC — HTS", "url": "https://hts.usitc.gov/"}
+  ]
+}

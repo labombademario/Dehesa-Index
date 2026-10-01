@@ -79,7 +79,8 @@
         { file: 'ganaderia.html', label: { es: 'Ganadería', en: 'Livestock', fr: 'Élevage', it: 'Zootecnia' } },
         { file: 'sequia.html', label: { es: 'Sequía', en: 'Drought', fr: 'Sécheresse', it: 'Siccità' } },
         { file: 'insumos.html', label: { es: 'Insumos', en: 'Inputs', fr: 'Intrants', it: 'Input' } },
-        { file: 'costes.html', label: { es: 'Costes', en: 'Costs', fr: 'Coûts', it: 'Costi' } }
+        { file: 'costes.html', label: { es: 'Costes', en: 'Costs', fr: 'Coûts', it: 'Costi' } },
+        { file: 'aranceles.html', label: { es: 'Aranceles', en: 'Tariffs', fr: 'Droits de douane', it: 'Dazi' } }
       ] },
       { label: { es: 'Europa', en: 'Europe', fr: 'Europe', it: 'Europa' }, items: [
         { file: 'europa.html', label: { es: 'Precios de la UE (todos los países)', en: 'EU prices (all countries)', fr: 'Prix de l’UE (tous les pays)', it: 'Prezzi UE (tutti i paesi)' } },
