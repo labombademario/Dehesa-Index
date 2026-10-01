@@ -60,7 +60,8 @@
   function ok(o) { return (!F.c || o.region === F.c) && (!F.p || o.product === F.p) && (!F.s || o.sourceId === F.s) && (!F.t || o.type === F.t); }
   function uniq(a) { var m = {}, r = []; a.forEach(function (x) { if (!m[x]) { m[x] = 1; r.push(x); } }); return r; }
   function chip(g, v, label, on) { return '<button type="button" class="pt-chip" aria-pressed="' + (!!on) + '" data-f="' + g + '" data-v="' + esc(v) + '">' + esc(label) + '</button>'; }
-  function prodLink(o) { var pg = PAGE[o.product], n = esc(lab(o.product)); return pg ? '<a href="producto.html?p=' + pg + '">' + n + '</a>' : n; }
+  function identOf(o) { var I = window.DIIdentity, e = I && I.data() && o.id ? I.get(o.id) : null; return e ? '<div class="pt-ident">' + esc(I.line(e, lang())) + '</div>' : ''; }
+  function prodLink(o) { var pg = PAGE[o.product], n = esc(lab(o.product)); return (pg ? '<a href="producto.html?p=' + pg + '">' + n + '</a>' : n) + identOf(o); }
   function filters() {
     var obs = DOC.observations, regs = uniq(obs.map(function (o) { return o.region; })).sort(), prods = uniq(obs.map(function (o) { return o.product; })).sort(function (a, b) { return lab(a) < lab(b) ? -1 : 1; }), srcs = uniq(obs.map(function (o) { return o.sourceId; })).sort(), tys = uniq(obs.map(function (o) { return o.type; })).sort();
     var h = '<div class="pt-bar-ctl" role="group" aria-label="' + esc(t('fC')) + '"><span class="pt-lbl">' + esc(t('fC')) + '</span>' + chip('c', '', t('all'), !F.c) + regs.map(function (r) { return chip('c', r, rg(r), F.c === r); }).join('') + '</div>';
@@ -163,7 +164,7 @@
   readUrl();
   var body = document.getElementById('ob-body'); body.addEventListener('click', onClick); body.addEventListener('change', onChange);
   render();
-  fetch('data/observatory.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { DOC = d; render(); })
+  fetch('data/observatory.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { DOC = d; return window.DIIdentity ? window.DIIdentity.ready().catch(function () { return null; }) : null; }).then(function () { render(); })
     .catch(function () { body.innerHTML = '<p class="pt-err">' + esc(t('err')) + '</p>'; });
   window.DIObservatory = { state: function () { return { F: F, doc: DOC }; } };
 })();

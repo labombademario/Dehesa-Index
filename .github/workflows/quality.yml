@@ -45,6 +45,9 @@ jobs:
       - name: Data catalog integrity (manifest, catalogs, shards)
         run: python3 scripts/check-catalog.py --strict
 
+      - name: Identidad visible del instrumento (soja, regla de comparacion, cobertura)
+        run: node scripts/test-instrument-identity.mjs
+
       - name: canonicalSeriesId v2 (unicidad salvo equivalencias declaradas)
         run: python3 scripts/test-canonical-ids.py
 

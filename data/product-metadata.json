@@ -662,6 +662,58 @@
     "1509"
    ],
    "related": []
+  },
+  "pollo": {
+   "name": {
+    "es": "Pollo",
+    "en": "Chicken (broilers)",
+    "fr": "Poulet",
+    "it": "Pollo"
+   },
+   "group": "ganaderia",
+   "kind": "livestock",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "pollo"
+    },
+    {
+     "region": "us",
+     "product": "pollo"
+    },
+    {
+     "region": "ca",
+     "product": "pollo"
+    }
+   ],
+   "indices": [],
+   "psd": "pollo",
+   "hs": [
+    "0207"
+   ],
+   "related": []
+  },
+  "azucar": {
+   "name": {
+    "es": "Azúcar",
+    "en": "Sugar",
+    "fr": "Sucre",
+    "it": "Zucchero"
+   },
+   "group": "azucar",
+   "kind": "other",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "azucar"
+    }
+   ],
+   "indices": [],
+   "psd": "azucar",
+   "hs": [
+    "1701"
+   ],
+   "related": []
   }
  }
 }

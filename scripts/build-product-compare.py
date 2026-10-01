@@ -52,7 +52,7 @@ def main():
             pts = monthly(raw)
             if len(pts) < 6: continue
             same = o['frequency'] == 'monthly'
-            series.append({'c': o['region'].upper(), 'cur': o['currency'], 'unit': '%s/%s' % (o['currency'], un), 'kg': kg, 'freq': o['frequency'], 'src': {'us': 'USDA NASS', 'ca': 'Statistics Canada', 'uk': 'Defra'}[o['region']], 'sourceId': o['sourceId'],
+            series.append({'c': o['region'].upper(), 'iid': o['id'], 'cur': o['currency'], 'unit': '%s/%s' % (o['currency'], un), 'kg': kg, 'freq': o['frequency'], 'src': {'us': 'USDA NASS', 'ca': 'Statistics Canada', 'uk': 'Defra'}[o['region']], 'sourceId': o['sourceId'],
                            'latest': [o['observationDate'], o['value']], 'points': pts, 'comp': o.get('comparability', 'directional'),
                            'aggregation': {'points': 'monthly_value' if same else 'monthly_mean', 'of': o['frequency'], 'lastMonthObs': 1 if same else None, 'latest': 'last_quote'},
                            'fs': FR.evaluate(o['observationDate'], o['frequency'], o['sourceId'], NOW)['state']})

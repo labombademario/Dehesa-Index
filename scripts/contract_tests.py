@@ -480,6 +480,38 @@ def product_metadata(doc, errs, warns, stats):
         if pid not in doc["products"]: errs.append("bushelKg de un producto desconocido: %s" % pid)
     stats["series"] = len(doc["products"])
 
+def instrument_identity(doc, errs, warns, stats):
+    """Todo instrumento e indice de product-metadata.json tiene identidad visible (producto, forma, calidad, etapa, mercado/ubicacion) con 4 idiomas; sin datos inventados: `unspecified` es valido, vacio no."""
+    meta = json.loads((D / "product-metadata.json").read_text(encoding="utf-8"))["products"]
+    ids = {}
+    for f in sorted((D / "prices/latest").glob("*.json")):
+        for o in json.loads(f.read_text(encoding="utf-8"))["observations"]: ids[(o["region"], o["product"])] = o["id"]
+    I = doc["instruments"]; seen = set()
+    for pid, m in meta.items():
+        for kind, lst in (("price", m["instruments"]), ("index", m["indices"])):
+            for i in lst:
+                oid = ids.get((i["region"], i["product"]))
+                if not oid: continue  # lo avisa product_metadata
+                seen.add(oid)
+                e = I.get(oid)
+                if not e: errs.append("%s: instrumento %s sin identidad en instrument-identity.json" % (pid, oid)); continue
+                if (e["kind"] == "index") != (kind == "index"): errs.append("%s: %s kind %s incoherente con su lugar en product-metadata" % (pid, oid, e["kind"]))
+    for oid, e in I.items():
+        if oid not in seen: warns.append("%s: identidad de un instrumento que ningun producto usa" % oid)
+        if e["form"] not in doc["forms"]: errs.append("%s: forma %r desconocida" % (oid, e["form"]))
+        if e["stage"] not in doc["stages"]: errs.append("%s: etapa %r desconocida" % (oid, e["stage"]))
+        if (e["kind"] == "index") != (e["form"] == "index" and e["stage"] == "index"): errs.append("%s: un indice debe tener form=index y stage=index (y solo un indice)" % oid)
+        if e["stage"] == "unspecified" and "no indica" not in e["evidence"] and "no documenta" not in e["evidence"] and "no especifica" not in e["evidence"] and "no se cita" not in e["evidence"]: errs.append("%s: etapa unspecified sin declarar en la evidencia que la fuente no la indica" % oid)
+    for pid, c in doc["comparator"].items():
+        if not meta.get(pid, {}).get("compare"): errs.append("comparator/%s: el producto no tiene compare en product-metadata" % pid)
+    for pid, m in meta.items():
+        if m.get("compare") and pid not in doc["comparator"]: errs.append("comparator/%s: falta la identidad del concepto UE del comparador" % pid)
+    # regla de comparacion: soja UE (harina 40-50 %, Espana, salida de fabrica), US (harina 46,5-48 %, Iowa, FOB) y CA (grano, Ontario) NO pueden ser equivalentes
+    def key(e): return (e["product"]["en"], e["form"], (e["grade"] or {}).get("en"), e["stage"])
+    s = [I.get(x) for x in ("di_pienso_harina_soja_eu", "di_pienso_harina_soja_us", "di_cereales_soja_grano_ca")]
+    if all(s) and len({key(x) for x in s}) != 3: errs.append("soja: los tres instrumentos deben ser distintos (producto/forma/calidad/etapa)")
+    stats["series"] = len(I)
+
 def product_profile(doc, errs, warns, stats):
     meta = json.loads((D / "product-metadata.json").read_text(encoding="utf-8"))["products"]
     m = meta.get(doc["product"])

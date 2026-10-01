@@ -1,0 +1,1532 @@
+{
+ "schemaVersion": 1,
+ "_doc": "Identidad visible de cada instrumento (ver scripts/build-instrument-identity.py). `unspecified` = la fuente no declara el dato; nunca se rellena. Dos instrumentos son equivalentes solo si coinciden producto, forma, calidad y etapa.",
+ "stages": {
+  "silo_exit": {
+   "es": "Salida de silo (carga en camión)",
+   "en": "Ex-silo (loaded on truck)",
+   "fr": "Départ silo (chargé sur camion)",
+   "it": "Franco silo (caricato su camion)"
+  },
+  "ex_works": {
+   "es": "Salida de fábrica",
+   "en": "Ex-works",
+   "fr": "Départ usine",
+   "it": "Franco fabbrica"
+  },
+  "fob": {
+   "es": "FOB",
+   "en": "FOB",
+   "fr": "FOB",
+   "it": "FOB"
+  },
+  "farm_gate": {
+   "es": "Precio en granja (pagado al productor)",
+   "en": "Farm-gate (paid to the producer)",
+   "fr": "Prix à la ferme (payé au producteur)",
+   "it": "Prezzo in azienda (pagato al produttore)"
+  },
+  "price_received": {
+   "es": "Precio percibido por el agricultor",
+   "en": "Price received by farmers",
+   "fr": "Prix reçu par les agriculteurs",
+   "it": "Prezzo ricevuto dagli agricoltori"
+  },
+  "selling_price": {
+   "es": "Precio de venta (nivel de la cadena no indicado)",
+   "en": "Selling price (supply-chain level not stated)",
+   "fr": "Prix de vente (niveau de la filière non précisé)",
+   "it": "Prezzo di vendita (livello della filiera non indicato)"
+  },
+  "retail_taxed": {
+   "es": "Consumidor, con impuestos",
+   "en": "Consumer price, taxes included",
+   "fr": "Prix à la consommation, taxes comprises",
+   "it": "Prezzo al consumo, tasse incluse"
+  },
+  "index": {
+   "es": "Índice de precios (base 2020 = 100)",
+   "en": "Price index (2020 = 100)",
+   "fr": "Indice de prix (base 2020 = 100)",
+   "it": "Indice dei prezzi (base 2020 = 100)"
+  },
+  "unspecified": {
+   "es": "Etapa no especificada por la fuente",
+   "en": "Market stage not specified by the source",
+   "fr": "Étape non précisée par la source",
+   "it": "Fase di mercato non specificata dalla fonte"
+  }
+ },
+ "forms": {
+  "grain": {
+   "es": "grano",
+   "en": "grain",
+   "fr": "grain",
+   "it": "granella"
+  },
+  "meal": {
+   "es": "harina",
+   "en": "meal",
+   "fr": "tourteau",
+   "it": "farina"
+  },
+  "carcass": {
+   "es": "canal",
+   "en": "carcass",
+   "fr": "carcasse",
+   "it": "carcassa"
+  },
+  "live": {
+   "es": "peso vivo",
+   "en": "live weight",
+   "fr": "poids vif",
+   "it": "peso vivo"
+  },
+  "whole_bird": {
+   "es": "ave entera",
+   "en": "whole bird",
+   "fr": "oiseau entier",
+   "it": "animale intero"
+  },
+  "milk": {
+   "es": "leche cruda",
+   "en": "raw milk",
+   "fr": "lait cru",
+   "it": "latte crudo"
+  },
+  "eggs": {
+   "es": "huevos en cáscara",
+   "en": "eggs in shell",
+   "fr": "œufs en coquille",
+   "it": "uova in guscio"
+  },
+  "oil": {
+   "es": "aceite",
+   "en": "oil",
+   "fr": "huile",
+   "it": "olio"
+  },
+  "sugar": {
+   "es": "azúcar",
+   "en": "sugar",
+   "fr": "sucre",
+   "it": "zucchero"
+  },
+  "fertilizer": {
+   "es": "fertilizante",
+   "en": "fertiliser",
+   "fr": "engrais",
+   "it": "fertilizzante"
+  },
+  "fuel": {
+   "es": "combustible",
+   "en": "fuel",
+   "fr": "carburant",
+   "it": "carburante"
+  },
+  "index": {
+   "es": "índice",
+   "en": "index",
+   "fr": "indice",
+   "it": "indice"
+  },
+  "livestock": {
+   "es": "ganado",
+   "en": "livestock",
+   "fr": "bétail",
+   "it": "bestiame"
+  }
+ },
+ "instruments": {
+  "di_cereales_trigo_eu": {
+   "kind": "price",
+   "concept": "wheat",
+   "product": {
+    "es": "Trigo blando panificable",
+    "en": "Bread (milling) wheat",
+    "fr": "Blé tendre panifiable",
+    "it": "Frumento tenero panificabile"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "silo_exit",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": {
+    "es": "Zaragoza",
+    "en": "Zaragoza",
+    "fr": "Saragosse",
+    "it": "Saragozza"
+   },
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): mercado de Zaragoza, salida de silo tras almacenamiento en camion"
+  },
+  "di_trigo_us": {
+   "kind": "price",
+   "concept": "wheat",
+   "product": {
+    "es": "Trigo",
+    "en": "Wheat",
+    "fr": "Blé",
+    "it": "Frumento"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "price_received",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "USDA NASS Quick Stats, short_desc «… - PRICE RECEIVED» (precio medio nacional percibido por el agricultor), scripts/update-nass-us.mjs"
+  },
+  "di_cereales_trigo_ca": {
+   "kind": "price",
+   "concept": "wheat",
+   "product": {
+    "es": "Trigo (excepto duro)",
+    "en": "Wheat (except durum)",
+    "fr": "Blé (sauf dur)",
+    "it": "Frumento (escluso duro)"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "location": {
+    "es": "Saskatchewan",
+    "en": "Saskatchewan",
+    "fr": "Saskatchewan",
+    "it": "Saskatchewan"
+   },
+   "evidence": "Statistics Canada 32-10-0077-01: precio mensual pagado al productor en la provincia de referencia (observacion.methodology)"
+  },
+  "di_defra_wheat_output_index": {
+   "kind": "index",
+   "concept": "wheat",
+   "product": {
+    "es": "Trigo",
+    "en": "Wheat",
+    "fr": "Blé",
+    "it": "Frumento"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "location": null,
+   "evidence": "Defra Agricultural Price Index, base 2020=100 (observacion.methodology)"
+  },
+  "di_eurostat_cereals_output_index": {
+   "kind": "index",
+   "concept": "cereals",
+   "product": {
+    "es": "Cereales",
+    "en": "Cereals",
+    "fr": "Céréales",
+    "it": "Cereali"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "UE-27",
+    "en": "EU-27",
+    "fr": "UE-27",
+    "it": "UE-27"
+   },
+   "location": null,
+   "evidence": "Eurostat apri_pi_outq/apri_pi_inq, indice nominal de precios agrarios UE-27, base 2020=100 (observacion.methodology)"
+  },
+  "di_cereales_maiz_eu": {
+   "kind": "price",
+   "concept": "maize",
+   "product": {
+    "es": "Maíz pienso",
+    "en": "Feed maize",
+    "fr": "Maïs fourrager",
+    "it": "Mais da foraggio"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "silo_exit",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": {
+    "es": "Zaragoza",
+    "en": "Zaragoza",
+    "fr": "Saragosse",
+    "it": "Saragozza"
+   },
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): mercado de Zaragoza, salida de silo tras almacenamiento en camion"
+  },
+  "di_maiz_us": {
+   "kind": "price",
+   "concept": "maize",
+   "product": {
+    "es": "Maíz grano",
+    "en": "Corn for grain",
+    "fr": "Maïs grain",
+    "it": "Mais da granella"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "price_received",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "USDA NASS Quick Stats, short_desc «… - PRICE RECEIVED» (precio medio nacional percibido por el agricultor), scripts/update-nass-us.mjs"
+  },
+  "di_cereales_maiz_ca": {
+   "kind": "price",
+   "concept": "maize",
+   "product": {
+    "es": "Maíz grano",
+    "en": "Corn for grain",
+    "fr": "Maïs grain",
+    "it": "Mais da granella"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "location": {
+    "es": "Ontario",
+    "en": "Ontario",
+    "fr": "Ontario",
+    "it": "Ontario"
+   },
+   "evidence": "Statistics Canada 32-10-0077-01: precio mensual pagado al productor en la provincia de referencia (observacion.methodology)"
+  },
+  "di_cereales_cebada_eu": {
+   "kind": "price",
+   "concept": "barley",
+   "product": {
+    "es": "Cebada pienso",
+    "en": "Feed barley",
+    "fr": "Orge fourragère",
+    "it": "Orzo da foraggio"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "silo_exit",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": {
+    "es": "Lleida",
+    "en": "Lleida",
+    "fr": "Lérida",
+    "it": "Lleida"
+   },
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): mercado de Lleida, salida de silo tras almacenamiento en camion"
+  },
+  "di_cebada_us": {
+   "kind": "price",
+   "concept": "barley",
+   "product": {
+    "es": "Cebada",
+    "en": "Barley",
+    "fr": "Orge",
+    "it": "Orzo"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "price_received",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "USDA NASS Quick Stats, short_desc «… - PRICE RECEIVED» (precio medio nacional percibido por el agricultor), scripts/update-nass-us.mjs"
+  },
+  "di_cereales_cebada_ca": {
+   "kind": "price",
+   "concept": "barley",
+   "product": {
+    "es": "Cebada",
+    "en": "Barley",
+    "fr": "Orge",
+    "it": "Orzo"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "location": {
+    "es": "Alberta",
+    "en": "Alberta",
+    "fr": "Alberta",
+    "it": "Alberta"
+   },
+   "evidence": "Statistics Canada 32-10-0077-01: precio mensual pagado al productor en la provincia de referencia (observacion.methodology)"
+  },
+  "di_defra_barley_output_index": {
+   "kind": "index",
+   "concept": "barley",
+   "product": {
+    "es": "Cebada",
+    "en": "Barley",
+    "fr": "Orge",
+    "it": "Orzo"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "location": null,
+   "evidence": "Defra Agricultural Price Index, base 2020=100 (observacion.methodology)"
+  },
+  "di_cereales_avena_eu": {
+   "kind": "price",
+   "concept": "oats",
+   "product": {
+    "es": "Avena pienso",
+    "en": "Feed oats",
+    "fr": "Avoine fourragère",
+    "it": "Avena da foraggio"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "unspecified",
+   "market": {
+    "es": "UE (agregado de la Comisión)",
+    "en": "EU (Commission aggregate)",
+    "fr": "UE (agrégat de la Commission)",
+    "it": "UE (aggregato della Commissione)"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): agregado de la UE (media nacional de los Estados miembros que la publican); el portal no indica la etapa"
+  },
+  "di_avena_us": {
+   "kind": "price",
+   "concept": "oats",
+   "product": {
+    "es": "Avena",
+    "en": "Oats",
+    "fr": "Avoine",
+    "it": "Avena"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "price_received",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "USDA NASS Quick Stats, short_desc «… - PRICE RECEIVED» (precio medio nacional percibido por el agricultor), scripts/update-nass-us.mjs"
+  },
+  "di_cereales_avena_ca": {
+   "kind": "price",
+   "concept": "oats",
+   "product": {
+    "es": "Avena",
+    "en": "Oats",
+    "fr": "Avoine",
+    "it": "Avena"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "location": {
+    "es": "Saskatchewan",
+    "en": "Saskatchewan",
+    "fr": "Saskatchewan",
+    "it": "Saskatchewan"
+   },
+   "evidence": "Statistics Canada 32-10-0077-01: precio mensual pagado al productor en la provincia de referencia (observacion.methodology)"
+  },
+  "di_cereales_arroz_eu": {
+   "kind": "price",
+   "concept": "rice",
+   "product": {
+    "es": "Arroz cáscara (paddy)",
+    "en": "Paddy rice",
+    "fr": "Riz paddy",
+    "it": "Riso risone"
+   },
+   "form": "grain",
+   "grade": {
+    "es": "Tipo japónica (no índica)",
+    "en": "Japonica type (not indica)",
+    "fr": "Type japonica (pas indica)",
+    "it": "Tipo japonica (non indica)"
+   },
+   "stage": "unspecified",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): arroz cascara japonica en España; el portal no indica la etapa"
+  },
+  "di_arroz_us": {
+   "kind": "price",
+   "concept": "rice",
+   "product": {
+    "es": "Arroz",
+    "en": "Rice",
+    "fr": "Riz",
+    "it": "Riso"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "price_received",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "USDA NASS Quick Stats, short_desc «… - PRICE RECEIVED» (precio medio nacional percibido por el agricultor), scripts/update-nass-us.mjs"
+  },
+  "di_pienso_harina_soja_eu": {
+   "kind": "price",
+   "concept": "soy_meal",
+   "product": {
+    "es": "Harina de soja",
+    "en": "Soybean meal",
+    "fr": "Tourteau de soja",
+    "it": "Farina di soia"
+   },
+   "form": "meal",
+   "grade": {
+    "es": "40–50 % de proteína",
+    "en": "40–50 % protein",
+    "fr": "40–50 % de protéines",
+    "it": "40–50 % di proteine"
+   },
+   "stage": "ex_works",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): harina de soja 40-50 % de proteina en España (media), salida de fabrica"
+  },
+  "di_pienso_harina_soja_us": {
+   "kind": "price",
+   "concept": "soy_meal",
+   "product": {
+    "es": "Harina de soja",
+    "en": "Soybean meal",
+    "fr": "Tourteau de soja",
+    "it": "Farina di soia"
+   },
+   "form": "meal",
+   "grade": {
+    "es": "46,5–48 % de proteína",
+    "en": "46.5–48 % protein",
+    "fr": "46,5–48 % de protéines",
+    "it": "46,5–48 % di proteine"
+   },
+   "stage": "fob",
+   "market": {
+    "es": "EE. UU.",
+    "en": "United States",
+    "fr": "États-Unis",
+    "it": "Stati Uniti"
+   },
+   "location": {
+    "es": "Iowa",
+    "en": "Iowa",
+    "fr": "Iowa",
+    "it": "Iowa"
+   },
+   "evidence": "USDA AMS MARS informe 3511: harina de soja 46,5-48 % de proteina, Iowa, FOB, cotizacion de venta (ask), USD/ton corta; mercado regional, no la media nacional"
+  },
+  "di_cereales_soja_grano_ca": {
+   "kind": "price",
+   "concept": "soybeans",
+   "product": {
+    "es": "Soja grano",
+    "en": "Soybeans",
+    "fr": "Soja en grains",
+    "it": "Soia in granella"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "location": {
+    "es": "Ontario",
+    "en": "Ontario",
+    "fr": "Ontario",
+    "it": "Ontario"
+   },
+   "evidence": "Statistics Canada 32-10-0077-01: precio mensual pagado al productor en la provincia de referencia (observacion.methodology)"
+  },
+  "di_cereales_colza_eu": {
+   "kind": "price",
+   "concept": "rapeseed",
+   "product": {
+    "es": "Colza",
+    "en": "Rapeseed",
+    "fr": "Colza",
+    "it": "Colza"
+   },
+   "form": "grain",
+   "grade": {
+    "es": "Media nacional",
+    "en": "National average",
+    "fr": "Moyenne nationale",
+    "it": "Media nazionale"
+   },
+   "stage": "silo_exit",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): colza en España (media nacional), salida de silo del agricultor"
+  },
+  "di_colza_us": {
+   "kind": "price",
+   "concept": "rapeseed",
+   "product": {
+    "es": "Canola",
+    "en": "Canola",
+    "fr": "Canola",
+    "it": "Canola"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "price_received",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "USDA NASS Quick Stats, short_desc «… - PRICE RECEIVED» (precio medio nacional percibido por el agricultor), scripts/update-nass-us.mjs"
+  },
+  "di_cereales_colza_ca": {
+   "kind": "price",
+   "concept": "rapeseed",
+   "product": {
+    "es": "Canola (incl. colza)",
+    "en": "Canola (incl. rapeseed)",
+    "fr": "Canola (colza incluse)",
+    "it": "Canola (colza inclusa)"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "location": {
+    "es": "Saskatchewan",
+    "en": "Saskatchewan",
+    "fr": "Saskatchewan",
+    "it": "Saskatchewan"
+   },
+   "evidence": "Statistics Canada 32-10-0077-01: precio mensual pagado al productor en la provincia de referencia (observacion.methodology)"
+  },
+  "di_leche_eu": {
+   "kind": "price",
+   "concept": "milk",
+   "product": {
+    "es": "Leche cruda de vaca",
+    "en": "Raw cow’s milk",
+    "fr": "Lait cru de vache",
+    "it": "Latte crudo di vacca"
+   },
+   "form": "milk",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): Milk Market Observatory, leche cruda pagada al productor en España, EUR/100 kg"
+  },
+  "di_leche_us": {
+   "kind": "price",
+   "concept": "milk",
+   "product": {
+    "es": "Leche (vendida a plantas)",
+    "en": "Milk (sold to plants)",
+    "fr": "Lait (vendu aux laiteries)",
+    "it": "Latte (venduto agli stabilimenti)"
+   },
+   "form": "milk",
+   "grade": {
+    "es": "Todo el volumen, no Clase III",
+    "en": "All milk, not Class III",
+    "fr": "Tout le lait, pas Classe III",
+    "it": "Tutto il latte, non Classe III"
+   },
+   "stage": "price_received",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "USDA NASS Quick Stats, short_desc «… - PRICE RECEIVED» (precio medio nacional percibido por el agricultor), scripts/update-nass-us.mjs (trustMethodology: all milk sold to plants, not Class III)"
+  },
+  "di_lacteos_leche_ca": {
+   "kind": "price",
+   "concept": "milk",
+   "product": {
+    "es": "Leche sin procesar de bovino",
+    "en": "Unprocessed bovine milk",
+    "fr": "Lait bovin non transformé",
+    "it": "Latte bovino non trasformato"
+   },
+   "form": "milk",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "location": {
+    "es": "Quebec",
+    "en": "Quebec",
+    "fr": "Québec",
+    "it": "Québec"
+   },
+   "evidence": "Statistics Canada 32-10-0077-01: precio mensual pagado al productor en la provincia de referencia (observacion.methodology); kl convertido a 100 kg con densidad 1,03"
+  },
+  "di_lacteos_leche_uk": {
+   "kind": "price",
+   "concept": "milk",
+   "product": {
+    "es": "Leche",
+    "en": "Milk",
+    "fr": "Lait",
+    "it": "Latte"
+   },
+   "form": "milk",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "location": null,
+   "evidence": "Defra, precio medio en granja, hoja Prices_Monthly (observacion.methodology); peniques/litro convertido con densidad 1,03"
+  },
+  "di_defra_milk_output_index": {
+   "kind": "index",
+   "concept": "milk",
+   "product": {
+    "es": "Leche",
+    "en": "Milk",
+    "fr": "Lait",
+    "it": "Latte"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "location": null,
+   "evidence": "Defra Agricultural Price Index, base 2020=100 (observacion.methodology)"
+  },
+  "di_eurostat_milk_output_index": {
+   "kind": "index",
+   "concept": "milk",
+   "product": {
+    "es": "Leche",
+    "en": "Milk",
+    "fr": "Lait",
+    "it": "Latte"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "UE-27",
+    "en": "EU-27",
+    "fr": "UE-27",
+    "it": "UE-27"
+   },
+   "location": null,
+   "evidence": "Eurostat apri_pi_outq/apri_pi_inq, indice nominal de precios agrarios UE-27, base 2020=100 (observacion.methodology)"
+  },
+  "di_ganado_vaca_eu": {
+   "kind": "price",
+   "concept": "cattle",
+   "product": {
+    "es": "Macho joven",
+    "en": "Young bull",
+    "fr": "Jeune bovin",
+    "it": "Giovane toro"
+   },
+   "form": "carcass",
+   "grade": {
+    "es": "Categoría A, conformación R3",
+    "en": "Category A, conformation R3",
+    "fr": "Catégorie A, conformation R3",
+    "it": "Categoria A, conformazione R3"
+   },
+   "stage": "unspecified",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): canal de macho joven categoria A R3, EUR/100 kg de canal; no es vaca de desecho; el portal no indica la etapa"
+  },
+  "di_vaca_us": {
+   "kind": "price",
+   "concept": "cattle",
+   "product": {
+    "es": "Novillos y novillas",
+    "en": "Steers and heifers",
+    "fr": "Bouvillons et génisses",
+    "it": "Manzi e giovenche"
+   },
+   "form": "live",
+   "grade": {
+    "es": "≥ 500 lb",
+    "en": "≥ 500 lb",
+    "fr": "≥ 500 lb",
+    "it": "≥ 500 lb"
+   },
+   "stage": "price_received",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "USDA NASS Quick Stats, short_desc «… - PRICE RECEIVED» (precio medio nacional percibido por el agricultor), scripts/update-nass-us.mjs (CATTLE, STEERS & HEIFERS, GE 500 LBS, peso vivo)"
+  },
+  "di_ganado_vaca_ca": {
+   "kind": "price",
+   "concept": "cattle",
+   "product": {
+    "es": "Novillos para sacrificio",
+    "en": "Steers for slaughter",
+    "fr": "Bouvillons d’abattage",
+    "it": "Manzi da macello"
+   },
+   "form": "live",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "location": {
+    "es": "Alberta",
+    "en": "Alberta",
+    "fr": "Alberta",
+    "it": "Alberta"
+   },
+   "evidence": "Statistics Canada 32-10-0077-01: precio mensual pagado al productor en la provincia de referencia (observacion.methodology)"
+  },
+  "di_defra_cattle_output_index": {
+   "kind": "index",
+   "concept": "cattle",
+   "product": {
+    "es": "Ganado vacuno y terneros",
+    "en": "Cattle and calves",
+    "fr": "Bovins et veaux",
+    "it": "Bovini e vitelli"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "location": null,
+   "evidence": "Defra Agricultural Price Index, base 2020=100 (observacion.methodology)"
+  },
+  "di_porcino_cerdo_eu": {
+   "kind": "price",
+   "concept": "pigs",
+   "product": {
+    "es": "Cerdo",
+    "en": "Pig",
+    "fr": "Porc",
+    "it": "Suino"
+   },
+   "form": "carcass",
+   "grade": {
+    "es": "Clase S (≥ 60 % magro)",
+    "en": "Class S (≥ 60 % lean)",
+    "fr": "Classe S (≥ 60 % de maigre)",
+    "it": "Classe S (≥ 60 % di magro)"
+   },
+   "stage": "unspecified",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): canal de cerdo clasificada S, EUR/100 kg de canal; el portal no indica la etapa"
+  },
+  "di_cerdo_us": {
+   "kind": "price",
+   "concept": "pigs",
+   "product": {
+    "es": "Cerdos",
+    "en": "Hogs",
+    "fr": "Porcs",
+    "it": "Suini"
+   },
+   "form": "live",
+   "grade": null,
+   "stage": "price_received",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "USDA NASS Quick Stats, short_desc «… - PRICE RECEIVED» (precio medio nacional percibido por el agricultor), scripts/update-nass-us.mjs (HOGS, peso vivo)"
+  },
+  "di_porcino_cerdo_ca": {
+   "kind": "price",
+   "concept": "pigs",
+   "product": {
+    "es": "Cerdos",
+    "en": "Hogs",
+    "fr": "Porcs",
+    "it": "Suini"
+   },
+   "form": "livestock",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "location": {
+    "es": "Ontario",
+    "en": "Ontario",
+    "fr": "Ontario",
+    "it": "Ontario"
+   },
+   "evidence": "Statistics Canada 32-10-0077-01: precio mensual pagado al productor en la provincia de referencia (observacion.methodology); la tabla no indica si es peso vivo o canal"
+  },
+  "di_defra_pigs_output_index": {
+   "kind": "index",
+   "concept": "pigs",
+   "product": {
+    "es": "Cerdos",
+    "en": "Pigs",
+    "fr": "Porcs",
+    "it": "Suini"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "location": null,
+   "evidence": "Defra Agricultural Price Index, base 2020=100 (observacion.methodology)"
+  },
+  "di_avicultura_huevos_eu": {
+   "kind": "price",
+   "concept": "eggs",
+   "product": {
+    "es": "Huevos de gallinas en jaula",
+    "en": "Eggs from caged hens",
+    "fr": "Œufs de poules en cage",
+    "it": "Uova di galline in gabbia"
+   },
+   "form": "eggs",
+   "grade": {
+    "es": "Categoría «Cage»",
+    "en": "«Cage» category",
+    "fr": "Catégorie «Cage»",
+    "it": "Categoria «Cage»"
+   },
+   "stage": "unspecified",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): huevos de gallinas en jaula (Cage) en España, EUR/100 kg de huevos; el portal no indica la etapa"
+  },
+  "di_huevos_us": {
+   "kind": "price",
+   "concept": "eggs",
+   "product": {
+    "es": "Huevos de mesa",
+    "en": "Table eggs",
+    "fr": "Œufs de consommation",
+    "it": "Uova da tavola"
+   },
+   "form": "eggs",
+   "grade": null,
+   "stage": "price_received",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "USDA NASS Quick Stats, short_desc «… - PRICE RECEIVED» (precio medio nacional percibido por el agricultor), scripts/update-nass-us.mjs (trustMethodology: producer price, not retail), USD/docena"
+  },
+  "di_avicultura_huevos_ca": {
+   "kind": "price",
+   "concept": "eggs",
+   "product": {
+    "es": "Huevos en cáscara",
+    "en": "Eggs in shell",
+    "fr": "Œufs en coquille",
+    "it": "Uova in guscio"
+   },
+   "form": "eggs",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "location": {
+    "es": "Ontario",
+    "en": "Ontario",
+    "fr": "Ontario",
+    "it": "Ontario"
+   },
+   "evidence": "Statistics Canada 32-10-0077-01: precio mensual pagado al productor en la provincia de referencia (observacion.methodology)"
+  },
+  "di_defra_eggs_output_index": {
+   "kind": "index",
+   "concept": "eggs",
+   "product": {
+    "es": "Huevos",
+    "en": "Eggs",
+    "fr": "Œufs",
+    "it": "Uova"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "location": null,
+   "evidence": "Defra Agricultural Price Index, base 2020=100 (observacion.methodology)"
+  },
+  "di_avicultura_pollo_eu": {
+   "kind": "price",
+   "concept": "chicken",
+   "product": {
+    "es": "Pollo broiler entero",
+    "en": "Whole broiler chicken",
+    "fr": "Poulet de chair entier",
+    "it": "Pollo da carne intero"
+   },
+   "form": "whole_bird",
+   "grade": {
+    "es": "65 % de rendimiento",
+    "en": "65 % yield",
+    "fr": "Rendement 65 %",
+    "it": "Resa 65 %"
+   },
+   "stage": "selling_price",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): precio de venta semanal del pollo broiler entero (65 % de rendimiento) en España, EUR/100 kg dividido entre 100"
+  },
+  "di_pollo_us": {
+   "kind": "price",
+   "concept": "chicken",
+   "product": {
+    "es": "Pollo broiler",
+    "en": "Broilers",
+    "fr": "Poulets de chair",
+    "it": "Polli da carne"
+   },
+   "form": "live",
+   "grade": null,
+   "stage": "price_received",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "USDA NASS Quick Stats, short_desc «… - PRICE RECEIVED» (precio medio nacional percibido por el agricultor), scripts/update-nass-us.mjs (CHICKENS, BROILERS, peso vivo); no comparable con el precio UE de pollo entero"
+  },
+  "di_avicultura_pollo_ca": {
+   "kind": "price",
+   "concept": "chicken",
+   "product": {
+    "es": "Pollo para carne",
+    "en": "Chickens for meat",
+    "fr": "Poulets de chair",
+    "it": "Polli da carne"
+   },
+   "form": "livestock",
+   "grade": null,
+   "stage": "farm_gate",
+   "market": {
+    "es": "Canadá",
+    "en": "Canada",
+    "fr": "Canada",
+    "it": "Canada"
+   },
+   "location": {
+    "es": "Ontario",
+    "en": "Ontario",
+    "fr": "Ontario",
+    "it": "Ontario"
+   },
+   "evidence": "Statistics Canada 32-10-0077-01: precio mensual pagado al productor en la provincia de referencia (observacion.methodology) (Chickens for meat); la tabla no indica la forma"
+  },
+  "di_azucar_azucar_eu": {
+   "kind": "price",
+   "concept": "sugar",
+   "product": {
+    "es": "Azúcar",
+    "en": "Sugar",
+    "fr": "Sucre",
+    "it": "Zucchero"
+   },
+   "form": "sugar",
+   "grade": {
+    "es": "Contratos mensuales",
+    "en": "Monthly contracts",
+    "fr": "Contrats mensuels",
+    "it": "Contratti mensili"
+   },
+   "stage": "unspecified",
+   "market": {
+    "es": "UE (agregado de la Comisión)",
+    "en": "EU (Commission aggregate)",
+    "fr": "UE (agrégat de la Commission)",
+    "it": "UE (aggregato della Commissione)"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): precio mensual medio del azucar en la UE (contratos mensuales), EUR/t; la Comision no indica la etapa"
+  },
+  "di_fertilizantes_urea_eu": {
+   "kind": "price",
+   "concept": "urea",
+   "product": {
+    "es": "Urea",
+    "en": "Urea",
+    "fr": "Urée",
+    "it": "Urea"
+   },
+   "form": "fertilizer",
+   "grade": null,
+   "stage": "unspecified",
+   "market": {
+    "es": "Europa del Este",
+    "en": "Eastern Europe",
+    "fr": "Europe de l’Est",
+    "it": "Europa orientale"
+   },
+   "location": null,
+   "evidence": "Banco Mundial, Commodity Price Data (Pink Sheet), serie «Urea, E. Europe» (scripts/update-worldbank-urea-eu.py); USD/t; el repositorio no documenta la etapa del Pink Sheet (no indica la etapa aqui)"
+  },
+  "di_fertilizantes_dap_eu": {
+   "kind": "price",
+   "concept": "fert_p",
+   "product": {
+    "es": "Fertilizantes fosfatados (P), agregado",
+    "en": "Phosphate (P) fertilisers, aggregate",
+    "fr": "Engrais phosphatés (P), agrégat",
+    "it": "Fertilizzanti fosfatici (P), aggregato"
+   },
+   "form": "fertilizer",
+   "grade": null,
+   "stage": "unspecified",
+   "market": {
+    "es": "Varios mercados de la UE",
+    "en": "Several EU markets",
+    "fr": "Plusieurs marchés de l’UE",
+    "it": "Diversi mercati UE"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): agregado de varios mercados UE; NO es DAP, la Comision no especifica el producto"
+  },
+  "di_fertilizantes_potasa_eu": {
+   "kind": "price",
+   "concept": "fert_k",
+   "product": {
+    "es": "Fertilizantes potásicos (K), agregado",
+    "en": "Potash (K) fertilisers, aggregate",
+    "fr": "Engrais potassiques (K), agrégat",
+    "it": "Fertilizzanti potassici (K), aggregato"
+   },
+   "form": "fertilizer",
+   "grade": null,
+   "stage": "unspecified",
+   "market": {
+    "es": "Varios mercados de la UE",
+    "en": "Several EU markets",
+    "fr": "Plusieurs marchés de l’UE",
+    "it": "Diversi mercati UE"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): agregado de varios mercados UE; NO es MOP, la Comision no especifica el producto"
+  },
+  "di_eurostat_fertiliser_input_index": {
+   "kind": "index",
+   "concept": "fertilisers",
+   "product": {
+    "es": "Fertilizantes y enmiendas (precios pagados)",
+    "en": "Fertilisers and soil improvers (prices paid)",
+    "fr": "Engrais et amendements (prix payés)",
+    "it": "Fertilizzanti e ammendanti (prezzi pagati)"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "UE-27",
+    "en": "EU-27",
+    "fr": "UE-27",
+    "it": "UE-27"
+   },
+   "location": null,
+   "evidence": "Eurostat apri_pi_outq/apri_pi_inq, indice nominal de precios agrarios UE-27, base 2020=100 (observacion.methodology)"
+  },
+  "di_defra_fertiliser_input_index": {
+   "kind": "index",
+   "concept": "fertilisers",
+   "product": {
+    "es": "Fertilizantes y enmiendas (precios pagados)",
+    "en": "Fertilisers and soil improvers (prices paid)",
+    "fr": "Engrais et amendements (prix payés)",
+    "it": "Fertilizzanti e ammendanti (prezzi pagati)"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "location": null,
+   "evidence": "Defra Agricultural Price Index, base 2020=100 (observacion.methodology)"
+  },
+  "di_diesel_eu": {
+   "kind": "price",
+   "concept": "diesel",
+   "product": {
+    "es": "Gasóleo de automoción",
+    "en": "Automotive gas oil",
+    "fr": "Gazole routier",
+    "it": "Gasolio per autotrazione"
+   },
+   "form": "fuel",
+   "grade": null,
+   "stage": "retail_taxed",
+   "market": {
+    "es": "UE (media ponderada)",
+    "en": "EU (weighted average)",
+    "fr": "UE (moyenne pondérée)",
+    "it": "UE (media ponderata)"
+   },
+   "location": null,
+   "evidence": "Boletin Semanal del Petroleo (CE): media UE ponderada, precio al consumidor con impuestos (observacion.methodology)"
+  },
+  "di_diesel_us": {
+   "kind": "price",
+   "concept": "diesel",
+   "product": {
+    "es": "Gasóleo",
+    "en": "Diesel",
+    "fr": "Gazole",
+    "it": "Gasolio"
+   },
+   "form": "fuel",
+   "grade": null,
+   "stage": "unspecified",
+   "market": {
+    "es": "EE. UU. (media nacional)",
+    "en": "United States (national average)",
+    "fr": "États-Unis (moyenne nationale)",
+    "it": "Stati Uniti (media nazionale)"
+   },
+   "location": null,
+   "evidence": "EIA, precio semanal en USD/galon (scripts/update-eia-diesel-us.mjs); el repositorio no documenta la etapa"
+  },
+  "di_eurostat_energy_input_index": {
+   "kind": "index",
+   "concept": "energy",
+   "product": {
+    "es": "Energía y lubricantes (precios pagados)",
+    "en": "Energy and lubricants (prices paid)",
+    "fr": "Énergie et lubrifiants (prix payés)",
+    "it": "Energia e lubrificanti (prezzi pagati)"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "UE-27",
+    "en": "EU-27",
+    "fr": "UE-27",
+    "it": "UE-27"
+   },
+   "location": null,
+   "evidence": "Eurostat apri_pi_outq/apri_pi_inq, indice nominal de precios agrarios UE-27, base 2020=100 (observacion.methodology)"
+  },
+  "di_defra_energy_input_index": {
+   "kind": "index",
+   "concept": "energy",
+   "product": {
+    "es": "Energía y lubricantes (precios pagados)",
+    "en": "Energy and lubricants (prices paid)",
+    "fr": "Énergie et lubrifiants (prix payés)",
+    "it": "Energia e lubrificanti (prezzi pagati)"
+   },
+   "form": "index",
+   "grade": null,
+   "stage": "index",
+   "market": {
+    "es": "Reino Unido",
+    "en": "United Kingdom",
+    "fr": "Royaume-Uni",
+    "it": "Regno Unito"
+   },
+   "location": null,
+   "evidence": "Defra Agricultural Price Index, base 2020=100 (observacion.methodology)"
+  },
+  "di_aceite_oliva_eu": {
+   "kind": "price",
+   "concept": "olive_oil",
+   "product": {
+    "es": "Aceite de oliva virgen extra",
+    "en": "Extra virgin olive oil",
+    "fr": "Huile d’olive vierge extra",
+    "it": "Olio extravergine di oliva"
+   },
+   "form": "oil",
+   "grade": {
+    "es": "Acidez hasta 0,8 %",
+    "en": "Acidity up to 0.8 %",
+    "fr": "Acidité jusqu’à 0,8 %",
+    "it": "Acidità fino a 0,8 %"
+   },
+   "stage": "unspecified",
+   "market": {
+    "es": "España",
+    "en": "Spain",
+    "fr": "Espagne",
+    "it": "Spagna"
+   },
+   "location": null,
+   "evidence": "Comisión Europea, Agri-food Data Portal (observacion.methodology): media nacional semanal en España, EUR/100 kg; el portal no indica la etapa"
+  }
+ },
+ "comparator": {
+  "trigo": {
+   "concept": "wheat",
+   "product": {
+    "es": "Trigo blando panificable",
+    "en": "Bread (milling) wheat",
+    "fr": "Blé tendre panifiable",
+    "it": "Frumento tenero panificabile"
+   },
+   "form": "grain",
+   "grade": {
+    "es": "Media nacional",
+    "en": "National average",
+    "fr": "Moyenne nationale",
+    "it": "Media nazionale"
+   },
+   "stage": "unspecified",
+   "evidence": "Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; el portal no indica la etapa"
+  },
+  "maiz": {
+   "concept": "maize",
+   "product": {
+    "es": "Maíz pienso",
+    "en": "Feed maize",
+    "fr": "Maïs fourrager",
+    "it": "Mais da foraggio"
+   },
+   "form": "grain",
+   "grade": {
+    "es": "Media nacional",
+    "en": "National average",
+    "fr": "Moyenne nationale",
+    "it": "Media nazionale"
+   },
+   "stage": "unspecified",
+   "evidence": "Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; el portal no indica la etapa"
+  },
+  "cebada": {
+   "concept": "barley",
+   "product": {
+    "es": "Cebada pienso",
+    "en": "Feed barley",
+    "fr": "Orge fourragère",
+    "it": "Orzo da foraggio"
+   },
+   "form": "grain",
+   "grade": {
+    "es": "Media nacional",
+    "en": "National average",
+    "fr": "Moyenne nationale",
+    "it": "Media nazionale"
+   },
+   "stage": "unspecified",
+   "evidence": "Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; el portal no indica la etapa"
+  },
+  "avena": {
+   "concept": "oats",
+   "product": {
+    "es": "Avena pienso",
+    "en": "Feed oats",
+    "fr": "Avoine fourragère",
+    "it": "Avena da foraggio"
+   },
+   "form": "grain",
+   "grade": {
+    "es": "Media nacional",
+    "en": "National average",
+    "fr": "Moyenne nationale",
+    "it": "Media nazionale"
+   },
+   "stage": "unspecified",
+   "evidence": "Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; el portal no indica la etapa"
+  },
+  "colza": {
+   "concept": "rapeseed",
+   "product": {
+    "es": "Colza",
+    "en": "Rapeseed",
+    "fr": "Colza",
+    "it": "Colza"
+   },
+   "form": "grain",
+   "grade": null,
+   "stage": "unspecified",
+   "evidence": "Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; el portal no indica la etapa"
+  },
+  "leche": {
+   "concept": "milk",
+   "product": {
+    "es": "Leche cruda de vaca",
+    "en": "Raw cow’s milk",
+    "fr": "Lait cru de vache",
+    "it": "Latte crudo di vacca"
+   },
+   "form": "milk",
+   "grade": null,
+   "stage": "farm_gate",
+   "evidence": "Agri-food Data Portal de la Comision, familia/serie de data/product-metadata.json (compare.eu); la serie por pais es la media del Estado miembro; leche cruda pagada al productor"
+  }
+ }
+}

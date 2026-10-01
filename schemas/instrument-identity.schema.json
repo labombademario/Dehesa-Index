@@ -1,0 +1,324 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Instrument identity (curated)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "_doc",
+  "stages",
+  "forms",
+  "instruments",
+  "comparator"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "_doc": {
+   "type": "string"
+  },
+  "stages": {
+   "type": "object",
+   "minProperties": 5,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "es",
+     "en",
+     "fr",
+     "it"
+    ],
+    "properties": {
+     "es": {
+      "type": "string",
+      "minLength": 1
+     },
+     "en": {
+      "type": "string",
+      "minLength": 1
+     },
+     "fr": {
+      "type": "string",
+      "minLength": 1
+     },
+     "it": {
+      "type": "string",
+      "minLength": 1
+     }
+    }
+   }
+  },
+  "forms": {
+   "type": "object",
+   "minProperties": 5,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "es",
+     "en",
+     "fr",
+     "it"
+    ],
+    "properties": {
+     "es": {
+      "type": "string",
+      "minLength": 1
+     },
+     "en": {
+      "type": "string",
+      "minLength": 1
+     },
+     "fr": {
+      "type": "string",
+      "minLength": 1
+     },
+     "it": {
+      "type": "string",
+      "minLength": 1
+     }
+    }
+   }
+  },
+  "instruments": {
+   "type": "object",
+   "minProperties": 40,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "kind",
+     "product",
+     "form",
+     "grade",
+     "stage",
+     "market",
+     "location",
+     "evidence",
+     "concept"
+    ],
+    "properties": {
+     "kind": {
+      "enum": [
+       "price",
+       "index"
+      ]
+     },
+     "product": {
+      "type": "object",
+      "required": [
+       "es",
+       "en",
+       "fr",
+       "it"
+      ],
+      "properties": {
+       "es": {
+        "type": "string",
+        "minLength": 1
+       },
+       "en": {
+        "type": "string",
+        "minLength": 1
+       },
+       "fr": {
+        "type": "string",
+        "minLength": 1
+       },
+       "it": {
+        "type": "string",
+        "minLength": 1
+       }
+      }
+     },
+     "form": {
+      "type": "string"
+     },
+     "grade": {
+      "type": [
+       "object",
+       "null"
+      ],
+      "required": [
+       "es",
+       "en",
+       "fr",
+       "it"
+      ],
+      "properties": {
+       "es": {
+        "type": "string",
+        "minLength": 1
+       },
+       "en": {
+        "type": "string",
+        "minLength": 1
+       },
+       "fr": {
+        "type": "string",
+        "minLength": 1
+       },
+       "it": {
+        "type": "string",
+        "minLength": 1
+       }
+      }
+     },
+     "stage": {
+      "type": "string"
+     },
+     "market": {
+      "type": "object",
+      "required": [
+       "es",
+       "en",
+       "fr",
+       "it"
+      ],
+      "properties": {
+       "es": {
+        "type": "string",
+        "minLength": 1
+       },
+       "en": {
+        "type": "string",
+        "minLength": 1
+       },
+       "fr": {
+        "type": "string",
+        "minLength": 1
+       },
+       "it": {
+        "type": "string",
+        "minLength": 1
+       }
+      }
+     },
+     "location": {
+      "type": [
+       "object",
+       "null"
+      ],
+      "required": [
+       "es",
+       "en",
+       "fr",
+       "it"
+      ],
+      "properties": {
+       "es": {
+        "type": "string",
+        "minLength": 1
+       },
+       "en": {
+        "type": "string",
+        "minLength": 1
+       },
+       "fr": {
+        "type": "string",
+        "minLength": 1
+       },
+       "it": {
+        "type": "string",
+        "minLength": 1
+       }
+      }
+     },
+     "evidence": {
+      "type": "string",
+      "minLength": 20
+     },
+     "concept": {
+      "type": "string",
+      "minLength": 2
+     }
+    }
+   }
+  },
+  "comparator": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "product",
+     "form",
+     "grade",
+     "stage",
+     "evidence",
+     "concept"
+    ],
+    "properties": {
+     "product": {
+      "type": "object",
+      "required": [
+       "es",
+       "en",
+       "fr",
+       "it"
+      ],
+      "properties": {
+       "es": {
+        "type": "string",
+        "minLength": 1
+       },
+       "en": {
+        "type": "string",
+        "minLength": 1
+       },
+       "fr": {
+        "type": "string",
+        "minLength": 1
+       },
+       "it": {
+        "type": "string",
+        "minLength": 1
+       }
+      }
+     },
+     "form": {
+      "type": "string"
+     },
+     "grade": {
+      "type": [
+       "object",
+       "null"
+      ],
+      "required": [
+       "es",
+       "en",
+       "fr",
+       "it"
+      ],
+      "properties": {
+       "es": {
+        "type": "string",
+        "minLength": 1
+       },
+       "en": {
+        "type": "string",
+        "minLength": 1
+       },
+       "fr": {
+        "type": "string",
+        "minLength": 1
+       },
+       "it": {
+        "type": "string",
+        "minLength": 1
+       }
+      }
+     },
+     "stage": {
+      "type": "string"
+     },
+     "evidence": {
+      "type": "string",
+      "minLength": 20
+     },
+     "concept": {
+      "type": "string",
+      "minLength": 2
+     }
+    }
+   }
+  }
+ }
+}

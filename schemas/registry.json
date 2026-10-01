@@ -265,6 +265,12 @@
    [
     "coverage_gaps"
    ]
+  ],
+  "instrument-identity.json": [
+   "instrument-identity",
+   [
+    "instrument_identity"
+   ]
   ]
  },
  "globs": {
@@ -330,7 +336,8 @@
   "freshness.json",
   "source-candidates.json",
   "coverage-gaps.json",
-  "series-lifecycle.json"
+  "series-lifecycle.json",
+  "instrument-identity.json"
  ],
  "derivedGlobs": [
   "products/*.json",

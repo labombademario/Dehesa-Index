@@ -54,6 +54,9 @@
     cp_directional: ['Orientativa', 'Directional', 'Indicative', 'Indicativa'],
     cp_not_comparable: ['No comparable', 'Not comparable', 'Non comparable', 'Non confrontabile'],
     cpNote: ['Orientativa = mismo concepto aproximado, no idéntico (calidad, punto de venta o definición distintos). No comparable = el concepto de precio es distinto: no se compara con los demás mercados.', 'Directional = similar but not identical concept (quality, point of sale or definition differ). Not comparable = the price concept differs: it is not compared with the other markets.', 'Indicative = concept proche mais non identique (qualité, point de vente ou définition différents). Non comparable = le concept de prix diffère : il n’est pas comparé aux autres marchés.', 'Indicativa = concetto simile ma non identico (qualità, punto vendita o definizione diversi). Non confrontabile = il concetto di prezzo è diverso: non viene confrontato con gli altri mercati.'],
+    identity: ['Instrumento: producto, calidad, lugar y etapa de mercado', 'Instrument: product, grade, place and market stage', 'Instrument : produit, qualité, lieu et étape de marché', 'Strumento: prodotto, qualità, luogo e fase di mercato'],
+    spreadQ: ['Diferencia orientativa entre instrumentos distintos: {0} está un {1} % por encima de {2}. No son el mismo instrumento (difieren en {3}); no es una comparación exacta.', 'Indicative gap between different instruments: {0} is {1} % above {2}. They are not the same instrument (they differ in {3}); not an exact comparison.', 'Écart indicatif entre instruments différents : {0} est {1} % au-dessus de {2}. Ce ne sont pas les mêmes instruments (ils diffèrent par {3}) ; comparaison non exacte.', 'Differenza indicativa tra strumenti diversi: {0} è il {1} % sopra {2}. Non sono lo stesso strumento (differiscono per {3}); non è un confronto esatto.'],
+    noSpread: ['No se calcula diferencia de precio entre {0} y {1}: son productos o formas distintos ({2}), no el mismo instrumento.', 'No price gap is computed between {0} and {1}: they are different products or forms ({2}), not the same instrument.', 'Aucun écart de prix n’est calculé entre {0} et {1} : ce sont des produits ou des formes différents ({2}), pas le même instrument.', 'Nessuna differenza di prezzo tra {0} e {1}: sono prodotti o forme diversi ({2}), non lo stesso strumento.'],
     spread: ['Diferencia orientativa: {0} está un {1} % por encima de {2} (calidades, puntos de venta y fechas distintas; no es una comparación exacta).', 'Indicative gap: {0} is {1} % above {2} (different qualities, points of sale and dates; not an exact comparison).', 'Écart indicatif : {0} est {1} % au-dessus de {2} (qualités, points de vente et dates différents ; comparaison non exacte).', 'Differenza indicativa: {0} è il {1} % sopra {2} (qualità, punti vendita e date diversi; non è un confronto esatto).'],
     noConv: ['sin conversión', 'no conversion', 'pas de conversion', 'nessuna conversione'],
     r_no_fx: ['No hay tipo de cambio del BCE para ese mes (ni en los 2 meses anteriores).', 'No ECB exchange rate for that month (nor the 2 previous months).', 'Pas de taux de change BCE pour ce mois (ni les 2 mois précédents).', 'Nessun tasso BCE per quel mese (né nei 2 mesi precedenti).'],
@@ -130,7 +133,7 @@
     loadErr: ['No se pudo cargar este bloque.', 'This block could not be loaded.', 'Ce bloc n’a pas pu être chargé.', 'Impossibile caricare questo blocco.'],
     retry: ['Reintentar', 'Retry', 'Réessayer', 'Riprova'],
     unknown: ['Producto desconocido', 'Unknown product', 'Produit inconnu', 'Prodotto sconosciuto'],
-    group: [{ cereales: 'Cereales', oleaginosas: 'Oleaginosas', lacteos: 'Lácteos', ganaderia: 'Ganadería', insumos: 'Insumos', energia: 'Energía', otros: 'Otros' }, { cereales: 'Cereals', oleaginosas: 'Oilseeds', lacteos: 'Dairy', ganaderia: 'Livestock', insumos: 'Inputs', energia: 'Energy', otros: 'Other' }, { cereales: 'Céréales', oleaginosas: 'Oléagineux', lacteos: 'Produits laitiers', ganaderia: 'Élevage', insumos: 'Intrants', energia: 'Énergie', otros: 'Autres' }, { cereales: 'Cereali', oleaginosas: 'Oleaginose', lacteos: 'Latticini', ganaderia: 'Allevamento', insumos: 'Input', energia: 'Energia', otros: 'Altro' }]
+    group: [{ cereales: 'Cereales', oleaginosas: 'Oleaginosas', lacteos: 'Lácteos', ganaderia: 'Ganadería', insumos: 'Insumos', energia: 'Energía', aceites: 'Aceites', azucar: 'Azúcar', otros: 'Otros' }, { cereales: 'Cereals', oleaginosas: 'Oilseeds', lacteos: 'Dairy', ganaderia: 'Livestock', insumos: 'Inputs', energia: 'Energy', aceites: 'Oils', azucar: 'Sugar', otros: 'Other' }, { cereales: 'Céréales', oleaginosas: 'Oléagineux', lacteos: 'Produits laitiers', ganaderia: 'Élevage', insumos: 'Intrants', energia: 'Énergie', aceites: 'Huiles', azucar: 'Sucre', otros: 'Autres' }, { cereales: 'Cereali', oleaginosas: 'Oleaginose', lacteos: 'Latticini', ganaderia: 'Allevamento', insumos: 'Input', energia: 'Energia', aceites: 'Oli', azucar: 'Zucchero', otros: 'Altro' }]
   };
   function t(k) { var a = TX[k]; if (!a) return k; var v = a[li()]; return v === undefined ? a[0] : v; }
   function tf(k) { var s = t(k), a = arguments; return s.replace(/\{(\d)\}/g, function (m, i) { return a[+i + 1] === undefined ? m : a[+i + 1]; }); }
@@ -207,12 +210,17 @@
 
   /* ---------- estado ---------- */
   var META = null, ST = { p: 'trigo', u: 'eur', r: '1y', i: null, sdEnt: null }, CTX = null, OPTS = null, BLK = {}, IO = null;
-  var ORDER_EXTRA = ['pollo', 'azucar'];
 
   function ready() {
     if (ready.p) return ready.p;
-    return ready.p = J('product-metadata.json').then(function (m) { META = m; return m; }).catch(function (e) { ready.p = null; throw e; });
+    return ready.p = J('product-metadata.json').then(function (m) { META = m; return m; }).then(function (m) {
+      // la identidad del instrumento es un complemento: si no carga, la ficha sigue funcionando (sin las lineas de identidad)
+      return (window.DIIdentity ? window.DIIdentity.ready().then(function () { return m; }, function () { return m; }) : m);
+    }).catch(function (e) { ready.p = null; throw e; });
   }
+  function ID(o) { return window.DIIdentity && o ? window.DIIdentity.get(o.id) : null; }
+  function idLine(o) { var e = ID(o); return e ? window.DIIdentity.line(e, LANGS[li()]) : ''; }
+  function idHtml(o) { var s = idLine(o); return s ? '<div class="pt-ident" title="' + esc(t('identity')) + '">' + esc(s) + '</div>' : ''; }
   function has(pid) { return !!(META && META.products[pid]); }
 
   /* ---------- carga de la cabecera ---------- */
@@ -256,7 +264,7 @@
   /* ---------- cabecera ---------- */
   function cardHtml(o, isIndex) {
     var f = fresh(o), meas = o.methodology ? '<details style="margin-top:6px"><summary class="pt-sub" style="cursor:pointer">' + esc(t('measures')) + '</summary><div class="pt-sub">' + esc(o.methodology) + '</div></details>' : '';
-    return '<div class="di-card pt-card"><div class="pt-k">' + esc(reg(o.region)) + (isIndex ? ' · ' + esc(UL.index_2020_100) : '') + '</div>' +
+    return '<div class="di-card pt-card"><div class="pt-k">' + esc(reg(o.region)) + (isIndex ? ' · ' + esc(UL.index_2020_100) : '') + '</div>' + idHtml(o) +
       '<div class="pt-v">' + (isIndex ? esc(nf(o.value, 1)) + ' <small>2020 = 100</small>' : esc(nf(o.value, Math.abs(o.value) >= 100 ? 0 : 2, o.unit === 'litro' ? 3 : 2)) + ' <small>' + esc(o.currency + '/' + (UL[o.unit] || o.unit)) + '</small>') + '</div>' +
       '<div class="pt-sub">' + esc(t('asOf')) + ' ' + esc(dstr(o.observationDate)) + (typeof o.changePct === 'number' ? ' · ' + chg(o.changePct) + ' ' + esc(t('vsPrev')) : '') + '</div>' +
       '<div>' + freshBadge(o) + (isIndex ? '' : compBadge(o)) + '</div>' +
@@ -356,7 +364,7 @@
   function instChips() {
     if (ST.u !== 'orig' || CTX.inst.length < 2) return '';
     var cur = ST.i; if (!cur || !CTX.inst.some(function (o) { return o.region === cur; })) cur = CTX.inst[0].region;
-    return '<div class="pt-bar-ctl" role="radiogroup" aria-label="' + esc(t('series')) + '"><span class="pt-lbl">' + esc(t('series')) + '</span>' + CTX.inst.map(function (o) { return '<button type="button" class="pt-chip" role="radio" aria-checked="' + (cur === o.region) + '" data-i="' + o.region + '">' + esc(reg(o.region)) + '</button>'; }).join('') + '</div>';
+    return '<div class="pt-bar-ctl" role="radiogroup" aria-label="' + esc(t('series')) + '"><span class="pt-lbl">' + esc(t('series')) + '</span>' + CTX.inst.map(function (o) { return '<button type="button" class="pt-chip" role="radio" aria-checked="' + (cur === o.region) + '" data-i="' + o.region + '" title="' + esc(idLine(o)) + '">' + esc(reg(o.region)) + '</button>'; }).join('') + '</div>';
   }
 
   /* ---------- bloques ---------- */
@@ -382,20 +390,37 @@
     var m = {}; cs.series.forEach(function (s) { if (s.pts.length) m[obsKey(s.o)] = s.pts[s.pts.length - 1].y; });
     return { vals: m, baseTs: cs.baseTs };
   }
+  // Diferencias de precio SOLO entre instrumentos de la misma forma; nunca entre formas distintas (harina frente a grano). Si el instrumento no es identico, se enumera lo que difiere.
+  function spreadNotes(comp) {
+    var I = window.DIIdentity, L = LANGS[li()], by = {}, out = '', keys = [];
+    comp.forEach(function (c) { var e = ID(c.o), k = e ? e.concept + '|' + e.form : '_'; if (!by[k]) { by[k] = []; keys.push(k); } by[k].push(c); });
+    keys.forEach(function (k) {
+      var g = by[k]; if (g.length < 2) return;
+      g.sort(function (a, b) { return a.v - b.v; });
+      var lo = g[0], hi = g[g.length - 1], cmp = I && ID(lo.o) && ID(hi.o) ? I.compare(ID(hi.o), ID(lo.o), L) : { level: 'qualified', diffs: [] }, pc = nf((hi.v / lo.v - 1) * 100, 1);
+      if (cmp.level === 'same') out += '<div class="pt-note">' + esc(tf('spread', reg(hi.o.region), pc, reg(lo.o.region))) + '</div>';
+      else out += '<div class="pt-note">' + esc(tf('spreadQ', idLine(hi.o) || reg(hi.o.region), pc, idLine(lo.o) || reg(lo.o.region), cmp.diffs.length ? cmp.diffs.map(function (d) { return d.label; }).join(', ') : t('identity').split(':')[0])) + '</div>';
+    });
+    if (keys.length > 1 && I) {
+      // grupos de concepto/forma distintos: nunca se restan entre si
+      var reps = keys.map(function (k) { return by[k][0]; }), nm = function (c) { var p = ID(c.o) ? I.parts(ID(c.o), L) : null; return p ? p.product + (p.grade ? ' ' + p.grade : '') : reg(c.o.region); }, dl = {};
+      for (var a = 0; a < reps.length; a++) for (var b = a + 1; b < reps.length; b++) if (ID(reps[a].o) && ID(reps[b].o)) I.compare(ID(reps[a].o), ID(reps[b].o), L).diffs.forEach(function (d) { dl[d.label] = 1; });
+      out += '<div class="pt-note">' + esc(tf('noSpread', reps.slice(0, -1).map(nm).join(', '), nm(reps[reps.length - 1]), Object.keys(dl).join(', '))) + '</div>';
+    }
+    return out;
+  }
   function htmlCompare() {
     var mode = ST.u === 'orig' ? 'eur' : ST.u, ix = mode === 'idx' ? indexNow() : null, rows = [], comp = [];
     CTX.inst.forEach(function (o) {
       var r, txt, why = '';
       if (mode === 'idx') { var v = ix.vals[obsKey(o)]; if (typeof v === 'number') txt = nf(v, 1); else { txt = '—'; why = o.comparability === 'not_comparable' && CTX.inst.length > 1 ? t('r_not_comp') : t('r_no_hist'); } }
       else { r = convObs(o, mode, CTX.pid); if (r.value !== null && r.value !== undefined) { txt = normTxt(r.value, mode, CTX.pid); if (o.comparability !== 'not_comparable') comp.push({ o: o, v: r.value }); } else { txt = '—'; why = t('r_' + r.reason); } }
-      rows.push('<tr><td data-l="' + esc(t('cMarket')) + '"><strong>' + esc(reg(o.region)) + '</strong></td><td class="r" data-l="' + esc(t('cOrig')) + '">' + esc(origTxt(o)) + '</td><td class="r" data-l="' + esc(t('cNorm')) + '">' + esc(txt) + (why ? '<div class="pt-sub">' + esc(why) + '</div>' : '') + '</td><td data-l="' + esc(t('cDate')) + '">' + esc(dstr(o.observationDate)) + '</td><td data-l="' + esc(t('cFresh')) + '">' + freshBadge(o) + '</td><td data-l="' + esc(t('cSrc')) + '">' + esc(srcName(o.sourceId)) + '</td><td data-l="' + esc(t('cComp')) + '">' + compBadge(o) + '</td></tr>');
+      rows.push('<tr><td data-l="' + esc(t('cMarket')) + '"><strong>' + esc(reg(o.region)) + '</strong>' + idHtml(o) + '</td><td class="r" data-l="' + esc(t('cOrig')) + '">' + esc(origTxt(o)) + '</td><td class="r" data-l="' + esc(t('cNorm')) + '">' + esc(txt) + (why ? '<div class="pt-sub">' + esc(why) + '</div>' : '') + '</td><td data-l="' + esc(t('cDate')) + '">' + esc(dstr(o.observationDate)) + '</td><td data-l="' + esc(t('cFresh')) + '">' + freshBadge(o) + '</td><td data-l="' + esc(t('cSrc')) + '">' + esc(srcName(o.sourceId)) + '</td><td data-l="' + esc(t('cComp')) + '">' + compBadge(o) + '</td></tr>');
     });
     var h = unitChips() + '<div class="pt-tblwrap"><table class="pt-table rs"><thead><tr><th>' + esc(t('cMarket')) + '</th><th class="r">' + esc(t('cOrig')) + '</th><th class="r">' + esc(t('cNorm')) + ' (' + esc(normLabel(mode, CTX.pid)) + ')</th><th>' + esc(t('cDate')) + '</th><th>' + esc(t('cFresh')) + '</th><th>' + esc(t('cSrc')) + '</th><th>' + esc(t('cComp')) + '</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div>';
     if (mode === 'idx' && ix.baseTs) h += '<p class="pt-src">' + esc(tf('idxNote', dstr(new Date(ix.baseTs).toISOString().slice(0, 10)))) + '</p>';
     if ((mode === 'eur' || mode === 'usd') && comp.length >= 2) {
-      comp.sort(function (a, b) { return a.v - b.v; });
-      var lo = comp[0], hi = comp[comp.length - 1];
-      h += '<div class="pt-note">' + esc(tf('spread', reg(hi.o.region), nf((hi.v / lo.v - 1) * 100, 1), reg(lo.o.region))) + '</div>';
+      h += spreadNotes(comp);
     }
     h += '<p class="pt-src">' + esc(t('cpNote')) + '</p>';
     var cm = META.products[CTX.pid].compare;
@@ -596,8 +621,7 @@
   function tabsHtml() {
     var groups = {}, order = [];
     Object.keys(META.products).forEach(function (k) { var g = META.products[k].group || 'otros'; if (!groups[g]) { groups[g] = []; order.push(g); } groups[g].push(k); });
-    var legacyNames = { pollo: ['Pollo', 'Chicken', 'Poulet', 'Poulet'], azucar: ['Azúcar', 'Sugar', 'Sucre', 'Zucchero'] };
-    return '<nav class="pt-tabs" aria-label="' + esc(t('nav')) + '">' + Object.keys(META.products).map(function (k) { return '<a class="pt-chip' + (k === ST.p ? ' on' : '') + '" href="producto.html?p=' + k + '"' + (k === ST.p ? ' aria-current="page"' : '') + '>' + esc(nm(k)) + '</a>'; }).join('') + ORDER_EXTRA.map(function (k) { return '<a class="pt-chip" href="producto.html?p=' + k + '">' + esc(legacyNames[k][li()]) + '</a>'; }).join('') + '</nav>';
+    return '<nav class="pt-tabs" aria-label="' + esc(t('nav')) + '">' + Object.keys(META.products).map(function (k) { return '<a class="pt-chip' + (k === ST.p ? ' on' : '') + '" href="producto.html?p=' + k + '"' + (k === ST.p ? ' aria-current="page"' : '') + '>' + esc(nm(k)) + '</a>'; }).join('') + '</nav>';
   }
   function shell(el) {
     var gname = (TX.group[li()] || TX.group[0])[CTX.meta.group] || CTX.meta.group;

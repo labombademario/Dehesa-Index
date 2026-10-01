@@ -1208,6 +1208,7 @@ svg[data-dh]:focus-visible{outline:2px solid #2f6b3a;outline-offset:3px}
 .pt-v { font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 700; margin: 4px 0 2px; overflow-wrap: anywhere; }
 .pt-v small { font-size: 13px; font-weight: 600; color: var(--text-faint); font-family: 'Public Sans', sans-serif; }
 .pt-sub { font-size: 12.5px; color: var(--text-faint); margin: 2px 0; }
+.pt-ident { font-size: 12.5px; line-height: 1.35; color: var(--text-muted); margin: 3px 0 4px; font-weight: 500; }
 .pt-badge { display: inline-block; font-size: 11px; font-weight: 700; border: 1px solid currentColor; border-radius: 10px; padding: 1px 8px; margin: 3px 4px 1px 0; white-space: nowrap; }
 .pt-fs-LIVE, .pt-fs-FRESH { color: var(--positive); }
 .pt-fs-EXPECTED_DELAY { color: #7a5000; }
