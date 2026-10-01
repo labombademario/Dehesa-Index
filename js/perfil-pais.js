@@ -135,6 +135,9 @@
     return '<div class="di-card" style="padding:12px 16px;margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center"><div style="min-width:120px"><div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">' + esc(w.t.toUpperCase()) + '</div><div style="font-size:34px;font-weight:700;color:' + col + '">' + c.score + '<span style="font-size:14px;color:var(--text-muted)"> / 100</span></div></div>' +
       '<div style="flex:1;min-width:240px">' + bar(w.b, c.b, w.bh, c.blocks + '/4') + bar(w.f, c.f, w.fh, Math.round(c.f * 100) + ' %') + bar(w.d, c.d, w.dh, x.nf(c.years, 0)) + bar(w.q, c.q, w.qh, Math.round(c.q * 100) + ' %') + '</div><div class="di-movers-hint" style="flex-basis:100%;margin:0">' + esc(w.note) + ' ' + HP(x, 'coverage') + '</div></div>';
   }
+  // «Qué ha cambiado» necesita el histórico completo de cada serie; la página solo baja el de los indicadores clave. Se descarga bajo demanda.
+  function partial(S) { var n = 0; S.forEach(function (s) { if (s.points) n++; }); return n < S.length * 0.5; }
+  var LD = { es: ['Para saber qué se ha movido más de lo habitual hay que descargar el histórico completo de este país.', 'Calcularlo ahora', 'Descargando…'], en: ['To find what moved more than usual, the full history of this country has to be downloaded.', 'Calculate it now', 'Downloading…'], fr: ['Pour savoir ce qui a bougé plus que d’habitude, il faut télécharger l’historique complet de ce pays.', 'Le calculer maintenant', 'Téléchargement…'], it: ['Per sapere cosa si è mosso più del solito bisogna scaricare lo storico completo di questo paese.', 'Calcolalo ora', 'Download…'] };
   function summary(S, x) {
     var w = W[x.lang] || W.es, esc = x.esc, h = '', tiles = '';
     ['markets', 'production', 'trade', 'inputs'].forEach(function (k) {
@@ -143,9 +146,10 @@
       tiles += '<div class="di-card" style="padding:10px 14px"><div style="font-size:11px;font-weight:700;color:var(--text-faint);letter-spacing:.4px">' + esc(w.B[k].toUpperCase()) + '</div><div style="font-size:20px;font-weight:700">' + l.length + ' <span style="font-size:12px;font-weight:500;color:var(--text-muted)">' + esc(w.ser) + '</span></div><div style="font-size:11.5px;color:var(--text-muted)">' + esc(w.upto) + ' ' + esc(x.plabel(last, /^\d{4}-\d{2}/.test(last) ? 'monthly' : 'annual')) + '</div></div>';
     });
     if (tiles) h += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px">' + tiles + '</div>';
-    var u = unusual(S);
+    var pa = partial(S), u = pa ? [] : unusual(S), ld = LD[x.lang] || LD.es;
     h += '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 4px">' + esc(w.changed.toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 8px">' + esc(w.changedHint) + ' ' + HP(x, 'unusual') + '</div>';
-    if (!u.length) h += '<div class="di-movers-hint" style="margin-bottom:20px">' + esc(w.none) + '</div>';
+    if (pa) h += '<div class="di-movers-hint" style="margin-bottom:20px">' + esc(ld[0]) + ' <button type="button" class="pp-load" data-unusual="1" data-busy="' + esc(ld[2]) + '">' + esc(ld[1]) + '</button></div>';
+    else if (!u.length) h += '<div class="di-movers-hint" style="margin-bottom:20px">' + esc(w.none) + '</div>';
     else h += '<div class="di-card" style="padding:6px 16px;margin-bottom:20px">' + u.map(function (r) {
       var s = r.s, col = r.ch >= 0 ? '#2f6b4a' : '#a33';
       return '<button type="button" data-ps="' + esc(s.id) + '" style="display:flex;justify-content:space-between;gap:10px;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--border);padding:8px 0;cursor:pointer;font:inherit;color:inherit"><span>' + esc(TL(x, s.label).length > 70 ? TL(x, s.label).slice(0, 68) + '…' : TL(x, s.label)) + '<span style="display:block;font-size:11.5px;color:var(--text-muted)">' + esc(x.plabel(s.latestPeriod, s.frequency)) + ' · ' + x.nf(s.latest, x.dec(s.latest)) + ' ' + esc(s.unit) + '</span></span><span style="white-space:nowrap;color:' + col + ';font-weight:700">' + (r.ch > 0 ? '+' : '−') + x.nf(Math.abs(r.ch), 1) + ' %<span style="display:block;font-size:11px;font-weight:400;color:var(--text-muted)">' + x.nf(r.z, 1) + ' ' + esc(w.rare) + '</span></span></button>';
@@ -170,7 +174,7 @@
     h += '<div style="margin-top:10px;font-size:12.5px;color:var(--text-muted)">' + esc(t.freq) + ': ' + Object.keys(freqs).map(function (k) { return freqs[k] + ' ' + esc((x.t.freq && x.t.freq[k]) || k); }).join(' · ') + (srcList.length ? '<br>' + esc(t.sources) + ': ' + srcList.map(esc).join(' · ') : '') + '</div></section>';
     var kp = kpis(cc, S, groups), C = window.DIClear, present = { sum: true, kpi: kp.length > 0, trade: !!(groups.partners && groups.partners.length), exp: true };
     var qs = C ? C.questions(groups, x.lang) : []; present.ask = qs.length > 0;
-    var pl = C ? C.plain({ lang: x.lang, kpis: kp, partners: groups.partners || [], unusual: unusual(S), plabel: x.plabel }) : null;
+    var pl = C ? C.plain({ lang: x.lang, kpis: kp, partners: groups.partners || [], unusual: partial(S) ? [] : unusual(S), plabel: x.plabel }) : null;
     if (C) h += C.nav(present, x.lang, esc);
     if (pl) h += '<section id="pp-sum" class="di-card pp-plain"><div class="pp-plain-h">' + esc(pl.head) + '</div><p>' + pl.sentences.map(esc).join(' ') + '</p><div class="di-movers-hint">' + esc(pl.note) + (/^(ES|FR|DE|BE|AT|PT|DK|NL|CA|AU)$/.test(cc) ? ' · <a href="perfiles.html?a=' + cc + '">' + esc({ es: 'Comparar con otro país', en: 'Compare with another country', fr: 'Comparer avec un autre pays', it: 'Confronta con un altro paese' }[x.lang] || '') + '</a>' : '') + '</div></section>';
     else h += '<span id="pp-sum"></span>';

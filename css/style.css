@@ -1503,3 +1503,6 @@ html[data-theme="dark"]{--up:#7fcf9b;--down:#f3aaa2}
 .pp-all{margin:0 0 6px}.pp-all>summary{cursor:pointer;font-size:13px;color:var(--text-muted);padding:4px 0}
 html[data-theme="dark"] .pp-nav{background:var(--bg)}
 @media(max-width:700px){.pp-nav{top:52px}.pp-plain p{font-size:15.5px}.pp-anchor{scroll-margin-top:110px}}
+.pp-load{margin-left:6px;padding:4px 12px;border:1px solid var(--accent);border-radius:999px;background:transparent;color:var(--accent);font:600 12.5px inherit;cursor:pointer}
+.pp-load:hover{background:var(--accent);color:var(--accent-ink)}.pp-load:disabled{opacity:.6;cursor:wait}
+html[data-theme="dark"] .pp-load{color:var(--text);border-color:var(--border-strong)}

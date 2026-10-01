@@ -16,6 +16,7 @@
   var BOOST = { product: 0.18, supply: 0.1, crop: 0.1, market: 0.06, category: 0.06, climate: 0.04, page: 0.05, concept: 0.05, section: 0, map: -0.04 };
   var STOP = { de: 1, del: 1, la: 1, el: 1, los: 1, las: 1, en: 1, of: 1, the: 1, in: 1, and: 1, y: 1, e: 1, et: 1, le: 1, les: 1, du: 1, des: 1, di: 1, il: 1, lo: 1, da: 1, un: 1, una: 1, a: 1, to: 1, for: 1, por: 1, para: 1, con: 1, pour: 1, per: 1 };
   var SUGGEST = ['precios.html?tab=cereales&product=cereales%3Atrigo', 'precios.html?tab=cereales&product=cereales%3Amaiz', 'precios.html?tab=lacteos&product=lacteos%3Aleche', 'precios.html?tab=fertilizantes&product=fertilizantes%3Aurea', 'oferta-demanda.html?c=soja', 'cultivos.html?crop=corn', 'clima.html', 'mapa.html?layer=exp&sd=trigo'];
+  var TRYQ = { h: { es: 'Pregunta directamente', en: 'Ask directly', fr: 'Posez la question', it: 'Chiedi direttamente' }, q: { es: ['precio del trigo', 'maíz en Iowa', 'exportaciones de España a Francia'], en: ['wheat price', 'corn in Iowa', 'Spain exports to Germany'], fr: ['prix du blé', 'maïs en Iowa', 'exportations de la France vers l’Allemagne'], it: ['prezzo del grano', 'mais in Iowa', 'esportazioni della Spagna'] } };
   var IDX = null, INDEX_URL = null, ROOT = null, STATE = { open: false, sel: 0, results: [], q: '' };
 
   function norm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/œ/g, 'oe').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, ' ').trim(); }
@@ -97,7 +98,7 @@
       '#di-search .ds-card{display:block;padding:9px 12px;margin:0 0 8px;border:1px solid var(--border,#ddd6c4);border-radius:10px;text-decoration:none;color:inherit;background:var(--bg-soft,rgba(120,110,80,.08))}#di-search .ds-card:hover,#di-search .ds-card:focus-visible{border-color:var(--text-faint,#7a7466)}' +
       '#di-search .ds-c-r{font-size:13px;font-weight:700}#di-search .ds-c-r em{font-style:normal;font-weight:400;color:var(--text-faint,#7a7466);font-size:12px}#di-search .ds-c-id{font-size:12px;color:var(--text-faint,#7a7466)}#di-search .ds-c-v{font-size:22px;font-weight:700;line-height:1.25;font-variant-numeric:tabular-nums}#di-search .ds-c-v small{font-size:12.5px;font-weight:400;color:var(--text-faint,#7a7466)}' +
       '#di-search .ds-c-s,#di-search .ds-c-s2,#di-search .ds-ans-n{font-size:12.5px;font-weight:400;color:var(--text-faint,#7a7466)}#di-search .ds-ans-n{padding:0 2px 6px}#di-search .ds-chg{font-weight:700;font-size:13px}#di-search .ds-chg.up{color:var(--up,#1b7f4b)}#di-search .ds-chg.dn{color:var(--down,#b3261e)}' +
-      '#di-search .ds-ans-l{display:inline-block;padding:2px 2px 10px;font-size:13px;font-weight:600;color:inherit;text-decoration:underline}' +
+      '#di-search .ds-try{display:flex;flex-wrap:wrap;gap:6px;padding:4px 14px 8px}#di-search .ds-try button{border:1px solid var(--border,#ddd6c4);background:transparent;color:inherit;border-radius:999px;padding:5px 12px;font:inherit;font-size:13px;cursor:pointer}#di-search .ds-try button:hover{border-color:var(--text-faint,#7a7466)}#di-search .ds-ans-l{display:inline-block;padding:2px 2px 10px;font-size:13px;font-weight:600;color:inherit;text-decoration:underline}' +
       '@media(max-width:600px){#di-search .ds-panel{margin-top:0;width:100%;border-radius:0 0 12px 12px}#di-search .ds-foot{display:none}#di-search .ds-badge{display:none}}';
     document.head.appendChild(st);
   }
@@ -134,13 +135,14 @@
     if (!norm(q)) {
       var by = {}; IDX.forEach(function (e) { by[e.u] = e; });
       STATE.results = SUGGEST.map(function (u) { return by[u]; }).filter(Boolean);
-      html = '<div class="ds-head">' + esc(t.popular) + '</div><ul id="ds-list" role="listbox">' + STATE.results.map(function (e, i) { return item(e, l, i); }).join('') + '</ul>';
+      html = '<div class="ds-head">' + esc(TRYQ.h[l] || TRYQ.h.es) + '</div><div class="ds-try">' + (TRYQ.q[l] || TRYQ.q.es).map(function (q) { return '<button type="button" data-q="' + esc(q) + '">' + esc(q) + '</button>'; }).join('') + '</div><div class="ds-head">' + esc(t.popular) + '</div><ul id="ds-list" role="listbox">' + STATE.results.map(function (e, i) { return item(e, l, i); }).join('') + '</ul>';
     } else {
       var r = search(q, l); STATE.results = r.list;
       if (!r.list.length) html = '<div class="ds-msg">' + esc(t.empty) + ' «' + esc(q.trim()) + '». ' + esc(t.tryTxt) + '</div>';
       else html = (r.partial ? '<div class="ds-head">' + esc(t.partial) + '</div>' : '') + '<ul id="ds-list" role="listbox">' + r.list.map(function (e, i) { return item(e, l, i); }).join('') + '</ul>';
     }
     body.innerHTML = html; mark(); answerFor(q, l);
+    Array.prototype.forEach.call(body.querySelectorAll('.ds-try button'), function (b) { b.addEventListener('click', function () { var i = document.getElementById('ds-input'); i.value = b.getAttribute('data-q'); STATE.sel = 0; renderResults(); i.focus(); }); });
     Array.prototype.forEach.call(body.querySelectorAll('li'), function (li) { li.addEventListener('mousemove', function () { var i = +li.getAttribute('data-i'); if (i !== STATE.sel) { STATE.sel = i; mark(); } }); li.querySelector('a').addEventListener('click', function () { close(); }); });
   }
   // Respuestas directas (fase 1): módulos y datos se cargan solo al buscar; sin servidor ni IA externa.
@@ -153,7 +155,7 @@
       ANS.env = {
         products: (IDX || []).filter(function (e) { return e.t === 'product'; }).map(function (e) { var m = /product=([^&]+)/.exec(e.u); return m ? { slug: decodeURIComponent(m[1]).split(':')[1], names: e.n, kw: e.k, u: e.u } : null; }).filter(Boolean),
         tokScore: tokScore, href: href,
-        provider: { json: function (p) { if (!ANS.cache[p]) ANS.cache[p] = fetch(href('data/' + p), /^(prices\/latest|us-cash-bids)\//.test(p) ? { cache: 'no-cache' } : undefined).then(function (r) { if (!r.ok) throw Error(p); return r.json(); }); return ANS.cache[p]; } }
+        provider: { json: function (p) { if (!ANS.cache[p]) ANS.cache[p] = fetch(href('data/' + p), /^(prices\/latest|us-cash-bids)\//.test(p) ? { cache: 'no-cache' } : undefined).then(function (r) { if (!r.ok) throw Error(p); return r.json(); }).catch(function (e) { delete ANS.cache[p]; throw e; }); return ANS.cache[p]; } }
       };
       ANS.mod = global.DehesaAnswers; return ANS.mod;
     }).catch(function () { ANS.p = null; return null; });
