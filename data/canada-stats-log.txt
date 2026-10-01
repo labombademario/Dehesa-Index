@@ -1,0 +1,31 @@
+tabla 32100359 393079 filas
+cultivos 72
+tabla 32100007 20654 filas
+existencias 11
+tabla 32100351 42039 filas
+entregas 8
+tabla 32100352 12636 filas
+molturacion 6
+tabla 32100130 51554 filas
+tabla 32100160 5434 filas
+tabla 32100129 11083 filas
+inventarios 10
+tabla 32100139 8162 filas
+tabla 32100200 5434 filas
+tabla 32100126 1939 filas
+oferta ganado 11
+tabla 32100113 26715 filas
+tabla 32100480 468 filas
+lacteos 7
+tabla 32100121 121116 filas
+tabla 32100122 109484 filas
+tabla 32100117 21174 filas
+huevos y aves 9
+tabla 32100045 31979 filas
+tabla 32100046 129293 filas
+tabla 32100052 8661 filas
+tabla 32100098 191052 filas
+tabla 18100258 39057 filas
+finanzas 50
+tabla 32100038 8631 filas
+fertilizantes 9
