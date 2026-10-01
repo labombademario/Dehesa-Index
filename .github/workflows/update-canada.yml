@@ -42,7 +42,7 @@ jobs:
         run: |
           git config user.name "Dehesa Index Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/alerts.json data/canada-coverage.json
+          git add data/snapshots data/latest.json data/history.json data/catalog.json data/history.csv data/quality.json data/intelligence.json data/normalized.json data/cross-market.json data/dehesa-index.json data/dehesa-index-us.json data/alerts.json data/canada-coverage.json
           git diff --cached --quiet || git commit -m "data: Canadá (Statistics Canada, precios agrícolas)"
           git pull --rebase origin main
           git push

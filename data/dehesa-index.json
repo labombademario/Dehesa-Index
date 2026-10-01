@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T17:36:40.200Z",
+  "generatedAt": "2026-10-01T04:19:28.725Z",
   "region": "eu",
   "base": {
     "period": "2024-10",
@@ -516,5 +516,5 @@
     "es": "Índice mensual base 100 = 2024-10. Cada serie verificada se convierte a media mensual y se reexpresa a base 100; cada grupo es la media simple de sus series; el índice es la media ponderada de los grupos (Cereales 25, Ganadería 25, Lácteos 15, Pienso 15, Fertilizantes 10, Energía 10). Solo usa series REAL de data/latest.json; las series sin historia suficiente se excluyen y se listan. Huecos aislados de un mes en el origen se rellenan con el mes anterior y se declaran en gapFilledMonths. No mezcla monedas: cada serie se reexpresa en su propia unidad (números índice), por lo que es una medida de evolución, no un precio. No es asesoramiento financiero.",
     "en": "Monthly index, base 100 = 2024-10. Each verified series is converted to a monthly average and rebased to 100; each group is the simple mean of its series; the index is the weighted mean of groups (Cereals 25, Livestock 25, Dairy 15, Feed 15, Fertilisers 10, Energy 10). It uses only verified series from data/latest.json; series without enough history are excluded and listed. Each series is rebased in its own unit, so it measures evolution, not a price. Not financial advice."
   },
-  "limits": "Solo mercado UE: US tiene 7 meses de historia y UK no tiene series de precio verificadas con historia; se añadirán cuando alcancen ≥24 meses."
+  "limits": "Solo mercado UE: US tiene su propio índice (dehesa-index-us.json) y UK no tiene series de precio verificadas con historia; se añadirá cuando alcance ≥24 meses."
 }

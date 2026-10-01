@@ -1,0 +1,469 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-10-01T04:19:28.742Z",
+  "region": "us",
+  "base": {
+    "period": "2024-10",
+    "value": 100
+  },
+  "lastPeriod": "2026-08",
+  "value": 97.37,
+  "changeMoMPct": 1.04,
+  "changeYoYPct": 2.47,
+  "weights": {
+    "cereales": 27.78,
+    "ganaderia": 27.78,
+    "lacteos": 16.67,
+    "pienso": 16.67,
+    "energia": 11.11
+  },
+  "groups": [
+    {
+      "id": "cereales",
+      "weightPct": 27.78,
+      "value": 103.78,
+      "members": [
+        "trigo",
+        "maiz",
+        "arroz"
+      ]
+    },
+    {
+      "id": "ganaderia",
+      "weightPct": 27.78,
+      "value": 87.57,
+      "members": [
+        "cerdo",
+        "vaca",
+        "pollo",
+        "huevos"
+      ]
+    },
+    {
+      "id": "lacteos",
+      "weightPct": 16.67,
+      "value": 78.88,
+      "members": [
+        "leche"
+      ]
+    },
+    {
+      "id": "pienso",
+      "weightPct": 16.67,
+      "value": 99.69,
+      "members": [
+        "harina_soja"
+      ]
+    },
+    {
+      "id": "energia",
+      "weightPct": 11.11,
+      "value": 130.07,
+      "members": [
+        "diesel",
+        "petroleo_wti",
+        "gas_natural"
+      ]
+    }
+  ],
+  "included": [
+    {
+      "group": "cereales",
+      "product": "trigo",
+      "sourceId": "usda_nass",
+      "unit": "bushel",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 5.47,
+      "gapFilledMonths": []
+    },
+    {
+      "group": "cereales",
+      "product": "maiz",
+      "sourceId": "usda_nass",
+      "unit": "bushel",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 3.99,
+      "gapFilledMonths": []
+    },
+    {
+      "group": "cereales",
+      "product": "arroz",
+      "sourceId": "usda_nass",
+      "unit": "cwt",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 14.9,
+      "gapFilledMonths": []
+    },
+    {
+      "group": "ganaderia",
+      "product": "cerdo",
+      "sourceId": "usda_nass",
+      "unit": "cwt",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 63.9,
+      "gapFilledMonths": []
+    },
+    {
+      "group": "ganaderia",
+      "product": "vaca",
+      "sourceId": "usda_nass",
+      "unit": "cwt",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 189,
+      "gapFilledMonths": []
+    },
+    {
+      "group": "ganaderia",
+      "product": "pollo",
+      "sourceId": "usda_nass",
+      "unit": "lb",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 0.74,
+      "gapFilledMonths": []
+    },
+    {
+      "group": "ganaderia",
+      "product": "huevos",
+      "sourceId": "usda_nass",
+      "unit": "docena",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 2.72,
+      "gapFilledMonths": []
+    },
+    {
+      "group": "lacteos",
+      "product": "leche",
+      "sourceId": "usda_nass",
+      "unit": "cwt",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 25.1,
+      "gapFilledMonths": []
+    },
+    {
+      "group": "pienso",
+      "product": "harina_soja",
+      "sourceId": "usda_ams_mars",
+      "unit": "ton_corta",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 325.9075,
+      "gapFilledMonths": []
+    },
+    {
+      "group": "energia",
+      "product": "diesel",
+      "sourceId": "eia",
+      "unit": "gal",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 3.5853,
+      "gapFilledMonths": []
+    },
+    {
+      "group": "energia",
+      "product": "petroleo_wti",
+      "sourceId": "eia",
+      "unit": "barril",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 72.48,
+      "gapFilledMonths": []
+    },
+    {
+      "group": "energia",
+      "product": "gas_natural",
+      "sourceId": "eia",
+      "unit": "mmbtu",
+      "currency": "USD",
+      "basePeriod": "2024-10",
+      "baseValue": 2.2725,
+      "gapFilledMonths": []
+    }
+  ],
+  "excluded": [
+    {
+      "product": "urea",
+      "reason": "sin serie verificada"
+    },
+    {
+      "product": "dap",
+      "reason": "sin serie verificada"
+    },
+    {
+      "product": "potasa",
+      "reason": "sin serie verificada"
+    },
+    {
+      "group": "fertilizantes",
+      "reason": "grupo sin series"
+    }
+  ],
+  "series": [
+    {
+      "period": "2024-10",
+      "value": 100,
+      "groups": {
+        "cereales": 100,
+        "ganaderia": 100,
+        "lacteos": 100,
+        "pienso": 100,
+        "energia": 100
+      }
+    },
+    {
+      "period": "2024-11",
+      "value": 99.39,
+      "groups": {
+        "cereales": 100.99,
+        "ganaderia": 105.22,
+        "lacteos": 96.41,
+        "pienso": 92.23,
+        "energia": 96.03
+      }
+    },
+    {
+      "period": "2024-12",
+      "value": 102.95,
+      "groups": {
+        "cereales": 102.35,
+        "ganaderia": 117.77,
+        "lacteos": 92.83,
+        "pienso": 85.88,
+        "energia": 108.18
+      }
+    },
+    {
+      "period": "2025-01",
+      "value": 111.82,
+      "groups": {
+        "cereales": 104.82,
+        "ganaderia": 136.75,
+        "lacteos": 96.02,
+        "pienso": 87.16,
+        "energia": 127.66
+      }
+    },
+    {
+      "period": "2025-02",
+      "value": 114.01,
+      "groups": {
+        "cereales": 106.33,
+        "ganaderia": 146.39,
+        "lacteos": 94.02,
+        "pienso": 82.29,
+        "energia": 129.78
+      }
+    },
+    {
+      "period": "2025-03",
+      "value": 109.24,
+      "groups": {
+        "cereales": 106.31,
+        "ganaderia": 133.65,
+        "lacteos": 87.65,
+        "pienso": 84.46,
+        "energia": 125.06
+      }
+    },
+    {
+      "period": "2025-04",
+      "value": 101.9,
+      "groups": {
+        "cereales": 105.45,
+        "ganaderia": 114.6,
+        "lacteos": 84.06,
+        "pienso": 84.59,
+        "energia": 114.03
+      }
+    },
+    {
+      "period": "2025-05",
+      "value": 100.95,
+      "groups": {
+        "cereales": 104.31,
+        "ganaderia": 114.39,
+        "lacteos": 85.26,
+        "pienso": 84.81,
+        "energia": 106.73
+      }
+    },
+    {
+      "period": "2025-06",
+      "value": 99.92,
+      "groups": {
+        "cereales": 102.4,
+        "ganaderia": 113.97,
+        "lacteos": 84.86,
+        "pienso": 81.2,
+        "energia": 109.24
+      }
+    },
+    {
+      "period": "2025-07",
+      "value": 97.92,
+      "groups": {
+        "cereales": 97.71,
+        "ganaderia": 114.51,
+        "lacteos": 82.87,
+        "pienso": 75.04,
+        "energia": 113.83
+      }
+    },
+    {
+      "period": "2025-08",
+      "value": 95.02,
+      "groups": {
+        "cereales": 94.12,
+        "ganaderia": 105.69,
+        "lacteos": 83.27,
+        "pienso": 81.81,
+        "energia": 108.01
+      }
+    },
+    {
+      "period": "2025-09",
+      "value": 94.74,
+      "groups": {
+        "cereales": 91.51,
+        "ganaderia": 101.44,
+        "lacteos": 81.27,
+        "pienso": 93.66,
+        "energia": 107.88
+      }
+    },
+    {
+      "period": "2025-10",
+      "value": 90.24,
+      "groups": {
+        "cereales": 90.29,
+        "ganaderia": 92.09,
+        "lacteos": 79.28,
+        "pienso": 85.68,
+        "energia": 108.8
+      }
+    },
+    {
+      "period": "2025-11",
+      "value": 93.79,
+      "groups": {
+        "cereales": 91.74,
+        "ganaderia": 94.95,
+        "lacteos": 78.09,
+        "pienso": 93.88,
+        "energia": 119.38
+      }
+    },
+    {
+      "period": "2025-12",
+      "value": 92.84,
+      "groups": {
+        "cereales": 96.45,
+        "ganaderia": 89.66,
+        "lacteos": 75.7,
+        "pienso": 90.09,
+        "energia": 121.64
+      }
+    },
+    {
+      "period": "2026-01",
+      "value": 95.17,
+      "groups": {
+        "cereales": 95.74,
+        "ganaderia": 85.76,
+        "lacteos": 69.72,
+        "pienso": 88.31,
+        "energia": 165.74
+      }
+    },
+    {
+      "period": "2026-02",
+      "value": 91.33,
+      "groups": {
+        "cereales": 93.32,
+        "ganaderia": 89.23,
+        "lacteos": 72.91,
+        "pienso": 92.81,
+        "energia": 116.99
+      }
+    },
+    {
+      "period": "2026-03",
+      "value": 95.99,
+      "groups": {
+        "cereales": 95.49,
+        "ganaderia": 92.84,
+        "lacteos": 78.49,
+        "pienso": 95.51,
+        "energia": 132.09
+      }
+    },
+    {
+      "period": "2026-04",
+      "value": 96.37,
+      "groups": {
+        "cereales": 96.02,
+        "ganaderia": 87.05,
+        "lacteos": 82.87,
+        "pienso": 98.05,
+        "energia": 138.22
+      }
+    },
+    {
+      "period": "2026-05",
+      "value": 99.14,
+      "groups": {
+        "cereales": 98.76,
+        "ganaderia": 89.8,
+        "lacteos": 84.86,
+        "pienso": 101.24,
+        "energia": 141.75
+      }
+    },
+    {
+      "period": "2026-06",
+      "value": 96.31,
+      "groups": {
+        "cereales": 96.89,
+        "ganaderia": 89.8,
+        "lacteos": 84.06,
+        "pienso": 94.55,
+        "energia": 132.13
+      }
+    },
+    {
+      "period": "2026-07",
+      "value": 96.37,
+      "groups": {
+        "cereales": 98.92,
+        "ganaderia": 90.18,
+        "lacteos": 80.88,
+        "pienso": 98.42,
+        "energia": 125.67
+      }
+    },
+    {
+      "period": "2026-08",
+      "value": 97.37,
+      "groups": {
+        "cereales": 103.78,
+        "ganaderia": 87.57,
+        "lacteos": 78.88,
+        "pienso": 99.69,
+        "energia": 130.07
+      }
+    }
+  ],
+  "methodology": {
+    "es": "Índice mensual base 100 = 2024-10. Cada serie verificada se convierte a media mensual y se reexpresa a base 100; cada grupo es la media simple de sus series; el índice es la media ponderada de los grupos (Cereales 27.78, Ganadería 27.78, Lácteos 16.67, Pienso 16.67, Energía 11.11). Solo usa series REAL de data/latest.json; las series sin historia suficiente se excluyen y se listan. Huecos aislados de un mes en el origen se rellenan con el mes anterior y se declaran en gapFilledMonths. No mezcla monedas: cada serie se reexpresa en su propia unidad (números índice), por lo que es una medida de evolución, no un precio. No es asesoramiento financiero.",
+    "en": "Monthly index, base 100 = 2024-10. Each verified series is converted to a monthly average and rebased to 100; each group is the simple mean of its series; the index is the weighted mean of groups (Cereals 27.78, Livestock 27.78, Dairy 16.67, Feed 16.67, Energy 11.11). It uses only verified series from data/latest.json; series without enough history are excluded and listed. Each series is rebased in its own unit, so it measures evolution, not a price. Not financial advice."
+  },
+  "limits": "Solo EE. UU. (USDA NASS, USDA AMS, EIA). Sin grupo de fertilizantes: no hay serie verificada de fertilizantes de EE. UU. (la urea de DTN no tiene licencia pública); el resto de pesos se reescala. Cordero no tiene serie mensual de NASS. Petróleo WTI en lugar de Brent. Base 2024-10 (la de la UE) porque la harina de soja de AMS solo tiene historia desde sep-2024."
+}
