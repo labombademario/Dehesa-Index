@@ -23,7 +23,7 @@
       r6m: '6 mesi', r1: '1 anno', r3: '3 anni', r5: '5 anni', r10: '10 anni', r20: '20 anni', rmax: 'Massimo', date: 'Data', table: 'Vedi tutte le serie', src: 'Fonte', lic: 'Licenza', updated: 'Aggiornato', note: 'Dati ufficiali come pubblicati da ciascuna fonte; i nomi delle serie restano in inglese. Le esportazioni australiane sono in valore (dollari australiani), non in volume. L’ultimo periodo può essere provvisorio.', none: 'Nessun dato disponibile.',
       countries: { US: 'Stati Uniti', EU: 'Unione europea', ES: 'Spagna', FR: 'Francia', DE: 'Germania', BE: 'Belgio', AT: 'Austria', PT: 'Portugal', CA: 'Canada', DK: 'Danimarca', NL: 'Paesi Bassi', AU: 'Australia' }, freq: { monthly: 'mensile', weekly: 'settimanale', quarterly: 'trimestrale', annual: 'annuale', semiannual: 'semestrale' } }
   };
-  var MACRO = null, WAGES = null, DATA = null, ST = { c: 'ES', g: 'all', s: null, r: 'max' };
+  var MACRO = null, WAGES = null, DATA = null, ST = { c: 'ES', g: 'all', s: null, r: 'max', fx: false };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -76,6 +76,35 @@
       '<table style="border-collapse:collapse;width:100%;font-size:13px"><tr style="font-size:10.5px;font-weight:700;color:var(--text-faint);text-align:left"><th style="padding:4px 6px">' + esc(w[3].toUpperCase()) + '</th><th style="padding:4px 6px;text-align:right">' + esc(cur.unit.toUpperCase()) + '</th><th style="padding:4px 6px;text-align:right">' + esc(w[4].toUpperCase()) + ' ' + nf(rows[0].nv, d) + '</th><th style="padding:4px 6px;min-width:130px">' + esc(w[5].toUpperCase()) + '</th></tr>' +
       rows.map(function (r) { var col = r.pr >= 0 ? '#2f6b4a' : '#a33', cur2 = r.x.id === cur.id; return '<tr style="border-top:1px solid var(--border);' + (cur2 ? 'font-weight:700;background:var(--surface-alt)' : '') + '"><td style="padding:5px 6px">' + esc(r.reg) + '</td><td style="padding:5px 6px;text-align:right">' + nf(r.x.latest, d) + '</td><td style="padding:5px 6px;text-align:right;color:var(--text-muted)">' + nf(r.nv, d) + '</td><td style="padding:5px 6px"><span style="display:inline-block;height:8px;width:' + Math.round(Math.abs(r.pr) / mx * 80) + 'px;background:' + col + ';vertical-align:middle;border-radius:2px"></span> <span style="color:' + col + '">' + (r.pr > 0 ? '+' : r.pr < 0 ? '−' : '') + nf(Math.abs(r.pr), 1) + ' %</span></td></tr>'; }).join('') + '</table></div>';
   }
+
+  /* FX histórico: convierte series monetarias no-euro a EUR con la media mensual del tipo del BCE de CADA periodo (no el de hoy) */
+  var FX = null, FXT = { es: ['Convertir a EUR con el tipo de cada periodo', 'Convertido a euros con la media mensual del tipo de referencia del BCE de cada periodo (anual y trimestral: media de sus meses); no con el tipo de hoy. Original:', 'Sin tipo de cambio disponible para algún periodo: esos puntos se omiten.'], en: ['Convert to EUR at each period’s rate', 'Converted to euros using the ECB reference rate monthly average of each period (annual and quarterly: average of their months), not today’s rate. Original:', 'No exchange rate for some periods: those points are omitted.'], fr: ['Convertir en EUR au taux de chaque période', 'Converti en euros avec la moyenne mensuelle du taux de référence de la BCE de chaque période (annuel et trimestriel : moyenne de leurs mois), pas le taux d’aujourd’hui. Original :', 'Pas de taux pour certaines périodes : ces points sont omis.'], it: ['Converti in EUR al cambio di ogni periodo', 'Convertito in euro con la media mensile del tasso di riferimento BCE di ciascun periodo (annuale e trimestrale: media dei mesi), non il cambio di oggi. Originale:', 'Nessun tasso per alcuni periodi: quei punti sono omessi.'] };
+  function curOf(u) {
+    u = String(u || ''); if (/index|øre|unit as in source|%/i.test(u)) return null;
+    if (/^(CAD|C\$)/.test(u)) return 'CAD'; if (/^(A\$|AUD)/.test(u)) return 'AUD'; if (/^DKK/.test(u)) return 'DKK'; if (/^(USD|US\$|\$)/.test(u)) return 'USD'; if (/^(GBP|£)/.test(u)) return 'GBP'; return null;
+  }
+  function fxRate(cur, per) {
+    var a = FX && FX.currencies[cur]; if (!a) return null; if (!FX._m) FX._m = {};
+    if (!FX._m[cur]) { var m = {}; a.forEach(function (r) { m[r[0]] = r[1]; }); FX._m[cur] = m; }
+    var M = FX._m[cur], m2 = /^(\d{4})(?:-(\d{2}|Q[1-4]|S[12]))?/.exec(String(per)); if (!m2) return null;
+    var y = m2[1], x = m2[2], months;
+    if (!x) months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']; else if (x[0] === 'Q') { var q = +x[1]; months = [q * 3 - 2, q * 3 - 1, q * 3].map(function (n) { return ('0' + n).slice(-2); }); } else if (x[0] === 'S') months = x === 'S1' ? ['01', '02', '03', '04', '05', '06'] : ['07', '08', '09', '10', '11', '12']; else months = [x];
+    var v = months.map(function (mm) { return M[y + '-' + mm]; }).filter(function (z) { return z != null; }); if (!v.length) return null; if (months.length > 1 && v.length < months.length && !x) { /* año incompleto: media de los meses disponibles */ }
+    return v.reduce(function (s2, z) { return s2 + z; }, 0) / v.length;
+  }
+  function fxConv(sr) {
+    var cu = curOf(sr.unit); if (!cu || !FX) return sr; var pts = [], miss = false;
+    sr.points.forEach(function (p) { var r = fxRate(cu, p[0]); if (r && p[1] != null) pts.push([p[0], p[1] / r]); else miss = true; });
+    if (pts.length < 2) return sr; var o = {}, k; for (k in sr) o[k] = sr[k];
+    o.points = pts; o.latestPeriod = pts[pts.length - 1][0]; o.latest = pts[pts.length - 1][1]; o.changePct = pts.length > 1 && pts[pts.length - 2][1] ? (o.latest - pts[pts.length - 2][1]) / Math.abs(pts[pts.length - 2][1]) * 100 : null;
+    o.unit = sr.unit.replace(/^(CAD|C\$|A\$|AUD|DKK|USD|US\$|\$|GBP|£)/, 'EUR'); o._fx = { from: cu, orig: sr, miss: miss }; return o;
+  }
+  function fxBox(cur0, cur) {
+    if (!FX || !curOf(cur0.unit)) return ''; var w = FXT[lang()] || FXT.es;
+    return '<label style="display:block;font-size:12.5px;margin:0 0 8px"><input type="checkbox" id="ps-fx"' + (ST.fx ? ' checked' : '') + '> ' + esc(w[0]) + ' (' + esc(curOf(cur0.unit)) + ' → EUR)</label>' +
+      (ST.fx && cur._fx ? '<div class="di-movers-hint" style="margin:0 0 6px">' + esc(w[1]) + ' ' + nf(cur0.latest, dec(cur0.latest)) + ' ' + esc(cur0.unit) + (cur._fx.miss ? '. ' + esc(w[2]) : '') + '</div>' : '');
+  }
+  fetch('data/fx-history.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.currencies) { FX = d; if (DATA) build(); } }).catch(function () {});
   var PS = null, CF = { ES: 'spain-stats', FR: 'france-stats', DE: 'germany-stats', BE: 'belgium-stats', AT: 'austria-stats', PT: 'portugal-stats', CA: 'canada-stats', AU: 'country-stats', DK: 'country-stats', NL: 'country-stats', US: 'interest-rates-stats', EU: 'interest-rates-stats' },
     LV = { es: ['Linaje del dato', 'Fichero', 'último cambio', 'próxima ejecución prevista', 'última ejecución'], en: ['Data lineage', 'File', 'last change', 'next run due', 'last run'], fr: ['Lignage de la donnée', 'Fichier', 'dernier changement', 'prochaine exécution prévue', 'dernière exécution'], it: ['Lignaggio del dato', 'File', 'ultima modifica', 'prossima esecuzione prevista', 'ultima esecuzione'] };
   function dshort(i) { try { return new Date(i).toLocaleDateString(lang(), { day: 'numeric', month: 'short', year: 'numeric' }); } catch (e) { return String(i).slice(0, 10); } }
@@ -101,7 +130,7 @@
     var t = tt(), c = DATA.countries[ST.c] || DATA.countries.ES || DATA.countries.DK;
     var list = c.series.filter(function (s) { return ST.g === 'all' || s.group === ST.g; });
     if (!list.some(function (s) { return s.id === ST.s; })) ST.s = list.length ? list[0].id : null;
-    var cur = list.filter(function (s) { return s.id === ST.s; })[0];
+    var cur0 = list.filter(function (s) { return s.id === ST.s; })[0], cur = cur0 && ST.fx ? fxConv(cur0) : cur0;
     var countries = Object.keys(DATA.countries).filter(function (k) { return DATA.countries[k].series.length; }).sort(function (x, y) { var o = { ES: 0, FR: 1, DE: 2, BE: 3, AT: 4, PT: 5, CA: 6, US: 7, EU: 8 }; return (o[x] == null ? 9 : o[x]) - (o[y] == null ? 9 : o[y]); });
     var groups = ['all'].concat(['production', 'crops', 'livestock', 'trade', 'quotes', 'prices', 'prices_paid', 'milk', 'milk_regions', 'prices_lv', 'meat_regions', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'costs', 'environment', 'organic', 'stocks', 'income', 'partners', 'rates'].filter(function (g) { return c.series.some(function (s) { return s.group === g; }); }));
     var opt = function (arr, sel, lab) { return arr.map(function (k) { return '<option value="' + esc(k) + '"' + (k === sel ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; }).join(''); };
@@ -115,7 +144,7 @@
       sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + '</div>';
     if (cur) {
       var ch = cur.changePct;
-      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(cur.label.toUpperCase()) + ' (' + esc(cur.unit) + ')' + watchBtn(cur) + '</div>' + chartFor(cur) +
+      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(cur.label.toUpperCase()) + ' (' + esc(cur.unit) + ')' + watchBtn(cur) + '</div>' + fxBox(cur0, cur) + chartFor(cur) +
         '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div>' + localBox(cur, c) + revBox(cur) + '</div>';
     } else html += '<p class="di-movers-hint">' + t.none + '</p>';
     html += '<details style="margin-top:14px"><summary style="cursor:pointer;font-size:13px">' + t.table + '</summary><div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.series.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.latest.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:8px 6px">' + t.period.toUpperCase() + '</th><th style="padding:8px 6px">' + t.unit.toUpperCase() + '</th></tr>' +
@@ -125,6 +154,7 @@
     root.innerHTML = html;
     if (window.DITradePartners) { var tpn = document.getElementById('ps-tp'); if (tpn) window.DITradePartners.mount(tpn, ST.c, lang()); } if (ST.c === 'PT' && window.DIIfapMap) { var im = document.getElementById('ps-ifap'); if (im) window.DIIfapMap.mount(im, lang()); }
     var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; } if (key === 'g') ST.s = null; build(); var n = document.getElementById(id); if (n) n.focus(); }; };
+    var fb = document.getElementById('ps-fx'); if (fb) fb.onchange = function () { ST.fx = fb.checked; build(); };
     var wb = document.getElementById('ps-watch'); if (wb && cur) wb.onclick = function () { DIWatch.toggle(ST.c, cur.id); build(); };
     Array.prototype.forEach.call(root.querySelectorAll('[data-pg],[data-ps]'), function (el) { el.onclick = function () { var g = el.getAttribute('data-pg'), sid = el.getAttribute('data-ps'); if (g) { ST.g = g; ST.s = null; } else { var s = c.series.filter(function (x) { return x.id === sid; })[0]; if (s) { ST.g = s.group; ST.s = sid; } } build(); var e = document.getElementById('ps-explorer'); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
         try { var qq = new URLSearchParams(window.location.search); qq.set('c', ST.c); ['g', 's', 'r'].forEach(function (k) { var v = ST[k]; if (v && v !== 'all' && !(k === 'r' && v === 'max')) qq.set(k, v); else qq.delete(k); }); history.replaceState(null, '', '?' + qq.toString() + window.location.hash); } catch (e) {} bind('ps-c', 'c'); bind('ps-g', 'g'); bind('ps-s', 's'); bind('ps-r', 'r');
@@ -134,7 +164,7 @@
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };
   shell();
-  var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r');
+  var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('fx') === '1') ST.fx = true;
   Promise.all([fetch('data/country-stats.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }), fetch('data/spain-stats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/france-stats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/germany-stats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/belgium-stats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/austria-stats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/portugal-stats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/portugal-eurostat-stats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/canada-stats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/eu-trade-stats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/australia-trade-stats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/interest-rates-stats.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })]).then(function (rs) { var d = rs[0]; [rs[1], rs[2], rs[3], rs[4], rs[5], rs[6], rs[7], rs[8], rs[9], rs[10], rs[11]].forEach(function (x) { if (x && x.countries) { Object.keys(x.countries).forEach(function (k) { var c = x.countries[k]; if (c.extend && d.countries[k]) { var cc0 = d.countries[k]; cc0.sources = (cc0.sources || [cc0.source.name]); if (c.source && cc0.sources.indexOf(c.source.name) < 0) cc0.sources.push(c.source.name); cc0.series = cc0.series.concat(c.series); } else { c.sources = [c.source.name]; d.countries[k] = c; } }); d.spainUpdated = d.spainUpdated || x.generatedAt; } }); DATA = d; Promise.all([fetch('data/country-macro.json'), fetch('data/country-wages.json')].map(function (f) { return f.then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); })).then(function (m) { MACRO = m[0]; WAGES = m[1]; build(); }); if (!d.countries[ST.c] || !d.countries[ST.c].series.length) ST.c = 'ES'; build(); })
     .catch(function () { var b = document.getElementById('paises-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
 })();
