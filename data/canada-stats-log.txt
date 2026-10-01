@@ -1,4 +1,6 @@
-00:50:29 descargada 12100163 7719 KB
-00:50:31 tabla 12100163 561156 filas
-00:50:32 comercio 48
-00:50:32 series 226
+00:55:36 descargada 12100011 1135 KB
+00:55:36 tabla 12100011 92655 filas
+00:55:40 descargada 12100173 26187 KB
+00:55:48 tabla 12100173 13986 filas filtradas
+00:55:48 socios 50
+00:55:48 series 276
