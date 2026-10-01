@@ -27,7 +27,7 @@
   var STRINGS = {
     es: {
       h1: 'El pulso de la agricultura, en un solo panel',
-      sub: 'Un tracker global de mercados agrícolas: precios de cereales, lácteos, ganado, pienso y fertilizantes en EE. UU., Europa, Reino Unido y Canadá, y estadísticas oficiales de más de 30 países — siempre con el valor original, la fuente y la fecha, y convertidos a otra moneda o unidad solo cuando la serie es comparable.',
+      sub: "Precios de cereales, lácteos, ganado, pienso y fertilizantes en EE. UU., Europa y Canadá, con estadísticas oficiales de más de 30 países. Cada dato conserva su valor original, su fuente y su fecha.",
       ctaPrimary: 'Ver el panel de precios →',
       ctaSecondary: 'Cómo funciona',
       moversTitle: 'PANEL DE MERCADO',
@@ -75,7 +75,7 @@
     },
     en: {
       h1: 'The pulse of agriculture, in one dashboard',
-      sub: 'A global agricultural market tracker: prices for grains, dairy, livestock, feed and fertilizer in the U.S., Europe, the UK and Canada, plus official statistics from more than 30 countries — always with the original value, source and date, and converted to another currency or unit only when the series are comparable.',
+      sub: "Prices for grains, dairy, livestock, feed and fertilisers in the US, Europe and Canada, plus official statistics for 30+ countries. Every figure keeps its original value, source and date.",
       ctaPrimary: 'View the price dashboard →',
       ctaSecondary: 'How it works',
       moversTitle: 'MARKET SNAPSHOT',
@@ -123,7 +123,7 @@
     },
     fr: {
       h1: "Le pouls de l'agriculture, en un seul tableau de bord",
-      sub: "Un suivi mondial des marchés agricoles : prix des céréales, produits laitiers, bétail, aliments pour animaux et engrais aux États-Unis, en Europe, au Royaume-Uni et au Canada, et statistiques officielles de plus de 30 pays — toujours avec la valeur d’origine, la source et la date, et convertis dans une autre devise ou unité seulement quand les séries sont comparables.",
+      sub: "Prix des céréales, produits laitiers, bétail, aliments et engrais aux États-Unis, en Europe et au Canada, et statistiques officielles de plus de 30 pays. Chaque donnée garde sa valeur d’origine, sa source et sa date.",
       ctaPrimary: 'Voir le tableau des prix →',
       ctaSecondary: 'Comment ça marche',
       moversTitle: 'LES MOUVEMENTS AGRICOLES DU JOUR',
@@ -171,7 +171,7 @@
     },
     it: {
       h1: "Il polso dell'agricoltura, in un unico pannello",
-      sub: "Un tracker globale dei mercati agricoli: prezzi di cereali, lattiero-caseario, bestiame, mangimi e fertilizzanti negli Stati Uniti, in Europa, nel Regno Unito e in Canada, e statistiche ufficiali di oltre 30 paesi — sempre con il valore originale, la fonte e la data, e convertiti in un'altra valuta o unità solo quando le serie sono confrontabili.",
+      sub: "Prezzi di cereali, latte, bestiame, mangimi e fertilizzanti in USA, Europa e Canada, più statistiche ufficiali di oltre 30 paesi. Ogni dato mantiene valore originale, fonte e data.",
       ctaPrimary: 'Vedi il pannello dei prezzi →',
       ctaSecondary: 'Come funziona',
       moversTitle: 'I MOVIMENTI AGRICOLI DI OGGI',
@@ -266,6 +266,49 @@
       }).join('') + '</div>';
   }
 
+
+  /* ---------- Precios publicados (franja de la portada) ---------- */
+  var TAPE = {
+    es: { cols: ['Producto', 'Región', 'Precio', 'Variación', 'Fecha'], title: 'Último dato de cada mercado', note: 'Cada precio va en la unidad y la moneda de su fuente: no se comparan entre regiones.', all: 'Ver todos los precios →', loading: 'Cargando precios…', none: 'No se han podido cargar los precios.', obs: 'observaciones', src: 'fuentes',
+      p: { trigo: 'Trigo', maiz: 'Maíz', leche: 'Leche' }, r: { eu: 'UE', us: 'EE. UU.', ca: 'Canadá' }, u: { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg' } },
+    en: { cols: ['Product', 'Region', 'Price', 'Change', 'Date'], title: 'Latest data from each market', note: 'Each price is in its source’s unit and currency: they are not compared across regions.', all: 'See all prices →', loading: 'Loading prices…', none: 'Prices could not be loaded.', obs: 'observations', src: 'sources',
+      p: { trigo: 'Wheat', maiz: 'Corn', leche: 'Milk' }, r: { eu: 'EU', us: 'US', ca: 'Canada' }, u: { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg' } },
+    fr: { cols: ['Produit', 'Région', 'Prix', 'Variation', 'Date'], title: 'Dernière donnée de chaque marché', note: 'Chaque prix est dans l’unité et la devise de sa source : ils ne sont pas comparés entre régions.', all: 'Voir tous les prix →', loading: 'Chargement des prix…', none: 'Impossible de charger les prix.', obs: 'observations', src: 'sources',
+      p: { trigo: 'Blé', maiz: 'Maïs', leche: 'Lait' }, r: { eu: 'UE', us: 'É.-U.', ca: 'Canada' }, u: { tonelada: 't', bushel: 'boisseau', cwt: 'cwt', '100kg': '100 kg' } },
+    it: { cols: ['Prodotto', 'Regione', 'Prezzo', 'Variazione', 'Data'], title: 'Ultimo dato di ogni mercato', note: 'Ogni prezzo è nell’unità e nella valuta della sua fonte: non vengono confrontati tra regioni.', all: 'Vedi tutti i prezzi →', loading: 'Caricamento prezzi…', none: 'Impossibile caricare i prezzi.', obs: 'osservazioni', src: 'fonti',
+      p: { trigo: 'Frumento', maiz: 'Mais', leche: 'Latte' }, r: { eu: 'UE', us: 'USA', ca: 'Canada' }, u: { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg' } }
+  };
+  var TAPE_ROWS = [['trigo', 'eu'], ['trigo', 'us'], ['trigo', 'ca'], ['maiz', 'eu'], ['maiz', 'us'], ['maiz', 'ca'], ['leche', 'eu'], ['leche', 'us']];
+  var TAPE_DATA = null;
+  function tapeNum(v, lang) { var d = Math.abs(v) >= 100 ? 0 : 2; try { return v.toLocaleString(lang, { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
+  function tapeDate(iso, lang) {
+    var p = String(iso || '').split('-'); if (p.length < 2) return '';
+    try { return new Date(Date.UTC(+p[0], +p[1] - 1, p[2] ? +p[2] : 1)).toLocaleDateString(lang, p[2] ? { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' } : { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return iso; }
+  }
+  function tapeHtml(lang, esc) {
+    var t = TAPE[lang] || TAPE.es, el = '<div class="di-tape-h">' + esc(t.title) + '</div>';
+    if (TAPE_DATA === 'err') return el + '<p class="di-tape-note">' + esc(t.none) + '</p>';
+    if (!TAPE_DATA) return el + '<p class="di-tape-note">' + esc(t.loading) + '</p>';
+    var by = {}; TAPE_DATA.forEach(function (o) { by[o.product + '/' + o.region] = o; });
+    var prev = '', rows = TAPE_ROWS.map(function (k) {
+      var o = by[k[0] + '/' + k[1]]; if (!o || typeof o.value !== 'number') return '';
+      var first = k[0] !== prev; prev = k[0];
+      var ch = typeof o.changePct === 'number' ? o.changePct : null;
+      var chTxt = ch === null ? '' : (ch > 0 ? '+' : ch < 0 ? '−' : '') + Math.abs(ch).toFixed(1).replace('.', lang === 'en' ? '.' : ',') + ' %';
+      return '<tr' + (first ? ' class="first"' : '') + '><th scope="row">' + '<span class="' + (first ? 'di-tape-p' : 'di-sr') + '">' + esc(t.p[k[0]] || k[0]) + '</span>' + '</th><td class="rg">' + esc(t.r[k[1]] || k[1]) + '</td>' +
+        '<td class="v"><strong>' + esc(tapeNum(o.value, lang)) + '</strong> <span class="u">' + esc(o.currency + '/' + (t.u[o.unit] || o.unit)) + '</span></td>' +
+        '<td class="c ' + (ch > 0 ? 'up' : ch < 0 ? 'dn' : '') + '">' + esc(chTxt) + '</td><td class="d">' + esc(tapeDate(o.observationDate, lang)) + '</td></tr>';
+    }).join('');
+    if (!rows) return el + '<p class="di-tape-note">' + esc(t.none) + '</p>';
+    var st = HOME_DATA.stats, foot = st ? '<span>' + esc(String(st.observations)) + ' ' + esc(t.obs) + ' · ' + esc(String(st.sources)) + ' ' + esc(t.src) + '</span>' : '';
+    return el + '<table class="di-tape-t" data-no-cards="1"><thead class="di-sr"><tr>' + t.cols.map(function (c) { return '<th scope="col">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' + rows + '</tbody></table><div class="di-tape-f"><span>' + esc(t.note) + '</span>' + foot + '</div><a class="di-tape-a" href="precios.html">' + esc(t.all) + '</a>';
+  }
+  function loadTape() {
+    var go = function () { return window.DIPrices.latest(['eu', 'us', 'ca']); };
+    var load = window.DIPrices ? Promise.resolve() : new Promise(function (res, rej) { var sc = document.createElement('script'); sc.src = 'js/prices-store.js'; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
+    load.then(go).then(function (obs) { TAPE_DATA = obs; render(); }, function () { TAPE_DATA = 'err'; render(); });
+  }
+
   function render() {
     var lang = window.DehesaShared.getLang();
     var esc = window.DehesaShared.esc;
@@ -277,18 +320,7 @@
     document.getElementById('home-cta-primary').textContent = t.ctaPrimary;
     document.getElementById('home-cta-secondary').textContent = t.ctaSecondary;
 
-    var realCount = HOME_DATA.stats ? HOME_DATA.stats.observations : 0;
-    var sourceCount = HOME_DATA.stats ? HOME_DATA.stats.sources : 0;
-    var productCount = HOME_DATA.stats ? HOME_DATA.stats.products : 0;
-    var stats = [
-      { value: String(productCount || '—'), label: lang === 'es' ? 'productos con datos' : 'products with data' },
-      { value: String(realCount || '—'), label: lang === 'es' ? 'observaciones reales' : 'real observations' },
-      { value: String(sourceCount || '—'), label: lang === 'es' ? 'fuentes conectadas' : 'connected sources' },
-      { value: HOME_DATA.status === 'live' ? 'LIVE' : HOME_DATA.status === 'unavailable' ? 'OFFLINE' : '…', label: lang === 'es' ? 'estado de datos' : 'data status' }
-    ];
-    document.getElementById('home-stats').innerHTML = stats.map(function(s) {
-      return '<div><div class="di-stat-value">' + esc(s.value) + '</div><div class="di-stat-label">' + esc(s.label) + '</div></div>';
-    }).join('');
+    document.getElementById('home-stats').innerHTML = tapeHtml(lang, esc);
 
     document.getElementById('home-movers-title').textContent = t.moversTitle;
     document.getElementById('home-movers-hint').textContent = t.moversHint;
@@ -342,4 +374,5 @@
   window.DehesaShared.onLangChange = render;
   render();
   loadHomeData();
+  loadTape();
 })();

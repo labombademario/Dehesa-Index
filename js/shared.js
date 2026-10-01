@@ -275,7 +275,7 @@
           if (rows[r] === hr) continue; var cs = rows[r].children;
           for (var c = 0; c < cs.length; c++) { if (cs[c].tagName === 'TD' && heads[c] && !cs[c].hasAttribute('data-label')) cs[c].setAttribute('data-label', heads[c]); if (cs[c].tagName === 'TH' && !cs[c].getAttribute('scope')) cs[c].setAttribute('scope', 'row'); }
         }
-        if (heads.length >= 3 && heads.length <= 8 && rows.length) t.classList.add('di-cards-m');
+        if (heads.length >= 3 && heads.length <= 8 && rows.length && !t.hasAttribute('data-no-cards')) t.classList.add('di-cards-m');
       }
     }
     // Regiones con scroll horizontal: accesibles por teclado (WCAG 2.1.1) si no contienen nada enfocable.
