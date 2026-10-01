@@ -14,6 +14,22 @@ def log(*a):
     except Exception: pass
 SC = {"units": 1, "tens": 10, "hundreds": 100, "thousands": 1e3, "millions": 1e6, "billions": 1e9}
 _cache = {}
+def fetch_resume(url, tries=8):
+    buf = b""; total = None
+    for i in range(tries):
+        h = {"User-Agent": UA["User-Agent"]}
+        if buf: h["Range"] = "bytes=%d-" % len(buf)
+        try:
+            r = urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=150)
+            if buf and r.status != 206: buf = b""
+            while True:
+                c = r.read(65536)
+                if not c: break
+                buf += c
+            return buf
+        except Exception as e:
+            log("corte en", len(buf) // 1024, "KB", repr(e)[:80]); time.sleep(3)
+    raise RuntimeError("descarga incompleta")
 def load(pid):
     if pid in _cache: return _cache[pid]
     last = None
@@ -21,7 +37,7 @@ def load(pid):
         try:
             req = urllib.request.Request(WDS + "getFullTableDownloadCSV/%d/en" % pid, headers=UA)
             info = json.loads(urllib.request.urlopen(req, timeout=60).read())
-            raw = urllib.request.urlopen(urllib.request.Request(info["object"], headers={"User-Agent": UA["User-Agent"]}), timeout=150).read()
+            raw = fetch_resume(info["object"])
             z = zipfile.ZipFile(io.BytesIO(raw)); name = [n for n in z.namelist() if n.endswith(".csv") and "MetaData" not in n][0]
             log("descargada", pid, len(raw) // 1024, "KB")
             rows = list(csv.DictReader(io.TextIOWrapper(z.open(name), encoding="utf-8-sig")))
@@ -224,7 +240,14 @@ def trade():
             put("ca-trade-bal-%s" % slug(want[nm]), "trade", "Trade balance: %s (monthly)" % want[nm], "CAD million", "monthly", bal, "StatCan 12-10-0163"); n += 1
     log("comercio", n)
 def main():
-    for fn in (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, trade):
+    import os
+    only = [x for x in os.environ.get("ONLY", "").replace(",", " ").split() if x]
+    allf = (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, trade)
+    if only:
+        try:
+            for x in json.loads((ROOT / "data" / "canada-stats.json").read_text())["countries"]["CA"]["series"]: OUT[x["id"]] = x
+        except Exception as e: log("sin base previa", repr(e))
+    for fn in [f for f in allf if not only or f.__name__ in only]:
         try: fn()
         except Exception as e: log("ERROR", fn.__name__, repr(e))
     if len(OUT) < 40:

@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '35 15 * * 1,4'
   workflow_dispatch:
+    inputs:
+      only:
+        description: 'Funciones a ejecutar (vacío = todas), p. ej. trade'
+        required: false
+        default: ''
 permissions:
   contents: write
 concurrency:
@@ -15,6 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/update-canada-stats.py
+        env:
+          ONLY: ${{ github.event.inputs.only }}
         timeout-minutes: 20
         continue-on-error: true
       - if: always()
