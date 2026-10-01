@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/probe-wits.py
+      - run: pip install openpyxl --break-system-packages -q; python3 scripts/probe-wits.py
         continue-on-error: true
       - if: always()
         run: |
