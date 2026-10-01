@@ -46,4 +46,4 @@ if tot != man['seriesTotal']: err.append('suma de catalogos %d != seriesTotal %d
 if warn and STRICT: err.extend(warn)
 elif warn: print('AVISO:', '; '.join(warn))
 if err: print('\n'.join(err[:30])); sys.exit(1)
-print('Catalogo OK: %d series, %d paises' % (tot, len(man['countries'])))
+e = man['entities']; print('Catalogo OK: %d series, %d entidades (%d paises, %d agregados, %d regiones)' % (tot, e['total'], e['country'], e.get('aggregate', 0), e.get('region', 0)))

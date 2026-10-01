@@ -10,7 +10,9 @@
   "tiers",
   "seriesByKind",
   "layout",
-  "products"
+  "products",
+  "entities",
+  "provenance"
  ],
  "properties": {
   "schemaVersion": {
@@ -79,6 +81,22 @@
    "required": [],
    "properties": {},
    "minProperties": 5
+  },
+  "entities": {
+   "type": "object",
+   "required": [
+    "country",
+    "total"
+   ]
+  },
+  "provenance": {
+   "type": "object",
+   "required": [
+    "doc",
+    "sources",
+    "transformations",
+    "role"
+   ]
   }
  }
 }

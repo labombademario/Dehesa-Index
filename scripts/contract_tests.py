@@ -254,6 +254,19 @@ def search_index(doc, errs, warns, stats):
 def catalog_manifest(doc, errs, warns, stats):
     k = doc["seriesByKind"]
     if sum(k.values()) != doc["seriesTotal"]: errs.append("seriesTotal %d != suma de seriesByKind %d" % (doc["seriesTotal"], sum(k.values())))
+    ents = {}
+    for cc, c in doc["countries"].items():
+        et = c.get("entityType")
+        if et not in ("country", "aggregate", "region"): errs.append("%s: entityType %r invalido" % (cc, et)); continue
+        ents[et] = ents.get(et, 0) + 1
+        if et == "country" and not (c.get("isoCode") and len(c["isoCode"]) == 2): errs.append("%s: pais sin isoCode" % cc)
+        if et != "country" and c.get("isoCode"): errs.append("%s: %s con isoCode" % (cc, et))
+        if et == "region" and not c.get("parent"): errs.append("%s: region sin parent" % cc)
+        if not c.get("displayName") or c["displayName"] == cc and et == "country": errs.append("%s: displayName vacio o igual al codigo" % cc)
+    if {k: v for k, v in doc["entities"].items() if k != "total"} != ents or doc["entities"]["total"] != len(doc["countries"]): errs.append("entities incoherente con countries")
+    for sid, v in doc["provenance"]["sources"].items():
+        if not v["officialUrl"].startswith("http") or not v["licenseId"]: errs.append("provenance.sources.%s incompleta" % sid)
+    if sum(v["series"] for v in doc["provenance"]["sources"].values()) != doc["seriesTotal"]: errs.append("provenance.sources no suma seriesTotal")
     for cc, c in doc["countries"].items():
         if not (D / c["catalog"]).exists(): errs.append("%s: catalogo %s inexistente" % (cc, c["catalog"])); continue
         for m, v in c["metrics"].items():

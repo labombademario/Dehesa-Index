@@ -20,6 +20,9 @@ TAGS = [('wheat', r'wheat|trigo|blé|\bble\b|frumento'), ('maize', r'maize|corn|
         ('fruit', r'fruit|apple|orange|tomato|vegetable|lettuce|hortaliza|fruta')]
 TAGS = [(k, re.compile(v, re.I)) for k, v in TAGS]
 def tags(label): return [k for k, rx in TAGS if rx.search(label)]
+ISO_EN = {'AT': 'Austria', 'AU': 'Australia', 'BE': 'Belgium', 'BG': 'Bulgaria', 'CA': 'Canada', 'CY': 'Cyprus', 'CZ': 'Czechia', 'DE': 'Germany', 'DK': 'Denmark', 'EE': 'Estonia', 'EL': 'Greece', 'ES': 'Spain', 'FI': 'Finland',
+          'FR': 'France', 'HR': 'Croatia', 'HU': 'Hungary', 'IE': 'Ireland', 'IT': 'Italy', 'LT': 'Lithuania', 'LU': 'Luxembourg', 'LV': 'Latvia', 'MT': 'Malta', 'NL': 'Netherlands', 'PL': 'Poland', 'PT': 'Portugal',
+          'RO': 'Romania', 'SE': 'Sweden', 'SI': 'Slovenia', 'SK': 'Slovakia', 'UK': 'United Kingdom', 'US': 'United States'}
 SPECIAL = {'EL': 'Greece', 'UK': 'United Kingdom', 'EU': 'European Union', 'EU+UK': 'EU and UK (average)', 'EU-UK': 'EU excluding UK (average)', 'EU Average': 'EU average', 'EU13': 'EU-13 (Member States since 2004)', 'EU14': 'EU-14 (EU-15 without UK)', 'EU15': 'EU-15 (members before 2004)', 'Region 1': 'Sugar region 1', 'Region 2': 'Sugar region 2', 'Region 3': 'Sugar region 3'}
 def slug(cc): return re.sub(r'[^A-Za-z0-9]+', '_', cc.replace('+', 'plus')).strip('_')
 def dump(o): return json.dumps(o, ensure_ascii=False, separators=(',', ':'))
@@ -34,6 +37,12 @@ LIC_ALIAS = {}
 for _k, _v in LIC['sources'].items():
     LIC_ALIAS[_k] = _k
     for _a in _v.get('aliases', []): LIC_ALIAS[_a] = _k
+def entity(cc, name):
+    """Tipo de entidad del manifiesto: country | aggregate | region. NO todo lo que lleva codigo es un pais (EU, medias, regiones azucareras)."""
+    if re.fullmatch(r'Region \d', cc): return {'entityType': 'region', 'parent': 'EU', 'displayName': 'EU sugar region ' + cc[-1], 'isoCode': None, 'flagType': 'none'}
+    if cc == 'EU': return {'entityType': 'aggregate', 'parent': None, 'displayName': 'European Union', 'isoCode': None, 'flagType': 'eu'}
+    if cc.startswith('EU') and not re.fullmatch(r'[A-Z]{2}', cc): return {'entityType': 'aggregate', 'parent': 'EU', 'displayName': name, 'isoCode': None, 'flagType': 'eu'}
+    return {'entityType': 'country', 'parent': None, 'displayName': name, 'isoCode': {'EL': 'GR', 'UK': 'GB'}.get(cc, cc), 'flagType': 'country'}
 def lic(sid):
     """(sourceId canonico, licenseId) de una fuente del registro; detiene el build si no existe."""
     k = LIC_ALIAS.get(sid)
@@ -106,7 +115,7 @@ def main():
             k = iso(o.get('frequency'), h['year'], h['period'])
             if k and h.get('value') is not None: pts.append([k, h['value']])
         if not pts: continue
-        names.setdefault(cc, SPECIAL.get(cc, cc))
+        names.setdefault(cc, ISO_EN.get(cc) or SPECIAL.get(cc, cc))
         sr = {'id': 'product:' + o['id'].replace('di_', '', 1), 'group': 'product', 'label': '%s · %s' % (o['product'].replace('_', ' ').capitalize(), o.get('sourceId', '')), 'unit': '%s/%s' % (o.get('currency', ''), o.get('unit', '')), 'frequency': o.get('frequency', ''),
               'latestPeriod': pts[-1][0], 'latest': o.get('value'), 'changePct': o.get('changePct'), 'points': pts, '_sid': o['sourceId']}
         by_c.setdefault(cc, []).append(('latest', sr, None)); nprod += 1
@@ -121,7 +130,7 @@ def main():
             seen = {}
             for rg in se.get('regions', []):
                 cc = rg['c']; seen[cc] = seen.get(cc, 0) + 1
-                names.setdefault(cc, SPECIAL.get(cc, cc)); last, prev = rg.get('last') or [None, None], rg.get('prev') or [None, None]
+                names.setdefault(cc, ISO_EN.get(cc) or SPECIAL.get(cc, cc)); last, prev = rg.get('last') or [None, None], rg.get('prev') or [None, None]
                 lab = '%s: %s' % (fam['id'].capitalize(), ' · '.join(se.get('parts', [se['id']])))
                 if rg.get('m'): lab += ' (%s)' % rg['m']
                 sid = 'eu:%s:%s' % (fam['id'], se['id']) + ('' if seen[cc] == 1 else '#%d' % seen[cc])
@@ -163,8 +172,8 @@ def main():
         for x in cat: x['fs'] = FR.evaluate(x['latestPeriod'], x['freq'], x['sourceId'], NOW_DAY)['state']  # Freshness Engine 2.0
         core = [x for x in cat if x.get('format') != 'eu-regions']; eu = [x for x in cat if x.get('format') == 'eu-regions']
         # los metadatos del catalogo UE van en un fichero aparte: quien solo necesita las series del pais no los baja
-        changed += write_if_changed(ROOT / 'data/catalog' / (slug(cc) + '.json'), dump({'schemaVersion': 1, 'country': cc, 'name': names.get(cc, cc), 'sources': srcs.get(cc, []), 'series': core}), written)
-        man['countries'][cc] = {'name': names.get(cc, cc), 'n': len(cat), 'catalog': 'catalog/%s.json' % slug(cc), 'metrics': mg}
+        changed += write_if_changed(ROOT / 'data/catalog' / (slug(cc) + '.json'), dump({'schemaVersion': 1, 'country': cc, 'name': ISO_EN.get(cc) or names.get(cc, cc), 'sources': srcs.get(cc, []), 'series': core}), written)
+        man['countries'][cc] = {**entity(cc, SPECIAL.get(cc) or ISO_EN.get(cc) or names.get(cc, cc)), 'name': ISO_EN.get(cc) or names.get(cc, cc), 'n': len(cat), 'catalog': 'catalog/%s.json' % slug(cc), 'metrics': mg}
         # resumen para tarjetas de perfiles.html (no hace falta bajar el catalogo del pais para listarlo)
         prof = [x for x in core if x['group'] != 'product']
         if prof:
@@ -177,7 +186,24 @@ def main():
     for cc, c in man['countries'].items():
         for g, m in c['metrics'].items():
             for t in m['tags']: prods.setdefault(t, []).append('%s/%s' % (cc, g))
-    man.update({'schemaVersion': 1, 'seriesTotal': total, 'tiers': {'1': 'national official body', '2': 'Eurostat harmonised', '3': 'international organisation', '4': 'secondary / aggregator'},
+    used = {}
+    for cc, c in man['countries'].items():
+        for g, m in c['metrics'].items(): pass
+    PROV_FILES = {'product': ('latest.json', 'Historico mensual del motor de precios, valores tal como los publica la fuente; sin conversion de moneda ni de unidad (la unidad original viaja con la serie).', 'none'),
+                  'eu-regions': ('data/eu/*', 'Cotizaciones del Agri-food Data Portal tal como las publica la Comision; sin transformacion salvo el calculo de variaciones.', 'none'),
+                  'stats': ('*-stats.json', 'Valores tal como los publica la fuente, reescalados a la unidad indicada en la serie; changePct lo calcula Dehesa con los dos ultimos puntos.', 'none (la frecuencia es la de la fuente)')}
+    ents = {}
+    for c in man['countries'].values(): ents[c['entityType']] = ents.get(c['entityType'], 0) + 1
+    srcs_used = {}
+    for f in sorted((ROOT / 'data/catalog').glob('*.json')) + sorted((ROOT / 'data/catalog/eu').glob('*.json')):
+        if f.name == 'manifest.json': continue
+        for x in json.loads(f.read_text())['series']: srcs_used[x['sourceId']] = srcs_used.get(x['sourceId'], 0) + 1
+    man['provenance'] = {
+        'doc': 'Procedencia por serie = fila del catalogo (sourceId, licenseId, source=fichero de origen, canonical, latestPeriod=observationDate, fs=frescura) + este bloque (nombre, URL oficial y licencia de la fuente; transformacion y agregacion por tipo de dato). El catalogo se genera en generatedAt. publicationDate no la publican la mayoria de las fuentes estadisticas: se omite en vez de inventarla.',
+        'sources': {k: {'name': LIC['sources'][k]['name'], 'officialUrl': LIC['sources'][k]['url'], 'licenseId': LIC['sources'][k]['licenseId'], 'licenseStatus': LIC['sources'][k]['status'], 'attribution': LIC['sources'][k].get('attributionText'), 'series': n} for k, n in sorted(srcs_used.items())},
+        'transformations': {k: {'applies': v[0], 'transformation': v[1], 'aggregation': v[2]} for k, v in PROV_FILES.items()},
+        'role': 'Todas las series del catalogo son la representacion preferida (primary); los duplicados no preferidos se excluyen (data/series-registry.json, nonPreferred=0).'}
+    man.update({'entities': {**ents, 'total': len(man['countries'])}, 'schemaVersion': 1, 'seriesTotal': total, 'tiers': {'1': 'national official body', '2': 'Eurostat harmonised', '3': 'international organisation', '4': 'secondary / aggregator'},
                 'seriesByKind': {'stats': total - neu - nprod, 'product': nprod, 'eu-regions': neu}, 'layout': 'manifest -> catalog/<CC>.json (metadata) -> series/<CC>/<metric>.json (points)', 'products': {k: sorted(v) for k, v in sorted(prods.items())}, 'tagsNote': 'products are keyword tags derived from series labels (heuristic), not an official classification'})
     # el manifiesto solo cambia de generatedAt si cambia algo mas
     mp = ROOT / 'data/catalog/manifest.json'; body = dump(man)
