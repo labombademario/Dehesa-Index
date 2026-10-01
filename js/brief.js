@@ -41,6 +41,24 @@
     fr: { t: 'Marchés au comptant américains mis à jour', h: 'USDA AMS · variation par marché, sans fusion en un chiffre unique', n: 'nouveau prix USDA', rv: 'l’USDA a révisé', mk: 'marchés', lead: 'plus forte variation', all: 'Voir les prix locaux', bid: 'offre', cm: { corn: 'Maïs', soybeans: 'Soja', wheat: 'Blé', sorghum: 'Sorgho', barley: 'Orge', oats: 'Avoine' } },
     it: { t: 'Mercati a pronti USA aggiornati', h: 'USDA AMS · variazione per mercato, senza fonderli in un unico dato', n: 'nuovo prezzo USDA', rv: 'USDA ha rivisto', mk: 'mercati', lead: 'maggior variazione', all: 'Vedi prezzi locali', bid: 'offerta', cm: { corn: 'Mais', soybeans: 'Soia', wheat: 'Grano', sorghum: 'Sorgo', barley: 'Orzo', oats: 'Avena' } }
   };
+  var RL = {
+    es: { t: 'Publicaciones oficiales de esta semana', h: 'Informes semanales de USDA por su día habitual; un festivo puede desplazarlos. Las fechas oficiales de los informes mensuales y trimestrales están en el Calendario.', cp: 'USDA Crop Progress (estado de los cultivos)', es: 'USDA Export Sales (ventas de exportación)', today: 'hoy', tom: 'mañana', inN: 'en {0} días', cal: 'Calendario completo' },
+    en: { t: 'Official releases this week', h: 'Weekly USDA reports on their usual weekday; a holiday can shift them. Official dates of monthly and quarterly reports are in the Calendar.', cp: 'USDA Crop Progress', es: 'USDA Export Sales', today: 'today', tom: 'tomorrow', inN: 'in {0} days', cal: 'Full calendar' },
+    fr: { t: 'Publications officielles de la semaine', h: 'Rapports hebdomadaires de l’USDA à leur jour habituel ; un jour férié peut les décaler. Les dates officielles des rapports mensuels et trimestriels figurent dans le Calendrier.', cp: 'USDA Crop Progress (état des cultures)', es: 'USDA Export Sales (ventes à l’exportation)', today: 'aujourd’hui', tom: 'demain', inN: 'dans {0} jours', cal: 'Calendrier complet' },
+    it: { t: 'Pubblicazioni ufficiali della settimana', h: 'Rapporti settimanali USDA nel loro giorno abituale; un giorno festivo può spostarli. Le date ufficiali dei rapporti mensili e trimestrali sono nel Calendario.', cp: 'USDA Crop Progress (stato delle colture)', es: 'USDA Export Sales (vendite all’export)', today: 'oggi', tom: 'domani', inN: 'tra {0} giorni', cal: 'Calendario completo' }
+  };
+  var RLS = [['cp', 1, 'crop-progress'], ['es', 4, 'export-sales']];
+  function releases() {
+    var t = RL[lang()] || RL.es, now = new Date(), d0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var rows = RLS.map(function (r) {
+      var d = new Date(d0.getTime()); while (d.getDay() !== r[1]) d.setDate(d.getDate() + 1);
+      var n = Math.round((d - d0) / 86400000);
+      var when = n === 0 ? t.today : n === 1 ? t.tom : t.inN.replace('{0}', n);
+      var label = ''; try { label = d.toLocaleDateString(lang(), { weekday: 'long', day: 'numeric', month: 'short' }); } catch (e) { label = d.toDateString(); }
+      return { n: n, html: '<div style="display:flex;gap:10px;border-top:1px solid var(--border);padding:6px 0;flex-wrap:wrap"><span style="min-width:170px;color:var(--text-faint);font-size:12.5px">' + esc(label) + ' · ' + esc(when) + '</span><span>' + esc(t[r[0]]) + '</span></div>' };
+    }).sort(function (a, b) { return a.n - b.n; });
+    return '<div class="di-movers-hint" style="margin:0 0 6px">' + esc(t.h) + '</div>' + rows.map(function (r) { return r.html; }).join('') + '<div style="padding-top:6px"><a href="calendario.html" style="color:inherit">' + esc(t.cal) + ' →</a></div>';
+  }
   function cashBids() {
     var C = B && B.cashBids, t = CT[lang()] || CT.es; if (!C || (!C.groups.length && !C.newBids.length && !C.revisions.length)) return '';
     function nm(c) { return t.cm[c] || c; }
@@ -94,6 +112,7 @@
     h += sec('ds', t.ds, list('ds', B.datasets || [], function (d) { return '<div style="display:flex;gap:10px;border-top:1px solid var(--border);padding:6px 0"><span style="flex:1">' + esc(d.name) + ' <span style="color:var(--text-faint);font-size:12px">' + esc(d.file.replace('data/', '')) + '</span></span><strong>' + d.changed + '</strong> <span style="font-size:12px;color:var(--text-faint)">' + esc(t.changed) + '</span></div>'; }, 10));
     h += sec('revs', t.revs, list('revs', B.revisions || [], function (r) { var p = r.series.split('/'); return '<div style="display:flex;gap:10px;border-top:1px solid var(--border);padding:6px 0;flex-wrap:wrap"><a href="' + esc(link(r.series)) + '" style="flex:1;color:inherit;text-decoration:none">' + esc((IDX && IDX[r.series] ? IDX[r.series][0] : r.series)) + ' · ' + esc(r.period) + '</a><span>' + nf(r.old) + ' → <strong>' + nf(r.new) + '</strong></span> ' + pc(r.pct) + '</div>'; }, 8));
     h += sec('stale', t.stale, list('stale', B.stale || [], function (s) { return '<div style="border-top:1px solid var(--border);padding:6px 0">⚠️ ' + esc(s.name) + ' <span style="color:var(--text-faint);font-size:12px">(' + esc(s.status) + ')</span>' + (s.isNew ? ' <strong style="color:#a33">· ' + esc(t.isNew) + '</strong>' : '') + ' · <a href="status.html" style="color:inherit">' + esc(t.mo) + '</a></div>'; }, 10));
+    h += sec('rel', (RL[lang()] || RL.es).t, releases());
     h += sec('up', t.up, list('up', B.upcoming || [], function (u) { return '<div style="display:flex;gap:10px;border-top:1px solid var(--border);padding:6px 0"><span style="min-width:120px;color:var(--text-faint);font-size:12.5px">' + esc(when(u.nextRun)) + '</span><span>' + esc(u.name) + '</span></div>'; }, 10));
     if (B.newDatasets && B.newDatasets.length) h += sec('nds', t.newDs, list('nds', B.newDatasets, function (d) { return '<div style="border-top:1px solid var(--border);padding:6px 0">' + esc(d.name) + ' <span style="color:var(--text-faint);font-size:12px">' + esc(d.file.replace('data/', '')) + ' · ' + d.series + ' ' + esc(t.changed.split(' ')[0]) + '</span></div>'; }, 6));
     h += '<p class="di-movers-hint">' + esc(t.gen) + ': ' + esc(when(B.generatedAt)) + ' · ' + esc(t.win) + ': ' + B.windowHours + ' ' + esc(t.hrs) + '. ' + esc(t.note) + '</p>';

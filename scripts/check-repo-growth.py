@@ -16,6 +16,11 @@ for f, s in sorted(sizes.items(), key=lambda x: -x[1]):
     elif s > B['warnFileMB'] * MB: warns.append('%s: %.1f MB (aviso > %d MB)%s' % (f, s / MB, B['warnFileMB'], ' - ' + B['knownLarge'][f] if f in B.get('knownLarge', {}) else ''))
 if data_total > B['maxDataTreeMB'] * MB: fails.append('data/: %.0f MB > %d MB' % (data_total / MB, B['maxDataTreeMB']))
 elif data_total > B['warnDataTreeMB'] * MB: warns.append('data/: %.0f MB (aviso > %d MB)' % (data_total / MB, B['warnDataTreeMB']))
+for d, b in B.get('dirBudgets', {}).items():
+    ds = sum(s for f, s in sizes.items() if f.startswith(d))
+    if ds > b['maxMB'] * MB: fails.append('%s: %.1f MB > %d MB' % (d, ds / MB, b['maxMB']))
+    elif ds > b['warnMB'] * MB: warns.append('%s: %.1f MB (aviso > %d MB)' % (d, ds / MB, b['warnMB']))
+    print('  %s %.1f MB (aviso %d / limite %d)' % (d, ds / MB, b['warnMB'], b['maxMB']))
 pack = 0.0
 for l in sh('git count-objects -v').split('\n'):
     if l.startswith('size-pack:') or l.startswith('size:'): pack += float(l.split(':')[1]) / 1024.0
