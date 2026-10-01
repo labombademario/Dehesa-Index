@@ -100,7 +100,7 @@
   }
   function bars(by, total) {
     var order = ['LIVE', 'FRESH', 'EXPECTED_DELAY', 'DELAYED', 'STALE', 'PENDING'], h = '<div class="pt-bars">';
-    order.forEach(function (s) { var n = by[s] || 0; if (!n) return; h += '<div class="pt-row"><span class="n">' + fsB(s) + '</span><span class="rl-barwrap"><i style="width:' + Math.max(1, Math.round(n / total * 100)) + '%"></i></span><span>' + n + ' <span class="pt-sub">(' + nf(n / total * 100, 0) + ' %)</span></span></div>'; });
+    order.forEach(function (s) { var n = by[s] || 0; if (!n) return; h += '<div class="pt-row"><span class="n" title="' + esc(t('fs_' + s)) + '">' + fsB(s) + '</span><span class="rl-barwrap"><i style="width:' + Math.max(1, Math.round(n / total * 100)) + '%"></i></span><span>' + n + ' <span class="pt-sub">(' + nf(n / total * 100, 0) + ' %)</span></span></div>'; });
     return h + '</div>';
   }
   function secFresh(obs) {

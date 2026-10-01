@@ -128,6 +128,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/e2e.mjs --json e2e-report.json
+      - name: Auditoria UX responsive (375/390/430/768/1280)
+        env:
+          CHROMIUM: ''
+        run: node scripts/ux-audit.mjs --strict
       - name: Informe E2E
         if: always()
         uses: actions/upload-artifact@v4

@@ -1189,8 +1189,8 @@ svg[data-dh]:focus-visible{outline:2px solid #2f6b3a;outline-offset:3px}
   table.di-cards-m thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   table.di-cards-m tbody,table.di-cards-m tr,table.di-cards-m td,table.di-cards-m th{display:block;width:100%;box-sizing:border-box}
   table.di-cards-m tr{border:1px solid var(--border,#ddd);border-radius:10px;padding:6px 10px;margin:0 0 10px;background:var(--surface,#fff)}
-  table.di-cards-m td,table.di-cards-m th[scope=row]{display:flex;justify-content:space-between;gap:12px;text-align:right;border:0!important;padding:4px 0!important;width:auto}
-  table.di-cards-m td::before{content:attr(data-label);font-size:11px;font-weight:700;color:var(--text-faint,#7a7466);text-align:left;flex:0 0 40%}
+  table.di-cards-m td,table.di-cards-m th[scope=row]{display:flex;justify-content:flex-end;align-items:baseline;gap:4px;text-align:right;border:0!important;padding:4px 0!important;width:auto}
+  table.di-cards-m td::before{content:attr(data-label);font-size:11px;font-weight:700;color:var(--text-faint,#7a7466);text-align:left;flex:0 0 40%;margin-right:auto;padding-right:8px}
   .di-table-wrap,.di-history-table,.di-data-table,.di-breakdown-table{overflow-x:visible}
 }
 
@@ -1314,3 +1314,24 @@ html[data-theme="dark"] .rl-st-WEAK_OR_UNSTABLE { color: #e0b04a; }
 .ms-imp { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0; }
 .ms-file { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
 .ms-file:focus + * , .ms-imp:focus-within label.pt-chip { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* UX polish (fase 9): objetivos tactiles, etiquetas que no se cortan y enlaces de pie con area util. Sin cambiar la marca ni la maquetacion. */
+.di-footer-grid ul a, .di-footer-links a { display: inline-block; padding: 3px 0; }
+.di-theme-toggle { min-width: 32px; min-height: 32px; }
+#ps-watch { min-height: 30px; }
+.di-fav-star { min-width: 30px; min-height: 30px; }
+.di-breakdown-toggle { padding: 4px 0; font-size: 12px; }
+.di-market-news-link { font-size: 11px; padding: 4px 0; }
+.pt-row .n[title] { min-width: 0; }
+@media (pointer: coarse) {
+  .di-fav-star { min-width: 40px; min-height: 40px; }
+  summary { padding-top: 7px; padding-bottom: 7px; }
+  .di-breakdown-toggle { padding: 9px 0; }
+  .di-footer-grid ul a, .di-footer-links a { padding: 7px 0; }
+  #ps-watch { min-height: 40px; }
+}
+@media (max-width: 480px) { .pt-row .n { white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; } }
+.pt-list li a { display: inline-block; padding: 4px 0; }
+.ob-sel select, .ms-imp select, .rl-prod select { border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface-input); color: var(--text); }
+.ms-imp select { font: inherit; font-size: 13px; min-height: 36px; padding: 6px 8px; max-width: 100%; }
+.ms-q { text-overflow: ellipsis; }
