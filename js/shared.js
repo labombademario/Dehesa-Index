@@ -88,17 +88,15 @@
         { file: 'paises.html', query: '?c=EU', label: { es: 'Perfil de la Unión Europea (macro y tipos)', en: 'European Union profile (macro and rates)', fr: 'Profil de l’Union européenne (macro et taux)', it: 'Profilo Unione europea (macro e tassi)' } },
         { file: 'europa.html', label: { es: 'Precios de la UE (todos los países)', en: 'EU prices (all countries)', fr: 'Prix de l’UE (tous les pays)', it: 'Prezzi UE (tutti i paesi)' } },
         { file: 'index.html', hash: '#home-dehesa-index', label: { es: 'Índice Dehesa (UE)', en: 'Dehesa Index (EU)', fr: 'Indice Dehesa (UE)', it: 'Indice Dehesa (UE)' }, noActive: true },
-        { label: { es: 'España', en: 'Spain', fr: 'Espagne', it: 'Spagna' }, items: [
-          { file: 'paises.html', query: '?c=ES', label: { es: 'Precios, insumos e índices (MAPA)', en: 'Prices, inputs and indices (MAPA)', fr: 'Prix, intrants et indices (MAPA)', it: 'Prezzi, input e indici (MAPA)' } },
-          { file: 'recan.html', label: { es: 'Costes y rentas de las explotaciones', en: 'Farm costs and incomes', fr: 'Coûts et revenus des exploitations', it: 'Costi e redditi delle aziende' } }
-        ] },
+        { file: 'paises.html', query: '?c=ES', label: { es: 'España', en: 'Spain', fr: 'Espagne', it: 'Spagna' } },
         { file: 'paises.html', query: '?c=FR', label: { es: 'Francia', en: 'France', fr: 'France', it: 'Francia' } },
         { file: 'paises.html', query: '?c=DE', label: { es: 'Alemania', en: 'Germany', fr: 'Allemagne', it: 'Germania' } },
         { file: 'paises.html', query: '?c=BE', label: { es: 'Bélgica', en: 'Belgium', fr: 'Belgique', it: 'Belgio' } },
         { file: 'paises.html', query: '?c=AT', label: { es: 'Austria', en: 'Austria', fr: 'Autriche', it: 'Austria' } },
         { file: 'paises.html', query: '?c=PT', label: { es: 'Portugal', en: 'Portugal', fr: 'Portugal', it: 'Portogallo' } },
         { file: 'paises.html', query: '?c=DK', label: { es: 'Dinamarca', en: 'Denmark', fr: 'Danemark', it: 'Danimarca' } },
-        { file: 'paises.html', query: '?c=NL', label: { es: 'Países Bajos', en: 'Netherlands', fr: 'Pays-Bas', it: 'Paesi Bassi' } }
+        { file: 'paises.html', query: '?c=NL', label: { es: 'Países Bajos', en: 'Netherlands', fr: 'Pays-Bas', it: 'Paesi Bassi' } },
+        { file: 'recan.html', label: { es: 'España: costes y rentas de las explotaciones', en: 'Spain: farm costs and incomes', fr: 'Espagne : coûts et revenus des exploitations', it: 'Spagna: costi e redditi delle aziende' } }
       ] },
       { label: { es: 'Otros países', en: 'Other countries', fr: 'Autres pays', it: 'Altri paesi' }, items: [
         { file: 'paises.html', query: '?c=CA', label: { es: 'Canadá (producción, renta y tipos)', en: 'Canada (production and income)', fr: 'Canada (production et revenu)', it: 'Canada (produzione e reddito)' } },
