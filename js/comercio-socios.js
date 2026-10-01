@@ -53,7 +53,7 @@
             '<td style="padding:7px 6px;text-align:right;white-space:nowrap;color:' + (ch == null ? 'inherit' : ch >= 0 ? '#2f6b4a' : '#a33') + '">' + (ch == null || i === 0 ? '' : (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), lang) + ' %') + '</td></tr>';
         };
         var pv = function (arr) { return arr && i > 0 ? arr[i - 1] : null; };
-        html += '<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:460px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:6px">' + esc(t.partner) + '</th><th style="padding:6px;text-align:right">' + esc(t.value) + '</th><th style="padding:6px;text-align:right">' + esc(t.share) + '</th><th style="padding:6px;text-align:right">' + esc(t.chg) + '</th></tr>';
+        html += '<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:460px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:6px">' + esc(t.partner) + '</th><th style="padding:6px;text-align:right">' + esc(cc === 'AU' ? d.unit : t.value) + '</th><th style="padding:6px;text-align:right">' + esc(t.share) + '</th><th style="padding:6px;text-align:right">' + esc(t.chg) + '</th></tr>';
         if (node.world) html += row(t.world, node.world[i], pv(node.world), true);
         if (node.intra) html += row(t.intra, node.intra[i], pv(node.intra), false);
         if (node.extra) html += row(t.extra, node.extra[i], pv(node.extra), false);
