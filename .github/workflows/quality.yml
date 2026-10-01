@@ -63,6 +63,9 @@ jobs:
       - name: Freshness Engine parity (JS vs Python)
         run: node scripts/test-freshness-parity.mjs
 
+      - name: Repo growth budget (tamano de ficheros, data/ e historial)
+        run: python3 scripts/check-repo-growth.py
+
       - name: Performance budget (gzip)
         run: node scripts/check-performance-budget.mjs
 

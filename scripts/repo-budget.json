@@ -1,0 +1,14 @@
+{
+  "_doc": "Presupuesto de crecimiento del repositorio. Los limites duros de GitHub son 100 MB por fichero y ~5 GB por repo (recomendado <1 GB). Aqui nos ponemos margenes mucho mas estrictos.",
+  "maxFileMB": 25,
+  "warnFileMB": 10,
+  "maxDataTreeMB": 160,
+  "warnDataTreeMB": 120,
+  "maxPackMB": 400,
+  "warnPackMB": 250,
+  "knownLarge": {
+    "data/normalized.json": "derivado de history.json con normalizacion (JSON con sangria; el pack lo comprime por deltas). Candidato a compactar/particionar, ver docs/REPO_GROWTH.md",
+    "data/history.json": "historico completo de precios (fuente de la capa ligera data/prices/history/*, que es lo que carga el navegador)",
+    "data/latest.json": "ultimas observaciones (el navegador usa data/prices/latest/*)"
+  }
+}
