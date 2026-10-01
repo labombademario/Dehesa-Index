@@ -295,7 +295,7 @@
       var first = k[0] !== prev; prev = k[0];
       var ch = typeof o.changePct === 'number' ? o.changePct : null;
       var chTxt = ch === null ? '' : (ch > 0 ? '+' : ch < 0 ? '−' : '') + Math.abs(ch).toFixed(1).replace('.', lang === 'en' ? '.' : ',') + ' %';
-      return '<tr' + (first ? ' class="first"' : '') + '><th scope="row">' + '<span class="' + (first ? 'di-tape-p' : 'di-sr') + '">' + esc(t.p[k[0]] || k[0]) + '</span>' + '</th><td class="rg">' + esc(t.r[k[1]] || k[1]) + '</td>' +
+      return '<tr' + (first ? ' class="first"' : '') + '><th scope="row">' + '<span class="' + (first ? 'di-tape-p' : 'di-sr') + '">' + esc(t.p[k[0]] || k[0]) + '</span>' + '</th><td class="rg">' + esc(t.r[k[1]] || k[1]) + (window.DICite && o.sourceId ? window.DICite.html(o.sourceId, { period: o.observationDate }) : '') + '</td>' +
         '<td class="v"><strong>' + esc(tapeNum(o.value, lang)) + '</strong> <span class="u">' + esc(o.currency + '/' + (t.u[o.unit] || o.unit)) + '</span></td>' +
         '<td class="c ' + (ch > 0 ? 'up' : ch < 0 ? 'dn' : '') + '">' + esc(chTxt) + '</td><td class="d">' + esc(tapeDate(o.observationDate, lang)) + '</td></tr>';
     }).join('');
@@ -304,7 +304,8 @@
     return el + '<table class="di-tape-t" data-no-cards="1"><thead class="di-sr"><tr>' + t.cols.map(function (c) { return '<th scope="col">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' + rows + '</tbody></table><div class="di-tape-f"><span>' + esc(t.note) + '</span>' + foot + '</div><a class="di-tape-a" href="precios.html">' + esc(t.all) + '</a>';
   }
   function loadTape() {
-    fetch('data/home-tape.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    var citeP = window.DICite ? window.DICite.load() : Promise.resolve(null);
+    fetch('data/home-tape.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { return citeP.then(function () { return d; }); })
       .then(function (d) { TAPE_DATA = d.rows || []; render(); }, function () { TAPE_DATA = 'err'; render(); });
   }
 
@@ -330,13 +331,13 @@
       var label = (t.moversLabels && t.moversLabels[key]) || { name: productLabel(key), unit: o.unit || '', market: (o.region || '').toUpperCase() };
       var status = o.status === 'verified' ? (o.comparability === 'not_comparable' ? 'not-comparable' : 'real') : 'pending';
       var statusLabel = status === 'real' ? (lang === 'es' ? 'REAL' : lang === 'fr' ? 'RÉEL' : lang === 'it' ? 'REALE' : 'REAL') : status === 'not-comparable' ? (lang === 'es' ? 'NO COMPARABLE' : lang === 'fr' ? 'NON COMPARABLE' : lang === 'it' ? 'NON COMPARABILE' : 'NOT COMPARABLE') : (lang === 'es' ? 'PENDIENTE' : lang === 'fr' ? 'EN ATTENTE' : lang === 'it' ? 'IN ATTESA' : 'PENDING');
-      return { name: label.name, market: label.market, source: o.sourceId || '—', price: status === 'real' ? fmtMoverPrice(o.value) + (o.currency ? ' ' + o.currency : '') + (o.unit ? '/' + o.unit : '') : '—', status: status, statusLabel: statusLabel, date: o.observationDate || '—' };
+      return { name: label.name, market: label.market, source: o.sourceId || '—', sid: o.sourceId || '', pub: o.publicationDate || '', price: status === 'real' ? fmtMoverPrice(o.value) + (o.currency ? ' ' + o.currency : '') + (o.unit ? '/' + o.unit : '') : '—', status: status, statusLabel: statusLabel, date: o.observationDate || '—' };
     });
     var headRow = '<div class="di-movers-row head"><span>' + esc(t.moversColProducto) + '</span><span class="num">' + esc(t.moversColPrecio) + '</span><span class="num">' + esc(t.moversCol1D) + '</span><span class="num">' + esc(t.moversCol1W) + '</span></div>';
     var bodyRows = movers.length ? movers.map(function(row, i) {
       var borderStyle = i === movers.length - 1 ? 'border-bottom:none;' : '';
       return '<div class="di-movers-row" style="' + borderStyle + '">' +
-        '<div><div class="di-movers-name">' + esc(row.name) + '</div><div class="di-movers-market">' + esc(row.market) + '</div><div class="di-movers-source">' + esc(row.source) + '</div></div>' +
+        '<div><div class="di-movers-name">' + esc(row.name) + '</div><div class="di-movers-market">' + esc(row.market) + '</div><div class="di-movers-source">' + ((window.DICite && row.sid && window.DICite.html(row.sid, { period: row.date === '—' ? '' : row.date, pub: row.pub })) || esc(row.source)) + '</div></div>' +
         '<div class="num">' + esc(row.price) + '</div>' +
         '<div class="num"><span class="di-home-status ' + row.status + '">' + esc(row.statusLabel) + '</span></div>' +
         '<div class="num">' + esc(row.date) + '</div></div>';
@@ -361,7 +362,8 @@
 
   // Una sola peticion pequena (data/views/home-summary.json, ~45 KB) alimenta toda la Home; ya no se baja latest.json (3,7 MB) ni los datasets completos de cada tarjeta.
   function loadHomeData() {
-    window.DIHome.summary().then(function(s) {
+    var citeP = window.DICite ? window.DICite.load() : Promise.resolve(null);
+    Promise.all([window.DIHome.summary(), citeP]).then(function(r) { return r[0]; }).then(function(s) {
       HOME_DATA.rows = s.movers || [];
       HOME_DATA.stats = s.stats;
       HOME_DATA.loaded = true; HOME_DATA.status = 'live';

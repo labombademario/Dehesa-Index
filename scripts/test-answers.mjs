@@ -8,6 +8,7 @@ globalThis.document = undefined;
 require(path.join(ROOT, 'js/search.js'));
 const DIIdentity = require(path.join(ROOT, 'js/instrument-identity.js')); globalThis.DIIdentity = DIIdentity;
 globalThis.DIUsdaCal = require(path.join(ROOT, 'js/usda-calendar.js'));
+const DICite = require(path.join(ROOT, 'js/cite.js')); globalThis.DICite = DICite; DICite.use(JSON.parse(fs.readFileSync(D('license-registry.json'), 'utf8')));
 const A = require(path.join(ROOT, 'js/answers.js'));
 const idx = JSON.parse(fs.readFileSync(D('search-index.json'), 'utf8')).entries;
 const products = idx.filter(e => e.t === 'product').map(e => ({ slug: decodeURIComponent(e.u.split('product=')[1]).split(':')[1], names: e.n, kw: e.k, u: e.u }));
@@ -47,6 +48,14 @@ for (const c of cases) {
   if (e.hasLink && !a.link) bad(c, 'sin enlace');
   const html = A.render(a, c.lang, s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'));
   if (!html || /undefined|NaN|\[object/.test(html)) bad(c, 'HTML con undefined/NaN');
+  // cada cifra mostrada lleva su cita (fuente registrada + periodo del propio dato)
+  for (const k of a.cards || []) {
+    if (!k.sid) { bad(c, 'tarjeta sin fuente (sid)'); continue; }
+    if (!DICite.entry(k.sid)) bad(c, 'fuente ' + k.sid + ' no esta en el registro de licencias');
+    else if (!html.includes('data-src="' + k.sid + '"')) bad(c, 'cita de ' + k.sid + ' ausente en el HTML');
+    const per = k.period || k.date || k.year; if (per && !html.includes(DICite.per(String(per)).replace(/&/g, '&amp;'))) bad(c, 'cita sin el periodo ' + per);
+  }
+  for (const k of a.cites || []) if (!html.includes('data-src="' + k.sid + '"')) bad(c, 'cita ' + k.sid + ' ausente');
 }
 console.log(cases.length + ' preguntas, ' + fail + ' fallos');
 process.exit(fail ? 1 : 0);

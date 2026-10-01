@@ -211,7 +211,7 @@
   }
   function card(env, o, lang, withY12) {
     var t = tx(lang), idl = identityLine(env, o, lang);
-    var c = { region: o.region, regionName: REGN[o.region] ? REGN[o.region][lang] : o.region, ident: idl, value: o.value, valueTxt: unitCurrency(o, lang), date: o.observationDate, dateTxt: dateTxt(o.observationDate, lang), changePct: typeof o.changePct === 'number' ? o.changePct : null,
+    var c = { region: o.region, regionName: REGN[o.region] ? REGN[o.region][lang] : o.region, ident: idl, value: o.value, valueTxt: unitCurrency(o, lang), date: o.observationDate, dateTxt: dateTxt(o.observationDate, lang), changePct: typeof o.changePct === 'number' ? o.changePct : null, sid: o.sourceId, pub: o.publicationDate,
       directional: o.comparability === 'directional', source: SRC[o.sourceId] || o.sourceId, href: env.href('producto.html?p=' + encodeURIComponent(o.product)), y12: null, y12Known: false, id: o.id, product: o.product };
     return c;
   }
@@ -259,7 +259,7 @@
       if (!grp.length) return { kind: 'local', heading: t.localHead, cards: [], notes: [fmt(t.noLocal, { p: pn, s: sn })], link: { href: env.href(base), label: t.localLink } };
       var avgs = grp.map(function (s) { return s.avg; }), lo = Math.min.apply(null, avgs), hi = Math.max.apply(null, avgs), s0 = grp[0];
       var spec = [s0.commodityClass, s0.grade, s0.deliveryPoint].filter(Boolean).join(' · ');
-      return { kind: 'local', heading: sn + ' · ' + (CASH_NAME[com] ? CASH_NAME[com][lang] : com), cards: [{ localRange: true, lo: lo, hi: hi, n: grp.length, cur: s0.currency, unit: s0.unit, date: latest, dateTxt: dateTxt(latest, lang), spec: spec, loTxt: money(lo, s0.currency, lang), hiTxt: money(hi, s0.currency, lang), unitTxt: unitTxt(s0.unit, lang), source: SRC.usda_ams_mars, href: env.href(base) }],
+      return { kind: 'local', heading: sn + ' · ' + (CASH_NAME[com] ? CASH_NAME[com][lang] : com), cards: [{ sid: 'usda_ams_mars', localRange: true, lo: lo, hi: hi, n: grp.length, cur: s0.currency, unit: s0.unit, date: latest, dateTxt: dateTxt(latest, lang), spec: spec, loTxt: money(lo, s0.currency, lang), hiTxt: money(hi, s0.currency, lang), unitTxt: unitTxt(s0.unit, lang), source: SRC.usda_ams_mars, href: env.href(base) }],
         notes: [t.localNote], link: { href: env.href(base), label: t.localLink } };
     });
   }
@@ -272,7 +272,7 @@
       var cards = [], notes = [];
       cells.forEach(function (c) {
         if (c.premium === null) { notes.push(fmt(t.premNone, { p: pn + (c['class'] ? ' ' + c['class'] : '') })); return; }
-        cards.push({ premium: true, name: pn + (c['class'] ? ' · ' + c['class'] : ''), orgTxt: money(c.organic.median, 'USD', lang) + '/' + unitTxt(c.unit === 'bu' ? 'bushel' : c.unit, lang), convTxt: money(c.conventional.median, 'USD', lang) + '/' + unitTxt(c.unit === 'bu' ? 'bushel' : c.unit, lang), diffTxt: (c.premium >= 0 ? '+' : '−') + money(Math.abs(c.premium), 'USD', lang), pctTxt: pct(c.premiumPct, lang), nOrg: c.organic.n, nConv: c.conventional.n, dateTxt: dateTxt(c.date, lang), source: SRC.usda_ams_mars, href: link.href });
+        cards.push({ sid: 'usda_ams_mars', date: c.date, premium: true, name: pn + (c['class'] ? ' · ' + c['class'] : ''), orgTxt: money(c.organic.median, 'USD', lang) + '/' + unitTxt(c.unit === 'bu' ? 'bushel' : c.unit, lang), convTxt: money(c.conventional.median, 'USD', lang) + '/' + unitTxt(c.unit === 'bu' ? 'bushel' : c.unit, lang), diffTxt: (c.premium >= 0 ? '+' : '−') + money(Math.abs(c.premium), 'USD', lang), pctTxt: pct(c.premiumPct, lang), nOrg: c.organic.n, nConv: c.conventional.n, dateTxt: dateTxt(c.date, lang), source: SRC.usda_ams_mars, href: link.href });
       });
       notes.unshift(t.premNote);
       return { kind: 'premium', heading: t.premHead, cards: cards, notes: notes, link: link };
@@ -283,7 +283,7 @@
     return J(env, 'ers-cost-reference.json').then(function (d) {
       var c = d && d.crops && d.crops[ERS[intent.product.slug]];
       if (!c) return null;
-      return { kind: 'cost', heading: t.costHead, cards: [{ cost: true, name: pn, year: c.year, totalTxt: '$' + nf(c.totalCostsListed, lang, 0), unitTxt: t.perAcre, imputedTxt: '$' + nf(c.imputed, lang, 0), yieldTxt: c.yieldBuPerAcre ? nf(c.yieldBuPerAcre, lang, 0) + ' bu/ac' : null, source: SRC.usda_ers, href: env.href('calculadora.html') }],
+      return { kind: 'cost', heading: t.costHead, cards: [{ sid: 'usda_ers', cost: true, name: pn, year: c.year, totalTxt: '$' + nf(c.totalCostsListed, lang, 0), unitTxt: t.perAcre, imputedTxt: '$' + nf(c.imputed, lang, 0), yieldTxt: c.yieldBuPerAcre ? nf(c.yieldBuPerAcre, lang, 0) + ' bu/ac' : null, source: SRC.usda_ers, href: env.href('calculadora.html') }],
         notes: [t.costNote], link: { href: env.href('calculadora.html'), label: t.costLink } };
     });
   }
@@ -298,7 +298,8 @@
       if (ids) ids.forEach(function (id) { var n = U.next(doc, id, td); if (n) { rel.push(n); notes.push(line(n)); } else notes.push(fmt(t.calNone, { r: (U.NAMES[id] || {})[lang] || id })); });
       else { rel = U.upcoming(doc, td, 14).slice(0, 8); rel.forEach(function (r) { notes.push(line(r)); }); if (!rel.length) return base; }
       notes.push(t.calSrc);
-      return { kind: 'calendar', heading: t.calHead, cards: [], notes: notes, releases: rel, link: link };
+      var cs = [], seen = {}; rel.forEach(function (r) { var sid = r.agency === 'OCE' ? 'usda_oce_wasde' : 'usda_nass'; if (!seen[sid]) { seen[sid] = 1; cs.push({ sid: sid }); } });
+      return { kind: 'calendar', heading: t.calHead, cards: [], notes: notes, releases: rel, cites: cs, link: link };
     });
   }
   var REGN2 = null;
@@ -326,7 +327,7 @@
         else pick = L.sort(function (a, b) { return b.latest - a.latest; })[0];
         if (!pick) return;
         var nm = partnerName(nameOf(pick), lang), sr = reg[pick.sourceId];
-        cards.push({ trade: true, label: partner ? (d === 'exp' ? t.tExp : t.tImp) + ' ' + nm : (d === 'exp' ? t.tTopExp : t.tTopImp) + ': ' + nm, id: pick.id, value: pick.latest, valueTxt: moneyUnit(pick.latest, pick.unit, lang), unit: pick.unit, date: pick.latestPeriod, dateTxt: pick.latestPeriod, src: sr ? sr.name : '', cc: subj, region: subj, href: env.href('paises.html?c=' + subj + '&g=partners&s=' + encodeURIComponent(pick.id)) });
+        cards.push({ sid: pick.sourceId, trade: true, label: partner ? (d === 'exp' ? t.tExp : t.tImp) + ' ' + nm : (d === 'exp' ? t.tTopExp : t.tTopImp) + ': ' + nm, id: pick.id, value: pick.latest, valueTxt: moneyUnit(pick.latest, pick.unit, lang), unit: pick.unit, date: pick.latestPeriod, dateTxt: pick.latestPeriod, src: sr ? sr.name : '', cc: subj, region: subj, href: env.href('paises.html?c=' + subj + '&g=partners&s=' + encodeURIComponent(pick.id)) });
       });
       if (!cards.length) return null;
       return { kind: 'trade', heading: sname + ' · ' + t.tradeHead, cards: cards, notes: [t.tNote], link: { href: env.href('paises.html?c=' + subj + '&g=partners'), label: fmt(t.tOpen, { c: sname }) } };
@@ -376,6 +377,12 @@
       }
     });
     (a.notes || []).forEach(function (n) { h += '<div class="ds-ans-n">' + esc(n) + '</div>'; });
+    var Q = root.DICite, seenC = {}, ch = '';
+    if (Q) (a.cards || []).concat(a.cites || []).forEach(function (c) { // la cita va fuera de las tarjetas (son enlaces): una por fuente y periodo
+      var per = c.period || c.date || c.year || '', k = (c.sid || '') + '|' + per; if (!c.sid || seenC[k]) return; seenC[k] = 1;
+      ch += Q.html(c.sid, { period: per ? String(per) : '', pub: c.pub });
+    });
+    if (ch) h += '<div class="ds-cites">' + ch + '</div>';
     if (a.link) h += '<a class="ds-ans-l" href="' + esc(a.link.href) + '">' + esc(a.link.label) + ' →</a>';
     return h + '</div>';
   }

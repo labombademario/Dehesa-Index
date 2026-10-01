@@ -41,6 +41,13 @@
     });
     return out;
   }
+  /* El resumen en lenguaje claro es texto nuestro sobre cifras publicadas: cita las fuentes de las series que menciona. */
+  function SUMCITE(kp, pt, x) {
+    var Q = window.DICite; if (!Q) return '';
+    var ids = []; kp.concat(pt.slice(0, 8)).forEach(function (s) { if (s.sourceId && ids.indexOf(s.sourceId) < 0) ids.push(s.sourceId); });
+    return Q.derived(ids, { what: ({ es: 'Frases redactadas por Dehesa Index con las últimas cifras publicadas y su rango de los últimos 5 años.', en: 'Sentences written by Dehesa Index from the latest published figures and their 5-year range.', fr: 'Phrases rédigées par Dehesa Index à partir des derniers chiffres publiés et de leur fourchette sur 5 ans.', it: 'Frasi scritte da Dehesa Index con gli ultimi dati pubblicati e il loro intervallo degli ultimi 5 anni.' })[x.lang] });
+  }
+  function CITE(s) { var Q = window.DICite; return Q && s && s.sourceId ? Q.html(s.sourceId, { period: s.latestPeriod }) : ''; }
   function kpis(cc, S, groups) {
     var kp = picked(cc, S);
     if (kp.length >= 4) return kp.slice(0, 6);
@@ -71,7 +78,17 @@
     var rt = x.rate;
     if (rt) items.push('<button type="button" data-ps="' + x.esc(rt.id) + '" style="text-align:left;background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit;min-width:140px"><div style="font-size:11px;color:var(--text-faint)">' + x.esc(t.rate) + '</div><div style="font-size:15px;font-weight:700;font-variant-numeric:tabular-nums">' + nf(rt.latest, 2) + ' % <span style="font-weight:400;font-size:12px;color:var(--text-muted)">(' + x.esc(x.plabel(rt.latestPeriod, rt.frequency)) + ')</span></div><div style="font-size:11px;color:#2f6b4a;font-weight:700">' + x.esc(t.histo) + ' →</div></button>');
     if (m.currency) items.push('<div style="min-width:120px"><div style="font-size:11px;color:var(--text-faint)">' + x.esc(t.cur) + '</div><div style="font-size:15px;font-weight:700">' + x.esc(t.cn[m.currency] || m.currency) + '</div></div>');
-    return '<div style="display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">' + items.join('') + '</div><div style="font-size:11px;color:var(--text-faint);margin-top:6px">' + x.esc(t.note) + (m.debt && m.debt.src === 'wb-central' ? ' ' + x.esc(t.central) : '') + '</div>';
+    return '<div style="display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">' + items.join('') + '</div><div style="font-size:11px;color:var(--text-faint);margin-top:6px">' + x.esc(t.note) + (m.debt && m.debt.src === 'wb-central' ? ' ' + x.esc(t.central) : '') + '</div>' + macroCite(m, x);
+  }
+  /* Citas de la franja macro: cada indicador cita la fuente de la que sale (registro de licencias; los sueldos llevan la suya propia en country-wages.json). */
+  function macroCite(m, x) {
+    var Q = window.DICite; if (!Q) return '';
+    var out = [], yrs = ['gdp', 'gdppc', 'pop', 'unemp', 'agri'].concat(m.debt && m.debt.src === 'wb-central' ? ['debt'] : []).filter(function (k) { return m[k]; }).map(function (k) { return m[k].y; });
+    if (yrs.length) out.push(Q.html('world_bank_wdi', { period: String(Math.max.apply(null, yrs)) }));
+    if ((m.debt && m.debt.src === 'eurostat') || m.wageh) out.push(Q.html('eurostat', { period: String(Math.max(m.debt && m.debt.src === 'eurostat' ? m.debt.y : 0, m.wageh ? m.wageh.y : 0)) }));
+    if (x.wage && x.wage.src) out.push(Q.custom({ name: x.wage.src, url: x.wage.url, period: x.wage.y }));
+    if (x.rate && x.rate.sourceId) out.push(Q.html(x.rate.sourceId, { period: x.rate.latestPeriod }));
+    out = out.filter(Boolean); return out.length ? '<div class="pp-cites">' + out.join('') + '</div>' : '';
   }
   function rateOf(c) { var r = c && c.series.filter(function (s) { return /-policy-rate$/.test(s.id); })[0]; return r || null; }
   function spark(s) {
@@ -177,7 +194,7 @@
     var qs = C ? C.questions(groups, x.lang) : []; present.ask = qs.length > 0;
     var pl = C ? C.plain({ lang: x.lang, kpis: kp, partners: groups.partners || [], unusual: partial(S) ? [] : unusual(S), plabel: x.plabel }) : null;
     if (C) h += C.nav(present, x.lang, esc);
-    if (pl) h += '<section id="pp-sum" class="di-card pp-plain"><div class="pp-plain-h">' + esc(pl.head) + ' ' + SHR(x, 'pp-sum') + '</div><p>' + pl.sentences.map(esc).join(' ') + '</p><div class="di-movers-hint">' + esc(pl.note) + (/^(ES|FR|DE|BE|AT|PT|DK|NL|CA|AU)$/.test(cc) ? ' · <a href="perfiles.html?a=' + cc + '">' + esc({ es: 'Comparar con otro país', en: 'Compare with another country', fr: 'Comparer avec un autre pays', it: 'Confronta con un altro paese' }[x.lang] || '') + '</a>' : '') + '</div></section>';
+    if (pl) h += '<section id="pp-sum" class="di-card pp-plain"><div class="pp-plain-h">' + esc(pl.head) + ' ' + SHR(x, 'pp-sum') + '</div><p>' + pl.sentences.map(esc).join(' ') + '</p><div class="di-movers-hint">' + esc(pl.note) + (/^(ES|FR|DE|BE|AT|PT|DK|NL|CA|AU)$/.test(cc) ? ' · <a href="perfiles.html?a=' + cc + '">' + esc({ es: 'Comparar con otro país', en: 'Compare with another country', fr: 'Comparer avec un autre pays', it: 'Confronta con un altro paese' }[x.lang] || '') + '</a>' : '') + '</div>' + SUMCITE(kp, groups.partners || [], x) + '</section>';
     else h += '<span id="pp-sum"></span>';
     h += coverageBox(S, x) + summary(S, x);
     // KPIs
@@ -185,9 +202,9 @@
       h += '<div id="pp-kpi" class="pp-anchor" style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 8px">' + esc(t.kpi.toUpperCase()) + ' ' + HP(x, 'range') + ' ' + SHR(x, 'pp-kpi') + '</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:20px">';
       kp.forEach(function (s) {
         var ch = s.changePct, col = ch == null ? 'inherit' : ch >= 0 ? '#2f6b4a' : '#a33';
-        h += '<button type="button" class="di-card" data-ps="' + esc(s.id) + '" style="text-align:left;padding:12px 14px;cursor:pointer;border:1px solid var(--border);font:inherit;color:inherit"><div style="font-size:11px;color:var(--text-faint);min-height:30px">' + esc((x.t[s.group] || s.group)) + '</div><div style="font-size:12.5px;font-weight:600;line-height:1.3;min-height:34px">' + esc(TL(x, s.label.replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, ''))) + '</div>' +
+        h += '<div class="pp-kc"><button type="button" class="di-card" data-ps="' + esc(s.id) + '" style="text-align:left;padding:12px 14px;cursor:pointer;border:1px solid var(--border);font:inherit;color:inherit"><div style="font-size:11px;color:var(--text-faint);min-height:30px">' + esc((x.t[s.group] || s.group)) + '</div><div style="font-size:12.5px;font-weight:600;line-height:1.3;min-height:34px">' + esc(TL(x, s.label.replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, ''))) + '</div>' +
           '<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:6px"><div><div style="font-size:20px;font-weight:700;font-variant-numeric:tabular-nums">' + nf(s.latest, x.dec(s.latest)) + '</div><div style="font-size:11px;color:var(--text-muted)">' + esc(s.unit) + '</div></div>' + spark(s) + '</div>' +
-          '<div style="font-size:11.5px;margin-top:4px;color:var(--text-muted)">' + esc(x.plabel(s.latestPeriod, s.frequency)) + (ch == null ? '' : ' · <span style="color:' + col + '">' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %</span>') + '</div>' + (C ? C.ctxHtml(s, x.lang, esc) : '') + '</button>';
+          '<div style="font-size:11.5px;margin-top:4px;color:var(--text-muted)">' + esc(x.plabel(s.latestPeriod, s.frequency)) + (ch == null ? '' : ' · <span style="color:' + col + '">' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %</span>') + '</div>' + (C ? C.ctxHtml(s, x.lang, esc) : '') + '</button>' + CITE(s) + '</div>';
       });
       h += '</div>';
     }
@@ -200,7 +217,7 @@
         if (!l.length) return '';
         var tot = l.reduce(function (m, s) { return Math.max(m, s.latest); }, 0);
         return '<div style="flex:1;min-width:230px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + ' <span style="font-weight:500;color:var(--text-muted)">· ' + esc(l[0].unit) + ', ' + esc(x.plabel(l[0].latestPeriod, l[0].frequency)) + '</span></div>' +
-          l.map(function (s) { var nm = s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, ''); nm = (window.DIClear && window.DIClear._country(nm, x.lang)) || nm; return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + esc(nm) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(s.latest, x.dec(s.latest)) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(s.latest / tot * 100)) + '%"></div></div>'; }).join('') + '</div>';
+          l.map(function (s) { var nm = s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, ''); nm = (window.DIClear && window.DIClear._country(nm, x.lang)) || nm; return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + esc(nm) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(s.latest, x.dec(s.latest)) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(s.latest / tot * 100)) + '%"></div></div>'; }).join('') + CITE(l[0]) + '</div>';
       };
       var a = side('exp', t.dest), b = side('imp', t.orig);
       if (a || b) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + ' ' + HP(x, 'hs') + ' ' + SHR(x, 'pp-trade') + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div></div>';

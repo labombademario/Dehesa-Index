@@ -48,7 +48,7 @@
     var mInv = mon(r.inventoryDate), mFlow = mon(r.flowMonth + '-01');
     var cards = [['inv', c.onFeedEnd, y.onFeedEnd, fm(t.inv, mInv)], ['pl', c.placed, y.placed, fm(t.pl, mFlow)], ['mk', c.marketed, y.marketed, fm(t.mk, mFlow)], ['od', c.otherDisappearance, y.otherDisappearance, fm(t.od, mFlow)]];
     var h = '<h2 class="cof-h2">' + esc(t.h) + '</h2><p class="cof-sub">' + esc(t.sub) + ' ' + esc(t.rel) + ' ' + esc(day(r.release)) + '.</p><div class="cof-cards">' +
-      cards.map(function (k) { var ch = pc(k[1], k[2]); return '<div class="di-card cof-card"><div class="cof-lbl">' + esc(k[3]) + '</div><div class="cof-val">' + esc(nf(k[1])) + '</div><div class="cof-chg" style="color:' + col(k[1], k[2]) + '">' + esc(ch) + ' <span>' + esc(t.yoy) + '</span></div></div>'; }).join('') + '</div>';
+      cards.map(function (k) { var ch = pc(k[1], k[2]); return '<div class="di-card cof-card"><div class="cof-lbl">' + esc(k[3]) + '</div><div class="cof-val">' + esc(nf(k[1])) + '</div><div class="cof-chg" style="color:' + col(k[1], k[2]) + '">' + esc(ch) + ' <span>' + esc(t.yoy) + '</span></div></div>'; }).join('') + '</div>' + (window.DICite ? window.DICite.html('usda_nass', { period: r.inventoryDate.slice(0, 7), pub: r.release }) : '');
     h += chart(D.reports, t);
     var rows = r.states.filter(function (s) { return s.state !== 'United States'; }).sort(function (a, b) { if (a.state === 'Other States') return 1; if (b.state === 'Other States') return -1; return b.current - a.current; });
     var tot = r.states.filter(function (s) { return s.state === 'United States'; })[0], mx = rows.reduce(function (m, s) { return Math.max(m, s.current); }, 1);
@@ -63,7 +63,7 @@
   var CAL = null;
   function boot() {
     var root = document.getElementById('cof'); if (!root) return;
-    Promise.all([fetch('data/cattle-on-feed.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), window.DIUsdaCal ? window.DIUsdaCal.load() : Promise.resolve(null)]).then(function (a) { D = a[0]; CAL = a[1]; render(); });
+    Promise.all([fetch('data/cattle-on-feed.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), window.DIUsdaCal ? window.DIUsdaCal.load() : Promise.resolve(null), window.DICite ? window.DICite.load() : Promise.resolve(null)]).then(function (a) { D = a[0]; CAL = a[1]; render(); });
     var prev = window.DehesaShared && window.DehesaShared.onLangChange;
     if (window.DehesaShared) window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
   }

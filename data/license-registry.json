@@ -33,7 +33,8 @@
    "evidence": "NASS states its information is public domain and may be freely reproduced if USDA-NASS is credited.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "USDA NASS"
   },
   "usda_ams_mars": {
    "name": "USDA AMS Market News (MARS API)",
@@ -56,7 +57,8 @@
    "evidence": "Policies and Links page (read 2026-10-01): most information on the USDA website is public domain and may be freely distributed or copied; credit \"U.S. Department of Agriculture\" requested; protected third-party materials are labelled. No AMS Market News (MARS)-specific statement exists, so confidence stays medium.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "USDA AMS"
   },
   "usda_fas_psd": {
    "name": "USDA FAS — Production, Supply and Distribution (PSD Online)",
@@ -79,7 +81,8 @@
    "evidence": "The data.gov catalogue entry for the PSD database lists CC BY 4.0.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "USDA FAS · PSD"
   },
   "usda_fas_esr": {
    "name": "USDA FAS — Export Sales Reporting (ESR)",
@@ -102,7 +105,8 @@
    "evidence": "Policies and Links page (read 2026-10-01): most information on the USDA website is public domain and may be freely distributed or copied; credit \"U.S. Department of Agriculture\" requested; protected third-party materials are labelled. No FAS Export Sales Reporting-specific statement exists, so confidence stays medium.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "USDA FAS · Export Sales"
   },
   "usda_fas_gats": {
    "name": "USDA FAS — Global Agricultural Trade System (GATS)",
@@ -125,7 +129,8 @@
    "evidence": "The data.gov entry lists CC BY 4.0 and describes the data as Census Bureau trade data.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "USDA FAS · GATS"
   },
   "usda_ers": {
    "name": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
@@ -148,7 +153,8 @@
    "evidence": "Policies and Links page (read 2026-10-01): most information on the USDA website is public domain and may be freely distributed or copied; credit \"U.S. Department of Agriculture\" requested; protected third-party materials are labelled. No ERS data products-specific statement exists, so confidence stays medium.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "USDA ERS"
   },
   "us_drought_monitor": {
    "name": "U.S. Drought Monitor (NDMC, USDA, NOAA)",
@@ -171,7 +177,8 @@
    "evidence": "The Permission page only prescribes the credit line; it is silent on commercial use and derivatives.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "U.S. Drought Monitor"
   },
   "eia": {
    "name": "U.S. Energy Information Administration (Open Data API)",
@@ -194,7 +201,8 @@
    "evidence": "EIA states its data and information products may be used and distributed with citation; API terms allow building services on the data without endorsement claims.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "EIA"
   },
   "nasa_power": {
    "name": "NASA POWER (Prediction Of Worldwide Energy Resources)",
@@ -217,7 +225,8 @@
    "evidence": "NASA says Earth science data are free for corporate use; the POWER registry entry lists CC BY 4.0 and asks for citation.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "NASA POWER"
   },
   "us_tariffs": {
    "name": "USITC Harmonized Tariff Schedule, CBP trade remedies, USTR",
@@ -240,7 +249,8 @@
    "evidence": "Reuse rests on the general legal basis for US federal government works (17 U.S.C. 105: no copyright in works of the US Government); no explicit reuse page was found on hts.usitc.gov, CBP or USTR. Accepted by the site owner on 2026-10-01. Derived rates must be labelled informational: the HTS is legally binding only in its official publication.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "USITC HTS"
   },
   "eurostat": {
    "name": "Eurostat",
@@ -265,7 +275,8 @@
    "aliases": [
     "eurostat"
    ],
-   "notes": null
+   "notes": null,
+   "short": "Eurostat"
   },
   "eurostat_comext": {
    "name": "Eurostat — Comext international trade in goods",
@@ -288,7 +299,8 @@
    "evidence": "The general Eurostat policy permits commercial reuse with acknowledgement and names trade-data subsets excluded from commercial redissemination; no Comext-specific page found.",
    "used": true,
    "aliases": [],
-   "notes": "Dehesa Index only uses HS 2-digit chapters and agri-food totals (dataset DS-045409), so the Austria CN8 exclusion does not apply; keep it that way."
+   "notes": "Dehesa Index only uses HS 2-digit chapters and agri-food totals (dataset DS-045409), so the Austria CN8 exclusion does not apply; keep it that way.",
+   "short": "Eurostat · Comext"
   },
   "eu_agrifood": {
    "name": "European Commission — Agri-food Data Portal (DG AGRI)",
@@ -313,7 +325,8 @@
    "aliases": [
     "european_commission"
    ],
-   "notes": null
+   "notes": null,
+   "short": "Comisión Europea · Agri-food"
   },
   "eu_oil_bulletin": {
    "name": "European Commission — Weekly Oil Bulletin (DG ENER)",
@@ -336,7 +349,8 @@
    "evidence": "Commission Decision 2011/833/EU (read 2026-10-01): Commission documents are available for reuse, commercial or not, at no charge by default; conditions limited to source acknowledgement, no distortion of meaning and disclaimers; third-party rights excluded. The portal itself states no separate licence, so the general Decision is the applicable basis (confidence medium).",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "Comisión Europea · Oil Bulletin"
   },
   "ecb": {
    "name": "European Central Bank (euro reference rates, ECB Data Portal)",
@@ -359,7 +373,8 @@
    "evidence": "ECB usage policy (read 2026-10-01 on the ECB site): commercial use permitted, source must be quoted, statistics must not be modified.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "BCE"
   },
   "eu_taric": {
    "name": "European Commission — TARIC / EU customs tariff (DG TAXUD)",
@@ -382,7 +397,8 @@
    "evidence": "Commission Decision 2011/833/EU (read 2026-10-01): Commission documents are available for reuse, commercial or not, at no charge by default; conditions limited to source acknowledgement, no distortion of meaning and disclaimers; third-party rights excluded. The portal itself states no separate licence, so the general Decision is the applicable basis (confidence medium).",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "Comisión Europea · TARIC"
   },
   "world_bank": {
    "name": "World Bank — Commodity Price Data (Pink Sheet)",
@@ -405,7 +421,8 @@
    "evidence": "Dataset terms (data.worldbank.org/summary-terms-of-use, read 2026-10-01) apply CC BY 4.0 to World Bank datasets but exclude third-party datasets; the Pink Sheet does not state its licence and compiles third-party sources, so it is not covered with certainty.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "Banco Mundial · Pink Sheet"
   },
   "world_bank_wdi": {
    "name": "World Bank Open Data (World Development Indicators)",
@@ -428,7 +445,8 @@
    "evidence": "World Bank-produced datasets default to CC BY 4.0 including commercial use and adaptation; macro indicators in country profiles come from WDI.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "Banco Mundial · WDI"
   },
   "bis": {
    "name": "Bank for International Settlements (central bank policy rates)",
@@ -451,7 +469,8 @@
    "evidence": "Use of BIS statistics is unrestricted if the BIS is cited; commercial products may include them provided users pay nothing extra.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "BIS"
   },
   "faostat": {
    "name": "FAO — FAOSTAT",
@@ -497,7 +516,8 @@
    "evidence": "Aviso legal (read 2026-10-01): information may be used without express authorisation citing the source and keeping update dates and reuse metadata; third-party rights excluded. Commercial use and derivatives are not stated, so it stays PENDING.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "MAPA (España)"
   },
   "franceagrimer": {
    "name": "FranceAgriMer (VISIONet)",
@@ -520,7 +540,8 @@
    "evidence": "RNM legal notice (read 2026-10-01) allows reuse incl. commercial with source and data integrity, referring to the open licence; the VISIONet footer says all rights reserved. Conflicting statements for the VISIONet dataset in use, so it stays PENDING.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "FranceAgriMer"
   },
   "destatis": {
    "name": "Destatis (GENESIS-Online)",
@@ -543,7 +564,8 @@
    "evidence": "Destatis states GENESIS-Online content, including the API, is under dl-de/by-2.0 (commercial use, modification and distribution with source note and change marking).",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "Destatis"
   },
   "ble": {
    "name": "BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de)",
@@ -566,7 +588,8 @@
    "evidence": "open-data.ble.de could not be read (robots.txt) and no data licence was found; CC BY-NC-ND footer belongs to page texts. Stays PENDING.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "BLE (Alemania)"
   },
   "statbel": {
    "name": "Statbel (Statistics Belgium)",
@@ -589,7 +612,8 @@
    "evidence": "Open-data statement quoted in scripts/update-belgium.py when the pipeline was built (2026-09-30): free, unrestricted reuse for commercial and non-commercial purposes with source citation.",
    "used": true,
    "aliases": [],
-   "notes": "Evidence is the project's own earlier reading of the Statbel page; not re-confirmable by automated fetch (CAPTCHA)."
+   "notes": "Evidence is the project's own earlier reading of the Statbel page; not re-confirmable by automated fetch (CAPTCHA).",
+   "short": "Statbel"
   },
   "ine_pt": {
    "name": "INE — Statistics Portugal",
@@ -612,7 +636,8 @@
    "evidence": "The official open-data portal lists INE indicator datasets under CC BY 4.0.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "INE Portugal"
   },
   "dst_dk": {
    "name": "Statistics Denmark (StatBank)",
@@ -635,7 +660,8 @@
    "evidence": "Statistics Denmark says its data on dst.dk and statbank.dk is CC BY 4.0, free for commercial use with a source reference.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "Statistics Denmark"
   },
   "cbs_nl": {
    "name": "Statistics Netherlands (CBS StatLine)",
@@ -658,7 +684,8 @@
    "evidence": "CBS open data page (read 2026-10-01) says only that open data may be freely used; no licence, commercial or derivative terms stated, so it stays PENDING.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "CBS (Países Bajos)"
   },
   "defra": {
    "name": "UK Defra (gov.uk agricultural statistics)",
@@ -681,7 +708,8 @@
    "evidence": "The data.gov.uk page for Defra's Agricultural Price Index states all content is available under OGL v3.0.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "Defra (Reino Unido)"
   },
   "statistik_austria": {
    "name": "Statistik Austria (open.data)",
@@ -727,7 +755,8 @@
    "evidence": "The licence grants a worldwide, royalty-free right to use, reproduce, distribute and sell the information and adapted products, including commercially, with the stated notice.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "Statistics Canada"
   },
   "bank_of_canada": {
    "name": "Bank of Canada (Valet API)",
@@ -750,7 +779,8 @@
    "evidence": "Terms page (read 2026-10-01): content may be reproduced and modified with attribution and disclosure of changes; commercial use allowed with the buyer notice; rate-limit reservation for Valet.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "Bank of Canada"
   },
   "cbsa_tariff": {
    "name": "Canada Border Services Agency — Customs Tariff",
@@ -773,7 +803,8 @@
    "evidence": "No licence or copyright notice on the CBSA tariff pages; an Open Government Licence – Canada grant is not confirmed.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "CBSA (Canadá)"
   },
   "alberta_ag": {
    "name": "Alberta Agriculture and Irrigation — Weekly Market Review",
@@ -796,7 +827,8 @@
    "evidence": "open.alberta.ca listing shows no licence for the dataset in use; licence unconfirmed. Stays PENDING.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "Alberta Agriculture"
   },
   "abs": {
    "name": "Australian Bureau of Statistics (Data API)",
@@ -819,7 +851,8 @@
    "evidence": "Most ABS material is provided under CC BY 4.0; API-delivered datasets are assumed to carry the same licence.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "ABS (Australia)"
   },
   "rba": {
    "name": "Reserve Bank of Australia (statistical tables)",
@@ -842,7 +875,8 @@
    "evidence": "The RBA states most of its material, including the cash rate and financial data, is under CC BY 4.0 with commercial use and adaptation allowed.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "RBA"
   },
   "snice_mx": {
    "name": "Mexico — Secretaría de Economía (SNICE, LIGIE tariff)",
@@ -865,7 +899,8 @@
    "evidence": "The SNICE LIGIE page has no copyright, terms or licence statement.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "SNICE (México)"
   },
   "ahdb": {
    "name": "AHDB (UK Agriculture and Horticulture Development Board)",
@@ -1072,7 +1107,8 @@
    "evidence": "USDA policies page (read 2026-10-01): \"Most information presented on the USDA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested.\" Only the published release dates are used, not report content.",
    "used": true,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "short": "USDA WASDE"
   }
  },
  "files": {

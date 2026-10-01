@@ -224,7 +224,7 @@
     if (others.length) h += '<p class="di-movers-hint">' + esc(w[1]) + ': ' + others.map(function (id) { var s = lreg(id); return s ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) + '</a>' : esc(id); }).join(' · ') + '</p>';
     return h;
   }
-  fetch('data/license-registry.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.sources) { LREG = d; if (DATA) build(); } }).catch(function () {});
+  fetch('data/license-registry.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.sources) { LREG = d; if (window.DICite) window.DICite.use(d); if (DATA) build(); } }).catch(function () {});
   DISeries.manifest().then(function (m) {
     DATA = { countries: {}, generatedAt: m.generatedAt };
     CCODES.forEach(function (k) { var e = m.countries[k]; AVAIL[k] = !!(e && e.metrics && Object.keys(e.metrics).some(function (g) { return g !== 'product' && g.indexOf('eu_') !== 0; })); });

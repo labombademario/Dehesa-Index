@@ -177,3 +177,6 @@ jobs:
           name: e2e-report
           path: e2e-report.json
           if-no-files-found: ignore
+
+      - name: Source citations are wired (every page that cites loads cite.js)
+        run: python3 scripts/test-cite-wiring.py

@@ -152,7 +152,7 @@
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };
   shell();
   var q = new URLSearchParams(window.location.search); if (q.get('a')) ST.a = q.get('a').toUpperCase(); if (q.get('b')) ST.b = q.get('b').toUpperCase();
-  Promise.all([CD.index(), CD.wages().then(function (w) { WAG = w; return w; }), fetch('data/country-macro.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/views/eu-preview.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })])
+  Promise.all([CD.index(), CD.wages().then(function (w) { WAG = w; return w; }), fetch('data/country-macro.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/views/eu-preview.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), window.DICite ? window.DICite.load() : null])
     .then(function (rs) { D = rs[0]; MAC = rs[2]; EUD = rs[3]; if (!D.countries[ST.a]) ST.a = 'ES'; if (!D.countries[ST.b]) ST.b = 'FR'; var wc = {}; (window.DIWatch ? DIWatch.list() : []).forEach(function (it) { wc[it.c] = 1; }); return Promise.all(Object.keys(wc).map(ensure)).catch(function () {}).then(build); })
     .catch(function () { var b = document.getElementById('perfiles-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
 })();
