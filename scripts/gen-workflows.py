@@ -28,10 +28,11 @@ def render(x):
     if x.get("continue"): L.append("        continue-on-error: true")
     always = ["        if: always()"] if x.get("continue") else []
     files = " ".join("data/" + f for f in x["data"])
-    L += ["      - name: Validar datos (esquema y tests) antes de commit"] + always + ["        run: |",
-          "          python3 scripts/validate-data.py --no-report --files %s || { echo '::error::datos invalidos: se descarta el cambio'; git checkout -- %s; }" % (files, files),
-          "          python3 scripts/detect-revisions.py %s || true" % files]
-    adds = " ".join(["data/" + f for f in x["data"] + x.get("extra", [])] + (["data/" + x["log"]] if x.get("log") else []) + ["data/revisions.json"])
+    if x["data"]:
+        L += ["      - name: Validar datos (esquema y tests) antes de commit"] + always + ["        run: |",
+              "          python3 scripts/validate-data.py --no-report --files %s || { echo '::error::datos invalidos: se descarta el cambio'; git checkout -- %s; }" % (files, files),
+              "          python3 scripts/detect-revisions.py %s || true" % files]
+    adds = " ".join(["data/" + f for f in x["data"] + x.get("extra", [])] + (["data/" + x["log"]] if x.get("log") else []) + (["data/revisions.json"] if x["data"] else []))
     L += ["      - name: Publicar"] + always + ["        run: |", '          git config user.name "github-actions[bot]"', '          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"',
           "          git add " + adds, "          git diff --cached --quiet && exit 0", "          git commit -qm " + json.dumps(x["message"], ensure_ascii=False),
           "          for i in 1 2 3; do", "            git pull -q --rebase --autostash && git push && exit 0", "            sleep $((i * 5))", "          done", "          exit 1"]

@@ -123,3 +123,13 @@ sources:
     data: [interest-rates-stats.json]
     log: interest-rates-log.txt
     message: Tipos de interés oficiales
+  - id: fx-history
+    name: Update historical exchange rates (ECB)
+    cron: ['20 8 4 * *']
+    script: scripts/update-fx-history.py
+    timeout: 10
+    continue: true
+    data: []
+    extra: [fx-history.json]
+    log: fx-history-log.txt
+    message: Tipos de cambio históricos (BCE)

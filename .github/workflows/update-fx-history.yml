@@ -1,0 +1,32 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update historical exchange rates (ECB)
+on:
+  schedule:
+    - cron: '20 8 4 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/update-fx-history.py
+        continue-on-error: true
+      - name: Publicar
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/fx-history.json data/fx-history-log.txt
+          git diff --cached --quiet && exit 0
+          git commit -qm "Tipos de cambio históricos (BCE)"
+          for i in 1 2 3; do
+            git pull -q --rebase --autostash && git push && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
