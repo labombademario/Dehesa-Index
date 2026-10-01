@@ -1,0 +1,33 @@
+ERR https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/all/year/all/partner/000/product/100510/indicator/MFN-SMPL-AVRG?format=JSON HTTP Error 403: Forbidden
+
+OK https://wits.worldbank.org/API/V1/wits/datasource/trn/country/ALL
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wits:datasource datasourcecode="TRN" datasourcename="WITS - UNTCTAD TRAINS" language="en" total="481" xmlns:wits="http://wits.worldbank.org">
+  <wits:countries>
+    <wits:country countrycode="A01" isreporter="0" ispartner="1" isgroup="Yes" grouptype="Beneficiaries">
+      <wits:iso3Code>A01</wits:iso3Code>
+      <wits:name>Selected Developing Countries for Switzerland</wits:name>
+      <wits:notes />
+    </wits:country>
+    <wits:country countrycode="A02" isreporter="0" ispartner="1" isgroup="Yes" grouptype="Beneficiaries">
+      <wits:iso3Code
+
+ERR https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/MEX/year/2020;2021;2022;2023/partner/000/product/10/indicator/MFN-SMPL-AVRG?format=JSON HTTP Error 403: Forbidden
+
+ERR https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/MEX/year/2022/partner/USA/product/10/indicator/AHS-SMPL-AVRG?format=JSON HTTP Error 403: Forbidden
+
+ERR https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/MEX/year/2022/partner/USA/product/100510/indicator/AHS-SMPL-AVRG?format=JSON HTTP Error 403: Forbidden
+
+ERR https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/CAN/year/2020;2021;2022;2023/partner/000/product/10/indicator/MFN-SMPL-AVRG?format=JSON HTTP Error 403: Forbidden
+
+ERR https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/CAN/year/2022/partner/USA/product/10/indicator/AHS-SMPL-AVRG?format=JSON HTTP Error 403: Forbidden
+
+ERR https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/CAN/year/2022/partner/USA/product/100510/indicator/AHS-SMPL-AVRG?format=JSON HTTP Error 403: Forbidden
+
+ERR https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/EUN/year/2020;2021;2022;2023/partner/000/product/10/indicator/MFN-SMPL-AVRG?format=JSON HTTP Error 403: Forbidden
+
+ERR https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/EUN/year/2022/partner/USA/product/10/indicator/AHS-SMPL-AVRG?format=JSON HTTP Error 403: Forbidden
+
+ERR https://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/EUN/year/2022/partner/USA/product/100510/indicator/AHS-SMPL-AVRG?format=JSON HTTP Error 403: Forbidden
+
+ERR https://wits.worldbank.org/API/V1/SDMX/V21/rest/data/DF_WITS_Tariff_TRAINS/A.MEX.USA.100510.AHS-SMPL-AVRG?format=JSON HTTP Error 400: Bad Request
