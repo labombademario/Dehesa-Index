@@ -1,0 +1,17 @@
+01:06:15 ES monthly 42
+01:06:44 ES partners 20
+01:06:54 FR monthly 39
+01:07:21 FR partners 20
+01:07:31 DE monthly 39
+01:07:56 DE partners 20
+01:08:05 BE monthly 39
+01:08:31 BE partners 20
+01:08:39 AT monthly 39
+01:08:53 AT partners 20
+01:09:03 PT monthly 45
+01:09:17 PT partners 20
+01:09:24 DK monthly 39
+01:09:40 DK partners 20
+01:09:49 NL monthly 39
+01:10:15 NL partners 20
+01:10:15 series 481
