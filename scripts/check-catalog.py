@@ -13,7 +13,7 @@ try:
     for r in json.loads((D / 'series-registry.json').read_text())['series']: reg[(r['country'], r['id'])] = r
 except Exception: pass
 real = 0
-for n in STATS:
+for n in STATS:  # solo las series de pais (stats); las de producto y las del catalogo UE se cuentan aparte en seriesByKind
     p = D / (n + '.json')
     if p.exists():
         for cc, c in json.loads(p.read_text()).get('countries', {}).items():
@@ -21,7 +21,8 @@ for n in STATS:
                 r = reg.get((cc, s['id']))
                 if not r or r.get('preferred', True): real += 1
 warn = []
-if real != man['seriesTotal']: warn.append('series reales %d != manifiesto %d (se regenera cada 3 h con build-data-catalog.py)' % (real, man['seriesTotal']))
+kinds = man.get('seriesByKind', {})
+if real != kinds.get('stats', man['seriesTotal']): warn.append('series reales %d != manifiesto %d (se regenera cada 3 h con build-data-catalog.py)' % (real, kinds.get('stats', man['seriesTotal'])))
 tot = 0
 for cc, c in man['countries'].items():
     cat = json.loads((D / c['catalog']).read_text()); tot += len(cat['series'])

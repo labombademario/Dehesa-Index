@@ -14,7 +14,7 @@
   }
   var S = {
     manifest: function () { return get('catalog/manifest.json'); },
-    country: function (cc) { return get('catalog/' + cc + '.json'); },
+    country: function (cc) { return S.manifest().then(function (m) { var e = m.countries[cc]; if (!e) throw new Error('country not found'); return get(e.catalog); }); },
     find: function (o) {
       o = o || {};
       return S.manifest().then(function (m) {
@@ -36,6 +36,11 @@
     series: function (cc, id) {
       return S.country(cc).then(function (c) {
         var row = c.series.filter(function (s) { return s.id === id; })[0]; if (!row) throw new Error('series not found');
+        if (row.format === 'eu-regions') return get(row.file).then(function (f) {
+          var rs = (f.regions || []).filter(function (r) { return r.c === row.c && (!row.m || r.m === row.m); }), r = rs[0]; if (!r) throw new Error('region not in file');
+          var E = Date.UTC(2000, 0, 1), pts = r.d.map(function (d, i) { return [new Date(E + d * 864e5).toISOString().slice(0, 10), r.v[i]]; });
+          return { id: row.id, label: row.label, unit: row.unit, frequency: row.freq, points: pts, meta: row };
+        });
         return get(row.file).then(function (f) { var s = f.series.filter(function (x) { return x.id === id; })[0]; if (!s) throw new Error('series not in shard'); s.meta = row; return s; });
       });
     },
