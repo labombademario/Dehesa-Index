@@ -89,7 +89,8 @@
     root.innerHTML = h;
     bind();
   }
-  function refresh() { var r = document.getElementById('ar-rows'); if (r) { r.innerHTML = rows(); bindMore(); } }
+  function sync() { try { var u = new URLSearchParams(); if (ST.c !== 'all') u.set('ch', ST.c); if (ST.q) u.set('q', ST.q); if (ST.r !== 'all') u.set('r', ST.r); var qs = u.toString(); history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '')); } catch (e) {} }
+  function refresh() { sync(); var r = document.getElementById('ar-rows'); if (r) { r.innerHTML = rows(); bindMore(); } }
   function bindMore() { var b = document.getElementById('ar-more'); if (b) b.onclick = function () { ST.n += 200; refresh(); }; }
   function bind() {
     var q = document.getElementById('ar-q'), tm;
@@ -100,6 +101,7 @@
     bindMore();
   }
   function shell() { var t = tt(), h = document.getElementById('ar-h1'), s = document.getElementById('ar-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = 'Dehesa Index — ' + t.title; }
+  (function () { var q = new URLSearchParams(window.location.search); if (q.get('ch') && CH[q.get('ch')]) ST.c = q.get('ch'); if (q.get('q')) ST.q = q.get('q'); if (T.es.types[q.get('r')]) ST.r = q.get('r'); })();
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };
