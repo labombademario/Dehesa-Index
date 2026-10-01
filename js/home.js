@@ -27,7 +27,7 @@
   var STRINGS = {
     es: {
       h1: 'El pulso de la agricultura, en un solo panel',
-      sub: 'Precios diarios y semanales de cereales, lácteos, ganado, pienso y fertilizantes en EE. UU., Europa, Reino Unido y Canadá — siempre con el valor original, y convertidos a otra moneda o unidad cuando la serie es comparable.',
+      sub: 'Un tracker global de mercados agrícolas: precios de cereales, lácteos, ganado, pienso y fertilizantes en EE. UU., Europa, Reino Unido y Canadá, y estadísticas oficiales de más de 30 países — siempre con el valor original, la fuente y la fecha, y convertidos a otra moneda o unidad solo cuando la serie es comparable.',
       ctaPrimary: 'Ver el panel de precios →',
       ctaSecondary: 'Cómo funciona',
       moversTitle: 'PANEL DE MERCADO',
@@ -75,7 +75,7 @@
     },
     en: {
       h1: 'The pulse of agriculture, in one dashboard',
-      sub: 'Daily and weekly prices for grains, dairy, livestock, feed and fertilizer in the U.S., Europe, the UK and Canada — always with the original value, and converted to another currency or unit when the series are comparable.',
+      sub: 'A global agricultural market tracker: prices for grains, dairy, livestock, feed and fertilizer in the U.S., Europe, the UK and Canada, plus official statistics from more than 30 countries — always with the original value, source and date, and converted to another currency or unit only when the series are comparable.',
       ctaPrimary: 'View the price dashboard →',
       ctaSecondary: 'How it works',
       moversTitle: 'MARKET SNAPSHOT',
@@ -123,7 +123,7 @@
     },
     fr: {
       h1: "Le pouls de l'agriculture, en un seul tableau de bord",
-      sub: "Prix quotidiens et hebdomadaires des céréales, produits laitiers, bétail, aliments pour animaux et engrais aux États-Unis, en Europe, au Royaume-Uni et au Canada — toujours avec la valeur d’origine, et convertis dans une autre devise ou unité quand les séries sont comparables.",
+      sub: "Un suivi mondial des marchés agricoles : prix des céréales, produits laitiers, bétail, aliments pour animaux et engrais aux États-Unis, en Europe, au Royaume-Uni et au Canada, et statistiques officielles de plus de 30 pays — toujours avec la valeur d’origine, la source et la date, et convertis dans une autre devise ou unité seulement quand les séries sont comparables.",
       ctaPrimary: 'Voir le tableau des prix →',
       ctaSecondary: 'Comment ça marche',
       moversTitle: 'LES MOUVEMENTS AGRICOLES DU JOUR',
@@ -171,7 +171,7 @@
     },
     it: {
       h1: "Il polso dell'agricoltura, in un unico pannello",
-      sub: "Prezzi giornalieri e settimanali di cereali, lattiero-caseario, bestiame, mangimi e fertilizzanti negli Stati Uniti, in Europa, nel Regno Unito e in Canada — sempre con il valore originale, e convertiti in un'altra valuta o unità quando le serie sono confrontabili.",
+      sub: "Un tracker globale dei mercati agricoli: prezzi di cereali, lattiero-caseario, bestiame, mangimi e fertilizzanti negli Stati Uniti, in Europa, nel Regno Unito e in Canada, e statistiche ufficiali di oltre 30 paesi — sempre con il valore originale, la fonte e la data, e convertiti in un'altra valuta o unità solo quando le serie sono confrontabili.",
       ctaPrimary: 'Vedi il pannello dei prezzi →',
       ctaSecondary: 'Come funziona',
       moversTitle: 'I MOVIMENTI AGRICOLI DI OGGI',

@@ -1,6 +1,14 @@
 # Dehesa Index
 
-[dehesaindex.com](https://dehesaindex.com) is a Bloomberg-style tracker of agricultural prices and statistics: livestock, dairy, grains, oilseeds, fertilisers, feed and energy for the United States, the European Union and a growing set of countries. It is a static site (vanilla ES5 HTML, CSS and JavaScript, no build step) fed by scheduled GitHub Actions pipelines that commit JSON files to `data/`. Interface in Spanish, English, French and Italian.
+[dehesaindex.com](https://dehesaindex.com) is a Bloomberg-style, global tracker of agricultural prices and official statistics: livestock, dairy, grains, oilseeds, fertilisers, feed and energy, with prices for the United States, the European Union, the United Kingdom and Canada and official statistics for more than 30 countries (the exact counts of countries, aggregates and regions come from `data/catalog/manifest.json`, `entityType`). It is a static site (vanilla ES5 HTML, CSS and JavaScript, no build step) fed by scheduled GitHub Actions pipelines that commit JSON files to `data/`. Interface in Spanish, English, French and Italian.
+
+## Documentation
+
+- [`ARCHITECTURE.md`](ARCHITECTURE.md): data layers, pipelines, quality gates.
+- [`DATA_MODEL.md`](DATA_MODEL.md): contracts, freshness, licences, anomalies.
+- [`DATA_SOURCES.md`](DATA_SOURCES.md): every source and its licence (generated).
+- [`CONTRIBUTING.md`](CONTRIBUTING.md): checks before a commit and the project rules.
+- [`docs/REPO_GROWTH.md`](docs/REPO_GROWTH.md): repository size budget and retention policy.
 
 ## What it covers
 
@@ -20,7 +28,7 @@ Countries with profiles: Spain, France, Germany, Belgium, Austria, Portugal, Den
 
 ## How it works
 
-- `scripts/update-*.py|js` fetch and normalise one source each and write to `data/` (about 60 scripts, 40 workflows in `.github/workflows/`).
+- `scripts/update-*.py|js` fetch and normalise one source each and write to `data/` (about 60 scripts, 46 workflows in `.github/workflows/`, most generated from `sources.yml`).
 - All data workflows share the concurrency group `dehesa-data-writes` so they commit one at a time. Each writes a `*-log.txt` next to its output.
 - Country files share one schema: `{ schemaVersion, generatedAt, countries: { XX: { name, source, extend?, series: [{ id, group, label, unit, frequency, latestPeriod, latest, changePct, points }] } } }`. `js/country-data.js` loads and merges them; `js/paises.js` renders the explorer and `js/perfil-pais.js` the profiles.
 - Only real series published by each source are shown: nothing is estimated or filled in. Licences and citations are in `legal.html` and `metodologia.html`.
@@ -29,11 +37,15 @@ Countries with profiles: Spain, France, Germany, Belgium, Austria, Portugal, Den
 ## Quality checks
 
 ```
-node scripts/qa-site.mjs
-node scripts/qa-navigation.mjs
+python3 scripts/validate-data.py --all --no-report   # 50 schemas + semantic tests + consistency
+python3 scripts/test-contracts.py                    # corrupted real data must be rejected
+python3 scripts/check-licenses.py && python3 scripts/check-catalog.py --strict
+node scripts/qa-site.mjs && node scripts/qa-navigation.mjs && node scripts/qa-seo.mjs
+node scripts/check-performance-budget.mjs            # per-page payload budgets
+node scripts/e2e.mjs                                 # real browser, desktop + mobile, axe-core
 ```
 
-Both also run in GitHub Actions (`qa-site.yml`, `qa-navigation.yml`).
+All of them run in GitHub Actions (`quality.yml`, `qa-site.yml`, `qa-navigation.yml`); see `CONTRIBUTING.md`.
 
 ## Data and licences
 
