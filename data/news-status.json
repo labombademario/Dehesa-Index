@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-10-01T05:59:58.095369+00:00",
- "feedsOk": 272,
+ "generatedAt": "2026-10-01T06:34:30.580053+00:00",
+ "feedsOk": 271,
  "feedsTotal": 273,
- "publishers": 227,
+ "publishers": 225,
  "feeds": [
   {
    "source": "Reuters",
@@ -64,7 +64,7 @@
    "source": "Bloomberg",
    "url": "https://news.google.com/rss/search?q=site%3Abloomberg.com+agriculture+commodities+grains+fertilizer+soybean+corn+wheat+dairy+when%3A14d&hl=e",
    "ok": true,
-   "items": 1,
+   "items": 0,
    "kept": 0,
    "error": ""
   },
@@ -176,8 +176,8 @@
    "source": "Brownfield",
    "url": "https://news.google.com/rss/search?q=site%3Abrownfieldagnews.com+corn+soybean+wheat+cattle+hogs+markets+when%3A14d&hl=en-US&gl=US&ceid=US%3A",
    "ok": true,
-   "items": 14,
-   "kept": 14,
+   "items": 13,
+   "kept": 13,
    "error": ""
   },
   {
@@ -225,7 +225,7 @@
    "url": "https://news.google.com/rss/search?q=site%3Afeedstuffs.com+feed+grain+livestock+poultry+dairy+markets+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
    "items": 100,
-   "kept": 15,
+   "kept": 14,
    "error": ""
   },
   {
@@ -336,8 +336,8 @@
    "source": "Manitoba Co-operator",
    "url": "https://news.google.com/rss/search?q=site%3Amanitobacooperator.ca+grain+canola+wheat+cattle+hogs+prices+Prairies+when%3A14d&hl=en-US&gl=US&c",
    "ok": true,
-   "items": 46,
-   "kept": 28,
+   "items": 45,
+   "kept": 27,
    "error": ""
   },
   {
@@ -352,15 +352,15 @@
    "source": "Grainews",
    "url": "https://news.google.com/rss/search?q=site%3Agrainews.ca+grain+canola+wheat+markets+Prairies+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 34,
-   "kept": 18,
+   "items": 35,
+   "kept": 19,
    "error": ""
   },
   {
    "source": "Canadian Cattlemen",
    "url": "https://news.google.com/rss/search?q=site%3Acanadiancattlemen.ca+cattle+beef+feeder+prices+markets+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 69,
+   "items": 67,
    "kept": 40,
    "error": ""
   },
@@ -440,8 +440,8 @@
    "source": "Irish Farmers Journal",
    "url": "https://news.google.com/rss/search?q=site%3Afarmersjournal.ie+beef+dairy+grain+prices+fertilizer+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 20,
-   "kept": 8,
+   "items": 21,
+   "kept": 9,
    "error": ""
   },
   {
@@ -464,8 +464,8 @@
    "source": "Agronotizie",
    "url": "https://news.google.com/rss/search?q=site%3Aagronotizie.imagelinenetwork.com+cereali+grano+mais+prezzi+mercato+when%3A14d&hl=it&gl=IT&ceid=I",
    "ok": true,
-   "items": 41,
-   "kept": 7,
+   "items": 42,
+   "kept": 8,
    "error": ""
   },
   {
@@ -513,7 +513,7 @@
    "url": "https://news.google.com/rss/search?q=site%3Aagrarheute.com+%28Getreide+OR+Weizen+OR+Preise+OR+D%C3%BCnger+OR+Milch+OR+Schwein%29+when%3A14d&",
    "ok": true,
    "items": 100,
-   "kept": 23,
+   "kept": 24,
    "error": ""
   },
   {
@@ -528,7 +528,7 @@
    "source": "Deutscher Bauernverband",
    "url": "https://news.google.com/rss/search?q=site%3Abauernverband.de+%28Landwirte+OR+Ernte+OR+Agrarpolitik+OR+Preise%29+when%3A14d&hl=de&gl=DE&ceid=",
    "ok": true,
-   "items": 6,
+   "items": 5,
    "kept": 1,
    "error": ""
   },
@@ -600,8 +600,8 @@
    "source": "(temático)",
    "url": "https://news.google.com/rss/search?q=Deutschland+%28Vogelgrippe+OR+Schweinepest+OR+Blauzungenkrankheit+OR+Ausbruch+OR+Tierseuche%29+when%3A1",
    "ok": true,
-   "items": 16,
-   "kept": 6,
+   "items": 13,
+   "kept": 5,
    "error": ""
   },
   {
@@ -656,7 +656,7 @@
    "source": "APA",
    "url": "https://news.google.com/rss/search?q=APA+%C3%96sterreich+%28Landwirtschaft+OR+Bauern+OR+Ernte+OR+Getreide+OR+Milch+OR+Preise%29+when%3A14d&h",
    "ok": true,
-   "items": 39,
+   "items": 41,
    "kept": 12,
    "error": ""
   },
@@ -680,15 +680,15 @@
    "source": "Boerenbond",
    "url": "https://news.google.com/rss/search?q=site%3Aboerenbond.be+%28landbouwers+OR+prijzen+OR+graan+OR+melk+OR+varkens%29+when%3A14d&hl=nl&gl=BE&ce",
    "ok": true,
-   "items": 77,
-   "kept": 12,
+   "items": 80,
+   "kept": 13,
    "error": ""
   },
   {
    "source": "Landbouwleven",
    "url": "https://news.google.com/rss/search?q=site%3Alandbouwleven.be+%28landbouw+OR+prijzen+OR+graan+OR+melk+OR+varkens+OR+oogst%29+when%3A14d&hl=nl",
    "ok": true,
-   "items": 74,
+   "items": 73,
    "kept": 7,
    "error": ""
   },
@@ -704,8 +704,8 @@
    "source": "Le Sillon Belge",
    "url": "https://news.google.com/rss/search?q=site%3Asillonbelge.be+%28agriculteurs+OR+prix+OR+c%C3%A9r%C3%A9ales+OR+lait+OR+porcs+OR+r%C3%A9colte%29",
    "ok": true,
-   "items": 52,
-   "kept": 18,
+   "items": 51,
+   "kept": 17,
    "error": ""
   },
   {
@@ -721,7 +721,7 @@
    "url": "https://news.google.com/rss/search?q=Belga+%28landbouw+OR+landbouwers+OR+oogst+OR+prijzen+OR+melk+OR+graan+OR+varkenspest%29+when%3A14d&hl=n",
    "ok": true,
    "items": 54,
-   "kept": 13,
+   "kept": 12,
    "error": ""
   },
   {
@@ -737,7 +737,7 @@
    "url": "https://news.google.com/rss/search?q=site%3Astandaard.be+%28landbouwers+OR+landbouw+OR+prijzen+OR+oogst%29+when%3A14d&hl=nl&gl=BE&ceid=BE%3A",
    "ok": true,
    "items": 100,
-   "kept": 6,
+   "kept": 7,
    "error": ""
   },
   {
@@ -785,7 +785,7 @@
    "url": "https://news.google.com/rss/search?q=site%3Anieuweoogst.nl+%28landbouw+OR+prijzen+OR+graan+OR+melk+OR+varkens%29+when%3A14d&hl=nl&gl=NL&ceid",
    "ok": true,
    "items": 100,
-   "kept": 31,
+   "kept": 30,
    "error": ""
   },
   {
@@ -800,7 +800,7 @@
    "source": "Foodagribusiness",
    "url": "https://news.google.com/rss/search?q=site%3Afoodagribusiness.nl+OR+site%3Afoodholland.nl+%28landbouw+OR+voedsel+OR+prijzen+OR+export%29+when",
    "ok": true,
-   "items": 24,
+   "items": 23,
    "kept": 4,
    "error": ""
   },
@@ -832,8 +832,8 @@
    "source": "ANP",
    "url": "https://news.google.com/rss/search?q=ANP+%28landbouw+OR+boeren+OR+oogst+OR+prijzen+OR+melk+OR+varkens+OR+vogelgriep%29+when%3A14d&hl=nl&gl=N",
    "ok": true,
-   "items": 48,
-   "kept": 10,
+   "items": 49,
+   "kept": 11,
    "error": ""
   },
   {
@@ -928,7 +928,7 @@
    "source": "Danmarks Radio",
    "url": "https://news.google.com/rss/search?q=site%3Adr.dk+%28landm%C3%A6nd+OR+landbrug+OR+h%C3%B8st+OR+priser+OR+svin%29+when%3A14d&hl=da&gl=DK&ceid",
    "ok": true,
-   "items": 43,
+   "items": 44,
    "kept": 2,
    "error": ""
   },
@@ -984,7 +984,7 @@
    "source": "Agricultura e Mar",
    "url": "https://news.google.com/rss/search?q=site%3Aagriculturaemar.com+%28agricultura+OR+pre%C3%A7os+OR+cereais+OR+leite+OR+carne+OR+azeite%29+when",
    "ok": true,
-   "items": 14,
+   "items": 13,
    "kept": 1,
    "error": ""
   },
@@ -1009,7 +1009,7 @@
    "url": "https://news.google.com/rss/search?q=site%3Ajornaldenegocios.pt+%28agricultura+OR+agroalimentar+OR+pre%C3%A7os+OR+cereais+OR+fertilizantes%2",
    "ok": true,
    "items": 100,
-   "kept": 10,
+   "kept": 11,
    "error": ""
   },
   {
@@ -1113,7 +1113,7 @@
    "url": "https://news.google.com/rss/search?q=site%3Afranceagrimer.fr+%28march%C3%A9s+OR+c%C3%A9r%C3%A9ales+OR+lait+OR+viandes+OR+prix%29+when%3A14d&",
    "ok": true,
    "items": 100,
-   "kept": 3,
+   "kept": 2,
    "error": ""
   },
   {
@@ -1145,7 +1145,7 @@
    "url": "https://news.google.com/rss/search?q=site%3Alemonde.fr+%28agriculteurs+OR+agriculture+OR+r%C3%A9colte+OR+prix+OR+c%C3%A9r%C3%A9ales+OR+lait%",
    "ok": true,
    "items": 100,
-   "kept": 10,
+   "kept": 9,
    "error": ""
   },
   {
@@ -1184,8 +1184,8 @@
    "source": "Interbev",
    "url": "https://news.google.com/rss/search?q=site%3Ainterbev.fr+OR+site%3Ainaporc.fr+OR+site%3Acniel.com+%28viande+OR+bovine+OR+porc+OR+lait+OR+fili",
    "ok": true,
-   "items": 6,
-   "kept": 1,
+   "items": 7,
+   "kept": 2,
    "error": ""
   },
   {
@@ -1193,7 +1193,7 @@
    "url": "https://news.google.com/rss/search?q=%28FranceAgriMer+OR+cotations+OR+bl%C3%A9+OR+Rouen+OR+ma%C3%AFs+OR+colza+OR+Euronext%29+when%3A14d&hl=f",
    "ok": true,
    "items": 100,
-   "kept": 27,
+   "kept": 29,
    "error": ""
   },
   {
@@ -1296,8 +1296,8 @@
    "source": "Farm Weekly",
    "url": "https://news.google.com/rss/search?q=site%3Afarmweekly.com.au+%28grain+OR+wheat+OR+canola+OR+sheep+OR+cattle+OR+prices%29+when%3A14d&hl=en-U",
    "ok": true,
-   "items": 41,
-   "kept": 8,
+   "items": 40,
+   "kept": 7,
    "error": ""
   },
   {
@@ -1313,7 +1313,7 @@
    "url": "https://news.google.com/rss/search?q=site%3Astockandland.com.au+%28cattle+OR+sheep+OR+grain+OR+prices+OR+Victoria%29+when%3A14d&hl=en-US&gl=",
    "ok": true,
    "items": 100,
-   "kept": 23,
+   "kept": 24,
    "error": ""
   },
   {
@@ -1321,14 +1321,14 @@
    "url": "https://news.google.com/rss/search?q=site%3Aweeklytimesnow.com.au+%28farmers+OR+grain+OR+cattle+OR+sheep+OR+dairy+OR+prices%29+when%3A14d&hl",
    "ok": true,
    "items": 100,
-   "kept": 20,
+   "kept": 21,
    "error": ""
   },
   {
    "source": "Sheep Central",
    "url": "https://news.google.com/rss/search?q=site%3Asheepcentral.com+%28lamb+OR+sheep+OR+prices+OR+Australia+OR+wool%29+when%3A14d&hl=en-US&gl=US&ce",
    "ok": true,
-   "items": 33,
+   "items": 32,
    "kept": 5,
    "error": ""
   },
@@ -1368,7 +1368,7 @@
    "source": "GRDC",
    "url": "https://news.google.com/rss/search?q=site%3Agrdc.com.au+%28grains+OR+crop+OR+research+OR+prices%29+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 16,
+   "items": 17,
    "kept": 3,
    "error": ""
   },
@@ -1440,7 +1440,7 @@
    "source": "USDA APHIS",
    "url": "https://news.google.com/rss/search?q=site%3Aaphis.usda.gov+avian+influenza+animal+disease+livestock+import+when%3A14d&hl=en-US&gl=US&ceid=US",
    "ok": true,
-   "items": 39,
+   "items": 40,
    "kept": 5,
    "error": ""
   },
@@ -1689,7 +1689,7 @@
    "url": "https://www.web-agri.fr/rss",
    "ok": true,
    "items": 20,
-   "kept": 14,
+   "kept": 15,
    "error": ""
   },
   {
@@ -1815,10 +1815,10 @@
   {
    "source": "Top Crop Manager",
    "url": "https://www.topcropmanager.com/feed",
-   "ok": true,
-   "items": 32,
-   "kept": 8,
-   "error": ""
+   "ok": false,
+   "items": 0,
+   "kept": 0,
+   "error": "<urlopen error [Errno 104] Connection reset by peer>"
   },
   {
    "source": "Canola Council of Canada",
@@ -1872,8 +1872,8 @@
    "source": "(temático)",
    "url": "https://news.google.com/rss/search?q=Brazil+soybean+corn+crop+exports+CONAB+harvest+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 9,
-   "kept": 8,
+   "items": 10,
+   "kept": 9,
    "error": ""
   },
   {
@@ -1904,8 +1904,8 @@
    "source": "(temático)",
    "url": "https://news.google.com/rss/search?q=Australia+Canada+wheat+canola+crop+forecast+harvest+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 15,
-   "kept": 9,
+   "items": 14,
+   "kept": 8,
    "error": ""
   },
   {
@@ -1944,7 +1944,7 @@
    "source": "(temático)",
    "url": "https://news.google.com/rss/search?q=sugar+prices+Brazil+India+cane+crop+when%3A14d&hl=en-US&gl=US&ceid=US%3Aen",
    "ok": true,
-   "items": 16,
+   "items": 17,
    "kept": 16,
    "error": ""
   },
@@ -2136,16 +2136,16 @@
    "source": "(temático)",
    "url": "https://news.google.com/rss/search?q=precios+soja+ma%C3%ADz+trigo+Argentina+Brasil+exportaciones+when%3A14d&hl=es-419&gl=AR&ceid=AR%3Aes-419",
    "ok": true,
-   "items": 28,
-   "kept": 15,
+   "items": 27,
+   "kept": 14,
    "error": ""
   },
   {
    "source": "(temático)",
    "url": "https://news.google.com/rss/search?q=prix+bl%C3%A9+ma%C3%AFs+colza+march%C3%A9+c%C3%A9r%C3%A9ales+when%3A14d&hl=fr&gl=FR&ceid=FR%3Afr",
    "ok": true,
-   "items": 24,
-   "kept": 24,
+   "items": 23,
+   "kept": 23,
    "error": ""
   },
   {
