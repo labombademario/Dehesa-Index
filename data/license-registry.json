@@ -1,0 +1,1304 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-01T00:00:00Z",
+ "policy": {
+  "statuses": {
+   "VERIFIED": "una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion",
+   "PENDING": "licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya estaba, y se muestra como pendiente; nunca se inventa un permiso",
+   "RESTRICTED": "la reutilizacion tiene limites incompatibles con un sitio comercial (no comercial, sin derivados, promocion): no se usa",
+   "BLOCKED": "los terminos prohiben el acceso automatico o la redistribucion: no se usa"
+  },
+  "maxAgeDaysVerified": 400,
+  "note": "Registro global de licencias. Fuente de verdad: este fichero. El gate de CI (scripts/check-licenses.py) exige que toda fuente publicada este aqui y que ninguna RESTRICTED/BLOCKED se use."
+ },
+ "sources": {
+  "usda_nass": {
+   "name": "USDA National Agricultural Statistics Service (Quick Stats)",
+   "url": "https://quickstats.nass.usda.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); NASS citation request",
+   "licenseUrl": "https://www.nass.usda.gov/Data_and_Statistics/Citation_Request/index.php",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
+   "additionalRestrictions": "No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rate limits not confirmed.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "NASS states its information is public domain and may be freely reproduced if USDA-NASS is credited.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "usda_ams_mars": {
+   "name": "USDA AMS Market News (MARS API)",
+   "url": "https://mymarketnews.ams.usda.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain), inferred from USDA general policy; no MARS-specific licence found",
+   "licenseUrl": "https://www.usda.gov/about-usda/policies-and-links",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: USDA Agricultural Marketing Service, Market News",
+   "additionalRestrictions": "Row limits per request (5,000 unregistered / 100,000 registered). No endorsement claims. No MARS-specific terms found.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "USDA flags copyrighted or third-party material on its sites as personal-use only; check reports with third-party source notes.",
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "Reuse right is inferred from the general USDA policy (most content public domain); no MARS-specific licence statement was found.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "usda_fas_psd": {
+   "name": "USDA FAS — Production, Supply and Distribution (PSD Online)",
+   "url": "https://apps.fas.usda.gov/psdonline/",
+   "country": "US",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (declared in USDA/data.gov catalogue metadata)",
+   "licenseUrl": "https://catalog.data.gov/dataset/production-supply-and-distribution-database",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: USDA Foreign Agricultural Service, Production, Supply and Distribution (PSD) Online",
+   "additionalRestrictions": "Licence is declared in dataset metadata, not on the PSD site. No endorsement claims; no USDA logos.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "The data.gov catalogue entry for the PSD database lists CC BY 4.0.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "usda_fas_esr": {
+   "name": "USDA FAS — Export Sales Reporting (ESR)",
+   "url": "https://apps.fas.usda.gov/esrquery/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain), inferred; no ESR-specific licence read",
+   "licenseUrl": "https://www.usda.gov/about-usda/policies-and-links",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Source: USDA Foreign Agricultural Service, Export Sales Reporting",
+   "additionalRestrictions": "api.data.gov keys: 1,000 requests/hour, key must stay private. No endorsement claims.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "No ESR-specific licence statement found; reuse inferred from the general USDA public-domain policy.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "usda_fas_gats": {
+   "name": "USDA FAS — Global Agricultural Trade System (GATS)",
+   "url": "https://apps.fas.usda.gov/gats/",
+   "country": "US",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (data.gov catalogue metadata; underlying data from the US Census Bureau)",
+   "licenseUrl": "https://catalog.data.gov/dataset/global-agricultural-trade-system",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: USDA Foreign Agricultural Service, GATS, based on US Census Bureau trade data",
+   "additionalRestrictions": "The catalogue record dates from 2015 and the GATS site states no terms. No endorsement claims.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "The data.gov entry lists CC BY 4.0 and describes the data as Census Bureau trade data.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "usda_ers": {
+   "name": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
+   "url": "https://www.ers.usda.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain), inferred; no data-product licence page found",
+   "licenseUrl": "https://www.usda.gov/about-usda/policies-and-links",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "U.S. Department of Agriculture (USDA), Economic Research Service (ERS). <product name>",
+   "additionalRestrictions": "ERS API terms apply only to the website-content API (not endorsed or certified by ERS notice).",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Food Price Outlook builds on BLS indexes; other ERS products can include licensed third-party inputs.",
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "ERS publishes no data-products licence page; reuse rests on the USDA public-domain policy.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "us_drought_monitor": {
+   "name": "U.S. Drought Monitor (NDMC, USDA, NOAA)",
+   "url": "https://droughtmonitor.unl.edu/",
+   "country": "US",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No explicit licence; NDMC attribution wording required for map reproduction",
+   "licenseUrl": "https://droughtmonitor.unl.edu/About/Permission.aspx",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": "The U.S. Drought Monitor is jointly produced by the National Drought Mitigation Center at the University of Nebraska-Lincoln, the USDA, NOAA and NASA.",
+   "additionalRestrictions": "Footer shows an NDMC (University of Nebraska-Lincoln) copyright notice; no terms for the statistics web service. Written confirmation advisable (DroughtMonitor@unl.edu).",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "The Permission page only prescribes the credit line; it is silent on commercial use and derivatives.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "eia": {
+   "name": "U.S. Energy Information Administration (Open Data API)",
+   "url": "https://www.eia.gov/opendata/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); EIA Copyrights and Reuse policy and API Terms of Service",
+   "licenseUrl": "https://www.eia.gov/about/copyrights_reuse.php",
+   "commercialUse": "yes",
+   "derivatives": "conditional",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: U.S. Energy Information Administration",
+   "additionalRestrictions": "Do not modify or misrepresent API content while claiming EIA as the source; no implied endorsement; EIA logo needs written permission; API key and call limits.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Materials contributed or licensed by private parties may be copyrighted.",
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "EIA states its data and information products may be used and distributed with citation; API terms allow building services on the data without endorsement claims.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "nasa_power": {
+   "name": "NASA POWER (Prediction Of Worldwide Energy Resources)",
+   "url": "https://power.larc.nasa.gov/",
+   "country": "US",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "NASA open data policy; POWER listed as CC BY 4.0 in the AWS Open Data Registry",
+   "licenseUrl": "https://earthdata.nasa.gov/learn/articles/nasa-data-policy",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "NASA Prediction of Worldwide Energy Resources (POWER) Project, accessed <date> from https://power.larc.nasa.gov",
+   "additionalRestrictions": "Do not imply NASA endorsement. The power.larc.nasa.gov services page states no licence; requests should not be finer than about 0.5 degrees.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "NASA says Earth science data are free for corporate use; the POWER registry entry lists CC BY 4.0 and asks for citation.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "us_tariffs": {
+   "name": "USITC Harmonized Tariff Schedule, CBP trade remedies, USTR",
+   "url": "https://hts.usitc.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government works (17 U.S.C. 105); no specific licence page found",
+   "licenseUrl": "https://resources.data.gov/open-licenses/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Source: U.S. International Trade Commission, Harmonized Tariff Schedule of the United States",
+   "additionalRestrictions": "The HTS is legally binding only in its official publication: label derived rates as informational.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "Reuse rests on the general legal basis for federal works; no explicit reuse page was found on hts.usitc.gov, CBP or USTR.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "eurostat": {
+   "name": "Eurostat",
+   "url": "https://ec.europa.eu/eurostat/",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "Eurostat copyright/licence policy (Commission Decision 2011/833/EU)",
+   "licenseUrl": "https://ec.europa.eu/eurostat/en/help/copyright-notice",
+   "commercialUse": "conditional",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Eurostat (online data code: <code>). Adapted by dehesaindex.com where data are modified.",
+   "additionalRestrictions": "Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "May NOT be redisseminated commercially: data from sources other than Eurostat, data not relating to EU/EFTA/candidate countries, EFTA trade data and Austria trade data at CN8 level.",
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Eurostat authorises reproduction for commercial or non-commercial dissemination with acknowledgement; a list of categories is carved out of commercial redistribution.",
+   "used": true,
+   "aliases": [
+    "eurostat"
+   ],
+   "notes": null
+  },
+  "eurostat_comext": {
+   "name": "Eurostat — Comext international trade in goods",
+   "url": "https://ec.europa.eu/eurostat/web/international-trade-in-goods",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "Eurostat copyright/licence policy (Decision 2011/833/EU), with trade-data exceptions",
+   "licenseUrl": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Copyright/licence_policy",
+   "commercialUse": "conditional",
+   "derivatives": "yes",
+   "redistribution": "conditional",
+   "attributionRequired": true,
+   "attributionText": "Source: Eurostat (Comext). Adapted by dehesaindex.com where applicable.",
+   "additionalRestrictions": "Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep Austria at coarser product level).",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "EFTA-state trade data and Austria CN8 trade data are excluded from commercial redissemination.",
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "The general Eurostat policy permits commercial reuse with acknowledgement and names trade-data subsets excluded from commercial redissemination; no Comext-specific page found.",
+   "used": true,
+   "aliases": [],
+   "notes": "Dehesa Index only uses HS 2-digit chapters and agri-food totals (dataset DS-045409), so the Austria CN8 exclusion does not apply; keep it that way."
+  },
+  "eu_agrifood": {
+   "name": "European Commission — Agri-food Data Portal (DG AGRI)",
+   "url": "https://agridata.ec.europa.eu/",
+   "country": "EU",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No portal-specific licence found; Commission general reuse policy (Decision 2011/833/EU) presumably applies",
+   "licenseUrl": "https://data.europa.eu/en/legal-notice",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": "Source: European Commission, DG AGRI, Agri-food Data Portal",
+   "additionalRestrictions": "API rate limiting (HTTP 429). Keep requests modest.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Some series are reported by Member States; not confirmed that the Commission reuse decision covers them.",
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "low",
+   "evidence": "Portal home, help and API guide state no licence; footers only link to the generic Commission legal notice.",
+   "used": true,
+   "aliases": [
+    "european_commission"
+   ],
+   "notes": null
+  },
+  "eu_oil_bulletin": {
+   "name": "European Commission — Weekly Oil Bulletin (DG ENER)",
+   "url": "https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "European Commission reuse policy (reproduction authorised with source acknowledged)",
+   "licenseUrl": "https://ec.europa.eu/newsroom/ener/newsletter-archives/22703",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: European Commission, DG ENER, Weekly Oil Bulletin",
+   "additionalRestrictions": null,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "A bulletin notice authorises reproduction with source acknowledgement but does not mention commercial use or modification.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "ecb": {
+   "name": "European Central Bank (euro reference rates, ECB Data Portal)",
+   "url": "https://data.ecb.europa.eu/",
+   "country": "EU",
+   "licenseId": "ESCB-REUSE",
+   "licenseName": "ESCB policy regarding the reuse of ESCB statistics",
+   "licenseUrl": "https://statisztika.mnb.hu/en/policy-regarding-the-reuse-of-escb-statistics",
+   "commercialUse": "yes",
+   "derivatives": "unclear",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: ECB statistics",
+   "additionalRestrictions": "Statistics and metadata must not be modified (keep raw published rates unaltered in JSON copies). Reference rates are for information only, not market transactions or benchmarks.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Free-use right excludes third-party data without the originator's permission.",
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "ESCB statistics may be reused free of charge, commercial or not, if the source is quoted and the statistics are not modified; silent on derived works. Read through a national central bank copy of the policy.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "eu_taric": {
+   "name": "European Commission — TARIC / EU customs tariff (DG TAXUD)",
+   "url": "https://taxation-customs.ec.europa.eu/customs/customs-tariff_en",
+   "country": "EU",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No explicit TARIC data licence found; Commission general reuse policy presumably applies",
+   "licenseUrl": "https://github.com/rousseauxy/taric-opendata",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": "Source: European Commission, DG TAXUD, TARIC (via mirror rousseauxy/taric-opendata; not an authentic source)",
+   "additionalRestrictions": "The GitHub mirror is not an authentic source of tariff law; only its code is MIT-licensed.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "low",
+   "evidence": "The DG TAXUD tariff page states no reuse licence; the mirror says data belong to the source authorities.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "world_bank": {
+   "name": "World Bank — Commodity Price Data (Pink Sheet)",
+   "url": "https://www.worldbank.org/en/research/commodity-markets",
+   "country": "INT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "World Bank Terms of Use for Datasets (CC BY 4.0 default, with additional terms)",
+   "licenseUrl": "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "additionalRestrictions": "No endorsement; no World Bank names or logos without written consent.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "The Pink Sheet compiles third-party price sources and carries no explicit licence line; its PDF footer says 'Official Use Only'.",
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "World Bank-produced datasets default to CC BY 4.0, but the Pink Sheet file itself does not state its licence and compiles third-party sources.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "world_bank_wdi": {
+   "name": "World Bank Open Data (World Development Indicators)",
+   "url": "https://data.worldbank.org/",
+   "country": "INT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "World Bank Terms of Use for Datasets (CC BY 4.0 default, with additional terms)",
+   "licenseUrl": "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "The World Bank: <indicator name> (World Development Indicators)",
+   "additionalRestrictions": "No endorsement; no World Bank names or logos without written consent.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Some indicators come from third parties and may need the original provider's consent; check the indicator metadata.",
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "World Bank-produced datasets default to CC BY 4.0 including commercial use and adaptation; macro indicators in country profiles come from WDI.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "bis": {
+   "name": "Bank for International Settlements (central bank policy rates)",
+   "url": "https://data.bis.org/",
+   "country": "INT",
+   "licenseId": "BIS-TERMS",
+   "licenseName": "BIS Terms of permitted use of BIS statistics",
+   "licenseUrl": "https://www.bis.org/terms_statistics.htm",
+   "commercialUse": "conditional",
+   "derivatives": "conditional",
+   "redistribution": "conditional",
+   "attributionRequired": true,
+   "attributionText": "Source: BIS",
+   "additionalRestrictions": "Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation framing; API access may be suspended without notice.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Use of BIS statistics is unrestricted if the BIS is cited; commercial products may include them provided users pay nothing extra.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "faostat": {
+   "name": "FAO — FAOSTAT",
+   "url": "https://www.fao.org/faostat/",
+   "country": "INT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "FAO Statistical Database Terms of Use (CC BY 4.0 with additional terms)",
+   "licenseUrl": "https://www.fao.org/contact-us/terms/db-terms-of-use/en/",
+   "commercialUse": "no",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "FAO. <year>. <dataset>. <access date>. <URL>. Licence: CC-BY-4.0.",
+   "additionalRestrictions": "Datasets may not be used for or in conjunction with the promotion of a commercial enterprise or its products or services; no FAO sponsorship or endorsement claims.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Some datasets contain third-party data with extra restrictions noted in their metadata.",
+   "verifiedAt": "2026-10-01",
+   "status": "RESTRICTED",
+   "confidence": "high",
+   "evidence": "Terms say CC BY 4.0 (not CC BY-NC-SA) but bar use in conjunction with promotion of a commercial enterprise; not used by Dehesa Index.",
+   "used": false,
+   "aliases": [],
+   "notes": "Earlier project notes said 'CC BY-NC-SA / no comercial'; the current FAO terms say CC BY 4.0 with the promotion restriction above."
+  },
+  "mapa_es": {
+   "name": "Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
+   "url": "https://www.mapa.gob.es/",
+   "country": "ES",
+   "licenseId": "CUSTOM",
+   "licenseName": "MAPA aviso legal: reuse without prior authorisation if the source is cited",
+   "licenseUrl": "https://www.mapa.gob.es/es/atencion-al-ciudadano/aviso-legal",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "conditional",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
+   "additionalRestrictions": "Keep update-date and reuse-condition metadata; third-party content excluded. The sibling SIAR notice explicitly allows commercial use but that is a different dataset.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Content with third-party rights is excluded from free reuse.",
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "Portal information may be reused without authorisation if the source is cited; commercial use and derivatives are not stated explicitly for the price-index datasets (nor for RECAN).",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "franceagrimer": {
+   "name": "FranceAgriMer (VISIONet)",
+   "url": "https://visionet.franceagrimer.fr/",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte / Open Licence 2.0 (Etalab) on the data.gouv.fr copies; VISIONet footer reads 'tous droits réservés'",
+   "licenseUrl": "https://www.data.gouv.fr/",
+   "commercialUse": "conditional",
+   "derivatives": "conditional",
+   "redistribution": "conditional",
+   "attributionRequired": true,
+   "attributionText": "Source : FranceAgriMer – Données originales téléchargées depuis https://visionet.franceagrimer.fr/ – Licence Ouverte 2.0",
+   "additionalRestrictions": "Contradiction: data.gouv.fr copies are LO 2.0 but the VISIONet site says all rights reserved. Treat VISIONet-only series as unlicensed until FranceAgriMer confirms in writing or the series is found on data.gouv.fr.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "LO 2.0 does not cover third-party rights.",
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "A FranceAgriMer data.gouv.fr dataset states Licence Ouverte 2.0; the VISIONet footer says all rights reserved.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "destatis": {
+   "name": "Destatis (GENESIS-Online)",
+   "url": "https://www-genesis.destatis.de/",
+   "country": "DE",
+   "licenseId": "DL-DE-BY-2.0",
+   "licenseName": "Datenlizenz Deutschland – Namensnennung – Version 2.0",
+   "licenseUrl": "https://www.destatis.de/EN/Service/Legal-Notice/CopyrightGENESISOnlineDatabase.html",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Datenquelle: Statistisches Bundesamt (Destatis), Genesis-Online; Datenlizenz by-2-0",
+   "additionalRestrictions": "Modifications must be marked as such.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Destatis states GENESIS-Online content, including the API, is under dl-de/by-2.0 (commercial use, modification and distribution with source note and change marking).",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "ble": {
+   "name": "BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de)",
+   "url": "https://open-data.ble.de/",
+   "country": "DE",
+   "licenseId": "UNKNOWN",
+   "licenseName": "BLE data licence not confirmed (site footer CC BY-NC-ND 4.0 applies to page texts, not datasets)",
+   "licenseUrl": "https://www.ble.de/DE/Service/Open-Data/open-data_node.html",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": "Quelle: Bundesanstalt für Landwirtschaft und Ernährung (BLE)",
+   "additionalRestrictions": "open-data.ble.de blocks automated fetching via robots.txt; check each dataset's licence on the portal or GovData, or ask opendata@ble.de.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "low",
+   "evidence": "The BLE Open-Data page names no data licence; the CC BY-NC-ND footer belongs to the page texts.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "statbel": {
+   "name": "Statbel (Statistics Belgium)",
+   "url": "https://statbel.fgov.be/en/open-data",
+   "country": "BE",
+   "licenseId": "STATBEL-OPEN",
+   "licenseName": "Statbel open data: free reuse, commercial included, citing the source",
+   "licenseUrl": "https://statbel.fgov.be/en/open-data",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Statbel (Statistics Belgium)",
+   "additionalRestrictions": "Automated re-check of the page returned a CAPTCHA on 2026-10-01.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-09-30",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Open-data statement quoted in scripts/update-belgium.py when the pipeline was built (2026-09-30): free, unrestricted reuse for commercial and non-commercial purposes with source citation.",
+   "used": true,
+   "aliases": [],
+   "notes": "Evidence is the project's own earlier reading of the Statbel page; not re-confirmable by automated fetch (CAPTCHA)."
+  },
+  "ine_pt": {
+   "name": "INE — Statistics Portugal",
+   "url": "https://www.ine.pt/",
+   "country": "PT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (INE datasets on dados.gov.pt)",
+   "licenseUrl": "https://dados.gov.pt/en/datasets/populacao-residente-n-o-2/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fonte: Instituto Nacional de Estatística (INE), CC BY 4.0",
+   "additionalRestrictions": "INE's own terms page and API terms could not be read (robots.txt); verified on one INE dataset page on dados.gov.pt.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "The official open-data portal lists INE indicator datasets under CC BY 4.0.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "dst_dk": {
+   "name": "Statistics Denmark (StatBank)",
+   "url": "https://www.statbank.dk/",
+   "country": "DK",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (Statistics Denmark source-reference rules)",
+   "licenseUrl": "https://www.dst.dk/en/presse/kildeangivelse",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Statistics Denmark – StatBank.dk/<table code>. For modified data: 'Own calculations based on data from Statistics Denmark.'",
+   "additionalRestrictions": "Disclose modifications; the Statistics Denmark logo cannot be used.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Statistics Denmark says its data on dst.dk and statbank.dk is CC BY 4.0, free for commercial use with a source reference.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "cbs_nl": {
+   "name": "Statistics Netherlands (CBS StatLine)",
+   "url": "https://opendata.cbs.nl/",
+   "country": "NL",
+   "licenseId": "CUSTOM",
+   "licenseName": "CBS open data: free re-use with mandatory source citation (full 'Disclaimer open data' not read)",
+   "licenseUrl": "https://www.cbs.nl/en-gb/statline/dataportaal/informatie/general-information-on-the-use-of-cbs-open-data",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": "Source: CBS (Statistics Netherlands)",
+   "additionalRestrictions": "The page defers to a separate 'Disclaimer open data' that could not be retrieved; a CC BY 4.0 label was declared in earlier project files but not re-confirmed.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "CBS says open data may be used and re-used free of charge with mandatory source citation; commercial use and derivatives are not addressed on the pages read.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "defra": {
+   "name": "UK Defra (gov.uk agricultural statistics)",
+   "url": "https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.data.gov.uk/dataset/c6db55f3-d2ed-4704-9ebf-5f514f081031/agricultural_price_index",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Defra.",
+   "additionalRestrictions": "No implied endorsement; excludes personal data, logos and third-party rights. Only the Agricultural Price Index dataset page was read; milk-price datasets and the statistics API not individually checked.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "OGL excludes third-party rights; check individual tables for third-party sourced data.",
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "The data.gov.uk page for Defra's Agricultural Price Index states all content is available under OGL v3.0.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "statistik_austria": {
+   "name": "Statistik Austria (open.data)",
+   "url": "https://data.statistik.gv.at/",
+   "country": "AT",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 (open.data terms)",
+   "licenseUrl": "https://data.statistik.gv.at/web/?page=terms",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Datenquelle: Statistik Austria — data.statistik.gv.at",
+   "additionalRestrictions": "Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "The open.data terms page states CC BY 4.0, allowing commercial use and modification.",
+   "used": false,
+   "aliases": [],
+   "notes": "Austrian series in Dehesa Index are fetched through Eurostat (source 'eurostat'); this entry documents the national publisher."
+  },
+  "statcan": {
+   "name": "Statistics Canada",
+   "url": "https://www.statcan.gc.ca/",
+   "country": "CA",
+   "licenseId": "CUSTOM",
+   "licenseName": "Statistics Canada Open Licence",
+   "licenseUrl": "https://www.statcan.gc.ca/en/terms-conditions/open-licence",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "additionalRestrictions": "No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP).",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Third-party intellectual property stays with its owners.",
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "The licence grants a worldwide, royalty-free right to use, reproduce, distribute and sell the information and adapted products, including commercially, with the stated notice.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "bank_of_canada": {
+   "name": "Bank of Canada (Valet API)",
+   "url": "https://www.bankofcanada.ca/valet/",
+   "country": "CA",
+   "licenseId": "CUSTOM",
+   "licenseName": "Bank of Canada website content terms",
+   "licenseUrl": "https://www.bankofcanada.ca/terms/",
+   "commercialUse": "conditional",
+   "derivatives": "conditional",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Bank of Canada (note any modifications)",
+   "additionalRestrictions": "No implied endorsement; if offered through paid services users must be told it is free on the Bank's website; do not circumvent Valet rate limits; logo needs permission.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Third-party content stays under the original owners' rights.",
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "The terms permit free use of website content with credit, but the Valet API terms were not read separately; project notes already listed this as pending written confirmation.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "cbsa_tariff": {
+   "name": "Canada Border Services Agency — Customs Tariff",
+   "url": "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html",
+   "country": "CA",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No explicit licence found for the Customs Tariff; Canada.ca terms apply by default",
+   "licenseUrl": "https://www.canada.ca/en/transparency/terms.html",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": null,
+   "additionalRestrictions": "Under the Canada.ca terms, commercial redistribution of Government of Canada content needs prior written permission; non-commercial reproduction is allowed with source and URL.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Some Canada.ca material is not Crown copyright; not checked for the tariff.",
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "No licence or copyright notice on the CBSA tariff pages; an Open Government Licence – Canada grant is not confirmed.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "alberta_ag": {
+   "name": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "url": "https://open.alberta.ca/",
+   "country": "CA",
+   "licenseId": "OGL-Alberta",
+   "licenseName": "Open Government Licence – Alberta (only where a publication is marked under it; not confirmed for this series)",
+   "licenseUrl": "https://open.alberta.ca/licence",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains information licensed under the Open Government Licence – Alberta.",
+   "additionalRestrictions": "No suggestion of official status; excludes personal information, logos and trademarks.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Rights the provider is not authorised to license are excluded.",
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "medium",
+   "evidence": "The open.alberta.ca page for the Weekly crop market review showed an empty licence field; the licence for this series is unconfirmed.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "abs": {
+   "name": "Australian Bureau of Statistics (Data API)",
+   "url": "https://www.abs.gov.au/",
+   "country": "AU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (ABS copyright statement)",
+   "licenseUrl": "https://www.abs.gov.au/website-privacy-copyright-and-disclaimer#copyright-and-creative-commons",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Australian Bureau of Statistics",
+   "additionalRestrictions": "Excludes the Coat of Arms, ABS logo, trademarks and unit-record microdata; no endorsement claims. The page does not address the Data API specifically.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Third-party material on the site stays with its owners.",
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Most ABS material is provided under CC BY 4.0; API-delivered datasets are assumed to carry the same licence.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "rba": {
+   "name": "Reserve Bank of Australia (statistical tables)",
+   "url": "https://www.rba.gov.au/statistics/",
+   "country": "AU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International (RBA Copyright and Disclaimer Notice)",
+   "licenseUrl": "https://www.rba.gov.au/copyright/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Reserve Bank of Australia <year>",
+   "additionalRestrictions": "No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Some tables republish third-party series (for example ABS data); the F1.1 cash rate itself is RBA data.",
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "The RBA states most of its material, including the cash rate and financial data, is under CC BY 4.0 with commercial use and adaptation allowed.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "snice_mx": {
+   "name": "Mexico — Secretaría de Economía (SNICE, LIGIE tariff)",
+   "url": "https://www.snice.gob.mx/",
+   "country": "MX",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No terms of use found on the SNICE/LIGIE pages (Libre Uso MX likely framework, unconfirmed)",
+   "licenseUrl": "https://www.snice.gob.mx/cs/avi/snice/ligie.info22.html",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": false,
+   "attributionText": null,
+   "additionalRestrictions": "If Libre Uso MX applied it would allow commercial use and derivatives with attribution; written confirmation from the Secretaría de Economía is needed.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "PENDING",
+   "confidence": "low",
+   "evidence": "The SNICE LIGIE page has no copyright, terms or licence statement.",
+   "used": true,
+   "aliases": [],
+   "notes": null
+  },
+  "ahdb": {
+   "name": "AHDB (UK Agriculture and Horticulture Development Board)",
+   "url": "https://ahdb.org.uk/",
+   "country": "UK",
+   "licenseId": "CUSTOM",
+   "licenseName": "AHDB Website Terms and Conditions",
+   "licenseUrl": "https://ahdb.org.uk/terms-and-conditions",
+   "commercialUse": "no",
+   "derivatives": "no",
+   "redistribution": "no",
+   "attributionRequired": true,
+   "attributionText": null,
+   "additionalRestrictions": "Bans commercial exploitation, spiders/crawlers/scraping and republishing without written permission.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "BLOCKED",
+   "confidence": "high",
+   "evidence": "The terms bar automated access and scraping, commercial exploitation and republishing elsewhere; only limited personal or internal use is licensed.",
+   "used": false,
+   "aliases": [],
+   "notes": null
+  },
+  "cme": {
+   "name": "CME Group (futures market data)",
+   "url": "https://www.cmegroup.com/",
+   "country": "US",
+   "licenseId": "CUSTOM",
+   "licenseName": "CME Group Website Terms of Use; market data only under the CME Information License Agreement",
+   "licenseUrl": "https://www.cmegroup.com/files/terms-of-use.pdf",
+   "commercialUse": "no",
+   "derivatives": "no",
+   "redistribution": "no",
+   "attributionRequired": false,
+   "attributionText": null,
+   "additionalRestrictions": "Personal, non-commercial, revocable website licence; bans redistribution, derivative works, scripts, robots and crawlers.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "BLOCKED",
+   "confidence": "high",
+   "evidence": "Website terms grant only a personal, non-commercial licence; redistribution requires a licensed-distributor agreement.",
+   "used": false,
+   "aliases": [],
+   "notes": null
+  },
+  "dtn": {
+   "name": "DTN / Progressive Farmer (fertilizer prices)",
+   "url": "https://www.dtnpf.com/",
+   "country": "US",
+   "licenseId": "CUSTOM",
+   "licenseName": "DTN Terms and Conditions of Use (proprietary; no public licence found)",
+   "licenseUrl": "https://myaccount.dtn.com/storefront/t/conditionsofUse",
+   "commercialUse": "no",
+   "derivatives": "no",
+   "redistribution": "no",
+   "attributionRequired": false,
+   "attributionText": null,
+   "additionalRestrictions": "Use, copying, publication or distribution of DTN materials requires express prior written permission.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "BLOCKED",
+   "confidence": "medium",
+   "evidence": "No free public licence; a negotiated licence would be needed.",
+   "used": false,
+   "aliases": [],
+   "notes": null
+  },
+  "sima_gpp": {
+   "name": "Portugal — SIMA (GPP) weekly prices",
+   "url": "https://www.gpp.pt/",
+   "country": "PT",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No explicit licence for mass reuse (project note: amber)",
+   "licenseUrl": "https://www.gpp.pt/",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": null,
+   "additionalRestrictions": "Written authorisation from the GPP would be required before use.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-09-30",
+   "status": "PENDING",
+   "confidence": "low",
+   "evidence": "Documented in project notes (not re-verified): no explicit reuse licence.",
+   "used": false,
+   "aliases": [],
+   "notes": "From claude/portugal.md; not re-verified in this session."
+  },
+  "conab": {
+   "name": "Brazil — CONAB",
+   "url": "https://www.conab.gov.br/",
+   "country": "BR",
+   "licenseId": "CC-BY-ND-3.0",
+   "licenseName": "Creative Commons Attribution-NoDerivs 3.0 (as declared on the site)",
+   "licenseUrl": "https://www.conab.gov.br/",
+   "commercialUse": "unclear",
+   "derivatives": "no",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": null,
+   "additionalRestrictions": "No derivatives: unit/currency conversion or re-expression is doubtful; ask gesip@conab.gov.br first.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-09-30",
+   "status": "RESTRICTED",
+   "confidence": "low",
+   "evidence": "Documented in project notes (not re-verified): site declares CC BY-ND 3.0.",
+   "used": false,
+   "aliases": [],
+   "notes": "From claude/paises-datos-abiertos.md; not re-verified in this session."
+  },
+  "cepea": {
+   "name": "Brazil — CEPEA/ESALQ",
+   "url": "https://www.cepea.esalq.usp.br/",
+   "country": "BR",
+   "licenseId": "CUSTOM",
+   "licenseName": "Widget-oriented terms; historical data paid",
+   "licenseUrl": "https://www.cepea.esalq.usp.br/",
+   "commercialUse": "no",
+   "derivatives": "no",
+   "redistribution": "no",
+   "attributionRequired": true,
+   "attributionText": null,
+   "additionalRestrictions": "Do not automate without permission.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-09-30",
+   "status": "RESTRICTED",
+   "confidence": "low",
+   "evidence": "Documented in project notes (not re-verified).",
+   "used": false,
+   "aliases": [],
+   "notes": "From claude/paises-datos-abiertos.md; not re-verified in this session."
+  },
+  "abares": {
+   "name": "Australia — ABARES",
+   "url": "https://www.agriculture.gov.au/abares",
+   "country": "AU",
+   "licenseId": "UNKNOWN",
+   "licenseName": "Licence not assessed (site blocks GitHub Actions)",
+   "licenseUrl": "https://www.agriculture.gov.au/abares",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": null,
+   "additionalRestrictions": "No automatable source verified.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-09-30",
+   "status": "PENDING",
+   "confidence": "low",
+   "evidence": "Documented in project notes (not re-verified): the site blocks GitHub Actions; no series adopted.",
+   "used": false,
+   "aliases": [],
+   "notes": null
+  },
+  "mla": {
+   "name": "Australia — Meat & Livestock Australia (MLA)",
+   "url": "https://www.mla.com.au/",
+   "country": "AU",
+   "licenseId": "CUSTOM",
+   "licenseName": "Registration (myMLA) required",
+   "licenseUrl": "https://www.mla.com.au/",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": null,
+   "additionalRestrictions": "Ask MLA for access/licence before any use.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-09-30",
+   "status": "RESTRICTED",
+   "confidence": "low",
+   "evidence": "Documented in project notes (not re-verified).",
+   "used": false,
+   "aliases": [],
+   "notes": null
+  }
+ },
+ "files": {
+  "data/latest.json": {
+   "fromField": "sourceId"
+  },
+  "data/history.json": {
+   "fromField": "sourceId"
+  },
+  "data/normalized.json": {
+   "fromField": "sourceId"
+  },
+  "data/spain-stats.json": {
+   "byCountry": {
+    "ES": "mapa_es"
+   }
+  },
+  "data/france-stats.json": {
+   "byCountry": {
+    "FR": "franceagrimer"
+   }
+  },
+  "data/germany-stats.json": {
+   "bySourceGroupPrefix": {
+    "Destatis": "destatis",
+    "BLE": "ble"
+   }
+  },
+  "data/belgium-stats.json": {
+   "byCountry": {
+    "BE": "statbel"
+   }
+  },
+  "data/austria-stats.json": {
+   "byCountry": {
+    "AT": "eurostat"
+   }
+  },
+  "data/portugal-stats.json": {
+   "byCountry": {
+    "PT": "ine_pt"
+   }
+  },
+  "data/portugal-eurostat-stats.json": {
+   "byCountry": {
+    "PT": "eurostat"
+   }
+  },
+  "data/canada-stats.json": {
+   "byCountry": {
+    "CA": "statcan"
+   }
+  },
+  "data/country-stats.json": {
+   "byCountry": {
+    "DK": "dst_dk",
+    "NL": "cbs_nl",
+    "AU": "abs"
+   }
+  },
+  "data/australia-trade-stats.json": {
+   "byCountry": {
+    "AU": "abs"
+   }
+  },
+  "data/eu-trade-stats.json": {
+   "default": "eurostat_comext"
+  },
+  "data/interest-rates-stats.json": {
+   "byCountry": {
+    "US": "bis",
+    "EU": "ecb",
+    "CA": "bank_of_canada",
+    "AU": "rba"
+   }
+  },
+  "data/country-macro.json": {
+   "sources": [
+    "world_bank_wdi"
+   ],
+   "notes": "Indicadores macro por pais (Banco Mundial WDI); verificar licencia por indicador."
+  },
+  "data/country-wages.json": {
+   "sources": [
+    "eurostat",
+    "statcan",
+    "abs"
+   ],
+   "notes": "Sueldos agrarios de referencia; cada pais cita su fuente en el propio fichero."
+  },
+  "data/denmark-prices.json": {
+   "sources": [
+    "dst_dk"
+   ]
+  },
+  "data/au-trade-products.json": {
+   "sources": [
+    "abs"
+   ]
+  },
+  "data/eu-trade-products.json": {
+   "sources": [
+    "eurostat_comext"
+   ]
+  },
+  "data/recan.json": {
+   "sources": [
+    "mapa_es"
+   ]
+  },
+  "data/fx-history.json": {
+   "sources": [
+    "ecb"
+   ]
+  },
+  "data/supply-demand.json": {
+   "sources": [
+    "usda_fas_psd"
+   ]
+  },
+  "data/supply-demand-map.json": {
+   "sources": [
+    "usda_fas_psd"
+   ]
+  },
+  "data/export-sales.json": {
+   "sources": [
+    "usda_fas_esr"
+   ]
+  },
+  "data/gats.json": {
+   "sources": [
+    "usda_fas_gats"
+   ]
+  },
+  "data/ers.json": {
+   "sources": [
+    "usda_ers"
+   ]
+  },
+  "data/crop-progress.json": {
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  "data/nass-prices.json": {
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  "data/nass-crops.json": {
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  "data/nass-livestock.json": {
+   "sources": [
+    "usda_nass"
+   ]
+  },
+  "data/drought.json": {
+   "sources": [
+    "us_drought_monitor"
+   ]
+  },
+  "data/climate.json": {
+   "sources": [
+    "nasa_power"
+   ]
+  },
+  "data/climate-history.json": {
+   "sources": [
+    "nasa_power"
+   ]
+  },
+  "data/ams-grain-daily.json": {
+   "sources": [
+    "usda_ams_mars"
+   ]
+  },
+  "data/alberta-weekly.json": {
+   "sources": [
+    "alberta_ag"
+   ]
+  },
+  "data/alberta-weekly-report.json": {
+   "sources": [
+    "alberta_ag"
+   ]
+  },
+  "data/canada-coverage.json": {
+   "sources": [
+    "statcan"
+   ]
+  },
+  "data/us-tariffs.json": {
+   "sources": [
+    "us_tariffs"
+   ]
+  },
+  "data/us-tariff-measures.json": {
+   "sources": [
+    "us_tariffs"
+   ]
+  },
+  "data/tariffs-eu.json": {
+   "sources": [
+    "eu_taric"
+   ]
+  },
+  "data/tariffs-mx.json": {
+   "sources": [
+    "snice_mx"
+   ]
+  },
+  "data/tariffs-ca.json": {
+   "sources": [
+    "cbsa_tariff"
+   ]
+  },
+  "data/eu/": {
+   "default": "eu_agrifood",
+   "notes": "Catalogo Agri-food UE (data/eu/<familia>/<serie>.json)"
+  },
+  "data/ams/": {
+   "default": "usda_ams_mars",
+   "notes": "Informes MARS (data/ams/)"
+  }
+ },
+ "derived": [
+  "api.json",
+  "alerts.json",
+  "catalog.json",
+  "daily-brief.json",
+  "data-quality.json",
+  "dehesa-index.json",
+  "dehesa-index-us.json",
+  "intelligence.json",
+  "cross-market.json",
+  "news-status.json",
+  "news.json",
+  "pipeline-status.json",
+  "product-compare.json",
+  "quality.json",
+  "revisions.json",
+  "search-index.json",
+  "series-registry.json",
+  "snapshot-contract.json",
+  "watch-index.json",
+  "alberta-weekly-debug.json"
+ ]
+}

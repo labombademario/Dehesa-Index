@@ -44,7 +44,9 @@
      "n",
      "tier",
      "file",
-     "source"
+     "source",
+     "sourceId",
+     "licenseId"
     ],
     "properties": {
      "id": {
@@ -94,6 +96,14 @@
       "minLength": 1
      },
      "source": {
+      "type": "string",
+      "minLength": 1
+     },
+     "sourceId": {
+      "type": "string",
+      "minLength": 1
+     },
+     "licenseId": {
       "type": "string",
       "minLength": 1
      }

@@ -28,6 +28,24 @@ def write_if_changed(path, text, written):
         if path.read_text() == text: return False
     except Exception: pass
     path.write_text(text); return True
+LIC = json.loads((ROOT / 'data/license-registry.json').read_text(encoding='utf-8'))  # estricto: sin registro de licencias no hay catalogo
+LIC_ALIAS = {}
+for _k, _v in LIC['sources'].items():
+    LIC_ALIAS[_k] = _k
+    for _a in _v.get('aliases', []): LIC_ALIAS[_a] = _k
+def lic(sid):
+    """(sourceId canonico, licenseId) de una fuente del registro; detiene el build si no existe."""
+    k = LIC_ALIAS.get(sid)
+    if not k: raise KeyError('sourceId %r no esta en data/license-registry.json' % sid)
+    return k, LIC['sources'][k]['licenseId']
+def stats_source(n, cc, s):
+    m = LIC['files'].get('data/%s.json' % n)
+    if not m: raise KeyError('data/%s.json sin entrada en el registro de licencias' % n)
+    if cc in m.get('byCountry', {}): return m['byCountry'][cc]
+    for pf, sid in m.get('bySourceGroupPrefix', {}).items():
+        if (s.get('sourceGroup') or '').startswith(pf): return sid
+    if m.get('default'): return m['default']
+    raise KeyError('%s: %s/%s sin fuente en el registro de licencias' % (n, cc, s.get('id')))
 def main():
     reg = {}
     # estricto: sin registro no sabemos que series duplicadas excluir; se detiene el build en vez de publicar un catalogo distinto
@@ -64,7 +82,7 @@ def main():
         if not pts: continue
         names.setdefault(cc, SPECIAL.get(cc, cc))
         sr = {'id': 'product:' + o['id'].replace('di_', '', 1), 'group': 'product', 'label': '%s · %s' % (o['product'].replace('_', ' ').capitalize(), o.get('sourceId', '')), 'unit': '%s/%s' % (o.get('currency', ''), o.get('unit', '')), 'frequency': o.get('frequency', ''),
-              'latestPeriod': pts[-1][0], 'latest': o.get('value'), 'changePct': o.get('changePct'), 'points': pts}
+              'latestPeriod': pts[-1][0], 'latest': o.get('value'), 'changePct': o.get('changePct'), 'points': pts, '_sid': o['sourceId']}
         by_c.setdefault(cc, []).append(('latest', sr, None)); nprod += 1
     # --- catalogo Agri-food UE (data/eu): solo metadatos, apuntan a los ficheros que ya existen (formato 'eu-regions')
     eu_rows = {}
@@ -83,7 +101,7 @@ def main():
                 sid = 'eu:%s:%s' % (fam['id'], se['id']) + ('' if seen[cc] == 1 else '#%d' % seen[cc])
                 ch = round((last[1] - prev[1]) / prev[1] * 100, 2) if last[1] is not None and prev[1] else None
                 row = {'id': sid, 'label': lab, 'unit': se.get('unit', ''), 'freq': se.get('freq', ''), 'group': 'eu_' + fam['id'], 'latestPeriod': last[0], 'latest': last[1], 'changePct': ch, 'first': rg.get('first'), 'n': rg.get('n'),
-                       'tier': 3, 'canonical': None, 'tags': tags(lab), 'source': 'eu/%s.json' % fam['id'], 'file': f, 'format': 'eu-regions', 'c': cc}
+                       'tier': 3, 'canonical': None, 'tags': tags(lab), 'source': 'eu/%s.json' % fam['id'], 'file': f, 'format': 'eu-regions', 'c': cc, 'sourceId': lic('eu_agrifood')[0], 'licenseId': lic('eu_agrifood')[1]}
                 if rg.get('m'): row['m'] = rg['m']
                 eu_rows.setdefault(cc, []).append(row)
     neu = sum(len(v) for v in eu_rows.values())
@@ -107,7 +125,8 @@ def main():
                 for n, s, r in ch:
                     pts = s.get('points', [])
                     cat.append({'id': s['id'], 'label': s.get('label', ''), 'unit': s.get('unit', ''), 'freq': s.get('frequency', ''), 'group': g, 'latestPeriod': s.get('latestPeriod'), 'latest': s.get('latest'), 'changePct': s.get('changePct'),
-                                'first': pts[0][0] if pts else None, 'n': len(pts), 'tier': r['tier'] if r else None, 'canonical': r['canonicalSeriesId'] if r else None, 'tags': tags(s.get('label', '')), 'source': n + '.json', 'file': rel})
+                                'first': pts[0][0] if pts else None, 'n': len(pts), 'tier': r['tier'] if r else None, 'canonical': r['canonicalSeriesId'] if r else None, 'tags': tags(s.get('label', '')), 'source': n + '.json', 'file': rel,
+                                'sourceId': lic(s['_sid'] if n == 'latest' else stats_source(n, cc, s))[0], 'licenseId': lic(s['_sid'] if n == 'latest' else stats_source(n, cc, s))[1]})
             gs = [x for x in cat if x['group'] == g]
             mg[g] = {'n': len(gs), 'files': files, 'latestPeriod': max([x['latestPeriod'] for x in gs if x['latestPeriod']] or [None]), 'tags': sorted({t for x in gs for t in x['tags']})}
         cat.extend(eu_rows.get(cc, []))

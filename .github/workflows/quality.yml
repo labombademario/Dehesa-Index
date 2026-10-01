@@ -45,6 +45,9 @@ jobs:
       - name: Data catalog integrity (manifest, catalogs, shards)
         run: python3 scripts/check-catalog.py --strict
 
+      - name: License gate (registry, file coverage, catalog propagation, legal text)
+        run: python3 scripts/check-licenses.py
+
       - name: Service worker version matches the code
         run: node scripts/stamp-sw.mjs --check
 
