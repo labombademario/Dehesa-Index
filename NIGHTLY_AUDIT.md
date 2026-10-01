@@ -3,7 +3,7 @@
 Auditoria de cierre del plan nocturno. Reglas que han regido todo el trabajo: no inventar datos, no rellenar huecos, no asumir licencias, no convertir correlaciones en predicciones y no sacrificar trazabilidad. Nada de lo que sigue esconde un error para dejar un test en verde.
 
 ## 1. Estado
-- **HEAD**: `1aed3e8` en `main`, arbol limpio. Los workflows refactorizados no se han podido ejecutar desde aqui (no hay `gh`/CI accesible): su resultado en GitHub Actions **no esta verificado**.
+- **HEAD**: ultimo commit de codigo `1aed3e8` (este informe va en el commit siguiente) en `main`, arbol limpio. Los workflows refactorizados no se han podido ejecutar desde aqui (no hay `gh`/CI accesible): su resultado en GitHub Actions **no esta verificado**.
 - **P0 abiertos: ninguno.** Hay avisos y deuda tecnica (secciones 7 y 8).
 
 ## 2. Commits de la noche (tras `422ce18`, informe de endurecimiento)
@@ -81,7 +81,7 @@ Paginas nuevas: `mi-seguimiento` 660 KB / 158 KB, `relaciones` 331 KB / 93 KB, `
 ## 8. Deuda tecnica
 - `data/normalized.json` 13,5 MB y `catalogo.html` ~2,9 MB; `producto.html` de productos sin ficha 3.0 ~4,4 MB.
 - Observatorio en movil: 47 tarjetas de "nuevas observaciones" (pagina de ~19.000 px): conviene paginar.
-- Matriz de cobertura: 2.423 de 3.200 celdas sin dato, pero el 40 % de las series de varios grupos no llevan etiqueta de producto (p. ej. 227 de `crops`, 245 de `trade`, 230 de `partners`): mejorar el etiquetado reduce falsos huecos. Los ficheros USDA con formato propio (AMS, ERS, crop-progress, sequia) no entran en la matriz.
+- Matriz de cobertura: 2.423 de 3.200 celdas sin dato, pero muchas series no llevan etiqueta de producto y no entran en la matriz (p. ej. 227 de `crops`, 245 de `trade`, 230 de `partners`): mejorar el etiquetado reduce falsos huecos. Los ficheros USDA con formato propio (AMS, ERS, crop-progress, sequia) no entran en la matriz.
 - La cola de fuentes (31 candidatas curadas) **no se ha re-verificado**: sale de notas del proyecto (`verification = NOT_REVERIFIED`).
 
 ## 9. Cobertura y fuentes
