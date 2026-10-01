@@ -1,0 +1,33 @@
+01:25:10 mensual 37
+01:25:39 ERROR socios MERCH_EXP 0 <HTTPError 404: 'Not Found'>
+01:26:07 ERROR socios MERCH_IMP 0 <HTTPError 404: 'Not Found'>
+01:26:36 ERROR socios MERCH_EXP 001 <HTTPError 404: 'Not Found'>
+01:27:05 ERROR socios MERCH_IMP 001 <HTTPError 404: 'Not Found'>
+01:27:33 ERROR socios MERCH_EXP 011 <HTTPError 404: 'Not Found'>
+01:28:02 ERROR socios MERCH_IMP 011 <HTTPError 404: 'Not Found'>
+01:28:30 ERROR socios MERCH_EXP 012 <HTTPError 404: 'Not Found'>
+01:28:59 ERROR socios MERCH_IMP 012 <HTTPError 404: 'Not Found'>
+01:29:28 ERROR socios MERCH_EXP 022 <HTTPError 404: 'Not Found'>
+01:29:56 ERROR socios MERCH_IMP 022 <HTTPError 404: 'Not Found'>
+01:30:25 ERROR socios MERCH_EXP 024 <HTTPError 404: 'Not Found'>
+01:30:54 ERROR socios MERCH_IMP 024 <HTTPError 404: 'Not Found'>
+01:31:23 ERROR socios MERCH_EXP 041 <HTTPError 404: 'Not Found'>
+01:31:51 ERROR socios MERCH_IMP 041 <HTTPError 404: 'Not Found'>
+01:32:20 ERROR socios MERCH_EXP 043 <HTTPError 404: 'Not Found'>
+01:32:49 ERROR socios MERCH_IMP 043 <HTTPError 404: 'Not Found'>
+01:33:18 ERROR socios MERCH_EXP 044 <HTTPError 404: 'Not Found'>
+01:33:47 ERROR socios MERCH_IMP 044 <HTTPError 404: 'Not Found'>
+01:34:15 ERROR socios MERCH_EXP 061 <HTTPError 404: 'Not Found'>
+01:34:44 ERROR socios MERCH_IMP 061 <HTTPError 404: 'Not Found'>
+01:35:13 ERROR socios MERCH_EXP 112 <HTTPError 404: 'Not Found'>
+01:35:42 ERROR socios MERCH_IMP 112 <HTTPError 404: 'Not Found'>
+01:36:10 ERROR socios MERCH_EXP 222 <HTTPError 404: 'Not Found'>
+01:36:39 ERROR socios MERCH_IMP 222 <HTTPError 404: 'Not Found'>
+01:37:08 ERROR socios MERCH_EXP 263 <HTTPError 404: 'Not Found'>
+01:37:37 ERROR socios MERCH_IMP 263 <HTTPError 404: 'Not Found'>
+01:38:07 ERROR socios MERCH_EXP 268 <HTTPError 404: 'Not Found'>
+01:38:35 ERROR socios MERCH_IMP 268 <HTTPError 404: 'Not Found'>
+01:39:04 ERROR socios MERCH_EXP 56 <HTTPError 404: 'Not Found'>
+01:39:33 ERROR socios MERCH_IMP 56 <HTTPError 404: 'Not Found'>
+01:39:33 socios 0
+01:39:33 series 37 productos 0
