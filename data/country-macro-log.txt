@@ -1,0 +1,9 @@
+02:01:23 gdp: 11 paises
+02:01:24 gdppc: 11 paises
+02:01:24 pop: 11 paises
+02:01:25 unemp: 11 paises
+02:01:25 agri: 11 paises
+02:01:25   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ESP/FRA/DEU/BEL/AUT/PRT/DNK/NLD: HTTP Error 403: Forbidden
+02:01:27   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ESP/FRA/DEU/BEL/AUT/PRT/DNK/NLD: HTTP Error 403: Forbidden
+02:01:29   error https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP/ESP/FRA/DEU/BEL/AUT/PRT/DNK/NLD: HTTP Error 403: Forbidden
+02:01:31 debt: 0 paises
