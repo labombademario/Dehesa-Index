@@ -296,8 +296,7 @@
   }
   function headHtml() {
     if (!CTX.inst.length && !CTX.idx.length) return '<div class="pt-note">' + esc(t('noPrice')) + '</div>';
-    return '<div class="pt-cards">' + CTX.inst.map(function (o) { return cardHtml(o, false); }).join('') + '</div>' +
-      (CTX.idx.length ? '<div class="pt-cards">' + CTX.idx.map(function (o) { return cardHtml(o, true); }).join('') + '</div>' : '') +
+    return '<div class="pt-cards">' + CTX.inst.map(function (o) { return cardHtml(o, false); }).join('') + CTX.idx.map(function (o) { return cardHtml(o, true); }).join('') + '</div>' +
       '<div id="pt-follow">' + followHtml() + '</div>' + srcLine(CTX.inst.concat(CTX.idx).map(function (o) { return o.sourceId; }));
   }
   function srcLine(ids, extra) {

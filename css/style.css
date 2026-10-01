@@ -1383,3 +1383,35 @@ html[data-theme="dark"] .rl-st-WEAK_OR_UNSTABLE { color: #e0b04a; }
 @media (max-width: 520px) { .di-tape-t .c { width: 4.9em; } .di-hero2 .di-hero-ctas { flex-direction: column; align-items: stretch; width: 100%; } .di-hero2 .di-hero-ctas a { text-align: center; } }
 .di-tape-t th { width: 6.4em; padding-right: 8px; }
 @media (max-width: 520px) { .di-tape-t th { width: 4.4em; } }
+
+/* Precios locales: tarjeta móvil con el precio primero */
+@media (max-width:760px){
+  table.pl-t.di-cards-m tr{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;padding:10px 12px}
+  table.pl-t.di-cards-m td{display:block;text-align:left;padding:2px 0!important;min-width:0}
+  table.pl-t.di-cards-m td::before{display:block;margin:0 0 1px;padding:0;flex:none;font-weight:600;font-size:10.5px}
+  table.pl-t.di-cards-m td:nth-child(1){grid-column:1;grid-row:1}
+  table.pl-t.di-cards-m td:nth-child(2){grid-column:2;grid-row:1;text-align:right}
+  table.pl-t.di-cards-m td:nth-child(1)::before,table.pl-t.di-cards-m td:nth-child(2)::before{display:none}
+  table.pl-t.di-cards-m td:nth-child(2){font-size:17px}
+  table.pl-t.di-cards-m td:nth-child(3){grid-column:1;grid-row:2;margin-top:6px}
+  table.pl-t.di-cards-m td:nth-child(4){grid-column:2;grid-row:2;margin-top:6px;text-align:right}
+  table.pl-t.di-cards-m td:nth-child(5){grid-column:1;grid-row:3}
+  table.pl-t.di-cards-m td:nth-child(6){grid-column:2;grid-row:3;text-align:right}
+  table.pl-t.di-cards-m td:nth-child(7){grid-column:1/-1;grid-row:4;margin-top:4px}
+  table.pl-t.di-cards-m td:nth-child(7)::before{display:inline;margin-right:6px}
+  .pl-what summary{min-height:32px}
+}
+@media (max-width:760px){
+  table.pl-t.di-cards-m td:nth-child(2){white-space:normal!important}
+  details.pl-what:not([open]){padding-bottom:8px!important}
+}
+
+/* Ficha: mismo ancho que la cabecera, tarjetas homogéneas, chips en una fila en móvil */
+.pt-wrap{max-width:none;margin:0}
+.pt-card{display:flex;flex-direction:column}
+.pt-card .pt-spark{margin-top:auto;padding-top:8px}
+@media (max-width:760px){
+  .pt-tabs{flex-wrap:nowrap;overflow-x:auto;margin-left:-14px;margin-right:-14px;padding:2px 14px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pt-tabs::-webkit-scrollbar{display:none}
+  .pt-tabs .pt-chip{flex:0 0 auto}
+}

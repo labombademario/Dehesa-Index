@@ -16,7 +16,7 @@
       errLoad: 'No se pudo cargar esta selección. Inténtalo de nuevo más tarde.', loading: 'Cargando…',
       runNO_KEY: 'El pipeline de USDA está preparado pero aún no tiene la clave de la API MARS: se muestran los últimos datos válidos disponibles.',
       runERROR: 'La última actualización falló: se conservan los últimos datos válidos (mira la frescura de cada fila).', runAUTH_FAILURE: 'USDA rechazó la clave de la API en la última ejecución: se conservan los últimos datos válidos.', runPARTIAL: 'La última actualización fue parcial: algunos informes conservan su último dato válido.',
-      stateRange: 'Rango entre mercados', on: 'el', markets: 'mercados', notComparable: 'Los mercados de la tabla comparten la misma especificación y tipo de comprador. No se calcula una media del estado ni una variación combinada.',
+      whatIs: 'Qué representa cada precio', stateRange: 'Rango entre mercados', on: 'el', markets: 'mercados', notComparable: 'Los mercados de la tabla comparten la misma especificación y tipo de comprador. No se calcula una media del estado ni una variación combinada.',
       repr_REGION: 'USDA publica un resumen (promedio y rango mínimo–máximo) para la región «{loc}». No es la oferta de un elevador concreto.',
       repr_TERMINAL: 'Ofertas de terminales o cargaderos en «{loc}». Un precio de terminal no es un precio de elevador local.',
       repr_EXPORT_MARKET: 'Ofertas de elevadores o puertos de exportación en «{loc}». No es un precio local del agricultor.',
@@ -43,7 +43,7 @@
       errLoad: 'This selection could not be loaded. Please try again later.', loading: 'Loading…',
       runNO_KEY: 'The USDA pipeline is ready but does not have the MARS API key yet: the latest valid data available is shown.',
       runERROR: 'The last update failed: the latest valid data is kept (check each row’s freshness).', runAUTH_FAILURE: 'USDA rejected the API key in the last run: the latest valid data is kept.', runPARTIAL: 'The last update was partial: some reports keep their latest valid data.',
-      stateRange: 'Range across markets', on: 'on', markets: 'markets', notComparable: 'The markets in this table share the same specification and buyer type. No state average or combined change is computed.',
+      whatIs: 'What each price represents', stateRange: 'Range across markets', on: 'on', markets: 'markets', notComparable: 'The markets in this table share the same specification and buyer type. No state average or combined change is computed.',
       repr_REGION: 'USDA publishes one summary (average and low–high range) for the “{loc}” region. It is not the bid of a named elevator.',
       repr_TERMINAL: 'Bids from terminals or river loading elevators in “{loc}”. A terminal price is not a local elevator price.',
       repr_EXPORT_MARKET: 'Bids from export elevators or ports in “{loc}”. It is not a local farmer price.',
@@ -70,7 +70,7 @@
       errLoad: 'Cette sélection n’a pas pu être chargée. Réessayez plus tard.', loading: 'Chargement…',
       runNO_KEY: 'Le pipeline USDA est prêt mais n’a pas encore la clé de l’API MARS : les dernières données valides disponibles sont affichées.',
       runERROR: 'La dernière mise à jour a échoué : les dernières données valides sont conservées (voir la fraîcheur de chaque ligne).', runAUTH_FAILURE: 'L’USDA a rejeté la clé de l’API lors de la dernière exécution : les dernières données valides sont conservées.', runPARTIAL: 'La dernière mise à jour était partielle : certains rapports conservent leur dernière donnée valide.',
-      stateRange: 'Fourchette entre marchés', on: 'le', markets: 'marchés', notComparable: 'Les marchés du tableau partagent la même spécification et le même type d’acheteur. Aucune moyenne d’État ni variation combinée n’est calculée.',
+      whatIs: 'Ce que représente chaque prix', stateRange: 'Fourchette entre marchés', on: 'le', markets: 'marchés', notComparable: 'Les marchés du tableau partagent la même spécification et le même type d’acheteur. Aucune moyenne d’État ni variation combinée n’est calculée.',
       repr_REGION: 'L’USDA publie un résumé (moyenne et fourchette min–max) pour la région « {loc} ». Ce n’est pas l’offre d’un silo précis.',
       repr_TERMINAL: 'Offres de terminaux ou de quais de chargement à « {loc} ». Un prix de terminal n’est pas un prix de silo local.',
       repr_EXPORT_MARKET: 'Offres de silos ou ports d’exportation à « {loc} ». Ce n’est pas un prix local payé à l’agriculteur.',
@@ -97,7 +97,7 @@
       errLoad: 'Impossibile caricare questa selezione. Riprova più tardi.', loading: 'Caricamento…',
       runNO_KEY: 'La pipeline USDA è pronta ma non ha ancora la chiave dell’API MARS: vengono mostrati gli ultimi dati validi disponibili.',
       runERROR: 'L’ultimo aggiornamento è fallito: restano gli ultimi dati validi (vedi la freschezza di ogni riga).', runAUTH_FAILURE: 'L’USDA ha rifiutato la chiave API nell’ultima esecuzione: restano gli ultimi dati validi.', runPARTIAL: 'L’ultimo aggiornamento è stato parziale: alcuni rapporti mantengono l’ultimo dato valido.',
-      stateRange: 'Intervallo tra mercati', on: 'il', markets: 'mercati', notComparable: 'I mercati della tabella condividono la stessa specifica e lo stesso tipo di acquirente. Non si calcola una media statale né una variazione combinata.',
+      whatIs: 'Che cosa rappresenta ogni prezzo', stateRange: 'Intervallo tra mercati', on: 'il', markets: 'mercati', notComparable: 'I mercati della tabella condividono la stessa specifica e lo stesso tipo di acquirente. Non si calcola una media statale né una variazione combinata.',
       repr_REGION: 'L’USDA pubblica un riepilogo (media e intervallo min–max) per la regione «{loc}». Non è l’offerta di un singolo elevatore.',
       repr_TERMINAL: 'Offerte di terminal o punti di carico a «{loc}». Un prezzo di terminal non è un prezzo di elevatore locale.',
       repr_EXPORT_MARKET: 'Offerte di elevatori o porti di esportazione a «{loc}». Non è un prezzo locale pagato all’agricoltore.',
@@ -255,7 +255,7 @@
         '<td style="padding:9px 6px;text-align:right;vertical-align:top;white-space:nowrap">' + bidHtml(s) + '</td><td style="padding:9px 6px;text-align:right;vertical-align:top">' + basisHtml(s) + '</td><td style="padding:9px 6px;text-align:right;vertical-align:top">' + changeHtml(s) + '</td>' +
         '<td style="padding:9px 6px;vertical-align:top;white-space:nowrap">' + esc(dtxt(s.date)) + '</td><td style="padding:9px 6px;vertical-align:top">' + badge(f) + '</td><td style="padding:9px 6px;vertical-align:top"><a href="' + url + '" target="_blank" rel="noopener">USDA AMS</a><div class="di-movers-hint">#' + s.reportId + '</div></td></tr>';
     }).join('');
-    return '<div class="di-card" style="padding:12px 16px;margin-bottom:14px"><h3 style="font-size:15px;margin:0 0 4px">' + esc(name || '—') + '</h3>' + rng + '<div class="di-table-wrap"><table style="border-collapse:collapse;width:100%;min-width:640px;font-size:14px"><thead><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left">' +
+    return '<div class="di-card" style="padding:12px 16px;margin-bottom:14px"><h3 style="font-size:15px;margin:0 0 4px">' + esc(name || '—') + '</h3>' + rng + '<div class="di-table-wrap"><table class="pl-t" style="border-collapse:collapse;width:100%;min-width:640px;font-size:14px"><thead><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left">' +
       ['cMarket', 'cBid', 'cBasis', 'cChange', 'cDate', 'cFresh', 'cSource'].map(function (k, i) { return '<th scope="col" style="padding:8px 6px;' + (i > 0 && i < 4 ? 'text-align:right' : '') + '">' + esc(t[k].toUpperCase()) + '</th>'; }).join('') + '</tr></thead><tbody>' + trs + '</tbody></table></div></div>';
   }
   function render(doc) {
@@ -268,7 +268,7 @@
     if (M.run && M.run.status !== 'OK') h += '<p class="di-info-api-notice" role="status">' + esc(t['run' + M.run.status] || '') + '</p>';
     h += controls(doc, R);
     h += '<h2 style="font-size:18px;margin:6px 0 2px">' + esc(M.states[ST.s].name) + ' · ' + esc(cname(ST.c)) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(specLabel(c0 || { commodity: ST.c, unit: '' })) + ' · USDA AMS</p>';
-    if (shown.length) { var ls = {}; shown.forEach(function (s) { ls[s.locationType] = s; }); h += '<div class="di-card" style="padding:10px 14px;margin-bottom:12px;font-size:13px">' + Object.keys(ls).map(function (k) { return '<div>• ' + esc(represents(ls[k])) + '</div>'; }).join('') + '<div class="di-movers-hint" style="margin-top:4px">' + esc(t.notComparable) + '</div></div>'; }
+    if (shown.length) { var ls = {}; shown.forEach(function (s) { ls[s.locationType] = s; }); h += '<details class="di-card pl-what" style="padding:8px 14px;margin-bottom:12px;font-size:13px"><summary style="cursor:pointer;font-weight:600">' + esc(t.whatIs) + '</summary><div style="margin-top:6px">' + Object.keys(ls).map(function (k) { return '<div>• ' + esc(represents(ls[k])) + '</div>'; }).join('') + '<div class="di-movers-hint" style="margin-top:4px">' + esc(t.notComparable) + '</div></div></details>'; }
     h += shown.length ? ns.map(function (k) { return groupHtml(k || '—', groups[k], t); }).join('') : '<p class="di-movers-hint">' + esc(t.noData) + '</p>';
     h += '<div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:4px 0 14px">' + (hid ? '<label style="font-size:13px"><input type="checkbox" id="pl-inact"' + (ST.inactive ? ' checked' : '') + '> ' + esc(t.inactive) + ' (' + hid + ' ' + esc(t.hiddenN) + ')</label>' : '') +
       (shown.length && window.DIWatch ? '<button type="button" class="di-link-btn" id="pl-follow-all">' + esc(t.followAll) + ' (' + Math.min(shown.length, 20) + ')</button>' : '') + '</div>';
