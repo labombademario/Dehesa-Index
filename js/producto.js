@@ -367,6 +367,37 @@
     return sec(t.co, t.coHint + ' ' + yr, cards(cs) + '<p class="di-info-api-notice" style="margin:4px 0">' + esc(t.coNote) + '</p>', lnk('costes.html?tab=costs&prod=' + cfg.ers, t.coMore));
   }
 
+
+  /* ---------- Product Profile 2.0: noticias, insumos y relaciones ---------- */
+  var XN = {
+    es: { news: 'Noticias del producto', newsHint: 'Últimos titulares de la sección Noticias que mencionan este producto.', newsMore: 'Todas las noticias', inp: 'Insumos y energía en las noticias', inpHint: 'Fertilizantes, diésel y pienso: lo último que afecta al coste de producir.', rel: 'Relaciones: dónde seguir', relHint: 'Aranceles del capítulo aduanero de este producto, datos por país y páginas de insumos y clima.', tar: 'Aranceles (capítulo %c)', mk: { us: 'EE. UU.', eu: 'UE', ca: 'Canadá', mx: 'México' }, ctry: 'Datos por país', ctrys: 'Comercio exterior y precios por país', inputs: 'Costes de insumos (EE. UU.)', fert: 'Fertilizantes (UE)', clim: 'Clima agrícola', trade: 'Comercio por socio' },
+    en: { news: 'Product news', newsHint: 'Latest headlines from the News section that mention this product.', newsMore: 'All news', inp: 'Inputs and energy in the news', inpHint: 'Fertilisers, diesel and feed: the latest on production costs.', rel: 'Relations: where to go next', relHint: 'Tariffs for this product’s customs chapter, country data and inputs and climate pages.', tar: 'Tariffs (chapter %c)', mk: { us: 'US', eu: 'EU', ca: 'Canada', mx: 'Mexico' }, ctry: 'Country data', ctrys: 'Foreign trade and prices by country', inputs: 'Input costs (US)', fert: 'Fertilisers (EU)', clim: 'Farm weather', trade: 'Trade by partner' },
+    fr: { news: 'Actualités du produit', newsHint: 'Derniers titres de la rubrique Actualités qui mentionnent ce produit.', newsMore: 'Toutes les actualités', inp: 'Intrants et énergie dans l’actualité', inpHint: 'Engrais, diesel et aliments : le dernier sur les coûts de production.', rel: 'Relations : où poursuivre', relHint: 'Droits de douane du chapitre douanier de ce produit, données par pays, pages intrants et climat.', tar: 'Droits de douane (chapitre %c)', mk: { us: 'États-Unis', eu: 'UE', ca: 'Canada', mx: 'Mexique' }, ctry: 'Données par pays', ctrys: 'Commerce extérieur et prix par pays', inputs: 'Coûts des intrants (É.-U.)', fert: 'Engrais (UE)', clim: 'Météo agricole', trade: 'Commerce par partenaire' },
+    it: { news: 'Notizie sul prodotto', newsHint: 'Ultimi titoli della sezione Notizie che citano questo prodotto.', newsMore: 'Tutte le notizie', inp: 'Input ed energia nelle notizie', inpHint: 'Fertilizzanti, gasolio e mangimi: le ultime sui costi di produzione.', rel: 'Relazioni: dove proseguire', relHint: 'Dazi del capitolo doganale di questo prodotto, dati per paese, pagine input e clima.', tar: 'Dazi (capitolo %c)', mk: { us: 'USA', eu: 'UE', ca: 'Canada', mx: 'Messico' }, ctry: 'Dati per paese', ctrys: 'Commercio estero e prezzi per paese', inputs: 'Costi degli input (USA)', fert: 'Fertilizzanti (UE)', clim: 'Meteo agricolo', trade: 'Commercio per partner' }
+  };
+  var NK = { trigo: ['trigo'], maiz: ['maiz'], soja: ['soja'], arroz: ['arroz'], vacuno: ['vaca', 'ganado'], cerdo: ['cerdo'], leche: ['leche'], pollo: ['pollo'] };
+  var HS = { trigo: '10', maiz: '10', arroz: '10', soja: '12', vacuno: '02', cerdo: '02', pollo: '02', leche: '04' };
+  function newsList(items, t, x, more) {
+    if (!items.length) return '';
+    return items.map(function (n) {
+      var hd = (n.headline && (n.headline[lang()] || n.headline.en || n.headline.es)) || '';
+      return '<div style="border-top:1px solid var(--border);padding:8px 0"><a href="' + esc(n.url) + '" target="_blank" rel="noopener" style="font-weight:600;color:inherit;text-decoration:none">' + esc(hd) + '</a><div style="font-size:12px;color:var(--text-muted)">' + esc(n.date) + ' · ' + esc(n.source) + '</div></div>';
+    }).join('');
+  }
+  function newsBlock(t, x) {
+    var N = D.news && D.news.items; if (!N) return '';
+    var keys = NK[SEL.p] || [], l = N.filter(function (n) { return (n.products || []).some(function (p) { return keys.indexOf(p) > -1; }); }).sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : (b.relevance || 0) - (a.relevance || 0); }).slice(0, 5);
+    var ins = N.filter(function (n) { return (n.products || []).some(function (p) { return ['fertilizantes', 'diesel', 'pienso'].indexOf(p) > -1; }); }).sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 3);
+    return (l.length ? sec(x.news, x.newsHint, '<div class="di-card" style="padding:4px 16px">' + newsList(l, t, x) + '</div>', lnk('noticias.html', x.newsMore)) : '') +
+      (ins.length ? sec(x.inp, x.inpHint, '<div class="di-card" style="padding:4px 16px">' + newsList(ins, t, x) + '</div>', lnk('noticias.html', x.newsMore)) : '');
+  }
+  function relBlock(t, x) {
+    var ch = HS[SEL.p], chips = [];
+    if (ch) ['us', 'eu', 'ca', 'mx'].forEach(function (m) { chips.push('<a class="di-link-btn" href="aranceles.html?m=' + m + '&ch=' + ch + '">' + esc(x.tar.replace('%c', ch)) + ' · ' + esc(x.mk[m]) + '</a>'); });
+    chips.push('<a class="di-link-btn" href="perfiles.html">' + esc(x.ctry) + '</a>', '<a class="di-link-btn" href="paises.html?c=ES&g=trade">' + esc(x.ctrys) + '</a>', '<a class="di-link-btn" href="insumos.html">' + esc(x.inputs) + '</a>', '<a class="di-link-btn" href="europa.html">' + esc(x.fert) + '</a>', '<a class="di-link-btn" href="clima.html">' + esc(x.clim) + '</a>');
+    return sec(x.rel, x.relHint, '<div style="display:flex;gap:8px;flex-wrap:wrap">' + chips.join('') + '</div>');
+  }
+
   function tabs(t) {
     var nm = P.names();
     return '<div style="display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px">' + ORDER.map(function (k) { return '<a class="di-link-btn" href="producto.html?p=' + k + '" data-p="' + k + '" style="' + (k === SEL.p ? 'font-weight:700;border-color:var(--gold,#a9491f);' : '') + '">' + esc(nm[k] || k) + '</a>'; }).join('') + '</div>';
@@ -377,7 +408,7 @@
     document.title = 'Dehesa Index — ' + t.title + ': ' + (nm[SEL.p] || SEL.p);
     document.getElementById('pg-h1').textContent = t.title + ': ' + (nm[SEL.p] || SEL.p);
     document.getElementById('pg-sub').textContent = t.sub;
-    var parts = [priceBlock(t, cfg, SEL.p), sdBlock(t, cfg), exBlock(t, cfg), gatsBlock(t, cfg), cfg.kind === 'crop' ? cropBlock(t, cfg) : liveBlock(t, cfg), droughtBlock(t, cfg), costBlock(t, cfg)].filter(function (x) { return x; });
+    var parts = [priceBlock(t, cfg, SEL.p), sdBlock(t, cfg), exBlock(t, cfg), gatsBlock(t, cfg), cfg.kind === 'crop' ? cropBlock(t, cfg) : liveBlock(t, cfg), droughtBlock(t, cfg), costBlock(t, cfg), newsBlock(t, XN[lang()] || XN.es), relBlock(t, XN[lang()] || XN.es)].filter(function (x) { return x; });
     var links = '<p class="di-movers-hint" style="margin-top:26px"><strong>' + esc(t.links) + ':</strong> ' + lnk('mapa.html', t.lMap) + ' · ' + lnk('precios.html?product=' + (cfg.pp || (SEL.p === 'vacuno' ? 'vaca' : SEL.p)), t.lPrices) + '</p>';
     root.innerHTML = tabs(t) + (parts.length ? parts.join('') : '<p class="di-movers-hint">' + esc(t.noData) + '</p>') + links + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + ' <a href="metodologia.html">' + esc(t.methodLink) + '</a>.</p>';
     var sel = document.getElementById('pr-ent'); if (sel) sel.onchange = function (e) { SEL.ent = e.target.value; render(); };
@@ -391,8 +422,8 @@
   if (q.get('p') && CFG[q.get('p')]) SEL.p = q.get('p');
   var cfg0 = CFG[SEL.p];
   Promise.all([get('data/latest.json'), get('data/supply-demand.json'), get('data/export-sales.json'), get('data/gats.json'), get('data/drought.json'), get('data/ers.json'),
-    cfg0.kind === 'crop' ? get('data/crop-progress.json') : Promise.resolve(null), get('data/nass-crops.json'), get('data/nass-livestock.json')]).then(function (r) {
-    D.latest = r[0]; D.sd = r[1]; D.es = r[2]; D.gats = r[3]; D.dr = r[4]; D.ers = r[5]; D.cp = r[6]; D.crops = r[7]; D.live = r[8];
+    cfg0.kind === 'crop' ? get('data/crop-progress.json') : Promise.resolve(null), get('data/nass-crops.json'), get('data/nass-livestock.json'), get('data/news.json')]).then(function (r) {
+    D.latest = r[0]; D.sd = r[1]; D.es = r[2]; D.gats = r[3]; D.dr = r[4]; D.ers = r[5]; D.cp = r[6]; D.crops = r[7]; D.live = r[8]; D.news = r[9];
     render();
   });
 })();
