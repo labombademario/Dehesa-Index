@@ -89,7 +89,7 @@
   }
   function fsBadge(s) {
     var st = s.fs, F = window.DIFreshness, lg = lang(); if (!st || !F) return '';
-    var col = st === 'LIVE' || st === 'FRESH' ? '#2f6b4a' : st === 'EXPECTED_DELAY' ? '#8a6d1f' : '#a33';
+    var col = st === 'LIVE' || st === 'FRESH' ? '#2f6b4a' : st === 'EXPECTED_DELAY' ? '#8a6d1f' : (st === 'HISTORICAL' || st === 'DISCONTINUED') ? '#6b6b6b' : '#a33';
     return '<span title="' + esc(st) + '" style="font-size:11px;border:1px solid ' + col + ';color:' + col + ';border-radius:999px;padding:0 6px;white-space:nowrap">' + esc((F.label[st] || {})[lg] || st) + '</span>';
   }
   function compBadge(s, t) {

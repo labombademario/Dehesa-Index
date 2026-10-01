@@ -116,15 +116,15 @@
   function coverage(S) {
     var blocks = 0, fresh = 0, mo = 0, yrs = [], now = Date.now();
     ['markets', 'production', 'trade', 'inputs'].forEach(function (k) { if (S.some(function (s) { return BLK[k].indexOf(s.group) > -1; })) blocks++; });
-    var n = 0;
+    var n = 0, act = 0;
     S.forEach(function (s) {
-      if (s.group === 'rates') return; n++;
+      if (s.group === 'rates') return; n++; if (s.fs !== 'HISTORICAL' && s.fs !== 'DISCONTINUED') act++;  // historicas/discontinuadas: fuera del denominador de frescura
       var age = (now - pms(s.latestPeriod)) / 864e5; if (s.fs ? (s.fs === 'LIVE' || s.fs === 'FRESH' || s.fs === 'EXPECTED_DELAY') : age <= (MAXAGE[s.frequency] || 80) * 1.5) fresh++;  // fs: estado del Freshness Engine 2.0 precalculado en el catalogo
       if (s.frequency === 'monthly' || s.frequency === 'weekly' || s.frequency === 'daily') mo++;
       var a = pms(pfirst(s)), b = pms(s.latestPeriod); if (a === a && b === b) yrs.push((b - a) / (365.25 * 864e5));
     });
     if (!n) return null; yrs.sort(function (a, b) { return a - b; });
-    var med = yrs.length ? yrs[yrs.length >> 1] : 0, c = { b: blocks / 4, f: fresh / n, d: Math.min(med, 20) / 20, q: mo / n };
+    var med = yrs.length ? yrs[yrs.length >> 1] : 0, c = { b: blocks / 4, f: (act ? fresh / act : 0), d: Math.min(med, 20) / 20, q: mo / n };
     c.score = Math.round(100 * (0.3 * c.b + 0.3 * c.f + 0.2 * c.d + 0.2 * c.q)); c.years = med; c.blocks = blocks; return c;
   }
   function coverageBox(S, x) {

@@ -86,7 +86,7 @@ def run(spec):
     n = 0
     for c, d in by.items():
         if tag == 'oliveoil' and not re.search(r'^total', c, re.I) and len(by) > 1 and any(re.search(r'^total', x, re.I) for x in by): continue
-        lab = tpl.format(c='Total' if c.lower() == 'meat' else c).strip().rstrip(':')
+        lab = tpl.format(c='"Meat" category (INE, not the grand total)' if c.lower() == 'meat' else c).strip().rstrip(':')  # 'Meat' y 'Total' son categorias distintas de INE (valores distintos): no pueden compartir etiqueta
         f = freq
         put('pt-%s-%s' % (tag, slug(c) or 'total'), group, lab, unit, f, list(d.items()), {'sourceGroup': sg}); n += 1
     log(v, tag, n, 'series')

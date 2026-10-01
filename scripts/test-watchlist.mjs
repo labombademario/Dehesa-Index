@@ -50,6 +50,7 @@ eq('frescura: DELAYED cumple el umbral DELAYED; LIVE no', ids(W.evaluate(idx(), 
 set([{ c: 'P', s: 'trigo/eu', r: [{ t: 'fresh', v: 'STALE' }] }]);
 eq('frescura: DELAYED no llega a STALE', ids(W.evaluate(idx(), ctxF)), []);
 eq('frescura sin contexto no inventa nada', ids(W.evaluate(idx())), []);
+eq('frescura: una serie HISTORICAL no dispara la regla STALE (no es un retraso)', (() => { set([{ c: 'P', s: 'trigo/eu', r: [{ t: 'fresh', v: 'STALE' }] }]); return ids(W.evaluate(idx(), { fr: false, obs: { 'P/trigo/eu': { freshness: 'HISTORICAL' } } })); })(), []);
 set([{ c: 'P', s: 'trigo/eu', r: [{ t: 'fresh', v: 'DELAYED' }] }]);
 const ev1 = W.evaluate(idx(), ctxF); W.markSeen(ev1[0]);
 eq('tras marcar visto, la misma frescura no repite', ids(W.evaluate(idx(), ctxF)), []);

@@ -32,7 +32,7 @@
       qfiles: 'File controllati', qerr: 'Con errori', qwarn: 'Con avvisi', warns: 'Avvisi', none: 'Nessuno', ago: '', h: 'h fa', d: 'g fa', in_: 'tra', now: 'ora' }
   };
   var COL = { ok: '#17703f', late: '#8f5f12', error: '#c0392b', not_run: '#6b7fa3', unknown: '#8a8a8a' };
-  var P = null, Q = null, only = false;
+  var P = null, Q = null, FR = null, only = false;
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
   function esc(x) { return String(x == null ? '' : x).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -82,11 +82,23 @@
         }).join('') + '</div>';
       }
     }
+    h += freshBlock();
     root.innerHTML = h;
     var c = document.getElementById('st-only'); if (c) c.onchange = function () { only = c.checked; render(); };
   }
+  var FT = {
+    es: ['Frescura del catálogo', 'Series al día', 'Retrasadas', 'Desactualizadas', 'Históricas', 'Desactualizada = debería seguir publicándose y el siguiente dato esperado no ha llegado. Histórica = lleva muchos ciclos sin datos nuevos y se conserva como registro: no cuenta como retraso.'],
+    en: ['Catalog freshness', 'Up to date', 'Delayed', 'Stale', 'Historical', 'Stale = it should still be published and the next expected observation has not arrived. Historical = no new data for many cycles, kept as a record: it does not count as a delay.'],
+    fr: ['Fraîcheur du catalogue', 'À jour', 'En retard', 'Obsolètes', 'Historiques', 'Obsolète = devrait encore être publiée et la prochaine observation attendue n’est pas arrivée. Historique = sans nouvelles données depuis de nombreux cycles, conservée comme archive : ne compte pas comme un retard.'],
+    it: ['Freschezza del catalogo', 'Aggiornate', 'In ritardo', 'Obsolete', 'Storiche', 'Obsoleta = dovrebbe essere ancora pubblicata e la prossima osservazione attesa non è arrivata. Storica = nessun nuovo dato da molti cicli, conservata come archivio: non conta come ritardo.']
+  };
+  function freshBlock() {
+    if (!FR || !FR.catalog) return '';
+    var b = FR.catalog.byState, f = FT[lang()] || FT.es, ok = (b.LIVE || 0) + (b.FRESH || 0) + (b.EXPECTED_DELAY || 0), arch = (FR.catalog.historicalTotal || 0) + (FR.catalog.discontinuedTotal || 0);
+    return '<h2 style="margin:26px 0 8px;font-size:18px">' + esc(f[0]) + '</h2><div style="font-size:13px;margin:8px 0">' + esc(f[1]) + ': <strong>' + nf(ok) + '</strong> · ' + esc(f[2]) + ': <strong>' + nf(b.DELAYED || 0) + '</strong> · ' + esc(f[3]) + ': <strong>' + nf(b.STALE || 0) + '</strong> · ' + esc(f[4]) + ': <strong>' + nf(arch) + '</strong> / ' + nf(FR.catalog.total) + '</div><p style="color:var(--text-muted);font-size:13px;max-width:760px">' + esc(f[5]) + '</p>';
+  }
   function get(u) { return fetch(u, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
-  Promise.all([get('data/pipeline-status.json'), get('data/data-quality.json')]).then(function (r) { P = r[0]; Q = r[1]; render(); });
+  Promise.all([get('data/pipeline-status.json'), get('data/data-quality.json'), get('data/freshness.json')]).then(function (r) { P = r[0]; Q = r[1]; FR = r[2]; render(); });
   var prev = window.DehesaShared && window.DehesaShared.onLangChange;
   if (window.DehesaShared) window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
 })();

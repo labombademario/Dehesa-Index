@@ -191,6 +191,7 @@
          "AVAILABLE",
          "AVAILABLE_OUTSIDE_CATALOG",
          "STALE",
+         "HISTORICAL_ONLY",
          "SOURCE_AVAILABLE_NOT_INGESTED",
          "LICENSE_PENDING",
          "MISSING"

@@ -329,7 +329,8 @@
   "prices/manifest.json",
   "freshness.json",
   "source-candidates.json",
-  "coverage-gaps.json"
+  "coverage-gaps.json",
+  "series-lifecycle.json"
  ],
  "derivedGlobs": [
   "products/*.json",

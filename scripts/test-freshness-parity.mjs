@@ -34,8 +34,14 @@ T('semanal EU 2 ago, 1-oct = STALE', at('2026-08-02', 'weekly', 'eu_agrifood', 2
 T('semanal fecha de hoy = LIVE', at('2026-10-01', 'weekly', 'eia', 2026, 10, 1) === 'LIVE');
 T('sin fecha = PENDING', at('', 'monthly', 'x', 2026, 10, 1) === 'PENDING' && at('2026-13', 'monthly', 'x', 2026, 10, 1) === 'PENDING');
 T('anual 2024 en oct-2026 = FRESH/EXPECTED', ['LIVE', 'FRESH', 'EXPECTED_DELAY'].includes(at('2024', 'annual', 'fao', 2026, 10, 1)));
-T('anual 2020 en oct-2026 = STALE', at('2020', 'annual', 'fao', 2026, 10, 1) === 'STALE');
-const order = ['LIVE', 'FRESH', 'EXPECTED_DELAY', 'DELAYED', 'STALE']; let prev = -1, mono = true;
+T('anual 2023 en oct-2026 = STALE (deberia seguir publicandose)', at('2023', 'annual', 'fao', 2026, 10, 1) === 'STALE');
+T('anual 2020 en oct-2026 = HISTORICAL', at('2020', 'annual', 'fao', 2026, 10, 1) === 'HISTORICAL');
+T('semanal terminada en 2015 = HISTORICAL, no STALE', at('2015-06-01', 'weekly', 'eu_agrifood', 2026, 10, 1) === 'HISTORICAL');
+T('semanal parada hace 2 meses sigue STALE (no HISTORICAL)', at('2026-08-02', 'weekly', 'eu_agrifood', 2026, 10, 1) === 'STALE');
+T('mensual terminada en 2017 = HISTORICAL', at('2017-03', 'monthly', 'mapa_es', 2026, 10, 1) === 'HISTORICAL');
+T('HISTORICAL no es estado ok ni de retraso', !F.isOk('HISTORICAL') && !F.isLate('HISTORICAL') && F.isArchive('HISTORICAL') && F.isArchive('DISCONTINUED') && F.isLate('STALE'));
+T('etiquetas en 4 idiomas para los 8 estados', ['LIVE','FRESH','EXPECTED_DELAY','DELAYED','STALE','HISTORICAL','DISCONTINUED','PENDING'].every(s => ['es','en','fr','it'].every(l => F.label[s] && F.label[s][l])));
+const order = ['LIVE', 'FRESH', 'EXPECTED_DELAY', 'DELAYED', 'STALE', 'HISTORICAL']; let prev = -1, mono = true;
 for (let k = 0; k < 900; k += 3) { const s = order.indexOf(F.evaluate('2026-06', 'monthly', 'statcan', Date.UTC(2026, 6, 1) + k * 86400000).state); if (s < prev) mono = false; prev = s; }
 T('el estado solo empeora con el tiempo', mono);
 console.log('Freshness: ' + cases.length * NOWS.length + ' evaluaciones comparadas, ' + bad + ' diferencias/fallos'); process.exit(bad ? 1 : 0);

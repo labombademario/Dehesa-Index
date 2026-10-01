@@ -1213,7 +1213,7 @@ svg[data-dh]:focus-visible{outline:2px solid #2f6b3a;outline-offset:3px}
 .pt-fs-EXPECTED_DELAY { color: #7a5000; }
 .pt-fs-DELAYED { color: #a9491f; }
 .pt-fs-STALE { color: var(--negative); }
-.pt-fs-PENDING, .pt-cp-directional { color: var(--text-faint); }
+.pt-fs-PENDING, .pt-fs-HISTORICAL, .pt-fs-DISCONTINUED, .pt-cp-directional { color: var(--text-faint); }
 .pt-cp-exact { color: var(--positive); }
 .pt-cp-not_comparable { color: #a9491f; }
 html[data-theme="dark"] .pt-fs-EXPECTED_DELAY { color: #e0b04a; }

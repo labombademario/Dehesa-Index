@@ -12,14 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib_index import ROOT, STATS
 import freshness as FR
 SHARD_MAX = 450_000
-TAGS = [('wheat', r'wheat|trigo|blé|\bble\b|frumento'), ('maize', r'maize|corn|ma[ií]z|mais'), ('barley', r'barley|cebada|orge'), ('oats', r'\boats?\b|avena'), ('rye', r'\brye\b|centeno'), ('rapeseed', r'rapeseed|canola|colza'),
-        ('soy', r'soy|soja'), ('rice', r'\brice\b|arroz|riz'), ('milk', r'milk|leche|lait|dairy|l[aá]cte'), ('butter', r'butter|mantequilla|beurre'), ('cheese', r'cheese|queso|fromage'),
-        ('cattle', r'cattle|beef|vacuno|bovin|calf|veal|cow|steer|heifer|bull'), ('pigs', r'\bpigs?\b|pork|porcin|cerdo|swine|hog'), ('sheep', r'sheep|lamb|ovin|cordero|goat|caprin'),
-        ('poultry', r'poultry|chicken|broiler|pollo|volaille|turkey'), ('eggs', r'\beggs?\b|huevo|oeuf'), ('olive', r'olive|aceite|azeite|olio'), ('sugar', r'sugar|az[uú]car|beet|remolacha|sucre'),
-        ('potato', r'potato|patata|pomme de terre'), ('fertilizer', r'fertili[sz]|urea|nitrogen|phosph|potash|abono'), ('energy', r'diesel|energy|fuel|electric|gas\b'), ('wine', r'\bwine\b|vino|vin\b'),
-        ('fruit', r'fruit|apple|orange|tomato|vegetable|lettuce|hortaliza|fruta')]
-TAGS = [(k, re.compile(v, re.I)) for k, v in TAGS]
-def tags(label): return [k for k, rx in TAGS if rx.search(label)]
+from lib_tags import TAGS, tags
 ISO_EN = {'AT': 'Austria', 'AU': 'Australia', 'BE': 'Belgium', 'BG': 'Bulgaria', 'CA': 'Canada', 'CY': 'Cyprus', 'CZ': 'Czechia', 'DE': 'Germany', 'DK': 'Denmark', 'EE': 'Estonia', 'EL': 'Greece', 'ES': 'Spain', 'FI': 'Finland',
           'FR': 'France', 'HR': 'Croatia', 'HU': 'Hungary', 'IE': 'Ireland', 'IT': 'Italy', 'LT': 'Lithuania', 'LU': 'Luxembourg', 'LV': 'Latvia', 'MT': 'Malta', 'NL': 'Netherlands', 'PL': 'Poland', 'PT': 'Portugal',
           'RO': 'Romania', 'SE': 'Sweden', 'SI': 'Slovenia', 'SK': 'Slovakia', 'UK': 'United Kingdom', 'US': 'United States'}
@@ -68,16 +61,17 @@ def pms(p):
     return datetime.datetime(int(m.group(1)), mo + 1, int(m.group(3) or 1), tzinfo=datetime.timezone.utc).timestamp() * 1000
 def coverage(rows, now_ms):
     """Coverage Score (amplitud, frescura, profundidad, frecuencia): MISMA formula que DIProfile.coverage (js/perfil-pais.js); scripts/test-coverage-parity.mjs lo comprueba."""
-    blocks = sum(1 for k in ('markets', 'production', 'trade', 'inputs') if any(r['group'] in BLK[k] for r in rows)); n = fresh = mo = 0; yrs = []
+    blocks = sum(1 for k in ('markets', 'production', 'trade', 'inputs') if any(r['group'] in BLK[k] for r in rows)); n = act = fresh = mo = 0; yrs = []
     for r in rows:
         if r['group'] == 'rates': continue
-        n += 1; b = pms(r.get('latestPeriod')); a = pms(r.get('first'))
+        n += 1; b = pms(r.get('latestPeriod')); arch = r.get('fs') in FR.POLICY['archiveStates']  # historicas/discontinuadas: fuera del denominador de frescura
+        if not arch: act += 1; a = pms(r.get('first'))
         if (r['fs'] in FR.POLICY['okStates']) if r.get('fs') else (b is not None and (now_ms - b) / 864e5 <= MAXAGE.get(r.get('freq'), 80) * 1.5): fresh += 1
         if r.get('freq') in ('monthly', 'weekly', 'daily'): mo += 1
         if a is not None and b is not None: yrs.append((b - a) / (365.25 * 864e5))
     if not n: return None
     yrs.sort(); med = yrs[len(yrs) >> 1] if yrs else 0
-    c = {'b': blocks / 4, 'f': fresh / n, 'd': min(med, 20) / 20, 'q': mo / n}
+    c = {'b': blocks / 4, 'f': (fresh / act if act else 0), 'd': min(med, 20) / 20, 'q': mo / n}
     return {'b': round(c['b'], 4), 'f': round(c['f'], 4), 'd': round(c['d'], 4), 'q': round(c['q'], 4), 'score': int(100 * (0.3 * c['b'] + 0.3 * c['f'] + 0.2 * c['d'] + 0.2 * c['q']) + 0.5), 'years': round(med, 2), 'blocks': blocks}
 NOW_MS = datetime.datetime.now(datetime.timezone.utc).timestamp() * 1000
 NOW_DAY = FR.today_ord(NOW_MS)
@@ -169,7 +163,7 @@ def main():
             gs = [x for x in cat if x['group'] == g]
             mg[g] = {'n': len(gs), 'files': [], 'format': 'eu-regions', 'latestPeriod': max([x['latestPeriod'] for x in gs if x['latestPeriod']] or [None]), 'tags': sorted({t for x in gs for t in x['tags']})}
         total += len(cat)
-        for x in cat: x['fs'] = FR.evaluate(x['latestPeriod'], x['freq'], x['sourceId'], NOW_DAY)['state']  # Freshness Engine 2.0
+        for x in cat: x['fs'] = FR.apply_lifecycle(x['id'], FR.evaluate(x['latestPeriod'], x['freq'], x['sourceId'], NOW_DAY)['state'])  # Freshness Engine 2.0 (+ declaraciones de ciclo de vida)
         core = [x for x in cat if x.get('format') != 'eu-regions']; eu = [x for x in cat if x.get('format') == 'eu-regions']
         # los metadatos del catalogo UE van en un fichero aparte: quien solo necesita las series del pais no los baja
         changed += write_if_changed(ROOT / 'data/catalog' / (slug(cc) + '.json'), dump({'schemaVersion': 1, 'country': cc, 'name': ISO_EN.get(cc) or names.get(cc, cc), 'sources': srcs.get(cc, []), 'series': core}), written)

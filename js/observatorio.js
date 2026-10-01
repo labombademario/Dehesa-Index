@@ -37,7 +37,7 @@
     retrieved: ['recuperada', 'retrieved', 'récupérée', 'recuperata'], none: ['Ningún resultado con estos filtros.', 'No results with these filters.', 'Aucun résultat avec ces filtres.', 'Nessun risultato con questi filtri.'],
     err: ['No se pudo cargar data/observatory.json.', 'Could not load data/observatory.json.', 'Impossible de charger data/observatory.json.', 'Impossibile caricare data/observatory.json.'],
     freq_daily: ['diaria', 'daily', 'quotidienne', 'giornaliera'], freq_weekly: ['semanal', 'weekly', 'hebdomadaire', 'settimanale'], freq_monthly: ['mensual', 'monthly', 'mensuelle', 'mensile'], freq_quarterly: ['trimestral', 'quarterly', 'trimestrielle', 'trimestrale'], freq_annual: ['anual', 'annual', 'annuelle', 'annuale'],
-    fs_LIVE: ['EN DIRECTO', 'LIVE', 'EN DIRECT', 'LIVE'], fs_FRESH: ['AL DÍA', 'FRESH', 'À JOUR', 'AGGIORNATO'], fs_EXPECTED_DELAY: ['RETRASO HABITUAL', 'EXPECTED DELAY', 'RETARD HABITUEL', 'RITARDO ABITUALE'], fs_DELAYED: ['RETRASADO', 'DELAYED', 'EN RETARD', 'IN RITARDO'], fs_STALE: ['DESACTUALIZADO', 'STALE', 'OBSOLÈTE', 'OBSOLETO'], fs_PENDING: ['PENDIENTE', 'PENDING', 'EN ATTENTE', 'IN SOSPESO'],
+    fs_LIVE: ['EN DIRECTO', 'LIVE', 'EN DIRECT', 'LIVE'], fs_FRESH: ['AL DÍA', 'FRESH', 'À JOUR', 'AGGIORNATO'], fs_EXPECTED_DELAY: ['RETRASO HABITUAL', 'EXPECTED DELAY', 'RETARD HABITUEL', 'RITARDO ABITUALE'], fs_DELAYED: ['RETRASADO', 'DELAYED', 'EN RETARD', 'IN RITARDO'], fs_STALE: ['DESACTUALIZADO', 'STALE', 'OBSOLÈTE', 'OBSOLETO'], fs_HISTORICAL: ['HISTÓRICA', 'HISTORICAL', 'HISTORIQUE', 'STORICA'], fs_DISCONTINUED: ['DISCONTINUADA', 'DISCONTINUED', 'ARRÊTÉE', 'INTERROTTA'], fs_PENDING: ['PENDIENTE', 'PENDING', 'EN ATTENTE', 'IN SOSPESO'],
     an_UNEXPLAINED_ANOMALY: ['Sin explicar', 'Unexplained', 'Non expliquée', 'Non spiegata'], an_KNOWN_VERIFIED_ANOMALY: ['Verificada', 'Verified', 'Vérifiée', 'Verificata'],
     err404: ['—', '—', '—', '—'], link: ['Ver ficha', 'Open page', 'Voir la fiche', 'Apri scheda']
   };
@@ -99,7 +99,7 @@
     return sec('revisions', t('revisions'), '', b);
   }
   function bars(by, total) {
-    var order = ['LIVE', 'FRESH', 'EXPECTED_DELAY', 'DELAYED', 'STALE', 'PENDING'], h = '<div class="pt-bars">';
+    var order = ['LIVE', 'FRESH', 'EXPECTED_DELAY', 'DELAYED', 'STALE', 'HISTORICAL', 'DISCONTINUED', 'PENDING'], h = '<div class="pt-bars">';
     order.forEach(function (s) { var n = by[s] || 0; if (!n) return; h += '<div class="pt-row"><span class="n" title="' + esc(t('fs_' + s)) + '">' + fsB(s) + '</span><span class="rl-barwrap"><i style="width:' + Math.max(1, Math.round(n / total * 100)) + '%"></i></span><span>' + n + ' <span class="pt-sub">(' + nf(n / total * 100, 0) + ' %)</span></span></div>'; });
     return h + '</div>';
   }

@@ -1,5 +1,5 @@
 """Freshness Engine 2.0 (Python). MISMO algoritmo que js/freshness.js; scripts/test-freshness-parity.mjs lo comprueba.
-Politica en data/freshness-policy.json. Estados: LIVE, FRESH, EXPECTED_DELAY, DELAYED, STALE, PENDING."""
+Politica en data/freshness-policy.json. Estados: LIVE, FRESH, EXPECTED_DELAY, DELAYED, STALE, HISTORICAL, PENDING (DISCONTINUED solo por declaracion: data/series-lifecycle.json)."""
 import calendar, datetime, json, re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,12 +35,29 @@ def evaluate(date, freq, source, now_day):
     live = end + lag + max(2, _rnd(P["liveFactor"] * period))
     grace = due + max(P["grace"]["minDays"], min(P["grace"]["maxDays"], _rnd(P["grace"]["factor"] * period)))
     stale = due + min(P["staleAfter"]["maxDays"], _rnd(P["staleAfter"]["factor"] * period))
-    st = "LIVE" if now_day <= live else "FRESH" if now_day <= due else "EXPECTED_DELAY" if now_day <= grace else "DELAYED" if now_day <= stale else "STALE"
-    return {"state": st, "ageDays": now_day - end, "periodEnd": end, "lagDays": lag, "due": due, "liveUntil": live, "graceUntil": grace, "staleAfter": stale}
+    hist = due + P["historicalAfterDays"].get(freq, P["historicalAfterDays"]["monthly"])
+    st = "LIVE" if now_day <= live else "FRESH" if now_day <= due else "EXPECTED_DELAY" if now_day <= grace else "DELAYED" if now_day <= stale else "STALE" if now_day <= hist else "HISTORICAL"
+    return {"state": st, "ageDays": now_day - end, "periodEnd": end, "lagDays": lag, "due": due, "liveUntil": live, "graceUntil": grace, "staleAfter": stale, "historicalAfter": hist}
 def iso(day): return (_DAY + datetime.timedelta(days=day)).isoformat()
 def today_ord(now_ms=None):
     t = datetime.datetime.now(datetime.timezone.utc) if now_ms is None else datetime.datetime.fromtimestamp(now_ms / 1000, datetime.timezone.utc)
     return _ord(t.date())
 def explain(r, freq):
     if r["state"] == "PENDING": return "sin fecha de observacion valida"
+    if r["state"] == "HISTORICAL": return "periodo cerrado el %s; sin observaciones nuevas desde hace mas de %d dias tras la fecha esperada (%s): serie historica, no se evalua como retraso" % (iso(r["periodEnd"]), r["historicalAfter"] - r["due"], iso(r["due"]))
     return "periodo cerrado el %s; con el rezago habitual de la fuente (%d d) el siguiente dato %s se espera el %s" % (iso(r["periodEnd"]), r["lagDays"], freq, iso(r["due"]))
+
+_LC = None
+def lifecycle():
+    """Declaraciones explicitas (data/series-lifecycle.json): id exacto o prefijo -> {state, evidence...}."""
+    global _LC
+    if _LC is None:
+        p = ROOT / "data/series-lifecycle.json"
+        _LC = json.loads(p.read_text(encoding="utf-8")).get("declarations", []) if p.exists() else []
+    return _LC
+def apply_lifecycle(series_id, state):
+    """Si la serie tiene una declaracion DISCONTINUED/HISTORICAL con evidencia y no esta vigente, devuelve ese estado; si no, el del motor."""
+    if state in POLICY["okStates"] or state == "PENDING": return state
+    for d in lifecycle():
+        if d.get("id") == series_id or (d.get("idPrefix") and str(series_id).startswith(d["idPrefix"])): return d["state"]
+    return state

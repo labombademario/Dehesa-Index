@@ -5,6 +5,7 @@ Limite declarado: las etiquetas de producto del catalogo son palabras clave deri
 import json
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]; D = ROOT / 'data'
+ARCHIVE_STATES = ('HISTORICAL', 'DISCONTINUED')   # igual que archiveStates de data/freshness-policy.json
 OK_STATES = ('LIVE', 'FRESH', 'EXPECTED_DELAY')   # igual que js/freshness.js okStates y scripts/freshness.py
 
 # grupo del catalogo -> tipo de metrica. 'other' = series sin celda de producto (tipos de interes, renta agraria, ecologico, medio ambiente).

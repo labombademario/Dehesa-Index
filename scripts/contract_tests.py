@@ -243,6 +243,22 @@ def series_registry(doc, errs, warns, stats):
         if k in ids: errs.append("serie repetida %s" % (k,)); break
         ids.add(k)
     if doc["summary"]["series"] != len(doc["series"]): errs.append("summary.series != len(series)")
+    # canonicalSeriesId debe ser unico salvo equivalencias intencionadas explicitamente declaradas (ficheros distintos y referenciadas mutuamente en `alternates`)
+    by = {}
+    for s in doc["series"]: by.setdefault(s["canonicalSeriesId"], []).append(s)
+    bad = 0
+    for cid, g in by.items():
+        for i in range(len(g)):
+            for j in range(i + 1, len(g)):
+                a, b = g[i], g[j]
+                if not (a["file"] != b["file"] and b["id"] in a.get("alternates", []) and a["id"] in b.get("alternates", [])):
+                    bad += 1
+                    if bad <= 5: errs.append("canonicalSeriesId duplicado sin equivalencia declarada: %s (%s, %s)" % (cid, a["id"], b["id"]))
+    if bad > 5: errs.append("... y %d colisiones canonicas mas" % (bad - 5))
+    if doc["summary"].get("canonicalCollisions") != bad: errs.append("summary.canonicalCollisions %r != %d" % (doc["summary"].get("canonicalCollisions"), bad))
+    for s in doc["series"]:
+        d = s.get("dims")
+        if not d or d["country"] != s["country"] or not d["frequency"] or not d["unit"] or s["canonicalSeriesId"].split("|")[0] != s["country"]: errs.append("%s: dims ausentes o incoherentes con canonicalSeriesId" % s["id"]); break
     stats["series"] = len(doc["series"])
 def search_index(doc, errs, warns, stats):
     e = doc["entries"]; ids = [x["i"] for x in e]
@@ -644,33 +660,35 @@ def coverage_gaps(doc, errs, warns, stats):
     import importlib.util, collections
     sp = importlib.util.spec_from_file_location("coverage_model", ROOT / "scripts" / "coverage_model.py"); CM = importlib.util.module_from_spec(sp); sp.loader.exec_module(CM)
     cand = {c["sourceId"]: c for c in json.loads((D / "source-candidates.json").read_text(encoding="utf-8"))["candidates"]}
-    ST = ["AVAILABLE", "AVAILABLE_OUTSIDE_CATALOG", "STALE", "SOURCE_AVAILABLE_NOT_INGESTED", "LICENSE_PENDING", "MISSING"]
+    ST = ["AVAILABLE", "AVAILABLE_OUTSIDE_CATALOG", "STALE", "HISTORICAL_ONLY", "SOURCE_AVAILABLE_NOT_INGESTED", "LICENSE_PENDING", "MISSING"]
     mx = doc["matrix"]; stats["series"] = doc["summary"]["cells"]
     if doc["summary"]["notInMatrix"]["unmappedGroups"]: errs.append("grupos del catalogo sin tipo de metrica: %s (anadirlos a GROUP_METRIC)" % doc["summary"]["notInMatrix"]["unmappedGroups"])
     ents = {e[0]: e for e in CM.entities()}
     if set(mx) != set(ents): errs.append("entidades de la matriz != entidades del catalogo")
     n = collections.Counter(); stale = collections.defaultdict(lambda: [0, set()])
     for cc, (c0, name, et, files) in sorted(ents.items()):
-        cnt = collections.defaultdict(lambda: [0, 0])
+        cnt = collections.defaultdict(lambda: [0, 0, 0])
         for sr in CM.load_series(files):
             m = CM.GROUP_METRIC.get(sr["group"])
             if m in (None, "other"): continue
             ok = sr.get("fs") in ("LIVE", "FRESH", "EXPECTED_DELAY")
             for t in sr.get("tags") or []:
                 if t in CM.KIND_OF:
-                    cnt[(t, m)][0] += 1; cnt[(t, m)][1] += 1 if ok else 0
-                    if not ok: stale[sr.get("sourceId")][0] += 1; stale[sr.get("sourceId")][1].add((cc, t, m))
+                    cnt[(t, m)][0] += 1; cnt[(t, m)][1] += 1 if ok else 0; cnt[(t, m)][2] += 1 if sr.get("fs") in ("HISTORICAL", "DISCONTINUED") else 0
+                    if not ok and sr.get("fs") not in ("HISTORICAL", "DISCONTINUED"): stale[sr.get("sourceId")][0] += 1; stale[sr.get("sourceId")][1].add((cc, t, m))
         got = mx.get(cc, {}); tot = 0
         for p, kind in CM.KIND_OF.items():
             exp_m = CM.APPLICABLE[kind]
             if sorted(got.get(p, {})) != sorted(exp_m): errs.append("%s/%s: metricas %s != aplicables %s" % (cc, p, sorted(got.get(p, {})), sorted(exp_m))); continue
             for m in exp_m:
-                cell = got[p][m]; ns, nf = cnt.get((p, m), (0, 0)); st = cell["state"]; tot += 1; n[st] += 1
+                cell = got[p][m]; ns, nf, na = cnt.get((p, m), (0, 0, 0)); st = cell["state"]; tot += 1; n[st] += 1
                 if cell["series"] != ns or cell["fresh"] != nf: errs.append("%s/%s/%s: series/fresh (%d/%d) no se reproducen desde el catalogo (%d/%d)" % (cc, p, m, cell["series"], cell["fresh"], ns, nf)); continue
                 ext = cell.get("external") or []; cl = cell.get("candidates") or []
                 if st == "AVAILABLE" and nf == 0: errs.append("%s/%s/%s: AVAILABLE sin series frescas" % (cc, p, m))
-                if st == "STALE" and (ns == 0 or nf > 0): errs.append("%s/%s/%s: STALE incoherente" % (cc, p, m))
-                if st not in ("AVAILABLE", "STALE") and ns: errs.append("%s/%s/%s: %s pero hay %d series en el catalogo" % (cc, p, m, st, ns))
+                if cell.get("archive", 0) != na: errs.append("%s/%s/%s: archive %d no se reproduce desde el catalogo (%d)" % (cc, p, m, cell.get("archive", 0), na))
+                if st == "STALE" and (ns == 0 or nf > 0 or na == ns): errs.append("%s/%s/%s: STALE incoherente" % (cc, p, m))
+                if st == "HISTORICAL_ONLY" and (ns == 0 or nf > 0 or na != ns): errs.append("%s/%s/%s: HISTORICAL_ONLY incoherente (todas las series deben ser historicas)" % (cc, p, m))
+                if st not in ("AVAILABLE", "STALE", "HISTORICAL_ONLY") and ns: errs.append("%s/%s/%s: %s pero hay %d series en el catalogo" % (cc, p, m, st, ns))
                 if st == "AVAILABLE_OUTSIDE_CATALOG" and not ext: errs.append("%s/%s/%s: AVAILABLE_OUTSIDE_CATALOG sin evidencia externa" % (cc, p, m))
                 if st in ("MISSING", "LICENSE_PENDING", "SOURCE_AVAILABLE_NOT_INGESTED") and ext: errs.append("%s/%s/%s: %s con evidencia externa" % (cc, p, m, st))
                 for k in cl:
@@ -698,7 +716,10 @@ def coverage_gaps(doc, errs, warns, stats):
         if not c or c["ingestionStatus"] != r["ingestionStatus"] or c["canStart"] != r["canStart"]: errs.append("ranking.candidateSources[%s] no coincide con la cola" % r["sourceId"])
 
 def freshness_policy(doc, errs, warns, stats):
-    if set(doc["states"]) != {"LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "PENDING"}: errs.append("estados distintos de los 6 definidos")
+    if set(doc["states"]) != {"LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "HISTORICAL", "DISCONTINUED", "PENDING"}: errs.append("estados distintos de los 8 definidos")
+    if not set(doc.get("archiveStates", [])) <= set(doc["states"]) or set(doc.get("archiveStates", [])) & set(doc["okStates"]) or set(doc.get("archiveStates", [])) & set(doc.get("lateStates", [])): errs.append("archiveStates incoherente (debe ser subconjunto de states y disjunto de okStates/lateStates)")
+    for f in doc["periodDays"]:
+        if f not in doc.get("historicalAfterDays", {}): errs.append("frecuencia %s sin historicalAfterDays" % f)
     if not set(doc["okStates"]) <= set(doc["states"]): errs.append("okStates fuera de states")
     for f in doc["periodDays"]:
         if f not in doc["defaultLagDays"]: errs.append("frecuencia %s sin rezago por defecto" % f)
@@ -715,6 +736,9 @@ def freshness_report(doc, errs, warns, stats):
     if sum(sum(v.values()) for v in doc["catalog"]["bySource"].values()) != doc["catalog"]["total"]: errs.append("catalog.bySource no suma total")
     late = doc["catalog"]["byState"].get("DELAYED", 0) + doc["catalog"]["byState"].get("STALE", 0)
     if late != doc["catalog"]["lateTotal"]: errs.append("lateTotal %d != DELAYED+STALE %d" % (doc["catalog"]["lateTotal"], late))
+    c = doc["catalog"]
+    if c["staleTotal"] != c["byState"].get("STALE", 0) or c["historicalTotal"] != c["byState"].get("HISTORICAL", 0) or c["discontinuedTotal"] != c["byState"].get("DISCONTINUED", 0): errs.append("catalog: staleTotal/historicalTotal/discontinuedTotal no coinciden con byState")
+    if c["archiveTotal"] != c["historicalTotal"] + c["discontinuedTotal"] or c["activeTotal"] + c["archiveTotal"] != c["total"]: errs.append("catalog: activeTotal + archiveTotal != total")
     stats["series"] = doc["catalog"]["total"]
     # una fuente cuyo catalogo esta casi todo STALE es una incidencia de datos o de politica: se avisa
     for s, v in doc["catalog"]["bySource"].items():

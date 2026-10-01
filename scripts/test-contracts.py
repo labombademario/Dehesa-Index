@@ -62,6 +62,8 @@ CASES = [
  ("pipeline-status.json", "resumen incoherente", lambda d: d["summary"].__setitem__("ok", 0)),
  ("pipeline-status.json", "workflow inexistente", lambda d: d["pipelines"][0].__setitem__("workflow", "no-existe.yml")),
  ("daily-brief.json", "recuento incoherente", lambda d: d["counts"].__setitem__("upcoming", 99)),
+ ("series-registry.json", "colision canonica no declarada", lambda d: d["series"][1].__setitem__("canonicalSeriesId", d["series"][0]["canonicalSeriesId"])),
+ ("series-registry.json", "colision declarada solo en un sentido", lambda d: (d["series"][1].__setitem__("canonicalSeriesId", d["series"][0]["canonicalSeriesId"]), d["series"][1].__setitem__("file", "otro.json"), d["series"][0].__setitem__("alternates", [d["series"][1]["id"]]))),
  ("series-registry.json", "serie repetida", lambda d: d["series"].append(copy.deepcopy(d["series"][0]))),
  ("search-index.json", "URL externa", lambda d: d["entries"][0].__setitem__("u", "https://evil.example/")),
  ("drought.json", "D0..D4 creciente", lambda d: d["us"]["conus"][-1].__setitem__(5, 99.0)),

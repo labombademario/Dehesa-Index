@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Informe de frescura (Freshness Engine 2.0) -> data/freshness.json.
 Aplica el motor a (1) las observaciones de data/latest.json y (2) las 5.818 series del catalogo (campo `fs`), y explica por que cada
-observacion esta en su estado. Resume por fuente y por estado; lista lo DELAYED/STALE con la fecha en la que se esperaba el siguiente dato."""
+observacion esta en su estado. STALE = deberia seguir publicandose y el siguiente dato esperado no ha llegado; HISTORICAL/DISCONTINUED = serie archivada, no cuenta como retraso. Resume por fuente y por estado; lista lo DELAYED/STALE con la fecha en la que se esperaba el siguiente dato."""
 import datetime, glob, json, sys
 from collections import Counter
 from pathlib import Path
@@ -28,7 +28,7 @@ for f in sorted(glob.glob(str(D / "catalog/*.json")) + glob.glob(str(D / "catalo
 late.sort(key=lambda x: (x["state"] != "STALE", x["sourceId"], x["id"]))
 out = {"schemaVersion": 1, "generatedAt": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"), "policy": "freshness-policy.json",
        "latest": {"total": len(obs), "byState": dict(Counter(o["state"] for o in obs)), "observations": obs},
-       "catalog": {"total": sum(cat.values()), "byState": dict(cat), "bySource": {k: dict(v) for k, v in sorted(by_src.items())}, "lateSample": late[:200], "lateTotal": len(late)},
+       "catalog": {"total": sum(cat.values()), "byState": dict(cat), "bySource": {k: dict(v) for k, v in sorted(by_src.items())}, "lateSample": late[:200], "lateTotal": len(late), "staleTotal": cat.get("STALE", 0), "archiveTotal": sum(cat.get(s, 0) for s in FR.POLICY["archiveStates"]), "historicalTotal": cat.get("HISTORICAL", 0), "discontinuedTotal": cat.get("DISCONTINUED", 0), "activeTotal": sum(cat.values()) - sum(cat.get(s, 0) for s in FR.POLICY["archiveStates"])},
        "explanation": "Antes, 46 de 81 observaciones se marcaban 'stale' al medir la edad desde el INICIO del periodo con umbrales fijos (p. ej. 45 dias para series mensuales): un dato mensual de agosto ya contaba como viejo el 15 de octubre aunque fuera el ultimo publicable. Ahora se mide contra el calendario de publicacion de cada fuente."}
 p = D / "freshness.json"
 try:

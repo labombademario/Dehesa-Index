@@ -1,0 +1,5 @@
+{
+ "schemaVersion": 1,
+ "doc": "Declaraciones EXPLICITAS de ciclo de vida de series: DISCONTINUED (la fuente anuncia que la serie ya no se publica) o HISTORICAL (conjunto cerrado por diseño). Cada declaracion exige evidence, evidenceUrl y verifiedAt. El Freshness Engine nunca infiere DISCONTINUED: sin declaracion, una serie sin datos nuevos es STALE o, pasado historicalAfterDays, HISTORICAL (derivado, sin afirmar nada sobre la fuente). No se puede declarar una serie vigente (LIVE/FRESH/EXPECTED_DELAY) como discontinuada.",
+ "declarations": []
+}

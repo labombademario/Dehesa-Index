@@ -1,23 +1,119 @@
 {
  "schemaVersion": 1,
- "doc": "Politica del Freshness Engine 2.0 (scripts/freshness.py y js/freshness.js; mismo algoritmo, paridad comprobada por scripts/test-freshness-parity.mjs). La frescura se mide contra el CALENDARIO DE PUBLICACION de cada fuente, no contra la fecha del periodo: un dato mensual de agosto sigue siendo el ultimo posible el 1 de octubre.",
- "algorithm": "end = fin del periodo observado; due = end + periodDays + lag (fecha en la que debe estar publicado el periodo siguiente); LIVE si hoy <= end + lag + max(2, liveFactor*period); FRESH si hoy <= due; EXPECTED_DELAY si hoy <= due + grace; DELAYED si hoy <= due + staleAfter; STALE en otro caso; PENDING si no hay fecha de observacion valida.",
- "states": ["LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "PENDING"],
- "okStates": ["LIVE", "FRESH", "EXPECTED_DELAY"],
- "periodDays": {"daily": 1, "weekly": 7, "monthly": 31, "quarterly": 92, "semiannual": 183, "annual": 366},
- "defaultLagDays": {"daily": 3, "weekly": 10, "monthly": 60, "quarterly": 100, "semiannual": 150, "annual": 330},
+ "doc": "Politica del Freshness Engine 2.0 (scripts/freshness.py y js/freshness.js; mismo algoritmo, paridad comprobada por scripts/test-freshness-parity.mjs). La frescura se mide contra el CALENDARIO DE PUBLICACION de cada fuente, no contra la fecha del periodo: un dato mensual de agosto sigue siendo el ultimo posible el 1 de octubre. STALE significa unicamente: la serie deberia seguir publicandose y el siguiente dato esperado no ha llegado (dentro de la ventana de recuperacion).",
+ "algorithm": "end = fin del periodo observado; due = end + periodDays + lag (fecha en la que debe estar publicado el periodo siguiente); LIVE si hoy <= end + lag + max(2, liveFactor*period); FRESH si hoy <= due; EXPECTED_DELAY si hoy <= due + grace; DELAYED si hoy <= due + staleAfter; STALE en otro caso; PENDING si no hay fecha de observacion valida. HISTORICAL si hoy > due + historicalAfterDays[freq]: la serie lleva muchos ciclos sin observaciones nuevas y se conserva como registro historico; NO se evalua como pipeline retrasado y no afirma que la fuente la haya discontinuado. DISCONTINUED solo se asigna por declaracion explicita con evidencia en data/series-lifecycle.json (el motor puro no lo produce).",
+ "states": [
+  "LIVE",
+  "FRESH",
+  "EXPECTED_DELAY",
+  "DELAYED",
+  "STALE",
+  "HISTORICAL",
+  "DISCONTINUED",
+  "PENDING"
+ ],
+ "okStates": [
+  "LIVE",
+  "FRESH",
+  "EXPECTED_DELAY"
+ ],
+ "periodDays": {
+  "daily": 1,
+  "weekly": 7,
+  "monthly": 31,
+  "quarterly": 92,
+  "semiannual": 183,
+  "annual": 366
+ },
+ "defaultLagDays": {
+  "daily": 3,
+  "weekly": 10,
+  "monthly": 60,
+  "quarterly": 100,
+  "semiannual": 150,
+  "annual": 330
+ },
  "liveFactor": 0.25,
- "grace": {"factor": 0.25, "minDays": 3, "maxDays": 30},
- "staleAfter": {"factor": 1.5, "maxDays": 120},
+ "grace": {
+  "factor": 0.25,
+  "minDays": 3,
+  "maxDays": 30
+ },
+ "staleAfter": {
+  "factor": 1.5,
+  "maxDays": 120
+ },
  "sources": {
-  "usda_nass": {"lagDays": {"monthly": 5}, "evidence": "NASS Agricultural Prices se publica el ultimo dia habil del propio mes (publicationDate - fin de periodo = 0 en data/latest.json)."},
-  "statcan": {"lagDays": {"monthly": 45}, "evidence": "Tabla 32-10-0077: publicationDate - fin de periodo = 41 dias en data/latest.json."},
-  "defra": {"lagDays": {"monthly": 60}, "evidence": "DEFRA agricultural price indices: 24-55 dias de rezago observado en data/latest.json."},
-  "eu_agrifood": {"lagDays": {"weekly": 12, "monthly": 60}, "evidence": "Agri-food Data Portal: semanal con 10 dias de rezago mediano; mensual 30-92 dias."},
-  "eu_oil_bulletin": {"lagDays": {"weekly": 7}, "evidence": "Weekly Oil Bulletin: 2 dias de rezago observado."},
-  "eia": {"lagDays": {"weekly": 7}, "evidence": "EIA weekly retail prices: publicado el mismo dia en data/latest.json."},
-  "alberta_ag": {"lagDays": {"weekly": 7}, "evidence": "Alberta Agriculture weekly reports: publicado el mismo dia en data/latest.json."},
-  "usda_ams_mars": {"lagDays": {"weekly": 7}, "evidence": "USDA AMS MARS: publicado el mismo dia en data/latest.json."},
-  "world_bank": {"lagDays": {"monthly": 10}, "evidence": "Pink Sheet mensual, 2 dias de rezago observado; se asume la publicacion de primeros de mes."}
+  "usda_nass": {
+   "lagDays": {
+    "monthly": 5
+   },
+   "evidence": "NASS Agricultural Prices se publica el ultimo dia habil del propio mes (publicationDate - fin de periodo = 0 en data/latest.json)."
+  },
+  "statcan": {
+   "lagDays": {
+    "monthly": 45
+   },
+   "evidence": "Tabla 32-10-0077: publicationDate - fin de periodo = 41 dias en data/latest.json."
+  },
+  "defra": {
+   "lagDays": {
+    "monthly": 60
+   },
+   "evidence": "DEFRA agricultural price indices: 24-55 dias de rezago observado en data/latest.json."
+  },
+  "eu_agrifood": {
+   "lagDays": {
+    "weekly": 12,
+    "monthly": 60
+   },
+   "evidence": "Agri-food Data Portal: semanal con 10 dias de rezago mediano; mensual 30-92 dias."
+  },
+  "eu_oil_bulletin": {
+   "lagDays": {
+    "weekly": 7
+   },
+   "evidence": "Weekly Oil Bulletin: 2 dias de rezago observado."
+  },
+  "eia": {
+   "lagDays": {
+    "weekly": 7
+   },
+   "evidence": "EIA weekly retail prices: publicado el mismo dia en data/latest.json."
+  },
+  "alberta_ag": {
+   "lagDays": {
+    "weekly": 7
+   },
+   "evidence": "Alberta Agriculture weekly reports: publicado el mismo dia en data/latest.json."
+  },
+  "usda_ams_mars": {
+   "lagDays": {
+    "weekly": 7
+   },
+   "evidence": "USDA AMS MARS: publicado el mismo dia en data/latest.json."
+  },
+  "world_bank": {
+   "lagDays": {
+    "monthly": 10
+   },
+   "evidence": "Pink Sheet mensual, 2 dias de rezago observado; se asume la publicacion de primeros de mes."
+  }
+ },
+ "lateStates": [
+  "DELAYED",
+  "STALE"
+ ],
+ "archiveStates": [
+  "HISTORICAL",
+  "DISCONTINUED"
+ ],
+ "historicalAfterDays": {
+  "daily": 365,
+  "weekly": 365,
+  "monthly": 730,
+  "quarterly": 730,
+  "semiannual": 1095,
+  "annual": 1095
  }
 }

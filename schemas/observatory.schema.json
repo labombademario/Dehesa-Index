@@ -143,6 +143,8 @@
        "EXPECTED_DELAY",
        "DELAYED",
        "STALE",
+       "HISTORICAL",
+       "DISCONTINUED",
        "PENDING"
       ]
      },

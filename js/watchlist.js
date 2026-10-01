@@ -27,7 +27,7 @@
 (function () {
   'use strict';
   var KEY = 'di-watchlist-v1', META = 'di-watchlist-meta-v1', W = window.DIWatch; if (!W) return;
-  var MAXITEMS = 60, MAXRULES = 12, MAXHIST = 20, TW_PCT = 10, RANK = { LIVE: 0, FRESH: 1, EXPECTED_DELAY: 2, DELAYED: 3, STALE: 4 };
+  var MAXITEMS = 60, MAXRULES = 12, MAXHIST = 20, TW_PCT = 10, RANK = { LIVE: 0, FRESH: 1, EXPECTED_DELAY: 2, DELAYED: 3, STALE: 4 };  // HISTORICAL/DISCONTINUED no estan en RANK a proposito: una serie historica no es un retraso y no dispara reglas de frescura
   function read() { try { var v = JSON.parse(window.localStorage.getItem(KEY) || '[]'); return Array.isArray(v) ? v : []; } catch (e) { return []; } }
   function write(l) { try { window.localStorage.setItem(KEY, JSON.stringify(l)); } catch (e) {} }
   function find(l, c, s) { for (var i = 0; i < l.length; i++) if (l[i].c === c && l[i].s === s) return l[i]; return null; }

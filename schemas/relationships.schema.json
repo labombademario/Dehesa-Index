@@ -494,6 +494,8 @@
          "EXPECTED_DELAY",
          "DELAYED",
          "STALE",
+         "HISTORICAL",
+         "DISCONTINUED",
          "PENDING"
         ]
        },
@@ -504,6 +506,8 @@
          "EXPECTED_DELAY",
          "DELAYED",
          "STALE",
+         "HISTORICAL",
+         "DISCONTINUED",
          "PENDING"
         ]
        }

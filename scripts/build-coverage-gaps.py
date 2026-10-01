@@ -17,7 +17,7 @@ for k, v in reg.items():
     for a in v.get('aliases', []): alias[a] = k
 cand = CM.J('source-candidates.json')['candidates']
 PRODUCTS = sorted(CM.KIND_OF)
-STATES = ['AVAILABLE', 'AVAILABLE_OUTSIDE_CATALOG', 'STALE', 'SOURCE_AVAILABLE_NOT_INGESTED', 'LICENSE_PENDING', 'MISSING']
+STATES = ['AVAILABLE', 'AVAILABLE_OUTSIDE_CATALOG', 'STALE', 'HISTORICAL_ONLY', 'SOURCE_AVAILABLE_NOT_INGESTED', 'LICENSE_PENDING', 'MISSING']
 
 def lic_of(sid):
     r = reg.get(alias.get(sid)); return r['status'] if r else 'UNKNOWN'
@@ -47,7 +47,7 @@ for k in ext:  # sin duplicados
 # ---- matriz
 matrix = {}; countries = {}; untagged = collections.Counter(); unmapped = collections.Counter(); other = collections.Counter(); stale_by_source = collections.defaultdict(lambda: {'cells': set(), 'series': 0, 'countries': set()})
 for cc, name, etype, files in CM.entities():
-    cells = collections.defaultdict(lambda: {'n': 0, 'ok': 0, 'latest': 0, 'latestPeriod': None, 'sources': set(), 'groups': set()})
+    cells = collections.defaultdict(lambda: {'n': 0, 'ok': 0, 'arch': 0, 'latest': 0, 'latestPeriod': None, 'sources': set(), 'groups': set()})
     for s in CM.load_series(files):
         m = CM.GROUP_METRIC.get(s['group'])
         if m is None: unmapped[s['group']] += 1; continue
@@ -57,9 +57,10 @@ for cc, name, etype, files in CM.entities():
         for t in tags:
             c = cells[(t, m)]; c['n'] += 1; c['sources'].add(s.get('sourceId')); c['groups'].add(s['group'])
             if s.get('fs') in CM.OK_STATES: c['ok'] += 1
+            if s.get('fs') in CM.ARCHIVE_STATES: c['arch'] += 1
             k = CM.period_key(s.get('latestPeriod'))
             if k > c['latest']: c['latest'] = k; c['latestPeriod'] = s.get('latestPeriod')
-            if s.get('fs') not in CM.OK_STATES:
+            if s.get('fs') not in CM.OK_STATES and s.get('fs') not in CM.ARCHIVE_STATES:  # las historicas no son un pipeline retrasado
                 sb = stale_by_source[s.get('sourceId')]; sb['cells'].add((cc, t, m)); sb['series'] += 1; sb['countries'].add(cc)
     rows = {}
     for p in PRODUCTS:
@@ -67,13 +68,14 @@ for cc, name, etype, files in CM.entities():
             c = cells.get((p, m)); e = ext.get((cc, p, m), [])
             cl = [x for x in cand if x['scope'] in ('catalog',) and x['country'] == cc and x.get('productsConfirmed') and p in x['products'] and m in x['metrics'] and x['ingestionStatus'] != 'ACTIVE']
             if c and c['ok']: st = 'AVAILABLE'
+            elif c and c['arch'] == c['n']: st = 'HISTORICAL_ONLY'
             elif c: st = 'STALE'
             elif e: st = 'AVAILABLE_OUTSIDE_CATALOG'
             else:
                 live = [x for x in cl if x['ingestionStatus'] == 'READY']
                 pend = [x for x in cl if x['ingestionStatus'] == 'LICENSE_REVIEW' or (x['ingestionStatus'] == 'DISCOVERED' and x['licenseStatus'] == 'UNREVIEWED' and x['datasetIdentified'])]
                 st = 'SOURCE_AVAILABLE_NOT_INGESTED' if live else 'LICENSE_PENDING' if pend else 'MISSING'
-            cell = {'state': st, 'series': c['n'] if c else 0, 'fresh': c['ok'] if c else 0}
+            cell = {'state': st, 'series': c['n'] if c else 0, 'fresh': c['ok'] if c else 0, 'archive': c['arch'] if c else 0}
             if c:
                 cell['latestPeriod'] = c['latestPeriod']; cell['sources'] = sorted(x for x in c['sources'] if x)
                 cell['licenses'] = sorted({lic_of(x) for x in c['sources'] if x}, key=lambda z: CM.LIC_RANK.get(z, 9))
@@ -104,7 +106,7 @@ stale_src = sorted(({'sourceId': k, 'staleSeries': v['series'], 'staleCells': le
                    key=lambda r: (-r['staleCells'], r['sourceId']))
 doc = {'schemaVersion': 1, 'generatedAt': NOW,
        'method': {'doc': 'Matriz pais x producto x metrica sobre el catalogo unificado (data/catalog). Productos = etiquetas del catalogo (heuristica de palabras clave sobre las etiquetas de serie). Solo se cuentan metricas aplicables a cada tipo de producto. Orden y ranking: tecnicos, sin juicio de importancia de mercado.',
-                  'states': {'AVAILABLE': 'al menos una serie del catalogo con frescura LIVE/FRESH/EXPECTED_DELAY', 'STALE': 'hay series pero ninguna al dia (STALE/DELAYED)',
+                  'states': {'AVAILABLE': 'al menos una serie del catalogo con frescura LIVE/FRESH/EXPECTED_DELAY', 'STALE': 'hay series, ninguna al dia y alguna deberia seguir publicandose (STALE/DELAYED)', 'HISTORICAL_ONLY': 'todas las series de la celda son historicas o discontinuadas: hay historia pero no hay fuente viva en el catalogo; no es un pipeline retrasado',
                              'AVAILABLE_OUTSIDE_CATALOG': 'sin serie en el catalogo unificado, pero el dato existe en un fichero USDA propio (supply-demand/gats/export-sales); frescura no evaluada',
                              'SOURCE_AVAILABLE_NOT_INGESTED': 'candidata READY segun el License Gate (data/source-candidates.json) con producto y metrica confirmados',
                              'LICENSE_PENDING': 'candidata con licencia en revision (o sin revisar con dataset identificado) y producto confirmado', 'MISSING': 'ninguna de las anteriores'},

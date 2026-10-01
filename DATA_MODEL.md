@@ -45,3 +45,17 @@ Generados por `scripts/build-source-candidates.py` y `scripts/build-coverage-gap
 - **Cola de fuentes**: la semilla curada `scripts/source-candidates-seed.json` (31 candidatas sacadas de las notas del proyecto, con `evidence`, sin re-verificar: `verification = NOT_REVERIFIED`) mas las fuentes YA integradas (`used=true` del registro, estado ACTIVE). El **License Gate** (`scripts/source_gate.py`) calcula resultado y estado SOLO desde `data/license-registry.json`: `READY` exige VERIFIED + uso comercial y derivados `yes` + dataset identificado; `canStart` ademas exige que no haya bloqueos tecnicos (token que debe crear Mario, scraping, etc.). Sin entrada en el registro la licencia es `UNREVIEWED` y `licenseClaim` solo recoge lo que dicen las notas; nunca cuenta como licencia. Estados: DISCOVERED, LICENSE_REVIEW, READY, INGESTING, ACTIVE, BLOCKED.
 - **Huecos de cobertura**: matriz pais (31 paises + agregado UE) x producto (23 etiquetas del catalogo) x metrica (price, price_index, production, trade, stocks, input_price; solo las aplicables al tipo de producto). Estados: AVAILABLE, STALE, AVAILABLE_OUTSIDE_CATALOG (dato USDA en fichero propio, frescura no evaluada), SOURCE_AVAILABLE_NOT_INGESTED (candidata READY), LICENSE_PENDING (candidata en revision), MISSING. `ranking` es tecnico: fuentes candidatas por estado del gate y celdas que tocan; fuentes integradas por celdas STALE. Limite: las etiquetas de producto son heuristicas, y una candidata solo rellena celdas con productos confirmados por las notas.
 - Contrato: `schemas/source-candidates.schema.json` y `schemas/coverage-gaps.schema.json` + tests semanticos `source_candidates` (gate recalculado, ACTIVE = used del registro, nada READY/INGESTING sin gate, licencia nunca inventada) y `coverage_gaps` (cada celda se recalcula desde el catalogo; los estados exigen evidencia o candidata real; grupos sin mapear = error) + 16 casos negativos.
+
+## Ciclo de vida de las series: STALE frente a HISTORICAL / DISCONTINUED
+
+`STALE` significa únicamente: *la serie debería seguir publicándose y el siguiente dato esperado no ha llegado*. Una serie que lleva muchos ciclos sin datos nuevos ya no es un pipeline retrasado.
+
+| Estado | Quién lo asigna | Significado |
+| --- | --- | --- |
+| `LIVE`, `FRESH`, `EXPECTED_DELAY` | motor (puro) | al día (`okStates`) |
+| `DELAYED`, `STALE` | motor (puro) | retraso real (`lateStates`); `STALE` solo dentro de la ventana de recuperación |
+| `HISTORICAL` | motor (puro) | hoy > fecha esperada + `historicalAfterDays[frecuencia]` (semanal/diaria 365, mensual/trimestral 730, semestral/anual 1.095). Se conserva como registro; **no** afirma que la fuente la haya discontinuado |
+| `DISCONTINUED` | solo `data/series-lifecycle.json` | la fuente anuncia que ya no la publica; exige `evidence`, `evidenceUrl` y `verifiedAt`. No puede declararse una serie vigente |
+| `PENDING` | motor | sin fecha de observación válida |
+
+Propagación: `archiveStates` (`HISTORICAL`, `DISCONTINUED`) quedan fuera del denominador de frescura del Coverage Score, no cuentan como retraso en el Observatorio ni disparan reglas `fresh` de la Watchlist, se muestran en gris en el Comparador y en la página de estado, y en la matriz de cobertura una celda con solo series archivadas es `HISTORICAL_ONLY` (no `STALE`). `data/freshness.json` publica `staleTotal`, `historicalTotal`, `discontinuedTotal`, `archiveTotal` y `activeTotal`.
