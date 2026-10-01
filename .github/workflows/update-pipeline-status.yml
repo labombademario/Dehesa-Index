@@ -27,6 +27,8 @@ jobs:
         run: python3 scripts/build-pipeline-status.py
       - name: Indice de series para la lista de seguimiento
         run: python3 scripts/build-watch-index.py || true
+      - name: Catalogo unificado (manifiesto, catalogos por pais y trozos de series)
+        run: python3 scripts/build-data-catalog.py || true
       - name: Series comparables por producto y pais
         run: python3 scripts/build-product-compare.py || true
       - name: Brief diario (que ha cambiado hoy)
@@ -35,7 +37,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/pipeline-status.json data/data-quality.json data/series-registry.json data/watch-index.json data/daily-brief.json data/product-compare.json
+          git add data/pipeline-status.json data/data-quality.json data/series-registry.json data/watch-index.json data/daily-brief.json data/product-compare.json data/catalog data/series
           git diff --cached --quiet && exit 0
           git commit -qm "Estado de pipelines y calidad de datos"
           git pull -q --rebase

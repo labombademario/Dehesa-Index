@@ -107,6 +107,7 @@
       { file: 'producto.html', query: '?p=trigo', label: { es: 'Ficha de producto', en: 'Product page', fr: 'Fiche produit', it: 'Scheda prodotto' } },
       { file: 'mapa.html', label: { es: 'Mapa agrícola', en: 'Farm map', fr: 'Carte agricole', it: 'Mappa agricola' } },
       { file: 'clima.html', label: { es: 'Clima agrícola', en: 'Farm weather', fr: 'Météo agricole', it: 'Meteo agricolo' } },
+      { file: 'catalogo.html', label: { es: 'Catálogo de datos', en: 'Data catalogue', fr: 'Catalogue de données', it: 'Catalogo dei dati' } },
       { file: 'comparador.html', label: { es: 'Comparador por producto y país', en: 'Product and country comparator', fr: 'Comparateur par produit et pays', it: 'Confronto per prodotto e paese' } },
       { file: 'brief.html', label: { es: 'Qué ha cambiado hoy', en: 'What changed today', fr: 'Ce qui a changé aujourd’hui', it: 'Cosa è cambiato oggi' } },
       { file: 'status.html', label: { es: 'Estado de los datos', en: 'Data status', fr: 'État des données', it: 'Stato dei dati' } }

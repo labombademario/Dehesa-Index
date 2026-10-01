@@ -36,6 +36,9 @@ jobs:
       - name: Validate data contracts and data tests
         run: python3 scripts/validate-data.py
 
+      - name: Data catalog integrity (manifest, catalogs, shards)
+        run: python3 scripts/check-catalog.py
+
       - name: Performance budget (gzip)
         run: node scripts/check-performance-budget.mjs
 
