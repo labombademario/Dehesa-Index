@@ -977,6 +977,28 @@ def premium_tracker(doc, errs, warns, stats):
     stats["cells"] = len(doc["cells"])
 
 
+def home_tape(doc, errs, warns, stats):
+    """Panel de la portada: cada fila debe ser identica a su observacion en data/prices/latest/<region>.json (nada convertido, nada inventado)."""
+    import json as _j, os as _o
+    base = _o.path.join(_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__))), "data", "prices", "latest")
+    cache, seen = {}, set()
+    for r in doc["rows"]:
+        k = (r["product"], r["region"])
+        if k in seen: errs.append("home-tape: fila duplicada %s/%s" % k)
+        seen.add(k)
+        if r["region"] not in cache:
+            try: cache[r["region"]] = {(o["product"], o["region"]): o for o in _j.load(open(_o.path.join(base, r["region"] + ".json")))["observations"]}
+            except Exception: cache[r["region"]] = None
+        obs = cache[r["region"]]
+        if obs is None: errs.append("home-tape: falta data/prices/latest/%s.json" % r["region"]); continue
+        o = obs.get(k)
+        if not o: errs.append("home-tape %s/%s: no existe en la capa de precios" % k); continue
+        for f in ("id", "sourceId", "observationDate", "value", "currency", "unit", "changePct"):
+            if o.get(f) != r.get(f): errs.append("home-tape %s/%s: %s no coincide con la observacion original (%r != %r)" % (k[0], k[1], f, r.get(f), o.get(f)))
+    if set(doc["sourceIds"]) != {r["sourceId"] for r in doc["rows"]}: errs.append("home-tape: sourceIds no coincide con las filas")
+    stats["rows"] = len(doc["rows"])
+
+
 def ers_cost_reference(doc, errs, warns, stats):
     """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""
     keys = set(doc["map"])

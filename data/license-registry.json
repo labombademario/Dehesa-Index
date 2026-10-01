@@ -1345,6 +1345,7 @@
   "source-candidates.json",
   "coverage-gaps.json",
   "premium-tracker.json",
+  "home-tape.json",
   "ers-cost-reference.json",
   "series-lifecycle.json",
   "instrument-identity.json"

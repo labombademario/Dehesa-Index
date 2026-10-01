@@ -304,9 +304,8 @@
     return el + '<table class="di-tape-t" data-no-cards="1"><thead class="di-sr"><tr>' + t.cols.map(function (c) { return '<th scope="col">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' + rows + '</tbody></table><div class="di-tape-f"><span>' + esc(t.note) + '</span>' + foot + '</div><a class="di-tape-a" href="precios.html">' + esc(t.all) + '</a>';
   }
   function loadTape() {
-    var go = function () { return window.DIPrices.latest(['eu', 'us', 'ca']); };
-    var load = window.DIPrices ? Promise.resolve() : new Promise(function (res, rej) { var sc = document.createElement('script'); sc.src = 'js/prices-store.js'; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
-    load.then(go).then(function (obs) { TAPE_DATA = obs; render(); }, function () { TAPE_DATA = 'err'; render(); });
+    fetch('data/home-tape.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) { TAPE_DATA = d.rows || []; render(); }, function () { TAPE_DATA = 'err'; render(); });
   }
 
   function render() {

@@ -316,6 +316,12 @@
     "premium_tracker"
    ]
   ],
+  "home-tape.json": [
+   "home-tape",
+   [
+    "home_tape"
+   ]
+  ],
   "ers-cost-reference.json": [
    "ers-cost-reference",
    [
@@ -399,6 +405,7 @@
   "source-candidates.json",
   "coverage-gaps.json",
   "premium-tracker.json",
+  "home-tape.json",
   "ers-cost-reference.json",
   "series-lifecycle.json",
   "instrument-identity.json",

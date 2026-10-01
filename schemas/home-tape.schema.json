@@ -1,0 +1,30 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Panel de precios de la portada",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "sourceIds", "rows"],
+ "properties": {
+  "schemaVersion": {"type": ["integer", "string"]},
+  "generatedAt": {"type": "string"},
+  "sourceIds": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+  "rows": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": ["id", "product", "region", "sourceId", "observationDate", "value", "currency", "unit", "changePct"],
+    "properties": {
+     "id": {"type": "string"},
+     "product": {"type": "string"},
+     "region": {"type": "string"},
+     "sourceId": {"type": "string"},
+     "observationDate": {"type": "string"},
+     "value": {"type": "number"},
+     "currency": {"type": "string"},
+     "unit": {"type": "string"},
+     "changePct": {"type": ["number", "null"]}
+    }
+   }
+  }
+ }
+}

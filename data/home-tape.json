@@ -1,0 +1,100 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-01T18:37:16Z",
+ "sourceIds": [
+  "eu_agrifood",
+  "european_commission",
+  "statcan",
+  "usda_nass"
+ ],
+ "rows": [
+  {
+   "id": "di_cereales_trigo_eu",
+   "product": "trigo",
+   "region": "eu",
+   "sourceId": "eu_agrifood",
+   "observationDate": "2026-09-20",
+   "value": 262.7,
+   "currency": "EUR",
+   "unit": "tonelada",
+   "changePct": 0.1525
+  },
+  {
+   "id": "di_trigo_us",
+   "product": "trigo",
+   "region": "us",
+   "sourceId": "usda_nass",
+   "observationDate": "2026-08",
+   "value": 6.23,
+   "currency": "USD",
+   "unit": "bushel",
+   "changePct": 2.81
+  },
+  {
+   "id": "di_cereales_trigo_ca",
+   "product": "trigo",
+   "region": "ca",
+   "sourceId": "statcan",
+   "observationDate": "2026-07",
+   "value": 298,
+   "currency": "CAD",
+   "unit": "tonelada",
+   "changePct": 2.9574
+  },
+  {
+   "id": "di_cereales_maiz_eu",
+   "product": "maiz",
+   "region": "eu",
+   "sourceId": "eu_agrifood",
+   "observationDate": "2026-09-20",
+   "value": 259,
+   "currency": "EUR",
+   "unit": "tonelada",
+   "changePct": -0.3846
+  },
+  {
+   "id": "di_maiz_us",
+   "product": "maiz",
+   "region": "us",
+   "sourceId": "usda_nass",
+   "observationDate": "2026-08",
+   "value": 4.45,
+   "currency": "USD",
+   "unit": "bushel",
+   "changePct": 4.46
+  },
+  {
+   "id": "di_cereales_maiz_ca",
+   "product": "maiz",
+   "region": "ca",
+   "sourceId": "statcan",
+   "observationDate": "2026-07",
+   "value": 261.78,
+   "currency": "CAD",
+   "unit": "tonelada",
+   "changePct": -0.8709
+  },
+  {
+   "id": "di_leche_eu",
+   "product": "leche",
+   "region": "eu",
+   "sourceId": "european_commission",
+   "observationDate": "2026-08-31",
+   "value": 45.53,
+   "currency": "EUR",
+   "unit": "100kg",
+   "changePct": 1.0655
+  },
+  {
+   "id": "di_leche_us",
+   "product": "leche",
+   "region": "us",
+   "sourceId": "usda_nass",
+   "observationDate": "2026-08",
+   "value": 19.8,
+   "currency": "USD",
+   "unit": "cwt",
+   "changePct": -2.46
+  }
+ ]
+}
