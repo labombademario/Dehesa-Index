@@ -41,7 +41,8 @@
       });
     },
     series: function (cc, id) {
-      return S.country(cc).then(function (c) {
+      // las series del pais y de producto estan en el catalogo base; solo las 'eu:' necesitan el catalogo UE (fichero aparte, mas grande)
+      return S.country(cc, id.indexOf('eu:') !== 0).then(function (c) {
         var row = c.series.filter(function (s) { return s.id === id; })[0]; if (!row) throw new Error('series not found');
         if (row.format === 'eu-regions') return get(row.file).then(function (f) {
           var rs = (f.regions || []).filter(function (r) { return r.c === row.c && (!row.m || r.m === row.m); }), r = rs[0]; if (!r) throw new Error('region not in file');

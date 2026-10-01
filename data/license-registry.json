@@ -1277,6 +1277,12 @@
   "data/ams/": {
    "default": "usda_ams_mars",
    "notes": "Informes MARS (data/ams/)"
+  },
+  "data/views/": {
+   "sources": [
+    "eu_agrifood"
+   ],
+   "notes": "Vistas pequenas derivadas (scripts/build-views.py); cada vista nombra aqui las fuentes de las que se deriva."
   }
  },
  "derived": [

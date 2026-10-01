@@ -187,6 +187,12 @@
    [
     "catalog_manifest"
    ]
+  ],
+  "views/eu-preview.json": [
+   "views-eu-preview",
+   [
+    "views_eu_preview"
+   ]
   ]
  },
  "globs": {
@@ -217,6 +223,7 @@
   "catalog.json",
   "quality.json",
   "intelligence.json",
-  "cross-market.json"
+  "cross-market.json",
+  "views/eu-preview.json"
  ]
 }

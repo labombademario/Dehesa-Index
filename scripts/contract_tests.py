@@ -246,6 +246,24 @@ def catalog_manifest(doc, errs, warns, stats):
         for m, v in c["metrics"].items():
             for f in v.get("files", []):
                 if not (D / f).exists(): errs.append("%s/%s: shard %s inexistente" % (cc, m, f))
+        s = c.get("summary")
+        if s:
+            core = sum(v["n"] for g, v in c["metrics"].items() if g != "product" and not g.startswith("eu_"))
+            if s["n"] != core: errs.append("%s: summary.n %d != series del pais en metrics %d" % (cc, s["n"], core))
+            if s["categories"] != len([g for g in c["metrics"] if g != "product" and not g.startswith("eu_")]): errs.append("%s: summary.categories incoherente" % cc)
+            cv = s.get("coverage")
+            if cv and not (0 <= cv["score"] <= 100 and all(0 <= cv[x] <= 1 for x in "bfdq")): errs.append("%s: coverage fuera de rango" % cc)
+def views_eu_preview(doc, errs, warns, stats):
+    stats["series"] = len(doc["cards"]); seen = set()
+    for c in doc["cards"]:
+        k = (c["family"], c["series"], c["c"])
+        if k in seen: errs.append("tarjeta duplicada %s" % (k,))
+        seen.add(k)
+        if not (_date(c["last"][0]) and _num(c["last"][1])): errs.append("%s: last invalido %s" % (c["k"], c["last"]))
+        for f in ("prev", "yoy"):
+            if c.get(f) is not None and not (_date(c[f][0]) and _num(c[f][1])): errs.append("%s: %s invalido" % (c["k"], f))
+        if c.get("prev") and c["prev"][0] >= c["last"][0]: errs.append("%s: prev no es anterior a last" % c["k"])
+        if _date(c["last"][0]) and _date(c["last"][0]) > TODAY: errs.append("%s: dato en el futuro" % c["k"])
 def series_shard(doc, errs, warns, stats):
     freq_rx = {"annual": r"^\d{4}$", "monthly": r"^\d{4}-\d{2}$", "weekly": r"^\d{4}-\d{2}-\d{2}$", "daily": r"^\d{4}-\d{2}-\d{2}$"}
     for s in doc["series"]:

@@ -105,11 +105,11 @@
       (ST.fx && cur._fx ? '<div class="di-movers-hint" style="margin:0 0 6px">' + esc(w[1]) + ' ' + nf(cur0.latest, dec(cur0.latest)) + ' ' + esc(cur0.unit) + (cur._fx.miss ? '. ' + esc(w[2]) : '') + '</div>' : '');
   }
   fetch('data/fx-history.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.currencies) { FX = d; if (DATA) build(); } }).catch(function () {});
-  var PS = null, CF = { ES: 'spain-stats', FR: 'france-stats', DE: 'germany-stats', BE: 'belgium-stats', AT: 'austria-stats', PT: 'portugal-stats', CA: 'canada-stats', AU: 'country-stats', DK: 'country-stats', NL: 'country-stats', US: 'interest-rates-stats', EU: 'interest-rates-stats' },
+  var PS = null,
     LV = { es: ['Linaje del dato', 'Fichero', 'último cambio', 'próxima ejecución prevista', 'última ejecución'], en: ['Data lineage', 'File', 'last change', 'next run due', 'last run'], fr: ['Lignage de la donnée', 'Fichier', 'dernier changement', 'prochaine exécution prévue', 'dernière exécution'], it: ['Lignaggio del dato', 'File', 'ultima modifica', 'prossima esecuzione prevista', 'ultima esecuzione'] };
   function dshort(i) { try { return new Date(i).toLocaleDateString(lang(), { day: 'numeric', month: 'short', year: 'numeric' }); } catch (e) { return String(i).slice(0, 10); } }
-  function lineage(cc) {
-    if (!PS || !CF[cc]) return ''; var f = 'data/' + CF[cc] + '.json', p = null, e = null, v = LV[lang()] || LV.es;
+  function lineage(cur) {
+    if (!PS || !cur || !cur.source) return ''; var f = 'data/' + cur.source, p = null, e = null, v = LV[lang()] || LV.es;
     PS.pipelines.forEach(function (x) { (x.files || []).forEach(function (y) { if (y.path === f && !p) { p = x; e = y; } }); }); if (!p) return '';
     return '<p class="di-movers-hint">' + v[0] + ': ' + v[1] + ' <code>' + esc(f) + '</code>' + (e.lastChange ? ' · ' + v[2] + ' ' + esc(dshort(e.lastChange)) : '') + (p.last ? ' · ' + v[4] + ' ' + esc(dshort(p.last.startedAt)) : '') + (p.nextRun ? ' · ' + v[3] + ' ' + esc(dshort(p.nextRun)) : '') + ' · <a href="status.html">status</a></p>';
   }
@@ -127,13 +127,34 @@
   }
   function build() {
     var root = document.getElementById('paises-body'); if (!root || !DATA) return;
-    if (needsFor(ST.c).some(function (n) { return FD[n] === undefined; })) { ensure(ST.c).then(build); return; }
-    var t = tt(), c = DATA.countries[ST.c] || DATA.countries.ES || DATA.countries.DK;
+    var tok = ++TOK;
+    loadCountry(ST.c).then(function () { return prep(); }).then(function () { if (tok === TOK) render(); }).catch(function () { if (tok === TOK) root.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
+  }
+  function selectedList(c) {
     var list = c.series.filter(function (s) { return ST.g === 'all' || s.group === ST.g; });
     if (!list.some(function (s) { return s.id === ST.s; })) ST.s = list.length ? list[0].id : null;
-    var cur0 = list.filter(function (s) { return s.id === ST.s; })[0], cur = cur0 && ST.fx ? fxConv(cur0) : cur0;
-    var countries = CCODES.slice().sort(function (x, y) { var o = { ES: 0, FR: 1, DE: 2, BE: 3, AT: 4, PT: 5, CA: 6, US: 7, EU: 8 }; return (o[x] == null ? 9 : o[x]) - (o[y] == null ? 9 : o[y]); });
-    var groups = ['all'].concat(['production', 'crops', 'livestock', 'trade', 'quotes', 'prices', 'prices_paid', 'milk', 'milk_regions', 'prices_lv', 'meat_regions', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'costs', 'environment', 'organic', 'stocks', 'income', 'partners', 'rates'].filter(function (g) { return c.series.some(function (s) { return s.group === g; }); }));
+    return list;
+  }
+  function pt(s) { return DISeries.series(s.cc, s.id).then(function (f) { s.points = f.points; }).catch(function () {}); }
+  function groupsOf(c) { return ['all'].concat(GROUPS.filter(function (g) { return c.series.some(function (s) { return s.group === g; }); })); }
+  /* Solo se descargan los puntos que se van a pintar: la serie elegida, sus comparables locales/nacionales y los KPI del perfil (cada uno en su trozo pequeño). */
+  function prep() {
+    var c = DATA.countries[ST.c], list = selectedList(c), cur0 = list.filter(function (s) { return s.id === ST.s; })[0], need = [];
+    if (cur0) {
+      need.push(cur0); var k = lvKey(cur0);
+      if (k) { var nat = null; c.series.forEach(function (x) { if (!nat && x.group !== cur0.group && k.nat.test(x.label)) nat = x; }); if (nat) { need.push(nat); c.series.forEach(function (x) { var kk = x.group === cur0.group && lvKey(x); if (kk && kk.key === k.key && x.latestPeriod === cur0.latestPeriod) need.push(x); }); } }
+    }
+    if (window.DIProfile) { try { window.DIProfile.kpis(ST.c, c.series, groupsOf(c)).forEach(function (s) { need.push(s); }); } catch (e) {} }
+    var seen = {}; return Promise.all(need.filter(function (s) { if (!s || s.points || seen[s.cc + s.id]) return false; seen[s.cc + s.id] = 1; return true; }).map(pt));
+  }
+  function render() {
+    var root = document.getElementById('paises-body'); if (!root || !DATA) return;
+    var t = tt(), c = DATA.countries[ST.c];
+    var list = selectedList(c);
+    var cur0 = list.filter(function (s) { return s.id === ST.s; })[0]; if (cur0 && !cur0.points) cur0 = null;
+    var cur = cur0 && ST.fx ? fxConv(cur0) : cur0;
+    var countries = CCODES.filter(function (k) { return AVAIL[k]; }).sort(function (x, y) { var o = { ES: 0, FR: 1, DE: 2, BE: 3, AT: 4, PT: 5, CA: 6, US: 7, EU: 8 }; return (o[x] == null ? 9 : o[x]) - (o[y] == null ? 9 : o[y]); });
+    var groups = groupsOf(c);
     var opt = function (arr, sel, lab) { return arr.map(function (k) { return '<option value="' + esc(k) + '"' + (k === sel ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; }).join(''); };
     var sel = function (id, label, inner) { return '<label style="font-size:13px;flex:1;min-width:150px">' + label + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; };
     var rng = ['6m', '1', '3', '5', '10', '20', 'max'];
@@ -150,7 +171,7 @@
     } else html += '<p class="di-movers-hint">' + t.none + '</p>';
     html += '<details style="margin-top:14px"><summary style="cursor:pointer;font-size:13px">' + t.table + '</summary><div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.series.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.latest.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:8px 6px">' + t.period.toUpperCase() + '</th><th style="padding:8px 6px">' + t.unit.toUpperCase() + '</th></tr>' +
       c.series.map(function (s) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px">' + esc(s.label) + '</td><td style="padding:8px 6px;text-align:right">' + nf(s.latest, dec(s.latest)) + '</td><td style="padding:8px 6px;text-align:right">' + (s.changePct == null ? '' : (s.changePct > 0 ? '+' : s.changePct < 0 ? '−' : '') + nf(Math.abs(s.changePct), 1) + ' %') + '</td><td style="padding:8px 6px">' + esc(plabel(s.latestPeriod, s.frequency)) + '</td><td style="padding:8px 6px">' + esc(s.unit) + '</td></tr>'; }).join('') + '</table></div></details>' +
-      '<p class="di-movers-hint" style="margin-top:12px">' + t.note + '</p><p class="di-movers-hint">' + t.src + ': <a href="' + esc(c.source.url) + '" target="_blank" rel="noopener">' + esc(c.source.name) + '</a> · ' + t.lic + ': ' + esc(c.source.license) + ' · ' + t.updated + ': ' + esc((DATA.generatedAt || '').slice(0, 10)) + '</p>' + lineage(ST.c);
+      '<p class="di-movers-hint" style="margin-top:12px">' + t.note + '</p>' + srcBox(c, cur0, t) + '<p class="di-movers-hint">' + t.updated + ': ' + esc((DATA.generatedAt || '').slice(0, 10)) + '</p>' + lineage(cur0);
     if (ST.c === 'PT') html += '<div id="ps-ifap"></div>'; html += '<div id="ps-tp"></div>';
     root.innerHTML = html;
     if (window.DITradePartners) { var tpn = document.getElementById('ps-tp'); if (tpn) window.DITradePartners.mount(tpn, ST.c, lang()); } if (ST.c === 'PT' && window.DIIfapMap) { var im = document.getElementById('ps-ifap'); if (im) window.DIIfapMap.mount(im, lang()); }
@@ -172,21 +193,40 @@
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };
   shell();
   var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('fx') === '1') ST.fx = true;
-  /* Carga bajo demanda: solo los ficheros del país elegido (antes se bajaban los 12 a la vez, ~8 MB). country-stats (DK, NL, AU) va siempre. */
-  var FORDER = ['country-stats', 'spain-stats', 'france-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'portugal-stats', 'portugal-eurostat-stats', 'canada-stats', 'eu-trade-stats', 'australia-trade-stats', 'interest-rates-stats'];
-  var NEED = { ES: ['spain-stats', 'eu-trade-stats'], FR: ['france-stats', 'eu-trade-stats'], DE: ['germany-stats', 'eu-trade-stats'], BE: ['belgium-stats', 'eu-trade-stats'], AT: ['austria-stats', 'eu-trade-stats'], PT: ['portugal-stats', 'portugal-eurostat-stats', 'eu-trade-stats'], DK: ['country-stats', 'eu-trade-stats'], NL: ['country-stats', 'eu-trade-stats'], CA: ['canada-stats', 'interest-rates-stats'], AU: ['country-stats', 'australia-trade-stats', 'interest-rates-stats'], US: ['interest-rates-stats'], EU: ['interest-rates-stats'] };
-  var CCODES = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'DK', 'NL', 'CA', 'US', 'EU', 'AU'], FD = {}, PEND = {};
-  function getFile(n) { if (FD[n] !== undefined) return Promise.resolve(); if (PEND[n]) return PEND[n]; return PEND[n] = fetch('data/' + n + '.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (j) { FD[n] = j; }).catch(function (e) { FD[n] = null; if (n === 'country-stats') throw e; }); }
-  function rebuildData() {
-    var d = { countries: {}, generatedAt: FD['country-stats'] && FD['country-stats'].generatedAt };
-    FORDER.forEach(function (n) { var x = FD[n]; if (!x || !x.countries) return; Object.keys(x.countries).forEach(function (k) { var c = c0(x.countries[k]); if (c.extend && d.countries[k]) { var b = d.countries[k]; b.sources = b.sources || [b.source.name]; if (c.source && b.sources.indexOf(c.source.name) < 0) b.sources.push(c.source.name); b.series = b.series.concat(c.series); } else { c.sources = [c.source.name]; d.countries[k] = c; } }); d.spainUpdated = d.spainUpdated || x.generatedAt; });
-    DATA = d;
+  /* Carga por catalogo (capa de datos unificada): manifiesto -> catalogo del pais -> trozo de la serie. Nunca se piden los *-stats.json. */
+  var GROUPS = ['production', 'crops', 'livestock', 'trade', 'quotes', 'prices', 'prices_paid', 'milk', 'milk_regions', 'prices_lv', 'meat_regions', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'costs', 'environment', 'organic', 'stocks', 'income', 'partners', 'rates'];
+  var CCODES = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'DK', 'NL', 'CA', 'US', 'EU', 'AU'], AVAIL = {}, CAT = {}, TOK = 0, LREG = null;
+  var LP = { es: ['licencia pendiente de verificar', 'Fuentes de este país', 'Licencia'], en: ['licence pending verification', 'Sources for this country', 'Licence'], fr: ['licence à vérifier', 'Sources de ce pays', 'Licence'], it: ['licenza da verificare', 'Fonti di questo paese', 'Licenza'] };
+  function loadCountry(cc) {
+    if (CAT[cc]) return CAT[cc];
+    return CAT[cc] = DISeries.country(cc, true).then(function (c) {
+      var S = (c.series || []).filter(function (s) { return s.group !== 'product' && s.format !== 'eu-regions'; }).map(function (s) {
+        return { id: s.id, cc: cc, label: s.label, unit: s.unit, frequency: s.freq, group: s.group, latestPeriod: s.latestPeriod, latest: s.latest, changePct: s.changePct, n: s.n, first: s.first, source: s.source, sourceId: s.sourceId, licenseId: s.licenseId };
+      });
+      DATA.countries[cc] = { name: c.name, sources: c.sources || [], series: S };
+    }).catch(function (e) { delete CAT[cc]; throw e; });
   }
-  function c0(c) { var o = {}, k; for (k in c) o[k] = c[k]; return o; }  // copia superficial: no tocamos el JSON cargado al re-fusionar
-  function needsFor(cc) { return ['country-stats'].concat(NEED[cc] || []); }
-  function ensure(cc) { return Promise.all(needsFor(cc).map(getFile)).then(function () { rebuildData(); }); }
-  getFile('country-stats').then(function () {
+  /* Fuente y licencia salen del Registro global de licencias (data/license-registry.json) a traves del sourceId de cada serie */
+  function lreg(id) { return LREG && LREG.sources && LREG.sources[id]; }
+  function srcLine(id, t) {
+    var s = lreg(id), w = LP[lang()] || LP.es; if (!s) return esc(id);
+    return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) + '</a> · ' + w[2] + ': ' + (s.licenseUrl ? '<a href="' + esc(s.licenseUrl) + '" target="_blank" rel="noopener">' + esc(s.licenseName) + '</a>' : esc(s.licenseName)) + (s.status === 'VERIFIED' ? '' : ' <em>(' + esc(w[0]) + ')</em>');
+  }
+  function srcBox(c, cur, t) {
+    var w = LP[lang()] || LP.es, ids = [], seen = {};
+    c.series.forEach(function (s) { if (s.sourceId && !seen[s.sourceId]) { seen[s.sourceId] = 1; ids.push(s.sourceId); } });
+    var h = '';
+    if (cur && cur.sourceId) h += '<p class="di-movers-hint">' + t.src + ': ' + srcLine(cur.sourceId, t) + '</p>';
+    var others = ids.filter(function (id) { return !cur || id !== cur.sourceId; });
+    if (others.length) h += '<p class="di-movers-hint">' + esc(w[1]) + ': ' + others.map(function (id) { var s = lreg(id); return s ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) + '</a>' : esc(id); }).join(' · ') + '</p>';
+    return h;
+  }
+  fetch('data/license-registry.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.sources) { LREG = d; if (DATA) build(); } }).catch(function () {});
+  DISeries.manifest().then(function (m) {
+    DATA = { countries: {}, generatedAt: m.generatedAt };
+    CCODES.forEach(function (k) { var e = m.countries[k]; AVAIL[k] = !!(e && e.metrics && Object.keys(e.metrics).some(function (g) { return g !== 'product' && g.indexOf('eu_') !== 0; })); });
+    if (!AVAIL[ST.c]) ST.c = 'ES';
     return Promise.all([fetch('data/country-macro.json'), fetch('data/country-wages.json')].map(function (f) { return f.then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }));
-  }).then(function (m) { MACRO = m[0]; WAGES = m[1]; return ensure(ST.c); }).then(function () { if (!DATA.countries[ST.c] || !DATA.countries[ST.c].series.length) ST.c = 'ES'; return ensure(ST.c); }).then(function () { build(); })
+  }).then(function (m) { MACRO = m[0]; WAGES = m[1]; build(); })
     .catch(function () { var b = document.getElementById('paises-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
 })();

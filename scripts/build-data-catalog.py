@@ -46,6 +46,30 @@ def stats_source(n, cc, s):
         if (s.get('sourceGroup') or '').startswith(pf): return sid
     if m.get('default'): return m['default']
     raise KeyError('%s: %s/%s sin fuente en el registro de licencias' % (n, cc, s.get('id')))
+BLK = {'markets': ['quotes', 'prices', 'prices_lv', 'prices_fv', 'milk', 'milk_regions', 'meat_regions'], 'production': ['production', 'crops', 'livestock', 'stocks', 'environment', 'organic'], 'trade': ['trade', 'partners'],
+       'inputs': ['inputs', 'inputs_f', 'inputs_a', 'costs', 'prices_paid', 'idx_perc', 'idx_pag', 'income']}
+MAXAGE = {'daily': 10, 'weekly': 25, 'monthly': 80, 'quarterly': 160, 'semiannual': 220, 'annual': 520}
+def pms(p):
+    """Misma lectura de periodos que js/perfil-pais.js (pms): ms UTC o None."""
+    m = re.match(r'^(\d{4})(?:-(\d{2}|Q[1-4]|S[12]))?(?:-(\d{2}))?$', str(p or ''))
+    if not m: return None
+    mo = 0
+    if m.group(2): mo = (int(m.group(2)[1]) - 1) * 3 if m.group(2)[0] == 'Q' else (int(m.group(2)[1]) - 1) * 6 if m.group(2)[0] == 'S' else int(m.group(2)) - 1
+    return datetime.datetime(int(m.group(1)), mo + 1, int(m.group(3) or 1), tzinfo=datetime.timezone.utc).timestamp() * 1000
+def coverage(rows, now_ms):
+    """Coverage Score (amplitud, frescura, profundidad, frecuencia): MISMA formula que DIProfile.coverage (js/perfil-pais.js); scripts/test-coverage-parity.mjs lo comprueba."""
+    blocks = sum(1 for k in ('markets', 'production', 'trade', 'inputs') if any(r['group'] in BLK[k] for r in rows)); n = fresh = mo = 0; yrs = []
+    for r in rows:
+        if r['group'] == 'rates': continue
+        n += 1; b = pms(r.get('latestPeriod')); a = pms(r.get('first'))
+        if b is not None and (now_ms - b) / 864e5 <= MAXAGE.get(r.get('freq'), 80) * 1.5: fresh += 1
+        if r.get('freq') in ('monthly', 'weekly', 'daily'): mo += 1
+        if a is not None and b is not None: yrs.append((b - a) / (365.25 * 864e5))
+    if not n: return None
+    yrs.sort(); med = yrs[len(yrs) >> 1] if yrs else 0
+    c = {'b': blocks / 4, 'f': fresh / n, 'd': min(med, 20) / 20, 'q': mo / n}
+    return {'b': round(c['b'], 4), 'f': round(c['f'], 4), 'd': round(c['d'], 4), 'q': round(c['q'], 4), 'score': int(100 * (0.3 * c['b'] + 0.3 * c['f'] + 0.2 * c['d'] + 0.2 * c['q']) + 0.5), 'years': round(med, 2), 'blocks': blocks}
+NOW_MS = datetime.datetime.now(datetime.timezone.utc).timestamp() * 1000
 def main():
     reg = {}
     # estricto: sin registro no sabemos que series duplicadas excluir; se detiene el build en vez de publicar un catalogo distinto
@@ -138,6 +162,11 @@ def main():
         # los metadatos del catalogo UE van en un fichero aparte: quien solo necesita las series del pais no los baja
         changed += write_if_changed(ROOT / 'data/catalog' / (slug(cc) + '.json'), dump({'schemaVersion': 1, 'country': cc, 'name': names.get(cc, cc), 'sources': srcs.get(cc, []), 'series': core}), written)
         man['countries'][cc] = {'name': names.get(cc, cc), 'n': len(cat), 'catalog': 'catalog/%s.json' % slug(cc), 'metrics': mg}
+        # resumen para tarjetas de perfiles.html (no hace falta bajar el catalogo del pais para listarlo)
+        prof = [x for x in core if x['group'] != 'product']
+        if prof:
+            man['countries'][cc]['summary'] = {'n': len(prof), 'categories': len({x['group'] for x in prof}), 'latestPeriod': max([x['latestPeriod'] for x in prof if x['latestPeriod']] or [None]), 'first': min([x['first'] for x in prof if x['first']] or [None]),
+                                               'sources': srcs.get(cc, []), 'coverage': coverage(prof, NOW_MS)}
         if eu:
             changed += write_if_changed(ROOT / 'data/catalog/eu' / (slug(cc) + '.json'), dump({'schemaVersion': 1, 'country': cc, 'series': eu}), written)
             man['countries'][cc]['catalogEu'] = 'catalog/eu/%s.json' % slug(cc); man['countries'][cc]['nEu'] = len(eu)

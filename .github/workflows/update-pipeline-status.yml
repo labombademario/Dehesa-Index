@@ -48,6 +48,8 @@ jobs:
         run: python3 scripts/build-watch-index.py
       - name: Catalogo unificado (manifiesto, catalogos y trozos de series)
         run: python3 scripts/build-data-catalog.py
+      - name: Vistas pequenas para las paginas de entrada (data/views)
+        run: python3 scripts/build-views.py
       - name: Series comparables por producto y pais
         run: python3 scripts/build-product-compare.py
       - name: Brief diario
@@ -55,6 +57,7 @@ jobs:
       - name: Comprobar coherencia de lo construido (catalogo estricto, contratos de los derivados)
         run: |
           python3 scripts/check-catalog.py --strict
+          python3 scripts/check-licenses.py
           python3 scripts/validate-data.py --derived --no-report
 
       # 3) Commit: solo se llega aqui si todo lo anterior ha ido bien.
@@ -62,7 +65,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/series-registry.json data/watch-index.json data/daily-brief.json data/product-compare.json data/catalog data/series
+          git add data/series-registry.json data/watch-index.json data/daily-brief.json data/product-compare.json data/catalog data/series data/views
           git diff --cached --quiet && exit 0
           git commit -qm "Datos derivados: catalogo, registro, watchlist, comparador y brief"
           for i in 1 2 3; do git pull -q --rebase --autostash && git push && exit 0; sleep $((i * 5)); done

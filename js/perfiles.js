@@ -26,14 +26,6 @@
       eun: { cerdo: 'Suino, classe E', vacuno: 'Vitelloni (A, O2)', trigo: 'Frumento panificabile', cebada: 'Orzo da foraggio', mantequilla: 'Burro', leche_polvo: 'Latte scremato in polvere', huevos: 'Uova (gabbia)', pollo: 'Pollo intero 65%', cordero: 'Agnello pesante', nitrogeno: 'Fertilizzante azotato', leche: 'Latte crudo (Germania)', aceite: 'Olio extra vergine (Spagna)' } }
   };
   var ORDER = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'DK', 'NL', 'US', 'CA', 'AU', 'EU'];
-  var EUP = [
-    { f: 'cerdo', s: 'e', c: 'EU', k: 'cerdo' }, { f: 'vacuno', s: 'young-bulls-ao2', c: 'EU', k: 'vacuno' },
-    { f: 'cereales', s: 'breadmaking-common-wheat-national-average-not-specified', c: 'EU', k: 'trigo' }, { f: 'cereales', s: 'feed-barley-national-average-not-specified', c: 'EU', k: 'cebada' },
-    { f: 'lacteos', s: 'butter', c: 'EU', k: 'mantequilla' }, { f: 'lacteos', s: 'smp', c: 'EU', k: 'leche_polvo' },
-    { f: 'huevos', s: 'cage', c: 'EU', k: 'huevos' }, { f: 'pollo', s: 'whole-broiler-65-selling-price', c: 'EU', k: 'pollo' },
-    { f: 'ovino', s: 'heavy-lamb', c: 'EU', k: 'cordero' }, { f: 'fertilizantes', s: 'n-nitrogen', c: 'EU', k: 'nitrogeno' },
-    { f: 'leche', s: 'raw-milk', c: 'DE', k: 'leche' }, { f: 'aceite', s: 'extra-virgin-olive-oil-up-to-0-8', c: 'ES', k: 'aceite' }
-  ];
   var D = null, EUD = null, MAC = null, WAG = null, ST = { a: 'ES', b: 'FR' };
   function lang() { return CD.lang(); }
   function tt() { return T[lang()] || T.es; }
@@ -43,15 +35,15 @@
   function chip(v) { if (v == null) return '–'; var col = v >= 0 ? '#2f6b4a' : '#a33'; return '<span style="color:' + col + '">' + (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1) + ' %</span>'; }
   function euCards() {
     var t = tt(), h = '';
-    EUP.forEach(function (p) {
-      var fam = EUD[p.f], ser = fam && fam.series.filter(function (s) { return s.id === p.s; })[0], r = ser && ser.regions.filter(function (x) { return x.c === p.c; })[0];
-      if (!r) return;
+    EUD.cards.forEach(function (p) {
+      var r = p, ser = p;
       h += '<div class="di-card" style="padding:12px 14px"><div style="font-size:12.5px;font-weight:600;min-height:34px">' + esc(t.eun[p.k]) + '</div><div style="font-size:21px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:4px">' + nf(r.last[1], CD.dec(r.last[1])) + '</div><div style="font-size:11px;color:var(--text-muted)">' + esc(ser.unit) + '</div><div style="font-size:12px;margin-top:6px;color:var(--text-muted)">' + t.vsprev + ': ' + chip(pct(r.last[1], r.prev && r.prev[1])) + '<br>' + t.vsyr + ': ' + chip(pct(r.last[1], r.yoy && r.yoy[1])) + '<br>' + esc(dtf(r.last[0])) + '</div></div>';
     });
     return h;
   }
-  function covChip(c) { var v = window.DIProfile.coverage && window.DIProfile.coverage(c.series); if (!v) return ''; return '<span title="Coverage score" style="font-size:11.5px;font-weight:700;border:1px solid var(--border);border-radius:10px;padding:1px 8px;color:' + (v.score >= 75 ? '#2f6b4a' : v.score >= 50 ? '#b7791f' : '#a33') + '">' + v.score + '/100</span>'; }
+  function covChip(c) { var v = c.summary ? c.summary.coverage : (window.DIProfile.coverage && c.series && window.DIProfile.coverage(c.series)); if (!v) return ''; return '<span title="Coverage score" style="font-size:11.5px;font-weight:700;border:1px solid var(--border);border-radius:10px;padding:1px 8px;color:' + (v.score >= 75 ? '#2f6b4a' : v.score >= 50 ? '#b7791f' : '#a33') + '">' + v.score + '/100</span>'; }
   function stats(c) {
+    if (!c.series && c.summary) return { n: c.summary.n, g: {}, nc: c.summary.categories, mn: c.summary.first, mx: c.summary.latestPeriod };  // tarjeta: resumen del manifiesto, sin bajar el catalogo
     var S = c.series, groups = {}, mn = null, mx = null;
     S.forEach(function (s) { groups[s.group] = (groups[s.group] || 0) + 1; var a = s.points ? s.points[0][0] : s.first; if (mn == null || a < mn) mn = a; if (mx == null || s.latestPeriod > mx) mx = s.latestPeriod; });
     return { n: S.length, g: groups, nc: Object.keys(groups).length, mn: mn, mx: mx };
@@ -59,7 +51,7 @@
   function pl(p) { return CD.plabel(p, /^\d{4}-\d{2}$/.test(p) ? 'monthly' : /^\d{4}-\d{2}-\d{2}$/.test(p) ? 'weekly' : 'annual'); }
   function ctx(cc) {
     var l = lb();
-    return { lang: lang(), t: l, groups: ['all'].concat(CD.groups), esc: esc, nf: nf, dec: CD.dec, plabel: CD.plabel, wage: WAG && cc && WAG.countries[cc], rate: cc && D.countries[cc] ? window.DIProfile.rateOf(D.countries[cc]) : null };
+    return { lang: lang(), t: l, groups: ['all'].concat(CD.groups), esc: esc, nf: nf, dec: CD.dec, plabel: CD.plabel, wage: WAG && cc && WAG.countries[cc], rate: cc && D.countries[cc] && D.countries[cc].series ? window.DIProfile.rateOf(D.countries[cc]) : null };
   }
   function sumSeries(c, kind) {
     return c.series.filter(function (x) { return new RegExp('^(eu-[a-z]{2}-trade|au)-' + (kind === 'exp' ? 'exp' : kind === 'imp' ? 'imp' : 'bal') + '-agrifood$').test(x.id) && x.frequency === 'monthly'; })[0];
@@ -76,8 +68,11 @@
   }
   // Solo bajamos los puntos de lo que se pinta: los KPI de cada pais (sparkline) y las series de comercio de 12 meses.
   function compare() {
+    if (!D.countries[ST.a] || !D.countries[ST.b]) return Promise.resolve('');
+    return Promise.all([ensure(ST.a), ensure(ST.b)]).then(compareLoaded);
+  }
+  function compareLoaded() {
     var A = D.countries[ST.a], B = D.countries[ST.b];
-    if (!A || !B) return Promise.resolve('');
     var ka = window.DIProfile.kpis(ST.a, A.series, groupBy(A)), kb = window.DIProfile.kpis(ST.b, B.series, groupBy(B)), need = ka.concat(kb);
     ['exp', 'imp', 'bal'].forEach(function (k) { need.push(sumSeries(A, k), sumSeries(B, k)); });
     return CD.hydrate(need).then(function () { return renderCompare(A, B, ka, kb); });
@@ -109,8 +104,22 @@
     h += '<h3 style="margin:22px 0 4px;font-size:15px">' + t.catsN + '</h3><div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:460px;font-size:13.5px"><thead><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="' + th + '">' + t.cat.toUpperCase() + '</th>' + head(ST.a) + head(ST.b) + '</tr></thead><tbody>' + cr + '</tbody></table></div>';
     return h;
   }
+  // El comparador (2 catalogos de pais + trozos de series) solo se carga cuando esta cerca de la pantalla, o ya si la URL lo pide (#comparar, ?a=&b=).
+  var CMP_ON = /[?&]a=|[?&]b=|#comparar/.test(location.search + location.hash), CMP_IO = null;
+  function lazyCompare() {
+    var c = document.getElementById('pf-cmp'); if (!c) return;
+    if (CMP_ON || !window.IntersectionObserver) { CMP_ON = true; fillCompare(); return; }
+    if (CMP_IO) CMP_IO.disconnect();
+    CMP_IO = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { CMP_ON = true; CMP_IO.disconnect(); fillCompare(); } }, { rootMargin: '300px' });
+    CMP_IO.observe(c);
+  }
   function fillCompare() { var tk = ++FILL; compare().then(function (h) { var c = document.getElementById('pf-cmp'); if (c && tk === FILL) c.innerHTML = h; }); }
   var FILL = 0;
+  // El catalogo de un pais solo se baja cuando hace falta (comparador, avisos del usuario); las tarjetas usan el resumen del manifiesto.
+  function ensure(cc) {
+    var c = D.countries[cc]; if (!c || c.series) return Promise.resolve();
+    return CD.country(cc).then(function (x) { c.series = x.series; c.sources = x.sources; c.source = x.source; });
+  }
   function groupBy(c) { var g = {}; c.series.forEach(function (s) { (g[s.group] = g[s.group] || []).push(s); }); return g; }
   function build() {
     var root = document.getElementById('perfiles-body'); if (!root || !D) return;
@@ -124,9 +133,9 @@
     h += '</div><h2 id="comparar" style="margin:0 0 8px;font-size:18px">' + t.compare + '</h2>';
     var opts = function (sel) { return ORDER.filter(function (cc) { return D.countries[cc]; }).map(function (cc) { return '<option value="' + cc + '"' + (cc === sel ? ' selected' : '') + '>' + window.DIProfile.flag(cc) + ' ' + esc(l.countries[cc]) + '</option>'; }).join(''); };
     h += '<div style="display:flex;gap:12px;flex-wrap:wrap"><label style="font-size:13px;flex:1;min-width:160px">' + t.a + '<br><select id="pf-a" class="di-compare-select">' + opts(ST.a) + '</select></label><label style="font-size:13px;flex:1;min-width:160px">' + t.b + '<br><select id="pf-b" class="di-compare-select">' + opts(ST.b) + '</select></label></div><div id="pf-cmp"></div>';
-    root.innerHTML = h; fillCompare();
+    root.innerHTML = h; lazyCompare();
     Array.prototype.forEach.call(root.querySelectorAll('[data-unwatch]'), function (b) { b.onclick = function () { var a = b.getAttribute('data-unwatch').split('|'); DIWatch.remove(a[0], a[1]); build(); }; });
-    ['a', 'b'].forEach(function (k) { var e = document.getElementById('pf-' + k); if (e) e.onchange = function () { ST[k] = e.value; fillCompare(); try { history.replaceState(null, '', '?a=' + ST.a + '&b=' + ST.b + '#comparar'); } catch (x) {} }; });
+    ['a', 'b'].forEach(function (k) { var e = document.getElementById('pf-' + k); if (e) e.onchange = function () { ST[k] = e.value; CMP_ON = true; fillCompare(); try { history.replaceState(null, '', '?a=' + ST.a + '&b=' + ST.b + '#comparar'); } catch (x) {} }; });
   }
   function watchPanel() {
     if (!window.DIWatch) return ''; var w = DIWatch.labels[lang()] || DIWatch.labels.es, list = DIWatch.list(), rows = '';
@@ -143,8 +152,7 @@
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };
   shell();
   var q = new URLSearchParams(window.location.search); if (q.get('a')) ST.a = q.get('a').toUpperCase(); if (q.get('b')) ST.b = q.get('b').toUpperCase();
-  var fams = ['cerdo', 'vacuno', 'cereales', 'lacteos', 'huevos', 'pollo', 'ovino', 'fertilizantes', 'leche', 'aceite'];
-  Promise.all([CD.load(), CD.wages().then(function (w) { WAG = w; return w; }), fetch('data/country-macro.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), Promise.all(fams.map(function (f) { return fetch('data/eu/' + f + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }))])
-    .then(function (rs) { D = rs[0]; MAC = rs[2]; EUD = {}; rs[3].forEach(function (x, i) { if (x) EUD[fams[i]] = x; }); if (!D.countries[ST.a]) ST.a = 'ES'; if (!D.countries[ST.b]) ST.b = 'FR'; build(); })
+  Promise.all([CD.index(), CD.wages().then(function (w) { WAG = w; return w; }), fetch('data/country-macro.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), fetch('data/views/eu-preview.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })])
+    .then(function (rs) { D = rs[0]; MAC = rs[2]; EUD = rs[3]; if (!D.countries[ST.a]) ST.a = 'ES'; if (!D.countries[ST.b]) ST.b = 'FR'; var wc = {}; (window.DIWatch ? DIWatch.list() : []).forEach(function (it) { wc[it.c] = 1; }); return Promise.all(Object.keys(wc).map(ensure)).catch(function () {}).then(build); })
     .catch(function () { var b = document.getElementById('perfiles-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
 })();

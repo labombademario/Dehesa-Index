@@ -45,6 +45,9 @@ jobs:
       - name: Data catalog integrity (manifest, catalogs, shards)
         run: python3 scripts/check-catalog.py --strict
 
+      - name: Coverage Score precalculado = el de la ficha de pais
+        run: node scripts/test-coverage-parity.mjs
+
       - name: License gate (registry, file coverage, catalog propagation, legal text)
         run: python3 scripts/check-licenses.py
 
