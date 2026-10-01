@@ -28,7 +28,7 @@ No hay historia suficiente para extrapolar una tasa estable; por eso la medicion
 
 ## Medicion del 2026-10-01 (alerta de calendario)
 - `data/` pesa 111,4 MB (aviso a 120, fallo a 160). **`data/snapshots/` es lo que mas crece**: el 30-sep un dia completo ocupo 3,8 MB y el 1-oct lleva 1,3 MB a media jornada. A ~3,8 MB/dia, el aviso salta en ~2-3 dias y el limite de 160 MB (que hace fallar `quality.yml`) en ~13 dias. Nada del navegador lee los snapshots (solo los escriben los pipelines y los valida `validate-snapshots.mjs`).
-- La politica sugerida arriba (30 dias diarios) NO cabe en el presupuesto: 30 x 3,8 MB = 114 MB. Con 7 dias diarios + uno por semana el arbol queda por debajo de ~145 MB. Es una decision de producto: no se ha borrado nada.
+- La politica sugerida arriba (30 dias diarios) NO cabe en el presupuesto: 30 x 3,8 MB = 114 MB. Con 7 dias diarios + uno por semana el arbol queda por debajo de ~145 MB. **Decision de Mario (2026-10-01): 7 dias diarios + el ultimo de cada semana anterior.** Implementado en `scripts/prune-snapshots.py` (dry-run por defecto; el workflow `update-pipeline-status` lo ejecuta con `--apply` cada 3 h y commitea los borrados; prueba en `scripts/test-prune-snapshots.py`). Hasta el 9-oct no hay nada que retirar; lo retirado sigue en el historial de git.
 - `data/us-cash-bids/` (4,7 MB hoy): con los 30 informes registrados (~1.080 series) se esperan ~8 MB al activarlos y ~15 MB mas por ano (unos 58 bytes por observacion de historico). Tiene presupuesto propio en `repo-budget.json` (`dirBudgets`: aviso 20 MB, limite 40 MB); antes de llegar al limite, particionar `history/` por ano.
 
 ## Que NO se ha hecho a proposito

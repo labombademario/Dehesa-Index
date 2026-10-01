@@ -96,6 +96,8 @@ jobs:
       - name: Performance budget (gzip)
         run: node scripts/check-performance-budget.mjs
 
+      - name: Retencion de snapshots (prueba)
+        run: python3 scripts/test-prune-snapshots.py
       - name: Validate snapshots
         run: node scripts/validate-snapshots.mjs
 
