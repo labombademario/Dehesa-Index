@@ -97,6 +97,7 @@
     why_fertilizer: ['Insumo: fertilizante', 'Input: fertiliser', 'Intrant : engrais', 'Input: fertilizzante'], why_energy: ['Insumo: energía', 'Input: energy', 'Intrant : énergie', 'Input: energia'], why_feed: ['Insumo: pienso', 'Input: feed', 'Intrant : aliment du bétail', 'Input: mangime'],
     usedBy: ['Se usa como insumo en', 'Used as an input in', 'Utilisé comme intrant pour', 'Usato come input per'],
     costsNote: ['Que un insumo y un producto aparezcan juntos no es una relación causal medida: la relación observada entre ambos mercados se describe (sin predecir) en Precios → relaciones agrícolas.', 'An input and a product appearing together is not a measured causal link: the observed relationship between both markets is described (without predicting) in Prices → agricultural relationships.', 'Qu’un intrant et un produit apparaissent ensemble n’est pas un lien causal mesuré : la relation observée entre les deux marchés est décrite (sans prédire) dans Prix → relations agricoles.', 'Il fatto che un input e un prodotto compaiano insieme non è un legame causale misurato: la relazione osservata tra i due mercati è descritta (senza prevedere) in Prezzi → relazioni agricole.'],
+    calcLink: ['Calcula tu margen y tu precio de equilibrio', 'Calculate your margin and break-even price', 'Calculez votre marge et votre prix d’équilibre', 'Calcola il tuo margine e il prezzo di pareggio'],
     drivers: ['Factores observados', 'Observed factors', 'Facteurs observés', 'Fattori osservati'],
     driversHint: ['Hechos medidos en los datos de arriba. No son previsiones ni causas demostradas', 'Facts measured in the data above. They are not forecasts or proven causes', 'Faits mesurés dans les données ci-dessus. Ce ne sont ni des prévisions ni des causes démontrées', 'Fatti misurati nei dati sopra. Non sono previsioni né cause dimostrate'],
     noDrivers: ['No hay datos suficientes para listar factores observados.', 'Not enough data to list observed factors.', 'Pas assez de données pour lister des facteurs observés.', 'Dati insufficienti per elencare fattori osservati.'],
@@ -475,6 +476,7 @@
       h += '</tbody></table></div>';
     }
     if (used.length) h += '<p class="pt-sub">' + esc(t('usedBy')) + ': ' + used.map(function (k) { return '<a href="producto.html?p=' + k + '">' + esc(nm(k)) + '</a>'; }).join(' · ') + '</p>';
+    if (/^(trigo|maiz|cebada|avena|arroz|soja|colza)$/.test(CTX.pid)) h += '<p class="pt-src"><a href="calculadora.html?crop=' + CTX.pid + '">' + esc(t('calcLink')) + ' →</a></p>';
     return h + '<p class="pt-src">' + esc(t('costsNote')) + ' <a href="precios.html">' + esc(t('drivers')) + ' →</a></p>' + srcLine(rel.reduce(function (a, r) { return a.concat(relObs(r.product).obs.map(function (o) { return o.sourceId; })); }, []));
   }
 

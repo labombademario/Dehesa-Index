@@ -1252,3 +1252,15 @@ html[data-theme="dark"] .pt-fs-DELAYED, html[data-theme="dark"] .pt-cp-not_compa
   .pt-table.rs td::before { content: attr(data-l); font-size: 11.5px; font-weight: 700; color: var(--text-faint); text-align: left; flex: 0 0 auto; }
   .pt-row { grid-template-columns: minmax(70px, 110px) 1fr auto; }
 }
+
+/* ---------- Calculadora de margen (js/calculadora.js) ---------- */
+.cc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 8px 0; }
+.cc-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.cc-field label { font-size: 12px; font-weight: 700; color: var(--text-faint); }
+.cc-field input, .cc-field select { font: inherit; font-size: 15px; min-height: 44px; padding: 8px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface-input); color: var(--text); width: 100%; box-sizing: border-box; }
+.cc-field input[aria-invalid="true"] { border-color: var(--negative); }
+.cc-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.cc-row input { flex: 1 1 100px; min-width: 0; }
+.cc-row .pt-bar-ctl { margin: 0; }
+.cc-fs { border: 1px solid var(--border); border-radius: 10px; margin: 12px 0; padding: 8px 12px 12px; min-width: 0; }
+.cc-fs legend { font-size: 13px; font-weight: 700; padding: 0 6px; }

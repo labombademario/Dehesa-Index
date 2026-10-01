@@ -26,6 +26,7 @@ const PAGES = [
   { n: 'paises', url: '/paises.html?c=ES', crit: ['#paises-body'] },
   { n: 'perfiles', url: '/perfiles.html', crit: ['#perfiles-body'] },
   { n: 'comparador', url: '/comparador.html', crit: ['#cmp-body'] },
+  { n: 'calculadora', url: '/calculadora.html', crit: ['#cc-body'] },
   { n: 'catalogo', url: '/catalogo.html', crit: ['#cat-body'] },
   { n: 'brief', url: '/brief.html', crit: ['#brief-body'] },
   { n: 'noticias', url: '/noticias.html', crit: ['#nw-items'] },
@@ -132,6 +133,23 @@ for (const w of [1280, 390]) {
       // el detalle pesado no se descarga sin pedirlo
       const heavy = await page.evaluate(() => performance.getEntriesByType('resource').filter(e => /\/data\/(ers|gats|nass-crops|supply-demand)\.json/.test(e.name)).length);
       if (heavy) throw new Error('la ficha descargo ficheros pesados sin pedirlos');
+    });
+    await flow('calculadora: margen y unidades', w, async (page) => {
+      await page.goto(BASE + '/calculadora.html?crop=trigo', { waitUntil: 'load' }); await page.waitForSelector('#cc-area', { timeout: 8000 });
+      await page.fill('#cc-area', '100'); await page.fill('#cc-y', '7'); await page.fill('#cc-p', '250');
+      for (const [k, v] of [['fert', '180'], ['seed', '90'], ['prot', '110'], ['energy', '70'], ['mach', '150'], ['labour', '60'], ['rent', '200'], ['other', '40']]) await page.fill('#cc-c-' + k, v);
+      await page.waitForTimeout(300);
+      const tx = await page.innerText('#cc-results');
+      // coste 900/ha, 90.000 en total, 128,57/t, ingresos 1.750/ha, margen 850/ha (48,6 %), equilibrio 3,60 t/ha
+      for (const must of ['90.000', '128,57', '1750', '850,00', '48,6', '3,60']) if (!tx.includes(must)) throw new Error('resultado esperado no encontrado: ' + must + ' en ' + tx.replace(/\s+/g, ' ').slice(0, 200));
+      await page.click('[data-seg=areaU][data-v=ac]'); await page.waitForTimeout(200);
+      if (Math.abs(parseFloat(await page.inputValue('#cc-area')) - 247.1054) > 0.001) throw new Error('100 ha no son 247,1054 acres');
+      await page.click('[data-seg=yU][data-v=bu_ac]'); await page.waitForTimeout(200);
+      if (Math.abs(parseFloat(await page.inputValue('#cc-y')) - 104.0911) > 0.01) throw new Error('7 t/ha de trigo no son 104,09 bu/acre');
+      if (!(await page.innerText('#cc-results')).includes('90.000')) throw new Error('cambiar de unidad cambia el coste total');
+      await page.click('[data-seg=pSrc][data-v=dehesa]'); await page.waitForSelector('#cc-ref .pt-card', { timeout: 8000 });
+      if (!/EN DIRECTO|AL DÍA|RETRASO|RETRASADO|DESACTUALIZADO/.test(await page.innerText('#cc-ref'))) throw new Error('el precio de Dehesa no muestra su frescura');
+      if (!/Fuente:/.test(await page.innerText('#cc-ref'))) throw new Error('el precio de Dehesa no muestra la fuente');
     });
     await flow('paises: cambiar de pais', w, async (page, errs) => {
       await page.goto(BASE + '/paises.html?c=FR', { waitUntil: 'load' }); await page.waitForTimeout(2500);
