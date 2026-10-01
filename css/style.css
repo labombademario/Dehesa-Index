@@ -1178,3 +1178,18 @@ body.di-modal-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 
 /* submenús: se abren al pasar el ratón en escritorio, sin necesidad de clic */
 @media (hover:hover) and (min-width:900px){.di-nav-menu .di-nav-sub:hover>.di-nav-subitems{display:block}.di-nav-menu .di-nav-sub:hover>.di-nav-subbtn{background:var(--surface-alt);color:var(--accent)}.di-nav-menu .di-nav-sub:hover>.di-nav-subbtn span{transform:none}}
+
+/* ---------- Accesibilidad ---------- */
+:focus-visible{outline:2px solid #2f6b3a;outline-offset:2px;border-radius:3px}
+svg[data-dh]:focus-visible{outline:2px solid #2f6b3a;outline-offset:3px}
+@media (forced-colors:active){:focus-visible{outline:2px solid Highlight}}
+/* ---------- Mobile first: tablas a tarjetas (<=560px) ---------- */
+@media (max-width:560px){
+  table.di-cards-m{min-width:0!important;width:100%;display:block;border:0}
+  table.di-cards-m thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.di-cards-m tbody,table.di-cards-m tr,table.di-cards-m td,table.di-cards-m th{display:block;width:100%;box-sizing:border-box}
+  table.di-cards-m tr{border:1px solid var(--border,#ddd);border-radius:10px;padding:6px 10px;margin:0 0 10px;background:var(--surface,#fff)}
+  table.di-cards-m td,table.di-cards-m th[scope=row]{display:flex;justify-content:space-between;gap:12px;text-align:right;border:0!important;padding:4px 0!important;width:auto}
+  table.di-cards-m td::before{content:attr(data-label);font-size:11px;font-weight:700;color:var(--text-faint,#7a7466);text-align:left;flex:0 0 40%}
+  .di-table-wrap,.di-history-table,.di-data-table,.di-breakdown-table{overflow-x:visible}
+}

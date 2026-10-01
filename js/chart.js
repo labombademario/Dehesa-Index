@@ -29,6 +29,16 @@
   function attrJson(o) { return esc(JSON.stringify(o)); }
 
   /* ---------- gráfica completa ---------- */
+  var SUMW = { es: ['de', 'a', 'mín.', 'máx.'], en: ['from', 'to', 'min', 'max'], fr: ['de', 'à', 'min.', 'max.'], de: ['von', 'bis', 'Min.', 'Max.'] };
+  function summaryText(S, time, vFmt) { // resumen textual para lectores de pantalla: primer y ultimo punto, minimo y maximo por serie
+    var w = SUMW[lang()] || SUMW.es;
+    return S.slice(0, 6).map(function (s) {
+      var pts = s.pts.filter(function (p) { return p.y !== null && p.y !== undefined && isFinite(p.y); }); if (!pts.length) return '';
+      var a = pts[0], z = pts[pts.length - 1], mn = pts[0], mx = pts[0]; pts.forEach(function (p) { if (p.y < mn.y) mn = p; if (p.y > mx.y) mx = p; });
+      var xl = function (p) { return time ? fmtDateFull(p.x) : String(p.x); };
+      return (s.name ? s.name + ': ' : '') + w[0] + ' ' + xl(a) + ' (' + vFmt(a.y) + ') ' + w[1] + ' ' + xl(z) + ' (' + vFmt(z.y) + '); ' + w[2] + ' ' + vFmt(mn.y) + ', ' + w[3] + ' ' + vFmt(mx.y);
+    }).filter(Boolean).join('. ');
+  }
   function render(o) {
     var S = (o.series || []).filter(function (s) { return s.pts && s.pts.length; });
     if (!S.length) return '';
@@ -78,7 +88,7 @@
       spec.s.push({ n: s.name, c: s.color, p: pts });
     });
     var leg = !o.noLegend && (S.length > 1 || o.legend) ? '<div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;margin:6px 0 0 4px">' + S.map(function (s) { return '<span><span style="display:inline-block;width:14px;height:3px;background:' + s.color + ';vertical-align:middle;margin-right:6px' + (s.dash ? ';opacity:.7' : '') + '"></span>' + esc(s.name) + '</span>'; }).join('') + '</div>' : '';
-    return '<div class="di-card di-ch" style="padding:10px 10px 8px"><svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img" aria-label="' + esc(o.aria || '') + '" data-dh="' + attrJson(spec) + '">' + g + '</svg>' + leg + '</div>';
+    return '<div class="di-card di-ch" style="padding:10px 10px 8px"><svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img" tabindex="0" aria-label="' + esc((o.aria ? o.aria + '. ' : '') + summaryText(S, time, vFmt)) + '" data-dh="' + attrJson(spec) + '">' + g + '</svg>' + leg + '</div>';
   }
 
   /* ---------- atributo para gráficas ya existentes ----------
@@ -187,6 +197,19 @@
   document.addEventListener('pointermove', move, { passive: true });
   document.addEventListener('pointerdown', function (e) { down(e); move(e); }, { passive: true });
   document.addEventListener('pointerup', up, { passive: true });
+  // teclado: con el foco en el grafico, flechas/Inicio/Fin recorren los puntos y muestran el mismo tooltip que el raton
+  var kbIdx = new WeakMap();
+  document.addEventListener('keydown', function (e) {
+    var svg = e.target && e.target.matches && e.target.matches('svg[data-dh]') ? e.target : null; if (!svg) return;
+    if (['ArrowLeft', 'ArrowRight', 'Home', 'End', 'Escape'].indexOf(e.key) < 0) return;
+    if (e.key === 'Escape') { clear(); return; }
+    var spec = specOf(svg); if (!spec || !spec.s.length) return; var pts = spec.s[0].p, i = kbIdx.has(svg) ? kbIdx.get(svg) : pts.length - 1;
+    i = e.key === 'Home' ? 0 : e.key === 'End' ? pts.length - 1 : Math.max(0, Math.min(pts.length - 1, i + (e.key === 'ArrowLeft' ? -1 : 1) * (e.shiftKey ? 10 : 1)));
+    kbIdx.set(svg, i); e.preventDefault();
+    var m = svg.getScreenCTM(); if (!m) return; var pt = svg.createSVGPoint(); pt.x = pts[i][0]; pt.y = pts[i][1]; pt = pt.matrixTransform(m);
+    move({ target: svg, clientX: pt.x, clientY: pt.y, pointerType: 'key' });
+  });
+  document.addEventListener('focusout', function (e) { if (e.target && e.target.matches && e.target.matches('svg[data-dh]')) clear(); });
   document.addEventListener('pointercancel', function () { drag = null; clear(); }, { passive: true });
   document.documentElement.addEventListener('mouseleave', clear);
   document.addEventListener('scroll', function () { if (cur) clear(); }, { passive: true, capture: true });

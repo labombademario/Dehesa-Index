@@ -254,6 +254,28 @@
   }
   function sitePath(path) { return sitePrefix() + path; }
 
+  /* Accesibilidad y movil: tablas con scope/data-label (tarjetas en pantallas estrechas) y foco visible */
+  (function a11yTables() {
+    function fix(root) {
+      var ts = (root || document).querySelectorAll('table:not([data-a11y])');
+      for (var i = 0; i < ts.length; i++) {
+        var t = ts[i], heads = [], hr = t.querySelector('thead tr') || t.querySelector('tr');
+        if (!hr) continue;
+        t.setAttribute('data-a11y', '1');
+        var ths = hr.children;
+        for (var j = 0; j < ths.length; j++) { heads.push((ths[j].textContent || '').replace(/\s+/g, ' ').trim()); if (ths[j].tagName === 'TH' && !ths[j].getAttribute('scope')) ths[j].setAttribute('scope', 'col'); }
+        var rows = t.querySelectorAll('tbody tr'); if (!rows.length) { rows = t.querySelectorAll('tr'); }
+        for (var r = 0; r < rows.length; r++) {
+          if (rows[r] === hr) continue; var cs = rows[r].children;
+          for (var c = 0; c < cs.length; c++) { if (cs[c].tagName === 'TD' && heads[c] && !cs[c].hasAttribute('data-label')) cs[c].setAttribute('data-label', heads[c]); if (cs[c].tagName === 'TH' && !cs[c].getAttribute('scope')) cs[c].setAttribute('scope', 'row'); }
+        }
+        if (heads.length >= 3 && heads.length <= 8 && rows.length) t.classList.add('di-cards-m');
+      }
+    }
+    function run() { fix(document); try { new MutationObserver(function () { clearTimeout(run.t); run.t = setTimeout(function () { fix(document); }, 120); }).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+  })();
+
   /* PWA: manifiesto y service worker (cache parcial; sin conexion se sirven las paginas ya vistas) */
   (function pwa() {
     try {
