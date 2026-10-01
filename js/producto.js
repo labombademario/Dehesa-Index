@@ -236,6 +236,33 @@
     return sec(x.dep, x.depHint + ' ' + P.myLabel(cfg.psd, my) + ' ' + x.vs, body);
   }
 
+
+  /* ---------- ofertas diarias de grano (USDA AMS) ---------- */
+  var XA = {
+    es: { t: 'Ofertas diarias en el mercado de EE. UU.', h: 'Mediana de las ofertas de compra (cash bids) de elevadores y terminales de EE. UU. con la misma calidad. Datos de USDA AMS.', med: 'Mediana', st: 'Estaciones', chg1: 'vs. ayer', chg30: 'vs. hace 30 días', rep: 'Informe', price: 'Oferta', date: 'Fecha', more: 'Todos los informes diarios de AMS', note: 'Precios de oferta locales, no cotización de bolsa; cada estación publica con su propia base y entrega. La mediana solo sirve como referencia nacional.', ch: 'Mediana últimos 90 días' },
+    en: { t: 'Daily cash bids in the US market', h: 'Median of buy bids (cash bids) from US elevators and terminals for the same grade. USDA AMS data.', med: 'Median', st: 'Stations', chg1: 'vs. yesterday', chg30: 'vs. 30 days ago', rep: 'Report', price: 'Bid', date: 'Date', more: 'All daily AMS reports', note: 'Local bid prices, not exchange quotes; each station reports on its own basis and delivery. The median is only a national reference.', ch: 'Median, last 90 days' },
+    fr: { t: 'Offres quotidiennes sur le marché américain', h: 'Médiane des offres d’achat (cash bids) des silos et terminaux américains pour une même qualité. Données USDA AMS.', med: 'Médiane', st: 'Stations', chg1: 'vs. hier', chg30: 'vs. il y a 30 jours', rep: 'Rapport', price: 'Offre', date: 'Date', more: 'Tous les rapports quotidiens AMS', note: 'Prix d’offre locaux, pas des cotations de bourse ; chaque station publie selon sa base et sa livraison. La médiane n’est qu’une référence nationale.', ch: 'Médiane, 90 derniers jours' },
+    it: { t: 'Offerte giornaliere sul mercato USA', h: 'Mediana delle offerte d’acquisto (cash bids) di silos e terminal USA per la stessa qualità. Dati USDA AMS.', med: 'Mediana', st: 'Stazioni', chg1: 'vs. ieri', chg30: 'vs. 30 giorni fa', rep: 'Rapporto', price: 'Offerta', date: 'Data', more: 'Tutti i rapporti giornalieri AMS', note: 'Prezzi di offerta locali, non quotazioni di borsa; ogni stazione pubblica con la propria base e consegna. La mediana è solo un riferimento nazionale.', ch: 'Mediana, ultimi 90 giorni' }
+  };
+  function amsBlock(t, cfg) {
+    var A = D.ams && D.ams.products && D.ams.products[SEL.p]; if (!A || !A.length) return '';
+    var x = XA[lang()] || XA.es, body = '';
+    A.forEach(function (c) {
+      var m = c.median, n = m.length; if (n < 5) return;
+      var last = m[n - 1][1], prev = m[n - 2][1], m30 = null, i, ld = Date.parse(m[n - 1][0]);
+      for (i = 0; i < n; i++) if ((ld - Date.parse(m[i][0])) / 864e5 >= 28) m30 = m[i][1];
+      var u = (c.unit || '').replace('Per', '/').replace('$ ', '$'), d = last < 20 ? 2 : 1;
+      var chart = line([{ pts: m.map(function (r) { return r[1]; }), col: '#a9491f', name: x.med }], m.map(function (r) { return dfmt(r[0]); }), function (v) { return nf(v, 2); }, x.ch, { ts: m.map(function (r) { return Date.parse(r[0]); }), xTitle: '' });
+      var rows = c.stations.slice(0, 10).map(function (s) {
+        return '<tr style="' + TR + '">' + td(esc(s.title.replace(/ (Daily )?(Cash )?(Elevator )?Grain Bids?|Daily Grain Report|Daily Wheat Bids/i, '')), 0, 1) + td(nf(s.price, 2), 1) + td(dtl(s.chg1, 2, ''), 1) + td(dtl(s.chg30, 2, ''), 1) + td(dfmt(s.date), 1) + '</tr>';
+      }).join('');
+      body += '<div style="font-weight:700;font-size:14px;margin:10px 0 4px">' + esc(c.spec) + ' · ' + esc(u) + '</div>' + cards([card(x.med + ' · ' + dfmt(c.latest), nf(last, 2), delta(pct(last, prev), 1, ' %') + ' <span style="color:var(--text-faint)">' + esc(x.chg1) + '</span>'), card(x.chg30, m30 === null ? '—' : sg(last - m30, 2, ''), '<span style="color:var(--text-faint)">' + esc(x.st) + ': ' + c.n + '</span>')]) + chart +
+        '<div style="height:10px"></div>' + table(th(x.rep) + th(x.price, 1) + th(x.chg1, 1) + th(x.chg30, 1) + th(x.date, 1), rows);
+    });
+    if (!body) return '';
+    return sec(x.t, x.h, body + '<p class="di-info-api-notice" style="margin:6px 0">' + esc(x.note) + '</p>', lnk('mercados.html', x.more));
+  }
+
   /* ---------- ventas de exportación ---------- */
   function tonsF(v) { return P.big(v / 1000); }
   function exBlock(t, cfg) {
@@ -439,7 +466,7 @@
     document.title = 'Dehesa Index — ' + t.title + ': ' + (nm[SEL.p] || SEL.p);
     document.getElementById('pg-h1').textContent = t.title + ': ' + (nm[SEL.p] || SEL.p);
     document.getElementById('pg-sub').textContent = t.sub;
-    var parts = [priceBlock(t, cfg, SEL.p), sdBlock(t, cfg), depBlock(t, cfg), exBlock(t, cfg), gatsBlock(t, cfg), cfg.kind === 'crop' ? cropBlock(t, cfg) : liveBlock(t, cfg), droughtBlock(t, cfg), costBlock(t, cfg), newsBlock(t, XN[lang()] || XN.es), relBlock(t, XN[lang()] || XN.es)].filter(function (x) { return x; });
+    var parts = [priceBlock(t, cfg, SEL.p), sdBlock(t, cfg), depBlock(t, cfg), amsBlock(t, cfg), exBlock(t, cfg), gatsBlock(t, cfg), cfg.kind === 'crop' ? cropBlock(t, cfg) : liveBlock(t, cfg), droughtBlock(t, cfg), costBlock(t, cfg), newsBlock(t, XN[lang()] || XN.es), relBlock(t, XN[lang()] || XN.es)].filter(function (x) { return x; });
     var links = '<p class="di-movers-hint" style="margin-top:26px"><strong>' + esc(t.links) + ':</strong> ' + lnk('mapa.html', t.lMap) + ' · ' + lnk('precios.html?product=' + (cfg.pp || (SEL.p === 'vacuno' ? 'vaca' : SEL.p)), t.lPrices) + '</p>';
     root.innerHTML = tabs(t) + (parts.length ? parts.join('') : '<p class="di-movers-hint">' + esc(t.noData) + '</p>') + links + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + ' <a href="metodologia.html">' + esc(t.methodLink) + '</a>.</p>';
     var sel = document.getElementById('pr-ent'); if (sel) sel.onchange = function (e) { SEL.ent = e.target.value; render(); };
@@ -453,8 +480,8 @@
   if (q.get('p') && CFG[q.get('p')]) SEL.p = q.get('p');
   var cfg0 = CFG[SEL.p];
   Promise.all([get('data/latest.json'), get('data/supply-demand.json'), get('data/export-sales.json'), get('data/gats.json'), get('data/drought.json'), get('data/ers.json'),
-    cfg0.kind === 'crop' ? get('data/crop-progress.json') : Promise.resolve(null), get('data/nass-crops.json'), get('data/nass-livestock.json'), get('data/news.json')]).then(function (r) {
-    D.latest = r[0]; D.sd = r[1]; D.es = r[2]; D.gats = r[3]; D.dr = r[4]; D.ers = r[5]; D.cp = r[6]; D.crops = r[7]; D.live = r[8]; D.news = r[9];
+    cfg0.kind === 'crop' ? get('data/crop-progress.json') : Promise.resolve(null), get('data/nass-crops.json'), get('data/nass-livestock.json'), get('data/news.json'), get('data/ams-grain-daily.json')]).then(function (r) {
+    D.latest = r[0]; D.sd = r[1]; D.es = r[2]; D.gats = r[3]; D.dr = r[4]; D.ers = r[5]; D.cp = r[6]; D.crops = r[7]; D.live = r[8]; D.news = r[9]; D.ams = r[10];
     render();
   });
 })();

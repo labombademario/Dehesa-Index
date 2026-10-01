@@ -26,6 +26,8 @@ jobs:
         env:
           MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
         run: node scripts/update-ams.mjs 2>&1 | tee /tmp/ams.out
+      - name: Ofertas diarias de grano (resumen para la ficha)
+        run: python3 scripts/build-ams-daily.py || true
       - name: Rebuild search index
         run: node scripts/build-search-index.mjs
       - name: Commit updated data
@@ -33,7 +35,7 @@ jobs:
         run: |
           git config user.name "dehesa-index-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/ams data/search-index.json
+          git add data/ams data/search-index.json data/ams-grain-daily.json
           if git diff --cached --quiet; then echo "No data changes."; exit 0; fi
           git commit -m "data: update USDA AMS markets"
           git pull --rebase origin main
