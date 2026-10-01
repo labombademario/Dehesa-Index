@@ -1,6 +1,4 @@
-00:55:36 descargada 12100011 1135 KB
-00:55:36 tabla 12100011 92655 filas
-00:55:40 descargada 12100173 26187 KB
-00:55:48 tabla 12100173 13986 filas filtradas
-00:55:48 socios 50
-00:55:48 series 276
+01:46:29 descargada 12100174 120699 KB
+01:46:41 tabla 12100174 72576 filas filtradas
+01:46:41 acuerdos comerciales 14
+01:46:41 series 276
