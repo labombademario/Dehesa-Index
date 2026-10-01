@@ -5,6 +5,7 @@ mas revisiones (data/revisions.json) y estado de pipelines (data/pipeline-status
 import datetime, json, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import lib_cashbids as CB
 from lib_index import ROOT, STATS, git_show, rev_before, stats_series, products, DATASETS, KINDS, WORKFLOW_KINDS, kind_of, content_key, tree_key
 WINDOW_H = 24
 def main():
@@ -80,7 +81,7 @@ def main():
            'counts': {'datasetsUpdated': len(updated), 'newPeriods': len(fresh), 'newSeries': len([x for x in new_data if x.get('new')]), 'newDatasets': len(new_ds), 'revisions': len(revs), 'stale': len(stale), 'staleNew': len([s for s in stale if s['isNew']]), 'upcoming': len(upcoming)},
            'datasets': sorted(updated, key=lambda x: -x['changed']), 'newDatasets': new_ds, 'movers': [mk(x) | {'prevPeriod': x.get('prevP'), 'prevValue': x.get('prevV')} for x in movers],
            'newData': [mk(x) for x in sorted(fresh, key=lambda x: -abs(x['c'] if isinstance(x['c'], (int, float)) else 0))[:150]],
-           'revisions': revs[:30], 'stale': stale, 'upcoming': upcoming, 'coverage': cover, 'byKind': by_kind,
+           'cashBids': CB.brief_section(now, iso), 'revisions': revs[:30], 'stale': stale, 'upcoming': upcoming, 'coverage': cover, 'byKind': by_kind,
            'pipelinesCovered': {'total': len(ps.get('pipelines', [])), 'withKind': len([p for p in ps.get('pipelines', []) if WORKFLOW_KINDS.get(p['workflow'])]), 'internal': sorted(w for w, k in WORKFLOW_KINDS.items() if not k)}}
     # no reescribir si solo cambia la hora
     a = dict(doc); a.pop('generatedAt'); b = dict(old); b.pop('generatedAt', None)

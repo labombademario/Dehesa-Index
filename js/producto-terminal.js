@@ -23,6 +23,12 @@
     source: ['Fuente', 'Source', 'Source', 'Fonte'],
     measures: ['Qué mide', 'What it measures', 'Ce que cela mesure', 'Cosa misura'],
     dueTxt: ['Próxima publicación esperada', 'Next publication expected', 'Prochaine publication attendue', 'Prossima pubblicazione attesa'],
+    local: ['Mercados locales de grano (EE. UU.)', 'Local cash markets (US)', 'Marchés locaux des grains (É.-U.)', 'Mercati locali dei cereali (USA)'],
+    localHint: ['Ofertas al contado USDA AMS por estado', 'USDA AMS cash bids by state', 'Offres au comptant USDA AMS par État', 'Offerte in contanti USDA AMS per stato'],
+    localIntro: ['Qué pagan hoy los compradores en cada estado según USDA AMS. Cada precio es de una región, terminal o mercado concreto del informe, no un precio nacional.', 'What buyers are paying today in each state according to USDA AMS. Each price belongs to a region, terminal or market named in the report, not a national price.', 'Ce que les acheteurs paient aujourd’hui dans chaque État selon l’USDA AMS. Chaque prix correspond à une région, un terminal ou un marché du rapport, pas à un prix national.', 'Quanto pagano oggi gli acquirenti in ogni stato secondo USDA AMS. Ogni prezzo riguarda una regione, un terminale o un mercato del rapporto, non un prezzo nazionale.'],
+    localMk: ['{0} mercados · último dato {1}', '{0} markets · latest {1}', '{0} marchés · dernière donnée {1}', '{0} mercati · ultimo dato {1}'],
+    localCta: ['Explorar precios locales →', 'Explore local cash bids →', 'Explorer les prix locaux →', 'Esplora i prezzi locali →'],
+    localNone: ['Sin informes locales disponibles todavía.', 'No local reports available yet.', 'Aucun rapport local disponible pour le moment.', 'Nessun rapporto locale disponibile al momento.'],
     follow: ['☆ Seguir producto', '☆ Follow product', '☆ Suivre le produit', '☆ Segui prodotto'],
     following: ['★ Siguiendo', '★ Following', '★ Suivi', '★ Segui già'],
     followHint: ['Crea avisos en este navegador (sin cuenta): dato nuevo y cambio ≥ 5 %. Puedes ajustarlos aquí o en Mi seguimiento.', 'Creates alerts in this browser (no account): new data point and change ≥ 5 %. Adjust them here or in My watchlist.', 'Crée des alertes dans ce navigateur (sans compte) : nouvelle donnée et variation ≥ 5 %. Ajustez-les ici ou dans Mon suivi.', 'Crea avvisi in questo browser (senza account): nuovo dato e variazione ≥ 5 %. Modificali qui o in Il mio seguito.'],
@@ -581,9 +587,24 @@
     return '<p class="pt-sub">' + esc(t('srcIntro')) + '</p><ul class="pt-list">' + li2.join('') + '</ul><p class="pt-src">' + esc(t('fxNote')) + ' <a href="metodologia.html">' + esc(t('methLink')) + ' →</a></p>';
   }
 
+
+  var CBMAP = { trigo: 'wheat', maiz: 'corn', soja: 'soybeans' };
+  function blkLocal() { return J('us-cash-bids/manifest.json'); }
+  function htmlLocal(m) {
+    var c = CBMAP[CTX.pid], st = (m && m.states) || {}, rows = [];
+    Object.keys(st).forEach(function (k) { var e = st[k].commodities && st[k].commodities[c]; if (e) rows.push({ k: k, n: st[k].name, e: e }); });
+    rows.sort(function (a, b) { return b.e.markets - a.e.markets || (a.n < b.n ? -1 : 1); });
+    if (!rows.length) return '<div class="pt-note">' + esc(t('localNone')) + '</div>';
+    var top = rows.slice(0, 8);
+    return '<p class="pt-sub">' + esc(t('localIntro')) + '</p><div class="pt-cards">' + top.map(function (r) {
+      return '<a class="pt-card" href="precios-locales.html?s=' + r.k + '&amp;c=' + c + '" style="text-decoration:none;color:inherit"><div class="pt-card-h"><strong>' + esc(r.n) + '</strong></div><div class="pt-sub">' + esc(tf('localMk', r.e.markets, dstr(r.e.latest))) + '</div>' + (r.e.classes && r.e.classes.length ? '<div class="pt-sub">' + esc(r.e.classes.join(' · ')) + '</div>' : '') + '</a>';
+    }).join('') + '</div><p style="margin:10px 0 0"><a class="pt-chip on" href="precios-locales.html?c=' + c + '">' + esc(t('localCta')) + '</a></p><p class="pt-src">USDA AMS Market News · <a href="metodologia.html#precios-locales">' + esc(t('methLink')) + ' →</a></p>';
+  }
+
   /* ---------- armazon de bloques y carga diferida ---------- */
   function blocks() {
-    return [
+    var loc = CBMAP[CTX.pid] ? [{ id: 'local', title: t('local'), hint: t('localHint'), load: blkLocal, html: htmlLocal }] : [];
+    var all = [
       { id: 'changed', title: tf('changed', nm(CTX.pid)), hint: t('changedHint'), load: blkChanged, html: htmlChanged },
       { id: 'compare', title: t('compare'), hint: t('compareHint'), load: loadCompare, html: htmlCompare },
       { id: 'hist', title: t('hist'), hint: t('histHint'), load: loadHist, html: htmlHist },
@@ -595,6 +616,7 @@
       { id: 'drivers', title: t('drivers'), hint: t('driversHint'), load: loadDrivers, html: htmlDrivers },
       { id: 'news', title: t('news'), hint: t('newsHint'), load: blkNews, html: htmlNews }
     ];
+    return all.slice(0, 1).concat(loc, all.slice(1));
   }
   function secHtml(b) { return '<section class="pt-sec" id="pt-' + b.id + '" data-blk="' + b.id + '" aria-labelledby="pt-' + b.id + '-h"><div class="di-movers-head-row"><h2 id="pt-' + b.id + '-h">' + esc(b.title) + '</h2><span class="di-movers-hint">' + esc(b.hint) + '</span></div><div class="pt-body"><div class="pt-skel">' + esc(t('loading')) + '</div></div></section>'; }
   function paint(b) {

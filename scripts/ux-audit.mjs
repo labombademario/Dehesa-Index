@@ -8,7 +8,7 @@ const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? proce
 const BASE = arg('--base', 'http://localhost:8123'), ONLY = (arg('--only', '') || '').split(',').filter(Boolean), SHOTS = arg('--shots', null), STRICT = process.argv.includes('--strict');
 let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
 const PAGES = [['index', '/'], ['precios', '/precios.html'], ['producto', '/producto.html'], ['paises', '/paises.html?c=ES'], ['comparador', '/comparador.html'], ['calculadora', '/calculadora.html'],
-  ['mi-seguimiento', '/mi-seguimiento.html'], ['brief', '/brief.html'], ['observatorio', '/observatorio.html']];
+  ['mi-seguimiento', '/mi-seguimiento.html'], ['brief', '/brief.html'], ['precios-locales', '/precios-locales.html'], ['observatorio', '/observatorio.html']];
 const VPS = [375, 390, 430, 768, 1280];
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
 if (SHOTS) await mkdir(SHOTS, { recursive: true });

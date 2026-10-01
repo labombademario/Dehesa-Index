@@ -113,6 +113,7 @@
       { file: 'observatorio.html', label: { es: 'Observatorio de datos', en: 'Data observatory', fr: 'Observatoire des données', it: 'Osservatorio dei dati' } },
       { file: 'relaciones.html', label: { es: 'Relaciones entre mercados', en: 'Cross-market relationships', fr: 'Relations entre marchés', it: 'Relazioni tra mercati' } },
       { file: 'comparador.html', label: { es: 'Comparador por producto y país', en: 'Product and country comparator', fr: 'Comparateur par produit et pays', it: 'Confronto per prodotto e paese' } },
+      { file: 'precios-locales.html', label: { es: 'Precios locales del grano (EE. UU.)', en: 'Local grain prices (US)', fr: 'Prix locaux des grains (É.-U.)', it: 'Prezzi locali dei cereali (USA)' } },
       { file: 'brief.html', label: { es: 'Qué ha cambiado hoy', en: 'What changed today', fr: 'Ce qui a changé aujourd’hui', it: 'Cosa è cambiato oggi' } },
       { file: 'status.html', label: { es: 'Estado de los datos', en: 'Data status', fr: 'État des données', it: 'Stato dei dati' } }
     ] }

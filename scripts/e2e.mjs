@@ -32,6 +32,7 @@ const PAGES = [
   { n: 'mi-seguimiento', url: '/mi-seguimiento.html', crit: ['#ms-body #series'] },
   { n: 'catalogo', url: '/catalogo.html', crit: ['#cat-body'] },
   { n: 'brief', url: '/brief.html', crit: ['#brief-body'] },
+  { n: 'precios-locales', url: '/precios-locales.html', crit: ['#pl-body'] },
   { n: 'noticias', url: '/noticias.html', crit: ['#nw-items'] },
   { n: 'mapa', url: '/mapa.html', crit: ['#mapa-body'] },
   { n: 'calendario', url: '/calendario.html', crit: ['#cal-events'] },

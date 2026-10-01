@@ -31,7 +31,7 @@
       qtitle: 'Controlli sui dati', qtxt: 'Prima di salvare un file se ne verificano struttura (contratto di schema) e contenuto: nessun valore non numerico, nessuna data futura, serie ordinate senza periodi ripetuti, periodo coerente con la frequenza, ultimo valore uguale all’ultimo punto, salti estremi segnalati. Se il controllo fallisce, la modifica è scartata e si conserva il dato precedente.',
       qfiles: 'File controllati', qerr: 'Con errori', qwarn: 'Con avvisi', warns: 'Avvisi', none: 'Nessuno', ago: '', h: 'h fa', d: 'g fa', in_: 'tra', now: 'ora' }
   };
-  var COL = { ok: '#17703f', late: '#8f5f12', error: '#c0392b', not_run: '#6b7fa3', unknown: '#8a8a8a' };
+  var COL = { ok: '#17703f', late: '#8f5f12', error: '#c0392b', not_run: '#6b7fa3', unknown: '#666666' };
   var P = null, Q = null, FR = null, only = false;
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }

@@ -35,7 +35,7 @@
   function when(iso) { try { return new Date(iso).toLocaleString(lang(), { dateStyle: 'short', timeStyle: 'short' }); } catch (e) { return iso; } }
   var W = window.DIWatch, IDX = null, CTX = {}, EV = [], ST = { q: '', confirm: '', msg: null };
   var PAGE = { vaca: 'vacuno', harina_soja: 'soja' };
-  function link(c, s) { if (c === 'P') { var p = s.split('/')[0]; return 'producto.html?p=' + encodeURIComponent(PAGE[p] || p); } return 'paises.html?c=' + encodeURIComponent(c) + '&s=' + encodeURIComponent(s); }
+  function link(c, s) { if (c === 'CB') { var q = s.split('/'); return 'precios-locales.html?s=' + encodeURIComponent(q[0]) + '&c=' + encodeURIComponent(q[1]) + '&id=' + encodeURIComponent(q.slice(2).join('/')); } if (c === 'P') { var p = s.split('/')[0]; return 'producto.html?p=' + encodeURIComponent(PAGE[p] || p); } return 'paises.html?c=' + encodeURIComponent(c) + '&s=' + encodeURIComponent(s); }
   function fsB(st, approx) { return '<span class="pt-badge pt-fs-' + esc(st) + '">' + esc(t('fs_' + st)) + (approx ? ' ' + esc(t('approx')) : '') + '</span>'; }
   function chg(c) { if (typeof c !== 'number') return ''; return ' <span class="' + (c > 0 ? 'pt-up' : c < 0 ? 'pt-down' : 'pt-flat') + '">' + (c > 0 ? '+' : '') + nf(c, 2) + ' %</span>'; }
   function rowOf(it) { var a = IDX && IDX[W.key(it.c, it.s)]; return a ? { label: a[0], unit: a[1], freq: a[2], period: a[4], value: a[5], change: a[6] } : null; }

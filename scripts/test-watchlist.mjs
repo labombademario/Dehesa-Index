@@ -91,5 +91,29 @@ set([]); const lim = W.importAll(many, 'merge'); eq('maximo 60 elementos', [lim.
 set([{ c: 'P', s: 'trigo/eu' }]); W.importAll({ app: 'dehesa-index', kind: 'watchlist', version: 2, items: [{ c: 'P', s: 'urea/eu' }] }, 'replace');
 eq('replace sustituye la lista', JSON.parse(store['di-watchlist-v1']).map((x) => x.s), ['urea/eu']);
 eq('mas de 500 items se rechaza', W.importAll({ app: 'dehesa-index', kind: 'watchlist', version: 2, items: Array.from({ length: 501 }, () => ({ c: 'P', s: 'a/b' })) }, 'merge').ok, false);
+// --- mercados locales de grano (c='CB', s='ESTADO/producto/idSerie'): precio, nuevo dato, basis, revision, importacion
+const CBK = 'IA/corn/us-cb:2850:0fa93d0810', cbi = (v, b, p = '2026-09-30', ch = -1.2) => ({ ['CB/' + CBK]: ['Iowa Corn · North Central (Country Elevators, Yellow, US #2)', 'USD/bu', 'daily', 'cashbid', p, v, ch, b] });
+set([{ c: 'CB', s: CBK, r: [{ t: 'cross', v: 4.5, d: 'below' }], seen: { p: '2026-09-29', v: 4.8 }, ack: '2026-09-29' }]);
+eq('CB: precio por debajo de X avisa', ids(W.evaluate(cbi(4.4, null))), [CBK]);
+set([{ c: 'CB', s: CBK, r: [{ t: 'cross', v: 4.5, d: 'below' }], seen: { p: '2026-09-29', v: 4.4 }, ack: '2026-09-29' }]);
+eq('CB: si ya estaba por debajo no repite', ids(W.evaluate(cbi(4.3, null))), []);
+set([{ c: 'CB', s: CBK, r: [{ t: 'new' }], seen: { p: '2026-09-29', v: 4.6 }, ack: '2026-09-29' }]);
+eq('CB: nuevo bid (nueva fecha de observacion)', ids(W.evaluate(cbi(4.58, null))), [CBK]);
+set([{ c: 'CB', s: CBK, r: [{ t: 'pct', v: 1 }], seen: { p: '2026-09-29', v: 4.6 }, ack: '2026-09-29' }]);
+eq('CB: cambio +-1 % con -1,2', ids(W.evaluate(cbi(4.58, null))), [CBK]);
+set([{ c: 'CB', s: CBK, r: [{ t: 'basis', v: -0.2, d: 'below' }], seen: { p: '2026-09-29', v: 4.6, b: -0.15 }, ack: '2026-09-29' }]);
+eq('CB: basis cruza X hacia abajo', ids(W.evaluate(cbi(4.58, -0.25))), [CBK]);
+set([{ c: 'CB', s: CBK, r: [{ t: 'basis', v: -0.2, d: 'below' }], seen: { p: '2026-09-29', v: 4.6, b: -0.25 }, ack: '2026-09-29' }]);
+eq('CB: basis que ya estaba por debajo no repite', ids(W.evaluate(cbi(4.58, -0.3))), []);
+set([{ c: 'CB', s: CBK, r: [{ t: 'basis', v: -0.2, d: 'below' }], seen: { p: '2026-09-29', v: 4.6 }, ack: '2026-09-29' }]);
+eq('CB: sin basis publicado (null) no avisa nunca', ids(W.evaluate(cbi(4.58, null))), []);
+set([{ c: 'CB', s: CBK, r: [{ t: 'rev' }], seen: { p: '2026-09-30', v: 4.5835 }, ack: '2026-09-30' }]);
+eq('CB: revision de USDA (misma fecha, otro valor)', ids(W.evaluate(cbi(4.6335, null, '2026-09-30'))), [CBK]);
+set([{ c: 'CB', s: CBK, r: [{ t: 'basis', v: -0.2, d: 'below' }] }]);
+W.addRule('CB', CBK, { t: 'new' }); // sin indice cargado no debe romper
+eq('CB: la regla de basis sobrevive a exportar/importar', W.cleanRule({ t: 'basis', v: -0.2, d: 'below' }), { t: 'basis', v: -0.2, d: 'below' });
+eq('CB: basis invalido descartado', [W.cleanRule({ t: 'basis', v: 'x', d: 'below' }), W.cleanRule({ t: 'basis', v: 1, d: 'sideways' })], [null, null]);
+eq('CB: item valido importable', W.cleanItem({ c: 'CB', s: CBK, r: [{ t: 'basis', v: -0.1, d: 'above' }], seen: { p: '2026-09-30', v: 4.5, b: -0.2 } }), { c: 'CB', s: CBK, r: [{ t: 'basis', v: -0.1, d: 'above' }], seen: { p: '2026-09-30', v: 4.5, b: -0.2 } });
+eq('CB: texto de la regla', W.ruleText({ t: 'basis', v: -0.2, d: 'below' }, 'en'), 'Basis falls below -0.2');
 console.log(bad ? 'Watchlist: ' + bad + ' fallos de ' + n : 'Watchlist: ' + n + ' comprobaciones OK');
 process.exit(bad ? 1 : 0);

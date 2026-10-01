@@ -33,9 +33,21 @@
   function find(l, c, s) { for (var i = 0; i < l.length; i++) if (l[i].c === c && l[i].s === s) return l[i]; return null; }
   function key(c, s) { return c === 'P' ? 'P/' + s : c + '/' + s; }
   function sp(f) { return window.DehesaShared && window.DehesaShared.sitePath ? window.DehesaShared.sitePath(f) : f; }
-  var IDX = null, IP = null, CP = null;
-  function load() { if (IP) return IP; IP = fetch(sp('data/watch-index.json')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { IDX = d && d.series ? d.series : {}; return IDX; }).catch(function () { IDX = {}; return IDX; }); return IP; }
-  function row(idx, c, s) { var a = idx[key(c, s)]; return a ? { label: a[0], unit: a[1], freq: a[2], group: a[3], period: a[4], value: a[5], change: a[6] } : null; }
+  var IDX = null, IP = null, CP = null, CBF = false;
+  // Mercados locales de grano (c='CB', s='ESTADO/producto/idSerie'): su indice (data/us-cash-bids/watch.json) solo se descarga si sigues alguno o la pagina de precios locales lo pide
+  function wantCB() { return CBF || read().some(function (i) { return i.c === 'CB'; }); }
+  function load() {
+    if (IP) return IP;
+    IP = fetch(sp('data/watch-index.json')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { IDX = d && d.series ? d.series : {}; return IDX; }).catch(function () { IDX = {}; return IDX; })
+      .then(function (idx) {
+        if (!wantCB()) return idx;
+        return fetch(sp('data/us-cash-bids/watch.json')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.series) Object.keys(d.series).forEach(function (k) { idx['CB/' + k] = d.series[k]; }); return idx; }).catch(function () { return idx; });
+      });
+    return IP;
+  }
+  W.withCashBids = function () { if (!CBF) { CBF = true; IP = null; } return load(); };
+  function row(idx, c, s) { var a = idx[key(c, s)]; return a ? { label: a[0], unit: a[1], freq: a[2], group: a[3], period: a[4], value: a[5], change: a[6], basis: typeof a[7] === 'number' ? a[7] : null } : null; }
+  function snap(x) { var o = { p: x.period, v: x.value }; if (typeof x.basis === 'number') o.b = x.basis; return o; }
   function cond(r, v) { return r.d === 'below' ? v <= r.v : v >= r.v; }
   function today() { return new Date().toISOString().slice(0, 10); }
   W.key = key; W.loadIndex = load; W.TW_PCT = TW_PCT;
@@ -45,15 +57,15 @@
   W.addRule = function (c, s, rule) {
     var l = read(), it = find(l, c, s); if (!it) { it = { c: c, s: s }; l.unshift(it); }
     it.r = it.r || []; if (it.r.length >= MAXRULES) return Promise.resolve(it.r); it.r.push(rule);
-    return load().then(function (idx) { var x = idx && row(idx, c, s); if (x) { it.seen = { p: x.period, v: x.value }; it.ack = x.period; } write(l.slice(0, MAXITEMS)); return it.r; });
+    return load().then(function (idx) { var x = idx && row(idx, c, s); if (x) { it.seen = snap(x); it.ack = x.period; } write(l.slice(0, MAXITEMS)); return it.r; });
   };
   W.delRule = function (c, s, i) { var l = read(), it = find(l, c, s); if (it && it.r) { it.r.splice(i, 1); write(l); } };
-  W.ack = function (c, s) { var l = read(), it = find(l, c, s); if (!it) return; var x = IDX && row(IDX, c, s); if (x) { it.seen = { p: x.period, v: x.value }; it.ack = x.period; write(l); } };
+  W.ack = function (c, s) { var l = read(), it = find(l, c, s); if (!it) return; var x = IDX && row(IDX, c, s); if (x) { it.seen = snap(x); it.ack = x.period; write(l); } };
   W.ackAll = function () { read().forEach(function (it) { W.ack(it.c, it.s); }); };
   // marca un aviso como visto y lo guarda en el historial local (ev = elemento devuelto por evaluate)
   W.markSeen = function (ev) {
     var l = read(), it = find(l, ev.c, ev.s); if (!it) return;
-    it.seen = { p: ev.period, v: ev.value }; it.ack = ev.period; it.ak = it.ak || {}; if (ev.tokens) { if (ev.tokens.f) it.ak.f = ev.tokens.f; if (ev.tokens.tw) it.ak.tw = ev.tokens.tw; }
+    it.seen = snap({ period: ev.period, value: ev.value, basis: ev.basis }); it.ack = ev.period; it.ak = it.ak || {}; if (ev.tokens) { if (ev.tokens.f) it.ak.f = ev.tokens.f; if (ev.tokens.tw) it.ak.tw = ev.tokens.tw; }
     it.hist = it.hist || []; it.hist.unshift({ at: new Date().toISOString(), p: ev.period, v: ev.value, h: ev.hits.slice(0, MAXRULES) }); it.hist = it.hist.slice(0, MAXHIST); write(l);
   };
   W.clearHist = function () { var l = read(); l.forEach(function (it) { delete it.hist; }); write(l); };
@@ -103,23 +115,24 @@
         if (r.t === 'new') hit = dataGate && !!seen && x.period !== seen.p;
         else if (r.t === 'pct') hit = dataGate && typeof x.change === 'number' && Math.abs(x.change) >= r.v && (!r.d || (r.d === 'up' ? x.change > 0 : x.change < 0)) && (!seen || x.period !== seen.p);
         else if (r.t === 'cross') hit = dataGate && typeof x.value === 'number' && cond(r, x.value) && !(seen && typeof seen.v === 'number' && cond(r, seen.v));
+        else if (r.t === 'basis') hit = dataGate && typeof x.basis === 'number' && cond(r, x.basis) && !(seen && typeof seen.b === 'number' && cond(r, seen.b));
         else if (r.t === 'rev') hit = dataGate && revised;
         else if (r.t === 'fresh') { fo = fo || W.freshOf(it.c, it.s, x, ctx); if (fo && RANK[fo.state] >= RANK[r.v]) { var tk = x.period + '|' + fo.state; if (tk !== ak.f) { hit = true; tokens.f = tk; } } }
         else if (r.t === 'tw') { tw = tw || W.twFor(it.c, it.s, ctx); if (tw.length) { var tt = x.period + '|' + tw.map(function (z) { return z.id; }).join(','); if (tt !== ak.tw) { hit = true; tokens.tw = tt; } } }
         if (hit) hits.push(r);
       });
       var fire = it.m === 'all' ? hits.length === it.r.length : hits.length > 0;
-      if (fire) out.push({ revised: revised, c: it.c, s: it.s, label: x.label, unit: x.unit, period: x.period, value: x.value, change: x.change, prev: seen, mode: it.m === 'all' ? 'all' : 'any', hits: hits, tokens: tokens, state: fo, tw: tw || [] });
+      if (fire) out.push({ revised: revised, c: it.c, s: it.s, label: x.label, unit: x.unit, period: x.period, value: x.value, basis: x.basis, change: x.change, prev: seen, mode: it.m === 'all' ? 'all' : 'any', hits: hits, tokens: tokens, state: fo, tw: tw || [] });
     });
     stamp(out.length); return out;
   };
 
   /* ---- exportar / importar (validacion estricta; nada se ejecuta ni se envia) ---- */
-  var T = { cross: 1, pct: 1, 'new': 1, rev: 1, fresh: 1, tw: 1 };
+  var T = { cross: 1, pct: 1, 'new': 1, rev: 1, fresh: 1, tw: 1, basis: 1 };
   function num(v, lo, hi) { return typeof v === 'number' && isFinite(v) && v >= lo && v <= hi; }
   W.cleanRule = function (r) {
     if (!r || typeof r !== 'object' || !T[r.t]) return null;
-    if (r.t === 'cross') return num(r.v, -1e9, 1e9) && (r.d === 'above' || r.d === 'below') ? { t: 'cross', v: r.v, d: r.d } : null;
+    if (r.t === 'cross' || r.t === 'basis') return num(r.v, -1e9, 1e9) && (r.d === 'above' || r.d === 'below') ? { t: r.t, v: r.v, d: r.d } : null;
     if (r.t === 'pct') { if (!num(r.v, 0.01, 1000)) return null; var o = { t: 'pct', v: r.v }; if (r.d === 'up' || r.d === 'down') o.d = r.d; return o; }
     if (r.t === 'fresh') return r.v === 'DELAYED' || r.v === 'STALE' ? { t: 'fresh', v: r.v } : null;
     return { t: r.t };
@@ -130,7 +143,7 @@
     var it = { c: x.c, s: x.s }, rs = [];
     (Array.isArray(x.r) ? x.r : []).slice(0, MAXRULES).forEach(function (r) { var c = W.cleanRule(r); if (c) rs.push(c); });
     if (rs.length) it.r = rs; if (x.m === 'all') it.m = 'all';
-    if (x.seen && typeof x.seen === 'object' && typeof x.seen.p === 'string' && x.seen.p.length <= 12 && (x.seen.v === null || typeof x.seen.v === 'number')) { it.seen = { p: x.seen.p, v: x.seen.v }; if (typeof x.ack === 'string' && x.ack.length <= 12) it.ack = x.ack; }
+    if (x.seen && typeof x.seen === 'object' && typeof x.seen.p === 'string' && x.seen.p.length <= 12 && (x.seen.v === null || typeof x.seen.v === 'number')) { it.seen = { p: x.seen.p, v: x.seen.v }; if (typeof x.seen.b === 'number') it.seen.b = x.seen.b; if (typeof x.ack === 'string' && x.ack.length <= 12) it.ack = x.ack; }
     if (Array.isArray(x.hist)) { var h = []; x.hist.slice(0, MAXHIST).forEach(function (e) { if (e && typeof e.at === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(e.at) && typeof e.p === 'string' && e.p.length <= 12 && Array.isArray(e.h)) { var hs = []; e.h.forEach(function (r) { var c = W.cleanRule(r); if (c) hs.push(c); }); h.push({ at: e.at.slice(0, 24), p: e.p, v: typeof e.v === 'number' ? e.v : null, h: hs }); } }); if (h.length) it.hist = h; }
     return it;
   };
@@ -154,13 +167,13 @@
 
   var L = {
     es: { rules: 'Avisos', add: 'Añadir aviso', pct: 'Cambio de ±', pctU: '% en el último dato', neu: 'Nuevo dato', cross: 'Cruza', above: 'sube de', below: 'baja de', none: 'Sin avisos. Se evalúan en este navegador cada vez que abres Dehesa.', del: 'Quitar', ok: 'Visto', fired: 'Aviso', newd: 'nuevo dato', val: 'valor', chg: 'variación', pill: 'avisos de tu lista', hint: 'Local: sin cuenta. El aviso aparece cuando abres la web; no se envía nada.',
-      rev: 'Revisión oficial', fresh: 'Frescura:', tw: 'Transmission Watch elevado', up: 'solo subidas', down: 'solo bajadas', any: 'Cualquier regla', all: 'Todas las reglas', mode: 'Avisar cuando se cumpla', priceAbove: 'Precio sube de', priceBelow: 'Precio baja de', changeAny: 'Cambio de ±%', changeUp: 'Subida ≥ %', changeDown: 'Bajada ≥ %', fDelayed: 'Retrasado', fStale: 'Desactualizado', twHint: 'Relación observada con un insumo que se ha movido ≥ 10 %; descriptivo, no es una predicción.' },
+      rev: 'Revisión oficial', fresh: 'Frescura:', tw: 'Transmission Watch elevado', up: 'solo subidas', down: 'solo bajadas', any: 'Cualquier regla', all: 'Todas las reglas', mode: 'Avisar cuando se cumpla', priceAbove: 'Precio sube de', priceBelow: 'Precio baja de', changeAny: 'Cambio de ±%', changeUp: 'Subida ≥ %', changeDown: 'Bajada ≥ %', fDelayed: 'Retrasado', fStale: 'Desactualizado', twHint: 'Relación observada con un insumo que se ha movido ≥ 10 %; descriptivo, no es una predicción.', basis: 'Basis', basisAbove: 'Basis sube de', basisBelow: 'Basis baja de', basisHint: 'El aviso de basis solo funciona con mercados cuyo informe USDA publica un único basis.' },
     en: { rules: 'Alerts', add: 'Add alert', pct: 'Change of ±', pctU: '% in the latest data', neu: 'New data', cross: 'Crosses', above: 'rises above', below: 'falls below', none: 'No alerts. They are checked in this browser whenever you open Dehesa.', del: 'Remove', ok: 'Seen', fired: 'Alert', newd: 'new data', val: 'value', chg: 'change', pill: 'alerts from your list', hint: 'Local only: no account. The alert shows when you open the site; nothing is sent.',
-      rev: 'Official revision', fresh: 'Freshness:', tw: 'Transmission Watch elevated', up: 'rises only', down: 'falls only', any: 'Any rule', all: 'All rules', mode: 'Alert when', priceAbove: 'Price rises above', priceBelow: 'Price falls below', changeAny: 'Change of ±%', changeUp: 'Rise ≥ %', changeDown: 'Fall ≥ %', fDelayed: 'Delayed', fStale: 'Stale', twHint: 'Observed relationship with an input that moved ≥ 10 %; descriptive, not a forecast.' },
+      rev: 'Official revision', fresh: 'Freshness:', tw: 'Transmission Watch elevated', up: 'rises only', down: 'falls only', any: 'Any rule', all: 'All rules', mode: 'Alert when', priceAbove: 'Price rises above', priceBelow: 'Price falls below', changeAny: 'Change of ±%', changeUp: 'Rise ≥ %', changeDown: 'Fall ≥ %', fDelayed: 'Delayed', fStale: 'Stale', twHint: 'Observed relationship with an input that moved ≥ 10 %; descriptive, not a forecast.', basis: 'Basis', basisAbove: 'Basis rises above', basisBelow: 'Basis falls below', basisHint: 'Basis alerts only work for markets whose USDA report publishes a single basis value.' },
     fr: { rules: 'Alertes', add: 'Ajouter une alerte', pct: 'Variation de ±', pctU: '% sur la dernière donnée', neu: 'Nouvelle donnée', cross: 'Franchit', above: 'dépasse', below: 'passe sous', none: 'Aucune alerte. Elles sont évaluées dans ce navigateur à chaque visite.', del: 'Retirer', ok: 'Vu', fired: 'Alerte', newd: 'nouvelle donnée', val: 'valeur', chg: 'variation', pill: 'alertes de votre liste', hint: 'Local, sans compte. L’alerte s’affiche à l’ouverture du site ; rien n’est envoyé.',
-      rev: 'Révision officielle', fresh: 'Fraîcheur :', tw: 'Transmission Watch élevé', up: 'hausses seulement', down: 'baisses seulement', any: 'Une règle', all: 'Toutes les règles', mode: 'Alerter quand', priceAbove: 'Le prix dépasse', priceBelow: 'Le prix passe sous', changeAny: 'Variation de ±%', changeUp: 'Hausse ≥ %', changeDown: 'Baisse ≥ %', fDelayed: 'En retard', fStale: 'Obsolète', twHint: 'Relation observée avec un intrant qui a bougé de ≥ 10 % ; descriptif, pas une prévision.' },
+      rev: 'Révision officielle', fresh: 'Fraîcheur :', tw: 'Transmission Watch élevé', up: 'hausses seulement', down: 'baisses seulement', any: 'Une règle', all: 'Toutes les règles', mode: 'Alerter quand', priceAbove: 'Le prix dépasse', priceBelow: 'Le prix passe sous', changeAny: 'Variation de ±%', changeUp: 'Hausse ≥ %', changeDown: 'Baisse ≥ %', fDelayed: 'En retard', fStale: 'Obsolète', twHint: 'Relation observée avec un intrant qui a bougé de ≥ 10 % ; descriptif, pas une prévision.', basis: 'Base', basisAbove: 'La base dépasse', basisBelow: 'La base passe sous', basisHint: 'L’alerte de base ne fonctionne que pour les marchés dont le rapport USDA publie une base unique.' },
     it: { rules: 'Avvisi', add: 'Aggiungi avviso', pct: 'Variazione di ±', pctU: '% nell’ultimo dato', neu: 'Nuovo dato', cross: 'Supera', above: 'sale sopra', below: 'scende sotto', none: 'Nessun avviso. Vengono valutati in questo browser a ogni visita.', del: 'Rimuovi', ok: 'Visto', fired: 'Avviso', newd: 'nuovo dato', val: 'valore', chg: 'variazione', pill: 'avvisi dalla tua lista', hint: 'Solo locale, senza account. L’avviso appare quando apri il sito; non viene inviato nulla.',
-      rev: 'Revisione ufficiale', fresh: 'Freschezza:', tw: 'Transmission Watch elevato', up: 'solo rialzi', down: 'solo ribassi', any: 'Una regola qualsiasi', all: 'Tutte le regole', mode: 'Avvisa quando', priceAbove: 'Il prezzo sale sopra', priceBelow: 'Il prezzo scende sotto', changeAny: 'Variazione di ±%', changeUp: 'Rialzo ≥ %', changeDown: 'Ribasso ≥ %', fDelayed: 'In ritardo', fStale: 'Obsoleto', twHint: 'Relazione osservata con un input che si è mosso ≥ 10 %; descrittivo, non una previsione.' }
+      rev: 'Revisione ufficiale', fresh: 'Freschezza:', tw: 'Transmission Watch elevato', up: 'solo rialzi', down: 'solo ribassi', any: 'Una regola qualsiasi', all: 'Tutte le regole', mode: 'Avvisa quando', priceAbove: 'Il prezzo sale sopra', priceBelow: 'Il prezzo scende sotto', changeAny: 'Variazione di ±%', changeUp: 'Rialzo ≥ %', changeDown: 'Ribasso ≥ %', fDelayed: 'In ritardo', fStale: 'Obsoleto', twHint: 'Relazione osservata con un input che si è mosso ≥ 10 %; descrittivo, non una previsione.', basis: 'Basis', basisAbove: 'Il basis sale sopra', basisBelow: 'Il basis scende sotto', basisHint: 'L’avviso sul basis funziona solo per i mercati il cui rapporto USDA pubblica un basis unico.' }
   };
   W.rl = L;
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -168,19 +181,20 @@
     if (r.t === 'pct') return t.pct + r.v + t.pctU + (r.d ? ' (' + t[r.d] + ')' : '');
     if (r.t === 'new') return t.neu; if (r.t === 'rev') return t.rev;
     if (r.t === 'fresh') return t.fresh + ' ' + (r.v === 'STALE' ? t.fStale : t.fDelayed); if (r.t === 'tw') return t.tw;
+    if (r.t === 'basis') return (r.d === 'below' ? t.basisBelow : t.basisAbove) + ' ' + r.v;
     return t.cross + ' ' + (r.d === 'below' ? t.below : t.above) + ' ' + r.v;
   }
   W.ruleText = function (r, lang) { return ruleText(r, L[lang] || L.es); };
   var BASIC = ['above', 'below', 'pct', 'new'], FULL = ['above', 'below', 'pct', 'pctUp', 'pctDown', 'new', 'rev', 'fDELAYED', 'fSTALE', 'tw'];
-  function optLabel(o, t) { return { above: t.priceAbove, below: t.priceBelow, pct: t.changeAny, pctUp: t.changeUp, pctDown: t.changeDown, 'new': t.neu, rev: t.rev, fDELAYED: t.fresh + ' ' + t.fDelayed, fSTALE: t.fresh + ' ' + t.fStale, tw: t.tw }[o]; }
+  function optLabel(o, t) { return { above: t.priceAbove, below: t.priceBelow, pct: t.changeAny, pctUp: t.changeUp, pctDown: t.changeDown, 'new': t.neu, rev: t.rev, fDELAYED: t.fresh + ' ' + t.fDelayed, fSTALE: t.fresh + ' ' + t.fStale, tw: t.tw, bAbove: t.basisAbove, bBelow: t.basisBelow }[o]; }
   // editor HTML (lista de reglas + formulario). opts.full => todos los tipos y selector de modo. Se conecta con W.bindEditor(contenedor, onChange)
   W.editor = function (c, s, lang, opts) {
-    var t = L[lang] || L.es, full = !!(opts && opts.full), rs = W.rules(c, s), types = full ? FULL : BASIC, h = '<div class="di-wl-ed" data-c="' + esc(c) + '" data-s="' + esc(s) + '" style="font-size:13px">';
+    var t = L[lang] || L.es, full = !!(opts && opts.full), rs = W.rules(c, s), types = (full ? FULL : BASIC).concat(c === 'CB' ? ['bAbove', 'bBelow'] : []), h = '<div class="di-wl-ed" data-c="' + esc(c) + '" data-s="' + esc(s) + '" style="font-size:13px">';
     h += rs.length ? rs.map(function (r, i) { return '<span style="display:inline-flex;align-items:center;gap:6px;margin:0 6px 6px 0;padding:3px 10px;border:1px solid var(--border);border-radius:999px">🔔 ' + esc(ruleText(r, t)) + ' <button type="button" data-del="' + i + '" aria-label="' + esc(t.del) + '" style="font:inherit;border:0;background:none;cursor:pointer;padding:2px 6px;min-height:28px">✕</button></span>'; }).join('') : '<div class="di-movers-hint" style="margin:0 0 6px">' + esc(t.none) + '</div>';
     h += '<div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:4px"><select data-k="t" aria-label="' + esc(t.add) + '" style="font:inherit;padding:3px 6px;max-width:100%">' + types.map(function (o) { return '<option value="' + o + '">' + esc(optLabel(o, t)) + '</option>'; }).join('') + '</select>' +
       '<input data-k="v" type="number" step="any" value="5" aria-label="valor" style="width:84px;font:inherit;padding:3px 6px"><button type="button" data-add="1" style="font:inherit;padding:3px 12px;border:1px solid var(--border);border-radius:999px;background:var(--surface-alt);cursor:pointer;min-height:32px">' + esc(t.add) + '</button></div>';
     if (full && rs.length > 1) h += '<div style="margin-top:8px"><label style="font-size:13px">' + esc(t.mode) + ' <select data-k="m" aria-label="' + esc(t.mode) + '" style="font:inherit;padding:3px 6px"><option value="any"' + (W.mode(c, s) === 'any' ? ' selected' : '') + '>' + esc(t.any) + '</option><option value="all"' + (W.mode(c, s) === 'all' ? ' selected' : '') + '>' + esc(t.all) + '</option></select></label></div>';
-    return h + '<div class="di-movers-hint" style="margin-top:6px">' + esc(t.hint) + (full ? ' ' + esc(t.twHint) : '') + '</div></div>';
+    return h + '<div class="di-movers-hint" style="margin-top:6px">' + esc(t.hint) + (full ? ' ' + esc(t.twHint) : '') + (c === 'CB' ? ' ' + esc(t.basisHint) : '') + '</div></div>';
   };
   W.bindEditor = function (root, onChange) {
     if (!root) return; var eds = root.querySelectorAll('.di-wl-ed');
@@ -193,6 +207,7 @@
         if (a) {
           var t = ed.querySelector('[data-k=t]').value, v = parseFloat(ed.querySelector('[data-k=v]').value), r;
           if (t === 'pct' || t === 'pctUp' || t === 'pctDown') { if (!(v > 0)) return; r = { t: 'pct', v: v }; if (t !== 'pct') r.d = t === 'pctUp' ? 'up' : 'down'; }
+          else if (t === 'bAbove' || t === 'bBelow') { if (isNaN(v)) return; r = { t: 'basis', v: v, d: t === 'bAbove' ? 'above' : 'below' }; }
           else if (t === 'new') r = { t: 'new' }; else if (t === 'rev') r = { t: 'rev' }; else if (t === 'tw') r = { t: 'tw' }; else if (t === 'fDELAYED' || t === 'fSTALE') r = { t: 'fresh', v: t.slice(1) };
           else { if (isNaN(v)) return; r = { t: 'cross', v: v, d: t }; }
           if (!W.has(c, s)) W.toggle(c, s);
