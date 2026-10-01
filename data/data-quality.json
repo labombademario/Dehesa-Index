@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-01T05:18:52Z",
+ "generatedAt": "2026-10-01T06:33:14Z",
  "summary": {
   "files": 17,
   "errors": 0,
@@ -19,6 +19,7 @@
     "lines": 0
    },
    "generatedAt": "2026-09-30T18:27:45Z",
+   "info": [],
    "nWarnings": 0,
    "nErrors": 0
   },
@@ -34,6 +35,7 @@
     "lines": 0
    },
    "generatedAt": "2026-10-01T03:40:58Z",
+   "info": [],
    "nWarnings": 0,
    "nErrors": 0
   },
@@ -49,6 +51,7 @@
     "lines": 0
    },
    "generatedAt": "2026-09-30T19:36:29Z",
+   "info": [],
    "nWarnings": 0,
    "nErrors": 0
   },
@@ -64,6 +67,7 @@
     "lines": 0
    },
    "generatedAt": "2026-09-30T20:09:44Z",
+   "info": [],
    "nWarnings": 0,
    "nErrors": 0
   },
@@ -79,6 +83,7 @@
     "lines": 0
    },
    "generatedAt": "2026-09-30T20:36:07Z",
+   "info": [],
    "nWarnings": 0,
    "nErrors": 0
   },
@@ -88,7 +93,7 @@
    "status": "warning",
    "errors": [],
    "warnings": [
-    "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01)"
+    "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]"
    ],
    "stats": {
     "series": 244,
@@ -96,6 +101,7 @@
     "lines": 0
    },
    "generatedAt": "2026-09-30T23:24:33Z",
+   "info": [],
    "nWarnings": 1,
    "nErrors": 0
   },
@@ -111,6 +117,7 @@
     "lines": 0
    },
    "generatedAt": "2026-09-30T22:43:53Z",
+   "info": [],
    "nWarnings": 0,
    "nErrors": 0
   },
@@ -126,6 +133,7 @@
     "lines": 0
    },
    "generatedAt": "2026-09-30T22:37:22Z",
+   "info": [],
    "nWarnings": 0,
    "nErrors": 0
   },
@@ -135,8 +143,8 @@
    "status": "warning",
    "errors": [],
    "warnings": [
-    "CA/ca-trade-imp-wheat: salto 2.5 -> 2.8 en 1996-01 (mediana previa 0.1)",
-    "CA/ca-trade-imp-wheat: salto 5.3 -> 10.1 en 2002-12 (mediana previa 0.4)"
+    "CA/ca-trade-imp-wheat: salto 2.5 -> 2.8 en 1996-01 (mediana previa 0.1) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
+    "CA/ca-trade-imp-wheat: salto 5.3 -> 10.1 en 2002-12 (mediana previa 0.4) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]"
    ],
    "stats": {
     "series": 276,
@@ -144,6 +152,7 @@
     "lines": 0
    },
    "generatedAt": "2026-10-01T01:46:41Z",
+   "info": [],
    "nWarnings": 2,
    "nErrors": 0
   },
@@ -153,17 +162,17 @@
    "status": "warning",
    "errors": [],
    "warnings": [
-    "AU/au-imp-wheat: salto 0.004 -> 8.944 en 2003-01 (mediana previa 0.013)",
-    "AU/au-imp-wheat: salto 8.944 -> 9.325 en 2003-02 (mediana previa 0.013)",
-    "AU/au-imp-wheat: salto 9.325 -> 8.87 en 2003-03 (mediana previa 0.016)",
-    "AU/au-imp-wheat: salto 8.87 -> 17.755 en 2003-04 (mediana previa 0.019)",
-    "AU/au-imp-wheat: salto 0.013 -> 6.544 en 2003-06 (mediana previa 0.024)",
-    "AU/au-imp-wheat: salto 0.165 -> 42.413 en 2019-06 (mediana previa 0.091)",
-    "AU/au-imp-wheat: salto 42.413 -> 21.487 en 2019-07 (mediana previa 0.116)",
-    "AU/au-imp-wheat: salto 21.487 -> 21.632 en 2019-08 (mediana previa 0.117)",
-    "AU/au-imp-wheat: salto 21.632 -> 21.438 en 2019-09 (mediana previa 0.154)",
-    "AU/au-imp-wheat: salto 21.438 -> 20.285 en 2019-10 (mediana previa 0.165)",
-    "AU/au-imp-wheat: salto 20.285 -> 20.145 en 2019-11 (mediana previa 0.247)",
+    "AU/au-imp-wheat: salto 0.004 -> 8.944 en 2003-01 (mediana previa 0.013) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
+    "AU/au-imp-wheat: salto 8.944 -> 9.325 en 2003-02 (mediana previa 0.013) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
+    "AU/au-imp-wheat: salto 9.325 -> 8.87 en 2003-03 (mediana previa 0.016) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
+    "AU/au-imp-wheat: salto 8.87 -> 17.755 en 2003-04 (mediana previa 0.019) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
+    "AU/au-imp-wheat: salto 0.013 -> 6.544 en 2003-06 (mediana previa 0.024) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
+    "AU/au-imp-wheat: salto 0.165 -> 42.413 en 2019-06 (mediana previa 0.091) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
+    "AU/au-imp-wheat: salto 42.413 -> 21.487 en 2019-07 (mediana previa 0.116) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
+    "AU/au-imp-wheat: salto 21.487 -> 21.632 en 2019-08 (mediana previa 0.117) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
+    "AU/au-imp-wheat: salto 21.632 -> 21.438 en 2019-09 (mediana previa 0.154) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
+    "AU/au-imp-wheat: salto 21.438 -> 20.285 en 2019-10 (mediana previa 0.165) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
+    "AU/au-imp-wheat: salto 20.285 -> 20.145 en 2019-11 (mediana previa 0.247) [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]",
     "AU/au-imp-maize: salto 0.002 -> 10.36 en 2003-01 (mediana previa 0.015)"
    ],
    "stats": {
@@ -172,6 +181,7 @@
     "lines": 0
    },
    "generatedAt": "2026-10-01T01:41:52Z",
+   "info": [],
    "nWarnings": 12,
    "nErrors": 0
   },
@@ -187,6 +197,7 @@
     "lines": 0
    },
    "generatedAt": "2026-10-01T01:18:42Z",
+   "info": [],
    "nWarnings": 0,
    "nErrors": 0
   },
@@ -202,6 +213,7 @@
     "lines": 0
    },
    "generatedAt": "2026-10-01T03:40:39Z",
+   "info": [],
    "nWarnings": 0,
    "nErrors": 0
   },
