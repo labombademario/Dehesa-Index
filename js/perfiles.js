@@ -34,7 +34,7 @@
     { f: 'ovino', s: 'heavy-lamb', c: 'EU', k: 'cordero' }, { f: 'fertilizantes', s: 'n-nitrogen', c: 'EU', k: 'nitrogeno' },
     { f: 'leche', s: 'raw-milk', c: 'DE', k: 'leche' }, { f: 'aceite', s: 'extra-virgin-olive-oil-up-to-0-8', c: 'ES', k: 'aceite' }
   ];
-  var D = null, EUD = null, ST = { a: 'ES', b: 'FR' };
+  var D = null, EUD = null, MAC = null, ST = { a: 'ES', b: 'FR' };
   function lang() { return CD.lang(); }
   function tt() { return T[lang()] || T.es; }
   function lb() { return CD.labels(lang()); }
@@ -102,7 +102,7 @@
   function build() {
     var root = document.getElementById('perfiles-body'); if (!root || !D) return;
     var t = tt(), l = lb(), h = '';
-    if (EUD) h += '<section class="di-card" style="padding:16px 18px;margin-bottom:22px"><div style="display:flex;align-items:center;gap:12px"><span style="font-size:32px" aria-hidden="true">' + window.DIProfile.flag('EU') + '</span><div><div style="font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--text-faint)">' + t.eu.toUpperCase() + '</div><div style="font-size:13px;color:var(--text-muted)">' + t.euSub + '</div></div></div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:12px">' + euCards() + '</div><p class="di-movers-hint" style="margin-top:8px">' + t.euNote + ' <a href="' + 'europa.html">' + t.euMore + '</a></p></section>';
+    if (EUD) h += '<section class="di-card" style="padding:16px 18px;margin-bottom:22px"><div style="display:flex;align-items:center;gap:12px"><span style="font-size:32px" aria-hidden="true">' + window.DIProfile.flag('EU') + '</span><div><div style="font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--text-faint)">' + t.eu.toUpperCase() + '</div><div style="font-size:13px;color:var(--text-muted)">' + t.euSub + '</div></div></div>' + window.DIProfile.macroStrip(MAC && MAC.countries.EU, ctx()) + '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:12px">' + euCards() + '</div><p class="di-movers-hint" style="margin-top:8px">' + t.euNote + ' <a href="' + 'europa.html">' + t.euMore + '</a></p></section>';
     h += '<h2 style="margin:0 0 10px;font-size:18px">' + t.countries + '</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:26px">';
     ORDER.forEach(function (cc) {
       var c = D.countries[cc]; if (!c) return; var s = stats(c);
@@ -121,7 +121,7 @@
   shell();
   var q = new URLSearchParams(window.location.search); if (q.get('a')) ST.a = q.get('a').toUpperCase(); if (q.get('b')) ST.b = q.get('b').toUpperCase();
   var fams = ['cerdo', 'vacuno', 'cereales', 'lacteos', 'huevos', 'pollo', 'ovino', 'fertilizantes', 'leche', 'aceite'];
-  Promise.all([CD.load(), Promise.all(fams.map(function (f) { return fetch('data/eu/' + f + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }))])
-    .then(function (rs) { D = rs[0]; EUD = {}; rs[1].forEach(function (x, i) { if (x) EUD[fams[i]] = x; }); if (!D.countries[ST.a]) ST.a = 'ES'; if (!D.countries[ST.b]) ST.b = 'FR'; build(); })
+  Promise.all([CD.load(), fetch('data/country-macro.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), Promise.all(fams.map(function (f) { return fetch('data/eu/' + f + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }))])
+    .then(function (rs) { D = rs[0]; MAC = rs[1]; EUD = {}; rs[2].forEach(function (x, i) { if (x) EUD[fams[i]] = x; }); if (!D.countries[ST.a]) ST.a = 'ES'; if (!D.countries[ST.b]) ST.b = 'FR'; build(); })
     .catch(function () { var b = document.getElementById('perfiles-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
 })();
