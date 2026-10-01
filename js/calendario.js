@@ -128,6 +128,24 @@
       it: { name: 'Milk Market Observatory — Commissione europea', desc: "Riunione trimestrale del gruppo di esperti sui prezzi e sulla produzione di latte e lattiero-caseari nell'UE, generalmente tra marzo/aprile, giugno/luglio, settembre e dicembre." }
     }
   ];
+  // Las fechas escritas a mano caducan: antes de pintar se normalizan. Un informe con dia fijo de la semana (WEEKDAY: 1 = lunes, 4 = jueves, segun el
+  // patron habitual del organismo) avanza a su proxima ocurrencia y se marca como fecha por patron; cualquier otra fecha ya pasada deja de presentarse
+  // como proxima (hasDate=false) hasta que se cargue la siguiente del calendario oficial. No se inventan fechas.
+  var WEEKDAY = { 'crop-progress': 1, 'export-sales': 4 };
+  function isoLocal(d) { function p(n) { return (n < 10 ? '0' : '') + n; } return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()); }
+  CALENDAR_EVENTS.forEach(function (ev) {
+    if (!ev.hasDate || !ev.nextDate) return;
+    var days = isoDaysFromToday(ev.nextDate);
+    if (days !== null && days < -1) {
+      if (WEEKDAY[ev.id] !== undefined) {
+        var d = new Date(); d = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+        while (d.getDay() !== WEEKDAY[ev.id]) d.setDate(d.getDate() + 1);
+        ev.nextDate = isoLocal(d); ev.patternDate = true;
+      } else { ev.hasDate = false; ev.staleDate = true; }
+    }
+    ev.isToday = ev.hasDate && isoDaysFromToday(ev.nextDate) === 0;
+  });
+
 
   var UPDATED_ISO = '2026-09-29';
 
@@ -141,6 +159,7 @@
       freqWeekly: 'Semanal', freqMonthly: 'Mensual', freqQuarterly: 'Trimestral', freqAnnual: 'Anual', filterType: 'Tipo', filterCrop: 'Cultivo', filterImpact: 'Impacto', allCrops: 'Todos los cultivos', allTypes: 'Todos los eventos', allImpacts: 'Todos los impactos', typePublication: 'Publicación', typeHarvest: 'Cosecha / producción', impactLabels: {oferta:'Oferta',stocks:'Stocks',comercio:'Comercio', 'oferta-demanda':'Oferta / demanda',precios:'Precios',lacteos:'Lácteos',cosecha:'Cosecha'}, harvestStatus:'Ventana de cosecha / producción', relevance:'Por qué importa:',
       marketUs: '🇺🇸 EE. UU.', marketEu: '🇪🇺 Europa', todayTag: 'Hoy',
       lastLabelText: 'Última publicación:',
+      patternNote: 'Fecha calculada con el día habitual de la semana; un festivo puede desplazarla. Confirma en la fuente.', staleNote: 'La fecha cargada ya ha pasado y aún no se ha cargado la siguiente del calendario oficial; consulta la fuente.',
       noExactDateNote: 'Periodicidad conocida; fecha exacta de la próxima publicación aún no anunciada.',
       sourceLinkLabel: 'Ver fuente oficial',
       noResultsHint: 'No hay informes en esta categoría por ahora. Prueba con otro filtro.',
@@ -163,6 +182,7 @@
       freqWeekly: 'Weekly', freqMonthly: 'Monthly', freqQuarterly: 'Quarterly', freqAnnual: 'Annual', filterType: 'Type', filterCrop: 'Crop', filterImpact: 'Impact', allCrops: 'All crops', allTypes: 'All events', allImpacts: 'All impacts', typePublication: 'Publication', typeHarvest: 'Harvest / production', impactLabels: {oferta:'Supply',stocks:'Stocks',comercio:'Trade','oferta-demanda':'Supply / demand',precios:'Prices',lacteos:'Dairy',cosecha:'Harvest'}, harvestStatus:'Harvest / production window', relevance:'Why it matters:',
       marketUs: '🇺🇸 U.S.', marketEu: '🇪🇺 Europe', todayTag: 'Today',
       lastLabelText: 'Last release:',
+      patternNote: 'Date computed from the usual weekday; a holiday can shift it. Confirm at the source.', staleNote: 'The loaded date has passed and the next one from the official calendar has not been loaded yet; check the source.',
       noExactDateNote: 'Known cadence; exact date of the next release not yet announced.',
       sourceLinkLabel: 'View official source',
       noResultsHint: 'No reports in this category right now. Try another filter.',
@@ -185,6 +205,7 @@
       freqWeekly: 'Hebdomadaire', freqMonthly: 'Mensuel', freqQuarterly: 'Trimestriel', freqAnnual: 'Annuel', filterType: 'Type', filterCrop: 'Culture', filterImpact: 'Impact', allCrops: 'Toutes les cultures', allTypes: 'Tous les événements', allImpacts: 'Tous les impacts', typePublication: 'Publication', typeHarvest: 'Récolte / production', impactLabels: {oferta:'Offre',stocks:'Stocks',comercio:'Commerce','oferta-demanda':'Offre / demande',precios:'Prix',lacteos:'Lait',cosecha:'Récolte'}, harvestStatus:'Fenêtre de récolte / production', relevance:'Pourquoi c’est important :',
       marketUs: '🇺🇸 É.-U.', marketEu: '🇪🇺 Europe', todayTag: "Aujourd'hui",
       lastLabelText: 'Dernière publication :',
+      patternNote: 'Date calculée d’après le jour habituel de la semaine ; un jour férié peut la décaler. À confirmer à la source.', staleNote: 'La date chargée est passée et la suivante du calendrier officiel n’est pas encore chargée ; consultez la source.',
       noExactDateNote: "Périodicité connue ; date exacte de la prochaine publication pas encore annoncée.",
       sourceLinkLabel: 'Voir la source officielle',
       noResultsHint: "Aucun rapport dans cette catégorie pour l'instant. Essayez un autre filtre.",
@@ -207,6 +228,7 @@
       freqWeekly: 'Settimanale', freqMonthly: 'Mensile', freqQuarterly: 'Trimestrale', freqAnnual: 'Annuale', filterType: 'Tipo', filterCrop: 'Coltura', filterImpact: 'Impatto', allCrops: 'Tutte le colture', allTypes: 'Tutti gli eventi', allImpacts: 'Tutti gli impatti', typePublication: 'Pubblicazione', typeHarvest: 'Raccolta / produzione', impactLabels: {oferta:'Offerta',stocks:'Scorte',comercio:'Commercio','oferta-demanda':'Offerta / domanda',precios:'Prezzi',lacteos:'Lattiero-caseario',cosecha:'Raccolta'}, harvestStatus:'Finestra di raccolta / produzione', relevance:'Perché conta:',
       marketUs: '🇺🇸 USA', marketEu: '🇪🇺 Europa', todayTag: 'Oggi',
       lastLabelText: 'Ultima pubblicazione:',
+      patternNote: 'Data calcolata dal giorno abituale della settimana; un giorno festivo può spostarla. Da confermare alla fonte.', staleNote: 'La data caricata è passata e la successiva del calendario ufficiale non è ancora caricata; consulta la fonte.',
       noExactDateNote: 'Periodicità nota; data esatta della prossima pubblicazione non ancora annunciata.',
       sourceLinkLabel: 'Vedi la fonte ufficiale',
       noResultsHint: 'Nessun rapporto in questa categoria al momento. Prova un altro filtro.',
@@ -312,7 +334,7 @@
           dateHtml = '<span class="di-cal-date' + (ev.isToday ? ' today' : '') + '">' + esc(dateDisplay) + '</span>';
         }
         var lastHtml = ev.lastDate ? '<div class="di-cal-last">' + esc(t.lastLabelText) + ' ' + esc(fmtDate(ev.lastDate, lang)) + '</div>' : '';
-        var noDateHtml = !ev.hasDate ? '<div class="di-cal-nodate">' + esc(t.noExactDateNote) + '</div>' : '';
+        var noDateHtml = !ev.hasDate ? '<div class="di-cal-nodate">' + esc(ev.staleDate ? t.staleNote : t.noExactDateNote) + '</div>' : (ev.patternDate ? '<div class="di-cal-nodate">' + esc(t.patternNote) + '</div>' : '');
         return '<div class="di-card di-cal-event">' +
           '<div class="di-cal-event-head">' +
             '<div class="di-cal-event-head-left"><span class="di-cal-market">' + esc(marketLabel) + '</span><span class="di-cal-freq">' + esc(freqLabel) + '</span></div>' +
