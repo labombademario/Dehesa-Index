@@ -2,9 +2,10 @@
 """Indicadores macro por país: Banco Mundial (PIB, PIB per cápita, población, paro, peso agrario) y FMI DataMapper (deuda/PIB)."""
 import json, os, sys, time, datetime, urllib.request
 
-WB = {'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU'}
+WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU'}
 IND = {'gdp': 'NY.GDP.MKTP.CD', 'gdppc': 'NY.GDP.PCAP.CD', 'pop': 'SP.POP.TOTL', 'unemp': 'SL.UEM.TOTL.ZS', 'agri': 'NV.AGR.TOTL.ZS'}
-CUR = {c: 'EUR' for c in ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'NL', 'EU']}
+CUR = {'US': 'USD'}
+CUR.update({c: 'EUR' for c in ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'NL', 'EU']})
 CUR.update({'DK': 'DKK', 'CA': 'CAD', 'AU': 'AUD'})
 LOG = []
 
@@ -52,7 +53,7 @@ for c, iso in WB.items():
 log('debt FMI: %d paises' % n)
 for c in WB:
     if 'debt' in out[c]: continue
-    if c in ('CA', 'AU'):
+    if c in ('CA', 'AU', 'US'):
         d = get('https://api.worldbank.org/v2/country/%s/indicator/GC.DOD.TOTL.GD.ZS?format=json&mrnev=1' % WB[c])
         r = d[1][0] if d and len(d) > 1 and d[1] else None
         if r and r.get('value') is not None:
