@@ -69,7 +69,8 @@ def mexico():
             continue
         if len(digits) != 8: continue
         g = ("%g %%" % imp) if isinstance(imp, (int, float)) else ("Free" if str(imp).strip().lower().startswith("ex") else str(imp).strip())
-        path = [ctx[k] for k in sorted(ctx)] + [desc]
+        path = [ctx[k] for k in sorted(ctx) if ctx[k]] + [desc]
+        if len(path) < 2 and names.get(digits[:4]): path = [names[digits[:4]]] + path
         out.append({"h": code, "c": digits[:2], "hd": digits[:4], "d": " › ".join(path[-3:]), "g": g, "sp": "", "o": "", "u": str(row[4] or "").strip(), "q": "", "ad": "", "f": []})
     write("mx", out, names, {"name": "Secretaría de Economía (SNICE) — Tarifa de la LIGIE", "url": "https://www.snice.gob.mx/cs/avi/snice/ligie.info22.html", "license": "Publicación oficial del Gobierno de México"},
           {"name": url.rsplit("/", 1)[-1], "title": "LIGIE"}, "Arancel general de importación (NMF). Las preferencias del T-MEC no figuran en este fichero.", 900)
@@ -81,12 +82,12 @@ def canada():
     z = zipfile.ZipFile(io.BytesIO(fetch("https://www.cbsa-asfc.gc.ca" + zs[-1][0]))); nm = z.namelist()[0]; z.extract(nm, "/tmp/ca")
     txt = subprocess.run(["mdb-export", "/tmp/ca/" + nm, "TPHS"], capture_output=True, text=True, check=True).stdout
     PREF = [("UST", "CUSMA-US"), ("MXT", "CUSMA-MX"), ("CEUT", "CETA (EU)"), ("CPTPT", "CPTPP"), ("UKT", "UK"), ("AUT", "Australia"), ("NZT", "N. Zealand"), ("KRT", "Korea"), ("CIAT", "Chile"), ("COLT", "Colombia"), ("PT", "Peru")]
-    out = []; names = {}; ctx = {}; cur = None; seen = {}; cur4 = ''
+    out = []; names = {}; ctx = {}; cur = None; seen = {}; cur4 = ''; p8 = ('', '')
     rows = list(csv.DictReader(io.StringIO(txt)))
     def dt(s):
         try: return datetime.datetime.strptime(s.split()[0], "%m/%d/%y").date()
         except Exception: return datetime.date(1970, 1, 1)
-    for r in rows:
+    for ri, r in enumerate(rows):
         code = (r["TARIFF"] or "").strip(); digits = re.sub(r"\D", "", code)
         if not digits or digits[:2] not in CHAPTERS or dt(r["EFF_DATE"]) > TODAY: continue
         desc = re.sub(r"\s+", " ", " ".join(x for x in (r["DESC1"], r["DESC2"], r["DESC3"]) if x)).strip(" :")
@@ -96,11 +97,14 @@ def canada():
             if len(digits) == 4: names[digits] = desc
             continue
         if len(digits) == 8:
-            ctx8 = {k: v for k, v in ctx.items() if k < 8}
+            nxt = re.sub(r"\D", "", (rows[ri + 1]["TARIFF"] if ri + 1 < len(rows) else "") or "")
+            has_stat = len(nxt) == 10 and nxt[:8] == digits
+            if not (r["MFN"] or "").strip() and not has_stat:
+                p8 = (digits[:7], desc); cur = None; continue
+            path = [ctx[k] for k in sorted(ctx) if ctx[k]] + ([p8[1]] if p8[0] == digits[:7] and p8[1] != desc else []) + [desc]
             g = (r["MFN"] or "").strip()
             sp = "; ".join("%s: %s" % (lab, r[k].strip()) for k, lab in PREF if (r.get(k) or "").strip())
-            path = [ctx8[k] for k in sorted(ctx8)] + [desc]
-            cur = {"h": code, "c": digits[:2], "hd": digits[:4], "d": " › ".join(path[-3:]), "g": g, "sp": sp, "o": (r.get("General Tariff") or "").strip(), "u": "", "q": "TRQ" if "access commitment" in desc.lower() or "access commitment" in " ".join(path).lower() else "", "ad": "", "f": []}
+            cur = {"h": code, "c": digits[:2], "hd": digits[:4], "d": " › ".join(path[-3:]), "g": g, "sp": sp, "o": (r.get("General Tariff") or "").strip(), "u": "", "q": "TRQ" if "access commitment" in " ".join(path).lower() else "", "ad": "", "f": []}
             if code in seen:
                 if dt(r["EFF_DATE"]) < seen[code][0]: cur = None; continue
                 out[seen[code][1]] = cur
