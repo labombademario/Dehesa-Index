@@ -205,6 +205,30 @@
     return sec(t.sd, t.sdHint + ' · ' + (c.publishedMonth || ''), body, lnk('oferta-demanda.html', t.sdMore));
   }
 
+
+  /* ---------- dependencia de importación / exportación (cálculo de Dehesa sobre USDA PSD) ---------- */
+  var XD = {
+    es: { dep: 'Dependencia de importación y exportación', depHint: 'Cálculo de Dehesa Index a partir de USDA PSD (campaña más reciente frente a la anterior).', imp: 'Dependencia de importación', impD: 'Importaciones / consumo', exp: 'Orientación exportadora', expD: 'Exportaciones / producción', self: 'Autosuficiencia', selfD: 'Producción / consumo', mkt: 'Mercado', vs: 'frente a la campaña anterior', note: 'Mismas unidades en numerador y denominador (las de PSD). Con existencias que varían, producción y consumo no cuadran exactamente con importaciones y exportaciones. No es un dato oficial: es una razón entre cifras del USDA.' },
+    en: { dep: 'Import and export dependence', depHint: 'Dehesa Index calculation from USDA PSD (latest marketing year vs the previous one).', imp: 'Import dependence', impD: 'Imports / consumption', exp: 'Export orientation', expD: 'Exports / production', self: 'Self-sufficiency', selfD: 'Production / consumption', mkt: 'Market', vs: 'vs. previous marketing year', note: 'Same units in numerator and denominator (PSD’s). With changing stocks, production and consumption do not exactly match imports and exports. Not an official figure: a ratio between USDA numbers.' },
+    fr: { dep: 'Dépendance à l’importation et à l’exportation', depHint: 'Calcul Dehesa Index à partir d’USDA PSD (dernière campagne contre la précédente).', imp: 'Dépendance à l’importation', impD: 'Importations / consommation', exp: 'Orientation exportatrice', expD: 'Exportations / production', self: 'Autosuffisance', selfD: 'Production / consommation', mkt: 'Marché', vs: 'vs. campagne précédente', note: 'Mêmes unités au numérateur et au dénominateur (celles de PSD). Avec des stocks variables, production et consommation ne bouclent pas exactement avec importations et exportations. Chiffre non officiel : un rapport entre données USDA.' },
+    it: { dep: 'Dipendenza da import ed export', depHint: 'Calcolo Dehesa Index da USDA PSD (ultima campagna rispetto alla precedente).', imp: 'Dipendenza dall’import', impD: 'Importazioni / consumo', exp: 'Orientamento all’export', expD: 'Esportazioni / produzione', self: 'Autosufficienza', selfD: 'Produzione / consumo', mkt: 'Mercato', vs: 'vs. campagna precedente', note: 'Stesse unità a numeratore e denominatore (quelle di PSD). Con scorte variabili, produzione e consumo non quadrano esattamente con import ed export. Non è un dato ufficiale: un rapporto tra cifre USDA.' }
+  };
+  function depBlock(t, cfg) {
+    var sd = D.sd, x = XD[lang()] || XD.es; if (!sd) return '';
+    var c = null; sd.commodities.forEach(function (q) { if (q.id === cfg.psd) c = q; }); if (!c) return '';
+    var my = c.latestMarketYear, names = { US: t.us, EU: t.eu }, E = { US: c.countries['United States'] && c.countries['United States'].years, EU: c.countries['European Union'] && c.countries['European Union'].years };
+    function ratios(y) { if (!y || typeof y.production !== 'number' || typeof y.consumption !== 'number' || !y.consumption || !y.production) return null; return { imp: typeof y.imports === 'number' ? y.imports / y.consumption * 100 : null, exp: typeof y.exports === 'number' ? y.exports / y.production * 100 : null, self: y.production / y.consumption * 100 }; }
+    var rows = '', any = false;
+    ['US', 'EU'].forEach(function (k) {
+      var Y = E[k]; if (!Y) return; var a = ratios(Y[my]), b = ratios(Y[my - 1]); if (!a) return; any = true;
+      function cell(key) { return a[key] === null ? td('—', 1) : td(nf(a[key], 1) + ' % ' + (b && b[key] !== null ? '<span style="font-size:11.5px">' + dtl(a[key] - b[key], 1, ' pp') + '</span>' : ''), 1); }
+      rows += '<tr style="' + TR + '">' + td(esc(names[k]), 0, 1) + cell('imp') + cell('exp') + cell('self') + '</tr>';
+    });
+    if (!any) return '';
+    var body = '<div class="di-card" style="padding:6px 8px;overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr>' + th(x.mkt) + th(x.imp + ' · ' + x.impD, 1) + th(x.exp + ' · ' + x.expD, 1) + th(x.self + ' · ' + x.selfD, 1) + '</tr></thead><tbody>' + rows + '</tbody></table></div><p class="di-info-api-notice" style="margin:6px 0">' + esc(x.note) + '</p>';
+    return sec(x.dep, x.depHint + ' ' + P.myLabel(cfg.psd, my) + ' ' + x.vs, body);
+  }
+
   /* ---------- ventas de exportación ---------- */
   function tonsF(v) { return P.big(v / 1000); }
   function exBlock(t, cfg) {
@@ -408,7 +432,7 @@
     document.title = 'Dehesa Index — ' + t.title + ': ' + (nm[SEL.p] || SEL.p);
     document.getElementById('pg-h1').textContent = t.title + ': ' + (nm[SEL.p] || SEL.p);
     document.getElementById('pg-sub').textContent = t.sub;
-    var parts = [priceBlock(t, cfg, SEL.p), sdBlock(t, cfg), exBlock(t, cfg), gatsBlock(t, cfg), cfg.kind === 'crop' ? cropBlock(t, cfg) : liveBlock(t, cfg), droughtBlock(t, cfg), costBlock(t, cfg), newsBlock(t, XN[lang()] || XN.es), relBlock(t, XN[lang()] || XN.es)].filter(function (x) { return x; });
+    var parts = [priceBlock(t, cfg, SEL.p), sdBlock(t, cfg), depBlock(t, cfg), exBlock(t, cfg), gatsBlock(t, cfg), cfg.kind === 'crop' ? cropBlock(t, cfg) : liveBlock(t, cfg), droughtBlock(t, cfg), costBlock(t, cfg), newsBlock(t, XN[lang()] || XN.es), relBlock(t, XN[lang()] || XN.es)].filter(function (x) { return x; });
     var links = '<p class="di-movers-hint" style="margin-top:26px"><strong>' + esc(t.links) + ':</strong> ' + lnk('mapa.html', t.lMap) + ' · ' + lnk('precios.html?product=' + (cfg.pp || (SEL.p === 'vacuno' ? 'vaca' : SEL.p)), t.lPrices) + '</p>';
     root.innerHTML = tabs(t) + (parts.length ? parts.join('') : '<p class="di-movers-hint">' + esc(t.noData) + '</p>') + links + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + ' <a href="metodologia.html">' + esc(t.methodLink) + '</a>.</p>';
     var sel = document.getElementById('pr-ent'); if (sel) sel.onchange = function (e) { SEL.ent = e.target.value; render(); };
