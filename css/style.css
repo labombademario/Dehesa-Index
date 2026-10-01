@@ -1415,3 +1415,11 @@ html[data-theme="dark"] .rl-st-WEAK_OR_UNSTABLE { color: #e0b04a; }
   .pt-tabs::-webkit-scrollbar{display:none}
   .pt-tabs .pt-chip{flex:0 0 auto}
 }
+
+/* Cabecera en una sola fila en escritorio y misma sangría que el contenido */
+@media (min-width:1100px){
+  .di-header-inner{padding:8px 32px;flex-wrap:nowrap;gap:24px}
+  .di-nav-links{order:0;width:auto;flex:1 1 auto;justify-content:center;flex-wrap:nowrap;gap:16px}
+  .di-nav-links a,.di-nav-gbtn{font-size:14px}
+  .di-nav-logo img{height:44px}
+}
