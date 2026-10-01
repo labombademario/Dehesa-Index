@@ -17,10 +17,10 @@ concurrency:
   cancel-in-progress: false
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - id: fetch
         run: python3 scripts/update-us-cash-bids.py --discover --backfill-days ${{ github.event.inputs.backfill_days || 0 }}
         env:

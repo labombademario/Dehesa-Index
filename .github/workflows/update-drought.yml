@@ -11,13 +11,13 @@ permissions:
   contents: write
 jobs:
   drought:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '22'
       - name: Actualizar monitor de sequía
         run: node scripts/update-drought.mjs 2>&1 | tee data/drought-log.txt; test ${PIPESTATUS[0]} -eq 0
       - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)

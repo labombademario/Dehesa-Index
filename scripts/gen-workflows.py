@@ -16,9 +16,9 @@ def render(x):
         L.append("    inputs:")
         for k, v in x["dispatch_inputs"].items():
             L += ["      %s:" % k, "        description: " + q(v["description"]), "        required: " + ("true" if v.get("required") else "false"), "        default: " + q(v.get("default", ""))]
-    L += ["permissions:", "  contents: write", "concurrency:", "  group: dehesa-data-writes", "  cancel-in-progress: false", "jobs:", "  update:", "    runs-on: ubuntu-latest"]
+    L += ["permissions:", "  contents: write", "concurrency:", "  group: dehesa-data-writes", "  cancel-in-progress: false", "jobs:", "  update:", "    runs-on: ubuntu-24.04"]
     if x.get("timeout"): L.append("    timeout-minutes: %d" % x["timeout"])
-    L += ["    steps:", "      - uses: actions/checkout@v4"]
+    L += ["    steps:", "      - uses: actions/checkout@v6"]
     for p in x.get("pre", []): L.append("      - run: " + p)
     cmd = (x.get("runner", "python3") + " " + x["script"] + (" " + x["args"] if x.get("args") else "")).strip()
     L.append("      - id: fetch"); L.append("        run: " + cmd)

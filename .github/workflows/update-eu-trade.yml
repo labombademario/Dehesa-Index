@@ -11,10 +11,10 @@ concurrency:
   cancel-in-progress: false
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - id: fetch
         run: python3 scripts/update-eu-trade.py
         timeout-minutes: 20

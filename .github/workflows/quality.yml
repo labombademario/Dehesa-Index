@@ -10,15 +10,15 @@ permissions:
 
 jobs:
   static-quality:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Check JavaScript syntax
         shell: bash
@@ -111,12 +111,12 @@ jobs:
 
   page-budget:
     # Presupuesto de carga inicial POR PAGINA con navegador real (JSON, JS y gzip; peticiones prohibidas; 404 y errores de JS).
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '22'
       - name: Playwright + Chromium
         run: |
           npm install --no-save --no-audit --no-fund playwright
@@ -133,12 +133,12 @@ jobs:
   e2e:
     # Navegador real (escritorio y movil): errores de consola/pagina, 4xx/5xx, JSON invalido, componentes criticos vacios,
     # flujos de usuario y accesibilidad (axe-core, WCAG 2 A/AA: critical y serious bloquean).
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '22'
       - name: Playwright, Chromium y axe-core
         run: |
           npm install --no-save --no-audit --no-fund playwright axe-core
@@ -161,7 +161,7 @@ jobs:
         run: node scripts/ux-audit.mjs --strict
       - name: Informe E2E
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: e2e-report
           path: e2e-report.json

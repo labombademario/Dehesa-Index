@@ -16,9 +16,9 @@ concurrency:
   cancel-in-progress: false
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - id: fetch
         run: python3 scripts/update-portugal.py ${{ github.event.inputs.mode }}
         timeout-minutes: 25

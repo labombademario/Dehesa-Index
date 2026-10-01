@@ -20,12 +20,12 @@ concurrency:
 
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '22'
       - name: Update EU Agri-food prices
         run: node scripts/update-eu-agrifood.mjs cerdo vaca cordero pollo huevos azucar oliva arroz maiz trigo cebada avena colza centeno mantequilla leche_polvo dap potasa leche harina_soja
       - uses: ./.github/actions/price-engine
