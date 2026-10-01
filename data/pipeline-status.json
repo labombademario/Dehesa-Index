@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-01T03:39:00Z",
+ "generatedAt": "2026-10-01T04:06:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 41,
+  "ok": 42,
   "late": 0,
   "error": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "ok",
  "pipelines": [
@@ -100,7 +100,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-01T03:24:41Z"
+     "lastChange": "2026-10-01T04:05:47Z"
     }
    ],
    "last": {
@@ -132,7 +132,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-01T03:24:41Z"
+     "lastChange": "2026-10-01T04:05:47Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -1056,6 +1056,34 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-fx-history.yml",
+   "name": "Update historical exchange rates (ECB)",
+   "crons": [
+    "20 8 4 * *"
+   ],
+   "nextRun": "2026-10-04T08:20:00Z",
+   "files": [
+    {
+     "path": "data/fx-history.json",
+     "lastChange": "2026-10-01T03:43:12Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-01T03:42:54Z",
+    "durationSec": 22,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36811780680"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-fx.yml",
    "name": "Actualizar tipos de cambio (BCE)",
    "crons": [
@@ -1156,7 +1184,7 @@
      "series": 5,
      "points": 1193,
      "lines": 0,
-     "lastChange": "2026-10-01T02:16:26Z"
+     "lastChange": "2026-10-01T03:40:39Z"
     },
     {
      "path": "data/revisions.json",
@@ -1166,13 +1194,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-01T02:15:58Z",
-    "durationSec": 32,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36805010646"
+    "startedAt": "2026-10-01T03:40:26Z",
+    "durationSec": 18,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36811592112"
    },
    "recent": {
-    "runs": 2,
-    "success": 2,
+    "runs": 3,
+    "success": 3,
     "failed": 0
    },
    "status": "ok",
@@ -1403,14 +1431,23 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-01T03:16:19Z"
+     "lastChange": "2026-10-01T03:39:57Z"
     },
     {
      "path": "data/data-quality.json",
      "lastChange": "2026-10-01T03:16:19Z"
     },
     {
-     "path": "data/series-registry.json"
+     "path": "data/series-registry.json",
+     "lastChange": "2026-10-01T03:38:31Z"
+    },
+    {
+     "path": "data/watch-index.json",
+     "lastChange": "2026-10-01T04:05:47Z"
+    },
+    {
+     "path": "data/daily-brief.json",
+     "lastChange": "2026-10-01T04:05:47Z"
     }
    ],
    "last": {
@@ -1529,6 +1566,19 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-seo-pages.yml",
+   "name": "Rebuild SEO landing pages",
+   "crons": [
+    "10 5 * * 1"
+   ],
+   "nextRun": "2026-10-05T05:10:00Z",
+   "files": [],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-spain.yml",
    "name": "Update Spain (MAPA)",
    "crons": [
@@ -1542,7 +1592,7 @@
      "series": 219,
      "points": 58767,
      "lines": 0,
-     "lastChange": "2026-09-30T19:00:57Z"
+     "lastChange": "2026-10-01T03:41:01Z"
     },
     {
      "path": "data/revisions.json",
@@ -1552,13 +1602,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-09-30T19:00:36Z",
-    "durationSec": 26,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36762636133"
+    "startedAt": "2026-10-01T03:40:27Z",
+    "durationSec": 37,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36811594034"
    },
    "recent": {
-    "runs": 5,
-    "success": 5,
+    "runs": 6,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
