@@ -49,7 +49,7 @@ html[data-theme="dark"] {
   --text: #F2EFE3;
   --text-muted: #ABA68F;
   --text-tertiary: #C6C1AA;
-  --text-faint: #8F8A74;
+  --text-faint: #A29D86;
   --tab-inactive-text: #D6D2BE;
   --fav-border: #5C5533;
   --fav-inactive: #5C5844;
@@ -1452,3 +1452,13 @@ html[data-theme="dark"] .rl-st-WEAK_OR_UNSTABLE { color: #e0b04a; }
 #cal-filters .di-location-btn{align-self:center}
 #cal-filters .di-cal-filter-row{flex:1 1 560px;margin-top:0}
 .di-cal-watch-card a[href^="noticias"]{text-transform:none;letter-spacing:0}
+
+/* Modo oscuro: colores en línea y fijos que quedaban por debajo de 4,5:1 */
+html[data-theme="dark"] [style*="color:#a33"],html[data-theme="dark"] [style*="color: #a33"],html[data-theme="dark"] [style*="color:#aa3333"]{color:#f3aaa2!important}
+html[data-theme="dark"] [style*="color:#2f6b4a"],html[data-theme="dark"] [style*="color: #2f6b4a"]{color:#7fcf9b!important}
+html[data-theme="dark"] [style*="color:#8a6d1f"],html[data-theme="dark"] [style*="color: #8a6d1f"]{color:#e0b04a!important}
+html[data-theme="dark"] [style*="color:#2a6f97"],html[data-theme="dark"] [style*="color: #2a6f97"]{color:#7cc0e6!important}
+html[data-theme="dark"] [style*="color:#b4341f"],html[data-theme="dark"] [style*="color: #b4341f"]{color:#f3917f!important}
+html[data-theme="dark"] .di-news-lang{color:var(--text-faint)}
+html[data-theme="dark"] .di-step-n{color:var(--accent-2,#C9A227)}
+html[data-theme="dark"] .di-data-trust summary,html[data-theme="dark"] .di-data-trust-label,html[data-theme="dark"] .di-data-health-kicker,html[data-theme="dark"] .di-data-health-stats span{color:var(--text-faint)}

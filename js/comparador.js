@@ -149,7 +149,7 @@
       setTimeout(function () { URL.revokeObjectURL(a.href); document.body.removeChild(a); }, 500);
     } catch (e) { /* sin descarga disponible */ }
   }
-  function chipStyle(on) { return 'display:inline-flex;align-items:center;gap:6px;margin:0 6px 6px 0;padding:4px 11px;border:1px solid ' + (on ? '#2f6b3a' : 'var(--border)') + ';border-radius:999px;background:' + (on ? '#e3f0e5' : 'transparent') + ';color:inherit;font:inherit;font-size:13px;cursor:pointer'; }
+  function chipStyle(on) { return 'display:inline-flex;align-items:center;gap:6px;margin:0 6px 6px 0;padding:4px 11px;border:1px solid ' + (on ? '#2f6b3a' : 'var(--border)') + ';border-radius:999px;background:' + (on ? '#e3f0e5' : 'transparent') + ';color:' + (on ? '#1E3328' : 'inherit') + ';font:inherit;font-size:13px;cursor:pointer'; }
   function render() {
     var root = document.getElementById('cmp-body'); if (!root || !D) return; var t = tt(), p = D.products[ST.p];
     var h1 = document.getElementById('cp-h1'), sb = document.getElementById('cp-sub'); if (h1) h1.textContent = t.title; if (sb) sb.textContent = t.sub; document.title = 'Dehesa Index — ' + t.title;
