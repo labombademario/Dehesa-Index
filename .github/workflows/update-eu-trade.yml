@@ -1,0 +1,28 @@
+name: Update EU trade (Eurostat Comext)
+on:
+  schedule:
+    - cron: '40 9 16,18,22 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/update-eu-trade.py
+        timeout-minutes: 20
+        continue-on-error: true
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/eu-trade-stats.json data/eu-trade-log.txt
+          git diff --cached --quiet && exit 0
+          git commit -qm "Datos comercio exterior UE (Eurostat Comext)"
+          git pull -q --rebase
+          git push
