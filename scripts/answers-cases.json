@@ -496,5 +496,78 @@
   "q": "how to contact",
   "lang": "en",
   "expect": null
+ },
+ {
+  "q": "exportaciones de España a Francia",
+  "lang": "es",
+  "expect": {
+   "kind": "trade",
+   "tradeCheck": true,
+   "nCards": 1
+  }
+ },
+ {
+  "q": "Spain exports to Germany",
+  "lang": "en",
+  "expect": {
+   "kind": "trade",
+   "tradeCheck": true,
+   "nCards": 1
+  }
+ },
+ {
+  "q": "importaciones de Australia",
+  "lang": "es",
+  "expect": {
+   "kind": "trade",
+   "tradeCheck": true,
+   "nCards": 1
+  }
+ },
+ {
+  "q": "principal destino de Francia",
+  "lang": "es",
+  "expect": {
+   "kind": "trade",
+   "tradeCheck": true,
+   "nCards": 1
+  }
+ },
+ {
+  "q": "comercio de Canadá",
+  "lang": "es",
+  "expect": {
+   "kind": "trade",
+   "tradeCheck": true,
+   "nCards": 2
+  }
+ },
+ {
+  "q": "esportazioni della Spagna",
+  "lang": "it",
+  "expect": {
+   "kind": "trade",
+   "tradeCheck": true,
+   "nCards": 1
+  }
+ },
+ {
+  "q": "exportations de la France vers l'Allemagne",
+  "lang": "fr",
+  "expect": {
+   "kind": "trade",
+   "tradeCheck": true,
+   "nCards": 1
+  }
+ },
+ {
+  "q": "exports to Spain",
+  "lang": "en",
+  "expect": null
+ },
+ {
+  "q": "exportaciones de trigo de España",
+  "lang": "es",
+  "expect": null
  }
 ]

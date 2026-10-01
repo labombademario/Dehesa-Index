@@ -13,25 +13,25 @@
 
   /* ---------- textos ---------- */
   var T = {
-    es: { head: 'Respuesta', price: 'Último dato publicado', since: 'vs dato anterior', y12: 'en 12 meses', noY12: 'sin 12 meses de histórico', date: 'Dato de', src: 'Fuente', open: 'Abrir la ficha', directional: 'Orientativa',
+    es: { head: 'Respuesta', tradeHead: 'Comercio agroalimentario', tExp: 'Exportaciones a', tImp: 'Importaciones desde', tTopExp: 'Mayor país de destino', tTopImp: 'Mayor país de origen', tNone: 'No tenemos ese comercio publicado para {c}.', tNote: 'Valores anuales de la fuente oficial, en su moneda y unidad; no son una previsión.', tOpen: 'Ver comercio de {c}', price: 'Último dato publicado', since: 'vs dato anterior', y12: 'en 12 meses', noY12: 'sin 12 meses de histórico', date: 'Dato de', src: 'Fuente', open: 'Abrir la ficha', directional: 'Orientativa',
       notComp: 'Cada precio va en la unidad y la moneda de su fuente: no se comparan entre regiones.', none: 'No tenemos ese dato publicado', noneReg: 'No tenemos {p} publicado para {r}.', noneProd: 'Tenemos {p} en: {r}.',
       localHead: 'Precios locales (cash bids)', range: 'Rango entre mercados', markets: 'mercados', on: 'el', localLink: 'Ver todos los mercados', noLocal: 'No hay precios locales publicados de {p} en {s}.', localNoProd: 'Precios locales de grano en {s}',
       localNote: 'Precio al contado de compradores locales; no se calcula una media del estado.', premHead: 'Prima orgánica frente a convencional', prem: 'Orgánico', conv: 'Convencional', premium: 'Prima', sample: 'series', premNote: 'Comparación indicativa entre dos informes USDA (cobertura geográfica distinta); no es un precio oficial.', premNone: 'Todavía no hay datos suficientes para calcular la prima orgánica de {p}.',
       costHead: 'Coste de producción (USDA ERS, EE. UU., media nacional)', costTotal: 'Total de costes listados', perAcre: 'USD por acre sembrado', imputed: 'Imputados (tierra y mano de obra no remunerada)', yld: 'rendimiento', costNote: 'Es una referencia nacional, no el coste de tu explotación. Puedes cargarla en la calculadora.', costLink: 'Abrir la calculadora',
       calHead: 'Calendario de publicaciones', calText: 'Las fechas de los informes oficiales están en el calendario.', calLink: 'Abrir el calendario', countryHead: 'Perfil de país', countryText: 'Producción, comercio, costes y precios de {c}.', countryLink: 'Abrir el perfil', month: 'Datos mensuales', multi: 'Dos productos distintos: pregunta por uno cada vez.' },
-    en: { head: 'Answer', price: 'Latest published figure', since: 'vs previous reading', y12: 'over 12 months', noY12: 'less than 12 months of history', date: 'Data from', src: 'Source', open: 'Open the product page', directional: 'Indicative',
+    en: { head: 'Answer', tradeHead: 'Agri-food trade', tExp: 'Exports to', tImp: 'Imports from', tTopExp: 'Largest destination country', tTopImp: 'Largest source country', tNone: 'We have no published trade for {c}.', tNote: 'Annual values from the official source, in its currency and unit; not a forecast.', tOpen: 'See trade of {c}', price: 'Latest published figure', since: 'vs previous reading', y12: 'over 12 months', noY12: 'less than 12 months of history', date: 'Data from', src: 'Source', open: 'Open the product page', directional: 'Indicative',
       notComp: 'Each price is in the unit and currency of its source: they are not compared across regions.', none: 'We do not have that figure published', noneReg: 'We have no published {p} for {r}.', noneProd: 'We have {p} for: {r}.',
       localHead: 'Local prices (cash bids)', range: 'Range across markets', markets: 'markets', on: 'on', localLink: 'See all markets', noLocal: 'No local prices published for {p} in {s}.', localNoProd: 'Local grain prices in {s}',
       localNote: 'Spot prices from local buyers; no state average is computed.', premHead: 'Organic premium over conventional', prem: 'Organic', conv: 'Conventional', premium: 'Premium', sample: 'series', premNote: 'Indicative comparison between two USDA reports (different geographic coverage); not an official price.', premNone: 'There is not yet enough data to compute the organic premium for {p}.',
       costHead: 'Production cost (USDA ERS, U.S., national average)', costTotal: 'Total costs listed', perAcre: 'USD per planted acre', imputed: 'Imputed (land and unpaid labour)', yld: 'yield', costNote: 'A national reference, not the cost of any particular farm. You can load it in the calculator.', costLink: 'Open the calculator',
       calHead: 'Release calendar', calText: 'The dates of official reports are in the calendar.', calLink: 'Open the calendar', countryHead: 'Country profile', countryText: 'Production, trade, costs and prices for {c}.', countryLink: 'Open the profile', month: 'Monthly data', multi: 'Two different products: ask about one at a time.' },
-    fr: { head: 'Réponse', price: 'Dernière donnée publiée', since: 'vs donnée précédente', y12: 'sur 12 mois', noY12: 'moins de 12 mois d’historique', date: 'Donnée :', src: 'Source', open: 'Ouvrir la fiche', directional: 'Indicative',
+    fr: { head: 'Réponse', tradeHead: 'Commerce agroalimentaire', tExp: 'Exportations vers', tImp: 'Importations depuis', tTopExp: 'Premier pays de destination', tTopImp: 'Premier pays d’origine', tNone: 'Nous n’avons pas ce commerce publié pour {c}.', tNote: 'Valeurs annuelles de la source officielle, dans sa devise et son unité ; ce n’est pas une prévision.', tOpen: 'Voir le commerce de {c}', price: 'Dernière donnée publiée', since: 'vs donnée précédente', y12: 'sur 12 mois', noY12: 'moins de 12 mois d’historique', date: 'Donnée :', src: 'Source', open: 'Ouvrir la fiche', directional: 'Indicative',
       notComp: 'Chaque prix est dans l’unité et la devise de sa source : ils ne sont pas comparés entre régions.', none: 'Nous n’avons pas cette donnée', noneReg: 'Nous n’avons pas de {p} publié pour {r}.', noneProd: 'Nous avons {p} pour : {r}.',
       localHead: 'Prix locaux (cash bids)', range: 'Fourchette entre marchés', markets: 'marchés', on: 'le', localLink: 'Voir tous les marchés', noLocal: 'Pas de prix locaux publiés pour {p} en {s}.', localNoProd: 'Prix locaux des grains : {s}',
       localNote: 'Prix comptant d’acheteurs locaux ; aucune moyenne de l’État n’est calculée.', premHead: 'Prime bio par rapport au conventionnel', prem: 'Bio', conv: 'Conventionnel', premium: 'Prime', sample: 'séries', premNote: 'Comparaison indicative entre deux rapports de l’USDA (couverture géographique différente) ; ce n’est pas un prix officiel.', premNone: 'Pas encore assez de données pour calculer la prime bio de {p}.',
       costHead: 'Coût de production (USDA ERS, États-Unis, moyenne nationale)', costTotal: 'Total des coûts listés', perAcre: 'USD par acre semé', imputed: 'Imputés (terre et travail non rémunéré)', yld: 'rendement', costNote: 'Une référence nationale, pas le coût d’une exploitation précise. Vous pouvez la charger dans le calculateur.', costLink: 'Ouvrir le calculateur',
       calHead: 'Calendrier des publications', calText: 'Les dates des rapports officiels sont dans le calendrier.', calLink: 'Ouvrir le calendrier', countryHead: 'Profil de pays', countryText: 'Production, commerce, coûts et prix : {c}.', countryLink: 'Ouvrir le profil', month: 'Données mensuelles', multi: 'Deux produits différents : posez la question pour un seul à la fois.' },
-    it: { head: 'Risposta', price: 'Ultimo dato pubblicato', since: 'vs dato precedente', y12: 'in 12 mesi', noY12: 'meno di 12 mesi di storico', date: 'Dato:', src: 'Fonte', open: 'Apri la scheda', directional: 'Indicativa',
+    it: { head: 'Risposta', tradeHead: 'Commercio agroalimentare', tExp: 'Esportazioni verso', tImp: 'Importazioni da', tTopExp: 'Primo paese di destinazione', tTopImp: 'Primo paese di origine', tNone: 'Non abbiamo questo commercio pubblicato per {c}.', tNote: 'Valori annuali della fonte ufficiale, nella sua valuta e unità; non è una previsione.', tOpen: 'Vedi il commercio di {c}', price: 'Ultimo dato pubblicato', since: 'vs dato precedente', y12: 'in 12 mesi', noY12: 'meno di 12 mesi di storico', date: 'Dato:', src: 'Fonte', open: 'Apri la scheda', directional: 'Indicativa',
       notComp: 'Ogni prezzo è nell’unità e nella valuta della sua fonte: non si confrontano tra regioni.', none: 'Non abbiamo questo dato', noneReg: 'Non abbiamo {p} pubblicato per {r}.', noneProd: 'Abbiamo {p} per: {r}.',
       localHead: 'Prezzi locali (cash bids)', range: 'Intervallo tra mercati', markets: 'mercati', on: 'il', localLink: 'Vedi tutti i mercati', noLocal: 'Nessun prezzo locale pubblicato per {p} in {s}.', localNoProd: 'Prezzi locali dei cereali: {s}',
       localNote: 'Prezzo a pronti di acquirenti locali; nessuna media dello stato viene calcolata.', premHead: 'Premio biologico rispetto al convenzionale', prem: 'Biologico', conv: 'Convenzionale', premium: 'Premio', sample: 'serie', premNote: 'Confronto indicativo tra due rapporti USDA (copertura geografica diversa); non è un prezzo ufficiale.', premNone: 'Non ci sono ancora dati sufficienti per calcolare il premio biologico di {p}.',
@@ -72,8 +72,13 @@
     cost: 'coste costes costo costos costi costs cout couts',
     calendar: 'cuando sale salen publica publican publicacion publicaciones calendario informe informes wasde release releases publie publient quand uscita esce calendrier calendar report reports'
   };
-  var FILLER = 'an ans locales local locali locaux perfil perfiles profile profil profilo does do did sur sul sulla sullo nel nella nello negli dans au aux pour avec con per at from durante en el sobre hace precio precios price prices prix prezzo prezzi cuanto cuesta cuestan vale valen costar cost costa combien coute quanto how much is are what whats the cual cuales que quel quelle quali che es son hoy actual actuales ultimo ultima ultimos ultimas reciente recientes latest current now today aujourd hui dernier derniere derniers attuale oggi dato datos data dame dime muestrame muestra show me tell give donne dimmi mostrami ahora del de la el los las en of in for por para al y and et e le les du des di il lo da un una un l a to el cuando sale when what\'s del sobre about on a ver vs versus frente contra entre between con with compara comparar compare comparer confronta confronto'.split(' ');
+  var FILLER = 'vers verso depuis desde hacia principal principales mayor mayores main largest biggest top premier première principale principaux plus grand grande primo prima principali maggiore della delle degli dei qui quien quienes who whom chi quoi an ans locales local locali locaux perfil perfiles profile profil profilo does do did sur sul sulla sullo nel nella nello negli dans au aux pour avec con per at from durante en el sobre hace precio precios price prices prix prezzo prezzi cuanto cuesta cuestan vale valen costar cost costa combien coute quanto how much is are what whats the cual cuales que quel quelle quali che es son hoy actual actuales ultimo ultima ultimos ultimas reciente recientes latest current now today aujourd hui dernier derniere derniers attuale oggi dato datos data dame dime muestrame muestra show me tell give donne dimmi mostrami ahora del de la el los las en of in for por para al y and et e le les du des di il lo da un una un l a to el cuando sale when what\'s del sobre about on a ver vs versus frente contra entre between con with compara comparar compare comparer confronta confronto'.split(' ');
 
+  var TRADE_EXP = toSet('exportaciones exportacion exportar exporta exportan exports export exportations exportation exporte exportent esportazioni esportazione esporta esportano destino destinos destination destinations destinazione destinazioni vende venden vender sell sells selling vend vendent vendre vendono');
+  var TRADE_IMP = toSet('importaciones importacion importar importa importan imports import importations importation importe importent importazioni importazione importano origen origenes origin origins origine origini compra compran comprar buy buys buying achete achetent acheter comprano');
+  var TRADE_GEN = toSet('comercio trade commerce commercio');
+  var TRADE_CC = { ES: 1, FR: 1, DE: 1, BE: 1, AT: 1, PT: 1, DK: 1, NL: 1, CA: 1, AU: 1 };
+  var PARTY_EN = { ES: ['Spain'], FR: ['France'], DE: ['Germany'], PT: ['Portugal'], NL: ['Netherlands'], BE: ['Belgium'], AT: ['Austria'], DK: ['Denmark'], AU: ['Australia'], IT: ['Italy'], US: ['United States', 'United States of America'], GB: ['United Kingdom'], CA: ['Canada'] };
   var PW = toSet0('producir produccion production producing produce produire produrre produzione produrre growing cultivar');
   function toSet0(s) { var o = {}; s.split(' ').forEach(function (w) { if (w) o[w] = 1; }); return o; }
   function toSet(s) { var o = {}; s.split(' ').forEach(function (w) { if (w) o[w] = 1; }); return o; }
@@ -123,6 +128,7 @@
     });
     return best && best.sc >= 0.55 ? best.p : null;
   }
+  function firstPos(n, aliases) { var best = -1; aliases.forEach(function (a) { var i = n.indexOf(' ' + a + ' '); if (i >= 0 && (best < 0 || i < best)) best = i; }); return best; }
   function parse(query, lang, env) {
     var raw = String(query || ''), n = ' ' + norm(raw) + ' ';
     if (n.trim().length < 2) return null;
@@ -131,10 +137,15 @@
     up.forEach(function (c) { if (STATE_NAME[c] && c !== 'CA' && c !== 'IN' && c !== 'OK' && c !== 'US' && c !== 'EU' && c !== 'UK') n = n.split(' ' + c.toLowerCase() + ' ').join(' '); });
     up.forEach(function (c) { if (c !== 'CA' && c !== 'IN' && c !== 'OK' && c !== 'US' && c !== 'EU' && c !== 'UK' && STATE_NAME[c] && states.indexOf(c) < 0) states.push(c); });
     m = takePhrases(n, STATES); n = m.n; m.found.forEach(function (c) { if (states.indexOf(c) < 0) states.push(c); });
+    var n0 = n, parties = []; // países nombrados, en el orden en que aparecen (el primero es el sujeto del comercio)
+    COUNTRY_WORDS.forEach(function (c) { var pos = firstPos(n, c[2]); if (pos >= 0) parties.push({ code: c[0], pos: pos }); });
+    REGION_WORDS.forEach(function (r) { var code = { us: 'US', uk: 'GB', ca: 'CA' }[r[0]]; if (!code) return; var pos = firstPos(n, r[1].filter(function (a) { return a !== 'us' && a !== 'uk' || /[A-Z]{2}/.test(raw); })); if (pos >= 0) parties.push({ code: code, pos: pos }); });
+    parties.sort(function (a, b) { return a.pos - b.pos; });
     m = takePhrases(n, REGION_WORDS); n = m.n; var regions = m.found;
     var cm = takePhrases(n, COUNTRY_WORDS.map(function (c) { return [c[0], c[2]]; })); n = cm.n; var countries = cm.found;
-    var words = n.trim() ? n.trim().split(' ') : [], kinds = {}, rest = [], prodW = false, weakCost = false;
+    var words = n.trim() ? n.trim().split(' ') : [], kinds = {}, rest = [], prodW = false, weakCost = false, tdir = {};
     words.forEach(function (w) {
+      if (TRADE_EXP[w]) { tdir.exp = 1; return; } if (TRADE_IMP[w]) { tdir.imp = 1; return; } if (TRADE_GEN[w]) { tdir.gen = 1; return; }
       if (PW[w]) { prodW = true; return; }
       if (w === 'cost' || w === 'costa') weakCost = true;
       var hit = false; Object.keys(KW).forEach(function (k) { if (KW[k][w]) { kinds[k] = 1; hit = true; } });
@@ -144,8 +155,11 @@
     if (weakCost && prodW) kinds.cost = 1;
     var product = rest.length ? bestProduct(rest, env) : null;
     if (rest.length && !product) return null; // palabras que no entendemos: mejor no responder
-    var kind = null;
-    if (states.length) kind = 'local';
+    var kind = null, tradeOk = (tdir.exp || tdir.imp || tdir.gen) && !product && !states.length && parties.length && TRADE_CC[parties[0].code];
+    if (tradeOk && parties.length === 1 && /(^| )(a|to|vers|verso|para|hacia)$/.test(n0.slice(0, parties[0].pos).trim())) tradeOk = false; // «exportaciones a España»: el sujeto sería otro país
+    if ((tdir.exp || tdir.imp || tdir.gen) && !tradeOk) return null; // comercio sin sujeto claro (p. ej. «exports to Spain»): mejor la búsqueda normal
+    if (tradeOk) kind = 'trade';
+    else if (states.length) kind = 'local';
     else if (kinds.premium && product && PREM[product.slug]) kind = 'premium';
     else if (kinds.cost && product && ERS[product.slug]) kind = 'cost';
     else if (kinds.calendar && !product) kind = 'calendar';
@@ -155,7 +169,7 @@
     else if (kinds.calendar) kind = 'calendar';
     if (!kind) return null;
     if (kind === 'price' && countries.length && !regions.length) kind = 'country';
-    return { kind: kind, product: product, regions: regions, states: states, countries: countries };
+    return { kind: kind, product: product, regions: regions, states: states, countries: countries, parties: parties.map(function (x) { return x.code; }), tdir: tdir };
   }
 
   /* ---------- lectura de datos ---------- */
@@ -265,6 +279,37 @@
     });
   }
   function rCalendar(intent, lang, env) { var t = tx(lang); return Promise.resolve({ kind: 'calendar', heading: t.calHead, cards: [], notes: [t.calText], link: { href: env.href('calendario.html'), label: t.calLink } }); }
+  var REGN2 = null;
+  function partnerName(en, lang) { // nombre del país socio en el idioma de la pantalla (Intl.DisplayNames), o el original si no se reconoce
+    try {
+      if (!REGN2) { REGN2 = {}; var dn = new Intl.DisplayNames(['en'], { type: 'region' }), A = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', i, j, c, x; for (i = 0; i < 26; i++) for (j = 0; j < 26; j++) { c = A.charAt(i) + A.charAt(j); try { x = dn.of(c); } catch (e) { x = null; } if (x && x !== c) REGN2[x.toLowerCase()] = c; } REGN2['united states of america'] = 'US'; REGN2['united states'] = 'US'; REGN2['united kingdom'] = 'GB'; REGN2['south korea'] = 'KR'; REGN2['korea, republic of'] = 'KR'; REGN2['czechia'] = 'CZ'; }
+      var cc = REGN2[String(en).toLowerCase()]; if (!cc) return en; var r = new Intl.DisplayNames([lang], { type: 'region' }).of(cc); return r && r !== cc ? r : en;
+    } catch (e) { return en; }
+  }
+  function moneyUnit(v, u, lang) {
+    var m = /^(\S+) million(?: \(.*\))?$/.exec(u), d = v >= 100 ? 0 : 1; if (!m) return nf(v, lang, d) + ' ' + u;
+    return { es: nf(v, lang, d) + ' millones de ' + m[1], en: m[1] + ' ' + nf(v, lang, d) + ' million', fr: nf(v, lang, d) + ' millions de ' + m[1], it: nf(v, lang, d) + ' milioni di ' + m[1] }[lang];
+  }
+  function rTrade(intent, lang, env) {
+    var t = tx(lang), subj = intent.parties[0], partner = intent.parties[1] || null, row = COUNTRY_WORDS.filter(function (c) { return c[0] === subj; })[0];
+    var sname = row ? row[1][lang] : { CA: { es: 'Canadá', en: 'Canada', fr: 'Canada', it: 'Canada' } }[subj][lang];
+    var dirs = intent.tdir.exp && !intent.tdir.imp ? ['exp'] : intent.tdir.imp && !intent.tdir.exp ? ['imp'] : ['exp', 'imp'];
+    return Promise.all([env.provider.json('catalog/' + subj + '.json'), env.provider.json('license-registry.json').catch(function () { return null; })]).then(function (r) {
+      var S = (r[0].series || []).filter(function (x) { return x.group === 'partners' && x.latest != null; }), reg = r[1] && r[1].sources || {}, cards = [];
+      var nameOf = function (x) { var m = /^(Exports to|Imports from) (.+?):/.exec(x.label); return m ? m[2] : null; };
+      dirs.forEach(function (d) {
+        var pre = d === 'exp' ? 'Exports to ' : 'Imports from ', L = S.filter(function (x) { return x.label.indexOf(pre) === 0 && nameOf(x) !== 'European Union'; }), an = L.filter(function (x) { return x.freq === 'annual'; }); if (an.length) L = an;
+        var pick = null;
+        if (partner) { var ens = PARTY_EN[partner] || []; pick = L.filter(function (x) { return ens.indexOf(nameOf(x)) >= 0; }).sort(function (a, b) { return b.latestPeriod < a.latestPeriod ? -1 : 1; })[0]; }
+        else pick = L.sort(function (a, b) { return b.latest - a.latest; })[0];
+        if (!pick) return;
+        var nm = partnerName(nameOf(pick), lang), sr = reg[pick.sourceId];
+        cards.push({ trade: true, label: partner ? (d === 'exp' ? t.tExp : t.tImp) + ' ' + nm : (d === 'exp' ? t.tTopExp : t.tTopImp) + ': ' + nm, id: pick.id, value: pick.latest, valueTxt: moneyUnit(pick.latest, pick.unit, lang), unit: pick.unit, date: pick.latestPeriod, dateTxt: pick.latestPeriod, src: sr ? sr.name : '', cc: subj, region: subj, href: env.href('paises.html?c=' + subj + '&g=partners&s=' + encodeURIComponent(pick.id)) });
+      });
+      if (!cards.length) return null;
+      return { kind: 'trade', heading: sname + ' · ' + t.tradeHead, cards: cards, notes: [t.tNote], link: { href: env.href('paises.html?c=' + subj + '&g=partners'), label: fmt(t.tOpen, { c: sname }) } };
+    });
+  }
   function rCountry(intent, lang, env) {
     var t = tx(lang), cc = intent.countries[0], row = COUNTRY_WORDS.filter(function (c) { return c[0] === cc; })[0], name = row[1][lang];
     return Promise.resolve({ kind: 'country', heading: t.countryHead + ' · ' + name, cards: [], notes: [fmt(t.countryText, { c: name })], link: { href: env.href('paises.html?c=' + cc), label: t.countryLink } });
@@ -283,6 +328,7 @@
       case 'cost': p = rCost(intent, lang, env); break;
       case 'calendar': p = rCalendar(intent, lang, env); break;
       case 'country': p = rCountry(intent, lang, env); break;
+      case 'trade': p = rTrade(intent, lang, env); break;
       default: p = Promise.resolve(null);
     }
     return p.then(function (a) { if (a) a.intent = { kind: intent.kind, product: intent.product && intent.product.slug, regions: intent.regions, states: intent.states, countries: intent.countries }; return a; }, function () { return null; });
@@ -295,6 +341,8 @@
     (a.cards || []).forEach(function (c) {
       if (c.localRange) {
         h += '<a class="ds-card" href="' + esc(c.href) + '"><div class="ds-c-v">' + esc(c.loTxt) + ' — ' + esc(c.hiTxt) + '<small>/' + esc(c.unitTxt) + '</small></div><div class="ds-c-s">' + esc(t.range) + ' · ' + c.n + ' ' + esc(t.markets) + ' ' + esc(t.on) + ' ' + esc(c.dateTxt) + '</div><div class="ds-c-s">' + esc(c.spec) + ' · ' + esc(t.src) + ': ' + esc(c.source) + '</div></a>';
+      } else if (c.trade) {
+        h += '<a class="ds-card" href="' + esc(c.href) + '"><div class="ds-c-r">' + esc(c.label) + '</div><div class="ds-c-v">' + esc(c.valueTxt) + '</div><div class="ds-c-s">' + esc(t.date) + ' ' + esc(c.dateTxt) + (c.src ? ' · ' + esc(t.src) + ': ' + esc(c.src) : '') + '</div></a>';
       } else if (c.premium) {
         h += '<a class="ds-card" href="' + esc(c.href) + '"><div class="ds-c-r">' + esc(c.name) + '</div><div class="ds-c-v">' + esc(c.pctTxt) + ' <small>' + esc(t.premium) + ' (' + esc(c.diffTxt) + ')</small></div><div class="ds-c-s">' + esc(t.prem) + ' ' + esc(c.orgTxt) + ' (' + c.nOrg + ' ' + esc(t.sample) + ') · ' + esc(t.conv) + ' ' + esc(c.convTxt) + ' (' + c.nConv + ')</div><div class="ds-c-s">' + esc(t.date) + ' ' + esc(c.dateTxt) + ' · ' + esc(t.src) + ': ' + esc(c.source) + '</div></a>';
       } else if (c.cost) {

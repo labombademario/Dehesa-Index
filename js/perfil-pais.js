@@ -11,6 +11,8 @@
   var KPI_ORDER = ['prices', 'quotes', 'milk', 'prices_lv', 'livestock', 'production', 'crops', 'trade', 'idx_perc', 'income', 'stocks', 'costs'];
   var KEY = /exports?: agri|total|milk|leche|lait|cattle|bovine|beef|wheat|cereal|all goods|agri-food|general|pig|hog/i;
   // series con puntos (paises.html) o solo metadatos del catalogo (perfiles.html: n, first)
+  function TL(x, label) { return window.DIClear ? window.DIClear.tl(label, x.lang) : label; }
+  function HP(x, k) { return window.DIClear ? window.DIClear.help(k, x.lang, x.esc) : ''; }
   function plen(s) { return s.points ? s.points.length : (s.n || 0); }
   function pfirst(s) { return s.points ? s.points[0][0] : s.first; }
   function yearOf(p) { return parseInt(String(p).slice(0, 4), 10) || 0; }
@@ -131,7 +133,7 @@
     var c = coverage(S); if (!c) return ''; var w = CV[x.lang] || CV.es, esc = x.esc, col = c.score >= 75 ? '#2f6b4a' : c.score >= 50 ? '#b7791f' : '#a33';
     var bar = function (lab, v, hint, txt) { return '<div style="margin:5px 0" title="' + esc(hint) + '"><div style="display:flex;justify-content:space-between;font-size:12px"><span>' + esc(lab) + '</span><b>' + esc(txt) + '</b></div><div style="height:6px;background:var(--surface-alt);border-radius:3px"><div style="height:6px;width:' + Math.round(v * 100) + '%;background:' + col + ';border-radius:3px"></div></div></div>'; };
     return '<div class="di-card" style="padding:12px 16px;margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center"><div style="min-width:120px"><div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">' + esc(w.t.toUpperCase()) + '</div><div style="font-size:34px;font-weight:700;color:' + col + '">' + c.score + '<span style="font-size:14px;color:var(--text-muted)"> / 100</span></div></div>' +
-      '<div style="flex:1;min-width:240px">' + bar(w.b, c.b, w.bh, c.blocks + '/4') + bar(w.f, c.f, w.fh, Math.round(c.f * 100) + ' %') + bar(w.d, c.d, w.dh, x.nf(c.years, 0)) + bar(w.q, c.q, w.qh, Math.round(c.q * 100) + ' %') + '</div><div class="di-movers-hint" style="flex-basis:100%;margin:0">' + esc(w.note) + '</div></div>';
+      '<div style="flex:1;min-width:240px">' + bar(w.b, c.b, w.bh, c.blocks + '/4') + bar(w.f, c.f, w.fh, Math.round(c.f * 100) + ' %') + bar(w.d, c.d, w.dh, x.nf(c.years, 0)) + bar(w.q, c.q, w.qh, Math.round(c.q * 100) + ' %') + '</div><div class="di-movers-hint" style="flex-basis:100%;margin:0">' + esc(w.note) + ' ' + HP(x, 'coverage') + '</div></div>';
   }
   function summary(S, x) {
     var w = W[x.lang] || W.es, esc = x.esc, h = '', tiles = '';
@@ -142,11 +144,11 @@
     });
     if (tiles) h += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px">' + tiles + '</div>';
     var u = unusual(S);
-    h += '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 4px">' + esc(w.changed.toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 8px">' + esc(w.changedHint) + '</div>';
+    h += '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 4px">' + esc(w.changed.toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 8px">' + esc(w.changedHint) + ' ' + HP(x, 'unusual') + '</div>';
     if (!u.length) h += '<div class="di-movers-hint" style="margin-bottom:20px">' + esc(w.none) + '</div>';
     else h += '<div class="di-card" style="padding:6px 16px;margin-bottom:20px">' + u.map(function (r) {
       var s = r.s, col = r.ch >= 0 ? '#2f6b4a' : '#a33';
-      return '<button type="button" data-ps="' + esc(s.id) + '" style="display:flex;justify-content:space-between;gap:10px;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--border);padding:8px 0;cursor:pointer;font:inherit;color:inherit"><span>' + esc(s.label.length > 70 ? s.label.slice(0, 68) + '…' : s.label) + '<span style="display:block;font-size:11.5px;color:var(--text-muted)">' + esc(x.plabel(s.latestPeriod, s.frequency)) + ' · ' + x.nf(s.latest, x.dec(s.latest)) + ' ' + esc(s.unit) + '</span></span><span style="white-space:nowrap;color:' + col + ';font-weight:700">' + (r.ch > 0 ? '+' : '−') + x.nf(Math.abs(r.ch), 1) + ' %<span style="display:block;font-size:11px;font-weight:400;color:var(--text-muted)">' + x.nf(r.z, 1) + ' ' + esc(w.rare) + '</span></span></button>';
+      return '<button type="button" data-ps="' + esc(s.id) + '" style="display:flex;justify-content:space-between;gap:10px;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--border);padding:8px 0;cursor:pointer;font:inherit;color:inherit"><span>' + esc(TL(x, s.label).length > 70 ? TL(x, s.label).slice(0, 68) + '…' : TL(x, s.label)) + '<span style="display:block;font-size:11.5px;color:var(--text-muted)">' + esc(x.plabel(s.latestPeriod, s.frequency)) + ' · ' + x.nf(s.latest, x.dec(s.latest)) + ' ' + esc(s.unit) + '</span></span><span style="white-space:nowrap;color:' + col + ';font-weight:700">' + (r.ch > 0 ? '+' : '−') + x.nf(Math.abs(r.ch), 1) + ' %<span style="display:block;font-size:11px;font-weight:400;color:var(--text-muted)">' + x.nf(r.z, 1) + ' ' + esc(w.rare) + '</span></span></button>';
     }).join('') + '</div>';
     return h;
   }
@@ -166,16 +168,21 @@
       '<div style="font-size:13px;color:var(--text-muted);text-align:right"><b>' + S.length + '</b> ' + t.total + ' <b>' + gk.length + '</b> ' + t.cats + '<br>' + esc(t.from) + ' ' + esc(x.plabel(minP, 'annual')) + ' ' + t.to + ' ' + esc(x.plabel(maxP, /^\d{4}-\d{2}$/.test(maxP) ? 'monthly' : 'annual')) + '</div></div>';
     h += macroStrip(x.macro, x);
     h += '<div style="margin-top:10px;font-size:12.5px;color:var(--text-muted)">' + esc(t.freq) + ': ' + Object.keys(freqs).map(function (k) { return freqs[k] + ' ' + esc((x.t.freq && x.t.freq[k]) || k); }).join(' · ') + (srcList.length ? '<br>' + esc(t.sources) + ': ' + srcList.map(esc).join(' · ') : '') + '</div></section>';
+    var kp = kpis(cc, S, groups), C = window.DIClear, present = { sum: true, kpi: kp.length > 0, trade: !!(groups.partners && groups.partners.length), exp: true };
+    var qs = C ? C.questions(groups, x.lang) : []; present.ask = qs.length > 0;
+    var pl = C ? C.plain({ lang: x.lang, kpis: kp, partners: groups.partners || [], unusual: unusual(S), plabel: x.plabel }) : null;
+    if (C) h += C.nav(present, x.lang, esc);
+    if (pl) h += '<section id="pp-sum" class="di-card pp-plain"><div class="pp-plain-h">' + esc(pl.head) + '</div><p>' + pl.sentences.map(esc).join(' ') + '</p><div class="di-movers-hint">' + esc(pl.note) + (/^(ES|FR|DE|BE|AT|PT|DK|NL|CA|AU)$/.test(cc) ? ' · <a href="perfiles.html?a=' + cc + '">' + esc({ es: 'Comparar con otro país', en: 'Compare with another country', fr: 'Comparer avec un autre pays', it: 'Confronta con un altro paese' }[x.lang] || '') + '</a>' : '') + '</div></section>';
+    else h += '<span id="pp-sum"></span>';
     h += coverageBox(S, x) + summary(S, x);
     // KPIs
-    var kp = kpis(cc, S, groups);
     if (kp.length) {
-      h += '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 8px">' + esc(t.kpi.toUpperCase()) + '</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:20px">';
+      h += '<div id="pp-kpi" class="pp-anchor" style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 8px">' + esc(t.kpi.toUpperCase()) + ' ' + HP(x, 'range') + '</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:20px">';
       kp.forEach(function (s) {
         var ch = s.changePct, col = ch == null ? 'inherit' : ch >= 0 ? '#2f6b4a' : '#a33';
-        h += '<button type="button" class="di-card" data-ps="' + esc(s.id) + '" style="text-align:left;padding:12px 14px;cursor:pointer;border:1px solid var(--border);font:inherit;color:inherit"><div style="font-size:11px;color:var(--text-faint);min-height:30px">' + esc((x.t[s.group] || s.group)) + '</div><div style="font-size:12.5px;font-weight:600;line-height:1.3;min-height:34px">' + esc(s.label.replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, '')) + '</div>' +
+        h += '<button type="button" class="di-card" data-ps="' + esc(s.id) + '" style="text-align:left;padding:12px 14px;cursor:pointer;border:1px solid var(--border);font:inherit;color:inherit"><div style="font-size:11px;color:var(--text-faint);min-height:30px">' + esc((x.t[s.group] || s.group)) + '</div><div style="font-size:12.5px;font-weight:600;line-height:1.3;min-height:34px">' + esc(TL(x, s.label.replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, ''))) + '</div>' +
           '<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:6px"><div><div style="font-size:20px;font-weight:700;font-variant-numeric:tabular-nums">' + nf(s.latest, x.dec(s.latest)) + '</div><div style="font-size:11px;color:var(--text-muted)">' + esc(s.unit) + '</div></div>' + spark(s) + '</div>' +
-          '<div style="font-size:11.5px;margin-top:4px;color:var(--text-muted)">' + esc(x.plabel(s.latestPeriod, s.frequency)) + (ch == null ? '' : ' · <span style="color:' + col + '">' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %</span>') + '</div></button>';
+          '<div style="font-size:11.5px;margin-top:4px;color:var(--text-muted)">' + esc(x.plabel(s.latestPeriod, s.frequency)) + (ch == null ? '' : ' · <span style="color:' + col + '">' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %</span>') + '</div>' + (C ? C.ctxHtml(s, x.lang, esc) : '') + '</button>';
       });
       h += '</div>';
     }
@@ -188,22 +195,24 @@
         if (!l.length) return '';
         var tot = l.reduce(function (m, s) { return Math.max(m, s.latest); }, 0);
         return '<div style="flex:1;min-width:230px"><div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(title) + ' <span style="font-weight:500;color:var(--text-muted)">· ' + esc(l[0].unit) + ', ' + esc(x.plabel(l[0].latestPeriod, l[0].frequency)) + '</span></div>' +
-          l.map(function (s) { var nm = s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, ''); return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + esc(nm) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(s.latest, x.dec(s.latest)) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(s.latest / tot * 100)) + '%"></div></div>'; }).join('') + '</div>';
+          l.map(function (s) { var nm = s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, ''); nm = (window.DIClear && window.DIClear._country(nm, x.lang)) || nm; return '<div style="font-size:13px;margin:5px 0"><div style="display:flex;justify-content:space-between"><span>' + esc(nm) + '</span><b style="font-variant-numeric:tabular-nums">' + nf(s.latest, x.dec(s.latest)) + '</b></div><div style="height:4px;border-radius:3px;background:#2f6b4a;opacity:.75;width:' + Math.max(3, Math.round(s.latest / tot * 100)) + '%"></div></div>'; }).join('') + '</div>';
       };
       var a = side('exp', t.dest), b = side('imp', t.orig);
-      if (a || b) h += '<div class="di-card" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div></div>';
+      if (a || b) h += '<div id="pp-trade" class="di-card pp-anchor" style="padding:14px 18px;margin-bottom:20px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.trade.toUpperCase()) + ' ' + HP(x, 'hs') + '</div><div style="display:flex;gap:26px;flex-wrap:wrap">' + a + b + '</div></div>';
     }
     // categorías
-    h += '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 4px">' + esc(t.explore.toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 8px">' + esc(t.hint) + '</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-bottom:22px">';
+    var QT = { es: ['Empieza por una pregunta', 'Cada botón te lleva al gráfico con los datos que responden.', 'Ver todas las categorías', 'series'], en: ['Start with a question', 'Each button takes you to the chart with the data that answers it.', 'See all categories', 'series'], fr: ['Commencez par une question', 'Chaque bouton vous mène au graphique avec les données qui y répondent.', 'Voir toutes les catégories', 'séries'], it: ['Inizia da una domanda', 'Ogni pulsante porta al grafico con i dati che rispondono.', 'Vedi tutte le categorie', 'serie'] }[x.lang] || [];
+    if (qs.length) h += '<div id="pp-ask" class="pp-anchor" style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 4px">' + esc(QT[0].toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 8px">' + esc(QT[1]) + '</div><div class="pp-qs">' + qs.map(function (q) { return '<button type="button" class="di-card pp-qb" data-pg="' + esc(q.group) + '"><span>' + esc(q.q) + '</span><small>' + esc(x.t[q.group] || q.group) + ' · ' + q.n + ' ' + esc(QT[3]) + ' →</small></button>'; }).join('') + '</div>';
+    h += (qs.length ? '<details class="pp-all"><summary>' + esc(QT[2]) + ' (' + gk.length + ')</summary>' : '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 4px">' + esc(t.explore.toUpperCase()) + '</div><div class="di-movers-hint" style="margin:0 0 8px">' + esc(t.hint) + '</div>') + '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:8px 0 22px">';
     gk.forEach(function (g) {
       var l = groups[g].slice().sort(function (a, b) { return score(b) - score(a); }), last = l.reduce(function (m, s) { return s.latestPeriod > m ? s.latestPeriod : m; }, '');
-      var ex = l.slice(0, 2).map(function (s) { return s.label.replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, ''); });
+      var ex = l.slice(0, 2).map(function (s) { return TL(x, s.label.replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, '')); });
       h += '<button type="button" class="di-card" data-pg="' + esc(g) + '" style="text-align:left;padding:12px 14px;cursor:pointer;border:1px solid var(--border);font:inherit;color:inherit"><div style="display:flex;justify-content:space-between;gap:8px"><b style="font-size:14px">' + esc(x.t[g] || g) + '</b><span style="font-size:12px;color:var(--text-muted);white-space:nowrap">' + l.length + ' ' + t.series + '</span></div>' +
         '<div style="font-size:11.5px;color:var(--text-muted);margin:3px 0 6px">' + esc(t.last) + ': ' + esc(x.plabel(last, /^\d{4}-\d{2}$/.test(last) ? 'monthly' : 'annual')) + '</div>' +
         '<div style="font-size:12px;color:var(--text-muted);line-height:1.4">' + esc(t.examples) + ': ' + ex.map(function (e) { return esc(e.length > 46 ? e.slice(0, 44) + '…' : e); }).join(' · ') + '</div>' +
         '<div style="font-size:12px;font-weight:700;color:#2f6b4a;margin-top:8px">' + esc(t.go) + ' →</div></button>';
     });
-    h += '</div><h2 id="ps-explorer" style="margin:6px 0 12px;font-size:19px">' + esc(t.exploreTitle) + ' ' + esc(x.t.countries[cc] || c.name) + '</h2>';
+    h += '</div>' + (qs.length ? '</details>' : '') + '<h2 id="ps-explorer" class="pp-anchor" style="margin:6px 0 12px;font-size:19px">' + esc(t.exploreTitle) + ' ' + esc(x.t.countries[cc] || c.name) + '</h2>';
     return h;
   }
   window.DIProfile = { coverage: coverage, html: html, macroStrip: macroStrip, rateOf: rateOf, kpis: kpis, spark: spark, flag: function (cc) { return FLAG[cc] || ''; } };

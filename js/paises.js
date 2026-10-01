@@ -26,6 +26,7 @@
   var MACRO = null, WAGES = null, DATA = null, ST = { c: 'ES', g: 'all', s: null, r: 'max', fx: false };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
+  function TL(l) { return window.DIClear ? window.DIClear.tl(l, lang()) : l; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
   function dec(v) { var a = Math.abs(v); return a >= 1000 ? 0 : a >= 100 ? 1 : a >= 10 ? 1 : 2; }
@@ -162,19 +163,19 @@
     var html = prof + '<div style="display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px">' +
       sel('ps-c', t.country, opt(countries, ST.c, function (k) { return t.countries[k] || k; })) +
       sel('ps-g', t.group, opt(groups, ST.g, function (k) { return k === 'all' ? t.all : t[k]; })) +
-      sel('ps-s', t.series, opt(list.map(function (s) { return s.id; }), ST.s, function (id) { return list.filter(function (s) { return s.id === id; })[0].label; })) +
+      sel('ps-s', t.series, opt(list.map(function (s) { return s.id; }), ST.s, function (id) { return TL(list.filter(function (s) { return s.id === id; })[0].label); })) +
       sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + '</div>';
     if (cur) {
       var ch = cur.changePct;
-      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(cur.label.toUpperCase()) + ' (' + esc(cur.unit) + ')' + watchBtn(cur) + '</div>' + fxBox(cur0, cur) + chartFor(cur) +
+      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(TL(cur.label).toUpperCase()) + ' (' + esc(cur.unit) + ')' + watchBtn(cur) + '</div>' + fxBox(cur0, cur) + chartFor(cur) +
         '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div>' + localBox(cur, c) + revBox(cur) + '</div>';
     } else html += '<p class="di-movers-hint">' + t.none + '</p>';
     html += '<details style="margin-top:14px"><summary style="cursor:pointer;font-size:13px">' + t.table + '</summary><div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.series.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.latest.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:8px 6px">' + t.period.toUpperCase() + '</th><th style="padding:8px 6px">' + t.unit.toUpperCase() + '</th></tr>' +
-      c.series.map(function (s) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px">' + esc(s.label) + '</td><td style="padding:8px 6px;text-align:right">' + nf(s.latest, dec(s.latest)) + '</td><td style="padding:8px 6px;text-align:right">' + (s.changePct == null ? '' : (s.changePct > 0 ? '+' : s.changePct < 0 ? '−' : '') + nf(Math.abs(s.changePct), 1) + ' %') + '</td><td style="padding:8px 6px">' + esc(plabel(s.latestPeriod, s.frequency)) + '</td><td style="padding:8px 6px">' + esc(s.unit) + '</td></tr>'; }).join('') + '</table></div></details>' +
+      c.series.map(function (s) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px">' + esc(TL(s.label)) + '</td><td style="padding:8px 6px;text-align:right">' + nf(s.latest, dec(s.latest)) + '</td><td style="padding:8px 6px;text-align:right">' + (s.changePct == null ? '' : (s.changePct > 0 ? '+' : s.changePct < 0 ? '−' : '') + nf(Math.abs(s.changePct), 1) + ' %') + '</td><td style="padding:8px 6px">' + esc(plabel(s.latestPeriod, s.frequency)) + '</td><td style="padding:8px 6px">' + esc(s.unit) + '</td></tr>'; }).join('') + '</table></div></details>' +
       '<p class="di-movers-hint" style="margin-top:12px">' + t.note + '</p>' + srcBox(c, cur0, t) + '<p class="di-movers-hint">' + t.updated + ': ' + esc((DATA.generatedAt || '').slice(0, 10)) + '</p>' + lineage(cur0);
     if (ST.c === 'ES') { var RC = { es: ['Costes y rentas de las explotaciones agrarias (RECAN)', 'Ver costes, ingresos y renta por tipo de explotación'], en: ['Farm costs and incomes (RECAN)', 'See costs, revenue and income by farm type'], fr: ['Coûts et revenus des exploitations (RECAN)', 'Voir coûts, recettes et revenus par type d\'exploitation'], it: ['Costi e redditi delle aziende agricole (RECAN)', 'Vedi costi, ricavi e redditi per tipo di azienda'] }[lang()] || []; html += '<a class="di-card" href="recan.html" style="display:block;padding:14px 18px;margin-top:14px;text-decoration:none;color:inherit"><b>' + esc(RC[0]) + ' →</b><div class="di-movers-hint" style="margin:4px 0 0">' + esc(RC[1]) + '</div></a>'; }
     if (ST.c === 'PT') html += '<div id="ps-ifap"></div>'; html += '<div id="ps-tp"></div>';
-    root.innerHTML = html;
+    root.innerHTML = html; if (window.DIClear) { DIClear.bindHelp(); DIClear.bindNav(); }
     if (window.DITradePartners) { var tpn = document.getElementById('ps-tp'); if (tpn) window.DITradePartners.mount(tpn, ST.c, lang()); } if (ST.c === 'PT' && window.DIIfapMap) { var im = document.getElementById('ps-ifap'); if (im) window.DIIfapMap.mount(im, lang()); }
     var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; } if (key === 'g') ST.s = null; build(); var n = document.getElementById(id); if (n) n.focus(); }; };
     var fb = document.getElementById('ps-fx'); if (fb) fb.onchange = function () { ST.fx = fb.checked; build(); };

@@ -1,0 +1,248 @@
+/* Dehesa Index — perfiles de país explicados en claro. ES5, sin librerías; funciona en el navegador (window.DIClear) y en Node (module.exports).
+   Todo sale de las series publicadas: ninguna cifra se estima ni se interpreta. Si falta un dato, la frase no se escribe.
+   - tl(label, lang): traduce el nombre de una serie por plantillas controladas; lo que no reconoce lo deja tal cual (nunca se inventa).
+   - plain(...): resumen de 2–3 frases con los datos del país.
+   - ctx(series): dónde está el último dato dentro de su propio rango de 5 años.
+   - help(key, lang): explicación breve de la jerga (botón «?»). - questions(...): preguntas guía. - nav(...): índice de secciones. */
+(function (root) {
+  'use strict';
+  var L = ['es', 'en', 'fr', 'it'];
+  function li(l) { return { es: 1, en: 0, fr: 2, it: 3 }[l] === undefined ? 1 : { es: 1, en: 0, fr: 2, it: 3 }[l]; } // columna en HEAD/TERM: [en, es, fr, it]
+
+  // ---------- traducción de nombres de serie ----------
+  // [en, es, fr, it]
+  var HEAD = [
+    ['Producer price index, annual', 'Índice de precios al productor, anual', 'Indice des prix à la production, annuel', 'Indice dei prezzi alla produzione, annuale'],
+    ['Producer price index', 'Índice de precios al productor', 'Indice des prix à la production', 'Indice dei prezzi alla produzione'],
+    ['Farm-gate output price index', 'Índice de precios de venta en explotación', 'Indice des prix de vente à la ferme', 'Indice dei prezzi alla produzione agricola'],
+    ['Farm product price index', 'Índice de precios de productos agrarios', 'Indice des prix des produits agricoles', 'Indice dei prezzi dei prodotti agricoli'],
+    ['Input price index (prices paid by farmers)', 'Índice de precios de insumos (pagados por los agricultores)', 'Indice des prix des intrants (payés par les agriculteurs)', 'Indice dei prezzi degli input (pagati dagli agricoltori)'],
+    ['Farm input price index', 'Índice de precios de insumos agrarios', 'Indice des prix des intrants agricoles', 'Indice dei prezzi degli input agricoli'],
+    ['Input price index', 'Índice de precios de insumos', 'Indice des prix des intrants', 'Indice dei prezzi degli input'],
+    ['Trade balance', 'Balanza comercial', 'Balance commerciale', 'Bilancia commerciale'],
+    ['Exports', 'Exportaciones', 'Exportations', 'Esportazioni'],
+    ['Imports', 'Importaciones', 'Importations', 'Importazioni'],
+    ['Poultry and rabbit slaughterings', 'Sacrificio de aves y conejos', 'Abattages de volailles et de lapins', 'Macellazioni di avicoli e conigli'],
+    ['Slaughterings', 'Sacrificios', 'Abattages', 'Macellazioni'],
+    ['Livestock on holdings', 'Ganado en explotaciones', 'Cheptel dans les exploitations', 'Bestiame nelle aziende'],
+    ['Meat production', 'Producción de carne', 'Production de viande', 'Produzione di carne'],
+    ['Organic production', 'Producción ecológica', 'Production biologique', 'Produzione biologica'],
+    ['Farm cash receipts', 'Ingresos agrarios en efectivo', 'Recettes agricoles en espèces', 'Ricavi agricoli in contanti'],
+    ['Cattle livestock', 'Ganado bovino', 'Cheptel bovin', 'Bestiame bovino'],
+    ['Pig livestock', 'Ganado porcino', 'Cheptel porcin', 'Bestiame suino'],
+    ['Production', 'Producción', 'Production', 'Produzione'],
+    ['Area', 'Superficie', 'Superficie', 'Superficie'],
+    ['Yield', 'Rendimiento', 'Rendement', 'Resa']
+  ];
+  var TERM = [
+    ['wheat', 'trigo', 'blé', 'grano'], ['durum wheat', 'trigo duro', 'blé dur', 'grano duro'], ['barley', 'cebada', 'orge', 'orzo'], ['oats', 'avena', 'avoine', 'avena'], ['rye', 'centeno', 'seigle', 'segale'],
+    ['rye and meslin', 'centeno y morcajo', 'seigle et méteil', 'segale e frumento-segale'], ['grain maize', 'maíz grano', 'maïs grain', 'mais da granella'], ['maize', 'maíz', 'maïs', 'mais'], ['triticale', 'triticale', 'triticale', 'triticale'],
+    ['potatoes', 'patata', 'pommes de terre', 'patate'], ['sugar beet', 'remolacha azucarera', 'betterave sucrière', 'barbabietola da zucchero'], ['sunflower seed', 'girasol', 'tournesol', 'girasole'], ['sunflower', 'girasol', 'tournesol', 'girasole'],
+    ['rapeseed', 'colza', 'colza', 'colza'], ['soybeans', 'soja', 'soja', 'soia'], ['vegetables', 'hortalizas', 'légumes', 'ortaggi'], ['fruit', 'fruta', 'fruits', 'frutta'], ['fruit and vegetables', 'frutas y hortalizas', 'fruits et légumes', 'frutta e ortaggi'],
+    ['fruit, nuts, vegetables and pulses', 'frutas, frutos secos, hortalizas y legumbres', 'fruits, noix, légumes et légumineuses', 'frutta, frutta a guscio, ortaggi e legumi'],
+    ['cattle', 'vacuno', 'bovins', 'bovini'], ['pigs', 'porcino', 'porcs', 'suini'], ['pig', 'porcino', 'porc', 'suino'], ['sheep', 'ovino', 'ovins', 'ovini'], ['sheep and goats', 'ovino y caprino', 'ovins et caprins', 'ovini e caprini'], ['goats', 'caprino', 'caprins', 'caprini'],
+    ['eggs', 'huevos', 'œufs', 'uova'], ['milk', 'leche', 'lait', 'latte'], ['poultry', 'aves', 'volailles', 'avicoli'], ['cows', 'vacas', 'vaches', 'vacche'], ['dairy cows', 'vacas lecheras', 'vaches laitières', 'vacche da latte'], ['heifers', 'novillas', 'génisses', 'manze'],
+    ['calves', 'terneros', 'veaux', 'vitelli'], ['young bulls', 'toretes', 'jeunes bovins', 'giovani bovini'], ['beef', 'vacuno (carne)', 'bœuf', 'manzo'], ['pork', 'porcino (carne)', 'porc', 'carne suina'], ['lamb', 'cordero', 'agneau', 'agnello'], ['meat', 'carne', 'viande', 'carne'],
+    ['cereals', 'cereales', 'céréales', 'cereali'], ['other cereals', 'otros cereales', 'autres céréales', 'altri cereali'], ['oilseeds', 'oleaginosas', 'oléagineux', 'semi oleosi'], ['fertilisers', 'fertilizantes', 'engrais', 'fertilizzanti'], ['fertilizers', 'fertilizantes', 'engrais', 'fertilizzanti'],
+    ['fertilisers and soil improvers', 'fertilizantes y enmiendas', 'engrais et amendements', 'fertilizzanti e ammendanti'], ['compound feedingstuffs', 'piensos compuestos', 'aliments composés', 'mangimi composti'], ['energy', 'energía', 'énergie', 'energia'],
+    ['agri-food total', 'total agroalimentario', 'total agroalimentaire', 'totale agroalimentare'], ['extra-EU', 'extra-UE', 'extra-UE', 'extra-UE'], ['agri-food', 'agroalimentario', 'agroalimentaire', 'agroalimentare'], ['farm and fishing products', 'productos agrarios y de la pesca', 'produits agricoles et de la pêche', 'prodotti agricoli e della pesca'], ['beverages (incl. wine)', 'bebidas (incl. vino)', 'boissons (y compris vin)', 'bevande (incl. vino)'],
+    ['wine', 'vino', 'vin', 'vino'], ['olive oil', 'aceite de oliva', 'huile d’olive', 'olio d’oliva'], ['total', 'total', 'total', 'totale'], ['harvested area', 'superficie cosechada', 'superficie récoltée', 'superficie raccolta'], ['harvested production', 'producción cosechada', 'production récoltée', 'produzione raccolta'],
+    ['yield', 'rendimiento', 'rendement', 'resa'], ['gross yield per ha', 'rendimiento bruto por ha', 'rendement brut par ha', 'resa lorda per ha'], ['seeds', 'semillas', 'semences', 'sementi'], ['sugar', 'azúcar', 'sucre', 'zucchero'], ['apples', 'manzanas', 'pommes', 'mele'], ['grapes', 'uva', 'raisin', 'uva']
+  ];
+  var FREQ = { monthly: ['mensual', 'monthly', 'mensuel', 'mensile'], annual: ['anual', 'annual', 'annuel', 'annuale'], weekly: ['semanal', 'weekly', 'hebdomadaire', 'settimanale'], quarterly: ['trimestral', 'quarterly', 'trimestriel', 'trimestrale'], 'half-year': ['semestral', 'half-year', 'semestriel', 'semestrale'] };
+  var HM = {}, TM = {};
+  HEAD.forEach(function (r) { HM[r[0].toLowerCase()] = r; }); TM = {}; TERM.forEach(function (r) { TM[r[0].toLowerCase()] = r; });
+  var REG = null;
+  function regionMap() { // nombre en inglés -> código ISO (Intl.DisplayNames del propio navegador, sin listas a mano)
+    if (REG) return REG; REG = {};
+    try {
+      var dn = new Intl.DisplayNames(['en'], { type: 'region' }), A = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', i, j, c, n;
+      for (i = 0; i < 26; i++) for (j = 0; j < 26; j++) { c = A.charAt(i) + A.charAt(j); try { n = dn.of(c); } catch (e) { n = null; } if (n && n !== c) REG[n.toLowerCase()] = c; }
+      REG['united states'] = 'US'; REG['united kingdom'] = 'GB'; REG['czech republic'] = 'CZ'; REG['türkiye'] = 'TR'; REG['turkey'] = 'TR'; REG['south korea'] = 'KR'; REG['korea, south'] = 'KR'; REG['russia'] = 'RU';
+    } catch (e) { REG = {}; }
+    return REG;
+  }
+  function country(name, lang) {
+    var c = regionMap()[String(name).toLowerCase()]; if (!c) return null;
+    try { var r = new Intl.DisplayNames([lang], { type: 'region' }).of(c); return r && r !== c ? r : null; } catch (e) { return null; }
+  }
+  function term(s, k) { var r = TM[s.toLowerCase()]; return r ? r[k] : null; }
+  function termChain(s, k) { // «a, b» o «a and b»: cada parte debe conocerse; si no, se deja el original entero
+    var whole = term(s, k); if (whole) return whole;
+    var parts = s.split(/,\s+/); if (parts.length > 1) { var o = parts.map(function (p) { return term(p, k); }); if (o.every(Boolean)) return o.join(', '); }
+    return null;
+  }
+  function tl(label, lang) {
+    var k = li(lang); if (!label || k === 0) return label;
+    var s = String(label), tail = '', m;
+    m = /\s+\((monthly|annual|weekly|quarterly|half-year)\)$/.exec(s); if (m) { tail = ' (' + FREQ[m[1]][L.indexOf(lang)] + ')'; s = s.slice(0, m.index); }
+    var idx = s.indexOf(': '), head = idx > -1 ? s.slice(0, idx) : s, rest = idx > -1 ? s.slice(idx + 2) : '', h;
+    var rm = /^(Exports to|Imports from) (.+)$/.exec(head);
+    if (rm) { var cn = country(rm[2], lang); if (!cn) return label; h = (rm[1] === 'Exports to' ? ['', 'Exportaciones a ', 'Exportations vers ', 'Esportazioni verso '] : ['', 'Importaciones desde ', 'Importations depuis ', 'Importazioni da '])[k] + cn; }
+    else { var r = HM[head.toLowerCase()]; if (r) h = r[k]; else { var ch = term(head, k); if (!ch || !rest) return label; h = ch.charAt(0).toUpperCase() + ch.slice(1); } }
+    if (!rest) return h + tail;
+    // resto: «agri-food, HS 01-24», «Vegetables (2020=100)», «Wheat»…
+    var suffix = '', sm = /\s*(\(2\d{3}=100\)|\(price paid\)|\(producer price\))$/.exec(rest);
+    if (sm) { suffix = ' ' + sm[1].replace('(price paid)', '(' + ['', 'precio pagado', 'prix payé', 'prezzo pagato'][k] + ')').replace('(producer price)', '(' + ['', 'precio al productor', 'prix à la production', 'prezzo alla produzione'][k] + ')'); rest = rest.slice(0, sm.index); }
+    var hs = /,?\s*((?:HS|SITC)\s[\d\- ]+\d|SITC \d)$/.exec(rest), code = '';
+    if (hs) { code = ', ' + hs[1]; rest = rest.slice(0, hs.index); }
+    var tr = termChain(rest, k); if (!tr) return label;
+    return h + ': ' + tr + code + suffix + tail;
+  }
+
+  // ---------- números ----------
+  function nfmt(v, d, lang) { try { return v.toLocaleString(lang, { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
+  function dec(v) { var a = Math.abs(v); return a >= 100 ? 0 : a >= 10 ? 1 : 2; }
+  function unitTxt(v, u, lang) { // «EUR million» se lee mejor como «12.050 millones de EUR»
+    var m = /^(\S+) million(?: \(.*\))?$/.exec(u), n = nfmt(v, dec(v), lang); if (!m) return n + ' ' + u;
+    return { es: n + ' millones de ' + m[1], en: m[1] + ' ' + n + ' million', fr: n + ' millions de ' + m[1], it: n + ' milioni di ' + m[1] }[lang] || n + ' ' + u;
+  }
+  function pct(v, lang) { return (v > 0 ? '+' : v < 0 ? '−' : '') + nfmt(Math.abs(v), 1, lang) + ' %'; }
+  function ts(p) { var m; if ((m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(p))) return Date.UTC(+m[1], +m[2] - 1, +m[3]); if ((m = /^(\d{4})-(\d{2})$/.exec(p))) return Date.UTC(+m[1], +m[2] - 1, 1); if ((m = /^(\d{4})-Q(\d)$/.exec(p))) return Date.UTC(+m[1], (+m[2] - 1) * 3, 1); if ((m = /^(\d{4})$/.exec(p))) return Date.UTC(+m[1], 0, 1); return NaN; }
+
+  // ---------- contexto del indicador: último dato dentro de su rango de 5 años ----------
+  function ctx(s) {
+    var P = s && s.points; if (!P || P.length < 6) return null;
+    var last = P[P.length - 1], t1 = ts(last[0]); if (t1 !== t1 || last[1] == null) return null;
+    var from = t1 - 5 * 365.25 * 864e5, W = P.filter(function (p) { return p[1] != null && ts(p[0]) >= from; });
+    if (W.length < 5) return null;
+    if ((t1 - ts(W[0][0])) / (365.25 * 864e5) < 2.5) return null; // menos de ~3 años de histórico: no hay rango que mostrar
+    var mn = Infinity, mx = -Infinity, prior = W.slice(0, -1);
+    prior.forEach(function (p) { if (p[1] < mn) mn = p[1]; if (p[1] > mx) mx = p[1]; });
+    var v = last[1], lo = Math.min(mn, v), hi = Math.max(mx, v), pos = hi > lo ? (v - lo) / (hi - lo) : 0.5;
+    return { min: lo, max: hi, v: v, pos: pos, n: W.length, isMax: v >= mx && v > mn, isMin: v <= mn && v < mx, years: Math.round((t1 - ts(W[0][0])) / (365.25 * 864e5) * 10) / 10 };
+  }
+  var CT = {
+    es: { range: 'Rango de 5 años', max: 'Máximo de 5 años', min: 'Mínimo de 5 años', to: 'a', aria: function (a) { return 'Último dato dentro del rango de los últimos 5 años, de ' + a.lo + ' a ' + a.hi; } },
+    en: { range: '5-year range', max: '5-year high', min: '5-year low', to: 'to', aria: function (a) { return 'Latest value within its last 5-year range, from ' + a.lo + ' to ' + a.hi; } },
+    fr: { range: 'Plage sur 5 ans', max: 'Plus haut sur 5 ans', min: 'Plus bas sur 5 ans', to: 'à', aria: function (a) { return 'Dernière donnée dans sa plage des 5 dernières années, de ' + a.lo + ' à ' + a.hi; } },
+    it: { range: 'Intervallo a 5 anni', max: 'Massimo a 5 anni', min: 'Minimo a 5 anni', to: 'a', aria: function (a) { return 'Ultimo dato nell’intervallo degli ultimi 5 anni, da ' + a.lo + ' a ' + a.hi; } }
+  };
+  function ctxHtml(s, lang, esc) {
+    var c = ctx(s); if (!c) return ''; var t = CT[lang] || CT.es, d = dec(Math.max(Math.abs(c.min), Math.abs(c.max))), lo = nfmt(c.min, d, lang), hi = nfmt(c.max, d, lang);
+    var tag = c.isMax ? t.max : c.isMin ? t.min : '';
+    return '<div class="pp-rng" role="img" aria-label="' + esc(t.aria({ lo: lo, hi: hi })) + '"><div class="pp-rng-t"><span class="pp-rng-d" style="left:' + Math.round(c.pos * 100) + '%"></span></div>' +
+      '<div class="pp-rng-l"><span>' + esc(lo) + '</span>' + (tag ? '<b>' + esc(tag) + '</b>' : '<span>' + esc(t.range) + '</span>') + '<span>' + esc(hi) + '</span></div></div>';
+  }
+
+  // ---------- resumen en lenguaje llano ----------
+  var PR = {
+    es: { cmp: { daily: 'frente al día anterior', weekly: 'frente a la semana anterior', monthly: 'frente al mes anterior', quarterly: 'frente al trimestre anterior', 'half-year': 'frente al semestre anterior', annual: 'frente al año anterior' }, same: 'sin cambio ', dst: 'Principal destino agroalimentario', org: 'Principal origen', unusual: 'Lo que más se ha movido de lo habitual', head: 'En pocas palabras', note: 'Resumen automático de los últimos datos publicados; no es una previsión.' },
+    en: { cmp: { daily: 'from the previous day', weekly: 'from the previous week', monthly: 'from the previous month', quarterly: 'from the previous quarter', 'half-year': 'from the previous half-year', annual: 'from the previous year' }, same: 'unchanged ', dst: 'Largest agri-food destination', org: 'Largest source', unusual: 'The biggest move beyond what is usual', head: 'In a nutshell', note: 'Automatic summary of the latest published data; not a forecast.' },
+    fr: { cmp: { daily: 'par rapport à la veille', weekly: 'par rapport à la semaine précédente', monthly: 'par rapport au mois précédent', quarterly: 'par rapport au trimestre précédent', 'half-year': 'par rapport au semestre précédent', annual: 'par rapport à l’année précédente' }, same: 'sans changement ', dst: 'Première destination agroalimentaire', org: 'Première origine', unusual: 'Ce qui a le plus bougé par rapport à l’habitude', head: 'En bref', note: 'Résumé automatique des dernières données publiées ; ce n’est pas une prévision.' },
+    it: { cmp: { daily: 'rispetto al giorno precedente', weekly: 'rispetto alla settimana precedente', monthly: 'rispetto al mese precedente', quarterly: 'rispetto al trimestre precedente', 'half-year': 'rispetto al semestre precedente', annual: 'rispetto all’anno precedente' }, same: 'invariato ', dst: 'Prima destinazione agroalimentare', org: 'Prima origine', unusual: 'Ciò che si è mosso di più rispetto al solito', head: 'In breve', note: 'Riepilogo automatico degli ultimi dati pubblicati; non è una previsione.' }
+  };
+  // in: { lang, kpis:[series], partners:[series], unusual:[{s,ch}], plabel(p,freq) }  -> { head, sentences:[], note } | null
+  function plain(inp) {
+    var lang = inp.lang, t = PR[lang] || PR.es, out = [], k = (inp.kpis || []).filter(function (s) { return s && s.latest != null && s.latestPeriod; });
+    var lead = k.filter(function (s) { return /^(prices|quotes|milk|prices_lv|prices_fv|idx_perc)$/.test(s.group); })[0] || k[0], second = k.filter(function (s) { return s !== lead && s.unit !== (lead && lead.unit); })[0];
+    var clean = function (l) { return tl(String(l).replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, ''), lang); };
+    [lead, second].forEach(function (s) {
+      if (!s) return;
+      var txt = clean(s.label) + ' — ' + unitTxt(s.latest, s.unit, lang) + ' (' + inp.plabel(s.latestPeriod, s.frequency) + ')';
+      if (s.changePct != null) { var c = Math.abs(s.changePct) < 0.05; txt += ', ' + (c ? t.same : pct(s.changePct, lang) + ' ') + (t.cmp[s.frequency] || t.cmp.monthly); }
+      out.push(txt + '.');
+    });
+    var side = function (tag, lab) {
+      var l = (inp.partners || []).filter(function (s) { return s.id.indexOf('-' + tag + '-') > -1; }), an = l.filter(function (s) { return s.frequency === 'annual'; }); if (an.length) l = an;
+      l = l.filter(function (s) { return s.latest != null; }).sort(function (a, b) { return b.latest - a.latest; });
+      if (!l.length) return null; var s = l[0], raw = s.label.replace(/^(Exports to|Imports from)\s+/i, '').replace(/:.*$/, '');
+      return lab + ': ' + (country(raw, lang) || raw) + ', ' + unitTxt(s.latest, s.unit, lang) + ' (' + inp.plabel(s.latestPeriod, s.frequency) + ').';
+    };
+    var d = side('exp', t.dst), o = side('imp', t.org); if (d) out.push(d); if (o) out.push(o);
+    var u = (inp.unusual || [])[0]; if (u) out.push(t.unusual + ': ' + clean(u.s.label) + ', ' + pct(u.ch, lang) + '.');
+    if (!out.length) return null;
+    return { head: t.head, sentences: out, note: t.note };
+  }
+
+  // ---------- ayudas «?» ----------
+  var HP = {
+    coverage: {
+      es: ['Qué mide esta puntuación', 'Mide cuántos datos oficiales tenemos de este país, no lo importante o desarrollado que sea su mercado. Amplitud: cuántos de los 4 bloques (mercados, producción, comercio, insumos) tienen series. Frescura: qué parte de las series está al día para su frecuencia. Profundidad: años de histórico (mediana, hasta 20). Frecuencia: qué parte de las series se publica cada mes, semana o día.'],
+      en: ['What this score measures', 'It measures how much official data we hold for this country, not how large or developed its market is. Breadth: how many of the 4 blocks (markets, production, trade, inputs) have series. Freshness: share of series up to date for their frequency. Depth: years of history (median, capped at 20). Frequency: share of series published monthly, weekly or daily.'],
+      fr: ['Ce que mesure ce score', 'Il mesure la quantité de données officielles que nous avons pour ce pays, pas l’importance de son marché. Étendue : combien des 4 blocs (marchés, production, commerce, intrants) ont des séries. Fraîcheur : part des séries à jour pour leur fréquence. Profondeur : années d’historique (médiane, plafonnée à 20). Fréquence : part des séries publiées chaque mois, semaine ou jour.'],
+      it: ['Cosa misura questo punteggio', 'Misura quanti dati ufficiali abbiamo per questo paese, non l’importanza del suo mercato. Ampiezza: quanti dei 4 blocchi (mercati, produzione, commercio, input) hanno serie. Freschezza: quota di serie aggiornate per la loro frequenza. Profondità: anni di storico (mediana, massimo 20). Frequenza: quota di serie pubblicate ogni mese, settimana o giorno.']
+    },
+    unusual: {
+      es: ['Qué es un movimiento inusual', 'Comparamos el cambio del último periodo con los cambios que esa misma serie ha tenido antes. Solo aparece si es mucho mayor de lo habitual para ella (más de 2,5 desviaciones típicas, es decir, algo que ocurre muy pocas veces). No significa que sea bueno o malo.'],
+      en: ['What an unusual move is', 'We compare the latest change with the changes that same series has had before. It only appears if it is much larger than usual for that series (more than 2.5 standard deviations, i.e. something that rarely happens). It does not mean good or bad.'],
+      fr: ['Ce qu’est un mouvement inhabituel', 'Nous comparons la variation de la dernière période avec les variations passées de la même série. Elle n’apparaît que si elle est bien plus grande que d’habitude pour cette série (plus de 2,5 écarts-types, donc rare). Cela ne veut pas dire bon ou mauvais.'],
+      it: ['Cos’è un movimento insolito', 'Confrontiamo la variazione dell’ultimo periodo con quelle che la stessa serie ha avuto in passato. Compare solo se è molto più grande del solito per quella serie (oltre 2,5 deviazioni standard, cioè raro). Non significa né bene né male.']
+    },
+    range: {
+      es: ['Cómo leer el rango de 5 años', 'La barra va del valor más bajo al más alto de esa serie en los últimos 5 años; el punto marca dónde está el último dato. Sirve para situarlo, no para predecir nada.'],
+      en: ['How to read the 5-year range', 'The bar runs from the lowest to the highest value of that series in the last 5 years; the dot marks the latest figure. It places the figure in context; it predicts nothing.'],
+      fr: ['Comment lire la plage sur 5 ans', 'La barre va de la valeur la plus basse à la plus haute de cette série sur 5 ans ; le point marque la dernière donnée. Elle situe la valeur, elle ne prédit rien.'],
+      it: ['Come leggere l’intervallo a 5 anni', 'La barra va dal valore più basso al più alto di quella serie negli ultimi 5 anni; il punto indica l’ultimo dato. Serve a collocarlo, non a prevedere nulla.']
+    },
+    hs: {
+      es: ['Qué es HS 01-24', 'El Sistema Armonizado (HS) es el código internacional de las mercancías en el comercio exterior. Los capítulos 01 a 24 son los productos agroalimentarios (animales vivos, carne, lácteos, cereales, frutas, aceites, bebidas…). SITC es una clasificación equivalente más antigua.'],
+      en: ['What HS 01-24 means', 'The Harmonized System (HS) is the international code for goods in foreign trade. Chapters 01 to 24 are agri-food products (live animals, meat, dairy, cereals, fruit, oils, beverages…). SITC is an older, equivalent classification.'],
+      fr: ['Que signifie HS 01-24', 'Le Système harmonisé (SH, « HS ») est le code international des marchandises dans le commerce extérieur. Les chapitres 01 à 24 sont les produits agroalimentaires (animaux vivants, viande, produits laitiers, céréales, fruits, huiles, boissons…). SITC est une classification équivalente plus ancienne.'],
+      it: ['Cosa significa HS 01-24', 'Il Sistema armonizzato (HS) è il codice internazionale delle merci nel commercio estero. I capitoli da 01 a 24 sono i prodotti agroalimentari (animali vivi, carne, latticini, cereali, frutta, oli, bevande…). SITC è una classificazione equivalente più vecchia.']
+    },
+    hhi: {
+      es: ['Qué es el índice HHI', 'Mide cuánto se concentra el comercio en pocos socios: suma los cuadrados de la cuota de cada uno (de 0 a 10.000). Por debajo de 1.500 se considera concentración baja, hasta 2.500 moderada y por encima, alta. Aquí solo se usan los 10 mayores socios, así que es un mínimo.'],
+      en: ['What the HHI is', 'It measures how concentrated trade is among a few partners: the sum of each partner’s squared share (0 to 10,000). Below 1,500 is considered low concentration, up to 2,500 moderate, above that high. Only the 10 largest partners are used here, so it is a minimum.'],
+      fr: ['Qu’est-ce que l’indice HHI', 'Il mesure la concentration du commerce sur quelques partenaires : somme des carrés de la part de chacun (de 0 à 10 000). Sous 1 500, concentration faible ; jusqu’à 2 500, modérée ; au-delà, élevée. Seuls les 10 premiers partenaires sont utilisés : c’est un minimum.'],
+      it: ['Cos’è l’indice HHI', 'Misura quanto il commercio è concentrato in pochi partner: somma dei quadrati della quota di ciascuno (da 0 a 10.000). Sotto 1.500 la concentrazione è bassa, fino a 2.500 moderata, oltre alta. Qui si usano solo i 10 maggiori partner, quindi è un minimo.']
+    }
+  };
+  function help(key, lang, esc) {
+    var h = HP[key]; if (!h) return ''; var r = h[lang] || h.es, id = 'pp-tip-' + key + '-' + Math.floor(Math.random() * 1e6);
+    return '<span class="pp-qw"><button type="button" class="pp-q" aria-expanded="false" aria-controls="' + id + '" aria-label="' + esc(r[0]) + '">?</button></span><div class="pp-tip" id="' + id + '" role="note" hidden><b>' + esc(r[0]) + '.</b> ' + esc(r[1]) + '</div>';
+  }
+  function bindHelp() {
+    if (root.__ppHelp || typeof document === 'undefined') return; root.__ppHelp = 1;
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.pp-q') : null; if (!b) return;
+      var tip = document.getElementById(b.getAttribute('aria-controls')); if (!tip) return;
+      var open = tip.hasAttribute('hidden'); if (open) tip.removeAttribute('hidden'); else tip.setAttribute('hidden', ''); b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // ---------- preguntas guía ----------
+  var Q = [
+    { id: 'prices', groups: ['prices_lv', 'prices', 'milk', 'idx_perc', 'prices_fv', 'prices_paid'], q: ['¿Cuánto cobra el agricultor o ganadero?', 'How much do farmers get paid?', 'Combien touchent les agriculteurs ?', 'Quanto incassano gli agricoltori?'] },
+    { id: 'inputs', groups: ['inputs_f', 'inputs', 'inputs_a', 'idx_pag', 'costs'], q: ['¿Cuánto cuestan los piensos y fertilizantes?', 'How much do feed and fertiliser cost?', 'Combien coûtent les aliments et les engrais ?', 'Quanto costano mangimi e fertilizzanti?'] },
+    { id: 'trade', groups: ['partners', 'trade'], q: ['¿A quién vende y de quién compra?', 'Who does it sell to and buy from?', 'À qui vend-il et à qui achète-t-il ?', 'A chi vende e da chi compra?'] },
+    { id: 'prod', groups: ['production', 'crops', 'livestock', 'stocks'], q: ['¿Cuánto se produce y qué hay almacenado?', 'How much is produced and stored?', 'Combien produit-on et que stocke-t-on ?', 'Quanto si produce e cosa c’è in magazzino?'] },
+    { id: 'quotes', groups: ['quotes'], q: ['¿Qué cotiza en el mercado?', 'What is quoted on the market?', 'Que cote-t-on sur le marché ?', 'Cosa quota sul mercato?'] },
+    { id: 'rates', groups: ['rates'], q: ['¿Cómo van los tipos de interés?', 'Where are interest rates?', 'Où en sont les taux d’intérêt ?', 'Come vanno i tassi di interesse?'] }
+  ];
+  // groups: { grupo: [series] } -> [{id, q, group, n}] (solo preguntas con datos; el grupo con más series de cada tema)
+  function questions(groups, lang) {
+    var k = L.indexOf(lang); if (k < 0) k = 0; var out = [];
+    Q.forEach(function (q) {
+      var best = null, tot = 0; // el primer grupo existente de la lista es el más representativo del tema
+      q.groups.forEach(function (g) { var n = groups[g] ? groups[g].length : 0; tot += n; if (n && !best) best = { g: g, n: n }; });
+      if (best) out.push({ id: q.id, q: q.q[k], group: best.g, n: tot });
+    });
+    return out;
+  }
+
+  // ---------- índice de secciones ----------
+  var NV = { es: { sum: 'Resumen', kpi: 'Indicadores', trade: 'Comercio', ask: 'Preguntas', exp: 'Explorar', label: 'Secciones de la página' }, en: { sum: 'Summary', kpi: 'Indicators', trade: 'Trade', ask: 'Questions', exp: 'Explore', label: 'Page sections' }, fr: { sum: 'Résumé', kpi: 'Indicateurs', trade: 'Commerce', ask: 'Questions', exp: 'Explorer', label: 'Sections de la page' }, it: { sum: 'Riepilogo', kpi: 'Indicatori', trade: 'Commercio', ask: 'Domande', exp: 'Esplora', label: 'Sezioni della pagina' } };
+  function nav(present, lang, esc) {
+    var t = NV[lang] || NV.es, order = [['sum', 'pp-sum'], ['kpi', 'pp-kpi'], ['trade', 'pp-trade'], ['ask', 'pp-ask'], ['exp', 'ps-explorer']];
+    var items = order.filter(function (o) { return present[o[0]]; });
+    if (items.length < 2) return '';
+    return '<nav class="pp-nav" aria-label="' + esc(t.label) + '">' + items.map(function (o) { return '<a href="#' + o[1] + '" data-pp="' + o[1] + '">' + esc(t[o[0]]) + '</a>'; }).join('') + '</nav>';
+  }
+  function bindNav() {
+    if (typeof document === 'undefined') return;
+    var n = document.querySelector('.pp-nav'); if (!n) return;
+    var hd = document.querySelector('.di-header'); n.style.top = (hd ? hd.offsetHeight : 0) + 'px';
+    var links = Array.prototype.slice.call(n.querySelectorAll('a'));
+    links.forEach(function (a) { a.addEventListener('click', function (e) { var el = document.getElementById(a.getAttribute('data-pp')); if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); try { history.replaceState(null, '', '#' + el.id); } catch (x) {} } }); });
+    if (!('IntersectionObserver' in root)) return;
+    var cur = null, io = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) cur = en.target.id; });
+      links.forEach(function (a) { var on = a.getAttribute('data-pp') === cur; if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    links.forEach(function (a) { var el = document.getElementById(a.getAttribute('data-pp')); if (el) io.observe(el); });
+  }
+
+  var API = { tl: tl, ctx: ctx, ctxHtml: ctxHtml, plain: plain, help: help, bindHelp: bindHelp, questions: questions, nav: nav, bindNav: bindNav, _country: country };
+  if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.DIClear = API;
+})(typeof window !== 'undefined' ? window : globalThis);

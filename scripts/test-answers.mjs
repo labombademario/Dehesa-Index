@@ -30,6 +30,10 @@ for (const c of cases) {
   if (e.mustMatchData && a.cards.length) { // cada cifra mostrada es la observación original
     for (const k of a.cards) { const o = latest(k.region).find(x => x.id === k.id); if (!o || o.value !== k.value || o.observationDate !== k.date) bad(c, 'cifra distinta de la del dato ' + k.id); }
   }
+  if (e.nCards !== undefined && a.cards.length !== e.nCards) bad(c, 'tarjetas ' + a.cards.length + ' != ' + e.nCards);
+  if (e.tradeCheck) { // cada cifra de comercio es la última observación del catálogo del país
+    for (const k of a.cards) { const cat = JSON.parse(fs.readFileSync(D('catalog/' + k.cc + '.json'), 'utf8')).series.find(x => x.id === k.id); if (!cat || cat.latest !== k.value || cat.latestPeriod !== k.date) bad(c, 'cifra de comercio distinta del dato ' + k.id); }
+  }
   if (e.hasLink && !a.link) bad(c, 'sin enlace');
   const html = A.render(a, c.lang, s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'));
   if (!html || /undefined|NaN|\[object/.test(html)) bad(c, 'HTML con undefined/NaN');
