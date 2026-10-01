@@ -98,10 +98,10 @@
     {region:'us', id:'energy-cereals', a:'us_energy_input_index', b:'us_cereals_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → cereales',en:'Energy → cereals',fr:'Énergie → céréales',it:'Energia → cereali'}},
     {region:'us', id:'fertilizer-milk', a:'us_fertilizer_input_index', b:'us_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Fertilizante → leche',en:'Fertilizer → milk',fr:'Engrais → lait',it:'Fertilizzanti → latte'}},
     {region:'us', id:'energy-milk', a:'us_energy_input_index', b:'us_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → leche',en:'Energy → milk',fr:'Énergie → lait',it:'Energia → latte'}},
-    {region:'uk', id:'fertilizer-cereals', a:'uk_fertilizer_input_index', b:'uk_cereals_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Fertilizante → cereales',en:'Fertilizer → cereals',fr:'Engrais → céréales',it:'Fertilizzanti → cereali'}},
-    {region:'uk', id:'energy-cereals', a:'uk_energy_input_index', b:'uk_cereals_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → cereales',en:'Energy → cereals',fr:'Énergie → céréales',it:'Energia → cereali'}},
-    {region:'uk', id:'fertilizer-milk', a:'uk_fertilizer_input_index', b:'uk_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Fertilizante → leche',en:'Fertilizer → milk',fr:'Engrais → lait',it:'Fertilizzanti → latte'}},
-    {region:'uk', id:'energy-milk', a:'uk_energy_input_index', b:'uk_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → leche',en:'Energy → milk',fr:'Énergie → lait',it:'Energia → latte'}}
+    {region:'uk', id:'fertilizer-wheat', a:'defra_fertiliser_input_index', b:'defra_wheat_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Fertilizante → trigo',en:'Fertilizer → wheat',fr:'Engrais → blé',it:'Fertilizzanti → frumento'}},
+    {region:'uk', id:'energy-wheat', a:'defra_energy_input_index', b:'defra_wheat_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → trigo',en:'Energy → wheat',fr:'Énergie → blé',it:'Energia → frumento'}},
+    {region:'uk', id:'fertilizer-milk', a:'defra_fertiliser_input_index', b:'defra_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Fertilizante → leche',en:'Fertilizer → milk',fr:'Engrais → lait',it:'Fertilizzanti → latte'}},
+    {region:'uk', id:'energy-milk', a:'defra_energy_input_index', b:'defra_milk_output_index', maxLag:4, window:20, minPairs:8, label:{es:'Energía → leche',en:'Energy → milk',fr:'Énergie → lait',it:'Energia → latte'}}
   ];
   var RELATIONSHIP_DEFS = REGIONAL_RELATIONSHIP_DEFS.filter(function(d){return d.region==='eu';});
   var RELATIONSHIP_RESULTS = [];
@@ -1157,7 +1157,11 @@
       eurostat_energy_input_index:{es:'Energía · índice de compra',en:'Energy · purchase index',fr:'Énergie · indice d’achat',it:'Energia · indice di acquisto'},
       eurostat_cereals_output_index:{es:'Cereales · índice de producción',en:'Cereals · output index',fr:'Céréales · indice de production',it:'Cereali · indice di produzione'},
       eurostat_milk_output_index:{es:'Leche · índice de producción',en:'Milk · output index',fr:'Lait · indice de production',it:'Latte · indice di produzione'},
-      feed_input_index:{es:'Alimentación · índice de costes',en:'Feed · cost index',fr:'Alimentation · indice de coûts',it:'Mangimi · indice dei costi'}
+      feed_input_index:{es:'Alimentación · índice de costes',en:'Feed · cost index',fr:'Alimentation · indice de coûts',it:'Mangimi · indice dei costi'},
+      defra_fertiliser_input_index:{es:'Fertilizantes · índice de compra',en:'Fertilizer · purchase index',fr:'Engrais · indice d’achat',it:'Fertilizzanti · indice di acquisto'},
+      defra_energy_input_index:{es:'Energía · índice de compra',en:'Energy · purchase index',fr:'Énergie · indice d’achat',it:'Energia · indice di acquisto'},
+      defra_wheat_output_index:{es:'Trigo · índice de producción',en:'Wheat · output index',fr:'Blé · indice de production',it:'Frumento · indice di produzione'},
+      defra_milk_output_index:{es:'Leche · índice de producción',en:'Milk · output index',fr:'Lait · indice de production',it:'Latte · indice di produzione'}
     };
     if(!ready.length){
       return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div></section>';
@@ -1171,7 +1175,7 @@
       var bName=(names[r.seriesB.product]&&names[r.seriesB.product][lang()])||r.seriesB.product;
       return '<article class="di-rel-card">'+
         '<div class="di-rel-top"><span>'+esc(r.label)+'</span><b class="di-rel-confidence '+esc(r.confidence)+'">'+esc(r.confidence.toUpperCase())+'</b></div>'+
-        '<div class="di-rel-series">'+esc(aName)+' · EU <span>→</span> '+esc(bName)+' · EU</div>'+
+        '<div class="di-rel-series">'+esc(aName)+' · '+esc(String(r.region||'eu').toUpperCase())+' <span>→</span> '+esc(bName)+' · '+esc(String(r.region||'eu').toUpperCase())+'</div>'+
         '<div class="di-rel-metrics"><div><small>'+esc(t.corr)+'</small><strong>'+corr.toFixed(2)+'</strong></div><div><small>'+esc(t.lag)+'</small><strong>'+esc(String(r.lagPeriods)+' '+lagUnit)+'</strong></div><div><small>'+esc(t.window)+'</small><strong>'+esc(r.window)+'</strong></div></div>'+
         '<p class="di-rel-note">'+esc(r.interpretation)+'</p>'+
       '</article>';
