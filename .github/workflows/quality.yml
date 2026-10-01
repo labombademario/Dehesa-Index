@@ -146,6 +146,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/e2e.mjs --json e2e-report.json
+      - name: E2E de variantes (smoke - productos 3.0 representativos, comparador, 10 tipos de regla, monedas y unidades, estados de frescura, paginacion)
+        env:
+          CHROMIUM: ''
+        run: node scripts/e2e-variants.mjs --smoke
       - name: Auditoria UX responsive (375/390/430/768/1280)
         env:
           CHROMIUM: ''

@@ -1,0 +1,30 @@
+name: E2E full variants (scheduled)
+# La suite completa de variantes (17 productos x escritorio/movil, todos los productos del comparador, 32 combinaciones moneda/unidad...)
+# tarda mas que un smoke: en cada push corre el smoke (quality.yml) y esta, la completa, una vez por semana y a demanda.
+on:
+  schedule:
+    - cron: '17 4 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  e2e-full:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Playwright and Chromium
+        run: |
+          npm install --no-save --no-audit --no-fund playwright
+          npx playwright install --with-deps chromium
+      - name: Static server
+        run: |
+          python3 -m http.server 8123 >/dev/null 2>&1 &
+          for i in $(seq 1 20); do curl -sf http://localhost:8123/ >/dev/null && break; sleep 1; done
+      - name: E2E variants (full)
+        env:
+          CHROMIUM: ''
+        run: node scripts/e2e-variants.mjs --full
