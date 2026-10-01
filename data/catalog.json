@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-01T06:53:04.981Z",
+  "generatedAt": "2026-10-01T06:55:33.926Z",
   "observationCount": 120,
   "products": [
     "arroz",
@@ -602,7 +602,7 @@
       "currency": "EUR",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-10-01T05:17:00.343154Z",
+      "verifiedAt": "2026-10-01T06:55:33.623856Z",
       "comparability": "directional",
       "points": 261,
       "coverageStart": "2005-01-01",
@@ -617,7 +617,7 @@
       "currency": "USD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-10-01T05:16:56.326Z",
+      "verifiedAt": "2026-10-01T06:55:30.930Z",
       "comparability": "directional",
       "points": 391,
       "coverageStart": "1994-03-01",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-01T06:53:04.916Z",
+  "generatedAt": "2026-10-01T06:55:33.859Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -57939,7 +57939,7 @@
       "observationDate": "2026-09-28",
       "publicationDate": "2026-09-30",
       "status": "verified",
-      "verifiedAt": "2026-10-01T05:17:00.343154Z",
+      "verifiedAt": "2026-10-01T06:55:33.623856Z",
       "methodology": "Weighted EU average for automotive gas oil, consumer price with taxes. The source expresses it in EUR/1,000 litres; value retained at source precision after division by 1,000.",
       "comparability": "directional",
       "value": 2.237184154724178,
@@ -63389,7 +63389,7 @@
       "observationDate": "2026-09-28",
       "publicationDate": "2026-09-28",
       "status": "verified",
-      "verifiedAt": "2026-10-01T05:16:56.326Z",
+      "verifiedAt": "2026-10-01T06:55:30.930Z",
       "comparability": "directional",
       "value": 6.382,
       "currency": "USD",
