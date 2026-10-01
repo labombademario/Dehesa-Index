@@ -14,7 +14,10 @@
   "newData",
   "revisions",
   "stale",
-  "upcoming"
+  "upcoming",
+  "coverage",
+  "byKind",
+  "pipelinesCovered"
  ],
  "properties": {
   "schemaVersion": {
@@ -162,6 +165,127 @@
     ],
     "properties": {}
    }
+  },
+  "coverage": {
+   "type": "array",
+   "minItems": 20,
+   "items": {
+    "type": "object",
+    "required": [
+     "file",
+     "name",
+     "kind",
+     "status"
+    ],
+    "properties": {
+     "kind": {
+      "enum": [
+       "PRICE",
+       "PRODUCTION",
+       "TRADE",
+       "CROP",
+       "CLIMATE",
+       "INPUT",
+       "TARIFF",
+       "MACRO"
+      ]
+     },
+     "status": {
+      "enum": [
+       "new",
+       "changed",
+       "unchanged"
+      ]
+     }
+    }
+   }
+  },
+  "byKind": {
+   "type": "object",
+   "required": [
+    "PRICE",
+    "PRODUCTION",
+    "TRADE",
+    "CROP",
+    "CLIMATE",
+    "INPUT",
+    "TARIFF",
+    "MACRO"
+   ],
+   "properties": {
+    "PRICE": {
+     "type": "object",
+     "required": [
+      "datasets",
+      "changed",
+      "newPeriods"
+     ]
+    },
+    "PRODUCTION": {
+     "type": "object",
+     "required": [
+      "datasets",
+      "changed",
+      "newPeriods"
+     ]
+    },
+    "TRADE": {
+     "type": "object",
+     "required": [
+      "datasets",
+      "changed",
+      "newPeriods"
+     ]
+    },
+    "CROP": {
+     "type": "object",
+     "required": [
+      "datasets",
+      "changed",
+      "newPeriods"
+     ]
+    },
+    "CLIMATE": {
+     "type": "object",
+     "required": [
+      "datasets",
+      "changed",
+      "newPeriods"
+     ]
+    },
+    "INPUT": {
+     "type": "object",
+     "required": [
+      "datasets",
+      "changed",
+      "newPeriods"
+     ]
+    },
+    "TARIFF": {
+     "type": "object",
+     "required": [
+      "datasets",
+      "changed",
+      "newPeriods"
+     ]
+    },
+    "MACRO": {
+     "type": "object",
+     "required": [
+      "datasets",
+      "changed",
+      "newPeriods"
+     ]
+    }
+   }
+  },
+  "pipelinesCovered": {
+   "type": "object",
+   "required": [
+    "total",
+    "withKind",
+    "internal"
+   ]
   }
  }
 }

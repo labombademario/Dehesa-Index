@@ -5,7 +5,7 @@ mas revisiones (data/revisions.json) y estado de pipelines (data/pipeline-status
 import datetime, json, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib_index import ROOT, STATS, git_show, rev_before, stats_series, products
+from lib_index import ROOT, STATS, git_show, rev_before, stats_series, products, DATASETS, KINDS, WORKFLOW_KINDS, kind_of, content_key, tree_key
 WINDOW_H = 24
 def main():
     now = datetime.datetime.utcnow().replace(microsecond=0); since = now - datetime.timedelta(hours=WINDOW_H)
@@ -35,8 +35,28 @@ def main():
                 changed += 1; new_data.append(dict(k=k, prevP=o['p'], prevV=o['v'], **v))
             elif v['v'] != o['v']: changed += 1
         if changed: updated.append({'file': f, 'name': names.get(f, f), 'changed': changed})
+    fresh = [x for x in new_data if not x.get('new')]
+    # --- cobertura completa: cada dataset de DATASETS (y los *-stats.json ya leidos serie a serie) con su tipo y si cambio de CONTENIDO en la ventana
+    unknown = sorted(p['workflow'] for p in ps.get('pipelines', []) if p['workflow'] not in WORKFLOW_KINDS)
+    if unknown: sys.exit('pipelines sin clasificar en lib_index.WORKFLOW_KINDS: %s' % unknown)
+    cover = []
+    for path, (kind, label) in sorted(DATASETS.items(), key=lambda kv: (kv[1][0], kv[0])):
+        cur_p = ROOT / path
+        if not cur_p.exists(): continue
+        rev = rev_before(path, iso)
+        if cur_p.is_dir():
+            now_k = tree_key('HEAD', path); old_k = tree_key(rev, path) if rev else None
+        else:
+            now_k = content_key(cur_p.read_text()); old_t = git_show(rev, path) if rev else None; old_k = content_key(old_t) if old_t else None
+        cover.append({'file': path, 'name': label, 'kind': kind, 'status': 'new' if old_k is None else ('changed' if old_k != now_k else 'unchanged')})
+    # las series de *-stats.json y de latest.json se clasifican por su grupo
+    by_kind = {k: {'datasets': 0, 'changed': 0, 'newPeriods': 0} for k in KINDS}
+    for c in cover:
+        by_kind[c['kind']]['datasets'] += 1
+        if c['status'] != 'unchanged': by_kind[c['kind']]['changed'] += 1
+    for x in fresh: by_kind[kind_of(x['g'], x['k'])]['newPeriods'] += 1
     def mk(x):
-        r = {'k': x['k'], 'label': x['l'], 'unit': x['u'], 'period': x['p'], 'value': x['v'], 'changePct': x['c'], 'group': x['g']}
+        r = {'k': x['k'], 'kind': kind_of(x['g'], x['k']), 'label': x['l'], 'unit': x['u'], 'period': x['p'], 'value': x['v'], 'changePct': x['c'], 'group': x['g']}
         if x.get('new'): r['new'] = True
         return r
     fresh = [x for x in new_data if not x.get('new')]
@@ -60,7 +80,8 @@ def main():
            'counts': {'datasetsUpdated': len(updated), 'newPeriods': len(fresh), 'newSeries': len([x for x in new_data if x.get('new')]), 'newDatasets': len(new_ds), 'revisions': len(revs), 'stale': len(stale), 'staleNew': len([s for s in stale if s['isNew']]), 'upcoming': len(upcoming)},
            'datasets': sorted(updated, key=lambda x: -x['changed']), 'newDatasets': new_ds, 'movers': [mk(x) | {'prevPeriod': x.get('prevP'), 'prevValue': x.get('prevV')} for x in movers],
            'newData': [mk(x) for x in sorted(fresh, key=lambda x: -abs(x['c'] if isinstance(x['c'], (int, float)) else 0))[:150]],
-           'revisions': revs[:30], 'stale': stale, 'upcoming': upcoming}
+           'revisions': revs[:30], 'stale': stale, 'upcoming': upcoming, 'coverage': cover, 'byKind': by_kind,
+           'pipelinesCovered': {'total': len(ps.get('pipelines', [])), 'withKind': len([p for p in ps.get('pipelines', []) if WORKFLOW_KINDS.get(p['workflow'])]), 'internal': sorted(w for w, k in WORKFLOW_KINDS.items() if not k)}}
     # no reescribir si solo cambia la hora
     a = dict(doc); a.pop('generatedAt'); b = dict(old); b.pop('generatedAt', None)
     if a == b: print('sin cambios'); return

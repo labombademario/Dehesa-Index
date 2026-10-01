@@ -53,3 +53,56 @@ def load_all(loader, strict=False):
             if strict: raise
     elif strict: raise FileNotFoundError('data/latest.json')
     return series, present
+
+# ---- cobertura del brief diario: TODOS los pipelines, clasificados por tipo ----
+KINDS = ['PRICE', 'PRODUCTION', 'TRADE', 'CROP', 'CLIMATE', 'INPUT', 'TARIFF', 'MACRO']
+# fichero o carpeta -> (tipo, nombre corto). Los *-stats.json se leen serie a serie (STATS) y se clasifican por su grupo; aqui van el resto de datasets.
+DATASETS = {
+    'data/latest.json': ('PRICE', 'Precios de mercado (latest)'), 'data/nass-prices.json': ('PRICE', 'USDA NASS precios'), 'data/ams-grain-daily.json': ('PRICE', 'USDA AMS granos (diario)'),
+    'data/ams': ('PRICE', 'USDA AMS mercados (MARS)'), 'data/denmark-prices.json': ('PRICE', 'Dinamarca precios'), 'data/alberta-weekly.json': ('PRICE', 'Alberta semanal'),
+    'data/eu': ('PRICE', 'Agri-food Data Portal UE'),
+    'data/supply-demand.json': ('PRODUCTION', 'USDA PSD oferta y demanda'), 'data/nass-crops.json': ('PRODUCTION', 'USDA NASS cultivos'), 'data/nass-livestock.json': ('PRODUCTION', 'USDA NASS ganaderia'),
+    'data/ers.json': ('PRODUCTION', 'USDA ERS'), 'data/recan.json': ('PRODUCTION', 'RECAN (Espana)'),
+    'data/export-sales.json': ('TRADE', 'USDA exportaciones semanales'), 'data/gats.json': ('TRADE', 'USDA GATS'), 'data/eu-trade-products.json': ('TRADE', 'Comercio UE por producto'), 'data/au-trade-products.json': ('TRADE', 'Comercio Australia por producto'),
+    'data/crop-progress.json': ('CROP', 'USDA Crop Progress'),
+    'data/drought.json': ('CLIMATE', 'US Drought Monitor'), 'data/climate.json': ('CLIMATE', 'Clima (Open-Meteo)'),
+    'data/us-tariffs.json': ('TARIFF', 'Aranceles EE. UU.'), 'data/tariffs-eu.json': ('TARIFF', 'Aranceles UE'), 'data/tariffs-mx.json': ('TARIFF', 'Aranceles Mexico'), 'data/tariffs-ca.json': ('TARIFF', 'Aranceles Canada'),
+    'data/us-tariff-measures.json': ('TARIFF', 'Medidas arancelarias EE. UU.'),
+    'data/country-macro.json': ('MACRO', 'Macro por pais'), 'data/fx-history.json': ('MACRO', 'Tipos de cambio (BCE)'),
+}
+# grupo de una serie de *-stats.json -> tipo
+GROUP_KIND = {'markets': 'PRICE', 'quotes': 'PRICE', 'prices': 'PRICE', 'prices_lv': 'PRICE', 'prices_fv': 'PRICE', 'milk': 'PRICE', 'milk_regions': 'PRICE', 'meat_regions': 'PRICE', 'product': 'PRICE',
+              'production': 'PRODUCTION', 'crops': 'PRODUCTION', 'livestock': 'PRODUCTION', 'stocks': 'PRODUCTION', 'organic': 'PRODUCTION', 'environment': 'CLIMATE',
+              'trade': 'TRADE', 'partners': 'TRADE', 'inputs': 'INPUT', 'inputs_f': 'INPUT', 'inputs_a': 'INPUT', 'costs': 'INPUT', 'prices_paid': 'INPUT', 'idx_perc': 'PRICE', 'idx_pag': 'INPUT',
+              'income': 'MACRO', 'rates': 'MACRO'}
+INPUT_PRODUCTS = {'urea', 'dap', 'potasa', 'diesel', 'gas_natural', 'petroleo_brent', 'petroleo_wti', 'fertilizantes', 'harina_soja'}
+def kind_of(group, key=''):
+    """Tipo de dato de una serie (PRICE/PRODUCTION/TRADE/CROP/CLIMATE/INPUT/TARIFF/MACRO) por su grupo; los productos de insumos (fertilizante, energia, pienso) son INPUT."""
+    if key.startswith('P/') and key.split('/')[1] in INPUT_PRODUCTS: return 'INPUT'
+    return GROUP_KIND.get(group, 'PRICE')
+# workflow -> tipos que alimenta (todos los pipelines deben estar aqui; el brief falla si aparece uno sin clasificar)
+WORKFLOW_KINDS = {
+    'update-alberta-weekly.yml': ['PRICE'], 'update-ams-auctions.yml': ['PRICE'], 'update-ams.yml': ['PRICE'], 'update-au-trade.yml': ['TRADE'], 'update-austria.yml': ['PRODUCTION', 'TRADE', 'INPUT'],
+    'update-belgium.yml': ['PRODUCTION', 'INPUT'], 'update-canada-stats.yml': ['PRODUCTION', 'TRADE'], 'update-canada.yml': ['PRICE'], 'update-climate.yml': ['CLIMATE'], 'update-country-macro.yml': ['MACRO'],
+    'update-country-stats.yml': ['PRODUCTION', 'TRADE'], 'update-crop-progress.yml': ['CROP'], 'update-defra-milk.yml': ['PRICE'], 'update-denmark.yml': ['PRICE'], 'update-drought.yml': ['CLIMATE'],
+    'update-energy-markets.yml': ['INPUT'], 'update-energy.yml': ['INPUT'], 'update-ers.yml': ['PRODUCTION'], 'update-eu-agrifood.yml': ['PRICE'], 'update-eu-catalog.yml': ['PRICE'], 'update-eu-trade.yml': ['TRADE'],
+    'update-eurostat.yml': ['PRICE', 'INPUT'], 'update-export-sales.yml': ['TRADE'], 'update-france.yml': ['PRICE', 'PRODUCTION'], 'update-fx-history.yml': ['MACRO'], 'update-fx.yml': ['MACRO'], 'update-gats.yml': ['TRADE'],
+    'update-germany.yml': ['PRICE', 'PRODUCTION'], 'update-interest-rates.yml': ['MACRO'], 'update-mars-us.yml': ['PRICE'], 'update-nass-data.yml': ['PRICE', 'PRODUCTION'], 'update-nass.yml': ['PRICE'],
+    'update-partner-tariffs.yml': ['TARIFF'], 'update-portugal-eurostat.yml': ['PRODUCTION'], 'update-portugal.yml': ['PRODUCTION', 'PRICE'], 'update-recan.yml': ['PRODUCTION'], 'update-spain.yml': ['PRICE', 'INPUT', 'PRODUCTION'],
+    'update-us-tariffs.yml': ['TARIFF'], 'update-usda-psd.yml': ['PRODUCTION'], 'update-worldbank-urea.yml': ['INPUT'],
+    # no son datos agricolas: noticias (no entran en el brief) y trabajos internos
+    'update-news.yml': [], 'update-pipeline-status.yml': [], 'update-seo-pages.yml': [],
+}
+VOLATILE = {'generatedAt', 'revisedAt', 'verifiedAt', 'fetchedAt', 'updatedAt', 'checkedAt'}
+def _strip(o):
+    if isinstance(o, dict): return {k: _strip(v) for k, v in o.items() if k not in VOLATILE}
+    if isinstance(o, list): return [_strip(v) for v in o]
+    return o
+def content_key(text):
+    """Huella del contenido sin marcas de tiempo de ejecucion: solo cambia si cambian los datos."""
+    import hashlib
+    try: return hashlib.sha1(json.dumps(_strip(json.loads(text)), sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    except Exception: return None
+def tree_key(rev, path):
+    try: return subprocess.run(['git', 'rev-parse', '%s:%s' % (rev, path)], cwd=ROOT, capture_output=True, check=True).stdout.decode().strip()
+    except Exception: return None

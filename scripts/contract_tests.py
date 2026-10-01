@@ -212,6 +212,15 @@ def daily_brief(doc, errs, warns, stats):
     if c["stale"] != len(doc["stale"]): errs.append("counts.stale != len(stale)")
     if c["upcoming"] != len(doc["upcoming"]): errs.append("counts.upcoming != len(upcoming)")
     if doc["since"] > doc["generatedAt"]: errs.append("since posterior a generatedAt")
+    for k, v in doc["byKind"].items():
+        n = sum(1 for x in doc["coverage"] if x["kind"] == k)
+        if v["datasets"] != n: errs.append("byKind.%s.datasets %d != %d en coverage" % (k, v["datasets"], n))
+        if v["changed"] != sum(1 for x in doc["coverage"] if x["kind"] == k and x["status"] != "unchanged"): errs.append("byKind.%s.changed incoherente" % k)
+    pc = doc["pipelinesCovered"]
+    if pc["withKind"] + len(pc["internal"]) != pc["total"]: errs.append("pipelinesCovered: withKind + internal != total (hay pipelines sin clasificar)")
+    for lst in ("movers", "newData"):
+        for x in doc[lst]:
+            if x.get("kind") not in doc["byKind"]: errs.append("%s: kind %r desconocido" % (lst, x.get("kind"))); break
     m = [abs(x["changePct"]) for x in doc["movers"] if _num(x["changePct"])]
     if m != sorted(m, reverse=True): errs.append("movers sin ordenar por |cambio|")
 def pipeline_status(doc, errs, warns, stats):
