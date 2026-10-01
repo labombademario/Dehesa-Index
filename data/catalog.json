@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-01T06:55:33.926Z",
-  "observationCount": 120,
+  "generatedAt": "2026-10-01T06:58:06.350Z",
+  "observationCount": 121,
   "products": [
     "arroz",
     "avena",
@@ -1247,7 +1247,7 @@
       "currency": "USD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:35:54Z",
+      "verifiedAt": "2026-10-01T06:58:05Z",
       "comparability": "not_comparable",
       "points": 560,
       "coverageStart": "1980-01-01",

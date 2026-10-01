@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-01T06:55:33.859Z",
+  "generatedAt": "2026-10-01T06:58:06.216Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -178918,7 +178918,7 @@
       "unit": "tonelada",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:35:54Z",
+      "verifiedAt": "2026-10-01T06:58:05Z",
       "comparability": "not_comparable",
       "history": [
         {
@@ -181722,7 +181722,7 @@
           "value": 390
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_ganado_vaca_ca",
