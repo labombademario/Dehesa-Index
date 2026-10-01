@@ -1,0 +1,46 @@
+name: Verify data anomalies (primary source)
+on:
+  schedule:
+    - cron: '41 5 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Offline tests of the verifier (no network)
+        run: python3 scripts/test-verify-anomalies.py
+      - id: verify
+        name: Compare every UNEXPLAINED_ANOMALY with its primary source (Eurostat / Statistics Canada / ABS)
+        run: python3 scripts/verify-anomalies.py --apply
+        timeout-minutes: 35
+        continue-on-error: true
+      - name: Validate the anomalies registry (contract)
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/data-anomalies.json
+      - name: Publish
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/data-anomalies.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "Anomalias de datos: verificacion contra la fuente primaria"
+          for i in 1 2 3; do
+            git pull -q --rebase --autostash && git push && exit 0
+            sleep $((i * 5))
+          done
+          echo '::error::could not publish after 3 attempts'; exit 1
+      - name: Close (red if a value does not match the source, a flag says not applicable, or the source was unreachable)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.verify.outcome }}

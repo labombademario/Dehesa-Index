@@ -42,6 +42,9 @@ jobs:
       - name: Contract tests bite (corrupted real data must be rejected)
         run: python3 scripts/test-contracts.py
 
+      - name: Anomaly verifier (promotes only when the primary source reproduces the value; offline fixtures)
+        run: python3 scripts/test-verify-anomalies.py
+
       - name: Data catalog integrity (manifest, catalogs, shards)
         run: python3 scripts/check-catalog.py --strict
 

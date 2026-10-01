@@ -45,6 +45,52 @@
      },
      "since": {
       "type": "string"
+     },
+     "verifier": {
+      "type": "object",
+      "required": [
+       "kind",
+       "periods"
+      ],
+      "properties": {
+       "kind": {
+        "enum": [
+         "eurostat",
+         "statcan",
+         "abs"
+        ]
+       },
+       "periods": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "minItems": 1
+       }
+      }
+     },
+     "lastCheck": {
+      "type": "object",
+      "required": [
+       "at",
+       "result"
+      ],
+      "properties": {
+       "at": {
+        "type": "string"
+       },
+       "result": {
+        "enum": [
+         "REPRODUCED",
+         "MISMATCH",
+         "FLAGGED",
+         "UNAVAILABLE"
+        ]
+       },
+       "detail": {
+        "type": "string"
+       }
+      }
      }
     }
    }

@@ -8,9 +8,31 @@
    "status": "UNEXPLAINED_ANOMALY",
    "detected": "Sacrificios de cordero (miles de cabezas): 0 de 1995 a 2007 y 243,34 en 2008; el aviso salta en 2013 porque la mediana de los 12 puntos previos aun arrastra ceros.",
    "hypothesis": "Eurostat apro_mt_pann no desglosa 'Lamb' (B4110) hasta 2008: los 0 serian 'no aplicable' y no sacrificios reales (B4100 'Sheepmeat' ya suma ~277 mil cabezas en 1995).",
-   "verification": "PENDIENTE: comparar con los indicadores de estado (flags) de Eurostat para AT/B4110/THS_HD 1995-2007. Sin acceso a Eurostat desde el entorno de pruebas (proxy 403).",
-   "nextAction": "Si los flags confirman 'no aplicable', recortar el tramo inicial de ceros en scripts/update-austria.py y pasar a KNOWN_VERIFIED_ANOMALY.",
-   "since": "2026-10-01"
+   "verification": "PENDIENTE de contraste con la fuente primaria: el entorno de desarrollo no tiene salida a Eurostat (API, con marcas de calidad) (politica de red), asi que no se ha podido ver. Lo hace .github/workflows/verify-anomalies.yml (semanal y manual) con scripts/verify-anomalies.py: compara los periodos de `verifier` con la fuente y solo promueve a KNOWN_VERIFIED_ANOMALY si coinciden.",
+   "nextAction": "Ejecutar el workflow verify-anomalies (workflow_dispatch) y revisar lastCheck: REPRODUCED -> queda KNOWN_VERIFIED_ANOMALY con evidencia; MISMATCH/FLAGGED -> corregir el pipeline correspondiente (unidad, serie, parseo o marca no aplicable).",
+   "since": "2026-10-01",
+   "verifier": {
+    "kind": "eurostat",
+    "dataset": "apro_mt_pann",
+    "filters": {
+     "geo": "AT",
+     "meatitem": "SLAUGHT",
+     "meat": "B4110",
+     "unit": "THS_HD"
+    },
+    "parent": {
+     "meat": "B4100"
+    },
+    "periods": [
+     "2005",
+     "2006",
+     "2007",
+     "2008",
+     "2009",
+     "2012",
+     "2013"
+    ]
+   }
   },
   {
    "series": "CA/ca-trade-imp-wheat",
@@ -18,9 +40,31 @@
    "status": "UNEXPLAINED_ANOMALY",
    "detected": "Importaciones mensuales de trigo (CAD millones): 0,0-0,1 durante 1995 y 2,8 en enero de 1996; base minuscula, el salto relativo es x28.",
    "hypothesis": "Serie con base casi nula (Canada importa muy poco trigo) y granularidad del origen (StatCan 12-10-0163 en miles de CAD): el salto relativo es un efecto de escala, no un error.",
-   "verification": "PENDIENTE: contrastar 1995-12/1996-01 con la tabla 12-10-0163 de Statistics Canada (sin acceso desde el entorno de pruebas).",
-   "nextAction": "Verificar contra la tabla oficial; si coincide, pasar a KNOWN_VERIFIED_ANOMALY con la URL de la consulta.",
-   "since": "2026-10-01"
+   "verification": "PENDIENTE de contraste con la fuente primaria: el entorno de desarrollo no tiene salida a Statistics Canada (tabla 12-10-0163, descarga completa) (politica de red), asi que no se ha podido ver. Lo hace .github/workflows/verify-anomalies.yml (semanal y manual) con scripts/verify-anomalies.py: compara los periodos de `verifier` con la fuente y solo promueve a KNOWN_VERIFIED_ANOMALY si coinciden.",
+   "nextAction": "Ejecutar el workflow verify-anomalies (workflow_dispatch) y revisar lastCheck: REPRODUCED -> queda KNOWN_VERIFIED_ANOMALY con evidencia; MISMATCH/FLAGGED -> corregir el pipeline correspondiente (unidad, serie, parseo o marca no aplicable).",
+   "since": "2026-10-01",
+   "verifier": {
+    "kind": "statcan",
+    "pid": 12100163,
+    "filters": {
+     "GEO": "Canada",
+     "Basis": "Customs",
+     "Seasonal adjustment": "Unadjusted",
+     "Trade": "Import",
+     "product": "Wheat"
+    },
+    "periods": [
+     "1995-11",
+     "1995-12",
+     "1996-01",
+     "1996-02",
+     "2002-03",
+     "2002-04",
+     "2002-11",
+     "2002-12",
+     "2003-01"
+    ]
+   }
   },
   {
    "series": "AU/au-imp-wheat",
@@ -28,9 +72,34 @@
    "status": "UNEXPLAINED_ANOMALY",
    "detected": "Importaciones de trigo (A$ millones): 0,001-0,03 hasta 2002 y 8,944 en enero de 2003, 17,755 en abril de 2003.",
    "hypothesis": "Importaciones excepcionales durante la sequia de 2002-03 en Australia; coherente con el calendario, pero no verificado contra ABS.",
-   "verification": "PENDIENTE: confirmar los valores de 2003-01..2003-06 en ABS MERCH_IMP (sin acceso desde el entorno de pruebas).",
-   "nextAction": "Verificar contra ABS; si coincide, pasar a KNOWN_VERIFIED_ANOMALY citando la consulta de ABS y la sequia de 2002-03.",
-   "since": "2026-10-01"
+   "verification": "PENDIENTE de contraste con la fuente primaria: el entorno de desarrollo no tiene salida a ABS Data API (MERCH_IMP, con paises de origen) (politica de red), asi que no se ha podido ver. Lo hace .github/workflows/verify-anomalies.yml (semanal y manual) con scripts/verify-anomalies.py: compara los periodos de `verifier` con la fuente y solo promueve a KNOWN_VERIFIED_ANOMALY si coinciden.",
+   "nextAction": "Ejecutar el workflow verify-anomalies (workflow_dispatch) y revisar lastCheck: REPRODUCED -> queda KNOWN_VERIFIED_ANOMALY con evidencia; MISMATCH/FLAGGED -> corregir el pipeline correspondiente (unidad, serie, parseo o marca no aplicable).",
+   "since": "2026-10-01",
+   "verifier": {
+    "kind": "abs",
+    "dataset": "MERCH_IMP",
+    "key": "041.TOT.TOT.M",
+    "periods": [
+     "2003-01",
+     "2003-02",
+     "2003-03",
+     "2003-04",
+     "2003-05",
+     "2003-06",
+     "2019-05",
+     "2019-06",
+     "2019-07",
+     "2020-02",
+     "2020-03",
+     "2020-07"
+    ],
+    "origins": [
+     "2003-01",
+     "2003-04",
+     "2019-06",
+     "2020-07"
+    ]
+   }
   }
  ]
 }

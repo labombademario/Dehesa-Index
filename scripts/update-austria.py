@@ -29,9 +29,10 @@ def records(j):
             for k, v in idx.items(): order[v] = k
         else: order = list(idx)
         cats[d] = order; labs[d] = c.get('label', {})
-    out = []
+    out = []; st = j.get('status') or {}
     for pos, v in j.get('value', {}).items():
-        pos = int(pos); rec = {}
+        flag = st.get(pos) if isinstance(st, dict) else None  # marca de calidad de Eurostat (z = no aplicable, c = confidencial)
+        pos = int(pos); rec = {'_s': flag}
         for d, n in reversed(list(zip(ids, size))):
             rec[d] = cats[d][pos % n]; pos //= n
         out.append((rec, v))
@@ -85,7 +86,9 @@ def milk():
 def slaughter():
     j = fetch('apro_mt_pann', meatitem='SLAUGHT'); recs, labs = records(j); by = {}
     for r, v in recs:
-        if r['unit'] in ('THS_T', 'THS_HD'): by.setdefault((r['meat'], r['unit']), []).append((r['time'], v))
+        if r['unit'] not in ('THS_T', 'THS_HD'): continue
+        if any(c in (r.get('_s') or '') for c in 'zc'): continue  # 'no aplicable' / 'confidencial' no son un 0: no se publican como dato
+        by.setdefault((r['meat'], r['unit']), []).append((r['time'], v))
     for (m, u), pts in by.items():
         name = labs['meat'][m]
         put('at-slaughter-%s-%s' % (u.lower(), m.lower()), 'production', 'Slaughterings: %s (%s)' % (name, 'carcass weight' if u == 'THS_T' else 'head'), 'thousand t' if u == 'THS_T' else 'thousand head', 'annual', pts, {'sourceGroup': 'Eurostat apro_mt_pann'})
