@@ -1299,6 +1299,16 @@
     "world_bank"
    ],
    "notes": "Capa ligera de precios (scripts/build-price-views.py): reparto por region/producto de data/latest.json y data/history.json; cada observacion conserva su sourceId, que es lo que fija la licencia."
+  },
+  "data/products/": {
+   "sources": [
+    "usda_fas_psd",
+    "us_tariffs",
+    "eu_taric",
+    "snice_mx",
+    "cbsa_tariff"
+   ],
+   "notes": "Bloques precalculados de la ficha de producto (scripts/build-product-profiles.py): estructura del comercio mundial (USDA PSD) y resumen de aranceles por partida HS. Cada bloque cita su fuente; la licencia la fija esa fuente."
   }
  },
  "derived": [

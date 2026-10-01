@@ -275,6 +275,12 @@
    [
     "prices_intelligence"
    ]
+  ],
+  "products/*.json": [
+   "product-profile",
+   [
+    "product_profile"
+   ]
   ]
  },
  "derived": [
@@ -296,5 +302,11 @@
   "views/news-feed.json",
   "prices/manifest.json",
   "freshness.json"
+ ],
+ "derivedGlobs": [
+  "products/*.json",
+  "series/*/*.json",
+  "catalog/[A-Z]*.json",
+  "catalog/eu/*.json"
  ]
 }

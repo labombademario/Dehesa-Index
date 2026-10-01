@@ -13,7 +13,7 @@ NOW = FR.today_ord()
 FROM = '2008-01'
 META = json.loads((D / 'product-metadata.json').read_text())  # productos y series UE configuradas: data/product-metadata.json (no en el codigo)
 BU = META['bushelKg']
-PRODUCTS = {pid: dict(eu=tuple(m['compare']['eu']), per=m['compare']['per'], label=m['label']) for pid, m in META['products'].items() if m.get('compare')}
+PRODUCTS = {pid: dict(eu=tuple(m['compare']['eu']), per=m['compare']['per'], label=m['compare']['label']) for pid, m in META['products'].items() if m.get('compare')}
 KG = {'tonelada': 1000.0, '100kg': 100.0, 'cwt': 45.3592}
 MON = {m: i + 1 for i, m in enumerate('JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC'.split())}
 EPOCH = datetime.date(2000, 1, 1)

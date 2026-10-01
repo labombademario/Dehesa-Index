@@ -444,12 +444,47 @@ def consistency_prices(errs, warns):
     if pend: warns.append("relaciones sin las dos series en prices/intelligence (quedan 'pending'): %d de %d (%s)" % (len(pend), len(defs), ", ".join(pend[:6])))
 
 def product_metadata(doc, errs, warns, stats):
+    man = json.loads((D / "prices/manifest.json").read_text(encoding="utf-8"))["regions"]
+    have = {(r, p) for r, v in man.items() for p in v["products"]}
+    anyreg = {p for r, p in have}
+    psd = {c["id"] for c in json.loads((D / "supply-demand.json").read_text(encoding="utf-8"))["commodities"]}
+    heads = set(json.loads((D / "us-tariffs.json").read_text(encoding="utf-8"))["headings"])
     for pid, m in doc["products"].items():
         c = m.get("compare")
         if c and not (D / "eu" / c["eu"][0] / (c["eu"][1] + ".json")).exists(): errs.append("%s: serie UE %s/%s inexistente" % (pid, c["eu"][0], c["eu"][1]))
+        for i in m["instruments"] + m["indices"]:
+            if (i["region"], i["product"]) not in have: errs.append("%s: instrumento %s/%s no existe en prices/manifest.json" % (pid, i["region"], i["product"]))
+        if m.get("psd") and m["psd"] not in psd: errs.append("%s: psd %s no esta en supply-demand.json" % (pid, m["psd"]))
+        for h in m["hs"]:
+            if h not in heads: warns.append("%s: partida HS %s sin datos de arancel" % (pid, h))
+        for r in m["related"]:
+            if r["product"] not in anyreg: errs.append("%s: coste relacionado %s no existe en prices" % (pid, r["product"]))
+            if r["product"] == pid: errs.append("%s: se relaciona consigo mismo" % pid)
     for pid in doc["bushelKg"]:
         if pid not in doc["products"]: errs.append("bushelKg de un producto desconocido: %s" % pid)
     stats["series"] = len(doc["products"])
+
+def product_profile(doc, errs, warns, stats):
+    meta = json.loads((D / "product-metadata.json").read_text(encoding="utf-8"))["products"]
+    m = meta.get(doc["product"])
+    if not m: errs.append("producto %s no esta en product-metadata.json" % doc["product"]); return
+    if bool(m.get("psd")) != bool(doc["trade"]): errs.append("trade %s pero psd=%r en los metadatos" % ("presente" if doc["trade"] else "ausente", m.get("psd")))
+    if bool(m["hs"]) != bool(doc["tariffs"]) and m["hs"]: warns.append("%s: tiene partidas HS pero ningun arancel disponible" % doc["product"])
+    for flow in ("exports", "imports"):
+        f = (doc["trade"] or {}).get(flow)
+        if not f: continue
+        sh = [x["share"] for x in f["top"]]
+        if sh != sorted(sh, reverse=True): errs.append("%s: top no esta ordenado por cuota" % flow)
+        if sum(sh) > f["coveredShare"] + 0.6: errs.append("%s: la suma del top (%.1f) supera la cobertura (%.1f)" % (flow, sum(sh), f["coveredShare"]))
+        if f["hhiLowerBound"] + 1 < sum(x * x for x in sh): errs.append("%s: HHI menor que la suma de cuadrados del top" % flow)
+        if abs(sum(sh[:3]) - f["top3Share"]) > 0.3: errs.append("%s: top3Share incoherente" % flow)
+        for x in f["top"]:
+            if abs(x["value"] / f["world"] * 100 - x["share"]) > 0.02: errs.append("%s: cuota de %s no es valor/mundo" % (flow, x["name"]))
+    for h in (doc["tariffs"] or {}).get("headings", []):
+        for mk, v in h["markets"].items():
+            if mk not in ("US", "EU", "CA", "MX"): errs.append("mercado de arancel desconocido %s" % mk)
+            if v["free"] + v["adv"] + v["spec"] > v["n"] + v["trq"]: errs.append("%s/%s: tipos de derecho mayores que las lineas" % (h["hs"], mk))
+    stats["series"] = 1
 
 def freshness_policy(doc, errs, warns, stats):
     if set(doc["states"]) != {"LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "PENDING"}: errs.append("estados distintos de los 6 definidos")

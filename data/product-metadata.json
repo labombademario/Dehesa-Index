@@ -1,6 +1,6 @@
 {
- "schemaVersion": 1,
- "_doc": "Metadatos curados de producto (no son datos de una fuente). Los lee scripts/build-product-compare.py (series comparables) y, en la ficha de producto, la capa de relaciones. Anadir un producto aqui lo incorpora al comparador sin tocar codigo.",
+ "schemaVersion": 2,
+ "_doc": "Metadatos curados de producto (no son datos de una fuente). Los lee scripts/build-product-compare.py (series comparables) y, en la ficha de producto, la capa de relaciones. Anadir un producto aqui lo incorpora al comparador sin tocar codigo. v2: ficha de producto 3.0 (instrumentos de precio por region, indices, PSD, partidas HS, relaciones de coste justificadas).",
  "bushelKg": {
   "trigo": 27.2155,
   "maiz": 25.4012,
@@ -9,94 +9,659 @@
  },
  "products": {
   "trigo": {
+   "name": {
+    "es": "Trigo",
+    "en": "Wheat",
+    "fr": "Blé",
+    "it": "Frumento"
+   },
+   "group": "cereales",
+   "kind": "crop",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "trigo",
+     "form": "bread_wheat"
+    },
+    {
+     "region": "us",
+     "product": "trigo",
+     "form": "all_wheat"
+    },
+    {
+     "region": "ca",
+     "product": "trigo",
+     "form": "wheat_ref_province"
+    }
+   ],
+   "indices": [
+    {
+     "region": "uk",
+     "product": "defra_wheat_output_index"
+    },
+    {
+     "region": "eu",
+     "product": "eurostat_cereals_output_index"
+    }
+   ],
+   "psd": "trigo",
+   "hs": [
+    "1001"
+   ],
+   "related": [
+    {
+     "product": "urea",
+     "relation": "input",
+     "why": "fertilizer"
+    },
+    {
+     "product": "diesel",
+     "relation": "input",
+     "why": "energy"
+    }
+   ],
    "compare": {
     "eu": [
      "cereales",
      "breadmaking-common-wheat-national-average-not-specified"
     ],
-    "per": 1000
-   },
-   "label": {
-    "es": "Trigo blando",
-    "en": "Bread wheat",
-    "fr": "Blé tendre",
-    "it": "Frumento tenero"
+    "per": 1000,
+    "label": {
+     "es": "Trigo blando",
+     "en": "Bread wheat",
+     "fr": "Blé tendre",
+     "it": "Frumento tenero"
+    }
    }
   },
   "maiz": {
+   "name": {
+    "es": "Maíz",
+    "en": "Maize (corn)",
+    "fr": "Maïs",
+    "it": "Mais"
+   },
+   "group": "cereales",
+   "kind": "crop",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "maiz"
+    },
+    {
+     "region": "us",
+     "product": "maiz"
+    },
+    {
+     "region": "ca",
+     "product": "maiz"
+    }
+   ],
+   "indices": [
+    {
+     "region": "eu",
+     "product": "eurostat_cereals_output_index"
+    }
+   ],
+   "psd": "maiz",
+   "hs": [
+    "1005"
+   ],
+   "related": [
+    {
+     "product": "urea",
+     "relation": "input",
+     "why": "fertilizer"
+    },
+    {
+     "product": "diesel",
+     "relation": "input",
+     "why": "energy"
+    },
+    {
+     "product": "gas_natural",
+     "relation": "input",
+     "why": "energy"
+    }
+   ],
    "compare": {
     "eu": [
      "cereales",
      "feed-maize-national-average-not-specified"
     ],
-    "per": 1000
-   },
-   "label": {
-    "es": "Maíz",
-    "en": "Maize (corn)",
-    "fr": "Maïs",
-    "it": "Mais"
+    "per": 1000,
+    "label": {
+     "es": "Maíz",
+     "en": "Maize (corn)",
+     "fr": "Maïs",
+     "it": "Mais"
+    }
    }
   },
   "cebada": {
+   "name": {
+    "es": "Cebada",
+    "en": "Barley",
+    "fr": "Orge",
+    "it": "Orzo"
+   },
+   "group": "cereales",
+   "kind": "crop",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "cebada"
+    },
+    {
+     "region": "us",
+     "product": "cebada"
+    },
+    {
+     "region": "ca",
+     "product": "cebada"
+    }
+   ],
+   "indices": [
+    {
+     "region": "uk",
+     "product": "defra_barley_output_index"
+    },
+    {
+     "region": "eu",
+     "product": "eurostat_cereals_output_index"
+    }
+   ],
+   "psd": "cebada",
+   "hs": [
+    "1003"
+   ],
+   "related": [],
    "compare": {
     "eu": [
      "cereales",
      "feed-barley-national-average-not-specified"
     ],
-    "per": 1000
-   },
-   "label": {
-    "es": "Cebada forrajera",
-    "en": "Feed barley",
-    "fr": "Orge fourragère",
-    "it": "Orzo da foraggio"
+    "per": 1000,
+    "label": {
+     "es": "Cebada forrajera",
+     "en": "Feed barley",
+     "fr": "Orge fourragère",
+     "it": "Orzo da foraggio"
+    }
    }
   },
   "avena": {
+   "name": {
+    "es": "Avena",
+    "en": "Oats",
+    "fr": "Avoine",
+    "it": "Avena"
+   },
+   "group": "cereales",
+   "kind": "crop",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "avena"
+    },
+    {
+     "region": "us",
+     "product": "avena"
+    },
+    {
+     "region": "ca",
+     "product": "avena"
+    }
+   ],
+   "indices": [],
+   "psd": null,
+   "hs": [
+    "1004"
+   ],
+   "related": [],
    "compare": {
     "eu": [
      "cereales",
      "feed-oats-national-average-not-specified"
     ],
-    "per": 1000
-   },
-   "label": {
-    "es": "Avena",
-    "en": "Oats",
-    "fr": "Avoine",
-    "it": "Avena"
+    "per": 1000,
+    "label": {
+     "es": "Avena",
+     "en": "Oats",
+     "fr": "Avoine",
+     "it": "Avena"
+    }
    }
   },
+  "arroz": {
+   "name": {
+    "es": "Arroz",
+    "en": "Rice",
+    "fr": "Riz",
+    "it": "Riso"
+   },
+   "group": "cereales",
+   "kind": "crop",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "arroz"
+    },
+    {
+     "region": "us",
+     "product": "arroz"
+    }
+   ],
+   "indices": [],
+   "psd": "arroz",
+   "hs": [
+    "1006"
+   ],
+   "related": []
+  },
+  "soja": {
+   "name": {
+    "es": "Soja",
+    "en": "Soybeans",
+    "fr": "Soja",
+    "it": "Soia"
+   },
+   "group": "oleaginosas",
+   "kind": "crop",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "harina_soja",
+     "form": "meal"
+    },
+    {
+     "region": "us",
+     "product": "harina_soja",
+     "form": "meal"
+    },
+    {
+     "region": "ca",
+     "product": "soja_grano",
+     "form": "grain"
+    }
+   ],
+   "indices": [],
+   "psd": "soja",
+   "hs": [
+    "1201",
+    "2304"
+   ],
+   "related": []
+  },
   "colza": {
+   "name": {
+    "es": "Colza (canola)",
+    "en": "Rapeseed (canola)",
+    "fr": "Colza",
+    "it": "Colza"
+   },
+   "group": "oleaginosas",
+   "kind": "crop",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "colza"
+    },
+    {
+     "region": "us",
+     "product": "colza"
+    },
+    {
+     "region": "ca",
+     "product": "colza"
+    }
+   ],
+   "indices": [],
+   "psd": "colza",
+   "hs": [
+    "1205"
+   ],
+   "related": [],
    "compare": {
     "eu": [
      "oleaginosas",
      "rapeseed"
     ],
-    "per": 1000
-   },
-   "label": {
-    "es": "Colza",
-    "en": "Rapeseed (canola)",
-    "fr": "Colza",
-    "it": "Colza"
+    "per": 1000,
+    "label": {
+     "es": "Colza",
+     "en": "Rapeseed (canola)",
+     "fr": "Colza",
+     "it": "Colza"
+    }
    }
   },
   "leche": {
+   "name": {
+    "es": "Leche",
+    "en": "Milk",
+    "fr": "Lait",
+    "it": "Latte"
+   },
+   "group": "lacteos",
+   "kind": "dairy",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "leche"
+    },
+    {
+     "region": "us",
+     "product": "leche"
+    },
+    {
+     "region": "ca",
+     "product": "leche"
+    },
+    {
+     "region": "uk",
+     "product": "leche"
+    }
+   ],
+   "indices": [
+    {
+     "region": "uk",
+     "product": "defra_milk_output_index"
+    },
+    {
+     "region": "eu",
+     "product": "eurostat_milk_output_index"
+    }
+   ],
+   "psd": "leche",
+   "hs": [
+    "0401",
+    "0402"
+   ],
+   "related": [
+    {
+     "product": "maiz",
+     "relation": "feed",
+     "why": "feed"
+    },
+    {
+     "product": "harina_soja",
+     "relation": "feed",
+     "why": "feed"
+    },
+    {
+     "product": "diesel",
+     "relation": "input",
+     "why": "energy"
+    }
+   ],
    "compare": {
     "eu": [
      "leche",
      "raw-milk"
     ],
-    "per": 100
-   },
-   "label": {
-    "es": "Leche cruda",
-    "en": "Raw milk",
-    "fr": "Lait cru",
-    "it": "Latte crudo"
+    "per": 100,
+    "label": {
+     "es": "Leche cruda",
+     "en": "Raw milk",
+     "fr": "Lait cru",
+     "it": "Latte crudo"
+    }
    }
+  },
+  "vacuno": {
+   "name": {
+    "es": "Vacuno",
+    "en": "Beef cattle",
+    "fr": "Bovins",
+    "it": "Bovino"
+   },
+   "group": "ganaderia",
+   "kind": "livestock",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "vaca"
+    },
+    {
+     "region": "us",
+     "product": "vaca"
+    },
+    {
+     "region": "ca",
+     "product": "vaca"
+    }
+   ],
+   "indices": [
+    {
+     "region": "uk",
+     "product": "defra_cattle_output_index"
+    }
+   ],
+   "psd": "vacuno",
+   "hs": [
+    "0201",
+    "0202"
+   ],
+   "related": [
+    {
+     "product": "maiz",
+     "relation": "feed",
+     "why": "feed"
+    },
+    {
+     "product": "harina_soja",
+     "relation": "feed",
+     "why": "feed"
+    },
+    {
+     "product": "diesel",
+     "relation": "input",
+     "why": "energy"
+    }
+   ]
+  },
+  "cerdo": {
+   "name": {
+    "es": "Cerdo",
+    "en": "Pork (pigs)",
+    "fr": "Porc",
+    "it": "Suino"
+   },
+   "group": "ganaderia",
+   "kind": "livestock",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "cerdo"
+    },
+    {
+     "region": "us",
+     "product": "cerdo"
+    },
+    {
+     "region": "ca",
+     "product": "cerdo"
+    }
+   ],
+   "indices": [
+    {
+     "region": "uk",
+     "product": "defra_pigs_output_index"
+    }
+   ],
+   "psd": "cerdo",
+   "hs": [
+    "0203"
+   ],
+   "related": []
+  },
+  "huevos": {
+   "name": {
+    "es": "Huevos",
+    "en": "Eggs",
+    "fr": "Œufs",
+    "it": "Uova"
+   },
+   "group": "ganaderia",
+   "kind": "livestock",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "huevos"
+    },
+    {
+     "region": "us",
+     "product": "huevos"
+    },
+    {
+     "region": "ca",
+     "product": "huevos"
+    }
+   ],
+   "indices": [
+    {
+     "region": "uk",
+     "product": "defra_eggs_output_index"
+    }
+   ],
+   "psd": null,
+   "hs": [
+    "0407",
+    "0408"
+   ],
+   "related": []
+  },
+  "urea": {
+   "name": {
+    "es": "Urea",
+    "en": "Urea",
+    "fr": "Urée",
+    "it": "Urea"
+   },
+   "group": "insumos",
+   "kind": "input",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "urea"
+    }
+   ],
+   "indices": [
+    {
+     "region": "eu",
+     "product": "eurostat_fertiliser_input_index"
+    },
+    {
+     "region": "uk",
+     "product": "defra_fertiliser_input_index"
+    }
+   ],
+   "psd": null,
+   "hs": [
+    "3102"
+   ],
+   "related": []
+  },
+  "fertilizantes": {
+   "name": {
+    "es": "Fertilizantes",
+    "en": "Fertilisers",
+    "fr": "Engrais",
+    "it": "Fertilizzanti"
+   },
+   "group": "insumos",
+   "kind": "input",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "urea",
+     "label": "urea"
+    },
+    {
+     "region": "eu",
+     "product": "dap",
+     "label": "dap"
+    },
+    {
+     "region": "eu",
+     "product": "potasa",
+     "label": "potash"
+    }
+   ],
+   "indices": [
+    {
+     "region": "eu",
+     "product": "eurostat_fertiliser_input_index"
+    },
+    {
+     "region": "uk",
+     "product": "defra_fertiliser_input_index"
+    }
+   ],
+   "psd": null,
+   "hs": [
+    "3102",
+    "3103",
+    "3104",
+    "3105"
+   ],
+   "related": []
+  },
+  "diesel": {
+   "name": {
+    "es": "Diésel",
+    "en": "Diesel",
+    "fr": "Gazole",
+    "it": "Gasolio"
+   },
+   "group": "energia",
+   "kind": "energy",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "diesel"
+    },
+    {
+     "region": "us",
+     "product": "diesel"
+    }
+   ],
+   "indices": [
+    {
+     "region": "eu",
+     "product": "eurostat_energy_input_index"
+    },
+    {
+     "region": "uk",
+     "product": "defra_energy_input_index"
+    }
+   ],
+   "psd": null,
+   "hs": [],
+   "related": []
+  },
+  "oliva": {
+   "name": {
+    "es": "Aceite de oliva",
+    "en": "Olive oil",
+    "fr": "Huile d’olive",
+    "it": "Olio d’oliva"
+   },
+   "group": "aceites",
+   "kind": "other",
+   "instruments": [
+    {
+     "region": "eu",
+     "product": "oliva"
+    }
+   ],
+   "indices": [],
+   "psd": "oliva",
+   "hs": [
+    "1509"
+   ],
+   "related": []
   }
  }
 }

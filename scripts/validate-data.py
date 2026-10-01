@@ -148,8 +148,9 @@ def contract_targets(derived_only=False):
     for rel, (sch, tests) in REG["files"].items():
         if derived_only and rel not in REG["derived"]: continue
         if (DATA / rel).exists() or True: out.append((DATA / rel, rel, sch, tests))
-    if not derived_only:
-        for pat, (sch, tests) in REG["globs"].items():
+    for pat, (sch, tests) in REG["globs"].items():
+        if derived_only and pat not in REG.get("derivedGlobs", []): continue
+        if True:
             for f in sorted(DATA.glob(pat)):
                 if f.name in ("manifest.json",): continue
                 out.append((f, str(f.relative_to(DATA)), sch, tests))
