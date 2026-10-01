@@ -235,9 +235,9 @@
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
    "verifiedAt": "2026-10-01",
-   "status": "PENDING",
+   "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "Reuse rests on the general legal basis for federal works; no explicit reuse page was found on hts.usitc.gov, CBP or USTR.",
+   "evidence": "Reuse rests on the general legal basis for US federal government works (17 U.S.C. 105: no copyright in works of the US Government); no explicit reuse page was found on hts.usitc.gov, CBP or USTR. Accepted by the site owner on 2026-10-01. Derived rates must be labelled informational: the HTS is legally binding only in its official publication.",
    "used": true,
    "aliases": [],
    "notes": null
@@ -1380,10 +1380,6 @@
    "us_drought_monitor": {
     "since": "2026-10-01",
     "nextAction": "Pedir confirmacion a NDMC sobre uso comercial/derivados mas alla del credito obligatorio."
-   },
-   "us_tariffs": {
-    "since": "2026-10-01",
-    "nextAction": "Localizar la declaracion de reutilizacion de USITC/CBP; sin series de catalogo, solo pagina de aranceles."
    },
    "cbsa_tariff": {
     "since": "2026-10-01",
