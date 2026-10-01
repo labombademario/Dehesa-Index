@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-01T06:02:09.458Z",
+  "generatedAt": "2026-10-01T06:51:27.033Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -49418,7 +49418,7 @@
       "unit": "index_2020_100",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:38.540111Z",
+      "verifiedAt": "2026-10-01T06:51:24.690667Z",
       "comparability": "directional",
       "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (cebada, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
       "changePct": 2.5693,
@@ -50179,7 +50179,7 @@
           "value": 117.37
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_defra_cattle_output_index",
@@ -50193,7 +50193,7 @@
       "unit": "index_2020_100",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:38.540111Z",
+      "verifiedAt": "2026-10-01T06:51:24.690667Z",
       "comparability": "directional",
       "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (ganado vacuno y terneros, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
       "changePct": 2.0606,
@@ -50954,7 +50954,7 @@
           "value": 186.23
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_defra_eggs_output_index",
@@ -50968,7 +50968,7 @@
       "unit": "index_2020_100",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:38.540111Z",
+      "verifiedAt": "2026-10-01T06:51:24.690667Z",
       "comparability": "directional",
       "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (huevos, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
       "changePct": 0,
@@ -51729,7 +51729,7 @@
           "value": 180.37
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_defra_energy_input_index",
@@ -51743,7 +51743,7 @@
       "unit": "index_2020_100",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:38.540111Z",
+      "verifiedAt": "2026-10-01T06:51:24.690667Z",
       "comparability": "directional",
       "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (energía y lubricantes, precios pagados), base 2020=100. Es un índice de precios, no un precio en libras.",
       "changePct": -4.6918,
@@ -52504,7 +52504,7 @@
           "value": 161.29
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_defra_feed_input_index",
@@ -52518,7 +52518,7 @@
       "unit": "index_2020_100",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:38.540111Z",
+      "verifiedAt": "2026-10-01T06:51:24.690667Z",
       "comparability": "directional",
       "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (piensos, precios pagados), base 2020=100. Es un índice de precios, no un precio en libras.",
       "changePct": -0.3892,
@@ -53279,7 +53279,7 @@
           "value": 120.3
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_defra_fertiliser_input_index",
@@ -53293,7 +53293,7 @@
       "unit": "index_2020_100",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:38.540111Z",
+      "verifiedAt": "2026-10-01T06:51:24.690667Z",
       "comparability": "directional",
       "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (fertilizantes y enmiendas, precios pagados), base 2020=100. Es un índice de precios, no un precio en libras.",
       "changePct": -9.0934,
@@ -54054,7 +54054,7 @@
           "value": 197.84
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_defra_milk_output_index",
@@ -54068,7 +54068,7 @@
       "unit": "index_2020_100",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:38.540111Z",
+      "verifiedAt": "2026-10-01T06:51:24.690667Z",
       "comparability": "directional",
       "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (leche, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
       "changePct": 1.7206,
@@ -54829,7 +54829,7 @@
           "value": 122.38
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_defra_oilseed_rape_output_index",
@@ -54843,7 +54843,7 @@
       "unit": "index_2020_100",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:38.540111Z",
+      "verifiedAt": "2026-10-01T06:51:24.690667Z",
       "comparability": "directional",
       "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (colza, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
       "changePct": -0.9899,
@@ -55604,7 +55604,7 @@
           "value": 131.02
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_defra_pigs_output_index",
@@ -55618,7 +55618,7 @@
       "unit": "index_2020_100",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:38.540111Z",
+      "verifiedAt": "2026-10-01T06:51:24.690667Z",
       "comparability": "directional",
       "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (cerdos, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
       "changePct": 0.3199,
@@ -56379,7 +56379,7 @@
           "value": 109.77
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_defra_sheep_output_index",
@@ -56393,7 +56393,7 @@
       "unit": "index_2020_100",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:38.540111Z",
+      "verifiedAt": "2026-10-01T06:51:24.690667Z",
       "comparability": "directional",
       "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (ovino y corderos, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
       "changePct": -10.993,
@@ -57154,7 +57154,7 @@
           "value": 172.46
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_defra_wheat_output_index",
@@ -57168,7 +57168,7 @@
       "unit": "index_2020_100",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:38.540111Z",
+      "verifiedAt": "2026-10-01T06:51:24.690667Z",
       "comparability": "directional",
       "methodology": "Defra (Open Government Licence v3.0): Agricultural Price Index del Reino Unido (trigo, precios percibidos), base 2020=100. Es un índice de precios, no un precio en libras.",
       "changePct": 2.1926,
@@ -57929,7 +57929,7 @@
           "value": 111.86
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_diesel_eu",
@@ -105256,7 +105256,7 @@
       "observationDate": "2026-08",
       "publicationDate": "2026-09-24",
       "status": "verified",
-      "verifiedAt": "2026-09-30T17:36:36.063551Z",
+      "verifiedAt": "2026-10-01T06:51:23.325163Z",
       "methodology": "Defra (Open Government Licence v3.0): precio medio en granja de la leche en el Reino Unido, hoja Prices_Monthly, en peniques por litro; se expresa en GBP/100 kg con una densidad de 1,03 kg/l (estándar de la leche de vaca).",
       "comparability": "directional",
       "value": 35.82,
@@ -108656,7 +108656,7 @@
           "value": 35.82
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-01"
     },
     {
       "id": "di_leche_us",
