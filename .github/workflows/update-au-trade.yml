@@ -1,5 +1,7 @@
-name: Probe AU trade
+name: Update Australia trade (ABS)
 on:
+  schedule:
+    - cron: '25 11 5 * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -12,15 +14,15 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/probe-au-trade.py
+      - run: python3 scripts/update-au-trade.py
         timeout-minutes: 20
         continue-on-error: true
       - if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/probe
+          git add data/australia-trade-stats.json data/au-trade-products.json data/australia-trade-log.txt
           git diff --cached --quiet && exit 0
-          git commit -qm "probe"
+          git commit -qm "Datos comercio Australia (ABS)"
           git pull -q --rebase
           git push
