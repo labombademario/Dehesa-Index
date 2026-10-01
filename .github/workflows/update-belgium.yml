@@ -1,3 +1,4 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
 name: Update Belgium (Statbel)
 on:
   schedule:
@@ -19,11 +20,15 @@ jobs:
         run: |
           python3 scripts/validate-data.py --no-report --files data/belgium-stats.json || { echo '::error::datos invalidos: se descarta el cambio'; git checkout -- data/belgium-stats.json; }
           python3 scripts/detect-revisions.py data/belgium-stats.json || true
-      - run: |
+      - name: Publicar
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/belgium-stats.json data/belgium-log.txt data/revisions.json
           git diff --cached --quiet && exit 0
           git commit -qm "Datos Bélgica (Statbel)"
-          git pull -q --rebase
-          git push
+          for i in 1 2 3; do
+            git pull -q --rebase --autostash && git push && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

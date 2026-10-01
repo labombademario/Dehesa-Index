@@ -1,0 +1,125 @@
+# Dehesa Index — definición de los pipelines de datos "estándar" (una fuente -> un script -> uno o varios JSON).
+# Los workflows .github/workflows/update-<id>.yml de estas fuentes se GENERAN con `python3 scripts/gen-workflows.py` (no se editan a mano).
+# `python3 scripts/gen-workflows.py --check` falla si algún workflow generado no coincide con este fichero (lo ejecuta quality.yml).
+# Campos: id, name, cron (lista), script, pre (comandos previos), args, env, dispatch_inputs, timeout (job, min), script_timeout (min),
+#         continue (el script puede fallar y aun así se valida y se publica lo que haya), data (JSON validados y revisados),
+#         extra (otros ficheros a publicar), log, message (mensaje de commit).
+sources:
+  - id: spain
+    name: Update Spain (MAPA)
+    cron: ['35 14 * * 2,5']
+    script: scripts/update-mapa-spain.py
+    data: [spain-stats.json]
+    log: spain-log.txt
+    message: Datos España (MAPA)
+  - id: france
+    name: Update France (FranceAgriMer)
+    cron: ['10 15 * * 2,5']
+    pre: ['pip install openpyxl xlrd']
+    script: scripts/update-france.py
+    data: [france-stats.json]
+    log: france-log.txt
+    message: Datos Francia (FranceAgriMer)
+  - id: germany
+    name: Update Germany (BLE, Destatis)
+    cron: ['30 15 * * 1,4']
+    script: scripts/update-germany.py
+    data: [germany-stats.json]
+    log: germany-log.txt
+    message: Datos Alemania (BLE, Destatis)
+  - id: austria
+    name: Update Austria (Eurostat)
+    cron: ['25 16 * * 2,5']
+    script: scripts/update-austria.py
+    data: [austria-stats.json]
+    log: austria-log.txt
+    message: Datos Austria (Eurostat)
+  - id: belgium
+    name: Update Belgium (Statbel)
+    cron: ['45 15 * * 2,5']
+    pre: ['pip install openpyxl xlrd']
+    script: scripts/update-belgium.py
+    data: [belgium-stats.json]
+    log: belgium-log.txt
+    message: Datos Bélgica (Statbel)
+  - id: portugal
+    name: Update Portugal (INE)
+    cron: ['40 16 * * 2,5']
+    script: scripts/update-portugal.py
+    args: '${{ github.event.inputs.mode }}'
+    script_timeout: 25
+    dispatch_inputs:
+      mode: {description: 'olive = solo aceite de oliva (rápido); vacío = todo', required: false, default: ''}
+    data: [portugal-stats.json]
+    log: portugal-log.txt
+    message: Datos Portugal (INE)
+  - id: portugal-eurostat
+    name: Update Portugal (Eurostat)
+    cron: ['55 16 * * 2,5']
+    script: scripts/update-portugal-eurostat.py
+    data: [portugal-eurostat-stats.json]
+    log: portugal-eurostat-log.txt
+    message: Datos Portugal (Eurostat)
+  - id: canada-stats
+    name: Update Canada stats (Statistics Canada)
+    cron: ['35 15 * * 1,4']
+    script: scripts/update-canada-stats.py
+    env: {ONLY: '${{ github.event.inputs.only }}'}
+    dispatch_inputs:
+      only: {description: 'Funciones a ejecutar (vacío = todas), p. ej. trade', required: false, default: ''}
+    timeout: 30
+    script_timeout: 20
+    continue: true
+    data: [canada-stats.json]
+    log: canada-stats-log.txt
+    message: Datos Canadá (Statistics Canada)
+  - id: country-macro
+    name: Update country macro indicators
+    cron: ['15 7 3 * *']
+    script: scripts/update-country-macro.py
+    timeout: 10
+    continue: true
+    data: [country-macro.json]
+    log: country-macro-log.txt
+    message: Indicadores macro por país
+  - id: us-tariffs
+    name: Update US tariffs (USITC HTS)
+    cron: ['20 8 * * 2,5']
+    script: scripts/update-us-tariffs.py
+    timeout: 30
+    script_timeout: 20
+    continue: true
+    data: [us-tariffs.json]
+    log: us-tariffs-log.txt
+    message: Datos aranceles EE. UU. (USITC HTS)
+  - id: au-trade
+    name: Update Australia trade (ABS)
+    cron: ['25 11 5 * *']
+    script: scripts/update-au-trade.py
+    timeout: 30
+    script_timeout: 20
+    continue: true
+    data: [australia-trade-stats.json]
+    extra: [au-trade-products.json]
+    log: australia-trade-log.txt
+    message: Datos comercio Australia (ABS)
+  - id: eu-trade
+    name: Update EU trade (Eurostat Comext)
+    cron: ['40 9 16,18,22 * *']
+    script: scripts/update-eu-trade.py
+    timeout: 30
+    script_timeout: 20
+    continue: true
+    data: [eu-trade-stats.json]
+    extra: [eu-trade-products.json]
+    log: eu-trade-log.txt
+    message: Datos comercio exterior UE (Eurostat Comext)
+  - id: interest-rates
+    name: Update interest rates
+    cron: ['45 6 * * 1-5']
+    script: scripts/update-interest-rates.py
+    timeout: 10
+    continue: true
+    data: [interest-rates-stats.json]
+    log: interest-rates-log.txt
+    message: Tipos de interés oficiales
