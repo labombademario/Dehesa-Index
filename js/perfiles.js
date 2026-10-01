@@ -101,7 +101,7 @@
   function groupBy(c) { var g = {}; c.series.forEach(function (s) { (g[s.group] = g[s.group] || []).push(s); }); return g; }
   function build() {
     var root = document.getElementById('perfiles-body'); if (!root || !D) return;
-    var t = tt(), l = lb(), h = '';
+    var t = tt(), l = lb(), h = watchPanel();
     if (EUD) h += '<section class="di-card" style="padding:16px 18px;margin-bottom:22px"><div style="display:flex;align-items:center;gap:12px"><span style="font-size:32px" aria-hidden="true">' + window.DIProfile.flag('EU') + '</span><div><div style="font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--text-faint)">' + t.eu.toUpperCase() + '</div><div style="font-size:13px;color:var(--text-muted)">' + t.euSub + '</div></div></div>' + window.DIProfile.macroStrip(MAC && MAC.countries.EU, ctx('EU')) + '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:12px">' + euCards() + '</div><p class="di-movers-hint" style="margin-top:8px">' + t.euNote + ' <a href="europa.html">' + t.euMore + '</a></p></section>';
     h += '<h2 style="margin:0 0 10px;font-size:18px">' + t.countries + '</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:26px">';
     ORDER.forEach(function (cc) {
@@ -112,7 +112,17 @@
     var opts = function (sel) { return ORDER.filter(function (cc) { return D.countries[cc]; }).map(function (cc) { return '<option value="' + cc + '"' + (cc === sel ? ' selected' : '') + '>' + window.DIProfile.flag(cc) + ' ' + esc(l.countries[cc]) + '</option>'; }).join(''); };
     h += '<div style="display:flex;gap:12px;flex-wrap:wrap"><label style="font-size:13px;flex:1;min-width:160px">' + t.a + '<br><select id="pf-a" class="di-compare-select">' + opts(ST.a) + '</select></label><label style="font-size:13px;flex:1;min-width:160px">' + t.b + '<br><select id="pf-b" class="di-compare-select">' + opts(ST.b) + '</select></label></div><div id="pf-cmp">' + compare() + '</div>';
     root.innerHTML = h;
+    Array.prototype.forEach.call(root.querySelectorAll('[data-unwatch]'), function (b) { b.onclick = function () { var a = b.getAttribute('data-unwatch').split('|'); DIWatch.remove(a[0], a[1]); build(); }; });
     ['a', 'b'].forEach(function (k) { var e = document.getElementById('pf-' + k); if (e) e.onchange = function () { ST[k] = e.value; var c = document.getElementById('pf-cmp'); if (c) c.innerHTML = compare(); try { history.replaceState(null, '', '?a=' + ST.a + '&b=' + ST.b + '#comparar'); } catch (x) {} }; });
+  }
+  function watchPanel() {
+    if (!window.DIWatch) return ''; var w = DIWatch.labels[lang()] || DIWatch.labels.es, list = DIWatch.list(), rows = '';
+    list.forEach(function (it) {
+      var c = D.countries[it.c], s = c && c.series.filter(function (x) { return x.id === it.s; })[0]; if (!s) return;
+      var ch = s.changePct, col = ch == null ? 'inherit' : ch >= 0 ? '#2f6b4a' : '#a33';
+      rows += '<div style="display:flex;align-items:center;gap:10px;border-top:1px solid var(--border);padding:8px 0"><span aria-hidden="true">' + window.DIProfile.flag(it.c) + '</span><a href="paises.html?c=' + esc(it.c) + '&g=' + esc(s.group) + '&s=' + esc(s.id) + '" style="flex:1;color:inherit;text-decoration:none" title="' + esc(w.open) + '">' + esc(s.label.length > 80 ? s.label.slice(0, 78) + '…' : s.label) + '<span style="display:block;font-size:11.5px;color:var(--text-muted)">' + esc(CD.plabel(s.latestPeriod, s.frequency)) + '</span></a><b style="font-variant-numeric:tabular-nums">' + nf(s.latest, CD.dec(s.latest)) + ' <span style="font-weight:400;font-size:11.5px;color:var(--text-muted)">' + esc(s.unit) + '</span></b><span style="min-width:62px;text-align:right;color:' + col + '">' + (ch == null ? '' : (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + '</span><button type="button" data-unwatch="' + esc(it.c + '|' + s.id) + '" style="border:0;background:none;cursor:pointer;color:var(--text-muted);font-size:12px">' + esc(w.remove) + '</button></div>';
+    });
+    return '<section class="di-card" style="padding:14px 18px;margin-bottom:22px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">★ ' + esc(w.title.toUpperCase()) + '</div><div class="di-movers-hint" style="margin:4px 0 6px">' + esc(w.hint) + '</div>' + (rows || '<div class="di-movers-hint">' + esc(w.empty) + '</div>') + '</section>';
   }
   function shell() { var t = tt(), h = document.getElementById('pf-h1'), s = document.getElementById('pf-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = 'Dehesa Index — ' + t.title; }
   window.DehesaShared.init('informacion');

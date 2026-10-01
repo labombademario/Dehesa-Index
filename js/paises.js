@@ -66,6 +66,10 @@
     return '<div class="di-movers-hint" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px"><b>' + v[0] + '</b>' + r.map(function (x) { return '<div>' + esc(plabel(x.period, cur.frequency)) + ': ' + v[1] + ' ' + nf(x.old, dec(x.old)) + ' → ' + v[2] + ' <b>' + nf(x.new, dec(x.new)) + '</b>' + (x.pct == null ? '' : ' (' + (x.pct > 0 ? '+' : '') + nf(x.pct, 1) + ' %)') + ' · ' + v[3] + ' ' + esc(String(x.detectedAt).slice(0, 10)) + '</div>'; }).join('') + '</div>';
   }
   fetch('data/revisions.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.revisions) { REV = d.revisions; if (DATA) build(); } }).catch(function () {});
+  function watchBtn(cur) {
+    if (!window.DIWatch) return ''; var w = DIWatch.labels[lang()] || DIWatch.labels.es, on = DIWatch.has(ST.c, cur.id);
+    return ' <button type="button" id="ps-watch" aria-pressed="' + on + '" style="float:right;margin:-4px 0 0 8px;padding:3px 10px;border:1px solid var(--border);border-radius:999px;background:' + (on ? '#e3f0e5' : 'transparent') + ';color:inherit;font:inherit;font-size:12px;letter-spacing:0;cursor:pointer">' + esc(on ? w.following : w.follow) + '</button>';
+  }
   function build() {
     var root = document.getElementById('paises-body'); if (!root || !DATA) return;
     var t = tt(), c = DATA.countries[ST.c] || DATA.countries.ES || DATA.countries.DK;
@@ -85,7 +89,7 @@
       sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + '</div>';
     if (cur) {
       var ch = cur.changePct;
-      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(cur.label.toUpperCase()) + ' (' + esc(cur.unit) + ')</div>' + chartFor(cur) +
+      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(cur.label.toUpperCase()) + ' (' + esc(cur.unit) + ')' + watchBtn(cur) + '</div>' + chartFor(cur) +
         '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div>' + revBox(cur) + '</div>';
     } else html += '<p class="di-movers-hint">' + t.none + '</p>';
     html += '<details style="margin-top:14px"><summary style="cursor:pointer;font-size:13px">' + t.table + '</summary><div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.series.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.latest.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:8px 6px">' + t.period.toUpperCase() + '</th><th style="padding:8px 6px">' + t.unit.toUpperCase() + '</th></tr>' +
@@ -95,6 +99,7 @@
     root.innerHTML = html;
     if (window.DITradePartners) { var tpn = document.getElementById('ps-tp'); if (tpn) window.DITradePartners.mount(tpn, ST.c, lang()); } if (ST.c === 'PT' && window.DIIfapMap) { var im = document.getElementById('ps-ifap'); if (im) window.DIIfapMap.mount(im, lang()); }
     var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; } if (key === 'g') ST.s = null; build(); var n = document.getElementById(id); if (n) n.focus(); }; };
+    var wb = document.getElementById('ps-watch'); if (wb && cur) wb.onclick = function () { DIWatch.toggle(ST.c, cur.id); build(); };
     Array.prototype.forEach.call(root.querySelectorAll('[data-pg],[data-ps]'), function (el) { el.onclick = function () { var g = el.getAttribute('data-pg'), sid = el.getAttribute('data-ps'); if (g) { ST.g = g; ST.s = null; } else { var s = c.series.filter(function (x) { return x.id === sid; })[0]; if (s) { ST.g = s.group; ST.s = sid; } } build(); var e = document.getElementById('ps-explorer'); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
         try { var qq = new URLSearchParams(window.location.search); qq.set('c', ST.c); ['g', 's', 'r'].forEach(function (k) { var v = ST[k]; if (v && v !== 'all' && !(k === 'r' && v === 'max')) qq.set(k, v); else qq.delete(k); }); history.replaceState(null, '', '?' + qq.toString() + window.location.hash); } catch (e) {} bind('ps-c', 'c'); bind('ps-g', 'g'); bind('ps-s', 's'); bind('ps-r', 'r');
   }
