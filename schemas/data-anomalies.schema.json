@@ -1,0 +1,53 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Data anomalies registry",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "doc",
+  "anomalies"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "doc": {
+   "type": "string"
+  },
+  "anomalies": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "series",
+     "file",
+     "status",
+     "detected",
+     "since"
+    ],
+    "properties": {
+     "series": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}/"
+     },
+     "file": {
+      "type": "string"
+     },
+     "status": {
+      "enum": [
+       "KNOWN_VERIFIED_ANOMALY",
+       "UNEXPLAINED_ANOMALY"
+      ]
+     },
+     "detected": {
+      "type": "string",
+      "minLength": 20
+     },
+     "since": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ }
+}

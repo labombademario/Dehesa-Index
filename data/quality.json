@@ -1,12 +1,18 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-01T06:02:10.382Z",
+  "generatedAt": "2026-10-01T06:09:33.729Z",
   "scope": {
     "latestObservations": 81,
     "historyObservations": 21923,
     "verified": 81,
     "pending": 0,
-    "stale": 46,
+    "stale": 2,
+    "freshness": {
+      "LIVE": 46,
+      "FRESH": 32,
+      "STALE": 2,
+      "EXPECTED_DELAY": 1
+    },
     "regions": [
       "eu",
       "us",
@@ -84,6 +90,7 @@
       "frequency": "weekly",
       "historyPoints": 226,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -98,8 +105,9 @@
       "verifiedAt": "2026-09-30T17:32:58.121Z",
       "frequency": "monthly",
       "historyPoints": 560,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_avena_pienso_ab_ca",
@@ -114,6 +122,7 @@
       "frequency": "weekly",
       "historyPoints": 19,
       "ageDays": 6,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -128,8 +137,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 499,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_avena_eu",
@@ -144,6 +154,7 @@
       "frequency": "weekly",
       "historyPoints": 130,
       "ageDays": 60,
+      "freshness": "STALE",
       "stale": true
     },
     {
@@ -158,8 +169,9 @@
       "verifiedAt": "2026-09-30T17:32:59.771Z",
       "frequency": "monthly",
       "historyPoints": 560,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_azucar_azucar_eu",
@@ -173,8 +185,9 @@
       "verifiedAt": "2026-09-30T14:38:25.847Z",
       "frequency": "monthly",
       "historyPoints": 240,
-      "ageDays": 122,
-      "stale": true
+      "ageDays": 93,
+      "freshness": "EXPECTED_DELAY",
+      "stale": false
     },
     {
       "id": "di_cereales_canola_elevador_ca",
@@ -189,6 +202,7 @@
       "frequency": "weekly",
       "historyPoints": 21,
       "ageDays": 6,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -204,6 +218,7 @@
       "frequency": "weekly",
       "historyPoints": 21,
       "ageDays": 6,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -218,8 +233,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 499,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_cebada_eu",
@@ -234,6 +250,7 @@
       "frequency": "weekly",
       "historyPoints": 130,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -248,8 +265,9 @@
       "verifiedAt": "2026-09-30T17:32:59.018Z",
       "frequency": "monthly",
       "historyPoints": 560,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_centeno_eu",
@@ -264,6 +282,7 @@
       "frequency": "weekly",
       "historyPoints": 130,
       "ageDays": 60,
+      "freshness": "STALE",
       "stale": true
     },
     {
@@ -279,6 +298,7 @@
       "frequency": "weekly",
       "historyPoints": 21,
       "ageDays": 6,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -293,8 +313,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 499,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_porcino_cerdo_eu",
@@ -309,6 +330,7 @@
       "frequency": "weekly",
       "historyPoints": 147,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -323,8 +345,9 @@
       "verifiedAt": "2026-09-30T17:33:04.023Z",
       "frequency": "monthly",
       "historyPoints": 560,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_colza_ca",
@@ -338,8 +361,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 499,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_colza_eu",
@@ -354,6 +378,7 @@
       "frequency": "weekly",
       "historyPoints": 66,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -368,8 +393,9 @@
       "verifiedAt": "2026-09-30T17:33:00.689Z",
       "frequency": "monthly",
       "historyPoints": 228,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_ovino_cordero_ca",
@@ -383,8 +409,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 499,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_ovino_cordero_eu",
@@ -399,6 +426,7 @@
       "frequency": "weekly",
       "historyPoints": 141,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -413,8 +441,9 @@
       "verifiedAt": "2026-09-30T14:38:47.205Z",
       "frequency": "monthly",
       "historyPoints": 92,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_defra_barley_output_index",
@@ -428,8 +457,9 @@
       "verifiedAt": "2026-09-30T17:36:38.540111Z",
       "frequency": "monthly",
       "historyPoints": 151,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_defra_cattle_output_index",
@@ -443,8 +473,9 @@
       "verifiedAt": "2026-09-30T17:36:38.540111Z",
       "frequency": "monthly",
       "historyPoints": 151,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_defra_eggs_output_index",
@@ -458,8 +489,9 @@
       "verifiedAt": "2026-09-30T17:36:38.540111Z",
       "frequency": "monthly",
       "historyPoints": 151,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_defra_energy_input_index",
@@ -473,8 +505,9 @@
       "verifiedAt": "2026-09-30T17:36:38.540111Z",
       "frequency": "monthly",
       "historyPoints": 151,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_defra_feed_input_index",
@@ -488,8 +521,9 @@
       "verifiedAt": "2026-09-30T17:36:38.540111Z",
       "frequency": "monthly",
       "historyPoints": 151,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_defra_fertiliser_input_index",
@@ -503,8 +537,9 @@
       "verifiedAt": "2026-09-30T17:36:38.540111Z",
       "frequency": "monthly",
       "historyPoints": 151,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_defra_milk_output_index",
@@ -518,8 +553,9 @@
       "verifiedAt": "2026-09-30T17:36:38.540111Z",
       "frequency": "monthly",
       "historyPoints": 151,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_defra_oilseed_rape_output_index",
@@ -533,8 +569,9 @@
       "verifiedAt": "2026-09-30T17:36:38.540111Z",
       "frequency": "monthly",
       "historyPoints": 151,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_defra_pigs_output_index",
@@ -548,8 +585,9 @@
       "verifiedAt": "2026-09-30T17:36:38.540111Z",
       "frequency": "monthly",
       "historyPoints": 151,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_defra_sheep_output_index",
@@ -563,8 +601,9 @@
       "verifiedAt": "2026-09-30T17:36:38.540111Z",
       "frequency": "monthly",
       "historyPoints": 151,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_defra_wheat_output_index",
@@ -578,8 +617,9 @@
       "verifiedAt": "2026-09-30T17:36:38.540111Z",
       "frequency": "monthly",
       "historyPoints": 151,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_diesel_eu",
@@ -594,6 +634,7 @@
       "frequency": "weekly",
       "historyPoints": 261,
       "ageDays": 3,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -609,6 +650,7 @@
       "frequency": "weekly",
       "historyPoints": 391,
       "ageDays": 3,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -624,6 +666,7 @@
       "frequency": "quarterly",
       "historyPoints": 24,
       "ageDays": 93,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -639,6 +682,7 @@
       "frequency": "quarterly",
       "historyPoints": 24,
       "ageDays": 93,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -654,6 +698,7 @@
       "frequency": "quarterly",
       "historyPoints": 24,
       "ageDays": 93,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -669,6 +714,7 @@
       "frequency": "quarterly",
       "historyPoints": 24,
       "ageDays": 93,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -683,8 +729,9 @@
       "verifiedAt": "2026-09-30T17:34:40Z",
       "frequency": "monthly",
       "historyPoints": 560,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_gas_natural_us",
@@ -699,6 +746,7 @@
       "frequency": "weekly",
       "historyPoints": 357,
       "ageDays": 13,
+      "freshness": "FRESH",
       "stale": false
     },
     {
@@ -713,8 +761,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 473,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_guisante_verde_ab_ca",
@@ -729,6 +778,7 @@
       "frequency": "weekly",
       "historyPoints": 21,
       "ageDays": 6,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -744,6 +794,7 @@
       "frequency": "weekly",
       "historyPoints": 68,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -759,6 +810,7 @@
       "frequency": "weekly",
       "historyPoints": 25,
       "ageDays": 6,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -773,8 +825,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 499,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_avicultura_huevos_eu",
@@ -789,6 +842,7 @@
       "frequency": "weekly",
       "historyPoints": 201,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -803,8 +857,9 @@
       "verifiedAt": "2026-09-30T17:33:03.122Z",
       "frequency": "monthly",
       "historyPoints": 309,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_lacteos_leche_polvo_eu",
@@ -819,6 +874,7 @@
       "frequency": "weekly",
       "historyPoints": 240,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -834,6 +890,7 @@
       "frequency": "weekly",
       "historyPoints": 24,
       "ageDays": 6,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -848,8 +905,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 360,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_leche_eu",
@@ -864,6 +922,7 @@
       "frequency": "monthly",
       "historyPoints": 260,
       "ageDays": 31,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -878,8 +937,9 @@
       "verifiedAt": "2026-09-30T17:36:36.063551Z",
       "frequency": "monthly",
       "historyPoints": 678,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_leche_us",
@@ -893,8 +953,9 @@
       "verifiedAt": "2026-09-30T17:33:02.461Z",
       "frequency": "monthly",
       "historyPoints": 560,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_lenteja_laird_ab_ca",
@@ -909,6 +970,7 @@
       "frequency": "weekly",
       "historyPoints": 21,
       "ageDays": 6,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -923,8 +985,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 475,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_lino_ca",
@@ -938,8 +1001,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 499,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_maiz_ca",
@@ -953,8 +1017,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 499,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_maiz_eu",
@@ -969,6 +1034,7 @@
       "frequency": "weekly",
       "historyPoints": 129,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -983,8 +1049,9 @@
       "verifiedAt": "2026-09-30T17:32:57.293Z",
       "frequency": "monthly",
       "historyPoints": 560,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_lacteos_mantequilla_eu",
@@ -999,6 +1066,7 @@
       "frequency": "weekly",
       "historyPoints": 240,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -1014,6 +1082,7 @@
       "frequency": "weekly",
       "historyPoints": 21,
       "ageDays": 6,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -1029,6 +1098,7 @@
       "frequency": "weekly",
       "historyPoints": 240,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -1044,6 +1114,7 @@
       "frequency": "weekly",
       "historyPoints": 473,
       "ageDays": 13,
+      "freshness": "FRESH",
       "stale": false
     },
     {
@@ -1059,6 +1130,7 @@
       "frequency": "weekly",
       "historyPoints": 489,
       "ageDays": 13,
+      "freshness": "FRESH",
       "stale": false
     },
     {
@@ -1073,8 +1145,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 499,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_avicultura_pollo_eu",
@@ -1089,6 +1162,7 @@
       "frequency": "weekly",
       "historyPoints": 240,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -1103,8 +1177,9 @@
       "verifiedAt": "2026-09-30T17:33:05.754Z",
       "frequency": "monthly",
       "historyPoints": 428,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_fertilizantes_potasa_eu",
@@ -1118,8 +1193,9 @@
       "verifiedAt": "2026-09-30T14:38:47.616Z",
       "frequency": "monthly",
       "historyPoints": 92,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "LIVE",
+      "stale": false
     },
     {
       "id": "di_cereales_soja_grano_ca",
@@ -1133,8 +1209,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 415,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_sorgo_us",
@@ -1148,8 +1225,9 @@
       "verifiedAt": "2026-09-30T17:33:01.562Z",
       "frequency": "monthly",
       "historyPoints": 560,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_trigo_cwrs_ab_ca",
@@ -1164,6 +1242,7 @@
       "frequency": "weekly",
       "historyPoints": 21,
       "ageDays": 6,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -1179,6 +1258,7 @@
       "frequency": "weekly",
       "historyPoints": 21,
       "ageDays": 6,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -1193,8 +1273,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 168,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_cereales_trigo_eu",
@@ -1209,6 +1290,7 @@
       "frequency": "weekly",
       "historyPoints": 107,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -1223,8 +1305,9 @@
       "verifiedAt": "2026-09-30T17:32:56.483Z",
       "frequency": "monthly",
       "historyPoints": 560,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_fertilizantes_urea_eu",
@@ -1238,8 +1321,9 @@
       "verifiedAt": "2026-09-30T17:35:54Z",
       "frequency": "monthly",
       "historyPoints": 560,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_ganado_vaca_ca",
@@ -1253,8 +1337,9 @@
       "verifiedAt": "2026-10-01T05:20:51Z",
       "frequency": "monthly",
       "historyPoints": 415,
-      "ageDays": 92,
-      "stale": true
+      "ageDays": 62,
+      "freshness": "FRESH",
+      "stale": false
     },
     {
       "id": "di_ganado_vaca_eu",
@@ -1269,6 +1354,7 @@
       "frequency": "weekly",
       "historyPoints": 240,
       "ageDays": 11,
+      "freshness": "LIVE",
       "stale": false
     },
     {
@@ -1283,18 +1369,13 @@
       "verifiedAt": "2026-09-30T17:33:05.115Z",
       "frequency": "monthly",
       "historyPoints": 560,
-      "ageDays": 61,
-      "stale": true
+      "ageDays": 31,
+      "freshness": "FRESH",
+      "stale": false
     }
   ],
   "policy": {
-    "staleThresholds": {
-      "daily": 3,
-      "weekly": 14,
-      "monthly": 45,
-      "quarterly": 120,
-      "annual": 450
-    },
-    "note": "Staleness is a QA signal, not a market-quality judgment. Comparability remains source-specific."
+    "engine": "freshness-policy.json (Freshness Engine 2.0: age measured against each source publication calendar)",
+    "note": "stale = DELAYED or STALE. Staleness is a QA signal, not a market-quality judgment. Comparability remains source-specific."
   }
 }

@@ -72,10 +72,11 @@ def quality(doc, errs, warns, stats):
     if sc["latestObservations"] != len(ob): errs.append("scope.latestObservations %d != %d" % (sc["latestObservations"], len(ob)))
     if sc["stale"] != sum(1 for o in ob if o["stale"]): errs.append("scope.stale %d != recuento real %d" % (sc["stale"], sum(1 for o in ob if o["stale"])))
     if sc["verified"] + sc["pending"] != len(ob): errs.append("verified+pending != latestObservations")
-    th = doc["policy"]["staleThresholds"]
     for o in ob:
-        lim = th.get(o["frequency"])
-        if lim is not None and (o["ageDays"] > lim) != o["stale"]: errs.append("%s: stale=%s incoherente con ageDays=%s y umbral %s" % (o["id"], o["stale"], o["ageDays"], lim)); break
+        if o["stale"] != (o["freshness"] in ("DELAYED", "STALE")): errs.append("%s: stale=%s incoherente con freshness=%s" % (o["id"], o["stale"], o["freshness"])); break
+    cnt = {}
+    for o in ob: cnt[o["freshness"]] = cnt.get(o["freshness"], 0) + 1
+    if cnt != sc["freshness"]: errs.append("scope.freshness %s != recuento real %s" % (sc["freshness"], cnt))
 def intelligence(doc, errs, warns, stats):
     s = doc["series"]; stats["series"] = len(s); ids = set()
     for x in s:
@@ -347,6 +348,7 @@ def prices_intelligence(doc, errs, warns, stats):
         if s_["comparability"] == "not_comparable": errs.append("%s: serie no comparable en el motor de relaciones" % k)
 
 def consistency(errs, warns):
+    consistency_freshness(errs, warns)
     consistency_prices(errs, warns)
     _consistency(errs, warns)
 def _consistency(errs, warns):
@@ -415,3 +417,50 @@ def consistency_prices(errs, warns):
         ser = json.loads(f.read_text(encoding="utf-8"))["series"] if f.exists() else {}
         if a not in ser or b not in ser: pend.append("%s/%s" % (reg, rid))
     if pend: warns.append("relaciones sin las dos series en prices/intelligence (quedan 'pending'): %d de %d (%s)" % (len(pend), len(defs), ", ".join(pend[:6])))
+
+def freshness_policy(doc, errs, warns, stats):
+    if set(doc["states"]) != {"LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "PENDING"}: errs.append("estados distintos de los 6 definidos")
+    if not set(doc["okStates"]) <= set(doc["states"]): errs.append("okStates fuera de states")
+    for f in doc["periodDays"]:
+        if f not in doc["defaultLagDays"]: errs.append("frecuencia %s sin rezago por defecto" % f)
+    for s, v in doc["sources"].items():
+        for f, n in v["lagDays"].items():
+            if f not in doc["periodDays"] or not isinstance(n, int) or n < 0 or n > 400: errs.append("%s: rezago %s=%r invalido" % (s, f, n))
+        if len(v["evidence"]) < 20: errs.append("%s: rezago sin evidencia" % s)
+    stats["series"] = len(doc["sources"])
+
+def freshness_report(doc, errs, warns, stats):
+    for blk in ("latest", "catalog"):
+        if sum(doc[blk]["byState"].values()) != doc[blk]["total"]: errs.append("%s: byState no suma total" % blk)
+    if len(doc["latest"]["observations"]) != doc["latest"]["total"]: errs.append("latest.total != filas")
+    if sum(sum(v.values()) for v in doc["catalog"]["bySource"].values()) != doc["catalog"]["total"]: errs.append("catalog.bySource no suma total")
+    late = doc["catalog"]["byState"].get("DELAYED", 0) + doc["catalog"]["byState"].get("STALE", 0)
+    if late != doc["catalog"]["lateTotal"]: errs.append("lateTotal %d != DELAYED+STALE %d" % (doc["catalog"]["lateTotal"], late))
+    stats["series"] = doc["catalog"]["total"]
+    # una fuente cuyo catalogo esta casi todo STALE es una incidencia de datos o de politica: se avisa
+    for s, v in doc["catalog"]["bySource"].items():
+        n = sum(v.values())
+        if n >= 20 and v.get("STALE", 0) / n > 0.5: warns.append("%s: %d de %d series STALE" % (s, v["STALE"], n))
+
+def consistency_freshness(errs, warns):
+    try: fr = load("freshness.json"); man = load("catalog/manifest.json"); lat = load("latest.json"); q = load("quality.json")
+    except Exception as e: errs.append("consistencia freshness: %s" % str(e)[:80]); return
+    if fr["catalog"]["total"] != man["seriesTotal"]: errs.append("freshness.catalog.total %d != manifest.seriesTotal %d" % (fr["catalog"]["total"], man["seriesTotal"]))
+    if fr["latest"]["total"] != len(lat["observations"]): errs.append("freshness.latest.total != latest.json")
+    qs = {o["id"]: o["freshness"] for o in q["observations"]}
+    diff = [o["id"] for o in fr["latest"]["observations"] if qs.get(o["id"]) != o["state"]]
+    # quality.json (JS) y freshness.json (Python) evaluan con el mismo motor; pueden diferir como mucho por el dia en que se construyeron
+    if len(diff) > 3: errs.append("quality.freshness y freshness.json discrepan en %d observaciones (%s)" % (len(diff), diff[:3]))
+
+def data_anomalies(doc, errs, warns, stats):
+    stats["series"] = len(doc["anomalies"]); seen = set()
+    for a in doc["anomalies"]:
+        if a["series"] in seen: errs.append("anomalia repetida %s" % a["series"])
+        seen.add(a["series"])
+        if not (D / a["file"]).exists(): errs.append("%s: fichero %s inexistente" % (a["series"], a["file"])); continue
+        cc, sid = a["series"].split("/", 1)
+        if not any(s["id"] == sid for s in json.loads((D / a["file"]).read_text(encoding="utf-8"))["countries"].get(cc, {}).get("series", [])): errs.append("%s: la serie no existe en %s" % (a["series"], a["file"]))
+        if a["status"] == "KNOWN_VERIFIED_ANOMALY":
+            for k in ("evidence", "verifiedAt", "sourceUrl"):
+                if not a.get(k): errs.append("%s: KNOWN_VERIFIED_ANOMALY sin %s" % (a["series"], k))
+        elif not a.get("hypothesis") or not a.get("nextAction"): errs.append("%s: UNEXPLAINED_ANOMALY sin hipotesis y accion siguiente" % a["series"])

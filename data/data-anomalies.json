@@ -1,0 +1,36 @@
+{
+ "schemaVersion": 1,
+ "doc": "Registro de anomalias de datos detectadas por scripts/validate-data.py. KNOWN_VERIFIED_ANOMALY = explicada y verificada contra la fuente oficial (requiere evidence, verifiedAt y sourceUrl): deja de ser aviso. UNEXPLAINED_ANOMALY = detectada y aun sin explicar o sin verificar: sigue siendo aviso visible hasta que alguien la verifique; la hipotesis no cuenta como evidencia.",
+ "anomalies": [
+  {
+   "series": "AT/at-slaughter-ths_hd-b4110",
+   "file": "austria-stats.json",
+   "status": "UNEXPLAINED_ANOMALY",
+   "detected": "Sacrificios de cordero (miles de cabezas): 0 de 1995 a 2007 y 243,34 en 2008; el aviso salta en 2013 porque la mediana de los 12 puntos previos aun arrastra ceros.",
+   "hypothesis": "Eurostat apro_mt_pann no desglosa 'Lamb' (B4110) hasta 2008: los 0 serian 'no aplicable' y no sacrificios reales (B4100 'Sheepmeat' ya suma ~277 mil cabezas en 1995).",
+   "verification": "PENDIENTE: comparar con los indicadores de estado (flags) de Eurostat para AT/B4110/THS_HD 1995-2007. Sin acceso a Eurostat desde el entorno de pruebas (proxy 403).",
+   "nextAction": "Si los flags confirman 'no aplicable', recortar el tramo inicial de ceros en scripts/update-austria.py y pasar a KNOWN_VERIFIED_ANOMALY.",
+   "since": "2026-10-01"
+  },
+  {
+   "series": "CA/ca-trade-imp-wheat",
+   "file": "canada-stats.json",
+   "status": "UNEXPLAINED_ANOMALY",
+   "detected": "Importaciones mensuales de trigo (CAD millones): 0,0-0,1 durante 1995 y 2,8 en enero de 1996; base minuscula, el salto relativo es x28.",
+   "hypothesis": "Serie con base casi nula (Canada importa muy poco trigo) y granularidad del origen (StatCan 12-10-0163 en miles de CAD): el salto relativo es un efecto de escala, no un error.",
+   "verification": "PENDIENTE: contrastar 1995-12/1996-01 con la tabla 12-10-0163 de Statistics Canada (sin acceso desde el entorno de pruebas).",
+   "nextAction": "Verificar contra la tabla oficial; si coincide, pasar a KNOWN_VERIFIED_ANOMALY con la URL de la consulta.",
+   "since": "2026-10-01"
+  },
+  {
+   "series": "AU/au-imp-wheat",
+   "file": "australia-trade-stats.json",
+   "status": "UNEXPLAINED_ANOMALY",
+   "detected": "Importaciones de trigo (A$ millones): 0,001-0,03 hasta 2002 y 8,944 en enero de 2003, 17,755 en abril de 2003.",
+   "hypothesis": "Importaciones excepcionales durante la sequia de 2002-03 en Australia; coherente con el calendario, pero no verificado contra ABS.",
+   "verification": "PENDIENTE: confirmar los valores de 2003-01..2003-06 en ABS MERCH_IMP (sin acceso desde el entorno de pruebas).",
+   "nextAction": "Verificar contra ABS; si coincide, pasar a KNOWN_VERIFIED_ANOMALY citando la consulta de ABS y la sequia de 2002-03.",
+   "since": "2026-10-01"
+  }
+ ]
+}

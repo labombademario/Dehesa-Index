@@ -119,7 +119,7 @@
     var n = 0;
     S.forEach(function (s) {
       if (s.group === 'rates') return; n++;
-      var age = (now - pms(s.latestPeriod)) / 864e5; if (age <= (MAXAGE[s.frequency] || 80) * 1.5) fresh++;
+      var age = (now - pms(s.latestPeriod)) / 864e5; if (s.fs ? (s.fs === 'LIVE' || s.fs === 'FRESH' || s.fs === 'EXPECTED_DELAY') : age <= (MAXAGE[s.frequency] || 80) * 1.5) fresh++;  // fs: estado del Freshness Engine 2.0 precalculado en el catalogo
       if (s.frequency === 'monthly' || s.frequency === 'weekly' || s.frequency === 'daily') mo++;
       var a = pms(pfirst(s)), b = pms(s.latestPeriod); if (a === a && b === b) yrs.push((b - a) / (365.25 * 864e5));
     });

@@ -46,7 +46,8 @@
      "file",
      "source",
      "sourceId",
-     "licenseId"
+     "licenseId",
+     "fs"
     ],
     "properties": {
      "id": {
@@ -106,6 +107,16 @@
      "licenseId": {
       "type": "string",
       "minLength": 1
+     },
+     "fs": {
+      "enum": [
+       "LIVE",
+       "FRESH",
+       "EXPECTED_DELAY",
+       "DELAYED",
+       "STALE",
+       "PENDING"
+      ]
      }
     }
    }

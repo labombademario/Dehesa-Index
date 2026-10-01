@@ -1,0 +1,53 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Freshness policy",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "states",
+  "okStates",
+  "periodDays",
+  "defaultLagDays",
+  "liveFactor",
+  "grace",
+  "staleAfter",
+  "sources"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "states": {
+   "type": "array",
+   "minItems": 6
+  },
+  "okStates": {
+   "type": "array"
+  },
+  "periodDays": {
+   "type": "object"
+  },
+  "defaultLagDays": {
+   "type": "object"
+  },
+  "liveFactor": {
+   "type": "number"
+  },
+  "grace": {
+   "type": "object"
+  },
+  "staleAfter": {
+   "type": "object"
+  },
+  "sources": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "object",
+    "required": [
+     "lagDays",
+     "evidence"
+    ]
+   }
+  }
+ }
+}

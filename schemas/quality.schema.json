@@ -27,7 +27,8 @@
     "historyObservations",
     "verified",
     "pending",
-    "stale"
+    "stale",
+    "freshness"
    ],
    "properties": {
     "latestObservations": {
@@ -44,6 +45,9 @@
     },
     "stale": {
      "type": "integer"
+    },
+    "freshness": {
+     "type": "object"
     }
    }
   },
@@ -61,7 +65,8 @@
      "observationDate",
      "historyPoints",
      "ageDays",
-     "stale"
+     "stale",
+     "freshness"
     ],
     "properties": {
      "id": {
@@ -93,10 +98,23 @@
       "minimum": 1
      },
      "ageDays": {
-      "type": "integer"
+      "type": [
+       "integer",
+       "null"
+      ]
      },
      "stale": {
       "type": "boolean"
+     },
+     "freshness": {
+      "enum": [
+       "LIVE",
+       "FRESH",
+       "EXPECTED_DELAY",
+       "DELAYED",
+       "STALE",
+       "PENDING"
+      ]
      }
     }
    },
@@ -105,19 +123,14 @@
   "policy": {
    "type": "object",
    "required": [
-    "staleThresholds"
+    "engine"
    ],
    "properties": {
-    "staleThresholds": {
-     "type": "object",
-     "required": [
-      "daily",
-      "weekly",
-      "monthly",
-      "quarterly",
-      "annual"
-     ],
-     "properties": {}
+    "engine": {
+     "type": "string"
+    },
+    "note": {
+     "type": "string"
     }
    }
   }

@@ -13,7 +13,7 @@ const man = JSON.parse(readFileSync(path.join(root, 'data/catalog/manifest.json'
 for (const [cc, e] of Object.entries(man.countries)) {
   if (!e.summary) continue;
   const cat = JSON.parse(readFileSync(path.join(root, 'data', e.catalog), 'utf8'));
-  const S = cat.series.filter(s => s.group !== 'product' && s.format !== 'eu-regions').map(s => ({ id: s.id, label: s.label, group: s.group, frequency: s.freq, latestPeriod: s.latestPeriod, first: s.first }));
+  const S = cat.series.filter(s => s.group !== 'product' && s.format !== 'eu-regions').map(s => ({ id: s.id, label: s.label, group: s.group, frequency: s.freq, latestPeriod: s.latestPeriod, first: s.first, fs: s.fs }));
   const live = DP.coverage(S), pre = e.summary.coverage; n++;
   if (!live && !pre) continue;
   if (!live || !pre) { console.error('FALLO ' + cc + ': uno de los dos es nulo', !!live, !!pre); bad++; continue; }

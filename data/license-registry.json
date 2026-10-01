@@ -1321,6 +1321,9 @@
   "series-registry.json",
   "snapshot-contract.json",
   "watch-index.json",
-  "alberta-weekly-debug.json"
+  "alberta-weekly-debug.json",
+  "freshness.json",
+  "freshness-policy.json",
+  "data-anomalies.json"
  ]
 }

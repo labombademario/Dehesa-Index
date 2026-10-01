@@ -111,7 +111,11 @@ def validate_file(path):
     if sch:
         check(doc, json.loads((SCH / (sch + ".schema.json")).read_text()), "$", errs)
         if not errs:
-            if sch == "country-stats": series_tests(doc, errs, warns, res["stats"])
+            if sch == "country-stats":
+                series_tests(doc, errs, warns, res["stats"]); info, matched = [], set()
+                warns[:] = triage(warns, info, matched); res["info"] = info[:25]
+                for k, a in ANOM.items():
+                    if a["file"] == path.name and k not in matched and a["status"] == "UNEXPLAINED_ANOMALY": warns.append("%s: anomalia registrada que ya no se detecta (cerrarla en data/data-anomalies.json)" % k)
             elif sch == "tariffs": tariff_tests(doc, errs, warns, res["stats"])
             if sch == "country-stats" and res["stats"]["series"] == 0: errs.append("conjunto de datos vacio")
     if isinstance(doc, dict) and doc.get("generatedAt"):
@@ -123,6 +127,17 @@ def validate_file(path):
     res["errors"] = errs[:25]; res["warnings"] = warns[:25]; res["nWarnings"] = len(warns); res["nErrors"] = len(errs)
     return res
 REG = json.loads((SCH / "registry.json").read_text())
+ANOM = {a["series"]: a for a in json.loads((DATA / "data-anomalies.json").read_text())["anomalies"]} if (DATA / "data-anomalies.json").exists() else {}
+def triage(warns, info, matched):
+    """Aviso de salto ligado a una anomalia registrada: KNOWN_VERIFIED -> info (deja de ser aviso); UNEXPLAINED -> sigue siendo aviso, etiquetado."""
+    out = []
+    for w in warns:
+        a = ANOM.get(w.split(":", 1)[0]) if ": salto " in w else None
+        if a: matched.add(a["series"])
+        if a and a["status"] == "KNOWN_VERIFIED_ANOMALY": info.append(w + " [KNOWN_VERIFIED_ANOMALY]")
+        elif a: out.append(w + " [UNEXPLAINED_ANOMALY: ver data/data-anomalies.json]")
+        else: out.append(w)
+    return out
 _SCHEMAS = {}
 def _schema(name):
     if name not in _SCHEMAS: _SCHEMAS[name] = json.loads((SCH / (name + ".schema.json")).read_text())

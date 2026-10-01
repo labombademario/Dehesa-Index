@@ -19,7 +19,7 @@
     if (CC[cc]) return CC[cc];
     return CC[cc] = window.DISeries.country(cc, true).then(function (c) {
       var S = (c.series || []).filter(function (s) { return s.group !== 'product' && s.format !== 'eu-regions'; }).map(function (s) {
-        return { id: s.id, cc: c.country, label: s.label, unit: s.unit, frequency: s.freq, group: s.group, latestPeriod: s.latestPeriod, latest: s.latest, changePct: s.changePct, n: s.n, first: s.first, source: s.source, sourceId: s.sourceId, licenseId: s.licenseId };
+        return { id: s.id, cc: c.country, label: s.label, unit: s.unit, frequency: s.freq, group: s.group, latestPeriod: s.latestPeriod, latest: s.latest, changePct: s.changePct, n: s.n, first: s.first, source: s.source, sourceId: s.sourceId, licenseId: s.licenseId, fs: s.fs };
       });
       return { name: c.name, source: { name: (c.sources || [])[0] || '' }, sources: c.sources || [], series: S };
     }).catch(function (e) { delete CC[cc]; throw e; });

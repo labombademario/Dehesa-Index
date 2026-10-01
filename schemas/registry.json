@@ -217,6 +217,24 @@
    [
     "prices_manifest"
    ]
+  ],
+  "freshness.json": [
+   "freshness",
+   [
+    "freshness_report"
+   ]
+  ],
+  "freshness-policy.json": [
+   "freshness-policy",
+   [
+    "freshness_policy"
+   ]
+  ],
+  "data-anomalies.json": [
+   "data-anomalies",
+   [
+    "data_anomalies"
+   ]
   ]
  },
  "globs": {
@@ -270,6 +288,7 @@
   "views/home-summary.json",
   "views/news-index.json",
   "views/news-feed.json",
-  "prices/manifest.json"
+  "prices/manifest.json",
+  "freshness.json"
  ]
 }
