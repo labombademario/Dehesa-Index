@@ -50,6 +50,7 @@
     });
     return h;
   }
+  function covChip(c) { var v = window.DIProfile.coverage && window.DIProfile.coverage(c.series); if (!v) return ''; return '<span title="Coverage score" style="font-size:11.5px;font-weight:700;border:1px solid var(--border);border-radius:10px;padding:1px 8px;color:' + (v.score >= 75 ? '#2f6b4a' : v.score >= 50 ? '#b7791f' : '#a33') + '">' + v.score + '/100</span>'; }
   function stats(c) {
     var S = c.series, groups = {}, mn = null, mx = null;
     S.forEach(function (s) { groups[s.group] = (groups[s.group] || 0) + 1; var a = s.points[0][0]; if (mn == null || a < mn) mn = a; if (mx == null || s.latestPeriod > mx) mx = s.latestPeriod; });
@@ -106,7 +107,7 @@
     h += '<h2 style="margin:0 0 10px;font-size:18px">' + t.countries + '</h2><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:26px">';
     ORDER.forEach(function (cc) {
       var c = D.countries[cc]; if (!c) return; var s = stats(c);
-      h += '<a class="di-card" href="paises.html?c=' + cc + '" style="display:block;padding:14px 16px;text-decoration:none;color:inherit"><div style="display:flex;align-items:center;gap:10px"><span style="font-size:28px" aria-hidden="true">' + window.DIProfile.flag(cc) + '</span><b style="font-size:15px">' + esc(l.countries[cc]) + '</b></div><div style="font-size:12.5px;color:var(--text-muted);margin-top:8px">' + s.n + ' ' + t.series + ' · ' + s.nc + ' ' + t.cats + '<br>' + t.upto + ': ' + esc(pl(s.mx)) + '</div><div style="font-size:12px;font-weight:700;color:#2f6b4a;margin-top:8px">' + t.open + ' →</div></a>';
+      h += '<a class="di-card" href="paises.html?c=' + cc + '" style="display:block;padding:14px 16px;text-decoration:none;color:inherit"><div style="display:flex;align-items:center;gap:10px"><span style="font-size:28px" aria-hidden="true">' + window.DIProfile.flag(cc) + '</span><b style="font-size:15px;flex:1">' + esc(l.countries[cc]) + '</b>' + covChip(c) + '</div><div style="font-size:12.5px;color:var(--text-muted);margin-top:8px">' + s.n + ' ' + t.series + ' · ' + s.nc + ' ' + t.cats + '<br>' + t.upto + ': ' + esc(pl(s.mx)) + '</div><div style="font-size:12px;font-weight:700;color:#2f6b4a;margin-top:8px">' + t.open + ' →</div></a>';
     });
     h += '</div><h2 id="comparar" style="margin:0 0 8px;font-size:18px">' + t.compare + '</h2>';
     var opts = function (sel) { return ORDER.filter(function (cc) { return D.countries[cc]; }).map(function (cc) { return '<option value="' + cc + '"' + (cc === sel ? ' selected' : '') + '>' + window.DIProfile.flag(cc) + ' ' + esc(l.countries[cc]) + '</option>'; }).join(''); };

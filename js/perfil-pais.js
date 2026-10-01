@@ -101,6 +101,34 @@
     });
     return out.sort(function (a, b) { return b.z - a.z; }).slice(0, 6);
   }
+
+  // Coverage Score: 4 componentes observables (amplitud, frescura, profundidad, frecuencia). Mide cuánto cubrimos nosotros, no la calidad del mercado.
+  var CV = {
+    es: { t: 'Cobertura de datos', sc: 'Puntuación', b: 'Amplitud', f: 'Frescura', d: 'Profundidad', q: 'Frecuencia', bh: 'Bloques cubiertos (mercados, producción, comercio, insumos) de 4', fh: 'Series al día respecto a su frecuencia', dh: 'Años de histórico (mediana; tope 20)', qh: 'Series mensuales o más frecuentes', note: 'Mide cuánto cubrimos nosotros con datos oficiales, no lo importante o desarrollado que es el mercado de un país. Amplitud 30 %, frescura 30 %, profundidad 20 %, frecuencia 20 %.' },
+    en: { t: 'Data coverage', sc: 'Score', b: 'Breadth', f: 'Freshness', d: 'Depth', q: 'Frequency', bh: 'Blocks covered (markets, production, trade, inputs) out of 4', fh: 'Series up to date for their frequency', dh: 'Years of history (median; capped at 20)', qh: 'Monthly or more frequent series', note: 'Measures how much we cover with official data, not how large or developed a country’s market is. Breadth 30%, freshness 30%, depth 20%, frequency 20%.' },
+    fr: { t: 'Couverture des données', sc: 'Score', b: 'Étendue', f: 'Fraîcheur', d: 'Profondeur', q: 'Fréquence', bh: 'Blocs couverts (marchés, production, commerce, intrants) sur 4', fh: 'Séries à jour pour leur fréquence', dh: 'Années d’historique (médiane ; plafond 20)', qh: 'Séries mensuelles ou plus fréquentes', note: 'Mesure ce que nous couvrons avec des données officielles, pas la taille ou le développement du marché d’un pays. Étendue 30 %, fraîcheur 30 %, profondeur 20 %, fréquence 20 %.' },
+    it: { t: 'Copertura dei dati', sc: 'Punteggio', b: 'Ampiezza', f: 'Freschezza', d: 'Profondità', q: 'Frequenza', bh: 'Blocchi coperti (mercati, produzione, commercio, input) su 4', fh: 'Serie aggiornate rispetto alla frequenza', dh: 'Anni di storico (mediana; tetto 20)', qh: 'Serie mensili o più frequenti', note: 'Misura quanto copriamo con dati ufficiali, non quanto è grande o sviluppato il mercato di un paese. Ampiezza 30%, freschezza 30%, profondità 20%, frequenza 20%.' }
+  };
+  function coverage(S) {
+    var blocks = 0, fresh = 0, mo = 0, yrs = [], now = Date.now();
+    ['markets', 'production', 'trade', 'inputs'].forEach(function (k) { if (S.some(function (s) { return BLK[k].indexOf(s.group) > -1; })) blocks++; });
+    var n = 0;
+    S.forEach(function (s) {
+      if (s.group === 'rates') return; n++;
+      var age = (now - pms(s.latestPeriod)) / 864e5; if (age <= (MAXAGE[s.frequency] || 80) * 1.5) fresh++;
+      if (s.frequency === 'monthly' || s.frequency === 'weekly' || s.frequency === 'daily') mo++;
+      var a = pms(s.points[0][0]), b = pms(s.latestPeriod); if (a === a && b === b) yrs.push((b - a) / (365.25 * 864e5));
+    });
+    if (!n) return null; yrs.sort(function (a, b) { return a - b; });
+    var med = yrs.length ? yrs[yrs.length >> 1] : 0, c = { b: blocks / 4, f: fresh / n, d: Math.min(med, 20) / 20, q: mo / n };
+    c.score = Math.round(100 * (0.3 * c.b + 0.3 * c.f + 0.2 * c.d + 0.2 * c.q)); c.years = med; c.blocks = blocks; return c;
+  }
+  function coverageBox(S, x) {
+    var c = coverage(S); if (!c) return ''; var w = CV[x.lang] || CV.es, esc = x.esc, col = c.score >= 75 ? '#2f6b4a' : c.score >= 50 ? '#b7791f' : '#a33';
+    var bar = function (lab, v, hint, txt) { return '<div style="margin:5px 0" title="' + esc(hint) + '"><div style="display:flex;justify-content:space-between;font-size:12px"><span>' + esc(lab) + '</span><b>' + esc(txt) + '</b></div><div style="height:6px;background:var(--surface-alt);border-radius:3px"><div style="height:6px;width:' + Math.round(v * 100) + '%;background:' + col + ';border-radius:3px"></div></div></div>'; };
+    return '<div class="di-card" style="padding:12px 16px;margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center"><div style="min-width:120px"><div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">' + esc(w.t.toUpperCase()) + '</div><div style="font-size:34px;font-weight:700;color:' + col + '">' + c.score + '<span style="font-size:14px;color:var(--text-muted)"> / 100</span></div></div>' +
+      '<div style="flex:1;min-width:240px">' + bar(w.b, c.b, w.bh, c.blocks + '/4') + bar(w.f, c.f, w.fh, Math.round(c.f * 100) + ' %') + bar(w.d, c.d, w.dh, x.nf(c.years, 0)) + bar(w.q, c.q, w.qh, Math.round(c.q * 100) + ' %') + '</div><div class="di-movers-hint" style="flex-basis:100%;margin:0">' + esc(w.note) + '</div></div>';
+  }
   function summary(S, x) {
     var w = W[x.lang] || W.es, esc = x.esc, h = '', tiles = '';
     ['markets', 'production', 'trade', 'inputs'].forEach(function (k) {
@@ -134,7 +162,7 @@
       '<div style="font-size:13px;color:var(--text-muted);text-align:right"><b>' + S.length + '</b> ' + t.total + ' <b>' + gk.length + '</b> ' + t.cats + '<br>' + esc(t.from) + ' ' + esc(x.plabel(minP, 'annual')) + ' ' + t.to + ' ' + esc(x.plabel(maxP, /^\d{4}-\d{2}$/.test(maxP) ? 'monthly' : 'annual')) + '</div></div>';
     h += macroStrip(x.macro, x);
     h += '<div style="margin-top:10px;font-size:12.5px;color:var(--text-muted)">' + esc(t.freq) + ': ' + Object.keys(freqs).map(function (k) { return freqs[k] + ' ' + esc((x.t.freq && x.t.freq[k]) || k); }).join(' · ') + (srcList.length ? '<br>' + esc(t.sources) + ': ' + srcList.map(esc).join(' · ') : '') + '</div></section>';
-    h += summary(S, x);
+    h += coverageBox(S, x) + summary(S, x);
     // KPIs
     var kp = kpis(cc, S, groups);
     if (kp.length) {
@@ -174,5 +202,5 @@
     h += '</div><h2 id="ps-explorer" style="margin:6px 0 12px;font-size:19px">' + esc(t.exploreTitle) + ' ' + esc(x.t.countries[cc] || c.name) + '</h2>';
     return h;
   }
-  window.DIProfile = { html: html, macroStrip: macroStrip, rateOf: rateOf, kpis: kpis, spark: spark, flag: function (cc) { return FLAG[cc] || ''; } };
+  window.DIProfile = { coverage: coverage, html: html, macroStrip: macroStrip, rateOf: rateOf, kpis: kpis, spark: spark, flag: function (cc) { return FLAG[cc] || ''; } };
 })();
