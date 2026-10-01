@@ -1,0 +1,207 @@
+== https://hts.usitc.gov/reststop/currentRelease 200 105 0.4s
+{
+  "name" : "2026HTSRev20",
+  "description" : "2026 HTS Revision 20",
+  "title" : "Revision 20 (2026)"
+}
+== https://hts.usitc.gov/reststop/releaseList 200 81298 0.3s
+[ {
+  "id" : {
+    "timestamp" : 1790166779,
+    "date" : 1790166779000
+  },
+  "name" : "2026HTSRev20",
+  "description" : "2026 HTS Revision 20",
+  "date" : "09/23/2026",
+  "time" : "08:32:59",
+  "title" : "Revision 20 (2026)",
+  "creator" : "Heidi Yoo",
+  "status" : "current",
+  "target" : "09/28/2026",
+  "releaseStartDate" : "09/28/2026",
+  "releaseEndDate" : null,
+  "mergedRevisions" : [ "6ab3c7aa5c44c04ee43d5535" ]
+}, {
+  "id" : {
+    "timestamp" : 1788967674,
+    "date" : 1788967674000
+  },
+  "name" : "2026HTSRev19",
+  "description" : "2026 HTS Revision 19",
+  "date" : "09/09/2026",
+  "time" : "11:27:54",
+  "title" : "Revision 19 (2026)",
+  "creator" : "Heidi Yoo",
+  "status" : "archive",
+  "target" : "09/15/2026",
+  "releaseStartDate" : "09/15/2026",
+  "releaseEndDate" : "09/28/2026",
+  "mergedRevisions" : [ "6aa17bb99c837f5f09233233" ]
+}, {
+  "id" : {
+    "timestamp" : 1787849733,
+    "date" : 1787849733000
+  },
+  "name" : "2026HTSRev18",
+  "description" : "2026 HTS Revision 18",
+  "date" : "08/27/2026",
+  "time" : "12:55:33",
+  "title" : "Revision 18 (2026)",
+  "creator" : "Heidi Yoo",
+  "status" : "archive",
+  "target" : "09/02/2026",
+  "releaseStartDate" : "09/02/2026",
+  "releaseEndDate" : "09/15/2026",
+  "mergedRevisions" : [ "6a906d8bb1445554544ab39f" ]
+}, {
+  "id" : {
+    "timestamp" : 1786730419,
+    "date" : 1786730419000
+  },
+  "name" : "2026HTSRev17",
+  "description" : "2026 HTS Revision 17",
+  "date" : "08/14/2026",
+  "time" : "02:00:19",
+  "title" : "Revis
+== https://hts.usitc.gov/reststop/search?keyword=wheat 200 11439 0.1s
+[ {
+  "htsno" : "1001",
+  "statisticalSuffix" : "",
+  "description" : "Wheat and meslin:",
+  "htscode" : null,
+  "indent" : "0",
+  "footnotes" : [ ],
+  "units" : null,
+  "tariff" : null,
+  "unique" : null,
+  "hasHighlight" : null,
+  "highlightHtsNo" : null,
+  "highlightStatSuffix" : null,
+  "type" : null,
+  "effectivePeriod" : null,
+  "quotaQuantity" : null,
+  "additionalDuties" : null,
+  "general" : null,
+  "other" : null,
+  "special" : null,
+  "status" : null,
+  "htmlStatNote" : null,
+  "selector" : "htsno"
+}, {
+  "htsno" : "1001.11.00.00",
+  "statisticalSuffix" : "00",
+  "description" : "Seed",
+  "htscode" : null,
+  "indent" : "2",
+  "footnotes" : [ ],
+  "units" : [ "kg" ],
+  "tariff" : null,
+  "unique" : null,
+  "hasHighlight" : null,
+  "highlightHtsNo" : null,
+  "highlightStatSuffix" : null,
+  "type" : null,
+  "effectivePeriod" : null,
+  "quotaQuantity" : null,
+  "additionalDuties" : null,
+  "general" : "0.65¢/kg",
+  "other" : "1.5¢/kg",
+  "special" : "Free (A+,AU,BH,CL,CO,D,E, IL,JO,KR,MA,OM,P,PA,PE,S, SG)",
+  "status" : null,
+  "htmlStatNote" : null,
+  "selector" : "htsno"
+}, {
+  "htsno" : "1001.99.00.05",
+  "statisticalSuffix" : "05",
+  "description" : "Canadian western extra strong hard red spring (CWES/HRS) wheat",
+  "htscode" : null,
+  "indent" : "3",
+  "footnotes" : [ ],
+  "units" : [ "kg" ],
+  "tariff" : null,
+  "unique" : null,
+  "hasHighlight" : null,
+  "highlightHtsNo" : null,
+  "highlightStatSuffix" : null,
+  "type" : null,
+  "effectivePeriod" : null,
+  "qu
+== https://hts.usitc.gov/reststop/exportList?from=1001&to=1001&format=JSON&styles=false 200 275 0.1s
+[ {
+  "htsno" : "1001",
+  "indent" : "0",
+  "description" : "Wheat and meslin:",
+  "superior" : null,
+  "units" : [ ],
+  "general" : "",
+  "special" : "",
+  "other" : "",
+  "footnotes" : [ ],
+  "quotaQuantity" : "",
+  "additionalDuties" : "",
+  "addiitionalDuties" : null
+} ]
+== https://hts.usitc.gov/reststop/exportList?from=0201&to=0202&format=JSON&styles=false 200 18593 0.2s
+[ {
+  "htsno" : "0201",
+  "indent" : "0",
+  "description" : "Meat of bovine animals, fresh or chilled:",
+  "superior" : null,
+  "units" : [ ],
+  "general" : "",
+  "special" : "",
+  "other" : "",
+  "footnotes" : [ ],
+  "quotaQuantity" : "",
+  "additionalDuties" : "",
+  "addiitionalDuties" : null
+}, {
+  "htsno" : "0201.10",
+  "indent" : "1",
+  "description" : "Carcasses and half-carcasses:",
+  "superior" : null,
+  "units" : [ ],
+  "general" : "",
+  "special" : "",
+  "other" : "",
+  "footnotes" : [ ],
+  "quotaQuantity" : "",
+  "additionalDuties" : "",
+  "addiitionalDuties" : null
+}, {
+  "htsno" : "0201.10.05",
+  "indent" : "2",
+  "description" : "Described in general note 15 of the tariff schedule and entered pursuant to its provisions",
+  "superior" : null,
+  "units" : [ ],
+  "general" : "4.4¢/kg",
+  "special" : "Free (A+,AU,BH,CL,CO,D,E*, IL,JO,KR,MA,OM,P,PA,PE,S, SG)",
+  "other" : "13.2¢/kg",
+  "footnotes" : [ ],
+  "quotaQuantity" : null,
+  "additionalDuties" : null,
+  "addiitionalDuties" : null
+}, {
+  "htsno" : "0201.10.05.10",
+  "indent" : "3",
+  "description" : "Veal",
+  "superior" : null,
+  "units" : [ "kg" ],
+  "general" : "",
+  "special" : "",
+  "other" : "",
+  "footnotes" : [ ],
+  "quotaQuantity" : null,
+  "additionalDuties" : null,
+  "addiitionalDuties" : null
+}, {
+  "htsno" : "0201.10.05.90",
+  "indent" : "3",
+  "description" : "Other",
+  "superior" : null,
+  "units" : [ "kg" ],
+  "general" : "",
+  "special" : "",
+  "other" : "",
+  "footnotes" : [ ],
+  "quotaQuanti
