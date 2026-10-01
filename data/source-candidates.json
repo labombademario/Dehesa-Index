@@ -1,0 +1,2934 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-01T08:32:24Z",
+ "policy": {
+  "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
+  "states": {
+   "DISCOVERED": "fuente conocida; sin licencia revisada o sin dataset concreto identificado",
+   "LICENSE_REVIEW": "en el registro con licencia PENDING o con condiciones no inequivocas",
+   "READY": "licencia VERIFIED (comercial y derivados) y dataset identificado: puede construirse; canStart=false si hay bloqueos tecnicos",
+   "INGESTING": "en construccion (exige gate READY)",
+   "ACTIVE": "ya integrada segun used=true del registro",
+   "BLOCKED": "RESTRICTED/BLOCKED en el registro o decision documentada: no se usa"
+  },
+  "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
+ },
+ "summary": {
+  "total": 66,
+  "byStatus": {
+   "ACTIVE": 35,
+   "BLOCKED": 8,
+   "DISCOVERED": 18,
+   "LICENSE_REVIEW": 3,
+   "READY": 2
+  },
+  "canStart": [
+   "au_abs_slaughter_state"
+  ],
+  "newCountries": [
+   "AR",
+   "BR",
+   "CN",
+   "MX",
+   "RU",
+   "TR"
+  ]
+ },
+ "candidates": [
+  {
+   "sourceId": "ahdb",
+   "registryId": "ahdb",
+   "country": "UK",
+   "scope": "catalog",
+   "institution": "AHDB (Agriculture and Horticulture Development Board)",
+   "dataset": "Precios de cereales y ganado en GBP/t y por cabeza",
+   "products": [
+    "barley",
+    "cattle",
+    "pigs",
+    "sheep",
+    "wheat"
+   ],
+   "productsConfirmed": false,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "BLOCKED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "no",
+   "derivatives": "no",
+   "lastChecked": "2026-10-01",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "BLOCKED",
+    "reasons": [
+     "Registro: BLOCKED (CUSTOM)"
+    ]
+   },
+   "ingestionStatus": "BLOCKED",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap.md"
+   ],
+   "notes": "Los terminos prohiben scraping y explotacion comercial; solo con licencia escrita."
+  },
+  {
+   "sourceId": "cepea",
+   "registryId": "cepea",
+   "country": "BR",
+   "scope": "outside",
+   "institution": "CEPEA/ESALQ (Brasil)",
+   "dataset": "Indicadores de precio de referencia (soja, maiz, ganado y otros)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "daily",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "RESTRICTED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "no",
+   "derivatives": "no",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "BLOCKED",
+    "reasons": [
+     "Registro: RESTRICTED (CUSTOM)"
+    ]
+   },
+   "ingestionStatus": "BLOCKED",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "claude/paises-datos-abiertos.md"
+   ],
+   "notes": "Uso orientado a widgets con su marca y historico de pago: no automatizar sin permiso."
+  },
+  {
+   "sourceId": "cme",
+   "registryId": "cme",
+   "country": "US",
+   "scope": "catalog",
+   "institution": "CME Group",
+   "dataset": "Futuros agricolas",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "daily",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "BLOCKED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "no",
+   "derivatives": "no",
+   "lastChecked": "2026-10-01",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "BLOCKED",
+    "reasons": [
+     "Registro: BLOCKED (CUSTOM)"
+    ]
+   },
+   "ingestionStatus": "BLOCKED",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "BLOCKED en el registro."
+  },
+  {
+   "sourceId": "conab",
+   "registryId": "conab",
+   "country": "BR",
+   "scope": "outside",
+   "institution": "CONAB (Brasil)",
+   "dataset": "Precios agricolas (+112 productos, +20.000 series historicas)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": false,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "RESTRICTED",
+   "licenseId": "CC-BY-ND-3.0",
+   "commercialReuse": "unclear",
+   "derivatives": "no",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "BLOCKED",
+    "reasons": [
+     "Registro: RESTRICTED (CC-BY-ND-3.0)"
+    ]
+   },
+   "ingestionStatus": "BLOCKED",
+   "technicalBlockers": [
+    "No se vio API documentada"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/paises-datos-abiertos.md"
+   ],
+   "notes": "El sitio declara CC BY-ND 3.0 (sin derivados): convertir o reexpresar es dudoso; preguntar a gesip@conab.gov.br."
+  },
+  {
+   "sourceId": "de_grain_exchanges",
+   "country": "DE",
+   "scope": "catalog",
+   "institution": "Bolsas de cereales (Hamburgo y otras)",
+   "dataset": "Cotizaciones de bolsa",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "daily",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "BLOCKED",
+    "reasons": [
+     "Decision documentada: Decision documentada en claude/alemania.md: no se toca por derechos de las bolsas"
+    ]
+   },
+   "ingestionStatus": "BLOCKED",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "claude/alemania.md"
+   ],
+   "notes": "Bloqueada por decision del proyecto, no por una licencia revisada."
+  },
+  {
+   "sourceId": "dtn",
+   "registryId": "dtn",
+   "country": "US",
+   "scope": "catalog",
+   "institution": "DTN",
+   "dataset": "Precio de urea en EE. UU.",
+   "products": [
+    "fertilizer"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price"
+   ],
+   "frequency": "weekly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "BLOCKED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "no",
+   "derivatives": "no",
+   "lastChecked": "2026-10-01",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "BLOCKED",
+    "reasons": [
+     "Registro: BLOCKED (CUSTOM)"
+    ]
+   },
+   "ingestionStatus": "BLOCKED",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap.md"
+   ],
+   "notes": "Sin licencia publica: PENDIENTE, sin scraping. BLOCKED en el registro."
+  },
+  {
+   "sourceId": "faostat",
+   "registryId": "faostat",
+   "country": "INT",
+   "scope": "outside",
+   "institution": "FAO — FAOSTAT",
+   "dataset": "Estadisticas agricolas internacionales (precios al productor, produccion, comercio)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price",
+    "production",
+    "trade"
+   ],
+   "frequency": "annual",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "RESTRICTED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "no",
+   "derivatives": "yes",
+   "attribution": "FAO. <year>. <dataset>. <access date>. <URL>. Licence: CC-BY-4.0.",
+   "lastChecked": "2026-10-01",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "BLOCKED",
+    "reasons": [
+     "Registro: RESTRICTED (CC-BY-4.0)"
+    ]
+   },
+   "ingestionStatus": "BLOCKED",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "claude/australia-paises-bajos-dinamarca.md",
+    "claude/roadmap-paises.md"
+   ],
+   "notes": "CC BY 4.0 con clausula de no promocion comercial: RESTRICTED en el registro."
+  },
+  {
+   "sourceId": "mla",
+   "registryId": "mla",
+   "country": "AU",
+   "scope": "catalog",
+   "institution": "MLA (Meat & Livestock Australia)",
+   "dataset": "Indicadores de mercado de ganado (precios de granja de Australia)",
+   "products": [
+    "cattle",
+    "sheep"
+   ],
+   "productsConfirmed": false,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": false,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "RESTRICTED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "BLOCKED",
+    "reasons": [
+     "Registro: RESTRICTED (CUSTOM)"
+    ]
+   },
+   "ingestionStatus": "BLOCKED",
+   "technicalBlockers": [
+    "Exige registro (myMLA) y api.mla.com.au rechazo la conexion"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap-paises.md",
+    "claude/australia-paises-bajos-dinamarca.md"
+   ],
+   "notes": "Productos deducidos del nombre de la institucion, no de la nota (productsConfirmed=false)."
+  },
+  {
+   "sourceId": "au_abs_slaughter_state",
+   "registryId": "abs",
+   "country": "AU",
+   "scope": "catalog",
+   "institution": "Australian Bureau of Statistics (API SDMX)",
+   "dataset": "LSTOCK_SLAUGHT: sacrificio trimestral por estado",
+   "products": [
+    "cattle",
+    "pigs",
+    "sheep"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "production"
+   ],
+   "frequency": "quarterly",
+   "access": {
+    "api": true,
+    "csv": null,
+    "json": true
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Australian Bureau of Statistics",
+   "lastChecked": "2026-10-01",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "READY",
+   "technicalBlockers": [],
+   "canStart": true,
+   "evidence": [
+    "claude/australia-paises-bajos-dinamarca.md",
+    "claude/roadmap-paises.md"
+   ],
+   "notes": "Ampliacion P1 del roadmap (desglose por estado). Australia ya tiene sacrificio nacional en el catalogo."
+  },
+  {
+   "sourceId": "de_genesis_api",
+   "registryId": "destatis",
+   "country": "DE",
+   "scope": "catalog",
+   "institution": "Destatis — GENESIS-Online (API con token)",
+   "dataset": "Historico desde 1968 de precios agrarios, insumos completos, produccion por Bundesland, precios y alquileres de tierra",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "input_price",
+    "price",
+    "production"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": true,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "DL-DE-BY-2.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Datenquelle: Statistisches Bundesamt (Destatis), Genesis-Online; Datenlizenz by-2-0",
+   "lastChecked": "2026-10-01",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "READY",
+   "technicalBlockers": [
+    "Requiere cuenta gratuita y token de Destatis que debe crear Mario (secreto GENESIS_TOKEN)",
+    "La API sin registro devuelve la pagina web o redirecciones (307)"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/alemania.md",
+    "claude/roadmap.md"
+   ],
+   "notes": "La licencia del editor (dl-de/by-2.0) esta VERIFIED en el registro; el bloqueo es tecnico, no de licencia."
+  },
+  {
+   "sourceId": "abares",
+   "registryId": "abares",
+   "country": "AU",
+   "scope": "catalog",
+   "institution": "ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences)",
+   "dataset": "Precios de granja y costes/fertilizantes",
+   "products": [
+    "fertilizer"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "LICENSE_REVIEW",
+   "technicalBlockers": [
+    "ABARES bloquea las peticiones desde GitHub Actions y no muestra descarga automatizable"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap-paises.md",
+    "claude/australia-paises-bajos-dinamarca.md"
+   ],
+   "notes": "La parte de precios de granja no enumera productos en la nota."
+  },
+  {
+   "sourceId": "de_ble_balances",
+   "registryId": "ble",
+   "country": "DE",
+   "scope": "catalog",
+   "institution": "BLE (Alemania)",
+   "dataset": "Balances de cereales, oleaginosas y hortalizas desde 1991",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "balance"
+   ],
+   "frequency": "annual",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "Quelle: Bundesanstalt für Landwirtschaft und Ernährung (BLE)",
+   "lastChecked": "2026-10-01",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "LICENSE_REVIEW",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "claude/alemania.md"
+   ],
+   "notes": "Licencia PENDING en el registro (BLE)."
+  },
+  {
+   "sourceId": "sima_gpp",
+   "registryId": "sima_gpp",
+   "country": "PT",
+   "scope": "catalog",
+   "institution": "GPP (Gabinete de Planeamento, Politicas e Administracao Geral) — SIMA",
+   "dataset": "SIMA: precios semanales de bovino, porcino, ovino, caprino, aves, huevos, leche, azeite, cereales, corcho y fruta",
+   "products": [
+    "cattle",
+    "eggs",
+    "milk",
+    "olive",
+    "pigs",
+    "poultry",
+    "sheep"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "weekly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "LICENSE_REVIEW",
+   "technicalBlockers": [
+    "Sin licencia explicita de reutilizacion masiva: falta respuesta escrita del GPP (decision pendiente de Mario)"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap-paises.md",
+    "claude/portugal.md"
+   ],
+   "notes": "Cereales, corcho y fruta figuran en la nota sin detalle de producto y no se cuentan."
+  },
+  {
+   "sourceId": "ar_exchanges",
+   "country": "AR",
+   "scope": "outside",
+   "institution": "Bolsa de Cereales de Buenos Aires y Matba-Rofex",
+   "dataset": "Cotizaciones",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "daily",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "licenseClaim": "Terminos propios (segun notas)",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "claude/paises-datos-abiertos.md"
+   ],
+   "notes": "Pais nuevo."
+  },
+  {
+   "sourceId": "ar_magyp_open_data",
+   "country": "AR",
+   "scope": "outside",
+   "institution": "Ministerio de Agricultura (Argentina) — datos.gob.ar / datos.magyp.gob.ar",
+   "dataset": "SIO Granos, SIO Carnes, monitor lacteo, lana, miel y vino",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "SIO Granos bloquea la lectura automatica (403)",
+    "El enlace de SIO Carnes dio 404",
+    "Datos de operaciones muy granulares: habria que agregarlos con una regla propia"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/paises-datos-abiertos.md"
+   ],
+   "notes": "Licencia y frecuencia no confirmadas en las paginas. Pais nuevo."
+  },
+  {
+   "sourceId": "at_ama_prices",
+   "country": "AT",
+   "scope": "catalog",
+   "institution": "AMA (Agrarmarkt Austria)",
+   "dataset": "Precios semanales/mensuales de mercado",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "weekly",
+   "access": {
+    "api": false,
+    "csv": false,
+    "json": false
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Hoy solo Power BI y PDF; su open data CC BY 4.0 es solo geodatos INVEKOS",
+    "Escribir a AMA pidiendo ficheros y licencia (decision de Mario)"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap-paises.md"
+   ],
+   "notes": "Sin esto los precios de Austria son anuales (Eurostat)."
+  },
+  {
+   "sourceId": "at_gruener_bericht_invekos",
+   "country": "AT",
+   "scope": "catalog",
+   "institution": "BMLUK (Gruener Bericht) / INVEKOS",
+   "dataset": "Superficie ecologica por cultivo despues de 2020",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "production"
+   ],
+   "frequency": "annual",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Comprobar licencia y formato"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap-paises.md"
+   ],
+   "notes": "Statistik Austria open data (CC BY 4.0) no trae estadistica agraria."
+  },
+  {
+   "sourceId": "ca_cgc_aafc",
+   "country": "CA",
+   "scope": "catalog",
+   "institution": "Canadian Grain Commission y AAFC",
+   "dataset": "Estadisticas de cereales y agricultura",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "production",
+    "stocks",
+    "trade"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "licenseClaim": "Open Government Licence – Canada (segun notas; a comprobar dataset a dataset)",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Comprobar licencia dataset a dataset"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap-paises.md"
+   ],
+   "notes": "Prioridad P3 en el roadmap de paises."
+  },
+  {
+   "sourceId": "ca_prairie_provincial_reports",
+   "country": "CA",
+   "scope": "catalog",
+   "institution": "Saskatchewan y Manitoba (informes provinciales de mercado)",
+   "dataset": "Informes provinciales con licencia abierta por comprobar",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "weekly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Comprobar licencia antes de nada"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap-paises.md"
+   ],
+   "notes": "Complementaria a Alberta."
+  },
+  {
+   "sourceId": "ca_statcan_rye",
+   "registryId": "statcan",
+   "country": "CA",
+   "scope": "catalog",
+   "institution": "Statistics Canada",
+   "dataset": "Otra tabla con precio de centeno (por identificar)",
+   "products": [
+    "rye"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": true,
+    "csv": true,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "lastChecked": "2026-10-01",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Falta identificar la tabla: la 32-10-0077 no trae centeno"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap-paises.md"
+   ],
+   "notes": "Licencia del editor VERIFIED; sin tabla identificada no hay nada que ingerir."
+  },
+  {
+   "sourceId": "cn_nbs_mara",
+   "country": "CN",
+   "scope": "outside",
+   "institution": "NBS y MARA (China)",
+   "dataset": "Estadisticas agricolas",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price",
+    "production"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": false,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Difusion limitada, sin API en ingles y terminos poco claros"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/paises-datos-abiertos.md"
+   ],
+   "notes": "No verificado en detalle; descartado para esta fase. Pais nuevo."
+  },
+  {
+   "sourceId": "es_aemet_opendata",
+   "country": "ES",
+   "scope": "catalog",
+   "institution": "AEMET OpenData",
+   "dataset": "Datos meteorologicos",
+   "products": [],
+   "productsConfirmed": true,
+   "metrics": [
+    "agroclimate"
+   ],
+   "frequency": "daily",
+   "access": {
+    "api": true,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Requiere clave de API"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/espana.md"
+   ],
+   "notes": "Licencia y terminos primero (nota del proyecto)."
+  },
+  {
+   "sourceId": "es_esyrce_mapa",
+   "country": "ES",
+   "scope": "catalog",
+   "institution": "MAPA — ESYRCE y anuarios",
+   "dataset": "Superficies y cultivos / anuarios de estadistica",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "production"
+   ],
+   "frequency": "annual",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Licencia y terminos por revisar"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/espana.md"
+   ],
+   "notes": "Alcance por investigar."
+  },
+  {
+   "sourceId": "es_ine_fega",
+   "country": "ES",
+   "scope": "catalog",
+   "institution": "INE y FEGA (Espana)",
+   "dataset": "Estadisticas generales y datos de ayudas",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "other"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Licencia y terminos por revisar"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/espana.md"
+   ],
+   "notes": "Alcance por investigar."
+  },
+  {
+   "sourceId": "es_siar",
+   "country": "ES",
+   "scope": "catalog",
+   "institution": "SIAR (MAPA, Espana)",
+   "dataset": "Datos agroclimaticos diarios por estacion",
+   "products": [],
+   "productsConfirmed": true,
+   "metrics": [
+    "agroclimate"
+   ],
+   "frequency": "daily",
+   "access": {
+    "api": true,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "licenseClaim": "Segun notas, el aviso legal permite reutilizacion comercial y no comercial; falta leer el texto completo y confirmar la atribucion",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "La API exige registro y token que debe crear Mario (secreto SIAR_API_KEY)"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/espana.md",
+    "claude/roadmap.md"
+   ],
+   "notes": "Clima, no precios: no rellena celdas de producto."
+  },
+  {
+   "sourceId": "ibge_sidra",
+   "country": "BR",
+   "scope": "outside",
+   "institution": "IBGE (SIDRA / API de datos agregados)",
+   "dataset": "Produccion agricola y pecuaria y algunos precios",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price",
+    "production"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": true,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "licenseClaim": "API publica sin clave (segun notas); licencia no revisada",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Falta comprobar que tabla trae precio recibido por el productor"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/paises-datos-abiertos.md"
+   ],
+   "notes": "Pais nuevo: no se anade ninguno esta noche."
+  },
+  {
+   "sourceId": "mx_siap_sniim",
+   "country": "MX",
+   "scope": "outside",
+   "institution": "SIAP y SNIIM (Mexico)",
+   "dataset": "Produccion agricola y pecuaria (SIAP); precios diarios de mercados mayoristas (SNIIM)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price",
+    "production"
+   ],
+   "frequency": "daily",
+   "access": {
+    "api": false,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Sin API documentada: los precios se obtienen por formularios (scraping) y algunas paginas bloquean robots"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/paises-datos-abiertos.md"
+   ],
+   "notes": "Contrario a la regla de no scrapear sin permiso. Pais nuevo."
+  },
+  {
+   "sourceId": "pt_ifap_crop_area",
+   "country": "PT",
+   "scope": "catalog",
+   "institution": "IFAP (Portugal)",
+   "dataset": "Superficie agregada por cultivo y concelho",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "production"
+   ],
+   "frequency": "annual",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "licenseClaim": "CC BY 4.0 para el WMS de la campana 2025 (segun notas; no esta en el registro)",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Millones de poligonos: solo si se quiere esa capa"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap-paises.md",
+    "claude/portugal.md"
+   ],
+   "notes": "El visor IFAP ya se usa por WMS; esto seria el dato agregado."
+  },
+  {
+   "sourceId": "pt_siaz_dgadr",
+   "country": "PT",
+   "scope": "catalog",
+   "institution": "SIAZ y DGADR (Portugal)",
+   "dataset": "Por identificar",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "other"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Comprobar licencia y formato"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/roadmap-paises.md"
+   ],
+   "notes": "Alcance por investigar."
+  },
+  {
+   "sourceId": "ru_rosstat_mcx",
+   "country": "RU",
+   "scope": "outside",
+   "institution": "Rosstat y Ministerio de Agricultura (Rusia)",
+   "dataset": "Estadisticas agricolas",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price",
+    "production"
+   ],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Publicacion en ruso con acceso irregular",
+    "Riesgo legal por sanciones para una web con anuncios o empresas (segun notas)"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/paises-datos-abiertos.md"
+   ],
+   "notes": "No verificado en detalle; descartado para esta fase. Pais nuevo."
+  },
+  {
+   "sourceId": "tr_tuik_tmo",
+   "country": "TR",
+   "scope": "outside",
+   "institution": "TUIK y TMO (Turquia)",
+   "dataset": "Estadisticas agricolas y precios de cereales de la TMO",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [
+    "price",
+    "production"
+   ],
+   "frequency": "irregular",
+   "access": {
+    "api": false,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "UNREVIEWED",
+   "commercialReuse": "unknown",
+   "derivatives": "unknown",
+   "lastChecked": "2026-09-30",
+   "verification": "NOT_REVERIFIED",
+   "datasetIdentified": false,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Licencia sin revisar: la fuente no esta en data/license-registry.json"
+    ]
+   },
+   "ingestionStatus": "DISCOVERED",
+   "technicalBlockers": [
+    "Sin API oficial clara en ingles; difusion irregular"
+   ],
+   "canStart": false,
+   "evidence": [
+    "claude/paises-datos-abiertos.md"
+   ],
+   "notes": "No verificado en detalle. Pais nuevo."
+  },
+  {
+   "sourceId": "abs",
+   "registryId": "abs",
+   "country": "AU",
+   "scope": "integrated",
+   "institution": "Australian Bureau of Statistics (Data API)",
+   "dataset": "Ya integrada (76 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "cheese",
+    "fertilizer",
+    "maize",
+    "milk",
+    "pigs",
+    "rapeseed",
+    "sheep",
+    "sugar",
+    "wheat",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price",
+    "production",
+    "trade"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Australian Bureau of Statistics",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "alberta_ag",
+   "registryId": "alberta_ag",
+   "country": "CA",
+   "scope": "integrated",
+   "institution": "Alberta Agriculture and Irrigation — Weekly Market Review",
+   "dataset": "Ya integrada (9 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "oats",
+    "pigs",
+    "rapeseed",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "weekly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "OGL-Alberta",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "bank_of_canada",
+   "registryId": "bank_of_canada",
+   "country": "CA",
+   "scope": "integrated",
+   "institution": "Bank of Canada (Valet API)",
+   "dataset": "Ya integrada (1 series en el catalogo unificado)",
+   "products": [],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "conditional",
+   "derivatives": "conditional",
+   "attribution": "Source: Bank of Canada (note any modifications)",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "bis",
+   "registryId": "bis",
+   "country": "INT",
+   "scope": "integrated",
+   "institution": "Bank for International Settlements (central bank policy rates)",
+   "dataset": "Ya integrada (1 series en el catalogo unificado)",
+   "products": [],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "BIS-TERMS",
+   "commercialReuse": "conditional",
+   "derivatives": "conditional",
+   "attribution": "Source: BIS",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "VERIFIED pero con condiciones no inequivocas: uso comercial conditional, derivados conditional"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "ble",
+   "registryId": "ble",
+   "country": "DE",
+   "scope": "integrated",
+   "institution": "BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de)",
+   "dataset": "Ya integrada (129 series en el catalogo unificado)",
+   "products": [
+    "cattle",
+    "fruit",
+    "milk",
+    "pigs",
+    "poultry",
+    "sheep"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price",
+    "production"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "Quelle: Bundesanstalt für Landwirtschaft und Ernährung (BLE)",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "cbs_nl",
+   "registryId": "cbs_nl",
+   "country": "NL",
+   "scope": "integrated",
+   "institution": "Statistics Netherlands (CBS StatLine)",
+   "dataset": "Ya integrada (67 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "cheese",
+    "fertilizer",
+    "maize",
+    "milk",
+    "potato",
+    "poultry",
+    "rapeseed",
+    "sheep",
+    "sugar",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "production"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "Source: CBS (Statistics Netherlands)",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "cbsa_tariff",
+   "registryId": "cbsa_tariff",
+   "country": "CA",
+   "scope": "integrated",
+   "institution": "Canada Border Services Agency — Customs Tariff",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "defra",
+   "registryId": "defra",
+   "country": "UK",
+   "scope": "integrated",
+   "institution": "UK Defra (gov.uk agricultural statistics)",
+   "dataset": "Ya integrada (12 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "eggs",
+    "energy",
+    "fertilizer",
+    "milk",
+    "pigs",
+    "sheep",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OGL-UK-3.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Defra.",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "destatis",
+   "registryId": "destatis",
+   "country": "DE",
+   "scope": "integrated",
+   "institution": "Destatis (GENESIS-Online)",
+   "dataset": "Ya integrada (136 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "eggs",
+    "energy",
+    "fertilizer",
+    "fruit",
+    "maize",
+    "milk",
+    "pigs",
+    "potato",
+    "poultry",
+    "rapeseed",
+    "rye",
+    "sheep",
+    "sugar",
+    "wheat",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price_index"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "DL-DE-BY-2.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Datenquelle: Statistisches Bundesamt (Destatis), Genesis-Online; Datenlizenz by-2-0",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "dst_dk",
+   "registryId": "dst_dk",
+   "country": "DK",
+   "scope": "integrated",
+   "institution": "Statistics Denmark (StatBank)",
+   "dataset": "Ya integrada (47 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "butter",
+    "cattle",
+    "cheese",
+    "eggs",
+    "energy",
+    "fertilizer",
+    "maize",
+    "milk",
+    "oats",
+    "pigs",
+    "potato",
+    "poultry",
+    "rapeseed",
+    "rye",
+    "sugar",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price",
+    "production"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Statistics Denmark – StatBank.dk/<table code>. For modified data: 'Own calculations based on data from Statistics Denmark.'",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "ecb",
+   "registryId": "ecb",
+   "country": "EU",
+   "scope": "integrated",
+   "institution": "European Central Bank (euro reference rates, ECB Data Portal)",
+   "dataset": "Ya integrada (2 series en el catalogo unificado)",
+   "products": [],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "ESCB-REUSE",
+   "commercialReuse": "yes",
+   "derivatives": "unclear",
+   "attribution": "Source: ECB statistics",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "eia",
+   "registryId": "eia",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "U.S. Energy Information Administration (Open Data API)",
+   "dataset": "Ya integrada (4 series en el catalogo unificado)",
+   "products": [
+    "energy"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "weekly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "conditional",
+   "attribution": "Source: U.S. Energy Information Administration",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "VERIFIED pero con condiciones no inequivocas: derivados conditional"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "eu_agrifood",
+   "registryId": "eu_agrifood",
+   "country": "EU",
+   "scope": "integrated",
+   "institution": "European Commission — Agri-food Data Portal (DG AGRI)",
+   "dataset": "Ya integrada (3063 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "butter",
+    "cattle",
+    "eggs",
+    "fertilizer",
+    "fruit",
+    "maize",
+    "milk",
+    "oats",
+    "olive",
+    "pigs",
+    "potato",
+    "poultry",
+    "rapeseed",
+    "rice",
+    "rye",
+    "sheep",
+    "soy",
+    "sugar",
+    "wheat",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "Source: European Commission, DG AGRI, Agri-food Data Portal",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "eu_oil_bulletin",
+   "registryId": "eu_oil_bulletin",
+   "country": "EU",
+   "scope": "integrated",
+   "institution": "European Commission — Weekly Oil Bulletin (DG ENER)",
+   "dataset": "Ya integrada (1 series en el catalogo unificado)",
+   "products": [
+    "cattle",
+    "energy"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "weekly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "EU-REUSE-2011-833",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "Source: European Commission, DG ENER, Weekly Oil Bulletin",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "eu_taric",
+   "registryId": "eu_taric",
+   "country": "EU",
+   "scope": "integrated",
+   "institution": "European Commission — TARIC / EU customs tariff (DG TAXUD)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "Source: European Commission, DG TAXUD, TARIC (via mirror rousseauxy/taric-opendata; not an authentic source)",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "eurostat",
+   "registryId": "eurostat",
+   "country": "EU",
+   "scope": "integrated",
+   "institution": "Eurostat",
+   "dataset": "Ya integrada (471 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "butter",
+    "cattle",
+    "cheese",
+    "eggs",
+    "energy",
+    "fertilizer",
+    "fruit",
+    "maize",
+    "milk",
+    "oats",
+    "olive",
+    "pigs",
+    "potato",
+    "poultry",
+    "rice",
+    "rye",
+    "sheep",
+    "soy",
+    "sugar",
+    "wheat",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price",
+    "price_index",
+    "production"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "EU-REUSE-2011-833",
+   "commercialReuse": "conditional",
+   "derivatives": "yes",
+   "attribution": "Source: Eurostat (online data code: <code>). Adapted by dehesaindex.com where data are modified.",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "VERIFIED pero con condiciones no inequivocas: uso comercial conditional"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "eurostat_comext",
+   "registryId": "eurostat_comext",
+   "country": "EU",
+   "scope": "integrated",
+   "institution": "Eurostat — Comext international trade in goods",
+   "dataset": "Ya integrada (513 series en el catalogo unificado)",
+   "products": [
+    "eggs",
+    "fertilizer",
+    "fruit",
+    "milk",
+    "olive",
+    "sugar",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "trade"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "EU-REUSE-2011-833",
+   "commercialReuse": "conditional",
+   "derivatives": "yes",
+   "attribution": "Source: Eurostat (Comext). Adapted by dehesaindex.com where applicable.",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "VERIFIED pero con condiciones no inequivocas: uso comercial conditional"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "franceagrimer",
+   "registryId": "franceagrimer",
+   "country": "FR",
+   "scope": "integrated",
+   "institution": "FranceAgriMer (VISIONet)",
+   "dataset": "Ya integrada (47 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "maize",
+    "milk",
+    "oats",
+    "pigs",
+    "rapeseed",
+    "rye",
+    "sheep",
+    "soy",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "LO-2.0",
+   "commercialReuse": "conditional",
+   "derivatives": "conditional",
+   "attribution": "Source : FranceAgriMer – Données originales téléchargées depuis https://visionet.franceagrimer.fr/ – Licence Ouverte 2.0",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "ine_pt",
+   "registryId": "ine_pt",
+   "country": "PT",
+   "scope": "integrated",
+   "institution": "INE — Statistics Portugal",
+   "dataset": "Ya integrada (547 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "butter",
+    "cattle",
+    "cheese",
+    "eggs",
+    "energy",
+    "fertilizer",
+    "fruit",
+    "maize",
+    "milk",
+    "oats",
+    "olive",
+    "pigs",
+    "potato",
+    "poultry",
+    "rice",
+    "rye",
+    "sheep",
+    "sugar",
+    "wheat",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price_index",
+    "production"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fonte: Instituto Nacional de Estatística (INE), CC BY 4.0",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "mapa_es",
+   "registryId": "mapa_es",
+   "country": "ES",
+   "scope": "integrated",
+   "institution": "Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
+   "dataset": "Ya integrada (219 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "eggs",
+    "energy",
+    "fertilizer",
+    "fruit",
+    "maize",
+    "milk",
+    "oats",
+    "olive",
+    "pigs",
+    "potato",
+    "poultry",
+    "rice",
+    "rye",
+    "sheep",
+    "sugar",
+    "wheat",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price",
+    "price_index"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "Fuente: Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "nasa_power",
+   "registryId": "nasa_power",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "NASA POWER (Prediction Of Worldwide Energy Resources)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "NASA Prediction of Worldwide Energy Resources (POWER) Project, accessed <date> from https://power.larc.nasa.gov",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "rba",
+   "registryId": "rba",
+   "country": "AU",
+   "scope": "integrated",
+   "institution": "Reserve Bank of Australia (statistical tables)",
+   "dataset": "Ya integrada (1 series en el catalogo unificado)",
+   "products": [],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Reserve Bank of Australia <year>",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "snice_mx",
+   "registryId": "snice_mx",
+   "country": "MX",
+   "scope": "integrated",
+   "institution": "Mexico — Secretaría de Economía (SNICE, LIGIE tariff)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "statbel",
+   "registryId": "statbel",
+   "country": "BE",
+   "scope": "integrated",
+   "institution": "Statbel (Statistics Belgium)",
+   "dataset": "Ya integrada (123 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cattle",
+    "eggs",
+    "energy",
+    "fertilizer",
+    "fruit",
+    "milk",
+    "pigs",
+    "potato",
+    "poultry",
+    "sheep",
+    "sugar",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price_index",
+    "production"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "STATBEL-OPEN",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Statbel (Statistics Belgium)",
+   "lastChecked": "2026-09-30",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "statcan",
+   "registryId": "statcan",
+   "country": "CA",
+   "scope": "integrated",
+   "institution": "Statistics Canada",
+   "dataset": "Ya integrada (291 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "butter",
+    "cattle",
+    "cheese",
+    "eggs",
+    "energy",
+    "fertilizer",
+    "fruit",
+    "maize",
+    "milk",
+    "oats",
+    "pigs",
+    "potato",
+    "poultry",
+    "rapeseed",
+    "rye",
+    "sheep",
+    "soy",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "input_price",
+    "price",
+    "price_index",
+    "production",
+    "stocks",
+    "trade"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "us_drought_monitor",
+   "registryId": "us_drought_monitor",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "U.S. Drought Monitor (NDMC, USDA, NOAA)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "The U.S. Drought Monitor is jointly produced by the National Drought Mitigation Center at the University of Nebraska-Lincoln, the USDA, NOAA and NASA.",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "us_tariffs",
+   "registryId": "us_tariffs",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USITC Harmonized Tariff Schedule, CBP trade remedies, USTR",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: U.S. International Trade Commission, Harmonized Tariff Schedule of the United States",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "usda_ams_mars",
+   "registryId": "usda_ams_mars",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA AMS Market News (MARS API)",
+   "dataset": "Ya integrada (2 series en el catalogo unificado)",
+   "products": [
+    "milk",
+    "soy"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "weekly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: USDA Agricultural Marketing Service, Market News",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "usda_ers",
+   "registryId": "usda_ers",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "U.S. Department of Agriculture (USDA), Economic Research Service (ERS). <product name>",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "usda_fas_esr",
+   "registryId": "usda_fas_esr",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA FAS — Export Sales Reporting (ESR)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: USDA Foreign Agricultural Service, Export Sales Reporting",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "usda_fas_gats",
+   "registryId": "usda_fas_gats",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA FAS — Global Agricultural Trade System (GATS)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: USDA Foreign Agricultural Service, GATS, based on US Census Bureau trade data",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "usda_fas_psd",
+   "registryId": "usda_fas_psd",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA FAS — Production, Supply and Distribution (PSD Online)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: USDA Foreign Agricultural Service, Production, Supply and Distribution (PSD) Online",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "usda_nass",
+   "registryId": "usda_nass",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA National Agricultural Statistics Service (Quick Stats)",
+   "dataset": "Ya integrada (12 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "eggs",
+    "maize",
+    "milk",
+    "oats",
+    "pigs",
+    "poultry",
+    "rapeseed",
+    "rice",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "world_bank",
+   "registryId": "world_bank",
+   "country": "INT",
+   "scope": "integrated",
+   "institution": "World Bank — Commodity Price Data (Pink Sheet)",
+   "dataset": "Ya integrada (2 series en el catalogo unificado)",
+   "products": [
+    "energy",
+    "fertilizer"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price"
+   ],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "world_bank_wdi",
+   "registryId": "world_bank_wdi",
+   "country": "INT",
+   "scope": "integrated",
+   "institution": "World Bank Open Data (World Development Indicators)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "The World Bank: <indicator name> (World Development Indicators)",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  }
+ ]
+}

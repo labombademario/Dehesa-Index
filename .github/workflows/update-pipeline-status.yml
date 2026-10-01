@@ -62,6 +62,10 @@ jobs:
         run: python3 scripts/build-daily-brief.py
       - name: Observatorio de datos (novedades, movimientos, frescura, cobertura y salud)
         run: python3 scripts/build-observatory.py
+      - name: Cola de fuentes candidatas (License Gate; no ingiere nada)
+        run: python3 scripts/build-source-candidates.py
+      - name: Huecos de cobertura (pais x producto x metrica)
+        run: python3 scripts/build-coverage-gaps.py
       - name: Comprobar coherencia de lo construido (catalogo estricto, contratos de los derivados)
         run: |
           python3 scripts/check-catalog.py --strict
@@ -73,7 +77,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/series-registry.json data/watch-index.json data/daily-brief.json data/product-compare.json data/catalog data/series data/views data/freshness.json data/products data/relationships.json data/observatory.json
+          git add data/series-registry.json data/watch-index.json data/daily-brief.json data/product-compare.json data/catalog data/series data/views data/freshness.json data/products data/relationships.json data/observatory.json data/source-candidates.json data/coverage-gaps.json
           git diff --cached --quiet && exit 0
           git commit -qm "Datos derivados: catalogo, registro, watchlist, comparador y brief"
           for i in 1 2 3; do git pull -q --rebase --autostash && git push && exit 0; sleep $((i * 5)); done

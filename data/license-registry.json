@@ -1337,6 +1337,8 @@
   "freshness.json",
   "freshness-policy.json",
   "data-anomalies.json",
-  "product-metadata.json"
+  "product-metadata.json",
+  "source-candidates.json",
+  "coverage-gaps.json"
  ]
 }

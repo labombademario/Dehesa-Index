@@ -253,6 +253,18 @@
    [
     "observatory"
    ]
+  ],
+  "source-candidates.json": [
+   "source-candidates",
+   [
+    "source_candidates"
+   ]
+  ],
+  "coverage-gaps.json": [
+   "coverage-gaps",
+   [
+    "coverage_gaps"
+   ]
   ]
  },
  "globs": {
@@ -315,7 +327,9 @@
   "views/news-index.json",
   "views/news-feed.json",
   "prices/manifest.json",
-  "freshness.json"
+  "freshness.json",
+  "source-candidates.json",
+  "coverage-gaps.json"
  ],
  "derivedGlobs": [
   "products/*.json",

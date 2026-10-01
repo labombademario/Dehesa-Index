@@ -592,6 +592,111 @@ def observatory(doc, errs, warns, stats):
             elif abs((byd[m["to"]] / byd[m["from"]] - 1) * 100 - m["pct"]) > 0.011: errs.append("%s: el movimiento d30 (%s %%) no se reproduce desde el historico" % (o["k"], m["pct"]))
             done += 1
 
+def source_candidates(doc, errs, warns, stats):
+    """Coherencia de data/source-candidates.json con data/license-registry.json: el License Gate se recalcula aqui de forma independiente del generador."""
+    import importlib.util
+    sp = importlib.util.spec_from_file_location("coverage_model", ROOT / "scripts" / "coverage_model.py"); CM = importlib.util.module_from_spec(sp); sp.loader.exec_module(CM)
+    reg = json.loads((D / "license-registry.json").read_text(encoding="utf-8"))["sources"]
+    man = json.loads((D / "catalog" / "manifest.json").read_text(encoding="utf-8"))["countries"]
+    cs = doc["candidates"]; stats["series"] = len(cs); ids = [c["sourceId"] for c in cs]; today = datetime.date.today().isoformat()
+    if len(ids) != len(set(ids)): errs.append("sourceId repetido en la cola")
+    for c in cs:
+        k = c["sourceId"]; r = reg.get(c.get("registryId")) if c.get("registryId") else None
+        if c.get("registryId") and not r: errs.append("%s: registryId %s no existe en el registro" % (k, c["registryId"])); continue
+        if (r["status"] if r else "UNREVIEWED") != c["licenseStatus"]: errs.append("%s: licenseStatus %s no coincide con el registro (%s)" % (k, c["licenseStatus"], r["status"] if r else "UNREVIEWED"))
+        if r:
+            for a, b in (("licenseId", "licenseId"), ("commercialReuse", "commercialUse"), ("derivatives", "derivatives")):
+                if c.get(a) != r[b]: errs.append("%s: %s no coincide con el registro" % (k, a))
+        elif c["commercialReuse"] != "unknown" or c["derivatives"] != "unknown" or c.get("licenseId") or c.get("attribution"):
+            errs.append("%s: sin entrada en el registro no puede declarar uso comercial, derivados, licencia ni atribucion (licencia inventada)" % k)
+        # gate recalculado
+        if c.get("registryId") is None and "decisionBlock" in c: pass
+        if r and r["status"] in ("RESTRICTED", "BLOCKED"): exp = "BLOCKED"
+        elif not r: exp = "BLOCKED" if c["gate"]["result"] == "BLOCKED" and any("Decision documentada" in x for x in c["gate"]["reasons"]) else "NOT_READY"
+        elif r["status"] == "PENDING": exp = "NOT_READY"
+        else: exp = "READY" if (r["commercialUse"] == "yes" and r["derivatives"] == "yes") else "NOT_READY"
+        if c["gate"]["result"] != exp: errs.append("%s: gate %s pero el registro implica %s" % (k, c["gate"]["result"], exp))
+        st = c["ingestionStatus"]
+        if st == "ACTIVE":
+            if not (r and r.get("used")): errs.append("%s: ACTIVE sin used=true en el registro" % k)
+        else:
+            if r and r.get("used") and c["scope"] == "integrated": errs.append("%s: fuente usada que no figura como ACTIVE" % k)
+            if c["gate"]["result"] == "BLOCKED" and st != "BLOCKED": errs.append("%s: gate BLOCKED pero estado %s" % (k, st))
+            if st == "BLOCKED" and c["gate"]["result"] != "BLOCKED": errs.append("%s: BLOCKED sin gate BLOCKED" % k)
+            if st in ("READY", "INGESTING") and (c["gate"]["result"] != "READY" or not c["datasetIdentified"]): errs.append("%s: %s sin gate READY y dataset identificado (ingesta sin licencia)" % (k, st))
+            if st == "LICENSE_REVIEW" and not r: errs.append("%s: LICENSE_REVIEW sin entrada en el registro" % k)
+            if st == "DISCOVERED" and c["gate"]["result"] == "READY" and c["datasetIdentified"]: errs.append("%s: DISCOVERED con gate READY y dataset identificado deberia ser READY" % k)
+        if c["licenseStatus"] in ("RESTRICTED", "BLOCKED") and st not in ("BLOCKED",): errs.append("%s: licencia %s con estado %s" % (k, c["licenseStatus"], st))
+        if c["canStart"] != (st == "READY" and not c["technicalBlockers"]): errs.append("%s: canStart incoherente" % k)
+        if c["lastChecked"] > today: errs.append("%s: lastChecked en el futuro" % k)
+        for p in c["products"]:
+            if p not in CM.KIND_OF: errs.append("%s: producto %s fuera del vocabulario del catalogo" % (k, p))
+        if c["scope"] == "outside" and (c["country"] in man and man[c["country"]]["entityType"] == "country"): errs.append("%s: scope outside pero el pais ya esta en el catalogo" % k)
+        if c["scope"] == "catalog" and c["country"] not in man: errs.append("%s: scope catalog con pais %s ausente del catalogo" % (k, c["country"]))
+    act = {k for k, v in reg.items() if v.get("used")}
+    if {c["sourceId"] for c in cs if c["ingestionStatus"] == "ACTIVE"} != act: errs.append("las fuentes ACTIVE no coinciden con las used=true del registro")
+    sm = doc["summary"]
+    if sm["total"] != len(cs) or sm["byStatus"] != {s: sum(1 for c in cs if c["ingestionStatus"] == s) for s in sorted({c["ingestionStatus"] for c in cs})}: errs.append("summary.total/byStatus no cuadran")
+    if sm["canStart"] != sorted(c["sourceId"] for c in cs if c["canStart"]): errs.append("summary.canStart no coincide")
+
+def coverage_gaps(doc, errs, warns, stats):
+    """Coherencia de data/coverage-gaps.json: recalcula cada celda desde el catalogo y comprueba que los estados respetan evidencia, candidatas y License Gate."""
+    import importlib.util, collections
+    sp = importlib.util.spec_from_file_location("coverage_model", ROOT / "scripts" / "coverage_model.py"); CM = importlib.util.module_from_spec(sp); sp.loader.exec_module(CM)
+    cand = {c["sourceId"]: c for c in json.loads((D / "source-candidates.json").read_text(encoding="utf-8"))["candidates"]}
+    ST = ["AVAILABLE", "AVAILABLE_OUTSIDE_CATALOG", "STALE", "SOURCE_AVAILABLE_NOT_INGESTED", "LICENSE_PENDING", "MISSING"]
+    mx = doc["matrix"]; stats["series"] = doc["summary"]["cells"]
+    if doc["summary"]["notInMatrix"]["unmappedGroups"]: errs.append("grupos del catalogo sin tipo de metrica: %s (anadirlos a GROUP_METRIC)" % doc["summary"]["notInMatrix"]["unmappedGroups"])
+    ents = {e[0]: e for e in CM.entities()}
+    if set(mx) != set(ents): errs.append("entidades de la matriz != entidades del catalogo")
+    n = collections.Counter(); stale = collections.defaultdict(lambda: [0, set()])
+    for cc, (c0, name, et, files) in sorted(ents.items()):
+        cnt = collections.defaultdict(lambda: [0, 0])
+        for sr in CM.load_series(files):
+            m = CM.GROUP_METRIC.get(sr["group"])
+            if m in (None, "other"): continue
+            ok = sr.get("fs") in ("LIVE", "FRESH", "EXPECTED_DELAY")
+            for t in sr.get("tags") or []:
+                if t in CM.KIND_OF:
+                    cnt[(t, m)][0] += 1; cnt[(t, m)][1] += 1 if ok else 0
+                    if not ok: stale[sr.get("sourceId")][0] += 1; stale[sr.get("sourceId")][1].add((cc, t, m))
+        got = mx.get(cc, {}); tot = 0
+        for p, kind in CM.KIND_OF.items():
+            exp_m = CM.APPLICABLE[kind]
+            if sorted(got.get(p, {})) != sorted(exp_m): errs.append("%s/%s: metricas %s != aplicables %s" % (cc, p, sorted(got.get(p, {})), sorted(exp_m))); continue
+            for m in exp_m:
+                cell = got[p][m]; ns, nf = cnt.get((p, m), (0, 0)); st = cell["state"]; tot += 1; n[st] += 1
+                if cell["series"] != ns or cell["fresh"] != nf: errs.append("%s/%s/%s: series/fresh (%d/%d) no se reproducen desde el catalogo (%d/%d)" % (cc, p, m, cell["series"], cell["fresh"], ns, nf)); continue
+                ext = cell.get("external") or []; cl = cell.get("candidates") or []
+                if st == "AVAILABLE" and nf == 0: errs.append("%s/%s/%s: AVAILABLE sin series frescas" % (cc, p, m))
+                if st == "STALE" and (ns == 0 or nf > 0): errs.append("%s/%s/%s: STALE incoherente" % (cc, p, m))
+                if st not in ("AVAILABLE", "STALE") and ns: errs.append("%s/%s/%s: %s pero hay %d series en el catalogo" % (cc, p, m, st, ns))
+                if st == "AVAILABLE_OUTSIDE_CATALOG" and not ext: errs.append("%s/%s/%s: AVAILABLE_OUTSIDE_CATALOG sin evidencia externa" % (cc, p, m))
+                if st in ("MISSING", "LICENSE_PENDING", "SOURCE_AVAILABLE_NOT_INGESTED") and ext: errs.append("%s/%s/%s: %s con evidencia externa" % (cc, p, m, st))
+                for k in cl:
+                    c = cand.get(k)
+                    if not c: errs.append("%s/%s/%s: candidata %s inexistente" % (cc, p, m, k)); continue
+                    if not c["productsConfirmed"] or p not in c["products"] or m not in c["metrics"] or c["country"] != cc: errs.append("%s/%s/%s: candidata %s no cubre esta celda con producto confirmado" % (cc, p, m, k))
+                if st == "SOURCE_AVAILABLE_NOT_INGESTED" and not any(cand[k]["ingestionStatus"] == "READY" for k in cl if k in cand): errs.append("%s/%s/%s: SOURCE_AVAILABLE_NOT_INGESTED sin candidata READY" % (cc, p, m))
+                if st == "LICENSE_PENDING" and not any(cand[k]["ingestionStatus"] == "LICENSE_REVIEW" or (cand[k]["ingestionStatus"] == "DISCOVERED" and cand[k]["licenseStatus"] == "UNREVIEWED") for k in cl if k in cand): errs.append("%s/%s/%s: LICENSE_PENDING sin candidata en revision" % (cc, p, m))
+                if st in ("MISSING", "LICENSE_PENDING") and any(cand[k]["ingestionStatus"] == "READY" for k in cl if k in cand): errs.append("%s/%s/%s: hay candidata READY y la celda no es SOURCE_AVAILABLE_NOT_INGESTED" % (cc, p, m))
+                for e in ext:
+                    if e["sourceId"] == "usda_fas_psd":
+                        sd = json.loads((D / "supply-demand.json").read_text(encoding="utf-8"))
+                        pid = [k for k, v in CM.PSD_PRODUCT.items() if v == p]
+                        if not any(c["id"] in pid for c in sd["commodities"]): errs.append("%s/%s/%s: evidencia PSD de un producto que no esta en supply-demand.json" % (cc, p, m))
+        cs = doc["countries"][cc]
+        if cs["cells"] != tot or sum(cs["byState"].values()) != tot: errs.append("%s: recuento de celdas por pais incoherente" % cc)
+        if cs["covered"] != cs["byState"]["AVAILABLE"] + cs["byState"]["AVAILABLE_OUTSIDE_CATALOG"]: errs.append("%s: covered != AVAILABLE + AVAILABLE_OUTSIDE_CATALOG" % cc)
+    if doc["summary"]["cells"] != sum(n.values()) or doc["summary"]["byState"] != {s: n.get(s, 0) for s in ST}: errs.append("summary.byState/cells no cuadra con la matriz")
+    for sr in doc["ranking"]["staleSources"]:
+        s = stale.get(sr["sourceId"])
+        if not s or s[0] != sr["staleSeries"] or len(s[1]) != sr["staleCells"]: errs.append("ranking.staleSources[%s] no se reproduce desde el catalogo" % sr["sourceId"])
+    if {x["sourceId"] for x in doc["ranking"]["staleSources"]} != {k for k, v in stale.items() if v[1]}: errs.append("ranking.staleSources incompleto")
+    for r in doc["ranking"]["candidateSources"]:
+        c = cand.get(r["sourceId"])
+        if not c or c["ingestionStatus"] != r["ingestionStatus"] or c["canStart"] != r["canStart"]: errs.append("ranking.candidateSources[%s] no coincide con la cola" % r["sourceId"])
+
 def freshness_policy(doc, errs, warns, stats):
     if set(doc["states"]) != {"LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "PENDING"}: errs.append("estados distintos de los 6 definidos")
     if not set(doc["okStates"]) <= set(doc["states"]): errs.append("okStates fuera de states")
