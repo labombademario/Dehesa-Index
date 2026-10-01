@@ -9,18 +9,21 @@ WDS = "https://www150.statcan.gc.ca/t1/wds/rest/"
 UA = {"User-Agent": "Dehesa-Index-data-bot/1.0", "Content-Type": "application/json"}
 LOG = []; OUT = {}
 def log(*a):
-    s = " ".join(str(x) for x in a); LOG.append(s); print(s, flush=True)
+    s = " ".join("%s" % x for x in a); LOG.append("%s %s" % (time.strftime("%H:%M:%S"), s)); print(s, flush=True)
+    try: (ROOT / "data" / "canada-stats-log.txt").write_text("\n".join(LOG))
+    except Exception: pass
 SC = {"units": 1, "tens": 10, "hundreds": 100, "thousands": 1e3, "millions": 1e6, "billions": 1e9}
 _cache = {}
 def load(pid):
     if pid in _cache: return _cache[pid]
     last = None
-    for i in range(3):
+    for i in range(2):
         try:
             req = urllib.request.Request(WDS + "getFullTableDownloadCSV/%d/en" % pid, headers=UA)
-            info = json.loads(urllib.request.urlopen(req, timeout=90).read())
-            raw = urllib.request.urlopen(urllib.request.Request(info["object"], headers={"User-Agent": UA["User-Agent"]}), timeout=300).read()
+            info = json.loads(urllib.request.urlopen(req, timeout=60).read())
+            raw = urllib.request.urlopen(urllib.request.Request(info["object"], headers={"User-Agent": UA["User-Agent"]}), timeout=150).read()
             z = zipfile.ZipFile(io.BytesIO(raw)); name = [n for n in z.namelist() if n.endswith(".csv") and "MetaData" not in n][0]
+            log("descargada", pid, len(raw) // 1024, "KB")
             rows = list(csv.DictReader(io.TextIOWrapper(z.open(name), encoding="utf-8-sig")))
             _cache[pid] = rows; log("tabla", pid, len(rows), "filas"); return rows
         except Exception as e: last = e; time.sleep(5)

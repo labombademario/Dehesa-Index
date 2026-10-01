@@ -15,6 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/update-canada-stats.py
+        timeout-minutes: 20
+        continue-on-error: true
       - if: always()
         run: |
           git config user.name "github-actions[bot]"
