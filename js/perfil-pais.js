@@ -1,7 +1,7 @@
 /* Perfil de país: resumen de lo que tenemos de cada país (indicadores clave, categorías de datos, socios comerciales, cobertura).
    ES5, sin librerías. Uso: DIProfile.html(cc, country, ctx) devuelve el HTML; ctx = { lang, t, groups, esc, nf, dec, plabel }. */
 (function () {
-  var FLAG = { ES: '🇪🇸', FR: '🇫🇷', DE: '🇩🇪', BE: '🇧🇪', AT: '🇦🇹', PT: '🇵🇹', DK: '🇩🇰', NL: '🇳🇱', CA: '🇨🇦', AU: '🇦🇺' };
+  var FLAG = { EU: '🇪🇺', ES: '🇪🇸', FR: '🇫🇷', DE: '🇩🇪', BE: '🇧🇪', AT: '🇦🇹', PT: '🇵🇹', DK: '🇩🇰', NL: '🇳🇱', CA: '🇨🇦', AU: '🇦🇺' };
   var T = {
     es: { overview: 'Perfil del país', kpi: 'Indicadores clave', explore: 'Qué puedes explorar', go: 'Explorar', series: 'series', last: 'Último dato', dest: 'Principales destinos', orig: 'Principales orígenes', trade: 'Comercio agroalimentario', from: 'Datos desde', to: 'hasta', sources: 'Fuentes', cover: 'Cobertura', exploreTitle: 'Explorar los datos de', examples: 'Por ejemplo', freq: 'Frecuencias', total: 'series en', cats: 'categorías', yr: 'último año completo', since: 'desde', hint: 'Elige una categoría para filtrar el explorador de abajo.' },
     en: { overview: 'Country profile', kpi: 'Key indicators', explore: 'What you can explore', go: 'Explore', series: 'series', last: 'Latest', dest: 'Main destinations', orig: 'Main origins', trade: 'Agri-food trade', from: 'Data from', to: 'to', sources: 'Sources', cover: 'Coverage', exploreTitle: 'Explore the data for', examples: 'For example', freq: 'Frequencies', total: 'series in', cats: 'categories', yr: 'latest full year', since: 'since', hint: 'Pick a category to filter the explorer below.' },
@@ -12,6 +12,33 @@
   var KEY = /exports?: agri|total|milk|leche|lait|cattle|bovine|beef|wheat|cereal|all goods|agri-food|general|pig|hog/i;
   function yearOf(p) { return parseInt(String(p).slice(0, 4), 10) || 0; }
   function score(s) { return yearOf(s.latestPeriod) * 1000 + Math.min(s.points.length, 500) + (KEY.test(s.label) ? 5000 : 0) + (/^Exports?:? .*(agri-food|farm, fishing)/i.test(s.label) ? 8000 : 0) - (s.changePct == null ? 300 : 0); }
+  // KPI elegidos a mano por país (expresiones sobre el id de la serie; se toma la de mayor puntuación que case).
+  var PICKS = {
+    ES: ['^es-perc-leche-vaca$', '^es-perc-trigo$', '^es-perc-aceite$', '^es-perc-(cerdo|porcino)', '^eu-es-trade-exp-agrifood$', '^eu-es-trade-bal-agrifood$'],
+    FR: ['^fr-meat-porc-e$', '^fr-cot-soft-wheat-rouen-fcw-1-fob$', '^fr-meat-(jeune|vache|gros|bovin|jb)', '^eu-fr-trade-exp-agrifood$', '^eu-fr-trade-bal-agrifood$'],
+    DE: ['^de-milk-abhof-std-bayern-konventionell$', '^de-.*(schwein|pig|hog)', '^de-.*(cattle|rind|bovine)', '^eu-de-trade-exp-agrifood$', '^eu-de-trade-bal-agrifood$'],
+    BE: ['^be-out-cereals$', '^be-.*(pig|hog)', '^be-.*(milk|dairy)', '^eu-be-trade-exp-agrifood$', '^eu-be-trade-bal-agrifood$'],
+    AT: ['^at-milk-D1110D$', '^at-milk-D7121$', '^at-milk-D6000$', '^eu-at-trade-exp-agrifood$', '^eu-at-trade-bal-agrifood$'],
+    PT: ['^pt-es-milk-D1110D$', '^eu-pt-trade-exp-olive-oil$', '^eu-pt-trade-exp-agrifood$', '^eu-pt-trade-bal-agrifood$'],
+    DK: ['^dk-milk-prod$', '^dk-pig-slaught$', '^dk-cattle-prod$', '^eu-dk-trade-exp-agrifood$', '^eu-dk-trade-bal-agrifood$'],
+    NL: ['^nl-milk-supply$', '^eu-nl-trade-exp-agrifood$', '^eu-nl-trade-imp-agrifood$', '^eu-nl-trade-bal-agrifood$'],
+    CA: ['^ca-fppi-total-index$', '^ca-milk-fluid-purposes$', '^ca-fppi-cattle-and-calves$', '^ca-fppi-hogs$', '^ca-fppi-grains$'],
+    AU: ['^au-exp-agrifood$', '^au-exp-beef$', '^au-exp-wheat$', '^au-exp-milk$', '^au-xpi-cereals$', '^au-bal-agrifood$']
+  };
+  function picked(cc, S) {
+    var out = [], ids = {};
+    (PICKS[cc] || []).forEach(function (re) {
+      var r = new RegExp(re), m = S.filter(function (s) { return r.test(s.id) && s.points.length >= 6 && !ids[s.id]; }).sort(function (a, b) { return score(b) - score(a); })[0];
+      if (m) { out.push(m); ids[m.id] = 1; }
+    });
+    return out;
+  }
+  function kpis(cc, S, groups) {
+    var kp = picked(cc, S);
+    if (kp.length >= 4) return kp.slice(0, 6);
+    KPI_ORDER.forEach(function (g) { if (kp.length < 6 && groups[g]) { var best = groups[g].filter(function (s) { return s.points.length >= 6 && kp.indexOf(s) < 0; }).sort(function (a, b) { return score(b) - score(a); })[0]; if (best) kp.push(best); } });
+    return kp;
+  }
   function spark(s) {
     var pts = s.points.slice(-36).map(function (p) { return p[1]; }), mn = Math.min.apply(null, pts), mx = Math.max.apply(null, pts), w = 96, h = 28, rg = mx - mn || 1;
     var d = pts.map(function (v, i) { return (i / Math.max(pts.length - 1, 1) * w).toFixed(1) + ',' + (h - 2 - (v - mn) / rg * (h - 4)).toFixed(1); }).join(' ');
@@ -34,8 +61,7 @@
       '<div style="font-size:13px;color:var(--text-muted);text-align:right"><b>' + S.length + '</b> ' + t.total + ' <b>' + gk.length + '</b> ' + t.cats + '<br>' + esc(t.from) + ' ' + esc(x.plabel(minP, 'annual')) + ' ' + t.to + ' ' + esc(x.plabel(maxP, /^\d{4}-\d{2}$/.test(maxP) ? 'monthly' : 'annual')) + '</div></div>';
     h += '<div style="margin-top:10px;font-size:12.5px;color:var(--text-muted)">' + esc(t.freq) + ': ' + Object.keys(freqs).map(function (k) { return freqs[k] + ' ' + esc((x.t.freq && x.t.freq[k]) || k); }).join(' · ') + (srcList.length ? '<br>' + esc(t.sources) + ': ' + srcList.map(esc).join(' · ') : '') + '</div></section>';
     // KPIs
-    var kp = [];
-    KPI_ORDER.forEach(function (g) { if (kp.length < 6 && groups[g]) { var best = groups[g].filter(function (s) { return s.points.length >= 6; }).sort(function (a, b) { return score(b) - score(a); })[0]; if (best) kp.push(best); } });
+    var kp = kpis(cc, S, groups);
     if (kp.length) {
       h += '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin:0 0 8px">' + esc(t.kpi.toUpperCase()) + '</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:20px">';
       kp.forEach(function (s) {
@@ -73,5 +99,5 @@
     h += '</div><h2 id="ps-explorer" style="margin:6px 0 12px;font-size:19px">' + esc(t.exploreTitle) + ' ' + esc(x.t.countries[cc] || c.name) + '</h2>';
     return h;
   }
-  window.DIProfile = { html: html };
+  window.DIProfile = { html: html, kpis: kpis, spark: spark, flag: function (cc) { return FLAG[cc] || ''; } };
 })();

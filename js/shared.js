@@ -70,6 +70,7 @@
   // Hojas: { file, query?, hash?, label }. Ramas: { items: [...], label } (se despliegan dentro del menú).
   var NAV_GROUPS = {
     data: { label: { es: 'Datos', en: 'Data', fr: 'Données', it: 'Dati' }, items: [
+      { file: 'perfiles.html', label: { es: 'Perfiles de país y comparador', en: 'Country profiles and comparison', fr: 'Profils de pays et comparateur', it: 'Profili paese e confronto' } },
       { label: { es: 'EE. UU.', en: 'United States', fr: 'États-Unis', it: 'Stati Uniti' }, items: [
         { file: 'mercados.html', label: { es: 'Mercados USDA', en: 'USDA markets', fr: 'Marchés USDA', it: 'Mercati USDA' } },
         { file: 'exportaciones.html', label: { es: 'Exportaciones', en: 'Exports', fr: 'Exportations', it: 'Esportazioni' } },

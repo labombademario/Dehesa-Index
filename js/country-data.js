@@ -1,0 +1,38 @@
+/* Dehesa Index — carga común de datos por país (mismos ficheros que paises.js) y etiquetas compartidas. ES5. */
+(function () {
+  'use strict';
+  var FILES = ['data/country-stats.json', 'data/spain-stats.json', 'data/france-stats.json', 'data/germany-stats.json', 'data/belgium-stats.json', 'data/austria-stats.json', 'data/portugal-stats.json', 'data/portugal-eurostat-stats.json', 'data/canada-stats.json', 'data/eu-trade-stats.json', 'data/australia-trade-stats.json'];
+  var L = {"es":{"production":"Producción y sacrificio","crops":"Cultivos","trade":"Comercio exterior","costs":"Costes de explotación","prices_lv":"Precios ganaderos","quotes":"Cotizaciones de mercado","milk":"Leche (precios y volúmenes)","milk_regions":"Leche: precio por región","meat_regions":"Sacrificio: precio por región","prices_paid":"Precios pagados al productor","prices_fv":"Precios de frutas y hortalizas","inputs_f":"Fertilizantes (precios pagados)","inputs_a":"Piensos (precios pagados)","idx_perc":"Índices de precios percibidos","idx_pag":"Índices de precios pagados","incub":"Incubación avícola","inputs":"Insumos (precios)","prices":"Precios e índices","livestock":"Censo ganadero","environment":"Estiércol y medio ambiente","organic":"Agricultura ecológica","stocks":"Existencias","income":"Ingresos y renta agraria","partners":"Socios comerciales","countries":{"ES":"España","FR":"Francia","DE":"Alemania","BE":"Bélgica","AT":"Austria","PT":"Portugal","CA":"Canadá","DK":"Dinamarca","NL":"Países Bajos","AU":"Australia","EU":"Unión Europea"},"freq":{"monthly":"mensual","weekly":"semanal","quarterly":"trimestral","annual":"anual","semiannual":"semestral"},"date":"Fecha"},"en":{"production":"Production and slaughter","crops":"Crops","trade":"Foreign trade","costs":"Farm costs","prices_lv":"Livestock prices","quotes":"Market quotations","milk":"Milk (prices and volumes)","milk_regions":"Milk: price by region","meat_regions":"Slaughter prices by region","prices_paid":"Farm-gate prices paid","prices_fv":"Fruit and vegetable prices","inputs_f":"Fertiliser prices paid","inputs_a":"Feed prices paid","idx_perc":"Price indices received","idx_pag":"Price indices paid","incub":"Hatchery (poultry)","inputs":"Input prices","prices":"Prices and indices","livestock":"Livestock census","environment":"Manure and environment","organic":"Organic farming","stocks":"Stocks","income":"Farm receipts and income","partners":"Trading partners","countries":{"ES":"Spain","FR":"France","DE":"Germany","BE":"Belgium","AT":"Austria","PT":"Portugal","CA":"Canada","DK":"Denmark","NL":"Netherlands","AU":"Australia","EU":"European Union"},"freq":{"monthly":"monthly","weekly":"weekly","quarterly":"quarterly","annual":"annual","semiannual":"twice a year"},"date":"Date"},"fr":{"production":"Production et abattages","crops":"Cultures","trade":"Commerce extérieur","costs":"Coûts d’exploitation","prices_lv":"Prix de l’élevage","quotes":"Cotations de marché","milk":"Lait (prix et volumes)","milk_regions":"Lait : prix par région","meat_regions":"Abattage : prix par région","prices_paid":"Prix payés aux producteurs","prices_fv":"Prix des fruits et légumes","inputs_f":"Prix des engrais payés","inputs_a":"Prix des aliments payés","idx_perc":"Indices des prix reçus","idx_pag":"Indices des prix payés","incub":"Couvoirs (volailles)","inputs":"Prix des intrants","prices":"Prix et indices","livestock":"Recensement du cheptel","environment":"Fumier et environnement","organic":"Agriculture biologique","stocks":"Stocks","income":"Recettes et revenu agricole","partners":"Partenaires commerciaux","countries":{"ES":"Espagne","FR":"France","DE":"Allemagne","BE":"Belgique","AT":"Autriche","PT":"Portugal","CA":"Canada","DK":"Danemark","NL":"Pays-Bas","AU":"Australie","EU":"Union européenne"},"freq":{"monthly":"mensuelle","weekly":"hebdomadaire","quarterly":"trimestrielle","annual":"annuelle","semiannual":"semestrielle"},"date":"Date"},"it":{"production":"Produzione e macellazioni","crops":"Colture","trade":"Commercio estero","costs":"Costi aziendali","prices_lv":"Prezzi zootecnici","quotes":"Quotazioni di mercato","milk":"Latte (prezzi e volumi)","milk_regions":"Latte: prezzo per regione","meat_regions":"Macellazione: prezzo per regione","prices_paid":"Prezzi pagati ai produttori","prices_fv":"Prezzi di frutta e ortaggi","inputs_f":"Prezzi dei fertilizzanti pagati","inputs_a":"Prezzi dei mangimi pagati","idx_perc":"Indici dei prezzi ricevuti","idx_pag":"Indici dei prezzi pagati","incub":"Incubatoi (avicoli)","inputs":"Prezzi degli input","prices":"Prezzi e indici","livestock":"Censimento del bestiame","environment":"Letame e ambiente","organic":"Agricoltura biologica","stocks":"Scorte","income":"Ricavi e reddito agricolo","partners":"Partner commerciali","countries":{"ES":"Spagna","FR":"Francia","DE":"Germania","BE":"Belgio","AT":"Austria","PT":"Portugal","CA":"Canada","DK":"Danimarca","NL":"Paesi Bassi","AU":"Australia","EU":"Unione europea"},"freq":{"monthly":"mensile","weekly":"settimanale","quarterly":"trimestrale","annual":"annuale","semiannual":"semestrale"},"date":"Data"}};
+  var GROUPS = ['production', 'crops', 'livestock', 'trade', 'quotes', 'prices', 'prices_paid', 'milk', 'milk_regions', 'prices_lv', 'meat_regions', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'costs', 'environment', 'organic', 'stocks', 'income', 'partners'];
+  var CACHE = null;
+  function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
+  function load() {
+    if (CACHE) return CACHE;
+    CACHE = Promise.all(FILES.map(function (f, i) { return fetch(f).then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).catch(function (e) { if (i === 0) throw e; return null; }); })).then(function (rs) {
+      var d = rs[0];
+      rs.slice(1).forEach(function (x) {
+        if (x && x.countries) {
+          Object.keys(x.countries).forEach(function (k) {
+            var c = x.countries[k];
+            if (c.extend && d.countries[k]) { var c0 = d.countries[k]; c0.sources = (c0.sources || [c0.source.name]); if (c.source && c0.sources.indexOf(c.source.name) < 0) c0.sources.push(c.source.name); c0.series = c0.series.concat(c.series); }
+            else { c.sources = [c.source.name]; d.countries[k] = c; }
+          });
+        }
+      });
+      return d;
+    });
+    return CACHE;
+  }
+  function ts(p) { var m; if ((m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(p))) return Date.UTC(+m[1], +m[2] - 1, +m[3]); if ((m = /^(\d{4})-(\d{2})$/.exec(p))) return Date.UTC(+m[1], +m[2] - 1, 1); if ((m = /^(\d{4})-Q(\d)$/.exec(p))) return Date.UTC(+m[1], (+m[2] - 1) * 3, 1); if ((m = /^(\d{4})$/.exec(p))) return Date.UTC(+m[1], 0, 1); return NaN; }
+  function plabel(p, freq) {
+    var lg = lang(), o;
+    if (freq === 'weekly' || /^\d{4}-\d{2}-\d{2}$/.test(p)) o = { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' };
+    else if (freq === 'monthly' || /^\d{4}-\d{2}$/.test(p)) o = { month: 'short', year: 'numeric', timeZone: 'UTC' };
+    else return p;
+    try { return new Date(ts(p)).toLocaleDateString(lg, o); } catch (e) { return p; }
+  }
+  function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
+  function dec(v) { var a = Math.abs(v); return a >= 1000 ? 0 : a >= 100 ? 1 : a >= 10 ? 1 : 2; }
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  window.DICountryData = { load: load, labels: function (lg) { return L[lg] || L.es; }, groups: GROUPS, plabel: plabel, nf: nf, dec: dec, esc: esc, lang: lang };
+})();
