@@ -46,13 +46,15 @@
   W.evaluate = function (idx) {
     var out = [];
     read().forEach(function (it) {
-      if (!it.r || !it.r.length) return; var x = row(idx, it.c, it.s); if (!x || x.period === it.ack) return; var hits = [];
+      if (!it.r || !it.r.length) return; var x = row(idx, it.c, it.s); if (!x) return;
+      // mismo periodo Y mismo valor que lo ya visto = nada nuevo; una revision oficial (mismo periodo, otro valor) se vuelve a evaluar
+      if (x.period === it.ack && (!it.seen || it.seen.v === x.value)) return; var hits = [];
       it.r.forEach(function (r) {
         if (r.t === 'new' && it.seen && x.period !== it.seen.p) hits.push(r);
         else if (r.t === 'pct' && typeof x.change === 'number' && Math.abs(x.change) >= r.v && (!it.seen || x.period !== it.seen.p)) hits.push(r);
         else if (r.t === 'cross' && typeof x.value === 'number' && cond(r, x.value) && !(it.seen && typeof it.seen.v === 'number' && cond(r, it.seen.v))) hits.push(r);
       });
-      if (hits.length) out.push({ c: it.c, s: it.s, label: x.label, unit: x.unit, period: x.period, value: x.value, change: x.change, prev: it.seen, hits: hits });
+      if (hits.length) out.push({ revised: !!(it.seen && it.seen.p === x.period && it.seen.v !== x.value), c: it.c, s: it.s, label: x.label, unit: x.unit, period: x.period, value: x.value, change: x.change, prev: it.seen, hits: hits });
     });
     return out;
   };

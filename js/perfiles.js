@@ -53,7 +53,7 @@
   function covChip(c) { var v = window.DIProfile.coverage && window.DIProfile.coverage(c.series); if (!v) return ''; return '<span title="Coverage score" style="font-size:11.5px;font-weight:700;border:1px solid var(--border);border-radius:10px;padding:1px 8px;color:' + (v.score >= 75 ? '#2f6b4a' : v.score >= 50 ? '#b7791f' : '#a33') + '">' + v.score + '/100</span>'; }
   function stats(c) {
     var S = c.series, groups = {}, mn = null, mx = null;
-    S.forEach(function (s) { groups[s.group] = (groups[s.group] || 0) + 1; var a = s.points[0][0]; if (mn == null || a < mn) mn = a; if (mx == null || s.latestPeriod > mx) mx = s.latestPeriod; });
+    S.forEach(function (s) { groups[s.group] = (groups[s.group] || 0) + 1; var a = s.points ? s.points[0][0] : s.first; if (mn == null || a < mn) mn = a; if (mx == null || s.latestPeriod > mx) mx = s.latestPeriod; });
     return { n: S.length, g: groups, nc: Object.keys(groups).length, mn: mn, mx: mx };
   }
   function pl(p) { return CD.plabel(p, /^\d{4}-\d{2}$/.test(p) ? 'monthly' : /^\d{4}-\d{2}-\d{2}$/.test(p) ? 'weekly' : 'annual'); }
@@ -61,9 +61,12 @@
     var l = lb();
     return { lang: lang(), t: l, groups: ['all'].concat(CD.groups), esc: esc, nf: nf, dec: CD.dec, plabel: CD.plabel, wage: WAG && cc && WAG.countries[cc], rate: cc && D.countries[cc] ? window.DIProfile.rateOf(D.countries[cc]) : null };
   }
+  function sumSeries(c, kind) {
+    return c.series.filter(function (x) { return new RegExp('^(eu-[a-z]{2}-trade|au)-' + (kind === 'exp' ? 'exp' : kind === 'imp' ? 'imp' : 'bal') + '-agrifood$').test(x.id) && x.frequency === 'monthly'; })[0];
+  }
   function sum12(c, kind) {
-    var s = c.series.filter(function (x) { return new RegExp('^(eu-[a-z]{2}-trade|au)-' + (kind === 'exp' ? 'exp' : kind === 'imp' ? 'imp' : 'bal') + '-agrifood$').test(x.id) && x.frequency === 'monthly'; })[0];
-    if (!s || s.points.length < 12) return null;
+    var s = sumSeries(c, kind);
+    if (!s || !s.points || s.points.length < 12) return null;
     var pts = s.points.slice(-12), tot = 0; pts.forEach(function (p) { tot += p[1]; });
     return { v: tot, u: s.unit, p: pts[pts.length - 1][0] };
   }
@@ -71,10 +74,17 @@
     var lab = x.t, ch = s.changePct;
     return '<div class="di-card" style="padding:10px 12px;margin-bottom:8px"><div style="font-size:11px;color:var(--text-faint)">' + esc(lab[s.group] || s.group) + '</div><div style="font-size:12.5px;font-weight:600;line-height:1.3">' + esc(s.label.replace(/\s*\((monthly|quarterly|annual|weekly|half-year)[^)]*\)$/i, '')) + '</div><div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:4px"><div><b style="font-size:18px;font-variant-numeric:tabular-nums">' + nf(s.latest, CD.dec(s.latest)) + '</b> <span style="font-size:11px;color:var(--text-muted)">' + esc(s.unit) + '</span></div>' + window.DIProfile.spark(s) + '</div><div style="font-size:11.5px;color:var(--text-muted)">' + esc(CD.plabel(s.latestPeriod, s.frequency)) + (ch == null ? '' : ' · ' + chip(ch)) + '</div></div>';
   }
+  // Solo bajamos los puntos de lo que se pinta: los KPI de cada pais (sparkline) y las series de comercio de 12 meses.
   function compare() {
-    var t = tt(), l = lb(), A = D.countries[ST.a], B = D.countries[ST.b];
-    if (!A || !B) return '';
-    var sa = stats(A), sb = stats(B), x = ctx(), ka = window.DIProfile.kpis(ST.a, A.series, groupBy(A)), kb = window.DIProfile.kpis(ST.b, B.series, groupBy(B));
+    var A = D.countries[ST.a], B = D.countries[ST.b];
+    if (!A || !B) return Promise.resolve('');
+    var ka = window.DIProfile.kpis(ST.a, A.series, groupBy(A)), kb = window.DIProfile.kpis(ST.b, B.series, groupBy(B)), need = ka.concat(kb);
+    ['exp', 'imp', 'bal'].forEach(function (k) { need.push(sumSeries(A, k), sumSeries(B, k)); });
+    return CD.hydrate(need).then(function () { return renderCompare(A, B, ka, kb); });
+  }
+  function renderCompare(A, B, ka, kb) {
+    var t = tt(), l = lb();
+    var sa = stats(A), sb = stats(B), x = ctx();
     var th = 'padding:8px 6px;', head = function (cc) { return '<th style="' + th + 'text-align:right">' + window.DIProfile.flag(cc) + ' ' + esc(l.countries[cc]) + '</th>'; };
     var h = '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><table style="border-collapse:collapse;width:100%;min-width:460px;font-size:13.5px"><thead><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="' + th + '">' + t.cover.toUpperCase() + '</th>' + head(ST.a) + head(ST.b) + '</tr></thead><tbody>';
     var row = function (lab, va, vb) { return '<tr style="border-top:1px solid var(--border)"><td style="' + th + '">' + lab + '</td><td style="' + th + 'text-align:right">' + va + '</td><td style="' + th + 'text-align:right">' + vb + '</td></tr>'; };
@@ -99,6 +109,8 @@
     h += '<h3 style="margin:22px 0 4px;font-size:15px">' + t.catsN + '</h3><div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:460px;font-size:13.5px"><thead><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="' + th + '">' + t.cat.toUpperCase() + '</th>' + head(ST.a) + head(ST.b) + '</tr></thead><tbody>' + cr + '</tbody></table></div>';
     return h;
   }
+  function fillCompare() { var tk = ++FILL; compare().then(function (h) { var c = document.getElementById('pf-cmp'); if (c && tk === FILL) c.innerHTML = h; }); }
+  var FILL = 0;
   function groupBy(c) { var g = {}; c.series.forEach(function (s) { (g[s.group] = g[s.group] || []).push(s); }); return g; }
   function build() {
     var root = document.getElementById('perfiles-body'); if (!root || !D) return;
@@ -111,10 +123,10 @@
     });
     h += '</div><h2 id="comparar" style="margin:0 0 8px;font-size:18px">' + t.compare + '</h2>';
     var opts = function (sel) { return ORDER.filter(function (cc) { return D.countries[cc]; }).map(function (cc) { return '<option value="' + cc + '"' + (cc === sel ? ' selected' : '') + '>' + window.DIProfile.flag(cc) + ' ' + esc(l.countries[cc]) + '</option>'; }).join(''); };
-    h += '<div style="display:flex;gap:12px;flex-wrap:wrap"><label style="font-size:13px;flex:1;min-width:160px">' + t.a + '<br><select id="pf-a" class="di-compare-select">' + opts(ST.a) + '</select></label><label style="font-size:13px;flex:1;min-width:160px">' + t.b + '<br><select id="pf-b" class="di-compare-select">' + opts(ST.b) + '</select></label></div><div id="pf-cmp">' + compare() + '</div>';
-    root.innerHTML = h;
+    h += '<div style="display:flex;gap:12px;flex-wrap:wrap"><label style="font-size:13px;flex:1;min-width:160px">' + t.a + '<br><select id="pf-a" class="di-compare-select">' + opts(ST.a) + '</select></label><label style="font-size:13px;flex:1;min-width:160px">' + t.b + '<br><select id="pf-b" class="di-compare-select">' + opts(ST.b) + '</select></label></div><div id="pf-cmp"></div>';
+    root.innerHTML = h; fillCompare();
     Array.prototype.forEach.call(root.querySelectorAll('[data-unwatch]'), function (b) { b.onclick = function () { var a = b.getAttribute('data-unwatch').split('|'); DIWatch.remove(a[0], a[1]); build(); }; });
-    ['a', 'b'].forEach(function (k) { var e = document.getElementById('pf-' + k); if (e) e.onchange = function () { ST[k] = e.value; var c = document.getElementById('pf-cmp'); if (c) c.innerHTML = compare(); try { history.replaceState(null, '', '?a=' + ST.a + '&b=' + ST.b + '#comparar'); } catch (x) {} }; });
+    ['a', 'b'].forEach(function (k) { var e = document.getElementById('pf-' + k); if (e) e.onchange = function () { ST[k] = e.value; fillCompare(); try { history.replaceState(null, '', '?a=' + ST.a + '&b=' + ST.b + '#comparar'); } catch (x) {} }; });
   }
   function watchPanel() {
     if (!window.DIWatch) return ''; var w = DIWatch.labels[lang()] || DIWatch.labels.es, list = DIWatch.list(), rows = '';

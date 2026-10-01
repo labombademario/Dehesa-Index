@@ -14,7 +14,14 @@
   }
   var S = {
     manifest: function () { return get('catalog/manifest.json'); },
-    country: function (cc) { return S.manifest().then(function (m) { var e = m.countries[cc]; if (!e) throw new Error('country not found'); return get(e.catalog); }); },
+    // core=true: solo las series del pais y de producto; sin core se anaden los metadatos del catalogo Agri-food UE (fichero aparte)
+    country: function (cc, core) {
+      return S.manifest().then(function (m) {
+        var e = m.countries[cc]; if (!e) throw new Error('country not found');
+        if (core || !e.catalogEu) return get(e.catalog);
+        return Promise.all([get(e.catalog), get(e.catalogEu)]).then(function (r) { return { schemaVersion: 1, country: r[0].country, name: r[0].name, sources: r[0].sources, series: r[0].series.concat(r[1].series) }; });
+      });
+    },
     find: function (o) {
       o = o || {};
       return S.manifest().then(function (m) {

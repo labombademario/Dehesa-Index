@@ -33,13 +33,15 @@ def main():
     try:
         for r in json.loads((ROOT / 'data/series-registry.json').read_text())['series']: reg[(r['country'], r['id'])] = r
     except Exception: pass
-    by_c = {}; names = {}
+    by_c = {}; names = {}; srcs = {}
     for n in STATS:
         p = ROOT / 'data' / (n + '.json')
         if not p.exists(): continue
         d = json.loads(p.read_text())
         for cc, c in d.get('countries', {}).items():
             names.setdefault(cc, c.get('name', cc))
+            sn = (c.get('source') or {}).get('name')
+            if sn and sn not in srcs.setdefault(cc, []): srcs[cc].append(sn)
             for s in c.get('series', []):
                 r = reg.get((cc, s['id']))
                 if r and not r.get('preferred', True): continue  # duplicado: solo la serie preferida entra al catalogo
@@ -118,8 +120,13 @@ def main():
             gs = [x for x in cat if x['group'] == g]
             mg[g] = {'n': len(gs), 'files': [], 'format': 'eu-regions', 'latestPeriod': max([x['latestPeriod'] for x in gs if x['latestPeriod']] or [None]), 'tags': sorted({t for x in gs for t in x['tags']})}
         total += len(cat)
-        changed += write_if_changed(ROOT / 'data/catalog' / (slug(cc) + '.json'), dump({'schemaVersion': 1, 'country': cc, 'name': names.get(cc, cc), 'series': cat}), written)
+        core = [x for x in cat if x.get('format') != 'eu-regions']; eu = [x for x in cat if x.get('format') == 'eu-regions']
+        # los metadatos del catalogo UE van en un fichero aparte: quien solo necesita las series del pais no los baja
+        changed += write_if_changed(ROOT / 'data/catalog' / (slug(cc) + '.json'), dump({'schemaVersion': 1, 'country': cc, 'name': names.get(cc, cc), 'sources': srcs.get(cc, []), 'series': core}), written)
         man['countries'][cc] = {'name': names.get(cc, cc), 'n': len(cat), 'catalog': 'catalog/%s.json' % slug(cc), 'metrics': mg}
+        if eu:
+            changed += write_if_changed(ROOT / 'data/catalog/eu' / (slug(cc) + '.json'), dump({'schemaVersion': 1, 'country': cc, 'series': eu}), written)
+            man['countries'][cc]['catalogEu'] = 'catalog/eu/%s.json' % slug(cc); man['countries'][cc]['nEu'] = len(eu)
     prods = {}
     for cc, c in man['countries'].items():
         for g, m in c['metrics'].items():

@@ -6,9 +6,31 @@
   var GROUPS = ['production', 'crops', 'livestock', 'trade', 'quotes', 'prices', 'prices_paid', 'milk', 'milk_regions', 'prices_lv', 'meat_regions', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'costs', 'environment', 'organic', 'stocks', 'income', 'partners', 'rates'];
   var CACHE = null;
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
-  function load() {
-    if (CACHE) return CACHE;
-    CACHE = Promise.all(FILES.map(function (f, i) { return fetch(f).then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).catch(function (e) { if (i === 0) throw e; return null; }); })).then(function (rs) {
+  // Carga por catalogo (DISeries): metadatos de las series de cada pais, sin puntos (n, first, latest, changePct...).
+  // Los puntos se bajan solo cuando hacen falta (hydrate), en el trozo pequeno que contiene la serie.
+  function loadCatalog() {
+    return window.DISeries.manifest().then(function (m) {
+      var ccs = Object.keys(m.countries).filter(function (cc) { return m.countries[cc].metrics && Object.keys(m.countries[cc].metrics).some(function (g) { return g !== 'product' && g.indexOf('eu_') !== 0; }); });
+      return Promise.all(ccs.map(function (cc) { return window.DISeries.country(cc, true); })).then(function (cats) {
+        var d = { countries: {} };
+        cats.forEach(function (c) {
+          var S = (c.series || []).filter(function (s) { return s.group !== 'product' && s.format !== 'eu-regions'; }).map(function (s) {
+            return { id: s.id, cc: c.country, label: s.label, unit: s.unit, frequency: s.freq, group: s.group, latestPeriod: s.latestPeriod, latest: s.latest, changePct: s.changePct, n: s.n, first: s.first };
+          });
+          if (S.length) d.countries[c.country] = { name: c.name, source: { name: (c.sources || [])[0] || '' }, sources: c.sources || [], series: S };
+        });
+        return d;
+      });
+    });
+  }
+  // Vuelve a poner points en las series pedidas (una peticion por trozo; DISeries cachea).
+  function hydrate(list) {
+    return Promise.all((list || []).filter(function (s) { return s && !s.points; }).map(function (s) {
+      return window.DISeries.series(s.cc, s.id).then(function (f) { s.points = f.points; }).catch(function () {});
+    }));
+  }
+  function loadFiles() {
+    return Promise.all(FILES.map(function (f, i) { return fetch(f).then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).catch(function (e) { if (i === 0) throw e; return null; }); })).then(function (rs) {
       var d = rs[0];
       rs.slice(1).forEach(function (x) {
         if (x && x.countries) {
@@ -21,6 +43,11 @@
       });
       return d;
     });
+  }
+  function load() {
+    if (CACHE) return CACHE;
+    // catalogo primero; si no esta disponible, los ficheros *-stats.json de siempre
+    CACHE = (window.DISeries ? loadCatalog() : Promise.reject(new Error('no catalog'))).catch(function () { return loadFiles(); });
     return CACHE;
   }
   function ts(p) { var m; if ((m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(p))) return Date.UTC(+m[1], +m[2] - 1, +m[3]); if ((m = /^(\d{4})-(\d{2})$/.exec(p))) return Date.UTC(+m[1], +m[2] - 1, 1); if ((m = /^(\d{4})-Q(\d)$/.exec(p))) return Date.UTC(+m[1], (+m[2] - 1) * 3, 1); if ((m = /^(\d{4})$/.exec(p))) return Date.UTC(+m[1], 0, 1); return NaN; }
@@ -34,5 +61,5 @@
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return v.toFixed(d); } }
   function dec(v) { var a = Math.abs(v); return a >= 1000 ? 0 : a >= 100 ? 1 : a >= 10 ? 1 : 2; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-  window.DICountryData = { load: load, wages: function () { return fetch('data/country-wages.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }, macro: function () { return fetch('data/country-macro.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }, labels: function (lg) { return L[lg] || L.es; }, groups: GROUPS, plabel: plabel, nf: nf, dec: dec, esc: esc, lang: lang };
+  window.DICountryData = { load: load, hydrate: hydrate, wages: function () { return fetch('data/country-wages.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }, macro: function () { return fetch('data/country-macro.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }, labels: function (lg) { return L[lg] || L.es; }, groups: GROUPS, plabel: plabel, nf: nf, dec: dec, esc: esc, lang: lang };
 })();

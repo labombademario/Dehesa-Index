@@ -10,8 +10,11 @@
   };
   var KPI_ORDER = ['prices', 'quotes', 'milk', 'prices_lv', 'livestock', 'production', 'crops', 'trade', 'idx_perc', 'income', 'stocks', 'costs'];
   var KEY = /exports?: agri|total|milk|leche|lait|cattle|bovine|beef|wheat|cereal|all goods|agri-food|general|pig|hog/i;
+  // series con puntos (paises.html) o solo metadatos del catalogo (perfiles.html: n, first)
+  function plen(s) { return s.points ? s.points.length : (s.n || 0); }
+  function pfirst(s) { return s.points ? s.points[0][0] : s.first; }
   function yearOf(p) { return parseInt(String(p).slice(0, 4), 10) || 0; }
-  function score(s) { return yearOf(s.latestPeriod) * 1000 + Math.min(s.points.length, 500) + (KEY.test(s.label) ? 5000 : 0) + (/^Exports?:? .*(agri-food|farm, fishing)/i.test(s.label) ? 8000 : 0) - (s.changePct == null ? 300 : 0); }
+  function score(s) { return yearOf(s.latestPeriod) * 1000 + Math.min(plen(s), 500) + (KEY.test(s.label) ? 5000 : 0) + (/^Exports?:? .*(agri-food|farm, fishing)/i.test(s.label) ? 8000 : 0) - (s.changePct == null ? 300 : 0); }
   // KPI elegidos a mano por país (expresiones sobre el id de la serie; se toma la de mayor puntuación que case).
   var PICKS = {
     US: ['^us-policy-rate$'],
@@ -30,7 +33,7 @@
   function picked(cc, S) {
     var out = [], ids = {};
     (PICKS[cc] || []).forEach(function (re) {
-      var r = new RegExp(re), m = S.filter(function (s) { return r.test(s.id) && s.points.length >= 6 && !ids[s.id]; }).sort(function (a, b) { return score(b) - score(a); })[0];
+      var r = new RegExp(re), m = S.filter(function (s) { return r.test(s.id) && plen(s) >= 6 && !ids[s.id]; }).sort(function (a, b) { return score(b) - score(a); })[0];
       if (m) { out.push(m); ids[m.id] = 1; }
     });
     return out;
@@ -38,7 +41,7 @@
   function kpis(cc, S, groups) {
     var kp = picked(cc, S);
     if (kp.length >= 4) return kp.slice(0, 6);
-    KPI_ORDER.forEach(function (g) { if (kp.length < 6 && groups[g]) { var best = groups[g].filter(function (s) { return s.points.length >= 6 && kp.indexOf(s) < 0; }).sort(function (a, b) { return score(b) - score(a); })[0]; if (best) kp.push(best); } });
+    KPI_ORDER.forEach(function (g) { if (kp.length < 6 && groups[g]) { var best = groups[g].filter(function (s) { return plen(s) >= 6 && kp.indexOf(s) < 0; }).sort(function (a, b) { return score(b) - score(a); })[0]; if (best) kp.push(best); } });
     return kp;
   }
   var M = {
@@ -69,6 +72,7 @@
   }
   function rateOf(c) { var r = c && c.series.filter(function (s) { return /-policy-rate$/.test(s.id); })[0]; return r || null; }
   function spark(s) {
+    if (!s.points) return '';
     var pts = s.points.slice(-36).map(function (p) { return p[1]; }), mn = Math.min.apply(null, pts), mx = Math.max.apply(null, pts), w = 96, h = 28, rg = mx - mn || 1;
     var d = pts.map(function (v, i) { return (i / Math.max(pts.length - 1, 1) * w).toFixed(1) + ',' + (h - 2 - (v - mn) / rg * (h - 4)).toFixed(1); }).join(' ');
     var up = pts[pts.length - 1] >= pts[0];
@@ -88,7 +92,7 @@
   function unusual(S) {
     var out = [], now = Date.now();
     S.forEach(function (s) {
-      if (s.group === 'rates' || s.group === 'partners' || s.points.length < 24) return;
+      if (s.group === 'rates' || s.group === 'partners' || !s.points || s.points.length < 24) return;
       var P = s.points, ch = [], i, a, b;
       for (i = 1; i < P.length; i++) { a = P[i - 1][1]; b = P[i][1]; if (a != null && b != null && a !== 0 && a > 0 && b >= 0) ch.push((b - a) / a * 100); }
       if (ch.length < 20) return;
@@ -117,7 +121,7 @@
       if (s.group === 'rates') return; n++;
       var age = (now - pms(s.latestPeriod)) / 864e5; if (age <= (MAXAGE[s.frequency] || 80) * 1.5) fresh++;
       if (s.frequency === 'monthly' || s.frequency === 'weekly' || s.frequency === 'daily') mo++;
-      var a = pms(s.points[0][0]), b = pms(s.latestPeriod); if (a === a && b === b) yrs.push((b - a) / (365.25 * 864e5));
+      var a = pms(pfirst(s)), b = pms(s.latestPeriod); if (a === a && b === b) yrs.push((b - a) / (365.25 * 864e5));
     });
     if (!n) return null; yrs.sort(function (a, b) { return a - b; });
     var med = yrs.length ? yrs[yrs.length >> 1] : 0, c = { b: blocks / 4, f: fresh / n, d: Math.min(med, 20) / 20, q: mo / n };
@@ -152,7 +156,7 @@
     var gk = x.groups.filter(function (g) { return g !== 'all' && groups[g]; });
     var minP = null, maxP = null, freqs = {}, srcs = {};
     S.forEach(function (s) {
-      var a = s.points[0][0], b = s.latestPeriod;
+      var a = pfirst(s), b = s.latestPeriod;
       if (minP == null || a < minP) minP = a; if (maxP == null || b > maxP) maxP = b;
       freqs[s.frequency] = (freqs[s.frequency] || 0) + 1;
     });

@@ -25,7 +25,12 @@ kinds = man.get('seriesByKind', {})
 if real != kinds.get('stats', man['seriesTotal']): warn.append('series reales %d != manifiesto %d (se regenera cada 3 h con build-data-catalog.py)' % (real, kinds.get('stats', man['seriesTotal'])))
 tot = 0
 for cc, c in man['countries'].items():
-    cat = json.loads((D / c['catalog']).read_text()); tot += len(cat['series'])
+    cat = json.loads((D / c['catalog']).read_text())
+    if c.get('catalogEu'):
+        eu = json.loads((D / c['catalogEu']).read_text())
+        if len(eu['series']) != c.get('nEu'): err.append('%s: catalogo UE %d != manifiesto %s' % (cc, len(eu['series']), c.get('nEu')))
+        cat['series'] = cat['series'] + eu['series']
+    tot += len(cat['series'])
     if len(cat['series']) != c['n']: err.append('%s: catalogo %d != manifiesto %d' % (cc, len(cat['series']), c['n']))
     ids = [s['id'] for s in cat['series']]
     if len(ids) != len(set(ids)): err.append('%s: ids repetidos en el catalogo' % cc)
