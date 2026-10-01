@@ -1,0 +1,30 @@
+name: Update partner tariffs (MX, CA, EU)
+on:
+  schedule:
+    - cron: '30 8 6 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          sudo apt-get install -y -qq mdbtools >/dev/null
+          pip install openpyxl --break-system-packages -q
+          python3 scripts/update-partner-tariffs.py
+        continue-on-error: true
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/tariffs-mx.json data/tariffs-ca.json data/tariffs-eu.json data/partner-tariffs-log.txt
+          git diff --cached --quiet && exit 0
+          git commit -qm "Aranceles México, Canadá y UE"
+          git pull -q --rebase
+          git push
