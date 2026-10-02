@@ -1302,6 +1302,54 @@
    "confidence": "medium",
    "evidence": "IRS Instructions for Schedule A (2025), 'Optional State Sales Tax Tables' (page last reviewed 30-Apr-2026, read 2026-10-01): lists the state general sales tax rate for 46 jurisdictions. A work of the US federal government is not subject to copyright (17 U.S.C. 105).",
    "short": "IRS"
+  },
+  "cgc": {
+   "country": "CA",
+   "licenseId": "OGL-Canada",
+   "licenseName": "Open Government Licence – Canada",
+   "licenseUrl": "https://open.canada.ca/en/open-government-licence-canada",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains information licensed under the Open Government Licence – Canada.",
+   "additionalRestrictions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Rights the provider is not authorised to license are excluded.",
+   "verifiedAt": "2026-10-02",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "Canadian Grain Commission — Grain Statistics Weekly",
+   "url": "https://www.grainscanada.gc.ca/en/grain-research/statistics/grain-statistics-weekly/",
+   "evidence": "The Open Government Licence – Canada (open.canada.ca, read 2026-10-02) permits copying, modifying, publishing, adapting and distributing the Information for any lawful purpose, including commercial use, with the attribution statement. The open.canada.ca catalogue lists the dataset 'Grain Statistics Weekly' (CGC) under this licence (checked 2026-10-02 through the catalogue API).",
+   "short": "Canadian Grain Commission"
+  },
+  "aafc_drought": {
+   "country": "CA",
+   "licenseId": "OGL-Canada",
+   "licenseName": "Open Government Licence – Canada",
+   "licenseUrl": "https://open.canada.ca/en/open-government-licence-canada",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains information licensed under the Open Government Licence – Canada.",
+   "additionalRestrictions": "No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official symbols and logos.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Rights the provider is not authorised to license are excluded.",
+   "verifiedAt": "2026-10-02",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "Agriculture and Agri-Food Canada — Canadian Drought Monitor",
+   "url": "https://agriculture.canada.ca/en/agricultural-production/weather/canadian-drought-monitor",
+   "evidence": "The Open Government Licence – Canada (open.canada.ca, read 2026-10-02) permits use, adaptation and distribution including commercially, with the attribution statement. The open.canada.ca catalogue lists the dataset 'Canadian Drought Monitor' (AAFC) under this licence (checked 2026-10-02 through the catalogue API).",
+   "short": "AAFC Drought Monitor"
   }
  },
  "files": {
@@ -1618,6 +1666,11 @@
    "sources": [
     "hmrc_govuk",
     "irs_sales_tax"
+   ]
+  },
+  "data/canada-grain.json": {
+   "sources": [
+    "cgc"
    ]
   }
  },

@@ -25,6 +25,36 @@ PROVINCES = {"Manitoba", "Saskatchewan", "Alberta", "British Columbia"}
 KEEP_YEARS = 3
 def iso(s):
     d, m, y = s.split("/"); return datetime.date(int(y), int(m), int(d)).isoformat()
+def cands(s):
+    """Fechas posibles de 'dd/mm/aaaa'. La CGC escribe alguna semana en formato mm/dd (p. ej. '07/06/2025' para el 6 de julio), asi que si dia y mes caben como ambos se devuelven las dos lecturas."""
+    a, b, y = [int(x) for x in s.split("/")]; out = []
+    for d, m in ((a, b), (b, a)):
+        try:
+            c = datetime.date(y, m, d)
+            if c not in out: out.append(c)
+        except ValueError: pass
+    return out
+def week_dates(rows):
+    """{(campana, n.º de semana): fecha ISO}. La semana manda sobre el texto de la fecha: para cada campana se encadenan las semanas de 7 en 7 dias y,
+    cuando la fecha escrita es ambigua (dd/mm o mm/dd), se elige la lectura que encaja con la semana anterior. Si ninguna encaja a menos de 4 dias, falla."""
+    by = defaultdict(lambda: defaultdict(int))
+    for r in rows: by[(r["Crop Year"], int(r["Grain Week"]))][r["Week Ending Date"]] += 1
+    out = {}; prev = {}
+    for key in sorted(by, key=lambda k: (k[0], k[1])):
+        cy, n = key; texts = by[key]
+        opts = []
+        for t, c in texts.items():
+            for d in cands(t): opts.append((d, c))
+        if n == 1 or cy not in prev:
+            # primera semana de la campana: la lectura dd/mm mas frecuente (la campana empieza en agosto)
+            opts = [(d, c) for d, c in opts if d.month in (7, 8)] or opts
+            d = max(opts, key=lambda x: x[1])[0]
+        else:
+            exp = prev[cy][0] + datetime.timedelta(days=7 * (n - prev[cy][1]))
+            d, dist = min(((d, abs((d - exp).days)) for d, _ in opts), key=lambda x: x[1])
+            if dist > 4: raise ValueError("%s semana %d: las fechas %s no encajan tras %s" % (cy, n, list(texts), prev[cy]))
+        out[key] = d.isoformat(); prev[cy] = (d, n)
+    return out
 def num(s):
     """Cifras de la CGC: '12.3', '1,234.5' (miles) y '(1.1)' = negativo (ajuste contable, p. ej. existencias)."""
     s = s.strip().replace(",", "")
@@ -33,14 +63,14 @@ NEED = {"Crop Year", "Grain Week", "Week Ending Date", "worksheet", "metric", "p
 def crop_years(today=None):
     t = today or datetime.date.today(); start = t.year if t.month >= 8 else t.year - 1
     return ["%d-%02d" % (y, (y + 1) % 100) for y in range(start, start - KEEP_YEARS, -1)]
-def total(rows, worksheet, metric, period, regions=None):
+def total(rows, worksheet, metric, period, regions=None, wd=None):
     """Suma por (grano, fecha) de todas las regiones; por region usa 'All grades combined' si existe, si no suma los grados."""
     cell = defaultdict(lambda: {"all": None, "sum": 0.0})
     for r in rows:
         if r["worksheet"] != worksheet or r["metric"] != metric or r["period"] != period or r["grain"] not in GRAINS: continue
         if r["Ktonnes"] in ("", None): continue
         if regions and r["Region"] not in regions: continue
-        k = (r["grain"], iso(r["Week Ending Date"]), r["Region"]); v = num(r["Ktonnes"])
+        k = (r["grain"], wd[(r["Crop Year"], int(r["Grain Week"]))], r["Region"]); v = num(r["Ktonnes"])
         if r["grade"] == "All grades combined": cell[k]["all"] = (cell[k]["all"] or 0.0) + v
         else: cell[k]["sum"] += v
     out = defaultdict(float)
@@ -49,8 +79,9 @@ def total(rows, worksheet, metric, period, regions=None):
 def build(files):
     """files = {'2026-27': filas del CSV (lista de dict), ...}. Devuelve (semanas, granos)."""
     rows = [r for fy in sorted(files) for r in files[fy]]
-    ex = total(rows, "Terminal Exports", "Exports", "Current Week"); cum = total(rows, "Terminal Exports", "Exports", "Crop Year")
-    dl = total(rows, "Primary", "Deliveries", "Current Week", PROVINCES); st = total(rows, "Summary", "Stocks", "Current Week")
+    wd = week_dates([r for r in rows if r["worksheet"] in ("Terminal Exports", "Primary", "Summary")])
+    ex = total(rows, "Terminal Exports", "Exports", "Current Week", None, wd); cum = total(rows, "Terminal Exports", "Exports", "Crop Year", None, wd)
+    dl = total(rows, "Primary", "Deliveries", "Current Week", PROVINCES, wd); st = total(rows, "Summary", "Stocks", "Current Week", None, wd)
     weeks = sorted({d for (_, d) in list(ex) + list(dl) + list(st)})
     if len(weeks) < 4: raise ValueError("menos de 4 semanas")
     grains = []

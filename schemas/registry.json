@@ -374,6 +374,12 @@
     "other_tax"
    ]
   ],
+  "canada-grain.json": [
+   "canada-grain",
+   [
+    "canada_grain"
+   ]
+  ],
   "us-lamb.json": [
    "us-lamb",
    [

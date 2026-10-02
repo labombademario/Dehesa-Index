@@ -1,0 +1,16 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Estadisticas semanales de granos de Canada (Canadian Grain Commission)",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "source", "unit", "asOf", "weeks", "grains"],
+ "properties": {
+  "schemaVersion": {"type": "integer"},
+  "generatedAt": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"},
+  "source": {"type": "object", "required": ["name", "url", "license"], "properties": {"name": {"type": "string", "minLength": 1}, "url": {"type": "string", "pattern": "^https?://"}, "license": {"type": "string", "minLength": 1}}},
+  "unit": {"type": "string", "minLength": 1},
+  "asOf": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+  "weeks": {"type": "array", "minItems": 20, "items": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}},
+  "grains": {"type": "array", "minItems": 5, "items": {"type": "object", "required": ["id", "name", "exports", "cumExports", "deliveries", "stocks"], "properties": {"id": {"type": "string", "minLength": 1}, "name": {"type": "string", "minLength": 1}, "exports": {"type": "array"}, "cumExports": {"type": "array"}, "deliveries": {"type": "array"}, "stocks": {"type": "array"}}}},
+  "note": {"type": "string"}
+ }
+}

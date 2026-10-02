@@ -299,6 +299,35 @@ def other_tax(doc, errs, warns, stats):
     elif (TODAY - _date(doc["reviewedAt"])).days > 200: warns.append("tabla revisada hace mas de 200 dias: volver a comprobar")
     stats["states"] = len(st)
 
+def canada_grain(doc, errs, warns, stats):
+    weeks = doc["weeks"]; n = len(weeks); ds = [_date(w) for w in weeks]
+    if any(d is None for d in ds): errs.append("semana con fecha invalida"); return
+    _asc(weeks, "semanas", errs)
+    for w, d in zip(weeks, ds):
+        if d.weekday() != 6 and not (d.month == 7 and d.day == 31): errs.append("%s: la semana de la CGC acaba en domingo (o el 31 de julio, fin de campana)" % w)
+    for a, b in zip(ds, ds[1:]):
+        if (b - a).days > 10: errs.append("hueco de mas de 10 dias entre %s y %s" % (a, b)); break
+    if doc["asOf"] != weeks[-1]: errs.append("asOf no es la ultima semana")
+    if (TODAY - ds[-1]).days > 21: warns.append("ultima semana de hace mas de tres semanas")
+    caps = {"exports": 5000, "cumExports": 40000, "deliveries": 5000, "stocks": 20000}; seen = set()
+    for g in doc["grains"]:
+        if g["id"] in seen: errs.append("grano repetido %s" % g["id"])
+        seen.add(g["id"])
+        for k, cap in caps.items():
+            col = g[k]
+            if len(col) != n: errs.append("%s/%s: %d valores para %d semanas" % (g["id"], k, len(col), n)); continue
+            for w, v in zip(weeks, col):
+                if v is None: continue
+                if not _num(v): errs.append("%s/%s %s: valor no numerico" % (g["id"], k, w)); continue
+                if v > cap: errs.append("%s/%s %s: %s kt fuera de rango" % (g["id"], k, w, v))
+                if k != "stocks" and v < 0: errs.append("%s/%s %s: valor negativo" % (g["id"], k, w))
+                if k == "stocks" and v < -10: errs.append("%s/%s %s: existencias muy negativas (%s)" % (g["id"], k, w, v))
+        cum = g["cumExports"]
+        for i in range(1, n):
+            a, b = cum[i - 1], cum[i]
+            if a is not None and b is not None and b < a - max(20.0, 0.1 * a) and not (ds[i].month == 8 and ds[i].day <= 14): errs.append("%s: el acumulado de exportaciones cae de %s a %s en %s" % (g["id"], a, b, weeks[i]))
+    stats["weeks"] = n; stats["grains"] = len(doc["grains"])
+
 def us_lamb(doc, errs, warns, stats):
     rows = doc["rows"]; prev = None
     for r in rows:
