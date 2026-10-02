@@ -25,8 +25,10 @@
   function lonOf(x) { return x / ORG * 180; }
   function latOf(y) { return (2 * Math.atan(Math.exp(y / R)) - Math.PI / 2) * 180 / Math.PI; }
 
+  var SAVED = null, RESIZE = null; // posicion, zoom y capa se conservan al volver a montar el visor (cambio de serie o de rango)
   function mount(el, lang) {
     var t = T[lang] || T.es, st = { l: 'cul', z: 6, cx: mx(-8.0), cy: my(39.6) }, w = 0, h = 0, drag = null;
+    if (SAVED) st = { l: SAVED.l, z: SAVED.z, cx: SAVED.cx, cy: SAVED.cy };
     el.innerHTML = '<div class="di-card" style="padding:16px 18px;margin-top:18px">' +
       '<div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:10px">' + esc(t.title.toUpperCase()) + '</div>' +
       '<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:10px">' +
@@ -42,7 +44,7 @@
     var vp = el.querySelector('.ifap-vp'), tiles = el.querySelector('.ifap-tiles'), hint = el.querySelector('.ifap-hint'), leg = el.querySelector('.ifap-leg');
     function legend() { leg.src = OWS + '?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=' + encodeURIComponent(LAYERS[st.l]) + '&STYLE='; }
     function render() {
-      w = vp.clientWidth; h = vp.clientHeight;
+      w = vp.clientWidth; h = vp.clientHeight; SAVED = { l: st.l, z: st.z, cx: st.cx, cy: st.cy };
       var ws = TS * Math.pow(2, st.z), res = 2 * ORG / ws; // m/px
       var x0 = st.cx - w / 2 * res, y1 = st.cy + h / 2 * res; // esquina sup-izq en metros
       var tx0 = Math.floor((x0 + ORG) / (TS * res)), ty0 = Math.floor((ORG - y1) / (TS * res));
@@ -74,8 +76,10 @@
     vp.addEventListener('dblclick', function (e) { var r = vp.getBoundingClientRect(); zoom(1, e.clientX - r.left, e.clientY - r.top); });
     var wheelAt = 0;
     vp.addEventListener('wheel', function (e) { e.preventDefault(); var n = Date.now(); if (n - wheelAt < 250) return; wheelAt = n; var r = vp.getBoundingClientRect(); zoom(e.deltaY < 0 ? 1 : -1, e.clientX - r.left, e.clientY - r.top); }, { passive: false });
-    window.addEventListener('resize', render);
-    legend(); setView(VIEWS['']);
+    if (RESIZE) window.removeEventListener('resize', RESIZE);
+    RESIZE = render; window.addEventListener('resize', render);
+    el.querySelector('select[data-k=l]').value = st.l; legend();
+    if (SAVED) render(); else setView(VIEWS['']);
   }
   window.DIIfapMap = { mount: mount };
 })();
