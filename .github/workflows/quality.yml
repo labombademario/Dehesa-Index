@@ -78,6 +78,9 @@ jobs:
       - name: Data catalog integrity (manifest, catalogs, shards)
         run: python3 scripts/check-catalog.py --strict
 
+      - name: Perfiles de region (mapas, nombres y datos de los que dependen)
+        run: node scripts/test-regions.mjs
+
       - name: Identidad visible del instrumento (soja, regla de comparacion, cobertura)
         run: node scripts/test-instrument-identity.mjs
 
