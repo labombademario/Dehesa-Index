@@ -13,10 +13,10 @@ const CN = { ES: ['España', 'Spain'], FR: ['Francia', 'France'], DE: ['Alemania
 const pl = read('js/paises.js').split('\n'), GL = {};
 [9, 13].forEach((ix, i) => { const ln = pl[ix], seg = ln.slice(ln.indexOf("production: '")), re = /(\w+): '((?:[^'\\]|\\.)*)'/g; let m; while ((m = re.exec(seg))) { if (m[1] === 'latest') break; (GL[m[1]] = GL[m[1]] || [])[i] = m[2].replace(/\\'/g, '’'); } });
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const acc = {}, src = {};
+const acc = {}, src = {}, filesOf = {};
 for (const f of FILES) {
   let d; try { d = JSON.parse(read('data/' + f + '.json')); } catch (e) { continue; }
-  for (const [cc, c] of Object.entries(d.countries || {})) { src[cc] = src[cc] || c.source; for (const s of c.series) (acc[cc + '|' + s.group] = acc[cc + '|' + s.group] || []).push(s); }
+  for (const [cc, c] of Object.entries(d.countries || {})) { src[cc] = src[cc] || c.source; for (const s of c.series) { filesOf[cc + '|' + s.group + '|' + f] = 1; } for (const s of c.series) (acc[cc + '|' + s.group] = acc[cc + '|' + s.group] || []).push(s); }
 }
 const MON = { es: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sept', 'oct', 'nov', 'dic'], en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] };
 function plabel(p, lang) { const m = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(p); if (!m) return p; return (m[3] ? +m[3] + ' ' : '') + MON[lang][+m[2] - 1] + ' ' + m[1]; }
@@ -25,6 +25,15 @@ const T = {
   es: { title: (c, g) => g + ' en ' + c + ': estadísticas oficiales', h1: (c, g) => g + ' — ' + c, desc: (c, g, n, last) => 'Estadísticas oficiales de ' + g.toLowerCase() + ' en ' + c + ': ' + n + ' series con datos hasta ' + last + '. Último valor, variación, fuente y licencia. Datos abiertos de Dehesa Index.', intro: (c, g, n, last, first) => 'Dehesa Index reúne ' + n + ' series de «' + g + '» de ' + c + ', con datos oficiales y su histórico (desde ' + first + ', último dato ' + last + '). Cada valor se muestra tal como lo publica la fuente, sin convertir ni recalcular.', th: ['Serie', 'Último dato', 'Periodo', 'Variación', 'Unidad'], src: 'Fuente', lic: 'Licencia', open: 'Explorar series, gráficos e histórico', other: 'Otras categorías de', same: 'Mismo tipo de dato en otros países', home: 'Inicio', data: 'Datos por país', upd: 'Datos actualizados', note: 'Cada fuente publica con su propia metodología y puede revisar valores pasados; consulta la metodología antes de comparar países.' },
   en: { title: (c, g) => g + ' in ' + c + ': official statistics', h1: (c, g) => g + ' — ' + c, desc: (c, g, n, last) => 'Official statistics on ' + g.toLowerCase() + ' in ' + c + ': ' + n + ' series with data up to ' + last + '. Latest value, change, source and licence. Open data by Dehesa Index.', intro: (c, g, n, last, first) => 'Dehesa Index brings together ' + n + ' “' + g + '” series for ' + c + ', with official data and its history (since ' + first + ', latest ' + last + '). Each value is shown as the source publishes it, not converted or recalculated.', th: ['Series', 'Latest', 'Period', 'Change', 'Unit'], src: 'Source', lic: 'Licence', open: 'Explore series, charts and history', other: 'Other categories for', same: 'Same data type in other countries', home: 'Home', data: 'Data by country', upd: 'Data updated', note: 'Each source publishes with its own methodology and may revise past values; read the methodology before comparing countries.' }
 };
+// Licencia como URL (Google la pide asi). Solo se enlaza cuando el texto de la fuente identifica la licencia sin ambiguedad; si no, se omite y el texto va en conditionsOfAccess.
+function licenseUrl(t) {
+  t = String(t || '');
+  if (/CC BY 4\.0/.test(t)) return 'https://creativecommons.org/licenses/by/4.0/';
+  if (/Datenlizenz Deutschland/.test(t)) return 'https://www.govdata.de/dl-de/by-2-0';
+  if (/Statistics Canada Open Licence/.test(t)) return 'https://www.statcan.gc.ca/en/reference/licence';
+  if (/Licence Ouverte 2\.0/.test(t)) return 'https://www.etalab.gouv.fr/licence-ouverte-open-licence/';
+  return null;
+}
 function score(s) { return (s.points || []).length + (s.latestPeriod > '2025' ? 200 : 0); }
 let n = 0; const urls = [];
 for (const [k, list] of Object.entries(acc)) {
@@ -39,7 +48,7 @@ for (const [k, list] of Object.entries(acc)) {
     const sameG = Object.keys(acc).filter(x => x.endsWith('|' + g) && x !== k && CN[x.split('|')[0]] && acc[x].length >= 2).map(x => x.split('|')[0]);
     const lk = (c2, g2) => (lang === 'es' ? '../' : '../') + c2.toLowerCase() + '-' + g2.replace(/_/g, '-') + '/';
     const title = seoTitle(t.title(cname, gname)), desc = t.desc(cname, gname, list.length, plabel(last, lang));
-    const ld = { '@context': 'https://schema.org', '@graph': [{ '@type': 'Dataset', name: t.h1(cname, gname), description: desc, url, inLanguage: lang, creator: { '@type': 'Organization', name: 'Dehesa Index', url: SITE }, isBasedOn: src[cc] && src[cc].url, license: src[cc] && src[cc].license, temporalCoverage: first + '/' + last, variableMeasured: top.slice(0, 8).map(s => s.label) }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: t.home, item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: t.data, item: SITE + '/paises.html' }, { '@type': 'ListItem', position: 3, name: t.h1(cname, gname), item: url }] }] };
+    const ld = { '@context': 'https://schema.org', '@graph': [{ '@type': 'Dataset', name: t.h1(cname, gname), description: desc, url, inLanguage: lang, creator: { '@type': 'Organization', name: 'Dehesa Index', url: SITE }, isBasedOn: src[cc] && src[cc].url, license: licenseUrl(src[cc] && src[cc].license) || undefined, conditionsOfAccess: (src[cc] && src[cc].license) || undefined, isAccessibleForFree: true, publisher: { '@type': 'Organization', name: 'Dehesa Index', url: SITE }, spatialCoverage: { '@type': 'Place', name: cname }, keywords: [gname, cname, lang === 'es' ? 'estadísticas agrarias' : 'agricultural statistics', lang === 'es' ? 'datos abiertos' : 'open data'], distribution: Object.keys(filesOf).filter(x => x.startsWith(cc + '|' + g + '|')).map(x => ({ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: SITE + '/data/' + x.split('|')[2] + '.json' })), temporalCoverage: first + '/' + last, variableMeasured: top.slice(0, 8).map(s => s.label) }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: t.home, item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: t.data, item: SITE + '/paises.html' }, { '@type': 'ListItem', position: 3, name: t.h1(cname, gname), item: url }] }] };
     const html = `<!doctype html>
 <html lang="${lang}">
 <head>
