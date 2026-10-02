@@ -209,5 +209,20 @@ for (const [u, n, k] of CON) add({ t: 'concept', u, n, s: tri('Cómo se calcula'
   ];
   for (const [u, n, k] of P2) add({ t: 'page', u, n, s: tri('Página', 'Page', 'Page', 'Page'), k });
 }
+// --- notas del blog: titulares de js/blog.js (STRINGS.<lg>.posts[].title), una entrada por nota apuntando a blog.html
+{
+  const bsrc = fs.readFileSync('js/blog.js', 'utf8');
+  const per = {};
+  for (const lg of ['es', 'en', 'fr', 'it']) {
+    const a = bsrc.indexOf('STRINGS.' + lg + ' = {');
+    const b = bsrc.indexOf('STRINGS.', a + 10);
+    const seg = bsrc.slice(a, b > 0 ? b : undefined);
+    const ps = seg.indexOf('posts: [');
+    per[lg] = [...seg.slice(ps).matchAll(/\n\s+title: '((?:[^'\\]|\\.)*)'/g)].map(m => m[1].replace(/\\'/g, "'"));
+  }
+  const n = per.es.length;
+  if (!n || ['en', 'fr', 'it'].some(l => per[l].length !== n)) throw new Error('blog.js: numero de notas distinto por idioma');
+  for (let i = 0; i < n; i++) add({ t: 'page', u: 'blog.html', n: { es: per.es[i], en: per.en[i], fr: per.fr[i], it: per.it[i] }, s: tri('Blog', 'Blog', 'Blog', 'Blog'), k: 'blog nota analisis análisis' });
+}
 fs.writeFileSync('data/search-index.json', JSON.stringify({ schemaVersion: '1.0', generatedAt: new Date().toISOString().slice(0, 10), entries: out.map((e, i) => ({ i, ...e })) }) + '\n');
 console.log('entradas', out.length, Object.entries(out.reduce((a, e) => (a[e.t] = (a[e.t] || 0) + 1, a), {})).map(x => x.join(':')).join(' '));

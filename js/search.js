@@ -4,16 +4,16 @@
   'use strict';
   var TXT = {
     es: { ph: 'Busca un producto, país, dato o página…', hint: 'Prueba con', empty: 'Sin resultados para', tryTxt: 'Prueba con otro término, en cualquier idioma (p. ej. «trigo», «wheat», «exportaciones soja»).', partial: 'Coincidencias parciales', close: 'Cerrar', popular: 'Sugerencias', nav: '↑↓ moverse · Enter abrir · Esc cerrar', loadFail: 'No se pudo cargar el buscador.',
-      types: { product: 'Precio', category: 'Categoría', supply: 'Oferta y demanda', map: 'Mapa', crop: 'Cultivos', market: 'Mercado USDA', country: 'País', climate: 'Clima', page: 'Página', section: 'Sección', concept: 'Explicación' } },
+      types: { product: 'Precio', category: 'Categoría', supply: 'Oferta y demanda', map: 'Mapa', crop: 'Cultivos', market: 'Mercado USDA', country: 'País', climate: 'Clima', page: 'Página', section: 'Sección', concept: 'Explicación', news: 'Noticia' } },
     en: { ph: 'Search a product, country, dataset or page…', hint: 'Try', empty: 'No results for', tryTxt: 'Try another term, in any language (e.g. “wheat”, “trigo”, “soy exports”).', partial: 'Partial matches', close: 'Close', popular: 'Suggestions', nav: '↑↓ move · Enter open · Esc close', loadFail: 'The search could not be loaded.',
-      types: { product: 'Price', category: 'Category', supply: 'Supply & demand', map: 'Map', crop: 'Crops', market: 'USDA market', country: 'Country', climate: 'Climate', page: 'Page', section: 'Section', concept: 'Explainer' } },
+      types: { product: 'Price', category: 'Category', supply: 'Supply & demand', map: 'Map', crop: 'Crops', market: 'USDA market', country: 'Country', climate: 'Climate', page: 'Page', section: 'Section', concept: 'Explainer', news: 'News' } },
     fr: { ph: 'Cherchez un produit, un pays, une donnée ou une page…', hint: 'Essayez', empty: 'Aucun résultat pour', tryTxt: 'Essayez un autre terme, dans n’importe quelle langue (p. ex. « blé », « wheat », « exportations soja »).', partial: 'Correspondances partielles', close: 'Fermer', popular: 'Suggestions', nav: '↑↓ naviguer · Entrée ouvrir · Échap fermer', loadFail: 'La recherche n’a pas pu être chargée.',
-      types: { product: 'Prix', category: 'Catégorie', supply: 'Offre et demande', map: 'Carte', crop: 'Cultures', market: 'Marché USDA', country: 'Pays', climate: 'Climat', page: 'Page', section: 'Section', concept: 'Explication' } },
+      types: { product: 'Prix', category: 'Catégorie', supply: 'Offre et demande', map: 'Carte', crop: 'Cultures', market: 'Marché USDA', country: 'Pays', climate: 'Climat', page: 'Page', section: 'Section', concept: 'Explication', news: 'Actualité' } },
     it: { ph: 'Cerca un prodotto, un paese, un dato o una pagina…', hint: 'Prova', empty: 'Nessun risultato per', tryTxt: 'Prova un altro termine, in qualsiasi lingua (es. «grano», «wheat», «esportazioni soia»).', partial: 'Corrispondenze parziali', close: 'Chiudi', popular: 'Suggerimenti', nav: '↑↓ muovi · Invio apri · Esc chiudi', loadFail: 'Impossibile caricare la ricerca.',
-      types: { product: 'Prezzo', category: 'Categoria', supply: 'Offerta e domanda', map: 'Mappa', crop: 'Colture', market: 'Mercato USDA', country: 'Paese', climate: 'Clima', page: 'Pagina', section: 'Sezione', concept: 'Spiegazione' } }
+      types: { product: 'Prezzo', category: 'Categoria', supply: 'Offerta e domanda', map: 'Mappa', crop: 'Colture', market: 'Mercato USDA', country: 'Paese', climate: 'Clima', page: 'Pagina', section: 'Sezione', concept: 'Spiegazione', news: 'Notizia' } }
   };
-  var ICON = { product: '💶', category: '🏷️', supply: '⚖️', map: '🗺️', crop: '🌱', market: '📈', country: '🌍', climate: '🌦️', page: '📄', section: '📑', concept: '💡' };
-  var BOOST = { product: 0.18, supply: 0.1, crop: 0.1, market: 0.06, category: 0.06, climate: 0.04, page: 0.05, concept: 0.05, section: 0, map: -0.04 };
+  var ICON = { product: '💶', category: '🏷️', supply: '⚖️', map: '🗺️', crop: '🌱', market: '📈', country: '🌍', climate: '🌦️', page: '📄', section: '📑', concept: '💡', news: '📰' };
+  var BOOST = { product: 0.18, supply: 0.1, crop: 0.1, market: 0.06, category: 0.06, climate: 0.04, page: 0.05, concept: 0.05, news: -0.05, section: 0, map: -0.04 };
   var STOP = { de: 1, del: 1, la: 1, el: 1, los: 1, las: 1, en: 1, of: 1, the: 1, in: 1, and: 1, y: 1, e: 1, et: 1, le: 1, les: 1, du: 1, des: 1, di: 1, il: 1, lo: 1, da: 1, un: 1, una: 1, a: 1, to: 1, for: 1, por: 1, para: 1, con: 1, pour: 1, per: 1 };
   var SUGGEST = ['precios.html?tab=cereales&product=cereales%3Atrigo', 'precios.html?tab=cereales&product=cereales%3Amaiz', 'precios.html?tab=lacteos&product=lacteos%3Aleche', 'precios.html?tab=fertilizantes&product=fertilizantes%3Aurea', 'oferta-demanda.html?c=soja', 'cultivos.html?crop=corn', 'clima.html', 'mapa.html?layer=exp&sd=trigo'];
   var TRYQ = { h: { es: 'Pregunta directamente', en: 'Ask directly', fr: 'Posez la question', it: 'Chiedi direttamente' }, q: { es: ['precio del trigo', 'maíz en Iowa', 'exportaciones de España a Francia'], en: ['wheat price', 'corn in Iowa', 'Spain exports to Germany'], fr: ['prix du blé', 'maïs en Iowa', 'exportations de la France vers l’Allemagne'], it: ['prezzo del grano', 'mais in Iowa', 'esportazioni della Spagna'] } };
@@ -78,6 +78,27 @@
     if (!r.length && qs.length > 1) { r = run(false); partial = true; }
     return { list: r.slice(0, 10).map(function (x) { return x.e; }), partial: partial };
   }
+  // Noticias: data/news.json se baja solo cuando se busca (>= 3 letras); no entra en el indice estatico porque cambia cada 3 h.
+  var NEWS = { arr: null, p: null };
+  function loadNews() {
+    if (NEWS.p) return NEWS.p;
+    NEWS.p = fetch(href('data/news.json')).then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) {
+      NEWS.arr = (d.items || []).filter(function (x) { return x && x.url && x.headline; }).map(function (x) {
+        var n = {}, s = {}; L.forEach(function (l) { n[l] = x.headline[l] || x.headline.en || ''; s[l] = (x.source || '') + (x.date ? ' · ' + x.date : ''); });
+        return { t: 'news', u: x.url, ext: true, n: n, s: s, k: ((x.topics || []).concat(x.products || [])).join(' ') };
+      });
+      prep(NEWS.arr);
+    }).catch(function () { NEWS.p = null; NEWS.arr = []; });
+    return NEWS.p;
+  }
+  function newsFor(query, lang) {
+    if (!NEWS.arr) return [];
+    var qs = toks(query).filter(function (x) { return !STOP[x]; }), out = [];
+    if (!qs.length) return out;
+    NEWS.arr.forEach(function (e) { var s = scoreEntry(e, qs, lang, true); if (s > 0.5) out.push({ e: e, s: s }); });
+    out.sort(function (a, b) { return b.s - a.s; });
+    return out.slice(0, 3).map(function (x) { return x.e; });
+  }
   function lang() { return global.DehesaShared && global.DehesaShared.getLang ? global.DehesaShared.getLang() : 'es'; }
   function tx() { return TXT[lang()] || TXT.es; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -124,10 +145,10 @@
   function mark() {
     var lis = ROOT.querySelectorAll('li'); Array.prototype.forEach.call(lis, function (li, i) { li.classList.toggle('is-sel', i === STATE.sel); li.setAttribute('aria-selected', i === STATE.sel ? 'true' : 'false'); if (i === STATE.sel && li.scrollIntoView) li.scrollIntoView({ block: 'nearest' }); });
   }
-  function go(e) { close(); global.location.href = href(e.u); }
+  function go(e) { close(); if (e.ext) global.open(e.u, '_blank', 'noopener,noreferrer'); else global.location.href = href(e.u); }
   function item(e, l, i) {
     var t = tx();
-    return '<li role="option" data-i="' + i + '"><a href="' + esc(href(e.u)) + '"><span class="ds-ic" aria-hidden="true">' + (ICON[e.t] || '•') + '</span><span><div class="ds-t">' + esc(e.n[l]) + '</div><div class="ds-s">' + esc((e.s || {})[l] || '') + '</div></span><span class="ds-badge">' + esc(t.types[e.t] || e.t) + '</span></a></li>';
+    return '<li role="option" data-i="' + i + '"><a href="' + esc(e.ext ? e.u : href(e.u)) + '"' + (e.ext ? ' target="_blank" rel="noopener noreferrer"' : '') + '><span class="ds-ic" aria-hidden="true">' + (ICON[e.t] || '•') + '</span><span><div class="ds-t">' + esc(e.n[l]) + '</div><div class="ds-s">' + esc((e.s || {})[l] || '') + '</div></span><span class="ds-badge">' + esc(t.types[e.t] || e.t) + '</span></a></li>';
   }
   function renderResults() {
     var t = tx(), l = lang(), q = document.getElementById('ds-input').value, body = document.getElementById('ds-body'), html = '';
@@ -138,7 +159,8 @@
       STATE.results = SUGGEST.map(function (u) { return by[u]; }).filter(Boolean);
       html = '<div class="ds-head">' + esc(TRYQ.h[l] || TRYQ.h.es) + '</div><div class="ds-try">' + (TRYQ.q[l] || TRYQ.q.es).map(function (q) { return '<button type="button" data-q="' + esc(q) + '">' + esc(q) + '</button>'; }).join('') + '</div><div class="ds-head">' + esc(t.popular) + '</div><ul id="ds-list" role="listbox">' + STATE.results.map(function (e, i) { return item(e, l, i); }).join('') + '</ul>';
     } else {
-      var r = search(q, l); STATE.results = r.list;
+      var r = search(q, l); r.list = r.list.concat(newsFor(q, l)); STATE.results = r.list;
+      if (norm(q).length >= 3 && !NEWS.arr) loadNews().then(function () { if (STATE.open && STATE.q === q) renderResults(); });
       if (!r.list.length) html = '<div class="ds-msg">' + esc(t.empty) + ' «' + esc(q.trim()) + '». ' + esc(t.tryTxt) + '</div>';
       else html = (r.partial ? '<div class="ds-head">' + esc(t.partial) + '</div>' : '') + '<ul id="ds-list" role="listbox">' + r.list.map(function (e, i) { return item(e, l, i); }).join('') + '</ul>';
     }

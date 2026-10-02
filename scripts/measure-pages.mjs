@@ -4,6 +4,7 @@
 // Con --check aplica el presupuesto por pagina de scripts/page-budget.json y falla si se supera o si se pide un fichero prohibido.
 import { readFile, writeFile } from 'node:fs/promises';
 import { gzipSync } from 'node:zlib';
+const FONT_MAX_KB = 100;   // woff2 propios (Source Serif 4 + Public Sans, latin); hoy ~78 KB
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -20,18 +21,21 @@ for (const pg of PAGES) {
   const page = await ctx.newPage(); const files = [];
   page.on('response', async r => {
     const u = new URL(r.url()); if (u.origin !== new URL(BASE).origin) return;
-    try { const b = await r.body(); files.push({ p: u.pathname + (u.search || ''), type: /\.json$/.test(u.pathname) ? 'data' : /\.js$/.test(u.pathname) ? 'js' : /\.css$/.test(u.pathname) ? 'css' : /\.html?$|\/$/.test(u.pathname) ? 'html' : 'other', raw: b.length, gz: gzipSync(b).length, status: r.status() }); } catch (e) {}
+    try { const b = await r.body(); files.push({ p: u.pathname + (u.search || ''), type: /\.woff2?$/.test(u.pathname) ? 'font' : /\.json$/.test(u.pathname) ? 'data' : /\.js$/.test(u.pathname) ? 'js' : /\.css$/.test(u.pathname) ? 'css' : /\.html?$|\/$/.test(u.pathname) ? 'html' : 'other', raw: b.length, gz: gzipSync(b).length, status: r.status() }); } catch (e) {}
   });
   const errs = []; page.on('pageerror', e => errs.push(e.message));
   await page.goto(BASE + pg.url, { waitUntil: 'load' }).catch(() => {}); await page.waitForTimeout(pg.wait || 3500);
   const sum = t => files.filter(f => f.type === t).reduce((a, f) => ({ raw: a.raw + f.raw, gz: a.gz + f.gz }), { raw: 0, gz: 0 });
-  const tot = files.reduce((a, f) => ({ raw: a.raw + f.raw, gz: a.gz + f.gz }), { raw: 0, gz: 0 });
+  // Las tipografias propias (woff2, ya comprimidas y cacheadas por el navegador) tienen presupuesto aparte (FONT_MAX_KB) y no cuentan en el total.
+  const fontKB = Math.round(files.filter(f => f.type === 'font').reduce((a, f) => a + f.raw, 0) / 1024);
+  const tot = files.filter(f => f.type !== 'font').reduce((a, f) => ({ raw: a.raw + f.raw, gz: a.gz + f.gz }), { raw: 0, gz: 0 });
   const data = files.filter(f => f.type === 'data').sort((a, b) => b.raw - a.raw);
   const r = { url: pg.url, mobile: !!pg.mobile, total: tot, js: sum('js'), css: sum('css'), data: sum('data'), dataFiles: data.length, topData: data.slice(0, 6).map(f => f.p + ' ' + Math.round(f.raw / 1024) + 'KB'), requests: files.length, errors: errs, notFound: files.filter(f => f.status >= 400).map(f => f.p) };
   results.push(r);
   const kb = n => Math.round(n / 1024);
   console.log((pg.mobile ? '[m] ' : '    ') + pg.url.padEnd(26) + ' total ' + String(kb(tot.raw)).padStart(6) + ' KB raw / ' + String(kb(tot.gz)).padStart(5) + ' KB gz | js ' + String(kb(r.js.raw)).padStart(5) + ' | data ' + String(kb(r.data.raw)).padStart(6) + ' KB (' + data.length + ' ficheros) | ' + r.topData.slice(0, 2).join(', '));
   if (CHECK) {
+    if (fontKB > FONT_MAX_KB) fails.push(pg.url + ': tipografias ' + fontKB + ' KB > ' + FONT_MAX_KB + ' KB');
     if (pg.maxDataRawKB && r.data.raw > pg.maxDataRawKB * 1024) fails.push(pg.url + ': datos ' + kb(r.data.raw) + ' KB > ' + pg.maxDataRawKB + ' KB');
     if (pg.maxTotalGzKB && tot.gz > pg.maxTotalGzKB * 1024) fails.push(pg.url + ': total gzip ' + kb(tot.gz) + ' KB > ' + pg.maxTotalGzKB + ' KB');
     if (pg.maxJsRawKB && r.js.raw > pg.maxJsRawKB * 1024) fails.push(pg.url + ': JS ' + kb(r.js.raw) + ' KB > ' + pg.maxJsRawKB + ' KB');
