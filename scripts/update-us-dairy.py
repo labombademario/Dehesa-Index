@@ -37,8 +37,9 @@ def build(data):
         # solo el informe actual (ultimo published_date); las filas de informes antiguos ya estan en 'final'
         cur_rows = d["current"]
         if cur_rows:
-            mx = max(r["published_date"] for r in cur_rows)
-            cur_rows = [r for r in cur_rows if r["published_date"] == mx]
+            pub = lambda r: datetime.datetime.strptime(r["published_date"], "%m/%d/%Y %H:%M:%S")  # no comparar como texto: "12/..." > "09/..." entre anos
+            mx = max(pub(r) for r in cur_rows)
+            cur_rows = [r for r in cur_rows if pub(r) == mx]
         cur = points(cur_rows, pf, sf)
         series = {k: v + [0] for k, v in fin.items()}
         for k, v in cur.items():

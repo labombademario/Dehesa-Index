@@ -25,4 +25,7 @@ except ValueError: pass
 # un informe antiguo en 'current' no sobreescribe la semana final
 old = json.loads(json.dumps(fx)); old["butter"]["current"].append({"week_ending_date": "08/01/2026", "Week Ending Date": "08/22/2026", "Butter_Price": "9.9999", "Butter_Sales": "1", "published_date": "08/05/2026 12:50:12"})
 eq({r[0]: r[1] for r in C.build(old)[0]["series"]}["2026-08-22"], 1.4531, "revision antigua ignorada")
+# la API devuelve ademas informes de anos anteriores: el "ultimo" se decide por fecha real, no por texto (12/2025 > 09/2026 como texto)
+yr = json.loads(json.dumps(fx)); yr["butter"]["current"].append({"week_ending_date": "12/20/2025", "Week Ending Date": "12/13/2025", "Butter_Price": "1.9", "Butter_Sales": "1", "published_date": "12/17/2025 13:00:00"})
+eq(C.build(yr)[0]["series"][-1][:2], ["2026-09-26", 1.3871], "informe del ano pasado no tapa al actual")
 print("OK test-us-dairy" if not bad else "\n".join(bad)); sys.exit(1 if bad else 0)
