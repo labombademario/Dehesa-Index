@@ -1,0 +1,792 @@
+[
+{
+"slug_id": "1034",
+"slug_name": "AMS_1034",
+"report_title": "Dry Whey - Europe",
+"report_date": "09/21/2026",
+"published_date": "09/24/2026 07:42:15",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1035",
+"slug_name": "AMS_1035",
+"report_title": "Skim Milk Powder - Europe",
+"report_date": "09/21/2026",
+"published_date": "09/24/2026 07:42:19",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1036",
+"slug_name": "AMS_1036",
+"report_title": "Whole Milk Powder - Europe",
+"report_date": "09/21/2026",
+"published_date": "09/24/2026 07:42:23",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1038",
+"slug_name": "AMS_1038",
+"report_title": "Skim Milk Powder - Oceania",
+"report_date": "09/21/2026",
+"published_date": "09/24/2026 07:47:25",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1039",
+"slug_name": "AMS_1039",
+"report_title": "Whole Milk Powder - Oceania",
+"report_date": "09/21/2026",
+"published_date": "09/24/2026 07:51:14",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1041",
+"slug_name": "AMS_1041",
+"report_title": "Skim Milk Powder - South America",
+"report_date": "09/14/2026",
+"published_date": "09/24/2026 09:24:56",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1042",
+"slug_name": "AMS_1042",
+"report_title": "Whole Milk Powder - South America",
+"report_date": "09/14/2026",
+"published_date": "09/25/2026 17:06:14",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1043",
+"slug_name": "AMS_1043",
+"report_title": "Dry Buttermilk - West U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 12:32:38",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1044",
+"slug_name": "AMS_1044",
+"report_title": "Dry Buttermilk - East and Central U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 12:19:22",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1045",
+"slug_name": "AMS_1045",
+"report_title": "Dry Whey - Central U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 12:17:09",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1046",
+"slug_name": "AMS_1046",
+"report_title": "Dry Whey - West U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 12:29:04",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1047",
+"slug_name": "AMS_1047",
+"report_title": "Dry Whey - East U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 12:29:59",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1048",
+"slug_name": "AMS_1048",
+"report_title": "Nonfat Dry Milk - West U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 13:03:10",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1049",
+"slug_name": "AMS_1049",
+"report_title": "Nonfat Dry Milk - East and Central U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 12:21:00",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1050",
+"slug_name": "AMS_1050",
+"report_title": "Dry Whole Milk - U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 12:17:10",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1051",
+"slug_name": "AMS_1051",
+"report_title": "Casein - U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 14:49:17",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": true,
+"sectionNames": []
+},
+{
+"slug_id": "1052",
+"slug_name": "AMS_1052",
+"report_title": "Lactose - Central and West U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 12:20:28",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1053",
+"slug_name": "AMS_1053",
+"report_title": "Whey Protein Concentrate - Central and West U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 12:13:39",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1082",
+"slug_name": "AMS_1082",
+"report_title": "Cheese - Oceania",
+"report_date": "09/21/2026",
+"published_date": "09/24/2026 07:44:11",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1083",
+"slug_name": "AMS_1083",
+"report_title": "Cheese - Central U.S.",
+"report_date": "09/28/2026",
+"published_date": "09/30/2026 12:47:13",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1084",
+"slug_name": "AMS_1084",
+"report_title": "Cheese - East U.S.",
+"report_date": "09/28/2026",
+"published_date": "09/30/2026 11:34:02",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1085",
+"slug_name": "AMS_1085",
+"report_title": "Cheese - West U.S.",
+"report_date": "09/28/2026",
+"published_date": "09/30/2026 13:11:14",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1089",
+"slug_name": "AMS_1089",
+"report_title": "Butter - Central U.S.",
+"report_date": "09/28/2026",
+"published_date": "09/30/2026 12:45:20",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1090",
+"slug_name": "AMS_1090",
+"report_title": "Butter - East U.S.",
+"report_date": "09/28/2026",
+"published_date": "09/30/2026 11:37:03",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1091",
+"slug_name": "AMS_1091",
+"report_title": "Butter - West U.S.",
+"report_date": "09/28/2026",
+"published_date": "09/30/2026 13:12:58",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1092",
+"slug_name": "AMS_1092",
+"report_title": "Cheese - Foreign Type",
+"report_date": "09/28/2026",
+"published_date": "09/30/2026 12:49:47",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1098",
+"slug_name": "AMS_1098",
+"report_title": "Butter/Butteroil - Europe",
+"report_date": "09/21/2026",
+"published_date": "09/24/2026 07:42:11",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1099",
+"slug_name": "AMS_1099",
+"report_title": "Butter - Oceania",
+"report_date": "09/21/2026",
+"published_date": "09/24/2026 07:39:10",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1100",
+"slug_name": "AMS_1100",
+"report_title": "Fluid Milk and Cream - Central U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 11:44:42",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1101",
+"slug_name": "AMS_1101",
+"report_title": "Fluid Milk And Cream - East U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 15:02:06",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": true,
+"sectionNames": []
+},
+{
+"slug_id": "1102",
+"slug_name": "AMS_1102",
+"report_title": "Fluid Milk and Cream - West U.S.",
+"report_date": "09/28/2026",
+"published_date": "10/01/2026 13:06:36",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1602",
+"slug_name": "AMS_1602",
+"report_title": "CME Group - Weekly Recap",
+"report_date": "09/21/2026",
+"published_date": "09/25/2026 11:08:55",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1603",
+"slug_name": "AMS_1603",
+"report_title": "CME Group - Daily Cash Trading - Week to Date",
+"report_date": "10/01/2026",
+"published_date": "10/01/2026 11:13:38",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1623",
+"slug_name": "AMS_1623",
+"report_title": "Dairy Monthly Averages",
+"report_date": "01/01/2026",
+"published_date": "09/11/2026 10:22:13",
+"report_status": "Final",
+"markets": [],
+"market_types": [
+"Point of Sale - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": [
+"CME Monthly Averages",
+"Dairy Monthly Averages",
+"Hard Products Monthly Averages",
+"Fluid Products Monthly Averages",
+"Dry Products Monthly Averages",
+"International Monthly Averages"
+]
+},
+{
+"slug_id": "1898",
+"slug_name": "AMS_1898",
+"report_title": "Centennial Livestock Monthly Dairy Feeder Cattle Sale - Fort Collins, CO",
+"report_date": "08/31/2026",
+"published_date": "08/31/2026 15:53:17",
+"report_status": "Final",
+"markets": [
+"Centennial"
+],
+"market_types": [
+"Auction Livestock"
+],
+"offices": [
+"Greeley, CO"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1910",
+"slug_name": "AMS_1910",
+"report_title": "New Holland Dairy Auction - New Holland, PA",
+"report_date": "01/10/2024",
+"published_date": "01/10/2024 12:21:16",
+"report_status": "Final",
+"markets": [
+"New Holland Sale Stables"
+],
+"market_types": [
+"Auction Livestock"
+],
+"offices": [
+"New Holland, PA"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1929",
+"slug_name": "AMS_1929",
+"report_title": "Jackson Regional Stockyard Dairy Sale - Jackson, GA",
+"report_date": "06/05/2024",
+"published_date": "06/05/2024 19:07:53",
+"report_status": "Final",
+"markets": [
+"Jackson"
+],
+"market_types": [
+"Auction Livestock"
+],
+"offices": [
+"Thomasville, GA"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "1982",
+"slug_name": "AMS_1982",
+"report_title": "Maplehurst Dairy Replacement Sale - Hinsdale, NY",
+"report_date": "06/28/2021",
+"published_date": "06/29/2021 10:08:35",
+"report_status": "Final",
+"markets": [
+"Maplehurst Livestock Auction"
+],
+"market_types": [
+"Auction Livestock"
+],
+"offices": [
+"Albany, NY"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "2131",
+"slug_name": "AMS_2131",
+"report_title": "Toppenish Dairy Replacement Auction - Toppenish, WA (Monthly)",
+"report_date": "03/27/2026",
+"published_date": "03/27/2026 12:55:20",
+"report_status": "Final",
+"markets": [
+"Toppenish Livestock Commission"
+],
+"market_types": [
+"Auction Livestock"
+],
+"offices": [
+"Moses Lake, WA"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "2199",
+"slug_name": "AMS_2199",
+"report_title": "Farmers Regional Livestock Auction of Glasgow Dairy Auction - Smiths Grove, KY",
+"report_date": "09/29/2026",
+"published_date": "09/29/2026 21:36:23",
+"report_status": "Final",
+"markets": [
+"Smiths Grove Mammoth Cave Dairy Auction"
+],
+"market_types": [
+"Auction Livestock"
+],
+"offices": [
+"Frankfort, KY"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": []
+},
+{
+"slug_id": "2922",
+"slug_name": "AMS_2922",
+"report_title": "Equity Cooperative Sheep & Lamb Video/Internet Auction - Baraboo, WI",
+"report_date": "10/01/2026",
+"published_date": "10/01/2026 09:43:56",
+"report_status": "Final",
+"markets": [
+"Equity Cooperative Video Auction "
+],
+"market_types": [
+"Video Auction Livestock"
+],
+"offices": [
+"Greeley, CO"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": [
+"Report Header",
+"Report Details",
+"Report Receipts"
+]
+},
+{
+"slug_id": "2995",
+"slug_name": "DYBRETAIL",
+"report_title": "Weekly Grocery Store Dairy Feature Activity",
+"report_date": "09/25/2026",
+"published_date": "09/25/2026 10:48:08",
+"report_status": "Final",
+"markets": [
+"Dairy Retail"
+],
+"market_types": [
+"Retail - Dairy"
+],
+"offices": [
+"Madison"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": [
+"Report Header",
+"Report Details"
+]
+},
+{
+"slug_id": "3229",
+"slug_name": "AMS_3229",
+"report_title": "Weekly Grocery Store Lamb Feature Activity",
+"report_date": "09/21/2026",
+"published_date": "09/25/2026 10:42:54",
+"report_status": "Final",
+"markets": [
+"Retail - LP"
+],
+"market_types": [
+"Retail - Livestock/Poultry/Egg"
+],
+"offices": [
+"Washington, DC - LP (Retail)"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": [
+"Report Header",
+"Report Metrics",
+"Report Details"
+]
+},
+{
+"slug_id": "3909",
+"slug_name": "AMS_3909",
+"report_title": "Cattle Drive Video Market- Sheep & Lamb Video Auction- Salina, UT",
+"report_date": "08/31/2026",
+"published_date": "08/31/2026 12:11:10",
+"report_status": "Final",
+"markets": [
+"Cattle Drive Video Market"
+],
+"market_types": [
+"Video Auction Livestock"
+],
+"offices": [
+"Greeley, CO"
+],
+"hasCorrectionsInLastThreeDays": false,
+"sectionNames": [
+"Report Header",
+"Report Details",
+"Report Receipts"
+]
+}
+]
