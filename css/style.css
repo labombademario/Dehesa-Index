@@ -263,6 +263,8 @@ img { max-width: 100%; }
 .di-cat-label { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
 .di-cat-items { font-size: 12px; font-weight: 600; color: var(--text-faint); margin-bottom: 10px; }
 .di-cat-desc { font-size: 13px; color: var(--text-tertiary); line-height: 1.5; }
+.di-cat-live { font-size: 12.5px; font-weight: 600; color: var(--text); line-height: 1.4; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.di-cat-live:empty { display: none; }
 .di-how { padding: 40px 32px; margin-bottom: 56px; background: var(--surface-alt); border-radius: 18px; }
 .di-steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
 .di-step { text-align: center; }

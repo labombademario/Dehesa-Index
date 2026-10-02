@@ -1331,6 +1331,34 @@ def home_tape(doc, errs, warns, stats):
     stats["rows"] = len(doc["rows"])
 
 
+def home_explore(doc, errs, warns, stats):
+    """Cifras de las tarjetas de la portada: cada hecho se recalcula desde su fichero de origen y debe coincidir (nada estimado, nada inventado)."""
+    import json as _j, os as _o
+    base = _o.path.join(_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__))), "data")
+    def src(rel):
+        try: return _j.load(open(_o.path.join(base, rel)))
+        except Exception: return None
+    seen = set()
+    for f in doc["facts"]:
+        if f["id"] in seen: errs.append("home-explore: hecho duplicado %s" % f["id"])
+        seen.add(f["id"])
+        s = src(f["file"])
+        if s is None: errs.append("home-explore %s: falta el origen data/%s" % (f["id"], f["file"])); continue
+        if f["id"] == "eu":
+            if f.get("series") != sum(x["series"] for x in s["families"]) or f.get("families") != len(s["families"]): errs.append("home-explore eu: series/familias no coinciden con eu/index.json")
+        elif f["id"] == "drought":
+            row = s["us"]["conus"][-1]
+            if f["date"] != row[0] or f.get("pctD1") != row[2]: errs.append("home-explore drought: no coincide con la ultima semana de drought.json")
+            if not (0 <= f.get("pctD1", -1) <= 100): errs.append("home-explore drought: porcentaje fuera de 0-100")
+        elif f["id"] == "cattle":
+            r = s["reports"][-1]
+            if f["date"] != r["inventoryDate"] or f.get("release") != r["release"] or f.get("onFeedKhead") != r["national"]["current"]["onFeedEnd"] or f.get("pctYearAgo") != r["national"]["pctYearAgo"]["onFeedEnd"]: errs.append("home-explore cattle: no coincide con el ultimo informe de cattle-on-feed.json")
+        elif f["id"] == "exports":
+            w = next((k for k in s["commodities"] if k["name"] == f.get("commodity")), None)
+            if not w or f["date"] != w["weekEnding"] or f.get("netSales") != w["totals"]["net"] or f.get("unit") != w.get("unit"): errs.append("home-explore exports: no coincide con export-sales.json")
+    stats["facts"] = len(doc["facts"])
+
+
 def ers_cost_reference(doc, errs, warns, stats):
     """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""
     keys = set(doc["map"])

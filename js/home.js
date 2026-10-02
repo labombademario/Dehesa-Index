@@ -262,8 +262,30 @@
     if (!el) return;
     el.innerHTML = '<div class="di-section-head"><h2>' + esc(EXPLORE.title[lang] || EXPLORE.title.es) + '</h2><p>' + esc(EXPLORE.sub[lang] || EXPLORE.sub.es) + '</p></div>' +
       '<div class="di-cat-grid">' + EXPLORE.cards.map(function (c) {
-        return '<a class="di-cat-card" href="' + c.href + '"><div class="di-cat-bar"></div><div class="di-cat-label serif">' + esc(c.title[lang] || c.title.es) + '</div><div class="di-cat-items">' + esc(c.tag[lang] || c.tag.es) + '</div><div class="di-cat-desc">' + esc(c.desc[lang] || c.desc.es) + '</div></a>';
+        return '<a class="di-cat-card" href="' + c.href + '"><div class="di-cat-bar"></div><div class="di-cat-label serif">' + esc(c.title[lang] || c.title.es) + '</div><div class="di-cat-items">' + esc(c.tag[lang] || c.tag.es) + '</div><div class="di-cat-desc">' + esc(c.desc[lang] || c.desc.es) + '</div><div class="di-cat-live" data-live="' + esc(LIVE_ID[c.href] || '') + '"></div></a>';
       }).join('') + '</div>';
+  }
+
+  // Cifra viva por tarjeta: data/home-explore.json (copiada de ficheros publicados; ver scripts/build-home-explore.py). Si falla, la tarjeta queda como estaba.
+  var LIVE_ID = { 'europa.html': 'eu', 'sequia.html': 'drought', 'ganaderia.html': 'cattle', 'exportaciones.html': 'exports' };
+  var LIVE = {
+    es: { eu: '{n} series en {f} familias de producto', drought: '{p} % de EE. UU. continental en sequía (D1+) · {d}', cattle: '{v} millones de cabezas en cebo, {y} % del año anterior · {d}', exports: 'Trigo: {n} t de ventas netas, semana al {d}' },
+    en: { eu: '{n} series in {f} product families', drought: '{p}% of the contiguous U.S. in drought (D1+) · {d}', cattle: '{v} million head on feed, {y}% of a year ago · {d}', exports: 'Wheat: {n} t net sales, week ending {d}' },
+    fr: { eu: '{n} séries dans {f} familles de produits', drought: '{p} % des É.-U. continentaux en sécheresse (D1+) · {d}', cattle: '{v} millions de têtes en engraissement, {y} % d’il y a un an · {d}', exports: 'Blé : {n} t de ventes nettes, semaine au {d}' },
+    it: { eu: '{n} serie in {f} famiglie di prodotti', drought: '{p}% degli USA continentali in siccità (D1+) · {d}', cattle: '{v} milioni di capi all’ingrasso, {y}% di un anno fa · {d}', exports: 'Frumento: {n} t di vendite nette, settimana al {d}' }
+  };
+  function liveText(f, lang) {
+    var T = (LIVE[lang] || LIVE.es)[f.id]; if (!T) return '';
+    function nf(v, d) { try { return v.toLocaleString(lang, { minimumFractionDigits: d, maximumFractionDigits: d }); } catch (e) { return String(v); } }
+    var m = { n: f.series != null ? nf(f.series, 0) : f.netSales != null ? nf(f.netSales, 0) : '', f: f.families, p: f.pctD1 != null ? nf(f.pctD1, 1) : '', v: f.onFeedKhead != null ? nf(f.onFeedKhead / 1000, 1) : '', y: f.pctYearAgo, d: tapeDate(f.date, lang) };
+    return T.replace(/\{(\w)\}/g, function (_, k) { return m[k] == null ? '' : m[k]; });
+  }
+  function fillExplore(lang, esc) {
+    fetch('data/home-explore.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) {
+      (d.facts || []).forEach(function (f) {
+        var el = document.querySelector('#home-explora [data-live="' + f.id + '"]'); if (el) el.textContent = liveText(f, lang);
+      });
+    }).catch(function () {});
   }
 
 
@@ -314,7 +336,7 @@
     var esc = window.DehesaShared.esc;
     var t = STRINGS[lang] || STRINGS.es;
     document.title = 'Dehesa Index — ' + ({ es: 'Precios agrícolas de EE. UU. y Europa', en: 'US and European farm commodity prices', fr: 'Prix agricoles États-Unis et Europe', it: 'Prezzi agricoli USA ed Europa' }[lang] || 'US and European farm commodity prices');
-    renderExplore(lang, esc);
+    renderExplore(lang, esc); fillExplore(lang, esc);
     document.getElementById('home-h1').textContent = t.h1;
     document.getElementById('home-sub').textContent = t.sub;
     document.getElementById('home-cta-primary').textContent = t.ctaPrimary;

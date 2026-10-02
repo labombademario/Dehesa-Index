@@ -1,0 +1,32 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Cifras vivas de las tarjetas Explora los datos de la portada",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "facts"],
+ "properties": {
+  "schemaVersion": {"type": ["integer", "string"]},
+  "generatedAt": {"type": "string"},
+  "facts": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": ["id", "file", "date"],
+    "properties": {
+     "id": {"enum": ["eu", "drought", "cattle", "exports"]},
+     "file": {"type": "string"},
+     "date": {"type": ["string", "null"]},
+     "series": {"type": "integer"},
+     "families": {"type": "integer"},
+     "pctD1": {"type": "number"},
+     "release": {"type": "string"},
+     "onFeedKhead": {"type": "number"},
+     "pctYearAgo": {"type": "number"},
+     "commodity": {"type": "string"},
+     "unit": {"type": ["string", "null"]},
+     "netSales": {"type": "number"}
+    }
+   }
+  }
+ }
+}

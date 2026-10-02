@@ -1,0 +1,35 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-02T15:29:46Z",
+ "facts": [
+  {
+   "id": "eu",
+   "file": "eu/index.json",
+   "date": "2026-09-27",
+   "series": 507,
+   "families": 15
+  },
+  {
+   "id": "drought",
+   "file": "drought.json",
+   "date": "2026-09-29",
+   "pctD1": 59.38
+  },
+  {
+   "id": "cattle",
+   "file": "cattle-on-feed.json",
+   "date": "2026-09-01",
+   "release": "2026-09-18",
+   "onFeedKhead": 11163,
+   "pctYearAgo": 101
+  },
+  {
+   "id": "exports",
+   "file": "export-sales.json",
+   "date": "2026-09-24",
+   "commodity": "All Wheat",
+   "unit": "Metric Tons",
+   "netSales": 289255
+  }
+ ]
+}
