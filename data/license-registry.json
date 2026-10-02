@@ -1121,7 +1121,7 @@
    "thirdPartyNote": null,
    "verifiedAt": "2026-10-01",
    "status": "VERIFIED",
-   "confidence": "medium",
+   "confidence": "high",
    "used": true,
    "aliases": [],
    "notes": null,
@@ -1129,10 +1129,10 @@
    "url": "https://www.ine.es/",
    "licenseId": "CC-BY-4.0",
    "licenseName": "Creative Commons Reconocimiento 4.0 (CC BY 4.0)",
-   "licenseUrl": "https://ine.es/dyngs/AYU/index.htm?cid=125",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
    "attributionText": "Fuente: Sitio web del INE: www.ine.es (con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»)",
-   "additionalRestrictions": "Debe indicarse la fecha de última actualización cuando figure en el original; no se puede insinuar que el INE patrocina la reutilización.",
-   "evidence": "Aviso legal del INE (leído 2026-10-01): la reutilización de su información se rige por CC BY 4.0 con la cita de fuente indicada. Otra página del propio sitio muestra «CC BY-SA 4.0» en el pie: el aviso legal es la referencia, pero conviene confirmarlo.",
+   "additionalRestrictions": "Citar la fuente («Fuente: Sitio web del INE: www.ine.es»; con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»); mencionar la fecha de última actualización si figura en el original; no insinuar que el INE participa, patrocina o apoya la reutilización; uso bajo cuenta y riesgo del reutilizador.",
+   "evidence": "Aviso legal del INE: «La licencia de uso general a aplicar a la información estadística de este sitio web, salvo que se indique lo contrario, es la Creative Commons Reconocimiento 4.0 (CC BY 4.0)», con reutilización también comercial citando la autoría. Texto confirmado por Mario (2026-10-01) y leído en el aviso legal.",
    "short": "INE (España)"
   },
   "insee": {
