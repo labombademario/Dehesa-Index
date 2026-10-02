@@ -149,7 +149,8 @@
   function obsById(id) { var o = D.latest && D.latest.observations; if (!o || !id) return null; for (var i = 0; i < o.length; i++) if (o[i].id === id) return o[i]; return null; }
   function card(label, value, sub) { return '<div class="di-card" style="padding:14px 16px;flex:1 1 190px;min-width:170px"><div style="font-size:11px;letter-spacing:.4px;color:var(--text-faint);font-weight:700">' + esc(label).toUpperCase() + '</div><div style="font-size:23px;font-weight:700;margin:4px 0 2px;font-family:\'Source Serif 4\',serif">' + value + '</div><div style="font-size:12.5px">' + (sub || '') + '</div></div>'; }
   function cards(arr) { return '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 14px">' + arr.join('') + '</div>'; }
-  function sec(title, hint, body, more) { return '<section style="margin:30px 0 8px"><div class="di-movers-head-row"><h2>' + esc(title) + '</h2><span class="di-movers-hint">' + esc(hint || '') + '</span></div>' + body + (more ? '<p class="di-movers-hint" style="margin-top:8px">' + more + '</p>' : '') + '</section>'; }
+  function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
+  function sec(title, hint, body, more, cite) { return '<section style="margin:30px 0 8px"><div class="di-movers-head-row"><h2>' + esc(title) + '</h2><span class="di-movers-hint">' + esc(hint || '') + '</span></div>' + body + (more ? '<p class="di-movers-hint" style="margin-top:8px">' + more + '</p>' : '') + (cite || '') + '</section>'; }
   function lnk(href, txt) { return '<a href="' + href + '">' + esc(txt) + ' →</a>'; }
   function th(s, right) { return '<th style="text-align:' + (right ? 'right' : 'left') + ';padding:6px 8px;font-size:11.5px;color:var(--text-faint);font-weight:700">' + esc(s) + '</th>'; }
   function td(s, right, bold) { return '<td style="text-align:' + (right ? 'right' : 'left') + ';padding:6px 8px;font-size:13.5px' + (bold ? ';font-weight:600' : '') + '">' + s + '</td>'; }
@@ -177,7 +178,7 @@
       var chart = pts.length > 2 ? line([{ pts: pts, col: isIdx ? '#2a6f97' : '#a9491f', name: title }], labs, undefined, title, { ts: ts, xTitle: t.date, yTitle: ut, vFmt: function (v) { return nf(v, 2) + (isIdx ? '' : ' ' + ut); } }) : '';
       out.push('<div style="margin:12px 0 22px"><div style="font-weight:700;font-size:15px">' + esc(title) + badge + '</div>' +
         cards([card(esc(t.asOf) + ' ' + esc(date), val + '<span style="font-size:13px;font-weight:600;color:var(--text-faint)">' + esc(unit) + '</span>', (typeof o.changePct === 'number' ? delta(o.changePct, 1, ' %') + ' <span style="color:var(--text-faint)">' + esc(t.vsPrev) + '</span>' : ''))]) + chart +
-        '<p class="di-movers-hint" style="margin-top:8px"><strong>' + esc(t.method) + ':</strong> ' + esc(note) + '</p></div>');
+        '<p class="di-movers-hint" style="margin-top:8px"><strong>' + esc(t.method) + ':</strong> ' + esc(note) + '</p>' + ci(o.sourceId, { period: o.observationDate, pub: o.publicationDate }) + '</div>');
     }
     var eu = obsById(cfg.eu), us = obsById(cfg.us);
     var sfx = cfg.meal ? ' · ' + t.meal : '';
@@ -209,7 +210,7 @@
     var chart = line([{ pts: yrs.map(function (y) { return Y[y].production; }), col: '#2a6f97', name: A.production }, { pts: yrs.map(function (y) { return Y[y].consumption; }), col: '#b8651b', name: A.consumption }], yrs.map(function (y) { return P.myLabel(cfg.psd, y); }), function (v) { return nf(v, 0); }, t.sdChart, { xTitle: t.axMy, yTitle: t.axKt, vFmt: function (v) { return P.big(v); } });
     var body = sel + cards([card(t.sdMy, esc(P.myLabel(cfg.psd, my)), '<span style="color:var(--text-faint)">' + esc(names[SEL.ent]) + '</span>')].concat(stu === null ? [] : [card(t.stu, stu === null ? '—' : nf(stu, 1) + ' %', stuP === null ? '' : delta(stu - stuP, 1, ' pp') + ' <span style="color:var(--text-faint)">' + esc(P.myLabel(cfg.psd, pm)) + '</span>')])) +
       table(th(t.sdItem) + th(P.myLabel(cfg.psd, my), 1) + th(t.sdPrev, 1) + th(t.sdChg, 1), rows) + '<div style="height:12px"></div>' + chart;
-    return sec(t.sd, t.sdHint + ' · ' + (c.publishedMonth || ''), body, lnk('oferta-demanda.html', t.sdMore));
+    return sec(t.sd, t.sdHint + ' · ' + (c.publishedMonth || ''), body, lnk('oferta-demanda.html', t.sdMore), ci('usda_fas_psd', { period: c.publishedMonth }));
   }
 
 
@@ -233,7 +234,7 @@
     });
     if (!any) return '';
     var body = '<div class="di-card" style="padding:6px 8px;overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr>' + th(x.mkt) + th(x.imp + ' · ' + x.impD, 1) + th(x.exp + ' · ' + x.expD, 1) + th(x.self + ' · ' + x.selfD, 1) + '</tr></thead><tbody>' + rows + '</tbody></table></div><p class="di-info-api-notice" style="margin:6px 0">' + esc(x.note) + '</p>';
-    return sec(x.dep, x.depHint + ' ' + P.myLabel(cfg.psd, my) + ' ' + x.vs, body);
+    return sec(x.dep, x.depHint + ' ' + P.myLabel(cfg.psd, my) + ' ' + x.vs, body, '', window.DICite ? window.DICite.derived(['usda_fas_psd'], { what: x.depHint }) : '');
   }
 
 
@@ -260,7 +261,7 @@
         '<div style="height:10px"></div>' + table(th(x.rep) + th(x.price, 1) + th(x.chg1, 1) + th(x.chg30, 1) + th(x.date, 1), rows);
     });
     if (!body) return '';
-    return sec(x.t, x.h, body + '<p class="di-info-api-notice" style="margin:6px 0">' + esc(x.note) + '</p>', lnk('mercados.html', x.more));
+    return sec(x.t, x.h, body + '<p class="di-info-api-notice" style="margin:6px 0">' + esc(x.note) + '</p>', lnk('mercados.html', x.more), ci('usda_ams_mars'));
   }
 
   /* ---------- ventas de exportación ---------- */
@@ -283,7 +284,7 @@
     }
     var top = (c.countries || []).filter(function (r) { return r.i2 && !/^UNKNOWN/i.test(r.n); }).sort(function (a, b) { return (b.acc + b.out) - (a.acc + a.out); }).slice(0, 6);
     if (top.length) body += '<div style="height:12px"></div><div style="font-weight:700;font-size:14px;margin:4px 0 6px">' + esc(t.exTop) + '</div>' + table(th(t.country) + th(t.exAcc, 1) + th(t.exOut, 1), top.map(function (r) { return '<tr style="' + TR + '">' + td(esc(P.countryName(r.i2, r.n)), 0, 1) + td(tonsF(r.acc), 1) + td(tonsF(r.out), 1) + '</tr>'; }).join(''));
-    return sec(t.ex, t.exHint + ' ' + dfmt(c.weekEnding) + ' · ' + t.exMy + ' ' + c.my, body, lnk('exportaciones.html?tab=esr&code=' + c.code, t.exMore));
+    return sec(t.ex, t.exHint + ' ' + dfmt(c.weekEnding) + ' · ' + t.exMy + ' ' + c.my, body, lnk('exportaciones.html?tab=esr&code=' + c.code, t.exMore), ci('usda_fas_esr', { period: c.weekEnding }));
   }
 
   /* ---------- comercio por país (GATS) ---------- */
@@ -305,7 +306,7 @@
     }
     var a = months[0], b = months[months.length - 1];
     var body = '<p class="di-movers-hint" style="margin:0 0 6px">' + months.length + ' ' + esc(t.months) + ': ' + esc(mfmt(+a.slice(0, 4), +a.slice(4))) + ' ' + esc(t.to) + ' ' + esc(mfmt(+b.slice(0, 4), +b.slice(4))) + '</p><div style="display:flex;gap:16px;flex-wrap:wrap">' + tbl(ex, t.trEx) + tbl(im, t.trIm) + '</div>';
-    return sec(t.tr, t.trHint, body, lnk('exportaciones.html?tab=gats&group=' + cfg.gats, t.trMore) + ' · ' + lnk('mapa.html?layer=trade&group=' + cfg.gats, t.lMap));
+    return sec(t.tr, t.trHint, body, lnk('exportaciones.html?tab=gats&group=' + cfg.gats, t.trMore) + ' · ' + lnk('mapa.html?layer=trade&group=' + cfg.gats, t.lMap), ci('usda_fas_gats'));
   }
 
   /* ---------- cultivo ---------- */
@@ -355,7 +356,7 @@
       body += '<div style="font-weight:700;font-size:14px;margin-top:14px">' + esc(t.yl) + '</div>' + cards(yc) + line([{ pts: yrs.map(function (r) { return r[1]; }), col: '#2a6f97', name: t.yield }], yrs.map(function (r) { return r[0]; }), function (v) { return nf(v, 0); }, t.yield, { xTitle: t.axYear, yTitle: t.yield + ' (' + (K.yu === 'lb' ? t.lbac : t.bu) + ')', vFmt: function (v) { return nf(v, 1); } }) + '<p class="di-movers-hint" style="margin-top:6px">' + esc(ly[0]) + ': ' + esc(t.yrCur) + '.</p>';
     }
     if (!body) return '';
-    return sec(t.cr, t.crHint, body, lnk('cultivos.html', t.crMore) + ' · ' + lnk('rendimientos.html?crop=' + cfg.rend, t.yMore));
+    return sec(t.cr, t.crHint, body, lnk('cultivos.html', t.crMore) + ' · ' + lnk('rendimientos.html?crop=' + cfg.rend, t.yMore), ci('usda_nass'));
   }
 
   /* ---------- ganado ---------- */
@@ -372,7 +373,7 @@
       cs.push(card((t.lvN[k] || k) + ' · ' + when, nf(v, v < 100 ? 1 : 0) + ' <span style="font-size:13px;color:var(--text-faint)">' + esc(isLb ? t.lb : t.head) + '</span>', prev ? delta(pct(last[1], prev[1]), 1, ' %') + ' <span style="color:var(--text-faint)">' + esc(t.lvVs) + '</span>' : ''));
     });
     if (!cs.length) return '';
-    return sec(t.lv, t.lvHint, cards(cs), lnk('ganaderia.html', t.lvMore));
+    return sec(t.lv, t.lvHint, cards(cs), lnk('ganaderia.html', t.lvMore), ci('usda_nass'));
   }
 
   /* ---------- sequía en estados productores ---------- */
@@ -405,7 +406,7 @@
     var body = cards([card(t.drW + ' · D1+', nf(avg, 1) + ' %', avgY === null ? '' : dtl(avg - avgY, 1, ' ' + t.dPP) + ' <span style="color:var(--text-faint)">' + esc(t.vsLY) + '</span>')]) +
       '<div style="font-weight:700;font-size:14px;margin:4px 0 6px">' + esc(t.drTop) + '</div>' + table(th(t.st) + th(t.drShare, 1) + th(t.drNow, 1) + th(t.drYear, 1), rows) + '<p class="di-info-api-notice" style="margin:12px 0 4px">' + esc(t.drWNote) + '</p>';
     var last = dr.states[ts.rows[0].st]; last = last && last[last.length - 1];
-    return sec(t.dr, t.drHint + ' ' + (last ? dfmt(last[0]) : ''), body, lnk('sequia.html?state=' + ts.rows[0].st, t.drMore));
+    return sec(t.dr, t.drHint + ' ' + (last ? dfmt(last[0]) : ''), body, lnk('sequia.html?state=' + ts.rows[0].st, t.drMore), ci('us_drought_monitor', { period: last ? last[0] : '' }));
   }
 
   /* ---------- costes ---------- */
@@ -422,7 +423,7 @@
       cs.push(card(d[0] + ' · ' + yr, (a[5] < 0 ? '−' : '') + nf(Math.abs(a[5]), 2), (t.pl[a[2]] || a[2]) + (b ? '<br>' + (d[1] === 'Net value' ? delta(a[5] - b[5], 2, '') : d[1] === 'Costs listed' || d[1] === 'Operating costs' ? dtl(pct(a[5], b[5]), 1, ' %') : delta(pct(a[5], b[5]), 1, ' %')) + ' <span style="color:var(--text-faint)">vs ' + (yr - 1) + '</span>' : '')));
     });
     if (!cs.length) return '';
-    return sec(t.co, t.coHint + ' ' + yr, cards(cs) + '<p class="di-info-api-notice" style="margin:4px 0">' + esc(t.coNote) + '</p>', lnk('costes.html?tab=costs&prod=' + cfg.ers, t.coMore));
+    return sec(t.co, t.coHint + ' ' + yr, cards(cs) + '<p class="di-info-api-notice" style="margin:4px 0">' + esc(t.coNote) + '</p>', lnk('costes.html?tab=costs&prod=' + cfg.ers, t.coMore), ci('usda_ers', { period: String(yr) }));
   }
 
 
@@ -508,7 +509,7 @@
     var cfg0 = CFG[SEL.p];
     if (LEGACY_LOADED) return Promise.resolve();
     return Promise.all([latestFor(cfg0), get('data/supply-demand.json'), get('data/export-sales.json'), get('data/gats.json'), get('data/drought.json'), get('data/ers.json'),
-      cfg0.kind === 'crop' ? get('data/crop-progress.json') : Promise.resolve(null), get('data/nass-crops.json'), get('data/nass-livestock.json'), (window.DINews ? window.DINews.items().then(function (it) { return { items: it }; }) : Promise.resolve(null)), get('data/ams-grain-daily.json')]).then(function (r) {
+      cfg0.kind === 'crop' ? get('data/crop-progress.json') : Promise.resolve(null), get('data/nass-crops.json'), get('data/nass-livestock.json'), (window.DINews ? window.DINews.items().then(function (it) { return { items: it }; }) : Promise.resolve(null)), get('data/ams-grain-daily.json'), (window.DICite ? window.DICite.load() : Promise.resolve(null))]).then(function (r) {
       D.latest = r[0]; D.sd = r[1]; D.es = r[2]; D.gats = r[3]; D.dr = r[4]; D.ers = r[5]; D.cp = r[6]; D.crops = r[7]; D.live = r[8]; D.news = r[9]; D.ams = r[10];
       LEGACY_LOADED = true;
     });

@@ -665,6 +665,13 @@
       'Aún sin observación verificada: no se muestra ningún valor de muestra.';
   }
 
+  function productCiteHtml(entry, disp, observation) {
+    var Q = global.DICite; if (!Q) return '';
+    var region = disp && (disp.regionCode || disp.region), c = LIVE_OBSERVATION_MAP[entry.nameKey + ':' + region];
+    if (!c || !c.sourceId) return '';
+    return Q.html(c.sourceId, { period: observation && observation.observationDate, pub: observation && observation.publicationDate });
+  }
+
   function productCardHtml(entry, opts) {
     opts = opts || {};
     var t = ui();
@@ -696,6 +703,7 @@
         '</div>' +
         (showValue ? quoteBadgeHtml(disp.quoteType) : '') +
         (global.DehesaDataTrust ? global.DehesaDataTrust.render(entry, disp) : '') +
+        (showValue ? productCiteHtml(entry, disp, observation) : '') +
         '<div class="di-product-price-row">' +
           '<span class="di-product-price">' + esc(price) + '</span>' +
           '<span class="di-product-unit">' + esc(unit) + '</span>' +
@@ -1569,6 +1577,7 @@
     document.addEventListener('dehesa:intel-ready', function () { renderMarketNewsIntel(); });
     window.addEventListener('popstate', restorePriceUrl);
     renderAll();
+    if (global.DICite) global.DICite.load().then(function (r) { if (r) renderAll(); });
     loadPublishedPrices();
     if (global.DINews) global.DINews.index().then(function (idx) {
       if (!idx || !Object.keys(idx).length) return;

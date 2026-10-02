@@ -248,7 +248,7 @@
   }
   function load(pid) {
     var m = META.products[pid], regs = regionsFor(pid);
-    return Promise.all([window.DIPrices.latest(regs), window.DIFreshness.ready(), J('fx-history.json').catch(function () { return null; }), J('products/' + pid + '.json').catch(function () { return null; })]).then(function (a) {
+    return Promise.all([window.DIPrices.latest(regs), window.DIFreshness.ready(), J('fx-history.json').catch(function () { return null; }), J('products/' + pid + '.json').catch(function () { return null; }), (window.DICite ? window.DICite.load() : Promise.resolve(null))]).then(function (a) {
       window.DIUnits.setFx(a[2]);
       var by = {}; a[0].forEach(function (o) { by[o.region + '/' + o.product] = o; });
       var inst = [], idxs = [];
@@ -274,13 +274,14 @@
   function obsKey(o) { return o.product + '/' + o.region; }
 
   /* ---------- cabecera ---------- */
+  function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   function cardHtml(o, isIndex) {
     var f = fresh(o), meas = o.methodology ? '<details style="margin-top:6px"><summary class="pt-sub" style="cursor:pointer">' + esc(t('measures')) + '</summary><div class="pt-sub">' + esc(o.methodology) + '</div></details>' : '';
     return '<div class="di-card pt-card"><div class="pt-k">' + esc(reg(o.region)) + (isIndex ? ' · ' + esc(UL.index_2020_100) : '') + '</div>' + idHtml(o) +
       '<div class="pt-v">' + (isIndex ? esc(nf(o.value, 1)) + ' <small>2020 = 100</small>' : esc(nf(o.value, Math.abs(o.value) >= 100 ? 0 : 2, o.unit === 'litro' ? 3 : 2)) + ' <small>' + esc(o.currency + '/' + (UL[o.unit] || o.unit)) + '</small>') + '</div>' +
       '<div class="pt-sub">' + esc(t('asOf')) + ' ' + esc(dstr(o.observationDate)) + (typeof o.changePct === 'number' ? ' · ' + chg(o.changePct) + ' ' + esc(t('vsPrev')) : '') + '</div>' +
       '<div>' + freshBadge(o) + (isIndex ? '' : compBadge(o)) + '</div>' +
-      '<div class="pt-sub">' + esc(t('source')) + ': ' + esc(srcName(o.sourceId)) + '</div>' + (isIndex ? '' : spark(o.spark)) + meas + '</div>';
+      (ci(o.sourceId, { period: o.observationDate, pub: o.publicationDate }) || '<div class="pt-sub">' + esc(t('source')) + ': ' + esc(srcName(o.sourceId)) + '</div>') + (isIndex ? '' : spark(o.spark)) + meas + '</div>';
   }
   function followKeys() { return CTX.inst.map(obsKey); }
   function isFollowing() { var W = window.DIWatch; if (!W || !W.has) return false; return followKeys().some(function (k) { return W.has('P', k); }); }
@@ -463,7 +464,7 @@
       if (typeof last === 'number' && typeof prev === 'number') d = a === 'stockToUse' ? '<span class="' + (last > prev ? 'pt-up' : last < prev ? 'pt-down' : 'pt-flat') + '">' + sg(last - prev, 1) + ' pp</span>' : (prev ? chg((last - prev) / Math.abs(prev) * 100) : '—');
       return '<tr><td data-l="' + esc(t('attr')) + '">' + esc(t(a)) + '</td>' + vals.map(function (v, i) { return '<td class="r" data-l="' + esc(my2(yrs[i])) + '">' + (typeof v === 'number' ? esc(a === 'stockToUse' ? nf(v, 1) + ' %' : mt(v, sd.unit)) : '—') + '</td>'; }).join('') + '<td class="r" data-l="' + esc(t('vsPY')) + '">' + d + '</td></tr>';
     }).join('');
-    return chips + '<div class="pt-tblwrap"><table class="pt-table rs"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div><p class="pt-src">' + esc(sd.note) + ' ' + esc(t('source')) + ': ' + esc(srcName(sd.sourceId)) + ' · ' + esc(sd.publishedMonth || '') + ' · <a href="oferta-demanda.html">' + esc(t('sd')) + ' →</a></p>';
+    return chips + '<div class="pt-tblwrap"><table class="pt-table rs"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div><p class="pt-src">' + esc(sd.note) + ' ' + esc(t('source')) + ': ' + esc(srcName(sd.sourceId)) + ' · ' + esc(sd.publishedMonth || '') + ' · <a href="oferta-demanda.html">' + esc(t('sd')) + ' →</a></p>' + ci(sd.sourceId, { period: sd.publishedMonth });
   }
 
   function bars(list, cls) {
@@ -482,7 +483,7 @@
       var f = tr[p[0]]; if (!f) return;
       h += '<div class="di-card pt-card"><div class="pt-k">' + esc(t(p[1])) + ' · ' + esc(mt(f.world, tr.unit)) + '</div>' + bars(f.top) + concHtml(f) + '</div>';
     });
-    return h + '</div><p class="pt-src">' + esc(tr.note) + ' ' + esc(t('source')) + ': ' + esc(srcName(tr.sourceId)) + ' · ' + esc(tr.publishedMonth || '') + '</p>';
+    return h + '</div><p class="pt-src">' + esc(tr.note) + ' ' + esc(t('source')) + ': ' + esc(srcName(tr.sourceId)) + ' · ' + esc(tr.publishedMonth || '') + '</p>' + ci(tr.sourceId, { period: tr.publishedMonth });
   }
 
   function htmlTariffs() {
@@ -588,7 +589,7 @@
     if (CTX.prof && CTX.prof.tariffs) Object.keys(CTX.prof.tariffs.sources || {}).forEach(function (k) { ids.push(CTX.prof.tariffs.sources[k].sourceId); });
     ids.push('ecb');
     var seen = {}, li2 = [];
-    ids.forEach(function (id) { if (id && !seen[id]) { seen[id] = 1; li2.push('<li>' + (SRCURL[id] ? '<a href="' + SRCURL[id] + '" rel="noopener">' + esc(srcName(id)) + '</a>' : esc(srcName(id))) + '</li>'); } });
+    ids.forEach(function (id) { if (id && !seen[id]) { seen[id] = 1; li2.push('<li>' + (ci(id) || (SRCURL[id] ? '<a href="' + SRCURL[id] + '" rel="noopener">' + esc(srcName(id)) + '</a>' : esc(srcName(id)))) + '</li>'); } });
     return '<p class="pt-sub">' + esc(t('srcIntro')) + '</p><ul class="pt-list">' + li2.join('') + '</ul><p class="pt-src">' + esc(t('fxNote')) + ' <a href="metodologia.html">' + esc(t('methLink')) + ' →</a></p>';
   }
 
