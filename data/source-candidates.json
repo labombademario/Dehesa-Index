@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-01T23:26:31Z",
+ "generatedAt": "2026-10-02T00:21:55Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 67,
+  "total": 71,
   "byStatus": {
-   "ACTIVE": 36,
+   "ACTIVE": 40,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -1537,6 +1537,43 @@
    "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
   },
   {
+   "sourceId": "bls",
+   "registryId": "bls",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "U.S. Bureau of Labor Statistics",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: U.S. Bureau of Labor Statistics",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "cbs_nl",
    "registryId": "cbs_nl",
    "country": "NL",
@@ -2177,6 +2214,43 @@
    "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
   },
   {
+   "sourceId": "ine_es",
+   "registryId": "ine_es",
+   "country": "ES",
+   "scope": "integrated",
+   "institution": "Instituto Nacional de Estadística (España)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Sitio web del INE: www.ine.es (con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»)",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "ine_pt",
    "registryId": "ine_pt",
    "country": "PT",
@@ -2222,6 +2296,43 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Fonte: Instituto Nacional de Estatística (INE), CC BY 4.0",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "insee",
+   "registryId": "insee",
+   "country": "FR",
+   "scope": "integrated",
+   "institution": "Institut national de la statistique et des études économiques (INSEE)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "Etalab-2.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Insee",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,
@@ -2513,6 +2624,43 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "statistik_austria",
+   "registryId": "statistik_austria",
+   "country": "AT",
+   "scope": "integrated",
+   "institution": "Statistik Austria (open.data)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Datenquelle: Statistik Austria — data.statistik.gv.at",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,

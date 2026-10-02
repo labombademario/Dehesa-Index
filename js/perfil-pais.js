@@ -86,7 +86,7 @@
     var out = [], yrs = ['gdp', 'gdppc', 'pop', 'unemp', 'agri'].concat(m.debt && m.debt.src === 'wb-central' ? ['debt'] : []).filter(function (k) { return m[k]; }).map(function (k) { return m[k].y; });
     if (yrs.length) out.push(Q.html('world_bank_wdi', { period: String(Math.max.apply(null, yrs)) }));
     if ((m.debt && m.debt.src === 'eurostat') || m.wageh) out.push(Q.html('eurostat', { period: String(Math.max(m.debt && m.debt.src === 'eurostat' ? m.debt.y : 0, m.wageh ? m.wageh.y : 0)) }));
-    if (x.wage && x.wage.src) out.push(Q.custom({ name: x.wage.src, url: x.wage.url, period: x.wage.y }));
+    if (x.wage && x.wage.src) out.push((x.wage.sourceId && Q.html(x.wage.sourceId, { period: x.wage.y, note: x.wage.url })) || Q.custom({ name: x.wage.src, url: x.wage.url, period: x.wage.y }));
     if (x.rate && x.rate.sourceId) out.push(Q.html(x.rate.sourceId, { period: x.rate.latestPeriod }));
     out = out.filter(Boolean); return out.length ? '<div class="pp-cites">' + out.join('') + '</div>' : '';
   }

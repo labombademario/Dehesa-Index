@@ -22,7 +22,8 @@
     "it": "tutti i dipendenti"
    },
    "src": "INE — Encuesta de Estructura Salarial",
-   "url": "https://www.ine.es/dyngs/Prensa/EAES2023.htm"
+   "url": "https://www.ine.es/dyngs/Prensa/EAES2023.htm",
+   "sourceId": "ine_es"
   },
   "FR": {
    "v": 2183,
@@ -38,7 +39,8 @@
     "it": "equivalente a tempo pieno, settore privato"
    },
    "src": "INSEE",
-   "url": "https://www.insee.fr/fr/statistiques/8270416"
+   "url": "https://www.insee.fr/fr/statistiques/8270416",
+   "sourceId": "insee"
   },
   "DE": {
    "v": 52159,
@@ -54,7 +56,8 @@
     "it": "tempo pieno, con premi"
    },
    "src": "Destatis",
-   "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/04/PD25_134_621.html"
+   "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/04/PD25_134_621.html",
+   "sourceId": "destatis"
   },
   "BE": {
    "v": 3728,
@@ -70,7 +73,8 @@
     "it": "tempo pieno, imprese con 10 o più dipendenti"
    },
    "src": "Statbel",
-   "url": "https://statbel.fgov.be/en/themes/work-training/wages-and-labourcost/overview-belgian-wages-and-salaries"
+   "url": "https://statbel.fgov.be/en/themes/work-training/wages-and-labourcost/overview-belgian-wages-and-salaries",
+   "sourceId": "statbel"
   },
   "AT": {
    "v": 38043,
@@ -86,7 +90,8 @@
     "it": "tutti i dipendenti (statistica fiscale)"
    },
    "src": "Statistik Austria",
-   "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/einkommen-und-soziale-lage/jaehrliche-personeneinkommen"
+   "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/einkommen-und-soziale-lage/jaehrliche-personeneinkommen",
+   "sourceId": "statistik_austria"
   },
   "PT": {
    "v": 1406.81,
@@ -118,7 +123,8 @@
     "it": "mensile standardizzato (37 h/settimana), con pensione e premi"
    },
    "src": "Statistics Denmark",
-   "url": "https://www.dst.dk/da/Statistik/udgivelser/NytHtml?cid=54629"
+   "url": "https://www.dst.dk/da/Statistik/udgivelser/NytHtml?cid=54629",
+   "sourceId": "dst_dk"
   },
   "CA": {
    "v": 37.06,
@@ -134,7 +140,8 @@
     "it": "salario orario medio (nessuna mediana nazionale trovata)"
    },
    "src": "Statistics Canada — Labour Force Survey",
-   "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410011601"
+   "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410011601",
+   "sourceId": "statcan"
   },
   "AU": {
    "v": 1436,
@@ -150,7 +157,8 @@
     "it": "tutti i dipendenti"
    },
    "src": "ABS — Employee Earnings and Hours",
-   "url": "https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/employee-earnings-and-hours-australia/latest-release"
+   "url": "https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/employee-earnings-and-hours-australia/latest-release",
+   "sourceId": "abs"
   },
   "US": {
    "v": 1251,
@@ -166,7 +174,8 @@
     "it": "dipendenti a tempo pieno"
    },
    "src": "BLS — Current Population Survey",
-   "url": "https://www.bls.gov/news.release/wkyeng.nr0.htm"
+   "url": "https://www.bls.gov/news.release/wkyeng.nr0.htm",
+   "sourceId": "bls"
   }
  }
 }
