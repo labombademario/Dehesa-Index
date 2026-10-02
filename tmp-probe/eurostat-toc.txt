@@ -1,0 +1,168 @@
+"            Regional agriculture statistics"	"reg_agr"	"folder"	" "	" "	" "	" "	
+"                            Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA), legal status of holding and NUTS 2 region"	"ef_kvaareg"	"dataset"	"16.01.2017"	"10.0
+"                            Key variables: area, livestock (LSU), labour force and standard output (SO) by economic size of farm (SO in Euro), legal status of holding and NUTS 2 region"	"ef_kvecsleg"	"dataset"	"16.01.2017"	"10.01
+"                            Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and NUTS 2 region"	"ef_kvftreg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	215199
+"                            Irrigation: number of farms, areas and equipment by size of irrigated area and NUTS 2 region"	"ef_poirrig"	"dataset"	"19.04.2018"	"10.01.2024"	"2005"	"2013"	209805
+"                            Livestock: number of farms and heads of animals of different types by agricultural size of farm (UAA) and NUTS 2 region"	"ef_olsaareg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	594155
+"                            Livestock: number of farms and heads of animals by livestock units (LSU) of farm and NUTS 2 region"	"ef_olslsureg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	589321
+"                            Labour force: number of persons and farm work (AWU) by sex of workers and NUTS 2 region"	"ef_olfreg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	38800
+"                            Organic farming: number of farms, areas with different crops and heads of different types of animals by agricultural size of farm (UAA) and NUTS 2 region (2003-2013)"	"ef_mporganic"	"dataset"	"16.01.20
+"                            Key variables by legal status of holding, size of farm (UAA) and NUTS 2 region"	"ef_ov_kvaa"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	250844
+"                            Key variables by type of farming (2-digit) and NUTS 2 region"	"ef_ov_kvftreg"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2007"	133474
+"                            Farmland: number of farms and areas by size of farm (UAA) and NUTS 2 region"	"ef_lu_ovcropaa"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	1969784
+"                            Farmland: number of farms and areas by economic size of farm (ESU) and NUTS 2 region"	"ef_lu_ovcropesu"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	1959788
+"                            Permanent crops: number of farms and areas by size of farm (UAA), size of permanent crop area and NUTS 2 region"	"ef_lu_pcreg"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	492194
+"                            Irrigation: number of farms, areas and equipment by size of farm (UAA) and NUTS 2 region"	"ef_lu_ofirrig"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	21949
+"                            Livestock: number of farms and heads by size of farm (UAA) and NUTS 2 region"	"ef_ls_ovaareg"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	761128
+"                            Livestock: number of farms and heads by livestock units (LSU) of farm and NUTS 2 region"	"ef_ls_ovlsureg"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	759761
+"                            Livestock: number of farms and heads by economic size of farm (ESU) and NUTS 2 region"	"ef_ls_ovesu"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	757142
+"                            Organic farming: selected variables by size of farm (UAA) and NUTS 2 region (2000-2007)"	"ef_so_mporg"	"dataset"	"18.04.2009"	"21.12.2023"	"2000"	"2007"	98860
+"                            Type of tenure: number of farms and areas by size of farm (UAA) and NUTS 2 region (1990-2007)"	"ef_so_mptenure"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	111860
+"                            Labour force: number of persons and farm work (AWU) by sex of worker, category of worker, legal status of holding, size of farm (UAA) and NUTS 2 region"	"ef_so_lfaa"	"dataset"	"15.04.2009"	"21.12.2023"
+"                            Labour force: number of persons and farm work (AWU) by sex of worker, category of worker, legal status of holding, economic size of farm (ESU) and NUTS 2 region"	"ef_so_lfesu"	"dataset"	"15.04.2009"	"2
+"                            Structure of agricultural holdings by NUTS 3 region - main indicators"	"ef_r_nuts"	"dataset"	"10.09.2009"	"21.12.2023"	"2000"	"2007"	615432
+"                    Economic accounts for agriculture by NUTS 2 region - values at current prices"	"aact_eaa01_r"	"dataset"	"24.03.2026"	"24.03.2026"	"1980"	"2024"	4929942
+"                    Economic accounts for agriculture by NUTS 2 region - values at n-1 prices"	"aact_eaa02_r"	"dataset"	"24.03.2026"	"24.03.2026"	"1999"	"2024"	1178768
+"                    Economic accounts for agriculture by NUTS 2 region - indices (volume, price, values)"	"aact_eaa05_r"	"dataset"	"24.03.2026"	"24.03.2026"	"1999"	"2024"	1718970
+"                    Economic accounts for agriculture by NUTS 2 region (until 2012)"	"agr_r_accts_h"	"dataset"	"07.03.2016"	"02.07.2024"	"1973"	"2012"	2320007
+"                    Agricultural labour input statistics by NUTS 2 region - absolute figures (thousand annual work units)"	"aact_ali01_r"	"dataset"	"24.03.2026"	"24.03.2026"	"1995"	"2023"	2183
+"                    Agricultural labour input statistics by NUTS 2 region - indices"	"aact_ali02_r"	"dataset"	"24.03.2026"	"24.03.2026"	"1995"	"2023"	1874
+"                    Animal populations by NUTS 2 region"	"apro_mt_ls_r"	"dataset"	"29.09.2026"	"29.09.2026"	"1977"	"2025"	462427
+"                    Production of cow's milk on farms by NUTS 2 region"	"agr_r_milkpr"	"dataset"	"01.12.2025"	"08.09.2025"	"1995"	"2024"	11599
+"                        Production of cow's milk on farms by NUTS 2 region"	"tgs00046"	"table"	"01.12.2025"	"08.09.2025"	"2013"	"2024"	3462
+"                Regional data"	"ef_lus_orch_r"	"folder"	" "	" "	" "	" "	
+"                Main farm indicators by NUTS 2 region"	"ef_mainfarm"	"folder"	" "	" "	" "	" "	
+"                    Farm indicators by legal status of the holding, utilised agricultural area, type and economic size of the farm and NUTS 2 region"	"ef_m_farmleg"	"dataset"	"17.06.2026"	"08.05.2026"	"2010"	"2023"	6215075
+"                    Farm indicators by age and sex of the manager, economic size of the farm, utilised agricultural area and NUTS 2 region"	"ef_m_farmang"	"dataset"	"17.06.2026"	"08.05.2026"	"2010"	"2023"	7222732
+"                    Main farm indicators by organic farming, utilised agricultural area, economic size, farm type of agricultural holding and NUTS 2"	"ef_m_org"	"dataset"	"17.06.2026"	"08.05.2026"	"2010"	"2023"	6291189
+"                    Land and labour productivity of agricultural holdings by sex of farm manager and type and size of the farm"	"ef_m_pry"	"dataset"	"17.06.2026"	"17.06.2026"	"2010"	"2023"	22079
+"                    Main farm indicators by rural development support measures, utilized agricultural area, type and economic size of the farm and NUTS 2 region"	"ef_m_rd"	"dataset"	"08.05.2026"	"08.05.2026"	"2010"	"2023"	6322941
+"                    Irrigation of agricultural holdings by utilised agricultural area, economic size, farmtype and NUTS 2 region"	"ef_m_irri"	"dataset"	"17.06.2026"	"08.05.2026"	"2005"	"2023"	4661323
+"                    Share of agricultural holdings by sex of holder and type of tenure"	"ef_m_sexhold_sh"	"dataset"	"17.06.2026"	"13.05.2026"	"2005"	"2023"	20914
+"                    Share of holdings by economic size classes and NUTS 2 region"	"ef_m_so_sh"	"dataset"	"17.06.2026"	"17.06.2026"	"2020"	"2020"	1734
+"                    Share of holdings by age of farm managers and NUTS 2 region"	"ef_m_age_sh"	"dataset"	"17.06.2026"	"17.06.2026"	"2020"	"2020"	2304
+"                    Share of holdings by sex of farm managers and NUTS 2 region"	"ef_m_sex_sh"	"dataset"	"17.06.2026"	"17.06.2026"	"2020"	"2020"	1732
+"                Farm land use by NUTS 2 region"	"ef_landuse"	"folder"	" "	" "	" "	" "	
+"                    Orchards"	"ef_lus_orch"	"folder"	" "	" "	" "	" "	
+"                        Orchards - historical data"	"ef_lus_orch_h"	"folder"	" "	" "	" "	" "	
+"                            Regional data"	"ef_lus_orch_r"	"folder"	" "	" "	" "	" "	
+"                        Pome fruits by age, density classes of trees and NUTS 2 region"	"ef_lus_orchpome"	"dataset"	"08.05.2026"	"08.05.2026"	"2023"	"2023"	19231
+"                        Stone fruits by age, density classes of trees and NUTS 2 region"	"ef_lus_orchstone"	"dataset"	"08.05.2026"	"08.05.2026"	"2023"	"2023"	11732
+"                        Citrus fruits by age, density classes of trees and NUTS 2 region"	"ef_lus_orchcitrus"	"dataset"	"08.05.2026"	"08.05.2026"	"2023"	"2023"	14822
+"                        Olives by age, density classes of trees and NUTS 2 region"	"ef_lus_orcholives"	"dataset"	"08.05.2026"	"08.05.2026"	"2023"	"2023"	4628
+"                        Table grapes and raisins by age, density classes of vines and NUTS 2 region"	"ef_lus_orchgrapes"	"dataset"	"08.05.2026"	"08.05.2026"	"2023"	"2023"	6522
+"                    Vineyard"	"ef_lus_vit"	"folder"	" "	" "	" "	" "	
+"                        Vineyard - historical data"	"ef_lus_vit_h"	"folder"	" "	" "	" "	" "	
+"                    Main farm land use by NUTS 2 region"	"ef_lus_main"	"dataset"	"17.06.2026"	"17.06.2026"	"2005"	"2023"	16516600
+"                    Farms and hectares by crops, utilised agricultural area, economic size of the farm and NUTS 2 region"	"ef_lus_allcrops"	"dataset"	"17.06.2026"	"08.05.2026"	"2005"	"2023"	21141989
+"                    Organic crops by utilised agricultural area, economic size of the farm and NUTS 2 region"	"ef_lus_org"	"dataset"	"17.06.2026"	"08.05.2026"	"2010"	"2023"	3520708
+"                    Irrigated crops by utilised agricultural area, economic size of the farm and NUTS 2 region"	"ef_lus_irri"	"dataset"	"17.06.2026"	"17.06.2026"	"2010"	"2023"	977470
+"                    Permanent grassland by area under corresponding crop, utilised agricultural area, economic size of the farm and NUTS 2 region"	"ef_lus_pegrass"	"dataset"	"17.06.2026"	"08.05.2026"	"2010"	"2023"	4338292
+"                    Main livestock indicators by NUTS 2 region"	"ef_lsk_main"	"dataset"	"17.06.2026"	"08.05.2026"	"2005"	"2023"	40802000
+"                    Bovine by NUTS 2 region"	"ef_lsk_bovine"	"dataset"	"17.06.2026"	"08.05.2026"	"2005"	"2023"	21230377
+"                    Sheep by NUTS 2 region"	"ef_lsk_sheep"	"dataset"	"17.06.2026"	"13.05.2026"	"2005"	"2023"	5368165
+"                    Poultry by NUTS 2 region"	"ef_lsk_poultry"	"dataset"	"17.06.2026"	"08.05.2026"	"2005"	"2023"	2551141
+"                    Pigs by NUTS 2 region"	"ef_lsk_pigs"	"dataset"	"17.06.2026"	"13.05.2026"	"2005"	"2023"	1408681
+"                    Goats by NUTS 2 region"	"ef_lsk_goats"	"dataset"	"17.06.2026"	"08.05.2026"	"2005"	"2023"	5113887
+"                    Beehives on farms by NUTS 2 region"	"ef_lsk_bees"	"dataset"	"17.06.2026"	"08.05.2026"	"2005"	"2023"	192363
+"                    Organic animal farming by utilised agricultural area, livestock unit, economic size of the farm and NUTS 2 region"	"ef_lsk_org"	"dataset"	"30.06.2026"	"30.06.2026"	"2010"	"2023"	6584122
+"                    Main agricultural labour force by age and sex of the farm manager, farm type of the agricultural holding and NUTS 2 region"	"ef_lf_main"	"dataset"	"17.06.2026"	"08.05.2026"	"2010"	"2023"	6254085
+"                    Agricultural labour force by size of the farm and NUTS 2 region"	"ef_lf_size"	"dataset"	"17.06.2026"	"08.05.2026"	"2010"	"2023"	1681623
+"                    Agricultural labour force by legal entity, work status and sex of worker, economic size of the agricultural holding and NUTS 2 region"	"ef_lf_leg"	"dataset"	"17.06.2026"	"13.05.2026"	"2010"	"2023"	1912027
+"                    Share of family farms by NUTS 2 region"	"ef_lf_fam_sh"	"dataset"	"17.06.2026"	"17.06.2026"	"2020"	"2020"	3860
+"                    Agricultural family labour force by age, sex of farm manager and NUTS 2 region"	"ef_lf_fam"	"dataset"	"17.06.2026"	"13.05.2026"	"2010"	"2023"	17681258
+"                    Tenure of agricultural holdings by utilised agricultural area, sex and age of farm manager and NUTS 2 region"	"ef_mp_tenure"	"dataset"	"17.06.2026"	"08.05.2026"	"2005"	"2023"	25921124
+"                    Agricultural holdings and utilised agricultural area by training, age and sex of farm managers and NUTS 2 region"	"ef_mp_training"	"dataset"	"17.06.2026"	"13.05.2026"	"2010"	"2023"	9249266
+"                    Irrigation methods and source of irrigation water of agricultural holdings by NUTS 2 region"	"ef_mp_irri"	"dataset"	"17.06.2026"	"17.06.2026"	"2010"	"2023"	161566
+"                    Soil management practices by arable land area, farmtype, crop rotation and NUTS 2 region"	"ef_mp_prac"	"dataset"	"14.08.2026"	"17.06.2026"	"2010"	"2023"	3962730
+"                    Soil cover by arable land area, farmtype, crop rotation and NUTS 2 region"	"ef_mp_soil"	"dataset"	"14.08.2026"	"17.06.2026"	"2010"	"2023"	5080325
+"                    Agricultural holding and utilised agricultural area by vocational training, sex and age of farm managers and NUTS 2 region"	"ef_mp_voctraining"	"dataset"	"17.06.2026"	"13.05.2026"	"2010"	"2023"	4663099
+"                    Organic farming by age, sex and training of farm manager and NUTS 2 region"	"ef_mp_manorg"	"dataset"	"17.06.2026"	"13.05.2026"	"2010"	"2023"	6384076
+"                    Share of holdings by training of farm manager and NUTS 2 region"	"ef_mp_training_sh"	"dataset"	"17.06.2026"	"17.06.2026"	"2020"	"2020"	2286
+"                    Manure storage facilities by utilised agricultural area, size class of livestock, farm type and NUTS 2 region"	"ef_mp_ms"	"dataset"	"17.06.2026"	"17.06.2026"	"2010"	"2020"	3253016
+"                    Import and export of manure by farm type and NUTS 2 region"	"ef_mp_mne"	"dataset"	"06.07.2026"	"17.06.2026"	"2020"	"2020"	965064
+"                    Utilised agricultural area fertilised by manure application technique, farm type and NUTS 2 region"	"ef_mp_ma"	"dataset"	"17.06.2026"	"17.06.2026"	"2020"	"2020"	586165
+"                    Machinery used by agricultural holdings by type of ownership, farm size, farm type and NUTS 2 region"	"ef_mp_mach"	"dataset"	"17.06.2026"	"17.06.2026"	"2005"	"2023"	1482790
+"                    Internet facilities, robotics, precision farming and machinery for livestock management in farms by economic size of farm, farm type and NUTS 2 region"	"ef_mp_digi"	"dataset"	"17.06.2026"	"17.06.2026"	"2023"	"
+"                    Machinery for livestock management by age and training of manager, size classes of livestock and NUTS 2 region"	"ef_mp_digilsk"	"dataset"	"17.06.2026"	"17.06.2026"	"2023"	"2023"	747123
+"                    Precision farming by age and training of manager, size of farm and NUTS 2 region"	"ef_mp_digicr"	"dataset"	"17.06.2026"	"17.06.2026"	"2023"	"2023"	716763
+"                    Ecological focus areas in agricultural holdings by utilised agricultural area, farm type and NUTS 2 region"	"ef_mp_efa"	"dataset"	"17.06.2026"	"17.06.2026"	"2023"	"2023"	226386
+"                    Equipment used for production of renewable energy on agricultural holdings by economic size and type of the farm and NUTS 2 region"	"ef_mp_renerg"	"dataset"	"17.06.2026"	"17.06.2026"	"2010"	"2023"	448744
+"                    Technical parameters of the irrigation equipment of agricultural holdings and payment terms for irrigation water by NUTS 2 region"	"ef_mp_tpirri"	"dataset"	"17.06.2026"	"17.06.2026"	"2023"	"2023"	112255
+"                    Storage facilities for agricultural products in agricultural holdings by type and economic size of the farm and NUTS 2 region"	"ef_mp_stfac"	"dataset"	"17.06.2026"	"17.06.2026"	"2023"	"2023"	114834
+"                    Animal housing by type of bovine, utilised agricultural area, size classes of livestock units and NUTS 2 region"	"ef_ah_bovine"	"dataset"	"17.06.2026"	"17.06.2026"	"2010"	"2020"	3636842
+"                    Animal housing by type of pigs, utilised agricultural area, size classes of livestock units and NUTS 2 region"	"ef_ah_pigs"	"dataset"	"17.06.2026"	"17.06.2026"	"2010"	"2020"	3255075
+"                    Animal housing by type of poultry, utilised agricultural area, size classes of livestock units and NUTS 2 region"	"ef_ah_poultry"	"dataset"	"17.06.2026"	"17.06.2026"	"2010"	"2020"	2212344
+"                    Outdoor access of bovine by type of animal housing, size classes of livestock units, farm type and NUTS 2 region"	"ef_ah_bovt"	"dataset"	"17.06.2026"	"17.06.2026"	"2020"	"2020"	1145267
+"                    Outdoor access of poultry by type of animal housing, size classes of livestock units, farm type and NUTS 2 region"	"ef_ah_poult"	"dataset"	"17.06.2026"	"17.06.2026"	"2020"	"2020"	173224
+"                    Outdoor access of pigs by type of animal housing, size classes of livestock units, farm type and NUTS 2 region"	"ef_ah_pigt"	"dataset"	"17.06.2026"	"17.06.2026"	"2020"	"2020"	830931
+"                    Farm indicators by other gainful activities related to the holder, utilised agricultural area, type and economic size of the farm and NUTS 2 region"	"ef_oga_main"	"dataset"	"17.06.2026"	"13.05.2026"	"2010"	"20
+"                    Type of other gainful activities directly related to the agricultural holdings by age of the manager, utilised agricultural area, type and economic size of the farm and NUTS 2 region"	"ef_oga_type"	"dataset"	"
+"                    Beneficiary of rural development support measures by legal form, economic size and farm type of the agricultural holding and NUTS 2 region"	"ef_rd_leg"	"dataset"	"08.05.2026"	"08.05.2026"	"2010"	"2023"	1989243
+"                    Beneficiary of rural development support measures by age, sex and training of farm manager and NUTS 2 region"	"ef_rd_man"	"dataset"	"08.05.2026"	"08.05.2026"	"2010"	"2023"	4222532
+"                        Key farm variables: area, livestock (LSU), labour force and standard output (SO) by agricultural size of farm (UAA), legal status of holding and NUTS 2 region"	"ef_kvaareg"	"dataset"	"16.01.2017"	"10.01.20
+"                        Key variables: area, livestock (LSU), labour force and standard output (SO) by economic size of farm (SO in Euro), legal status of holding and NUTS 2 region"	"ef_kvecsleg"	"dataset"	"16.01.2017"	"10.01.202
+"                        Key variables: area, livestock (LSU), labour force and standard output (SO) by type of farming (2-digit) and NUTS 2 region"	"ef_kvftreg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	215199
+"                        Livestock: number of farms and heads of animals of different types by agricultural size of farm (UAA) and NUTS 2 region"	"ef_olsaareg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	594155
+"                        Livestock: number of farms and heads of animals by livestock units (LSU) of farm and NUTS 2 region"	"ef_olslsureg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	589321
+"                        Labour force: number of persons and farm work (AWU) by sex of workers and NUTS 2 region"	"ef_olfreg"	"dataset"	"16.01.2017"	"10.01.2024"	"2005"	"2013"	38800
+"                        Irrigation: number of farms, areas and equipment by size of irrigated area and NUTS 2 region"	"ef_poirrig"	"dataset"	"19.04.2018"	"10.01.2024"	"2005"	"2013"	209805
+"                        Organic farming: number of farms, areas with different crops and heads of different types of animals by agricultural size of farm (UAA) and NUTS 2 region (2003-2013)"	"ef_mporganic"	"dataset"	"16.01.2017"	
+"                    Overview of agricultural holdings"	"ef_ov"	"folder"	" "	" "	" "	" "	
+"                        Key farm variables"	"ef_ov_kv"	"folder"	" "	" "	" "	" "	
+"                            Key variables by legal status of holding, size of farm (UAA) and NUTS 2 region"	"ef_ov_kvaa"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	250844
+"                            Key variables by size of farm (UAA), economic size of farm (ESU) and LFA status"	"ef_ov_kvaaesu"	"dataset"	"17.07.2009"	"21.12.2023"	"1990"	"2007"	265399
+"                            Key variables by age of holder, size of farm (UAA) and LFA status"	"ef_ov_kvage"	"dataset"	"17.07.2009"	"21.12.2023"	"1990"	"2007"	171494
+"                            Key variables by type of farming (1-digit), economic size of farm (ESU) and LFA status"	"ef_ov_kvesuft"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2007"	168823
+"                            Key variables by type of farming (1-digit), economic size of farm (ESU) and objective zone 2000"	"ef_ov_kvftob00"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2005"	82928
+"                            Key variables by type of farming (1-digit), economic size of farm (ESU) and objective zone 1999"	"ef_ov_kvftob99"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2000"	27584
+"                            Key variables by type of farming (2-digit) and size of farm (UAA)"	"ef_ov_kvftaa"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	198098
+"                            Key variables by type of farming (2-digit) and economic size of farm (ESU)"	"ef_ov_kvftesu"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2007"	134890
+"                            Key variables by type of farming (2-digit) and NUTS 2 region"	"ef_ov_kvftreg"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2007"	133474
+"                        Land use summary"	"ef_ov_lu"	"folder"	" "	" "	" "	" "	
+"                            Land use: number of farms and areas by size of farm (UAA) and LFA status"	"ef_ov_lusum"	"dataset"	"17.07.2009"	"21.12.2023"	"1990"	"2007"	242540
+"                            Land use: number of farms and areas by size of farm (UAA) and objective zone 2000"	"ef_ov_luob00"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2005"	73978
+"                            Land use: number of farms and areas by size of farm (UAA) and objective zone 1999"	"ef_ov_luob99"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2003"	27938
+"                            Land use: number of farms and areas by type of farming (2-digit) and economic size of farm (ESU)"	"ef_ov_luft"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2007"	2265211
+"                        Livestock summary"	"ef_ov_ls"	"folder"	" "	" "	" "	" "	
+"                            Livestock: number of farms and heads by size of farm (UAA) and LFA status"	"ef_ov_lssum"	"dataset"	"17.07.2009"	"21.12.2023"	"1990"	"2007"	98977
+"                            Livestock: number of farms and heads by size of farm (UAA) and objective zone 2000"	"ef_ov_lsob00"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2003"	8556
+"                            Livestock: number of farms and heads by size of farm (UAA) and objective zone 1999"	"ef_ov_lsob99"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2003"	10216
+"                            Livestock: number of farms, heads and LSU by type of farming (2-digit) and economic size of farm (ESU)"	"ef_ov_lsft"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2007"	1004141
+"                        Labour force summary"	"ef_ov_lf"	"folder"	" "	" "	" "	" "	
+"                            Labour force: number of persons and farm work (AWU) by size of farm (UAA) and LFA status"	"ef_ov_lfsum"	"dataset"	"17.07.2009"	"21.12.2023"	"1990"	"2007"	49790
+"                            Labour force: number of persons and farm work (AWU) by size of farm (UAA) and objective zone 2000"	"ef_ov_lfob00"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2003"	6320
+"                            Labour force: number of persons and farm work (AWU) by size of farm (UAA) and objective zone 1999"	"ef_ov_lfob99"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2003"	7060
+"                            Labour force: number of persons and farm work (AWU) by type of farming (2-digit) and economic size of farm (ESU)"	"ef_ov_lfft"	"dataset"	"27.03.2009"	"21.12.2023"	"2000"	"2007"	445276
+"                            Farmland: number of farms and areas by size of farm (UAA) and NUTS 2 region"	"ef_lu_ovcropaa"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	1969784
+"                            Farmland: number of farms and areas by economic size of farm (ESU) and NUTS 2 region"	"ef_lu_ovcropesu"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	1959788
+"                            Permanent crops: number of farms and areas by size of farm (UAA), size of permanent crop area and NUTS 2 region"	"ef_lu_pcreg"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	492194
+"                            Irrigation: number of farms, areas and equipment by size of farm (UAA) and NUTS 2 region"	"ef_lu_ofirrig"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	21949
+"                            Livestock: number of farms and heads by size of farm (UAA) and NUTS 2 region"	"ef_ls_ovaareg"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	761128
+"                            Livestock: number of farms and heads by livestock units (LSU) of farm and NUTS 2 region"	"ef_ls_ovlsureg"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	759761
+"                            Livestock: number of farms and heads by economic size of farm (ESU) and NUTS 2 region"	"ef_ls_ovesu"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	757142
+"                            Labour force: number of persons and farm work (AWU) by sex of worker, category of worker, legal status of holding, size of farm (UAA) and NUTS 2 region"	"ef_so_lfaa"	"dataset"	"15.04.2009"	"21.12.2023"
+"                            Labour force: number of persons and farm work (AWU) by sex of worker, category of worker, legal status of holding, economic size of farm (ESU) and NUTS 2 region"	"ef_so_lfesu"	"dataset"	"15.04.2009"	"2
+"                            Type of tenure: number of farms and areas by size of farm (UAA) and NUTS 2 region (1990-2007)"	"ef_so_mptenure"	"dataset"	"27.03.2009"	"21.12.2023"	"1990"	"2007"	111860
+"                            Organic farming: selected variables by size of farm (UAA) and NUTS 2 region (2000-2007)"	"ef_so_mporg"	"dataset"	"18.04.2009"	"21.12.2023"	"2000"	"2007"	98860
+"                    Structure of agricultural holdings by region, main indicators"	"ef_r_main"	"folder"	" "	" "	" "	" "	
+"                        Structure of agricultural holdings by eurofarm region, main indicators"	"ef_r_farm"	"dataset"	"17.07.2009"	"08.02.2021"	"1990"	"2007"	414026
+"                        Structure of agricultural holdings by NUTS 3 region - main indicators"	"ef_r_nuts"	"dataset"	"10.09.2009"	"21.12.2023"	"2000"	"2007"	615432
+"                    Economic accounts for agriculture by NUTS 2 region - values at current prices"	"aact_eaa01_r"	"dataset"	"24.03.2026"	"24.03.2026"	"1980"	"2024"	4929942
+"                    Economic accounts for agriculture by NUTS 2 region - values at n-1 prices"	"aact_eaa02_r"	"dataset"	"24.03.2026"	"24.03.2026"	"1999"	"2024"	1178768
+"                    Economic accounts for agriculture by NUTS 2 region - indices (volume, price, values)"	"aact_eaa05_r"	"dataset"	"24.03.2026"	"24.03.2026"	"1999"	"2024"	1718970
+"                    Economic accounts for agriculture by NUTS 2 region (until 2012)"	"agr_r_accts_h"	"dataset"	"07.03.2016"	"02.07.2024"	"1973"	"2012"	2320007
+"                    Agricultural labour input statistics by NUTS 2 region - absolute figures (thousand annual work units)"	"aact_ali01_r"	"dataset"	"24.03.2026"	"24.03.2026"	"1995"	"2023"	2183
+"                    Agricultural labour input statistics by NUTS 2 region - indices"	"aact_ali02_r"	"dataset"	"24.03.2026"	"24.03.2026"	"1995"	"2023"	1874
+"                    Production of cow's milk on farms by NUTS 2 region"	"agr_r_milkpr"	"dataset"	"01.12.2025"	"08.09.2025"	"1995"	"2024"	11599
+"                        Production of cow's milk on farms by NUTS 2 region"	"tgs00046"	"table"	"01.12.2025"	"08.09.2025"	"2013"	"2024"	3462
+"                        Animal populations by NUTS 2 region"	"apro_mt_ls_r"	"dataset"	"29.09.2026"	"29.09.2026"	"1977"	"2025"	462427
+"                        Average livestock population of chicken by NUTS 2 region"	"apro_mt_lsavch_r"	"dataset"	"05.06.2026"	"28.05.2026"	"2025"	"2025"	534
+"                        Crop production in EU standard humidity by NUTS 2 region"	"apro_cpshr"	"dataset"	"08.09.2026"	"07.05.2026"	"2000"	"2024"	1537329
+"                        Crop production in national humidity by NUTS 2 region"	"apro_cpnhr"	"dataset"	"08.09.2026"	"07.05.2026"	"2000"	"2024"	922277
+"                        Crop production by NUTS 2 region - historical data (1975-1999)"	"apro_cpnhr_h"	"dataset"	"01.08.2023"	"19.06.2026"	"1975"	"1999"	854708
+"                    Internet facilities, robotics, precision farming and machinery for livestock management in farms by economic size of farm, farm type and NUTS 2 region"	"ef_mp_digi"	"dataset"	"17.06.2026"	"17.06.2026"	"2023"	"
+"                    Precision farming by age and training of manager, size of farm and NUTS 2 region"	"ef_mp_digicr"	"dataset"	"17.06.2026"	"17.06.2026"	"2023"	"2023"	716763
+"                Main farm land use by NUTS 2 region"	"ef_lus_main"	"dataset"	"17.06.2026"	"17.06.2026"	"2005"	"2023"	16516600
+"                    Farm indicators by age and sex of the manager, economic size of the farm, utilised agricultural area and NUTS 2 region"	"ef_m_farmang"	"dataset"	"17.06.2026"	"08.05.2026"	"2010"	"2023"	7222732
+"                    Animal populations by NUTS 2 region"	"apro_mt_ls_r"	"dataset"	"29.09.2026"	"29.09.2026"	"1977"	"2025"	462427
