@@ -6,12 +6,14 @@
   var L4 = { en: 0, es: 1, fr: 2, it: 3 };
   var US = window.DehesaRegionNames.US;
   var CA = window.DehesaRegionNames.CA;
+  var ES = window.DehesaRegionNames.ES;
   var CA_SLUG = { SK: 'saskatchewan', AB: 'alberta', MB: 'manitoba', ON: 'ontario', QC: 'quebec' };
   var CA_CITY = { SK: ['regina', 'saskatoon'], AB: ['calgary', 'edmonton'], MB: ['winnipeg'], ON: ['toronto'], QC: ['montreal'], BC: ['vancouver'] };
   var CA_CITY_N = { regina: 'Regina', saskatoon: 'Saskatoon', calgary: 'Calgary', edmonton: 'Edmonton', winnipeg: 'Winnipeg', toronto: 'Toronto', montreal: 'Montréal', vancouver: 'Vancouver' };
   var C = {
     US: { flag: '🇺🇸', names: US, map: 'DEHESA_US_STATES', country: ['United States', 'Estados Unidos', 'États-Unis', 'Stati Uniti'], kind: ['State', 'Estado', 'État', 'Stato'], kinds: ['states', 'estados', 'États', 'stati'], profile: 'paises.html?c=US' },
-    CA: { flag: '🇨🇦', names: CA, map: 'DEHESA_CA_PROVINCES', country: ['Canada', 'Canadá', 'Canada', 'Canada'], kind: ['Province or territory', 'Provincia o territorio', 'Province ou territoire', 'Provincia o territorio'], kinds: ['provinces and territories', 'provincias y territorios', 'provinces et territoires', 'province e territori'], profile: 'paises.html?c=CA' }
+    CA: { flag: '🇨🇦', names: CA, map: 'DEHESA_CA_PROVINCES', country: ['Canada', 'Canadá', 'Canada', 'Canada'], kind: ['Province or territory', 'Provincia o territorio', 'Province ou territoire', 'Provincia o territorio'], kinds: ['provinces and territories', 'provincias y territorios', 'provinces et territoires', 'province e territori'], profile: 'paises.html?c=CA' },
+    ES: { flag: '🇪🇸', names: ES, map: 'DEHESA_ES_CCAA', country: ['Spain', 'España', 'Espagne', 'Spagna'], kind: ['Autonomous community', 'Comunidad autónoma', 'Communauté autonome', 'Comunità autonoma'], kinds: ['autonomous communities', 'comunidades autónomas', 'communautés autonomes', 'comunità autonome'], profile: 'paises.html?c=ES' }
   };
   var T = {
     es: { sub: 'Lo que publican las fuentes oficiales para esta región. Lo que no hay se indica; nada se rellena ni se estima.', home: 'Perfil de país', pick: 'Elegir', mapAlt: 'Mapa. Pulsa una región para abrir su perfil.', missing: 'Todavía sin dato de esta región', missingHint: 'Los datos de estas áreas no se publican para esta región o aún no los tenemos:', loading: 'Cargando…', unknown: 'No conocemos esta región. Elige una en el mapa.',
@@ -256,8 +258,35 @@
       return card(t.rec + (tl ? ' · ' + tl[0] : ''), t.recSub, (tl ? '<p style="margin:0 0 8px"><b>' + nf(tl[1], 0) + ' ' + esc(t.cad) + '</b>' + [['total-crop-receipts', t.recCrop], ['total-livestock-and-livestock-product-receipts', t.recLv]].map(function (z) { var e = R[z[0]], l2 = e && lastOf(e.pts); return l2 ? ' · ' + esc(z[1]) + ': ' + nf(l2[1], 0) : ''; }).join('') + '</p>' : '') + body, cite('statcan'));
     });
   }
-  var MODS = { US: [['drought', usDrought], ['crops', usCrops], ['cattle', usCattle], ['bids', usBids], ['fert', usFert], ['tax', usTax]], CA: [['drought', caDrought], ['cacrops', caCrops], ['lvst', caLivestock], ['inc', caIncome], ['rec', caReceipts], ['costs', caCosts], ['prices', caPrices], ['fuel', caFuel]] };
-  var MOD_NAME = { cacrops: 'cacrops', lvst: 'lvst', inc: 'inc', rec: 'rec', drought: 'drought', crops: 'crops', cattle: 'cattle', bids: 'bids', fert: 'fert', tax: 'tax', costs: 'costs', prices: 'prices', fuel: 'fuel' };
+
+  /* ---------- España: RECAN por comunidad autónoma ---------- */
+  var TX = {
+    es: { recan: 'Renta y costes de las explotaciones', recanSub: 'Red Contable Agraria Nacional (MAPA): valores medios por explotación en el último ejercicio publicado, para los tipos de explotación con más explotaciones representadas. Cada fila es la clase de dimensión económica con más explotaciones; las celdas confidenciales no se publican y nada se promedia entre clases.', rcType: 'Tipo de explotación', rcSize: 'Dimensión económica predominante', rcFarms: 'Explotaciones representadas', rcSample: 'Muestra', rcSau: 'SAU (ha)', rcOut: 'Producción bruta (€)', rcCost: 'Costes totales (€)', rcNet: 'Renta neta (€)', rcSubs: 'Subvenciones corrientes (€)', rcTotal: 'explotaciones representadas en las celdas publicadas', rcAll: 'Ver todas las variables, tipos y ejercicios', rcNote: 'Los nombres de los tipos y las clases son los del MAPA.' },
+    en: { recan: 'Farm income and costs', recanSub: 'Spanish Farm Accountancy Data Network (MAPA): per-farm averages for the latest published year, for the farm types with the most farms represented. Each row is the economic-size class with the most farms; confidential cells are not published and nothing is averaged across classes.', rcType: 'Farm type', rcSize: 'Main economic size class', rcFarms: 'Farms represented', rcSample: 'Sample', rcSau: 'UAA (ha)', rcOut: 'Gross output (€)', rcCost: 'Total costs (€)', rcNet: 'Net income (€)', rcSubs: 'Current subsidies (€)', rcTotal: 'farms represented in the published cells', rcAll: 'See all variables, types and years', rcNote: 'Farm-type and size-class names are as published by MAPA, in Spanish.' },
+    fr: { recan: 'Revenus et coûts des exploitations', recanSub: 'Réseau comptable agricole espagnol (MAPA) : moyennes par exploitation pour la dernière année publiée, pour les types d’exploitation les plus représentés. Chaque ligne est la classe de dimension économique comptant le plus d’exploitations ; les cellules confidentielles ne sont pas publiées et rien n’est moyenné entre classes.', rcType: 'Type d’exploitation', rcSize: 'Classe économique principale', rcFarms: 'Exploitations représentées', rcSample: 'Échantillon', rcSau: 'SAU (ha)', rcOut: 'Production brute (€)', rcCost: 'Coûts totaux (€)', rcNet: 'Revenu net (€)', rcSubs: 'Subventions courantes (€)', rcTotal: 'exploitations représentées dans les cellules publiées', rcAll: 'Voir toutes les variables, types et années', rcNote: 'Les noms des types et des classes sont ceux du MAPA, en espagnol.' },
+    it: { recan: 'Reddito e costi delle aziende', recanSub: 'Rete contabile agraria spagnola (MAPA): valori medi per azienda nell’ultimo anno pubblicato, per i tipi di azienda con più aziende rappresentate. Ogni riga è la classe di dimensione economica con più aziende; le celle riservate non sono pubblicate e nulla viene mediato tra classi.', rcType: 'Tipo di azienda', rcSize: 'Classe economica principale', rcFarms: 'Aziende rappresentate', rcSample: 'Campione', rcSau: 'SAU (ha)', rcOut: 'Produzione lorda (€)', rcCost: 'Costi totali (€)', rcNet: 'Reddito netto (€)', rcSubs: 'Sussidi correnti (€)', rcTotal: 'aziende rappresentate nelle celle pubblicate', rcAll: 'Vedi tutte le variabili, i tipi e gli anni', rcNote: 'I nomi dei tipi e delle classi sono quelli del MAPA, in spagnolo.' }
+  };
+  Object.keys(TX).forEach(function (l) { Object.keys(TX[l]).forEach(function (k) { T[l][k] = TX[l][k]; }); });
+  var RC_CCAA = { AN: 'Andalucía', AR: 'Aragón', AS: 'Principado de Asturias', CN: 'Canarias', CB: 'Cantabria', CL: 'Castilla y León', CM: 'Castilla-La Mancha', CT: 'Cataluña', EX: 'Extremadura', GA: 'Galicia', IB: 'Islas Baleares', RI: 'La Rioja', MD: 'Comunidad de Madrid', MC: 'Región de Murcia', NC: 'Comunidad Foral de Navarra', PV: 'País Vasco', VC: 'Comunidad Valenciana' };
+  function esRecan(x) {
+    return get('data/recan.json').then(function (D) {
+      if (!D || !D.rows) return null; var t = tt(), ci = D.ccaa.indexOf(RC_CCAA[x.r]); if (ci < 0) return null;
+      var vi = {}; D.vars.forEach(function (v, i) { vi[v[0]] = i; });
+      var rows = D.rows.filter(function (r) { return r[1] === ci; }); if (!rows.length) return null;
+      var yr = Math.max.apply(null, rows.map(function (r) { return r[0]; })); rows = rows.filter(function (r) { return r[0] === yr; });
+      var by = {}; rows.forEach(function (r) { var b = by[r[2]] = by[r[2]] || { t: r[2], sum: 0, best: null }; b.sum += r[5] || 0; if (!b.best || (r[5] || 0) > (b.best[5] || 0)) b.best = r; });
+      var list = Object.keys(by).map(function (k) { return by[k]; }).sort(function (a, b) { return b.sum - a.sum; }), tot = list.reduce(function (a, b) { return a + b.sum; }, 0);
+      if (!list.length || !tot) return null;
+      var cell = function (r, id) { var v = r[6][vi[id]]; return v == null ? '<span style="color:var(--text-faint)">—</span>' : nf(v, dec(v)); };
+      var body = '<p style="margin:0 0 8px"><b>' + nf(tot, 0) + '</b> ' + esc(t.rcTotal) + ' · ' + D.years[yr] + '</p>' + table([t.rcType, t.rcFarms, t.rcSize, t.rcSample, t.rcSau, t.rcOut, t.rcCost, t.rcNet, t.rcSubs], list.slice(0, 8).map(function (b) {
+        var ty = D.types[b.t], r = b.best;
+        return [esc(ty[0] === ty[1] ? ty[0] : ty[1]), nf(b.sum, 0), esc(D.dims[r[3]]), r[4] != null ? nf(r[4], 0) : '—', cell(r, 'SE025'), cell(r, 'SE131'), cell(r, 'SE270'), cell(r, 'SE420'), cell(r, 'SE605')];
+      }), 900) + '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.rcNote) + ' <a href="recan.html">' + esc(t.rcAll) + '</a></p>';
+      return card(t.recan, t.recanSub, body, cite('mapa_es', String(D.years[yr])));
+    });
+  }
+  var MODS = { US: [['drought', usDrought], ['crops', usCrops], ['cattle', usCattle], ['bids', usBids], ['fert', usFert], ['tax', usTax]], CA: [['drought', caDrought], ['cacrops', caCrops], ['lvst', caLivestock], ['inc', caIncome], ['rec', caReceipts], ['costs', caCosts], ['prices', caPrices], ['fuel', caFuel]], ES: [['recan', esRecan]] };
+  var MOD_NAME = { recan: 'recan', cacrops: 'cacrops', lvst: 'lvst', inc: 'inc', rec: 'rec', drought: 'drought', crops: 'crops', cattle: 'cattle', bids: 'bids', fert: 'fert', tax: 'tax', costs: 'costs', prices: 'prices', fuel: 'fuel' };
   /* ---------- mapa y página ---------- */
   function mapSvg(cfg, r) {
     var M = window[cfg.map]; if (!M) return '';
