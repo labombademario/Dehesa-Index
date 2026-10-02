@@ -6,13 +6,16 @@
   var L4 = { en: 0, es: 1, fr: 2, it: 3 };
   var US = window.DehesaRegionNames.US;
   var CA = window.DehesaRegionNames.CA;
-  var ES = window.DehesaRegionNames.ES;
+  var ES = window.DehesaRegionNames.ES, FR = window.DehesaRegionNames.FR, IT = window.DehesaRegionNames.IT, DE = window.DehesaRegionNames.DE;
   var CA_SLUG = { SK: 'saskatchewan', AB: 'alberta', MB: 'manitoba', ON: 'ontario', QC: 'quebec' };
   var CA_CITY = { SK: ['regina', 'saskatoon'], AB: ['calgary', 'edmonton'], MB: ['winnipeg'], ON: ['toronto'], QC: ['montreal'], BC: ['vancouver'] };
   var CA_CITY_N = { regina: 'Regina', saskatoon: 'Saskatoon', calgary: 'Calgary', edmonton: 'Edmonton', winnipeg: 'Winnipeg', toronto: 'Toronto', montreal: 'Montréal', vancouver: 'Vancouver' };
   var C = {
     US: { flag: '🇺🇸', names: US, map: 'DEHESA_US_STATES', country: ['United States', 'Estados Unidos', 'États-Unis', 'Stati Uniti'], kind: ['State', 'Estado', 'État', 'Stato'], kinds: ['states', 'estados', 'États', 'stati'], profile: 'paises.html?c=US' },
     CA: { flag: '🇨🇦', names: CA, map: 'DEHESA_CA_PROVINCES', country: ['Canada', 'Canadá', 'Canada', 'Canada'], kind: ['Province or territory', 'Provincia o territorio', 'Province ou territoire', 'Provincia o territorio'], kinds: ['provinces and territories', 'provincias y territorios', 'provinces et territoires', 'province e territori'], profile: 'paises.html?c=CA' },
+    FR: { flag: '🇫🇷', names: FR, map: 'DEHESA_FR_REGIONS', country: ['France', 'Francia', 'France', 'Francia'], kind: ['Region', 'Región', 'Région', 'Regione'], kinds: ['regions', 'regiones', 'régions', 'regioni'], profile: 'paises.html?c=FR' },
+    IT: { flag: '🇮🇹', names: IT, map: 'DEHESA_IT_REGIONS', country: ['Italy', 'Italia', 'Italie', 'Italia'], kind: ['Region', 'Región', 'Région', 'Regione'], kinds: ['regions', 'regiones', 'régions', 'regioni'], profile: 'paises.html?c=IT' },
+    DE: { flag: '🇩🇪', names: DE, map: 'DEHESA_DE_LAENDER', country: ['Germany', 'Alemania', 'Allemagne', 'Germania'], kind: ['State (Land)', 'Estado federado (Land)', 'Land', 'Land'], kinds: ['federal states', 'estados federados', 'Länder', 'Länder'], profile: 'paises.html?c=DE' },
     ES: { flag: '🇪🇸', names: ES, map: 'DEHESA_ES_CCAA', country: ['Spain', 'España', 'Espagne', 'Spagna'], kind: ['Autonomous community', 'Comunidad autónoma', 'Communauté autonome', 'Comunità autonoma'], kinds: ['autonomous communities', 'comunidades autónomas', 'communautés autonomes', 'comunità autonome'], profile: 'paises.html?c=ES' }
   };
   var T = {
@@ -100,7 +103,7 @@
   function nm(cfg, id, idx) { var s = cfg.names[id]; if (!s) return id; var p = s.split('|'); return p[idx != null ? idx : li()] || p[0]; }
   function nameEn(cfg, id) { return cfg.names[id].split('|')[0]; }
   function card(title, sub, body, src) { return '<section class="di-card" style="padding:16px 18px;margin-top:14px"><h2 class="cof-h2" style="margin:0 0 4px">' + esc(title) + '</h2>' + (sub ? '<p class="di-movers-hint" style="margin:0 0 10px">' + esc(sub) + '</p>' : '') + body + (src || '') + '</section>'; }
-  function cite(id, period) { return window.DICite && window.DICite.html ? window.DICite.html(id, period ? { period: period } : {}) : ''; }
+  function cite(id, period, note) { var o = {}; if (period) o.period = period; if (note) o.note = note; return window.DICite && window.DICite.html ? window.DICite.html(id, o) : ''; }
   var TH = 'padding:8px 6px;', TD = 'padding:7px 6px;border-top:1px solid var(--border);';
   function table(heads, rows, min) { return '<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:' + (min || 460) + 'px;font-size:13.5px"><tr style="font-size:11px;font-weight:700;color:var(--text-faint);text-align:left">' + heads.map(function (h, i) { return '<th style="' + TH + (i ? 'text-align:right' : '') + '">' + esc(h) + '</th>'; }).join('') + '</tr>' + rows.map(function (r) { return '<tr>' + r.map(function (c, i) { return '<td style="' + TD + (i ? 'text-align:right;font-variant-numeric:tabular-nums' : '') + '">' + c + '</td>'; }).join('') + '</tr>'; }).join('') + '</table></div>'; }
 
@@ -285,8 +288,140 @@
       return card(t.recan, t.recanSub, body, cite('mapa_es', String(D.years[yr])));
     });
   }
-  var MODS = { US: [['drought', usDrought], ['crops', usCrops], ['cattle', usCattle], ['bids', usBids], ['fert', usFert], ['tax', usTax]], CA: [['drought', caDrought], ['cacrops', caCrops], ['lvst', caLivestock], ['inc', caIncome], ['rec', caReceipts], ['costs', caCosts], ['prices', caPrices], ['fuel', caFuel]], ES: [['recan', esRecan]] };
-  var MOD_NAME = { recan: 'recan', cacrops: 'cacrops', lvst: 'lvst', inc: 'inc', rec: 'rec', drought: 'drought', crops: 'crops', cattle: 'cattle', bids: 'bids', fert: 'fert', tax: 'tax', costs: 'costs', prices: 'prices', fuel: 'fuel' };
+  /* ---------- UE: datos regionales de Eurostat (España, Francia, Italia y Alemania) ---------- */
+  var TE = {
+    es: { eaa: 'Producción y renta agraria', eaaSub: 'Cuentas económicas de la agricultura de la región (Eurostat), millones de euros a precios corrientes. Último año publicado.', eaOut: 'Producción de la rama agraria', eaNote: 'Eurostat publica estas cuentas con uno o dos años de retraso. La suma de las regiones coincide con el total nacional de Eurostat', ec: 'Peso en el país', eaYoy: 'frente al año anterior', evolution: 'Evolución', eMeUr: 'M€', prodMix: 'De dónde viene la producción', item: 'Partida', val: 'Valor', shareOut: '% de la producción', yearL: 'Año',
+      ercrops: 'Cultivos', ercropsSub: 'Superficie y producción de la región (Eurostat, estadísticas de cultivos). El rendimiento es producción dividida por superficie, calculado por Dehesa Index. En cultivos permanentes solo se publica la superficie principal.', areaH: 'Superficie', prodH: 'Producción', yieldH: 'Rendimiento', kha2: 'mil ha', kt2: 'mil t', tha: 't/ha', cropH: 'Cultivo', uaaLine: 'Superficie agraria útil', ofWhich: 'de ella',
+      erlive: 'Ganado y leche', erliveSub: 'Efectivos de la región (Eurostat, miles de cabezas) y leche de vaca producida en granja (miles de toneladas).', animalH: 'Efectivos', headsH: 'Miles de cabezas', milkL: 'Leche de vaca en granja', ktL: 'mil t',
+      erfarms: 'Explotaciones', erfarmsSub: 'Censo agrario de la UE (Eurostat): explotaciones, superficie, trabajo y producción estándar de la región.', holdings: 'Explotaciones', uaaH: 'SAU', avgSize: 'Tamaño medio', lsuH: 'Unidades ganaderas', awuH: 'Trabajo (UTA)', soH: 'Producción estándar', typeH: 'Tipo de explotación', chgH: 'Cambio desde', haH: 'ha', mEur: 'M€', stdOut: 'La producción estándar es una estimación del valor de la producción potencial.', since: 'desde',
+      deprices: 'Precios de la leche y del ganado', depricesSub: 'Precios de la BLE para el grupo de Länder al que pertenece este Land: la BLE publica estos precios por grupos de Länder, no por Land.', group: 'Grupo publicado', kind: 'Tipo', pricesCt: 'ct/kg', per100: '€/100 kg canal', organic: 'ecológica', conv: 'convencional', milkStd: 'Leche, precio en granja estandarizado', date2: 'Fecha',
+      euNote: 'Cifras de Eurostat; los rendimientos, los pesos y las sumas los calcula Dehesa Index. Eurostat no es responsable de esos cálculos.', frNote: ' (Francia: sin territorios de ultramar)' },
+    en: { eaa: 'Output and farm income', eaaSub: 'Economic accounts for agriculture for the region (Eurostat), million euro at current prices. Latest published year.', eaOut: 'Agricultural industry output', eaNote: 'Eurostat publishes these accounts one or two years late. The regions add up to Eurostat’s national total', ec: 'Share of the country', eaYoy: 'vs. a year earlier', evolution: 'Trend', eMeUr: 'M€', prodMix: 'Where the output comes from', item: 'Item', val: 'Value', shareOut: '% of output', yearL: 'Year',
+      ercrops: 'Crops', ercropsSub: 'Area and production for the region (Eurostat crop statistics). Yield is production divided by area, computed by Dehesa Index. For permanent crops only the main area is published.', areaH: 'Area', prodH: 'Production', yieldH: 'Yield', kha2: 'thousand ha', kt2: 'thousand t', tha: 't/ha', cropH: 'Crop', uaaLine: 'Utilised agricultural area', ofWhich: 'of which',
+      erlive: 'Livestock and milk', erliveSub: 'Animal numbers in the region (Eurostat, thousand head) and cow’s milk produced on farms (thousand tonnes).', animalH: 'Animals', headsH: 'Thousand head', milkL: 'Cow’s milk on farms', ktL: 'thousand t',
+      erfarms: 'Farms', erfarmsSub: 'EU farm structure survey (Eurostat): holdings, land, labour and standard output of the region.', holdings: 'Holdings', uaaH: 'UAA', avgSize: 'Average size', lsuH: 'Livestock units', awuH: 'Labour (AWU)', soH: 'Standard output', typeH: 'Farm type', chgH: 'Change since', haH: 'ha', mEur: 'M€', stdOut: 'Standard output is an estimate of the value of potential production.', since: 'since',
+      deprices: 'Milk and livestock prices', depricesSub: 'BLE prices for the group of Länder this Land belongs to: BLE publishes these prices by groups of Länder, not by Land.', group: 'Published group', kind: 'Type', pricesCt: 'ct/kg', per100: '€/100 kg carcass', organic: 'organic', conv: 'conventional', milkStd: 'Milk, standardised farm-gate price', date2: 'Date',
+      euNote: 'Figures are Eurostat’s; yields, shares and sums are computed by Dehesa Index. Eurostat is not responsible for those calculations.', frNote: ' (France: excluding overseas territories)' },
+    fr: { eaa: 'Production et revenu agricoles', eaaSub: 'Comptes économiques de l’agriculture de la région (Eurostat), millions d’euros aux prix courants. Dernière année publiée.', eaOut: 'Production de la branche agricole', eaNote: 'Eurostat publie ces comptes avec un ou deux ans de retard. La somme des régions coïncide avec le total national d’Eurostat', ec: 'Part du pays', eaYoy: 'par rapport à l’an dernier', evolution: 'Évolution', eMeUr: 'M€', prodMix: 'D’où vient la production', item: 'Poste', val: 'Valeur', shareOut: '% de la production', yearL: 'Année',
+      ercrops: 'Cultures', ercropsSub: 'Superficie et production de la région (Eurostat, statistiques des cultures). Le rendement est la production divisée par la superficie, calculé par Dehesa Index. Pour les cultures permanentes, seule la superficie principale est publiée.', areaH: 'Superficie', prodH: 'Production', yieldH: 'Rendement', kha2: 'milliers d’ha', kt2: 'milliers de t', tha: 't/ha', cropH: 'Culture', uaaLine: 'Surface agricole utilisée', ofWhich: 'dont',
+      erlive: 'Élevage et lait', erliveSub: 'Effectifs de la région (Eurostat, milliers de têtes) et lait de vache produit à la ferme (milliers de tonnes).', animalH: 'Effectifs', headsH: 'Milliers de têtes', milkL: 'Lait de vache à la ferme', ktL: 'milliers de t',
+      erfarms: 'Exploitations', erfarmsSub: 'Enquête européenne sur la structure des exploitations (Eurostat) : exploitations, surfaces, travail et production standard de la région.', holdings: 'Exploitations', uaaH: 'SAU', avgSize: 'Taille moyenne', lsuH: 'Unités gros bétail', awuH: 'Travail (UTA)', soH: 'Production standard', typeH: 'Type d’exploitation', chgH: 'Variation depuis', haH: 'ha', mEur: 'M€', stdOut: 'La production standard est une estimation de la valeur de la production potentielle.', since: 'depuis',
+      deprices: 'Prix du lait et du bétail', depricesSub: 'Prix de la BLE pour le groupe de Länder auquel appartient ce Land : la BLE publie ces prix par groupes de Länder, pas par Land.', group: 'Groupe publié', kind: 'Type', pricesCt: 'ct/kg', per100: '€/100 kg carcasse', organic: 'biologique', conv: 'conventionnel', milkStd: 'Lait, prix à la ferme standardisé', date2: 'Date',
+      euNote: 'Chiffres d’Eurostat ; les rendements, parts et sommes sont calculés par Dehesa Index. Eurostat n’est pas responsable de ces calculs.', frNote: ' (France : hors outre-mer)' },
+    it: { eaa: 'Produzione e reddito agricolo', eaaSub: 'Conti economici dell’agricoltura della regione (Eurostat), milioni di euro a prezzi correnti. Ultimo anno pubblicato.', eaOut: 'Produzione del ramo agricolo', eaNote: 'Eurostat pubblica questi conti con uno o due anni di ritardo. La somma delle regioni coincide con il totale nazionale di Eurostat', ec: 'Peso nel paese', eaYoy: 'rispetto all’anno prima', evolution: 'Andamento', eMeUr: 'M€', prodMix: 'Da dove viene la produzione', item: 'Voce', val: 'Valore', shareOut: '% della produzione', yearL: 'Anno',
+      ercrops: 'Colture', ercropsSub: 'Superficie e produzione della regione (Eurostat, statistiche sulle colture). La resa è la produzione divisa per la superficie, calcolata da Dehesa Index. Per le colture permanenti si pubblica solo la superficie principale.', areaH: 'Superficie', prodH: 'Produzione', yieldH: 'Resa', kha2: 'migliaia di ha', kt2: 'migliaia di t', tha: 't/ha', cropH: 'Coltura', uaaLine: 'Superficie agricola utilizzata', ofWhich: 'di cui',
+      erlive: 'Bestiame e latte', erliveSub: 'Consistenze della regione (Eurostat, migliaia di capi) e latte vaccino prodotto in azienda (migliaia di tonnellate).', animalH: 'Consistenze', headsH: 'Migliaia di capi', milkL: 'Latte vaccino in azienda', ktL: 'migliaia di t',
+      erfarms: 'Aziende', erfarmsSub: 'Indagine UE sulla struttura delle aziende agricole (Eurostat): aziende, superfici, lavoro e produzione standard della regione.', holdings: 'Aziende', uaaH: 'SAU', avgSize: 'Dimensione media', lsuH: 'Unità di bestiame', awuH: 'Lavoro (ULA)', soH: 'Produzione standard', typeH: 'Tipo di azienda', chgH: 'Variazione dal', haH: 'ha', mEur: 'M€', stdOut: 'La produzione standard è una stima del valore della produzione potenziale.', since: 'dal',
+      deprices: 'Prezzi del latte e del bestiame', depricesSub: 'Prezzi BLE per il gruppo di Länder a cui appartiene questo Land: la BLE pubblica questi prezzi per gruppi di Länder, non per Land.', group: 'Gruppo pubblicato', kind: 'Tipo', pricesCt: 'ct/kg', per100: '€/100 kg carcassa', organic: 'biologico', conv: 'convenzionale', milkStd: 'Latte, prezzo alla stalla standardizzato', date2: 'Data',
+      euNote: 'Cifre di Eurostat; rese, quote e somme sono calcolate da Dehesa Index. Eurostat non è responsabile di tali calcoli.', frNote: ' (Francia: esclusi i territori d’oltremare)' }
+  };
+  Object.keys(TE).forEach(function (l) { Object.keys(TE[l]).forEach(function (k) { T[l][k] = TE[l][k]; }); });
+  var EL = { // [en, es, fr, it]
+    AM180000: ['Agricultural industry output', 'Producción de la rama agraria', 'Production de la branche agricole', 'Produzione del ramo agricolo'], AM160000: ['Agricultural output', 'Producción agraria', 'Production agricole', 'Produzione agricola'],
+    AM100000: ['Crop output', 'Producción vegetal', 'Production végétale', 'Produzione vegetale'], AM110000: ['Animals (livestock sold)', 'Animales (ganado vendido)', 'Animaux', 'Animali'], AM120000: ['Animal products', 'Productos animales', 'Produits animaux', 'Prodotti animali'],
+    AM010000: ['Cereals', 'Cereales', 'Céréales', 'Cereali'], AM020000: ['Industrial crops', 'Cultivos industriales', 'Cultures industrielles', 'Colture industriali'], AM030000: ['Forage plants', 'Plantas forrajeras', 'Plantes fourragères', 'Piante foraggere'], AM040000: ['Vegetables and horticulture', 'Hortalizas y horticultura', 'Légumes et horticulture', 'Ortaggi e orticoltura'], AM050000: ['Potatoes', 'Patatas', 'Pommes de terre', 'Patate'], AM060000: ['Fruit', 'Fruta', 'Fruits', 'Frutta'], AM070000: ['Wine', 'Vino', 'Vin', 'Vino'], AM080000: ['Olive oil', 'Aceite de oliva', 'Huile d’olive', 'Olio d’oliva'],
+    AM111000: ['Cattle', 'Vacuno', 'Bovins', 'Bovini'], AM112000: ['Pigs', 'Porcino', 'Porcins', 'Suini'], AM114000: ['Sheep and goats', 'Ovino y caprino', 'Ovins et caprins', 'Ovini e caprini'], AM115000: ['Poultry', 'Aves', 'Volaille', 'Pollame'], AM121000: ['Milk', 'Leche', 'Lait', 'Latte'], AM122000: ['Eggs', 'Huevos', 'Œufs', 'Uova'],
+    AM200000: ['Intermediate consumption', 'Consumos intermedios', 'Consommations intermédiaires', 'Consumi intermedi'], AM206000: ['of which feed', 'de ellos piensos', 'dont aliments pour animaux', 'di cui mangimi'], AM203000: ['of which fertilisers', 'de ellos fertilizantes', 'dont engrais', 'di cui fertilizzanti'], AM202000: ['of which energy', 'de ella energía', 'dont énergie', 'di cui energia'],
+    AM260000: ['Gross value added', 'Valor añadido bruto', 'Valeur ajoutée brute', 'Valore aggiunto lordo'], AM280000: ['Net value added', 'Valor añadido neto', 'Valeur ajoutée nette', 'Valore aggiunto netto'], AM310000: ['Other subsidies on production', 'Otras subvenciones a la producción', 'Autres subventions à la production', 'Altri contributi alla produzione'], AM320000: ['Factor income', 'Renta de los factores', 'Revenu des facteurs', 'Reddito dei fattori'], AM330000: ['Net operating surplus / mixed income', 'Excedente neto de explotación / renta mixta', 'Excédent net d’exploitation / revenu mixte', 'Risultato netto di gestione / reddito misto'], AM370000: ['Entrepreneurial income', 'Renta empresarial', 'Revenu entrepreneurial', 'Reddito imprenditoriale']
+  };
+  var EC = {
+    UAA: ['Utilised agricultural area', 'Superficie agraria útil', 'Surface agricole utilisée', 'Superficie agricola utilizzata'], ARA: ['Arable land', 'Tierra arable', 'Terres arables', 'Seminativi'], J0000: ['Permanent grassland', 'Prados y pastos permanentes', 'Prairies permanentes', 'Prati permanenti'],
+    C0000: ['Cereals (grain)', 'Cereales (grano)', 'Céréales (grain)', 'Cereali (granella)'], C1110: ['Common wheat', 'Trigo blando', 'Blé tendre', 'Frumento tenero'], C1120: ['Durum wheat', 'Trigo duro', 'Blé dur', 'Frumento duro'], C1200: ['Rye', 'Centeno', 'Seigle', 'Segale'], C1300: ['Barley', 'Cebada', 'Orge', 'Orzo'], C1500: ['Grain maize', 'Maíz grano', 'Maïs grain', 'Mais da granella'],
+    R1000: ['Potatoes', 'Patata', 'Pomme de terre', 'Patata'], R2000: ['Sugar beet', 'Remolacha azucarera', 'Betterave sucrière', 'Barbabietola da zucchero'], I1110: ['Rapeseed', 'Colza', 'Colza', 'Colza'], I1120: ['Sunflower', 'Girasol', 'Tournesol', 'Girasole'], I1130: ['Soya', 'Soja', 'Soja', 'Soia'],
+    P0000: ['Dry pulses and protein crops', 'Leguminosas grano y proteaginosas', 'Légumineuses à grains et protéagineux', 'Legumi secchi e proteaginose'], G3000: ['Green maize', 'Maíz forrajero', 'Maïs fourrage', 'Mais da foraggio'], F0000: ['Fruit, berries and nuts', 'Frutales, bayas y frutos secos', 'Fruits, baies et fruits à coque', 'Frutta, bacche e frutta a guscio'], T0000: ['Citrus', 'Cítricos', 'Agrumes', 'Agrumi'], W1000: ['Vines (grapes)', 'Viñedo', 'Vignes', 'Vite'], O1000: ['Olives', 'Olivar', 'Oliviers', 'Olivo']
+  };
+  var EAN = { A2000: ['Cattle', 'Vacuno', 'Bovins', 'Bovini'], A2300F: ['Dairy cows', 'Vacas lecheras', 'Vaches laitières', 'Vacche da latte'], A2300G: ['Other cows', 'Vacas no lecheras', 'Vaches allaitantes', 'Vacche non da latte'], A3100: ['Pigs', 'Porcino', 'Porcins', 'Suini'], A4100: ['Sheep', 'Ovino', 'Ovins', 'Ovini'], A4200: ['Goats', 'Caprino', 'Caprins', 'Caprini'] };
+  var EFT = { FT1: ['Field crops', 'Cultivos herbáceos', 'Grandes cultures', 'Seminativi'], FT2: ['Horticulture', 'Horticultura', 'Horticulture', 'Orticoltura'], FT3: ['Permanent crops', 'Cultivos permanentes', 'Cultures permanentes', 'Colture permanenti'], FT4: ['Grazing livestock', 'Herbívoros', 'Herbivores', 'Erbivori'], FT5: ['Granivores', 'Granívoros (porcino y aves)', 'Granivores', 'Granivori'], FT6: ['Mixed cropping', 'Policultivo', 'Polyculture', 'Policoltura'], FT7: ['Mixed livestock', 'Policría', 'Polyélevage', 'Poliallevamento'], FT8: ['Mixed crops and livestock', 'Cultivos y ganado mixtos', 'Polyculture-élevage', 'Colture e allevamento misti'], FT9: ['Non-classified', 'Sin clasificar', 'Non classées', 'Non classificate'] };
+  LBL.deMeat = ['Slaughter prices by region (BLE)', 'Precios de sacrificio por región (BLE)', 'Prix d’abattage par région (BLE)', 'Prezzi di macellazione per regione (BLE)'];
+  var EAA_COLS = [['AM180000'], ['AM260000'], ['AM320000'], ['AM370000']];
+  function euData(cc) { return get('data/eu-regions-' + cc.toLowerCase() + '.json'); }
+  function ycell(p, y) { for (var i = p.length - 1; i >= 0; i--) if (p[i][0] === y) return p[i][1]; return null; }
+  function lastP(p) { return p && p.length ? p[p.length - 1] : null; }
+  function countryTotal(D, pick, y) { var s = 0, n = 0, k; for (k in D.regions) { var p = pick(D.regions[k]); var v = p ? ycell(p, y) : null; if (v == null) return null; s += v; n++; } return n ? s : null; }
+  function euNote(cc) { return cite('eurostat', '', tt().euNote + (cc === 'FR' ? tt().frNote : '')); }
+  function sharePct(v, tot) { return tot ? nf(v / tot * 100, v / tot < .1 ? 1 : 0) + ' %' : '<span style="color:var(--text-faint)">—</span>'; }
+  function euEaa(x) {
+    return euData(x.c).then(function (D) {
+      var b = D && D.regions && D.regions[x.r], o = b && b.eaa; if (!o || !o.AM180000) return null; var t = tt(), y = lastP(o.AM180000)[0], f = function (it) { return o[it] ? ycell(o[it], y) : null; };
+      var yoy = function (it) { var a = f(it), c = o[it] ? ycell(o[it], y - 1) : null; return a != null && c ? (a / c - 1) * 100 : null; };
+      var tiles = EAA_COLS.map(function (c) { var it = c[0], v = f(it); if (v == null) return ''; var yy = yoy(it), tt0 = countryTotal(D, function (r) { return r.eaa && r.eaa[it]; }, y);
+        return '<div style="flex:1;min-width:140px"><div style="font-size:12px;color:var(--text-faint)">' + esc(EL[it][li()]) + '</div><div style="font-size:22px;font-weight:700">' + nf(v, dec(v)) + ' <span style="font-size:13px;font-weight:400;color:var(--text-faint)">' + esc(t.eMeUr) + '</span></div><div style="font-size:12px;color:var(--text-faint)">' + (yy != null ? esc(pct(yy)) + ' ' + esc(t.eaYoy) : '') + (tt0 ? ' · ' + esc(t.ec) + ' ' + sharePct(v, tt0) : '') + '</div></div>'; }).join('');
+      var body = '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(t.yearL) + ' ' + y + '</p><div style="display:flex;gap:10px;flex-wrap:wrap">' + tiles + '</div>';
+      var cs = [['AM180000', '#2f6b4a'], ['AM200000', '#b03a2e'], ['AM260000', '#e08a3a']].map(function (c) { return o[c[0]] ? { name: EL[c[0]][li()], color: c[1], pts: o[c[0]].map(function (p) { return { x: Date.UTC(p[0], 0, 1), y: p[1], l: String(p[0]) }; }) } : null; }).filter(Boolean);
+      if (cs.length) body += window.DehesaChart.render({ series: cs, xMode: 'time', yMin: 0, yTitle: t.eMeUr, aria: t.eaa + ' ' + nm(C[x.c], x.r), vFmt: function (v) { return nf(v, dec(v)) + ' ' + t.eMeUr; }, yFmt: function (v) { return nf(v, 0); }, xFmt: function (v) { return new Date(v).getUTCFullYear(); } });
+      var base = f('AM160000'), items = ['AM100000', 'AM110000', 'AM120000', 'AM010000', 'AM020000', 'AM030000', 'AM040000', 'AM050000', 'AM060000', 'AM070000', 'AM080000', 'AM111000', 'AM112000', 'AM114000', 'AM115000', 'AM121000', 'AM122000'];
+      var rows = items.map(function (it) { var v = f(it); return v == null || v <= 0 ? null : { it: it, v: v }; }).filter(Boolean);
+      var grp = rows.filter(function (r) { return ['AM100000', 'AM110000', 'AM120000'].indexOf(r.it) >= 0; }), det = rows.filter(function (r) { return ['AM100000', 'AM110000', 'AM120000'].indexOf(r.it) < 0; }).sort(function (a, c) { return c.v - a.v; });
+      var mk = function (r) { var yy = yoy(r.it); return [esc(EL[r.it][li()]), nf(r.v, dec(r.v)), base ? nf(r.v / base * 100, 1) + ' %' : '', yy == null ? '' : esc(pct(yy))]; };
+      if (base && rows.length) body += '<h3 style="margin:14px 0 4px;font-size:14px">' + esc(t.prodMix) + '</h3>' + table([t.item, t.eMeUr, t.shareOut, t.eaYoy], grp.concat(det).map(mk), 460);
+      body += '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.eaNote) + (x.c === 'FR' ? esc(t.frNote) : '') + '.</p>';
+      return card(t.eaa, t.eaaSub, body, euNote(x.c));
+    });
+  }
+  function euCrops(x) {
+    return euData(x.c).then(function (D) {
+      var b = D && D.regions && D.regions[x.r], c = b && b.crops; if (!c) return null; var t = tt(), rows = [], head = '';
+      Object.keys(c).forEach(function (k) {
+        var e = c[k], a = lastP(e.area), pr = lastP(e.prod), y = a ? a[0] : pr ? pr[0] : null; if (!EC[k] || y == null) return;
+        var av = a && a[0] === y ? a[1] : null, pv = pr && pr[0] === y ? pr[1] : null; if (!(av > 0) && !(pv > 0)) return;
+        var tot = av != null ? countryTotal(D, function (r) { return r.crops && r.crops[k] && r.crops[k].area; }, y) : null;
+        rows.push({ k: k, y: y, av: av, pv: pv, tot: tot });
+      });
+      var uaa = rows.filter(function (r) { return r.k === 'UAA'; })[0];
+      if (uaa) head = '<p style="margin:0 0 8px"><b>' + nf(uaa.av, dec(uaa.av)) + ' ' + esc(t.kha2) + '</b> ' + esc(EC.UAA[li()].toLowerCase()) + ' · ' + uaa.y + [['ARA', 0], ['J0000', 0]].map(function (z) { var r = rows.filter(function (q) { return q.k === z[0]; })[0]; return r ? ' · ' + esc(EC[z[0]][li()].toLowerCase()) + ' ' + nf(r.av, dec(r.av)) : ''; }).join('') + '</p>';
+      rows = rows.filter(function (r) { return r.k !== 'UAA'; }).sort(function (p, q) { return (q.av || 0) - (p.av || 0); });
+      if (!rows.length) return null;
+      var tb = table([t.cropH, t.areaH + ' (' + t.kha2 + ')', t.prodH + ' (' + t.kt2 + ')', t.yieldH + ' (' + t.tha + ')', t.ec, t.yearL], rows.map(function (r) {
+        var dash = '<span style="color:var(--text-faint)">—</span>';
+        return [esc(EC[r.k][li()]), r.av != null ? nf(r.av, dec(r.av)) : dash, r.pv != null ? nf(r.pv, dec(r.pv)) : dash, r.av > 0 && r.pv != null ? nf(r.pv / r.av, 1) : dash, r.av != null && r.tot ? sharePct(r.av, r.tot) : dash, String(r.y)];
+      }), 640);
+      return card(t.ercrops, t.ercropsSub, head + tb, euNote(x.c));
+    });
+  }
+  function euLive(x) {
+    return euData(x.c).then(function (D) {
+      var b = D && D.regions && D.regions[x.r], an = b && b.animals; if (!an) return null; var t = tt(), rows = [];
+      Object.keys(EAN).forEach(function (k) { var p = an[k], l = lastP(p); if (!l || !(l[1] > 0)) return; var pv = ycell(p, l[0] - 1), tot = countryTotal(D, function (r) { return r.animals && r.animals[k]; }, l[0]);
+        rows.push([esc(EAN[k][li()]), nf(l[1], dec(l[1])), pv ? esc(pct((l[1] / pv - 1) * 100)) : '', tot ? sharePct(l[1], tot) : '', String(l[0])]); });
+      var body = rows.length ? table([t.animalH, t.headsH, t.eaYoy, t.ec, t.yearL], rows, 480) : '';
+      var m = lastP(b.milk);
+      if (m) { var mp = ycell(b.milk, m[0] - 1), mt = countryTotal(D, function (r) { return r.milk; }, m[0]); body += '<p style="margin:10px 0 0"><b>' + nf(m[1], 0) + ' ' + esc(t.ktL) + '</b> ' + esc(t.milkL.toLowerCase()) + ' · ' + m[0] + (mp ? ' · ' + esc(pct((m[1] / mp - 1) * 100)) + ' ' + esc(t.eaYoy) : '') + (mt ? ' · ' + esc(t.ec) + ' ' + sharePct(m[1], mt) : '') + '</p>';
+        if (b.milk.length > 3) body += window.DehesaChart.render({ series: [{ name: t.milkL, color: '#2f6b4a', pts: b.milk.map(function (p) { return { x: Date.UTC(p[0], 0, 1), y: p[1], l: String(p[0]) }; }) }], xMode: 'time', yMin: 0, yTitle: t.ktL, noLegend: true, aria: t.milkL + ' ' + nm(C[x.c], x.r), vFmt: function (v) { return nf(v, 0) + ' ' + t.ktL; }, yFmt: function (v) { return nf(v, 0); }, xFmt: function (v) { return new Date(v).getUTCFullYear(); } }); }
+      if (!body) return null;
+      return card(t.erlive, t.erliveSub, body, euNote(x.c));
+    });
+  }
+  function euFarms(x) {
+    return euData(x.c).then(function (D) {
+      var b = D && D.regions && D.regions[x.r], F = b && b.farms, T0 = F && F.TOTAL; if (!T0) return null; var t = tt(), ys = Object.keys(T0).sort(), y = ys[ys.length - 1], f = T0[y], y0 = ys[0], f0 = T0[y0];
+      if (!f || !f.HLD) return null;
+      var tile = function (lab, v, unit, sub) { return '<div style="flex:1;min-width:130px"><div style="font-size:12px;color:var(--text-faint)">' + esc(lab) + '</div><div style="font-size:20px;font-weight:700">' + v + (unit ? ' <span style="font-size:13px;font-weight:400;color:var(--text-faint)">' + esc(unit) + '</span>' : '') + '</div>' + (sub ? '<div style="font-size:12px;color:var(--text-faint)">' + sub + '</div>' : '') + '</div>'; };
+      var chg = f0 && f0.HLD && y0 !== y ? esc(pct((f.HLD / f0.HLD - 1) * 100)) + ' ' + esc(t.since) + ' ' + y0 : '';
+      var body = '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(t.yearL) + ' ' + y + '</p><div style="display:flex;gap:10px;flex-wrap:wrap">' + tile(t.holdings, nf(f.HLD, 0), '', chg) + (f.HA ? tile(t.uaaH, nf(f.HA / 1000, dec(f.HA / 1000)), t.kha2, '') + tile(t.avgSize, nf(f.HA / f.HLD, 1), t.haH, '') : '') + (f.AWU ? tile(t.awuH, nf(f.AWU, 0), '', '') : '') + (f.EUR ? tile(t.soH, nf(f.EUR / 1e6, 0), t.mEur, '') : '') + '</div>';
+      var types = Object.keys(EFT).map(function (k) { var e = F[k] && F[k][y]; return e && e.HLD ? { k: k, e: e } : null; }).filter(Boolean).sort(function (p, q) { return q.e.HLD - p.e.HLD; });
+      if (types.length) body += '<h3 style="margin:14px 0 4px;font-size:14px">' + esc(t.typeH) + '</h3>' + table([t.typeH, t.holdings, '%', t.uaaH + ' (' + t.haH + ')', t.soH + ' (' + t.mEur + ')'], types.map(function (r) { return [esc(EFT[r.k][li()]), nf(r.e.HLD, 0), nf(r.e.HLD / f.HLD * 100, 0) + ' %', r.e.HA ? nf(r.e.HA, 0) : '', r.e.EUR ? nf(r.e.EUR / 1e6, 0) : '']; }), 560) + '<p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.stdOut) + '</p>';
+      return card(t.erfarms, t.erfarmsSub, body, euNote(x.c));
+    });
+  }
+  /* Alemania: precios BLE por grupo de Länder */
+  var DE_EN = { BW: 'Baden-Württemberg', BY: 'Bavaria', BE: 'Berlin', BB: 'Brandenburg', HB: 'Bremen', HH: 'Hamburg', HE: 'Hesse', MV: 'Mecklenburg-Western Pomerania', NI: 'Lower Saxony', NW: 'North Rhine-Westphalia', RP: 'Rhineland-Palatinate', SL: 'Saarland', SN: 'Saxony', ST: 'Saxony-Anhalt', SH: 'Schleswig-Holstein', TH: 'Thuringia' };
+  function deGroupHas(txt, en) { return txt.split(/\s*\/\s*|,\s*|\s+and\s+/).some(function (z) { return z === en; }); }
+  function dePrices(x) {
+    return get('data/germany-stats.json').then(function (d) {
+      var S = d && d.countries && d.countries.DE && d.countries.DE.series, en = DE_EN[x.r]; if (!S || !en) return null; var t = tt(), milk = [], meat = [];
+      S.forEach(function (s) {
+        if (s.latest == null) return;
+        if (s.group === 'milk_regions') { var m = /^(.*), (organic|conventional) milk/.exec(s.label); if (m && deGroupHas(m[1], en)) milk.push([esc(m[1]), esc(t[m[2] === 'organic' ? 'organic' : 'conv']), nf(s.latest, 2) + ' <span style="color:var(--text-faint);font-size:12px">' + esc(t.pricesCt) + '</span>', s.changePct != null ? esc(pct(s.changePct)) : '', esc(day(s.latestPeriod))]); }
+        else if (s.group === 'meat_regions') { var q = /^(.*): (.*)$/.exec(s.label); if (q && deGroupHas(q[2], en)) meat.push([esc(q[1]), esc(q[2]), nf(s.latest, 2) + ' <span style="color:var(--text-faint);font-size:12px">' + esc(t.per100) + '</span>', s.changePct != null ? esc(pct(s.changePct)) : '', esc(day(s.latestPeriod))]); }
+      });
+      if (!milk.length && !meat.length) return null;
+      milk.sort(function (a, c) { return a[0] < c[0] ? -1 : 1; }); meat.sort(function (a, c) { return a[0] < c[0] ? -1 : 1; });
+      var body = (milk.length ? '<h3 style="margin:0 0 4px;font-size:14px">' + esc(t.milkStd) + '</h3>' + table([t.group, t.kind, t.price, t.vs, t.date2], milk, 560) : '') + (meat.length ? '<h3 style="margin:14px 0 4px;font-size:14px">' + esc(LBL.deMeat[li()]) + '</h3>' + table([t.product, t.group, t.price, t.vs, t.date2], meat, 620) : '');
+      return card(t.deprices, t.depricesSub, body, cite('ble'));
+    });
+  }
+  var MODS = { US: [['drought', usDrought], ['crops', usCrops], ['cattle', usCattle], ['bids', usBids], ['fert', usFert], ['tax', usTax]], CA: [['drought', caDrought], ['cacrops', caCrops], ['lvst', caLivestock], ['inc', caIncome], ['rec', caReceipts], ['costs', caCosts], ['prices', caPrices], ['fuel', caFuel]], ES: [['eaa', euEaa], ['recan', esRecan], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], FR: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], IT: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], DE: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms], ['deprices', dePrices]] };
+  var MOD_NAME = { recan: 'recan', eaa: 'eaa', ercrops: 'ercrops', erlive: 'erlive', erfarms: 'erfarms', deprices: 'deprices', cacrops: 'cacrops', lvst: 'lvst', inc: 'inc', rec: 'rec', drought: 'drought', crops: 'crops', cattle: 'cattle', bids: 'bids', fert: 'fert', tax: 'tax', costs: 'costs', prices: 'prices', fuel: 'fuel' };
   /* ---------- mapa y página ---------- */
   function mapSvg(cfg, r) {
     var M = window[cfg.map]; if (!M) return '';

@@ -249,6 +249,53 @@ def eu_drought(doc, errs, warns, stats):
         if sum(eu[:3]) < min(sum(es[:3]), 100) * 0.05 and sum(es[:3]) > 90: warns.append("UE-27 sin sequia aunque Espana este casi toda en sequia")
     stats["countries"] = len(doc["countries"])
 
+_EUREG = {"ES": 17, "FR": 13, "IT": 20, "DE": 16}
+def eu_regions(doc, errs, warns, stats):
+    cc = doc["country"]; R = doc["regions"]
+    if cc not in _EUREG: errs.append("pais no previsto: %s" % cc); return
+    if len(R) != _EUREG[cc]: errs.append("%s: %d regiones, se esperaban %d" % (cc, len(R), _EUREG[cc])); return
+    for r, b in R.items():
+        for k in ("eaa", "crops", "animals", "farms"):
+            if not b.get(k): errs.append("%s %s: falta %s" % (cc, r, k))
+        if errs: return
+        for it, p in list(b["eaa"].items()) + list(b["animals"].items()) + [("milk", b.get("milk", []))]:
+            ys = [x[0] for x in p]
+            if ys != sorted(set(ys)): errs.append("%s %s %s: anios desordenados o repetidos" % (cc, r, it))
+            if any(not _num(x[1]) for x in p): errs.append("%s %s %s: valor no numerico" % (cc, r, it))
+            if it in ("AM180000", "AM160000", "AM100000", "AM110000", "AM120000", "AM200000") or it[0] == "A" and it[1] != "M" or it == "milk":  # partidas pequenas de la fuente pueden ser negativas (variacion de existencias); aqui solo los agregados y los efectivos
+                if any(x[1] < 0 for x in p[-8:]): errs.append("%s %s %s: valor negativo" % (cc, r, it))
+        for cr, c in b["crops"].items():
+            for m, p in c.items():
+                ys = [x[0] for x in p]
+                if ys != sorted(set(ys)): errs.append("%s %s %s %s: anios desordenados" % (cc, r, cr, m))
+                if any((not _num(x[1])) or x[1] < 0 for x in p): errs.append("%s %s %s %s: valor negativo" % (cc, r, cr, m))
+            if "area" in c and "prod" in c and cr in ("C0000", "C1110", "C1300", "C1500", "R1000"):
+                a = dict(c["area"])
+                for y, v in c["prod"][-4:]:
+                    if a.get(y, 0) > 0.05 and v / a[y] > (90 if cr == "R1000" else 20): errs.append("%s %s %s %s: rendimiento %.1f t/ha no plausible" % (cc, r, cr, y, v / a[y]))
+        e = {k: dict(v) for k, v in b["eaa"].items()}
+        for y in sorted(e.get("AM160000", {}))[-3:]:
+            parts = sum(e[k].get(y, 0) for k in ("AM100000", "AM110000", "AM120000"))
+            if parts > e["AM160000"][y] * 1.005 + 0.5: errs.append("%s %s %s: cultivos + animales + productos animales (%.0f) > produccion agraria (%.0f)" % (cc, r, y, parts, e["AM160000"][y]))
+        an = {k: dict(v) for k, v in b["animals"].items()}
+        for y, v in b["animals"]["A2000"][-3:]:
+            cows = an.get("A2300F", {}).get(y, 0) + an.get("A2300G", {}).get(y, 0)
+            if cows > v * 1.005 + 0.05: errs.append("%s %s %s: vacas (%.1f) > vacuno total (%.1f)" % (cc, r, y, cows, v))
+        for y, f in b["farms"]["TOTAL"].items():
+            tipos = sum(b["farms"][t].get(y, {}).get("HLD", 0) for t in b["farms"] if t != "TOTAL")
+            if f.get("HLD") and abs(tipos - f["HLD"]) > 0.01 * f["HLD"] + 15: errs.append("%s %s %s: explotaciones por tipo (%.0f) != total (%.0f)" % (cc, r, y, tipos, f["HLD"]))
+    # las regiones suman el total nacional publicado por Eurostat (misma tabla de cuentas, otro fichero)
+    try: N = load("eu-farm-economics.json")
+    except Exception: N = None
+    if N and cc in N["geos"]:
+        for key, it in (("ic", "AM200000"), ("gva", "AM260000"), ("output", "AM180000")):
+            ys = [y for y in N["years"] if all(y in dict(b["eaa"].get(it, [])) for b in R.values())][-2:]
+            for y in ys:
+                su = sum(dict(b["eaa"][it])[y] for b in R.values()); nv = N["geos"][cc][key][N["years"].index(y)]
+                tol = 0.03 if cc == "FR" else 0.012  # Francia: Eurostat publica ademas los territorios de ultramar, que no estan en el mapa
+                if nv and abs(su / nv - 1) > tol: errs.append("%s %s %s: las regiones suman %.0f y el total nacional es %.0f (>%.1f %%)" % (cc, it, y, su, nv, tol * 100))
+    stats["regions"] = len(R)
+
 def canada_provinces(doc, errs, warns, stats):
     P = doc["provinces"]; need = ("CA", "SK", "AB", "MB", "ON", "QC", "BC")
     for g in need:

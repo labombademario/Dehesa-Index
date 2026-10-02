@@ -1,9 +1,9 @@
 // Prueba de los perfiles de region: cada contorno del mapa tiene nombre en 4 idiomas (donde aplica) y cada nombre tiene contorno; los datos de que depende cada bloque existen.
 import fs from 'node:fs'; import vm from 'node:vm';
 const ctx = { window: {} }; ctx.window.window = ctx.window; vm.createContext(ctx);
-for (const f of ['vendor/us-states.js', 'vendor/ca-provinces.js', 'vendor/es-ccaa.js', 'js/region-names.js']) vm.runInContext(fs.readFileSync(f, 'utf8'), ctx);
+for (const f of ['vendor/us-states.js', 'vendor/ca-provinces.js', 'vendor/es-ccaa.js', 'vendor/fr-regions.js', 'vendor/it-regions.js', 'vendor/de-laender.js', 'js/region-names.js']) vm.runInContext(fs.readFileSync(f, 'utf8'), ctx);
 const w = ctx.window; let fail = 0; const ok = (n, c) => { console.log((c ? 'OK    ' : 'FALLO ') + n); if (!c) fail++; };
-for (const [cc, key, np] of [['US', 'DEHESA_US_STATES', 2], ['CA', 'DEHESA_CA_PROVINCES', 4], ['ES', 'DEHESA_ES_CCAA', 4]]) {
+for (const [cc, key, np] of [['US', 'DEHESA_US_STATES', 2], ['CA', 'DEHESA_CA_PROVINCES', 4], ['ES', 'DEHESA_ES_CCAA', 4], ['FR', 'DEHESA_FR_REGIONS', 4], ['IT', 'DEHESA_IT_REGIONS', 4], ['DE', 'DEHESA_DE_LAENDER', 4]]) {
   const M = w[key], N = w.DehesaRegionNames[cc], ids = M.states.map(s => s.id);
   ok(cc + ': cada contorno tiene nombre', ids.every(i => N[i]));
   ok(cc + ': cada nombre tiene contorno', Object.keys(N).every(i => ids.includes(i)));
@@ -13,7 +13,9 @@ for (const [cc, key, np] of [['US', 'DEHESA_US_STATES', 2], ['CA', 'DEHESA_CA_PR
 ok('EE. UU.: 50 estados + DC', w.DehesaRegionNames.US && Object.keys(w.DehesaRegionNames.US).length === 51);
 ok('Canadá: 13 provincias y territorios', Object.keys(w.DehesaRegionNames.CA).length === 13);
 ok('España: 17 comunidades autónomas', Object.keys(w.DehesaRegionNames.ES).length === 17);
-const need = ['data/recan.json', 'data/drought.json', 'data/nass-crops.json', 'data/cattle-on-feed.json', 'data/us-cash-bids/manifest.json', 'data/us-fertilizers.json', 'data/other-tax.json', 'data/canada-drought.json', 'data/canada-stats.json', 'data/canada-provinces.json', 'data/latest.json'];
+ok('Francia 13 regiones, Italia 20 y Alemania 16 Länder', [['FR', 13], ['IT', 20], ['DE', 16]].every(([c, n]) => Object.keys(w.DehesaRegionNames[c]).length === n));
+for (const c of ['es', 'fr', 'it', 'de']) { const j = JSON.parse(fs.readFileSync('data/eu-regions-' + c + '.json', 'utf8')); const ids = Object.keys(w.DehesaRegionNames[c.toUpperCase()]); ok(c.toUpperCase() + ': Eurostat trae datos de todas las regiones del mapa', ids.every(i => j.regions[i] && j.regions[i].eaa && j.regions[i].crops && j.regions[i].animals && j.regions[i].farms) && Object.keys(j.regions).length === ids.length); }
+const need = ['data/eu-regions-es.json', 'data/eu-regions-fr.json', 'data/eu-regions-it.json', 'data/eu-regions-de.json', 'data/germany-stats.json', 'data/recan.json', 'data/drought.json', 'data/nass-crops.json', 'data/cattle-on-feed.json', 'data/us-cash-bids/manifest.json', 'data/us-fertilizers.json', 'data/other-tax.json', 'data/canada-drought.json', 'data/canada-stats.json', 'data/canada-provinces.json', 'data/latest.json'];
 ok('existen los ficheros de datos que leen los bloques', need.every(f => fs.existsSync(f)));
 const dr = JSON.parse(fs.readFileSync('data/drought.json', 'utf8')), cd = JSON.parse(fs.readFileSync('data/canada-drought.json', 'utf8'));
 ok('sequia EE. UU.: hay datos de todos los estados con contorno', Object.keys(w.DehesaRegionNames.US).filter(i => i !== 'DC' && !dr.states[i]).length === 0);

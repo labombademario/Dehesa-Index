@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T11:54:00Z",
+ "generatedAt": "2026-10-02T12:27:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 47,
   "late": 0,
   "error": 2,
-  "not_run": 4,
+  "not_run": 5,
   "unknown": 1
  },
  "global": "error",
@@ -47,7 +47,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-02T11:17:00Z"
+     "lastChange": "2026-10-02T12:04:24Z"
     }
    ],
    "last": {
@@ -79,7 +79,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-02T11:17:00Z"
+     "lastChange": "2026-10-02T12:04:24Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -280,7 +280,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 168.0
   },
   {
@@ -753,6 +753,36 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-eu-regions.yml",
+   "name": "Update regional farm data (Eurostat NUTS 2)",
+   "crons": [
+    "40 6 * * 4"
+   ],
+   "nextRun": "2026-10-08T06:40:00Z",
+   "files": [
+    {
+     "path": "data/eu-regions-es.json"
+    },
+    {
+     "path": "data/eu-regions-fr.json"
+    },
+    {
+     "path": "data/eu-regions-it.json"
+    },
+    {
+     "path": "data/eu-regions-de.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-eu-trade.yml",
    "name": "Update EU trade (Eurostat Comext)",
    "crons": [
@@ -1143,7 +1173,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-02T12:17:00Z",
+   "nextRun": "2026-10-02T15:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -1206,11 +1236,11 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-02T12:10:00Z",
+   "nextRun": "2026-10-02T15:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-02T09:28:20Z"
+     "lastChange": "2026-10-02T11:55:16Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1226,7 +1256,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-02T11:17:00Z"
+     "lastChange": "2026-10-02T11:55:16Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1243,7 +1273,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-02T11:17:00Z"
+     "lastChange": "2026-10-02T11:55:16Z"
     },
     {
      "path": "data/products"
@@ -1254,27 +1284,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-02T11:17:00Z"
+     "lastChange": "2026-10-02T11:55:16Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-02T11:17:00Z"
+     "lastChange": "2026-10-02T11:55:16Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-02T11:17:00Z"
+     "lastChange": "2026-10-02T11:55:16Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-02T11:17:00Z"
+     "lastChange": "2026-10-02T11:55:16Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-02T11:17:00Z"
+     "lastChange": "2026-10-02T11:55:16Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-02T11:17:00Z"
+     "lastChange": "2026-10-02T11:55:16Z"
     },
     {
      "path": "data/snapshots"

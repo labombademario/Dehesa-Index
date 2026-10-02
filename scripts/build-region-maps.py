@@ -27,34 +27,41 @@ items = [{"id": c, "name": n, "d": path(g)} for c, (n, g) in sorted(geo.items())
 js = "/* Contornos de las provincias y territorios de Canada (proyeccion Albers equivalente) a partir de Natural Earth 1:50m (dominio publico). Generado por scripts/build-region-maps.py. */\nwindow.DEHESA_CA_PROVINCES = " + json.dumps({"viewBox": "0 0 %d %s" % (W, H), "states": items}, ensure_ascii=False, separators=(",", ":")) + ";\n"
 (ROOT / "vendor" / "ca-provinces.js").write_text(js, encoding="utf-8"); print("vendor/ca-provinces.js", len(js), "bytes", len(items), "provincias, viewBox", "0 0 %d %s" % (W, H))
 
-# ---------- Espana: comunidades autonomicas (Natural Earth 1:10m, provincias disueltas por la propiedad "region") ----------
+# ---------- Paises europeos: regiones a partir de Natural Earth 1:10m (admin-1, dominio publico), proyeccion plana con cos(lat) ----------
 import math
 from shapely.ops import unary_union
 from shapely.affinity import translate
-ES_CODES = {"Andalucía": "AN", "Aragón": "AR", "Asturias": "AS", "Canary Is.": "CN", "Cantabria": "CB", "Castilla y León": "CL", "Castilla-La Mancha": "CM", "Cataluña": "CT", "Extremadura": "EX", "Foral de Navarra": "NC", "Galicia": "GA", "Islas Baleares": "IB", "La Rioja": "RI", "Madrid": "MD", "Murcia": "MC", "País Vasco": "PV", "Valenciana": "VC"}
 adm = json.loads((ROOT / "scripts" / "ref" / "ne-admin1-4c.json").read_text(encoding="utf-8"))
-byreg = {}
-for f in adm["ESP"]:
-    r = f["properties"]["region"]
-    if r in ES_CODES: byreg.setdefault(r, []).append(shape(f["geometry"]))
-assert len(byreg) == 17, sorted(byreg)
-C40 = math.cos(math.radians(40.0))
-es = {}
-for r, gs in byreg.items():
-    g = unary_union(gs)
-    if r == "Canary Is.": g = translate(g, xoff=9.0, yoff=6.0)  # recuadro: Canarias bajo el suroeste peninsular
-    g = transform(lambda x, y, z=None: ([v * C40 for v in x], list(y)) if hasattr(x, "__iter__") else (x * C40, y), g)
-    es[ES_CODES[r]] = (r, g.simplify(0.012 * C40, preserve_topology=True))
-W2 = 900.0
-mnx = min(g.bounds[0] for _, g in es.values()); mxx = max(g.bounds[2] for _, g in es.values()); mny = min(g.bounds[1] for _, g in es.values()); mxy = max(g.bounds[3] for _, g in es.values())
-k2 = W2 / (mxx - mnx); H2 = round((mxy - mny) * k2, 1)
-def path2(g):
-    polys = list(g.geoms) if isinstance(g, MultiPolygon) else [g]; out = []
-    for p in polys:
-        if p.area * k2 * k2 < 3: continue
-        for ring in [p.exterior] + list(p.interiors):
-            out.append("M" + "L".join("%.1f %.1f" % ((x - mnx) * k2, (mxy - y) * k2) for x, y in ring.coords) + "Z")
-    return "".join(out)
-items2 = [{"id": c, "name": n, "d": path2(g)} for c, (n, g) in sorted(es.items())]
-js2 = "/* Contornos de las comunidades autonomas de Espana (Canarias en recuadro) a partir de Natural Earth 1:10m (dominio publico); provincias disueltas por comunidad. Generado por scripts/build-region-maps.py. */\nwindow.DEHESA_ES_CCAA = " + json.dumps({"viewBox": "0 0 %d %s" % (W2, H2), "states": items2}, ensure_ascii=False, separators=(",", ":")) + ";\n"
-(ROOT / "vendor" / "es-ccaa.js").write_text(js2, encoding="utf-8"); print("vendor/es-ccaa.js", len(js2), "bytes", len(items2), "CCAA, viewBox", "0 0 %d %s" % (W2, H2))
+def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0):
+    byreg = {}
+    for f in feats:
+        r = f["properties"][key]
+        if r in codes: byreg.setdefault(r, []).append(shape(f["geometry"]))
+    assert len(byreg) == len(codes), (cc, sorted(set(codes) - set(byreg)))
+    lat = sum((g.bounds[1] + g.bounds[3]) / 2 for gs in byreg.values() for g in gs) / sum(len(gs) for gs in byreg.values())
+    c = math.cos(math.radians(lat)); out = {}
+    for r, gs in byreg.items():
+        g = unary_union([x.buffer(0.004, join_style=2) for x in gs]).buffer(-0.004, join_style=2)  # cierra las rendijas entre unidades vecinas antes de disolver
+        if canarias and r == "Canary Is.": g = translate(g, xoff=9.0, yoff=6.0)
+        g = transform(lambda x, y, z=None: ([v * c for v in x], list(y)) if hasattr(x, "__iter__") else (x * c, y), g)
+        out[codes[r]] = (r, g.simplify(tol * c, preserve_topology=True))
+    mnx = min(g.bounds[0] for _, g in out.values()); mxx = max(g.bounds[2] for _, g in out.values()); mny = min(g.bounds[1] for _, g in out.values()); mxy = max(g.bounds[3] for _, g in out.values())
+    k2 = W2 / (mxx - mnx); H2 = round((mxy - mny) * k2, 1)
+    def p2(g):
+        polys = list(g.geoms) if isinstance(g, MultiPolygon) else [g]; o = []
+        for p in polys:
+            if p.area * k2 * k2 < 3: continue
+            for ring in [p.exterior] + list(p.interiors): o.append("M" + "L".join("%.1f %.1f" % ((x - mnx) * k2, (mxy - y) * k2) for x, y in ring.coords) + "Z")
+        return "".join(o)
+    items = [{"id": i, "name": n, "d": p2(g)} for i, (n, g) in sorted(out.items())]
+    js = "/* Contornos de " + label + " a partir de Natural Earth 1:10m (dominio publico); unidades administrativas disueltas por region. Generado por scripts/build-region-maps.py. */\nwindow." + var + " = " + json.dumps({"viewBox": "0 0 %d %s" % (W2, H2), "states": items}, ensure_ascii=False, separators=(",", ":")) + ";\n"
+    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender"}[cc]
+    (ROOT / "vendor" / (fn + ".js")).write_text(js, encoding="utf-8"); print("vendor/%s.js" % fn, len(js), "bytes", len(items), "regiones, viewBox", "0 0 %d %s" % (W2, H2))
+ES_CODES = {"Andalucía": "AN", "Aragón": "AR", "Asturias": "AS", "Canary Is.": "CN", "Cantabria": "CB", "Castilla y León": "CL", "Castilla-La Mancha": "CM", "Cataluña": "CT", "Extremadura": "EX", "Foral de Navarra": "NC", "Galicia": "GA", "Islas Baleares": "IB", "La Rioja": "RI", "Madrid": "MD", "Murcia": "MC", "País Vasco": "PV", "Valenciana": "VC"}
+FR_CODES = {"Auvergne-Rhône-Alpes": "ARA", "Bourgogne-Franche-Comté": "BFC", "Bretagne": "BRE", "Centre-Val de Loire": "CVL", "Corse": "COR", "Grand Est": "GES", "Hauts-de-France": "HDF", "Normandie": "NOR", "Nouvelle-Aquitaine": "NAQ", "Occitanie": "OCC", "Pays de la Loire": "PDL", "Provence-Alpes-Côte-d'Azur": "PAC", "Île-de-France": "IDF"}
+IT_CODES = {"Abruzzo": "ABR", "Apulia": "PUG", "Basilicata": "BAS", "Calabria": "CAL", "Campania": "CAM", "Emilia-Romagna": "EMR", "Friuli-Venezia Giulia": "FVG", "Lazio": "LAZ", "Liguria": "LIG", "Lombardia": "LOM", "Marche": "MAR", "Molise": "MOL", "Piemonte": "PIE", "Sardegna": "SAR", "Sicily": "SIC", "Toscana": "TOS", "Trentino-Alto Adige": "TAA", "Umbria": "UMB", "Valle d'Aosta": "VDA", "Veneto": "VEN"}
+DE_CODES = {"Baden-Württemberg": "BW", "Bayern": "BY", "Berlin": "BE", "Brandenburg": "BB", "Bremen": "HB", "Hamburg": "HH", "Hessen": "HE", "Mecklenburg-Vorpommern": "MV", "Niedersachsen": "NI", "Nordrhein-Westfalen": "NW", "Rheinland-Pfalz": "RP", "Saarland": "SL", "Sachsen": "SN", "Sachsen-Anhalt": "ST", "Schleswig-Holstein": "SH", "Thüringen": "TH"}
+europe_map("ES", adm["ESP"], ES_CODES, "region", "DEHESA_ES_CCAA", "las comunidades autonomas de Espana (Canarias en recuadro)", 0.012, canarias=True)
+europe_map("FR", [f for f in adm["FRA"]], FR_CODES, "region", "DEHESA_FR_REGIONS", "las regiones de Francia metropolitana (sin ultramar)", 0.012)
+europe_map("IT", adm["ITA"], IT_CODES, "region", "DEHESA_IT_REGIONS", "las regiones de Italia", 0.012)
+europe_map("DE", adm["DEU"], DE_CODES, "name", "DEHESA_DE_LAENDER", "los Lander de Alemania", 0.01)

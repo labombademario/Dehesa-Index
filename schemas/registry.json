@@ -350,6 +350,30 @@
     "eu_farm_economics"
    ]
   ],
+  "eu-regions-es.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
+  "eu-regions-fr.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
+  "eu-regions-it.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
+  "eu-regions-de.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
   "canada-provinces.json": [
    "canada-provinces",
    [

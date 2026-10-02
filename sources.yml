@@ -156,6 +156,15 @@ sources:
     continue: true
     data: [eu-drought.json]
     message: Datos sequia Europa (EDO CDI)
+  - id: eu-regions
+    name: Update regional farm data (Eurostat NUTS 2)
+    cron: ['40 6 * * 4']
+    script: scripts/update-eurostat-regions.py
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    data: [eu-regions-es.json, eu-regions-fr.json, eu-regions-it.json, eu-regions-de.json, eu-regions-log.txt]
+    message: Datos agrarios por region (Eurostat)
   - id: canada-provinces
     name: Update Canada by province (Statistics Canada)
     cron: ['50 15 * * 3']

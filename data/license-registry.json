@@ -1678,6 +1678,26 @@
     "aafc_drought"
    ]
   },
+  "data/eu-regions-es.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-fr.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-it.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
+  "data/eu-regions-de.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
   "data/canada-provinces.json": {
    "sources": [
     "statcan"
