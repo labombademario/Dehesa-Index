@@ -90,7 +90,7 @@ CASES = [
  ("cattle-on-feed.json", "balance de existencias roto", lambda d: d["reports"][0]["national"]["current"].__setitem__("placed", 9999)),
  ("cattle-on-feed.json", "total por estado distinto", lambda d: d["reports"][0]["states"][-1].__setitem__("current", 5)),
  ("cattle-on-feed.json", "suma de estados rota", lambda d: d["reports"][0]["states"][0].__setitem__("current", 9000)),
- ("cattle-on-feed.json", "publicado antes del inventario", lambda d: d["reports"][0].__setitem__("release", "2026-08-15")),
+ ("cattle-on-feed.json", "publicado antes del inventario", lambda d: d["reports"][0].__setitem__("release", "2000-01-01")),
  ("usda-calendar.json", "publicacion en fin de semana", lambda d: d["releases"][0].__setitem__("date", "2026-10-03")),
  ("usda-calendar.json", "publicacion repetida", lambda d: d["releases"].insert(1, copy.deepcopy(d["releases"][0]))),
  ("usda-calendar.json", "agencia desconocida", lambda d: d["releases"][0].__setitem__("agency", "XYZ")),
