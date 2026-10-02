@@ -1,9 +1,279 @@
-AUS|Western Australia|None|AU-WA|State|Western Australia
-AUS|Northern Territory|None|AU-NT|Territory|Northern Territory
-AUS|South Australia|None|AU-SA|State|South Australia
-AUS|Queensland|None|AU-QLD|State|Queensland
-AUS|Tasmania|None|AU-TAS|State|None
-AUS|Victoria|None|AU-VIC|State|Victoria
-AUS|Australian Capital Territory|None|AU-ACT|Territory|Canberra
-AUS|Jervis Bay Territory|None|AU-X02~|Territory|Jervis Bay
-AUS|New South Wales|None|AU-NSW|State|New South Wales
+FRA|Guyane française|Guyane française|FR-GF|Overseas department|Guyane française
+DEU|Sachsen|None|DE-SN|State|Sachsen
+DEU|Bayern|None|DE-BY|State|Bayern
+DEU|Rheinland-Pfalz|None|DE-RP|State|Rheinland-Pfalz
+DEU|Saarland|None|DE-SL|State|Saarland
+FRA|Nord|Hauts-de-France|FR-59|Metropolitan department|Nord
+FRA|Ardennes|Grand Est|FR-08|Metropolitan department|Ardennes
+FRA|Aisne|Hauts-de-France|FR-02|Metropolitan department|Aisne
+FRA|Meuse|Grand Est|FR-55|Metropolitan department|Meuse
+FRA|Meurthe-et-Moselle|Grand Est|FR-54|Metropolitan department|Meurhe-et-Moselle
+FRA|Moselle|Grand Est|FR-57|Metropolitan department|Moselle
+ESP|Ceuta|Ceuta|ES-CE|Autonomous City|Ceuta
+DEU|Schleswig-Holstein|None|DE-SH|State|Schleswig-Holstein
+ITA|Aoste|Valle d'Aosta|IT-AO|Province|Aosta
+ITA|Verbano-Cusio-Ossola|Piemonte|IT-VB|Province|Verbano-Cusio-Ossola
+ITA|Varese|Lombardia|IT-VA|Province|Varese
+ITA|Como|Lombardia|IT-CO|Province|Como
+ITA|Sondrio|Lombardia|IT-SO|Province|Sondrio
+ITA|Bozen|Trentino-Alto Adige|IT-BZ|Province|Bolzano
+DEU|Niedersachsen|None|DE-NI|State|Niedersachsen
+DEU|Nordrhein-Westfalen|None|DE-NW|State|Nordrhein-Westfalen
+ITA|Imperia|Liguria|IT-IM|Province|Imperia
+FRA|Alpes-Maritimes|Provence-Alpes-Côte-d'Azur|FR-06|Metropolitan department|Alpes-Maritimes
+ITA|Cuneo|Piemonte|IT-CN|Province|Cuneo
+FRA|Alpes-de-Haute-Provence|Provence-Alpes-Côte-d'Azur|FR-04|Metropolitan department|Alpes-de-Haute-Provence
+FRA|Hautes-Alpes|Provence-Alpes-Côte-d'Azur|FR-05|Metropolitan department|Hautes-Alpes
+ITA|Turin|Piemonte|IT-TO|Province|Turin
+FRA|Savoie|Auvergne-Rhône-Alpes|FR-73|Metropolitan department|Savoie
+FRA|Haute-Savoie|Auvergne-Rhône-Alpes|FR-74|Metropolitan department|Haute-Savoie
+ESP|Melilla|Melilla|ES-ML|Autonomous City|Melilla
+ITA|Rimini|Emilia-Romagna|IT-RN|Province|Rimini
+ITA|Pesaro e Urbino|Marche|IT-PU|Province|Pesaro e Urbino
+ITA|Belluno|Veneto|IT-BL|Province|Belluno
+ITA|Udine|Friuli-Venezia Giulia|IT-UD|Province|Udine
+ITA|Gorizia|Friuli-Venezia Giulia|IT-GO|Province|Gorizia
+ITA|Trieste|Friuli-Venezia Giulia|IT-TS|Province|Trieste
+FRA|Pyrénées-Atlantiques|Nouvelle-Aquitaine|FR-64|Metropolitan department|Pyrénées-Atlantiques
+ESP|Navarra|Foral de Navarra|ES-NA|Autonomous Community|Comunidad Foral de Navarra
+ESP|Gipuzkoa|País Vasco|ES-SS|Autonomous Community|País Vasco
+ESP|Huesca|Aragón|ES-HU|Autonomous Community|Aragón
+FRA|Haute-Garonne|Occitanie|FR-31|Metropolitan department|Haute-Garonne
+ESP|Lérida|Cataluña|ES-L|Autonomous Community|Cataluña
+FRA|Hautes-Pyrénées|Occitanie|FR-65|Metropolitan department|Hautes-Pyrénées
+FRA|Ariège|Occitanie|FR-09|Metropolitan department|Ariège
+FRA|Pyrénées-Orientales|Occitanie|FR-66|Metropolitan department|Pyrénées-Orientales
+ESP|Gerona|Cataluña|ES-GI|Autonomous Community|Cataluña
+DEU|Baden-Württemberg|None|DE-BW|State|Baden-Württemberg
+FRA|Bas-Rhin|Grand Est|FR-67|Metropolitan department|Bas-Rhin
+FRA|Haute-Rhin|Grand Est|FR-68|Metropolitan department|Haut-Rhin
+FRA|Territoire de Belfort|Bourgogne-Franche-Comté|FR-90|Metropolitan department|Belfort
+FRA|Doubs|Bourgogne-Franche-Comté|FR-25|Metropolitan department|Doubs
+FRA|Ain|Auvergne-Rhône-Alpes|FR-01|Metropolitan department|Ain
+FRA|Jura|Bourgogne-Franche-Comté|FR-39|Metropolitan department|Jura Mountains
+ESP|Badajoz|Extremadura|ES-BA|Autonomous Community|Extremadura
+DEU|Brandenburg|None|DE-BB|State|Brandenburg
+DEU|Mecklenburg-Vorpommern|None|DE-MV|State|Mecklenburg-Vorpommern
+ESP|Cádiz|Andalucía|ES-CA|Autonomous Community|Andalucía
+ESP|Orense|Galicia|ES-OR|Autonomous Community|Galicia
+ESP|Cáceres|Extremadura|ES-CC|Autonomous Community|Extremadura
+ESP|Salamanca|Castilla y León|ES-SA|Autonomous Community|Castilla y León
+ESP|Zamora|Castilla y León|ES-ZA|Autonomous Community|Castilla y León
+ESP|Pontevedra|Galicia|ES-PO|Autonomous Community|Galicia
+ESP|Huelva|Andalucía|ES-H|Autonomous Community|Andalucía
+ITA|Venezia|Veneto|IT-VE|Province|Venezia
+ITA|Padova|Veneto|IT-PD|Province|Padova
+ITA|Rovigo|Veneto|IT-RO|Province|Rovigo
+ITA|Ferrara|Emilia-Romagna|IT-FE|Province|Ferrara
+ITA|Ravenna|Emilia-Romagna|IT-RA|Province|Ravenna
+ITA|Forlì-Cesena|Emilia-Romagna|IT-FC|Province|Forli-Cesena
+ITA|Ancona|Marche|IT-AN|Province|Ancona
+ITA|Macerata|Marche|IT-MC|Province|Macerata
+ITA|Fermo|Marche|IT-FM|Province|Fermo
+ITA|Ascoli Piceno|Marche|IT-AP|Province|Ascoli Piceno
+ITA|Teramo|Abruzzo|IT-TE|Province|Teramo
+ITA|Pescara|Abruzzo|IT-PE|Province|Pescara
+ITA|Chieti|Abruzzo|IT-CH|Province|Chieti
+ITA|Campobasso|Molise|IT-CB|Province|Campobasso
+ITA|Foggia|Apulia|IT-FG|Province|Foggia
+ITA|Barletta-Andria Trani|Apulia|IT-BT|Province|Barletta-Andria Trani
+ITA|Bari|Apulia|IT-BA|Province|Bari
+ITA|Brindisi|Apulia|IT-BR|Province|Brindisi
+ITA|Lecce|Apulia|IT-LE|Province|Lecce
+ITA|Taranto|Apulia|IT-TA|Province|Taranto
+ITA|Matera|Basilicata|IT-MT|Province|Matera
+ITA|Cosenza|Calabria|IT-CS|Province|Cosenza
+ITA|Crotene|Calabria|IT-KR|Province|Crotene
+ITA|Catanzaro|Calabria|IT-CZ|Province|Catanzaro
+ITA|Reggio Calabria|Calabria|IT-RC|Province|Reggio Calabria
+ITA|Vibo Valentia|Calabria|IT-VV|Province|Vibo Valentia
+ITA|Potenza|Basilicata|IT-PZ|Province|Potenza
+ITA|Salerno|Campania|IT-SA|Province|Salerno
+ITA|Napoli|Campania|IT-NA|Province|Napoli
+ITA|Caserta|Campania|IT-CE|Province|Caserta
+ITA|Latina|Lazio|IT-LT|Province|Latina
+ITA|Roma|Lazio|IT-RM|Province|Roma
+ITA|Viterbo|Lazio|IT-VT|Province|Viterbo
+ITA|Grosseto|Toscana|IT-GR|Province|Grosseto
+ITA|Livorno|Toscana|IT-LI|Province|Livorno
+ITA|Pisa|Toscana|IT-PI|Province|Pisa
+ITA|Lucca|Toscana|IT-LU|Province|Lucca
+ITA|Massa-Carrara|Toscana|IT-MS|Province|Massa-Carrara
+ITA|La Spezia|Liguria|IT-SP|Province|La Spezia
+ITA|Genova|Liguria|IT-GE|Province|Genova
+ITA|Savona|Liguria|IT-SV|Province|Savona
+FRA|Var|Provence-Alpes-Côte-d'Azur|FR-83|Metropolitan department|Var
+FRA|Bouches-du-Rhône|Provence-Alpes-Côte-d'Azur|FR-13|Metropolitan department|Bouches-du-Rhône
+FRA|Gard|Occitanie|FR-30|Metropolitan department|Gard
+FRA|Hérault|Occitanie|FR-34|Metropolitan department|Hérault
+FRA|Aude|Occitanie|FR-11|Metropolitan department|Aude
+ESP|Barcelona|Cataluña|ES-B|Autonomous Community|Cataluña
+ESP|Tarragona|Cataluña|ES-T|Autonomous Community|Cataluña
+ESP|Castellón|Valenciana|ES-CS|Autonomous Community|Comunidad Valenciana
+ESP|Valencia|Valenciana|ES-V|Autonomous Community|Comunidad Valenciana
+ESP|Alicante|Valenciana|ES-A|Autonomous Community|Comunidad Valenciana
+ESP|Murcia|Murcia|ES-MU|Autonomous Community|Región de Murcia
+ESP|Almería|Andalucía|ES-AL|Autonomous Community|Andalucía
+ESP|Granada|Andalucía|ES-GR|Autonomous Community|Andalucía
+ESP|Málaga|Andalucía|ES-MA|Autonomous Community|Andalucía
+ESP|Sevilla|Andalucía|ES-SE|Autonomous Community|Andalucía
+ESP|La Coruña|Galicia|ES-C|Autonomous Community|Galicia
+ESP|Lugo|Galicia|ES-LU|Autonomous Community|Galicia
+ESP|Asturias|Asturias|ES-O|Autonomous Community|Principado de Asturias
+ESP|Cantabria|Cantabria|ES-S|Autonomous Community|Cantabria
+ESP|Bizkaia|País Vasco|ES-BI|Autonomous Community|País Vasco
+FRA|Landes|Nouvelle-Aquitaine|FR-40|Metropolitan department|Landes
+FRA|Gironde|Nouvelle-Aquitaine|FR-33|Metropolitan department|Gironde
+FRA|Charente-Maritime|Nouvelle-Aquitaine|FR-17|Metropolitan department|Charente-Maritime
+FRA|Vendée|Pays de la Loire|FR-85|Metropolitan department|Vendée
+FRA|Loire-Atlantique|Pays de la Loire|FR-44|Metropolitan department|Loire-Atlantique
+FRA|Morbihan|Bretagne|FR-56|Metropolitan department|Morbihan
+FRA|Finistère|Bretagne|FR-29|Metropolitan department|Finistère
+FRA|Côtes-d'Armor|Bretagne|FR-22|Metropolitan department|Côtes-d'Armor
+FRA|Ille-et-Vilaine|Bretagne|FR-35|Metropolitan department|Ille-et-Vilaine
+FRA|Manche|Normandie|FR-50|Metropolitan department|Manche
+FRA|Calvados|Normandie|FR-14|Metropolitan department|Calvados
+FRA|Eure|Normandie|FR-27|Metropolitan department|Eure
+FRA|Seine-Maritime|Normandie|FR-76|Metropolitan department|Seine-Maritime
+FRA|Somme|Hauts-de-France|FR-80|Metropolitan department|Somme
+FRA|Pas-de-Calais|Hauts-de-France|FR-62|Metropolitan department|Pas-de-Calais
+DEU|Bremen|None|DE-HB|State|Bremen
+DEU|Hamburg|None|DE-HH|State|Hamburg
+FRA|Martinique|Martinique|FR-MQ|Overseas department|Martinique
+FRA|Guadeloupe|Guadeloupe|FR-GP|Overseas department|Guadeloupe
+FRA|La Réunion|Réunion|FR-RE|Overseas department|La Réunion
+FRA|Mayotte|Mayotte|FR-YT|Overseas department|Mayotte
+ESP|Santa Cruz de Tenerife|Canary Is.|ES-TF|Autonomous Community|Santa Cruz de Tenerife
+ESP|Las Palmas|Canary Is.|ES-GC|Autonomous Community|Palmas
+ITA|Trapani|Sicily|IT-TP|Province|Trapani
+ITA|Messina|Sicily|IT-ME|Province|Messina
+ITA|Palermo|Sicily|IT-PA|Province|Palermo
+ITA|Agrigento|Sicily|IT-AG|Province|Agrigento
+ITA|Caltanissetta|Sicily|IT-CL|Province|Caltanissetta
+ITA|Ragusa|Sicily|IT-RG|Province|Ragusa
+ITA|Siracusa|Sicily|IT-SR|Province|Siracusa
+ITA|Catania|Sicily|IT-CT|Province|Catania
+ESP|Baleares|Islas Baleares|ES-PM|Autonomous Community|Islas Baleares
+ITA|Carbonia-Iglesias|Sardegna|IT-CI|Province|Carbonia-Iglesias
+ITA|Sassari|Sardegna|IT-SS|Province|Sassari
+ITA|Nuoro|Sardegna|IT-NU|Province|Nuoro
+ITA|Olbia-Tempio|Sardegna|IT-OT|Province|Olbia-Tempio
+ITA|Oristrano|Sardegna|IT-OR|Province|Oristrano
+ITA|Medio Campidano|Sardegna|IT-VS|Province|Medio Campidano
+ITA|Cagliari|Sardegna|IT-CA|Province|Cagliari
+ITA|Ogliastra|Sardegna|IT-OG|Province|Ogliastra
+FRA|Haute-Corse|Corse|FR-2B|Metropolitan department|Haute-Corse
+FRA|Corse-du-Sud|Corse|FR-2A|Metropolitan department|Corse-du-Sud
+ESP|Zaragoza|Aragón|ES-Z|Autonomous Community|Aragón
+ESP|La Rioja|La Rioja|ES-LO|Autonomous Community|La Rioja
+ESP|Álava|País Vasco|ES-VI|Autonomous Community|País Vasco
+ESP|Albacete|Castilla-La Mancha|ES-AB|Autonomous Community|Castilla-La Mancha
+ESP|Teruel|Aragón|ES-TE|Autonomous Community|Aragón
+ESP|Cuenca|Castilla-La Mancha|ES-CU|Autonomous Community|Castilla-La Mancha
+ESP|Toledo|Castilla-La Mancha|ES-TO|Autonomous Community|Castilla-La Mancha
+ESP|León|Castilla y León|ES-LE|Autonomous Community|Castilla y León
+ESP|Soria|Castilla y León|ES-SO|Autonomous Community|Castilla y León
+ESP|Burgos|Castilla y León|ES-BU|Autonomous Community|Castilla y León
+ESP|Ávila|Castilla y León|ES-AV|Autonomous Community|Castilla y León
+DEU|Hessen|None|DE-HE|State|Hessen
+DEU|Thüringen|None|DE-TH|State|Thüringen
+DEU|Sachsen-Anhalt|None|DE-ST|State|Sachsen-Anhalt
+DEU|Berlin|None|DE-BE|State|Berlin
+ITA|Enna|Sicily|IT-EN|Province|Enna
+ITA|Benevento|Campania|IT-BN|Province|Benevento
+ITA|Asti|Piemonte|IT-AT|Province|Asti
+ITA|Bergamo|Lombardia|IT-BG|Province|Bergamo
+ITA|Brescia|Lombardia|IT-BS|Province|Brescia
+ITA|Cremona|Lombardia|IT-CR|Province|Cremona
+ITA|Mantova|Lombardia|IT-MN|Province|Mantova
+ITA|Milano|Lombardia|IT-MI|Province|Milano
+ITA|Lecco|Lombardia|IT-LC|Province|Lecco
+ITA|Monza e Brianza|Lombardia|IT-MB|Province|Province of Monza and Brianza
+ITA|Lodi|Lombardia|IT-LO|Province|Lodi
+ITA|Siena|Toscana|IT-SI|Province|Siena
+ITA|Arezzo|Toscana|IT-AR|Province|Arezzo
+ITA|Firenze|Toscana|IT-FI|Province|Firenze
+ITA|Vercelli|Piemonte|IT-VC|Province|Vercelli
+ITA|Pavia|Lombardia|IT-PV|Province|Pavia
+ITA|Rieti|Lazio|IT-RI|Province|Rieti
+ITA|Novara|Piemonte|IT-NO|Province|Novara
+ITA|Alessandria|Piemonte|IT-AL|Province|Alessandria
+ITA|Trento|Trentino-Alto Adige|IT-TN|Province|Trento
+ITA|Vicenza|Veneto|IT-VI|Province|Vicenza
+ITA|Verona|Veneto|IT-VR|Province|Verona
+ITA|Treviso|Veneto|IT-TV|Province|Treviso
+ITA|Piacenza|Emilia-Romagna|IT-PC|Province|Piacenza
+ITA|Parma|Emilia-Romagna|IT-PR|Province|Parma
+ITA|Reggio Emilia|Emilia-Romagna|IT-RE|Province|Reggio Emilia
+ITA|Modena|Emilia-Romagna|IT-MO|Province|Modena
+ITA|Bologna|Emilia-Romagna|IT-BO|Province|Bologna
+ITA|Pistoia|Toscana|IT-PT|Province|Pistoia
+ITA|Terni|Umbria|IT-TR|Province|Terni
+ITA|Perugia|Umbria|IT-PG|Province|Perugia
+ITA|Frosinone|Lazio|IT-FR|Province|Frosinone
+ITA|Avellino|Campania|IT-AV|Province|Avellino
+ITA|L'Aquila|Abruzzo|IT-AQ|Province|L'Aquila
+ITA|Pordenone|Friuli-Venezia Giulia|IT-PN|Province|Pordenone
+ITA|Isernia|Molise|IT-IS|Province|Isernia
+ITA|Biella|Piemonte|IT-BI|Province|Biella
+ITA|Prato|Toscana|IT-PO|Province|Prato
+FRA|Gers|Occitanie|FR-32|Metropolitan department|Gers
+FRA|Haute-Vienne|Nouvelle-Aquitaine|FR-87|Metropolitan department|Haute-Vienne
+FRA|Corrèze|Nouvelle-Aquitaine|FR-19|Metropolitan department|Corrèze
+FRA|Tarn-et-Garonne|Occitanie|FR-82|Metropolitan department|Tarn-et-Garonne
+FRA|Tarn|Occitanie|FR-81|Metropolitan department|Tarn
+FRA|Isère|Auvergne-Rhône-Alpes|FR-38|Metropolitan department|Isère
+FRA|Drôme|Auvergne-Rhône-Alpes|FR-26|Metropolitan department|Drôme
+FRA|Aveyron|Occitanie|FR-12|Metropolitan department|Aveyron
+FRA|Lot|Occitanie|FR-46|Metropolitan department|Lot
+FRA|Indre-et-Loire|Centre-Val de Loire|FR-37|Metropolitan department|Indre-et-Loire
+FRA|Indre|Centre-Val de Loire|FR-36|Metropolitan department|Indre
+FRA|Loir-et-Cher|Centre-Val de Loire|FR-41|Metropolitan department|Loir-et-Cher
+FRA|Creuse|Nouvelle-Aquitaine|FR-23|Metropolitan department|Creuse
+FRA|Mayenne|Pays de la Loire|FR-53|Metropolitan department|Mayenne
+FRA|Sarthe|Pays de la Loire|FR-72|Metropolitan department|Sarthe
+FRA|Vaucluse|Provence-Alpes-Côte-d'Azur|FR-84|Metropolitan department|Vaucluse
+FRA|Haute-Marne|Grand Est|FR-52|Metropolitan department|Haute-Marne
+FRA|Marne|Grand Est|FR-51|Metropolitan department|Marne
+FRA|Dordogne|Nouvelle-Aquitaine|FR-24|Metropolitan department|Dordogne
+FRA|Rhône|Auvergne-Rhône-Alpes|FR-69|Metropolitan department|Rhône
+FRA|Vosges|Grand Est|FR-88|Metropolitan department|Vosges
+FRA|Ardèche|Auvergne-Rhône-Alpes|FR-07|Metropolitan department|Ardèche
+FRA|Loire|Auvergne-Rhône-Alpes|FR-42|Metropolitan department|Loire
+FRA|Puy-de-Dôme|Auvergne-Rhône-Alpes|FR-63|Metropolitan department|Puy-de-Dôme
+FRA|Allier|Auvergne-Rhône-Alpes|FR-03|Metropolitan department|Allier
+FRA|Loiret|Centre-Val de Loire|FR-45|Metropolitan department|Loiret
+FRA|Maine-et-Loire|Pays de la Loire|FR-49|Metropolitan department|Maine-et-Loire
+FRA|Aube|Grand Est|FR-10|Metropolitan department|Aube
+FRA|Paris|Île-de-France|FR-75|Metropolitan department|Paris
+FRA|Hauts-de-Seine|Île-de-France|FR-92|Metropolitan department|Hauts-de-Seine
+FRA|Seine-Saint-Denis|Île-de-France|FR-93|Metropolitan department|Seine-Saint-Denis
+FRA|Val-d'Oise|Île-de-France|FR-95|Metropolitan department|Val-d'Oise
+FRA|Yvelines|Île-de-France|FR-78|Metropolitan department|Yvelines
+FRA|Charente|Nouvelle-Aquitaine|FR-16|Metropolitan department|Charente
+FRA|Cher|Centre-Val de Loire|FR-18|Metropolitan department|Cher
+FRA|Eure-et-Loir|Centre-Val de Loire|FR-28|Metropolitan department|Eure-et-Loir
+FRA|Haute-Loire|Auvergne-Rhône-Alpes|FR-43|Metropolitan department|Haute-Loire
+FRA|Cantal|Auvergne-Rhône-Alpes|FR-15|Metropolitan department|Cantal
+FRA|Lot-et-Garonne|Nouvelle-Aquitaine|FR-47|Metropolitan department|Lot-et-Garonne
+FRA|Lozère|Occitanie|FR-48|Metropolitan department|Lozère
+FRA|Nièvre|Bourgogne-Franche-Comté|FR-58|Metropolitan department|Nièvre
+FRA|Côte-d'Or|Bourgogne-Franche-Comté|FR-21|Metropolitan department|Côte-d'Or
+FRA|Oise|Hauts-de-France|FR-60|Metropolitan department|Oise
+FRA|Orne|Normandie|FR-61|Metropolitan department|Orne
+FRA|Haute-Saône|Bourgogne-Franche-Comté|FR-70|Metropolitan department|Haute-Saône
+FRA|Saône-et-Loire|Bourgogne-Franche-Comté|FR-71|Metropolitan department|Saône-et-Loire
+FRA|Deux-Sèvres|Nouvelle-Aquitaine|FR-79|Metropolitan department|Deux-Sèvres
+FRA|Vienne|Nouvelle-Aquitaine|FR-86|Metropolitan department|Vienne
+FRA|Yonne|Bourgogne-Franche-Comté|FR-89|Metropolitan department|Yonne
+FRA|Essonne|Île-de-France|FR-91|Metropolitan department|Essonne
+FRA|Seien-et-Marne|Île-de-France|FR-77|Metropolitan department|Seien-et-Marne
+FRA|Val-de-Marne|Île-de-France|FR-94|Metropolitan department|Val-de-Marne
+ESP|Palencia|Castilla y León|ES-P|Autonomous Community|Castilla y León
+ESP|Ciudad Real|Castilla-La Mancha|ES-CR|Autonomous Community|Castilla-La Mancha
+ESP|Córdoba|Andalucía|ES-CO|Autonomous Community|Andalucía
+ESP|Guadalajara|Castilla-La Mancha|ES-GU|Autonomous Community|Castilla-La Mancha
+ESP|Jaén|Andalucía|ES-J|Autonomous Community|Andalucía
+ESP|Madrid|Madrid|ES-M|Autonomous Community|Comunidad de Madrid
+ESP|Segovia|Castilla y León|ES-SG|Autonomous Community|Castilla y León
+ESP|Valladolid|Castilla y León|ES-VA|Autonomous Community|Castilla y León
