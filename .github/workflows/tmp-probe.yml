@@ -1,0 +1,28 @@
+name: TMP probe MARS (borrar)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  f:
+    runs-on: ubuntu-24.04
+    env:
+      MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          mkdir -p scripts/tmp
+          curl -fsSL -u "$MARS_API_KEY:" -H 'Accept: application/json' "https://marsapi.ams.usda.gov/services/v1.2/reports" -o scripts/tmp/mars-reports.json
+          python3 - <<'PY'
+          import json
+          d=json.load(open('scripts/tmp/mars-reports.json'))
+          a=d if isinstance(d,list) else d.get('results',d)
+          import re
+          out=[x for x in a if re.search(r'cheese|dairy|butter|lamb',json.dumps(x),re.I)]
+          json.dump(out,open('scripts/tmp/mars-dairy-list.json','w'),indent=0)
+          print(len(a),len(out))
+          PY
+          rm scripts/tmp/mars-reports.json
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/tmp; git commit -qm "TMP: sondeo MARS"; git pull -q --rebase --autostash; git push
