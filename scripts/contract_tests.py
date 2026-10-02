@@ -296,6 +296,30 @@ def eu_regions(doc, errs, warns, stats):
                 if nv and abs(su / nv - 1) > tol: errs.append("%s %s %s: las regiones suman %.0f y el total nacional es %.0f (>%.1f %%)" % (cc, it, y, su, nv, tol * 100))
     stats["regions"] = len(R)
 
+def au_states(doc, errs, warns, stats):
+    S = doc["states"]
+    for s in ("NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"):
+        if s not in S: errs.append("falta %s" % s)
+    if errs: return
+    for s, b in S.items():
+        for k, p in b.items():
+            ys = [x[0] for x in p]
+            if ys != sorted(set(ys)): errs.append("%s %s: anios desordenados o repetidos" % (s, k))
+            if any((not _num(x[1])) or x[1] < 0 for x in p): errs.append("%s %s: valor negativo o no numerico" % (s, k))
+    for y in sorted({x[0] for b in S.values() for x in b.get("agrifood", [])})[-3:]:
+        parts = sum(dict(S[s].get("agrifood", [])).get(y, 0) for s in S)
+        for k in ("beef", "wheat", "wool", "wine", "sugar", "sheepmeat", "milk", "cotton", "oilseeds", "barley"):
+            if sum(dict(S[s].get(k, [])).get(y, 0) for s in S) > parts * 1.001 and k not in ("wool", "cotton", "oilseeds"): errs.append("%s %s: un producto (%s) supera el total agroalimentario" % (y, k, k))
+    try: N = load("australia-trade-stats.json")["countries"]["AU"]["series"]
+    except Exception: N = None
+    if N:
+        s0 = [x for x in N if x["id"] == "au-exp-agrifood"]
+        if s0:
+            for y in sorted({x[0] for b in S.values() for x in b.get("agrifood", [])})[-2:]:
+                nv = sum(v for p, v in s0[0]["points"] if p.startswith(str(y))); su = sum(dict(S[s].get("agrifood", [])).get(y, 0) for s in S)
+                if nv and not 0.95 < su / nv <= 1.001: errs.append("%s: los estados suman %.0f y el total nacional es %.0f (fuera de 95-100 %%)" % (y, su, nv))
+    stats["states"] = len(S)
+
 def canada_provinces(doc, errs, warns, stats):
     P = doc["provinces"]; need = ("CA", "SK", "AB", "MB", "ON", "QC", "BC")
     for g in need:

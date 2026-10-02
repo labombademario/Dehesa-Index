@@ -204,6 +204,15 @@ sources:
     extra: [au-trade-products.json]
     log: australia-trade-log.txt
     message: Datos comercio Australia (ABS)
+  - id: au-states
+    name: Update Australia by state (ABS)
+    cron: ['35 11 5 * *']
+    script: scripts/update-au-states.py
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    data: [au-states.json, au-states-log.txt]
+    message: Datos de Australia por estado (ABS)
   - id: eu-trade
     name: Update EU trade (Eurostat Comext)
     cron: ['40 9 16,18,22 * *']

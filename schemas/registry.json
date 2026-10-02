@@ -374,6 +374,12 @@
     "eu_regions"
    ]
   ],
+  "au-states.json": [
+   "au-states",
+   [
+    "au_states"
+   ]
+  ],
   "canada-provinces.json": [
    "canada-provinces",
    [

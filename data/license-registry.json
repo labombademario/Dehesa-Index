@@ -1698,6 +1698,11 @@
     "eurostat"
    ]
   },
+  "data/au-states.json": {
+   "sources": [
+    "abs"
+   ]
+  },
   "data/canada-provinces.json": {
    "sources": [
     "statcan"
