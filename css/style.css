@@ -1567,3 +1567,28 @@ html[data-theme="dark"] .pp-live{background:#E9E2CE;color:#1E1B12}
   .di-tape-t .d { display: none; }
   .di-tape-t .c { white-space: nowrap; }
 }
+
+/* Perfil agrario (Banco Mundial) */
+.pa-card { margin: 14px 0; padding: 10px 16px 14px; }
+.pa-card > summary { cursor: pointer; font-weight: 700; font-size: 15px; }
+.pa-card > summary span { font-weight: 400; color: var(--text-tertiary); font-size: 12px; }
+.pa-t { width: 100%; border-collapse: collapse; font-size: 13px; }
+.pa-t th, .pa-t td { padding: 7px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+.pa-t .r { text-align: right; white-space: nowrap; }
+.pa-r { cursor: pointer; }
+.pa-r:hover, .pa-r.on { background: var(--bg-secondary, rgba(127,127,127,.08)); }
+.pa-y { color: var(--text-tertiary); font-size: 11px; margin-left: 4px; }
+.pa-tr.up { color: var(--up, #1a7f4b); } .pa-tr.dn { color: var(--down, #c0392b); }
+.pa-ch td { padding: 10px 4px; }
+.pa-cmp { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; font-size: 13px; }
+.pa-cmp label { margin-left: auto; font-size: 12px; color: var(--text-tertiary); }
+.pa-body .di-src-tabs { margin-top: 6px; }
+@media (max-width: 600px) { .pa-t th:nth-child(4), .pa-t td:nth-child(4) { display: none; } .pa-card { padding: 8px 10px 12px; } }
+@media (max-width: 600px) {
+  .pa-t { table-layout: fixed; font-size: 12px; }
+  .pa-t th, .pa-t td { padding: 6px 3px; }
+  .pa-t th:nth-child(1) { width: 40%; } .pa-t th:nth-child(2) { width: 32%; } .pa-t th:nth-child(3) { width: 28%; }
+  .pa-t th.r, .pa-t td.r { white-space: normal; }
+  .pa-ch td { padding: 8px 0; } .pa-ch td[colspan] { display: table-cell; }
+  .pa-cmp label { margin-left: 0; width: 100%; }
+}

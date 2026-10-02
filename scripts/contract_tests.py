@@ -1359,6 +1359,47 @@ def home_explore(doc, errs, warns, stats):
     stats["facts"] = len(doc["facts"])
 
 
+WBA_PCT = {"agriLandPct", "arableLandPct", "irrigatedPct", "agriEmploymentPct", "agriVaPct", "agriRawExpPct", "agriRawImpPct", "foodExpPct", "foodImpPct", "waterAgriPct"}
+WBA_RANGE = {"cropIdx": (0, 400), "livestockIdx": (0, 400), "foodIdx": (0, 400), "cerealYield": (0, 20000), "fertKgHa": (0, 3000), "inflation": (-50, 500), "gdpGrowth": (-50, 100), "cpi": (0, 100000), "fxUsd": (0, 100000)}
+WBA_NONNEG = {"agriLandKm2", "arablePerCap", "agriVaPerWorker", "agriVaUsd", "cerealArea", "cerealProd", "ch4Agri", "n2oAgri"}
+
+
+def worldbank_agri(doc, errs, warns, stats):
+    """Banco Mundial (WDI): licencia CC BY-4.0 por indicador, series sin huecos en los extremos, rangos fisicos y coherencia produccion = rendimiento x superficie."""
+    import datetime as _d, math as _m
+    cy = _d.date.today().year
+    ind = doc["indicators"]
+    for k, i in ind.items():
+        if i.get("license") != "CC BY-4.0": errs.append("worldbank-agri %s: licencia %r, solo se admite CC BY-4.0" % (k, i.get("license")))
+    euro = {"ES", "FR", "DE", "BE", "AT", "PT", "NL"}
+    n = 0
+    for c, ser in doc["countries"].items():
+        for k, s in ser.items():
+            n += 1
+            if k not in ind: errs.append("worldbank-agri %s/%s: indicador sin descripcion" % (c, k)); continue
+            v, y0 = s["v"], s["y0"]
+            if v[0] is None or v[-1] is None: errs.append("worldbank-agri %s/%s: la serie debe empezar y acabar con dato" % (c, k))
+            if y0 + len(v) - 1 > cy: errs.append("worldbank-agri %s/%s: año futuro %d" % (c, k, y0 + len(v) - 1))
+            for i, x in enumerate(v):
+                if x is None: continue
+                if not _m.isfinite(x): errs.append("worldbank-agri %s/%s: valor no finito" % (c, k)); break
+                ok = True
+                if k in WBA_PCT: ok = 0 <= x <= 100
+                elif k in WBA_RANGE: ok = WBA_RANGE[k][0] <= x <= WBA_RANGE[k][1]
+                elif k in WBA_NONNEG: ok = x >= 0
+                if not ok: errs.append("worldbank-agri %s/%s %d: valor fuera de rango (%s)" % (c, k, y0 + i, x)); break
+            if k == "fxUsd" and (c == "US" or (c in euro and y0 < 1999)): errs.append("worldbank-agri %s: tipo de cambio no admitido (EE. UU. o antes de 1999 en zona euro)" % c)
+        a, b, p = ser.get("cerealYield"), ser.get("cerealArea"), ser.get("cerealProd")
+        if a and b and p:
+            at = lambda s, y: s["v"][y - s["y0"]] if 0 <= y - s["y0"] < len(s["v"]) else None
+            for i, pv in enumerate(p["v"]):
+                y = p["y0"] + i; ya, ar = at(a, y), at(b, y)
+                if pv and ya and ar and abs(pv * 1000 - ya * ar) / (pv * 1000) > 0.01:
+                    errs.append("worldbank-agri %s %d: produccion de cereales no coincide con rendimiento x superficie" % (c, y)); break
+    if n < 200: errs.append("worldbank-agri: solo %d series" % n)
+    stats["worldbank-agri series"] = n
+
+
 def ers_cost_reference(doc, errs, warns, stats):
     """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""
     keys = set(doc["map"])

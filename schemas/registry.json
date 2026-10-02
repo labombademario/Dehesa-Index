@@ -332,6 +332,12 @@
     "home_explore"
    ]
   ],
+  "worldbank-agri.json": [
+   "worldbank-agri",
+   [
+    "worldbank_agri"
+   ]
+  ],
   "ers-cost-reference.json": [
    "ers-cost-reference",
    [

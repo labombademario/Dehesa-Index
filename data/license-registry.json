@@ -1432,6 +1432,12 @@
    ],
    "notes": "Indicadores macro por pais (Banco Mundial WDI); verificar licencia por indicador."
   },
+  "data/worldbank-agri.json": {
+   "sources": [
+    "world_bank_wdi"
+   ],
+   "notes": "Perfil agrario, comercio agrario, IPC/tipo de cambio/PIB y medio ambiente agrario por pais (Banco Mundial WDI). Cada indicador se publica solo si sus metadatos oficiales (License_Type) dicen CC BY-4.0; varios proceden de FAO, ILO, UN Comtrade, IMF o EDGAR y el propio Banco Mundial los licencia CC BY-4.0. Comprobado el 2-oct-2026 para los 27 indicadores; el pipeline lo vuelve a comprobar en cada ejecucion."
+  },
   "data/country-wages.json": {
    "sources": [
     "eurostat",

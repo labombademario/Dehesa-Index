@@ -92,7 +92,7 @@ DATASETS = {
     'data/drought.json': ('CLIMATE', 'US Drought Monitor'), 'data/climate.json': ('CLIMATE', 'Clima (Open-Meteo)'),
     'data/us-tariffs.json': ('TARIFF', 'Aranceles EE. UU.'), 'data/tariffs-eu.json': ('TARIFF', 'Aranceles UE'), 'data/tariffs-mx.json': ('TARIFF', 'Aranceles Mexico'), 'data/tariffs-ca.json': ('TARIFF', 'Aranceles Canada'),
     'data/us-tariff-measures.json': ('TARIFF', 'Medidas arancelarias EE. UU.'),
-    'data/country-macro.json': ('MACRO', 'Macro por pais'), 'data/fx-history.json': ('MACRO', 'Tipos de cambio (BCE)'),
+    'data/country-macro.json': ('MACRO', 'Macro por pais'), 'data/worldbank-agri.json': ('MACRO', 'Perfil agrario por pais (Banco Mundial)'), 'data/fx-history.json': ('MACRO', 'Tipos de cambio (BCE)'),
 }
 # grupo de una serie de *-stats.json -> tipo
 GROUP_KIND = {'markets': 'PRICE', 'quotes': 'PRICE', 'prices': 'PRICE', 'prices_lv': 'PRICE', 'prices_fv': 'PRICE', 'milk': 'PRICE', 'milk_regions': 'PRICE', 'meat_regions': 'PRICE', 'product': 'PRICE',
@@ -107,7 +107,7 @@ def kind_of(group, key=''):
 # workflow -> tipos que alimenta (todos los pipelines deben estar aqui; el brief falla si aparece uno sin clasificar)
 WORKFLOW_KINDS = {
     'update-alberta-weekly.yml': ['PRICE'], 'update-ams-auctions.yml': ['PRICE'], 'update-ams.yml': ['PRICE'], 'update-au-trade.yml': ['TRADE'], 'update-austria.yml': ['PRODUCTION', 'TRADE', 'INPUT'],
-    'update-belgium.yml': ['PRODUCTION', 'INPUT'], 'update-canada-stats.yml': ['PRODUCTION', 'TRADE'], 'update-canada.yml': ['PRICE'], 'update-climate.yml': ['CLIMATE'], 'update-country-macro.yml': ['MACRO'],
+    'update-belgium.yml': ['PRODUCTION', 'INPUT'], 'update-canada-stats.yml': ['PRODUCTION', 'TRADE'], 'update-canada.yml': ['PRICE'], 'update-climate.yml': ['CLIMATE'], 'update-country-macro.yml': ['MACRO'], 'update-worldbank-agri.yml': ['MACRO'],
     'update-country-stats.yml': ['PRODUCTION', 'TRADE'], 'update-crop-progress.yml': ['CROP'], 'update-defra-milk.yml': ['PRICE'], 'update-denmark.yml': ['PRICE'], 'update-drought.yml': ['CLIMATE'],
     'update-energy-markets.yml': ['INPUT'], 'update-energy.yml': ['INPUT'], 'update-ers.yml': ['PRODUCTION'], 'update-cattle-on-feed.yml': ['PRODUCTION'], 'update-canada-grain.yml': ['TRADE'], 'update-canada-drought.yml': ['PRODUCTION'], 'update-eu-regions.yml': ['PRODUCTION'], 'update-au-states.yml': ['TRADE'], 'update-canada-provinces.yml': ['PRODUCTION'], 'update-us-dairy.yml': ['PRICE'], 'update-us-lamb.yml': ['PRICE'], 'update-eu-vat.yml': ['INPUT'], 'update-eu-drought.yml': ['PRODUCTION'], 'update-eu-farm-economics.yml': ['INPUT', 'PRODUCTION'], 'update-eu-agrifood.yml': ['PRICE'], 'update-eu-catalog.yml': ['PRICE'], 'update-eu-trade.yml': ['TRADE'],
     'update-eurostat.yml': ['PRICE', 'INPUT'], 'update-export-sales.yml': ['TRADE'], 'update-france.yml': ['PRICE', 'PRODUCTION'], 'update-fx-history.yml': ['MACRO'], 'update-fx.yml': ['MACRO'], 'update-gats.yml': ['TRADE'],

@@ -82,6 +82,16 @@ sources:
     data: [country-macro.json]
     log: country-macro-log.txt
     message: Indicadores macro por país
+  - id: worldbank-agri
+    name: Update World Bank agri profile (WDI)
+    cron: ['40 7 4 * *']
+    script: scripts/update-worldbank-agri.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [worldbank-agri.json]
+    log: worldbank-agri-log.txt
+    message: Perfil agrario por país (Banco Mundial WDI)
   - id: us-tariffs
     name: Update US tariffs (USITC HTS)
     cron: ['20 8 * * 2,5']
