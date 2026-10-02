@@ -249,7 +249,7 @@ def eu_drought(doc, errs, warns, stats):
         if sum(eu[:3]) < min(sum(es[:3]), 100) * 0.05 and sum(es[:3]) > 90: warns.append("UE-27 sin sequia aunque Espana este casi toda en sequia")
     stats["countries"] = len(doc["countries"])
 
-_EUREG = {"ES": 17, "FR": 13, "IT": 20, "DE": 16}
+_EUREG = {"ES": 17, "FR": 13, "IT": 20, "DE": 16, "NL": 12, "AT": 9}
 def eu_regions(doc, errs, warns, stats):
     cc = doc["country"]; R = doc["regions"]
     if cc not in _EUREG: errs.append("pais no previsto: %s" % cc); return
@@ -289,7 +289,7 @@ def eu_regions(doc, errs, warns, stats):
     except Exception: N = None
     if N and cc in N["geos"]:
         for key, it in (("ic", "AM200000"), ("gva", "AM260000"), ("output", "AM180000")):
-            ys = [y for y in N["years"] if all(y in dict(b["eaa"].get(it, [])) for b in R.values())][-2:]
+            ys = [y for y in N["years"] if all(y in dict(b["eaa"].get(it, [])) for b in R.values())][-1:]  # solo el ultimo anio comun: los anos antiguos de algunas regiones (p. ej. NL antes de 2021) siguen sin revisar y suman ~89 %
             for y in ys:
                 su = sum(dict(b["eaa"][it])[y] for b in R.values()); nv = N["geos"][cc][key][N["years"].index(y)]
                 tol = 0.03 if cc == "FR" else 0.012  # Francia: Eurostat publica ademas los territorios de ultramar, que no estan en el mapa

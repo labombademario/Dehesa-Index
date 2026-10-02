@@ -31,7 +31,7 @@ js = "/* Contornos de las provincias y territorios de Canada (proyeccion Albers 
 import math
 from shapely.ops import unary_union
 from shapely.affinity import translate
-adm = json.loads((ROOT / "scripts" / "ref" / "ne-admin1-4c.json").read_text(encoding="utf-8")); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-au.json").read_text(encoding="utf-8")))
+adm = json.loads((ROOT / "scripts" / "ref" / "ne-admin1-4c.json").read_text(encoding="utf-8")); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-au.json").read_text(encoding="utf-8"))); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-nlat.json").read_text(encoding="utf-8")))
 def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0):
     byreg = {}
     for f in feats:
@@ -57,7 +57,7 @@ def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0)
         return "".join(o)
     items = [{"id": i, "name": n, "d": p2(g)} for i, (n, g) in sorted(out.items())]
     js = "/* Contornos de " + label + " a partir de Natural Earth 1:10m (dominio publico); unidades administrativas disueltas por region. Generado por scripts/build-region-maps.py. */\nwindow." + var + " = " + json.dumps({"viewBox": "0 0 %d %s" % (W2, H2), "states": items}, ensure_ascii=False, separators=(",", ":")) + ";\n"
-    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states"}[cc]
+    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states", "NL": "nl-provinces", "AT": "at-laender"}[cc]
     (ROOT / "vendor" / (fn + ".js")).write_text(js, encoding="utf-8"); print("vendor/%s.js" % fn, len(js), "bytes", len(items), "regiones, viewBox", "0 0 %d %s" % (W2, H2))
 ES_CODES = {"Andalucía": "AN", "Aragón": "AR", "Asturias": "AS", "Canary Is.": "CN", "Cantabria": "CB", "Castilla y León": "CL", "Castilla-La Mancha": "CM", "Cataluña": "CT", "Extremadura": "EX", "Foral de Navarra": "NC", "Galicia": "GA", "Islas Baleares": "IB", "La Rioja": "RI", "Madrid": "MD", "Murcia": "MC", "País Vasco": "PV", "Valenciana": "VC"}
 FR_CODES = {"Auvergne-Rhône-Alpes": "ARA", "Bourgogne-Franche-Comté": "BFC", "Bretagne": "BRE", "Centre-Val de Loire": "CVL", "Corse": "COR", "Grand Est": "GES", "Hauts-de-France": "HDF", "Normandie": "NOR", "Nouvelle-Aquitaine": "NAQ", "Occitanie": "OCC", "Pays de la Loire": "PDL", "Provence-Alpes-Côte-d'Azur": "PAC", "Île-de-France": "IDF"}
@@ -69,3 +69,7 @@ europe_map("IT", adm["ITA"], IT_CODES, "region", "DEHESA_IT_REGIONS", "las regio
 europe_map("DE", adm["DEU"], DE_CODES, "name", "DEHESA_DE_LAENDER", "los Lander de Alemania", 0.01)
 AU_CODES = {"New South Wales": "NSW", "Victoria": "VIC", "Queensland": "QLD", "South Australia": "SA", "Western Australia": "WA", "Tasmania": "TAS", "Northern Territory": "NT", "Australian Capital Territory": "ACT"}
 europe_map("AU", adm["AUS"], AU_CODES, "name", "DEHESA_AU_STATES", "los estados y territorios de Australia", 0.03)
+NL_CODES = {"Groningen": "GR", "Friesland": "FR", "Drenthe": "DR", "Overijssel": "OV", "Gelderland": "GE", "Flevoland": "FL", "Utrecht": "UT", "Noord-Holland": "NH", "Zuid-Holland": "ZH", "Zeeland": "ZE", "Noord-Brabant": "NB", "Limburg": "LI"}
+AT_CODES = {"Burgenland": "B", "Niederösterreich": "NO", "Wien": "W", "Kärnten": "K", "Steiermark": "ST", "Oberösterreich": "OO", "Salzburg": "S", "Tirol": "T", "Vorarlberg": "V"}
+europe_map("NL", adm["NLD"], NL_CODES, "name", "DEHESA_NL_PROVINCES", "las provincias de los Paises Bajos (sin el Caribe neerlandes)", 0.004)
+europe_map("AT", adm["AUT"], AT_CODES, "name", "DEHESA_AT_LAENDER", "los Lander de Austria", 0.006)

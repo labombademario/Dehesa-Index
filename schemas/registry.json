@@ -374,6 +374,18 @@
     "eu_regions"
    ]
   ],
+  "eu-regions-nl.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
+  "eu-regions-at.json": [
+   "eu-regions",
+   [
+    "eu_regions"
+   ]
+  ],
   "au-states.json": [
    "au-states",
    [

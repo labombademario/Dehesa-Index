@@ -6,7 +6,7 @@
   var L4 = { en: 0, es: 1, fr: 2, it: 3 };
   var US = window.DehesaRegionNames.US;
   var CA = window.DehesaRegionNames.CA;
-  var ES = window.DehesaRegionNames.ES, FR = window.DehesaRegionNames.FR, IT = window.DehesaRegionNames.IT, DE = window.DehesaRegionNames.DE, AU = window.DehesaRegionNames.AU;
+  var ES = window.DehesaRegionNames.ES, FR = window.DehesaRegionNames.FR, IT = window.DehesaRegionNames.IT, DE = window.DehesaRegionNames.DE, AU = window.DehesaRegionNames.AU, NL = window.DehesaRegionNames.NL, AT = window.DehesaRegionNames.AT;
   var CA_SLUG = { SK: 'saskatchewan', AB: 'alberta', MB: 'manitoba', ON: 'ontario', QC: 'quebec' };
   var CA_CITY = { SK: ['regina', 'saskatoon'], AB: ['calgary', 'edmonton'], MB: ['winnipeg'], ON: ['toronto'], QC: ['montreal'], BC: ['vancouver'] };
   var CA_CITY_N = { regina: 'Regina', saskatoon: 'Saskatoon', calgary: 'Calgary', edmonton: 'Edmonton', winnipeg: 'Winnipeg', toronto: 'Toronto', montreal: 'Montréal', vancouver: 'Vancouver' };
@@ -17,6 +17,8 @@
     IT: { flag: '🇮🇹', names: IT, map: 'DEHESA_IT_REGIONS', country: ['Italy', 'Italia', 'Italie', 'Italia'], kind: ['Region', 'Región', 'Région', 'Regione'], kinds: ['regions', 'regiones', 'régions', 'regioni'], profile: 'paises.html?c=IT' },
     DE: { flag: '🇩🇪', names: DE, map: 'DEHESA_DE_LAENDER', country: ['Germany', 'Alemania', 'Allemagne', 'Germania'], kind: ['State (Land)', 'Estado federado (Land)', 'Land', 'Land'], kinds: ['federal states', 'estados federados', 'Länder', 'Länder'], profile: 'paises.html?c=DE' },
     AU: { flag: '🇦🇺', names: AU, map: 'DEHESA_AU_STATES', country: ['Australia', 'Australia', 'Australie', 'Australia'], kind: ['State or territory', 'Estado o territorio', 'État ou territoire', 'Stato o territorio'], kinds: ['states and territories', 'estados y territorios', 'États et territoires', 'stati e territori'], profile: 'paises.html?c=AU' },
+    NL: { flag: '🇳🇱', names: NL, map: 'DEHESA_NL_PROVINCES', country: ['Netherlands', 'Países Bajos', 'Pays-Bas', 'Paesi Bassi'], kind: ['Province', 'Provincia', 'Province', 'Provincia'], kinds: ['provinces', 'provincias', 'provinces', 'province'], profile: 'paises.html?c=NL' },
+    AT: { flag: '🇦🇹', names: AT, map: 'DEHESA_AT_LAENDER', country: ['Austria', 'Austria', 'Autriche', 'Austria'], kind: ['State (Land)', 'Estado federado (Land)', 'Land', 'Land'], kinds: ['federal states', 'estados federados', 'Länder', 'Länder'], profile: 'paises.html?c=AT' },
     ES: { flag: '🇪🇸', names: ES, map: 'DEHESA_ES_CCAA', country: ['Spain', 'España', 'Espagne', 'Spagna'], kind: ['Autonomous community', 'Comunidad autónoma', 'Communauté autonome', 'Comunità autonoma'], kinds: ['autonomous communities', 'comunidades autónomas', 'communautés autonomes', 'comunità autonome'], profile: 'paises.html?c=ES' }
   };
   var T = {
@@ -440,12 +442,17 @@
       return card(t.auex, t.auexSub, body, cite('abs'));
     });
   }
-  var MODS = { US: [['drought', usDrought], ['crops', usCrops], ['cattle', usCattle], ['bids', usBids], ['fert', usFert], ['tax', usTax]], CA: [['drought', caDrought], ['cacrops', caCrops], ['lvst', caLivestock], ['inc', caIncome], ['rec', caReceipts], ['costs', caCosts], ['prices', caPrices], ['fuel', caFuel]], ES: [['eaa', euEaa], ['recan', esRecan], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], FR: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], IT: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], AU: [['auex', auExports]], DE: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms], ['deprices', dePrices]] };
+  var MODS = { US: [['drought', usDrought], ['crops', usCrops], ['cattle', usCattle], ['bids', usBids], ['fert', usFert], ['tax', usTax]], CA: [['drought', caDrought], ['cacrops', caCrops], ['lvst', caLivestock], ['inc', caIncome], ['rec', caReceipts], ['costs', caCosts], ['prices', caPrices], ['fuel', caFuel]], ES: [['eaa', euEaa], ['recan', esRecan], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], FR: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], NL: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], AT: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], IT: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], AU: [['auex', auExports]], DE: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms], ['deprices', dePrices]] };
   var MOD_NAME = { auex: 'auex', recan: 'recan', eaa: 'eaa', ercrops: 'ercrops', erlive: 'erlive', erfarms: 'erfarms', deprices: 'deprices', cacrops: 'cacrops', lvst: 'lvst', inc: 'inc', rec: 'rec', drought: 'drought', crops: 'crops', cattle: 'cattle', bids: 'bids', fert: 'fert', tax: 'tax', costs: 'costs', prices: 'prices', fuel: 'fuel' };
   /* ---------- mapa y página ---------- */
   function mapSvg(cfg, r) {
     var M = window[cfg.map]; if (!M) return '';
-    return '<svg viewBox="' + M.viewBox + '" role="group" aria-label="' + esc(tt().mapAlt) + '" style="width:100%;height:auto;display:block">' + M.states.map(function (s) { var on = s.id === r, name = nm(cfg, s.id); return '<a href="region.html?c=' + ST.c + '&amp;r=' + s.id + '"><path d="' + s.d + '" fill="' + (on ? '#2f6b4a' : '#cfd8cc') + '" stroke="#fff" stroke-width="1" style="cursor:pointer"><title>' + esc(name) + '</title></path></a>'; }).join('') + '</svg>';
+    var R = window.DehesaRegionMetrics;
+    return (R ? R.selectHtml(ST.c, lang(), 'rg-metric', '') : '') + '<svg id="rg-svg" viewBox="' + M.viewBox + '" role="group" aria-label="' + esc(tt().mapAlt) + '" style="width:100%;height:auto;display:block">' + M.states.map(function (s) { var on = s.id === r, name = nm(cfg, s.id); return '<a href="region.html?c=' + ST.c + '&amp;r=' + s.id + '"><path d="' + s.d + '" fill="' + (on ? '#2f6b4a' : '#cfd8cc') + '" stroke="#fff" stroke-width="1" style="cursor:pointer"><title>' + esc(name) + '</title></path></a>'; }).join('') + '</svg><div id="rg-legend"></div>';
+  }
+  function bindMetric() {
+    var R = window.DehesaRegionMetrics, sel = document.getElementById('rg-metric'), svg = document.getElementById('rg-svg'), lg = document.getElementById('rg-legend'); if (!R || !sel || !svg || !lg) return;
+    sel.onchange = function () { R.paint(svg, ST.c, sel.value, lang(), ST.r).then(function (h) { lg.innerHTML = h; }); };
   }
   var seq = 0;
   // canonical y og:url propios por region (la pagina es una sola con ?c=&r=)
@@ -462,13 +469,19 @@
     var side = '<div class="di-card" style="padding:12px 14px"><label style="font-size:13px;display:block;margin-bottom:8px">' + esc(cfg.kind[li()]) + '<br><select id="rg-sel" class="di-compare-select"><option value="">' + esc(t.pick) + '…</option>' + ids.map(function (i) { return '<option value="' + i + '"' + (i === ST.r ? ' selected' : '') + '>' + esc(nm(cfg, i)) + '</option>'; }).join('') + '</select></label>' + mapSvg(cfg, ST.r) + '</div>';
     if (!known) { root.innerHTML = side; bind(); return; }
     root.innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start"><div style="flex:1 1 300px;max-width:420px;position:sticky;top:12px">' + side + '</div><div id="rg-main" style="flex:2 1 420px;min-width:0"><p class="di-movers-hint">' + esc(t.loading) + '</p></div></div>';
-    bind(); var my = ++seq, x = { c: ST.c, r: ST.r };
+    bind(); bindMetric(); var my = ++seq, x = { c: ST.c, r: ST.r };
     Promise.all(MODS[ST.c].map(function (m) { return m[1](x).catch(function () { return null; }); })).then(function (out) {
       if (my !== seq) return; var el = document.getElementById('rg-main'); if (!el) return; var miss = [];
       var html = out.map(function (h, i) { if (!h) miss.push(t[MOD_NAME[MODS[ST.c][i][0]]]); return h || ''; }).join('');
       if (miss.length) html += '<section class="di-card" style="padding:14px 18px;margin-top:14px"><b>' + esc(t.missing) + '</b><p class="di-movers-hint" style="margin:6px 0 0">' + esc(t.missingHint) + ' ' + esc(miss.join(', ')) + '.</p></section>';
+      html += staticLinks();
       el.innerHTML = html;
     });
+  }
+  var SL = { es: ['Resumen fijo de ', 'Todas las regiones: '], en: ['Fixed summary page for ', 'All regions: '], fr: ['Page de synthèse de ', 'Toutes les régions : '], it: ['Pagina di sintesi di ', 'Tutte le regioni: '] };
+  function staticLinks() {
+    var U = window.DehesaRegionUrls; if (!U) return ''; var l = lang(), a = U.page(ST.c, ST.r, l), h = U.hub(ST.c, l), cfg = C[ST.c], v = SL[l] || SL.es; if (!a) return '';
+    return '<p class="di-movers-hint" style="margin-top:14px"><a href="' + a + '">' + esc(v[0] + nm(cfg, ST.r)) + '</a> · <a href="' + h + '">' + esc(v[1] + cfg.country[li()]) + '</a></p>';
   }
   function bind() { var s = document.getElementById('rg-sel'); if (s) s.onchange = function () { if (!s.value) return; ST.r = s.value; try { history.pushState(null, '', 'region.html?c=' + ST.c + '&r=' + ST.r); } catch (e) {} render(); }; }
   window.DehesaShared.init('informacion');

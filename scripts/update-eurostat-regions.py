@@ -21,6 +21,9 @@ IT = {"PIE": ("ITC1", ["ITC1"]), "VDA": ("ITC2", ["ITC2"]), "LIG": ("ITC3", ["IT
 DE = {"BW": ("DE1", ["DE11", "DE12", "DE13", "DE14"]), "BY": ("DE2", ["DE21", "DE22", "DE23", "DE24", "DE25", "DE26", "DE27"]), "BE": ("DE3", ["DE30"]), "BB": ("DE4", ["DE40"]), "HB": ("DE5", ["DE50"]), "HH": ("DE6", ["DE60"]), "HE": ("DE7", ["DE71", "DE72", "DE73"]), "MV": ("DE8", ["DE80"]), "NI": ("DE9", ["DE91", "DE92", "DE93", "DE94"]), "NW": ("DEA", ["DEA1", "DEA2", "DEA3", "DEA4", "DEA5"]), "RP": ("DEB", ["DEB1", "DEB2", "DEB3"]), "SL": ("DEC", ["DEC0"]), "SN": ("DED", ["DED2", "DED4", "DED5"]), "ST": ("DEE", ["DEE0"]), "SH": ("DEF", ["DEF0"]), "TH": ("DEG", ["DEG0"])}
 NL = {"GR": ("NL11", ["NL11"]), "FR": ("NL12", ["NL12"]), "DR": ("NL13", ["NL13"]), "OV": ("NL21", ["NL21"]), "GE": ("NL22", ["NL22"]), "FL": ("NL23", ["NL23"]), "UT": ("NL31", ["NL31"]), "NH": ("NL32", ["NL32"]), "ZH": ("NL33", ["NL33"]), "ZE": ("NL34", ["NL34"]), "NB": ("NL41", ["NL41"]), "LI": ("NL42", ["NL42"])}
 AT = {"B": ("AT11", ["AT11"]), "NO": ("AT12", ["AT12"]), "W": ("AT13", ["AT13"]), "K": ("AT21", ["AT21"]), "ST": ("AT22", ["AT22"]), "OO": ("AT31", ["AT31"]), "S": ("AT32", ["AT32"]), "T": ("AT33", ["AT33"]), "V": ("AT34", ["AT34"])}
+# Puntos de la fuente descartados por error evidente. Gelderland y Flevoland (NL) tienen la produccion de patata de 2022 intercambiada en Eurostat
+# (807 y 255 mil t frente a ~260 y ~790 en los demas anios; la suma de ambas es normal): rendimiento de 128 y 14 t/ha. Se descarta la produccion de ese anio, no se corrige.
+EXCLUDE = {("NL", "GE", "R1000", 2022), ("NL", "FL", "R1000", 2022)}
 COUNTRIES = {"es": ES, "fr": FR, "it": IT, "de": DE, "nl": NL, "at": AT}
 EAA = ["AM180000", "AM160000", "AM100000", "AM110000", "AM120000", "AM010000", "AM020000", "AM030000", "AM040000", "AM050000", "AM060000", "AM064000", "AM065000", "AM070000", "AM080000", "AM111000", "AM112000", "AM114000", "AM115000", "AM121000", "AM122000",
        "AM200000", "AM206000", "AM203000", "AM202000", "AM260000", "AM280000", "AM310000", "AM320000", "AM330000", "AM370000"]
@@ -93,6 +96,9 @@ def build(cc, reg):
     for r, s in reg.items():
         for cr in CROPS:
             a = region_series(t, (cr, "AR_THS_HA"), s) or region_series(t, (cr, "MAR_THS_HA"), s); pr = region_series(t, (cr, "HPRD_HUMD_EU_THS_T"), s)
+            if pr and (cc.upper(), r, cr) in {x[:3] for x in EXCLUDE}:
+                n0 = len(pr); pr = [q for q in pr if (cc.upper(), r, cr, q[0]) not in EXCLUDE]
+                if len(pr) != n0: log(cc, r, cr, "produccion descartada por error evidente de la fuente")
             if a or pr: out[r].setdefault("crops", {})[cr] = {k: v for k, v in (("area", a), ("prod", pr)) if v}
     j = fetch("apro_mt_ls_r", animals=ANIMALS, unit="THS_HD", geo=G); t = collect(j, lambda c: c["animals"])
     for r, s in reg.items():

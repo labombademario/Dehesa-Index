@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T13:00:00Z",
+ "generatedAt": "2026-10-02T14:22:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 47,
@@ -545,7 +545,7 @@
    "crons": [
     "20 14 * * 2,5"
    ],
-   "nextRun": "2026-10-02T14:20:00Z",
+   "nextRun": "2026-10-06T14:20:00Z",
    "files": [
     {
      "path": "data/denmark-prices.json",
@@ -797,6 +797,12 @@
     {
      "path": "data/eu-regions-de.json",
      "lastChange": "2026-10-02T12:29:03Z"
+    },
+    {
+     "path": "data/eu-regions-nl.json"
+    },
+    {
+     "path": "data/eu-regions-at.json"
     },
     {
      "path": "data/revisions.json",
@@ -1266,7 +1272,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-02T12:54:45Z"
+     "lastChange": "2026-10-02T13:02:15Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1282,7 +1288,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-02T12:54:45Z"
+     "lastChange": "2026-10-02T13:02:15Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1299,7 +1305,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-02T12:54:45Z"
+     "lastChange": "2026-10-02T13:02:15Z"
     },
     {
      "path": "data/products"
@@ -1310,27 +1316,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-02T12:54:45Z"
+     "lastChange": "2026-10-02T13:02:15Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-02T12:54:45Z"
+     "lastChange": "2026-10-02T13:02:15Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-02T12:54:45Z"
+     "lastChange": "2026-10-02T13:02:15Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-02T12:54:45Z"
+     "lastChange": "2026-10-02T13:02:15Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-02T12:54:45Z"
+     "lastChange": "2026-10-02T13:02:15Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-02T12:54:45Z"
+     "lastChange": "2026-10-02T13:02:15Z"
     },
     {
      "path": "data/snapshots"
@@ -1517,7 +1523,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-10-02T14:15:00Z",
+   "nextRun": "2026-10-02T23:30:00Z",
    "files": [
     {
      "path": "data/us-cash-bids/manifest.json",

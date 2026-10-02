@@ -347,6 +347,16 @@
   <url><loc>https://dehesaindex.com/en/regions/australia/tasmania/</loc></url>
   <url><loc>https://dehesaindex.com/en/regions/australia/victoria/</loc></url>
   <url><loc>https://dehesaindex.com/en/regions/australia/western-australia/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/austria/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/austria/burgenland/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/austria/carinthia/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/austria/lower-austria/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/austria/salzburg/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/austria/styria/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/austria/tyrol/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/austria/upper-austria/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/austria/vienna/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/austria/vorarlberg/</loc></url>
   <url><loc>https://dehesaindex.com/en/regions/canada/</loc></url>
   <url><loc>https://dehesaindex.com/en/regions/canada/alberta/</loc></url>
   <url><loc>https://dehesaindex.com/en/regions/canada/british-columbia/</loc></url>
@@ -413,6 +423,19 @@
   <url><loc>https://dehesaindex.com/en/regions/italy/tuscany/</loc></url>
   <url><loc>https://dehesaindex.com/en/regions/italy/umbria/</loc></url>
   <url><loc>https://dehesaindex.com/en/regions/italy/veneto/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/drenthe/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/flevoland/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/friesland/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/gelderland/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/groningen/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/limburg/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/north-brabant/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/north-holland/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/overijssel/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/south-holland/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/utrecht/</loc></url>
+  <url><loc>https://dehesaindex.com/en/regions/netherlands/zeeland/</loc></url>
   <url><loc>https://dehesaindex.com/en/regions/spain/</loc></url>
   <url><loc>https://dehesaindex.com/en/regions/spain/andalusia/</loc></url>
   <url><loc>https://dehesaindex.com/en/regions/spain/aragon/</loc></url>
@@ -508,6 +531,16 @@
   <url><loc>https://dehesaindex.com/fr/regions/australie/tasmanie/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/australie/territoire-du-nord/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/australie/victoria/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/autriche/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/autriche/basse-autriche/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/autriche/burgenland/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/autriche/carinthie/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/autriche/haute-autriche/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/autriche/salzbourg/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/autriche/styrie/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/autriche/tyrol/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/autriche/vienne/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/autriche/vorarlberg/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/canada/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/canada/alberta/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/canada/colombie-britannique/</loc></url>
@@ -545,21 +578,25 @@
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/alaska/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/arizona/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/arkansas/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/california/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/californie/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/caroline-du-nord/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/caroline-du-sud/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/colorado/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/connecticut/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/dakota-du-nord/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/dakota-du-sud/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/delaware/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/district-of-columbia/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/florida/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/georgia/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/hawaii/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/district-de-columbia/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/floride/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/georgie/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/hawai/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/idaho/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/illinois/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/indiana/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/iowa/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/kansas/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/kentucky/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/louisiana/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/louisiane/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/maine/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/maryland/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/massachusetts/</loc></url>
@@ -572,24 +609,20 @@
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/nevada/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/new-hampshire/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/new-jersey/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/new-mexico/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/new-york/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/north-carolina/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/north-dakota/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/nouveau-mexique/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/ohio/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/oklahoma/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/oregon/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/pennsylvania/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/pennsylvanie/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/rhode-island/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/south-carolina/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/south-dakota/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/tennessee/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/texas/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/utah/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/vermont/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/virginia/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/virginie-occidentale/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/virginie/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/washington/</loc></url>
-  <url><loc>https://dehesaindex.com/fr/regions/etats-unis/west-virginia/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/wisconsin/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/etats-unis/wyoming/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/france/</loc></url>
@@ -627,6 +660,19 @@
   <url><loc>https://dehesaindex.com/fr/regions/italie/trentin-haut-adige/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/italie/vallee-daoste/</loc></url>
   <url><loc>https://dehesaindex.com/fr/regions/italie/venetie/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/brabant-septentrional/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/drenthe/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/flevoland/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/frise/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/groningue/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/gueldre/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/hollande-meridionale/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/hollande-septentrionale/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/limbourg/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/overijssel/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/utrecht/</loc></url>
+  <url><loc>https://dehesaindex.com/fr/regions/pays-bas/zelande/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/australia/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/australia/australia-meridionale/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/australia/australia-occidentale/</loc></url>
@@ -635,6 +681,16 @@
   <url><loc>https://dehesaindex.com/it/regioni/australia/tasmania/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/australia/territorio-del-nord/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/australia/victoria/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/austria/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/austria/alta-austria/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/austria/bassa-austria/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/austria/burgenland/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/austria/carinzia/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/austria/salisburgo/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/austria/stiria/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/austria/tirolo/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/austria/vienna/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/austria/vorarlberg/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/canada/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/canada/alberta/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/canada/columbia-britannica/</loc></url>
@@ -701,6 +757,19 @@
   <url><loc>https://dehesaindex.com/it/regioni/italia/umbria/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/italia/valle-daosta/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/italia/veneto/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/brabante-settentrionale/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/drenthe/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/flevoland/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/frisia/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/gheldria/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/groninga/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/limburgo/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/olanda-meridionale/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/olanda-settentrionale/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/overijssel/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/utrecht/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/paesi-bassi/zelanda/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/spagna/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/spagna/andalusia/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/spagna/aragona/</loc></url>
@@ -725,10 +794,14 @@
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/arizona/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/arkansas/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/california/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/carolina-del-nord/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/carolina-del-sud/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/colorado/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/connecticut/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/dakota-del-nord/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/dakota-del-sud/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/delaware/</loc></url>
-  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/district-of-columbia/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/distretto-di-columbia/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/florida/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/georgia/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/hawaii/</loc></url>
@@ -751,24 +824,20 @@
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/nevada/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/new-hampshire/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/new-jersey/</loc></url>
-  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/new-mexico/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/new-york/</loc></url>
-  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/north-carolina/</loc></url>
-  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/north-dakota/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/nuovo-messico/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/ohio/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/oklahoma/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/oregon/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/pennsylvania/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/rhode-island/</loc></url>
-  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/south-carolina/</loc></url>
-  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/south-dakota/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/tennessee/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/texas/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/utah/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/vermont/</loc></url>
+  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/virginia-occidentale/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/virginia/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/washington/</loc></url>
-  <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/west-virginia/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/wisconsin/</loc></url>
   <url><loc>https://dehesaindex.com/it/regioni/stati-uniti/wyoming/</loc></url>
   <url><loc>https://dehesaindex.com/regiones/alemania/</loc></url>
@@ -796,6 +865,16 @@
   <url><loc>https://dehesaindex.com/regiones/australia/tasmania/</loc></url>
   <url><loc>https://dehesaindex.com/regiones/australia/territorio-del-norte/</loc></url>
   <url><loc>https://dehesaindex.com/regiones/australia/victoria/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/austria/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/austria/alta-austria/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/austria/baja-austria/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/austria/burgenland/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/austria/carintia/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/austria/estiria/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/austria/salzburgo/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/austria/tirol/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/austria/viena/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/austria/vorarlberg/</loc></url>
   <url><loc>https://dehesaindex.com/regiones/canada/</loc></url>
   <url><loc>https://dehesaindex.com/regiones/canada/alberta/</loc></url>
   <url><loc>https://dehesaindex.com/regiones/canada/columbia-britanica/</loc></url>
@@ -915,5 +994,18 @@
   <url><loc>https://dehesaindex.com/regiones/italia/umbria/</loc></url>
   <url><loc>https://dehesaindex.com/regiones/italia/valle-de-aosta/</loc></url>
   <url><loc>https://dehesaindex.com/regiones/italia/veneto/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/brabante-septentrional/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/drente/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/flevoland/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/frisia/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/groninga/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/gueldres/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/holanda-meridional/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/holanda-septentrional/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/limburgo/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/overijssel/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/utrecht/</loc></url>
+  <url><loc>https://dehesaindex.com/regiones/paises-bajos/zelanda/</loc></url>
   <!-- region-pages:end -->
 </urlset>

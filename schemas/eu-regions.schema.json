@@ -50,7 +50,7 @@
   },
   "regions": {
    "type": "object",
-   "minProperties": 13
+   "minProperties": 9
   }
  }
 }
