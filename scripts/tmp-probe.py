@@ -1,34 +1,34 @@
 import json, urllib.request, os, re, csv, io, collections, zipfile
 os.makedirs("tmp-probe", exist_ok=True)
 out = []
-def getb(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 Dehesa-Index-data-bot"})
-    r = urllib.request.urlopen(req, timeout=180); return r.read()
-def save(): open("tmp-probe/probe6.txt","w").write("\n".join(out)[:60000])
-try:
-    b = getb("https://www.grainscanada.gc.ca/en/grain-research/statistics/grain-statistics-weekly/2026-27/gsw-shg-en.csv").decode("utf-8", "replace")
-    rows = list(csv.DictReader(io.StringIO(b)))
-    for ws, me in (("Terminal Exports", "Exports"), ("Primary", "Deliveries"), ("Primary", "Shipments"), ("Summary", "Stocks")):
-        sub = [r for r in rows if r["worksheet"] == ws and r["metric"] == me]
-        out.append("== %s/%s rows %d regions %s grains %s grades %s" % (ws, me, len(sub), sorted({r["Region"] for r in sub}), sorted({r["grain"] for r in sub}), sorted({r["grade"] for r in sub})[:15]))
-        for r in [x for x in sub if x["Grain Week"] == "8" and x["grain"] in ("Wheat", "Canola")][:24]:
-            out.append("   %s %s %s %s %s %s" % (r["period"], r["grain"], r["grade"], r["Region"], r["Ktonnes"], r["Week Ending Date"]))
-except Exception as e: out.append("CGC ERR " + repr(e))
-save()
-try:
-    z = zipfile.ZipFile(io.BytesIO(getb("https://agriculture.canada.ca/atlas/data_donnees/canadianDroughtMonitor/data_donnees/geoJSON/areasofDrought/2026/cdm_2608_drought_areas_json.zip")))
-    out.append("== zip files: " + str([(i.filename, i.file_size) for i in z.infolist()]))
-    nm = z.namelist()[0]; j = json.loads(z.read(nm))
-    out.append("%s keys %s crs %s nfeat %d" % (nm, list(j.keys()), j.get("crs"), len(j["features"])))
-    for f in j["features"][:3]:
-        g = f["geometry"]; out.append("  props %s geom %s coords-sample %s" % (json.dumps(f["properties"]), g["type"], json.dumps(g["coordinates"])[:200]))
-except Exception as e: out.append("DROUGHT ERR " + repr(e))
-save()
-for u in ("https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_1_states_provinces.geojson",
-          "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_1_states_provinces.geojson"):
+def save(): open("tmp-probe/probe7.txt","w").write("\n".join(out)[:60000])
+def load(pid):
+    req = urllib.request.Request("https://www150.statcan.gc.ca/t1/wds/rest/getFullTableDownloadCSV/%d/en" % pid, headers={"User-Agent": "Dehesa-Index-data-bot/1.0", "Content-Type": "application/json"})
+    info = json.loads(urllib.request.urlopen(req, timeout=60).read())
+    raw = urllib.request.urlopen(urllib.request.Request(info["object"], headers={"User-Agent": "Dehesa-Index-data-bot/1.0"}), timeout=180).read()
+    z = zipfile.ZipFile(io.BytesIO(raw)); nm = [n for n in z.namelist() if n.endswith(".csv") and "MetaData" not in n][0]
+    return list(csv.DictReader(io.TextIOWrapper(z.open(nm), encoding="utf-8-sig")))
+for pid, dims in ((32100049, ("Expenses and rebates",)), (32100050, ("Farm items",)), (32100051, ("Type of lender",)), (18100001, ("Type of fuel", "GEO"))):
     try:
-        b = getb(u); j = json.loads(b)
-        ca = [f for f in j["features"] if f["properties"].get("adm0_a3") == "CAN"]
-        out.append("== %s %d bytes; CAN features %d: %s" % (u.split("/")[-1], len(b), len(ca), [(f["properties"].get("name"), f["properties"].get("iso_3166_2")) for f in ca]))
-    except Exception as e: out.append("NE ERR %s %r" % (u, e))
+        rows = load(pid)
+        out.append("== %d rows %d cols %s" % (pid, len(rows), list(rows[0].keys())))
+        out.append("UOM %s | SCALAR %s | REF %s..%s | STATUS %s" % (collections.Counter(r["UOM"] for r in rows).most_common(3), collections.Counter(r["SCALAR_FACTOR"] for r in rows).most_common(3), min(r["REF_DATE"] for r in rows), max(r["REF_DATE"] for r in rows), collections.Counter(r.get("STATUS") for r in rows).most_common(5)))
+        for d in dims: out.append("%s: %s" % (d, sorted({r[d] for r in rows})))
+        last = [r for r in rows if r["GEO"].startswith("Canada") and r["REF_DATE"] == max(x["REF_DATE"] for x in rows)][:6]
+        for r in last: out.append("   " + json.dumps({k: r[k] for k in r if k in ("REF_DATE", "GEO", "VALUE", "UOM", "SCALAR_FACTOR", "STATUS") or k in dims}))
+    except Exception as e: out.append("ERR %d %r" % (pid, e))
+    save()
+# CGC: grade structure
+try:
+    req = urllib.request.Request("https://www.grainscanada.gc.ca/en/grain-research/statistics/grain-statistics-weekly/2026-27/gsw-shg-en.csv", headers={"User-Agent": "Mozilla/5.0 Dehesa-Index-data-bot"})
+    rows = list(csv.DictReader(io.StringIO(urllib.request.urlopen(req, timeout=180).read().decode("utf-8", "replace"))))
+    sub = [r for r in rows if r["worksheet"] == "Terminal Exports" and r["period"] == "Current Week" and r["Grain Week"] == "8"]
+    by = collections.defaultdict(lambda: collections.defaultdict(float))
+    for r in sub:
+        by[r["grain"]]["ALL" if r["grade"] == "All grades combined" else "grades"] += float(r["Ktonnes"] or 0)
+    out.append("== CGC terminal exports wk8 current: all-grades-combined vs sum of grades: " + json.dumps({g: dict(v) for g, v in by.items()}))
+    out.append("grades per grain: " + json.dumps({g: sorted({r["grade"] for r in sub if r["grain"] == g}) for g in ("Wheat", "Canola", "Barley")}))
+    wk = sorted({(int(r["Grain Week"]), r["Week Ending Date"]) for r in rows})
+    out.append("weeks: %s" % wk)
+except Exception as e: out.append("CGC ERR %r" % e)
 save()
