@@ -24,6 +24,7 @@ sources:
     name: Update Germany (BLE, Destatis)
     cron: ['30 15 * * 1,4']
     script: scripts/update-germany.py
+    env: {GENESIS_TOKEN: '${{ secrets.GENESIS_TOKEN }}'}
     data: [germany-stats.json]
     log: germany-log.txt
     message: Datos Alemania (BLE, Destatis)

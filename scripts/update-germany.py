@@ -4,8 +4,10 @@ Fuentes con licencia explícita (verificada en los metadatos de GovData/BLE/Dest
   - BLE Kuhmilchpreise und -mengen (Datenlizenz Deutschland – Zero 2.0), mensual desde 2012
   - BLE Schlachtpreise, informe semanal (Datenlizenz Deutschland – Namensnennung 2.0), semanal desde 2022
   - BLE Markt- und Preisbericht Obst und Gemüse (Zero 2.0), semanal desde 2022
-  - Destatis 61211-0001 / 61211-0003 / 61221-0003 (Namensnennung 2.0), descargas estáticas sin registro:
-    son ventanas móviles (anual 10 años, mensual año en curso, trimestral 10 puntos); se acumulan entre ejecuciones.
+  - Destatis 61211-0001 / 61211-0003 / 61221-0003 (Namensnennung 2.0). Con el token GENESIS_TOKEN (cuenta gratuita de
+    Destatis) se baja la serie completa desde 1968 por la API (data/tablefile, ffcsv). Sin token, o si la API falla,
+    se usa la descarga estática sin registro, que son ventanas móviles (anual 10 años, mensual año en curso,
+    trimestral 10 puntos); en ese caso se acumulan entre ejecuciones.
 No se estima nada; las celdas vacías se omiten.
 """
 import csv, datetime, json, os, re, sys, urllib.request, collections
@@ -157,6 +159,47 @@ def destatis(table):
     t = dec(get('https://genesis.destatis.de/genesisWS/downloads/00/tables/%s_00.csv' % table))
     L = [l.split(';') for l in t.splitlines()]
     return L
+def genesis_table(table, token):
+    """Serie completa desde la API GENESIS (formato ffcsv). Devuelve {codigo: (etiqueta, [(periodo, valor)])}."""
+    import io, zipfile, urllib.parse
+    h = {'Content-Type': 'application/x-www-form-urlencoded', 'username': token, 'password': '', 'Accept': '*/*', 'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)'}
+    body = urllib.parse.urlencode({'name': table, 'startyear': '1968', 'format': 'ffcsv', 'compress': 'false', 'language': 'de'}).encode()
+    last = None
+    for i in range(3):
+        try:
+            with urllib.request.urlopen(urllib.request.Request('https://genesis.destatis.de/genesisWS/rest/2020/data/tablefile', data=body, headers=h, method='POST'), timeout=240) as r:
+                raw = r.read()
+            break
+        except Exception as e:
+            last = e; raw = None
+    if raw is None: raise RuntimeError('GENESIS %s -> %s' % (table, str(last).replace(token, '<token>')))
+    if raw[:2] == b'PK':
+        z = zipfile.ZipFile(io.BytesIO(raw)); raw = z.read(z.namelist()[0])
+    return parse_flat(dec(raw))
+
+def parse_flat(txt):
+    rows = list(csv.reader(txt.splitlines(), delimiter=';'))
+    if not rows or 'value' not in rows[0]: raise RuntimeError('ffcsv sin cabecera esperada: ' + (txt[:120] if txt else 'vacio'))
+    H = rows[0]; ix = {c: i for i, c in enumerate(H)}
+    nv = max(int(c.split('_')[0]) for c in H if re.match(r'^\d+_variable_attribute_code$', c))
+    prod = '%d_variable_attribute_code' % nv; prodl = '%d_variable_attribute_label' % nv
+    res = {}; seen = set()
+    for r in rows[1:]:
+        if len(r) < len(H): continue
+        code = r[ix[prod]].strip(); t = r[ix['time']].strip(); v = num(r[ix['value']])
+        if not re.match(r'^LW[A-Z]*(-\d+)*$', code) or v is None: continue
+        if '1_variable_code' in ix and r[ix['1_variable_code']] == 'MONAT':
+            m = MONTHS.get(r[ix['1_variable_attribute_label']].strip()); per = '%s-%02d' % (t, m) if m else None
+        elif re.match(r'^\d{4}-\d{2}P1M$', t): per = t[:7]
+        elif re.match(r'^\d{4}$', t): per = t
+        else: per = None
+        if not per: continue
+        k = (code, per)
+        if k in seen: continue
+        seen.add(k)
+        res.setdefault(code, (r[ix[prodl]].strip(), []))[1].append((per, v))
+    return res
+
 def parse_idx(L, mode):
     """devuelve {code:(label,[(period,val)])}"""
     hdr = None; hdr2 = None
@@ -198,10 +241,20 @@ if os.path.exists('data/germany-stats.json'):
     except Exception: pass
 
 def idx_series(table, mode, group, pre, freq, title, windowed):
-    try:
-        res = parse_idx(destatis(table), mode)
-    except Exception as e:
-        log('ERROR destatis', table, e); return
+    res = None; tok = os.environ.get('GENESIS_TOKEN', '').strip()
+    if tok:
+        try:
+            res = genesis_table(table, tok); windowed = False
+            log('GENESIS API', table, len(res), 'series; periodos', min(p for _, (_, pts) in res.items() for p, _ in pts), '..', max(p for _, (_, pts) in res.items() for p, _ in pts))
+        except Exception as e:
+            log('AVISO GENESIS API fallo, se usa la descarga estatica:', table, str(e)[:200]); res = None
+    else:
+        log('sin GENESIS_TOKEN: descarga estatica (ventana movil)')
+    if res is None:
+        try:
+            res = parse_idx(destatis(table), mode)
+        except Exception as e:
+            log('ERROR destatis', table, e); return
     for code, (de, pts) in res.items():
         sid = 'de-%s-%s' % (pre, code.lower())
         old = PREV.get(sid)
