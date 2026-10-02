@@ -13,6 +13,14 @@ const REGIONS={
  {id:'fertilizantes',weight:10,members:['dap','potasa']},
  {id:'energia',weight:10,members:['diesel','petroleo_brent','gas_natural']}
  ],limits:'Solo mercado UE: US tiene su propio índice (dehesa-index-us.json) y UK no tiene series de precio verificadas con historia; se añadirá cuando alcance ≥24 meses.'},
+ ca:{file:'dehesa-index-ca.json',label:{es:'Canadá',en:'Canada'},lastFromSeries:true,groups:[
+ {id:'cereales',weight:25,members:['trigo','maiz','cebada','avena']},
+ {id:'ganaderia',weight:25,members:['cerdo','vaca','cordero','pollo','huevos']},
+ {id:'lacteos',weight:15,members:['leche']},
+ {id:'pienso',weight:15,members:['harina_soja']},
+ {id:'fertilizantes',weight:10,members:['urea','dap','potasa']},
+ {id:'energia',weight:10,members:['diesel','petroleo_wti','gas_natural']}
+ ],limits:'Solo Canadá (Statistics Canada, tabla 32-10-0077, precios al productor en dólares canadienses). Sin grupos de pienso, fertilizantes y energía: no hay series verificadas de Canadá con historia suficiente; el resto de pesos se reescala. Cada serie usa la provincia de referencia de su ficha. Statistics Canada publica con unos dos meses de retraso, por lo que el último mes del índice es el último mes con dato de todas las series (las semanales de Alberta no entran: solo cubren unos 20 meses).'},
  us:{file:'dehesa-index-us.json',label:{es:'EE. UU.',en:'US'},groups:[
  {id:'cereales',weight:25,members:['trigo','maiz','arroz']},
  {id:'ganaderia',weight:25,members:['cerdo','vaca','pollo','huevos']},
@@ -31,7 +39,8 @@ function monthly(o){const acc={};for(const h of o.history){const v=Number(h.valu
 const NAMES={es:{cereales:'Cereales',ganaderia:'Ganadería',lacteos:'Lácteos',pienso:'Pienso',fertilizantes:'Fertilizantes',energia:'Energía'},en:{cereales:'Cereals',ganaderia:'Livestock',lacteos:'Dairy',pienso:'Feed',fertilizantes:'Fertilisers',energia:'Energy'}};
 for(const [reg,cfg] of Object.entries(REGIONS)){
 const GROUPS=cfg.groups;const obs=latest.observations.filter(o=>o.status==='verified'&&o.region===reg&&Array.isArray(o.history));
-const lastComplete=(()=>{ // último mes cerrado: excluye el mes en curso de la última observación semanal
+const lastComplete=cfg.lastFromSeries?(()=>{ // región con fuente mensual retrasada: último mes con dato de TODAS las series de los grupos
+ const ms=GROUPS.flatMap(g=>g.members).map(p=>obs.find(x=>x.product===p)).filter(Boolean).map(o=>Object.keys(monthly(o)).sort().pop());return ms.sort()[0]})():(()=>{ // último mes cerrado: excluye el mes en curso de la última observación semanal
  const d=obs.map(o=>o.observationDate).sort().pop();const ym=d.slice(0,7);const [y,m]=ym.split('-').map(Number);const pm=m===1?[y-1,12]:[y,m-1];return pm[0]+'-'+pad(pm[1])})();
 const months=[];{let [y,m]=BASE.split('-').map(Number);while((y+'-'+pad(m))<=lastComplete){months.push(y+'-'+pad(m));m++;if(m>12){m=1;y++}}}
 const included=[],excluded=[],groupSeries={};

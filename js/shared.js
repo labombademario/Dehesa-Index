@@ -88,7 +88,7 @@
       { label: { es: 'Europa', en: 'Europe', fr: 'Europe', it: 'Europa' }, items: [
         { file: 'paises.html', query: '?c=EU', label: { es: 'Perfil de la Unión Europea (macro y tipos)', en: 'European Union profile (macro and rates)', fr: 'Profil de l’Union européenne (macro et taux)', it: 'Profilo Unione europea (macro e tassi)' } },
         { file: 'europa.html', label: { es: 'Precios de la UE (todos los países)', en: 'EU prices (all countries)', fr: 'Prix de l’UE (tous les pays)', it: 'Prezzi UE (tutti i paesi)' } },
-        { file: 'index.html', hash: '#home-dehesa-index', label: { es: 'Índice Dehesa (UE y EE. UU.)', en: 'Dehesa Index (EU and US)', fr: 'Indice Dehesa (UE et États-Unis)', it: 'Indice Dehesa (UE e Stati Uniti)' }, noActive: true },
+        { file: 'index.html', hash: '#home-dehesa-index', label: { es: 'Índice Dehesa (UE, EE. UU. y Canadá)', en: 'Dehesa Index (EU, US and Canada)', fr: 'Indice Dehesa (UE, États-Unis et Canada)', it: 'Indice Dehesa (UE, Stati Uniti e Canada)' }, noActive: true },
         { file: 'paises.html', query: '?c=ES', label: { es: 'España', en: 'Spain', fr: 'Espagne', it: 'Spagna' } },
         { file: 'paises.html', query: '?c=FR', label: { es: 'Francia', en: 'France', fr: 'France', it: 'Francia' } },
         { file: 'paises.html', query: '?c=DE', label: { es: 'Alemania', en: 'Germany', fr: 'Allemagne', it: 'Germania' } },

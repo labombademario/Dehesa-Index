@@ -150,6 +150,10 @@
    "dehesa-index",
    []
   ],
+  "dehesa-index-ca.json": [
+   "dehesa-index",
+   []
+  ],
   "news.json": [
    "news",
    []
