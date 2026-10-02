@@ -103,6 +103,8 @@ jobs:
         run: node scripts/stamp-assets.mjs --check
       - name: Vista previa social en paginas raiz (node scripts/stamp-social.mjs)
         run: node scripts/stamp-social.mjs --check
+      - name: Lista de fuentes de Informacion al dia (node scripts/build-sources-view.mjs)
+        run: node scripts/build-sources-view.mjs --check
 
       - name: Service worker version matches the code
         run: node scripts/stamp-sw.mjs --check

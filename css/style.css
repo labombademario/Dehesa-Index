@@ -571,6 +571,19 @@ html[data-theme="dark"] .di-lg-map { background: var(--surface); }
 .di-info-source-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.5; }
 .di-info-source-desc a { color: var(--accent); }
 
+/* Información: fuentes agrupadas por país */
+.di-src-tabs { display: flex; gap: 8px; margin: 0 0 14px; flex-wrap: wrap; }
+.di-src-tab { font: inherit; font-size: 13px; font-weight: 600; padding: 7px 16px; border-radius: 999px; border: 1px solid var(--border-strong); background: transparent; color: var(--text-tertiary); cursor: pointer; }
+.di-src-tab[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.di-src-group { border: 1px solid var(--border); border-radius: 10px; margin: 0 0 8px; background: var(--surface-input); }
+.di-src-group summary { cursor: pointer; padding: 11px 14px; font-size: 14.5px; font-weight: 600; list-style-position: inside; }
+.di-src-group[open] summary { border-bottom: 1px solid var(--border); }
+.di-src-group .di-info-list { margin: 10px 14px 6px; }
+.di-src-count { font-weight: 400; font-size: 12.5px; color: var(--text-faint); margin-left: 6px; }
+.di-src-lic { display: block; font-size: 12px; color: var(--text-faint); }
+.di-src-lic a { color: inherit; }
+.di-src-lic-pend { font-style: italic; }
+
 /* Noticias */
 .di-badge-green { background: #E3F0E5; color: #276A43; border: 1px solid #C3DEC7; }
 html[data-theme="dark"] .di-badge-green { background: #1E3328; color: #7FCF9B; border-color: #2F4A38; }
