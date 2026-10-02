@@ -1677,6 +1677,11 @@
    "sources": [
     "aafc_drought"
    ]
+  },
+  "data/canada-provinces.json": {
+   "sources": [
+    "statcan"
+   ]
   }
  },
  "derived": [

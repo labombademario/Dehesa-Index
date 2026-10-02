@@ -350,6 +350,12 @@
     "eu_farm_economics"
    ]
   ],
+  "canada-provinces.json": [
+   "canada-provinces",
+   [
+    "canada_provinces"
+   ]
+  ],
   "canada-drought.json": [
    "canada-drought",
    [

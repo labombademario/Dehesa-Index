@@ -156,6 +156,15 @@ sources:
     continue: true
     data: [eu-drought.json]
     message: Datos sequia Europa (EDO CDI)
+  - id: canada-provinces
+    name: Update Canada by province (Statistics Canada)
+    cron: ['50 15 * * 3']
+    script: scripts/update-canada-provinces.py
+    timeout: 30
+    script_timeout: 20
+    continue: true
+    data: [canada-provinces.json]
+    message: Datos de Canada por provincia (Statistics Canada)
   - id: canada-drought
     name: Update Canada drought (Canadian Drought Monitor)
     cron: ['20 8 * * 2,4']

@@ -12,7 +12,7 @@ for (const [cc, key, np] of [['US', 'DEHESA_US_STATES', 2], ['CA', 'DEHESA_CA_PR
 }
 ok('EE. UU.: 50 estados + DC', w.DehesaRegionNames.US && Object.keys(w.DehesaRegionNames.US).length === 51);
 ok('Canadá: 13 provincias y territorios', Object.keys(w.DehesaRegionNames.CA).length === 13);
-const need = ['data/drought.json', 'data/nass-crops.json', 'data/cattle-on-feed.json', 'data/us-cash-bids/manifest.json', 'data/us-fertilizers.json', 'data/other-tax.json', 'data/canada-drought.json', 'data/canada-stats.json', 'data/latest.json'];
+const need = ['data/drought.json', 'data/nass-crops.json', 'data/cattle-on-feed.json', 'data/us-cash-bids/manifest.json', 'data/us-fertilizers.json', 'data/other-tax.json', 'data/canada-drought.json', 'data/canada-stats.json', 'data/canada-provinces.json', 'data/latest.json'];
 ok('existen los ficheros de datos que leen los bloques', need.every(f => fs.existsSync(f)));
 const dr = JSON.parse(fs.readFileSync('data/drought.json', 'utf8')), cd = JSON.parse(fs.readFileSync('data/canada-drought.json', 'utf8'));
 ok('sequia EE. UU.: hay datos de todos los estados con contorno', Object.keys(w.DehesaRegionNames.US).filter(i => i !== 'DC' && !dr.states[i]).length === 0);

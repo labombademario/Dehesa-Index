@@ -21,6 +21,11 @@
       bids: 'Precios locales de granos', bidsSub: 'Ofertas de compra al contado en los mercados del estado (USDA AMS), último día con dato.', commodity: 'Producto', range: 'Rango entre mercados', mkts: 'mercados', more: 'Ver el detalle por mercado',
       fert: 'Fertilizantes', fertSub: 'Precio medio al por menor en el estado (USDA AMS, informes de costes de producción).', product: 'Producto', price: 'Precio', yoyl: 'Hace un año', date: 'Fecha', usdt: 'USD por tonelada corta',
       tax: 'Impuesto', taxSub: 'Impuesto estatal sobre las ventas (tipo general, sin impuestos locales).', rate: 'Tipo estatal', nostate: 'Sin impuesto estatal sobre las ventas', taxCalc: 'Usarlo en la calculadora',
+      cacrops: 'Cultivos', cacropsSub: 'Superficie, rendimiento y producción del último año publicado (Statistics Canada, sistema métrico). Si el año aún no ha terminado, las cifras son previsiones de la fuente.', seeded: 'Superficie sembrada', shareCa: 'Peso en Canadá', farmPrice: 'Precio en finca', kha: 'miles de ha', kt: 'miles de t', kgha: 'kg/ha', cadt: 'CAD/t',
+      lvst: 'Ganado', lvstSub: 'Existencias a 1 de enero y 1 de julio (Statistics Canada), miles de cabezas.', head: 'Existencias', per: 'Fecha', yoyc: 'Mismo mes, año anterior', cattleN: 'Vacuno', hogsN: 'Porcino', sheepN: 'Ovino',
+      inc: 'Renta agraria', incSub: 'Cuentas agrarias de la provincia (Statistics Canada), millones de dólares canadienses, anual.', netInc: 'Renta neta', cashRec: 'Ingresos en efectivo', opExp: 'Gastos de explotación', netCash: 'Renta neta en efectivo', depr: 'Amortización',
+      recCrop: 'Cultivos', recLv: 'Ganadería y productos',
+      rec: 'Ingresos por producto', recSub: 'Ingresos en efectivo de las explotaciones por producto (Statistics Canada), millones de dólares canadienses, último año. Los nombres de los productos son los que publica la fuente, en inglés.', prevY: 'Año anterior', terr: 'Statistics Canada no publica estas tablas para los territorios.',
       costs: 'Costes de las explotaciones', costsSub: 'Gastos de explotación por partida, Statistics Canada (millones de dólares canadienses, anual).', item: 'Partida', total: 'Total de gastos', share: 'del total', cad: 'M CAD',
       prices: 'Precios de referencia', pricesSub: 'Productos cuya provincia de referencia es esta (Statistics Canada, mensual) y las ofertas semanales de Alberta Agriculture.', unit: 'Unidad', vs: 'Variación',
       fuel: 'Combustible', fuelSub: 'Precio al consumidor por ciudad (Statistics Canada, mensual), centavos de dólar canadiense por litro.', city: 'Ciudad', fuelkind: 'Combustible', note: 'Fuente' },
@@ -31,6 +36,11 @@
       bids: 'Local grain prices', bidsSub: 'Cash bids at the state’s markets (USDA AMS), latest day with data.', commodity: 'Commodity', range: 'Range across markets', mkts: 'markets', more: 'See the market-by-market detail',
       fert: 'Fertilizers', fertSub: 'Average retail price in the state (USDA AMS, production cost reports).', product: 'Product', price: 'Price', yoyl: 'A year ago', date: 'Date', usdt: 'USD per short ton',
       tax: 'Tax', taxSub: 'State sales tax (general rate, excluding local taxes).', rate: 'State rate', nostate: 'No state sales tax', taxCalc: 'Use it in the calculator',
+      cacrops: 'Crops', cacropsSub: 'Area, yield and production for the latest published year (Statistics Canada, metric). If the year is not over yet, figures are the source’s forecasts.', seeded: 'Seeded area', shareCa: 'Share of Canada', farmPrice: 'Farm price', kha: 'thousand ha', kt: 'thousand t', kgha: 'kg/ha', cadt: 'CAD/t',
+      lvst: 'Livestock', lvstSub: 'Inventories at 1 January and 1 July (Statistics Canada), thousand head.', head: 'Inventory', per: 'Date', yoyc: 'Same date, last year', cattleN: 'Cattle', hogsN: 'Hogs', sheepN: 'Sheep',
+      inc: 'Farm income', incSub: 'Provincial farm accounts (Statistics Canada), million Canadian dollars, annual.', netInc: 'Net income', cashRec: 'Cash receipts', opExp: 'Operating expenses', netCash: 'Net cash income', depr: 'Depreciation',
+      recCrop: 'Crops', recLv: 'Livestock and products',
+      rec: 'Receipts by product', recSub: 'Farm cash receipts by product (Statistics Canada), million Canadian dollars, latest year. Product names are as published by the source.', prevY: 'Previous year', terr: 'Statistics Canada does not publish these tables for the territories.',
       costs: 'Farm costs', costsSub: 'Farm operating expenses by item, Statistics Canada (million Canadian dollars, annual).', item: 'Item', total: 'Total expenses', share: 'of total', cad: 'M CAD',
       prices: 'Reference prices', pricesSub: 'Products whose reference province is this one (Statistics Canada, monthly) and weekly Alberta Agriculture bids.', unit: 'Unit', vs: 'Change',
       fuel: 'Fuel', fuelSub: 'Consumer price by city (Statistics Canada, monthly), Canadian cents per litre.', city: 'City', fuelkind: 'Fuel', note: 'Source' },
@@ -41,6 +51,11 @@
       bids: 'Prix locaux des céréales', bidsSub: 'Offres d’achat au comptant sur les marchés de l’État (USDA AMS), dernier jour avec données.', commodity: 'Produit', range: 'Écart entre marchés', mkts: 'marchés', more: 'Voir le détail par marché',
       fert: 'Engrais', fertSub: 'Prix moyen de détail dans l’État (USDA AMS, rapports de coûts de production).', product: 'Produit', price: 'Prix', yoyl: 'Il y a un an', date: 'Date', usdt: 'USD par tonne courte',
       tax: 'Taxe', taxSub: 'Taxe de vente de l’État (taux général, hors taxes locales).', rate: 'Taux de l’État', nostate: 'Pas de taxe de vente d’État', taxCalc: 'L’utiliser dans le calculateur',
+      cacrops: 'Cultures', cacropsSub: 'Superficie, rendement et production de la dernière année publiée (Statistique Canada, système métrique). Si l’année n’est pas terminée, ce sont des prévisions de la source.', seeded: 'Superficie ensemencée', shareCa: 'Part du Canada', farmPrice: 'Prix à la ferme', kha: 'milliers d’ha', kt: 'milliers de t', kgha: 'kg/ha', cadt: 'CAD/t',
+      lvst: 'Élevage', lvstSub: 'Effectifs au 1er janvier et au 1er juillet (Statistique Canada), milliers de têtes.', head: 'Effectifs', per: 'Date', yoyc: 'Même date, an dernier', cattleN: 'Bovins', hogsN: 'Porcins', sheepN: 'Ovins',
+      inc: 'Revenu agricole', incSub: 'Comptes agricoles de la province (Statistique Canada), millions de dollars canadiens, annuel.', netInc: 'Revenu net', cashRec: 'Recettes monétaires', opExp: 'Dépenses d’exploitation', netCash: 'Revenu net monétaire', depr: 'Amortissement',
+      recCrop: 'Cultures', recLv: 'Élevage et produits',
+      rec: 'Recettes par produit', recSub: 'Recettes monétaires agricoles par produit (Statistique Canada), millions de dollars canadiens, dernière année. Les noms des produits sont ceux de la source, en anglais.', prevY: 'Année précédente', terr: 'Statistique Canada ne publie pas ces tableaux pour les territoires.',
       costs: 'Coûts des exploitations', costsSub: 'Dépenses d’exploitation par poste, Statistique Canada (millions de dollars canadiens, annuel).', item: 'Poste', total: 'Total des dépenses', share: 'du total', cad: 'M CAD',
       prices: 'Prix de référence', pricesSub: 'Produits dont la province de référence est celle-ci (Statistique Canada, mensuel) et offres hebdomadaires d’Alberta Agriculture.', unit: 'Unité', vs: 'Variation',
       fuel: 'Carburant', fuelSub: 'Prix à la consommation par ville (Statistique Canada, mensuel), cents canadiens par litre.', city: 'Ville', fuelkind: 'Carburant', note: 'Source' },
@@ -51,6 +66,11 @@
       bids: 'Prezzi locali dei cereali', bidsSub: 'Offerte di acquisto a pronti sui mercati dello Stato (USDA AMS), ultimo giorno con dati.', commodity: 'Prodotto', range: 'Intervallo tra mercati', mkts: 'mercati', more: 'Vedi il dettaglio per mercato',
       fert: 'Fertilizzanti', fertSub: 'Prezzo medio al dettaglio nello Stato (USDA AMS, rapporti sui costi di produzione).', product: 'Prodotto', price: 'Prezzo', yoyl: 'Un anno fa', date: 'Data', usdt: 'USD per tonnellata corta',
       tax: 'Imposta', taxSub: 'Imposta statale sulle vendite (aliquota generale, escluse le imposte locali).', rate: 'Aliquota statale', nostate: 'Nessuna imposta statale sulle vendite', taxCalc: 'Usala nel calcolatore',
+      cacrops: 'Colture', cacropsSub: 'Superficie, resa e produzione dell’ultimo anno pubblicato (Statistics Canada, sistema metrico). Se l’anno non è concluso, sono previsioni della fonte.', seeded: 'Superficie seminata', shareCa: 'Quota del Canada', farmPrice: 'Prezzo in azienda', kha: 'migliaia di ha', kt: 'migliaia di t', kgha: 'kg/ha', cadt: 'CAD/t',
+      lvst: 'Bestiame', lvstSub: 'Consistenze al 1° gennaio e al 1° luglio (Statistics Canada), migliaia di capi.', head: 'Consistenza', per: 'Data', yoyc: 'Stessa data, anno scorso', cattleN: 'Bovini', hogsN: 'Suini', sheepN: 'Ovini',
+      inc: 'Reddito agricolo', incSub: 'Conti agricoli della provincia (Statistics Canada), milioni di dollari canadesi, annuale.', netInc: 'Reddito netto', cashRec: 'Ricavi in contanti', opExp: 'Spese di esercizio', netCash: 'Reddito netto in contanti', depr: 'Ammortamento',
+      recCrop: 'Colture', recLv: 'Bestiame e prodotti',
+      rec: 'Ricavi per prodotto', recSub: 'Ricavi in contanti delle aziende per prodotto (Statistics Canada), milioni di dollari canadesi, ultimo anno. I nomi dei prodotti sono quelli della fonte, in inglese.', prevY: 'Anno precedente', terr: 'Statistics Canada non pubblica queste tabelle per i territori.',
       costs: 'Costi delle aziende', costsSub: 'Spese di esercizio per voce, Statistics Canada (milioni di dollari canadesi, annuale).', item: 'Voce', total: 'Totale spese', share: 'del totale', cad: 'M CAD',
       prices: 'Prezzi di riferimento', pricesSub: 'Prodotti la cui provincia di riferimento è questa (Statistics Canada, mensile) e offerte settimanali di Alberta Agriculture.', unit: 'Unità', vs: 'Variazione',
       fuel: 'Carburante', fuelSub: 'Prezzo al consumo per città (Statistics Canada, mensile), centesimi di dollaro canadese al litro.', city: 'Città', fuelkind: 'Carburante', note: 'Fonte' }
@@ -59,6 +79,8 @@
     crops: { 'CORN, GRAIN': ['Corn', 'Maíz', 'Maïs', 'Mais'], SOYBEANS: ['Soybeans', 'Soja', 'Soja', 'Soia'], WHEAT: ['Wheat', 'Trigo', 'Blé', 'Frumento'], BARLEY: ['Barley', 'Cebada', 'Orge', 'Orzo'], OATS: ['Oats', 'Avena', 'Avoine', 'Avena'], 'SORGHUM, GRAIN': ['Sorghum', 'Sorgo', 'Sorgho', 'Sorgo'], RICE: ['Rice', 'Arroz', 'Riz', 'Riso'], COTTON: ['Cotton', 'Algodón', 'Coton', 'Cotone'], HAY: ['Hay', 'Heno', 'Foin', 'Fieno'], PEANUTS: ['Peanuts', 'Cacahuetes', 'Arachides', 'Arachidi'] },
     fert: { amoniaco: ['Anhydrous ammonia', 'Amoníaco anhidro', 'Ammoniac anhydre', 'Ammoniaca anidra'], urea: ['Urea', 'Urea', 'Urée', 'Urea'], dap: ['DAP', 'DAP', 'DAP', 'DAP'], map: ['MAP', 'MAP', 'MAP', 'MAP'], potasa: ['Potash', 'Potasa', 'Potasse', 'Potassa'], uan: ['Liquid nitrogen (UAN)', 'Nitrógeno líquido (UAN)', 'Azote liquide (UAN)', 'Azoto liquido (UAN)'] },
     grain: { corn: ['Corn', 'Maíz', 'Maïs', 'Mais'], soybeans: ['Soybeans', 'Soja', 'Soja', 'Soia'], wheat: ['Wheat', 'Trigo', 'Blé', 'Frumento'], barley: ['Barley', 'Cebada', 'Orge', 'Orzo'], oats: ['Oats', 'Avena', 'Avoine', 'Avena'], sorghum: ['Sorghum', 'Sorgo', 'Sorgho', 'Sorgo'] },
+    cacrop: { 'wheat-all': ['Wheat (all)', 'Trigo (total)', 'Blé (total)', 'Frumento (totale)'], 'wheat-durum': ['Durum wheat', 'Trigo duro', 'Blé dur', 'Frumento duro'], barley: ['Barley', 'Cebada', 'Orge', 'Orzo'], oats: ['Oats', 'Avena', 'Avoine', 'Avena'], 'rye-all': ['Rye', 'Centeno', 'Seigle', 'Segale'], 'canola-rapeseed': ['Canola', 'Canola (colza)', 'Canola', 'Canola'], 'corn-for-grain': ['Grain corn', 'Maíz grano', 'Maïs-grain', 'Mais da granella'], soybeans: ['Soybeans', 'Soja', 'Soja', 'Soia'], 'peas-dry': ['Dry peas', 'Guisantes secos', 'Pois secs', 'Piselli secchi'], lentils: ['Lentils', 'Lentejas', 'Lentilles', 'Lenticchie'], flaxseed: ['Flaxseed', 'Lino', 'Lin', 'Lino'], 'sunflower-seed': ['Sunflower seed', 'Girasol', 'Tournesol', 'Girasole'], 'mustard-seed': ['Mustard seed', 'Mostaza', 'Moutarde', 'Senape'], 'chick-peas': ['Chickpeas', 'Garbanzos', 'Pois chiches', 'Ceci'], 'canary-seed': ['Canary seed', 'Alpiste', 'Alpiste', 'Scagliola'] },
+    calv: { 'total-cattle': ['Total cattle', 'Total vacuno', 'Total bovins', 'Totale bovini'], 'dairy-cows': ['Dairy cows', 'Vacas lecheras', 'Vaches laitières', 'Vacche da latte'], 'beef-cows': ['Beef cows', 'Vacas de carne', 'Vaches allaitantes', 'Vacche da carne'], 'calves-under-1-year': ['Calves under 1 year', 'Terneros menores de 1 año', 'Veaux de moins d’un an', 'Vitelli sotto 1 anno'], 'total-heifers': ['Heifers', 'Novillas', 'Génisses', 'Manze'], 'hogs-total': ['Total hogs', 'Total porcino', 'Total porcins', 'Totale suini'], 'sows-and-gilts-6-months-and-over': ['Sows and gilts', 'Cerdas y primalas', 'Truies et cochettes', 'Scrofe e scrofette'], 'sheep-and-lambs-total': ['Sheep and lambs', 'Ovejas y corderos', 'Moutons et agneaux', 'Pecore e agnelli'], ewes: ['Ewes', 'Ovejas', 'Brebis', 'Pecore'], 'lambs-for-marketing': ['Lambs for marketing', 'Corderos para mercado', 'Agneaux de marché', 'Agnelli da mercato'] },
     fuel: { diesel: ['Diesel', 'Diésel', 'Diesel', 'Diesel'], gasoline: ['Gasoline', 'Gasolina', 'Essence', 'Benzina'] }
   };
   var CACHE = {}, Q = (function () { var o = {}, s = location.search.replace(/^\?/, '').split('&'); s.forEach(function (p) { var k = p.split('='); if (k[0]) o[k[0]] = decodeURIComponent(k[1] || ''); }); return o; })();
@@ -190,8 +212,52 @@
       return card(t.fuel, t.fuelSub, table([t.city, t.fuelkind, 'c/L', t.date], rows, 420), cite('statcan', per));
     });
   }
-  var MODS = { US: [['drought', usDrought], ['crops', usCrops], ['cattle', usCattle], ['bids', usBids], ['fert', usFert], ['tax', usTax]], CA: [['drought', caDrought], ['costs', caCosts], ['prices', caPrices], ['fuel', caFuel]] };
-  var MOD_NAME = { drought: 'drought', crops: 'crops', cattle: 'cattle', bids: 'bids', fert: 'fert', tax: 'tax', costs: 'costs', prices: 'prices', fuel: 'fuel' };
+  function caProv(r) { return get('data/canada-provinces.json').then(function (d) { return d && d.provinces ? d : null; }); }
+  function lastOf(a) { return a && a.length ? a[a.length - 1] : null; }
+  function ptAt(a, p) { for (var i = 0; i < a.length; i++) if (a[i][0] === p) return a[i][1]; return null; }
+  function caCrops(x) {
+    return caProv().then(function (d) {
+      var P = d && d.provinces[x.r], N = d && d.provinces.CA; if (!P || !P.crops) return null; var t = tt(), rows = [];
+      Object.keys(P.crops).forEach(function (k) {
+        var c = P.crops[k], pr = lastOf(c.prod); if (!pr) return; var yr = pr[0], nat = N && N.crops && N.crops[k] && N.crops[k].prod ? ptAt(N.crops[k].prod, yr) : null, g = function (tag) { return c[tag] ? ptAt(c[tag], yr) : null; }, f = function (v, d2) { return v == null ? '<span style="color:var(--text-faint)">—</span>' : nf(v, d2); };
+        rows.push({ v: pr[1], cells: [esc(LBL.cacrop[k] ? LBL.cacrop[k][li()] : c.name), f(g('area'), 1), f(g('yield'), 0), f(pr[1], 1), nat ? nf(pr[1] / nat * 100, 1) + ' %' : '—', String(yr)] });
+      });
+      if (!rows.length) return null; rows.sort(function (a, b) { return b.v - a.v; });
+      return card(t.cacrops, t.cacropsSub, table([t.crop, t.seeded + ' (' + t.kha + ')', t.yield + ' (' + t.kgha + ')', t.prod + ' (' + t.kt + ')', t.shareCa, t.year], rows.map(function (q) { return q.cells; }), 560), cite('statcan'));
+    });
+  }
+  function caLivestock(x) {
+    return caProv().then(function (d) {
+      var P = d && d.provinces[x.r]; if (!P) return null; var t = tt(), rows = [];
+      [['cattle', t.cattleN], ['hogs', t.hogsN], ['sheep', t.sheepN]].forEach(function (g) {
+        var B = P[g[0]]; if (!B) return;
+        Object.keys(B).forEach(function (k) { var s = B[k], l = lastOf(s.pts); if (!l) return; var py = (+l[0].slice(0, 4) - 1) + l[0].slice(4), ya = ptAt(s.pts, py); rows.push([esc(g[1] + ': ' + (LBL.calv[k] ? LBL.calv[k][li()] : s.name)), nf(l[1], dec(l[1])), esc(day(l[0])), ya == null ? '' : esc(pct((l[1] / ya - 1) * 100))]); });
+      });
+      if (!rows.length) return null;
+      return card(t.lvst, t.lvstSub, table([t.item, t.head, t.per, t.yoyc], rows, 520), cite('statcan'));
+    });
+  }
+  function caIncome(x) {
+    return caProv().then(function (d) {
+      var P = d && d.provinces[x.r]; if (!P || !P.income) return null; var t = tt(), I = P.income, keys = [['cash-receipts-total', t.cashRec, '#2f6b4a'], ['operating-expenses-after-rebates', t.opExp, '#b03a2e'], ['net-income-total', t.netInc, '#3a5f8a']];
+      var any = keys.filter(function (k) { return I[k[0]]; }); if (!any.length) return null;
+      var tbl = [['cash-receipts-total', t.cashRec], ['operating-expenses-after-rebates', t.opExp], ['net-cash-income', t.netCash], ['net-income-total', t.netInc]].filter(function (k) { return I[k[0]]; }).map(function (k) { var l = lastOf(I[k[0]].pts), pv = I[k[0]].pts.length > 1 ? I[k[0]].pts[I[k[0]].pts.length - 2] : null; return [esc(k[1]), nf(l[1], 0), pv ? esc(pct(pv[1] ? (l[1] / pv[1] - 1) * 100 : null)) : '', esc(l[0])]; });
+      var ser = any.map(function (k) { return { name: k[1], color: k[2], pts: I[k[0]].pts.map(function (p) { return { x: Date.UTC(+p[0], 0, 1), y: p[1], l: p[0] }; }) }; });
+      var ch = window.DehesaChart.render({ series: ser, xMode: 'time', yTitle: t.cad, aria: t.inc + ' ' + nm(C.CA, x.r), vFmt: function (v) { return nf(v, 0); }, yFmt: function (v) { return nf(v, 0); }, xFmt: function (v) { return new Date(v).getUTCFullYear(); } });
+      return card(t.inc, t.incSub, table([t.item, t.cad, t.vs, t.year], tbl, 420) + ch, cite('statcan'));
+    });
+  }
+  function caReceipts(x) {
+    return caProv().then(function (d) {
+      var P = d && d.provinces[x.r]; if (!P || !P.receipts) return null; var t = tt(), R = P.receipts, ks = Object.keys(R), tot = R['total-farm-cash-receipts'];
+      var rows = ks.filter(function (k) { return !/^total-/.test(k); }).map(function (k) { var s = R[k], l = lastOf(s.pts), pv = s.pts.length > 1 ? s.pts[s.pts.length - 2][1] : null; return { v: l[1], l: l, pv: pv, name: s.name }; }).sort(function (a, b) { return b.v - a.v; }).slice(0, 12);
+      if (!rows.length) return null; var tl = tot ? lastOf(tot.pts) : null;
+      var body = table([t.item, t.cad, t.share, t.prevY, t.vs], rows.map(function (q) { return [esc(q.name), nf(q.v, dec(q.v)), tl ? nf(q.v / tl[1] * 100, 1) + ' %' : '', q.pv == null ? '' : nf(q.pv, dec(q.pv)), q.pv ? esc(pct((q.v / q.pv - 1) * 100)) : '']; }), 560);
+      return card(t.rec + (tl ? ' · ' + tl[0] : ''), t.recSub, (tl ? '<p style="margin:0 0 8px"><b>' + nf(tl[1], 0) + ' ' + esc(t.cad) + '</b>' + [['total-crop-receipts', t.recCrop], ['total-livestock-and-livestock-product-receipts', t.recLv]].map(function (z) { var e = R[z[0]], l2 = e && lastOf(e.pts); return l2 ? ' · ' + esc(z[1]) + ': ' + nf(l2[1], 0) : ''; }).join('') + '</p>' : '') + body, cite('statcan'));
+    });
+  }
+  var MODS = { US: [['drought', usDrought], ['crops', usCrops], ['cattle', usCattle], ['bids', usBids], ['fert', usFert], ['tax', usTax]], CA: [['drought', caDrought], ['cacrops', caCrops], ['lvst', caLivestock], ['inc', caIncome], ['rec', caReceipts], ['costs', caCosts], ['prices', caPrices], ['fuel', caFuel]] };
+  var MOD_NAME = { cacrops: 'cacrops', lvst: 'lvst', inc: 'inc', rec: 'rec', drought: 'drought', crops: 'crops', cattle: 'cattle', bids: 'bids', fert: 'fert', tax: 'tax', costs: 'costs', prices: 'prices', fuel: 'fuel' };
   /* ---------- mapa y página ---------- */
   function mapSvg(cfg, r) {
     var M = window[cfg.map]; if (!M) return '';

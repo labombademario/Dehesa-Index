@@ -340,4 +340,4 @@ def main():
            "log": LOG[-30:]}
     (ROOT / "data" / "canada-stats.json").write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
     (ROOT / "data" / "canada-stats-log.txt").write_text("\n".join(LOG)); log("series", len(OUT))
-main()
+if __name__ == "__main__": main()

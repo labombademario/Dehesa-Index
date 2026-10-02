@@ -249,6 +249,43 @@ def eu_drought(doc, errs, warns, stats):
         if sum(eu[:3]) < min(sum(es[:3]), 100) * 0.05 and sum(es[:3]) > 90: warns.append("UE-27 sin sequia aunque Espana este casi toda en sequia")
     stats["countries"] = len(doc["countries"])
 
+def canada_provinces(doc, errs, warns, stats):
+    P = doc["provinces"]; need = ("CA", "SK", "AB", "MB", "ON", "QC", "BC")
+    for g in need:
+        if g not in P: errs.append("falta %s" % g)
+    if errs: return
+    prov = [g for g in P if g != "CA"]
+    for g, b in P.items():
+        for k, c in b.get("crops", {}).items():
+            hp = dict(c.get("harea", [])); yp = dict(c.get("yield", [])); ap = dict(c.get("area", []))
+            for p, v in c.get("prod", [])[-5:]:
+                if v < 0: errs.append("%s %s %s: produccion negativa" % (g, k, p))
+                if p in hp and p in yp and abs(v - hp[p] * yp[p] / 1000) > 0.06 * v + 2: errs.append("%s %s %s: produccion %.1f != superficie x rendimiento %.1f" % (g, k, p, v, hp[p] * yp[p] / 1000))
+            for p, v in c.get("harea", [])[-5:]:
+                if p in ap and v > ap[p] * 1.001 + 0.1: errs.append("%s %s %s: superficie cosechada (%.1f) > sembrada (%.1f)" % (g, k, p, v, ap[p]))
+        for key in ("cattle", "hogs", "sheep", "income", "receipts"):
+            for k, s in b.get(key, {}).items():
+                ps = [x[0] for x in s["pts"]]
+                if ps != sorted(set(ps)): errs.append("%s %s %s: periodos desordenados o repetidos" % (g, key, k))
+                if any((not _num(x[1])) or (key in ("cattle", "hogs", "sheep") and x[1] < 0) for x in s["pts"]): errs.append("%s %s %s: valor no valido" % (g, key, k))
+        ck = b.get("cattle", {})
+        if "total-cattle" in ck:
+            t = dict(ck["total-cattle"]["pts"])
+            for k in ("dairy-cows", "beef-cows"):
+                for p, v in ck.get(k, {"pts": []})["pts"][-6:]:
+                    if v > t.get(p, 1e12) + 0.5: errs.append("%s %s %s: mas vacas (%.1f) que vacuno total (%.1f)" % (g, k, p, v, t[p]))
+    for k in ("wheat-all", "canola-rapeseed", "barley", "soybeans"):
+        ca = P["CA"]["crops"].get(k)
+        if not ca: errs.append("falta %s en Canada" % k); continue
+        yy, tv = ca["prod"][-1]; su = sum(dict(P[g]["crops"][k].get("prod", [])).get(yy, 0) for g in prov if k in P[g].get("crops", {}))
+        if abs(su - tv) > 0.04 * tv: errs.append("%s %s: las provincias suman %.0f kt y Canada %.0f kt (>4 %%)" % (k, yy, su, tv))
+    tr = lambda g, y: dict(P[g]["receipts"]["total-farm-cash-receipts"]["pts"]).get(y)
+    ys = [x[0] for x in P["CA"]["receipts"]["total-farm-cash-receipts"]["pts"]][-3:]
+    for y in ys:
+        vs = [tr(g, y) for g in prov if "total-farm-cash-receipts" in P[g].get("receipts", {})]
+        if len(vs) >= 9 and tr("CA", y) and abs(sum(vs) - tr("CA", y)) > 0.02 * tr("CA", y): errs.append("ingresos en efectivo %s: provincias %.0f != Canada %.0f" % (y, sum(vs), tr("CA", y)))
+    stats["provinces"] = len(P)
+
 def canada_drought(doc, errs, warns, stats):
     ps = doc["periods"]; n = len(ps); ds = [_date(x) for x in ps]
     if any(d is None for d in ds): errs.append("periodo con fecha invalida"); return
