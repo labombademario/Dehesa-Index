@@ -8,7 +8,7 @@ la fuente y la fecha de actualización.
   - Estadísticas de sacrificio (animales y peso), mensual desde 2014
 No se usa Flandes/Landbouwcijfers: sus gráficas de precios son paneles Spotfire sin descarga automatizable.
 """
-import datetime, io, json, re, sys, urllib.request, collections
+import time, datetime, io, json, re, sys, urllib.request, collections
 import openpyxl
 try: import xlrd
 except Exception: xlrd = None
@@ -21,7 +21,9 @@ def get(u):
     for i in range(3):
         try:
             with urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 DehesaIndex'}), timeout=180) as r: return r.read()
-        except Exception as e: last = e
+        except Exception as e:
+            last = e
+            if i < 2: time.sleep(15 * (i + 1))  # Statbel a veces tarda o corta la conexion: esperar antes de reintentar
     raise RuntimeError('%s -> %s' % (u, last))
 def page_files(slug, pat):
     h = get('https://statbel.fgov.be/en/themes/agriculture-fishery/' + slug).decode('utf-8', 'replace')
