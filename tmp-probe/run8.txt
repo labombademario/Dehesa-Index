@@ -1,0 +1,16 @@
+rc=0
+descargada 32100049 415 KB
+tabla 32100049 33360 filas
+costes 40
+descargada 32100050 81 KB
+tabla 32100050 9466 filas
+descargada 32100051 41 KB
+tabla 32100051 4760 filas
+balance 10
+descargada 18100001 297 KB
+tabla 18100001 46192 filas
+combustible 9
+series 329
+
+/home/runner/work/Dehesa-Index/Dehesa-Index/scripts/update-canada-stats.py:338: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
