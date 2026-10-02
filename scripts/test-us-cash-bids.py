@@ -160,6 +160,9 @@ try:
             {"commodity": "Corn", "report_end_date": "09/30/2026", "price_unit": "$ Per Bushel", "avg_price": "4.1", "period": "Year Ago"}]
     obs, rej = L.normalize_rows(rows, {"reportId": 1, "state": "IA", "scope": "STATE_REPORT"}, reg, "t")
     check("filas invalidas rechazadas", not obs and rej == {"implausible_price": 3, "no_price": 1, "no_date": 1, "no_unit": 1, "non_bid_sale_type": 1, "not_current_period": 1}, rej)
+    obs, rej = L.normalize_rows([{"commodity": "Corn", "report_end_date": "09/30/2026", "price_unit": "$ Per Bushel", "avg_price": "4.1", "basis Min": "-0.20", "basis Max": "-0.45"}], {"reportId": 1, "state": "IA", "scope": "STATE_REPORT"}, reg, "t")
+    o0 = list(obs.values())[0][0] if isinstance(obs, dict) else obs[0]
+    check("basis minimo > maximo: se conserva el precio y el basis queda en null (y se cuenta)", o0["priceAverage"] == 4.1 and o0["basisLow"] is None and o0["basisHigh"] is None and rej == {"basis_inverted_nulled": 1}, (o0, rej))
     obs, _ = L.normalize_rows([{"commodity": "Corn", "report_end_date": "09/30/2026", "price_unit": "$ Per Bushel", "avg_price": "4.1"}], {"reportId": 1, "state": "IA", "scope": "STATE_REPORT"}, reg, "t")
     check("sin geografia en informe estatal: STATE con el nombre del estado, no un elevador", obs[0]["locationType"] == "STATE" and obs[0]["locationName"] == "Iowa", obs[0])
     base = {"commodity": "Corn", "report_end_date": "09/30/2026", "price_unit": "$ Per Bushel", "avg_price": "4.1", "basis Min": "-50", "basis Max": "-24", "basis_unit": "\u00a2/Bu"}

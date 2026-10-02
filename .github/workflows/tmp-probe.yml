@@ -29,3 +29,4 @@ jobs:
           git add -- tmp-probe
           git commit -qm "TMP probe output" || exit 0
           for i in 1 2 3; do git pull -q --rebase --autostash && git push && exit 0; sleep 5; done
+# rerun

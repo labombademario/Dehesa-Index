@@ -130,6 +130,7 @@ def normalize_rows(rows, rcfg, reg, ingested_at):
             elif k in BLO and blo is None: blo = _n(v)
             elif k in BHI and bhi is None: bhi = _n(v)
             elif k in BAVG and bavg is None: bavg = _n(v)
+        if blo is not None and bhi is not None and blo > bhi: blo = bhi = None; bad("basis_inverted_nulled")  # la fuente publica el basis minimo por encima del maximo: se conserva el precio y se deja el basis en null (no se reordena ni se adivina)
         fut = next((_s(r[k]) for k in FUT if k in r and _s(r[k])), None)
         if not fut:
             fa, fb = _s(r.get(FUT_MIN)), _s(r.get(FUT_MAX))
