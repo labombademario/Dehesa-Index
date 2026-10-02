@@ -42,6 +42,16 @@ const PAGES = [
   { n: 'mercados', url: '/mercados.html', crit: ['#ms-body'] },
   { n: 'status', url: '/status.html', crit: [] },
   { n: 'metodologia', url: '/metodologia.html', crit: [] },
+  { n: 'europa', url: '/europa.html', crit: ['#eu-sel'] },
+  { n: 'sequia', url: '/sequia.html', crit: [] },
+  { n: 'ganaderia', url: '/ganaderia.html', crit: [] },
+  { n: 'exportaciones', url: '/exportaciones.html', crit: [] },
+  { n: 'insumos', url: '/insumos.html', crit: [] },
+  { n: 'costes', url: '/costes.html', crit: [] },
+  { n: 'rendimientos', url: '/rendimientos.html', crit: [] },
+  { n: 'legal', url: '/legal.html', crit: [] },
+  { n: 'region', url: '/region.html?c=NL&r=GR', crit: [] },
+  { n: 'region-estatica', url: '/regiones/espana/andalucia/', crit: [] },
 ];
 const VIEWPORTS = [{ k: 'desktop', w: 1280, h: 900 }, { k: 'mobile', w: 390, h: 800 }];
 const AXE_FAIL = new Set(['critical', 'serious']);

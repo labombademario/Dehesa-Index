@@ -98,6 +98,28 @@
   /* ---------- controlador de hover ---------- */
   var tip = null, ov = null, cur = null, cache = new WeakMap(), drag = null;
   var HINT = { es: 'Arrastra para medir el cambio', en: 'Drag to measure the change', fr: 'Faites glisser pour mesurer la variation', it: 'Trascina per misurare la variazione' };
+  /* Texto alternativo automatico: toda svg[role=img] sin nombre accesible (graficas ligeras con attr(), mapas de estados) recibe un aria-label
+     con el titulo del bloque (primer encabezado del contenedor) y, si lleva datos (data-dh), primer y ultimo punto de la primera serie. */
+  function autoLabel(root) {
+    var list = (root || document).querySelectorAll('svg[role="img"]'), i, svg;
+    for (i = 0; i < list.length; i++) {
+      svg = list[i];
+      if (svg.getAttribute('aria-label') || svg.getAttribute('aria-labelledby') || svg.querySelector(':scope > title')) continue;
+      var n = svg.parentNode, h = null, k = 0;
+      while (n && n !== document.body && k++ < 6 && !h) { h = n.querySelector('h2,h3,h4,.di-info-card-title,.di-card-title'); n = n.parentNode; }
+      var txt = (h && h.textContent.replace(/\s+/g, ' ').trim()) || (document.querySelector('h1') ? document.querySelector('h1').textContent.replace(/\s+/g, ' ').trim() : document.title);
+      var raw = svg.getAttribute('data-dh');
+      if (raw) { try { var sp = JSON.parse(raw), s0 = (sp.s || [])[0], pts = s0 && s0.p; if (pts && pts.length) { var f = pts[0], l = pts[pts.length - 1]; txt += ': ' + (f[3] || '') + ' ' + (f[2] || '') + ' \u2192 ' + (l[3] || '') + ' ' + (l[2] || ''); } } catch (e) {} }
+      svg.setAttribute('aria-label', txt.replace(/\s+/g, ' ').trim());
+    }
+  }
+  (function () {
+    var tm = null;
+    function run() { tm = null; autoLabel(document); }
+    function sched() { if (!tm) tm = setTimeout(run, 150); }
+    function start() { run(); try { new MutationObserver(sched).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+  })();
   (function () { try { var st = document.createElement('style'); st.textContent = 'svg[data-dh]{-webkit-user-select:none;user-select:none;cursor:crosshair}'; document.head.appendChild(st); } catch (e) {} })();
   function pctTxt(v, pp) { var a = Math.abs(v), txt = nf(a, a < 10 ? 2 : 1) + (pp ? ' pp' : ' %'); return (v > 0 ? '+' : v < 0 ? '−' : '') + txt; }
   function nearestIdx(pts, x) { var bi = -1, d0 = Infinity; pts.forEach(function (p, i) { var d = Math.abs(p[0] - x); if (d < d0) { d0 = d; bi = i; } }); return bi; }

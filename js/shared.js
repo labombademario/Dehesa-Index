@@ -253,7 +253,10 @@
     });
   }
 
+  // Prefijo relativo a la raiz: sale de la propia ruta de este script (../../../js/shared.js -> ../../../), asi vale en cualquier profundidad (regiones, datos, productos).
+  var SELF_PREFIX = (function () { try { var s = document.currentScript || document.querySelector('script[src*="js/shared.js"]'), m = s && /^(.*?)js\/shared\.js/.exec(s.getAttribute('src') || ''); return m ? m[1] : null; } catch (e) { return null; } })();
   function sitePrefix() {
+    if (SELF_PREFIX !== null) return SELF_PREFIX;
     var path = (window.location && window.location.pathname) || '';
     if (/\/datos\/en\/[^/]+\/?$/.test(path)) return '../../../';
     return /\/(precios|datos)\/[^/]+\/?$/.test(path) ? '../../' : '';
