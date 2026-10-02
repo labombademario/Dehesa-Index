@@ -15,6 +15,6 @@ jobs:
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A tmp-probe data/canada-stats.json data/canada-stats-log.txt data/canada-grain.json data/canada-drought.json scripts/ref scripts/fixtures
+          for p in tmp-probe data/canada-stats.json data/canada-stats-log.txt data/canada-grain.json data/canada-drought.json scripts/ref scripts/fixtures; do [ -e "$p" ] && git add -A "$p"; done; true
           git commit -qm "TMP probe output" || exit 0
           for i in 1 2 3; do git pull -q --rebase --autostash && git push && exit 0; sleep 5; done
