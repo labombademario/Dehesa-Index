@@ -53,6 +53,8 @@ jobs:
           python3 scripts/test-usda-calendar.py
           python3 scripts/test-cattle-on-feed.py
           python3 scripts/test-us-dairy.py
+          python3 -m pip install --quiet numpy netCDF4 shapely
+          python3 scripts/test-eu-drought.py
 
       - name: US local cash bids parser, merge, revisions and failure safety (offline fixtures, no API)
         run: python3 scripts/test-us-cash-bids.py

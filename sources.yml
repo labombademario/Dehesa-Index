@@ -119,6 +119,16 @@ sources:
     continue: true
     data: [us-dairy.json]
     message: Datos lacteos EE. UU. (USDA AMS NDPSR)
+  - id: eu-drought
+    name: Update EU drought (EDO Combined Drought Indicator)
+    cron: ['40 7 * * *']
+    pre: ['python3 -m pip install --quiet numpy netCDF4 shapely']
+    script: scripts/update-eu-drought.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    data: [eu-drought.json]
+    message: Datos sequia Europa (EDO CDI)
   - id: au-trade
     name: Update Australia trade (ABS)
     cron: ['25 11 5 * *']

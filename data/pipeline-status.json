@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T02:33:00Z",
+ "generatedAt": "2026-10-02T02:50:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 44,
+  "ok": 45,
   "late": 0,
   "error": 2,
   "not_run": 0,
@@ -633,6 +633,27 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-eu-drought.yml",
+   "name": "Update EU drought (EDO Combined Drought Indicator)",
+   "crons": [
+    "40 7 * * *"
+   ],
+   "nextRun": "2026-10-02T07:40:00Z",
+   "files": [
+    {
+     "path": "data/eu-drought.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 24.0
+  },
+  {
    "workflow": "update-eu-trade.yml",
    "name": "Update EU trade (Eurostat Comext)",
    "crons": [
@@ -1058,7 +1079,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-02T00:33:50Z"
+     "lastChange": "2026-10-02T02:34:47Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1102,11 +1123,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-02T00:34:01Z"
+     "lastChange": "2026-10-02T02:34:47Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-02T02:23:17Z"
+     "lastChange": "2026-10-02T02:34:47Z"
     },
     {
      "path": "data/coverage-gaps.json",
@@ -1360,16 +1381,27 @@
    "nextRun": "2026-10-07T20:20:00Z",
    "files": [
     {
-     "path": "data/us-dairy.json"
+     "path": "data/us-dairy.json",
+     "lastChange": "2026-10-02T02:36:44Z"
     },
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-02T02:36:27Z",
+    "durationSec": 22,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36956410275"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 2,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 150.0
   },
   {

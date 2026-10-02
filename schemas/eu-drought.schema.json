@@ -1,0 +1,76 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Sequia en Europa (EDO, Combined Drought Indicator)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "unit",
+  "asOf",
+  "classes",
+  "periods",
+  "countries"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {
+    "name": {
+     "type": "string",
+     "minLength": 1
+    },
+    "url": {
+     "type": "string",
+     "pattern": "^https?://"
+    },
+    "license": {
+     "type": "string",
+     "minLength": 1
+    }
+   }
+  },
+  "unit": {
+   "type": "string"
+  },
+  "grid": {
+   "type": "string"
+  },
+  "asOf": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "classes": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "minItems": 6,
+   "maxItems": 6
+  },
+  "periods": {
+   "type": "array",
+   "items": {
+    "type": "string",
+    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+   },
+   "minItems": 2
+  },
+  "countries": {
+   "type": "object",
+   "minProperties": 20
+  }
+ }
+}

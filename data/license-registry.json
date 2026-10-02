@@ -1206,6 +1206,30 @@
    "additionalRestrictions": "Los «Termos e Condições» del BTE Online (leídos 2026-10-01) solo tratan privacidad y estadísticas de acceso; no dicen nada sobre reutilización de datos.",
    "evidence": "No se ha encontrado ninguna página del GEP que conceda o niegue la reutilización de los datos. No se da por concedido: la cifra de sueldo de Portugal se cita sin afirmar licencia.",
    "short": "GEP (Portugal)"
+  },
+  "edo_cdi": {
+   "name": "European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS)",
+   "url": "https://drought.emergency.copernicus.eu/",
+   "country": "EU",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: European Drought Observatory (EDO), https://drought.emergency.copernicus.eu © European Commission - JRC",
+   "additionalRestrictions": "Credit the EDO and indicate changes (we aggregate the 5-km grid to country percentages). Do not imply endorsement by the European Commission. Country polygons come from Natural Earth (public domain).",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "JRC Data Catalogue entry afa8a5ee-5473-439a-b062-ffdaedc38b2d lists Creative Commons Attribution 4.0 International with access conditions 'No limitations' for the NetCDF/GeoTIFF downloads; the dataset folder's copyright.txt states the dataset is licensed under CC BY 4.0 and reuse is allowed provided credit is given and changes are indicated (read 2026-10-01); the NetCDF header repeats it.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "EDO · CDI"
   }
  },
  "files": {
@@ -1496,6 +1520,11 @@
   "data/cattle-on-feed.json": {
    "sources": [
     "usda_nass"
+   ]
+  },
+  "data/eu-drought.json": {
+   "sources": [
+    "edo_cdi"
    ]
   }
  },

@@ -198,6 +198,27 @@ def cattle_on_feed(doc, errs, warns, stats):
         if prev and not (0.7 < n["current"]["onFeedEnd"] / max(1, n["yearAgo"]["onFeedEnd"]) < 1.4): warns.append("%s: existencias muy distintas de hace un ano" % lab)
         prev = r["inventoryDate"]
     stats["reports"] = len(doc["reports"])
+def eu_drought(doc, errs, warns, stats):
+    ps = doc["periods"]; n = len(ps)
+    ds = [_date(x) for x in ps]
+    if any(d is None for d in ds): errs.append("periodo con fecha invalida"); return
+    _asc(ps, "periodos", errs)
+    if doc["asOf"] != ps[-1]: errs.append("asOf (%s) no es la ultima decada (%s)" % (doc["asOf"], ps[-1]))
+    if any(d.day not in (1, 11, 21) for d in ds): errs.append("las decadas del CDI empiezan los dias 1, 11 y 21")
+    if (TODAY - ds[-1]).days > 45: warns.append("ultima decada de hace mas de 45 dias (%s)" % ps[-1])
+    for c in ("ES", "FR", "DE", "IT", "PL", "RO", "EU27"):
+        if c not in doc["countries"]: errs.append("falta %s" % c)
+    for c, x in doc["countries"].items():
+        if len(x["v"]) != n: errs.append("%s: %d filas para %d decadas" % (c, len(x["v"]), n)); continue
+        if not (80 <= x["coverage"] <= 100): errs.append("%s: cobertura con dato %s %% (esperado 80-100)" % (c, x["coverage"]))
+        for i, r in enumerate(x["v"]):
+            if any((not _num(v)) or v < 0 or v > 100 for v in r): errs.append("%s %s: porcentaje fuera de 0-100" % (c, ps[i])); break
+            if sum(r) > 100.5: errs.append("%s %s: las clases suman %.1f %% (>100)" % (c, ps[i], sum(r))); break
+    if "EU27" in doc["countries"] and "ES" in doc["countries"]:
+        eu, es = doc["countries"]["EU27"]["v"][-1], doc["countries"]["ES"]["v"][-1]
+        if sum(eu[:3]) < min(sum(es[:3]), 100) * 0.05 and sum(es[:3]) > 90: warns.append("UE-27 sin sequia aunque Espana este casi toda en sequia")
+    stats["countries"] = len(doc["countries"])
+
 def us_dairy(doc, errs, warns, stats):
     ids = set(); n = 0; rng = {"mantequilla": (0.5, 6), "cheddar": (0.5, 6), "suero": (0.1, 3), "leche_polvo": (0.3, 5)}
     for p in doc["products"]:
