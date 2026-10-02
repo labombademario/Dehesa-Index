@@ -16,6 +16,9 @@ eq(n["yearAgo"], {"onFeedStart": 10922, "placed": 1780, "marketed": 1571, "other
 eq(n["pctYearAgo"]["placed"], 91, "porcentaje publicado")
 ks = {s["state"]: s for s in r["states"]}
 eq(len(r["states"]), 13, "filas por estado (11 + otros + EE. UU.)"); eq(ks["Kansas"]["current"], 2320, "Kansas"); eq(ks["South Dakota"]["pctYearAgo"], 105, "South Dakota %"); eq(ks["United States"]["current"], 11163, "total")
+# informe de febrero (anual): lleva indice de contenidos y tablas del ano anterior que tambien empiezan por "Cattle on Feed Inventory"
+rf = C.parse((F / "cofd0226.txt").read_text())
+eq(rf["inventoryDate"], "2026-02-01", "febrero: inventario"); eq(rf["national"]["current"]["onFeedEnd"], 11505, "febrero: nacional"); eq({s["state"]: s for s in rf["states"]}["United States"]["current"], 11505, "febrero: total por estado")
 # el texto de la nota coincide con la tabla (cifras en millones)
 eq(round(n["current"]["placed"] / 1000, 2), 1.62, "entradas = 1,62 millones segun el texto")
 def broken(f):

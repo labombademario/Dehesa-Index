@@ -1,0 +1,63 @@
+
+Cattle on Feed
+
+ISSN: 1948-9080
+
+Released February 20, 2026, by the National Agricultural Statistics Service 
+(NASS), Agricultural Statistics Board, United States Department of 
+Agriculture (USDA).
+
+Cattle on Feed Inventory, Placements, Marketings, and Other Disappearance on 1,000+ Capacity Feedlots - 
+United States: February 1, 2025 and 2026...................................................................  3
+Cattle on Feed Inventory on 1,000+ Capacity Feedlots by Month - States and United States: 2025 and 2026....  4
+Cattle on Feed Inventory on 1,000+ Capacity Feedlots - United States.......................................  4
+
+Cattle on Feed Inventory, Placements, Marketings, and Other Disappearance on
+1,000+ Capacity Feedlots - United States: February 1, 2025 and 2026
+-----------------------------------------------------------------------------------
+                                        :             :             :  Percent of  
+                  Item                  :    2025     :    2026     :previous year 
+-----------------------------------------------------------------------------------
+                                        :   ---- 1,000 head ----        percent    
+                                        :                                          
+On feed January 1 ......................:   11,823        11,450           97      
+Placed on feed during January ..........:    1,822         1,736           95      
+Fed cattle marketed during January .....:    1,869         1,626           87      
+Other disappearance during January .....:       60            55           92      
+On feed February 1 .....................:   11,716        11,505           98      
+-----------------------------------------------------------------------------------
+
+Cattle on Feed Inventory on 1,000+ Capacity Feedlots by Month - States and United States:
+2025 and 2026
+---------------------------------------------------------------------------------------------------
+                  :                 :                 :              February 1, 2026              
+                  :                 :                 :--------------------------------------------
+       State      :February 1, 2025 : January 1, 2026 :              :  Percent of  :  Percent of  
+                  :                 :                 :  Inventory   :previous year :previous month
+---------------------------------------------------------------------------------------------------
+                  :     --------------- 1,000 head --------------          ----- percent ----      
+                  :                                                                                
+Arizona ..........:        231               210              220           95            105      
+California .......:        520               500              510           98            102      
+Colorado .........:      1,030               890              920           89            103      
+Idaho ............:        335               345              350          104            101      
+Iowa .............:        670               680              670          100             99      
+Kansas ...........:      2,370             2,390            2,350           99             98      
+Nebraska .........:      2,590             2,620            2,680          103            102      
+Oklahoma .........:        345               325              330           96            102      
+South Dakota .....:        230               235              230          100             98      
+Texas ............:      2,700             2,530            2,510           93             99      
+Washington .......:        255               270              270          106            100      
+                  :                                                                                
+Other States .....:        440               455              465          106            102      
+                  :                                                                                
+United States ....:     11,716            11,450           11,505           98            100      
+---------------------------------------------------------------------------------------------------
+
+Cattle Other Disappearance on 1,000+ Capacity Feedlots by Month - States and United States:
+2025 and 2026
+---------------------------------------------------------------------------------------------
+Kansas ...........:      10             10             10            100            100      
+                  :                                                                          
+United States ....:      60             55             55            102             95      
+---------------------------------------------------------------------------------------------

@@ -26,7 +26,12 @@ def parse(txt):
     release = datetime.date(int(mr.group(3)), MONTHS[mr.group(1)], int(mr.group(2)))
     segs = re.split(r"\n(?=Cattle on Feed Inventory)", txt)
     if len(segs) < 4: raise ValueError("faltan tablas (%d bloques)" % len(segs))
-    nat, st = segs[1], segs[3]
+    # el indice de contenidos (informes de febrero) y las tablas del ano anterior tambien empiezan por "Cattle on Feed Inventory": se elige por contenido
+    nats = [g for g in segs if re.search(r"United States:\s+\w+ 1, \d{4} and \d{4}", g) and sum(1 for ln in g.split("\n") if ROW.match(ln.strip())) >= 5]
+    sts = [g for g in segs if g.startswith("Cattle on Feed Inventory on 1,000+ Capacity Feedlots by Month - States and United States:") and re.match(r"[^\n]*\n\s*\d{4} and \d{4}\s*\n", g)]
+    if not nats: raise ValueError("tabla nacional incompleta (0 filas)")
+    if not sts: raise ValueError("tabla por estado incompleta")
+    nat, st = nats[0], sts[0]
     mh = re.search(r"United States:\s+(\w+) 1, (\d{4}) and (\d{4})", nat)
     if not mh or mh.group(1) not in MONTHS: raise ValueError("cabecera de la tabla nacional no reconocida")
     inv = datetime.date(int(mh.group(3)), MONTHS[mh.group(1)], 1)
@@ -58,7 +63,7 @@ def parse(txt):
         v = [num(m.group(i)) for i in range(2, 7)]
         if v[0] is None or v[1] is None or v[2] is None: continue
         r = {"state": m.group(1).strip(), "yearAgo": v[0], "prevMonth": v[1], "current": v[2], "pctYearAgo": v[3], "pctPrevMonth": v[4]}
-        if r["state"] == "United States": us = r
+        if r["state"] == "United States": us = r; break  # el bloque trae varias tablas por estado (existencias, entradas, salidas, otras bajas): solo vale la primera
         else: states.append(r)
     if not us or len(states) < 5: raise ValueError("tabla por estado incompleta")
     if abs(us["current"] - c["onFeedEnd"]) > 1: raise ValueError("total por estado (%s) distinto del nacional (%s)" % (us["current"], c["onFeedEnd"]))
