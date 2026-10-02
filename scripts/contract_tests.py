@@ -198,6 +198,27 @@ def cattle_on_feed(doc, errs, warns, stats):
         if prev and not (0.7 < n["current"]["onFeedEnd"] / max(1, n["yearAgo"]["onFeedEnd"]) < 1.4): warns.append("%s: existencias muy distintas de hace un ano" % lab)
         prev = r["inventoryDate"]
     stats["reports"] = len(doc["reports"])
+def us_fertilizers(doc, errs, warns, stats):
+    n = 0; seen = set(); asof = _date(doc["asOf"])
+    if asof is None: errs.append("asOf invalido"); return
+    for p in doc["products"]:
+        for s in p["states"]:
+            n += 1; k = (p["id"], s["state"], s["spec"]); lab = "%s %s" % (p["id"], s["state"])
+            if k in seen: errs.append("%s: fila repetida" % lab)
+            seen.add(k)
+            if not (_num(s["avg"]) and 50 <= s["avg"] <= 3000): errs.append("%s: precio fuera de rango (%s USD/t)" % (lab, s["avg"]))
+            if _num(s.get("min")) and _num(s.get("max")) and not (s["min"] - 0.01 <= s["avg"] <= s["max"] + 0.01): errs.append("%s: promedio fuera de [min, max]" % lab)
+            d = _date(s["date"]); pd = _date(s["prevDate"])
+            if d is None or pd is None: errs.append("%s: fecha invalida" % lab); continue
+            if pd >= d: errs.append("%s: lectura anterior no es anterior" % lab)
+            if d > asof: errs.append("%s: fecha posterior a asOf" % lab)
+            if (asof - d).days > 45: errs.append("%s: dato de hace mas de 45 dias" % lab)
+            h = s["hist"]
+            if h[-1][0] != s["date"] or abs(h[-1][1] - s["avg"]) > 0.01: errs.append("%s: el historico no termina en el ultimo precio" % lab)
+            _asc([x[0] for x in h], lab + " historico", errs)
+            if s.get("yoy") is not None and not (0.3 < s["avg"] / s["yoy"] < 3): warns.append("%s: cambio anual superior a x3" % lab)
+    stats["rows"] = n
+
 def drought(doc, errs, warns, stats):
     for st, rows in list(doc["states"].items()) + [("US", doc["us"]["conus"])]:
         _asc(rows, st, errs, key=lambda r: r[0])

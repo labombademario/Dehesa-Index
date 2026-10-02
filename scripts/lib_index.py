@@ -83,7 +83,7 @@ KINDS = ['PRICE', 'PRODUCTION', 'TRADE', 'CROP', 'CLIMATE', 'INPUT', 'TARIFF', '
 # fichero o carpeta -> (tipo, nombre corto). Los *-stats.json se leen serie a serie (STATS) y se clasifican por su grupo; aqui van el resto de datasets.
 DATASETS = {
     'data/latest.json': ('PRICE', 'Precios de mercado (latest)'), 'data/nass-prices.json': ('PRICE', 'USDA NASS precios'), 'data/ams-grain-daily.json': ('PRICE', 'USDA AMS granos (diario)'),
-    'data/ams': ('PRICE', 'USDA AMS mercados (MARS)'), 'data/us-cash-bids': ('PRICE', 'Precios locales de grano EE. UU. (USDA AMS)'), 'data/denmark-prices.json': ('PRICE', 'Dinamarca precios'), 'data/alberta-weekly.json': ('PRICE', 'Alberta semanal'),
+    'data/ams': ('PRICE', 'USDA AMS mercados (MARS)'), 'data/us-fertilizers.json': ('INPUT', 'Fertilizantes de EE. UU. (USDA AMS)'), 'data/us-cash-bids': ('PRICE', 'Precios locales de grano EE. UU. (USDA AMS)'), 'data/denmark-prices.json': ('PRICE', 'Dinamarca precios'), 'data/alberta-weekly.json': ('PRICE', 'Alberta semanal'),
     'data/eu': ('PRICE', 'Agri-food Data Portal UE'),
     'data/supply-demand.json': ('PRODUCTION', 'USDA PSD oferta y demanda'), 'data/nass-crops.json': ('PRODUCTION', 'USDA NASS cultivos'), 'data/nass-livestock.json': ('PRODUCTION', 'USDA NASS ganaderia'), 'data/cattle-on-feed.json': ('PRODUCTION', 'USDA Cattle on Feed'),
     'data/ers.json': ('PRODUCTION', 'USDA ERS'), 'data/recan.json': ('PRODUCTION', 'RECAN (Espana)'),

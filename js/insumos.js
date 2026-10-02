@@ -1,7 +1,7 @@
 /* Dehesa Index — Costes de los insumos agrarios de EE. UU. Índices de precios pagados por los agricultores (USDA NASS, base 2011 = 100). */
 (function () {
   'use strict';
-  var D = null, SEL = { key: 'NITROGEN', span: 60 };
+  var D = null, F = null, SEL = { key: 'NITROGEN', span: 60 };
   var C1 = '#1d5178', C2 = '#b8a98a';
   var LI = { es: 0, en: 1, fr: 2, it: 3 }, P = 0;
   var SFX = ' - INDEX FOR PRICE PAID, 2011';
@@ -27,6 +27,23 @@
       series: 'Indice', latest: 'Ultimo mese', vsPrev: 'rispetto al mese precedente', vsYear: 'rispetto allo stesso mese dell’anno scorso', hist: 'Andamento', span: 'Periodo', s12: '12 mesi', s36: '3 anni', s60: '5 anni', all: 'Tutti gli indici', name: 'Indice', now: 'Ora', mm: 'Mese', yy: 'Anno', noData: 'Nessun dato.',
       note: 'Fonte: USDA NASS, Agricultural Prices (Quick Stats). Indici dei prezzi pagati con base 2011 = 100: 150 significa prezzi del 50% sopra il 2011. NASS non pubblica più prezzi assoluti di fertilizzanti o carburanti; gli indici sono il riferimento ufficiale disponibile. Questo prodotto usa l’API di NASS ma non è approvato né certificato da NASS.', src: 'Fonte: USDA NASS (dati pubblici)' }
   };
+  var FP = { amoniaco: ['Amoniaco anhidro', 'Anhydrous ammonia', 'Ammoniac anhydre', 'Ammoniaca anidra'], urea: ['Urea (46-0-0)', 'Urea (46-0-0)', 'Urée (46-0-0)', 'Urea (46-0-0)'], dap: ['DAP (18-46-0)', 'DAP (18-46-0)', 'DAP (18-46-0)', 'DAP (18-46-0)'], map: ['MAP (11-52-0)', 'MAP (11-52-0)', 'MAP (11-52-0)', 'MAP (11-52-0)'], potasa: ['Potasa (cloruro potásico)', 'Potash (muriate)', 'Potasse (chlorure)', 'Potassio (cloruro)'], uan: ['Nitrógeno líquido (UAN)', 'Liquid nitrogen (UAN)', 'Azote liquide (UAN)', 'Azoto liquido (UAN)'] };
+  var FT = {
+    es: { h: 'Fertilizantes en EE. UU.: precio por estado', sub: 'Dólares por tonelada corta, precio al agricultor en distribuidor, según los informes estatales de costes de producción de USDA AMS. Cada estado publica con su propio ritmo (quincenal o mensual) y sus propios productos.', st: 'Estado', sp: 'Especificación', pr: 'USD/t', mm: 'vs. lectura anterior', yy: 'vs. hace un año', dt: 'Fecha', src: 'Fuente: USDA AMS Market News (datos públicos)', none: 'Los estados que dejaron de publicar hace más de 45 días no se muestran.' },
+    en: { h: 'U.S. fertilizer: price by state', sub: 'Dollars per short ton, distributor price to farmers, from USDA AMS state production-cost reports. Each state reports on its own schedule (bi-weekly or monthly) and its own products.', st: 'State', sp: 'Specification', pr: 'USD/t', mm: 'vs. previous reading', yy: 'vs. a year ago', dt: 'Date', src: 'Source: USDA AMS Market News (public data)', none: 'States that stopped reporting more than 45 days ago are not shown.' },
+    fr: { h: 'Engrais aux États-Unis : prix par État', sub: 'Dollars par tonne courte, prix distributeur payé par l’agriculteur, d’après les rapports d’État sur les coûts de production de l’USDA AMS. Chaque État publie ses propres produits.', st: 'État', sp: 'Spécification', pr: 'USD/t', mm: 'vs relevé précédent', yy: 'vs il y a un an', dt: 'Date', src: 'Source : USDA AMS Market News (données publiques)', none: 'Les États qui n’ont plus publié depuis plus de 45 jours ne sont pas affichés.' },
+    it: { h: 'Fertilizzanti negli USA: prezzo per Stato', sub: 'Dollari per tonnellata corta, prezzo del distributore all’agricoltore, dai rapporti statali sui costi di produzione dell’USDA AMS. Ogni Stato pubblica i propri prodotti.', st: 'Stato', sp: 'Specifica', pr: 'USD/t', mm: 'vs rilevazione precedente', yy: 'vs un anno fa', dt: 'Data', src: 'Fonte: USDA AMS Market News (dati pubblici)', none: 'Gli Stati che non pubblicano da oltre 45 giorni non sono mostrati.' }
+  };
+  function fertHtml() {
+    if (!F || !F.products || !F.products.length) return '';
+    var t = FT[lang()] || FT.es, th = function (x, r) { return '<th style="padding:8px 6px;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:' + (r ? 'right' : 'left') + '">' + esc(x).toUpperCase() + '</th>'; };
+    var rows = F.products.map(function (p) {
+      return '<tr><td colspan="6" style="padding:12px 6px 4px;font-size:12px;font-weight:700">' + esc(FP[p.id][P]) + '</td></tr>' + p.states.map(function (s) {
+        return '<tr style="border-top:1px solid var(--border)"><td style="padding:8px 6px;font-weight:600">' + esc(s.state) + '</td><td style="padding:8px 6px;color:var(--text-faint);font-size:12.5px">' + esc(p.id === 'potasa' || p.id === 'uan' ? (s.spec.match(/\(([^)]*)\)/) || [0, '—'])[1] : '') + '</td><td style="padding:8px 6px;text-align:right;font-weight:600">' + nf(s.avg, 0) + '</td><td style="padding:8px 6px;text-align:right">' + chg(pct(s.avg, s.prev)) + '</td><td style="padding:8px 6px;text-align:right">' + (s.yoy ? chg(pct(s.avg, s.yoy)) : '—') + '</td><td style="padding:8px 6px;text-align:right;color:var(--text-faint);font-size:12.5px">' + esc(s.date) + '</td></tr>';
+      }).join('');
+    }).join('');
+    return '<section style="margin:6px 0 28px"><h2 style="font-size:20px;margin:0 0 4px">' + esc(t.h) + '</h2><p class="di-movers-hint" style="margin:0 0 10px">' + esc(t.sub) + '</p><div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:560px;font-size:14px"><tr>' + th(t.st) + th(t.sp) + th(t.pr, 1) + th(t.mm, 1) + th(t.yy, 1) + th(t.dt, 1) + '</tr>' + rows + '</table></div><p class="di-movers-hint" style="margin:8px 0 0">' + esc(t.none) + ' ' + esc(t.src) + '</p>' + ci('usda_ams_mars') + '</section>';
+  }
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tr() { P = LI[lang()] || 0; return T[lang()] || T.es; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
@@ -58,7 +75,7 @@
   function render() {
     var t = tr(), root = document.getElementById('in-body');
     document.title = 'Dehesa Index — ' + t.title; document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
-    if (!D) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; return; }
+    if (!D) { root.innerHTML = fertHtml() + '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; return; }
     var all = []; G.forEach(function (g) { Object.keys(g.k).forEach(function (k) { if (ser(k)) all.push({ k: k, g: g, l: g.k[k][P] }); }); });
     if (!all.some(function (x) { return x.k === SEL.key; })) SEL.key = all[0].k;
     var a = ser(SEL.key), last = a[a.length - 1], prev = pm(a), yv = find(a, py(last[0])), shown = DIRange.cut(a, SEL.span);
@@ -70,7 +87,7 @@
     var th = function (x, r) { return '<th style="padding:10px 6px;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:' + (r ? 'right' : 'left') + '">' + esc(x).toUpperCase() + '</th>'; };
     var tbl = '<div style="font-weight:600;margin:20px 0 6px">' + esc(t.all) + ' · ' + esc(last[0]) + '</div><div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:480px;font-size:14px"><tr>' + th(t.name) + th(t.now, 1) + th(t.mm, 1) + th(t.yy, 1) + '</tr>' +
       G.map(function (g) { return '<tr><td colspan="4" style="padding:12px 6px 4px;font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">' + esc(g.l[P]).toUpperCase() + '</td></tr>' + all.filter(function (x) { return x.g === g; }).map(function (x) { var s = ser(x.k), l = s[s.length - 1]; return '<tr data-k="' + esc(x.k) + '" style="border-top:1px solid var(--border);cursor:pointer' + (x.k === SEL.key ? ';background:rgba(29,81,120,.06)' : '') + '"><td style="padding:9px 6px;font-weight:600">' + esc(x.l) + '</td><td style="padding:9px 6px;text-align:right">' + nf(l[1], 1) + '</td><td style="padding:9px 6px;text-align:right">' + chg(pm(s) !== null ? pct(l[1], pm(s)) : null) + '</td><td style="padding:9px 6px;text-align:right">' + chg(find(s, py(l[0])) !== null ? pct(l[1], find(s, py(l[0]))) : null) + '</td></tr>'; }).join(''); }).join('') + '</table></div>';
-    root.innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + esc(t.series) + '<br><select id="in-sel" class="di-compare-select">' + opts + '</select></label><label style="font-size:13px">' + esc(t.span) + '<br><select id="in-span" class="di-compare-select">' + sp + '</select></label></div>' + cards + chart + tbl + '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.note) + '</p><p class="di-movers-hint">' + esc(t.src) + '</p>' + ci('usda_nass');
+    root.innerHTML = fertHtml() + '<h2 style="font-size:20px;margin:0 0 8px">' + esc(t.title) + '</h2><div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + esc(t.series) + '<br><select id="in-sel" class="di-compare-select">' + opts + '</select></label><label style="font-size:13px">' + esc(t.span) + '<br><select id="in-span" class="di-compare-select">' + sp + '</select></label></div>' + cards + chart + tbl + '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.note) + '</p><p class="di-movers-hint">' + esc(t.src) + '</p>' + ci('usda_nass');
     document.getElementById('in-sel').onchange = function (e) { SEL.key = e.target.value; render(); };
     document.getElementById('in-span').onchange = function (e) { SEL.span = parseInt(e.target.value, 10); render(); };
     Array.prototype.forEach.call(root.querySelectorAll('[data-k]'), function (r) { r.onclick = function () { SEL.key = r.getAttribute('data-k'); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }; });
@@ -78,9 +95,10 @@
   window.DehesaShared.init('informacion');
   var prevCb = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prevCb) prevCb.apply(this, arguments); render(); };
+  var fp = fetch('data/us-fertilizers.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (f) { F = f; });
   fetch('data/nass-prices.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) {
     D = d && d.series && Object.keys(d.series).length ? d : null;
     var q = new URLSearchParams(window.location.search); if (q.get('k')) SEL.key = q.get('k');
-    var go = function () { render(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
+    var go = function () { fp.then(render, render); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
   });
 })();

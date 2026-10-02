@@ -1,0 +1,20 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Fertilizantes de EE. UU. (USDA AMS, costes de produccion por estado)",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "asOf", "source", "unit", "products"],
+ "properties": {
+  "schemaVersion": {"type": "integer"},
+  "generatedAt": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"},
+  "asOf": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+  "source": {"type": "object", "required": ["name", "url", "license"], "properties": {"name": {"type": "string", "minLength": 1}, "url": {"type": "string", "pattern": "^https?://"}, "license": {"type": "string", "minLength": 1}}},
+  "unit": {"type": "string", "minLength": 1},
+  "products": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "states"], "properties": {
+   "id": {"type": "string", "enum": ["amoniaco", "urea", "dap", "map", "potasa", "uan"]},
+   "states": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["state", "reportId", "spec", "date", "avg", "prev", "prevDate", "hist"], "properties": {
+    "state": {"type": "string", "minLength": 1}, "reportId": {"type": "integer"}, "spec": {"type": "string", "minLength": 1},
+    "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}, "avg": {"type": "number"}, "min": {"type": ["number", "null"]}, "max": {"type": ["number", "null"]},
+    "prev": {"type": "number"}, "prevDate": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}, "yoy": {"type": ["number", "null"]}, "yoyDate": {"type": ["string", "null"]},
+    "hist": {"type": "array", "minItems": 2, "items": {"type": "array", "minItems": 2, "maxItems": 2}}}}}}}}
+ }
+}

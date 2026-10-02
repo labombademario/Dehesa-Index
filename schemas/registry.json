@@ -339,6 +339,12 @@
    [
     "cattle_on_feed"
    ]
+  ],
+  "us-fertilizers.json": [
+   "us-fertilizers",
+   [
+    "us_fertilizers"
+   ]
   ]
  },
  "globs": {
