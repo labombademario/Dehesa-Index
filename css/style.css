@@ -1541,3 +1541,29 @@ html[data-theme="dark"] .pp-live{background:#E9E2CE;color:#1E1B12}
 .di-cite-s{margin-top:4px;font-weight:600}.di-cite-s.pend{color:#9a5b00}[data-theme="dark"] .di-cite-s.pend{color:#e0a64a}.di-cite-n{margin:2px 0}.di-cite-a{margin-top:4px}
 .pp-cites{display:flex;flex-wrap:wrap;gap:0 18px;margin-top:6px}.pp-cites .di-cite{margin-top:2px}.pp-kc{display:flex;flex-direction:column}.pp-kc>button{flex:1}
 .di-tape .di-cite{color:rgba(251,249,243,.62);margin-top:2px}.di-tape .di-cite>summary:hover{color:#FBF9F3}.di-tape .di-cite-b{background:#1f2a22;border-color:rgba(251,249,243,.2);color:rgba(251,249,243,.82)}.di-tape .di-cite-r>span:first-child{color:rgba(251,249,243,.55)}.di-tape .di-cite-s.pend{color:#e0a64a}
+
+/* Pantallas tactiles (iPhone, iPad, Android): iOS Safari amplia la pagina al enfocar un campo con letra < 16px; y los dedos necesitan objetivos de ~32px o mas */
+@media (pointer: coarse) {
+  input:not([type=checkbox]):not([type=radio]):not([type=range]), select, textarea { font-size: 16px !important; }
+  .di-footer-grid ul a, .di-footer-links a { display: inline-block; padding: 7px 0; }
+  summary { padding-top: 6px; padding-bottom: 6px; }
+  .pp-q, .pp-share { min-width: 32px; min-height: 32px; }
+  .eusq-b { padding: 8px 6px; }
+  .di-info-list a, .di-src-group summary { min-height: 32px; }
+  .di-cite > summary { min-height: 32px; padding: 8px 0; }
+  .di-cite-a a, .di-cite-r a, .pt-src a { display: inline-block; padding: 7px 0; }
+}
+
+/* Portada, "Ultimo dato de cada mercado" en movil y tablet: la fuente (desplegable) estaba atrapada en una celda de ~4em y se partia en 6 lineas.
+   Cada fila pasa a rejilla: mercado + fuente a todo el ancho disponible, valor y variacion a la derecha. */
+@media (max-width: 900px) {
+  .di-tape-t, .di-tape-t tbody { display: block; }
+  .di-tape-t tr { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; column-gap: 12px; align-items: baseline; border-top: 1px solid rgba(251, 249, 243, .10); padding: 7px 0; }
+  .di-tape-t tr:first-child { border-top: 0; }
+  .di-tape-t tr.first { border-top-color: rgba(251, 249, 243, .26); }
+  .di-tape-t th, .di-tape-t td { border-top: 0 !important; padding: 0 !important; width: auto !important; }
+  .di-tape-t th { grid-column: 1 / -1; padding-bottom: 2px !important; }
+  .di-tape-t tr:not(.first) th { height: 0; overflow: hidden; padding: 0 !important; }
+  .di-tape-t .d { display: none; }
+  .di-tape-t .c { white-space: nowrap; }
+}
