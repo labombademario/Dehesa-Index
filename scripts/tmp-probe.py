@@ -14,6 +14,11 @@ for fy in ("2024-25", "2025-26", "2026-27"):
         wd = G.week_dates(keep); log.append("   resueltas: " + json.dumps({str(k[1]): v for k, v in sorted(wd.items())}))
     except Exception as e: log.append("   week_dates ERROR %r" % e)
     anom_weeks[fy] = set(multi)
+    try:
+        mism = {w: (list(c)[0], wd[(keep[0]["Crop Year"], w)]) for w, c in txt.items() if G.iso(list(c)[0]) != wd[(keep[0]["Crop Year"], w)]}
+        log.append("   texto != fecha resuelta: " + json.dumps(mism))
+        for w in mism: multi[w] = {"x": 1}
+    except Exception as e: log.append("   mism ERROR %r" % e)
     # fixture: semanas anomalas +-1, mas semana 1 y 52
     want = set()
     for w in list(multi) + ([1, 2, 52, 53] if fy == "2024-25" else []):
