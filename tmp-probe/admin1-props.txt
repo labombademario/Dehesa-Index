@@ -1,0 +1,9 @@
+AUS|Western Australia|None|AU-WA|State|Western Australia
+AUS|Northern Territory|None|AU-NT|Territory|Northern Territory
+AUS|South Australia|None|AU-SA|State|South Australia
+AUS|Queensland|None|AU-QLD|State|Queensland
+AUS|Tasmania|None|AU-TAS|State|None
+AUS|Victoria|None|AU-VIC|State|Victoria
+AUS|Australian Capital Territory|None|AU-ACT|Territory|Canberra
+AUS|Jervis Bay Territory|None|AU-X02~|Territory|Jervis Bay
+AUS|New South Wales|None|AU-NSW|State|New South Wales
