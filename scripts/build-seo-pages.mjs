@@ -88,3 +88,4 @@ const block = A + '\n' + urls.sort().map(u => '  <url><loc>' + u + '</loc></url>
 if (sm.includes(A)) sm = sm.replace(new RegExp(A + '[\\s\\S]*?' + B), block); else sm = sm.replace('</urlset>', block + '\n</urlset>');
 fs.writeFileSync('sitemap.xml', sm);
 console.log('paginas SEO', n);
+await import('./build-product-pages.mjs');  // paginas de producto (precios/<producto>/) con el ultimo precio real

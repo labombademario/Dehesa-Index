@@ -153,13 +153,13 @@ sources:
     message: Tipos de cambio históricos (BCE)
   - id: seo-pages
     name: Rebuild SEO landing pages
-    cron: ['10 5 * * 1']
+    cron: ['10 5 * * *']
     runner: node
     script: scripts/build-seo-pages.mjs
     timeout: 10
     continue: true
     data: []
-    extra: ['!datos', '!sitemap.xml']
+    extra: ['!datos', '!precios', '!sitemap.xml']
     check: node scripts/qa-seo.mjs
     message: Páginas SEO por país y categoría
   - id: us-cash-bids

@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://dehesaindex.com/</loc></url>
   <url><loc>https://dehesaindex.com/precios.html</loc></url>
-  <url><loc>https://dehesaindex.com/precios/trigo/</loc></url>
-  <url><loc>https://dehesaindex.com/precios/maiz/</loc></url>
-  <url><loc>https://dehesaindex.com/precios/leche/</loc></url>
-  <url><loc>https://dehesaindex.com/precios/urea/</loc></url>
-  <url><loc>https://dehesaindex.com/precios/diesel/</loc></url>
   <url><loc>https://dehesaindex.com/noticias.html</loc></url>
   <url><loc>https://dehesaindex.com/calendario.html</loc></url>
   <url><loc>https://dehesaindex.com/informacion.html</loc></url>
@@ -232,4 +227,32 @@
   <url><loc>https://dehesaindex.com/datos/pt-production/</loc></url>
   <url><loc>https://dehesaindex.com/datos/pt-trade/</loc></url>
   <!-- seo-pages:end -->
+  <!-- product-pages:start -->
+  <url><loc>https://dehesaindex.com/precios/arroz/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/avena/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/azucar/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/cebada/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/centeno/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/cerdo/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/colza/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/cordero/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/dap/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/diesel/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/gas_natural/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/harina_soja/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/huevos/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/leche/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/leche_polvo/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/maiz/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/mantequilla/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/oliva/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/petroleo_brent/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/petroleo_wti/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/pollo/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/potasa/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/sorgo/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/trigo/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/urea/</loc></url>
+  <url><loc>https://dehesaindex.com/precios/vaca/</loc></url>
+  <!-- product-pages:end -->
 </urlset>

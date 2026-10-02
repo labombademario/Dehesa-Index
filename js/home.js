@@ -313,7 +313,7 @@
     var lang = window.DehesaShared.getLang();
     var esc = window.DehesaShared.esc;
     var t = STRINGS[lang] || STRINGS.es;
-    document.title = 'Dehesa Index — ' + (lang === 'es' ? 'Inicio' : (lang === 'fr' ? 'Accueil' : (lang === 'it' ? 'Home' : 'Home')));
+    document.title = 'Dehesa Index — ' + ({ es: 'Precios agrícolas de EE. UU. y Europa', en: 'US and European farm commodity prices', fr: 'Prix agricoles États-Unis et Europe', it: 'Prezzi agricoli USA ed Europa' }[lang] || 'US and European farm commodity prices');
     renderExplore(lang, esc);
     document.getElementById('home-h1').textContent = t.h1;
     document.getElementById('home-sub').textContent = t.sub;
