@@ -249,6 +249,23 @@ def eu_drought(doc, errs, warns, stats):
         if sum(eu[:3]) < min(sum(es[:3]), 100) * 0.05 and sum(es[:3]) > 90: warns.append("UE-27 sin sequia aunque Espana este casi toda en sequia")
     stats["countries"] = len(doc["countries"])
 
+def canada_drought(doc, errs, warns, stats):
+    ps = doc["periods"]; n = len(ps); ds = [_date(x) for x in ps]
+    if any(d is None for d in ds): errs.append("periodo con fecha invalida"); return
+    _asc(ps, "periodos", errs)
+    if doc["asOf"] != ps[-1]: errs.append("asOf (%s) no es el ultimo mes (%s)" % (doc["asOf"], ps[-1]))
+    if any((d + datetime.timedelta(days=1)).day != 1 for d in ds): errs.append("los periodos son el ultimo dia del mes")
+    if (TODAY - ds[-1]).days > 75: warns.append("ultimo mes de hace mas de 75 dias (%s)" % ps[-1])
+    if doc["classes"] != ["D0", "D1", "D2", "D3", "D4"]: errs.append("clases inesperadas: %s" % doc["classes"])
+    for c in ("SK", "AB", "MB", "ON", "QC", "BC"):
+        if c not in doc["provinces"]: errs.append("falta %s" % c)
+    for c, x in doc["provinces"].items():
+        if len(x["v"]) != n: errs.append("%s: %d filas para %d meses" % (c, len(x["v"]), n)); continue
+        for i, r in enumerate(x["v"]):
+            if len(r) != 5 or any((not _num(v)) or v < 0 or v > 100 for v in r): errs.append("%s %s: porcentaje fuera de 0-100" % (c, ps[i])); break
+            if any(r[k] < r[k + 1] for k in range(4)): errs.append("%s %s: las clases son acumulativas (D0 >= D1 >= ... >= D4)" % (c, ps[i])); break
+    stats["provinces"] = len(doc["provinces"])
+
 def us_dairy(doc, errs, warns, stats):
     ids = set(); n = 0; rng = {"mantequilla": (0.5, 6), "cheddar": (0.5, 6), "suero": (0.1, 3), "leche_polvo": (0.3, 5)}
     for p in doc["products"]:

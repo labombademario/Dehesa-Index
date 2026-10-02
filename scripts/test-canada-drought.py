@@ -26,6 +26,18 @@ none = {"type": "FeatureCollection", "features": []}
 r = d.shares({"D0": half, "D1": half, "D2": none, "D3": none, "D4": none}, prov)["XX"]
 T("mitad de la provincia en sequia = 50%% (D0, D1) y 0%% (D2-D4): %s" % r, abs(r[0] - 50) < 1 and abs(r[1] - 50) < 1 and r[2:] == [0.0, 0.0, 0.0])
 T("la sequia fuera de la provincia no cuenta", d.shares({c: {"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {}, "geometry": {"type": "Polygon", "coordinates": [[list(merc(*p)) for p in ring(-90, -85, 40, 45)] + [list(merc(-90, 40))]]}}]} for c in d.CLASSES}, prov)["XX"] == [0.0] * 5)
+none = {"type": "FeatureCollection", "features": []}
+r2 = d.shares({"D0": half, "D1": half}, prov)["XX"]
+T("si la fuente omite D2-D4 (sin area) valen 0 %%: %s" % r2, abs(r2[0] - 50) < 1 and r2[2:] == [0.0, 0.0, 0.0])
+def bad(files):
+    try: d.shares(files, prov); return False
+    except ValueError: return True
+T("falta D0 -> error", bad({"D1": half}))
+T("hay D2 pero falta D1 -> error", bad({"D0": half, "D2": half}))
+# poligono con autointerseccion (como los que hizo fallar a GEOS en la fuente): no debe romper el calculo
+bow = {"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {}, "geometry": {"type": "Polygon", "coordinates": [[list(merc(*p)) for p in [(-109, 51), (-103, 54), (-109, 54), (-103, 51), (-109, 51)]]]}}]}
+rb = d.shares({"D0": bow}, prov)["XX"][0]
+T("poligono autointersectado no rompe el calculo (%s %%)" % rb, 0 < rb < 50)
 # 3. referencia de provincias: superficies conocidas (km2, con aguas interiores), tolerancia 6 %
 P = d.provinces(); km = {k: v[1].area / 1e6 for k, v in P.items()}
 known = {"SK": 651900, "AB": 661800, "MB": 647800, "ON": 1076400, "QC": 1542100, "BC": 944700, "NS": 55300, "PE": 5660}

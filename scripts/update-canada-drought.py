@@ -55,24 +55,32 @@ def provinces():
     d = json.loads(REF.read_text(encoding="utf-8")); out = {}
     for f in d["features"]:
         n = f["properties"]["name"]
-        if n in CODES: g = transform(tr_ll, shape(f["geometry"]).buffer(0)); out[CODES[n]] = (n, g)
+        if n in CODES: g = transform(tr_ll, shape(f["geometry"])); g = g if g.is_valid else g.buffer(0); out[CODES[n]] = (n, g)
     if len(out) != 13: raise ValueError("faltan provincias en la referencia: %d" % len(out))
     return out
+def inter(g, pg):
+    """Area de la interseccion; ante una geometria que GEOS rechaza se reintenta con precision fija de 1 m (error despreciable frente a millones de km2)."""
+    try: return g.intersection(pg).area
+    except Exception:
+        from shapely import set_precision
+        return set_precision(g, 1.0).intersection(set_precision(pg, 1.0)).area
 def shares(files, prov):
     """{codigo: [% D0, D1, D2, D3, D4]} de la superficie total de cada provincia."""
     from shapely.geometry import shape
     from shapely.ops import transform, unary_union
-    geo = {}
+    from shapely.validation import make_valid
+    geo = {}; present = [c for c in CLASSES if c in files]
+    # La fuente omite el fichero de una clase cuando no hay area en ella (p. ej. sin D4): vale si las presentes son D0..Dk seguidas; D0 siempre debe estar
+    if present != CLASSES[:len(present)] or "D0" not in present: raise ValueError("clases presentes inesperadas: %s" % present)
     for c in CLASSES:
         fc = files.get(c)
-        if fc is None: raise ValueError("falta la clase " + c)
-        gs = [transform(tr_merc, shape(f["geometry"]).buffer(0)) for f in fc["features"] if f.get("geometry")]
+        gs = [make_valid(transform(tr_merc, shape(f["geometry"]))) for f in (fc["features"] if fc else []) if f.get("geometry")]
         geo[c] = unary_union(gs) if gs else None
     out = {}
     for code, (_, pg) in prov.items():
         row = []
         for c in CLASSES:
-            g = geo[c]; a = 0.0 if g is None or not g.intersects(pg) else g.intersection(pg).area
+            g = geo[c]; a = 0.0 if g is None or not g.intersects(pg) else inter(g, pg)
             row.append(round(min(100.0, 100.0 * a / pg.area), 1))
         out[code] = row
     return out

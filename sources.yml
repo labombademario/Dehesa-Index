@@ -156,6 +156,16 @@ sources:
     continue: true
     data: [eu-drought.json]
     message: Datos sequia Europa (EDO CDI)
+  - id: canada-drought
+    name: Update Canada drought (Canadian Drought Monitor)
+    cron: ['20 8 * * 2,4']
+    pre: ['python3 -m pip install --quiet shapely']
+    script: scripts/update-canada-drought.py
+    timeout: 40
+    script_timeout: 30
+    continue: true
+    data: [canada-drought.json]
+    message: Datos sequia Canada (Canadian Drought Monitor)
   - id: eu-farm-economics
     name: Update EU farm costs and income (Eurostat EAA)
     cron: ['15 6 * * 3']

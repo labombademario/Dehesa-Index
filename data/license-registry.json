@@ -1672,6 +1672,11 @@
    "sources": [
     "cgc"
    ]
+  },
+  "data/canada-drought.json": {
+   "sources": [
+    "aafc_drought"
+   ]
   }
  },
  "derived": [
