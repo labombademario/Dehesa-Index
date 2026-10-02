@@ -12,17 +12,10 @@ jobs:
       - uses: actions/checkout@v6
       - run: |
           mkdir -p scripts/tmp
-          curl -fsSL -u "$MARS_API_KEY:" -H 'Accept: application/json' "https://marsapi.ams.usda.gov/services/v1.2/reports" -o scripts/tmp/mars-reports.json
-          python3 - <<'PY'
-          import json
-          d=json.load(open('scripts/tmp/mars-reports.json'))
-          a=d if isinstance(d,list) else d.get('results',d)
-          import re
-          out=[x for x in a if re.search(r'cheese|dairy|butter|lamb',json.dumps(x),re.I)]
-          json.dump(out,open('scripts/tmp/mars-dairy-list.json','w'),indent=0)
-          print(len(a),len(out))
-          PY
-          rm scripts/tmp/mars-reports.json
+          for s in 1083 1084 1085 1092; do
+            curl -fsSL -u "$MARS_API_KEY:" -H 'Accept: application/json' "https://marsapi.ams.usda.gov/services/v1.2/reports/$s?allSections=true&q=report_begin_date=09/01/2026:09/30/2026" -o scripts/tmp/cheese-$s.json || echo "fail $s"
+          done
+          ls -la scripts/tmp
       - run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/tmp; git commit -qm "TMP: sondeo MARS"; git pull -q --rebase --autostash; git push
+          git add scripts/tmp; git commit -qm "TMP: sondeo queso MARS"; git pull -q --rebase --autostash; git push
