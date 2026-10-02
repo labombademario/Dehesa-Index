@@ -239,7 +239,7 @@
     var has = {}; Object.keys(M.states).forEach(function (k) { if (M.states[k].commodities[ST.c]) has[k] = 1; });
     var svg = '<svg viewBox="' + window.DEHESA_US_STATES.viewBox + '" style="width:100%;max-width:560px;height:auto;display:block" role="group" aria-label="' + esc(t.mapTitle) + '">' + window.DEHESA_US_STATES.states.map(function (s) {
       var on = has[s.id], sel = s.id === ST.s;
-      return '<path data-st="' + s.id + '" d="' + s.d + '" fill="' + (on ? (sel ? '#1f5a30' : '#7fb48d') : '#e6e2d6') + '" stroke="' + (sel ? '#111' : '#fff') + '" stroke-width="' + (sel ? 1.8 : 0.8) + '" stroke-linejoin="round"' + (on ? ' style="cursor:pointer" tabindex="0" role="button" aria-label="' + esc(M.states[s.id].name) + '"' : '') + '></path>';
+      return '<path data-st="' + s.id + '" d="' + s.d + '" fill="' + (on ? (sel ? '#1f5a30' : '#7fb48d') : '#e6e2d6') + '" stroke="' + (sel ? '#111' : '#fff') + '" stroke-width="' + (sel ? 1.8 : 0.8) + '" stroke-linejoin="round"' + (on ? ' style="cursor:pointer" tabindex="0" role="button" data-equiv="pl-s" aria-label="' + esc(M.states[s.id].name) + '"' : '') + '></path>';
     }).join('') + '</svg>';
     return svg + '<div class="di-movers-hint" style="margin-top:6px"><span style="display:inline-block;width:10px;height:10px;background:#7fb48d;border-radius:2px"></span> ' + esc(t.mapLegend) + ' &nbsp; <span style="display:inline-block;width:10px;height:10px;background:#e6e2d6;border-radius:2px"></span> ' + esc(t.mapNone) + ' · ' + esc(t.clickState) + '</div><p class="di-movers-hint">' + esc(t.mapNote) + '</p>';
   }

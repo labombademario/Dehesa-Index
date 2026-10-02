@@ -38,6 +38,8 @@ for (const [n, url] of PAGES) {
         if (!vis(el) || hiddenInDetails(el)) continue; const r = el.getBoundingClientRect();
         if (r.right > vw + 1 && !scrollAncestor(el) && !el.closest('[aria-hidden="true"]') && getComputedStyle(el).position !== 'fixed') res.overflowers.push(sel(el) + ' +' + Math.round(r.right - vw));
         if (/^(A|BUTTON|SELECT|INPUT|TEXTAREA|SUMMARY)$/.test(el.tagName) || el.getAttribute('role') === 'button' || el.getAttribute('role') === 'tab') {
+          // WCAG 2.5.8 (equivalente): un objetivo pequeno con data-equiv="<id>" es valido si ese control (p. ej. el selector de estado) existe y es visible
+          if (el.getAttribute('data-equiv') && document.getElementById(el.getAttribute('data-equiv')) && vis(document.getElementById(el.getAttribute('data-equiv')))) continue;
           if ((el.tagName === 'INPUT' && /hidden|checkbox|radio/.test(el.type)) || el.disabled) continue;
           if (el.tagName === 'A' && getComputedStyle(el).display === 'inline' && (!el.closest('nav,button,li,td,th') || (el.parentElement && el.parentElement.textContent.trim().length > el.textContent.trim().length + 3))) continue;  // enlaces en linea de un parrafo: exentos en WCAG 2.2
           if ((r.width < 24 || r.height < 24) && !spacingOk(el, r)) res.small.push(sel(el) + ' ' + Math.round(r.width) + 'x' + Math.round(r.height) + ' "' + (el.textContent || el.getAttribute('aria-label') || '').trim().slice(0, 18) + '"');
