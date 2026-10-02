@@ -25,6 +25,11 @@ PROVINCES = {"Manitoba", "Saskatchewan", "Alberta", "British Columbia"}
 KEEP_YEARS = 3
 def iso(s):
     d, m, y = s.split("/"); return datetime.date(int(y), int(m), int(d)).isoformat()
+def num(s):
+    """Cifras de la CGC: '12.3', '1,234.5' (miles) y '(1.1)' = negativo (ajuste contable, p. ej. existencias)."""
+    s = s.strip().replace(",", "")
+    return -float(s[1:-1]) if s.startswith("(") and s.endswith(")") else float(s)
+NEED = {"Crop Year", "Grain Week", "Week Ending Date", "worksheet", "metric", "period", "grain", "grade", "Region", "Ktonnes"}
 def crop_years(today=None):
     t = today or datetime.date.today(); start = t.year if t.month >= 8 else t.year - 1
     return ["%d-%02d" % (y, (y + 1) % 100) for y in range(start, start - KEEP_YEARS, -1)]
@@ -35,7 +40,7 @@ def total(rows, worksheet, metric, period, regions=None):
         if r["worksheet"] != worksheet or r["metric"] != metric or r["period"] != period or r["grain"] not in GRAINS: continue
         if r["Ktonnes"] in ("", None): continue
         if regions and r["Region"] not in regions: continue
-        k = (r["grain"], iso(r["Week Ending Date"]), r["Region"]); v = float(r["Ktonnes"])
+        k = (r["grain"], iso(r["Week Ending Date"]), r["Region"]); v = num(r["Ktonnes"])
         if r["grade"] == "All grades combined": cell[k]["all"] = (cell[k]["all"] or 0.0) + v
         else: cell[k]["sum"] += v
     out = defaultdict(float)
@@ -65,7 +70,10 @@ def fetch(fy):
             with urllib.request.urlopen(req, timeout=180) as r: return r.read().decode("utf-8", "replace")
         except Exception as e: last = e; time.sleep(5 * (i + 1))
     raise RuntimeError("%s: %r" % (fy, last))
-def rows_of(text): return list(csv.DictReader(io.StringIO(text)))
+def rows_of(text):
+    rd = csv.DictReader(io.StringIO(text))
+    if not NEED <= set(rd.fieldnames or []): raise ValueError("columnas inesperadas: %s" % (rd.fieldnames,))
+    return list(rd)
 def main():
     args = sys.argv[1:]; outp = OUT; fx = {}
     if "--out" in args: i = args.index("--out"); outp = Path(args[i + 1]); del args[i:i + 2]
