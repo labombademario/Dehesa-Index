@@ -1,0 +1,15 @@
+1083 report_begin_date=01/01/2024:10/01/2026 0 {}
+1083 report_date=09/01/2026:10/01/2026 0 {}
+1083 report_end_date=09/01/2026:10/01/2026 0 {}
+1092 report_begin_date=01/01/2024:10/01/2026 0 {}
+1092 report_date=09/01/2026:10/01/2026 0 {}
+1092 report_end_date=09/01/2026:10/01/2026 0 {}
+1623 report_begin_date=01/01/2024:10/01/2026 ERR 'report_date'
+1623 report_date=09/01/2026:10/01/2026 0 {}
+1623 report_end_date=09/01/2026:10/01/2026 0 {}
+1603 report_begin_date=01/01/2024:10/01/2026 3445 {'2024': 1255, '2025': 1250, '2026': 940}
+   {"report_date": "10/01/2026", "report_title": "CME Group - Daily Cash Trading - Week to Date", "package": "N/A"}
+1603 report_date=09/01/2026:10/01/2026 110 {'2026': 110}
+   {"report_date": "10/01/2026", "report_title": "CME Group - Daily Cash Trading - Week to Date", "package": "N/A"}
+1603 report_end_date=09/01/2026:10/01/2026 110 {'2026': 110}
+   {"report_date": "10/01/2026", "report_title": "CME Group - Daily Cash Trading - Week to Date", "package": "N/A"}
