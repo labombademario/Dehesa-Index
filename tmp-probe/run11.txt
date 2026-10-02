@@ -1,0 +1,7 @@
+grain rc=0 campana 2026-27 28222 filas
+campana 2025-26 218374 filas
+campana 2024-25 219182 filas
+escrito canada-grain.json 112 semanas, 12 granos, ultima 2026-09-27
+ 
+fixture 2025-26 2408 filas
+fixture 2026-27 3202 filas
