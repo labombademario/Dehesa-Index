@@ -4,28 +4,41 @@ out = []
 def get(url, n=None):
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 Dehesa-Index-data-bot"})
-        r = urllib.request.urlopen(req, timeout=90); b = r.read()
+        r = urllib.request.urlopen(req, timeout=120); b = r.read()
         return r.status, r.headers.get("content-type"), len(b), (b if n is None else b[:n]).decode("utf-8", "replace")
     except Exception as e:
         return "ERR", repr(e), 0, ""
-s,t,n,b = get("https://agriculture.canada.ca/atlas/data_donnees/canadianDroughtMonitor/data_donnees/geoJSON/")
-out.append("== drought geojson dir %s %s %s" % (s,t,n)); out.append(re.sub(r"\s+"," ",b)[:3000])
-links = re.findall(r'href="([^"]+)"', b)
-out.append("links: " + " | ".join(links[:60]))
-for l in links:
-    if re.search(r"\.(zip|json|geojson)$", l, re.I):
-        u = l if l.startswith("http") else "https://agriculture.canada.ca" + (l if l.startswith("/") else "/atlas/data_donnees/canadianDroughtMonitor/data_donnees/geoJSON/" + l)
-        s,t,n,b = get(u, 1500); out.append("== %s -> %s %s %s\n%s" % (u,s,t,n,b)); break
-s,t,n,b = get("https://www.grainscanada.gc.ca/en/grain-research/statistics/grain-statistics-weekly/")
-out.append("== CGC GSW page %s %s" % (s,n)); out.append(" | ".join(re.findall(r'href="([^"]*(?:csv|gsw)[^"]*)"', b)[:50]))
-s,t,n,b = get("https://open.canada.ca/data/api/action/package_show?id=4c513dab-cdd0-471d-80f8-7da9f06fa654")
-try:
-    j=json.loads(b); rs=j["result"]["resources"]; out.append("CGC resources %d, last: %s" % (len(rs), [(x.get("format"),x.get("url"),x.get("name")) for x in rs[-8:]]))
-except Exception as e: out.append("pkg parse "+repr(e))
-try:
-  req = urllib.request.Request("https://www150.statcan.gc.ca/t1/wds/rest/getCubeMetadata", data=json.dumps([{"productId":18100122},{"productId":18100112}]).encode(), headers={"User-Agent":"Dehesa-Index-data-bot/1.0","Content-Type":"application/json"})
-  for r in json.loads(urllib.request.urlopen(req,timeout=60).read()):
-    r=r["object"]; out.append("== %s %s freq %s %s-%s" % (r["productId"], r["cubeTitleEn"], r.get("frequencyCode"), r.get("cubeStartDate"), r.get("cubeEndDate")))
-    for d in r["dimension"]: out.append("  dim %s: %d: %s" % (d["dimensionNameEn"], len(d["member"]), "; ".join(m["memberNameEn"] for m in d["member"][:30])))
-except Exception as e: out.append("statcan ERR "+repr(e))
-open("tmp-probe/probe3.txt","w").write("\n".join(out)[:60000])
+def save():
+    open("tmp-probe/probe4.txt","w").write("\n".join(out)[:60000])
+base = "https://agriculture.canada.ca/atlas/data_donnees/canadianDroughtMonitor/data_donnees/geoJSON/areasofDrought/"
+s,t,n,b = get(base)
+rows = re.findall(r'href="([^"?]+)"[^<]*</a>\s*</td><td[^>]*>([^<]*)</td><td[^>]*>([^<]*)', b)
+out.append("== drought dir %s %s entries; last 25:" % (s, len(rows)))
+for r in rows[-25:]: out.append("  %s | %s | %s" % r)
+save()
+files = [r[0] for r in rows if r[0].lower().endswith(("json", "zip"))]
+if files:
+    u = base + files[-1]
+    s,t,n,b = get(u)
+    out.append("== %s -> %s %s %s bytes" % (u, s, t, n))
+    try:
+        j = json.loads(b); out.append("type %s features %d" % (j.get("type"), len(j.get("features", []))))
+        out.append("crs " + str(j.get("crs")))
+        for f in j["features"][:6]:
+            out.append("  props " + json.dumps(f["properties"], ensure_ascii=False)[:400] + " geom " + f["geometry"]["type"] + " npts " + str(len(json.dumps(f["geometry"]["coordinates"]))))
+    except Exception as e: out.append("parse " + repr(e) + " " + b[:500])
+save()
+for u in ("https://www.grainscanada.gc.ca/en/grain-research/statistics/grain-statistics-weekly/2026-27/gsw-shg-en.csv",
+          "https://www.grainscanada.gc.ca/en/grain-research/statistics/grain-statistics-weekly/2025-26/gsw-shg-en.csv"):
+    s,t,n,b = get(u)
+    out.append("== %s -> %s %s %s bytes" % (u, s, t, n))
+    lines = b.splitlines(); out.append("lines %d" % len(lines))
+    out.extend(lines[:12]); out.extend(["..."] + lines[-4:])
+    if n > 2000:
+        cols = lines[0].split(",") if lines else []
+        out.append("distinct (col1..3) sample:")
+        for i in (1, 2, 3, 4):
+            vals = sorted({l.split(",")[i] for l in lines[1:] if l.count(",") > i})
+            out.append("  col%d: %s" % (i, vals[:40]))
+    save()
+save()
