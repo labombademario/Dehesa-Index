@@ -38,6 +38,11 @@
     var dh = window.DehesaChart ? window.DehesaChart.attr(spec) : '';
     return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" role="img" aria-label="Dehesa Index" style="display:block;touch-action:pan-y"' + dh.replace(' style="touch-action:pan-y"', '') + '>' + g + '<polyline fill="none" stroke="' + (other ? 'currentColor' : 'var(--accent)') + '" stroke-opacity="' + (other ? '.45' : '1') + '" stroke-width="2" stroke-linejoin="round" points="' + line(series) + '"/>' + (other ? '<polyline fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" points="' + line(other) + '"/>' : '') + '</svg>';
   }
+  function derivedCite() {
+    var Q = window.DICite; if (!Q || !DATA || !DATA.included) return '';
+    var seen = {}, ids = []; DATA.included.forEach(function (x) { if (x.sourceId && !seen[x.sourceId]) { seen[x.sourceId] = 1; ids.push(x.sourceId); } });
+    return Q.derived(ids, { what: DATA.methodology ? (DATA.methodology[window.DehesaShared.getLang()] || DATA.methodology.es || '') : '' });
+  }
   function render() {
     var el = document.getElementById('home-dehesa-index');
     if (!el || !DATA) return;
@@ -53,7 +58,7 @@
       '<span style="font-size:13px"><b>' + pct(DATA.changeMoMPct) + '</b> ' + t.mom + '<br><b>' + pct(DATA.changeYoYPct) + '</b> ' + t.yoy + '</span></div>' +
       chart(DATA.series) + '<div class="di-movers-hint" style="margin-top:6px">' + t.period + DATA.lastPeriod + '</div></div>' +
       '<div><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:6px">' + t.groups + '</div>' + rows + '</div></div>' +
-      '<p class="di-movers-hint" style="margin-top:10px">' + (REG === 'us' ? t.usNote + ' ' : '') + t.note + ' <a href="metodologia.html#indice">' + t.link + '</a></p>' +
+      '<p class="di-movers-hint" style="margin-top:10px">' + (REG === 'us' ? t.usNote + ' ' : '') + t.note + ' <a href="metodologia.html#indice">' + t.link + '</a></p>' + derivedCite() +
       '<details id="dix-custom" style="margin-top:18px"' + (document.getElementById('dix-custom') && document.getElementById('dix-custom').open ? ' open' : '') + '><summary style="cursor:pointer;font-weight:600">' + t.custom + '</summary><p class="di-movers-hint" style="margin:8px 0 12px">' + t.customHint + '</p><div class="di-card" style="padding:20px" id="dix-custom-body"></div></details>';
     var rs = document.getElementById('dix-region'); if (rs) rs.onchange = function () { REG = rs.value; DATA = DS[REG]; W = null; try { var u = new URL(location.href); if (REG === 'eu') u.searchParams.delete('ix'); else u.searchParams.set('ix', REG); history.replaceState(null, '', u.toString()); } catch (e) {} render(); };
     renderCustom();
@@ -88,7 +93,7 @@
   var box = document.getElementById('home-dehesa-index');
   if (!box) return;
   function load(f) { return fetch(f).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
-  Promise.all([load('data/dehesa-index.json'), load('data/dehesa-index-us.json')]).then(function (a) {
+  Promise.all([load('data/dehesa-index.json'), load('data/dehesa-index-us.json'), (window.DICite ? window.DICite.load() : null)]).then(function (a) {
     [['eu', a[0]], ['us', a[1]]].forEach(function (x) { if (x[1] && x[1].series && x[1].series.length > 1) DS[x[0]] = x[1]; });
     if (!DS.eu) return;
     var q = ''; try { q = new URLSearchParams(location.search).get('ix') || ''; } catch (e) {}

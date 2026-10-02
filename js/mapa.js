@@ -318,7 +318,7 @@
     var t = tr();
     var btn = function (k) { return '<button type="button" class="di-link-btn" data-layer="' + k + '" aria-pressed="' + (SEL.layer === k) + '" style="' + (SEL.layer === k ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:14px">' + (t.layers[k] || ct().layers[k]) + '</button>'; };
     document.getElementById('mapa-body').innerHTML = '<div style="margin-bottom:12px">' + btn('price') + btn('precip') + btn('temp') + (SD ? btn('prod') + btn('exp') + btn('imp') + btn('stock') : '') + (CROPS && window.DEHESA_US_STATES ? btn('crops') : '') + (DROUGHT && window.DEHESA_US_STATES ? btn('drought') : '') + (ESR ? btn('buyers') : '') + (GATS ? btn('trade') : '') + '</div><div id="mapa-controls" style="margin-bottom:10px"></div><div id="mapa-legend"></div>' +
-      '<div style="margin:0 0 6px;font-size:13px">' + (SEL.layer === 'crops' || SEL.layer === 'drought' ? [] : isWorld(SEL.layer) ? ['world', 'us', 'eu'] : ['all', 'us', 'eu']).map(function (v) { return '<button type="button" class="di-link-btn" data-view="' + v + '" aria-pressed="' + (SEL.view === v) + '" style="' + (SEL.view === v ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:12px">' + t.views[v] + '</button>'; }).join('') + '</div><div class="di-card" style="padding:8px"><div id="mapa-canvas" style="height:420px;width:100%"></div><p id="mapa-fallback" class="di-movers-hint" style="display:none;padding:12px"></p></div><p id="mapa-note" class="di-info-api-notice" style="margin:10px 0 18px"></p><div id="mapa-table"></div>';
+      '<div style="margin:0 0 6px;font-size:13px">' + (SEL.layer === 'crops' || SEL.layer === 'drought' ? [] : isWorld(SEL.layer) ? ['world', 'us', 'eu'] : ['all', 'us', 'eu']).map(function (v) { return '<button type="button" class="di-link-btn" data-view="' + v + '" aria-pressed="' + (SEL.view === v) + '" style="' + (SEL.view === v ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:12px">' + t.views[v] + '</button>'; }).join('') + '</div><div class="di-card" style="padding:8px"><div id="mapa-canvas" style="height:420px;width:100%"></div><p id="mapa-fallback" class="di-movers-hint" style="display:none;padding:12px"></p></div><p id="mapa-note" class="di-info-api-notice" style="margin:10px 0 6px"></p><div id="mapa-cite" style="margin:0 0 18px"></div><div id="mapa-table"></div>';
     Array.prototype.forEach.call(document.querySelectorAll('#mapa-body [data-view]'), function (b) { b.onclick = function () { SEL.view = b.getAttribute('data-view'); shell(); render(); }; });
     Array.prototype.forEach.call(document.querySelectorAll('#mapa-body [data-layer]'), function (b) { b.onclick = function () { SEL.layer = b.getAttribute('data-layer'); if (isWorld(SEL.layer) && SEL.view === 'all') SEL.view = 'world'; else if (!isWorld(SEL.layer) && SEL.view === 'world') SEL.view = 'all'; shell(); render(); }; });
   }
@@ -329,7 +329,21 @@
     document.getElementById('pg-sub').textContent = t.sub;
     if (!document.getElementById('mapa-canvas')) shell();
     if (SEL.layer === 'price') renderPrice(t); else if (SEL.layer === 'crops') renderCrops(t); else if (SEL.layer === 'drought' && DROUGHT) renderDrought(t); else if (SEL.layer === 'buyers' && ESR) renderBuyers(t); else if (SEL.layer === 'trade' && GATS) renderTrade(t); else if (SD_ATTR[SEL.layer]) renderSD(t, SEL.layer); else renderClimate(t, SEL.layer);
+    mapCite();
   }
+  function mapCite() {
+    var el = document.getElementById('mapa-cite'), Q = window.DICite; if (!el || !Q) return;
+    var L = SEL.layer, ids = [];
+    if (L === 'price') { var seen = {}; (LATEST || []).forEach(function (o) { if (o.product === SEL.product && o.status === 'verified' && o.sourceId && !seen[o.sourceId]) { seen[o.sourceId] = 1; ids.push(o.sourceId); } }); }
+    else if (L === 'crops') ids = ['usda_nass'];
+    else if (L === 'drought') ids = ['us_drought_monitor'];
+    else if (L === 'buyers') ids = ['usda_fas_esr'];
+    else if (L === 'trade') ids = ['usda_fas_gats'];
+    else if (SD_ATTR[L]) ids = ['usda_fas_psd'];
+    else ids = ['nasa_power'];
+    el.innerHTML = ids.map(function (id) { return Q.html(id); }).join('');
+  }
+  if (window.DICite) window.DICite.load().then(function (r) { if (r && document.getElementById('mapa-canvas')) render(); });
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); render(); };

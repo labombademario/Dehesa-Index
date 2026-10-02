@@ -64,7 +64,7 @@
             '<div>' + spark(l.months) + '</div></div>';
         }).join('') + '</div></section>';
     });
-    html += '<p class="di-info-api-notice">' + t.note + ' <a href="metodologia.html">' + t.links + '</a> · <a href="mapa.html">' + t.mapLink + '</a> · <a href="data/climate.json">JSON</a></p>';
+    html += '<p class="di-info-api-notice">' + t.note + ' <a href="metodologia.html">' + t.links + '</a> · <a href="mapa.html">' + t.mapLink + '</a> · <a href="data/climate.json">JSON</a></p>' + (window.DICite ? window.DICite.html('nasa_power') : '');
     el.innerHTML = html + '<div id="clima-hist"></div>';
     histRender();
   }
@@ -153,7 +153,7 @@
   if (document.getElementById('clima-body')) window.DehesaShared.init('informacion');
   (document.getElementById('clima-body') || !window.DIHome ? fetch('data/climate.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }) : window.DIHome.summary().then(function (s) { return s.climate; })).then(function (d) {
     if (!d || !d.locations || !d.locations.length) return;
-    DATA = d; render(); loadHist();
+    DATA = d; var go = function () { render(); loadHist(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
     var prev = window.DehesaShared.onLangChange;
     window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
   }).catch(function () {});

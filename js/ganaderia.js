@@ -128,6 +128,7 @@
       rows.map(function (r) { return '<tr style="border-top:1px solid var(--border)"><td style="padding:9px 6px;font-weight:600;white-space:nowrap">' + esc(ST[r.st]) + '</td><td style="padding:9px 6px;width:30%"><div style="height:8px;border-radius:2px 4px 4px 2px;background:' + SEQ[3] + ';width:' + (r.v / rows[0].v * 100).toFixed(1) + '%"></div></td><td style="padding:9px 6px;text-align:right;white-space:nowrap">' + esc(fmt(s.u, r.v, t)) + '</td><td style="padding:9px 6px;text-align:right">' + chgHtml(r.y) + '</td></tr>'; }).join('') + '</table></div>';
     return '<div style="font-weight:600;margin:18px 0 6px">' + esc(t.states) + ' · ' + esc(maxP) + '</div><div class="di-card" style="padding:8px;position:relative"><div id="gn-map">' + svg + '</div><div id="gn-tip" style="display:none;position:absolute;pointer-events:none;background:var(--surface,#fff);border:1px solid var(--border);border-radius:6px;padding:6px 9px;font-size:12.5px;box-shadow:0 2px 8px rgba(0,0,0,.12);white-space:nowrap"></div></div><div style="display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;margin:8px 0">' + lg + '</div>' + tbl;
   }
+function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   function render() {
     var t = tr(), root = document.getElementById('gn-body');
     document.title = 'Dehesa Index — ' + t.title;
@@ -145,7 +146,7 @@
     var chart = '<div class="di-card" style="padding:14px 16px"><div style="font-weight:600;margin-bottom:6px">' + esc(label(SEL.key)) + ' · ' + esc(t.hist) + '</div>' + lineChart(DIRange.cut(a, SEL.span), s.u, t) + '</div>';
     var st = Object.keys(s.s).length ? statesBlock(SEL.key, s, t) : '';
     root.innerHTML = '<div style="margin-bottom:14px">' + tabHtml + '</div><label style="font-size:13px">' + esc(t.series) + '<br><select id="gn-sel" class="di-compare-select" style="max-width:100%">' + opts + '</select></label> <label style="font-size:13px;margin-left:12px">' + esc(DIRange.title(lang())) + '<br><select id="gn-span" class="di-compare-select">' + DIRange.options(SEL.span, lang(), a) + '</select></label>' + cards + chart + st +
-      '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.note) + '</p><p class="di-movers-hint">' + esc(t.src) + '</p>';
+      '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.note) + '</p><p class="di-movers-hint">' + esc(t.src) + '</p>' + ci('usda_nass');
     Array.prototype.forEach.call(root.querySelectorAll('[data-tab]'), function (b) { b.onclick = function () { SEL.tab = b.getAttribute('data-tab'); SEL.key = null; render(); }; });
     document.getElementById('gn-span').onchange = function (e) { SEL.span = parseInt(e.target.value, 10); render(); };
     document.getElementById('gn-sel').onchange = function (e) { SEL.key = e.target.value; render(); };
@@ -163,6 +164,6 @@
     D = d && d.series && Object.keys(d.series).length ? d : null;
     var q = new URLSearchParams(window.location.search);
     if (q.get('tab') && GROUPS.hasOwnProperty(q.get('tab'))) SEL.tab = q.get('tab');
-    render();
+    var go = function () { render(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
   });
 })();

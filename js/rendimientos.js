@@ -64,6 +64,7 @@
     return '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img"' + window.DehesaChart.attr(spec).replace(' style="touch-action:pan-y"', '') + '>' + g + (b ? path(b, C2) : '') + path(a, C1) + xl + '</svg>';
   }
   function card(l, v, sub) { return '<div class="di-card" style="padding:14px 16px;flex:1 1 200px;min-width:180px"><div style="font-size:11px;letter-spacing:.4px;color:var(--text-faint);font-weight:700">' + esc(l).toUpperCase() + '</div><div style="font-size:24px;font-weight:700;margin:4px 0 2px;font-family:\'Source Serif 4\',serif">' + v + '</div><div style="font-size:12.5px">' + sub + '</div></div>'; }
+function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   function render() {
     var t = tr(), root = document.getElementById('rd-body');
     document.title = 'Dehesa Index — ' + t.title; document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
@@ -94,7 +95,7 @@
     var tbl = rows.length ? '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><table style="border-collapse:collapse;width:100%;min-width:420px;font-size:14px"><tr>' + th(t.state) + '<th></th>' + th(t.value, 1) + th(t.chg, 1) + '</tr>' + rows.map(function (r) { return '<tr data-row="' + r.st + '" style="border-top:1px solid var(--border);cursor:pointer' + (r.st === stSel ? ';background:rgba(29,81,120,.06)' : '') + '"><td style="padding:9px 6px;font-weight:600;white-space:nowrap">' + esc(ST[r.st]) + '</td><td style="padding:9px 6px;width:30%"><div style="height:8px;border-radius:2px 4px 4px 2px;background:' + SEQ[3] + ';width:' + (r.v / rows[0].v * 100).toFixed(1) + '%"></div></td><td style="padding:9px 6px;text-align:right;white-space:nowrap">' + esc(fmt(u, r.v)) + '</td><td style="padding:9px 6px;text-align:right">' + chg(r.y) + '</td></tr>'; }).join('') + '</table></div>' : '';
     root.innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + esc(t.crop) + '<br><select id="rd-crop" class="di-compare-select">' + copts + '</select></label><label style="font-size:13px">' + esc(t.metric) + '<br><select id="rd-met" class="di-compare-select">' + mopts + '</select></label><label style="font-size:13px">' + esc(t.year) + '<br><select id="rd-year" class="di-compare-select">' + yopts + '</select></label></div>' + cards + chart +
       (rows.length ? '<div style="font-weight:600;margin:18px 0 6px">' + esc(t.states) + ' · ' + esc(SEL.year) + '</div><div class="di-card" style="padding:8px;position:relative"><div id="rd-map">' + svg + '</div><div id="rd-tip" style="display:none;position:absolute;pointer-events:none;background:var(--surface,#fff);border:1px solid var(--border);border-radius:6px;padding:6px 9px;font-size:12.5px;box-shadow:0 2px 8px rgba(0,0,0,.12);white-space:nowrap"></div></div><div style="display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;margin:8px 0">' + lg + '</div><p class="di-movers-hint">' + esc(t.pick) + '</p>' + tbl : '') +
-      '<p class="di-info-api-notice" style="margin:14px 0 6px">* ' + esc(t.fc) + '. ' + esc(t.note) + '</p><p class="di-movers-hint">' + esc(t.src) + '</p>';
+      '<p class="di-info-api-notice" style="margin:14px 0 6px">* ' + esc(t.fc) + '. ' + esc(t.note) + '</p><p class="di-movers-hint">' + esc(t.src) + '</p>' + ci('usda_nass');
     document.getElementById('rd-crop').onchange = function (e) { SEL.crop = e.target.value; SEL.state = null; SEL.year = null; render(); };
     document.getElementById('rd-met').onchange = function (e) { SEL.metric = e.target.value; render(); };
     document.getElementById('rd-year').onchange = function (e) { SEL.year = e.target.value; render(); };
@@ -113,6 +114,6 @@
     var q = new URLSearchParams(window.location.search);
     if (q.get('crop') && CROPS[q.get('crop')]) SEL.crop = q.get('crop');
     if (q.get('metric') && MET[q.get('metric')]) SEL.metric = q.get('metric');
-    render();
+    var go = function () { render(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
   });
 })();
