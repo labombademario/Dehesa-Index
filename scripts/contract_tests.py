@@ -198,6 +198,36 @@ def cattle_on_feed(doc, errs, warns, stats):
         if prev and not (0.7 < n["current"]["onFeedEnd"] / max(1, n["yearAgo"]["onFeedEnd"]) < 1.4): warns.append("%s: existencias muy distintas de hace un ano" % lab)
         prev = r["inventoryDate"]
     stats["reports"] = len(doc["reports"])
+EU27_EUROSTAT = "AT BE BG CY CZ DE DK EE EL ES FI FR HR HU IE IT LT LU LV MT NL PL PT RO SE SI SK".split()
+def eu_farm_economics(doc, errs, warns, stats):
+    ys = doc["years"]; n = len(ys); g = doc["geos"]
+    _asc(ys, "anos", errs)
+    if ys[-1] > TODAY.year: errs.append("ano futuro %s" % ys[-1])
+    if "EU27_2020" not in g: errs.append("falta EU27_2020"); return
+    if len(g) < 20: errs.append("solo %d ambitos (esperados 25 o mas)" % len(g))
+    for k, d in g.items():
+        for key in doc["keys"]:
+            v = d.get(key)
+            if not isinstance(v, list) or len(v) != n: errs.append("%s.%s: debe tener %d valores" % (k, key, n)); break
+        else:
+            for i, y in enumerate(ys):
+                o, ic, gv = d["output"][i], d["ic"][i], d["gva"][i]
+                if any(d[key][i] is not None and not _num(d[key][i]) for key in doc["keys"]): errs.append("%s %s: valor no numerico" % (k, y)); continue
+                if o is not None and ic is not None and gv is not None and abs(o - ic - gv) > max(2.0, 0.005 * abs(o)): errs.append("%s %s: produccion - consumo intermedio (%.1f) distinto del valor anadido bruto (%.1f)" % (k, y, o - ic, gv))
+                parts = [d[key][i] for key in ("energy", "fert", "ppp", "vet", "feed")]
+                if ic is not None and all(x is not None for x in parts) and sum(parts) > ic * 1.001 + 1: errs.append("%s %s: partidas de consumo intermedio (%.1f) superan el total (%.1f)" % (k, y, sum(parts), ic))
+                if o is not None and o < 0: errs.append("%s %s: produccion negativa" % (k, y))
+                if d["awu"][i] is not None and d["awu"][i] <= 0: errs.append("%s %s: UTA no positivas" % (k, y))
+                if d["indA"][i] is not None and not (0 < d["indA"][i] < 500): errs.append("%s %s: indicador A fuera de rango (%s)" % (k, y, d["indA"][i]))
+    # la suma de los 27 Estados miembros debe cuadrar con el agregado UE-27 publicado
+    mem = [c for c in EU27_EUROSTAT if c in g]
+    for i, y in enumerate(ys):
+        eu = g["EU27_2020"]["output"][i]; vals = [g[c]["output"][i] for c in mem]
+        if eu is None or any(v is None for v in vals) or len(mem) < 27: continue
+        if abs(sum(vals) - eu) > 0.03 * eu: errs.append("%s: suma de los 27 (%.0f) distinta del agregado UE-27 (%.0f)" % (y, sum(vals), eu))
+    if len(mem) < 27: warns.append("faltan Estados miembros: %s" % sorted(set(EU27_EUROSTAT) - set(mem)))
+    stats["geos"] = len(g)
+
 def eu_drought(doc, errs, warns, stats):
     ps = doc["periods"]; n = len(ps)
     ds = [_date(x) for x in ps]

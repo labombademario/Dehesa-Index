@@ -1522,6 +1522,11 @@
     "usda_nass"
    ]
   },
+  "data/eu-farm-economics.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
   "data/eu-drought.json": {
    "sources": [
     "edo_cdi"

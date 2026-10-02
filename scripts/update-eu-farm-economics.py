@@ -16,6 +16,7 @@ H = {"User-Agent": "Dehesa-Index-data-bot/1.0 (+https://dehesaindex.com)", "Acce
 ITEMS = {"AM180000": "output", "AM200000": "ic", "AM202000": "energy", "AM203000": "fert", "AM204000": "ppp", "AM205000": "vet", "AM206000": "feed", "AM260000": "gva", "AM280000": "nva", "AM290000": "comp", "AM320000": "factor", "AM370000": "entrep"}
 KEYS = ["output", "ic", "energy", "fert", "ppp", "vet", "feed", "gva", "nva", "comp", "factor", "entrep", "awu", "indA"]
 YEARS = 12
+AGG = {"EA", "EA19", "EA20", "EA21", "EU", "EU27_2020_EFTA", "EU28", "EU27_2007", "EFTA"}  # solo agregados que no son la UE-27
 def get(path):
     with urllib.request.urlopen(urllib.request.Request(API + path, headers=H), timeout=180) as r: return json.loads(r.read().decode("utf-8"))
 def cells(j):
@@ -43,7 +44,7 @@ def build(raw):
     if not ys or "EU27_2020" not in data: raise ValueError("sin datos de la UE-27")
     geos = {}
     for g, d in data.items():
-        if "output" not in d: continue  # sin cuentas completas: no se publica
+        if g in AGG or "output" not in d: continue  # agregados (zona euro, UE-28...) y ambitos sin cuentas completas: no se publican
         geos[g] = {k: [d.get(k, {}).get(y) for y in ys] for k in KEYS}
     return {"years": [int(y) for y in ys], "geos": geos, "updated": {k: raw[k].get("updated") for k in ("eaa01", "eaa06", "ali01")}}
 def main():

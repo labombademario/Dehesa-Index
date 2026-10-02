@@ -129,6 +129,15 @@ sources:
     continue: true
     data: [eu-drought.json]
     message: Datos sequia Europa (EDO CDI)
+  - id: eu-farm-economics
+    name: Update EU farm costs and income (Eurostat EAA)
+    cron: ['15 6 * * 3']
+    script: scripts/update-eu-farm-economics.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [eu-farm-economics.json]
+    message: Datos costes y renta agraria UE (Eurostat EAA)
   - id: au-trade
     name: Update Australia trade (ABS)
     cron: ['25 11 5 * *']

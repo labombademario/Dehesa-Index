@@ -340,6 +340,12 @@
     "cattle_on_feed"
    ]
   ],
+  "eu-farm-economics.json": [
+   "eu-farm-economics",
+   [
+    "eu_farm_economics"
+   ]
+  ],
   "eu-drought.json": [
    "eu-drought",
    [
