@@ -99,6 +99,9 @@ jobs:
       - name: DATA_SOURCES.md generated from the license registry
         run: python3 scripts/build-docs.py --check
 
+      - name: Versiones ?v= de scripts y estilos al dia (node scripts/stamp-assets.mjs)
+        run: node scripts/stamp-assets.mjs --check
+
       - name: Service worker version matches the code
         run: node scripts/stamp-sw.mjs --check
 
