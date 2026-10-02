@@ -23,7 +23,7 @@ COUNTRIES = {"es": ES, "fr": FR, "it": IT, "de": DE}
 EAA = ["AM160000", "AM100000", "AM110000", "AM120000", "AM010000", "AM020000", "AM030000", "AM040000", "AM050000", "AM060000", "AM064000", "AM065000", "AM070000", "AM080000", "AM111000", "AM112000", "AM114000", "AM115000", "AM121000", "AM122000",
        "AM200000", "AM206000", "AM203000", "AM202000", "AM260000", "AM280000", "AM310000", "AM320000", "AM330000", "AM370000"]
 CROPS = ["UAA", "ARA", "J0000", "C0000", "C1110", "C1120", "C1200", "C1300", "C1400", "C1500", "R1000", "R2000", "I1110", "I1120", "I1130", "P0000", "G3000", "F0000", "T0000", "W1000", "O1000"]
-STRUC = ["AR_THS_HA", "HPRD_HUMD_EU_THS_T"]
+STRUC = ["AR_THS_HA", "MAR_THS_HA", "HPRD_HUMD_EU_THS_T"]
 ANIMALS = ["A2000", "A2300F", "A2300G", "A3100", "A4100", "A4200"]
 FARMTYPES = ["TOTAL", "FT1", "FT2", "FT3", "FT4", "FT5", "FT6", "FT7", "FT8", "FT9"]
 LOG = []
@@ -90,7 +90,7 @@ def build(cc, reg):
     j = fetch("apro_cpshr", crops=CROPS, strucpro=STRUC, geo=G); t = collect(j, lambda c: (c["crops"], c["strucpro"]))
     for r, s in reg.items():
         for cr in CROPS:
-            a = region_series(t, (cr, "AR_THS_HA"), s); pr = region_series(t, (cr, "HPRD_HUMD_EU_THS_T"), s)
+            a = region_series(t, (cr, "AR_THS_HA"), s) or region_series(t, (cr, "MAR_THS_HA"), s); pr = region_series(t, (cr, "HPRD_HUMD_EU_THS_T"), s)
             if a or pr: out[r].setdefault("crops", {})[cr] = {k: v for k, v in (("area", a), ("prod", pr)) if v}
     j = fetch("apro_mt_ls_r", animals=ANIMALS, unit="THS_HD", geo=G); t = collect(j, lambda c: c["animals"])
     for r, s in reg.items():
