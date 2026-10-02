@@ -1,0 +1,83 @@
+== Terminal Exports/Exports rows 1218 regions ['Bay & Lakes', 'Churchill', 'Prince Rupert', 'St. Lawrence', 'Thunder Bay', 'Vancouver'] grains ['Amber Durum', 'Barley', 'Canola', 'Corn', 'Lentils', 'Oats', 'Peas', 'Soybeans', 'Wheat'] grades ['All grades combined', 'No.1 CANADA', 'No.1 CE', 'No.1 CW AD', 'No.1 CW RS', 'No.1 CW RW', 'No.2 CANADA', 'No.2 CE', 'No.2 CW', 'No.2 CW AD', 'No.2 CW RS', 'No.3 CW AD', 'OTHER']
+   Current Week Wheat No.1 CW RS Vancouver 0 27/09/2026
+   Current Week Wheat No.1 CW RS Prince Rupert 0 27/09/2026
+   Current Week Wheat No.1 CW RS Churchill 0 27/09/2026
+   Current Week Wheat No.1 CW RS Thunder Bay 14.0 27/09/2026
+   Current Week Wheat No.1 CW RS Bay & Lakes 0 27/09/2026
+   Current Week Wheat No.1 CW RS St. Lawrence 0 27/09/2026
+   Current Week Wheat No.2 CW RS Vancouver 192.3 27/09/2026
+   Current Week Wheat No.2 CW RS Prince Rupert 30.6 27/09/2026
+   Current Week Wheat No.2 CW RS Churchill 0 27/09/2026
+   Current Week Wheat No.2 CW RS Thunder Bay 5.0 27/09/2026
+   Current Week Wheat No.2 CW RS Bay & Lakes 0 27/09/2026
+   Current Week Wheat No.2 CW RS St. Lawrence 116.6 27/09/2026
+   Current Week Wheat No.1 CW RW Vancouver 0 27/09/2026
+   Current Week Wheat No.1 CW RW Prince Rupert 0 27/09/2026
+   Current Week Wheat No.1 CW RW Churchill 0 27/09/2026
+   Current Week Wheat No.1 CW RW Thunder Bay 0 27/09/2026
+   Current Week Wheat No.1 CW RW Bay & Lakes 17.4 27/09/2026
+   Current Week Wheat No.1 CW RW St. Lawrence 0 27/09/2026
+   Current Week Wheat No.1 CE Vancouver 0 27/09/2026
+   Current Week Wheat No.1 CE Prince Rupert 0 27/09/2026
+   Current Week Wheat No.1 CE Churchill 0 27/09/2026
+   Current Week Wheat No.1 CE Thunder Bay 0 27/09/2026
+   Current Week Wheat No.1 CE Bay & Lakes 4.4 27/09/2026
+   Current Week Wheat No.1 CE St. Lawrence 0 27/09/2026
+== Primary/Deliveries rows 960 regions ['Alberta', 'British Columbia', 'Manitoba', 'Saskatchewan'] grains ['Amber Durum', 'Barley', 'Beans', 'Canaryseed', 'Canola', 'Chick Peas', 'Corn', 'Flaxseed', 'Lentils', 'Mustard Seed', 'Oats', 'Peas', 'Rye', 'Soybeans', 'Wheat'] grades ['']
+   Current Week Wheat  Manitoba 117.4 27/09/2026
+   Current Week Wheat  Saskatchewan 443.3 27/09/2026
+   Current Week Wheat  Alberta 446.4 27/09/2026
+   Current Week Wheat  British Columbia 2.8 27/09/2026
+   Current Week Canola  Manitoba 68.7 27/09/2026
+   Current Week Canola  Saskatchewan 262.1 27/09/2026
+   Current Week Canola  Alberta 155.2 27/09/2026
+   Current Week Canola  British Columbia 1.7 27/09/2026
+   Crop Year Wheat  Manitoba 1056.4 27/09/2026
+   Crop Year Wheat  Saskatchewan 1713.6 27/09/2026
+   Crop Year Wheat  Alberta 1416.3 27/09/2026
+   Crop Year Wheat  British Columbia 14.7 27/09/2026
+   Crop Year Canola  Manitoba 303.2 27/09/2026
+   Crop Year Canola  Saskatchewan 977.5 27/09/2026
+   Crop Year Canola  Alberta 414.8 27/09/2026
+   Crop Year Canola  British Columbia 5.1 27/09/2026
+== Primary/Shipments rows 960 regions ['Alberta', 'British Columbia', 'Manitoba', 'Saskatchewan'] grains ['Amber Durum', 'Barley', 'Beans', 'Canaryseed', 'Canola', 'Chick Peas', 'Corn', 'Flaxseed', 'Lentils', 'Mustard Seed', 'Oats', 'Peas', 'Rye', 'Soybeans', 'Wheat'] grades ['']
+   Current Week Wheat  Manitoba 168.0 27/09/2026
+   Current Week Wheat  Saskatchewan 283.1 27/09/2026
+   Current Week Wheat  Alberta 197.6 27/09/2026
+   Current Week Wheat  British Columbia 5.1 27/09/2026
+   Current Week Canola  Manitoba 38.3 27/09/2026
+   Current Week Canola  Saskatchewan 156.1 27/09/2026
+   Current Week Canola  Alberta 76.7 27/09/2026
+   Current Week Canola  British Columbia 2.6 27/09/2026
+   Crop Year Wheat  Manitoba 1089.7 27/09/2026
+   Crop Year Wheat  Saskatchewan 1702.2 27/09/2026
+   Crop Year Wheat  Alberta 1193.8 27/09/2026
+   Crop Year Wheat  British Columbia 15.8 27/09/2026
+   Crop Year Canola  Manitoba 284.9 27/09/2026
+   Crop Year Canola  Saskatchewan 920.3 27/09/2026
+   Crop Year Canola  Alberta 380.0 27/09/2026
+   Crop Year Canola  British Columbia 4.2 27/09/2026
+== Summary/Stocks rows 1024 regions ['Bay & Lakes', 'Churchill', 'Primary Elevators', 'Prince Rupert', 'Process Elevators', 'St. Lawrence', 'Thunder Bay', 'Vancouver'] grains ['Amber Durum', 'Barley', 'Beans', 'Canaryseed', 'Canola', 'Chick Peas', 'Corn', 'Flaxseed', 'Lentils', 'Mustard Seed', 'Oats', 'Peas', 'Rye', 'Soybeans', 'Sunflower', 'Wheat'] grades ['']
+   Current Week Wheat  Primary Elevators 1618.9 27/09/2026
+   Current Week Canola  Primary Elevators 647.0 27/09/2026
+   Current Week Wheat  Process Elevators 37.8 27/09/2026
+   Current Week Canola  Process Elevators 101.4 27/09/2026
+   Current Week Wheat  Vancouver 404.1 27/09/2026
+   Current Week Canola  Vancouver 133.3 27/09/2026
+   Current Week Wheat  Prince Rupert 0 27/09/2026
+   Current Week Canola  Prince Rupert 0 27/09/2026
+   Current Week Wheat  Churchill 0 27/09/2026
+   Current Week Canola  Churchill 0 27/09/2026
+   Current Week Wheat  Thunder Bay 318.7 27/09/2026
+   Current Week Canola  Thunder Bay 41.6 27/09/2026
+   Current Week Wheat  Bay & Lakes 217.9 27/09/2026
+   Current Week Canola  Bay & Lakes 18.5 27/09/2026
+   Current Week Wheat  St. Lawrence 392.8 27/09/2026
+   Current Week Canola  St. Lawrence 2.1 27/09/2026
+== zip files: [('CDM_2608_D0_LR.geojson', 10641955), ('CDM_2608_D1_LR.geojson', 6426593), ('CDM_2608_D2_LR.geojson', 1617496), ('CDM_2608_D3_LR.geojson', 227818), ('CDM_2608_D4_LR.geojson', 4577)]
+CDM_2608_D0_LR.geojson keys ['type', 'crs', 'features'] crs {'type': 'name', 'properties': {'name': 'EPSG:3857'}} nfeat 10
+  props {"OBJECTID": 1, "DM": 0, "AREA_AC": 13634187.349166516, "Shape_Length": 861737.4049669971, "Shape_Area": 55175598638.17935} geom Polygon coords-sample [[[-14511276.151999999, 10472242.4762], [-14489321.2578, 10491303.922700003], [-14474216.7908, 10519383.685500003], [-14455500.8214, 10539188.0511], [-14440189.3176, 10558873.0955], [-14418604.7152, 1
+  props {"OBJECTID": 2, "DM": 0, "AREA_AC": 48419231.99375922, "Shape_Length": 10316405.274748705, "Shape_Area": 98618433701.33572} geom MultiPolygon coords-sample [[[[-6212857.462099999, 5917578.802500002], [-6212555.5019000005, 5918230.867799997], [-6212740.182, 5918839.928999998], [-6213321.9823, 5919064.173600003], [-6213973.8225, 5917574.474600002], [-62134
+  props {"OBJECTID": 3, "DM": 0, "AREA_AC": 6722788.870019149, "Shape_Length": 635390.8526685623, "Shape_Area": 27206161315.076233} geom Polygon coords-sample [[[-13388474.821800001, 7319191.1774], [-13393605.7689, 7345399.935999997], [-13407160.577, 7372747.396300003], [-13432945.309700001, 7396018.2399], [-13455978.384, 7412664.520900004], [-13483989.2534
+== ne_50m_admin_1_states_provinces.geojson 2325694 bytes; CAN features 13: [('Alberta', 'CA-AB'), ('British Columbia', 'CA-BC'), ('Manitoba', 'CA-MB'), ('New Brunswick', 'CA-NB'), ('Newfoundland and Labrador', 'CA-NL'), ('Nova Scotia', 'CA-NS'), ('Northwest Territories', 'CA-NT'), ('Nunavut', 'CA-NU'), ('Ontario', 'CA-ON'), ('Prince Edward Island', 'CA-PE'), ('Québec', 'CA-QC'), ('Saskatchewan', 'CA-SK'), ('Yukon', 'CA-YT')]
+== ne_10m_admin_1_states_provinces.geojson 40726851 bytes; CAN features 13: [('British Columbia', 'CA-BC'), ('Alberta', 'CA-AB'), ('Saskatchewan', 'CA-SK'), ('Manitoba', 'CA-MB'), ('Ontario', 'CA-ON'), ('Québec', 'CA-QC'), ('New Brunswick', 'CA-NB'), ('Yukon', 'CA-YT'), ('Nunavut', 'CA-NU'), ('Newfoundland and Labrador', 'CA-NL'), ('Nova Scotia', 'CA-NS'), ('Northwest Territories', 'CA-NT'), ('Prince Edward Island', 'CA-PE')]
