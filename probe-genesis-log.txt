@@ -1,0 +1,19 @@
+token len 32
+logincheck 200 {"Status":"Sie wurden erfolgreich an- und abgemeldet! Bei mehr als 3 parallelen Requests wurden länger als 15 Minuten laufende Requests beendet.","Username":"c5ba398071ea4010a2f37c202b35bce4"}
+find 200
+  61211-0001 | Erzeugerpreisindizes landwirtschaftlicher Produkte:
+Deutschland, Jahre, Landwirtschaftliche Produkte
+  61211-0002 | Erzeugerpreisindizes landwirtschaftlicher Produkte:
+Deutschland, Wirtschaftsjahr, Landwirtschaftlich
+  61211-0003 | Erzeugerpreisindizes landwirtschaftlicher Produkte:
+Deutschland, Monate, Landwirtschaftliche Produkt
+{'Code': 0, 'Content': 'erfolgreich', 'Type': 'Information'}
+tablefile 61211-0003 {'startyear': '1968'} 406 30
+HTTP Error 406: Not Acceptable
+tablefile 61221-0003 {'startyear': '1968'} 406 30
+HTTP Error 406: Not Acceptable
+tablefile 61211-0001 {'startyear': '1968'} 406 30
+HTTP Error 406: Not Acceptable
+-rw-r--r-- 1 runner runner 30 Oct  2 23:37 genesis-61211-0001.csv
+-rw-r--r-- 1 runner runner 30 Oct  2 23:37 genesis-61211-0003.csv
+-rw-r--r-- 1 runner runner 30 Oct  2 23:37 genesis-61221-0003.csv
