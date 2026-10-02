@@ -10,7 +10,7 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v6
-      - run: python3 scripts/tmp-probe.py
+      - run: python3 -m pip install --quiet shapely && python3 scripts/tmp-probe.py
         continue-on-error: true
       - run: |
           git config user.name "github-actions[bot]"
