@@ -5,10 +5,10 @@ OK       us-cash-bids/AR/soybeans.json
 OK       us-cash-bids/AR/wheat.json         
 OK       us-cash-bids/CA/corn.json          
 OK       us-cash-bids/CA/sorghum.json       
-ERROR    us-cash-bids/KY/corn.json          us-cb:2892:07d6ae0376 2025-11-25: basis minimo > maximo
+OK       us-cash-bids/KY/corn.json          
 OK       us-cash-bids/KY/sorghum.json       
-ERROR    us-cash-bids/KY/soybeans.json      us-cb:2892:c650d2b3bb 2026-08-03: basis minimo > maximo
-ERROR    us-cash-bids/KY/wheat.json         us-cb:2892:3281421b1d 2026-03-09: basis minimo > maximo
+OK       us-cash-bids/KY/soybeans.json      
+OK       us-cash-bids/KY/wheat.json         
 WARNING  us-cash-bids/MD/barley.json        us-cb:2714:b22aa9fd08: cambio diario 8.8 % (revisar contra el informe original: puede ser un cambio de periodo de entrega o de cosecha)
 OK       us-cash-bids/MD/corn.json          
 OK       us-cash-bids/MD/soybeans.json      
@@ -22,30 +22,30 @@ OK       us-cash-bids/PA/wheat.json
 OK       us-cash-bids/SC/corn.json          
 OK       us-cash-bids/SC/soybeans.json      
 WARNING  us-cash-bids/SC/wheat.json         us-cb:2787:76a584cc0d: cambio diario 34.6 % (revisar contra el informe original: puede ser un cambio de periodo de entrega o de cosecha)
-ERROR    us-cash-bids/TN/corn.json          us-cb:3088:10ad169303 2026-08-03: basis minimo > maximo
-ERROR    us-cash-bids/TN/soybeans.json      us-cb:3088:bb1b380722 2026-02-25: basis minimo > maximo
-ERROR    us-cash-bids/TN/wheat.json         us-cb:3088:9b9d54cc00 2026-08-28: basis minimo > maximo
-ERROR    us-cash-bids/WY/corn.json          us-cb:3239:bfd5379daa 2026-06-15: basis minimo > maximo
-ERROR    us-cash-bids/WY/wheat.json         us-cb:3239:93655e72bf 2026-04-30: basis minimo > maximo
+OK       us-cash-bids/TN/corn.json          
+OK       us-cash-bids/TN/soybeans.json      
+OK       us-cash-bids/TN/wheat.json         
+OK       us-cash-bids/WY/corn.json          
+OK       us-cash-bids/WY/wheat.json         
 OK       us-cash-bids/XG/corn.json          
-ERROR    us-cash-bids/XG/soybeans.json      us-cb:3147:02e514a7ab 2026-08-05: basis minimo > maximo
+OK       us-cash-bids/XG/soybeans.json      
 OK       us-cash-bids/XG/wheat.json         
 OK       us-cash-bids/XK/wheat.json         
 OK       us-cash-bids/XP/barley.json        
 OK       us-cash-bids/XP/corn.json          
 OK       us-cash-bids/XP/oats.json          
-ERROR    us-cash-bids/XP/wheat.json         us-cb:3148:23e76a24d2 2026-01-06: basis minimo > maximo
-ERROR    us-cash-bids/XU/corn.json          us-cb:3043:48da268927 2026-08-31: basis minimo > maximo
-ERROR    us-cash-bids/XU/soybeans.json      us-cb:3043:2210f98cf0 2026-04-29: basis minimo > maximo
+OK       us-cash-bids/XP/wheat.json         
+OK       us-cash-bids/XU/corn.json          
+OK       us-cash-bids/XU/soybeans.json      
 OK       us-cash-bids/history/AR/corn.json  
 OK       us-cash-bids/history/AR/soybeans.json 
 OK       us-cash-bids/history/AR/wheat.json 
 OK       us-cash-bids/history/CA/corn.json  
 OK       us-cash-bids/history/CA/sorghum.json 
-ERROR    us-cash-bids/history/KY/corn.json  us-cb:2892:07d6ae0376 2025-11-25: basis minimo > maximo
+OK       us-cash-bids/history/KY/corn.json  
 OK       us-cash-bids/history/KY/sorghum.json 
-ERROR    us-cash-bids/history/KY/soybeans.json us-cb:2892:77a35dd9be 2026-08-03: basis minimo > maximo
-ERROR    us-cash-bids/history/KY/wheat.json us-cb:2892:3281421b1d 2025-12-10: basis minimo > maximo
+OK       us-cash-bids/history/KY/soybeans.json 
+OK       us-cash-bids/history/KY/wheat.json 
 OK       us-cash-bids/history/MD/barley.json 
 OK       us-cash-bids/history/MD/corn.json  
 OK       us-cash-bids/history/MD/soybeans.json 
@@ -59,21 +59,21 @@ OK       us-cash-bids/history/PA/wheat.json
 OK       us-cash-bids/history/SC/corn.json  
 OK       us-cash-bids/history/SC/soybeans.json 
 OK       us-cash-bids/history/SC/wheat.json 
-ERROR    us-cash-bids/history/TN/corn.json  us-cb:3088:10ad169303 2026-08-03: basis minimo > maximo
-ERROR    us-cash-bids/history/TN/soybeans.json us-cb:3088:892133934b 2026-01-02: basis minimo > maximo
-ERROR    us-cash-bids/history/TN/wheat.json us-cb:3088:9b9d54cc00 2026-08-28: basis minimo > maximo
-ERROR    us-cash-bids/history/WY/corn.json  us-cb:3239:463c49b9d0 2026-02-04: basis minimo > maximo
-ERROR    us-cash-bids/history/WY/wheat.json us-cb:3239:93655e72bf 2026-02-26: basis minimo > maximo
+OK       us-cash-bids/history/TN/corn.json  
+OK       us-cash-bids/history/TN/soybeans.json 
+OK       us-cash-bids/history/TN/wheat.json 
+OK       us-cash-bids/history/WY/corn.json  
+OK       us-cash-bids/history/WY/wheat.json 
 OK       us-cash-bids/history/XG/corn.json  
-ERROR    us-cash-bids/history/XG/soybeans.json us-cb:3147:02e514a7ab 2026-08-05: basis minimo > maximo
-ERROR    us-cash-bids/history/XG/wheat.json us-cb:3147:ff89585d8d 2025-12-12: basis minimo > maximo
+OK       us-cash-bids/history/XG/soybeans.json 
+OK       us-cash-bids/history/XG/wheat.json 
 OK       us-cash-bids/history/XK/wheat.json 
 OK       us-cash-bids/history/XP/barley.json 
 OK       us-cash-bids/history/XP/corn.json  
 OK       us-cash-bids/history/XP/oats.json  
-ERROR    us-cash-bids/history/XP/wheat.json us-cb:3148:17b8d34098 2025-11-21: basis minimo > maximo
-ERROR    us-cash-bids/history/XU/corn.json  us-cb:3043:364aa6c726 2025-08-28: basis minimo > maximo
-ERROR    us-cash-bids/history/XU/soybeans.json us-cb:3043:2210f98cf0 2025-10-30: basis minimo > maximo
+OK       us-cash-bids/history/XP/wheat.json 
+OK       us-cash-bids/history/XU/corn.json  
+OK       us-cash-bids/history/XU/soybeans.json 
 OK       us-cash-bids/CO/corn.json          
 OK       us-cash-bids/CO/sorghum.json       
 OK       us-cash-bids/CO/soybeans.json      
@@ -186,5 +186,4 @@ OK       us-cash-bids/ingestion-status.json
 OK       us-cash-bids/manifest.json         
 OK       us-cash-bids/reports.json          
 OK       us-cash-bids/watch.json            
-Resumen: 186 archivos, 25 con errores, 2 con avisos
-qa rc=1
+Resumen: 186 archivos, 0 con errores, 2 con avisos
