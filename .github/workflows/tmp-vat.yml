@@ -1,0 +1,27 @@
+name: TMP vat fixture (borrar)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  f:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          mkdir -p scripts/fixtures/tedb
+          python3 - <<'PY'
+          import urllib.request, gzip, sys
+          sys.path.insert(0,'scripts')
+          STATES = "AT BE BG HR CY CZ DK EE FI FR DE EL HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE".split()
+          body = ('<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="urn:ec.europa.eu:taxud:tedb:services:v1:IVatRetrievalService" xmlns:typ="urn:ec.europa.eu:taxud:tedb:services:v1:IVatRetrievalService:types"><soapenv:Header/><soapenv:Body><v1:retrieveVatRatesReqMsg><typ:memberStates>'+"".join("<typ:isoCode>%s</typ:isoCode>"%s for s in STATES)+'</typ:memberStates><typ:situationOn>2026-10-01</typ:situationOn></v1:retrieveVatRatesReqMsg></soapenv:Body></soapenv:Envelope>').encode()
+          req = urllib.request.Request("https://ec.europa.eu/taxation_customs/tedb/ws/", data=body, headers={"Content-Type":"text/xml;charset=UTF-8","SOAPAction":"urn:ec.europa.eu:taxud:tedb:services:v1:VatRetrievalService/RetrieveVatRates"})
+          raw = urllib.request.urlopen(req, timeout=180).read()
+          gzip.open('scripts/fixtures/tedb/vat-2026-10-01.xml.gz','wb').write(raw)
+          print(len(raw))
+          PY
+          python3 scripts/update-eu-vat.py
+          ls -la scripts/fixtures/tedb data/eu-vat.json
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/fixtures/tedb data/eu-vat.json; git commit -qm "TMP: fixture TEDB y datos IVA"; git pull -q --rebase --autostash; git push
