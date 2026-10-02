@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T03:00:00Z",
+ "generatedAt": "2026-10-02T03:26:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 46,
   "late": 0,
   "error": 2,
-  "not_run": 0,
-  "unknown": 1
+  "not_run": 1,
+  "unknown": 0
  },
  "global": "error",
  "pipelines": [
@@ -674,7 +674,7 @@
    "files": [
     {
      "path": "data/eu-farm-economics.json",
-     "lastChange": "2026-10-02T02:56:43Z"
+     "lastChange": "2026-10-02T03:08:30Z"
     },
     {
      "path": "data/revisions.json",
@@ -683,7 +683,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 168.0
   },
   {
@@ -1045,7 +1045,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-02T03:17:00Z",
+   "nextRun": "2026-10-02T06:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -1108,11 +1108,11 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-02T03:10:00Z",
+   "nextRun": "2026-10-02T06:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-02T02:51:29Z"
+     "lastChange": "2026-10-02T03:08:30Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1156,11 +1156,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-02T02:51:29Z"
+     "lastChange": "2026-10-02T03:08:30Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-02T02:51:29Z"
+     "lastChange": "2026-10-02T03:08:30Z"
     },
     {
      "path": "data/coverage-gaps.json",
@@ -1190,8 +1190,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36946556966"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
