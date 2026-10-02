@@ -1,0 +1,24 @@
+name: TMP fetch fixtures (borrar)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  f:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Download
+        run: |
+          mkdir -p scripts/fixtures/edo
+          B=https://drought.emergency.copernicus.eu/data/Drought_Observatories_datasets/EDO_Combined_Drought_Indicator
+          curl -fsSL "$B/ver4-1-1/cdinx_m_edo_20260101_20260911_t.nc" -o scripts/fixtures/edo/cdinx_2026.nc
+          curl -fsSL "$B/README.txt" -o scripts/fixtures/edo/README.txt
+          curl -fsSL "$B/copyright.txt" -o scripts/fixtures/edo/copyright.txt
+          curl -fsSL "https://drought.emergency.copernicus.eu/data/factsheets/factsheet_combinedDroughtIndicator_v4.pdf" -o scripts/fixtures/edo/factsheet_v4.pdf || true
+          curl -fsSL "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson" -o scripts/fixtures/edo/ne_50m_admin_0_countries.geojson || true
+          ls -la scripts/fixtures/edo
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/fixtures/edo; git commit -qm "TMP: fixtures EDO (se borra)"; git pull -q --rebase --autostash; git push
