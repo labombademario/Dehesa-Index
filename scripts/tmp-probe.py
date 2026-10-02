@@ -22,8 +22,10 @@ s,t,n,b = get("https://open.canada.ca/data/api/action/package_show?id=4c513dab-c
 try:
     j=json.loads(b); rs=j["result"]["resources"]; out.append("CGC resources %d, last: %s" % (len(rs), [(x.get("format"),x.get("url"),x.get("name")) for x in rs[-8:]]))
 except Exception as e: out.append("pkg parse "+repr(e))
-req = urllib.request.Request("https://www150.statcan.gc.ca/t1/wds/rest/getCubeMetadata", data=json.dumps([{"productId":18100122},{"productId":18100112}]).encode(), headers={"User-Agent":"Dehesa-Index-data-bot/1.0","Content-Type":"application/json"})
-for r in json.loads(urllib.request.urlopen(req,timeout=60).read()):
+try:
+  req = urllib.request.Request("https://www150.statcan.gc.ca/t1/wds/rest/getCubeMetadata", data=json.dumps([{"productId":18100122},{"productId":18100112}]).encode(), headers={"User-Agent":"Dehesa-Index-data-bot/1.0","Content-Type":"application/json"})
+  for r in json.loads(urllib.request.urlopen(req,timeout=60).read()):
     r=r["object"]; out.append("== %s %s freq %s %s-%s" % (r["productId"], r["cubeTitleEn"], r.get("frequencyCode"), r.get("cubeStartDate"), r.get("cubeEndDate")))
     for d in r["dimension"]: out.append("  dim %s: %d: %s" % (d["dimensionNameEn"], len(d["member"]), "; ".join(m["memberNameEn"] for m in d["member"][:30])))
+except Exception as e: out.append("statcan ERR "+repr(e))
 open("tmp-probe/probe3.txt","w").write("\n".join(out)[:60000])
