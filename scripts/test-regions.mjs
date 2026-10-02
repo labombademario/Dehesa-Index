@@ -24,6 +24,11 @@ ok('sequia EE. UU.: hay datos de todos los estados con contorno', Object.keys(w.
 ok('sequia Canadá: todas las provincias', Object.keys(w.DehesaRegionNames.CA).every(i => cd.provinces[i]));
 const rc = JSON.parse(fs.readFileSync('data/recan.json', 'utf8')), RCN = ['Andalucía', 'Aragón', 'Principado de Asturias', 'Canarias', 'Cantabria', 'Castilla y León', 'Castilla-La Mancha', 'Cataluña', 'Extremadura', 'Galicia', 'Islas Baleares', 'La Rioja', 'Comunidad de Madrid', 'Región de Murcia', 'Comunidad Foral de Navarra', 'País Vasco', 'Comunidad Valenciana'];
 ok('RECAN: las 17 comunidades del mapa existen en el dato', RCN.every(n => rc.ccaa.includes(n)) && rc.ccaa.length === 17);
+const cnt = d => fs.existsSync(d) ? fs.readdirSync(d).filter(x => fs.existsSync(d + '/' + x + '/index.html')).length : 0;
+ok('paginas estaticas por region (es): EE. UU. 51, Canadá 13, España 17, Francia 13, Italia 20, Alemania 16, Australia 7 (ACT sin dato)', [['estados-unidos', 51], ['canada', 13], ['espana', 17], ['francia', 13], ['italia', 20], ['alemania', 16], ['australia', 7]].every(z => cnt('regiones/' + z[0]) === z[1]));
+ok('paginas estaticas por region en los 4 idiomas con el mismo numero (es/en/fr/it)', [['en/regions/spain', 'it/regioni/spagna', 'fr/regions/espagne'], ['en/regions/united-states', 'it/regioni/stati-uniti', 'fr/regions/etats-unis']].every((g, i) => g.every(d => cnt(d) === (i ? 51 : 17))));
+const pg = fs.existsSync('regiones/espana/andalucia/index.html') ? fs.readFileSync('regiones/espana/andalucia/index.html', 'utf8') : '';
+ok('pagina de region: cifra real en titulo, canonical, hreflang x-default y enlace al perfil interactivo', /<title>[^<]*\d[^<]*<\/title>/.test(pg) && pg.includes('rel="canonical" href="https://dehesaindex.com/regiones/espana/andalucia/"') && pg.includes('hreflang="x-default"') && pg.includes('region.html?c=ES&amp;r=AN'));
 const src = fs.readFileSync('js/region.js', 'utf8');
 ok('region.js no usa promesas sin captura de errores en los bloques', /m\[1\]\(x\)\.catch/.test(src));
 console.log('\n' + fail + ' fallos'); process.exit(fail ? 1 : 0);

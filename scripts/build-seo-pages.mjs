@@ -89,3 +89,4 @@ if (sm.includes(A)) sm = sm.replace(new RegExp(A + '[\\s\\S]*?' + B), block); el
 fs.writeFileSync('sitemap.xml', sm);
 console.log('paginas SEO', n);
 await import('./build-product-pages.mjs');  // paginas de producto (precios/<producto>/) con el ultimo precio real
+await import('./build-region-pages.mjs');  // paginas por region (regiones/<pais>/<region>/) con las cifras reales de data/

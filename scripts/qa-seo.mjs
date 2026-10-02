@@ -32,7 +32,7 @@ for (const u of locs) {
   ok(/<title>[^<]{5,}<\/title>/.test(h), u + ': sin <title>'); ok(/<meta name="description" content="[^"]{20,}"/.test(h), u + ': sin meta description');
   for (const m of h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) { try { const j = JSON.parse(m[1]); ok(!!(j['@context'] || j['@graph']), u + ': JSON-LD sin @context'); } catch (e) { ok(false, u + ': JSON-LD invalido (' + e.message.slice(0, 40) + ')'); } }
   const body = h.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-  if (/\/(datos|precios)\//.test(u)) ok(body.trim().length > 200, u + ': landing con contenido vacio');
+  if (/\/(datos|precios|regiones|regions|regioni)\//.test(u)) ok(body.trim().length > 200, u + ': landing con contenido vacio');
   const alts = [...h.matchAll(/<link[^>]+rel="alternate"[^>]+hreflang="([^"]+)"[^>]+href="([^"]+)"/g)].map(m => [m[1], m[2]]);
   if (alts.length) {
     const langs = alts.map(a => a[0]); ok(new Set(langs).size === langs.length, u + ': hreflang repetido');
@@ -43,6 +43,10 @@ for (const u of locs) {
 // toda landing local debe estar en el sitemap
 for (const dir of ['datos', 'precios']) {
   const walk = async d => { for (const e of await readdir(path.join(root, d), { withFileTypes: true })) { const rel = d + '/' + e.name; if (e.isDirectory()) await walk(rel); else if (e.name === 'index.html') ok(locs.includes(ORIGIN + '/' + d + '/'), rel + ': landing fuera del sitemap'); } };
+  await walk(dir);
+}
+for (const dir of ['regiones', 'en/regions', 'fr/regions', 'it/regioni']) {
+  const walk = async d => { for (const e of await readdir(path.join(root, d), { withFileTypes: true })) { const rel = d + '/' + e.name; if (e.isDirectory()) await walk(rel); else if (e.name === 'index.html') ok(locs.includes(ORIGIN + '/' + d + '/'), rel + ': pagina de region fuera del sitemap'); } };
   await walk(dir);
 }
 console.log('SEO QA: ' + checks + ' comprobaciones, ' + locs.length + ' URLs');

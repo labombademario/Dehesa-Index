@@ -251,7 +251,7 @@ sources:
     timeout: 10
     continue: true
     data: []
-    extra: ['!datos', '!precios', '!en', '!fr', '!it', '!sitemap.xml']
+    extra: ['!datos', '!precios', '!regiones', '!en', '!fr', '!it', '!sitemap.xml']
     check: node scripts/qa-seo.mjs
     message: Páginas SEO por país y categoría
   - id: us-cash-bids

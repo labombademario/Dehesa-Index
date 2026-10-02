@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T12:53:00Z",
+ "generatedAt": "2026-10-02T13:00:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 47,
   "late": 0,
   "error": 2,
-  "not_run": 6,
-  "unknown": 1
+  "not_run": 7,
+  "unknown": 0
  },
  "global": "error",
  "pipelines": [
@@ -47,7 +47,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-02T12:29:03Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     }
    ],
    "last": {
@@ -79,7 +79,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-02T12:29:03Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -114,7 +114,8 @@
    "nextRun": "2026-10-05T11:35:00Z",
    "files": [
     {
-     "path": "data/au-states.json"
+     "path": "data/au-states.json",
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/revisions.json",
@@ -123,7 +124,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 744.0
   },
   {
@@ -577,19 +578,19 @@
    "files": [
     {
      "path": "data/drought.json",
-     "lastChange": "2026-10-01T14:50:56Z"
+     "lastChange": "2026-10-02T12:57:19Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-01T14:50:36Z",
-    "durationSec": 29,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36879547541"
+    "startedAt": "2026-10-02T12:57:06Z",
+    "durationSec": 18,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37009816482"
    },
    "recent": {
-    "runs": 4,
-    "success": 3,
+    "runs": 5,
+    "success": 4,
     "failed": 1
    },
    "status": "ok",
@@ -1265,7 +1266,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-02T12:32:26Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1281,11 +1282,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-02T12:32:38Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-02T12:32:38Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/catalog"
@@ -1298,38 +1299,38 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-02T12:32:38Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-02T12:32:38Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-02T12:32:38Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-02T12:32:38Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-02T12:32:38Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-02T12:32:38Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-02T12:32:38Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-02T12:32:38Z"
+     "lastChange": "2026-10-02T12:54:45Z"
     },
     {
      "path": "data/snapshots"
