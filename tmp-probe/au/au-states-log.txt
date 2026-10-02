@@ -1,0 +1,16 @@
+columnas STRUCTURE,STRUCTURE_ID,STRUCTURE_NAME,ACTION,COMMODITY_SITC,Commodity by SITC,COUNTRY_DEST,Country of Destination,STATE_ORIGIN,State of Origin,FREQ,Frequency,TIME_PERIOD,Time Period,OBS_VALUE,Observation Value,UNIT_MEASURE,Unit of Measure,UNIT_MULT,Unit of Multiplier,OBS_STATUS,Observation Status,OBS_COMMENT,Observation Comment
+muestra {"STRUCTURE": "DATAFLOW", "STRUCTURE_ID": "ABS:MERCH_EXP(1.0.0)", "STRUCTURE_NAME": "Merchandise Exports by Commodity (SITC), Country and State", "ACTION": "I", "COMMODITY_SITC": "0", "Commodity by SITC": "Food and live animals", "COUNTRY_DEST": "TOT", "Country of Destination": "Total", "STATE_ORIGIN": "TOT", "State of Origin": "Total", "FREQ": "M", "Frequency": "Monthly", "TIME_PERIOD": "2012-01", "Time Period": "", "OBS_VALUE": "1855052", "Observation Value": "", "UNIT_MEASURE": "AUD", "Unit o
+0 agrifood celdas 107
+001 live celdas 105
+011 beef celdas 105
+012 sheepmeat celdas 104
+022 milk celdas 103
+024 cheese celdas 99
+041 wheat celdas 79
+043 barley celdas 66
+044 maize celdas 67
+061 sugar celdas 100
+112 wine celdas 106
+222 oilseeds celdas 95
+263 cotton celdas 59
+268 wool celdas 96
