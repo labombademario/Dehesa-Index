@@ -1,0 +1,14 @@
+name: TMP generar datos (borrar)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  f:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 scripts/update-eu-farm-economics.py
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/eu-farm-economics.json; git commit -qm "TMP: datos Eurostat EAA"; git pull -q --rebase --autostash; git push
