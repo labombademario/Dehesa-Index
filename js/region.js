@@ -425,7 +425,7 @@
   /* ---------- mapa y página ---------- */
   function mapSvg(cfg, r) {
     var M = window[cfg.map]; if (!M) return '';
-    return '<svg viewBox="' + M.viewBox + '" role="img" aria-label="' + esc(tt().mapAlt) + '" style="width:100%;height:auto;display:block">' + M.states.map(function (s) { var on = s.id === r, name = nm(cfg, s.id); return '<a href="region.html?c=' + ST.c + '&amp;r=' + s.id + '"><path d="' + s.d + '" fill="' + (on ? '#2f6b4a' : '#cfd8cc') + '" stroke="#fff" stroke-width="1" style="cursor:pointer"><title>' + esc(name) + '</title></path></a>'; }).join('') + '</svg>';
+    return '<svg viewBox="' + M.viewBox + '" role="group" aria-label="' + esc(tt().mapAlt) + '" style="width:100%;height:auto;display:block">' + M.states.map(function (s) { var on = s.id === r, name = nm(cfg, s.id); return '<a href="region.html?c=' + ST.c + '&amp;r=' + s.id + '"><path d="' + s.d + '" fill="' + (on ? '#2f6b4a' : '#cfd8cc') + '" stroke="#fff" stroke-width="1" style="cursor:pointer"><title>' + esc(name) + '</title></path></a>'; }).join('') + '</svg>';
   }
   var seq = 0;
   // canonical y og:url propios por region (la pagina es una sola con ?c=&r=)
