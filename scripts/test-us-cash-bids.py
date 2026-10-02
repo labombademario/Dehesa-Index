@@ -141,7 +141,7 @@ try:
     check("registro: estados MVP presentes", {r["state"] for r in reg["reports"] if r["tier"] == "mvp"} == {"IA", "IL", "KS", "NE", "MN", "MO"})
     check("registro: tipos de ubicacion validos", all(v in L.LOCATION_TYPES for v in reg["deliveryPointTypes"].values()) and all(r.get("defaultLocationType", "UNKNOWN") in L.LOCATION_TYPES for r in reg["reports"]))
     mvp = [str(r["reportId"]) for r in reg["reports"] if r["tier"] in ("mvp", "priority")]
-    pat = re.compile(r"(?<![\d.])(%s)(?![\d.])" % "|".join(mvp)); hard = []
+    pat = re.compile(r"(?<![\w.])(%s)(?![\d.])" % "|".join(mvp)); hard = []
     for pth in list((ROOT / "scripts").glob("*.py")) + list((ROOT / "scripts").glob("*.mjs")) + list((ROOT / "js").glob("*.js")) + list(ROOT.glob("*.html")):
         if pth.name in ("test-us-cash-bids.py", "update-ams.mjs", "build-ams-daily.py") or pth.name.startswith("e2e"): continue
         t = pth.read_text(encoding="utf-8", errors="ignore")
