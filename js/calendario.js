@@ -200,7 +200,7 @@
 
   var STRINGS = {
     es: {
-      title: 'Dehesa Index — Calendario agrícola', h1: 'Calendario agrícola',
+      title: 'Calendario agrícola | Dehesa Index', h1: 'Calendario agrícola',
       sub: 'Las próximas publicaciones de datos oficiales que mueven los mercados agrícolas de EE. UU., Europa, Canadá y Australia — para saber qué esperar antes de que salga el dato, como un calendario económico pero para el campo.',
       badge: 'FECHAS OFICIALES', updatedLabel: 'Actualizado',
       disclaimer: 'Las fechas de EE. UU. (USDA) se leen del calendario oficial de NASS y de las fechas WASDE que publica USDA, se renuevan cada día laborable e incluyen la hora (ET, hora del este de EE. UU.). Solo Export Sales (FAS) se calcula a partir de su día habitual (jueves) y un festivo puede moverlo. Los informes de la Comisión Europea se publican con periodicidad conocida (semanal o trimestral) pero sin un día fijo anunciado con antelación, así que se muestran sin fecha exacta. A diferencia de un calendario económico financiero, aquí no hay columna de "consenso de mercado": ningún organismo publica gratis una previsión de consenso para estos informes agrícolas, así que no se inventa una.',
@@ -224,7 +224,7 @@
       ]
     },
     en: {
-      title: 'Dehesa Index — Agricultural Calendar', h1: 'Agricultural Calendar',
+      title: 'Agricultural Calendar | Dehesa Index', h1: 'Agricultural Calendar',
       sub: "Upcoming official data releases that move agricultural markets in the U.S., Europe, Canada and Australia — know what's coming before the number lands, like an economic calendar for farming.",
       badge: 'OFFICIAL DATES', updatedLabel: 'Updated',
       disclaimer: "U.S. (USDA) dates are read from the official NASS calendar and the WASDE dates published by USDA, refreshed every business day and shown with the time (ET, U.S. Eastern). Only Export Sales (FAS) is computed from its usual weekday (Thursday) and a holiday can move it. European Commission reports have a known cadence (weekly or quarterly) but no fixed day announced in advance, so they're shown without an exact date. Unlike a financial economic calendar, there's no \"market consensus\" column here: no agency publishes a free consensus forecast for these agricultural reports, so we don't invent one.",
@@ -248,7 +248,7 @@
       ]
     },
     fr: {
-      title: 'Dehesa Index — Calendrier agricole', h1: 'Calendrier agricole',
+      title: 'Calendrier agricole | Dehesa Index', h1: 'Calendrier agricole',
       sub: "Les prochaines publications de données officielles qui font bouger les marchés agricoles des États-Unis, d’Europe, du Canada et d’Australie — pour savoir à quoi s'attendre avant la sortie du chiffre, comme un calendrier économique mais pour le monde agricole.",
       badge: 'DATES OFFICIELLES', updatedLabel: 'Mis à jour',
       disclaimer: "Les dates américaines (USDA) sont lues dans le calendrier officiel du NASS et dans les dates WASDE publiées par l'USDA, actualisées chaque jour ouvré et indiquées avec l'heure (ET, heure de l'Est). Seul Export Sales (FAS) est calculé d'après son jour habituel (jeudi) et un jour férié peut le décaler. Les rapports de la Commission européenne ont une périodicité connue (hebdomadaire ou trimestrielle) mais sans jour fixe annoncé à l'avance, ils sont donc affichés sans date exacte. Contrairement à un calendrier économique financier, il n'y a pas ici de colonne « consensus de marché » : aucune agence ne publie gratuitement une prévision de consensus pour ces rapports agricoles, nous n'en inventons donc pas.",
@@ -272,7 +272,7 @@
       ]
     },
     it: {
-      title: 'Dehesa Index — Calendario agricolo', h1: 'Calendario agricolo',
+      title: 'Calendario agricolo | Dehesa Index', h1: 'Calendario agricolo',
       sub: 'Le prossime pubblicazioni di dati ufficiali che muovono i mercati agricoli di Stati Uniti, Europa, Canada e Australia — per sapere cosa aspettarsi prima che esca il dato, come un calendario economico ma per il mondo agricolo.',
       badge: 'DATE UFFICIALI', updatedLabel: 'Aggiornato',
       disclaimer: "Le date statunitensi (USDA) sono lette dal calendario ufficiale del NASS e dalle date WASDE pubblicate dall'USDA, aggiornate ogni giorno lavorativo e indicate con l'ora (ET, ora della costa orientale). Solo Export Sales (FAS) è calcolato in base al giorno abituale (giovedì) e un giorno festivo può spostarlo. I rapporti della Commissione europea hanno una periodicità nota (settimanale o trimestrale) ma senza un giorno fisso annunciato in anticipo, quindi vengono mostrati senza data esatta. A differenza di un calendario economico finanziario, qui non c'è una colonna \"consenso di mercato\": nessuna agenzia pubblica gratuitamente una previsione di consenso per questi rapporti agricoli, quindi non ne inventiamo una.",

@@ -668,7 +668,7 @@
     var gname = (TX.group[li()] || TX.group[0])[CTX.meta.group] || CTX.meta.group;
     document.getElementById('pg-h1').textContent = t('title') + ': ' + nm(CTX.pid);
     document.getElementById('pg-sub').textContent = gname + ' · ' + t('sub');
-    document.title = 'Dehesa Index — ' + t('title') + ': ' + nm(CTX.pid);
+    document.title = t('title') + ': ' + nm(CTX.pid) + ' | Dehesa Index';
     CUR = blocks();
     var legacy = OPTS && OPTS.legacy && OPTS.legacy.has ? '<section class="pt-sec" id="pt-legacy"><div class="di-movers-head-row"><h2>' + esc(t('legacy')) + '</h2><span class="di-movers-hint">' + esc(t('legacyHint')) + '</span></div><div id="pr-legacy-body"><button type="button" class="pt-chip" id="pt-legacy-btn">' + esc(t('legacyBtn')) + '</button></div></section>' : '';
     el.innerHTML = '<div class="pt-wrap">' + tabsHtml() + '<section class="pt-sec" id="pt-head" style="margin-top:6px"><div class="di-movers-head-row"><h2>' + esc(t('price')) + '</h2><span class="di-movers-hint">' + esc(nm(CTX.pid)) + '</span></div>' + headHtml() + '</section>' +

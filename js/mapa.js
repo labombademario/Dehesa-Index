@@ -324,7 +324,7 @@
   }
   function render() {
     var t = tr();
-    document.title = 'Dehesa Index — ' + t.title;
+    document.title = t.title + ' | Dehesa Index';
     document.getElementById('pg-h1').textContent = t.title;
     document.getElementById('pg-sub').textContent = t.sub;
     if (!document.getElementById('mapa-canvas')) shell();

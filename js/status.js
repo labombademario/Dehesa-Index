@@ -47,7 +47,7 @@
   function nf(n) { try { return Number(n).toLocaleString(lang()); } catch (e) { return String(n); } }
   function render() {
     var t = tt(), root = document.getElementById('status-body'); if (!root) return;
-    document.getElementById('st-h1').textContent = t.title; document.getElementById('st-sub').textContent = t.sub; document.title = 'Dehesa Index — ' + t.title;
+    document.getElementById('st-h1').textContent = t.title; document.getElementById('st-sub').textContent = t.sub; document.title = t.title + ' | Dehesa Index';
     if (!P) { root.innerHTML = ''; return; }
     var sm = P.summary, h = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:10px">';
     h += '<div class="di-card" style="padding:12px 16px"><div style="font-size:11px;font-weight:700;color:var(--text-faint)">' + esc(t.all).toUpperCase() + '</div><div style="font-size:26px;font-weight:700">' + P.pipelines.length + '</div></div>';

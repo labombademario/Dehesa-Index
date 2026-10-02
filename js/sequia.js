@@ -75,7 +75,7 @@
 function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
     function render() {
     var t = tr(), root = document.getElementById('sq-body');
-    document.title = 'Dehesa Index — ' + t.title;
+    document.title = t.title + ' | Dehesa Index';
     document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
     if (!D) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; return; }
     var m = SEL.metric, rows = series(SEL.region), last = at(rows, 0), pw = at(rows, 1), py = at(rows, 52);

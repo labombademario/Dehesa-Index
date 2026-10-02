@@ -60,7 +60,7 @@
 function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
     function page() {
     var x = t(), c = com(), nm = P.names(), at = P.attrs();
-    document.title = 'Dehesa Index — ' + x.title;
+    document.title = x.title + ' | Dehesa Index';
     document.getElementById('pg-h1').textContent = x.title; document.getElementById('pg-sub').textContent = x.sub;
     if (!c.marketYears || c.marketYears.indexOf(SEL.my) < 0) SEL.my = c.latestMarketYear;
     var my = SEL.my, prevMy = my - 1, hasPrev = c.marketYears.indexOf(prevMy) >= 0;

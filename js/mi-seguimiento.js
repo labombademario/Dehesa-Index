@@ -99,7 +99,7 @@
   var PENDING = null;
   function render() {
     var body = document.getElementById('ms-body'); if (!body) return;
-    document.getElementById('ms-h1').textContent = t('title'); document.getElementById('ms-sub').textContent = t('sub'); document.title = 'Dehesa Index — ' + t('title');
+    document.getElementById('ms-h1').textContent = t('title'); document.getElementById('ms-sub').textContent = t('sub'); document.title = t('title') + ' | Dehesa Index';
     if (!W) { body.innerHTML = '<p class="pt-err">watchlist.js</p>'; return; }
     var l = W.list(), nR = 0, nP = 0; l.forEach(function (it) { nR += (it.r || []).length; if (it.c === 'P') nP++; });
     var m = W.meta();

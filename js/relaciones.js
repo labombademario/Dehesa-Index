@@ -123,7 +123,7 @@
   function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   function render() {
     var body = document.getElementById('rl-body'); if (!body) return;
-    document.getElementById('rl-h1').textContent = t('title'); document.getElementById('rl-sub').textContent = t('sub'); document.title = 'Dehesa Index — ' + t('title');
+    document.getElementById('rl-h1').textContent = t('title'); document.getElementById('rl-sub').textContent = t('sub'); document.title = t('title') + ' | Dehesa Index';
     if (!DOC) return;
     var list = DOC.relationships.filter(matches);
     var h = '<div class="pt-note rl-disclaimer" role="note"><strong>' + esc(L(DOC.disclaimer)) + '</strong></div>';

@@ -4,6 +4,7 @@
    datos estructurados (Dataset + BreadcrumbList) y enlaces a la herramienta interactiva. Se regenera con los datos: node scripts/build-seo-pages.mjs
    Tambien reescribe el bloque marcado de sitemap.xml. */
 import fs from 'node:fs';
+import { seoTitle, seoDesc, socialMeta } from './lib_seo.mjs';
 const read = f => fs.readFileSync(f, 'utf8');
 const SITE = 'https://dehesaindex.com';
 const FILES = ['country-stats', 'spain-stats', 'france-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'portugal-stats', 'portugal-eurostat-stats', 'canada-stats', 'australia-trade-stats', 'eu-trade-stats', 'interest-rates-stats'];
@@ -21,8 +22,8 @@ const MON = { es: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sept
 function plabel(p, lang) { const m = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(p); if (!m) return p; return (m[3] ? +m[3] + ' ' : '') + MON[lang][+m[2] - 1] + ' ' + m[1]; }
 function nf(v, lang) { const d = Math.abs(v) >= 100 ? 0 : Math.abs(v) >= 10 ? 1 : 2; return v.toLocaleString(lang === 'es' ? 'es-ES' : 'en-GB', { minimumFractionDigits: d, maximumFractionDigits: d }); }
 const T = {
-  es: { title: (c, g) => g + ' en ' + c + ': precios y estadísticas oficiales', h1: (c, g) => g + ' — ' + c, desc: (c, g, n, last) => 'Estadísticas oficiales de ' + g.toLowerCase() + ' en ' + c + ': ' + n + ' series con datos hasta ' + last + '. Último valor, variación, fuente y licencia. Datos abiertos de Dehesa Index.', intro: (c, g, n, last, first) => 'Dehesa Index reúne ' + n + ' series de «' + g + '» de ' + c + ', con datos oficiales y su histórico (desde ' + first + ', último dato ' + last + '). Cada valor se muestra tal como lo publica la fuente, sin convertir ni recalcular.', th: ['Serie', 'Último dato', 'Periodo', 'Variación', 'Unidad'], src: 'Fuente', lic: 'Licencia', open: 'Explorar series, gráficos e histórico', other: 'Otras categorías de', same: 'Mismo tipo de dato en otros países', home: 'Inicio', data: 'Datos por país', upd: 'Datos actualizados', note: 'Cada fuente publica con su propia metodología y puede revisar valores pasados; consulta la metodología antes de comparar países.' },
-  en: { title: (c, g) => g + ' in ' + c + ': official prices and statistics', h1: (c, g) => g + ' — ' + c, desc: (c, g, n, last) => 'Official statistics on ' + g.toLowerCase() + ' in ' + c + ': ' + n + ' series with data up to ' + last + '. Latest value, change, source and licence. Open data by Dehesa Index.', intro: (c, g, n, last, first) => 'Dehesa Index brings together ' + n + ' “' + g + '” series for ' + c + ', with official data and its history (since ' + first + ', latest ' + last + '). Each value is shown as the source publishes it, not converted or recalculated.', th: ['Series', 'Latest', 'Period', 'Change', 'Unit'], src: 'Source', lic: 'Licence', open: 'Explore series, charts and history', other: 'Other categories for', same: 'Same data type in other countries', home: 'Home', data: 'Data by country', upd: 'Data updated', note: 'Each source publishes with its own methodology and may revise past values; read the methodology before comparing countries.' }
+  es: { title: (c, g) => g + ' en ' + c + ': estadísticas oficiales', h1: (c, g) => g + ' — ' + c, desc: (c, g, n, last) => 'Estadísticas oficiales de ' + g.toLowerCase() + ' en ' + c + ': ' + n + ' series con datos hasta ' + last + '. Último valor, variación, fuente y licencia. Datos abiertos de Dehesa Index.', intro: (c, g, n, last, first) => 'Dehesa Index reúne ' + n + ' series de «' + g + '» de ' + c + ', con datos oficiales y su histórico (desde ' + first + ', último dato ' + last + '). Cada valor se muestra tal como lo publica la fuente, sin convertir ni recalcular.', th: ['Serie', 'Último dato', 'Periodo', 'Variación', 'Unidad'], src: 'Fuente', lic: 'Licencia', open: 'Explorar series, gráficos e histórico', other: 'Otras categorías de', same: 'Mismo tipo de dato en otros países', home: 'Inicio', data: 'Datos por país', upd: 'Datos actualizados', note: 'Cada fuente publica con su propia metodología y puede revisar valores pasados; consulta la metodología antes de comparar países.' },
+  en: { title: (c, g) => g + ' in ' + c + ': official statistics', h1: (c, g) => g + ' — ' + c, desc: (c, g, n, last) => 'Official statistics on ' + g.toLowerCase() + ' in ' + c + ': ' + n + ' series with data up to ' + last + '. Latest value, change, source and licence. Open data by Dehesa Index.', intro: (c, g, n, last, first) => 'Dehesa Index brings together ' + n + ' “' + g + '” series for ' + c + ', with official data and its history (since ' + first + ', latest ' + last + '). Each value is shown as the source publishes it, not converted or recalculated.', th: ['Series', 'Latest', 'Period', 'Change', 'Unit'], src: 'Source', lic: 'Licence', open: 'Explore series, charts and history', other: 'Other categories for', same: 'Same data type in other countries', home: 'Home', data: 'Data by country', upd: 'Data updated', note: 'Each source publishes with its own methodology and may revise past values; read the methodology before comparing countries.' }
 };
 function score(s) { return (s.points || []).length + (s.latestPeriod > '2025' ? 200 : 0); }
 let n = 0; const urls = [];
@@ -37,7 +38,7 @@ for (const [k, list] of Object.entries(acc)) {
     const otherG = [...new Set(Object.keys(acc).filter(x => x.startsWith(cc + '|') && x !== k).map(x => x.split('|')[1]))].filter(x => GL[x] && acc[cc + '|' + x].length >= 2);
     const sameG = Object.keys(acc).filter(x => x.endsWith('|' + g) && x !== k && CN[x.split('|')[0]] && acc[x].length >= 2).map(x => x.split('|')[0]);
     const lk = (c2, g2) => (lang === 'es' ? '../' : '../') + c2.toLowerCase() + '-' + g2.replace(/_/g, '-') + '/';
-    const title = t.title(cname, gname) + ' | Dehesa Index', desc = t.desc(cname, gname, list.length, plabel(last, lang));
+    const title = seoTitle(t.title(cname, gname)), desc = t.desc(cname, gname, list.length, plabel(last, lang));
     const ld = { '@context': 'https://schema.org', '@graph': [{ '@type': 'Dataset', name: t.h1(cname, gname), description: desc, url, inLanguage: lang, creator: { '@type': 'Organization', name: 'Dehesa Index', url: SITE }, isBasedOn: src[cc] && src[cc].url, license: src[cc] && src[cc].license, temporalCoverage: first + '/' + last, variableMeasured: top.slice(0, 8).map(s => s.label) }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: t.home, item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: t.data, item: SITE + '/paises.html' }, { '@type': 'ListItem', position: 3, name: t.h1(cname, gname), item: url }] }] };
     const html = `<!doctype html>
 <html lang="${lang}">
@@ -45,11 +46,11 @@ for (const [k, list] of Object.entries(acc)) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
-<meta name="description" content="${esc(desc)}">
+<meta name="description" content="${esc(seoDesc(desc))}">
 <link rel="canonical" href="${url}">
 <link rel="alternate" hreflang="${lang}" href="${url}">
 <link rel="alternate" hreflang="${lang === 'es' ? 'en' : 'es'}" href="${alt}">
-<meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="Dehesa Index">
+<meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(seoDesc(desc))}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="Dehesa Index">${socialMeta(lang)}
 <link rel="icon" href="${up}assets/icon-192.png">
 <link rel="stylesheet" href="${up}css/style.css">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>

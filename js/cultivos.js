@@ -91,7 +91,7 @@
 function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
     function page() {
     var x = t(), c = crop(SEL.crop) || crop(ORDER[0]);
-    document.title = 'Dehesa Index — ' + x.title; document.getElementById('pg-h1').textContent = x.title; document.getElementById('pg-sub').textContent = x.sub;
+    document.title = x.title + ' | Dehesa Index'; document.getElementById('pg-h1').textContent = x.title; document.getElementById('pg-sub').textContent = x.sub;
     var cropsHave = ORDER.filter(function (id) { return crop(id); });
     var ss = seasonsWithCond(c);
     if (!ss.length) { document.getElementById('cu-body').innerHTML = '<p class="di-movers-hint">' + x.none + '</p>'; return; }

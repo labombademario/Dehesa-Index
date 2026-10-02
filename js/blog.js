@@ -26,7 +26,7 @@
     Object.keys(CAT).forEach(function (lg) { langCat[lg] = CAT[lg]; });
 
     STRINGS.es = {
-      title: 'Dehesa Index — Blog', badge: 'NOTAS REALES', updated: 'Actualizado 28 sep 2026',
+      title: 'Blog | Dehesa Index', badge: 'NOTAS REALES', updated: 'Actualizado 28 sep 2026',
       h1: 'Blog',
       sub: 'Contexto corto sobre qué mueve estos mercados esta semana, con cifras y fuentes reales — no un resumen de titulares, sino la lectura de Dehesa Index sobre lo que hay detrás.',
       disclaimer: 'Cada nota cita datos y fechas reales, verificables en las fuentes enlazadas al pie. Cuando un dato concreto no está disponible (por ejemplo, un precio objetivo aún no publicado), se dice explícitamente en vez de estimarlo.',
@@ -55,7 +55,7 @@
       ]
     };
     STRINGS.en = {
-      title: 'Dehesa Index — Blog', badge: 'REAL NOTES', updated: 'Updated Sep 28, 2026',
+      title: 'Blog | Dehesa Index', badge: 'REAL NOTES', updated: 'Updated Sep 28, 2026',
       h1: 'Blog',
       sub: "Short context on what's moving these markets this week, with real figures and sources — not a headline roundup, but Dehesa Index's own read on what's behind them.",
       disclaimer: 'Each note cites real, dated facts, verifiable at the sources linked below. When a specific figure isn’t available (a target price not yet published, say), that’s stated outright rather than estimated.',
@@ -84,7 +84,7 @@
       ]
     };
     STRINGS.fr = {
-      title: 'Dehesa Index — Blog', badge: 'NOTES RÉELLES', updated: 'Mis à jour le 28 sept. 2026',
+      title: 'Blog | Dehesa Index', badge: 'NOTES RÉELLES', updated: 'Mis à jour le 28 sept. 2026',
       h1: 'Blog',
       sub: "Un contexte court sur ce qui fait bouger ces marchés cette semaine, avec des chiffres et des sources réels — pas un résumé de titres, mais la lecture de Dehesa Index sur ce qu'il y a derrière.",
       disclaimer: "Chaque note cite des faits réels et datés, vérifiables sur les sources indiquées ci-dessous. Quand un chiffre précis n'est pas disponible (un prix cible pas encore publié, par exemple), cela est dit explicitement plutôt qu'estimé.",
@@ -113,7 +113,7 @@
       ]
     };
     STRINGS.it = {
-      title: 'Dehesa Index — Blog', badge: 'NOTE REALI', updated: 'Aggiornato 28 set 2026',
+      title: 'Blog | Dehesa Index', badge: 'NOTE REALI', updated: 'Aggiornato 28 set 2026',
       h1: 'Blog',
       sub: 'Un contesto breve su cosa muove questi mercati questa settimana, con cifre e fonti reali — non un riassunto di titoli, ma la lettura di Dehesa Index su cosa c’è dietro.',
       disclaimer: 'Ogni nota cita fatti reali e datati, verificabili nelle fonti collegate in fondo. Quando un dato preciso non è disponibile (un prezzo obiettivo non ancora pubblicato, ad esempio), questo viene dichiarato esplicitamente invece di essere stimato.',

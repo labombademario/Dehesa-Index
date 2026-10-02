@@ -68,7 +68,7 @@
     root.innerHTML = html;
     var el = document.getElementById('cg-g'); if (el) el.onchange = function (e) { ST.g = e.target.value; build(); var m = document.getElementById('cg-g'); if (m) m.focus(); };
   }
-  function shell() { var t = tt(), h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.h; if (s) s.textContent = t.sub; document.title = 'Dehesa Index — ' + t.h; }
+  function shell() { var t = tt(), h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.h; if (s) s.textContent = t.sub; document.title = t.h + ' | Dehesa Index'; }
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };

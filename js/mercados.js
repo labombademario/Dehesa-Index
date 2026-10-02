@@ -68,7 +68,7 @@
 
 function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
     function page() {
-    var x = t(); document.title = 'Dehesa Index — ' + x.title;
+    var x = t(); document.title = x.title + ' | Dehesa Index';
     document.getElementById('pg-h1').textContent = x.title; document.getElementById('pg-sub').textContent = x.sub;
     var fams = FAM_ORDER.filter(function (f) { return IDX.reports.some(function (r) { return r.fam === f; }); });
     if (fams.indexOf(SEL.fam) < 0) SEL.fam = fams[0];

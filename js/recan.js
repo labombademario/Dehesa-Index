@@ -93,7 +93,7 @@
     var bind = function (id, key, numeric) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = numeric ? +e.target.value : e.target.value; if (key === 'c') { ST.t = null; ST.d = null; ST.y = null; } if (key === 't') { ST.d = null; ST.y = null; } if (key === 'd') ST.y = null; build(); var n = document.getElementById(id); if (n) n.focus(); }; };
     bind('rc-c', 'c', true); bind('rc-t', 't', true); bind('rc-d', 'd', true); bind('rc-y', 'y', true); bind('rc-v', 'v', false);
   }
-  function shell() { var t = tt(); var h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = 'Dehesa Index — ' + t.title; }
+  function shell() { var t = tt(); var h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };

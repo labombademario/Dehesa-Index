@@ -4,7 +4,7 @@
 
   var STRINGS = {
     es: {
-      title: 'Dehesa Index — Empresas',
+      title: 'Empresas | Dehesa Index',
       badge: 'PARA EMPRESAS',
       h1: 'Datos agrícolas listos para integrar en tu operación',
       sub: 'Dehesa Index está construyendo una API de precios agrícolas por producto y región — pensada para quien necesita estos datos dentro de su propio sistema, no solo en una web para consultar a mano.',
@@ -41,7 +41,7 @@
       ctaNote: 'Sin formularios ni registros falsos: un correo real, a una dirección real, que leemos nosotros.'
     },
     en: {
-      title: 'Dehesa Index — Business',
+      title: 'Business | Dehesa Index',
       badge: 'FOR BUSINESSES',
       h1: 'Agricultural data ready to plug into your operation',
       sub: "Dehesa Index is building a price API by product and region — built for teams that need this data inside their own systems, not just a dashboard to check by hand.",
@@ -78,7 +78,7 @@
       ctaNote: 'No forms or fake sign-ups: a real email, to a real address, that we read ourselves.'
     },
     fr: {
-      title: 'Dehesa Index — Entreprises',
+      title: 'Entreprises | Dehesa Index',
       badge: 'POUR LES ENTREPRISES',
       h1: 'Des données agricoles prêtes à intégrer dans votre activité',
       sub: "Dehesa Index construit une API de prix agricoles par produit et par région — pensée pour ceux qui ont besoin de ces données dans leurs propres systèmes, pas seulement d'un tableau de bord à consulter à la main.",
@@ -115,7 +115,7 @@
       ctaNote: 'Pas de formulaire ni de fausse inscription : un vrai e-mail, à une vraie adresse, que nous lisons nous-mêmes.'
     },
     it: {
-      title: 'Dehesa Index — Aziende',
+      title: 'Aziende | Dehesa Index',
       badge: 'PER LE AZIENDE',
       h1: 'Dati agricoli pronti da integrare nella tua attività',
       sub: "Dehesa Index sta costruendo un'API di prezzi agricoli per prodotto e regione — pensata per chi ha bisogno di questi dati dentro i propri sistemi, non solo di una dashboard da consultare a mano.",

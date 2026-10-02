@@ -67,7 +67,7 @@
 function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   function render() {
     var t = tr(), root = document.getElementById('rd-body');
-    document.title = 'Dehesa Index — ' + t.title; document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
+    document.title = t.title + ' | Dehesa Index'; document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
     if (!D) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; return; }
     var crops = Object.keys(CROPS).filter(function (c) { return seriesFor(c, 'yield') || seriesFor(c, 'production'); });
     if (crops.indexOf(SEL.crop) < 0) SEL.crop = crops[0];

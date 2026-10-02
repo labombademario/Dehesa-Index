@@ -297,7 +297,7 @@
   }
   function sec(id, title, hint, body) { return '<section class="pt-sec" id="' + id + '"><div class="di-movers-head-row"><h2>' + esc(title) + '</h2>' + (hint ? '<span class="di-movers-hint">' + esc(hint) + '</span>' : '') + '</div>' + body + '</section>'; }
   function shell() {
-    document.getElementById('cc-h1').textContent = t('title'); document.getElementById('cc-sub').textContent = t('sub'); document.title = 'Dehesa Index — ' + t('title');
+    document.getElementById('cc-h1').textContent = t('title'); document.getElementById('cc-sub').textContent = t('sub'); document.title = t('title') + ' | Dehesa Index';
     document.getElementById('cc-body').innerHTML = '<div class="pt-wrap"><div class="pt-note">' + esc(t('privacy')) + '</div>' + caseTabs() + '<div id="cc-inputs">' + inputsHtml() + '</div>' +
       sec('cc-results-sec', t('results'), '', '<div id="cc-results" aria-live="polite">' + resultsHtml() + '</div><p class="pt-src">' + esc(t('fxNote')) + '</p>' + (window.DICite ? window.DICite.derived(['usda_ers','ecb'].concat((jur(C().tax.j) || {}).ids || []),{what:'calc'}) : '') + '<p class="pt-src"><a href="producto.html?p=' + C().crop + '">' + esc(t('prodLink')) + ' →</a></p>') +
       sec('cc-sens-sec', t('sens'), t('sensHint'), '<div id="cc-sens">' + sensHtml() + '</div>') +

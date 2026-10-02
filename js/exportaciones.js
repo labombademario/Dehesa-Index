@@ -162,7 +162,7 @@
 function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
     function render() {
     var t = tr();
-    document.title = 'Dehesa Index — ' + t.title;
+    document.title = t.title + ' | Dehesa Index';
     document.getElementById('pg-h1').textContent = t.title;
     document.getElementById('pg-sub').textContent = t.sub;
     var tab = function (k, label) { return '<button type="button" class="di-link-btn" data-tab="' + k + '" aria-pressed="' + (SEL.tab === k) + '" style="' + (SEL.tab === k ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:18px;font-size:15px">' + esc(label) + '</button>'; };

@@ -115,7 +115,7 @@
   }
   function render() {
     var root = document.getElementById('brief-body'); if (!root) return; var t = tt();
-    var hd = document.getElementById('br-h1'), sb = document.getElementById('br-sub'); if (hd) hd.textContent = t.title; if (sb) sb.textContent = t.sub; document.title = 'Dehesa Index — ' + t.title;
+    var hd = document.getElementById('br-h1'), sb = document.getElementById('br-sub'); if (hd) hd.textContent = t.title; if (sb) sb.textContent = t.sub; document.title = t.title + ' | Dehesa Index';
     var h = '';
     if (window.DIWatch && IDX) h += sec('watch', '🔔 ' + t.my, mine(t));
     if (!B) { root.innerHTML = h + '<p class="di-movers-hint">' + esc(t.nobrief) + '</p>'; bind(root); return; }

@@ -146,7 +146,7 @@
   }
   function render(keep) {
     var body = document.getElementById('ob-body'); if (!body) return;
-    document.getElementById('ob-h1').textContent = t('title'); document.getElementById('ob-sub').textContent = t('sub'); document.title = 'Dehesa Index — ' + t('title');
+    document.getElementById('ob-h1').textContent = t('title'); document.getElementById('ob-sub').textContent = t('sub'); document.title = t('title') + ' | Dehesa Index';
     if (!DOC) return;
     var obs = DOC.observations.filter(ok), any = F.c || F.p || F.s || F.t;
     var h = '<p class="pt-sub">' + esc(t('updated')) + ' ' + esc(DOC.generatedAt.replace('T', ' ').replace('Z', ' UTC')) + '</p>';

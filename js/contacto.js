@@ -4,7 +4,7 @@
 
   var STRINGS = {
     es: {
-      title: 'Dehesa Index — Contacto',
+      title: 'Contacto | Dehesa Index',
       h1: 'Contacto',
       sub: '¿Preguntas, datos que quieras aportar o interés en colaborar? Escríbenos.',
       emailLabel: 'EMAIL',
@@ -19,7 +19,7 @@
       formNote: 'Formulario en construcción — de momento, escríbenos directamente a hola@dehesaindex.com.'
     },
     en: {
-      title: 'Dehesa Index — Contact',
+      title: 'Contact | Dehesa Index',
       h1: 'Contact',
       sub: "Questions, data you'd like to contribute, or interested in collaborating? Get in touch.",
       emailLabel: 'EMAIL',
@@ -34,7 +34,7 @@
       formNote: 'Form under construction — for now, email us directly at hola@dehesaindex.com.'
     },
     fr: {
-      title: 'Dehesa Index — Contact',
+      title: 'Contact | Dehesa Index',
       h1: 'Contact',
       sub: "Des questions, des données à partager ou l'envie de collaborer ? Écrivez-nous.",
       emailLabel: 'E-MAIL',
@@ -49,7 +49,7 @@
       formNote: 'Formulaire en construction — en attendant, écrivez-nous directement à hola@dehesaindex.com.'
     },
     it: {
-      title: 'Dehesa Index — Contatti',
+      title: 'Contatti | Dehesa Index',
       h1: 'Contatti',
       sub: 'Domande, dati che vuoi contribuire o interesse a collaborare? Scrivici.',
       emailLabel: 'EMAIL',

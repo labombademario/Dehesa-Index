@@ -152,7 +152,7 @@
   function chipStyle(on) { return 'display:inline-flex;align-items:center;gap:6px;margin:0 6px 6px 0;padding:4px 11px;border:1px solid ' + (on ? '#2f6b3a' : 'var(--border)') + ';border-radius:999px;background:' + (on ? '#e3f0e5' : 'transparent') + ';color:' + (on ? '#1E3328' : 'inherit') + ';font:inherit;font-size:13px;cursor:pointer'; }
   function render() {
     var root = document.getElementById('cmp-body'); if (!root || !D) return; var t = tt(), p = D.products[ST.p];
-    var h1 = document.getElementById('cp-h1'), sb = document.getElementById('cp-sub'); if (h1) h1.textContent = t.title; if (sb) sb.textContent = t.sub; document.title = 'Dehesa Index — ' + t.title;
+    var h1 = document.getElementById('cp-h1'), sb = document.getElementById('cp-sub'); if (h1) h1.textContent = t.title; if (sb) sb.textContent = t.sub; document.title = t.title + ' | Dehesa Index';
     var list = sel(), codes = p.series.map(function (s) { return s.c; });
     var orderPref = ['ES', 'FR', 'DE', 'IT', 'NL', 'PL', 'DK', 'IE', 'UK', 'EU', 'CA', 'US'];
     codes.sort(function (a, b) { var x = orderPref.indexOf(a), y = orderPref.indexOf(b); return (x < 0 ? 99 : x) - (y < 0 ? 99 : y) || (a < b ? -1 : 1); });

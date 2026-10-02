@@ -4,6 +4,7 @@
    URLs: es /precios/<producto>/ · en /en/prices/<slug>/ · fr /fr/prix/<slug>/ · it /it/prezzi/<slug>/ (hreflang reciproco + x-default).
    Se ejecuta al final de scripts/build-seo-pages.mjs (workflow "Rebuild SEO landing pages") y reescribe el bloque marcado de sitemap.xml. */
 import fs from 'node:fs';
+import { seoTitle, seoDesc, socialMeta } from './lib_seo.mjs';
 const read = f => fs.readFileSync(f, 'utf8');
 const SITE = 'https://dehesaindex.com';
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -100,7 +101,7 @@ for (const lg of Object.keys(L)) {
     const url = urlOf(lg, p), up = T.up, rg = o => T.reg[o.r], un = o => T.unit[o.unit] || '/' + o.unit;
     const line = o => nf(o.value) + ' ' + CUR[o.currency] + ((T.unitS && T.unitS[o.unit]) || US[o.unit] || '/' + o.unit);
     const head = obs.slice(0, 2).map(o => (T.regShort[o.r] || T.reg[o.r]) + ' ' + line(o)).join(' · ');
-    const title = T.title(de, head) + ' | Dehesa Index';
+    const title = seoTitle(T.title(de, head));
     const latest = obs.reduce((m, o) => o.observationDate > m ? o.observationDate : m, '');
     const desc = (T.descIntro(de) + obs.map(o => rg(o) + ' ' + line(o) + ' (' + per(o.observationDate) + (o.changePct != null ? ', ' + pct(o.changePct) : '') + ')').join('; ') + T.descEnd).slice(0, 300);
     const rows = obs.map(o => { const s = cite[o.sourceId] || {};
@@ -120,10 +121,10 @@ for (const lg of Object.keys(L)) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
-<meta name="description" content="${esc(desc)}">
+<meta name="description" content="${esc(seoDesc(desc))}">
 <link rel="canonical" href="${url}">
 ${alts}
-<meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="Dehesa Index">
+<meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(seoDesc(desc))}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="Dehesa Index">${socialMeta(lg)}
 <link rel="icon" href="${up}assets/icon-192.png">
 <link rel="stylesheet" href="${up}css/style.css">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>

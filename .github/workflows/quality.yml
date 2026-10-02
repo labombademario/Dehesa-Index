@@ -101,6 +101,8 @@ jobs:
 
       - name: Versiones ?v= de scripts y estilos al dia (node scripts/stamp-assets.mjs)
         run: node scripts/stamp-assets.mjs --check
+      - name: Vista previa social en paginas raiz (node scripts/stamp-social.mjs)
+        run: node scripts/stamp-social.mjs --check
 
       - name: Service worker version matches the code
         run: node scripts/stamp-sw.mjs --check

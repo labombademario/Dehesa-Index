@@ -37,7 +37,7 @@
   function ents(M, t) { var e = M.entities || {}; if (!e.country) return Object.keys(M.countries).length + ' ' + esc(t.countries); return e.country + ' ' + esc(t.countries) + (e.aggregate ? ' · ' + e.aggregate + ' ' + esc(t.aggr) : '') + (e.region ? ' · ' + e.region + ' ' + esc(t.regs) : ''); }
   function shell() {
     var root = document.getElementById('cat-body'), t = tt(); if (!root || !M) return;
-    var h1 = document.getElementById('ct-h1'), sb = document.getElementById('ct-sub'); if (h1) h1.textContent = t.title; if (sb) sb.textContent = t.sub; document.title = 'Dehesa Index — ' + t.title;
+    var h1 = document.getElementById('ct-h1'), sb = document.getElementById('ct-sub'); if (h1) h1.textContent = t.title; if (sb) sb.textContent = t.sub; document.title = t.title + ' | Dehesa Index';
     var nfiles = 0; Object.keys(M.countries).forEach(function (c) { Object.keys(M.countries[c].metrics).forEach(function (g) { nfiles += M.countries[c].metrics[g].files.length; }); });
     var cOpt = '<option value="">' + esc(t.all) + '</option>' + Object.keys(M.countries).map(function (c) { return '<option value="' + c + '"' + (c === ST.cc ? ' selected' : '') + '>' + flag(c) + ' ' + esc(cname(c, M.countries[c].name)) + ' (' + M.countries[c].n + ')</option>'; }).join('');
     var gs = {}; Object.keys(M.countries).forEach(function (c) { if (ST.cc && c !== ST.cc) return; Object.keys(M.countries[c].metrics).forEach(function (g) { gs[g] = (gs[g] || 0) + M.countries[c].metrics[g].n; }); });

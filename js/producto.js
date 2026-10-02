@@ -472,7 +472,7 @@
     var t = tr(), root = document.getElementById(TERM ? 'pr-legacy-body' : 'pr-body'), cfg = CFG[SEL.p], nm = names();
     if (!root) return;
     if (!TERM) {
-      document.title = 'Dehesa Index — ' + t.title + ': ' + (nm[SEL.p] || SEL.p);
+      document.title = t.title + ': ' + (nm[SEL.p] || SEL.p) + ' | Dehesa Index';
       document.getElementById('pg-h1').textContent = t.title + ': ' + (nm[SEL.p] || SEL.p);
       document.getElementById('pg-sub').textContent = t.sub;
     }

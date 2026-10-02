@@ -74,7 +74,7 @@
   function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   function render() {
     var t = tr(), root = document.getElementById('in-body');
-    document.title = 'Dehesa Index — ' + t.title; document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
+    document.title = t.title + ' | Dehesa Index'; document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
     if (!D) { root.innerHTML = fertHtml() + '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; return; }
     var all = []; G.forEach(function (g) { Object.keys(g.k).forEach(function (k) { if (ser(k)) all.push({ k: k, g: g, l: g.k[k][P] }); }); });
     if (!all.some(function (x) { return x.k === SEL.key; })) SEL.key = all[0].k;

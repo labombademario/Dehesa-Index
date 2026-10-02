@@ -48,7 +48,7 @@
   function page() {
     var el = document.getElementById('clima-body'); if (!el || !DATA) return;
     var t = T[lang()] || T.es;
-    document.title = 'Dehesa Index — ' + t.title;
+    document.title = t.title + ' | Dehesa Index';
     document.getElementById('pg-h1').textContent = t.title;
     document.getElementById('pg-sub').textContent = t.sub;
     var html = '<p class="di-movers-hint" style="margin:0 0 6px">' + t.month + ': <b>' + DATA.lastPeriod + '</b> · ' + t.legendP + '<br>' + t.legendT + '</p>';

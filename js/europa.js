@@ -321,7 +321,7 @@
   function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   function render() {
     var t = tr(), root = document.getElementById('pr-body');
-    document.title = 'Dehesa Index — ' + t.title;
+    document.title = t.title + ' | Dehesa Index';
     document.getElementById('pg-h1').textContent = t.title;
     document.getElementById('pg-sub').textContent = t.sub;
     if (!ST.idx) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.err) + '</p>'; return; }

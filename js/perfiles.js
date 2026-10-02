@@ -146,7 +146,7 @@
     });
     return '<section class="di-card" style="padding:14px 18px;margin-bottom:22px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">★ ' + esc(w.title.toUpperCase()) + '</div><div class="di-movers-hint" style="margin:4px 0 6px">' + esc(w.hint) + ' <a href="brief.html#watch" style="color:inherit">🔔 →</a></div>' + (rows || '<div class="di-movers-hint">' + esc(w.empty) + '</div>') + '</section>';
   }
-  function shell() { var t = tt(), h = document.getElementById('pf-h1'), s = document.getElementById('pf-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = 'Dehesa Index — ' + t.title; }
+  function shell() { var t = tt(), h = document.getElementById('pf-h1'), s = document.getElementById('pf-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };

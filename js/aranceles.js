@@ -124,7 +124,7 @@
     Array.prototype.forEach.call(document.querySelectorAll('[data-ch]'), function (a) { a.onclick = function (e) { e.preventDefault(); ST.c = a.getAttribute('data-ch'); ST.n = 100; build(); var x = document.getElementById('ar-explorer'); if (x && x.scrollIntoView) x.scrollIntoView(); }; });
     bindMore();
   }
-  function shell() { var t = tt(), h = document.getElementById('ar-h1'), s = document.getElementById('ar-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = 'Dehesa Index — ' + t.title; }
+  function shell() { var t = tt(), h = document.getElementById('ar-h1'), s = document.getElementById('ar-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
   (function () { var q = new URLSearchParams(window.location.search); if (FILES[q.get('m')]) ST.k = q.get('m'); if (q.get('ch') && CH[q.get('ch')]) ST.c = q.get('ch'); if (q.get('q')) ST.q = q.get('q'); if (T.es.types[q.get('r')]) ST.r = q.get('r'); })();
   window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;

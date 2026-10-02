@@ -378,7 +378,7 @@
   // ---------------------------------------------------------------------
   function renderHead() {
     var t = ui();
-    document.title = 'Dehesa Index — ' + t.pageTitle;
+    document.title = t.pageTitle + ' | Dehesa Index';
     document.getElementById('pr-title').textContent = t.pageTitle;
     document.getElementById('pr-badge').textContent = t.badge;
     document.getElementById('pr-subtitle').textContent = t.pageSubtitle;

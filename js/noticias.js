@@ -193,7 +193,7 @@ window.DINews.feed().then(function () {
 
   var STRINGS = {
     es: {
-      title: 'Dehesa Index — Noticias', h1: 'Noticias',
+      title: 'Noticias | Dehesa Index', h1: 'Noticias',
       origLang: 'Titular en idioma original', showMore: 'Mostrar {n} más',
       sub: 'Los titulares más recientes del mundo agrícola, seleccionados de agencias de noticias y fuentes oficiales.',
       badge: 'TITULARES REALES', updatedLabel: 'Actualizado',
@@ -220,7 +220,7 @@ window.DINews.feed().then(function () {
       ]
     },
     en: {
-      title: 'Dehesa Index — News', h1: 'News',
+      title: 'News | Dehesa Index', h1: 'News',
       origLang: 'Headline in its original language', showMore: 'Show {n} more',
       sub: 'The most recent headlines from the agricultural world, curated from news agencies and official sources.',
       badge: 'REAL HEADLINES', updatedLabel: 'Updated',
@@ -247,7 +247,7 @@ window.DINews.feed().then(function () {
       ]
     },
     fr: {
-      title: 'Dehesa Index — Actualités', h1: 'Actualités',
+      title: 'Actualités | Dehesa Index', h1: 'Actualités',
       origLang: 'Titre dans sa langue d\'origine', showMore: 'Afficher {n} de plus',
       sub: "Les derniers titres du monde agricole, sélectionnés auprès d'agences de presse et de sources officielles.",
       badge: 'TITRES RÉELS', updatedLabel: 'Mis à jour',
@@ -274,7 +274,7 @@ window.DINews.feed().then(function () {
       ]
     },
     it: {
-      title: 'Dehesa Index — Notizie', h1: 'Notizie',
+      title: 'Notizie | Dehesa Index', h1: 'Notizie',
       origLang: 'Titolo nella lingua originale', showMore: 'Mostra altre {n}',
       sub: 'I titoli più recenti dal mondo agricolo, selezionati da agenzie di stampa e fonti ufficiali.',
       badge: 'TITOLI REALI', updatedLabel: 'Aggiornato',

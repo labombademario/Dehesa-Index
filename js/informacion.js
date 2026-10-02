@@ -17,7 +17,7 @@
 
   var STRINGS = {
     es: {
-      title: 'Dehesa Index — Información',
+      title: 'Información | Dehesa Index',
       h1: 'Información',
       sub: 'Quiénes somos, de dónde viene el nombre y cómo construimos el panel de precios.',
       sec1Title: 'Nuestra misión',
@@ -51,7 +51,7 @@
       apiNotice: 'Los precios de EE. UU. proceden de USDA NASS Quick Stats y se consultan cada semana (NASS publica una vez al mes). This product uses the NASS API but is not endorsed or certified by NASS. Los tipos de cambio se actualizan cada día laborable con las cotizaciones de referencia del Banco Central Europeo, que las publica solo con fines informativos.'
     },
     en: {
-      title: 'Dehesa Index — Information',
+      title: 'Information | Dehesa Index',
       h1: 'Information',
       sub: 'Who we are, where the name comes from, and how we built the price dashboard.',
       sec1Title: 'Our mission',
@@ -85,7 +85,7 @@
       apiNotice: 'U.S. prices come from USDA NASS Quick Stats and are checked every week (NASS publishes once a month). This product uses the NASS API but is not endorsed or certified by NASS. Exchange rates are updated every business day from the European Central Bank reference rates, which the ECB publishes for information purposes only.'
     },
     fr: {
-      title: 'Dehesa Index — Informations',
+      title: 'Informations | Dehesa Index',
       h1: 'Informations',
       sub: "Qui nous sommes, d'où vient le nom et comment nous avons construit le tableau des prix.",
       sec1Title: 'Notre mission',
@@ -119,7 +119,7 @@
       apiNotice: 'Les prix américains proviennent d\'USDA NASS Quick Stats et sont consultés chaque semaine (NASS publie une fois par mois). This product uses the NASS API but is not endorsed or certified by NASS. Les taux de change sont mis à jour chaque jour ouvré à partir des taux de référence de la Banque centrale européenne, publiés à titre informatif uniquement.'
     },
     it: {
-      title: 'Dehesa Index — Informazioni',
+      title: 'Informazioni | Dehesa Index',
       h1: 'Informazioni',
       sub: 'Chi siamo, da dove viene il nome e come abbiamo costruito il pannello dei prezzi.',
       sec1Title: 'La nostra missione',

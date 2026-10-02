@@ -6,7 +6,7 @@
     function render() {
       var lang = window.DehesaShared.getLang();
       var t = STRINGS[lang] || STRINGS.es;
-      document.title = 'Dehesa Index — ' + t.title;
+      document.title = t.title + ' | Dehesa Index';
       document.getElementById('pg-h1').textContent = t.title;
       document.getElementById('pg-sub').textContent = t.sub;
       document.documentElement.lang = STRINGS[lang] ? lang : 'es';

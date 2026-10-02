@@ -6,6 +6,7 @@
    Los nombres y las etiquetas salen de js/region-names.js y js/region.js (una sola fuente de verdad); los mapas de vendor/ dan la lista de regiones.
    Se ejecuta al final de scripts/build-seo-pages.mjs y reescribe el bloque marcado de sitemap.xml. */
 import fs from 'node:fs';
+import { seoTitle, seoDesc, socialMeta } from './lib_seo.mjs';
 import vm from 'node:vm';
 const read = f => fs.readFileSync(f, 'utf8');
 const SITE = 'https://dehesaindex.com';
@@ -54,13 +55,13 @@ const S = {
     onfeed: 'En engraissement', yago: 'Il y a un an', kh: 'mille têtes', rate: 'Taux de l’État', nostate: 'Pas de taxe de vente d’État', head: 'Effectifs', cattleN: 'Bovins', hogsN: 'Porcins', sheepN: 'Ovins', netInc: 'Revenu net', cashRec: 'Recettes en espèces (total)', cad: 'M CAD', eur: 'M EUR', prodUnits: 'mille t', hth: 'mille ha',
     holdings: 'Exploitations', ha: 'Surface agricole (ha)', avg: 'Taille moyenne (ha)', sout: 'Production standard (M EUR)', milk: 'Lait de vache collecté (mille t)', headk: 'mille têtes', aud: 'M A$', noteH: 'Comment lire ces chiffres', note: 'Chiffres tels que les publie chaque source officielle, avec leur unité. Ce qu’une source ne publie pas pour cette région n’est ni comblé ni estimé.', cta: 'Ouvrir le profil interactif avec graphiques →', mapCta: 'Voir la carte : ', src: 'Sources', lic: 'Licence', gen: 'Page générée le', others: 'Autres', ofC: 'de', profile: 'Profil du pays', pageOf: 'Agriculture : ', methodology: 'Méthodologie', forecast: 'Les chiffres de l’année en cours sont une prévision de la source.', metodo: 'metodologia.html', home: 'Accueil',
     title: (r, c, h) => r + ' (' + c + ') : agriculture' + (h ? ', ' + h : ''), h1: (r, c) => r + ' : données agricoles et statistiques', lead: (r, c, h, k) => 'Chiffres officiels pour ' + r + ' (' + c + ')' + (h ? ' : ' + h : '') + '. Cette page rassemble les données agricoles publiées pour ' + k + ' et renvoie au profil interactif.', kindS: { US: 'cet État', CA: 'cette province ou ce territoire', ES: 'cette communauté autonome', FR: 'cette région', IT: 'cette région', DE: 'ce Land', AU: 'cet État ou territoire', NL: 'cette province', AT: 'ce Land' },
-    hubTitle: (c, n) => 'L’agriculture par région : ' + c + ', ' + n + ' profils avec données officielles', hubH1: c => 'Données agricoles par région : ' + c, hubLead: (c, n, k) => n + ' ' + k + ' (' + c + ') avec les chiffres publiés par les sources officielles : cultures, élevage, revenu agricole et plus, selon ce qui existe pour chacune.', hubList: 'Toutes les régions', hubOther: 'Autres pays', heads: { US: 'États', CA: 'Provinces et territoires', ES: 'Communautés autonomes', FR: 'Régions', IT: 'Régions', DE: 'Länder', AU: 'États et territoires', NL: 'Provinces', AT: 'Länder' } },
+    hubTitle: (c, n) => 'Agriculture par région : ' + c + ', ' + n + ' profils officiels', hubH1: c => 'Données agricoles par région : ' + c, hubLead: (c, n, k) => n + ' ' + k + ' (' + c + ') avec les chiffres publiés par les sources officielles : cultures, élevage, revenu agricole et plus, selon ce qui existe pour chacune.', hubList: 'Toutes les régions', hubOther: 'Autres pays', heads: { US: 'États', CA: 'Provinces et territoires', ES: 'Communautés autonomes', FR: 'Régions', IT: 'Régions', DE: 'Länder', AU: 'États et territoires', NL: 'Provinces', AT: 'Länder' } },
   it: { root: 'it/regioni', hub: 'Regioni', tbl: { drought: 'Siccità', crops: 'Colture', cattle: 'Bovini in ingrasso', tax: 'Imposta sulle vendite', lvst: 'Allevamento', inc: 'Reddito agricolo', eaa: 'Conti dell’agricoltura', mix: 'Origine della produzione', land: 'Terra e colture', animals: 'Allevamento', farms: 'Aziende agricole', exp: 'Esportazioni agroalimentari' },
     d1: 'Siccità moderata o peggiore', d2: 'Grave o peggiore', d3: 'Estrema o peggiore', d4: 'Eccezionale', ofArea: 'della superficie', asof: 'al', crop: 'Coltura', area: 'Superficie', yield: 'Resa', prod: 'Produzione', year: 'Anno', conc: 'Voce', value: 'Valore', yoy: 'Variazione annua', share: 'Peso', unit: 'Unità',
     onfeed: 'In ingrasso', yago: 'Un anno fa', kh: 'mila capi', rate: 'Aliquota statale', nostate: 'Nessuna imposta statale sulle vendite', head: 'Consistenza', cattleN: 'Bovini', hogsN: 'Suini', sheepN: 'Ovini', netInc: 'Reddito netto', cashRec: 'Ricavi in contanti (totale)', cad: 'M CAD', eur: 'M EUR', prodUnits: 'mila t', hth: 'mila ha',
     holdings: 'Aziende', ha: 'Superficie agricola (ha)', avg: 'Dimensione media (ha)', sout: 'Produzione standard (M EUR)', milk: 'Latte vaccino raccolto (mila t)', headk: 'mila capi', aud: 'M A$', noteH: 'Come leggere queste cifre', note: 'Cifre come le pubblica ogni fonte ufficiale, con la loro unità. Ciò che una fonte non pubblica per questa regione non viene riempito né stimato.', cta: 'Apri il profilo interattivo con i grafici →', mapCta: 'Vedi la mappa: ', src: 'Fonti', lic: 'Licenza', gen: 'Pagina generata il', others: 'Altre', ofC: 'di', profile: 'Profilo del paese', pageOf: 'Agricoltura: ', methodology: 'Metodologia', forecast: 'Le cifre dell’anno in corso sono una previsione della fonte.', metodo: 'metodologia.html', home: 'Home',
     title: (r, c, h) => r + ' (' + c + '): agricoltura' + (h ? ', ' + h : ''), h1: (r, c) => r + ': dati agricoli e statistiche', lead: (r, c, h, k) => 'Cifre ufficiali per ' + r + ' (' + c + ')' + (h ? ': ' + h : '') + '. Questa pagina raccoglie i dati agricoli pubblicati per ' + k + ' e rimanda al profilo interattivo.', kindS: { US: 'questo stato', CA: 'questa provincia o questo territorio', ES: 'questa comunità autonoma', FR: 'questa regione', IT: 'questa regione', DE: 'questo Land', AU: 'questo stato o territorio', NL: 'questa provincia', AT: 'questo Land' },
-    hubTitle: (c, n) => 'L’agricoltura per regione: ' + c + ', ' + n + ' profili con dati ufficiali', hubH1: c => 'Dati agricoli per regione: ' + c, hubLead: (c, n, k) => n + ' ' + k + ' (' + c + ') con le cifre pubblicate dalle fonti ufficiali: colture, allevamento, reddito agricolo e altro, secondo ciò che esiste per ciascuna.', hubList: 'Tutte le regioni', hubOther: 'Altri paesi', heads: { US: 'Stati', CA: 'Province e territori', ES: 'Comunità autonome', FR: 'Regioni', IT: 'Regioni', DE: 'Länder', AU: 'Stati e territori', NL: 'Province', AT: 'Länder' } }
+    hubTitle: (c, n) => 'Agricoltura per regione: ' + c + ', ' + n + ' profili ufficiali', hubH1: c => 'Dati agricoli per regione: ' + c, hubLead: (c, n, k) => n + ' ' + k + ' (' + c + ') con le cifre pubblicate dalle fonti ufficiali: colture, allevamento, reddito agricolo e altro, secondo ciò che esiste per ciascuna.', hubList: 'Tutte le regioni', hubOther: 'Altri paesi', heads: { US: 'Stati', CA: 'Province e territori', ES: 'Comunità autonome', FR: 'Regioni', IT: 'Regioni', DE: 'Länder', AU: 'Stati e territori', NL: 'Province', AT: 'Länder' } }
 };
 const SRC = { US: [['USDA NASS / US Drought Monitor / AMS', 'https://www.nass.usda.gov/']], CA: [['Statistics Canada · Canadian Drought Monitor (AAFC)', 'https://www150.statcan.gc.ca/']], ES: [['Eurostat (EAA, NUTS)', 'https://ec.europa.eu/eurostat/']], FR: [['Eurostat (EAA, NUTS)', 'https://ec.europa.eu/eurostat/']], IT: [['Eurostat (EAA, NUTS)', 'https://ec.europa.eu/eurostat/']], DE: [['Eurostat (EAA, NUTS)', 'https://ec.europa.eu/eurostat/']], NL: [['Eurostat (EAA, NUTS)', 'https://ec.europa.eu/eurostat/']], AT: [['Eurostat (EAA, NUTS)', 'https://ec.europa.eu/eurostat/']], AU: [['Australian Bureau of Statistics (CC BY 4.0)', 'https://www.abs.gov.au/statistics/economy/international-trade']] };
 /* ---- facts por pais: devuelven { head: {valor numerico formateable, clave}, blocks:[{k, cols, rows(lg->array), note}] } ---- */
@@ -146,10 +147,10 @@ const head = (lg, title, desc, url, alts, ld, up) => `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
-<meta name="description" content="${esc(desc)}">
+<meta name="description" content="${esc(seoDesc(desc))}">
 <link rel="canonical" href="${url}">
 ${alts}
-<meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="Dehesa Index">
+<meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(seoDesc(desc))}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="Dehesa Index">${socialMeta(lg)}
 <link rel="icon" href="${up}assets/icon-192.png">
 <link rel="stylesheet" href="${up}css/style.css">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
@@ -186,7 +187,7 @@ for (const c of CORDER) {
     const profile = lg === 'es' ? 'paises.html?c=' + c : 'paises.html?c=' + c;
     for (const r of sorted) {
       const F = factsOf(c, r, lg, f), rn = nameOf(r), url = urlR(lg, c, slugify(nm(c, r, lg))), up = upOf(lg, 1);
-      const title = (t.title(rn, cname, (F.head || '').replace(' ' + t.ofArea, '')) + ' | Dehesa Index'), top = F.B[0];
+      const title = seoTitle(t.title(rn, cname, (F.head || '').replace(' ' + t.ofArea, '').replace(/\s*\((?:\d{4}|[^)]*\d{4}[^)]*)\)\s*$/, ''))), top = F.B[0];
       const desc = (t.lead(rn, cname, F.head, t.kindS[c]) + ' ' + F.B.map(b => t.tbl[b.k]).join(', ') + '.').slice(0, 300);
       const alt = alts(l2 => urlR(l2, c, slugify(nm(c, r, l2))));
       const ld = { '@context': 'https://schema.org', '@graph': [
@@ -203,7 +204,7 @@ for (const c of CORDER) {
       out.push([url.replace(SITE + '/', ''), h]); urls.push(url);
     }
     // indice del pais
-    { const url = urlR(lg, c), up = upOf(lg, 0), title = t.hubTitle(cname, sorted.length) + ' | Dehesa Index', desc = t.hubLead(cname, sorted.length, t.heads[c].toLowerCase()).slice(0, 300);
+    { const url = urlR(lg, c), up = upOf(lg, 0), title = seoTitle(t.hubTitle(cname, sorted.length)), desc = t.hubLead(cname, sorted.length, t.heads[c].toLowerCase()).slice(0, 300);
       const ld = { '@context': 'https://schema.org', '@graph': [{ '@type': 'CollectionPage', name: t.hubH1(cname), description: desc, url, inLanguage: lg, hasPart: sorted.map(r => ({ '@type': 'WebPage', name: nameOf(r), url: urlR(lg, c, slugify(nm(c, r, lg))) })) },
         { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Dehesa Index', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: cname, item: url }] }] };
       let h = head(lg, title, desc, url, alts(l2 => urlR(l2, c)), ld, up);
