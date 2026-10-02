@@ -1,0 +1,32 @@
+name: TMP probe MARS (borrar)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  f:
+    runs-on: ubuntu-24.04
+    env:
+      MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          mkdir -p scripts/tmp
+          for s in 1083 1092 1623 1603; do
+            for q in "report_begin_date=01/01/2024:10/01/2026" "report_date=09/01/2026:10/01/2026" "report_end_date=09/01/2026:10/01/2026"; do
+              curl -sSL -u "$MARS_API_KEY:" -H 'Accept: application/json' "https://marsapi.ams.usda.gov/services/v1.2/reports/$s?allSections=true&q=$q" -o /tmp/r.json || true
+              python3 - "$s" "$q" >> scripts/tmp/summary.txt <<'PY'
+          import json,sys,collections
+          try:
+              d=json.load(open('/tmp/r.json')); r=[x for s in d for x in s.get('results',[])]
+              yrs=collections.Counter(x['report_date'][-4:] for x in r)
+              print(sys.argv[1],sys.argv[2],len(r),dict(sorted(yrs.items())[-3:]))
+              if r: print('  ',json.dumps({k:v for k,v in r[0].items() if k in ('report_date','group','package','price_min','price_max','price_Unit','report_title')}))
+          except Exception as e: print(sys.argv[1],sys.argv[2],'ERR',e)
+          PY
+            done
+          done
+          cat scripts/tmp/summary.txt
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/tmp; git commit -qm "TMP: sondeo queso MARS 3"; git pull -q --rebase --autostash; git push
