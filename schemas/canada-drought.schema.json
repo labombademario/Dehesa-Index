@@ -68,8 +68,7 @@
   },
   "provinces": {
    "type": "object",
-   "minProperties": 13,
-   "maxProperties": 13
+   "minProperties": 13
   }
  }
 }

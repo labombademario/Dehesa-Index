@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T05:03:00Z",
+ "generatedAt": "2026-10-02T05:25:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 46,
   "late": 0,
   "error": 3,
-  "not_run": 3,
+  "not_run": 4,
   "unknown": 0
  },
  "global": "error",
@@ -47,7 +47,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-02T00:04:04Z"
+     "lastChange": "2026-10-02T05:05:37Z"
     }
    ],
    "last": {
@@ -79,7 +79,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-02T00:04:04Z"
+     "lastChange": "2026-10-02T05:05:37Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -216,6 +216,28 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-canada-drought.yml",
+   "name": "Update Canada drought (Canadian Drought Monitor)",
+   "crons": [
+    "20 8 * * 2,4"
+   ],
+   "nextRun": "2026-10-06T08:20:00Z",
+   "files": [
+    {
+     "path": "data/canada-drought.json",
+     "lastChange": "2026-10-02T05:22:21Z"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 120.0
   },
   {
    "workflow": "update-canada-grain.yml",
@@ -754,11 +776,11 @@
    "crons": [
     "10 5 2 * *"
    ],
-   "nextRun": "2026-10-02T05:10:00Z",
+   "nextRun": "2026-11-02T05:10:00Z",
    "files": [
     {
      "path": "data/eu-vat.json",
-     "lastChange": "2026-10-02T04:05:37Z"
+     "lastChange": "2026-10-02T05:21:29Z"
     },
     {
      "path": "data/revisions.json",
@@ -767,14 +789,14 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-02T04:05:16Z",
-    "durationSec": 27,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36962996803"
+    "event": "schedule",
+    "startedAt": "2026-10-02T05:21:08Z",
+    "durationSec": 25,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36968543425"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -1166,7 +1188,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-02T04:05:02Z"
+     "lastChange": "2026-10-02T05:05:37Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1210,11 +1232,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-02T04:05:02Z"
+     "lastChange": "2026-10-02T05:05:37Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-02T04:18:36Z"
+     "lastChange": "2026-10-02T05:05:37Z"
     },
     {
      "path": "data/coverage-gaps.json",
@@ -1357,18 +1379,18 @@
    "crons": [
     "10 5 * * *"
    ],
-   "nextRun": "2026-10-02T05:10:00Z",
+   "nextRun": "2026-10-03T05:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-01T04:59:23Z",
-    "durationSec": 10,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36817658098"
+    "event": "schedule",
+    "startedAt": "2026-10-02T05:25:10Z",
+    "durationSec": 16,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36968843207"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",

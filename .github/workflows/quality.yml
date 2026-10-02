@@ -60,6 +60,7 @@ jobs:
           python3 scripts/test-canada-grain.py
           python3 -m pip install --quiet numpy netCDF4 shapely
           python3 scripts/test-eu-drought.py
+          python3 scripts/test-canada-drought.py
 
       - name: US local cash bids parser, merge, revisions and failure safety (offline fixtures, no API)
         run: python3 scripts/test-us-cash-bids.py

@@ -13,10 +13,10 @@ def check(name, cond):
     print(("ok   " if cond else "FAIL ") + name)
     if not cond: fails.append(name)
 check("registro real pasa --strict", run(reg, "--strict").returncode == 0)
-r = copy.deepcopy(reg); del r["pendingBaseline"]["sources"]["mapa_es"]
+r = copy.deepcopy(reg); del r["pendingBaseline"]["sources"]["franceagrimer"]
 x = run(r, "--strict"); check("PENDING en uso fuera de la base falla --strict", x.returncode == 1 and "fuera de pendingBaseline" in x.stdout)
 check("sin --strict esa misma fuente solo avisa", run(r).returncode == 0)
-r = copy.deepcopy(reg); r["sources"]["mapa_es"]["status"] = "VERIFIED"
+r = copy.deepcopy(reg); r["sources"]["franceagrimer"]["status"] = "VERIFIED"
 x = run(r, "--strict"); check("base desfasada (fuente ya resuelta) falla --strict", x.returncode == 1 and "quitarla de la lista" in x.stdout)
 r = copy.deepcopy(reg); r["pendingBaseline"]["sources"]["ble"].pop("nextAction")
 check("base sin nextAction falla --strict", run(r, "--strict").returncode == 1)
