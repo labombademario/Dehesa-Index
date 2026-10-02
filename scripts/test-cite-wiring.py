@@ -12,6 +12,8 @@ for h in sorted(R.glob("*.html")):
     t = h.read_text(encoding="utf-8"); srcs = re.findall(r'src="js/([^"?]+)', t)
     for i, s in enumerate(srcs):
         if s in users and ("cite.js" not in srcs or srcs.index("cite.js") > i): err.append("%s: %s usa DICite pero cite.js no esta cargado antes" % (h.name, s))
+import subprocess
+if subprocess.run([sys.executable, str(R / "scripts/build-cite-view.py"), "--check"]).returncode: err.append("data/views/license-cite.json desactualizado")
 print("JS que citan:", sorted(users))
 print("\n".join(err) or "OK")
 sys.exit(1 if err else 0)

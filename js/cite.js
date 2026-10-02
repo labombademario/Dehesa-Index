@@ -42,7 +42,7 @@
   function load(url) {
     if (P) return P;
     if (REG) { P = Promise.resolve(REG); return P; }
-    P = (typeof fetch === 'function' ? fetch(url || 'data/license-registry.json').then(function (r) { return r.ok ? r.json() : null; }) : Promise.resolve(null))
+    P = (typeof fetch === 'function' ? fetch(url || 'data/views/license-cite.json').then(function (r) { return r.ok ? r.json() : null; }) : Promise.resolve(null))
       .then(function (d) { REG = d && d.sources ? d : null; return REG; }).catch(function () { return null; });
     return P;
   }
