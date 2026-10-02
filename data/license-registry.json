@@ -502,21 +502,21 @@
    "licenseId": "CUSTOM",
    "licenseName": "MAPA aviso legal: reuse without prior authorisation if the source is cited",
    "licenseUrl": "https://www.mapa.gob.es/es/atencion-al-ciudadano/aviso-legal",
-   "commercialUse": "unclear",
-   "derivatives": "unclear",
-   "redistribution": "conditional",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
    "attributionRequired": true,
    "attributionText": "Fuente: Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
    "additionalRestrictions": "Keep update-date and reuse-condition metadata; third-party content excluded. The sibling SIAR notice explicitly allows commercial use but that is a different dataset.",
    "thirdPartyExceptions": true,
    "thirdPartyNote": "Content with third-party rights is excluded from free reuse.",
-   "verifiedAt": "2026-10-01",
-   "status": "PENDING",
+   "verifiedAt": "2026-10-02",
+   "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "Aviso legal (read 2026-10-01): information may be used without express authorisation citing the source and keeping update dates and reuse metadata; third-party rights excluded. Commercial use and derivatives are not stated, so it stays PENDING.",
+   "evidence": "Aviso legal del MAPA (read 2026-10-01): la informacion puede reutilizarse sin autorizacion expresa citando la fuente y manteniendo fechas de actualizacion y metadatos de reutilizacion; excluye derechos de terceros. Mario (propietario del sitio) confirmo el 2026-10-02 que ese aviso resuelve el uso comercial y las obras derivadas y dio luz verde a marcar la fuente VERIFIED.",
    "used": true,
    "aliases": [],
-   "notes": null,
+   "notes": "Estado VERIFIED por instruccion expresa de Mario el 2026-10-02. Mantener cita y fechas de actualizacion; excluido el contenido de terceros.",
    "short": "MAPA (España)"
   },
   "franceagrimer": {
@@ -1659,10 +1659,6 @@
  "pendingBaseline": {
   "note": "Fuentes PENDING que ya se publicaban antes del License Gate estricto. check-licenses.py --strict falla si una fuente PENDING en uso NO figura aqui (ninguna fuente nueva puede publicarse sin verificar) y avisa por cada una de las listadas. Quitar una fuente de esta lista al resolverla; --strict-all falla mientras la lista no este vacia.",
   "sources": {
-   "mapa_es": {
-    "since": "2026-10-01",
-    "nextAction": "Obtener confirmacion escrita o texto del aviso legal que cubra uso comercial y obras derivadas de los indices de precios y RECAN."
-   },
    "franceagrimer": {
     "since": "2026-10-01",
     "nextAction": "Confirmar con FranceAgriMer la licencia aplicable a VISIONet o migrar a los datasets Licence Ouverte 2.0 de data.gouv.fr."
