@@ -138,7 +138,9 @@
   function paintReg(cc, el) {
     var R = window.DehesaRegionMetrics, sel = document.getElementById('ps-metric'), svg = el.querySelector('svg'), lg = document.getElementById('ps-legend'); if (!R || !svg || !lg) return;
     var run = function () { R.paint(svg, cc, sel ? sel.value : '', lang(), '').then(function (h) { lg.innerHTML = h; }); };
-    if (sel) sel.onchange = run; run();
+    if (sel) sel.onchange = run;
+    // el coloreado descarga datos (hasta ~400 KB): solo cuando la tarjeta entra en pantalla, para no pesar en la carga inicial
+    if ('IntersectionObserver' in window) { var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { io.disconnect(); run(); } }, { rootMargin: '200px' }); io.observe(svg); } else run();
   }
   function regMap(cc) {
     var key = { US: 'DEHESA_US_STATES', CA: 'DEHESA_CA_PROVINCES', ES: 'DEHESA_ES_CCAA', FR: 'DEHESA_FR_REGIONS', IT: 'DEHESA_IT_REGIONS', DE: 'DEHESA_DE_LAENDER', AU: 'DEHESA_AU_STATES', NL: 'DEHESA_NL_PROVINCES', AT: 'DEHESA_AT_LAENDER' }[cc], src = { US: 'vendor/us-states.js', CA: 'vendor/ca-provinces.js', ES: 'vendor/es-ccaa.js', FR: 'vendor/fr-regions.js', IT: 'vendor/it-regions.js', DE: 'vendor/de-laender.js', AU: 'vendor/au-states.js', NL: 'vendor/nl-provinces.js', AT: 'vendor/at-laender.js' }[cc];
