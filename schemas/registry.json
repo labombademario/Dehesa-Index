@@ -358,6 +358,12 @@
     "us_dairy"
    ]
   ],
+  "us-lamb.json": [
+   "us-lamb",
+   [
+    "us_lamb"
+   ]
+  ],
   "us-fertilizers.json": [
    "us-fertilizers",
    [

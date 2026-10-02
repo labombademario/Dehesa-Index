@@ -267,6 +267,22 @@ def us_dairy(doc, errs, warns, stats):
     if ids != {"mantequilla", "cheddar", "suero", "leche_polvo"}: errs.append("productos esperados: mantequilla, cheddar, suero, leche_polvo")
     stats["points"] = n
 
+def us_lamb(doc, errs, warns, stats):
+    rows = doc["rows"]; prev = None
+    for r in rows:
+        d = _date(r[0])
+        if d is None: errs.append("fecha invalida %s" % r[0]); continue
+        if d.weekday() > 4: errs.append("%s: el despiece se publica en dia laborable" % r[0])
+        if r[5] not in (0, 1): errs.append("%s: marca de correccion invalida" % r[0])
+        if not all(_num(v) and 200 <= v <= 1500 for v in r[1:5]): errs.append("%s: precio fuera de rango (USD/cwt)" % r[0]); continue
+        if r[2] > r[1]: errs.append("%s: valor neto mayor que el bruto" % r[0])
+        if abs((r[3] + r[4]) / 2 - r[1]) > 0.05 * r[1]: errs.append("%s: la media de delantero y trasero se aleja mas del 5 %% del valor bruto" % r[0])
+        if prev is not None and abs(r[1] / prev - 1) > 0.15: errs.append("%s: salto del valor bruto superior al 15 %% en un dia" % r[0])
+        prev = r[1]
+    _asc([r[0] for r in rows], "dias", errs)
+    if (TODAY - _date(rows[-1][0])).days > 7: warns.append("ultimo dato de hace mas de una semana")
+    stats["days"] = len(rows)
+
 def us_fertilizers(doc, errs, warns, stats):
     n = 0; seen = set(); asof = _date(doc["asOf"])
     if asof is None: errs.append("asOf invalido"); return

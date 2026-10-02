@@ -119,6 +119,15 @@ sources:
     continue: true
     data: [us-dairy.json]
     message: Datos lacteos EE. UU. (USDA AMS NDPSR)
+  - id: us-lamb
+    name: Update US lamb cutout (USDA AMS LM_XL502)
+    cron: ['30 20 * * 1-5']
+    script: scripts/update-us-lamb.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [us-lamb.json]
+    message: Datos cordero EE. UU. (USDA AMS LM_XL502)
   - id: eu-drought
     name: Update EU drought (EDO Combined Drought Indicator)
     cron: ['40 7 * * *']
