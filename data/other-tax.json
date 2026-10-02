@@ -1,0 +1,242 @@
+{
+ "schemaVersion": 1,
+ "reviewedAt": "2026-10-01",
+ "note": "Tabla revisada a mano, no es un flujo automatico: los tipos cambian pocas veces al ano. Canada no se incluye: los terminos de canada.ca exigen permiso escrito para reproducir con fines comerciales; se introduce a mano en la calculadora.",
+ "gb": {
+  "name": "United Kingdom",
+  "tax": "VAT",
+  "standard": 20.0,
+  "reduced": 5.0,
+  "zero": true,
+  "asOf": "2026-07-10",
+  "source": {
+   "name": "GOV.UK, Rates of VAT on different goods and services",
+   "url": "https://www.gov.uk/guidance/rates-of-vat-on-different-goods-and-services",
+   "license": "Open Government Licence v3.0"
+  },
+  "note": "Algunos animales, piensos, plantas y semillas tienen tipo cero si cumplen las condiciones de los avisos de HMRC (701/15 y 701/38). No se rellena un tipo por cultivo: elige el que te corresponda."
+ },
+ "us": {
+  "name": "United States",
+  "tax": "Sales tax",
+  "asOf": "2025-12-31",
+  "reviewed": "2026-04-30",
+  "source": {
+   "name": "IRS, Instructions for Schedule A (Form 1040) (2025), Optional State Sales Tax Tables",
+   "url": "https://www.irs.gov/instructions/i1040sca",
+   "license": "US Government work (public domain)"
+  },
+  "note": "Tipo general estatal tal como lo recoge el IRS para el ano fiscal 2025; puede haber cambiado desde entonces. Los condados y ciudades suman su propio impuesto (y Utah o Virginia anaden tramos obligatorios), y muchos estados eximen semillas, abonos, piensos y fitosanitarios de uso agricola con certificado; maquinaria y combustible varian por estado. Alaska, Delaware, Montana, New Hampshire y Oregon no figuran en la tabla del IRS porque no tienen impuesto general estatal sobre ventas: se muestran al 0 %.",
+  "states": {
+   "AL": {
+    "name": "Alabama",
+    "rate": 4
+   },
+   "AK": {
+    "name": "Alaska",
+    "rate": 0.0,
+    "noStateSalesTax": true
+   },
+   "AZ": {
+    "name": "Arizona",
+    "rate": 5.6
+   },
+   "AR": {
+    "name": "Arkansas",
+    "rate": 6.5
+   },
+   "CA": {
+    "name": "California",
+    "rate": 7.25
+   },
+   "CO": {
+    "name": "Colorado",
+    "rate": 2.9
+   },
+   "CT": {
+    "name": "Connecticut",
+    "rate": 6.35
+   },
+   "DE": {
+    "name": "Delaware",
+    "rate": 0.0,
+    "noStateSalesTax": true
+   },
+   "DC": {
+    "name": "District of Columbia",
+    "rate": 6
+   },
+   "FL": {
+    "name": "Florida",
+    "rate": 6
+   },
+   "GA": {
+    "name": "Georgia",
+    "rate": 4
+   },
+   "HI": {
+    "name": "Hawaii",
+    "rate": 4
+   },
+   "ID": {
+    "name": "Idaho",
+    "rate": 6
+   },
+   "IL": {
+    "name": "Illinois",
+    "rate": 6.25
+   },
+   "IN": {
+    "name": "Indiana",
+    "rate": 7
+   },
+   "IA": {
+    "name": "Iowa",
+    "rate": 6
+   },
+   "KS": {
+    "name": "Kansas",
+    "rate": 6.5
+   },
+   "KY": {
+    "name": "Kentucky",
+    "rate": 6
+   },
+   "LA": {
+    "name": "Louisiana",
+    "rate": 5
+   },
+   "ME": {
+    "name": "Maine",
+    "rate": 5.5
+   },
+   "MD": {
+    "name": "Maryland",
+    "rate": 6
+   },
+   "MA": {
+    "name": "Massachusetts",
+    "rate": 6.25
+   },
+   "MI": {
+    "name": "Michigan",
+    "rate": 6
+   },
+   "MN": {
+    "name": "Minnesota",
+    "rate": 6.88
+   },
+   "MS": {
+    "name": "Mississippi",
+    "rate": 7
+   },
+   "MO": {
+    "name": "Missouri",
+    "rate": 4.23
+   },
+   "MT": {
+    "name": "Montana",
+    "rate": 0.0,
+    "noStateSalesTax": true
+   },
+   "NE": {
+    "name": "Nebraska",
+    "rate": 5.5
+   },
+   "NV": {
+    "name": "Nevada",
+    "rate": 6.85
+   },
+   "NH": {
+    "name": "New Hampshire",
+    "rate": 0.0,
+    "noStateSalesTax": true
+   },
+   "NJ": {
+    "name": "New Jersey",
+    "rate": 6.63
+   },
+   "NM": {
+    "name": "New Mexico",
+    "rate": 4.88
+   },
+   "NY": {
+    "name": "New York",
+    "rate": 4
+   },
+   "NC": {
+    "name": "North Carolina",
+    "rate": 4.75
+   },
+   "ND": {
+    "name": "North Dakota",
+    "rate": 5
+   },
+   "OH": {
+    "name": "Ohio",
+    "rate": 5.75
+   },
+   "OK": {
+    "name": "Oklahoma",
+    "rate": 4.5
+   },
+   "OR": {
+    "name": "Oregon",
+    "rate": 0.0,
+    "noStateSalesTax": true
+   },
+   "PA": {
+    "name": "Pennsylvania",
+    "rate": 6
+   },
+   "RI": {
+    "name": "Rhode Island",
+    "rate": 7
+   },
+   "SC": {
+    "name": "South Carolina",
+    "rate": 6
+   },
+   "SD": {
+    "name": "South Dakota",
+    "rate": 4.2
+   },
+   "TN": {
+    "name": "Tennessee",
+    "rate": 7
+   },
+   "TX": {
+    "name": "Texas",
+    "rate": 6.25
+   },
+   "UT": {
+    "name": "Utah",
+    "rate": 4.85
+   },
+   "VT": {
+    "name": "Vermont",
+    "rate": 6
+   },
+   "VA": {
+    "name": "Virginia",
+    "rate": 4.3
+   },
+   "WA": {
+    "name": "Washington",
+    "rate": 6.5
+   },
+   "WV": {
+    "name": "West Virginia",
+    "rate": 6
+   },
+   "WI": {
+    "name": "Wisconsin",
+    "rate": 5
+   },
+   "WY": {
+    "name": "Wyoming",
+    "rate": 4
+   }
+  }
+ }
+}

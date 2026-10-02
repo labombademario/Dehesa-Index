@@ -358,6 +358,18 @@
     "us_dairy"
    ]
   ],
+  "eu-vat.json": [
+   "eu-vat",
+   [
+    "eu_vat"
+   ]
+  ],
+  "other-tax.json": [
+   "other-tax",
+   [
+    "other_tax"
+   ]
+  ],
   "us-lamb.json": [
    "us-lamb",
    [

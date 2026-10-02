@@ -267,6 +267,38 @@ def us_dairy(doc, errs, warns, stats):
     if ids != {"mantequilla", "cheddar", "suero", "leche_polvo"}: errs.append("productos esperados: mantequilla, cheddar, suero, leche_polvo")
     stats["points"] = n
 
+def eu_vat(doc, errs, warns, stats):
+    c = doc["countries"]; exp = set("AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE".split())
+    if set(c) != exp: errs.append("paises UE-27 esperados; faltan %s, sobran %s" % (sorted(exp - set(c)), sorted(set(c) - exp)))
+    for k, v in c.items():
+        s = v["standard"]
+        if not (_num(s) and 15 <= s <= 27): errs.append("%s: tipo general fuera de 15-27 %% (%s)" % (k, s))
+        for r in v["reduced"]:
+            if r["rate"] == "exempt": continue
+            if not (_num(r["rate"]) and 0 <= r["rate"] < s): errs.append("%s: tipo reducido %s no es menor que el general %s" % (k, r["rate"], s))
+        for grp in ("crops", "inputs"):
+            for pk, pv in v[grp].items():
+                if pv is None or pv == "exempt": continue
+                if not (_num(pv) and 0 <= pv <= s): errs.append("%s %s: tipo %s fuera de 0-general" % (k, pk, pv))
+    if _date(doc["situationOn"]) is None: errs.append("situationOn invalido")
+    elif (TODAY - _date(doc["situationOn"])).days > 400: warns.append("situacion de TEDB de hace mas de 400 dias")
+    if c.get("ES", {}).get("standard") != 21 and "ES" in c: warns.append("IVA general de Espana distinto de 21 %: comprobar")
+    stats["countries"] = len(c)
+
+def other_tax(doc, errs, warns, stats):
+    g = doc["gb"]
+    if not (_num(g["standard"]) and 15 <= g["standard"] <= 27 and _num(g["reduced"]) and 0 <= g["reduced"] < g["standard"]): errs.append("gb: tipos incoherentes")
+    st = doc["us"]["states"]
+    if len(st) != 51: errs.append("EE. UU.: se esperan 50 estados + DC")
+    for k, v in st.items():
+        r = v["rate"]
+        if not (_num(r) and 0 <= r <= 8): errs.append("%s: tipo estatal fuera de 0-8 %% (%s)" % (k, r))
+        if v.get("noStateSalesTax") and r != 0: errs.append("%s: sin impuesto estatal pero con tipo %s" % (k, r))
+        if r == 0 and not v.get("noStateSalesTax"): errs.append("%s: tipo 0 sin marcar noStateSalesTax" % k)
+    if _date(doc["reviewedAt"]) is None: errs.append("reviewedAt invalido")
+    elif (TODAY - _date(doc["reviewedAt"])).days > 200: warns.append("tabla revisada hace mas de 200 dias: volver a comprobar")
+    stats["states"] = len(st)
+
 def us_lamb(doc, errs, warns, stats):
     rows = doc["rows"]; prev = None
     for r in rows:

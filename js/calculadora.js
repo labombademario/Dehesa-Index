@@ -53,6 +53,33 @@
     marginT: ['Margen por tonelada', 'Margin per tonne', 'Marge par tonne', 'Margine per tonnellata'],
     marginPct: ['Margen sobre ingresos', 'Margin on revenue', 'Marge sur recettes', 'Margine sui ricavi'],
     yieldConv: ['Rendimiento equivalente', 'Equivalent yield', 'Rendement équivalent', 'Resa equivalente'],
+    taxTitle: ['Impuestos (IVA o impuesto sobre ventas)', 'Taxes (VAT or sales tax)', 'Taxes (TVA ou taxe de vente)', 'Imposte (IVA o imposta sulle vendite)'],
+    taxHint: ['Opcional. Elige tu país o estado y se rellenan los tipos oficiales; puedes cambiarlos. Sin esto, el cálculo no incluye ningún impuesto.', 'Optional. Pick your country or state and the official rates are filled in; you can change them. Without this, the calculation includes no tax.', 'Facultatif. Choisissez votre pays ou État : les taux officiels sont préremplis et modifiables. Sans cela, le calcul n’inclut aucune taxe.', 'Facoltativo. Scegli il tuo paese o stato: le aliquote ufficiali si compilano da sole e puoi modificarle. Senza questo, il calcolo non include imposte.'],
+    taxJ: ['País o estado', 'Country or state', 'Pays ou État', 'Paese o stato'],
+    taxNone: ['Sin impuestos (por defecto)', 'No tax (default)', 'Sans taxe (par défaut)', 'Senza imposte (predefinito)'],
+    taxManual: ['Otro país (tipos a mano)', 'Other country (enter rates)', 'Autre pays (taux à saisir)', 'Altro paese (aliquote a mano)'],
+    taxGrpEu: ['Unión Europea', 'European Union', 'Union européenne', 'Unione europea'], taxGrpUs: ['Estados Unidos (por estado)', 'United States (by state)', 'États-Unis (par État)', 'Stati Uniti (per stato)'], taxGrpOt: ['Otros', 'Other', 'Autres', 'Altri'],
+    taxMode: ['Régimen', 'Regime', 'Régime', 'Regime'],
+    taxRecover: ['Recupero el impuesto de mis compras (IVA normal)', 'I recover the tax on my purchases (normal VAT)', 'Je récupère la taxe sur mes achats (TVA normale)', 'Recupero l’imposta sui miei acquisti (IVA normale)'],
+    taxNoRecover: ['No lo recupero (régimen especial o no registrado)', 'I do not recover it (special scheme or unregistered)', 'Je ne la récupère pas (régime spécial ou non assujetti)', 'Non la recupero (regime speciale o non registrato)'],
+    taxIncl: ['Mis precios y costes ya incluyen el impuesto', 'My prices and costs already include the tax', 'Mes prix et coûts incluent déjà la taxe', 'I miei prezzi e costi includono già l’imposta'],
+    taxRs: ['Tipo sobre mis ventas (%)', 'Rate on my sales (%)', 'Taux sur mes ventes (%)', 'Aliquota sulle mie vendite (%)'],
+    taxRi: ['Tipo sobre abono, semilla, fitosanitarios y pienso (%)', 'Rate on fertiliser, seed, crop protection and feed (%)', 'Taux sur engrais, semences, phytos et aliments (%)', 'Aliquota su fertilizzanti, sementi, fitosanitari e mangimi (%)'],
+    taxRo: ['Tipo sobre energía, maquinaria y otros (%)', 'Rate on energy, machinery and other (%)', 'Taux sur énergie, machines et autres (%)', 'Aliquota su energia, macchinari e altri (%)'],
+    taxComp: ['Compensación a tanto alzado en tus ventas (%)', 'Flat-rate compensation on your sales (%)', 'Compensation forfaitaire sur vos ventes (%)', 'Compensazione forfettaria sulle tue vendite (%)'],
+    taxChips: ['Tipos de {0}', 'Rates in {0}', 'Taux en {0}', 'Aliquote in {0}'], taxStd: ['general', 'standard', 'normal', 'ordinaria'], taxZero: ['0 %', '0 %', '0 %', '0 %'],
+    taxCrop: ['La Comisión (TEDB) asocia a este cultivo el {0} % en {1}.', 'The Commission (TEDB) links this crop to {0} % in {1}.', 'La Commission (TEDB) associe cette culture à {0} % en {1}.', 'La Commissione (TEDB) associa questa coltura al {0} % in {1}.'],
+    taxCropNo: ['TEDB no asocia un tipo a este cultivo en {0}: elige el que te corresponda.', 'TEDB does not link a rate to this crop in {0}: pick the one that applies to you.', 'TEDB n’associe aucun taux à cette culture en {0} : choisissez celui qui vous concerne.', 'TEDB non associa un’aliquota a questa coltura in {0}: scegli quella che ti riguarda.'],
+    taxIns: ['TEDB para insumos: abonos {0}, semillas {1}, fitosanitarios {2}.', 'TEDB for inputs: fertiliser {0}, seed {1}, crop protection {2}.', 'TEDB pour les intrants : engrais {0}, semences {1}, phytos {2}.', 'TEDB per gli input: fertilizzanti {0}, sementi {1}, fitosanitari {2}.'],
+    taxUsDef: ['Las ventas de producto agrícola suelen no llevar impuesto sobre ventas, y muchos estados eximen los insumos agrícolas con certificado; rellena el tipo de insumos solo si los pagas.', 'Sales of farm products usually carry no sales tax, and many states exempt farm inputs with a certificate; fill in the inputs rate only if you pay it.', 'Les ventes de produits agricoles sont en général sans taxe de vente, et de nombreux États exemptent les intrants agricoles sur certificat ; ne renseignez le taux des intrants que si vous le payez.', 'Le vendite di prodotti agricoli di solito non hanno imposta sulle vendite e molti stati esentano gli input agricoli con certificato; compila l’aliquota solo se la paghi.'],
+    taxSum: ['Impuestos por ha', 'Taxes per ha', 'Taxes par ha', 'Imposte per ha'],
+    taxOut: ['Repercutido en ventas', 'Charged on sales', 'Facturé sur les ventes', 'Applicato sulle vendite'], taxIn: ['Soportado en compras', 'Paid on purchases', 'Payé sur les achats', 'Pagato sugli acquisti'], taxNet: ['Saldo a ingresar', 'Net payable', 'Solde à reverser', 'Saldo da versare'],
+    taxCostIn: ['Impuesto incluido en tus costes', 'Tax included in your costs', 'Taxe incluse dans vos coûts', 'Imposta inclusa nei tuoi costi'], taxFlat: ['Compensación cobrada', 'Compensation received', 'Compensation reçue', 'Compensazione incassata'],
+    taxNoteR: ['Con este régimen, ingresos, costes y margen se calculan sin impuesto: lo cobrado y lo pagado se compensan.', 'With this regime, revenue, costs and margin are calculated net of tax: what you charge and pay offset each other.', 'Avec ce régime, recettes, coûts et marge sont calculés hors taxe : ce que vous facturez et payez se compense.', 'Con questo regime, ricavi, costi e margine sono al netto dell’imposta: quanto applichi e paghi si compensa.'],
+    taxNoteN: ['Con este régimen, el impuesto que pagas en tus compras cuenta como coste.', 'With this regime, the tax you pay on purchases counts as a cost.', 'Avec ce régime, la taxe payée sur vos achats compte comme un coût.', 'Con questo regime, l’imposta pagata sugli acquisti conta come costo.'],
+    taxDisc: ['Orientativo, no es asesoría fiscal: los tipos varían por producto, destino y régimen. Fuente:', 'Indicative, not tax advice: rates vary by product, destination and scheme. Source:', 'Indicatif, pas un conseil fiscal : les taux varient selon le produit, la destination et le régime. Source :', 'Indicativo, non è consulenza fiscale: le aliquote variano per prodotto, destinazione e regime. Fonte:'],
+    taxAsOf: ['situación a', 'as of', 'situation au', 'situazione al'],
+    taxRet: ['Eliminar', 'Clear', 'Effacer', 'Cancella'],
     beNote: ['Precio de equilibrio = coste por tonelada con tu rendimiento: por debajo de ese precio pierdes dinero.', 'Break-even price = cost per tonne at your yield: below that price you lose money.', 'Prix d’équilibre = coût par tonne à votre rendement : en dessous de ce prix, vous perdez de l’argent.', 'Prezzo di pareggio = costo per tonnellata alla tua resa: sotto quel prezzo perdi denaro.'],
     sens: ['Sensibilidad', 'Sensitivity', 'Sensibilité', 'Sensibilità'],
     sensHint: ['Qué pasaría con el margen si UNA variable cambia; es un ejercicio de cálculo, no una previsión.', 'What would happen to the margin if ONE variable changes; a calculation exercise, not a forecast.', 'Ce qui arriverait à la marge si UNE variable change ; un exercice de calcul, pas une prévision.', 'Cosa accadrebbe al margine se UNA variabile cambia; un esercizio di calcolo, non una previsione.'],
@@ -82,7 +109,7 @@
     fxNote: ['Conversión: tipo de cambio mensual del BCE del mes del dato (si falta, el mes anterior, máximo 2 meses). ha↔acre y t↔bushel con el Unit Engine (bushel solo con el estándar USDA del cultivo).', 'Conversion: monthly ECB rate of the data month (if missing, the previous month, at most 2). ha↔acre and t↔bushel via the Unit Engine (bushel only with the crop’s USDA standard).', 'Conversion : taux mensuel BCE du mois de la donnée (à défaut le mois précédent, 2 max.). ha↔acre et t↔boisseau via le Unit Engine (boisseau seulement avec le standard USDA de la culture).', 'Conversione: tasso mensile BCE del mese del dato (se manca, il mese precedente, max 2). ha↔acro e t↔bushel con lo Unit Engine (bushel solo con lo standard USDA della coltura).'],
     bad: ['Revisa este valor', 'Check this value', 'Vérifiez cette valeur', 'Controlla questo valore'],
     prodLink: ['Ficha del cultivo', 'Crop profile', 'Fiche de la culture', 'Scheda della coltura'],
-    notInc: ['No incluido: subvenciones, seguros, intereses, impuestos ni amortización de maquinaria salvo que los añadas en “Otros” o “Maquinaria”.', 'Not included: subsidies, insurance, interest, taxes or machinery depreciation unless you add them under “Other” or “Machinery”.', 'Non inclus : subventions, assurances, intérêts, impôts ni amortissement du matériel sauf si vous les ajoutez dans « Autres » ou « Machines ».', 'Non inclusi: sussidi, assicurazioni, interessi, imposte né ammortamento dei macchinari salvo che li aggiunga in “Altri” o “Macchinari”.']
+    notInc: ['No incluido: subvenciones, seguros, intereses, otros impuestos ni amortización de maquinaria salvo que los añadas en “Otros” o “Maquinaria”.', 'Not included: subsidies, insurance, interest, other taxes or machinery depreciation unless you add them under “Other” or “Machinery”.', 'Non inclus : subventions, assurances, intérêts, autres impôts ni amortissement du matériel sauf si vous les ajoutez dans « Autres » ou « Machines ».', 'Non inclusi: sussidi, assicurazioni, interessi, altre imposte né ammortamento dei macchinari salvo che li aggiunga in “Altri” o “Macchinari”.']
   };
   function t(k) { var a = TX[k]; if (!a) return k; return a[li()] === undefined ? a[0] : a[li()]; }
   function tf(k) { var s = t(k), a = arguments; return s.replace(/\{(\d)\}/g, function (m, i) { return a[+i + 1] === undefined ? m : a[+i + 1]; }); }
@@ -96,7 +123,7 @@
   var KEY = 'di-calc-v1';
   var U = window.DIUnits, HA_AC = U.area.HA_PER_ACRE;
 
-  function blank(crop) { var c = {}; COSTS.forEach(function (k) { c[k] = ''; }); return { crop: crop || 'trigo', areaU: 'ha', area: '', yU: 't_ha', y: '', cur: 'EUR', pSrc: 'manual', pUnit: 't', p: '', inst: '', costs: c, vary: 'price', step: 10 }; }
+  function blank(crop) { var c = {}; COSTS.forEach(function (k) { c[k] = ''; }); return { crop: crop || 'trigo', areaU: 'ha', area: '', yU: 't_ha', y: '', cur: 'EUR', pSrc: 'manual', pUnit: 't', p: '', inst: '', costs: c, vary: 'price', step: 10, tax: { j: '', mode: 'recover', incl: false, rs: '', ri: '', ro: '', comp: '' } }; }
   var S = { cases: { A: blank(), B: blank(), C: blank() }, cur: 'A', remember: false }, REFC = {}, META = null, FXLOADED = null;
 
   /* ---------- utilidades ---------- */
@@ -109,18 +136,31 @@
   function bushelKg(crop) { return U.mass.bushelKg(crop); }
   function C() { return S.cases[S.cur]; }
   function save() { if (!S.remember) return; try { localStorage.setItem(KEY, JSON.stringify({ cases: S.cases, cur: S.cur })); } catch (e) { /* sin almacenamiento */ } }
-  function loadSaved() { try { var raw = localStorage.getItem(KEY); if (!raw) return; var d = JSON.parse(raw); if (d && d.cases && d.cases.A) { ['A', 'B', 'C'].forEach(function (k) { if (d.cases[k]) { var b = blank(); var c = d.cases[k]; Object.keys(b).forEach(function (f) { if (f !== 'costs' && c[f] !== undefined) b[f] = c[f]; }); COSTS.forEach(function (f) { if (c.costs && c.costs[f] !== undefined) b.costs[f] = c.costs[f]; }); S.cases[k] = b; } }); S.cur = d.cur || 'A'; S.remember = true; } } catch (e) { /* datos corruptos: se ignoran */ } }
+  function loadSaved() { try { var raw = localStorage.getItem(KEY); if (!raw) return; var d = JSON.parse(raw); if (d && d.cases && d.cases.A) { ['A', 'B', 'C'].forEach(function (k) { if (d.cases[k]) { var b = blank(); var c = d.cases[k]; Object.keys(b).forEach(function (f) { if (f !== 'costs' && f !== 'tax' && c[f] !== undefined) b[f] = c[f]; }); if (c.tax) Object.keys(b.tax).forEach(function (f) { if (c.tax[f] !== undefined) b.tax[f] = c.tax[f]; }); COSTS.forEach(function (f) { if (c.costs && c.costs[f] !== undefined) b.costs[f] = c.costs[f]; }); S.cases[k] = b; } }); S.cur = d.cur || 'A'; S.remember = true; } } catch (e) { /* datos corruptos: se ignoran */ } }
   function wipe() { try { localStorage.removeItem(KEY); } catch (e) { /* nada */ } }
 
+  /* ---------- impuestos (IVA o impuesto sobre ventas): opcional, apagado por defecto ---------- */
+  var TAXG = { fert: 'ri', seed: 'ri', prot: 'ri', feed: 'ri', energy: 'ro', mach: 'ro', other: 'ro', labour: null, rent: null };
+  function taxOf(c) {
+    var t0 = c.tax || {}, on = !!t0.j, rec = t0.mode !== 'norecover', incl = !!t0.incl, rs = num(t0.rs) || 0, comp = num(t0.comp) || 0;
+    function rate(k) { var g = TAXG[k]; return g ? (num(t0[g]) || 0) / 100 : 0; }
+    return { on: on, rec: rec, incl: incl, rs: rs / 100, comp: comp / 100,
+      // precio: con regimen normal se trabaja en neto; sin recuperar, el precio es lo que entra, mas la compensacion a tanto alzado
+      pf: rec ? (incl ? 1 / (1 + rs / 100) : 1) : 1 + comp / 100,
+      // coste: devuelve {v: coste que cuenta, t: impuesto soportado contenido}
+      cf: function (k, v) { var r = rate(k); if (rec) { var net = incl ? v / (1 + r) : v; return { v: net, t: net * r }; } var gross = incl ? v : v * (1 + r); return { v: gross, t: gross - gross / (1 + r) }; } };
+  }
   /* ---------- calculo (unidades canonicas: ha, t, t/ha, precio por t) ---------- */
   function canon(c) {
     var kgBu = bushelKg(c.crop), a = num(c.area), y = num(c.y), p = num(c.p), cost = 0, anyCost = false;
     var area = a === null ? null : (c.areaU === 'ha' ? a : a * HA_AC);
     var yld = null; if (y !== null) { if (c.yU === 't_ha') yld = y; else if (kgBu) yld = y * kgBu / 1000 / HA_AC; }
     var price = null; if (p !== null) { if (c.pUnit === 't') price = p; else if (kgBu) price = p / (kgBu / 1000); }
-    COSTS.forEach(function (k) { var v = num(c.costs[k]); if (v !== null) { cost += v; anyCost = true; } });
+    var tx = taxOf(c), taxIn = 0;
+    COSTS.forEach(function (k) { var v = num(c.costs[k]); if (v !== null) { var f = tx.on ? tx.cf(k, v) : { v: v, t: 0 }; cost += f.v; taxIn += f.t; anyCost = true; } });
     var costHa = anyCost ? (c.areaU === 'ha' ? cost : cost / HA_AC) : null;
-    return { area: area, yld: yld, price: price, costHa: costHa, kgBu: kgBu };
+    if (price !== null && tx.on) price = price * tx.pf;
+    return { area: area, yld: yld, price: price, costHa: costHa, kgBu: kgBu, tax: tx, taxInHa: anyCost ? (c.areaU === 'ha' ? taxIn : taxIn / HA_AC) : null };
   }
   function calc(c, over) {
     var k = canon(c); over = over || {};
@@ -131,6 +171,7 @@
     if (costHa !== null && price > 0) { o.beYield = costHa / price; if (k.kgBu) o.beYieldBuAc = o.beYield * 1000 / k.kgBu * HA_AC; }
     if (price > 0 && yld > 0) {
       o.revHa = price * yld; if (k.area) o.rev = o.revHa * k.area;
+      if (k.tax && k.tax.on) { if (k.tax.rec) o.vatOutHa = o.revHa * k.tax.rs; else if (k.tax.comp) o.compHa = o.revHa - o.revHa / (1 + k.tax.comp); }
       if (costHa !== null) { o.marginHa = o.revHa - costHa; o.margin = k.area ? o.marginHa * k.area : null; o.marginT = o.marginHa / yld; o.marginPct = o.revHa > 0 ? o.marginHa / o.revHa * 100 : null; }
     }
     return o;
@@ -194,6 +235,7 @@
     else h += '<div id="cc-ref" class="pt-skel">' + esc(t('loading')) + '</div>';
     h += '</fieldset>';
     h += '<fieldset class="cc-fs"><legend>' + esc(t('costs')) + ' (' + esc(CURS[c.cur]) + '/' + esc(au) + ')</legend><p class="pt-src" style="margin:0 0 8px">' + esc(t('costsHint')) + '</p><div id="cc-ers"></div><div class="cc-grid">' + COSTS.map(function (k) { return field('cc-c-' + k, t('c_' + k), inputHtml('cc-c-' + k, c.costs[k], '0')); }).join('') + '</div></fieldset>';
+    h += taxHtml(c);
     h += '<p class="pt-src">' + esc(t('notInc')) + '</p>';
     h += '<div class="pt-bar-ctl"><label style="font-size:13px"><input type="checkbox" id="cc-remember"' + (S.remember ? ' checked' : '') + '> ' + esc(t('remember')) + '</label>' + (S.remember ? '<button type="button" class="pt-chip" data-forget="1">' + esc(t('forget')) + '</button>' : '') + '</div>';
     return h;
@@ -212,6 +254,12 @@
     if (o.revHa !== undefined) h += stat(t('revenueHa'), esc(money(o.revHa, cur)), o.rev !== undefined ? esc(t('revenue')) + ': ' + esc(money(o.rev, cur)) : '');
     if (o.marginHa !== undefined) h += stat(t('marginHa'), esc(money(o.marginHa, cur)), (o.margin !== undefined && o.margin !== null ? esc(t('margin')) + ': ' + esc(money(o.margin, cur)) + '<br>' : '') + esc(t('marginT')) + ': ' + esc(money(o.marginT, cur)) + (o.marginPct !== null ? '<br>' + esc(t('marginPct')) + ': ' + esc(nf(o.marginPct, 1)) + ' %' : ''), o.marginHa >= 0 ? 'pt-up' : 'pt-down');
     h += '</div>';
+    if (k.tax && k.tax.on) {
+      var tin = k.taxInHa, tout = o.vatOutHa, row = function (l, v) { return '<tr><th scope="row" style="text-align:left">' + esc(l) + '</th><td class="r">' + esc(money(v, cur)) + '</td></tr>'; }, tr = '';
+      if (k.tax.rec) { if (tout !== undefined) tr += row(t('taxOut'), tout); if (tin !== null && tin !== undefined) tr += row(t('taxIn'), tin); if (tout !== undefined && tin !== null && tin !== undefined) tr += row(t('taxNet'), tout - tin); }
+      else { if (tin !== null && tin !== undefined) tr += row(t('taxCostIn'), tin); if (o.compHa !== undefined) tr += row(t('taxFlat'), o.compHa); }
+      h += (tr ? '<div class="pt-tblwrap"><table class="pt-table"><thead><tr><th>' + esc(t('taxSum')) + '</th><th class="r">' + esc(CURS[cur] || cur) + '/' + esc(t('ha')) + '</th></tr></thead><tbody>' + tr + '</tbody></table></div>' : '') + '<p class="pt-src">' + esc(t(k.tax.rec ? 'taxNoteR' : 'taxNoteN')) + '</p>';
+    }
     if (c.yU === 'bu_ac' && k.yld !== null) h += '<p class="pt-src">' + esc(t('yieldConv')) + ': ' + esc(nf(k.yld, 2)) + ' t/ha</p>';
     if (c.yU === 't_ha' && k.kgBu && k.yld !== null) h += '<p class="pt-src">' + esc(t('yieldConv')) + ': ' + esc(nf(k.yld * 1000 / k.kgBu * HA_AC, 1)) + ' bu/acre</p>';
     return h;
@@ -251,13 +299,71 @@
   function shell() {
     document.getElementById('cc-h1').textContent = t('title'); document.getElementById('cc-sub').textContent = t('sub'); document.title = 'Dehesa Index — ' + t('title');
     document.getElementById('cc-body').innerHTML = '<div class="pt-wrap"><div class="pt-note">' + esc(t('privacy')) + '</div>' + caseTabs() + '<div id="cc-inputs">' + inputsHtml() + '</div>' +
-      sec('cc-results-sec', t('results'), '', '<div id="cc-results" aria-live="polite">' + resultsHtml() + '</div><p class="pt-src">' + esc(t('fxNote')) + '</p>' + (window.DICite ? window.DICite.derived(['usda_ers','ecb'],{what:'calc'}) : '') + '<p class="pt-src"><a href="producto.html?p=' + C().crop + '">' + esc(t('prodLink')) + ' →</a></p>') +
+      sec('cc-results-sec', t('results'), '', '<div id="cc-results" aria-live="polite">' + resultsHtml() + '</div><p class="pt-src">' + esc(t('fxNote')) + '</p>' + (window.DICite ? window.DICite.derived(['usda_ers','ecb'].concat((jur(C().tax.j) || {}).ids || []),{what:'calc'}) : '') + '<p class="pt-src"><a href="producto.html?p=' + C().crop + '">' + esc(t('prodLink')) + ' →</a></p>') +
       sec('cc-sens-sec', t('sens'), t('sensHint'), '<div id="cc-sens">' + sensHtml() + '</div>') +
       sec('cc-cmp-sec', t('compare'), '', '<div id="cc-cmp">' + compareHtml() + '</div>') + '</div>';
     if (C().pSrc === 'dehesa') drawRef();
     drawErs();
   }
   function update() { var r = document.getElementById('cc-results'); if (r) r.innerHTML = resultsHtml(); var s = document.getElementById('cc-sens'); if (s) s.innerHTML = sensHtml(); var c = document.getElementById('cc-cmp'); if (c) c.innerHTML = compareHtml(); save(); }
+
+  var TAXD = null;
+  function loadTax() {
+    if (TAXD) return TAXD;
+    var sp = function (f) { return window.DehesaShared && window.DehesaShared.sitePath ? window.DehesaShared.sitePath(f) : f; };
+    function get(f) { return fetch(sp(f)).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
+    return TAXD = Promise.all([get('data/eu-vat.json'), get('data/other-tax.json')]).then(function (a) { return { eu: a[0], oth: a[1] }; });
+  }
+  function ctry(code) { try { if (window.Intl && Intl.DisplayNames) { var n = new Intl.DisplayNames([lang()], { type: 'region' }).of(code); if (n) return n; } } catch (e) { /* sin Intl.DisplayNames */ } return code; }
+  // jurisdiccion elegida -> {name, std, rates:[{r,label}], crop, ins, def, src, asOf, note}
+  function jur(j) {
+    var d = TAXD && TAXD.v; if (!j || !d) return null;
+    var p = j.split(':'), L = li();
+    if (p[0] === 'EU' && d.eu && d.eu.countries[p[1]]) {
+      var c = d.eu.countries[p[1]], rs = [{ r: c.standard, l: t('taxStd') }];
+      c.reduced.forEach(function (x) { var v = x.rate === 'exempt' ? 0 : x.rate; if (!rs.some(function (y) { return y.r === v; })) rs.push({ r: v, l: '' }); });
+      return { name: ctry(p[1]), std: c.standard, rates: rs, eu: c, src: d.eu.source.name, asOf: d.eu.situationOn, ids: ['tedb'] };
+    }
+    if (p[0] === 'GB' && d.oth) { var g = d.oth.gb; return { name: REG.uk[L], std: g.standard, rates: [{ r: g.standard, l: t('taxStd') }, { r: g.reduced, l: '' }, { r: 0, l: '' }], src: g.source.name, asOf: g.asOf, ids: ['hmrc_govuk'], note: g.note }; }
+    if (p[0] === 'US' && d.oth && d.oth.us.states[p[1]]) { var u = d.oth.us, st = u.states[p[1]]; return { name: st.name, std: st.rate, rates: st.rate ? [{ r: st.rate, l: t('taxStd') }, { r: 0, l: '' }] : [{ r: 0, l: '' }], us: true, src: u.source.name, asOf: u.asOf, ids: ['irs_sales_tax'], note: t('taxUsDef') }; }
+    return null;
+  }
+  function euCropRate(jr, crop) { var m = { trigo: 'trigo', maiz: 'maiz', cebada: 'cebada', avena: 'avena', arroz: 'arroz', soja: 'soja', colza: 'colza' }; var v = jr && jr.eu ? jr.eu.crops[m[crop]] : undefined; return v === 'exempt' ? 0 : v; }
+  function pf(v) { return v === null || v === undefined ? '—' : nf(v, v % 1 ? 1 : 0) + ' %'; }
+  // rellena tipos por defecto al elegir jurisdiccion (solo lo que la fuente respalda; el resto queda en blanco)
+  function taxDefaults(c) {
+    var x = c.tax, jr = jur(x.j); x.rs = x.ri = x.ro = '';
+    if (!jr) return;
+    x.ro = String(jr.std);
+    if (jr.eu) {
+      var cr = euCropRate(jr, c.crop); if (cr !== null && cr !== undefined) x.rs = String(cr);
+      var ins = [jr.eu.inputs.fertilizante, jr.eu.inputs.semilla, jr.eu.inputs.fitosanitario].map(function (v) { return v === 'exempt' ? 0 : v; });
+      if (ins.every(function (v) { return v !== null && v !== undefined && v === ins[0]; })) x.ri = String(ins[0]);
+      x.mode = 'recover';
+    } else if (jr.us) { x.rs = '0'; x.mode = 'norecover'; x.ro = String(jr.std); } else { x.mode = 'recover'; }
+  }
+  function taxHtml(c) {
+    var x = c.tax, d = TAXD && TAXD.v, jr = jur(x.j), L = li(), h = '<fieldset class="cc-fs"><legend>' + esc(t('taxTitle')) + '</legend><p class="pt-src" style="margin:0 0 8px">' + esc(t('taxHint')) + '</p>';
+    var opts = '<option value="">' + esc(t('taxNone')) + '</option>';
+    if (d && d.eu) opts += '<optgroup label="' + esc(t('taxGrpEu')) + '">' + Object.keys(d.eu.countries).map(function (k) { return [k, ctry(k)]; }).sort(function (a, b) { return a[1].localeCompare(b[1], lang()); }).map(function (a) { return '<option value="EU:' + a[0] + '"' + (x.j === 'EU:' + a[0] ? ' selected' : '') + '>' + esc(a[1]) + '</option>'; }).join('') + '</optgroup>';
+    if (d && d.oth) { opts += '<optgroup label="' + esc(t('taxGrpOt')) + '"><option value="GB"' + (x.j === 'GB' ? ' selected' : '') + '>' + esc(REG.uk[L]) + '</option>';
+      opts += '</optgroup><optgroup label="' + esc(t('taxGrpUs')) + '">' + Object.keys(d.oth.us.states).sort(function (a, b) { return d.oth.us.states[a].name < d.oth.us.states[b].name ? -1 : 1; }).map(function (k) { return '<option value="US:' + k + '"' + (x.j === 'US:' + k ? ' selected' : '') + '>' + esc(d.oth.us.states[k].name) + '</option>'; }).join('') + '</optgroup>'; }
+    opts += '<option value="manual"' + (x.j === 'manual' ? ' selected' : '') + '>' + esc(t('taxManual')) + '</option>';
+    h += '<div class="cc-grid">' + field('cc-tax-j', t('taxJ'), '<select id="cc-tax-j" data-f="tax-j">' + opts + '</select>') + '</div>';
+    if (!x.j) return h + '</fieldset>';
+    h += '<div class="pt-bar-ctl"><span class="pt-lbl">' + esc(t('taxMode')) + '</span>' + seg('taxMode', [['recover', t('taxRecover')], ['norecover', t('taxNoRecover')]], x.mode) + '</div>';
+    h += '<div class="pt-bar-ctl"><label style="font-size:13px"><input type="checkbox" id="cc-tax-incl" data-f="tax-incl"' + (x.incl ? ' checked' : '') + '> ' + esc(t('taxIncl')) + '</label></div>';
+    function rf(f, key, lab) { return field('cc-tax-' + f, t(lab), inputHtml('cc-tax-' + f, x[f], '0').replace('<input ', '<input list="cc-tax-rates" ')); }
+    h += '<div class="cc-grid">' + rf('rs', 'rs', 'taxRs') + rf('ri', 'ri', 'taxRi') + rf('ro', 'ro', 'taxRo') + (x.mode === 'norecover' && !(jr && jr.us) ? rf('comp', 'comp', 'taxComp') : '') + '</div>';
+    if (jr) {
+      h += '<datalist id="cc-tax-rates">' + jr.rates.map(function (r) { return '<option value="' + r.r + '"></option>'; }).join('') + '</datalist><div class="pt-bar-ctl"><span class="pt-lbl">' + esc(tf('taxChips', jr.name)) + '</span>' + jr.rates.map(function (r) { return '<span class="pt-badge">' + esc(pf(r.r) + (r.l ? ' · ' + r.l : '')) + '</span>'; }).join('') + '</div>';
+      if (jr.eu) { var cr = euCropRate(jr, c.crop);
+        h += '<p class="pt-src">' + esc(cr !== null && cr !== undefined ? tf('taxCrop', nf(cr, cr % 1 ? 1 : 0), jr.name) : tf('taxCropNo', jr.name)) + ' ' + esc(tf('taxIns', pf(jr.eu.inputs.fertilizante === 'exempt' ? 0 : jr.eu.inputs.fertilizante), pf(jr.eu.inputs.semilla === 'exempt' ? 0 : jr.eu.inputs.semilla), pf(jr.eu.inputs.fitosanitario === 'exempt' ? 0 : jr.eu.inputs.fitosanitario))) + '</p>'; }
+      if (jr.note) h += '<p class="pt-src">' + esc(jr.note) + '</p>';
+      h += '<p class="pt-src">' + esc(t('taxDisc')) + ' ' + esc(jr.src) + ' (' + esc(t('taxAsOf')) + ' ' + esc(dstr(jr.asOf)) + ').</p>';
+    }
+    return h + '</fieldset>';
+  }
 
   var ERSREF = null;
   function loadErs() {
@@ -325,6 +431,7 @@
     if (el.getAttribute('data-ers')) { applyErs(); return; }
     if (el.getAttribute('data-forget')) { wipe(); S.remember = false; shell(); return; }
     if (seg2 === 'areaU' || seg2 === 'yU' || seg2 === 'pUnit') { if (c[seg2] !== v) { convertCase(c, seg2, v); save(); shell(); } return; }
+    if (seg2 === 'taxMode') { c.tax.mode = v; save(); shell(); return; }
     if (seg2 === 'pSrc') { c.pSrc = v; if (v === 'manual') c.inst = ''; save(); shell(); return; }
     if (seg2 === 'vary') { c.vary = v; save(); var s = document.getElementById('cc-sens'); if (s) s.innerHTML = sensHtml(); return; }
     if (seg2 === 'step') { c.step = +v; save(); var s2 = document.getElementById('cc-sens'); if (s2) s2.innerHTML = sensHtml(); }
@@ -334,7 +441,8 @@
     var c = C(), val = el.value;
     if (el.id === 'cc-remember') return;
     var m = /^c-(.+)$/.exec(f);
-    if (m) c.costs[m[1]] = val; else if (f === 'area' || f === 'y' || f === 'p') c[f] = val;
+    var tm = /^tax-(rs|ri|ro|comp)$/.exec(f);
+    if (tm) c.tax[tm[1]] = val; else if (m) c.costs[m[1]] = val; else if (f === 'area' || f === 'y' || f === 'p') c[f] = val;
     else return;
     var bad = val !== '' && (num(val) === null || num(val) < 0);
     el.setAttribute('aria-invalid', bad ? 'true' : 'false'); el.title = bad ? t('bad') : '';
@@ -344,7 +452,9 @@
   function onChange(e) {
     var el = e.target; if (el.id === 'cc-remember') { S.remember = el.checked; if (S.remember) save(); else wipe(); shell(); return; }
     var f = el.getAttribute && el.getAttribute('data-f'); if (!f) return; var c = C();
-    if (f === 'crop') { c.crop = el.value; if (!bushelKg(c.crop)) { c.yU = 't_ha'; c.pUnit = 't'; } c.inst = ''; save(); shell(); }
+    if (f === 'tax-j') { c.tax.j = el.value; taxDefaults(c); save(); shell(); return; }
+    if (f === 'tax-incl') { c.tax.incl = el.checked; save(); update(); return; }
+    if (f === 'crop') { c.crop = el.value; if (!bushelKg(c.crop)) { c.yU = 't_ha'; c.pUnit = 't'; } c.inst = ''; if (c.tax.j && c.tax.j.indexOf('EU:') === 0) taxDefaults(c); save(); shell(); }
     else if (f === 'cur') { c.cur = el.value; save(); shell(); }
     else if (f === 'inst') { c.inst = el.value; drawRef(); }
   }
@@ -357,6 +467,7 @@
   var body = document.getElementById('cc-body');
   body.addEventListener('click', onClick); body.addEventListener('input', onInput); body.addEventListener('change', onChange);
   var go = function () { shell(); };
-  (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
+  var taxReady = function () { return loadTax().then(function (v) { TAXD.v = v; }, function () { /* sin impuestos: la calculadora sigue */ }); };
+  (window.DICite ? window.DICite.load() : Promise.resolve()).then(taxReady, taxReady).then(go, go);
   window.DICalc = { calc: function (c, o) { return calc(c, o); }, blank: blank, canon: canon, state: function () { return S; } };
 })();

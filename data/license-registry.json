@@ -1230,6 +1230,78 @@
    "aliases": [],
    "notes": null,
    "short": "EDO · CDI"
+  },
+  "tedb": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Documents on which third parties hold intellectual property rights are excluded from the Decision; VAT rates are facts reported by Member States.",
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "European Commission - Taxes in Europe Database (TEDB)",
+   "url": "https://ec.europa.eu/taxation_customs/tedb/",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "Commission Decision 2011/833/EU on the reuse of Commission documents",
+   "licenseUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32011D0833",
+   "attributionText": "Source: European Commission, Taxes in Europe Database (TEDB). Rates are reported by the Member States.",
+   "additionalRestrictions": "Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; it is not legal advice.",
+   "confidence": "medium",
+   "evidence": "Decision 2011/833/EU art. 4 (read 2026-10-01): Commission documents are available for reuse for commercial or non-commercial purposes, free of charge, acknowledging the source and without distorting the content. The TEDB SOAP service (VatRetrievalService) is public and keyless; the Commission VAT rates page states the rates in TEDB are provided by the Member States.",
+   "short": "TEDB"
+  },
+  "hmrc_govuk": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "HM Revenue & Customs - GOV.UK VAT guidance",
+   "url": "https://www.gov.uk/guidance/rates-of-vat-on-different-goods-and-services",
+   "country": "GB",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "attributionText": "Contains public sector information licensed under the Open Government Licence v3.0 (HM Revenue & Customs).",
+   "additionalRestrictions": "Third-party material and logos excluded. Same licence the registry already applies to GOV.UK content from Defra.",
+   "confidence": "medium",
+   "evidence": "GOV.UK publishes its content under the Open Government Licence v3.0 unless stated otherwise (same basis as the defra entry). Page 'Rates of VAT on different goods and services' read 2026-10-01, updated 10 July 2026; only the standard (20 %) and reduced (5 %) rates are used.",
+   "short": "HMRC"
+  },
+  "irs_sales_tax": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-01",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "U.S. Internal Revenue Service - Optional State Sales Tax Tables",
+   "url": "https://www.irs.gov/instructions/i1040sca",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain)",
+   "licenseUrl": "https://www.irs.gov/privacy-disclosure/irs-website-copyright-and-use-policy",
+   "attributionText": "Source: Internal Revenue Service, Instructions for Schedule A (Form 1040) (2025).",
+   "additionalRestrictions": "Only the state general sales tax rate is used; local rates are not included. Not tax advice.",
+   "confidence": "medium",
+   "evidence": "IRS Instructions for Schedule A (2025), 'Optional State Sales Tax Tables' (page last reviewed 30-Apr-2026, read 2026-10-01): lists the state general sales tax rate for 46 jurisdictions. A work of the US federal government is not subject to copyright (17 U.S.C. 105).",
+   "short": "IRS"
   }
  },
  "files": {
@@ -1535,6 +1607,17 @@
   "data/eu-drought.json": {
    "sources": [
     "edo_cdi"
+   ]
+  },
+  "data/eu-vat.json": {
+   "sources": [
+    "tedb"
+   ]
+  },
+  "data/other-tax.json": {
+   "sources": [
+    "hmrc_govuk",
+    "irs_sales_tax"
    ]
   }
  },

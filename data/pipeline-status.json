@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T03:27:00Z",
+ "generatedAt": "2026-10-02T04:00:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 45,
   "late": 0,
   "error": 3,
-  "not_run": 1,
+  "not_run": 2,
   "unknown": 1
  },
  "global": "error",
@@ -727,6 +727,28 @@
    "expectedEveryHours": 600.0
   },
   {
+   "workflow": "update-eu-vat.yml",
+   "name": "Update EU VAT rates (TEDB)",
+   "crons": [
+    "10 5 2 * *"
+   ],
+   "nextRun": "2026-10-02T05:10:00Z",
+   "files": [
+    {
+     "path": "data/eu-vat.json",
+     "lastChange": "2026-10-02T03:55:17Z"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
+  },
+  {
    "workflow": "update-eurostat.yml",
    "name": "Dehesa Data — Eurostat agricultural indices",
    "crons": [
@@ -1112,7 +1134,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-02T03:26:46Z"
+     "lastChange": "2026-10-02T03:28:22Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1156,11 +1178,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-02T03:08:30Z"
+     "lastChange": "2026-10-02T03:28:22Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-02T03:08:30Z"
+     "lastChange": "2026-10-02T03:28:22Z"
     },
     {
      "path": "data/coverage-gaps.json",
@@ -1456,7 +1478,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 72.0
   },
   {

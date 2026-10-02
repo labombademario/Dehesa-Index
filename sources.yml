@@ -128,6 +128,15 @@ sources:
     continue: true
     data: [us-lamb.json]
     message: Datos cordero EE. UU. (USDA AMS LM_XL502)
+  - id: eu-vat
+    name: Update EU VAT rates (TEDB)
+    cron: ['10 5 2 * *']
+    script: scripts/update-eu-vat.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [eu-vat.json]
+    message: Tipos de IVA UE (TEDB, Comision Europea)
   - id: eu-drought
     name: Update EU drought (EDO Combined Drought Indicator)
     cron: ['40 7 * * *']

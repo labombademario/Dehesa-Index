@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T03:21:52Z",
+ "generatedAt": "2026-10-02T04:00:44Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 72,
+  "total": 75,
   "byStatus": {
-   "ACTIVE": 41,
+   "ACTIVE": 44,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -2251,6 +2251,43 @@
    "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
   },
   {
+   "sourceId": "hmrc_govuk",
+   "registryId": "hmrc_govuk",
+   "country": "GB",
+   "scope": "integrated",
+   "institution": "HM Revenue & Customs - GOV.UK VAT guidance",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OGL-UK-3.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0 (HM Revenue & Customs).",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "ine_es",
    "registryId": "ine_es",
    "country": "ES",
@@ -2370,6 +2407,43 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Source: Insee",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "irs_sales_tax",
+   "registryId": "irs_sales_tax",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "U.S. Internal Revenue Service - Optional State Sales Tax Tables",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Internal Revenue Service, Instructions for Schedule A (Form 1040) (2025).",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,
@@ -2698,6 +2772,43 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Datenquelle: Statistik Austria — data.statistik.gv.at",
+   "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "tedb",
+   "registryId": "tedb",
+   "country": "EU",
+   "scope": "integrated",
+   "institution": "European Commission - Taxes in Europe Database (TEDB)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "EU-REUSE-2011-833",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: European Commission, Taxes in Europe Database (TEDB). Rates are reported by the Member States.",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "datasetIdentified": true,

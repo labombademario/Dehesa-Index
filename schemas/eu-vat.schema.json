@@ -1,0 +1,14 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Tipos de IVA de la UE-27 (TEDB, Comision Europea)",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "situationOn", "source", "countries"],
+ "properties": {
+  "schemaVersion": {"type": "integer"},
+  "generatedAt": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"},
+  "situationOn": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+  "source": {"type": "object", "required": ["name", "url", "license"], "properties": {"name": {"type": "string", "minLength": 1}, "url": {"type": "string", "pattern": "^https?://"}, "license": {"type": "string", "minLength": 1}}},
+  "note": {"type": "string"},
+  "countries": {"type": "object", "minProperties": 27}
+ }
+}
