@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T04:17:14Z",
+ "generatedAt": "2026-10-02T05:04:02Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 75,
+  "total": 77,
   "byStatus": {
-   "ACTIVE": 44,
+   "ACTIVE": 46,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -1314,6 +1314,43 @@
    "notes": "No verificado en detalle. Pais nuevo."
   },
   {
+   "sourceId": "aafc_drought",
+   "registryId": "aafc_drought",
+   "country": "CA",
+   "scope": "integrated",
+   "institution": "Agriculture and Agri-Food Canada — Canadian Drought Monitor",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OGL-Canada",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Canada.",
+   "lastChecked": "2026-10-02",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "abs",
    "registryId": "abs",
    "country": "AU",
@@ -1663,6 +1700,43 @@
     "data/license-registry.json"
    ],
    "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+  },
+  {
+   "sourceId": "cgc",
+   "registryId": "cgc",
+   "country": "CA",
+   "scope": "integrated",
+   "institution": "Canadian Grain Commission — Grain Statistics Weekly",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OGL-Canada",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains information licensed under the Open Government Licence – Canada.",
+   "lastChecked": "2026-10-02",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
   },
   {
    "sourceId": "defra",

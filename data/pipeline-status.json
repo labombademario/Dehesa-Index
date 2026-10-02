@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T04:00:00Z",
+ "generatedAt": "2026-10-02T05:03:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 45,
+  "ok": 46,
   "late": 0,
   "error": 3,
-  "not_run": 2,
-  "unknown": 1
+  "not_run": 3,
+  "unknown": 0
  },
  "global": "error",
  "pipelines": [
@@ -218,6 +218,28 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-canada-grain.yml",
+   "name": "Update Canada weekly grain statistics (Canadian Grain Commission)",
+   "crons": [
+    "40 16 * * 3,4,5"
+   ],
+   "nextRun": "2026-10-02T16:40:00Z",
+   "files": [
+    {
+     "path": "data/canada-grain.json",
+     "lastChange": "2026-10-02T05:01:47Z"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 120.0
+  },
+  {
    "workflow": "update-canada-stats.yml",
    "name": "Update Canada stats (Statistics Canada)",
    "crons": [
@@ -231,7 +253,7 @@
      "series": 276,
      "points": 64476,
      "lines": 0,
-     "lastChange": "2026-10-01T15:49:59Z"
+     "lastChange": "2026-10-02T04:52:38Z"
     },
     {
      "path": "data/revisions.json",
@@ -736,16 +758,26 @@
    "files": [
     {
      "path": "data/eu-vat.json",
-     "lastChange": "2026-10-02T03:55:17Z"
+     "lastChange": "2026-10-02T04:05:37Z"
     },
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-02T04:05:16Z",
+    "durationSec": 27,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36962996803"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 744.0
   },
   {
@@ -1134,7 +1166,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-02T03:28:22Z"
+     "lastChange": "2026-10-02T04:05:02Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1178,11 +1210,11 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-02T03:28:22Z"
+     "lastChange": "2026-10-02T04:05:02Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-02T03:28:22Z"
+     "lastChange": "2026-10-02T04:18:36Z"
     },
     {
      "path": "data/coverage-gaps.json",

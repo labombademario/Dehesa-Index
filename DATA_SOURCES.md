@@ -4,18 +4,20 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 36 VERIFIED, 11 PENDING, 4 RESTRICTED, 3 BLOCKED; 5820 series en el catalogo unificado.
+Resumen: 38 VERIFIED, 11 PENDING, 4 RESTRICTED, 3 BLOCKED; 5820 series en el catalogo unificado.
 
-## VERIFIED (36)
+## VERIFIED (38)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
 | sourceId | Fuente | Pais | Licencia | Comercial/derivados | Atribucion | Series | Restricciones adicionales |
 |---|---|---|---|---|---|---|---|
+| `aafc_drought` | Agriculture and Agri-Food Canada — Canadian Drought Monitor | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `abs` | Australian Bureau of Statistics (Data API) | AU | CC-BY-4.0 | si/si | si | 76 | Excludes the Coat of Arms, ABS logo, trademarks and unit-record microdata; no endorsement claims. The page does not address the Data API spe… |
 | `bank_of_canada` | Bank of Canada (Valet API) | CA | CUSTOM | conditional/si | si | 1 | Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank websit… |
 | `bis` | Bank for International Settlements (central bank policy rates) | INT | BIS-TERMS | conditional/conditional | si | 1 | Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation fra… |
 | `bls` | U.S. Bureau of Labor Statistics | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
+| `cgc` | Canadian Grain Commission — Grain Statistics Weekly | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 12 | No implied endorsement; excludes personal data, logos and third-party rights. Only the Agricultural Price Index dataset page was read; milk-… |
 | `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 136 | Modifications must be marked as such. |
 | `dst_dk` | Statistics Denmark (StatBank) | DK | CC-BY-4.0 | si/si | si | 47 | Disclose modifications; the Statistics Denmark logo cannot be used. |
