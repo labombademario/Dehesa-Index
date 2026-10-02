@@ -218,11 +218,11 @@ def fertilizer():
 
 
 # ───────── 6b. Costes de explotación (32-10-0049), capital y deuda (32-10-0050/51), combustible (18-10-0001) ─────────
-EXP = {"Total expenses after rebates": "total expenses", "Total operating expenses after rebates": "operating expenses", "Fertilizer, after rebates": "fertiliser",
+EXP = {"Total expenses after rebates": "total expenses", "Total operating expenses after rebates": "operating expenses", "Fertilizer and lime, after rebates": "fertiliser and lime",
        "Pesticides, after rebates": "pesticides", "Commercial seed, after rebates": "seed", "Commercial feed, after rebates": "feed", "Machinery fuel, after rebates": "machinery fuel",
        "Interest, after rebates": "interest", "Cash wages including room and board, after rebates": "wages", "Livestock and poultry purchases, after rebates": "livestock purchases",
        "Electricity, after rebates": "electricity", "Heating fuel, after rebates": "heating fuel", "Machinery repairs and other expenses": "machinery repairs", "Total depreciation": "depreciation", "Property taxes, after rebates": "property taxes"}
-EXP_PROV = ("Total expenses after rebates", "Fertilizer, after rebates", "Commercial feed, after rebates", "Machinery fuel, after rebates", "Interest, after rebates")
+EXP_PROV = ("Total expenses after rebates", "Fertilizer and lime, after rebates", "Commercial feed, after rebates", "Machinery fuel, after rebates", "Interest, after rebates")
 PROV = ("Saskatchewan", "Alberta", "Manitoba", "Ontario", "Quebec")
 def costs():
     n = 0
@@ -252,8 +252,8 @@ def fuel():
             if geo != "Canada" and not fk.startswith("Diesel"): continue
             by = series_of([r for r in rows if r["GEO"] == geo and r["Type of fuel"] == fk], lambda r: fk)
             for k, pts in by.items():
-                city = geo.split(",")[0]
-                put("ca-fuel-%s-%s" % (slug(city), slug(fl)), "inputs", "Retail price: %s, %s (monthly)" % (fl, city), "cents per litre", "monthly", pts, "StatCan 18-10-0001"); n += 1
+                city = geo.split(",")[0].replace("é", "e")
+                put("ca-fuel-%s-%s" % (slug(city), slug(fl)), "inputs", "Retail price: %s, %s (monthly)" % (fl, geo.split(",")[0]), "cents per litre", "monthly", pts, "StatCan 18-10-0001"); n += 1
     log("combustible", n)
 
 # ───────── 7. Comercio exterior ─────────
