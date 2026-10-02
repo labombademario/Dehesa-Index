@@ -38,6 +38,7 @@
   function link(c, s) { if (c === 'CB') { var q = s.split('/'); return 'precios-locales.html?s=' + encodeURIComponent(q[0]) + '&c=' + encodeURIComponent(q[1]) + '&id=' + encodeURIComponent(q.slice(2).join('/')); } if (c === 'P') { var p = s.split('/')[0]; return 'producto.html?p=' + encodeURIComponent(PAGE[p] || p); } return 'paises.html?c=' + encodeURIComponent(c) + '&s=' + encodeURIComponent(s); }
   function fsB(st, approx) { return '<span class="pt-badge pt-fs-' + esc(st) + '">' + esc(t('fs_' + st)) + (approx ? ' ' + esc(t('approx')) : '') + '</span>'; }
   function chg(c) { if (typeof c !== 'number') return ''; return ' <span class="' + (c > 0 ? 'pt-up' : c < 0 ? 'pt-down' : 'pt-flat') + '">' + (c > 0 ? '+' : '') + nf(c, 2) + ' %</span>'; }
+  function ci(c, s, per) { var id = W.srcOf && W.srcOf(c, s); return window.DICite && id ? window.DICite.html(id, { period: per }) : ''; }
   function rowOf(it) { var a = IDX && IDX[W.key(it.c, it.s)]; return a ? { label: a[0], unit: a[1], freq: a[2], period: a[4], value: a[5], change: a[6] } : null; }
   function ruleChips(it) { return (it.r || []).map(function (r) { return '<span class="pt-badge">🔔 ' + esc(W.ruleText(r, lang())) + '</span>'; }).join(''); }
   function sec(id, title, hint, body) { return '<section class="pt-sec" id="' + id + '" aria-labelledby="' + id + '-h"><div class="di-movers-head-row"><h2 id="' + id + '-h">' + esc(title) + '</h2>' + (hint ? '<span class="di-movers-hint">' + esc(hint) + '</span>' : '') + '</div>' + body + '</section>'; }
@@ -47,7 +48,7 @@
     if (!EV.length) return sec('alertas', t('alerts'), t('alertsHint'), '<p class="pt-note">' + esc(t('noAlerts')) + '</p>');
     var h = '<div class="pt-bar-ctl"><button type="button" class="pt-chip" data-markall="1">' + esc(t('markAll')) + '</button></div><div class="ms-alerts">';
     EV.forEach(function (e, i) {
-      h += '<article class="di-card ms-alert"><div class="ms-head"><a href="' + esc(link(e.c, e.s)) + '"><strong>' + esc(e.label) + '</strong></a> <span class="pt-sub">' + esc(e.period) + ' · ' + nf(e.value, Math.abs(e.value) >= 100 ? 1 : 2) + ' ' + esc(e.unit) + '</span>' + chg(e.change) + (e.revised ? ' <span class="pt-badge pt-fs-DELAYED">' + esc(t('revised')) + '</span>' : '') + '</div>';
+      h += '<article class="di-card ms-alert"><div class="ms-head"><a href="' + esc(link(e.c, e.s)) + '"><strong>' + esc(e.label) + '</strong></a> <span class="pt-sub">' + esc(e.period) + ' · ' + nf(e.value, Math.abs(e.value) >= 100 ? 1 : 2) + ' ' + esc(e.unit) + '</span>' + chg(e.change) + (e.revised ? ' <span class="pt-badge pt-fs-DELAYED">' + esc(t('revised')) + '</span>' : '') + '</div>' + ci(e.c, e.s, e.period);
       h += '<ul class="pt-list">' + e.hits.map(function (r) { return '<li>🔔 ' + esc(W.ruleText(r, lang())) + '</li>'; }).join('') + '</ul>';
       if (e.state) h += '<p class="pt-sub">' + fsB(e.state.state, e.state.approx) + '</p>';
       if (e.tw && e.tw.length) h += '<p class="pt-sub">' + e.tw.slice(0, 3).map(function (z) { return '<a href="relaciones.html?id=' + encodeURIComponent(z.id) + '">' + esc(t('twRel')) + ': ' + esc(z.other.replace(/^P\//, '')) + ' (' + (z.changePct > 0 ? '+' : '') + nf(z.changePct, 1) + ' %)</a>'; }).join(' · ') + '</p>';
@@ -61,7 +62,7 @@
     var h = '<div class="ms-list">';
     l.forEach(function (it, i) {
       var x = rowOf(it), fo = x ? W.freshOf(it.c, it.s, x, CTX) : null, k = W.key(it.c, it.s);
-      h += '<article class="di-card ms-item" data-k="' + esc(k) + '"><div class="ms-head"><span class="pt-badge">' + (it.c === 'P' ? esc(it.s.split('/')[1] ? it.s.split('/')[1].toUpperCase() : 'P') : esc(it.c)) + '</span> <a href="' + esc(link(it.c, it.s)) + '"><strong>' + esc(x ? x.label : it.s) + '</strong></a>' + (x ? ' <span class="pt-sub">' + esc(t('latest')) + ': ' + esc(x.period) + ' · ' + nf(x.value, Math.abs(x.value) >= 100 ? 1 : 2) + ' ' + esc(x.unit) + '</span>' + chg(x.change) : ' <span class="pt-sub">(' + esc(t('noData')) + ')</span>') + (fo ? ' ' + fsB(fo.state, fo.approx) : '') + '</div>';
+      h += '<article class="di-card ms-item" data-k="' + esc(k) + '"><div class="ms-head"><span class="pt-badge">' + (it.c === 'P' ? esc(it.s.split('/')[1] ? it.s.split('/')[1].toUpperCase() : 'P') : esc(it.c)) + '</span> <a href="' + esc(link(it.c, it.s)) + '"><strong>' + esc(x ? x.label : it.s) + '</strong></a>' + (x ? ' <span class="pt-sub">' + esc(t('latest')) + ': ' + esc(x.period) + ' · ' + nf(x.value, Math.abs(x.value) >= 100 ? 1 : 2) + ' ' + esc(x.unit) + '</span>' + chg(x.change) : ' <span class="pt-sub">(' + esc(t('noData')) + ')</span>') + (fo ? ' ' + fsB(fo.state, fo.approx) : '') + '</div>' + ci(it.c, it.s, x && x.period);
       h += '<div class="ms-rules">' + ((it.r && it.r.length) ? ruleChips(it) + (it.r.length > 1 ? ' <span class="pt-sub">· ' + esc(t(it.m === 'all' ? 'mode_all' : 'mode_any')) + '</span>' : '') : '<span class="pt-sub">' + esc(t('noRules')) + '</span>') + '</div>';
       h += '<details class="rl-det"><summary>' + esc(t('edit')) + '</summary>' + W.editor(it.c, it.s, lang(), { full: true }) + '</details>';
       h += '<div class="pt-bar-ctl"><a class="pt-chip" href="' + esc(link(it.c, it.s)) + '">' + esc(t('open')) + '</a><button type="button" class="pt-chip" data-unfollow="' + i + '">' + esc(t('remove')) + '</button></div></article>';
@@ -114,7 +115,7 @@
     if (location.hash && /^#[a-z]+$/.test(location.hash)) { var el = document.getElementById(location.hash.slice(1)); if (el && el.scrollIntoView) el.scrollIntoView(); }
   }
   function evaluate() {
-    return Promise.all([W.loadIndex(), W.context({ fresh: true })]).then(function (a) { IDX = a[0] || {}; CTX = a[1] || {}; EV = W.evaluate(IDX, CTX); render(); });
+    return Promise.all([W.loadIndex(), W.context({ fresh: true }), (window.DICite ? window.DICite.load() : null)]).then(function (a) { IDX = a[0] || {}; CTX = a[1] || {}; EV = W.evaluate(IDX, CTX); render(); });
   }
   function download(name, text) { try { var b = new Blob([text], { type: 'application/json' }), u = URL.createObjectURL(b), a = document.createElement('a'); a.href = u; a.download = name; document.body.appendChild(a); a.click(); document.body.removeChild(a); setTimeout(function () { URL.revokeObjectURL(u); }, 500); } catch (e) { /* sin descarga */ } }
   function onClick(e) {

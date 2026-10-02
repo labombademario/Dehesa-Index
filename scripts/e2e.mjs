@@ -204,7 +204,7 @@ for (const w of [1280, 390]) {
       const stamp = await page.evaluate(() => JSON.parse(localStorage.getItem('di-watchlist-meta-v1') || 'null'));
       if (!stamp || !stamp.lastEval) throw new Error('no se guarda la ultima evaluacion');
       // anadir una regla desde el editor completo
-      await page.click('.ms-item:first-child details > summary'); await page.selectOption('.ms-item:first-child [data-k=t]', 'rev'); await page.click('.ms-item:first-child [data-add]'); await page.waitForTimeout(700);
+      await page.click('.ms-item:first-child details:not(.di-cite) > summary'); await page.selectOption('.ms-item:first-child [data-k=t]', 'rev'); await page.click('.ms-item:first-child [data-add]'); await page.waitForTimeout(700);
       const rules = await page.evaluate(() => JSON.parse(localStorage.getItem('di-watchlist-v1')).find((x) => x.s === 'trigo/eu').r.map((r) => r.t));
       if (!rules.includes('rev')) throw new Error('la regla de revision no se guarda: ' + rules);
       // exportar

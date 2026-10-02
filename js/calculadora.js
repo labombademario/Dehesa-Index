@@ -251,7 +251,7 @@
   function shell() {
     document.getElementById('cc-h1').textContent = t('title'); document.getElementById('cc-sub').textContent = t('sub'); document.title = 'Dehesa Index — ' + t('title');
     document.getElementById('cc-body').innerHTML = '<div class="pt-wrap"><div class="pt-note">' + esc(t('privacy')) + '</div>' + caseTabs() + '<div id="cc-inputs">' + inputsHtml() + '</div>' +
-      sec('cc-results-sec', t('results'), '', '<div id="cc-results" aria-live="polite">' + resultsHtml() + '</div><p class="pt-src">' + esc(t('fxNote')) + '</p><p class="pt-src"><a href="producto.html?p=' + C().crop + '">' + esc(t('prodLink')) + ' →</a></p>') +
+      sec('cc-results-sec', t('results'), '', '<div id="cc-results" aria-live="polite">' + resultsHtml() + '</div><p class="pt-src">' + esc(t('fxNote')) + '</p>' + (window.DICite ? window.DICite.derived(['usda_ers','ecb'],{what:'calc'}) : '') + '<p class="pt-src"><a href="producto.html?p=' + C().crop + '">' + esc(t('prodLink')) + ' →</a></p>') +
       sec('cc-sens-sec', t('sens'), t('sensHint'), '<div id="cc-sens">' + sensHtml() + '</div>') +
       sec('cc-cmp-sec', t('compare'), '', '<div id="cc-cmp">' + compareHtml() + '</div>') + '</div>';
     if (C().pSrc === 'dehesa') drawRef();
@@ -356,6 +356,7 @@
   var q = new URLSearchParams(location.search); if (q.get('crop') && CROPS[q.get('crop')]) { C().crop = q.get('crop'); }
   var body = document.getElementById('cc-body');
   body.addEventListener('click', onClick); body.addEventListener('input', onInput); body.addEventListener('change', onChange);
-  shell();
+  var go = function () { shell(); };
+  (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
   window.DICalc = { calc: function (c, o) { return calc(c, o); }, blank: blank, canon: canon, state: function () { return S; } };
 })();

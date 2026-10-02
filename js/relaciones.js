@@ -85,7 +85,7 @@
   function side(kind, s, fresh) {
     var pg = PAGE[s.product], name = esc(L(s.label)) + ' <span class="pt-sub">(' + esc(regionName(s.region)) + ')</span>';
     var nm = pg ? '<a href="producto.html?p=' + pg + '">' + name + '</a>' : name;
-    return '<div class="rl-node rl-' + kind + '"><span class="pt-k">' + esc(t(kind.toUpperCase())) + '</span><strong>' + nm + '</strong><span class="pt-sub">' + esc(s.sourceId || '') + (s.unit ? ' · ' + esc((s.currency || '') + '/' + s.unit) : '') + '</span><span class="pt-badge pt-fs-' + esc(fresh) + '">' + esc(fresh) + '</span></div>';
+    return '<div class="rl-node rl-' + kind + '"><span class="pt-k">' + esc(t(kind.toUpperCase())) + '</span><strong>' + nm + '</strong><span class="pt-sub">' + (ci(s.sourceId) || esc(s.sourceId || '')) + (s.unit ? ' · ' + esc((s.currency || '') + '/' + s.unit) : '') + '</span><span class="pt-badge pt-fs-' + esc(fresh) + '">' + esc(fresh) + '</span></div>';
   }
   function lagUnit(x, n) { return n + ' ' + (x.frequency === 'monthly' ? t('mon') : t('qtr')); }
   function profile(x) {
@@ -120,6 +120,7 @@
     h += '<p class="pt-src">' + esc(t('discl')) + ' <a href="#r-' + esc(x.id) + '" data-copy="' + esc(x.id) + '">' + esc(t('link')) + '</a></p>';
     return h + '</article>';
   }
+  function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   function render() {
     var body = document.getElementById('rl-body'); if (!body) return;
     document.getElementById('rl-h1').textContent = t('title'); document.getElementById('rl-sub').textContent = t('sub'); document.title = 'Dehesa Index — ' + t('title');
@@ -147,7 +148,7 @@
   readUrl();
   var body = document.getElementById('rl-body'); body.addEventListener('click', onClick); body.addEventListener('change', onChange);
   render();
-  fetch('data/relationships.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { DOC = d; render(); })
+  fetch('data/relationships.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { DOC = d; var go = function () { render(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go); })
     .catch(function () { body.innerHTML = '<p class="pt-err">' + esc(t('err')) + '</p>'; });
   window.DIRelations = { state: function () { return { F: F, doc: DOC }; } };
 })();

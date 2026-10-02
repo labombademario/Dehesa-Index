@@ -21,13 +21,13 @@ def main():
         cur_p = ROOT / f
         if not cur_p.exists(): continue
         cur = json.loads(cur_p.read_text())
-        cs = products(cur) if f.endswith('latest.json') else stats_series(cur)
+        cs = products(cur) if f.endswith('latest.json') else stats_series(cur, f)
         rev = rev_before(f, iso)
         if not rev: new_ds.append({'file': f, 'name': names.get(f, f), 'series': len(cs)}); continue
         old_t = git_show(rev, f)
         try: od = json.loads(old_t)
         except Exception: continue
-        os_ = products(od) if f.endswith('latest.json') else stats_series(od)
+        os_ = products(od) if f.endswith('latest.json') else stats_series(od, f)
         changed = 0
         for k, v in cs.items():
             o = os_.get(k)

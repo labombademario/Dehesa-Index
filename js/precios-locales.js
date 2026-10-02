@@ -274,7 +274,7 @@
       (shown.length && window.DIWatch ? '<button type="button" class="di-link-btn" id="pl-follow-all">' + esc(t.followAll) + ' (' + Math.min(shown.length, 20) + ')</button>' : '') + '</div>';
     h += '<div id="pl-detail"></div>';
     h += '<details class="di-card" style="padding:12px 16px;margin:0 0 14px"' + (window.innerWidth > 760 ? ' open' : '') + '><summary style="cursor:pointer;font-weight:700">' + esc(t.mapTitle) + '</summary><div id="pl-map" style="margin-top:10px">' + mapHtml() + '</div></details>';
-    h += '<p class="di-movers-hint">' + esc(t.nearMe) + '</p><p class="di-movers-hint">' + esc(t.foot) + ' <a href="metodologia.html#precios-locales">' + esc(t.method) + '</a>. ' + esc(t.basisFooter) + ' ' + esc(t.pending) + '</p>';
+    h += '<p class="di-movers-hint">' + esc(t.nearMe) + '</p><p class="di-movers-hint">' + esc(t.foot) + ' <a href="metodologia.html#precios-locales">' + esc(t.method) + '</a>. ' + esc(t.basisFooter) + ' ' + esc(t.pending) + '</p>' + ci('usda_ams_mars');
     root.innerHTML = h; bind(doc, shown); if (ST.id) detail(doc);
     if (!window.DEHESA_US_STATES) loadMap();
   }
@@ -368,11 +368,12 @@
     if (!Object.keys(M.states).length) { root.innerHTML = '<p class="di-info-api-notice" role="status">' + esc(t.noManifest) + '</p>'; return; }
     if (!ST.s) defaults(); load();
   }
+  function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   window.DehesaShared.init('tools');
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); boot(); };
   boot();
-  Promise.all([get('manifest.json'), get('reports.json').catch(function () { return { reports: [] }; }), window.DIFreshness && window.DIFreshness.ready ? window.DIFreshness.ready().catch(function () { return null; }) : null]).then(function (a) {
+  Promise.all([get('manifest.json'), get('reports.json').catch(function () { return { reports: [] }; }), window.DIFreshness && window.DIFreshness.ready ? window.DIFreshness.ready().catch(function () { return null; }) : null, (window.DICite ? window.DICite.load() : null)]).then(function (a) {
     M = a[0]; (a[1].reports || []).forEach(function (r) { REP[r.reportId] = r; }); boot();
   }).catch(function () { root.innerHTML = '<p class="di-info-api-notice">' + esc(tt().errLoad) + '</p>'; });
 })();

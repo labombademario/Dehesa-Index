@@ -54,6 +54,7 @@
     return '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block;touch-action:pan-y" role="img"' + window.DehesaChart.attr(spec).replace(' style="touch-action:pan-y"', '') + '>' + g + '<path d="' + d + '" fill="none" stroke="' + C1 + '" stroke-width="2.2" stroke-linejoin="round"/>' + dots + xl + '</svg>';
   }
   function card(l, v, sub) { return '<div class="di-card" style="padding:14px 16px;flex:1 1 200px;min-width:180px"><div style="font-size:11px;letter-spacing:.4px;color:var(--text-faint);font-weight:700">' + esc(l).toUpperCase() + '</div><div style="font-size:24px;font-weight:700;margin:4px 0 2px;font-family:\'Source Serif 4\',serif">' + v + '</div><div style="font-size:12.5px">' + sub + '</div></div>'; }
+  function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   function render() {
     var t = tr(), root = document.getElementById('in-body');
     document.title = 'Dehesa Index — ' + t.title; document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
@@ -69,7 +70,7 @@
     var th = function (x, r) { return '<th style="padding:10px 6px;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:' + (r ? 'right' : 'left') + '">' + esc(x).toUpperCase() + '</th>'; };
     var tbl = '<div style="font-weight:600;margin:20px 0 6px">' + esc(t.all) + ' · ' + esc(last[0]) + '</div><div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:480px;font-size:14px"><tr>' + th(t.name) + th(t.now, 1) + th(t.mm, 1) + th(t.yy, 1) + '</tr>' +
       G.map(function (g) { return '<tr><td colspan="4" style="padding:12px 6px 4px;font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--text-faint)">' + esc(g.l[P]).toUpperCase() + '</td></tr>' + all.filter(function (x) { return x.g === g; }).map(function (x) { var s = ser(x.k), l = s[s.length - 1]; return '<tr data-k="' + esc(x.k) + '" style="border-top:1px solid var(--border);cursor:pointer' + (x.k === SEL.key ? ';background:rgba(29,81,120,.06)' : '') + '"><td style="padding:9px 6px;font-weight:600">' + esc(x.l) + '</td><td style="padding:9px 6px;text-align:right">' + nf(l[1], 1) + '</td><td style="padding:9px 6px;text-align:right">' + chg(pm(s) !== null ? pct(l[1], pm(s)) : null) + '</td><td style="padding:9px 6px;text-align:right">' + chg(find(s, py(l[0])) !== null ? pct(l[1], find(s, py(l[0]))) : null) + '</td></tr>'; }).join(''); }).join('') + '</table></div>';
-    root.innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + esc(t.series) + '<br><select id="in-sel" class="di-compare-select">' + opts + '</select></label><label style="font-size:13px">' + esc(t.span) + '<br><select id="in-span" class="di-compare-select">' + sp + '</select></label></div>' + cards + chart + tbl + '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.note) + '</p><p class="di-movers-hint">' + esc(t.src) + '</p>';
+    root.innerHTML = '<div style="display:flex;gap:16px;flex-wrap:wrap"><label style="font-size:13px">' + esc(t.series) + '<br><select id="in-sel" class="di-compare-select">' + opts + '</select></label><label style="font-size:13px">' + esc(t.span) + '<br><select id="in-span" class="di-compare-select">' + sp + '</select></label></div>' + cards + chart + tbl + '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.note) + '</p><p class="di-movers-hint">' + esc(t.src) + '</p>' + ci('usda_nass');
     document.getElementById('in-sel').onchange = function (e) { SEL.key = e.target.value; render(); };
     document.getElementById('in-span').onchange = function (e) { SEL.span = parseInt(e.target.value, 10); render(); };
     Array.prototype.forEach.call(root.querySelectorAll('[data-k]'), function (r) { r.onclick = function () { SEL.key = r.getAttribute('data-k'); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }; });
@@ -80,6 +81,6 @@
   fetch('data/nass-prices.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) {
     D = d && d.series && Object.keys(d.series).length ? d : null;
     var q = new URLSearchParams(window.location.search); if (q.get('k')) SEL.key = q.get('k');
-    render();
+    var go = function () { render(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
   });
 })();

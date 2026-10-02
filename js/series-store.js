@@ -28,7 +28,7 @@
       return get('catalog/series-index.json').then(function (d) {
         if (d._rows) return d;
         var D = d.dict; d._rows = d.rows.map(function (r) {
-          return { cc: D.cc[r[2]], kind: r[10], s: { id: r[0], label: r[1], group: D.group[r[3]], unit: D.unit[r[4]], freq: D.freq[r[5]], latestPeriod: r[6], fs: D.fs[r[7]], tags: r[8].map(function (i) { return D.tag[i]; }), canonical: r[9], kind: r[10] }, hay: (r[1] + ' ' + D.unit[r[4]] + ' ' + r[0] + ' ' + r[9]).toLowerCase() };
+          return { cc: D.cc[r[2]], kind: r[10], s: { id: r[0], label: r[1], group: D.group[r[3]], unit: D.unit[r[4]], freq: D.freq[r[5]], latestPeriod: r[6], fs: D.fs[r[7]], tags: r[8].map(function (i) { return D.tag[i]; }), canonical: r[9], kind: r[10], sourceId: D.src[r[11]] }, hay: (r[1] + ' ' + D.unit[r[4]] + ' ' + r[0] + ' ' + r[9]).toLowerCase() };
         }); return d;
       });
     },

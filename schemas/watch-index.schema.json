@@ -26,7 +26,13 @@
    "additionalSchema": {
     "type": "array",
     "minItems": 7,
-    "maxItems": 7
+    "maxItems": 9
+   }
+  },
+  "sources": {
+   "type": "array",
+   "items": {
+    "type": "string"
    }
   }
  }

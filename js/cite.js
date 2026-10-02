@@ -56,15 +56,16 @@
     if (pr) b += row(t.period, esc(pr));
     if (o.pub) b += row(t.pub, esc(per(o.pub)));
     b += row(t.lic, link(e.licenseUrl, e.licenseName || e.licenseId || ''));
-    if (e.attributionText) b += row(t.att, esc(e.attributionText));
+    if (e.attributionText) b += row(t.att, esc(clean(e.attributionText)));
     b += '<div class="di-cite-s ' + (e.status === 'VERIFIED' ? 'ok' : 'pend') + '">' + esc(e.status === 'VERIFIED' ? t.ver + ' ' + (e.verifiedAt || '') : t.pend) + '</div>';
     if (o.note) b += '<div class="di-cite-n">' + esc(o.note) + '</div>';
     b += '<div class="di-cite-a"><a href="legal.html#licencias">' + esc(t.all) + '</a></div>';
     return '<details class="di-cite" data-src="' + esc(id) + '"><summary><span class="di-cite-i" aria-hidden="true">ⓘ</span> ' + line + '</summary><div class="di-cite-b">' + b + '</div></details>';
   }
+  function clean(x) { return String(x).replace(/\s*\((?:online data code|código)?:?\s*<[^>]*>\)/gi, '').replace(/,?\s*<[^>]*>/g, '').replace(/\s{2,}/g, ' ').replace(/\s+([.,])/g, '$1').trim(); }
   function derived(ids, o) {
     o = o || {}; var t = tx(), seen = {}, names = [], rows = '';
-    (ids || []).forEach(function (id) { var e = entry(id); if (!e || seen[e.name]) return; seen[e.name] = 1; names.push(shortName(e)); rows += row(t.src, link(e.url, e.name)) + (e.attributionText ? row(t.att, esc(e.attributionText)) : ''); });
+    (ids || []).forEach(function (id) { var e = entry(id); if (!e || seen[e.name]) return; seen[e.name] = 1; names.push(shortName(e)); rows += row(t.src, link(e.url, e.name)) + (e.attributionText ? row(t.att, esc(clean(e.attributionText))) : ''); });
     if (!names.length) return '';
     return '<details class="di-cite di-cite-calc"><summary><span class="di-cite-i" aria-hidden="true">ⓘ</span> ' + esc(t.calc) + ' ' + esc(names.join(', ')) + '</summary><div class="di-cite-b">' + (o.what ? '<div class="di-cite-n">' + esc(o.what) + '</div>' : '') + '<div class="di-cite-n">' + esc(t.calcN) + '</div>' + rows + '<div class="di-cite-a"><a href="legal.html#licencias">' + esc(t.all) + '</a></div></div></details>';
   }

@@ -33,12 +33,12 @@
   function find(l, c, s) { for (var i = 0; i < l.length; i++) if (l[i].c === c && l[i].s === s) return l[i]; return null; }
   function key(c, s) { return c === 'P' ? 'P/' + s : c + '/' + s; }
   function sp(f) { return window.DehesaShared && window.DehesaShared.sitePath ? window.DehesaShared.sitePath(f) : f; }
-  var IDX = null, IP = null, CP = null, CBF = false;
+  var IDX = null, IP = null, CP = null, CBF = false, SRCS = [];
   // Mercados locales de grano (c='CB', s='ESTADO/producto/idSerie'): su indice (data/us-cash-bids/watch.json) solo se descarga si sigues alguno o la pagina de precios locales lo pide
   function wantCB() { return CBF || read().some(function (i) { return i.c === 'CB'; }); }
   function load() {
     if (IP) return IP;
-    IP = fetch(sp('data/watch-index.json')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { IDX = d && d.series ? d.series : {}; return IDX; }).catch(function () { IDX = {}; return IDX; })
+    IP = fetch(sp('data/watch-index.json')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { IDX = d && d.series ? d.series : {}; SRCS = d && d.sources ? d.sources : []; return IDX; }).catch(function () { IDX = {}; return IDX; })
       .then(function (idx) {
         if (!wantCB()) return idx;
         return fetch(sp('data/us-cash-bids/watch.json')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.series) Object.keys(d.series).forEach(function (k) { idx['CB/' + k] = d.series[k]; }); return idx; }).catch(function () { return idx; });
@@ -50,6 +50,7 @@
   function snap(x) { var o = { p: x.period, v: x.value }; if (typeof x.basis === 'number') o.b = x.basis; return o; }
   function cond(r, v) { return r.d === 'below' ? v <= r.v : v >= r.v; }
   function today() { return new Date().toISOString().slice(0, 10); }
+  W.srcOf = function (c, s) { if (c === 'CB') return 'usda_ams_mars'; var a = IDX && IDX[key(c, s)]; return a && typeof a[8] === 'number' && SRCS[a[8]] ? SRCS[a[8]] : null; };
   W.key = key; W.loadIndex = load; W.TW_PCT = TW_PCT;
   W.rules = function (c, s) { var it = find(read(), c, s); return it && it.r ? it.r : []; };
   W.mode = function (c, s) { var it = find(read(), c, s); return it && it.m === 'all' ? 'all' : 'any'; };

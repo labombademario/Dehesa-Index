@@ -16,13 +16,37 @@ def rev_before(path, iso):
         return out or None
     except Exception:
         return None
-def stats_series(doc):
-    """{'CC/id': dict(l,u,f,g,p,v,c,x)} de un fichero *-stats.json."""
+_LIC = None
+def _lic():
+    global _LIC
+    if _LIC is None:
+        try: _LIC = json.loads((ROOT / 'data/license-registry.json').read_text(encoding='utf-8'))
+        except Exception: _LIC = {'sources': {}, 'files': {}}
+    return _LIC
+def canon_source(sid):
+    """sourceId canonico del registro de licencias (resuelve alias); None si no existe."""
+    src = _lic().get('sources', {})
+    if sid in src: return sid
+    for k, v in src.items():
+        if sid in (v.get('aliases') or []): return k
+    return None
+def stats_source(name, cc, s):
+    """Fuente de una serie de un *-stats.json segun data/license-registry.json (files). name = 'data/x.json' o 'x'. None si no se puede resolver."""
+    if not name: return None
+    n = name if name.startswith('data/') else 'data/%s.json' % name
+    m = _lic().get('files', {}).get(n) or {}
+    if cc in (m.get('byCountry') or {}): return canon_source(m['byCountry'][cc])
+    for pf, sid in (m.get('bySourceGroupPrefix') or {}).items():
+        if (s.get('sourceGroup') or '').startswith(pf): return canon_source(sid)
+    if m.get('default'): return canon_source(m['default'])
+    return None
+def stats_series(doc, name=None):
+    """{'CC/id': dict(l,u,f,g,p,v,c,s)} de un fichero *-stats.json (s = sourceId canonico, si se conoce el fichero)."""
     out = {}
     for cc, c in (doc.get('countries') or {}).items():
         for s in c.get('series', []):
             out['%s/%s' % (cc, s['id'])] = {'l': s.get('label', ''), 'u': s.get('unit', ''), 'f': s.get('frequency', ''), 'g': s.get('group', ''),
-                                            'p': s.get('latestPeriod'), 'v': s.get('latest'), 'c': s.get('changePct'), 's': s.get('sourceId')}
+                                            'p': s.get('latestPeriod'), 'v': s.get('latest'), 'c': s.get('changePct'), 's': canon_source(s.get('sourceId')) if s.get('sourceId') else stats_source(name, cc, s)}
     return out
 def products(doc):
     """{'P/producto/region': ...} de data/latest.json (solo observaciones verificadas)."""
@@ -30,7 +54,7 @@ def products(doc):
     for o in (doc.get('observations') or []):
         if o.get('status') != 'verified' or o.get('value') is None: continue
         out['P/%s/%s' % (o['product'], o['region'])] = {'l': '%s (%s)' % (o['product'], o['region'].upper()), 'u': ((o.get('currency') or '') + '/' + (o.get('unit') or '')).strip('/'), 'f': o.get('frequency', ''),
-                                                       'g': 'product', 'p': o.get('observationDate'), 'v': o.get('value'), 'c': o.get('changePct'), 's': o.get('sourceId')}
+                                                       'g': 'product', 'p': o.get('observationDate'), 'v': o.get('value'), 'c': o.get('changePct'), 's': canon_source(o.get('sourceId'))}
     return out
 def load_all(loader, strict=False):
     """loader(path) -> texto JSON o None. Devuelve (series, ficheros_presentes).
@@ -45,7 +69,7 @@ def load_all(loader, strict=False):
         except Exception:
             if strict: raise
             continue
-        present.add(n); series.update(stats_series(d))
+        present.add(n); series.update(stats_series(d, n))
     t = loader('data/latest.json')
     if t:
         try: series.update(products(json.loads(t))); present.add('latest')

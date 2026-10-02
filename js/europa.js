@@ -234,7 +234,7 @@
     var fams = ST.idx.families;
     var chips = fams.map(function (f) { return '<button type="button" class="di-region-btn' + (f.id === ST.fam ? ' active' : '') + '" data-fam="' + f.id + '">' + esc((FAMILY_NAME[f.id] || [f.id])[LI[lang()] || 0]) + '</button>'; }).join('');
     return '<div class="di-region-btns" style="margin-top:6px">' + chips + '</div><div id="eu-fam"></div>' +
-      '<p class="di-movers-hint" style="margin-top:22px">' + esc(t.src) + ' <a href="metodologia.html">' + esc(t.methodLink) + '</a>. <a href="producto.html">' + esc(t.linkProd) + '</a> · <a href="precios.html">' + esc(t.linkPrices) + '</a></p>';
+      ci('eu_agrifood') + '<p class="di-movers-hint" style="margin-top:22px">' + esc(t.src) + ' <a href="metodologia.html">' + esc(t.methodLink) + '</a>. <a href="producto.html">' + esc(t.linkProd) + '</a> · <a href="precios.html">' + esc(t.linkPrices) + '</a></p>';
   }
 
   function famView(t) {
@@ -288,6 +288,7 @@
     get('data/eu/' + ST.fam + '.json').then(function (f) { ST.fams[ST.fam] = f; cb(); });
   }
 
+  function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
   function render() {
     var t = tr(), root = document.getElementById('pr-body');
     document.title = 'Dehesa Index — ' + t.title;
@@ -309,6 +310,6 @@
       var f = qs.get('f'); ST.fam = f && famOf(f) ? f : idx.families[0].id;
       ST.sid = qs.get('s'); if (qs.get('r')) ST.sel = qs.get('r').split(',');
     }
-    render();
+    var go = function () { render(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
   });
 })();

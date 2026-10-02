@@ -321,9 +321,9 @@ def catalog_index(doc, errs, warns, stats):
     if len(rows) != man["seriesTotal"]: errs.append("indice con %d series, manifiesto %d" % (len(rows), man["seriesTotal"]))
     seen = set(); fsok = {"LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "HISTORICAL", "DISCONTINUED", "PENDING"}
     for r in rows:
-        if len(r) != 11: errs.append("fila con %d columnas" % len(r)); break
+        if len(r) != 12: errs.append("fila con %d columnas (se esperan 12)" % len(r)); break
         k = (D_["cc"][r[2]] if r[2] < len(D_["cc"]) else None, r[0])
-        if k[0] is None or r[3] >= len(D_["group"]) or r[4] >= len(D_["unit"]) or r[5] >= len(D_["freq"]) or r[7] >= len(D_["fs"]) or any(t >= len(D_["tag"]) for t in r[8]): errs.append("%s: indice fuera del diccionario" % r[0]); break
+        if k[0] is None or r[3] >= len(D_["group"]) or r[4] >= len(D_["unit"]) or r[5] >= len(D_["freq"]) or r[7] >= len(D_["fs"]) or r[11] >= len(D_["src"]) or any(t >= len(D_["tag"]) for t in r[8]): errs.append("%s: indice fuera del diccionario" % r[0]); break
         if k in seen: errs.append("serie repetida %s/%s" % k); break
         seen.add(k)
         if D_["fs"][r[7]] not in fsok: errs.append("%s: estado de frescura %r invalido" % (r[0], D_["fs"][r[7]])); break
