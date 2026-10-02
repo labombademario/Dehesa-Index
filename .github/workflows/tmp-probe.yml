@@ -10,18 +10,22 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v6
-      - name: Reproducir el fallo de us-cash-bids
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Reproducir EU Agri-food + motor de precios
         continue-on-error: true
-        env:
-          USDA_MMN_API_KEY: ${{ secrets.USDA_MMN_API_KEY }}
-          MARS_API_KEY: ${{ secrets.MARS_API_KEY }}
         run: |
           mkdir -p tmp-probe
-          python3 scripts/update-us-cash-bids.py --discover --backfill-days 0 > tmp-probe/fetch.txt 2>&1 || echo "fetch rc=$?" >> tmp-probe/fetch.txt
-          git ls-files -m -o --exclude-standard data/us-cash-bids > tmp-probe/files.txt
-          python3 scripts/validate-data.py --no-report --files $(grep -v '^tmp-probe' tmp-probe/files.txt) > tmp-probe/qa.txt 2>&1 || echo "qa rc=$?" >> tmp-probe/qa.txt
-          python3 scripts/validate-data.py --consistency > tmp-probe/consistency.txt 2>&1 || echo "cons rc=$?" >> tmp-probe/consistency.txt
-          git checkout -- data
+          node scripts/update-eu-agrifood.mjs cerdo vaca cordero pollo huevos azucar oliva arroz maiz trigo cebada avena colza centeno mantequilla leche_polvo dap potasa leche harina_soja > tmp-probe/fetch.txt 2>&1 || echo "fetch rc=$?" >> tmp-probe/fetch.txt
+          for c in "node scripts/validate-snapshots.mjs" "node scripts/build-data-index.mjs" "node scripts/build-csv.mjs" "node scripts/build-data-quality.mjs" "node scripts/build-intelligence.mjs" "node scripts/build-normalized-data.mjs" "node scripts/build-cross-market.mjs" "node scripts/build-dehesa-index.mjs" "node scripts/build-alert-signals.mjs" "python3 scripts/build-price-views.py"; do
+            echo "== $c" >> tmp-probe/engine.txt
+            $c >> tmp-probe/engine.txt 2>&1 || { echo "FALLO rc=$?" >> tmp-probe/engine.txt; break; }
+          done
+          echo "== validate" >> tmp-probe/engine.txt
+          python3 scripts/validate-data.py --no-report --files data/latest.json data/history.json data/normalized.json data/quality.json data/intelligence.json data/cross-market.json data/catalog.json >> tmp-probe/engine.txt 2>&1 || echo "validate FALLO" >> tmp-probe/engine.txt
+          python3 scripts/validate-data.py --consistency >> tmp-probe/engine.txt 2>&1 || echo "consistency FALLO" >> tmp-probe/engine.txt
+          git checkout -- . 
       - name: Subir salida
         run: |
           git config user.name "github-actions[bot]"
@@ -29,4 +33,3 @@ jobs:
           git add -- tmp-probe
           git commit -qm "TMP probe output" || exit 0
           for i in 1 2 3; do git pull -q --rebase --autostash && git push && exit 0; sleep 5; done
-# rerun
