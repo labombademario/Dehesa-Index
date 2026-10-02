@@ -340,6 +340,12 @@
     "cattle_on_feed"
    ]
   ],
+  "us-dairy.json": [
+   "us-dairy",
+   [
+    "us_dairy"
+   ]
+  ],
   "us-fertilizers.json": [
    "us-fertilizers",
    [

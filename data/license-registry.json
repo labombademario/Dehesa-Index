@@ -1393,6 +1393,11 @@
     "usda_ams_mars"
    ]
   },
+  "data/us-dairy.json": {
+   "sources": [
+    "usda_ams_mars"
+   ]
+  },
   "data/us-fertilizers.json": {
    "sources": [
     "usda_ams_mars"

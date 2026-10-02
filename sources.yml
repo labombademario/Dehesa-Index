@@ -110,6 +110,15 @@ sources:
     continue: true
     data: [cattle-on-feed.json]
     message: Datos Cattle on Feed (USDA NASS)
+  - id: us-dairy
+    name: Update US dairy prices (USDA AMS NDPSR)
+    cron: ['20 20 * * 3', '20 14 * * 4']
+    script: scripts/update-us-dairy.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [us-dairy.json]
+    message: Datos lacteos EE. UU. (USDA AMS NDPSR)
   - id: au-trade
     name: Update Australia trade (ABS)
     cron: ['25 11 5 * *']

@@ -198,6 +198,24 @@ def cattle_on_feed(doc, errs, warns, stats):
         if prev and not (0.7 < n["current"]["onFeedEnd"] / max(1, n["yearAgo"]["onFeedEnd"]) < 1.4): warns.append("%s: existencias muy distintas de hace un ano" % lab)
         prev = r["inventoryDate"]
     stats["reports"] = len(doc["reports"])
+def us_dairy(doc, errs, warns, stats):
+    ids = set(); n = 0; rng = {"mantequilla": (0.5, 6), "cheddar": (0.5, 6), "suero": (0.1, 3), "leche_polvo": (0.3, 5)}
+    for p in doc["products"]:
+        if p["id"] in ids: errs.append("%s: producto repetido" % p["id"])
+        ids.add(p["id"]); prev = None; lo, hi = rng.get(p["id"], (0.05, 10)); n += len(p["series"])
+        if not p["series"]: errs.append("%s: sin datos" % p["id"]); continue
+        for r in p["series"]:
+            d = _date(r[0])
+            if d is None: errs.append("%s: fecha invalida %s" % (p["id"], r[0])); continue
+            if d.weekday() != 5: errs.append("%s %s: la semana de NDPSR termina en sabado" % (p["id"], r[0]))
+            if not (_num(r[1]) and lo <= r[1] <= hi): errs.append("%s %s: precio fuera de rango (%s USD/lb)" % (p["id"], r[0], r[1]))
+            if r[3] not in (0, 1): errs.append("%s %s: marca provisional invalida" % (p["id"], r[0]))
+        _asc([r[0] for r in p["series"]], p["id"], errs)
+        if sum(r[3] for r in p["series"]) > 6: warns.append("%s: demasiadas semanas provisionales" % p["id"])
+        if (TODAY - _date(p["series"][-1][0])).days > 21: warns.append("%s: ultimo dato de hace mas de 3 semanas" % p["id"])
+    if ids != {"mantequilla", "cheddar", "suero", "leche_polvo"}: errs.append("productos esperados: mantequilla, cheddar, suero, leche_polvo")
+    stats["points"] = n
+
 def us_fertilizers(doc, errs, warns, stats):
     n = 0; seen = set(); asof = _date(doc["asOf"])
     if asof is None: errs.append("asOf invalido"); return
