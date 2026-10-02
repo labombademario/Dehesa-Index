@@ -880,7 +880,8 @@ def _consistency(errs, warns):
             h = hk.get(mk(o))
             if not h: continue
             tol = 1e-6 if o["frequency"] in ("monthly", "quarterly") else 0.35
-            if abs(h["value"] - o["value"]) > tol * max(1, abs(o["value"])): errs.append("%s: latest %s vs history del mes %s (%s)" % (o["id"], o["value"], h["value"], o["frequency"]))
+            # diferencia relativa simetrica (sobre el mayor de los dos): una caida real brusca de la fuente (p. ej. arroz japonica de Espana, -26 % en una semana al llegar la cosecha nueva) no debe parecer mas grande que una subida igual
+            if abs(h["value"] - o["value"]) > tol * max(1, abs(o["value"]), abs(h["value"])): errs.append("%s: latest %s vs history del mes %s (%s)" % (o["id"], o["value"], h["value"], o["frequency"]))
     if cat and lat and len(cat["latest"]) != len(lat["observations"]): errs.append("catalog.latest %d != latest %d" % (len(cat["latest"]), len(lat["observations"])))
     if cat and lat and cat["observationCount"] < len(lat["observations"]): errs.append("catalog.observationCount (filas de snapshots) %d < latest %d" % (cat["observationCount"], len(lat["observations"])))
     wi, reg, man = ld("watch-index.json"), ld("series-registry.json"), ld("catalog/manifest.json")
