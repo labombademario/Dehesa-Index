@@ -216,6 +216,46 @@ def fertilizer():
         put("ca-fert-%s" % slug(nm), "inputs_f", "Fertilizer shipments to Canadian agriculture: %s (Jul-Jun year)" % nm.lower(), "thousand t", "annual", pts, "StatCan 32-10-0038")
     log("fertilizantes", len(by))
 
+
+# ───────── 6b. Costes de explotación (32-10-0049), capital y deuda (32-10-0050/51), combustible (18-10-0001) ─────────
+EXP = {"Total expenses after rebates": "total expenses", "Total operating expenses after rebates": "operating expenses", "Fertilizer, after rebates": "fertiliser",
+       "Pesticides, after rebates": "pesticides", "Commercial seed, after rebates": "seed", "Commercial feed, after rebates": "feed", "Machinery fuel, after rebates": "machinery fuel",
+       "Interest, after rebates": "interest", "Cash wages including room and board, after rebates": "wages", "Livestock and poultry purchases, after rebates": "livestock purchases",
+       "Electricity, after rebates": "electricity", "Heating fuel, after rebates": "heating fuel", "Machinery repairs and other expenses": "machinery repairs", "Total depreciation": "depreciation", "Property taxes, after rebates": "property taxes"}
+EXP_PROV = ("Total expenses after rebates", "Fertilizer, after rebates", "Commercial feed, after rebates", "Machinery fuel, after rebates", "Interest, after rebates")
+PROV = ("Saskatchewan", "Alberta", "Manitoba", "Ontario", "Quebec")
+def costs():
+    n = 0
+    rows = [r for r in load(32100049) if r["GEO"] == "Canada" or r["GEO"] in PROV]
+    for geo in ("Canada",) + PROV:
+        sub = [r for r in rows if r["GEO"] == geo]
+        by = series_of(sub, lambda r: r["Expenses and rebates"] if r["Expenses and rebates"] in EXP and (geo == "Canada" or r["Expenses and rebates"] in EXP_PROV) else None)
+        for k, pts in by.items():
+            put("ca-exp-%s-%s" % (slug(geo), slug(EXP[k])), "costs", "Farm operating expenses: %s%s (annual)" % (EXP[k], "" if geo == "Canada" else ", " + geo), "CAD million", "annual", [(p, v / 1e6) for p, v in pts], "StatCan 32-10-0049"); n += 1
+    log("costes", n)
+BAL = {"Total value of farm capital": "total farm capital", "Land and buildings": "land and buildings", "Machinery and equipment": "machinery and equipment", "Livestock and poultry": "livestock and poultry"}
+DEBT = {"Farm debt outstanding, total": "total", "Chartered banks": "chartered banks", "Credit unions": "credit unions", "Federal government agencies": "federal agencies", "Provincial government agencies": "provincial agencies", "Private individuals and supply companies": "private lenders and suppliers"}
+def balance():
+    n = 0
+    by = series_of([r for r in load(32100050) if r["GEO"] == "Canada"], lambda r: r["Farm items"] if r["Farm items"] in BAL else None)
+    for k, pts in by.items(): put("ca-cap-%s" % slug(BAL[k]), "income", "Farm balance sheet, value at 1 July: %s (annual)" % BAL[k], "CAD million", "annual", [(p, v / 1e6) for p, v in pts], "StatCan 32-10-0050"); n += 1
+    by = series_of([r for r in load(32100051) if r["GEO"] == "Canada"], lambda r: r["Type of lender"] if r["Type of lender"] in DEBT else None)
+    for k, pts in by.items(): put("ca-debt-%s" % slug(DEBT[k]), "income", "Farm debt outstanding: %s (annual)" % DEBT[k], "CAD million", "annual", [(p, v / 1e6) for p, v in pts], "StatCan 32-10-0051"); n += 1
+    log("balance", n)
+FUELS = {"Diesel fuel at self service filling stations": "diesel (self-service)", "Regular unleaded gasoline at self service filling stations": "regular gasoline (self-service)", "Household heating fuel": "household heating fuel"}
+FUEL_GEO = ("Canada", "Calgary, Alberta", "Edmonton, Alberta", "Regina, Saskatchewan", "Saskatoon, Saskatchewan", "Winnipeg, Manitoba", "Toronto, Ontario", "Montréal, Quebec", "Vancouver, British Columbia")
+def fuel():
+    n = 0
+    rows = [r for r in load(18100001) if r["GEO"] in FUEL_GEO]
+    for geo in FUEL_GEO:
+        for fk, fl in FUELS.items():
+            if geo != "Canada" and not fk.startswith("Diesel"): continue
+            by = series_of([r for r in rows if r["GEO"] == geo and r["Type of fuel"] == fk], lambda r: fk)
+            for k, pts in by.items():
+                city = geo.split(",")[0]
+                put("ca-fuel-%s-%s" % (slug(city), slug(fl)), "inputs", "Retail price: %s, %s (monthly)" % (fl, city), "cents per litre", "monthly", pts, "StatCan 18-10-0001"); n += 1
+    log("combustible", n)
+
 # ───────── 7. Comercio exterior ─────────
 def trade():
     rows = load(12100163)
@@ -285,7 +325,7 @@ def partners():
 def main():
     import os
     only = [x for x in os.environ.get("ONLY", "").replace(",", " ").split() if x]
-    allf = (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, trade, partners)
+    allf = (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, costs, balance, fuel, trade, partners)
     if only:
         try:
             for x in json.loads((ROOT / "data" / "canada-stats.json").read_text())["countries"]["CA"]["series"]: OUT[x["id"]] = x

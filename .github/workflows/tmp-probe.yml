@@ -7,6 +7,7 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-24.04
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v6
       - run: python3 scripts/tmp-probe.py
@@ -14,6 +15,6 @@ jobs:
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tmp-probe
+          git add -A tmp-probe data/canada-stats.json data/canada-stats-log.txt scripts/ref scripts/fixtures
           git commit -qm "TMP probe output" || exit 0
-          git pull -q --rebase && git push
+          for i in 1 2 3; do git pull -q --rebase --autostash && git push && exit 0; sleep 5; done
