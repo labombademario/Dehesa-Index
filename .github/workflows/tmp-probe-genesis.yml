@@ -1,0 +1,18 @@
+name: tmp-probe-genesis
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - env:
+          GENESIS_TOKEN: ${{ secrets.GENESIS_TOKEN }}
+        run: |
+          python3 probe/genesis.py > probe-genesis-log.txt 2>&1 || true
+          ls -la genesis-*.csv >> probe-genesis-log.txt 2>&1 || true
+          git config user.name probe; git config user.email probe@x
+          git add -f probe-genesis-log.txt genesis-*.csv 2>/dev/null || true
+          git commit -qm "probe genesis out" || true
+          git pull -q --rebase && git push
