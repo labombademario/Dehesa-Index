@@ -121,7 +121,7 @@
         '<td data-label="' + esc(t.cOrigH) + '"><strong>' + esc(orgTxt(s)) + '</strong></td>' +
         '<td data-label="' + esc(t.cNormH) + ' (' + esc(cu) + ')">' + conv + '</td>' +
         '<td data-label="' + esc(t.cDate) + '">' + esc(s.latest[0]) + '</td>' +
-        '<td data-label="' + esc(t.cFresh) + '">' + fsBadge(s) + '</td><td data-label="' + esc(t.cSrc) + '">' + esc(s.src) + '</td>' +
+        '<td data-label="' + esc(t.cFresh) + '">' + fsBadge(s) + '</td><td data-label="' + esc(t.cSrc) + '">' + ((window.DICite && s.sourceId && window.DICite.html(s.sourceId, { period: s.latest && s.latest[0] })) || esc(s.src)) + '</td>' +
         '<td data-label="' + esc(t.cComp) + '">' + compBadge(s, t) + '</td></tr>';
     }).join('');
     var th = function (x) { return '<th scope="col" style="text-align:left;font-size:11px;color:var(--text-faint);padding:4px 8px;border-bottom:1px solid var(--border)">' + esc(x) + '</th>'; };
@@ -192,7 +192,7 @@
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); render(); };
   var q = new URLSearchParams(location.search); if (q.get('h') === '1' || q.get('f') === 'all') ST.old = true; if (/^(exact|directional)$/.test(q.get('k') || '')) ST.k = q.get('k'); if (q.get('p')) ST.p = q.get('p'); if (q.get('c')) ST.c = q.get('c').toUpperCase().split(',').slice(0, 6); if (/^(orig|eur|usd|idx)$/.test(q.get('u') || '')) ST.u = q.get('u'); if (q.get('r') != null && /^[0-4]$/.test(q.get('r'))) ST.r_i = +q.get('r');
-  Promise.all([fetch('data/product-compare.json').then(function (r) { return r.json(); }), fetch('data/fx-history.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), (window.DIIdentity ? window.DIIdentity.ready().catch(function () { return null; }) : null)]).then(function (a) {
+  Promise.all([fetch('data/product-compare.json').then(function (r) { return r.json(); }), fetch('data/fx-history.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }), (window.DIIdentity ? window.DIIdentity.ready().catch(function () { return null; }) : null), (window.DICite ? window.DICite.load() : null)]).then(function (a) {
     D = a[0]; FX = a[1]; window.DIUnits.setFx(FX);
     if (!D.products[ST.p]) ST.p = 'trigo'; render();
   }).catch(function () { var r = document.getElementById('cmp-body'); if (r) r.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });

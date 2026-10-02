@@ -57,7 +57,8 @@
     var lg = '<div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;margin:6px 0">' + series.map(function (s) { return '<span style="display:inline-flex;align-items:center;gap:6px"><span style="width:14px;height:3px;background:' + s.color + ';display:inline-block;border-radius:2px"></span>' + esc(s.name) + '</span>'; }).join('') + '</div>';
     return '<div style="position:relative">' + lg + '<svg id="' + id + '" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(series.map(function (s) { return s.name; }).join(', ')) + '"' + window.DehesaChart.attr(spec) + ' style="width:100%;height:auto;display:block;touch-action:pan-y">' + g + '</svg></div>';
   }
-  function page() {
+function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
+    function page() {
     var x = t(), c = com(), nm = P.names(), at = P.attrs();
     document.title = 'Dehesa Index — ' + x.title;
     document.getElementById('pg-h1').textContent = x.title; document.getElementById('pg-sub').textContent = x.sub;
@@ -104,7 +105,7 @@
       (ch1 ? '<h3 style="font-size:15px;margin:14px 0 0">' + x.chart1 + '</h3>' + ch1 : '') + (ch2 ? '<h3 style="font-size:15px;margin:14px 0 0">' + x.chart2 + '</h3>' + ch2 : '') + '<p class="di-movers-hint" style="margin-top:6px">' + x.year + ' ' + P.myLabel(c.id, c.latestMarketYear) + ': ' + x.forecast + ' (' + (x.forecast === 'previsión' ? 'línea discontinua' : x.forecast === 'forecast' ? 'dashed line' : x.forecast === 'prévision' ? 'trait pointillé' : 'linea tratteggiata') + ')</p></div>';
     var pub = c.publishedMonth ? '<p class="di-movers-hint">' + x.updated + ': ' + esc(c.publishedMonth) + ' · <a href="mapa.html">' + x.mapLink + ' →</a></p>' : '<p class="di-movers-hint"><a href="mapa.html">' + x.mapLink + ' →</a></p>';
     document.getElementById('od-body').innerHTML = ctr + head + pub + '<h2 style="margin:20px 0 10px">' + x.balance + ' · ' + esc(nm[c.id] || c.id) + '</h2>' + tbl + '<h2 style="margin:26px 0 10px">' + x.rank + '</h2>' + rank + '<h2 style="margin:26px 0 10px">' + esc(nm[c.id] || c.id) + '</h2>' + charts +
-      '<p class="di-info-api-notice" style="margin:14px 0">' + esc(x.caveat) + '</p><p class="di-movers-hint">' + esc(x.src) + ' <a href="metodologia.html#oferta-demanda">' + x.methodLink + '</a>.</p>';
+      '<p class="di-info-api-notice" style="margin:14px 0">' + esc(x.caveat) + '</p><p class="di-movers-hint">' + esc(x.src) + ' <a href="metodologia.html#oferta-demanda">' + x.methodLink + '</a>.</p>' + ci('usda_fas_psd', { period: c.publishedMonth });
     document.getElementById('od-c').onchange = function (e) { SEL.c = e.target.value; SEL.my = null; page(); };
     document.getElementById('od-y').onchange = function (e) { SEL.my = parseInt(e.target.value, 10); page(); };
     document.getElementById('od-e').onchange = function (e) { SEL.ent = e.target.value; page(); };
@@ -134,7 +135,7 @@
   if (isPage) window.DehesaShared.init('informacion');
   (isPage || !window.DIHome ? P.load('data/supply-demand.json') : window.DIHome.summary().then(function (s) { return s.supplyDemand; }).catch(function () { return null; })).then(function (d) {
     if (!d) { if (isPage) document.getElementById('od-body').innerHTML = '<p class="di-movers-hint">' + t().noData + '</p>'; return; }
-    DATA = d; SEL.c = 'trigo'; if (isPage) { var qc = new URLSearchParams(window.location.search).get('c'); if (qc && DATA.commodities.some(function (x) { return x.id === qc; })) SEL.c = qc; page(); } teaser();
+    DATA = d; SEL.c = 'trigo'; if (isPage) { var qc = new URLSearchParams(window.location.search).get('c'); if (qc && DATA.commodities.some(function (x) { return x.id === qc; })) SEL.c = qc; } var go = function () { if (isPage) page(); teaser(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
     var prev = window.DehesaShared.onLangChange;
     window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); if (isPage) page(); teaser(); };
   });

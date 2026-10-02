@@ -22,7 +22,7 @@ def stats_series(doc):
     for cc, c in (doc.get('countries') or {}).items():
         for s in c.get('series', []):
             out['%s/%s' % (cc, s['id'])] = {'l': s.get('label', ''), 'u': s.get('unit', ''), 'f': s.get('frequency', ''), 'g': s.get('group', ''),
-                                            'p': s.get('latestPeriod'), 'v': s.get('latest'), 'c': s.get('changePct')}
+                                            'p': s.get('latestPeriod'), 'v': s.get('latest'), 'c': s.get('changePct'), 's': s.get('sourceId')}
     return out
 def products(doc):
     """{'P/producto/region': ...} de data/latest.json (solo observaciones verificadas)."""
@@ -30,7 +30,7 @@ def products(doc):
     for o in (doc.get('observations') or []):
         if o.get('status') != 'verified' or o.get('value') is None: continue
         out['P/%s/%s' % (o['product'], o['region'])] = {'l': '%s (%s)' % (o['product'], o['region'].upper()), 'u': ((o.get('currency') or '') + '/' + (o.get('unit') or '')).strip('/'), 'f': o.get('frequency', ''),
-                                                       'g': 'product', 'p': o.get('observationDate'), 'v': o.get('value'), 'c': o.get('changePct')}
+                                                       'g': 'product', 'p': o.get('observationDate'), 'v': o.get('value'), 'c': o.get('changePct'), 's': o.get('sourceId')}
     return out
 def load_all(loader, strict=False):
     """loader(path) -> texto JSON o None. Devuelve (series, ficheros_presentes).

@@ -88,7 +88,8 @@
   }
   function delta(label, v) { return '<div style="font-size:12.5px;color:var(--text-faint)">' + (v === null ? '' : '<strong style="color:var(--text)">' + sg(v, 0, ' ' + t().pp) + '</strong> ' + esc(label)) + '</div>'; }
 
-  function page() {
+function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
+    function page() {
     var x = t(), c = crop(SEL.crop) || crop(ORDER[0]);
     document.title = 'Dehesa Index — ' + x.title; document.getElementById('pg-h1').textContent = x.title; document.getElementById('pg-sub').textContent = x.sub;
     var cropsHave = ORDER.filter(function (id) { return crop(id); });
@@ -145,7 +146,7 @@
       '<h2 style="margin:20px 0 10px">' + esc(x.geChart) + '</h2><div class="di-card" style="padding:14px 18px">' + ch1 + '</div>' +
       '<h2 style="margin:26px 0 10px">' + esc(x.progChart) + '</h2><div class="di-card" style="padding:14px 18px"><label style="font-size:13px">' + esc(x.stage) + ' <select id="cu-st" class="di-compare-select">' + stOpts + '</select></label>' + ch2 + '</div>' +
       '<h2 style="margin:26px 0 10px">' + esc(x.table) + '</h2>' + tbl + stRows +
-      '<p class="di-info-api-notice" style="margin:18px 0 10px">' + esc(x.caveat) + '</p><p class="di-movers-hint">' + esc(x.src) + ' <a href="metodologia.html#cultivos">' + esc(x.methodLink) + '</a>.</p>';
+      '<p class="di-info-api-notice" style="margin:18px 0 10px">' + esc(x.caveat) + '</p><p class="di-movers-hint">' + esc(x.src) + ' <a href="metodologia.html#cultivos">' + esc(x.methodLink) + '</a>.</p>' + ci('usda_nass', { period: DATA.lastWeekEnding });
     document.getElementById('cu-c').onchange = function (e) { SEL.crop = e.target.value; SEL.season = null; SEL.stage = null; page(); };
     document.getElementById('cu-s').onchange = function (e) { SEL.season = parseInt(e.target.value, 10); page(); };
     var stEl = document.getElementById('cu-st'); if (stEl) stEl.onchange = function (e) { SEL.stage = e.target.value; page(); };
@@ -169,7 +170,7 @@
   // En la Home basta el resumen (condicion de 4 cultivos); la pagina completa baja crop-progress.json
   (isPage || !window.DIHome ? fetch('data/crop-progress.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }) : window.DIHome.summary().then(function (s) { return s.cropProgress; })).then(function (d) {
     if (!d || !d.crops || !d.crops.length) throw Error('x'); DATA = d; var qc = new URLSearchParams(window.location.search).get('crop'); if (qc && crop(qc)) SEL.crop = qc;
-    if (isPage) page(); teaser();
+    var go = function () { if (isPage) page(); teaser(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
     var prev = window.DehesaShared.onLangChange;
     window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); if (isPage) page(); teaser(); };
   }).catch(function () { if (isPage) document.getElementById('cu-body').innerHTML = '<p class="di-movers-hint">' + t().none + '</p>'; });

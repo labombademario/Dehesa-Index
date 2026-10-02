@@ -72,7 +72,8 @@
   }
   function card(label, value, sub) { return '<div class="di-card" style="padding:14px 16px;flex:1 1 200px;min-width:180px"><div style="font-size:11px;letter-spacing:.4px;color:var(--text-faint);font-weight:700">' + esc(label).toUpperCase() + '</div><div style="font-size:24px;font-weight:700;margin:4px 0 2px;font-family:\'Source Serif 4\',serif">' + value + '</div><div style="font-size:12.5px">' + sub + '</div></div>'; }
   function rname(r, t) { return r === 'CONUS' ? t.conus : (ST[r] || r); }
-  function render() {
+function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
+    function render() {
     var t = tr(), root = document.getElementById('sq-body');
     document.title = 'Dehesa Index — ' + t.title;
     document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
@@ -104,7 +105,7 @@
       '<div style="margin-top:8px;font-size:13px;color:var(--text-faint)">' + esc(t.week) + ' ' + esc(last[0]) + '</div>' + cards +
       '<div class="di-card" style="padding:8px;position:relative"><div id="sq-map">' + svg + '</div><div id="sq-tip" style="display:none;position:absolute;pointer-events:none;background:var(--surface,#fff);border:1px solid var(--border);border-radius:6px;padding:6px 9px;font-size:12.5px;box-shadow:0 2px 8px rgba(0,0,0,.12);white-space:nowrap"></div></div>' +
       '<div style="display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;margin:8px 0">' + lg + '</div><p class="di-movers-hint">' + esc(t.pick) + '</p>' + chart + table +
-      '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.note) + '</p><p class="di-movers-hint">' + esc(t.src) + '</p>';
+      '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.note) + '</p><p class="di-movers-hint">' + esc(t.src) + '</p>' + ci('us_drought_monitor');
     document.getElementById('sq-sel-m').onchange = function (e) { SEL.metric = parseInt(e.target.value, 10); render(); };
     document.getElementById('sq-sel-r').onchange = function (e) { SEL.region = e.target.value; render(); };
     var box = document.getElementById('sq-map'), tip = document.getElementById('sq-tip'), wrap = tip.parentNode;
@@ -124,6 +125,6 @@
     var q = new URLSearchParams(window.location.search);
     if (q.get('state') && D && D.states[q.get('state')]) SEL.region = q.get('state');
     if (q.get('cat') && /^[0-4]$/.test(q.get('cat'))) SEL.metric = parseInt(q.get('cat'), 10);
-    render();
+    var go = function () { render(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
   });
 })();

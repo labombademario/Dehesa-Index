@@ -159,13 +159,14 @@
       '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.gatsNote) + '</p><p class="di-movers-hint"><a href="mapa.html?layer=trade&flow=' + SEL.flow + '&group=' + SEL.group + '">' + esc(t.mapLink) + ' →</a></p>';
   }
 
-  function render() {
+function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
+    function render() {
     var t = tr();
     document.title = 'Dehesa Index — ' + t.title;
     document.getElementById('pg-h1').textContent = t.title;
     document.getElementById('pg-sub').textContent = t.sub;
     var tab = function (k, label) { return '<button type="button" class="di-link-btn" data-tab="' + k + '" aria-pressed="' + (SEL.tab === k) + '" style="' + (SEL.tab === k ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:18px;font-size:15px">' + esc(label) + '</button>'; };
-    document.getElementById('ex-body').innerHTML = '<div style="margin-bottom:14px">' + (ESR ? tab('esr', t.tabEsr) : '') + (GATS ? tab('gats', t.tabGats) : '') + '</div>' + (SEL.tab === 'esr' ? renderEsr(t) : renderGats(t)) + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + '</p>';
+    document.getElementById('ex-body').innerHTML = '<div style="margin-bottom:14px">' + (ESR ? tab('esr', t.tabEsr) : '') + (GATS ? tab('gats', t.tabGats) : '') + '</div>' + (SEL.tab === 'esr' ? renderEsr(t) : renderGats(t)) + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + '</p>' + (SEL.tab === 'esr' ? ci('usda_fas_esr') : ci('usda_fas_gats'));
     var q = function (s) { return document.getElementById('ex-body').querySelectorAll(s); };
     Array.prototype.forEach.call(q('[data-tab]'), function (b) { b.onclick = function () { SEL.tab = b.getAttribute('data-tab'); render(); }; });
     var e = document.getElementById('ex-sel-code'); if (e) e.onchange = function () { SEL.code = parseInt(e.value, 10); render(); };
@@ -185,6 +186,6 @@
     var q = new URLSearchParams(window.location.search);
     if (q.get('tab') === 'gats' && GATS) SEL.tab = 'gats'; else if (!ESR && GATS) SEL.tab = 'gats';
     if (q.get('code')) SEL.code = parseInt(q.get('code'), 10); if (q.get('flow')) SEL.flow = q.get('flow'); if (q.get('group')) SEL.group = q.get('group');
-    render();
+    var go = function () { render(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
   });
 })();

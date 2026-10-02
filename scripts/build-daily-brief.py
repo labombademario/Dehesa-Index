@@ -59,6 +59,7 @@ def main():
     def mk(x):
         r = {'k': x['k'], 'kind': kind_of(x['g'], x['k']), 'label': x['l'], 'unit': x['u'], 'period': x['p'], 'value': x['v'], 'changePct': x['c'], 'group': x['g']}
         if x.get('new'): r['new'] = True
+        if x.get('s'): r['sourceId'] = x['s']
         return r
     fresh = [x for x in new_data if not x.get('new')]
     movers = sorted([x for x in fresh if isinstance(x['c'], (int, float)) and x['g'] != 'rates' and abs(x['c']) >= 2], key=lambda x: -abs(x['c']))[:12]

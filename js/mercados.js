@@ -66,7 +66,8 @@
     return { html: h, pts: pts, W: W, L: L, R: R };
   }
 
-  function page() {
+function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
+    function page() {
     var x = t(); document.title = 'Dehesa Index — ' + x.title;
     document.getElementById('pg-h1').textContent = x.title; document.getElementById('pg-sub').textContent = x.sub;
     var fams = FAM_ORDER.filter(function (f) { return IDX.reports.some(function (r) { return r.fam === f; }); });
@@ -109,7 +110,7 @@
         '<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;align-items:flex-end">' + dimHtml + '<label style="font-size:13px">' + esc(x.search) + '<br><input id="ms-q" type="text" value="' + esc(SEL.q) + '" placeholder="' + esc(x.searchPh) + '" class="di-compare-select" style="min-width:200px"></label><label style="font-size:13px;display:flex;gap:6px;align-items:center"><input id="ms-all" type="checkbox"' + (SEL.all ? ' checked' : '') + '> ' + esc(x.all) + '</label></div>' +
         detail + '<div class="di-card" style="padding:6px 16px;overflow-x:auto">' + (total ? '<table style="border-collapse:collapse;width:100%;min-width:560px;font-size:14px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:10px 6px">' + esc(x.desc.toUpperCase()) + '</th><th style="padding:10px 6px">' + esc(x.unit.toUpperCase()) + '</th><th style="padding:10px 6px">' + esc(x.date.toUpperCase()) + '</th><th style="padding:10px 6px;text-align:right">' + esc(x.price.toUpperCase()) + '</th><th style="padding:10px 6px;text-align:right">' + esc(x.range.toUpperCase()) + '</th><th style="padding:10px 6px;text-align:right">' + esc(x.chg.toUpperCase()) + '</th></tr>' + trs + '</table>' : '<p class="di-movers-hint" style="padding:14px 0">' + esc(x.none) + '</p>') + '</div>' +
         '<p class="di-movers-hint" style="margin-top:6px">' + shown.length + ' ' + esc(x.of) + ' ' + total + ' ' + esc(x.shown) + (total > shown.length ? ' · <button type="button" class="di-link-btn" id="ms-more">' + esc(x.more) + '</button>' : '') + '</p>' +
-        '<p class="di-info-api-notice" style="margin:14px 0">' + esc(x.caveat) + '</p><p class="di-movers-hint">' + esc(x.src) + ' <a href="metodologia.html#mercados">' + esc(x.methodLink) + '</a>.</p>';
+        '<p class="di-info-api-notice" style="margin:14px 0">' + esc(x.caveat) + '</p><p class="di-movers-hint">' + esc(x.src) + ' <a href="metodologia.html#mercados">' + esc(x.methodLink) + '</a>.</p>' + ci('usda_ams_mars');
       var spEl = document.getElementById('ms-span'); if (spEl) spEl.onchange = function (e) { SEL.span = parseInt(e.target.value, 10); page(); };
       document.getElementById('ms-f').onchange = function (e) { SEL.fam = e.target.value; SEL.id = null; SEL.q = ''; SEL.lim = 60; page(); };
       document.getElementById('ms-r').onchange = function (e) { SEL.id = parseInt(e.target.value, 10); SEL.f = {}; SEL.sel = null; SEL.q = ''; SEL.lim = 60; page(); };
@@ -154,7 +155,7 @@
     var qp = new URLSearchParams(window.location.search), r = parseInt(qp.get('r'), 10), fam = qp.get('fam');
     if (r) { var m = IDX.reports.filter(function (x) { return x.id === r; })[0]; if (m) { SEL.fam = m.fam; SEL.id = m.id; } } else if (fam) SEL.fam = fam;
     if (qp.get('q')) SEL.q = qp.get('q');
-    page();
+    var go = function () { page(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
     var prev = window.DehesaShared.onLangChange;
     window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); page(); };
   }).catch(function () { document.getElementById('ms-body').innerHTML = '<p class="di-movers-hint">' + esc(t().noData) + '</p>'; });

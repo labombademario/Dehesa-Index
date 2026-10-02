@@ -137,14 +137,15 @@
     var table = '<div style="font-weight:600;margin:20px 0 6px">' + esc(t.all) + ' (' + esc(t.bn) + ')</div><div class="di-card" style="padding:6px 16px;overflow-x:auto"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:14px"><tr>' + th(t.inc) + last6.map(function (y) { return th(y + (y === ly ? ' (' + t.prov + ')' : ''), 1); }).join('') + '</tr>' + INC.map(function (it) { return '<tr style="border-top:1px solid var(--border)">' + td(esc(it[1][P]), 0, 1) + last6.map(function (y) { var v = iv(it[0], y); return td(v === null ? '—' : nf(v / 1e6, 1), 1); }).join('') + '</tr>'; }).join('') + '</table></div>';
     return cards + chart + table + '<p class="di-info-api-notice" style="margin:14px 0 6px">' + esc(t.inote) + '</p>';
   }
-  function render() {
+function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
+    function render() {
     var t = tr(), root = document.getElementById('cs-body');
     document.title = 'Dehesa Index — ' + t.title; document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
     if (!D) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; return; }
     var tabs = [['food', D.fpo], ['costs', D.costs], ['income', D.income]].filter(function (x) { return x[1]; }).map(function (x) { return x[0]; });
     if (tabs.indexOf(SEL.tab) < 0) SEL.tab = tabs[0];
     var tabHtml = tabs.map(function (k) { return '<button type="button" class="di-link-btn" data-tab="' + k + '" aria-pressed="' + (SEL.tab === k) + '" style="' + (SEL.tab === k ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:18px;font-size:15px">' + esc(t[k]) + '</button>'; }).join('');
-    root.innerHTML = '<div style="margin-bottom:14px">' + tabHtml + '</div>' + (SEL.tab === 'food' ? renderFood(t) : SEL.tab === 'costs' ? renderCosts(t) : renderIncome(t)) + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + '</p>';
+    root.innerHTML = '<div style="margin-bottom:14px">' + tabHtml + '</div>' + (SEL.tab === 'food' ? renderFood(t) : SEL.tab === 'costs' ? renderCosts(t) : renderIncome(t)) + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + '</p>' + ci('usda_ers');
     Array.prototype.forEach.call(root.querySelectorAll('[data-tab]'), function (b) { b.onclick = function () { SEL.tab = b.getAttribute('data-tab'); render(); }; });
     Array.prototype.forEach.call(root.querySelectorAll('[data-fpo]'), function (b) { b.onclick = function () { SEL.fpo = b.getAttribute('data-fpo'); render(); }; });
     var e = document.getElementById('cs-prod'); if (e) e.onchange = function () { SEL.prod = e.value; SEL.year = null; SEL.region = 'U.S. total'; render(); };
@@ -159,6 +160,6 @@
     var q = new URLSearchParams(window.location.search);
     if (q.get('tab') === 'costs' || q.get('tab') === 'income' || q.get('tab') === 'food') SEL.tab = q.get('tab');
     if (q.get('prod') && PRODS[q.get('prod')]) SEL.prod = q.get('prod');
-    render();
+    var go = function () { render(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
   });
 })();
