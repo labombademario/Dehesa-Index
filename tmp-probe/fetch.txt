@@ -1,0 +1,1 @@
+US cash bids: OK | modo api | informes con dato 30 | series 1434 | obs historicas 90206 | revisiones 0 | {"added": 49402, "same": 6209, "revised": 0, "reconciled": 0, "stale_ignored": 0}

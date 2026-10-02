@@ -1,0 +1,3 @@
+WARNING  consistencia  relaciones sin las dos series en prices/intelligence (quedan 'pending'): 4 de 12 (us/fertilizer-cereals, us/energy-cereals, us/fertilizer-milk, us/energy-milk)
+Consistencia: 0 errores, 1 avisos
+Resumen: 0 ficheros, 0 con errores, 0 con avisos, consistencia 0 errores
