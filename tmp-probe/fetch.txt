@@ -1,0 +1,21 @@
+  aviso: sin dato de IT para 2026-09-27, se conservan los countryFactors
+cerdo UE: 2026-09-27 = 175.56 100kg (-1.6801%)
+vaca UE: 2026-09-27 = 611.29 100kg (-0.5499%) factores {"es":1,"de":1.073,"fr":1.024,"it":1.09}
+cordero UE: 2026-09-27 = 1031.8 100kg (1.9767%) factores {"es":1,"de":1.015,"fr":0.883,"it":0.802}
+pollo UE: 2026-09-27 = 2.3364 kg (-0.6083%) factores {"es":1,"de":1.973,"fr":1.584,"it":1.584}
+huevos UE: 2026-09-27 = 245.69 100kg (1.4116%) factores {"es":1,"de":0.908,"fr":1.079,"it":1.226}
+azucar UE: 2026-06 = 501.4009 tonelada (-0.687%)
+oliva UE: 2026-09-27 = 344.84 100kg (-0.591%) factores {"es":1,"it":1.377}
+arroz UE: 2026-09-27 = 334.37 tonelada (-25.9719%)
+maiz UE: 2026-09-27 = 260 tonelada (0.3861%)
+trigo UE: 2026-09-27 = 264.1 tonelada (0.5329%) factores {"es":1,"fr":0.925,"de":0.924,"it":0.969}
+cebada UE: 2026-09-27 = 235 tonelada (0%)
+avena UE: 2026-08-02 = 149.57 tonelada (3.1588%)
+colza UE: 2026-09-27 = 475.27 tonelada (-0.2288%)
+centeno UE: 2026-08-02 = 170.89 tonelada (-6.0683%)
+mantequilla UE: 2026-09-27 = 425.4 100kg (2.1565%)
+leche_polvo UE: 2026-09-27 = 311.02 100kg (0.7417%)
+dap UE: 2026-08 = 739 tonelada (0.4076%)
+potasa UE: 2026-08 = 364 tonelada (-0.5464%)
+leche UE: 2026-09-30 = 45.53 100kg (0%) factores {"es":1,"de":0.904,"fr":0.975,"it":1.016}
+harina_soja UE: 2026-09-27 = 424.84 tonelada (3.703%)
