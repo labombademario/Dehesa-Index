@@ -1,20 +1,9 @@
-import json, os, urllib.request, urllib.parse, traceback
+import json, os, urllib.request, urllib.parse, re
 os.makedirs("tmp-probe", exist_ok=True)
-API = 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'
 out = []
-def get(ds, **f):
-    q = urllib.parse.urlencode(dict(f, format='JSON', lang='EN'), doseq=True)
-    with urllib.request.urlopen(urllib.request.Request(API + ds + '?' + q, headers={'User-Agent': 'DehesaIndex'}), timeout=120) as r:
-        return json.load(r)
-for ds, geo in [('agr_r_accts', 'FRH0'), ('agr_r_crops', 'FRH0'), ('agr_r_animal', 'FRH0'), ('agr_r_milkpr', 'FRH0'), ('agr_r_slaughter', 'FRH0'), ('agr_r_landuse', 'FRH0'), ('ef_lsk_main', 'FRH0'), ('agr_r_accts', 'ITH1'), ('agr_r_crops', 'ES61'), ('agr_r_accts', 'DE21')]:
-    try:
-        d = get(ds, geo=geo)
-        dims = d['id']; sz = d['size']
-        out.append("== %s geo=%s size=%s values=%d" % (ds, geo, dict(zip(dims, sz)), len(d.get('value', {}))))
-        for k in dims:
-            c = d['dimension'][k]['category']
-            lab = c.get('label', {}); idx = list(c['index'].keys()) if isinstance(c['index'], dict) else c['index']
-            out.append("  %s (%d): %s" % (k, len(idx), "; ".join("%s=%s" % (i, str(lab.get(i, ''))[:50]) for i in idx[:40])))
-    except Exception as e:
-        out.append("== %s geo=%s ERR %s" % (ds, geo, repr(e)[:200]))
-open("tmp-probe/eurostat-regions.txt", "w").write("\n".join(out))
+req = urllib.request.Request('https://ec.europa.eu/eurostat/api/dissemination/catalogue/toc/txt?lang=en', headers={'User-Agent': 'DehesaIndex'})
+txt = urllib.request.urlopen(req, timeout=180).read().decode('utf-8', 'replace')
+for line in txt.splitlines():
+    if re.search(r'\b(agr_r_|ef_r_|apro_.*_r|ef_lsk|ef_m_|ef_ov|ef_pmp|ef_lus)', line) or re.search(r'NUTS ?2|regional', line, re.I) and re.search(r'agri|crop|livestock|farm', line, re.I):
+        out.append(line[:230])
+open("tmp-probe/eurostat-toc.txt", "w").write("\n".join(out))
