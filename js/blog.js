@@ -144,9 +144,8 @@
     return STRINGS;
   }
   var STRINGS = buildStrings();
-  /* Suscripción por correo: queda apagada hasta que se rellene NEWSLETTER_ACTION con la dirección https del formulario del servicio
-     elegido (Buttondown, MailerLite, Mailchimp…). Sin ella no se muestra nada: la web no guarda correos por sí misma. */
-  var NEWSLETTER_ACTION = '';
+  /* Suscripción por correo: queda apagada hasta que se rellene DehesaShared.newsletter (js/shared.js: action y provider) con el servicio elegido
+     (Buttondown, MailerLite, Mailchimp…). Sin ella no se muestra nada: la web no guarda correos por sí misma. */
   var NL = {
     es: { h: 'Recibe cada artículo por correo', p: 'Escribe tu email y te llegará cada entrada nueva del blog. Puedes darte de baja cuando quieras.', ph: 'tu@email.com', ok: 'Acepto recibir el blog por correo y la política de privacidad.', btn: 'Suscribirme', lbl: 'Correo electrónico', pv: 'Aviso legal y privacidad' },
     en: { h: 'Get every article by email', p: 'Enter your email and each new blog post will reach you. You can unsubscribe at any time.', ph: 'you@email.com', ok: 'I agree to receive the blog by email and to the privacy policy.', btn: 'Subscribe', lbl: 'Email address', pv: 'Legal notice and privacy' },
@@ -154,7 +153,7 @@
     it: { h: 'Ricevi ogni articolo via email', p: 'Inserisci la tua email e riceverai ogni nuovo articolo del blog. Puoi disiscriverti quando vuoi.', ph: 'tu@email.com', ok: 'Accetto di ricevere il blog via email e l’informativa sulla privacy.', btn: 'Iscriviti', lbl: 'Indirizzo email', pv: 'Note legali e privacy' }
   };
   function subscribeBox(lang, esc) {
-    if (!/^https:\/\//.test(NEWSLETTER_ACTION)) return '';
+    var NEWSLETTER_ACTION = window.DehesaShared.newsletter.action; if (!/^https:\/\//.test(NEWSLETTER_ACTION) || !window.DehesaShared.newsletter.provider) return '';
     var n = NL[lang] || NL.es;
     return '<form class="di-card di-blog-sub" method="post" action="' + esc(NEWSLETTER_ACTION) + '" target="_blank" style="padding:14px 16px;margin:0 0 16px"><h2 style="margin:0 0 4px;font-size:16px">' + esc(n.h) + '</h2><p class="di-movers-hint" style="margin:0 0 8px">' + esc(n.p) + '</p>' +
       '<label for="bl-email" class="di-movers-hint" style="display:block">' + esc(n.lbl) + '</label><div style="display:flex;gap:8px;flex-wrap:wrap"><input id="bl-email" name="email" type="email" required autocomplete="email" placeholder="' + esc(n.ph) + '" style="flex:1 1 220px;min-width:0;padding:9px 10px;border:1px solid var(--border);border-radius:8px;font:inherit"><button type="submit" class="di-src-tab" style="flex:0 0 auto">' + esc(n.btn) + '</button></div>' +

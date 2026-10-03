@@ -780,6 +780,9 @@
   }
 
   global.DehesaShared = {
+    /* Suscripción del blog por correo. Se activa rellenando las dos cosas: action (https del formulario del servicio) y provider (nombre y país
+       del servicio que guarda los correos). Con ellas el blog muestra el formulario y el aviso legal añade el párrafo de privacidad. */
+    newsletter: { action: '', provider: '' },
     LANGS: LANGS,
     getLang: function () { return lang; },
     getTheme: function () { return theme; },
