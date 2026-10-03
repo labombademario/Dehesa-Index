@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-03T09:26:53Z",
+ "generatedAt": "2026-10-03T12:31:16Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 77,
+  "total": 79,
   "byStatus": {
-   "ACTIVE": 46,
+   "ACTIVE": 48,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -1403,6 +1403,44 @@
    "evidence": [
     "data/license-registry.json"
    ]
+  },
+  {
+   "sourceId": "agroseguro",
+   "registryId": "agroseguro",
+   "country": "ES",
+   "scope": "integrated",
+   "institution": "Agroseguro (Agrupacion Espanola de Entidades Aseguradoras de los Seguros Agrarios Combinados)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "PENDING",
+   "licenseId": "UNKNOWN",
+   "commercialReuse": "unclear",
+   "derivatives": "unclear",
+   "attribution": "Fuente: Agroseguro",
+   "lastChecked": "2026-10-03",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "NOT_READY",
+    "reasons": [
+     "Registro: PENDING (licencia poco clara o no verificable)"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ],
+   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
   },
   {
    "sourceId": "alberta_ag",
@@ -3236,6 +3274,43 @@
    "derivatives": "yes",
    "attribution": "Source: U.S. Department of Agriculture (WASDE release schedule)",
    "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "usda_rma",
+   "registryId": "usda_rma",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: U.S. Department of Agriculture, Risk Management Agency (Summary of Business). Aggregated by Dehesa Index.",
+   "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {

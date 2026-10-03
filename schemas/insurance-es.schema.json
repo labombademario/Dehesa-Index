@@ -1,0 +1,16 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Seguro agrario de Espana (Agroseguro): cifras curadas a mano, pendientes de contraste",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "source", "period", "verification", "provenance", "scope", "stats"],
+ "properties": {
+  "schemaVersion": {"type": "integer"},
+  "generatedAt": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"},
+  "source": {"type": "object", "required": ["id", "name", "url", "license"], "properties": {"id": {"type": "string", "enum": ["agroseguro"]}, "name": {"type": "string"}, "url": {"type": "string", "pattern": "^https://"}, "license": {"type": "string"}}},
+  "period": {"type": "string", "pattern": "^\\d{4}$"},
+  "verification": {"type": "string", "enum": ["PENDING", "VERIFIED"]},
+  "provenance": {"type": "string", "minLength": 20},
+  "scope": {"type": "string", "minLength": 5},
+  "stats": {"type": "object", "required": ["premiumsMEur", "insuredAreaMha", "indemnitiesMEur", "publicSubsidyPctOfPremium", "publicSubsidyApprox"], "properties": {"premiumsMEur": {"type": "number", "minimum": 1, "maximum": 100000}, "insuredAreaMha": {"type": "number", "minimum": 0.1, "maximum": 60}, "indemnitiesMEur": {"type": "number", "minimum": 1, "maximum": 100000}, "publicSubsidyPctOfPremium": {"type": "number", "minimum": 0, "maximum": 100}, "publicSubsidyApprox": {"type": "boolean"}}}
+ }
+}

@@ -193,6 +193,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/ux-audit.mjs --strict
+      - name: Seguro agrario (cifras exactas, tablas, citas, 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-seguro.mjs
       - name: Informe E2E
         if: always()
         uses: actions/upload-artifact@v6

@@ -463,6 +463,16 @@
    [
     "us_fertilizers"
    ]
+  ],
+  "crop-insurance.json": [
+   "crop-insurance",
+   [
+    "crop_insurance"
+   ]
+  ],
+  "insurance-es.json": [
+   "insurance-es",
+   []
   ]
  },
  "globs": {

@@ -124,7 +124,6 @@
     euOilBulletin: 'https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en',
     agroseguro: 'https://agroseguro.es/',
     rma: 'https://www.rma.usda.gov/',
-    ersCropInsurance: 'https://www.ers.usda.gov/topics/farm-practices-management/risk-management/crop-insurance-at-a-glance',
     mapaCoyuntura: 'https://www.mapa.gob.es/es/estadistica/temas/publicaciones/informe-semanal-coyuntura',
     franceAgriMerVin: 'https://www.franceagrimer.fr/chiffre-et-analyses-economiques/les-marches-la-production-de-vin',
     oemv: 'https://www.oemv.es/informes',
@@ -155,7 +154,7 @@
       azucar: { label: 'Azúcar', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Comisión Europea', url: SRC_URL.ecSugar }] },
       aceite: { label: 'Aceite de oliva', sources: [{ name: 'Comisión Europea', url: SRC_URL.ecOliveOil }] },
       energia: { label: 'Energía', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Boletín Semanal del Petróleo (CE)', url: SRC_URL.euOilBulletin }] },
-      seguro: { label: 'Seguro agrario', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }, { name: 'USDA ERS', url: SRC_URL.ersCropInsurance }] },
+      seguro: { label: 'Seguro agrario', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
       vino: { label: 'Vino a granel', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
       madera: { label: 'Madera', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
@@ -171,7 +170,7 @@
       azucar: { label: 'Sugar', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'European Commission', url: SRC_URL.ecSugar }] },
       aceite: { label: 'Olive Oil', sources: [{ name: 'European Commission', url: SRC_URL.ecOliveOil }] },
       energia: { label: 'Energy', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Weekly Oil Bulletin (EC)', url: SRC_URL.euOilBulletin }] },
-      seguro: { label: 'Crop insurance', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }, { name: 'USDA ERS', url: SRC_URL.ersCropInsurance }] },
+      seguro: { label: 'Crop insurance', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
       vino: { label: 'Bulk wine', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
       madera: { label: 'Timber', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (UK)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
@@ -187,7 +186,7 @@
       azucar: { label: 'Sucre', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Commission européenne', url: SRC_URL.ecSugar }] },
       aceite: { label: "Huile d'olive", sources: [{ name: 'Commission européenne', url: SRC_URL.ecOliveOil }] },
       energia: { label: 'Énergie', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bulletin pétrolier hebdomadaire (CE)', url: SRC_URL.euOilBulletin }] },
-      seguro: { label: 'Assurance agricole', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }, { name: 'USDA ERS', url: SRC_URL.ersCropInsurance }] },
+      seguro: { label: 'Assurance agricole', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
       vino: { label: 'Vin en vrac', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
       madera: { label: 'Bois', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     },
@@ -203,7 +202,7 @@
       azucar: { label: 'Zucchero', sources: [{ name: 'USDA ERS', url: SRC_URL.usdaSugar }, { name: 'Commissione europea', url: SRC_URL.ecSugar }] },
       aceite: { label: "Olio d'oliva", sources: [{ name: 'Commissione europea', url: SRC_URL.ecOliveOil }] },
       energia: { label: 'Energia', sources: [{ name: 'EIA', url: SRC_URL.eia }, { name: 'USDA AgTransport', url: SRC_URL.usdaAgTransportFuel }, { name: 'Bollettino Petrolifero Settimanale (CE)', url: SRC_URL.euOilBulletin }] },
-      seguro: { label: 'Assicurazione agricola', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }, { name: 'USDA ERS', url: SRC_URL.ersCropInsurance }] },
+      seguro: { label: 'Assicurazione agricola', sources: [{ name: 'Agroseguro', url: SRC_URL.agroseguro }, { name: 'USDA RMA', url: SRC_URL.rma }] },
       vino: { label: 'Vino sfuso', sources: [{ name: 'MAPA', url: SRC_URL.mapaCoyuntura }, { name: 'FranceAgriMer', url: SRC_URL.franceAgriMerVin }, { name: 'OeMv', url: SRC_URL.oemv }] },
       madera: { label: 'Legname', sources: [{ name: 'CME Group', url: SRC_URL.cmeLumber }, { name: 'Forest Research (RU)', url: SRC_URL.forestResearchTimber }, { name: 'France Bois Forêt / ONF', url: SRC_URL.franceBoisForetBois }] }
     }
@@ -256,85 +255,10 @@
     }
   };
 
-  // --- Seguro agrario, Vino a granel y Madera: bloques informativos propios
+  // --- Vino a granel y Madera: bloques informativos propios (el seguro agrario sale de data/crop-insurance.json, ver js/seguro.js)
   // con estadísticas oficiales reales (no precios de mercado diarios/
   // semanales que convertir de moneda/unidad), verbatim del artefacto
   // original -- ver isInsurance/isWine/isWood en precios.js. ------------
-  var INSURANCE = {
-    es: {
-      badge: 'DATOS OFICIALES REALES',
-      esTitle: 'España — Agroseguro (ejercicio 2025)',
-      usTitle: 'EE. UU. — USDA RMA (año agrícola 2024)',
-      esStats: [
-        { label: 'Primas totales', value: '1.029 M€' },
-        { label: 'Superficie asegurada', value: '6,2 M ha' },
-        { label: 'Indemnizaciones pagadas', value: '804 M€' },
-        { label: 'Subvención pública', value: '≈50% de la prima' }
-      ],
-      usStats: [
-        { label: 'Superficie asegurada (net acres)', value: '543 M acres' },
-        { label: 'Capital asegurado (liability)', value: '>192.000 M$' },
-        { label: 'Subvención pública', value: '10.400 M$' },
-        { label: 'Participación (8 cultivos principales)', value: '≈89%' }
-      ],
-      scopeNote: 'Cifras oficiales de cada organismo, no datos de muestra — pero los dos sistemas no cubren exactamente lo mismo: las de España incluyen todas las líneas de Agroseguro (agrícola, ganadero y forestal) del ejercicio 2025; las de EE. UU. son específicas del seguro de cosechas (crop insurance) de la USDA RMA, año agrícola 2024. Sirven como referencia de magnitud, no como comparación exacta.'
-    },
-    en: {
-      badge: 'REAL OFFICIAL DATA',
-      esTitle: 'Spain — Agroseguro (2025)',
-      usTitle: 'U.S. — USDA RMA (2024 crop year)',
-      esStats: [
-        { label: 'Total premiums', value: '€1,029 M' },
-        { label: 'Insured area', value: '6.2 M ha' },
-        { label: 'Indemnities paid', value: '€804 M' },
-        { label: 'Public subsidy', value: '≈50% of premium' }
-      ],
-      usStats: [
-        { label: 'Insured area (net acres)', value: '543 M acres' },
-        { label: 'Insured liability', value: '>$192,000 M' },
-        { label: 'Public subsidy', value: '$10,400 M' },
-        { label: 'Participation (8 major crops)', value: '≈89%' }
-      ],
-      scopeNote: "Official figures from each agency, not sample data — but the two systems don't cover exactly the same scope: Spain's figures include all Agroseguro lines (crop, livestock and forestry) for 2025, while the U.S. figures are specific to USDA RMA's federal crop insurance, 2024 crop year. Treat this as a rough sense of scale, not an exact comparison."
-    },
-    fr: {
-      badge: 'DONNÉES OFFICIELLES RÉELLES',
-      esTitle: 'Espagne — Agroseguro (exercice 2025)',
-      usTitle: 'États-Unis — USDA RMA (campagne 2024)',
-      esStats: [
-        { label: 'Primes totales', value: '1 029 M€' },
-        { label: 'Surface assurée', value: '6,2 M ha' },
-        { label: 'Indemnités versées', value: '804 M€' },
-        { label: 'Subvention publique', value: '≈50 % de la prime' }
-      ],
-      usStats: [
-        { label: 'Surface assurée (net acres)', value: '543 M acres' },
-        { label: 'Capital assuré (liability)', value: '>192 000 M$' },
-        { label: 'Subvention publique', value: '10 400 M$' },
-        { label: 'Participation (8 cultures principales)', value: '≈89 %' }
-      ],
-      scopeNote: "Chiffres officiels de chaque organisme, pas des données fictives — mais les deux systèmes ne couvrent pas exactement le même périmètre : ceux de l'Espagne incluent toutes les lignes d'Agroseguro (agricole, élevage et forêt) pour 2025, tandis que ceux des États-Unis concernent spécifiquement l'assurance récolte (crop insurance) de l'USDA RMA, campagne 2024. À prendre comme un ordre de grandeur, pas une comparaison exacte."
-    },
-    it: {
-      badge: 'DATI UFFICIALI REALI',
-      esTitle: 'Spagna — Agroseguro (esercizio 2025)',
-      usTitle: 'Stati Uniti — USDA RMA (anno agricolo 2024)',
-      esStats: [
-        { label: 'Premi totali', value: '1.029 M€' },
-        { label: 'Superficie assicurata', value: '6,2 M ha' },
-        { label: 'Indennizzi pagati', value: '804 M€' },
-        { label: 'Sovvenzione pubblica', value: '≈50% del premio' }
-      ],
-      usStats: [
-        { label: 'Superficie assicurata (net acres)', value: '543 M acri' },
-        { label: 'Capitale assicurato (liability)', value: '>192.000 M$' },
-        { label: 'Sovvenzione pubblica', value: '10.400 M$' },
-        { label: 'Partecipazione (8 colture principali)', value: '≈89%' }
-      ],
-      scopeNote: 'Cifre ufficiali di ciascun ente, non dati campione — ma i due sistemi non coprono esattamente lo stesso ambito: quelle della Spagna includono tutte le linee di Agroseguro (agricola, zootecnica e forestale) per l\'esercizio 2025, mentre quelle statunitensi riguardano specificamente l\'assicurazione raccolto (crop insurance) dell\'USDA RMA, anno agricolo 2024. Da considerare come un ordine di grandezza, non un confronto esatto.'
-    }
-  };
-
   var WINE = {
     es: {
       badge: 'DATOS OFICIALES REALES',
@@ -1384,7 +1308,7 @@
     DATA_TRUST_SCHEMA_VERSION: DATA_TRUST_SCHEMA_VERSION, DATA_TRUST: DATA_TRUST, DATA_TRUST_SOURCES: DATA_TRUST_SOURCES, DATA_TRUST_HEALTH: DATA_TRUST_HEALTH, validateDataTrustRegistry: validateDataTrustRegistry,
     ENERGY_REGIONS: ENERGY_REGIONS, COUNTRY_ER_KEY: COUNTRY_ER_KEY, COUNTRY_FLAG: COUNTRY_FLAG,
     QUOTE_TYPES: QUOTE_TYPES, NAMES: NAMES, CATS: CATS, FOOT: FOOT, RAW: RAW,
-    INSURANCE: INSURANCE, WINE: WINE, WOOD: WOOD,
+    WINE: WINE, WOOD: WOOD,
     LITRO_KG: LITRO_KG, GAL_KG: GAL_KG,
     DIESEL_US_NATIONAL: DIESEL_US_NATIONAL, DIESEL_EU_NATIONAL: DIESEL_EU_NATIONAL, DIESEL_UK_NATIONAL: DIESEL_UK_NATIONAL,
     DIESEL_US_REGIONS: DIESEL_US_REGIONS, DIESEL_EU_COUNTRIES: DIESEL_EU_COUNTRIES,

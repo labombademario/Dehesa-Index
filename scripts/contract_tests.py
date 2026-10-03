@@ -1471,3 +1471,56 @@ def ers_cost_reference(doc, errs, warns, stats):
         if not (c["yieldBuPerAcre"] > 0) or not (1990 <= c["year"] <= 2100): errs.append("ers-ref %s: rendimiento o ano invalidos" % crop)
         if c.get("operatingCosts") is not None and c["operatingCosts"] > c["totalCostsListed"] + 0.01: errs.append("ers-ref %s: costes operativos mayores que el total" % crop)
     stats["crops"] = len(doc["crops"])
+
+def crop_insurance(doc, errs, warns, stats):
+    """RMA Summary of Business: años consecutivos, 6 magnitudes enteras >= 0 por año, subvencion <= prima, indemnizacion/prima plausible en años cerrados,
+    estados y cultivos SUMAN el total nacional (mismos registros, solo el redondeo individual), causas (admiten ajustes negativos pequeños) suman la indemnizacion por causa y causaCheck cuadra."""
+    import datetime as _d
+    cy = _d.date.today().year
+    FIELDS = ["liability", "totalPremium", "subsidy", "indemnity", "policiesEarningPremium", "acres"]
+    if doc["fields"] != FIELDS: errs.append("crop-insurance: campos distintos de %s" % FIELDS); return
+    ys = doc["cropYears"]
+    if ys != sorted(set(ys)) or ys[-1] - ys[0] != len(ys) - 1: errs.append("crop-insurance: cropYears no consecutivos o repetidos"); return
+    if ys[-1] > cy + 1: errs.append("crop-insurance: año %d en el futuro" % ys[-1]); return
+    if doc["latestCompleteYear"] not in ys or doc["provisionalFrom"] != doc["latestCompleteYear"] + 1: errs.append("crop-insurance: latestCompleteYear/provisionalFrom incoherentes"); return
+    nat = doc["national"]
+    if sorted(int(k) for k in nat) != ys: errs.append("crop-insurance: national no tiene exactamente los años de cropYears"); return
+    def vec(v, tag):
+        if not (isinstance(v, list) and len(v) == 6 and all(isinstance(x, int) and not isinstance(x, bool) and x >= 0 for x in v)): errs.append("crop-insurance %s: vector invalido %r" % (tag, v)); return False
+        return True
+    for y in ys:
+        v = nat[str(y)]
+        if not vec(v, "national/%d" % y): return
+        if v[0] <= 0 or v[1] <= 0: errs.append("crop-insurance %d: capital asegurado o prima a cero" % y); return
+        if v[2] > v[1]: errs.append("crop-insurance %d: subvencion (%d) mayor que la prima total (%d)" % (y, v[2], v[1])); return
+        if y <= doc["latestCompleteYear"] and not (0.1 <= v[3] / v[1] <= 3.0): errs.append("crop-insurance %d: indemnizacion/prima fuera de 0,1-3 (%.2f)" % (y, v[3] / v[1])); return
+    def agg(group, label, tol):
+        for y in ys:
+            s = [0] * 6
+            for k, d in group.items():
+                if str(y) in d:
+                    if not vec(d[str(y)], "%s/%s/%d" % (label, k, y)): return
+                    for j in range(6): s[j] += d[str(y)][j]
+            for j in range(6):
+                if abs(s[j] - nat[str(y)][j]) > tol: errs.append("crop-insurance %d: la suma de %s (%s=%d) no cuadra con el total nacional (%d)" % (y, label, FIELDS[j], s[j], nat[str(y)][j])); return
+    for k in doc["states"]:
+        if not re.match(r"^[A-Z]{2}$", k): errs.append("crop-insurance: estado invalido %r" % k); return
+    agg(doc["states"], "estados", len(doc["states"]) + 1)
+    agg(doc["crops"], "cultivos", len(doc["crops"]) + 1)
+    ci = doc["causeIndemnity"]
+    for k, d in ci.items():
+        for y, v in d.items():
+            if int(y) not in ys or not isinstance(v, int) or isinstance(v, bool): errs.append("crop-insurance causa %s %s: valor o año invalido" % (k, y)); return
+            if v < 0 and -v > 0.001 * nat[y][3]: errs.append("crop-insurance causa %s %s: indemnizacion negativa (%d) mayor que el 0,1 %% de la nacional (la RMA admite ajustes negativos pequeños)" % (k, y, v)); return
+    for k, st in doc["causeStateIndemnity"].items():
+        if k not in ci: errs.append("crop-insurance: causeStateIndemnity con causa %r que no esta en causeIndemnity" % k); return
+        for y in ci[k]:
+            s = sum(d.get(y, 0) for d in st.values())
+            if abs(s - ci[k][y]) > len(st) + 1: errs.append("crop-insurance causa %s %s: los estados suman %d y la causa %d" % (k, y, s, ci[k][y])); return
+    for y, pair in doc["causeCheck"].items():
+        if int(y) not in ys or not (isinstance(pair, list) and len(pair) == 2): errs.append("crop-insurance causeCheck %s invalido" % y); return
+        s = sum(d.get(y, 0) for d in ci.values())
+        if abs(s - pair[0]) > len(ci) + 1: errs.append("crop-insurance causeCheck %s: causas suman %d y se declara %d" % (y, s, pair[0])); return
+        if pair[1] != nat[y][3]: errs.append("crop-insurance causeCheck %s: la indemnizacion SOB declarada no es la nacional" % y); return
+        if int(y) < doc["provisionalFrom"] and pair[1] and abs(pair[0] - pair[1]) / pair[1] > 0.05: warns.append("crop-insurance %s: indemnizacion por causa (%d) y SOB (%d) difieren mas de un 5 %%" % (y, pair[0], pair[1]))
+    stats["crop-insurance estados"] = len(doc["states"]); stats["crop-insurance cultivos"] = len(doc["crops"]); stats["crop-insurance causas"] = len(ci)

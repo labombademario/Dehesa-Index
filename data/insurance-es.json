@@ -1,0 +1,10 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-03T00:00:00Z",
+ "source": {"id": "agroseguro", "name": "Agroseguro", "url": "https://www.agroseguro.es/", "license": "UNKNOWN"},
+ "period": "2025",
+ "verification": "PENDING",
+ "provenance": "Cifras copiadas del prototipo original del sitio (ejercicio 2025); no contrastadas de nuevo con Agroseguro desde esta sesion porque su web rechaza el acceso automatizado.",
+ "scope": "Todas las lineas de Agroseguro (agricola, ganadero y forestal)",
+ "stats": {"premiumsMEur": 1029, "insuredAreaMha": 6.2, "indemnitiesMEur": 804, "publicSubsidyPctOfPremium": 50, "publicSubsidyApprox": true}
+}

@@ -1350,6 +1350,54 @@
    "url": "https://agriculture.canada.ca/en/agricultural-production/weather/canadian-drought-monitor",
    "evidence": "The Open Government Licence – Canada (open.canada.ca, read 2026-10-02) permits use, adaptation and distribution including commercially, with the attribution statement. The open.canada.ca catalogue lists the dataset 'Canadian Drought Monitor' (AAFC) under this licence (checked 2026-10-02 through the catalogue API).",
    "short": "AAFC Drought Monitor"
+  },
+  "usda_rma": {
+   "name": "USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance)",
+   "url": "https://www.rma.usda.gov/tools-reports/summary-of-business",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/about-usda/policies-and-links",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Source: U.S. Department of Agriculture, Risk Management Agency (Summary of Business). Aggregated by Dehesa Index.",
+   "additionalRestrictions": "USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summary of Business files are published for open download on the RMA public site and contain county-level aggregates, not farm-level records. No USDA/RMA logo or endorsement implied; Dehesa Index sums the published records and does not republish them one by one.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "USDA says some materials are protected and used with permission; they are labelled as such. Only RMA-produced Summary of Business aggregates are used.",
+   "verifiedAt": "2026-10-03",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "RMA Summary of Business page and the open file listing pubfs-rma.fpac.usda.gov/pub/Web_Data_Files/Summary_of_Business (read 2026-10-03): files sobcov_<year>.zip and colsom_<year>.zip with published record layouts, offered for download without login or terms of use. Same basis as the other USDA agencies in this registry (USDA Policies and Links page: most information on the USDA website is public domain; read 2026-10-01 for ERS/AMS/FAS/NASS); that page returned 403 to the CI runner on 2026-10-03, so confidence stays medium. Control: summing the 2024 files reproduces RMA's own national 'By Insurance Plan' report exactly (liability 158,675,899,515; total premium 15,882,603,437; subsidy 9,881,540,968; indemnity 15,172,182,135).",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "USDA RMA"
+  },
+  "agroseguro": {
+   "name": "Agroseguro (Agrupacion Espanola de Entidades Aseguradoras de los Seguros Agrarios Combinados)",
+   "url": "https://www.agroseguro.es/",
+   "country": "ES",
+   "licenseId": "UNKNOWN",
+   "licenseName": "No reuse terms read (the website refuses automated access from the CI runner)",
+   "licenseUrl": "https://www.agroseguro.es/",
+   "commercialUse": "unclear",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Agroseguro",
+   "additionalRestrictions": "Agroseguro is the insurers' pool, not a ministry: MAPA's legal notice does not cover it. Four headline figures (2025 financial year) are shown; confirm them and the reuse conditions in writing, or replace them with ENESA statistics published under the MAPA notice.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-03",
+   "status": "PENDING",
+   "confidence": "low",
+   "evidence": "agroseguro.es returned 403 / closed the connection to the CI runner on 2026-10-03; no terms of use could be read. The four figures come from the original site prototype and have not been re-checked against Agroseguro.",
+   "used": true,
+   "aliases": [],
+   "notes": "Declarada el 2026-10-03: ya se publicaba (js/data.js) sin figurar en el registro.",
+   "short": "Agroseguro"
   }
  },
  "files": {
@@ -1729,6 +1777,18 @@
    "sources": [
     "statcan"
    ]
+  },
+  "data/crop-insurance.json": {
+   "sources": [
+    "usda_rma"
+   ],
+   "notes": "Seguro de cosechas federal de EE. UU.: totales por año, estado, cultivo y causa de perdida sumados por Dehesa Index a partir de los ficheros Summary of Business de la RMA (sobcov y colsom)."
+  },
+  "data/insurance-es.json": {
+   "sources": [
+    "agroseguro"
+   ],
+   "notes": "Cuatro cifras del ejercicio 2025 del seguro agrario espanol, pendientes de contraste y de condiciones de reutilizacion."
   }
  },
  "derived": [
@@ -1802,6 +1862,10 @@
    "snice_mx": {
     "since": "2026-10-01",
     "nextAction": "Confirmar condiciones de uso de SNICE/LIGIE o Libre Uso MX."
+   },
+   "agroseguro": {
+    "since": "2026-10-03",
+    "nextAction": "Contrastar las cuatro cifras de 2025 con Agroseguro y pedir por escrito las condiciones de reutilizacion; alternativa: estadisticas de ENESA (organismo del MAPA) bajo el aviso legal del MAPA."
    }
   }
  }

@@ -726,7 +726,7 @@
   // Seguro agrario / Vino a granel / Madera: bloques informativos propios
   // con estadísticas oficiales reales (no un precio de mercado diario/
   // semanal que convertir de moneda/unidad), comparadas lado a lado -- sin
-  // favoritos, histórico, calculadora ni alertas. Ver D.INSURANCE/D.WINE/
+  // favoritos, histórico, calculadora ni alertas. Ver js/seguro.js (seguro), D.WINE/
   // D.WOOD en js/data.js.
   // ---------------------------------------------------------------------
   function infoStatsCardHtml(title, stats) {
@@ -747,18 +747,6 @@
   }
 
   function renderInfoCategoryHtml(catId) {
-    if (catId === 'seguro') {
-      var ins = D.INSURANCE[lang()] || D.INSURANCE.es;
-      return (
-        '<div class="di-badge di-badge-green di-info-badge">' + esc(ins.badge) + '</div>' +
-        '<div class="di-info-grid">' +
-          infoStatsCardHtml(ins.esTitle, ins.esStats) +
-          infoStatsCardHtml(ins.usTitle, ins.usStats) +
-        '</div>' +
-        '<div class="di-info-scope-note">' + esc(ins.scopeNote) + '</div>' +
-        infoSourcesHtml('seguro')
-      );
-    }
     if (catId === 'vino') {
       var win = D.WINE[lang()] || D.WINE.es;
       return (
@@ -907,6 +895,12 @@
     renderMarketNewsIntel();
     var root = document.getElementById('pr-category');
     if (INFO_CATS[state.activeTab]) {
+      if (state.activeTab === 'seguro' && global.DehesaSeguro) {
+        // Seguro agrario: cifras de data/crop-insurance.json (USDA RMA) y data/insurance-es.json; ver js/seguro.js
+        root.innerHTML = '<div id="pr-seguro"></div>' + infoSourcesHtml('seguro');
+        global.DehesaSeguro.render(document.getElementById('pr-seguro'));
+        return;
+      }
       root.innerHTML = renderInfoCategoryHtml(state.activeTab);
       return;
     }
