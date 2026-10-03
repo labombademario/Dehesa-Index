@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-03T17:00:00Z",
+ "generatedAt": "2026-10-03T17:23:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 62,
   "late": 0,
   "error": 0,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "ok",
  "pipelines": [
@@ -1316,6 +1316,31 @@
    "expectedEveryHours": 106.0
   },
   {
+   "workflow": "update-mb-cattle.yml",
+   "name": "Update Manitoba weekly auction cattle prices (Manitoba Agriculture)",
+   "crons": [
+    "50 21 * * 5",
+    "10 14 * * 1"
+   ],
+   "nextRun": "2026-10-05T14:10:00Z",
+   "files": [
+    {
+     "path": "data/mb-markets/cattle.json"
+    },
+    {
+     "path": "data/mb-markets"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 103.7
+  },
+  {
    "workflow": "update-nass-data.yml",
    "name": "Dehesa Data — NASS snapshot",
    "crons": [
@@ -1434,11 +1459,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-03T16:59:31Z"
+     "lastChange": "2026-10-03T17:01:44Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-03T15:13:02Z"
+     "lastChange": "2026-10-03T17:01:44Z"
     },
     {
      "path": "data/series-registry.json",
@@ -1450,7 +1475,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-03T15:13:11Z"
+     "lastChange": "2026-10-03T17:01:56Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1467,7 +1492,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-03T15:13:11Z"
+     "lastChange": "2026-10-03T17:01:56Z"
     },
     {
      "path": "data/products"
@@ -1478,27 +1503,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-03T16:59:31Z"
+     "lastChange": "2026-10-03T17:01:56Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-03T15:13:11Z"
+     "lastChange": "2026-10-03T17:01:56Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-03T15:13:11Z"
+     "lastChange": "2026-10-03T17:01:56Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-03T15:13:11Z"
+     "lastChange": "2026-10-03T17:01:56Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-03T15:13:11Z"
+     "lastChange": "2026-10-03T17:01:56Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-03T15:13:11Z"
+     "lastChange": "2026-10-03T17:01:56Z"
     },
     {
      "path": "data/home-explore.json",
@@ -1511,13 +1536,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-03T15:12:00Z",
-    "durationSec": 74,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37132392139"
+    "startedAt": "2026-10-03T17:00:05Z",
+    "durationSec": 115,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37138903201"
    },
    "recent": {
-    "runs": 9,
-    "success": 7,
+    "runs": 10,
+    "success": 8,
     "failed": 2
    },
    "status": "ok",

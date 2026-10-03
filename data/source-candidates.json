@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-03T17:01:51Z",
+ "generatedAt": "2026-10-03T17:23:48Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 79,
+  "total": 80,
   "byStatus": {
-   "ACTIVE": 48,
+   "ACTIVE": 49,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -2618,6 +2618,43 @@
    "derivatives": "yes",
    "attribution": "Fuente: Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
    "lastChecked": "2026-10-02",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "mb_agri",
+   "registryId": "mb_agri",
+   "country": "CA",
+   "scope": "integrated",
+   "institution": "Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OpenMB-1.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains information from the Government of Manitoba, licensed under the OpenMB Information and Data Use License (Manitoba.ca/OpenMB)",
+   "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
