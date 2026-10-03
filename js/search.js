@@ -200,11 +200,12 @@
       }).catch(function () { setAns(''); });
     }, 150);
   }
-  function open() {
+  function open(q0) {
     build(); var t = tx(), input = document.getElementById('ds-input');
     input.placeholder = t.ph; input.setAttribute('aria-label', t.ph); document.getElementById('ds-close').setAttribute('aria-label', t.close); document.getElementById('ds-foot').textContent = t.nav;
     ROOT.classList.add('is-open'); STATE.open = true; document.documentElement.style.overflow = 'hidden'; STATE.sel = 0;
-    renderResults(); setTimeout(function () { input.focus(); input.select(); }, 20);
+    if (typeof q0 === 'string' && q0) { input.value = q0; try { input.dispatchEvent(new Event('input', { bubbles: true })); } catch (e) {} }
+    renderResults(); setTimeout(function () { input.focus(); if (!q0) input.select(); }, 20);
     if (!IDX) load().then(renderResults);
   }
   function close() { if (!ROOT) return; ROOT.classList.remove('is-open'); STATE.open = false; document.documentElement.style.overflow = ''; }
@@ -212,5 +213,5 @@
     return fetch(href('data/search-index.json')).then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) { IDX = d.entries; prep(IDX); }).catch(function () { var b = document.getElementById('ds-body'); if (b) b.innerHTML = '<div class="ds-msg">' + esc(tx().loadFail) + '</div>'; });
   }
   global.DehesaSearch = { open: open, close: close, _tokScore: tokScore, _search: function (q, l) { return search(q, l || 'es'); }, _load: function (entries) { IDX = entries; prep(IDX); }, _norm: norm };
-  if (global.__diSearchWantOpen) { global.__diSearchWantOpen = false; open(); }
+  if (global.__diSearchWantOpen) { var w = global.__diSearchWantOpen; global.__diSearchWantOpen = false; open(typeof w === 'string' ? w : undefined); }
 })(typeof window !== 'undefined' ? window : globalThis);

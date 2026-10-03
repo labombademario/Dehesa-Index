@@ -217,6 +217,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-eu-depth.mjs
+      - name: Portada, buscador grande y ejemplos (4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-home-search.mjs
       - name: EE. UU., ganado y heno locales (cifras de USDA AMS, selectores, 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

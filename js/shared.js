@@ -326,9 +326,10 @@
   // Nav
   // ---------------------------------------------------------------------
   // Buscador global: se carga solo la primera vez que se abre (js/search.js + data/search-index.json)
-  function openSearch() {
-    if (window.DehesaSearch) { window.DehesaSearch.open(); return; }
-    window.__diSearchWantOpen = true;
+  function openSearch(q) {
+    q = typeof q === 'string' ? q : '';
+    if (window.DehesaSearch) { window.DehesaSearch.open(q); return; }
+    window.__diSearchWantOpen = q || true;
     if (document.getElementById('di-search-js')) return;
     var sc = document.createElement('script'); sc.id = 'di-search-js'; sc.src = sitePath('js/search.js'); document.head.appendChild(sc);
   }

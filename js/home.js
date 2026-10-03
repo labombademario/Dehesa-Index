@@ -257,6 +257,21 @@
         desc: { es: 'Ventas semanales de exportación y comercio por país (USDA FAS).', en: 'Weekly export sales and trade by country (USDA FAS).', fr: 'Ventes hebdomadaires à l’exportation et commerce par pays (USDA FAS).', it: 'Vendite settimanali all’export e commercio per paese (USDA FAS).' } }
     ]
   };
+  var HS = {
+    ph: { es: 'Busca en Dehesa…', en: 'Search Dehesa…', fr: 'Rechercher dans Dehesa…', it: 'Cerca in Dehesa…' },
+    ex: { es: ['Precio del trigo en Francia', 'Ofertas de maíz en Iowa', 'Leche en Alemania', 'Urea en EE. UU.', 'Exportaciones agrarias de España', '¿Cuándo es el próximo WASDE?'],
+      en: ['Price of wheat in France', 'Corn cash bids Iowa', 'Milk Germany', 'Urea USA', 'Spain agricultural exports', 'When is the next WASDE?'],
+      fr: ['Prix du blé en France', 'Offres de maïs en Iowa', 'Lait en Allemagne', 'Urée aux États-Unis', 'Exportations agricoles de l’Espagne', 'Quand est le prochain WASDE ?'],
+      it: ['Prezzo del grano in Francia', 'Offerte di mais in Iowa', 'Latte in Germania', 'Urea negli USA', 'Esportazioni agricole della Spagna', 'Quando esce il prossimo WASDE?'] }
+  };
+  function renderSearchBox(lang, esc) {
+    var box = document.getElementById('home-search-box'); if (!box) return;
+    var ph = HS.ph[lang] || HS.ph.es, ex = HS.ex[lang] || HS.ex.es;
+    box.innerHTML = '<button type="button" class="di-hs-bar" id="home-search-btn" aria-label="' + esc(ph) + '"><span aria-hidden="true">🔍</span><span class="di-hs-ph">' + esc(ph) + '</span><kbd>/</kbd></button>' +
+      '<div class="di-hs-try">' + ex.map(function (q) { return '<button type="button" data-q="' + esc(q) + '">' + esc(q) + '</button>'; }).join('') + '</div>';
+    document.getElementById('home-search-btn').addEventListener('click', function () { window.DehesaShared.openSearch(''); });
+    Array.prototype.forEach.call(box.querySelectorAll('.di-hs-try button'), function (b) { b.addEventListener('click', function () { window.DehesaShared.openSearch(b.getAttribute('data-q')); }); });
+  }
   function renderExplore(lang, esc) {
     var el = document.getElementById('home-explora');
     if (!el) return;
@@ -339,6 +354,7 @@
     renderExplore(lang, esc); fillExplore(lang, esc);
     document.getElementById('home-h1').textContent = t.h1;
     document.getElementById('home-sub').textContent = t.sub;
+    renderSearchBox(lang, esc);
     document.getElementById('home-cta-primary').textContent = t.ctaPrimary;
     document.getElementById('home-cta-secondary').textContent = t.ctaSecondary;
 
