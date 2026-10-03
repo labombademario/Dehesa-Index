@@ -10,6 +10,7 @@ jobs:
       - env:
           GENESIS_TOKEN: ${{ secrets.GENESIS_TOKEN }}
         run: |
+          mkdir -p probe-out
           python3 scripts/update-germany.py > probe-out/run.txt 2>&1
           python3 scripts/validate-data.py --all --no-report > probe-out/validate.txt 2>&1 || true
           cp data/germany-agri.json probe-out/germany-agri.json
