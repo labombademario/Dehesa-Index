@@ -11,6 +11,11 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]; W = ROOT / ".github" / "workflows"
 REG = json.loads((ROOT / "schemas" / "registry.json").read_text())["files"]
 bad = []
+# Herramientas temporales de diagnostico: no pueden vivir en main (allowlist explicita vacia)
+TMP_ALLOW = set()
+for f in sorted(W.glob('*')):
+    if (f.name.startswith('tmp-') or 'probe' in f.name.lower()) and f.name not in TMP_ALLOW: bad.append('%s: workflow temporal/de sondeo en main (usa una rama research/ o un artifact)' % f.name)
+if (ROOT / 'probe').exists(): bad.append('probe/: carpeta de sondeo en main')
 for f in sorted(W.glob("*.yml")):
     t = f.read_text(encoding="utf-8"); d = yaml.safe_load(t); n = f.name
     code = "\n".join(l for l in t.splitlines() if not l.strip().startswith("#"))

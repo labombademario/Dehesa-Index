@@ -48,6 +48,9 @@ jobs:
       - name: Search answers (every figure shown must equal the source data)
         run: node scripts/test-answers.mjs
 
+      - name: Blog email subscription (required consent, legal text, provider privacy link)
+        run: node scripts/test-newsletter.mjs
+
       - name: USDA release calendar and Cattle on Feed parsers (real samples, offline)
         run: |
           python3 scripts/test-usda-calendar.py
