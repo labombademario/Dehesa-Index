@@ -121,6 +121,33 @@
    "evidence": "Comparado con la fuente primaria el 2026-10-03: los 12 periodos revisados coinciden exactamente con los que publica la fuente (2003-01: 8.944; 2003-02: 9.325; 2003-03: 8.87; 2003-04: 17.755; 2003-05: 0.013; 2003-06: 6.544; 2019-05: 0.165; 2019-06: 42.413; 2019-07: 21.487; 2020-02: 0.079; 2020-03: 21.314; 2020-07: 41.428). Contexto de la fuente: 2003-01: principales origenes UK 8.9, TURK 0.0 | 2003-04: principales origenes UK 17.7, TURK 0.0, CHLE 0.0 | 2019-06: principales origenes CAN 42.4, PNG 0.0, NZ 0.0 | 2020-07: principales origenes CAN 41.3, NZ 0.1, INIA 0.0. Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
    "verifiedAt": "2026-10-03",
    "sourceUrl": "https://data.api.abs.gov.au/rest/data/MERCH_IMP/041.TOT.TOT.M"
+  },
+  {
+   "series": "AU/au-imp-maize",
+   "file": "australia-trade-stats.json",
+   "status": "UNEXPLAINED_ANOMALY",
+   "detected": "Importaciones de maiz (A$ millones): 0,002 en diciembre de 2002 y 10,36 en enero de 2003 (un solo mes); febrero de 2003 vuelve a 0,001.",
+   "hypothesis": "Importacion puntual durante la sequia de 2002-03 en Australia (como el trigo); coherente con el calendario, pero no verificado contra ABS.",
+   "nextAction": "Comparar con ABS (MERCH_IMP, SITC 044) los meses 2002-11 a 2003-06 y mirar los principales paises de origen de 2003-01.",
+   "since": "2026-10-03",
+   "verifier": {
+    "kind": "abs",
+    "dataset": "MERCH_IMP",
+    "key": "044.TOT.TOT.M",
+    "periods": [
+     "2002-11",
+     "2002-12",
+     "2003-01",
+     "2003-02",
+     "2003-03",
+     "2003-04",
+     "2003-05",
+     "2003-06"
+    ],
+    "origins": [
+     "2003-01"
+    ]
+   }
   }
  ]
 }
