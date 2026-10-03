@@ -1,6 +1,6 @@
 {
  "schemaVersion": "1.0",
- "generatedAt": "2026-10-02T23:55:33.733Z",
+ "generatedAt": "2026-10-03T18:29:42.836Z",
  "source": "USDA AMS Market News (MARS API)",
  "reports": [
   {
@@ -226,7 +226,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 13,
-   "kb": 17
+   "kb": 16
   },
   {
    "id": 1101,
@@ -2898,8 +2898,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 324,
-   "kb": 255
+   "series": 320,
+   "kb": 251
   },
   {
    "id": 2278,
@@ -2907,8 +2907,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 501,
-   "kb": 398
+   "series": 496,
+   "kb": 395
   },
   {
    "id": 2279,
@@ -2916,8 +2916,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 147,
-   "kb": 115
+   "series": 145,
+   "kb": 114
   },
   {
    "id": 2280,
@@ -2934,8 +2934,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 163,
-   "kb": 115
+   "series": 161,
+   "kb": 114
   },
   {
    "id": 2282,
@@ -2943,8 +2943,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 308,
-   "kb": 212
+   "series": 287,
+   "kb": 200
   },
   {
    "id": 2283,
@@ -2970,8 +2970,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 271,
-   "kb": 201
+   "series": 243,
+   "kb": 186
   },
   {
    "id": 2286,
@@ -2979,8 +2979,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 403,
-   "kb": 342
+   "series": 397,
+   "kb": 337
   },
   {
    "id": 2287,
@@ -2988,8 +2988,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 91,
-   "kb": 66
+   "series": 81,
+   "kb": 60
   },
   {
    "id": 2288,
@@ -3006,8 +3006,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 383,
-   "kb": 277
+   "series": 376,
+   "kb": 273
   },
   {
    "id": 2291,
@@ -3015,8 +3015,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 581,
-   "kb": 436
+   "series": 570,
+   "kb": 431
   },
   {
    "id": 2292,
@@ -3024,8 +3024,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 105,
-   "kb": 85
+   "series": 103,
+   "kb": 84
   },
   {
    "id": 2293,
@@ -3042,8 +3042,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 168,
-   "kb": 99
+   "series": 152,
+   "kb": 92
   },
   {
    "id": 2295,
@@ -3051,8 +3051,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 331,
-   "kb": 205
+   "series": 298,
+   "kb": 190
   },
   {
    "id": 2296,
@@ -3060,8 +3060,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 60,
-   "kb": 42
+   "series": 55,
+   "kb": 39
   },
   {
    "id": 2297,
@@ -3078,8 +3078,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 294,
-   "kb": 229
+   "series": 287,
+   "kb": 226
   },
   {
    "id": 2303,
@@ -3087,8 +3087,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 496,
-   "kb": 422
+   "series": 490,
+   "kb": 417
   },
   {
    "id": 2304,
@@ -3114,8 +3114,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 240,
-   "kb": 179
+   "series": 237,
+   "kb": 177
   },
   {
    "id": 2307,
@@ -3159,8 +3159,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 240,
-   "kb": 187
+   "series": 230,
+   "kb": 179
   },
   {
    "id": 2312,
@@ -3186,8 +3186,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 625,
-   "kb": 329
+   "series": 540,
+   "kb": 290
   },
   {
    "id": 2315,
@@ -3195,8 +3195,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 437,
-   "kb": 296
+   "series": 409,
+   "kb": 285
   },
   {
    "id": 2316,
@@ -3204,8 +3204,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 89,
-   "kb": 51
+   "series": 71,
+   "kb": 43
   },
   {
    "id": 2317,
@@ -3222,8 +3222,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 463,
-   "kb": 234
+   "series": 406,
+   "kb": 209
   },
   {
    "id": 2319,
@@ -3231,8 +3231,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 433,
-   "kb": 285
+   "series": 376,
+   "kb": 258
   },
   {
    "id": 2320,
@@ -3240,8 +3240,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 88,
-   "kb": 64
+   "series": 83,
+   "kb": 60
   },
   {
    "id": 2321,
@@ -3249,7 +3249,7 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 5,
+   "series": 4,
    "kb": 4
   },
   {
@@ -3294,8 +3294,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 40,
-   "kb": 20
+   "series": 30,
+   "kb": 14
   },
   {
    "id": 2391,
@@ -3321,8 +3321,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 105,
-   "kb": 60
+   "series": 87,
+   "kb": 49
   },
   {
    "id": 2394,
@@ -3339,8 +3339,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 78,
-   "kb": 41
+   "series": 70,
+   "kb": 36
   },
   {
    "id": 2396,
@@ -3348,7 +3348,7 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 45,
+   "series": 44,
    "kb": 22
   },
   {
@@ -3357,8 +3357,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 11,
-   "kb": 4
+   "series": 7,
+   "kb": 2
   },
   {
    "id": 2400,
@@ -3366,8 +3366,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 17,
-   "kb": 13
+   "series": 15,
+   "kb": 12
   },
   {
    "id": 2401,
@@ -3375,8 +3375,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 40,
-   "kb": 22
+   "series": 18,
+   "kb": 12
   },
   {
    "id": 2402,
@@ -3384,8 +3384,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 99,
-   "kb": 78
+   "series": 92,
+   "kb": 75
   },
   {
    "id": 2403,
@@ -3393,8 +3393,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-10-02",
-   "series": 175,
-   "kb": 108
+   "series": 157,
+   "kb": 100
   },
   {
    "id": 2405,
@@ -3466,7 +3466,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 1143,
-   "kb": 211
+   "kb": 210
   },
   {
    "id": 2711,
@@ -3619,7 +3619,7 @@
    "freq": "d",
    "lastDate": "2026-10-02",
    "series": 15,
-   "kb": 10
+   "kb": 9
   },
   {
    "id": 2835,
@@ -3628,7 +3628,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 17,
-   "kb": 55
+   "kb": 54
   },
   {
    "id": 2837,
@@ -3707,9 +3707,9 @@
    "title": "Ohio Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-01",
-   "series": 49,
-   "kb": 94
+   "lastDate": "2026-10-02",
+   "series": 50,
+   "kb": 95
   },
   {
    "id": 2863,
@@ -3743,9 +3743,9 @@
    "title": "Kansas Direct Hay Report",
    "fam": "hay",
    "freq": "w",
-   "lastDate": "2026-09-11",
-   "series": 565,
-   "kb": 195
+   "lastDate": "2026-09-25",
+   "series": 569,
+   "kb": 198
   },
   {
    "id": 2886,
@@ -3808,7 +3808,7 @@
    "freq": "w",
    "lastDate": "2026-09-25",
    "series": 493,
-   "kb": 106
+   "kb": 105
   },
   {
    "id": 2905,
@@ -3842,9 +3842,9 @@
    "title": "Colorado Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-01",
+   "lastDate": "2026-10-02",
    "series": 50,
-   "kb": 92
+   "kb": 93
   },
   {
    "id": 2914,
@@ -3889,7 +3889,7 @@
    "freq": "d",
    "lastDate": "2026-09-30",
    "series": 37,
-   "kb": 45
+   "kb": 44
   },
   {
    "id": 2929,
@@ -4015,7 +4015,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 120,
-   "kb": 19
+   "kb": 18
   },
   {
    "id": 3087,
@@ -4078,7 +4078,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 315,
-   "kb": 49
+   "kb": 48
   },
   {
    "id": 3100,
@@ -4130,9 +4130,9 @@
    "title": "North Carolina Cash Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-01",
+   "lastDate": "2026-10-02",
    "series": 170,
-   "kb": 225
+   "kb": 227
   },
   {
    "id": 3159,
@@ -4204,7 +4204,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 10,
-   "kb": 16
+   "kb": 15
   },
   {
    "id": 3223,
@@ -4265,7 +4265,7 @@
    "title": "Wyoming Daily Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-01",
+   "lastDate": "2026-10-02",
    "series": 7,
    "kb": 13
   },
@@ -4391,9 +4391,9 @@
    "title": "Indiana Grain Bids",
    "fam": "grain",
    "freq": "d",
-   "lastDate": "2026-10-01",
+   "lastDate": "2026-10-02",
    "series": 103,
-   "kb": 193
+   "kb": 195
   },
   {
    "id": 3484,
@@ -4429,7 +4429,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 77,
-   "kb": 207
+   "kb": 205
   },
   {
    "id": 3512,
@@ -4447,7 +4447,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 59,
-   "kb": 148
+   "kb": 147
   },
   {
    "id": 3617,
@@ -4465,7 +4465,7 @@
    "freq": "w",
    "lastDate": "2026-09-25",
    "series": 52,
-   "kb": 148
+   "kb": 146
   },
   {
    "id": 3621,
@@ -4555,7 +4555,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 43,
-   "kb": 110
+   "kb": 109
   },
   {
    "id": 3647,
@@ -4564,7 +4564,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 117,
-   "kb": 84
+   "kb": 83
   },
   {
    "id": 3648,
@@ -4582,7 +4582,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 44,
-   "kb": 30
+   "kb": 29
   },
   {
    "id": 3650,
@@ -4591,7 +4591,7 @@
    "freq": "w",
    "lastDate": "2026-10-02",
    "series": 124,
-   "kb": 47
+   "kb": 45
   },
   {
    "id": 3652,
@@ -4636,7 +4636,7 @@
    "freq": "w",
    "lastDate": "2026-08-28",
    "series": 20,
-   "kb": 15
+   "kb": 14
   },
   {
    "id": 3668,
@@ -4645,7 +4645,7 @@
    "freq": "w",
    "lastDate": "2026-08-28",
    "series": 77,
-   "kb": 60
+   "kb": 58
   },
   {
    "id": 3669,
@@ -4950,8 +4950,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-09-28",
-   "series": 67,
-   "kb": 28
+   "series": 62,
+   "kb": 26
   },
   {
    "id": 3914,
@@ -4959,8 +4959,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-09-28",
-   "series": 77,
-   "kb": 29
+   "series": 74,
+   "kb": 28
   },
   {
    "id": 3915,
@@ -4968,8 +4968,8 @@
    "fam": "fv",
    "freq": "d",
    "lastDate": "2026-09-28",
-   "series": 20,
-   "kb": 8
+   "series": 19,
+   "kb": 7
   },
   {
    "id": 3916,
