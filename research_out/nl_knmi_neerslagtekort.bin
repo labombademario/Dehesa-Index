@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>
+  <html class="no-js ie" lang="nl">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+  <html class="no-js" lang="nl">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <title>KNMI - Daggegevens van het weer in Nederland</title>
+  <meta name="description" content="">
+  <meta property="og:site_name" content="knmi.nl">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Daggegevens van het weer in Nederland">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://www.knmi.nl/nederland-nu/klimatologie/daggegevens">
+  <meta name="author" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/assets/favicon-e5933646f5d8fe2d10b77fac3407738c781e8293699e6285a7ecc4a4d62ee39a.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-34d873d8614be8c7a9ba9354828b2d98e071c7b7c4dd3bc06f6d5511128cf9e6.png" />
+  <link rel="stylesheet" href="/assets/application-ee09b9ede8d70f0a4f77eb0935533c88004242f3fc0fb32401f3c9f416f18c64.css" media="all" />
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+  <script>
+    window.googleMapsApiKey = 'AIzaSyBsnsnzQGvZSjFFtY71oLjo1gZLMSpVycc';
+  </script>
+  
+
+</head>
+<body class="">
+
+<script>
+  function readCookie(name) {
+    var nameEq = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEq) == 0) return c.substring(nameEq.length, c.length);
+    }
+    return null;
+  }
+
+  if (readCookie('high_contrast')) {
+    document.body.classList.add('high-contrast');
+  }
+</script>
+
+
+<a tabindex="0" id="skiplink" href="#mainBody">Naar de hoofd content</a>
+
+<!--[if lt IE 9]>
+<div class="browsehappy">
+	Je gebruikt een verouderde browser. Voor een betere gebruikerservaring kun je jouw browser upgraden.
+</div>
+<![endif]-->
+
+
+<header class="site-header">
+  <div class="wrapper relative">
+    <div class="site-header__logowrp">
+      <a href="/home">
+        <img src="/assets/logo_large-1eaabc639fd87bd3867e4e1e3358711968aad57ca90d766ecdd62f93930abf3b.png" class="site-header__logo large" alt="Logo Koninklijk Nederlands Meteorologisch Instituut | Ministerie van Infrastructuur en Waterstaat" />
+        <img src="/assets/logo_small-1baa32513983c8487125691a74eb1059daa8f31f4c8a03da6e92a7f8a3b8e283.svg" class="site-header__logo small" alt="Logo Koninklijk Nederlands Meteorologisch Instituut | Ministerie van Infrastructuur en Waterstaat" />
+        <noscript>
+          <img class="site-header__logo" width="230" height="79" alt="Logo KNMI" src="/assets/logo_large-1eaabc639fd87bd3867e4e1e3358711968aad57ca90d766ecdd62f93930abf3b.png" />
+        </noscript>
+      </a>
+    </div>
+    <div class="site-header__meta">
+      <a href="/over-het-knmi/about">English</a>
+      <a data-active="normaal contrast" data-inactive="hoog contrast" class="highcontrast-toggle hidden" href="#"></a>
+    </div>
+  </div>
+  <div class="wrapper--navbar">
+    <div class="main-navbar">
+        <nav>
+          <ul>
+              <li>
+                <a class="" href="/home" target="">
+                  Home
+                  
+                </a>
+              </li>
+              <li>
+                <a class="is-active" href="/nederland-nu/weer" target="">
+                  Nederland nu
+                  <span class="nav-toggle icon-arrow-small-down" aria-label="Heeft submenu"></span>
+                </a>
+                  <ul>
+    <li><a class="" href="/nederland-nu/weer">Weer</a></li>
+    <li><a class="" href="/nederland-nu/seismologie">Seismologie</a></li>
+    <li><a class="" href="/nederland-nu/maritiem">Maritiem</a></li>
+    <li><a class="" href="/nederland-nu/luchtvaart">Luchtvaart</a></li>
+    <li><a class="is-active" href="/nederland-nu/klimatologie">Klimatologie</a></li>
+    <li><a class="" href="/nederland-nu/weer/waarschuwingen-en-verwachtingen/caribisch-nederland">Caribisch Nederland</a></li>
+</ul>
+
+              </li>
+              <li>
+                <a class="" href="/klimaat" target="">
+                  Klimaat
+                  
+                </a>
+              </li>
+              <li>
+                <a class="" href="/producten-en-diensten" target="">
+                  Producten &amp; diensten
+                  
+                </a>
+              </li>
+              <li>
+                <a class="" href="/kennis-en-datacentrum" target="">
+                  Kennis &amp; uitleg
+                  
+                </a>
+              </li>
+              <li>
+                <a class="" href="/research" target="">
+                  Research
+                  
+                </a>
+              </li>
+              <li>
+                <a class="" href="/over-het-knmi/over" target="">
+                  Over het KNMI
+                  <span class="nav-toggle icon-arrow-small-down" aria-label="Heeft submenu"></span>
+                </a>
+                  <ul>
+    <li><a class="" href="/over-het-knmi/over">Over het KNMI</a></li>
+    <li><a class="" href="/over-het-knmi/bestuur">Bestuur</a></li>
+    <li><a class="" href="/over-het-knmi/kerntaken">Kerntaken</a></li>
+    <li><a class="" href="/over-het-knmi/KNMI-werkt-internationaal">Internationaal</a></li>
+    <li><a class="" href="/over-het-knmi/vacatures">Werken bij</a></li>
+    <li><a class="" href="/over-het-knmi/nieuws">Nieuws</a></li>
+    <li><a class="" href="/over-het-knmi/agenda">Agenda</a></li>
+    <li><a class="" href="/over-het-knmi/pers">Pers</a></li>
+    <li><a class="" href="/over-het-knmi/contact/contactformulier">Contact</a></li>
+</ul>
+
+              </li>
+          </ul>
+        </nav>
+      
+      <form class="main-navbar__search" autocomplete="off" method="GET" action="/zoeken">
+        <fieldset>
+          <legend class="main-navbar__search-legend">Zoek binnen de site</legend>
+          <div class="main-navbar__search-context">
+            <input id="context_search" type="radio" name="context" value="/zoeken" />
+            <label for="context_search"><span>binnen de hele site</span></label>
+            <input id="context_data_center" type="radio" name="context" value="/kennis-en-datacentrum/zoekresultaten" />
+            <label for="context_data_center"><span>binnen het kennis- &amp; datacentrum</span></label>
+          </div>
+          <label class="main-navbar__search-label" for="q">Trefwoord</label>
+          <input type="text" id="q" name="q" placeholder="Zoeken" />
+          <button class="icon-search" type="submit"><span>Zoek</span></button>
+        </fieldset>
+      </form>
+      <a class="icon-menu main-navbar__toggle" href="#">Menu</a>
+    </div>
+    <div class="main-navbar__sub">
+        <nav>
+          <ul>
+    <li><a class="" href="/nederland-nu/weer">Weer</a></li>
+    <li><a class="" href="/nederland-nu/seismologie">Seismologie</a></li>
+    <li><a class="" href="/nederland-nu/maritiem">Maritiem</a></li>
+    <li><a class="" href="/nederland-nu/luchtvaart">Luchtvaart</a></li>
+    <li><a class="is-active" href="/nederland-nu/klimatologie">Klimatologie</a></li>
+    <li><a class="" href="/nederland-nu/weer/waarschuwingen-en-verwachtingen/caribisch-nederland">Caribisch Nederland</a></li>
+</ul>
+
+        </nav>
+    </div>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <a href="#" class="main-navbar__close icon-close">Sluiten</a>
+  <div class="nav-overlay__inner"></div>
+</div>
+
+
+<main id="mainBody" tabindex="0"  lang=nl>
+  
+
+<div class="partials_wrapper">
+    <div class="js_breadcrumb wrapper">
+          <nav aria-label="Breadcrumb">
+    <ol class="breadcrumb">
+          <li><a class="" href="/">Home</a></li>
+          <li><a class="" href="/nederland-nu/weer">Nederland nu</a></li>
+          <li><a class="" href="/nederland-nu/klimatologie">Klimatologie</a></li>
+          <li aria-current="page">Daggegevens van het weer in...</li>
+    </ol>
+  </nav>
+
+        
+<div class="weather-small">
+</div>
+
+    </div>
+
+    
+</div>
+
+
+<div class="wrapper">
+		<div class="columns filled-main-content padding-bottom-0">
+			<div class="col-sm-12 col-md-10 col-md-offset-1">
+				<h1 class="color-blue">Daggegevens van het weer in Nederland</h1>
+			</div>
+		</div>
+				<div class="columns filled-main-content">
+	<div class="col-sm-12 col-md-10 col-md-offset-1">
+
+			<h2>Download</h2><p>In onderstaande files zijn de gegevens van temperatuur, zon, bewolking en zicht, luchtdruk, wind en neerslag per station gecombineerd.</p><p>Opmerking: De temperatuurreeksen van de stations De Kooy, Eelde, De Bilt, Vlissingen en Beek zijn <a href='http://www.knmi.nl/kennis-en-datacentrum/achtergrond/gehomogeniseerde-tijdreeksen-dagwaarden'>gehomogeniseerd</a>. De reeksen van andere stations zijn niet gehomogeniseerd. Door stationsverplaatsingen en veranderingen in waarneemmethodieken zijn die tijdreeksen van dagwaarden mogelijk inhomogeen. Dat betekent dat deze reeksen niet geschikt zijn voor trendanalyse. Voor studies naar klimaatverandering verwijzen we naar de gehomogeniseerde reeksen of de <a href='http://www.knmi.nl/kennis-en-datacentrum/achtergrond/centraal-nederland-temperatuur-cnt'>Centraal Nederland Temperatuur</a>. Trendanalyses worden gepresenteerd in het <a href='https://www.knmi.nl/kennis-en-datacentrum/achtergrond/knmi-23-klimaatscenario-s'>KNMI-23 gebruikersrapport</a>.</p><p>Het KNMI voert op werkdagen een controle uit op deze gegevens afkomstig uit het meetnet van het KNMI. De gegevens worden op kwaliteit gecontroleerd en eventueel aangepast. Zoveel als mogelijk worden ook ontbrekende waarden aangevuld. Hierdoor kunnen verschillen ontstaan met de ongevalideerde actuele 10-minuut gegevens uit het meetnet.</p><h2>KNMI Dataverkenner</h2><p>Via <a href='https://dataverkenner.knmi.nl/'>dataverkenner.knmi.nl</a> kunnen meetgegevens van een aantal variabelen direct worden ingezien en gevisualiseerd. Dit nieuwe interactieve platform wordt in 2026 stap voor stap uitgebreid en zal deze webpagina uiteindelijk vervangen.</p>
+
+	</div>
+</div>
+				<div   class="columns filled-main-content">
+	<div class="col-sm-12 col-md-10 col-md-offset-1">
+		<div class="filled-main-content__highlight media">
+			<div class="text-center color-blue">
+				<span class="margin-bottom-20 icon-shake swipehint hide-on-lg hide-on-xl">Scroll onderstaande tabel om meer te zien</span>
+			</div>
+			<div class="table__wrp">
+				<table  class="table">
+						<thead>
+							<tr>
+									<th scope="col"
+									
+									 class="">Nummer</th>
+									<th scope="col"
+									
+									 class="">Station</th>
+									<th scope="col"
+									
+									 class="">Vanaf</th>
+									<th scope="col"
+									
+									 class="">Tot en met</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+										<td class=""></td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/jaar.zip'>Alle stations, lopend jaar</a></td>
+										<td class="">20260101</td>
+										<td class="">20261001</td>
+								</tr>
+								<tr>
+										<td class=""></td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/dezemaand.zip'>Alle stations, lopende maand</a></td>
+										<td class="">20261001</td>
+										<td class="">20261001</td>
+								</tr>
+								<tr>
+										<td class=""></td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/vorigemaand.zip'>Alle stations, voorlaatste maand</a></td>
+										<td class="">20260901</td>
+										<td class="">20260930</td>
+								</tr>
+								<tr>
+										<td class=""></td>
+										<td class=""><a href='https://daggegevens.knmi.nl/klimatologie/daggegevens'>Interactieve selectie</a></td>
+										<td class=""></td>
+										<td class=""></td>
+								</tr>
+								<tr>
+										<td class="">209</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_209.zip'>IJmond  </a></td>
+										<td class="">20010130</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">210</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_210.zip'>Valkenburg Vk </a></td>
+										<td class="">19510101</td>
+										<td class="">20160504</td>
+								</tr>
+								<tr>
+										<td class="">215</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_215.zip'>Voorschoten  </a></td>
+										<td class="">20140715</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">225</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_225.zip'>IJmuiden  </a></td>
+										<td class="">19710101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">229</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_229.zip'>Texelhors  </a></td>
+										<td class="">20171213</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">235</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_235.zip'>De Kooy Airport</a></td>
+										<td class="">19060101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">240</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_240.zip'>Schiphol Airport </a></td>
+										<td class="">19510101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">242</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_242.zip'>Vlieland Vliehors </a></td>
+										<td class="">19960101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">248</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_248.zip'>Wijdenes  </a></td>
+										<td class="">19940715</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">249</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_249.zip'>Berkhout  </a></td>
+										<td class="">19990312</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">251</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_251.zip'>Hoorn Terschelling </a></td>
+										<td class="">19940526</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">257</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_257.zip'>Wijk aan Zee</a></td>
+										<td class="">20010430</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">258</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_258.zip'>Houtribdijk  </a></td>
+										<td class="">20060201</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">260</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_260.zip'>De Bilt </a></td>
+										<td class="">19010101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">265</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_265.zip'>Soesterberg  </a></td>
+										<td class="">19510901</td>
+										<td class="">20081116</td>
+								</tr>
+								<tr>
+										<td class="">267</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_267.zip'>Stavoren  </a></td>
+										<td class="">19900618</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">269</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_269.zip'>Lelystad Airport </a></td>
+										<td class="">19900117</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">270</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_270.zip'>Leeuwarden Airport </a></td>
+										<td class="">19510101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">273</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_273.zip'>Marknesse  </a></td>
+										<td class="">19890101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">275</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_275.zip'>Deelen Airport </a></td>
+										<td class="">19510101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">277</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_277.zip'>Lauwersoog  </a></td>
+										<td class="">19910318</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">278</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_278.zip'>Heino  </a></td>
+										<td class="">19910101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">279</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_279.zip'>Hoogeveen  </a></td>
+										<td class="">19890926</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">280</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_280.zip'>Groningen Airport Eelde</a></td>
+										<td class="">19060101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">283</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_283.zip'>Hupsel  </a></td>
+										<td class="">19891016</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">285</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_285.zip'>Huibertgat  </a></td>
+										<td class="">19810101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">286</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_286.zip'>Nieuw Beerta </a></td>
+										<td class="">19900117</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">290</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_290.zip'>Twenthe Airport </a></td>
+										<td class="">19510101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">308</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_308.zip'>Cadzand  </a></td>
+										<td class="">19720101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">310</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_310.zip'>Vlissingen  </a></td>
+										<td class="">19060101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">311</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_311.zip'>Hoofdplaat  </a></td>
+										<td class="">19970131</td>
+										<td class="">20160201</td>
+								</tr>
+								<tr>
+										<td class="">312</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_312.zip'>Oosterschelde  </a></td>
+										<td class="">19820101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">313</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_313.zip'>Vlakte van De Raan</a></td>
+										<td class="">19970131</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">315</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_315.zip'>Hansweert  </a></td>
+										<td class="">19970131</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">316</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_316.zip'>Schaar  </a></td>
+										<td class="">19830101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">319</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_319.zip'>Westdorpe  </a></td>
+										<td class="">19910625</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">323</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_323.zip'>Wilhelminadorp  </a></td>
+										<td class="">20171215</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">324</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_324.zip'>Stavenisse  </a></td>
+										<td class="">19970930</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">330</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_330.zip'>Hoek van Holland</a></td>
+										<td class="">19710101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">331</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_331.zip'>Tholen  </a></td>
+										<td class="">19810101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">340</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_340.zip'>Woensdrecht Airport </a></td>
+										<td class="">19930401</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">343</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_343.zip'>Rotterdam Geulhaven </a></td>
+										<td class="">19910101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">344</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_344.zip'>Rotterdam Airport </a></td>
+										<td class="">19561001</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">348</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_348.zip'>Cabauw  </a></td>
+										<td class="">19860301</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">350</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_350.zip'>Gilze-Rijen Airport </a></td>
+										<td class="">19510101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">356</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_356.zip'>Herwijnen  </a></td>
+										<td class="">19890926</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">370</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_370.zip'>Eindhoven Airport </a></td>
+										<td class="">19510101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">375</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_375.zip'>Volkel  </a></td>
+										<td class="">19510201</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">377</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_377.zip'>Ell  </a></td>
+										<td class="">19990501</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">380</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_380.zip'>Maastricht Airport </a></td>
+										<td class="">19060101</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class="">391</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_391.zip'>Arcen  </a></td>
+										<td class="">19900618</td>
+										<td class="">20250930</td>
+								</tr>
+								<tr>
+										<td class="">392</td>
+										<td class=""><a href='//cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_392.zip'>Horst  </a></td>
+										<td class="">20250123</td>
+										<td class="">20261002</td>
+								</tr>
+								<tr>
+										<td class=""></td>
+										<td class=""></td>
+										<td class=""></td>
+										<td class=""></td>
+								</tr>
+						</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		  <div class="morelinks columns">
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
+      <h2 class="morelinks__title">Meer informatie</h2>
+      <ul>
+            <li><a class="btn " href="/kennis-en-datacentrum/dataset/logboek-wijzigingen-uur-daggegevens" >Logboek wijzigingen uur- &amp; daggegevens</a></li>
+            <li><a class="btn " href="/kennis-en-datacentrum/achtergrond/daggegevens-van-het-weer" >Uitleg over daggegevens van het weer</a></li>
+            <li><a class="btn is-external" href="https://daggegevens.knmi.nl/klimatologie/daggegevens" target="_blank">Interactieve selectie daggegevens</a></li>
+            <li><a class="btn " href="/kennis-en-datacentrum/achtergrond/data-ophalen-vanuit-een-script" >Data ophalen vanuit script</a></li>
+            <li><a class="btn " href="http://www.knmi.nl/nederland-nu/klimatologie/daggegevens_Noordzee" >Daggegevens van Noordzee stations</a></li>
+            <li><a class="btn " href="/kennis-en-datacentrum/achtergrond/potentiele-wind" >Achtergrondinformatie over potentiele wind</a></li>
+            <li><a class="btn is-external" href="https://dataplatform.knmi.nl/dataset/preview/waarneemstations-csv-1-0" target="_blank">Coördinaten KNMI-stations</a></li>
+            <li><a class="btn " href="https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen" >Antieke waarnemingen</a></li>
+            <li><a class="btn " href="https://cdn.knmi.nl/system/data_center_discover_blocks/image2s/000/000/095/xlarge/AWS_2025.png?1770748522" >KNMI Automatische weerstations land, kaart</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        $("[data-filter]").on("click", function (event) {
+            event.preventDefault();
+            $(this).closest(".tabs__list").find("button").removeClass("is-active");
+            $(this).addClass("is-active");
+
+            $chartContainer = $(this).closest('.chart-filter');
+
+            $chartContainer.find("form input[type='hidden']").val(
+                JSON.stringify($(this).data('filter'))
+            );
+
+            $chartContainer.find("form input[type='hidden']").data("id", $(this).data("id"))
+            $chartContainer.find("form input[type='hidden']").data("valueIndex", $(this).data("valueIndex"))
+            $chartContainer.find("form input[type='hidden']").data("valueId", $(this).data("valueId"))
+
+            // TODO can we call handlesubmit ourselves?
+            $chartContainer.find("form > button").trigger("click");
+        });
+
+		//Accordion events
+		//For accessibility purposes, we will set the tabindices to -1 of all links inside the accordion, when it is not open.
+		$('.accordion').next().find('a, button, input, iframe').attr('tabindex', '-1');
+        $('.accordion').on('click', function(event) {
+			event.preventDefault();
+            if ($(this).hasClass('accordion--open')) {
+				$(this).removeClass('accordion--open').attr('aria-selected', 'false');
+				$(this).next().attr('tabindex', '-1');
+				$(this).next().find('a, button, input, iframe').attr('tabindex', '-1');
+            } else {
+				$(this).addClass('accordion--open').attr('aria-selected', 'true');
+				$(this).next().attr('tabindex', '0');
+				$(this).next().find('a, button, input, iframe').removeAttr('tabindex');
+            }
+        });
+    });
+</script>
+
+</main>
+
+<footer class="site-footer">
+    <div class="share">
+      <h2 class="share__title">Volg ons op social media</h2>
+      <ul class="share__list">
+          <li>
+            <a href="https://nl.linkedin.com/company/knmi" class="share__button volg ons op linkedin" target="_blank" rel="noopener" title="Volg ons op LinkedIn">
+              <img alt="Volg ons op LinkedIn" class="social-icon" src="https://cdn.knmi.nl/system/social_links/images/000/000/001/icon/knmi-footer-social-linkedin.png?1770752257" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/knmi.nl/" class="share__button volg ons op instagram" target="_blank" rel="noopener" title="Volg ons op Instagram">
+              <img alt="Volg ons op Instagram" class="social-icon" src="https://cdn.knmi.nl/system/social_links/images/000/000/004/icon/knmi-footer-social-instagram.png?1770752258" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCqQtmDbRgKOoJ_lPv_mU9nQ" class="share__button volg ons op youtube" target="_blank" rel="noopener" title="Volg ons op YouTube">
+              <img alt="Volg ons op YouTube" class="social-icon" src="https://cdn.knmi.nl/system/social_links/images/000/000/002/icon/knmi-footer-social-youtube.png?1770752258" />
+            </a>
+          </li>
+          <li>
+            <a href="https://bsky.app/profile/knmi.nl" class="share__button volg ons op bluesky" target="_blank" rel="noopener" title="Volg ons op Bluesky">
+              <img alt="Volg ons op Bluesky" class="social-icon" src="https://cdn.knmi.nl/system/social_links/images/000/000/005/icon/knmi-footer-social-bluesky.png?1770752258" />
+            </a>
+          </li>
+          <li>
+            <a href="https://social.overheid.nl/@knmi" class="share__button volg ons op mastodon" target="_blank" rel="me noopener" title="Volg ons op Mastodon">
+              <img alt="Volg ons op Mastodon" class="social-icon" src="https://cdn.knmi.nl/system/social_links/images/000/000/003/icon/knmi-footer-social-mastodon.png?1770752258" />
+            </a>
+          </li>
+      </ul>
+    </div>
+  <div>
+    <ul>
+      <li><a href="/copyright">Copyright</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/cookies">Cookies</a></li>
+      <li><a href="/toegankelijkheid">Toegankelijkheid</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<div class="loading-modal"></div>
+
+<script>window.ahoyEnabled = true;</script>
+<script src="/assets/application-6a04d7793de7eadd33c25ec70ef546324bda6ac6178a211fe356f8228a1a8428.js"></script>
+
+
+
+</body>
+</html>

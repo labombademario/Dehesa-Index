@@ -1,0 +1,512 @@
+
+<!doctype html>
+<html lang="de-AT">
+<head>
+    
+<!--Version: 2.0.303+a03ffa3e64-->
+<title>Aktuelles</title>
+<meta title="">
+<meta property="og:url" content="https://www.ama.at/fachliche-informationen/oepul/aktuelles">
+<meta property="og:title" content="Aktuelles">
+<meta property="og:img" content="https://cms.ama.at/images/logo_ama.svg">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/site.css?v=1TJrCOY1gzBqY-TmXWU3qDreu2ea4Er0sJxMBBsiZGg" />
+    
+
+    
+    
+    <!-- Matomo Tag Manager -->
+    <script>
+        var _mtm = window._mtm = window._mtm || [];
+        _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+        (function() {
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.async=true; g.src='https://stats.ama.at/js/container_EF8YElHy.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Tag Manager -->
+
+</head>
+
+<body class="body">
+    
+
+    
+<!-- Header Section -->
+<nav class="c-skiplinks" aria-label="Skip-Navigation">
+    <ul>
+        <li>
+            <a href="#header-container" class="c-skiplinks__link">Zum Header springen</a>
+        </li>
+        <li>
+            <a href="#main-container" class="c-skiplinks__link">Zum Hauptinhalt springen</a>
+        </li>
+        <li>
+            <a href="#footer-container" class="c-skiplinks__link">Zum Footer springen</a>
+        </li>
+    </ul>
+</nav>
+<div class="c-header print_hide" id="header-container">
+    <div class="c-header-topbar">
+        <div class="c-topbar" id="topbar">
+            <div class="c-topbar-container">
+                <nav class="c-topbar-nav" role="navigation" aria-label="Meta-Navigation">
+                    
+    <a class="c-topbar-item c-topbar-item__withText c-topbar-item--external" href="https://services.ama.at" target=&quot;_blank&quot;>eAMA.at</a>
+    <a class="c-topbar-item c-topbar-item__withText " href="/allgemein/newsletter" >Newsletter</a>
+    <a class="c-topbar-item c-topbar-item__withText " href="/allgemein/presse" >Presse</a>
+    <a class="c-topbar-item c-topbar-item__withText c-topbar-item--external" href="https://karriere.ama.at/" target=&quot;_blank&quot;>Karriere</a>
+    <a class="c-topbar-item c-topbar-item__withText " href="/allgemein/kontakt" >Kontakt</a>
+    <a class="c-topbar-item c-topbar-item__withText " href="/fachliche-informationen/nachhaltigkeit" >AACS</a>
+    <a class="c-topbar-item c-topbar-item__withText " href="/allgemein/veroeffentlichungen" >Veröffentlichungen</a>
+
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="c-header-outerWrapper">
+        <header class="c-header-container" id="header" role="presentation">
+            <nav role="presentation"
+                 class="c-header-inner">
+                <div class="c-header-items">
+                    <div class="c-header-logo">
+                        <a class=""
+                           rel=""
+                           target=""
+                           tabindex="0"
+                           aria-label="Zur Startseite"
+                           style="display: block"
+                           href="/">
+                            
+<img alt="" loading="lazy" width="0" height="0" decoding="async" data-nimg="1" style="color: transparent; width: 100%; height: auto;" src="/media/chwhpxvr/9c93b4e214ea472aa15c630d420be010.webp" />
+                        </a>
+                    </div>
+
+                    <div class="c-header-burger-search-container">
+                        <button class="c-burger"
+                                id="mobileMenuBtn"
+                                aria-label="Mobile Menu"
+                                aria-expanded="false">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <div class="c-header-nav-container">
+                            <nav class="c-header-desktopLinks c-header-links"
+                                 id="desktopLinks"
+                                 role="navigation"
+                                 aria-hidden="false">
+                                
+
+    <a aria-label="Fachliche Informationen"
+        aria-hidden="false"
+        class="c-headerItem-button active"
+        href="/fachliche-informationen"
+        >
+        <div class="c-headerItem-content ">
+            <span class="c-headerItem-content__title">Fachliche Informationen</span>
+        </div>
+    </a>
+    <a aria-label="Marktinformationen"
+        aria-hidden="false"
+        class="c-headerItem-button"
+        href="/marktinformationen"
+        >
+        <div class="c-headerItem-content ">
+            <span class="c-headerItem-content__title">Marktinformationen</span>
+        </div>
+    </a>
+    <a aria-label="Formulare &amp; Merkbl&#xE4;tter"
+        aria-hidden="false"
+        class="c-headerItem-button"
+        href="/formulare-merkblaetter"
+        >
+        <div class="c-headerItem-content ">
+            <span class="c-headerItem-content__title">Formulare & Merkblätter</span>
+        </div>
+    </a>
+    <a aria-label="Sektor- und Projektma&#xDF;nahmen"
+        aria-hidden="false"
+        class="c-headerItem-button"
+        href="https://dfp.ama.at"
+        target=&quot;_blank&quot;>
+        <div class="c-headerItem-content c-headerItem-content--external">
+            <span class="c-headerItem-content__title">Sektor- und Projektmaßnahmen</span>
+        </div>
+    </a>
+
+                            </nav>
+                            <button class="c-header-search-button">
+                                <span>Suchen</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="c-header-mobile" id="mobileMenu">
+            <div class="c-header-mobile__navigator" id="mobileNavigator">
+                <div class="c-header-mobile__navigator-content">
+                    <div class="c-header-links_container">
+                        <nav class="c-header-links"
+                             id="mainMobileNav"
+                             role="navigation"
+                             aria-label="Haupt-Navigation"
+                             aria-hidden="false">
+                            <!-- Mobile navigation items will be populated by JavaScript -->
+                        </nav>
+
+                        <div class="c-mobile-footer">
+                            
+    <a href="https://services.ama.at" class="c-mobile-footer-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.55556 14C1.12778 14 0.761574 13.8477 0.456944 13.5431C0.152315 13.2384 0 12.8722 0 12.4444V1.55556C0 1.12778 0.152315 0.761574 0.456944 0.456944C0.761574 0.152315 1.12778 0 1.55556 0H7V1.55556H1.55556V12.4444H12.4444V7H14V12.4444C14 12.8722 13.8477 13.2384 13.5431 13.5431C13.2384 13.8477 12.8722 14 12.4444 14H1.55556ZM5.21111 9.87778L4.12222 8.78889L11.3556 1.55556H8.55556V0H14V5.44444H12.4444V2.64444L5.21111 9.87778Z" fill="currentColor" />
+        </svg>
+        <span>eAMA.at</span>
+    </a>
+    <a href="/allgemein/newsletter" class="c-mobile-footer-item">
+        <span>Newsletter</span>
+    </a>
+    <a href="/allgemein/presse" class="c-mobile-footer-item">
+        <span>Presse</span>
+    </a>
+    <a href="https://karriere.ama.at/" class="c-mobile-footer-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.55556 14C1.12778 14 0.761574 13.8477 0.456944 13.5431C0.152315 13.2384 0 12.8722 0 12.4444V1.55556C0 1.12778 0.152315 0.761574 0.456944 0.456944C0.761574 0.152315 1.12778 0 1.55556 0H7V1.55556H1.55556V12.4444H12.4444V7H14V12.4444C14 12.8722 13.8477 13.2384 13.5431 13.5431C13.2384 13.8477 12.8722 14 12.4444 14H1.55556ZM5.21111 9.87778L4.12222 8.78889L11.3556 1.55556H8.55556V0H14V5.44444H12.4444V2.64444L5.21111 9.87778Z" fill="currentColor" />
+        </svg>
+        <span>Karriere</span>
+    </a>
+    <a href="/allgemein/kontakt" class="c-mobile-footer-item">
+        <span>Kontakt</span>
+    </a>
+    <a href="/fachliche-informationen/nachhaltigkeit" class="c-mobile-footer-item">
+        <span>AACS</span>
+    </a>
+    <a href="/allgemein/veroeffentlichungen" class="c-mobile-footer-item">
+        <span>Veröffentlichungen</span>
+    </a>
+
+                        </div>
+                    </div>
+
+                    <nav class="c-header-links --skipFirst"
+                         id="subMobileNav"
+                         role="navigation"
+                         aria-label="Unter-Navigation"
+                         aria-hidden="true">
+                        <!-- Submenu items will be populated by JavaScript -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Flyout -->
+    
+<div class="c-header-search-container" id="searchContainer">
+    <div class="c-header-search-inner">
+        <form class="c-header-search-form" action="">
+            <div class="c-header-search-form-inner">
+                <input type="text"
+                       placeholder="Wonach suchen Sie?"
+                       class="c-header-search-input"
+                       aria-label="Wonach suchen Sie?"
+                       required />
+                <button type="button"
+                        class="c-button c-button--primary c-header-search-submit"
+                        data-search-url="/suche"
+                        data-search-site-id="1362">
+                    <span>Suchen</span>
+                    <span class="c-button__icon"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- Search recommendations -->
+</div>
+
+</div>
+
+
+    <!-- Content Section -->
+    <main id="main-container">
+        
+<!-- Content -->
+<div class="c-page o-spacing-bottom">
+	<div class="umb-block-list">
+
+<div class="o-content ">
+    <div class="c-hero-without-image">
+        <div class="c-hero-without-image__container">
+            <div class="c-hero-without-image__box"></div>
+            <div class="c-hero-without-image__content">
+                <h1 class="c-hero-without-image__headline">ÖPUL</h1>
+                    <p class="c-hero-without-image__text">Österreichische Programm zur Förderung einer umweltgerechten, extensiven und den natürlichen Lebensraum schützenden Landwirtschaft</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+	
+    <div class="c-breadcrumbs breadcrumbs--on-page">
+        <div class="c-breadcrumbs__inner">
+            <ul class="c-breadcrumbs__list">
+                        <li class="c-breadcrumbs__item">
+                            <a href="/">AMA Startseite</a>
+                        </li>
+                        <li class="c-breadcrumbs__item">
+                            <a href="/fachliche-informationen">Fachliche Informationen</a>
+                        </li>
+                        <li class="c-breadcrumbs__item">
+                            <a href="/fachliche-informationen/oepul">ÖPUL</a>
+                        </li>
+                        <li class="c-breadcrumbs__item c-breadcrumbs__item--active">
+                            <a href="/fachliche-informationen/oepul/aktuelles" tabindex="-1">Aktuelles</a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+
+	
+
+
+<div class="o-content-medium u-p-p-mobile">
+    <div class="layout-content-subnav layout-content--subnav">
+        <div class="content-wrapper">
+                <aside class="layout-content-quicklink-sidebar sidebar print_hide" aria-label="Subnavigation">
+                    
+<div class="sidebar__subnav">
+    <p class="h3 sidebar__subnav-title">
+        ÖPUL
+    </p>
+    <nav class="sidebar__subnav-nav" aria-label="Subnavigation"
+         data-parent-title="ÖPUL"
+         data-parent-url="/fachliche-informationen/oepul">
+        
+<ul>
+    <li>
+        <a href="/fachliche-informationen/oepul/aktuelles" class="--active " target="_self">Aktuelles</a>
+        
+<ul>
+    <li>
+        <a href="/fachliche-informationen/oepul/aktuelles/archiv" class=" " target="_self">Archiv</a>
+        
+
+    </li>    
+</ul>
+
+    </li>    
+    <li>
+        <a href="/fachliche-informationen/oepul/allgemeine-informationen" class=" " target="_self">Allgemeine Informationen</a>
+        
+
+    </li>    
+    <li>
+        <a href="/fachliche-informationen/oepul/rechtliche-grundlagen" class=" " target="_self">Rechtliche Grundlagen</a>
+        
+
+    </li>    
+    <li>
+        <a href="/fachliche-informationen/oepul/merkblaetter" class=" " target="_self">Merkbl&#xE4;tter</a>
+        
+
+    </li>    
+    <li>
+        <a href="/fachliche-informationen/oepul/aufzeichnungsvorlagen" class=" " target="_self">Aufzeichnungsvorlagen</a>
+        
+
+    </li>    
+    <li>
+        <a href="/fachliche-informationen/oepul/listen" class=" " target="_self">Listen</a>
+        
+
+    </li>    
+    <li>
+        <a href="/fachliche-informationen/oepul/kontakt-zustaendigkeiten" class=" " target="_self">Kontakt / Zust&#xE4;ndigkeiten</a>
+        
+
+    </li>    
+</ul>
+
+    </nav>
+</div>
+                </aside>
+
+            <div role="main" aria-label="Hauptinhalt" class="subnav-body-content" role="region">
+                
+
+
+    <div class="o-content-medium">
+        
+
+<div class="o-content-medium o-spacing-bottom u-p-p-mobile">
+    <div class="c-teaserlist">
+        <div class="c-teaserlist__container">
+            <ul class="c-teaserlist__list">
+                    <li class="c-teaserlist__item">
+                            <a href="/fachliche-informationen/oepul/aktuelles/2026/beantragungsfrist-fuer-die-begruenungsvarianten-4-bis-7-der-oepul-massnahme-begruenung-von-ackerflaechen-zwischenfruchtanbau"
+                               class="c-teaserlist__item__link"
+                               aria-label="Beantragungsfrist f&#xFC;r die Begr&#xFC;nungsvarianten 4 bis 7 der &#xD6;PUL-Ma&#xDF;nahme &#x201E;Begr&#xFC;nung von Ackerfl&#xE4;chen &#x2013; Zwischenfruchtanbau&#x201C;">
+                                <div class="c-teaserlist__content">
+                                       <div class="c-teaserlist__item__date u-pill">
+                                            23.09.2026
+                                       </div>
+                                    <h3 class="c-teaserlist__item__headline">
+                                        Beantragungsfrist für die Begrünungsvarianten 4 bis 7 der ÖPUL-Maßnahme „Begrünung von Ackerflächen – Zwischenfruchtanbau“
+                                    </h3>
+                                    <p class="c-teaserlist__item__description">
+                                        <p>Die Frist endet am 30. September</p>
+                                    </p>
+                                </div>
+                            </a>
+                    </li>
+                    <li class="c-teaserlist__item">
+                            <a href="/fachliche-informationen/oepul/aktuelles/2026/meldung-des-almabtriebs-bei-der-oepul-massnahme-almbewirtschaftung"
+                               class="c-teaserlist__item__link"
+                               aria-label="Meldung des Almabtriebs bei der &#xD6;PUL-Ma&#xDF;nahme &#x201E;Almbewirtschaftung&#x201C; ">
+                                <div class="c-teaserlist__content">
+                                       <div class="c-teaserlist__item__date u-pill">
+                                            16.09.2026
+                                       </div>
+                                    <h3 class="c-teaserlist__item__headline">
+                                        Meldung des Almabtriebs bei der ÖPUL-Maßnahme „Almbewirtschaftung“ 
+                                    </h3>
+                                    <p class="c-teaserlist__item__description">
+                                        <p>Wichtige Meldefristen beim Almabtrieb beachten</p>
+                                    </p>
+                                </div>
+                            </a>
+                    </li>
+                    <li class="c-teaserlist__item">
+                            <a href="/fachliche-informationen/oepul/aktuelles/2026/meldeverpflichtungen-zu-tierbezogenen-oepul-massnahmen"
+                               class="c-teaserlist__item__link"
+                               aria-label="Meldeverpflichtungen zu tierbezogenen &#xD6;PUL-Ma&#xDF;nahmen">
+                                <div class="c-teaserlist__content">
+                                       <div class="c-teaserlist__item__date u-pill">
+                                            02.09.2026
+                                       </div>
+                                    <h3 class="c-teaserlist__item__headline">
+                                        Meldeverpflichtungen zu tierbezogenen ÖPUL-Maßnahmen
+                                    </h3>
+                                    <p class="c-teaserlist__item__description">
+                                        <p>Der Abgang von beantragten Tieren aufgrund von Verkauf, Verendung oder Schlachtung muss fristgerecht der AMA gemeldet werden</p>
+                                    </p>
+                                </div>
+                            </a>
+                    </li>
+                    <li class="c-teaserlist__item">
+                            <a href="/fachliche-informationen/oepul/aktuelles/2026/aufzeichnungsverpflichtungen-bei-der-oepul-massnahme-vorbeugender-grundwasserschutz-acker"
+                               class="c-teaserlist__item__link"
+                               aria-label="Aufzeichnungsverpflichtungen bei der &#xD6;PUL-Ma&#xDF;nahme &#x201E;Vorbeugender Grundwasserschutz &#x2013; Acker&#x201C;">
+                                <div class="c-teaserlist__content">
+                                       <div class="c-teaserlist__item__date u-pill">
+                                            25.08.2026
+                                       </div>
+                                    <h3 class="c-teaserlist__item__headline">
+                                        Aufzeichnungsverpflichtungen bei der ÖPUL-Maßnahme „Vorbeugender Grundwasserschutz – Acker“
+                                    </h3>
+                                    <p class="c-teaserlist__item__description">
+                                        <p>Innerhalb eines Zeitraums von 14 Tagen müssen spezifische Bewirtschaftungsmaßnahmen elektronisch dokumentiert werden und es ist eine Stickstoffbilanzierung durchzuführen</p>
+                                    </p>
+                                </div>
+                            </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+
+
+<div class="o-content-medium o-column  u-p-p-mobile">
+</div>            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </main>
+
+    
+<!-- Footer Section -->
+<footer class="c-footer print_hide" id="footer-container">
+    <div class="c-footer__main-container">
+        <div class="c-footer__top-section u-p-p-mobile">
+            
+    <div class="c-form-wrapper c-footer__column c-footer__newsletter">
+        <footer-newsletter newsletterformpath="https://www.ama.at/allgemein/newsletter/change"></footer-newsletter>
+    </div>
+
+            
+<div class="c-footer__column">
+     <h3 class="c-footer__column-title">Anschrift</h3>
+<div class="c-footer__address">
+<p>Agrarmarkt Austria</p>
+<p>Dresdner Straße 70</p>
+<p>1200 Wien</p>
+<p>Telefon:&nbsp;<a href="tel:05031510">050 3151 - 0</a></p>
+<p><a href="mailto:office@ama.gv.at">office@ama.gv.at</a></p>
+</div>
+</div>
+
+<div class="c-footer__column">
+     <h3 class="c-footer__column-title">Interessante Links</h3>
+<ul class="c-footer__links-list">
+<li><a href="/fachliche-informationen/auszahlungstermine" title="Auszahlungstermine">Auszahlungstermine</a></li>
+<li><a href="/allgemein/ueber-die-ama" title="Über die AMA" class="c-topbar-item c-topbar-item__withText ">Über die AMA</a></li>
+<li><a href="/fachliche-informationen/nachhaltigkeit" title="AACS / AACSplus - Nachhaltigkeit" class="c-topbar-item c-topbar-item__withText ">AACS</a></li>
+<li><a href="/allgemein/veroeffentlichungen" title="Veröffentlichungen" class="c-topbar-item c-topbar-item__withText ">Veröffentlichungen</a><a href="/fachliche-informationen" title="Fachliche Informationen"></a></li>
+</ul>
+</div>
+
+<div class="c-footer__column">
+     <h3 class="c-footer__column-title">Weitere Webseiten</h3>
+<ul class="c-footer__links-list">
+<li><a rel="noopener" href="https://services.ama.at" target="_blank">eAMA - das Serviceportal</a></li>
+<li><a rel="noopener" href="https://karriere.ama.at/" target="_blank" title="AMA Karriere">AMA - Karriereportal</a></li>
+<li><a rel="noopener" href="https://dfp.ama.at" target="_blank">Sektor- &amp; Projektmaßnahmen</a></li>
+<li><a rel="noopener" href="https://amainfo.at/" target="_blank">AMA - Marketing amainfo.at</a></li>
+</ul>
+</div>
+
+        </div>
+
+        <div class="c-footer__bottom-section">
+            <div class="c-footer__bottom-container">
+                <div class="c-footer__logo-section">
+                    <a href="/" class="c-footer__logo-link" aria-label="Zur Startseite">
+                        <div class="c-footer__logo">
+                            <img alt="" loading="lazy" width="0" height="0" decoding="async" data-nimg="1" style="color: transparent; width: 100%; height: auto;" src="/images/logo_ama.svg" />
+                        </div>
+                    </a>
+                </div>
+
+                <div class="c-footer__legal-links">
+                    
+    <a href="/allgemein/impressum" class="c-footer__legal-link " >Impressum</a>
+    <a href="/allgemein/datenschutzerklaerung" class="c-footer__legal-link " >Datenschutzerklärung</a>
+    <a href="/allgemein/barrierefreiheitserklaerung" class="c-footer__legal-link " >Barrierefreiheitserklärung</a>
+    <a href="/allgemein/sitemap" class="c-footer__legal-link " >Sitemap</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+
+    <script id="swiper-js-script" src="/scripts/swiper-bundle.min.js?v=_QpY8nQaJu1neqcoylUMxAdKHotvfY4hF0Mr4yR-q-U"></script>
+    <script type="module" src="/scripts/main.js?v=XFDEJ5DRfZ81Cce5C9Jjc_CL3lji3Q30Q0GE63iAWoM"></script>
+    <script type="module" src="/scripts/app.js?v=IQs-gbglqFFqEJ1aeLhrdEQoVDfWkLWqTR_6YWIzzN0"></script>
+    <script type="module" src="/scripts/sdk.js?v=PEOiieFBtGVTjj6iVGAnDMBySQYjLc1R0ifkATUq_YU"></script>
+</body>
+
+</html>

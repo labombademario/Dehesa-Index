@@ -1,0 +1,15 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/85636NED/$metadata#Cbs.OData.WebAPI.TypedDataSet","value":[
+    {
+      "ID":0,"Gewassen":"A042170","RegioS":"NL01","Perioden":"1994JJ00","BeteeldeOppervlakte_1":121587,"GeoogsteOppervlakte_2":121532,"BrutoOpbrengstPerHa_3":8.2,"TotaleBrutoOpbrengst_4":992682
+    },{
+      "ID":1,"Gewassen":"A042170","RegioS":"NL01","Perioden":"1995JJ00","BeteeldeOppervlakte_1":135412,"GeoogsteOppervlakte_2":134686,"BrutoOpbrengstPerHa_3":8.8,"TotaleBrutoOpbrengst_4":1180560
+    },{
+      "ID":2,"Gewassen":"A042170","RegioS":"NL01","Perioden":"1996JJ00","BeteeldeOppervlakte_1":141607,"GeoogsteOppervlakte_2":141594,"BrutoOpbrengstPerHa_3":9.1,"TotaleBrutoOpbrengst_4":1284044
+    },{
+      "ID":3,"Gewassen":"A042170","RegioS":"NL01","Perioden":"1997JJ00","BeteeldeOppervlakte_1":137510,"GeoogsteOppervlakte_2":137494,"BrutoOpbrengstPerHa_3":7.8,"TotaleBrutoOpbrengst_4":1075274
+    },{
+      "ID":4,"Gewassen":"A042170","RegioS":"NL01","Perioden":"1998JJ00","BeteeldeOppervlakte_1":139314,"GeoogsteOppervlakte_2":139153,"BrutoOpbrengstPerHa_3":7.8,"TotaleBrutoOpbrengst_4":1083121
+    }
+  ]
+}

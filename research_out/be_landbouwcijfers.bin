@@ -1,0 +1,951 @@
+  <!DOCTYPE html>
+<html lang="nl" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+<meta name="description" content="De Landbouwcijfers-website is een digitale landbouw- en visserij-encyclopedie, die voortdurend geactualiseerd en aangevuld wordt. De website bevat heel wat objectieve en betrouwbare data bv. cijfergegevens over de arealen van de verschillende teelten, het aantal landbouwbedrijven, de productiewaa ..." />
+<link rel="canonical" href="https://landbouwcijfers.vlaanderen.be/" />
+<link rel="shortlink" href="https://landbouwcijfers.vlaanderen.be/" />
+<meta property="og:title" content="Landbouwcijfers Vlaanderen: cijfers over de Vlaamse landbouw en zeevisserij" />
+<meta property="og:description" content="De Landbouwcijfers-website is een digitale landbouw- en visserij-encyclopedie, die voortdurend geactualiseerd en aangevuld wordt. De website bevat heel wat objectieve en betrouwbare data bv. cijfergegevens over de arealen van de verschillende teelten, het aantal landbouwbedrijven, de productiewaa ..." />
+<meta property="og:image" content="https://landbouwcijfers.vlaanderen.be/sites/default/files/styles/social_media_image/public/2021-05/afbeelding_larawebsitev3.jpg?h=b608f8c0&amp;itok=8XASS7B3" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Landbouwcijfers Vlaanderen: cijfers over de Vlaamse landbouw en zeevisserij" />
+<meta name="twitter:description" content="De Landbouwcijfers-website is een digitale landbouw- en visserij-encyclopedie, die voortdurend geactualiseerd en aangevuld wordt. De website bevat heel wat objectieve en betrouwbare data bv. cijfergegevens over de arealen van de verschillende teelten, het aantal landbouwbedrijven, de productiewaa ..." />
+<meta name="twitter:image" content="https://landbouwcijfers.vlaanderen.be/sites/default/files/styles/social_media_image/public/2021-05/afbeelding_larawebsitev3.jpg?h=b608f8c0&amp;itok=8XASS7B3" />
+<meta name="Generator" content="Drupal 11 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="nl" href="https://landbouwcijfers.vlaanderen.be/" />
+<link rel="icon" href="/core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>Landbouwcijfers Vlaanderen: cijfers over de Vlaamse landbouw en zeevisserij</title>
+        
+    
+        <link rel="stylesheet" media="all" href="/sites/default/files/css/css_agI4qOgvxO8U2_JGV025_0RLxd_Hk0M9lLeJHyHgfTQ.css?delta=0&amp;language=nl&amp;theme=calibr8_easytheme&amp;include=eJx1j9EOwjAIRX-oWV_9m4W1xBFbaICq8-udU6cveyGXcyG5N0GhSU8j5ErsM1YcoThqTFKbMLJbSEc3FYh3F8GWzTzCLFpX-MCQCpgtcQLbNUtetciFcBKPu1qZ_r_i3QvxJWbtDcrwWUMDhbNCm-3r_MjQufWpkM2YgyFomkdoNEJ3ebUs6BgPeDByvFF-NUb1SEwebDHH-o5_JbxZ3OZQJfeCT4CNhK0" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_ZU-T-NOQgukVPgOvraV2F_4iB6nveiTLxlV4E3chXZo.css?delta=1&amp;language=nl&amp;theme=calibr8_easytheme&amp;include=eJx1j9EOwjAIRX-oWV_9m4W1xBFbaICq8-udU6cveyGXcyG5N0GhSU8j5ErsM1YcoThqTFKbMLJbSEc3FYh3F8GWzTzCLFpX-MCQCpgtcQLbNUtetciFcBKPu1qZ_r_i3QvxJWbtDcrwWUMDhbNCm-3r_MjQufWpkM2YgyFomkdoNEJ3ebUs6BgPeDByvFF-NUb1SEwebDHH-o5_JbxZ3OZQJfeCT4CNhK0" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_ONXrRjTBxy44Pn8pE2K0cY9MZPyqRAFjKx36aCvW5eI.css?delta=2&amp;language=nl&amp;theme=calibr8_easytheme&amp;include=eJx1j9EOwjAIRX-oWV_9m4W1xBFbaICq8-udU6cveyGXcyG5N0GhSU8j5ErsM1YcoThqTFKbMLJbSEc3FYh3F8GWzTzCLFpX-MCQCpgtcQLbNUtetciFcBKPu1qZ_r_i3QvxJWbtDcrwWUMDhbNCm-3r_MjQufWpkM2YgyFomkdoNEJ3ebUs6BgPeDByvFF-NUb1SEwebDHH-o5_JbxZ3OZQJfeCT4CNhK0" />
+
+        <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+                        <link rel='shortcut icon' href='https://landbouwcijfers.vlaanderen.be/themes/custom/calibr8_easytheme/bookmark-icons/favicon.ico'>
+                <link rel="manifest"  href="/themes/custom/calibr8_easytheme/bookmark-icons/site.webmanifest" />
+                <link rel="mask-icon" href="https://landbouwcijfers.vlaanderen.be/themes/custom/calibr8_easytheme/bookmark-icons/safari-pinned-tab.svg" >
+                <link rel="icon" type="image/png" href="https://landbouwcijfers.vlaanderen.be/themes/custom/calibr8_easytheme/bookmark-icons/favicon-32x32.png"  sizes='32x32'/>
+                <link rel="icon" type="image/png" href="https://landbouwcijfers.vlaanderen.be/themes/custom/calibr8_easytheme/bookmark-icons/favicon-16x16.png"  sizes='16x16'/>
+                <link rel="icon" type="image/png" href="https://landbouwcijfers.vlaanderen.be/themes/custom/calibr8_easytheme/bookmark-icons/android-chrome-512x512.png"  sizes='512x512'/>
+                <link rel="icon" type="image/png" href="https://landbouwcijfers.vlaanderen.be/themes/custom/calibr8_easytheme/bookmark-icons/android-chrome-192x192.png"  sizes='192x192'/>
+                <meta name="msapplication-TileImage" href="https://landbouwcijfers.vlaanderen.be/themes/custom/calibr8_easytheme/bookmark-icons/mstile-150x150.png"  sizes='150x150'/>
+              <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/1","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"nl"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"gtm":{"tagId":null,"settings":{"data_layer":"dataLayer","include_classes":false,"allowlist_classes":"","blocklist_classes":"","include_environment":false,"environment_id":"","environment_token":"","include_script_attributes":true,"script_attributes":["data-cookieconsent|ignore"]},"tagIds":["GTM-TWZ99ZR"]},"ajaxPageState":{"libraries":"eJx1UtFuwyAM_KGovO5vkAMusWowwqZd9vUj7ZpWU_pm3_kOc3IAprl9eYiZii2Y0QMbNhckVylYTKfwaSYDlZ1F0PVOOszVVq_IGN7UL_7cmTU0xOIrNEgN6nIw9sE9YyTIYOFIU-BKCYzkSFmk5QH-4AF3Jbwd7XoVfxYZnz3gbgGSN0mJhyOD6upm0L3OqAoJ9dkXiYMTuRDOYm6vfA8Dbu_74bcxlYuLrVfg0187JZHxljdILlmeeITntYqdaahZIGLzUOkf8cp4r_Tp_EJOvdQ-M-mCcVKEFpbNy0M32W6B0dB9wCclwxvF7S6wmaNCNumqhvmRyD3dR8anLLEz_gKeBPe5","theme":"calibr8_easytheme","theme_token":null},"ajaxTrustedUrl":{"\/search":true},"data":{"extlink":{"extTarget":true,"extTargetAppendNewWindowDisplay":true,"extTargetAppendNewWindowLabel":"(opens in a new window)","extTargetNoOverride":false,"extNofollow":false,"extTitleNoOverride":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(externe link)","extImgClass":false,"extSubdomains":true,"extExclude":"","extInclude":"","extCssExclude":"","extCssInclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"Deze link leidt naar een externe website. We zijn niet verantwoordelijk voor hun inhoud.","extHideIcons":false,"mailtoClass":"0","telClass":"","mailtoLabel":"(link stuurt e-mail)","telLabel":"(link is a phone number)","extUseFontAwesome":false,"extIconPlacement":"append","extPreventOrphan":false,"extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","extAdditionalLinkClasses":"","extAdditionalMailtoClasses":"","extAdditionalTelClasses":"","extFaTelClasses":"fa fa-phone","allowedDomains":[],"extExcludeNoreferrer":""}},"cookiebot":{"message_placeholder_cookieconsent_optout_marketing_show":true,"message_placeholder_cookieconsent_optout_marketing":"\u003Cdiv class=\u0022cookiebot cookieconsent-optout-marketing\u0022\u003E\n\t\u003Cdiv class=\u0022cookieconsent-optout-marketing__inner\u0022\u003E\n\t\tGelieve \u003Ca href=\u0022!cookiebot_renew\u0022\u003Emarketingcookies te accepteren\u003C\/a\u003E om deze ingesloten inhoud van \u003Ca href=\u0022!cookiebot_from_src_url\u0022 target=\u0022_blank\u0022\u003E!cookiebot_from_src_url\u003C\/a\u003E te bekijken.\n\t\u003C\/div\u003E\n\u003C\/div\u003E\n"},"calibr8_easytheme":{"breakpoints":{"sm":"screen and (min-width: 392px)","md":"screen and (min-width: 692px)","lg":"screen and (min-width: 992px)","xl":"screen and (min-width: 1292px)"}},"sitewideAlert":{"refreshInterval":60000,"automaticRefresh":false},"search_api_autocomplete":{"search":{"auto_submit":true}},"lara_base":{"mobile_breakpoint":"1200"},"user":{"uid":0,"permissionsHash":"07e9bd799b80f2c597ed1221a24253b3d051b7b87396ed423c6b2427dc0cc023"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=4.0.0"></script>
+<script src="/sites/default/files/js/js_W71ToIe4iFAkYk70czxJa2jW1PyBpoigc00ATtheerw.js?scope=header&amp;delta=1&amp;language=nl&amp;theme=calibr8_easytheme&amp;include=eJx1kVFuxDAIRC9k1b-9DWKdiYMWG8smSff2za5WrVS5f8AbxIxIrHLrn8RLkeobCojV0WNhqSG9KXg8XjCiNH_QgCL5mPB1Vx2pA5Uad86d2zaRFSzChT3NYOVDMrvYzMAhOGeHD6PV7HI-YWfiTG45K0Iyuwtu5vGnoj0FfLlKvcel7431492GbHYtkXOO2UvQKxKNZr5KR1TjBZ24yR_wm3yAe9qeEuLdLVlpCkf8Zx6GOE5Znk9A9yhV_Bv-q6Rd" data-cookieconsent="ignore"></script>
+<script src="https://consent.cookiebot.com/uc.js" id="Cookiebot" data-cbid="de3ce3a1-943c-4349-aafd-6dfc058210fb" data-blockingmode="auto" data-culture="nl"></script>
+<script src="/modules/contrib/google_tag/js/gtm.js?tltyot"></script>
+<script src="https://landbouwcijfers.vlaanderen.be/spotfire/js-api/loader.js"></script>
+
+  </head>
+  <body class="front not-logged-in mobile-menu-disabled">
+        
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWZ99ZR"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="site-wrapper">
+
+  <header class="region region--header site-header">
+    <script src=https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1/node_modules/@govflanders/vl-widget-polyfill/dist/index.js></script><script src=https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1/widget/5f81ee85-7940-4d68-904d-e2cf1231d054/embed></script>
+    <div class="container">
+      <div class="site-header__wrapper">
+
+        <div class="site-header__branding">
+            
+<a href="/" title="Home" rel="home">
+  <div class="site-logo">
+          <img src="/themes/custom/calibr8_easytheme/logo.svg" onerror="this.src='/themes/custom/calibr8_easytheme/logo.png'; this.onerror=null;" alt="Home" />
+      </div>
+    <div class="site-name">Landbouw &amp; Visserij</div>
+    </a>
+
+
+        </div>
+        <div class="site-header__rows">
+          <div class="site-header__secondary-navigation">
+            <div class="site-header__secondary-navigation-inner">
+                  <nav aria-labelledby="block-secondarymenu-menu" id="block-secondarymenu" class="block block--menu block--menu--secondary-menu">
+                      
+    <h2 class="visually-hidden" id="block-secondarymenu-menu">Secondary menu</h2>
+    
+
+              
+                <ul class="menu menu--level-1">
+                    <li class="menu-item">
+        <a href="/landbouwrapport-2024-lara" data-drupal-link-system-path="node/616">Landbouwrapport</a>
+              </li>
+        </ul>
+  
+
+
+      </nav>
+
+
+            </div>
+          </div>
+          <div class="site-header__primary-navigation">
+                <nav aria-labelledby="block-mainmenu-menu" id="block-mainmenu" class="block block--menu block--menu--main">
+                      
+    <h2 class="visually-hidden" id="block-mainmenu-menu">Main navigation</h2>
+    
+
+              
+                <ul class="menu menu--level-1">
+                    <li class="menu-item">
+        <a href="/landbouw" data-drupal-link-system-path="node/22">Landbouw</a>
+              </li>
+                <li class="menu-item">
+        <a href="/visserij" data-drupal-link-system-path="node/23">Visserij</a>
+              </li>
+                <li class="menu-item">
+        <a href="/marktinformatie" data-drupal-link-system-path="node/26">Marktinformatie</a>
+              </li>
+                <li class="menu-item">
+        <a href="/keten" data-drupal-link-system-path="node/25">Keten</a>
+              </li>
+                <li class="menu-item">
+        <a href="/data" data-drupal-link-system-path="node/24">Data</a>
+              </li>
+                <li class="menu-item">
+        <a href="/geoloket-landbouw" data-drupal-link-system-path="node/366">Geoloket</a>
+              </li>
+        </ul>
+  
+
+
+      </nav>
+<div id="block-simple-search-form" class="lara-search--search-form block block-simple-search-form block-simple-search-form-block">
+  
+    
+      <form class="simple-search-form" data-drupal-selector="simple-search-form-2" action="/search" method="get" id="simple-search-form--2" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-search-api-autocomplete form-type-search-api-autocomplete js-form-item-s form-item-s form-no-label">
+
+      <label for="edit-s--2" class="visually-hidden">Zoe­ken</label>
+      
+          <input placeholder="Zoeken" class="form-autocomplete form-text" data-drupal-selector="edit-s" data-search-api-autocomplete-search="search" data-autocomplete-path="/search_api_autocomplete/search?filter=s&amp;display=search" type="text" id="edit-s--2" name="s" value="" size="60" maxlength="128" />
+
+  
+        
+</div>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions--2"><button  data-drupal-selector="edit-submit" type="submit" id="edit-submit--2" value="Zoeken" class="button js-form-submit form-submit" aria-label="Zoeken"><span>Zoeken</span></button>
+</div>
+
+</form>
+
+  </div>
+
+
+            <div class="header-anchors">
+              <a href="#" id="search-menu-anchor" class="anchor--search-menu icon-search" style="display: none;"><span class="element-invisible">Zoeken</span></a>
+              <a href="#" id="mobile-menu-anchor" class="anchor--mobile-menu icon-menu" style="display: none;"><span class="element-invisible">Menu</span></a>
+              <a href="#" id="contrast-anchor" class="anchor--contrast icon-contrast"><span class="">Contrast</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <nav id="mobile-menu" style="display: none;">
+      <div class="mobile-menu-inner">
+            <nav aria-labelledby="block-mobile-mainmenu-menu" id="block-mobile-mainmenu" class="block block--menu block--menu--main">
+                      
+    <h2 class="visually-hidden" id="block-mobile-mainmenu-menu">Hoofdnavigatie</h2>
+    
+
+              
+                <ul class="menu menu--level-1">
+                    <li class="menu-item">
+        <a href="/landbouw" data-drupal-link-system-path="node/22">Landbouw</a>
+              </li>
+                <li class="menu-item">
+        <a href="/visserij" data-drupal-link-system-path="node/23">Visserij</a>
+              </li>
+                <li class="menu-item">
+        <a href="/marktinformatie" data-drupal-link-system-path="node/26">Marktinformatie</a>
+              </li>
+                <li class="menu-item">
+        <a href="/keten" data-drupal-link-system-path="node/25">Keten</a>
+              </li>
+                <li class="menu-item">
+        <a href="/data" data-drupal-link-system-path="node/24">Data</a>
+              </li>
+                <li class="menu-item">
+        <a href="/geoloket-landbouw" data-drupal-link-system-path="node/366">Geoloket</a>
+              </li>
+        </ul>
+  
+
+
+      </nav>
+  <nav aria-labelledby="block-mobile-secondarymenu-menu" id="block-mobile-secondarymenu" class="block block--menu block--menu--secondary-menu">
+                      
+    <h2 class="visually-hidden" id="block-mobile-secondarymenu-menu">Secondary menu</h2>
+    
+
+              
+                <ul class="menu menu--level-1">
+                    <li class="menu-item">
+        <a href="/landbouwrapport-2024-lara" data-drupal-link-system-path="node/616">Landbouwrapport</a>
+              </li>
+        </ul>
+  
+
+
+      </nav>
+  <nav aria-labelledby="block-doormat-menu" id="block-doormat" class="block block--menu block--menu--doormat">
+                      
+    <h2 class="visually-hidden" id="block-doormat-menu">Doormat</h2>
+    
+
+              
+                <ul class="menu menu--level-1">
+                    <li class="menu-item">
+        <a href="/over-ons" data-drupal-link-system-path="node/27">Over ons</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://landbouwcijfers.vlaanderen.be/wegwijs-landbouwcijfers">Weg­wijs in Landbouwcijfers</a>
+              </li>
+        </ul>
+  
+
+
+      </nav>
+  <nav aria-labelledby="block-voet-menu" id="block-voet" class="block block--menu block--menu--footer">
+                      
+    <h2 class="visually-hidden" id="block-voet-menu">Voet</h2>
+    
+
+              
+                <ul class="menu menu--level-1">
+                    <li class="menu-item">
+        <a href="/disclaimer" data-drupal-link-system-path="node/210">Disclaimer</a>
+              </li>
+                <li class="menu-item">
+        <a href="/cookiebeleid" data-drupal-link-system-path="node/217">Cookiebeleid</a>
+              </li>
+                <li class="menu-item">
+        <a href="/privacybeleid" data-drupal-link-system-path="node/218">Privacybeleid</a>
+              </li>
+                <li class="menu-item">
+        <a href="/digitale-toegankelijkheid-wcag" data-drupal-link-system-path="node/219">Toegankelijkheid</a>
+              </li>
+        </ul>
+  
+
+
+      </nav>
+
+
+      </div>
+    </nav>
+
+    <nav id="search-menu" style="display: none;">
+      <div class="search-menu-inner">
+          <div id="block-search-menu-simple-search-form" class="lara-search--search-form block block-simple-search-form block-simple-search-form-block">
+  
+    
+      <form class="simple-search-form" data-drupal-selector="simple-search-form" action="/search" method="get" id="simple-search-form" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-search-api-autocomplete form-type-search-api-autocomplete js-form-item-s form-item-s form-no-label">
+
+      <label for="edit-s" class="visually-hidden">Search</label>
+      
+          <input placeholder="Search" class="form-autocomplete form-text" data-drupal-selector="edit-s" data-search-api-autocomplete-search="search" data-autocomplete-path="/search_api_autocomplete/search?filter=search_api_fulltext&amp;display=search" type="text" id="edit-s" name="s" value="" size="60" maxlength="128" />
+
+  
+        
+</div>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"><button  data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Search" class="button js-form-submit form-submit" aria-label="Search"><span>Search</span></button>
+</div>
+
+</form>
+
+  </div>
+
+
+      </div>
+    </nav>
+
+  </header>
+
+  <main class="page-layout sidebar sidebar--right page-layout--landing_page">
+
+    
+          <div class="page-layout__content-top">
+          <div id="block-homepageblock" class="block block-lara-search block-lara-homepage-block">
+  
+    
+      <div class="homepage-block">
+    <div class="homepage-block__content">
+      <h1 class="page-title">Vlaamse landbouw<br>en visserij in cijfers</h1>
+      <div class="lara-search--search-form"><form class="simple-search-form" data-drupal-selector="simple-search-form" action="/search" method="get" id="simple-search-form" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-search-api-autocomplete form-type-search-api-autocomplete js-form-item-s form-item-s form-no-label">
+
+      <label for="homepage-block-edit-s" class="visually-hidden">Zoe­ken</label>
+      
+          <input placeholder="Zoek in onze indicatoren, data en publicaties" class="form-autocomplete form-text" data-drupal-selector="edit-s" data-search-api-autocomplete-search="search" data-autocomplete-path="/search_api_autocomplete/search?filter=s&amp;display=search" type="text" id="homepage-block-edit-s" name="s" value="" size="60" maxlength="128" />
+
+  
+        
+</div>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"><button  data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Zoeken" class="button js-form-submit form-submit" aria-label="Zoeken"><span>Zoeken</span></button>
+</div>
+
+</form>
+</div>
+      <div class="search-suggestions">
+        <p>Bijvoorbeeld "<a href="/search?s=milieu">Milieu</a>", "<a href="/search?s=gewasbescherming">gewasbescherming</a>", "<a href="/search?s=Landbouwareaal 2020">Landbouwareaal 2020</a>"</p>
+      </div>
+  </div>
+  <div class="homepage-block__image">
+      <picture>
+                  <source srcset="/sites/default/files/styles/background_image_xl/public/homepage-background/08%20AUG%20shutterstock_2470149623_hooi_stro_balen_oogst_veld.jpg?itok=Og4wNaL_ 1x" media="screen and (min-width: 1292px)" type="image/jpeg" width="1600" height="560"/>
+              <source srcset="/sites/default/files/styles/background_image_lg/public/homepage-background/08%20AUG%20shutterstock_2470149623_hooi_stro_balen_oogst_veld.jpg?itok=AdX2gr0W 1x" media="screen and (min-width: 992px)" type="image/jpeg" width="1300" height="455"/>
+              <source srcset="/sites/default/files/styles/background_image_md/public/homepage-background/08%20AUG%20shutterstock_2470149623_hooi_stro_balen_oogst_veld.jpg?itok=lAgJ38wM 1x" media="screen and (min-width: 692px)" type="image/jpeg" width="1000" height="350"/>
+              <source srcset="/sites/default/files/styles/background_image_sm/public/homepage-background/08%20AUG%20shutterstock_2470149623_hooi_stro_balen_oogst_veld.jpg?itok=0QjfhK1h 1x" media="screen and (min-width: 392px)" type="image/jpeg" width="700" height="360"/>
+                  <img width="400" height="200" src="/sites/default/files/styles/background_image_xs/public/homepage-background/08%20AUG%20shutterstock_2470149623_hooi_stro_balen_oogst_veld.jpg?itok=UiX3Hm-L" alt="" loading="lazy" />
+
+  </picture>
+
+  </div>
+</div>
+
+  </div>
+
+
+      </div>
+    
+    
+        <div class="page-highlighted page-layout__highlighted">
+      <div class="container">
+                    <div data-drupal-messages-fallback class="hidden"></div>
+
+
+                <a id="main-content" tabindex="-1"></a>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="page-layout__sidebars-wrapper">
+
+                <div class="page-layout__content-wrapper">
+
+                      <div class="page-layout__content">
+                <div id="block-calibr8-easytheme-sitewidealert" class="block block-sitewide-alert-block">
+  
+    
+      <div data-sitewide-alert role="banner"></div>
+  </div>
+<div id="block-calibr8-easytheme-content" class="block block-system block-system-main-block">
+  
+    
+      
+  <div class="node--landing-page node--full node node--landing-page--full">
+        
+    
+
+                  <script>
+    var webPlayerServerRootUrl = "https://landbouwcijfers.vlaanderen.be/spotfire/wp/";
+    var customizationInfo = {"showAbout":false,"showAnalysisInformationTool":false,"showAuthor":false,"showClose":false,"showCustomizableHeader":false,"showDodPanel":false,"showExportFile":false,"showFilterPanel":false,"showHelp":false,"showLogout":false,"showPageNavigation":false,"showStatusBar":false,"showToolBar":false,"showUndoRedo":false};
+    var analysisPath = "PubliekInternet/Indicatoren/CijferInDeKijker";
+    var parameters = "";
+    var reloadInstances = false;
+    var version = "12.4";
+
+    function onReadyCallback(response, newApp)
+    {
+      app = newApp;
+      if (response.status === "OK")
+      {
+        //console.log("OK received. Opening document to page 0");
+        doc_thomihuj = app.openDocument("thomihuj", "cidk");
+    doc_thomihuj.onDocumentReady(onDocumentReady);
+      }
+      else
+      {
+        console.log("Status not OK. " + response.status + ": " + response.message);
+      }
+    }
+
+    function onError(error)
+    {
+        console.log("Error: " + error);
+    }
+
+    function onDocumentReady()
+    {
+      //  console.log("Doc ready" );
+    }
+
+    function onCreateLoginElement()
+    {
+        console.log("Creating the login element");
+        return null;
+    }
+
+    spotfire.webPlayer.createApplication(
+      webPlayerServerRootUrl,
+      customizationInfo,
+      analysisPath,
+      parameters,
+      reloadInstances,
+      version,
+      onReadyCallback,
+      onCreateLoginElement
+    );
+  </script>
+          
+          <div>
+        
+        
+<div class="field--paragraphs">
+        
+<section class="paragraph paragraph--embed paragraph--default paragraph--embed--default theme--transparent">
+  <div class="layout paragraph__layout">
+                  
+        <div class="paragraph__content-wrapper">
+      
+                    
+            <div class="paragraph__content">
+      
+<div class="field--body clearfix text-formatted field field--type-text-long">
+              <h3 class="text-align-center"><strong>Cijfers die inzicht geven in de Vlaamse landbouw en visserij</strong></h3><p class="text-align-center">Van productie en economie tot milieu en markt: ontdek data die helpen om trends en evoluties te begrijpen.</p>
+      </div>
+
+    </div>
+  
+                    
+
+          </div>
+    
+      
+    <div class="paragraph__attachment">
+    <div  class="fullscreen-paragraph-container">
+      
+<div class="field--embed-code clearfix text-formatted field field--type-text-long">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/QIHzSxXHMrM?si=7I7WSkFobBvifsgd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+          </div>
+  </div>
+  
+      </div>
+</section>
+
+      
+<section class="paragraph paragraph--page-teasers paragraph--default paragraph--page-teasers--default theme--transparent">
+  <div class="layout paragraph__layout">
+                  
+        <div class="paragraph__content-wrapper">
+      
+                    
+            <div class="paragraph__content">
+      
+<div class="field--body clearfix text-formatted field field--type-text-long">
+              <h3 class="text-align-center"><strong>Ontdek hoe de cijferwebsite jou kan helpen</strong></h3><p class="text-align-center">Of je nu algemene inzichten zoekt, cijfers wil inzetten voor je bedrijfsvoering of data gebruikt voor onderzoek: hier vind je een startpunt op maat van jouw vraag.</p><p>&nbsp;</p>
+      </div>
+
+    </div>
+  
+                    
+
+          </div>
+    
+      <div class="paragraph__attachment">
+        <div class="field--page-teasers">
+              <div class="field__item">
+          
+<article class="node--landing-page node--teaser node node--landing-page--teaser article-teaser">
+        
+    
+    <a class="link-wrapper" href="/vlaamse-landbouw-10-cijfers" aria-label="Vlaamse landbouw in 10 cijfers "></a>
+
+                        <div class="article-teaser__image">
+<div class="field--media-image field field__item">
+  <div class="field--media-image">
+              <picture>
+                  <source srcset="/sites/default/files/styles/teaser_image_md/public/2026-05/3i9a0193_assent_landbouwlandschap.jpg?h=1c9b88c9&amp;itok=U_uO7sIV 1x" media="screen and (min-width: 692px)" type="image/jpeg" width="440" height="250"/>
+              <source srcset="/sites/default/files/styles/teaser_image_sm/public/2026-05/3i9a0193_assent_landbouwlandschap.jpg?h=1c9b88c9&amp;itok=VW9PTMbN 1x" media="screen and (min-width: 392px)" type="image/jpeg" width="640" height="362"/>
+                  <img loading="lazy" width="400" height="226" src="/sites/default/files/styles/teaser_image_xs/public/2026-05/3i9a0193_assent_landbouwlandschap.jpg?h=1c9b88c9&amp;itok=JRwUQ7_O" alt="" />
+
+  </picture>
+
+
+          </div>
+</div>
+</div>
+            
+    <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+    <div class="teaser-title">
+      <h3>Vlaam­se land­bouw in <span class="numbers">10</span> cijfers&nbsp;</h3>
+    </div>
+  </header>
+                                    <div class="article-teaser__content">
+                    <p>Wat typeert de Vlaamse landbouw? Aan de hand van 10 cijfers krijg je een duidelijke en toegankelijke inkijk in de sector.</p><p>&nbsp;</p>
+                    
+                </div>
+                                                    </div>
+</article>
+
+        </div>
+              <div class="field__item">
+          
+<article class="node--landing-page node--teaser node node--landing-page--teaser article-teaser">
+        
+    
+    <a class="link-wrapper" href="/landbouwcijfers-voor-jouw-bedrijfsvoering" aria-label="Landbouwcijfers voor jouw bedrijfsvoering"></a>
+
+                        <div class="article-teaser__image">
+<div class="field--media-image field field__item">
+  <div class="field--media-image">
+              <picture>
+                  <source srcset="/sites/default/files/styles/teaser_image_md/public/2026-05/shutterstock_141175876_gras_tractor_weide_hooiveld.jpg?h=bb3b5ec2&amp;itok=cuSZ3M3N 1x" media="screen and (min-width: 692px)" type="image/jpeg" width="440" height="250"/>
+              <source srcset="/sites/default/files/styles/teaser_image_sm/public/2026-05/shutterstock_141175876_gras_tractor_weide_hooiveld.jpg?h=bb3b5ec2&amp;itok=C7QgnhwY 1x" media="screen and (min-width: 392px)" type="image/jpeg" width="640" height="362"/>
+                  <img loading="lazy" width="400" height="226" src="/sites/default/files/styles/teaser_image_xs/public/2026-05/shutterstock_141175876_gras_tractor_weide_hooiveld.jpg?h=bb3b5ec2&amp;itok=ikZyOoS9" alt="" />
+
+  </picture>
+
+
+          </div>
+</div>
+</div>
+            
+    <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+    <div class="teaser-title">
+      <h3>Land­bouw­cij­fers voor jouw bedrijfsvoering</h3>
+    </div>
+  </header>
+                                    <div class="article-teaser__content">
+                    <p>Krijg grip op je bedrijfsvoering met actuele cijfers over prijzen en inkomen, en vergelijk de prestaties van je bedrijf met die van andere.</p>
+                    
+                </div>
+                                                    </div>
+</article>
+
+        </div>
+              <div class="field__item">
+          
+<article class="node--landing-page node--teaser node node--landing-page--teaser article-teaser">
+        
+    
+    <a class="link-wrapper" href="/landbouwcijfers-voor-onderzoek-en-beleid" aria-label="Landbouwcijfers voor onderzoek en beleid"></a>
+
+                        <div class="article-teaser__image">
+<div class="field--media-image field field__item">
+  <div class="field--media-image">
+              <picture>
+                  <source srcset="/sites/default/files/styles/teaser_image_md/public/2026-05/111_1175.jpg?h=29234840&amp;itok=SHATBOhT 1x" media="screen and (min-width: 692px)" type="image/jpeg" width="440" height="250"/>
+              <source srcset="/sites/default/files/styles/teaser_image_sm/public/2026-05/111_1175.jpg?h=29234840&amp;itok=gigWbBrC 1x" media="screen and (min-width: 392px)" type="image/jpeg" width="640" height="362"/>
+                  <img loading="lazy" width="400" height="226" src="/sites/default/files/styles/teaser_image_xs/public/2026-05/111_1175.jpg?h=29234840&amp;itok=ewF-7Ad6" alt="" />
+
+  </picture>
+
+
+          </div>
+</div>
+</div>
+            
+    <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+    <div class="teaser-title">
+      <h3>Land­bouw­cij­fers voor on­der­zoek en beleid</h3>
+    </div>
+  </header>
+                                    <div class="article-teaser__content">
+                    <p>Landbouwcijfers Vlaanderen biedt een betrouwbaar en samenhangend overzicht van de Vlaamse landbouw, met data en inzichten voor onderzoek, beleid en maatschappelijke duiding.</p><h3>&nbsp;</h3>
+                    
+                </div>
+                                                    </div>
+</article>
+
+        </div>
+          </div>
+      </div>
+
+      </div>
+</section>
+
+      
+<section class="paragraph paragraph--spotfire paragraph--default paragraph--spotfire--default theme--default">
+  <div class="layout paragraph__layout">
+                  
+        <div class="paragraph__content-wrapper">
+      
+                    
+            <div class="paragraph__content">
+      
+<div class="field--body clearfix text-formatted field field--type-text-long">
+              <h3 class="text-align-center"><strong>Cijfer in de kijker</strong></h3><p class="text-align-center">Elke maand zetten we enkele kerncijfers extra in de kijker.<br>&nbsp; &nbsp; &nbsp;<strong>Ontdek het verhaal achter dit cijfer</strong></p>
+      </div>
+
+    </div>
+  
+                    
+
+          </div>
+    
+      
+  <div class="paragraph__attachment">
+    <div  class="spotfire-container fullscreen-paragraph-container fullscreen-paragraph-container--maximize-fullscreen">
+      <div id="thomihuj" style="height:200px"></div>
+                </div>
+  </div>
+
+      </div>
+</section>
+
+      
+<section class="paragraph paragraph--embed paragraph--default paragraph--embed--default theme--transparent">
+  <div class="layout paragraph__layout">
+                  
+    
+      
+    <div class="paragraph__attachment">
+    <div  class="fullscreen-paragraph-container">
+      
+<div class="field--embed-code clearfix text-formatted field field--type-text-long">
+              <div style="border-bottom: 4px solid #8BAE00; padding: 16px 16px 24px 16px; text-align: center;">
+  <h3>Aan de slag met Landbouwcijfers</h3>
+  <p>
+    Landbouwcijfers Vlaanderen bundelt meer dan 300 indicatoren over de Vlaamse landbouw en visserij op één plek.
+    Je vindt er snel inzicht in evoluties, sectoren en thema’s.
+    Hulp nodig om vlot te starten? Onze 
+    <a href="https://landbouwcijfers.vlaanderen.be/wegwijs-landbouwcijfers">wegwijspagina</a> zet je op weg.
+  </p>
+</div>
+      </div>
+
+          </div>
+  </div>
+  
+      </div>
+</section>
+
+  </div>
+
+        
+      </div>
+    
+    <footer class="content-footer">
+
+        
+        
+</footer>
+
+  </div>
+
+  </div>
+
+
+            </div>
+          
+        </div>
+        
+                
+                                      <div  class="sidebar page-layout__sidebar-right">
+                <div id="block-updates" class="block block-views block-views-blockupdates-updates">
+  
+      <h2>Updates</h2>
+    
+      <div class="views-element-container"><div class="view view-updates view-id-updates view-display-id-updates js-view-dom-id-a60a970e020e8f4b202cf7881d9e651a8c6ba830ac9140570cd867595de50276">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row">
+<article class="node--indicator node--update node node--indicator--update article-teaser article-update">
+    
+  
+  <a class="link-wrapper" href="/landbouw/totale-landbouw/starters-en-stoppers-de-landbouw" aria-label="Starters en stoppers in de landbouw"></a>
+
+  <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+        <div class="article-teaser__icon">
+          <span class="teaser-icon--indicator"></span>
+        </div>
+        <div class="teaser-title">
+          <h3>Star­ters en stop­pers in de landbouw</h3>
+        </div>
+        <div class="article-teaser__date"><time datetime="2026-10-02T12:00:00Z" class="datetime">02/10/2026</time>
+</div>
+      </header>
+                    </div>
+</article>
+</div>
+    <div class="views-row">
+<article class="node--indicator node--update node node--indicator--update article-teaser article-update">
+    
+  
+  <a class="link-wrapper" href="/landbouw/totale-landbouw/leeftijd-en-geslacht" aria-label="Leeftijd en geslacht"></a>
+
+  <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+        <div class="article-teaser__icon">
+          <span class="teaser-icon--indicator"></span>
+        </div>
+        <div class="teaser-title">
+          <h3>Leef­tijd en geslacht</h3>
+        </div>
+        <div class="article-teaser__date"><time datetime="2026-10-02T12:00:00Z" class="datetime">02/10/2026</time>
+</div>
+      </header>
+                    </div>
+</article>
+</div>
+    <div class="views-row">
+<article class="node--publication node--update node node--publication--update article-teaser article-update">
+    
+  
+  <a class="link-wrapper" href="/de-biologische-productie-en-consumptie-2025" aria-label="De biologische productie en consumptie in 2025"></a>
+
+  <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+        <div class="article-teaser__icon">
+          <span class="teaser-icon--publication"></span>
+        </div>
+        <div class="teaser-title">
+          <h3>De bi­o­lo­gi­sche pro­duc­tie en con­sump­tie in&nbsp;<span class="numbers">2025</span></h3>
+        </div>
+        <div class="article-teaser__date"><time datetime="2026-09-23T12:00:00Z" class="datetime">23/09/2026</time>
+</div>
+      </header>
+                    </div>
+</article>
+</div>
+    <div class="views-row">
+<article class="node--indicator node--update node node--indicator--update article-teaser article-update">
+    
+  
+  <a class="link-wrapper" href="/landbouw/fruit/wijnbouw" aria-label="Wijnbouw"></a>
+
+  <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+        <div class="article-teaser__icon">
+          <span class="teaser-icon--indicator"></span>
+        </div>
+        <div class="teaser-title">
+          <h3>Wijn­bouw</h3>
+        </div>
+        <div class="article-teaser__date"><time datetime="2026-09-22T12:00:00Z" class="datetime">22/09/2026</time>
+</div>
+      </header>
+                    </div>
+</article>
+</div>
+    <div class="views-row">
+<article class="node--indicator node--update node node--indicator--update article-teaser article-update">
+    
+  
+  <a class="link-wrapper" href="/keten/totale-keten/biolandbouw-biologische-keten" aria-label="Biolandbouw: biologische keten"></a>
+
+  <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+        <div class="article-teaser__icon">
+          <span class="teaser-icon--indicator"></span>
+        </div>
+        <div class="teaser-title">
+          <h3>Bi­o­land­bouw: bi­o­lo­gi­sche&nbsp;keten</h3>
+        </div>
+        <div class="article-teaser__date"><time datetime="2026-09-18T12:00:00Z" class="datetime">18/09/2026</time>
+</div>
+      </header>
+                    </div>
+</article>
+</div>
+    <div class="views-row">
+<article class="node--indicator node--update node node--indicator--update article-teaser article-update">
+    
+  
+  <a class="link-wrapper" href="/landbouw/totale-landbouw/biolandbouw-bedrijven" aria-label="Biolandbouw: bedrijven"></a>
+
+  <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+        <div class="article-teaser__icon">
+          <span class="teaser-icon--indicator"></span>
+        </div>
+        <div class="teaser-title">
+          <h3>Bi­o­land­bouw: bedrijven</h3>
+        </div>
+        <div class="article-teaser__date"><time datetime="2026-09-18T12:00:00Z" class="datetime">18/09/2026</time>
+</div>
+      </header>
+                    </div>
+</article>
+</div>
+    <div class="views-row">
+<article class="node--indicator node--update node node--indicator--update article-teaser article-update">
+    
+  
+  <a class="link-wrapper" href="/landbouw/totale-landbouw/biolandbouw-veestapel" aria-label="Biolandbouw: veestapel"></a>
+
+  <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+        <div class="article-teaser__icon">
+          <span class="teaser-icon--indicator"></span>
+        </div>
+        <div class="teaser-title">
+          <h3>Bi­o­land­bouw: veestapel</h3>
+        </div>
+        <div class="article-teaser__date"><time datetime="2026-09-18T12:00:00Z" class="datetime">18/09/2026</time>
+</div>
+      </header>
+                    </div>
+</article>
+</div>
+    <div class="views-row">
+<article class="node--indicator node--update node node--indicator--update article-teaser article-update">
+    
+  
+  <a class="link-wrapper" href="/landbouw/totale-landbouw/biolandbouw-areaal" aria-label="Biolandbouw: areaal"></a>
+
+  <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+        <div class="article-teaser__icon">
+          <span class="teaser-icon--indicator"></span>
+        </div>
+        <div class="teaser-title">
+          <h3>Bi­o­land­bouw: areaal</h3>
+        </div>
+        <div class="article-teaser__date"><time datetime="2026-09-18T12:00:00Z" class="datetime">18/09/2026</time>
+</div>
+      </header>
+                    </div>
+</article>
+</div>
+    <div class="views-row">
+<article class="node--indicator node--update node node--indicator--update article-teaser article-update">
+    
+  
+  <a class="link-wrapper" href="/visserij/totale-visserij/consumptie-van-visproducten" aria-label="Consumptie van visproducten"></a>
+
+  <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+        <div class="article-teaser__icon">
+          <span class="teaser-icon--indicator"></span>
+        </div>
+        <div class="teaser-title">
+          <h3>Con­sump­tie van visproducten</h3>
+        </div>
+        <div class="article-teaser__date"><time datetime="2026-09-14T12:00:00Z" class="datetime">14/09/2026</time>
+</div>
+      </header>
+                    </div>
+</article>
+</div>
+    <div class="views-row">
+<article class="node--indicator node--update node node--indicator--update article-teaser article-update">
+    
+  
+  <a class="link-wrapper" href="/landbouw/totale-landbouw/opleidingsgraad-landbouwers-land-bouw-mo-ni-rings-net-werk" aria-label="Opleidingsgraad landbouwers Land­bouw­mo­ni­to­rings­net­werk"></a>
+
+  <div class="article-teaser__content-wrapper">
+          <header class="article-teaser__header">
+        <div class="article-teaser__icon">
+          <span class="teaser-icon--indicator"></span>
+        </div>
+        <div class="teaser-title">
+          <h3>Op­lei­dings­graad land­bou­wers Landbouwmonitoringsnetwerk</h3>
+        </div>
+        <div class="article-teaser__date"><time datetime="2026-09-02T12:00:00Z" class="datetime">02/09/2026</time>
+</div>
+      </header>
+                    </div>
+</article>
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </div>
+
+
+            </div>
+                  
+      </div>
+
+      
+
+    </div>
+
+  </main>
+
+      <footer class="site-footer" role="contentinfo">
+              <div class="region region--footer">
+          <div class="container">
+            <div class="footer__content-wrapper">
+                  <nav aria-labelledby="block-doormat-2-menu" id="block-doormat-2" class="block block--menu block--menu--doormat">
+                      
+    <h2 class="visually-hidden" id="block-doormat-2-menu">Doormat</h2>
+    
+
+              
+                <ul class="menu menu--level-1">
+                    <li class="menu-item">
+        <a href="/over-ons" data-drupal-link-system-path="node/27">Over ons</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://landbouwcijfers.vlaanderen.be/wegwijs-landbouwcijfers">Weg­wijs in Landbouwcijfers</a>
+              </li>
+        </ul>
+  
+
+
+      </nav>
+<nav aria-labelledby="block-calibr8-easytheme-footer-menu" id="block-calibr8-easytheme-footer" class="block block--menu block--menu--footer">
+            
+  <h2 class="visually-hidden" id="block-calibr8-easytheme-footer-menu">Footer menu</h2>
+  
+
+    
+        
+                <ul class="menu menu--level-1">
+                    <li class="menu-item">
+        <a href="/disclaimer" data-drupal-link-system-path="node/210">Disclaimer</a>
+              </li>
+                <li class="menu-item">
+        <a href="/cookiebeleid" data-drupal-link-system-path="node/217">Cookiebeleid</a>
+              </li>
+                <li class="menu-item">
+        <a href="/privacybeleid" data-drupal-link-system-path="node/218">Privacybeleid</a>
+              </li>
+                <li class="menu-item">
+        <a href="/digitale-toegankelijkheid-wcag" data-drupal-link-system-path="node/219">Toegankelijkheid</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+
+            </div>
+          </div>
+        </div>
+            
+            <script src=https://prod.widgets.burgerprofiel.vlaanderen.be/api/v1/widget/18327bdb-cd21-4757-9e5b-095da53f3ad6/embed></script>
+    </footer>
+  
+</div>
+
+<div id="mobile-menu-background"></div>
+
+  </div>
+
+    
+    <script src="/sites/default/files/js/js_36OrluIfI6o_MTUmPQxG16Pxmt1SgqZ2VC22hsbyHxc.js?scope=footer&amp;delta=0&amp;language=nl&amp;theme=calibr8_easytheme&amp;include=eJx1kVFuxDAIRC9k1b-9DWKdiYMWG8smSff2za5WrVS5f8AbxIxIrHLrn8RLkeobCojV0WNhqSG9KXg8XjCiNH_QgCL5mPB1Vx2pA5Uad86d2zaRFSzChT3NYOVDMrvYzMAhOGeHD6PV7HI-YWfiTG45K0Iyuwtu5vGnoj0FfLlKvcel7431492GbHYtkXOO2UvQKxKNZr5KR1TjBZ24yR_wm3yAe9qeEuLdLVlpCkf8Zx6GOE5Znk9A9yhV_Bv-q6Rd" data-cookieconsent="ignore"></script>
+
+  </body>
+</html>

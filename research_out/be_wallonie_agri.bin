@@ -1,0 +1,1611 @@
+<!DOCTYPE HTML>
+<!--[if IE 8]> <html lang="fr" class="ie8" > <![endif]-->
+<!--[if IE 9]> <html lang="fr" class="ie9" > <![endif]-->
+<!--[if !IE]><!-->
+<html lang="fr" ><!--<![endif]-->
+<head><link rel="canonical" href="https://agriculture.wallonie.be/accueil" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <meta property="og:site_name" content="Agriculture en Wallonie">
+    <link rel="shortcut icon" href="/modules/spw-dtic-cg-templates/icons/favicon.ico"
+          type="image/x-icons">
+    <link rel="preconnect" href="http://webanalytics.spw.wallonie.be">
+    <link rel="preconnect" href="https://webanalytics.spw.wallonie.be">
+    <meta property="og:url" content="https://agriculture.wallonie.be/accueil"/>
+    <meta property="og:type" content="website"/>
+        <meta name="image" property="og:image" content="https://agriculture.wallonie.be/modules/spw-dtic-cg-templates/img/logo-og.jpg"/>
+        <meta name="author" content="SPW"/>
+
+    <meta property="og:updated_time" content="2026-07-06T11:07:29CEST"/>
+    <title>Accueil - Portail de l'agriculture wallonne</title>
+        <meta name="title" property="og:title" content="Agriculture en Wallonie - Portail de l'agriculture wallonne"/>
+    
+<!-- Fontawesome -->
+    
+
+
+
+<!--template:addResources type="css" resources="v4-shims.min.css"/-->
+
+    
+
+
+
+
+
+
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js" defer="true"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" defer="true"></script>
+    <![endif]-->
+
+
+
+
+<script type="application/json" id="jahia-data-ctx">{"contextPath":"","lang":"fr","uilang":"fr","siteUuid":"51aa9b1e-45a8-45a8-9cd5-ff1e16563988","wcag":true,"ckeCfg":""}</script>
+<script type="application/json" id="jahia-data-ck">{"path":"/modules/ckeditor/javascript/","lng":"fr_FR"}</script>
+<link id="staticAssetCSS0" rel="stylesheet" href="/generated-resources/e7af8232f123dd71ec7935204c58b686.min.css" media="screen" type="text/css"/>
+<link id="staticAssetCSS1" rel="stylesheet" href="/generated-resources/53e544aef6395e48bbac1ab2efb582.min.css" media="print" type="text/css"/>
+<script id="staticAssetJavascript0" src="/generated-resources/5d3ecd3cd59c749aa6f77a13ba411d22.min.js"  ></script>
+
+<style type="text/css">
+:root {
+  --color-attention-bg: #70866f;
+--color-attention-fg: #3dae34;
+}
+
+.path-acteurs-et-partenaires main .cta--category .inner {
+position:unset;
+}
+
+main .cta--category {
+  height: 237px;
+}
+
+.path-acteurs-et-partenaires main .cta--category {
+height: 200px;
+}
+
+.template_page-intermediaire-avec-menu-vig .middle-navigation-item h2 {
+  font-size:1.2rem;
+}
+
+.typespwcgnt_actualite .contentWrapper img.img-fluid, .typespwcgnt_publication .contentWrapper img.img-fluid, .typespwgwnt_presse .contentWrapper img.img-fluid, .typespwgwnt_discours .contentWrapper img.img-fluid, .typespwgwnt_ordreDuJour .contentWrapper img.img-fluid {
+  object-fit:cover;
+  max-height:375px;
+}
+
+/*.middle-navigation-item {
+  flex: 1 1 360px;
+}  */
+
+.middle-navigation-item>ul>li {
+  padding-right: 15px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+/********FORM*******/
+.form-control {
+border-radius: unset;
+}
+
+group input, form .form-group textarea {
+min-height: 150px;
+}
+
+span.help-block.ng-binding.ng-scope {
+    color: red;
+}
+
+label.control-label .fa.fa-asterisk:before {
+    content: "*";
+    color: #f00;
+    margin-left: .2rem;
+    font-size: .875rem;
+    line-height: 14px;
+}
+
+/*********************** HOME *************************/
+
+.Meteo{
+  margin-left: 15%;
+}  
+
+.home #hero {
+    position: relative;
+    background: transparent url("/files/live/sites/agriculture/files/accueil/ban.jpg");
+        background-image: url("/files/live/sites/agriculture/files/accueil/ban.jpg");
+        background-size: auto;
+     background-size: cover;
+    padding-top: 230px; /** 430 **/
+   margin-bottom: 5px; /** 75 **/
+}
+main a[href^="http"]:not([class])::before {
+display:none;
+}
+header#header #brand .navbar-brand {
+ align-items: center;
+}
+
+@media (max-width: 767px) {
+  #top-menu {
+    display: none;
+  }
+  
+  .template_home #hero {
+    display: none;
+  }
+  
+  .template_home .row > .col-md-4 > .Meteo {
+    margin-left: 1rem;
+  }
+  
+  .template_home .row > .col-md-4 > p.spacer {
+    display: none;
+  }
+}
+/*********************** MLM *************************/
+
+.link-dem {background-color:#BEE8CB; padding:10px;}
+
+/********* ACTU ********/
+.typespwcgnt_actualite .contentWrapper img.img-fluid,
+.typespwcgnt_publication .contentWrapper img.img-fluid,
+.typespwgwnt_presse .contentWrapper img.img-fluid,
+.typespwgwnt_discours .contentWrapper img.img-fluid,
+.typespwgwnt_ordreDuJour .contentWrapper img.img-fluid {
+ max-height: 465px;
+ object-fit: cover;
+ object-position: 100% -130px;
+}
+
+@media (max-width: 767px) {
+  .typespwcgnt_actualite .contentWrapper img.img-fluid,
+.typespwcgnt_publication .contentWrapper img.img-fluid,
+.typespwgwnt_presse .contentWrapper img.img-fluid,
+.typespwgwnt_discours .contentWrapper img.img-fluid,
+.typespwgwnt_ordreDuJour .contentWrapper img.img-fluid {
+    object-position: 100% 18px;
+  }
+}
+
+main .contentWrapper blockquote {
+ letter-spacing: unset;
+ font-size: 1.50rem;
+}
+
+
+/* --- Pages contenu simple --- */
+
+/* Block metadata */
+.template_simple .contentinfos {
+  border: none;
+  margin: 0;
+  padding: 0 5px;
+}
+.template_simple .contentinfos h3 {
+  display: none;
+}
+.template_simple .contentinfos dl {
+  display: flex;
+}
+
+/* --- Pages intermediaires --- */
+
+/* Display on 3 columns */
+.template_page-intermediaire-avec-menu-vig .middle-navigation
+  > .middle-navigation-item {
+  flex: 1 1 25%
+}
+
+/* Hide child page descriptions in menus */
+.template_page-intermediaire-avec-menu-vig .middle-navigation
+  > .middle-navigation-item > ul > li > .inner-description {
+  display: none;
+}
+/********* FORMS ***********/
+
+group input, form .form-group textarea {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+/********** NOSTRA ************/
+
+.typeioddant_procedure h1 {
+    max-width: 85%
+}
+
+@media only screen and (max-width: 991px) {
+    .typeioddant_procedure h1 {
+        max-width:100%
+    }
+}
+
+.typeioddant_procedure .nostraContentWrapper {
+    display: flex
+}
+
+.typeioddant_procedure .contentWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+@media only screen and (max-width: 991px) {
+    .typeioddant_procedure .contentWrapper {
+        display:block;
+        position: relative
+    }
+
+    .typeioddant_procedure .typeioddant_procedure .contentWrapper,.node--type-acteur-et-institution .typeioddant_procedure .contentWrapper,.typespwcgnt_actualite .typeioddant_procedure .contentWrapper,.typespwgwnt_presse .typeioddant_procedure .contentWrapper,.typespwgwnt_ordreDuJour .typeioddant_procedure .contentWrapper,.typespwgwnt_discours .typeioddant_procedure .contentWrapper,.typespwcgnt_agenda .typeioddant_procedure .contentWrapper,.path-faqs .typeioddant_procedure .contentWrapper {
+        display: block;
+        position: relative;
+        padding-bottom: 120px
+    }
+
+    .typeioddant_procedure .contentWrapper aside {
+        margin-left: 0
+    }
+}
+æ
+.typeioddant_procedure .contentWrapper .content {
+    padding-right: 5remæ
+}
+
+@media only screen and (max-width: 991px) {
+    .typeioddant_procedure .contentWrapper .content {
+        padding-right:0
+    }
+}
+
+.typeioddant_procedure .contentWrapper .content .tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+@media only screen and (max-width: 991px) {
+    .typeioddant_procedure .contentWrapper .content .tabs {
+        margin-left:-1rem;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start
+    }
+}
+
+.typeioddant_procedure .contentWrapper .content .tabs a {
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+    text-align: center;
+    color: #000;
+    border-right: 1px #000 solid;
+    line-height: 2rem
+}
+
+@media only screen and (max-width: 991px) {
+    .typeioddant_procedure .contentWrapper .content .tabs a {
+        -webkit-box-flex:unset;
+        -ms-flex: unset;
+        flex: unset;
+        padding: 0 1rem;
+        margin-bottom: 5px
+    }
+}
+
+.typeioddant_procedure .contentWrapper .content .tabs a:last-of-type {
+    border: none
+}
+
+.typeioddant_procedure .contentWrapper .content h2,.typeioddant_procedure .contentWrapper .content .h2 {
+    margin-top: 3rem
+}
+
+.typeioddant_procedure .contentWrapper .content .forms ul,.typeioddant_procedure .contentWrapper .content .liens ul {
+    padding: 0
+}
+
+.typeioddant_procedure .contentWrapper .content .forms ul li,.typeioddant_procedure .contentWrapper .content .liens ul li {
+    padding: 0;
+    margin-bottom: 1rem
+}
+
+.typeioddant_procedure .contentWrapper .content .forms ul li:before,.typeioddant_procedure .contentWrapper .content .liens ul li:before {
+    content: none
+}
+
+.typeioddant_procedure .contentWrapper .content .forms ul li.e-signature img.e-signature-img,.typeioddant_procedure .contentWrapper .content .liens ul li.e-signature img.e-signature-img {
+    width: 30px;
+    margin-left: 7px
+}
+
+.typeioddant_procedure .contentWrapper .content .forms ul li img.german-img,.typeioddant_procedure .contentWrapper .content .liens ul li img.german-img {
+    width: 30px;
+    margin-left: 7px
+}
+
+.typeioddant_procedure .contentWrapper .content .contact {
+    -webkit-box-shadow: 0 3px 20px 0 rgba(0,6,9,.14);
+    box-shadow: 0 3px 20px 0 rgba(0,6,9,.14);
+    padding: 30px 45px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+@media only screen and (max-width: 991px) {
+    .typeioddant_procedure .contentWrapper .content .contact {
+        display:block
+    }
+}
+
+.typeioddant_procedure .contentWrapper .content .contact ul {
+    margin: 0;
+    padding: 0
+}
+
+.typeioddant_procedure .contentWrapper .content .contact ul li {
+    padding: 0;
+    margin-bottom: 1.5rem
+}
+
+.typeioddant_procedure .contentWrapper .content .contact ul li:before {
+    content: none
+}
+
+.typeioddant_procedure .contentWrapper .content .contact>div {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 40%;
+    flex: 1 1 40%;
+    min-width: 40%;
+    flex-basis: auto
+}
+
+@media only screen and (max-width: 991px) {
+    .typeioddant_procedure .contentWrapper .content .contact>div:first-of-type {
+        margin-right:0
+    }
+}
+
+.typeioddant_procedure .contentWrapper .content .contact>div h3,.typeioddant_procedure .contentWrapper .content .contact>div .h3 {
+    margin-top: 1rem
+}
+
+.typeioddant_procedure .contentWrapper .content .contact>div:first-of-type {
+    margin-right: 2rem
+}
+
+.typeioddant_procedure .contentWrapper .content .contact>div:nth-of-type(2) ul {
+    margin: 1.5rem 0
+}
+
+.typeioddant_procedure .contentWrapper .content .contact>div:nth-of-type(2) ul li {
+    margin: 0 0 .5rem
+}
+
+.typeioddant_procedure .contentWrapper .content .contact>div:nth-of-type(2) ul li a {
+    padding-left: 1.5rem;
+    line-height: 1.3rem;
+    display: block
+}
+
+.typeioddant_procedure .contentWrapper .content .contact>div:nth-of-type(2) ul li a:before {
+    position: absolute;
+    font-family: "Font Awesome 5 Free",serif;
+    font-weight: 700;
+    content: "";
+    font-size: .8rem;
+    margin-right: .7rem;
+    color: var(--color-pink);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    left: 0
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact {
+    margin: 2rem 0
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact div {
+    display: block;
+    word-wrap: break-word;
+    margin-bottom: .8rem;
+    position: relative;
+    line-height: 1.3rem
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact div a {
+    word-break: break-all
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact div:not(.first) {
+    padding-left: 1.5rem
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact div:not(.first):before {
+    position: absolute;
+    font-family: "Font Awesome 5 Free",serif;
+    font-weight: 700;
+    content: " ";
+    font-size: .8rem;
+    margin-right: .7rem;
+    color: var(--color-pink);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    left: 0
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact div:not(.first).website:before {
+    font-weight: 700;
+    content: ""
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact div:not(.first).mail:before {
+    content: ""
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact div:not(.first).phone:before {
+    content: "";
+    font-weight: 700
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact div:not(.first).address {
+    margin-bottom: 0
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact div:not(.first).address:before {
+    content: ""
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact div:not(.first).last {
+    margin-bottom: 0
+}
+
+.typeioddant_procedure .contentWrapper .content .contact .item-contact div:not(.first).last:before {
+    content: ""
+}
+
+.typeioddant_procedure .contentWrapper .content .update {
+    margin-top: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #000
+}
+
+.typeioddant_procedure .contentWrapper .content .update div {
+    margin-left: .5rem
+}
+
+.typeioddant_procedure .contentWrapper .content .update div time {
+    color: #000
+}
+
+.typeioddant_procedure .contentWrapper .content .vote {
+    border-top: 1px var(--color-light) solid;
+    padding: 2rem 0 0;
+    margin: 2rem 0 0;
+    line-height: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.typeioddant_procedure .contentWrapper .content .vote .vud-widget-thumbs {
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.typeioddant_procedure .contentWrapper .content .vote .vote-current-score,.typeioddant_procedure .contentWrapper .content .vote .reset {
+    display: none
+}
+
+.typeioddant_procedure .contentWrapper .content .vote .down-score,.typeioddant_procedure .contentWrapper .content .vote .up-score {
+    border: none
+}
+
+.typeioddant_procedure .contentWrapper .content .vote .down-score a,.typeioddant_procedure .contentWrapper .content .vote .up-score a {
+    display: block;
+    width: 15px;
+    height: 20px;
+    font-family: "Font Awesome 5 Free",serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0 0 0 7px;
+    text-decoration: none;
+    font-size: .9375rem;
+    background: none
+}
+
+.typeioddant_procedure .contentWrapper .content .vote .down-score a.inactive,.typeioddant_procedure .contentWrapper .content .vote .up-score a.inactive {
+    color: #d2d2d2
+}
+
+.typeioddant_procedure .contentWrapper .content .vote .down-score a:after,.typeioddant_procedure .contentWrapper .content .vote .up-score a:after {
+    content: ""
+}
+
+.typeioddant_procedure .contentWrapper .content .vote .down-score a.down:after,.typeioddant_procedure .contentWrapper .content .vote .up-score a.down:after {
+    content: ""
+}
+
+.typeioddant_procedure .contentWrapper .content .vote .down-score a div,.typeioddant_procedure .contentWrapper .content .vote .up-score a div {
+    display: none
+}
+
+.typeioddant_procedure .contentWrapper aside {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 33%;
+    flex: 1 1 33%;
+    min-width: 30%;
+    margin-left: 30px
+}
+
+@media only screen and (max-width: 991px) {
+    .typeioddant_procedure .contentWrapper aside {
+        margin-top:6rem
+    }
+}
+
+.typeioddant_procedure .contentWrapper aside h2,.typeioddant_procedure .contentWrapper aside .h2 {
+    font-size: 1.25rem
+}
+
+.typeioddant_procedure .contentWrapper aside>div {
+    margin-bottom: 3rem
+}
+
+.typeioddant_procedure .contentWrapper aside>div ul {
+    padding: 0
+}
+
+.typeioddant_procedure .contentWrapper aside>div ul li {
+    padding: 0;
+    margin-bottom: 1.5rem
+}
+
+.typeioddant_procedure .contentWrapper aside>div ul li:before {
+    content: none
+}
+
+.typeioddant_procedure .contentWrapper aside>div.publics {
+    -webkit-box-shadow: 0 3px 20px 0 rgba(0,6,9,.14);
+    box-shadow: 0 3px 20px 0 rgba(0,6,9,.14);
+    padding: 30px 100px 30px 30px;
+    position: relative
+}
+
+.typeioddant_procedure .contentWrapper aside>div.publics:after {
+    position: absolute;
+    right: 45px;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 210px;
+    width: 72px;
+    background: rgba(0,0,0,0) url("/modules/spw-dtic-cg-templates/img/perso.png") no-repeat
+}
+
+@media only screen and (max-width: 991px) {
+    .typeioddant_procedure .contentWrapper aside>div.publics:after {
+        height:150px;
+        background-size: contain;
+        right: 25px
+    }
+}
+
+.typeioddant_procedure .contentWrapper aside>div.publics h2,.typeioddant_procedure .contentWrapper aside>div.publics .h2 {
+    margin: 0 0 .5rem
+}
+
+.typeioddant_procedure .contentWrapper aside>div.publics ul {
+    margin: 0
+}
+
+.typeioddant_procedure .contentWrapper aside>div.publics ul li {
+    margin: 0;
+    font-style: italic;
+    line-height: 1.2rem
+}
+
+/*********************** 42180 *************************/
+
+.pageTitle {
+    margin-top: 20px;
+}
+.form-group {
+    margin-top: 25px;
+}
+.modif {
+    border-left: 2px solid #4472c4;
+    padding-left: 10px;
+}
+
+
+
+/* Foncier Agricole */
+.path-foncier a.menuBlock-toggler-button.m-3:after {
+    content: 'Foncier';
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  main .cta--category .inner h2 {
+    top: 10%;
+  }
+}
+
+/* Olivier HERMIA 42180 - BOSA ACCESSIBILITY requirements */
+
+p {
+  color: #191919 !important;
+}
+
+.oh-left {
+  padding: 5px 15px 15px 0px;
+}
+
+.oh-right {
+  padding: 5px 0px 15px 15px;
+}
+
+header#header #top--menu .btn.btn-icon.btn-wallonie {
+  background-color: #fff !important;
+  border: 1px solid #4b8500 !important;
+  color: #4b8500 !important;
+}
+
+section#highlight nav ul li a {
+  color: #4b8500 !important;
+}
+
+.timeNews {
+  color: #3a6502 !important;
+}
+
+.btn .btn-default .btn-icon a {
+  color: #fff !important;
+}
+
+main a {
+  color: #4b8500;
+}
+
+[id*="cgSearchUIApp_"] .search-form button {
+  top:15px;
+}
+
+
+/*Formulaire accès SIGEC*/
+
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 * {
+  padding:0;
+  margin:0;
+  line-height: 1rem;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .uib-datepicker-popup * {
+  padding:unset;
+  margin:unset;
+  line-height: unset;  
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 h2 {
+  color:var(--color-medium-pink);
+  margin-bottom:5px;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 h3 {
+  color:var(--color-pink);
+  margin-bottom:5px;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 h4 {
+  color:#55b670;
+  margin-bottom:5px;
+  text-decoration: underline;
+}
+
+
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 label {
+  max-width: 100%;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .checkbox label,
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 ff-radios label {
+ font-weight:normal;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .form-group {
+  margin-bottom:20px;
+}
+
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .switch {
+  height:20px;
+  margin-top: 10px;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 label input {
+  width:20px;
+  position: relative;
+  bottom: -11px;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .glyphicon {
+	--_fa-family: var(--fa-family,var(--fa-style-family,"Font Awesome 7 Pro"));
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: var(--fa-display,inline-block);
+	font-family: var(--_fa-family);
+	font-feature-settings: normal;
+	font-style: normal;
+	font-synthesis: none;
+	font-variant: normal;
+	font-weight: var(--fa-style,900);
+	line-height: 1;
+	text-align: center;
+	text-rendering: auto;
+	width: var(--fa-width,1.25em);
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .glyphicon:before {
+  content:var(--fa);
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .glyphicon-chevron-left:before {
+  --fa: "\f053";
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .glyphicon-chevron-right:before {
+
+	--fa: "\f054";
+}
+
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 label input[id^="engagement"],
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 label input[id^="thematiques"]{
+	width: 24px;
+	margin-right: 5px;
+	bottom: unset;
+	flex: 0 0 1.5em;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 fieldset.form-group > legend.control-label {
+  float:none;
+}
+
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .btn {
+   line-height:40px;
+   padding: 0 20px;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .uib-datepicker-popup .btn {
+   line-height:unset;
+   padding: 0 10px;
+   margin:1px !important;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .uib-datepicker-popup td {
+  width:40px;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .uib-datepicker-popup .text-info {
+color:black !important;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .datepicker-popup-position .input-group-btn button {
+  width:40px;
+  padding:2px;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .checkbox label[for^="engagement"] {
+  margin:10px 5px;
+  text-align: justify;
+  display:flex;
+  align-items: flex-start;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .checkbox label[for="engagements_eng-rgpd"] {
+	display: grid;
+	grid-template: "input text span" auto "input main span" 1fr / 30px 1fr 1px;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .checkbox label[for="engagements_eng-rgpd"] input {
+  grid-area: input;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .checkbox label[for^="thematiques"] {
+  display:flex;
+  align-items: center;
+}
+
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 input.ng-invalid,
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 textarea.ng-invalid{
+  border:1px solid red;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 input[type='checkbox'].ng-invalid,
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 input[type='radio'].ng-invalid{
+  box-shadow: 0px 0px 0px 1px rgba(255,0,0,1)
+}
+
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 p[id*="error"] {
+  color: red !important;
+  margin-top:5px;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .fa-asterisk,
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .fa-asterisk:before {
+  color: red;
+  font-size:0.5rem;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 .help-block {
+  margin-top:5px;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 p {
+  max-width: 83.33333333%;
+}
+#formFactory8bdbcefb-b060-4c0b-bfd0-a926ca851826_1d1d044e-0b79-4523-bb01-bd9d90c7f362 button:disabled {
+  background: lightgrey !important;
+}
+/* Corrections 08/2026 - Formulaire accès MyOWD*/
+ff-input.ng-scope:nth-child(44) .fa-asterisk,
+ff-input.ng-scope:nth-child(42) .fa-asterisk,
+ff-input.ng-scope:nth-child(18) .fa-asterisk,
+ff-input.ng-scope:nth-child(22) .fa-asterisk {
+  display:none;
+}
+#content-display_0_2_copy_02_body h2::after,
+#content-display_0_2_copy_11_body h3::after,
+#content-display_0_2_copy_09_body > div > p::after,
+#content-display_0_2_copy_04_body > div > p::after {
+  content:" *";
+  color:red;
+}
+
+/**** mavan DIGISERV-224973 ****/
+/************************ CSS des scripts MLM ******************************/
+#table-of-contents {
+    width: 100%;
+    top: 0;
+    transition: top 0.3s;
+    padding-bottom: 10px;
+    margin-top: -20px;
+}
+
+#table-of-contents ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#table-of-contents ul li {
+    display: inline;
+}
+
+#table-of-contents ul li:not(:last-child):after {
+    content: "|";
+    margin: 0 5px;
+}
+
+#table-of-contents ul:before {
+    content: "Dans cette page : ";
+    font-weight: bold;
+}
+
+#table-of-contentsH2::before {
+    content: "Dans cette page";
+    font-weight: bold;
+    /* margin-bottom: 10px; Ajustez la marge selon vos préférences */
+}
+
+.sticky {
+    position: fixed;
+    top: 20;
+    background: #F5FBEC;
+    width: 70%!important;
+    z-index: 1000;
+    padding-left: 10px;
+    margin-top;
+    10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #f3f3f3;
+    z-index: 1001;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: green;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+@media (max-width: 911px) {
+    #table-of-contents,
+    #table-of-contentsH2 {
+        float: none;
+        display: block;
+        // padding: 10px;
+        position: relative;
+        z-index: 1;
+        clear: both;
+        //padding: 40px 30px;
+        box-shadow: none;
+        // margin : 10px;
+        // background:white;
+    }
+}
+
+.boite-verte {
+    background: #c9eec7;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    padding: 30px 40px;
+}
+
+
+
+</style>
+<style type="text/css" media="print">
+
+
+</style>
+
+<script type="text/javascript">
+        $(document).ready(function() {
+            if ($('.highlight--wrapper').length) {
+                var type = "";
+                var hasUrl = '';
+                var name = '';
+                var target = '_self';
+
+                // Redirection automatique si une seule catÃ©gorie est active et pas dÃ©jÃ  sur la bonne URL
+                if (false) {
+                    var singleType = 'actualites';
+                    var currentUrl = window.location.href;
+                    if (!currentUrl.includes("?type=" + singleType)) {
+                        // Redirection sans hash pour Ã©viter lâancre
+                        window.location.replace("?type=" + singleType);
+                        return;
+                    }
+                }
+
+                if (typeof type !== 'undefined' && (type != "all" || false) && type != "concours") {
+                    if (type === "all" && false) {
+                        // Forcer type en JavaScript Ã  la catÃ©gorie unique active
+                        type = 'actualites';
+                    }
+                    // VÃ©rifier qu'une catÃ©gorie a bien Ã©tÃ© attribuÃ©e et forcer l'ajout du bouton
+                    if (type !== 'all' && type !== '') {
+                        switch (type) {
+                            case 'actualites':
+                                hasUrl = '/home/actualites.html';
+                                name = 'Toutes les actualités';
+                                title = 'Toutes les actualités';
+                                if (hasUrl && hasUrl !== '') {
+                                    $('.alaune').append('<a href="' + hasUrl + '" target="' + target + '" class="btn btn-default" title="' + title + '">' + name + '</a>');
+                                }
+                                break;
+                            case 'evenements':
+                                hasUrl = '/home/agenda-1.html';
+                                name = 'Tous les événements';
+                                title = 'Tous les événements';
+                                if (hasUrl && hasUrl !== '') {
+                                    $('.alaune').append('<a href="' + hasUrl + '" target="' + target + '" class="btn btn-default" title="' + title + '">' + name + '</a>');
+                                }
+                                break;
+                            case 'publications':
+                                hasUrl = '/home/publications.html';
+                                name = 'Toutes les publications';
+                                title = 'Toutes les publications';
+                                if (hasUrl && hasUrl !== '') {
+                                    $('.alaune').append('<a href="' + hasUrl + '" target="' + target + '" class="btn btn-default" title="' + title + '">' + name + '</a>');
+                                }
+                                break;
+                            case 'videos':
+                                hasUrl = '';
+                                name = 'Toutes les vidéos';
+                                title = 'Toutes les vidéos';
+                                if (hasUrl && hasUrl !== '') {
+                                    $('.alaune').append('<a href="' + hasUrl + '" target="' + target + '" class="btn btn-default" title="' + title + '">' + name + '</a>');
+                                }
+                                break;
+                            case 'communiques':
+                                hasUrl = '/home/communiques.html';
+                                name = 'Tous les communiqués de presse';
+                                title = 'Tous les communiqués de presse';
+                                if (hasUrl && hasUrl !== '') {
+                                    $('.alaune').append('<a href="' + hasUrl + '" target="' + target + '" class="btn btn-default" title="' + title + '">' + name + '</a>');
+                                }
+                                break;
+                            case 'discours':
+                                hasUrl = '';
+                                name = 'Tous les discours';
+                                title = 'Tous les discours';
+                                if (hasUrl && hasUrl !== '') {
+                                    $('.alaune').append('<a href="' + hasUrl + '" target="' + target + '" class="btn btn-default" title="' + title + '">' + name + '</a>');
+                                }
+                                break;
+                            case 'ordresdujour':
+                                hasUrl = '';
+                                name = 'Tous les ordres du jour';
+                                title = 'Tous les ordres du jour';
+                                if (hasUrl && hasUrl !== '') {
+                                    $('.alaune').append('<a href="' + hasUrl + '" target="' + target + '" class="btn btn-default" title="' + title + '">' + name + '</a>');
+                                }
+                                break;
+                            case 'publicationsGW':
+                                hasUrl = '';
+                                name = 'Toutes les publications';
+                                title = 'Toutes les publications';
+                                if (hasUrl && hasUrl !== '') {
+                                    $('.alaune').append('<a href="' + hasUrl + '" target="' + target + '" class="btn btn-default" title="' + title + '">' + name + '</a>');
+                                }
+                                break;
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+<link rel="stylesheet"
+          media="all"
+          href="//cdn.jsdelivr.net/npm/@spw-ds/spw-stencil-library@1.19.0/dist/spw-stencil-library/spw-stencil-library.css">
+
+<script type="module"
+            src="//cdn.jsdelivr.net/npm/@spw-ds/spw-stencil-library@1.19.0/dist/spw-stencil-library/spw-stencil-library.esm.js">
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/orejime@3.0.2/dist/orejime-standard-fr.js"></script>
+
+<script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const ul = document.querySelector("#footer > div.bottom--footer > div > div > div.col-lg-7 > ul");
+
+                if (ul) {
+                    const li = document.createElement("li");
+
+                    const a = document.createElement("a");
+                    a.href = "#";
+                    a.textContent = "🍪";
+                    a.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        if (typeof orejime !== "undefined") {
+                            orejime.prompt();
+                        } else {
+                            console.warn("Orejime n'est pas chargÃ©.");
+                        }
+                    });
+
+                    li.appendChild(a);
+                    ul.insertBefore(li, ul.firstChild);
+                } else {
+                    console.warn("Le sÃ©lecteur du sous-footer n'a pas Ã©tÃ© trouvÃ©. (uniquement CG)");
+                }
+            });
+        </script>
+    
+<script>
+            window.dataLayer = window.dataLayer || [];
+            function pushOrejimeToDataLayer(contents, source) {
+                const flat = {};
+                const maps = [
+                    contents?.consents,
+                    contents?.purposes,
+                    contents?.apps,
+                    contents
+                ].filter(Boolean)[0];
+
+                if (maps && typeof maps === 'object') {
+                    Object.entries(maps).forEach(([key, val]) => {
+                        const v = (typeof val === 'boolean') ? val
+                            : (val && typeof val === 'object' && (
+                                val.enabled === true || val.accepted === true
+                            ));
+                        flat[`consent_`] = !!v;
+                    });
+                }
+                // ICI on setup un cookie pour le dataLayer mais qui n'apparaÃ®t pas dans le modal de Orejime (demande de Sebastien)
+                //const hiddenKey = 'strictly_necessary_cookie';
+                //const hiddenValue = true;
+                // ICI le nom de l'event dans le DataLayer
+                const eventName = 'cookie_consent_level_submit';
+                // on "aplatit" ton objet contents pour l'injecter directement dans lâobjet du dataLayer
+                const cookieValues = Object.fromEntries(
+                    Object.entries(contents).map(([key, value]) => [key.replace(/-/g, '_'), value])
+                );
+                // On push le cookie dans le dataLayer
+                window.dataLayer.push({
+                    event: eventName,
+                    ...cookieValues,
+                    //[hiddenKey]: hiddenValue,
+                });
+            }
+
+            // Decode HTML entities produced by fn:escapeXml so JS strings display correctly
+            (function () {
+                window._decodeHTML = function (s) {
+                    var el = document.createElement('textarea');
+                    el.innerHTML = s;
+                    return el.value;
+                };
+            })();
+            window.orejimeConfig = {
+                privacyPolicyUrl:   
+                                            '/home/vie-privee.html',
+                                        
+
+                purposes: [
+                    {
+                        id: 'strictly_necessary_cookie',
+                        title: "Cookies strictement nécessaires",
+                        description: "L’utilisation de ces cookies est indispensable pour vous permettre de naviguer sur ce site et d’accéder à certaines fonctionnalités de base. Ils assurent notamment une connexion correcte et sécurisée. Ces cookies sont placés dès que vous accédez au site.",
+                        isMandatory: true,
+                        isExempt: false,
+                        default: true,
+                        runsOnce: true
+                    },
+
+                    {
+                        id: 'functionality_cookie',
+                        title: "Cookies de fonctionnalité",
+                        description: "Ces cookies permettent d’améliorer et de personnaliser les fonctionnalités du site mais ils ne sont pas absolument nécessaires. Ces cookies ne sont utilisés que si vous consentez à leur placement.",
+                        isMandatory: false,
+                        isExempt: false,
+                        default: false,
+                        runsOnce: true
+                    },
+
+                    {
+                        id: 'performance_cookie',
+                        title: "Cookies de performance",
+                        description: "Ces cookies nous permettent de mesurer et d’améliorer les performances de notre site Web. Toutes les informations collectées par ces cookies sont agrégées et anonymisées. Ces cookies ne sont utilisés que si vous consentez à leur placement.",
+                        isMandatory: false,
+                        isExempt: false,
+                        default: false,
+                        runsOnce: true
+                    },
+
+                    //     {
+                    //         id: 'advertising_cookie',
+                    //         title: 'advertising_cookie',
+                    //         description: advertising_cookie',
+                    //         isMandatory: false,
+                    //         isExempt: false,
+                    //         default: false,
+                    //         runsOnce: true
+                    //     },
+                ],
+                forceModal: false,
+                forceBanner: false,
+
+                translations: {
+                    banner: {
+                        accept: "Accepter tous les cookies",
+                        decline: "N’accepter que les cookies essentiels",
+                        configure: "Configurer les cookies",
+                        description: window._decodeHTML(`Nous utilisons des cookies et technologies similaires pour assurer le bon fonctionnement de notre site, mesurer son audience, personnaliser votre expérience et diffuser des contenus pertinents.\nCertains cookies sont strictement nécessaires au fonctionnement du site et ne peuvent pas être désactivés.\nD’autres, optionnels, ne seront déposés qu’après votre consentement.\nVous pouvez à tout moment accepter tous les cookies, refuser ceux qui ne sont pas essentiels ou personnaliser vos choix.\nMerci de lire notre {privacyPolicy}
+                     
+                     `),
+                        privacyPolicyLabel: "politique de confidentialité"
+                    },
+                    modal: {
+                        title: "Les informations que nous collectons",
+                        description: window._decodeHTML(`Ici, vous pouvez voir et personnaliser les informations que nous collectons sur vous.\nPour en savoir plus, merci de lire notre\nMerci de lire notre {privacyPolicy}
+                            
+                        `),
+                        save: "Enregistrer les modifications",
+                        acceptAll: "Tout accepter",
+                        declineAll: "Tout refuser",
+                    },
+                    purpose: {
+                        enabled: "Activé",
+                        disabled: "Désactivé",
+                        mandatory: "toujours requis",
+                    }
+                },
+
+                orejimeElement: '#orejime',
+                cookie: {
+                    name: 'orejime_spw',
+                    duration: 365,
+                    domain: location.hostname,
+                    sameSite: 'strict',
+                    stringify: (contents) => {
+                        try { pushOrejimeToDataLayer(contents, 'write'); } catch(e){}
+                        return JSON.stringify(contents);
+                    },
+                    parse: (cookie) => {
+                        try { return JSON.parse(cookie); } catch(e){ return null; }
+                    }
+                }
+            };
+
+        </script>
+    
+<script>
+            if (window.Orejime && window.orejimeConfig) {
+                Orejime.init(window.orejimeConfig);
+            }
+            (function initialPush(){
+                try {
+                    const name = window.orejimeConfig.cookie?.name || 'orejime';
+                    const raw = document.cookie.split('; ')
+                        .find(r => r.startsWith(name + '='))?.split('=')[1];
+                    if (raw) {
+                        const parsed = window.orejimeConfig.cookie.parse(decodeURIComponent(raw));
+                        if (parsed) pushOrejimeToDataLayer(parsed, 'init');
+                    }
+                } catch(e){}
+            })();
+
+        </script>
+    
+<script type="application/json" id="jahia-data-aggregatedjs">{"scripts":["/modules/jquery/javascript/jquery-3.7.1.min.js","/modules/assets/javascript/jquery.jahia.min.js","/modules/assets/javascript/jquery-ui.min.js","/modules/piwik/javascript/matomoTagManagerProd.js"]}</script>
+
+</head>
+
+<body class="typejnt_page
+path-home homepage home
+template_home
+">
+
+
+
+
+
+
+
+
+
+
+<header id="header">
+    <div class="container nosqueeze  header ">
+        <div id="top--menu">
+            
+
+
+
+
+<nav id="top-menu" class="top-menu">
+    
+
+
+
+
+<ul class="border--bottom">
+        <li data-main="/sites/agriculture/home/" data-path="/sites/agriculture/home/acteurs-et-partenaires/" class="profile-link ">
+                            <a href="/home/acteurs-et-partenaires.html" target="">Acteurs et partenaires</a>
+                        </li>
+                    <li data-main="/sites/agriculture/home/" data-path="/sites/agriculture/home/centre-de-documentation/" class="profile-link ">
+                            <a href="/centre-de-documentation" target="">Centre de documentation</a>
+                        </li>
+                    <li data-main="/sites/agriculture/home/" data-path="/sites/agriculture/home/formulaire-de-contact/" class="profile-link ">
+                            <a href="/home/formulaire-de-contact.html" target="">Formulaire de contact</a>
+                        </li>
+                    </ul></nav><div>
+                <a href="#" class="btn btn-grey search"><i class="fas fa-search"><span
+                        class="sr-only sr-only-focusable">Recherche</span></i></a>
+                <a href="https://www.wallonie.be" target="_blank" rel="nofollow noopener"
+                       class="btn btn-grey btn-icon btn-accent-color btn-wallonie">Wallonie.be</a>
+                <a href="https://monespace.wallonie.be/" target="_blank" rel="nofollow noopener"
+                       class="btn btn-default btn-icon "><i class="fas fa-user-circle"></i>Mon Espace</a>
+                </div>
+        </div>
+        <div id="brand">
+            <a class="navbar-brand" href="/accueil">
+                            <img class="visual"
+                                         src="/modules/spw-dtic-cg-core/img/coq_68x73.png"
+                                         srcset="/modules/spw-dtic-cg-core/img/coq_47x50.png 767w,
+                                                 /modules/spw-dtic-cg-core/img/coq_68x73.png 768w"
+                                         alt="Wallonie">
+                                <div class="siteBrand">
+                                    <div class="siteBrandText">Portail de l'agriculture wallonne</div>
+                                    <div class="siteBrandSubText"></div>
+                                </div>
+
+                            </a>
+                    <div class="search-wrapper">
+                        <form method="post" name="searchForm" action="/home/search.html" id="searchForm" class="search-form search-form--small" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="agriculture"/>
+    <input onblur="if(this.value=='')this.value='Que cherchez-vous ?';" onfocus="if(this.value=='Que cherchez-vous ?')this.value='';" name="src_terms[0].term" id="searchTerm" type="text" class="text-input" aria-label="Critère de recherche"  value="Que cherchez-vous ?"/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+<input type="hidden" name="src_terms[0].match" value="all_words"/>
+<input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+<input type="hidden" name="src_sites.values" value="agriculture"/><input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/><button aria-label="Lancer la recherche"><i class="fas fa-search"></i></button>
+    </form><br class="clear"/></div>
+                <div class="socials">
+    <a href="https://www.instagram.com/WallonieBE/" target="_blank" alt="instagram"
+               rel="nofollow noopener"><i class="fab fa-instagram"><span class="sr-only sr-only-focusable">Instagram</span></i></a>
+        <a href="https://www.facebook.com/spw.agri" target="_blank" alt="facebook"
+               rel="nofollow noopener"><i class="fab fa-facebook-square"><span class="sr-only sr-only-focusable">Facebook</span></i></a>
+        <a href="https://www.youtube.com/@SPWAgricultureEnvironnement" target="_blank" alt="youtube"
+               rel="nofollow noopener"><i class="fab fa-youtube"><span class="sr-only sr-only-focusable">Youtube</span></i></a>
+        </div><button class="navbar-toggler" type="button" aria-label="Ouverture du menu">
+                <span></span>
+            </button>
+            </div>
+    </div>
+    
+
+
+
+
+<nav id="main--menu" class="main--menu">
+    
+
+
+
+
+<ul class="container border-bottom container border--bottom">
+        <li class="nav-item ">
+                                <a class="nav-link"  href="/home/politique-economie.html">Politique et Economie</a>
+                            </li><li class="nav-item ">
+                                <a class="nav-link"  href="/home/aides.html">Aides</a>
+                            </li><li class="nav-item ">
+                                <a class="nav-link"  href="/home/productions-agricoles.html">Produits</a>
+                            </li><li class="nav-item ">
+                                <a class="nav-link"  href="/home/groupements-et-conseils.html">Groupements et conseils</a>
+                            </li><li class="nav-item ">
+                                <a class="nav-link"  href="/home/environnement.html">Environnement</a>
+                            </li><li class="nav-item ">
+                                <a class="nav-link"  href="/home/ruralite-et-foncier.html">Ruralité et Foncier</a>
+                            </li><li class="nav-item ">
+                                <a class="nav-link"  href="/home/recherche-developpement.html">Recherche et développement</a>
+                            </li>
+
+
+
+
+
+
+
+
+<li class="mobile--nav-bg">
+    <div class="nosqueeze mobile--nav">
+        <div class="container">
+                <div id="top--menu--mobile">
+                    <div>
+                        <a href="https://monespace.wallonie.be/" target="_blank" rel="nofollow noopener"
+                               class="btn btn-mobile--nav"><i class="fas fa-user"></i>Mon Espace</a>
+                        <a href="/home/formulaire-de-contact.html" target="_blank" rel="nofollow noopener"
+                                   class="btn btn-mobile--nav"><i class="fas"></i>
+                                    Formulaire de contact</a>
+                            </div>
+                </div>
+            </div>
+        <div id="brand-mobile">
+            <section class="center socials">
+                        <span>Restez connecté</span>
+                        <ul>
+    <li>
+                <a href="https://www.instagram.com/WallonieBE/" target="_blank" alt="instagram"
+               rel="nofollow noopener" class="instagram">Instagram</a>
+            </li>
+        <li>
+            <a href="https://www.facebook.com/spw.agri" target="_blank" alt="facebook"
+               rel="nofollow noopener" class="facebook">Facebook</a>
+            </li>
+        <li>
+            <a href="https://www.youtube.com/@SPWAgricultureEnvironnement" target="_blank" alt="youtube"
+               rel="nofollow noopener" class="youtube">Youtube</a>
+            </li>
+        </ul></section>
+                </div>
+    </div>
+</li></ul></nav></header><!-- Forcer le nom du site avec la bonne valeur (référencement) -->
+<div itemscope itemtype="https://schema.org/WebSite">
+    <meta itemprop="url" content="https://agriculture.wallonie.be/accueil"/>
+    <meta itemprop="name" content="Agriculture en Wallonie"/>
+</div>
+
+<main class="pagecontent">
+    
+
+<nav class="navigation-crumb">
+<div class="container   ">
+
+<nav class="navigation-crumb">
+</nav></div>
+</nav>
+<div class="container   ">
+</div>
+<div class="container   ">
+
+<section id="hero">
+</section>
+<main>
+<section id="highlight">
+    <div class="container">
+    <h1 title="À la une">À la une</h1>
+
+        <button class="btn-filter d-md-none" title="Filtre">Filtre<i class="fas fa-angle-down"></i></button>
+        <div class="swiper-button-prev"
+             title="Précédent"></div>
+        <div class="swiper-button-next"
+             title="Suivant"></div>
+        <div class="alaune">
+            <nav>
+                <ul>
+                    <li>
+                            <a href="?type=all#highlight" data-target="cta"
+                               class="active"
+                               title="Tout">
+                                Tout</a>
+                        </li>
+                    <li>
+                            <a href="?type=actualites#highlight" data-target="cta--news"
+                               class=""
+                               title="Actualités">
+                            Actualités</a>
+                        </li>
+                    <li>
+                            <a href="?type=evenements#highlight" data-target="cta--event"
+                               class=""
+                               title="Événements">
+                                Événements</a>
+                        </li>
+                    <li>
+                            <a href="?type=publications#highlight" data-target="cta--publication"
+                               class=""
+                               title="Publications">
+                                Publications</a>
+                        </li>
+                    <li>
+                            <a href="?type=communiques#highlight" data-target="cta--communique"
+                               class=""
+                               title="Communiqués">
+                                Communiqués</a>
+                        </li>
+                    </ul>
+            </nav>
+
+<div class="highlight--wrapper swiper-wrapper" style="position: relative; height: 100vw;">
+                
+<article class="media swiper-slide ctl" data-macy-complete="1" >
+    <a href="/evenement/conference-dependances-rentabilite-et-trajectoires-de-l-agriculture-wallonne" class="cta cta--news cta--alaune" title="Événement: Conférence : Dépendances, rentabilité et trajectoires de l’agriculture wallonne ">
+        <div class="img-wrapper">
+            <div class="time">
+                <div><strong>04</strong>.02</div>
+                
+                    >
+                    <div><strong>04</strong>.02</div>
+                </div>
+            <img src="/files/accueil/Agenda/conference_regards-croises-economie-agricole.jpg" alt="Événement: Conférence : Dépendances, rentabilité et trajectoires de l’agriculture wallonne " class="imgAlauneEvent" />
+                </div>
+
+        <div class="inner innerAlaune">
+        <span class="labelAlaune">Événement</span>
+            <h2>Conférence : Dépendances, rentabilité et trajectoires de l’agriculture wallonne </h2>
+            <p>Le monde agricole évolue dans un environnement de plus en plus complexe. Dépendance aux intrants,...</p>
+        </div>
+    </a>
+</article><article class="media presse">
+    <a href="/home/communiques/presses/loup-deux-zones-de-presence-permanente-elargies.html" class="cta cta--news">
+        <div class="img--wrapper">
+            <img src="/modules/spw-dtic-gw-core/img/Coq_presse.jpg" alt="" typeof="foaf:Image">
+                </div>
+        <div class="inner">
+            <span class="label"></span>
+            <time datetime="2026-09-29">29.09.2026</time>
+            <h2>Loup : Deux zones de présence permanente élargies</h2>
+
+            <p></p>
+
+            <!-- display competences applied on this content -->
+            </div>
+    </a>
+</article>
+<article class="media swiper-slide ctl" data-macy-complete="1" >
+    <a href="/evenement/matinee-de-rencontre-avec-samuel-bonvoisin" class="cta cta--news cta--alaune" title="Événement: Matinée de rencontre avec Samuel Bonvoisin">
+        <div class="img-wrapper">
+            <div class="time">
+                <div><strong>21</strong>.10</div>
+                
+                    >
+                    <div><strong>21</strong>.10</div>
+                </div>
+            <img src="/files/accueil/Agenda/rencontre-samuel-bonvoisin.png" alt="Événement: Matinée de rencontre avec Samuel Bonvoisin" class="imgAlauneEvent" />
+                </div>
+
+        <div class="inner innerAlaune">
+        <span class="labelAlaune">Événement</span>
+            <h2>Matinée de rencontre avec Samuel Bonvoisin</h2>
+            <p>Le Réseau wallon PAC, en partenariat avec le SPW ARNE Recherche & Développement et l'association...</p>
+        </div>
+    </a>
+</article><article class="media swiper-slide ctl" data-macy-complete="1" >
+    <a href="/actualite/chaleur-secheresse-et-recolte-en-champs-vigilance-maximale-face-au-risque-d-incendie" class="cta cta--news cta--alaune" title="Actualité: Chaleur, sécheresse et récolte en champs : vigilance maximale face au risque d’incendie">
+        <div class="img-wrapper">
+            <img src="/files/accueil/Actualit%c3%a9s%20Documents/incendie-agricole.jpg?t=med" alt="Actualité: Chaleur, sécheresse et récolte en champs : vigilance maximale face au risque d’incendie" class="imgAlauneEvent" />
+
+            </div>
+        <div class="inner innerAlaune">
+            <span class="labelAlaune">Actualité</span>
+            <time class="timeNews" datetime="2026-09-28">28.09.2026</time>
+            <h2>Chaleur, sécheresse et récolte en champs : vigilance maximale face au risque d’incendie</h2>
+
+            <p>Malgré l'arrivée de l'automne, le risque d'incendie reste élevé dans les milieux ouverts en...</p>
+        </div>
+    </a>
+</article><article class="media presse">
+    <a href="/home/communiques/presses/communique-secheresse-2026-derogations-et-cas-de-force-majeure.html" class="cta cta--news">
+        <div class="img--wrapper">
+            <img src="/modules/spw-dtic-gw-core/img/Coq_presse.jpg" alt="" typeof="foaf:Image">
+                </div>
+        <div class="inner">
+            <span class="label"></span>
+            <time datetime="2026-09-25">25.09.2026</time>
+            <h2>Communiqué - Sécheresse 2026 : dérogations et cas de force majeure</h2>
+
+            <p></p>
+
+            <!-- display competences applied on this content -->
+            </div>
+    </a>
+</article>
+<article class="media swiper-slide ctl" data-macy-complete="1" >
+    <a href="/evenement/agri-webinaire-bcae-5-clarifions-les-pratiques-de-la-boite-a-outils" class="cta cta--news cta--alaune" title="Événement: Agri-webinaire : « BCAE 5 : clarifions les pratiques de la boîte à outils »">
+        <div class="img-wrapper">
+            <div class="time">
+                <div><strong>09</strong>.10</div>
+                
+                    >
+                    <div><strong>09</strong>.10</div>
+                </div>
+            <img src="/files/accueil/Agenda/Agriwebinaire%20Special.png" alt="Événement: Agri-webinaire : « BCAE 5 : clarifions les pratiques de la boîte à outils »" class="imgAlauneEvent" />
+                </div>
+
+        <div class="inner innerAlaune">
+        <span class="labelAlaune">Événement</span>
+            <h2>Agri-webinaire : « BCAE 5 : clarifions les pratiques de la boîte à outils »</h2>
+            <p>À l’approche de l’entrée en vigueur de la BCAE 5 au 1er janvier 2027, ce webinaire propose...</p>
+        </div>
+    </a>
+</article></div>
+            </div>
+    </div>
+</section>
+
+
+
+<div class="row">
+<div class="col-md-4">
+<div class="jahia-text-content"><h3 class="text-center"><br />
+ORGANISME PAYEUR DE WALLONIE</h3>
+</div><p style="text-align: center;"><a href="/home/aides/organisme-payeur-de-wallonie.html"><img alt="OPW_fr_coul.jpg" src="/files/accueil/Aides/OPW_fr_coul.jpg" style="width: 308px; height: 172px;" /></a></p></div>
+        <div class="col-md-4"><h3 class="text-center"><br />
+LES PLUS RECHERCH&Eacute;S</h3>
+
+<p class="spacer">&nbsp;</p>
+
+<ul>
+	<li><a href="https://agriculture.wallonie.be/home/ruralite-et-foncier/foncier/foncier-agricole/louer/bail-a-ferme/fermage/coefficients-de-fermage.html">Coefficients de fermage</a></li>
+	<li><a href="https://agriculture.wallonie.be/centre-de-documentation">Centre de documentation</a></li>
+	<li><a href="https://agriculture.wallonie.be/production-biologique">L&#39;agriculture biologique</a></li>
+	<li><a href="https://agriculture.wallonie.be/devenir-agriculteur">Devenir agriculteur</a></li>
+</ul></div>
+        <div class="col-md-4">
+<div class="jahia-text-content"><h3 class="text-center"><br />
+PAC ON WEB</h3>
+</div><p style="text-align: center;"><a href="https://agriculture.wallonie.be/paconweb" target="_blank"><img alt="logo pac-on-web" src="/files/logo-paconweb.png" style="width: 250px; height: 192px;" /></a></p></div></div>
+
+<section id="steps" class="wave">
+    <div cl
