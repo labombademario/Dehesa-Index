@@ -28,7 +28,14 @@ def num(s):
         if re.match(r'^\d{1,3}(\.\d{3})+$', s): return float(s.replace('.', ''))
         return float(s)
     except ValueError: return None
-def genesis_raw(table, token, startyear):
+class TooBig(Exception): pass
+def genesis_raw(table, token, startyear, later=()):
+    """GENESIS devuelve Status 98 si la tabla es demasiado grande: se reintenta con un inicio mas reciente (menos anos, nunca menos detalle)."""
+    for sy in (startyear,) + tuple(later):
+        try: return genesis_raw1(table, token, sy)
+        except TooBig: log('tabla demasiado grande', table, 'desde', sy)
+    raise RuntimeError('GENESIS %s: demasiado grande incluso desde %s' % (table, (startyear,) + tuple(later))[-1:])
+def genesis_raw1(table, token, startyear):
     h = {'Content-Type': 'application/x-www-form-urlencoded', 'username': token, 'password': '', 'Accept': '*/*', 'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)'}
     body = urllib.parse.urlencode({'name': table, 'startyear': str(startyear), 'format': 'ffcsv', 'compress': 'false', 'language': 'de'}).encode()
     last = None
@@ -36,7 +43,12 @@ def genesis_raw(table, token, startyear):
         try:
             with urllib.request.urlopen(urllib.request.Request('https://genesis.destatis.de/genesisWS/rest/2020/data/tablefile', data=body, headers=h, method='POST'), timeout=240) as r: raw = r.read()
             if raw[:2] == b'PK': z = zipfile.ZipFile(io.BytesIO(raw)); raw = z.read(z.namelist()[0])
-            return raw.decode('utf-8', 'replace')
+            txt = raw.decode('utf-8', 'replace')
+            if txt.lstrip('\ufeff').startswith('{'):
+                if '"Code":98' in txt: raise TooBig()
+                raise ValueError('GENESIS respondio con estado: ' + re.sub(r'\s+', ' ', txt)[:200])
+            return txt
+        except TooBig: raise
         except Exception as e:
             last = e; time.sleep(5 * (i + 1))
     raise RuntimeError('GENESIS %s -> %s' % (table, str(last).replace(token, '<token>')[:160]))
@@ -110,7 +122,7 @@ def eggs(token):
     VN = {'EIE001': 'eggs', 'HEN004': 'hens', 'EIE002': 'perHen'}
     for name, tgt, geo in (('41323-0001', nat, None), ('41323-0004', land, 'land')):
         n = 0
-        for d in rows_of(genesis_raw(name, token, 2015)):
+        for d in rows_of(genesis_raw(name, token, 2015, (2018, 2021, 2023))):
             if d['v2'] != '' or d['v3'] != '' or d['var'] not in VN or d['value'] is None: continue   # total de formas de cria y de tamanos
             if not re.match(r'^\d{4}$', d['time']): continue
             if geo is None:
