@@ -1603,6 +1603,7 @@ html[data-theme="dark"] .pp-live{background:#E9E2CE;color:#1E1B12}
 .de-t .r { text-align: right; white-space: nowrap; }
 .de-tiles { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
 .de-tile { flex: 1 1 120px; min-width: 120px; }
+@media (max-width: 520px) { .es-bar { display: none; } }
 .de-tl { font-size: 12px; color: var(--text-tertiary); }
 .de-tv { font-size: 22px; font-weight: 700; }
 .de-ts { font-size: 12px; color: var(--text-tertiary); }

@@ -3,7 +3,7 @@
    - JS/CSS: red primero con revalidacion (cache:'no-cache'), cache como respaldo: asi un cambio publicado se ve en la siguiente carga, no en la segunda.
    - imagenes: stale-while-revalidate.
    - data/*.json: red primero (los datos deben ser frescos), cache como respaldo; solo se guardan respuestas < 1.5 MB. */
-var BUILD = 'cb4012c149'; // lo escribe scripts/stamp-sw.mjs (hash del codigo estructural)
+var BUILD = '71cf048fd3'; // lo escribe scripts/stamp-sw.mjs (hash del codigo estructural)
 var V = 'di-' + BUILD, SHELL = ['/offline.html', '/css/style.css', '/js/shared.js', '/assets/icon-192.png'];
 var MAXDATA = 1500000, MAXENTRIES = 120;
 self.addEventListener('install', function (e) { e.waitUntil(caches.open(V).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); })); });

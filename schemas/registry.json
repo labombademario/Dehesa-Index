@@ -491,6 +491,12 @@
    [
     "us_local_status"
    ]
+  ],
+  "spain-crops/index.json": [
+   "spain-crops-index",
+   [
+    "spain_crops_index"
+   ]
   ]
  },
  "globs": {
@@ -554,6 +560,12 @@
    "us-local-hay",
    [
     "us_local_hay"
+   ]
+  ],
+  "spain-crops/crops-*.json": [
+   "spain-crops",
+   [
+    "spain_crops"
    ]
   ]
  },

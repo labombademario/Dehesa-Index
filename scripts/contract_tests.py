@@ -1662,6 +1662,55 @@ def us_local_status(doc, errs, warns, stats):
     stats["us-local informes"] = len(seen)
 
 
+def spain_crops(doc, errs, warns, stats):
+    """MAPA superficies y producciones por provincia. Por cultivo y campana: 5 medidas [total, secano, regadio, cosechada, produccion], todas >= 0 o null; provincias que existen en el diccionario;
+    el total nacional del cultivo es la suma de sus provincias (nulo solo si ninguna lo trae); secano + regadio = total; cosechada <= total a nivel nacional (por provincia el MAPA a veces la da mayor: aviso); campana con estado y no futura; codigos de cultivo sin repetir."""
+    import datetime as _d
+    g = doc["group"]; cy = _d.date.today().year
+    if doc["measures"] != ["areaTotal", "areaSecano", "areaRegadio", "areaHarvested", "production"]: errs.append("spain-crops %s: medidas distintas de las esperadas" % g); return
+    provs = doc["provinces"]
+    if any(not re.match(r"^\d{2}$", k) or not (1 <= int(k) <= 52) for k in provs): errs.append("spain-crops %s: identificador de provincia invalido" % g); return
+    for camp, cd in doc["campaigns"].items():
+        if not re.match(r"^\d{4}$", camp) or not (2000 <= int(camp) <= cy + 1): errs.append("spain-crops %s: campana invalida %r" % (g, camp)); return
+        seen = set()
+        for x in cd["crops"]:
+            tag = "spain-crops %s/%s %s" % (g, camp, x["c"])
+            if x["c"] in seen: errs.append("%s: cultivo repetido" % tag); return
+            seen.add(x["c"])
+            def okv(a):
+                return isinstance(a, list) and len(a) == 5 and all(e is None or (isinstance(e, (int, float)) and not isinstance(e, bool) and e >= 0) for e in a)
+            if not okv(x["t"]): errs.append("%s: totales invalidos %r" % (tag, x["t"])); return
+            for pid, a in x["v"].items():
+                if pid not in provs: errs.append("%s: provincia %s no esta en el diccionario" % (tag, pid)); return
+                if not okv(a): errs.append("%s/%s: valores invalidos %r" % (tag, pid, a)); return
+                if a[0] is not None and a[1] is not None and a[2] is not None and abs(a[1] + a[2] - a[0]) > max(2, 0.001 * a[0]): errs.append("%s/%s: secano + regadio (%s) no es el total (%s)" % (tag, pid, a[1] + a[2], a[0])); return
+                if a[0] is not None and a[3] is not None and a[3] > a[0] * 1.001 + 1: warns.append("%s/%s: superficie cosechada (%s) mayor que la total (%s); se publica tal cual la da el MAPA" % (tag, pid, a[3], a[0]))
+            for i in range(5):
+                vals = [a[i] for a in x["v"].values() if a[i] is not None]
+                if not vals:
+                    if x["t"][i] is not None: errs.append("%s: total %d sin ninguna provincia que lo respalde" % (tag, i)); return
+                elif x["t"][i] is None or abs(sum(vals) - x["t"][i]) > max(0.01, abs(x["t"][i]) * 1e-6): errs.append("%s: el total %d (%s) no es la suma de las provincias (%s)" % (tag, i, x["t"][i], sum(vals))); return
+            t = x["t"]
+            if t[0] is not None and t[1] is not None and t[2] is not None and abs(t[1] + t[2] - t[0]) > max(2, 0.001 * t[0]): errs.append("%s: secano + regadio nacional no es el total" % tag); return
+            if t[0] is not None and t[3] is not None and t[3] > t[0] * 1.001 + 1: errs.append("%s: superficie cosechada nacional (%s) mayor que la total (%s)" % (tag, t[3], t[0])); return
+            if t[3] and t[4] is not None and x["l"] > 0 and not (0.05 <= t[4] / t[3] <= 400): warns.append("%s: rendimiento %.2f t/ha fuera de lo habitual" % (tag, t[4] / t[3]))
+        stats["spain-crops cultivos"] = stats.get("spain-crops cultivos", 0) + len(cd["crops"])
+    stats["spain-crops campanas"] = stats.get("spain-crops campanas", 0) + len(doc["campaigns"])
+
+
+def spain_crops_index(doc, errs, warns, stats):
+    """Indice de los libros del MAPA: cada grupo apunta a su fichero y sus campanas salen de los libros leidos; la revision no es anterior a la generacion."""
+    have = {}
+    for f in doc["files"]:
+        for k in f["groups"]: have.setdefault(k, set()).add(f["campaign"])
+    for k, gi in doc["groups"].items():
+        if gi["file"] != "crops-" + k + ".json": errs.append("spain-crops index: %s apunta a %s" % (k, gi["file"])); return
+        if set(gi["campaigns"]) - have.get(k, set()): errs.append("spain-crops index: %s tiene campanas que ningun libro leido respalda" % k); return
+        if set(str(c) for c in gi["campaigns"]) != set(gi["crops"]): errs.append("spain-crops index: %s campanas y recuentos de cultivos no coinciden" % k); return
+    if doc["checkedAt"] < doc["generatedAt"]: errs.append("spain-crops index: checkedAt anterior a generatedAt"); return
+    stats["spain-crops grupos"] = len(doc["groups"])
+
+
 def ers_cost_reference(doc, errs, warns, stats):
     """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""
     keys = set(doc["map"])

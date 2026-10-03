@@ -1,15 +1,15 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-03T15:12:00Z",
+ "generatedAt": "2026-10-03T16:48:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 60,
+  "ok": 61,
   "late": 0,
-  "error": 1,
+  "error": 0,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
- "global": "error",
+ "global": "ok",
  "pipelines": [
   {
    "workflow": "update-alberta-weekly.yml",
@@ -40,7 +40,7 @@
    "crons": [
     "20 15 * * 6"
    ],
-   "nextRun": "2026-10-03T15:20:00Z",
+   "nextRun": "2026-10-10T15:20:00Z",
    "files": [
     {
      "path": "data/ams"
@@ -1367,7 +1367,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-03T15:17:00Z",
+   "nextRun": "2026-10-03T18:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -1434,11 +1434,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-03T15:04:18Z"
+     "lastChange": "2026-10-03T15:13:02Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-03T15:04:18Z"
+     "lastChange": "2026-10-03T15:13:02Z"
     },
     {
      "path": "data/series-registry.json",
@@ -1450,7 +1450,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-03T14:38:40Z"
+     "lastChange": "2026-10-03T15:13:11Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1467,7 +1467,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-03T14:38:40Z"
+     "lastChange": "2026-10-03T15:13:11Z"
     },
     {
      "path": "data/products"
@@ -1478,27 +1478,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-03T15:11:32Z"
+     "lastChange": "2026-10-03T15:13:11Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-03T14:38:40Z"
+     "lastChange": "2026-10-03T15:13:11Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-03T14:38:40Z"
+     "lastChange": "2026-10-03T15:13:11Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-03T14:38:40Z"
+     "lastChange": "2026-10-03T15:13:11Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-03T14:38:40Z"
+     "lastChange": "2026-10-03T15:13:11Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-03T14:38:40Z"
+     "lastChange": "2026-10-03T15:13:11Z"
     },
     {
      "path": "data/home-explore.json",
@@ -1509,18 +1509,18 @@
     }
    ],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-03T15:03:07Z",
-    "durationSec": 84,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37131864003"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T15:12:00Z",
+    "durationSec": 74,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37132392139"
    },
    "recent": {
-    "runs": 9,
-    "success": 7,
+    "runs": 10,
+    "success": 8,
     "failed": 2
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 3.0
   },
   {
@@ -1645,6 +1645,30 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-spain-crops.yml",
+   "name": "Update Spain crop areas and production by province (MAPA)",
+   "crons": [
+    "50 6 * * 4"
+   ],
+   "nextRun": "2026-10-08T06:50:00Z",
+   "files": [
+    {
+     "path": "data/spain-crops/index.json"
+    },
+    {
+     "path": "data/spain-crops"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-spain.yml",

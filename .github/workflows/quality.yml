@@ -72,6 +72,9 @@ jobs:
       - name: US local cattle and hay markets (aggregation, merge, retention, failure safety; offline fixtures, no API)
         run: python3 scripts/test-us-local-markets.py
 
+      - name: Spain crops by province (MAPA workbook parser, sums, provisional campaigns, failure safety; synthetic workbook, no network)
+        run: pip install openpyxl && python3 scripts/test-spain-crops.py
+
       - name: Anomaly verifier (promotes only when the primary source reproduces the value; offline fixtures)
         run: python3 scripts/test-verify-anomalies.py
 
@@ -212,6 +215,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-clima.mjs
+      - name: España, cultivos por provincia (cifras del MAPA, selectores, campañas, 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-es-crops.mjs
       - name: Informe E2E
         if: always()
         uses: actions/upload-artifact@v6

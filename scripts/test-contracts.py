@@ -14,6 +14,9 @@ def run(rel, mutate):
         p = Path(t) / "x.json"; p.write_text(json.dumps(doc))
         return vd.validate_contract(p, rel, sch, tests)
 def first(doc, key="observations"): return doc[key][0]
+def _sc(d): return d["campaigns"]["2024"]["crops"]
+def _scp(d):
+    x = _sc(d)[0]; return x, next(iter(x["v"]))
 CASES = [
  ("latest.json", "valor no numerico", lambda d: first(d).__setitem__("value", "n/a")),
  ("latest.json", "region desconocida", lambda d: first(d).__setitem__("region", "mars")),
@@ -70,6 +73,18 @@ CASES = [
  ("germany-agri.json", "años que no crecen", lambda d: d["production"]["nat"]["wheat"]["area"].append([1960, 1000.0])),
  ("germany-agri.json", "produccion que no cuadra con rendimiento x superficie", lambda d: d["production"]["land"]["wheat"]["BY"]["prod"].__setitem__(-2, [d["production"]["land"]["wheat"]["BY"]["prod"][-2][0], d["production"]["land"]["wheat"]["BY"]["prod"][-2][1] * 3])),
  ("germany-agri.json", "precio de la tierra negativo", lambda d: d["landPrice"]["nat"]["lf"]["p"].__setitem__(0, [2021, -5.0])),
+ ("spain-crops/crops-cereales.json", "total nacional que no es la suma de provincias", lambda d: _sc(d)[0]["t"].__setitem__(4, _sc(d)[0]["t"][4] + 5000)),
+ ("spain-crops/crops-cereales.json", "secano + regadio distinto del total", lambda d: (lambda x, p: x["v"][p].__setitem__(1, (x["v"][p][0] or 0) + 500))(*_scp(d))),
+ ("spain-crops/crops-cereales.json", "superficie cosechada nacional mayor que la total", lambda d: _sc(d)[0]["t"].__setitem__(3, _sc(d)[0]["t"][0] * 2 + 10)),
+ ("spain-crops/crops-cereales.json", "provincia que no existe en el diccionario", lambda d: _sc(d)[0]["v"].__setitem__("99", [1, 1, 0, 1, 1])),
+ ("spain-crops/crops-cereales.json", "produccion negativa", lambda d: (lambda x, p: x["v"][p].__setitem__(4, -3))(*_scp(d))),
+ ("spain-crops/crops-cereales.json", "estado de campana inventado", lambda d: d["campaigns"]["2024"].__setitem__("status", "oficial")),
+ ("spain-crops/crops-cereales.json", "campana en el futuro", lambda d: d["campaigns"].__setitem__("2099", d["campaigns"]["2024"])),
+ ("spain-crops/crops-cereales.json", "cultivo repetido", lambda d: _sc(d).append(copy.deepcopy(_sc(d)[0]))),
+ ("spain-crops/crops-cereales.json", "fuente que no es el MAPA", lambda d: d["source"].__setitem__("id", "otra")),
+ ("spain-crops/crops-cereales.json", "unidad de produccion cambiada", lambda d: d["units"].__setitem__("production", "kg")),
+ ("spain-crops/index.json", "grupo que apunta a otro fichero", lambda d: next(iter(d["groups"].values())).__setitem__("file", "otro.json")),
+ ("spain-crops/index.json", "campana sin libro que la respalde", lambda d: next(iter(d["groups"].values()))["campaigns"].append(2031)),
  ("germany-agri.json", "licencia cambiada", lambda d: d["source"].__setitem__("license", "CC0")),
  ("us-local/cattle-KS.json", "informe distinto del registro", lambda d: d["source"].__setitem__("reportId", 1234)),
  ("us-local/cattle-KS.json", "fecha en el futuro", lambda d: d["latest"].__setitem__("date", "2031-01-01")),

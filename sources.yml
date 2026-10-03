@@ -36,6 +36,18 @@ sources:
     data: [germany-livestock.json]
     log: germany-livestock-log.txt
     message: Datos Alemania ganaderia y huevos (Destatis)
+  - id: spain-crops
+    name: Update Spain crop areas and production by province (MAPA)
+    cron: ['50 6 * * 4']
+    script: scripts/update-spain-crops.py
+    pre: ['pip install openpyxl']
+    timeout: 30
+    script_timeout: 20
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-crops)
+    data: [spain-crops/index.json, spain-crops-log.txt]
+    extra: ['!data/spain-crops']
+    message: Datos superficies y producciones de cultivos de España por provincia (MAPA)
   - id: austria
     name: Update Austria (Eurostat)
     cron: ['25 16 * * 2,5']
