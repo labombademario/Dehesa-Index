@@ -711,25 +711,97 @@
    "notes": null,
    "short": "Statistics Denmark"
   },
+  "rvo": {
+   "name": "RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk)",
+   "url": "https://www.rvo.nl/onderwerpen/marktinformatie/statistieken",
+   "country": "NL",
+   "licenseId": "CUSTOM",
+   "licenseName": "RVO open data: public information, re-use allowed",
+   "licenseUrl": "https://www.rvo.nl/over-ons/open-data",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Bron: RVO (Rijksdienst voor Ondernemend Nederland), marktinformatie statistieken",
+   "additionalRestrictions": "No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, calves and pigs among the available datasets. Cite RVO and do not present the figures as official RVO publications.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-03",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "RVO open data page (read 2026-10-03 from a GitHub runner): the information of RVO is public and may be re-used; open data = data anyone may use and distribute; the dataset list includes 'Marktordening statistieken (granen, kalveren, varkens)'. No attribution or commercial restriction is stated; the page names no formal licence, so confidence is medium.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "RVO (Países Bajos)"
+  },
+  "vigieau": {
+   "name": "VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau)",
+   "url": "https://vigieau.gouv.fr/",
+   "country": "FR",
+   "licenseId": "LO-2.0",
+   "licenseName": "Licence Ouverte 2.0 (Etalab), data.gouv.fr",
+   "licenseUrl": "https://www.data.gouv.fr/datasets/donnee-secheresse-vigieau",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source : VigiEau, Ministère de la Transition écologique — Licence Ouverte 2.0",
+   "additionalRestrictions": "LO 2.0 requires citing the source and the date of last update and not suggesting official endorsement. The data are provided 'à titre indicatif' by the departmental services; only the prefectural orders are authentic. We read the service's public REST API; the licence is the one declared for the dataset.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "LO 2.0 does not cover third-party rights.",
+   "verifiedAt": "2026-10-03",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "data.gouv.fr dataset 'Donnée Sécheresse - VigiEau' (Ministère de la Transition écologique, daily updates) declares license lov2 (Licence Ouverte 2.0); read 2026-10-03 from a GitHub runner. The API we use is the service's own public API; the dataset licence is applied to it.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "VigiEau"
+  },
+  "retsinformation": {
+   "name": "Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser)",
+   "url": "https://www.retsinformation.dk/",
+   "country": "DK",
+   "licenseId": "CUSTOM",
+   "licenseName": "No copyright in regulations (Ophavsretsloven § 9)",
+   "licenseUrl": "https://www.retsinformation.dk/eli/lta/2023/1093/dan/pdf",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Kilde: Retsinformation (Civilstyrelsen), bekendtgørelse 1363 og 1381 af 2025. Uddrag.",
+   "additionalRestrictions": "Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regulations from copyright. Our figures are extracts, not the authentic text: always cite the order number and its version date.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-03",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Ophavsretsloven § 9, stk. 1 (read 2026-10-03 on the retsinformation.dk copy of the Act): laws, administrative regulations, court decisions and similar public documents are not subject to copyright. BEK 1363 and 1381 of 2025 are administrative regulations. Retsinformation's own terms page could not be read (JavaScript app), so confidence is medium.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "Retsinformation (DK)"
+  },
   "cbs_nl": {
    "name": "Statistics Netherlands (CBS StatLine)",
    "url": "https://opendata.cbs.nl/",
    "country": "NL",
    "licenseId": "CUSTOM",
-   "licenseName": "CBS open data: free re-use with mandatory source citation (full 'Disclaimer open data' not read)",
-   "licenseUrl": "https://www.cbs.nl/en-gb/statline/dataportaal/informatie/general-information-on-the-use-of-cbs-open-data",
-   "commercialUse": "unclear",
-   "derivatives": "unclear",
-   "redistribution": "unclear",
+   "licenseName": "CBS: CC BY 4.0 content; open data re-use with source citation",
+   "licenseUrl": "https://www.cbs.nl/en-gb/about-us/website/copyright",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
    "attributionRequired": true,
-   "attributionText": "Source: CBS (Statistics Netherlands)",
-   "additionalRestrictions": "The page defers to a separate 'Disclaimer open data' that could not be retrieved; a CC BY 4.0 label was declared in earlier project files but not re-confirmed.",
+   "attributionText": "Source: CBS (Statistics Netherlands), StatLine. Own calculations where we derive values.",
+   "additionalRestrictions": "Cite CBS as the source (mandatory); state when figures are modified or derived. The separate Dutch 'Disclaimer open data' text was not read.",
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
-   "verifiedAt": "2026-10-01",
-   "status": "PENDING",
+   "verifiedAt": "2026-10-03",
+   "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "CBS open data page (read 2026-10-01) says only that open data may be freely used; no licence, commercial or derivative terms stated, so it stays PENDING.",
+   "evidence": "CBS copyright page (read 2026-10-03 from a GitHub runner) places CBS website content under CC BY 4.0 and the CBS open-data page says open data may be used and re-used free of charge, quoting the source being mandatory. The Dutch 'Disclaimer open data' itself was not read, so confidence is medium.",
    "used": true,
    "aliases": [],
    "notes": null,
@@ -1561,6 +1633,36 @@
    ],
    "notes": "Sueldos de referencia por país; cada país cita su fuente en el propio fichero (campo sourceId). Portugal (GEP) sigue sin licencia verificada: gep_pt PENDING y no usado."
   },
+  "data/denmark-depth.json": {
+   "sources": [
+    "dst_dk"
+   ],
+   "notes": "Cosecha por region, sacrificios, leche, censos y subvenciones de Statistics Denmark (StatBank HST77, HST88, ANI41, ANI51, ANI71, SVIN, KVAEG5, TILSKUD2), CC BY 4.0 con cita de la fuente. Conversiones exactas solo; la serie de cosecha tiene un cambio de clasificacion en 2025 que se rotula."
+  },
+  "data/netherlands-farm.json": {
+   "sources": [
+    "cbs_nl"
+   ],
+   "notes": "Cultivos por region (85636NED), explotaciones y animales (80780NED), sacrificios (7123SLAC) e indice de precios (86125NED) del CBS. Cita obligatoria de la fuente; conversion exacta are->ha."
+  },
+  "data/netherlands-markets.json": {
+   "sources": [
+    "rvo"
+   ],
+   "notes": "Precios semanales de cerdo y vacuno y sacrificios semanales de cerdo de los Excel de estadisticas de mercado de RVO (informacion publica reutilizable). Se publican tal cual; las semanas atipicas se marcan, no se corrigen."
+  },
+  "data/france-vigieau.json": {
+   "sources": [
+    "vigieau"
+   ],
+   "notes": "Restricciones de agua por departamento (API publica de VigiEau, Licence Ouverte 2.0). El historial de recuentos es propio, desde que arranca la tuberia."
+  },
+  "data/france-cereobs.json": {
+   "sources": [
+    "franceagrimer"
+   ],
+   "notes": "Estado semanal del maiz grano (Cere'Obs, FranceAgriMer; data.gouv.fr declara Licence Ouverte 2.0 pero el Excel dice 'tous droits reserves'): sigue PENDING hasta aclararlo por escrito con FranceAgriMer."
+  },
   "data/denmark-prices.json": {
    "sources": [
     "dst_dk"
@@ -1754,9 +1856,10 @@
   },
   "data/cap/": {
    "sources": [
-    "boe_es"
+    "boe_es",
+    "retsinformation"
    ],
-   "notes": "PAC España (scripts/update-cap-es.py y data/cap/es/rules.json): importes planificados, mínimos y máximos, parámetros y reglas del Real Decreto 1048/2022 leídos del texto consolidado del BOE (anexos VII-XII, XX y XXII y artículos citados) y seguimiento de cambios con la API de legislación consolidada del BOE. Se extraen sin completar ni estimar nada y se rotulan como importes del real decreto, no como importes unitarios de cada campaña (esos los publica el FEGA, fuente no ingerida: no se ha podido leer su aviso legal). Condiciones del BOE: citar la fuente, texto consolidado meramente informativo, fecha de última actualización."
+   "notes": "PAC España (scripts/update-cap-es.py y data/cap/es/rules.json): importes planificados, mínimos y máximos, parámetros y reglas del Real Decreto 1048/2022 leídos del texto consolidado del BOE (anexos VII-XII, XX y XXII y artículos citados) y seguimiento de cambios con la API de legislación consolidada del BOE. Se extraen sin completar ni estimar nada y se rotulan como importes del real decreto, no como importes unitarios de cada campaña (esos los publica el FEGA, fuente no ingerida: no se ha podido leer su aviso legal). Condiciones del BOE: citar la fuente, texto consolidado meramente informativo, fecha de última actualización. PAC Dinamarca (scripts/update-cap-dk.py, data/cap/dk/): importes y umbrales de 2026 de las bekendtgørelser 1363 y 1381 leídos del XML de Retsinformation (extractos, no el texto auténtico; se cita número de decreto y fecha de versión)."
   },
   "data/mb-markets/": {
    "sources": [
@@ -1922,10 +2025,6 @@
    "ble": {
     "since": "2026-10-01",
     "nextAction": "Leer la pagina de Open Data de BLE (bloqueada por robots.txt) o pedir licencia; alternativa: Destatis DL-DE-BY."
-   },
-   "cbs_nl": {
-    "since": "2026-10-01",
-    "nextAction": "Localizar los terminos de data.overheid.nl para los datasets de CBS (condiciones comerciales y derivados)."
    },
    "alberta_ag": {
     "since": "2026-10-01",

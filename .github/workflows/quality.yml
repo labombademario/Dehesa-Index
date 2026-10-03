@@ -213,6 +213,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-de-livestock.mjs
+      - name: Dinamarca, Países Bajos y Francia en profundidad (cifras de StatBank, Retsinformation, CBS, RVO, VigiEau y Céré'Obs, selectores, 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-eu-depth.mjs
       - name: EE. UU., ganado y heno locales (cifras de USDA AMS, selectores, 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

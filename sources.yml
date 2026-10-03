@@ -356,3 +356,50 @@ sources:
     data: [us-cash-bids/manifest.json, us-cash-bids/reports.json, us-cash-bids/ingestion-status.json, us-cash-bids/revisions.json]
     extra: ['!data/us-cash-bids']
     message: Datos precios locales de grano EE. UU. (USDA AMS MARS)
+  - id: denmark-depth
+    name: Update Denmark crops, livestock, milk and subsidies (Statistics Denmark StatBank)
+    cron: ['20 7 * * 4']
+    script: scripts/update-denmark-depth.py
+    data: [denmark-depth.json]
+    log: denmark-depth-log.txt
+    message: Datos Dinamarca cosecha, ganaderia, leche y subvenciones (Statistics Denmark)
+  - id: cap-dk
+    name: Check Denmark CAP rules and amounts (Retsinformation BEK 1363 and 1381)
+    cron: ['20 7 * * 1']
+    script: scripts/update-cap-dk.py
+    timeout: 15
+    script_timeout: 8
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap/dk)
+    data: [cap/dk/amounts.json, cap/dk/watch.json]
+    message: Seguimiento de la PAC de Dinamarca (Retsinformation)
+  - id: nl-cbs
+    name: Update Netherlands crops, farm structure, slaughter and price index (CBS StatLine)
+    cron: ['35 8 * * 3']
+    script: scripts/update-nl-cbs.py
+    timeout: 20
+    script_timeout: 15
+    data: [netherlands-farm.json]
+    log: netherlands-farm-log.txt
+    message: Datos Países Bajos cultivos, explotaciones y sacrificios (CBS)
+  - id: nl-rvo
+    name: Update Netherlands pig and cattle prices and pig slaughter (RVO)
+    cron: ['40 8 * * 2,5']
+    pre: ['pip install openpyxl']
+    script: scripts/update-nl-rvo.py
+    data: [netherlands-markets.json]
+    log: netherlands-markets-log.txt
+    message: Datos Países Bajos precios de cerdo y vacuno y sacrificios (RVO)
+  - id: fr-vigieau
+    name: Update France water restrictions by department (VigiEau)
+    cron: ['15 6 * * 1,3,5']
+    script: scripts/update-fr-vigieau.py
+    data: [france-vigieau.json]
+    message: Datos Francia restricciones de agua por departamento (VigiEau)
+  - id: fr-cereobs
+    name: Update France maize crop condition (FranceAgriMer Cere'Obs)
+    cron: ['30 14 * * 5']
+    pre: ['pip install openpyxl']
+    script: scripts/update-fr-cereobs.py
+    data: [france-cereobs.json]
+    message: Datos Francia estado del maíz grano (Céré'Obs, FranceAgriMer)

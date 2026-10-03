@@ -1,0 +1,114 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Dinamarca: cosecha por region, sacrificios, leche, censos y subvenciones (Statistics Denmark StatBank)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "country",
+  "source",
+  "units",
+  "harvest",
+  "slaughter",
+  "milk",
+  "herd",
+  "subsidies",
+  "updated"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "country": {
+   "enum": [
+    "DK"
+   ]
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url",
+    "license",
+    "tables"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "dst_dk"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    },
+    "license": {
+     "type": "string"
+    }
+   }
+  },
+  "units": {
+   "type": "object"
+  },
+  "harvest": {
+   "type": "object",
+   "required": [
+    "breakYear",
+    "regions",
+    "crops",
+    "data"
+   ],
+   "properties": {
+    "breakYear": {
+     "type": "integer"
+    },
+    "regions": {
+     "type": "object"
+    },
+    "crops": {
+     "type": "object"
+    },
+    "data": {
+     "type": "object"
+    }
+   }
+  },
+  "slaughter": {
+   "type": "object"
+  },
+  "milk": {
+   "type": "object"
+  },
+  "herd": {
+   "type": "object"
+  },
+  "subsidies": {
+   "type": "object",
+   "required": [
+    "names",
+    "data"
+   ],
+   "properties": {
+    "names": {
+     "type": "object"
+    },
+    "data": {
+     "type": "object"
+    }
+   }
+  },
+  "updated": {
+   "type": "object"
+  }
+ }
+}

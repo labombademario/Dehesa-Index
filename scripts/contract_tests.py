@@ -1997,3 +1997,242 @@ def cap_es_rules(doc, errs, warns, stats):
     y = byid["young-farmers"]["values"]
     if not (1 <= y["maxHa"] <= 1000 and 1 <= y["years"] <= 10 and 0 <= y["womenBonus"] <= 0.5): errs.append("cap-es rules: valores de jóvenes fuera de rango"); return
     stats["cap-es reglas"] = len(doc["rules"]); stats["cap-es hitos"] = len(doc["calendar"])
+
+
+# ---------------------------------------------------------------- Europa en profundidad: Dinamarca, Paises Bajos, Francia
+def _eu_series(tag, seq, rx, errs, lo=0.0, hi=None):
+    """Serie [[periodo, valor]]: periodo con el formato esperado, estrictamente creciente, valor numerico finito y dentro de rango. Devuelve {periodo: valor} o None."""
+    out = {}; last = None
+    if not isinstance(seq, list): errs.append("%s: no es una lista" % tag); return None
+    for p in seq:
+        if not (isinstance(p, list) and len(p) == 2 and isinstance(p[0], str) and re.match(rx, p[0])): errs.append("%s: punto invalido %r" % (tag, p)); return None
+        if last is not None and p[0] <= last: errs.append("%s: periodos no crecientes (%s tras %s)" % (tag, p[0], last)); return None
+        if not _num(p[1]) or p[1] < lo or (hi is not None and p[1] > hi): errs.append("%s %s: valor fuera de rango %r" % (tag, p[0], p[1])); return None
+        last = p[0]; out[p[0]] = p[1]
+    return out
+
+
+def _eu_yield_count(A, Y, P, factor, minarea, tol, minprod=0, fromyear=0):
+    """(comparaciones, discrepancias) entre rendimiento publicado y produccion/superficie."""
+    tot = bad = 0
+    for y in A:
+        if y in Y and y in P and A[y] >= minarea and A[y] > 0 and Y[y] > 0 and P[y] >= minprod and int(y) >= fromyear:
+            tot += 1
+            if abs(P[y] * factor / A[y] - Y[y]) / Y[y] > tol: bad += 1
+    return tot, bad
+
+
+def denmark_depth(doc, errs, warns, stats):
+    """Dinamarca (Statistics Denmark): cosecha por region (rendimiento = produccion/superficie), sacrificios mensuales, leche, censos trimestrales y subvenciones anuales."""
+    if doc["source"]["id"] != "dst_dk": errs.append("denmark-depth: la fuente no es dst_dk"); return
+    h = doc["harvest"]; regs = h["regions"]; n = 0; YT = [0, 0]
+    if not (2015 <= h["breakYear"] <= TODAY.year): errs.append("denmark-depth: breakYear invalido"); return
+    for c, rr in h["data"].items():
+        if c not in h["crops"]: errs.append("denmark-depth: cultivo desconocido %s" % c); return
+        for g, ms in rr.items():
+            if g not in regs: errs.append("denmark-depth %s: region desconocida %s" % (c, g)); return
+            S = {m: _eu_series("denmark-depth cosecha %s/%s/%s" % (c, g, m), ms[m], r"^\d{4}$", errs) for m in ms}
+            if any(v is None for v in S.values()): return
+            for m, s in S.items(): n += len(s)
+            if all(k in S for k in ("area", "yield", "prod")):
+                t, b = _eu_yield_count(S["area"], S["yield"], S["prod"], 1000, 1000, 0.04, minprod=20); YT[0] += t; YT[1] += b
+                if g == "000" and b: errs.append("denmark-depth cosecha %s/000: el rendimiento nacional no cuadra con produccion/superficie (%d casos)" % (c, b)); return
+    if "000" not in regs or not h["data"].get("wheat_winter", {}).get("000", {}).get("prod"): errs.append("denmark-depth: falta el trigo de invierno nacional"); return
+    if YT[0] and YT[1] / YT[0] > 0.05: errs.append("denmark-depth: el rendimiento no cuadra con produccion/superficie en %d de %d casos (posible cambio de unidades)" % (YT[1], YT[0])); return
+    for sp, cats in doc["slaughter"].items():
+        if sp not in ("cattle", "pigs"): continue
+        for cat, ms in cats.items():
+            for m, s in ms.items():
+                x = _eu_series("denmark-depth sacrificios %s/%s/%s" % (sp, cat, m), s, r"^\d{4}-(0[1-9]|1[0-2])$", errs)
+                if x is None: return
+                n += len(x)
+    for k, s in doc["milk"].items():
+        x = _eu_series("denmark-depth leche %s" % k, s, r"^\d{4}-(0[1-9]|1[0-2])$", errs)
+        if x is None: return
+        n += len(x)
+    for sp, cats in doc["herd"].items():
+        for cat, d in cats.items():
+            for reg, s in (d.items() if isinstance(d, dict) and d and isinstance(next(iter(d.values())), list) else [("-", d)]):
+                x = _eu_series("denmark-depth censo %s/%s/%s" % (sp, cat, reg), s, r"^\d{4}-Q[1-4]$", errs)
+                if x is None: return
+                n += len(x)
+    for k, s in doc["subsidies"]["data"].items():
+        if k not in doc["subsidies"]["names"]: errs.append("denmark-depth: subvencion sin nombre %s" % k); return
+        x = _eu_series("denmark-depth subvencion %s" % k, s, r"^\d{4}$", errs, lo=-1e6)
+        if x is None: return
+    pc = doc["slaughter"]["pigs"].get("pigs", doc["slaughter"]["pigs"].get(next(iter(doc["slaughter"]["pigs"]), ""), {}))
+    last = max((p[0] for s in pc.values() for p in s), default="")
+    if last and (TODAY - datetime.date(int(last[:4]), int(last[5:7]), 1)).days > 150: warns.append("denmark-depth: el sacrificio de cerdos no se actualiza desde %s" % last)
+    stats["denmark-depth puntos"] = n
+
+
+def netherlands_farm(doc, errs, warns, stats):
+    """Paises Bajos (CBS): cultivos por region (rendimiento = produccion/superficie), explotaciones y animales, sacrificios mensuales e indice de precios (2020=100)."""
+    if doc["source"]["id"] != "cbs_nl": errs.append("netherlands-farm: la fuente no es cbs_nl"); return
+    c = doc["crops"]; n = 0; cy = TODAY.year; YT = [0, 0]
+    if any(not isinstance(y, int) or y > cy for y in c["provisional"]): errs.append("netherlands-farm: anos provisionales invalidos"); return
+    for cr, rr in c["data"].items():
+        if cr not in c["crops"]: errs.append("netherlands-farm: cultivo desconocido %s" % cr); return
+        for g, ms in rr.items():
+            if g not in c["regions"]: errs.append("netherlands-farm %s: region desconocida %s" % (cr, g)); return
+            S = {m: _eu_series("netherlands-farm cultivo %s/%s/%s" % (cr, g, m), ms[m], r"^\d{4}$", errs) for m in ms}
+            if any(v is None for v in S.values()): return
+            for s in S.values(): n += len(s)
+            if all(k in S for k in ("area", "yield", "prod")):
+                t, b = _eu_yield_count(S["area"], S["yield"], S["prod"], 1, 1000, 0.10, fromyear=2005); YT[0] += t; YT[1] += b
+    if YT[0] and YT[1] / YT[0] > 0.05: errs.append("netherlands-farm: el rendimiento no cuadra con produccion/superficie en %d de %d casos (posible cambio de unidades; el CBS tiene unas pocas discrepancias propias)" % (YT[1], YT[0])); return
+    nat = c["data"].get("A042170", {}).get("NL01", {})
+    if not nat.get("prod"): errs.append("netherlands-farm: falta el cultivo A042170 nacional"); return
+    f = doc["farms"]; D = {}
+    for k, gs in f["data"].items():
+        for g, s in gs.items():
+            if g not in f["regions"]: errs.append("netherlands-farm explotaciones %s: region desconocida %s" % (k, g)); return
+            x = _eu_series("netherlands-farm explotaciones %s/%s" % (k, g), s, r"^\d{4}$", errs)
+            if x is None: return
+            n += len(x); D[(k, g)] = x
+    for g in f["regions"]:
+        a, b = D.get(("cattle", g), {}), D.get(("dairy_cows", g), {})
+        for y in b:
+            if y in a and b[y] > a[y]: errs.append("netherlands-farm %s %s: vacas lecheras (%s) superan el total de bovino (%s)" % (g, y, b[y], a[y])); return
+        a, b = D.get(("agri_land", g), {}), D.get(("grass", g), {})
+        for y in b:
+            if y in a and b[y] > a[y] * 1.001: errs.append("netherlands-farm %s %s: pastos (%s) superan la superficie agraria (%s)" % (g, y, b[y], a[y])); return
+    for sp, us in doc["slaughter"]["data"].items():
+        for u, s in us.items():
+            x = _eu_series("netherlands-farm sacrificios %s/%s" % (sp, u), s, r"^\d{4}-(0[1-9]|1[0-2])$", errs)
+            if x is None: return
+            n += len(x)
+    for k, s in doc["priceIndex"]["data"].items():
+        x = _eu_series("netherlands-farm indice %s" % k, s, r"^\d{4}-Q[1-4]$", errs, lo=20, hi=500)
+        if x is None: return
+        n += len(x)
+    p = doc["slaughter"]["data"].get("pigs", {}).get("heads")
+    if p and (TODAY - datetime.date(int(p[-1][0][:4]), int(p[-1][0][5:7]), 1)).days > 200: warns.append("netherlands-farm: el sacrificio mensual de cerdos no se actualiza desde %s" % p[-1][0])
+    stats["netherlands-farm puntos"] = n
+
+
+def netherlands_markets(doc, errs, warns, stats):
+    """Paises Bajos (RVO): precios semanales (cerdo EUR/100 kg, lechon EUR/pieza, vacuno EUR/kg) y sacrificios semanales de cerdo (cabezas, peso, % carne, clases SEUROP que suman ~100)."""
+    if doc["source"]["id"] != "rvo": errs.append("netherlands-markets: la fuente no es rvo"); return
+    rx = r"^\d{4}-W(0[1-9]|[1-4]\d|5[0-3])$"; n = 0
+    a = _eu_series("netherlands-markets cerdo", doc["pigPrice"]["pigs"], rx, errs, lo=50, hi=300)
+    b = _eu_series("netherlands-markets lechon", doc["pigPrice"]["piglets"], rx, errs, lo=5, hi=150)
+    if a is None or b is None: return
+    n += len(a) + len(b)
+    for k, s in doc["cattlePrice"]["data"].items():
+        x = _eu_series("netherlands-markets vacuno %s" % k, s, rx, errs, lo=0.3, hi=15)
+        if x is None: return
+        n += len(x)
+    ps = doc["pigSlaughter"]; R = {"heads": (10000, 800000), "weight": (70, 130), "lean": (50, 65)}
+    G = {}
+    for k, s in ps.items():
+        lo, hi = R.get(k, (0, 100))
+        x = _eu_series("netherlands-markets sacrificio %s" % k, s, rx, errs, lo=lo, hi=hi)
+        if x is None: return
+        n += len(x); G[k] = x
+    gs = [k for k in G if k.startswith("grade_")]
+    if gs:
+        for w in G["heads"]:
+            if all(w in G[k] for k in gs):
+                t = sum(G[k][w] for k in gs)
+                if not (97 <= t <= 103): errs.append("netherlands-markets sacrificio %s: las clases SEUROP suman %.1f %%" % (w, t)); return
+    last = max(a)
+    y, w = int(last[:4]), int(last[6:])
+    try: ld = datetime.date.fromisocalendar(y, min(w, 52), 1)
+    except ValueError: ld = None
+    if ld and (TODAY - ld).days > 35: warns.append("netherlands-markets: el precio del cerdo no se actualiza desde %s" % last)
+    stats["netherlands-markets puntos"] = n
+
+
+def france_vigieau(doc, errs, warns, stats):
+    """Francia (VigiEau): foto por departamento (nivel dentro de la escala), recuentos que suman los departamentos y el historial propio, con fechas crecientes y el ultimo recuento igual a la foto."""
+    if doc["source"]["id"] != "vigieau": errs.append("france-vigieau: la fuente no es vigieau"); return
+    L = doc["levels"]
+    if L != ["vigilance", "alerte", "alerte_renforcee", "crise"]: errs.append("france-vigieau: escala de niveles inesperada"); return
+    seen = set(); cnt = {k: 0 for k in L}; cnt["none"] = 0
+    for d in doc["departments"]:
+        if not re.match(r"^(\d{2}|2A|2B|97\d)$", d["code"]) or d["code"] in seen: errs.append("france-vigieau: codigo de departamento invalido o repetido %r" % d["code"]); return
+        seen.add(d["code"])
+        for k in ("level", "sup", "sou", "aep"):
+            if d[k] is not None and d[k] not in L: errs.append("france-vigieau %s: nivel %s=%r desconocido" % (d["code"], k, d[k])); return
+        cnt[d["level"] or "none"] += 1
+    if cnt != doc["counts"]: errs.append("france-vigieau: los recuentos no coinciden con los departamentos"); return
+    last = None
+    for h in doc["history"]:
+        dd = _date(h["date"])
+        if dd is None or dd > TODAY or (last and h["date"] <= last): errs.append("france-vigieau: historial con fechas invalidas o no crecientes (%s)" % h["date"]); return
+        if sum(h["counts"].values()) != len(doc["departments"]) and sum(h["counts"].values()) < 90: errs.append("france-vigieau %s: recuento historico incoherente" % h["date"]); return
+        last = h["date"]
+    if doc["history"][-1]["counts"] != doc["counts"]: errs.append("france-vigieau: el ultimo recuento del historial no es la foto actual"); return
+    asof = (doc["source"].get("asOf") or "")[:10]
+    if asof and _date(asof) and (TODAY - _date(asof)).days > 10: warns.append("france-vigieau: la API no se actualiza desde %s" % asof)
+    stats["france-vigieau departamentos"] = len(doc["departments"])
+
+
+def france_cereobs(doc, errs, warns, stats):
+    """Francia (Cere'Obs, maiz): semanas crecientes, porcentajes 0-100, estado (5 clases) suma ~100 cuando esta completo; regiones no vacias."""
+    if doc["source"]["id"] != "franceagrimer": errs.append("france-cereobs: la fuente no es franceagrimer"); return
+    F = doc["fields"]; n = 0; rx = r"^\d{4}-W(0[1-9]|[1-4]\d|5[0-3])$"
+    def rows(tag, seq):
+        nonlocal n
+        last = None
+        for r in seq:
+            if not (isinstance(r, list) and len(r) == len(F) + 1 and re.match(rx, str(r[0]))): errs.append("%s: fila invalida %r" % (tag, r[:2] if isinstance(r, list) else r)); return False
+            if last and r[0] <= last: errs.append("%s: semanas no crecientes (%s tras %s)" % (tag, r[0], last)); return False
+            last = r[0]
+            for v in r[1:]:
+                if v is not None and not (_num(v) and -0.01 <= v <= 100.01): errs.append("%s %s: porcentaje fuera de 0-100 (%r)" % (tag, r[0], v)); return False
+            cs = r[-5:]
+            if all(v is not None for v in cs) and not (97 <= sum(cs) <= 103): errs.append("%s %s: las clases de estado suman %.1f" % (tag, r[0], sum(cs))); return False
+            n += 1
+        return True
+    if not rows("france-cereobs nacional", doc["national"]): return
+    for g, seq in doc["regions"].items():
+        if not seq or not rows("france-cereobs %s" % g, seq): errs.append("france-cereobs: region %s vacia o invalida" % g) if not seq else None; return
+    ld = doc["source"].get("dataUntil")
+    if ld and _date(ld) and (TODAY - _date(ld)).days > 330: warns.append("france-cereobs: los datos llegan hasta %s" % ld)
+    stats["france-cereobs filas"] = n
+
+
+def cap_dk_amounts(doc, errs, warns, stats):
+    """PAC Dinamarca: importes positivos con unidad, cada paragrafo de un decreto declarado, estado Valid, verificacion reciente (aviso a los 21 dias) y cambios con fechas ordenadas."""
+    vd = _cap_date(doc["verifiedAt"])
+    if vd is None or vd > TODAY: errs.append("cap-dk: verifiedAt invalido o en el futuro"); return
+    ids = set()
+    for d in doc["documents"]:
+        if d["status"] != "Valid": errs.append("cap-dk %s: el decreto no esta vigente (%s)" % (d["id"], d["status"])); return
+        if not (_cap_date(d["signed"]) and _cap_date(d["versionDate"])): errs.append("cap-dk %s: fechas invalidas" % d["id"]); return
+        ids.add(d["id"])
+    if ids != {"BEK1363", "BEK1381"}: errs.append("cap-dk: decretos distintos de BEK1363 y BEK1381"); return
+    seen = set()
+    for s in doc["schemes"]:
+        if s["id"] in seen or s["doc"] not in ids: errs.append("cap-dk: esquema repetido o con decreto desconocido %s" % s["id"]); return
+        seen.add(s["id"])
+        if not s["items"]: errs.append("cap-dk %s: sin importes" % s["id"]); return
+        for it in s["items"]:
+            if not _cap_num(it["amount"]) or it["amount"] <= 0 or it["unit"] not in ("EUR/ha", "DKK/ha", "EUR", "EUR/unit"): errs.append("cap-dk %s: importe o unidad invalidos %r" % (s["id"], it)); return
+    for t in doc["thresholds"]:
+        if not _cap_num(t["value"]) or t["value"] <= 0: errs.append("cap-dk umbral %s: valor invalido" % t["id"]); return
+    last = None
+    for c in doc["changes"]:
+        d = _cap_date(c.get("date", "")) 
+        if d is None or d > TODAY or (last and d < last): errs.append("cap-dk: registro de cambios con fechas invalidas o desordenadas"); return
+        last = d
+    if (TODAY - vd).days > 21: warns.append("cap-dk: los importes se verificaron por ultima vez el %s" % doc["verifiedAt"])
+    stats["cap-dk esquemas"] = len(doc["schemes"]); stats["cap-dk umbrales"] = len(doc["thresholds"])
+
+
+def cap_dk_watch(doc, errs, warns, stats):
+    """PAC Dinamarca, seguimiento: 'reviewNeeded' debe ser EXACTAMENTE la diferencia entre linea base y lectura actual (huellas de paragrafos y modificaciones nuevas)."""
+    cd = _cap_date(doc["checkedAt"])
+    if cd is None or cd > TODAY: errs.append("cap-dk watch: checkedAt invalido o en el futuro"); return
+    b, c = doc["baseline"], doc["current"]
+    if not b["sections"] or not c["sections"]: errs.append("cap-dk watch: sin paragrafos vigilados"); return
+    need = sum(1 for k, v in c["sections"].items() if k not in b["sections"] or b["sections"][k]["sha256"] != v["sha256"])
+    need += sum(1 for k, v in b["sections"].items() if k not in c["sections"])
+    for k, v in c["amendments"].items():
+        need += sum(1 for a in v if a not in b["amendments"].get(k, []))
+    if len(doc["reviewNeeded"]) != need: errs.append("cap-dk watch: reviewNeeded tiene %d entradas y la diferencia real es %d" % (len(doc["reviewNeeded"]), need)); return
+    if need: warns.append("cap-dk: los decretos han cambiado (%s): revisar data/cap/dk/amounts.json" % "; ".join(str(x) for x in doc["reviewNeeded"][:4]))
+    if (TODAY - cd).days > 21: warns.append("cap-dk watch: ultima comprobacion el %s" % doc["checkedAt"])
+    stats["cap-dk parrafos vigilados"] = len(c["sections"])

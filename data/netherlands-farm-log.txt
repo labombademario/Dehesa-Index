@@ -1,0 +1,5 @@
+cultivos 33973 valores
+explotaciones 7990 valores
+sacrificios 8516 valores
+indice de precios 54 valores
+escrito netherlands-farm.json 745 KB

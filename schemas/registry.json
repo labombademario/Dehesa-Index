@@ -521,6 +521,48 @@
    [
     "cap_es_rules"
    ]
+  ],
+  "denmark-depth.json": [
+   "denmark-depth",
+   [
+    "denmark_depth"
+   ]
+  ],
+  "netherlands-farm.json": [
+   "netherlands-farm",
+   [
+    "netherlands_farm"
+   ]
+  ],
+  "netherlands-markets.json": [
+   "netherlands-markets",
+   [
+    "netherlands_markets"
+   ]
+  ],
+  "france-vigieau.json": [
+   "france-vigieau",
+   [
+    "france_vigieau"
+   ]
+  ],
+  "france-cereobs.json": [
+   "france-cereobs",
+   [
+    "france_cereobs"
+   ]
+  ],
+  "cap/dk/amounts.json": [
+   "cap-dk-amounts",
+   [
+    "cap_dk_amounts"
+   ]
+  ],
+  "cap/dk/watch.json": [
+   "cap-dk-watch",
+   [
+    "cap_dk_watch"
+   ]
   ]
  },
  "globs": {

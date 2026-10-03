@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 41 VERIFIED, 12 PENDING, 4 RESTRICTED, 3 BLOCKED; 5879 series en el catalogo unificado.
+Resumen: 45 VERIFIED, 11 PENDING, 4 RESTRICTED, 3 BLOCKED; 5879 series en el catalogo unificado.
 
-## VERIFIED (41)
+## VERIFIED (45)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -18,6 +18,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `bis` | Bank for International Settlements (central bank policy rates) | INT | BIS-TERMS | conditional/conditional | si | 1 | Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation fra… |
 | `bls` | U.S. Bureau of Labor Statistics | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `boe_es` | Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada | ES | CUSTOM | si/si | si | 0 | No desnaturalizar el sentido; citar la fuente con enlace a https://www.boe.es; no sugerir carácter oficial ni patrocinio del BOE; en legisla… |
+| `cbs_nl` | Statistics Netherlands (CBS StatLine) | NL | CUSTOM | si/si | si | 67 | Cite CBS as the source (mandatory); state when figures are modified or derived. The separate Dutch 'Disclaimer open data' text was not read. |
 | `cgc` | Canadian Grain Commission — Grain Statistics Weekly | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 12 | No implied endorsement; excludes personal data, logos and third-party rights. Only the Agricultural Price Index dataset page was read; milk-… |
 | `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 136 | Modifications must be marked as such. |
@@ -39,6 +40,8 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `mb_agri` | Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba) | CA | OpenMB-1.0 | si/si | si | 0 | No suggestion of official status or endorsement; excludes official symbols and logos, personal information and third-party rights. |
 | `nasa_power` | NASA POWER (Prediction Of Worldwide Energy Resources) | US | CC-BY-4.0 | si/si | si | 0 | Do not imply NASA endorsement. The power.larc.nasa.gov services page states no licence; requests should not be finer than about 0.5 degrees. |
 | `rba` | Reserve Bank of Australia (statistical tables) | AU | CC-BY-4.0 | si/si | si | 1 | No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images. |
+| `retsinformation` | Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser) | DK | CUSTOM | si/si | si | 0 | Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regu… |
+| `rvo` | RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk) | NL | CUSTOM | si/si | si | 0 | No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, ca… |
 | `statbel` | Statbel (Statistics Belgium) | BE | STATBEL-OPEN | si/si | si | 123 | Automated re-check of the page returned a CAPTCHA on 2026-10-01. |
 | `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 350 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
 | `statistik_austria` | Statistik Austria (open.data) | AT | CC-BY-4.0 | si/si | si | 0 | Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications. |
@@ -52,9 +55,10 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `usda_nass` | USDA National Agricultural Statistics Service (Quick Stats) | US | US-PD | si/si | si | 12 | No use of USDA/NASS logos or name to imply endorsement. The Quick Stats API terms page could not be read (robots.txt); API key rules and rat… |
 | `usda_oce_wasde` | USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates) | US | US-PD | si/si | no | 0 | Credit requested ('U.S. Department of Agriculture'). Some USDA pages carry third-party material that is labelled; only the public release da… |
 | `usda_rma` | USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance) | US | US-PD | si/si | no | 0 | USDA states that most content is public domain and credit is requested, not required; no RMA-specific data licence page was found. The Summa… |
+| `vigieau` | VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau) | FR | LO-2.0 | si/si | si | 0 | LO 2.0 requires citing the source and the date of last update and not suggesting official endorsement. The data are provided 'à titre indica… |
 | `world_bank_wdi` | World Bank Open Data (World Development Indicators) | INT | CC-BY-4.0 | si/si | si | 0 | No endorsement; no World Bank names or logos without written consent. |
 
-## PENDING (12)
+## PENDING (11)
 
 licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya estaba, y se muestra como pendiente; nunca se inventa un permiso.
 
@@ -64,7 +68,6 @@ licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya est
 | `agroseguro` | Agroseguro (Agrupacion Espanola de Entidades Aseguradoras de los Seguros Agrarios Combinados) | ES | UNKNOWN | unclear/unclear | si | 0 | Agroseguro is the insurers' pool, not a ministry: MAPA's legal notice does not cover it. Four headline figures (2025 financial year) are sho… |
 | `alberta_ag` | Alberta Agriculture and Irrigation — Weekly Market Review | CA | OGL-Alberta | si/si | si | 9 | No suggestion of official status; excludes personal information, logos and trademarks. |
 | `ble` | BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de) | DE | UNKNOWN | unclear/unclear | si | 129 | open-data.ble.de blocks automated fetching via robots.txt; check each dataset's licence on the portal or GovData, or ask opendata@ble.de. |
-| `cbs_nl` | Statistics Netherlands (CBS StatLine) | NL | CUSTOM | unclear/unclear | si | 67 | The page defers to a separate 'Disclaimer open data' that could not be retrieved; a CC BY 4.0 label was declared in earlier project files bu… |
 | `cbsa_tariff` | Canada Border Services Agency — Customs Tariff | CA | UNKNOWN | unclear/unclear | si | 0 | Under the Canada.ca terms, commercial redistribution of Government of Canada content needs prior written permission; non-commercial reproduc… |
 | `franceagrimer` | FranceAgriMer (VISIONet) | FR | LO-2.0 | conditional/conditional | si | 47 | Contradiction: data.gouv.fr copies are LO 2.0 but the VISIONet site says all rights reserved. Treat VISIONet-only series as unlicensed until… |
 | `gep_pt` | GEP — Gabinete de Estratégia e Planeamento (MTSSS, Portugal) | PT | UNKNOWN | unclear/unclear | si | 0 | Los «Termos e Condições» del BTE Online (leídos 2026-10-01) solo tratan privacidad y estadísticas de acceso; no dicen nada sobre reutilizaci… |

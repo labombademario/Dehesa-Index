@@ -1,0 +1,138 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Paises Bajos: cultivos, explotaciones, sacrificios e indice de precios agrarios (CBS StatLine)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "country",
+  "source",
+  "units",
+  "crops",
+  "farms",
+  "slaughter",
+  "priceIndex"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "country": {
+   "enum": [
+    "NL"
+   ]
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url",
+    "license",
+    "tables"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "cbs_nl"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    },
+    "license": {
+     "type": "string"
+    }
+   }
+  },
+  "units": {
+   "type": "object"
+  },
+  "crops": {
+   "type": "object",
+   "required": [
+    "regions",
+    "crops",
+    "data",
+    "provisional"
+   ],
+   "properties": {
+    "regions": {
+     "type": "object"
+    },
+    "crops": {
+     "type": "object"
+    },
+    "data": {
+     "type": "object"
+    },
+    "provisional": {
+     "type": "array"
+    }
+   }
+  },
+  "farms": {
+   "type": "object",
+   "required": [
+    "regions",
+    "data",
+    "provisional"
+   ],
+   "properties": {
+    "regions": {
+     "type": "object"
+    },
+    "data": {
+     "type": "object"
+    },
+    "provisional": {
+     "type": "array"
+    }
+   }
+  },
+  "slaughter": {
+   "type": "object",
+   "required": [
+    "labels",
+    "data"
+   ],
+   "properties": {
+    "labels": {
+     "type": "object"
+    },
+    "data": {
+     "type": "object"
+    }
+   }
+  },
+  "priceIndex": {
+   "type": "object",
+   "required": [
+    "base",
+    "labels",
+    "data"
+   ],
+   "properties": {
+    "base": {
+     "type": "string"
+    },
+    "labels": {
+     "type": "object"
+    },
+    "data": {
+     "type": "object"
+    }
+   }
+  }
+ }
+}

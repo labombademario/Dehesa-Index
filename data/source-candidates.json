@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-03T19:59:24Z",
+ "generatedAt": "2026-10-03T21:51:29Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 81,
+  "total": 84,
   "byStatus": {
-   "ACTIVE": 50,
+   "ACTIVE": 53,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -1717,18 +1717,18 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
+   "licenseStatus": "VERIFIED",
    "licenseId": "CUSTOM",
-   "commercialReuse": "unclear",
-   "derivatives": "unclear",
-   "attribution": "Source: CBS (Statistics Netherlands)",
-   "lastChecked": "2026-10-01",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: CBS (Statistics Netherlands), StatLine. Own calculations where we derive values.",
+   "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
-    "result": "NOT_READY",
+    "result": "READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -1736,8 +1736,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "cbsa_tariff",
@@ -2782,6 +2781,80 @@
    ]
   },
   {
+   "sourceId": "retsinformation",
+   "registryId": "retsinformation",
+   "country": "DK",
+   "scope": "integrated",
+   "institution": "Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Kilde: Retsinformation (Civilstyrelsen), bekendtgørelse nr. 1363 og 1381 af 2025. Uddrag og bearbejdning; kun Retsinformation er autentisk.",
+   "lastChecked": "2026-10-03",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "rvo",
+   "registryId": "rvo",
+   "country": "NL",
+   "scope": "integrated",
+   "institution": "RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Bron: RVO (Rijksdienst voor Ondernemend Nederland), marktinformatie statistieken",
+   "lastChecked": "2026-10-03",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "snice_mx",
    "registryId": "snice_mx",
    "country": "MX",
@@ -3384,6 +3457,43 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Source: U.S. Department of Agriculture, Risk Management Agency (Summary of Business). Aggregated by Dehesa Index.",
+   "lastChecked": "2026-10-03",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "vigieau",
+   "registryId": "vigieau",
+   "country": "FR",
+   "scope": "integrated",
+   "institution": "VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "LO-2.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source : VigiEau, Ministère de la Transition écologique — Licence Ouverte 2.0",
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
    "datasetIdentified": true,
