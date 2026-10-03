@@ -1,23 +1,8 @@
-## tablefile 41241-0010 {'startyear': '1950'} 200 221532
-lines 27745
-## tablefile 41241-0005 {'startyear': '1950'} 200 15211
-lines 1735
-## tablefile 41241-0001 {'startyear': '1950'} 200 33075
-lines 3481
-## tablefile 41241-0002 {'startyear': '1950'} 200 23451
-lines 2281
-## tablefile 41241-0003 {'startyear': '1950'} 200 6882
-lines 761
-## tablefile 61521-0001 {'startyear': '1950'} 200 7009
-lines 901
-## tablefile 61521-0010 {'startyear': '1950'} 200 99509
-lines 14401
-## tablefile 61521-0100 {'startyear': '1950'} 200 10765
-lines 1081
-## tablefile 41141-0010 {'startyear': '1950'} 200 35199
-lines 4801
-## tablefile 41141-0110 {'startyear': '1950'} 200 947
+meta 200 2238
+{"Ident":{"Service":"metadata","Method":"table"},"Status":{"Code":0,"Content":"erfolgreich","Type":"Information"},"Parameter":{"username":"********************","password":"********************","name":"41141-0110","area":"Alle","language":"de"},"Object":{"Code":"41141-0110","Content":"Landwirtschaftliche Betriebe mit gepachteten Flächen, Pachtentgelt: Bundesländer, Jahre, Bodennutzungsarten, Rechtsformen, Größenklassen der landw. genutzten Fläche","Time":{"From":"2010","To":"2023"},"Valid":"true","Structure":{"Head":{"Code":"41141","Content":"Landwirtschaftszählung: Haupterhebung","Type":"Statistik","Values":"-1","Selected":null,"Functions":null,"Structure":null,"Updated":"see parent"},"Columns":[{"Code":"BNZAT4","Content":"Bodennutzungsarten","Type":"Merkmal","Values":"4","Selected":null,"Functions":null,"Structure":[{"Code":"BTR024","Content":"Landwirtschaftl. Betriebe mit gepachteten Flächen","Type":"Merkmal","Values":"-1","Selected":null,"Functions":null,"Structure":null,"Updated":"see parent"},{"Code":"FLC059","Content":"LF in Betrieben mit gepachteten Flächen","Type":"Merkmal","Values":"-1","Selected":null,"Functions":null,"Structure":null,"Updated":"see parent"},{"Code":"FLC044","Content":"Gepachtete Fläche","Type":"Merkmal","Values":"-1","Selected":null,"Functions":null,"Structure":null,"Updated":"see parent"},{"Code":"ETG009","Content":"Pachtentgelt je ha","Type":"Merkmal","Values":"-1","Selected":null,"Functions":null,"Structure":null,"Updated":"see parent"}],"Updated":"see parent"}],"Rows":[{"Code":"RECF01","Content":"Rechtsformen","Type":"Merkmal","Values":"5","Selected":null,"Functions":null,"Structure":[{"Code":"FLCG05","Content":"Größenklassen der LF","Type":"Merkmal","Values":"9","Selected":null,"Functions":null,"Structure":null,"Updated":"see parent"}],"Updated":"see parent"}],"Subtitel":{"Code":"JAHR","Content":"Jahr","Type":"Merkmal","Values":"-1","Selected":null,"Functions":null,"Structure":null,"Updated":"see parent"},"Subheading":{"Code":"DLAND","Content":"Bundesländer","Type":"Merkmal","Values":"16","Selected":null,"Functions":null,"Structure":null,"Updated":"see parent"}},"Updated":"29.12.2022 08:02:05h"},"Copyright":"© Statistisches Bundesamt (Destatis), 2026"}
+## tablefile 41141-0110-test {'startyear': '2010', 'regionalvariable': 'DLAND', 'regionalkey': '01'} 200 849
 lines 1
-{"Ident":{"Service":"data","Method":"tablefile"},"Status":{"Code":98,"Content":"Die Tabelle ist zu gross, um im Dialog abgerufen zu werden. Bitte nutzen sie den Webservice mit dem Parameter job=true (REST) um eine Verarbeitung im Hintergrund zu starten.","Type":"Fehler"},"Parameter":{"username":"***
-## tablefile 41141-0126 {'startyear': '1950'} 200 116298
-lines 13825
+{"Ident":{"Service":"data","Method":"tablefile"},"Status":{"Code":104,"Content":"Es gibt keine Objekte zum angegebenen Selektionskriterium","Type":"Information"},"Parameter":{"username":"********************","password":"********************","name":"41141-0110-test","area":"Öffentlich","structurein
+## tablefile 41141-0110-test {'startyear': '2010', 'regionalvariable': 'DLAND', 'regionalkey': '01', 'classifyingvariable1': 'BNZAT4', 'classifyingkey1': 'BNZAT-2'} 200 862
+lines 1
+{"Ident":{"Service":"data","Method":"tablefile"},"Status":{"Code":104,"Content":"Es gibt keine Objekte zum angegebenen Selektionskriterium","Type":"Information"},"Parameter":{"username":"********************","password":"********************","name":"41141-0110-test","area":"Öffentlich","structurein
