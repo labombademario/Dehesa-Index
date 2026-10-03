@@ -1,63 +1,62 @@
-import urllib.request, urllib.error, os, json, time, hashlib
+import urllib.request, urllib.error, urllib.parse, os, json, time, re
 os.makedirs('research_out', exist_ok=True)
-UA = 'Mozilla/5.0 (compatible; DehesaIndexBot/1.0; +https://dehesaindex.com)'
-T = [
-# Denmark
-('dk','retsinfo_bek1363','https://www.retsinformation.dk/eli/lta/2025/1363'),
-('dk','retsinfo_bek1363_json','https://www.retsinformation.dk/api/document/eli/lta/2025/1363'),
-('dk','retsinfo_bek1381','https://www.retsinformation.dk/eli/lta/2025/1381'),
-('dk','statbank_hst88','https://api.statbank.dk/v1/tableinfo/HST88?format=JSON'),
-('dk','statbank_hst88_data','https://api.statbank.dk/v1/data/HST88/CSV?lang=en&Tid=*&OMRÅDE=*&AFGRØDE=*'),
-('dk','statbank_subjects','https://api.statbank.dk/v1/subjects/16?recursive=true&format=JSON'),
-('dk','dmi_api','https://opendataapi.dmi.dk/v2/metObs/collections'),
-('dk','landbrugsstyrelsen','https://lbst.dk/tilskud-selvbetjening/grundbetaling'),
-# Netherlands
-('nl','cbs_85636','https://opendata.cbs.nl/ODataApi/odata/85636NED/TableInfos'),
-('nl','cbs_85636_data','https://opendata.cbs.nl/ODataApi/odata/85636NED/TypedDataSet?$top=5'),
-('nl','cbs_80780','https://opendata.cbs.nl/ODataApi/odata/80780NED/TableInfos'),
-('nl','cbs_80781','https://opendata.cbs.nl/ODataApi/odata/80781NED/TableInfos'),
-('nl','cbs_7123slac','https://opendata.cbs.nl/ODataApi/odata/7123SLAC/TableInfos'),
-('nl','rvo_varken','https://www.rvo.nl/onderwerpen/landbouw-tuinbouw/varkens/referentieprijs'),
-('nl','rvo_ecoregeling','https://www.rvo.nl/onderwerpen/gemeenschappelijk-landbouwbeleid-glb/ecoregeling'),
-('nl','knmi_neerslagtekort','https://www.knmi.nl/nederland-nu/klimatologie/daggegevens'),
-('nl','knmi_opendata','https://api.dataplatform.knmi.nl/open-data/v1/datasets'),
-# France
-('fr','vigieau_api','https://api.vigieau.beta.gouv.fr/api/departements'),
-('fr','datagouv_vigieau','https://www.data.gouv.fr/api/1/datasets/?q=vigieau&page_size=3'),
-('fr','datagouv_cereobs','https://www.data.gouv.fr/api/1/datasets/?q=cere%27obs&page_size=3'),
-('fr','datagouv_franceagrimer','https://www.data.gouv.fr/api/1/datasets/?q=franceagrimer+cotations&page_size=3'),
-('fr','franceagrimer_cotations','https://www.franceagrimer.fr/rnm/'),
-('fr','agreste_disar','https://agreste.agriculture.gouv.fr/agreste-web/disaron/'),
-('fr','legifrance','https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000000000'),
-('fr','meteofrance_api','https://donneespubliques.meteofrance.fr/'),
-# Austria
-('at','statistik_ods','https://www.statistik.at/en/statistics/agriculture-and-forestry'),
-('at','statistik_open','https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_fldb_flaechennutzung_1'),
-('at','ama_oepul','https://www.ama.at/fachliche-informationen/oepul'),
-('at','geosphere_api','https://dataset.api.hub.geosphere.at/v1/datasets'),
-('at','ris_api','https://data.bka.gv.at/ris/api/v2.6/Bundesrecht'),
-('at','data_gv_at','https://www.data.gv.at/api/3/action/package_search?q=landwirtschaft&rows=3'),
-# Belgium
-('be','landbouwcijfers','https://landbouwcijfers.vlaanderen.be/'),
-('be','kmi_aws','https://opendata.meteo.be/'),
-('be','statbel_open','https://statbel.fgov.be/en/open-data'),
-('be','statbel_agri','https://statbel.fgov.be/en/themes/agriculture-fisheries'),
-('be','wallonie_agri','https://agriculture.wallonie.be/'),
-]
+UA='Mozilla/5.0 (compatible; DehesaIndexBot/1.0; +https://dehesaindex.com)'
 log=[]
-for c,n,u in T:
-    t=time.time(); rec={'country':c,'name':n,'url':u}
+def get(c,n,u,data=None,keep=200000,hdr=None):
+    rec={'country':c,'name':n,'url':u}
     try:
-        r=urllib.request.Request(u,headers={'User-Agent':UA,'Accept':'*/*'})
-        with urllib.request.urlopen(r,timeout=30) as f:
-            b=f.read(400000)
-            rec.update(status=f.status,ctype=f.headers.get('Content-Type'),bytes=len(b),final=f.geturl(),
-                       lastmod=f.headers.get('Last-Modified'),head=b[:300].decode('utf8','replace'))
-            open('research_out/%s_%s.bin'%(c,n),'wb').write(b[:60000])
+        h={'User-Agent':UA,'Accept':'*/*'}
+        if hdr:h.update(hdr)
+        r=urllib.request.Request(u,data=data,headers=h)
+        with urllib.request.urlopen(r,timeout=40) as f:
+            b=f.read(5000000)
+            rec.update(status=f.status,ctype=f.headers.get('Content-Type'),bytes=len(b),final=f.geturl())
+            open('research_out/r2_%s_%s.bin'%(c,n),'wb').write(b[:keep])
+            rec['head']=b[:200].decode('utf8','replace')
+            print(c,n,f.status,len(b),flush=True); log.append(rec); return b
     except urllib.error.HTTPError as e:
-        rec.update(status=e.code,err=str(e),head=(e.read(200) or b'').decode('utf8','replace'))
+        rec.update(status=e.code,head=(e.read(300) or b'').decode('utf8','replace'))
     except Exception as e:
         rec.update(status=None,err=repr(e)[:200])
-    rec['secs']=round(time.time()-t,1)
-    log.append(rec); print(c,n,rec.get('status'),flush=True)
-json.dump(log,open('research_out/_log.json','w'),indent=1,ensure_ascii=False)
+    print(c,n,rec.get('status'),rec.get('err'),flush=True); log.append(rec)
+q=urllib.parse.quote
+# DK: HST88 data via POST
+body=json.dumps({"table":"HST88","format":"CSV","lang":"en","variables":[{"code":"LANDSDEL","values":["*"]},{"code":"AFGRØDE","values":["*"]},{"code":"ENHED","values":["*"]},{"code":"Tid","values":["*"]}]}).encode()
+get('dk','hst88_data','https://api.statbank.dk/v1/data',data=body,hdr={'Content-Type':'application/json'},keep=400000)
+# DK livestock/slaughter tables search
+for s in ['kvæg','svin','slagtning','husdyr']:
+    get('dk','tables_'+q(s),'https://api.statbank.dk/v1/tables?lang=da&format=JSON&query='+q(s))
+get('dk','subjects','https://api.statbank.dk/v1/subjects?lang=en&format=JSON&recursive=true&includeTables=false',keep=100000)
+# DK retsinformation
+for u in ['https://www.retsinformation.dk/api/document/eli/lta/2025/1363','https://www.retsinformation.dk/eli/lta/2025/1363/xml','https://www.retsinformation.dk/eli/lta/2025/1363/da/xml','https://www.retsinformation.dk/api/document/eli/lta/2025/1363/da','https://www.retsinformation.dk/api/documentsearch']:
+    get('dk','ret_'+re.sub(r'\W','_',u[-40:]),u,keep=400000)
+get('dk','sgav','https://sgav.dk/')
+get('dk','dst_kilde','https://www.dst.dk/da/Statistik/kilde-angivelse')
+get('dk','dmi_terms','https://opendatadocs.dmi.dk/en/Data/Terms_of_use')
+get('dk','dmi_obs','https://opendataapi.dmi.dk/v2/metObs/collections/observation/items?limit=2')
+# NL
+get('nl','cbs_85636_props','https://opendata.cbs.nl/ODataApi/odata/85636NED/DataProperties',keep=100000)
+get('nl','cbs_85636_gew','https://opendata.cbs.nl/ODataApi/odata/85636NED/Gewassen',keep=100000)
+get('nl','cbs_85636_reg','https://opendata.cbs.nl/ODataApi/odata/85636NED/RegioS')
+get('nl','cbs_85636_full','https://opendata.cbs.nl/ODataApi/odata/85636NED/TypedDataSet?$filter=Perioden%20ge%20%272020JJ00%27',keep=1000000)
+get('nl','cbs_7123_props','https://opendata.cbs.nl/ODataApi/odata/7123SLAC/DataProperties')
+get('nl','cbs_7123_data','https://opendata.cbs.nl/ODataApi/odata/7123SLAC/TypedDataSet?$top=20')
+get('nl','cbs_license','https://www.cbs.nl/nl-nl/onze-diensten/open-data/open-data-v4/open-data-v4-overzicht')
+get('nl','cbs_copyright','https://www.cbs.nl/en-gb/about-us/website/copyright')
+get('nl','rvo_open','https://www.rvo.nl/over-ons/open-data')
+get('nl','rvo_dataset','https://data.rvo.nl/')
+get('nl','rvo_search','https://www.rvo.nl/zoeken?query=referentieprijs+varkens')
+get('nl','ndw_cbs_cat','https://opendata.cbs.nl/ODataCatalog/Tables?$filter=substringof(%27varken%27,Title)&$format=json',keep=100000)
+get('nl','cbs_cat_melk','https://opendata.cbs.nl/ODataCatalog/Tables?$filter=substringof(%27melk%27,Title)&$format=json',keep=100000)
+get('nl','pdok','https://api.pdok.nl/rvo/brpgewaspercelen/ogc/v1')
+# FR
+get('fr','cereobs_xlsx','https://visionet.franceagrimer.fr/Pages/OpenDocument.aspx?fileurl=SeriesChronologiques')
+d=get('fr','datagouv_cereobs_full','https://www.data.gouv.fr/api/1/datasets/?q=cere%27obs&page_size=10',keep=300000)
+get('fr','cereobs_site','https://cereobs.franceagrimer.fr/')
+get('fr','vigieau_zones','https://api.vigieau.beta.gouv.fr/api/zones?profil=exploitation&commune=34172')
+get('fr','vigieau_csv','https://www.data.gouv.fr/api/1/datasets/?q=vigieau+restrictions&page_size=5',keep=300000)
+get('fr','vigieau_doc','https://vigieau.gouv.fr/donnees-ouvertes')
+get('fr','fam_rnm','https://rnm.franceagrimer.fr/')
+get('fr','fam_prix','https://rnm.franceagrimer.fr/prix?BOVINS')
+get('fr','datagouv_bovins','https://www.data.gouv.fr/api/1/datasets/?q=cotations+bovins&page_size=5',keep=200000)
+json.dump(log,open('research_out/_log2.json','w'),indent=1,ensure_ascii=False)
