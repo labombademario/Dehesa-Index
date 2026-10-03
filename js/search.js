@@ -16,7 +16,13 @@
   var BOOST = { product: 0.18, supply: 0.1, crop: 0.1, market: 0.06, category: 0.06, climate: 0.04, page: 0.05, concept: 0.05, news: -0.05, section: 0, map: -0.04 };
   var STOP = { de: 1, del: 1, la: 1, el: 1, los: 1, las: 1, en: 1, of: 1, the: 1, in: 1, and: 1, y: 1, e: 1, et: 1, le: 1, les: 1, du: 1, des: 1, di: 1, il: 1, lo: 1, da: 1, un: 1, una: 1, a: 1, to: 1, for: 1, por: 1, para: 1, con: 1, pour: 1, per: 1 };
   var SUGGEST = ['precios.html?tab=cereales&product=cereales%3Atrigo', 'precios.html?tab=cereales&product=cereales%3Amaiz', 'precios.html?tab=lacteos&product=lacteos%3Aleche', 'precios.html?tab=fertilizantes&product=fertilizantes%3Aurea', 'oferta-demanda.html?c=soja', 'cultivos.html?crop=corn', 'clima.html', 'mapa.html?layer=exp&sd=trigo'];
-  var TRYQ = { h: { es: 'Pregunta directamente', en: 'Ask directly', fr: 'Posez la question', it: 'Chiedi direttamente' }, q: { es: ['precio del trigo', 'maíz en Iowa', 'exportaciones de España a Francia'], en: ['wheat price', 'corn in Iowa', 'Spain exports to Germany'], fr: ['prix du blé', 'maïs en Iowa', 'exportations de la France vers l’Allemagne'], it: ['prezzo del grano', 'mais in Iowa', 'esportazioni della Spagna'] } };
+  var TRYQ = { h: { es: 'Pregunta directamente', en: 'Ask directly', fr: 'Posez la question', it: 'Chiedi direttamente' }, q: {
+    es: ['precio del trigo', 'maíz en Iowa', 'trigo vs maíz', 'qué ha subido más', 'existencias de soja', 'precio de la tierra en Baviera', 'exportaciones de España a Francia', 'cuándo sale el WASDE'],
+    en: ['wheat price', 'corn in Iowa', 'wheat vs corn', 'biggest rises', 'soybean stocks', 'wheat harvest in Bavaria', 'Spain exports to Germany', 'when is the WASDE'],
+    fr: ['prix du blé', 'maïs en Iowa', 'blé et maïs', 'plus fortes hausses', 'stocks de soja', 'terres agricoles en Bavière', 'exportations de la France vers l’Allemagne', 'quand sort le WASDE'],
+    it: ['prezzo del grano', 'mais in Iowa', 'grano e mais', 'maggiori rialzi', 'scorte di soia', 'prezzo della terra in Baviera', 'esportazioni della Spagna', 'quando esce il WASDE'] },
+    honest: { es: 'Solo respondemos con datos publicados, con su unidad, fecha y fuente. Si no hay dato, no inventamos una cifra.', en: 'We only answer with published data, with its unit, date and source. If there is no data, we do not make up a figure.', fr: 'Nous ne répondons qu’avec des données publiées, avec leur unité, leur date et leur source. S’il n’y a pas de donnée, nous n’inventons pas de chiffre.', it: 'Rispondiamo solo con dati pubblicati, con unità, data e fonte. Se il dato non c’è, non inventiamo una cifra.' } };
+  function chipsHtml(l) { return '<div class="ds-head">' + esc(TRYQ.h[l] || TRYQ.h.es) + '</div><div class="ds-try">' + (TRYQ.q[l] || TRYQ.q.es).map(function (q) { return '<button type="button" data-q="' + esc(q) + '">' + esc(q) + '</button>'; }).join('') + '</div>'; }
   var IDX = null, INDEX_URL = null, ROOT = null, STATE = { open: false, sel: 0, results: [], q: '' };
 
   function norm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/œ/g, 'oe').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, ' ').trim(); }
@@ -157,11 +163,11 @@
     if (!norm(q)) {
       var by = {}; IDX.forEach(function (e) { by[e.u] = e; });
       STATE.results = SUGGEST.map(function (u) { return by[u]; }).filter(Boolean);
-      html = '<div class="ds-head">' + esc(TRYQ.h[l] || TRYQ.h.es) + '</div><div class="ds-try">' + (TRYQ.q[l] || TRYQ.q.es).map(function (q) { return '<button type="button" data-q="' + esc(q) + '">' + esc(q) + '</button>'; }).join('') + '</div><div class="ds-head">' + esc(t.popular) + '</div><ul id="ds-list" role="listbox">' + STATE.results.map(function (e, i) { return item(e, l, i); }).join('') + '</ul>';
+      html = chipsHtml(l) + '<div class="ds-head">' + esc(t.popular) + '</div><ul id="ds-list" role="listbox">' + STATE.results.map(function (e, i) { return item(e, l, i); }).join('') + '</ul><div class="ds-msg">' + esc(TRYQ.honest[l] || TRYQ.honest.es) + '</div>';
     } else {
       var r = search(q, l); r.list = r.list.concat(newsFor(q, l)); STATE.results = r.list;
       if (norm(q).length >= 3 && !NEWS.arr) loadNews().then(function () { if (STATE.open && STATE.q === q) renderResults(); });
-      if (!r.list.length) html = '<div class="ds-msg">' + esc(t.empty) + ' «' + esc(q.trim()) + '». ' + esc(t.tryTxt) + '</div>';
+      if (!r.list.length) html = '<div class="ds-msg">' + esc(t.empty) + ' «' + esc(q.trim()) + '». ' + esc(t.tryTxt) + '</div>' + chipsHtml(l) + '<div class="ds-msg">' + esc(TRYQ.honest[l] || TRYQ.honest.es) + '</div>';
       else html = (r.partial ? '<div class="ds-head">' + esc(t.partial) + '</div>' : '') + '<ul id="ds-list" role="listbox">' + r.list.map(function (e, i) { return item(e, l, i); }).join('') + '</ul>';
     }
     body.innerHTML = html; mark(); answerFor(q, l);

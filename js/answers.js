@@ -38,6 +38,34 @@
       costHead: 'Costo di produzione (USDA ERS, USA, media nazionale)', costTotal: 'Totale dei costi elencati', perAcre: 'USD per acro seminato', imputed: 'Imputati (terra e lavoro non retribuito)', yld: 'resa', costNote: 'Un riferimento nazionale, non il costo di una specifica azienda. Puoi caricarlo nel calcolatore.', costLink: 'Apri il calcolatore',
       calHead: 'Calendario delle pubblicazioni', calText: 'Le date dei rapporti ufficiali sono nel calendario.', calLink: 'Apri il calendario', calNone: 'Nessuna data per {r} nel calendario ufficiale caricato.', calSrc: 'Date del calendario ufficiale USDA (NASS e WASDE), in ora della costa orientale USA (ET).', countryHead: 'Profilo paese', countryText: 'Produzione, commercio, costi e prezzi: {c}.', countryLink: 'Apri il profilo', month: 'Dati mensili', multi: 'Due prodotti diversi: chiedi di uno alla volta.' }
   };
+  /* ---------- textos de las respuestas nuevas (oferta y demanda, Alemania, mayores variaciones, comparar) ---------- */
+  var T2 = {
+    es: { camp: 'Campaña {y}/{y2}', prev: 'campaña anterior', world: 'Mundo', supNote: 'Balance del USDA (PSD), en miles de toneladas tal como lo publica la fuente. La campaña más reciente es una previsión que el USDA revisa cada mes.', supNone: 'No tenemos {a} de {p} para {c} en el balance del USDA.', supOpen: 'Ver oferta y demanda de {p}',
+      attrs: { production: 'Producción', consumption: 'Consumo', endingStocks: 'Existencias finales', beginningStocks: 'Existencias iniciales', exports: 'Exportaciones', imports: 'Importaciones', area: 'Superficie', feed: 'Pienso', totalSupply: 'Oferta total', crush: 'Trituración' },
+      deProd: 'Producción', deYield: 'Rendimiento', deArea: 'Superficie', deHarv: 'Cosecha {y}', deProv: 'estimación provisional', deTop: 'Mayores estados productores', de: 'Alemania', deLandHead: 'Tierra agrícola · {l}', dePrice: 'Precio de compra', deRent: 'Alquiler', deSales: 'ventas', deIn: 'en', deKinds: { lf: 'toda la tierra agrícola', acker: 'tierra de cultivo', gruen: 'pastos' }, deNoPrice: 'No hay precio de compra publicado para {l}.', deNoRent: 'No hay alquiler publicado para {l}.', deNoProd: 'No hay {c} publicado para {l}.',
+      deLandNote: 'El precio es la media de las ventas registradas ese año (los estados pequeños tienen pocas operaciones). El alquiler solo se publica en los años de censo agrario y es la media de toda la tierra arrendada.', deProdNote: 'Datos de Destatis. La cosecha del año en curso es una estimación provisional.', deOpen: 'Abrir el perfil de Alemania',
+      movUp: 'Mayores subidas', movDn: 'Mayores bajadas', movNote: 'Variación respecto al dato anterior de cada fuente: el intervalo (semanal o mensual) y la fecha cambian de un producto a otro, así que no es un ranking estricto.', movNone: 'No hay variaciones publicadas.', movOpen: 'Abrir el panel de precios',
+      cmpNote: 'Cada precio va en la unidad y la moneda de su fuente: no se comparan cifras de productos distintos.', cmpHead: 'Comparación' },
+    en: { camp: 'Marketing year {y}/{y2}', prev: 'previous year', world: 'World', supNote: 'USDA balance sheet (PSD), in thousand tonnes as published by the source. The latest marketing year is a forecast that USDA revises every month.', supNone: 'We have no {a} of {p} for {c} in the USDA balance sheet.', supOpen: 'See supply and demand of {p}',
+      attrs: { production: 'Production', consumption: 'Consumption', endingStocks: 'Ending stocks', beginningStocks: 'Beginning stocks', exports: 'Exports', imports: 'Imports', area: 'Area', feed: 'Feed use', totalSupply: 'Total supply', crush: 'Crush' },
+      deProd: 'Production', deYield: 'Yield', deArea: 'Area', deHarv: 'Harvest {y}', deProv: 'provisional estimate', deTop: 'Largest producing states', de: 'Germany', deLandHead: 'Farmland · {l}', dePrice: 'Purchase price', deRent: 'Rent', deSales: 'sales', deIn: 'in', deKinds: { lf: 'all farmland', acker: 'arable land', gruen: 'grassland' }, deNoPrice: 'No purchase price is published for {l}.', deNoRent: 'No rent is published for {l}.', deNoProd: 'No {c} is published for {l}.',
+      deLandNote: 'The price is the average of the sales recorded that year (small states have few transactions). Rent is only published in farm-census years and is the average over all rented land.', deProdNote: 'Data from Destatis. The current year’s harvest is a provisional estimate.', deOpen: 'Open the Germany profile',
+      movUp: 'Biggest rises', movDn: 'Biggest falls', movNote: 'Change versus each source’s previous reading: the interval (weekly or monthly) and the date differ between products, so this is not a strict ranking.', movNone: 'No changes are published.', movOpen: 'Open the price dashboard',
+      cmpNote: 'Each price is in the unit and currency of its source: figures of different products are not compared.', cmpHead: 'Comparison' },
+    fr: { camp: 'Campagne {y}/{y2}', prev: 'campagne précédente', world: 'Monde', supNote: 'Bilan de l’USDA (PSD), en milliers de tonnes tel que publié par la source. La campagne la plus récente est une prévision que l’USDA révise chaque mois.', supNone: 'Nous n’avons pas {a} de {p} pour {c} dans le bilan de l’USDA.', supOpen: 'Voir l’offre et la demande de {p}',
+      attrs: { production: 'Production', consumption: 'Consommation', endingStocks: 'Stocks finaux', beginningStocks: 'Stocks initiaux', exports: 'Exportations', imports: 'Importations', area: 'Surface', feed: 'Alimentation animale', totalSupply: 'Offre totale', crush: 'Trituration' },
+      deProd: 'Production', deYield: 'Rendement', deArea: 'Surface', deHarv: 'Récolte {y}', deProv: 'estimation provisoire', deTop: 'Principaux Länder producteurs', de: 'Allemagne', deLandHead: 'Terres agricoles · {l}', dePrice: 'Prix d’achat', deRent: 'Loyer', deSales: 'ventes', deIn: 'en', deKinds: { lf: 'toutes les terres agricoles', acker: 'terres arables', gruen: 'prairies' }, deNoPrice: 'Aucun prix d’achat publié pour {l}.', deNoRent: 'Aucun loyer publié pour {l}.', deNoProd: 'Pas de {c} publié pour {l}.',
+      deLandNote: 'Le prix est la moyenne des ventes enregistrées dans l’année (les petits Länder ont peu de transactions). Le loyer n’est publié que les années de recensement agricole et c’est la moyenne de toutes les terres louées.', deProdNote: 'Données de Destatis. La récolte de l’année en cours est une estimation provisoire.', deOpen: 'Ouvrir le profil de l’Allemagne',
+      movUp: 'Plus fortes hausses', movDn: 'Plus fortes baisses', movNote: 'Variation par rapport à la donnée précédente de chaque source : l’intervalle (hebdomadaire ou mensuel) et la date changent d’un produit à l’autre ; ce n’est pas un classement strict.', movNone: 'Aucune variation publiée.', movOpen: 'Ouvrir le tableau des prix',
+      cmpNote: 'Chaque prix est dans l’unité et la devise de sa source : les chiffres de produits différents ne sont pas comparés.', cmpHead: 'Comparaison' },
+    it: { camp: 'Campagna {y}/{y2}', prev: 'campagna precedente', world: 'Mondo', supNote: 'Bilancio USDA (PSD), in migliaia di tonnellate come pubblicato dalla fonte. La campagna più recente è una previsione che l’USDA rivede ogni mese.', supNone: 'Non abbiamo {a} di {p} per {c} nel bilancio USDA.', supOpen: 'Vedi offerta e domanda di {p}',
+      attrs: { production: 'Produzione', consumption: 'Consumo', endingStocks: 'Scorte finali', beginningStocks: 'Scorte iniziali', exports: 'Esportazioni', imports: 'Importazioni', area: 'Superficie', feed: 'Uso zootecnico', totalSupply: 'Offerta totale', crush: 'Frantumazione' },
+      deProd: 'Produzione', deYield: 'Resa', deArea: 'Superficie', deHarv: 'Raccolto {y}', deProv: 'stima provvisoria', deTop: 'Principali Land produttori', de: 'Germania', deLandHead: 'Terra agricola · {l}', dePrice: 'Prezzo di acquisto', deRent: 'Affitto', deSales: 'vendite', deIn: 'nel', deKinds: { lf: 'tutta la terra agricola', acker: 'seminativi', gruen: 'prati e pascoli' }, deNoPrice: 'Nessun prezzo di acquisto pubblicato per {l}.', deNoRent: 'Nessun affitto pubblicato per {l}.', deNoProd: 'Nessun dato di {c} pubblicato per {l}.',
+      deLandNote: 'Il prezzo è la media delle vendite registrate nell’anno (i Land piccoli hanno poche operazioni). L’affitto è pubblicato solo negli anni di censimento agricolo ed è la media di tutta la terra in affitto.', deProdNote: 'Dati di Destatis. Il raccolto dell’anno in corso è una stima provvisoria.', deOpen: 'Apri il profilo della Germania',
+      movUp: 'Maggiori rialzi', movDn: 'Maggiori ribassi', movNote: 'Variazione rispetto al dato precedente di ciascuna fonte: l’intervallo (settimanale o mensile) e la data cambiano da un prodotto all’altro, quindi non è una classifica rigorosa.', movNone: 'Nessuna variazione pubblicata.', movOpen: 'Apri il pannello dei prezzi',
+      cmpNote: 'Ogni prezzo è nell’unità e nella valuta della sua fonte: le cifre di prodotti diversi non si confrontano.', cmpHead: 'Confronto' }
+  };
+  function t2(lang) { return T2[lang] || T2.es; }
   var REGN = { eu: { es: 'Unión Europea', en: 'European Union', fr: 'Union européenne', it: 'Unione europea' }, us: { es: 'EE. UU.', en: 'United States', fr: 'États-Unis', it: 'Stati Uniti' }, ca: { es: 'Canadá', en: 'Canada', fr: 'Canada', it: 'Canada' }, uk: { es: 'Reino Unido', en: 'United Kingdom', fr: 'Royaume-Uni', it: 'Regno Unito' } };
   var UNIT = { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg', kg: 'kg', litro: 'L', mmbtu: 'MMBtu', barril: 'bbl', docena: { es: 'docena', en: 'dozen', fr: 'douzaine', it: 'dozzina' }, lb: 'lb', gal: 'gal', ton_corta: 'short ton', index_2020_100: '2020 = 100' };
   var SRC = { eu_agrifood: 'Comisión Europea · Agri-food Data Portal', usda_nass: 'USDA NASS (Quick Stats)', statcan: 'Statistics Canada', defra: 'DEFRA', eurostat: 'Eurostat', world_bank: 'Banco Mundial', usda_ams_mars: 'USDA AMS', european_commission: 'Comisión Europea', eu_oil_bulletin: 'Boletín Petrolero de la UE', eia: 'U.S. EIA', usda_ers: 'USDA ERS' };
@@ -91,6 +119,42 @@
   var KW = {}; Object.keys(KIND_WORDS).forEach(function (k) { KW[k] = toSet(KIND_WORDS[k]); });
   var FILL = {}; FILLER.forEach(function (w) { if (w) FILL[w] = 1; });
 
+  /* ---------- léxicos de las respuestas nuevas ---------- */
+  function addW(map, val, str) { str.split(' ').forEach(function (w) { if (w) map[w] = val; }); }
+  var PSD = { trigo: 'trigo', maiz: 'maiz', arroz: 'arroz', cebada: 'cebada', soja_grano: 'soja', harina_soja: 'harina_soja', colza: 'colza', oliva: 'oliva', cerdo: 'cerdo', pollo: 'pollo', leche: 'leche', azucar: 'azucar' };
+  var PSD_KEY = { eu: 'European Union', us: 'United States', ca: 'Canada', CN: 'China', BR: 'Brazil', AR: 'Argentina', IN: 'India', UA: 'Ukraine', RU: 'Russia', MX: 'Mexico' };
+  var XC = [ // países que solo existen en el balance mundial del USDA (no tienen perfil propio)
+    ['CN', { es: 'China', en: 'China', fr: 'Chine', it: 'Cina' }, ['china', 'chine', 'cina', 'chino']], ['BR', { es: 'Brasil', en: 'Brazil', fr: 'Brésil', it: 'Brasile' }, ['brasil', 'brazil', 'bresil', 'brasile']],
+    ['AR', { es: 'Argentina', en: 'Argentina', fr: 'Argentine', it: 'Argentina' }, ['argentina', 'argentine']], ['IN', { es: 'India', en: 'India', fr: 'Inde', it: 'India' }, ['india', 'inde']],
+    ['UA', { es: 'Ucrania', en: 'Ukraine', fr: 'Ukraine', it: 'Ucraina' }, ['ucrania', 'ukraine', 'ucraina']], ['RU', { es: 'Rusia', en: 'Russia', fr: 'Russie', it: 'Russia' }, ['rusia', 'russia', 'russie']],
+    ['MX', { es: 'México', en: 'Mexico', fr: 'Mexique', it: 'Messico' }, ['mexico', 'mexique', 'messico']]
+  ];
+  var SUPW = {}; addW(SUPW, 'endingStocks', 'existencias stocks stock inventario inventarios reservas reserves scorte'); addW(SUPW, 'consumption', 'consumo consumption consommation consumi'); addW(SUPW, 'area', 'superficie superficies area areas surface superficie'); addW(SUPW, 'generic', 'oferta demanda balance supply demand offre demande offerta domanda psd');
+  var WORLDW = toSet('mundo mundial world global monde mondial mondo');
+  var LANDW = toSet('tierra tierras terreno terrenos farmland land lands terre terres terra terreni'), RENTW = toSet('alquiler alquileres arrendamiento arrendamientos rent rents rental pacht loyer loyers fermage affitto affitti');
+  var HARVW = toSet('cosecha cosechas harvest harvests recolte recoltes raccolto raccolti rendimiento rendimientos yield yields rendement resa'), ACKERW = toSet('labor labranza arable arables cultivable acker seminativi seminativo cropland'), GRUENW = toSet('pasto pastos prado prados grassland pasture pastures prairie prairies pascoli');
+  var LAND_ROWS = [ // el orden importa: los nombres largos antes que los cortos que contienen
+    ['NW', ['renania del norte westfalia', 'north rhine westphalia', 'rhenanie du nord westphalie', 'renania settentrionale vestfalia', 'nordrhein westfalen']], ['RP', ['renania palatinado', 'rhineland palatinate', 'rhenanie palatinat', 'renania palatinato', 'rheinland pfalz']],
+    ['NI', ['baja sajonia', 'lower saxony', 'basse saxe', 'bassa sassonia', 'niedersachsen']], ['ST', ['sajonia anhalt', 'saxony anhalt', 'saxe anhalt', 'sassonia anhalt', 'sachsen anhalt']],
+    ['MV', ['mecklemburgo pomerania occidental', 'mecklenburg western pomerania', 'mecklembourg pomeranie occidentale', 'meclemburgo pomerania anteriore', 'mecklenburg vorpommern', 'mecklemburgo']],
+    ['BW', ['baden wurttemberg', 'baden wurtemberg', 'bade wurtemberg']], ['SH', ['schleswig holstein']], ['BY', ['baviera', 'bavaria', 'baviere', 'bayern']], ['BE', ['berlin', 'berlino']], ['BB', ['brandeburgo', 'brandenburg', 'brandebourg']],
+    ['HB', ['bremen', 'breme', 'brema']], ['HH', ['hamburgo', 'hamburg', 'hambourg', 'amburgo']], ['HE', ['hesse', 'hessen', 'assia']], ['SL', ['sarre', 'saarland']], ['SN', ['sajonia', 'saxony', 'saxe', 'sassonia', 'sachsen']], ['TH', ['turingia', 'thuringia', 'thuringe', 'thuringen']]
+  ];
+  var LNAME = { BW: 'Baden-Württemberg|Baden-Wurtemberg|Bade-Wurtemberg|Baden-Württemberg', BY: 'Bavaria|Baviera|Bavière|Baviera', BE: 'Berlin|Berlín|Berlin|Berlino', BB: 'Brandenburg|Brandeburgo|Brandebourg|Brandeburgo', HB: 'Bremen|Bremen|Brême|Brema', HH: 'Hamburg|Hamburgo|Hambourg|Amburgo', HE: 'Hesse|Hesse|Hesse|Assia', MV: 'Mecklenburg-Western Pomerania|Mecklemburgo-Pomerania Occidental|Mecklembourg-Poméranie-Occidentale|Meclemburgo-Pomerania Anteriore', NI: 'Lower Saxony|Baja Sajonia|Basse-Saxe|Bassa Sassonia', NW: 'North Rhine-Westphalia|Renania del Norte-Westfalia|Rhénanie-du-Nord-Westphalie|Renania Settentrionale-Vestfalia', RP: 'Rhineland-Palatinate|Renania-Palatinado|Rhénanie-Palatinat|Renania-Palatinato', SL: 'Saarland|Sarre|Sarre|Saarland', SN: 'Saxony|Sajonia|Saxe|Sassonia', ST: 'Saxony-Anhalt|Sajonia-Anhalt|Saxe-Anhalt|Sassonia-Anhalt', SH: 'Schleswig-Holstein|Schleswig-Holstein|Schleswig-Holstein|Schleswig-Holstein', TH: 'Thuringia|Turingia|Thuringe|Turingia' };
+  var CROPN = { cereals: 'Cereals|Cereales|Céréales|Cereali', wheat: 'Wheat|Trigo|Blé|Frumento', rye: 'Rye|Centeno|Seigle|Segale', barley: 'Barley|Cebada|Orge|Orzo', oats: 'Oats|Avena|Avoine|Avena', triticale: 'Triticale|Triticale|Triticale|Triticale', maize: 'Grain maize|Maíz grano|Maïs grain|Mais da granella', rapeseed: 'Rapeseed|Colza|Colza|Colza', sunflower: 'Sunflower|Girasol|Tournesol|Girasole', sugarbeet: 'Sugar beet|Remolacha azucarera|Betterave sucrière|Barbabietola da zucchero', potato: 'Potatoes|Patata|Pommes de terre|Patate', silage: 'Silage maize|Maíz forrajero|Maïs fourrage|Mais da foraggio' };
+  var LI = { en: 0, es: 1, fr: 2, it: 3 };
+  function pickN(map, k, lang) { var v = map[k]; if (!v) return k; var a = v.split('|'); return a[LI[lang]] || a[0]; }
+  var DE_CROP = { trigo: 'wheat', maiz: 'maize', cebada: 'barley', avena: 'oats', centeno: 'rye', colza: 'rapeseed' };
+  var CROP_X = [ // cultivos alemanes que no son un producto de precios; se buscan solo cuando la pregunta es sobre Alemania o un Land
+    ['silage', ['maiz de silo', 'maiz forrajero', 'maiz para ensilar', 'silage maize', 'silage', 'maize silage', 'mais fourrage', 'ensilage', 'mais da foraggio', 'insilato', 'silomais']], ['sugarbeet', ['remolacha azucarera', 'remolacha', 'sugar beet', 'sugarbeet', 'sugar beets', 'betterave sucriere', 'betterave', 'barbabietola da zucchero', 'barbabietola']],
+    ['potato', ['patatas', 'patata', 'potatoes', 'potato', 'pommes de terre', 'pomme de terre', 'patate', 'patata']], ['sunflower', ['girasol', 'sunflower', 'tournesol', 'girasole']], ['triticale', ['triticale']], ['cereals', ['cereales', 'cereals', 'cereal', 'cereales', 'cereali', 'cereale']]
+  ];
+  var DEFILL = toSet('agricola agricolas agricole agricoles agricolo agricoli agricultural agrarian farm farms'), PRICEW = toSet('precio precios price prices prix prezzo prezzi cotiza cotizacion');
+  var RANKW = toSet('mas mayor mayores top biggest largest most plus piu maggiori maggiore principales best worst mejores peores');
+  var UPW = toSet('subido sube suben subida subidas subir rise rises rising risen up gain gains gainers gainer climbed hausse hausses monte rialzo rialzi salito salita'), DNW = toSet('bajado baja bajan bajada bajadas bajar caido caida cae caen fell fall falls falling down drop drops dropped losers loser baisse baisses ribasso ribassi sceso scesa calo');
+  var MOVW = toSet('movers'), CONNW = toSet('y and et e vs versus con with contra compara comparar compare comparer confronta confronto frente entre between o or ou');
+  var MOVFILL = toSet('mas mayor mayores top biggest largest most plus piu maggiori maggiore principales best worst mejores peores fortes forte fuertes fuerte strongest strong ha han has have hoy esta este this producto productos product products produit produits prodotto prodotti gainers gainer losers loser movers hausses hausse baisses baisse rialzo rialzi ribasso ribassi cuales cual which quels quelle quali is');
+
   function norm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/œ/g, 'oe').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, ' ').trim(); }
   function toks(s) { var n = norm(s); return n ? n.split(' ') : []; }
   function fmt(s, o) { return String(s).replace(/\{(\w+)\}/g, function (m, k) { return o[k] !== undefined ? o[k] : m; }); }
@@ -143,18 +207,26 @@
     up.forEach(function (c) { if (STATE_NAME[c] && c !== 'CA' && c !== 'IN' && c !== 'OK' && c !== 'US' && c !== 'EU' && c !== 'UK') n = n.split(' ' + c.toLowerCase() + ' ').join(' '); });
     up.forEach(function (c) { if (c !== 'CA' && c !== 'IN' && c !== 'OK' && c !== 'US' && c !== 'EU' && c !== 'UK' && STATE_NAME[c] && states.indexOf(c) < 0) states.push(c); });
     m = takePhrases(n, STATES); n = m.n; m.found.forEach(function (c) { if (states.indexOf(c) < 0) states.push(c); });
+    m = takePhrases(n, LAND_ROWS); n = m.n; var lands = m.found; // estados federados alemanes
     var n0 = n, parties = []; // países nombrados, en el orden en que aparecen (el primero es el sujeto del comercio)
     COUNTRY_WORDS.forEach(function (c) { var pos = firstPos(n, c[2]); if (pos >= 0) parties.push({ code: c[0], pos: pos }); });
     REGION_WORDS.forEach(function (r) { var code = { us: 'US', uk: 'GB', ca: 'CA' }[r[0]]; if (!code) return; var pos = firstPos(n, r[1].filter(function (a) { return a !== 'us' && a !== 'uk' || /[A-Z]{2}/.test(raw); })); if (pos >= 0) parties.push({ code: code, pos: pos }); });
     parties.sort(function (a, b) { return a.pos - b.pos; });
     m = takePhrases(n, REGION_WORDS); n = m.n; var regions = m.found;
     var cm = takePhrases(n, COUNTRY_WORDS.map(function (c) { return [c[0], c[2]]; })); n = cm.n; var countries = cm.found;
+    var xm = takePhrases(n, XC.map(function (c) { return [c[0], c[2]]; })); n = xm.n; var xcountries = xm.found;
+    var deCtx = lands.length > 0 || countries.indexOf('DE') >= 0, xcrops = [];
+    if (deCtx) { m = takePhrases(n, CROP_X); n = m.n; xcrops = m.found; }
     var calHit = n.trim().split(' ').some(function (w) { return KW.calendar && KW.calendar[w]; });
     var rp = calHit ? takePhrases(n, REPORT_WORDS) : { found: [], n: n }; n = rp.n; var reports = rp.found;
-    var words = n.trim() ? n.trim().split(' ') : [], kinds = {}, rest = [], prodW = false, weakCost = false, tdir = {};
+    var words = n.trim() ? n.trim().split(' ') : [], kinds = {}, rest = [], prodW = false, weakCost = false, tdir = {}, sup = {}, df = {}, world = false;
     words.forEach(function (w) {
       if (TRADE_EXP[w]) { tdir.exp = 1; return; } if (TRADE_IMP[w]) { tdir.imp = 1; return; } if (TRADE_GEN[w]) { tdir.gen = 1; return; }
       if (PW[w]) { prodW = true; return; }
+      if (WORLDW[w]) { world = true; return; }
+      if (deCtx && DEFILL[w]) return;
+      if (LANDW[w]) { df.land = 1; return; } if (RENTW[w]) { df.rent = 1; return; } if (HARVW[w]) { df.harv = 1; return; } if (ACKERW[w]) { df.acker = 1; return; } if (GRUENW[w]) { df.gruen = 1; return; }
+      if (SUPW[w]) { if (SUPW[w] === 'area') { df.area = 1; } sup[SUPW[w]] = 1; return; }
       if (w === 'cost' || w === 'costa') weakCost = true;
       var hit = false; Object.keys(KW).forEach(function (k) { if (KW[k][w]) { kinds[k] = 1; hit = true; } });
       if (hit || FILL[w] || /^\d+$/.test(w) || w.length < 2) return;
@@ -162,15 +234,38 @@
     });
     if (reports.length) kinds.calendar = 1;
     if (weakCost && prodW) kinds.cost = 1;
-    var product = rest.length ? bestProduct(rest, env) : null;
-    if (rest.length && !product) return null; // palabras que no entendemos: mejor no responder
-    var kind = null, tradeOk = (tdir.exp || tdir.imp || tdir.gen) && !product && !states.length && parties.length && TRADE_CC[parties[0].code];
+    // mayores subidas / bajadas: sin producto, estado ni país distinto de una región de precios
+    var mv = { rank: 0, up: 0, dn: 0, mov: 0 };
+    n.trim().split(' ').forEach(function (w) { if (RANKW[w]) mv.rank = 1; if (UPW[w]) mv.up = 1; if (DNW[w]) mv.dn = 1; if (MOVW[w]) mv.mov = 1; });
+    var restM = rest.filter(function (w) { return !MOVFILL[w] && !UPW[w] && !DNW[w]; });
+    if ((mv.up || mv.dn || mv.mov) && (mv.rank || mv.mov) && !restM.length && !states.length && !countries.length && !lands.length && !xcountries.length && !tdir.exp && !tdir.imp && !prodW && !kinds.calendar && !kinds.cost && !kinds.premium)
+      return { kind: 'movers', dir: mv.up && !mv.dn ? 'up' : mv.dn && !mv.up ? 'down' : mv.mov && !mv.up && !mv.dn ? 'both' : 'both', reports: [], product: null, regions: regions, states: [], countries: [], parties: [], tdir: {} };
+    var product = rest.length ? bestProduct(rest, env) : null, pair = null, i;
+    var conn = toks(raw).some(function (w) { return CONNW[w]; });
+    if (!product && rest.length >= 2 && conn) for (i = 1; i < rest.length && !pair; i++) { var pa = bestProduct(rest.slice(0, i), env), pb = bestProduct(rest.slice(i), env); if (pa && pb && pa.slug !== pb.slug) pair = [pa, pb]; }
+    if (rest.length && !product && !pair) return null; // palabras que no entendemos: mejor no responder
+    var priceHit = toks(raw).some(function (w) { return PRICEW[w]; });
+    var crop = xcrops[0] || (product && DE_CROP[product.slug]) || null, deKind = null;
+    if (deCtx && !states.length && !pair) {
+      if (df.rent || df.land) deKind = 'land';
+      else if (crop && (prodW || df.harv || df.area || (!priceHit && (lands.length || xcrops.length || countries.indexOf('DE') >= 0)))) deKind = 'prod';
+      else if (lands.length && !crop && !product && !tdir.exp && !tdir.imp && !tdir.gen) deKind = 'land';
+    }
+    var attrs = Object.keys(sup).filter(function (k) { return k !== 'generic'; });
+    if (prodW && attrs.indexOf('production') < 0) attrs.push('production'); if (tdir.exp) attrs.push('exports'); if (tdir.imp) attrs.push('imports');
+    var scopes = [], badParty = parties.some(function (p) { return p.code !== 'US' && p.code !== 'CA'; }) || regions.some(function (r) { return !PSD_KEY[r]; });
+    regions.forEach(function (r) { if (PSD_KEY[r]) scopes.push(r); }); xcountries.forEach(function (c) { scopes.push(c); });
+    var supOk = !!(product && PSD[product.slug] && (attrs.length || sup.generic) && !states.length && !kinds.cost && !kinds.premium && !deKind && !badParty && !countries.length);
+    var kind = null, tradeOk = (tdir.exp || tdir.imp || tdir.gen) && !product && !states.length && parties.length && TRADE_CC[parties[0].code] && !lands.length;
     if (tradeOk && parties.length === 1 && /(^| )(a|to|vers|verso|para|hacia)$/.test(n0.slice(0, parties[0].pos).trim())) tradeOk = false; // «exportaciones a España»: el sujeto sería otro país
-    if ((tdir.exp || tdir.imp || tdir.gen) && !tradeOk) return null; // comercio sin sujeto claro (p. ej. «exports to Spain»): mejor la búsqueda normal
+    if ((tdir.exp || tdir.imp || tdir.gen) && !tradeOk && !deKind && !supOk) return null; // comercio sin sujeto claro (p. ej. «exports to Spain»): mejor la búsqueda normal
     if (tradeOk) kind = 'trade';
+    else if (deKind) kind = deKind === 'land' ? 'de_land' : 'de_prod';
     else if (states.length) kind = 'local';
+    else if (supOk) kind = 'supply';
     else if (kinds.premium && product && PREM[product.slug]) kind = 'premium';
     else if (kinds.cost && product && ERS[product.slug]) kind = 'cost';
+    else if (pair && !kinds.calendar) kind = 'compare';
     else if (kinds.calendar && !product) kind = 'calendar';
     else if (product && kinds.change) kind = 'change';
     else if (product) kind = 'price';
@@ -178,7 +273,8 @@
     else if (kinds.calendar) kind = 'calendar';
     if (!kind) return null;
     if (kind === 'price' && countries.length && !regions.length) kind = 'country';
-    return { kind: kind, reports: reports, product: product, regions: regions, states: states, countries: countries, parties: parties.map(function (x) { return x.code; }), tdir: tdir };
+    return { kind: kind, reports: reports, product: product, pair: pair, regions: regions, states: states, countries: countries, parties: parties.map(function (x) { return x.code; }), tdir: tdir,
+      lands: lands, crop: crop, de: { land: !!df.land, rent: !!df.rent, acker: !!df.acker, gruen: !!df.gruen, area: !!df.area, harv: !!df.harv, prod: prodW }, attrs: attrs, scopes: scopes, world: world, wantChange: !!kinds.change };
   }
 
   /* ---------- lectura de datos ---------- */
@@ -338,6 +434,124 @@
     return Promise.resolve({ kind: 'country', heading: t.countryHead + ' · ' + name, cards: [], notes: [fmt(t.countryText, { c: name })], link: { href: env.href('paises.html?c=' + cc), label: t.countryLink } });
   }
 
+  /* ---------- resolutores nuevos: oferta y demanda (USDA PSD), Alemania (Destatis), mayores variaciones, comparar productos ---------- */
+  function kv(o) { o.kv = true; return o; }
+  function scopeName(sc, lang) { if (REGN[sc]) return REGN[sc][lang]; var r = XC.filter(function (c) { return c[0] === sc; })[0]; return r ? r[1][lang] : sc; }
+  function rSupply(intent, lang, env) {
+    var t = tx(lang), u = t2(lang), slug = PSD[intent.product.slug], pn = pname(intent.product, lang);
+    var link = { href: env.href('oferta-demanda.html?c=' + slug), label: fmt(u.supOpen, { p: pn }) };
+    return J(env, 'supply-demand.json').then(function (d) {
+      var com = d && (d.commodities || []).filter(function (c) { return c.id === slug; })[0];
+      if (!com) return null;
+      var y = com.latestMarketYear, scopes = intent.scopes.length ? intent.scopes.slice(0, 3) : ['world'];
+      var attrs = intent.attrs.length ? intent.attrs : ['production', 'consumption', 'endingStocks', 'exports', 'imports'];
+      var cards = [], notes = [], rawAll = [];
+      scopes.forEach(function (sc) {
+        var nm = sc === 'world' ? u.world : scopeName(sc, lang), rec, prev;
+        if (sc === 'world') { rec = com.world && com.world[y]; prev = com.world && com.world[y - 1]; }
+        else { var c = com.countries && com.countries[PSD_KEY[sc]]; rec = c && c.years && c.years[y]; prev = c && c.years && c.years[y - 1]; }
+        if (!rec) { notes.push(fmt(u.supNone, { a: attrs.map(function (a) { return u.attrs[a].toLowerCase(); }).join(', '), p: pn, c: nm })); return; }
+        var lines = [], raw = [];
+        attrs.forEach(function (a) {
+          if (typeof rec[a] !== 'number') { notes.push(fmt(u.supNone, { a: u.attrs[a].toLowerCase(), p: pn, c: nm })); return; }
+          raw.push({ k: a, v: rec[a], prev: prev && typeof prev[a] === 'number' ? prev[a] : null });
+          lines.push(u.attrs[a] + ': ' + nf(rec[a], lang, 0) + ' ' + com.unit + (prev && typeof prev[a] === 'number' ? ' (' + u.prev + ': ' + nf(prev[a], lang, 0) + ')' : ''));
+        });
+        if (!raw.length) return;
+        var first = raw[0];
+        cards.push(kv({ sid: 'usda_fas_psd', title: pn + ' · ' + nm + ' · ' + fmt(u.camp, { y: y, y2: y + 1 }), big: lines.length === 1 ? nf(first.v, lang, 0) : null, bigUnit: com.unit, lines: lines.length === 1 ? (prev && first.prev !== null ? [u.prev + ': ' + nf(first.prev, lang, 0) + ' ' + com.unit] : []) : lines, period: String(com.publishedMonth || ''), dateTxt: dateTxt(com.publishedMonth, lang), source: 'USDA FAS · PSD Online', href: link.href, raw: raw, scope: sc, marketYear: y, com: slug }));
+      });
+      if (!cards.length) { if (!notes.length) return null; return { kind: 'supply', heading: pn, cards: [], notes: notes, link: link }; }
+      notes.unshift(u.supNote);
+      return { kind: 'supply', heading: u.attrs[attrs[0]] && attrs.length === 1 ? u.attrs[attrs[0]] + ' · ' + pn : pn, cards: cards, notes: notes, link: link };
+    });
+  }
+  function ptGet(a, y) { for (var i = 0; i < (a || []).length; i++) if (a[i][0] === y) return a[i][1]; return null; }
+  function ptLast(a) { return a && a.length ? a[a.length - 1] : null; }
+  function yrsOk(A, crop, vn) { // años con al menos 6 estados publicados (igual que la pestaña de producción)
+    var nat = (A.production.nat[crop] || {})[vn] || [], L = A.production.land[crop] || {}, res = [];
+    nat.forEach(function (p) { if (p[0] >= 2010) { var c = 0, k; for (k in L) if (ptGet(L[k][vn], p[0]) != null) c++; if (c >= 6) res.push(p[0]); } });
+    return res;
+  }
+  function rDEProd(intent, lang, env) {
+    var t = tx(lang), u = t2(lang), crop = intent.crop, cn = pickN(CROPN, crop, lang), lk = intent.lands[0], link = { href: env.href('paises.html?c=DE'), label: u.deOpen };
+    return J(env, 'germany-agri.json').then(function (A) {
+      if (!A || !A.production || !A.production.nat[crop]) return null;
+      var ys = yrsOk(A, crop, 'prod'); if (!ys.length) return null;
+      var y = ys[ys.length - 1], now = (env.today ? +String(env.today).slice(0, 4) : new Date().getFullYear()), prov = y >= now;
+      var yl = String(y) + (prov ? ' (' + u.deProv + ')' : '');
+      var L = A.production.land[crop] || {}, N = A.production.nat[crop], cards = [], notes = prov ? [u.deProdNote] : [];
+      function lines(src) { var o = [], raw = []; [['yield', u.deYield, 'dt/ha', 1], ['area', u.deArea, 'ha', 0]].forEach(function (x) { var v = ptGet(src[x[0]], y); if (v != null) { o.push(x[1] + ': ' + nf(v, lang, x[3]) + ' ' + x[2]); raw.push({ k: x[0], v: v }); } }); return { o: o, raw: raw }; }
+      function card(title, src, scope) {
+        var p = ptGet(src.prod, y); if (p == null) return null; var l = lines(src);
+        return kv({ sid: 'destatis', title: title, big: nf(p, lang, 0), bigUnit: 't', lines: l.o, period: String(y), dateTxt: yl, source: 'Destatis (GENESIS-Online)', href: link.href, raw: [{ k: 'prod', v: p }].concat(l.raw), scope: scope, year: y, crop: crop });
+      }
+      if (lk) {
+        var c = L[lk] ? card(cn + ' · ' + pickN(LNAME, lk, lang), L[lk], lk) : null;
+        if (c) cards.push(c); else notes.unshift(fmt(u.deNoProd, { c: cn.toLowerCase(), l: pickN(LNAME, lk, lang) }));
+        var cn2 = card(cn + ' · ' + u.de, N, 'DE'); if (cn2 && c) cards.push(cn2);
+      } else {
+        var cn3 = card(cn + ' · ' + u.de, N, 'DE'); if (cn3) cards.push(cn3);
+        var rows = []; Object.keys(L).forEach(function (k) { var v = ptGet(L[k].prod, y); if (v != null) rows.push({ k: k, v: v }); }); rows.sort(function (a, b) { return b.v - a.v; });
+        if (rows.length >= 3) cards.push(kv({ sid: 'destatis', title: u.deTop + ' · ' + cn, big: null, bigUnit: 't', lines: rows.slice(0, 3).map(function (r, i) { return (i + 1) + '. ' + pickN(LNAME, r.k, lang) + ': ' + nf(r.v, lang, 0) + ' t'; }), period: String(y), dateTxt: yl, source: 'Destatis (GENESIS-Online)', href: link.href, raw: rows.slice(0, 3).map(function (r) { return { k: 'top:' + r.k, v: r.v }; }), scope: 'top', year: y, crop: crop }));
+      }
+      if (!cards.length) return { kind: 'de_prod', heading: cn + ' · ' + u.de, cards: [], notes: notes, link: link };
+      return { kind: 'de_prod', heading: cn + ' · ' + (lk ? pickN(LNAME, lk, lang) : u.de), cards: cards, notes: notes, link: link };
+    });
+  }
+  function rDELand(intent, lang, env) {
+    var t = tx(lang), u = t2(lang), lk = intent.lands[0], K = intent.de.acker ? 'acker' : intent.de.gruen ? 'gruen' : 'lf', link = { href: env.href('paises.html?c=DE'), label: u.deOpen };
+    var wantP = intent.de.land || !intent.de.rent, wantR = intent.de.rent || !intent.de.land, nm = lk ? pickN(LNAME, lk, lang) : u.de;
+    return J(env, 'germany-agri.json').then(function (A) {
+      if (!A || !A.landPrice || !A.rent) return null;
+      var cards = [], notes = [u.deLandNote], kn = u.deKinds[K];
+      if (wantP) {
+        var P = lk ? (A.landPrice.land[lk] && A.landPrice.land[lk][K]) : A.landPrice.nat[K], pl = P && ptLast(P.p);
+        if (pl) {
+          var n = P.n ? ptGet(P.n, pl[0]) : null, p21 = ptGet(P.p, 2021), lines = [kn];
+          if (n != null) lines.push(nf(n, lang, 0) + ' ' + u.deSales); if (p21 != null && pl[0] !== 2021) lines.push(u.deIn + ' 2021: ' + nf(p21, lang, 0) + ' €/ha');
+          cards.push(kv({ sid: 'destatis', title: u.dePrice + ' · ' + nm, big: nf(pl[1], lang, 0), bigUnit: '€/ha', lines: lines, period: String(pl[0]), dateTxt: String(pl[0]), source: 'Destatis (GENESIS-Online)', href: link.href, raw: [{ k: 'price', v: pl[1], y: pl[0] }, { k: 'sales', v: n }], scope: lk || 'DE', kindK: K }));
+        } else notes.unshift(fmt(u.deNoPrice, { l: nm }));
+      }
+      if (wantR) {
+        var R = lk ? (A.rent.land[lk] && A.rent.land[lk][K]) : A.rent.nat[K], rl = R && ptLast(R);
+        if (rl) cards.push(kv({ sid: 'destatis', title: u.deRent + ' · ' + nm, big: nf(rl[1], lang, 0), bigUnit: '€/ha', lines: [kn, u.deIn + ' 2010: ' + (ptGet(R, 2010) != null ? nf(ptGet(R, 2010), lang, 0) + ' €/ha' : '—')].slice(0, ptGet(R, 2010) != null && rl[0] !== 2010 ? 2 : 1), period: String(rl[0]), dateTxt: String(rl[0]), source: 'Destatis (GENESIS-Online)', href: link.href, raw: [{ k: 'rent', v: rl[1], y: rl[0] }], scope: lk || 'DE', kindK: K }));
+        else notes.unshift(fmt(u.deNoRent, { l: nm }));
+      }
+      return { kind: 'de_land', heading: fmt(u.deLandHead, { l: nm }), cards: cards, notes: notes, link: link };
+    });
+  }
+  function rMovers(intent, lang, env) {
+    var t = tx(lang), u = t2(lang), rs = intent.regions.length ? intent.regions : ['eu', 'us', 'ca', 'uk'], names = {};
+    (env.products || []).forEach(function (p) { names[p.slug] = p; });
+    return Promise.all(rs.map(function (r) { return J(env, 'prices/latest/' + r + '.json'); })).then(function (docs) {
+      var all = []; docs.forEach(function (d) { (d && d.observations || []).forEach(function (o) { if (typeof o.changePct === 'number' && isFinite(o.changePct) && Math.abs(o.changePct) > 0.0001 && names[o.product]) all.push(o); }); });
+      if (!all.length) return { kind: 'movers', heading: u.movUp, cards: [], notes: [u.movNone], link: { href: env.href('precios.html'), label: u.movOpen } };
+      var sides = intent.dir === 'up' ? ['up'] : intent.dir === 'down' ? ['down'] : ['up', 'down'], cards = [], per = sides.length === 1 ? 5 : 3;
+      sides.forEach(function (s) {
+        var L = all.filter(function (o) { return s === 'up' ? o.changePct > 0 : o.changePct < 0; }).sort(function (a, b) { return s === 'up' ? b.changePct - a.changePct : a.changePct - b.changePct; }).slice(0, per);
+        L.forEach(function (o) { var pn = pname(names[o.product], lang); cards.push(kv({ sid: o.sourceId, title: (s === 'up' ? '▲ ' : '▼ ') + pn + ' · ' + (REGN[o.region] ? REGN[o.region][lang] : o.region), big: pct(o.changePct, lang), bigUnit: t.since, lines: [unitCurrency(o, lang)], period: o.observationDate, date: o.observationDate, dateTxt: dateTxt(o.observationDate, lang), source: SRC[o.sourceId] || o.sourceId, href: env.href('producto.html?p=' + encodeURIComponent(o.product)), raw: [{ k: 'changePct', v: o.changePct, id: o.id, region: o.region }], side: s, pub: o.publicationDate })); });
+      });
+      return { kind: 'movers', heading: sides.length === 1 ? (sides[0] === 'up' ? u.movUp : u.movDn) : u.movUp + ' / ' + u.movDn, cards: cards, notes: [u.movNote], link: { href: env.href('precios.html'), label: u.movOpen } };
+    });
+  }
+  function rCompare(intent, lang, env) {
+    var t = tx(lang), u = t2(lang), A = intent.pair[0], B = intent.pair[1], pa = pname(A, lang), pb = pname(B, lang), wantY = intent.wantChange;
+    return Promise.all([obsFor(env, A.slug, intent.regions), obsFor(env, B.slug, intent.regions)]).then(function (r) {
+      var oa = r[0], ob = r[1];
+      if (!oa.length || !ob.length) return { kind: 'compare', heading: pa + ' · ' + pb, cards: [], notes: [t.none + ': ' + (!oa.length ? pa : pb) + '.'], link: null };
+      var common = {}; oa.forEach(function (o) { ob.forEach(function (q) { if (q.region === o.region) common[o.region] = 1; }); });
+      var keep = Object.keys(common).length ? function (o) { return common[o.region]; } : function () { return true; };
+      var obs = oa.filter(keep).concat(ob.filter(keep));
+      obs.sort(function (a, b) { return a.region === b.region ? (a.product === A.slug ? -1 : 1) : (a.region < b.region ? -1 : 1); });
+      return J(env, 'instrument-identity.json').then(function (d) { env.identityData = d; }).then(function () {
+        var cards = obs.map(function (o) { var c = card(env, o, lang); c.regionName = pname(o.product === A.slug ? A : B, lang) + ' · ' + c.regionName; return c; });
+        var done = wantY ? Promise.all(obs.map(function (o, i) { return J(env, 'prices/history/' + o.region + '/' + o.product + '.json').then(function (h) { var y = yoy(h, o); cards[i].y12 = y; cards[i].y12Known = y !== null; }); })) : Promise.resolve();
+        return done.then(function () { return { kind: 'compare', heading: pa + ' · ' + pb, cards: cards, notes: [u.cmpNote], link: { href: env.href('producto.html?p=' + encodeURIComponent(A.slug)), label: t.open + ': ' + pa }, y12: wantY }; });
+      });
+    });
+  }
+
   function answer(query, lang, env) {
     lang = LANGS.indexOf(lang) >= 0 ? lang : 'es';
     var intent; try { intent = parse(query, lang, env); } catch (e) { return Promise.resolve(null); }
@@ -352,9 +566,14 @@
       case 'calendar': p = rCalendar(intent, lang, env); break;
       case 'country': p = rCountry(intent, lang, env); break;
       case 'trade': p = rTrade(intent, lang, env); break;
+      case 'supply': p = rSupply(intent, lang, env); break;
+      case 'de_prod': p = rDEProd(intent, lang, env); break;
+      case 'de_land': p = rDELand(intent, lang, env); break;
+      case 'movers': p = rMovers(intent, lang, env); break;
+      case 'compare': p = rCompare(intent, lang, env); break;
       default: p = Promise.resolve(null);
     }
-    return p.then(function (a) { if (a) a.intent = { kind: intent.kind, product: intent.product && intent.product.slug, regions: intent.regions, states: intent.states, countries: intent.countries }; return a; }, function () { return null; });
+    return p.then(function (a) { if (a) a.intent = { kind: intent.kind, product: intent.product && intent.product.slug, pair: intent.pair && intent.pair.map(function (x) { return x.slug; }), lands: intent.lands, crop: intent.crop, scopes: intent.scopes, attrs: intent.attrs, dir: intent.dir, regions: intent.regions, states: intent.states, countries: intent.countries }; return a; }, function () { return null; });
   }
 
   /* ---------- HTML ---------- */
@@ -364,6 +583,9 @@
     (a.cards || []).forEach(function (c) {
       if (c.localRange) {
         h += '<a class="ds-card" href="' + esc(c.href) + '"><div class="ds-c-v">' + esc(c.loTxt) + ' — ' + esc(c.hiTxt) + '<small>/' + esc(c.unitTxt) + '</small></div><div class="ds-c-s">' + esc(t.range) + ' · ' + c.n + ' ' + esc(t.markets) + ' ' + esc(t.on) + ' ' + esc(c.dateTxt) + '</div><div class="ds-c-s">' + esc(c.spec) + ' · ' + esc(t.src) + ': ' + esc(c.source) + '</div></a>';
+      } else if (c.kv) {
+        var big = c.big ? '<div class="ds-c-v">' + (c.side ? '<span class="ds-chg ' + (c.side === 'up' ? 'up' : 'dn') + '" style="font-size:22px">' + esc(c.big) + '</span>' : esc(c.big)) + ' <small>' + esc(c.bigUnit) + '</small></div>' : '';
+        h += '<a class="ds-card" href="' + esc(c.href) + '"><div class="ds-c-r">' + esc(c.title) + '</div>' + big + (c.lines || []).map(function (l) { return '<div class="ds-c-s">' + esc(l) + '</div>'; }).join('') + '<div class="ds-c-s">' + esc(t.date) + ' ' + esc(c.dateTxt) + ' · ' + esc(t.src) + ': ' + esc(c.source) + '</div></a>';
       } else if (c.trade) {
         h += '<a class="ds-card" href="' + esc(c.href) + '"><div class="ds-c-r">' + esc(c.label) + '</div><div class="ds-c-v">' + esc(c.valueTxt) + '</div><div class="ds-c-s">' + esc(t.date) + ' ' + esc(c.dateTxt) + (c.src ? ' · ' + esc(t.src) + ': ' + esc(c.src) : '') + '</div></a>';
       } else if (c.premium) {

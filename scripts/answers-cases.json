@@ -480,12 +480,20 @@
  {
   "q": "oferta y demanda soja",
   "lang": "es",
-  "expect": null
+  "expect": {
+   "kind": "supply",
+   "product": "soja_grano",
+   "hasLink": true
+  }
  },
  {
   "q": "exportaciones soja",
   "lang": "es",
-  "expect": null
+  "expect": {
+   "kind": "supply",
+   "product": "soja_grano",
+   "hasLink": true
+  }
  },
  {
   "q": "mapa de sequía",
@@ -626,5 +634,294 @@
   "q": "cattle on feed",
   "lang": "en",
   "expect": null
+ },
+ {
+  "q": "existencias de soja",
+  "lang": "es",
+  "expect": {
+   "kind": "supply",
+   "product": "soja_grano",
+   "supplyCheck": true,
+   "nCards": 1
+  }
+ },
+ {
+  "q": "world corn production",
+  "lang": "en",
+  "expect": {
+   "kind": "supply",
+   "product": "maiz",
+   "supplyCheck": true,
+   "nCards": 1
+  }
+ },
+ {
+  "q": "stocks de trigo UE",
+  "lang": "es",
+  "expect": {
+   "kind": "supply",
+   "product": "trigo",
+   "supplyCheck": true,
+   "scopes": [
+    "eu"
+   ]
+  }
+ },
+ {
+  "q": "exportaciones de maíz de EEUU",
+  "lang": "es",
+  "expect": {
+   "kind": "supply",
+   "product": "maiz",
+   "supplyCheck": true,
+   "scopes": [
+    "us"
+   ]
+  }
+ },
+ {
+  "q": "production de blé en Chine",
+  "lang": "fr",
+  "expect": {
+   "kind": "supply",
+   "product": "trigo",
+   "supplyCheck": true,
+   "scopes": [
+    "CN"
+   ]
+  }
+ },
+ {
+  "q": "oferta y demanda arroz",
+  "lang": "es",
+  "expect": {
+   "kind": "supply",
+   "product": "arroz",
+   "supplyCheck": true
+  }
+ },
+ {
+  "q": "produzione di riso in India",
+  "lang": "it",
+  "expect": {
+   "kind": "supply",
+   "product": "arroz",
+   "supplyCheck": true,
+   "scopes": [
+    "IN"
+   ]
+  }
+ },
+ {
+  "q": "producción de plátano en Alemania",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "existencias de plátano",
+  "lang": "es",
+  "expect": null
+ },
+ {
+  "q": "producción de trigo en Baviera",
+  "lang": "es",
+  "expect": {
+   "kind": "de_prod",
+   "crop": "wheat",
+   "lands": [
+    "BY"
+   ],
+   "deProdCheck": true,
+   "nCards": 2
+  }
+ },
+ {
+  "q": "wheat harvest Germany",
+  "lang": "en",
+  "expect": {
+   "kind": "de_prod",
+   "crop": "wheat",
+   "deProdCheck": true
+  }
+ },
+ {
+  "q": "cebada Baja Sajonia",
+  "lang": "es",
+  "expect": {
+   "kind": "de_prod",
+   "crop": "barley",
+   "lands": [
+    "NI"
+   ],
+   "deProdCheck": true
+  }
+ },
+ {
+  "q": "silage maize Bavaria",
+  "lang": "en",
+  "expect": {
+   "kind": "de_prod",
+   "crop": "silage",
+   "lands": [
+    "BY"
+   ],
+   "deProdCheck": true
+  }
+ },
+ {
+  "q": "remolacha Alemania",
+  "lang": "es",
+  "expect": {
+   "kind": "de_prod",
+   "crop": "sugarbeet",
+   "deProdCheck": true
+  }
+ },
+ {
+  "q": "récolte de blé en Saxe",
+  "lang": "fr",
+  "expect": {
+   "kind": "de_prod",
+   "crop": "wheat",
+   "lands": [
+    "SN"
+   ],
+   "deProdCheck": true
+  }
+ },
+ {
+  "q": "precio de la tierra en Alemania",
+  "lang": "es",
+  "expect": {
+   "kind": "de_land",
+   "deLandCheck": true,
+   "nCards": 1
+  }
+ },
+ {
+  "q": "alquiler tierra Baviera",
+  "lang": "es",
+  "expect": {
+   "kind": "de_land",
+   "lands": [
+    "BY"
+   ],
+   "deLandCheck": true
+  }
+ },
+ {
+  "q": "land prices Lower Saxony",
+  "lang": "en",
+  "expect": {
+   "kind": "de_land",
+   "lands": [
+    "NI"
+   ],
+   "deLandCheck": true
+  }
+ },
+ {
+  "q": "terres agricoles en Saxe",
+  "lang": "fr",
+  "expect": {
+   "kind": "de_land",
+   "lands": [
+    "SN"
+   ],
+   "deLandCheck": true
+  }
+ },
+ {
+  "q": "prezzo della terra in Baviera",
+  "lang": "it",
+  "expect": {
+   "kind": "de_land",
+   "lands": [
+    "BY"
+   ],
+   "deLandCheck": true
+  }
+ },
+ {
+  "q": "Baviera",
+  "lang": "es",
+  "expect": {
+   "kind": "de_land",
+   "lands": [
+    "BY"
+   ],
+   "deLandCheck": true
+  }
+ },
+ {
+  "q": "precio del trigo en Alemania",
+  "lang": "es",
+  "expect": {
+   "kind": "country"
+  }
+ },
+ {
+  "q": "trigo vs maíz",
+  "lang": "es",
+  "expect": {
+   "kind": "compare",
+   "compareCheck": true
+  }
+ },
+ {
+  "q": "wheat and corn price change",
+  "lang": "en",
+  "expect": {
+   "kind": "compare",
+   "compareCheck": true
+  }
+ },
+ {
+  "q": "prix du blé et du maïs en UE",
+  "lang": "fr",
+  "expect": {
+   "kind": "compare",
+   "compareCheck": true
+  }
+ },
+ {
+  "q": "qué ha subido más",
+  "lang": "es",
+  "expect": {
+   "kind": "movers",
+   "moversCheck": true
+  }
+ },
+ {
+  "q": "biggest drops",
+  "lang": "en",
+  "expect": {
+   "kind": "movers",
+   "moversCheck": true
+  }
+ },
+ {
+  "q": "mayores bajadas en Canadá",
+  "lang": "es",
+  "expect": {
+   "kind": "movers",
+   "moversCheck": true
+  }
+ },
+ {
+  "q": "plus fortes hausses",
+  "lang": "fr",
+  "expect": {
+   "kind": "movers",
+   "moversCheck": true
+  }
+ },
+ {
+  "q": "maggiori rialzi",
+  "lang": "it",
+  "expect": {
+   "kind": "movers",
+   "moversCheck": true
+  }
  }
 ]
