@@ -303,6 +303,18 @@ sources:
     extra: ['!datos', '!precios', '!regiones', '!en', '!fr', '!it', '!sitemap.xml']
     check: node scripts/qa-seo.mjs
     message: Páginas SEO por país y categoría
+  - id: mb-cattle
+    name: Update Manitoba weekly auction cattle prices (Manitoba Agriculture)
+    cron: ['50 21 * * 5', '10 14 * * 1']
+    script: scripts/update-mb-cattle.py
+    pre: ['sudo apt-get install -y -q poppler-utils >/dev/null']
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/mb-markets)
+    data: [mb-markets/cattle.json, mb-markets-log.txt]
+    extra: ['!data/mb-markets']
+    message: Datos precios semanales de ganado vacuno en las subastas de Manitoba
   - id: us-local-markets
     name: Update US local cattle and hay prices (USDA AMS MARS)
     cron: ['20 15 * * 1-5']

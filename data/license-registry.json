@@ -495,6 +495,30 @@
    "aliases": [],
    "notes": "Earlier project notes said 'CC BY-NC-SA / no comercial'; the current FAO terms say CC BY 4.0 with the promotion restriction above."
   },
+  "mb_agri": {
+     "name": "Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba)",
+     "url": "https://www.gov.mb.ca/agriculture/markets-and-statistics/livestock-statistics/livestock-market-prices-current.html",
+     "country": "CA",
+     "licenseId": "OpenMB-1.0",
+     "licenseName": "OpenMB Information and Data Use Licence v1.0",
+     "licenseUrl": "https://www.gov.mb.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.pdf",
+     "commercialUse": "yes",
+     "derivatives": "yes",
+     "redistribution": "yes",
+     "attributionRequired": true,
+     "attributionText": "Contains information from the Government of Manitoba, licensed under the OpenMB Information and Data Use License (Manitoba.ca/OpenMB)",
+     "additionalRestrictions": "No suggestion of official status or endorsement; excludes official symbols and logos, personal information and third-party rights.",
+     "thirdPartyExceptions": true,
+     "thirdPartyNote": "The monthly historic spreadsheet on the same page cites Canfax for cattle prices (third party) and is NOT used. The weekly reports cite Manitoba Auction Markets / each auction mart.",
+     "verifiedAt": "2026-10-03",
+     "status": "VERIFIED",
+     "confidence": "medium",
+     "evidence": "Licence text and gov.mb.ca/legal/copyright.html read on 2026-10-03: OpenMB allows commercial use and derivatives with attribution and applies to publicly available Government of Manitoba information. The livestock pages show only the standard footer (Copyright link), without repeating the licence on the page; the open.canada.ca record of the cattle dataset does not state a licence. Mario chose to ingest the weekly auction reports only (2026-10-03).",
+     "used": true,
+     "aliases": [],
+     "notes": "Optional: confirm in writing with IndustryIntelligence@gov.mb.ca that the weekly reports have no third-party restrictions.",
+     "short": "Manitoba Agriculture"
+  },
   "mapa_es": {
    "name": "Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
    "url": "https://www.mapa.gob.es/",
@@ -1703,6 +1727,12 @@
     "usda_ams_mars"
    ],
    "notes": "US Local Cattle and Hay (scripts/update-us-local-markets.py): resumenes semanales de subastas de ganado por estado y Direct Hay Report por estado de USDA AMS Market News (MARS). Mismo origen, API y clase de datos que data/us-cash-bids/ y data/ams/. Cada fichero enlaza al informe original. Misma salvedad que la de los cash bids: algunos informes estatales se elaboran en cooperacion con un departamento estatal de agricultura y no se ha verificado que eso cambie la condicion de obra del gobierno federal, por lo que la confianza sigue siendo media. Accion pendiente: preguntar a AMS Market News (mymarketnews@usda.gov, (202) 720-1990) si los informes estatales en cooperacion pueden reutilizarse comercialmente y con obras derivadas, y registrar la respuesta aqui (una sola pregunta cubre cash bids, ganado y heno). No se vende ni se redistribuye el dato en bruto: solo se muestra con cita y enlace al informe."
+  },
+  "data/mb-markets/": {
+   "sources": [
+    "mb_agri"
+   ],
+   "notes": "Ganado vacuno en subastas de Manitoba (scripts/update-mb-cattle.py): minimo, maximo y media semanales en C$/cwt por clase y tramo de peso en siete subastas, cabezas vendidas y acumulado del ano, leidos de los PDF semanales de Manitoba Agriculture. Licencia OpenMB (uso comercial y derivados con atribucion); ver mb_agri. No se ingiere el historico mensual en Excel de la misma pagina porque sus precios de ganado son de Canfax (terceros). La atribucion se muestra junto a las cifras."
   },
   "data/spain-crops/": {
    "sources": [

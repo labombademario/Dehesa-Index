@@ -72,6 +72,9 @@ jobs:
       - name: US local cattle and hay markets (aggregation, merge, retention, failure safety; offline fixtures, no API)
         run: python3 scripts/test-us-local-markets.py
 
+      - name: Manitoba weekly auction cattle (PDF text parser, NA/no-sale, head totals, failure safety; real extracts as fixtures, no network)
+        run: python3 scripts/test-mb-cattle.py
+
       - name: Spain crops by province (MAPA workbook parser, sums, provisional campaigns, failure safety; synthetic workbook, no network)
         run: pip install openpyxl && python3 scripts/test-spain-crops.py
 

@@ -1,0 +1,503 @@
+     September 4, 2026
+
+     Exchange rates (Thursday close)
+       1 US $ = C $1.3789                                         1 EURO = C $1.6032                                       1 Yen = C $0.00886
+
+     Source: Bank of Canada
+
+    Cattle
+
+     TOTAL CATTLE MARKETINGS, MB Auction Markets (sales Friday through Thursday)
+         Location   Head
+           Ashern     0
+        Gladstone    272
+          Grunthal   109
+          Killarney   0                                                         Week total sold:                                               3,069
+         Ste Rose    421                                             2026 Year-to-day total sold:                                             161,697
+            Virden  2,267                                            2025 Year-to-day total sold:                                             155,574
+        Winnipeg      0                                                      2026/2025 change:                                                 3.9%
+
+
+                                                  TOTAL CATTLE MARKETINGS BY WEEK
+    HEAD                                            MB AUCTION MARKETS, 2023-2025
+    18000
+
+                                                                       2026       2025       2024
+    16000
+
+
+    14000
+
+
+    12000
+
+
+    10000
+
+
+     8000
+
+
+     6000
+
+
+     4000
+
+
+     2000
+
+
+        0
+            1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52
+
+                                                                                WEEK
+    Source: Manitoba Auction Markets
+
+1
+    Manitoba Auction Markets Summary. Weekly Cattle Prices* (C$/cwt)
+                                   Low Price** High Price**      Average Price                      Change from Previous Week
+                    D1, 2 Cows       208.75       241.13           224.94                                     12.69
+         Slaughter
+                    D3 Cows          176.67       208.00           192.33                                     32.33
+             Cattle
+                    Bulls            231.25       278.25           254.75                                     10.63
+                    (901 + lb)       416.67       469.67           443.17                                       0.67
+                    (801-900)        445.00       501.33           473.17                                     -21.83
+            Feeder Cattle /
+
+
+
+
+                    (701-800)        498.33       551.67           525.00                                      -5.00
+               Steers
+
+
+
+
+                    (601-700)        548.33       611.67           580.00                                      -7.50
+                    (501-600)        608.33       672.00           640.17                                     -37.33
+                    (401-500)        688.33       751.67           720.00                                       0.00
+                    (901 + lb)       372.50       430.00           401.25                                     20.25
+                    (801-900)        402.50       461.00           431.75                                     15.25
+            Feeder Cattle /
+
+
+
+
+                    (701-800)        421.67       477.33           449.50                                     -23.00
+               Heifers
+
+
+
+
+                    (601-700)        486.67       519.67           503.17                                     -56.83
+                    (501-600)        478.33       532.67           505.50                                     -92.00
+                    (401-500)        588.33       630.00           609.17                                     -83.33
+    *Friday to Thursday
+    **Prices are averaged through auction markets
+
+
+     C$/cwt                                        WEEKLY CATTLE PRICES
+      800
+
+                                                           Steers         Heifers
+      700
+
+
+      600
+
+
+      500
+
+
+      400
+
+
+      300
+
+
+      200
+
+
+      100
+
+
+       0
+            D1, 2 Cows        D3 Cows      Bulls       (901+ lb)    (801-900)   (701-800)   (601-700)   (501-600)   (401-500)
+                              Slaughter Cattle                                      Feeder Cattle
+
+     Source: Manitoba Auction Markets
+
+
+
+    Click here to view the Cattle Dashboard for interactive charts and graphs.
+
+
+
+
+2
+                                                                                     Previous Sale
+      Ashern             Sale date: No sale                                       Sale date: 2026-06-10
+                                     Low Price   High Price   Average Price   Average Price     Change
+               D1, 2 Cows         NA                NA             NA            252.50           NA
+     Slaughter
+               D3 Cows            NA                NA             NA            220.00           NA
+        Cattle
+               Bulls              NA                NA             NA            302.25           NA
+               (901 + lb)         NA                NA             NA            406.50           NA
+               (801-900)          NA                NA             NA              NA             NA
+       Feeder Cattle /
+
+
+
+
+               (701-800)          NA                NA             NA            533.00           NA
+          Steers
+
+
+
+
+               (601-700)          NA                NA             NA            557.50           NA
+               (501-600)          NA                NA             NA            680.00           NA
+               (401-500)          NA                NA             NA              NA             NA
+               (901 + lb)         NA                NA             NA            385.00           NA
+               (801-900)          NA                NA             NA            434.50           NA
+       Feeder Cattle /
+
+
+
+
+               (701-800)          NA                NA             NA            460.00           NA
+          Heifers
+
+
+
+
+               (601-700)          NA                NA             NA            527.50           NA
+               (501-600)          NA                NA             NA            603.00           NA
+               (401-500)          NA                NA             NA            605.00           NA
+      Source:  Ashern  Auction Mart
+
+
+
+
+                                                                                     Previous Sale
+    Gladstone            Sale date: 2026-09-01                                    Sale date: 2026-06-23
+                                     Low Price   High Price   Average Price   Average Price     Change
+               D1, 2 Cows         190.00          212.50         201.25          243.00          -41.75
+     Slaughter
+               D3 Cows            150.00          189.00         169.50          210.00          -40.50
+        Cattle
+               Bulls              250.00          270.00         260.00          313.75          -53.75
+               (901 + lb)         415.00          459.00         437.00          452.50          -15.50
+               (801-900)          425.00          465.00         445.00          483.00          -38.00
+       Feeder Cattle /
+
+
+
+
+               (701-800)          485.00          538.00         511.50          548.75          -37.25
+          Steers
+
+
+
+
+               (601-700)          510.00          590.00         550.00          645.00          -95.00
+               (501-600)          600.00          666.00         633.00          710.00          -77.00
+               (401-500)          640.00          710.00         675.00          807.50         -132.50
+               (901 + lb)         350.00          430.00         390.00          388.50           1.50
+               (801-900)          385.00          455.00         420.00          430.00          -10.00
+       Feeder Cattle /
+
+
+
+
+               (701-800)          410.00          468.00         439.00          487.50          -48.50
+          Heifers
+
+
+
+
+               (601-700)          475.00          499.00         487.00          547.50          -60.50
+               (501-600)          420.00          480.00         450.00          641.25         -191.25
+               (401-500)          480.00          510.00         495.00          724.00         -229.00
+      Source:  Gladstone  Auction Mart
+
+
+
+
+3
+                                                                                    Previous Sale
+    Grunthal            Sale date: 2026-09-01                                    Sale date: 2026-08-25
+                                    Low Price   High Price   Average Price   Average Price     Change
+              D1, 2 Cows      200.00             225.00         212.50          215.00          -2.50
+    Slaughter
+              D3 Cows           NA                 NA             NA              NA             NA
+       Cattle
+              Bulls           180.00             254.00         217.00          215.75          1.25
+              (901 + lb)        NA                 NA             NA              NA             NA
+              (801-900)         NA                 NA             NA              NA             NA
+      Feeder Cattle /
+
+
+
+
+              (701-800)         NA                 NA             NA              NA             NA
+         Steers
+
+
+
+
+              (601-700)         NA                 NA             NA              NA             NA
+              (501-600)         NA                 NA             NA              NA             NA
+              (401-500)         NA                 NA             NA              NA             NA
+              (901 + lb)        NA                 NA             NA              NA             NA
+              (801-900)         NA                 NA             NA              NA             NA
+      Feeder Cattle /
+
+
+
+
+              (701-800)         NA                 NA             NA              NA             NA
+         Heifers
+
+
+
+
+              (601-700)         NA                 NA             NA              NA             NA
+              (501-600)         NA                 NA             NA              NA             NA
+              (401-500)         NA                 NA             NA              NA             NA
+     Source: Grunthal Auction Mart
+
+
+
+
+                                                                                    Previous Sale
+    Killarney           Sale date: No sale                                       Sale date: 2026-06-08
+                                    Low Price   High Price   Average Price   Average Price     Change
+              D1, 2 Cows         NA                NA             NA            250.00           NA
+    Slaughter
+              D3 Cows            NA                NA             NA              NA             NA
+       Cattle
+              Bulls              NA                NA             NA            300.00           NA
+              (901 + lb)         NA                NA             NA              NA             NA
+              (801-900)          NA                NA             NA              NA             NA
+      Feeder Cattle /
+
+
+
+
+              (701-800)          NA                NA             NA            557.50           NA
+         Steers
+
+
+
+
+              (601-700)          NA                NA             NA            640.00           NA
+              (501-600)          NA                NA             NA            722.50           NA
+              (401-500)          NA                NA             NA            831.50           NA
+              (901 + lb)         NA                NA             NA              NA             NA
+              (801-900)          NA                NA             NA            463.50           NA
+      Feeder Cattle /
+
+
+
+
+              (701-800)          NA                NA             NA            504.50           NA
+         Heifers
+
+
+
+
+              (601-700)          NA                NA             NA            567.50           NA
+              (501-600)          NA                NA             NA            635.00           NA
+              (401-500)          NA                NA             NA            685.00           NA
+     Source: Killarney Auction Mart
+
+
+
+
+4
+                                                                                    Previous Sale
+    Ste Rose            Sale date: 2026-09-03                                    Sale date: 2026-06-11
+                                    Low Price   High Price   Average Price   Average Price     Change
+              D1, 2 Cows       230.00            292.00         261.00          287.50          -26.50
+    Slaughter
+              D3 Cows          185.00            220.00         202.50          197.50           5.00
+       Cattle
+              Bulls            265.00            299.00         282.00          305.00          -23.00
+              (901 + lb)       400.00            475.00         437.50          442.50           -5.00
+              (801-900)        450.00            515.00         482.50          476.00           6.50
+      Feeder Cattle /
+
+
+
+
+              (701-800)        480.00            555.00         517.50          562.50          -45.00
+         Steers
+
+
+
+
+              (601-700)        580.00            635.00         607.50          628.00          -20.50
+              (501-600)        575.00            650.00         612.50          728.50         -116.00
+              (401-500)        685.00            745.00         715.00          817.50         -102.50
+              (901 + lb)         NA                NA             NA            404.50            NA
+              (801-900)          NA                NA             NA            429.50            NA
+      Feeder Cattle /
+
+
+
+
+              (701-800)        425.00            488.00         456.50          504.00          -47.50
+         Heifers
+
+
+
+
+              (601-700)        480.00            530.00         505.00          539.00          -34.00
+              (501-600)        480.00            538.00         509.00          643.50         -134.50
+              (401-500)        680.00            705.00         692.50          692.50           0.00
+     Source: Ste Rose Auction Mart
+
+
+
+
+                                                                                    Previous Sale
+      Virden            Sale date: 2026-09-02                                    Sale date: 2026-08-12
+                                    Low Price   High Price   Average Price   Average Price     Change
+              D1, 2 Cows      215.00             235.00         225.00          245.00         -20.00
+    Slaughter
+              D3 Cows         195.00             215.00         205.00          220.00         -15.00
+       Cattle
+              Bulls           230.00             290.00         260.00          279.00         -19.00
+              (901 + lb)      435.00             475.00         455.00          462.00          -7.00
+              (801-900)       460.00             524.00         492.00          515.00         -23.00
+      Feeder Cattle /
+
+
+
+
+              (701-800)       530.00             562.00         546.00          584.00         -38.00
+         Steers
+
+
+
+
+              (601-700)       555.00             610.00         582.50          631.00         -48.50
+              (501-600)       650.00             700.00         675.00          745.00         -70.00
+              (401-500)       740.00             800.00         770.00          785.00         -15.00
+              (901 + lb)      395.00             430.00         412.50          412.50          0.00
+              (801-900)       420.00             467.00         443.50          443.00          0.50
+      Feeder Cattle /
+
+
+
+
+              (701-800)       430.00             476.00         453.00          497.00         -44.00
+         Heifers
+
+
+
+
+              (601-700)       505.00             530.00         517.50          577.50         -60.00
+              (501-600)       535.00             580.00         557.50          647.50         -90.00
+              (401-500)       605.00             675.00         640.00          682.50         -42.50
+     Source: Virden Auction Mart
+
+
+
+
+5
+                                                                                    Previous Sale
+    Winnipeg            Sale date: No Sale                                       Sale date: 2026-08-21
+                                    Low Price   High Price   Average Price   Average Price     Change
+              D1, 2 Cows       NA                  NA             NA            209.50           NA
+    Slaughter
+              D3 Cows          NA                  NA             NA            160.00           NA
+       Cattle
+              Bulls            NA                  NA             NA            272.50           NA
+              (901 + lb)       NA                  NA             NA            442.50           NA
+              (801-900)        NA                  NA             NA            495.00           NA
+      Feeder Cattle /
+
+
+
+
+              (701-800)        NA                  NA             NA            530.00           NA
+         Steers
+
+
+
+
+              (601-700)        NA                  NA             NA            587.50           NA
+              (501-600)        NA                  NA             NA            677.50           NA
+              (401-500)        NA                  NA             NA            720.00           NA
+              (901 + lb)       NA                  NA             NA            381.00           NA
+              (801-900)        NA                  NA             NA            416.50           NA
+      Feeder Cattle /
+
+
+
+
+              (701-800)        NA                  NA             NA            472.50           NA
+         Heifers
+
+
+
+
+              (601-700)        NA                  NA             NA            560.00           NA
+              (501-600)        NA                  NA             NA            597.50           NA
+              (401-500)        NA                  NA             NA            692.50           NA
+     Source: Winnipeg Auction Mart
+
+
+
+
+6
+    Sheep and Goat
+
+
+                                                                                                              Previous Sale
+        Winnipeg                     Last sale date: 2026-09-02                                            Sale date: 2026-08-19
+                                       Low Price         High Price    Average Price                    Change from Previous Sale
+
+                       Sheep             180.00            238.00           209.00                                  -18.50
+                    100 + lbs.           285.00            320.00           302.50                                   -7.50
+                  80 - 100 lbs           300.00            330.00           315.00                                   -2.50
+    Lambs C$/cwt
+                   60 - 80 lbs           325.00            385.00           355.00                                    6.50
+                 Under 60 lbs            300.00            425.00           362.50                                  -20.00
+                        Billys           335.00            400.00           367.50                                  42.50
+    Goats C$/cwt      Nannys             280.00            360.00           320.00                                  10.00
+                         Kids            180.00            432.50           306.25                                  -69.75
+
+
+
+
+                                                                                                              Previous Sale
+         Grunthal                    Last sale date: 2026-08-26                                            Sale date: 2026-08-12
+                                       Low Price         High Price    Average Price                    Change from Previous Sale
+
+                        Sheep              NA                NA               NA                                      NA
+                     100 + lbs.          275.00            306.00           290.50                                    NA
+                   80 - 100 lbs          300.00            315.00           307.50                                   -2.50
+    Lambs C$/cwt
+                    60 - 80 lbs          310.00            342.50           326.25                                  -11.25
+                  Under 60 lbs           320.00            345.00           332.50                                    NA
+                         Billys            NA                NA               NA                                      NA
+    Goats C$/cwt*      Nannys            340.00            444.00           392.00                                  149.50
+                          Kids           400.00            500.00           450.00                                  37.50
+    Note: Goat prices at auction are reported in C$/head. For consistency, we convert these to C$/cwt using estimated average weights:
+    Kids (66–90 lb), Nannys (120–130 lb), and Billys (160–170 lb).
+
+
+
+
+          Contact us
+          •      www.manitoba.ca/agriculture/markets-and-statistics/
+          •      Email us at industryintelligence@gov.mb.ca
+          •      Follow us on X @MBGovAg
+
+7
+
