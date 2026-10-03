@@ -1,0 +1,761 @@
+﻿statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_attribute_code;1_variable_attribute_label;2_variable_code;2_variable_label;2_variable_attribute_code;2_variable_attribute_label;value;value_unit;value_variable_code;value_variable_label
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;24,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;305,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;46,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;54,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;16,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;59,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;57,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;37,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;83,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;52,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;34,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);60,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);72,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;24,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;59,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);72,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;14,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;58,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;96,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;57,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;54,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;54,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;28,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);64,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);74,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);64,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;63,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);53,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;59,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;20,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;59,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);62,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);59,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;19,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;48,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;63,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;65,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;423,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;379,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;82,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;999,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);52,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;40,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;85,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;274,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;48,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);50,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;803,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;50,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;86,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;82,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;90,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;50,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;284,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;63,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;72,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;88,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);74,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;50,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;78,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;85,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;37,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;79,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);58,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;43,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;45,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;28,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;38,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;92,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;93,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;392,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;41,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;87,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;616,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;78,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;291,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);47,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;30,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;53,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;65,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;433,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;44,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;82,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;69,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;429,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;32,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;49,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;48,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;39,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);50,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;67,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;83,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;624,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;63,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;29,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;53,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);71,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);438,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;69,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;444,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);438,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;74,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;31,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);69,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;23,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;61,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;88,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;33,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);59,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;983,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;294,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;50,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;77,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;75,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;37,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;79,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;55,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;54,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;83,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;25,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;67,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;48,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;65,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;85,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;400,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;65,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;385,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;51,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;41,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;273,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;27,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;54,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);91,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;69,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;302,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;92,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;390,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;86,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;946,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;31,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;33,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;89,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;35,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;83,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;89,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;32,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;73,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;345,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);450,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);98,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;71,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;36,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;23,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;78,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;397,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;81,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);469,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);57,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;31,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;82,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;68,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;80,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;96,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;80,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;46,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;37,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;440,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;82,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;69,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);49,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);469,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;505,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;47,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;18,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;62,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;58,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;53,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;85,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;55,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;83,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;414,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;55,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;61,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;532,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;29,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;375,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;37,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;81,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;87,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;41,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;76,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;942,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;72,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;58,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;78,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;256,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;54,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);62,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);80,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;76,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;82,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);57,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);442,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;56,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;83,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;77,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;616,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;65,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;20,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;45,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;31,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;65,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;51,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;53,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;65,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;75,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;293,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;20,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;33,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;95,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;79,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;73,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;52,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;25,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;43,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;301,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);65,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;53,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;38,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;407,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;55,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;77,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;563,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);54,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;49,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;47,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);56,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;448,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;68,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;18,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;67,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;64,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);434,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;47,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);93,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;64,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;70,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;306,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;22,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;45,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;437,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;86,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;85,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;84,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;34,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;59,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;311,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;37,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;77,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;44,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;72,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;42,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;54,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;94,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;36,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;94,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;52,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;508,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;36,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;41,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;324,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;19,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;57,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;53,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;62,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;314,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;86,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;41,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;35,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;89,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;836,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;86,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;72,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;1027,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;65,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;43,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;348,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;26,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;77,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);435,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;56,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);63,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;42,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;43,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);49,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;54,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);58,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;72,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;66,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;39,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;82,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;47,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;65,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;83,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;21,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;35,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;69,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;80,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;28,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;50,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;50,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;80,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;54,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;55,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;37,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);53,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;29,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;54,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);58,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;507,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;89,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);57,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;45,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;441,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;79,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;85,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);395,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;63,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;35,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;93,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;67,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;46,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;55,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;84,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;41,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;55,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;82,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;33,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;50,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);43,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;34,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;22,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;33,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;84,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;73,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;82,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;58,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;56,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;49,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;50,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;21,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;48,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);451,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;34,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;64,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;51,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;74,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;50,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;83,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;75,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;29,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;26,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;297,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;60,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;78,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;31,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;298,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);445,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;81,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;87,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;85,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;29,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;84,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;49,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;448,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;82,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;81,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;42,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;58,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;69,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;34,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;63,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);394,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;46,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;79,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;73,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;532,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);68,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;45,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;601,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;74,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);454,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;71,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);82,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;75,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;60,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;27,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;299,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;51,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;301,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;87,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;59,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;34,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;467,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;61,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;80,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;57,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);53,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;53,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;78,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;31,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;52,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;62,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;87,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;76,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;52,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;25,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);51,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;72,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;50,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);92,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;51,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;64,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;81,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;971,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;70,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;33,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;62,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;86,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;443,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;78,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;62,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;552,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;55,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;61,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);53,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);59,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);60,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);438,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;11,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);55,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;50,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);88,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;47,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;51,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;47,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;622,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;68,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;41,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;17,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;81,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;77,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;60,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;55,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);454,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;80,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;49,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);80,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;78,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;32,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;73,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);63,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);63,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;57,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;22,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;55,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);61,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);52,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;44,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);87,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);61,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;54,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);67,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;80,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;65,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;29,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;484,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;314,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;43,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;26,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;66,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;426,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;90,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;86,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);61,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);397,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;56,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;69,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;19,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;395,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;60,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;51,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;45,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;18,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);70,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;83,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;67,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;74,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;81,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;45,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;51,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;82,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;33,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;24,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;389,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;58,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;77,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;64,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;348,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);47,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;84,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;72,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;39,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;62,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;92,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);94,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;333,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;34,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;37,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;41,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;75,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;241,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;51,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;40,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;79,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;34,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;72,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);99,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;316,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;88,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;53,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;921,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;61,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;47,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;77,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;248,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;381,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;79,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);59,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;83,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;93,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;419,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;42,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;963,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;50,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);92,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;93,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;86,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;57,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;369,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);63,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;85,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;76,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;50,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;28,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;55,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;28,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);395,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;39,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;78,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;72,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;511,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;67,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;56,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;61,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;89,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;53,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;43,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;972,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;365,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;55,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031MUS;Mittelfrühe und späte Kartoffeln;256,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);62,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;84,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;52,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);69,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;58,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);67,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;59,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;83,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;80,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;16,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;74,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;316,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;33,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;61,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;44,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;46,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);50,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);51,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;503,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;83,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;45,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;34,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);88,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;785,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;88,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;89,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;68,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;80,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;23,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111W;Weichweizen;72,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;18,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;80,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;24,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;51,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;23,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;957,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;46,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;49,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);65,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;45,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);78,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;306,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;577,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;32,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;81,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;66,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);378,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;54,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;65,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1999;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;54,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;35,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;37,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);53,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;72,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;39,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;84,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;58,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031FSK;Frühe Speisekartoffeln;322,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;63,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;329,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01211;Wintergerste;60,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;35,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;79,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;48,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;60,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;73,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;67,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;84,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;91,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;31,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;50,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;80,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;40,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;80,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);72,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;19,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);64,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;78,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;86,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;78,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;38,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;49,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;67,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);404,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;24,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;40,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;548,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;22,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;391,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;68,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);71,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01EKM;Getreide (einschl. Körnermais und CCM);73,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0123;Sommermenggetreide;43,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;46,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART013CCM;Körnermais (einschl. CCM);68,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;72,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;54,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART064;Silomais (einschl. Lieschkolbenschrot);394,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);70,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;57,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;80,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;50,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART011;Brotgetreide;71,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;72,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0111;Weizen;68,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;30,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;675,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;36,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;65,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;26,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);52,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;91,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;56,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;54,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;45,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2008;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0113;Wintermenggetreide;54,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;61,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01421;Mähweiden;83,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1992;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;75,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART063;Feldgras/Grasanbau auf dem Ackerland;86,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;42,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART067;Lupinen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2003;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART062;Luzerne;61,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01111;Winterweizen;69,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;1049,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0121;Gerste;57,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1997;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;384,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;83,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01OKM;Getreide (ohne Körnermais und CCM);61,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;34,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0511;Raps und Rübsen;28,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;37,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART032;Zuckerrüben;583,2;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;19,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1994;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;53,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2000;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART01411;Wiesen;82,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1996;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;KULART0141S;Wiesen und Mähweiden;78,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0124;Triticale;64,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2007;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01212;Sommergerste;42,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2006;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART065;Raufutter;77,8;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART033;Runkelrüben;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01113;Hartweizen (Durum);.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0513;Körnersonnenblumen;.;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2004;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;52,1;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0122;Hafer;48,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1998;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART01112;Sommerweizen;55,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2005;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART012;Futter- und Industriegetreide;57,7;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1993;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART022;Ackerbohnen;37,3;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1995;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART0112;Roggen;52,5;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1991;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART061;Klee, Kleegras und Klee-Luzerne-Gemisch;86,4;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;1990;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART031;Kartoffeln;256,0;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2001;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05112;Sommerraps, Winter- und Sommerrübsen;21,6;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2009;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART05111;Winterraps;42,9;dt/ha;ERT001;Ertrag je Hektar
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2002;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA03;Fruchtarten;FRUART021;Futtererbsen;27,8;dt/ha;ERT001;Ertrag je Hektar
