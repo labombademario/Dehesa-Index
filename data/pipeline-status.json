@@ -1,15 +1,15 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-03T12:53:00Z",
+ "generatedAt": "2026-10-03T13:45:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 57,
+  "ok": 59,
   "late": 0,
-  "error": 1,
+  "error": 0,
   "not_run": 0,
   "unknown": 0
  },
- "global": "error",
+ "global": "ok",
  "pipelines": [
   {
    "workflow": "update-alberta-weekly.yml",
@@ -72,7 +72,7 @@
     "45 23 * * 1-5",
     "30 13 * * 6"
    ],
-   "nextRun": "2026-10-03T13:30:00Z",
+   "nextRun": "2026-10-05T23:45:00Z",
    "files": [
     {
      "path": "data/ams"
@@ -522,6 +522,38 @@
    "recent": {
     "runs": 7,
     "success": 6,
+    "failed": 0
+   },
+   "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-crop-insurance-ca.yml",
+   "name": "Update Canada crop insurance (Statistics Canada, tables 32-10-0045 and 32-10-0049)",
+   "crons": [
+    "40 6 * * 3"
+   ],
+   "nextRun": "2026-10-07T06:40:00Z",
+   "files": [
+    {
+     "path": "data/crop-insurance-ca.json",
+     "lastChange": "2026-10-03T13:35:38Z"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T13:35:27Z",
+    "durationSec": 24,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37126700752"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
     "failed": 0
    },
    "status": "ok",
@@ -1370,11 +1402,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-03T12:51:51Z"
+     "lastChange": "2026-10-03T12:54:40Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-03T12:51:51Z"
+     "lastChange": "2026-10-03T12:54:40Z"
     },
     {
      "path": "data/series-registry.json",
@@ -1386,7 +1418,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-03T09:26:57Z"
+     "lastChange": "2026-10-03T12:54:53Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1403,7 +1435,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-03T09:26:57Z"
+     "lastChange": "2026-10-03T12:54:53Z"
     },
     {
      "path": "data/products"
@@ -1414,27 +1446,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-03T09:26:57Z"
+     "lastChange": "2026-10-03T12:54:53Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-03T12:50:34Z"
+     "lastChange": "2026-10-03T13:45:15Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-03T09:26:57Z"
+     "lastChange": "2026-10-03T12:54:53Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-03T09:26:57Z"
+     "lastChange": "2026-10-03T12:54:53Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-03T09:26:57Z"
+     "lastChange": "2026-10-03T12:54:53Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-03T09:26:57Z"
+     "lastChange": "2026-10-03T12:54:53Z"
     },
     {
      "path": "data/home-explore.json",
@@ -1445,18 +1477,18 @@
     }
    ],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-03T12:50:43Z",
-    "durationSec": 77,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37124193414"
+    "startedAt": "2026-10-03T12:53:28Z",
+    "durationSec": 89,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37124343726"
    },
    "recent": {
     "runs": 9,
     "success": 7,
     "failed": 1
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 3.0
   },
   {
@@ -1869,7 +1901,7 @@
    "crons": [
     "0 13 3 * *"
    ],
-   "nextRun": "2026-10-03T13:00:00Z",
+   "nextRun": "2026-11-03T13:00:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
