@@ -5,11 +5,10 @@
   {
    "series": "AT/at-slaughter-ths_hd-b4110",
    "file": "austria-stats.json",
-   "status": "UNEXPLAINED_ANOMALY",
+   "status": "KNOWN_VERIFIED_ANOMALY",
    "detected": "Sacrificios de cordero (miles de cabezas): 0 de 1995 a 2007 y 243,34 en 2008; el aviso salta en 2013 porque la mediana de los 12 puntos previos aun arrastra ceros.",
    "hypothesis": "Eurostat apro_mt_pann no desglosa 'Lamb' (B4110) hasta 2008: los 0 serian 'no aplicable' y no sacrificios reales (B4100 'Sheepmeat' ya suma ~277 mil cabezas en 1995).",
-   "verification": "PENDIENTE de contraste con la fuente primaria: el entorno de desarrollo no tiene salida a Eurostat (API, con marcas de calidad) (politica de red), asi que no se ha podido ver. Lo hace .github/workflows/verify-anomalies.yml (semanal y manual) con scripts/verify-anomalies.py: compara los periodos de `verifier` con la fuente y solo promueve a KNOWN_VERIFIED_ANOMALY si coinciden.",
-   "nextAction": "Ejecutar el workflow verify-anomalies (workflow_dispatch) y revisar lastCheck: REPRODUCED -> queda KNOWN_VERIFIED_ANOMALY con evidencia; MISMATCH/FLAGGED -> corregir el pipeline correspondiente (unidad, serie, parseo o marca no aplicable).",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence).",
    "since": "2026-10-01",
    "verifier": {
     "kind": "eurostat",
@@ -32,16 +31,23 @@
      "2012",
      "2013"
     ]
-   }
+   },
+   "lastCheck": {
+    "at": "2026-10-03T02:11:46Z",
+    "result": "REPRODUCED",
+    "detail": "2005 0/0.0; 2006 0/0.0; 2007 0/0.0; 2008 243.34/243.34; 2009 231.06/231.06; 2012 246/246.0; 2013 248/248.0"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-03: los 7 periodos revisados coinciden exactamente con los que publica la fuente (2005: 0.0; 2006: 0.0; 2007: 0.0; 2008: 243.34; 2009: 231.06; 2012: 246.0; 2013: 248.0). Marcas de calidad de Eurostat en esos periodos: ninguna (ni 'no aplicable' ni 'confidencial'). Contexto de la fuente: B4100: 2005=295.06, 2006=312.0, 2007=291.0, 2008=327.0, 2009=310.5, 2012=330.0, 2013=333.0. Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-03",
+   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pann?lang=EN&geo=AT&meatitem=SLAUGHT&meat=B4110&unit=THS_HD"
   },
   {
    "series": "CA/ca-trade-imp-wheat",
    "file": "canada-stats.json",
-   "status": "UNEXPLAINED_ANOMALY",
+   "status": "KNOWN_VERIFIED_ANOMALY",
    "detected": "Importaciones mensuales de trigo (CAD millones): 0,0-0,1 durante 1995 y 2,8 en enero de 1996; base minuscula, el salto relativo es x28.",
    "hypothesis": "Serie con base casi nula (Canada importa muy poco trigo) y granularidad del origen (StatCan 12-10-0163 en miles de CAD): el salto relativo es un efecto de escala, no un error.",
-   "verification": "PENDIENTE de contraste con la fuente primaria: el entorno de desarrollo no tiene salida a Statistics Canada (tabla 12-10-0163, descarga completa) (politica de red), asi que no se ha podido ver. Lo hace .github/workflows/verify-anomalies.yml (semanal y manual) con scripts/verify-anomalies.py: compara los periodos de `verifier` con la fuente y solo promueve a KNOWN_VERIFIED_ANOMALY si coinciden.",
-   "nextAction": "Ejecutar el workflow verify-anomalies (workflow_dispatch) y revisar lastCheck: REPRODUCED -> queda KNOWN_VERIFIED_ANOMALY con evidencia; MISMATCH/FLAGGED -> corregir el pipeline correspondiente (unidad, serie, parseo o marca no aplicable).",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence).",
    "since": "2026-10-01",
    "verifier": {
     "kind": "statcan",
@@ -64,16 +70,23 @@
      "2002-12",
      "2003-01"
     ]
-   }
+   },
+   "lastCheck": {
+    "at": "2026-10-03T02:11:46Z",
+    "result": "REPRODUCED",
+    "detail": "1995-11 1.0/1.0; 1995-12 2.5/2.5; 1996-01 2.8/2.8; 1996-02 0.2/0.2; 2002-03 0.3/0.3; 2002-04 5.0/5.0; 2002-11 5.3/5.3; 2002-12 10.1/10.1; 2003-01 3.6/3.6"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-03: los 9 periodos revisados coinciden exactamente con los que publica la fuente (1995-11: 1.0; 1995-12: 2.5; 1996-01: 2.8; 1996-02: 0.2; 2002-03: 0.3; 2002-04: 5.0; 2002-11: 5.3; 2002-12: 10.1; 2003-01: 3.6). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-03",
+   "sourceUrl": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=12100101"
   },
   {
    "series": "AU/au-imp-wheat",
    "file": "australia-trade-stats.json",
-   "status": "UNEXPLAINED_ANOMALY",
+   "status": "KNOWN_VERIFIED_ANOMALY",
    "detected": "Importaciones de trigo (A$ millones): 0,001-0,03 hasta 2002 y 8,944 en enero de 2003, 17,755 en abril de 2003.",
    "hypothesis": "Importaciones excepcionales durante la sequia de 2002-03 en Australia; coherente con el calendario, pero no verificado contra ABS.",
-   "verification": "PENDIENTE de contraste con la fuente primaria: el entorno de desarrollo no tiene salida a ABS Data API (MERCH_IMP, con paises de origen) (politica de red), asi que no se ha podido ver. Lo hace .github/workflows/verify-anomalies.yml (semanal y manual) con scripts/verify-anomalies.py: compara los periodos de `verifier` con la fuente y solo promueve a KNOWN_VERIFIED_ANOMALY si coinciden.",
-   "nextAction": "Ejecutar el workflow verify-anomalies (workflow_dispatch) y revisar lastCheck: REPRODUCED -> queda KNOWN_VERIFIED_ANOMALY con evidencia; MISMATCH/FLAGGED -> corregir el pipeline correspondiente (unidad, serie, parseo o marca no aplicable).",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence).",
    "since": "2026-10-01",
    "verifier": {
     "kind": "abs",
@@ -99,7 +112,15 @@
      "2019-06",
      "2020-07"
     ]
-   }
+   },
+   "lastCheck": {
+    "at": "2026-10-03T02:11:46Z",
+    "result": "REPRODUCED",
+    "detail": "2003-01 8.944/8.944; 2003-02 9.325/9.325; 2003-03 8.87/8.87; 2003-04 17.755/17.755; 2003-05 0.013/0.013; 2003-06 6.544/6.544; 2019-05 0.165/0.165; 2019-06 42.413/42.413; 2019-07 21.487/21.487; 2020-02 0.079/0.079; 2020-03 21.314/21.314; 2020-07 41.428/41.428"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-03: los 12 periodos revisados coinciden exactamente con los que publica la fuente (2003-01: 8.944; 2003-02: 9.325; 2003-03: 8.87; 2003-04: 17.755; 2003-05: 0.013; 2003-06: 6.544; 2019-05: 0.165; 2019-06: 42.413; 2019-07: 21.487; 2020-02: 0.079; 2020-03: 21.314; 2020-07: 41.428). Contexto de la fuente: 2003-01: principales origenes UK 8.9, TURK 0.0 | 2003-04: principales origenes UK 17.7, TURK 0.0, CHLE 0.0 | 2019-06: principales origenes CAN 42.4, PNG 0.0, NZ 0.0 | 2020-07: principales origenes CAN 41.3, NZ 0.1, INIA 0.0. Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-03",
+   "sourceUrl": "https://data.api.abs.gov.au/rest/data/MERCH_IMP/041.TOT.TOT.M"
   }
  ]
 }
