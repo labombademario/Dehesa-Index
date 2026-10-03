@@ -162,7 +162,11 @@ def main():
         log('SIN TOKEN: no se llama a GENESIS ni se modifica nada'); (outdir / 'germany-livestock-log.txt').write_text('\n'.join(LOG) + '\n'); return 0
     try: doc = build(token)
     except Exception as e:
-        log('FALLO:', str(e).replace(token, '<token>')[:200]); return 1
+        import traceback
+        tb = traceback.format_exc().replace(token, '<token>')[-1500:]
+        log('FALLO:', type(e).__name__, str(e).replace(token, '<token>')[:300])
+        if os.environ.get('GITHUB_ACTIONS'): print('::error title=germany-livestock::' + (' | '.join(LOG[-6:]) + ' | ' + tb)[:3500].replace('%', '%25').replace('\r', '').replace('\n', '%0A'), flush=True)
+        return 1
     n = sum(1 for _ in json.dumps(doc))
     if not doc['slaughter']['nat'].get('pigs') or not doc['eggs']['nat'].get('eggs') or not doc['herd']['cattle'].get('total') or not doc['fruit'].get('apples'):
         log('FALLO: faltan bloques esenciales'); return 1
