@@ -1,0 +1,22 @@
+sob 2016 capital 100623230582 prima 9328599432 subvencion 5866427028 indemnizacion 3913021723 polizas 1160447
+col 2016 indemnizacion por causa 3913021723 frente a SOB 3913021723 (100.00%)
+sob 2017 capital 106066483364 prima 10071537409 subvencion 6355171789 indemnizacion 5434702791 polizas 1125190
+col 2017 indemnizacion por causa 5434702791 frente a SOB 5434702791 (100.00%)
+sob 2018 capital 110165812323 prima 9896233083 subvencion 6266053850 indemnizacion 7323548014 polizas 1108195
+col 2018 indemnizacion por causa 7323548014 frente a SOB 7323548014 (100.00%)
+sob 2019 capital 109871281350 prima 10128264691 subvencion 6370162805 indemnizacion 10609221669 polizas 1106439
+col 2019 indemnizacion por causa 10605900124 frente a SOB 10609221669 (99.97%)
+sob 2020 capital 113979135735 prima 10065431721 subvencion 6319366271 indemnizacion 8709408751 polizas 1112340
+col 2020 indemnizacion por causa 8709408751 frente a SOB 8709408751 (100.00%)
+sob 2021 capital 136685205293 prima 13719114375 subvencion 8609618263 indemnizacion 9610434268 polizas 1167248
+col 2021 indemnizacion por causa 9610434269 frente a SOB 9610434268 (100.00%)
+sob 2022 capital 173585634618 prima 18392847513 subvencion 11633272094 indemnizacion 19428734932 polizas 1193412
+col 2022 indemnizacion por causa 19428734932 frente a SOB 19428734932 (100.00%)
+sob 2023 capital 181616635814 prima 18105293514 subvencion 11328305584 indemnizacion 17793896693 polizas 1230394
+col 2023 indemnizacion por causa 17793896693 frente a SOB 17793896693 (100.00%)
+sob 2024 capital 158675899515 prima 15882603437 subvencion 9881540968 indemnizacion 15172182135 polizas 1218361
+col 2024 indemnizacion por causa 15172182135 frente a SOB 15172182135 (100.00%)
+sob 2025 capital 159368025310 prima 16835339045 subvencion 10590094857 indemnizacion 11532317924 polizas 1326541
+col 2025 indemnizacion por causa 11532317925 frente a SOB 11532317924 (100.00%)
+sob 2026 capital 167822331215 prima 18908457293 subvencion 13131068220 indemnizacion 4725585971 polizas 1691167
+col 2026 indemnizacion por causa 4725585971 frente a SOB 4725585971 (100.00%)
