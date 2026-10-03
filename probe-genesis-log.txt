@@ -1,4 +1,0 @@
-## tablefile 41141-0110 {'startyear': '2010', 'regionalvariable': 'DLAND', 'regionalkey': '01'} 200 34266
-lines 4801
-## tablefile 41141-0110 {'startyear': '2010', 'regionalvariable': 'DLAND', 'regionalkey': '03', 'classifyingvariable1': 'BNZAT4', 'classifyingkey1': 'BNZAT-2'} 200 9071
-lines 1201

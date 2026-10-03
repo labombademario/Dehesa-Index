@@ -1399,6 +1399,64 @@ def worldbank_agri(doc, errs, warns, stats):
     if n < 200: errs.append("worldbank-agri: solo %d series" % n)
     stats["worldbank-agri series"] = n
 
+GA_LAND = {"SH", "HH", "NI", "HB", "NW", "HE", "RP", "BW", "BY", "SL", "BE", "BB", "MV", "SN", "ST", "TH"}
+
+
+def germany_agri(doc, errs, warns, stats):
+    """Destatis: años crecientes y sin duplicar, valores finitos y positivos, Länder validos, produccion = rendimiento x superficie (±2 %), alquiler entre 20 y 3000 EUR/ha y precio de la tierra entre 1000 y 500000 EUR/ha."""
+    import math as _m, datetime as _d
+    cy = _d.date.today().year
+    keys = {c["k"] for c in doc["crops"]}
+    n = 0
+
+    def pts(tag, a, lo=None, hi=None):
+        nonlocal n
+        last = None
+        for p in a:
+            n += 1
+            y, v = p
+            if not isinstance(y, int) or y < 1900 or y > cy + 1: errs.append("germany-agri %s: año invalido %r" % (tag, y)); return
+            if last is not None and y <= last: errs.append("germany-agri %s: años no crecientes (%d tras %d)" % (tag, y, last)); return
+            last = y
+            if not isinstance(v, (int, float)) or not _m.isfinite(v) or v < 0: errs.append("germany-agri %s %d: valor invalido %r" % (tag, y, v)); return
+            if lo is not None and not (lo <= v <= hi): errs.append("germany-agri %s %d: valor fuera de rango (%s)" % (tag, y, v)); return
+    RNG = {"area": (1, 1e8), "prod": (1, 1e9), "yield": (1, 2000)}
+    for c, vs in doc["production"]["nat"].items():
+        if c not in keys: errs.append("germany-agri: cultivo %s sin descripcion" % c)
+        for vn, a in vs.items():
+            if vn not in RNG: errs.append("germany-agri nat/%s: variable %s desconocida" % (c, vn)); continue
+            pts("nat/%s/%s" % (c, vn), a, *RNG[vn])
+    for c, ls in doc["production"]["land"].items():
+        if c not in keys: errs.append("germany-agri: cultivo %s sin descripcion" % c)
+        for lk, vs in ls.items():
+            if lk not in GA_LAND: errs.append("germany-agri: Land desconocido %s" % lk); continue
+            for vn, a in vs.items():
+                if vn not in RNG: errs.append("germany-agri %s/%s: variable %s desconocida" % (c, lk, vn)); continue
+                pts("%s/%s/%s" % (c, lk, vn), a, *RNG[vn])
+            A, P, Y = (dict(vs.get(k, [])) for k in ("area", "prod", "yield"))
+            for y in P:
+                if y in A and y in Y and P[y] > 0 and abs(P[y] / 10 - Y[y] * A[y]) / (P[y] / 10) > 0.02:
+                    errs.append("germany-agri %s/%s %d: produccion no coincide con rendimiento x superficie" % (c, lk, y)); break
+    for c, vs in doc["production"]["nat"].items():
+        A, P, Y = (dict(vs.get(k, [])) for k in ("area", "prod", "yield"))
+        for y in P:
+            if y in A and y in Y and P[y] > 0 and abs(P[y] / 10 - Y[y] * A[y]) / (P[y] / 10) > 0.02:
+                errs.append("germany-agri nat/%s %d: produccion no coincide con rendimiento x superficie" % (c, y)); break
+    lp = doc["landPrice"]
+    pts("landPrice/natPre", lp["natPre"], 1000, 500000)
+    for b, vs in lp["nat"].items():
+        if "p" in vs: pts("landPrice/nat/%s" % b, vs["p"], 1000, 500000)
+    for lk, bs in lp["land"].items():
+        if lk not in GA_LAND: errs.append("germany-agri: Land desconocido %s" % lk); continue
+        for b, vs in bs.items():
+            for vn, a in vs.items(): pts("landPrice/%s/%s/%s" % (lk, b, vn), a, *((1000, 500000) if vn == "p" else (0, 1e9)))
+    rt = doc["rent"]
+    for b, a in rt["nat"].items(): pts("rent/nat/%s" % b, a, 20, 3000)
+    for lk, bs in rt["land"].items():
+        if lk not in GA_LAND: errs.append("germany-agri: Land desconocido %s" % lk); continue
+        for b, a in bs.items(): pts("rent/%s/%s" % (lk, b), a, 20, 3000)
+    stats["germany-agri puntos"] = n
+
 
 def ers_cost_reference(doc, errs, warns, stats):
     """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""

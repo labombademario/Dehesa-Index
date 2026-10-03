@@ -1378,6 +1378,12 @@
     "BLE": "ble"
    }
   },
+  "data/germany-agri.json": {
+   "sources": [
+    "destatis"
+   ],
+   "notes": "Produccion agricola por Bundesland, valor de compraventa de tierra agricola y alquileres (Pachtentgelt) de Destatis GENESIS-Online (tablas 41241, 61521, 41141). Datenlizenz Deutschland - Namensnennung 2.0: se cita Statistisches Bundesamt (Destatis), GENESIS-Online."
+  },
   "data/belgium-stats.json": {
    "byCountry": {
     "BE": "statbel"

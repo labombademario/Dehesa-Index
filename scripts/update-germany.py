@@ -159,11 +159,12 @@ def destatis(table):
     t = dec(get('https://genesis.destatis.de/genesisWS/downloads/00/tables/%s_00.csv' % table))
     L = [l.split(';') for l in t.splitlines()]
     return L
-def genesis_table(table, token):
-    """Serie completa desde la API GENESIS (formato ffcsv). Devuelve {codigo: (etiqueta, [(periodo, valor)])}."""
+def genesis_raw(table, token, startyear='1968', **extra):
+    """Descarga una tabla de la API GENESIS en formato plano (ffcsv) y devuelve el texto."""
     import io, zipfile, urllib.parse
     h = {'Content-Type': 'application/x-www-form-urlencoded', 'username': token, 'password': '', 'Accept': '*/*', 'User-Agent': 'DehesaIndex/1.0 (+https://dehesaindex.com)'}
-    body = urllib.parse.urlencode({'name': table, 'startyear': '1968', 'format': 'ffcsv', 'compress': 'false', 'language': 'de'}).encode()
+    q = {'name': table, 'startyear': startyear, 'format': 'ffcsv', 'compress': 'false', 'language': 'de'}; q.update(extra)
+    body = urllib.parse.urlencode(q).encode()
     last = None
     for i in range(3):
         try:
@@ -175,7 +176,13 @@ def genesis_table(table, token):
     if raw is None: raise RuntimeError('GENESIS %s -> %s' % (table, str(last).replace(token, '<token>')))
     if raw[:2] == b'PK':
         z = zipfile.ZipFile(io.BytesIO(raw)); raw = z.read(z.namelist()[0])
-    return parse_flat(dec(raw))
+    txt = dec(raw)
+    if not txt.lstrip('\ufeff').startswith('statistics_code'): raise RuntimeError('GENESIS %s: respuesta inesperada %s' % (table, txt[:160].replace(token, '<token>')))
+    return txt
+
+def genesis_table(table, token):
+    """Serie completa desde la API GENESIS. Devuelve {codigo: (etiqueta, [(periodo, valor)])}."""
+    return parse_flat(genesis_raw(table, token))
 
 def parse_flat(txt):
     rows = list(csv.reader(txt.splitlines(), delimiter=';'))
@@ -262,6 +269,31 @@ def idx_series(table, mode, group, pre, freq, title, windowed):
         put(sid, group, '%s: %s (2020=100)' % (title, tlabel(code, de)), 'index 2020=100', freq, pts, {'sourceGroup': 'Destatis – ' + table, 'code': code})
     log('destatis', table, len(res), 'series')
 
+def agri():
+    """Produccion por Land, precios y alquileres de tierra -> data/germany-agri.json (solo con token GENESIS; si falla se conserva el fichero anterior)."""
+    tok = os.environ.get('GENESIS_TOKEN', '').strip()
+    if not tok: log('agri: sin GENESIS_TOKEN, se conserva data/germany-agri.json'); return
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import de_agri
+    try:
+        t = {}
+        for n, sy in (('41241-0010', '2010'), ('41241-0005', '2010'), ('41241-0001', '1950'), ('41241-0002', '1950'), ('41241-0003', '1950'), ('61521-0010', '2021'), ('61521-0001', '2021'), ('61521-0100', '1991'), ('41141-0010', '2010')):
+            t[n] = genesis_raw(n, tok, startyear=sy); log('agri GENESIS', n, len(t[n].splitlines()), 'filas')
+        rl = {}
+        for code in sorted(de_agri.LAND):
+            rl[code] = genesis_raw('41141-0110', tok, startyear='2010', regionalvariable='DLAND', regionalkey=code); log('agri alquileres Land', code, len(rl[code].splitlines()), 'filas')
+        d = de_agri.build(t, rl)
+        if len(d['production']['land']) < 8 or len(d['landPrice']['land']) < 14 or len(d['rent']['land']) < 14:
+            raise RuntimeError('agri incompleto: cultivos %d, precios %d, alquileres %d' % (len(d['production']['land']), len(d['landPrice']['land']), len(d['rent']['land'])))
+        yrs = [y for c in d['production']['land'].values() for l in c.values() for v in l.values() for y, _ in v]
+        d.update({'schemaVersion': 1, 'generatedAt': datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
+                  'source': {'name': 'Statistisches Bundesamt (Destatis), GENESIS-Online', 'url': 'https://www-genesis.destatis.de/', 'license': 'Datenlizenz Deutschland – Namensnennung 2.0', 'tables': sorted(set(list(t) + ['41141-0110']))},
+                  'crops': [{'k': c[0], 'de': c[1]} for c in de_agri.CROPS], 'lastHarvestYear': max(yrs)})
+        json.dump(d, open('data/germany-agri.json', 'w'), ensure_ascii=False, separators=(',', ':'))
+        log('agri OK', os.path.getsize('data/germany-agri.json'), 'bytes')
+    except Exception as e:
+        log('AVISO agri fallo, se conserva el fichero anterior:', str(e)[:300].replace(tok, '<token>'))
+
 def main():
     for fn in (milk, slaughter, fv):
         try: fn()
@@ -269,6 +301,7 @@ def main():
     idx_series('61211-0001', 'annual', 'idx_perc', 'out-a', 'annual', 'Producer price index, annual', False)
     idx_series('61211-0003', 'month', 'idx_perc', 'out-m', 'monthly', 'Producer price index', True)
     idx_series('61221-0003', 'quarter', 'idx_pag', 'in-q', 'quarterly', 'Input price index', True)
+    agri()
     if len(OUT) < 20:
         log('demasiado pocas series; no se escribe'); open('data/germany-log.txt', 'w').write('\n'.join(LOG)); sys.exit(1)
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),

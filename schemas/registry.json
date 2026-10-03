@@ -332,6 +332,12 @@
     "home_explore"
    ]
   ],
+  "germany-agri.json": [
+   "germany-agri",
+   [
+    "germany_agri"
+   ]
+  ],
   "worldbank-agri.json": [
    "worldbank-agri",
    [
