@@ -1,0 +1,239 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/86125NED/$metadata#Cbs.OData.WebAPI.LandbouwInOutputGoederenDiensten","value":[
+    {
+      "Key":"A045424  ","Title":"Granen (incl. zaaigoed), totaal","Description":"Omvat de output van tarwe en spelt, rogge en mengkoren, gerst, haver en mengsels van zomergranen, korrelma\u00efs, rijst en andere granen, totaal.","CategoryGroupID":2
+    },{
+      "Key":"A045425  ","Title":"Tarwe en spelt, totaal","Description":"Omvat de output van zachte tarwe en spelt en de output van harde tarwe, totaal.","CategoryGroupID":2
+    },{
+      "Key":"A045426  ","Title":"Zachte tarwe en spelt","Description":"Omvat zomertarwe en wintertarwe.","CategoryGroupID":2
+    },{
+      "Key":"A045428  ","Title":"Gerst","Description":"Omvat zomergerst en wintergerst.","CategoryGroupID":2
+    },{
+      "Key":"A045432  ","Title":"Handelsgewassen, totaal","Description":"Handelsgewassen zijn planten die gewoonlijk niet direct voor consumptie worden verkocht omdat ze voor hun eindgebruik industrieel moeten worden verwerkt. \r\nOmvat de output van oliehoudende zaden en vruchten (incl. zaaigoed), eiwitrijke gewassen (incl. zaaigoed), ruwe tabak, suikerbieten en andere handelsgewassen.","CategoryGroupID":2
+    },{
+      "Key":"A045436  ","Title":"Eiwitrijke gewassen (incl. zaaigoed)","Description":"Omvat gedroogde peulvruchten zoals bruine bonen, kapucijners, grauwe erwten, niet bittere lupinen, tuinbonen (droog te oogsten), veldbonen, voedererwten.","CategoryGroupID":2
+    },{
+      "Key":"A045437  ","Title":"Suikerbieten","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A045441  ","Title":"Voedergewassen, totaal","Description":"Omvat de output van voederma\u00efs, voederwortels en voederbieten en andere voedergewassen, totaal.","CategoryGroupID":2
+    },{
+      "Key":"A045442  ","Title":"Voederma\u00efs","Description":"Omvat Snijma\u00efs. Inclusief geproduceerd en verbruikt op hetzelfde bedrijf.","CategoryGroupID":2
+    },{
+      "Key":"A045444  ","Title":"Andere voedergewassen","Description":"Omvat onder andere gras en hooi. Inclusief geproduceerd en verbruikt op hetzelfde bedrijf.","CategoryGroupID":2
+    },{
+      "Key":"A045445  ","Title":"Groenten en tuinbouwproducten, totaal","Description":"Omvat de output van verse groenten en planten en bloemen, totaal.","CategoryGroupID":2
+    },{
+      "Key":"A045446  ","Title":"Verse groenten, totaal","Description":"Omvat de output van bloemkool, tomaten en andere verse groenten.","CategoryGroupID":2
+    },{
+      "Key":"A045447  ","Title":"Bloemkool","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053066  ","Title":"Broccoli","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A045448  ","Title":"Tomaten","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A045449  ","Title":"Andere verse groenten","Description":"Omvat onder andere uien, witlof, sla, paprika, komkommers, kool (exclusief bloemkool) en champignons.","CategoryGroupID":2
+    },{
+      "Key":"A053053  ","Title":"Kool","Description":"Witte kool","CategoryGroupID":2
+    },{
+      "Key":"A053054  ","Title":"Sla","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053055  ","Title":"Komkommers","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053056  ","Title":"Wortelen","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053057  ","Title":"Uien","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053058  ","Title":"Andere verse groenten: andere","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053059  ","Title":"Witlof","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053060  ","Title":"Prei","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053061  ","Title":"Paprika","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053063  ","Title":"Asperges","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053064  ","Title":"Courgettes","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053065  ","Title":"Aubergine","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A045450  ","Title":"Planten en bloemen, totaal","Description":"Omvat de output van kwekerijplanten, bloemen en sierplanten (incl. kerstbomen) en aanplantingen, totaal.","CategoryGroupID":2
+    },{
+      "Key":"A045454  ","Title":"Aardappelen (incl. pootgoed)","Description":"Omvat consumptie-, poot- en zetmeelaardappelen.","CategoryGroupID":2
+    },{
+      "Key":"A053067  ","Title":"Consumptieaardappelen","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053068  ","Title":"Vroege aardappelen","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053069  ","Title":"Late aardappelen","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053070  ","Title":"Pootaardappelen","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053071  ","Title":"Andere aardappelen","Description":"Zetmeelaardappelen","CategoryGroupID":2
+    },{
+      "Key":"A045455  ","Title":"Fruit, totaal","Description":"Omvat de output van appelen, peren, aardbeien en ander vers fruit, totaal.","CategoryGroupID":2
+    },{
+      "Key":"A045457  ","Title":"Appelen","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A045458  ","Title":"Peren","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A053072  ","Title":"Aardbeien","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A045460  ","Title":"Andere plantaardige producten, totaal","Description":"Omvat de output van plantaardige stoffen, hoofdzakelijk gebruikt voor vlechtwerk, zaaigoed en andere plantaardige producten: andere, totaal.","CategoryGroupID":2
+    },{
+      "Key":"A045461  ","Title":"Zaaigoed","Description":"Omvat de vermenigvuldiging van zaaigoed. Hieronder is niet de output van onderzoek en certificatie inbegrepen.","CategoryGroupID":2
+    },{
+      "Key":"A045462  ","Title":"Andere plantaardige producten: andere","Description":"Omvat stro en andere plantaardige producten niet eerder genoemd.","CategoryGroupID":2
+    },{
+      "Key":"A053073  ","Title":"Totaal plantaardige producten, met in...","Description":"Totaal plantaardige producten, met inbegrip van groenten en fruit","CategoryGroupID":2
+    },{
+      "Key":"A053074  ","Title":"Totaal plantaardige producten, met ui...","Description":"Totaal plantaardige producten, met uitzondering van groenten en fruit","CategoryGroupID":2
+    },{
+      "Key":"A045463  ","Title":"Dieren, totaal","Description":"Omvat de output van rundvee, varkens, eenhoevigen, schapen en geiten, pluimvee en andere dieren.","CategoryGroupID":3
+    },{
+      "Key":"A045465  ","Title":"Rundvee","Description":"Omvat de verkoop van volwassen runderen, en kalveren en de waardering van de veranderingen in de veestapel.","CategoryGroupID":3
+    },{
+      "Key":"A053077  ","Title":"Runderen, met uitzondering van kalveren","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A053078  ","Title":"Kalveren","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A045466  ","Title":"Varkens","Description":"Omvat de verkoop van volwassen varkens en biggen en de waardering van de veranderingen in de veestapel.","CategoryGroupID":3
+    },{
+      "Key":"A045467  ","Title":"Eenhoevigen","Description":"Omvat de verkoop van hoofdzakelijk paarden en de waardering van de veranderingen in de veestapel. Exclusief de opfok bij maneges, ren- en dressuurstallen.","CategoryGroupID":3
+    },{
+      "Key":"A045468  ","Title":"Schapen en geiten","Description":"Omvat de verkoop van hoofdzakelijk schapen en geiten en de waardering van de veranderingen in de veestapel.","CategoryGroupID":3
+    },{
+      "Key":"A045469  ","Title":"Pluimvee","Description":"Omvat onder andere de verkopen van vleeskuikens, leghennen en kalkoenen en de waardering van de veranderingen in de veestapel (inclusief broedeieren).","CategoryGroupID":3
+    },{
+      "Key":"A053079  ","Title":"Kip","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A053148  ","Title":"Ander pluimvee","Description":"Slachtkippen en eendagskuikens","CategoryGroupID":3
+    },{
+      "Key":"A045471  ","Title":"Dierlijke producten, onbewerkt (totaal)","Description":"Omvat de output van melk, eieren en andere dierlijke producten, totaal.","CategoryGroupID":3
+    },{
+      "Key":"A045472  ","Title":"Rauwe (onbewerkte) melk","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A053149  ","Title":"Rauwe koemelk","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A053080  ","Title":"Andere melksoorten","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A045473  ","Title":"Eieren","Description":"Omvat de consumptie eieren.","CategoryGroupID":3
+    },{
+      "Key":"A045476  ","Title":"Andere dierlijke producten","Description":"Omvat onder andere huiden, (nerts-) pelten en dierlijke sperma.","CategoryGroupID":3
+    },{
+      "Key":"A045464  ","Title":"Veeteelt, totaal","Description":"Omvat de output van dieren en dierlijke producten, totaal.","CategoryGroupID":3
+    },{
+      "Key":"A053075  ","Title":"Totaal landbouwgoederen incl. groente...","Description":"Totaal landbouwgoederen inclusief groenten en fruit","CategoryGroupID":1
+    },{
+      "Key":"A053076  ","Title":"Totaal landbouwgoederen excl. groente...","Description":"Totaal landbouwgoederen exclusief groenten en fruit","CategoryGroupID":1
+    },{
+      "Key":"A053131  ","Title":"Totaal goederen diensten (verbruikt)","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053081  ","Title":"Zaai- en plantgoed","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053082  ","Title":"Energie; smeermiddelen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053083  ","Title":"Elektriciteit","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053084  ","Title":"Brandstoffen voor verwarming","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053085  ","Title":"Motorbrandstoffen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053086  ","Title":"Smeermiddelen en andere energieproduc...","Description":"Smeermiddelen en andere energieproducten dan elektriciteit, verwarming en motorbrandstoffen","CategoryGroupID":6
+    },{
+      "Key":"A053087  ","Title":"Meststoffen en grondverbeteraars","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053088  ","Title":"Enkelvoudige meststoffen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053089  ","Title":"Stikstofhoudende meststoffen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053090  ","Title":"Fosfaathoudende meststoffen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053091  ","Title":"Kaliumhoudende meststoffen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053092  ","Title":"Samengestelde meststoffen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053093  ","Title":"NP-meststoffen","Description":"Stikstof en fosfor","CategoryGroupID":6
+    },{
+      "Key":"A053094  ","Title":"PK-meststoffen","Description":"Fosfor en kalium","CategoryGroupID":6
+    },{
+      "Key":"A053095  ","Title":"NPK-meststoffen","Description":"Stikstof,fosfor en kalium","CategoryGroupID":6
+    },{
+      "Key":"A053096  ","Title":"Andere meststoffen, grondverbeteraars","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053097  ","Title":"Gewasbeschermingsmiddelen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053098  ","Title":"Fungiciden en bactericiden","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053099  ","Title":"Insecticiden en acariciden","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053100  ","Title":"Herbiciden, loofdoders en mosbestrijders","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053101  ","Title":"Andere gewasbeschermingsmiddelen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053102  ","Title":"Tarieven veeartsen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053103  ","Title":"Diervoeders","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053104  ","Title":"Enkelvoudige diervoeders","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053105  ","Title":"Granen en bijproducten maalderijen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053106  ","Title":"Perskoeken","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053107  ","Title":"Producten van dierlijke oorsprong","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053108  ","Title":"Andere enkelvoudige diervoeders","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053109  ","Title":"Mengvoeders","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053110  ","Title":"Mengvoeders voor kalveren","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053111  ","Title":"Mengvoeders voor runderen, excl. kalv...","Description":"Mengvoeders voor runderen, exclusief kalveren","CategoryGroupID":6
+    },{
+      "Key":"A053112  ","Title":"Mengvoeders voor varkens","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053113  ","Title":"Mengvoeders voor pluimvee","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053114  ","Title":"Andere mengvoeders","Description":"Andere mengvoeders","CategoryGroupID":6
+    },{
+      "Key":"A053115  ","Title":"Onderhoud van materiaal","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053116  ","Title":"Onderhoud van gebouwen","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053117  ","Title":"Andere goederen en diensten","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A053132  ","Title":"Totaal goederen diensten (investeringen)","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053118  ","Title":"Materialen","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053119  ","Title":"Machines en andere uitrusting","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053120  ","Title":"Rotovators en ander tweewielig materieel","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053121  ","Title":"Machines en installaties voor de teelt","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053122  ","Title":"Machines en uitrusting voor het oogsten","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053123  ","Title":"Landbouwmachines en installaties","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053134  ","Title":"Landbouwmachines en installaties plan...","Description":"Landbouwmachines en installaties voor plantaardige productie","CategoryGroupID":7
+    },{
+      "Key":"A053135  ","Title":"Landbouwmachines en installaties dier...","Description":"Landbouwmachines en installaties voor dierlijke productie","CategoryGroupID":7
+    },{
+      "Key":"A053136  ","Title":"Andere landbouwmachines en installaties","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053124  ","Title":"Vervoermiddelen","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053125  ","Title":"Tractoren","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053126  ","Title":"Andere voertuigen","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053127  ","Title":"Gebouwen","Description":"","CategoryGroupID":7
+    },{
+      "Key":"A053130  ","Title":"Andere goederen en diensten bijdragen...","Description":"Andere goederen en diensten bijdragend aan landbouwinvesteringen","CategoryGroupID":7
+    },{
+      "Key":"A053133  ","Title":"Totaal goederen en diensten input","Description":"","CategoryGroupID":5
+    }
+  ]
+}

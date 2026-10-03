@@ -1,0 +1,190 @@
+[
+ {
+  "name": "rvo_stat",
+  "url": "https://www.rvo.nl/onderwerpen/marktinformatie/statistieken",
+  "status": 200,
+  "bytes": 141515,
+  "ctype": "text/html; charset=utf-8",
+  "final": "https://www.rvo.nl/onderwerpen/marktinformatie/statistieken"
+ },
+ {
+  "name": "rvo_markt",
+  "url": "https://www.rvo.nl/onderwerpen/marktinformatie",
+  "status": 200,
+  "bytes": 122843,
+  "ctype": "text/html; charset=utf-8",
+  "final": "https://www.rvo.nl/onderwerpen/marktinformatie"
+ },
+ {
+  "name": "rvo_varken_stat",
+  "url": "https://www.rvo.nl/onderwerpen/marktinformatie/statistieken/varkens",
+  "status": 404,
+  "head": "<!DOCTYPE html><html id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-383d2bc6cd461317.js?dpl=48fc81a2-774981\"/><script src=\"/_next/static/chunk"
+ },
+ {
+  "name": "rvo_api_summary",
+  "url": "https://www.rvo.nl/api/v1/opendata/summary",
+  "status": 200,
+  "bytes": 41765,
+  "ctype": "application/json",
+  "final": "https://www.rvo.nl/api/v1/opendata/summary"
+ },
+ {
+  "name": "rvo_api_subjects",
+  "url": "https://www.rvo.nl/api/v1/opendata/subjects",
+  "status": 500,
+  "head": "{\"ok\":false,\"error\":\"Unexpected error\"}"
+ },
+ {
+  "name": "rvo_stat_ctx",
+  "url": "https://www.rvo.nl/onderwerpen/marktinformatie/statistieken",
+  "status": 200,
+  "bytes": 141515,
+  "ctype": "text/html; charset=utf-8",
+  "final": "https://www.rvo.nl/onderwerpen/marktinformatie/statistieken"
+ },
+ {
+  "name": "ret_about",
+  "url": "https://www.retsinformation.dk/about",
+  "status": 200,
+  "bytes": 4501,
+  "ctype": "text/html; charset=utf-8",
+  "final": "https://www.retsinformation.dk/about"
+ },
+ {
+  "name": "ret_copyright",
+  "url": "https://www.retsinformation.dk/Forms/R0710.aspx?id=130000",
+  "status": 200,
+  "bytes": 4815,
+  "ctype": "text/html; charset=utf-8",
+  "final": "https://www.retsinformation.dk/eli/retsinfo/2010/9020"
+ },
+ {
+  "name": "ret_data",
+  "url": "https://www.retsinformation.dk/api/document/eli/lta/2025/1363/info",
+  "status": 200,
+  "bytes": 4526,
+  "ctype": "text/html; charset=utf-8",
+  "final": "https://www.retsinformation.dk/api/document/eli/lta/2025/1363/info"
+ },
+ {
+  "name": "dst_cc_en",
+  "url": "https://www.dst.dk/en/Statistik/dokumentation/Citation",
+  "status": 404,
+  "head": "\r\n<!DOCTYPE html>\r\n<html lang=\"da\">\r\n<head>\r\n    \r\n    <title>\r\n        Vi kan ikke finde siden, du leder efter - Danmarks Statistik\r\n\r\n    </title>\r\n    \r\n    <link rel=\"shortcut icon\" href=\"/Site/Dst/Images/favicon2013.ico\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1"
+ },
+ {
+  "name": "dst_rights",
+  "url": "https://www.dst.dk/en/OmDS/rettigheder-og-brug-af-data",
+  "status": 404,
+  "head": "\r\n<!DOCTYPE html>\r\n<html lang=\"da\">\r\n<head>\r\n    \r\n    <title>\r\n        Vi kan ikke finde siden, du leder efter - Danmarks Statistik\r\n\r\n    </title>\r\n    \r\n    <link rel=\"shortcut icon\" href=\"/Site/Dst/Images/favicon2013.ico\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1"
+ },
+ {
+  "name": "cbs_lpi_dim",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/86125NED/LandbouwInOutputGoederenDiensten",
+  "status": 200,
+  "bytes": 15678,
+  "ctype": "application/json",
+  "final": "https://opendata.cbs.nl/ODataApi/odata/86125NED/LandbouwInOutputGoederenDiensten"
+ },
+ {
+  "name": "cbs_lpi_catalog",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/86125NED/TableInfos",
+  "status": 200,
+  "bytes": 6470,
+  "ctype": "application/json",
+  "final": "https://opendata.cbs.nl/ODataApi/odata/86125NED/TableInfos"
+ },
+ {
+  "name": "cbs_80780_info",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/80780NED/TableInfos",
+  "status": 200,
+  "bytes": 16094,
+  "ctype": "application/json",
+  "final": "https://opendata.cbs.nl/ODataApi/odata/80780NED/TableInfos"
+ },
+ {
+  "name": "cbs_7123_info",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/7123SLAC/TableInfos",
+  "status": 200,
+  "bytes": 7220,
+  "ctype": "application/json",
+  "final": "https://opendata.cbs.nl/ODataApi/odata/7123SLAC/TableInfos"
+ },
+ {
+  "name": "cbs_licence_page",
+  "url": "https://www.cbs.nl/en-gb/statline/dataportaal/informatie/general-information-on-the-use-of-cbs-open-data",
+  "status": 200,
+  "bytes": 39511,
+  "ctype": "text/html; charset=utf-8",
+  "final": "https://www.cbs.nl/en-gb/statline/dataportaal/informatie/general-information-on-the-use-of-cbs-open-data"
+ },
+ {
+  "name": "cbs_disclaimer",
+  "url": "https://www.cbs.nl/nl-nl/onze-diensten/open-data/statline-as-open-data/disclaimer",
+  "status": 404,
+  "head": "\r\n<!doctype html>\r\n<html lang=\"nl-NL\" class=\"no-js\">\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n    <title>We kunnen de pagina die je zoekt niet vinden | CBS</title>\r\n    <meta name=\"DCTERMS:identifier\" title=\"XSD."
+ },
+ {
+  "name": "cbs_opendata_en",
+  "url": "https://www.cbs.nl/en-gb/our-services/open-data",
+  "status": 200,
+  "bytes": 38426,
+  "ctype": "text/html; charset=utf-8",
+  "final": "https://www.cbs.nl/en-gb/our-services/open-data"
+ },
+ {
+  "name": "cbs_pg",
+  "url": "https://www.cbs.nl/en-gb/about-us/website/copyright",
+  "status": 200,
+  "bytes": 38956,
+  "ctype": "text/html; charset=utf-8",
+  "final": "https://www.cbs.nl/en-gb/about-us/website/copyright"
+ },
+ {
+  "name": "cbs_85636_p0",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/85636NED/TypedDataSet",
+  "status": 500,
+  "head": "Error getting TypedDataSet for '85636NED': The given query is not allowed on this table. Please redefine your query so that it returns less than 10000 records."
+ },
+ {
+  "name": "fr_vigieau_dep_graph",
+  "url": "https://api.vigieau.beta.gouv.fr/api/departements/34",
+  "status": 404,
+  "head": "{\"message\":\"Cannot GET /api/departements/34\",\"error\":\"Not Found\",\"statusCode\":404}"
+ },
+ {
+  "name": "fr_vigieau_stats",
+  "url": "https://api.vigieau.beta.gouv.fr/api/statistics/departements",
+  "status": 404,
+  "head": "{\"message\":\"Cannot GET /api/statistics/departements\",\"error\":\"Not Found\",\"statusCode\":404}"
+ },
+ {
+  "name": "fr_dg_vigieau_ds",
+  "url": "https://www.data.gouv.fr/api/1/datasets/donnee-secheresse-vigieau/",
+  "status": 200,
+  "bytes": 220908,
+  "ctype": "application/json",
+  "final": "https://www.data.gouv.fr/api/1/datasets/donnee-secheresse-vigieau/"
+ },
+ {
+  "name": "fr_dg_cereobs_ble",
+  "url": "https://www.data.gouv.fr/api/1/datasets/?q=Cere%27Obs+bl%C3%A9&page_size=10",
+  "status": 200,
+  "bytes": 94,
+  "ctype": "application/json",
+  "final": "https://www.data.gouv.fr/api/1/datasets/?q=Cere%27Obs+bl%C3%A9&page_size=10"
+ },
+ {
+  "name": "fr_dg_fam_org",
+  "url": "https://www.data.gouv.fr/api/1/organizations/franceagrimer/datasets/?page_size=100",
+  "status": 404,
+  "head": "{\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again. You have requested this URI [/api/1/organizations/franceagrimer/datasets/] but did you mean /api/1/organizations/<org:org>/datasets/ or /api/1/organizations/<org:org>"
+ },
+ {
+  "name": "fr_cereobs_ble_site",
+  "url": "https://cereobs.franceagrimer.fr/cereobs-pub/",
+  "status": 404,
+  "head": "<!DOCTYPE HTML>\r\n\r\n<!-- Vers. 1.1 -->\r\n\r\n<HTML>\r\n<HEAD>\r\n\t<TITLE>FranceAgriMer - fili&#232;res agricoles, de la p&#234;che et aquaculture fran&#231;aises</TITLE>\r\n\r\n\t<STYLE>\r\n\t\thtml, body {\r\n\t\t\tmargin: 0;\r\n\t\t\tpadding: 0;\r\n\t\t\tfont-family: \"Arial\";\r\n\t\t\tfont-size: 20px;\r\n\t\t\tcolor: #72736d;\r\n\t\t}\r\n\r\n\t\t#o"
+ }
+]
