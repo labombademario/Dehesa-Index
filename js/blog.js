@@ -144,6 +144,22 @@
     return STRINGS;
   }
   var STRINGS = buildStrings();
+  /* Suscripción por correo: queda apagada hasta que se rellene NEWSLETTER_ACTION con la dirección https del formulario del servicio
+     elegido (Buttondown, MailerLite, Mailchimp…). Sin ella no se muestra nada: la web no guarda correos por sí misma. */
+  var NEWSLETTER_ACTION = '';
+  var NL = {
+    es: { h: 'Recibe cada artículo por correo', p: 'Escribe tu email y te llegará cada entrada nueva del blog. Puedes darte de baja cuando quieras.', ph: 'tu@email.com', ok: 'Acepto recibir el blog por correo y la política de privacidad.', btn: 'Suscribirme', lbl: 'Correo electrónico', pv: 'Aviso legal y privacidad' },
+    en: { h: 'Get every article by email', p: 'Enter your email and each new blog post will reach you. You can unsubscribe at any time.', ph: 'you@email.com', ok: 'I agree to receive the blog by email and to the privacy policy.', btn: 'Subscribe', lbl: 'Email address', pv: 'Legal notice and privacy' },
+    fr: { h: 'Recevez chaque article par e-mail', p: 'Saisissez votre e-mail et chaque nouvel article vous parviendra. Vous pouvez vous désabonner à tout moment.', ph: 'vous@email.com', ok: 'J’accepte de recevoir le blog par e-mail et la politique de confidentialité.', btn: 'S’abonner', lbl: 'Adresse e-mail', pv: 'Mentions légales et confidentialité' },
+    it: { h: 'Ricevi ogni articolo via email', p: 'Inserisci la tua email e riceverai ogni nuovo articolo del blog. Puoi disiscriverti quando vuoi.', ph: 'tu@email.com', ok: 'Accetto di ricevere il blog via email e l’informativa sulla privacy.', btn: 'Iscriviti', lbl: 'Indirizzo email', pv: 'Note legali e privacy' }
+  };
+  function subscribeBox(lang, esc) {
+    if (!/^https:\/\//.test(NEWSLETTER_ACTION)) return '';
+    var n = NL[lang] || NL.es;
+    return '<form class="di-card di-blog-sub" method="post" action="' + esc(NEWSLETTER_ACTION) + '" target="_blank" style="padding:14px 16px;margin:0 0 16px"><h2 style="margin:0 0 4px;font-size:16px">' + esc(n.h) + '</h2><p class="di-movers-hint" style="margin:0 0 8px">' + esc(n.p) + '</p>' +
+      '<label for="bl-email" class="di-movers-hint" style="display:block">' + esc(n.lbl) + '</label><div style="display:flex;gap:8px;flex-wrap:wrap"><input id="bl-email" name="email" type="email" required autocomplete="email" placeholder="' + esc(n.ph) + '" style="flex:1 1 220px;min-width:0;padding:9px 10px;border:1px solid var(--border);border-radius:8px;font:inherit"><button type="submit" class="di-src-tab" style="flex:0 0 auto">' + esc(n.btn) + '</button></div>' +
+      '<label class="di-movers-hint" style="display:block;margin-top:8px"><input type="checkbox" required> ' + esc(n.ok) + ' <a href="legal.html">' + esc(n.pv) + '</a></label></form>';
+  }
 
   function render() {
     var lang = window.DehesaShared.getLang();
@@ -157,7 +173,7 @@
     document.getElementById('bl-sub').textContent = t.sub;
     document.getElementById('bl-disclaimer').textContent = t.disclaimer;
 
-    document.getElementById('bl-posts').innerHTML = t.posts.map(function (post) {
+    document.getElementById('bl-posts').innerHTML = subscribeBox(lang, esc) + t.posts.map(function (post) {
       var sourcesHtml = post.sources.map(function (s) {
         return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.label) + ' ↗</a>';
       }).join('');
