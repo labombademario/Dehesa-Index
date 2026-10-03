@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-03T02:07:40.395Z",
+  "generatedAt": "2026-10-03T02:40:37.890Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -87402,17 +87402,17 @@
       "product": "harina_soja",
       "region": "us",
       "sourceId": "usda_ams_mars",
-      "observationDate": "2026-09-25",
-      "publicationDate": "2026-09-25",
+      "observationDate": "2026-10-02",
+      "publicationDate": "2026-10-02",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:51:46.500Z",
+      "verifiedAt": "2026-10-03T02:40:37.615Z",
       "comparability": "directional",
       "methodology": "USDA AMS Market News (API MARS, informe 3511 «National Grain and Oilseed Processor Feedstuff Report», semanal): precio medio semanal de la harina de soja de 46,5-48 % de proteína en Iowa, FOB, cotización de venta (ask), en USD por tonelada. El informe solo indica «$ Per Ton»; se trata como tonelada corta (2.000 lb) porque el precio se expresa como base sobre el futuro de harina de soja de CBOT, que cotiza en toneladas cortas. Es un mercado regional, no un futuro ni la media nacional, y no es exactamente el mismo producto que la referencia europea (España, 40-50 % de proteína, salida de fábrica, EUR/t).",
-      "value": 384.14,
+      "value": 364.06,
       "currency": "USD",
       "unit": "ton_corta",
       "frequency": "weekly",
-      "changePct": 1.33,
+      "changePct": -5.23,
       "history": [
         {
           "period": "09-06",
@@ -87923,9 +87923,14 @@
           "period": "09-25",
           "year": 2026,
           "value": 384.14
+        },
+        {
+          "period": "10-02",
+          "year": 2026,
+          "value": 364.06
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-03"
     },
     {
       "id": "di_avicultura_huevos_ca",
@@ -101617,23 +101622,18 @@
       "product": "leche_polvo",
       "region": "us",
       "sourceId": "usda_ams_mars",
-      "observationDate": "2026-09-25",
-      "publicationDate": "2026-09-25",
+      "observationDate": "2026-10-02",
+      "publicationDate": "2026-10-02",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:51:46.571Z",
+      "verifiedAt": "2026-10-03T02:40:37.686Z",
       "comparability": "directional",
       "methodology": "USDA AMS Market News (API MARS, informe 1049 «Nonfat Dry Milk - East and Central U.S.», semanal): leche desnatada en polvo de calor bajo y medio, en USD por libra. El informe publica un rango semanal (mínimo y máximo) y el valor mostrado es el punto medio de ese rango, calculado por Dehesa Index. Es un mercado regional (Este y Centro de EE. UU.), no un futuro; el producto es equivalente en tipo al SMP europeo, pero no es idéntico.",
-      "value": 2.03,
+      "value": 2.12,
       "currency": "USD",
       "unit": "lb",
       "frequency": "weekly",
-      "changePct": 6.56,
+      "changePct": 4.43,
       "history": [
-        {
-          "period": "10-04",
-          "year": 2024,
-          "value": 1.35
-        },
         {
           "period": "10-11",
           "year": 2024,
@@ -102148,9 +102148,14 @@
           "period": "09-25",
           "year": 2026,
           "value": 2.03
+        },
+        {
+          "period": "10-02",
+          "year": 2026,
+          "value": 2.12
         }
       ],
-      "snapshotDate": "2026-09-30"
+      "snapshotDate": "2026-10-03"
     },
     {
       "id": "di_lacteos_leche_ca",

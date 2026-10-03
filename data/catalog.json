@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-03T02:07:40.479Z",
-  "observationCount": 168,
+  "generatedAt": "2026-10-03T02:40:37.982Z",
+  "observationCount": 170,
   "products": [
     "arroz",
     "avena",
@@ -762,16 +762,16 @@
       "product": "harina_soja",
       "region": "us",
       "sourceId": "usda_ams_mars",
-      "observationDate": "2026-09-25",
+      "observationDate": "2026-10-02",
       "unit": "ton_corta",
       "currency": "USD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:51:46.500Z",
+      "verifiedAt": "2026-10-03T02:40:37.615Z",
       "comparability": "directional",
-      "points": 25,
+      "points": 26,
       "coverageStart": "2024-09-01",
-      "coverageEnd": "2026-09-01"
+      "coverageEnd": "2026-10-01"
     },
     {
       "product": "huevos",
@@ -837,16 +837,16 @@
       "product": "leche_polvo",
       "region": "us",
       "sourceId": "usda_ams_mars",
-      "observationDate": "2026-09-25",
+      "observationDate": "2026-10-02",
       "unit": "lb",
       "currency": "USD",
       "frequency": "weekly",
       "status": "verified",
-      "verifiedAt": "2026-09-30T14:51:46.571Z",
+      "verifiedAt": "2026-10-03T02:40:37.686Z",
       "comparability": "directional",
-      "points": 24,
+      "points": 25,
       "coverageStart": "2024-10-01",
-      "coverageEnd": "2026-09-01"
+      "coverageEnd": "2026-10-01"
     },
     {
       "product": "leche",

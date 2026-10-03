@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-03T02:07:41.357Z",
+  "generatedAt": "2026-10-03T02:40:38.941Z",
   "status": "informational",
   "rules": [
     {
@@ -192,21 +192,12 @@
     },
     {
       "type": "period_move",
-      "product": "harina_soja",
-      "region": "us",
-      "sourceId": "usda_ams_mars",
-      "severity": "high",
-      "changePct": 10.71,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
       "product": "leche_polvo",
       "region": "us",
       "sourceId": "usda_ams_mars",
       "severity": "high",
-      "changePct": 20.26,
-      "observationDate": "2026-09-01"
+      "changePct": 15.22,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
