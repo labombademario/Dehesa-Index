@@ -28,6 +28,14 @@ sources:
     data: [germany-stats.json, germany-agri.json]
     log: germany-log.txt
     message: Datos Alemania (BLE, Destatis)
+  - id: germany-livestock
+    name: Update Germany livestock (Destatis)
+    cron: ['40 15 * * 3']
+    script: scripts/update-germany-livestock.py
+    env: {GENESIS_TOKEN: '${{ secrets.GENESIS_TOKEN }}'}
+    data: [germany-livestock.json]
+    log: germany-livestock-log.txt
+    message: Datos Alemania ganaderia y huevos (Destatis)
   - id: austria
     name: Update Austria (Eurostat)
     cron: ['25 16 * * 2,5']
