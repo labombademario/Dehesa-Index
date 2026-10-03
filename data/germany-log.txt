@@ -7,4 +7,30 @@ GENESIS API 61211-0003 49 series; periodos 1968-01 .. 2026-07
 destatis 61211-0003 49 series
 GENESIS API 61221-0003 38 series; periodos 1968-01 .. 2026-07
 destatis 61221-0003 38 series
+agri GENESIS 41241-0010 27745 filas
+agri GENESIS 41241-0005 1735 filas
+agri GENESIS 41241-0001 3481 filas
+agri GENESIS 41241-0002 2281 filas
+agri GENESIS 41241-0003 761 filas
+agri GENESIS 61521-0010 14401 filas
+agri GENESIS 61521-0001 901 filas
+agri GENESIS 61521-0100 1081 filas
+agri GENESIS 41141-0010 4801 filas
+agri alquileres Land 01 4801 filas
+agri alquileres Land 02 4801 filas
+agri alquileres Land 03 4801 filas
+agri alquileres Land 04 4801 filas
+agri alquileres Land 05 4801 filas
+agri alquileres Land 06 4801 filas
+agri alquileres Land 07 4801 filas
+agri alquileres Land 08 4801 filas
+agri alquileres Land 09 4801 filas
+agri alquileres Land 10 4801 filas
+agri alquileres Land 11 4801 filas
+agri alquileres Land 12 4801 filas
+agri alquileres Land 13 4801 filas
+agri alquileres Land 14 4801 filas
+agri alquileres Land 15 4801 filas
+agri alquileres Land 16 4801 filas
+agri OK 167234 bytes
 series 265
