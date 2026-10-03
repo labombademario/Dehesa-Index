@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-03T03:31:27Z",
+ "generatedAt": "2026-10-03T04:15:54Z",
  "summary": {
   "files": 17,
   "errors": 0,
-  "warnings": 1
+  "warnings": 0
  },
  "files": [
   {
@@ -159,11 +159,9 @@
   {
    "file": "australia-trade-stats.json",
    "schema": "country-stats",
-   "status": "warning",
+   "status": "ok",
    "errors": [],
-   "warnings": [
-    "AU/au-imp-maize: salto 0.002 -> 10.36 en 2003-01 (mediana previa 0.015)"
-   ],
+   "warnings": [],
    "stats": {
     "series": 57,
     "points": 12271,
@@ -181,9 +179,10 @@
     "AU/au-imp-wheat: salto 21.487 -> 21.632 en 2019-08 (mediana previa 0.117) [KNOWN_VERIFIED_ANOMALY]",
     "AU/au-imp-wheat: salto 21.632 -> 21.438 en 2019-09 (mediana previa 0.154) [KNOWN_VERIFIED_ANOMALY]",
     "AU/au-imp-wheat: salto 21.438 -> 20.285 en 2019-10 (mediana previa 0.165) [KNOWN_VERIFIED_ANOMALY]",
-    "AU/au-imp-wheat: salto 20.285 -> 20.145 en 2019-11 (mediana previa 0.247) [KNOWN_VERIFIED_ANOMALY]"
+    "AU/au-imp-wheat: salto 20.285 -> 20.145 en 2019-11 (mediana previa 0.247) [KNOWN_VERIFIED_ANOMALY]",
+    "AU/au-imp-maize: salto 0.002 -> 10.36 en 2003-01 (mediana previa 0.015) [KNOWN_VERIFIED_ANOMALY]"
    ],
-   "nWarnings": 1,
+   "nWarnings": 0,
    "nErrors": 0
   },
   {
