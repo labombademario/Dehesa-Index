@@ -208,6 +208,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-us-local.mjs
+      - name: Clima agrícola (regiones visibles, plegado, mapa, memoria, 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-clima.mjs
       - name: Informe E2E
         if: always()
         uses: actions/upload-artifact@v6

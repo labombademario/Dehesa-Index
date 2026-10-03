@@ -3,22 +3,22 @@
   'use strict';
   var WET = '#2a6f97', DRY = '#b8651b', HOT = '#b4341f', COOL = '#2b7a78';
   var T = {
-    es: { mapLink: 'Ver en el mapa', histTitle: 'Histórico desde 1981', histSub: 'Cómo ha sido cada año frente a la media 2001-2020, para la región y la época que elijas.', selRegion: 'Región', selPeriod: 'Época', periods: { year: 'Año completo (ene-dic)', season: 'Campaña (mar-ago)', seasonS: 'Campaña hemisferio sur (abr-oct)', summer: 'Verano (jun-ago)' }, histPrecip: 'Lluvia acumulada vs. normal', histTemp: 'Temperatura media vs. normal', rankP: 'Lluvia: puesto {r} de {n} años (1 = el más seco)', rankT: 'Temperatura: puesto {r} de {n} años (1 = el más cálido)', yearWord: 'Año', histNote: 'Solo años con todos los meses de la época cerrados y con dato válido. Como la media es 2001-2020, los años de ese periodo se reparten alrededor de cero por construcción. Los meses más recientes los calcula NASA con un flujo de procesamiento distinto (GEOS-IT) que puede revisarse después: léelos con cautela.', tableView: 'Ver datos en tabla', title: 'Clima agrícola', sub: 'Cuánto se ha desviado la lluvia y la temperatura de lo normal en regiones productoras. Es contexto: no predice cosechas ni precios.',
+    es: { showRegions: 'Regiones a mostrar', allR: 'Todas', noneR: 'Ninguna', mapTitle: 'Mapa', mapHint: 'Cada punto es una región productora. Pulsa uno para ir a su fila.', mapFail: 'No se pudo cargar el mapa; los datos están en las tablas.', normal: 'normal', views: { world: 'Mundo', us: 'EE. UU.', eu: 'Europa' }, noRegion: 'Elige al menos una región para ver sus datos.', collapseHint: 'Pulsa el título de una región para plegarla o desplegarla.', mapAria: 'Mapa del clima por región productora', mapLink: 'Ver en el mapa', histTitle: 'Histórico desde 1981', histSub: 'Cómo ha sido cada año frente a la media 2001-2020, para la región y la época que elijas.', selRegion: 'Región', selPeriod: 'Época', periods: { year: 'Año completo (ene-dic)', season: 'Campaña (mar-ago)', seasonS: 'Campaña hemisferio sur (abr-oct)', summer: 'Verano (jun-ago)' }, histPrecip: 'Lluvia acumulada vs. normal', histTemp: 'Temperatura media vs. normal', rankP: 'Lluvia: puesto {r} de {n} años (1 = el más seco)', rankT: 'Temperatura: puesto {r} de {n} años (1 = el más cálido)', yearWord: 'Año', histNote: 'Solo años con todos los meses de la época cerrados y con dato válido. Como la media es 2001-2020, los años de ese periodo se reparten alrededor de cero por construcción. Los meses más recientes los calcula NASA con un flujo de procesamiento distinto (GEOS-IT) que puede revisarse después: léelos con cautela.', tableView: 'Ver datos en tabla', title: 'Clima agrícola', sub: 'Cuánto se ha desviado la lluvia y la temperatura de lo normal en regiones productoras. Es contexto: no predice cosechas ni precios.',
       regions: { us: 'Estados Unidos', eu: 'Unión Europea', uk: 'Reino Unido', ca: 'Canadá', au: 'Australia' }, precip: 'Lluvia vs. normal', temp: 'Temperatura vs. normal', trend: 'Lluvia, últimos meses',
       dry: 'más seco', wet: 'más húmedo', hot: 'más cálido', cool: 'más fresco', month: 'Mes', crops: { trigo: 'trigo', maiz: 'maíz', soja: 'soja', cebada: 'cebada', arroz: 'arroz' },
       teaserTitle: 'Clima agrícola', teaserHint: 'Último mes cerrado, frente a la media 2001-2020', driest: 'Más seco', wettest: 'Más húmedo', hottest: 'Más cálido', more: 'Ver todas las regiones',
       note: 'Fuente: NASA POWER (reanálisis MERRA-2), media 2001-2020 del mismo mes. Cada punto es una celda de malla de unos 50 km representativa de la región, no una estación ni un promedio de toda la región. Solo meses cerrados con dato válido.', links: 'Cómo se calcula', table: 'Ver datos en tabla', mm: 'mm', legendP: 'Barra azul: más lluvia de lo normal · barra marrón: menos', legendT: 'Barra roja: más cálido · barra verde azulada: más fresco', showTable: 'Tabla de datos' },
-    en: { mapLink: 'See on the map', histTitle: 'History since 1981', histSub: 'How each year compared with the 2001-2020 average, for the region and season you choose.', selRegion: 'Region', selPeriod: 'Season', periods: { year: 'Full year (Jan-Dec)', season: 'Growing season (Mar-Aug)', seasonS: 'Southern growing season (Apr-Oct)', summer: 'Summer (Jun-Aug)' }, histPrecip: 'Cumulative rainfall vs. normal', histTemp: 'Mean temperature vs. normal', rankP: 'Rainfall: rank {r} of {n} years (1 = driest)', rankT: 'Temperature: rank {r} of {n} years (1 = warmest)', yearWord: 'Year', histNote: 'Only years with every month of the season closed and valid. Since the average is 2001-2020, years in that period are spread around zero by construction. The most recent months are computed by NASA with a different processing stream (GEOS-IT) that may be revised later: read them with caution.', tableView: 'View data as a table', title: 'Agricultural climate', sub: 'How far rainfall and temperature are from normal in producing regions. It is context: it does not forecast crops or prices.',
+    en: { showRegions: 'Regions to show', allR: 'All', noneR: 'None', mapTitle: 'Map', mapHint: 'Each dot is a producing region. Click one to jump to its row.', mapFail: 'The map could not be loaded; the data is in the tables.', normal: 'normal', views: { world: 'World', us: 'U.S.', eu: 'Europe' }, noRegion: 'Pick at least one region to see its data.', collapseHint: 'Click a region’s title to collapse or expand it.', mapAria: 'Climate map by producing region', mapLink: 'See on the map', histTitle: 'History since 1981', histSub: 'How each year compared with the 2001-2020 average, for the region and season you choose.', selRegion: 'Region', selPeriod: 'Season', periods: { year: 'Full year (Jan-Dec)', season: 'Growing season (Mar-Aug)', seasonS: 'Southern growing season (Apr-Oct)', summer: 'Summer (Jun-Aug)' }, histPrecip: 'Cumulative rainfall vs. normal', histTemp: 'Mean temperature vs. normal', rankP: 'Rainfall: rank {r} of {n} years (1 = driest)', rankT: 'Temperature: rank {r} of {n} years (1 = warmest)', yearWord: 'Year', histNote: 'Only years with every month of the season closed and valid. Since the average is 2001-2020, years in that period are spread around zero by construction. The most recent months are computed by NASA with a different processing stream (GEOS-IT) that may be revised later: read them with caution.', tableView: 'View data as a table', title: 'Agricultural climate', sub: 'How far rainfall and temperature are from normal in producing regions. It is context: it does not forecast crops or prices.',
       regions: { us: 'United States', eu: 'European Union', uk: 'United Kingdom', ca: 'Canada', au: 'Australia' }, precip: 'Rainfall vs. normal', temp: 'Temperature vs. normal', trend: 'Rainfall, recent months',
       dry: 'drier', wet: 'wetter', hot: 'warmer', cool: 'cooler', month: 'Month', crops: { trigo: 'wheat', maiz: 'corn', soja: 'soybeans', cebada: 'barley', arroz: 'rice' },
       teaserTitle: 'Agricultural climate', teaserHint: 'Latest closed month vs. the 2001-2020 average', driest: 'Driest', wettest: 'Wettest', hottest: 'Warmest', more: 'See all regions',
       note: 'Source: NASA POWER (MERRA-2 reanalysis), 2001-2020 average for the same month. Each point is a ~50 km grid cell representing the region, not a station or a whole-region average. Closed months with valid data only.', links: 'How it is calculated', mm: 'mm', legendP: 'Blue bar: wetter than normal · brown bar: drier', legendT: 'Red bar: warmer · teal bar: cooler', showTable: 'Data table' },
-    fr: { mapLink: 'Voir sur la carte', histTitle: 'Historique depuis 1981', histSub: 'Comment chaque année se situe par rapport à la moyenne 2001-2020, pour la région et la période choisies.', selRegion: 'Région', selPeriod: 'Période', periods: { year: 'Année complète (janv.-déc.)', season: 'Campagne (mars-août)', seasonS: 'Campagne hémisphère sud (avr-oct)', summer: 'Été (juin-août)' }, histPrecip: 'Pluie cumulée vs. normale', histTemp: 'Température moyenne vs. normale', rankP: 'Pluie : rang {r} sur {n} ans (1 = le plus sec)', rankT: 'Température : rang {r} sur {n} ans (1 = le plus chaud)', yearWord: 'Année', histNote: 'Uniquement les années dont tous les mois de la période sont clos et valides. La moyenne étant 2001-2020, les années de cette période se répartissent autour de zéro par construction. Les mois les plus récents sont calculés par la NASA avec un autre flux de traitement (GEOS-IT), susceptible d’être révisé : à lire avec prudence.', tableView: 'Voir les données en tableau', title: 'Climat agricole', sub: 'Écart des pluies et de la température par rapport à la normale dans les régions productrices. C’est un contexte : cela ne prévoit ni récoltes ni prix.',
+    fr: { showRegions: 'Régions à afficher', allR: 'Toutes', noneR: 'Aucune', mapTitle: 'Carte', mapHint: 'Chaque point est une région productrice. Cliquez sur l’un d’eux pour aller à sa ligne.', mapFail: 'La carte n’a pas pu être chargée ; les données sont dans les tableaux.', normal: 'normal', views: { world: 'Monde', us: 'États-Unis', eu: 'Europe' }, noRegion: 'Choisissez au moins une région pour voir ses données.', collapseHint: 'Cliquez sur le titre d’une région pour la replier ou la déplier.', mapAria: 'Carte du climat par région productrice', mapLink: 'Voir sur la carte', histTitle: 'Historique depuis 1981', histSub: 'Comment chaque année se situe par rapport à la moyenne 2001-2020, pour la région et la période choisies.', selRegion: 'Région', selPeriod: 'Période', periods: { year: 'Année complète (janv.-déc.)', season: 'Campagne (mars-août)', seasonS: 'Campagne hémisphère sud (avr-oct)', summer: 'Été (juin-août)' }, histPrecip: 'Pluie cumulée vs. normale', histTemp: 'Température moyenne vs. normale', rankP: 'Pluie : rang {r} sur {n} ans (1 = le plus sec)', rankT: 'Température : rang {r} sur {n} ans (1 = le plus chaud)', yearWord: 'Année', histNote: 'Uniquement les années dont tous les mois de la période sont clos et valides. La moyenne étant 2001-2020, les années de cette période se répartissent autour de zéro par construction. Les mois les plus récents sont calculés par la NASA avec un autre flux de traitement (GEOS-IT), susceptible d’être révisé : à lire avec prudence.', tableView: 'Voir les données en tableau', title: 'Climat agricole', sub: 'Écart des pluies et de la température par rapport à la normale dans les régions productrices. C’est un contexte : cela ne prévoit ni récoltes ni prix.',
       regions: { us: 'États-Unis', eu: 'Union européenne', uk: 'Royaume-Uni', ca: 'Canada', au: 'Australia' }, precip: 'Pluie vs. normale', temp: 'Température vs. normale', trend: 'Pluie, derniers mois',
       dry: 'plus sec', wet: 'plus humide', hot: 'plus chaud', cool: 'plus frais', month: 'Mois', crops: { trigo: 'blé', maiz: 'maïs', soja: 'soja', cebada: 'orge', arroz: 'riz' },
       teaserTitle: 'Climat agricole', teaserHint: 'Dernier mois clos, par rapport à la moyenne 2001-2020', driest: 'Plus sec', wettest: 'Plus humide', hottest: 'Plus chaud', more: 'Voir toutes les régions',
       note: 'Source : NASA POWER (réanalyse MERRA-2), moyenne 2001-2020 du même mois. Chaque point est une maille d’environ 50 km représentative de la région, pas une station ni une moyenne de toute la région. Mois clos avec données valides uniquement.', links: 'Méthode de calcul', mm: 'mm', legendP: 'Barre bleue : plus de pluie que la normale · barre brune : moins', legendT: 'Barre rouge : plus chaud · barre bleu-vert : plus frais', showTable: 'Tableau de données' },
-    it: { mapLink: 'Vedi sulla mappa', histTitle: 'Storico dal 1981', histSub: 'Come è stato ogni anno rispetto alla media 2001-2020, per la regione e il periodo scelti.', selRegion: 'Regione', selPeriod: 'Periodo', periods: { year: 'Anno intero (gen-dic)', season: 'Campagna (mar-ago)', seasonS: 'Campagna emisfero sud (apr-ott)', summer: 'Estate (giu-ago)' }, histPrecip: 'Pioggia cumulata vs. norma', histTemp: 'Temperatura media vs. norma', rankP: 'Pioggia: posizione {r} su {n} anni (1 = il più secco)', rankT: 'Temperatura: posizione {r} su {n} anni (1 = il più caldo)', yearWord: 'Anno', histNote: 'Solo anni con tutti i mesi del periodo chiusi e validi. Poiché la media è 2001-2020, gli anni di quel periodo si distribuiscono attorno allo zero per costruzione. I mesi più recenti sono calcolati dalla NASA con un diverso flusso di elaborazione (GEOS-IT) che potrebbe essere rivisto: leggili con cautela.', tableView: 'Vedi i dati in tabella', title: 'Clima agricolo', sub: 'Quanto pioggia e temperatura si discostano dalla norma nelle regioni produttrici. È contesto: non prevede raccolti né prezzi.',
+    it: { showRegions: 'Regioni da mostrare', allR: 'Tutte', noneR: 'Nessuna', mapTitle: 'Mappa', mapHint: 'Ogni punto è una regione produttrice. Clicca su uno per andare alla sua riga.', mapFail: 'Impossibile caricare la mappa; i dati sono nelle tabelle.', normal: 'normale', views: { world: 'Mondo', us: 'USA', eu: 'Europa' }, noRegion: 'Scegli almeno una regione per vedere i dati.', collapseHint: 'Clicca sul titolo di una regione per comprimerla o espanderla.', mapAria: 'Mappa del clima per regione produttrice', mapLink: 'Vedi sulla mappa', histTitle: 'Storico dal 1981', histSub: 'Come è stato ogni anno rispetto alla media 2001-2020, per la regione e il periodo scelti.', selRegion: 'Regione', selPeriod: 'Periodo', periods: { year: 'Anno intero (gen-dic)', season: 'Campagna (mar-ago)', seasonS: 'Campagna emisfero sud (apr-ott)', summer: 'Estate (giu-ago)' }, histPrecip: 'Pioggia cumulata vs. norma', histTemp: 'Temperatura media vs. norma', rankP: 'Pioggia: posizione {r} su {n} anni (1 = il più secco)', rankT: 'Temperatura: posizione {r} su {n} anni (1 = il più caldo)', yearWord: 'Anno', histNote: 'Solo anni con tutti i mesi del periodo chiusi e validi. Poiché la media è 2001-2020, gli anni di quel periodo si distribuiscono attorno allo zero per costruzione. I mesi più recenti sono calcolati dalla NASA con un diverso flusso di elaborazione (GEOS-IT) che potrebbe essere rivisto: leggili con cautela.', tableView: 'Vedi i dati in tabella', title: 'Clima agricolo', sub: 'Quanto pioggia e temperatura si discostano dalla norma nelle regioni produttrici. È contesto: non prevede raccolti né prezzi.',
       regions: { us: 'Stati Uniti', eu: 'Unione europea', uk: 'Regno Unito', ca: 'Canada', au: 'Australia' }, precip: 'Pioggia vs. norma', temp: 'Temperatura vs. norma', trend: 'Pioggia, ultimi mesi',
       dry: 'più secco', wet: 'più umido', hot: 'più caldo', cool: 'più fresco', month: 'Mese', crops: { trigo: 'grano', maiz: 'mais', soja: 'soia', cebada: 'orzo', arroz: 'riso' },
       teaserTitle: 'Clima agricolo', teaserHint: 'Ultimo mese chiuso, rispetto alla media 2001-2020', driest: 'Più secco', wettest: 'Più umido', hottest: 'Più caldo', more: 'Vedi tutte le regioni',
@@ -45,6 +45,78 @@
   function cropsText(l, t) { return l.crops.map(function (c) { return t.crops[c] || c; }).join(', '); }
   function pick(fn, dir) { return DATA.locations.slice().sort(function (a, b) { return dir * (fn(last(a)) - fn(last(b))); })[0]; }
   function fmtPeriod(p) { return p; }
+
+  // ---------------- Regiones visibles y mapa ----------------
+  var REGS = ['us', 'eu', 'uk', 'ca', 'au'], HIDDEN = {}, COLL = {}, MAPKIND = 'precip', MAPVIEW = 'world', MAP = null;
+  var PRECIP_CLASSES = [[-Infinity, -40, '#8a4a12'], [-40, -15, '#c98a4b'], [-15, 15, '#cfcac0'], [15, 40, '#6fa3c0'], [40, Infinity, '#1f5f88']];
+  var TEMP_CLASSES = [[-Infinity, -1.5, '#1f6d6b'], [-1.5, -0.5, '#7fb5b3'], [-0.5, 0.5, '#cfcac0'], [0.5, 1.5, '#e0946f'], [1.5, Infinity, '#b4341f']];
+  var VIEWS = { world: null, us: { coords: [39, -97], scale: 2.6 }, eu: { coords: [48, 9], scale: 4.2 } };
+  var LSKEY = 'dehesaClimaRegions';
+  try { var sv = JSON.parse(localStorage.getItem(LSKEY) || 'null'); if (sv && sv.hidden) sv.hidden.forEach(function (r) { if (REGS.indexOf(r) > -1) HIDDEN[r] = true; }); if (sv && (sv.kind === 'precip' || sv.kind === 'temp')) MAPKIND = sv.kind; } catch (e) {}
+  function saveUI() { try { localStorage.setItem(LSKEY, JSON.stringify({ hidden: Object.keys(HIDDEN).filter(function (r) { return HIDDEN[r]; }), kind: MAPKIND })); } catch (e) {} }
+  function inClass(v, classes) { for (var i = 0; i < classes.length; i++) if (v >= classes[i][0] && v < classes[i][1]) return classes[i][2]; return classes[classes.length - 1][2]; }
+  function regionsPresent() { return REGS.filter(function (r) { return DATA.locations.some(function (l) { return l.region === r; }); }); }
+  function filterHtml(t) {
+    var chips = regionsPresent().map(function (r) {
+      var n = DATA.locations.filter(function (l) { return l.region === r; }).length;
+      return '<button type="button" class="di-src-tab" data-creg="' + r + '" aria-pressed="' + (!HIDDEN[r]) + '">' + t.regions[r] + ' (' + n + ')</button>';
+    }).join('');
+    return '<div style="margin:10px 0 14px"><div class="di-movers-hint" style="margin:0 0 6px"><b>' + t.showRegions + '</b> · <button type="button" class="di-link-btn" data-cregall="1">' + t.allR + '</button> · <button type="button" class="di-link-btn" data-cregall="0">' + t.noneR + '</button></div><div class="di-src-tabs" role="group" aria-label="' + t.showRegions + '">' + chips + '</div></div>';
+  }
+  function mapHtml(t) {
+    var vb = ['world', 'us', 'eu'].map(function (v) { return '<button type="button" class="di-src-tab" data-cview="' + v + '" aria-pressed="' + (MAPVIEW === v) + '">' + t.views[v] + '</button>'; }).join('');
+    var kb = ['precip', 'temp'].map(function (k) { return '<button type="button" class="di-src-tab" data-ckind="' + k + '" aria-pressed="' + (MAPKIND === k) + '">' + (k === 'precip' ? t.precip : t.temp) + '</button>'; }).join('');
+    var isP = MAPKIND === 'precip', c = isP ? PRECIP_CLASSES : TEMP_CLASSES;
+    var lg = isP ? [[c[0][2], '< −40 % ' + t.dry], [c[1][2], '−40 … −15 %'], [c[2][2], t.normal], [c[3][2], '+15 … +40 %'], [c[4][2], '> +40 % ' + t.wet]] : [[c[0][2], '< −1,5 °C ' + t.cool], [c[1][2], '−1,5 … −0,5 °C'], [c[2][2], t.normal], [c[3][2], '+0,5 … +1,5 °C'], [c[4][2], '> +1,5 °C ' + t.hot]];
+    return '<section class="di-info-section" aria-label="' + t.mapTitle + '"><div class="di-src-tabs" role="group">' + kb + '</div><div class="di-src-tabs" role="group" style="margin-top:-6px">' + vb + '</div>' +
+      '<div class="di-card" style="padding:8px"><div id="clima-map" role="img" aria-label="' + t.mapAria + '" style="height:360px"></div><p id="clima-map-fail" class="di-movers-hint" style="display:none;margin:8px"></p></div>' +
+      '<div style="display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;margin:8px 0">' + lg.map(function (i) { return '<span style="display:inline-flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:' + i[0] + ';display:inline-block;border:1px solid rgba(0,0,0,.15)"></span>' + i[1] + '</span>'; }).join('') + '</div>' +
+      '<p class="di-movers-hint">' + t.mapHint + '</p></section>';
+  }
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function goRow(id, reg) {
+    if (HIDDEN[reg]) { delete HIDDEN[reg]; saveUI(); page(); }
+    COLL[reg] = false; var d = document.getElementById('clima-reg-' + reg); if (d) d.open = true;
+    var row = document.getElementById('clima-row-' + id); if (!row) return;
+    try { row.scrollIntoView({ block: 'center', behavior: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); } catch (e) { row.scrollIntoView(); }
+    row.style.outline = '2px solid var(--accent)'; row.style.outlineOffset = '2px'; setTimeout(function () { row.style.outline = ''; row.style.outlineOffset = ''; }, 2500);
+  }
+  function drawMap(t) {
+    var host = document.getElementById('clima-map'), fb = document.getElementById('clima-map-fail'); if (!host) return;
+    if (MAP) { try { MAP.destroy(); } catch (e) {} MAP = null; }
+    host.innerHTML = '';
+    if (typeof window.jsVectorMap !== 'function') { fb.textContent = t.mapFail; fb.style.display = 'block'; return; }
+    var isP = MAPKIND === 'precip', classes = isP ? PRECIP_CLASSES : TEMP_CLASSES;
+    var locs = DATA.locations.filter(function (l) { return !HIDDEN[l.region]; });
+    var markers = locs.map(function (l) {
+      var m = last(l), v = isP ? m.precipAnomalyPct : m.tempAnomalyC;
+      var line = isP ? sgn(v, 0, ' %') + ' (' + num(m.precipMm, 0) + ' ' + t.mm + ')' : sgn(v, 1, ' °C') + ' (' + num(m.tempC, 1) + ' °C)';
+      return { name: l.name, coords: [l.lat, l.lon], style: { initial: { fill: inClass(v, classes) } }, html: '<strong>' + esc(l.name) + '</strong><br>' + esc(m.period) + ': ' + line, id: l.id, reg: l.region };
+    });
+    try {
+      MAP = new window.jsVectorMap({ selector: '#clima-map', map: 'world', backgroundColor: 'transparent', zoomButtons: true, zoomOnScroll: false, showTooltip: true,
+        regionStyle: { initial: { fill: '#e6e2d6', stroke: '#c8c3b4', strokeWidth: 0.4, fillOpacity: 1 }, hover: { fillOpacity: 0.85 } },
+        markers: markers, markerStyle: { initial: { r: 7, stroke: '#ffffff', strokeWidth: 1.5, fillOpacity: 1 }, hover: { r: 9 } },
+        onMarkerTooltipShow: function (e, tip, idx) { if (markers[idx]) tip.text(markers[idx].html, true); },
+        onMarkerClick: function (e, idx) { if (markers[idx]) goRow(markers[idx].id, markers[idx].reg); } });
+      var vw = VIEWS[MAPVIEW]; if (vw) MAP.setFocus({ coords: vw.coords, scale: vw.scale, animate: false });
+    } catch (e) { MAP = null; fb.textContent = t.mapFail; fb.style.display = 'block'; }
+  }
+  function bindUI(el, t) {
+    el.onclick = function (e) {
+      var b = e.target && e.target.closest ? e.target.closest('button') : null; if (!b) return;
+      var a;
+      if ((a = b.getAttribute('data-creg'))) { HIDDEN[a] = !HIDDEN[a]; }
+      else if ((a = b.getAttribute('data-cregall')) !== null) { HIDDEN = {}; if (a === '0') regionsPresent().forEach(function (r) { HIDDEN[r] = true; }); }
+      else if ((a = b.getAttribute('data-ckind'))) { MAPKIND = a; }
+      else if ((a = b.getAttribute('data-cview'))) { MAPVIEW = a; }
+      else return;
+      saveUI(); page();
+    };
+    if (!el._cToggle) el.addEventListener('toggle', function (e) { var d = e.target; if (d && d.getAttribute && d.getAttribute('data-reg')) COLL[d.getAttribute('data-reg')] = !d.open; }, true);
+    el._cToggle = true;
+    drawMap(t);
+  }
   function page() {
     var el = document.getElementById('clima-body'); if (!el || !DATA) return;
     var t = T[lang()] || T.es;
@@ -52,20 +124,25 @@
     document.getElementById('pg-h1').textContent = t.title;
     document.getElementById('pg-sub').textContent = t.sub;
     var html = '<p class="di-movers-hint" style="margin:0 0 6px">' + t.month + ': <b>' + DATA.lastPeriod + '</b> · ' + t.legendP + '<br>' + t.legendT + '</p>';
-    ['us', 'eu', 'uk', 'ca', 'au'].forEach(function (r) {
-      var rows = DATA.locations.filter(function (l) { return l.region === r; }); if (!rows.length) return;
-      html += '<section class="di-info-section"><h2>' + t.regions[r] + '</h2><div class="di-card" style="padding:6px 16px;overflow-x:auto">' +
+    html += filterHtml(t) + mapHtml(t);
+    var shown = 0;
+    REGS.forEach(function (r) {
+      var rows = DATA.locations.filter(function (l) { return l.region === r; }); if (!rows.length || HIDDEN[r]) return; shown++;
+      html += '<details class="di-info-section" id="clima-reg-' + r + '" data-reg="' + r + '"' + (COLL[r] ? '' : ' open') + '><summary style="cursor:pointer;margin:0 0 8px"><h2 style="display:inline">' + t.regions[r] + '</h2> <span class="di-movers-hint">(' + rows.length + ')</span></summary><div class="di-card" style="padding:6px 16px;overflow-x:auto">' +
         '<div style="display:grid;grid-template-columns:minmax(150px,1.2fr) minmax(170px,1.3fr) minmax(170px,1.3fr) 100px;gap:14px;padding:8px 0;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);border-bottom:1px solid var(--border);min-width:640px"><span></span><span>' + t.precip.toUpperCase() + '</span><span>' + t.temp.toUpperCase() + '</span><span>' + t.trend.toUpperCase() + '</span></div>' +
         rows.map(function (l) {
           var m = last(l);
-          return '<div style="display:grid;grid-template-columns:minmax(150px,1.2fr) minmax(170px,1.3fr) minmax(170px,1.3fr) 100px;gap:14px;padding:12px 0;align-items:center;border-bottom:1px solid var(--border);min-width:640px"><div><div style="font-weight:600;font-size:14px">' + l.name + '</div><div class="di-movers-hint">' + cropsText(l, t) + '</div></div>' +
+          return '<div id="clima-row-' + l.id + '" class="clima-row" style="display:grid;grid-template-columns:minmax(150px,1.2fr) minmax(170px,1.3fr) minmax(170px,1.3fr) 100px;gap:14px;padding:12px 0;align-items:center;border-bottom:1px solid var(--border);min-width:640px"><div><div style="font-weight:600;font-size:14px">' + l.name + '</div><div class="di-movers-hint">' + cropsText(l, t) + '</div></div>' +
             '<div>' + bar(m.precipAnomalyPct, 100, WET, DRY, sgn(m.precipAnomalyPct, 0, ' %')) + '<div class="di-movers-hint">' + num(m.precipMm, 0) + ' ' + t.mm + ' (' + num(m.precipBaselineMm, 0) + ' ' + t.mm + ')</div></div>' +
             '<div>' + bar(m.tempAnomalyC, 5, HOT, COOL, sgn(m.tempAnomalyC, 1, ' °C')) + '<div class="di-movers-hint">' + num(m.tempC, 1) + ' °C (' + num(m.tempBaselineC, 1) + ' °C)</div></div>' +
             '<div>' + spark(l.months) + '</div></div>';
-        }).join('') + '</div></section>';
+        }).join('') + '</div></details>';
     });
+    if (!shown) html += '<p class="di-info-api-notice" role="status">' + t.noRegion + '</p>';
+    else html += '<p class="di-movers-hint">' + t.collapseHint + '</p>';
     html += '<p class="di-info-api-notice">' + t.note + ' <a href="metodologia.html">' + t.links + '</a> · <a href="mapa.html">' + t.mapLink + '</a> · <a href="data/climate.json">JSON</a></p>' + (window.DICite ? window.DICite.html('nasa_power') : '');
     el.innerHTML = html + '<div id="clima-hist"></div>';
+    bindUI(el, t);
     histRender();
   }
 
