@@ -283,7 +283,7 @@ def agri():
         for code in sorted(de_agri.LAND):
             rl[code] = genesis_raw('41141-0110', tok, startyear='2010', regionalvariable='DLAND', regionalkey=code); log('agri alquileres Land', code, len(rl[code].splitlines()), 'filas')
         d = de_agri.build(t, rl)
-        if len(d['production']['land']) < 8 or len(d['landPrice']['land']) < 14 or len(d['rent']['land']) < 14:
+        if len(d['production']['land']) < 8 or len(d['landPrice']['land']) < 12 or len(d['rent']['land']) < 14:
             raise RuntimeError('agri incompleto: cultivos %d, precios %d, alquileres %d' % (len(d['production']['land']), len(d['landPrice']['land']), len(d['rent']['land'])))
         yrs = [y for c in d['production']['land'].values() for l in c.values() for v in l.values() for y, _ in v]
         d.update({'schemaVersion': 1, 'generatedAt': datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),

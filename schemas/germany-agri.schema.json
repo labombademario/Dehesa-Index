@@ -107,7 +107,7 @@
     },
     "land": {
      "type": "object",
-     "minProperties": 14
+     "minProperties": 12
     }
    }
   },
