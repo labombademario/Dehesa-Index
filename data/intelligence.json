@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-10-02T21:45:48.153Z",
+  "generatedAt": "2026-10-03T02:07:40.986Z",
   "engine": "Dehesa Intelligence Engine 2.0",
   "methodology": {
     "noSyntheticSeries": true,
@@ -662,13 +662,13 @@
       "unit": "100kg",
       "currency": "EUR",
       "latest": 45.53,
-      "observationDate": "2026-08-01",
-      "periodChangePct": 1.0654827968923586,
-      "yoyPct": -9.644770787854728,
-      "volatility": 0.02441345601856607,
-      "points": 260,
+      "observationDate": "2026-09-01",
+      "periodChangePct": 0,
+      "yoyPct": -11.351246105919,
+      "volatility": 0.02436668973936919,
+      "points": 261,
       "coverageStart": "2005-01-01",
-      "coverageEnd": "2026-08-01",
+      "coverageEnd": "2026-09-01",
       "status": "verified",
       "comparability": "directional"
     },
