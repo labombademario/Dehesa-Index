@@ -1,5 +1,7 @@
 # NIGHTLY_AUDIT — fases 1 a 10 y fase de correccion (1-oct-2026)
 
+> **SNAPSHOT HISTORICO (1-oct-2026).** Este informe describe el estado de aquel dia (43 pipelines, 5.818 series, 3 anomalias sin contrastar) y **ya no es el estado actual**. La auditoria vigente es [`AUDIT_2026-10-02.md`](AUDIT_2026-10-02.md).
+
 Auditoria de cierre del plan nocturno **y de la fase de correccion/reduccion de deuda posterior**. Reglas que han regido todo el trabajo: no inventar datos, no rellenar huecos, no asumir licencias, no convertir correlaciones en predicciones y no sacrificar trazabilidad. Nada de lo que sigue esconde un error para dejar un test en verde.
 
 ## 0. Estado actual tras la fase de correccion (lo que cambia respecto al informe nocturno)
