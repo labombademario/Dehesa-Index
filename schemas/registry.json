@@ -338,6 +338,12 @@
     "germany_agri"
    ]
   ],
+  "germany-livestock.json": [
+   "germany-livestock",
+   [
+    "germany_livestock"
+   ]
+  ],
   "worldbank-agri.json": [
    "worldbank-agri",
    [

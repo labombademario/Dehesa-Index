@@ -1,5 +1,5 @@
 /* Alemania: producción por estado federado, precios y alquileres de la tierra, y «margen del agricultor» (relación de índices de precios).
-   Fuentes: Destatis GENESIS (data/germany-agri.json) y data/germany-stats.json (índices de precios 2020=100). ES5, sin librerías.
+   Fuentes: Destatis GENESIS (data/germany-agri.json; la pestaña de ganadería usa data/germany-livestock.json vía js/de-livestock.js) y data/germany-stats.json (índices de precios 2020=100). ES5, sin librerías.
    Uso: DEFarm.mount(el, lang). Los datos se cargan solo al abrir el desplegable. */
 (function () {
   'use strict';
@@ -8,8 +8,8 @@
   var LANDS = { BW: 'Baden-Württemberg|Baden-Wurtemberg|Bade-Wurtemberg|Baden-Württemberg', BY: 'Bavaria|Baviera|Bavière|Baviera', BE: 'Berlin|Berlín|Berlin|Berlino', BB: 'Brandenburg|Brandeburgo|Brandebourg|Brandeburgo', HB: 'Bremen|Bremen|Brême|Brema', HH: 'Hamburg|Hamburgo|Hambourg|Amburgo', HE: 'Hesse|Hesse|Hesse|Assia', MV: 'Mecklenburg-Western Pomerania|Mecklemburgo-Pomerania Occidental|Mecklembourg-Poméranie-Occidentale|Meclemburgo-Pomerania Anteriore', NI: 'Lower Saxony|Baja Sajonia|Basse-Saxe|Bassa Sassonia', NW: 'North Rhine-Westphalia|Renania del Norte-Westfalia|Rhénanie-du-Nord-Westphalie|Renania Settentrionale-Vestfalia', RP: 'Rhineland-Palatinate|Renania-Palatinado|Rhénanie-Palatinat|Renania-Palatinato', SL: 'Saarland|Sarre|Sarre|Saarland', SN: 'Saxony|Sajonia|Saxe|Sassonia', ST: 'Saxony-Anhalt|Sajonia-Anhalt|Saxe-Anhalt|Sassonia-Anhalt', SH: 'Schleswig-Holstein|Schleswig-Holstein|Schleswig-Holstein|Schleswig-Holstein', TH: 'Thuringia|Turingia|Thuringe|Turingia' };
   var CROP = { cereals: 'Cereals (incl. grain maize)|Cereales (con maíz grano)|Céréales (avec maïs grain)|Cereali (con mais da granella)', wheat: 'Wheat|Trigo|Blé|Frumento', rye: 'Rye|Centeno|Seigle|Segale', barley: 'Barley|Cebada|Orge|Orzo', oats: 'Oats|Avena|Avoine|Avena', triticale: 'Triticale|Triticale|Triticale|Triticale', maize: 'Grain maize|Maíz grano|Maïs grain|Mais da granella', rapeseed: 'Rapeseed|Colza|Colza|Colza', sunflower: 'Sunflower|Girasol|Tournesol|Girasole', sugarbeet: 'Sugar beet|Remolacha azucarera|Betterave sucrière|Barbabietola da zucchero', potato: 'Potatoes|Patata|Pommes de terre|Patate', silage: 'Silage maize|Maíz forrajero|Maïs fourrage|Mais da foraggio' };
   var T = {
-    es: { title: 'Alemania: producción, tierra y margen del agricultor', open: 'Ver producción por estado federado, precios y alquileres de la tierra, y la relación entre lo que cobra y lo que paga el agricultor',
-      hint: 'Destatis (GENESIS) y los índices de precios de Destatis. Los datos se cargan al abrir.', tabs: { prod: 'Producción por Land', land: 'Tierra: precios y alquileres', margin: 'Margen del agricultor' },
+    es: { title: 'Alemania: producción, ganadería, tierra y margen del agricultor', open: 'Ver producción por estado federado, precios y alquileres de la tierra, y la relación entre lo que cobra y lo que paga el agricultor',
+      hint: 'Destatis (GENESIS) y los índices de precios de Destatis. Los datos se cargan al abrir.', tabs: { prod: 'Producción por Land', land: 'Tierra: precios y alquileres', margin: 'Margen del agricultor', live: 'Ganadería, huevos y fruta' },
       crop: 'Cultivo', year: 'Año', vars: { prod: 'Producción', area: 'Superficie', yield: 'Rendimiento' }, de: 'Alemania', land: 'Estado federado', share: 'Peso en Alemania', yoy: 'Vs. año anterior', loading: 'Cargando…', err: 'No se han podido cargar los datos.',
       prov: 'Estimación provisional de la cosecha en curso: puede cambiar.', chartOf: 'Ver gráfico de', click: 'Pulsa una fila para ver su serie.', noLand: 'Sin dato publicado para este estado.',
       pnote: 'Hasta 1989 la serie nacional cubre solo la antigua RFA; el salto de 1990 es la reunificación. En 2010 cambia la base de la estadística (nueva encuesta agraria) y los datos por estado empiezan ese año; el centeno incluye el tranquillón de invierno desde 2010. El rendimiento nacional empieza en 1990.',
@@ -20,8 +20,8 @@
       presets: { tot: 'Total', milk: 'Leche ↔ pienso compuesto', pig: 'Cerdo ↔ pienso para cerdos', cat: 'Vacuno ↔ pienso para vacuno', cer: 'Cereales ↔ fertilizantes', rape: 'Colza ↔ fertilizantes' },
       ratioS: 'Relación (cobrado ÷ pagado × 100)', outS: 'Productos (media trimestral)', inS: 'Insumos', now: 'Ahora', ago: 'Hace un año', lo: 'Mínimo desde 1968', hi: 'Máximo desde 1968', qtr: 'T',
       mnote: 'Es presión de precios, no beneficio: compara dos índices (2020 = 100) y no incluye volúmenes, costes fijos, subvenciones ni impuestos. Por encima de 100 significa que, frente a 2020, los precios que cobra el agricultor han subido más que los que paga; por debajo, menos. El índice de productos es mensual y aquí se promedia por trimestre completo; el de insumos es trimestral.', mnone: 'No hay datos para este par.' },
-    en: { title: 'Germany: production, land and farmer’s margin', open: 'See production by federal state, land prices and rents, and how prices received compare with prices paid',
-      hint: 'Destatis (GENESIS) and Destatis price indices. Data load when opened.', tabs: { prod: 'Production by state', land: 'Land: prices and rents', margin: 'Farmer’s margin' },
+    en: { title: 'Germany: production, livestock, land and farmer’s margin', open: 'See production by federal state, land prices and rents, and how prices received compare with prices paid',
+      hint: 'Destatis (GENESIS) and Destatis price indices. Data load when opened.', tabs: { prod: 'Production by state', land: 'Land: prices and rents', margin: 'Farmer’s margin', live: 'Livestock, eggs and fruit' },
       crop: 'Crop', year: 'Year', vars: { prod: 'Production', area: 'Area', yield: 'Yield' }, de: 'Germany', land: 'Federal state', share: 'Share of Germany', yoy: 'Vs. prior year', loading: 'Loading…', err: 'The data could not be loaded.',
       prov: 'Provisional estimate for the current harvest: it may change.', chartOf: 'Show chart of', click: 'Click a row to see its series.', noLand: 'No published figure for this state.',
       pnote: 'Up to 1989 the national series covers former West Germany only; the 1990 jump is reunification. In 2010 the statistics changed basis (new farm survey) and figures by state start that year; rye includes winter meslin from 2010. National yield starts in 1990.',
@@ -32,8 +32,8 @@
       presets: { tot: 'Total', milk: 'Milk ↔ compound feed', pig: 'Pigs ↔ pig feed', cat: 'Cattle ↔ cattle feed', cer: 'Cereals ↔ fertilisers', rape: 'Rapeseed ↔ fertilisers' },
       ratioS: 'Ratio (received ÷ paid × 100)', outS: 'Output (quarterly average)', inS: 'Inputs', now: 'Now', ago: 'A year ago', lo: 'Low since 1968', hi: 'High since 1968', qtr: 'Q',
       mnote: 'This is price pressure, not profit: it compares two indices (2020 = 100) and leaves out volumes, fixed costs, subsidies and taxes. Above 100 means that, compared with 2020, prices received have risen more than prices paid; below 100, less. The output index is monthly and is averaged here over complete quarters; the input index is quarterly.', mnone: 'No data for this pair.' },
-    fr: { title: 'Allemagne : production, terres et marge de l’agriculteur', open: 'Voir la production par Land, les prix et loyers des terres, et le rapport entre prix reçus et prix payés',
-      hint: 'Destatis (GENESIS) et indices de prix de Destatis. Les données se chargent à l’ouverture.', tabs: { prod: 'Production par Land', land: 'Terres : prix et loyers', margin: 'Marge de l’agriculteur' },
+    fr: { title: 'Allemagne : production, élevage, terres et marge de l’agriculteur', open: 'Voir la production par Land, les prix et loyers des terres, et le rapport entre prix reçus et prix payés',
+      hint: 'Destatis (GENESIS) et indices de prix de Destatis. Les données se chargent à l’ouverture.', tabs: { prod: 'Production par Land', land: 'Terres : prix et loyers', margin: 'Marge de l’agriculteur', live: 'Élevage, œufs et fruits' },
       crop: 'Culture', year: 'Année', vars: { prod: 'Production', area: 'Surface', yield: 'Rendement' }, de: 'Allemagne', land: 'Land', share: 'Part de l’Allemagne', yoy: 'Vs. année préc.', loading: 'Chargement…', err: 'Impossible de charger les données.',
       prov: 'Estimation provisoire de la récolte en cours : elle peut changer.', chartOf: 'Voir le graphique de', click: 'Cliquez sur une ligne pour voir sa série.', noLand: 'Pas de donnée publiée pour ce Land.',
       pnote: 'Jusqu’en 1989 la série nationale ne couvre que l’ex-RFA ; le saut de 1990 est la réunification. En 2010 la base de la statistique change (nouvelle enquête agricole) et les chiffres par Land commencent cette année-là ; le seigle inclut le méteil d’hiver depuis 2010. Le rendement national commence en 1990.',
@@ -44,8 +44,8 @@
       presets: { tot: 'Total', milk: 'Lait ↔ aliment composé', pig: 'Porc ↔ aliment porcs', cat: 'Bovins ↔ aliment bovins', cer: 'Céréales ↔ engrais', rape: 'Colza ↔ engrais' },
       ratioS: 'Rapport (reçu ÷ payé × 100)', outS: 'Produits (moyenne trimestrielle)', inS: 'Intrants', now: 'Maintenant', ago: 'Il y a un an', lo: 'Minimum depuis 1968', hi: 'Maximum depuis 1968', qtr: 'T',
       mnote: 'C’est une pression sur les prix, pas un bénéfice : on compare deux indices (2020 = 100) sans les volumes, les coûts fixes, les subventions ni les impôts. Au-dessus de 100, les prix reçus ont davantage augmenté que les prix payés par rapport à 2020 ; en dessous, moins. L’indice des produits est mensuel et moyenné ici par trimestre complet ; celui des intrants est trimestriel.', mnone: 'Pas de données pour cette paire.' },
-    it: { title: 'Germania: produzione, terra e margine dell’agricoltore', open: 'Vedi la produzione per Land, prezzi e affitti della terra, e il rapporto tra prezzi incassati e pagati',
-      hint: 'Destatis (GENESIS) e indici dei prezzi di Destatis. I dati si caricano all’apertura.', tabs: { prod: 'Produzione per Land', land: 'Terra: prezzi e affitti', margin: 'Margine dell’agricoltore' },
+    it: { title: 'Germania: produzione, zootecnia, terra e margine dell’agricoltore', open: 'Vedi la produzione per Land, prezzi e affitti della terra, e il rapporto tra prezzi incassati e pagati',
+      hint: 'Destatis (GENESIS) e indici dei prezzi di Destatis. I dati si caricano all’apertura.', tabs: { prod: 'Produzione per Land', land: 'Terra: prezzi e affitti', margin: 'Margine dell’agricoltore', live: 'Zootecnia, uova e frutta' },
       crop: 'Coltura', year: 'Anno', vars: { prod: 'Produzione', area: 'Superficie', yield: 'Resa' }, de: 'Germania', land: 'Land', share: 'Peso sulla Germania', yoy: 'Vs. anno prec.', loading: 'Caricamento…', err: 'Impossibile caricare i dati.',
       prov: 'Stima provvisoria del raccolto in corso: può cambiare.', chartOf: 'Vedi il grafico di', click: 'Tocca una riga per vedere la sua serie.', noLand: 'Nessun dato pubblicato per questo Land.',
       pnote: 'Fino al 1989 la serie nazionale copre solo la ex Germania Ovest; il salto del 1990 è la riunificazione. Nel 2010 cambia la base della statistica (nuova indagine agricola) e i dati per Land iniziano quell’anno; la segale include il frumento invernale misto dal 2010. La resa nazionale parte dal 1990.',
@@ -186,18 +186,25 @@
     body.innerHTML = h;
   }
 
+  var LL = null;
+  function loadLive() {   /* la pestaña de ganadería vive en su propio fichero: solo se descarga al abrirla */
+    if (window.DELive) return Promise.resolve();
+    if (!LL) LL = new Promise(function (ok, ko) { var sc = document.createElement('script'); sc.src = 'js/de-livestock.js?v=20261003'; sc.onload = ok; sc.onerror = function () { LL = null; ko(new Error('de-livestock')); }; document.head.appendChild(sc); });
+    return LL;
+  }
+  function helpers() { return { esc: esc, nf: nf, pc: pc, chart: function (s, o) { return chart(s, o); }, cite: function (ids, period) { return cite(ids, period); }, land: function (k, lang) { return pick(LANDS, k, lang); } }; }
   function render(el, lang, st) {
     var t = T[lang] || T.es, body = el.querySelector('.de-body'); if (!body) return;
-    var tabs = '<div class="di-src-tabs" role="group">' + ['prod', 'land', 'margin'].map(function (k) { return '<button type="button" class="di-src-tab" data-dt="' + k + '" aria-pressed="' + (k === st.tab) + '">' + esc(t.tabs[k]) + '</button>'; }).join('') + '</div>';
-    var p = st.tab === 'margin' ? loadS() : loadA();
+    var tabs = '<div class="di-src-tabs" role="group">' + ['prod', 'land', 'margin', 'live'].map(function (k) { return '<button type="button" class="di-src-tab" data-dt="' + k + '" aria-pressed="' + (k === st.tab) + '">' + esc(t.tabs[k]) + '</button>'; }).join('') + '</div>';
+    var p = st.tab === 'margin' ? loadS() : st.tab === 'live' ? loadLive() : loadA();
     body.innerHTML = tabs + '<div class="de-pane"><p class="di-movers-hint">' + esc(t.loading) + '</p></div>';
     p.then(function () {
       var pane = body.querySelector('.de-pane'); if (!pane) return;
-      if (st.tab === 'prod') renderProd(pane, st, lang, t); else if (st.tab === 'land') renderLand(pane, st, lang, t); else renderMargin(pane, st, lang, t);
+      if (st.tab === 'prod') renderProd(pane, st, lang, t); else if (st.tab === 'land') renderLand(pane, st, lang, t); else if (st.tab === 'live') window.DELive.render(pane, st, lang, helpers()); else renderMargin(pane, st, lang, t);
     }).catch(function () { LA = null; LS = null; var pane = body.querySelector('.de-pane'); if (pane) pane.innerHTML = '<p class="di-movers-hint">' + esc(t.err) + '</p>'; });
   }
   function mount(el, lang) {
-    if (!el) return; var t = T[lang] || T.es, st = { tab: 'prod', crop: 'wheat', v: 'prod', year: null, sel: 'DE', kind: 'lf', out: 'lwpr', inp: 'lwbm', win: 25 };
+    if (!el) return; var t = T[lang] || T.es, st = { tab: 'prod', crop: 'wheat', v: 'prod', year: null, sel: 'DE', kind: 'lf', out: 'lwpr', inp: 'lwbm', win: 25, lv: 'sl', sp: 'pigs', vn: 'heads', lsel: 'DE', hsp: 'cattle', hc: 'total', fr: 'apples' };
     el.innerHTML = '<details class="pa-card di-card"><summary>' + esc(t.title) + ' · <span>' + esc(t.open) + '</span></summary><p class="di-movers-hint" style="margin:8px 0 10px">' + esc(t.hint) + '</p><div class="de-body"></div></details>';
     var det = el.querySelector('details');
     det.addEventListener('toggle', function () { if (det.open) render(el, lang, st); });
@@ -209,9 +216,17 @@
       else if ((b = tg.closest('[data-dk]'))) { st.kind = b.getAttribute('data-dk'); render(el, lang, st); }
       else if ((b = tg.closest('[data-dw]'))) { st.win = b.getAttribute('data-dw') === 'all' ? 'all' : +b.getAttribute('data-dw'); render(el, lang, st); }
       else if ((b = tg.closest('[data-dpair]'))) { var pr = PAIRS[b.getAttribute('data-dpair')]; st.out = pr[0]; st.inp = pr[1]; render(el, lang, st); }
+      else if ((b = tg.closest('[data-lsub]'))) { st.lv = b.getAttribute('data-lsub'); render(el, lang, st); }
+      else if ((b = tg.closest('[data-lsp]'))) { st.sp = b.getAttribute('data-lsp'); st.lsel = 'DE'; render(el, lang, st); }
+      else if ((b = tg.closest('[data-lvn]'))) { st.vn = b.getAttribute('data-lvn'); render(el, lang, st); }
+      else if ((b = tg.closest('[data-lhs]'))) { st.hsp = b.getAttribute('data-lhs'); st.hc = 'total'; render(el, lang, st); }
+      else if ((b = tg.closest('[data-dlc]'))) { st.hc = b.getAttribute('data-dlc'); render(el, lang, st); }
+      else if ((b = tg.closest('[data-lfr]'))) { st.fr = b.getAttribute('data-lfr'); render(el, lang, st); }
+      else if ((b = tg.closest('[data-dlf]'))) { st.fr = b.getAttribute('data-dlf'); render(el, lang, st); }
+      else if ((b = tg.closest('[data-dll]'))) { st.lsel = b.getAttribute('data-dll'); render(el, lang, st); }
       else if ((b = tg.closest('[data-dl]'))) { st.sel = b.getAttribute('data-dl'); render(el, lang, st); }
     });
-    el.addEventListener('keydown', function (e) { var r = e.target && e.target.getAttribute && e.target.getAttribute('data-dl'); if (r && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); st.sel = r; render(el, lang, st); } });
+    el.addEventListener('keydown', function (e) { var g = e.target && e.target.getAttribute ? e.target : null; if (!g || (e.key !== 'Enter' && e.key !== ' ')) return; var r = g.getAttribute('data-dl'); if (r) { e.preventDefault(); st.sel = r; render(el, lang, st); } else if ((r = g.getAttribute('data-dll'))) { e.preventDefault(); st.lsel = r; render(el, lang, st); } else if ((r = g.getAttribute('data-dlc'))) { e.preventDefault(); st.hc = r; render(el, lang, st); } else if ((r = g.getAttribute('data-dlf'))) { e.preventDefault(); st.fr = r; render(el, lang, st); } });
     el.addEventListener('change', function (e) {
       var k = e.target && e.target.getAttribute && e.target.getAttribute('data-dc'), m = e.target && e.target.getAttribute && e.target.getAttribute('data-dm');
       if (k === 'crop') { st.crop = e.target.value; st.year = null; st.sel = 'DE'; render(el, lang, st); } else if (k === 'year') { st.year = +e.target.value; render(el, lang, st); } else if (m) { st[m] = e.target.value; render(el, lang, st); }

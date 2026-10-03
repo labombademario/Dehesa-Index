@@ -1,0 +1,240 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Alemania: sacrificios, aves, huevos, censos ganaderos y fruta de arbol (Destatis GENESIS)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "units",
+  "slaughter",
+  "poultry",
+  "eggs",
+  "herd",
+  "fruit"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url",
+    "license",
+    "tables"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "destatis"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    },
+    "license": {
+     "enum": [
+      "Datenlizenz Deutschland – Namensnennung 2.0"
+     ]
+    },
+    "tables": {
+     "type": "array",
+     "minItems": 10
+    }
+   }
+  },
+  "units": {
+   "type": "object"
+  },
+  "slaughter": {
+   "type": "object",
+   "required": [
+    "nat",
+    "land",
+    "month"
+   ],
+   "properties": {
+    "nat": {
+     "type": "object",
+     "additionalSchema": {
+      "type": "object",
+      "additionalSchema": {
+       "type": "object",
+       "additionalSchema": {
+        "type": "array",
+        "items": {
+         "type": "array",
+         "minItems": 2,
+         "maxItems": 2
+        }
+       }
+      }
+     }
+    },
+    "land": {
+     "type": "object",
+     "additionalSchema": {
+      "type": "object",
+      "additionalSchema": {
+       "type": "object",
+       "additionalSchema": {
+        "type": "object",
+        "additionalSchema": {
+         "type": "array",
+         "items": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2
+         }
+        }
+       }
+      }
+     }
+    },
+    "month": {
+     "type": "object",
+     "additionalSchema": {
+      "type": "object",
+      "additionalSchema": {
+       "type": "object",
+       "additionalSchema": {
+        "type": "array",
+        "items": {
+         "type": "array",
+         "minItems": 2,
+         "maxItems": 2
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "poultry": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "object",
+    "additionalSchema": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2
+     }
+    }
+   }
+  },
+  "eggs": {
+   "type": "object",
+   "required": [
+    "nat",
+    "land"
+   ],
+   "properties": {
+    "nat": {
+     "type": "object",
+     "additionalSchema": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "minItems": 2,
+       "maxItems": 2
+      }
+     }
+    },
+    "land": {
+     "type": "object",
+     "additionalSchema": {
+      "type": "object",
+      "additionalSchema": {
+       "type": "array",
+       "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2
+       }
+      }
+     }
+    }
+   }
+  },
+  "herd": {
+   "type": "object",
+   "required": [
+    "cattle",
+    "pigs",
+    "sheep"
+   ],
+   "properties": {
+    "cattle": {
+     "type": "object",
+     "additionalSchema": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "minItems": 2,
+       "maxItems": 2
+      }
+     }
+    },
+    "pigs": {
+     "type": "object",
+     "additionalSchema": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "minItems": 2,
+       "maxItems": 2
+      }
+     }
+    },
+    "sheep": {
+     "type": "object",
+     "additionalSchema": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "minItems": 2,
+       "maxItems": 2
+      }
+     }
+    }
+   }
+  },
+  "fruit": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "object",
+    "additionalSchema": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2
+     }
+    }
+   }
+  },
+  "provisional": {
+   "type": "object",
+   "properties": {
+    "fruit": {
+     "type": "array"
+    }
+   }
+  }
+ }
+}

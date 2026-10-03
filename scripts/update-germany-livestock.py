@@ -165,6 +165,8 @@ def build(token):
            'slaughter': {'nat': sn, 'land': sl, 'month': sm}, 'poultry': poultry(token)}
     en, el = eggs(token); doc['eggs'] = {'nat': en, 'land': el}
     doc['herd'] = herd(token); doc['fruit'] = fruit(token)
+    cy = datetime.date.today().year   # la cosecha de fruta del ano en curso es una estimacion de Destatis, no un dato definitivo
+    doc['provisional'] = {'fruit': sorted({int(p) for sp in doc['fruit'].values() for a in sp.values() for p, _ in a if int(p) >= cy})}
     return doc
 def main():
     args = sys.argv[1:]; outdir = ROOT / 'data'

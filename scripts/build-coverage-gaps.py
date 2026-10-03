@@ -57,6 +57,14 @@ for key in (CM.J('nass-prices.json', {'series': {}}).get('series') or {}):
     if p: add_ext('US', p, 'price_index', 'nass-prices.json')
 for k, v in (CM.J('ams-grain-daily.json', {'products': {}}).get('products') or {}).items():
     if v and CM.AMS_GRAIN_PRODUCT.get(k): add_ext('US', CM.AMS_GRAIN_PRODUCT[k], 'price', 'ams-grain-daily.json')
+for key in ((CM.J('germany-agri.json', {'production': {'nat': {}}}).get('production') or {}).get('nat') or {}):   # produccion agricola de Alemania (Destatis)
+    if CM.DE_AGRI_PRODUCT.get(key): add_ext('DE', CM.DE_AGRI_PRODUCT[key], 'production', 'germany-agri.json')
+_gl = CM.J('germany-livestock.json', {})   # ganaderia, huevos, aves y fruta de Alemania (Destatis)
+for key in ((_gl.get('slaughter') or {}).get('nat') or {}):
+    if CM.DE_LIVESTOCK_PRODUCT.get(key): add_ext('DE', CM.DE_LIVESTOCK_PRODUCT[key], 'production', 'germany-livestock.json')
+if (_gl.get('poultry') or {}).get('total'): add_ext('DE', 'poultry', 'production', 'germany-livestock.json')
+if (_gl.get('eggs') or {}).get('nat', {}).get('eggs'): add_ext('DE', 'eggs', 'production', 'germany-livestock.json')
+if _gl.get('fruit'): add_ext('DE', 'fruit', 'production', 'germany-livestock.json')
 for k in ext:  # sin duplicados
     seen = []; [seen.append(x) for x in ext[k] if x not in seen]; ext[k] = seen
 

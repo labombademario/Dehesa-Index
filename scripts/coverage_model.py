@@ -53,6 +53,8 @@ NASS_LIVESTOCK_PRODUCT = {'HOGS': 'pigs', 'PORK': 'pigs', 'CATTLE': 'cattle', 'B
 NASS_LIVESTOCK_METRIC = (('STOCKS', 'stocks'), ('PRICE RECEIVED', 'price'), ('INVENTORY', 'production'), ('PRODUCTION', 'production'), ('PIG CROP', 'production'))  # 'OPERATIONS WITH INVENTORY' cuenta explotaciones, no se mapea
 AMS_GRAIN_PRODUCT = {'maiz': 'maize', 'soja': 'soy', 'trigo': 'wheat'}                         # ams-grain-daily.json: precios diarios USDA AMS
 NASS_PRICES_PRODUCT = (('FERTILIZER', 'fertilizer'), ('FUELS', 'energy'), ('ENERGY', 'energy'))  # nass-prices.json: indices de precios pagados (price_index)
+DE_AGRI_PRODUCT = {'wheat': 'wheat', 'rye': 'rye', 'barley': 'barley', 'oats': 'oats', 'maize': 'maize', 'rapeseed': 'rapeseed', 'potato': 'potato', 'sugarbeet': 'sugar'}   # germany-agri.json: produccion nacional/Land de Destatis (cereals, triticale, sunflower y silage no son producto de la matriz)
+DE_LIVESTOCK_PRODUCT = {'cattle': 'cattle', 'calves': 'cattle', 'pigs': 'pigs', 'sheep': 'sheep'}   # germany-livestock.json: sacrificios (cabezas y peso de canal)
 OUTSIDE_NOT_MAPPED = {'ers.json': 'costes de produccion, prevision de renta y IPC/IPP de alimentos del ERS: la metrica input_price no aplica a cereales/ganado en la matriz y la renta/IPC no son un producto',
                       'crop-progress.json': 'progreso y condicion semanal del cultivo (porcentajes): no corresponde a ninguna metrica de la matriz (precio, indice, produccion, comercio, existencias)',
                       'drought.json': 'Drought Monitor por estado: no es un producto ni una metrica de la matriz'}

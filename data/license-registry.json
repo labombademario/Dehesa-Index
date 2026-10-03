@@ -1432,6 +1432,12 @@
    ],
    "notes": "Produccion agricola por Bundesland, valor de compraventa de tierra agricola y alquileres (Pachtentgelt) de Destatis GENESIS-Online (tablas 41241, 61521, 41141). Datenlizenz Deutschland - Namensnennung 2.0: se cita Statistisches Bundesamt (Destatis), GENESIS-Online."
   },
+  "data/germany-livestock.json": {
+   "sources": [
+    "destatis"
+   ],
+   "notes": "Sacrificios y peso de la canal, aves, huevos, censos de vacuno, porcino y ovino, y fruta de arbol de Destatis GENESIS-Online (tablas 41331, 41322, 41323, 41312-41314, 41243). Datenlizenz Deutschland - Namensnennung 2.0: se cita Statistisches Bundesamt (Destatis), GENESIS-Online. Solo conversiones exactas kg->t y dt->t."
+  },
   "data/belgium-stats.json": {
    "byCountry": {
     "BE": "statbel"

@@ -1459,6 +1459,105 @@ def germany_agri(doc, errs, warns, stats):
         for b, a in bs.items(): pts("rent/%s/%s" % (lk, b), a, 20, 3000)
     stats["germany-agri puntos"] = n
 
+GL_SPECIES = {"cattle": (150, 500), "calves": (30, 250), "pigs": (60, 140), "sheep": (8, 45)}   # peso medio de canal (kg) plausible por especie
+
+
+def germany_livestock(doc, errs, warns, stats):
+    """Destatis ganaderia: periodos crecientes (AAAA, AAAA-MM o AAAA-05/11 en censos), valores finitos >= 0, Länder validos; peso medio de canal
+    (toneladas / cabezas) plausible por especie; suma de Länder = total nacional (±0,5 %); 12 meses = año; huevos = gallinas x huevos por gallina (±1 %);
+    vacas lecheras + nodrizas <= total; suma de especies de aves <= total; fruta con rendimiento plausible."""
+    import math as _m, re as _re, datetime as _d
+    n = 0
+
+    def per(tag, a, rx):
+        nonlocal n
+        last = None
+        for p in a:
+            n += 1
+            if not (isinstance(p, list) and len(p) == 2) or not isinstance(p[0], str) or not _re.match(rx, p[0]): errs.append("germany-livestock %s: periodo invalido %r" % (tag, p)); return None
+            if last is not None and p[0] <= last: errs.append("germany-livestock %s: periodos no crecientes (%s tras %s)" % (tag, p[0], last)); return None
+            last = p[0]
+            if not isinstance(p[1], (int, float)) or isinstance(p[1], bool) or not _m.isfinite(p[1]) or p[1] < 0: errs.append("germany-livestock %s %s: valor invalido %r" % (tag, p[0], p[1])); return None
+        return dict(a)
+
+    nat, land, mon = doc["slaughter"]["nat"], doc["slaughter"]["land"], doc["slaughter"]["month"]
+    for sp, vs in nat.items():
+        if sp not in GL_SPECIES: errs.append("germany-livestock: especie desconocida %s" % sp); continue
+        for vn, ts in vs.items():
+            if vn not in ("heads", "tonnes"): errs.append("germany-livestock nat/%s: variable %s desconocida" % (sp, vn)); continue
+            for st, a in ts.items():
+                if st not in ("dom", "imp", "home"): errs.append("germany-livestock nat/%s/%s: tipo %s desconocido" % (sp, vn, st)); continue
+                per("nat/%s/%s/%s" % (sp, vn, st), a, r"^\d{4}$")
+        H, T = (dict(nat[sp].get(k, {}).get("dom", [])) for k in ("heads", "tonnes"))
+        lo, hi = GL_SPECIES[sp] if sp in GL_SPECIES else (0, 1e9)
+        for y in T:
+            if y in H and H[y] >= 10000 and not (lo <= T[y] * 1000 / H[y] <= hi): errs.append("germany-livestock nat/%s %s: peso medio de canal %.0f kg fuera de %d-%d" % (sp, y, T[y] * 1000 / H[y], lo, hi)); break
+    for sp, gs in land.items():
+        for g, vs in gs.items():
+            if g not in GA_LAND: errs.append("germany-livestock: Land desconocido %s" % g); continue
+            for vn, ts in vs.items():
+                for st, a in ts.items(): per("land/%s/%s/%s/%s" % (sp, g, vn, st), a, r"^\d{4}$")
+        for vn in ("heads", "tonnes"):
+            tot = {}
+            for g, vs in gs.items():
+                for y, v in vs.get(vn, {}).get("dom", []): tot.setdefault(y, []).append(v)
+            N = dict(nat.get(sp, {}).get(vn, {}).get("dom", []))
+            for y, vv in tot.items():
+                if len(vv) >= 12 and y in N and N[y] > 1000 and abs(sum(vv) - N[y]) / N[y] > 0.005: errs.append("germany-livestock %s/%s %s: suma de Länder (%d) no coincide con el total nacional (%d)" % (sp, vn, y, sum(vv), N[y])); break
+    for sp, vs in mon.items():
+        for vn, ts in vs.items():
+            for st, a in ts.items():
+                m = per("month/%s/%s/%s" % (sp, vn, st), a, r"^\d{4}-(0[1-9]|1[0-2])$")
+                if m is None or st != "dom": continue
+                N = dict(nat.get(sp, {}).get(vn, {}).get(st, []))
+                by = {}
+                for p, v in m.items(): by.setdefault(p[:4], []).append(v)
+                for y, vv in by.items():
+                    if len(vv) == 12 and y in N and N[y] > 1000 and abs(sum(vv) - N[y]) / N[y] > 0.001: errs.append("germany-livestock month/%s/%s %s: los 12 meses (%d) no suman el año (%d)" % (sp, vn, y, sum(vv), N[y])); break
+        if sp in mon:
+            last = max((a[-1][0] for ts in vs.values() for a in ts.values() if a), default=None)
+            if last and (_d.date.today() - _d.date(int(last[:4]), int(last[5:7]), 1)).days > 200: warns.append("germany-livestock: sacrificio mensual de %s no se actualiza desde %s" % (sp, last))
+    T = {}
+    for sp, vs in doc["poultry"].items():
+        for vn, a in vs.items():
+            if vn not in ("heads", "tonnes"): errs.append("germany-livestock poultry/%s: variable %s desconocida" % (sp, vn)); continue
+            T[(sp, vn)] = per("poultry/%s/%s" % (sp, vn), a, r"^\d{4}$")
+    for vn in ("heads", "tonnes"):
+        tot = T.get(("total", vn))
+        if tot:
+            for y in tot:
+                parts = sum((T.get((sp, vn)) or {}).get(y, 0) for sp in doc["poultry"] if sp != "total")
+                if parts > tot[y] * 1.001: errs.append("germany-livestock poultry/%s %s: las especies (%d) superan el total (%d)" % (vn, y, parts, tot[y])); break
+    E = doc["eggs"]
+    for scope, blocks in (("nat", {"all": E["nat"]}), ("land", E["land"])):
+        for k, b in blocks.items():
+            S = {vn: per("eggs/%s/%s/%s" % (scope, k, vn), a, r"^\d{4}$") for vn, a in b.items() if vn in ("eggs", "hens", "perHen")}
+            for vn in b:
+                if vn not in ("eggs", "hens", "perHen"): errs.append("germany-livestock eggs/%s/%s: variable %s desconocida" % (scope, k, vn))
+            if scope == "land" and k not in GA_LAND: errs.append("germany-livestock: Land desconocido %s" % k)
+            if S.get("eggs") and S.get("hens") and S.get("perHen"):
+                for y in S["eggs"]:
+                    if y in S["hens"] and y in S["perHen"] and S["hens"][y] > 0 and abs(S["hens"][y] * S["perHen"][y] / 1000 - S["eggs"][y]) / S["eggs"][y] > 0.01: errs.append("germany-livestock eggs/%s/%s %s: huevos no coincide con gallinas x huevos por gallina" % (scope, k, y)); break
+            for y, v in (S.get("perHen") or {}).items():
+                if not (150 <= v <= 400): errs.append("germany-livestock eggs/%s/%s %s: huevos por gallina fuera de rango (%s)" % (scope, k, y, v)); break
+    for sp, cats in doc["herd"].items():
+        D = {c: per("herd/%s/%s" % (sp, c), a, r"^\d{4}-(05|11)$") for c, a in cats.items()}
+        tot = D.get("total") or {}
+        if sp == "cattle":
+            for y in tot:
+                if (D.get("dairy") or {}).get(y, 0) + (D.get("suckler") or {}).get(y, 0) > tot[y]: errs.append("germany-livestock herd/cattle %s: vacas lecheras + nodrizas superan el total" % y); break
+        if sp == "pigs":
+            for y in tot:
+                if (D.get("sows") or {}).get(y, 0) > tot[y]: errs.append("germany-livestock herd/pigs %s: cerdas superan el total" % y); break
+    for sp, vs in doc["fruit"].items():
+        A, P = per("fruit/%s/area" % sp, vs.get("area", []), r"^\d{4}$") or {}, per("fruit/%s/prod" % sp, vs.get("prod", []), r"^\d{4}$") or {}
+        for y in P:
+            if y in A and A[y] > 500 and P[y] > 0 and not (0.5 <= P[y] / A[y] <= 60): errs.append("germany-livestock fruit/%s %s: rendimiento %.1f t/ha fuera de 0,5-60" % (sp, y, P[y] / A[y])); break
+    prov = doc.get("provisional", {}).get("fruit", [])
+    cy = _d.date.today().year
+    if any(not isinstance(y, int) or y > cy for y in prov): errs.append("germany-livestock: años provisionales de fruta en el futuro")
+    stats["germany-livestock puntos"] = n
+
 
 def ers_cost_reference(doc, errs, warns, stats):
     """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""
