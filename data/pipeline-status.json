@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T22:14:00Z",
+ "generatedAt": "2026-10-03T02:26:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 48,
+  "ok": 56,
   "late": 0,
-  "error": 3,
-  "not_run": 6,
+  "error": 1,
+  "not_run": 0,
   "unknown": 0
  },
  "global": "error",
@@ -47,7 +47,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-02T17:14:31Z"
+     "lastChange": "2026-10-03T02:05:28Z"
     }
    ],
    "last": {
@@ -72,30 +72,30 @@
     "45 23 * * 1-5",
     "30 13 * * 6"
    ],
-   "nextRun": "2026-10-02T23:45:00Z",
+   "nextRun": "2026-10-03T13:30:00Z",
    "files": [
     {
      "path": "data/ams"
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-02T17:14:31Z"
+     "lastChange": "2026-10-03T02:05:28Z"
     },
     {
      "path": "data/ams-grain-daily.json",
-     "lastChange": "2026-10-02T00:04:04Z"
+     "lastChange": "2026-10-02T23:55:35Z"
     },
     {
      "path": "data/us-fertilizers.json",
-     "lastChange": "2026-10-02T02:23:17Z"
+     "lastChange": "2026-10-02T23:55:35Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-01T23:51:06Z",
-    "durationSec": 784,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36942976619"
+    "startedAt": "2026-10-02T23:49:53Z",
+    "durationSec": 348,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37079398886"
    },
    "recent": {
     "runs": 10,
@@ -115,16 +115,26 @@
    "files": [
     {
      "path": "data/au-states.json",
-     "lastChange": "2026-10-02T12:54:45Z"
+     "lastChange": "2026-10-03T02:21:05Z"
     },
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T02:20:13Z",
+    "durationSec": 66,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37089446930"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 1,
+    "failed": 2
+   },
+   "status": "ok",
    "expectedEveryHours": 744.0
   },
   {
@@ -177,7 +187,7 @@
    "files": [
     {
      "path": "data/austria-stats.json",
-     "valid": "warning",
+     "valid": "ok",
      "series": 244,
      "points": 9053,
      "lines": 0,
@@ -217,7 +227,7 @@
      "series": 123,
      "points": 20813,
      "lines": 0,
-     "lastChange": "2026-09-30T20:36:08Z"
+     "lastChange": "2026-10-03T01:56:51Z"
     },
     {
      "path": "data/revisions.json",
@@ -225,18 +235,18 @@
     }
    ],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-02T15:54:31Z",
-    "durationSec": 1238,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37030261144"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T01:55:54Z",
+    "durationSec": 62,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37087954569"
    },
    "recent": {
-    "runs": 2,
-    "success": 1,
+    "runs": 3,
+    "success": 2,
     "failed": 1
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 96.0
   },
   {
@@ -249,16 +259,26 @@
    "files": [
     {
      "path": "data/canada-drought.json",
-     "lastChange": "2026-10-02T05:22:21Z"
+     "lastChange": "2026-10-03T02:08:26Z"
     },
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T02:07:57Z",
+    "durationSec": 41,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37088709567"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 120.0
   },
   {
@@ -303,16 +323,26 @@
    "files": [
     {
      "path": "data/canada-provinces.json",
-     "lastChange": "2026-10-02T11:48:19Z"
+     "lastChange": "2026-10-03T02:09:27Z"
     },
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T02:08:50Z",
+    "durationSec": 51,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37088757482"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -325,7 +355,7 @@
    "files": [
     {
      "path": "data/canada-stats.json",
-     "valid": "warning",
+     "valid": "ok",
      "series": 335,
      "points": 71057,
      "lines": 0,
@@ -689,18 +719,18 @@
    "nextRun": "2026-10-08T14:00:00Z",
    "files": [],
    "last": {
-    "conclusion": "failure",
-    "event": "schedule",
-    "startedAt": "2026-10-01T14:18:35Z",
-    "durationSec": 149,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36875320259"
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T02:06:48Z",
+    "durationSec": 62,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37088646297"
    },
    "recent": {
     "runs": 10,
-    "success": 5,
+    "success": 4,
     "failed": 5
    },
-   "status": "error",
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -772,16 +802,26 @@
    "files": [
     {
      "path": "data/eu-farm-economics.json",
-     "lastChange": "2026-10-02T03:08:30Z"
+     "lastChange": "2026-10-03T02:09:55Z"
     },
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T02:09:43Z",
+    "durationSec": 25,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37088810562"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -794,36 +834,46 @@
    "files": [
     {
      "path": "data/eu-regions-es.json",
-     "lastChange": "2026-10-02T12:29:03Z"
+     "lastChange": "2026-10-03T02:23:37Z"
     },
     {
      "path": "data/eu-regions-fr.json",
-     "lastChange": "2026-10-02T12:29:03Z"
+     "lastChange": "2026-10-03T02:23:37Z"
     },
     {
      "path": "data/eu-regions-it.json",
-     "lastChange": "2026-10-02T12:29:03Z"
+     "lastChange": "2026-10-03T02:23:37Z"
     },
     {
      "path": "data/eu-regions-de.json",
-     "lastChange": "2026-10-02T12:29:03Z"
+     "lastChange": "2026-10-03T02:23:37Z"
     },
     {
      "path": "data/eu-regions-nl.json",
-     "lastChange": "2026-10-02T14:25:59Z"
+     "lastChange": "2026-10-03T02:23:37Z"
     },
     {
      "path": "data/eu-regions-at.json",
-     "lastChange": "2026-10-02T14:25:59Z"
+     "lastChange": "2026-10-03T02:23:37Z"
     },
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T02:23:09Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37089622022"
+   },
+   "recent": {
+    "runs": 3,
+    "success": 1,
+    "failed": 1
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -1081,9 +1131,13 @@
      "path": "data/germany-stats.json",
      "valid": "ok",
      "series": 265,
-     "points": 25240,
+     "points": 63174,
      "lines": 0,
-     "lastChange": "2026-10-01T15:46:05Z"
+     "lastChange": "2026-10-03T00:56:26Z"
+    },
+    {
+     "path": "data/germany-agri.json",
+     "lastChange": "2026-10-03T00:56:26Z"
     },
     {
      "path": "data/revisions.json",
@@ -1092,15 +1146,15 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-01T15:43:56Z",
-    "durationSec": 137,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36886552305"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T00:51:39Z",
+    "durationSec": 292,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37083807704"
    },
    "recent": {
-    "runs": 7,
-    "success": 5,
-    "failed": 2
+    "runs": 10,
+    "success": 6,
+    "failed": 4
    },
    "status": "ok",
    "expectedEveryHours": 96.0
@@ -1148,21 +1202,21 @@
     "30 22 * * 5",
     "30 12 * * 1"
    ],
-   "nextRun": "2026-10-02T22:30:00Z",
+   "nextRun": "2026-10-05T12:30:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-09-30T14:51:23Z",
-    "durationSec": 29,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36732258426"
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-10-02T22:38:19Z",
+    "durationSec": 21,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37073555254"
    },
    "recent": {
-    "runs": 3,
+    "runs": 4,
     "success": 2,
-    "failed": 1
+    "failed": 2
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 106.0
   },
   {
@@ -1217,31 +1271,31 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-03T00:17:00Z",
+   "nextRun": "2026-10-03T03:17:00Z",
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-02T21:27:08Z"
+     "lastChange": "2026-10-03T00:33:00Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-02T21:27:08Z"
+     "lastChange": "2026-10-03T00:33:00Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-02T21:27:08Z"
+     "lastChange": "2026-10-03T00:33:00Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-02T21:27:08Z"
+     "lastChange": "2026-10-03T00:33:00Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-02T21:25:39Z",
-    "durationSec": 94,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37066765868"
+    "startedAt": "2026-10-03T00:31:51Z",
+    "durationSec": 73,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37082454870"
    },
    "recent": {
     "runs": 10,
@@ -1280,11 +1334,11 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-03T00:10:00Z",
+   "nextRun": "2026-10-03T03:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-02T21:25:58Z"
+     "lastChange": "2026-10-02T22:16:45Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1328,7 +1382,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-02T21:26:10Z"
+     "lastChange": "2026-10-02T22:16:45Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -1359,15 +1413,15 @@
     }
    ],
    "last": {
-    "conclusion": "success",
+    "conclusion": "cancelled",
     "event": "schedule",
-    "startedAt": "2026-10-02T21:25:03Z",
-    "durationSec": 71,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37066703829"
+    "startedAt": "2026-10-03T00:31:01Z",
+    "durationSec": 51,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37082394089"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 7,
     "failed": 1
    },
    "status": "ok",
@@ -1539,19 +1593,19 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-10-02T23:30:00Z",
+   "nextRun": "2026-10-05T14:15:00Z",
    "files": [
     {
      "path": "data/us-cash-bids/manifest.json",
-     "lastChange": "2026-10-01T14:32:23Z"
+     "lastChange": "2026-10-02T23:39:54Z"
     },
     {
      "path": "data/us-cash-bids/reports.json",
-     "lastChange": "2026-10-01T15:14:51Z"
+     "lastChange": "2026-10-02T23:39:54Z"
     },
     {
      "path": "data/us-cash-bids/ingestion-status.json",
-     "lastChange": "2026-10-01T14:32:23Z"
+     "lastChange": "2026-10-02T23:39:54Z"
     },
     {
      "path": "data/us-cash-bids/revisions.json",
@@ -1566,19 +1620,19 @@
     }
    ],
    "last": {
-    "conclusion": "failure",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-02T14:31:15Z",
-    "durationSec": 52,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37020441849"
+    "startedAt": "2026-10-02T23:38:54Z",
+    "durationSec": 65,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37078562632"
    },
    "recent": {
-    "runs": 3,
-    "success": 1,
+    "runs": 4,
+    "success": 2,
     "failed": 2
    },
-   "status": "error",
-   "expectedEveryHours": 62.8
+   "status": "ok",
+   "expectedEveryHours": 14.8
   },
   {
    "workflow": "update-us-dairy.yml",
@@ -1755,16 +1809,26 @@
    "files": [
     {
      "path": "data/worldbank-agri.json",
-     "lastChange": "2026-10-02T22:05:56Z"
+     "lastChange": "2026-10-03T02:11:17Z"
     },
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T02:10:59Z",
+    "durationSec": 30,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37088890220"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 744.0
   },
   {
