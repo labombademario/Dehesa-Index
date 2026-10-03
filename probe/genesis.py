@@ -14,19 +14,13 @@ def find(term, cat="tables", n="25"):
         j = json.loads(r); print("## find", term, c)
         for t in (j.get("Tables") or []): print("  ", t.get("Code"), "|", (t.get("Content") or "").replace("\n", " ")[:110], "|", t.get("Time", ""))
     except Exception as e: print("find err", r[:200])
-for term in ["Ernte Feldfrüchte Bundesländer", "Ernteerträge Getreide Bundesland", "Kaufwerte landwirtschaftliche Grundstücke", "Pachtpreise landwirtschaftliche", "Pachtentgelte Landwirtschaft", "Viehbestand Bundesland", "Milcherzeugung Bundesland", "Schweinebestand", "Rinderbestand"]:
-    find(term)
-def cat(sel):
-    c, r = post("catalogue/tables", selection=sel, pagelength="100", language="de")
-    try:
-        j = json.loads(r); print("## catalogue", sel, c)
-        for t in (j.get("List") or []): print("  ", t.get("Code"), "|", (t.get("Content") or "").replace("\n", " ")[:110], "|", t.get("Time", ""))
-    except Exception as e: print("cat err", r[:200])
-for sel in ["41241*", "41242*", "41261*", "61511*", "61521*", "41311*", "41312*", "41141*", "41151*"]: cat(sel)
 def tf(name, **kw):
     c, r = post("data/tablefile", accept="*/*", name=name, format="ffcsv", language="de", compress="false", **kw)
     print("## tablefile", name, kw, c, len(r))
-    if r[:2] == b"PK": r = zipfile.ZipFile(io.BytesIO(r)).read(zipfile.ZipFile(io.BytesIO(r)).namelist()[0])
-    L = r.decode("utf-8", "replace").splitlines(); print("lines", len(L)); print("\n".join(x[:420] for x in L[:4]))
-for n in ["41241-0003", "41241-0004", "41241-0006", "61511-0001", "61511-0002", "61521-0001"]:
-    tf(n, startyear="2015")
+    if r[:2] == b"PK":
+        z = zipfile.ZipFile(io.BytesIO(r)); r = z.read(z.namelist()[0])
+    t = r.decode("utf-8", "replace"); L = t.splitlines(); print("lines", len(L))
+    os.makedirs("probe-out", exist_ok=True); open("probe-out/%s.csv" % name, "w", encoding="utf-8").write(t)
+    if len(L) < 3: print(t[:300])
+for n in ["41241-0010", "41241-0005", "41241-0001", "41241-0002", "41241-0003", "61521-0001", "61521-0010", "61521-0100", "41141-0010", "41141-0110", "41141-0126"]:
+    tf(n, startyear="1950")

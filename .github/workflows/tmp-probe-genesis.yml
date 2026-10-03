@@ -12,6 +12,6 @@ jobs:
         run: |
           python3 probe/genesis.py > probe-genesis-log.txt 2>&1
           git config user.name probe; git config user.email probe@x
-          git add -f probe-genesis-log.txt
+          git add -f probe-genesis-log.txt probe-out
           git commit -qm "probe genesis out"
           git pull -q --rebase && git push
