@@ -1,5 +1,3 @@
-pagina no disponible /onderwerpen/marktinformatie/statistieken/varkens https://www.rvo.nl/onderwerpen/marktinformatie/statistieken/varkens: HTTP Error 
-pagina no disponible /onderwerpen/marktinformatie/statistieken/runderen https://www.rvo.nl/onderwerpen/marktinformatie/statistieken/runderen: HTTP Error
 excel descubiertos: {"pig_price": "/sites/default/files/2026-09/Prijswaarneming-vleesvarkens-en-biggen-tm-week-39.xlsx", "pig_slaughter": "/sites/default/files/2026-09/Varkensslachtingen-tm-week-39-2026.xlsx", "cattle_price": "/sites/default/files/2026-09/Prijswaarneming-runderen-tm-week-39-2026.xlsx"}
 precio cerdo 560 semanas; 559 lechones
 precio vacuno 3 series
