@@ -1,0 +1,355 @@
+zone.nom,zone.type,zone.departement,niveau_gravite,arrete.id,arrete.numero,usage.u.nom,usage.u.thematique,usage.u.concerne_particulier,usage.u.concerne_entreprise,usage.u.concerne_collectivite,usage.u.concerne_exploitation,usage.u.description
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Abreuvement du bétail,Abreuver,false,false,false,true,Pas de restrictions.
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Alimentation / Prélèvement en canaux,Remplir ou vidanger,true,true,true,true,"Réduction des prélèvements à partir des canaux à adapter localement selon les niveaux de gravité en tenant compte des enjeux sécuritaires liés à la baisse des niveaux (fragilisation des berges, des digues…)."
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Alimentation des fontaines publiques d'ornement,Alimenter des fontaines et autres usages de loisirs,true,true,true,false,L’alimentation des fontaines publiques et privées en circuit ouvert est interdite sauf impossibilité technique.
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,"Alimentation en eau potable des populations ((usages prioritaires : santé, salubrité, sécurité civile).",Abreuver,true,true,true,true,Voir détails listés dans l’arrêté préfectoral
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,"Arrosage des espaces arborés, pelouses, massifs fleuris, espaces verts",Arroser,true,true,true,true,"Interdit.
+Sauf les arbres et arbustes plantés en pleine terre depuis moins de 2 ans (de 20 h à 9 h)."
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Arrosage des golfs (Conformément à l'accord cadre golf et environnement 2019-2024),Arroser,true,true,true,false,"Interdit, à l’exception des greens et départs (entre 20 h et 8 h). Réduction des volumes d’au moins 60 %.
+Un registre de prélèvement doit être  rempli hebdomadairement pour l’irrigation."
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Arrosage des jardins potagers,Arroser,true,true,true,true,Interdiction de 9h à 20h.
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Arrosage des terrains de sports et hippodromes.,Arroser,false,true,true,false,"Interdit entre 11 h et 18 h.
+
+Les fédérations de sport communiqueront en amont, dès le franchissement du seuil d’alerte, le calendrier des compétitions à enjeu national ou international à la DDT  
+ddt-seef@oise.gouv.fr"
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Contrôles de mesure des hydrants destinés à la défense incendie,Sécurité incendie,false,true,true,false,"Les opérations de contrôle, entretien et maintenance doivent être maintenues dans la mesure du possible à la fréquence déterminée par la réglementation en vigueur. Dans la mesure du possible, ces opérations doivent être planifiées de façon à éviter toute intervention en période habituellement sujette à la sécheresse. La sensibilité de chaque unité hydrographique pourra être prise en compte dans le calendrier d’intervention."
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,ICPE (dont prélèvement inférieur à 10 000 m³/an) et autres activités industrielles et commerciales (hors ICPE),Activités économiques,false,true,true,false,"Il est demandé de recourir à des méthodes de travail permettant d’économiser l’eau et de reporter les opérations exceptionnelles consommatrices d’eau ou génératrices d’eaux polluées (exemple d’opération de nettoyage grande eau) sauf impératif sanitaire ou lié à la sécurité publique. 
+Voir détails dans l'arrêté préfectoral"
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,ICPE disposant d’un arrêté préfectoral sécheresse qui prescrit les mesures découlant des études technico-économiques.,ICPE,false,true,true,false,"Application des mesures prescrites par son arrêté sécheresse ou, le cas échéant, des mesures de restrictions de l’arrêté ministériel du 30 juin 2023 rappelées pour partie ci-dessous."
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,ICPE soumises à autorisation ou à enregistrement (Prélèvement d’eau supérieur à 10 000 m3/an et hors régime d’exemptions art.3 de l’AM du 30/06/23),ICPE,false,true,true,false,"L’arrêté ministériel du 30 juin 2023 s’applique, et notamment son article 2 qui prévoit une réduction des prélèvements d’eau de 10 %."
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Irrigation des cultures par système d’irrigation localisée,Irriguer,false,false,false,true,Pas de restrictions.
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Irrigation par aspersion des cultures,Irriguer,false,false,false,true,"Mesures d'interdiction variables selon types de culture.
+Détails et exceptions listés dans l'arrêté préfectoral."
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Lavage de véhicules chez les particuliers,Nettoyer,true,true,false,false,"Interdit à titre privé à domicile
+Cette interdiction est valable toute l’année en application de l’article L1331-10 du Code de la santé publique, même si la prestation est réalisée par un professionnel."
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Lavage de véhicules en station.,Nettoyer,true,true,true,true,"Autorisé sur les pistes équipées de haute-pression ou équipées de système de recyclage (minimum 70 % d’eau recyclée) ou portique programmé ECO sur ouverture partielle.
+Affichage des restrictions en vigueur de manière visible au droit des installations et une signalétique des pistes fermées (plots, chaîne ...) dès lors que les conditions ci-dessus ne peuvent être respectées."
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,"Nettoyage des façades, toitures, trottoirs et autres surfaces imperméabilisées",Nettoyer,true,true,true,true,Interdit sauf si réalisé par une collectivité ou une entreprise de nettoyage professionnel.
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Rejets ICPE,Rejeter,false,true,true,false,"Rappel auprès des principaux sites produisant des rejets polluants afin de réduire les risques de pollution. (suivi renforcé, espacer les rejets, ...)
+Voir détails dans l'arrêté préfectoral"
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Rejets des stations d'épuration et collecteurs pluviaux,Rejeter,true,true,true,false,"Surveillance accrue des rejets, les délestages directs sont soumis à autorisation préalable auprès du service de police de l'eau et seront reportés jusqu’au retour d’un débit plus élevé.
+Renforcement du dispositif de suivi et de surveillance des systèmes d’assainissement (réseaux et stations de traitement) afin d’éviter toute pollution accidentelle (rejet dans le milieu naturel de boues ou d’eaux non conformes ou insuffisamment traitées)
+Voir détails dans l'arrêté préfectoral"
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Remplissage / vidange des plans d'eau,Remplir ou vidanger,true,true,true,true,Remplissage interdit. Vidange interdite.
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Remplissage et vidange de piscine non collective (de plus d’1 m³),Remplir ou vidanger,true,false,false,false,Remplissage interdit sauf remise à niveau (si le propriétaire a mis en place une bâche pour limiter l’évaporation) et premier remplissage si le chantier avait débuté avant les premières restrictions.
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Remplissage et vidange des piscines à usage collectif,Remplir ou vidanger,false,true,true,false,Remplissage interdit sauf remise à niveau ou en cas de premier remplissage ou pour la réglementation pour raisons sanitaires (en lien avec l’Agence Régionale de la Santé).
+bassin de la Brele,AEP,60,alerte_renforcee,37854,DDT60 - 20260821,Travaux en cours d’eau,Travaux et activités en cours d'eau,true,true,true,true,"Dès lors que la situation de sécheresse est caractérisée sur la ressource en eau superficielle, les travaux sont reportés jusqu’au retour d’un débit plus élevé, sauf :
+    • situation d’assec total ;
+    • pour des raisons de sécurité ;
+    • dans le cas d’une renaturation, restauration d’un cours d’eau.
+
+Dans tous les cas, les travaux doivent être déclarés au service police de l’eau de la DDT : ddt-seef@oise.gouv.fr
+Détails et exceptions listés dans l'arrêté préfectoral."
+Haute chaîne,AEP,39,alerte_renforcee,38076,39-2026-09-09-00001,Abreuvement des animaux,Abreuver,true,true,true,true,"Pas de limitation 
+Sauf arrêté spécifique"
+Haute chaîne,AEP,39,alerte_renforcee,38076,39-2026-09-09-00001,Arrosage des espaces verts et des pelouses,Arroser,true,true,true,true,"Interdit
+Sauf arrosage des jeunes plants <2 ans"
+Haute chaîne,AEP,39,alerte_renforcee,38076,39-2026-09-09-00001,Arrosage des massifs fleuris (pleine terre et jardinière),Arroser,true,true,true,true,"Interdit
+Sauf dispositif de goutte-à-goutte entre 21h et 9h"
+Haute chaîne,AEP,39,alerte_renforcee,38076,39-2026-09-09-00001,"Arrosage des surfaces accueillant des manifestations temporaires sportives et/ou culturelles (patinoires, terrains de motocross, festivals...)",Arroser,true,true,true,true,Interdiction de 9h à 21h.
+Haute chaîne,AEP,39,alerte_renforcee,38076,39-2026-09-09-00001,Navigation fluviale,Travaux et activités en cours d'eau,true,true,true,true,Programmation des automates afin que les mouvements de portes d’écluses soient limités aux stricts besoins de la navigation
+Haute chaîne,AEP,39,alerte_renforcee,38076,39-2026-09-09-00001,"Nettoyage des façades, toitures, trottoirs et autres surfaces imperméabilisées",Nettoyer,true,true,true,true,"Interdit
+
+Sauf si réalisé avec du matériel haute pression par une collectivité ou une entreprise de nettoyage professionnel"
+Haute chaîne,AEP,39,alerte_renforcee,38076,39-2026-09-09-00001,Prélèvement en canaux,Prélever,true,true,true,true,"Interdit
+
+Sauf adaptation locale en tenant compte des enjeux sécuritaires liés à la baisse des niveaux (fragilisation des berges, des digues, …)"
+Haute chaîne,AEP,39,alerte_renforcee,38076,39-2026-09-09-00001,Travaux en cours d'eau,Travaux et activités en cours d'eau,true,true,true,true,"Report des travaux
+
+Sauf situation d’assec total
+
+ou
+
+Sauf pour des raisons de sécurité
+
+ou
+
+Sauf dans le cas d’une restauration, renaturation du cours d’eau
+
+ou
+
+Sauf dérogation individuelle"
+Seille,AEP,39,crise,38076,39-2026-09-09-00001,Abreuvement des animaux,Abreuver,true,true,true,true,"Pas de limitation 
+Sauf arrêté spécifique"
+Seille,AEP,39,crise,38076,39-2026-09-09-00001,Arrosage des espaces verts et des pelouses,Arroser,true,true,true,true,"Interdit
+Sauf arrosage des jeunes plants <2 ans"
+Seille,AEP,39,crise,38076,39-2026-09-09-00001,Arrosage des massifs fleuris (pleine terre et jardinière),Arroser,true,true,true,true,Interdit
+Seille,AEP,39,crise,38076,39-2026-09-09-00001,"Arrosage des surfaces accueillant des manifestations temporaires sportives et/ou culturelles (patinoires, terrains de motocross, festivals...)",Arroser,true,true,true,true,"Interdit
+
+Sauf arrosage de manière réduite au maximum entre 21 h et 9 h pour les terrains d’entraînement ou de compétition à enjeu national ou international et en absence de pénurie en eau potable "
+Seille,AEP,39,crise,38076,39-2026-09-09-00001,Navigation fluviale,Travaux et activités en cours d'eau,true,true,true,true,"Programmation des automates afin que les mouvements de portes d’écluses soient limités aux stricts besoins de la navigation
+
+Arrêt de la navigation si nécessaire"
+Seille,AEP,39,crise,38076,39-2026-09-09-00001,"Nettoyage des façades, toitures, trottoirs et autres surfaces imperméabilisées",Nettoyer,true,true,true,true,"Interdit
+Sauf impératif sanitaire ou sécuritaire, et réalisé avec du matériel haute pression par une collectivité ou une entreprise de nettoyage professionnel
+Sauf les étapes suivantes lors d’un chantier : (voir annexe 6 - Arrêté cadre départemental du 19 mai 2026)"
+Seille,AEP,39,crise,38076,39-2026-09-09-00001,Prélèvement en canaux,Prélever,true,true,true,true,"Interdit
+
+Sauf adaptation locale en tenant compte des enjeux sécuritaires liés à la baisse des niveaux (fragilisation des berges, des digues, …)"
+Seille,AEP,39,crise,38076,39-2026-09-09-00001,Travaux en cours d'eau,Travaux et activités en cours d'eau,true,true,true,true,"Report des travaux
+
+Sauf situation d’assec total
+
+ou
+
+Sauf pour des raisons de sécurité
+
+ou
+
+Sauf dans le cas d’une restauration, renaturation du cours d’eau
+
+ou
+
+Sauf dérogation individuelle"
+Nord Jura,AEP,39,crise,38076,39-2026-09-09-00001,Abreuvement des animaux,Abreuver,true,true,true,true,"Pas de limitation 
+Sauf arrêté spécifique"
+Nord Jura,AEP,39,crise,38076,39-2026-09-09-00001,Arrosage des espaces verts et des pelouses,Arroser,true,true,true,true,"Interdit
+Sauf arrosage des jeunes plants <2 ans"
+Nord Jura,AEP,39,crise,38076,39-2026-09-09-00001,Arrosage des massifs fleuris (pleine terre et jardinière),Arroser,true,true,true,true,Interdit
+Nord Jura,AEP,39,crise,38076,39-2026-09-09-00001,"Arrosage des surfaces accueillant des manifestations temporaires sportives et/ou culturelles (patinoires, terrains de motocross, festivals...)",Arroser,true,true,true,true,"Interdit
+
+Sauf arrosage de manière réduite au maximum entre 21 h et 9 h pour les terrains d’entraînement ou de compétition à enjeu national ou international et en absence de pénurie en eau potable "
+Nord Jura,AEP,39,crise,38076,39-2026-09-09-00001,Navigation fluviale,Travaux et activités en cours d'eau,true,true,true,true,"Programmation des automates afin que les mouvements de portes d’écluses soient limités aux stricts besoins de la navigation
+
+Arrêt de la navigation si nécessaire"
+Nord Jura,AEP,39,crise,38076,39-2026-09-09-00001,"Nettoyage des façades, toitures, trottoirs et autres surfaces imperméabilisées",Nettoyer,true,true,true,true,"Interdit
+Sauf impératif sanitaire ou sécuritaire, et réalisé avec du matériel haute pression par une collectivité ou une entreprise de nettoyage professionnel
+Sauf les étapes suivantes lors d’un chantier : (voir annexe 6 - Arrêté cadre départemental du 19 mai 2026)"
+Nord Jura,AEP,39,crise,38076,39-2026-09-09-00001,Prélèvement en canaux,Prélever,true,true,true,true,"Interdit
+
+Sauf adaptation locale en tenant compte des enjeux sécuritaires liés à la baisse des niveaux (fragilisation des berges, des digues, …)"
+Nord Jura,AEP,39,crise,38076,39-2026-09-09-00001,Travaux en cours d'eau,Travaux et activités en cours d'eau,true,true,true,true,"Report des travaux
+
+Sauf situation d’assec total
+
+ou
+
+Sauf pour des raisons de sécurité
+
+ou
+
+Sauf dans le cas d’une restauration, renaturation du cours d’eau
+
+ou
+
+Sauf dérogation individuelle"
+Plateau calcaire,AEP,39,crise,38076,39-2026-09-09-00001,Abreuvement des animaux,Abreuver,true,true,true,true,"Pas de limitation 
+Sauf arrêté spécifique"
+Plateau calcaire,AEP,39,crise,38076,39-2026-09-09-00001,Arrosage des espaces verts et des pelouses,Arroser,true,true,true,true,"Interdit
+Sauf arrosage des jeunes plants <2 ans"
+Plateau calcaire,AEP,39,crise,38076,39-2026-09-09-00001,Arrosage des massifs fleuris (pleine terre et jardinière),Arroser,true,true,true,true,Interdit
+Plateau calcaire,AEP,39,crise,38076,39-2026-09-09-00001,"Arrosage des surfaces accueillant des manifestations temporaires sportives et/ou culturelles (patinoires, terrains de motocross, festivals...)",Arroser,true,true,true,true,"Interdit
+
+Sauf arrosage de manière réduite au maximum entre 21 h et 9 h pour les terrains d’entraînement ou de compétition à enjeu national ou international et en absence de pénurie en eau potable "
+Plateau calcaire,AEP,39,crise,38076,39-2026-09-09-00001,Navigation fluviale,Travaux et activités en cours d'eau,true,true,true,true,"Programmation des automates afin que les mouvements de portes d’écluses soient limités aux stricts besoins de la navigation
+
+Arrêt de la navigation si nécessaire"
+Plateau calcaire,AEP,39,crise,38076,39-2026-09-09-00001,"Nettoyage des façades, toitures, trottoirs et autres surfaces imperméabilisées",Nettoyer,true,true,true,true,"Interdit
+Sauf impératif sanitaire ou sécuritaire, et réalisé avec du matériel haute pression par une collectivité ou une entreprise de nettoyage professionnel
+Sauf les étapes suivantes lors d’un chantier : (voir annexe 6 - Arrêté cadre départemental du 19 mai 2026)"
+Plateau calcaire,AEP,39,crise,38076,39-2026-09-09-00001,Prélèvement en canaux,Prélever,true,true,true,true,"Interdit
+
+Sauf adaptation locale en tenant compte des enjeux sécuritaires liés à la baisse des niveaux (fragilisation des berges, des digues, …)"
+Plateau calcaire,AEP,39,crise,38076,39-2026-09-09-00001,Travaux en cours d'eau,Travaux et activités en cours d'eau,true,true,true,true,"Report des travaux
+
+Sauf situation d’assec total
+
+ou
+
+Sauf pour des raisons de sécurité
+
+ou
+
+Sauf dans le cas d’une restauration, renaturation du cours d’eau
+
+ou
+
+Sauf dérogation individuelle"
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Alimentation des fontaines publiques (sauf brumisateurs) et privées,Alimenter des fontaines et autres usages de loisirs,false,false,true,false,L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Les collectivités sont incitées à faire des économies d’eau. 
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Arrosage de la piste des hippodromes et pistes de compétitions équestres,Arroser,false,true,true,false,L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Collectivités et professionnels sont incités à faire des économies d’eau. 
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,"Arrosage des espaces arborés, pelouses, massifs fleuris, espaces verts",Arroser,true,true,true,true,"L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Collectivités, particuliers et professionnels sont incités à faire des économies d’eau. "
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Abreuvement des animaux,Abreuver,false,false,false,true,Pas de restriction
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Arrosage des golfs,Arroser,true,true,true,false,"L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Collectivités, particuliers et professionnels sont incités à faire des économies d’eau. "
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Arrosage des jardins potagers,Arroser,true,true,true,true,"L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Collectivités, particuliers et professionnels sont incités à faire des économies d’eau. "
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Arrosage des terrains de sport,Arroser,true,true,true,true,"L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Collectivités, particuliers et professionnels  sont incités à faire des économies d’eau. "
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,"Aspersion des pépinières, cultures fruitières, maraîchères, florales, PPAM, semences (y/c plants de pomme de terre)* *cf arrêté du 10/07/2025",Irriguer,false,true,true,true,"L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Collectivités, particuliers et professionnels  sont incités à faire des économies d’eau. "
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,ICPE AVEC prescriptions sécheresse spécifiques au site prises ou revues depuis janvier 2024 - Rejets et prélèvements,ICPE,false,true,true,false,"Sensibilisation du personnel aux règles de bon usage et d’économie d’eau selon les moyens les plus pertinents choisis par l’exploitant.
+
+Elaboration plan d’action adapté aux prescriptions de diminution de volumes de prélèvement d’eau en cas de sécheresse inscrites dans l’arrêté préfectoral du site."
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,ICPE SANS prescriptions sécheresse spécifiques au site prises ou revues depuis janvier 2024  - Prélèvements,ICPE,false,true,true,false,"Sensibilisation du personnel aux règles de bon usage et d’économie d’eau selon les moyens les plus pertinents choisis par l’exploitant.
+
+Elaboration plan  répondant aux différents niveaux de réduction des prélèvements imposés par l’arrêté cadre du 10 juillet 2025."
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,ICPE SANS prescriptions sécheresse spécifiques au site prises ou revues depuis janvier 2024 - Rejets,Rejeter,false,true,true,false,Consulter l’arrêté préfectoral de restriction de la zone sécheresse concernée.
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,"Industrie, commerces et ICPE - Opérations exceptionnelles",Activités économiques,false,true,true,false,L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Les professionnels sont incités à faire des économies d’eau. 
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,"Installations de production d'électricité d'origine nucléaire, hydraulique, et thermique à flamme qui appovisionnent l'ensemble du territoire national",Installations de production d'électricité,false,true,false,false,L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Les professionnels sont incités à faire des économies d’eau. 
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,"Irrigation localisée* (goutte à goutte, micro aspersion) des cultures  *voir arrêté cadre du 10 juillet 2025",Irriguer,false,false,false,true,L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Les professionnels sont incités à faire des économies d’eau. 
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Irrigation par aspersion des cultures,Irriguer,false,false,false,true,L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Les professionnels sont incités à faire des économies d’eau. 
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,"Lavage des voies, trottoirs et autres surfaces imperméabilisées. Nettoyage des terrasses et façades",Nettoyer,true,true,true,true,"L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Collectivité, particuliers et professionnels sont incités à faire des économies d’eau. "
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Lavage des véhicules chez les particuliers,Nettoyer,true,false,false,false,L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Les particuliers sont incités à faire des économies d’eau. 
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,"Lavage des véhicules en station* * stations et unités de lavage des garages, stations-service, entreprises professionnelles (transport, BTP, etc)",Nettoyer,false,true,true,true,L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Particuliers comme professionnels sont incités à faire des économies d’eau. 
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Remplissage des piscines ouvertes au public,Remplir ou vidanger,false,true,true,false,L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Collectivités comme professionnels sont incités à faire des économies d’eau. 
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Remplissage des piscines privées,Remplir ou vidanger,true,false,false,false,L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Les Particuliers sont incités à faire des économies d’eau. 
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Remplissage des plans d’eau,Remplir ou vidanger,true,true,true,true,L’état de la ressource en eau pourrait s’aggraver en l’absence de pluie. Particuliers comme professionnels sont incités à faire des économies d’eau. 
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Vidange des piscines ouvertes au public,Remplir ou vidanger,false,true,true,false,Anticiper les besoins de vidange ou prévoir un report à la toute fin du second semestre lorsque les niveaux auront réatteint des seuils le permettant afin d'éviter de les réaliser en période de restrictions
+EPTE HORS ZONE 10 BRAY,AEP,76,vigilance,36684,76_20260604_Toutes_zones_Vigilance_ESU_ESO,Vidange des piscines privées (plus de 1m3),Remplir ou vidanger,true,true,false,false,Pas de restriction
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Abreuvement des animaux,Abreuver,true,false,false,true,Pas de limitation sauf arrêté spécifique.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Alimentation des fontaines publiques et privées d’ornement,Alimenter des fontaines et autres usages de loisirs,true,true,true,true,"L'alimentation des fontaines publiques et privées en circuit ouvert est interdite, dans la mesure où cela est techniquement possible."
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Arrosage des espaces verts,Arroser,true,true,true,true,Interdit entre 11h et 18h
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Arrosage des golfs (Conformément à l'accord cadre golf et environnement 2019-2024),Arroser,false,true,true,false,"Interdiction d’arroser les terrains de golf de 8 heures à 20 heures de façon à diminuer la consommation d’eau sur le volume hebdomadaire de 15% à 30%.
+Un registre de prélèvement devra être rempli hebdomadairement pour l’irrigation"
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Arrosage des jardins potagers,Arroser,true,true,true,true,Interdiction de 11h à 18h.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,"Arrosage des pelouses, massifs fleuris",Arroser,true,true,true,true,Interdiction de 11h à 18h.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Arrosage des terrains de sport,Arroser,false,true,true,false,Interdiction de 11h à 18h.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Barrages/Ouvrages hydrauliques,Ouvrages hydrauliques,false,false,true,false,"Tous les exploitants d’ouvrages hydrauliques situés sur l’Aisne (en aval de Soissons), la Marne (en aval du barrage réservoir Marne) doivent informer le service chargé de la police de l’eau (DRIEAT) avant toute manœuvre ayant une incidence notable sur la ligne d’eau et sur le débit du cours d’eau concerné. 
+Pour les barrages de navigation disposant d’un règlement d’eau explicitant les conditions de manœuvres, se référer aux dispositions spécifiques précisées dans le règlement d’eau."
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,ICPE soumises à un APC relatif à la sécheresse,ICPE,false,true,false,false,Pour les ICPE disposant d’un arrêté de prescriptions particulières : se référer aux dispositions spécifiques relatives à la gestion de la ressource en eau prévues dans leurs autorisations administratives.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Installations de production d’électricité d’origine hydraulique visées dans le code de l’énergie,Installations de production d'électricité,false,true,false,false,"Pour les installations hydroélectriques, les manœuvres d’ouvrages nécessaires à l’équilibre du réseau électrique ou à la délivrance d’eau pour le compte d’autres usagers ou des milieux aquatiques sont autorisées."
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Irrigation depuis des retenues de stockage déconnectées de la ressource en eau ,Irriguer,false,false,false,true,"Irrigation autorisée
+Les agriculteurs sont invités à ne pas irriguer le dimanche de 10h à 18h."
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Irrigation des cultures par système d’irrigation localisée,Irriguer,false,false,false,true,Les agriculteurs sont invités à ne pas irriguer le dimanche de 10h à 18h.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Irrigation par aspersion des autres cultures - prélèvement dans les eaux superficielles,Irriguer,false,false,false,true,Irrigation interdite du mardi au vendredi de 10h à 18h et du samedi à 10h au lundi à 18h à partir de prélèvements dans les eaux superficielles.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Irrigation par aspersion des cultures spécialisées - prélèvement dans les eaux superficielles,Irriguer,false,false,false,true,"Irrigation interdite le mercredi, le samedi et le dimanche de 10h à 18 h à partir de prélèvements dans les eaux superficielles."
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Lavage de véhicules chez les particuliers,Nettoyer,true,false,false,false,Interdit à titre privé à domicile.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Lavage de véhicules par des professionnels,Nettoyer,true,true,true,true,Autorisé sur les pistes équipées de haute-pression ou équipées de système de recyclage (minimum 70 % d’eau recyclée) ou portique programmé ÉCO sur ouverture partielle
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Navigation fluviale,Travaux et activités en cours d'eau,false,false,true,false,Privilégier le regroupement des bateaux pour le passage des écluses.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,"Nettoyage des façades, toitures, trottoirs et autres surfaces imperméabilisées",Nettoyer,true,true,true,true,Interdit sauf si réalisé par une collectivité ou une entreprise de nettoyage professionnel.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Prélèvement en canaux ,Prélever,true,true,true,true,"Réduction des prélèvements directs dans les canaux à adopter localement selon les niveaux de gravité en tenant en compte les enjeux sécuritaires liés à la baisse des niveaux (fragilisation des berges, des digues, ...)."
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Prélèvements en cours d'eau pour des usages non IOTA,Prélever,true,true,true,true,Interdit du mardi au vendredi de 10h à 18h et du samedi à 10h au lundi à 18h.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Prélèvements pour l’alimentation des canaux,Prélever,false,false,true,false,"Diminution des prélèvements destinés aux canaux pour assurer au moins la stabilité durable des berges et autres structures.
+Pour les prises d’eau disposant d’un règlement d’eau, s’y référer pour les dispositions spécifiques."
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Rejets des stations d’épuration et des collecteurs pluviaux localisées sur l’Aisne (aval de Soissons) et la Marne (aval du barrage réservoir Marne),Rejeter,false,true,true,false,"Surveillance accrue des rejets.
+Délestages directs par temps sec soumis à autorisation préalable de la DRIEAT et pouvant être décalés jusqu’au retour d’un débit plus élevé"
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Remplissage / vidange des plans d'eau,Remplir ou vidanger,true,true,true,true,Interdit sauf pour les usages commerciaux sur dérogation du service police de l'eau concerné.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Remplissage des  retenues de stockage en vue d’irrigation déconnectées de la ressource en eau,Irriguer,false,false,false,true,Interdit
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Remplissage et vidange de piscines privées (de plus d'1 m3),Remplir ou vidanger,true,true,true,true,Interdiction de remplissage sauf remise à niveau et premier remplissage si le chantier avait débuter avant les premières restrictions.
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Travaux en cours d’eau,Travaux et activités en cours d'eau,true,true,true,true,"Limitation au maximum des risques de perturbation des milieux aquatiques.
+Autorisation préalables de la DDT/DRIEAT des travaux en cours d'eau nécessitant des rejets non traités."
+Aisne Amont,SUP,02,alerte,37879,ENV/PE/2026/046,Usage ICPE non soumis à un APC relatif à la sécheresse,ICPE,false,true,false,false,Les opérations exceptionnelles consommatrices d’eau et génératrices d’eaux polluées sont reportées (exemple d’opération de nettoyage grande eau) sauf impératif sanitaire ou lié à la sécurité publique.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Abreuvement des animaux,Abreuver,true,false,false,true,Pas de limitation sauf arrêté spécifique.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Alimentation des fontaines publiques et privées d’ornement,Alimenter des fontaines et autres usages de loisirs,true,true,true,true,"L'alimentation des fontaines publiques et privées en circuit ouvert est interdite, dans la mesure où cela est techniquement possible."
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Arrosage des espaces verts,Arroser,true,true,true,true,Interdit entre 11h et 18h
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Arrosage des golfs (Conformément à l'accord cadre golf et environnement 2019-2024),Arroser,false,true,true,false,"Interdiction d’arroser les terrains de golf de 8 heures à 20 heures de façon à diminuer la consommation d’eau sur le volume hebdomadaire de 15% à 30%.
+Un registre de prélèvement devra être rempli hebdomadairement pour l’irrigation"
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Arrosage des jardins potagers,Arroser,true,true,true,true,Interdiction de 11h à 18h.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,"Arrosage des pelouses, massifs fleuris",Arroser,true,true,true,true,Interdiction de 11h à 18h.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Arrosage des terrains de sport,Arroser,false,true,true,false,Interdiction de 11h à 18h.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Barrages/Ouvrages hydrauliques,Ouvrages hydrauliques,false,false,true,false,"Tous les exploitants d’ouvrages hydrauliques situés sur l’Aisne (en aval de Soissons), la Marne (en aval du barrage réservoir Marne) doivent informer le service chargé de la police de l’eau (DRIEAT) avant toute manœuvre ayant une incidence notable sur la ligne d’eau et sur le débit du cours d’eau concerné. 
+Pour les barrages de navigation disposant d’un règlement d’eau explicitant les conditions de manœuvres, se référer aux dispositions spécifiques précisées dans le règlement d’eau."
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,ICPE soumises à un APC relatif à la sécheresse,ICPE,false,true,false,false,Pour les ICPE disposant d’un arrêté de prescriptions particulières : se référer aux dispositions spécifiques relatives à la gestion de la ressource en eau prévues dans leurs autorisations administratives.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Installations de production d’électricité d’origine hydraulique visées dans le code de l’énergie,Installations de production d'électricité,false,true,false,false,"Pour les installations hydroélectriques, les manœuvres d’ouvrages nécessaires à l’équilibre du réseau électrique ou à la délivrance d’eau pour le compte d’autres usagers ou des milieux aquatiques sont autorisées."
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Irrigation depuis des retenues de stockage déconnectées de la ressource en eau ,Irriguer,false,false,false,true,"Irrigation autorisée
+Les agriculteurs sont invités à ne pas irriguer le dimanche de 10h à 18h."
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Irrigation des cultures par système d’irrigation localisée,Irriguer,false,false,false,true,Les agriculteurs sont invités à ne pas irriguer le dimanche de 10h à 18h.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Irrigation par aspersion des autres cultures - prélèvement dans les eaux superficielles,Irriguer,false,false,false,true,Irrigation interdite du mardi au vendredi de 10h à 18h et du samedi à 10h au lundi à 18h à partir de prélèvements dans les eaux superficielles.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Irrigation par aspersion des cultures spécialisées - prélèvement dans les eaux superficielles,Irriguer,false,false,false,true,"Irrigation interdite le mercredi, le samedi et le dimanche de 10h à 18 h à partir de prélèvements dans les eaux superficielles."
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Lavage de véhicules chez les particuliers,Nettoyer,true,false,false,false,Interdit à titre privé à domicile.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Lavage de véhicules par des professionnels,Nettoyer,true,true,true,true,Autorisé sur les pistes équipées de haute-pression ou équipées de système de recyclage (minimum 70 % d’eau recyclée) ou portique programmé ÉCO sur ouverture partielle
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Navigation fluviale,Travaux et activités en cours d'eau,false,false,true,false,Privilégier le regroupement des bateaux pour le passage des écluses.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,"Nettoyage des façades, toitures, trottoirs et autres surfaces imperméabilisées",Nettoyer,true,true,true,true,Interdit sauf si réalisé par une collectivité ou une entreprise de nettoyage professionnel.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Prélèvement en canaux ,Prélever,true,true,true,true,"Réduction des prélèvements directs dans les canaux à adopter localement selon les niveaux de gravité en tenant en compte les enjeux sécuritaires liés à la baisse des niveaux (fragilisation des berges, des digues, ...)."
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Prélèvements en cours d'eau pour des usages non IOTA,Prélever,true,true,true,true,Interdit du mardi au vendredi de 10h à 18h et du samedi à 10h au lundi à 18h.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Prélèvements pour l’alimentation des canaux,Prélever,false,false,true,false,"Diminution des prélèvements destinés aux canaux pour assurer au moins la stabilité durable des berges et autres structures.
+Pour les prises d’eau disposant d’un règlement d’eau, s’y référer pour les dispositions spécifiques."
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Rejets des stations d’épuration et des collecteurs pluviaux localisées sur l’Aisne (aval de Soissons) et la Marne (aval du barrage réservoir Marne),Rejeter,false,true,true,false,"Surveillance accrue des rejets.
+Délestages directs par temps sec soumis à autorisation préalable de la DRIEAT et pouvant être décalés jusqu’au retour d’un débit plus élevé"
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Remplissage / vidange des plans d'eau,Remplir ou vidanger,true,true,true,true,Interdit sauf pour les usages commerciaux sur dérogation du service police de l'eau concerné.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Remplissage des  retenues de stockage en vue d’irrigation déconnectées de la ressource en eau,Irriguer,false,false,false,true,Interdit
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Remplissage et vidange de piscines privées (de plus d'1 m3),Remplir ou vidanger,true,true,true,true,Interdiction de remplissage sauf remise à niveau et premier remplissage si le chantier avait débuter avant les premières restrictions.
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Travaux en cours d’eau,Travaux et activités en cours d'eau,true,true,true,true,"Limitation au maximum des risques de perturbation des milieux aquatiques.
+Autorisation préalables de la DDT/DRIEAT des travaux en cours d'eau nécessitant des rejets non traités."
+Oise Moyenne - Ailette,SUP,02,alerte,37879,ENV/PE/2026/046,Usage ICPE non soumis à un APC relatif à la sécheresse,ICPE,false,true,false,false,Les opérations exceptionnelles consommatrices d’eau et génératrices d’eaux polluées sont reportées (exemple d’opération de nettoyage grande eau) sauf impératif sanitaire ou lié à la sécurité publique.
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,"Arrosage des jardins, pelouses, massifs fleuris, espaces verts publics ou privés",Arroser,true,true,true,false,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Arrosage des potagers,Arroser,true,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Arrosage des terrains de golfs,Arroser,false,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,"Arrosage des terrains de sport (y compris centres équestres, hippodromes, motocross ou autres véhicules)",Arroser,true,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser ses consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Circulation dans le lit des cours d’eau,Travaux et activités en cours d'eau,true,true,true,true,"En application de la loi de 1993 sur la circulation des véhicules à moteur, le circulation, le passage et le stationnement (moto, 4x4) dans le lit des cours d’eau sont interdits."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Lavage des embarcations motorisées ou non,Nettoyer,true,true,true,true,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage.
+"
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Lavage de véhicule chez les particuliers,Nettoyer,true,false,false,false,"Il est demandé à tous les utilisateurs d’eau d’optimiser ses consommations et de les réduire au strict nécessaire, qu’elles soient destinées à un usage privé ou professionnel."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Alimentation des fontaines ornementales,Alimenter des fontaines et autres usages de loisirs,true,true,true,false,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction) Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Remplissage et vidange des piscines à usage collectif,Remplir ou vidanger,false,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Remplissage et vidange des piscines à usage individuel,Remplir ou vidanger,true,true,false,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Travaux en cours d’eau,Travaux et activités en cours d'eau,true,true,true,true,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Vidange de plans d’eau,Remplir ou vidanger,true,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Lavage de véhicules par des professionnels ou en station de lavage,Nettoyer,true,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Manoeuvres hydrauliques,Travaux et activités en cours d'eau,true,true,true,true,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,"Nettoyage des voiries, trottoirs, terrasses, façades, toitures et autres surfaces imperméabilisées",Nettoyer,true,true,true,true,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Potences agricoles,Prélever,true,true,true,true,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Pratique de la pêche,Travaux et activités en cours d'eau,true,true,false,false,Pas de restrictions.
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Prélèvements directs en cours d'eau pour des usages domestiques,Prélever,true,true,true,true,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aude amont,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Remplissage des plans d'eau,Remplir ou vidanger,true,true,true,true,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,"Arrosage des jardins, pelouses, massifs fleuris, espaces verts publics ou privés",Arroser,true,true,true,false,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Arrosage des potagers,Arroser,true,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Arrosage des terrains de golfs,Arroser,false,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,"Arrosage des terrains de sport (y compris centres équestres, hippodromes, motocross ou autres véhicules)",Arroser,true,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser ses consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Circulation dans le lit des cours d’eau,Travaux et activités en cours d'eau,true,true,true,true,"En application de la loi de 1993 sur la circulation des véhicules à moteur, le circulation, le passage et le stationnement (moto, 4x4) dans le lit des cours d’eau sont interdits."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Lavage des embarcations motorisées ou non,Nettoyer,true,true,true,true,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage.
+"
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Lavage de véhicule chez les particuliers,Nettoyer,true,false,false,false,"Il est demandé à tous les utilisateurs d’eau d’optimiser ses consommations et de les réduire au strict nécessaire, qu’elles soient destinées à un usage privé ou professionnel."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Remplissage et vidange des piscines à usage collectif,Remplir ou vidanger,false,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Remplissage et vidange des piscines à usage individuel,Remplir ou vidanger,true,true,false,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Travaux en cours d’eau,Travaux et activités en cours d'eau,true,true,true,true,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Vidange de plans d’eau,Remplir ou vidanger,true,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Alimentation des fontaines ornementales,Alimenter des fontaines et autres usages de loisirs,true,true,true,false,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction) Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Lavage de véhicules par des professionnels ou en station de lavage,Nettoyer,true,true,true,false,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Manoeuvres hydrauliques,Travaux et activités en cours d'eau,true,true,true,true,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,"Nettoyage des voiries, trottoirs, terrasses, façades, toitures et autres surfaces imperméabilisées",Nettoyer,true,true,true,true,"Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Potences agricoles,Prélever,true,true,true,true,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Pratique de la pêche,Travaux et activités en cours d'eau,true,true,false,false,Pas de restrictions.
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Prélèvements directs en cours d'eau pour des usages domestiques,Prélever,true,true,true,true,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Agly aval,SUP,66,vigilance,38102,DDTM-SER-2026-254-0001,Remplissage des plans d'eau,Remplir ou vidanger,true,true,true,true,"Incitation des particuliers et des professionnels à économiser l’eau. (Sensibilisation mais pas de restriction)
+Nous vous conseillons tout de même de suivre les eco-gestes ci-dessous. 
+
+Par anticipation, il est demandé à tous les utilisateurs d’eau d’optimiser leurs consommations, qu’elles soient destinées à un usage privé ou professionnel, et d’éviter le gaspillage."
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,Abreuvement des animaux,Abreuver,true,false,false,true,Pas de limitation sauf arrêté spécifique.
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,Alimentation des fontaines publiques et privées d’ornement,Alimenter des fontaines et autres usages de loisirs,true,true,true,true,"L'alimentation des fontaines publiques et privées en circuit ouvert est interdite, dans la mesure où cela est techniquement possible."
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,Arrosage des espaces verts,Arroser,true,true,true,true,Interdit entre 11h et 18h
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,Arrosage des golfs (Conformément à l'accord cadre golf et environnement 2019-2024),Arroser,false,true,true,false,"Interdiction d’arroser les terrains de golf de 8 heures à 20 heures de façon à diminuer la consommation d’eau sur le volume hebdomadaire de 15% à 30%.
+Un registre de prélèvement devra être rempli hebdomadairement pour l’irrigation"
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,Arrosage des jardins potagers,Arroser,true,true,true,true,Interdiction de 11h à 18h.
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,"Arrosage des pelouses, massifs fleuris",Arroser,true,true,true,true,Interdiction de 11h à 18h.
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,Arrosage des terrains de sport,Arroser,false,true,true,false,Interdiction de 11h à 18h.
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,ICPE soumises à un APC relatif à la sécheresse,ICPE,false,true,false,false,Pour les ICPE disposant d’un arrêté de prescriptions particulières : se référer aux dispositions spécifiques relatives à la gestion de la ressource en eau prévues dans leurs autorisations administratives.
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,Irrigation depuis des retenues de stockage déconnectées de la ressource en eau ,Irriguer,false,false,false,true,"Irrigation autorisée
+Les agriculteurs sont invités à ne pas irriguer le dimanche de 10h à 18h."
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,Irrigation des cultures par système d’irrigation localisée,Irriguer,false,false,false,true,Les agriculteurs sont invités à ne pas irriguer le dimanche de 10h à 18h.
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,Lavage de véhicules chez les particuliers,Nettoyer,true,false,false,false,Interdit à titre privé à domicile.
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,Lavage de véhicules par des professionnels,Nettoyer,true,true,true,true,Autorisé sur les pistes équipées de haute-pression ou équipées de système de recyclage (minimum 70 % d’eau recyclée) ou portique programmé ÉCO sur ouverture partielle
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,"Nettoyage des façades, toitures, trottoirs et autres surfaces imperméabilisées",Nettoyer,true,true,true,true,Interdit sauf si réalisé par une collectivité ou une entreprise de nettoyage professionnel.
+Aisne Amont souterraine,SOU,02,alerte,37879,ENV/PE/2026/046,Prélèvements pour l’alimentation des canaux,Prélever,false,false,true,false,"Diminution des prélèvements destinés aux canaux pour assurer au moins la stabilité durable des berges et autres structures.
+Pour les prises d’eau disposant d’un règlement d’eau, s’y référer pour les dispositions 
