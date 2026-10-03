@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-03T16:48:00Z",
+ "generatedAt": "2026-10-03T17:00:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 61,
+  "ok": 62,
   "late": 0,
   "error": 0,
   "not_run": 0,
-  "unknown": 1
+  "unknown": 0
  },
  "global": "ok",
  "pipelines": [
@@ -1434,7 +1434,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-03T15:13:02Z"
+     "lastChange": "2026-10-03T16:59:31Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1478,7 +1478,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-03T15:13:11Z"
+     "lastChange": "2026-10-03T16:59:31Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -1516,8 +1516,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37132392139"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 2
    },
    "status": "ok",
@@ -1655,7 +1655,8 @@
    "nextRun": "2026-10-08T06:50:00Z",
    "files": [
     {
-     "path": "data/spain-crops/index.json"
+     "path": "data/spain-crops/index.json",
+     "lastChange": "2026-10-03T17:00:13Z"
     },
     {
      "path": "data/spain-crops"
@@ -1665,9 +1666,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-03T16:59:58Z",
+    "durationSec": 26,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37138895083"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
