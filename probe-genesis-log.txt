@@ -1,0 +1,177 @@
+## find Ernte Feldfrüchte Bundesländer 200
+## find Ernteerträge Getreide Bundesland 200
+## find Kaufwerte landwirtschaftliche Grundstücke 200
+## find Pachtpreise landwirtschaftliche 200
+## find Pachtentgelte Landwirtschaft 200
+## find Viehbestand Bundesland 200
+   41141-0104 | Landwirtschaftliche Betriebe mit Viehhaltung, Viehbestand: Bundesländer, Stichtag, Tierarten | 
+   41141-0118 | Landwirtschaftliche Betriebe mit Viehhaltung, Viehbestand, Landwirtschaftlich genutzte Fläche: Bundesländer, S | 
+   41311-0010 | Gehaltene Tiere: Bundesländer, Jahre (bis 2010), Tierarten | 
+   41311-0011 | Betriebe: Bundesländer, Jahre (bis 2010), Tierarten | 
+   41311-0012 | Gehaltene Tiere: Bundesländer, Stichmonat (bis 11/2010), Tierarten | 
+## find Milcherzeugung Bundesland 200
+## find Schweinebestand 200
+## find Rinderbestand 200
+## catalogue 41241* 200
+   41241-0001 | Anbaufläche (Feldfrüchte und Grünland): Deutschland, Jahre (bis 2009), Fruchtarten | 1950 - 2009
+   41241-0002 | Erntemenge (Feldfrüchte und Grünland): Deutschland, Jahre (bis 2009), Fruchtarten | 1950 - 2009
+   41241-0003 | Ertrag je Hektar (Feldfrüchte und Grünland): Deutschland, Jahre (bis 2009), Fruchtarten | 1950 - 2009
+   41241-0004 | Landwirtschaftlich genutzte Fläche (Feldfrüchte und Grünland): Deutschland, Jahre (bis 2009), Kulturarten | 1950 - 2009
+   41241-0005 | Anbaufläche, Erntemenge, Ertrag je Hektar (Feldfrüchte und Grünland): Deutschland, Jahre, Fruchtarten | 2010 - 2026
+   41241-0006 | Erntemenge von Raufutter: Deutschland, Jahre, Fruchtarten, Verwendungszweck | 2010 - 2025
+   41241-0010 | Anbaufläche, Erntemenge, Ertrag je Hektar (Feldfrüchte und Grünland): Bundesländer, Jahre, Fruchtarten | 2010 - 2026
+   41241-0011 | Erntemenge von Raufutter: Bundesländer, Jahre, Fruchtarten, Verwendungszweck | 2010 - 2025
+## catalogue 41242* 200
+## catalogue 41261* 200
+   41261-0001 | Holzeinschlag: Deutschland, Jahre, Holzartengruppen | 1998 - 2025
+   41261-0002 | Holzeinschlag: Deutschland, Jahre, Holzsorten, Holzartengruppen, Waldeigentumsarten | 2006 - 2025
+   41261-0003 | Schadholzeinschlag: Deutschland, Jahre, Einschlagsursache, Holzartengruppen, Waldeigentumsarten | 2006 - 2025
+   41261-0004 | Aufarbeitungsrückstände: Deutschland, Jahre, Holzartengruppen | 2014 - 2025
+   41261-0005 | Holzeinschlag: Deutschland, Jahre, Stammholzarten (Buche), Waldeigentumsarten | 2014 - 2025
+   41261-0010 | Holzeinschlag: Bundesländer, Jahre, Holzartengruppen | 1998 - 2025
+   41261-0011 | Holzeinschlag: Bundesländer, Jahre, Holzsorten, Holzartengruppen, Waldeigentumsarten | 2006 - 2025
+   41261-0012 | Schadholzeinschlag: Bundesländer, Jahre, Einschlagsursache, Holzartengruppen, Waldeigentumsarten | 2006 - 2025
+   41261-0013 | Aufarbeitungsrückstände: Bundesländer, Jahre, Holzartengruppen | 2014 - 2025
+   41261-0014 | Holzeinschlag: Bundesländer, Jahre, Stammholzarten (Buche), Waldeigentumsarten | 2014 - 2025
+## catalogue 61511* 200
+   61511-0001 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Deutschland, Quartale, Art d | 1. Quartal 2021 - 1. Quartal 2026
+   61511-0010 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre, Art der  | 2021 - 2025
+   61511-0011 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre, Gemeinde | 2021 - 2025
+   61511-0012 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre, Grundstü | 2021 - 2025
+   61511-0013 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre, Preiskla | 2021 - 2025
+   61511-0014 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre, Gemeinde | 2021 - 2025
+   61511-0015 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre, Grundstü | 2021 - 2025
+   61511-0016 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre, Preiskla | 2021 - 2025
+   61511-0017 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre, Gemeinde | 2010 - 2025
+   61511-0018 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre, Gemeinde | 2021 - 2025
+   61511-0050 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Jahre, Art der | 2021 - 2025
+   61511-0051 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Jahre (bis 202 | 2021 - 2022
+   61511-0052 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Jahre, Grundst | 2021 - 2025
+   61511-0053 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Jahre, Preiskl | 2021 - 2025
+   61511-0054 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Jahre (bis 202 | 2021 - 2022
+   61511-0055 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Jahre, Grundst | 2021 - 2025
+   61511-0056 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Jahre, Preiskl | 2021 - 2025
+   61511-0057 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Jahre (bis 202 | 2021 - 2022
+   61511-0058 | Kauffälle, Veräußerte Fläche, Kaufsumme, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Jahre (bis 202 | 2021 - 2022
+   61511-0100 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Deutschland, Quartale (bis 2020), Baula | 1. Quartal 2000 - 4. Quartal 2020
+   61511-0101 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Deutschland, Quartale (bis 2020), Baula | 1. Quartal 2000 - 4. Quartal 2020
+   61511-0102 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre (bis 2020), Baulanda | 1992 - 2020
+   61511-0103 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre (bis 2020), Baulanda | 1992 - 2020
+   61511-0104 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre (bis 2020), Baulanda | 2010 - 2020
+   61511-0105 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre (bis 2020), Baulanda | 2010 - 2020
+   61511-0106 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre (bis 2020), Baulanda | 2010 - 2020
+   61511-0107 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre (bis 2020), Baulanda | 2010 - 2020
+   61511-0108 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Deutschland, Jahre (bis 2020), Baulanda | 2010 - 2020
+   61511-0109 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Quartale (bis 2020), Baul | 1. Quartal 2010 - 4. Quartal 2020
+   61511-0110 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Quartale (bis 2020), Baul | 1. Quartal 2010 - 4. Quartal 2020
+   61511-0111 | Kauffälle, Veräußerte Fläche, Durchschnittlicher Kaufwert für Bauland: Bundesländer, Jahre (bis 2020), Bauland | 2010 - 2020
+## catalogue 61521* 200
+   61521-0001 | Verkäufe von landwirtschaftlichen Grundstücken: Deutschland, Jahre, Bodenarten, Größenklassen der veräußerten  | 2021 - 2025
+   61521-0010 | Verkäufe von landwirtschaftlichen Grundstücken: Bundesländer, Jahre, Bodenarten, Größenklassen der veräußerten | 2021 - 2025
+   61521-0020 | Verkäufe von landwirtschaftlichen Grundstücken: Regierungsbezirke, Jahre, Bodenarten, Größenklassen der veräuß | 2021 - 2025
+   61521-0100 | Durchschnittlicher Kaufwert für landwirtschaftliche Grundstücke: Deutschland, Jahre (bis 2020), Größenklassen  | 1991 - 2020
+## catalogue 41311* 200
+   41311-0001 | Gehaltene Tiere: Deutschland, Jahre (bis 2010), Tierarten | 1950 - 2010
+   41311-0002 | Betriebe: Deutschland, Jahre (bis 2010), Tierarten | 1950 - 2010
+   41311-0003 | Gehaltene Tiere: Deutschland, Stichmonat (bis 11/2010), Tierarten | 12/1973 - 11/2010
+   41311-0010 | Gehaltene Tiere: Bundesländer, Jahre (bis 2010), Tierarten | 1950 - 2010
+   41311-0011 | Betriebe: Bundesländer, Jahre (bis 2010), Tierarten | 1950 - 2010
+   41311-0012 | Gehaltene Tiere: Bundesländer, Stichmonat (bis 11/2010), Tierarten | 12/1973 - 11/2010
+## catalogue 41312* 200
+   41312-0001 | Haltungen mit Rindern: Deutschland, Stichmonat, Rinderkategorien | 05/2010 - 05/2026
+   41312-0002 | Haltungen mit Rindern: Deutschland, Stichmonat, Rinderrassen | 05/2010 - 05/2026
+   41312-0003 | Haltungen mit Rindern: Deutschland, Stichmonat, Bestandsgrößenklassen | 05/2010 - 05/2026
+   41312-0004 | Haltungen mit Milchkühen: Deutschland, Stichmonat, Bestandsgrößenklassen | 05/2010 - 05/2026
+   41312-0005 | Haltungen mit Mutter-, Ammen- und Mastkühen: Deutschland, Stichmonat, Bestandsgrößenklassen | 05/2010 - 05/2026
+   41312-0006 | Haltungen mit Kälbern und Jungrindern: Deutschland, Stichmonat, Bestandsgrößenklassen | 05/2010 - 05/2026
+   41312-0007 | Haltungen mit Bullen und Ochsen: Deutschland, Stichmonat, Bestandsgrößenklassen | 05/2010 - 05/2026
+   41312-0010 | Haltungen mit Rindern: Bundesländer, Stichmonat, Rinderkategorien | 05/2010 - 05/2026
+   41312-0011 | Haltungen mit Rindern: Bundesländer, Stichmonat, Rinderrassen | 05/2010 - 05/2026
+   41312-0012 | Haltungen mit Rindern: Bundesländer, Stichmonat, Bestandsgrößenklassen | 05/2010 - 05/2026
+   41312-0013 | Haltungen mit Milchkühen: Bundesländer, Stichmonat, Bestandsgrößenklassen | 05/2010 - 05/2026
+   41312-0014 | Haltungen mit Mutter-, Ammen- und Mastkühen: Bundesländer, Stichmonat, Bestandsgrößenklassen | 05/2010 - 05/2026
+   41312-0015 | Haltungen mit Kälbern und Jungrindern: Bundesländer, Stichmonat, Bestandsgrößenklassen | 05/2010 - 05/2026
+   41312-0016 | Haltungen mit Bullen und Ochsen: Bundesländer, Stichmonat, Bestandsgrößenklassen | 05/2010 - 05/2026
+## catalogue 41141* 200
+   41141-0001 | Landwirtschaftliche Betriebe, Fläche: Deutschland, Jahre, Bodennutzungsarten | 2010 - 2023
+   41141-0002 | Landwirtschaftliche Betriebe, Fläche: Deutschland, Jahre, Bodennutzungsarten, Größenklassen der landwirtschaft | 2010 - 2023
+   41141-0003 | Landwirtschaftliche Betriebe mit Ackerland, Fläche: Deutschland, Jahre, Ackerkulturen, Größenklassen des Acker | 2010 - 2023
+   41141-0004 | Landwirtschaftliche Betriebe mit Viehhaltung, Viehbestand: Deutschland, Stichtag, Tierarten | 01.03.2010 - 01.03.2023
+   41141-0005 | Landwirtschaftliche Betriebe mit ökologischem Landbau, Landwirtschaftlich genutzte Fläche (LF): Deutschland, J | 2010 - 2023
+   41141-0006 | Landwirtschaftliche Betriebe mit ökologischem Landbau, Landwirtschaftlich genutzte Fläche (LF): Deutschland, J | 2010 - 2023
+   41141-0007 | Landwirtschaftliche Betriebe mit ökologischem Landbau, Fläche, Ökologisch bewirtschaftete Fläche: Deutschland, | 2020 - 2023
+   41141-0008 | Landwirtschaftliche Betriebe mit ökologischem Landbau, Tiere in Betrieben mit ökologischem Landbau, Tiere in ö | 01.03.2010 - 01.03.2023
+   41141-0009 | Landwirtschaftliche Betriebe, Landwirtsch. genutzte Fläche, Fläche im jew. Eigentumsverhältnis: Deutschland, J | 2010 - 2023
+   41141-0010 | Landwirtschaftliche Betriebe mit gepachteten Flächen, Pachtentgelt: Deutschland, Jahre, Bodennutzungsarten, Re | 2010 - 2023
+   41141-0011 | Landwirtschaftliche Betriebe, Fläche: Deutschland, Jahre, Bodennutzungsarten, Rechtsformen, Größenklassen der  | 2010 - 2023
+   41141-0012 | Landwirtschaftliche Betriebe, Tiere: Deutschland, Stichtag, Tierarten, Rechtsformen, Größenklassen der landwir | 01.03.2010 - 01.03.2023
+   41141-0013 | Landwirtschaftliche Betriebe, Landwirtschaftlich genutzte Fläche, Arbeitskräfte, Arbeitsleistung: Deutschland, | 2010 - 2023
+   41141-0014 | Landwirtschaftliche Betriebe: Deutschland, Jahre, Größenklassen des Standardoutputs, Rechtsformen, Betriebswir | 2010 - 2023
+   41141-0015 | Landwirtschaftliche Betriebe mit Bewässerung, Bewässerte Fläche: Deutschland, Jahre, Größenklassen der landwir | 2010 - 2023
+   41141-0016 | Landwirtschaftliche Betriebe mit Dauerkulturen, Dauerkulturfläche: Deutschland, Jahre, Dauerkulturarten, Größe | 2020 - 2023
+   41141-0017 | Landwirtschaftliche Betriebe mit Dauergrünland, Dauergrünlandfläche: Deutschland, Jahre, Dauergrünlandarten, G | 2020 - 2023
+   41141-0018 | Landwirtschaftliche Betriebe mit Viehhaltung, Viehbestand, Landwirtschaftlich genutzte Fläche: Deutschland, St | 01.03.2020 - 01.03.2023
+   41141-0019 | Landwirtschaftliche Betriebe mit ökologischem Landbau, LF: Deutschland, Jahre, Umfang der ökologischen Bewirts | 2020 - 2023
+   41141-0020 | Landwirtschaftliche Betriebe mit ökologischem Landbau, LF: Deutschland, Jahre, Umfang der ökologischen Bewirts | 2020 - 2023
+   41141-0021 | Landwirtschaftliche Betriebe mit ökologischer Viehhaltung: Deutschland, Stichtag, Größenklassen der LF | 01.03.2020 - 01.03.2023
+   41141-0022 | Landwirtschaftliche Betriebe mit ökologischer Viehhaltung: Deutschland, Stichtag, Betriebswirtschaftliche Ausr | 01.03.2020 - 01.03.2023
+   41141-0023 | Landwirtschaftliche Betriebe mit ökologischem Landbau und Pacht, Gepachtete LF, Pachtentgelt: Deutschland, Jah | 2020 - 2023
+   41141-0024 | Landwirtschaftliche Betriebe mit ökologischem Landbau und Pacht, Gepachtete LF, Pachtentgelt: Deutschland, Jah | 2020 - 2023
+   41141-0025 | Landwirtschaftliche Betriebe mit ökologischem Landbau, LF, Arbeitskräfte, Arbeitsleistung: Deutschland, Jahre, | 2020 - 2023
+   41141-0026 | Landw. Betriebe mit Angabe des Jahrespachtentgeltes, Gepachtete LF: Deutschland, Jahre, Bodennutzungsarten, Re | 2020 - 2023
+   41141-0027 | Arbeitskräfte: Deutschland, Jahre, Geschlecht, Altersgruppen, Rechtsformen, Art der Arbeitskräfte, Beschäftigu | 2020 - 2023
+   41141-0101 | Landwirtschaftliche Betriebe, Fläche: Bundesländer, Jahre, Bodennutzungsarten | 2010 - 2023
+   41141-0102 | Landwirtschaftliche Betriebe, Fläche: Bundesländer, Jahre, Bodennutzungsarten, Größenklassen der landwirtschaf | 2010 - 2023
+   41141-0103 | Landwirtschaftliche Betriebe mit Ackerland, Fläche: Bundesländer, Jahre, Ackerkulturen, Größenklassen des Acke | 2010 - 2023
+   41141-0104 | Landwirtschaftliche Betriebe mit Viehhaltung, Viehbestand: Bundesländer, Stichtag, Tierarten | 01.03.2010 - 01.03.2023
+   41141-0105 | Landwirtschaftliche Betriebe mit ökologischem Landbau, Landwirtschaftlich genutzte Fläche: Bundesländer, Jahre | 2010 - 2023
+   41141-0106 | Landwirtschaftliche Betriebe mit ökologischem Landbau, Landwirtschaftlich genutzte Fläche (LF): Bundesländer,  | 2010 - 2023
+   41141-0107 | Landwirtschaftliche Betriebe mit ökologischem Landbau, Fläche, Ökologisch bewirtschaftete Fläche: Bundesländer | 2020 - 2023
+   41141-0108 | Landwirtschaftliche Betriebe mit ökologischem Landbau, Tiere in Betrieben mit ökologischem Landbau, Tiere in ö | 01.03.2010 - 01.03.2023
+   41141-0109 | Landwirtschaftliche Betriebe, Landwirtsch. genutzte Fläche, Fläche im jew. Eigentumsverhältnis: Bundesländer,  | 2010 - 2023
+   41141-0110 | Landwirtschaftliche Betriebe mit gepachteten Flächen, Pachtentgelt: Bundesländer, Jahre, Bodennutzungsarten, R | 2010 - 2023
+   41141-0111 | Landwirtschaftliche Betriebe, Fläche: Bundesländer, Jahre, Bodennutzungsarten, Rechtsformen, Größenklassen der | 2010 - 2023
+   41141-0112 | Landwirtschaftliche Betriebe, Tiere: Bundesländer, Stichtag, Tierarten, Rechtsformen, Größenklassen der landwi | 01.03.2010 - 01.03.2023
+   41141-0113 | Landwirtschaftliche Betriebe, Landwirtschaftlich genutzte Fläche, Arbeitskräfte, Arbeitsleistung: Bundesländer | 2010 - 2023
+   41141-0114 | Landwirtschaftliche Betriebe: Bundesländer, Jahre, Größenklassen des Standardoutputs, Rechtsformen, Betriebswi | 2010 - 2023
+   41141-0115 | Landwirtschaftliche Betriebe mit Bewässerung, Bewässerte Fläche: Bundesländer, Jahre, Größenklassen der landwi | 2010 - 2023
+   41141-0116 | Landwirtschaftliche Betriebe mit Dauerkulturen, Dauerkulturfläche: Bundesländer, Jahre, Dauerkulturarten, Größ | 2020 - 2023
+   41141-0117 | Landwirtschaftliche Betriebe mit Dauergrünland, Dauergrünlandfläche: Bundesländer, Jahre, Dauergrünlandarten,  | 2020 - 2023
+   41141-0118 | Landwirtschaftliche Betriebe mit Viehhaltung, Viehbestand, Landwirtschaftlich genutzte Fläche: Bundesländer, S | 01.03.2020 - 01.03.2023
+   41141-0119 | Landwirtschaftliche Betriebe mit ökologischem Landbau, LF: Bundesländer, Jahre, Umfang der ökologischen Bewirt | 2020 - 2023
+   41141-0120 | Landwirtschaftliche Betriebe mit ökologischem Landbau, LF: Bundesländer, Jahre, Umfang der ökologischen Bewirt | 2020 - 2023
+   41141-0121 | Landwirtschaftliche Betriebe mit ökologischer Viehhaltung: Bundesländer, Stichtag, Größenklassen der LF | 01.03.2020 - 01.03.2023
+   41141-0122 | Landwirtschaftliche Betriebe mit ökologischer Viehhaltung: Bundesländer, Stichtag, Betriebswirtschaftliche Aus | 01.03.2020 - 01.03.2023
+   41141-0123 | Landwirtschaftliche Betriebe mit ökologischem Landbau und Pacht, Gepachtete LF, Pachtentgelt: Bundesländer, Ja | 2020 - 2023
+   41141-0124 | Landwirtschaftliche Betriebe mit ökologischem Landbau und Pacht, Gepachtete LF, Pachtentgelt: Bundesländer, Ja | 2020 - 2023
+   41141-0125 | Landwirtschaftliche Betriebe mit ökologischem Landbau, LF, Arbeitskräfte, Arbeitsleistung: Bundesländer, Jahre | 2020 - 2023
+   41141-0126 | Landw. Betriebe mit Angabe des Jahrespachtentgeltes, Gepachtete LF: Bundesländer, Jahre, Bodennutzungsarten, R | 2020 - 2023
+   41141-0127 | Arbeitskräfte: Bundesländer, Jahre, Geschlecht, Altersgruppen, Rechtsformen, Art der Arbeitskräfte, Beschäftig | 2020 - 2023
+## catalogue 41151* 200
+## tablefile 41241-0003 {'startyear': '2015'} 200 871
+lines 1
+{"Ident":{"Service":"data","Method":"tablefile"},"Status":{"Code":7015,"Content":"Für das Strukturelement JAHR\n existieren keine Werte zu den ausgewählten Ausprägungen.","Type":"Information"},"Parameter":{"username":"********************","password":"********************","name":"41241-0003","area":"Öffentlich","structureinformation":"false","compress":"false","transpose":"false","contents":"","startyear":"2015","en
+## tablefile 41241-0004 {'startyear': '2015'} 200 871
+lines 1
+{"Ident":{"Service":"data","Method":"tablefile"},"Status":{"Code":7015,"Content":"Für das Strukturelement JAHR\n existieren keine Werte zu den ausgewählten Ausprägungen.","Type":"Information"},"Parameter":{"username":"********************","password":"********************","name":"41241-0004","area":"Öffentlich","structureinformation":"false","compress":"false","transpose":"false","contents":"","startyear":"2015","en
+## tablefile 41241-0006 {'startyear': '2015'} 200 1806
+lines 133
+﻿statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_attribute_code;1_variable_attribute_label;2_variable_code;2_variable_label;2_variable_attribute_code;2_variable_attribute_label;3_variable_code;3_variable_label;3_variable_attribute_code;3_variable_attribute_label;value;value_unit;value_variable_code;value_variable_label
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2023;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA05;Fruchtarten;FRUART02LG;Leguminosen zur Ganzpflanzenernte (z.B. Klee);VWDZW4;Verwendungszweck;VWD-HEU;Heu;181000;t;ERN012;Erntemenge von Raufutter
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA05;Fruchtarten;FRUART02LG;Leguminosen zur Ganzpflanzenernte (z.B. Klee);VWDZW4;Verwendungszweck;VWD-FFU-WDE;Frischfutter / Weide;244000;t;ERN012;Erntemenge von Raufutter
+41241;Ernte-u.Betriebsbericht: Feldfrüchte und Grünland;JAHR;Jahr;2018;DINSG;Deutschland insgesamt;DG;Deutschland;FRUA05;Fruchtarten;FRUART02LG;Leguminosen zur Ganzpflanzenernte (z.B. Klee);VWDZW4;Verwendungszweck;VWD-SIL;Silage;1364000;t;ERN012;Erntemenge von Raufutter
+## tablefile 61511-0001 {'startyear': '2015'} 200 31985
+lines 4033
+﻿statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_attribute_code;1_variable_attribute_label;2_variable_code;2_variable_label;2_variable_attribute_code;2_variable_attribute_label;3_variable_code;3_variable_label;3_variable_attribute_code;3_variable_attribute_label;4_variable_code;4_variable_label;4_variable_attribute_code;4_variable_attribute_label;value;value_unit
+61511;Statistik der Kaufwerte für Bauland;JAHR;Jahr;2025;QUARTG;Quartale;QUART2;2. Quartal;DINSG;Deutschland insgesamt;DG;Deutschland;BAUFL1;Art der Baufläche;BAUFL-GWRB;Gewerbliche Baufläche;GRSAT1;Art des Grundstücks;BAULAND06;Sonstiges Bauland;26582;Tsd. EUR;KAU003;Kaufsumme
+61511;Statistik der Kaufwerte für Bauland;JAHR;Jahr;2025;QUARTG;Quartale;QUART2;2. Quartal;DINSG;Deutschland insgesamt;DG;Deutschland;BAUFL1;Art der Baufläche;BAUFL-GWRB;Gewerbliche Baufläche;GRSAT1;Art des Grundstücks;BAULAND06;Sonstiges Bauland;114;Anzahl;KAU002;Kauffälle
+61511;Statistik der Kaufwerte für Bauland;JAHR;Jahr;2025;QUARTG;Quartale;QUART2;2. Quartal;DINSG;Deutschland insgesamt;DG;Deutschland;BAUFL1;Art der Baufläche;BAUFL-GWRB;Gewerbliche Baufläche;GRSAT1;Art des Grundstücks;BAULAND06;Sonstiges Bauland;579;1000 qm;FLC023;Veräußerte Fläche
+## tablefile 61511-0002 {'startyear': '2015'} 200 837
+lines 1
+{"Ident":{"Service":"data","Method":"tablefile"},"Status":{"Code":104,"Content":"Es gibt keine Objekte zum angegebenen Selektionskriterium","Type":"Information"},"Parameter":{"username":"********************","password":"********************","name":"61511-0002","area":"Öffentlich","structureinformation":"false","compress":"false","transpose":"false","contents":"","startyear":"2015","endyear":"","timeslices":"","regi
+## tablefile 61521-0001 {'startyear': '2015'} 200 7009
+lines 901
+﻿statistics_code;statistics_label;time_code;time_label;time;1_variable_code;1_variable_label;1_variable_attribute_code;1_variable_attribute_label;2_variable_code;2_variable_label;2_variable_attribute_code;2_variable_attribute_label;3_variable_code;3_variable_label;3_variable_attribute_code;3_variable_attribute_label;value;value_unit;value_variable_code;value_variable_label
+61521;Kaufwerte für landwirtschaftliche Grundstücke;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BODAT1;Bodenarten;BOD-LF;Landwirtschaftliche Fläche;FLNGK1;Größenklassen der veräußerten Fläche;FLCHA020B050;2 bis unter 5 ha;x;100;MZL002;Durchschn.Ertragsmesszahl je ha veräußerter Fläche
+61521;Kaufwerte für landwirtschaftliche Grundstücke;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BODAT1;Bodenarten;BOD-LF;Landwirtschaftliche Fläche;FLNGK1;Größenklassen der veräußerten Fläche;FLCHA020B050;2 bis unter 5 ha;527840;Tsd. EUR;KAU003;Kaufsumme
+61521;Kaufwerte für landwirtschaftliche Grundstücke;JAHR;Jahr;2021;DINSG;Deutschland insgesamt;DG;Deutschland;BODAT1;Bodenarten;BOD-LF;Landwirtschaftliche Fläche;FLNGK1;Größenklassen der veräußerten Fläche;FLCHA020B050;2 bis unter 5 ha;3,13;ha;FLC008;Durchschnittliche Fläche je Veräußerungsfall
