@@ -782,7 +782,7 @@
   global.DehesaShared = {
     /* Suscripción del blog por correo. Se activa rellenando las dos cosas: action (https del formulario del servicio) y provider (nombre y país
        del servicio que guarda los correos). Con ellas el blog muestra el formulario y el aviso legal añade el párrafo de privacidad. */
-    newsletter: { action: '', provider: '' },
+    newsletter: { action: 'https://dehesaindex.substack.com/api/v1/free?nojs=true', provider: 'Substack (Substack Inc., Estados Unidos)' },
     LANGS: LANGS,
     getLang: function () { return lang; },
     getTheme: function () { return theme; },
