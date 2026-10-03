@@ -204,6 +204,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-de-livestock.mjs
+      - name: EE. UU., ganado y heno locales (cifras de USDA AMS, selectores, 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-us-local.mjs
       - name: Informe E2E
         if: always()
         uses: actions/upload-artifact@v6

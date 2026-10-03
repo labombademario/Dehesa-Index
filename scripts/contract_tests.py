@@ -1559,6 +1559,109 @@ def germany_livestock(doc, errs, warns, stats):
     stats["germany-livestock puntos"] = n
 
 
+def _ul_reg():
+    import json as _j, pathlib as _p
+    return _j.loads((_p.Path(__file__).resolve().parent / "us-local-registry.json").read_text(encoding="utf-8"))
+UL_UNITS = {"Per Cwt": (20, 1500), "Per Unit": (100, 20000)}   # rango amplio: detecta errores de unidad, no opina sobre el mercado
+UL_HAY = {"Per Ton": (30, 1500), "Per Bale": (0.5, 400), "Per Bundle": (5, 2000), "Per Point/Ton": (0.01, 50)}
+
+
+def _ul_common(doc, kind, errs):
+    import datetime as _d
+    reg = _ul_reg()
+    rep = next((r for r in reg["reports"] if r["kind"] == kind and r["state"] == doc["state"]), None)
+    if rep is None: errs.append("us-local %s: estado %s sin informe en el registro" % (kind, doc["state"])); return False
+    if doc["source"]["reportId"] != rep["reportId"]: errs.append("us-local %s/%s: el informe %s no es el del registro (%s)" % (kind, doc["state"], doc["source"]["reportId"], rep["reportId"])); return False
+    try: d = _d.date.fromisoformat(doc["latest"]["date"])
+    except ValueError: errs.append("us-local %s/%s: fecha invalida %r" % (kind, doc["state"], doc["latest"]["date"])); return False
+    if d > _d.date.today() + _d.timedelta(days=7): errs.append("us-local %s/%s: fecha del informe en el futuro (%s)" % (kind, doc["state"], d)); return False
+    return True
+
+
+def _ul_series(tag, pts, errs, width):
+    last = None
+    for p in pts:
+        if len(p) != width or not isinstance(p[0], str) or not re.match(r"^\d{4}-\d{2}-\d{2}$", p[0]): errs.append("us-local %s: punto invalido %r" % (tag, p)); return False
+        if last is not None and p[0] <= last: errs.append("us-local %s: fechas no crecientes (%s tras %s)" % (tag, p[0], last)); return False
+        last = p[0]
+    return True
+
+
+def us_local_cattle(doc, errs, warns, stats):
+    """Ganado en subasta (resumen semanal USDA AMS): informe del registro, fecha no futura, filas con cabezas > 0 y precio minimo <= medio <= maximo en un rango plausible
+    por unidad, tramos de peso ordenados, historial = Clase|tramo con fechas crecientes, precio y peso plausibles, y la ultima semana del historial coincide con las filas de referencia."""
+    import datetime as _d
+    if not _ul_common(doc, "cattle", errs): return
+    st = doc["state"]; rows = doc["latest"]["rows"]; stats["us-local filas"] = stats.get("us-local filas", 0) + len(rows)
+    for r in rows:
+        com, cl, frame, grade, lot, unit, lo, hi, head, wt, pmn, pmx, p, x = r
+        if unit not in UL_UNITS: errs.append("us-local cattle/%s: unidad desconocida %r" % (st, unit)); return
+        if not isinstance(head, (int, float)) or head <= 0: errs.append("us-local cattle/%s %s %s: cabezas invalidas %r" % (st, com, cl, head)); return
+        if not all(isinstance(v, (int, float)) for v in (pmn, pmx, p)) or not (pmn - 0.01 <= p <= pmx + 0.01): errs.append("us-local cattle/%s %s %s: precio minimo/medio/maximo incoherente (%r %r %r)" % (st, com, cl, pmn, p, pmx)); return
+        a, b = UL_UNITS[unit]
+        if not (a <= p <= b) and not (com == "Slaughter Cattle" and p >= 20): errs.append("us-local cattle/%s %s %s: precio fuera de rango (%s %s)" % (st, com, cl, p, unit)); return
+        if lo is not None and hi is not None and not (lo < hi): errs.append("us-local cattle/%s %s: tramo de peso invertido (%s-%s)" % (st, cl, lo, hi)); return
+        if wt is not None and not (30 <= wt <= 2600): errs.append("us-local cattle/%s %s: peso medio fuera de rango (%s)" % (st, cl, wt)); return
+    ref = {}
+    for r in rows:
+        if r[0] == "Feeder Cattle" and r[2] == "Medium and Large" and r[3] == "1" and r[4] == "" and r[5] == "Per Cwt" and r[1] in ("Steers", "Heifers", "Bulls") and r[6] is not None:
+            a = ref.setdefault("%s|%d" % (r[1], int(r[6])), [0.0, 0.0]); a[0] += r[8] * r[12]; a[1] += r[8]
+    for k, a in ref.items():
+        h = doc["history"].get(k)
+        if not h or h[-1][0] != doc["latest"]["date"]: errs.append("us-local cattle/%s: la serie %s no tiene la ultima semana" % (st, k)); return
+        if abs(h[-1][1] - a[0] / a[1]) > 0.011 or h[-1][2] != round(a[1]): errs.append("us-local cattle/%s %s: la ultima semana del historial no coincide con las filas (%s vs %.2f)" % (st, k, h[-1][1], a[0] / a[1])); return
+    for k, pts in doc["history"].items():
+        m = re.match(r"^(Steers|Heifers|Bulls)\|(\d+)$", k)
+        if not m: errs.append("us-local cattle/%s: clave de serie desconocida %r" % (st, k)); return
+        if not _ul_series("cattle/%s/%s" % (st, k), pts, errs, 4): return
+        lo = int(m.group(2))
+        for p in pts:
+            if not (50 <= p[1] <= 1200) or p[2] <= 0 or (p[3] is not None and not (lo - 5 <= p[3] <= lo + 150)): errs.append("us-local cattle/%s/%s %s: punto fuera de rango %r" % (st, k, p[0], p[1:])); return
+        for q, p in zip(pts, pts[1:]):
+            if (_d.date.fromisoformat(p[0]) - _d.date.fromisoformat(q[0])).days <= 8 and q[1] > 0 and abs(p[1] / q[1] - 1) > 0.35: warns.append("us-local cattle/%s/%s %s: salto semanal de %.0f %%" % (st, k, p[0], (p[1] / q[1] - 1) * 100))
+    if not _ul_series("cattle/%s/receipts" % st, doc["receipts"], errs, 2): return
+    if any(not isinstance(p[1], (int, float)) or p[1] < 0 for p in doc["receipts"]): errs.append("us-local cattle/%s: recibos negativos" % st); return
+    if (_d.date.today() - _d.date.fromisoformat(doc["latest"]["date"])).days > 21: warns.append("us-local cattle/%s: el ultimo informe es del %s" % (st, doc["latest"]["date"]))
+    stats["us-local series"] = stats.get("us-local series", 0) + len(doc["history"])
+
+
+def us_local_hay(doc, errs, warns, stats):
+    """Heno directo (Direct Hay Report USDA AMS): informe del registro, filas con unidad conocida y precio minimo <= medio <= maximo en rango plausible, clave de serie = primeras 11 columnas,
+    fechas crecientes y la semana de cada fila coincide con el ultimo punto de su serie."""
+    import datetime as _d
+    if not _ul_common(doc, "hay", errs): return
+    st = doc["state"]; rows = doc["latest"]["rows"]; stats["us-local filas"] = stats.get("us-local filas", 0) + len(rows)
+    for r in rows:
+        cl, q, pk, unit, sale, fr, reg, use, crop, desc, org, qty, pmn, pmx, avg = r
+        if unit not in UL_HAY: errs.append("us-local hay/%s: unidad desconocida %r" % (st, unit)); return
+        a, b = UL_HAY[unit]
+        if not all(isinstance(v, (int, float)) for v in (pmn, pmx)) or not (0 < pmn <= pmx) or not (a <= pmn and pmx <= b): errs.append("us-local hay/%s %s %s: precio fuera de rango (%s-%s %s)" % (st, cl, q, pmn, pmx, unit)); return
+        if avg is not None and not (pmn - 0.01 <= avg <= pmx + 0.01): errs.append("us-local hay/%s %s %s: media fuera del rango (%s)" % (st, cl, q, avg)); return
+        if qty is not None and (not isinstance(qty, (int, float)) or qty < 0): errs.append("us-local hay/%s %s %s: cantidad invalida %r" % (st, cl, q, qty)); return
+        k = "|".join(r[:11]); h = doc["history"].get(k)
+        if not h or h[-1][0] != doc["latest"]["date"] or h[-1][1] != pmn or h[-1][2] != pmx: errs.append("us-local hay/%s: la serie de %s %s no coincide con la ultima semana" % (st, cl, q)); return
+    for k, pts in doc["history"].items():
+        if len(k.split("|")) != 11: errs.append("us-local hay/%s: clave de serie invalida %r" % (st, k)); return
+        if not _ul_series("hay/%s/%s" % (st, k), pts, errs, 5): return
+        if any(not (0 < p[1] <= p[2]) or (p[3] is not None and not (p[1] - 0.01 <= p[3] <= p[2] + 0.01)) for p in pts): errs.append("us-local hay/%s %s: minimo/medio/maximo incoherente" % (st, k)); return
+    if (_d.date.today() - _d.date.fromisoformat(doc["latest"]["date"])).days > 45: warns.append("us-local hay/%s: el ultimo informe es del %s" % (st, doc["latest"]["date"]))
+    stats["us-local series"] = stats.get("us-local series", 0) + len(doc["history"])
+
+
+def us_local_status(doc, errs, warns, stats):
+    """Estado de ingesta: un registro por informe del registro (sin repetidos), con su estado; un informe en error se avisa."""
+    reg = {(r["kind"], r["state"]): r["reportId"] for r in _ul_reg()["reports"]}
+    seen = set()
+    for r in doc["reports"]:
+        k = (r["kind"], r["state"])
+        if k in seen: errs.append("us-local status: informe repetido %s/%s" % k); return
+        seen.add(k)
+        if reg.get(k) != r["reportId"]: errs.append("us-local status: %s/%s no coincide con el registro" % k); return
+        if r["status"] in ("UNAVAILABLE", "AUTH_FAILURE", "ERROR", "EMPTY"): warns.append("us-local status: %s/%s en %s" % (k + (r["status"],)))
+    if seen != set(reg): errs.append("us-local status: faltan informes del registro (%s)" % sorted(set(reg) - seen)[:3])
+    stats["us-local informes"] = len(seen)
+
+
 def ers_cost_reference(doc, errs, warns, stats):
     """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""
     keys = set(doc["map"])

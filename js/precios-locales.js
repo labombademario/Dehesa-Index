@@ -362,7 +362,67 @@
     var t = tt(); sync(); root.innerHTML = '<p class="di-movers-hint">' + esc(t.loading) + '</p>';
     shard(ST.s, ST.c).then(function (doc) { render(doc); }).catch(function () { root.innerHTML = '<p class="di-info-api-notice">' + esc(tt().errLoad) + '</p>'; });
   }
+  /* ---------- pestañas Grano | Ganado | Heno (ganado y heno: js/us-local-markets.js, carga diferida) ---------- */
+  var TAB = (function () { var v = new URLSearchParams(location.search).get('t'); return v === 'cattle' || v === 'hay' ? v : 'grain'; })();
+  var TABS = {
+    es: { lbl: 'Tipo de precio local', grain: 'Grano', cattle: 'Ganado', hay: 'Heno',
+      cattleTitle: 'Precios locales del ganado en EE. UU.', cattleSub: 'Precio medio semanal del ganado en las subastas de cada estado (terneros de recría y cebo, reposición y sacrificio), según los resúmenes de USDA AMS Market News. Cifras tal como las publica el USDA.',
+      hayTitle: 'Precios locales del heno en EE. UU.', haySub: 'Precios de venta directa del heno (alfalfa, pastos y otros) por estado, según los Direct Hay Report de USDA AMS Market News. Cada especificación se muestra por separado.' },
+    en: { lbl: 'Type of local price', grain: 'Grain', cattle: 'Cattle', hay: 'Hay',
+      cattleTitle: 'Local cattle prices in the United States', cattleSub: 'Weekly average cattle prices at each state’s auctions (feeder, replacement and slaughter cattle), from USDA AMS Market News summaries. Figures as published by USDA.',
+      hayTitle: 'Local hay prices in the United States', haySub: 'Direct hay prices (alfalfa, grass and others) by state, from USDA AMS Market News Direct Hay Reports. Each specification is shown separately.' },
+    fr: { lbl: 'Type de prix local', grain: 'Grains', cattle: 'Bovins', hay: 'Foin',
+      cattleTitle: 'Prix locaux des bovins aux États-Unis', cattleSub: 'Prix moyen hebdomadaire des bovins dans les ventes de chaque État (engraissement, renouvellement et abattage), d’après les résumés USDA AMS Market News. Chiffres tels que publiés par l’USDA.',
+      hayTitle: 'Prix locaux du foin aux États-Unis', haySub: 'Prix de vente directe du foin (luzerne, graminées et autres) par État, d’après les Direct Hay Report de l’USDA AMS Market News. Chaque spécification est présentée séparément.' },
+    it: { lbl: 'Tipo di prezzo locale', grain: 'Cereali', cattle: 'Bovini', hay: 'Fieno',
+      cattleTitle: 'Prezzi locali dei bovini negli Stati Uniti', cattleSub: 'Prezzo medio settimanale dei bovini nelle aste di ogni Stato (da ingrasso, rimonta e macellazione), dai riepiloghi USDA AMS Market News. Cifre come pubblicate dall’USDA.',
+      hayTitle: 'Prezzi locali del fieno negli Stati Uniti', haySub: 'Prezzi di vendita diretta del fieno (erba medica, foraggere e altro) per Stato, dai Direct Hay Report di USDA AMS Market News. Ogni specifica è mostrata separatamente.' }
+  };
+  var INIT = (function () { var q = new URLSearchParams(location.search), o = {}; if (TAB !== 'grain') o[TAB] = (q.get('s') || '').toUpperCase(); return o; })();
+  var tabsEl = document.createElement('div'), extEl = document.createElement('div'), EXT = null;
+  tabsEl.id = 'pl-tabs'; extEl.id = 'pl-ext'; extEl.hidden = true;
+  root.parentNode.insertBefore(tabsEl, root); root.parentNode.insertBefore(extEl, root.nextSibling);
+  tabsEl.addEventListener('click', function (e) {
+    var b = e.target && e.target.closest ? e.target.closest('[data-pltab]') : null; if (!b) return;
+    var k = b.getAttribute('data-pltab'); if (k === TAB) return; TAB = k;
+    try { history.replaceState(null, '', TAB === 'grain' ? '?s=' + (ST.s || '') + '&c=' + (ST.c || '') : '?t=' + TAB + (extState() ? '&s=' + extState() : '')); } catch (x) {}
+    boot();
+  });
+  function extState() { return window.USLocal && TAB !== 'grain' ? window.USLocal.state(TAB) : null; }
+  function loadExt() {
+    if (EXT) return EXT;
+    return EXT = new Promise(function (ok, ko) {
+      if (window.USLocal) return ok();
+      var sc = document.createElement('script'); sc.src = sp('js/us-local-markets.js?v=20261003'); sc.onload = ok; sc.onerror = function () { EXT = null; ko(new Error('us-local')); }; document.head.appendChild(sc);
+    });
+  }
+  function helper() {
+    return {
+      esc: esc, nf: nf, get: function (p) { return fetch(sp('data/us-local/' + p)).then(function (r) { if (!r.ok) throw new Error(p); return r.json(); }); },
+      cite: function (id, o) { var c = ci(id, { period: o ? String(o) : '' }); return c ? '<div class="pp-cites">' + c + '</div>' : ''; },
+      chart: function (ser, o) { return window.DehesaChart ? window.DehesaChart.render({ series: ser, xMode: 'time', height: 230, yTitle: o.unit, legend: ser.length > 1, aria: o.aria, vFmt: o.vFmt, yFmt: o.yFmt }) : ''; }
+    };
+  }
+  function drawTabs() {
+    var x = TABS[lang()] || TABS.es;
+    tabsEl.innerHTML = '<div class="di-src-tabs" role="group" aria-label="' + esc(x.lbl) + '">' + ['grain', 'cattle', 'hay'].map(function (k) { return '<button type="button" class="di-src-tab" data-pltab="' + k + '" aria-pressed="' + (k === TAB) + '">' + esc(x[k]) + '</button>'; }).join('') + '</div>';
+  }
+  function bootExt() {
+    var x = TABS[lang()] || TABS.es, t = tt(), title = x[TAB + 'Title'], sub = x[TAB + 'Sub'];
+    document.getElementById('pl-h1').textContent = title; document.getElementById('pl-sub').textContent = sub; document.title = title + ' — Dehesa Index';
+    root.hidden = true; extEl.hidden = false; extEl.innerHTML = '<p class="di-movers-hint">' + esc(t.loading) + '</p>';
+    var want = TAB, st = INIT[want] || ''; INIT[want] = '';
+    loadExt().then(function () {
+      if (TAB !== want) return;
+      window.USLocal.onState(extEl, function (s) { try { history.replaceState(null, '', '?t=' + TAB + '&s=' + s); } catch (e) {} });
+      var u = window.USLocal.mount(extEl, want, lang(), helper(), st || null);
+      try { history.replaceState(null, '', '?t=' + want + '&s=' + (u && u.st || '')); } catch (e) {}
+    }).catch(function () { extEl.innerHTML = '<p class="di-info-api-notice">' + esc(t.errLoad) + '</p>'; });
+  }
   function boot() {
+    drawTabs();
+    if (TAB !== 'grain') { bootExt(); return; }
+    root.hidden = false; extEl.hidden = true;
     var t = tt(); document.getElementById('pl-h1').textContent = t.title; document.getElementById('pl-sub').textContent = t.sub; document.title = t.title + ' — Dehesa Index';
     if (!M) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.loading) + '</p>'; return; }
     if (!Object.keys(M.states).length) { root.innerHTML = '<p class="di-info-api-notice" role="status">' + esc(t.noManifest) + '</p>'; return; }

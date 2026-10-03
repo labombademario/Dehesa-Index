@@ -485,6 +485,12 @@
    [
     "crop_insurance_ca"
    ]
+  ],
+  "us-local/status.json": [
+   "us-local-status",
+   [
+    "us_local_status"
+   ]
   ]
  },
  "globs": {
@@ -536,6 +542,18 @@
    "us-cash-bids-shard",
    [
     "us_cashbids_shard"
+   ]
+  ],
+  "us-local/cattle-*.json": [
+   "us-local-cattle",
+   [
+    "us_local_cattle"
+   ]
+  ],
+  "us-local/hay-*.json": [
+   "us-local-hay",
+   [
+    "us_local_hay"
    ]
   ]
  },

@@ -1,0 +1,117 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "title": "Dehesa Index - EE. UU.: ganado en subasta por estado (resumen semanal USDA AMS)",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "kind",
+  "state",
+  "source",
+  "cols",
+  "headline",
+  "latest",
+  "receipts",
+  "history"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "kind": {
+   "enum": [
+    "cattle"
+   ]
+  },
+  "state": {
+   "type": "string",
+   "minLength": 2,
+   "maxLength": 2
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "reportId",
+    "reportTitle",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "usda_ams_mars"
+     ]
+    },
+    "reportId": {
+     "type": "integer"
+    },
+    "reportTitle": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "cols": {
+   "type": "array",
+   "minItems": 14
+  },
+  "headline": {
+   "type": "object"
+  },
+  "latest": {
+   "type": "object",
+   "required": [
+    "date",
+    "receipts",
+    "rows"
+   ],
+   "properties": {
+    "date": {
+     "type": "string",
+     "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "receipts": {
+     "type": "object"
+    },
+    "rows": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "type": "array",
+      "minItems": 14,
+      "maxItems": 14
+     }
+    }
+   }
+  },
+  "receipts": {
+   "type": "array",
+   "items": {
+    "type": "array",
+    "minItems": 2,
+    "maxItems": 2
+   }
+  },
+  "history": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "array",
+    "minItems": 1,
+    "items": {
+     "type": "array",
+     "minItems": 4,
+     "maxItems": 4
+    }
+   }
+  }
+ }
+}
