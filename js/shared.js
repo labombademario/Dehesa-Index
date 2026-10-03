@@ -517,7 +517,7 @@
     root.innerHTML =
       '<footer class="di-footer">' +
         '<div class="di-footer-grid">' +
-          '<div>' +
+          '<div data-nosnippet>' +
             '<img src="' + sitePath('assets/logo-nav.png') + '" width="116" height="100" alt="Dehesa Index">' +
             '<p>' + esc(t.blurb) + '</p>' +
           '</div>' +
