@@ -68,6 +68,8 @@ de ST {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10}
 de SH {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10}
 de TH {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 24, 'farms': 10}
 escrito eu-regions-de.json 288 KB
+nl GE R1000 produccion descartada por error evidente de la fuente
+nl FL R1000 produccion descartada por error evidente de la fuente
 nl GR {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 25, 'farms': 10}
 nl FR {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 25, 'farms': 10}
 nl DR {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 25, 'farms': 10}
@@ -91,5 +93,3 @@ at S {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 25, 'farms': 10}
 at T {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 25, 'farms': 10}
 at V {'eaa': 31, 'crops': 20, 'animals': 6, 'milk': 25, 'farms': 10}
 escrito eu-regions-at.json 228 KB
-nl GE R1000 produccion 2022 descartada por error evidente de la fuente
-nl FL R1000 produccion 2022 descartada por error evidente de la fuente
