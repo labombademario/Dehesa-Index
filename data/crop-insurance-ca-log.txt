@@ -1,0 +1,6 @@
+tabla 32100045 31979 filas 446 KB
+tabla 32100049 33360 filas 415 KB
+años 2000 - 2025 ; estados STATUS: {}
+CA indemnities 2025 2547628
+CA hailIndemnities 2025 232375
+CA farmPremiums 2025 1720632
