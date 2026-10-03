@@ -113,7 +113,7 @@ WORKFLOW_KINDS = {
     'update-eurostat.yml': ['PRICE', 'INPUT'], 'update-export-sales.yml': ['TRADE'], 'update-france.yml': ['PRICE', 'PRODUCTION'], 'update-fx-history.yml': ['MACRO'], 'update-fx.yml': ['MACRO'], 'update-gats.yml': ['TRADE'],
     'update-germany.yml': ['PRICE', 'PRODUCTION'], 'update-germany-livestock.yml': ['PRODUCTION'], 'update-interest-rates.yml': ['MACRO'], 'update-mars-us.yml': ['PRICE'], 'update-nass-data.yml': ['PRICE', 'PRODUCTION'], 'update-nass.yml': ['PRICE'],
     'update-partner-tariffs.yml': ['TARIFF'], 'update-portugal-eurostat.yml': ['PRODUCTION'], 'update-portugal.yml': ['PRODUCTION', 'PRICE'], 'update-recan.yml': ['PRODUCTION'], 'update-spain.yml': ['PRICE', 'INPUT', 'PRODUCTION'],
-    'update-us-cash-bids.yml': ['PRICE'], 'update-us-tariffs.yml': ['TARIFF'], 'update-usda-calendar.yml': [], 'update-usda-psd.yml': ['PRODUCTION'], 'update-worldbank-urea.yml': ['INPUT'],
+    'update-us-cash-bids.yml': ['PRICE'], 'update-us-local-markets.yml': ['PRICE'], 'update-us-tariffs.yml': ['TARIFF'], 'update-usda-calendar.yml': [], 'update-usda-psd.yml': ['PRODUCTION'], 'update-worldbank-urea.yml': ['INPUT'],
     # no son datos agricolas: noticias (no entran en el brief) y trabajos internos
     'update-news.yml': [], 'update-pipeline-status.yml': [], 'update-seo-pages.yml': [],
 }

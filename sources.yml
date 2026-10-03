@@ -291,6 +291,21 @@ sources:
     extra: ['!datos', '!precios', '!regiones', '!en', '!fr', '!it', '!sitemap.xml']
     check: node scripts/qa-seo.mjs
     message: Páginas SEO por país y categoría
+  - id: us-local-markets
+    name: Update US local cattle and hay prices (USDA AMS MARS)
+    cron: ['20 15 * * 1-5']
+    script: scripts/update-us-local-markets.py
+    args: '--backfill-days ${{ github.event.inputs.backfill_days || 0 }}'
+    env: {USDA_MMN_API_KEY: '${{ secrets.USDA_MMN_API_KEY }}', MARS_API_KEY: '${{ secrets.MARS_API_KEY }}'}
+    dispatch_inputs:
+      backfill_days: {description: 'Dias de historico a pedir por informe (0 = ventana normal de 21 dias; la primera carga de cada informe pide 420)', required: false, default: '0'}
+    timeout: 40
+    script_timeout: 30
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/us-local)
+    data: [us-local/status.json]
+    extra: ['!data/us-local']
+    message: Datos precios locales de ganado y heno EE. UU. (USDA AMS MARS)
   - id: us-cash-bids
     name: Update US local cash bids (USDA AMS MARS)
     cron: ['15 14 * * 1-5', '30 23 * * 1-5']
