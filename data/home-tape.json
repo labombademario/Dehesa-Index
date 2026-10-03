@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T21:26:06Z",
+ "generatedAt": "2026-10-03T02:28:02Z",
  "sourceIds": [
   "eu_agrifood",
   "european_commission",
@@ -13,11 +13,11 @@
    "product": "trigo",
    "region": "eu",
    "sourceId": "eu_agrifood",
-   "observationDate": "2026-09-20",
-   "value": 262.7,
+   "observationDate": "2026-09-27",
+   "value": 264.1,
    "currency": "EUR",
    "unit": "tonelada",
-   "changePct": 0.1525
+   "changePct": 0.5329
   },
   {
    "id": "di_trigo_us",
@@ -46,11 +46,11 @@
    "product": "maiz",
    "region": "eu",
    "sourceId": "eu_agrifood",
-   "observationDate": "2026-09-20",
-   "value": 259,
+   "observationDate": "2026-09-27",
+   "value": 260,
    "currency": "EUR",
    "unit": "tonelada",
-   "changePct": -0.3846
+   "changePct": 0.3861
   },
   {
    "id": "di_maiz_us",
@@ -79,11 +79,11 @@
    "product": "leche",
    "region": "eu",
    "sourceId": "european_commission",
-   "observationDate": "2026-08-31",
+   "observationDate": "2026-09-30",
    "value": 45.53,
    "currency": "EUR",
    "unit": "100kg",
-   "changePct": 1.0655
+   "changePct": 0
   },
   {
    "id": "di_leche_us",

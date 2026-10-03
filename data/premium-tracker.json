@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-02T21:26:06Z",
+ "generatedAt": "2026-10-03T02:28:02Z",
  "sourceIds": [
   "usda_ams_mars"
  ],
@@ -21,7 +21,7 @@
    "saleType": "Bid",
    "organicReportId": 3802,
    "organicSeries": 65,
-   "conventionalSeries": 84,
+   "conventionalSeries": 119,
    "date": "2026-09-25",
    "organic": {
     "median": 11.25,
@@ -30,13 +30,13 @@
     "n": 6
    },
    "conventional": {
-    "median": 4.93,
+    "median": 4.9572,
     "min": 4.42,
-    "max": 6.0233,
-    "n": 84
+    "max": 6.0675,
+    "n": 119
    },
-   "premium": 6.32,
-   "premiumPct": 128.2,
+   "premium": 6.2928,
+   "premiumPct": 126.9,
    "reason": null
   },
   {
@@ -49,7 +49,7 @@
    "saleType": "Bid",
    "organicReportId": 3802,
    "organicSeries": 50,
-   "conventionalSeries": 80,
+   "conventionalSeries": 109,
    "date": "2026-09-25",
    "organic": {
     "median": 22.0,
@@ -58,13 +58,13 @@
     "n": 6
    },
    "conventional": {
-    "median": 12.6662,
+    "median": 12.69,
     "min": 11.94,
-    "max": 13.19,
-    "n": 80
+    "max": 22.0,
+    "n": 109
    },
-   "premium": 9.3338,
-   "premiumPct": 73.7,
+   "premium": 9.31,
+   "premiumPct": 73.4,
    "reason": null
   },
   {
@@ -77,7 +77,7 @@
    "saleType": "Bid",
    "organicReportId": 3802,
    "organicSeries": 22,
-   "conventionalSeries": 57,
+   "conventionalSeries": 59,
    "date": "2026-09-11",
    "organic": {
     "median": 14.5,
@@ -86,13 +86,13 @@
     "n": 6
    },
    "conventional": {
-    "median": 6.8975,
+    "median": 6.915,
     "min": 5.919,
     "max": 7.81,
-    "n": 57
+    "n": 59
    },
-   "premium": 7.6025,
-   "premiumPct": 110.2,
+   "premium": 7.585,
+   "premiumPct": 109.7,
    "reason": null
   },
   {
