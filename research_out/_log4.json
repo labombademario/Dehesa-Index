@@ -1,0 +1,389 @@
+[
+ {
+  "name": "dk_info_HST77",
+  "url": "https://api.statbank.dk/v1/tableinfo/HST77?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 4165,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_HST77",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 2627448,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dk_info_ANI41",
+  "url": "https://api.statbank.dk/v1/tableinfo/ANI41?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 14977,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_ANI41",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 1599251,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dk_info_ANI51",
+  "url": "https://api.statbank.dk/v1/tableinfo/ANI51?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 14643,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_ANI51",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 1095967,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dk_info_ANI71",
+  "url": "https://api.statbank.dk/v1/tableinfo/ANI71?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 14638,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_ANI71",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 352336,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dk_info_SVIN",
+  "url": "https://api.statbank.dk/v1/tableinfo/SVIN?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 5025,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_SVIN",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 51345,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dk_info_KVAEG5",
+  "url": "https://api.statbank.dk/v1/tableinfo/KVAEG5?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 4906,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_KVAEG5",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 1099894,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dk_info_LPRIS10",
+  "url": "https://api.statbank.dk/v1/tableinfo/LPRIS10?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 11863,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_LPRIS10",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 2184199,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dk_info_AFG5",
+  "url": "https://api.statbank.dk/v1/tableinfo/AFG5?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 4732,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_AFG5",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 2091898,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dk_info_TILSKUD2",
+  "url": "https://api.statbank.dk/v1/tableinfo/TILSKUD2?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 2404,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_TILSKUD2",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 4505,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dk_info_OEKO11",
+  "url": "https://api.statbank.dk/v1/tableinfo/OEKO11?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 2126,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_OEKO11",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 39355,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dk_info_ANI81",
+  "url": "https://api.statbank.dk/v1/tableinfo/ANI81?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 5788,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_ANI81",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 96956,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dk_info_HDYR1",
+  "url": "https://api.statbank.dk/v1/tableinfo/HDYR1?lang=en&format=JSON",
+  "status": 200,
+  "bytes": 8606,
+  "ctype": "text/json; charset=utf-8"
+ },
+ {
+  "name": "dk_csv_HDYR1",
+  "url": "https://api.statbank.dk/v1/data",
+  "status": 200,
+  "bytes": 7723068,
+  "ctype": "text/csv; charset=utf-8"
+ },
+ {
+  "name": "dst_en",
+  "url": "https://www.dst.dk/en/OmDS/Rettigheder",
+  "status": 404,
+  "head": "\r\n<!DOCTYPE html>\r\n<html lang=\"da\">\r\n<head>\r\n    \r\n    <title>\r\n        Vi kan ikke finde siden, du leder efter - Danmarks Statistik\r\n\r\n    </title>\r\n    \r\n    <link rel=\"shortcut icon\" href=\"/Site/Dst/Images/favicon2013.ico\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\">\r\n    <meta charset=\"UTF-8\" />\r\n    <"
+ },
+ {
+  "name": "dst_cc",
+  "url": "https://www.dst.dk/en/Statistik/dokumentation/kildeangivelse",
+  "status": 404,
+  "head": "\r\n<!DOCTYPE html>\r\n<html lang=\"da\">\r\n<head>\r\n    \r\n    <title>\r\n        Vi kan ikke finde siden, du leder efter - Danmarks Statistik\r\n\r\n    </title>\r\n    \r\n    <link rel=\"shortcut icon\" href=\"/Site/Dst/Images/favicon2013.ico\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\">\r\n    <meta charset=\"UTF-8\" />\r\n    <"
+ },
+ {
+  "name": "dst_cc2",
+  "url": "https://www.dst.dk/da/Statistik/dokumentation/kildeangivelse",
+  "status": 404,
+  "head": "\r\n<!DOCTYPE html>\r\n<html lang=\"da\">\r\n<head>\r\n    \r\n    <title>\r\n        Vi kan ikke finde siden, du leder efter - Danmarks Statistik\r\n\r\n    </title>\r\n    \r\n    <link rel=\"shortcut icon\" href=\"/Site/Dst/Images/favicon2013.ico\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\">\r\n    <meta charset=\"UTF-8\" />\r\n    <"
+ },
+ {
+  "name": "dst_cc3",
+  "url": "https://www.dst.dk/en/OmDS/copyright",
+  "status": 404,
+  "head": "\r\n<!DOCTYPE html>\r\n<html lang=\"da\">\r\n<head>\r\n    \r\n    <title>\r\n        Vi kan ikke finde siden, du leder efter - Danmarks Statistik\r\n\r\n    </title>\r\n    \r\n    <link rel=\"shortcut icon\" href=\"/Site/Dst/Images/favicon2013.ico\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\">\r\n    <meta charset=\"UTF-8\" />\r\n    <"
+ },
+ {
+  "name": "dst_api",
+  "url": "https://www.dst.dk/en/Statistik/brug-statistikken/muligheder-i-statistikbanken/api",
+  "status": 200,
+  "bytes": 74407,
+  "ctype": "text/html; charset=utf-8"
+ },
+ {
+  "name": "dmi_obs_terms",
+  "url": "https://opendatadocs.dmi.dk/en/Data/Terms_of_use",
+  "status": null,
+  "err": "URLError(gaierror(-2, 'Name or service not known'))"
+ },
+ {
+  "name": "dmi_docs",
+  "url": "https://opendatadocs.dmi.dk/",
+  "status": null,
+  "err": "URLError(gaierror(-2, 'Name or service not known'))"
+ },
+ {
+  "name": "dk_amend_xml",
+  "url": "https://www.retsinformation.dk/eli/lta/2026/788/xml",
+  "status": 200,
+  "bytes": 7404,
+  "ctype": "application/xml"
+ },
+ {
+  "name": "dk_bek1363_hist",
+  "url": "https://www.retsinformation.dk/api/document/eli/lta/2025/1363/historik",
+  "status": 200,
+  "bytes": 4530,
+  "ctype": "text/html; charset=utf-8"
+ },
+ {
+  "name": "rvo_tarieven",
+  "url": "https://www.rvo.nl/onderwerpen/glb-2026/tarieven-uitbetaling",
+  "status": 200,
+  "bytes": 191291,
+  "ctype": "text/html; charset=utf-8"
+ },
+ {
+  "name": "rvo_eco",
+  "url": "https://www.rvo.nl/subsidies-financiering/glb-2026/eco-regeling/eco-activiteiten-punten-en-waarde",
+  "status": 200,
+  "bytes": 343193,
+  "ctype": "text/html; charset=utf-8"
+ },
+ {
+  "name": "rvo_basis",
+  "url": "https://www.rvo.nl/subsidies-financiering/glb-2026/basispremie-en-extra-betaling-eerste-40-hectare",
+  "status": 200,
+  "bytes": 195490,
+  "ctype": "text/html; charset=utf-8"
+ },
+ {
+  "name": "rvo_markt",
+  "url": "https://www.rvo.nl/onderwerpen/marktinformatie/marktinformatie-melk-en-melkproducten",
+  "status": 200,
+  "bytes": 121500,
+  "ctype": "text/html; charset=utf-8"
+ },
+ {
+  "name": "rvo_ecoreg",
+  "url": "https://www.rvo.nl/subsidies-financiering/glb-2026/eco-regeling",
+  "status": 200,
+  "bytes": 219632,
+  "ctype": "text/html; charset=utf-8"
+ },
+ {
+  "name": "rvo_jong",
+  "url": "https://www.rvo.nl/subsidies-financiering/glb-2026/extra-betaling-jonge-landbouwers",
+  "status": 200,
+  "bytes": 210829,
+  "ctype": "text/html; charset=utf-8"
+ },
+ {
+  "name": "rvo_agenda",
+  "url": "https://www.rvo.nl/onderwerpen/glb-2026/glb-aanvraag-tot-uitbetaling",
+  "status": 200,
+  "bytes": 226861,
+  "ctype": "text/html; charset=utf-8"
+ },
+ {
+  "name": "rvo_opendata",
+  "url": "https://www.rvo.nl/onderwerpen/open-data",
+  "status": 200,
+  "bytes": 124520,
+  "ctype": "text/html; charset=utf-8"
+ },
+ {
+  "name": "rvo_informatiehuis",
+  "url": "https://www.rvo.nl/onderwerpen/open-data/informatiehuis",
+  "status": 200,
+  "bytes": 219645,
+  "ctype": "text/html; charset=utf-8"
+ },
+ {
+  "name": "rvo_licentie",
+  "url": "https://www.rvo.nl/onderwerpen/open-data/open-data-licentie",
+  "status": 404,
+  "head": "<!DOCTYPE html><html id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-383d2bc6cd461317.js?dpl=48fc81a2-774981\"/><script src=\"/_next/static/chunks/a004843c-cea06457d4064f29.js?dpl=48fc81a2-774981\" async=\"\"></script><script src=\"/_next/static/chu"
+ },
+ {
+  "name": "nl_85636_all",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/85636NED/TypedDataSet?$top=100000",
+  "status": 500,
+  "head": "Error getting TypedDataSet for '85636NED': The given query is not allowed on this table. Please redefine your query so that it returns less than 10000 records."
+ },
+ {
+  "name": "nl_7123_all",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/7123SLAC/TypedDataSet?$top=100000",
+  "status": 200,
+  "bytes": 775563,
+  "ctype": "application/json"
+ },
+ {
+  "name": "nl_80780_all",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/80780NED/TypedDataSet?$filter=Perioden%20ge%20%272015JJ00%27&$top=100000",
+  "status": 200,
+  "bytes": 6703836,
+  "ctype": "application/json"
+ },
+ {
+  "name": "nl_80780_regio",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/80780NED/RegioS",
+  "status": 200,
+  "bytes": 14934,
+  "ctype": "application/json"
+ },
+ {
+  "name": "nl_85933_info",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/86125NED/DataProperties",
+  "status": 200,
+  "bytes": 1734,
+  "ctype": "application/json"
+ },
+ {
+  "name": "nl_86125",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/86125NED/TypedDataSet?$top=100000",
+  "status": 200,
+  "bytes": 166660,
+  "ctype": "application/json"
+ },
+ {
+  "name": "nl_86125_dim",
+  "url": "https://opendata.cbs.nl/ODataApi/odata/86125NED/Prijsindex",
+  "status": 404,
+  "head": "<!DOCTYPE html>\r\n<html>\r\n    <head>\r\n        <title>The resource cannot be found.</title>\r\n        <meta name=\"viewport\" content=\"width=device-width\" />\r\n        <style>\r\n         body {font-family:\"Verdana\";font-weight:normal;font-size: .7em;color:black;} \r\n         p {font-family:\"Verdana\";font-weight:normal;color:black;margin-top: -5px}\r\n         b {font-family:\"Verdana\";font-weight:bold;color:"
+ },
+ {
+  "name": "fr_vigieau_all",
+  "url": "https://api.vigieau.beta.gouv.fr/api/departements",
+  "status": 200,
+  "bytes": 31401,
+  "ctype": "application/json; charset=utf-8"
+ },
+ {
+  "name": "fr_vigieau_doc2",
+  "url": "https://api.vigieau.beta.gouv.fr/api/doc",
+  "status": 404,
+  "head": "{\"message\":\"Cannot GET /api/doc\",\"error\":\"Not Found\",\"statusCode\":404}"
+ },
+ {
+  "name": "fr_vigieau_swagger",
+  "url": "https://api.vigieau.beta.gouv.fr/api-json",
+  "status": 404,
+  "head": "{\"message\":\"Cannot GET /api-json\",\"error\":\"Not Found\",\"statusCode\":404}"
+ },
+ {
+  "name": "fr_vigieau_zones2",
+  "url": "https://api.vigieau.beta.gouv.fr/api/zones?profil=exploitation&departement=34",
+  "status": 400,
+  "head": "{\"statusCode\":400,\"message\":\"Les paramètres lon/lat ou commune sont requis.\"}"
+ },
+ {
+  "name": "fr_dg_vig",
+  "url": "https://www.data.gouv.fr/api/1/datasets/?q=vigieau&page_size=10",
+  "status": 200,
+  "bytes": 242526,
+  "ctype": "application/json"
+ },
+ {
+  "name": "fr_cereobs_list",
+  "url": "https://www.data.gouv.fr/api/1/datasets/?q=cereobs&page_size=20",
+  "status": 200,
+  "bytes": 94,
+  "ctype": "application/json"
+ },
+ {
+  "name": "fr_cereobs_blé",
+  "url": "https://www.data.gouv.fr/api/1/datasets/?q=%C3%A9tat+des+cultures+franceagrimer&page_size=20",
+  "status": 200,
+  "bytes": 94,
+  "ctype": "application/json"
+ }
+]

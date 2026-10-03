@@ -1,0 +1,1643 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/86125NED/$metadata#Cbs.OData.WebAPI.TypedDataSet","value":[
+    {
+      "ID":0,"LandbouwInOutputGoederenDiensten":"A045424  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":121.2,"KwartaalmutatieLandbouwindexLPI_2":1.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":1,"LandbouwInOutputGoederenDiensten":"A045424  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":114.1,"KwartaalmutatieLandbouwindexLPI_2":-5.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":2,"LandbouwInOutputGoederenDiensten":"A045424  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":100.4,"KwartaalmutatieLandbouwindexLPI_2":-12.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":3,"LandbouwInOutputGoederenDiensten":"A045424  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":99.3,"KwartaalmutatieLandbouwindexLPI_2":-1.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":4,"LandbouwInOutputGoederenDiensten":"A045424  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":105.6,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":5,"LandbouwInOutputGoederenDiensten":"A045424  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":101.6,"KwartaalmutatieLandbouwindexLPI_2":2.3,"JaarmutatieLandbouwindexLPI_3":-16.2
+    },{
+      "ID":6,"LandbouwInOutputGoederenDiensten":"A045424  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":103.1,"KwartaalmutatieLandbouwindexLPI_2":1.5,"JaarmutatieLandbouwindexLPI_3":-9.6
+    },{
+      "ID":7,"LandbouwInOutputGoederenDiensten":"A045425  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":119.1,"KwartaalmutatieLandbouwindexLPI_2":1.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":8,"LandbouwInOutputGoederenDiensten":"A045425  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":111.3,"KwartaalmutatieLandbouwindexLPI_2":-6.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":9,"LandbouwInOutputGoederenDiensten":"A045425  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":98.1,"KwartaalmutatieLandbouwindexLPI_2":-11.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":10,"LandbouwInOutputGoederenDiensten":"A045425  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":96.9,"KwartaalmutatieLandbouwindexLPI_2":-1.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":11,"LandbouwInOutputGoederenDiensten":"A045425  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":103.8,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":12,"LandbouwInOutputGoederenDiensten":"A045425  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":99.5,"KwartaalmutatieLandbouwindexLPI_2":2.7,"JaarmutatieLandbouwindexLPI_3":-16.5
+    },{
+      "ID":13,"LandbouwInOutputGoederenDiensten":"A045425  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":101.2,"KwartaalmutatieLandbouwindexLPI_2":1.7,"JaarmutatieLandbouwindexLPI_3":-9.1
+    },{
+      "ID":14,"LandbouwInOutputGoederenDiensten":"A045426  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":119.1,"KwartaalmutatieLandbouwindexLPI_2":1.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":15,"LandbouwInOutputGoederenDiensten":"A045426  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":111.3,"KwartaalmutatieLandbouwindexLPI_2":-6.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":16,"LandbouwInOutputGoederenDiensten":"A045426  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":98.1,"KwartaalmutatieLandbouwindexLPI_2":-11.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":17,"LandbouwInOutputGoederenDiensten":"A045426  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":96.9,"KwartaalmutatieLandbouwindexLPI_2":-1.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":18,"LandbouwInOutputGoederenDiensten":"A045426  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":103.8,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":19,"LandbouwInOutputGoederenDiensten":"A045426  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":99.5,"KwartaalmutatieLandbouwindexLPI_2":2.7,"JaarmutatieLandbouwindexLPI_3":-16.5
+    },{
+      "ID":20,"LandbouwInOutputGoederenDiensten":"A045426  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":101.2,"KwartaalmutatieLandbouwindexLPI_2":1.7,"JaarmutatieLandbouwindexLPI_3":-9.1
+    },{
+      "ID":21,"LandbouwInOutputGoederenDiensten":"A045428  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":130.2,"KwartaalmutatieLandbouwindexLPI_2":3.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":22,"LandbouwInOutputGoederenDiensten":"A045428  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":127.7,"KwartaalmutatieLandbouwindexLPI_2":-1.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":23,"LandbouwInOutputGoederenDiensten":"A045428  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":105.3,"KwartaalmutatieLandbouwindexLPI_2":-17.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":24,"LandbouwInOutputGoederenDiensten":"A045428  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":107.3,"KwartaalmutatieLandbouwindexLPI_2":1.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":25,"LandbouwInOutputGoederenDiensten":"A045428  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":111.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":26,"LandbouwInOutputGoederenDiensten":"A045428  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":111.1,"KwartaalmutatieLandbouwindexLPI_2":3.5,"JaarmutatieLandbouwindexLPI_3":-14.7
+    },{
+      "ID":27,"LandbouwInOutputGoederenDiensten":"A045428  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":112.0,"KwartaalmutatieLandbouwindexLPI_2":0.8,"JaarmutatieLandbouwindexLPI_3":-12.3
+    },{
+      "ID":28,"LandbouwInOutputGoederenDiensten":"A045432  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":93.3,"KwartaalmutatieLandbouwindexLPI_2":-35.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":29,"LandbouwInOutputGoederenDiensten":"A045432  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":104.3,"KwartaalmutatieLandbouwindexLPI_2":11.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":30,"LandbouwInOutputGoederenDiensten":"A045432  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":111.9,"KwartaalmutatieLandbouwindexLPI_2":7.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":31,"LandbouwInOutputGoederenDiensten":"A045432  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":112.5,"KwartaalmutatieLandbouwindexLPI_2":0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":32,"LandbouwInOutputGoederenDiensten":"A045432  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":112.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":33,"LandbouwInOutputGoederenDiensten":"A045432  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":104.3,"KwartaalmutatieLandbouwindexLPI_2":-7.3,"JaarmutatieLandbouwindexLPI_3":11.8
+    },{
+      "ID":34,"LandbouwInOutputGoederenDiensten":"A045432  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":104.3,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":0.0
+    },{
+      "ID":35,"LandbouwInOutputGoederenDiensten":"A045436  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":36,"LandbouwInOutputGoederenDiensten":"A045436  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":37,"LandbouwInOutputGoederenDiensten":"A045436  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":38,"LandbouwInOutputGoederenDiensten":"A045436  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":39,"LandbouwInOutputGoederenDiensten":"A045436  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":40,"LandbouwInOutputGoederenDiensten":"A045436  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":41,"LandbouwInOutputGoederenDiensten":"A045436  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":42,"LandbouwInOutputGoederenDiensten":"A045437  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":144.4,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":43,"LandbouwInOutputGoederenDiensten":"A045437  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":144.4,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":44,"LandbouwInOutputGoederenDiensten":"A045437  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":112.7,"KwartaalmutatieLandbouwindexLPI_2":-22.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":45,"LandbouwInOutputGoederenDiensten":"A045437  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":112.7,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":46,"LandbouwInOutputGoederenDiensten":"A045437  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":112.7,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":47,"LandbouwInOutputGoederenDiensten":"A045437  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":112.7,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":-22.0
+    },{
+      "ID":48,"LandbouwInOutputGoederenDiensten":"A045437  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":112.7,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":-22.0
+    },{
+      "ID":49,"LandbouwInOutputGoederenDiensten":"A045441  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":136.1,"KwartaalmutatieLandbouwindexLPI_2":3.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":50,"LandbouwInOutputGoederenDiensten":"A045441  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":127.9,"KwartaalmutatieLandbouwindexLPI_2":-6.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":51,"LandbouwInOutputGoederenDiensten":"A045441  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":131.4,"KwartaalmutatieLandbouwindexLPI_2":2.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":52,"LandbouwInOutputGoederenDiensten":"A045441  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":130.9,"KwartaalmutatieLandbouwindexLPI_2":-0.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":53,"LandbouwInOutputGoederenDiensten":"A045441  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":132.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":54,"LandbouwInOutputGoederenDiensten":"A045441  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":66.6,"KwartaalmutatieLandbouwindexLPI_2":-49.1,"JaarmutatieLandbouwindexLPI_3":-51.1
+    },{
+      "ID":55,"LandbouwInOutputGoederenDiensten":"A045441  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":66.6,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":-47.9
+    },{
+      "ID":56,"LandbouwInOutputGoederenDiensten":"A045442  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":134.2,"KwartaalmutatieLandbouwindexLPI_2":2.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":57,"LandbouwInOutputGoederenDiensten":"A045442  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":125.8,"KwartaalmutatieLandbouwindexLPI_2":-6.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":58,"LandbouwInOutputGoederenDiensten":"A045442  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":130.7,"KwartaalmutatieLandbouwindexLPI_2":3.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":59,"LandbouwInOutputGoederenDiensten":"A045442  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":130.7,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":60,"LandbouwInOutputGoederenDiensten":"A045442  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":131.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":61,"LandbouwInOutputGoederenDiensten":"A045442  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":62.0,"KwartaalmutatieLandbouwindexLPI_2":-52.6,"JaarmutatieLandbouwindexLPI_3":-53.8
+    },{
+      "ID":62,"LandbouwInOutputGoederenDiensten":"A045442  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":62.0,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":-50.7
+    },{
+      "ID":63,"LandbouwInOutputGoederenDiensten":"A045444  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":167.2,"KwartaalmutatieLandbouwindexLPI_2":5.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":64,"LandbouwInOutputGoederenDiensten":"A045444  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":163.1,"KwartaalmutatieLandbouwindexLPI_2":-2.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":65,"LandbouwInOutputGoederenDiensten":"A045444  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":139.0,"KwartaalmutatieLandbouwindexLPI_2":-14.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":66,"LandbouwInOutputGoederenDiensten":"A045444  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":136.0,"KwartaalmutatieLandbouwindexLPI_2":-2.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":67,"LandbouwInOutputGoederenDiensten":"A045444  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":149.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":68,"LandbouwInOutputGoederenDiensten":"A045444  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":145.0,"KwartaalmutatieLandbouwindexLPI_2":6.6,"JaarmutatieLandbouwindexLPI_3":-13.3
+    },{
+      "ID":69,"LandbouwInOutputGoederenDiensten":"A045444  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":145.0,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":-11.1
+    },{
+      "ID":70,"LandbouwInOutputGoederenDiensten":"A045445  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":154.6,"KwartaalmutatieLandbouwindexLPI_2":16.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":71,"LandbouwInOutputGoederenDiensten":"A045445  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":136.5,"KwartaalmutatieLandbouwindexLPI_2":-11.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":72,"LandbouwInOutputGoederenDiensten":"A045445  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":122.2,"KwartaalmutatieLandbouwindexLPI_2":-10.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":73,"LandbouwInOutputGoederenDiensten":"A045445  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":128.7,"KwartaalmutatieLandbouwindexLPI_2":5.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":74,"LandbouwInOutputGoederenDiensten":"A045445  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":135.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":75,"LandbouwInOutputGoederenDiensten":"A045445  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":150.7,"KwartaalmutatieLandbouwindexLPI_2":17.1,"JaarmutatieLandbouwindexLPI_3":-2.5
+    },{
+      "ID":76,"LandbouwInOutputGoederenDiensten":"A045445  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":139.3,"KwartaalmutatieLandbouwindexLPI_2":-7.6,"JaarmutatieLandbouwindexLPI_3":2.1
+    },{
+      "ID":77,"LandbouwInOutputGoederenDiensten":"A045446  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":181.8,"KwartaalmutatieLandbouwindexLPI_2":32.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":78,"LandbouwInOutputGoederenDiensten":"A045446  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":120.4,"KwartaalmutatieLandbouwindexLPI_2":-33.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":79,"LandbouwInOutputGoederenDiensten":"A045446  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":115.1,"KwartaalmutatieLandbouwindexLPI_2":-4.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":80,"LandbouwInOutputGoederenDiensten":"A045446  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":113.0,"KwartaalmutatieLandbouwindexLPI_2":-1.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":81,"LandbouwInOutputGoederenDiensten":"A045446  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":127.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":82,"LandbouwInOutputGoederenDiensten":"A045446  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":191.6,"KwartaalmutatieLandbouwindexLPI_2":69.6,"JaarmutatieLandbouwindexLPI_3":5.4
+    },{
+      "ID":83,"LandbouwInOutputGoederenDiensten":"A045446  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":130.6,"KwartaalmutatieLandbouwindexLPI_2":-31.8,"JaarmutatieLandbouwindexLPI_3":8.5
+    },{
+      "ID":84,"LandbouwInOutputGoederenDiensten":"A045447  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":87.7,"KwartaalmutatieLandbouwindexLPI_2":25.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":85,"LandbouwInOutputGoederenDiensten":"A045447  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":68.3,"KwartaalmutatieLandbouwindexLPI_2":-22.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":86,"LandbouwInOutputGoederenDiensten":"A045447  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":72.9,"KwartaalmutatieLandbouwindexLPI_2":6.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":87,"LandbouwInOutputGoederenDiensten":"A045447  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":66.5,"KwartaalmutatieLandbouwindexLPI_2":-8.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":88,"LandbouwInOutputGoederenDiensten":"A045447  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":70.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":89,"LandbouwInOutputGoederenDiensten":"A045447  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":86.7,"KwartaalmutatieLandbouwindexLPI_2":30.4,"JaarmutatieLandbouwindexLPI_3":-1.1
+    },{
+      "ID":90,"LandbouwInOutputGoederenDiensten":"A045447  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":83.8,"KwartaalmutatieLandbouwindexLPI_2":-3.3,"JaarmutatieLandbouwindexLPI_3":22.7
+    },{
+      "ID":91,"LandbouwInOutputGoederenDiensten":"A053066  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":92,"LandbouwInOutputGoederenDiensten":"A053066  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":93,"LandbouwInOutputGoederenDiensten":"A053066  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":16.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":94,"LandbouwInOutputGoederenDiensten":"A053066  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-14.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":95,"LandbouwInOutputGoederenDiensten":"A053066  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":96,"LandbouwInOutputGoederenDiensten":"A053066  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":97,"LandbouwInOutputGoederenDiensten":"A053066  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":16.4
+    },{
+      "ID":98,"LandbouwInOutputGoederenDiensten":"A045448  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":234.3,"KwartaalmutatieLandbouwindexLPI_2":7.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":99,"LandbouwInOutputGoederenDiensten":"A045448  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":115.9,"KwartaalmutatieLandbouwindexLPI_2":-50.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":100,"LandbouwInOutputGoederenDiensten":"A045448  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":117.1,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":101,"LandbouwInOutputGoederenDiensten":"A045448  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":179.5,"KwartaalmutatieLandbouwindexLPI_2":53.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":102,"LandbouwInOutputGoederenDiensten":"A045448  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":142.2,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":103,"LandbouwInOutputGoederenDiensten":"A045448  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":271.2,"KwartaalmutatieLandbouwindexLPI_2":51.1,"JaarmutatieLandbouwindexLPI_3":15.7
+    },{
+      "ID":104,"LandbouwInOutputGoederenDiensten":"A045448  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":159.2,"KwartaalmutatieLandbouwindexLPI_2":-41.3,"JaarmutatieLandbouwindexLPI_3":37.4
+    },{
+      "ID":105,"LandbouwInOutputGoederenDiensten":"A045449  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":170.5,"KwartaalmutatieLandbouwindexLPI_2":47.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":106,"LandbouwInOutputGoederenDiensten":"A045449  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":122.4,"KwartaalmutatieLandbouwindexLPI_2":-28.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":107,"LandbouwInOutputGoederenDiensten":"A045449  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":115.6,"KwartaalmutatieLandbouwindexLPI_2":-5.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":108,"LandbouwInOutputGoederenDiensten":"A045449  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":94.8,"KwartaalmutatieLandbouwindexLPI_2":-18.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":109,"LandbouwInOutputGoederenDiensten":"A045449  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":123.6,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":110,"LandbouwInOutputGoederenDiensten":"A045449  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":174.3,"KwartaalmutatieLandbouwindexLPI_2":83.9,"JaarmutatieLandbouwindexLPI_3":2.2
+    },{
+      "ID":111,"LandbouwInOutputGoederenDiensten":"A045449  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":122.7,"KwartaalmutatieLandbouwindexLPI_2":-29.6,"JaarmutatieLandbouwindexLPI_3":0.2
+    },{
+      "ID":112,"LandbouwInOutputGoederenDiensten":"A053053  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":173.2,"KwartaalmutatieLandbouwindexLPI_2":31.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":113,"LandbouwInOutputGoederenDiensten":"A053053  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":318.6,"KwartaalmutatieLandbouwindexLPI_2":83.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":114,"LandbouwInOutputGoederenDiensten":"A053053  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":103.7,"KwartaalmutatieLandbouwindexLPI_2":-67.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":115,"LandbouwInOutputGoederenDiensten":"A053053  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":70.2,"KwartaalmutatieLandbouwindexLPI_2":-32.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":116,"LandbouwInOutputGoederenDiensten":"A053053  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":180.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":117,"LandbouwInOutputGoederenDiensten":"A053053  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":96.6,"KwartaalmutatieLandbouwindexLPI_2":37.6,"JaarmutatieLandbouwindexLPI_3":-44.2
+    },{
+      "ID":118,"LandbouwInOutputGoederenDiensten":"A053053  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":134.7,"KwartaalmutatieLandbouwindexLPI_2":39.4,"JaarmutatieLandbouwindexLPI_3":-57.7
+    },{
+      "ID":119,"LandbouwInOutputGoederenDiensten":"A053054  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":120,"LandbouwInOutputGoederenDiensten":"A053054  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":175.2,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":121,"LandbouwInOutputGoederenDiensten":"A053054  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":198.3,"KwartaalmutatieLandbouwindexLPI_2":13.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":122,"LandbouwInOutputGoederenDiensten":"A053054  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":198.3,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":123,"LandbouwInOutputGoederenDiensten":"A053054  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":211.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":124,"LandbouwInOutputGoederenDiensten":"A053054  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":125,"LandbouwInOutputGoederenDiensten":"A053054  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":216.7,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":23.7
+    },{
+      "ID":126,"LandbouwInOutputGoederenDiensten":"A053055  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":243.2,"KwartaalmutatieLandbouwindexLPI_2":28.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":127,"LandbouwInOutputGoederenDiensten":"A053055  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":150.8,"KwartaalmutatieLandbouwindexLPI_2":-38.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":128,"LandbouwInOutputGoederenDiensten":"A053055  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":214.0,"KwartaalmutatieLandbouwindexLPI_2":41.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":129,"LandbouwInOutputGoederenDiensten":"A053055  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":218.8,"KwartaalmutatieLandbouwindexLPI_2":2.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":130,"LandbouwInOutputGoederenDiensten":"A053055  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":189.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":131,"LandbouwInOutputGoederenDiensten":"A053055  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":282.1,"KwartaalmutatieLandbouwindexLPI_2":28.9,"JaarmutatieLandbouwindexLPI_3":16.0
+    },{
+      "ID":132,"LandbouwInOutputGoederenDiensten":"A053055  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":165.3,"KwartaalmutatieLandbouwindexLPI_2":-41.4,"JaarmutatieLandbouwindexLPI_3":9.6
+    },{
+      "ID":133,"LandbouwInOutputGoederenDiensten":"A053056  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":108.8,"KwartaalmutatieLandbouwindexLPI_2":37.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":134,"LandbouwInOutputGoederenDiensten":"A053056  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":108.0,"KwartaalmutatieLandbouwindexLPI_2":-0.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":135,"LandbouwInOutputGoederenDiensten":"A053056  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":83.9,"KwartaalmutatieLandbouwindexLPI_2":-22.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":136,"LandbouwInOutputGoederenDiensten":"A053056  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":68.9,"KwartaalmutatieLandbouwindexLPI_2":-17.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":137,"LandbouwInOutputGoederenDiensten":"A053056  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":92.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":138,"LandbouwInOutputGoederenDiensten":"A053056  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":119.4,"KwartaalmutatieLandbouwindexLPI_2":73.3,"JaarmutatieLandbouwindexLPI_3":9.7
+    },{
+      "ID":139,"LandbouwInOutputGoederenDiensten":"A053056  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":241.3,"KwartaalmutatieLandbouwindexLPI_2":102.1,"JaarmutatieLandbouwindexLPI_3":123.4
+    },{
+      "ID":140,"LandbouwInOutputGoederenDiensten":"A053057  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":90.9,"KwartaalmutatieLandbouwindexLPI_2":1.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":141,"LandbouwInOutputGoederenDiensten":"A053057  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":208.2,"KwartaalmutatieLandbouwindexLPI_2":129.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":142,"LandbouwInOutputGoederenDiensten":"A053057  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":76.5,"KwartaalmutatieLandbouwindexLPI_2":-63.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":143,"LandbouwInOutputGoederenDiensten":"A053057  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":96.7,"KwartaalmutatieLandbouwindexLPI_2":26.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":144,"LandbouwInOutputGoederenDiensten":"A053057  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":108.9,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":145,"LandbouwInOutputGoederenDiensten":"A053057  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":82.2,"KwartaalmutatieLandbouwindexLPI_2":-15.0,"JaarmutatieLandbouwindexLPI_3":-9.6
+    },{
+      "ID":146,"LandbouwInOutputGoederenDiensten":"A053057  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":61.7,"KwartaalmutatieLandbouwindexLPI_2":-24.9,"JaarmutatieLandbouwindexLPI_3":-70.4
+    },{
+      "ID":147,"LandbouwInOutputGoederenDiensten":"A053058  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":178.1,"KwartaalmutatieLandbouwindexLPI_2":48.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":148,"LandbouwInOutputGoederenDiensten":"A053058  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":99.6,"KwartaalmutatieLandbouwindexLPI_2":-44.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":149,"LandbouwInOutputGoederenDiensten":"A053058  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":82.6,"KwartaalmutatieLandbouwindexLPI_2":-17.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":150,"LandbouwInOutputGoederenDiensten":"A053058  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":84.1,"KwartaalmutatieLandbouwindexLPI_2":1.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":151,"LandbouwInOutputGoederenDiensten":"A053058  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":103.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":152,"LandbouwInOutputGoederenDiensten":"A053058  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":181.1,"KwartaalmutatieLandbouwindexLPI_2":115.3,"JaarmutatieLandbouwindexLPI_3":1.7
+    },{
+      "ID":153,"LandbouwInOutputGoederenDiensten":"A053058  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":99.4,"KwartaalmutatieLandbouwindexLPI_2":-45.1,"JaarmutatieLandbouwindexLPI_3":-0.2
+    },{
+      "ID":154,"LandbouwInOutputGoederenDiensten":"A053059  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-22.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":155,"LandbouwInOutputGoederenDiensten":"A053059  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-6.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":156,"LandbouwInOutputGoederenDiensten":"A053059  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":6.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":157,"LandbouwInOutputGoederenDiensten":"A053059  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":6.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":158,"LandbouwInOutputGoederenDiensten":"A053059  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":159,"LandbouwInOutputGoederenDiensten":"A053059  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-12.2,"JaarmutatieLandbouwindexLPI_3":-6.9
+    },{
+      "ID":160,"LandbouwInOutputGoederenDiensten":"A053059  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-1.5,"JaarmutatieLandbouwindexLPI_3":-2.3
+    },{
+      "ID":161,"LandbouwInOutputGoederenDiensten":"A053060  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":14.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":162,"LandbouwInOutputGoederenDiensten":"A053060  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":3.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":163,"LandbouwInOutputGoederenDiensten":"A053060  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-25.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":164,"LandbouwInOutputGoederenDiensten":"A053060  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":165,"LandbouwInOutputGoederenDiensten":"A053060  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":166,"LandbouwInOutputGoederenDiensten":"A053060  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":19.7,"JaarmutatieLandbouwindexLPI_3":-7.0
+    },{
+      "ID":167,"LandbouwInOutputGoederenDiensten":"A053060  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-11.4,"JaarmutatieLandbouwindexLPI_3":-20.4
+    },{
+      "ID":168,"LandbouwInOutputGoederenDiensten":"A053061  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":114.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":169,"LandbouwInOutputGoederenDiensten":"A053061  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-51.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":170,"LandbouwInOutputGoederenDiensten":"A053061  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-20.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":171,"LandbouwInOutputGoederenDiensten":"A053061  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":172,"LandbouwInOutputGoederenDiensten":"A053061  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":173,"LandbouwInOutputGoederenDiensten":"A053061  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":164.2,"JaarmutatieLandbouwindexLPI_3":3.8
+    },{
+      "ID":174,"LandbouwInOutputGoederenDiensten":"A053061  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-50.4,"JaarmutatieLandbouwindexLPI_3":5.5
+    },{
+      "ID":175,"LandbouwInOutputGoederenDiensten":"A053063  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":176,"LandbouwInOutputGoederenDiensten":"A053063  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":177,"LandbouwInOutputGoederenDiensten":"A053063  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-29.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":178,"LandbouwInOutputGoederenDiensten":"A053063  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":179,"LandbouwInOutputGoederenDiensten":"A053063  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":180,"LandbouwInOutputGoederenDiensten":"A053063  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":181,"LandbouwInOutputGoederenDiensten":"A053063  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-46.4,"JaarmutatieLandbouwindexLPI_3":-5.5
+    },{
+      "ID":182,"LandbouwInOutputGoederenDiensten":"A053064  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":183,"LandbouwInOutputGoederenDiensten":"A053064  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":184,"LandbouwInOutputGoederenDiensten":"A053064  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-2.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":185,"LandbouwInOutputGoederenDiensten":"A053064  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":38.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":186,"LandbouwInOutputGoederenDiensten":"A053064  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":187,"LandbouwInOutputGoederenDiensten":"A053064  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":351.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":188,"LandbouwInOutputGoederenDiensten":"A053064  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-79.9,"JaarmutatieLandbouwindexLPI_3":22.1
+    },{
+      "ID":189,"LandbouwInOutputGoederenDiensten":"A053065  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-11.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":190,"LandbouwInOutputGoederenDiensten":"A053065  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-21.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":191,"LandbouwInOutputGoederenDiensten":"A053065  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":26.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":192,"LandbouwInOutputGoederenDiensten":"A053065  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":2.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":193,"LandbouwInOutputGoederenDiensten":"A053065  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":194,"LandbouwInOutputGoederenDiensten":"A053065  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":55.1,"JaarmutatieLandbouwindexLPI_3":56.6
+    },{
+      "ID":195,"LandbouwInOutputGoederenDiensten":"A053065  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":-42.1,"JaarmutatieLandbouwindexLPI_3":15.8
+    },{
+      "ID":196,"LandbouwInOutputGoederenDiensten":"A045450  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":146.7,"KwartaalmutatieLandbouwindexLPI_2":12.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":197,"LandbouwInOutputGoederenDiensten":"A045450  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":143.1,"KwartaalmutatieLandbouwindexLPI_2":-2.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":198,"LandbouwInOutputGoederenDiensten":"A045450  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":125.8,"KwartaalmutatieLandbouwindexLPI_2":-12.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":199,"LandbouwInOutputGoederenDiensten":"A045450  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":134.8,"KwartaalmutatieLandbouwindexLPI_2":7.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":200,"LandbouwInOutputGoederenDiensten":"A045450  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":138.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":201,"LandbouwInOutputGoederenDiensten":"A045450  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":138.8,"KwartaalmutatieLandbouwindexLPI_2":3.0,"JaarmutatieLandbouwindexLPI_3":-5.4
+    },{
+      "ID":202,"LandbouwInOutputGoederenDiensten":"A045450  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":142.9,"KwartaalmutatieLandbouwindexLPI_2":3.0,"JaarmutatieLandbouwindexLPI_3":-0.1
+    },{
+      "ID":203,"LandbouwInOutputGoederenDiensten":"A045454  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":249.9,"KwartaalmutatieLandbouwindexLPI_2":20.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":204,"LandbouwInOutputGoederenDiensten":"A045454  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":194.3,"KwartaalmutatieLandbouwindexLPI_2":-22.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":205,"LandbouwInOutputGoederenDiensten":"A045454  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":125.2,"KwartaalmutatieLandbouwindexLPI_2":-35.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":206,"LandbouwInOutputGoederenDiensten":"A045454  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":133.5,"KwartaalmutatieLandbouwindexLPI_2":6.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":207,"LandbouwInOutputGoederenDiensten":"A045454  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":182.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":208,"LandbouwInOutputGoederenDiensten":"A045454  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":144.9,"KwartaalmutatieLandbouwindexLPI_2":8.5,"JaarmutatieLandbouwindexLPI_3":-42.0
+    },{
+      "ID":209,"LandbouwInOutputGoederenDiensten":"A045454  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":134.2,"KwartaalmutatieLandbouwindexLPI_2":-7.4,"JaarmutatieLandbouwindexLPI_3":-30.9
+    },{
+      "ID":210,"LandbouwInOutputGoederenDiensten":"A053067  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":247.3,"KwartaalmutatieLandbouwindexLPI_2":27.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":211,"LandbouwInOutputGoederenDiensten":"A053067  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":164.1,"KwartaalmutatieLandbouwindexLPI_2":-33.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":212,"LandbouwInOutputGoederenDiensten":"A053067  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":93.4,"KwartaalmutatieLandbouwindexLPI_2":-43.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":213,"LandbouwInOutputGoederenDiensten":"A053067  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":86.2,"KwartaalmutatieLandbouwindexLPI_2":-7.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":214,"LandbouwInOutputGoederenDiensten":"A053067  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":146.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":215,"LandbouwInOutputGoederenDiensten":"A053067  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":97.9,"KwartaalmutatieLandbouwindexLPI_2":13.6,"JaarmutatieLandbouwindexLPI_3":-60.4
+    },{
+      "ID":216,"LandbouwInOutputGoederenDiensten":"A053067  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":114.4,"KwartaalmutatieLandbouwindexLPI_2":16.9,"JaarmutatieLandbouwindexLPI_3":-30.3
+    },{
+      "ID":217,"LandbouwInOutputGoederenDiensten":"A053068  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":218,"LandbouwInOutputGoederenDiensten":"A053068  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":165.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":219,"LandbouwInOutputGoederenDiensten":"A053068  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":96.0,"KwartaalmutatieLandbouwindexLPI_2":-41.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":220,"LandbouwInOutputGoederenDiensten":"A053068  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":221,"LandbouwInOutputGoederenDiensten":"A053068  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":114.9,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":222,"LandbouwInOutputGoederenDiensten":"A053068  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":223,"LandbouwInOutputGoederenDiensten":"A053068  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":210.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":27.0
+    },{
+      "ID":224,"LandbouwInOutputGoederenDiensten":"A053069  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":247.3,"KwartaalmutatieLandbouwindexLPI_2":27.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":225,"LandbouwInOutputGoederenDiensten":"A053069  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":164.0,"KwartaalmutatieLandbouwindexLPI_2":-33.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":226,"LandbouwInOutputGoederenDiensten":"A053069  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":91.4,"KwartaalmutatieLandbouwindexLPI_2":-44.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":227,"LandbouwInOutputGoederenDiensten":"A053069  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":86.2,"KwartaalmutatieLandbouwindexLPI_2":-5.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":228,"LandbouwInOutputGoederenDiensten":"A053069  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":149.8,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":229,"LandbouwInOutputGoederenDiensten":"A053069  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":97.9,"KwartaalmutatieLandbouwindexLPI_2":13.6,"JaarmutatieLandbouwindexLPI_3":-60.4
+    },{
+      "ID":230,"LandbouwInOutputGoederenDiensten":"A053069  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":100.4,"KwartaalmutatieLandbouwindexLPI_2":2.6,"JaarmutatieLandbouwindexLPI_3":-38.8
+    },{
+      "ID":231,"LandbouwInOutputGoederenDiensten":"A053070  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":262.6,"KwartaalmutatieLandbouwindexLPI_2":11.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":232,"LandbouwInOutputGoederenDiensten":"A053070  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":262.6,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":233,"LandbouwInOutputGoederenDiensten":"A053070  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":192.8,"KwartaalmutatieLandbouwindexLPI_2":-26.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":234,"LandbouwInOutputGoederenDiensten":"A053070  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":192.8,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":235,"LandbouwInOutputGoederenDiensten":"A053070  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":234.7,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":236,"LandbouwInOutputGoederenDiensten":"A053070  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":175.0,"KwartaalmutatieLandbouwindexLPI_2":-9.2,"JaarmutatieLandbouwindexLPI_3":-33.4
+    },{
+      "ID":237,"LandbouwInOutputGoederenDiensten":"A053070  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":175.0,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":-33.4
+    },{
+      "ID":238,"LandbouwInOutputGoederenDiensten":"A053071  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":183.0,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":239,"LandbouwInOutputGoederenDiensten":"A053071  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":183.0,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":240,"LandbouwInOutputGoederenDiensten":"A053071  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":183.1,"KwartaalmutatieLandbouwindexLPI_2":0.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":241,"LandbouwInOutputGoederenDiensten":"A053071  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":183.1,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":242,"LandbouwInOutputGoederenDiensten":"A053071  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":183.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":243,"LandbouwInOutputGoederenDiensten":"A053071  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":190.0,"KwartaalmutatieLandbouwindexLPI_2":3.8,"JaarmutatieLandbouwindexLPI_3":3.8
+    },{
+      "ID":244,"LandbouwInOutputGoederenDiensten":"A053071  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":190.0,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":3.8
+    },{
+      "ID":245,"LandbouwInOutputGoederenDiensten":"A045455  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":133.7,"KwartaalmutatieLandbouwindexLPI_2":-1.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":246,"LandbouwInOutputGoederenDiensten":"A045455  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":139.3,"KwartaalmutatieLandbouwindexLPI_2":4.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":247,"LandbouwInOutputGoederenDiensten":"A045455  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":129.6,"KwartaalmutatieLandbouwindexLPI_2":-7.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":248,"LandbouwInOutputGoederenDiensten":"A045455  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":119.0,"KwartaalmutatieLandbouwindexLPI_2":-8.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":249,"LandbouwInOutputGoederenDiensten":"A045455  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":131.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":250,"LandbouwInOutputGoederenDiensten":"A045455  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":112.2,"KwartaalmutatieLandbouwindexLPI_2":-5.7,"JaarmutatieLandbouwindexLPI_3":-16.1
+    },{
+      "ID":251,"LandbouwInOutputGoederenDiensten":"A045455  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":114.0,"KwartaalmutatieLandbouwindexLPI_2":1.6,"JaarmutatieLandbouwindexLPI_3":-18.2
+    },{
+      "ID":252,"LandbouwInOutputGoederenDiensten":"A045457  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":128.7,"KwartaalmutatieLandbouwindexLPI_2":10.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":253,"LandbouwInOutputGoederenDiensten":"A045457  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":138.2,"KwartaalmutatieLandbouwindexLPI_2":7.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":254,"LandbouwInOutputGoederenDiensten":"A045457  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":130.0,"KwartaalmutatieLandbouwindexLPI_2":-5.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":255,"LandbouwInOutputGoederenDiensten":"A045457  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":75.3,"KwartaalmutatieLandbouwindexLPI_2":-42.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":256,"LandbouwInOutputGoederenDiensten":"A045457  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":120.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":257,"LandbouwInOutputGoederenDiensten":"A045457  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":90.3,"KwartaalmutatieLandbouwindexLPI_2":19.9,"JaarmutatieLandbouwindexLPI_3":-29.8
+    },{
+      "ID":258,"LandbouwInOutputGoederenDiensten":"A045457  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":90.3,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":-34.7
+    },{
+      "ID":259,"LandbouwInOutputGoederenDiensten":"A045458  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":130.6,"KwartaalmutatieLandbouwindexLPI_2":3.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":260,"LandbouwInOutputGoederenDiensten":"A045458  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":173.2,"KwartaalmutatieLandbouwindexLPI_2":32.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":261,"LandbouwInOutputGoederenDiensten":"A045458  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":152.6,"KwartaalmutatieLandbouwindexLPI_2":-11.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":262,"LandbouwInOutputGoederenDiensten":"A045458  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":101.7,"KwartaalmutatieLandbouwindexLPI_2":-33.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":263,"LandbouwInOutputGoederenDiensten":"A045458  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":137.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":264,"LandbouwInOutputGoederenDiensten":"A045458  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":108.6,"KwartaalmutatieLandbouwindexLPI_2":6.8,"JaarmutatieLandbouwindexLPI_3":-16.8
+    },{
+      "ID":265,"LandbouwInOutputGoederenDiensten":"A045458  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":112.7,"KwartaalmutatieLandbouwindexLPI_2":3.8,"JaarmutatieLandbouwindexLPI_3":-34.9
+    },{
+      "ID":266,"LandbouwInOutputGoederenDiensten":"A053072  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":184.8,"KwartaalmutatieLandbouwindexLPI_2":16.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":267,"LandbouwInOutputGoederenDiensten":"A053072  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":118.5,"KwartaalmutatieLandbouwindexLPI_2":-35.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":268,"LandbouwInOutputGoederenDiensten":"A053072  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":111.8,"KwartaalmutatieLandbouwindexLPI_2":-5.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":269,"LandbouwInOutputGoederenDiensten":"A053072  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":161.7,"KwartaalmutatieLandbouwindexLPI_2":44.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":270,"LandbouwInOutputGoederenDiensten":"A053072  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":127.8,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":271,"LandbouwInOutputGoederenDiensten":"A053072  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":215.7,"KwartaalmutatieLandbouwindexLPI_2":33.4,"JaarmutatieLandbouwindexLPI_3":16.7
+    },{
+      "ID":272,"LandbouwInOutputGoederenDiensten":"A053072  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":119.6,"KwartaalmutatieLandbouwindexLPI_2":-44.6,"JaarmutatieLandbouwindexLPI_3":0.9
+    },{
+      "ID":273,"LandbouwInOutputGoederenDiensten":"A045460  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":274,"LandbouwInOutputGoederenDiensten":"A045460  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":275,"LandbouwInOutputGoederenDiensten":"A045460  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":276,"LandbouwInOutputGoederenDiensten":"A045460  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":277,"LandbouwInOutputGoederenDiensten":"A045460  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":278,"LandbouwInOutputGoederenDiensten":"A045460  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":279,"LandbouwInOutputGoederenDiensten":"A045460  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":280,"LandbouwInOutputGoederenDiensten":"A045461  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":281,"LandbouwInOutputGoederenDiensten":"A045461  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":282,"LandbouwInOutputGoederenDiensten":"A045461  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":283,"LandbouwInOutputGoederenDiensten":"A045461  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":284,"LandbouwInOutputGoederenDiensten":"A045461  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":285,"LandbouwInOutputGoederenDiensten":"A045461  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":140.7,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":286,"LandbouwInOutputGoederenDiensten":"A045461  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":149.4,"KwartaalmutatieLandbouwindexLPI_2":6.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":287,"LandbouwInOutputGoederenDiensten":"A045462  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":288,"LandbouwInOutputGoederenDiensten":"A045462  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":289,"LandbouwInOutputGoederenDiensten":"A045462  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":290,"LandbouwInOutputGoederenDiensten":"A045462  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":291,"LandbouwInOutputGoederenDiensten":"A045462  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":292,"LandbouwInOutputGoederenDiensten":"A045462  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":293,"LandbouwInOutputGoederenDiensten":"A045462  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":294,"LandbouwInOutputGoederenDiensten":"A053073  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":163.5,"KwartaalmutatieLandbouwindexLPI_2":14.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":295,"LandbouwInOutputGoederenDiensten":"A053073  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":139.0,"KwartaalmutatieLandbouwindexLPI_2":-15.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":296,"LandbouwInOutputGoederenDiensten":"A053073  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":122.8,"KwartaalmutatieLandbouwindexLPI_2":-11.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":297,"LandbouwInOutputGoederenDiensten":"A053073  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":126.9,"KwartaalmutatieLandbouwindexLPI_2":3.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":298,"LandbouwInOutputGoederenDiensten":"A053073  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":137.9,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":299,"LandbouwInOutputGoederenDiensten":"A053073  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":144.4,"KwartaalmutatieLandbouwindexLPI_2":13.8,"JaarmutatieLandbouwindexLPI_3":-11.7
+    },{
+      "ID":300,"LandbouwInOutputGoederenDiensten":"A053073  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":137.1,"KwartaalmutatieLandbouwindexLPI_2":-5.1,"JaarmutatieLandbouwindexLPI_3":-1.4
+    },{
+      "ID":301,"LandbouwInOutputGoederenDiensten":"A053074  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":190.9,"KwartaalmutatieLandbouwindexLPI_2":16.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":302,"LandbouwInOutputGoederenDiensten":"A053074  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":160.4,"KwartaalmutatieLandbouwindexLPI_2":-16.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":303,"LandbouwInOutputGoederenDiensten":"A053074  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":123.6,"KwartaalmutatieLandbouwindexLPI_2":-22.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":304,"LandbouwInOutputGoederenDiensten":"A053074  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":125.0,"KwartaalmutatieLandbouwindexLPI_2":1.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":305,"LandbouwInOutputGoederenDiensten":"A053074  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":150.6,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":306,"LandbouwInOutputGoederenDiensten":"A053074  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":136.2,"KwartaalmutatieLandbouwindexLPI_2":9.0,"JaarmutatieLandbouwindexLPI_3":-28.7
+    },{
+      "ID":307,"LandbouwInOutputGoederenDiensten":"A053074  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":135.8,"KwartaalmutatieLandbouwindexLPI_2":-0.3,"JaarmutatieLandbouwindexLPI_3":-15.3
+    },{
+      "ID":308,"LandbouwInOutputGoederenDiensten":"A045463  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":144.1,"KwartaalmutatieLandbouwindexLPI_2":3.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":309,"LandbouwInOutputGoederenDiensten":"A045463  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":160.8,"KwartaalmutatieLandbouwindexLPI_2":11.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":310,"LandbouwInOutputGoederenDiensten":"A045463  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":155.4,"KwartaalmutatieLandbouwindexLPI_2":-3.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":311,"LandbouwInOutputGoederenDiensten":"A045463  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":145.4,"KwartaalmutatieLandbouwindexLPI_2":-6.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":312,"LandbouwInOutputGoederenDiensten":"A045463  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":151.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":313,"LandbouwInOutputGoederenDiensten":"A045463  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":144.1,"KwartaalmutatieLandbouwindexLPI_2":-0.9,"JaarmutatieLandbouwindexLPI_3":0.0
+    },{
+      "ID":314,"LandbouwInOutputGoederenDiensten":"A045463  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":137.0,"KwartaalmutatieLandbouwindexLPI_2":-4.9,"JaarmutatieLandbouwindexLPI_3":-14.8
+    },{
+      "ID":315,"LandbouwInOutputGoederenDiensten":"A045465  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":199.4,"KwartaalmutatieLandbouwindexLPI_2":19.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":316,"LandbouwInOutputGoederenDiensten":"A045465  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":211.2,"KwartaalmutatieLandbouwindexLPI_2":5.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":317,"LandbouwInOutputGoederenDiensten":"A045465  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":216.8,"KwartaalmutatieLandbouwindexLPI_2":2.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":318,"LandbouwInOutputGoederenDiensten":"A045465  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":228.6,"KwartaalmutatieLandbouwindexLPI_2":5.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":319,"LandbouwInOutputGoederenDiensten":"A045465  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":214.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":320,"LandbouwInOutputGoederenDiensten":"A045465  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":235.9,"KwartaalmutatieLandbouwindexLPI_2":3.2,"JaarmutatieLandbouwindexLPI_3":18.3
+    },{
+      "ID":321,"LandbouwInOutputGoederenDiensten":"A045465  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":206.1,"KwartaalmutatieLandbouwindexLPI_2":-12.6,"JaarmutatieLandbouwindexLPI_3":-2.4
+    },{
+      "ID":322,"LandbouwInOutputGoederenDiensten":"A053077  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":206.1,"KwartaalmutatieLandbouwindexLPI_2":14.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":323,"LandbouwInOutputGoederenDiensten":"A053077  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":242.8,"KwartaalmutatieLandbouwindexLPI_2":17.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":324,"LandbouwInOutputGoederenDiensten":"A053077  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":246.0,"KwartaalmutatieLandbouwindexLPI_2":1.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":325,"LandbouwInOutputGoederenDiensten":"A053077  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":246.8,"KwartaalmutatieLandbouwindexLPI_2":0.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":326,"LandbouwInOutputGoederenDiensten":"A053077  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":235.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":327,"LandbouwInOutputGoederenDiensten":"A053077  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":246.7,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":19.7
+    },{
+      "ID":328,"LandbouwInOutputGoederenDiensten":"A053077  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":223.3,"KwartaalmutatieLandbouwindexLPI_2":-9.5,"JaarmutatieLandbouwindexLPI_3":-8.0
+    },{
+      "ID":329,"LandbouwInOutputGoederenDiensten":"A053078  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":195.7,"KwartaalmutatieLandbouwindexLPI_2":21.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":330,"LandbouwInOutputGoederenDiensten":"A053078  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":193.8,"KwartaalmutatieLandbouwindexLPI_2":-1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":331,"LandbouwInOutputGoederenDiensten":"A053078  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":200.7,"KwartaalmutatieLandbouwindexLPI_2":3.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":332,"LandbouwInOutputGoederenDiensten":"A053078  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":218.5,"KwartaalmutatieLandbouwindexLPI_2":8.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":333,"LandbouwInOutputGoederenDiensten":"A053078  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":202.2,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":334,"LandbouwInOutputGoederenDiensten":"A053078  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":229.9,"KwartaalmutatieLandbouwindexLPI_2":5.2,"JaarmutatieLandbouwindexLPI_3":17.5
+    },{
+      "ID":335,"LandbouwInOutputGoederenDiensten":"A053078  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":196.6,"KwartaalmutatieLandbouwindexLPI_2":-14.5,"JaarmutatieLandbouwindexLPI_3":1.4
+    },{
+      "ID":336,"LandbouwInOutputGoederenDiensten":"A045466  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":113.0,"KwartaalmutatieLandbouwindexLPI_2":-6.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":337,"LandbouwInOutputGoederenDiensten":"A045466  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":134.4,"KwartaalmutatieLandbouwindexLPI_2":18.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":338,"LandbouwInOutputGoederenDiensten":"A045466  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":121.9,"KwartaalmutatieLandbouwindexLPI_2":-9.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":339,"LandbouwInOutputGoederenDiensten":"A045466  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":98.6,"KwartaalmutatieLandbouwindexLPI_2":-19.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":340,"LandbouwInOutputGoederenDiensten":"A045466  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":117.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":341,"LandbouwInOutputGoederenDiensten":"A045466  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":92.4,"KwartaalmutatieLandbouwindexLPI_2":-6.3,"JaarmutatieLandbouwindexLPI_3":-18.2
+    },{
+      "ID":342,"LandbouwInOutputGoederenDiensten":"A045466  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":93.9,"KwartaalmutatieLandbouwindexLPI_2":1.6,"JaarmutatieLandbouwindexLPI_3":-30.1
+    },{
+      "ID":343,"LandbouwInOutputGoederenDiensten":"A045467  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":344,"LandbouwInOutputGoederenDiensten":"A045467  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":345,"LandbouwInOutputGoederenDiensten":"A045467  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":346,"LandbouwInOutputGoederenDiensten":"A045467  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":347,"LandbouwInOutputGoederenDiensten":"A045467  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":348,"LandbouwInOutputGoederenDiensten":"A045467  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":349,"LandbouwInOutputGoederenDiensten":"A045467  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":350,"LandbouwInOutputGoederenDiensten":"A045468  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":351,"LandbouwInOutputGoederenDiensten":"A045468  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":352,"LandbouwInOutputGoederenDiensten":"A045468  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":353,"LandbouwInOutputGoederenDiensten":"A045468  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":354,"LandbouwInOutputGoederenDiensten":"A045468  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":355,"LandbouwInOutputGoederenDiensten":"A045468  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":356,"LandbouwInOutputGoederenDiensten":"A045468  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":357,"LandbouwInOutputGoederenDiensten":"A045469  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":150.6,"KwartaalmutatieLandbouwindexLPI_2":1.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":358,"LandbouwInOutputGoederenDiensten":"A045469  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":163.2,"KwartaalmutatieLandbouwindexLPI_2":8.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":359,"LandbouwInOutputGoederenDiensten":"A045469  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":164.8,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":360,"LandbouwInOutputGoederenDiensten":"A045469  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":159.9,"KwartaalmutatieLandbouwindexLPI_2":-3.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":361,"LandbouwInOutputGoederenDiensten":"A045469  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":159.6,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":362,"LandbouwInOutputGoederenDiensten":"A045469  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":157.9,"KwartaalmutatieLandbouwindexLPI_2":-1.3,"JaarmutatieLandbouwindexLPI_3":4.8
+    },{
+      "ID":363,"LandbouwInOutputGoederenDiensten":"A045469  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":152.5,"KwartaalmutatieLandbouwindexLPI_2":-3.4,"JaarmutatieLandbouwindexLPI_3":-6.6
+    },{
+      "ID":364,"LandbouwInOutputGoederenDiensten":"A053079  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":157.1,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":365,"LandbouwInOutputGoederenDiensten":"A053079  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":171.5,"KwartaalmutatieLandbouwindexLPI_2":9.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":366,"LandbouwInOutputGoederenDiensten":"A053079  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":173.5,"KwartaalmutatieLandbouwindexLPI_2":1.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":367,"LandbouwInOutputGoederenDiensten":"A053079  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":164.0,"KwartaalmutatieLandbouwindexLPI_2":-5.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":368,"LandbouwInOutputGoederenDiensten":"A053079  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":166.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":369,"LandbouwInOutputGoederenDiensten":"A053079  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":158.1,"KwartaalmutatieLandbouwindexLPI_2":-3.6,"JaarmutatieLandbouwindexLPI_3":0.6
+    },{
+      "ID":370,"LandbouwInOutputGoederenDiensten":"A053079  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":149.7,"KwartaalmutatieLandbouwindexLPI_2":-5.3,"JaarmutatieLandbouwindexLPI_3":-12.7
+    },{
+      "ID":371,"LandbouwInOutputGoederenDiensten":"A053148  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":137.0,"KwartaalmutatieLandbouwindexLPI_2":4.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":372,"LandbouwInOutputGoederenDiensten":"A053148  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":145.7,"KwartaalmutatieLandbouwindexLPI_2":6.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":373,"LandbouwInOutputGoederenDiensten":"A053148  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":146.7,"KwartaalmutatieLandbouwindexLPI_2":0.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":374,"LandbouwInOutputGoederenDiensten":"A053148  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":151.4,"KwartaalmutatieLandbouwindexLPI_2":3.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":375,"LandbouwInOutputGoederenDiensten":"A053148  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":145.2,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":376,"LandbouwInOutputGoederenDiensten":"A053148  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":157.3,"KwartaalmutatieLandbouwindexLPI_2":3.9,"JaarmutatieLandbouwindexLPI_3":14.8
+    },{
+      "ID":377,"LandbouwInOutputGoederenDiensten":"A053148  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":158.2,"KwartaalmutatieLandbouwindexLPI_2":0.6,"JaarmutatieLandbouwindexLPI_3":8.6
+    },{
+      "ID":378,"LandbouwInOutputGoederenDiensten":"A045471  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":164.4,"KwartaalmutatieLandbouwindexLPI_2":2.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":379,"LandbouwInOutputGoederenDiensten":"A045471  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":168.3,"KwartaalmutatieLandbouwindexLPI_2":2.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":380,"LandbouwInOutputGoederenDiensten":"A045471  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":166.6,"KwartaalmutatieLandbouwindexLPI_2":-1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":381,"LandbouwInOutputGoederenDiensten":"A045471  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":151.3,"KwartaalmutatieLandbouwindexLPI_2":-9.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":382,"LandbouwInOutputGoederenDiensten":"A045471  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":162.7,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":383,"LandbouwInOutputGoederenDiensten":"A045471  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":129.7,"KwartaalmutatieLandbouwindexLPI_2":-14.3,"JaarmutatieLandbouwindexLPI_3":-21.1
+    },{
+      "ID":384,"LandbouwInOutputGoederenDiensten":"A045471  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":132.8,"KwartaalmutatieLandbouwindexLPI_2":2.4,"JaarmutatieLandbouwindexLPI_3":-21.1
+    },{
+      "ID":385,"LandbouwInOutputGoederenDiensten":"A045472  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":157.2,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":386,"LandbouwInOutputGoederenDiensten":"A045472  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":160.2,"KwartaalmutatieLandbouwindexLPI_2":1.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":387,"LandbouwInOutputGoederenDiensten":"A045472  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":160.3,"KwartaalmutatieLandbouwindexLPI_2":0.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":388,"LandbouwInOutputGoederenDiensten":"A045472  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":137.1,"KwartaalmutatieLandbouwindexLPI_2":-14.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":389,"LandbouwInOutputGoederenDiensten":"A045472  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":153.7,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":390,"LandbouwInOutputGoederenDiensten":"A045472  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":112.2,"KwartaalmutatieLandbouwindexLPI_2":-18.2,"JaarmutatieLandbouwindexLPI_3":-28.6
+    },{
+      "ID":391,"LandbouwInOutputGoederenDiensten":"A045472  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":118.3,"KwartaalmutatieLandbouwindexLPI_2":5.4,"JaarmutatieLandbouwindexLPI_3":-26.2
+    },{
+      "ID":392,"LandbouwInOutputGoederenDiensten":"A053149  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":160.1,"KwartaalmutatieLandbouwindexLPI_2":0.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":393,"LandbouwInOutputGoederenDiensten":"A053149  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":163.7,"KwartaalmutatieLandbouwindexLPI_2":2.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":394,"LandbouwInOutputGoederenDiensten":"A053149  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":163.9,"KwartaalmutatieLandbouwindexLPI_2":0.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":395,"LandbouwInOutputGoederenDiensten":"A053149  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":138.6,"KwartaalmutatieLandbouwindexLPI_2":-15.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":396,"LandbouwInOutputGoederenDiensten":"A053149  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":156.6,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":397,"LandbouwInOutputGoederenDiensten":"A053149  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":111.8,"KwartaalmutatieLandbouwindexLPI_2":-19.3,"JaarmutatieLandbouwindexLPI_3":-30.2
+    },{
+      "ID":398,"LandbouwInOutputGoederenDiensten":"A053149  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":118.8,"KwartaalmutatieLandbouwindexLPI_2":6.3,"JaarmutatieLandbouwindexLPI_3":-27.4
+    },{
+      "ID":399,"LandbouwInOutputGoederenDiensten":"A053080  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":112.1,"KwartaalmutatieLandbouwindexLPI_2":2.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":400,"LandbouwInOutputGoederenDiensten":"A053080  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":104.2,"KwartaalmutatieLandbouwindexLPI_2":-7.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":401,"LandbouwInOutputGoederenDiensten":"A053080  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":102.3,"KwartaalmutatieLandbouwindexLPI_2":-1.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":402,"LandbouwInOutputGoederenDiensten":"A053080  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":113.1,"KwartaalmutatieLandbouwindexLPI_2":10.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":403,"LandbouwInOutputGoederenDiensten":"A053080  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":107.9,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":404,"LandbouwInOutputGoederenDiensten":"A053080  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":118.4,"KwartaalmutatieLandbouwindexLPI_2":4.7,"JaarmutatieLandbouwindexLPI_3":5.6
+    },{
+      "ID":405,"LandbouwInOutputGoederenDiensten":"A053080  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":110.7,"KwartaalmutatieLandbouwindexLPI_2":-6.5,"JaarmutatieLandbouwindexLPI_3":6.2
+    },{
+      "ID":406,"LandbouwInOutputGoederenDiensten":"A045473  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":234.0,"KwartaalmutatieLandbouwindexLPI_2":15.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":407,"LandbouwInOutputGoederenDiensten":"A045473  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":246.6,"KwartaalmutatieLandbouwindexLPI_2":5.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":408,"LandbouwInOutputGoederenDiensten":"A045473  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":229.8,"KwartaalmutatieLandbouwindexLPI_2":-6.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":409,"LandbouwInOutputGoederenDiensten":"A045473  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":275.5,"KwartaalmutatieLandbouwindexLPI_2":19.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":410,"LandbouwInOutputGoederenDiensten":"A045473  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":246.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":411,"LandbouwInOutputGoederenDiensten":"A045473  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":277.5,"KwartaalmutatieLandbouwindexLPI_2":0.7,"JaarmutatieLandbouwindexLPI_3":18.6
+    },{
+      "ID":412,"LandbouwInOutputGoederenDiensten":"A045473  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":257.1,"KwartaalmutatieLandbouwindexLPI_2":-7.4,"JaarmutatieLandbouwindexLPI_3":4.3
+    },{
+      "ID":413,"LandbouwInOutputGoederenDiensten":"A045476  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":99.8,"KwartaalmutatieLandbouwindexLPI_2":-17.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":414,"LandbouwInOutputGoederenDiensten":"A045476  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":101.7,"KwartaalmutatieLandbouwindexLPI_2":1.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":415,"LandbouwInOutputGoederenDiensten":"A045476  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":97.7,"KwartaalmutatieLandbouwindexLPI_2":-3.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":416,"LandbouwInOutputGoederenDiensten":"A045476  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":101.4,"KwartaalmutatieLandbouwindexLPI_2":3.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":417,"LandbouwInOutputGoederenDiensten":"A045476  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":100.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":418,"LandbouwInOutputGoederenDiensten":"A045476  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":96.3,"KwartaalmutatieLandbouwindexLPI_2":-5.0,"JaarmutatieLandbouwindexLPI_3":-3.5
+    },{
+      "ID":419,"LandbouwInOutputGoederenDiensten":"A045476  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":98.5,"KwartaalmutatieLandbouwindexLPI_2":2.3,"JaarmutatieLandbouwindexLPI_3":-3.1
+    },{
+      "ID":420,"LandbouwInOutputGoederenDiensten":"A045464  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":154.6,"KwartaalmutatieLandbouwindexLPI_2":3.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":421,"LandbouwInOutputGoederenDiensten":"A045464  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":164.7,"KwartaalmutatieLandbouwindexLPI_2":6.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":422,"LandbouwInOutputGoederenDiensten":"A045464  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":161.2,"KwartaalmutatieLandbouwindexLPI_2":-2.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":423,"LandbouwInOutputGoederenDiensten":"A045464  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":148.5,"KwartaalmutatieLandbouwindexLPI_2":-7.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":424,"LandbouwInOutputGoederenDiensten":"A045464  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":157.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":425,"LandbouwInOutputGoederenDiensten":"A045464  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":136.6,"KwartaalmutatieLandbouwindexLPI_2":-8.0,"JaarmutatieLandbouwindexLPI_3":-11.6
+    },{
+      "ID":426,"LandbouwInOutputGoederenDiensten":"A045464  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":134.8,"KwartaalmutatieLandbouwindexLPI_2":-1.3,"JaarmutatieLandbouwindexLPI_3":-18.2
+    },{
+      "ID":427,"LandbouwInOutputGoederenDiensten":"A053075  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":159.3,"KwartaalmutatieLandbouwindexLPI_2":9.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":428,"LandbouwInOutputGoederenDiensten":"A053075  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":148.9,"KwartaalmutatieLandbouwindexLPI_2":-6.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":429,"LandbouwInOutputGoederenDiensten":"A053075  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":140.6,"KwartaalmutatieLandbouwindexLPI_2":-5.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":430,"LandbouwInOutputGoederenDiensten":"A053075  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":137.0,"KwartaalmutatieLandbouwindexLPI_2":-2.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":431,"LandbouwInOutputGoederenDiensten":"A053075  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":146.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":432,"LandbouwInOutputGoederenDiensten":"A053075  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":140.7,"KwartaalmutatieLandbouwindexLPI_2":2.7,"JaarmutatieLandbouwindexLPI_3":-11.7
+    },{
+      "ID":433,"LandbouwInOutputGoederenDiensten":"A053075  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":136.2,"KwartaalmutatieLandbouwindexLPI_2":-3.2,"JaarmutatieLandbouwindexLPI_3":-8.5
+    },{
+      "ID":434,"LandbouwInOutputGoederenDiensten":"A053076  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":163.2,"KwartaalmutatieLandbouwindexLPI_2":6.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":435,"LandbouwInOutputGoederenDiensten":"A053076  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":164.2,"KwartaalmutatieLandbouwindexLPI_2":0.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":436,"LandbouwInOutputGoederenDiensten":"A053076  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":155.0,"KwartaalmutatieLandbouwindexLPI_2":-5.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":437,"LandbouwInOutputGoederenDiensten":"A053076  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":142.6,"KwartaalmutatieLandbouwindexLPI_2":-8.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":438,"LandbouwInOutputGoederenDiensten":"A053076  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":156.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":439,"LandbouwInOutputGoederenDiensten":"A053076  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":136.5,"KwartaalmutatieLandbouwindexLPI_2":-4.3,"JaarmutatieLandbouwindexLPI_3":-16.4
+    },{
+      "ID":440,"LandbouwInOutputGoederenDiensten":"A053076  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":135.0,"KwartaalmutatieLandbouwindexLPI_2":-1.1,"JaarmutatieLandbouwindexLPI_3":-17.8
+    },{
+      "ID":441,"LandbouwInOutputGoederenDiensten":"A053131  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":135.8,"KwartaalmutatieLandbouwindexLPI_2":4.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":442,"LandbouwInOutputGoederenDiensten":"A053131  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":132.0,"KwartaalmutatieLandbouwindexLPI_2":-2.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":443,"LandbouwInOutputGoederenDiensten":"A053131  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":126.7,"KwartaalmutatieLandbouwindexLPI_2":-4.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":444,"LandbouwInOutputGoederenDiensten":"A053131  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":128.1,"KwartaalmutatieLandbouwindexLPI_2":1.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":445,"LandbouwInOutputGoederenDiensten":"A053131  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":130.7,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":446,"LandbouwInOutputGoederenDiensten":"A053131  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":131.1,"KwartaalmutatieLandbouwindexLPI_2":2.3,"JaarmutatieLandbouwindexLPI_3":-3.5
+    },{
+      "ID":447,"LandbouwInOutputGoederenDiensten":"A053131  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":135.8,"KwartaalmutatieLandbouwindexLPI_2":3.6,"JaarmutatieLandbouwindexLPI_3":2.9
+    },{
+      "ID":448,"LandbouwInOutputGoederenDiensten":"A053081  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":449,"LandbouwInOutputGoederenDiensten":"A053081  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":450,"LandbouwInOutputGoederenDiensten":"A053081  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":451,"LandbouwInOutputGoederenDiensten":"A053081  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":452,"LandbouwInOutputGoederenDiensten":"A053081  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":453,"LandbouwInOutputGoederenDiensten":"A053081  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":454,"LandbouwInOutputGoederenDiensten":"A053081  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":455,"LandbouwInOutputGoederenDiensten":"A053082  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":183.1,"KwartaalmutatieLandbouwindexLPI_2":9.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":456,"LandbouwInOutputGoederenDiensten":"A053082  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":167.6,"KwartaalmutatieLandbouwindexLPI_2":-8.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":457,"LandbouwInOutputGoederenDiensten":"A053082  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":143.3,"KwartaalmutatieLandbouwindexLPI_2":-14.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":458,"LandbouwInOutputGoederenDiensten":"A053082  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":148.0,"KwartaalmutatieLandbouwindexLPI_2":3.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":459,"LandbouwInOutputGoederenDiensten":"A053082  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":163.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":460,"LandbouwInOutputGoederenDiensten":"A053082  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":157.8,"KwartaalmutatieLandbouwindexLPI_2":6.6,"JaarmutatieLandbouwindexLPI_3":-13.8
+    },{
+      "ID":461,"LandbouwInOutputGoederenDiensten":"A053082  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":184.2,"KwartaalmutatieLandbouwindexLPI_2":16.7,"JaarmutatieLandbouwindexLPI_3":9.9
+    },{
+      "ID":462,"LandbouwInOutputGoederenDiensten":"A053083  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":91.4,"KwartaalmutatieLandbouwindexLPI_2":6.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":463,"LandbouwInOutputGoederenDiensten":"A053083  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":76.1,"KwartaalmutatieLandbouwindexLPI_2":-16.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":464,"LandbouwInOutputGoederenDiensten":"A053083  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":81.0,"KwartaalmutatieLandbouwindexLPI_2":6.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":465,"LandbouwInOutputGoederenDiensten":"A053083  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":87.5,"KwartaalmutatieLandbouwindexLPI_2":8.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":466,"LandbouwInOutputGoederenDiensten":"A053083  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":86.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":467,"LandbouwInOutputGoederenDiensten":"A053083  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":88.1,"KwartaalmutatieLandbouwindexLPI_2":0.7,"JaarmutatieLandbouwindexLPI_3":-3.6
+    },{
+      "ID":468,"LandbouwInOutputGoederenDiensten":"A053083  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":85.9,"KwartaalmutatieLandbouwindexLPI_2":-2.5,"JaarmutatieLandbouwindexLPI_3":12.9
+    },{
+      "ID":469,"LandbouwInOutputGoederenDiensten":"A053084  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":251.4,"KwartaalmutatieLandbouwindexLPI_2":10.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":470,"LandbouwInOutputGoederenDiensten":"A053084  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":231.1,"KwartaalmutatieLandbouwindexLPI_2":-8.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":471,"LandbouwInOutputGoederenDiensten":"A053084  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":197.9,"KwartaalmutatieLandbouwindexLPI_2":-14.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":472,"LandbouwInOutputGoederenDiensten":"A053084  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":184.1,"KwartaalmutatieLandbouwindexLPI_2":-7.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":473,"LandbouwInOutputGoederenDiensten":"A053084  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":221.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":474,"LandbouwInOutputGoederenDiensten":"A053084  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":188.2,"KwartaalmutatieLandbouwindexLPI_2":2.2,"JaarmutatieLandbouwindexLPI_3":-25.1
+    },{
+      "ID":475,"LandbouwInOutputGoederenDiensten":"A053084  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":215.1,"KwartaalmutatieLandbouwindexLPI_2":14.3,"JaarmutatieLandbouwindexLPI_3":-6.9
+    },{
+      "ID":476,"LandbouwInOutputGoederenDiensten":"A053085  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":142.6,"KwartaalmutatieLandbouwindexLPI_2":2.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":477,"LandbouwInOutputGoederenDiensten":"A053085  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":132.5,"KwartaalmutatieLandbouwindexLPI_2":-7.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":478,"LandbouwInOutputGoederenDiensten":"A053085  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":137.3,"KwartaalmutatieLandbouwindexLPI_2":3.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":479,"LandbouwInOutputGoederenDiensten":"A053085  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":139.9,"KwartaalmutatieLandbouwindexLPI_2":1.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":480,"LandbouwInOutputGoederenDiensten":"A053085  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":138.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":481,"LandbouwInOutputGoederenDiensten":"A053085  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":164.5,"KwartaalmutatieLandbouwindexLPI_2":17.6,"JaarmutatieLandbouwindexLPI_3":15.4
+    },{
+      "ID":482,"LandbouwInOutputGoederenDiensten":"A053085  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":185.7,"KwartaalmutatieLandbouwindexLPI_2":12.9,"JaarmutatieLandbouwindexLPI_3":40.2
+    },{
+      "ID":483,"LandbouwInOutputGoederenDiensten":"A053086  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":161.7,"KwartaalmutatieLandbouwindexLPI_2":-7.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":484,"LandbouwInOutputGoederenDiensten":"A053086  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":154.4,"KwartaalmutatieLandbouwindexLPI_2":-4.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":485,"LandbouwInOutputGoederenDiensten":"A053086  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":155.9,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":486,"LandbouwInOutputGoederenDiensten":"A053086  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":153.3,"KwartaalmutatieLandbouwindexLPI_2":-1.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":487,"LandbouwInOutputGoederenDiensten":"A053086  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":156.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":488,"LandbouwInOutputGoederenDiensten":"A053086  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":152.2,"KwartaalmutatieLandbouwindexLPI_2":-0.7,"JaarmutatieLandbouwindexLPI_3":-5.9
+    },{
+      "ID":489,"LandbouwInOutputGoederenDiensten":"A053086  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":200.1,"KwartaalmutatieLandbouwindexLPI_2":31.5,"JaarmutatieLandbouwindexLPI_3":29.6
+    },{
+      "ID":490,"LandbouwInOutputGoederenDiensten":"A053087  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":172.1,"KwartaalmutatieLandbouwindexLPI_2":11.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":491,"LandbouwInOutputGoederenDiensten":"A053087  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":169.1,"KwartaalmutatieLandbouwindexLPI_2":-1.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":492,"LandbouwInOutputGoederenDiensten":"A053087  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":170.8,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":493,"LandbouwInOutputGoederenDiensten":"A053087  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":172.5,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":494,"LandbouwInOutputGoederenDiensten":"A053087  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":171.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":495,"LandbouwInOutputGoederenDiensten":"A053087  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":185.3,"KwartaalmutatieLandbouwindexLPI_2":7.4,"JaarmutatieLandbouwindexLPI_3":7.7
+    },{
+      "ID":496,"LandbouwInOutputGoederenDiensten":"A053087  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":205.2,"KwartaalmutatieLandbouwindexLPI_2":10.7,"JaarmutatieLandbouwindexLPI_3":21.3
+    },{
+      "ID":497,"LandbouwInOutputGoederenDiensten":"A053088  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":178.1,"KwartaalmutatieLandbouwindexLPI_2":13.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":498,"LandbouwInOutputGoederenDiensten":"A053088  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":172.4,"KwartaalmutatieLandbouwindexLPI_2":-3.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":499,"LandbouwInOutputGoederenDiensten":"A053088  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":173.1,"KwartaalmutatieLandbouwindexLPI_2":0.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":500,"LandbouwInOutputGoederenDiensten":"A053088  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":174.9,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":501,"LandbouwInOutputGoederenDiensten":"A053088  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":174.6,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":502,"LandbouwInOutputGoederenDiensten":"A053088  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":191.0,"KwartaalmutatieLandbouwindexLPI_2":9.2,"JaarmutatieLandbouwindexLPI_3":7.2
+    },{
+      "ID":503,"LandbouwInOutputGoederenDiensten":"A053088  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":215.7,"KwartaalmutatieLandbouwindexLPI_2":12.9,"JaarmutatieLandbouwindexLPI_3":25.1
+    },{
+      "ID":504,"LandbouwInOutputGoederenDiensten":"A053089  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":184.7,"KwartaalmutatieLandbouwindexLPI_2":16.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":505,"LandbouwInOutputGoederenDiensten":"A053089  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":176.7,"KwartaalmutatieLandbouwindexLPI_2":-4.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":506,"LandbouwInOutputGoederenDiensten":"A053089  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":177.5,"KwartaalmutatieLandbouwindexLPI_2":0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":507,"LandbouwInOutputGoederenDiensten":"A053089  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":179.3,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":508,"LandbouwInOutputGoederenDiensten":"A053089  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":179.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":509,"LandbouwInOutputGoederenDiensten":"A053089  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":199.7,"KwartaalmutatieLandbouwindexLPI_2":11.4,"JaarmutatieLandbouwindexLPI_3":8.1
+    },{
+      "ID":510,"LandbouwInOutputGoederenDiensten":"A053089  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":228.5,"KwartaalmutatieLandbouwindexLPI_2":14.4,"JaarmutatieLandbouwindexLPI_3":29.3
+    },{
+      "ID":511,"LandbouwInOutputGoederenDiensten":"A053090  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":170.7,"KwartaalmutatieLandbouwindexLPI_2":1.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":512,"LandbouwInOutputGoederenDiensten":"A053090  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":174.5,"KwartaalmutatieLandbouwindexLPI_2":2.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":513,"LandbouwInOutputGoederenDiensten":"A053090  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":172.7,"KwartaalmutatieLandbouwindexLPI_2":-1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":514,"LandbouwInOutputGoederenDiensten":"A053090  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":175.7,"KwartaalmutatieLandbouwindexLPI_2":1.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":515,"LandbouwInOutputGoederenDiensten":"A053090  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":173.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":516,"LandbouwInOutputGoederenDiensten":"A053090  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":170.8,"KwartaalmutatieLandbouwindexLPI_2":-2.8,"JaarmutatieLandbouwindexLPI_3":0.1
+    },{
+      "ID":517,"LandbouwInOutputGoederenDiensten":"A053090  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":182.2,"KwartaalmutatieLandbouwindexLPI_2":6.7,"JaarmutatieLandbouwindexLPI_3":4.4
+    },{
+      "ID":518,"LandbouwInOutputGoederenDiensten":"A053091  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":125.2,"KwartaalmutatieLandbouwindexLPI_2":-0.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":519,"LandbouwInOutputGoederenDiensten":"A053091  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":128.8,"KwartaalmutatieLandbouwindexLPI_2":2.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":520,"LandbouwInOutputGoederenDiensten":"A053091  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":132.7,"KwartaalmutatieLandbouwindexLPI_2":3.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":521,"LandbouwInOutputGoederenDiensten":"A053091  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":131.9,"KwartaalmutatieLandbouwindexLPI_2":-0.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":522,"LandbouwInOutputGoederenDiensten":"A053091  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":129.7,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":523,"LandbouwInOutputGoederenDiensten":"A053091  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":135.3,"KwartaalmutatieLandbouwindexLPI_2":2.6,"JaarmutatieLandbouwindexLPI_3":8.1
+    },{
+      "ID":524,"LandbouwInOutputGoederenDiensten":"A053091  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":137.1,"KwartaalmutatieLandbouwindexLPI_2":1.3,"JaarmutatieLandbouwindexLPI_3":6.4
+    },{
+      "ID":525,"LandbouwInOutputGoederenDiensten":"A053092  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":157.5,"KwartaalmutatieLandbouwindexLPI_2":6.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":526,"LandbouwInOutputGoederenDiensten":"A053092  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":162.0,"KwartaalmutatieLandbouwindexLPI_2":2.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":527,"LandbouwInOutputGoederenDiensten":"A053092  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":166.7,"KwartaalmutatieLandbouwindexLPI_2":2.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":528,"LandbouwInOutputGoederenDiensten":"A053092  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":168.3,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":529,"LandbouwInOutputGoederenDiensten":"A053092  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":163.6,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":530,"LandbouwInOutputGoederenDiensten":"A053092  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":173.2,"KwartaalmutatieLandbouwindexLPI_2":2.9,"JaarmutatieLandbouwindexLPI_3":10.0
+    },{
+      "ID":531,"LandbouwInOutputGoederenDiensten":"A053092  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":181.8,"KwartaalmutatieLandbouwindexLPI_2":5.0,"JaarmutatieLandbouwindexLPI_3":12.2
+    },{
+      "ID":532,"LandbouwInOutputGoederenDiensten":"A053093  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":170.8,"KwartaalmutatieLandbouwindexLPI_2":11.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":533,"LandbouwInOutputGoederenDiensten":"A053093  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":173.7,"KwartaalmutatieLandbouwindexLPI_2":1.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":534,"LandbouwInOutputGoederenDiensten":"A053093  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":173.3,"KwartaalmutatieLandbouwindexLPI_2":-0.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":535,"LandbouwInOutputGoederenDiensten":"A053093  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":175.4,"KwartaalmutatieLandbouwindexLPI_2":1.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":536,"LandbouwInOutputGoederenDiensten":"A053093  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":173.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":537,"LandbouwInOutputGoederenDiensten":"A053093  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":186.6,"KwartaalmutatieLandbouwindexLPI_2":6.4,"JaarmutatieLandbouwindexLPI_3":9.3
+    },{
+      "ID":538,"LandbouwInOutputGoederenDiensten":"A053093  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":211.4,"KwartaalmutatieLandbouwindexLPI_2":13.3,"JaarmutatieLandbouwindexLPI_3":21.7
+    },{
+      "ID":539,"LandbouwInOutputGoederenDiensten":"A053094  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":149.8,"KwartaalmutatieLandbouwindexLPI_2":0.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":540,"LandbouwInOutputGoederenDiensten":"A053094  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":153.5,"KwartaalmutatieLandbouwindexLPI_2":2.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":541,"LandbouwInOutputGoederenDiensten":"A053094  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":154.3,"KwartaalmutatieLandbouwindexLPI_2":0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":542,"LandbouwInOutputGoederenDiensten":"A053094  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":155.4,"KwartaalmutatieLandbouwindexLPI_2":0.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":543,"LandbouwInOutputGoederenDiensten":"A053094  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":153.2,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":544,"LandbouwInOutputGoederenDiensten":"A053094  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":154.3,"KwartaalmutatieLandbouwindexLPI_2":-0.7,"JaarmutatieLandbouwindexLPI_3":3.0
+    },{
+      "ID":545,"LandbouwInOutputGoederenDiensten":"A053094  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":161.1,"KwartaalmutatieLandbouwindexLPI_2":4.4,"JaarmutatieLandbouwindexLPI_3":5.0
+    },{
+      "ID":546,"LandbouwInOutputGoederenDiensten":"A053095  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":157.2,"KwartaalmutatieLandbouwindexLPI_2":6.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":547,"LandbouwInOutputGoederenDiensten":"A053095  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":161.7,"KwartaalmutatieLandbouwindexLPI_2":2.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":548,"LandbouwInOutputGoederenDiensten":"A053095  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":166.6,"KwartaalmutatieLandbouwindexLPI_2":3.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":549,"LandbouwInOutputGoederenDiensten":"A053095  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":168.1,"KwartaalmutatieLandbouwindexLPI_2":0.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":550,"LandbouwInOutputGoederenDiensten":"A053095  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":163.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":551,"LandbouwInOutputGoederenDiensten":"A053095  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":172.8,"KwartaalmutatieLandbouwindexLPI_2":2.8,"JaarmutatieLandbouwindexLPI_3":9.9
+    },{
+      "ID":552,"LandbouwInOutputGoederenDiensten":"A053095  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":181.0,"KwartaalmutatieLandbouwindexLPI_2":4.7,"JaarmutatieLandbouwindexLPI_3":11.9
+    },{
+      "ID":553,"LandbouwInOutputGoederenDiensten":"A053096  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":153.8,"KwartaalmutatieLandbouwindexLPI_2":7.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":554,"LandbouwInOutputGoederenDiensten":"A053096  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":156.1,"KwartaalmutatieLandbouwindexLPI_2":1.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":555,"LandbouwInOutputGoederenDiensten":"A053096  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":156.9,"KwartaalmutatieLandbouwindexLPI_2":0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":556,"LandbouwInOutputGoederenDiensten":"A053096  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":157.7,"KwartaalmutatieLandbouwindexLPI_2":0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":557,"LandbouwInOutputGoederenDiensten":"A053096  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":156.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":558,"LandbouwInOutputGoederenDiensten":"A053096  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":161.0,"KwartaalmutatieLandbouwindexLPI_2":2.1,"JaarmutatieLandbouwindexLPI_3":4.7
+    },{
+      "ID":559,"LandbouwInOutputGoederenDiensten":"A053096  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":164.8,"KwartaalmutatieLandbouwindexLPI_2":2.4,"JaarmutatieLandbouwindexLPI_3":5.6
+    },{
+      "ID":560,"LandbouwInOutputGoederenDiensten":"A053097  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":102.3,"KwartaalmutatieLandbouwindexLPI_2":-0.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":561,"LandbouwInOutputGoederenDiensten":"A053097  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":102.3,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":562,"LandbouwInOutputGoederenDiensten":"A053097  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":102.3,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":563,"LandbouwInOutputGoederenDiensten":"A053097  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":102.3,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":564,"LandbouwInOutputGoederenDiensten":"A053097  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":102.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":565,"LandbouwInOutputGoederenDiensten":"A053097  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":101.8,"KwartaalmutatieLandbouwindexLPI_2":-0.5,"JaarmutatieLandbouwindexLPI_3":-0.5
+    },{
+      "ID":566,"LandbouwInOutputGoederenDiensten":"A053097  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":101.8,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":-0.5
+    },{
+      "ID":567,"LandbouwInOutputGoederenDiensten":"A053098  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":102.5,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":568,"LandbouwInOutputGoederenDiensten":"A053098  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":102.5,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":569,"LandbouwInOutputGoederenDiensten":"A053098  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":102.5,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":570,"LandbouwInOutputGoederenDiensten":"A053098  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":102.5,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":571,"LandbouwInOutputGoederenDiensten":"A053098  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":102.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":572,"LandbouwInOutputGoederenDiensten":"A053098  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":102.5,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":0.0
+    },{
+      "ID":573,"LandbouwInOutputGoederenDiensten":"A053098  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":102.5,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":0.0
+    },{
+      "ID":574,"LandbouwInOutputGoederenDiensten":"A053099  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":102.6,"KwartaalmutatieLandbouwindexLPI_2":2.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":575,"LandbouwInOutputGoederenDiensten":"A053099  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":102.6,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":576,"LandbouwInOutputGoederenDiensten":"A053099  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":102.6,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":577,"LandbouwInOutputGoederenDiensten":"A053099  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":102.6,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":578,"LandbouwInOutputGoederenDiensten":"A053099  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":102.6,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":579,"LandbouwInOutputGoederenDiensten":"A053099  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":99.6,"KwartaalmutatieLandbouwindexLPI_2":-2.9,"JaarmutatieLandbouwindexLPI_3":-2.9
+    },{
+      "ID":580,"LandbouwInOutputGoederenDiensten":"A053099  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":99.6,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":-2.9
+    },{
+      "ID":581,"LandbouwInOutputGoederenDiensten":"A053100  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":101.7,"KwartaalmutatieLandbouwindexLPI_2":-3.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":582,"LandbouwInOutputGoederenDiensten":"A053100  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":101.7,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":583,"LandbouwInOutputGoederenDiensten":"A053100  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":101.7,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":584,"LandbouwInOutputGoederenDiensten":"A053100  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":101.7,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":585,"LandbouwInOutputGoederenDiensten":"A053100  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":101.7,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":586,"LandbouwInOutputGoederenDiensten":"A053100  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":101.7,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":0.0
+    },{
+      "ID":587,"LandbouwInOutputGoederenDiensten":"A053100  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":101.7,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":0.0
+    },{
+      "ID":588,"LandbouwInOutputGoederenDiensten":"A053101  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":104.1,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":589,"LandbouwInOutputGoederenDiensten":"A053101  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":104.1,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":590,"LandbouwInOutputGoederenDiensten":"A053101  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":104.1,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":591,"LandbouwInOutputGoederenDiensten":"A053101  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":104.1,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":592,"LandbouwInOutputGoederenDiensten":"A053101  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":104.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":593,"LandbouwInOutputGoederenDiensten":"A053101  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":103.1,"KwartaalmutatieLandbouwindexLPI_2":-1.0,"JaarmutatieLandbouwindexLPI_3":-1.0
+    },{
+      "ID":594,"LandbouwInOutputGoederenDiensten":"A053101  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":103.1,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":-1.0
+    },{
+      "ID":595,"LandbouwInOutputGoederenDiensten":"A053102  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":127.5,"KwartaalmutatieLandbouwindexLPI_2":4.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":596,"LandbouwInOutputGoederenDiensten":"A053102  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":127.5,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":597,"LandbouwInOutputGoederenDiensten":"A053102  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":127.5,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":598,"LandbouwInOutputGoederenDiensten":"A053102  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":127.5,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":599,"LandbouwInOutputGoederenDiensten":"A053102  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":127.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":600,"LandbouwInOutputGoederenDiensten":"A053102  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":131.1,"KwartaalmutatieLandbouwindexLPI_2":2.8,"JaarmutatieLandbouwindexLPI_3":2.8
+    },{
+      "ID":601,"LandbouwInOutputGoederenDiensten":"A053102  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":131.1,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":2.8
+    },{
+      "ID":602,"LandbouwInOutputGoederenDiensten":"A053103  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":125.5,"KwartaalmutatieLandbouwindexLPI_2":2.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":603,"LandbouwInOutputGoederenDiensten":"A053103  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":124.2,"KwartaalmutatieLandbouwindexLPI_2":-1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":604,"LandbouwInOutputGoederenDiensten":"A053103  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":119.7,"KwartaalmutatieLandbouwindexLPI_2":-3.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":605,"LandbouwInOutputGoederenDiensten":"A053103  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":117.1,"KwartaalmutatieLandbouwindexLPI_2":-2.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":606,"LandbouwInOutputGoederenDiensten":"A053103  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":121.6,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":607,"LandbouwInOutputGoederenDiensten":"A053103  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":117.1,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":-6.7
+    },{
+      "ID":608,"LandbouwInOutputGoederenDiensten":"A053103  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":122.9,"KwartaalmutatieLandbouwindexLPI_2":5.0,"JaarmutatieLandbouwindexLPI_3":-1.0
+    },{
+      "ID":609,"LandbouwInOutputGoederenDiensten":"A053104  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":115.8,"KwartaalmutatieLandbouwindexLPI_2":2.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":610,"LandbouwInOutputGoederenDiensten":"A053104  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":108.0,"KwartaalmutatieLandbouwindexLPI_2":-6.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":611,"LandbouwInOutputGoederenDiensten":"A053104  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":100.8,"KwartaalmutatieLandbouwindexLPI_2":-6.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":612,"LandbouwInOutputGoederenDiensten":"A053104  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":101.4,"KwartaalmutatieLandbouwindexLPI_2":0.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":613,"LandbouwInOutputGoederenDiensten":"A053104  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":106.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":614,"LandbouwInOutputGoederenDiensten":"A053104  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":87.3,"KwartaalmutatieLandbouwindexLPI_2":-13.9,"JaarmutatieLandbouwindexLPI_3":-24.6
+    },{
+      "ID":615,"LandbouwInOutputGoederenDiensten":"A053104  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":95.2,"KwartaalmutatieLandbouwindexLPI_2":9.0,"JaarmutatieLandbouwindexLPI_3":-11.9
+    },{
+      "ID":616,"LandbouwInOutputGoederenDiensten":"A053105  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":119.8,"KwartaalmutatieLandbouwindexLPI_2":0.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":617,"LandbouwInOutputGoederenDiensten":"A053105  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":110.2,"KwartaalmutatieLandbouwindexLPI_2":-8.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":618,"LandbouwInOutputGoederenDiensten":"A053105  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":99.9,"KwartaalmutatieLandbouwindexLPI_2":-9.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":619,"LandbouwInOutputGoederenDiensten":"A053105  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":100.0,"KwartaalmutatieLandbouwindexLPI_2":0.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":620,"LandbouwInOutputGoederenDiensten":"A053105  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":107.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":621,"LandbouwInOutputGoederenDiensten":"A053105  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":101.5,"KwartaalmutatieLandbouwindexLPI_2":1.5,"JaarmutatieLandbouwindexLPI_3":-15.3
+    },{
+      "ID":622,"LandbouwInOutputGoederenDiensten":"A053105  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":103.7,"KwartaalmutatieLandbouwindexLPI_2":2.2,"JaarmutatieLandbouwindexLPI_3":-5.9
+    },{
+      "ID":623,"LandbouwInOutputGoederenDiensten":"A053106  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":107.4,"KwartaalmutatieLandbouwindexLPI_2":1.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":624,"LandbouwInOutputGoederenDiensten":"A053106  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":98.6,"KwartaalmutatieLandbouwindexLPI_2":-8.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":625,"LandbouwInOutputGoederenDiensten":"A053106  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":85.2,"KwartaalmutatieLandbouwindexLPI_2":-13.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":626,"LandbouwInOutputGoederenDiensten":"A053106  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":87.7,"KwartaalmutatieLandbouwindexLPI_2":2.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":627,"LandbouwInOutputGoederenDiensten":"A053106  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":94.7,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":628,"LandbouwInOutputGoederenDiensten":"A053106  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":97.9,"KwartaalmutatieLandbouwindexLPI_2":11.6,"JaarmutatieLandbouwindexLPI_3":-8.8
+    },{
+      "ID":629,"LandbouwInOutputGoederenDiensten":"A053106  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":108.6,"KwartaalmutatieLandbouwindexLPI_2":10.9,"JaarmutatieLandbouwindexLPI_3":10.1
+    },{
+      "ID":630,"LandbouwInOutputGoederenDiensten":"A053107  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":124.9,"KwartaalmutatieLandbouwindexLPI_2":3.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":631,"LandbouwInOutputGoederenDiensten":"A053107  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":115.2,"KwartaalmutatieLandbouwindexLPI_2":-7.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":632,"LandbouwInOutputGoederenDiensten":"A053107  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":118.9,"KwartaalmutatieLandbouwindexLPI_2":3.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":633,"LandbouwInOutputGoederenDiensten":"A053107  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":134.7,"KwartaalmutatieLandbouwindexLPI_2":13.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":634,"LandbouwInOutputGoederenDiensten":"A053107  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":123.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":635,"LandbouwInOutputGoederenDiensten":"A053107  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":155.1,"KwartaalmutatieLandbouwindexLPI_2":15.1,"JaarmutatieLandbouwindexLPI_3":24.2
+    },{
+      "ID":636,"LandbouwInOutputGoederenDiensten":"A053107  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":202.6,"KwartaalmutatieLandbouwindexLPI_2":30.6,"JaarmutatieLandbouwindexLPI_3":75.9
+    },{
+      "ID":637,"LandbouwInOutputGoederenDiensten":"A053108  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":121.3,"KwartaalmutatieLandbouwindexLPI_2":3.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":638,"LandbouwInOutputGoederenDiensten":"A053108  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":114.6,"KwartaalmutatieLandbouwindexLPI_2":-5.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":639,"LandbouwInOutputGoederenDiensten":"A053108  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":112.1,"KwartaalmutatieLandbouwindexLPI_2":-2.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":640,"LandbouwInOutputGoederenDiensten":"A053108  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":111.3,"KwartaalmutatieLandbouwindexLPI_2":-0.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":641,"LandbouwInOutputGoederenDiensten":"A053108  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":114.8,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":642,"LandbouwInOutputGoederenDiensten":"A053108  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":76.9,"KwartaalmutatieLandbouwindexLPI_2":-30.9,"JaarmutatieLandbouwindexLPI_3":-36.6
+    },{
+      "ID":643,"LandbouwInOutputGoederenDiensten":"A053108  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":82.9,"KwartaalmutatieLandbouwindexLPI_2":7.8,"JaarmutatieLandbouwindexLPI_3":-27.7
+    },{
+      "ID":644,"LandbouwInOutputGoederenDiensten":"A053109  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":126.3,"KwartaalmutatieLandbouwindexLPI_2":2.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":645,"LandbouwInOutputGoederenDiensten":"A053109  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":125.6,"KwartaalmutatieLandbouwindexLPI_2":-0.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":646,"LandbouwInOutputGoederenDiensten":"A053109  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":121.3,"KwartaalmutatieLandbouwindexLPI_2":-3.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":647,"LandbouwInOutputGoederenDiensten":"A053109  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":118.5,"KwartaalmutatieLandbouwindexLPI_2":-2.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":648,"LandbouwInOutputGoederenDiensten":"A053109  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":122.9,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":649,"LandbouwInOutputGoederenDiensten":"A053109  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":119.7,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":-5.2
+    },{
+      "ID":650,"LandbouwInOutputGoederenDiensten":"A053109  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":125.3,"KwartaalmutatieLandbouwindexLPI_2":4.7,"JaarmutatieLandbouwindexLPI_3":-0.2
+    },{
+      "ID":651,"LandbouwInOutputGoederenDiensten":"A053110  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":128.2,"KwartaalmutatieLandbouwindexLPI_2":8.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":652,"LandbouwInOutputGoederenDiensten":"A053110  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":130.8,"KwartaalmutatieLandbouwindexLPI_2":2.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":653,"LandbouwInOutputGoederenDiensten":"A053110  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":130.8,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":654,"LandbouwInOutputGoederenDiensten":"A053110  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":130.8,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":655,"LandbouwInOutputGoederenDiensten":"A053110  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":130.2,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":656,"LandbouwInOutputGoederenDiensten":"A053110  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":130.8,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":2.0
+    },{
+      "ID":657,"LandbouwInOutputGoederenDiensten":"A053110  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":142.8,"KwartaalmutatieLandbouwindexLPI_2":9.2,"JaarmutatieLandbouwindexLPI_3":9.2
+    },{
+      "ID":658,"LandbouwInOutputGoederenDiensten":"A053111  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":125.7,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":659,"LandbouwInOutputGoederenDiensten":"A053111  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":124.7,"KwartaalmutatieLandbouwindexLPI_2":-0.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":660,"LandbouwInOutputGoederenDiensten":"A053111  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":121.1,"KwartaalmutatieLandbouwindexLPI_2":-2.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":661,"LandbouwInOutputGoederenDiensten":"A053111  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":118.0,"KwartaalmutatieLandbouwindexLPI_2":-2.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":662,"LandbouwInOutputGoederenDiensten":"A053111  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":122.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":663,"LandbouwInOutputGoederenDiensten":"A053111  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":119.2,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":-5.2
+    },{
+      "ID":664,"LandbouwInOutputGoederenDiensten":"A053111  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":124.1,"KwartaalmutatieLandbouwindexLPI_2":4.1,"JaarmutatieLandbouwindexLPI_3":-0.5
+    },{
+      "ID":665,"LandbouwInOutputGoederenDiensten":"A053112  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":125.7,"KwartaalmutatieLandbouwindexLPI_2":2.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":666,"LandbouwInOutputGoederenDiensten":"A053112  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":123.9,"KwartaalmutatieLandbouwindexLPI_2":-1.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":667,"LandbouwInOutputGoederenDiensten":"A053112  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":117.8,"KwartaalmutatieLandbouwindexLPI_2":-4.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":668,"LandbouwInOutputGoederenDiensten":"A053112  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":114.0,"KwartaalmutatieLandbouwindexLPI_2":-3.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":669,"LandbouwInOutputGoederenDiensten":"A053112  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":120.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":670,"LandbouwInOutputGoederenDiensten":"A053112  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":115.2,"KwartaalmutatieLandbouwindexLPI_2":1.1,"JaarmutatieLandbouwindexLPI_3":-8.4
+    },{
+      "ID":671,"LandbouwInOutputGoederenDiensten":"A053112  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":119.3,"KwartaalmutatieLandbouwindexLPI_2":3.6,"JaarmutatieLandbouwindexLPI_3":-3.7
+    },{
+      "ID":672,"LandbouwInOutputGoederenDiensten":"A053113  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":126.4,"KwartaalmutatieLandbouwindexLPI_2":1.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":673,"LandbouwInOutputGoederenDiensten":"A053113  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":124.8,"KwartaalmutatieLandbouwindexLPI_2":-1.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":674,"LandbouwInOutputGoederenDiensten":"A053113  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":119.1,"KwartaalmutatieLandbouwindexLPI_2":-4.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":675,"LandbouwInOutputGoederenDiensten":"A053113  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":115.9,"KwartaalmutatieLandbouwindexLPI_2":-2.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":676,"LandbouwInOutputGoederenDiensten":"A053113  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":121.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":677,"LandbouwInOutputGoederenDiensten":"A053113  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":117.7,"KwartaalmutatieLandbouwindexLPI_2":1.6,"JaarmutatieLandbouwindexLPI_3":-6.9
+    },{
+      "ID":678,"LandbouwInOutputGoederenDiensten":"A053113  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":121.6,"KwartaalmutatieLandbouwindexLPI_2":3.3,"JaarmutatieLandbouwindexLPI_3":-2.6
+    },{
+      "ID":679,"LandbouwInOutputGoederenDiensten":"A053114  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":680,"LandbouwInOutputGoederenDiensten":"A053114  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":681,"LandbouwInOutputGoederenDiensten":"A053114  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":682,"LandbouwInOutputGoederenDiensten":"A053114  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":683,"LandbouwInOutputGoederenDiensten":"A053114  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":684,"LandbouwInOutputGoederenDiensten":"A053114  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":685,"LandbouwInOutputGoederenDiensten":"A053114  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":686,"LandbouwInOutputGoederenDiensten":"A053115  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":127.4,"KwartaalmutatieLandbouwindexLPI_2":3.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":687,"LandbouwInOutputGoederenDiensten":"A053115  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":128.9,"KwartaalmutatieLandbouwindexLPI_2":1.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":688,"LandbouwInOutputGoederenDiensten":"A053115  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":130.5,"KwartaalmutatieLandbouwindexLPI_2":1.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":689,"LandbouwInOutputGoederenDiensten":"A053115  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":130.7,"KwartaalmutatieLandbouwindexLPI_2":0.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":690,"LandbouwInOutputGoederenDiensten":"A053115  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":129.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":691,"LandbouwInOutputGoederenDiensten":"A053115  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":134.2,"KwartaalmutatieLandbouwindexLPI_2":2.7,"JaarmutatieLandbouwindexLPI_3":5.3
+    },{
+      "ID":692,"LandbouwInOutputGoederenDiensten":"A053115  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":135.2,"KwartaalmutatieLandbouwindexLPI_2":0.7,"JaarmutatieLandbouwindexLPI_3":4.9
+    },{
+      "ID":693,"LandbouwInOutputGoederenDiensten":"A053116  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":140.1,"KwartaalmutatieLandbouwindexLPI_2":4.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":694,"LandbouwInOutputGoederenDiensten":"A053116  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":138.2,"KwartaalmutatieLandbouwindexLPI_2":-1.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":695,"LandbouwInOutputGoederenDiensten":"A053116  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":139.1,"KwartaalmutatieLandbouwindexLPI_2":0.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":696,"LandbouwInOutputGoederenDiensten":"A053116  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":139.8,"KwartaalmutatieLandbouwindexLPI_2":0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":697,"LandbouwInOutputGoederenDiensten":"A053116  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":139.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":698,"LandbouwInOutputGoederenDiensten":"A053116  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":140.3,"KwartaalmutatieLandbouwindexLPI_2":0.4,"JaarmutatieLandbouwindexLPI_3":0.1
+    },{
+      "ID":699,"LandbouwInOutputGoederenDiensten":"A053116  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":141.6,"KwartaalmutatieLandbouwindexLPI_2":0.9,"JaarmutatieLandbouwindexLPI_3":2.5
+    },{
+      "ID":700,"LandbouwInOutputGoederenDiensten":"A053117  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":128.0,"KwartaalmutatieLandbouwindexLPI_2":2.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":701,"LandbouwInOutputGoederenDiensten":"A053117  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":127.9,"KwartaalmutatieLandbouwindexLPI_2":-0.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":702,"LandbouwInOutputGoederenDiensten":"A053117  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":128.8,"KwartaalmutatieLandbouwindexLPI_2":0.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":703,"LandbouwInOutputGoederenDiensten":"A053117  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":128.8,"KwartaalmutatieLandbouwindexLPI_2":0.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":704,"LandbouwInOutputGoederenDiensten":"A053117  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":128.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":705,"LandbouwInOutputGoederenDiensten":"A053117  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":130.5,"KwartaalmutatieLandbouwindexLPI_2":1.3,"JaarmutatieLandbouwindexLPI_3":2.0
+    },{
+      "ID":706,"LandbouwInOutputGoederenDiensten":"A053117  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":132.1,"KwartaalmutatieLandbouwindexLPI_2":1.2,"JaarmutatieLandbouwindexLPI_3":3.3
+    },{
+      "ID":707,"LandbouwInOutputGoederenDiensten":"A053132  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":124.2,"KwartaalmutatieLandbouwindexLPI_2":0.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":708,"LandbouwInOutputGoederenDiensten":"A053132  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":124.8,"KwartaalmutatieLandbouwindexLPI_2":0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":709,"LandbouwInOutputGoederenDiensten":"A053132  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":125.0,"KwartaalmutatieLandbouwindexLPI_2":0.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":710,"LandbouwInOutputGoederenDiensten":"A053132  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":125.9,"KwartaalmutatieLandbouwindexLPI_2":0.7,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":711,"LandbouwInOutputGoederenDiensten":"A053132  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":125.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":712,"LandbouwInOutputGoederenDiensten":"A053132  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":126.6,"KwartaalmutatieLandbouwindexLPI_2":0.6,"JaarmutatieLandbouwindexLPI_3":1.9
+    },{
+      "ID":713,"LandbouwInOutputGoederenDiensten":"A053132  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":127.1,"KwartaalmutatieLandbouwindexLPI_2":0.4,"JaarmutatieLandbouwindexLPI_3":1.8
+    },{
+      "ID":714,"LandbouwInOutputGoederenDiensten":"A053118  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":122.8,"KwartaalmutatieLandbouwindexLPI_2":-0.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":715,"LandbouwInOutputGoederenDiensten":"A053118  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":123.0,"KwartaalmutatieLandbouwindexLPI_2":0.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":716,"LandbouwInOutputGoederenDiensten":"A053118  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":122.8,"KwartaalmutatieLandbouwindexLPI_2":-0.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":717,"LandbouwInOutputGoederenDiensten":"A053118  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":123.3,"KwartaalmutatieLandbouwindexLPI_2":0.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":718,"LandbouwInOutputGoederenDiensten":"A053118  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":123.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":719,"LandbouwInOutputGoederenDiensten":"A053118  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":122.7,"KwartaalmutatieLandbouwindexLPI_2":-0.5,"JaarmutatieLandbouwindexLPI_3":-0.1
+    },{
+      "ID":720,"LandbouwInOutputGoederenDiensten":"A053118  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":122.8,"KwartaalmutatieLandbouwindexLPI_2":0.1,"JaarmutatieLandbouwindexLPI_3":-0.2
+    },{
+      "ID":721,"LandbouwInOutputGoederenDiensten":"A053119  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":122.0,"KwartaalmutatieLandbouwindexLPI_2":-0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":722,"LandbouwInOutputGoederenDiensten":"A053119  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":122.2,"KwartaalmutatieLandbouwindexLPI_2":0.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":723,"LandbouwInOutputGoederenDiensten":"A053119  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":121.6,"KwartaalmutatieLandbouwindexLPI_2":-0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":724,"LandbouwInOutputGoederenDiensten":"A053119  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":122.2,"KwartaalmutatieLandbouwindexLPI_2":0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":725,"LandbouwInOutputGoederenDiensten":"A053119  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":122.0,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":726,"LandbouwInOutputGoederenDiensten":"A053119  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":121.6,"KwartaalmutatieLandbouwindexLPI_2":-0.5,"JaarmutatieLandbouwindexLPI_3":-0.3
+    },{
+      "ID":727,"LandbouwInOutputGoederenDiensten":"A053119  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":121.8,"KwartaalmutatieLandbouwindexLPI_2":0.2,"JaarmutatieLandbouwindexLPI_3":-0.3
+    },{
+      "ID":728,"LandbouwInOutputGoederenDiensten":"A053120  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":138.9,"KwartaalmutatieLandbouwindexLPI_2":3.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":729,"LandbouwInOutputGoederenDiensten":"A053120  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":137.3,"KwartaalmutatieLandbouwindexLPI_2":-1.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":730,"LandbouwInOutputGoederenDiensten":"A053120  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":129.7,"KwartaalmutatieLandbouwindexLPI_2":-5.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":731,"LandbouwInOutputGoederenDiensten":"A053120  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":130.3,"KwartaalmutatieLandbouwindexLPI_2":0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":732,"LandbouwInOutputGoederenDiensten":"A053120  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":134.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":733,"LandbouwInOutputGoederenDiensten":"A053120  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":131.1,"KwartaalmutatieLandbouwindexLPI_2":0.6,"JaarmutatieLandbouwindexLPI_3":-5.6
+    },{
+      "ID":734,"LandbouwInOutputGoederenDiensten":"A053120  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":133.5,"KwartaalmutatieLandbouwindexLPI_2":1.8,"JaarmutatieLandbouwindexLPI_3":-2.8
+    },{
+      "ID":735,"LandbouwInOutputGoederenDiensten":"A053121  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":120.8,"KwartaalmutatieLandbouwindexLPI_2":3.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":736,"LandbouwInOutputGoederenDiensten":"A053121  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":119.3,"KwartaalmutatieLandbouwindexLPI_2":-1.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":737,"LandbouwInOutputGoederenDiensten":"A053121  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":112.8,"KwartaalmutatieLandbouwindexLPI_2":-5.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":738,"LandbouwInOutputGoederenDiensten":"A053121  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":113.2,"KwartaalmutatieLandbouwindexLPI_2":0.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":739,"LandbouwInOutputGoederenDiensten":"A053121  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":116.5,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":740,"LandbouwInOutputGoederenDiensten":"A053121  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":113.9,"KwartaalmutatieLandbouwindexLPI_2":0.6,"JaarmutatieLandbouwindexLPI_3":-5.7
+    },{
+      "ID":741,"LandbouwInOutputGoederenDiensten":"A053121  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":116.1,"KwartaalmutatieLandbouwindexLPI_2":1.9,"JaarmutatieLandbouwindexLPI_3":-2.7
+    },{
+      "ID":742,"LandbouwInOutputGoederenDiensten":"A053122  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":124.4,"KwartaalmutatieLandbouwindexLPI_2":0.9,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":743,"LandbouwInOutputGoederenDiensten":"A053122  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":123.4,"KwartaalmutatieLandbouwindexLPI_2":-0.8,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":744,"LandbouwInOutputGoederenDiensten":"A053122  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":123.5,"KwartaalmutatieLandbouwindexLPI_2":0.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":745,"LandbouwInOutputGoederenDiensten":"A053122  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":124.9,"KwartaalmutatieLandbouwindexLPI_2":1.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":746,"LandbouwInOutputGoederenDiensten":"A053122  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":124.1,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":747,"LandbouwInOutputGoederenDiensten":"A053122  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":124.1,"KwartaalmutatieLandbouwindexLPI_2":-0.6,"JaarmutatieLandbouwindexLPI_3":-0.2
+    },{
+      "ID":748,"LandbouwInOutputGoederenDiensten":"A053122  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":125.0,"KwartaalmutatieLandbouwindexLPI_2":0.7,"JaarmutatieLandbouwindexLPI_3":1.3
+    },{
+      "ID":749,"LandbouwInOutputGoederenDiensten":"A053123  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":121.7,"KwartaalmutatieLandbouwindexLPI_2":-1.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":750,"LandbouwInOutputGoederenDiensten":"A053123  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":122.3,"KwartaalmutatieLandbouwindexLPI_2":0.5,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":751,"LandbouwInOutputGoederenDiensten":"A053123  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":122.4,"KwartaalmutatieLandbouwindexLPI_2":0.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":752,"LandbouwInOutputGoederenDiensten":"A053123  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":122.9,"KwartaalmutatieLandbouwindexLPI_2":0.4,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":753,"LandbouwInOutputGoederenDiensten":"A053123  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":122.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":754,"LandbouwInOutputGoederenDiensten":"A053123  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":122.0,"KwartaalmutatieLandbouwindexLPI_2":-0.7,"JaarmutatieLandbouwindexLPI_3":0.2
+    },{
+      "ID":755,"LandbouwInOutputGoederenDiensten":"A053123  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":121.9,"KwartaalmutatieLandbouwindexLPI_2":-0.1,"JaarmutatieLandbouwindexLPI_3":-0.3
+    },{
+      "ID":756,"LandbouwInOutputGoederenDiensten":"A053134  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":757,"LandbouwInOutputGoederenDiensten":"A053134  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":758,"LandbouwInOutputGoederenDiensten":"A053134  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":759,"LandbouwInOutputGoederenDiensten":"A053134  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":760,"LandbouwInOutputGoederenDiensten":"A053134  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":761,"LandbouwInOutputGoederenDiensten":"A053134  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":762,"LandbouwInOutputGoederenDiensten":"A053134  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":763,"LandbouwInOutputGoederenDiensten":"A053135  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":764,"LandbouwInOutputGoederenDiensten":"A053135  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":765,"LandbouwInOutputGoederenDiensten":"A053135  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":766,"LandbouwInOutputGoederenDiensten":"A053135  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":767,"LandbouwInOutputGoederenDiensten":"A053135  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":768,"LandbouwInOutputGoederenDiensten":"A053135  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":769,"LandbouwInOutputGoederenDiensten":"A053135  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":770,"LandbouwInOutputGoederenDiensten":"A053136  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":771,"LandbouwInOutputGoederenDiensten":"A053136  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":772,"LandbouwInOutputGoederenDiensten":"A053136  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":773,"LandbouwInOutputGoederenDiensten":"A053136  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":774,"LandbouwInOutputGoederenDiensten":"A053136  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":775,"LandbouwInOutputGoederenDiensten":"A053136  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":776,"LandbouwInOutputGoederenDiensten":"A053136  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":777,"LandbouwInOutputGoederenDiensten":"A053124  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":778,"LandbouwInOutputGoederenDiensten":"A053124  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":779,"LandbouwInOutputGoederenDiensten":"A053124  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":780,"LandbouwInOutputGoederenDiensten":"A053124  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":781,"LandbouwInOutputGoederenDiensten":"A053124  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":782,"LandbouwInOutputGoederenDiensten":"A053124  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":783,"LandbouwInOutputGoederenDiensten":"A053124  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":784,"LandbouwInOutputGoederenDiensten":"A053125  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":785,"LandbouwInOutputGoederenDiensten":"A053125  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":786,"LandbouwInOutputGoederenDiensten":"A053125  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":787,"LandbouwInOutputGoederenDiensten":"A053125  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":788,"LandbouwInOutputGoederenDiensten":"A053125  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":789,"LandbouwInOutputGoederenDiensten":"A053125  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":790,"LandbouwInOutputGoederenDiensten":"A053125  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":791,"LandbouwInOutputGoederenDiensten":"A053126  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":792,"LandbouwInOutputGoederenDiensten":"A053126  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":793,"LandbouwInOutputGoederenDiensten":"A053126  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":794,"LandbouwInOutputGoederenDiensten":"A053126  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":795,"LandbouwInOutputGoederenDiensten":"A053126  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":796,"LandbouwInOutputGoederenDiensten":"A053126  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":797,"LandbouwInOutputGoederenDiensten":"A053126  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":null,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":798,"LandbouwInOutputGoederenDiensten":"A053127  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":126.7,"KwartaalmutatieLandbouwindexLPI_2":2.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":799,"LandbouwInOutputGoederenDiensten":"A053127  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":128.0,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":800,"LandbouwInOutputGoederenDiensten":"A053127  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":129.4,"KwartaalmutatieLandbouwindexLPI_2":1.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":801,"LandbouwInOutputGoederenDiensten":"A053127  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":131.1,"KwartaalmutatieLandbouwindexLPI_2":1.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":802,"LandbouwInOutputGoederenDiensten":"A053127  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":128.8,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":803,"LandbouwInOutputGoederenDiensten":"A053127  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":133.4,"KwartaalmutatieLandbouwindexLPI_2":1.8,"JaarmutatieLandbouwindexLPI_3":5.3
+    },{
+      "ID":804,"LandbouwInOutputGoederenDiensten":"A053127  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":134.5,"KwartaalmutatieLandbouwindexLPI_2":0.8,"JaarmutatieLandbouwindexLPI_3":5.1
+    },{
+      "ID":805,"LandbouwInOutputGoederenDiensten":"A053130  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":126.6,"KwartaalmutatieLandbouwindexLPI_2":3.3,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":806,"LandbouwInOutputGoederenDiensten":"A053130  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":127.3,"KwartaalmutatieLandbouwindexLPI_2":0.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":807,"LandbouwInOutputGoederenDiensten":"A053130  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":127.5,"KwartaalmutatieLandbouwindexLPI_2":0.2,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":808,"LandbouwInOutputGoederenDiensten":"A053130  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":128.3,"KwartaalmutatieLandbouwindexLPI_2":0.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":809,"LandbouwInOutputGoederenDiensten":"A053130  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":127.4,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":810,"LandbouwInOutputGoederenDiensten":"A053130  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":133.2,"KwartaalmutatieLandbouwindexLPI_2":3.8,"JaarmutatieLandbouwindexLPI_3":5.2
+    },{
+      "ID":811,"LandbouwInOutputGoederenDiensten":"A053130  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":133.7,"KwartaalmutatieLandbouwindexLPI_2":0.4,"JaarmutatieLandbouwindexLPI_3":5.0
+    },{
+      "ID":812,"LandbouwInOutputGoederenDiensten":"A053133  ","Perioden":"2025KW01","LandbouwprijsindexLPI_1":133.0,"KwartaalmutatieLandbouwindexLPI_2":3.6,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":813,"LandbouwInOutputGoederenDiensten":"A053133  ","Perioden":"2025KW02","LandbouwprijsindexLPI_1":130.2,"KwartaalmutatieLandbouwindexLPI_2":-2.1,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":814,"LandbouwInOutputGoederenDiensten":"A053133  ","Perioden":"2025KW03","LandbouwprijsindexLPI_1":126.3,"KwartaalmutatieLandbouwindexLPI_2":-3.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":815,"LandbouwInOutputGoederenDiensten":"A053133  ","Perioden":"2025KW04","LandbouwprijsindexLPI_1":127.6,"KwartaalmutatieLandbouwindexLPI_2":1.0,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":816,"LandbouwInOutputGoederenDiensten":"A053133  ","Perioden":"2025JJ00","LandbouwprijsindexLPI_1":129.3,"KwartaalmutatieLandbouwindexLPI_2":null,"JaarmutatieLandbouwindexLPI_3":null
+    },{
+      "ID":817,"LandbouwInOutputGoederenDiensten":"A053133  ","Perioden":"2026KW01","LandbouwprijsindexLPI_1":130.0,"KwartaalmutatieLandbouwindexLPI_2":1.9,"JaarmutatieLandbouwindexLPI_3":-2.3
+    },{
+      "ID":818,"LandbouwInOutputGoederenDiensten":"A053133  ","Perioden":"2026KW02","LandbouwprijsindexLPI_1":133.7,"KwartaalmutatieLandbouwindexLPI_2":2.8,"JaarmutatieLandbouwindexLPI_3":2.7
+    }
+  ]
+}

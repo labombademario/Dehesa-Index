@@ -1,0 +1,1104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>
+        StatBank API - Statistics Denmark
+
+    </title>
+    
+    <link rel="shortcut icon" href="/Site/Dst/Images/favicon2013.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8" />
+    <link rel="apple-touch-icon" href="/Site/Dst/images/icons/apple-touch-icon-57×57-precomposed.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="/Site/Dst/images/icons/apple-touch-icon-72×72-precomposed.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/Site/Dst/images/icons/apple-touch-icon-114×114-precomposed.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/Site/Dst/images/icons/apple-touch-icon-144×144-precomposed.png" sizes="144x144">
+    <!-- MetaCache -->
+    <!-- Meta GUID: {B1AEE7D8-96E1-48A5-92AF-302AE3338F36} -->
+    <!-- Meta template: StandardSide -->
+    <meta name="description" content="With Statistics Denmark's API, you can use our StatBank's open data directly in various own applications." />
+    <meta name="dcterms.title" content="StatBank API" />
+    <meta name="twitter:site" content="@DSTdk"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta property="og:title" content="StatBank API"/>
+    <meta property="og:description" content="Table of contents
+Introduction
+Console
+General introduction
+Function
+Language
+Format
+Tables and subject
+Metadata and data
+Change log
+Introduction
+With Statistics Denmark&rsquo;s API for StatBank it is possible to get access to all the published data in StatBank."/>
+    <meta property="og:image" content="https://www.dst.dk/Site/Dst/images/dstdkSoMe.jpg"/>
+    <meta property="og:image:width" content="2500" />
+    <meta property="og:image:height" content="1306" />
+
+    <!-- MetaCludoCache -->
+    <meta property="cludo:title" content="StatBank API" />
+    <meta property="dst:metaNotFound" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta property="cludo:manualurl" content="https://www.dst.dk/en/Statistik/hjaelp-til-statistikbanken/api" />
+    <link rel="canonical" href="https://www.dst.dk/en/Statistik/hjaelp-til-statistikbanken/api" />
+    <meta property="cludo:categorydst" content="_None" />
+    <meta property="cludo:usemeta" content="1" />
+
+
+    <link href="/Site/Dst/css/dst.css" type="text/css" rel="stylesheet" />
+    
+    <link href="/Site/Dst/css/dst_menu.css" type="text/css" rel="stylesheet" />
+    <script src="/Site/Global/script/jquery-3.7.0.min.js"></script>
+    
+    
+    <script type="text/javascript">
+        window._monsido = window._monsido || {
+            token: "QARWrCQaiBrafClOpVkiEQ",
+            statistics: {
+                enabled: true,
+                cookieLessTracking: true,
+                documentTracking:
+                    { enabled: true, documentCls: "monsido_download", documentIgnoreCls: "monsido_ignore_download", documentExt: [".pdf", ".PDF", "--pdf", ".xlsx", ".doc"], }
+                ,
+            },
+            heatmap:
+
+                { enabled: true, }
+            ,
+        };
+    </script>
+    <script type="text/javascript" async src="https://app-script.monsido.com/v2/monsido-script.js"></script>
+    
+</head>
+<body class="">
+    
+    
+<!-- Begin: CookieBanner:  -->
+
+<!-- End: CookieBanner -->
+    <a class="skipToContent" href="#mainContent">Skip to content</a>
+    
+
+    <div id="page">
+
+
+
+            
+            
+<!-- Begin: Top -->
+
+<!-- 
+    !MENUV3!
+    -->
+<header>
+            <div class="header-container">
+
+                <div class="header-logo">
+                    
+<a href="/en">
+    <img alt="Statistics Denmark – go to homepage" src="/Site/Dst/images/logo_uk.svg" />
+</a>
+                </div>
+
+                <div class="header-content">
+                    <!-- ServiceNav -->
+                    
+<nav class="service-nav">
+    <ul>
+        <li><a href="https://www.statbank.dk" aria-label="Statbank">Statbank</a></li>
+        <li><a href="/en/kontakt" aria-label="Frontpage - Contact Statistics Denmark">Contact Statistics Denmark</a></li>
+        <li><a href="/en/informationsservice" aria-label="Frontpage - Information Service">Information Service</a></li>
+        <li><a href="/en/presse" aria-label="Frontpage - Press">Press</a></li>
+        <li><a href="/da/Statistik/hjaelp-til-statistikbanken/api" aria-label="Dansk">Dansk</a></li>
+        
+    </ul>
+</nav>
+
+                    <div>
+                        <div class="header-navigation">
+                            <!-- MegaMenu -->
+                            
+<nav class="mega-nav">
+    <ul>
+        <li>
+            
+                <button class="toggle-nav" id="nav_item_4A04F6C772DF42999108B14DE253E7B3" aria-expanded="false" aria-haspopup="true" aria-controls="mega-nav-panel-1">
+                    Find statistics 
+                </button>
+
+                <div class="mega-nav-panel" id="mega-nav-panel-1" role="region" aria-hidden="true">
+                    <div style="background-image: url('/Site/Dst/images/menuv3/mega-nav-watermark.svg');">
+                        <div role="menubar" class="mega-nav-panel__sub mega-nav-panel__sub--icon">
+                            <img alt="" src="/Site/Dst/images/menuv3/MM_4A04F6C772DF42999108B14DE253E7B3.svg">
+                            <a role="menuitem" href="/en/Statistik">Find statistics 
+                                <img alt="" src="/Site/Dst/images/menuv3/mega-nav-arrow.svg" aria-hidden="true">
+                            </a>
+                        </div>
+                        
+                                <div class="mega-nav-panel__sub">
+                                    <ul role="menubar">
+                                    
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/Statistik/emner">Statistics by subject</a>
+                                                <ul>
+                                                            <li><a href="/en/Statistik/emner/borgere">People</a></li><li><a href="/en/Statistik/emner/arbejde-og-indkomst">Labour and income</a></li><li><a href="/en/Statistik/emner/oekonomi">Economy</a></li><li><a href="/en/Statistik/emner/sociale-forhold">Social conditions</a></li><li><a href="/en/Statistik/emner/uddannelse-og-forskning">Education and research</a></li><li><a href="/en/Statistik/emner/erhvervsliv">Business</a></li><li><a href="/en/Statistik/emner/transport">Transport</a></li><li><a href="/en/Statistik/emner/kultur-og-fritid">Culture and leisure</a></li><li><a href="/en/Statistik/emner/miljoe-og-energi">Environment and energy</a></li>
+                                                            </ul>
+                                                        
+                                            </li>
+                                            
+                                    </ul>
+                                </div>
+                            
+                                <div class="mega-nav-panel__sub">
+                                    <ul role="menubar">
+                                    
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/Statistik/temaer">Themes</a>
+                                                <ul>
+                                                            <li><a href="/en/Statistik/temaer/ligestilling">Gender equality</a></li><li><a href="/en/Statistik/temaer/digitalisering">Digitalisation</a></li><li><a href="/en/Statistik/temaer/invasion-af-ukraine">War in Ukraine</a></li><li><a href="/en/Statistik/temaer/klima">Climate</a></li><li><a href="/en/Statistik/temaer/SDG">Sustainable Development Goals</a></li><li><a href="/en/Statistik/temaer/overblik-dansk-oekonomi">An overview of the Danish economy</a></li><li><a href="/en/Statistik/temaer/tidligere-temaer">Previous themes</a></li>
+                                                            </ul>
+                                                        
+                                            </li>
+                                            
+                                    </ul>
+                                </div>
+                            
+                                <div class="mega-nav-panel__sub">
+                                    <ul role="menubar">
+                                    
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/Statistik/nyheder-analyser-publ"></a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/Statistik/planlagte">Scheduled Releases</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/Statistik/udgivelser">Releases</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/Statistik/laer-om-statistik">Learn statistics</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/Statistik/hjaelp-til-statistikbanken">StatBank Denmark help</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/Statistik/dokumentation">Documen&shy;tation</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/Statistik/IMF">IMF SDDS plus</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/Statistik/ADAM">Economic Model ADAM</a>
+                                                
+                                            </li>
+                                            
+                                    </ul>
+                                </div>
+                            
+                    </div>
+                </div>
+                
+                <button class="toggle-nav" id="nav_item_D7E18644BF774F04BE023F65B62EC818" aria-expanded="false" aria-haspopup="true" aria-controls="mega-nav-panel-2">
+                    Products & services
+                </button>
+
+                <div class="mega-nav-panel" id="mega-nav-panel-2" role="region" aria-hidden="true">
+                    <div style="background-image: url('/Site/Dst/images/menuv3/mega-nav-watermark.svg');">
+                        <div role="menubar" class="mega-nav-panel__sub mega-nav-panel__sub--icon">
+                            <img alt="" src="/Site/Dst/images/menuv3/MM_D7E18644BF774F04BE023F65B62EC818.svg">
+                            <a role="menuitem" href="/en/TilSalg">Products & services
+                                <img alt="" src="/Site/Dst/images/menuv3/mega-nav-arrow.svg" aria-hidden="true">
+                            </a>
+                        </div>
+                        
+                                <div class="mega-nav-panel__sub">
+                                    <ul role="menubar">
+                                    
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/TilSalg/data-til-forskning">Data for research and analysis</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/TilSalg/interview">Surveys</a>
+                                                
+                                            </li>
+                                            
+                                    </ul>
+                                </div>
+                            
+                                <div class="mega-nav-panel__sub">
+                                    <ul role="menubar">
+                                    
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/TilSalg/produkter">Standardised solutions</a>
+                                                
+                                            </li>
+                                            
+                                    </ul>
+                                </div>
+                            
+                                <div class="mega-nav-panel__sub">
+                                    <ul role="menubar">
+                                    
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/TilSalg/skraeddersyede-loesninger">Customized solutions</a>
+                                                
+                                            </li>
+                                            
+                                    </ul>
+                                </div>
+                            
+                    </div>
+                </div>
+                
+                <button class="toggle-nav" id="nav_item_D8F6417AF627461EBBC1151573AD3909" aria-expanded="false" aria-haspopup="true" aria-controls="mega-nav-panel-3">
+                    Consulting abroad
+                </button>
+
+                <div class="mega-nav-panel" id="mega-nav-panel-3" role="region" aria-hidden="true">
+                    <div style="background-image: url('/Site/Dst/images/menuv3/mega-nav-watermark.svg');">
+                        <div role="menubar" class="mega-nav-panel__sub mega-nav-panel__sub--icon">
+                            <img alt="" src="/Site/Dst/images/menuv3/MM_D8F6417AF627461EBBC1151573AD3909.svg">
+                            <a role="menuitem" href="/en/consulting">Consulting abroad
+                                <img alt="" src="/Site/Dst/images/menuv3/mega-nav-arrow.svg" aria-hidden="true">
+                            </a>
+                        </div>
+                        
+                                <div class="mega-nav-panel__sub">
+                                    <ul role="menubar">
+                                    
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/consulting/projects">Our projects</a>
+                                                <ul>
+                                                            <li><a href="/en/consulting/projects/ghana-2024-2026">Ghana 2024-2026</a></li><li><a href="/en/consulting/projects/morocco-2024-2026">Morocco 2024-2026</a></li><li><a href="/en/consulting/projects/vietnam-2025-2027">Vietnam 2025-2027</a></li><li><a href="/en/consulting/projects/previous-projects">Previous projects</a></li>
+                                                            </ul>
+                                                        
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/consulting/news-from-international-consulting">News from International Consulting</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/consulting/newsletter-from-international-consulting">Newsletter from International Consulting</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/consulting/building-statistical-capacity">Building statistical capacity</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/consulting/our-team">Our team</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/consulting/annual-reports">Annual reports</a>
+                                                
+                                            </li>
+                                            
+                                    </ul>
+                                </div>
+                            
+                                <div class="mega-nav-panel__sub">
+                                    <a href="/en/consulting/projects?en">
+                                        <article>
+                                            <figure><img alt="Our projects" src="/-/media/Generel-grafik/MegamenuKampagner/consulting-abroad-kampagne.png"></figure>
+                                            <div>
+                                                <p><strong>Our projects</strong></p>
+                                                <p>Statistics Denmark implements projects in other countries with the purpose to build up these countries’ capacity to produce statistics. </p>
+                                            </div>
+                                        </article>
+                                    </a>
+                                </div>
+                                
+                    </div>
+                </div>
+                
+                <button class="toggle-nav" id="nav_item_445CE77248414C69B8209D77011126B2" aria-expanded="false" aria-haspopup="true" aria-controls="mega-nav-panel-4">
+                    About us
+                </button>
+
+                <div class="mega-nav-panel" id="mega-nav-panel-4" role="region" aria-hidden="true">
+                    <div style="background-image: url('/Site/Dst/images/menuv3/mega-nav-watermark.svg');">
+                        <div role="menubar" class="mega-nav-panel__sub mega-nav-panel__sub--icon">
+                            <img alt="" src="/Site/Dst/images/menuv3/MM_445CE77248414C69B8209D77011126B2.svg">
+                            <a role="menuitem" href="/en/OmDS">About us
+                                <img alt="" src="/Site/Dst/images/menuv3/mega-nav-arrow.svg" aria-hidden="true">
+                            </a>
+                        </div>
+                        
+                                <div class="mega-nav-panel__sub">
+                                    <ul role="menubar">
+                                    
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/OmDS/organisation">Organisation</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/OmDS/om-hjemmesiden">About the website</a>
+                                                
+                                            </li>
+                                            
+                                    </ul>
+                                </div>
+                            
+                                <div class="mega-nav-panel__sub">
+                                    <ul role="menubar">
+                                    
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/OmDS/danmarks-statistiks-rolle-og-opgave">The role and mandate of Statistics Denmark</a>
+                                                
+                                            </li>
+                                            
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/OmDS/policy-and-action-plan-for-gender-equality">Policy and action plan for gender equality</a>
+                                                
+                                            </li>
+                                            
+                                    </ul>
+                                </div>
+                            
+                                <div class="mega-nav-panel__sub">
+                                    <ul role="menubar">
+                                    
+                                            <li role="none">
+                                                <a role="menuitem" href="/en/OmDS/kvalitet-og-styring">Quality and governance</a>
+                                                
+                                            </li>
+                                            
+                                    </ul>
+                                </div>
+                            
+                    </div>
+                </div>
+                
+        </li>
+    </ul>
+</nav>
+
+                        </div>
+
+                        <div class="header-search-toggle">
+                            <button id="js-toggle-header-search" aria-expanded="false" aria-haspopup="true" aria-controls="header-search-panel" aria-live="polite" class="toggle-button">
+                                <span>Search</span>
+                                <img src="/Site/Dst/images/menuv3/search.svg" alt="" aria-hidden="true">
+                            </button>
+
+                            <div class="header-search-panel" id="header-search-panel">
+                                <form method="get" action="/en/search">
+                                    <label class="sr-only" for="headersearchtext">Search dst.dk</label>
+                                    <input autocomplete="off" name="q" type="search" id="headersearchtext" value="" data-usesuggest="False" data-suggestkey="" data-searchengine="" data-suggestlist="" placeholder="Enter search phrase...">
+                                    <button>
+                                        <span class="sr-only">Search</span>
+                                        <img src="/Site/Dst/images/menuv3/search-blue.svg" alt="Perform search" aria-hidden="true">
+                                    </button>
+
+                                    <input type="hidden" name="ui" value="dstdk">
+                                    <ul class="search__suggest" id="DstSuggestList"></ul>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="header-mobile-nav-toggle">
+                            <button aria-expanded="false" aria-haspopup="true" aria-controls="mobile-panel" class="toggle-button toggle-mobile-nav" id="js-open-mobile-nav">
+                                <span></span>
+                                Menu
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header>
+
+<!-- End: Top -->
+
+
+            
+            <main>
+                <span id="js-overlay" class="overlay"></span>
+                <div class="content-container">
+                    
+<!-- Begin: Breadcrumb -->
+
+        <div class="row breadcrumb">
+            <div class="col-sm-12">
+                <ul class="breadcrumb__list">
+                    
+        <li><a href="/en">Home</a></li>
+    
+        <li><a href="/en/Statistik">Find statistics </a></li>
+    
+        <li><a href="/en/Statistik/hjaelp-til-statistikbanken">StatBank Denmark help</a></li>
+    
+        <li>StatBank API</li>
+    
+                </ul>
+            </div>
+        </div>
+
+    
+
+        <div class="row breadcrumbMobile">
+            <div class="col-sm-12">
+                <ul class="breadcrumb__list">
+                    
+                                <li><a href="/en">Home</a></li>
+                            <li aria-hidden="true">...</li>
+                                <li><a href="/en/Statistik/hjaelp-til-statistikbanken">StatBank Denmark help</a></li>
+                            <li aria-hidden="true"></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+<!-- End: Breadcrumb -->
+
+                    <a name="mainContent"></a>
+                    
+<!-- Begin: Standardside -->
+<div class="row">
+    <!-- Main content -->
+    <div class="col-md-9 col-md-push-3 content">
+        
+<!-- Begin: DocContent -->
+
+<!-- Begin: Header -->
+<h1>StatBank API</h1>
+<!-- End: Header -->
+
+<div class="cludoContent">
+
+<!-- Begin: TextContent -->
+    <div class="greyBoxRight">
+<h2>Table of contents</h2>
+<a href="#intro">Introduction</a><br />
+<a href="#testkonsol">Console</a><br />
+<a href="#generelt">General introduction</a><br />
+<a href="#funktion">Function</a><br />
+<a href="#sprog">Language</a><br />
+<a href="#format">Format</a><br />
+<a href="#tabellerogemner">Tables and subject</a><br />
+<a href="#metadataogdata">Metadata and data</a><br />
+<a href="#betalog">Change log</a></div>
+<h2 id="intro">Introduction</h2>
+<p>With Statistics Denmark&rsquo;s API for StatBank it is possible to get access to all the published data in StatBank.</p>
+<p>Using Statistics Denmark&rsquo;s API for Statbank Denmark, you can access all published data in Statbank Denmark programmatically. As a user, you can use Statistics Denmark&rsquo;s open data directly in various own applications. You can access Statbank Denmark data either via a user interface or via an API. You can make free use of data in the development of various services, e.g. the development of smartphone apps.<br />
+&nbsp;</p>
+<div class="faktabox">
+<h3>StatHost: Get your own data bank</h3>
+<p>If you want to convey statistical information through your own website, you can make use of our StatHost solution.</p>
+<p><a href="/en/TilSalg/produkter/stathost/stathost">Read more about prices and possibilities of getting a StatHost solution</a></p>
+</div>
+<p>Statistikbanken.dk gives you an overview of the open data that Statistics Denmark makes available from all areas for which we produce statistics. Data can be downloaded in table format, graphics, maps, a number of data formats or as bulk downloads &ndash; depending on whether you use the user interface or the API entry point. In Statbank Denmark, you always get the most recently updated data. You can use all statistical data at Statistikbanken.dk and the web page dst.dk free of charge for commercial as well as non-commercial purposes, as long as you include a source reference. This corresponds to the licence named Creative Commons, CC 4.0 BY.</p>
+<h2 id="testkonsol">Console</h2>
+<p>We have made a console available whereby one can try out the API.</p>
+<p>The console is a manual tool for programmers who want to use the API. The tool helps the programmer in terms of finding out how the API is called. </p>
+<p>The console is in Danish, if the browser has that as preferred language, otherwise in English.</p>
+<p><a href="https://api.statbank.dk/console" class="btn btn-primary" target="_new">Start console</a></p>
+<h2 id="generelt">General introduction</h2>
+<p>Queries are sent to the preferred functions&rsquo; URL and the necessary information is posted as a JSON-object.</p>
+<p>As a rule, all communication must be UTF-8 encoded.</p>
+<p>The API can respond in respectively JSON or XML. Regarding DATA call, other return formats apply.</p>
+<p>It is possible to provide parameters in the URL, but it is recommended to POST data. When supplying parameters in the URL (GET), the information must be URL encoded. For examples, see the console.
+</p>
+<p>The base address for the API is <a href="https://api.statbank.dk" title="Api.statbank.dk">https://api.statbank.dk</a>.</p>
+<h2>Communicate using TLS 1.2</h2>
+<p style="margin-bottom: 11px;">All requests made to the API must use TLS 1.2 or higher (Transport Layer Security). Most newer browsers and programming languages does this by default. </p>
+<p style="margin-bottom: 11px;">However, in some cases the code base needs to be updated to a later version of the programming language. </p>
+<p style="margin-bottom: 11px;">For example, the .NET Framework 4.5 does not use TLS 1.2 per default and the following line of code needs to be inserted prior to the request:</p>
+<pre>ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;</pre>
+<p style="margin-bottom: 11px;">For the .NET Framework 4.0 it may be necessary to change this to:</p>
+<pre>ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;</pre>
+<p>Some users will use Visual Studio along with SQL Server Integration Services to fetch data. This can cause TLS issues even if .NET 4.7 is used. A script task needs to be inserted in the relevant Integration Services package in Visual Studio (e.g. Sql Server Data Tools) with the above mentioned code line <em>prior&nbsp;</em><em>to </em>execution of a&nbsp;"Data Flow Task".</p>
+<p>If Delphi/Pascal is used, the solution can be something like this::</p>
+<pre>uses IdHTTP, IdGlobal, IdSSLOpenSSL;
+...
+begin<br />  FHTTP := TIdHTTP.Create;<br />  FIOHandler := TIdSSLIOHandlerSocketOpenSSL.Create;<br />  FIOHandler.SSLOptions.SSLVersions := [sslvTLSv1_2];<br />  FHTTP.IOHandler := FIOHandler;<br />...<br />end;</pre>
+<p style="margin-bottom: 11px;"><span style="font-size: 34px; font-weight: 600; text-transform: uppercase; font-family: inherit; color: inherit;">Function</span></p>
+<p>Version number and name of the desired function must always be provided:<br />
+http://api.statbank.dk/v1/subjects<br />
+http://api.statbank.dk/v1/tables<br />
+http://api.statbank.dk/v1/tableinfo<br />
+http://api.statbank.dk/v1/data</p>
+<h2 id="sprog">Language</h2>
+<p>From the outset, the API will respond in Danish. For every call, the language can be stated with a parameter:</p>
+<pre>{
+   "lang": "en"
+}</pre>
+<p>Either &rdquo;da&rdquo; for Danish or &rdquo;en&rdquo; for English can be stated.</p>
+<p>In some cases the API will return error messages in both Danish and English if the error has resulted in lacking determination of language.</p>
+<h2 id="format">Format</h2>
+<p>For all other functions than DATA, the formats JSON or XML can be stated:</p>
+<pre>{
+   "format": "JSON"
+}</pre>
+<h2 id="tabellerogemner">Tables and subjects</h2>
+<p>There are two ways of finding tables via the API: the functions SUBJECTS and TABLES.</p>
+<h3>SUBJECTS</h3>
+<p>The function SUBJECTS gives access to the hierarchy of subjects that contains all the tables. The hierarchy can be queried one or several levels at a time.</p>
+<p>If the function is called without parameters, the upper level in the hierarchy will be returned. Afterwards, these subjects&rsquo; subtopics can be found by calling SUBJECTS once again with statement of the desired subjects etc..</p>
+<p>The following function specific parameters can be provided:</p>
+<pre>{
+   "subjects": [
+      "02",
+      "2401"
+   ],
+   "includeTables": true,
+   "recursive": true,<br />&nbsp; &nbsp;"omitInactiveSubjects": true
+}</pre>
+<p>subjects: Subjects for which subtopics are wanted.</p>
+<p>includeTables: Whether the result should contain tables. Otherwise, only subjects are returned and tables can subsequently be retrieved with the function TABLES.</p>
+<p>recursive: Whether subtopics/tables will be retrieved all the way down the hierarchy. Otherwise, only the closest level under the provided subjects will be retrieved.</p>
+<p>omitInactiveSubjects: Whether subtopics/tables will be omitted if they or a parent subtopic is no longer updated.</p>
+<h3>TABLES</h3>
+<p>The function TABLES return tables that are criteria filtered. If no criteria are specified, all tables are returned.</p>
+<p>The following function specific parameters can be provided:</p>
+<pre>{
+   "subjects": [
+      "02",
+      "2401"
+   ],
+   "pastdays": 1,
+   "includeinactive": true
+}</pre>
+<p>subjects: Subjects from which tables will be returned. Subject codes are retrieved with the function SUBJECTS.</p>
+<p>pastdays: Number of days backwards, for which to return updated tables.</p>
+<p>includeInactive: Whether to return tables that no longer are updated.</p>
+<h2 id="metadataogdata">Metadata and data</h2>
+<p>A table consists of metadata and data.</p>
+<p>Metadata is information about e.g. the table&rsquo;s title and the unit of data. For certain data formats, e.g. CSV, this information is only available through metadata. Therefore, the information has to be read in connection with every data request.</p>
+<p>In terms of other formats such as Excel or chart (PNG), the data response itself contains information about e.g. title and unit. Yet, it might be beneficial to read metadata in order to see e.g. a possible note for data.</p>
+<h3>TABLEINFO</h3>
+<p>The function TABLEINFO returns metadata for a table. The answer contains information about variables and their codes. Use these codes when data is requested with the function DATA.</p>
+<p>Table must always be stated:</p>
+<pre>{
+   "table": "folk1c"
+}</pre>
+<h3>DATA</h3>
+<p>The function DATA returns data from a table.</p>
+<p>The API tries to eliminate the variables for which values have not been selected. If region is not selected in the table FOLK1C, for instance, data will be returned for the entire country.</p>
+<p>In case that elimination is not desired for certain variables, the variable by its code must be provided along with the codes for the desired values. Codes for variables and values are found via the function  TABLEINFO.</p>
+<p>For instance, the table FOLK1C&rsquo;s variable &ldquo;country of origin&rdquo; has the code &ldquo;ieland&rdquo;, and the value &ldquo;Denmark&rdquo; for this variable has the code &ldquo;5100&rdquo;. If data is desired for those observations where the country of origin is Denmark, the following must be provided:</p>
+<pre>{
+   "table": "folk1c",
+   "format": "CSV",
+   "variables": [
+      {
+         "code": "ieland",
+         "values": [
+            "5100"
+         ]
+      }
+   ]
+}</pre>
+<p>&rdquo;*&rdquo; can be used as wildcard for value codes, indicating that &rdquo;*&rdquo; means all values and e.g. &rdquo;*K1&rdquo; means all values with a code ending with &ldquo;K1&rdquo;.</p>
+<p>Some tables contain variables that cannot be eliminated automatically. Values always have to be selected for these variables. Data formats that are streamed, do not allow elimination of variables.</p>
+<p>A total is stated as e.g. &ldquo;sum(0-4;5-9;10-14;15-19;20-24)&rdquo;, which will return a sum for the stated codes. A text can be added to a sum: "sum(0-24 year=0-4;5-9;10-14;15-19;20-24)" as well as a code: "sum(0_24|0-24 year=0-4;5-9;10-14;15-19;20-24)". If the same request is used to retrieve data in different languages, it can be useful to add specific texts for every language: "sum(0_24|[da 0-24 &aring;r][en 0-24 years]=0-4;5-9;10-14;15-19;20-24)".</p>
+<p>Other methods for calculation include multiply, divide and subtract. They work in the same way as sum with the exception that they need precisely two codes, e.g. "subtract(15-19;10-14)" which for the table folk1c will return the difference between 15-19-year-olds and 10-14-year-olds. The other methods follow the same pattern.&nbsp;</p>
+<p>Data formats that are streamed, do not currently allow for calculations as mentioned above.</p>
+<p>Sequences of codes can be supplied by stating a before/equals/after condition. E.g. the period first quarter of 2010&nbsp;to fourth quarter 2015&nbsp;can be stated as "&gt;=2010K1&lt;=2015K4". The condition can be stated with or without "=" and may be combined with other selections for the same variable. Please notice that each selection does not affect other selections. Therefore "&gt;=2010K1"&nbsp;and&nbsp;"&lt;=2015K4" as seperate selections will result in all codes from and including 2010K1 and also all codes until and including 2015K4, which is actually all of the variables codes.&nbsp;</p>
+<p>Periods are returned as distinct and sorted (either increasingly or as stated in timeOrder), regardless of the order and duplicates in the request. Periods can &ndash; as with other variables&rsquo; values &ndash; be stated by code and possibly include the wildcard &rdquo;*&rdquo;. Moreover, nth rules can be used for statement of periods. Nth rules always have to be encircled with brackets. +/- placed in front or first/last specifies the desired sequence of the periods. The three latest periods can e.g. be stated (-n +3). Three oldest periods -(-n+3), newest period (1), second newest period (2), second oldest period -(2) etc. Codes and rules can be mixed in a comma separated list. The nth rule works as the css selector described at <a href="http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#nth-child-pseudo">http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#nth-child-pseudo</a>.</p>
+<p>If a period is not stated, data will be returned for the latest period in the table, corresponding to the statement &ldquo;(1)&rdquo;.</p>
+<p>There are the following function specific parameters. &ldquo;table&rdquo; and &ldquo;format&rdquo; is mandatory.</p>
+<pre>{<br />&nbsp;&nbsp; "table": "folk1c",<br />&nbsp;&nbsp; "format": "CSV",<br />&nbsp;&nbsp; "valuePresentation": "Default",<br />&nbsp;&nbsp; "timeOrder": "Ascending",<br />&nbsp;&nbsp; "variables": [<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "code": "OMR&Aring;DE",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "placement": "stub",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "values": [<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "000",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "185",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "791",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "787"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "code": "K&Oslash;N",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "values": [<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "*"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "code": "Tid",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "values": [<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "2010k2",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "(1)"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp; ]<br />}</pre>
+<p>table: Table that data are retrieved from.</p>
+<p>format: Desired format for return of data. See the paragraph Data formats bellow.</p>
+<p>valuePresentation: How text is shown. The parameter can be omitted or one of the following values can be stated:<br />
+Default, Code, Value, CodeAndValue or ValueAndCode</p>
+<p>timeOrder: The sequence for periods stated as ascending or descending.</p>
+<p>variables: Collection of variable objects with statement of its code and the codes for the desired values. In the example, data are retrieved for the areas: All Denmark (000), T&aring;rnby (185), Viborg (791) and Thisted (787), for both sexes (*) for the period second quarter 2010 (2010K2) and the latest period ((1)). Moreover, it is stated that the variable &ldquo;OMR&Aring;DE&rdquo; is to be placed in the table&rsquo;s stub (stated as head or stub).</p>
+<h3>Special calculations</h3>
+<p style="margin-bottom: 8.25pt;"><span style="color: #002e2e;">A few special calculations is implemented, namely percent and pro mille calculations. </span></p>
+<p style="margin-bottom: 8.25pt;"><span style="color: #002e2e;">Below is a description of all the settings for these operations:</span></p>
+<ul style="list-style-type: disc;">
+    <li><span>Operation is OPTIONAL. The default is Percent and can also be set to Permille.</span></li>
+    <li><span>SelectedVariableCode is SEMI-OPTIONAL. It MUST be defined if more than one variable has been chosen in the independent field Variables. A code must be defined for the variable the calculation will be based on, e.g. K&Oslash;N.</span></li>
+    <li><span>AddAsNewValue is OPTIONAL. The default is False. If set to True an extra&nbsp;variable will be added that defines the content type (e.g. if it is a specific number or percentage a value refers to).</span></li>
+    <li><span>Below is the OPTIONAL settings to be used if AddAsNewValue is set to True:</span></li>
+    <ul style="list-style-type: circle;">
+        <li><span>NewValueName is OPTIONAL. If nothing is defined the value "Procent" or "Promille" is selected in Danish and "Percent" or "Per Mille" in English. This will be the value of the new content type variable. If defined the value will be used as the content type. The original value will automatically be defined by the API (e.g. Number)</span></li>
+        <li><span>NewValuePlacement is OPTIONAL. If nothing is defined the content type variable will be placed in Head (the other value is Stub). Has no consequence in e.g. CSV files, but can be important to define in the format HTML.</span></li>
+        <li><span>ContentTypeCode is OPTIONAL. If nothing is defined the content type variable heading will be "IndholdsType" in Danish and "ContentType" in English.</span></li>
+        <li><span>BasisValueForCalculation is OPTIONAL. If nothing is defined then percent or per mille will be distributed on all values. If a value has been chosen then the distribution will be calculated with the value being 100 per cent (or 1000 per mille).</span></li>
+    </ul>
+</ul>
+<p style="margin-bottom: 8.25pt;"><span>Data formats that are streamed, do not allow for these special calculations.</span></p>
+<p style="margin-bottom: 8.25pt;">An example of all the settings in use:</p>
+<pre>{<br />&nbsp; &nbsp;"table": "FOLK1A",<br />&nbsp; &nbsp;"format": "CSV",<br />&nbsp; &nbsp;"variables": [<br />&nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"code": "K&Oslash;N",<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"values": [<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "*"<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;]<br />&nbsp; &nbsp; &nbsp; },<br />&nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"code": "CIVILSTAND",<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"values": [<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "*"<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;]<br />&nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp;],<br />&nbsp; &nbsp;"valueTransformationSettings": {<br />&nbsp; &nbsp; &nbsp; "operation": "percent",<br />&nbsp; &nbsp; &nbsp; "selectedVariableCode": "K&Oslash;N",<br />&nbsp; &nbsp; &nbsp; "addAsNewValue": "true",<br />&nbsp; &nbsp; &nbsp; "newValueName": "Percentage",<br />&nbsp; &nbsp; &nbsp; "newValuePlacement": "Head",<br />&nbsp; &nbsp; &nbsp; "contentTypeCode": "Content_Type",<br />&nbsp; &nbsp; &nbsp; "basisValueForCalculation": "TOT"<br />&nbsp; &nbsp;}<br />}</pre>
+<div><span style="font-size: 20px; font-weight: 600; font-family: inherit; color: inherit;">Data formats</span></div>
+<p>The following data formats can be selected for the DATA function:</p>
+<p>PX : PC-Axis (ANSI)<br />
+CSV: Semicolon separated <br />
+JSONSTAT: JSON-stat<br />
+DSTML: StatBank's XML-format <br />
+PNG: Graph as picture (see description below)<br />
+AREMOS: AREMOS</p>
+<p>The following are streaming formats, which are described below:<br />
+BULK: Semicolon separated file<br />
+SDMXCOMPACT: SDMX-ML&nbsp;Compact <br />
+SDMXGENERIC: SDMX-ML Generic</p>
+<p>The following are presentation formats for which small changes may be implemented in the production environment, even though the system does not change version number.<br />
+XLSX: Excel<br />
+HTML: HTML</p>
+<h3>Special data formats</h3>
+<h4>PNG</h4>
+<p>Data can be returned as a chart. For this format a number of parameters can be stated, which determine how the chart will be presented in the returned image file.</p>
+<pre>{
+   "table": "folk1c",
+   "format": "PNG",
+   "variables": [
+      {
+         "code": "k&oslash;n",
+         "values": [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "1",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "2"<br />         ]
+      }
+   ],
+   "chartsettings": {
+      "type": "column",
+      "width": "900",
+      "height": "400",
+      "showlegend": "true",
+      "showtitle": "true",
+      "fontsize": "13",
+      "sort": "false",
+      "autopivot": "true",
+      "labelsangle": "0",<br />      "titlecolor": "ff000000",<br />      "seriescolors": [
+         "00ff00",
+         "0000ff"
+      ],
+      "valuecolors": [
+         "2ff0000"
+      ]
+   }
+}</pre>
+<p>In the example, data is collected from the table FOLK1C. The values for Men (1) and Woman (2) are chosen for the variable sex (K&Oslash;N). In addition, a number of settings about the chart&rsquo;s presentation are stated.</p>
+<p>type: Chart type for presentation of data. The following values can be stated:<br />
+Line, Column, StackedColumn, StackColumn100, Bar, StackedBar, <br />
+StackedBar100, Area, StackedArea, StackedArea100, Pie, ColumnAndLines, Population.</p>
+<p>width: The image&rsquo;s width in pixels.</p>
+<p>height: The image&rsquo;s height in pixels.</p>
+<p>When changing the size, not only scaling of the image will take place. The chart&rsquo;s layout itself is determined by the available space.</p>
+<p>showlegend: Whether the image must contain a box with specification of series texts.</p>
+<p>showtitle: Whether the image must contain the table&rsquo;s title and subtitle.</p>
+<p>fontsize: Font sixe.</p>
+<p>sort: Whether the observations must be sorted.</p>
+<p>autopivot: Whether the variable with most values must be removed to the label axis.</p>
+<p>labelsangle: Angle of texts on the label axis.</p>
+<p>seriescolors: Collection of colours for series. Colours are specified as e.g. &ldquo;ff0000&rdquo; for red. In the example above, green and blue are specified as the first colours that will be used for series.</p>
+<p>valuecolors: Collection of colours for specific values. Specified by code followed by colour. In the example above, it is specified that observations with the code (women) will be displayed in red. </p>
+<h4>STREAMING FORMATS</h4>
+<p>If many values are chosen for a table, some extracts may be too large to handle at the server. Some extracts may contain billions of cells. A limit for the number of observations possible to extract for non-streaming formats has been implemented which can vary from time to time. In the update log the current limit will be mentioned when changed. By using streaming formats this limitation is not in effect.</p>
+<p>Since dataset of this size easily can be used in e.g. databases, we have decided to make this output type available.</p>
+<p>The result is different from the other formats as regards several important aspects:</p>
+<p>- Some observations are omitted. If a combination of values is missing, the observation for this combination is 0 (the number zero). If the combination is present, but the number is missing, it either means that the observation is missing, it is confidential or it is too insecure to be stated.</p>
+<p>- Variables cannot be omitted (eliminated) and the rows (the values) are not necessarily sorted in the same order as prescribed in the query.</p>
+<h3 style="color: #002e2e;">CATALOGUE</h3>
+<div>This method provides metadata about tables in a DCAT-AP catalogue, an XML file containing data about tables, distributions, and contacts linked in various ways. This format is used, among others, by the Agency for Digital Government's "Datavejviser".</div>
+<p>Using this method requires an API key, which can be requested by contacting Statistics Denmark (see the bottom of the page).</p>
+<h2 id="funktion" style="color: #1d3234;">Limitations for extraction of data</h2>
+<p id="funktion" style="color: #1d3234;">Through the years the usage of the API has grown substantially. Therefore we have introduced a limitation on the amount of retrieved cells for regular download formats where all data is retrieved at once. This limitation does <span style="text-decoration: underline;">not</span> apply to the so-called "bulk" formats where data is streamed in smaller portions with no upper limit.&nbsp;</p>
+<p id="funktion" style="color: #1d3234;">The maximum number of cells retrieved using "non-bulk" (e.g. CSV, px etc.) has been set to <strong>1,000,000 cells</strong>, but can be changed in the future based on user feedback and needs.</p>
+<p id="funktion" style="color: #1d3234;">The number of cells for a query is calculated based on a simple formula: The maximum number of rows to be extracted multiplied with the number of chosen fields where time and the observation value both <span style="color: #1d3234;">are&nbsp;</span>mandatory fields. An observation consists of its value and a number of variables such as the time period and other describing parts (e.g. area or gender). Each part of the observation is a cell itself.</p>
+<p id="funktion" style="color: #1d3234;">Below is a random example with five variables, including the mandatory time variable that is always retrieved and the value itself (5,825,337). This one row therefore consists of six columns which in total sums up to six cells when number of rows and columns are multiplied.&nbsp;</p>
+<table border="0" cellspacing="0" cellpadding="0" width="0" style="width: 399.4pt;">
+    <tbody>
+        <tr style="height: 15pt;">
+            <td valign="bottom" style="height: 15pt; width: 100pt; padding: 0cm 3.5pt; text-align: left;">
+            <p><strong>OMR&Aring;DE</strong></p>
+            </td>
+            <td valign="bottom" style="height: 15pt; width: 66.35pt; padding: 0cm 3.5pt; text-align: left;">
+            <p><strong>K&Oslash;N</strong></p>
+            </td>
+            <td valign="bottom" style="height: 15pt; width: 48pt; padding: 0cm 3.5pt; text-align: left;">
+            <p><strong>ALDER</strong></p>
+            </td>
+            <td valign="bottom" style="height: 15pt; width: 48pt; padding: 0cm 3.5pt; text-align: left;">
+            <p><strong>CIVILSTAND</strong></p>
+            </td>
+            <td valign="bottom" style="height: 15pt; width: 141.05pt; padding: 0cm 3.5pt; text-align: left;">
+            <p><strong>TID</strong></p>
+            </td>
+            <td valign="bottom" style="height: 15pt; width: 48pt; padding: 0cm 3.5pt; text-align: left;">
+            <p><strong>INDHOLD</strong></p>
+            </td>
+        </tr>
+        <tr style="height: 15pt;">
+            <td valign="bottom" style="height: 15pt; width: 48pt; padding: 0cm 3.5pt; text-align: left;">
+            <p style="text-align: right;">All Denmark</p>
+            </td>
+            <td valign="bottom" style="height: 15pt; width: 66.35pt; padding: 0cm 3.5pt; text-align: left;">
+            <p>Total</p>
+            </td>
+            <td valign="bottom" style="height: 15pt; width: 48pt; padding: 0cm 3.5pt; text-align: left;">
+            <p>Total</p>
+            </td>
+            <td valign="bottom" style="height: 15pt; width: 48pt; padding: 0cm 3.5pt; text-align: left;">
+            <p>Total</p>
+            </td>
+            <td valign="bottom" style="height: 15pt; width: 141.05pt; padding: 0cm 3.5pt; text-align: left;">
+            <p>2020Q3</p>
+            </td>
+            <td valign="bottom" style="height: 15pt; width: 48pt; padding: 0cm 3.5pt; text-align: left;">
+            <p style="text-align: right;">5,825,337<span style="text-align: left; background-color: transparent;"></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p id="funktion" style="color: #1d3234;">&nbsp;</p>
+<p id="funktion" style="color: #1d3234;">Some queries will not contain the calculated maximum cell count, the reason being missing observations for periods, sums or likewise, but this is not accounted for in the calculation.</p>
+<p id="funktion" style="color: #1d3234; margin-bottom: 11px;">This basic algorithm will presumably continuously be tweaked.</p>
+<h2 id="betalog">Change log</h2>
+<p>We continuously develop the source code in order to improve and optimize the API. API version number will only be increased when changes will break existing use of API.</p>
+<p>Some changes which apply to the usage of the API will&nbsp;&ndash; in this period &ndash; be added to the following list.</p>
+<p><strong>April 24th 2025</strong></p>
+<p style="margin-bottom: 11px;">&nbsp; &nbsp;- Version 1.6.5: Small correction for one of the output formats fixing a problem with special characters that prevented data extraction.</p>
+<div><strong>November 14th 2024</strong></div>
+<p style="margin-bottom: 11px;">&nbsp; &nbsp;-&nbsp;Version 1.6.3: Major upgrade of the technology stack and addition of an endpoint catalogue, where an API key allows retrieval of a dataset catalogue in DCAT-AP format as XML.</p>
+<div><strong>May 22th 2024</strong></div>
+<p style="margin-bottom: 11px;">&nbsp; &nbsp;- Version 1.5.3: Small upgrade to the technology stack.</p>
+<p style="margin-bottom: 11px;"><strong>March 10th 2023</strong></p>
+<p style="margin-bottom: 11px;">&nbsp; &nbsp;- Version 1.5.1: Minor changes in the output engine.</p>
+<p style="margin-bottom: 11px;"><strong>August 10th 2022</strong></p>
+<p style="margin-bottom: 11px;">&nbsp; &nbsp;- Version 1.5: The PX format now contains the optional key VARIABLECODE. This provides a mapping for each variable name to its corresponding variable code. An example: The table STRAFNA3 has a variable with the code IELAND which formerly only was used by its name, "country of origin",&nbsp;in the PX data. The following is added for this variable in the revised version of the PX format:&nbsp;VARIABLECODE("country of origin")="IELAND".</p>
+<div><strong>July 4th 2022</strong></div>
+<p style="margin-bottom: 11px;">&nbsp; &nbsp;- Version 1.4.2 implements a small change to the interpretation of saved queries.</p>
+<p><strong>June 20th 2022</strong></p>
+<p style="margin-bottom: 11px;">&nbsp; &nbsp;- Version 1.4.1 implements certain performance improvements.</p>
+<p><strong>April 26th 2022</strong></p>
+<p style="margin-bottom: 11px;">&nbsp; &nbsp;- Version number has been implemented, starting with 1.4 due to a number of previous publications since the first edition.<br />
+&nbsp; &nbsp;- The API has been prepared for a new&nbsp;"next generation" format for saved queries which is used in conjunction with the "Saved" API method.</p>
+<div><strong>December 3rd 2021</strong></div>
+<p><strong></strong>&nbsp; - Three calculation methods added: Multiply, divide and subtract. These new methods are called in the same way as the sum method, but for now only two codes can be handled for any of the functions. Read more in the DATA section.<br />
+&nbsp; &nbsp;- Data can now be extracted in per cent or per mille using a number of settings. Read more in the DATA section.<br />
+&nbsp; &nbsp;- New formats added: HTML5 and HTML5InclNotes. Both return data as HTML, but the latter includes optional notes on the table. The HTML code are different than the API format HTML due to better compliance with web standards.</p>
+<p><strong>September 16th 2021<br />
+</strong>&nbsp; &nbsp;- New functionality for the SUBJECT method added: omitInactiveSubjects can be used to omit subject areas that are no longer active.</p>
+<div><strong>September 14th 2021</strong></div>
+<p style="margin-bottom: 11px;">&nbsp; &nbsp;- As of this day, we organise our statistics in a new way. Among other things, this means that the subject codes and texts in the Statbank will change, which can affect the use of the API. Tables, and requests towards the tables is not affected.</p>
+<p><strong>May 27th 2021</strong></p>
+<p style="margin-bottom: 11px;">&nbsp; &nbsp;- Adjusted upper limit for retrieved cells to 1,000,000 for standard data formats (number of rows multiplied with number of columns consisting of the variables and the value). Streaming formats are not influenced by this.</p>
+<p><strong>June 30th 2020</strong></p>
+<p>&nbsp; &nbsp;- Adjusted upper limit for retrieved cells to 500,000 for standard data formats (number of rows multiplied with number of columns consisting of the variables and the value). Streaming formats are not influenced by this.</p>
+<p><strong>June 25th 2020</strong></p>
+<p style="margin-bottom: 11px;">&nbsp; &nbsp;- New version that limits large downloads of more than 160,000 data cells/observations on standard "non-streaming" data formats. If using the so-called streaming formats, i.e. BULK or SDMXCOMPACT/SDMXGENERIC, this limit is not in effect.</p>
+<p><strong>December 10th 2019</strong></p>
+<p>&nbsp; &nbsp;- The API does not support TLS 1.1 or lower when requests are made to the API. If this causes problems, e.g. with clients using the .NET framework, then the code base must be updated to .NET framework 4.6 or later. Alternatively, the following statement needs to be inserted prior to a request to force the client to use TLS 1.2:: ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;.</p>
+<p><strong>June 2019</strong></p>
+<p>&nbsp; &nbsp;- All HTTP requests are redirected to HTTPS.<br />
+&nbsp; &nbsp;- Now official release - no more BETA.</p>
+<p><strong>January 2018</strong></p>
+<p>&nbsp; &nbsp;- When extracting data in CSV, content column now always has the code INDHOLD.<br />
+&nbsp;&nbsp; - Property "active"&nbsp;added to TABLEINFO. The value indicates whether the table is&nbsp;still&nbsp;expected to be updated.<br />
+&nbsp;&nbsp; - Documentation links now with https.</p>
+<p><strong>December 2017</strong></p>
+<p>&nbsp; &nbsp;- Contact persons returned as collection.<br />
+&nbsp;&nbsp; - Property "suppressedDataValue" added to TABLEINFO. Value is to be used for missing row&nbsp;observations in streaming formats.<br />
+&nbsp;&nbsp; - Observations for stored rows with missing values returned as ".." instead of "".<br />
+&nbsp;&nbsp; - Possibility for supplying a sequence of codes by before/equals/after condition.</p>
+<p><strong>October 2017</strong></p>
+<p>&nbsp; &nbsp;- HTTPS now supported. Please use right away. Later on we will 301-redirect all HTTP requests, in which case a POST request body will be lost.<br />
+&nbsp;&nbsp; - Now possible to allow multiple variables in head of CSV-output<br />
+&nbsp;&nbsp; - Now possible to let value presentation override codes&nbsp;in column names of&nbsp;CSV-output<br />
+&nbsp;&nbsp; -&nbsp;Bug fixed where third party component failed on dataset with exactly one timeperiod, where&nbsp;it's code contained "-"<br />
+&nbsp;&nbsp; - Changed in backend regarding caching of data</p>
+<p><strong>September 2017</strong></p>
+<p>&nbsp; &nbsp;- Elimination value can no longer be part of a sum<br />
+&nbsp;&nbsp; - Sum values can be delimited by comma<br />
+&nbsp;&nbsp; - Console use own jQuery, so it can be used in a closed system opened for that specific site</p>
+<p><strong>June 2017</strong></p>
+<p>&nbsp; &nbsp;- Headers trimmed for special characters to improve usage in other systems<br />
+&nbsp;&nbsp; - Correct transfer of chartsettings when using&nbsp;GET request</p>
+<p><strong>March 2017</strong></p>
+<p>&nbsp; &nbsp;- Improved  CORS<br />
+&nbsp;&nbsp; - Charts limited to a&nbsp;maximum of 50 series</p>
+<p><strong>January 2017</strong></p>
+<p>&nbsp; &nbsp;- Added returned status code&nbsp;and headers to console<br />
+&nbsp;&nbsp; - Added contact information to TABLEINFO</p>
+<p><strong>October 2016</strong></p>
+<p>&nbsp; &nbsp;- Added information about documentation of statistics to TABLEINFO</p>
+<p><strong>June&nbsp;2016</strong></p>
+<p>&nbsp; &nbsp;- An error when extracting data in JSONSTAT, when multiple variables has geo-information is fixed</p>
+<p><strong>April 2016</strong></p>
+<p>&nbsp; &nbsp;- Added information on geographic map for variable (map) to TABLEINFO</p>
+<p><strong>March 2016</strong></p>
+<p>&nbsp; &nbsp;- Added information on subject status (active) to SUBJECTS</p>
+<p><strong>December 2015</strong></p>
+<p>&nbsp; &nbsp;- Improved error messages for errors when using saved queries</p>
+<p><strong>October 2015</strong></p>
+<p>&nbsp; &nbsp;- Corrections for content variable in JSONSTAT<br />
+&nbsp;&nbsp; - Corrections for selection of valuepresentation</p>
+<p><strong>Juli 2015</strong></p>
+<p>&nbsp; &nbsp;- An error where time code was presented in English when extracted in Danish is fixed<br />
+&nbsp;&nbsp; - Now possible to eliminate a variable by one of its values</p>
+<p><strong>Juni 2015</strong></p>
+<p>&nbsp; &nbsp;-&nbsp;Presentation text as value followed by code no longe&nbsp;available&nbsp;</p>
+<p><strong>April 2015</strong></p>
+<p>&nbsp; &nbsp;- The data format in the functions SUBJECTS and TABLES does now correspond to the format in TABLEINFO<br />
+&nbsp;&nbsp;&nbsp;- Restrictions for sums for certain tables, variables and method of measurement (stock/flow etc.)<br />
+&nbsp;&nbsp; -&nbsp;Comma can be used in summation texts</p>
+<p><strong>March 2015</strong></p>
+<p>&nbsp; &nbsp;- Incorporations of sums in data extract</p>
+<p><strong>November 2014</strong></p>
+<p>&nbsp; &nbsp;- Statements of times with nth rules (something resembling <a href="http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#nth-child-pseudo">http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#nth-child-pseudo</a>)<br />
+&nbsp;&nbsp; - AREMOS format is removed</p>
+<p><strong>October 2014</strong></p>
+<p>&nbsp; &nbsp;- Column headline is added for the formats CSV and BULK<br />
+&nbsp; &nbsp;- The format BULK is able to show text now. If codes are desired, choose explicitly valuePresentation=code</p>
+<!-- End: TextContent -->
+
+</div>
+
+
+<!-- Begin: Formular -->
+
+<!-- End: Formular -->
+
+<!-- End: DocContent -->
+
+        
+    <div class="contactbox" style="">
+        <div><h2>Contact</h2></div>
+        <div class="contactbox__container"><div class="contactbox__content">
+                    <div><b>Statistikbank og Informationsservice</b></div>
+                    <div>Phone: +45 39 17 31 50</div>
+                    <div>Mail: <a title="Mail databanker@dst.dk" href="javascript:mSend('databanker');">databanker@dst.dk</a></div>
+                  </div></div>
+    </div>
+    
+<!-- Begin: Contact -->
+
+<!-- End: Contact -->
+
+    </div>
+    <!-- Left menu -->
+    <div class="col-md-3 col-md-pull-9 col-border-right leftmenu">
+        <!-- Sidebar nav -->
+        
+<nav class="sidebar-nav">
+    <ul>
+        <li class="back">
+            <a href="/en/Statistik/hjaelp-til-statistikbanken">
+                <svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.5835 9L1.5835 5L5.58349 0.999999" stroke="#0074C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M1.5835 5L13.5835 5" stroke="#0074C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                StatBank Denmark help
+            </a>
+        </li>
+        
+        <li class=" current">
+            <a href="#">StatBank API</a>
+
+            
+        </li>
+        
+        <li class=" ">
+            <a href="/en/Statistik/hjaelp-til-statistikbanken/px-format">Px-format and Px-programs</a>
+
+            
+        </li>
+        
+    </ul>
+</nav>
+<script>
+$('.sidebar-nav li.current a').click(function() {
+    $(this).parent().find('ul').slideToggle();
+    $(this).toggleClass('collapsed'); 
+});
+</script>
+
+
+        <div id="main_0_ctl02_Show">
+	
+<div class="row social-share">
+    <div class="col-xs-12">
+        <h4 class="leftColumnHeader social-share__header">Share this page</h4>
+        <ul class="social-share__list">
+            <li class="social-share__item facebook">
+                <a target="_blank" href="http://www.facebook.com/sharer.php?u=https://www.dst.dk/en/Statistik/hjaelp-til-statistikbanken/api">
+                    <svg aria-label="Share on Facebook" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 115 115" style="enable-background:new 0 0 115 115;" xml:space="preserve" class="icon icon-fill icon-facebook">
+<path d="m29.9,38.58031l11.28485,0l0,-11.28485c0,-4.83636 0,-12.49394 3.62727,-17.3303c3.62727,-4.83636 8.86667,-8.46364 17.73333,-8.46364c14.50909,0 20.55454,2.01515 20.55454,2.01515l-2.82121,16.92727c0,0 -4.83636,-1.20909 -9.2697,-1.20909c-4.43333,0 -8.46364,1.61212 -8.46364,6.04545l0,12.89697l18.13636,0l-0.80606,17.3303l-17.3303,0l0,57.63333l-21.36061,0l0,-57.63333l-11.28485,0l0,-16.92727z"></path>
+</svg>
+
+                </a>
+            </li>
+            <li class="social-share__item linkedin">
+                <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.dst.dk%2fen%2fStatistik%2fhjaelp-til-statistikbanken%2fapi">
+                    <svg aria-label="Share on LinkedIn" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 115 115" style="enable-background:new 0 0 115 115;" xml:space="preserve" class="icon icon-fill icon-linkedin">
+<path d="m26.4087,106.35l-21.24783,0l0,-67.28478l21.24783,0l0,67.28478zm-11.01739,-75.9413l0,0c-7.86957,0 -12.5913,-5.11522 -12.5913,-11.80435c0,-6.68913 5.11522,-11.80435 12.98478,-11.80435c7.86957,0 12.5913,5.11522 12.5913,11.80435c-0.39348,6.68913 -5.11522,11.80435 -12.98478,11.80435zm95.61521,75.9413l-24.00217,0l0,-35.01956c0,-9.05 -3.93478,-15.34565 -11.80435,-15.34565c-6.29565,0 -9.83696,4.32826 -11.41087,8.26304c-0.78696,1.57391 -0.39348,3.5413 -0.39348,5.5087l0,36.59348l-23.6087,0c0,0 0.39348,-62.16956 0,-67.67826l23.6087,0l0,10.62391c1.57391,-4.72174 9.05,-11.41087 21.24783,-11.41087c14.95217,0 26.75652,9.83696 26.75652,30.6913l0,37.77391l-0.39348,0z"></path>
+</svg>
+
+                </a>
+            </li>
+            <li class="social-share__item mail">
+                <a href="#">
+                    <svg aria-label="Send link" width="115" height="115" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 115 115" style="enable-background:new 0 0 115 115;" xml:space="preserve" class="icon icon-fill icon-mail">
+   <g>
+    <path stroke="null" d="m113.1,102.62619l-111.2,0l0,-89.02619l111.2,0l0,89.02619zm-104.58095,-6.61905l97.96191,0l0,-75.7881l-97.96191,0l0,75.7881z"></path>
+   </g>
+   <g stroke="null">
+    <path stroke="null" d="m57.5,71.51667c-4.79881,0 -9.26667,-1.98571 -12.41071,-5.46071l-42.3619,-46.82976l4.96429,-4.46786l42.3619,46.82976c1.98571,2.15119 4.63333,3.30952 7.6119,3.30952s5.62619,-1.15833 7.6119,-3.30952l42.3619,-46.82976l4.96429,4.46786l-42.69286,46.82976c-3.14405,3.475 -7.6119,5.46071 -12.41071,5.46071z"></path>
+   </g>
+ </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</div>
+        
+<!-- Begin: AdditionalInfo -->
+
+
+
+
+
+<!-- End: AdditionalInfo -->
+
+        
+    </div>
+</div>
+<!-- End: Standardside -->
+
+                </div>
+            </main>
+
+            
+            
+<!-- Begin: Footer. -->
+<footer id="FooterPage">
+    <div class="flex row footer-content">
+        
+                <div class="line col-xs-12 col-md-3 col-sm-6">
+                    <h3>Ask us</h3>
+                    <div class="link"><a title="" href="/en/kontakt" target="_self">Contact Statistics Denmark</a></div><div class="link"><a title="" href="/en/Indberet/vejledning-til-digital-indberetning/soseng" target="_self">Support for business surveys</a></div><div class="link"><a title="" href="/en/informationsservice" target="_self">Information Service</a></div>
+                </div>
+                
+                <div class="line col-xs-12 col-md-3 col-sm-6">
+                    <h3>Find it fast</h3>
+                    <div class="link"><a title="" href="https://www.statbank.dk/" target="_self">Statbank Denmark</a></div><div class="link"><a title="" href="/en/Statistik/planlagte" target="_self">Scheduled Releases</a></div>
+                </div>
+                
+                <div class="line col-xs-12 col-md-3 col-sm-6">
+                    <h3>About the website</h3>
+                    <div class="link"><a title="" href="/en/OmDS/om-hjemmesiden/privatlivspolitik" target="_self">Privacy Policy</a></div><div class="link"><a title="" href="/en/OmDS/om-hjemmesiden/cookiepolitik" target="_self">Cookie Policy</a></div><div class="link"><a title="" href="https://www.was.digst.dk/dst-dk" target="_self">Accessibility Statement</a></div>
+                </div>
+                
+                <div class="line col-xs-12 col-md-3 col-sm-6">
+                    <h3>Follow us</h3>
+                    <div class="link"><a title="" href="https://www.facebook.com/danmarksstatistik" target="_self">Facebook</a></div><div class="link"><a title="" href="https://www.linkedin.com/company/statistics-denmark" target="_self">LinkedIn</a></div>
+                </div>
+                
+    </div>
+    <div class="rowbottom">
+        <div class="bottom col-xs-12">&copy; Statistics Denmark</div>
+    </div>
+
+</footer>
+<!-- End: Footer. -->
+
+
+    </div>
+    
+    
+<!-- Begin: Log -->
+<img src="/Site/Dst/SingleFiles/Log.aspx?id=B1AEE7D8-96E1-48A5-92AF-302AE3338F36" id="logimage" style="display:none" alt="log" />
+<!-- End: Log -->
+
+    <script src="/Site/Dst/script/modernizr.custom.js"></script>
+    <script src="/Site/Dst/script/dst.js"></script>
+
+    <!-- !MENUV3! -->
+    <!-- MenuMobile -->
+    
+<div class="mobile-panel" id="mobile-panel" aria-hidden="true" style="background-image: url('/Site/Dst/images/menuv3/mobile-nav-bg.svg');">
+
+    <div class="mobile-panel-header">
+        <div class="mobile-panel-header__controls">
+            <button aria-hidden="true" class="mobile-nav-back" id="js-mobile-nav-back">
+                <span></span>
+                            Back
+
+            </button>
+        </div>
+        <button aria-expanded="true" aria-haspopup="true" aria-controls="mobile-panel" class="toggle-button toggle-mobile-nav" id="js-close-mobile-nav">
+            <span></span>
+            Close
+        </button>
+    </div>
+
+    <div class="mobile-nav-spinner" id="js-mobile-nav-spinner" aria-hidden="true">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+
+    <nav class="mobile-nav">
+        <ul id="js-mobile-nav" data-nav-items-url="/DstDk-Global/Sider/MenuMobileData.aspx?lang=en" data-node-id="B2217ED3CC0D4370BA2B0E327D1A14E1" role="tree" aria-multiselectable="false">
+            <!-- Navitems - see mobile-nav.js -->
+        </ul>
+    </nav>
+
+    <nav class="mobile-sub-nav is-hidden">
+        <ul>
+            <li><a href="https://www.statbank.dk" aria-label="Statbank">Statbank</a></li>
+            <li><a href="/en/kontakt" aria-label="Frontpage - Contact Statistics Denmark">Contact Statistics Denmark</a></li>
+            <li><a href="/en/informationsservice" aria-label="Frontpage - Information Service">Information Service</a></li>
+            <li><a href="/en/presse" aria-label="Frontpage - Press">Press</a></li>
+            <li><a href="/da/Statistik/hjaelp-til-statistikbanken/api" aria-label="Dansk">Dansk</a></li>
+            
+        </ul>
+    </nav>
+
+</div>
+
+    
+          <script>
+              //function setMobileNavActivePage() {
+              //    jQuery("#mobitm_795C0D06797F474F8E9FC7C749AAC0F0").addClass("is-active");
+              //}
+
+              
+              $(function () {
+                  jQuery("#nav_item_4A04F6C772DF42999108B14DE253E7B3").addClass("active");
+              });
+              
+          </script>
+
+    <script src="/Site/Dst/script/menuv3/vendor.js"></script>
+    <script src="/Site/Dst/script/menuv3/app.js"></script>
+    <script src="/Site/Dst/script/mobile-rotate.js"></script>
+	<script src="/Site/Dst/script/dst-additional-functions.js"></script>
+	<script src="/Site/Dst/script/hicharts-modify-tabindex.js"></script>
+</body>
+</html>

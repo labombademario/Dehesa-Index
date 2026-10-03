@@ -1,0 +1,15 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/86125NED/$metadata#Cbs.OData.WebAPI.DataProperties","value":[
+    {
+      "odata.type":"Cbs.OData.Dimension","ID":0,"Position":0,"ParentID":null,"Type":"Dimension","Key":"LandbouwInOutputGoederenDiensten","Title":"Landbouw in-output goederen diensten","Description":""
+    },{
+      "odata.type":"Cbs.OData.TimeDimension","ID":1,"Position":1,"ParentID":null,"Type":"TimeDimension","Key":"Perioden","Title":"Perioden","Description":"","ReleasePolicy":true
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":2,"Position":2,"ParentID":null,"Type":"Topic","Key":"LandbouwprijsindexLPI_1","Title":"Landbouwprijsindex (LPI)","Description":"De landbouwprijsindex laat zien hoe de prijzen van landbouwproducten en landbouwinputs zich ontwikkelen ten opzichte van een basisjaar. De index geeft inzicht in de prijsontwikkeling van producten die Nederlandse boeren verkopen en van goederen en diensten die zij inkopen.","Datatype":"Double","Unit":"2020=100","Decimals":1,"Default":"Impossible"
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":3,"Position":3,"ParentID":null,"Type":"Topic","Key":"KwartaalmutatieLandbouwindexLPI_2","Title":"Kwartaalmutatie landbouwindex (LPI)","Description":"Procentuele ontwikkeling ten opzichte van het vorige kwartaal","Datatype":"Double","Unit":"%","Decimals":1,"Default":"Impossible"
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":4,"Position":4,"ParentID":null,"Type":"Topic","Key":"JaarmutatieLandbouwindexLPI_3","Title":"Jaarmutatie landbouwindex (LPI)","Description":"Procentuele ontwikkeling ten opzichte van hetzelfde kwartaal een jaar eerder.","Datatype":"Double","Unit":"%","Decimals":1,"Default":"Impossible"
+    }
+  ]
+}
