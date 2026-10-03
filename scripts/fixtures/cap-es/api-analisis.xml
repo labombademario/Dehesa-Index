@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+  <status>
+    <code>200</code>
+    <text>ok</text>
+  </status>
+  <data>
+    <analisis>
+      <materias>
+        <materia codigo="158">Agricultura</materia>
+        <materia codigo="420">Ayudas</materia>
+        <materia codigo="3515">Explotaciones agrarias</materia>
+        <materia codigo="8362">Fondo Europeo Agrícola de Garantía</materia>
+        <materia codigo="3768">Fondo Europeo de Desarrollo Regional</materia>
+        <materia codigo="3879">Ganadería</materia>
+        <materia codigo="5343">Pagos</materia>
+        <materia codigo="5641">Política Agrícola Común</materia>
+      </materias>
+      <referencias>
+        <anteriores>
+          <anterior>
+            <id_norma>BOE-A-2021-1131</id_norma>
+            <relacion codigo="210">DEROGA</relacion>
+            <texto>el Real Decreto 41/2021, de 26 de enero</texto>
+          </anterior>
+          <anterior>
+            <id_norma>BOE-A-2014-13256</id_norma>
+            <relacion codigo="210">DEROGA</relacion>
+            <texto>el Real Decreto 1075/2014, de 19 de diciembre</texto>
+          </anterior>
+          <anterior>
+            <id_norma>DOUE-L-2021-81699</id_norma>
+            <relacion codigo="440">DE CONFORMIDAD con</relacion>
+            <texto>el Reglamento (UE) 2021/2115, de 2 de diciembre</texto>
+          </anterior>
+        </anteriores>
+        <posteriores>
+          <posterior>
+            <id_norma>BOE-A-2025-23421</id_norma>
+            <relacion codigo="210">SE DEROGA</relacion>
+            <texto>lo indicado del anexo VI, por Real Decreto 1039/2025, de 19 de noviembre</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2025-20583</id_norma>
+            <relacion codigo="270">SE MODIFICA</relacion>
+            <texto>determinados preceptos, por Real Decreto 916/2025, de 14 de octubre</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2025-4323</id_norma>
+            <relacion codigo="270">SE MODIFICA</relacion>
+            <texto>, con efectos desde el 1 de febrero de 2025, el art. 65.2.c), por Real Decreto 168/2025, de 4 de marzo</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2024-20404</id_norma>
+            <relacion codigo="270">SE MODIFICA</relacion>
+            <texto>determinados preceptos y, con efectos desde el 1 de enero de 2023, el art. 10, por Real Decreto 1028/2024, de 8 de octubre</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2024-12378</id_norma>
+            <relacion codigo="270">SE MODIFICA</relacion>
+            <texto>,  con efectos desde el 1 de enero de 2024, la disposición transitoria 2, por Real Decreto 567/2024, de 18 de junio</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2023-26460</id_norma>
+            <relacion codigo="270">SE MODIFICA</relacion>
+            <texto>determinados preceptos, por Real Decreto 1177/2023, de 27 de diciembre</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2023-5370</id_norma>
+            <relacion codigo="270">SE MODIFICA</relacion>
+            <texto>determinados preceptos, por Real Decreto 147/2023, de 28 de febrero</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2026-14763</id_norma>
+            <relacion codigo="407">SE AÑADE</relacion>
+            <texto>la disposición transitoria 4, por Real Decreto 537/2026, de 30 de junio</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2025-13412</id_norma>
+            <relacion codigo="407">SE AÑADE</relacion>
+            <texto>, con efectos desde el 1 de mayo de 2025, la disposición transitoria 3, por Real Decreto 564/2025, de 1 de julio</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2024-8192</id_norma>
+            <relacion codigo="407">SE AÑADE</relacion>
+            <texto>la disposición transitoria 2, y se renumera la única como 1, por Real Decreto 408/2024, de 23 de abril</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2023-11187</id_norma>
+            <relacion codigo="407">SE AÑADE</relacion>
+            <texto>la disposición transitoria única , por Real Decreto-ley 4/2023, de 11 de mayo</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2023-2253</id_norma>
+            <relacion codigo="201">CORRECCIÓN de errores</relacion>
+            <texto>en BOE núm. 24, de 28 de enero de 2023</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2025-25274</id_norma>
+            <relacion codigo="203">SE CORRIGEN errores</relacion>
+            <texto>, en el Real Decreto 916/2025, de 14 de octubre,  en BOE núm. 297 de 11 de diciembre de 2025</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2024-21317</id_norma>
+            <relacion codigo="203">SE CORRIGEN errores</relacion>
+            <texto>en el Real Decreto 1028/2024, de 8 de octubre, en BOE núm. 252 de 18 de octubre de 2024</texto>
+          </posterior>
+          <posterior>
+            <id_norma>BOE-A-2022-23045</id_norma>
+            <relacion codigo="331">SE DICTA EN RELACIÓN</relacion>
+            <texto>sobre derechos de ayuda básica a la renta para la sostenibilidad de la Política Agrícola Común: Real Decreto 1045/2022, de 27 de diciembre</texto>
+          </posterior>
+        </posteriores>
+      </referencias>
+    </analisis>
+  </data>
+</response>

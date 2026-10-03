@@ -109,6 +109,7 @@
       { file: 'clima.html', label: { es: 'Clima agrícola', en: 'Farm weather', fr: 'Météo agricole', it: 'Meteo agricolo' } },
       { file: 'calculadora.html', label: { es: 'Calculadora de margen', en: 'Margin calculator', fr: 'Calculateur de marge', it: 'Calcolatore di margine' } },
       { file: 'mi-mercado.html', label: { es: 'Mi mercado (tu zona y tu producto)', en: 'My market (your area and product)', fr: 'Mon marché (votre zone et produit)', it: 'Il mio mercato (zona e prodotto)' } },
+      { file: 'pac.html', label: { es: 'PAC España (ayudas, calendario y reglas)', en: 'Spain CAP (payments, calendar and rules)', fr: 'PAC Espagne (aides, calendrier et règles)', it: 'PAC Spagna (aiuti, calendario e regole)' } },
       { file: 'mi-seguimiento.html', label: { es: 'Mi seguimiento', en: 'My watchlist', fr: 'Mon suivi', it: 'Il mio seguito' } },
       { file: 'relaciones.html', label: { es: 'Relaciones entre mercados', en: 'Cross-market relationships', fr: 'Relations entre marchés', it: 'Relazioni tra mercati' } },
       { file: 'comparador.html', label: { es: 'Comparador por producto y país', en: 'Product and country comparator', fr: 'Comparateur par produit et pays', it: 'Confronto per prodotto e paese' } },

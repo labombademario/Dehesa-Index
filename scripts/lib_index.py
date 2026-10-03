@@ -115,7 +115,7 @@ WORKFLOW_KINDS = {
     'update-partner-tariffs.yml': ['TARIFF'], 'update-portugal-eurostat.yml': ['PRODUCTION'], 'update-portugal.yml': ['PRODUCTION', 'PRICE'], 'update-recan.yml': ['PRODUCTION'], 'update-spain.yml': ['PRICE', 'INPUT', 'PRODUCTION'],
     'update-us-cash-bids.yml': ['PRICE'], 'update-us-local-markets.yml': ['PRICE'], 'update-spain-crops.yml': ['PRODUCTION'], 'update-mb-cattle.yml': ['PRICE'], 'update-us-tariffs.yml': ['TARIFF'], 'update-usda-calendar.yml': [], 'update-usda-psd.yml': ['PRODUCTION'], 'update-worldbank-urea.yml': ['INPUT'],
     # no son datos agricolas: noticias (no entran en el brief) y trabajos internos
-    'update-news.yml': [], 'update-pipeline-status.yml': [], 'update-seo-pages.yml': [],
+    'update-news.yml': [], 'update-pipeline-status.yml': [], 'update-seo-pages.yml': [], 'update-cap-es.yml': [],  # cap-es: normativa de la PAC (reglas e importes del real decreto), no una serie de datos
 }
 VOLATILE = {'generatedAt', 'revisedAt', 'verifiedAt', 'fetchedAt', 'updatedAt', 'checkedAt'}
 def _strip(o):

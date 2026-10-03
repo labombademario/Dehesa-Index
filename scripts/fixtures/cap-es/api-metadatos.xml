@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+  <status>
+    <code>200</code>
+    <text>ok</text>
+  </status>
+  <data>
+    <metadatos>
+      <fecha_actualizacion>20260708T093926Z</fecha_actualizacion>
+      <identificador>BOE-A-2022-23048</identificador>
+      <ambito codigo="1">Estatal</ambito>
+      <departamento codigo="3120">Ministerio de Agricultura, Pesca y Alimentación</departamento>
+      <rango codigo="1340">Real Decreto</rango>
+      <fecha_disposicion>20221227</fecha_disposicion>
+      <numero_oficial>1048/2022</numero_oficial>
+      <titulo>Real Decreto 1048/2022, de 27 de diciembre, sobre la aplicación, a partir de 2023, de las intervenciones en forma de pagos directos y el establecimiento de requisitos comunes en el marco del Plan Estratégico de la Política Agrícola Común, y la regulación de la solicitud única del sistema integrado de gestión y control.</titulo>
+      <diario>Boletín Oficial del Estado</diario>
+      <fecha_publicacion>20221229</fecha_publicacion>
+      <diario_numero>312</diario_numero>
+      <fecha_vigencia>20230101</fecha_vigencia>
+      <estatus_derogacion>N</estatus_derogacion>
+      <estatus_anulacion>N</estatus_anulacion>
+      <vigencia_agotada>N</vigencia_agotada>
+      <estado_consolidacion codigo="3">Finalizado</estado_consolidacion>
+      <url_eli>https://www.boe.es/eli/es/rd/2022/12/27/1048</url_eli>
+      <url_html_consolidada>https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048</url_html_consolidada>
+    </metadatos>
+  </data>
+</response>

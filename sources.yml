@@ -315,6 +315,17 @@ sources:
     data: [mb-markets/cattle.json, mb-markets-log.txt]
     extra: ['!data/mb-markets']
     message: Datos precios semanales de ganado vacuno en las subastas de Manitoba
+  - id: cap-es
+    name: Check Spain CAP rules and amounts (BOE consolidated RD 1048/2022)
+    cron: ['10 7 * * 1']
+    script: scripts/update-cap-es.py
+    pre: ['sudo apt-get install -y -q poppler-utils >/dev/null']
+    timeout: 15
+    script_timeout: 8
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+    data: [cap/es/amounts.json, cap/es/watch.json]
+    message: Seguimiento de la PAC de España (texto consolidado del BOE)
   - id: us-local-markets
     name: Update US local cattle and hay prices (USDA AMS MARS)
     cron: ['20 15 * * 1-5']

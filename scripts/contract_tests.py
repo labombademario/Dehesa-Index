@@ -1854,3 +1854,146 @@ def crop_insurance_ca(doc, errs, warns, stats):
             a, b = d["CA"][m][i - 1], d["CA"][m][i]
             if a and not (0.5 <= b / a <= 2.0): warns.append("crop-insurance-ca %d: el gasto en primas de Canada cambia %.0f %% respecto al año anterior" % (ys[i], 100 * (b / a - 1)))
     stats["crop-insurance-ca años"] = len(ys)
+
+
+def _cap_date(s):
+    try: return datetime.date.fromisoformat(s)
+    except Exception: return None
+
+
+def _cap_num(x): return isinstance(x, (int, float)) and not isinstance(x, bool)
+
+
+def cap_es_amounts(doc, errs, warns, stats):
+    """PAC España, importes del RD 1048/2022 (BOE). 5 campañas 2023-2027; en cada fila minimo <= planificado <= maximo; 20 regiones con ayuda básica, redistributiva en 2 tramos,
+    jóvenes y mujeres jóvenes (el planificado de las mujeres es el máximo de la región); las asignaciones por región SUMAN los totales del Anexo VII; cada ecorrégimen con su umbral de degresividad;
+    ayudas asociadas con minimo <= maximo; fuente BOE; las discrepancias Anexo VIII/IX declaradas son las reales. No se estima ni se completa nada."""
+    if doc["campaigns"] != [2023, 2024, 2025, 2026, 2027]: errs.append("cap-es: campañas distintas de 2023-2027"); return
+    if doc["source"]["id"] != "boe_es": errs.append("cap-es: la fuente no es boe_es"); return
+    if doc["source"]["consolidated"] is not True: errs.append("cap-es: el texto no esta marcado como consolidado"); return
+    vd = _cap_date(doc["verifiedAt"])
+    if vd is None or vd > datetime.date.today(): errs.append("cap-es: verifiedAt invalido o en el futuro"); return
+    if _cap_date(doc["source"]["consolidatedAt"][:10]) is None: errs.append("cap-es: consolidatedAt invalido"); return
+    def arr(a, tag, pos=True):
+        if not (isinstance(a, list) and len(a) == 5 and all(_cap_num(x) for x in a)): errs.append("cap-es %s: debe tener 5 importes numericos" % tag); return False
+        if pos and any(x <= 0 for x in a): errs.append("cap-es %s: importe cero o negativo" % tag); return False
+        return True
+    def trio(t, tag):
+        for k in ("planned", "min", "max"):
+            if not arr(t[k], "%s/%s" % (tag, k)): return False
+        for c in range(5):
+            if not (t["min"][c] <= t["planned"][c] <= t["max"][c]): errs.append("cap-es %s %d: minimo/planificado/maximo incoherentes (%s, %s, %s)" % (tag, doc["campaigns"][c], t["min"][c], t["planned"][c], t["max"][c])); return False
+        return True
+    regs = doc["regions"]
+    if sorted(regs, key=int) != [str(i) for i in range(1, 21)]: errs.append("cap-es: las regiones no son 1-20"); return
+    mism = []
+    for k, r in regs.items():
+        for n in ("abrs", "young", "youngWomen"):
+            if not trio(r[n], "region %s %s" % (k, n)): return
+        for c in range(5):
+            if r["youngWomen"]["planned"][c] != r["young"]["max"][c]: errs.append("cap-es region %s: el planificado de las mujeres jóvenes no es el máximo de la región" % k); return
+        t = r["redistributiveTiers"]
+        if t[0]["fromHa"] != 0 or not (t[0]["toHa"] < t[1]["fromHa"] < t[1]["toHa"]): errs.append("cap-es region %s: tramos de hectáreas incoherentes" % k); return
+        for i, x in enumerate(t):
+            if not trio(x, "region %s tramo %d" % (k, i + 1)): return
+            d = abs(x["annexVIIIAmount"] - x["planned"][3])
+            if d > 0.5: errs.append("cap-es region %s tramo %d: el Anexo VIII (%s) y el IX (%s) difieren mas de 0,5 €" % (k, i + 1, x["annexVIIIAmount"], x["planned"][3])); return
+            if d > 0.005: mism.append((int(k), i + 1))
+        for n in ("abrs", "redistributive", "young"):
+            if not arr(r["allocation"][n], "region %s asignacion %s" % (k, n)): return
+    if sorted((d["region"], d["tier"]) for d in doc["discrepancies"]) != sorted(mism): errs.append("cap-es: las discrepancias declaradas entre los anexos VIII y IX no son las reales"); return
+    for n in ("abrs", "redistributive", "young", "youngWomen"):
+        if not arr(doc["allocations"][n], "asignaciones %s" % n): return
+    for n in ("abrs", "redistributive", "young"):
+        for c in range(5):
+            s = sum(r["allocation"][n][c] for r in regs.values())
+            if abs(s - doc["allocations"][n][c]) > 2: errs.append("cap-es %s %d: las regiones suman %.2f y el total es %.2f" % (n, doc["campaigns"][c], s, doc["allocations"][n][c])); return
+    seen = set(); surf = {d["surfaceType"] for d in doc["degressivity"]}
+    if len(surf) != len(doc["degressivity"]): errs.append("cap-es: umbrales de degresividad repetidos"); return
+    for e in doc["ecoschemes"]:
+        if e["id"] in seen: errs.append("cap-es: ecorrégimen repetido %s" % e["id"]); return
+        seen.add(e["id"])
+        if not trio(e, e["id"]): return
+        if e["surfaceType"] not in surf and e["scheme"] != "i": errs.append("cap-es %s: sin umbral de degresividad para %s" % (e["id"], e["surfaceType"])); return
+    codes = {b["scheme"] for b in doc["ecoschemeBudget"]}
+    if not {e["scheme"] for e in doc["ecoschemes"]} <= {c[0] for c in codes}: errs.append("cap-es: ecorregímenes sin dotación en el Anexo XI"); return
+    for b in doc["ecoschemeBudget"]:
+        if not arr(b["amount"], "dotacion %s" % b["scheme"]): return
+    ids = set()
+    for a in doc["associatedAid"]:
+        if a["id"] in ids: errs.append("cap-es: ayuda asociada repetida %s" % a["id"]); return
+        ids.add(a["id"])
+        if not (arr(a["min"], a["id"] + "/min") and arr(a["max"], a["id"] + "/max")): return
+        if any(a["min"][c] > a["max"][c] for c in range(5)): errs.append("cap-es %s: minimo mayor que maximo" % a["id"]); return
+        if (a["kind"] == "crop") != (a["unit"] == "EUR/ha"): errs.append("cap-es %s: unidad incoherente con el tipo" % a["id"]); return
+    last = None
+    for ch in doc["changes"]:
+        d = _cap_date(ch["detectedAt"])
+        if d is None or d > datetime.date.today() or (last and d < last): errs.append("cap-es: registro de cambios con fechas invalidas o desordenadas"); return
+        last = d
+    if (datetime.date.today() - vd).days > 21: warns.append("cap-es: los importes se verificaron por última vez el %s" % doc["verifiedAt"])
+    stats["cap-es ecorregimenes"] = len(doc["ecoschemes"]); stats["cap-es ayudas asociadas"] = len(doc["associatedAid"])
+
+
+def cap_es_watch(doc, errs, warns, stats):
+    """PAC España, seguimiento del texto consolidado del BOE: huellas de la linea base (lo que revisaron las reglas) y de la última lectura; 'reviewNeeded' debe ser EXACTAMENTE la diferencia
+    (no se puede ocultar un cambio), con las normas modificadoras nuevas incluidas; comprobacion semanal (aviso si pasa de 21 dias)."""
+    cd = _cap_date(doc["checkedAt"])
+    if cd is None or cd > datetime.date.today(): errs.append("cap-es watch: checkedAt invalido o en el futuro"); return
+    b, c = doc["baseline"], doc["current"]
+    for g in ("articles", "annexes", "provisions"):
+        if not b[g] or not c[g]: errs.append("cap-es watch: grupo %s vacio" % g); return
+    need = 0
+    for g in ("articles", "annexes", "provisions"):
+        for k, v in c[g].items():
+            if k not in b[g] or b[g][k]["sha256"] != v["sha256"]: need += 1
+    ba = {a["id"] for a in b["legal"]["amendments"]}
+    need += sum(1 for a in c["legal"]["amendments"] if a["id"] not in ba)
+    if len(doc["reviewNeeded"]) != need: errs.append("cap-es watch: reviewNeeded tiene %d entradas y la diferencia real es %d" % (len(doc["reviewNeeded"]), need)); return
+    if not all(isinstance(x, str) and x for x in doc["reviewNeeded"]): errs.append("cap-es watch: reviewNeeded con entradas invalidas"); return
+    if _cap_date(c["legal"]["consolidatedAt"][:10]) is None: errs.append("cap-es watch: consolidatedAt invalido"); return
+    if need: warns.append("cap-es: el BOE ha cambiado algo que las reglas citan (%s): revisar data/cap/es/rules.json" % "; ".join(doc["reviewNeeded"][:4]))
+    if (datetime.date.today() - cd).days > 21: warns.append("cap-es watch: ultima comprobacion del BOE el %s" % doc["checkedAt"])
+    stats["cap-es articulos vigilados"] = len(c["articles"])
+
+
+def cap_es_rules(doc, errs, warns, stats):
+    """PAC España, reglas curadas: identificadores unicos; cada regla y entrada de calendario con base legal; fechas del calendario validas (mes/dia reales, fin posterior al inicio);
+    las excepciones por campaña apuntan a una entrada del calendario y su fecha cae en la campaña o en la siguiente; tramos de reduccion contiguos y crecientes; 9 ecorregímenes a-i sin repetir; fuente BOE."""
+    vd = _cap_date(doc["verifiedAt"])
+    if vd is None or vd > datetime.date.today(): errs.append("cap-es rules: verifiedAt invalido o en el futuro"); return
+    if (datetime.date.today() - vd).days > 120: warns.append("cap-es rules: reglas revisadas por última vez el %s" % doc["verifiedAt"])
+    ids = [r["id"] for r in doc["rules"]]
+    if len(set(ids)) != len(ids): errs.append("cap-es rules: identificadores de regla repetidos"); return
+    cal = {}
+    for x in doc["calendar"]:
+        if x["id"] in cal: errs.append("cap-es rules: calendario con identificador repetido %s" % x["id"]); return
+        cal[x["id"]] = x
+        for tag in ("when", "until"):
+            w = x.get(tag)
+            if w is None: continue
+            try: datetime.date(2024 + w["yearOffset"], w["month"], w["day"])
+            except Exception: errs.append("cap-es rules: fecha invalida en %s/%s" % (x["id"], tag)); return
+        if x.get("until"):
+            a = (x["when"]["yearOffset"], x["when"]["month"], x["when"]["day"]); b = (x["until"]["yearOffset"], x["until"]["month"], x["until"]["day"])
+            if not a < b: errs.append("cap-es rules: %s termina antes de empezar" % x["id"]); return
+    for o in doc["campaignOverrides"]:
+        if o["calendarId"] not in cal: errs.append("cap-es rules: excepcion para un hito que no existe (%s)" % o["calendarId"]); return
+        d = _cap_date(o["date"])
+        if d is None or d.year not in (o["campaign"], o["campaign"] + 1): errs.append("cap-es rules: la fecha de la excepcion %s/%s no cae en la campaña" % (o["campaign"], o["calendarId"])); return
+        if o.get("region") is not None and not isinstance(o["region"], str): errs.append("cap-es rules: region invalida en una excepcion"); return
+    codes = [e["code"] for e in doc["ecoschemes"]]
+    if sorted(codes) != list("abcdefghi"): errs.append("cap-es rules: los ecorregímenes deben ser a-i sin repetir"); return
+    byid = {r["id"]: r for r in doc["rules"]}
+    for need in ("min-payment", "abrs-reduction", "young-farmers", "eco-degressivity", "eco-bonus-25", "financial-discipline"):
+        if need not in byid or "values" not in byid[need]: errs.append("cap-es rules: falta la regla con valores %s" % need); return
+    v = byid["min-payment"]["values"]
+    if not (0 < v["minEur"] <= v["maxRaisedEur"]): errs.append("cap-es rules: umbral minimo incoherente"); return
+    t = byid["abrs-reduction"]["values"]
+    tiers = t["tiers"]
+    if tiers[0]["fromEur"] <= 0 or any(tiers[i]["toEur"] != tiers[i + 1]["fromEur"] for i in range(len(tiers) - 1)) or tiers[-1]["toEur"] is not None: errs.append("cap-es rules: tramos de reduccion no contiguos"); return
+    if any(not (0 < x["reduction"] <= 1) for x in tiers) or [x["reduction"] for x in tiers] != sorted(x["reduction"] for x in tiers) or tiers[-1]["reduction"] != 1: errs.append("cap-es rules: porcentajes de reduccion invalidos"); return
+    if t["maxEur"] <= tiers[-1]["fromEur"]: errs.append("cap-es rules: el maximo de la ayuda basica debe superar el inicio del ultimo tramo"); return
+    y = byid["young-farmers"]["values"]
+    if not (1 <= y["maxHa"] <= 1000 and 1 <= y["years"] <= 10 and 0 <= y["womenBonus"] <= 0.5): errs.append("cap-es rules: valores de jóvenes fuera de rango"); return
+    stats["cap-es reglas"] = len(doc["rules"]); stats["cap-es hitos"] = len(doc["calendar"])

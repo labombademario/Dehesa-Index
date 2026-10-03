@@ -313,6 +313,47 @@ CASES = [
  ("us-cash-bids/reports.json", "informe repetido", lambda d: d["reports"].append(copy.deepcopy(d["reports"][0]))),
  ("us-cash-bids/reports.json", "active distinto del registro", lambda d: d["reports"][0].__setitem__("active", not d["reports"][0]["active"])),
  ("us-cash-bids/reports.json", "estado de ingesta inventado", lambda d: d["reports"][0].__setitem__("ingestionStatus", "PERFECT")),
+
+ ("cap/es/amounts.json", "ayuda basica: planificado mayor que maximo", lambda d: d["regions"]["5"]["abrs"]["planned"].__setitem__(2, d["regions"]["5"]["abrs"]["max"][2] + 1)),
+ ("cap/es/amounts.json", "ayuda basica: minimo mayor que planificado", lambda d: d["regions"]["3"]["abrs"]["min"].__setitem__(0, d["regions"]["3"]["abrs"]["planned"][0] + 1)),
+ ("cap/es/amounts.json", "total del Anexo VII que no cuadra", lambda d: d["allocations"]["abrs"].__setitem__(1, d["allocations"]["abrs"][1] + 5000)),
+ ("cap/es/amounts.json", "asignacion de una region alterada", lambda d: d["regions"]["9"]["allocation"]["young"].__setitem__(3, d["regions"]["9"]["allocation"]["young"][3] * 2)),
+ ("cap/es/amounts.json", "region que falta", lambda d: d["regions"].pop("7")),
+ ("cap/es/amounts.json", "mujeres jovenes que no empareja", lambda d: d["regions"]["2"]["youngWomen"]["planned"].__setitem__(0, d["regions"]["2"]["youngWomen"]["planned"][0] + 3)),
+ ("cap/es/amounts.json", "tramos de hectareas solapados", lambda d: d["regions"]["4"]["redistributiveTiers"][1].__setitem__("fromHa", 1)),
+ ("cap/es/amounts.json", "Anexo VIII muy distinto del IX", lambda d: d["regions"]["6"]["redistributiveTiers"][0].__setitem__("annexVIIIAmount", 99)),
+ ("cap/es/amounts.json", "discrepancias VIII/IX inventadas", lambda d: d["discrepancies"].append({"region": 1, "tier": 1, "annexVIII": 1, "annexIX2026Planned": 2})),
+ ("cap/es/amounts.json", "ecorregimen con planificado bajo el minimo", lambda d: d["ecoschemes"][3]["planned"].__setitem__(3, d["ecoschemes"][3]["min"][3] - 1)),
+ ("cap/es/amounts.json", "ecorregimen con maximo bajo el planificado", lambda d: d["ecoschemes"][10]["max"].__setitem__(0, 1)),
+ ("cap/es/amounts.json", "ecorregimen repetido", lambda d: d["ecoschemes"].append(copy.deepcopy(d["ecoschemes"][0]))),
+ ("cap/es/amounts.json", "importe negativo", lambda d: d["ecoschemes"][5]["min"].__setitem__(0, -3)),
+ ("cap/es/amounts.json", "importe con texto", lambda d: d["ecoschemes"][5]["planned"].__setitem__(1, "n/d")),
+ ("cap/es/amounts.json", "superficie sin umbral de degresividad", lambda d: d["degressivity"][2].__setitem__("surfaceType", "otra")),
+ ("cap/es/amounts.json", "dotacion de un ecorregimen a cero", lambda d: d["ecoschemeBudget"][4]["amount"].__setitem__(2, 0)),
+ ("cap/es/amounts.json", "ayuda asociada: minimo mayor que maximo", lambda d: d["associatedAid"][0]["min"].__setitem__(1, d["associatedAid"][0]["max"][1] + 1)),
+ ("cap/es/amounts.json", "ayuda asociada: unidad incoherente", lambda d: d["associatedAid"][0].__setitem__("unit", "EUR/animal")),
+ ("cap/es/amounts.json", "fuente que no es el BOE", lambda d: d["source"].__setitem__("id", "fega_es")),
+ ("cap/es/amounts.json", "campañas distintas", lambda d: d.__setitem__("campaigns", [2024, 2025, 2026, 2027, 2028])),
+ ("cap/es/amounts.json", "verificado en el futuro", lambda d: d.__setitem__("verifiedAt", "2099-01-01")),
+ ("cap/es/amounts.json", "registro de cambios desordenado", lambda d: d["changes"].extend([{"detectedAt": "2026-10-05", "summary": "cambio de prueba"}, {"detectedAt": "2026-10-01", "summary": "cambio de prueba"}])),
+ ("cap/es/amounts.json", "tipo de importe inventado", lambda d: d.__setitem__("kind", "FEGA_FINAL")),
+ ("cap/es/watch.json", "cambio del BOE ocultado", lambda d: d["current"]["articles"]["13"].__setitem__("sha256", "0" * 64)),
+ ("cap/es/watch.json", "revision pedida sin cambio", lambda d: d["reviewNeeded"].append("Articulo 99")),
+ ("cap/es/watch.json", "norma modificadora nueva ocultada", lambda d: d["current"]["legal"]["amendments"].append({"id": "BOE-A-2099-1", "relation": "SE MODIFICA", "text": "prueba"})),
+ ("cap/es/watch.json", "comprobacion en el futuro", lambda d: d.__setitem__("checkedAt", "2099-01-01")),
+ ("cap/es/watch.json", "huella invalida", lambda d: d["baseline"]["annexes"]["X"].__setitem__("sha256", "abc")),
+ ("cap/es/rules.json", "tramos de reduccion no contiguos", lambda d: next(r for r in d["rules"] if r["id"] == "abrs-reduction")["values"]["tiers"][1].__setitem__("fromEur", 76000)),
+ ("cap/es/rules.json", "ultimo tramo sin el 100 %", lambda d: next(r for r in d["rules"] if r["id"] == "abrs-reduction")["values"]["tiers"][-1].__setitem__("reduction", 0.9)),
+ ("cap/es/rules.json", "excepcion de un hito que no existe", lambda d: d["campaignOverrides"][0].__setitem__("calendarId", "no-existe")),
+ ("cap/es/rules.json", "fecha de excepcion fuera de campaña", lambda d: d["campaignOverrides"][0].__setitem__("date", "2031-06-15")),
+ ("cap/es/rules.json", "fecha del calendario imposible", lambda d: d["calendar"][0]["when"].update({"month": 2, "day": 31})),
+ ("cap/es/rules.json", "hito que termina antes de empezar", lambda d: next(x for x in d["calendar"] if x["id"] == "advance")["until"].update({"month": 9, "day": 1})),
+ ("cap/es/rules.json", "regla repetida", lambda d: d["rules"].append(copy.deepcopy(d["rules"][0]))),
+ ("cap/es/rules.json", "ecorregimen repetido en las reglas", lambda d: d["ecoschemes"][1].__setitem__("code", "a")),
+ ("cap/es/rules.json", "umbral minimo incoherente", lambda d: next(r for r in d["rules"] if r["id"] == "min-payment")["values"].__setitem__("maxRaisedEur", 100)),
+ ("cap/es/rules.json", "jovenes con 0 hectareas", lambda d: next(r for r in d["rules"] if r["id"] == "young-farmers")["values"].__setitem__("maxHa", 0)),
+ ("cap/es/rules.json", "fuente que no es el BOE", lambda d: d["source"].__setitem__("id", "mapa_es")),
+ ("cap/es/rules.json", "regla sin base legal", lambda d: d["rules"][2].__setitem__("legalBasis", "")),
 ]
 bad = 0
 for rel, name, fn in CASES:
@@ -322,7 +363,7 @@ for rel, name, fn in CASES:
     if not ok: bad += 1
     print("%-6s %-24s %-26s %s" % ("OK" if ok else "FALLA", rel, name, "" if ok else "el validador NO lo detecto"))
 # datos reales intactos
-for rel in ("latest.json", "fx-history.json", "product-compare.json"):
+for rel in ("latest.json", "fx-history.json", "product-compare.json", "cap/es/amounts.json", "cap/es/watch.json", "cap/es/rules.json"):
     r = run(rel, lambda d: None)
     if r["status"] == "error": print("FALLA datos reales %s: %s" % (rel, r["errors"][:2])); bad += 1
 print("%d casos, %d fallos" % (len(CASES), bad)); sys.exit(1 if bad else 0)

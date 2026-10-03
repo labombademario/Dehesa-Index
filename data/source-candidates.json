@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-03T19:03:53Z",
+ "generatedAt": "2026-10-03T19:59:24Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 80,
+  "total": 81,
   "byStatus": {
-   "ACTIVE": 49,
+   "ACTIVE": 50,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -1633,6 +1633,43 @@
    "derivatives": "yes",
    "attribution": "Source: U.S. Bureau of Labor Statistics",
    "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "boe_es",
+   "registryId": "boe_es",
+   "country": "ES",
+   "scope": "integrated",
+   "institution": "Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Basado en datos de la Agencia Estatal Boletín Oficial del Estado (https://www.boe.es). Texto consolidado de carácter meramente informativo.",
+   "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {

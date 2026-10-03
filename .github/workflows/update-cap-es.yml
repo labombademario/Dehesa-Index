@@ -1,0 +1,53 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Check Spain CAP rules and amounts (BOE consolidated RD 1048/2022)
+on:
+  schedule:
+    - cron: '10 7 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - run: sudo apt-get install -y -q poppler-utils >/dev/null
+      - id: fetch
+        run: python3 scripts/update-cap-es.py
+        timeout-minutes: 8
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/cap/es/amounts.json data/cap/es/watch.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/cap/es/amounts.json data/cap/es/watch.json
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/cap/es/amounts.json data/cap/es/watch.json data/revisions.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "Seguimiento de la PAC de España (texto consolidado del BOE)"
+          for i in 1 2 3; do
+            git pull -q --rebase --autostash && git push && exit 0
+            sleep $((i * 5))
+          done
+          echo '::error::no se pudo publicar tras 3 intentos'; exit 1
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

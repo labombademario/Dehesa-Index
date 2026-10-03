@@ -543,6 +543,30 @@
    "notes": "Estado VERIFIED por instruccion expresa de Mario el 2026-10-02. Mantener cita y fechas de actualizacion; excluido el contenido de terceros.",
    "short": "MAPA (España)"
   },
+  "boe_es": {
+   "name": "Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada",
+   "url": "https://www.boe.es/",
+   "country": "ES",
+   "licenseId": "CUSTOM",
+   "licenseName": "BOE condiciones de reutilización (licencia tipo de la Agencia, Resolución de 27-jun-2024): uso comercial y derivados con cita de la fuente",
+   "licenseUrl": "https://www.boe.es/informacion/aviso_legal/index.php",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Basado en datos de la Agencia Estatal Boletín Oficial del Estado (https://www.boe.es). Texto consolidado de carácter meramente informativo.",
+   "additionalRestrictions": "No desnaturalizar el sentido; citar la fuente con enlace a https://www.boe.es; no sugerir carácter oficial ni patrocinio del BOE; en legislación consolidada indicar expresamente que es un texto consolidado de carácter meramente informativo; mencionar la fecha de la última actualización; identificar claramente las modificaciones y adaptaciones propias. Solo son oficiales y auténticos los textos del diario oficial.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Excluidos el diseño del portal, marcas y logotipos y los elementos de terceros; la Biblioteca Jurídica Digital va con CC BY-NC-ND 4.0 y no se usa.",
+   "verifiedAt": "2026-10-03",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "Aviso legal del BOE (https://www.boe.es/informacion/aviso_legal/, leído el 2026-10-03 desde una máquina de GitHub): las condiciones de reutilización «permiten la reutilización de los documentos ... para fines comerciales y no comerciales», incluyen la modificación, adaptación, extracción, reordenación y combinación para crear obras derivadas o productos y servicios de valor añadido, y exigen la cita «Basado en datos de la Agencia Estatal Boletín Oficial del Estado» con enlace a https://www.boe.es, no sugerir carácter oficial, indicar en la legislación consolidada que es un texto meramente informativo, mencionar la fecha de la última actualización y señalar las modificaciones propias. La API de datos abiertos (legislacion-consolidada, metadatos y análisis) y el PDF consolidado del RD 1048/2022 se leyeron el mismo día.",
+   "used": true,
+   "aliases": [],
+   "notes": "Se usa para las cifras y reglas del RD 1048/2022 (PAC España): los importes se extraen tal cual de los anexos y se rotulan como importes del real decreto, no como importes de campaña. La página debe mostrar la cita, «texto consolidado de carácter meramente informativo» y la fecha de última actualización del BOE.",
+   "short": "BOE (España)"
+  },
   "franceagrimer": {
    "name": "FranceAgriMer (VISIONet)",
    "url": "https://visionet.franceagrimer.fr/",
@@ -1727,6 +1751,12 @@
     "usda_ams_mars"
    ],
    "notes": "US Local Cattle and Hay (scripts/update-us-local-markets.py): resumenes semanales de subastas de ganado por estado y Direct Hay Report por estado de USDA AMS Market News (MARS). Mismo origen, API y clase de datos que data/us-cash-bids/ y data/ams/. Cada fichero enlaza al informe original. Misma salvedad que la de los cash bids: algunos informes estatales se elaboran en cooperacion con un departamento estatal de agricultura y no se ha verificado que eso cambie la condicion de obra del gobierno federal, por lo que la confianza sigue siendo media. Accion pendiente: preguntar a AMS Market News (mymarketnews@usda.gov, (202) 720-1990) si los informes estatales en cooperacion pueden reutilizarse comercialmente y con obras derivadas, y registrar la respuesta aqui (una sola pregunta cubre cash bids, ganado y heno). No se vende ni se redistribuye el dato en bruto: solo se muestra con cita y enlace al informe."
+  },
+  "data/cap/": {
+   "sources": [
+    "boe_es"
+   ],
+   "notes": "PAC España (scripts/update-cap-es.py y data/cap/es/rules.json): importes planificados, mínimos y máximos, parámetros y reglas del Real Decreto 1048/2022 leídos del texto consolidado del BOE (anexos VII-XII, XX y XXII y artículos citados) y seguimiento de cambios con la API de legislación consolidada del BOE. Se extraen sin completar ni estimar nada y se rotulan como importes del real decreto, no como importes unitarios de cada campaña (esos los publica el FEGA, fuente no ingerida: no se ha podido leer su aviso legal). Condiciones del BOE: citar la fuente, texto consolidado meramente informativo, fecha de última actualización."
   },
   "data/mb-markets/": {
    "sources": [

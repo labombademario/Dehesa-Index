@@ -503,6 +503,24 @@
    [
     "spain_crops_index"
    ]
+  ],
+  "cap/es/amounts.json": [
+   "cap-es-amounts",
+   [
+    "cap_es_amounts"
+   ]
+  ],
+  "cap/es/watch.json": [
+   "cap-es-watch",
+   [
+    "cap_es_watch"
+   ]
+  ],
+  "cap/es/rules.json": [
+   "cap-es-rules",
+   [
+    "cap_es_rules"
+   ]
   ]
  },
  "globs": {
