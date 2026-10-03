@@ -21,7 +21,7 @@ const REGIONS={
  {id:'fertilizantes',weight:10,members:['urea','dap','potasa']},
  {id:'energia',weight:10,members:['diesel','petroleo_wti','gas_natural']}
  ],limits:'Solo Canadá (Statistics Canada, tabla 32-10-0077, precios al productor en dólares canadienses). Sin grupos de pienso, fertilizantes y energía: no hay series verificadas de Canadá con historia suficiente; el resto de pesos se reescala. Cada serie usa la provincia de referencia de su ficha. Statistics Canada publica con unos dos meses de retraso, por lo que el último mes del índice es el último mes con dato de todas las series (las semanales de Alberta no entran: solo cubren unos 20 meses).'},
- us:{file:'dehesa-index-us.json',label:{es:'EE. UU.',en:'US'},groups:[
+ us:{file:'dehesa-index-us.json',label:{es:'EE. UU.',en:'US'},lastFromSeries:true,groups:[
  {id:'cereales',weight:25,members:['trigo','maiz','arroz']},
  {id:'ganaderia',weight:25,members:['cerdo','vaca','pollo','huevos']},
  {id:'lacteos',weight:15,members:['leche']},
