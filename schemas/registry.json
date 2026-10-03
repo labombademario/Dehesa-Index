@@ -492,6 +492,12 @@
     "us_local_status"
    ]
   ],
+  "mb-markets/cattle.json": [
+   "mb-cattle",
+   [
+    "mb_cattle"
+   ]
+  ],
   "spain-crops/index.json": [
    "spain-crops-index",
    [

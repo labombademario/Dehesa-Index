@@ -14,6 +14,7 @@ def run(rel, mutate):
         p = Path(t) / "x.json"; p.write_text(json.dumps(doc))
         return vd.validate_contract(p, rel, sch, tests)
 def first(doc, key="observations"): return doc[key][0]
+def _lw(d): return d["weeks"][sorted(d["weeks"])[-1]]
 def _sc(d): return d["campaigns"]["2024"]["crops"]
 def _scp(d):
     x = _sc(d)[0]; return x, next(iter(x["v"]))
@@ -85,6 +86,16 @@ CASES = [
  ("spain-crops/crops-cereales.json", "unidad de produccion cambiada", lambda d: d["units"].__setitem__("production", "kg")),
  ("spain-crops/index.json", "grupo que apunta a otro fichero", lambda d: next(iter(d["groups"].values())).__setitem__("file", "otro.json")),
  ("spain-crops/index.json", "campana sin libro que la respalde", lambda d: next(iter(d["groups"].values()))["campaigns"].append(2031)),
+ ("mb-markets/cattle.json", "cabezas que no suman el total", lambda d: _lw(d)["head"].__setitem__("Ashern", _lw(d)["head"]["Ashern"] + 7)),
+ ("mb-markets/cattle.json", "media por encima del maximo", lambda d: _lw(d)["summary"][0].__setitem__(2, _lw(d)["summary"][0][1] + 20)),
+ ("mb-markets/cattle.json", "precio absurdo", lambda d: _lw(d)["summary"][3].__setitem__(2, 9.5)),
+ ("mb-markets/cattle.json", "subasta inexistente", lambda d: _lw(d)["marts"].__setitem__("Atlantis", _lw(d)["marts"].pop("Ashern"))),
+ ("mb-markets/cattle.json", "venta fuera de la semana del informe", lambda d: next(m for m in _lw(d)["marts"].values() if m["date"]).__setitem__("date", "2020-01-01")),
+ ("mb-markets/cattle.json", "sin venta pero con precios", lambda d: next(m for m in _lw(d)["marts"].values() if m["date"]).__setitem__("date", None)),
+ ("mb-markets/cattle.json", "semanas desordenadas", lambda d: d.__setitem__("weeks", dict(reversed(list(d["weeks"].items()))))),
+ ("mb-markets/cattle.json", "resumen con una clase menos", lambda d: _lw(d)["summary"].pop()),
+ ("mb-markets/cattle.json", "unidad cambiada", lambda d: d.__setitem__("unit", "US$/cwt")),
+ ("mb-markets/cattle.json", "fuente distinta", lambda d: d["source"].__setitem__("id", "canfax")),
  ("germany-agri.json", "licencia cambiada", lambda d: d["source"].__setitem__("license", "CC0")),
  ("us-local/cattle-KS.json", "informe distinto del registro", lambda d: d["source"].__setitem__("reportId", 1234)),
  ("us-local/cattle-KS.json", "fecha en el futuro", lambda d: d["latest"].__setitem__("date", "2031-01-01")),

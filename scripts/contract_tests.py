@@ -1662,6 +1662,45 @@ def us_local_status(doc, errs, warns, stats):
     stats["us-local informes"] = len(seen)
 
 
+def mb_cattle(doc, errs, warns, stats):
+    """Manitoba, ganado en subastas (C$/cwt): 15 clases fijas y 7 subastas; por semana (viernes, claves crecientes): cabezas por subasta que SUMAN el total publicado,
+    cada [minimo, maximo, media] con minimo <= media <= maximo y rango plausible (40-1500), subasta sin venta (fecha null) sin precios, fecha de venta dentro de los 7 dias previos al informe."""
+    import datetime as _d
+    CL = ["cowD12", "cowD3", "bull", "steer901", "steer801", "steer701", "steer601", "steer501", "steer401", "heif901", "heif801", "heif701", "heif601", "heif501", "heif401"]
+    MT = ["Ashern", "Gladstone", "Grunthal", "Killarney", "Ste Rose", "Virden", "Winnipeg"]
+    if doc["classes"] != CL or doc["marts"] != MT: errs.append("mb-cattle: clases o subastas distintas de las esperadas"); return
+    ks = list(doc["weeks"])
+    if ks != sorted(ks) or len(set(ks)) != len(ks): errs.append("mb-cattle: semanas desordenadas o repetidas"); return
+    def trio(t, tag):
+        if t is None: return True
+        if not (isinstance(t, list) and len(t) == 3 and all(isinstance(x, (int, float)) and not isinstance(x, bool) for x in t)): errs.append("mb-cattle %s: precio invalido %r" % (tag, t)); return False
+        if not (t[0] <= t[2] <= t[1]): errs.append("mb-cattle %s: minimo/media/maximo incoherentes %r" % (tag, t)); return False
+        if not (40 <= t[2] <= 1500): errs.append("mb-cattle %s: precio fuera de rango %r" % (tag, t)); return False
+        return True
+    for k in ks:
+        w = doc["weeks"][k]
+        try: rd = _d.date.fromisoformat(k)
+        except ValueError: errs.append("mb-cattle: fecha de semana invalida %r" % k); return
+        if rd > _d.date.today() + _d.timedelta(days=2): errs.append("mb-cattle %s: informe en el futuro" % k); return
+        if rd.weekday() != 4: warns.append("mb-cattle %s: el informe no es de un viernes" % k)
+        if set(w["head"]) != set(MT) or any(not isinstance(v, int) or v < 0 for v in w["head"].values()): errs.append("mb-cattle %s: cabezas invalidas" % k); return
+        if sum(w["head"].values()) != w["weekTotal"]: errs.append("mb-cattle %s: las cabezas por subasta suman %d y el total es %d" % (k, sum(w["head"].values()), w["weekTotal"])); return
+        if len(w["summary"]) != 15 or not all(trio(t, "%s resumen" % k) for t in w["summary"]): return
+        if set(w["marts"]) != set(MT): errs.append("mb-cattle %s: subastas distintas" % k); return
+        for m, d in w["marts"].items():
+            if len(d["rows"]) != 15 or not all(trio(t, "%s %s" % (k, m)) for t in d["rows"]): return
+            if d["date"] is None:
+                if any(d["rows"]): errs.append("mb-cattle %s %s: sin venta pero con precios" % (k, m)); return
+            else:
+                try: dd = _d.date.fromisoformat(d["date"])
+                except ValueError: errs.append("mb-cattle %s %s: fecha de venta invalida" % (k, m)); return
+                if not (0 <= (rd - dd).days <= 7): errs.append("mb-cattle %s %s: venta del %s fuera de la semana del informe" % (k, m, d["date"])); return
+                if not any(d["rows"]): warns.append("mb-cattle %s %s: fecha de venta pero ninguna clase con precio" % (k, m))
+    last = _d.date.fromisoformat(ks[-1])
+    if (_d.date.today() - last).days > 21: warns.append("mb-cattle: el ultimo informe es del %s" % ks[-1])
+    stats["mb-cattle semanas"] = len(ks)
+
+
 def spain_crops(doc, errs, warns, stats):
     """MAPA superficies y producciones por provincia. Por cultivo y campana: 5 medidas [total, secano, regadio, cosechada, produccion], todas >= 0 o null; provincias que existen en el diccionario;
     el total nacional del cultivo es la suma de sus provincias (nulo solo si ninguna lo trae); secano + regadio = total; cosechada <= total a nivel nacional (por provincia el MAPA a veces la da mayor: aviso); campana con estado y no futura; codigos de cultivo sin repetir."""
