@@ -49,6 +49,13 @@ for (const dir of ['regiones', 'en/regions', 'fr/regions', 'it/regioni']) {
   const walk = async d => { for (const e of await readdir(path.join(root, d), { withFileTypes: true })) { const rel = d + '/' + e.name; if (e.isDirectory()) await walk(rel); else if (e.name === 'index.html') ok(locs.includes(ORIGIN + '/' + d + '/'), rel + ': pagina de region fuera del sitemap'); } };
   await walk(dir);
 }
+// privacidad: toda pagina del sitemap declara la politica de referrer (al salir a otro sitio solo se envia el origen) y security.txt vigente
+for (const [u, h] of pages) ok(/<meta name="referrer" content="strict-origin-when-cross-origin">/.test(h), u + ': sin politica de referrer');
+const sec = await readFile(path.join(root, '.well-known/security.txt'), 'utf8').catch(() => '');
+const exp = (sec.match(/^Expires:\s*(\S+)/m) || [])[1];
+ok(/^Contact:\s*mailto:\S+@\S+/m.test(sec), 'security.txt: falta Contact');
+ok(exp && new Date(exp) > new Date(Date.now() + 30 * 864e5), 'security.txt: Expires caduca en menos de 30 dias (renovar)');
+ok(/\.well-known/.test(await readFile(path.join(root, '_config.yml'), 'utf8').catch(() => '')), '_config.yml: no incluye .well-known (GitHub Pages lo ignoraria)');
 console.log('SEO QA: ' + checks + ' comprobaciones, ' + locs.length + ' URLs');
 if (errs.length) { console.error(errs.slice(0, 40).join('\n') + (errs.length > 40 ? '\n... +' + (errs.length - 40) : '')); process.exit(1); }
 console.log('SEO QA OK');

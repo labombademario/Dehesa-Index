@@ -119,7 +119,7 @@ for (const lg of Object.keys(L)) {
 <html lang="${lg}">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(seoDesc(desc))}">
 <link rel="canonical" href="${url}">
