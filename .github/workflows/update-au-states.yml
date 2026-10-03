@@ -23,10 +23,10 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/au-states.json data/au-states-log.txt
+          files: data/au-states.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/au-states.json data/au-states-log.txt
+        run: python3 scripts/detect-revisions.py data/au-states.json
       - name: Publicar
         if: always()
         run: |

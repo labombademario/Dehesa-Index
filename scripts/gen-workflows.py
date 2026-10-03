@@ -28,7 +28,7 @@ def render(x):
     if x.get("continue"): L.append("        continue-on-error: true")
     always = ["        if: always()"] if x.get("continue") else []
     reg = json.loads((ROOT / "schemas" / "registry.json").read_text())["files"]
-    vlist = list(x["data"]) + [e for e in x.get("extra", []) if not e.startswith("!") and e in reg]  # tambien los ficheros extra con contrato
+    vlist = [f for f in x["data"] if f.endswith(".json")] + [e for e in x.get("extra", []) if not e.startswith("!") and e in reg]  # tambien los ficheros extra con contrato
     files = " ".join("data/" + f for f in vlist)
     if vlist:
         L += ["      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo"] + always + ["        uses: ./.github/actions/validate-files", "        with:", "          files: " + files,

@@ -23,10 +23,10 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/eu-regions-es.json data/eu-regions-fr.json data/eu-regions-it.json data/eu-regions-de.json data/eu-regions-nl.json data/eu-regions-at.json data/eu-regions-log.txt
+          files: data/eu-regions-es.json data/eu-regions-fr.json data/eu-regions-it.json data/eu-regions-de.json data/eu-regions-nl.json data/eu-regions-at.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/eu-regions-es.json data/eu-regions-fr.json data/eu-regions-it.json data/eu-regions-de.json data/eu-regions-nl.json data/eu-regions-at.json data/eu-regions-log.txt
+        run: python3 scripts/detect-revisions.py data/eu-regions-es.json data/eu-regions-fr.json data/eu-regions-it.json data/eu-regions-de.json data/eu-regions-nl.json data/eu-regions-at.json
       - name: Publicar
         if: always()
         run: |
