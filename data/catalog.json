@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-03T02:40:37.982Z",
-  "observationCount": 170,
+  "generatedAt": "2026-10-03T18:18:44.902Z",
+  "observationCount": 171,
   "products": [
     "arroz",
     "avena",
@@ -1242,16 +1242,16 @@
       "product": "urea",
       "region": "eu",
       "sourceId": "world_bank",
-      "observationDate": "2026-08-01",
+      "observationDate": "2026-09-01",
       "unit": "tonelada",
       "currency": "USD",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-10-01T06:58:05Z",
+      "verifiedAt": "2026-10-03T18:18:43Z",
       "comparability": "not_comparable",
-      "points": 560,
+      "points": 561,
       "coverageStart": "1980-01-01",
-      "coverageEnd": "2026-08-01"
+      "coverageEnd": "2026-09-01"
     },
     {
       "product": "vaca",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-03T02:40:37.890Z",
+  "generatedAt": "2026-10-03T18:18:44.386Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -179001,14 +179001,14 @@
       "product": "urea",
       "region": "eu",
       "sourceId": "world_bank",
-      "observationDate": "2026-08-01",
-      "publicationDate": "2026-09-02",
-      "value": 390,
+      "observationDate": "2026-09-01",
+      "publicationDate": "2026-10-02",
+      "value": 407.5,
       "currency": "USD",
       "unit": "tonelada",
       "frequency": "monthly",
       "status": "verified",
-      "verifiedAt": "2026-10-01T06:58:05Z",
+      "verifiedAt": "2026-10-03T18:18:43Z",
       "comparability": "not_comparable",
       "history": [
         {
@@ -181810,9 +181810,14 @@
           "period": 8,
           "year": 2026,
           "value": 390
+        },
+        {
+          "period": 9,
+          "year": 2026,
+          "value": 407.5
         }
       ],
-      "snapshotDate": "2026-10-01"
+      "snapshotDate": "2026-10-03"
     },
     {
       "id": "di_ganado_vaca_ca",

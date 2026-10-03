@@ -617,7 +617,7 @@
       products: [
         { nameKey: 'urea', imperialUnitKey: 'ton_corta', imperialKgPerUnit: 907.185, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
           us: { price: 489, changePct: 0.6, history: [470, 475, 480, 478, 482, 486, 489], currency: 'USD', kgPerUnit: 907.185 },
-          eu: { price: 390, changePct: -2.5, history: [461.1,394.4,409.3,392.5,415.4,472.0,725.6,856.9,770.5,453.1,400.0,390.0], currency: 'USD', kgPerUnit: 1000},
+          eu: { price: 407.5, changePct: 4.4872, history: [394.4,409.3,392.5,415.4,472.0,725.6,856.9,770.5,453.1,400.0,390.0,407.5], currency: 'USD', kgPerUnit: 1000},
           uk: { price: 476.00, changePct: 0.5, history: [465, 468, 470, 472, 474, 475, 476], currency: 'GBP', kgPerUnit: 1000 },
           quoteTypes: { us: { type: 'indice', market: 'DTN Fertilizer Index' }, eu: { type: 'referencia', market: 'Banco Mundial' }, uk: { type: 'indice', market: 'AHDB (urea granulada 46% N, cotización media GB)' } } },
         { nameKey: 'dap', imperialUnitKey: 'ton_corta', imperialKgPerUnit: 907.185, metricUnitKey: 'tonelada', metricKgPerUnit: 1000,
@@ -904,8 +904,8 @@
     'fertilizantes-urea-eu': {
       sourceId: 'world_bank', frequency: 'monthly',
       methodology: 'World Bank Urea, E. Europe international commodity reference; USD/metric ton.',
-      comparability: 'not_comparable', observationDate: '2026-08-01', publicationDate: '2026-09-02',
-      status: 'verified', verifiedAt: '2026-10-01T06:58:05Z'
+      comparability: 'not_comparable', observationDate: '2026-09-01', publicationDate: '2026-10-02',
+      status: 'verified', verifiedAt: '2026-10-03T18:18:43Z'
     },
     'energia-gas_natural-us': {
       sourceId: 'eia', frequency: 'weekly',
