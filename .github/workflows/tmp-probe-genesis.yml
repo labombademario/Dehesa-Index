@@ -1,0 +1,19 @@
+name: tmp-probe-genesis
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  p:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - env:
+          GENESIS_TOKEN: ${{ secrets.GENESIS_TOKEN }}
+        run: |
+          python3 scripts/update-germany.py > probe-out/run.txt 2>&1
+          python3 scripts/validate-data.py --all --no-report > probe-out/validate.txt 2>&1 || true
+          cp data/germany-agri.json probe-out/germany-agri.json
+          git config user.name probe; git config user.email probe@x
+          git add -f probe-out
+          git commit -qm "probe agri out"
+          git pull -q --rebase && git push
