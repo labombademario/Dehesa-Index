@@ -1592,3 +1592,18 @@ html[data-theme="dark"] .pp-live{background:#E9E2CE;color:#1E1B12}
   .pa-ch td { padding: 8px 0; } .pa-ch td[colspan] { display: table-cell; }
   .pa-cmp label { margin-left: 0; width: 100%; }
 }
+
+/* Alemania: producción por Land, tierra y margen (js/de-agri.js) */
+.de-ctl { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; margin: 8px 0; font-size: 12.5px; color: var(--text-tertiary); }
+.de-ctl label { display: block; }
+.de-ctl select { max-width: 100%; }
+.de-sc { overflow-x: auto; margin: 6px 0; }
+.de-t { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 460px; }
+.de-t th, .de-t td { padding: 7px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+.de-t .r { text-align: right; white-space: nowrap; }
+.de-tiles { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+.de-tile { flex: 1 1 120px; min-width: 120px; }
+.de-tl { font-size: 12px; color: var(--text-tertiary); }
+.de-tv { font-size: 22px; font-weight: 700; }
+.de-ts { font-size: 12px; color: var(--text-tertiary); }
+.de-pane .di-src-tabs { margin: 6px 0; }

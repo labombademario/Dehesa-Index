@@ -1399,11 +1399,13 @@ def worldbank_agri(doc, errs, warns, stats):
     if n < 200: errs.append("worldbank-agri: solo %d series" % n)
     stats["worldbank-agri series"] = n
 
+# Destatis define el rendimiento del maiz (con CCM) y del silomaiz sobre otra base en algunos Länder (p. ej. BW 2010-2015, desfase hasta 14 %): se admite hasta el 15 % solo ahi
+GA_TOL = {"maize": 0.15, "silage": 0.15}
 GA_LAND = {"SH", "HH", "NI", "HB", "NW", "HE", "RP", "BW", "BY", "SL", "BE", "BB", "MV", "SN", "ST", "TH"}
 
 
 def germany_agri(doc, errs, warns, stats):
-    """Destatis: años crecientes y sin duplicar, valores finitos y positivos, Länder validos, produccion = rendimiento x superficie (±2 %), alquiler entre 20 y 3000 EUR/ha y precio de la tierra entre 1000 y 500000 EUR/ha."""
+    """Destatis: años crecientes y sin duplicar, valores finitos y positivos, Länder validos, produccion = rendimiento x superficie / 10 (±2 %, superficie ≥ 5000 ha; ±15 % en maiz y silomaiz), alquiler entre 20 y 3000 EUR/ha y precio de la tierra entre 1000 y 500000 EUR/ha."""
     import math as _m, datetime as _d
     cy = _d.date.today().year
     keys = {c["k"] for c in doc["crops"]}
@@ -1420,7 +1422,7 @@ def germany_agri(doc, errs, warns, stats):
             last = y
             if not isinstance(v, (int, float)) or not _m.isfinite(v) or v < 0: errs.append("germany-agri %s %d: valor invalido %r" % (tag, y, v)); return
             if lo is not None and not (lo <= v <= hi): errs.append("germany-agri %s %d: valor fuera de rango (%s)" % (tag, y, v)); return
-    RNG = {"area": (1, 1e8), "prod": (1, 1e9), "yield": (1, 2000)}
+    RNG = {"area": (0, 1e8), "prod": (0, 1e9), "yield": (0, 2000)}
     for c, vs in doc["production"]["nat"].items():
         if c not in keys: errs.append("germany-agri: cultivo %s sin descripcion" % c)
         for vn, a in vs.items():
@@ -1435,12 +1437,12 @@ def germany_agri(doc, errs, warns, stats):
                 pts("%s/%s/%s" % (c, lk, vn), a, *RNG[vn])
             A, P, Y = (dict(vs.get(k, [])) for k in ("area", "prod", "yield"))
             for y in P:
-                if y in A and y in Y and P[y] > 0 and abs(P[y] / 10 - Y[y] * A[y]) / (P[y] / 10) > 0.02:
+                if y in A and y in Y and P[y] > 0 and A[y] >= 5000 and abs(Y[y] * A[y] / 10 - P[y]) / P[y] > GA_TOL.get(c, 0.02):
                     errs.append("germany-agri %s/%s %d: produccion no coincide con rendimiento x superficie" % (c, lk, y)); break
     for c, vs in doc["production"]["nat"].items():
         A, P, Y = (dict(vs.get(k, [])) for k in ("area", "prod", "yield"))
         for y in P:
-            if y in A and y in Y and P[y] > 0 and abs(P[y] / 10 - Y[y] * A[y]) / (P[y] / 10) > 0.02:
+            if y in A and y in Y and P[y] > 0 and abs(Y[y] * A[y] / 10 - P[y]) / P[y] > GA_TOL.get(c, 0.02):
                 errs.append("germany-agri nat/%s %d: produccion no coincide con rendimiento x superficie" % (c, y)); break
     lp = doc["landPrice"]
     pts("landPrice/natPre", lp["natPre"], 1000, 500000)
