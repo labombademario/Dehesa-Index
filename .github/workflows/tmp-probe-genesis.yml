@@ -10,7 +10,7 @@ jobs:
       - env:
           GENESIS_TOKEN: ${{ secrets.GENESIS_TOKEN }}
         run: |
-          python3 probe/genesis.py > probe-genesis-log.txt 2>&1
+          python3 probe/genesis2.py > probe-genesis-log.txt 2>&1
           git config user.name probe; git config user.email probe@x
           git add -f probe-genesis-log.txt probe-out
           git commit -qm "probe genesis out"
