@@ -1,0 +1,11 @@
+sacrificios 41331-0001 nat 593 valores
+sacrificios 41331-0003 land 3583 valores
+sacrificios 41331-0002 month 2344 valores
+aves 192 valores
+huevos 41323-0001 33 valores
+tabla demasiado grande 41323-0004 desde 2015
+huevos 41323-0004 304 valores
+censo 41312-0001 99 valores
+censo 41313-0001 66 valores
+censo 41314-0001 15 valores
+fruta 264 valores
