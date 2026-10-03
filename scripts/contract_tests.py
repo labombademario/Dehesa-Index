@@ -2164,6 +2164,19 @@ def france_vigieau(doc, errs, warns, stats):
         if sum(h["counts"].values()) != len(doc["departments"]) and sum(h["counts"].values()) < 90: errs.append("france-vigieau %s: recuento historico incoherente" % h["date"]); return
         last = h["date"]
     if doc["history"][-1]["counts"] != doc["counts"]: errs.append("france-vigieau: el ultimo recuento del historial no es la foto actual"); return
+    fm = doc.get("farm")
+    if fm:
+        deps = {d["code"]: d for d in doc["departments"]}
+        for k, v in fm["departments"].items():
+            if k not in deps: errs.append("france-vigieau farm: departamento %r desconocido" % k); return
+            if not (isinstance(v["z"], int) and v["z"] >= 1): errs.append("france-vigieau farm %s: numero de zonas invalido" % k); return
+            for t in ("irr", "wat"):
+                a = v[t]
+                if not (isinstance(a, list) and len(a) == 3 and all(isinstance(x, int) and x >= 0 for x in a) and sum(a) <= v["z"]): errs.append("france-vigieau farm %s: reparto de %s incoherente con las zonas" % (k, t)); return
+            if deps[k]["level"] is None: errs.append("france-vigieau farm %s: hay zonas con arrete pero el departamento figura sin restricciones" % k); return
+        for g in fm["guide"]:
+            if not (isinstance(g, list) and len(g) == 6 and g[0] in ("Irrigation", "Abreuvement") and all(isinstance(x, str) and x for x in g)): errs.append("france-vigieau farm: fila de la guia invalida"); return
+        stats["france-vigieau zonas con arrete"] = sum(v["z"] for v in fm["departments"].values())
     asof = (doc["source"].get("asOf") or "")[:10]
     if asof and _date(asof) and (TODAY - _date(asof)).days > 10: warns.append("france-vigieau: la API no se actualiza desde %s" % asof)
     stats["france-vigieau departamentos"] = len(doc["departments"])

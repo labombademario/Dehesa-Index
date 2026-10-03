@@ -35,7 +35,8 @@ def clean(t, n=240):
 def status(d):
     """Clasificacion automatica del texto del arrete: none (sin restriccion), ban (prohibido sin excepciones), cond (con condiciones, horarios o excepciones)."""
     t = re.sub(r"\s+", " ", (d or "")).strip().lower()
-    if re.match(r"^(pas de (restriction|limitation)|aucune (restriction|limitation)|autoris)", t) and "sauf" not in t[:30]: return "none"
+    if re.match(r"^(pas de (restriction|limitation)|aucune (restriction|limitation))", t): return "none"
+    if t.startswith("autoris") and "sauf" not in t: return "none"
     if t.startswith("interdit") and "sauf" not in t and "d\u00e9rogation" not in t and "exception" not in t: return "ban"
     return "cond"
 def kind(nom, th):

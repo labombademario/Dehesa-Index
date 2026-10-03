@@ -23,6 +23,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const page = await ctx.newPage(), errs = [], tag = lang + '@' + w;
   page.on('pageerror', e => errs.push(e.message)); page.on('console', m => { if (m.type() === 'error' && !/ERR_|Failed to load resource/.test(m.text())) errs.push(m.text().slice(0, 120)); });
   const open = async (c, mod) => { await page.goto(BASE + '/paises.html?c=' + c, { waitUntil: 'networkidle' }); await page.waitForSelector('#eu-' + mod + ' > summary', { timeout: 8000 }); await page.click('#eu-' + mod + ' > summary'); await page.waitForSelector('#eu-' + mod + ' .de-t, #eu-' + mod + ' .de-tiles', { timeout: 8000 }); };
+  const frRows = () => page.evaluate(() => document.querySelectorAll('#eu-fr-water table')[0].tBodies[0].rows.length);
   const txt = mod => page.evaluate(m => document.querySelector('#eu-' + m + ' .es-body').innerText, mod);
   // Dinamarca: cosecha
   await open('DK', 'dk-harvest'); let t = await txt('dk-harvest');
@@ -44,8 +45,9 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   await page.click('#eu-nl-markets > summary'); await page.waitForSelector('#eu-nl-markets .de-tiles'); t = await txt('nl-markets'); ok(tag + ' NL: precio del cerdo, última semana', t.includes(pig[0]) && dig(t).includes(d2(pig[1], 2)));
   for (const v of ['cattle', 'sl', 'cbs', 'idx']) { await page.selectOption('#eu-nl-markets select[data-k="v"]', v); t = await txt('nl-markets'); ok(tag + ' NL: vista ' + v, !BAD.test(t) && (await page.$$('#eu-nl-markets svg')).length >= 1); }
   // Francia
-  await open('FR', 'fr-water'); t = await txt('fr-water'); ok(tag + ' FR: departamentos en crisis', t.includes(String(crise)) && (await page.$$('#eu-fr-water tbody tr')).length === FV.departments.length);
-  await page.selectOption('#eu-fr-water select[data-k="f"]', '4'); ok(tag + ' FR: filtro de crisis', (await page.$$('#eu-fr-water tbody tr')).length === crise);
+  await open('FR', 'fr-water'); t = await txt('fr-water'); ok(tag + ' FR: departamentos en crisis', t.includes(String(crise)) && (await frRows()) === FV.departments.length);
+  if (FV.farm) { const ths = await page.evaluate(() => [].map.call(document.querySelectorAll('#eu-fr-water table')[0].tHead.rows[0].cells, c => c.textContent)); ok(tag + ' FR: columnas de riego y abrevado', ths.length === 8); const gd = await page.$$('#eu-fr-water h4'); ok(tag + ' FR: guia de niveles para la explotacion', FV.farm.guide.length > 0 && gd.length >= 2); }
+  await page.selectOption('#eu-fr-water select[data-k="f"]', '4'); ok(tag + ' FR: filtro de crisis', (await frRows()) === crise);
   await page.click('#eu-fr-maize > summary'); await page.waitForSelector('#eu-fr-maize .de-t'); t = await txt('fr-maize'); ok(tag + ' FR: maíz', !BAD.test(t) && (await page.$$('#eu-fr-maize svg')).length >= 1 && /2026/.test(t));
   await page.selectOption('#eu-fr-maize select[data-k="r"]', Object.keys(FC.regions)[0]); t = await txt('fr-maize'); ok(tag + ' FR: región', !BAD.test(t));
   ok(tag + ': sin desborde horizontal', !(await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 2)));

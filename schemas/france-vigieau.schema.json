@@ -71,6 +71,26 @@
   },
   "notes": {
    "type": "object"
+  },
+  "farm": {
+   "type": "object",
+   "required": [
+    "departments",
+    "guide",
+    "asOf"
+   ],
+   "properties": {
+    "departments": {
+     "type": "object",
+     "minProperties": 50
+    },
+    "guide": {
+     "type": "array"
+    },
+    "asOf": {
+     "type": "string"
+    }
+   }
   }
  }
 }

@@ -141,6 +141,8 @@ CASES = [
  ("netherlands-markets.json", "clases SEUROP que no suman 100", lambda d: d["pigSlaughter"]["grade_E"].__setitem__(-1, [d["pigSlaughter"]["grade_E"][-1][0], 5.0])),
  ("france-vigieau.json", "nivel desconocido", lambda d: d["departments"][0].__setitem__("level", "rojo")),
  ("france-vigieau.json", "recuento que no cuadra con los departamentos", lambda d: d["counts"].__setitem__("crise", d["counts"]["crise"] + 3)),
+ ("france-vigieau.json", "reparto de riego que supera las zonas", lambda d: d["farm"]["departments"][next(iter(d["farm"]["departments"]))].__setitem__("irr", [99, 0, 0])),
+ ("france-vigieau.json", "zonas de un departamento que no existe", lambda d: d["farm"]["departments"].__setitem__("99X", {"z": 1, "irr": [0, 0, 0], "wat": [0, 0, 0]})),
  ("france-vigieau.json", "historial con fechas que no crecen", lambda d: d["history"].append(dict(d["history"][-1]))),
  ("france-cereobs.json", "porcentaje por encima de 100", lambda d: d["national"][-1].__setitem__(1, 140)),
  ("france-cereobs.json", "clases de estado que no suman 100", lambda d: d["national"][-1].__setitem__(-1, 60)),
