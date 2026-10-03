@@ -473,6 +473,12 @@
   "insurance-es.json": [
    "insurance-es",
    []
+  ],
+  "crop-insurance-ca.json": [
+   "crop-insurance-ca",
+   [
+    "crop_insurance_ca"
+   ]
   ]
  },
  "globs": {

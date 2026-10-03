@@ -1524,3 +1524,43 @@ def crop_insurance(doc, errs, warns, stats):
         if pair[1] != nat[y][3]: errs.append("crop-insurance causeCheck %s: la indemnizacion SOB declarada no es la nacional" % y); return
         if int(y) < doc["provisionalFrom"] and pair[1] and abs(pair[0] - pair[1]) / pair[1] > 0.05: warns.append("crop-insurance %s: indemnizacion por causa (%d) y SOB (%d) difieren mas de un 5 %%" % (y, pair[0], pair[1]))
     stats["crop-insurance estados"] = len(doc["states"]); stats["crop-insurance cultivos"] = len(doc["crops"]); stats["crop-insurance causas"] = len(ci)
+
+
+def crop_insurance_ca(doc, errs, warns, stats):
+    """Seguro de cosechas de Canada (StatCan 32-10-0045 y 32-10-0049): años consecutivos, 11 territorios, tres magnitudes alineadas con los años,
+    enteros >= 0 o null (hueco), Canada sin huecos en indemnizaciones y gasto en primas, y las provincias SUMAN Canada (StatCan publica ambos niveles; solo difiere el redondeo)."""
+    import datetime as _d
+    cy = _d.date.today().year
+    MEAS = ["indemnities", "hailIndemnities", "farmPremiums"]
+    GEOS = ["CA", "NL", "PE", "NS", "NB", "QC", "ON", "MB", "SK", "AB", "BC"]
+    if doc["measures"] != MEAS: errs.append("crop-insurance-ca: magnitudes distintas de %s" % MEAS); return
+    ys = doc["years"]
+    if ys != sorted(set(ys)) or ys[-1] - ys[0] != len(ys) - 1: errs.append("crop-insurance-ca: years no consecutivos o repetidos"); return
+    if doc["latestYear"] != ys[-1]: errs.append("crop-insurance-ca: latestYear (%s) no es el ultimo año (%s)" % (doc["latestYear"], ys[-1])); return
+    if ys[-1] > cy: errs.append("crop-insurance-ca: año %d en el futuro" % ys[-1]); return
+    if ys[-1] < cy - 3: warns.append("crop-insurance-ca: el ultimo año publicado es %d" % ys[-1])
+    if any(y not in ys for y in doc["provisionalYears"]): errs.append("crop-insurance-ca: provisionalYears fuera de years"); return
+    d = doc["data"]
+    if sorted(d) != sorted(GEOS): errs.append("crop-insurance-ca: territorios distintos de los 11 esperados (%s)" % sorted(d)); return
+    for g in GEOS:
+        if sorted(d[g]) != sorted(MEAS): errs.append("crop-insurance-ca %s: magnitudes distintas" % g); return
+        for m in MEAS:
+            v = d[g][m]
+            if not isinstance(v, list) or len(v) != len(ys): errs.append("crop-insurance-ca %s/%s: longitud %s distinta de la de years (%d)" % (g, m, len(v) if isinstance(v, list) else v, len(ys))); return
+            for i, x in enumerate(v):
+                if x is None: continue
+                if not isinstance(x, int) or isinstance(x, bool) or x < 0: errs.append("crop-insurance-ca %s/%s/%d: valor invalido %r" % (g, m, ys[i], x)); return
+    for m in ("indemnities", "farmPremiums"):
+        if any(x is None for x in d["CA"][m]): errs.append("crop-insurance-ca: Canada con huecos en %s" % m); return
+    if any(x <= 0 for x in d["CA"]["farmPremiums"]): errs.append("crop-insurance-ca: gasto en primas de Canada a cero"); return
+    for m in MEAS:
+        for i, y in enumerate(ys):
+            ca = d["CA"][m][i]
+            if ca is None: continue
+            s = sum(d[g][m][i] or 0 for g in GEOS[1:])
+            if abs(s - ca) > len(GEOS): errs.append("crop-insurance-ca %d: las provincias suman %d y Canada %d en %s (miles de CAD)" % (y, s, ca, m)); return
+    for m in ("farmPremiums",):
+        for i in range(1, len(ys)):
+            a, b = d["CA"][m][i - 1], d["CA"][m][i]
+            if a and not (0.5 <= b / a <= 2.0): warns.append("crop-insurance-ca %d: el gasto en primas de Canada cambia %.0f %% respecto al año anterior" % (ys[i], 100 * (b / a - 1)))
+    stats["crop-insurance-ca años"] = len(ys)

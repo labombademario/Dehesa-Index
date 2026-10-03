@@ -1,0 +1,18 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Seguro de cosechas de Canadá por provincia (Statistics Canada, tablas 32-10-0045 y 32-10-0049)",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "source", "unit", "measures", "tables", "years", "latestYear", "provisionalYears", "data"],
+ "properties": {
+  "schemaVersion": {"type": "integer"},
+  "generatedAt": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"},
+  "source": {"type": "object", "required": ["id", "name", "url", "license"], "properties": {"id": {"type": "string", "enum": ["statcan"]}, "name": {"type": "string", "minLength": 1}, "url": {"type": "string", "pattern": "^https://"}, "license": {"type": "string", "minLength": 1}}},
+  "unit": {"type": "string", "enum": ["CAD thousand"]},
+  "measures": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+  "tables": {"type": "object"},
+  "years": {"type": "array", "minItems": 10, "items": {"type": "integer", "minimum": 1971, "maximum": 2100}},
+  "latestYear": {"type": "integer", "minimum": 1971, "maximum": 2100},
+  "provisionalYears": {"type": "array", "items": {"type": "integer"}},
+  "data": {"type": "object"}
+ }
+}

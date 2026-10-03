@@ -1789,6 +1789,12 @@
     "agroseguro"
    ],
    "notes": "Cuatro cifras del ejercicio 2025 del seguro agrario espanol, pendientes de contraste y de condiciones de reutilizacion."
+  },
+  "data/crop-insurance-ca.json": {
+   "sources": [
+    "statcan"
+   ],
+   "notes": "Seguro de cosechas de Canada por provincia: indemnizaciones (32-10-0045, Crop insurance payments y Private Hail Insurance) y gasto de las explotaciones en seguro de cosechas y granizo (32-10-0049), copiados de Statistics Canada sin transformar salvo la agrupacion por provincia y ano."
   }
  },
  "derived": [
