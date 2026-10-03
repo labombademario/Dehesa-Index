@@ -1639,3 +1639,25 @@ html[data-theme="dark"] .di-fd-wait { background: #E0B04A; }
 .pt-kind { font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
 .pt-kind-insight { background: var(--accent); color: var(--accent-ink); }
 .pt-kind-rel { border: 1px dashed var(--compare-line); color: var(--compare-line); }
+.di-nav-menu .di-nav-subbtn { padding: 8px 12px; line-height: 1.45; }
+
+/* Portada: «Hoy». Un solo panel con tres columnas separadas por una regla, no tres tarjetas. */
+.di-today { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border-strong); border-radius: 12px; background: var(--surface); }
+.di-today-col { padding: 16px 20px; min-width: 0; }
+.di-today-col + .di-today-col { border-left: 1px solid var(--border); }
+.di-today-col h3 { margin: 0 0 10px; font-size: 16px; font-weight: 600; }
+.di-today-kv { margin: 0 0 8px; }
+.di-today-kv > div { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+.di-today-kv dt { color: var(--text-muted); }
+.di-today-kv dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
+.di-today-list { list-style: none; margin: 0 0 8px; padding: 0; }
+.di-today-list li { display: flex; justify-content: space-between; gap: 12px; padding: 5px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+.di-today-list b { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.di-today-list b.up { color: var(--positive); }
+.di-today-list b.dn { color: var(--negative); }
+.di-today-note { margin: 0 0 8px; font-size: 13px; color: var(--text-muted); }
+.di-today-big { margin: 0 0 8px; font: 700 28px/1.1 'Source Serif 4', serif; }
+.di-today-big span { font: 400 14px 'Public Sans', sans-serif; color: var(--text-muted); }
+.di-today-more { margin: 10px 0 0; font-size: 13px; }
+.di-today-more a { color: var(--accent); }
+@media (max-width: 800px) { .di-today { grid-template-columns: 1fr; } .di-today-col + .di-today-col { border-left: 0; border-top: 1px solid var(--border); } }

@@ -29,9 +29,10 @@ const calendar = read('js/calendario.js');
 const prices = read('js/precios.js');
 
 check(shared.includes('function renderContextBar'), 'shared context bar exists');
-check(shared.includes('NAV_GROUPS') && shared.includes("'g:data'") && shared.includes('navItems'), 'nav has a single Data menu with nested US / Europe submenus');
+check(shared.includes('NAV_GROUPS') && ['markets', 'countries', 'intel', 'tools', 'data'].every(g => shared.includes("'g:" + g + "'")) && shared.includes('navItems'), 'nav has the 5 intent menus: Markets, Countries, Intelligence, Tools, Data');
+check(/var NAV_ORDER = \['g:markets', 'g:countries', 'g:intel', 'g:tools', 'g:data'\];/.test(shared), 'top navigation exposes exactly 5 entries');
 {
-  const groupFiles = [...shared.matchAll(/file: '([a-z-]+\.html)'/g)].map(m => m[1]);
+  const groupFiles = [...shared.matchAll(/(?:file: |pg\()'([a-z-]+\.html)'/g)].map(m => m[1]);
   check(groupFiles.length >= 12, 'submenus list their pages (' + groupFiles.length + ')');
   for (const f of new Set(groupFiles)) check(exists(f), 'submenu target exists: ' + f);
   for (const f of ['mercados.html','exportaciones.html','oferta-demanda.html','cultivos.html','rendimientos.html','ganaderia.html','sequia.html','insumos.html','costes.html','europa.html','producto.html','mapa.html','clima.html','paises.html','aranceles.html','perfiles.html']) check(groupFiles.includes(f), 'submenu links ' + f);

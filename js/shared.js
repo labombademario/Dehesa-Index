@@ -66,60 +66,70 @@
     empresas: 'empresas.html', contacto: 'contacto.html'
   };
 
-  // Submenús de datos. Cada grupo agrupa páginas que cuelgan de él; el resto del menú no cambia.
-  var NAV_ORDER = ['home', 'precios', 'noticias', 'calendario', 'g:data', 'g:tools', 'informacion', 'blog', 'empresas', 'contacto'];
-  // Hojas: { file, query?, hash?, label }. Ramas: { items: [...], label } (se despliegan dentro del menú).
+  // Navegacion en 5 intenciones: Mercados, Paises, Inteligencia, Herramientas y Datos. Blog, Empresas y Contacto viven en el pie (NAV_KEYS).
+  // Hojas: { file, query?, hash?, label }. Ramas: { items: [...], label } (se despliegan dentro del menu).
+  function L(es, en, fr, it) { return { es: es, en: en, fr: fr, it: it }; }
+  function pg(file, label, query) { var o = { file: file, label: label }; if (query) o.query = query; return o; }
+  function ctry(c, es, en, fr, it) { return pg('paises.html', L(es, en, fr, it), '?c=' + c); }
+  var NAV_ORDER = ['g:markets', 'g:countries', 'g:intel', 'g:tools', 'g:data'];
   var NAV_GROUPS = {
-    data: { label: { es: 'Datos', en: 'Data', fr: 'Données', it: 'Dati' }, items: [
-      { file: 'perfiles.html', label: { es: 'Perfiles de país y comparador', en: 'Country profiles and comparison', fr: 'Profils de pays et comparateur', it: 'Profili paese e confronto' } },
-      { label: { es: 'EE. UU.', en: 'United States', fr: 'États-Unis', it: 'Stati Uniti' }, items: [
-        { file: 'paises.html', query: '?c=US', label: { es: 'Perfil de EE. UU. (macro y tipos de interés)', en: 'US profile (macro and interest rates)', fr: 'Profil des États-Unis (macro et taux)', it: 'Profilo USA (macro e tassi)' } },
-        { file: 'mercados.html', label: { es: 'Mercados USDA', en: 'USDA markets', fr: 'Marchés USDA', it: 'Mercati USDA' } },
-        { file: 'exportaciones.html', label: { es: 'Exportaciones', en: 'Exports', fr: 'Exportations', it: 'Esportazioni' } },
-        { file: 'oferta-demanda.html', label: { es: 'Oferta y demanda', en: 'Supply and demand', fr: 'Offre et demande', it: 'Offerta e domanda' } },
-        { file: 'cultivos.html', label: { es: 'Estado de los cultivos', en: 'Crop progress', fr: 'État des cultures', it: 'Stato delle colture' } },
-        { file: 'rendimientos.html', label: { es: 'Rendimientos', en: 'Yields', fr: 'Rendements', it: 'Rese' } },
-        { file: 'ganaderia.html', label: { es: 'Ganadería', en: 'Livestock', fr: 'Élevage', it: 'Zootecnia' } },
-        { file: 'sequia.html', label: { es: 'Sequía', en: 'Drought', fr: 'Sécheresse', it: 'Siccità' } },
-        { file: 'insumos.html', label: { es: 'Insumos', en: 'Inputs', fr: 'Intrants', it: 'Input' } },
-        { file: 'costes.html', label: { es: 'Costes', en: 'Costs', fr: 'Coûts', it: 'Costi' } },
-        { file: 'aranceles.html', label: { es: 'Aranceles', en: 'Tariffs', fr: 'Droits de douane', it: 'Dazi' } }
+    markets: { label: L('Mercados', 'Markets', 'Marchés', 'Mercati'), items: [
+      pg('precios.html', L('Precios de todos los productos', 'Prices for every product', 'Prix de tous les produits', 'Prezzi di tutti i prodotti')),
+      pg('producto.html', L('Ficha de producto', 'Product page', 'Fiche produit', 'Scheda prodotto'), '?p=trigo'),
+      pg('precios-locales.html', L('Ofertas locales del grano (EE. UU.)', 'Local grain bids (US)', 'Offres locales de grains (É.-U.)', 'Offerte locali dei cereali (USA)')),
+      pg('europa.html', L('Precios de la UE (todos los países)', 'EU prices (all countries)', 'Prix de l’UE (tous les pays)', 'Prezzi UE (tutti i paesi)')),
+      { file: 'index.html', hash: '#home-dehesa-index', noActive: true, label: L('Índice Dehesa (UE, EE. UU. y Canadá)', 'Dehesa Index (EU, US and Canada)', 'Indice Dehesa (UE, États-Unis et Canada)', 'Indice Dehesa (UE, Stati Uniti e Canada)') },
+      { label: L('Mercado y comercio', 'Market and trade', 'Marché et commerce', 'Mercato e commercio'), items: [
+        pg('mercados.html', L('Mercados USDA', 'USDA markets', 'Marchés USDA', 'Mercati USDA')),
+        pg('oferta-demanda.html', L('Oferta y demanda', 'Supply and demand', 'Offre et demande', 'Offerta e domanda')),
+        pg('exportaciones.html', L('Exportaciones', 'Exports', 'Exportations', 'Esportazioni')),
+        pg('aranceles.html', L('Aranceles', 'Tariffs', 'Droits de douane', 'Dazi'))
       ] },
-      { label: { es: 'Europa', en: 'Europe', fr: 'Europe', it: 'Europa' }, items: [
-        { file: 'paises.html', query: '?c=EU', label: { es: 'Perfil de la Unión Europea (macro y tipos)', en: 'European Union profile (macro and rates)', fr: 'Profil de l’Union européenne (macro et taux)', it: 'Profilo Unione europea (macro e tassi)' } },
-        { file: 'europa.html', label: { es: 'Precios de la UE (todos los países)', en: 'EU prices (all countries)', fr: 'Prix de l’UE (tous les pays)', it: 'Prezzi UE (tutti i paesi)' } },
-        { file: 'index.html', hash: '#home-dehesa-index', label: { es: 'Índice Dehesa (UE, EE. UU. y Canadá)', en: 'Dehesa Index (EU, US and Canada)', fr: 'Indice Dehesa (UE, États-Unis et Canada)', it: 'Indice Dehesa (UE, Stati Uniti e Canada)' }, noActive: true },
-        { file: 'paises.html', query: '?c=ES', label: { es: 'España', en: 'Spain', fr: 'Espagne', it: 'Spagna' } },
-        { file: 'paises.html', query: '?c=FR', label: { es: 'Francia', en: 'France', fr: 'France', it: 'Francia' } },
-        { file: 'paises.html', query: '?c=DE', label: { es: 'Alemania', en: 'Germany', fr: 'Allemagne', it: 'Germania' } },
-        { file: 'paises.html', query: '?c=BE', label: { es: 'Bélgica', en: 'Belgium', fr: 'Belgique', it: 'Belgio' } },
-        { file: 'paises.html', query: '?c=AT', label: { es: 'Austria', en: 'Austria', fr: 'Autriche', it: 'Austria' } },
-        { file: 'paises.html', query: '?c=PT', label: { es: 'Portugal', en: 'Portugal', fr: 'Portugal', it: 'Portogallo' } },
-        { file: 'paises.html', query: '?c=DK', label: { es: 'Dinamarca', en: 'Denmark', fr: 'Danemark', it: 'Danimarca' } },
-        { file: 'paises.html', query: '?c=NL', label: { es: 'Países Bajos', en: 'Netherlands', fr: 'Pays-Bas', it: 'Paesi Bassi' } }
-      ] },
-      { label: { es: 'Otros países', en: 'Other countries', fr: 'Autres pays', it: 'Altri paesi' }, items: [
-        { file: 'paises.html', query: '?c=CA', label: { es: 'Canadá (producción, renta y tipos)', en: 'Canada (production and income)', fr: 'Canada (production et revenu)', it: 'Canada (produzione e reddito)' } },
-        { file: 'paises.html', query: '?c=AU', label: { es: 'Australia', en: 'Australia', fr: 'Australie', it: 'Australia' } }
+      { label: L('Campo, costes y clima', 'Farm, costs and weather', 'Terrain, coûts et météo', 'Campo, costi e meteo'), items: [
+        pg('cultivos.html', L('Estado de los cultivos', 'Crop progress', 'État des cultures', 'Stato delle colture')),
+        pg('rendimientos.html', L('Rendimientos', 'Yields', 'Rendements', 'Rese')),
+        pg('ganaderia.html', L('Ganadería', 'Livestock', 'Élevage', 'Zootecnia')),
+        pg('insumos.html', L('Insumos', 'Inputs', 'Intrants', 'Input')),
+        pg('costes.html', L('Costes', 'Costs', 'Coûts', 'Costi')),
+        pg('sequia.html', L('Sequía', 'Drought', 'Sécheresse', 'Siccità')),
+        pg('clima.html', L('Clima agrícola', 'Farm weather', 'Météo agricole', 'Meteo agricolo')),
+        pg('mapa.html', L('Mapa agrícola', 'Farm map', 'Carte agricole', 'Mappa agricola'))
       ] }
     ] },
-    tools: { label: { es: 'Herramientas', en: 'Tools', fr: 'Outils', it: 'Strumenti' }, items: [
-      { file: 'producto.html', query: '?p=trigo', label: { es: 'Ficha de producto', en: 'Product page', fr: 'Fiche produit', it: 'Scheda prodotto' } },
-      { file: 'mapa.html', label: { es: 'Mapa agrícola', en: 'Farm map', fr: 'Carte agricole', it: 'Mappa agricola' } },
-      { file: 'clima.html', label: { es: 'Clima agrícola', en: 'Farm weather', fr: 'Météo agricole', it: 'Meteo agricolo' } },
-      { file: 'calculadora.html', label: { es: 'Calculadora de margen', en: 'Margin calculator', fr: 'Calculateur de marge', it: 'Calcolatore di margine' } },
-      { file: 'mi-mercado.html', label: { es: 'Mi mercado (tu zona y tu producto)', en: 'My market (your area and product)', fr: 'Mon marché (votre zone et produit)', it: 'Il mio mercato (zona e prodotto)' } },
-      { file: 'pac.html', label: { es: 'PAC España (ayudas, calendario y reglas)', en: 'Spain CAP (payments, calendar and rules)', fr: 'PAC Espagne (aides, calendrier et règles)', it: 'PAC Spagna (aiuti, calendario e regole)' } },
-      { file: 'mi-seguimiento.html', label: { es: 'Mi seguimiento', en: 'My watchlist', fr: 'Mon suivi', it: 'Il mio seguito' } },
-      { file: 'relaciones.html', label: { es: 'Relaciones entre mercados', en: 'Cross-market relationships', fr: 'Relations entre marchés', it: 'Relazioni tra mercati' } },
-      { file: 'comparador.html', label: { es: 'Comparador por producto y país', en: 'Product and country comparator', fr: 'Comparateur par produit et pays', it: 'Confronto per prodotto e paese' } },
-      { file: 'precios-locales.html', label: { es: 'Precios locales del grano (EE. UU.)', en: 'Local grain prices (US)', fr: 'Prix locaux des grains (É.-U.)', it: 'Prezzi locali dei cereali (USA)' } },
-      { file: 'brief.html', label: { es: 'Qué ha cambiado hoy', en: 'What changed today', fr: 'Ce qui a changé aujourd’hui', it: 'Cosa è cambiato oggi' } },
-      { label: { es: 'Datos del sitio', en: 'Site data', fr: 'Données du site', it: 'Dati del sito' }, items: [
-        { file: 'catalogo.html', label: { es: 'Catálogo de datos', en: 'Data catalogue', fr: 'Catalogue de données', it: 'Catalogo dei dati' } },
-        { file: 'observatorio.html', label: { es: 'Observatorio de datos', en: 'Data observatory', fr: 'Observatoire des données', it: 'Osservatorio dei dati' } },
-        { file: 'status.html', label: { es: 'Estado de los datos', en: 'Data status', fr: 'État des données', it: 'Stato dei dati' } }
-      ] }
+    countries: { label: L('Países', 'Countries', 'Pays', 'Paesi'), items: [
+      pg('perfiles.html', L('Perfiles de país y comparador', 'Country profiles and comparison', 'Profils de pays et comparateur', 'Profili paese e confronto')),
+      ctry('US', 'EE. UU.', 'United States', 'États-Unis', 'Stati Uniti'),
+      ctry('EU', 'Unión Europea', 'European Union', 'Union européenne', 'Unione Europea'),
+      ctry('ES', 'España', 'Spain', 'Espagne', 'Spagna'),
+      ctry('FR', 'Francia', 'France', 'France', 'Francia'),
+      ctry('DE', 'Alemania', 'Germany', 'Allemagne', 'Germania'),
+      ctry('BE', 'Bélgica', 'Belgium', 'Belgique', 'Belgio'),
+      ctry('AT', 'Austria', 'Austria', 'Autriche', 'Austria'),
+      ctry('PT', 'Portugal', 'Portugal', 'Portugal', 'Portogallo'),
+      ctry('DK', 'Dinamarca', 'Denmark', 'Danemark', 'Danimarca'),
+      ctry('NL', 'Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi'),
+      ctry('CA', 'Canadá', 'Canada', 'Canada', 'Canada'),
+      ctry('AU', 'Australia', 'Australia', 'Australie', 'Australia')
+    ] },
+    intel: { label: L('Inteligencia', 'Intelligence', 'Intelligence', 'Intelligence'), items: [
+      pg('brief.html', L('Qué ha cambiado hoy', 'What changed today', 'Ce qui a changé aujourd’hui', 'Cosa è cambiato oggi')),
+      pg('noticias.html', L('Noticias', 'News', 'Actualités', 'Notizie')),
+      pg('calendario.html', L('Calendario de publicaciones', 'Release calendar', 'Calendrier des publications', 'Calendario delle pubblicazioni')),
+      pg('relaciones.html', L('Relaciones entre mercados', 'Cross-market relationships', 'Relations entre marchés', 'Relazioni tra mercati')),
+      pg('observatorio.html', L('Observatorio de datos', 'Data observatory', 'Observatoire des données', 'Osservatorio dei dati'))
+    ] },
+    tools: { label: L('Herramientas', 'Tools', 'Outils', 'Strumenti'), items: [
+      pg('comparador.html', L('Comparador por producto y país', 'Product and country comparator', 'Comparateur par produit et pays', 'Confronto per prodotto e paese')),
+      pg('calculadora.html', L('Calculadora de margen', 'Margin calculator', 'Calculateur de marge', 'Calcolatore di margine')),
+      pg('mi-seguimiento.html', L('Mi seguimiento', 'My watchlist', 'Mon suivi', 'Il mio seguito')),
+      pg('mi-mercado.html', L('Mi mercado (tu zona y tu producto)', 'My market (your area and product)', 'Mon marché (votre zone et produit)', 'Il mio mercato (zona e prodotto)')),
+      pg('pac.html', L('PAC España (ayudas, calendario y reglas)', 'Spain CAP (payments, calendar and rules)', 'PAC Espagne (aides, calendrier et règles)', 'PAC Spagna (aiuti, calendario e regole)'))
+    ] },
+    data: { label: L('Datos', 'Data', 'Données', 'Dati'), items: [
+      pg('catalogo.html', L('Catálogo de datos', 'Data catalogue', 'Catalogue de données', 'Catalogo dei dati')),
+      pg('metodologia.html', L('Metodología', 'Methodology', 'Méthodologie', 'Metodologia')),
+      pg('status.html', L('Estado de los datos', 'Data status', 'État des données', 'Stato dei dati')),
+      pg('informacion.html', L('Cómo funciona Dehesa Index', 'How Dehesa Index works', 'Comment fonctionne Dehesa Index', 'Come funziona Dehesa Index'))
     ] }
   };
   function currentFile() { var f = window.location.pathname.split('/').pop(); return f || 'index.html'; }

@@ -219,6 +219,10 @@ jobs:
         run: node scripts/test-eu-depth.mjs
       - name: Punto de estado del dato (colores, etiquetas, 4 idiomas)
         run: node scripts/test-fresh-dots.mjs
+      - name: Portada, bloque «Hoy» (resumen diario, calendario USDA, seguimiento local; 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-home-today.mjs
       - name: Portada, buscador grande y ejemplos (4 idiomas, 1280/390)
         env:
           CHROMIUM: ''
