@@ -190,7 +190,7 @@ CASES = [
  ("freshness-policy.json", "rezago sin evidencia", lambda d: d["sources"]["statcan"].__setitem__("evidence", "x")),
  ("freshness-policy.json", "rezago absurdo", lambda d: d["sources"]["statcan"]["lagDays"].__setitem__("monthly", 9999)),
  ("quality.json", "freshness incoherente", lambda d: d["observations"][0].__setitem__("freshness", "STALE")),
- ("data-anomalies.json", "KNOWN sin evidencia", lambda d: d["anomalies"][0].__setitem__("status", "KNOWN_VERIFIED_ANOMALY")),
+ ("data-anomalies.json", "KNOWN sin evidencia", lambda d: (d["anomalies"][0].__setitem__("status", "KNOWN_VERIFIED_ANOMALY"), d["anomalies"][0].pop("evidence", None))),
  ("data-anomalies.json", "serie inexistente", lambda d: d["anomalies"][0].__setitem__("series", "AT/no-existe")),
  ("daily-brief.json", "byKind incoherente", lambda d: d["byKind"]["PRICE"].__setitem__("datasets", 99)),
  ("daily-brief.json", "pipeline sin clasificar", lambda d: d["pipelinesCovered"].__setitem__("total", d["pipelinesCovered"]["total"] + 1)),
