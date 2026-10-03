@@ -148,6 +148,15 @@ sources:
     continue: false
     data: [crop-insurance.json, crop-insurance-log.txt]
     message: Datos del seguro de cosechas de EE. UU. (USDA RMA)
+  - id: crop-insurance-ca
+    name: Update Canada crop insurance (Statistics Canada, tables 32-10-0045 and 32-10-0049)
+    cron: ['40 6 * * 3']
+    script: scripts/update-crop-insurance-ca.py
+    timeout: 20
+    script_timeout: 12
+    continue: false
+    data: [crop-insurance-ca.json, crop-insurance-ca-log.txt]
+    message: Datos del seguro de cosechas de Canadá (Statistics Canada)
   - id: canada-grain
     name: Update Canada weekly grain statistics (Canadian Grain Commission)
     cron: ['40 16 * * 3,4,5']
