@@ -100,7 +100,7 @@ def build(r63, r81, urls):
 def stable(o):
     return json.dumps(o, ensure_ascii=False, sort_keys=True)
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument('--accept', action='store_true'); ap.add_argument('--xml1363'); ap.add_argument('--xml1381'); ap.add_argument('--out', default=OUT_DIR); ap.add_argument('--date')
+    ap = argparse.ArgumentParser(); ap.add_argument('--accept', action='store_true'); ap.add_argument('--xml1363'); ap.add_argument('--xml1381'); ap.add_argument('--out', '--outdir', dest='out', default=OUT_DIR); ap.add_argument('--date')
     a = ap.parse_args(); today = a.date or datetime.datetime.utcnow().strftime('%Y-%m-%d')
     try:
         x63 = open(a.xml1363, encoding='utf-8-sig').read() if a.xml1363 else fetch(DOCS[0][3]); x81 = open(a.xml1381, encoding='utf-8-sig').read() if a.xml1381 else fetch(DOCS[1][3])
