@@ -33,6 +33,7 @@ const PAGES = [
   { n: 'catalogo', url: '/catalogo.html', crit: ['#cat-body'] },
   { n: 'brief', url: '/brief.html', crit: ['#brief-body'] },
   { n: 'precios-locales', url: '/precios-locales.html', crit: ['#pl-body'] },
+  { n: 'mi-mercado', url: '/mi-mercado.html?c=US&r=KS&p=cattle', crit: ['#mm-body [data-mm-body="price"] .de-tile'] },
   { n: 'noticias', url: '/noticias.html', crit: ['#nw-items'] },
   { n: 'mapa', url: '/mapa.html', crit: ['#mapa-body'] },
   { n: 'calendario', url: '/calendario.html', crit: ['#cal-events'] },

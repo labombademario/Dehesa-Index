@@ -1,0 +1,513 @@
+/* Dehesa Index — Mi mercado: una página por tu lugar y tu producto. ES5, sin librerías.
+   El agricultor elige país (EE. UU. o España), estado/provincia y producto; la página junta lo que YA tenemos para esa combinación:
+   precio local (USDA AMS), seguro agrario (USDA RMA), sequía (US Drought Monitor) o superficie/producción por provincia (MAPA), cada cifra con su fuente y fecha.
+   Reglas: no se inventa ni se estima nada; lo que falta se dice (sección «Lo que aún no tenemos para tu zona»); un precio de región/terminal no se presenta como de un elevador local;
+   la elección se guarda solo en este navegador (localStorage) y en la dirección de la página; sin cuentas. Los datos se leen de los JSON que ya generan las tuberías; cada tarjeta se carga por separado. */
+(function () {
+  'use strict';
+  var LSK = 'di-mi-mercado-v1', GR = 'data/us-cash-bids/', LOC = 'data/us-local/', SC = 'data/spain-crops/';
+  var US_PROD = ['cattle', 'hay', 'corn', 'soybeans', 'wheat', 'sorghum', 'barley', 'oats'];
+  var ES_GORDER = ['cereales', 'leguminosas', 'tuberculos', 'industriales', 'hortalizas', 'citricos', 'frutales', 'olivar', 'vinedo', 'otros_lenosos'];
+  var LIDX = { en: 0, es: 1, fr: 2, it: 3 };
+
+  var T = {
+    es: {
+      title: 'Mi mercado: tu zona y tu producto', sub: 'Elige dónde estás y qué produces. Verás en una sola página el precio local, el seguro agrario, la sequía o la producción de tu provincia, con la fuente y la fecha de cada dato. Se guarda solo en este navegador; no hace falta cuenta.',
+      country: 'País', place: 'Estado', placeES: 'Provincia', product: 'Producto', group: 'Grupo de cultivos', crop: 'Cultivo', choose: 'Elige…', us: 'Estados Unidos', es: 'España',
+      intro: 'Elige tu lugar y tu producto para empezar, o prueba un ejemplo:', ex: 'Ejemplos', loading: 'Cargando…', err: 'No se han podido cargar los datos de esta tarjeta.', saved: 'Tu elección se guarda en este navegador y en la dirección de la página: puedes añadirla a favoritos o compartirla.', reset: 'Borrar mi elección',
+      sPrice: 'Precio cerca de ti', sIns: 'Seguro agrario en tu estado', sDrought: 'Sequía en tu estado', sCrop: 'Tu provincia en este cultivo', sMissing: 'Lo que aún no tenemos para tu zona', sMore: 'Ir más a fondo',
+      cattle: 'Ganado vacuno (terneros y cebo)', hay: 'Heno', corn: 'Maíz', soybeans: 'Soja', wheat: 'Trigo', sorghum: 'Sorgo', barley: 'Cebada', oats: 'Avena',
+      grp: { cereales: 'Cereales', leguminosas: 'Leguminosas', tuberculos: 'Tubérculos', industriales: 'Cultivos industriales', hortalizas: 'Hortalizas', citricos: 'Cítricos', frutales: 'Frutales no cítricos', olivar: 'Olivar', vinedo: 'Viñedo', otros_lenosos: 'Otros leñosos' },
+      Steers: 'Novillos', Heifers: 'Terneras', Bulls: 'Toros', cls: 'Clase', wb: 'Peso (lb)', lb: 'lb', usdcwt: 'USD/cwt', cwtNote: 'cwt = 100 lb. Peso vivo.', head: 'Cabezas', avgw: 'peso medio', lastRep: 'Último informe', report: 'Informe original',
+      vsW: 'Vs. semana anterior', vs4: 'Vs. 4 semanas', vsY: 'Vs. hace un año', noCmp: 'sin dato comparable',
+      cattleNote: 'Subastas de ganado del estado, resumen semanal de USDA AMS: media de las medias publicadas, ponderada por cabezas, para {f}, grado {g}. Cada banda de peso es una serie propia: el cambio compara siempre la misma banda y la misma clase.',
+      cattleNo: 'USDA AMS publica resumen semanal de subastas de ganado solo para {n} estados, y {s} no es uno de ellos. Estados con dato:', hayNo: 'USDA AMS publica el informe directo de heno solo para {n} estados, y {s} no es uno de ellos. Estados con dato:',
+      grainNo: 'No tenemos precios de {p} en {s} (USDA no publica un informe de este producto en el estado). Estados con dato:',
+      hayCls: 'Clase de heno', hayRows: 'Las {n} entradas con más cantidad de la última semana de informe', hayUnit: 'USD/t', hQ: 'Calidad', hP: 'Formato', hR: 'Región', hS: 'Venta', hAvg: 'Media', hRng: 'Rango', hQty: 'Cantidad', hChg: 'Vs. informe previo',
+      hayNote: 'Informe directo de heno del estado (USDA AMS). Cada fila es una especificación distinta (calidad, formato, venta, región); no se mezclan. Solo filas con precio por tonelada.',
+      gMk: 'Mercado', gSpec: 'Especificación', gBid: 'Oferta al contado', gBasis: 'Basis', gChg: 'Cambio', gDate: 'Fecha', gSeries: 'Gráfico de', gMore: 'Ver las {n} series', gOld: 'Ninguna cotización reciente en este estado; se muestran las últimas disponibles.', gShow: 'cotizaciones recientes',
+      gNote: 'Oferta al contado (cash bid), no futuros. USDA publica regiones, terminales o estados, no elevadores concretos: la columna «Mercado» dice qué es cada uno. El basis es la diferencia con el contrato de referencia.',
+      tREGION: 'región', tTERMINAL: 'terminal', tSTATE: 'estado', tCITY: 'ciudad', tELEVATOR: 'elevador', tEXPORT_MARKET: 'exportación',
+      insLast: 'Último año completo', indem: 'Indemnizaciones pagadas', prem: 'Prima total', farmerP: 'Prima neta del agricultor', ratio: 'Indemnizaciones por dólar de prima', pol: 'Pólizas con prima', y: 'Año', sub: 'Subsidio federal', prov: 'provisional',
+      insNote: 'Seguro de cosechas federal (USDA RMA, Summary of Business), todos los cultivos del estado juntos. «Prima neta del agricultor» = prima total − subsidio, calculado por Dehesa Index. Un año de campaña puede cambiar mientras no esté completo: los años marcados como provisionales no se comparan con los completos. No es una predicción de lo que cobrarías: depende de tu póliza y tu cultivo.',
+      insNo: 'No hay cifras de seguro para este estado.', natCol: 'Total EE. UU. (misma ratio)', vsNat: 'media de EE. UU.',
+      drNow: 'Ahora', dr4: 'Hace 4 semanas', drY: 'Hace 1 año', d0: 'D0+ anormalmente seco', d1: 'D1+ sequía moderada o peor', d2: 'D2+ sequía severa o peor', d3: 'D3+ sequía extrema o peor', pp: 'pp', drWeek: 'Semana del', drChart: 'Superficie del estado en sequía (D1+ y D2+)', pctArea: '% de la superficie del estado',
+      drNote: 'US Drought Monitor: porcentaje de la superficie del ESTADO en cada categoría (acumulado: D1+ incluye D2 a D4). No es tu condado ni tu finca: el mapa por condados está en droughtmonitor.unl.edu. Variación en puntos porcentuales (pp).',
+      drNo: 'No hay datos de sequía para este estado.',
+      area: 'Superficie total', irr: 'Regadío', prd: 'Producción', yl: 'Rendimiento', th: 't/ha', ha: 'ha', t: 't', rank: 'Puesto {r} de {n} provincias', shareES: 'del total de España', vsC: 'Vs. campaña',
+      topP: 'Mayores provincias en superficie', provT: 'Provincia', camp: 'Campaña', cropNo: 'El MAPA no publica {c} en {p} para la campaña {k}. Provincias con dato (mayores en superficie):', provisional: 'Datos provisionales',
+      cropNote: 'Superficies y producciones anuales de cultivos del MAPA (datos provisionales de la campaña indicada; pueden cambiar). El rendimiento = producción ÷ superficie cosechada, calculado por Dehesa Index. Los nombres de cultivo son los del MAPA. Es la provincia entera: no se publica por comarca ni por municipio en esta estadística.',
+      yHigher: 'Rendimiento de {p}', natAvg: 'media de España',
+      no_us1: 'Precios por condado o por elevador concreto: USDA solo publica regiones, terminales o estados; no inventamos distancias ni coordenadas.',
+      no_us2: 'Ganado: resumen semanal de subastas en {a} estados; heno en {b} estados; granos en {g} estados o mercados.',
+      no_us3: 'Seguro: solo el total del estado (todos los cultivos juntos), no por cultivo y estado.',
+      no_us4: 'Sequía: porcentaje del estado, no de tu condado.',
+      no_us5: 'Costes (fertilizante, diésel, pienso) y clima: solo cifras nacionales o mundiales, no por estado.',
+      no_es1: 'Precios por provincia o por lonja: todavía no incorporamos lonjas provinciales; los precios que seguimos son nacionales, europeos o mundiales.',
+      no_es2: 'Seguro agrario (Agroseguro): solo cifras nacionales y pendientes de contraste; no por provincia.',
+      no_es3: 'Sequía y clima por provincia: solo las páginas generales de clima y sequía; no una vista por provincia.',
+      no_es4: 'Ganadería por provincia: no hay datos de censos ni de producción ganadera por provincia en esta página.',
+      no_es5: 'Campaña 2025: solo los grupos que el MAPA ya ha publicado (hortalizas, cítricos, frutales, olivar, viñedo y otros leñosos); el resto está en la campaña 2024.',
+      mPrice: 'Precios locales detallados', mIns: 'Seguro agrario (EE. UU.)', mDrought: 'Sequía por estado', mCrops: 'Cultivos de España por provincia', mClima: 'Clima', mPrices: 'Precios de referencia', mCosts: 'Costes e insumos'
+    },
+    en: {
+      title: 'My market: your area and your product', sub: 'Pick where you farm and what you produce. One page shows local price, crop insurance, drought or your province\'s production, with the source and date of every figure. Your choice is stored only in this browser; no account needed.',
+      country: 'Country', place: 'State', placeES: 'Province', product: 'Product', group: 'Crop group', crop: 'Crop', choose: 'Choose…', us: 'United States', es: 'Spain',
+      intro: 'Pick your place and product to start, or try an example:', ex: 'Examples', loading: 'Loading…', err: 'This card\'s data could not be loaded.', saved: 'Your choice is saved in this browser and in the page address: you can bookmark or share it.', reset: 'Clear my choice',
+      sPrice: 'Price near you', sIns: 'Crop insurance in your state', sDrought: 'Drought in your state', sCrop: 'Your province in this crop', sMissing: 'What we do not have yet for your area', sMore: 'Go deeper',
+      cattle: 'Cattle (feeder calves)', hay: 'Hay', corn: 'Corn', soybeans: 'Soybeans', wheat: 'Wheat', sorghum: 'Sorghum', barley: 'Barley', oats: 'Oats',
+      grp: { cereales: 'Cereals', leguminosas: 'Pulses', tuberculos: 'Tubers', industriales: 'Industrial crops', hortalizas: 'Vegetables', citricos: 'Citrus', frutales: 'Other fruit trees', olivar: 'Olive groves', vinedo: 'Vineyards', otros_lenosos: 'Other woody crops' },
+      Steers: 'Steers', Heifers: 'Heifers', Bulls: 'Bulls', cls: 'Class', wb: 'Weight (lb)', lb: 'lb', usdcwt: 'USD/cwt', cwtNote: 'cwt = 100 lb. Live weight.', head: 'Head', avgw: 'average weight', lastRep: 'Latest report', report: 'Original report',
+      vsW: 'Vs. previous week', vs4: 'Vs. 4 weeks', vsY: 'Vs. a year ago', noCmp: 'no comparable data',
+      cattleNote: 'State cattle auctions, weekly USDA AMS summary: head-weighted average of the published averages, for {f} frame, grade {g}. Each weight band is its own series: change always compares the same band and class.',
+      cattleNo: 'USDA AMS publishes a weekly auction summary for only {n} states, and {s} is not one of them. States with data:', hayNo: 'USDA AMS publishes the direct hay report for only {n} states, and {s} is not one of them. States with data:',
+      grainNo: 'We have no {p} prices for {s} (USDA publishes no report for this product there). States with data:',
+      hayCls: 'Hay class', hayRows: 'The {n} entries with the most volume in the latest report', hayUnit: 'USD/ton', hQ: 'Quality', hP: 'Package', hR: 'Region', hS: 'Sale', hAvg: 'Average', hRng: 'Range', hQty: 'Quantity', hChg: 'Vs. previous report',
+      hayNote: 'The state\'s direct hay report (USDA AMS). Each row is a different specification (quality, package, sale, region); they are never mixed. Only rows priced per ton.',
+      gMk: 'Market', gSpec: 'Specification', gBid: 'Cash bid', gBasis: 'Basis', gChg: 'Change', gDate: 'Date', gSeries: 'Chart of', gMore: 'See all {n} series', gOld: 'No recent quotes in this state; the latest available are shown.', gShow: 'recent quotes',
+      gNote: 'Cash bid, not futures. USDA publishes regions, terminals or states, not individual elevators: the "Market" column says what each one is. Basis is the difference from the reference futures contract.',
+      tREGION: 'region', tTERMINAL: 'terminal', tSTATE: 'state', tCITY: 'city', tELEVATOR: 'elevator', tEXPORT_MARKET: 'export',
+      insLast: 'Last complete year', indem: 'Indemnities paid', prem: 'Total premium', farmerP: 'Farmer-paid premium', ratio: 'Indemnity per premium dollar', pol: 'Policies earning premium', y: 'Year', sub: 'Federal subsidy', prov: 'provisional',
+      insNote: 'Federal crop insurance (USDA RMA, Summary of Business), all of the state\'s crops together. "Farmer-paid premium" = total premium − subsidy, calculated by Dehesa Index. A crop year can still change until complete: years marked provisional are not compared with complete ones. This does not predict what you would collect: it depends on your policy and crop.',
+      insNo: 'No insurance figures for this state.', natCol: 'US total (same ratio)', vsNat: 'US average',
+      drNow: 'Now', dr4: '4 weeks ago', drY: '1 year ago', d0: 'D0+ abnormally dry', d1: 'D1+ moderate drought or worse', d2: 'D2+ severe drought or worse', d3: 'D3+ extreme drought or worse', pp: 'pp', drWeek: 'Week of', drChart: 'Share of the state in drought (D1+ and D2+)', pctArea: '% of state area',
+      drNote: 'US Drought Monitor: share of the STATE\'s area in each category (cumulative: D1+ includes D2 to D4). It is not your county or farm: the county map is at droughtmonitor.unl.edu. Changes in percentage points (pp).',
+      drNo: 'No drought data for this state.',
+      area: 'Total area', irr: 'Irrigated', prd: 'Production', yl: 'Yield', th: 't/ha', ha: 'ha', t: 't', rank: 'Rank {r} of {n} provinces', shareES: 'of Spain\'s total', vsC: 'Vs. campaign',
+      topP: 'Largest provinces by area', provT: 'Province', camp: 'Campaign', cropNo: 'MAPA does not publish {c} in {p} for campaign {k}. Provinces with data (largest by area):', provisional: 'Provisional data',
+      cropNote: 'Annual crop areas and production from MAPA (provisional data for the campaign shown; they may change). Yield = production ÷ harvested area, calculated by Dehesa Index. Crop names are MAPA\'s own. This is the whole province: this statistic is not published by district or municipality.',
+      yHigher: 'Yield of {p}', natAvg: 'Spain average',
+      no_us1: 'Prices by county or individual elevator: USDA publishes only regions, terminals or states; we do not invent distances or coordinates.',
+      no_us2: 'Cattle: weekly auction summaries for {a} states; hay for {b} states; grains for {g} states or markets.',
+      no_us3: 'Insurance: only the state total (all crops together), not by crop and state.',
+      no_us4: 'Drought: share of the state, not of your county.',
+      no_us5: 'Costs (fertiliser, diesel, feed) and weather: national or world figures only, not by state.',
+      no_es1: 'Prices by province or by auction hall: we do not yet include provincial markets; the prices we follow are national, European or world.',
+      no_es2: 'Crop insurance (Agroseguro): national figures only, still pending verification; not by province.',
+      no_es3: 'Drought and weather by province: only the general weather and drought pages; no per-province view.',
+      no_es4: 'Livestock by province: no census or livestock production data by province on this page.',
+      no_es5: 'Campaign 2025: only the groups MAPA has already published (vegetables, citrus, fruit trees, olive groves, vineyards and other woody crops); the rest is campaign 2024.',
+      mPrice: 'Detailed local prices', mIns: 'Crop insurance (US)', mDrought: 'Drought by state', mCrops: 'Spain crops by province', mClima: 'Weather', mPrices: 'Reference prices', mCosts: 'Costs and inputs'
+    },
+    fr: {
+      title: 'Mon marché : votre zone et votre produit', sub: 'Choisissez où vous êtes et ce que vous produisez. Une seule page montre le prix local, l\'assurance récolte, la sécheresse ou la production de votre province, avec la source et la date de chaque donnée. Votre choix reste uniquement dans ce navigateur ; aucun compte.',
+      country: 'Pays', place: 'État', placeES: 'Province', product: 'Produit', group: 'Groupe de cultures', crop: 'Culture', choose: 'Choisir…', us: 'États-Unis', es: 'Espagne',
+      intro: 'Choisissez votre lieu et votre produit pour commencer, ou essayez un exemple :', ex: 'Exemples', loading: 'Chargement…', err: 'Impossible de charger les données de cette fiche.', saved: 'Votre choix est enregistré dans ce navigateur et dans l\'adresse de la page : vous pouvez l\'ajouter aux favoris ou le partager.', reset: 'Effacer mon choix',
+      sPrice: 'Prix près de chez vous', sIns: 'Assurance récolte dans votre État', sDrought: 'Sécheresse dans votre État', sCrop: 'Votre province pour cette culture', sMissing: 'Ce qui manque encore pour votre zone', sMore: 'Aller plus loin',
+      cattle: 'Bovins (veaux et engraissement)', hay: 'Foin', corn: 'Maïs', soybeans: 'Soja', wheat: 'Blé', sorghum: 'Sorgho', barley: 'Orge', oats: 'Avoine',
+      grp: { cereales: 'Céréales', leguminosas: 'Légumineuses', tuberculos: 'Tubercules', industriales: 'Cultures industrielles', hortalizas: 'Légumes', citricos: 'Agrumes', frutales: 'Autres arbres fruitiers', olivar: 'Oliveraies', vinedo: 'Vignobles', otros_lenosos: 'Autres cultures ligneuses' },
+      Steers: 'Bouvillons', Heifers: 'Génisses', Bulls: 'Taureaux', cls: 'Catégorie', wb: 'Poids (lb)', lb: 'lb', usdcwt: 'USD/cwt', cwtNote: 'cwt = 100 lb. Poids vif.', head: 'Têtes', avgw: 'poids moyen', lastRep: 'Dernier rapport', report: 'Rapport original',
+      vsW: 'Vs. semaine préc.', vs4: 'Vs. 4 semaines', vsY: 'Vs. il y a un an', noCmp: 'pas de donnée comparable',
+      cattleNote: 'Encans de bovins de l\'État, résumé hebdomadaire USDA AMS : moyenne des moyennes publiées, pondérée par les têtes, pour {f}, grade {g}. Chaque tranche de poids est une série à part : la variation compare toujours la même tranche et la même catégorie.',
+      cattleNo: 'USDA AMS ne publie un résumé hebdomadaire des encans que pour {n} États, et {s} n\'en fait pas partie. États avec données :', hayNo: 'USDA AMS ne publie le rapport direct sur le foin que pour {n} États, et {s} n\'en fait pas partie. États avec données :',
+      grainNo: 'Nous n\'avons pas de prix de {p} pour {s} (l\'USDA ne publie pas de rapport pour ce produit dans cet État). États avec données :',
+      hayCls: 'Classe de foin', hayRows: 'Les {n} lignes avec le plus de volume du dernier rapport', hayUnit: 'USD/t', hQ: 'Qualité', hP: 'Conditionnement', hR: 'Région', hS: 'Vente', hAvg: 'Moyenne', hRng: 'Fourchette', hQty: 'Quantité', hChg: 'Vs. rapport préc.',
+      hayNote: 'Rapport direct sur le foin de l\'État (USDA AMS). Chaque ligne est une spécification différente (qualité, conditionnement, vente, région) ; elles ne sont jamais mélangées. Seulement les lignes au prix par tonne.',
+      gMk: 'Marché', gSpec: 'Spécification', gBid: 'Offre au comptant', gBasis: 'Base', gChg: 'Variation', gDate: 'Date', gSeries: 'Graphique de', gMore: 'Voir les {n} séries', gOld: 'Aucune cotation récente dans cet État ; les dernières disponibles sont affichées.', gShow: 'cotations récentes',
+      gNote: 'Offre au comptant (cash bid), pas les contrats à terme. L\'USDA publie des régions, terminaux ou États, pas des silos précis : la colonne « Marché » indique de quoi il s\'agit. La base est l\'écart avec le contrat à terme de référence.',
+      tREGION: 'région', tTERMINAL: 'terminal', tSTATE: 'État', tCITY: 'ville', tELEVATOR: 'silo', tEXPORT_MARKET: 'export',
+      insLast: 'Dernière année complète', indem: 'Indemnités versées', prem: 'Prime totale', farmerP: 'Prime nette payée par l\'agriculteur', ratio: 'Indemnités par dollar de prime', pol: 'Polices avec prime', y: 'Année', sub: 'Subvention fédérale', prov: 'provisoire',
+      insNote: 'Assurance récolte fédérale (USDA RMA, Summary of Business), toutes les cultures de l\'État réunies. « Prime nette » = prime totale − subvention, calculée par Dehesa Index. Une campagne peut encore changer tant qu\'elle n\'est pas complète : les années provisoires ne sont pas comparées aux années complètes. Ce n\'est pas une prévision de ce que vous toucheriez : cela dépend de votre contrat et de votre culture.',
+      insNo: 'Aucun chiffre d\'assurance pour cet État.', natCol: 'Total É.-U. (même ratio)', vsNat: 'moyenne É.-U.',
+      drNow: 'Maintenant', dr4: 'Il y a 4 semaines', drY: 'Il y a 1 an', d0: 'D0+ anormalement sec', d1: 'D1+ sécheresse modérée ou pire', d2: 'D2+ sécheresse sévère ou pire', d3: 'D3+ sécheresse extrême ou pire', pp: 'pp', drWeek: 'Semaine du', drChart: 'Part de l\'État en sécheresse (D1+ et D2+)', pctArea: '% de la surface de l\'État',
+      drNote: 'US Drought Monitor : part de la surface de l\'ÉTAT dans chaque catégorie (cumulé : D1+ inclut D2 à D4). Ce n\'est pas votre comté ni votre exploitation : la carte par comté est sur droughtmonitor.unl.edu. Variations en points de pourcentage (pp).',
+      drNo: 'Aucune donnée de sécheresse pour cet État.',
+      area: 'Surface totale', irr: 'Irrigué', prd: 'Production', yl: 'Rendement', th: 't/ha', ha: 'ha', t: 't', rank: '{r}e sur {n} provinces', shareES: 'du total de l\'Espagne', vsC: 'Vs. campagne',
+      topP: 'Plus grandes provinces par surface', provT: 'Province', camp: 'Campagne', cropNo: 'Le MAPA ne publie pas {c} pour {p} pour la campagne {k}. Provinces avec données (plus grandes en surface) :', provisional: 'Données provisoires',
+      cropNote: 'Surfaces et productions annuelles de cultures du MAPA (données provisoires de la campagne indiquée ; elles peuvent changer). Rendement = production ÷ surface récoltée, calculé par Dehesa Index. Les noms de cultures sont ceux du MAPA. Il s\'agit de la province entière : cette statistique n\'est pas publiée par canton ni par commune.',
+      yHigher: 'Rendement de {p}', natAvg: 'moyenne de l\'Espagne',
+      no_us1: 'Prix par comté ou par silo précis : l\'USDA ne publie que des régions, terminaux ou États ; nous n\'inventons ni distances ni coordonnées.',
+      no_us2: 'Bovins : résumés hebdomadaires d\'encans pour {a} États ; foin pour {b} États ; céréales pour {g} États ou marchés.',
+      no_us3: 'Assurance : seulement le total de l\'État (toutes cultures réunies), pas par culture et par État.',
+      no_us4: 'Sécheresse : part de l\'État, pas de votre comté.',
+      no_us5: 'Coûts (engrais, diesel, aliments) et météo : chiffres nationaux ou mondiaux seulement, pas par État.',
+      no_es1: 'Prix par province ou par lonja : nous n\'incluons pas encore les marchés provinciaux ; les prix suivis sont nationaux, européens ou mondiaux.',
+      no_es2: 'Assurance agricole (Agroseguro) : chiffres nationaux seulement, encore à vérifier ; pas par province.',
+      no_es3: 'Sécheresse et météo par province : seulement les pages générales météo et sécheresse ; pas de vue par province.',
+      no_es4: 'Élevage par province : pas de recensement ni de production animale par province sur cette page.',
+      no_es5: 'Campagne 2025 : seulement les groupes déjà publiés par le MAPA (légumes, agrumes, arbres fruitiers, oliveraies, vignobles et autres ligneux) ; le reste est en campagne 2024.',
+      mPrice: 'Prix locaux détaillés', mIns: 'Assurance récolte (É.-U.)', mDrought: 'Sécheresse par État', mCrops: 'Cultures d\'Espagne par province', mClima: 'Météo', mPrices: 'Prix de référence', mCosts: 'Coûts et intrants'
+    },
+    it: {
+      title: 'Il mio mercato: la tua zona e il tuo prodotto', sub: 'Scegli dove sei e cosa produci. Una sola pagina mostra prezzo locale, assicurazione dei raccolti, siccità o produzione della tua provincia, con fonte e data di ogni dato. La scelta resta solo in questo browser; nessun account.',
+      country: 'Paese', place: 'Stato', placeES: 'Provincia', product: 'Prodotto', group: 'Gruppo di colture', crop: 'Coltura', choose: 'Scegli…', us: 'Stati Uniti', es: 'Spagna',
+      intro: 'Scegli luogo e prodotto per iniziare, o prova un esempio:', ex: 'Esempi', loading: 'Caricamento…', err: 'Impossibile caricare i dati di questa scheda.', saved: 'La tua scelta è salvata in questo browser e nell\'indirizzo della pagina: puoi aggiungerla ai preferiti o condividerla.', reset: 'Cancella la mia scelta',
+      sPrice: 'Prezzo vicino a te', sIns: 'Assicurazione dei raccolti nel tuo Stato', sDrought: 'Siccità nel tuo Stato', sCrop: 'La tua provincia in questa coltura', sMissing: 'Cosa non abbiamo ancora per la tua zona', sMore: 'Approfondisci',
+      cattle: 'Bovini (vitelli e ingrasso)', hay: 'Fieno', corn: 'Mais', soybeans: 'Soia', wheat: 'Frumento', sorghum: 'Sorgo', barley: 'Orzo', oats: 'Avena',
+      grp: { cereales: 'Cereali', leguminosas: 'Leguminose', tuberculos: 'Tuberi', industriales: 'Colture industriali', hortalizas: 'Ortaggi', citricos: 'Agrumi', frutales: 'Altra frutta da albero', olivar: 'Oliveti', vinedo: 'Vigneti', otros_lenosos: 'Altre colture legnose' },
+      Steers: 'Manzi', Heifers: 'Manze', Bulls: 'Tori', cls: 'Categoria', wb: 'Peso (lb)', lb: 'lb', usdcwt: 'USD/cwt', cwtNote: 'cwt = 100 lb. Peso vivo.', head: 'Capi', avgw: 'peso medio', lastRep: 'Ultimo rapporto', report: 'Rapporto originale',
+      vsW: 'Vs. settimana prec.', vs4: 'Vs. 4 settimane', vsY: 'Vs. un anno fa', noCmp: 'nessun dato confrontabile',
+      cattleNote: 'Aste di bovini dello Stato, riepilogo settimanale USDA AMS: media delle medie pubblicate, ponderata per capi, per {f}, grado {g}. Ogni fascia di peso è una serie a sé: la variazione confronta sempre la stessa fascia e la stessa categoria.',
+      cattleNo: 'USDA AMS pubblica un riepilogo settimanale delle aste solo per {n} Stati, e {s} non è tra questi. Stati con dati:', hayNo: 'USDA AMS pubblica il rapporto diretto sul fieno solo per {n} Stati, e {s} non è tra questi. Stati con dati:',
+      grainNo: 'Non abbiamo prezzi di {p} per {s} (l\'USDA non pubblica un rapporto per questo prodotto nello Stato). Stati con dati:',
+      hayCls: 'Classe di fieno', hayRows: 'Le {n} righe con più volume dell\'ultimo rapporto', hayUnit: 'USD/t', hQ: 'Qualità', hP: 'Confezione', hR: 'Regione', hS: 'Vendita', hAvg: 'Media', hRng: 'Intervallo', hQty: 'Quantità', hChg: 'Vs. rapporto prec.',
+      hayNote: 'Rapporto diretto sul fieno dello Stato (USDA AMS). Ogni riga è una specifica diversa (qualità, confezione, vendita, regione); non si mescolano mai. Solo righe con prezzo per tonnellata.',
+      gMk: 'Mercato', gSpec: 'Specifica', gBid: 'Offerta a pronti', gBasis: 'Basis', gChg: 'Variazione', gDate: 'Data', gSeries: 'Grafico di', gMore: 'Vedi tutte le {n} serie', gOld: 'Nessuna quotazione recente in questo Stato; sono mostrate le ultime disponibili.', gShow: 'quotazioni recenti',
+      gNote: 'Offerta a pronti (cash bid), non future. L\'USDA pubblica regioni, terminal o Stati, non singoli elevatori: la colonna «Mercato» dice di cosa si tratta. Il basis è la differenza dal contratto future di riferimento.',
+      tREGION: 'regione', tTERMINAL: 'terminal', tSTATE: 'Stato', tCITY: 'città', tELEVATOR: 'elevatore', tEXPORT_MARKET: 'export',
+      insLast: 'Ultimo anno completo', indem: 'Indennizzi pagati', prem: 'Premio totale', farmerP: 'Premio netto pagato dall\'agricoltore', ratio: 'Indennizzi per dollaro di premio', pol: 'Polizze con premio', y: 'Anno', sub: 'Sussidio federale', prov: 'provvisorio',
+      insNote: 'Assicurazione federale dei raccolti (USDA RMA, Summary of Business), tutte le colture dello Stato insieme. «Premio netto» = premio totale − sussidio, calcolato da Dehesa Index. Un anno può ancora cambiare finché non è completo: gli anni provvisori non si confrontano con quelli completi. Non è una previsione di quanto incasseresti: dipende dalla tua polizza e dalla tua coltura.',
+      insNo: 'Nessuna cifra assicurativa per questo Stato.', natCol: 'Totale USA (stesso rapporto)', vsNat: 'media USA',
+      drNow: 'Ora', dr4: '4 settimane fa', drY: '1 anno fa', d0: 'D0+ anormalmente secco', d1: 'D1+ siccità moderata o peggio', d2: 'D2+ siccità severa o peggio', d3: 'D3+ siccità estrema o peggio', pp: 'pp', drWeek: 'Settimana del', drChart: 'Quota dello Stato in siccità (D1+ e D2+)', pctArea: '% della superficie dello Stato',
+      drNote: 'US Drought Monitor: quota della superficie dello STATO in ogni categoria (cumulativa: D1+ include da D2 a D4). Non è la tua contea né la tua azienda: la mappa per contea è su droughtmonitor.unl.edu. Variazioni in punti percentuali (pp).',
+      drNo: 'Nessun dato di siccità per questo Stato.',
+      area: 'Superficie totale', irr: 'Irrigua', prd: 'Produzione', yl: 'Resa', th: 't/ha', ha: 'ha', t: 't', rank: '{r}º su {n} province', shareES: 'del totale della Spagna', vsC: 'Vs. campagna',
+      topP: 'Province maggiori per superficie', provT: 'Provincia', camp: 'Campagna', cropNo: 'Il MAPA non pubblica {c} per {p} nella campagna {k}. Province con dati (maggiori per superficie):', provisional: 'Dati provvisori',
+      cropNote: 'Superfici e produzioni annuali delle colture dal MAPA (dati provvisori della campagna indicata; possono cambiare). Resa = produzione ÷ superficie raccolta, calcolata da Dehesa Index. I nomi delle colture sono quelli del MAPA. È l\'intera provincia: questa statistica non è pubblicata per comarca né per comune.',
+      yHigher: 'Resa di {p}', natAvg: 'media della Spagna',
+      no_us1: 'Prezzi per contea o per singolo elevatore: l\'USDA pubblica solo regioni, terminal o Stati; non inventiamo distanze né coordinate.',
+      no_us2: 'Bovini: riepiloghi settimanali delle aste per {a} Stati; fieno per {b} Stati; cereali per {g} Stati o mercati.',
+      no_us3: 'Assicurazione: solo il totale dello Stato (tutte le colture insieme), non per coltura e Stato.',
+      no_us4: 'Siccità: quota dello Stato, non della tua contea.',
+      no_us5: 'Costi (fertilizzanti, gasolio, mangimi) e meteo: solo cifre nazionali o mondiali, non per Stato.',
+      no_es1: 'Prezzi per provincia o per borsa merci: non includiamo ancora i mercati provinciali; i prezzi che seguiamo sono nazionali, europei o mondiali.',
+      no_es2: 'Assicurazione agraria (Agroseguro): solo cifre nazionali, ancora da verificare; non per provincia.',
+      no_es3: 'Siccità e meteo per provincia: solo le pagine generali su meteo e siccità; nessuna vista per provincia.',
+      no_es4: 'Zootecnia per provincia: nessun censimento né produzione zootecnica per provincia in questa pagina.',
+      no_es5: 'Campagna 2025: solo i gruppi già pubblicati dal MAPA (ortaggi, agrumi, frutta da albero, oliveti, vigneti e altre legnose); il resto è nella campagna 2024.',
+      mPrice: 'Prezzi locali dettagliati', mIns: 'Assicurazione dei raccolti (USA)', mDrought: 'Siccità per Stato', mCrops: 'Colture della Spagna per provincia', mClima: 'Meteo', mPrices: 'Prezzi di riferimento', mCosts: 'Costi e input'
+    }
+  };
+
+  /* ---------- utilidades ---------- */
+  var root = document.getElementById('mm-body'), TOK = 0, CACHE = {};
+  function lang() { var l = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; return T[l] ? l : 'es'; }
+  function tr() { return T[lang()]; }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: 'always' }); } catch (e) { return v.toFixed(d); } }
+  function pc(v) { if (v == null || !isFinite(v)) return '–'; if (Math.abs(v) < 0.05) v = 0; var c = v > 0 ? '#2f6b4a' : v < 0 ? '#a33' : 'inherit'; return '<span style="color:' + c + ';font-weight:600">' + (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1) + ' %</span>'; }
+  function pp(v) { if (v == null || !isFinite(v)) return '–'; if (Math.abs(v) < 0.05) v = 0; return (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1) + ' ' + tr().pp; }
+  function fill(s, o) { return String(s).replace(/\{(\w+)\}/g, function (m, k) { return o[k] != null ? o[k] : m; }); }
+  function days(a, b) { return Math.round((Date.parse(b + 'T00:00:00Z') - Date.parse(a + 'T00:00:00Z')) / 864e5); }
+  function addDays(d, n) { return new Date(Date.parse(d + 'T00:00:00Z') + n * 864e5).toISOString().slice(0, 10); }
+  function near(pts, date, tol) { var best = null, bd = 1e9; for (var i = 0; i < pts.length; i++) { var dd = Math.abs(days(pts[i][0], date)); if (dd <= tol && dd < bd) { bd = dd; best = pts[i]; } } return best; }
+  function pct(a, b) { return (b > 0 && a != null) ? (a / b - 1) * 100 : null; }
+  function dt(iso) { try { return new Date(iso + 'T00:00:00Z').toLocaleDateString(lang(), { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return iso; } }
+  function get(path) { if (!CACHE[path]) CACHE[path] = fetch(path).then(function (r) { if (!r.ok) throw new Error(path + ' ' + r.status); return r.json(); }).catch(function (e) { delete CACHE[path]; throw e; }); return CACHE[path]; }
+  function tile(lab, val, sub) { return '<div class="de-tile"><div class="de-tl">' + esc(lab) + '</div><div class="de-tv">' + val + '</div><div class="de-ts">' + (sub || '&nbsp;') + '</div></div>'; }
+  function cite(id, period) { var Q = window.DICite; if (!Q) return ''; var c = Q.html(id, { period: String(period || '') }); return c ? '<div class="pp-cites">' + c + '</div>' : ''; }
+  function citeCalc(ids, what) { var Q = window.DICite; if (!Q) return ''; var c = Q.derived(ids, { what: what }); return c ? '<div class="pp-cites">' + c + '</div>' : ''; }
+  function note(s) { return '<p class="di-movers-hint">' + esc(s) + '</p>'; }
+  function usName(code) { var N = window.DehesaRegionNames && window.DehesaRegionNames.US; var v = N && N[code]; return v ? (v.split('|')[LIDX[lang()]] || v.split('|')[0]) : code; }
+  function stateLink(code, p) { return '<a href="?c=US&amp;r=' + code + '&amp;p=' + p + '" data-mm-go="' + code + '">' + esc(usName(code)) + '</a>'; }
+  function listStates(codes, p) { return '<p class="di-movers-hint">' + codes.sort(function (a, b) { return usName(a).localeCompare(usName(b), lang()); }).map(function (c) { return stateLink(c, p); }).join(' · ') + '</p>'; }
+  var FRAMES = { es: { 'Medium and Large': 'tamaño mediano y grande', 'Large': 'tamaño grande', 'Medium': 'tamaño mediano', 'Small and Medium': 'tamaño pequeño y mediano', 'Small': 'tamaño pequeño' }, fr: { 'Medium and Large': 'gabarit moyen et grand', 'Large': 'grand gabarit', 'Medium': 'gabarit moyen', 'Small and Medium': 'petit et moyen gabarit', 'Small': 'petit gabarit' }, it: { 'Medium and Large': 'telaio medio e grande', 'Large': 'telaio grande', 'Medium': 'telaio medio', 'Small and Medium': 'telaio piccolo e medio', 'Small': 'telaio piccolo' } };
+  function frameName(f) { var m = FRAMES[lang()]; return m && m[f] ? m[f] : f; }
+  function prodName(p) { return tr()[p] || p; }
+  function link(href, label) { return '<a href="' + esc(href) + '" style="display:inline-block;margin:3px 8px 3px 0;padding:4px 12px;border:1px solid var(--border);border-radius:14px;font-size:13px">' + esc(label) + '</a>'; }
+  function sect(id, title) { return '<section class="di-card" style="padding:14px 16px;margin:14px 0" data-mm-sec="' + id + '" aria-labelledby="mm-t-' + id + '"><h2 id="mm-t-' + id + '" style="font-size:18px;margin:0 0 6px">' + esc(title) + '</h2><div data-mm-body="' + id + '"><p class="di-movers-hint">' + esc(tr().loading) + '</p></div></section>'; }
+  function secBody(id) { return root.querySelector('[data-mm-body="' + id + '"]'); }
+  function putSec(tok, id, html) { if (tok !== TOK) return; var b = secBody(id); if (b) b.innerHTML = html; }
+  function failSec(tok, id) { putSec(tok, id, '<p class="di-movers-hint" role="status">' + esc(tr().err) + '</p>'); }
+  function chart(series, o) {
+    if (!window.DehesaChart) return '';
+    return window.DehesaChart.render({ series: series, xMode: 'time', yTitle: o.y, aria: o.aria, noLegend: series.length < 2, vFmt: function (v) { return nf(v, o.d == null ? 2 : o.d); }, yFmt: function (v) { return nf(v, 0); },
+      xFmt: function (x) { var d = new Date(x); return (d.getUTCMonth() + 1) + '/' + String(d.getUTCFullYear()).slice(2); } });
+  }
+
+  /* ---------- estado: URL > localStorage ---------- */
+  var ST = { c: '', r: '', p: '', k: '', cl: 'Steers', wb: 0, hc: 'all', se: 0 };
+  function readSaved() {
+    var s = {}, q = {};
+    try { var raw = window.localStorage.getItem(LSK); if (raw) s = JSON.parse(raw) || {}; } catch (e) { s = {}; }
+    try { var u = new URLSearchParams(location.search); ['c', 'r', 'p', 'k'].forEach(function (k) { if (u.get(k)) q[k] = u.get(k); }); } catch (e) { q = {}; }
+    var o = q.c ? q : s;
+    ST.c = o.c === 'US' || o.c === 'ES' ? o.c : ''; ST.r = o.r || ''; ST.p = o.p || ''; ST.k = o.k || '';
+  }
+  function save() {
+    try { window.localStorage.setItem(LSK, JSON.stringify({ c: ST.c, r: ST.r, p: ST.p, k: ST.k })); } catch (e) { /* sin almacenamiento: la página funciona igual */ }
+    try { var q = []; if (ST.c) q.push('c=' + ST.c); if (ST.r) q.push('r=' + encodeURIComponent(ST.r)); if (ST.p) q.push('p=' + encodeURIComponent(ST.p)); if (ST.k) q.push('k=' + encodeURIComponent(ST.k)); history.replaceState(null, '', q.length ? '?' + q.join('&') : location.pathname); } catch (e) { /* idem */ }
+  }
+  function clearSaved() { try { window.localStorage.removeItem(LSK); } catch (e) { /* idem */ } ST.c = ST.r = ST.p = ST.k = ''; save(); }
+
+  /* ---------- selectores ---------- */
+  var ES_PROV = null, ES_IDX = null;
+  function usPlaces() { var N = window.DehesaRegionNames && window.DehesaRegionNames.US || {}; return Object.keys(N).sort(function (a, b) { return usName(a).localeCompare(usName(b), lang()); }); }
+  function opt(v, l, cur) { return '<option value="' + esc(v) + '"' + (String(v) === String(cur) ? ' selected' : '') + '>' + esc(l) + '</option>'; }
+  function selectors() {
+    var t = tr(), h = '<div class="de-ctl" role="group" aria-label="' + esc(t.title) + '">';
+    h += '<label>' + esc(t.country) + '<br><select class="di-compare-select" data-mm="c">' + opt('', t.choose, ST.c) + opt('US', t.us, ST.c) + opt('ES', t.es, ST.c) + '</select></label>';
+    if (ST.c === 'US') {
+      h += '<label>' + esc(t.place) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + usPlaces().map(function (k) { return opt(k, usName(k), ST.r); }).join('') + '</select></label>';
+      h += '<label>' + esc(t.product) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + US_PROD.map(function (k) { return opt(k, prodName(k), ST.p); }).join('') + '</select></label>';
+    } else if (ST.c === 'ES') {
+      var provs = ES_PROV ? Object.keys(ES_PROV).sort(function (a, b) { return ES_PROV[a].localeCompare(ES_PROV[b], 'es'); }) : [];
+      h += '<label>' + esc(t.placeES) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + provs.map(function (k) { return opt(k, ES_PROV[k], ST.r); }).join('') + '</select></label>';
+      var gs = ES_IDX ? ES_GORDER.filter(function (k) { return ES_IDX.groups[k]; }) : [];
+      h += '<label>' + esc(t.group) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + gs.map(function (k) { return opt(k, t.grp[k] || k, ST.p); }).join('') + '</select></label>';
+      h += '<label>' + esc(t.crop) + '<br><select class="di-compare-select" data-mm="k" id="mm-crop">' + (ES_CROPS ? ES_CROPS : opt('', t.choose, '')) + '</select></label>';
+    }
+    return h + '</div>';
+  }
+  var ES_CROPS = '';
+
+  /* ---------- EE. UU.: precio ---------- */
+  var LOCST = null;
+  function locStatus() { return LOCST ? Promise.resolve(LOCST) : get(LOC + 'status.json').then(function (s) { LOCST = s; return s; }); }
+  function statesOf(kind) { return (LOCST ? LOCST.reports : []).filter(function (r) { return r.kind === kind && r.latest; }).map(function (r) { return r.state; }); }
+
+  function priceCattle(tok) {
+    var t = tr();
+    return locStatus().then(function () {
+      var have = statesOf('cattle');
+      if (have.indexOf(ST.r) < 0) { putSec(tok, 'price', note(fill(t.cattleNo, { n: have.length, s: usName(ST.r) })) + listStates(have, 'cattle')); return; }
+      return get(LOC + 'cattle-' + ST.r + '.json').then(function (doc) {
+        if (tok !== TOK) return;
+        var L = doc.latest, hist = doc.history, avail = ['Steers', 'Heifers', 'Bulls'].filter(function (c) { return Object.keys(hist).some(function (k) { return k.indexOf(c + '|') === 0; }); });
+        if (avail.indexOf(ST.cl) < 0) ST.cl = avail[0];
+        var wbs = Object.keys(hist).filter(function (k) { return k.indexOf(ST.cl + '|') === 0 && days(hist[k][hist[k].length - 1][0], L.date) <= 28; }).map(function (k) { return +k.split('|')[1]; }).sort(function (a, b) { return a - b; });
+        var h = '<p class="di-movers-hint">' + esc(t.lastRep) + ': ' + esc(dt(L.date)) + ' · <a href="' + esc(doc.source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.report) + ' (' + esc(doc.source.reportId) + ')</a></p>';
+        if (!wbs.length) { putSec(tok, 'price', h + note(t.noCmp)); return; }
+        if (wbs.indexOf(ST.wb) < 0) ST.wb = wbs.indexOf(500) >= 0 ? 500 : wbs[0];
+        var hi = {}; L.rows.forEach(function (r) { if (r[1] === ST.cl && r[6] != null && r[7] != null) hi[r[6]] = r[7]; });
+        h += '<div class="de-ctl"><span><span class="di-movers-hint">' + esc(t.cls) + '</span><br><span class="di-src-tabs" role="group">' + avail.map(function (c) { return '<button type="button" class="di-src-tab" data-mm-cl="' + c + '" aria-pressed="' + (c === ST.cl) + '">' + esc(t[c]) + '</button>'; }).join('') + '</span></span>' +
+          '<label>' + esc(t.wb) + '<br><select class="di-compare-select" data-mm-wb="1">' + wbs.map(function (w) { return opt(w, w + (hi[w] != null ? '–' + hi[w] : '+') + ' ' + t.lb, ST.wb); }).join('') + '</select></label></div>';
+        var pts = hist[ST.cl + '|' + ST.wb], last = pts[pts.length - 1], prev = near(pts, addDays(last[0], -7), 3), p4 = near(pts, addDays(last[0], -28), 5), yr = near(pts, addDays(last[0], -364), 10);
+        var cmp = function (x) { return x ? pc(pct(last[1], x[1])) : '<span class="di-movers-hint">' + esc(t.noCmp) + '</span>'; };
+        h += '<div class="de-tiles">' + tile(t[ST.cl] + ' · ' + t.usdcwt, nf(last[1], 2), esc(dt(last[0])) + ' · ' + esc(t.head) + ' ' + nf(last[2], 0) + (last[3] ? ' · ' + esc(t.avgw) + ' ' + nf(last[3], 0) + ' ' + t.lb : '')) +
+          tile(t.vsW, cmp(prev), prev ? esc(dt(prev[0])) + ': ' + nf(prev[1], 2) : '') + tile(t.vs4, cmp(p4), p4 ? esc(dt(p4[0])) + ': ' + nf(p4[1], 2) : '') + tile(t.vsY, cmp(yr), yr ? esc(dt(yr[0])) + ': ' + nf(yr[1], 2) : '') + '</div>';
+        if (pts.length > 1) h += chart([{ name: t.usdcwt, color: '#2f6b4a', pts: pts.map(function (p) { return { x: Date.parse(p[0] + 'T00:00:00Z'), y: p[1], l: p[0] + ' · ' + p[2] + ' ' + t.head.toLowerCase() }; }) }], { y: t.usdcwt, aria: t.cattle + ' ' + usName(ST.r) + ' ' + t[ST.cl], d: 2 });
+        h += note(fill(t.cattleNote, { f: frameName(doc.headline.frame), g: doc.headline.grade }) + ' ' + t.cwtNote) + cite('usda_ams_mars', L.date);
+        putSec(tok, 'price', h);
+      });
+    });
+  }
+
+  function priceHay(tok) {
+    var t = tr();
+    return locStatus().then(function () {
+      var have = statesOf('hay');
+      if (have.indexOf(ST.r) < 0) { putSec(tok, 'price', note(fill(t.hayNo, { n: have.length, s: usName(ST.r) })) + listStates(have, 'hay')); return; }
+      return get(LOC + 'hay-' + ST.r + '.json').then(function (doc) {
+        if (tok !== TOK) return;
+        var L = doc.latest, hist = doc.history, rows = L.rows.filter(function (r) { return r[3] === 'Per Ton'; });
+        var classes = []; rows.forEach(function (r) { if (classes.indexOf(r[0]) < 0) classes.push(r[0]); }); classes.sort();
+        if (ST.hc !== 'all' && classes.indexOf(ST.hc) < 0) ST.hc = 'all';
+        var sel = rows.filter(function (r) { return ST.hc === 'all' || r[0] === ST.hc; }).sort(function (a, b) { return (b[11] || 0) - (a[11] || 0); }).slice(0, 8);
+        var h = '<p class="di-movers-hint">' + esc(t.lastRep) + ': ' + esc(dt(L.date)) + ' · <a href="' + esc(doc.source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(t.report) + ' (' + esc(doc.source.reportId) + ')</a></p>';
+        h += '<div class="de-ctl"><label>' + esc(t.hayCls) + '<br><select class="di-compare-select" data-mm-hc="1">' + opt('all', '—', ST.hc) + classes.map(function (c) { return opt(c, c, ST.hc); }).join('') + '</select></label></div>';
+        if (!sel.length) { putSec(tok, 'price', h + note(t.noCmp)); return; }
+        h += '<p class="di-movers-hint" style="margin:6px 0 2px"><b>' + esc(fill(t.hayRows, { n: sel.length })) + '</b></p><div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.hayCls) + '</th><th scope="col">' + esc(t.hQ) + ' · ' + esc(t.hP) + '</th><th scope="col">' + esc(t.hR) + '</th><th scope="col">' + esc(t.hS) + '</th><th scope="col" class="r">' + esc(t.hAvg) + ' (' + esc(t.hayUnit) + ')</th><th scope="col" class="r">' + esc(t.hRng) + '</th><th scope="col" class="r">' + esc(t.hQty) + '</th><th scope="col" class="r">' + esc(t.hChg) + '</th></tr></thead><tbody>';
+        sel.forEach(function (r) {
+          var key = r.slice(0, 11).join('|'), p = hist[key] || [], n = p.length, ch = null;
+          if (n > 1 && p[n - 1][0] === L.date) ch = pct(p[n - 1][3], p[n - 2][3]);
+          h += '<tr><td>' + esc(r[0]) + '</td><td>' + esc([r[1], r[2]].filter(function (x) { return x; }).join(' · ')) + '</td><td>' + esc([r[6], r[7], r[8]].filter(function (x) { return x; }).join(' · ')) + '</td><td>' + esc([r[4], r[5]].filter(function (x) { return x; }).join(' · ')) + '</td><td class="r"><b>' + nf(r[14], 2) + '</b></td><td class="r">' + nf(r[12], 0) + '–' + nf(r[13], 0) + '</td><td class="r">' + (r[11] != null ? nf(r[11], 0) : '–') + '</td><td class="r">' + (ch == null ? '–' : pc(ch)) + '</td></tr>';
+        });
+        h += '</tbody></table></div>' + note(t.hayNote) + cite('usda_ams_mars', L.date);
+        putSec(tok, 'price', h);
+      });
+    });
+  }
+
+  var FRESH_OK = { LIVE: 1, FRESH: 1, EXPECTED_DELAY: 1, DELAYED: 1 }, LT_ORD = { ELEVATOR: 0, CITY: 1, REGION: 2, STATE: 3, TERMINAL: 4, EXPORT_MARKET: 5 };
+  function grainMissing(tok, p) {
+    var t = tr();
+    return get(GR + 'manifest.json').then(function (m) {
+      var c = m.commodities && m.commodities[p], st = c ? c.states.filter(function (s) { return m.states[s] && /^[A-Z]{2}$/.test(s) && window.DehesaRegionNames && window.DehesaRegionNames.US[s]; }) : [];
+      putSec(tok, 'price', note(fill(t.grainNo, { p: prodName(p).toLowerCase(), s: usName(ST.r) })) + listStates(st, p));
+    });
+  }
+  function priceGrain(tok) {
+    var t = tr(), p = ST.p;
+    return get(GR + 'manifest.json').then(function (m) {
+      var has = m.states && m.states[ST.r] && m.states[ST.r].commodities && m.states[ST.r].commodities[p];
+      if (!has) return null;
+      return get(GR + ST.r + '/' + p + '.json');
+    }).then(function (doc) {
+      if (!doc) return grainMissing(tok, p);
+      if (tok !== TOK) return;
+      var all = doc.series.slice(), cur = all.filter(function (s) { return FRESH_OK[s.freshness]; }), old = false;
+      if (!cur.length) { cur = all.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 12); old = true; }
+      cur.sort(function (a, b) { return (LT_ORD[a.locationType] != null ? LT_ORD[a.locationType] : 9) - (LT_ORD[b.locationType] != null ? LT_ORD[b.locationType] : 9) || String(a.locationName).localeCompare(String(b.locationName)) || String(a.grade).localeCompare(String(b.grade)); });
+      var spec = function (s) { return [s.commodityClass, s.grade, s.deliveryPeriod, s.deliveryPoint, s.protein].filter(function (x) { return x; }).join(' · '); };
+      var mk = function (s) { return String(s.locationName) + ' (' + (t['t' + s.locationType] || String(s.locationType).toLowerCase()) + ')'; };
+      var row = function (s, i) {
+        var bs = s.bLo == null ? '–' : (s.bLo === s.bHi || s.bHi == null ? nf(s.bLo, 0) : nf(s.bLo, 0) + ' / ' + nf(s.bHi, 0)) + ' ' + esc(s.basisUnit || '') + (s.futuresContract ? ' <span class="di-movers-hint">' + esc(s.futuresContract) + '</span>' : '');
+        var bid = s.avg != null ? '<b>' + nf(s.avg, 2) + '</b>' + (s.lo != null && s.hi != null && s.lo !== s.hi ? ' <span class="di-movers-hint">' + nf(s.lo, 2) + '–' + nf(s.hi, 2) + '</span>' : '') : (s.lo != null ? nf(s.lo, 2) + '–' + nf(s.hi, 2) : '–');
+        return '<tr><td>' + esc(mk(s)) + '</td><td>' + esc(spec(s)) + '</td><td class="r">' + bid + ' <span class="di-movers-hint">' + esc(s.currency || '') + '/' + esc(s.unit || '') + '</span></td><td class="r">' + bs + '</td><td class="r">' + (s.changePct == null ? '–' : pc(s.changePct)) + '</td><td class="r">' + esc(dt(s.date)) + '</td></tr>';
+      };
+      var head = '<thead><tr><th scope="col">' + esc(t.gMk) + '</th><th scope="col">' + esc(t.gSpec) + '</th><th scope="col" class="r">' + esc(t.gBid) + '</th><th scope="col" class="r">' + esc(t.gBasis) + '</th><th scope="col" class="r">' + esc(t.gChg) + '</th><th scope="col" class="r">' + esc(t.gDate) + '</th></tr></thead>';
+      var h = old ? '<p class="di-movers-hint" role="status">' + esc(t.gOld) + '</p>' : '';
+      h += '<div class="de-sc"><table class="de-t" data-no-cards>' + head + '<tbody>' + cur.slice(0, 8).map(row).join('') + '</tbody></table></div>';
+      if (cur.length > 8) h += '<details><summary style="cursor:pointer;font-size:13px">' + esc(fill(t.gMore, { n: cur.length })) + '</summary><div class="de-sc"><table class="de-t" data-no-cards>' + head + '<tbody>' + cur.slice(8).map(row).join('') + '</tbody></table></div></details>';
+      if (ST.se >= cur.length || ST.se < 0) ST.se = 0;
+      var s0 = cur[ST.se];
+      h += '<div class="de-ctl"><label>' + esc(t.gSeries) + '<br><select class="di-compare-select" data-mm-se="1">' + cur.map(function (s, i) { return opt(i, mk(s) + (spec(s) ? ' · ' + spec(s) : ''), ST.se); }).join('') + '</select></label></div>';
+      var pts = (s0.pts || []).filter(function (x) { return x[1] != null; }).map(function (x) { return { x: Date.parse(x[0] + 'T00:00:00Z'), y: x[1], l: x[0] }; });
+      if (pts.length > 1) h += chart([{ name: t.gBid, color: '#2f6b4a', pts: pts }], { y: (s0.currency || 'USD') + '/' + (s0.unit || ''), aria: prodName(p) + ' ' + usName(ST.r) + ' ' + mk(s0), d: 2 });
+      h += note(t.gNote) + cite('usda_ams_mars', cur.reduce(function (m, s) { return s.date > m ? s.date : m; }, ''));
+      putSec(tok, 'price', h);
+    });
+  }
+
+  /* ---------- EE. UU.: seguro y sequía ---------- */
+  function usdM(v) { var m = v / 1e6; return '$' + nf(m, Math.abs(m) >= 1000 ? 0 : 1) + ' M'; }
+  function insurance(tok) {
+    var t = tr();
+    return get('data/crop-insurance.json').then(function (d) {
+      var s = d.states[ST.r];
+      if (!s) { putSec(tok, 'ins', note(t.insNo)); return; }
+      var ly = String(d.latestCompleteYear), a = s[ly], n = d.national[ly];
+      if (!a) { putSec(tok, 'ins', note(t.insNo)); return; }
+      var r = function (x) { return x && x[1] > 0 ? x[3] / x[1] : null; };
+      var h = '<div class="de-tiles">' + tile(t.indem + ' · ' + ly, usdM(a[3]), esc(t.ratio) + ': <b>' + (r(a) == null ? '–' : nf(r(a), 2)) + '</b> · ' + esc(t.vsNat) + ' ' + (r(n) == null ? '–' : nf(r(n), 2))) +
+        tile(t.prem + ' · ' + ly, usdM(a[1]), esc(t.sub) + ': ' + usdM(a[2]) + ' (' + (a[1] > 0 ? nf(a[2] / a[1] * 100, 0) : '–') + ' %)') + tile(t.farmerP + ' · ' + ly, usdM(a[1] - a[2]), esc(t.pol) + ': ' + nf(a[4], 0)) + '</div>';
+      var yrs = d.cropYears.filter(function (y) { return s[String(y)]; }).slice(-6).reverse();
+      h += '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.y) + '</th><th scope="col" class="r">' + esc(t.prem) + '</th><th scope="col" class="r">' + esc(t.indem) + '</th><th scope="col" class="r">' + esc(t.ratio) + '</th><th scope="col" class="r">' + esc(t.natCol) + '</th></tr></thead><tbody>' + yrs.map(function (y) {
+        var x = s[String(y)], nn = d.national[String(y)], prov = y > d.latestCompleteYear;
+        return '<tr><td>' + y + (prov ? ' <span class="di-movers-hint">(' + esc(t.prov) + ')</span>' : '') + '</td><td class="r">' + usdM(x[1]) + '</td><td class="r">' + usdM(x[3]) + '</td><td class="r"><b>' + (r(x) == null ? '–' : nf(r(x), 2)) + '</b></td><td class="r">' + (r(nn) == null ? '–' : nf(r(nn), 2)) + '</td></tr>';
+      }).join('') + '</tbody></table></div>';
+      h += note(t.insNote) + cite('usda_rma', ly) + citeCalc(['usda_rma'], 'premium − subsidy; indemnity ÷ premium');
+      putSec(tok, 'ins', h);
+    });
+  }
+
+  function drought(tok) {
+    var t = tr();
+    return get('data/drought.json').then(function (d) {
+      var rows = d.states && d.states[ST.r];
+      if (!rows || !rows.length) { putSec(tok, 'dr', note(t.drNo)); return; }
+      var last = rows[rows.length - 1], ts = last[0];
+      var at = function (n) { return near(rows, addDays(ts, -n), 4); }, a4 = at(28), ay = at(364);
+      var ds = [[1, t.d1], [2, t.d2], [3, t.d3]];
+      var h = '<p class="di-movers-hint">' + esc(t.drWeek) + ' ' + esc(dt(ts)) + '</p><div class="de-tiles">' + ds.map(function (c) {
+        var i = c[0] + 1, v = last[i], sub = (a4 ? esc(t.dr4) + ': ' + nf(a4[i], 1) + ' % (' + pp(v - a4[i]) + ')' : '') + (ay ? '<br>' + esc(t.drY) + ': ' + nf(ay[i], 1) + ' % (' + pp(v - ay[i]) + ')' : '');
+        return tile(c[1], nf(v, 1) + ' %', sub);
+      }).join('') + '</div>';
+      var win = rows.slice(-157);
+      h += chart([{ name: 'D1+', color: '#c9822b', pts: win.map(function (r) { return { x: Date.parse(r[0] + 'T00:00:00Z'), y: r[2], l: r[0] }; }) }, { name: 'D2+', color: '#a33', pts: win.map(function (r) { return { x: Date.parse(r[0] + 'T00:00:00Z'), y: r[3], l: r[0] }; }) }], { y: t.pctArea, aria: t.drChart + ' ' + usName(ST.r), d: 1 });
+      h += note(t.drNote) + cite('us_drought_monitor', ts);
+      putSec(tok, 'dr', h);
+    });
+  }
+
+  /* ---------- España: cultivo en tu provincia ---------- */
+  function spainGroup(g) { return get(SC + ES_IDX.groups[g].file); }
+  function yl(a) { return a && a[3] > 0 && a[4] != null ? a[4] / a[3] : null; }
+  function big(v, u) { return v == null ? '–' : (v >= 1e6 ? nf(v / 1e6, 2) + ' M ' : nf(v, 0) + ' ') + u; }
+  function cropOptions(g) {
+    var camps = Object.keys(g.campaigns).sort(), camp = camps[camps.length - 1], crops = g.campaigns[camp].crops;
+    var cur = crops.filter(function (x) { return x.c === ST.k; })[0];
+    if (!cur) { cur = crops.filter(function (x) { return x.v && x.v[ST.r]; })[0] || crops[0]; ST.k = cur.c; }
+    ES_CROPS = opt('', tr().choose, '') + crops.map(function (x) { var pad = ''; for (var i = 0; i < x.l; i++) pad += '  '; return '<option value="' + esc(x.c) + '"' + (x.c === ST.k ? ' selected' : '') + '>' + pad + esc(x.n) + '</option>'; }).join('');
+    return { camps: camps, camp: camp, crops: crops, cur: cur };
+  }
+  function spainCrop(tok) {
+    var t = tr();
+    return spainGroup(ST.p).then(function (g) {
+      if (tok !== TOK) return;
+      var o = cropOptions(g), cur = o.cur, camp = o.camp, prevC = o.camps[o.camps.indexOf(camp) - 1], pv = prevC && g.campaigns[prevC].crops.filter(function (x) { return x.c === cur.c; })[0];
+      var sel = document.getElementById('mm-crop'); if (sel) sel.innerHTML = ES_CROPS;
+      var a = cur.v[ST.r], pn = g.provinces[ST.r] || ST.r, h = '';
+      var topAll = Object.keys(cur.v).map(function (p) { return { p: p, v: cur.v[p][0] }; }).filter(function (x) { return x.v > 0; }).sort(function (x, y) { return y.v - x.v; });
+      var tbl = function (hl) {
+        var rows = topAll.slice(0, 5); if (hl && !rows.some(function (x) { return x.p === hl; })) { var me = topAll.filter(function (x) { return x.p === hl; })[0]; if (me) rows.push(me); }
+        return '<p class="di-movers-hint" style="margin:8px 0 2px"><b>' + esc(t.topP) + ' · ' + esc(camp) + '</b></p><div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(t.provT) + '</th><th scope="col" class="r">' + esc(t.area) + '</th><th scope="col" class="r">' + esc(t.shareES) + '</th></tr></thead><tbody>' + rows.map(function (x) {
+          return '<tr' + (x.p === hl ? ' style="font-weight:700"' : '') + '><td>' + esc(g.provinces[x.p]) + '</td><td class="r">' + big(x.v, t.ha) + '</td><td class="r">' + (cur.t[0] ? nf(x.v / cur.t[0] * 100, 1) + ' %' : '') + '</td></tr>';
+        }).join('') + '</tbody></table></div>';
+      };
+      h += '<p class="di-movers-hint"><b>' + esc(cur.n) + '</b> · ' + esc(pn) + ' · ' + esc(t.camp) + ' ' + esc(camp) + ' · ' + esc(t.provisional) + '</p>';
+      if (!a || !(a[0] > 0)) { h += note(fill(t.cropNo, { c: cur.n, p: pn, k: camp })) + tbl(null); }
+      else {
+        var rank = topAll.map(function (x) { return x.p; }).indexOf(ST.r) + 1, dv = function (x, y) { return x != null && y != null && y > 0 ? esc(t.vsC + ' ' + prevC) + ': ' + pc((x / y - 1) * 100) : ''; }, pa = pv && pv.v[ST.r];
+        var y0 = yl(a), yN = yl(cur.t);
+        h += '<div class="de-tiles">' + tile(t.area, big(a[0], t.ha), esc(fill(t.rank, { r: rank, n: topAll.length })) + ' · ' + nf(a[0] / cur.t[0] * 100, 1) + ' % ' + esc(t.shareES) + (pa ? '<br>' + dv(a[0], pa[0]) : ''));
+        if (a[1] != null && a[2] != null) h += tile(t.irr, nf(a[2] / a[0] * 100, 0) + ' %', big(a[2], t.ha));
+        if (a[4] != null) h += tile(t.prd, big(a[4], t.t), pa ? dv(a[4], pa[4]) : '');
+        if (y0 != null) h += tile(t.yl, nf(y0, y0 < 10 ? 2 : 1) + ' ' + t.th, yN != null ? esc(t.natAvg) + ': ' + nf(yN, yN < 10 ? 2 : 1) + ' ' + t.th : '');
+        h += '</div>' + tbl(ST.r);
+      }
+      h += note(t.cropNote) + cite('mapa_es', camp) + (cur.t && yl(cur.t) != null ? citeCalc(['mapa_es'], 'production ÷ harvested area (MAPA)') : '');
+      putSec(tok, 'crop', h);
+    });
+  }
+
+  /* ---------- lo que falta + enlaces ---------- */
+  function missingUS() {
+    var t = tr(), a = statesOf('cattle').length, b = statesOf('hay').length;
+    return get(GR + 'manifest.json').then(function (m) { return Object.keys(m.states).filter(function (s) { return /^[A-Z]{2}$/.test(s) && window.DehesaRegionNames && window.DehesaRegionNames.US[s]; }).length; }, function () { return null; }).then(function (g) {
+      var l = [t.no_us1, fill(t.no_us2, { a: a, b: b, g: g == null ? '?' : g }), t.no_us3, t.no_us4, t.no_us5];
+      return '<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + l.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+    });
+  }
+  function missingES() { var t = tr(); return Promise.resolve('<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + [t.no_es1, t.no_es2, t.no_es3, t.no_es4, t.no_es5].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'); }
+  function moreLinks() {
+    var t = tr(), h = '';
+    if (ST.c === 'US') {
+      var tab = ST.p === 'cattle' || ST.p === 'hay' ? ST.p : 'grain';
+      h += link('precios-locales.html?' + (tab === 'grain' ? 's=' + ST.r + '&c=' + ST.p : 't=' + tab + '&s=' + ST.r), t.mPrice) + link('precios.html?tab=seguro', t.mIns) + link('sequia.html?state=' + encodeURIComponent(ST.r), t.mDrought) + link('insumos.html', t.mCosts) + link('clima.html', t.mClima);
+    } else h += link('paises.html?c=ES#es-crops', t.mCrops) + link('clima.html', t.mClima) + link('precios.html', t.mPrices) + link('insumos.html', t.mCosts);
+    return h;
+  }
+
+  /* ---------- pintado ---------- */
+  function examples() {
+    var t = tr();
+    return '<p class="di-movers-hint">' + esc(t.intro) + '</p><p>' + [
+      ['US', 'KS', 'cattle', usName('KS') + ' · ' + prodName('cattle')], ['US', 'IA', 'corn', usName('IA') + ' · ' + prodName('corn')], ['ES', '47', 'cereales', 'Valladolid · ' + (t.grp.cereales)]
+    ].map(function (e) { return '<button type="button" class="di-src-tab" data-mm-ex="' + e.slice(0, 3).join('|') + '">' + esc(e[3]) + '</button> '; }).join('') + '</p>';
+  }
+  function draw() {
+    var t = tr(), tok = ++TOK;
+    document.getElementById('mm-h1').textContent = t.title; document.getElementById('mm-sub').textContent = t.sub; document.title = t.title + ' | Dehesa Index';
+    var h = '<div data-mm-sel>' + selectors() + '</div>', ready = ST.c && ST.r && ST.p;
+    if (!ready) { root.innerHTML = h + examples(); return; }
+    h += '<p class="di-movers-hint">' + esc(t.saved) + ' <button type="button" class="di-src-tab" data-mm-reset="1">' + esc(t.reset) + '</button></p>';
+    if (ST.c === 'US') {
+      h += sect('price', t.sPrice + ' · ' + prodName(ST.p)) + sect('ins', t.sIns) + sect('dr', t.sDrought);
+    } else h += sect('crop', t.sCrop);
+    h += sect('missing', t.sMissing) + '<section class="di-card" style="padding:14px 16px;margin:14px 0"><h2 style="font-size:18px;margin:0 0 6px">' + esc(t.sMore) + '</h2>' + moreLinks() + '</section>';
+    root.innerHTML = h;
+    var run = function (id, fn) { Promise.resolve().then(fn).catch(function () { failSec(tok, id); }); };
+    if (ST.c === 'US') {
+      run('price', function () { return ST.p === 'cattle' ? priceCattle(tok) : ST.p === 'hay' ? priceHay(tok) : priceGrain(tok); });
+      run('ins', function () { return insurance(tok); }); run('dr', function () { return drought(tok); });
+      run('missing', function () { return locStatus().then(missingUS).then(function (x) { putSec(tok, 'missing', x); }); });
+    } else {
+      run('crop', function () { return spainCrop(tok); });
+      run('missing', function () { return missingES().then(function (x) { putSec(tok, 'missing', x); }); });
+    }
+  }
+
+  /* ---------- eventos ---------- */
+  function refocus(sel) { var n = root.querySelector(sel); if (n && n.focus) n.focus(); }
+  function prepare() {
+    // España: hace falta el índice y un grupo cargados para los selectores
+    if (ST.c === 'ES') {
+      var need = function () { return ES_IDX ? Promise.resolve(ES_IDX) : get(SC + 'index.json').then(function (ix) { ES_IDX = ix; return ix; }); };
+      return need().then(function (ix) {
+        if (ST.p && !ix.groups[ST.p]) { ST.p = ''; ST.k = ''; }
+        var g = ST.p ? ST.p : 'cereales';
+        return spainGroup(g).then(function (gd) { ES_PROV = gd.provinces; if (ST.p) cropOptions(gd); else ES_CROPS = ''; });
+      });
+    }
+    return Promise.resolve();
+  }
+  function change(e) {
+    var n = e.target, a = n.getAttribute && n.getAttribute('data-mm'), f = null;
+    if (!a) {
+      if (n.hasAttribute('data-mm-wb')) { ST.wb = +n.value; draw(); refocus('[data-mm-wb]'); }
+      else if (n.hasAttribute('data-mm-hc')) { ST.hc = n.value; draw(); refocus('[data-mm-hc]'); }
+      else if (n.hasAttribute('data-mm-se')) { ST.se = +n.value; draw(); refocus('[data-mm-se]'); }
+      return;
+    }
+    if (a === 'c') { ST.c = n.value; ST.r = ''; ST.p = ''; ST.k = ''; f = '[data-mm="c"]'; }
+    else if (a === 'r') { ST.r = n.value; f = '[data-mm="r"]'; }
+    else if (a === 'p') { ST.p = n.value; if (ST.c === 'ES') ST.k = ''; ST.se = 0; f = '[data-mm="p"]'; }
+    else if (a === 'k') { ST.k = n.value; f = '[data-mm="k"]'; }
+    save(); prepare().then(function () { draw(); refocus(f); }, function () { draw(); });
+  }
+  function click(e) {
+    var b = e.target.closest ? e.target.closest('[data-mm-cl],[data-mm-ex],[data-mm-reset],[data-mm-go]') : null; if (!b) return;
+    if (b.hasAttribute('data-mm-cl')) { ST.cl = b.getAttribute('data-mm-cl'); draw(); refocus('[data-mm-cl="' + ST.cl + '"]'); }
+    else if (b.hasAttribute('data-mm-ex')) { var x = b.getAttribute('data-mm-ex').split('|'); ST.c = x[0]; ST.r = x[1]; ST.p = x[2]; ST.k = ''; save(); prepare().then(draw, draw); }
+    else if (b.hasAttribute('data-mm-reset')) { clearSaved(); prepare().then(draw, draw); }
+    else if (b.hasAttribute('data-mm-go')) { e.preventDefault(); ST.r = b.getAttribute('data-mm-go'); save(); draw(); }
+  }
+
+  readSaved();
+  if (window.DehesaShared) { window.DehesaShared.init('tools'); var prevL = window.DehesaShared.onLangChange; window.DehesaShared.onLangChange = function () { if (prevL) prevL.apply(this, arguments); draw(); }; }
+  root.addEventListener('change', change); root.addEventListener('click', click);
+  var first = function () { prepare().then(draw, draw); };
+  (window.DICite ? window.DICite.load().then(first, first) : first());
+})();
