@@ -1,0 +1,10 @@
+tabla HST77 34200 celdas actualizada 2025-09-08T08:00:00
+tabla HST88 576 celdas actualizada 2026-03-19T08:00:00
+cosecha 12289 valores
+tabla ANI41 24635 celdas actualizada 2026-09-25T08:00:00
+tabla ANI51 17055 celdas actualizada 2026-09-25T08:00:00
+tabla ANI71 5685 celdas actualizada 2026-09-14T08:00:00
+tabla SVIN 1495 celdas actualizada 2026-08-07T08:00:00
+tabla KVAEG5 17760 celdas actualizada 2026-07-24T08:00:00
+tabla TILSKUD2 115 celdas actualizada 2026-05-19T08:00:00
+escrito denmark-depth.json 469 KB
