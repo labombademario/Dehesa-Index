@@ -17,10 +17,14 @@ def eurostat_json(a, flags=None, delta=None, dim_extra=None):
     pr = a["verifier"]["periods"]; o = pts(a); times = sorted(set(pr))
     val = {str(i): (o[t] + (delta or 0 if t == times[0] else 0)) for i, t in enumerate(times)}
     return json.dumps({"id": ["geo", "time"], "size": [1, len(times)], "dimension": {"geo": {"category": {"index": {"AT": 0}}}, "time": {"category": {"index": {t: i for i, t in enumerate(times)}}}}, "value": val, "status": flags or {}}).encode()
+def pristine(a):  # estado de partida de la prueba: sin verificar (los datos reales ya pueden estar verificados por el pipeline)
+    a = dict(a); a["status"] = "UNEXPLAINED_ANOMALY"
+    for k in ("evidence", "verifiedAt", "sourceUrl", "lastCheck"): a.pop(k, None)
+    a.setdefault("nextAction", "Verificar contra la fuente primaria"); return a
 def run(files, apply=True, only=None):
     tmp = Path(tempfile.mkdtemp()); data = tmp / "data"; data.mkdir()
     for a in anoms: shutil.copy(ROOT / "data" / a["file"], data / a["file"])
-    doc = json.loads((ROOT / "data/data-anomalies.json").read_text()); doc["anomalies"] = [a for a in doc["anomalies"] if not only or a["series"] == only]
+    doc = json.loads((ROOT / "data/data-anomalies.json").read_text()); doc["anomalies"] = [pristine(a) for a in doc["anomalies"] if not only or a["series"] == only]
     (data / "data-anomalies.json").write_text(json.dumps(doc)); fx = tmp / "fx"; fx.mkdir()
     for n, b in files.items(): (fx / n).write_bytes(b)
     import io as _io, contextlib
