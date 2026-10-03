@@ -1,0 +1,39 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/85636NED/$metadata#Cbs.OData.WebAPI.RegioS","value":[
+    {
+      "Key":"NL01","Title":"Nederland","Description":"","CategoryGroupID":null
+    },{
+      "Key":"LD01","Title":"Noord Nederland (LD)","Description":"De provincies Groningen, Friesland en Drenthe.","CategoryGroupID":null
+    },{
+      "Key":"LD02","Title":"Oost Nederland (LD)","Description":"De provincies Overijssel, Gelderland en Flevoland.","CategoryGroupID":null
+    },{
+      "Key":"LD03","Title":"West Nederland (LD)","Description":"De provincies Utrecht, Noord-Holland, Zuid-Holland en Zeeland.","CategoryGroupID":null
+    },{
+      "Key":"LD04","Title":"Zuid Nederland (LD)","Description":"De provincies Noord-Brabant en Limburg.","CategoryGroupID":null
+    },{
+      "Key":"PV20","Title":"Groningen (PV)","Description":"De provincie Groningen met onder meer de landbouwgebieden Hoogeland,\r\nOldambt, Westerkwartier, Westerwolde en Veenkoloni\u00ebn.","CategoryGroupID":null
+    },{
+      "Key":"PV21","Title":"Frysl\u00e2n (PV)","Description":"De provincie Friesland (Frysl\u00e2n) met onder meer de landbouwgebieden\r\nBouwhoek, Greidhoek, Waddeneilanden en De Wouden.","CategoryGroupID":null
+    },{
+      "Key":"PV22","Title":"Drenthe (PV)","Description":"De provincie Drenthe met onder meer de landbouwgebieden Ellertsveld,\r\nHondsrug en Veenkoloni\u00ebn.","CategoryGroupID":null
+    },{
+      "Key":"PV23","Title":"Overijssel (PV)","Description":"De provincie Overijssel met onder meer de landbouwgebieden IJssel- en\r\nVechtdelta, Salland en Twente.","CategoryGroupID":null
+    },{
+      "Key":"PV24","Title":"Flevoland (PV)","Description":"De provincie Flevoland met onder meer de landbouwgebieden Noordoostpolder\r\nen Zuidelijke IJsselmeerpolders.","CategoryGroupID":null
+    },{
+      "Key":"PV25","Title":"Gelderland (PV)","Description":"De provincie Gelderland met onder meer de landbouwgebieden Achterhoek,\r\nBetuwe, Bommelerwaard, De Lijmers, Gelderse Vallei, Graafschap,\r\nLand van Maas en Waal en Veluwe.","CategoryGroupID":null
+    },{
+      "Key":"PV26","Title":"Utrecht (PV)","Description":"De provincie Utrecht met onder meer de landbouwgebieden Eemgebied,\r\nKromme Rijngebied, Lopikerwaard, Utrechtse Heuvelrug en Utrechtse Vallei.","CategoryGroupID":null
+    },{
+      "Key":"PV27","Title":"Noord-Holland (PV)","Description":"De provincie Noord-Holland met onder meer de landbouwgebieden Het Gooi,\r\nKennemerland, Noordhollandse Meerlanden, Waterland en West-Friesland.","CategoryGroupID":null
+    },{
+      "Key":"PV28","Title":"Zuid-Holland (PV)","Description":"De provincie Zuid-Holland met onder meer de landbouwgebieden\r\nAlblasserwaard, Bollenstreek, Hoekse Waard, Krimpenerwaard, Overflakkee,\r\nRijnland, Rijnmond, Vijfheerenlanden en Westland.","CategoryGroupID":null
+    },{
+      "Key":"PV29","Title":"Zeeland (PV)","Description":"De provincie Zeeland met onder meer de landbouwgebieden\r\nSchouwen-Duiveland, Walcheren en Zeeuws-Vlaanderen.","CategoryGroupID":null
+    },{
+      "Key":"PV30","Title":"Noord-Brabant (PV)","Description":"De provincie Brabant met onder meer de landbouwgebieden Baronie, Kempen,\r\nLand van Altena, Langstraat, Maaskant en Meijerij.","CategoryGroupID":null
+    },{
+      "Key":"PV31","Title":"Limburg (PV)","Description":"De provincie Limburg met onder meer de landbouwgebieden Noord-Limburg en\r\nMergelland.","CategoryGroupID":null
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html><html  lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VigiEau</title>
+<script src="https://tally.so/widgets/embed.js" async defer></script>
+<link rel="stylesheet" href="/_nuxt/entry.BAIPxaGM.css" crossorigin>
+<link rel="modulepreload" as="script" crossorigin href="/_nuxt/BupZCvni.js">
+<script type="module" src="/_nuxt/BupZCvni.js" crossorigin></script>
+<link rel="prefetch" as="script" crossorigin href="/_nuxt/Cyta08Ui.js">
+<link rel="prefetch" as="script" crossorigin href="/_nuxt/CJ85IwzD.js">
+<link rel="prefetch" as="script" crossorigin href="/_nuxt/Ct3W0xaU.js">
+<link rel="prefetch" as="script" crossorigin href="/_nuxt/CjZzlD-5.js">
+<link rel="prefetch" as="script" crossorigin href="/_nuxt/7Bv37mva.js">
+<link rel="prefetch" as="script" crossorigin href="/_nuxt/n6BrBnDd.js">
+<link rel="prefetch" as="script" crossorigin href="/_nuxt/BkIDi09Z.js">
+<link rel="prefetch" as="script" crossorigin href="/_nuxt/Dg-IJzFm.js">
+<link rel="prefetch" as="script" crossorigin href="/_nuxt/C8PTnJ-J.js">
+<link rel="prefetch" as="script" crossorigin href="/_nuxt/Cmbyq1d0.js">
+<meta name="description" content="Avec vigieau.gouv.fr, restez informés sur la situation locale de la sécheresse et adoptez les gestes les plus appropriés.">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="VigiEau">
+<meta property="og:description" content="Avec vigieau.gouv.fr, restez informés sur la situation locale de la sécheresse et adoptez les gestes les plus appropriés.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vigieau.gouv.fr">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://vigieau.gouv.fr/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/manifest.webmanifest">
+<script id="unhead:payload" type="application/json">{"title":"VigiEau"}</script><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" /></head><body><div id="__nuxt"></div><div id="teleports"></div><script>window.__NUXT_SITE_CONFIG__={_priority:{name:-10,env:-15,url:-3},env:"production",name:"vigieau_frontend",url:"https:\u002F\u002Fvigieau.gouv.fr"}</script><script>window.__NUXT__={};window.__NUXT__.config={public:{apiAdresseUrl:"https://api-adresse.data.gouv.fr",apiGeoUrl:"https://geo.api.gouv.fr",apiSecheresseUrl:"https://api.vigieau.beta.gouv.fr/api",domainName:"vigieau.gouv.fr",domainProdNotActivated:"false",historicMapManifestUrl:"",pmtilesUrl:"https://regleau.s3.gra.perf.cloud.ovh.net/pmtiles/zones_arretes_en_vigueur.pmtiles",s3vhost:"https://regleau.s3.gra.perf.cloud.ovh.net/",sentryDsn:"https://7922bc3b50f4e3139b5ecb6b4002e4e7@sentry.incubateur.net/307",sentryEnv:"prod",sentryRelease:"d40cefb407653f2d5f22e5b340594cb760362345",sentryTracesSampleRate:"0.1",sentryProfilesSampleRate:"0",sentrySendDefaultPii:"false",appName:"VigiEau",appEnv:"prod",email:"contact.vigieau@beta.gouv.fr",telephone:"01.40.81.35.14","nuxt-robots":{version:"5.7.1",isNuxtContentV2:false,debug:false,credits:true,groups:[{userAgent:["*"],disallow:[""],allow:[],contentUsage:[],contentSignal:[],_indexable:true,_rules:[],_normalized:true}],sitemap:["/sitemap.xml"],header:true,robotsEnabledValue:"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",robotsDisabledValue:"noindex, nofollow",cacheControl:"max-age=14400, must-revalidate",botDetection:true,pageMetaRobots:{}}},app:{baseURL:"/",buildId:"27f9933f-bd64-4431-86bf-d8a275c71bf6",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script>
+<script type="application/json" data-nuxt-data="nuxt-app" data-ssr="false" id="__NUXT_DATA__">[{"prerenderedAt":1,"serverRendered":2},1789373918723,false]</script></body></html>

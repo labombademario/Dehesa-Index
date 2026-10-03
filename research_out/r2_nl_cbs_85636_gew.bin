@@ -1,0 +1,57 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/85636NED/$metadata#Cbs.OData.WebAPI.Gewassen","value":[
+    {
+      "Key":"A042170","Title":"Tarwe (totaal)","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A042171","Title":"Tarwe, winter","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A042172","Title":"Tarwe, zomer","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A042160","Title":"Gerst (totaal)","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A042161","Title":"Gerst, winter","Description":null,"CategoryGroupID":3
+    },{
+      "Key":"A042162","Title":"Gerst, zomer","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A042169","Title":"Rogge","Description":"Met ingang van 2024 is het gewas rogge opgesplitst in: \r\n-\tRogge, korrelgewas\r\n-\tRogge, groenvoedergewas\r\n-\tRogge, groenbemesting (vanggewas) \r\n  Met ingang van 2024 wordt in deze categorie alleen rogge, korrelgewas weergegeven. \r\n","CategoryGroupID":3
+    },{
+      "Key":"A042164","Title":"Haver","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A042173","Title":"Triticale","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A042167","Title":"Ma\u00efs, korrelma\u00efs","Description":"Korrelma\u00efs is een ma\u00efsras dat wordt geteeld voor de droge korrel. In Nederland worden de ma\u00efskorrels vooral gebruikt als kippenvoer.\r\n","CategoryGroupID":3
+    },{
+      "Key":"A042168","Title":"Ma\u00efs, snijma\u00efs","Description":"Snijma\u00efs is een ma\u00efsras dat vooral geteeld wordt voor veevoer. Bij de oogst worden de stengels en onrijpe kolven van de plant fijngesneden en op een grote hoop bewaard (ingekuild). Melkkoeien en vleesstieren eten het als ruwvoer.\r\n\r\n","CategoryGroupID":8
+    },{
+      "Key":"A042166","Title":"Ma\u00efs, corn cob mix","Description":"Corn Cob Mix is een ma\u00efsras waarvan de korrelopbrengst de belangrijkste eigenschap is. Bij de oogst worden van de kolf de korrels en (een deel van) de spil vermalen tot veevoer voor varkens.","CategoryGroupID":3
+    },{
+      "Key":"A042191","Title":"Bruine bonen","Description":"","CategoryGroupID":5
+    },{
+      "Key":"A042180","Title":"kool- en raapzaad","Description":"","CategoryGroupID":4
+    },{
+      "Key":"A042187","Title":"Vezelvlas","Description":"In Nederland wordt vlas geteeld voor de vezelopbrengst \u00e9n voor de (zaai)zaadopbrengst. Het betreft hierbij uitsluitend de opbrengst van de vezels. Ongeveer 2/3e van het areaal vezelvlas in Nederland levert zaaizaad op, de overige 1/3e wordt gebruikt voor consumptie en industri\u00eble toepassingen.","CategoryGroupID":4
+    },{
+      "Key":"A042177","Title":"Cichorei","Description":"","CategoryGroupID":4
+    },{
+      "Key":"A042178","Title":"Hennep","Description":"","CategoryGroupID":4
+    },{
+      "Key":"A042355","Title":"Aardappelen (totaal) ","Description":"","CategoryGroupID":1
+    },{
+      "Key":"A042356","Title":"Consumptieaardappelen","Description":"Inclusief aardappelen bestemd voor de frites- of chipsindustrie.\r\n","CategoryGroupID":1
+    },{
+      "Key":"A042359","Title":"Pootaardappelen","Description":"Aardappelen bestemd voor vermeerdering, \r\n\r\n\r\n\r\n","CategoryGroupID":1
+    },{
+      "Key":"A042362","Title":"Zetmeelaardappelen","Description":"","CategoryGroupID":1
+    },{
+      "Key":"A042194","Title":"Suikerbieten","Description":"","CategoryGroupID":6
+    },{
+      "Key":"A042320","Title":"Zaai-uien (totaal)","Description":"","CategoryGroupID":2
+    },{
+      "Key":"A050907","Title":"Zaai-uien, geel","Description":null,"CategoryGroupID":2
+    },{
+      "Key":"A050908","Title":"Zaai-uien, rood ","Description":null,"CategoryGroupID":2
+    },{
+      "Key":"A049495","Title":"Poot- en plantuien (2e jaars)","Description":"","CategoryGroupID":2
+    }
+  ]
+}

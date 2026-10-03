@@ -1,0 +1,118 @@
+fileurl:SeriesChronologiques<br>Microsoft.SharePoint.SPException: L'objet spécifié n'appartient pas à une liste.
+   à Microsoft.SharePoint.SPWeb.GetItem(String strUrl, Boolean bFile, Boolean cacheRowsetAndId)
+   à Microsoft.SharePoint.SPFile.get_Item()
+   à ASP._226eb695_23f5_41d8_a225_0c132a2b1df9__1210078530.<>c__DisplayClass1.<openDoc>b__0() dans http://server/Pages/OpenDocument.aspx:ligne 219
+<html dir="ltr" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:PublishingContactPicture msdt:dt="string"></mso:PublishingContactPicture><mso:PublishingContact msdt:dt="string"></mso:PublishingContact><mso:Approval_x0020_Level msdt:dt="string"></mso:Approval_x0020_Level><mso:Categories msdt:dt="string"></mso:Categories><mso:Assigned_x0020_To msdt:dt="string"></mso:Assigned_x0020_To><mso:PublishingPageContent msdt:dt="string"></mso:PublishingPageContent><mso:HeaderStyleDefinitions msdt:dt="string"></mso:HeaderStyleDefinitions><mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Compte système</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor><mso:ArticleStartDate msdt:dt="string"></mso:ArticleStartDate><mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl><mso:PublishingRollupImage msdt:dt="string"></mso:PublishingRollupImage><mso:Audience msdt:dt="string"></mso:Audience><mso:ArticleByLine msdt:dt="string"></mso:ArticleByLine><mso:PublishingImageCaption msdt:dt="string"></mso:PublishingImageCaption><mso:ContentTypeId msdt:dt="string">0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390049E8FFD041BB644E90D8BB41A0EA2A61</mso:ContentTypeId><mso:PublishingVariationRelationshipLinkFieldID msdt:dt="string"></mso:PublishingVariationRelationshipLinkFieldID><mso:PublishingContactName msdt:dt="string"></mso:PublishingContactName><mso:PublishingContactEmail msdt:dt="string"></mso:PublishingContactEmail><mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl><mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex><mso:Comments msdt:dt="string"></mso:Comments><mso:PublishingPageLayout msdt:dt="string"></mso:PublishingPageLayout><mso:xd_Signature msdt:dt="string"></mso:xd_Signature><mso:PublishingPageImage msdt:dt="string"></mso:PublishingPageImage><mso:SummaryLinks msdt:dt="string"></mso:SummaryLinks><mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">user_extranet</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author><mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID><mso:PublishingStartDate msdt:dt="string"></mso:PublishingStartDate><mso:PublishingExpirationDate msdt:dt="string"></mso:PublishingExpirationDate><mso:PublishingVariationGroupID msdt:dt="string"></mso:PublishingVariationGroupID><mso:SummaryLinks2 msdt:dt="string"></mso:SummaryLinks2></mso:CustomDocumentProperties></xml><![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	sans titre 1
+</title></head>	
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:PublishingContactPicture msdt:dt="string">, </mso:PublishingContactPicture></mso:CustomDocumentProperties></xml><![endif]-->
+<!--<script type="text/javascript" src="../../../../../js/jquery-1.7.2.min.js"></script>	-->
+
+
+<script language="javascript" type="text/javascript">
+	// MJA : FM 31097 - suivi des connexions aux cotations céréales 
+	var googleAnalyticsAccount = 'UA-40720234-2';
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', googleAnalyticsAccount]);
+    
+    //_gaq.push(['_trackPageview']);    
+    
+    (function() {
+	    var ga = document.createElement('script'); 
+	    ga.type = 'text/javascript'; 
+	    ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; 
+	    s.parentNode.insertBefore(ga, s);	    
+	  })();
+	  
+	function resizeIFrameToFitContent( iFrame ) {
+    	iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+	}
+	  
+</script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:PublishingContactPicture msdt:dt="string">, </mso:PublishingContactPicture></mso:CustomDocumentProperties></xml><![endif]-->
+
+<body>
+<form name="form1" method="post" action="/Pages/OpenDocument.aspx?fileurl=SeriesChronologiques" id="form1" style="width:100%; padding:0px">
+<input type="hidden" name="MSO_PageHashCode" id="MSO_PageHashCode" value="39938240-1210078530" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTYwODcxODA0OA9kFgICAQ9kFgYCAg8PFgIeBFRleHQFASBkZAIEDw8WAh8ABQEgZGQCBQ8PFgIfAAUBIGRkZCxUg7pxKbcLNb/0QjfzXAQS5IuH" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1ACCAF04" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgLXlIWEBAKm0MLpAuJA798uzGHWAyeMRi+nW7cDSlpc" />
+<iframe id="iframeTlo" src="" width="0px" height="0px" style="display:none"></iframe>
+<br><input name="menu_id" type="text" id="menu_id" style="display:none" /><div align="center" >
+		<p>
+		<span id="lblTel3"> </span><br/>&nbsp;Télécharger : <a target="_blank" href="/Pages/OpenDocument.aspx?fileurl=SeriesChronologiques&telecharger=oui&telechargersanscomptage=oui" onclick="_gaq.push(['_trackEvent', 'Document', 'Télécharger','SeriesChronologiques']);">SeriesChronologiques</a></p><iframe id="docframe" src="" width="100%" height="800px" class="visiocontent" style="background-color:#F2F2F2 "></iframe></div><br>
+
+</form>
+
+</body>
+
+<script language="javascript" type="text/javascript">
+	
+$(document).ready( function () {
+	// MJA : FM 31097 - suivi des connexions aux cotations céréales 
+	var url = window.location.search;
+	
+	if(url.indexOf("telecharger=oui") <= -1)
+	{
+		_gaq.push(['_trackEvent', 'Document', 'Ouvrir','SeriesChronologiques']);
+	}
+	else{	
+		_gaq.push(['_trackEvent', 'Document', 'Télécharger','SeriesChronologiques']);
+	}
+	
+	if('False'=="True")
+	{
+		var fileurl = 'SeriesChronologiques';
+		$.post("DeleteSPFile.aspx?fileurl="+fileurl);
+	}
+	
+	$('#docframe').load(function(){
+		//contourner IE qui n'affiche pas le backgroung color
+		$("#docframe").contents().find("body").css("background-color","#F2F2F2");
+	});
+
+	var spfileExt = '';
+	$('#framePDF').hide();
+	if(spfileExt == "pdf")
+	{
+		if($.browser.msie)
+		{
+			$('#pdfWaitMessage').show();
+			$('#framePDF').load(function(){
+				document.getElementById("framePDF").contentWindow.document.body.style.margin = "0px";
+				$("#pdfWaitMessage").fadeOut(100, function () {
+		 				 $('#framePDF').fadeIn();
+		  		});
+			});
+		}
+		else
+		{
+			$('#pdfWaitMessage').show();
+			$('#framePDF').load(function(){
+				document.getElementById("framePDF").contentWindow.document.body.style.margin = "0px";
+				$("#pdfWaitMessage").fadeOut(100, function () {
+		 				 $('#framePDF').fadeIn();
+		  		});
+			});
+		}	
+	}
+});
+</script>
+
+</html>

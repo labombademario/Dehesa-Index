@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8" />
+<link href="/css/basernm.css?051020" rel="stylesheet" type="text/css" />
+<!-- Matomo -->
+<script async src="/css/matomo.js"></script>
+<!-- End Matomo Code -->
+<script async src="/css/basernm.js?270919"></script>
+<link rel="apple-touch-icon" sizes="57x57" href="/ico/icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/ico/icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/ico/icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/ico/icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/ico/icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/ico/icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/ico/icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/ico/icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/ico/icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/ico/icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png">
+<link rel="manifest" href="/ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ico/icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<title>BOVINS - RNM - prix cours march&eacute; - Viande</title>
+
+<link rel="image_src" href="https://rnm.franceagrimer.fr/images/vignette.png" />
+<link rel="canonical" href="https://rnm.franceagrimer.fr/prix?BOVINS">
+<meta name="description" content="BOVINS : Prix mini, maxi, moyen actualisés tous les jours par le RNM sur différents marchés (production, expédition, gros, détail)."/>
+<script>
+window.onscroll = function () {
+  if (window.pageYOffset > 50) {
+  document.getElementById("divup").style.display = "inline";
+  }
+  else {
+  document.getElementById("divup").style.display = "none";
+  }
+ }
+window.onresize = function () {
+  if (window.innerWidth > 1050) {
+  document.getElementById("menug").style.display = "none";
+  menuge=1;
+  }
+ }
+</script>
+</head>
+<body >
+<header>
+<div id="divup" ><a class="nobordacc" href="#"><img class="noprint imgup" src="/images/up2.png" title="menu" alt="lien up" /></a></div>
+
+
+<div class="divportable noprint">
+<table style="width:100%;margin:0;padding:0;"<tr>
+	<td style="margin:0;padding:0"><a class="nobordacc" href="/" target="_top" ><img class="logoaccueil" style="width:70px" src="/images/logo_rnm_icon.png" title="RNM.franceagrimer.fr" alt="lien accueil" /></a>
+	</td><td><p style="font-weight:normal;"><small><span class="rnmvert">R</span>&eacute;seau des <span class="rnmbleu">N</span>ouvelles des <span class="rnmbleu">M</span>arch&eacute;s</small></p><p>Les prix par produit</p>
+	</td><td style="width: 30px;"><a class="nobordacc" href="#"  onclick="menugeneral()"><img src="/images/mobmenu.png" title="menu" alt="lien accueil" /></a>
+</td></tr></table>
+</div>
+
+<div class="divtop100 noprint"><div class="divtop"><table  class="tabtop">
+	<tr> 
+		<td class="tabtoptd1">
+		<a class="logornm" href="/" target="_top" ><img class="imglogornm"  src="/images/logo_rnm_icon.png" title="RNM.franceagrimer.fr" alt="lien accueil" /></a>
+		</td><td class="tabtoptd2"><a class="logornm" href="/" target="_top" >
+		<p><span class="rnmvert">R</span>&eacute;seau des</p>
+		<p><span class="rnmbleu">N</span>ouvelles des</p>
+		<p><span class="rnmbleu">M</span>arch&eacute;s</p></a>
+		</td>
+		<td class="tabtoptd3"> 
+			<table class="tabcentrer" style="margin-right: auto;margin-top:3px;margin-bottom:0px;padding:0;min-width:80%;"> <tr>
+				<td> <a class="menuprin0" href="bilan_campagne?menu=derniers" target="_top">Bilans de campagne</a>  </td>
+				<td ><a class="menuprin0" href="/rnm/panier_restau_co.shtml" target="_top">Restauration collective</a>  </td>
+				<td> <a class="menuprin0" href="/rnm/ReseauRNM.shtml"  target="_top">Le RNM</a> </td>
+			</tr></table> 
+			<table class="tabcentrer" style="margin-bottom:15px;margin-top:10px;"> <tr>
+				<td><a class="menuprin1" href="/prix?SAINOMMAR" target="_top" >PRIX PAR MARCH&#xC9;</a></td><td  style="width:50px" ></td>
+				<td><a class="menuprin1" href="/prix?SAINOMPRODUIT"  target="_top">PRIX PAR PRODUIT</a></td>
+			</tr></table> 
+		</td> 
+	</tr>
+</table></div></div>
+
+<div id="menug" class="noprint">
+	<p><a class="menuprin1" href="/prix?SAINOMMAR" target="_top" >PRIX PAR MARCH&#xC9;&nbsp;<img alt="lien marchÃ©" src="/images/fleche1.png" /></a></p>
+	<p><a class="menuprin1" href="/prix?SAINOMPRODUIT"  target="_top">PRIX PAR PRODUIT&nbsp;<img alt="lien produit" src="/images/fleche1.png" /></a></p>
+	<p><a class="menuprin0" href="bilan_campagne?menu=derniers" target="_top">Bilans de campagne&nbsp;<img alt="lien bilan" src="/images/fleche1.png" /></a>  </p>
+	<p><a class="menuprin0" href="/rnm/panier_restau_co.shtml" target="_top">Restauration collective&nbsp;<img alt="lien restauration" src="/images/fleche1.png" /></a></p>
+	<p><a class="menuprin0" href="/rnm/ReseauRNM.shtml"  target="_top">Le RNM&nbsp;<img alt="lien RNM" src="/images/fleche1.png" /></a></p>
+	<div style="clear:both"></div>
+</div>
+<div id="encours"><br /><img src="/images/attendre.gif" alt="En cours" style="display: block; margin: 0 auto;" /><p>requ&ecirc;te en cours</p><br /></div>
+</header>
+
+<main>
+<div id="main">
+<img src="/images/rnmh80.png" title="RNM.franceagrimer.fr" style="margin-right:50px"  alt="RNM" class="noweb" />
+<div class="signet"><a href="/" target="_top"><img class="opacite05" src="/images/home16.png" alt="home"></a><a href="/prix?SAINOMPRODUIT">&gt;&nbsp;Produits</a>  <a href="/prix?VIANDE" onclick="attente();">&gt;&nbsp;Viande</a>  &gt;&nbsp;Bovins </div>
+
+<h1 class="bleu">Bovins</h1>
+<h2 style="margin-top:0;text-align:center;"><small>derni&egrave;re cotation avant le 02-10-2026</small></h2>
+<div class="noprint"><div class="form1"><div class="form1_g">
+<form id="une_esp" method="post" action="/prix" onsubmit="return date_ok_attente('val1',false)">
+<input type="hidden" name="SECTEUR" value="19" />
+<table ><tr><td>autre date&nbsp;</td><td><input type="text" name="DATE" id="val1" size="12" value="" /></td><td>
+ <input type="submit" value="OK" /> 
+<input type="button" class="noxls" value="Imprimer" onclick="window.print()" />
+</td></tr><tr><td></td><td><small><strong>JJ-MM-AA </strong>ou<strong> JJMMAA</strong></small></td><td></td></tr></table>
+</form>
+</div> <div class="form1_d">
+<p><a class="droit" href="/prix?BOVINS&12MOIS" onclick="attente();"><img src="/images/fleche1.png" alt="lien" /> Historique 12 mois</a></p>
+<p><a class="droit" href="#" onclick="liste_libsec(19,0)"><img src="/images/fleche1.png" alt="lien" /> Toutes&nbsp;les&nbsp;séries&nbsp;historiques</a></p>
+<form id="tab" method="post" action="/prix">
+<input type="hidden" name="SECTEUR" value="19" />
+<input type="hidden" name="LASTDATE" value="02/10/26" />
+<p  class="noxls"> <a class="droit" href="#" onclick="document.getElementById('tab').submit()"><img src="/images/fleche1.png" alt="lien" /> Voir dans un tableur</a></p> 
+</form>
+</div></div></div>
+<hr />
+<p class="unseul"><b>Voir un seul produit : </b>
+ <a href="/prix?BOEUF">Boeuf</a> 
+ <a href="/prix?JEUNE-BOVIN">Jeune bovin</a> 
+ <a href="/prix?VEAU">Veau</a> 
+</p>
+<p class="checkminmax"><input  onclick="checkminmax(this);" type="checkbox"/> Afficher Cours mini et maxi </p>
+<p><b>Voir stade de commercialisation : </b><span style="white-space:nowrap"><input class="checkstade" onclick="procheckstade(this,5)" id="cbsta5" checked="" type="checkbox"/>Grossistes</span> <span style="white-space:nowrap"><input class="checkstade" onclick="procheckstade(this,7)" id="cbsta7" checked="" type="checkbox"/>Détail</span> </p>
+<p class="noprint"><input id="sellibelle" onclick="prosellibelle();" type="checkbox"/> N'afficher que les libellés contenant ce mot : <input type="text" id="sellibnom" size="12" value="" onkeyup="prosellibelle()"/></p>
+<table class="tabcot" id="tabcotmar">
+<thead>
+<tr><th class="thcot">produit </th><th class="thcot">prix<br />moyen</th><th class="thcot">varia</th><th class="thcot minmax">mini</th><th class="thcot minmax">maxi</th>
+</tr>
+</thead><tbody>
+<tr class="sta5"><td colspan="5" class="tdcotcolspan"><strong><a href="/prix?M0162:MARCHE">MIN de Rungis : découpes de viande</a></strong><span class="noxls">                     march&eacute; du</span> 25/09/26 (cours Grossistes) <small>unit&eacute; : <span class="euro">&euro; HT</span> le kg* </small></td></tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(580162,'')"> BOEUF vache (basse côte) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>9.10</strong></td>
+<td class="tdcotc"> +0.10</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(60162,'')"> BOEUF vache (bavette d&#39;aloyau) prêt à découper U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>12.80</strong></td>
+<td class="tdcotc"> -0.90</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(560162,'')"> BOEUF vache (bavette de flanchet) prêt à découper U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>12.05</strong></td>
+<td class="tdcotc"> -0.35</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(610162,'')"> BOEUF vache (boule de macreuse) prêt à découper U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>10.15</strong></td>
+<td class="tdcotc"> +0.15</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57228224,'')"> BOEUF vache (coeur de rumsteck) prêt à découper U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>10.20</strong></td>
+<td class="tdcotc"> -0.35</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(600162,'')"> BOEUF vache (collier) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>8.40</strong></td>
+<td class="tdcotc"> -0.10</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(550162,'')"> BOEUF vache (côte détalonnée) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>14.55</strong></td>
+<td class="tdcotc"> -1.00</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(540162,'')"> BOEUF vache (entrecôte) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>21.25</strong></td>
+<td class="tdcotc"> +1.50</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57228225,'')"> BOEUF vache (faux filet) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>14.65</strong></td>
+<td class="tdcotc"> -0.05</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57228226,'')"> BOEUF vache (filet) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>25.55</strong></td>
+<td class="tdcotc"> +0.65</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(320162,'')"> BOEUF vache (jarret) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>9.70</strong></td>
+<td class="tdcotc"> -0.10</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(590162,'')"> BOEUF vache (paleron) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>10.40</strong></td>
+<td class="tdcotc"> -0.30</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(140162,'')"> BOEUF vache (rond de gite) prêt à découper U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>12.60</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(160162,'')"> BOEUF vache (semelle) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>11.20</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(570162,'')"> BOEUF vache (tende de tranche) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>11.50</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(70162,'')"> BOEUF vache (tranche grasse) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>9.00</strong></td>
+<td class="tdcotc"> +0.40</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(700162,'')"> VEAU (bas de carré sans os) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>9.20</strong></td>
+<td class="tdcotc"> +0.20</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(780162,'')"> VEAU (carré avec os) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>13.40</strong></td>
+<td class="tdcotc"> -0.20</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(660162,'')"> VEAU (épaule sans os) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>9.80</strong></td>
+<td class="tdcotc"> -0.20</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(670162,'')"> VEAU (filet) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>18.85</strong></td>
+<td class="tdcotc"> -0.65</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(680162,'')"> VEAU (jarret avec os) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>9.05</strong></td>
+<td class="tdcotc"> -0.25</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(710162,'')"> VEAU (nerveux sans os) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>10.60</strong></td>
+<td class="tdcotc"> +0.20</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(640162,'')"> VEAU (noix patissière) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>11.85</strong></td>
+<td class="tdcotc"> +0.35</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(620162,'')"> VEAU (noix) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>13.60</strong></td>
+<td class="tdcotc"> -0.20</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(690162,'')"> VEAU (poitrine sans os) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>5.60</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(650162,'')"> VEAU (quasi) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>14.05</strong></td>
+<td class="tdcotc"> -0.15</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(630162,'')"> VEAU (sous noix) semi-paré U.E. sous-vide </a></td>
+<td class="tdcotr"><strong>11.45</strong></td>
+<td class="tdcotc"> -0.05</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td colspan="5" class="tdcotcolspan"><strong><a href="/prix?M0157:MARCHE">MIN de Rungis : gros bovins</a></strong><span class="noxls">                     march&eacute; du</span> 02/10/26 (cours Grossistes) <small>unit&eacute; : <span class="euro">&euro; HT</span> le kg* </small></td></tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(10157,'')"> BOEUF génisse (carcasse) France cat.   E </a></td>
+<td class="tdcotr"><strong>8.80</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 8.40</td>
+<td class="tdcotr minmax"> 8.90</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(100157,'')"> BOEUF génisse (carcasse) France cat.  R </a></td>
+<td class="tdcotr"><strong>8.40</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 8.00</td>
+<td class="tdcotr minmax"> 8.60</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(40157,'')"> BOEUF génisse (carcasse) France cat.   U </a></td>
+<td class="tdcotr"><strong>8.70</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 8.50</td>
+<td class="tdcotr minmax"> 8.80</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(20157,'')"> BOEUF génisse (quartier arrière) France cat.   E </a></td>
+<td class="tdcotr"><strong>11.80</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 11.40</td>
+<td class="tdcotr minmax"> 12.10</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(110157,'')"> BOEUF génisse (quartier arrière) France cat.  R </a></td>
+<td class="tdcotr"><strong>10.50</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 9.90</td>
+<td class="tdcotr minmax"> 10.60</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(50157,'')"> BOEUF génisse (quartier arrière) France cat.   U </a></td>
+<td class="tdcotr"><strong>11.30</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 10.40</td>
+<td class="tdcotr minmax"> 11.50</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(30157,'')"> BOEUF génisse (quartier avant) France cat.   E </a></td>
+<td class="tdcotr"><strong>7.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 6.90</td>
+<td class="tdcotr minmax"> 7.20</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(120157,'')"> BOEUF génisse (quartier avant) France cat.  R </a></td>
+<td class="tdcotr"><strong>6.60</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 6.50</td>
+<td class="tdcotr minmax"> 6.70</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(60157,'')"> BOEUF génisse (quartier avant) France cat.   U </a></td>
+<td class="tdcotr"><strong>6.80</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 6.60</td>
+<td class="tdcotr minmax"> 7.00</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(130157,'')"> BOEUF vache (carcasse) France cat.  R </a></td>
+<td class="tdcotr"><strong>7.90</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 7.70</td>
+<td class="tdcotr minmax"> 8.00</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(70157,'')"> BOEUF vache (carcasse) France cat.   U </a></td>
+<td class="tdcotr"><strong>8.10</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 7.90</td>
+<td class="tdcotr minmax"> 8.20</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57209605,'')"> BOEUF vache (quartier arrière) France cat.   E </a></td>
+<td class="tdcotr"><strong>9.90</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 9.70</td>
+<td class="tdcotr minmax"> 10.50</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(140157,'')"> BOEUF vache (quartier arrière) France cat.  R </a></td>
+<td class="tdcotr"><strong>9.40</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 9.00</td>
+<td class="tdcotr minmax"> 9.60</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(80157,'')"> BOEUF vache (quartier arrière) France cat.   U </a></td>
+<td class="tdcotr"><strong>9.60</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 9.50</td>
+<td class="tdcotr minmax"> 9.90</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57201053,'')"> BOEUF vache (quartier arrière) U.E. cat.   E </a></td>
+<td class="tdcotr"><strong>10.80</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 9.90</td>
+<td class="tdcotr minmax"> 11.50</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(170157,'')"> BOEUF vache (quartier arrière) U.E. cat.  R </a></td>
+<td class="tdcotr"><strong>8.90</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 8.60</td>
+<td class="tdcotr minmax"> 9.00</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(540157,'')"> BOEUF vache (quartier arrière) U.E. cat.   U </a></td>
+<td class="tdcotr"><strong>9.30</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 8.90</td>
+<td class="tdcotr minmax"> 9.60</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(150157,'')"> BOEUF vache (quartier avant) France cat.  R </a></td>
+<td class="tdcotr"><strong>5.90</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 5.70</td>
+<td class="tdcotr minmax"> 6.10</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(90157,'')"> BOEUF vache (quartier avant) France cat.   U </a></td>
+<td class="tdcotr"><strong>6.20</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> 6.00</td>
+<td class="tdcotr minmax"> 6.40</td>
+</tr>
+<tr class="sta5"><td colspan="5" class="tdcotcolspan"><strong><a href="/prix?M0153:MARCHE">MIN de Rungis : produits tripiers</a></strong><span class="noxls">                     march&eacute; du</span> 18/09/26 (cours Grossistes) <small>unit&eacute; : <span class="euro">&euro; HT</span> le kg* </small></td></tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233115,'')"> BOEUF (coeur) Toute Origine </a></td>
+<td class="tdcotr"><strong>2.30</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233116,'')"> BOEUF (foie) Toute Origine </a></td>
+<td class="tdcotr"><strong>2.40</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233117,'')"> BOEUF (hampe) Toute Origine </a></td>
+<td class="tdcotr"><strong>7.60</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233118,'')"> BOEUF (joue noix) France </a></td>
+<td class="tdcotr"><strong>14.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233119,'')"> BOEUF (joue noix) U.E. </a></td>
+<td class="tdcotr"><strong>12.60</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233120,'')"> BOEUF (langue) France </a></td>
+<td class="tdcotr"><strong>8.90</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233121,'')"> BOEUF (langue) U.E. </a></td>
+<td class="tdcotr"><strong>7.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(500153,'')"> BOEUF (onglet) France </a></td>
+<td class="tdcotr"><strong>14.70</strong></td>
+<td class="tdcotc"> -0.30</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(510153,'')"> BOEUF (onglet) U.E. </a></td>
+<td class="tdcotr"><strong>11.50</strong></td>
+<td class="tdcotc"> -0.95</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233124,'')"> BOEUF (queue) Toute Origine </a></td>
+<td class="tdcotr"><strong>7.70</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233123,'')"> BOEUF (rognon) Toute Origine </a></td>
+<td class="tdcotr"><strong>2.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233125,'')"> VEAU (cervelle) Toute Origine (la pièce) </a></td>
+<td class="tdcotr"><strong>2.60</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233126,'')"> VEAU (coeur) Toute Origine </a></td>
+<td class="tdcotr"><strong>2.30</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233460,'')"> VEAU (foie) France </a></td>
+<td class="tdcotr"><strong>16.80</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(340153,'')"> VEAU (foie) U.E. </a></td>
+<td class="tdcotr"><strong>9.00</strong></td>
+<td class="tdcotc"> +0.20</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233127,'')"> VEAU (langue) Toute Origine </a></td>
+<td class="tdcotr"><strong>8.80</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233128,'')"> VEAU (pied) Toute Origine (la pièce) </a></td>
+<td class="tdcotr"><strong>2.60</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233167,'')"> VEAU (ris de coeur) U.E. </a></td>
+<td class="tdcotr"><strong>39.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233168,'')"> VEAU (ris de gorge) U.E. </a></td>
+<td class="tdcotr"><strong>21.50</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233129,'')"> VEAU (rognon) Toute Origine (la pièce) </a></td>
+<td class="tdcotr"><strong>2.80</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233133,'')"> VEAU (tête) blanche roulée Toute Origine </a></td>
+<td class="tdcotr"><strong>7.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(57233132,'')"> VEAU (tête) grise roulée Toute Origine </a></td>
+<td class="tdcotr"><strong>6.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td colspan="5" class="tdcotcolspan"><strong><a href="/prix?M0158:MARCHE">MIN de Rungis : veau</a></strong><span class="noxls">                     march&eacute; du</span> 02/10/26 (cours Grossistes) <small>unit&eacute; : <span class="euro">&euro; HT</span> le kg* </small></td></tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(660158,'')"> VEAU (basse) rose  clair U.E. cat. O </a></td>
+<td class="tdcotr"><strong>6.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(650158,'')"> VEAU (basse) rose  clair U.E. cat.  R </a></td>
+<td class="tdcotr"><strong>6.10</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(200158,'')"> VEAU (basse) rose France cat. O </a></td>
+<td class="tdcotr"><strong>5.50</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(120158,'')"> VEAU (basse) rose France cat.  R </a></td>
+<td class="tdcotr"><strong>5.70</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(40158,'')"> VEAU (basse) rose France cat.   U </a></td>
+<td class="tdcotr"><strong>5.80</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(680158,'')"> VEAU (basse) rose U.E. cat. O </a></td>
+<td class="tdcotr"><strong>5.60</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(670158,'')"> VEAU (basse) rose U.E. cat.  R </a></td>
+<td class="tdcotr"><strong>5.70</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(250158,'')"> VEAU (basse) rouge France cat. O </a></td>
+<td class="tdcotr"><strong>5.20</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(170158,'')"> VEAU (basse) rouge France cat.  R </a></td>
+<td class="tdcotr"><strong>5.30</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(90158,'')"> VEAU (basse) rouge France cat.   U </a></td>
+<td class="tdcotr"><strong>5.50</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(10158,'')"> VEAU (carcasse) blanc France cat.   E </a></td>
+<td class="tdcotr"><strong>10.60</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(100158,'')"> VEAU (carcasse) blanc France cat.  R </a></td>
+<td class="tdcotr"><strong>9.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(20158,'')"> VEAU (carcasse) blanc France cat.   U </a></td>
+<td class="tdcotr"><strong>9.60</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(920158,'')"> VEAU (carcasse) blanc U.E. cat.   E </a></td>
+<td class="tdcotr"><strong>8.90</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(930158,'')"> VEAU (carcasse) blanc U.E. cat.   U </a></td>
+<td class="tdcotr"><strong>8.70</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(600158,'')"> VEAU (carcasse) rose  clair France cat.   E </a></td>
+<td class="tdcotr"><strong>9.10</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(220158,'')"> VEAU (carcasse) rose  clair France cat. O </a></td>
+<td class="tdcotr"><strong>8.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(140158,'')"> VEAU (carcasse) rose  clair France cat.  R </a></td>
+<td class="tdcotr"><strong>8.30</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(60158,'')"> VEAU (carcasse) rose  clair France cat.   U </a></td>
+<td class="tdcotr"><strong>8.70</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(940158,'')"> VEAU (carcasse) rose  clair U.E. cat.   E </a></td>
+<td class="tdcotr"><strong>8.30</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(620158,'')"> VEAU (carcasse) rose  clair U.E. cat. O </a></td>
+<td class="tdcotr"><strong>6.80</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(610158,'')"> VEAU (carcasse) rose  clair U.E. cat.  R </a></td>
+<td class="tdcotr"><strong>7.80</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(950158,'')"> VEAU (carcasse) rose  clair U.E. cat.   U </a></td>
+<td class="tdcotr"><strong>8.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(210158,'')"> VEAU (carcasse) rose France cat. O </a></td>
+<td class="tdcotr"><strong>6.40</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(130158,'')"> VEAU (carcasse) rose France cat.  R </a></td>
+<td class="tdcotr"><strong>7.30</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(50158,'')"> VEAU (carcasse) rose France cat.   U </a></td>
+<td class="tdcotr"><strong>8.10</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(640158,'')"> VEAU (carcasse) rose U.E. cat. O </a></td>
+<td class="tdcotr"><strong>6.00</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(630158,'')"> VEAU (carcasse) rose U.E. cat.  R </a></td>
+<td class="tdcotr"><strong>6.30</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(230158,'')"> VEAU (carcasse) rouge France cat. O </a></td>
+<td class="tdcotr"><strong>6.10</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(150158,'')"> VEAU (carcasse) rouge France cat.  R </a></td>
+<td class="tdcotr"><strong>6.30</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(70158,'')"> VEAU (carcasse) rouge France cat.   U </a></td>
+<td class="tdcotr"><strong>6.40</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(700158,'')"> VEAU (pan) rose  clair U.E. cat. O </a></td>
+<td class="tdcotr"><strong>9.70</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(690158,'')"> VEAU (pan) rose  clair U.E. cat.  R </a></td>
+<td class="tdcotr"><strong>9.90</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(190158,'')"> VEAU (pan) rose France cat. O </a></td>
+<td class="tdcotr"><strong>8.30</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(110158,'')"> VEAU (pan) rose France cat.  R </a></td>
+<td class="tdcotr"><strong>10.20</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(30158,'')"> VEAU (pan) rose France cat.   U </a></td>
+<td class="tdcotr"><strong>10.50</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(720158,'')"> VEAU (pan) rose U.E. cat. O </a></td>
+<td class="tdcotr"><strong>8.20</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(710158,'')"> VEAU (pan) rose U.E. cat.  R </a></td>
+<td class="tdcotr"><strong>8.70</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(240158,'')"> VEAU (pan) rouge France cat. O </a></td>
+<td class="tdcotr"><strong>7.20</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(160158,'')"> VEAU (pan) rouge France cat.  R </a></td>
+<td class="tdcotr"><strong>7.50</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta5"><td class="tdcotl"><a href="#" onclick="histo_lib(80158,'')"> VEAU (pan) rouge France cat.   U </a></td>
+<td class="tdcotr"><strong>7.80</strong></td>
+<td class="tdcotc"> =</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+<td class="tdcotr minmax"> &nbsp;</td>
+</tr>
+<tr class="sta7"><td colspan="5" class="tdcotcolspan"><strong><a href="/prix?M2501:MARCHE">Viande France DETAIL GMS</a></strong><span class="noxls">                     march&eacute; du</span> 24/09/26 (cours Détail) <small>unit&eacute; : <span class="euro">&euro; TTC</span> le kg* </small></td></tr>
+<tr class="sta7"><td class="tdcotl"><a href="#" onclick="histo_lib(57200395,'')"> BOEUF (steak haché) 15% MG France cdt 1à3 </a></td>
+<td class="tdcotr"><strong>17.52</strong></td>
+<td class="tdcotc"> +0.41</td>
+<td class="tdcotr minmax"> 15.00</td>
+<td class="tdcotr minmax"> 19.96</td>
+</tr>
+<tr class="sta7"><td class="tdcotl"><a href="#" onclick="histo_lib(57230061,'')"> BOEUF (steak haché) 15% MG France cdt 1à3 biologique </a></td>
+<td class="tdcotr"><strong>24.47</strong></td>
+<td class="tdcotc"> +0.15</td>
+<td class="tdcotr minmax"> 22.95</td>
+<td class="tdcotr minmax"> 25.16</td>
+</tr>
+</tbody>
+</table>
+<br />(*) unit&eacute; utilis&eacute;e sauf mention contraire<br />Pour accéder à l'historique et au graphique d'une série : cliquer sur son libellé.<br />Pour accéder à toutes les cotations du marché : cliquer son nom.
+<br />
+</div></main><footer><div class="footer noprint" style="margin-top:20px">
+<hr class="hrvert" />
+<div class="btnbas">
+<a href="/abonne?AJOUTER" rel="nofollow noopener noreferrer" style="font-size: 1.2em;font-weight: bold;" >Abonnez-vous</a>
+<a href="/rnm/rnm_adr2.shtml"> Contacts</a>
+<a href="/rnm/infolegal.shtml"> Mentions l&eacute;gales</a>
+<a class="abtnbas" href="#" onclick="window.print()"><img src="/images/printer24.png" alt="imprimer" title="imprimer la page" /></a>
+ Partager
+<a class="abtnbas" href="mailto:?subject=BOVINS%20-%20RNM%20-%20prix%20cours%20march%26eacute%3b%20-%20Viande&amp;body=Copier%20coller%20l%27URL%20ci-dessous%20dans%20le%20navigateur%0D%0Ahttps%3a%2f%2frnm.franceagrimer.fr%2fprix%3fBOVINS"><img class="partage" src="/images/email24.png" alt="par mail" title="envoyer le lien par mail" /></a>
+<a class="abtnbas" target="_blank" title="Facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2frnm.franceagrimer.fr%2fprix%3fBOVINS" rel="nofollow noopener noreferrer" 
+onclick="window.open(this.href,'', 'menubar=no,toolbar=no,height=500,width=700');return false;"> 
+<img class="partage" src="/images/facebook24.png" alt="facebook" title="partager le lien sur facebook" /></a>
+<a class="abtnbas" target="_blank" title="Twitter" href="https://twitter.com/share?url=https%3a%2f%2frnm.franceagrimer.fr%2fprix%3fBOVINS&text=BOVINS%20-%20RNM%20-%20prix%20cours%20march%26eacute%3b%20-%20Viande" rel="nofollow noopener noreferrer"  
+onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"> 
+<img class="partage" src="/images/twitter24.png" alt="twitter" title="partager le lien sur twitter" /></a>
+</div></div>
+<div class="chapbas">
+<div class="chapbas_g"><a class="mobile" href="https://RNM.FranceAgriMer.fr"  target="_top">https://RNM.FranceAgriMer.fr</a>
+</div>
+<div class="chapbas_d">Le prix des produits alimentaires frais</div></div>
+<div class="divlogo100"><div class="divlogo1"><div class="divlogo">
+<a class="nobord" href="http://www.franceagrimer.fr" target="_blank" rel="noopener"><img class="divlogo_g" src="/images/logo_fam_148.png" alt="FranceAgriMer"/></a>
+<a class="nobord" href="https://agriculture.gouv.fr/" target="_blank" rel="noopener"><img class="divlogo_d" src="/images/Logo_MASA.PNG" alt="MASA" /></a>
+<p>Le <span class="rnmvert">R</span>&eacute;seau des <span class="rnmbleu">N</span>ouvelles des <span class="rnmbleu">M</span>arch&eacute;s est pilot&eacute; au niveau national par l'&eacute;tablissement public FranceAgriMer. 
+La collecte d'informations est r&eacute;alis&eacute;e en r&eacute;gion par des &eacute;quipes d'enqu&ecirc;teurs conjoncturistes du Minist&egrave;re 
+de l'Agriculture et de la SouverainetÃ© Alimentaire en DRAAF.</p></div></div></div>
+</footer></body></html>

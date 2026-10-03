@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>C&eacute;r&eacute;&#39;Obs</title>
+  <base href="/cereobs-sp/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<app-root></app-root>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  /*gtag('js', new Date());*/
+</script>
+
+
+<script src="runtime-es2015.2447f7bc152d1bd38a9b.js" type="module"></script><script src="runtime-es5.2447f7bc152d1bd38a9b.js" nomodule defer></script><script src="polyfills-es5.2353f975f14788970fe5.js" nomodule defer></script><script src="polyfills-es2015.f180e09272319c3f1823.js" type="module"></script><script src="styles-es2015.575959aa9193af3f2dcb.js" type="module"></script><script src="styles-es5.575959aa9193af3f2dcb.js" nomodule defer></script><script src="scripts.7e3c12780cbda2cc3f17.js" defer></script><script src="main-es2015.1616d92ab21b2be4622f.js" type="module"></script><script src="main-es5.1616d92ab21b2be4622f.js" nomodule defer></script></body>
+</html>

@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head id="Head1"><title>
+Forside - SGAV
+</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="documentReference" content="27460">
+<meta property="og:title" content="Forside">
+<meta property="twitter:title" content="Forside">
+<meta property="og:url" content="https://sgav.dk/">
+<meta property="twitter:card" content="summary">
+<link href="/Assets/GoBasic/Plugins/Release/h01.gobasic.plugins.css?t=070520261314" rel="stylesheet">
+<link href="/Themes/SGAV-Global-1/Release/h03.theme.min.css?t=070520261314" rel="stylesheet">
+<script type="text/javascript" src="/Assets/GoBasic/Plugins/Release/h01.gobasic.plugins.min.js?t=070520261314"></script>
+<style type="text/css">.logo img{ max-width: 210px;}@media (max-width: 1023px){.logo img{ max-width: 210px;}}</style><!-- START Fjern Cookiebots 1.gif -->
+<script id="CookiebotConfiguration" type="application/json" data-cookieconsent="ignore">
+{
+"DisableSessionPixel": true
+}
+</script>
+<!-- SLUT Fjern Cookiebots 1.gif -->
+
+<!-- START SGAV Cookiebot script -->
+<script id="Cookiebot" src="https://consent.cookiebot.eu/uc.js" data-cbid="4db1e763-97bb-438c-b380-c3695a93cf2a" data-blockingmode="auto" type="text/javascript"></script>
+<!-- SLUT SGAV Cookiebot script -->
+
+<!-- START Fjern Cookiebot logo fra banner -->
+<style type="text/css"> 
+  a#CybotCookiebotDialogPoweredbyCybot, 
+  div#CybotCookiebotDialogPoweredByText { 
+    display: none; 
+  } 
+  #CookiebotWidget .CookiebotWidget-body .CookiebotWidget-main-logo { 
+    display: none; 
+  } 
+</style>
+<!-- SLUT Fjern Cookiebot logo fra banner --><link rel="shortcut icon" href="/Media/638101587852587960/favicon.ico" /><link rel="icon" sizes="32x32" type="image/png" href="/Media/638101587852587960/favicon.ico?width=32&amp;height=32" /><link rel="icon" sizes="16x16" type="image/png" href="/Media/638101587852587960/favicon.ico?width=16&amp;height=16" /><link rel="icon" sizes="128x128" type="image/png" href="/Media/638101587852587960/favicon.ico?width=128&amp;height=128" /><link rel="icon" sizes="196x196" type="image/png" href="/Media/638101587852587960/favicon.ico?width=196&amp;height=196" /><link rel="apple-touch-icon" sizes="180x180" href="/Media/638101587852587960/favicon.ico?width=180&amp;height=180" /><link rel="apple-touch-icon" sizes="152x152" href="/Media/638101587852587960/favicon.ico?width=152&amp;height=152" /><link rel="apple-touch-icon" sizes="167x167" href="/Media/638101587852587960/favicon.ico?width=167&amp;height=167" /><link rel="canonical" href="https://sgav.dk/" />
+    <script >
+        var application = {};
+        application.script = {
+            scripts: [],
+            register: function (name, config, id) {
+                this.scripts.push({
+                    name: name,
+                    scope: {
+                        config: config,
+                        element: $('#' + id)
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body id="body" class="wide-page">
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="nPc7/JDTQUYRK75ohK/8Cqql+cLm2imaeQKy5znTzwPgeyeniEKkUTrXY+anpYoIW7bXH41jPOer78xxoBKsBQ==" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9D456832" />
+</div>
+
+        <input type="hidden" value=""
+            name="devicePixelRatio" id="devicePixelRatio" />
+        <script >
+            $(document).ready(function () {
+                $("#devicePixelRatio").val(window.devicePixelRatio);
+            });
+        </script>
+        <div id="wrapper" class="wrapper">
+	
+        
+
+        <header class="header">
+            <a id="skip" href="#content-main">Spring hovednavigationen over</a>
+            
+            <div class="header-container">
+                
+                <div class="logo">
+                    <div>
+                        <a aria-label="Gå til forsiden af SGAV" href="/"><img src="/Media/639250668856610013/LOGO_MND_SGAV_PRIMAER_DK_RGB-smaller.svg" alt="Logo" class="svg" /></a>
+                    </div>
+                </div>
+                
+                        <div class="services">
+<div class="service-menu">
+
+                    
+                        <nav id="services_ctl01_serviceMenu_ctrl" aria-label="Service Menu" class="service">
+<div>
+<ul>
+<li class="service-link"><a href="/log-paa" data-id="27769" class="btn-outline"><span>Log p&#229;</span></a></li><li class="service-link collapsed"><a href="/alle-nyheder" data-id="27623"><span>Nyheder</span></a><a tabindex="0" role="button" aria-label="Fold underpunkter ud" class="toggler"></a></li><li class="service-link"><a target="_blank" href="https://lbst.dk/tilskud/driftsstatus">Driftsstatus</a></li><li class="service-link"><a href="https://lbst.dk/tilskud/tilskudsguide" data-id="18124" target="_blank"><span>Tilskudsguide</span></a></li><li class="service-link"><a href="/om-styrelsen/kontakt" data-id="27645"><span>Kontakt</span></a></li>
+</ul>
+</div>
+</nav>
+                        <div id="services_ctl01_siteSearchInput_ctrl" class="site-search ui-front">
+<input type="text" placeholder="Søg" aria-label="Søg" class="search-query" />
+<button type="submit" aria-label="Søg på siden" class="btn btn-default"><span aria-hidden="true">Submit</span></button>
+</div>
+                        <nav aria-label="Mobilmenu" class="mobile tree-nav">
+<div class="nav-toggle">
+<a href="#mobile-menu" aria-expanded="false" aria-label="Åbn hovednavigationen" class="dropdown-toggle no-smoothscroll"><span aria-hidden="true" class="title">menu</span><span class="button"></span></a>
+</div><div id="mobile-menu" class="dropdown">
+<ul>
+<li><a href="/temaer" data-id="28150"><span>Temaer</span></a></li><li class="collapsed"><a href="/groen-trepart" data-id="28157"><span>Gr&#248;n Trepart</span></a><a tabindex="0" role="button" aria-label="Fold underpunkter ud" class="toggler"></a></li><li class="collapsed"><a href="/tilskud" data-id="27622"><span>Tilskud</span></a><a tabindex="0" role="button" aria-label="Fold underpunkter ud" class="toggler"></a></li><li class="collapsed"><a href="/om-styrelsen" data-id="27625"><span>Om styrelsen</span></a><a tabindex="0" role="button" aria-label="Fold underpunkter ud" class="toggler"></a></li>
+</ul>
+</div>
+</nav>
+                    </div></div>
+                
+                
+    
+
+            </div>
+            <nav aria-label="Hovedmenu" class="main">
+	<div class="bg">
+		<div class="cnt">
+			<ul id="main-menu" class="dropdown">
+				<li><a href="/temaer">Temaer</a></li><li class="dropdown"><a href="/groen-trepart">Grøn Trepart</a><a href="#mainNavigation_ctrl_menuItem01" aria-expanded="false" aria-label="Grøn Trepart - flere links" class="dropdown-toggle no-smoothscroll"></a><ul id="mainNavigation_ctrl_menuItem01" hidden>
+					<li><a href="/groen-trepart/kvaelstofregulering-og-arealomlaegning">Kv&#230;lstofregulering og arealoml&#230;gning</a></li><li><a href="/groen-trepart/lokale-treparter">Lokale Treparter</a></li>
+				</ul></li><li class="dropdown"><a href="/tilskud">Tilskud</a><a href="#mainNavigation_ctrl_menuItem02" aria-expanded="false" aria-label="Tilskud - flere links" class="dropdown-toggle no-smoothscroll"></a><ul id="mainNavigation_ctrl_menuItem02" hidden>
+					<li><a href="/tilskud/udbetaling-via-nemkonto">Udbetaling via NemKonto</a></li><li><a href="/tilskud/betal-tilskud-tilbage">Betal tilskud tilbage</a></li><li><a href="/tilskud/overfoer-tilskud-til-andre-transport">Overf&#248;r tilskud til andre – transport</a></li><li><a href="/tilskud/indberet-statsstoette-de-minimis">Indberet statsst&#248;tte – de minimis</a></li><li><a href="/tilskud/oversigt-over-tilskudsmodtagere">Oversigt over tilskudsmodtagere</a></li><li><a href="/tilskud/saerligt-om-optaelling-af-permanent-graes">S&#230;rligt om opt&#230;lling af permanent gr&#230;s</a></li>
+				</ul></li><li class="dropdown"><a href="/om-styrelsen">Om styrelsen</a><a href="#mainNavigation_ctrl_menuItem03" aria-expanded="false" aria-label="Om styrelsen - flere links" class="dropdown-toggle no-smoothscroll"></a><ul id="mainNavigation_ctrl_menuItem03" hidden>
+					<li><a href="/om-styrelsen/direktion">Direktion</a></li><li><a href="/om-styrelsen/maal-og-resultater">M&#229;l og resultater</a></li><li><a href="/om-styrelsen/elektronisk-fakturering">Elektronisk fakturering</a></li><li><a href="/om-styrelsen/whistleblower">Whistleblower</a></li><li><a href="/om-styrelsen/job">Job</a></li><li><a href="/om-styrelsen/presse">Presse</a></li><li><a href="/om-styrelsen/kontakt">Kontakt</a></li>
+				</ul></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+        </header>
+        <div role="main">
+            
+            
+    
+    <div name="content" id="content-main"></div>
+    
+            <div class="sectionA plh-top">
+        <div id="gb_ContentPlaceHolderDefault_topGrid_ctl02" class="module hero text-in-box align-text-left bg-color-a" style="background-image:url('/Media/638681253079059608/Mark og å - COLOURBOX7376239.jpg?crop=0%2c0%2c2000%2c1124')">
+	<div class="text">
+<div class="wrap">
+<h1 class="heading">
+Den Gr&#248;nne Trepart
+</h1><div class="rich-text">
+<p>Styrelsen for Gr&oslash;n Arealoml&aelig;gning og Vandmilj&oslash; arbejder med implementering af Gr&oslash;n Trepart-aftalen.</p>
+<p><a href="/groen-trepart" class="link-arrow" data-type="internal" data-id="28157">Den Gr&oslash;nne Trepart</a></p>
+</div>
+</div>
+</div>
+</div></div>
+    
+
+    
+    
+            <div class="sectionC plh-bottom">
+        <div id="gb_ContentPlaceHolderDefault_bottomGrid_ctl02" class="module spacer hide-in-mobile" style="height:20px">
+	
+</div><div class="container"><div class="row"><div class="span-3"><div id="gb_ContentPlaceHolderDefault_bottomGrid_ctl03" class="module multi-box bg-color-a card">
+	<div class="media">
+<a target="_blank" href="/groen-trepart/kvaelstofregulering-og-arealomlaegning"><picture>
+<source media="(max-width: 480px)" srcset="/Media/638737440376593821/colourbox12936785.webp?crop=0%2c200%2c1917%2c1080&width=480"><source media="(max-width: 678px)" srcset="/Media/638737440376593821/colourbox12936785.webp?crop=0%2c200%2c1917%2c1080&width=678"><source media="(max-width: 768px)" srcset="/Media/638737440376593821/colourbox12936785.webp?crop=0%2c200%2c1917%2c1080&width=768"><source media="(max-width: 1200px)" srcset="/Media/638737440376593821/colourbox12936785.webp?crop=0%2c200%2c1917%2c1080&width=300"><source media="(max-width: 1920px)" srcset="/Media/638737440376593821/colourbox12936785.webp?crop=0%2c200%2c1917%2c1080&width=480"><img loading="lazy" src="/Media/638737440376593821/colourbox12936785.webp?crop=0%2c200%2c1917%2c1080&amp;width=768" data-decorative="true" alt="" />
+</picture></a>
+</div><div class="text">
+<h2 class="heading">
+<a target="_blank" href="/groen-trepart/kvaelstofregulering-og-arealomlaegning">Kv&#230;lstofregulering og arealoml&#230;gning</a>
+</h2><div class="rich-text">
+<p><span>Den&nbsp;</span>udledningsbaserede markregulering tr&aelig;der i kraft den 1. januar 2027. L&aelig;s om den nye regulering, herunder udledningsgr&aelig;nser, oplandskategorier, planl&aelig;gningsv&aelig;rkt&oslash;j og kompensationsordning.</p>
+</div>
+</div>
+</div></div><div class="span-3"><div id="gb_ContentPlaceHolderDefault_bottomGrid_ctl04" class="module multi-box bg-color-a card">
+	<div class="media">
+<a target="_blank" href="https://lbst.dk/tilskud/tilskudsguide"><picture>
+<source media="(max-width: 480px)" srcset="/Media/638732201470570806/Majsmark.jpg?crop=0%2c0%2c554%2c312&width=480&quality=60"><source media="(max-width: 678px)" srcset="/Media/638732201470570806/Majsmark.jpg?crop=0%2c0%2c554%2c312&width=554&quality=60"><source media="(max-width: 768px)" srcset="/Media/638732201470570806/Majsmark.jpg?crop=0%2c0%2c554%2c312&width=554&quality=60"><source media="(max-width: 1200px)" srcset="/Media/638732201470570806/Majsmark.jpg?crop=0%2c0%2c554%2c312&width=300&quality=60"><source media="(max-width: 1920px)" srcset="/Media/638732201470570806/Majsmark.jpg?crop=0%2c0%2c554%2c312&width=480&quality=60"><img loading="lazy" src="/Media/638732201470570806/Majsmark.jpg?crop=0%2c0%2c554%2c312" data-decorative="true" alt="" />
+</picture></a>
+</div><div class="text">
+<h2 class="heading">
+<a target="_blank" href="https://lbst.dk/tilskud/tilskudsguide">Tilskudsguide</a>
+</h2><div class="rich-text">
+<p>I vores tilskudsguide kan du f&aring; overblik over, hvilke tilskud du kan s&oslash;ge. Find ogs&aring; vejledninger, ans&oslash;gningsskemaer og frister for de enkelte tilskud.</p>
+</div>
+</div>
+</div></div><div class="span-3"><div id="gb_ContentPlaceHolderDefault_bottomGrid_ctl05" class="module multi-box bg-color-a card">
+	<div class="media">
+<a target="_self" href="/groen-trepart/lokale-treparter"><picture>
+<source media="(max-width: 480px)" srcset="/Media/638731362258319106/Forside%20vaadomraade.jpg?crop=0%2c0%2c899%2c506&width=480"><source media="(max-width: 678px)" srcset="/Media/638731362258319106/Forside%20vaadomraade.jpg?crop=0%2c0%2c899%2c506&width=678"><source media="(max-width: 768px)" srcset="/Media/638731362258319106/Forside%20vaadomraade.jpg?crop=0%2c0%2c899%2c506&width=768"><source media="(max-width: 1200px)" srcset="/Media/638731362258319106/Forside%20vaadomraade.jpg?crop=0%2c0%2c899%2c506&width=300"><source media="(max-width: 1920px)" srcset="/Media/638731362258319106/Forside%20vaadomraade.jpg?crop=0%2c0%2c899%2c506&width=480"><img loading="lazy" src="/Media/638731362258319106/Forside%20vaadomraade.jpg?crop=0%2c0%2c899%2c506&amp;width=768" data-decorative="true" alt="" />
+</picture></a>
+</div><div class="text">
+<h2 class="heading">
+<a target="_self" href="/groen-trepart/lokale-treparter">Lokale Treparter</a>
+</h2><div class="rich-text">
+<p>Dette er den centrale indgang for de lokale treparters arbejde med oml&aelig;gningsplaner. L&aelig;s om indsatsbehov for kv&aelig;lstof, potentiale for udtagning af lavbundsjorder og om IT-platformen MARS.</p>
+</div>
+</div>
+</div></div><div class="span-3"><div id="gb_ContentPlaceHolderDefault_bottomGrid_ctl06" class="module multi-box bg-color-a card">
+	<div class="media">
+<a target="_blank" href="https://sgavmst.dk/arter/artsforvaltning/beskyttede-arter/ulv"><picture>
+<source media="(max-width: 480px)" srcset="/Media/638829906246923740/web_eskil-j-nielsen-ferreira_20221014_borrishede-288.jpg?crop=0%2c0%2c1918%2c1079&width=480"><source media="(max-width: 678px)" srcset="/Media/638829906246923740/web_eskil-j-nielsen-ferreira_20221014_borrishede-288.jpg?crop=0%2c0%2c1918%2c1079&width=678"><source media="(max-width: 768px)" srcset="/Media/638829906246923740/web_eskil-j-nielsen-ferreira_20221014_borrishede-288.jpg?crop=0%2c0%2c1918%2c1079&width=768"><source media="(max-width: 1200px)" srcset="/Media/638829906246923740/web_eskil-j-nielsen-ferreira_20221014_borrishede-288.jpg?crop=0%2c0%2c1918%2c1079&width=300"><source media="(max-width: 1920px)" srcset="/Media/638829906246923740/web_eskil-j-nielsen-ferreira_20221014_borrishede-288.jpg?crop=0%2c0%2c1918%2c1079&width=480"><img loading="lazy" src="/Media/638829906246923740/web_eskil-j-nielsen-ferreira_20221014_borrishede-288.jpg?crop=0%2c0%2c1918%2c1079&amp;width=768" alt="" />
+</picture></a>
+</div><div class="text">
+<h2 class="heading">
+<a target="_blank" href="https://sgavmst.dk/arter/artsforvaltning/beskyttede-arter/ulv">Gode r&#229;d om ulve</a>
+</h2><div class="rich-text">
+<p>F&aring; gode r&aring;d om ulve i de tre pjecer: "S&aring;dan f&aelig;rdes du trygt i naturen", "Pas p&aring; din hund i naturen" og "Undg&aring; at tiltr&aelig;kke ulve n&aelig;r din bolig".&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div></div></div></div><div id="gb_ContentPlaceHolderDefault_bottomGrid_ctl07" class="module spacer hide-in-mobile" style="height:20px">
+	
+</div><div class="container"><div class="row"><div class="span-12"><div id="gb_ContentPlaceHolderDefault_bottomGrid_ctl08" class="module dynamic-list item-list">
+	<div class="introduction">
+<h2 class="heading">
+Seneste nyheder
+</h2>
+</div><div class="ajaxhost">
+
+</div><script data-elementId="ContentPlaceHolderDefault_bottomGrid_ctl08">application.script.register('itemlist',{"options": {"generator": "GoBasic.Presentation.Controls.ListHelper, GoBasic.Presentation", "dateRange": false}, "context": "eyJzaXRlU2VhcmNoIjogZmFsc2UsICJwZGZTZWFyY2giOiBmYWxzZSwgImNvbnRleHRQYXRoIjogIiIsICJmaWx0ZXIiOiB7InQiOiBbIk5ld3NQYWdlIl0sICJkZiI6ICIwMS0wMS0yMDE2IiwgImR0IjogIjMxLTEyLTIwMjYiLCAiY2lkcyI6IFsiMjk2ODciLCAiMjk2ODgiLCAiMjk2OTAiLCAiMjk2ODkiLCAiMjk2OTEiLCAiMjk2OTMiLCAiMjk2OTIiLCAiMjk2OTQiLCAiMjk2OTYiLCAiMjk3NTYiLCAiMjk2OTUiLCAiMzA0ODkiLCAiMzAxMDQiXSwgInJmIjogWyIyNzc5OCJdLCAiciI6IHRydWUsICJleGFjdE1hdGNoIjogZmFsc2UsICJjbyI6ICJPciIsICJjdG8iOiAiQW5kIiwgImUiOiBbeyJ0eXBlIjogIk5vdFF1ZXJ5IiwgInEiOiB7InR5cGUiOiAiVGVybVF1ZXJ5IiwgImZuIjogIl9faWQiLCAidiI6ICIyNzQ2MCJ9fV19LCAib3B0aW9ucyI6IHsic2hvd1RlYXNlciI6IHRydWUsICJ0ZWFzZXJUZXh0TGVuZ3RoIjogMTYwLCAic2hvd0NhdGVnb3JpemF0aW9ucyI6IGZhbHNlLCAic2hvd0RhdGUiOiB0cnVlLCAiZG9Ob3RTaG93SW5pdGlhbFJlc3VsdHMiOiBmYWxzZSwgImRpc3BsYXlSZWNvcmRUeXBlRmlsdGVyIjogZmFsc2UsICJpbmNsdWRlUGlubmVkU2VhcmNoUXVlcmllcyI6IGZhbHNlLCAic2hvd1Jzc0xpbmsiOiBmYWxzZSwgIm1heEl0ZW1zU2hvd24iOiAxLCAiZ3JvdXBCeSI6ICJOb0dyb3VwaW5nIiwgInNob3dQYWdlciI6IGZhbHNlLCAic2hvd0xvYWRNb3JlIjogZmFsc2UsICJhcmNoaXZlTGluayI6ICI8YSBocmVmPVwiL2FsbGUtbnloZWRlclwiIHRhcmdldD1cIl9zZWxmXCI+QWxsZSBueWhlZGVyPC9hPiIsICJyc3NUaXRsZSI6ICIiLCAicnNzRGVzY3JpcHRpb24iOiAiIiwgInNob3dUaHVtYm5haWxzIjogdHJ1ZSwgInNob3dBYnNvbHV0ZVVybCI6IGZhbHNlLCAidHJhbnNsYXRpb25Gb2xkZXIiOiAiRHluYW1pYyBMaXN0IE1vZHVsZSIsICJzb3VyY2VQYXRoIjogIiIsICJzaG93Rm9ybWF0dGVkVXJsIjogZmFsc2UsICJmZWF0dXJlZEl0ZW1JZHMiOiAiIiwgImNvbHVtblNwYW4iOiAxMiwgImNvbHVtbnMiOiA0LCAicmVzVHh0Tm9uZSI6ICIiLCAicmVzVHh0U2luZ3VsYXIiOiAiIiwgInJlc1R4dFBsdXJhbCI6ICIiLCAic29ydGluZyI6ICIiLCAiaGVhZGxpbmVFbXB0eSI6IGZhbHNlLCAib3BlbkxpbmtzSW5Qb3B1cFdpbmRvdyI6IGZhbHNlLCAiY2hhbmdlRnJvbUgyVG9IMSI6IGZhbHNlLCAiZG9Ob3RTaG93T2xkRG9jdW1lbnRzIjogZmFsc2UsICJvcGVuZWRMaW5rc0Rpc3BsYXlNb2RlIjogIk9wZW5MaW5rc0luVGhlU2FtZVdpbmRvdyIsICJkaXNwbGF5RXhhY3RNYXRjaFNlYXJjaENoZWNrYm94IjogZmFsc2UsICJkaXNwbGF5U29ydEJ5UmVsZXZhbmNlT3JEYXRlIjogZmFsc2V9fQ==", "hash": "48cc4482e9c98cce2fd845e03b65895f23f05cb202921d1dfb83b43e7cd7c5e7"},'gb_ContentPlaceHolderDefault_bottomGrid_ctl08');</script>
+</div></div></div></div></div>
+    
+
+            
+        </div>
+        </div>
+        <footer aria-label="Bund">
+            
+            <div id="gb_footerGrid_ctl01" class="module inner-grid bg-color-d margin-zero-top">
+	<div class="container"><div class="row"><div class="span-3"><div id="gb_footerGrid_ctl02_ctl01" class="module multi-box card">
+	<div class="text">
+<h2 class="heading">
+Kontakt
+</h2><div class="rich-text">
+<p>Styrelsen for Gr&oslash;n Arealoml&aelig;gning og Vandmilj&oslash;<br /> Nyropsgade 30<br />1780 K&oslash;benhavn V<br />Tlf.: +45 33 95 80 00<br />E-mail: <a type="mailto" href="mailto:mail@sgav.dk">mail@sgav.dk</a></p>
+<p>EAN: 5798000893016<br />CVR: 20814616<br />IBAN nr.: DK21 0216 4069 2397 57<br />Swift Code: DABADKKK</p>
+<p><a href="/om-styrelsen/elektronisk-fakturering" data-type="internal" data-id="27644">Elektronisk fakturering</a><br /><br />&Aring;ben:<br />Mandag &ndash; Torsdag fra 08.30 &ndash; 15.00 <br />Fredag fra 08.30 &ndash; 14.00</p>
+</div>
+</div>
+</div></div><div class="span-3"><div id="gb_footerGrid_ctl02_ctl02" class="module link-list card">
+	<div class="text">
+<h2 class="heading">
+Følg os
+</h2><ul class="items">
+<li class="item"><a target="_self" href="https://dk.linkedin.com/company/styrelsen-for-gr%C3%B8n-arealoml%C3%A6gning-og-vandmilj%C3%B8">LinkedIn</a></li><li class="item"><a target="_blank" href="https://www.facebook.com/styrelsenforgronarealomlaegningogvandmiljo">Facebook</a></li><li class="item"><a target="_blank" title="Styrelsen for Grøn Arealomlægning og Vandmiljøs Instagram" href="https://www.instagram.com/etgroenneredanmark/">Instagram</a></li>
+</ul>
+</div>
+</div></div><div class="span-3"><div id="gb_footerGrid_ctl02_ctl03" class="module link-list card">
+	<div class="text">
+<h2 class="heading">
+Genveje
+</h2><ul class="items">
+<li class="item"><a target="_self" href="/alle-nyheder/abonner">Abonn&#233;r</a></li><li class="item"><a target="_self" href="/om-styrelsen/job/ledige-stillinger">Ledige stillinger</a></li><li class="item"><a target="_self" href="/om-styrelsen/whistleblower">Whistleblower</a></li><li class="item"><a target="_self" href="/om-styrelsen/presse">Presse</a></li><li class="item"><a target="_blank" href="https://en.lbst.dk/">English</a></li>
+</ul>
+</div>
+</div></div><div class="span-3"><div id="gb_footerGrid_ctl02_ctl04" class="module link-list card">
+	<div class="text">
+<h2 class="heading">
+Ministeriets institutioner
+</h2><ul class="items">
+<li class="item"><a target="_blank" title="Ministeriet for Natur og Dyrevelfærd" href="https://mgtp.dk/">Ministeriet for Natur og Dyrevelf&#230;rd</a></li><li class="item"><a target="_blank" href="https://naturstyrelsen.dk/">Naturstyrelsen</a></li><li class="item"><a target="_self" href="/om-styrelsen/kontakt" class="btn">Kontakt Styrelsen for Gr&#248;n Arealoml&#230;gning og Vandmilj&#248;</a></li>
+</ul>
+</div>
+</div></div></div></div><div id="gb_footerGrid_ctl02_ctl05" class="module spacer hide-in-mobile" style="height:32px">
+	
+</div>
+</div><div id="gb_footerGrid_ctl03" class="module inner-grid bg-color-a margin-zero-top">
+	<div id="gb_footerGrid_ctl04_ctl01" class="module code">
+	<!-- script begin --><!-- Originalt link udkommenteret
+<a class="link-arrow" style="font-weight: 400" onclick="CV.webinteraction.share()" href="javascript:void(0)">TeamViewer skærmdeling</a>
+<script src=https://cdn.engage.teamviewer.com/cdn/js/vxh5dazccg.js type="text/javascript" async></script>
+-->
+
+<script src=https://cdn.engage.teamviewer.com/cdn/js/vxh5dazccg.js type="text/javascript" async></script><!-- script end -->
+</div><div class="container"><div class="row"><div class="span-12"><div id="gb_footerGrid_ctl04_ctl02" class="module link-list horizontal-list card">
+	<div class="text">
+<ul class="items">
+<li class="item"><a target="_self" href="/cookies">Cookies</a></li><li class="item"><a target="_blank" title="Tilgængelighedserklæring" href="https://www.was.digst.dk/sgav-dk">Tilg&#230;ngelighedserkl&#230;ring</a></li><li class="item"><a target="_blank" href="/persondatabeskyttelse">Persondatabeskyttelse</a></li><li class="item"><a target="_self" href="https://www.borger.dk/hjaelp-og-vejledning/hvad-har-du-brug-for-hjaelp-til/borger-dk/teknisk-hjaelp/oplaesning-af-indhold">L&#230;s op</a></li><li class="item"><a target="_self" href="/om-styrelsen/kontakt">Grypp sk&#230;rmdeling</a></li>
+</ul>
+</div>
+</div></div></div></div><div class="container"><div class="row"><div class="span-12"><div id="gb_footerGrid_ctl04_ctl03" class="module code">
+	<!-- script begin --><!-- Siteimprove Start-->
+<script async src="https://siteimproveanalytics.com/js/siteanalyze_260336.js"></script>
+<!-- Siteimprove Slut--><!-- script end -->
+</div></div></div></div>
+</div>
+            
+        </footer>
+        
+        <script type="text/javascript" src="/Assets/GoBasic/Plugins/Release/b01.gobasic.plugins.min.js?t=070520261314"></script>
+<script type="text/javascript" src="/Assets/GoBasic/Applications/Release/b02.gobasic.applications.min.js?t=070520261314"></script>
+<script type="text/javascript" src="/Assets/Custom/Applications/Release/b02.custom.applications.min.js?t=070520261314"></script>
+<script type="text/javascript">
+    if (application.initialization) application.initialization.init();
+    if (application.navigation) application.navigation.init();
+    if (application.search) application.search.init({"collapsedButtonHelpText": "Fold søgefelt ud", "notCollapsedButtonHelpText": "Fold søgefelt ind", "notCollapsedTextEnteredButtonHelpText": "Søg", "url": "/find"});
+    if (application.finalization) application.finalization.init();
+</script>
+
+        <script >
+            for (var s = 0; s < application.script.scripts.length; s++) {
+                var script = application.script.scripts[s];
+                var app = application[script.name];
+                if (app)
+                    app.init(script.scope);
+            }
+        </script>
+    </form>
+
+    
+</body>
+</html>

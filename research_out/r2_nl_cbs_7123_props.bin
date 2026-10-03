@@ -1,0 +1,13 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/7123slac/$metadata#Cbs.OData.WebAPI.DataProperties","value":[
+    {
+      "odata.type":"Cbs.OData.Dimension","ID":0,"Position":0,"ParentID":null,"Type":"Dimension","Key":"Slachtdieren","Title":"Slachtdieren","Description":""
+    },{
+      "odata.type":"Cbs.OData.TimeDimension","ID":1,"Position":1,"ParentID":null,"Type":"TimeDimension","Key":"Perioden","Title":"Perioden","Description":null,"ReleasePolicy":true
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":2,"Position":2,"ParentID":null,"Type":"Topic","Key":"AantalSlachtingen_1","Title":"Aantal slachtingen","Description":"Het aantal geslachte goedgekeurde dieren, voor de slacht aangeboden door Nederlandse agrarische bedrijven. Goedgekeurde dieren zijn dieren die voldoen aan de gestelde eisen ten aanzien van volksgezondheid, diergezondheid en dierenwelzijn. \r\nDe eisen komen voort uit de Nederlandse of Europese Regelgeving. Bron: Ministerie van Landbouw, Natuur en Voedselkwaliteit. Voedsel en Waren Autoriteit/Rijksdienst voor de Keuring van Vee en Vlees.\r\n","Datatype":"Double","Unit":"x 1 000","Decimals":1,"Default":"Missing"
+    },{
+      "odata.type":"Cbs.OData.Topic","ID":3,"Position":3,"ParentID":null,"Type":"Topic","Key":"GeslachtGewicht_2","Title":"Geslacht gewicht","Description":"Het gewicht van het gehele of overlangs in twee helften gesneden lichaam van een geslacht dier na het uitbloeden en ontdaan van ingewanden, organen, huid en kop. Dit wordt het \"koudgewicht\" genoemd.\r\nBij pluimvee worden vel, maag, lever, hart en nek meegeteld in het slachtgewicht.\r\nBron: Rijksdienst voor Ondernemend Nederland en de Stichting Branche Organisatie Kalversector.\r\n","Datatype":"Long","Unit":"1 000 kg","Decimals":0,"Default":"Missing"
+    }
+  ]
+}
