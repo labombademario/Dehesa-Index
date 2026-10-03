@@ -55,6 +55,10 @@ def num(x):
     try: v = float(str(x).replace(",", "").strip())
     except ValueError: return None
     return v if v == v and abs(v) != float("inf") else None
+def pos(x):
+    """El USDA publica 0 cuando una media ponderada no aplica (p. ej. precios de oferta): 0 significa 'sin dato', no un precio."""
+    v = num(x)
+    return v if v is not None and v > 0 else None
 def clean(v):
     if v is None: return None
     return int(v) if v == int(v) else round(v, 3)
@@ -145,7 +149,7 @@ def hay_rows(raw, stats):
         if not d or not cl or not un or pmn is None or pmx is None or pmn <= 0 or pmx < pmn: stats["skipped"] += 1; continue
         out.append({"date": d, "class": cl, "quality": txt(r.get("quality")), "package": txt(r.get("package")), "unit": un, "sale": txt(r.get("sale_Type")), "freight": txt(r.get("freight")),
                     "region": txt(r.get("region")), "use": txt(r.get("use")), "crop": txt(r.get("crop_Age")), "desc": txt(r.get("desc")), "org": "Organic" if txt(r.get("conventional")).lower() == "organic" else "",
-                    "qty": num(r.get("quantity")), "pMin": pmn, "pMax": pmx, "avg": num(r.get("wtd_Avg_Price"))})
+                    "qty": num(r.get("quantity")), "pMin": pmn, "pMax": pmx, "avg": pos(r.get("wtd_Avg_Price"))})
     return out
 def hay_key(r): return "|".join(r[c] for c in ("class", "quality", "package", "unit", "sale", "freight", "region", "use", "crop", "desc", "org"))
 def hay_group(rows):
@@ -165,7 +169,7 @@ def hay_group(rows):
 def build_hay(rcfg, raw_rows, old, now, ts, stats):
     rows = hay_rows(raw_rows, stats); grp = hay_group(rows)
     hist = {}
-    for k, pts in ((old or {}).get("history") or {}).items(): hist[k] = {p[0]: p[1:] for p in pts}
+    for k, pts in ((old or {}).get("history") or {}).items(): hist[k] = {p[0]: [p[1], p[2], (p[3] if p[3] and p[3] > 0 else None), p[4]] for p in pts}   # normaliza medias 0 de cargas anteriores
     for (d, k), (r, mn, mx, avg, qty) in grp.items(): hist.setdefault(k, {})[d] = [clean(mn), clean(mx), avg, qty]
     cut = (now - datetime.timedelta(days=RETAIN_DAYS)).isoformat(); ttl = (now - datetime.timedelta(days=HAY_KEY_TTL)).isoformat()
     history = {}

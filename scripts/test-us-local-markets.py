@@ -35,7 +35,7 @@ now = "2026-09-30"
 for rid in (1860, 1831, 1821, 1784): (fx / ("%d.json" % rid)).write_text(json.dumps({"_fixtureError": "UNAVAILABLE"}))
 (fx / "2885.json").write_text(json.dumps([{"reportSection": "Report Header", "results": [{"x": 1}]}, {"reportSection": "Report Details", "results": [
     hay("09/21/2026", "Alfalfa", "Premium", "Large Round", "Per Ton", 200, 220, 100, 210.0), hay("09/21/2026", "Alfalfa", "Premium", "Large Round", "Per Ton", 190, 230, 300, 230.0),
-    hay("09/21/2026", "Alfalfa", "Good", "Small Square", "Per Bale", 8, 9)]}, {"reportSection": "Report Receipts", "results": [{"thisWeek_Volume": 5}]}]))
+    hay("09/21/2026", "Alfalfa", "Good", "Small Square", "Per Bale", 8, 9, avg=0.0)]}, {"reportSection": "Report Receipts", "results": [{"thisWeek_Volume": 5}]}]))
 r = run("--fixture-dir", str(fx), "--now", now, "--only", "1895,1860,2885")
 eq(r.returncode, 0, "con fixtures sale con 0 (fallos parciales no son error global)")
 d = json.loads((out / "cattle-KS.json").read_text())
@@ -48,6 +48,7 @@ h = json.loads((out / "hay-KS.json").read_text()); eq(h["latest"]["date"], "2026
 big = [x for x in h["latest"]["rows"] if x[0] == "Alfalfa" and x[1] == "Premium"]; eq(len(big), 1, "dos filas de la misma especificacion se agrupan")
 eq(big[0][11:], [400, 190, 230, 225.0], "cantidad total, minimo de minimos, maximo de maximos, media ponderada por cantidad (100x210+300x230)/400")
 eq(sorted(h["history"]), sorted("|".join(x[:11]) for x in h["latest"]["rows"]), "una serie por especificacion")
+eq([x[14] for x in h["latest"]["rows"] if x[1] == "Good"], [None], "media ponderada 0 del USDA = sin dato, no un precio")
 st = json.loads((out / "status.json").read_text()); eq({(x["kind"], x["state"]): x["status"] for x in st["reports"] if x["reportId"] in (1895, 1860, 2885)}, {("cattle", "KS"): "OK", ("cattle", "NE"): "UNAVAILABLE", ("hay", "KS"): "OK"}, "estado por informe")
 eq(st["run"]["status"], "PARTIAL", "ejecucion parcial")
 # --- segunda semana: se fusiona, el dato revisado de la misma fecha sustituye al anterior y el fallo no borra lo que habia
