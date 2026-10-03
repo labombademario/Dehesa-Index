@@ -44,7 +44,22 @@
     var st = now <= live ? 'LIVE' : now <= due ? 'FRESH' : now <= grace ? 'EXPECTED_DELAY' : now <= stale ? 'DELAYED' : now <= hist ? 'STALE' : 'HISTORICAL';
     return { state: st, ageDays: now - end, periodEnd: iso(end), lagDays: lag, due: iso(due), liveUntil: iso(live), graceUntil: iso(grace), staleAfter: iso(stale), historicalAfter: iso(hist) };
   }
+  var DT = { obs: { es: 'Última observación', en: 'Last observation', fr: 'Dernière observation', it: 'Ultima osservazione' }, due: { es: 'Publicación esperada', en: 'Next release expected', fr: 'Publication attendue', it: 'Pubblicazione attesa' }, per: { es: 'Periodicidad', en: 'Frequency', fr: 'Périodicité', it: 'Periodicità' }, st: { es: 'Estado', en: 'Status', fr: 'État', it: 'Stato' },
+    fq: { daily: { es: 'diaria', en: 'daily', fr: 'quotidienne', it: 'giornaliera' }, weekly: { es: 'semanal', en: 'weekly', fr: 'hebdomadaire', it: 'settimanale' }, monthly: { es: 'mensual', en: 'monthly', fr: 'mensuelle', it: 'mensile' }, quarterly: { es: 'trimestral', en: 'quarterly', fr: 'trimestrielle', it: 'trimestrale' }, semiannual: { es: 'semestral', en: 'half-yearly', fr: 'semestrielle', it: 'semestrale' }, annual: { es: 'anual', en: 'annual', fr: 'annuelle', it: 'annuale' } } };
+  function cls(state) { return state === 'LIVE' || state === 'FRESH' ? 'ok' : state === 'EXPECTED_DELAY' ? 'wait' : state === 'DELAYED' || state === 'STALE' ? 'late' : 'old'; }
+  function esc(x) { return String(x == null ? '' : x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  // Punto de estado: verde actual, ambar retraso habitual, rojo retrasado, gris historico. El detalle va en aria-label y en el texto emergente (data-tip).
+  function dot(f, lang, o) {
+    o = o || {}; lang = DT.obs[lang] ? lang : 'es';
+    var st = f && f.state || 'PENDING', L = (F.label[st] || {})[lang] || st, rows = [DT.st[lang] + ': ' + L];
+    if (o.obs) rows.push(DT.obs[lang] + ': ' + o.obs);
+    if (o.freq && DT.fq[o.freq]) rows.push(DT.per[lang] + ': ' + DT.fq[o.freq][lang]);
+    if (f && f.due && st !== 'HISTORICAL' && st !== 'DISCONTINUED' && st !== 'PENDING') rows.push(DT.due[lang] + ': ' + f.due);
+    var tip = rows.join('\n');
+    return '<span class="di-fd di-fd-' + cls(st) + '" data-st="' + esc(st) + '" role="img"' + (o.focus ? ' tabindex="0"' : '') + ' aria-label="' + esc(rows.join('. ')) + '" data-tip="' + esc(tip) + '"></span>';
+  }
   var F = {
+    dot: dot,
     policy: function (p) { if (p) P = p; return P; },
     evaluate: function (d, f, s, n) { if (!P) throw new Error('DIFreshness: politica no cargada'); return evaluate(d, f, s, n); },
     isOk: function (state) { return !!P && P.okStates.indexOf(state) > -1; },

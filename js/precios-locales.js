@@ -140,7 +140,7 @@
     if (window.DIFreshness && window.DIFreshness.evaluate) { try { st = window.DIFreshness.evaluate(s.date, s.frequency, SRC).state; } catch (e) {} }
     return st;
   }
-  function badge(st) { var c = FCOL[st] || FCOL.PENDING, L = window.DIFreshness && window.DIFreshness.label && window.DIFreshness.label[st]; return '<span class="di-badge" style="background:' + c[0] + ';color:' + c[1] + ';padding:2px 8px;font-size:10.5px;white-space:nowrap">' + esc(L ? (L[lang()] || L.en) : st) + '</span>'; }
+  function badge(st, date) { return window.DIFreshness && window.DIFreshness.dot ? window.DIFreshness.dot({ state: st }, lang(), { obs: date ? dtxt(date) : '', focus: true }) : ''; }
   function specKey(s) { return [s.commodityClass || '', s.grade || '', s.protein || '', s.description || '', s.application || '', s.deliveryPeriod || '', s.freight || '', s.saleType || '', s.transMode || '', s.unit].join('|'); }
   function specLabel(s) {
     var t = tt(), p = [];
@@ -253,7 +253,7 @@
       var f = fresh(s), url = VIEW + s.reportId;
       return '<tr data-id="' + esc(s.id) + '" style="border-top:1px solid var(--border);' + (ST.id === s.id ? 'background:rgba(47,107,58,.08)' : '') + '"><td style="padding:9px 6px;vertical-align:top"><button type="button" class="di-link-btn" data-sel="' + esc(s.id) + '" style="text-align:left">' + esc(s.locationName || '—') + '</button><div class="di-movers-hint">' + esc(s.locationType) + (s.deliveryPoint ? ' · ' + esc(s.deliveryPoint) : '') + '</div></td>' +
         '<td style="padding:9px 6px;text-align:right;vertical-align:top;white-space:nowrap">' + bidHtml(s) + '</td><td style="padding:9px 6px;text-align:right;vertical-align:top">' + basisHtml(s) + '</td><td style="padding:9px 6px;text-align:right;vertical-align:top">' + changeHtml(s) + '</td>' +
-        '<td style="padding:9px 6px;vertical-align:top;white-space:nowrap">' + esc(dtxt(s.date)) + '</td><td style="padding:9px 6px;vertical-align:top">' + badge(f) + '</td><td style="padding:9px 6px;vertical-align:top"><a href="' + url + '" target="_blank" rel="noopener">USDA AMS</a><div class="di-movers-hint">#' + s.reportId + '</div></td></tr>';
+        '<td style="padding:9px 6px;vertical-align:top;white-space:nowrap">' + esc(dtxt(s.date)) + '</td><td style="padding:9px 6px;vertical-align:top">' + badge(f, s.date) + '</td><td style="padding:9px 6px;vertical-align:top"><a href="' + url + '" target="_blank" rel="noopener">USDA AMS</a><div class="di-movers-hint">#' + s.reportId + '</div></td></tr>';
     }).join('');
     return '<div class="di-card" style="padding:12px 16px;margin-bottom:14px"><h3 style="font-size:15px;margin:0 0 4px">' + esc(name || '—') + '</h3>' + rng + '<div class="di-table-wrap"><table class="pl-t" style="border-collapse:collapse;width:100%;min-width:640px;font-size:14px"><thead><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left">' +
       ['cMarket', 'cBid', 'cBasis', 'cChange', 'cDate', 'cFresh', 'cSource'].map(function (k, i) { return '<th scope="col" style="padding:8px 6px;' + (i > 0 && i < 4 ? 'text-align:right' : '') + '">' + esc(t[k].toUpperCase()) + '</th>'; }).join('') + '</tr></thead><tbody>' + trs + '</tbody></table></div></div>';
@@ -317,7 +317,7 @@
     h += '<p style="font-size:13.5px;margin:10px 0">' + esc(represents(s)) + '</p>';
     h += '<div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start"><div style="flex:1;min-width:260px"><h4 style="font-size:13px;margin:0 0 6px">' + esc(t.trust) + '</h4><dl style="margin:0">' +
       dl(t.tSource, 'USDA AMS Market News (MARS)') + dl(t.tReport, esc(rep.reportName || '#' + s.reportId) + ' · <a href="' + VIEW + s.reportId + '" target="_blank" rel="noopener">' + esc(t.tOpen) + ' →</a>') +
-      dl(t.tPub, s.pub ? esc(dtxt(s.pub)) : '<span style="color:var(--text-faint)">' + esc(t.tNotCaptured) + '</span>') + dl(t.tObs, esc(dtxt(s.date)) + ' ' + badge(f)) +
+      dl(t.tPub, s.pub ? esc(dtxt(s.pub)) : '<span style="color:var(--text-faint)">' + esc(t.tNotCaptured) + '</span>') + dl(t.tObs, esc(dtxt(s.date)) + ' ' + badge(f, s.date)) +
       dl(t.tMarket, esc(s.locationName || '—') + ' (' + esc(s.locationType) + ')') + dl(t.tSpec, esc(cname(s.commodity)) + ' · ' + esc(specLabel(s))) + dl(t.tUnit, esc(s.currency || '') + ' ' + esc(s.unit) + (s.currency ? ' ' + esc(s.currency === 'USD' ? '($)' : '') : '')) +
       dl(t.tFreq, esc(s.frequency === 'weekly' ? t.weekly : t.daily)) + dl(t.tMethod, esc(t.tMethodText)) + '</dl></div>' +
       '<div style="flex:1;min-width:260px"><h4 style="font-size:13px;margin:0 0 6px">' + esc(t.history) + '</h4><div class="di-range-btns" id="pl-ranges">' + RANGES.map(function (r) { return '<button type="button" class="di-range-btn' + (ST.range === r[0] ? ' active' : '') + '" data-r="' + r[0] + '">' + esc(t['r' + r[0]]) + '</button>'; }).join('') + '</div><div id="pl-chart" aria-live="polite"></div><div id="pl-breaks"></div></div></div>';

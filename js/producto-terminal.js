@@ -261,7 +261,7 @@
     try { var r = window.DIFreshness.evaluate(o.observationDate, o.frequency, o.sourceId); return r; } catch (e) { return { state: 'PENDING' }; }
   }
   function badge(cls, txt, title) { return '<span class="pt-badge ' + cls + '"' + (title ? ' title="' + esc(title) + '"' : '') + '>' + esc(txt) + '</span>'; }
-  function freshBadge(o) { var f = fresh(o), L = window.DIFreshness.label[f.state]; return badge('pt-fs-' + f.state, L ? L[LANGS[li()]] : f.state, f.due ? t('dueTxt') + ': ' + dstr(f.due) : ''); }
+  function freshBadge(o) { var f = fresh(o); return window.DIFreshness.dot(f, LANGS[li()], { obs: o.observationDate, freq: o.frequency, focus: true }); }
   function compBadge(o) { var c = o.comparability || 'directional'; return badge('pt-cp-' + c, t('cp_' + c)); }
   function spark(vals) {
     if (!vals || vals.length < 3) return '';
@@ -529,6 +529,8 @@
 
   /* Relaciones observadas (data/relationships.json): solo las que tocan a este producto (como insumo o como mercado). Descriptivo; se carga al llegar al bloque. */
   function loadRels() { return J('relationships.json'); }
+  var RST = { OBSERVED_RELATIONSHIP: ['Relación observada', 'Observed relationship', 'Relation observée', 'Relazione osservata'], WEAK_OR_UNSTABLE: ['Débil o inestable', 'Weak or unstable', 'Faible ou instable', 'Debole o instabile'], INSUFFICIENT_DATA: ['Datos insuficientes', 'Insufficient data', 'Données insuffisantes', 'Dati insufficienti'] },
+    RCF = { HIGH: ['alta', 'high', 'élevée', 'alta'], MEDIUM: ['media', 'medium', 'moyenne', 'media'], LOW: ['baja', 'low', 'faible', 'bassa'] };
   function htmlRels(doc) {
     var m = CTX.meta, ids = {}, lg = LANGS[li()];
     ids[CTX.pid] = 1; if (CTX.pid === 'soja') ids.harina_soja = 1; if (CTX.pid === 'vacuno') ids.vaca = 1;
@@ -539,9 +541,9 @@
     list.slice(0, 8).forEach(function (r) {
       var s = r.stat, rg = function (x) { return reg(x.region); };
       h += '<tr><td data-l="' + esc(t('relsPair')) + '"><strong>' + esc(r.input.label[lg]) + '</strong> <span class="pt-sub">' + esc(rg(r.input)) + '</span><div class="pt-sub">→ ' + esc(r.market.label[lg]) + ' ' + esc(rg(r.market)) + '</div></td>' +
-        '<td data-l="' + esc(t('relsSt')) + '"><span class="pt-badge">' + esc(r.status.replace(/_/g, ' ')) + '</span></td>' +
+        '<td data-l="' + esc(t('relsSt')) + '"><span class="pt-badge">' + esc((RST[r.status] || [r.status.replace(/_/g, ' ')])[li()] || r.status) + '</span></td>' +
         '<td class="r" data-l="r">' + (s.correlation === null ? '—' : nf(s.correlation, 2)) + '</td><td data-l="lag">' + esc(s.lag === 0 ? t('relsLag0') : tf('relsLag', s.lag + (r.frequency === 'monthly' ? 'm' : 'T'))) + '</td><td class="r" data-l="n">' + s.n + '</td>' +
-        '<td data-l="' + esc(t('cDate')) + '">' + esc(s.periodStart + '–' + s.periodEnd) + '</td><td data-l="' + esc(t('relsConf')) + '">' + esc(r.confidence) + '</td><td><a href="relaciones.html?id=' + encodeURIComponent(r.id) + '">' + esc(t('relsDetail')) + ' →</a></td></tr>';
+        '<td data-l="' + esc(t('cDate')) + '">' + esc(s.periodStart + '–' + s.periodEnd) + '</td><td data-l="' + esc(t('relsConf')) + '">' + esc((RCF[r.confidence] || [r.confidence])[li()] || r.confidence) + '</td><td><a href="relaciones.html?id=' + encodeURIComponent(r.id) + '">' + esc(t('relsDetail')) + ' →</a></td></tr>';
     });
     return h + '</tbody></table></div><p class="pt-src"><a href="relaciones.html?p=' + encodeURIComponent(CTX.pid) + '">' + esc(t('relsAll')) + ' →</a></p>';
   }
@@ -637,7 +639,9 @@
     ];
     return all.slice(0, 1).concat(loc, prm, all.slice(1));
   }
-  function secHtml(b) { return '<section class="pt-sec" id="pt-' + b.id + '" data-blk="' + b.id + '" aria-labelledby="pt-' + b.id + '-h"><div class="di-movers-head-row"><h2 id="pt-' + b.id + '-h">' + esc(b.title) + '</h2><span class="di-movers-hint">' + esc(b.hint) + '</span></div><div class="pt-body"><div class="pt-skel">' + esc(t('loading')) + '</div></div></section>'; }
+  // Tres tipos de informacion que no deben parecer lo mismo: dato publicado, lectura de Dehesa (texto generado a partir de cifras) y relacion historica (descriptiva).
+  var KIND = { drivers: 'insight', rels: 'rel' }, KT = { data: ['Dato publicado', 'Published data', 'Donnée publiée', 'Dato pubblicato'], insight: ['Lectura de Dehesa', 'Dehesa reading', 'Lecture de Dehesa', 'Lettura di Dehesa'], rel: ['Relación histórica', 'Historical relationship', 'Relation historique', 'Relazione storica'] };
+  function secHtml(b) { var k = KIND[b.id] || 'data'; return '<section class="pt-sec pt-k-' + k + '" id="pt-' + b.id + '" data-blk="' + b.id + '" aria-labelledby="pt-' + b.id + '-h"><div class="di-movers-head-row"><h2 id="pt-' + b.id + '-h">' + esc(b.title) + '</h2>' + (k === 'data' ? '' : '<span class="pt-kind pt-kind-' + k + '">' + esc(KT[k][li()]) + '</span>') + '<span class="di-movers-hint">' + esc(b.hint) + '</span></div><div class="pt-body"><div class="pt-skel">' + esc(t('loading')) + '</div></div></section>'; }
   function paint(b) {
     var el = document.querySelector('#pt-' + b.id + ' .pt-body'); if (!el) return;
     var st = BLK[b.id];
