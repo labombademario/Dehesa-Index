@@ -1,0 +1,158 @@
+[
+{
+"id": "LANDSDEL",
+"text": "province",
+"n": 12,
+"sample": [
+{
+"id": "000",
+"text": "All Denmark"
+},
+{
+"id": "084",
+"text": "Region Hovedstaden"
+},
+{
+"id": "15",
+"text": "Provinces Byen København, Københavns omegn and Nordsjælland"
+},
+{
+"id": "04",
+"text": "Province Bornholm"
+},
+{
+"id": "085",
+"text": "Region Sjælland"
+},
+{
+"id": "083",
+"text": "Region Syddanmark"
+},
+{
+"id": "07",
+"text": "Province Fyn"
+},
+{
+"id": "08",
+"text": "Province Sydjylland"
+},
+{
+"id": "082",
+"text": "Region Midtjylland"
+},
+{
+"id": "09",
+"text": "Province Østjylland"
+},
+{
+"id": "10",
+"text": "Province Vestjylland"
+},
+{
+"id": "081",
+"text": "Region Nordjylland"
+}
+]
+},
+{
+"id": "AFGRØDE",
+"text": "crop",
+"n": 16,
+"sample": [
+{
+"id": "C0000",
+"text": "CEREALS, TOTAL"
+},
+{
+"id": "C1111",
+"text": "Winter wheat and spelt"
+},
+{
+"id": "C1112",
+"text": "Spring wheat and spelt"
+},
+{
+"id": "C1210",
+"text": "Rye"
+},
+{
+"id": "C1310",
+"text": "Winter barley"
+},
+{
+"id": "C1320",
+"text": "Spring barley"
+},
+{
+"id": "C1410",
+"text": "Oats"
+},
+{
+"id": "C1420",
+"text": "Spring cereal mixtures"
+},
+{
+"id": "C1500",
+"text": "Grain maize and corn-cob-mix"
+},
+{
+"id": "C1600",
+"text": "Triticale"
+},
+{
+"id": "C1990",
+"text": "Other cereals n.e.c."
+},
+{
+"id": "P0000",
+"text": "PULSES, TOTAL"
+},
+{
+"id": "P1100",
+"text": "Field peas"
+},
+{
+"id": "P1200",
+"text": "Broad and field beans"
+},
+{
+"id": "P1300",
+"text": "Sweet lupins"
+},
+{
+"id": "I1110",
+"text": "RAPE AND TURNIP RAPE SEEDS, TOTAL"
+}
+]
+},
+{
+"id": "MÆNGDE4",
+"text": "unit",
+"n": 3,
+"sample": [
+{
+"id": "005",
+"text": "Area (hectare)"
+},
+{
+"id": "020",
+"text": "Average yield (hkg per hectare)"
+},
+{
+"id": "030",
+"text": "Production (million kg)"
+}
+]
+},
+{
+"id": "Tid",
+"text": "time",
+"n": 1,
+"sample": [
+{
+"id": "2025",
+"text": "2025"
+}
+]
+}
+]

@@ -1,0 +1,31 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/7123slac/$metadata#Cbs.OData.WebAPI.Slachtdieren","value":[
+    {
+      "Key":"A028972","Title":"Rundvee (totaal)","Description":"Jongvee, melk- en kalfkoeien, zoogkoeien en vlees- en weidekoeien, fokstieren en kalveren.","CategoryGroupID":1
+    },{
+      "Key":"A048695","Title":"Totaal volwassen runderen","Description":"Volwassen runderen: de optelling van koeien, vaarzen en stieren.","CategoryGroupID":2
+    },{
+      "Key":"A028975","Title":"Koeien","Description":"Koeien van 2 jaar of ouder, die ten minste eenmaal gekalfd hebben .","CategoryGroupID":2
+    },{
+      "Key":"A048698","Title":"Vaarzen","Description":"Vaars: een vrouwelijk rund, ouder dan \u00e9\u00e9n jaar dat nog niet gekalfd heeft.","CategoryGroupID":2
+    },{
+      "Key":"A028982","Title":"Stieren","Description":"Stieren: volwassen mannelijke runderen, inclusief ossen.","CategoryGroupID":2
+    },{
+      "Key":"A048700","Title":"Totaal kalveren","Description":"Kalf: een vrouwelijk of mannelijk rund jonger dan \u00e9\u00e9n jaar.","CategoryGroupID":2
+    },{
+      "Key":"A048697","Title":"Kalveren jonger dan 9 maanden","Description":"Runderen die niet ouder zijn dan acht maanden.","CategoryGroupID":2
+    },{
+      "Key":"A048701","Title":"Kalveren van 9 tot en met 12 maanden","Description":"Runderen die ouder zijn dan acht maanden maar niet ouder dan twaalf maanden.","CategoryGroupID":2
+    },{
+      "Key":"A028991","Title":"Varkens (totaal)","Description":"Het totaal aantal vlees- en fokvarkens, exclusief biggen. Voor het houden van deze dieren zijn varkensrechten nodig","CategoryGroupID":5
+    },{
+      "Key":"A028984","Title":"Schapen incl. lammeren","Description":"Ooien, lammeren en rammen.","CategoryGroupID":3
+    },{
+      "Key":"A048696","Title":"Schapenlammeren","Description":"Mannelijke of vrouwelijke schapen van minder dan twaalf maanden.","CategoryGroupID":3
+    },{
+      "Key":"A028985","Title":"Geiten (totaal)","Description":"","CategoryGroupID":3
+    },{
+      "Key":"A028996","Title":"Kippen (totaal)","Description":"Vleeskuikens en afgestoten leghennen.\r\n\r\n\r\n\r\n\r\n\r\n","CategoryGroupID":null
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Dokument id="idccca022d-8ff9-4433-af44-396d67be10f1" SchemaLocation="http://www.retsinformation.dk/offentlig/xml/schemas/2025/08/19/BEKC.Retsinfo.LexDania_2.1.xsd">
+  <Meta id="id5f7dc28c-97c0-4179-9daa-c6e322531c92">
+    <DocumentType>BEK Æ#LOKDOK05</DocumentType>
+    <Rank>B</Rank>
+    <AccessionNumber>B20260078805</AccessionNumber>
+    <DocumentId>DO000038</DocumentId>
+    <UniqueDocumentId>257627</UniqueDocumentId>
+    <DocumentTitle>Bekendtgørelse om ændring af bekendtgørelse om grundbetaling m.v. til landbrugere for 2026</DocumentTitle>
+    <Year>2026</Year>
+    <DiesSigni>2026-09-14</DiesSigni>
+    <DateOfSubmit id="submit_1" />
+    <StartDate REFid="submit_1">2026-09-14</StartDate>
+    <EndDate REFid="submit_1">2026-09-15</EndDate>
+    <Status>Valid</Status>
+    <Number>788</Number>
+    <AnnouncedIn>Lovtidende A</AnnouncedIn>
+    <DiesEdicti>2026-09-14</DiesEdicti>
+    <Republished>Nej</Republished>
+    <Sign id="sign" />
+    <Signature REFid="sign">Lars Gregersen</Signature>
+    <Sub-Sign id="subsign" />
+    <Signature REFid="subsign">Emma Zisko Norman Svendsen</Signature>
+    <PlaceOfSignature>Styrelsen for Grøn Arealomlægning og Vandmiljø</PlaceOfSignature>
+    <JournalNumber>Ministeriet for Natur og Dyrevelfærd,\n Styrelsen for Grøn Arealomlægning og Vandmiljø, j.nr. 2026-22644</JournalNumber>
+    <Ministry>Ministeriet for Natur og Dyrevelfærd</Ministry>
+    <AdministrativeAuthority>Styrelsen for Grøn Arealomlægning og Vandmiljø</AdministrativeAuthority>
+  </Meta>
+  <TitelGruppe id="idcbd456f4-3d9d-4e57-a5d6-91807f454be8">
+    <Titel id="id5fb4374f-66f2-4726-b26e-af35d610e6bb">
+      <Linea>
+        <Char>Bekendtgørelse om ændring af bekendtgørelse om grundbetaling m.v. til landbrugere for 2026</Char>
+      </Linea>
+    </Titel>
+  </TitelGruppe>
+  <DokumentIndhold id="id5229d64a-78cc-4ed1-a078-a3c5d8843338">
+    <AendringCentreretParagraf id="id48cac9cc-af07-4802-83aa-a9befae77f89" localId="1">
+      <Explicatus>§ 1</Explicatus>
+      <Exitus>
+        <Linea>
+          <Char>I bekendtgørelse nr. 1363 af 25. november 2025 om grundbetaling m.v. til landbrugere for 2026 foretages følgende ændringer:</Char>
+        </Linea>
+      </Exitus>
+      <AendringsNummer id="id9090b944-053f-43bc-b33d-8f41c75bc23e">
+        <Explicatus>1.</Explicatus>
+        <Aendring id="idead53283-6c9a-43e7-9171-8187148e1cda">
+          <AendringDefinition id="id463bab01-05aa-4afc-8321-9895f905f16c">
+            <Exitus>
+              <Linea>
+                <Char>I </Char>
+                <Char signiChar="AendringURN" formaChar="Italic">§ 14, stk. 1,</Char>
+                <Char> ændres »jf. dog stk. 2 og 3« til: »jf. dog stk. 2-4«.</Char>
+              </Linea>
+            </Exitus>
+          </AendringDefinition>
+          <AendringAktion id="idb792bc80-95b8-4ff2-acf7-ea5aa5b2f4cf">
+            <AendringNyTekst />
+          </AendringAktion>
+        </Aendring>
+      </AendringsNummer>
+      <AendringsNummer id="id6d36b740-917d-438a-a1f6-c8cfd90a2475">
+        <Explicatus>2.</Explicatus>
+        <Aendring id="id984270db-6a5a-41d3-811a-5a45a59c55a8">
+          <AendringDefinition id="id1df3882c-1192-4b63-9e43-ae391e1b2545">
+            <Exitus>
+              <Linea>
+                <Char>I </Char>
+                <Char signiChar="AendringURN" formaChar="Italic">§ 14</Char>
+                <Char> indsættes som </Char>
+                <Char signiChar="AendringURN" formaChar="Italic">stk. 4-7:</Char>
+              </Linea>
+            </Exitus>
+          </AendringDefinition>
+          <AendringAktion id="idbac7a9fa-7e9b-41ec-8231-18ce1521a130">
+            <AendringNyTekst>
+              <Stk id="idd905fce7-f071-4af0-a61c-cc21741b23e7">
+                <Explicatus>Stk. 4.</Explicatus>
+                <Exitus>
+                  <Linea>
+                    <Char>På arealer med permanent græs kan der etableres eller opretholdes en blomsterblanding, der holdes uden produktion, efter § 23, stk. 2 og 3.</Char>
+                  </Linea>
+                  <Linea>
+                    <Char>For disse arealer opfyldes forpligtelsen efter stk. 1 ved opfyldelse af reglerne om blomster- eller bestøverbrak efter § 23, stk.1-3.</Char>
+                  </Linea>
+                  <Linea>
+                    <Char>Ansøgeren kan dog vælge i stedet at opfylde forpligtelsen ved at slå eller afgræsse arealet efter § 15.</Char>
+                  </Linea>
+                </Exitus>
+              </Stk>
+              <Stk id="id6092ffa7-0512-4d41-9b02-9433dfd87b19">
+                <Explicatus>Stk. 5.</Explicatus>
+                <Exitus>
+                  <Linea>
+                    <Char>Ved opgørelse af permanent græs i 5 år eller mere efter § 4, nr. 12, medregnes også år, hvor et areal holdes uden produktion og opfylder forpligtelserne for brak, herunder blomster- eller bestøverbrak efter § 23, stk. 2 og 3.</Char>
+                  </Linea>
+                </Exitus>
+              </Stk>
+              <Stk id="idcbe52674-a964-4ae4-be17-2e2e1d7f56b3">
+                <Explicatus>Stk. 6.</Explicatus>
+                <Exitus>
+                  <Linea>
+                    <Char>Et areal med permanent græs er fortsat et areal med permanent græs, selv om der foretages mekanisk jordbehandling og etablering af en blomsterblanding efter § 23, stk. 2 og 3.</Char>
+                  </Linea>
+                </Exitus>
+              </Stk>
+              <Stk id="id06390524-6484-4a2d-aa05-428d968311aa">
+                <Explicatus>Stk. 7.</Explicatus>
+                <Exitus>
+                  <Linea>
+                    <Char>§ 23, stk. 4-6, og § 24 finder tilsvarende anvendelse for arealer omfattet af stk. 4, der etableres eller opretholdes med en blomsterblanding.</Char>
+                  </Linea>
+                </Exitus>
+              </Stk>
+            </AendringNyTekst>
+          </AendringAktion>
+        </Aendring>
+      </AendringsNummer>
+      <AendringsNummer id="id40f5fa89-933e-4801-9b80-d4bc8ca22974">
+        <Explicatus>3.</Explicatus>
+        <Aendring id="id6abf5b3b-3489-41a8-b41e-1edfd47aee74">
+          <AendringDefinition id="id986b1edb-6aa9-4c95-8359-895904332b21">
+            <Exitus>
+              <Linea>
+                <Char>I § </Char>
+                <Char signiChar="AendringURN" formaChar="Italic">15, 1. pkt.,</Char>
+                <Char> indsættes efter »25. oktober«: », jf. dog § 14, stk. 4«.</Char>
+              </Linea>
+            </Exitus>
+          </AendringDefinition>
+          <AendringAktion id="idedbb931e-8506-4b01-8d5a-14212940efb0">
+            <AendringNyTekst />
+          </AendringAktion>
+        </Aendring>
+      </AendringsNummer>
+    </AendringCentreretParagraf>
+    <AendringCentreretParagraf id="id5000a57f-7b1f-4a10-ad4a-f9fa8602cfc0" localId="2">
+      <Explicatus>§ 2</Explicatus>
+      <Exitus>
+        <Linea>
+          <Char>Bekendtgørelsen træder i kraft den 16. september 2026.</Char>
+        </Linea>
+      </Exitus>
+    </AendringCentreretParagraf>
+  </DokumentIndhold>
+  <UnderskriftGruppe id="id6787acf7-7178-4973-bb83-109e470e406f">
+    <UnderskriftStedDato />
+    <Underskriver />
+  </UnderskriftGruppe>
+</Dokument>

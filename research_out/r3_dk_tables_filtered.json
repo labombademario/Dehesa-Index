@@ -1,0 +1,1975 @@
+[
+{
+"id": "FRDK226",
+"text": "Nøgletal 2026: Fremskrivning af befolkningens bevægelser",
+"unit": "Antal",
+"updated": "2026-06-12T08:00:00",
+"firstPeriod": "2026",
+"latestPeriod": "2070",
+"active": true,
+"variables": [
+"herkomst",
+"bevægelsesart",
+"tid"
+]
+},
+{
+"id": "FRLD226",
+"text": "Nøgletal 2026: Fremskrivning af befolkningens bevægelser",
+"unit": "Antal",
+"updated": "2026-06-12T08:00:00",
+"firstPeriod": "2026",
+"latestPeriod": "2050",
+"active": true,
+"variables": [
+"landsdel",
+"bevægelsesart",
+"tid"
+]
+},
+{
+"id": "FRKM226",
+"text": "Nøgletal 2026: Fremskrivning af befolkningens bevægelser",
+"unit": "Antal",
+"updated": "2026-06-12T08:00:00",
+"firstPeriod": "2026",
+"latestPeriod": "2050",
+"active": true,
+"variables": [
+"kommune",
+"bevægelsesart",
+"tid"
+]
+},
+{
+"id": "PAAROE30",
+"text": "Befolkningens kontakt til praktiserende læge (0-17 år)",
+"unit": "-",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2021",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"relation",
+"nøgletal",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "PAAROE31",
+"text": "Befolkningens kontakt til praktiserende læge (18 år eller derover)",
+"unit": "-",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2021",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"relation",
+"nøgletal",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "PARFH2A",
+"text": "Ægtepar",
+"unit": "Antal",
+"updated": "2026-02-13T08:00:00",
+"firstPeriod": "2008",
+"latestPeriod": "2026",
+"active": true,
+"variables": [
+"ægteskabets varighed",
+"bopælsstatus",
+"tid"
+]
+},
+{
+"id": "BRYLDAGE",
+"text": "Ægtepar der fejrede bryllupsdag i året",
+"unit": "Antal",
+"updated": "2026-04-28T08:00:00",
+"firstPeriod": "2008",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"bryllupsdag",
+"tid"
+]
+},
+{
+"id": "OPL2026",
+"text": "Ægteskaber",
+"unit": "-",
+"updated": "2026-02-12T08:00:00",
+"firstPeriod": "2026",
+"latestPeriod": "2026",
+"active": true,
+"variables": [
+"vielsesår",
+"ægteskabets varighed",
+"ægteskabsopløsning",
+"tid"
+]
+},
+{
+"id": "LABY46",
+"text": "Gennemsnitlig boligareal pr. person",
+"unit": "M2",
+"updated": "2026-04-08T08:00:00",
+"firstPeriod": "2010",
+"latestPeriod": "2026",
+"active": true,
+"variables": [
+"kommunegruppe",
+"tid"
+]
+},
+{
+"id": "SYGK2",
+"text": "Lægebesøg mv. med offentlig tilskud",
+"unit": "Antal",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGK1",
+"text": "Lægebesøg mv. med offentlig tilskud",
+"unit": "Antal",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGKS1",
+"text": "Lægebesøg mv. med offentlig tilskud (detaljeret)",
+"unit": "Antal",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGKS2",
+"text": "Lægebesøg mv. med offentlig tilskud (detaljeret)",
+"unit": "Antal",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGP2",
+"text": "Personer med kontakt til læge mv. med offentlig tilskud",
+"unit": "Antal",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGP1",
+"text": "Personer med kontakt til læge mv. med offentlig tilskud",
+"unit": "Antal",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGPS1",
+"text": "Modtagere af ydelser i forbindelse med lægebesøg mv.",
+"unit": "Antal",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGPS2",
+"text": "Modtagere af ydelser i forbindelse med lægebesøg mv.",
+"unit": "Antal",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGUS2",
+"text": "Offentlige udgifter ved lægebesøg mv. (detaljeret)",
+"unit": "1.000 kr.",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGUS1",
+"text": "Offentlige udgifter ved lægebesøg mv. (detaljeret)",
+"unit": "1.000 kr.",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGU1",
+"text": "Offentlige udgifter ved lægebesøg mv.",
+"unit": "1.000 kr.",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGU2",
+"text": "Offentlige udgifter ved lægebesøg mv.",
+"unit": "1.000 kr.",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsesart",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SYGUDD",
+"text": "Lægebesøg",
+"unit": "-",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2021",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"nøgletal",
+"ydelsesart",
+"uddannelsesniveau",
+"køn",
+"alder",
+"tid"
+]
+},
+{
+"id": "SYGARB",
+"text": "Lægebesøg",
+"unit": "-",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2021",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"nøgletal",
+"ydelsesart",
+"arbejdsmarkedstilknytning",
+"køn",
+"alder",
+"tid"
+]
+},
+{
+"id": "SYGHER",
+"text": "Lægebesøg",
+"unit": "-",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"nøgletal",
+"ydelsesart",
+"herkomst",
+"køn",
+"alder",
+"tid"
+]
+},
+{
+"id": "SYGIND",
+"text": "Lægebesøg",
+"unit": "-",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"nøgletal",
+"ydelsesart",
+"indkomstniveau",
+"køn",
+"alder",
+"tid"
+]
+},
+{
+"id": "LABY26",
+"text": "Overvægt blandt børn",
+"unit": "Pct.",
+"updated": "2024-01-02T08:00:00",
+"firstPeriod": "2012",
+"latestPeriod": "2018",
+"active": true,
+"variables": [
+"kommunegruppe",
+"køn",
+"alder",
+"tid"
+]
+},
+{
+"id": "LABY27",
+"text": "Borgere pr. lægekapacitet",
+"unit": "Antal",
+"updated": "2024-01-02T08:00:00",
+"firstPeriod": "2015",
+"latestPeriod": "2023",
+"active": true,
+"variables": [
+"kommunegruppe",
+"tid"
+]
+},
+{
+"id": "LIGEHB6",
+"text": "Lægebesøg hos praktiserende læge",
+"unit": "Antal",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"køn",
+"alder",
+"familietype",
+"tid"
+]
+},
+{
+"id": "SUNDAF01",
+"text": "Befolkningens afstand til nærmeste praktiserende læge (eksperimentel statistik)",
+"unit": "-",
+"updated": "2026-02-26T08:00:00",
+"firstPeriod": "2024",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"kommune",
+"nøgletal",
+"kontakt til læge",
+"køn",
+"alder",
+"tid"
+]
+},
+{
+"id": "SUNDAF02",
+"text": "Befolkningens kontakt til praktiserende læge (eksperimentel statistik)",
+"unit": "-",
+"updated": "2026-02-26T08:00:00",
+"firstPeriod": "2024",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"kommune",
+"nøgletal",
+"afstand til nærmeste praktiserende læge",
+"køn",
+"alder",
+"tid"
+]
+},
+{
+"id": "LIGEHI6",
+"text": "Ligestillingsindikator for lægebesøg hos praktiserende læge",
+"unit": "-",
+"updated": "2026-05-28T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"indikator",
+"område",
+"alder",
+"familietype",
+"tid"
+]
+},
+{
+"id": "NEETSYG2",
+"text": "Lægebesøg i befolkningen (16-29 år)",
+"unit": "-",
+"updated": "2026-09-24T08:00:00",
+"firstPeriod": "2019",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"NEET-status",
+"nøgletal",
+"sundhedsperson",
+"bopæl",
+"køn",
+"tid"
+]
+},
+{
+"id": "VOFF3",
+"text": "Versionstabel OFF3 - Offentlig forvaltning og service, udgifter og indtægter",
+"unit": "Mio. kr.",
+"updated": "2026-06-03T08:00:00",
+"firstPeriod": "1971",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"version",
+"udgifter/indtægter",
+"sektor",
+"tid"
+]
+},
+{
+"id": "OFF3",
+"text": "Offentlig forvaltning og service, udgifter og indtægter",
+"unit": "Mio. kr.",
+"updated": "2026-06-03T08:00:00",
+"firstPeriod": "1971",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"udgifter/indtægter",
+"sektor",
+"tid"
+]
+},
+{
+"id": "OFF3K",
+"text": "Offentlig forvaltning og service, udgifter og indtægter",
+"unit": "Mio. kr.",
+"updated": "2026-09-25T08:00:00",
+"firstPeriod": "1999K1",
+"latestPeriod": "2026K2",
+"active": true,
+"variables": [
+"udgifter/indtægter",
+"tid"
+]
+},
+{
+"id": "OEKO4",
+"text": "Udenrigshandel med økologiske varer",
+"unit": "1.000 kr.",
+"updated": "2025-12-05T08:00:00",
+"firstPeriod": "2003",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"import og eksport",
+"varer",
+"tid"
+]
+},
+{
+"id": "OEKO55",
+"text": "Udenrigshandel med økologiske varer",
+"unit": "1.000 kr.",
+"updated": "2025-12-05T08:00:00",
+"firstPeriod": "2003",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"import og eksport",
+"land",
+"tid"
+]
+},
+{
+"id": "OEKO66",
+"text": "Udenrigshandel med økologiske varer",
+"unit": "1.000 kr.",
+"updated": "2025-12-05T08:00:00",
+"firstPeriod": "2003",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"import og eksport",
+"land",
+"SITC-hovedgrupper",
+"tid"
+]
+},
+{
+"id": "AED023",
+"text": "Hjemmehjælp, personer der får leveret hjælp",
+"unit": "Antal",
+"updated": "2025-12-17T08:00:00",
+"firstPeriod": "2011",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsestype",
+"timer pr. uge",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "AED012",
+"text": "Hjemmehjælp, personer der får leveret hjælp af privat leverandør",
+"unit": "Pct.",
+"updated": "2025-12-17T08:00:00",
+"firstPeriod": "2013",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"ydelsestype",
+"alder",
+"køn",
+"tid"
+]
+},
+{
+"id": "SILC100",
+"text": "Grunde til uopfyldt behov for læge og tandlæge",
+"unit": "-",
+"updated": "2025-12-12T08:00:00",
+"firstPeriod": "2021",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"spørgsmål",
+"svarmulighed",
+"enhed",
+"tid"
+]
+},
+{
+"id": "TILSKUD2",
+"text": "Direkte tilskud til landbrugssektoren",
+"unit": "Mio. kr.",
+"updated": "2026-05-19T08:00:00",
+"firstPeriod": "2021",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"tilskudsart",
+"tid"
+]
+},
+{
+"id": "JOEK4",
+"text": "Økonomien i jordbrugssektoren (foreløbig opgørelse)",
+"unit": "Mio. kr.",
+"updated": "2026-04-21T08:00:00",
+"firstPeriod": "2025",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"produkt",
+"prisenhed",
+"tid"
+]
+},
+{
+"id": "JOEK1",
+"text": "Økonomien i jordbrugssektoren",
+"unit": "Mio. kr.",
+"updated": "2025-11-07T08:00:00",
+"firstPeriod": "2022",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"produkt",
+"prisenhed",
+"tid"
+]
+},
+{
+"id": "JOEK2",
+"text": "Økonomien i jordbrugssektoren",
+"unit": "Mio. kr.",
+"updated": "2025-10-21T08:00:00",
+"firstPeriod": "2022",
+"latestPeriod": "2023",
+"active": true,
+"variables": [
+"region",
+"produkt",
+"tid"
+]
+},
+{
+"id": "JOEK3",
+"text": "Jordbrugssektorens forbrug af arbejdskraft",
+"unit": "1.000 årsværk",
+"updated": "2025-10-21T08:00:00",
+"firstPeriod": "2022",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"produkt",
+"tid"
+]
+},
+{
+"id": "JB4",
+"text": "Jordbrugets faste bruttoinvesteringer",
+"unit": "Mio. kr.",
+"updated": "2025-10-14T08:00:00",
+"firstPeriod": "2010",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"investeringstype",
+"beløb",
+"tid"
+]
+},
+{
+"id": "JB2",
+"text": "Jordbrugets afskrivninger og nettoinvesteringer",
+"unit": "Mio. kr.",
+"updated": "2025-10-14T08:00:00",
+"firstPeriod": "2005",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"investeringstype",
+"tid"
+]
+},
+{
+"id": "JB3",
+"text": "Jordbrugets renteudgifter og gæld",
+"unit": "Mio. kr.",
+"updated": "2025-10-01T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"udgiftstype",
+"tid"
+]
+},
+{
+"id": "PGKONV1",
+"text": "Konventionelt landbrug - Dækningsbidrag og jordrente",
+"unit": "-",
+"updated": "2025-12-05T08:00:00",
+"firstPeriod": "2021",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"produktionsgrene",
+"regnskabsposter for afgrøder",
+"tid"
+]
+},
+{
+"id": "PGKONV2",
+"text": "Konventionelt landbrug - Dækningsbidrag og nettooverskud",
+"unit": "-",
+"updated": "2025-12-05T08:00:00",
+"firstPeriod": "2021",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"produktionsgrene",
+"regnskabsposter for husdyr",
+"tid"
+]
+},
+{
+"id": "PGOEKO1",
+"text": "Økologisk landbrug  - Dækningsbidrag og jordrente",
+"unit": "-",
+"updated": "2025-12-05T08:00:00",
+"firstPeriod": "2021",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"produktionsgrene",
+"regnskabsposter for afgrøder",
+"tid"
+]
+},
+{
+"id": "PGOEKO2",
+"text": "Økologisk landbrug - Dækningsbidrag og nettooverskud",
+"unit": "-",
+"updated": "2025-12-05T08:00:00",
+"firstPeriod": "2021",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"produktionsgrene",
+"regnskabsposter for husdyr",
+"tid"
+]
+},
+{
+"id": "ANI11",
+"text": "Samlede værdier og indeks for animalske landbrugsprodukter (kvartal)",
+"unit": "-",
+"updated": "2026-09-04T08:00:00",
+"firstPeriod": "2015K1",
+"latestPeriod": "2026K2",
+"active": true,
+"variables": [
+"indekstype",
+"tid"
+]
+},
+{
+"id": "ANI2",
+"text": "Samlede værdier og indeks for animalske landbrugsprodukter (år)",
+"unit": "Mio. kr.",
+"updated": "2026-07-30T08:00:00",
+"firstPeriod": "1995",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"indekstype",
+"tid"
+]
+},
+{
+"id": "ANI301",
+"text": "Mængde- og prisindeks for animalske landbrugsprodukter (år)",
+"unit": "-",
+"updated": "2026-07-30T08:00:00",
+"firstPeriod": "2015",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"varegruppe",
+"indekstype",
+"tid"
+]
+},
+{
+"id": "ANI302",
+"text": "Mængde- og prisindeks for animalske landbrugsprodukter (kvartal)",
+"unit": "-",
+"updated": "2026-09-04T08:00:00",
+"firstPeriod": "2015K1",
+"latestPeriod": "2026K2",
+"active": true,
+"variables": [
+"varegruppe",
+"indekstype",
+"tid"
+]
+},
+{
+"id": "ANI303",
+"text": "Mængde- og prisindeks for animalske landbrugsprodukter (måned)",
+"unit": "Indeks",
+"updated": "2026-09-25T08:00:00",
+"firstPeriod": "2015M01",
+"latestPeriod": "2026M07",
+"active": true,
+"variables": [
+"varegruppe",
+"indekstype",
+"tid"
+]
+},
+{
+"id": "LPRIS10",
+"text": "Salgspriser på udvalgte landbrugsprodukter",
+"unit": "-",
+"updated": "2026-09-15T08:00:00",
+"firstPeriod": "2005M01",
+"latestPeriod": "2026M07",
+"active": true,
+"variables": [
+"produkt",
+"enhed",
+"tid"
+]
+},
+{
+"id": "LPRIS22",
+"text": "Prisindeks for jordbrugets salg og køb",
+"unit": "-",
+"updated": "2026-08-18T08:00:00",
+"firstPeriod": "2020K1",
+"latestPeriod": "2026K2",
+"active": true,
+"variables": [
+"produkt",
+"enhed",
+"tid"
+]
+},
+{
+"id": "LPRIS28",
+"text": "Prisindeks for jordbrugets salg og køb",
+"unit": "-",
+"updated": "2026-04-17T08:00:00",
+"firstPeriod": "2020",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"produkt",
+"enhed",
+"tid"
+]
+},
+{
+"id": "LPRIS32",
+"text": "Priser for jordbrugets salgsprodukter",
+"unit": "-",
+"updated": "2026-04-17T08:00:00",
+"firstPeriod": "2020",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"produkt",
+"enhed",
+"tid"
+]
+},
+{
+"id": "LPRIS38",
+"text": "Priser for jordbrugets produktionsfaktorer",
+"unit": "-",
+"updated": "2026-04-17T08:00:00",
+"firstPeriod": "2020",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"produkt",
+"enhed",
+"tid"
+]
+},
+{
+"id": "LPRIS37",
+"text": "Priser for landbrugsjord og forpagtning",
+"unit": "-",
+"updated": "2025-11-21T08:00:00",
+"firstPeriod": "2015",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"region",
+"produkt",
+"enhed",
+"tid"
+]
+},
+{
+"id": "EJJORD1",
+"text": "Ejerskab af dansk landbrugsjord",
+"unit": "-",
+"updated": "2026-05-20T08:00:00",
+"firstPeriod": "2020",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"region",
+"enhed",
+"land",
+"tid"
+]
+},
+{
+"id": "EJJORD2",
+"text": "Ejerskab af dansk landbrugsjord",
+"unit": "-",
+"updated": "2026-05-20T08:00:00",
+"firstPeriod": "2020",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"ejerform",
+"enhed",
+"land",
+"tid"
+]
+},
+{
+"id": "EJJORD3",
+"text": "Ejerskab af dansk landbrugsjord",
+"unit": "-",
+"updated": "2026-05-20T08:00:00",
+"firstPeriod": "2020",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"arealstørrelse",
+"enhed",
+"land",
+"tid"
+]
+},
+{
+"id": "EJJORD4",
+"text": "Ejerskab af dansk landbrugsjord",
+"unit": "-",
+"updated": "2026-05-20T08:00:00",
+"firstPeriod": "2022",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"ejers alder",
+"enhed",
+"land",
+"tid"
+]
+},
+{
+"id": "EJJORD5",
+"text": "Ejerskab af dansk landbrugsjord",
+"unit": "-",
+"updated": "2026-05-20T08:00:00",
+"firstPeriod": "2022",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"køn",
+"enhed",
+"land",
+"tid"
+]
+},
+{
+"id": "BDF307",
+"text": "Beskæftigede i landbrug og gartneri",
+"unit": "Antal",
+"updated": "2025-02-27T08:00:00",
+"firstPeriod": "2007",
+"latestPeriod": "2023",
+"active": true,
+"variables": [
+"område",
+"enhed",
+"type",
+"arbejdstid",
+"tid"
+]
+},
+{
+"id": "BDF6",
+"text": "Medhjælpere i landbrug og gartneri",
+"unit": "Antal",
+"updated": "2025-02-27T08:00:00",
+"firstPeriod": "1982",
+"latestPeriod": "2023",
+"active": true,
+"variables": [
+"område",
+"antal ansatte",
+"bedriftstype",
+"tid"
+]
+},
+{
+"id": "BDF7",
+"text": "Medhjælpere i landbrug og gartneri",
+"unit": "-",
+"updated": "2025-02-27T08:00:00",
+"firstPeriod": "1982",
+"latestPeriod": "2023",
+"active": true,
+"variables": [
+"areal",
+"antal ansatte",
+"bedriftstype",
+"tid"
+]
+},
+{
+"id": "BDF907",
+"text": "Bedrifter med andre aktiviteter end landbrug",
+"unit": "Antal",
+"updated": "2024-11-01T08:00:00",
+"firstPeriod": "2007",
+"latestPeriod": "2023",
+"active": true,
+"variables": [
+"område",
+"aktivitet",
+"tid"
+]
+},
+{
+"id": "AFG5",
+"text": "Det dyrkede areal",
+"unit": "-",
+"updated": "2026-07-14T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2026",
+"active": true,
+"variables": [
+"område",
+"enhed",
+"afgrøde",
+"tid"
+]
+},
+{
+"id": "AFG6",
+"text": "Afgrøder",
+"unit": "-",
+"updated": "2026-06-19T08:00:00",
+"firstPeriod": "1982",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"afgrøde",
+"enhed",
+"areal",
+"tid"
+]
+},
+{
+"id": "AFG207",
+"text": "Bedrifter og arealer med udvalgte afgrøder",
+"unit": "-",
+"updated": "2026-06-19T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"areal med afgrøden",
+"enhed",
+"tid"
+]
+},
+{
+"id": "AFG3",
+"text": "Bedrifter og arealer med udvalgte afgrøder",
+"unit": "-",
+"updated": "2026-06-19T08:00:00",
+"firstPeriod": "1982",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"areal med afgrøden",
+"enhed",
+"tid"
+]
+},
+{
+"id": "FRUGT4",
+"text": "Nettoareal  og trætæthed for æbler og pærer",
+"unit": "-",
+"updated": "2024-07-01T08:00:00",
+"firstPeriod": "2002",
+"latestPeriod": "2023",
+"active": true,
+"variables": [
+"enhed",
+"sort",
+"træernes alder",
+"tid"
+]
+},
+{
+"id": "HDYR07",
+"text": "Landbrug med dyr",
+"unit": "-",
+"updated": "2026-06-19T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"enhed",
+"art",
+"tid"
+]
+},
+{
+"id": "HDYR1",
+"text": "Landbrug med dyr",
+"unit": "-",
+"updated": "2026-06-19T08:00:00",
+"firstPeriod": "1982",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"areal",
+"enhed",
+"art",
+"tid"
+]
+},
+{
+"id": "HDYR2",
+"text": "Landbrug med dyr",
+"unit": "Antal",
+"updated": "2026-06-19T08:00:00",
+"firstPeriod": "2012",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"enhed",
+"besætningsstørrelse",
+"tid"
+]
+},
+{
+"id": "HDYROEKO",
+"text": "Økologiske landbrug med udvalgte dyr",
+"unit": "-",
+"updated": "2026-06-19T08:00:00",
+"firstPeriod": "2010",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"enhed",
+"art",
+"tid"
+]
+},
+{
+"id": "KOMB07",
+"text": "Besætningskombinationer med kvæg og svin",
+"unit": "Antal",
+"updated": "2026-06-19T08:00:00",
+"firstPeriod": "2006",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"område",
+"type",
+"enhed",
+"tid"
+]
+},
+{
+"id": "KVAEG5",
+"text": "Kvægbestanden",
+"unit": "Antal",
+"updated": "2026-07-24T08:00:00",
+"firstPeriod": "2008K1",
+"latestPeriod": "2026K2",
+"active": true,
+"variables": [
+"område",
+"art",
+"tid"
+]
+},
+{
+"id": "SVIN",
+"text": "Svinebestanden den 1. i  kvartalet",
+"unit": "1.000 stk.",
+"updated": "2026-08-07T08:00:00",
+"firstPeriod": "1998K1",
+"latestPeriod": "2026K3",
+"active": true,
+"variables": [
+"type",
+"tid"
+]
+},
+{
+"id": "ANI4",
+"text": "Slagtninger og produktion af kvæg",
+"unit": "-",
+"updated": "2026-07-30T08:00:00",
+"firstPeriod": "1990",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"kategori",
+"enhed",
+"tid"
+]
+},
+{
+"id": "ANI41",
+"text": "Slagtninger og produktion af kvæg",
+"unit": "-",
+"updated": "2026-09-25T08:00:00",
+"firstPeriod": "1995M01",
+"latestPeriod": "2026M07",
+"active": true,
+"variables": [
+"kategori",
+"enhed",
+"tid"
+]
+},
+{
+"id": "ANI5",
+"text": "Slagtninger og produktion af svin",
+"unit": "-",
+"updated": "2026-07-30T08:00:00",
+"firstPeriod": "1990",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"kategori",
+"enhed",
+"tid"
+]
+},
+{
+"id": "ANI51",
+"text": "Slagtninger og produktion af svin",
+"unit": "-",
+"updated": "2026-09-25T08:00:00",
+"firstPeriod": "1995M01",
+"latestPeriod": "2026M07",
+"active": true,
+"variables": [
+"kategori",
+"enhed",
+"tid"
+]
+},
+{
+"id": "ANI6",
+"text": "Slagtninger og produktion af fjerkræ",
+"unit": "-",
+"updated": "2026-07-30T08:00:00",
+"firstPeriod": "1990",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"kategori",
+"enhed",
+"tid"
+]
+},
+{
+"id": "ANI61",
+"text": "Slagtninger og produktion af fjerkræ",
+"unit": "-",
+"updated": "2026-09-04T08:00:00",
+"firstPeriod": "1995K1",
+"latestPeriod": "2026K2",
+"active": true,
+"variables": [
+"kategori",
+"enhed",
+"tid"
+]
+},
+{
+"id": "ANI9",
+"text": "Slagtninger og eksport",
+"unit": "1.000 stk.",
+"updated": "2026-07-30T08:00:00",
+"firstPeriod": "2005",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"kategori",
+"enhed",
+"tid"
+]
+},
+{
+"id": "ANI7",
+"text": "Mælkeproduktion og anvendelse",
+"unit": "-",
+"updated": "2026-07-30T08:00:00",
+"firstPeriod": "1990",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"enhed",
+"tid"
+]
+},
+{
+"id": "ANI71",
+"text": "Mælkeproduktion og anvendelse",
+"unit": "-",
+"updated": "2026-09-14T08:00:00",
+"firstPeriod": "1995M01",
+"latestPeriod": "2026M07",
+"active": true,
+"variables": [
+"enhed",
+"tid"
+]
+},
+{
+"id": "ANI8",
+"text": "Ægproduktion og produktionsformer",
+"unit": "-",
+"updated": "2026-07-30T08:00:00",
+"firstPeriod": "1990",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"enhed",
+"tid"
+]
+},
+{
+"id": "ANI81",
+"text": "Ægproduktion og produktionsformer",
+"unit": "-",
+"updated": "2026-09-04T08:00:00",
+"firstPeriod": "1995K1",
+"latestPeriod": "2026K2",
+"active": true,
+"variables": [
+"enhed",
+"tid"
+]
+},
+{
+"id": "HST5",
+"text": "Prognose for vinterafgrøder til høst",
+"unit": "1.000 ha",
+"updated": "2025-11-28T08:00:00",
+"firstPeriod": "2000",
+"latestPeriod": "2026",
+"active": true,
+"variables": [
+"afgrøde",
+"enhed",
+"tid"
+]
+},
+{
+"id": "GROV89",
+"text": "Høst af grovfoder",
+"unit": "-",
+"updated": "2026-06-12T08:00:00",
+"firstPeriod": "2025",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"afgrøde",
+"produktionsform",
+"enhed",
+"tid"
+]
+},
+{
+"id": "GROV88",
+"text": "Høst af grovfoder",
+"unit": "-",
+"updated": "2026-06-12T08:00:00",
+"firstPeriod": "2025",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"landsdel",
+"afgrøde",
+"enhed",
+"tid"
+]
+},
+{
+"id": "HST89",
+"text": "Høsten af korn, raps og bælgsæd",
+"unit": "-",
+"updated": "2026-03-19T08:00:00",
+"firstPeriod": "2025",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"afgrøde",
+"produktionsform",
+"enhed",
+"tid"
+]
+},
+{
+"id": "HST88",
+"text": "Høsten af korn, raps og bælgsæd",
+"unit": "-",
+"updated": "2026-03-19T08:00:00",
+"firstPeriod": "2025",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"landsdel",
+"afgrøde",
+"enhed",
+"tid"
+]
+},
+{
+"id": "HST1920",
+"text": "Høstresultat (historisk)",
+"unit": "-",
+"updated": "2016-05-10T09:00:00",
+"firstPeriod": "1920",
+"latestPeriod": "1981",
+"active": true,
+"variables": [
+"afgrøde",
+"tid"
+]
+},
+{
+"id": "PFG2",
+"text": "Produktion af økologisk frugt og grønt",
+"unit": "-",
+"updated": "2026-05-26T08:00:00",
+"firstPeriod": "2025",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"afgrøde",
+"enhed",
+"tid"
+]
+},
+{
+"id": "PEST1",
+"text": "Salget af pesticider til anvendelse i landbrugets planteavl samt behandlingshyppighed",
+"unit": "-",
+"updated": "2026-09-01T08:00:00",
+"firstPeriod": "1981",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"pesticidgruppe",
+"måleenhed",
+"tid"
+]
+},
+{
+"id": "SKOV11",
+"text": "Skovarealet",
+"unit": "ha",
+"updated": "2024-12-13T08:00:00",
+"firstPeriod": "1990",
+"latestPeriod": "2023",
+"active": true,
+"variables": [
+"område",
+"bevoksning",
+"tid"
+]
+},
+{
+"id": "BYGV80",
+"text": "Det samlede etageareal (korrigeret for forsinkelser)",
+"unit": "M2",
+"updated": "2026-08-14T08:00:00",
+"firstPeriod": "1998M01",
+"latestPeriod": "2026M06",
+"active": true,
+"variables": [
+"byggefase",
+"anvendelse",
+"tid"
+]
+},
+{
+"id": "BYGV88",
+"text": "Det samlede etageareal (korrigeret for forsinkelser)",
+"unit": "M2",
+"updated": "2026-08-14T08:00:00",
+"firstPeriod": "1998M01",
+"latestPeriod": "2026M06",
+"active": true,
+"variables": [
+"byggefase",
+"anvendelse",
+"bygherreforhold",
+"sæsonkorrigering",
+"tid"
+]
+},
+{
+"id": "BYGV06",
+"text": "Gennemsnitligt samlet areal i nyopførte boliger (historisk oversigt)",
+"unit": "M2",
+"updated": "2026-08-14T08:00:00",
+"firstPeriod": "1916",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"anvendelse",
+"tid"
+]
+},
+{
+"id": "BYG1A",
+"text": "Beskæftigede ved byggeri og anlæg",
+"unit": "Antal",
+"updated": "2026-06-22T08:00:00",
+"firstPeriod": "2018",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"branche (DB25 udvalgte brancher)",
+"arbejdets art",
+"tid"
+]
+},
+{
+"id": "BYGOMS2A",
+"text": "Omsætning i byggeri og anlæg",
+"unit": "Mio. kr.",
+"updated": "2026-06-22T08:00:00",
+"firstPeriod": "2018",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"branche (DB25 udvalgte brancher)",
+"arbejdets art",
+"tid"
+]
+},
+{
+"id": "BYGB34",
+"text": "Bygningsbestandens areal",
+"unit": "1.000 m2",
+"updated": "2026-03-27T08:00:00",
+"firstPeriod": "2011",
+"latestPeriod": "2026",
+"active": true,
+"variables": [
+"område",
+"anvendelse",
+"arealtype",
+"opførelsesår",
+"tid"
+]
+},
+{
+"id": "BYGB40",
+"text": "Bygninger og deres opvarmede areal",
+"unit": "-",
+"updated": "2026-03-27T08:00:00",
+"firstPeriod": "2011",
+"latestPeriod": "2026",
+"active": true,
+"variables": [
+"område",
+"enhed",
+"opvarmningsform",
+"anvendelse",
+"opførelsesår",
+"tid"
+]
+},
+{
+"id": "BYGB50",
+"text": "Bygninger og deres bebyggede areal",
+"unit": "-",
+"updated": "2026-03-27T08:00:00",
+"firstPeriod": "2011",
+"latestPeriod": "2026",
+"active": true,
+"variables": [
+"område",
+"enhed",
+"tagdækningsmateriale",
+"anvendelse",
+"opførelsesår",
+"tid"
+]
+},
+{
+"id": "BYGB70",
+"text": "Bygninger og deres etageareal",
+"unit": "-",
+"updated": "2026-03-27T08:00:00",
+"firstPeriod": "2021",
+"latestPeriod": "2026",
+"active": true,
+"variables": [
+"område",
+"enhed",
+"anvendelse",
+"tid"
+]
+},
+{
+"id": "BYGB60",
+"text": "Bygninger og deres etageareal",
+"unit": "-",
+"updated": "2026-03-27T08:00:00",
+"firstPeriod": "2011",
+"latestPeriod": "2026",
+"active": true,
+"variables": [
+"område",
+"enhed",
+"ydervægsmateriale",
+"anvendelse",
+"opførelsesår",
+"tid"
+]
+},
+{
+"id": "BYG62",
+"text": "Omkostningsindeks for anlæg",
+"unit": "Indeks",
+"updated": "2026-09-08T08:00:00",
+"firstPeriod": "1986K3",
+"latestPeriod": "2026K2",
+"active": true,
+"variables": [
+"indekstype",
+"enhed",
+"tid"
+]
+},
+{
+"id": "BYG72",
+"text": "Omkostningsindeks for anlæg",
+"unit": "-",
+"updated": "2026-03-09T08:00:00",
+"firstPeriod": "1987",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"indekstype",
+"enhed",
+"tid"
+]
+},
+{
+"id": "BYGPRO1A",
+"text": "Produktionsindeks for bygge og anlægssektoren",
+"unit": "Indeks",
+"updated": "2026-09-15T08:00:00",
+"firstPeriod": "2008M01",
+"latestPeriod": "2026M07",
+"active": true,
+"variables": [
+"branche (DB25 udvalgte brancher)",
+"tid"
+]
+},
+{
+"id": "BYGPRO1",
+"text": "Produktionsindeks for bygge og anlægssektoren",
+"unit": "Indeks",
+"updated": "2026-02-13T08:00:00",
+"firstPeriod": "2008M01",
+"latestPeriod": "2025M12",
+"active": true,
+"variables": [
+"branche",
+"tid"
+]
+},
+{
+"id": "KBB01",
+"text": "Udviklingsforløb for byggeri og anlæg",
+"unit": "Pct.",
+"updated": "2026-09-23T08:00:00",
+"firstPeriod": "2015M01",
+"latestPeriod": "2026M09",
+"active": true,
+"variables": [
+"branche (DB25 udvalgte brancher)",
+"indikator",
+"bedømmelse",
+"forløb",
+"tid"
+]
+},
+{
+"id": "KBB02",
+"text": "Vurdering af ordrebeholdningen i byggeri og anlæg",
+"unit": "Pct.",
+"updated": "2026-09-23T08:00:00",
+"firstPeriod": "2015M01",
+"latestPeriod": "2026M09",
+"active": true,
+"variables": [
+"branche (DB25 udvalgte brancher)",
+"bedømmelse",
+"tid"
+]
+},
+{
+"id": "KBB03",
+"text": "Produktionsbegrænsninger i byggeri og anlæg",
+"unit": "Pct.",
+"updated": "2026-09-23T08:00:00",
+"firstPeriod": "2015M01",
+"latestPeriod": "2026M09",
+"active": true,
+"variables": [
+"branche (DB25 udvalgte brancher)",
+"årsag",
+"tid"
+]
+},
+{
+"id": "KBB01K",
+"text": "Udviklingsforløb i byggeri og anlæg, nettotal (sæsonkorrigeret)",
+"unit": "Pct.",
+"updated": "2026-09-23T08:00:00",
+"firstPeriod": "2015M01",
+"latestPeriod": "2026M09",
+"active": true,
+"variables": [
+"indikator",
+"sæsonkorrigering",
+"forløb",
+"tid"
+]
+},
+{
+"id": "KBB02K",
+"text": "Vurdering af ordrebeholdningen i byggeri og anlæg, nettotal (sæson- og brudkorrigeret)",
+"unit": "Pct.",
+"updated": "2026-09-23T08:00:00",
+"firstPeriod": "2015M01",
+"latestPeriod": "2026M09",
+"active": true,
+"variables": [
+"sæsonkorrigering",
+"tid"
+]
+},
+{
+"id": "FILMIND1",
+"text": "Indtægter til danske spillefilm",
+"unit": "-",
+"updated": "2026-08-17T08:00:00",
+"firstPeriod": "2010",
+"latestPeriod": "2022",
+"active": true,
+"variables": [
+"indtægtstype",
+"målgruppe",
+"nøgletal",
+"tid"
+]
+},
+{
+"id": "MUSIK3",
+"text": "Indtægter ved salg af musik",
+"unit": "Kr.",
+"updated": "2026-09-07T08:00:00",
+"firstPeriod": "2012",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"rettighedsejertype",
+"område",
+"tid"
+]
+},
+{
+"id": "MUSIK4",
+"text": "Autorers indtægter fra musikrettigheder",
+"unit": "Kr.",
+"updated": "2026-09-07T08:00:00",
+"firstPeriod": "2012",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"køn",
+"alder",
+"område",
+"tid"
+]
+},
+{
+"id": "ARE207",
+"text": "Areal 1. januar",
+"unit": "Km2",
+"updated": "2026-02-27T08:00:00",
+"firstPeriod": "2007",
+"latestPeriod": "2026",
+"active": true,
+"variables": [
+"område",
+"tid"
+]
+},
+{
+"id": "AREALDK2",
+"text": "Areal",
+"unit": "-",
+"updated": "2026-01-27T08:00:00",
+"firstPeriod": "2011",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"arealdække",
+"område",
+"enhed",
+"tid"
+]
+},
+{
+"id": "AREALAN1",
+"text": "Arealanvendelse",
+"unit": "-",
+"updated": "2017-05-16T09:00:00",
+"firstPeriod": "2016",
+"latestPeriod": "2016",
+"active": true,
+"variables": [
+"branche (19a2-gruppering)",
+"område",
+"enhed",
+"tid"
+]
+},
+{
+"id": "TEMA9010",
+"text": "Udledning fra landbrug, skovbrug og fiskeri",
+"unit": "Mio ton CO2 -ækvivalenter",
+"updated": "2026-09-15T08:00:00",
+"firstPeriod": "1990",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"emissionstype",
+"tid"
+]
+},
+{
+"id": "SKOVRG03",
+"text": "Skovareal (Kyoto) (fysisk balance)",
+"unit": "Km2",
+"updated": "2026-09-16T08:00:00",
+"firstPeriod": "1990",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"balanceposter",
+"region",
+"tid"
+]
+},
+{
+"id": "SKOVRG04",
+"text": "Skovareal",
+"unit": "Km2",
+"updated": "2026-09-16T08:00:00",
+"firstPeriod": "2023",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"skovkategori",
+"tid"
+]
+},
+{
+"id": "OEKO11",
+"text": "Økologiske bedrifter og arealer",
+"unit": "-",
+"updated": "2026-03-16T08:00:00",
+"firstPeriod": "2012",
+"latestPeriod": "2025",
+"active": true,
+"variables": [
+"økologisk status",
+"afgrøde",
+"tid"
+]
+},
+{
+"id": "OEKO3",
+"text": "Detailomsætningen af økologiske fødevarer",
+"unit": "-",
+"updated": "2025-04-22T08:00:00",
+"firstPeriod": "2003",
+"latestPeriod": "2024",
+"active": true,
+"variables": [
+"varer",
+"enhed",
+"tid"
+]
+}
+]
