@@ -139,6 +139,15 @@ sources:
     continue: true
     data: [us-lamb.json]
     message: Datos cordero EE. UU. (USDA AMS LM_XL502)
+  - id: crop-insurance
+    name: Update US crop insurance (USDA RMA Summary of Business)
+    cron: ['25 6 * * 2']
+    script: scripts/update-crop-insurance.py
+    timeout: 30
+    script_timeout: 25
+    continue: false
+    data: [crop-insurance.json, crop-insurance-log.txt]
+    message: Datos del seguro de cosechas de EE. UU. (USDA RMA)
   - id: canada-grain
     name: Update Canada weekly grain statistics (Canadian Grain Commission)
     cron: ['40 16 * * 3,4,5']

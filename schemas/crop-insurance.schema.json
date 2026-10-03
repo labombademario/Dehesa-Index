@@ -1,0 +1,22 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Seguro de cosechas de EE. UU. (USDA RMA, Summary of Business)",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "source", "unit", "fields", "cropYears", "latestCompleteYear", "provisionalFrom", "national", "states", "crops", "causeIndemnity", "causeStateIndemnity", "causeCheck"],
+ "properties": {
+  "schemaVersion": {"type": "integer"},
+  "generatedAt": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"},
+  "source": {"type": "object", "required": ["id", "name", "url", "license"], "properties": {"id": {"type": "string", "enum": ["usda_rma"]}, "name": {"type": "string", "minLength": 1}, "url": {"type": "string", "pattern": "^https://"}, "license": {"type": "string", "minLength": 1}}},
+  "unit": {"type": "string", "minLength": 1},
+  "fields": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string"}},
+  "cropYears": {"type": "array", "minItems": 8, "items": {"type": "integer", "minimum": 1989, "maximum": 2100}},
+  "latestCompleteYear": {"type": "integer", "minimum": 1989, "maximum": 2100},
+  "provisionalFrom": {"type": "integer", "minimum": 1989, "maximum": 2100},
+  "national": {"type": "object"},
+  "states": {"type": "object"},
+  "crops": {"type": "object"},
+  "causeIndemnity": {"type": "object"},
+  "causeStateIndemnity": {"type": "object"},
+  "causeCheck": {"type": "object"}
+ }
+}
