@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-03T21:51:29Z",
+ "generatedAt": "2026-10-04T02:49:33Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2800,7 +2800,7 @@
    "licenseId": "CUSTOM",
    "commercialReuse": "yes",
    "derivatives": "yes",
-   "attribution": "Kilde: Retsinformation (Civilstyrelsen), bekendtgørelse nr. 1363 og 1381 af 2025. Uddrag og bearbejdning; kun Retsinformation er autentisk.",
+   "attribution": "Kilde: Retsinformation (Civilstyrelsen), bekendtgørelse 1363 og 1381 af 2025. Uddrag.",
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
    "datasetIdentified": true,
@@ -2951,7 +2951,7 @@
    "country": "CA",
    "scope": "integrated",
    "institution": "Statistics Canada",
-   "dataset": "Ya integrada (350 series en el catalogo unificado)",
+   "dataset": "Ya integrada (472 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",
