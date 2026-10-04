@@ -397,7 +397,7 @@ def auk_row(rows, start, after=None):
     if after:
         i0 = next((k for k, (l, _) in enumerate(rows) if l.lower().startswith(after.lower())), None)
         if i0 is None: return None
-    return next((d for l, d in rows[i0:] if l.lower().startswith(start.lower())), None)
+    return next((d for l, d in rows[i0:] if re.sub(r'^\d+\s+', '', l).lower().startswith(start.lower())), None)
 
 # (hoja del capítulo, tabla, tramo tras este encabezado, inicio de fila, id, grupo, etiqueta, unidad, factor, nota)
 GBP = 'GBP million'
@@ -488,8 +488,138 @@ def auk():
         except Exception as e: log('AUK: error en comercio', flow, repr(e))
     PUB['auk'] = max(pubs) if pubs else ''; log('Agriculture in the UK:', n, 'series; publicado', PUB['auk'])
 
+def auk_vertical(df, col=1):
+    """tabla vertical (año en la 1.ª columna, valor en la columna col): {periodo: valor}"""
+    out = {}
+    for i in range(3, len(df)):
+        p = auk_period(df.iat[i, 0]) if not hasattr(df.iat[i, 0], 'strftime') else None
+        if p is None: continue
+        out[p] = num(df.iat[i, col])
+    return out
+def auk_more():
+    import pandas as pd
+    SRC = 'Defra – Agriculture in the United Kingdom'; xls = {}; pubs = []; n = 0
+    def book(ch):
+        if ch not in xls:
+            raw, pub = fetch('auk_chapter%d.ods' % ch, AUK_URL, r'AUK-chapter%d-[0-9]+i?\.ods$' % ch); pubs.append(pub)
+            xls[ch] = pd.ExcelFile(io.BytesIO(raw), engine='odf')
+        return xls[ch]
+    NOTE = {'periodNote': 'The latest year is provisional (Defra)'}
+    def wide(ch, sh, tb, items, sid, grp, lab, unit, mul=1, after=None, hdr_row=None, note=NOTE):
+        nonlocal n
+        try: rows = auk_table(book(ch).parse(sh, header=None), tb, hdr_row=hdr_row)
+        except Exception as e: log('AUK: error en', sh, tb, repr(e)); return
+        for row, k, nm in items:
+            d = auk_row(rows, row, after)
+            if d is None: log('AUK: no está la fila', row, 'en', sh); continue
+            pts = [(p, None if v is None else v * mul) for p, v in d.items() if v is not None]
+            if not pts or pts[-1][0] < '2023': log('AUK: omitida (sin datos recientes)', sid + k); continue
+            if put(sid + k, grp, lab % nm, unit if isinstance(unit, str) else unit, 'annual', pts, SRC, note): n += 1
+    # --- estructura (cap. 2)
+    wide(2, 'Table_2_1', None, [('Utilised agricultural area', 'uaa', 'utilised agricultural area'), ('Total croppable area', 'croppable', 'croppable area'), ('Cereals', 'cereals', 'cereals'), ('Oilseeds', 'oilseeds', 'oilseeds'),
+         ('Potatoes', 'potatoes', 'potatoes'), ('Other arable crops', 'other-arable', 'other arable crops'), ('Horticultural crops', 'horticulture', 'horticultural crops'), ('Uncropped arable land', 'uncropped', 'uncropped arable land'),
+         ('Temporary grass', 'temporary-grass', 'temporary grass'), ('Total permanent grassland', 'permanent-grass', 'permanent grassland'), ('Woodland', 'woodland', 'woodland on agricultural holdings')],
+         'uk-auk-land-', 'crops', 'Agricultural land use, United Kingdom: %s (hectares)', 'ha', 1000, hdr_row=2)
+    wide(2, 'Table_2_5', None, [('Total workforce', 'total', 'total'), ('Farmers, business partners', 'farmers', 'farmers, partners and spouses'), ('Regular employees, salaried', 'employees', 'employees, managers and casual workers')],
+         'uk-auk-workforce-', 'production', 'Agricultural workforce, United Kingdom: %s (people)', 'people', 1000, hdr_row=2)
+    # --- cuentas (cap. 4), a precios corrientes
+    ACC = [('Output of cereals', 'cereals', 'output of cereals'), ('Output of industrial crops', 'industrial', 'output of industrial crops'), ('Output of forage plants', 'forage', 'output of forage plants'),
+           ('Output of vegetables and horticultural', 'horticulture', 'output of vegetables and horticultural products'), ('Output of potatoes', 'potatoes', 'output of potatoes'), ('Output of fruit', 'fruit', 'output of fruit'),
+           ('Total crop output', 'crops', 'total crop output'), ('Output of livestock', 'livestock-meat', 'output of livestock'), ('Output of livestock products', 'livestock-products', 'output of livestock products'),
+           ('Total livestock output', 'livestock', 'total livestock output'), ('Other agricultural activities', 'other-activities', 'other agricultural activities'), ('Diversification', 'diversification', 'diversification'),
+           ('Output (at market prices)', 'output', 'total output at market prices'), ('Seeds', 'seeds', 'seeds'), ('Energy', 'energy', 'energy'), ('Fertilisers', 'fertilisers', 'fertilisers'), ('Plant protection products', 'plant-protection', 'plant protection products'),
+           ('Veterinary expenses', 'veterinary', 'veterinary expenses'), ('Animal feed', 'feed', 'animal feed'), ('Total maintenance', 'maintenance', 'maintenance'), ('Agricultural services', 'services', 'agricultural services'),
+           ('Bank charges', 'bank-charges', 'bank charges'), ('Other goods and services', 'other-goods', 'other goods and services'), ('Total intermediate consumption', 'intermediate', 'total intermediate consumption'),
+           ('Gross value added at market prices', 'gva', 'gross value added at market prices'), ('Total consumption of fixed capital', 'depreciation', 'consumption of fixed capital'), ('Net value added at market prices', 'nva', 'net value added at market prices'),
+           ('Subsidies not linked to production', 'subsidies', 'subsidies not linked to production'), ('Compensation of employees', 'labour', 'compensation of employees'), ('Rent', 'rent', 'rent'), ('Interest', 'interest', 'interest'),
+           ('Total Income from Farming', 'tiff', 'Total Income from Farming')]
+    wide(4, 'Current_Price_Account', None, ACC, 'uk-auk-account-', 'income', 'Agricultural account, United Kingdom: %s (GBP million, current prices)', 'GBP million', 1, hdr_row=2)
+    wide(4, 'Real_Terms_Account', None, [('Total Income from Farming (', 'tiff-real', 'Total Income from Farming')], 'uk-auk-account-', 'income', 'Agricultural account, United Kingdom, real terms: %s (GBP million, 2025 prices)', 'GBP million', 1, hdr_row=2)
+    wide(4, 'Real_Terms_Account', None, [("Total Income from Farming per unit", 'tiff-per-awu', 'Total Income from Farming per annual work unit')], 'uk-auk-account-', 'income', 'Agricultural account, United Kingdom, real terms: %s (GBP per annual work unit)', 'GBP/AWU', 1, hdr_row=2)
+    # --- productividad (cap. 5)
+    wide(5, 'Productivity', None, [('All outputs', 'outputs', 'all outputs'), ('All inputs and entrepreneurial labour', 'inputs', 'all inputs and entrepreneurial labour'), ('Total Factor Productivity', 'tfp', 'total factor productivity'),
+         ('Productivity by intermediate consumption', 'by-intermediate', 'by intermediate consumption'), ('Productivity by capital consumption', 'by-capital', 'by capital consumption'), ('Productivity by labour', 'by-labour', 'by labour'),
+         ('Productivity by land', 'by-land', 'by land')], 'uk-auk-productivity-', 'income', 'Productivity index, United Kingdom: %s (1973 = 100)', 'index', 1, hdr_row=2)
+    # --- índices de precios (cap. 6)
+    PI = [('All outputs', 'all', 'all outputs'), ('Crop products', 'crops', 'crop products'), ('Cereals', 'cereals', 'cereals'), ('Wheat', 'wheat', 'wheat'), ('Barley', 'barley', 'barley'), ('Oats', 'oats', 'oats'), ('Potatoes', 'potatoes', 'potatoes'),
+          ('Industrial crops', 'industrial', 'industrial crops'), ('Oilseed rape', 'oilseed-rape', 'oilseed rape'), ('Sugar beet', 'sugar-beet', 'sugar beet'), ('Fresh vegetables', 'vegetables', 'fresh vegetables'), ('Fresh fruit', 'fruit', 'fresh fruit'),
+          ('Animals and animal products', 'animals', 'animals and animal products'), ('Animals (for slaughter', 'slaughter', 'animals for slaughter and export'), ('Cattle and calves', 'cattle', 'cattle and calves'), ('Pigs', 'pigs', 'pigs'),
+          ('Sheep and lambs', 'sheep', 'sheep and lambs'), ('All poultry', 'poultry', 'poultry'), ('Animal products', 'animal-products', 'animal products'), ('Milk', 'milk', 'milk'), ('Eggs', 'eggs', 'eggs')]
+    wide(6, 'Table_6_1', 'Table 6.1a', PI, 'uk-auk-pi-out-', 'prices', 'Agricultural product price index, United Kingdom: %s (2020 = 100)', 'index', 1)
+    PN = [('All inputs', 'all', 'all inputs'), ('All goods and services currently consumed', 'current', 'goods and services currently consumed'), ('Seeds', 'seeds', 'seeds'), ('Energy and lubricants', 'energy', 'energy and lubricants'),
+          ('Fertilisers and soil improvers', 'fertilisers', 'fertilisers and soil improvers'), ('Plant protection products', 'plant-protection', 'plant protection products'), ('Veterinary services', 'veterinary', 'veterinary services'),
+          ('Animal feedingstuffs', 'feed', 'animal feedingstuffs'), ('Straight feedingstuffs', 'straights', 'straight feedingstuffs'), ('Compound feedingstuffs', 'compounds', 'compound feedingstuffs'), ('Maintenance of materials', 'maint-materials', 'maintenance of materials'),
+          ('Maintenance of buildings', 'maint-buildings', 'maintenance of buildings'), ('Other goods and services', 'other', 'other goods and services')]
+    wide(6, 'Table_6_1', 'Table 6.1b', PN, 'uk-auk-pi-in-', 'prices', 'Agricultural input price index, United Kingdom: %s (2020 = 100)', 'index', 1)
+    # --- insumos (cap. 9)
+    wide(9, 'Table_9_1', None, [('Total all purchased animal feed', 'total', 'total purchased animal feed')], 'uk-auk-feed-', 'inputs_a', 'Purchased animal feed, United Kingdom: %s (tonnes)', 't', 1000, hdr_row=2)
+    wide(9, 'Table_9_1', None, [('Value of purchased animal feed', 'value', 'value of purchased animal feed')], 'uk-auk-feed-', 'inputs_a', 'Purchased animal feed, United Kingdom: %s (GBP million, current prices)', 'GBP million', 1, hdr_row=2)
+    for sh, k, lab in (('Figure_9_3', 'energy-real', 'Value of energy inputs, United Kingdom, real terms (GBP million, 2025 prices)'), ('Figure_9_4', 'fertilisers-real', 'Value of fertiliser inputs, United Kingdom, real terms (GBP million, 2025 prices)')):
+        try:
+            d = auk_vertical(book(9).parse(sh, header=None))
+            if put('uk-auk-' + k, 'inputs_f' if 'fert' in k else 'inputs', lab, 'GBP million', 'annual', list(d.items()), SRC, NOTE): n += 1
+        except Exception as e: log('AUK: error en', sh, repr(e))
+    # --- ayudas y agroambiente (cap. 10)
+    wide(10, 'Figure_10_1', None, [('England', 'england', 'England'), ('Wales', 'wales', 'Wales'), ('Scotland', 'scotland', 'Scotland'), ('Northern Ireland', 'northern-ireland', 'Northern Ireland'), ('Total for United Kingdom', 'uk', 'United Kingdom')],
+         'uk-auk-support-', 'income', 'Agricultural support payments: %s (GBP million)', 'GBP million', 1, hdr_row=2)
+    wide(10, 'Figure_10_2', None, [('Agri-environment Schemes', 'agri-environment', 'agri-environment schemes'), ('Basic and Delinked', 'basic', 'basic and delinked payment schemes'), ('General Services', 'general-services', 'general services support'),
+         ('Other Schemes', 'other', 'other schemes'), ('Red Diesel', 'red-diesel', 'red diesel')], 'uk-auk-support-cat-', 'income', 'Agricultural support payments, United Kingdom, by category: %s (GBP million)', 'GBP million', 1, hdr_row=2)
+    wide(10, 'Table_10_1', None, [('England: Total area', 'england', 'England'), ('Wales: Total area', 'wales', 'Wales'), ('Scotland: Total area', 'scotland', 'Scotland'), ('Northern Ireland: Total area', 'northern-ireland', 'Northern Ireland'), ('UK Total area', 'uk', 'United Kingdom')],
+         'uk-auk-agrienv-area-', 'environment', 'Area under agri-environment schemes: %s (hectares)', 'ha', 1000, hdr_row=2)
+    wide(10, 'Table_10_2', None, [('UK Total number', 'uk', 'United Kingdom')], 'uk-auk-agrienv-agreements-', 'environment', 'Agri-environment scheme agreements: %s (agreements, rounded to the nearest hundred)', 'agreements', 1, hdr_row=2)
+    # --- ecológico (cap. 12): tablas con región en la 2.ª columna
+    try:
+        for sh, tipo, lab, unit, mul, ids in (('Land_Area', None, 'Organic land area, %s: %s (hectares)', 'ha', 1000, ('In-conversion', 'Fully organic', 'Total')), ('Operators', 'Total', 'Organic operators, %s: total (operators)', 'operators', 1, ('Total',))):
+            df = book(12).parse(sh, header=None); hdr = 2
+            cols = {j: auk_period(df.iat[hdr, j]) for j in range(2, df.shape[1])}; cols = {j: p for j, p in cols.items() if p}
+            for i in range(hdr + 1, len(df)):
+                ty, rg = str(df.iat[i, 0]).strip(), str(df.iat[i, 1]).strip()
+                if ty not in ids or rg in ('nan', ''): continue
+                pts = [(p, None if num(df.iat[i, j]) is None else num(df.iat[i, j]) * mul) for j, p in cols.items()]
+                pts = [(p, v) for p, v in pts if v is not None]
+                if put('uk-auk-organic-%s-%s-%s' % (sh.lower().replace('_', '-'), slug_(rg), slug_(ty)), 'organic', lab % ((rg, ty.lower()) if '%s: %s' in lab else rg), unit, 'annual', pts, SRC, NOTE): n += 1
+    except Exception as e: log('AUK: error en ecológico', repr(e))
+    wide(12, 'Livestock', None, [('Cattle', 'cattle', 'cattle'), ('Dairy cows', 'dairy-cows', 'dairy cows'), ('Sheep', 'sheep', 'sheep'), ('Pigs', 'pigs', 'pigs'), ('Poultry', 'poultry', 'poultry'), ('Broilers', 'broilers', 'broilers'), ('Laying hens', 'laying-hens', 'laying hens')],
+         'uk-auk-organic-livestock-', 'organic', 'Organic livestock, United Kingdom: %s (head)', 'head', 1000, hdr_row=2)
+    # --- cadena alimentaria (cap. 14)
+    wide(14, 'Table_14_1a', None, [("Agri-food sector's contribution", 'total', 'agri-food sector, total'), ('Agriculture (excluding fishing)', 'agriculture', 'agriculture (excluding fishing)'), ('Food and drink manufacturing', 'manufacturing', 'food and drink manufacturing'),
+         ('Food and drink wholesale', 'wholesale', 'food and drink wholesale'), ('Food and drink retail', 'retail', 'food and drink retail'), ('Food and drink non-residential catering', 'catering', 'food and drink catering')],
+         'uk-auk-gva-', 'income', 'Gross value added, United Kingdom: %s (GBP million, current prices)', 'GBP million', 1, hdr_row=2)
+    wide(14, 'Table_14_1b', None, [('Agriculture (excluding fishing)', 'agriculture', 'agriculture (excluding fishing)'), ('Food and drink manufacturing', 'manufacturing', 'food and drink manufacturing'), ('Food and drink wholesale', 'wholesale', 'food and drink wholesale'),
+         ('Food and drink retail', 'retail', 'food and drink retail'), ('Food and drink non-residential catering', 'catering', 'food and drink catering'), ('Total Food', 'food', 'total food'), ('Total Agri-Food', 'agri-food', 'total agri-food')],
+         'uk-auk-foodworkforce-', 'production', 'Food chain workforce, Great Britain: %s (people)', 'people', 1000, hdr_row=2)
+    wide(14, 'Table_14_1d', None, [('At current prices', 'total', 'total'), ('Household food and non-alcoholic beverages', 'household-food', 'household food and non-alcoholic beverages'), ('Food and drink eaten out', 'eaten-out', 'food and drink eaten out'),
+         ('Alcoholic drinks', 'alcohol', 'alcoholic drinks (off-licence only)')], 'uk-auk-hfce-', 'income', 'Household expenditure on food and drink, United Kingdom: %s (GBP million, current prices)', 'GBP million', 1, hdr_row=2)
+    try:
+        df = book(14).parse('Figure_14_7', header=None); hdr = 2
+        for j, k, nm in ((1, 'overall', 'overall'), (2, 'food', 'food')):
+            pts = []
+            for i in range(hdr + 1, len(df)):
+                c = df.iat[i, 0]
+                try: d = datetime.datetime.fromisoformat(str(c)[:10])
+                except ValueError: continue
+                pts.append((d.strftime('%Y-%m'), num(df.iat[i, j])))
+            if put('uk-auk-cpih-' + k, 'prices', 'Consumer price inflation (CPIH), United Kingdom: %s (annual change, %%)' % nm, '%', 'monthly', pts, SRC, {'periodNote': 'Annual rate of change as published by Defra from ONS data (third-party data)'}): n += 1
+    except Exception as e: log('AUK: error en CPIH', repr(e))
+    # --- hortalizas, fruta, plantas y proteicos (cap. 7)
+    VEG = [('Cabbages', 'cabbages', 'cabbages'), ('Carrots', 'carrots', 'carrots'), ('Cauliflowers', 'cauliflowers', 'cauliflowers'), ('Calabrese', 'calabrese', 'calabrese'), ('Lettuces', 'lettuces', 'lettuces'), ('Mushrooms', 'mushrooms', 'mushrooms'), ('Onions', 'onions', 'onions'), ('Tomatoes', 'tomatoes', 'tomatoes')]
+    V = 'Value of production, United Kingdom: %s (GBP million)'
+    wide(7, 'Table_7_8', 'Table 7.8a', [('Area (thousand hectares)', 'area-vegetables', 'fresh vegetables')], 'uk-auk-', 'crops', 'Area of %s, United Kingdom (hectares)', 'ha', 1000)
+    wide(7, 'Table_7_8', 'Table 7.8a', [('Value of production', 'vegetables', 'fresh vegetables'), ('Grown in the open', 'vegetables-open', 'fresh vegetables grown in the open'), ('Protected', 'vegetables-protected', 'protected fresh vegetables')], 'uk-auk-value-', 'crops', V, 'GBP million', 1, after='Value of production')
+    wide(7, 'Table_7_8', 'Table 7.8a', VEG, 'uk-auk-value-', 'crops', V, 'GBP million', 1, after='Subsidies')
+    wide(7, 'Table_7_8', 'Table 7.8b', [('Cauliflowers', 'cauliflowers', 'Cauliflowers'), ('Tomatoes', 'tomatoes', 'Tomatoes')], 'uk-auk-price-veg-', 'prices', 'Farm-gate price, United Kingdom: %s (GBP per tonne)', 'GBP/t', 1)
+    FR = [('Orchard fruit', 'orchard', 'orchard fruit'), ('Soft fruit', 'soft', 'soft fruit'), ('Dessert apples', 'dessert-apples', 'dessert apples'), ('Culinary apples', 'culinary-apples', 'culinary apples'), ('Pears', 'pears', 'pears'), ('Raspberries', 'raspberries', 'raspberries'), ('Strawberries', 'strawberries', 'strawberries')]
+    wide(7, 'Table_7_11', 'Table 7.11a', [('Value of production', 'fruit', 'fresh fruit')], 'uk-auk-value-', 'crops', V, 'GBP million', 1)
+    wide(7, 'Table_7_11', 'Table 7.11a', FR, 'uk-auk-value-fruit-', 'crops', V, 'GBP million', 1, after='Value of production')
+    wide(7, 'Table_7_11', 'Table 7.11b', [('Dessert apples', 'dessert-apples', 'Dessert apples'), ('Culinary apples', 'culinary-apples', 'Culinary apples'), ('Pears', 'pears', 'Pears'), ('Raspberries', 'raspberries', 'Raspberries'), ('Strawberries', 'strawberries', 'Strawberries')],
+         'uk-auk-price-fruit-', 'prices', 'Farm-gate price, United Kingdom: %s (GBP per tonne)', 'GBP/t', 1)
+    wide(7, 'Table_7_9', 'Table 7.9a', [('Value of production', 'plants', 'plants and flowers'), ('Flowers and bulbs', 'flowers', 'flowers and bulbs'), ('Pot plants', 'pot-plants', 'pot plants'), ('Hardy ornamental nursery stock', 'nursery', 'hardy ornamental nursery stock')],
+         'uk-auk-value-', 'crops', V, 'GBP million', 1)
+    wide(7, 'Table_7_7', 'Table 7.7a', [('Value of production at market prices', 'peas', 'dry peas (for harvesting dry)')], 'uk-auk-value-', 'crops', V, 'GBP million', 1)
+    PUB['auk_more'] = max(pubs) if pubs else ''; log('Agriculture in the UK (resto de capítulos):', n, 'series; publicado', PUB['auk_more'])
+
 def main():
-    for fn in (slaughter, fbi, livestock, cereals, eggs, poultry, cereals_regions, milk, milk_products, auk):
+    for fn in (slaughter, fbi, livestock, cereals, eggs, poultry, cereals_regions, milk, milk_products, auk, auk_more):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e))
     if len(OUT) < 30:
