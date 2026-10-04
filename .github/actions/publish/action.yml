@@ -42,8 +42,8 @@ runs:
         for p in $OPTIONAL; do [ -e "$p" ] && git add -- "$p"; done
         if git diff --cached --quiet; then echo "Sin cambios que publicar"; exit 0; fi
         git commit -qm "$MESSAGE"
-        for i in 1 2 3; do
+        for i in 1 2 3 4 5 6; do
           git pull -q --rebase --autostash origin main && git push && exit 0
-          sleep $((i * 5))
+          sleep $((i * 5 + RANDOM % 10))
         done
-        echo "::error::no se pudo publicar tras 3 intentos"; exit 1
+        echo "::error::no se pudo publicar tras 6 intentos"; exit 1

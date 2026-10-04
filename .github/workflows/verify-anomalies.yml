@@ -34,9 +34,9 @@ jobs:
           git add data/data-anomalies.json
           git diff --cached --quiet && exit 0
           git commit -qm "Anomalias de datos: verificacion contra la fuente primaria"
-          for i in 1 2 3; do
+          for i in 1 2 3 4 5 6; do
             git pull -q --rebase --autostash && git push && exit 0
-            sleep $((i * 5))
+            sleep $((i * 5 + RANDOM % 10))
           done
           echo '::error::could not publish after 3 attempts'; exit 1
       - name: Close (red if a value does not match the source, a flag says not applicable, or the source was unreachable)

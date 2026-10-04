@@ -35,11 +35,11 @@ jobs:
           git add data/eu-regions-es.json data/eu-regions-fr.json data/eu-regions-it.json data/eu-regions-de.json data/eu-regions-nl.json data/eu-regions-at.json data/eu-regions-log.txt data/revisions.json
           git diff --cached --quiet && exit 0
           git commit -qm "Datos agrarios por region (Eurostat)"
-          for i in 1 2 3; do
+          for i in 1 2 3 4 5 6; do
             git pull -q --rebase --autostash && git push && exit 0
-            sleep $((i * 5))
+            sleep $((i * 5 + RANDOM % 10))
           done
-          echo '::error::no se pudo publicar tras 3 intentos'; exit 1
+          echo '::error::no se pudo publicar tras 6 intentos'; exit 1
       - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
         if: always()
         uses: ./.github/actions/finish
