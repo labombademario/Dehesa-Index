@@ -60,6 +60,10 @@ eq(ST(o4, "corn")["status"], "PARTIAL", "ano sin respuesta con datos previos: PA
 # --- fallo de autenticacion: ni escribe ni borra
 f5 = tmp / "f5"; copy_fx(f5); (f5 / "corn.2024.yield.json").write_text(json.dumps({"_fixtureError": "AUTH_FAILURE"})); o5 = tmp / "o5"; r = run(o5, f5, "--only", "corn")
 eq(r.returncode, 1, "AUTH_FAILURE sale con 1"); eq((o5 / "yields" / "corn.json").exists(), False, "AUTH_FAILURE no escribe"); eq(rd(o5 / "status.json")["run"]["status"], "AUTH_FAILURE", "estado AUTH_FAILURE")
+# --- limite de peticiones (403 sostenido): para, no es AUTH_FAILURE, conserva lo anterior y deja el resto sin ejecutar
+f6 = tmp / "f6"; copy_fx(f6); (f6 / "cotton-upland.2024.yield.json").write_text(json.dumps({"_fixtureError": "RATE_LIMITED"})); o6 = tmp / "o6"; shutil.copytree(o1, o6)
+before6 = (o6 / "yields" / "corn.json").read_text(); r = run(o6, f6); eq(r.returncode, 0, "RATE_LIMITED sale con 0 (se reintenta en la siguiente ejecucion)")
+eq(rd(o6 / "status.json")["run"]["status"], "PARTIAL", "estado PARCIAL"); eq(ST(o6, "sorghum")["status"], "NOT_RUN", "lo que viene despues queda sin ejecutar"); eq((o6 / "yields" / "corn.json").read_text(), before6, "lo anterior no se toca")
 # --- sin cambios no reescribe el fichero
 before = (o1 / "yields" / "corn.json").read_text(); r = run(o1, fx, "--only", "corn"); eq((o1 / "yields" / "corn.json").read_text(), before, "segunda ejecucion identica no cambia el fichero")
 shutil.rmtree(tmp, ignore_errors=True)

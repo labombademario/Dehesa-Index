@@ -431,6 +431,21 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
     data: [cap/es/amounts.json, cap/es/watch.json]
     message: Seguimiento de la PAC de España (texto consolidado del BOE)
+  - id: us-county-yields
+    name: Update US county yields, harvested area and production (USDA NASS Quick Stats)
+    cron: ['25 7 8 * *']
+    script: scripts/update-us-county-yields.py
+    args: '${{ github.event.inputs.full == ''true'' && ''--full'' || '''' }}'
+    env: {NASS_API_KEY: '${{ secrets.NASS_API_KEY }}'}
+    dispatch_inputs:
+      full: {description: 'true = volver a pedir los 10 anos de todos los cultivos (por defecto solo los 3 ultimos)', required: false, default: 'false'}
+    timeout: 60
+    script_timeout: 50
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/us-county)
+    data: [us-county/status.json, us-county-yields-log.txt]
+    extra: ['!data/us-county']
+    message: Datos rendimiento, superficie cosechada y produccion por condado de EE. UU. (USDA NASS)
   - id: us-local-markets
     name: Update US local cattle and hay prices (USDA AMS MARS)
     cron: ['20 15 * * 1-5']

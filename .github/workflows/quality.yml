@@ -72,6 +72,9 @@ jobs:
       - name: US local cattle and hay markets (aggregation, merge, retention, failure safety; offline fixtures, no API)
         run: python3 scripts/test-us-local-markets.py
 
+      - name: US county yields (NASS Quick Stats county reader on real county rows, suppressed values as gaps, other-counties sum, production = yield x harvested check, year merge, failures; no network)
+        run: python3 scripts/test-us-county-yields.py
+
       - name: Manitoba weekly auction cattle (PDF text parser, NA/no-sale, head totals, failure safety; real extracts as fixtures, no network)
         run: python3 scripts/test-mb-cattle.py
 

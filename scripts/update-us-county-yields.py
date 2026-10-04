@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 API = "https://quickstats.nass.usda.gov/api/api_GET/"
 YEARS_BACK = 9              # ventana: ano actual - 9 .. ano actual (10 campanas)
 REFRESH_YEARS = 3           # NASS revisa los ultimos anos: se vuelven a pedir siempre
+PAUSE = 0.4                 # pausa entre consultas para no pasarse del limite de NASS
+RATE_WAIT = 45              # espera tras un 403 (limite de peticiones), multiplicada por el intento
 TOL = 0.04                  # tolerancia produccion vs rendimiento x superficie (heno llega al 1,8 %)
 LOG = []
 LOGPATH = ROOT / "data" / "us-county-yields-log.txt"
@@ -47,6 +49,7 @@ def write_if_changed(path, doc, volatile=("generatedAt", "checkedAt")):
 class ApiError(Exception):
     def __init__(self, kind, msg=""): super().__init__(kind + (": " + msg if msg else "")); self.kind = kind
 def api_rows(key, short_desc, year, tries=4):
+    time.sleep(PAUSE)
     q = urllib.parse.urlencode({"key": key, "format": "JSON", "source_desc": "SURVEY", "agg_level_desc": "COUNTY", "short_desc": short_desc, "year": str(year), "reference_period_desc": "YEAR", "freq_desc": "ANNUAL"})
     last = ""
     for i in range(tries):
@@ -55,11 +58,13 @@ def api_rows(key, short_desc, year, tries=4):
                 return json.loads(r.read().decode("utf-8")).get("data") or []
         except urllib.error.HTTPError as e:
             if e.code == 400: return []                      # NASS responde 400 cuando no hay registros
-            if e.code in (401, 403): raise ApiError("AUTH_FAILURE", "HTTP %d" % e.code)
+            if e.code == 401: raise ApiError("AUTH_FAILURE", "HTTP 401")
+            if e.code == 403:                               # NASS responde 403 al pasarse del limite de peticiones: se espera y se reintenta; no es un fallo de clave
+                last = "HTTP 403"; time.sleep(RATE_WAIT * (i + 1)); continue
             last = "HTTP %d" % e.code
         except Exception as e: last = type(e).__name__
         time.sleep(3 * (i + 1))
-    raise ApiError("ERROR", last)
+    raise ApiError("RATE_LIMITED" if last == "HTTP 403" else "ERROR", last)
 def fixture_rows(fx, slug, year, metric):
     p = Path(fx) / ("%s.%d.%s.json" % (slug, year, metric))
     if not p.exists(): return []
@@ -109,7 +114,7 @@ def build_crop(c, key, fixture_dir, old, now, full, stats, err):
         for m in METRICS:
             try: rows = fixture_rows(fixture_dir, c["slug"], y, m) if fixture_dir else api_rows(key, c[m], y)
             except ApiError as e:
-                if e.kind == "AUTH_FAILURE": raise
+                if e.kind in ("AUTH_FAILURE", "RATE_LIMITED"): raise
                 failed.append((y, m)); err.append("%s %d %s: %s" % (c["slug"], y, m, e)); continue
             if not rows and any(k[0] == m and k[1] == y for k in prev):
                 failed.append((y, m)); err.append("%s %d %s: respuesta vacia con datos previos; se conserva lo anterior" % (c["slug"], y, m)); continue
@@ -173,6 +178,10 @@ def main():
         except ApiError as e:
             log("%s: %s" % (c["slug"], e)); ent["status"] = e.kind; status["crops"].append(ent)
             if e.kind == "AUTH_FAILURE": status["run"]["status"] = "AUTH_FAILURE"; rc = 1; break
+            if e.kind == "RATE_LIMITED":                    # NASS nos frena: se para, se conserva lo anterior y el resto queda para la proxima ejecucion
+                status["run"]["status"] = "PARTIAL"
+                for c2 in CROPS[CROPS.index(c) + 1:]: status["crops"].append({"slug": c2["slug"], "key": c2["key"], "status": "NOT_RUN"})
+                break
             continue
         for e in err[:6]: log("aviso:", e)
         if built is None:

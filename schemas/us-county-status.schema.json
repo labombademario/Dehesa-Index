@@ -68,7 +68,8 @@
        "INVALID",
        "AUTH_FAILURE",
        "NOT_RUN",
-       "UNAVAILABLE"
+       "UNAVAILABLE",
+       "RATE_LIMITED"
       ]
      }
     }

@@ -1848,6 +1848,12 @@
    ],
    "notes": "Bloques precalculados de la ficha de producto (scripts/build-product-profiles.py): estructura del comercio mundial (USDA PSD) y resumen de aranceles por partida HS. Cada bloque cita su fuente; la licencia la fija esa fuente."
   },
+  "data/us-county/": {
+   "sources": [
+    "usda_nass"
+   ],
+   "notes": "Rendimiento, superficie cosechada y produccion por condado de EE. UU. (scripts/update-us-county-yields.py): estimaciones por condado de USDA NASS Quick Stats (encuestas, nivel COUNTY, periodo anual, todas las practicas), de maiz, soja, trigo, algodon upland, sorgo, arroz, cacahuete, heno de alfalfa, cebada y avena donde NASS las publica. Mismo origen, API y clase de datos que data/nass-crops.json (por estado). Los valores suprimidos por NASS ((D)) quedan como hueco, nunca como cero; 'OTHER COUNTIES' es la suma que NASS publica para los condados que no publica por separado. Los contornos de los condados (vendor/us-counties/, Censo de EE. UU. via us-atlas, ISC) no son datos agrarios y llevan su propia licencia en vendor/us-counties/LICENSE. Se cita a NASS junto a las cifras."
+  },
   "data/us-local/": {
    "sources": [
     "usda_ams_mars"
