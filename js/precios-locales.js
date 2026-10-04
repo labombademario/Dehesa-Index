@@ -393,7 +393,7 @@
     if (EXT) return EXT;
     return EXT = new Promise(function (ok, ko) {
       if (window.USLocal) return ok();
-      var sc = document.createElement('script'); sc.src = sp('js/us-local-markets.js?v=20261003'); sc.onload = ok; sc.onerror = function () { EXT = null; ko(new Error('us-local')); }; document.head.appendChild(sc);
+      var sc = document.createElement('script'); sc.src = sp('js/us-local-markets.js?v=20261004'); sc.onload = ok; sc.onerror = function () { EXT = null; ko(new Error('us-local')); }; document.head.appendChild(sc);
     });
   }
   function helper() {

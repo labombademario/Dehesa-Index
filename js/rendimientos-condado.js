@@ -67,9 +67,9 @@
     var th = function (x, r) { return '<th style="padding:8px 6px;font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:' + (r ? 'right' : 'left') + '">' + esc(x).toUpperCase() + '</th>'; };
     var chg = function (r) { if (r.p === null || !r.p) return '<span style="color:var(--text-faint)">—</span>'; var p = (r.v / r.p - 1) * 100, c = p > 0.05 ? 'var(--positive)' : p < -0.05 ? '#a9491f' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (p > 0.05 ? '+' : p < -0.05 ? '−' : '') + nf(Math.abs(p), 1) + ' %</span>'; };
     var tr = function (r) { return '<tr data-f="' + r.f + '" style="border-top:1px solid var(--border)"><td style="padding:7px 6px">' + esc(r.name) + (g && !names[r.f] ? ' <span class="di-movers-hint">(' + esc(t.noMap) + ')</span>' : '') + '</td><td style="padding:7px 6px;text-align:right;font-variant-numeric:tabular-nums">' + esc(fmt(doc, m, r.v)) + '</td><td style="padding:7px 6px;text-align:right">' + chg(r) + '</td></tr>'; };
-    var head = '<tr>' + th(t.county) + th(t.value, 1) + th(t.prev, 1) + '</tr>';
-    var tbl = rows.length ? '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><table id="rd-cty-tbl" style="border-collapse:collapse;width:100%;min-width:360px;font-size:14px">' + head + rows.slice(0, 12).map(tr).join('') + '</table>' +
-      (rows.length > 12 ? '<details style="margin:6px 0 10px"><summary style="cursor:pointer;font-weight:600;font-size:13px;padding:6px 0">' + esc(t.all) + ' (' + rows.length + ')</summary><table style="border-collapse:collapse;width:100%;min-width:360px;font-size:14px">' + head + rows.slice(12).map(tr).join('') + '</table></details>' : '') +
+    var head = '<thead><tr>' + th(t.county) + th(t.value, 1) + th(t.prev, 1) + '</tr></thead>';
+    var tbl = rows.length ? '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:14px"><table id="rd-cty-tbl" style="border-collapse:collapse;width:100%;min-width:360px;font-size:14px">' + head + '<tbody>' + rows.slice(0, 12).map(tr).join('') + '</tbody></table>' +
+      (rows.length > 12 ? '<details style="margin:6px 0 10px"><summary style="cursor:pointer;font-weight:600;font-size:13px;padding:6px 0">' + esc(t.all) + ' (' + rows.length + ')</summary><table style="border-collapse:collapse;width:100%;min-width:360px;font-size:14px">' + head + '<tbody>' + rows.slice(12).map(tr).join('') + '</tbody></table></details>' : '') +
       (other !== null ? '<div style="border-top:1px solid var(--border);padding:8px 6px;font-size:13px;color:var(--text-faint)">' + esc(t.other) + ': <strong style="color:inherit">' + esc(fmt(doc, m, other)) + '</strong></div>' : '') + '</div>' : '';
     var cards = rows.length ? '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:14px 0">' +
       card(t.cov, nf(rows.length, 0) + (total ? ' ' + t.of + ' ' + nf(total, 0) : '')) + card(t.range, esc(fmt(doc, m, vals[0]) + ' – ' + fmt(doc, m, vals[vals.length - 1]))) + card(t.top, esc(rows[0].name) + ' · ' + esc(fmt(doc, m, rows[0].v))) + '</div>' : '';
@@ -94,7 +94,8 @@
     var go = function () { if (tok !== TOK) return; load(slug).then(function (doc) {
       if (tok !== TOK) return;
       if (!doc) { host.innerHTML = '<h2 style="font-size:20px;margin:30px 0 4px">' + esc(t.h) + '</h2><p class="di-movers-hint">' + esc(t.noCrop) + '</p>'; return; }
-      var ys = doc.years.slice().reverse().map(String);
+      var ys = doc.years.slice().reverse().filter(function (y) { return statesWith(doc, doc.years.indexOf(y), 'yield').length; }).map(String);
+      if (!ys.length) { host.innerHTML = '<h2 style="font-size:20px;margin:30px 0 4px">' + esc(t.h) + '</h2><p class="di-movers-hint">' + esc(t.noCrop) + '</p>'; return; }
       if (ys.indexOf(String(SEL.year)) < 0) SEL.year = ys[0];
       if (ctx.metric === 'yield' || ctx.metric === 'harvested' || ctx.metric === 'production') { if (SEL.lastCtxMetric !== ctx.metric) { SEL.metric = ctx.metric; SEL.lastCtxMetric = ctx.metric; } }
       var yi = doc.years.indexOf(Number(SEL.year)), sts = statesWith(doc, yi, SEL.metric);

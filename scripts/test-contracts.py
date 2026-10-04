@@ -179,6 +179,7 @@ CASES = [
  ("us-local/cattle-KS.json", "cabezas a cero", lambda d: d["latest"]["rows"][0].__setitem__(8, 0)),
  ("us-local/cattle-KS.json", "precio medio fuera del minimo y el maximo", lambda d: d["latest"]["rows"][0].__setitem__(12, d["latest"]["rows"][0][11] + 50)),
  ("us-local/cattle-KS.json", "precio por cwt absurdo (unidad equivocada)", lambda d: [d["latest"]["rows"][0].__setitem__(i, v) for i, v in ((10, 40000), (11, 40000), (12, 40000))]),
+ ("us-local/cattle-KS.json", "novillo con peso medio de 25 lb (solo cabras, ovejas y corderos pueden pesar tan poco)", lambda d: next(r for r in d["latest"]["rows"] if r[0] == "Feeder Cattle").__setitem__(9, 25)),
  ("us-local/cattle-KS.json", "tramo de peso invertido", lambda d: next(r for r in d["latest"]["rows"] if r[6] is not None).__setitem__(7, 100)),
  ("us-local/cattle-KS.json", "historial que no coincide con las filas de la ultima semana", lambda d: d["history"]["Steers|500"].__setitem__(-1, [d["history"]["Steers|500"][-1][0], 999.0, d["history"]["Steers|500"][-1][2], d["history"]["Steers|500"][-1][3]])),
  ("us-local/cattle-KS.json", "fechas del historial que no crecen", lambda d: d["history"]["Steers|500"].append(["2020-01-01", 300.0, 5, 500.0])),

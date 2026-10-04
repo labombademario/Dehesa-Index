@@ -64,7 +64,7 @@
       hChartT: 'Andamento della specifica selezionata', hClick: 'Tocca una riga per vedere la sua serie.', hMin: 'minimo', hMax: 'massimo', hAvgS: 'media ponderata', hMid: 'punto medio dell’intervallo', hOnly: 'Questa serie ha solo', hPts: 'rapporti',
       hSrc: 'Direct Hay Report dello Stato (USDA AMS). I prezzi sono quelli del rapporto; la variazione confronta con il rapporto precedente della stessa specifica.', report: 'Rapporto originale', conv: 'Conversione esatta', all: 'Tutte' }
   };
-  var ST_NAMES = { AZ: 'Arizona', CA: 'California', CO: 'Colorado', ID: 'Idaho', IA: 'Iowa', KS: 'Kansas', KY: 'Kentucky', MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NM: 'New Mexico', OK: 'Oklahoma', OR: 'Oregon', SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', WA: 'Washington / Oregon (Columbia Basin)', WY: 'Wyoming' };
+  var ST_NAMES = { AZ: 'Arizona', CA: 'California', CO: 'Colorado', FL: 'Florida', ID: 'Idaho', IA: 'Iowa', KS: 'Kansas', KY: 'Kentucky', MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NM: 'New Mexico', OK: 'Oklahoma', OR: 'Oregon', SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', WA: 'Washington / Oregon (Columbia Basin)', WY: 'Wyoming' };
   var Q_ORDER = ['Supreme', 'Premium/Supreme', 'Premium', 'Good/Premium', 'Good', 'Fair/Good', 'Fair', 'Utility', ''];
   var FRAME = { 'Medium and Large': 'M&L', 'Large': 'L', 'Medium': 'M', 'Small and Medium': 'S&M', 'Small': 'S', '': '' };
   var STATUS = null, DOCS = {}, UI = {};

@@ -61,6 +61,12 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const ov = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth); ok(tag + ': sin desborde horizontal de página (' + ov + ')', ov <= 1);
   await page.goto(BASE + '/precios-locales.html?t=hay&s=MT', { waitUntil: 'networkidle' }); await wait('#pl-ext [data-usk]');
   const ov2 = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth); ok(tag + ': heno sin desborde (' + ov2 + ')', ov2 <= 1);
+  for (const sc of ['MT', 'FL', 'TX', 'IA']) {
+    const D = JSON.parse(fs.readFileSync('data/us-local/cattle-' + sc + '.json', 'utf8')), pt = last(D.history['Steers|500']);
+    await page.goto(BASE + '/precios-locales.html?t=cattle&s=' + sc, { waitUntil: 'networkidle' }); await wait('#pl-ext .de-tile');
+    const x = await body();
+    ok(tag + ': ganado ' + sc + ' con precio 500 lb', nrm(x).includes(fx(pt[1], 2)) && !/undefined|NaN|\[object/.test(x));
+  }
   ok(tag + ': sin errores de consola', errs.length === 0); if (errs.length) console.log(tag, errs.slice(0, 3));
   await ctx.close();
 }

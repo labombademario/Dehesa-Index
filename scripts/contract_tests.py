@@ -1601,7 +1601,7 @@ def us_local_cattle(doc, errs, warns, stats):
         a, b = UL_UNITS[unit]
         if not (a <= p <= b) and not (com == "Slaughter Cattle" and p >= 20): errs.append("us-local cattle/%s %s %s: precio fuera de rango (%s %s)" % (st, com, cl, p, unit)); return
         if lo is not None and hi is not None and not (lo < hi): errs.append("us-local cattle/%s %s: tramo de peso invertido (%s-%s)" % (st, cl, lo, hi)); return
-        if wt is not None and not (30 <= wt <= 2600): errs.append("us-local cattle/%s %s: peso medio fuera de rango (%s)" % (st, cl, wt)); return
+        if wt is not None and not ((10 if ("Goat" in com or "Sheep" in com or "Lamb" in com) else 30) <= wt <= 2600): errs.append("us-local cattle/%s %s: peso medio fuera de rango (%s)" % (st, cl, wt)); return
     ref = {}
     for r in rows:
         if r[0] == "Feeder Cattle" and r[2] == "Medium and Large" and r[3] == "1" and r[4] == "" and r[5] == "Per Cwt" and r[1] in ("Steers", "Heifers", "Bulls") and r[6] is not None:
@@ -2567,7 +2567,7 @@ def _ucy_mod():
         import importlib.util as _iu, pathlib as _p
         sp = _iu.spec_from_file_location("ucy", _p.Path(__file__).resolve().parent / "update-us-county-yields.py"); m = _iu.module_from_spec(sp); sp.loader.exec_module(m); _UCY_MOD = m
     return _UCY_MOD
-UCY_MAX = {"corn": 400, "soybeans": 120, "wheat-winter": 250, "wheat-spring": 200, "cotton-upland": 3500, "sorghum": 300, "rice": 11000, "peanuts": 7000, "hay-alfalfa": 12, "barley": 250, "oats": 250}   # rendimiento maximo plausible por condado (unidades de NASS)
+UCY_MAX = {"corn": 400, "soybeans": 120, "wheat-winter": 250, "wheat-spring": 200, "cotton-upland": 3500, "sorghum": 300, "rice": 13000, "peanuts": 7000, "hay-alfalfa": 12, "barley": 250, "oats": 250}   # rendimiento maximo plausible por condado (unidades de NASS)
 UCY_STATES = {"01", "02", "04", "05", "06", "08", "09", "10", "11", "12", "13", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "44", "45", "46", "47", "48", "49", "50", "51", "53", "54", "55", "56"}
 
 
