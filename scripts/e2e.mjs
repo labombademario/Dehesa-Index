@@ -129,7 +129,7 @@ for (const w of [1280, 390]) {
       if ((await textLen(page, '#pr-body')) < 100) throw new Error('la ficha de producto no pinta contenido: ' + href);
     });
     await flow('producto 3.0: bloques, unidad y seguimiento', w, async (page) => {
-      const scrollAll = async () => { await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight + 1500; y += 500) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 90)); } }); await page.waitForTimeout(700); };
+      const scrollAll = async () => { await page.evaluate(() => document.querySelectorAll('details.pt-fold').forEach(d => { d.open = true; })); await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight + 1500; y += 500) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 90)); } }); await page.waitForTimeout(700); };
       await page.goto(BASE + '/producto.html?p=trigo', { waitUntil: 'load' }); await page.waitForSelector('#pt-head .pt-card', { timeout: 8000 });
       await scrollAll();
       for (const id of ['changed', 'compare', 'hist', 'sd', 'trade', 'tariffs', 'costs', 'drivers']) {

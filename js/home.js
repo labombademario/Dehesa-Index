@@ -28,9 +28,10 @@
     es: {
       h1: 'El pulso de la agricultura, en un solo panel',
       sub: "Precios de cereales, lácteos, ganado, pienso y fertilizantes en EE. UU., Europa y Canadá, con estadísticas oficiales de más de 30 países. Cada dato conserva su valor original, su fuente y su fecha.",
-      ctaPrimary: 'Ver el panel de precios →',
-      ctaSecondary: 'Cómo funciona',
+      ctaPrimary: 'Mi mercado: tu zona y tu producto →',
+      ctaSecondary: 'Ver el panel de precios',
       moversTitle: 'PANEL DE MERCADO',
+      moreData: 'Más datos: cultivos, mercados, oferta y clima',
       moversHint: 'Solo observaciones reales publicadas por la capa de datos',
       moversColProducto: 'Producto', moversColPrecio: 'Último', moversCol1D: 'Estado', moversCol1W: 'Fecha',
       moversCta: 'Abrir panel completo →',
@@ -76,9 +77,10 @@
     en: {
       h1: 'The pulse of agriculture, in one dashboard',
       sub: "Prices for grains, dairy, livestock, feed and fertilisers in the US, Europe and Canada, plus official statistics for 30+ countries. Every figure keeps its original value, source and date.",
-      ctaPrimary: 'View the price dashboard →',
-      ctaSecondary: 'How it works',
+      ctaPrimary: 'My market: your area and product →',
+      ctaSecondary: 'View the price dashboard',
       moversTitle: 'MARKET SNAPSHOT',
+      moreData: 'More data: crops, markets, supply and weather',
       moversHint: 'Only real observations published by the data layer',
       moversColProducto: 'Commodity', moversColPrecio: 'Latest', moversCol1D: 'Status', moversCol1W: 'Date',
       moversCta: 'Open full dashboard →',
@@ -124,9 +126,10 @@
     fr: {
       h1: "Le pouls de l'agriculture, en un seul tableau de bord",
       sub: "Prix des céréales, produits laitiers, bétail, aliments et engrais aux États-Unis, en Europe et au Canada, et statistiques officielles de plus de 30 pays. Chaque donnée garde sa valeur d’origine, sa source et sa date.",
-      ctaPrimary: 'Voir le tableau des prix →',
-      ctaSecondary: 'Comment ça marche',
+      ctaPrimary: 'Mon marché : votre zone et produit →',
+      ctaSecondary: 'Voir le tableau des prix',
       moversTitle: 'LES MOUVEMENTS AGRICOLES DU JOUR',
+      moreData: 'Plus de données : cultures, marchés, offre et météo',
       moversHint: 'Seules les observations réelles publiées par la couche de données',
       moversColProducto: 'Produit', moversColPrecio: 'Prix', moversCol1D: '1J', moversCol1W: '1S',
       moversCta: 'Voir tous les prix →',
@@ -172,9 +175,10 @@
     it: {
       h1: "Il polso dell'agricoltura, in un unico pannello",
       sub: "Prezzi di cereali, latte, bestiame, mangimi e fertilizzanti in USA, Europa e Canada, più statistiche ufficiali di oltre 30 paesi. Ogni dato mantiene valore originale, fonte e data.",
-      ctaPrimary: 'Vedi il pannello dei prezzi →',
-      ctaSecondary: 'Come funziona',
+      ctaPrimary: 'Il mio mercato: zona e prodotto →',
+      ctaSecondary: 'Vedi il pannello dei prezzi',
       moversTitle: 'I MOVIMENTI AGRICOLI DI OGGI',
+      moreData: 'Altri dati: colture, mercati, offerta e meteo',
       moversHint: 'Solo osservazioni reali pubblicate dal livello dati',
       moversColProducto: 'Prodotto', moversColPrecio: 'Prezzo', moversCol1D: '1G', moversCol1W: '1S',
       moversCta: 'Vedi tutti i prezzi →',
@@ -361,6 +365,7 @@
     document.getElementById('home-stats').innerHTML = tapeHtml(lang, esc);
 
     document.getElementById('home-movers-title').textContent = t.moversTitle;
+    var ms = document.getElementById('home-more-sum'); if (ms) ms.textContent = t.moreData;
     document.getElementById('home-movers-hint').textContent = t.moversHint;
     document.getElementById('home-movers-cta').textContent = t.moversCta;
 

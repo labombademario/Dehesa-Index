@@ -647,7 +647,12 @@
   }
   // Tres tipos de informacion que no deben parecer lo mismo: dato publicado, lectura de Dehesa (texto generado a partir de cifras) y relacion historica (descriptiva).
   var KIND = { drivers: 'insight', rels: 'rel' }, KT = { data: ['Dato publicado', 'Published data', 'Donnée publiée', 'Dato pubblicato'], insight: ['Lectura de Dehesa', 'Dehesa reading', 'Lecture de Dehesa', 'Lettura di Dehesa'], rel: ['Relación histórica', 'Historical relationship', 'Relation historique', 'Relazione storica'] };
-  function secHtml(b) { var k = KIND[b.id] || 'data'; return '<section class="pt-sec pt-k-' + k + '" id="pt-' + b.id + '" data-blk="' + b.id + '" aria-labelledby="pt-' + b.id + '-h"><div class="di-movers-head-row"><h2 id="pt-' + b.id + '-h">' + esc(b.title) + '</h2>' + (k === 'data' ? '' : '<span class="pt-kind pt-kind-' + k + '">' + esc(KT[k][li()]) + '</span>') + '<span class="di-movers-hint">' + esc(b.hint) + '</span></div><div class="pt-body"><div class="pt-skel">' + esc(t('loading')) + '</div></div></section>'; }
+  // Disclosure progresivo: lo esencial (precio, cambios, países, histórico, noticias) va abierto; el detalle profundo va plegado y se abre al pulsar o al saltar desde la barra fija.
+  var FOLD = { sd: 1, trade: 1, tariffs: 1, costs: 1, rels: 1, drivers: 1 };
+  function secHtml(b) {
+    var k = KIND[b.id] || 'data', head = '<div class="di-movers-head-row"><h2 id="pt-' + b.id + '-h">' + esc(b.title) + '</h2>' + (k === 'data' ? '' : '<span class="pt-kind pt-kind-' + k + '">' + esc(KT[k][li()]) + '</span>') + '<span class="di-movers-hint">' + esc(b.hint) + '</span></div>', body = '<div class="pt-body"><div class="pt-skel">' + esc(t('loading')) + '</div></div>';
+    return '<section class="pt-sec pt-k-' + k + '" id="pt-' + b.id + '" data-blk="' + b.id + '" aria-labelledby="pt-' + b.id + '-h">' + (FOLD[b.id] ? '<details class="pt-fold"><summary>' + head + '</summary>' + body + '</details>' : head + body) + '</section>';
+  }
   function paint(b) {
     var el = document.querySelector('#pt-' + b.id + ' .pt-body'); if (!el) return;
     var st = BLK[b.id];
@@ -691,7 +696,7 @@
     if (!CTX.clk) { CTX.clk = true; document.addEventListener('click', function (e) {
       var a = e.target.closest ? e.target.closest('.pt-ctx a[data-ctx]') : null; if (!a) return;
       var id = 'pt-' + a.getAttribute('data-ctx'), el = document.getElementById(id); if (!el) return;
-      e.preventDefault(); el.scrollIntoView({ behavior: 'auto', block: 'start' });
+      e.preventDefault(); var fd = el.querySelector('details.pt-fold'); if (fd) fd.open = true; el.scrollIntoView({ behavior: 'auto', block: 'start' });
       [500, 1400].forEach(function (ms) { setTimeout(function () { var h = parseInt(document.documentElement.style.getPropertyValue('--di-hdr'), 10) || 0, top = el.getBoundingClientRect().top; if (Math.abs(top - (h + 56)) > 40) el.scrollIntoView({ behavior: 'auto', block: 'start' }); }, ms); });
     }); }
   }

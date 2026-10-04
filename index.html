@@ -9,7 +9,7 @@
 <meta name="description" content="Tracker global de mercados agrícolas: precios de cereales, lácteos, ganado, pienso y fertilizantes en EE. UU., Europa, Reino Unido y Canadá y estadísticas oficiales de más de 30 países, siempre con el valor original, la fuente y la fecha.">
 <link rel="icon" href="assets/icon-192.png">
 <link rel="preload" href="assets/fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="css/fonts.css?v=c2a5b94c">
-<link rel="stylesheet" href="css/style.css?v=7126ff95">
+<link rel="stylesheet" href="css/style.css?v=d75c7b05">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://dehesaindex.com/#org","name":"Dehesa Index","url":"https://dehesaindex.com/","logo":"https://dehesaindex.com/assets/icon-192.png"},{"@type":"WebSite","@id":"https://dehesaindex.com/#site","url":"https://dehesaindex.com/","name":"Dehesa Index","alternateName":["DehesaIndex","dehesaindex.com"],"inLanguage":["es","en","fr","it"],"publisher":{"@id":"https://dehesaindex.com/#org"}}]}</script>
 <meta property="og:image" content="https://dehesaindex.com/assets/og-es.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://dehesaindex.com/assets/og-es.png">
 </head>
@@ -25,8 +25,8 @@
         <p class="di-hero-sub" id="home-sub"></p>
         <div class="di-hs" id="home-search-box"></div>
         <div class="di-hero-ctas">
-          <a class="di-btn-gold" href="precios.html" id="home-cta-primary"></a>
-          <a class="di-btn-outline" href="informacion.html" id="home-cta-secondary"></a>
+          <a class="di-btn-gold" href="mi-mercado.html" id="home-cta-primary"></a>
+          <a class="di-btn-outline" href="precios.html" id="home-cta-secondary"></a>
         </div>
       </div>
       <div class="di-tape" id="home-stats" aria-live="polite"></div>
@@ -34,13 +34,9 @@
   </section>
 
   <main class="di-main">
+    <section class="di-home-section" id="home-mi-mercado"><div id="home-mm"></div></section>
     <section class="di-home-section" id="home-today"></section>
     <section class="di-home-section" id="home-dehesa-index"></section>
-    <section class="di-home-section" id="home-explora"></section>
-    <section class="di-home-section" id="home-cultivos"></section>
-    <section class="di-home-section" id="home-mercados"></section>
-    <section class="di-home-section" id="home-oferta"></section>
-    <section class="di-home-section" id="home-clima"></section>
     <!-- Market Movers -->
     <section class="di-home-section">
       <div class="di-movers-head-row">
@@ -52,6 +48,15 @@
         <a class="di-link-btn" href="precios.html" id="home-movers-cta"></a>
       </div>
     </section>
+
+    <section class="di-home-section" id="home-explora"></section>
+    <details class="di-home-more" id="home-more">
+      <summary id="home-more-sum">Más datos</summary>
+      <section class="di-home-section" id="home-cultivos"></section>
+      <section class="di-home-section" id="home-mercados"></section>
+      <section class="di-home-section" id="home-oferta"></section>
+      <section class="di-home-section" id="home-clima"></section>
+    </details>
 
     <!-- What we cover -->
     <section class="di-home-section">
@@ -92,11 +97,13 @@
 <div id="di-footer-root"></div>
 <div id="di-overlay-root"></div>
 
-<script src="js/shared.js?v=bebfc073"></script>
+<script src="js/shared.js?v=e7c7be60"></script>
 <script src="js/cite.js?v=bc43a3c7"></script>
 <script src="js/usda-calendar.js?v=de026128"></script>
 <script src="js/home-today.js?v=1c641568"></script>
-<script src="js/home.js?v=0a0e507f"></script>
+<script type="text/plain" id="home-mm-deps" src="js/region-names.js?v=d4a9dcc1"></script>
+<script type="text/plain" id="home-mm-src" src="js/mi-mercado.js?v=894c49ee"></script>
+<script src="js/home.js?v=52dac01e"></script>
 <script src="js/chart.js?v=452f1db2"></script>
 <script src="js/dehesa-index.js?v=8056cc8b"></script>
 <script src="js/cultivos.js?v=65028064"></script>
@@ -104,5 +111,6 @@
 <script src="js/psd.js?v=9b4c4064"></script>
 <script src="js/oferta-demanda.js?v=953e84dd"></script>
 <script src="js/clima.js?v=a208ec6b"></script>
+<script src="js/home-mi-mercado.js?v=fecd35df"></script>
 </body>
 </html>

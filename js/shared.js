@@ -231,28 +231,28 @@
   var TOUR_STEPS_BY_LANG = {
     es: [
       { icon: '🌾', title: 'Bienvenido a Dehesa Index', body: 'Un vistazo rápido a las herramientas del panel de precios, para que sepas dónde está cada cosa.' },
-      { icon: '🗺️', title: 'Dehesa Market Map', body: 'Un mapa de calor con los 18 productos: el tamaño indica su peso en el mercado global, el color si sube o baja esta semana.' },
+      { icon: '🗺️', title: 'Dehesa Market Map', body: 'Un mapa de calor con todos los productos: el tamaño indica su peso en el mercado global, el color si sube o baja esta semana.' },
       { icon: '🎯', title: 'Dehesa Agricultural Momentum', body: 'Compara el movimiento a corto y largo plazo de cada producto en un solo gráfico, para detectar tendencias de un vistazo.' },
       { icon: '🗓️', title: 'Calendario y Noticias', body: 'El calendario reúne los próximos informes y datos clave; Noticias resume la actualidad que mueve estos mercados.' },
       { icon: '🔍', title: 'Buscador, favoritos y alertas', body: 'Usa la lupa de arriba del todo para saltar directo a cualquier producto, marca tus favoritos con la ☆ y crea alertas de precio con la 🔔.' }
     ],
     en: [
       { icon: '🌾', title: 'Welcome to Dehesa Index', body: "A quick look at the price dashboard's tools, so you know where everything lives." },
-      { icon: '🗺️', title: 'Dehesa Market Map', body: "A heat map of all 18 products: size shows its weight in the global market, color shows whether it's up or down this week." },
+      { icon: '🗺️', title: 'Dehesa Market Map', body: "A heat map of all products: size shows its weight in the global market, color shows whether it's up or down this week." },
       { icon: '🎯', title: 'Dehesa Agricultural Momentum', body: "Compares each product's short- and long-term movement on a single chart, so you can spot trends at a glance." },
       { icon: '🗓️', title: 'Calendar & News', body: "The calendar gathers upcoming reports and key data releases; News summarizes what's moving these markets." },
       { icon: '🔍', title: 'Search, favorites & alerts', body: 'Use the search box at the top to jump straight to any product, star your favorites with ☆, and set price alerts with 🔔.' }
     ],
     fr: [
       { icon: '🌾', title: 'Bienvenue sur Dehesa Index', body: "Un aperçu rapide des outils du tableau des prix, pour savoir où se trouve chaque chose." },
-      { icon: '🗺️', title: 'Dehesa Market Map', body: "Une carte thermique des 18 produits : la taille indique son poids sur le marché mondial, la couleur s'il monte ou baisse cette semaine." },
+      { icon: '🗺️', title: 'Dehesa Market Map', body: "Une carte thermique de tous les produits : la taille indique son poids sur le marché mondial, la couleur s'il monte ou baisse cette semaine." },
       { icon: '🎯', title: 'Dehesa Agricultural Momentum', body: "Compare l'évolution à court et long terme de chaque produit sur un seul graphique, pour repérer les tendances en un coup d'œil." },
       { icon: '🗓️', title: 'Calendrier et actualités', body: "Le calendrier rassemble les prochains rapports et données clés ; Actualités résume ce qui fait bouger ces marchés." },
       { icon: '🔍', title: 'Recherche, favoris et alertes', body: "Utilisez la recherche tout en haut pour accéder directement à un produit, marquez vos favoris avec ☆ et créez des alertes de prix avec 🔔." }
     ],
     it: [
       { icon: '🌾', title: 'Benvenuto in Dehesa Index', body: "Una rapida panoramica degli strumenti del pannello dei prezzi, per sapere dove trovare ogni cosa." },
-      { icon: '🗺️', title: 'Dehesa Market Map', body: "Una mappa di calore dei 18 prodotti: la dimensione indica il suo peso nel mercato globale, il colore se sale o scende questa settimana." },
+      { icon: '🗺️', title: 'Dehesa Market Map', body: "Una mappa di calore di tutti i prodotti: la dimensione indica il suo peso nel mercato globale, il colore se sale o scende questa settimana." },
       { icon: '🎯', title: 'Dehesa Agricultural Momentum', body: "Confronta l'andamento a breve e lungo termine di ogni prodotto in un unico grafico, per individuare le tendenze a colpo d'occhio." },
       { icon: '🗓️', title: 'Calendario e notizie', body: "Il calendario raccoglie i prossimi report e dati chiave; Notizie riassume l'attualità che muove questi mercati." },
       { icon: '🔍', title: 'Ricerca, preferiti e avvisi', body: "Usa la ricerca in cima alla pagina per andare direttamente a un prodotto, segna i preferiti con ☆ e crea avvisi di prezzo con 🔔." }

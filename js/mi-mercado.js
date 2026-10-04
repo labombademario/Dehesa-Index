@@ -170,7 +170,8 @@
   };
 
   /* ---------- utilidades ---------- */
-  var root = document.getElementById('mm-body'), TOK = 0, CACHE = {};
+  var COMPACT = !document.getElementById('mm-body') && !!document.getElementById('home-mm'), root = document.getElementById('mm-body') || document.getElementById('home-mm'), TOK = 0, CACHE = {};
+  if (!root) return;
   function lang() { var l = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; return T[l] ? l : 'es'; }
   function tr() { return T[lang()]; }
 
@@ -277,6 +278,7 @@
   }
   function save() {
     try { window.localStorage.setItem(LSK, JSON.stringify({ c: ST.c, r: ST.r, p: ST.p, k: ST.k })); } catch (e) { /* sin almacenamiento: la página funciona igual */ }
+    if (COMPACT) return;
     try { var q = []; if (ST.c) q.push('c=' + ST.c); if (ST.r) q.push('r=' + encodeURIComponent(ST.r)); if (ST.p) q.push('p=' + encodeURIComponent(ST.p)); if (ST.k) q.push('k=' + encodeURIComponent(ST.k)); history.replaceState(null, '', q.length ? '?' + q.join('&') : location.pathname); } catch (e) { /* idem */ }
   }
   function clearSaved() { try { window.localStorage.removeItem(LSK); } catch (e) { /* idem */ } ST.c = ST.r = ST.p = ST.k = ''; save(); }
@@ -617,30 +619,49 @@
       ['US', 'KS', 'cattle', usName('KS') + ' · ' + prodName('cattle')], ['US', 'IA', 'corn', usName('IA') + ' · ' + prodName('corn')], ['CA', 'MB', 'cattle', caName('MB') + ' · ' + tc().cattle], ['CA', 'SK', 'canola-rapeseed', caName('SK') + ' · ' + tc().crops['canola-rapeseed']], ['ES', '47', 'cereales', 'Valladolid · ' + (t.grp.cereales)]
     ].map(function (e) { return '<button type="button" class="di-src-tab" data-mm-ex="' + e.slice(0, 3).join('|') + '">' + esc(e[3]) + '</button> '; }).join('') + '</p>';
   }
+  var HM = {
+    es: { t: 'Tu mercado', all: 'Ver todo y cambiar', margin: 'Calcular margen', track: 'Seguimiento y alertas' },
+    en: { t: 'Your market', all: 'See all and change', margin: 'Calculate margin', track: 'Tracking and alerts' },
+    fr: { t: 'Votre marché', all: 'Tout voir et changer', margin: 'Calculer la marge', track: 'Suivi et alertes' },
+    it: { t: 'Il tuo mercato', all: 'Vedi tutto e cambia', margin: 'Calcola il margine', track: 'Monitoraggio e avvisi' }
+  };
+  function placeName() { return ST.c === 'US' ? usName(ST.r) : ST.c === 'CA' ? caName(ST.r) : (ES_PROV && ES_PROV[ST.r]) || ST.r; }
+  function prodTitle() { return ST.c === 'US' ? prodName(ST.p) : ST.c === 'CA' ? caProdName(ST.p) : ST.p; }
+  function compactHead() {
+    var m = HM[lang()] || HM.es;
+    return '<p style="margin:0 0 4px;font-size:15px"><b>' + esc(m.t) + ' · ' + esc(placeName()) + ' · ' + esc(prodTitle()) + '</b> ' +
+      '<a class="di-link-btn" href="mi-mercado.html">' + esc(m.all) + '</a> <a class="di-link-btn" href="calculadora.html">' + esc(m.margin) + '</a> <a class="di-link-btn" href="mi-seguimiento.html">' + esc(m.track) + '</a></p>';
+  }
   function draw() {
     var t = tr(), tok = ++TOK;
-    document.getElementById('mm-h1').textContent = t.title; document.getElementById('mm-sub').textContent = t.sub; document.title = t.title + ' | Dehesa Index';
-    var h = '<div data-mm-sel>' + selectors() + '</div>', ready = ST.c && ST.r && ST.p;
-    if (!ready) { root.innerHTML = h + examples(); return; }
-    h += '<p class="di-movers-hint">' + esc(t.saved) + ' <button type="button" class="di-src-tab" data-mm-reset="1">' + esc(t.reset) + '</button></p>';
+    var h, ready = ST.c && ST.r && ST.p;
+    if (COMPACT) {
+      if (!ready) { root.innerHTML = ''; return; }
+      h = compactHead();
+    } else {
+      document.getElementById('mm-h1').textContent = t.title; document.getElementById('mm-sub').textContent = t.sub; document.title = t.title + ' | Dehesa Index';
+      h = '<div data-mm-sel>' + selectors() + '</div>';
+      if (!ready) { root.innerHTML = h + examples(); return; }
+      h += '<p class="di-movers-hint">' + esc(t.saved) + ' <button type="button" class="di-src-tab" data-mm-reset="1">' + esc(t.reset) + '</button></p>';
+    }
     if (ST.c === 'US') {
       h += sect('price', t.sPrice + ' · ' + prodName(ST.p)) + sect('ins', t.sIns) + sect('dr', t.sDrought);
     } else if (ST.c === 'CA') {
       h += sect('price', t.sPrice + ' · ' + caProdName(ST.p)) + sect('crop', tc().sProd) + sect('ins', tc().sIns) + sect('dr', tc().sDr);
     } else h += sect('crop', t.sCrop);
-    h += sect('missing', t.sMissing) + '<section class="di-card" style="padding:14px 16px;margin:14px 0"><h2 style="font-size:18px;margin:0 0 6px">' + esc(t.sMore) + '</h2>' + moreLinks() + '</section>';
+    if (!COMPACT) h += sect('missing', t.sMissing) + '<section class="di-card" style="padding:14px 16px;margin:14px 0"><h2 style="font-size:18px;margin:0 0 6px">' + esc(t.sMore) + '</h2>' + moreLinks() + '</section>';
     root.innerHTML = h;
     var run = function (id, fn) { Promise.resolve().then(fn).catch(function () { failSec(tok, id); }); };
     if (ST.c === 'US') {
       run('price', function () { return ST.p === 'cattle' ? priceCattle(tok) : ST.p === 'hay' ? priceHay(tok) : priceGrain(tok); });
       run('ins', function () { return insurance(tok); }); run('dr', function () { return drought(tok); });
-      run('missing', function () { return locStatus().then(missingUS).then(function (x) { putSec(tok, 'missing', x); }); });
+      if (!COMPACT) run('missing', function () { return locStatus().then(missingUS).then(function (x) { putSec(tok, 'missing', x); }); });
     } else if (ST.c === 'CA') {
       run('price', function () { return priceCa(tok); }); run('crop', function () { prodCa(tok); }); run('ins', function () { return insuranceCa(tok); }); run('dr', function () { return droughtCa(tok); });
-      run('missing', function () { return missingCA().then(function (x) { putSec(tok, 'missing', x); }); });
+      if (!COMPACT) run('missing', function () { return missingCA().then(function (x) { putSec(tok, 'missing', x); }); });
     } else {
       run('crop', function () { return spainCrop(tok); });
-      run('missing', function () { return missingES().then(function (x) { putSec(tok, 'missing', x); }); });
+      if (!COMPACT) run('missing', function () { return missingES().then(function (x) { putSec(tok, 'missing', x); }); });
     }
   }
 
@@ -686,7 +707,7 @@
   }
 
   readSaved();
-  if (window.DehesaShared) { window.DehesaShared.init('tools'); var prevL = window.DehesaShared.onLangChange; window.DehesaShared.onLangChange = function () { if (prevL) prevL.apply(this, arguments); draw(); }; }
+  if (window.DehesaShared) { if (!COMPACT) window.DehesaShared.init('tools'); var prevL = window.DehesaShared.onLangChange; window.DehesaShared.onLangChange = function () { if (prevL) prevL.apply(this, arguments); draw(); }; }
   root.addEventListener('change', change); root.addEventListener('click', click);
   var first = function () { prepare().then(draw, draw); };
   (window.DICite ? window.DICite.load().then(first, first) : first());

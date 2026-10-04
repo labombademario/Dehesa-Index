@@ -1353,7 +1353,7 @@ html[data-theme="dark"] .rl-st-WEAK_OR_UNSTABLE { color: #e0b04a; }
 .ms-q { text-overflow: ellipsis; }
 
 /* ---------- Portada: titular a la izquierda y precios publicados a la derecha ---------- */
-.di-hero2 { padding: 56px 32px 60px; }
+.di-hero2 { padding: 40px 32px 44px; }
 .di-hero2 .di-hero-inner { max-width: 1200px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: 56px; align-items: center; text-align: left; }
 .di-hero2 .di-hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
 .di-hero2 h1 { font-size: 42px; line-height: 1.12; letter-spacing: -.01em; max-width: 14em; }
@@ -1367,7 +1367,7 @@ html[data-theme="dark"] .rl-st-WEAK_OR_UNSTABLE { color: #e0b04a; }
 .di-tape-t tr:first-child th, .di-tape-t tr:first-child td { border-top: 0; }
 .di-tape-t th { width: 4.6em; }
 .di-tape-p { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; font-size: 15px; color: #FBF9F3; }
-.di-tape-t .rg { color: #D7D2BE; width: 5em; }
+.di-tape-t .rg { color: #D7D2BE; width: 13em; }
 .di-tape-t .v { text-align: right; white-space: nowrap; }
 .di-tape-t .v strong { font-size: 16px; font-weight: 600; color: #FBF9F3; }
 .di-tape-t .u { font-size: 12px; color: #C9C3AB; }
@@ -1380,6 +1380,9 @@ html[data-theme="dark"] .rl-st-WEAK_OR_UNSTABLE { color: #e0b04a; }
 .di-tape-a { display: inline-block; margin-top: 8px; font-size: 13px; font-weight: 600; color: #E3C970; text-decoration: none; }
 .di-tape-a:hover, .di-tape-a:focus-visible { text-decoration: underline; }
 @media (max-width: 960px) {
+  .di-tape-t .d { display: none; }
+  .di-tape-t tbody tr:nth-child(n+4) { display: none; } /* en móvil la franja enseña el primer producto; el resto está en «Ver todos los precios» y en el panel de mercado */
+  .di-tape-t .rg { width: auto; }
   .di-hero2 { padding: 40px 18px 44px; }
   .di-hero2 .di-hero-inner { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .di-hero2 h1 { font-size: 32px; max-width: none; }
@@ -1769,3 +1772,17 @@ html[data-density="expanded"] .pt-table td, html[data-density="expanded"] .pa-t 
 #in-es[hidden], #ex-es[hidden], #cs-es[hidden], #gn-esm[hidden], #gn-es[hidden], #gn-esl[hidden], #gn-ess[hidden] { display: none !important; }
 
 #od-es[hidden], #od-body[hidden] { display:none !important }
+
+/* Portada: bloque plegable «Más datos» (cultivos, mercados, oferta y clima) */
+.di-home-more { margin: 0 0 56px; }
+.di-home-more > summary { cursor: pointer; font-weight: 700; font-size: 17px; padding: 12px 16px; border: 1px solid var(--border, #d9d9d9); border-radius: 8px; list-style-position: inside; }
+.di-home-more > summary:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.di-home-more[open] > summary { margin-bottom: 24px; }
+
+/* Ficha de producto: detalle profundo plegado (disclosure progresivo) */
+.pt-fold > summary { cursor: pointer; list-style: none; }
+.pt-fold > summary::-webkit-details-marker { display: none; }
+.pt-fold > summary .di-movers-head-row h2::before { content: "▸"; display: inline-block; width: 1.1em; transition: transform .15s; }
+.pt-fold[open] > summary .di-movers-head-row h2::before { transform: rotate(90deg); }
+.pt-fold > summary:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .pt-fold > summary .di-movers-head-row h2::before { transition: none; } }

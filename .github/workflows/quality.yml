@@ -308,6 +308,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-mi-mercado.mjs
+      - name: Home page «Mi mercado» panel (examples when empty, compact module with the saved choice, same figures as the full page, URL untouched, folded «More data»; 4 languages, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-home-mi-mercado.mjs
       - name: PAC España (importes y estimación = los JSON del real decreto; cita del BOE con su texto obligatorio; cambios pendientes visibles; elección guardada; 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

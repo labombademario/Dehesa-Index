@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T14:41:00Z",
+ "generatedAt": "2026-10-04T15:24:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 69,
   "late": 1,
   "error": 0,
-  "not_run": 10,
-  "unknown": 1
+  "not_run": 11,
+  "unknown": 0
  },
  "global": "late",
  "pipelines": [
@@ -1530,10 +1530,12 @@
    "nextRun": "2026-10-06T20:40:00Z",
    "files": [
     {
-     "path": "data/mb-markets/sheep-goat.json"
+     "path": "data/mb-markets/sheep-goat.json",
+     "lastChange": "2026-10-04T14:52:23Z"
     },
     {
-     "path": "data/mb-markets/hogs.json"
+     "path": "data/mb-markets/hogs.json",
+     "lastChange": "2026-10-04T14:52:23Z"
     },
     {
      "path": "data/mb-markets"
@@ -1545,7 +1547,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 94.5
   },
   {
@@ -1600,7 +1602,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-04T15:17:00Z",
+   "nextRun": "2026-10-04T18:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -1727,11 +1729,11 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-04T15:10:00Z",
+   "nextRun": "2026-10-04T18:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-04T14:13:42Z"
+     "lastChange": "2026-10-04T14:52:23Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1764,7 +1766,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-04T14:13:42Z"
+     "lastChange": "2026-10-04T14:52:23Z"
     },
     {
      "path": "data/products"
@@ -1775,7 +1777,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-04T14:13:42Z"
+     "lastChange": "2026-10-04T14:52:23Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -1783,7 +1785,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-04T14:13:42Z"
+     "lastChange": "2026-10-04T14:52:23Z"
     },
     {
      "path": "data/premium-tracker.json",
