@@ -50,8 +50,8 @@
     noRevs: ['No se han detectado revisiones oficiales de estas series.', 'No official revisions detected for these series.', 'Aucune révision officielle détectée pour ces séries.', 'Nessuna revisione ufficiale rilevata per queste serie.'],
     newPoint: ['dato nuevo', 'new data point', 'nouvelle donnée', 'nuovo dato'],
     revised: ['revisado', 'revised', 'révisé', 'rivisto'],
-    compare: ['Comparación internacional', 'International comparison', 'Comparaison internationale', 'Confronto internazionale'],
-    compareHint: ['Valor original y normalizado con el Unit Engine; cada fila lleva su fecha y su comparabilidad', 'Original and Unit-Engine-normalised values; every row carries its date and comparability', 'Valeur d’origine et normalisée par le Unit Engine ; chaque ligne porte sa date et sa comparabilité', 'Valore originale e normalizzato con lo Unit Engine; ogni riga ha data e comparabilità'],
+    compare: ['Qué se paga en cada país', 'What is paid in each country', 'Ce qui est payé dans chaque pays', 'Quanto si paga in ogni paese'],
+    compareHint: ['Cada fila: el precio en su moneda original, el mismo precio en la unidad que elijas, su fecha y si se puede comparar', 'Each row: the price in its original currency, the same price in the unit you choose, its date and whether it can be compared', 'Chaque ligne : le prix dans sa monnaie d’origine, le même prix dans l’unité choisie, sa date et s’il est comparable', 'Ogni riga: il prezzo nella valuta originale, lo stesso prezzo nell’unità scelta, la data e se è confrontabile'],
     unit: ['Unidad', 'Unit', 'Unité', 'Unità'],
     orig: ['Original', 'Original', 'Original', 'Originale'],
     idx: ['Índice 100', 'Index 100', 'Indice 100', 'Indice 100'],
@@ -131,6 +131,7 @@
     d_input: ['{0} ({1}): {2} en el último dato ({3}).', '{0} ({1}): {2} on the latest data point ({3}).', '{0} ({1}) : {2} sur la dernière donnée ({3}).', '{0} ({1}): {2} nell’ultimo dato ({3}).'],
     d_conc: ['El mayor exportador ({0}) concentra el {1} % de las exportaciones mundiales de PSD.', 'The largest exporter ({0}) holds {1} % of world exports in PSD.', 'Le premier exportateur ({0}) concentre {1} % des exportations mondiales de PSD.', 'Il maggiore esportatore ({0}) concentra il {1} % delle esportazioni mondiali PSD.'],
     d_late: ['Serie {0}: {1} (último dato {2}); conviene leer el precio con cautela.', 'Series {0}: {1} (latest data {2}); read the price with caution.', 'Série {0} : {1} (dernière donnée {2}) ; lire le prix avec prudence.', 'Serie {0}: {1} (ultimo dato {2}); leggere il prezzo con cautela.'],
+    moreD: ['Más detalles', 'More details', 'Plus de détails', 'Più dettagli'],
     news: ['Noticias', 'News', 'Actualités', 'Notizie'],
     newsHint: ['Titulares de las fuentes del sitio que mencionan este producto', 'Headlines from the site’s sources that mention this product', 'Titres des sources du site qui mentionnent ce produit', 'Titoli delle fonti del sito che citano questo prodotto'],
     noNews: ['Sin noticias recientes sobre este producto en las fuentes seguidas.', 'No recent news about this product in the tracked sources.', 'Pas d’actualité récente sur ce produit dans les sources suivies.', 'Nessuna notizia recente su questo prodotto nelle fonti seguite.'],
@@ -275,13 +276,15 @@
 
   /* ---------- cabecera ---------- */
   function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
+  // Tarjeta de mercado. En pantallas estrechas se lee como una fila (mercado, valor, cambio, fecha, estado, fuente) y el resto (comparabilidad, minigrafico, que mide) se abre al tocar.
   function cardHtml(o, isIndex) {
-    var f = fresh(o), meas = o.methodology ? '<details style="margin-top:6px"><summary class="pt-sub" style="cursor:pointer">' + esc(t('measures')) + '</summary><div class="pt-sub">' + esc(o.methodology) + '</div></details>' : '';
+    var meas = o.methodology ? '<details style="margin-top:6px"><summary class="pt-sub" style="cursor:pointer">' + esc(t('measures')) + '</summary><div class="pt-sub">' + esc(o.methodology) + '</div></details>' : '';
+    var extra = (isIndex ? '' : compBadge(o)) + (isIndex ? '' : spark(o.spark)) + meas;
     return '<div class="di-card pt-card"><div class="pt-k">' + esc(reg(o.region)) + (isIndex ? ' · ' + esc(UL.index_2020_100) : '') + '</div>' + idHtml(o) +
       '<div class="pt-v">' + (isIndex ? esc(nf(o.value, 1)) + ' <small>2020 = 100</small>' : esc(nf(o.value, Math.abs(o.value) >= 100 ? 0 : 2, o.unit === 'litro' ? 3 : 2)) + ' <small>' + esc(o.currency + '/' + (UL[o.unit] || o.unit)) + '</small>') + '</div>' +
-      '<div class="pt-sub">' + esc(t('asOf')) + ' ' + esc(dstr(o.observationDate)) + (typeof o.changePct === 'number' ? ' · ' + chg(o.changePct) + ' ' + esc(t('vsPrev')) : '') + '</div>' +
-      '<div>' + freshBadge(o) + (isIndex ? '' : compBadge(o)) + '</div>' +
-      (ci(o.sourceId, { period: o.observationDate, pub: o.publicationDate }) || '<div class="pt-sub">' + esc(t('source')) + ': ' + esc(srcName(o.sourceId)) + '</div>') + (isIndex ? '' : spark(o.spark)) + meas + '</div>';
+      '<div class="pt-sub">' + freshBadge(o) + ' ' + esc(t('asOf')) + ' ' + esc(dstr(o.observationDate)) + (typeof o.changePct === 'number' ? ' · ' + chg(o.changePct) + ' ' + esc(t('vsPrev')) : '') + '</div>' +
+      (ci(o.sourceId, { period: o.observationDate, pub: o.publicationDate }) || '<div class="pt-sub">' + esc(t('source')) + ': ' + esc(srcName(o.sourceId)) + '</div>') +
+      (extra ? '<button type="button" class="pt-exp" data-exp="1" aria-expanded="false">' + esc(t('moreD')) + '</button><div class="pt-extra">' + extra + '</div>' : '') + '</div>';
   }
   function followKeys() { return CTX.inst.map(obsKey); }
   function isFollowing() { var W = window.DIWatch; if (!W || !W.has) return false; return followKeys().some(function (k) { return W.has('P', k); }); }
@@ -710,7 +713,7 @@
   function pushUrl() { try { var q = new URLSearchParams(location.search); q.set('p', ST.p); q.set('u', ST.u); q.set('r', ST.r); if (ST.u === 'orig' && ST.i) q.set('i', ST.i); else q.delete('i'); history.replaceState(null, '', '?' + q.toString()); } catch (e) { /* sin historial */ } }
   function redraw(ids) { CUR.forEach(function (b) { if (!ids || ids.indexOf(b.id) > -1) paint(b); }); }
   function onClick(e) {
-    var el = e.target; while (el && el !== document && !(el.getAttribute && (el.getAttribute('data-u') || el.getAttribute('data-r') || el.getAttribute('data-i') || el.getAttribute('data-sd') || el.getAttribute('data-follow') || el.getAttribute('data-retry')))) el = el.parentNode;
+    var el = e.target; while (el && el !== document && !(el.getAttribute && (el.getAttribute('data-u') || el.getAttribute('data-r') || el.getAttribute('data-i') || el.getAttribute('data-sd') || el.getAttribute('data-follow') || el.getAttribute('data-retry') || el.getAttribute('data-exp')))) el = el.parentNode;
     if (!el || el === document) return;
     var u = el.getAttribute('data-u'), r = el.getAttribute('data-r'), i = el.getAttribute('data-i'), s = el.getAttribute('data-sd'), rt = el.getAttribute('data-retry');
     if (u) { ST.u = u; pushUrl(); redraw(['compare', 'hist']); return; }
@@ -718,6 +721,7 @@
     if (i) { ST.i = i; pushUrl(); redraw(['hist']); return; }
     if (s) { ST.sdEnt = s; redraw(['sd']); return; }
     if (rt) { BLK[rt] = null; CUR.forEach(function (b) { if (b.id === rt) { var bd = document.querySelector('#pt-' + rt + ' .pt-body'); if (bd) bd.innerHTML = '<div class="pt-skel">' + esc(t('loading')) + '</div>'; run(b); } }); return; }
+    if (el.getAttribute('data-exp')) { var cd = el.parentNode, op = !cd.classList.contains('open'); cd.classList.toggle('open', op); el.setAttribute('aria-expanded', op ? 'true' : 'false'); return; }
     if (el.getAttribute('data-follow')) toggleFollow();
   }
   function toggleFollow() {

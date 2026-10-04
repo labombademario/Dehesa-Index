@@ -38,7 +38,11 @@
   var lang = readLang() || 'es';
   var theme = readTheme();
 
+  // Densidad por tipo de pagina: compacta para mercados y tablas, ampliada para metodologia y observatorio, estandar para el resto.
+  var DENSITY = { 'precios.html': 'compact', 'europa.html': 'compact', 'mercados.html': 'compact', 'precios-locales.html': 'compact', 'comparador.html': 'compact', 'catalogo.html': 'compact', 'calendario.html': 'compact', 'noticias.html': 'compact',
+    'metodologia.html': 'expanded', 'observatorio.html': 'expanded', 'informacion.html': 'expanded', 'status.html': 'expanded', 'legal.html': 'expanded' };
   function applyThemeAttr() {
+    try { var f = window.location.pathname.split('/').pop() || 'index.html'; document.documentElement.setAttribute('data-density', DENSITY[f] || 'standard'); } catch (e) { /* sin densidad: estandar */ }
     document.documentElement.setAttribute('data-theme', theme);
     document.documentElement.setAttribute('lang', lang); // WCAG 3.1.1: el idioma de la pagina sigue al selector
   }

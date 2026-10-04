@@ -1671,3 +1671,25 @@ html[data-theme="dark"] .di-fd-wait { background: #E0B04A; }
 .pt-sec { scroll-margin-top: calc(var(--di-hdr, 60px) + 70px); }
 #di-nav-root { display: contents; }
 @media (min-width: 701px) and (max-width: 1099px) { .di-header { position: static; } }
+
+/* Tarjetas de mercado de la ficha: en movil son filas compactas y el detalle se abre al tocar */
+.pt-exp { display: none; margin-top: 6px; padding: 6px 12px; font: inherit; font-size: 13px; color: var(--accent); background: transparent; border: 1px solid var(--border-strong); border-radius: 999px; cursor: pointer; }
+.pt-exp[aria-expanded="true"]::after { content: ' ▴'; }
+.pt-exp[aria-expanded="false"]::after { content: ' ▾'; }
+.pt-extra { margin-top: 8px; }
+@media (max-width: 700px) {
+  .pt-card { padding: 12px 14px; }
+  .pt-card .pt-v { font-size: 24px; }
+  .pt-exp { display: inline-block; }
+  .pt-card:not(.open) .pt-extra { display: none; }
+}
+.pt-card .pt-exp { align-self: flex-start; }
+
+/* Tres densidades: compacta (mercados y tablas), estandar (ficha, pais) y ampliada (metodologia, observatorio). Se asigna por pagina en shared.js (html[data-density]). */
+:root { --d-row: 7px; --d-gap-sec: 30px; --d-gap-home: 56px; }
+html[data-density="compact"] { --d-row: 4px; --d-gap-sec: 20px; --d-gap-home: 36px; }
+html[data-density="expanded"] { --d-row: 11px; --d-gap-sec: 40px; --d-gap-home: 64px; }
+html[data-density] .pt-table td, html[data-density] .pa-t td, html[data-density] .de-t td, html[data-density] .pl-t td, html[data-density] .cof-tbl td { padding-top: var(--d-row); padding-bottom: var(--d-row); }
+html[data-density] .pt-sec { margin-top: var(--d-gap-sec); }
+html[data-density] .di-home-section { margin-bottom: var(--d-gap-home); }
+html[data-density="expanded"] .pt-table td, html[data-density="expanded"] .pa-t td, html[data-density="expanded"] .de-t td { line-height: 1.55; }
