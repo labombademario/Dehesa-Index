@@ -131,9 +131,12 @@ def main():
                 item["last"] = {"conclusion": r.get("conclusion"), "event": r.get("event"), "startedAt": iso(st), "durationSec": int((en - st).total_seconds()) if st and en else None, "url": r.get("html_url")}
                 ok = sum(1 for x in rr if x.get("conclusion") == "success")
                 item["recent"] = {"runs": len(rr), "success": ok, "failed": sum(1 for x in rr if x.get("conclusion") == "failure")}
-                age_h = (NOW - st).total_seconds() / 3600 if st else None
+                # Una ejecucion cancelada (la cola de concurrencia descarta la pendiente cuando entra otra) NO es un exito: el retraso se mide desde
+                # la ultima ejecucion que si termino bien; si no hay ninguna reciente, queda en retraso y se ve.
+                good = [x for x in rr if x.get("conclusion") == "success"]; gst = pdate(good[0].get("run_started_at")) if good else None
                 if r.get("conclusion") == "failure": item["status"] = "error"
-                elif crons and st and is_late(crons, st): item["status"] = "late"
+                elif r.get("conclusion") == "cancelled" and (not gst or (crons and is_late(crons, gst))): item["status"] = "late"; item["last"]["note"] = "cancelled"
+                elif crons and st and is_late(crons, gst or st): item["status"] = "late"
                 else: item["status"] = "ok"
         # NOT_RUN_YET: la API respondio y el workflow no tiene ninguna ejecucion (distinto de "unknown": no hemos podido consultarlo)
         if runs is not None and not runs.get("workflow_runs"): item["status"] = "not_run"
