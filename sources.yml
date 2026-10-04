@@ -107,6 +107,17 @@ sources:
     data: [spain-slaughter/slaughter.json, spain-slaughter-log.txt]
     extra: ['!data/spain-slaughter']
     message: Datos sacrificio de ganado de España por especie y comunidad (MAPA)
+  - id: spain-wine
+    name: Update Spain wine by campaign and region (MAPA INFOVI)
+    cron: ['45 8 * * 4']
+    script: scripts/update-spain-wine.py
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-wine)
+    data: [spain-wine/infovi.json, spain-wine-log.txt]
+    extra: ['!data/spain-wine']
+    message: Datos vino de España por campaña y comunidad (MAPA INFOVI)
   - id: austria
     name: Update Austria (Eurostat)
     cron: ['25 16 * * 2,5']

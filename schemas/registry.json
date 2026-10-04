@@ -588,6 +588,12 @@
     "spain_milk"
    ]
   ],
+  "spain-wine/infovi.json": [
+   "spain-wine",
+   [
+    "spain_wine"
+   ]
+  ],
   "spain-slaughter/slaughter.json": [
    "spain-slaughter",
    [

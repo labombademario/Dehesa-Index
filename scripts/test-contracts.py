@@ -22,6 +22,7 @@ def _sl(d): return d["v"]
 def _sbv(d, y="2025"): return d["campaigns"][y]["v"]
 def _sov(d, y="2025"): return d["campaigns"][y]["v"]
 def _smk(d): return d["ccaa"]["galicia"]
+def _swn(d): return d["national"]
 def _ssl(d): return d["national"]["bovino"]
 CASES = [
  ("spain-milk/infolac.json", "comunidades que no suman las entregas", lambda d: _smk(d)["production"].__setitem__(-1, _smk(d)["production"][-1] + 5000)),
@@ -39,6 +40,15 @@ CASES = [
  ("spain-slaughter/slaughter.json", "serie mas corta que los periodos", lambda d: d["national"]["ovino"]["heads"].pop()),
  ("spain-slaughter/slaughter.json", "libro que no es el ultimo periodo", lambda d: d["report"].__setitem__("last", "2025-01")),
  ("spain-slaughter/slaughter.json", "periodos desordenados", lambda d: d["periods"].reverse()),
+ ("spain-wine/infovi.json", "vino negativo", lambda d: _swn(d)["wine"].__setitem__(-1, -1)),
+ ("spain-wine/infovi.json", "comunidades que no suman el total", lambda d: d["ccaa"]["clm"]["wine"].__setitem__(-1, d["ccaa"]["clm"]["wine"][-1] + 900000)),
+ ("spain-wine/infovi.json", "tinto+blanco distinto del vino", lambda d: _swn(d)["red"].__setitem__(-1, _swn(d)["red"][-1] + 900000)),
+ ("spain-wine/infovi.json", "salidas distintas de exportaciones + interiores", lambda d: _swn(d)["exports"].__setitem__(-1, _swn(d)["exports"][-1] + 900000)),
+ ("spain-wine/infovi.json", "rendimiento uva-vino imposible", lambda d: _swn(d)["grape"].__setitem__(-1, 1.0)),
+ ("spain-wine/infovi.json", "comunidad que falta", lambda d: d["ccaa"].pop("galicia")),
+ ("spain-wine/infovi.json", "serie mas corta que las campañas", lambda d: _swn(d)["exits"].pop()),
+ ("spain-wine/infovi.json", "campaña sin fuente", lambda d: d["sources"].pop(d["campaigns"][-1])),
+ ("spain-wine/infovi.json", "campañas desordenadas", lambda d: d["campaigns"].reverse()),
  ("spain-balances/olive.json", "produccion que rompe el total de origen", lambda d: _sov(d)["oil"].__setitem__("production", _sov(d)["oil"]["production"] + 300)),
  ("spain-balances/olive.json", "existencias finales que no cuadran", lambda d: _sov(d)["oil"].__setitem__("endingStocks", _sov(d)["oil"]["endingStocks"] + 80)),
  ("spain-balances/olive.json", "exportaciones UE + extra UE que no suman", lambda d: _sov(d, "2024")["oil"].__setitem__("exportsEU", _sov(d, "2024")["oil"]["exportsEU"] + 50)),

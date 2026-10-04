@@ -1848,6 +1848,38 @@ def _ss_mod():
     import importlib.util as _u
     sp = _u.spec_from_file_location("update_spain_slaughter", str(Path(__file__).resolve().parent / "update-spain-slaughter.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
 
+def _sw_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_spain_wine", str(Path(__file__).resolve().parent / "update-spain-wine.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
+
+def spain_wine(doc, errs, warns, stats):
+    """Vino de INFOVI (MAPA): campañas ordenadas y sin repetir, 17 comunidades, series de la longitud de las campañas, sin negativos, tinto+blanco = vino, categorias = vino, salidas = exportaciones + interiores,
+    comunidades <= total (+0,01 %), rendimiento uva-vino en rango y una fuente por campaña."""
+    m = _sw_mod(); C = doc["campaigns"]; n = len(C); N = doc["national"]
+    if C != sorted(set(C)): errs.append("spain-wine: campañas desordenadas o repetidas"); return
+    if set(doc["ccaa"]) != set(m.CCAA): errs.append("spain-wine: comunidades distintas de las 17 esperadas"); return
+    if set(doc["sources"]) != set(C): errs.append("spain-wine: falta la fuente de alguna campaña o sobra una"); return
+    for f in m.FIELDS:
+        a = N[f]
+        if len(a) != n: errs.append("spain-wine: la serie nacional %s no tiene la longitud de las campañas" % f); return
+        if any(x is not None and x < 0 for x in a): errs.append("spain-wine: valor negativo en %s" % f); return
+        for c, d in doc["ccaa"].items():
+            if len(d[f]) != n: errs.append("spain-wine: %s %s no tiene la longitud de las campañas" % (c, f)); return
+            if any(x is not None and x < 0 for x in d[f]): errs.append("spain-wine: valor negativo en %s %s" % (c, f)); return
+    def near(a, b, tol): return a is None or b is None or abs(a - b) <= tol + 0.0001 * abs(b)
+    for i, c in enumerate(C):
+        g, w = N["grape"][i], N["wine"][i]
+        if g and w and not 5 <= w / g <= 8: errs.append("spain-wine %s: rendimiento uva-vino fuera de rango" % c)
+        if not near((N["red"][i] or 0) + (N["white"][i] or 0), w, 3): errs.append("spain-wine %s: tinto+blanco no es el vino producido" % c)
+        cats = [N[x][i] for x in ("dop", "igp", "varietal", "sinig")]
+        if all(x is not None for x in cats) and not near(sum(cats), w, 3): errs.append("spain-wine %s: las categorias no suman el vino producido" % c)
+        if not near((N["exports"][i] or 0) + (N["domestic"][i] or 0), N["exits"][i], 3): errs.append("spain-wine %s: salidas distintas de exportaciones + interiores" % c)
+        for f in m.FIELDS:
+            s = sum(d[f][i] for d in doc["ccaa"].values() if d[f][i] is not None); t = N[f][i]
+            if t is not None and not near(s, t, 3): errs.append("spain-wine %s %s: las comunidades suman %s y el total %s" % (c, f, round(s), round(t)))
+    stats["spain-wine campañas"] = n
+
 
 def spain_slaughter(doc, errs, warns, stats):
     """Sacrificio de ganado del MAPA: periodos ordenados y sin repetir, 7 especies y 17 comunidades, series de la longitud de los periodos, sin negativos, peso canal medio en el rango de cada especie,

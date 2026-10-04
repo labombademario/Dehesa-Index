@@ -8,6 +8,7 @@ const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM 
 let fail = 0; const ok = (n, c) => { if (!c) { fail++; console.log('FALLA', n); } };
 const J = JSON.parse(readFileSync('data/spain-balances/cereals.json', 'utf8')), ys = Object.keys(J.campaigns).sort(), Y = ys[ys.length - 1];
 const OL = JSON.parse(readFileSync('data/spain-balances/olive.json', 'utf8')), oys = Object.keys(OL.campaigns).sort(), OY = oys[oys.length - 1];
+const WJ = JSON.parse(readFileSync('data/spain-wine/infovi.json', 'utf8')), WL = WJ.campaigns.length - 1, wk = (f, i) => String(Math.round(WJ.national[f][i] / 1000)), wy = WJ.campaigns[WL];
 const digits = s => s.replace(/\D/g, '');
 for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const ctx = await browser.newContext({ viewport: { width: w, height: 800 }, serviceWorkers: 'block' });
@@ -39,6 +40,17 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
     await page.selectOption('#od-es-op', 'tableOlive');
     const tt = await page.evaluate(() => document.getElementById('od-es').innerText);
     ok(tag + ' aceituna de mesa: ajustes y perdidas = JSON', new RegExp(String(OL.campaigns[OY].v.tableOlive.lossesAdj).replace('.', '[.,]')).test(tt));
+    await page.selectOption('#od-es-p', 'wine'); await page.waitForSelector('#od-es-wy');
+    const wv = await page.evaluate(() => { var e = document.getElementById('od-es'); var tb = e.querySelectorAll('table'); var rows = [].map.call(tb[0].querySelectorAll('tbody tr'), r => [].map.call(r.cells, c => c.innerText.trim())); var cr = [].map.call(tb[1].querySelectorAll('tbody tr'), r => [].map.call(r.cells, c => c.innerText.trim())); return { rows: rows, cr: cr, svgs: e.querySelectorAll('svg').length, txt: e.innerText, h1: document.getElementById('pg-h1').textContent, over: document.documentElement.scrollWidth > innerWidth + 1 }; });
+    const dg = s => s.replace(/\D/g, '');
+    ok(tag + ' vino: produccion = JSON (miles de hl)', wv.rows.some(r => dg(r[1]) === wk('wine', WL)));
+    ok(tag + ' vino: existencias de vino = JSON', wv.rows.some(r => dg(r[1]) === wk('stockWine', WL)));
+    ok(tag + ' vino: exportaciones declaradas = JSON', wv.rows.some(r => dg(r[1]) === wk('exports', WL)));
+    ok(tag + ' vino: 17 comunidades y España en la tabla', wv.cr.length === 18 && dg(wv.cr[17][1]) === wk('wine', WL));
+    ok(tag + ' vino: Castilla-La Mancha primera', /Mancha/.test(wv.cr[0][0]));
+    ok(tag + ' vino: dos graficos y cita MAPA', wv.svgs >= 2 && /MAPA/.test(wv.txt));
+    ok(tag + ' vino: aviso de que son declaraciones y no un balance', /declaraciones|declarations|déclarations|dichiarazioni/.test(wv.txt) && /balance|bilan|bilancio/i.test(wv.txt));
+    ok(tag + ' vino: titulo propio y sin desborde', /vino|wine|vin\b|vino/i.test(wv.h1) && !wv.over);
     await page.selectOption('#od-es-p', 'cer'); await page.waitForSelector('#od-es-y');
   }
   ok(tag + ' sin desborde', !m.over); ok(tag + ' sin errores de consola', errs.length === 0); if (errs.length) console.log(errs);
