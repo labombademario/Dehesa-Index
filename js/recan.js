@@ -93,11 +93,18 @@
     var bind = function (id, key, numeric) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = numeric ? +e.target.value : e.target.value; if (key === 'c') { ST.t = null; ST.d = null; ST.y = null; } if (key === 't') { ST.d = null; ST.y = null; } if (key === 'd') ST.y = null; build(); var n = document.getElementById(id); if (n) n.focus(); }; };
     bind('rc-c', 'c', true); bind('rc-t', 't', true); bind('rc-d', 'd', true); bind('rc-y', 'y', true); bind('rc-v', 'v', false);
   }
-  function shell() { var t = tt(); var h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
-  window.DehesaShared.init('informacion');
+  function shell() { if (!ON) return; var t = tt(); var h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
+  var EMB = !!document.getElementById('cs-es'), ON = !EMB;
+  if (!EMB) window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
-  window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };
+  window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); if (ON) { shell(); build(); } };
   shell();
-  fetch('data/recan.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) { D = d; build(); })
-    .catch(function () { var b = document.getElementById('recan-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
+  var LOADED = false;
+  function loadData() {
+    if (LOADED) { build(); return; } LOADED = true;
+    fetch('data/recan.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }).then(function (d) { D = d; if (ON) build(); })
+      .catch(function () { var b = document.getElementById('recan-body'); if (b) b.innerHTML = '<p class="di-movers-hint">' + tt().none + '</p>'; });
+  }
+  if (!EMB) loadData();
+  if (EMB && window.CASeries && window.CASeries.custom) window.RECANTab = window.CASeries.custom({ id: 'cs-es', tabsHost: 'cs-ca-tabs', usBody: 'cs-body', usExtra: '#eucs', usRender: function () { if (window.__csUsRender) window.__csUsRender(); }, country: 'ES', tabUS: ['EE. UU.', 'US', 'États-Unis', 'Stati Uniti'], label: ['España (RECAN)', 'Spain (RECAN)', 'Espagne (RECAN)', 'Spagna (RECAN)'], onShow: function () { ON = true; shell(); loadData(); } });
 })();

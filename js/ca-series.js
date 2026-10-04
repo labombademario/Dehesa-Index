@@ -2,6 +2,13 @@
    CASeries.create({ id, usBody, usExtra, usRender, texts:{es,en,fr,it}, groups:[{id,label[4],pick(s)->bool}], defaultGroup, cite }). Usa el catálogo del país y la capa de series (solo baja la serie elegida). ES5. */
 (function () {
   'use strict';
+  var REG = {};
+  function drawTabs(G) {
+    var host = null; Object.keys(REG).forEach(function (k) { if (REG[k] === G) host = document.getElementById(k); }); if (!host) return;
+    var any = G.list.some(function (o) { return o.isOn(); });
+    host.innerHTML = '<div class="pt-tabs" role="tablist"><button type="button" class="pt-chip" role="tab" data-catab="us" aria-selected="' + !any + '">' + esc(G.usLabel()) + '</button>' + G.list.map(function (o) { return '<button type="button" class="pt-chip" role="tab" data-catab="' + o.key.toLowerCase() + '" aria-selected="' + o.isOn() + '">' + esc(o.label()) + '</button>'; }).join('') + '</div>';
+    Array.prototype.forEach.call(host.querySelectorAll('[data-catab]'), function (b) { b.onclick = function () { var k = b.getAttribute('data-catab'); if (k === 'us') { G.list.forEach(function (o) { if (o.isOn()) o.setTab(false); }); } else G.list.forEach(function (o) { if (o.key.toLowerCase() === k) o.setTab(true); }); }; });
+  }
   var LI = { es: 0, en: 1, fr: 2, it: 3 };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function li() { var i = LI[lang()]; return i == null ? 0 : i; }
@@ -13,10 +20,10 @@
   function TL(l) { return window.DIClear && window.DIClear.tl ? window.DIClear.tl(l, lang()) : l; }
   function chg(p) { if (p == null) return '<span style="color:var(--text-faint)">—</span>'; var c = p > 0.05 ? 'var(--positive)' : p < -0.05 ? 'var(--negative)' : 'var(--text-faint)'; return '<span style="color:' + c + ';font-weight:600">' + (p > 0 ? '+' : p < 0 ? '−' : '') + nf(Math.abs(p), 1) + ' %</span>'; }
   function create(cfg) {
-    var ST = { g: cfg.defaultGroup, s: null, r: '10' }, ACTIVE = false, CAT = null, PTS = {};
+    var CTRY = cfg.country || 'CA', ST = { g: cfg.defaultGroup, s: null, r: '10' }, ACTIVE = false, CAT = null, PTS = {};
     function tr() { return cfg.texts[lang()] || cfg.texts.es; }
-    function catalog() { if (CAT) return Promise.resolve(CAT); return window.DISeries.country('CA', true).then(function (c) { CAT = c.series; return CAT; }); }
-    function points(id) { if (PTS[id]) return Promise.resolve(PTS[id]); return window.DISeries.series('CA', id).then(function (s) { PTS[id] = s; return s; }); }
+    function catalog() { if (CAT) return Promise.resolve(CAT); return window.DISeries.country(CTRY, true).then(function (c) { CAT = c.series; return CAT; }); }
+    function points(id) { if (PTS[id]) return Promise.resolve(PTS[id]); return window.DISeries.series(CTRY, id).then(function (s) { PTS[id] = s; return s; }); }
     function card(l, v, sub) { return '<div class="di-card" style="padding:14px 16px;flex:1 1 200px;min-width:180px"><div style="font-size:11px;letter-spacing:.4px;color:var(--text-faint);font-weight:700">' + esc(l).toUpperCase() + '</div><div style="font-size:26px;font-weight:700;margin:6px 0 2px" class="serif">' + v + '</div><div class="di-movers-hint" style="margin:0">' + sub + '</div></div>'; }
     function prevOf(pts, p, freq) { var m = /^(\d{4})(.*)$/.exec(p); return m ? String(+m[1] - 1) + m[2] : null; }
     function val(pts, p) { for (var i = pts.length - 1; i >= 0; i--) if (pts[i][0] === p) return pts[i][1]; return null; }
@@ -56,23 +63,43 @@
       }).catch(function () { if (el) el.innerHTML = '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; });
     }
     function heading() { if (!ACTIVE) return; var t = tr(), h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.title; if (s) s.textContent = t.sub; document.title = t.title + ' | Dehesa Index'; }
-    function tabs() {
-      var host = document.getElementById(cfg.id + '-tabs'); if (!host) return; var t = tr();
-      host.innerHTML = '<div class="pt-tabs" role="tablist"><button type="button" class="pt-chip" role="tab" data-catab="us" aria-selected="' + !ACTIVE + '">' + esc(t.tabUS) + '</button><button type="button" class="pt-chip" role="tab" data-catab="ca" aria-selected="' + ACTIVE + '">' + esc(t.tabCA) + '</button></div>';
-      Array.prototype.forEach.call(host.querySelectorAll('[data-catab]'), function (b) { b.onclick = function () { setTab(b.getAttribute('data-catab') === 'ca'); }; });
-    }
+    var HOST = cfg.tabsHost || (cfg.id + '-tabs'), G = REG[HOST] || (REG[HOST] = { list: [], us: cfg.usBody, usExtra: cfg.usExtra, usRender: cfg.usRender, usLabel: function () { return (cfg.texts[lang()] || cfg.texts.es).tabUS; } }), ME = null;
+    function tabs() { drawTabs(G); }
     function setTab(ca, noUrl) {
-      ACTIVE = ca; var us = document.getElementById(cfg.usBody), el = document.getElementById(cfg.id); if (us) us.hidden = ca; if (el) el.hidden = !ca;
-      if (cfg.usExtra) Array.prototype.forEach.call(document.querySelectorAll(cfg.usExtra), function (n) { n.hidden = ca; });
+      ACTIVE = ca;
+      G.list.forEach(function (o) { if (o !== ME && ca) o.off(); });
+      var any = G.list.some(function (o) { return o.isOn(); }), us = document.getElementById(G.us), el = document.getElementById(cfg.id);
+      if (us) us.hidden = any; if (el) el.hidden = !ca;
+      if (G.usExtra) Array.prototype.forEach.call(document.querySelectorAll(G.usExtra), function (n) { n.hidden = any; });
       tabs();
-      if (ca) { heading(); (window.DICite ? window.DICite.load() : Promise.resolve()).then(render, render); } else if (cfg.usRender) cfg.usRender();
-      if (!noUrl) { try { var q = new URLSearchParams(window.location.search); if (ca) q.set('c', 'CA'); else q.delete('c'); var s = q.toString(); history.replaceState(null, '', window.location.pathname + (s ? '?' + s : '') + window.location.hash); } catch (e) {} }
+      if (ca) { heading(); (window.DICite ? window.DICite.load() : Promise.resolve()).then(render, render); } else if (!any && G.usRender) G.usRender();
+      if (!noUrl) { try { var q = new URLSearchParams(window.location.search); if (ca) q.set('c', CTRY); else if ((q.get('c') || '').toUpperCase() === CTRY) q.delete('c'); var s = q.toString(); history.replaceState(null, '', window.location.pathname + (s ? '?' + s : '') + window.location.hash); } catch (e) {} }
     }
+    function off() { if (!ACTIVE) return; ACTIVE = false; var el = document.getElementById(cfg.id); if (el) el.hidden = true; }
+    ME = { setTab: setTab, off: off, isOn: function () { return ACTIVE; }, active: function () { return G.list.some(function (o) { return o.isOn(); }); }, label: function () { return tr().tabCA; }, key: CTRY }; G.list.push(ME);
     var prev = window.DehesaShared.onLangChange;
     window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); tabs(); if (ACTIVE) { render(); heading(); } };
     var q = new URLSearchParams(window.location.search);
-    tabs(); if ((q.get('c') || '').toUpperCase() === 'CA') setTab(true, true);
-    return { setTab: setTab, active: function () { return ACTIVE; } };
+    tabs(); if ((q.get('c') || '').toUpperCase() === CTRY) setTab(true, true);
+    return ME;
   }
-  window.CASeries = { create: create };
+  // Pestaña a medida (otro módulo pinta su contenido): cfg = { id, tabsHost, usBody, usExtra, usRender, country, tabUS:[4], label:[4], onShow(), onHide?() }
+  function custom(cfg) {
+    var LI = { es: 0, en: 1, fr: 2, it: 3 }, ACTIVE = false, CTRY = cfg.country, HOST = cfg.tabsHost;
+    var G = REG[HOST] || (REG[HOST] = { list: [], us: cfg.usBody, usExtra: cfg.usExtra, usRender: cfg.usRender, usLabel: function () { return cfg.tabUS[LI[lang()] || 0]; } }), ME = null;
+    function setTab(on, noUrl) {
+      ACTIVE = on; G.list.forEach(function (o) { if (o !== ME && on) o.off(); });
+      var any = G.list.some(function (o) { return o.isOn(); }), us = document.getElementById(G.us), el = document.getElementById(cfg.id);
+      if (us) us.hidden = any; if (el) el.hidden = !on;
+      if (G.usExtra) Array.prototype.forEach.call(document.querySelectorAll(G.usExtra), function (n) { n.hidden = any; });
+      drawTabs(G); if (on) cfg.onShow(); else if (!any && G.usRender) G.usRender();
+      if (!noUrl) { try { var q = new URLSearchParams(window.location.search); if (on) q.set('c', CTRY); else if ((q.get('c') || '').toUpperCase() === CTRY) q.delete('c'); var s = q.toString(); history.replaceState(null, '', window.location.pathname + (s ? '?' + s : '') + window.location.hash); } catch (e) {} }
+    }
+    function off() { if (!ACTIVE) return; ACTIVE = false; var el = document.getElementById(cfg.id); if (el) el.hidden = true; if (cfg.onHide) cfg.onHide(); }
+    ME = { setTab: setTab, off: off, isOn: function () { return ACTIVE; }, active: function () { return G.list.some(function (o) { return o.isOn(); }); }, label: function () { return cfg.label[LI[lang()] || 0]; }, key: CTRY }; G.list.push(ME);
+    var prev = window.DehesaShared.onLangChange; window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); drawTabs(G); };
+    drawTabs(G); if ((new URLSearchParams(window.location.search).get('c') || '').toUpperCase() === CTRY) setTab(true, true);
+    return ME;
+  }
+  window.CASeries = { create: create, custom: custom };
 })();

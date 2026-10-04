@@ -1765,3 +1765,5 @@ html[data-density="expanded"] .pt-table td, html[data-density="expanded"] .pa-t 
 #cof[hidden], #nd[hidden], #nl[hidden], #rd-ca[hidden], #gn-ca[hidden] { display: none !important; }
 #in-ca[hidden], #cs-ca[hidden] { display: none !important; }
 #ex-ca[hidden], #ex-body[hidden] { display: none !important; }
+#rd-es[hidden] { display: none !important; }
+#in-es[hidden], #ex-es[hidden], #cs-es[hidden], #gn-es[hidden] { display: none !important; }

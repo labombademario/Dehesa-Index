@@ -68,25 +68,15 @@
     root.innerHTML = html;
     var el = document.getElementById('cg-g'); if (el) el.onchange = function (e) { ST.g = e.target.value; build(); var m = document.getElementById('cg-g'); if (m) m.focus(); };
   }
-  var EMB = !!document.getElementById('ex-ca'), ACTIVE = !EMB;
-  var TAB = { es: ['EE. UU.', 'Canadá (puertos, CGC)'], en: ['United States', 'Canada (ports, CGC)'], fr: ['États-Unis', 'Canada (ports, CCG)'], it: ['Stati Uniti', 'Canada (porti, CGC)'] };
+  var EMB = !!document.getElementById('ex-ca'), ACTIVE = !EMB, TABME = null;
   function shell() { if (!ACTIVE) return; var t = tt(), h = document.getElementById('pg-h1'), s = document.getElementById('pg-sub'); if (h) h.textContent = t.h; if (s) s.textContent = t.sub; document.title = t.h + ' | Dehesa Index'; }
-  function tabs() {
-    var host = document.getElementById('ex-ca-tabs'); if (!host) return; var l = TAB[lang()] || TAB.es;
-    host.innerHTML = '<div class="pt-tabs" role="tablist"><button type="button" class="pt-chip" role="tab" data-catab="us" aria-selected="' + !ACTIVE + '">' + esc(l[0]) + '</button><button type="button" class="pt-chip" role="tab" data-catab="ca" aria-selected="' + ACTIVE + '">' + esc(l[1]) + '</button></div>';
-    Array.prototype.forEach.call(host.querySelectorAll('[data-catab]'), function (b) { b.onclick = function () { setTab(b.getAttribute('data-catab') === 'ca'); }; });
-  }
-  function setTab(ca, noUrl) {
-    ACTIVE = ca; var us = document.getElementById('ex-body'), el = document.getElementById('ex-ca'); if (us) us.hidden = ca; if (el) el.hidden = !ca;
-    tabs(); if (ca) { shell(); build(); } else if (window.__exUsRender) window.__exUsRender();
-    if (!noUrl) { try { var q = new URLSearchParams(window.location.search); if (ca) q.set('c', 'CA'); else q.delete('c'); var s2 = q.toString(); history.replaceState(null, '', window.location.pathname + (s2 ? '?' + s2 : '') + window.location.hash); } catch (e) {} }
-  }
-  window.CGCanada = { active: function () { return ACTIVE && EMB; } };
+  function show() { ACTIVE = true; shell(); build(); }
+  window.CGCanada = { active: function () { return EMB && !!TABME && TABME.active(); } };
   if (!EMB) window.DehesaShared.init('informacion');
   var prev = window.DehesaShared.onLangChange;
-  window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); tabs(); if (ACTIVE) { shell(); build(); } };
-  if (EMB) { ACTIVE = false; tabs(); }
+  window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); if (ACTIVE) { shell(); build(); } };
+  if (EMB && window.CASeries && window.CASeries.custom) TABME = window.CASeries.custom({ id: 'ex-ca', tabsHost: 'ex-ca-tabs', usBody: 'ex-body', usRender: function () { ACTIVE = false; if (window.__exUsRender) window.__exUsRender(); }, country: 'CA', tabUS: ['EE. UU.', 'US', 'États-Unis', 'Stati Uniti'], label: ['Canadá (puertos, CGC)', 'Canada (ports, CGC)', 'Canada (ports, CCG)', 'Canada (porti, CGC)'], onShow: show, onHide: function () { ACTIVE = false; } });
   shell();
   Promise.all([fetch('data/canada-grain.json').then(function (r) { if (!r.ok) throw Error('x'); return r.json(); }), window.DICite ? window.DICite.load().catch(function () {}) : Promise.resolve()])
-    .then(function (a) { D = a[0]; if (ACTIVE) build(); if (EMB && /^CA$/i.test(new URLSearchParams(window.location.search).get('c') || '')) setTab(true, true); }).catch(function () { if (ACTIVE) build(); });
+    .then(function (a) { D = a[0]; if (ACTIVE) build(); }).catch(function () { if (ACTIVE) build(); });
 })();

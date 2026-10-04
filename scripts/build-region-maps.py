@@ -42,7 +42,7 @@ def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0)
     c = math.cos(math.radians(lat)); out = {}
     for r, gs in byreg.items():
         g = unary_union([x.buffer(0.004, join_style=2) for x in gs]).buffer(-0.004, join_style=2)  # cierra las rendijas entre unidades vecinas antes de disolver
-        if canarias and r == "Canary Is.": g = translate(g, xoff=9.0, yoff=6.0)
+        if canarias and r in ("Canary Is.", "Las Palmas", "Santa Cruz de Tenerife"): g = translate(g, xoff=9.0, yoff=6.0)
         g = transform(lambda x, y, z=None: ([v * c for v in x], list(y)) if hasattr(x, "__iter__") else (x * c, y), g)
         out[codes[r]] = (r, g.simplify(tol * c, preserve_topology=True))
     mnx = min(g.bounds[0] for _, g in out.values()); mxx = max(g.bounds[2] for _, g in out.values()); mny = min(g.bounds[1] for _, g in out.values()); mxy = max(g.bounds[3] for _, g in out.values())
@@ -57,13 +57,15 @@ def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0)
         return "".join(o)
     items = [{"id": i, "name": n, "d": p2(g)} for i, (n, g) in sorted(out.items())]
     js = "/* Contornos de " + label + " a partir de Natural Earth 1:10m (dominio publico); unidades administrativas disueltas por region. Generado por scripts/build-region-maps.py. */\nwindow." + var + " = " + json.dumps({"viewBox": "0 0 %d %s" % (W2, H2), "states": items}, ensure_ascii=False, separators=(",", ":")) + ";\n"
-    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states", "NL": "nl-provinces", "AT": "at-laender"}[cc]
+    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states", "NL": "nl-provinces", "AT": "at-laender", "ESP": "es-provinces"}[cc]
     (ROOT / "vendor" / (fn + ".js")).write_text(js, encoding="utf-8"); print("vendor/%s.js" % fn, len(js), "bytes", len(items), "regiones, viewBox", "0 0 %d %s" % (W2, H2))
 ES_CODES = {"Andalucía": "AN", "Aragón": "AR", "Asturias": "AS", "Canary Is.": "CN", "Cantabria": "CB", "Castilla y León": "CL", "Castilla-La Mancha": "CM", "Cataluña": "CT", "Extremadura": "EX", "Foral de Navarra": "NC", "Galicia": "GA", "Islas Baleares": "IB", "La Rioja": "RI", "Madrid": "MD", "Murcia": "MC", "País Vasco": "PV", "Valenciana": "VC"}
 FR_CODES = {"Auvergne-Rhône-Alpes": "ARA", "Bourgogne-Franche-Comté": "BFC", "Bretagne": "BRE", "Centre-Val de Loire": "CVL", "Corse": "COR", "Grand Est": "GES", "Hauts-de-France": "HDF", "Normandie": "NOR", "Nouvelle-Aquitaine": "NAQ", "Occitanie": "OCC", "Pays de la Loire": "PDL", "Provence-Alpes-Côte-d'Azur": "PAC", "Île-de-France": "IDF"}
 IT_CODES = {"Abruzzo": "ABR", "Apulia": "PUG", "Basilicata": "BAS", "Calabria": "CAL", "Campania": "CAM", "Emilia-Romagna": "EMR", "Friuli-Venezia Giulia": "FVG", "Lazio": "LAZ", "Liguria": "LIG", "Lombardia": "LOM", "Marche": "MAR", "Molise": "MOL", "Piemonte": "PIE", "Sardegna": "SAR", "Sicily": "SIC", "Toscana": "TOS", "Trentino-Alto Adige": "TAA", "Umbria": "UMB", "Valle d'Aosta": "VDA", "Veneto": "VEN"}
 DE_CODES = {"Baden-Württemberg": "BW", "Bayern": "BY", "Berlin": "BE", "Brandenburg": "BB", "Bremen": "HB", "Hamburg": "HH", "Hessen": "HE", "Mecklenburg-Vorpommern": "MV", "Niedersachsen": "NI", "Nordrhein-Westfalen": "NW", "Rheinland-Pfalz": "RP", "Saarland": "SL", "Sachsen": "SN", "Sachsen-Anhalt": "ST", "Schleswig-Holstein": "SH", "Thüringen": "TH"}
 europe_map("ES", adm["ESP"], ES_CODES, "region", "DEHESA_ES_CCAA", "las comunidades autonomas de Espana (Canarias en recuadro)", 0.012, canarias=True)
+ESP_CODES = {"Álava": "01", "Albacete": "02", "Alicante": "03", "Almería": "04", "Ávila": "05", "Badajoz": "06", "Baleares": "07", "Barcelona": "08", "Burgos": "09", "Cáceres": "10", "Cádiz": "11", "Castellón": "12", "Ciudad Real": "13", "Córdoba": "14", "La Coruña": "15", "Cuenca": "16", "Gerona": "17", "Granada": "18", "Guadalajara": "19", "Gipuzkoa": "20", "Huelva": "21", "Huesca": "22", "Jaén": "23", "León": "24", "Lérida": "25", "La Rioja": "26", "Lugo": "27", "Madrid": "28", "Málaga": "29", "Murcia": "30", "Navarra": "31", "Orense": "32", "Asturias": "33", "Palencia": "34", "Las Palmas": "35", "Pontevedra": "36", "Salamanca": "37", "Santa Cruz de Tenerife": "38", "Cantabria": "39", "Segovia": "40", "Sevilla": "41", "Soria": "42", "Tarragona": "43", "Teruel": "44", "Toledo": "45", "Valencia": "46", "Valladolid": "47", "Bizkaia": "48", "Zamora": "49", "Zaragoza": "50", "Ceuta": "51", "Melilla": "52"}
+europe_map("ESP", adm["ESP"], ESP_CODES, "name", "DEHESA_ES_PROVINCES", "las provincias de Espana (Canarias en recuadro)", 0.012, canarias=True)
 europe_map("FR", [f for f in adm["FRA"]], FR_CODES, "region", "DEHESA_FR_REGIONS", "las regiones de Francia metropolitana (sin ultramar)", 0.012)
 europe_map("IT", adm["ITA"], IT_CODES, "region", "DEHESA_IT_REGIONS", "las regiones de Italia", 0.012)
 europe_map("DE", adm["DEU"], DE_CODES, "name", "DEHESA_DE_LAENDER", "los Lander de Alemania", 0.01)
