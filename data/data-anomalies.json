@@ -160,10 +160,10 @@
   {
    "series": "CA/ca-meat-cattle-live-imports",
    "file": "canada-stats.json",
-   "status": "UNEXPLAINED_ANOMALY",
+   "status": "KNOWN_VERIFIED_ANOMALY",
    "detected": "Importaciones de ganado vacuno vivo (miles de cabezas, anual): 4,4 a 2,7 en 1958 (mediana previa 0,1) y 64,0 a 208,5 en 1973 (mediana previa 7,7).",
    "hypothesis": "Serie con base muy pequena y cambios reales en el comercio de ganado vivo; no se ha comprobado la causa.",
-   "verification": "Pendiente: scripts/verify-anomalies.py compara con la fuente primaria; si coincide pasa a KNOWN_VERIFIED_ANOMALY (la hipotesis sigue siendo hipotesis).",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence).",
    "since": "2026-10-04",
    "verifier": {
     "kind": "statcan_table",
@@ -183,15 +183,22 @@
     ],
     "div": 1000
    },
-   "nextAction": "Ejecutar el workflow verify-anomalies (compara con la tabla de Statistics Canada); si los periodos coinciden, promover a KNOWN_VERIFIED_ANOMALY sin tocar las cifras."
+   "lastCheck": {
+    "at": "2026-10-04T20:32:23Z",
+    "result": "REPRODUCED",
+    "detail": "1957 4.4/4.4; 1958 2.7/2.7; 1959 28.2/28.2; 1972 64.0/64.0; 1973 208.5/208.5; 1974 109.2/109.2"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-04: los 6 periodos revisados coinciden exactamente con los que publica la fuente (1957: 4.4; 1958: 2.7; 1959: 28.2; 1972: 64.0; 1973: 208.5; 1974: 109.2). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-04",
+   "sourceUrl": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=32100101"
   },
   {
    "series": "CA/ca-meat-calves-live-exports",
    "file": "canada-stats.json",
-   "status": "UNEXPLAINED_ANOMALY",
+   "status": "KNOWN_VERIFIED_ANOMALY",
    "detected": "Exportaciones de terneros vivos (miles de cabezas, anual): 81,6 a 197,5 en 1958 (mediana previa 4).",
    "hypothesis": "Serie con base pequena y cambios reales en el comercio de ganado vivo; no se ha comprobado la causa.",
-   "verification": "Pendiente: scripts/verify-anomalies.py compara con la fuente primaria; si coincide pasa a KNOWN_VERIFIED_ANOMALY (la hipotesis sigue siendo hipotesis).",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence).",
    "since": "2026-10-04",
    "verifier": {
     "kind": "statcan_table",
@@ -208,15 +215,22 @@
     ],
     "div": 1000
    },
-   "nextAction": "Ejecutar el workflow verify-anomalies (compara con la tabla de Statistics Canada); si los periodos coinciden, promover a KNOWN_VERIFIED_ANOMALY sin tocar las cifras."
+   "lastCheck": {
+    "at": "2026-10-04T20:32:23Z",
+    "result": "REPRODUCED",
+    "detail": "1957 81.6/81.6; 1958 197.5/197.5; 1959 122.0/122.0"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-04: los 3 periodos revisados coinciden exactamente con los que publica la fuente (1957: 81.6; 1958: 197.5; 1959: 122.0). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-04",
+   "sourceUrl": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=32100101"
   },
   {
    "series": "CA/ca-tpr-exp-pe-japan",
    "file": "canada-stats.json",
-   "status": "UNEXPLAINED_ANOMALY",
+   "status": "KNOWN_VERIFIED_ANOMALY",
    "detected": "Exportaciones nacionales de la Isla del Principe Eduardo a Japon (millones de CAD, mensual): 0,183 a 1,279 en 2020-09 y 1,279 a 1,096 en 2020-10 (mediana previa 0,011).",
    "hypothesis": "Base casi nula en una provincia pequena; un envio puntual puede multiplicar la cifra. No comprobado.",
-   "verification": "Pendiente: scripts/verify-anomalies.py compara con la fuente primaria; si coincide pasa a KNOWN_VERIFIED_ANOMALY (la hipotesis sigue siendo hipotesis).",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence).",
    "since": "2026-10-04",
    "verifier": {
     "kind": "statcan_table",
@@ -237,15 +251,22 @@
     },
     "div": 1000000.0
    },
-   "nextAction": "Ejecutar el workflow verify-anomalies (compara con la tabla de Statistics Canada); si los periodos coinciden, promover a KNOWN_VERIFIED_ANOMALY sin tocar las cifras."
+   "lastCheck": {
+    "at": "2026-10-04T20:32:23Z",
+    "result": "REPRODUCED",
+    "detail": "2020-08 0.183/0.183; 2020-09 1.279/1.279; 2020-10 1.096/1.096; 2020-11 0.088/0.088"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-04: los 4 periodos revisados coinciden exactamente con los que publica la fuente (2020-08: 0.183; 2020-09: 1.279; 2020-10: 1.096; 2020-11: 0.088). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-04",
+   "sourceUrl": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=12100101"
   },
   {
    "series": "CA/ca-tpr-exp-qc-china",
    "file": "canada-stats.json",
-   "status": "UNEXPLAINED_ANOMALY",
+   "status": "KNOWN_VERIFIED_ANOMALY",
    "detected": "Exportaciones nacionales de Quebec a China (millones de CAD, mensual): 90,635 a 172,837 en 2018-11 (mediana previa 3,93).",
    "hypothesis": "Posible efecto de estacionalidad o de un envio grande; no comprobado.",
-   "verification": "Pendiente: scripts/verify-anomalies.py compara con la fuente primaria; si coincide pasa a KNOWN_VERIFIED_ANOMALY (la hipotesis sigue siendo hipotesis).",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence).",
    "since": "2026-10-04",
    "verifier": {
     "kind": "statcan_table",
@@ -266,7 +287,14 @@
     },
     "div": 1000000.0
    },
-   "nextAction": "Ejecutar el workflow verify-anomalies (compara con la tabla de Statistics Canada); si los periodos coinciden, promover a KNOWN_VERIFIED_ANOMALY sin tocar las cifras."
+   "lastCheck": {
+    "at": "2026-10-04T20:32:23Z",
+    "result": "REPRODUCED",
+    "detail": "2018-09 2.845/2.845; 2018-10 90.635/90.635; 2018-11 172.837/172.837; 2018-12 84.759/84.759"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-04: los 4 periodos revisados coinciden exactamente con los que publica la fuente (2018-09: 2.845; 2018-10: 90.635; 2018-11: 172.837; 2018-12: 84.759). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-04",
+   "sourceUrl": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=12100101"
   }
  ]
 }
