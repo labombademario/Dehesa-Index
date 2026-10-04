@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]; D = ROOT / 'data'; V = D / 'views'
 def now(): return datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 def write(name, doc, volatile=('generatedAt',)):
     """Solo reescribe si cambia algo distinto de la hora de generacion."""
-    V.mkdir(parents=True, exist_ok=True); p = V / name
+    p = V / name; p.parent.mkdir(parents=True, exist_ok=True)
     new = json.dumps(doc, ensure_ascii=False, separators=(',', ':'))
     try:
         old = json.loads(p.read_text())
@@ -56,7 +56,15 @@ def home_summary():
             'movers': movers, 'cropProgress': {'lastWeekEnding': cp.get('lastWeekEnding'), 'crops': crops},
             'supplyDemand': {'commodities': comm}, 'climate': {'lastPeriod': cl['lastPeriod'], 'locations': locs},
             'markets': {'total': len(ams['reports']), 'families': {f: sum(1 for r in ams['reports'] if r['fam'] == f) for f in sorted({r['fam'] for r in ams['reports']})}}}
+def trade_products():
+    """data/views/trade-products/<CC>.json: el bloque de socios comerciales de un perfil de pais solo baja su propio pais (mismo esquema que el fichero completo, un solo reporter)."""
+    for src in ('eu-trade-products.json', 'au-trade-products.json'):
+        try: d = load(src)
+        except Exception: continue
+        for cc, rep in (d.get('reporters') or {}).items():
+            write('trade-products/%s.json' % cc, dict({k: v for k, v in d.items() if k != 'reporters'}, reporters={cc: rep}))
 def main():
     write('home-summary.json', home_summary())
     write('eu-preview.json', eu_preview())
+    trade_products()
 main()

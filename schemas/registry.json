@@ -652,6 +652,10 @@
    "catalog-country",
    []
   ],
+  "views/trade-products/*.json": [
+   "trade-products",
+   []
+  ],
   "series/*/*.json": [
    "series-shard",
    [

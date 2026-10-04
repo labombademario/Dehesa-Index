@@ -27,9 +27,9 @@
   var TAR = null;
   function loadTar(k) { var f = { us: 'data/us-tariffs.json', ca: 'data/tariffs-ca.json', mx: 'data/tariffs-mx.json' }[k]; TAR = TAR || {}; if (!TAR[k]) TAR[k] = fetch(f).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); return TAR[k]; }
   function load(cc) {
-    var f = FILES[cc] || 'data/eu-trade-products.json';
-    if (!CACHE[f]) CACHE[f] = fetch(f).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
-    return CACHE[f];
+    var f = FILES[cc] || 'data/eu-trade-products.json', v = 'data/views/trade-products/' + cc + '.json'; /* vista por pais (KB); si no existe, el fichero completo */
+    if (!CACHE[cc]) CACHE[cc] = fetch(v).then(function (r) { return r.ok ? r.json() : fetch(f).then(function (r2) { return r2.ok ? r2.json() : null; }); }).catch(function () { return null; });
+    return CACHE[cc];
   }
   function mount(el, cc, lang) {
     var t = T[lang] || T.es, pn = P[lang] || P.es;
