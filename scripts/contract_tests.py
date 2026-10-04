@@ -1861,6 +1861,10 @@ def _ssc_mod():
     import importlib.util as _u
     sp = _u.spec_from_file_location("update_spain_slaughter_census", str(Path(__file__).resolve().parent / "update-spain-slaughter-census.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
 
+def _swb_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_spain_wine_balance_historic", str(Path(__file__).resolve().parent / "update-spain-wine-balance-historic.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
 def spain_wine_monthly(doc, errs, warns, stats):
     """Vino mensual de INFOVI (MAPA): meses ordenados y sin repetir, 17 comunidades, series de la longitud de los meses, sin negativos, comunidades = total, salidas = interiores + exteriores, exteriores = UE + terceros,
     identidad de existencias (inicial + produccion + entradas - salidas - operaciones propias = final) con un residuo < 10 % y una fuente por mes."""
@@ -1992,6 +1996,35 @@ def spain_slaughter_census(doc, errs, warns, stats):
             h = doc["v"]["ES"][s]["heads"][i]; lo, hi = m.MAGN[s]
             if h is not None and not lo <= h <= hi: errs.append("spain-slaughter-census %d %s: %.0f cabezas en España fuera de orden de magnitud (¿miles?)" % (y, s, h))
     stats["spain-slaughter-census años"] = n
+
+
+def spain_wine_balance_historic(doc, errs, warns, stats):
+    """Balances oficiales del vino (MAPA) 2009/10-2015/16: campañas ordenadas y sin repetir, 25 epigrafes y 5 categorias de la longitud de las campañas, sin negativos, identidades contables (recursos, empleos, utilizacion interior,
+    produccion), categorias que suman el vino total, existencias finales = iniciales de la campaña siguiente, y todo «blanco mayor que el total» de la fuente anotado en notes."""
+    m = _swb_mod(); C = doc["campaigns"]; n = len(C)
+    if C != sorted(set(C)): errs.append("spain-wine-balance-historic: campañas desordenadas o repetidas"); return
+    if doc["codes"] != m.CODES or set(doc["v"]) != set(m.CODES): errs.append("spain-wine-balance-historic: epigrafes distintos de los 25 esperados"); return
+    if set(doc["status"]) != set(C) or set(doc["files"]) != set(C): errs.append("spain-wine-balance-historic: status y files no coinciden con las campañas"); return
+    z = lambda x: x or 0.0
+    for c in m.CODES:
+        for k in m.CATS:
+            for col in ("all", "white"):
+                a = doc["v"][c][k][col]
+                if len(a) != n: errs.append("spain-wine-balance-historic: %s %s %s no tiene la longitud de las campañas" % (c, k, col)); return
+                if any(x is not None and x < 0 for x in a): errs.append("spain-wine-balance-historic: valor negativo en %s %s %s" % (c, k, col)); return
+    noted = {(x["campaign"], x["code"], x["category"]) for x in doc["notes"] if x.get("kind") == "white>total"}
+    for i, camp in enumerate(C):
+        d = {c: {k: {col: doc["v"][c][k][col][i] for col in ("all", "white")} for k in m.CATS} for c in m.CODES}
+        e, nt = m.validate(camp, d); errs += ["spain-wine-balance-historic " + x for x in e]
+        for x in nt:
+            if (x["campaign"], x["code"], x["category"]) not in noted: errs.append("spain-wine-balance-historic %s fila %s %s: blanco mayor que el total y no está anotado" % (camp, x["code"], x["category"]))
+    for i in range(n - 1):
+        y0, y1 = int(C[i][:4]), int(C[i + 1][:4])
+        if y1 != y0 + 1: continue
+        for k in m.CATS:
+            a, b = doc["v"]["7"][k]["all"][i], doc["v"]["1"][k]["all"][i + 1]
+            if a is not None and b is not None and abs(a - b) > 10: errs.append("spain-wine-balance-historic %s %s: existencias finales (%s) distintas de las iniciales de %s (%s)" % (C[i], k, a, C[i + 1], b))
+    stats["spain-wine-balance-historic campañas"] = n
 
 
 def spain_milk(doc, errs, warns, stats):

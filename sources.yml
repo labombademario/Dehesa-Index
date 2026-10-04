@@ -141,6 +141,18 @@ sources:
     data: [spain-wine/monthly.json, spain-wine-monthly-log.txt]
     extra: ['!data/spain-wine']
     message: Datos vino de España mes a mes y por comunidad (MAPA INFOVI mensual)
+  - id: spain-wine-balance-historic
+    name: Update Spain wine historical balances 2009/10-2015/16 (MAPA)
+    cron: ['5 9 * * 4']
+    pre: ['pip install openpyxl xlrd']
+    script: scripts/update-spain-wine-balance-historic.py
+    timeout: 25
+    script_timeout: 18
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-wine)
+    data: [spain-wine/balance-historic.json, spain-wine-balance-historic-log.txt]
+    extra: ['!data/spain-wine']
+    message: Datos balance oficial del vino de España, campañas 2009/10 a 2015/16 (MAPA)
   - id: austria
     name: Update Austria (Eurostat)
     cron: ['25 16 * * 2,5']

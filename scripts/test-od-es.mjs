@@ -10,6 +10,7 @@ const J = JSON.parse(readFileSync('data/spain-balances/cereals.json', 'utf8')), 
 const OL = JSON.parse(readFileSync('data/spain-balances/olive.json', 'utf8')), oys = Object.keys(OL.campaigns).sort(), OY = oys[oys.length - 1];
 const WJ = JSON.parse(readFileSync('data/spain-wine/infovi.json', 'utf8')), WL = WJ.campaigns.length - 1, wk = (f, i) => String(Math.round(WJ.national[f][i] / 1000)), wy = WJ.campaigns[WL];
 const MJ = JSON.parse(readFileSync('data/spain-wine/monthly.json', 'utf8')), ML = MJ.months.length - 1, mk = (f, k) => String(Math.round((k ? MJ.ccaa[k][f][ML] : MJ.national[f][ML]) / 1000));
+const HJ = JSON.parse(readFileSync('data/spain-wine/balance-historic.json', 'utf8')), HN = HJ.campaigns.length, hk = (c, i) => String(Math.round(HJ.v[c].total.all[i]));
 const digits = s => s.replace(/\D/g, '');
 for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const ctx = await browser.newContext({ viewport: { width: w, height: 800 }, serviceWorkers: 'block' });
@@ -51,9 +52,12 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
     ok(tag + ' vino: Castilla-La Mancha primera', /Mancha/.test(wv.cr[0][0]));
     ok(tag + ' vino: dos graficos y cita MAPA', wv.svgs >= 2 && /MAPA/.test(wv.txt));
     ok(tag + ' vino: aviso de que son declaraciones y no un balance', /declaraciones|declarations|déclarations|dichiarazioni/.test(wv.txt) && /balance|bilan|bilancio/i.test(wv.txt));
-    const mt = await page.evaluate(() => { var e = document.getElementById('od-es'); var tb = e.querySelectorAll('table'); return { rows: [].map.call(tb[tb.length - 1].querySelectorAll('tbody tr'), r => [].map.call(r.cells, c => c.innerText.trim())), svgs: e.querySelectorAll('svg').length }; });
+    const mt = await page.evaluate(() => { var e = document.getElementById('od-es'); var tb = e.querySelectorAll('table'); return { rows: [].map.call(tb[tb.length - 2].querySelectorAll('tbody tr'), r => [].map.call(r.cells, c => c.innerText.trim())), hrows: [].map.call(tb[tb.length - 1].querySelectorAll('tbody tr'), r => [].map.call(r.cells, c => c.innerText.trim())), hhead: [].map.call(tb[tb.length - 1].querySelectorAll('thead th'), c => c.innerText.trim()), svgs: e.querySelectorAll('svg').length }; });
     ok(tag + ' vino mensual: 17 comunidades y España, existencias finales y salidas del ultimo mes = JSON', mt.rows.length === 18 && dg(mt.rows[17][1]) === mk('stockEnd') && dg(mt.rows[17][mt.rows[17].length - 1]) === mk('exitsTotal'));
     ok(tag + ' vino mensual: tres graficos en la vista', mt.svgs >= 3 && /perímetro|scope|périmètre|perimetro/.test(wv.txt));
+    ok(tag + ' vino historico: 7 campañas en la cabecera y la ultima rotulada provisional', mt.hhead.length === HN + 1 && /provisional|provvisorio|provisoire/i.test(mt.hhead[HN]));
+    ok(tag + ' vino historico: produccion, exportaciones y existencias finales de la primera y ultima campaña = JSON (miles de hl)', [['2', 1], ['5', 4], ['7', 8]].every(a => dg(mt.hrows[a[1]][1]) === dg(hk(a[0], 0)) && dg(mt.hrows[a[1]][HN]) === dg(hk(a[0], HN - 1))));
+    ok(tag + ' vino historico: avisa del hueco 2016/17-2019/20, de que no es comparable con INFOVI y de que no hay desglose por comunidad', /2016\/17/.test(wv.txt) && /2019\/20/.test(wv.txt) && /INFOVI/.test(wv.txt) && /región|region|regione|comunidad|communauté|comunità/i.test(wv.txt));
     ok(tag + ' vino: titulo propio y sin desborde', /vino|wine|vin\b|vino/i.test(wv.h1) && !wv.over);
     await page.selectOption('#od-es-p', 'cer'); await page.waitForSelector('#od-es-y');
   }

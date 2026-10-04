@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T12:52:00Z",
+ "generatedAt": "2026-10-04T13:02:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 69,
   "late": 1,
   "error": 0,
-  "not_run": 7,
+  "not_run": 8,
   "unknown": 1
  },
  "global": "late",
@@ -1702,7 +1702,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-04T12:28:30Z"
+     "lastChange": "2026-10-04T12:53:42Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1735,7 +1735,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-04T12:28:41Z"
+     "lastChange": "2026-10-04T12:53:42Z"
     },
     {
      "path": "data/products"
@@ -1746,7 +1746,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-04T12:28:41Z"
+     "lastChange": "2026-10-04T12:53:42Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -1754,7 +1754,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-04T12:28:41Z"
+     "lastChange": "2026-10-04T12:53:42Z"
     },
     {
      "path": "data/premium-tracker.json",
@@ -2058,7 +2058,8 @@
    "nextRun": "2026-10-08T09:10:00Z",
    "files": [
     {
-     "path": "data/spain-slaughter/census.json"
+     "path": "data/spain-slaughter/census.json",
+     "lastChange": "2026-10-04T12:53:42Z"
     },
     {
      "path": "data/spain-slaughter"
@@ -2070,7 +2071,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 168.0
   },
   {
@@ -2096,6 +2097,30 @@
    "last": null,
    "recent": null,
    "status": "not_run",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-spain-wine-balance-historic.yml",
+   "name": "Update Spain wine historical balances 2009/10-2015/16 (MAPA)",
+   "crons": [
+    "5 9 * * 4"
+   ],
+   "nextRun": "2026-10-08T09:05:00Z",
+   "files": [
+    {
+     "path": "data/spain-wine/balance-historic.json"
+    },
+    {
+     "path": "data/spain-wine"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 168.0
   },
   {
