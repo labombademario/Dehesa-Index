@@ -1,0 +1,13 @@
+corn: 2017-2025, 1211 condados con rendimiento en 2025 (sin cambios)
+soybeans: 2017-2025, 1072 condados con rendimiento en 2025 (sin cambios)
+wheat-winter: 2017-2025, 712 condados con rendimiento en 2025 (sin cambios)
+wheat-spring: 2017-2025, 114 condados con rendimiento en 2025 (sin cambios)
+cotton-upland: 2017-2025, 248 condados con rendimiento en 2025 (sin cambios)
+sorghum: 2017-2025, 78 condados con rendimiento en 2025 (sin cambios)
+rice: 2017-2025, 41 condados con rendimiento en 2025 (sin cambios)
+peanuts: 2017-2025, 85 condados con rendimiento en 2025 (sin cambios)
+aviso: hay-alfalfa 38007 2021: produccion 15300 distinta de rendimiento x superficie 14700
+aviso: hay-alfalfa 38011 2021: produccion 23000 distinta de rendimiento x superficie 24090
+hay-alfalfa: 2017-2025, 65 condados con rendimiento en 2025 (sin cambios)
+barley: 2017-2025, 71 condados con rendimiento en 2025 (sin cambios)
+oats: 2017-2025, 226 condados con rendimiento en 2025 (sin cambios)
