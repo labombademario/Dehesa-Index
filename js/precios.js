@@ -695,6 +695,7 @@
         '<div class="di-product-head">' +
           '<div><h3 class="di-product-name">' + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span></div>' +
           '<div class="di-product-icons">' +
+            '<button type="button" class="di-row-exp" data-action="rowexp" aria-expanded="false">' + esc((VW[lang()] || VW.es)[3]) + '</button>' +
             (showValue ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮</button>' : '') +
             (showValue ? '<button type="button" class="di-icon-btn" data-action="history" data-key="' + key + '" title="' + esc(t.historyButtonTitle) + '">📈</button>' : '') +
             (showValue ? '<button type="button" class="di-icon-btn" data-action="alert" data-key="' + key + '" title="' + esc(t.alertButtonTitle) + '">🔔</button>' : '') +
@@ -906,12 +907,19 @@
     }
     var all = productsInCat(state.activeTab), t = ui();
     var entries = all.filter(entryHasData), missing = all.filter(function (e) { return entries.indexOf(e) < 0; });
-    root.innerHTML = (entries.length ? '<div class="di-product-grid">' + entries.map(function (e) { return productCardHtml(e, {}); }).join('') + '</div>' : '<p class="di-movers-hint">' + esc(t.noDataHereAll) + '</p>') +
+    root.innerHTML = (entries.length ? viewBar() + '<div class="di-product-grid' + (viewMode() === 'rows' ? ' di-rows' : '') + '">' + entries.map(function (e) { return productCardHtml(e, {}); }).join('') + '</div>' : '<p class="di-movers-hint">' + esc(t.noDataHereAll) + '</p>') +
       (missing.length ? '<details class="di-nodata-list" style="margin-top:14px"><summary style="cursor:pointer;font-size:13px;color:var(--text-faint)">' + esc(t.noDataHere) + ' (' + missing.length + ')</summary><p class="di-movers-hint" style="margin-top:6px">' + missing.map(function (e) { return esc(productName(e.nameKey)); }).join(' · ') + '</p></details>' : '');
     wireCardEvents(root);
   }
 
+  /* Vista de la lista de productos: filas compactas (por defecto) o tarjetas. Se guarda por navegador. */
+  var VW = { es: ['Filas', 'Tarjetas', 'Vista', 'Detalle'], en: ['Rows', 'Cards', 'View', 'Details'], fr: ['Lignes', 'Cartes', 'Vue', 'Détail'], it: ['Righe', 'Schede', 'Vista', 'Dettaglio'] };
+  function viewMode() { try { return window.localStorage.getItem('dehesaIndexPrView') === 'cards' ? 'cards' : 'rows'; } catch (e) { return 'rows'; } }
+  function viewBar() { var v = VW[lang()] || VW.es, m = viewMode(); return '<div class="di-view-bar" role="group" aria-label="' + esc(v[2]) + '"><span>' + esc(v[2]) + ':</span><button type="button" data-view="rows" aria-pressed="' + (m === 'rows') + '">' + esc(v[0]) + '</button><button type="button" data-view="cards" aria-pressed="' + (m === 'cards') + '">' + esc(v[1]) + '</button></div>'; }
+
   function wireCardEvents(root) {
+    Array.prototype.forEach.call(root.querySelectorAll('[data-view]'), function (b) { b.onclick = function () { try { window.localStorage.setItem('dehesaIndexPrView', b.getAttribute('data-view')); } catch (e) {} var g = root.querySelector('.di-product-grid'); if (g) g.classList.toggle('di-rows', b.getAttribute('data-view') === 'rows'); Array.prototype.forEach.call(root.querySelectorAll('[data-view]'), function (x) { x.setAttribute('aria-pressed', String(x === b)); }); }; });
+    Array.prototype.forEach.call(root.querySelectorAll('.di-rows [data-action="rowexp"], .di-product-grid [data-action="rowexp"]'), function (b) { b.onclick = function () { var c = b.closest('.di-product-card'); var o = c.classList.toggle('open'); b.setAttribute('aria-expanded', String(o)); }; });
     var favBtns = root.querySelectorAll('[data-action="fav"]');
     Array.prototype.forEach.call(favBtns, function (btn) {
       btn.addEventListener('click', function () { toggleFavorite(btn.getAttribute('data-key')); });

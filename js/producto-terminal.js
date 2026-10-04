@@ -17,7 +17,10 @@
     title: ['Ficha de producto', 'Product profile', 'Fiche produit', 'Scheda prodotto'],
     sub: ['Precio, comparación internacional, histórico, oferta y demanda, comercio, aranceles y costes de un producto; cada bloque indica fuente y fecha.', 'Price, international comparison, history, supply and demand, trade, tariffs and costs of one product; every block states its source and date.', 'Prix, comparaison internationale, historique, offre et demande, commerce, droits de douane et coûts d’un produit ; chaque bloc indique sa source et sa date.', 'Prezzo, confronto internazionale, storico, offerta e domanda, commercio, dazi e costi di un prodotto; ogni blocco indica fonte e data.'],
     nav: ['Productos', 'Products', 'Produits', 'Prodotti'],
-    price: ['Precio actual', 'Current price', 'Prix actuel', 'Prezzo attuale'],
+    alerts: ['Alertas', 'Alerts', 'Alertes', 'Avvisi'],
+    alertsHint: ['Avisos en este navegador, sin cuenta', 'Alerts in this browser, no account', 'Alertes dans ce navigateur, sans compte', 'Avvisi in questo browser, senza account'],
+    clima: ['Clima', 'Climate', 'Climat', 'Clima'],
+    price: ['Qué se paga hoy', 'What is being paid today', 'Ce qui se paie aujourd’hui', 'Cosa si paga oggi'],
     asOf: ['Dato de', 'Data for', 'Donnée du', 'Dato del'],
     vsPrev: ['vs dato anterior', 'vs previous data point', 'vs donnée précédente', 'vs dato precedente'],
     source: ['Fuente', 'Source', 'Source', 'Fonte'],
@@ -301,7 +304,7 @@
   function headHtml() {
     if (!CTX.inst.length && !CTX.idx.length) return '<div class="pt-note">' + esc(t('noPrice')) + '</div>';
     return '<div class="pt-cards">' + CTX.inst.map(function (o) { return cardHtml(o, false); }).join('') + CTX.idx.map(function (o) { return cardHtml(o, true); }).join('') + '</div>' +
-      '<div id="pt-follow">' + followHtml() + '</div>' + srcLine(CTX.inst.concat(CTX.idx).map(function (o) { return o.sourceId; }));
+      srcLine(CTX.inst.concat(CTX.idx).map(function (o) { return o.sourceId; }));
   }
   function srcLine(ids, extra) {
     var seen = {}, out = [];
@@ -672,11 +675,11 @@
     return '<nav class="pt-tabs" aria-label="' + esc(t('nav')) + '">' + Object.keys(META.products).map(function (k) { return '<a class="pt-chip' + (k === ST.p ? ' on' : '') + '" href="producto.html?p=' + k + '"' + (k === ST.p ? ' aria-current="page"' : '') + '>' + esc(nm(k)) + '</a>'; }).join('') + '</nav>';
   }
   // Barra contextual fija bajo el menu: salta a cada bloque de ESTA ficha (solo los que existen para el producto).
-  var CTXL = { head: ['Precio', 'Price', 'Prix', 'Prezzo'], changed: ['Cambios', 'Changes', 'Changements', 'Cambiamenti'], local: ['Ofertas locales', 'Local bids', 'Offres locales', 'Offerte locali'], prem: ['Prima', 'Premium', 'Prime', 'Premio'], compare: ['Países', 'Countries', 'Pays', 'Paesi'], hist: ['Histórico', 'History', 'Historique', 'Storico'], sd: ['Oferta y demanda', 'Supply & demand', 'Offre et demande', 'Offerta e domanda'], trade: ['Comercio', 'Trade', 'Commerce', 'Commercio'], tariffs: ['Aranceles', 'Tariffs', 'Droits de douane', 'Dazi'], costs: ['Costes', 'Costs', 'Coûts', 'Costi'], rels: ['Relaciones', 'Relationships', 'Relations', 'Relazioni'], drivers: ['Factores', 'Factors', 'Facteurs', 'Fattori'], news: ['Noticias', 'News', 'Actualités', 'Notizie'] },
+  var CTXL = { head: ['Precio', 'Price', 'Prix', 'Prezzo'], alerts: ['Alertas', 'Alerts', 'Alertes', 'Avvisi'], changed: ['Cambios', 'Changes', 'Changements', 'Cambiamenti'], local: ['Ofertas locales', 'Local bids', 'Offres locales', 'Offerte locali'], prem: ['Prima', 'Premium', 'Prime', 'Premio'], compare: ['Países', 'Countries', 'Pays', 'Paesi'], hist: ['Histórico', 'History', 'Historique', 'Storico'], sd: ['Oferta y demanda', 'Supply & demand', 'Offre et demande', 'Offerta e domanda'], trade: ['Comercio', 'Trade', 'Commerce', 'Commercio'], tariffs: ['Aranceles', 'Tariffs', 'Droits de douane', 'Dazi'], costs: ['Costes', 'Costs', 'Coûts', 'Costi'], rels: ['Relaciones', 'Relationships', 'Relations', 'Relazioni'], drivers: ['Factores', 'Factors', 'Facteurs', 'Fattori'], news: ['Noticias', 'News', 'Actualités', 'Notizie'] },
     CTXA = ['Alertas', 'Alerts', 'Alertes', 'Avvisi'];
   function ctxBar() {
-    var ids = ['head'].concat(CUR.map(function (b) { return b.id; })).filter(function (id) { return CTXL[id]; });
-    return '<nav class="pt-ctx" aria-label="' + esc(nm(CTX.pid)) + '"><strong class="pt-ctx-t">' + esc(nm(CTX.pid)) + '</strong>' + ids.map(function (id) { return '<a href="#pt-' + id + '" data-ctx="' + id + '">' + esc(CTXL[id][li()]) + '</a>'; }).join('') + '<a href="mi-seguimiento.html">' + esc(CTXA[li()]) + '</a></nav>';
+    var ids = ['head', 'alerts'].concat(CUR.map(function (b) { return b.id; })).filter(function (id) { return CTXL[id]; });
+    return '<nav class="pt-ctx" aria-label="' + esc(nm(CTX.pid)) + '"><strong class="pt-ctx-t">' + esc(nm(CTX.pid)) + '</strong>' + ids.map(function (id) { return '<a href="#pt-' + id + '" data-ctx="' + id + '">' + esc(CTXL[id][li()]) + '</a>'; }).join('') + (/^(cereales|oleaginosas)$/.test(CTX.meta.group) ? '<a href="clima.html">' + esc(t('clima')) + ' ↗</a>' : '') + '<a href="mi-seguimiento.html">' + esc(t('myWatch')) + '</a></nav>';
   }
   function ctxSpy() {
     var links = document.querySelectorAll('.pt-ctx a[data-ctx]'); if (!links.length) return;
@@ -700,6 +703,7 @@
     CUR = blocks();
     var legacy = OPTS && OPTS.legacy && OPTS.legacy.has ? '<section class="pt-sec" id="pt-legacy"><div class="di-movers-head-row"><h2>' + esc(t('legacy')) + '</h2><span class="di-movers-hint">' + esc(t('legacyHint')) + '</span></div><div id="pr-legacy-body"><button type="button" class="pt-chip" id="pt-legacy-btn">' + esc(t('legacyBtn')) + '</button></div></section>' : '';
     el.innerHTML = '<div class="pt-wrap">' + tabsHtml() + ctxBar() + '<section class="pt-sec" id="pt-head" style="margin-top:6px"><div class="di-movers-head-row"><h2>' + esc(t('price')) + '</h2><span class="di-movers-hint">' + esc(nm(CTX.pid)) + '</span></div>' + headHtml() + '</section>' +
+      '<section class="pt-sec" id="pt-alerts"><div class="di-movers-head-row"><h2>' + esc(t('alerts')) + '</h2><span class="di-movers-hint">' + esc(t('alertsHint')) + '</span></div><div id="pt-follow">' + followHtml() + '</div></section>' +
       CUR.map(secHtml).join('') + legacy + '<section class="pt-sec" id="pt-sources"><div class="di-movers-head-row"><h2>' + esc(t('sources')) + '</h2></div>' + htmlSources() + '</section></div>';
     CUR.forEach(function (b) { if (BLK[b.id] && BLK[b.id].done) paint(b); else if (BLK[b.id] && BLK[b.id].err) { BLK[b.id] = null; } });
     observe(); ctxSpy();

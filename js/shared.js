@@ -296,8 +296,13 @@
           if (rows[r] === hr) continue; var cs = rows[r].children;
           for (var c = 0; c < cs.length; c++) { if (cs[c].tagName === 'TD' && heads[c] && !cs[c].hasAttribute('data-label')) cs[c].setAttribute('data-label', heads[c]); if (cs[c].tagName === 'TH' && !cs[c].getAttribute('scope')) cs[c].setAttribute('scope', 'row'); }
         }
-        if (heads.length >= 3 && heads.length <= 8 && rows.length && !t.hasAttribute('data-no-cards')) t.classList.add('di-cards-m');
+        if (heads.length >= 3 && heads.length <= 8 && rows.length && !t.hasAttribute('data-no-cards')) t.classList.add('di-cards-m'); if (heads.length >= 4 && t.querySelector('thead') && !t.hasAttribute('data-no-rows')) t.classList.add('di-rows-m');
       }
+    }
+    /* Filas de mercado en movil (<=560 px): tocar una fila despliega el resto de columnas (original, fecha, historico...). */
+    if (!global.__diRowsM) { global.__diRowsM = 1;
+      var tog = function (e) { if (!global.matchMedia || !global.matchMedia('(max-width:560px)').matches) return; var tr = e.target.closest ? e.target.closest('table.di-rows-m tbody tr') : null; if (!tr) return; if (e.type === 'keydown') { if (e.key !== 'Enter' && e.key !== ' ') return; if (e.target !== tr) return; } else if (e.target.closest('a,button,input,select,textarea,label')) return; if (e.type === 'keydown') e.preventDefault(); var o = tr.classList.toggle('open'); tr.setAttribute('aria-expanded', String(o)); };
+      document.addEventListener('click', tog); document.addEventListener('keydown', tog);
     }
     // Regiones con scroll horizontal: accesibles por teclado (WCAG 2.1.1) si no contienen nada enfocable.
     function scrollRegions() {
@@ -340,6 +345,40 @@
   // Nav
   // ---------------------------------------------------------------------
   // Buscador global: se carga solo la primera vez que se abre (js/search.js + data/search-index.json)
+
+  /* Marco comun de pagina (punto 3 de la mejora de interfaz): migas de pan + barra de secciones fija.
+     Orden estandar: titulo -> contexto -> cifras clave -> grafico principal -> acciones -> bloques de detalle -> fuentes y metodologia.
+     frame.crumbs(el, [[texto, href|null], ...]) ; frame.bar(host, titulo, [[id, texto], ...]) ; frame.fix(): altura de cabecera. */
+  var FR = { spy: false, clk: false };
+  function frHdr() { var h = document.querySelector('.di-header'), st = h && window.getComputedStyle(h).position === 'sticky'; document.documentElement.style.setProperty('--di-hdr', (st ? h.offsetHeight : 0) + 'px'); return st ? h.offsetHeight : 0; }
+  function frCrumbs(el, items) {
+    if (!el) return; var e = function (x) { return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); };
+    el.innerHTML = '<ol>' + items.map(function (it, i) { var last = i === items.length - 1; return '<li' + (last ? ' aria-current="page"' : '') + '>' + (it[1] && !last ? '<a href="' + e(it[1]) + '">' + e(it[0]) + '</a>' : e(it[0])) + '</li>'; }).join('') + '</ol>';
+  }
+  function frBar(host, title, items) {
+    if (!host) return; var e = function (x) { return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); };
+    items = items.filter(function (it) { return document.getElementById(it[0]); });
+    if (items.length < 2) { host.innerHTML = ''; host.hidden = true; return; }
+    host.hidden = false; host.className = 'pt-ctx di-frame-bar'; host.setAttribute('aria-label', title);
+    host.innerHTML = '<strong class="pt-ctx-t">' + e(title) + '</strong>' + items.map(function (it) { return '<a href="#' + e(it[0]) + '" data-fr="' + e(it[0]) + '">' + e(it[1]) + '</a>'; }).join('');
+    frHdr();
+    var upd = function () { var cur = null, h = frHdr(); Array.prototype.forEach.call(document.querySelectorAll('.di-frame-bar a[data-fr]'), function (a) { var t = document.getElementById(a.getAttribute('data-fr')); if (t && t.getBoundingClientRect().top <= h + 100) cur = a; }); Array.prototype.forEach.call(document.querySelectorAll('.di-frame-bar a[data-fr]'), function (a) { if (a === cur) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current'); }); };
+    if (!FR.spy) { FR.spy = true; var tk = false; window.addEventListener('resize', frHdr); window.addEventListener('scroll', function () { if (tk) return; tk = true; (window.requestAnimationFrame || setTimeout)(function () { tk = false; upd(); }); }, { passive: true }); }
+    if (!FR.clk) { FR.clk = true; document.addEventListener('click', function (ev) { var a = ev.target.closest ? ev.target.closest('.di-frame-bar a[data-fr]') : null; if (!a) return; var t = document.getElementById(a.getAttribute('data-fr')); if (!t) return; ev.preventDefault(); t.scrollIntoView({ behavior: 'auto', block: 'start' }); }); }
+    upd();
+  }
+
+  /* Migas automaticas: <nav class="di-crumbs" data-crumb-group="markets|countries|intel|tools|data"> -> Inicio > grupo del menu > titulo de la pagina (h1). */
+  function frAuto() {
+    var navs = document.querySelectorAll('.di-crumbs[data-crumb-group]'); if (!navs.length) return;
+    var HM = { es: 'Inicio', en: 'Home', fr: 'Accueil', it: 'Home' };
+    Array.prototype.forEach.call(navs, function (n) {
+      var g = NAV_GROUPS[n.getAttribute('data-crumb-group')], h1 = document.querySelector('.di-page-head h1'); if (!g) return;
+      var first = (g.items || []).filter(function (i) { return i.file; })[0];
+      var draw = function () { frCrumbs(n, [[HM[lang] || HM.es, sitePath('index.html')], [g.label[lang] || g.label.es, first ? sitePath(first.file) + (first.query || '') : null], [h1 ? h1.textContent : '', null]]); };
+      draw(); if (h1 && window.MutationObserver && !n.getAttribute('data-obs')) { n.setAttribute('data-obs', '1'); new MutationObserver(draw).observe(h1, { childList: true, characterData: true, subtree: true }); }
+    });
+  }
   function openSearch(q) {
     q = typeof q === 'string' ? q : '';
     if (window.DehesaSearch) { window.DehesaSearch.open(q); return; }
@@ -794,6 +833,7 @@
     renderFooter();
     renderWelcomeAndTour();
     initTableSort();
+    frAuto();
   }
 
   global.DehesaShared = {
@@ -810,6 +850,7 @@
     esc: esc,
     sitePath: sitePath,
     openSearch: openSearch,
+    frame: { crumbs: frCrumbs, bar: frBar },
     onLangChange: null // páginas pueden sobrescribir esto para re-renderizar su contenido sin recargar
   };
 })(window);

@@ -244,13 +244,13 @@
         title: { es: 'Ganadería', en: 'Livestock', fr: 'Élevage', it: 'Zootecnia' },
         desc: { es: 'Cerdos, vacuno y leche por estado, y existencias en frío (USDA NASS).', en: 'Hogs, cattle and milk by state, and cold storage stocks (USDA NASS).', fr: 'Porcs, bovins et lait par État, et stocks frigorifiques (USDA NASS).', it: 'Suini, bovini e latte per stato, e scorte frigorifere (USDA NASS).' } },
       { href: 'insumos.html', tag: { es: 'EE. UU.', en: 'U.S.', fr: 'É.-U.', it: 'USA' },
-        title: { es: 'Insumos', en: 'Inputs', fr: 'Intrants', it: 'Input' },
+        title: { es: 'Lo que pagas por insumos', en: 'What you pay for inputs', fr: 'Ce que vous payez en intrants', it: 'Cosa paghi per gli input' },
         desc: { es: 'Índices de precios que pagan los agricultores por sus insumos (USDA NASS).', en: 'Price indices paid by farmers for their inputs (USDA NASS).', fr: 'Indices des prix payés par les agriculteurs pour leurs intrants (USDA NASS).', it: 'Indici dei prezzi pagati dagli agricoltori per i loro input (USDA NASS).' } },
       { href: 'costes.html', tag: { es: 'EE. UU.', en: 'U.S.', fr: 'É.-U.', it: 'USA' },
-        title: { es: 'Costes y rentabilidad', en: 'Costs and returns', fr: 'Coûts et rentabilité', it: 'Costi e redditività' },
+        title: { es: 'Cuánto cuesta producir', en: 'What it costs to produce', fr: 'Ce que coûte la production', it: 'Quanto costa produrre' },
         desc: { es: 'Costes de producción con punto de equilibrio, previsión de precios de alimentos y renta agraria (USDA ERS).', en: 'Production costs with break-even, food price outlook and farm income (USDA ERS).', fr: 'Coûts de production avec seuil de rentabilité, prévisions des prix alimentaires et revenu agricole (USDA ERS).', it: 'Costi di produzione con punto di pareggio, previsioni dei prezzi alimentari e reddito agricolo (USDA ERS).' } },
       { href: 'rendimientos.html', tag: { es: 'EE. UU.', en: 'U.S.', fr: 'É.-U.', it: 'USA' },
-        title: { es: 'Rendimientos', en: 'Yields', fr: 'Rendements', it: 'Rese' },
+        title: { es: 'Cuánto rinde cada cultivo', en: 'How much each crop yields', fr: 'Ce que rend chaque culture', it: 'Quanto rende ogni coltura' },
         desc: { es: 'Rendimiento, superficie y producción por estado de 10 cultivos (USDA NASS).', en: 'Yield, area and production by state for 10 crops (USDA NASS).', fr: 'Rendement, superficie et production par État pour 10 cultures (USDA NASS).', it: 'Resa, superficie e produzione per stato di 10 colture (USDA NASS).' } },
       { href: 'exportaciones.html', tag: { es: 'EE. UU.', en: 'U.S.', fr: 'É.-U.', it: 'USA' },
         title: { es: 'Exportaciones', en: 'Exports', fr: 'Exportations', it: 'Esportazioni' },
@@ -306,13 +306,13 @@
 
   /* ---------- Precios publicados (franja de la portada) ---------- */
   var TAPE = {
-    es: { cols: ['Producto', 'Región', 'Precio', 'Variación', 'Fecha'], title: 'Último dato de cada mercado', note: 'Cada precio va en la unidad y la moneda de su fuente: no se comparan entre regiones.', all: 'Ver todos los precios →', loading: 'Cargando precios…', none: 'No se han podido cargar los precios.', obs: 'observaciones', src: 'fuentes',
+    es: { cols: ['Producto', 'Región', 'Precio', 'Variación', 'Fecha'], title: 'Lo que se paga hoy en cada mercado', note: 'Cada precio va en la unidad y la moneda de su fuente: no se comparan entre regiones.', all: 'Ver todos los precios →', loading: 'Cargando precios…', none: 'No se han podido cargar los precios.', obs: 'observaciones', src: 'fuentes',
       p: { trigo: 'Trigo', maiz: 'Maíz', leche: 'Leche' }, r: { eu: 'UE', us: 'EE. UU.', ca: 'Canadá' }, u: { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg' } },
-    en: { cols: ['Product', 'Region', 'Price', 'Change', 'Date'], title: 'Latest data from each market', note: 'Each price is in its source’s unit and currency: they are not compared across regions.', all: 'See all prices →', loading: 'Loading prices…', none: 'Prices could not be loaded.', obs: 'observations', src: 'sources',
+    en: { cols: ['Product', 'Region', 'Price', 'Change', 'Date'], title: 'What each market is paying today', note: 'Each price is in its source’s unit and currency: they are not compared across regions.', all: 'See all prices →', loading: 'Loading prices…', none: 'Prices could not be loaded.', obs: 'observations', src: 'sources',
       p: { trigo: 'Wheat', maiz: 'Corn', leche: 'Milk' }, r: { eu: 'EU', us: 'US', ca: 'Canada' }, u: { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg' } },
-    fr: { cols: ['Produit', 'Région', 'Prix', 'Variation', 'Date'], title: 'Dernière donnée de chaque marché', note: 'Chaque prix est dans l’unité et la devise de sa source : ils ne sont pas comparés entre régions.', all: 'Voir tous les prix →', loading: 'Chargement des prix…', none: 'Impossible de charger les prix.', obs: 'observations', src: 'sources',
+    fr: { cols: ['Produit', 'Région', 'Prix', 'Variation', 'Date'], title: 'Ce que paie chaque marché aujourd’hui', note: 'Chaque prix est dans l’unité et la devise de sa source : ils ne sont pas comparés entre régions.', all: 'Voir tous les prix →', loading: 'Chargement des prix…', none: 'Impossible de charger les prix.', obs: 'observations', src: 'sources',
       p: { trigo: 'Blé', maiz: 'Maïs', leche: 'Lait' }, r: { eu: 'UE', us: 'É.-U.', ca: 'Canada' }, u: { tonelada: 't', bushel: 'boisseau', cwt: 'cwt', '100kg': '100 kg' } },
-    it: { cols: ['Prodotto', 'Regione', 'Prezzo', 'Variazione', 'Data'], title: 'Ultimo dato di ogni mercato', note: 'Ogni prezzo è nell’unità e nella valuta della sua fonte: non vengono confrontati tra regioni.', all: 'Vedi tutti i prezzi →', loading: 'Caricamento prezzi…', none: 'Impossibile caricare i prezzi.', obs: 'osservazioni', src: 'fonti',
+    it: { cols: ['Prodotto', 'Regione', 'Prezzo', 'Variazione', 'Data'], title: 'Cosa paga oggi ogni mercato', note: 'Ogni prezzo è nell’unità e nella valuta della sua fonte: non vengono confrontati tra regioni.', all: 'Vedi tutti i prezzi →', loading: 'Caricamento prezzi…', none: 'Impossibile caricare i prezzi.', obs: 'osservazioni', src: 'fonti',
       p: { trigo: 'Frumento', maiz: 'Mais', leche: 'Latte' }, r: { eu: 'UE', us: 'USA', ca: 'Canada' }, u: { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg' } }
   };
   var TAPE_ROWS = [['trigo', 'eu'], ['trigo', 'us'], ['trigo', 'ca'], ['maiz', 'eu'], ['maiz', 'us'], ['maiz', 'ca'], ['leche', 'eu'], ['leche', 'us']];

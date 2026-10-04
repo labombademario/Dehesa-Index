@@ -13,7 +13,7 @@
           { b: 'dehesaIndexLang, dehesaIndexTheme:', t: 'idioma y tema (claro/oscuro).' },
           { b: 'dehesaIndexLocation, dehesaIndexEuCountry:', t: 'ubicación y país de la UE que elijas para ver los precios.' },
           { b: 'dehesaIndexTourSeen:', t: 'que ya has visto la bienvenida.' },
-          { b: 'dehesaIndexFavorites, dehesaIndexAlerts:', t: 'tus productos favoritos y las alertas de prueba.' }
+          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView:', t: 'tus productos favoritos, las alertas de prueba y si prefieres ver el panel de precios en filas o en tarjetas.' }
         ], after: 'Como son preferencias que tú eliges para usar el servicio y no se usan para rastrearte, no mostramos un aviso de cookies. Puedes borrarlas cuando quieras desde los ajustes de tu navegador (datos del sitio).' },
         { h: 'Servicios de terceros', id: 'terceros', p: ['Las tipografías y las librerías, como la del mapa, se sirven desde este mismo sitio: al cargar la página no se envía tu dirección IP a terceros. La única excepción es el visor de parcelas de Portugal, que al abrirlo pide las imágenes de las capas al servidor del IFAP (www.ifap.pt), que recibe tu dirección IP y los datos técnicos habituales de cualquier petición. Los enlaces a noticias y fuentes te llevan a sitios externos con sus propias políticas.'] },
         { h: 'Propiedad intelectual y datos de terceros', id: 'licencias', p: ['El diseño y el código de Dehesa Index son de sus autores. Los datos pertenecen a sus fuentes y se usan según sus condiciones; las mostramos con su atribución:'], ul: [
@@ -33,7 +33,7 @@
           { b: 'dehesaIndexLang, dehesaIndexTheme:', t: 'language and theme (light/dark).' },
           { b: 'dehesaIndexLocation, dehesaIndexEuCountry:', t: 'the location and EU country you pick for viewing prices.' },
           { b: 'dehesaIndexTourSeen:', t: 'that you have already seen the welcome.' },
-          { b: 'dehesaIndexFavorites, dehesaIndexAlerts:', t: 'your favourite products and preview alerts.' }
+          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView:', t: 'your favourite products, preview alerts and whether you prefer the price panel as rows or cards.' }
         ], after: 'Since these are preferences you choose to use the service and are not used to track you, we do not show a cookie banner. You can delete them at any time from your browser settings (site data).' },
         { h: 'Third-party services', id: 'terceros', p: ['Fonts and libraries, such as the map one, are served from this same site: loading a page does not send your IP address to third parties. The only exception is the Portugal parcel viewer, which, when opened, requests the layer images from the IFAP server (www.ifap.pt), which receives your IP address and the usual technical data of any request. Links to news and sources take you to external sites with their own policies.'] },
         { h: 'Intellectual property and third-party data', id: 'licencias', p: ['The design and code of Dehesa Index belong to its authors. The data belongs to its sources and is used under their terms; we display it with attribution:'], ul: [
@@ -53,7 +53,7 @@
           { b: 'dehesaIndexLang, dehesaIndexTheme :', t: 'langue et thème (clair/sombre).' },
           { b: 'dehesaIndexLocation, dehesaIndexEuCountry :', t: 'le lieu et le pays de l’UE choisis pour afficher les prix.' },
           { b: 'dehesaIndexTourSeen :', t: 'que vous avez déjà vu l’accueil.' },
-          { b: 'dehesaIndexFavorites, dehesaIndexAlerts :', t: 'vos produits favoris et les alertes d’essai.' }
+          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView :', t: 'vos produits favoris, les alertes d’essai et votre préférence d’affichage du panneau des prix (lignes ou cartes).' }
         ], after: 'Comme il s’agit de préférences que vous choisissez pour utiliser le service et qui ne servent pas à vous suivre, nous n’affichons pas de bandeau cookies. Vous pouvez les supprimer à tout moment dans les réglages de votre navigateur (données du site).' },
         { h: 'Services tiers', id: 'terceros', p: ['Les polices et les bibliothèques, comme celle de la carte, sont servies depuis ce même site : le chargement d’une page n’envoie pas votre adresse IP à des tiers. La seule exception est le visualiseur de parcelles du Portugal qui, à son ouverture, demande les images des couches au serveur de l’IFAP (www.ifap.pt), lequel reçoit votre adresse IP et les données techniques habituelles de toute requête. Les liens vers des actualités et des sources mènent à des sites externes avec leurs propres politiques.'] },
         { h: 'Propriété intellectuelle et données de tiers', id: 'licencias', p: ['La conception et le code de Dehesa Index appartiennent à leurs auteurs. Les données appartiennent à leurs sources et sont utilisées selon leurs conditions ; nous les affichons avec attribution :'], ul: [
@@ -73,7 +73,7 @@
           { b: 'dehesaIndexLang, dehesaIndexTheme:', t: 'lingua e tema (chiaro/scuro).' },
           { b: 'dehesaIndexLocation, dehesaIndexEuCountry:', t: 'la posizione e il paese UE scelti per vedere i prezzi.' },
           { b: 'dehesaIndexTourSeen:', t: 'che hai già visto il benvenuto.' },
-          { b: 'dehesaIndexFavorites, dehesaIndexAlerts:', t: 'i tuoi prodotti preferiti e gli avvisi di prova.' }
+          { b: 'dehesaIndexFavorites, dehesaIndexAlerts, dehesaIndexPrView:', t: 'i tuoi prodotti preferiti, gli avvisi di prova e se preferisci il pannello prezzi a righe o a schede.' }
         ], after: 'Trattandosi di preferenze che scegli per usare il servizio e che non servono a tracciarti, non mostriamo un banner cookie. Puoi eliminarle in qualsiasi momento dalle impostazioni del browser (dati del sito).' },
         { h: 'Servizi di terze parti', id: 'terceros', p: ['I caratteri e le librerie, come quella della mappa, sono serviti da questo stesso sito: il caricamento di una pagina non invia il tuo indirizzo IP a terzi. L’unica eccezione è il visualizzatore di particelle del Portogallo che, all’apertura, richiede le immagini dei livelli al server dell’IFAP (www.ifap.pt), che riceve il tuo indirizzo IP e i consueti dati tecnici di ogni richiesta. I link a notizie e fonti portano a siti esterni con proprie politiche.'] },
         { h: 'Proprietà intellettuale e dati di terzi', id: 'licencias', p: ['Il design e il codice di Dehesa Index appartengono ai loro autori. I dati appartengono alle loro fonti e sono usati secondo le loro condizioni; li mostriamo con attribuzione:'], ul: [

@@ -227,6 +227,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-product-ctx.mjs
+      - name: Marco comun de pagina, filas de mercado y vista Filas/Tarjetas
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-page-frame.mjs
       - name: Portada, buscador grande y ejemplos (4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

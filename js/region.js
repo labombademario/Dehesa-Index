@@ -463,7 +463,7 @@
     if (!cfg) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.unknown) + '</p>'; return; }
     var ids = Object.keys(cfg.names).sort(function (a, b) { return nm(cfg, a) < nm(cfg, b) ? -1 : 1; }), known = !!cfg.names[ST.r];
     var h1 = document.getElementById('pg-h1'), sub = document.getElementById('pg-sub'), cr = document.getElementById('rg-crumb');
-    if (cr) cr.innerHTML = '<a href="' + cfg.profile + '">' + cfg.flag + ' ' + esc(t.home + ' · ' + cfg.country[li()]) + '</a>';
+    if (cr) { var HP = { es: ['Inicio', 'Países'], en: ['Home', 'Countries'], fr: ['Accueil', 'Pays'], it: ['Home', 'Paesi'] }[lang()] || ['Inicio', 'Países'], F = window.DehesaShared && window.DehesaShared.frame; if (F) F.crumbs(cr, [[HP[0], 'index.html'], [HP[1], 'paises.html'], [cfg.country[li()], cfg.profile], [known ? nm(cfg, ST.r) : cfg.kinds[li()], null]]); }
     if (h1) h1.textContent = known ? nm(cfg, ST.r) : cfg.kinds[li()].charAt(0).toUpperCase() + cfg.kinds[li()].slice(1); if (sub) sub.textContent = t.sub;
     document.title = (known ? nm(cfg, ST.r) + ' · ' + cfg.country[li()] : cfg.country[li()]) + ' | Dehesa Index';
     var side = '<div class="di-card" style="padding:12px 14px"><label style="font-size:13px;display:block;margin-bottom:8px">' + esc(cfg.kind[li()]) + '<br><select id="rg-sel" class="di-compare-select"><option value="">' + esc(t.pick) + '…</option>' + ids.map(function (i) { return '<option value="' + i + '"' + (i === ST.r ? ' selected' : '') + '>' + esc(nm(cfg, i)) + '</option>'; }).join('') + '</select></label>' + mapSvg(cfg, ST.r) + '</div>';
