@@ -1,0 +1,10 @@
+.git
+.github
+node_modules
+scripts
+schemas
+wrangler.jsonc
+.assetsignore
+*.md
+_config.yml
+http:
