@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T12:27:20Z",
+ "generatedAt": "2026-10-04T20:33:56Z",
  "summary": {
-  "files": 17,
+  "files": 18,
   "errors": 0,
   "warnings": 1
  },
@@ -106,6 +106,27 @@
    "nErrors": 0
   },
   {
+   "file": "uk-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "UK/uk-egg-exports-eu: salto 1.556 -> 57.111 en 2019-12 (mediana previa 1.86)",
+    "UK/uk-egg-exports-products: salto 0.5 -> 10.1 en 2016-12 (mediana previa 0.3)",
+    "UK/uk-egg-exports-shell: salto 0.93 -> 56.559 en 2019-12 (mediana previa 1.36)",
+    "UK/uk-egg-exports-total: salto 1.567 -> 57.134 en 2019-12 (mediana previa 1.92)"
+   ],
+   "stats": {
+    "series": 645,
+    "points": 46266,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-04T18:25:13Z",
+   "info": [],
+   "nWarnings": 4,
+   "nErrors": 0
+  },
+  {
    "file": "portugal-stats.json",
    "schema": "country-stats",
    "status": "ok",
@@ -140,16 +161,9 @@
   {
    "file": "canada-stats.json",
    "schema": "country-stats",
-   "status": "warning",
+   "status": "ok",
    "errors": [],
-   "warnings": [
-    "CA/ca-meat-cattle-live-imports: salto 4.4 -> 2.7 en 1958 (mediana previa 0.1)",
-    "CA/ca-meat-cattle-live-imports: salto 64.0 -> 208.5 en 1973 (mediana previa 7.7)",
-    "CA/ca-meat-calves-live-exports: salto 81.6 -> 197.5 en 1958 (mediana previa 4)",
-    "CA/ca-tpr-exp-pe-japan: salto 0.183 -> 1.279 en 2020-09 (mediana previa 0.011)",
-    "CA/ca-tpr-exp-pe-japan: salto 1.279 -> 1.096 en 2020-10 (mediana previa 0.011)",
-    "CA/ca-tpr-exp-qc-china: salto 90.635 -> 172.837 en 2018-11 (mediana previa 3.93)"
-   ],
+   "warnings": [],
    "stats": {
     "series": 457,
     "points": 79750,
@@ -158,9 +172,15 @@
    "generatedAt": "2026-10-02T04:52:27Z",
    "info": [
     "CA/ca-trade-imp-wheat: salto 2.5 -> 2.8 en 1996-01 (mediana previa 0.1) [KNOWN_VERIFIED_ANOMALY]",
-    "CA/ca-trade-imp-wheat: salto 5.3 -> 10.1 en 2002-12 (mediana previa 0.4) [KNOWN_VERIFIED_ANOMALY]"
+    "CA/ca-trade-imp-wheat: salto 5.3 -> 10.1 en 2002-12 (mediana previa 0.4) [KNOWN_VERIFIED_ANOMALY]",
+    "CA/ca-meat-cattle-live-imports: salto 4.4 -> 2.7 en 1958 (mediana previa 0.1) [KNOWN_VERIFIED_ANOMALY]",
+    "CA/ca-meat-cattle-live-imports: salto 64.0 -> 208.5 en 1973 (mediana previa 7.7) [KNOWN_VERIFIED_ANOMALY]",
+    "CA/ca-meat-calves-live-exports: salto 81.6 -> 197.5 en 1958 (mediana previa 4) [KNOWN_VERIFIED_ANOMALY]",
+    "CA/ca-tpr-exp-pe-japan: salto 0.183 -> 1.279 en 2020-09 (mediana previa 0.011) [KNOWN_VERIFIED_ANOMALY]",
+    "CA/ca-tpr-exp-pe-japan: salto 1.279 -> 1.096 en 2020-10 (mediana previa 0.011) [KNOWN_VERIFIED_ANOMALY]",
+    "CA/ca-tpr-exp-qc-china: salto 90.635 -> 172.837 en 2018-11 (mediana previa 3.93) [KNOWN_VERIFIED_ANOMALY]"
    ],
-   "nWarnings": 6,
+   "nWarnings": 0,
    "nErrors": 0
   },
   {

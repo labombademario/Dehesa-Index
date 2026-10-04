@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T20:13:00Z",
+ "generatedAt": "2026-10-04T20:33:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 72,
+  "ok": 83,
   "late": 0,
   "error": 0,
-  "not_run": 11,
+  "not_run": 0,
   "unknown": 0
  },
  "global": "ok",
@@ -355,7 +355,7 @@
    "files": [
     {
      "path": "data/canada-stats.json",
-     "valid": "warning",
+     "valid": "ok",
      "series": 457,
      "points": 79750,
      "lines": 0,
@@ -1545,9 +1545,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-04T20:15:24Z",
+    "durationSec": 40,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37231396550"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 94.5
   },
   {
@@ -1733,7 +1743,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-04T17:58:03Z"
+     "lastChange": "2026-10-04T20:18:57Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1777,7 +1787,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-04T18:24:10Z"
+     "lastChange": "2026-10-04T20:18:57Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -1815,8 +1825,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37202089917"
    },
    "recent": {
-    "runs": 10,
-    "success": 9,
+    "runs": 9,
+    "success": 8,
     "failed": 1
    },
    "status": "ok",
@@ -1955,7 +1965,7 @@
    "files": [
     {
      "path": "data/spain-balances/cereals.json",
-     "lastChange": "2026-10-04T03:27:20Z"
+     "lastChange": "2026-10-04T20:16:40Z"
     },
     {
      "path": "data/spain-balances"
@@ -1965,9 +1975,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-04T20:16:09Z",
+    "durationSec": 43,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37231445636"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2015,7 +2035,7 @@
    "files": [
     {
      "path": "data/spain-livestock/index.json",
-     "lastChange": "2026-10-04T02:56:10Z"
+     "lastChange": "2026-10-04T20:17:22Z"
     },
     {
      "path": "data/spain-livestock"
@@ -2025,9 +2045,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-04T20:17:04Z",
+    "durationSec": 29,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37231502516"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2040,7 +2070,7 @@
    "files": [
     {
      "path": "data/spain-milk/infolac.json",
-     "lastChange": "2026-10-04T04:29:49Z"
+     "lastChange": "2026-10-04T20:17:55Z"
     },
     {
      "path": "data/spain-milk"
@@ -2050,9 +2080,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-04T20:17:38Z",
+    "durationSec": 30,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37231539944"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2065,7 +2105,7 @@
    "files": [
     {
      "path": "data/spain-balances/olive.json",
-     "lastChange": "2026-10-04T03:52:45Z"
+     "lastChange": "2026-10-04T20:18:40Z"
     },
     {
      "path": "data/spain-balances"
@@ -2075,9 +2115,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-04T20:18:11Z",
+    "durationSec": 46,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37231574312"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2090,7 +2140,7 @@
    "files": [
     {
      "path": "data/spain-slaughter/census.json",
-     "lastChange": "2026-10-04T12:53:42Z"
+     "lastChange": "2026-10-04T20:19:31Z"
     },
     {
      "path": "data/spain-slaughter"
@@ -2100,9 +2150,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-04T20:19:06Z",
+    "durationSec": 36,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37231630157"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2115,7 +2175,7 @@
    "files": [
     {
      "path": "data/spain-slaughter/slaughter.json",
-     "lastChange": "2026-10-04T04:50:39Z"
+     "lastChange": "2026-10-04T20:24:42Z"
     },
     {
      "path": "data/spain-slaughter"
@@ -2125,9 +2185,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-04T20:24:27Z",
+    "durationSec": 28,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37231970299"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 1
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2140,7 +2210,7 @@
    "files": [
     {
      "path": "data/spain-wine/balance-historic.json",
-     "lastChange": "2026-10-04T13:14:49Z"
+     "lastChange": "2026-10-04T20:20:44Z"
     },
     {
      "path": "data/spain-wine"
@@ -2150,9 +2220,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-04T20:20:25Z",
+    "durationSec": 32,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37231713085"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2165,7 +2245,7 @@
    "files": [
     {
      "path": "data/spain-wine/monthly.json",
-     "lastChange": "2026-10-04T12:21:12Z"
+     "lastChange": "2026-10-04T20:29:15Z"
     },
     {
      "path": "data/spain-wine"
@@ -2175,9 +2255,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-04T20:25:00Z",
+    "durationSec": 269,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37232002611"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 1
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2190,7 +2280,7 @@
    "files": [
     {
      "path": "data/spain-wine/infovi.json",
-     "lastChange": "2026-10-04T05:15:49Z"
+     "lastChange": "2026-10-04T20:31:55Z"
     },
     {
      "path": "data/spain-wine"
@@ -2200,9 +2290,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-04T20:29:41Z",
+    "durationSec": 148,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37232302673"
+   },
+   "recent": {
+    "runs": 2,
+    "success": 1,
+    "failed": 1
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2251,6 +2351,10 @@
    "files": [
     {
      "path": "data/uk-stats.json",
+     "valid": "warning",
+     "series": 645,
+     "points": 46266,
+     "lines": 0,
      "lastChange": "2026-10-04T18:25:15Z"
     },
     {
@@ -2331,7 +2435,7 @@
    "files": [
     {
      "path": "data/us-county/status.json",
-     "lastChange": "2026-10-04T14:13:42Z"
+     "lastChange": "2026-10-04T20:22:39Z"
     },
     {
      "path": "data/us-county"
@@ -2341,9 +2445,19 @@
      "lastChange": "2026-10-01T05:15:44Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-04T20:21:44Z",
+    "durationSec": 68,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37231791698"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 744.0
   },
   {
