@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-03T18:18:46.047Z",
+  "generatedAt": "2026-10-04T02:50:25.004Z",
   "status": "informational",
   "rules": [
     {
@@ -201,66 +201,21 @@
     },
     {
       "type": "period_move",
-      "product": "cebada_pienso_ab",
-      "region": "ca",
-      "sourceId": "alberta_ag",
-      "severity": "high",
-      "changePct": 10.38,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
       "product": "cerdo_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
       "severity": "watch",
-      "changePct": -7.26,
-      "observationDate": "2026-09-01"
+      "changePct": -7.87,
+      "observationDate": "2026-10-01"
     },
     {
       "type": "period_move",
       "product": "lenteja_laird_ab",
       "region": "ca",
       "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": 5.52,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "novillo_ab",
-      "region": "ca",
-      "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": -7.6,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "trigo_cwrs_ab",
-      "region": "ca",
-      "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": 7.24,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "trigo_pienso_ab",
-      "region": "ca",
-      "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": -6.73,
-      "observationDate": "2026-09-01"
-    },
-    {
-      "type": "period_move",
-      "product": "avena_pienso_ab",
-      "region": "ca",
-      "sourceId": "alberta_ag",
-      "severity": "watch",
-      "changePct": 9.72,
-      "observationDate": "2026-09-01"
+      "severity": "high",
+      "changePct": 20.23,
+      "observationDate": "2026-10-01"
     }
   ],
   "policy": {
