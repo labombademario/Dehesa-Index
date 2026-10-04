@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T05:02:00Z",
+ "generatedAt": "2026-10-04T05:17:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 70,
   "late": 0,
   "error": 0,
-  "not_run": 5,
-  "unknown": 1
+  "not_run": 6,
+  "unknown": 0
  },
  "global": "ok",
  "pipelines": [
@@ -1598,8 +1598,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37172120408"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 2
    },
    "status": "ok",
@@ -1702,7 +1702,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-04T04:50:39Z"
+     "lastChange": "2026-10-04T05:15:49Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1735,7 +1735,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-04T04:50:39Z"
+     "lastChange": "2026-10-04T05:15:49Z"
     },
     {
      "path": "data/products"
@@ -1746,7 +1746,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-04T04:50:39Z"
+     "lastChange": "2026-10-04T05:15:49Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -1754,7 +1754,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-04T04:50:39Z"
+     "lastChange": "2026-10-04T05:15:49Z"
     },
     {
      "path": "data/premium-tracker.json",
@@ -1784,8 +1784,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37172135956"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 2
    },
    "status": "ok",
@@ -1897,7 +1897,7 @@
    "crons": [
     "10 5 * * *"
    ],
-   "nextRun": "2026-10-04T05:10:00Z",
+   "nextRun": "2026-10-05T05:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",
@@ -2083,7 +2083,8 @@
    "nextRun": "2026-10-08T08:45:00Z",
    "files": [
     {
-     "path": "data/spain-wine/infovi.json"
+     "path": "data/spain-wine/infovi.json",
+     "lastChange": "2026-10-04T05:15:49Z"
     },
     {
      "path": "data/spain-wine"
@@ -2095,7 +2096,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 168.0
   },
   {
