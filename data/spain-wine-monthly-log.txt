@@ -1,3 +1,7 @@
+pagina infovi_2021: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivini
+pagina infovi_2022: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivini
+pagina infovi_2023: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivini
+pagina infovi_2024: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivini
 AVISO: 2021-10: identidad de existencias con un residuo de 419914 hl
 AVISO: 2021-11: identidad de existencias con un residuo de 468683 hl
 AVISO: 2022-09: identidad de existencias con un residuo de 167503 hl
