@@ -4,7 +4,7 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 45 VERIFIED, 11 PENDING, 4 RESTRICTED, 3 BLOCKED; 5879 series en el catalogo unificado.
+Resumen: 45 VERIFIED, 11 PENDING, 4 RESTRICTED, 3 BLOCKED; 6001 series en el catalogo unificado.
 
 ## VERIFIED (45)
 
@@ -43,7 +43,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `retsinformation` | Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser) | DK | CUSTOM | si/si | si | 0 | Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regu… |
 | `rvo` | RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk) | NL | CUSTOM | si/si | si | 0 | No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, ca… |
 | `statbel` | Statbel (Statistics Belgium) | BE | STATBEL-OPEN | si/si | si | 123 | Automated re-check of the page returned a CAPTCHA on 2026-10-01. |
-| `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 350 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
+| `statcan` | Statistics Canada | CA | CUSTOM | si/si | si | 472 | No endorsement claims; no use of the StatCan name or logos; WDS API limits (25 requests/s per IP). |
 | `statistik_austria` | Statistik Austria (open.data) | AT | CC-BY-4.0 | si/si | si | 0 | Users are asked (netiquette, not a licence condition) to inform open.data@statistik.gv.at about applications. |
 | `tedb` | European Commission - Taxes in Europe Database (TEDB) | EU | EU-REUSE-2011-833 | si/si | si | 0 | Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; … |
 | `us_tariffs` | USITC Harmonized Tariff Schedule, CBP trade remedies, USTR | US | US-PD | si/si | no | 0 | The HTS is legally binding only in its official publication: label derived rates as informational. |

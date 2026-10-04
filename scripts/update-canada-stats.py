@@ -322,10 +322,52 @@ def partners():
         for c in top:
             put("ca-tpa-%s-%s" % (tag, slug(c)), "partners", "%s %s: farm, fishing and food (annual)" % (word, c), "CAD million", "annual", cand[c], "StatCan 12-10-0173"); n += 1
     log("socios", n)
+# ───────── 9. Balance de granos, vacuno y comercio por provincia y socio ─────────
+GB_CROPS = {"All wheat": "Wheat (all)", "Durum wheat": "Durum wheat", "Barley": "Barley", "Oats": "Oats", "Canola": "Canola", "Soybeans": "Soybeans", "Flaxseed": "Flaxseed", "Dry peas": "Dry peas", "Lentils": "Lentils", "Rye": "Rye"}
+GB_ITEMS = {"Total supplies": "total supplies", "Production": "production", "Total exports": "exports", "Total domestic disappearance": "domestic disappearance", "Total ending stocks": "ending stocks"}
+def grain_balance():
+    """32-10-0013: cierre de campaña (31 de julio). El periodo es el año de cosecha: REF_DATE 2026-07 = campaña ago 2025 - jul 2026 = «2025»."""
+    n = 0; by = {}
+    for r in load(32100013):
+        if r["GEO"] != "Canada" or not r["REF_DATE"].endswith("-07"): continue
+        c, it = r["Type of crop"], r["Supply and disposition of grains"]
+        if c in GB_CROPS and it in GB_ITEMS and num(r) is not None: by.setdefault((c, it), []).append((str(int(r["REF_DATE"][:4]) - 1), num(r) / 1000))
+    for (c, it), pts in by.items():
+        put("ca-gb-%s-%s" % (slug(c), slug(GB_ITEMS[it])), "stocks" if it == "Total ending stocks" else "production", "Grain balance %s: %s (crop year Aug-Jul)" % (GB_CROPS[c], GB_ITEMS[it]), "thousand t", "annual", pts, "StatCan 32-10-0013"); n += 1
+    log("balance de granos", n)
+def beef():
+    """32-10-0125: vacuno y terneros, producción en finca y de carne (anual, Canadá). Hermana de 32-10-0126 (porcino y ovino)."""
+    n = 0; want = {"Total slaughter": ("total slaughter", "head"), "Inspected slaughter": ("inspected slaughter", "head"), "Live exports": ("live exports", "head"), "Live imports": ("live imports", "head"),
+                   "Average cold dressed weight": ("average cold dressed weight", "kg"), "Estimated meat production": ("estimated meat production", "t")}
+    by = {}
+    for r in load(32100125):
+        e = r["Livestock estimates"]
+        if r["GEO"] == "Canada" and e in want and num(r) is not None: by.setdefault((r["Livestock"], e), []).append((r["REF_DATE"], num(r)))
+    for (l, e), pts in by.items():
+        t = want[e][1]
+        if t == "kg": pts, unit = pts, "kg"
+        elif t == "t": pts, unit = [(p, v / 1000) for p, v in pts], "thousand t"
+        else: pts, unit = [(p, v / 1000) for p, v in pts], "thousand head"
+        put("ca-meat-%s-%s" % (slug(l), slug(e)), "production", "%s: %s" % (l, want[e][0]), unit, "annual", pts, "StatCan 32-10-0125"); n += 1
+    log("vacuno y sacrificio", n)
+PROV_ES = {"Newfoundland and Labrador": "NL", "Prince Edward Island": "PE", "Nova Scotia": "NS", "New Brunswick": "NB", "Quebec": "QC", "Ontario": "ON", "Manitoba": "MB", "Saskatchewan": "SK", "Alberta": "AB", "British Columbia": "BC"}
+TP_PARTNERS = ["All countries", "United States", "China", "Mexico", "Japan"]
+def province_trade():
+    """12-10-0175: comercio de productos agrarios, pesqueros y alimentos intermedios por provincia y socio (mensual, dólares)."""
+    n = 0; by = {}
+    rows = load_filtered(12100175, lambda r: r["North American Product Classification System (NAPCS)"].startswith("Farm, fishing") and r["GEO"] in PROV_ES and r["Trade"] in ("Domestic export", "Import") and r["Principal trading partners"] in TP_PARTNERS)
+    for r in rows:
+        v = num(r)
+        if v is not None and r["REF_DATE"] >= "2018-01": by.setdefault((r["GEO"], r["Trade"], r["Principal trading partners"]), []).append((r["REF_DATE"], v / 1e6))
+    for (g, tr, pa), pts in by.items():
+        if tr == "Import" and pa != "All countries": continue
+        ex = tr == "Domestic export"
+        put("ca-tpr-%s-%s-%s" % ("exp" if ex else "imp", PROV_ES[g].lower(), slug(pa)), "partners", "%s %s: farm, fishing and food, %s (monthly)" % ("Domestic exports" if ex else "Imports", ("to " + pa) if ex and pa != "All countries" else "(all countries)", g), "CAD million", "monthly", pts, "StatCan 12-10-0175"); n += 1
+    log("comercio por provincia", n)
 def main():
     import os
     only = [x for x in os.environ.get("ONLY", "").replace(",", " ").split() if x]
-    allf = (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, costs, balance, fuel, trade, partners)
+    allf = (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, costs, balance, fuel, trade, partners, grain_balance, beef, province_trade)
     if only:
         try:
             for x in json.loads((ROOT / "data" / "canada-stats.json").read_text())["countries"]["CA"]["series"]: OUT[x["id"]] = x
