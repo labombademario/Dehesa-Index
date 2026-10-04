@@ -67,7 +67,7 @@ def block(ws):
     rows = {}; lc = None
     for r in ws.iter_rows(min_row=1, max_row=40):
         v = [c.value for c in r]
-        for i, x in enumerate(v[:3]):
+        for i, x in enumerate(v[:8]):
             if isinstance(x, str) and norm(x) == "andalucia": lc = i; break
         if lc is not None:
             if rows and not isinstance(v[lc], str): break

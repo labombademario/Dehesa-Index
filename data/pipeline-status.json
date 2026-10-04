@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T05:17:00Z",
+ "generatedAt": "2026-10-04T12:20:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 70,
   "late": 0,
   "error": 0,
   "not_run": 6,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "ok",
  "pipelines": [
@@ -934,7 +934,7 @@
    "crons": [
     "40 7 * * *"
    ],
-   "nextRun": "2026-10-04T07:40:00Z",
+   "nextRun": "2026-10-05T07:40:00Z",
    "files": [
     {
      "path": "data/eu-drought.json",
@@ -1274,7 +1274,7 @@
    "crons": [
     "20 8 4 * *"
    ],
-   "nextRun": "2026-10-04T08:20:00Z",
+   "nextRun": "2026-11-04T08:20:00Z",
    "files": [
     {
      "path": "data/fx-history.json",
@@ -1329,7 +1329,7 @@
    "crons": [
     "17 6 * * *"
    ],
-   "nextRun": "2026-10-04T06:17:00Z",
+   "nextRun": "2026-10-05T06:17:00Z",
    "files": [
     {
      "path": "data/gats.json",
@@ -1571,35 +1571,35 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-04T06:17:00Z",
+   "nextRun": "2026-10-04T15:17:00Z",
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-04T02:48:17Z"
+     "lastChange": "2026-10-04T05:19:08Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-04T02:48:17Z"
+     "lastChange": "2026-10-04T05:19:08Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-04T02:48:17Z"
+     "lastChange": "2026-10-04T05:19:08Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-04T02:48:17Z"
+     "lastChange": "2026-10-04T05:19:08Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-04T02:47:19Z",
-    "durationSec": 64,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37172120408"
+    "startedAt": "2026-10-04T05:17:03Z",
+    "durationSec": 129,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37179437252"
    },
    "recent": {
-    "runs": 9,
-    "success": 7,
+    "runs": 10,
+    "success": 8,
     "failed": 2
    },
    "status": "ok",
@@ -1698,15 +1698,15 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-04T06:10:00Z",
+   "nextRun": "2026-10-04T15:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-04T05:15:49Z"
+     "lastChange": "2026-10-04T05:18:08Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-04T02:49:29Z"
+     "lastChange": "2026-10-04T05:18:08Z"
     },
     {
      "path": "data/series-registry.json",
@@ -1714,11 +1714,11 @@
     },
     {
      "path": "data/watch-index.json",
-     "lastChange": "2026-10-04T02:49:36Z"
+     "lastChange": "2026-10-04T05:18:16Z"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-04T02:49:36Z"
+     "lastChange": "2026-10-04T05:18:16Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1735,7 +1735,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-04T05:15:49Z"
+     "lastChange": "2026-10-04T05:18:16Z"
     },
     {
      "path": "data/products"
@@ -1746,27 +1746,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-04T05:15:49Z"
+     "lastChange": "2026-10-04T05:18:16Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-04T02:49:36Z"
+     "lastChange": "2026-10-04T05:18:16Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-04T05:15:49Z"
+     "lastChange": "2026-10-04T05:18:16Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-04T02:49:36Z"
+     "lastChange": "2026-10-04T05:18:16Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-04T02:49:36Z"
+     "lastChange": "2026-10-04T05:18:16Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-04T02:49:36Z"
+     "lastChange": "2026-10-04T05:18:16Z"
     },
     {
      "path": "data/home-explore.json",
@@ -1779,13 +1779,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-04T02:47:38Z",
-    "durationSec": 122,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37172135956"
+    "startedAt": "2026-10-04T05:17:01Z",
+    "durationSec": 79,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37179434994"
    },
    "recent": {
-    "runs": 9,
-    "success": 7,
+    "runs": 10,
+    "success": 8,
     "failed": 2
    },
    "status": "ok",
@@ -1902,13 +1902,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-03T05:33:46Z",
-    "durationSec": 25,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37100218842"
+    "startedAt": "2026-10-04T11:03:09Z",
+    "durationSec": 30,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37197402194"
    },
    "recent": {
-    "runs": 3,
-    "success": 3,
+    "runs": 4,
+    "success": 4,
     "failed": 0
    },
    "status": "ok",
@@ -2072,6 +2072,30 @@
    "last": null,
    "recent": null,
    "status": "not_run",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-spain-wine-monthly.yml",
+   "name": "Update Spain wine month by month and region (MAPA INFOVI monthly report)",
+   "crons": [
+    "55 8 * * 4"
+   ],
+   "nextRun": "2026-10-08T08:55:00Z",
+   "files": [
+    {
+     "path": "data/spain-wine/monthly.json"
+    },
+    {
+     "path": "data/spain-wine"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 168.0
   },
   {
@@ -2389,7 +2413,7 @@
    "crons": [
     "40 7 4 * *"
    ],
-   "nextRun": "2026-10-04T07:40:00Z",
+   "nextRun": "2026-11-04T07:40:00Z",
    "files": [
     {
      "path": "data/worldbank-agri.json",

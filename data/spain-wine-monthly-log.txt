@@ -1,7 +1,36 @@
+AVISO: 2021-10: identidad de existencias con un residuo de 419914 hl
 AVISO: 2021-11: identidad de existencias con un residuo de 468683 hl
+AVISO: 2022-09: identidad de existencias con un residuo de 167503 hl
 AVISO: 2022-11: identidad de existencias con un residuo de 451972 hl
+AVISO: 2022-12: identidad de existencias con un residuo de 164776 hl
 AVISO: 2023-01: identidad de existencias con un residuo de 161765 hl
+AVISO: 2023-10: identidad de existencias con un residuo de 222127 hl
 AVISO: 2023-11: identidad de existencias con un residuo de 275815 hl
+AVISO: 2024-10: identidad de existencias con un residuo de 260929 hl
 AVISO: 2024-11: identidad de existencias con un residuo de 278914 hl
+AVISO: 2025-02: identidad de existencias con un residuo de 193748 hl
+AVISO: 2025-09: identidad de existencias con un residuo de 158799 hl
+AVISO: 2025-10: identidad de existencias con un residuo de 244674 hl
 AVISO: 2025-11: identidad de existencias con un residuo de 243314 hl
-OK: 2021-01..2026-07 (14 meses), 0 revisiones
+AVISO: 2025-12: identidad de existencias con un residuo de 133832 hl
+AVISO: 2021-02: existencias finales 53762234 y iniciales de 2021-03 52930730 no encadenan
+AVISO: 2021-07: existencias finales 35936353 y iniciales de 2021-08 35787076 no encadenan
+AVISO: 2021-09: existencias finales 55561124 y iniciales de 2021-10 55853114 no encadenan
+AVISO: 2021-12: existencias finales 55092907 y iniciales de 2022-01 54501653 no encadenan
+AVISO: 2022-05: existencias finales 40712585 y iniciales de 2022-06 40629028 no encadenan
+AVISO: 2022-10: existencias finales 60170758 y iniciales de 2022-11 59953617 no encadenan
+AVISO: 2023-08: existencias finales 38372524 y iniciales de 2023-09 38478835 no encadenan
+AVISO: 2023-09: existencias finales 53166837 y iniciales de 2023-10 52905797 no encadenan
+AVISO: 2023-11: existencias finales 50773874 y iniciales de 2023-12 50913065 no encadenan
+AVISO: 2024-02: existencias finales 42946430 y iniciales de 2024-03 42858095 no encadenan
+AVISO: 2024-07: existencias finales 29592291 y iniciales de 2024-08 29418070 no encadenan
+AVISO: 2024-09: existencias finales 48096556 y iniciales de 2024-10 48340679 no encadenan
+AVISO: 2024-10: existencias finales 51993450 y iniciales de 2024-11 52129664 no encadenan
+AVISO: 2024-11: existencias finales 49701443 y iniciales de 2024-12 49527688 no encadenan
+AVISO: 2025-03: existencias finales 39230287 y iniciales de 2025-04 39139585 no encadenan
+AVISO: 2025-05: existencias finales 33803566 y iniciales de 2025-06 33930495 no encadenan
+AVISO: 2025-07: existencias finales 28727713 y iniciales de 2025-08 28434291 no encadenan
+AVISO: 2025-09: existencias finales 47487595 y iniciales de 2025-10 47647264 no encadenan
+AVISO: 2025-10: existencias finales 48616550 y iniciales de 2025-11 48790556 no encadenan
+AVISO: 2026-05: existencias finales 33217627 y iniciales de 2026-06 33292893 no encadenan
+OK: 2021-01..2026-07 (67 meses), 0 revisiones
