@@ -41,7 +41,7 @@
   function derivedCite() {
     var Q = window.DICite; if (!Q || !DATA || !DATA.included) return '';
     var seen = {}, ids = []; DATA.included.forEach(function (x) { if (x.sourceId && !seen[x.sourceId]) { seen[x.sourceId] = 1; ids.push(x.sourceId); } });
-    return Q.derived(ids, { what: DATA.methodology ? (DATA.methodology[window.DehesaShared.getLang()] || DATA.methodology.es || '') : '' });
+    return Q.derived(ids, { what: DATA.methodology ? (DATA.methodology[window.DehesaShared.getLang()] || DATA.methodology.en || DATA.methodology.es || '') : '' });
   }
   function render() {
     var el = document.getElementById('home-dehesa-index');

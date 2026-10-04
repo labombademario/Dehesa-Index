@@ -312,6 +312,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-home-mi-mercado.mjs
+      - name: Prices page coherence (relationships and Engine 2.0 only for the chosen market; no Spanish text on other-language pages; 4 languages x 4 markets)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-precios-region.mjs
       - name: PAC España (importes y estimación = los JSON del real decreto; cita del BOE con su texto obligatorio; cambios pendientes visibles; elección guardada; 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

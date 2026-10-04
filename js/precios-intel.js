@@ -18,6 +18,8 @@
   function core() { return global.DehesaPreciosCore; }
   function esc(s) { return core().esc(s); }
   function lang() { return core().lang(); }
+  function X(o) { return o[lang()] || o.es; } // texto en el idioma de la página
+  var DIRW = { positive: { es: 'positiva', en: 'positive', fr: 'positive', it: 'positiva' }, negative: { es: 'negativa', en: 'negative', fr: 'négative', it: 'negativa' }, flat: { es: 'nula', en: 'flat', fr: 'nulle', it: 'nulla' } };
   function ui() { return core().ui(); }
   function productName(nameKey) { return core().productName(nameKey); }
 
@@ -133,7 +135,7 @@
         severity:Math.abs(shock.changePct)>=10?'elevated':'watch',
         shock:shock,relationship:rel,channel:def.channel,affected:def.affected,
         direction:(shock.changePct>0?'positive':'negative')===rel.direction?'aligned':'opposed',
-        message:(def.label[lang()]||def.label.es)+' supera el umbral de '+def.threshold+'% en el último periodo. La relación histórica compatible tiene un lag de '+rel.lagPeriods+' '+(rel.frequency==='quarterly'?(rel.lagPeriods===1?'trimestre':'trimestres'):(rel.lagPeriods===1?'mes':'meses'))+' y confianza '+rel.confidence+'. Esto activa una alerta de transmisión observada, no una predicción.'
+        message:(function(){var q=rel.frequency==='quarterly',n=rel.lagPeriods===1,lab=(def.label[lang()]||def.label.es),u={es:q?(n?'trimestre':'trimestres'):(n?'mes':'meses'),en:q?(n?'quarter':'quarters'):(n?'month':'months'),fr:q?(n?'trimestre':'trimestres'):'mois',it:q?(n?'trimestre':'trimestri'):(n?'mese':'mesi')};return X({es:lab+' supera el umbral de '+def.threshold+'% en el último periodo. La relación histórica compatible tiene un lag de '+rel.lagPeriods+' '+u.es+' y confianza '+rel.confidence+'. Esto activa una alerta de transmisión observada, no una predicción.',en:lab+' exceeds the '+def.threshold+'% threshold in the latest period. The compatible historical relationship has a lag of '+rel.lagPeriods+' '+u.en+' and '+rel.confidence+' confidence. This triggers an observed transmission alert, not a forecast.',fr:lab+' dépasse le seuil de '+def.threshold+' % sur la dernière période. La relation historique compatible a un décalage de '+rel.lagPeriods+' '+u.fr+' et une confiance '+rel.confidence+'. Cela déclenche une alerte de transmission observée, pas une prévision.',it:lab+' supera la soglia del '+def.threshold+'% nell’ultimo periodo. La relazione storica compatibile ha un ritardo di '+rel.lagPeriods+' '+u.it+' e confidenza '+rel.confidence+'. Questo attiva un’allerta di trasmissione osservata, non una previsione.'});})()
       });
     });
     return TRANSMISSION_ALERTS;
@@ -246,7 +248,7 @@
       sampleSize:best.pairs.length,correlationReturns:best.r,direction:direction,stability:stable,
       coverageStart:best.pairs.length?best.pairs[0].date:null,
       coverageEnd:best.pairs.length?best.pairs[best.pairs.length-1].date:null,
-      interpretation:(def.label[lang()]||def.label.es)+' presenta una asociación '+direction+' en cambios de la serie con un rezago de '+best.lag+' '+(frequency==='quarterly'?'trimestre(s)':'mes(es)')+'. La señal es descriptiva y no implica causalidad ni predicción.'
+      interpretation:(function(){var q=frequency==='quarterly',lab=(def.label[lang()]||def.label.es),d=DIRW[direction]||DIRW.flat,u={es:q?'trimestre(s)':'mes(es)',en:q?'quarter(s)':'month(s)',fr:q?'trimestre(s)':'mois',it:q?'trimestre/i':'mese/i'};return X({es:lab+' presenta una asociación '+d.es+' en cambios de la serie con un rezago de '+best.lag+' '+u.es+'. La señal es descriptiva y no implica causalidad ni predicción.',en:lab+' shows a '+d.en+' association in changes of the series with a lag of '+best.lag+' '+u.en+'. The signal is descriptive and implies neither causality nor a forecast.',fr:lab+' présente une association '+d.fr+' dans les variations de la série avec un décalage de '+best.lag+' '+u.fr+'. Le signal est descriptif et n’implique ni causalité ni prévision.',it:lab+' mostra un’associazione '+d.it+' nelle variazioni della serie con un ritardo di '+best.lag+' '+u.it+'. Il segnale è descrittivo e non implica causalità né previsione.'});})()
     };
   }
   function buildRelationshipEngine() {
@@ -1142,7 +1144,7 @@
   }
 
   function renderRelationshipsHtml() {
-    var rel=buildRelationshipEngine();
+    var rel=buildRelationshipEngine().filter(function(r){return r.region===activeRegion();}); // solo las relaciones del mercado elegido
     var ready=rel.filter(function(r){return r.status==='ready';});
     var pending=rel.filter(function(r){return r.status!=='ready';});
     var labels={
@@ -1164,7 +1166,7 @@
       defra_milk_output_index:{es:'Leche · índice de producción',en:'Milk · output index',fr:'Lait · indice de production',it:'Latte · indice di produzione'}
     };
     if(!ready.length){
-      return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div></section>';
+      return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div><p class="di-rel-note">'+esc(X({es:'Sin relación estadística compatible para este mercado: las relaciones observadas existen hoy solo para la UE y el Reino Unido.',en:'No compatible statistical relationship for this market: observed relationships currently exist only for the EU and the UK.',fr:'Aucune relation statistique compatible pour ce marché : les relations observées n’existent aujourd’hui que pour l’UE et le Royaume-Uni.',it:'Nessuna relazione statistica compatibile per questo mercato: le relazioni osservate esistono oggi solo per UE e Regno Unito.'}))+'</p></section>';
     }
     var rank={high:3,medium:2,low:1};
     ready.sort(function(a,b){return (rank[b.confidence]||0)-(rank[a.confidence]||0);});
@@ -1186,39 +1188,44 @@
       var lagUnit=a.relationship.frequency==='quarterly'?(a.relationship.lagPeriods===1?t.periodQ:t.periodQs):(a.relationship.lagPeriods===1?t.periodM:t.periodMs);
       return '<article class="di-rel-card di-transmission-card">'+
         '<div class="di-rel-top"><span>⚠ '+esc(a.label)+'</span><b class="di-rel-confidence '+esc(a.relationship.confidence)+'">'+esc(a.severity.toUpperCase())+'</b></div>'+
-        '<div class="di-rel-series">Shock: <strong>'+esc(a.shock.changePct.toFixed(1))+'%</strong> · '+esc(a.shock.date)+'</div>'+
-        '<div class="di-rel-metrics"><div><small>Canal</small><strong>Input cost</strong></div><div><small>Lag</small><strong>'+esc(String(a.relationship.lagPeriods)+' '+lagUnit)+'</strong></div><div><small>Confianza</small><strong>'+esc(a.relationship.confidence.toUpperCase())+'</strong></div></div>'+
+        '<div class="di-rel-series">'+esc(X({es:'Shock',en:'Shock',fr:'Choc',it:'Shock'}))+': <strong>'+esc(a.shock.changePct.toFixed(1))+'%</strong> · '+esc(a.shock.date)+'</div>'+
+        '<div class="di-rel-metrics"><div><small>'+esc(X({es:'Canal',en:'Channel',fr:'Canal',it:'Canale'}))+'</small><strong>'+esc(X({es:'Coste de insumos',en:'Input cost',fr:'Coût des intrants',it:'Costo degli input'}))+'</strong></div><div><small>'+esc(X({es:'Rezago',en:'Lag',fr:'Décalage',it:'Ritardo'}))+'</small><strong>'+esc(String(a.relationship.lagPeriods)+' '+lagUnit)+'</strong></div><div><small>'+esc(X({es:'Confianza',en:'Confidence',fr:'Confiance',it:'Confidenza'}))+'</small><strong>'+esc(a.relationship.confidence.toUpperCase())+'</strong></div></div>'+
         '<p class="di-rel-note">'+esc(a.message)+'</p>'+
       '</article>';
     }).join('');
-    var alertSection=alerts.length ? '<div class="di-transmission-wrap"><div class="di-intel-head"><span class="di-intel-kicker">TRANSMISSION WATCH</span><h3>Input shock → mercado afectado</h3><p class="di-intel-muted">Las alertas se activan cuando un input supera un umbral y existe una relación histórica compatible. No estiman precios futuros.</p></div><div class="di-rel-grid">'+alertCards+'</div></div>' : '';
+    var alertSection=alerts.length ? '<div class="di-transmission-wrap"><div class="di-intel-head"><span class="di-intel-kicker">TRANSMISSION WATCH</span><h3>'+esc(X({es:'Shock de insumo → mercado afectado',en:'Input shock → affected market',fr:'Choc d’intrant → marché affecté',it:'Shock di input → mercato interessato'}))+'</h3><p class="di-intel-muted">'+esc(X({es:'Las alertas se activan cuando un insumo supera un umbral y existe una relación histórica compatible. No estiman precios futuros.',en:'Alerts trigger when an input crosses a threshold and a compatible historical relationship exists. They do not estimate future prices.',fr:'Les alertes se déclenchent lorsqu’un intrant dépasse un seuil et qu’une relation historique compatible existe. Elles n’estiment pas les prix futurs.',it:'Gli avvisi scattano quando un input supera una soglia ed esiste una relazione storica compatibile. Non stimano i prezzi futuri.'}))+'</p></div><div class="di-rel-grid">'+alertCards+'</div></div>' : '';
     return '<section class="di-intel-section di-relationships"><div class="di-intel-head"><span class="di-intel-kicker">RELATIONSHIP ENGINE</span><h2>'+esc(t.title)+'</h2><p class="di-intel-muted">'+esc(t.intro)+'</p></div><div class="di-rel-grid">'+cards+'</div>'+pendingNote+alertSection+'</section>';
   }
 
 
   function renderIntelligence20Html() {
     var p=P();
+    // Estas señales son índices de Eurostat (UE): solo se enseñan cuando el mercado elegido es la UE, para que la página sea coherente con la región.
+    var loc=core().getLocation ? core().getLocation() : 'eu';
+    if(loc && loc!=='eu') return '';
     var rows=(INTEL20&&INTEL20.series)||[];
-    if(!rows.length) return '<section class="di-intel-section di-intel-engine20"><div class="di-intel-head"><span class="di-intel-kicker">INTELLIGENCE ENGINE 2.0</span><h2>Señales reales</h2><p class="di-intel-muted">Pendiente: el motor no tiene todavía una serie con cobertura suficiente.</p></div></section>';
+    var head=function(h2,msg){return '<section class="di-intel-section di-intel-engine20"><div class="di-intel-head"><span class="di-intel-kicker">INTELLIGENCE ENGINE 2.0</span><h2>'+esc(h2)+'</h2><p class="di-intel-muted">'+esc(msg)+'</p></div>';};
+    if(!rows.length) return head(X({es:'Señales reales',en:'Real signals',fr:'Signaux réels',it:'Segnali reali'}),X({es:'Pendiente: el motor no tiene todavía una serie con cobertura suficiente.',en:'Pending: the engine does not yet have a series with enough coverage.',fr:'En attente : le moteur n’a pas encore de série avec une couverture suffisante.',it:'In attesa: il motore non ha ancora una serie con copertura sufficiente.'}))+'</section>';
     var labels={
-      eurostat_cereals_output_index:'Cereales EU · índice de producción',
-      eurostat_milk_output_index:'Leche EU · índice de producción',
-      eurostat_fertiliser_input_index:'Fertilizantes EU · índice de compra',
-      eurostat_energy_input_index:'Energía EU · índice de compra'
+      eurostat_cereals_output_index:{es:'Cereales EU · índice de producción',en:'Cereals EU · output index',fr:'Céréales UE · indice de production',it:'Cereali UE · indice di produzione'},
+      eurostat_milk_output_index:{es:'Leche EU · índice de producción',en:'Milk EU · output index',fr:'Lait UE · indice de production',it:'Latte UE · indice di produzione'},
+      eurostat_fertiliser_input_index:{es:'Fertilizantes EU · índice de compra',en:'Fertiliser EU · purchase index',fr:'Engrais UE · indice d’achat',it:'Fertilizzanti UE · indice di acquisto'},
+      eurostat_energy_input_index:{es:'Energía EU · índice de compra',en:'Energy EU · purchase index',fr:'Énergie UE · indice d’achat',it:'Energia UE · indice di acquisto'}
     };
+    var T={pend:X({es:'Pendiente',en:'Pending',fr:'En attente',it:'In attesa'}),real:X({es:'REAL',en:'REAL',fr:'RÉEL',it:'REALE'}),pending:X({es:'PENDIENTE',en:'PENDING',fr:'EN ATTENTE',it:'IN ATTESA'}),last:X({es:'Último periodo',en:'Latest period',fr:'Dernière période',it:'Ultimo periodo'}),yoy:X({es:'Interanual',en:'Year on year',fr:'Sur un an',it:'Su base annua'}),vol:X({es:'Volatilidad',en:'Volatility',fr:'Volatilité',it:'Volatilità'}),obs:X({es:'observaciones',en:'observations',fr:'observations',it:'osservazioni'})};
+    var num=function(v,d){var t=Number(v).toFixed(d);return lang()==='en'?t:t.replace('.',',');};
     var cards=rows.filter(function(r){return /^eurostat_/.test(r.product);}).map(function(r){
-      var ch=r.periodChangePct;
-      var yoy=r.yoyPct;
-      var chText=ch===null?'—':((ch>=0?'+':'')+ch.toFixed(1)+'%');
-      var yoyText=yoy===null?'Pendiente':((yoy>=0?'+':'')+yoy.toFixed(1)+'%');
-      var vol=r.volatility===null?'Pendiente':(r.volatility*100).toFixed(1)+'%';
-      var state=r.points>=5?'REAL':'PENDIENTE';
-      return '<article class="di-intel-engine-card"><div class="di-intel-engine-top"><span>'+esc(labels[r.product]||r.product)+'</span><b class="'+(state==='REAL'?'real':'pending')+'">'+state+'</b></div>'+
-        '<div class="di-intel-engine-value">'+esc(String(r.latest))+' <small>2020=100</small></div>'+
-        '<div class="di-intel-engine-metrics"><div><small>Último periodo</small><strong>'+esc(chText)+'</strong></div><div><small>YoY</small><strong>'+esc(yoyText)+'</strong></div><div><small>Volatilidad</small><strong>'+esc(vol)+'</strong></div></div>'+
-        '<div class="di-intel-engine-foot">'+esc(r.observationDate)+' · '+r.points+' observaciones · Eurostat</div></article>';
+      var ch=r.periodChangePct, yoy=r.yoyPct;
+      var chText=ch===null?'—':((ch>=0?'+':'')+num(ch,1)+'%');
+      var yoyText=yoy===null?T.pend:((yoy>=0?'+':'')+num(yoy,1)+'%');
+      var vol=r.volatility===null?T.pend:num(r.volatility*100,1)+'%';
+      var ok=r.points>=5;
+      return '<article class="di-intel-engine-card"><div class="di-intel-engine-top"><span>'+esc(labels[r.product]?X(labels[r.product]):r.product)+'</span><b class="'+(ok?'real':'pending')+'">'+(ok?T.real:T.pending)+'</b></div>'+
+        '<div class="di-intel-engine-value">'+esc(num(r.latest,2))+' <small>2020=100</small></div>'+
+        '<div class="di-intel-engine-metrics"><div><small>'+esc(T.last)+'</small><strong>'+esc(chText)+'</strong></div><div><small>'+esc(T.yoy)+'</small><strong>'+esc(yoyText)+'</strong></div><div><small>'+esc(T.vol)+'</small><strong>'+esc(vol)+'</strong></div></div>'+
+        '<div class="di-intel-engine-foot">'+esc(r.observationDate)+' · '+r.points+' '+esc(T.obs)+' · Eurostat</div></article>';
     }).join('');
-    return '<section class="di-intel-section di-intel-engine20"><div class="di-intel-head"><span class="di-intel-kicker">INTELLIGENCE ENGINE 2.0</span><h2>Señales calculadas sobre datos reales</h2><p class="di-intel-muted">Momentum, YoY y volatilidad solo aparecen cuando la serie supera los umbrales de cobertura. Sin series sintéticas ni conversiones entre metodologías incompatibles.</p></div><div class="di-intel-engine-grid">'+cards+'</div></section>';
+    return head(X({es:'Señales calculadas sobre datos reales',en:'Signals computed on real data',fr:'Signaux calculés sur des données réelles',it:'Segnali calcolati su dati reali'}),X({es:'Momentum, interanual y volatilidad solo aparecen cuando la serie supera los umbrales de cobertura. Sin series sintéticas ni conversiones entre metodologías incompatibles.',en:'Momentum, year-on-year and volatility only appear when the series passes the coverage thresholds. No synthetic series and no conversions between incompatible methodologies.',fr:'Momentum, variation annuelle et volatilité n’apparaissent que lorsque la série dépasse les seuils de couverture. Aucune série synthétique ni conversion entre méthodologies incompatibles.',it:'Momentum, variazione annua e volatilità compaiono solo quando la serie supera le soglie di copertura. Nessuna serie sintetica né conversione tra metodologie incompatibili.'}))+'<div class="di-intel-engine-grid">'+cards+'</div></section>';
   }
 
   // ---------------------------------------------------------------------
@@ -1235,6 +1242,9 @@
       (idx[k]||[]).forEach(function(n){if(!seen[n.id]){seen[n.id]=true;stories.push(n);}});
     });
     if(!stories.length) Object.keys(idx).forEach(function(k){(idx[k]||[]).forEach(function(n){if(!seen[n.id]){seen[n.id]=true;stories.push(n);}});});
+    // solo noticias del mercado elegido (las «globales» únicamente si de esa región no hay ninguna)
+    var regional=stories.filter(function(n){return n.region===region;});
+    stories=regional.length?regional:stories.filter(function(n){return n.region==='global';});
     stories.sort(function(a,b){return String(a.date)<String(b.date)?1:-1;});
     stories=stories.slice(0,5);
 
@@ -1298,7 +1308,7 @@
     var root = document.getElementById('pr-intel');
     if (!root) return;
     if (!REAL_HISTORY_READY) {
-      root.innerHTML = '<div class="di-intel-section"><div class="di-intel-head"><h2>Inteligencia basada en histórico real</h2><p>Cargando observaciones normalizadas. Las series sintéticas no se utilizan para estos cálculos.</p></div></div>';
+      root.innerHTML = '<div class="di-intel-section"><div class="di-intel-head"><h2>'+esc(X({es:'Inteligencia basada en histórico real',en:'Intelligence based on real history',fr:'Intelligence fondée sur l’historique réel',it:'Intelligence basata sullo storico reale'}))+'</h2><p>'+esc(X({es:'Cargando observaciones normalizadas. Las series sintéticas no se utilizan para estos cálculos.',en:'Loading normalised observations. Synthetic series are not used for these calculations.',fr:'Chargement des observations normalisées. Les séries synthétiques ne sont pas utilisées pour ces calculs.',it:'Caricamento delle osservazioni normalizzate. Le serie sintetiche non vengono usate per questi calcoli.'}))+'</p></div></div>';
       if (!INTEL_WAIT) { INTEL_WAIT = true; whenNear(root, function(){ loadRealHistory(function(){ render(); }); }); }
       return;
     }

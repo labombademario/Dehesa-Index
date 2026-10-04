@@ -829,21 +829,25 @@
     stories.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
 
     var region = state.location || 'us';
-    var compatible = stories.filter(function(n) {
-      return n.region === region || n.region === 'global';
-    });
+    // Primero lo de la región elegida; las noticias «globales» solo rellenan si de esa región no hay ninguna (así EE. UU. no enseña titulares de otros países).
+    var compatible = stories.filter(function(n) { return n.region === region; }), usedGlobal = false;
+    if (!compatible.length) { compatible = stories.filter(function(n) { return n.region === 'global'; }); usedGlobal = compatible.length > 0; }
 
     // If the selected category has no regional match, use the latest
     // global/compatible market stories across the entire news index.
     if (!compatible.length) {
       compatible = [];
-      Object.keys(global.DehesaNewsIndex).forEach(function(key) {
-        (global.DehesaNewsIndex[key] || []).forEach(function(n) {
-          if (!seen['fallback-' + n.id] && (n.region === region || n.region === 'global')) {
-            seen['fallback-' + n.id] = true;
-            compatible.push(n);
-          }
+      [region, 'global'].forEach(function(want) {
+        if (compatible.length) return;
+        Object.keys(global.DehesaNewsIndex).forEach(function(key) {
+          (global.DehesaNewsIndex[key] || []).forEach(function(n) {
+            if (!seen['fallback-' + n.id] && n.region === want) {
+              seen['fallback-' + n.id] = true;
+              compatible.push(n);
+            }
+          });
         });
+        usedGlobal = want === 'global' && compatible.length > 0;
       });
       compatible.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
     }
@@ -856,14 +860,15 @@
     var linkLabel = lg === 'es' ? 'News Intelligence →' :
       lg === 'fr' ? 'News Intelligence →' :
       lg === 'it' ? 'News Intelligence →' : 'News Intelligence →';
-    var regionLabel = region === 'us' ? 'EE. UU.' : region === 'eu' ? 'Europa' : region === 'uk' ? 'UK' : region === 'ca' ? 'Canadá' : 'Global';
+    var RL = { us: { es: 'EE. UU.', en: 'US', fr: 'États-Unis', it: 'USA' }, eu: { es: 'Europa', en: 'Europe', fr: 'Europe', it: 'Europa' }, uk: { es: 'Reino Unido', en: 'UK', fr: 'Royaume-Uni', it: 'Regno Unito' }, ca: { es: 'Canadá', en: 'Canada', fr: 'Canada', it: 'Canada' }, gl: { es: 'Global', en: 'Global', fr: 'Mondial', it: 'Globale' } };
+    var regionLabel = (RL[usedGlobal ? 'gl' : region] || RL.gl)[lg] || RL.gl.es;
 
     if (!selected.length) {
       root.innerHTML =
         '<div class="di-market-news-intel di-market-news-empty">' +
           '<div class="di-market-news-copy"><span class="di-section-kicker">NEWS INTELLIGENCE</span>' +
           '<h2>' + esc(title) + '</h2>' +
-          '<p>La cobertura editorial verificada se está actualizando.</p></div>' +
+          '<p>' + esc(lg === 'es' ? 'La cobertura editorial verificada se está actualizando.' : lg === 'fr' ? 'La couverture éditoriale vérifiée est en cours de mise à jour.' : lg === 'it' ? 'La copertura editoriale verificata è in aggiornamento.' : 'Verified editorial coverage is being updated.') + '</p></div>' +
           '<a class="di-market-news-link" href="noticias.html">' + esc(linkLabel) + '</a>' +
         '</div>';
       return;
