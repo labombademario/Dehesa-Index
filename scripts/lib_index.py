@@ -2,7 +2,7 @@
 import json, subprocess
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-STATS = ['country-stats', 'spain-stats', 'france-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'portugal-stats', 'portugal-eurostat-stats',
+STATS = ['country-stats', 'spain-stats', 'france-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'uk-stats', 'portugal-stats', 'portugal-eurostat-stats',
          'canada-stats', 'eu-trade-stats', 'australia-trade-stats', 'interest-rates-stats']
 def git_show(rev, path):
     try:
@@ -106,7 +106,7 @@ def kind_of(group, key=''):
     return GROUP_KIND.get(group, 'PRICE')
 # workflow -> tipos que alimenta (todos los pipelines deben estar aqui; el brief falla si aparece uno sin clasificar)
 WORKFLOW_KINDS = {
-    'update-alberta-weekly.yml': ['PRICE'], 'update-ams-auctions.yml': ['PRICE'], 'update-ams.yml': ['PRICE'], 'update-au-trade.yml': ['TRADE'], 'update-austria.yml': ['PRODUCTION', 'TRADE', 'INPUT'],
+    'update-alberta-weekly.yml': ['PRICE'], 'update-ams-auctions.yml': ['PRICE'], 'update-ams.yml': ['PRICE'], 'update-au-trade.yml': ['TRADE'], 'update-uk-defra.yml': ['PRODUCTION', 'INPUT'], 'update-austria.yml': ['PRODUCTION', 'TRADE', 'INPUT'],
     'update-belgium.yml': ['PRODUCTION', 'INPUT'], 'update-canada-stats.yml': ['PRODUCTION', 'TRADE'], 'update-canada.yml': ['PRICE'], 'update-climate.yml': ['CLIMATE'], 'update-country-macro.yml': ['MACRO'], 'update-worldbank-agri.yml': ['MACRO'],
     'update-country-stats.yml': ['PRODUCTION', 'TRADE'], 'update-crop-progress.yml': ['CROP'], 'update-defra-milk.yml': ['PRICE'], 'update-denmark.yml': ['PRICE'], 'update-drought.yml': ['CLIMATE'],
     'update-energy-markets.yml': ['INPUT'], 'update-energy.yml': ['INPUT'], 'update-ers.yml': ['PRODUCTION'], 'update-cattle-on-feed.yml': ['PRODUCTION'], 'update-canada-grain.yml': ['TRADE'], 'update-canada-drought.yml': ['PRODUCTION'], 'update-eu-regions.yml': ['PRODUCTION'], 'update-au-states.yml': ['TRADE'], 'update-crop-insurance.yml': ['INPUT'], 'update-crop-insurance-ca.yml': ['INPUT'], 'update-canada-provinces.yml': ['PRODUCTION'], 'update-us-dairy.yml': ['PRICE'], 'update-us-lamb.yml': ['PRICE'], 'update-eu-vat.yml': ['INPUT'], 'update-eu-drought.yml': ['PRODUCTION'], 'update-eu-farm-economics.yml': ['INPUT', 'PRODUCTION'], 'update-eu-agrifood.yml': ['PRICE'], 'update-eu-catalog.yml': ['PRICE'], 'update-eu-trade.yml': ['TRADE'],

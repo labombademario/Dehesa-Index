@@ -160,6 +160,14 @@ sources:
     data: [austria-stats.json]
     log: austria-log.txt
     message: Datos Austria (Eurostat)
+  - id: uk-defra
+    name: Update United Kingdom (Defra)
+    cron: ['20 9 * * 2,5']
+    pre: ['pip install pandas odfpy']
+    script: scripts/update-uk-defra.py
+    data: [uk-stats.json]
+    log: uk-log.txt
+    message: Datos Reino Unido (Defra, OGL v3.0)
   - id: belgium
     name: Update Belgium (Statbel)
     cron: ['45 15 * * 2,5']

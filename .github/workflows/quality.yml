@@ -324,6 +324,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-blog-weekly.mjs
+      - name: Perfil de Reino Unido (Defra) y grano local de EE. UU. dentro del perfil de EE. UU. (cifras = JSON, series traducidas, menú de Países; 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-uk-profile.mjs
       - name: PAC España (importes y estimación = los JSON del real decreto; cita del BOE con su texto obligatorio; cambios pendientes visibles; elección guardada; 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

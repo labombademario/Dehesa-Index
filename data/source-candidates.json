@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T12:28:36Z",
+ "generatedAt": "2026-10-04T16:38:49Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1818,7 +1818,7 @@
    "country": "UK",
    "scope": "integrated",
    "institution": "UK Defra (gov.uk agricultural statistics)",
-   "dataset": "Ya integrada (12 series en el catalogo unificado)",
+   "dataset": "Ya integrada (63 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
@@ -1826,16 +1826,19 @@
     "energy",
     "fertilizer",
     "milk",
+    "oats",
     "pigs",
+    "poultry",
     "rapeseed",
     "sheep",
     "wheat"
    ],
    "productsConfirmed": true,
    "metrics": [
-    "price"
+    "price",
+    "production"
    ],
-   "frequency": "monthly",
+   "frequency": "mixed",
    "access": {
     "api": null,
     "csv": null,
@@ -1846,7 +1849,7 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Defra.",
-   "lastChecked": "2026-10-01",
+   "lastChecked": "2026-10-04",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
@@ -2376,18 +2379,18 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
+   "licenseStatus": "VERIFIED",
    "licenseId": "LO-2.0",
-   "commercialReuse": "conditional",
-   "derivatives": "conditional",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
    "attribution": "Source : FranceAgriMer – Données originales téléchargées depuis https://visionet.franceagrimer.fr/ – Licence Ouverte 2.0",
-   "lastChecked": "2026-10-01",
+   "lastChecked": "2026-10-04",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
-    "result": "NOT_READY",
+    "result": "READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -2395,8 +2398,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "hmrc_govuk",

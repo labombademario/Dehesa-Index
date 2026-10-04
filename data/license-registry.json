@@ -496,28 +496,28 @@
    "notes": "Earlier project notes said 'CC BY-NC-SA / no comercial'; the current FAO terms say CC BY 4.0 with the promotion restriction above."
   },
   "mb_agri": {
-     "name": "Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba)",
-     "url": "https://www.gov.mb.ca/agriculture/markets-and-statistics/livestock-statistics/livestock-market-prices-current.html",
-     "country": "CA",
-     "licenseId": "OpenMB-1.0",
-     "licenseName": "OpenMB Information and Data Use Licence v1.0",
-     "licenseUrl": "https://www.gov.mb.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.pdf",
-     "commercialUse": "yes",
-     "derivatives": "yes",
-     "redistribution": "yes",
-     "attributionRequired": true,
-     "attributionText": "Contains information from the Government of Manitoba, licensed under the OpenMB Information and Data Use License (Manitoba.ca/OpenMB)",
-     "additionalRestrictions": "No suggestion of official status or endorsement; excludes official symbols and logos, personal information and third-party rights.",
-     "thirdPartyExceptions": true,
-     "thirdPartyNote": "The monthly historic spreadsheet on the same page cites Canfax for cattle prices (third party) and is NOT used. The weekly reports cite Manitoba Auction Markets / each auction mart.",
-     "verifiedAt": "2026-10-03",
-     "status": "VERIFIED",
-     "confidence": "medium",
-     "evidence": "Licence text and gov.mb.ca/legal/copyright.html read on 2026-10-03: OpenMB allows commercial use and derivatives with attribution and applies to publicly available Government of Manitoba information. The livestock pages show only the standard footer (Copyright link), without repeating the licence on the page; the open.canada.ca record of the cattle dataset does not state a licence. Mario chose to ingest the weekly auction reports only (2026-10-03).",
-     "used": true,
-     "aliases": [],
-     "notes": "Optional: confirm in writing with IndustryIntelligence@gov.mb.ca that the weekly reports have no third-party restrictions.",
-     "short": "Manitoba Agriculture"
+   "name": "Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba)",
+   "url": "https://www.gov.mb.ca/agriculture/markets-and-statistics/livestock-statistics/livestock-market-prices-current.html",
+   "country": "CA",
+   "licenseId": "OpenMB-1.0",
+   "licenseName": "OpenMB Information and Data Use Licence v1.0",
+   "licenseUrl": "https://www.gov.mb.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.pdf",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains information from the Government of Manitoba, licensed under the OpenMB Information and Data Use License (Manitoba.ca/OpenMB)",
+   "additionalRestrictions": "No suggestion of official status or endorsement; excludes official symbols and logos, personal information and third-party rights.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "The monthly historic spreadsheet on the same page cites Canfax for cattle prices (third party) and is NOT used. The weekly reports cite Manitoba Auction Markets / each auction mart.",
+   "verifiedAt": "2026-10-03",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Licence text and gov.mb.ca/legal/copyright.html read on 2026-10-03: OpenMB allows commercial use and derivatives with attribution and applies to publicly available Government of Manitoba information. The livestock pages show only the standard footer (Copyright link), without repeating the licence on the page; the open.canada.ca record of the cattle dataset does not state a licence. Mario chose to ingest the weekly auction reports only (2026-10-03).",
+   "used": true,
+   "aliases": [],
+   "notes": "Optional: confirm in writing with IndustryIntelligence@gov.mb.ca that the weekly reports have no third-party restrictions.",
+   "short": "Manitoba Agriculture"
   },
   "mapa_es": {
    "name": "Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
@@ -572,23 +572,23 @@
    "url": "https://visionet.franceagrimer.fr/",
    "country": "FR",
    "licenseId": "LO-2.0",
-   "licenseName": "Licence Ouverte / Open Licence 2.0 (Etalab) on the data.gouv.fr copies; VISIONet footer reads 'tous droits réservés'",
+   "licenseName": "Licence Ouverte 2.0 (Etalab) / datos públicos de FranceAgriMer: reutilización libre y gratuita citando la fuente",
    "licenseUrl": "https://www.data.gouv.fr/",
-   "commercialUse": "conditional",
-   "derivatives": "conditional",
-   "redistribution": "conditional",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
    "attributionRequired": true,
    "attributionText": "Source : FranceAgriMer – Données originales téléchargées depuis https://visionet.franceagrimer.fr/ – Licence Ouverte 2.0",
-   "additionalRestrictions": "Contradiction: data.gouv.fr copies are LO 2.0 but the VISIONet site says all rights reserved. Treat VISIONet-only series as unlicensed until FranceAgriMer confirms in writing or the series is found on data.gouv.fr.",
+   "additionalRestrictions": "Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre derechos de terceros.",
    "thirdPartyExceptions": true,
    "thirdPartyNote": "LO 2.0 does not cover third-party rights.",
-   "verifiedAt": "2026-10-01",
-   "status": "PENDING",
+   "verifiedAt": "2026-10-04",
+   "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "RNM legal notice (read 2026-10-01) allows reuse incl. commercial with source and data integrity, referring to the open licence; the VISIONet footer says all rights reserved. Conflicting statements for the VISIONet dataset in use, so it stays PENDING.",
+   "evidence": "Investigación del titular de Dehesa Index (4 oct 2026): todos los datos de FranceAgriMer son públicos y gratuitos siempre que se referencien. Coherente con el aviso legal del RNM (reutilización incluso comercial citando fuente) y con la Licence Ouverte 2.0 de data.gouv.fr; sustituye la duda previa sobre el pie «tous droits réservés» de VISIONet. Confianza media: la resolución viene de la investigación del titular, no de una carta de FranceAgriMer.",
    "used": true,
    "aliases": [],
-   "notes": null,
+   "notes": "Resuelto el 4 oct 2026: VERIFIED (antes PENDING por la contradicción VISIONet / Licence Ouverte).",
    "short": "FranceAgriMer"
   },
   "destatis": {
@@ -819,13 +819,13 @@
    "redistribution": "yes",
    "attributionRequired": true,
    "attributionText": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Defra.",
-   "additionalRestrictions": "No implied endorsement; excludes personal data, logos and third-party rights. Only the Agricultural Price Index dataset page was read; milk-price datasets and the statistics API not individually checked.",
+   "additionalRestrictions": "Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agricultural Price Index, leche (UK milk prices and composition), sacrificio y producción de carne (cattle, sheep and pig slaughter), Farm Business Income, censos de ganado, producción de cereales y colza, huevos y aves: todos «OGL v3.0 salvo indicación contraria» en GOV.UK. NO cubre las capas geoespaciales de Natural England/Defra con Non-Commercial Government Licence, las parcelas RPA para otros usuarios ni la Second Land Utilisation Survey (CC BY-NC-SA): ver defra_ncgl_geo y defra_rpa_land.",
    "thirdPartyExceptions": true,
    "thirdPartyNote": "OGL excludes third-party rights; check individual tables for third-party sourced data.",
-   "verifiedAt": "2026-10-01",
+   "verifiedAt": "2026-10-04",
    "status": "VERIFIED",
-   "confidence": "medium",
-   "evidence": "The data.gov.uk page for Defra's Agricultural Price Index states all content is available under OGL v3.0.",
+   "confidence": "high",
+   "evidence": "GOV.UK muestra «All content is available under the Open Government Licence v3.0, except where otherwise stated» en las páginas de los datasets usados (leídas el 4 oct 2026) y el titular de Dehesa Index confirmó la lectura. Cada dataset nuevo se comprueba por separado.",
    "used": true,
    "aliases": [],
    "notes": null,
@@ -1044,7 +1044,7 @@
    "evidence": "The terms bar automated access and scraping, commercial exploitation and republishing elsewhere; only limited personal or internal use is licensed.",
    "used": false,
    "aliases": [],
-   "notes": null
+   "notes": "El titular de Dehesa Index confirmó (4 oct 2026) que casi todo AHDB requiere permiso: no se usa. Se retiró también su feed de noticias."
   },
   "cme": {
    "name": "CME Group (futures market data)",
@@ -1518,6 +1518,52 @@
    "aliases": [],
    "notes": "Declarada el 2026-10-03: ya se publicaba (js/data.js) sin figurar en el registro.",
    "short": "Agroseguro"
+  },
+  "defra_ncgl_geo": {
+   "commercialUse": "no",
+   "derivatives": "no",
+   "redistribution": "no",
+   "attributionRequired": true,
+   "thirdPartyExceptions": true,
+   "verifiedAt": "2026-10-04",
+   "used": false,
+   "aliases": [],
+   "notes": null,
+   "country": "UK",
+   "name": "Defra / Natural England capas geoespaciales (NCGL, CC BY-NC-SA)",
+   "url": "https://environment.data.gov.uk/",
+   "licenseId": "NCGL",
+   "licenseName": "Non-Commercial Government Licence / CC BY-NC-SA 4.0",
+   "licenseUrl": "https://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/",
+   "status": "BLOCKED",
+   "confidence": "high",
+   "additionalRestrictions": "Uso comercial prohibido. Incluye Peaty Soils Location, Moorland Deep Peat, capas de riesgo de tritón crestado y la Second Land Utilisation Survey (CC BY-NC-SA 4.0). No se usan.",
+   "evidence": "Informe de licencias DEFRA aportado por el titular (4 oct 2026): estas capas están bajo NCGL o CC BY-NC-SA, incompatibles con un sitio que pueda monetizarse.",
+   "attributionText": null,
+   "thirdPartyNote": "Múltiples derechos de terceros (Ordnance Survey, UKCEH, etc.)."
+  },
+  "defra_rpa_land": {
+   "commercialUse": "no",
+   "derivatives": "no",
+   "redistribution": "no",
+   "attributionRequired": true,
+   "thirdPartyExceptions": true,
+   "verifiedAt": "2026-10-04",
+   "used": false,
+   "aliases": [],
+   "notes": null,
+   "country": "UK",
+   "name": "RPA Land Parcels / Land Covers / Hedge Control",
+   "url": "https://environment.data.gov.uk/",
+   "licenseId": "CUSTOM",
+   "licenseName": "Licencia especial según tipo de usuario",
+   "licenseUrl": null,
+   "status": "PENDING",
+   "confidence": "medium",
+   "additionalRestrictions": "Defra indica que no están disponibles para «otros usuarios»; agricultores y agentes tienen condiciones propias. No se ingiere como dataset general. Excepción posible: RPA Parcel Points (England), publicado bajo OGL.",
+   "evidence": "Informe de licencias DEFRA aportado por el titular (4 oct 2026).",
+   "attributionText": null,
+   "thirdPartyNote": "Múltiples derechos de terceros (Ordnance Survey, UKCEH, etc.)."
   }
  },
  "files": {
@@ -1661,7 +1707,7 @@
    "sources": [
     "franceagrimer"
    ],
-   "notes": "Estado semanal del maiz grano (Cere'Obs, FranceAgriMer; data.gouv.fr declara Licence Ouverte 2.0 pero el Excel dice 'tous droits reserves'): sigue PENDING hasta aclararlo por escrito con FranceAgriMer."
+   "notes": "Estado semanal del maiz grano (Cere'Obs, FranceAgriMer). Licencia resuelta el 4 oct 2026: datos públicos y gratuitos citando la fuente (VERIFIED)."
   },
   "data/denmark-prices.json": {
    "sources": [
@@ -2020,6 +2066,11 @@
     "statcan"
    ],
    "notes": "Seguro de cosechas de Canada por provincia: indemnizaciones (32-10-0045, Crop insurance payments y Private Hail Insurance) y gasto de las explotaciones en seguro de cosechas y granizo (32-10-0049), copiados de Statistics Canada sin transformar salvo la agrupacion por provincia y ano."
+  },
+  "data/uk-stats.json": {
+   "byCountry": {
+    "UK": "defra"
+   }
   }
  },
  "derived": [
@@ -2062,10 +2113,6 @@
  "pendingBaseline": {
   "note": "Fuentes PENDING que ya se publicaban antes del License Gate estricto. check-licenses.py --strict falla si una fuente PENDING en uso NO figura aqui (ninguna fuente nueva puede publicarse sin verificar) y avisa por cada una de las listadas. Quitar una fuente de esta lista al resolverla; --strict-all falla mientras la lista no este vacia.",
   "sources": {
-   "franceagrimer": {
-    "since": "2026-10-01",
-    "nextAction": "Confirmar con FranceAgriMer la licencia aplicable a VISIONet o migrar a los datasets Licence Ouverte 2.0 de data.gouv.fr."
-   },
    "ble": {
     "since": "2026-10-01",
     "nextAction": "Leer la pagina de Open Data de BLE (bloqueada por robots.txt) o pedir licencia; alternativa: Destatis DL-DE-BY."

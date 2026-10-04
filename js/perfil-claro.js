@@ -148,8 +148,43 @@
     var parts = s.split(/,\s+/); if (parts.length > 1) { var o = parts.map(function (p) { return term(p, k); }); if (o.every(Boolean)) return o.join(', '); }
     return null;
   }
+  // ---------- Reino Unido (Defra): plantillas propias para scripts/update-uk-defra.py; [es, fr, it] ----------
+  var UKC = {
+    'Prime cattle (steers, heifers, young bulls)': ['Vacuno cebado (novillos, novillas y toretes)', 'Gros bovins finis (bœufs, génisses, jeunes taureaux)', 'Bovini da carne (manzi, giovenche, giovani tori)'],
+    'Adult cattle (cows, adult bulls)': ['Vacuno adulto (vacas y toros)', 'Bovins adultes (vaches, taureaux)', 'Bovini adulti (vacche, tori)'],
+    'Calves': ['Terneros', 'Veaux', 'Vitelli'], 'Steers': ['Novillos', 'Bœufs', 'Manzi'], 'Heifers': ['Novillas', 'Génisses', 'Giovenche'],
+    'Young bulls': ['Toretes', 'Jeunes taureaux', 'Giovani tori'], 'Cows': ['Vacas', 'Vaches', 'Vacche'], 'Adult bulls': ['Toros adultos', 'Taureaux adultes', 'Tori adulti'],
+    'Sheep and lambs': ['Ovino y corderos', 'Ovins et agneaux', 'Ovini e agnelli'], 'Ewes and rams': ['Ovejas y carneros', 'Brebis et béliers', 'Pecore e montoni'],
+    'Clean pigs': ['Cerdos de cebo', 'Porcs charcutiers', 'Suini da macello'], 'Sows and boars': ['Cerdas y verracos', 'Truies et verrats', 'Scrofe e verri'],
+    'Beef and veal': ['Vacuno y ternera', 'Viande bovine et veau', 'Carne bovina e vitello'], 'Mutton and lamb': ['Ovino (cordero y carnero)', 'Viande ovine', 'Carne ovina'], 'Pigmeat': ['Porcino', 'Viande porcine', 'Carne suina'],
+    'Cattle and calves, total': ['Vacuno total (con terneros)', 'Bovins au total (avec veaux)', 'Bovini totali (con vitelli)'], 'Beef herd (breeding females)': ['Vacas nodrizas (hembras reproductoras de carne)', 'Vaches allaitantes', 'Vacche da carne'],
+    'Dairy herd (breeding females)': ['Vacas lecheras', 'Vaches laitières', 'Vacche da latte'], 'Pigs, total': ['Cerdos, total', 'Porcins, total', 'Suini, totale'], 'Female breeding herd': ['Cerdas reproductoras', 'Truies reproductrices', 'Scrofe riproduttrici'],
+    'Sheep and lambs, total': ['Ovino y corderos, total', 'Ovins et agneaux, total', 'Ovini e agnelli, totale'], 'Female breeding flock': ['Ovejas reproductoras', 'Brebis reproductrices', 'Pecore riproduttrici'],
+    'Wheat': ['Trigo', 'Blé', 'Frumento'], 'Barley': ['Cebada', 'Orge', 'Orzo'], 'Oats': ['Avena', 'Avoine', 'Avena'], 'Oilseed rape': ['Colza', 'Colza', 'Colza'],
+    'All Types': ['Todos los tipos', 'Tous types', 'Tutti i tipi'], 'Cereals': ['Cereales', 'Céréales', 'Cereali'], 'General cropping': ['Cultivos generales', 'Grandes cultures', 'Colture generali'], 'Dairy': ['Vacuno de leche', 'Lait', 'Latte'],
+    'Lowland grazing livestock': ['Ganado de pasto en tierras bajas', 'Élevage en plaine', 'Allevamento in pianura'], 'LFA grazing livestock': ['Ganado de pasto en zonas desfavorecidas', 'Élevage en zones défavorisées', 'Allevamento in zone svantaggiate'],
+    'Specialist pigs': ['Porcino especializado', 'Porcins spécialisés', 'Suini specializzati'], 'Specialist poultry': ['Avicultura especializada', 'Volailles spécialisées', 'Avicoltura specializzata'], 'Mixed': ['Mixtas', 'Mixtes', 'Miste'], 'Horticulture': ['Horticultura', 'Horticulture', 'Orticoltura']
+  };
+  var UKT = [
+    [/^Slaughterings: (.+) \(head\)$/, ['Sacrificios: {c} (cabezas)', 'Abattages : {c} (têtes)', 'Macellazioni: {c} (capi)']],
+    [/^Average dressed carcase weight: (.+) \(kg per head\)$/, ['Peso medio de la canal: {c} (kg por cabeza)', 'Poids moyen de carcasse : {c} (kg par tête)', 'Peso medio della carcassa: {c} (kg a capo)']],
+    [/^Meat production: (.+) \(tonnes\)$/, ['Producción de carne: {c} (toneladas)', 'Production de viande : {c} (tonnes)', 'Produzione di carne: {c} (tonnellate)']],
+    [/^Farm Business Income, England: (.+) \(GBP per farm, current prices\)$/, ['Renta de la explotación (Farm Business Income), Inglaterra: {c} (GBP por explotación, precios corrientes)', 'Revenu de l’exploitation (Farm Business Income), Angleterre : {c} (GBP par exploitation, prix courants)', 'Reddito aziendale (Farm Business Income), Inghilterra: {c} (GBP per azienda, prezzi correnti)']],
+    [/^Livestock on holdings at 1 June: (.+) \(head\)$/, ['Ganado en explotaciones a 1 de junio: {c} (cabezas)', 'Cheptel dans les exploitations au 1er juin : {c} (têtes)', 'Capi nelle aziende al 1° giugno: {c} (capi)']],
+    [/^Yield: (.+), United Kingdom \(t\/ha\)$/, ['Rendimiento: {c}, Reino Unido (t/ha)', 'Rendement : {c}, Royaume-Uni (t/ha)', 'Resa: {c}, Regno Unito (t/ha)']],
+    [/^Area: (.+), United Kingdom \(hectares\)$/, ['Superficie: {c}, Reino Unido (hectáreas)', 'Superficie : {c}, Royaume-Uni (hectares)', 'Superficie: {c}, Regno Unito (ettari)']]
+  ];
+  function ukTl(label, k) { // k: 1=es, 2=fr, 3=it
+    for (var i = 0; i < UKT.length; i++) {
+      var m = UKT[i][0].exec(label); if (!m) continue;
+      var c = UKC[m[1]]; if (!c) return null;
+      return UKT[i][1][k - 1].replace('{c}', c[k - 1]);
+    }
+    return null;
+  }
   function tl(label, lang) {
     var k = li(lang); if (!label || k === 0) return label;
+    var uk = ukTl(String(label), k); if (uk) return uk;
     var s = String(label), tail = '', m;
     m = /\s+\((monthly|annual|weekly|quarterly|half-year)\)$/.exec(s); if (m) { tail = ' (' + FREQ[m[1]][L.indexOf(lang)] + ')'; s = s.slice(0, m.index); }
     var idx = s.indexOf(': '), head = idx > -1 ? s.slice(0, idx) : s, rest = idx > -1 ? s.slice(idx + 2) : '', h;

@@ -80,7 +80,6 @@
     markets: { label: L('Mercados', 'Markets', 'Marchés', 'Mercati'), items: [
       pg('precios.html', L('Precios de todos los productos', 'Prices for every product', 'Prix de tous les produits', 'Prezzi di tutti i prodotti')),
       pg('producto.html', L('Ficha de producto', 'Product page', 'Fiche produit', 'Scheda prodotto'), '?p=trigo'),
-      pg('precios-locales.html', L('Ofertas locales del grano (EE. UU.)', 'Local grain bids (US)', 'Offres locales de grains (É.-U.)', 'Offerte locali dei cereali (USA)')),
       pg('europa.html', L('Precios de la UE (todos los países)', 'EU prices (all countries)', 'Prix de l’UE (tous les pays)', 'Prezzi UE (tutti i paesi)')),
       { file: 'index.html', hash: '#home-dehesa-index', noActive: true, label: L('Índice Dehesa (UE, EE. UU. y Canadá)', 'Dehesa Index (EU, US and Canada)', 'Indice Dehesa (UE, États-Unis et Canada)', 'Indice Dehesa (UE, Stati Uniti e Canada)') },
       { label: L('Mercado y comercio', 'Market and trade', 'Marché et commerce', 'Mercato e commercio'), items: [
@@ -113,7 +112,8 @@
       ctry('DK', 'Dinamarca', 'Denmark', 'Danemark', 'Danimarca'),
       ctry('NL', 'Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi'),
       ctry('CA', 'Canadá', 'Canada', 'Canada', 'Canada'),
-      ctry('AU', 'Australia', 'Australia', 'Australie', 'Australia')
+      ctry('AU', 'Australia', 'Australia', 'Australie', 'Australia'),
+      ctry('UK', 'Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito')
     ] },
     intel: { label: L('Inteligencia', 'Intelligence', 'Intelligence', 'Intelligence'), items: [
       pg('brief.html', L('Qué ha cambiado hoy', 'What changed today', 'Ce qui a changé aujourd’hui', 'Cosa è cambiato oggi')),
@@ -138,6 +138,7 @@
   };
   function currentFile() { var f = window.location.pathname.split('/').pop(); return f || 'index.html'; }
   function leafActive(i) {
+    if (i.query === '?c=US' && currentFile() === 'precios-locales.html') return true; // perfil de EE. UU.: aquí vive el grano local
     if (i.noActive || i.file !== currentFile()) return false;
     if (i.query && i.query.indexOf('?c=') === 0) { var c = (new URLSearchParams(window.location.search).get('c') || 'ES').toUpperCase(); return c === i.query.slice(3); }
     return true;

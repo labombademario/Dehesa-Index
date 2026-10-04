@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 45 VERIFIED, 11 PENDING, 4 RESTRICTED, 3 BLOCKED; 6001 series en el catalogo unificado.
+Resumen: 46 VERIFIED, 11 PENDING, 4 RESTRICTED, 4 BLOCKED; 6052 series en el catalogo unificado.
 
-## VERIFIED (45)
+## VERIFIED (46)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -20,7 +20,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `boe_es` | Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada | ES | CUSTOM | si/si | si | 0 | No desnaturalizar el sentido; citar la fuente con enlace a https://www.boe.es; no sugerir carácter oficial ni patrocinio del BOE; en legisla… |
 | `cbs_nl` | Statistics Netherlands (CBS StatLine) | NL | CUSTOM | si/si | si | 67 | Cite CBS as the source (mandatory); state when figures are modified or derived. The separate Dutch 'Disclaimer open data' text was not read. |
 | `cgc` | Canadian Grain Commission — Grain Statistics Weekly | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
-| `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 12 | No implied endorsement; excludes personal data, logos and third-party rights. Only the Agricultural Price Index dataset page was read; milk-… |
+| `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 63 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agric… |
 | `destatis` | Destatis (GENESIS-Online) | DE | DL-DE-BY-2.0 | si/si | si | 136 | Modifications must be marked as such. |
 | `dst_dk` | Statistics Denmark (StatBank) | DK | CC-BY-4.0 | si/si | si | 47 | Disclose modifications; the Statistics Denmark logo cannot be used. |
 | `ecb` | European Central Bank (euro reference rates, ECB Data Portal) | EU | ESCB-REUSE | si/conditional | si | 2 | Statistics must not be modified and must be used in accordance with the ECB disclaimers. Dehesa shows ECB series as published; any computed … |
@@ -31,6 +31,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `eu_taric` | European Commission — TARIC / EU customs tariff (DG TAXUD) | EU | EU-REUSE-2011-833 | si/conditional | si | 0 | Reuse conditions of Art. 6: acknowledge the source, do not alter the meaning of the documents, Commission disclaimers apply. Derived figures… |
 | `eurostat` | Eurostat | EU | EU-REUSE-2011-833 | conditional/si | si | 471 | Modified data must be flagged prominently with a note that Eurostat is not responsible for the changes. Logos and trademarks excluded. |
 | `eurostat_comext` | Eurostat — Comext international trade in goods | EU | EU-REUSE-2011-833 | conditional/si | si | 513 | Modified data must be flagged. Not commercially redisseminable: EFTA reporters' trade data and Austria trade data at CN 8-digit level (keep … |
+| `franceagrimer` | FranceAgriMer (VISIONet) | FR | LO-2.0 | si/si | si | 47 | Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre d… |
 | `hmrc_govuk` | HM Revenue & Customs - GOV.UK VAT guidance | GB | OGL-UK-3.0 | si/si | si | 0 | Third-party material and logos excluded. Same licence the registry already applies to GOV.UK content from Defra. |
 | `ine_es` | Instituto Nacional de Estadística (España) | ES | CC-BY-4.0 | si/si | si | 0 | Citar la fuente («Fuente: Sitio web del INE: www.ine.es»; con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web de… |
 | `ine_pt` | INE — Statistics Portugal | PT | CC-BY-4.0 | si/si | si | 547 | INE's own terms page and API terms could not be read (robots.txt); verified on one INE dataset page on dados.gov.pt. |
@@ -69,7 +70,7 @@ licencia poco clara, silenciosa o no verificable: se sigue usando solo si ya est
 | `alberta_ag` | Alberta Agriculture and Irrigation — Weekly Market Review | CA | OGL-Alberta | si/si | si | 9 | No suggestion of official status; excludes personal information, logos and trademarks. |
 | `ble` | BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de) | DE | UNKNOWN | unclear/unclear | si | 129 | open-data.ble.de blocks automated fetching via robots.txt; check each dataset's licence on the portal or GovData, or ask opendata@ble.de. |
 | `cbsa_tariff` | Canada Border Services Agency — Customs Tariff | CA | UNKNOWN | unclear/unclear | si | 0 | Under the Canada.ca terms, commercial redistribution of Government of Canada content needs prior written permission; non-commercial reproduc… |
-| `franceagrimer` | FranceAgriMer (VISIONet) | FR | LO-2.0 | conditional/conditional | si | 47 | Contradiction: data.gouv.fr copies are LO 2.0 but the VISIONet site says all rights reserved. Treat VISIONet-only series as unlicensed until… |
+| `defra_rpa_land` | RPA Land Parcels / Land Covers / Hedge Control | UK | CUSTOM | no/no | si | 0 | Defra indica que no están disponibles para «otros usuarios»; agricultores y agentes tienen condiciones propias. No se ingiere como dataset g… |
 | `gep_pt` | GEP — Gabinete de Estratégia e Planeamento (MTSSS, Portugal) | PT | UNKNOWN | unclear/unclear | si | 0 | Los «Termos e Condições» del BTE Online (leídos 2026-10-01) solo tratan privacidad y estadísticas de acceso; no dicen nada sobre reutilizaci… |
 | `sima_gpp` | Portugal — SIMA (GPP) weekly prices | PT | UNKNOWN | unclear/unclear | si | 0 | Written authorisation from the GPP would be required before use. |
 | `snice_mx` | Mexico — Secretaría de Economía (SNICE, LIGIE tariff) | MX | UNKNOWN | unclear/unclear | no | 0 | If Libre Uso MX applied it would allow commercial use and derivatives with attribution; written confirmation from the Secretaría de Economía… |
@@ -87,7 +88,7 @@ la reutilizacion tiene limites incompatibles con un sitio comercial (no comercia
 | `faostat` | FAO — FAOSTAT | INT | CC-BY-4.0 | no/si | si | 0 | Datasets may not be used for or in conjunction with the promotion of a commercial enterprise or its products or services; no FAO sponsorship… |
 | `mla` | Australia — Meat & Livestock Australia (MLA) | AU | CUSTOM | unclear/unclear | si | 0 | Ask MLA for access/licence before any use. |
 
-## BLOCKED (3)
+## BLOCKED (4)
 
 los terminos prohiben el acceso automatico o la redistribucion: no se usa.
 
@@ -95,6 +96,7 @@ los terminos prohiben el acceso automatico o la redistribucion: no se usa.
 |---|---|---|---|---|---|---|---|
 | `ahdb` | AHDB (UK Agriculture and Horticulture Development Board) | UK | CUSTOM | no/no | si | 0 | Bans commercial exploitation, spiders/crawlers/scraping and republishing without written permission. |
 | `cme` | CME Group (futures market data) | US | CUSTOM | no/no | no | 0 | Personal, non-commercial, revocable website licence; bans redistribution, derivative works, scripts, robots and crawlers. |
+| `defra_ncgl_geo` | Defra / Natural England capas geoespaciales (NCGL, CC BY-NC-SA) | UK | NCGL | no/no | si | 0 | Uso comercial prohibido. Incluye Peaty Soils Location, Moorland Deep Peat, capas de riesgo de tritón crestado y la Second Land Utilisation S… |
 | `dtn` | DTN / Progressive Farmer (fertilizer prices) | US | CUSTOM | no/no | no | 0 | Use, copying, publication or distribution of DTN materials requires express prior written permission. |
 
 ## Como anadir una fuente

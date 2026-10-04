@@ -3,7 +3,7 @@
 _G = {
  "US": "AgWeb;Agri-Pulse;Brownfield;CNBC;DTN;Dairy Herd;EIA;Farm Policy News;Farm Progress;Farmdoc Daily;Feedstuffs;Hoard's Dairyman;POLITICO;Successful Farming;USDA;USDA APHIS;USDA ERS;USDA FAS;Wall Street Journal",
  "CA": "Agriculture and Agri-Food Canada;Alberta Farmer Express;CBC;Canada Beef;Canadian Cattlemen;Canadian Federation of Agriculture;Canadian Grain Commission;Canadian Press;Canola Council of Canada;Country Guide;Dairy Farmers of Canada;Farmers Forum;Farmtario;Financial Post;Globe and Mail;Grainews;Manitoba Co-operator;Pulse Canada;RealAgriculture;Saskatchewan Agriculture;Statistics Canada;Top Crop Manager;Western Producer;La Presse;La Terre de chez nous;Le Bulletin des agriculteurs",
- "GB": "AHDB;Defra;Farmers Guardian;Farmers Weekly;NFU",
+ "GB": "Defra;Farmers Guardian;Farmers Weekly;NFU",
  "ES": "Agrodigital;Agroeuropa;Agroinformación;Agronews Castilla y León;Agropopular;EFEAgro;Efeagro;Interempresas;EFE",
  "FR": "AGRA;Agra Presse;Agreste;Arvalis;FNSEA;FranceAgriMer;Interbev;L'Agriculteur Normand;La France Agricole;Le Monde;Les Echos;Ouest-France;Pleinchamp;Réussir;Terre-net;Web-agri",
  "DE": "Agrarheute;Agrarmarkt;Agrarzeitung;BLE;BauernZeitung;Bundesministerium für Landwirtschaft;Deutscher Bauernverband;Handelsblatt;Landwirtschaftsverlag;dpa;top agrar",

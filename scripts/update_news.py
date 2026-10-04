@@ -232,7 +232,6 @@ FEEDS = [
     F("Australian Wool Innovation", "global", google("(wool OR prices OR Australia OR auction OR micron OR indicator OR AWEX)"), pub=True),
 
     # ── Reino Unido ──
-    F("AHDB", "uk", google("site:ahdb.org.uk agriculture wheat barley dairy livestock cereals market")),
     F("NFU", "uk", google("site:nfuonline.com farming agriculture food trade policy wheat dairy livestock")),
 
     # ── Instituciones y organismos oficiales (Google, sus RSS no están accesibles) ──
@@ -323,7 +322,7 @@ FEEDS = [
     F("", "eu", google("EU CAP reform budget farmers Commission"), pub=True),
     F("", "eu", google("EU Ukraine agricultural imports quotas farmers"), pub=True),
     F("", "eu", google("Euronext wheat rapeseed maize prices MATIF"), pub=True),
-    F("", "uk", google("UK farmers wheat harvest prices AHDB"), pub=True),
+    F("", "uk", google("UK farmers wheat harvest prices"), pub=True),
     F("", "uk", google("UK farming policy Defra food prices"), pub=True),
     F("", "eu", google("precios cereales trigo maíz cebada lonja", "es"), "es", pub=True),
     F("", "eu", google("precios vacuno porcino cordero lonja", "es"), "es", pub=True),
@@ -427,7 +426,7 @@ BLOCK_HINTS = {
 GLOBAL_HINTS = ["brazil", "brasil", "argentina", "china", "chinese", "india", "australia", "ukraine", "ukrainian", "russia", "russian", "black sea", "kazakhstan", "vietnam", "thailand", "indonesia", "malaysia", "egypt", "turkey", "africa", "japan", "mexico", "paraguay", "uruguay", "ucrania", "rusia", "mar negro", "mer noire", "ucraina", "cina", "giappone", "japon", "inde"]
 
 TRUSTED = {"Reuters", "Associated Press", "AFP", "EFE", "Bloomberg", "Financial Times", "Wall Street Journal", "USDA", "USDA FAS", "USDA ERS", "USDA APHIS",
-           "European Commission", "FAO", "OECD", "WTO", "EIA", "IEA", "World Bank", "WOAH", "International Grains Council", "Defra", "AHDB", "Lusa", "APA", "dpa", "ANP", "Ritzau", "Belga", "Canadian Press", "AAP", "FranceAgriMer", "Agreste", "GPP", "ABARES", "BLE"}
+           "European Commission", "FAO", "OECD", "WTO", "EIA", "IEA", "World Bank", "WOAH", "International Grains Council", "Defra", "Lusa", "APA", "dpa", "ANP", "Ritzau", "Belga", "Canadian Press", "AAP", "FranceAgriMer", "Agreste", "GPP", "ABARES", "BLE"}
 
 def norm(s):
     s = unicodedata.normalize("NFKD", (s or "").lower())
