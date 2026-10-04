@@ -60,8 +60,8 @@
 function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
     function page() {
     var x = t(), c = com(), nm = P.names(), at = P.attrs();
-    document.title = x.title + ' | Dehesa Index';
-    document.getElementById('pg-h1').textContent = x.title; document.getElementById('pg-sub').textContent = x.sub;
+    if (!(window.ODSpain && window.ODSpain.active())) { document.title = x.title + ' | Dehesa Index';
+    document.getElementById('pg-h1').textContent = x.title; document.getElementById('pg-sub').textContent = x.sub; }
     if (!c.marketYears || c.marketYears.indexOf(SEL.my) < 0) SEL.my = c.latestMarketYear;
     var my = SEL.my, prevMy = my - 1, hasPrev = c.marketYears.indexOf(prevMy) >= 0;
     var opts = DATA.commodities.map(function (d) { return '<option value="' + d.id + '"' + (d.id === c.id ? ' selected' : '') + '>' + esc(nm[d.id] || d.id) + '</option>'; }).join('');
@@ -135,7 +135,7 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
   if (isPage) window.DehesaShared.init('informacion');
   (isPage || !window.DIHome ? P.load('data/supply-demand.json') : window.DIHome.summary().then(function (s) { return s.supplyDemand; }).catch(function () { return null; })).then(function (d) {
     if (!d) { if (isPage) document.getElementById('od-body').innerHTML = '<p class="di-movers-hint">' + t().noData + '</p>'; return; }
-    DATA = d; SEL.c = 'trigo'; if (isPage) { var qc = new URLSearchParams(window.location.search).get('c'); if (qc && DATA.commodities.some(function (x) { return x.id === qc; })) SEL.c = qc; } var go = function () { if (isPage) page(); teaser(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
+    DATA = d; SEL.c = 'trigo'; if (isPage) { var qc = new URLSearchParams(window.location.search).get('c'); if (qc && DATA.commodities.some(function (x) { return x.id === qc; })) SEL.c = qc; } window.__odWorldRender = function () { if (isPage) page(); }; var go = function () { if (isPage) page(); teaser(); }; (window.DICite ? window.DICite.load() : Promise.resolve()).then(go, go);
     var prev = window.DehesaShared.onLangChange;
     window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); if (isPage) page(); teaser(); };
   });

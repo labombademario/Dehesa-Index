@@ -1,0 +1,105 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Espana: balances de cereales (MAPA), una campaña por clave",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "checkedAt",
+  "source",
+  "unit",
+  "cereals",
+  "items",
+  "campaigns"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "checkedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "mapa_es"
+     ]
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "unit": {
+   "type": "string"
+  },
+  "marketingYear": {
+   "type": "string"
+  },
+  "cereals": {
+   "type": "array",
+   "minItems": 9
+  },
+  "items": {
+   "type": "array",
+   "minItems": 16
+  },
+  "campaigns": {
+   "type": "object",
+   "minProperties": 5,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "label",
+     "v",
+     "notes"
+    ],
+    "properties": {
+     "label": {
+      "type": "string",
+      "pattern": "^\\d{4}/\\d{2}$"
+     },
+     "status": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "edition": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "pdf": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "v": {
+      "type": "object",
+      "minProperties": 9
+     },
+     "notes": {
+      "type": "array"
+     }
+    }
+   }
+  }
+ }
+}

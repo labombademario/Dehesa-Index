@@ -60,6 +60,18 @@ sources:
     data: [spain-livestock/index.json, spain-livestock-log.txt]
     extra: ['!data/spain-livestock']
     message: Datos efectivos de ganado de España por provincia (MAPA)
+  - id: spain-balances
+    name: Update Spain cereal balance sheets (MAPA)
+    cron: ['35 7 * * 4']
+    script: scripts/update-spain-balances.py
+    pre: ['sudo apt-get install -y -q poppler-utils >/dev/null']
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-balances)
+    data: [spain-balances/cereals.json, spain-balances-log.txt]
+    extra: ['!data/spain-balances']
+    message: Datos balances de cereales de España (MAPA)
   - id: austria
     name: Update Austria (Eurostat)
     cron: ['25 16 * * 2,5']

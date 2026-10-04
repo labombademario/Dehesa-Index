@@ -1873,6 +1873,12 @@
    ],
    "notes": "Cultivos de España por provincia (scripts/update-spain-crops.py): superficies, producciones y rendimientos de la estadística «Superficies y producciones anuales de cultivos» del MAPA (Reglamento CE 543/2009), leídos de la hoja de base de datos de los libros Excel que publica el propio MAPA; datos provisionales de la campaña que indica cada enlace. La página del MAPA de esta estadística no declara una licencia propia para estos libros: se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente, manteniendo fechas de actualización; contenido de terceros excluido), con confianza media. Se conservan la campaña, el estado «provisional» y la fecha de la última comprobación (data/spain-crops/index.json) y se cita la fuente en la ficha de España. El rendimiento (producción ÷ superficie cosechada) lo calcula Dehesa Index y se rotula como cifra derivada. No es el recuento de ESYRCE."
   },
+  "data/spain-balances/": {
+   "sources": [
+    "mapa_es"
+   ],
+   "notes": "Balances de cereales de España (scripts/update-spain-balances.py): superficie, rendimiento, producción, existencias iniciales y finales, importaciones, consumo interno (pienso, semillas, alimentación humana, usos industriales, bioetanol, pérdidas) y exportaciones de trigo blando y duro, cebada, maíz, centeno, avena, sorgo y triticale, por campaña de comercialización (1 jul-30 jun) desde 2016/17, leídos de los PDF «Balances de cereales de España» de la Subdirección General de Cultivos Herbáceos e Industriales y Aceite de Oliva del MAPA. Licencia: el titular de Dehesa Index confirma (3 oct 2026) que la información de los organismos públicos de España es de reutilización libre y sin término de uso siempre que se cite la fuente; además se cubre con el aviso legal general del MAPA ya registrado en mapa_es. Se guardan las cifras tal cual (celdas vacías = null); el estado de cada campaña («estimación», «provisional») es el que pone el PDF. La columna TOTAL del PDF no siempre cuadra con la suma de los cereales (2019/20: consumo total 800 kt mayor; 2025/26: bioetanol del maíz 1.400 frente a 1.300 en el total): se publica tal cual y cada discrepancia queda anotada junto a la campaña. La fuente se cita junto a las cifras."
+  },
   "data/spain-livestock/": {
    "sources": [
     "mapa_es"

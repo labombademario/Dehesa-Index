@@ -569,6 +569,12 @@
    [
     "spain_livestock_index"
    ]
+  ],
+  "spain-balances/cereals.json": [
+   "spain-balances",
+   [
+    "spain_balances"
+   ]
   ]
  },
  "globs": {

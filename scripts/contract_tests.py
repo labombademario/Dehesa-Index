@@ -1784,6 +1784,32 @@ def spain_livestock_index(doc, errs, warns, stats):
     if doc["checkedAt"] < doc["generatedAt"]: errs.append("spain-livestock index: checkedAt anterior a generatedAt")
 
 
+def _sb_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_spain_balances", str(Path(__file__).resolve().parent / "update-spain-balances.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
+
+def spain_balances(doc, errs, warns, stats):
+    """Balances de cereales del MAPA. Por campaña y cereal: sin negativos; disponibilidades = existencias iniciales + produccion + importaciones; utilizaciones = consumo + exportaciones;
+    existencias finales = disponibilidades - utilizaciones; consumo = suma de sus partidas. Las discrepancias de la columna TOTAL del propio PDF no son error pero deben estar en `notes`
+    exactamente como las calcula el script (no se esconde ni se inventa ninguna). Existencias iniciales distintas de las finales de la campaña anterior: aviso."""
+    m = _sb_mod()
+    if doc["cereals"] != m.CEREALS or doc["items"] != m.ITEMS: errs.append("spain-balances: cereales o partidas distintos de los esperados"); return
+    camps = {}
+    for k, c in doc["campaigns"].items():
+        if not re.match(r"^\d{4}$", k): errs.append("spain-balances: campaña %r invalida" % k); return
+        y = int(k)
+        if c["label"] != "%d/%02d" % (y, (y + 1) % 100): errs.append("spain-balances %s: etiqueta %s" % (k, c["label"])); return
+        if set(c["v"]) != set(m.CEREALS) or any(set(v) != set(m.ITEMS) for v in c["v"].values()): errs.append("spain-balances %s: cereales o partidas incompletos" % k); return
+        camps[y] = c
+    e, w, notes = m.validate(camps)
+    errs.extend("spain-balances " + x for x in e[:5]); warns.extend("spain-balances " + x for x in w[:5])
+    for y, c in camps.items():
+        key = lambda L: sorted(json.dumps(x, sort_keys=True) for x in L)
+        if key(c["notes"]) != key(notes[y]): errs.append("spain-balances %d: las notas no coinciden con las discrepancias reales de la tabla" % y)
+    stats["spain-balances campañas"] = len(camps)
+
+
 def ers_cost_reference(doc, errs, warns, stats):
     """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""
     keys = set(doc["map"])

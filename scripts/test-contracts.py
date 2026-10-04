@@ -19,7 +19,15 @@ def _sc(d): return d["campaigns"]["2024"]["crops"]
 def _scp(d):
     x = _sc(d)[0]; return x, next(iter(x["v"]))
 def _sl(d): return d["v"]
+def _sbv(d, y="2025"): return d["campaigns"][y]["v"]
 CASES = [
+ ("spain-balances/cereals.json", "produccion que rompe las disponibilidades de un cereal", lambda d: _sbv(d)["barley"].__setitem__("production", _sbv(d)["barley"]["production"] + 5000)),
+ ("spain-balances/cereals.json", "existencias finales que no cuadran", lambda d: _sbv(d)["maize"].__setitem__("endingStocks", _sbv(d)["maize"]["endingStocks"] + 900)),
+ ("spain-balances/cereals.json", "exportacion negativa", lambda d: _sbv(d)["oats"].__setitem__("exports", -3)),
+ ("spain-balances/cereals.json", "discrepancia del total escondida (nota borrada)", lambda d: d["campaigns"]["2019"]["notes"].clear()),
+ ("spain-balances/cereals.json", "discrepancia del total inventada (nota sin base)", lambda d: d["campaigns"]["2024"]["notes"].append({"item": "production", "printed": 1, "computed": 2, "rule": "x"})),
+ ("spain-balances/cereals.json", "etiqueta de campaña que no es la clave", lambda d: d["campaigns"]["2025"].__setitem__("label", "2024/25")),
+ ("spain-balances/cereals.json", "cereal que falta", lambda d: _sbv(d).pop("rye")),
  ("spain-livestock/livestock-bovino.json", "provincia que no suma el total nacional", lambda d: _sl(d)["ES"]["01"].__setitem__(-1, _sl(d)["ES"]["01"][-1] + 50000)),
  ("spain-livestock/livestock-bovino.json", "valor negativo", lambda d: _sl(d)["28"]["01"].__setitem__(-1, -5)),
  ("spain-livestock/livestock-bovino.json", "total nacional que no suma sus componentes", lambda d: (_sl(d)["ES"]["01"].__setitem__(-1, _sl(d)["ES"]["01"][-1] + 90000), [_sl(d)["28"]["01"].__setitem__(-1, _sl(d)["28"]["01"][-1] + 90000)])),
