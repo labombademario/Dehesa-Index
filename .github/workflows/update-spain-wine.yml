@@ -15,6 +15,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v6
+      - run: pip install openpyxl xlrd
       - id: fetch
         run: python3 scripts/update-spain-wine.py
         timeout-minutes: 12

@@ -100,6 +100,7 @@ sources:
     name: Update Spain livestock slaughter by species and region (MAPA)
     cron: ['25 8 * * 4']
     script: scripts/update-spain-slaughter.py
+    pre: ['pip install openpyxl xlrd']
     timeout: 15
     script_timeout: 8
     continue: true
@@ -123,6 +124,7 @@ sources:
     name: Update Spain wine by campaign and region (MAPA INFOVI)
     cron: ['45 8 * * 4']
     script: scripts/update-spain-wine.py
+    pre: ['pip install openpyxl xlrd']
     timeout: 20
     script_timeout: 12
     continue: true
@@ -134,6 +136,7 @@ sources:
     name: Update Spain wine month by month and region (MAPA INFOVI monthly report)
     cron: ['55 8 * * 4']
     script: scripts/update-spain-wine-monthly.py
+    pre: ['pip install openpyxl xlrd']
     timeout: 25
     script_timeout: 18
     continue: true
