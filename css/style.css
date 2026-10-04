@@ -1761,3 +1761,6 @@ html[data-density="expanded"] .pt-table td, html[data-density="expanded"] .pa-t 
   table.di-cards-m.di-rows-m tbody tr > :nth-child(n+4) { grid-column: 1 / -1; display: none; }
   table.di-cards-m.di-rows-m tbody tr.open > :nth-child(n+4) { display: flex; }
 }
+.pt-chip[data-catab][aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+#cof[hidden], #nd[hidden], #nl[hidden], #rd-ca[hidden], #gn-ca[hidden] { display: none !important; }
+#in-ca[hidden], #cs-ca[hidden] { display: none !important; }

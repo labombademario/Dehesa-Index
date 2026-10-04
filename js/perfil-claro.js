@@ -32,7 +32,15 @@
     ['Pig livestock', 'Ganado porcino', 'Cheptel porcin', 'Bestiame suino'],
     ['Production', 'Producción', 'Production', 'Produzione'],
     ['Area', 'Superficie', 'Superficie', 'Superficie'],
-    ['Yield', 'Rendimiento', 'Rendement', 'Resa']
+    ['Yield', 'Rendimiento', 'Rendement', 'Resa'],
+    ['Farm operating expenses', 'Gastos de explotación agraria', 'Dépenses d’exploitation agricole', 'Spese di esercizio agricole'],
+    ['Farm input price index', 'Índice de precios de insumos agrarios', 'Indice des prix des intrants agricoles', 'Indice dei prezzi degli input agricoli'],
+    ['Farm product price index', 'Índice de precios de productos agrarios', 'Indice des prix des produits agricoles', 'Indice dei prezzi dei prodotti agricoli'],
+    ['Fertilizer shipments to Canadian agriculture', 'Envíos de fertilizantes a la agricultura canadiense', 'Livraisons d’engrais à l’agriculture canadienne', 'Consegne di fertilizzanti all’agricoltura canadese'],
+    ['Farm income', 'Renta agraria', 'Revenu agricole', 'Reddito agricolo'],
+    ['Farm balance sheet, value at 1 July', 'Balance de las explotaciones, valor a 1 de julio', 'Bilan des exploitations, valeur au 1er juillet', 'Bilancio delle aziende, valore al 1° luglio'],
+    ['Farm debt outstanding', 'Deuda agraria pendiente', 'Dette agricole en cours', 'Debito agricolo in essere'],
+    ['Retail price', 'Precio al público', 'Prix de détail', 'Prezzo al pubblico']
   ];
   var TERM = [
     ['wheat', 'trigo', 'blé', 'grano'], ['durum wheat', 'trigo duro', 'blé dur', 'grano duro'], ['barley', 'cebada', 'orge', 'orzo'], ['oats', 'avena', 'avoine', 'avena'], ['rye', 'centeno', 'seigle', 'segale'],
@@ -47,7 +55,75 @@
     ['fertilisers and soil improvers', 'fertilizantes y enmiendas', 'engrais et amendements', 'fertilizzanti e ammendanti'], ['compound feedingstuffs', 'piensos compuestos', 'aliments composés', 'mangimi composti'], ['energy', 'energía', 'énergie', 'energia'],
     ['agri-food total', 'total agroalimentario', 'total agroalimentaire', 'totale agroalimentare'], ['extra-EU', 'extra-UE', 'extra-UE', 'extra-UE'], ['agri-food', 'agroalimentario', 'agroalimentaire', 'agroalimentare'], ['farm and fishing products', 'productos agrarios y de la pesca', 'produits agricoles et de la pêche', 'prodotti agricoli e della pesca'], ['beverages (incl. wine)', 'bebidas (incl. vino)', 'boissons (y compris vin)', 'bevande (incl. vino)'],
     ['wine', 'vino', 'vin', 'vino'], ['olive oil', 'aceite de oliva', 'huile d’olive', 'olio d’oliva'], ['total', 'total', 'total', 'totale'], ['harvested area', 'superficie cosechada', 'superficie récoltée', 'superficie raccolta'], ['harvested production', 'producción cosechada', 'production récoltée', 'produzione raccolta'],
-    ['yield', 'rendimiento', 'rendement', 'resa'], ['gross yield per ha', 'rendimiento bruto por ha', 'rendement brut par ha', 'resa lorda per ha'], ['seeds', 'semillas', 'semences', 'sementi'], ['sugar', 'azúcar', 'sucre', 'zucchero'], ['apples', 'manzanas', 'pommes', 'mele'], ['grapes', 'uva', 'raisin', 'uva']
+    ['yield', 'rendimiento', 'rendement', 'resa'], ['gross yield per ha', 'rendimiento bruto por ha', 'rendement brut par ha', 'resa lorda per ha'], ['seeds', 'semillas', 'semences', 'sementi'], ['sugar', 'azúcar', 'sucre', 'zucchero'], ['apples', 'manzanas', 'pommes', 'mele'], ['grapes', 'uva', 'raisin', 'uva'],
+    ['total expenses', 'gastos totales', 'dépenses totales', 'spese totali'],
+    ['operating expenses', 'gastos de explotación', 'dépenses d’exploitation', 'spese di esercizio'],
+    ['property taxes', 'impuestos sobre la propiedad', 'taxes foncières', 'imposte sulla proprietà'],
+    ['interest', 'intereses', 'intérêts', 'interessi'],
+    ['electricity', 'electricidad', 'électricité', 'elettricità'],
+    ['heating fuel', 'combustible de calefacción', 'combustible de chauffage', 'combustibile da riscaldamento'],
+    ['machinery fuel', 'combustible de maquinaria', 'carburant des machines', 'carburante per macchine'],
+    ['pesticides', 'plaguicidas', 'pesticides', 'pesticidi'],
+    ['seed', 'semillas', 'semences', 'sementi'],
+    ['feed', 'piensos', 'aliments du bétail', 'mangimi'],
+    ['livestock purchases', 'compra de ganado', 'achats de bétail', 'acquisti di bestiame'],
+    ['machinery repairs', 'reparación de maquinaria', 'réparation des machines', 'riparazione dei macchinari'],
+    ['depreciation', 'amortización', 'amortissement', 'ammortamento'],
+    ['wages', 'salarios', 'salaires', 'salari'],
+    ['fertiliser and lime', 'fertilizantes y cal', 'engrais et chaux', 'fertilizzanti e calce'],
+    ['farm input total', 'total de insumos agrarios', 'total des intrants agricoles', 'totale input agricoli'],
+    ['buildings', 'edificios', 'bâtiments', 'edifici'],
+    ['machinery and motor vehicles', 'maquinaria y vehículos', 'machines et véhicules automobiles', 'macchinari e veicoli'],
+    ['crop production', 'producción vegetal', 'production végétale', 'produzione vegetale'],
+    ['commercial seed and plant', 'semillas y plantas comerciales', 'semences et plants commerciaux', 'sementi e piante commerciali'],
+    ['fertilizer', 'fertilizantes', 'engrais', 'fertilizzanti'],
+    ['nitrogen fertilizers', 'fertilizantes nitrogenados', 'engrais azotés', 'fertilizzanti azotati'],
+    ['production insurance', 'seguro de producción', 'assurance-production', 'assicurazione della produzione'],
+    ['animal production', 'producción animal', 'production animale', 'produzione animale'],
+    ['commercial feed', 'piensos comerciales', 'aliments commerciaux du bétail', 'mangimi commerciali'],
+    ['ammonia (nh3)', 'amoníaco (NH3)', 'ammoniac (NH3)', 'ammoniaca (NH3)'],
+    ['urea ammonium nitrate (uan)', 'nitrato de urea y amonio (UAN)', 'nitrate d’urée et d’ammonium (UAN)', 'nitrato di urea e ammonio (UAN)'],
+    ['ammonium nitrate/calcium ammonium nitrate (an/can)', 'nitrato amónico / nitrato amónico cálcico (AN/CAN)', 'nitrate d’ammonium / nitrate d’ammonium et de calcium (AN/CAN)', 'nitrato di ammonio / nitrato di ammonio e calcio (AN/CAN)'],
+    ['ammonium sulphate (as)', 'sulfato amónico (AS)', 'sulfate d’ammonium (AS)', 'solfato di ammonio (AS)'],
+    ['monoammonium phosphate (map)', 'fosfato monoamónico (MAP)', 'phosphate monoammonique (MAP)', 'fosfato monoammonico (MAP)'],
+    ['diammonium phosphate (dap)', 'fosfato diamónico (DAP)', 'phosphate diammonique (DAP)', 'fosfato diammonico (DAP)'],
+    ['potash', 'potasa', 'potasse', 'potassa'],
+    ['other fertilizer products', 'otros fertilizantes', 'autres produits d’engrais', 'altri prodotti fertilizzanti'],
+    ['urea', 'urea', 'urée', 'urea'],
+    ['realized net income', 'renta neta realizada', 'revenu net réalisé', 'reddito netto realizzato'],
+    ['net income', 'renta neta', 'revenu net', 'reddito netto'],
+    ['cash receipts', 'ingresos en caja', 'recettes monétaires', 'entrate monetarie'],
+    ['net cash income', 'renta neta en caja', 'revenu net en espèces', 'reddito netto in contanti'],
+    ['total farm capital', 'capital agrario total', 'capital agricole total', 'capitale agricolo totale'],
+    ['livestock and poultry', 'ganado y aves', 'bétail et volaille', 'bestiame e pollame'],
+    ['land and buildings', 'tierra y edificios', 'terres et bâtiments', 'terra ed edifici'],
+    ['machinery and equipment', 'maquinaria y equipo', 'machines et matériel', 'macchinari e attrezzature'],
+    ['chartered banks', 'bancos comerciales', 'banques à charte', 'banche commerciali'],
+    ['federal agencies', 'organismos federales', 'organismes fédéraux', 'agenzie federali'],
+    ['provincial agencies', 'organismos provinciales', 'organismes provinciaux', 'agenzie provinciali'],
+    ['credit unions', 'cooperativas de crédito', 'caisses populaires', 'cooperative di credito'],
+    ['private lenders and suppliers', 'prestamistas privados y proveedores', 'prêteurs privés et fournisseurs', 'prestatori privati e fornitori'],
+    ['regular gasoline (self-service)', 'gasolina normal (autoservicio)', 'essence ordinaire (libre-service)', 'benzina normale (self-service)'],
+    ['diesel (self-service)', 'gasóleo (autoservicio)', 'diesel (libre-service)', 'gasolio (self-service)'],
+    ['crops', 'cultivos', 'cultures', 'colture'],
+    ['livestock', 'ganadería', 'élevage', 'zootecnia'],
+    ['canola', 'canola', 'canola', 'canola'],
+    ['grain corn', 'maíz grano', 'maïs-grain', 'mais da granella'],
+    ['hogs', 'cerdos', 'porcs', 'suini'],
+    ['canada', 'Canadá', 'Canada', 'Canada'],
+    ['saskatchewan', 'Saskatchewan', 'Saskatchewan', 'Saskatchewan'],
+    ['alberta', 'Alberta', 'Alberta', 'Alberta'],
+    ['manitoba', 'Manitoba', 'Manitoba', 'Manitoba'],
+    ['ontario', 'Ontario', 'Ontario', 'Ontario'],
+    ['quebec', 'Quebec', 'Québec', 'Québec'],
+    ['calgary', 'Calgary', 'Calgary', 'Calgary'],
+    ['edmonton', 'Edmonton', 'Edmonton', 'Edmonton'],
+    ['regina', 'Regina', 'Regina', 'Regina'],
+    ['saskatoon', 'Saskatoon', 'Saskatoon', 'Saskatoon'],
+    ['winnipeg', 'Winnipeg', 'Winnipeg', 'Winnipeg'],
+    ['toronto', 'Toronto', 'Toronto', 'Toronto'],
+    ['montréal', 'Montreal', 'Montréal', 'Montréal'],
+    ['vancouver', 'Vancouver', 'Vancouver', 'Vancouver']
   ];
   var FREQ = { monthly: ['mensual', 'monthly', 'mensuel', 'mensile'], annual: ['anual', 'annual', 'annuel', 'annuale'], weekly: ['semanal', 'weekly', 'hebdomadaire', 'settimanale'], quarterly: ['trimestral', 'quarterly', 'trimestriel', 'trimestrale'], 'half-year': ['semestral', 'half-year', 'semestriel', 'semestrale'] };
   var HM = {}, TM = {};
@@ -82,8 +158,8 @@
     else { var r = HM[head.toLowerCase()]; if (r) h = r[k]; else { var ch = term(head, k); if (!ch || !rest) return label; h = ch.charAt(0).toUpperCase() + ch.slice(1); } }
     if (!rest) return h + tail;
     // resto: «agri-food, HS 01-24», «Vegetables (2020=100)», «Wheat»…
-    var suffix = '', sm = /\s*(\(2\d{3}=100\)|\(price paid\)|\(producer price\))$/.exec(rest);
-    if (sm) { suffix = ' ' + sm[1].replace('(price paid)', '(' + ['', 'precio pagado', 'prix payé', 'prezzo pagato'][k] + ')').replace('(producer price)', '(' + ['', 'precio al productor', 'prix à la production', 'prezzo alla produzione'][k] + ')'); rest = rest.slice(0, sm.index); }
+    var suffix = '', sm = /\s*(\(2\d{3}=100\)|\(price paid\)|\(producer price\)|\(Jul-Jun year\))$/.exec(rest);
+    if (sm) { suffix = ' ' + sm[1].replace('(price paid)', '(' + ['', 'precio pagado', 'prix payé', 'prezzo pagato'][k] + ')').replace('(Jul-Jun year)', '(' + ['', 'campaña jul-jun', 'campagne juil.-juin', 'campagna lug-giu'][k] + ')').replace('(producer price)', '(' + ['', 'precio al productor', 'prix à la production', 'prezzo alla produzione'][k] + ')'); rest = rest.slice(0, sm.index); }
     var hs = /,?\s*((?:HS|SITC)\s[\d\- ]+\d|SITC \d)$/.exec(rest), code = '';
     if (hs) { code = ', ' + hs[1]; rest = rest.slice(0, hs.index); }
     var tr = termChain(rest, k); if (!tr) return label;

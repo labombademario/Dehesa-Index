@@ -140,7 +140,7 @@
 function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
     function render() {
     var t = tr(), root = document.getElementById('cs-body');
-    document.title = t.title + ' | Dehesa Index'; document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub;
+    if (!(window.CSCanada && window.CSCanada.active())) { document.title = t.title + ' | Dehesa Index'; document.getElementById('pg-h1').textContent = t.title; document.getElementById('pg-sub').textContent = t.sub; }
     if (!D) { root.innerHTML = '<p class="di-movers-hint">' + esc(t.noData) + '</p>'; return; }
     var tabs = [['food', D.fpo], ['costs', D.costs], ['income', D.income]].filter(function (x) { return x[1]; }).map(function (x) { return x[0]; });
     if (tabs.indexOf(SEL.tab) < 0) SEL.tab = tabs[0];
@@ -152,6 +152,7 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
     e = document.getElementById('cs-reg'); if (e) e.onchange = function () { SEL.region = e.value; render(); };
     e = document.getElementById('cs-year'); if (e) e.onchange = function () { SEL.year = parseInt(e.value, 10); render(); };
   }
+  window.__csUsRender = function () { render(); };
   window.DehesaShared.init('informacion');
   var prevCb = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prevCb) prevCb.apply(this, arguments); render(); };

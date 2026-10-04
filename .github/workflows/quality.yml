@@ -227,6 +227,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-product-ctx.mjs
+      - name: Pestaña Canadá en rendimientos, ganadería, insumos y costes (4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-canada-tabs.mjs
       - name: Marco comun de pagina, filas de mercado y vista Filas/Tarjetas
         env:
           CHROMIUM: ''
