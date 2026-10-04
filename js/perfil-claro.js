@@ -163,7 +163,21 @@
     'Wheat': ['Trigo', 'Blé', 'Frumento'], 'Barley': ['Cebada', 'Orge', 'Orzo'], 'Oats': ['Avena', 'Avoine', 'Avena'], 'Oilseed rape': ['Colza', 'Colza', 'Colza'],
     'All Types': ['Todos los tipos', 'Tous types', 'Tutti i tipi'], 'Cereals': ['Cereales', 'Céréales', 'Cereali'], 'General cropping': ['Cultivos generales', 'Grandes cultures', 'Colture generali'], 'Dairy': ['Vacuno de leche', 'Lait', 'Latte'],
     'Lowland grazing livestock': ['Ganado de pasto en tierras bajas', 'Élevage en plaine', 'Allevamento in pianura'], 'LFA grazing livestock': ['Ganado de pasto en zonas desfavorecidas', 'Élevage en zones défavorisées', 'Allevamento in zone svantaggiate'],
-    'Specialist pigs': ['Porcino especializado', 'Porcins spécialisés', 'Suini specializzati'], 'Specialist poultry': ['Avicultura especializada', 'Volailles spécialisées', 'Avicoltura specializzata'], 'Mixed': ['Mixtas', 'Mixtes', 'Miste'], 'Horticulture': ['Horticultura', 'Horticulture', 'Orticoltura']
+    'Specialist pigs': ['Porcino especializado', 'Porcins spécialisés', 'Suini specializzati'], 'Specialist poultry': ['Avicultura especializada', 'Volailles spécialisées', 'Avicoltura specializzata'], 'Mixed': ['Mixtas', 'Mixtes', 'Miste'], 'Horticulture': ['Horticultura', 'Horticulture', 'Orticoltura'],
+    'total': ['total', 'total', 'totale'], 'shell eggs': ['huevos con cáscara', 'œufs coquille', 'uova in guscio'], 'processed eggs': ['huevos para ovoproductos', 'œufs destinés à la transformation', 'uova destinate alla trasformazione'],
+    'enriched cages': ['jaulas acondicionadas', 'cages aménagées', 'gabbie arricchite'], 'barn': ['suelo (granja cubierta)', 'élevage au sol', 'allevamento a terra'], 'free range': ['camperos', 'plein air', 'allevamento all’aperto'], 'organic': ['ecológicos', 'biologiques', 'biologiche'],
+    'all systems': ['todos los sistemas', 'tous systèmes', 'tutti i sistemi'], 'all types': ['todos los tipos', 'tous types', 'tutti i tipi'],
+    'broilers': ['pollos de engorde', 'poulets de chair', 'polli da carne'], 'boiling fowl': ['gallinas de desvieje', 'poules de réforme', 'galline a fine carriera'], 'turkeys': ['pavos', 'dindes', 'tacchini'], 'ducks': ['patos', 'canards', 'anatre'],
+    'commercial broilers': ['pollos de engorde comerciales', 'poulets de chair commerciaux', 'polli da carne commerciali'], 'commercial layers': ['gallinas ponedoras comerciales', 'poules pondeuses commerciales', 'galline ovaiole commerciali'],
+    'North East': ['Noreste', 'Nord-Est', 'Nord-Est'], 'North West and Merseyside': ['Noroeste y Merseyside', 'Nord-Ouest et Merseyside', 'Nord-Ovest e Merseyside'], 'Yorkshire & The Humber': ['Yorkshire y Humber', 'Yorkshire et Humber', 'Yorkshire e Humber'],
+    'East Midlands': ['Midlands del Este', 'Midlands de l’Est', 'Midlands orientali'], 'West Midlands': ['Midlands del Oeste', 'Midlands de l’Ouest', 'Midlands occidentali'], 'Eastern': ['Este de Inglaterra', 'Est de l’Angleterre', 'Inghilterra orientale'],
+    'South East and London': ['Sudeste y Londres', 'Sud-Est et Londres', 'Sud-Est e Londra'], 'South West': ['Suroeste', 'Sud-Ouest', 'Sud-Ovest'], 'England': ['Inglaterra', 'Angleterre', 'Inghilterra'], 'Wales': ['Gales', 'Pays de Galles', 'Galles'],
+    'Scotland': ['Escocia', 'Écosse', 'Scozia'], 'Northern Ireland': ['Irlanda del Norte', 'Irlande du Nord', 'Irlanda del Nord'], 'United Kingdom': ['Reino Unido', 'Royaume-Uni', 'Regno Unito'],
+    'Milk sold to UK dairies': ['Leche vendida a las lecherías del Reino Unido', 'Lait vendu aux laiteries du Royaume-Uni', 'Latte venduto ai caseifici del Regno Unito'], 'Availability of raw milk': ['Disponibilidad de leche cruda', 'Disponibilité de lait cru', 'Disponibilità di latte crudo'],
+    'Milk used for liquid milk': ['Leche destinada a leche líquida', 'Lait destiné au lait liquide', 'Latte destinato a latte alimentare'], 'Milk used for cheese': ['Leche destinada a queso', 'Lait destiné au fromage', 'Latte destinato a formaggio'],
+    'Milk used for manufacturing': ['Leche destinada a transformación', 'Lait destiné à la transformation', 'Latte destinato alla trasformazione'], 'Liquid milk production': ['Producción de leche líquida', 'Production de lait liquide', 'Produzione di latte alimentare'],
+    'Cream production': ['Producción de nata', 'Production de crème', 'Produzione di panna'], 'Butter production': ['Producción de mantequilla', 'Production de beurre', 'Produzione di burro'], 'Cheese production, total': ['Producción de queso, total', 'Production de fromage, total', 'Produzione di formaggio, totale'],
+    'Cheddar production': ['Producción de queso cheddar', 'Production de cheddar', 'Produzione di cheddar'], 'Yoghurt production': ['Producción de yogur', 'Production de yaourt', 'Produzione di yogurt'], 'Condensed milk production': ['Producción de leche condensada', 'Production de lait concentré', 'Produzione di latte condensato']
   };
   var UKT = [
     [/^Slaughterings: (.+) \(head\)$/, ['Sacrificios: {c} (cabezas)', 'Abattages : {c} (têtes)', 'Macellazioni: {c} (capi)']],
@@ -172,13 +186,29 @@
     [/^Farm Business Income, England: (.+) \(GBP per farm, current prices\)$/, ['Renta de la explotación (Farm Business Income), Inglaterra: {c} (GBP por explotación, precios corrientes)', 'Revenu de l’exploitation (Farm Business Income), Angleterre : {c} (GBP par exploitation, prix courants)', 'Reddito aziendale (Farm Business Income), Inghilterra: {c} (GBP per azienda, prezzi correnti)']],
     [/^Livestock on holdings at 1 June: (.+) \(head\)$/, ['Ganado en explotaciones a 1 de junio: {c} (cabezas)', 'Cheptel dans les exploitations au 1er juin : {c} (têtes)', 'Capi nelle aziende al 1° giugno: {c} (capi)']],
     [/^Yield: (.+), United Kingdom \(t\/ha\)$/, ['Rendimiento: {c}, Reino Unido (t/ha)', 'Rendement : {c}, Royaume-Uni (t/ha)', 'Resa: {c}, Regno Unito (t/ha)']],
-    [/^Area: (.+), United Kingdom \(hectares\)$/, ['Superficie: {c}, Reino Unido (hectáreas)', 'Superficie : {c}, Royaume-Uni (hectares)', 'Superficie: {c}, Regno Unito (ettari)']]
+    [/^Area: (.+), United Kingdom \(hectares\)$/, ['Superficie: {c}, Reino Unido (hectáreas)', 'Superficie : {c}, Royaume-Uni (hectares)', 'Superficie: {c}, Regno Unito (ettari)']],
+    [/^Egg production for human consumption, United Kingdom: (.+) \(million dozen\)$/, ['Producción de huevos para consumo, Reino Unido: {c} (millones de docenas)', 'Production d’œufs de consommation, Royaume-Uni : {c} (millions de douzaines)', 'Produzione di uova da consumo, Regno Unito: {c} (milioni di dozzine)']],
+    [/^Egg packers intake, United Kingdom: (.+) \(million dozen\)$/, ['Entradas en centros de embalaje de huevos, Reino Unido: {c} (millones de docenas)', 'Entrées des centres de conditionnement d’œufs, Royaume-Uni : {c} (millions de douzaines)', 'Ingressi nei centri di imballaggio delle uova, Regno Unito: {c} (milioni di dozzine)']],
+    [/^Average packer-to-producer egg price, United Kingdom: (.+) \(pence per dozen\)$/, ['Precio medio del huevo del centro de embalaje al productor, Reino Unido: {c} (peniques por docena)', 'Prix moyen de l’œuf du centre de conditionnement au producteur, Royaume-Uni : {c} (pence par douzaine)', 'Prezzo medio delle uova dal centro di imballaggio al produttore, Regno Unito: {c} (penny per dozzina)']],
+    [/^Poultry slaughterings, United Kingdom: (.+) \(birds\)$/, ['Sacrificio de aves, Reino Unido: {c} (aves)', 'Abattages de volailles, Royaume-Uni : {c} (oiseaux)', 'Macellazioni di avicoli, Regno Unito: {c} (capi)']],
+    [/^Poultrymeat production, United Kingdom: (.+) \(tonnes carcase weight\)$/, ['Producción de carne de ave, Reino Unido: {c} (toneladas en canal)', 'Production de viande de volaille, Royaume-Uni : {c} (tonnes de carcasse)', 'Produzione di carne avicola, Regno Unito: {c} (tonnellate a carcassa)']],
+    [/^Hatchery eggs set, United Kingdom: (.+) \(eggs\)$/, ['Huevos puestos a incubar, Reino Unido: {c} (huevos)', 'Œufs mis en incubation, Royaume-Uni : {c} (œufs)', 'Uova messe in incubazione, Regno Unito: {c} (uova)']],
+    [/^Chicks and poults placed, United Kingdom: (.+) \(birds\)$/, ['Pollitos y pavitos colocados, Reino Unido: {c} (aves)', 'Poussins et dindonneaux mis en place, Royaume-Uni : {c} (oiseaux)', 'Pulcini e tacchinotti collocati, Regno Unito: {c} (capi)']],
+    [/^(Area|Yield|Production): (.+), (.+) \((hectares|t\/ha|tonnes)\)$/, ['{k}: {c}, {d} ({u})', '{k} : {c}, {d} ({u})', '{k}: {c}, {d} ({u})']],
+    [/^United Kingdom milk: (.+) \((million litres|tonnes)\)$/, ['Leche del Reino Unido: {c} ({u})', 'Lait du Royaume-Uni : {c} ({u})', 'Latte del Regno Unito: {c} ({u})']]
   ];
+  var UKK = { Area: ['Superficie', 'Superficie', 'Superficie'], Yield: ['Rendimiento', 'Rendement', 'Resa'], Production: ['Producción', 'Production', 'Produzione'] };
+  var UKU = { hectares: ['hectáreas', 'hectares', 'ettari'], 't/ha': ['t/ha', 't/ha', 't/ha'], tonnes: ['toneladas', 'tonnes', 'tonnellate'], 'million litres': ['millones de litros', 'millions de litres', 'milioni di litri'] };
   function ukTl(label, k) { // k: 1=es, 2=fr, 3=it
     for (var i = 0; i < UKT.length; i++) {
       var m = UKT[i][0].exec(label); if (!m) continue;
+      var out = UKT[i][1][k - 1];
+      if (UKK[m[1]]) { // «Area/Yield/Production: cultivo, región (unidad)»
+        var cc = UKC[m[2]], dd = UKC[m[3]]; if (!cc || !dd) return null;
+        return out.replace('{k}', UKK[m[1]][k - 1]).replace('{c}', cc[k - 1]).replace('{d}', dd[k - 1]).replace('{u}', UKU[m[4]][k - 1]);
+      }
       var c = UKC[m[1]]; if (!c) return null;
-      return UKT[i][1][k - 1].replace('{c}', c[k - 1]);
+      return out.replace('{c}', c[k - 1]).replace('{u}', m[2] && UKU[m[2]] ? UKU[m[2]][k - 1] : '');
     }
     return null;
   }

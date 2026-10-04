@@ -49,7 +49,7 @@ def stats_source(n, cc, s):
         if (s.get('sourceGroup') or '').startswith(pf): return sid
     if m.get('default'): return m['default']
     raise KeyError('%s: %s/%s sin fuente en el registro de licencias' % (n, cc, s.get('id')))
-BLK = {'markets': ['quotes', 'prices', 'prices_lv', 'prices_fv', 'milk', 'milk_regions', 'meat_regions'], 'production': ['production', 'crops', 'livestock', 'stocks', 'environment', 'organic'], 'trade': ['trade', 'partners'],
+BLK = {'markets': ['quotes', 'prices', 'prices_lv', 'prices_fv', 'milk', 'milk_regions', 'meat_regions'], 'production': ['production', 'crops', 'crops_regions', 'livestock', 'stocks', 'environment', 'organic'], 'trade': ['trade', 'partners'],
        'inputs': ['inputs', 'inputs_f', 'inputs_a', 'costs', 'prices_paid', 'idx_perc', 'idx_pag', 'income']}
 MAXAGE = {'daily': 10, 'weekly': 25, 'monthly': 80, 'quarterly': 160, 'semiannual': 220, 'annual': 520}
 def pms(p):

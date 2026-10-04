@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T16:38:49Z",
+ "generatedAt": "2026-10-04T17:14:38Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1818,10 +1818,12 @@
    "country": "UK",
    "scope": "integrated",
    "institution": "UK Defra (gov.uk agricultural statistics)",
-   "dataset": "Ya integrada (63 series en el catalogo unificado)",
+   "dataset": "Ya integrada (246 series en el catalogo unificado)",
    "products": [
     "barley",
+    "butter",
     "cattle",
+    "cheese",
     "eggs",
     "energy",
     "fertilizer",

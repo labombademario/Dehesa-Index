@@ -96,7 +96,7 @@ DATASETS = {
 }
 # grupo de una serie de *-stats.json -> tipo
 GROUP_KIND = {'markets': 'PRICE', 'quotes': 'PRICE', 'prices': 'PRICE', 'prices_lv': 'PRICE', 'prices_fv': 'PRICE', 'milk': 'PRICE', 'milk_regions': 'PRICE', 'meat_regions': 'PRICE', 'product': 'PRICE',
-              'production': 'PRODUCTION', 'crops': 'PRODUCTION', 'livestock': 'PRODUCTION', 'stocks': 'PRODUCTION', 'organic': 'PRODUCTION', 'environment': 'CLIMATE',
+              'production': 'PRODUCTION', 'crops': 'PRODUCTION', 'crops_regions': 'PRODUCTION', 'livestock': 'PRODUCTION', 'stocks': 'PRODUCTION', 'organic': 'PRODUCTION', 'environment': 'CLIMATE',
               'trade': 'TRADE', 'partners': 'TRADE', 'inputs': 'INPUT', 'inputs_f': 'INPUT', 'inputs_a': 'INPUT', 'costs': 'INPUT', 'prices_paid': 'INPUT', 'idx_perc': 'PRICE', 'idx_pag': 'INPUT',
               'income': 'MACRO', 'rates': 'MACRO'}
 INPUT_PRODUCTS = {'urea', 'dap', 'potasa', 'diesel', 'gas_natural', 'petroleo_brent', 'petroleo_wti', 'fertilizantes', 'harina_soja'}

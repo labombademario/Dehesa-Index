@@ -13,7 +13,12 @@ const nrm = s => s.replace(/[., \s  ]/g, '');
 const beef = uk.find(s => s.id === 'uk-meat-production-beef-and-veal');
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
 let fail = 0; const ok = (n, c) => { if (!c) { fail++; console.log('FALLA', n); } };
-ok('uk-stats tiene series de las 4 familias', ['production', 'income', 'livestock', 'crops'].every(g => uk.some(s => s.group === g)));
+ok('uk-stats tiene series de todas las familias', ['production', 'income', 'livestock', 'crops', 'crops_regions', 'milk', 'prices'].every(g => uk.some(s => s.group === g)));
+ok('uk-stats incluye huevos, aves, leche y cereales por región', ['uk-egg-production-total', 'uk-poultry-slaughter-broilers', 'uk-milk-sold-to-dairies', 'uk-reg-production-wheat-england'].every(id => uk.some(s => s.id === id)));
+{ // toda serie de Defra se traduce a es/fr/it con plantillas (nada se queda en inglés)
+  const { createRequire } = await import('node:module'); const C = createRequire(import.meta.url)('../js/perfil-claro.js');
+  for (const l of ['es', 'fr', 'it']) { const miss = uk.filter(s => C.tl(s.label, l) === s.label); ok('traducción ' + l + ' de todas las series UK (faltan ' + miss.length + (miss[0] ? ': ' + miss[0].label : '') + ')', miss.length === 0); }
+}
 for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const tag = lang + '@' + w;
   const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, serviceWorkers: 'block' });

@@ -15,7 +15,7 @@ GROUP_METRIC = {
   'eu_cerdo': 'price', 'eu_huevos': 'price', 'eu_pollo': 'price', 'eu_ovino': 'price', 'eu_vino': 'price', 'eu_azucar': 'price',
   'eu_fertilizantes': 'input_price',
   'idx_perc': 'price_index', 'idx_pag': 'price_index',
-  'crops': 'production', 'production': 'production', 'livestock': 'production', 'milk': 'production',
+  'crops': 'production', 'crops_regions': 'production', 'production': 'production', 'livestock': 'production', 'milk': 'production',
   'trade': 'trade', 'partners': 'trade',
   'stocks': 'stocks',
   'inputs': 'input_price', 'inputs_a': 'input_price', 'inputs_f': 'input_price', 'costs': 'input_price',
