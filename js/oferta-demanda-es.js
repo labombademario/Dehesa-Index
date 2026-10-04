@@ -141,7 +141,7 @@
   function load() {
     if (D) return Promise.resolve(D);
     var g = function (u) { return fetch(u).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
-    return Promise.all([g('data/spain-balances/cereals.json'), g('data/spain-balances/olive.json'), g('data/spain-wine/infovi.json')]).then(function (a) { WN = window.ODWine && window.ODWine.set(a[2]) ? 1 : null; D = a[0] && a[0].campaigns ? a[0] : null; O = a[1] && a[1].campaigns && a[1].products ? a[1] : null; return D; });
+    return Promise.all([g('data/spain-balances/cereals.json'), g('data/spain-balances/olive.json'), g('data/spain-wine/infovi.json'), g('data/spain-wine/monthly.json')]).then(function (a) { WN = window.ODWine && window.ODWine.set(a[2]) ? 1 : null; if (window.ODWine) window.ODWine.setMonthly(a[3]); D = a[0] && a[0].campaigns ? a[0] : null; O = a[1] && a[1].campaigns && a[1].products ? a[1] : null; return D; });
   }
   function setTab(on, noUrl) {
     ON = on; var w = document.getElementById('od-body'), el = document.getElementById('od-es'); if (w) w.hidden = on; if (el) el.hidden = !on; tabs();

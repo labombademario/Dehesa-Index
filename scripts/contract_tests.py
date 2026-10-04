@@ -1852,6 +1852,37 @@ def _sw_mod():
     import importlib.util as _u
     sp = _u.spec_from_file_location("update_spain_wine", str(Path(__file__).resolve().parent / "update-spain-wine.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
 
+def _swm_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_spain_wine_monthly", str(Path(__file__).resolve().parent / "update-spain-wine-monthly.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
+
+def spain_wine_monthly(doc, errs, warns, stats):
+    """Vino mensual de INFOVI (MAPA): meses ordenados y sin repetir, 17 comunidades, series de la longitud de los meses, sin negativos, comunidades = total, salidas = interiores + exteriores, exteriores = UE + terceros,
+    identidad de existencias (inicial + produccion + entradas - salidas - operaciones propias = final) con un residuo < 10 % y una fuente por mes."""
+    m = _swm_mod(); P = doc["months"]; n = len(P); N = doc["national"]
+    if P != sorted(set(P)): errs.append("spain-wine-monthly: meses desordenados o repetidos"); return
+    if set(doc["ccaa"]) != set(m.CCAA): errs.append("spain-wine-monthly: comunidades distintas de las 17 esperadas"); return
+    if set(doc["sources"]) != set(P): errs.append("spain-wine-monthly: falta la fuente de algun mes o sobra una"); return
+    for f in m.F:
+        a = N[f]
+        if len(a) != n: errs.append("spain-wine-monthly: la serie nacional %s no tiene la longitud de los meses" % f); return
+        if any(x is not None and x < 0 for x in a): errs.append("spain-wine-monthly: valor negativo en %s" % f); return
+        for c, d in doc["ccaa"].items():
+            if len(d[f]) != n: errs.append("spain-wine-monthly: %s %s no tiene la longitud de los meses" % (c, f)); return
+            if any(x is not None and x < 0 for x in d[f]): errs.append("spain-wine-monthly: valor negativo en %s %s" % (c, f)); return
+    def near(a, b, tol): return a is None or b is None or abs(a - b) <= tol + 0.0001 * abs(b)
+    for i, p in enumerate(P):
+        for f in m.F:
+            s = sum(d[f][i] for d in doc["ccaa"].values() if d[f][i] is not None); t = N[f][i]
+            if t is not None and not near(s, t, 3): errs.append("spain-wine-monthly %s %s: las comunidades suman %s y el total %s" % (p, f, round(s), round(t)))
+        if not near((N["exitsEU"][i] or 0) + (N["exitsThird"][i] or 0) + (N["exitsDomestic"][i] or 0), N["exitsTotal"][i], 3): errs.append("spain-wine-monthly %s: salidas distintas de interiores + UE + terceros" % p)
+        v = [N[f][i] for f in ("stockStart", "production", "inSpain", "inAbroad", "exitsTotal", "ownOps", "stockEnd")]
+        if None not in v and v[6]:
+            res = v[0] + v[1] + v[2] + v[3] - v[4] - v[5] - v[6]
+            if abs(res) > 0.10 * v[6]: errs.append("spain-wine-monthly %s: la identidad de existencias se rompe en %s hl" % (p, round(res)))
+    stats["spain-wine-monthly meses"] = n
+
 
 def spain_wine(doc, errs, warns, stats):
     """Vino de INFOVI (MAPA): campañas ordenadas y sin repetir, 17 comunidades, series de la longitud de las campañas, sin negativos, tinto+blanco = vino, categorias = vino, salidas = exportaciones + interiores,

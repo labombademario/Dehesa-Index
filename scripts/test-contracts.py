@@ -22,6 +22,7 @@ def _sl(d): return d["v"]
 def _sbv(d, y="2025"): return d["campaigns"][y]["v"]
 def _sov(d, y="2025"): return d["campaigns"][y]["v"]
 def _smk(d): return d["ccaa"]["galicia"]
+def _swm(d): return d["national"]
 def _swn(d): return d["national"]
 def _ssl(d): return d["national"]["bovino"]
 CASES = [
@@ -49,6 +50,14 @@ CASES = [
  ("spain-wine/infovi.json", "serie mas corta que las campañas", lambda d: _swn(d)["exits"].pop()),
  ("spain-wine/infovi.json", "campaña sin fuente", lambda d: d["sources"].pop(d["campaigns"][-1])),
  ("spain-wine/infovi.json", "campañas desordenadas", lambda d: d["campaigns"].reverse()),
+ ("spain-wine/monthly.json", "existencias negativas", lambda d: _swm(d)["stockEnd"].__setitem__(-1, -1)),
+ ("spain-wine/monthly.json", "comunidades que no suman el total", lambda d: d["ccaa"]["clm"]["stockEnd"].__setitem__(-1, d["ccaa"]["clm"]["stockEnd"][-1] + 900000)),
+ ("spain-wine/monthly.json", "salidas distintas de interiores + exteriores", lambda d: _swm(d)["exitsTotal"].__setitem__(-1, _swm(d)["exitsTotal"][-1] + 900000)),
+ ("spain-wine/monthly.json", "identidad de existencias rota", lambda d: _swm(d)["stockEnd"].__setitem__(-1, _swm(d)["stockEnd"][-1] * 3)),
+ ("spain-wine/monthly.json", "comunidad que falta", lambda d: d["ccaa"].pop("galicia")),
+ ("spain-wine/monthly.json", "serie mas corta que los meses", lambda d: _swm(d)["production"].pop()),
+ ("spain-wine/monthly.json", "mes sin fuente", lambda d: d["sources"].pop(d["months"][-1])),
+ ("spain-wine/monthly.json", "meses desordenados", lambda d: d["months"].reverse()),
  ("spain-balances/olive.json", "produccion que rompe el total de origen", lambda d: _sov(d)["oil"].__setitem__("production", _sov(d)["oil"]["production"] + 300)),
  ("spain-balances/olive.json", "existencias finales que no cuadran", lambda d: _sov(d)["oil"].__setitem__("endingStocks", _sov(d)["oil"]["endingStocks"] + 80)),
  ("spain-balances/olive.json", "exportaciones UE + extra UE que no suman", lambda d: _sov(d, "2024")["oil"].__setitem__("exportsEU", _sov(d, "2024")["oil"]["exportsEU"] + 50)),

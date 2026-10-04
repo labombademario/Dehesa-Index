@@ -588,6 +588,12 @@
     "spain_milk"
    ]
   ],
+  "spain-wine/monthly.json": [
+   "spain-wine-monthly",
+   [
+    "spain_wine_monthly"
+   ]
+  ],
   "spain-wine/infovi.json": [
    "spain-wine",
    [

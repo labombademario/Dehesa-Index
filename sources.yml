@@ -118,6 +118,17 @@ sources:
     data: [spain-wine/infovi.json, spain-wine-log.txt]
     extra: ['!data/spain-wine']
     message: Datos vino de España por campaña y comunidad (MAPA INFOVI)
+  - id: spain-wine-monthly
+    name: Update Spain wine month by month and region (MAPA INFOVI monthly report)
+    cron: ['55 8 * * 4']
+    script: scripts/update-spain-wine-monthly.py
+    timeout: 25
+    script_timeout: 18
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-wine)
+    data: [spain-wine/monthly.json, spain-wine-monthly-log.txt]
+    extra: ['!data/spain-wine']
+    message: Datos vino de España mes a mes y por comunidad (MAPA INFOVI mensual)
   - id: austria
     name: Update Austria (Eurostat)
     cron: ['25 16 * * 2,5']

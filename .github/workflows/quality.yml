@@ -96,6 +96,9 @@ jobs:
       - name: Spain wine by campaign and region (MAPA INFOVI July extended report reader on the real 2021 and 2026 workbooks, cross-checks, link discovery, accumulation and revisions; no network)
         run: python3 scripts/test-spain-wine.py
 
+      - name: Spain wine month by month (MAPA INFOVI monthly report reader on the real July 2026 and January 2021 workbooks, month from the sheet title, missing table 4.6 as gap, chaining, link discovery, accumulation and revisions; no network)
+        run: python3 scripts/test-spain-wine-monthly.py
+
       - name: Spain CAP (BOE RD 1048/2022 annex parser, change tracking, refusal on corrupted text, rules vs watched articles; extract of the BOE text as fixture, no network)
         run: python3 scripts/test-cap-es.py
 

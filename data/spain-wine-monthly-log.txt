@@ -1,0 +1,7 @@
+AVISO: 2021-11: identidad de existencias con un residuo de 468683 hl
+AVISO: 2022-11: identidad de existencias con un residuo de 451972 hl
+AVISO: 2023-01: identidad de existencias con un residuo de 161765 hl
+AVISO: 2023-11: identidad de existencias con un residuo de 275815 hl
+AVISO: 2024-11: identidad de existencias con un residuo de 278914 hl
+AVISO: 2025-11: identidad de existencias con un residuo de 243314 hl
+OK: 2021-01..2026-07 (14 meses), 0 revisiones
