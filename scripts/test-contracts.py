@@ -21,7 +21,16 @@ def _scp(d):
 def _sl(d): return d["v"]
 def _sbv(d, y="2025"): return d["campaigns"][y]["v"]
 def _sov(d, y="2025"): return d["campaigns"][y]["v"]
+def _smk(d): return d["ccaa"]["galicia"]
 CASES = [
+ ("spain-milk/infolac.json", "comunidades que no suman las entregas", lambda d: _smk(d)["production"].__setitem__(-1, _smk(d)["production"][-1] + 5000)),
+ ("spain-milk/infolac.json", "precio imposible", lambda d: d["national"]["price"].__setitem__(-1, 5.0)),
+ ("spain-milk/infolac.json", "entregas negativas", lambda d: d["national"]["deliveries"].__setitem__(-1, -1)),
+ ("spain-milk/infolac.json", "grasa fuera de rango", lambda d: _smk(d)["fat"].__setitem__(-1, 30)),
+ ("spain-milk/infolac.json", "leche ecologica mayor que las entregas", lambda d: d["national"]["organic"].__setitem__(-1, 9999999)),
+ ("spain-milk/infolac.json", "comunidad que falta", lambda d: d["ccaa"].pop("galicia")),
+ ("spain-milk/infolac.json", "serie mas corta que los periodos", lambda d: d["national"]["farmers"].pop()),
+ ("spain-milk/infolac.json", "informe que no es el ultimo periodo", lambda d: d["report"].__setitem__("month", "2025-01")),
  ("spain-balances/olive.json", "produccion que rompe el total de origen", lambda d: _sov(d)["oil"].__setitem__("production", _sov(d)["oil"]["production"] + 300)),
  ("spain-balances/olive.json", "existencias finales que no cuadran", lambda d: _sov(d)["oil"].__setitem__("endingStocks", _sov(d)["oil"]["endingStocks"] + 80)),
  ("spain-balances/olive.json", "exportaciones UE + extra UE que no suman", lambda d: _sov(d, "2024")["oil"].__setitem__("exportsEU", _sov(d, "2024")["oil"]["exportsEU"] + 50)),

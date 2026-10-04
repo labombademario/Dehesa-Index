@@ -87,6 +87,9 @@ jobs:
       - name: Spain olive sector balance and oil forecast (MAPA PDF parser on real pdftotext extracts, both layouts, UE split, forecast by region sums to the national total; no network)
         run: python3 scripts/test-spain-olive.py
 
+      - name: Spain raw milk deliveries, price and quality (MAPA INFOLAC PDF parser on a real pdftotext extract, 17 regions sum to the national total, price table cross-check, history accumulation and revisions; no network)
+        run: python3 scripts/test-spain-milk.py
+
       - name: Spain CAP (BOE RD 1048/2022 annex parser, change tracking, refusal on corrupted text, rules vs watched articles; extract of the BOE text as fixture, no network)
         run: python3 scripts/test-cap-es.py
 

@@ -44,7 +44,7 @@
       var S = [{ name: t.ca, color: C1, pts: nat.map(function (p) { return { x: tsOf(p[0]), y: p[1], l: p[0] }; }) }];
       if (prov) { var ps = ser(prov, SEL.item, SEL.measure); if (ps) S.push({ name: pnm(prov), color: C2, pts: ps.map(function (p) { return { x: tsOf(p[0]), y: p[1], l: p[0] }; }) }); }
       var m = SEL.measure;
-      return window.DehesaChart.render({ series: S, xMode: 'time', xTitle: t.period, yTitle: cfg.yTitle(m), aria: itemLabel(SEL.item) + ' · ' + t[m], noLegend: S.length < 2, vFmt: function (v) { return nf(v, 0); }, xFmt: function (x) { return new Date(x).getUTCFullYear(); } });
+      return window.DehesaChart.render({ series: S, xMode: 'time', xTitle: t.period, yTitle: cfg.yTitle(m), aria: itemLabel(SEL.item) + ' · ' + t[m], noLegend: S.length < 2, vFmt: function (v) { return cfg.chartV ? cfg.chartV(m, v) : nf(v, 0); }, xFmt: function (x) { return cfg.chartX ? cfg.chartX(x) : new Date(x).getUTCFullYear(); } });
     }
     function render() {
       var el = document.getElementById(cfg.id); if (!el || !ACTIVE) return; var t = tr();

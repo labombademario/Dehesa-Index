@@ -1,0 +1,616 @@
+           VACUNO LECHERO
+                        DECLARACIONES
+                        DE ENTREGAS DE
+                         LECHE CRUDA A
+                         LOS PRIMEROS
+                         COMPRADORES
+                                                   AGOSTO 2026
+SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                                               2
+                              Aviso Legal: los contenidos de esta publicación podrán ser reutilizados, citando la fuente y la fecha, en su caso, de la última actualización.
+Título:
+INFORME DECLARACIONES DE ENTREGAS DE LECHE CRUDA A LOS PRIMEROS COMPRADORES.
+Edita:
+© Ministerio de Agricultura, Pesca y Alimentación
+Secretaría General Técnica. Centro de Publicaciones
+Unidad proponente:
+Dirección General de Producciones y Mercados Agrarios
+Subdirección General de Producciones Ganaderas y Cinegéticas
+NIPO: 003210738
+Tienda online:
+www.mapa.gob.es
+https://servicio.mapa.gob.es/tienda/
+e-mail:
+centropublicaciones@mapa.es
+Catálogo de Publicaciones de la Administración General del Estado:
+https://cpage.mpr.gob.es/
+                                                                                                                         3
+                                                                                                      ÍNDICE
+1.    Introducción.                                           11.   Características cualitativas: Materia grasa.
+2.    Datos generales. Comparación con el año anterior.       12.   Características cualitativas: proteína.
+3.    Evolución de las entregas mensuales por años.           13.   Detalle de la producción año acumulado.
+4.    Compradores con leche cruda declarada.                  14.   Leche cruda ecológica declarada por compradores.
+5.    Leche cruda declarada por compradores.                  15.   Evolución del importe medio leche cruda ecológica.
+6.    Gráfica compras de leche.                               16.   Leche cruda ecológica producida por CC.AA.
+7.    Evolución del importe medio.
+8.    Evolución del importe medio declarado por mes y año.
+9.    Ganaderos con entregas.
+                                                                           Fecha de extracción de datos: 30/09/2026
+10.   Leche cruda producida por CC.AA.
+                                                                           Fecha de publicación: 01/10/2026
+                                             SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                             DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                                                       4
+                                                                                                               1. INTRODUCCIÓN
+INFOLAC es un sistema unificado de información del sector lácteo que incluye, entre otra, la información de las declaraciones obligatorias de entregas de leche cruda y de todos
+los contratos entre los primeros compradores y los productores del sector, así como un registro de los primeros compradores que operan en el sector lácteo en España. Dicha
+base de datos se crea mediante el Real Decreto 319/2015, de 24 de abril, y está gestionada por el MAPA.
+El informe analiza, en los 12 últimos meses, los datos aportados por los primeros compradores que recogen leche en España, en las declaraciones obligatorias de entregas
+mensuales de leche que establece el Real Decreto 319/2015, de 24 de abril, sobre declaraciones obligatorias a efectuar por primeros compradores y productores de leche y
+productos lácteos de vaca, oveja y cabra, y el Real Decreto 24/2021, de 19 de enero, que modifica al anterior.
+Nota aclaratoria:
+•La materia grasa (%) hace referencia a la materia grasa media ponderada del periodo, como resultado del sumatorio de los litros entregados multiplicado por el porcentaje de
+materia grasa declarado, para cada productor, y dividido por el total de litros entregados.
+•La proteína (%) hace referencia a la proteína media ponderada del periodo, como resultado del sumatorio de los litros entregados multiplicado por el porcentaje de proteína
+declarado, para cada productor, y dividido por el total de litros entregados.
+•El “Nº Ganaderos” es el número de productores pertenecientes a una comunidad autónoma que han realizado entregas según lo declarado por los compradores. Si un productor
+entrega leche a varios compradores, se computa una única vez.
+•El “Nº Compradores” es el número de compradores que han declarado entregas en cada comunidad autónoma.
+•El “Importe medio declarado” en €/litro se calcula, a nivel de productor, a partir de las declaraciones mensuales de entregas de leche a compradores, dividiendo el importe
+liquidado en euros entre los litros entregados. Dichos importes incluyen bonificaciones y penalizaciones por calidad, pero no IVA ni otros impuestos., ni el transporte.
+•Únicamente se han tenido en cuenta los ganaderos que han percibido por sus entregas importes medios comprendidos en el intervalo entre 0,1 y 0,7 €/litro desde el año 2015
+hasta el año 2022 y a partir del año 2023 el importe medio comprendido en el intervalo 0,1 y 1,0€/litro. En el caso de la leche cruda ecológica este intervalo es 0,1 y 1,2 €/litro.
+•La “leche producida por comunidad autónoma” hace referencia a la comunidad autónoma del productor, considerando la dirección de este declarada por el comprador.
+Los datos presentados en este informe no son datos consolidados, pudiendo ser objeto de una depuración por parte del organismo gestor de INFOLAC.
+                                                             SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                             DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                                               5
+                                                                                                       2. DATOS GENERALES. COMPARACIÓN
+                                                                                                          CON EL AÑO ANTERIOR.
+                                                   DATOS GENERALES. COMPARACIÓN CON EL AÑO ANTERIOR
+DATOS GENERALES          SEP          OCT           NOV         DIC          ENE         FEB          MAR         ABR         MAY         JUN         JUL          AGO
+Entregas de leche en
+                         581.894      600.659       584.251     612.754      625.813     579.240      650.176     644.196     661.957     618.299     623.937      605.207
+2024 (2025) (t.)
+Entregas de leche en
+                         588.630      603.745       585.281     625.092      636.081     589.582      668.028     647.820     660.607     629.765     638.229      624.947
+2025 (2026) (t.)
+Variación respecto
+mismo mes período               1,2         0,5           0,2          2,0         1,6          1,8         2,7         0,6      -0,2           1,9          2,3         3,3
+anterior (%)
+Mills (Kg.) acum. En
+                           5.649        6.250         6.834       7.447            626     1.205        1.855       2.499       3.161       3.780       4.404        5.009
+2024 (2025)
+Mills (Kg.) acum. En
+                           5.597        6.201         6.786       7.412            636     1.226        1.894       2.542       3.202       3.832       4.470        5.095
+2025 (2026)
+Variación respecto
+mismo mes período              -0,9         -0,8       -0,7           -0,5         1,6          1,7         2,1         1,7         1,3         1,4          1,5         1,7
+anterior (%)
+Importe medio
+                           0,529        0,535         0,542       0,542        0,541       0,538        0,534       0,489       0,477       0,469       0,465        0,469
+declarado (€/ litro)
+Materia grasa (%)              3,84      3,92          3,98           4,01      4,00           3,95      3,91        3,87        3,81        3,73           3,69      3,71
+Proteína (%)                   3,40      3,45          3,47           3,48      3,46           3,44      3,43        3,40        3,38        3,32           3,28      3,32
+Compradores que
+                               314          312        314            304          306         306          306         306      303            301         299       289
+declaran entregas (Nº)
+Ganaderos con
+                           8.903        8.854         8.808       8.768        8.714       8.669        8.644       8.604       8.582       8.526       8.488        8.425
+entregas (Nº)
+                                                           SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                           DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                   6
+                                                             3. EVOLUCIÓN DE LAS ENTREGAS
+                                                                MENSUALES POR AÑOS.
+                                 Entregas mensuales por años (T.)
+                                                                                Media 2021-2025
+  T.
+                                                                                2023
+                                                                                2024
+670.000
+                                                                                2025
+                                                                                2026
+650.000
+630.000
+610.000
+590.000
+570.000
+550.000
+          ene   feb   mar     abril    may    jun     jul    ago    sep   oct    nov         dic
+                            SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                            DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                                      7
+                                                                                                4. COMPRADORES CON LECHE CRUDA
+                                                                                                   DECLARADA.
+                                                      COMPRADORES CON LECHE CRUDA DECLARADA
+                                         2025                                                                    2026
+  CA 1er comprador
+                       SEP         OCT          NOV        DIC         ENE         FEB         MAR        ABR           MAY        JUN         JUL         AGO
+Andalucía                     14         14           14          14          14          14         14          14           14          14          14         14
+Aragón                         6          6            5           5           6           5          5           5            5           5           5          5
+Asturias (P. de)              21         21           24          24          23          23         22          24           25          25          25         24
+Baleares (Illes)               9          9            8           8           9           9          9           8            8           8           8          7
+Canarias                      18         18           17          17          17          17         17          16           17          17          18         18
+Cantabria                     32         32           32          31          30          30         33          32           33          32          32         32
+Castilla - La Mancha          17         17           18          16          16          17         16          16           16          17          16         15
+Castilla y León               39         40           40          37          38          38         38          38           37          33          34         33
+Cataluña                      69         67           66          64          65          66         67          67           65          65          64         58
+Extremadura                    3          3            3           3           4           4          4           4            3           3           3          3
+Galicia                       50         49           49          50          49          49         48          48           48          48          47         48
+Madrid (C. de)                 5          6            6           6           6           6          5           6            5           6           6          6
+Murcia (R. de)                 4          4            5           3           3           3          3           3            3           3           3          3
+Navarra (C.F. de)              5          6            6           5           5           4          3           3            4           4           4          4
+País Vasco                    11          9           10          10          10          10         11          11            9          10          11         11
+Rioja (La)                     1          1            1           1           1           1          1           1            1           1           1          1
+Valenciana (C.)               10         10           10          10          10          10         10          10           10          10           8          7
+España                       314     312          314            304         306         306     306            306       303            301         299     289
+                                                      SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                      DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                               8
+                                                                                           5. LECHE CRUDA DECLARADA POR
+                                                                                           COMPRADORES.
+                                                 LECHE CRUDA DECLARADA POR COMPRADORES (T.)
+                                        2025                                                                2026
+ CA 1er comprador
+                       SEP        OCT          NOV        DIC        ENE        FEB        MAR        ABR          MAY        JUN        JUL        AGO
+Andalucía                37.259     38.839       38.382     40.744     41.962     39.112     44.725     43.485       43.682     39.651     40.552     39.992
+Aragón                    8.886      9.653        9.642     10.937     11.000      9.950     10.898     10.443       10.082      9.856      9.737      9.218
+Asturias (P. de)         89.550     91.857       89.575     94.892     96.787     89.158    100.799     98.256      100.429     95.517     97.203     94.596
+Baleares (Illes)          1.935      2.342        2.432      3.201      3.239      3.141      3.561      2.929        2.618      2.529      2.030      1.353
+Canarias                  4.156      4.202        3.927      4.568      4.346      3.959      4.484      4.445        4.545      4.803      4.844      4.662
+Cantabria                17.217     17.654       17.144     18.072     18.437     17.119     19.299     18.679       19.252     18.234     18.574     18.409
+Castilla - La Mancha     21.237     21.947       21.424     22.972     23.866     22.415     25.404     24.332       24.901     22.884     22.895     22.460
+Castilla y León         104.222    107.099      103.397    109.415    110.702    102.540    116.372    114.674      117.529    112.697    118.141    116.414
+Cataluña                 70.395     72.397       68.266     73.808     74.685     71.888     81.476     79.142       80.382     78.866     78.048     74.711
+Extremadura                 158        136          126        221        224        114        121        116           95         95         95        106
+Galicia                 190.862    194.323      188.846    199.689    203.558    186.088    210.394    202.612      207.242    197.601    199.258    197.457
+Madrid (C. de)            3.845      4.019        3.921      4.121      4.190      3.823      4.148      4.115        4.090      3.898      4.067      4.008
+Murcia (R. de)            3.571      3.363        3.503      3.915      4.077      4.184      4.868      4.518        4.567      4.421      3.890      3.575
+Navarra (C.F. de)        11.934     11.903       11.328     12.203     12.317     11.263     12.252     11.393       11.813     11.230     11.376     10.944
+País Vasco               20.106     20.596       19.989     22.508     22.871     21.214     25.060     24.260       24.858     23.383     23.716     23.468
+Rioja (La)                  856        894          896        976        987        911      1.031        993        1.011        935        933        918
+Valenciana (C.)           2.440      2.521        2.481      2.849      2.835      2.704      3.135      3.428        3.511      3.164      2.869      2.656
+España                 588.630    603.745      585.281    625.092    636.081    589.582    668.028    647.820      660.607    629.765    638.229    624.947
+                                                     SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                     DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                   9
+                                                                                    6. GRÁFICA COMPRAS DE LECHE.
+                               Entregas por comunidad autónoma del comprador (T.)
+250.000
+          Galicia   Asturias   Castilla y León     Cataluña    Resto
+200.000
+150.000
+100.000
+ 50.000
+     0
+          SEP       OCT         NOV          DIC         ENE           FEB   MAR   ABR   MAY   JUN   JUL   AGO
+                                        SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                        DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                                                                          10
+                                                                                                                                  7. EVOLUCIÓN DEL IMPORTE MEDIO.
+                        EVOLUCIÓN DE IMPORTE MEDIO DECLARADO POR COMUNIDAD AUTÓNOMA (€/litro) (medias ponderadas)
+                                                        2025                                                                                           2026
+    CA Productor
+                                 SEP            OCT             NOV              DIC            ENE             FEB             MAR             ABR            MAY           JUN       JUL       AGO
+Andalucía                           0,539           0,539           0,542           0,542           0,547          0,520           0,517           0,485           0,484       0,481     0,478    0,482
+Aragón                              0,525           0,535           0,535           0,547           0,545          0,538           0,529           0,519           0,493       0,482     0,485    0,475
+Asturias (P. de)                    0,542           0,547           0,550           0,552           0,553          0,553           0,550           0,545           0,499       0,494     0,491    0,490
+Baleares (Illes)                    0,471           0,473           0,475           0,472           0,475          0,472           0,475           0,469           0,468       0,462     0,458    0,463
+Canarias                            0,638           0,638           0,638           0,638           0,639          0,639           0,639           0,641           0,641       0,642     0,641    0,640
+Cantabria                           0,537           0,547           0,551           0,563           0,554          0,552           0,550           0,529           0,502       0,491     0,484    0,486
+Castilla - La Mancha                0,537           0,546           0,555           0,557           0,553          0,545           0,542           0,484           0,473       0,465     0,469    0,471
+Castilla y León                     0,545           0,551           0,555           0,561           0,557          0,555           0,551           0,498           0,481       0,475     0,472    0,476
+Cataluña                            0,513           0,524           0,562           0,536           0,532          0,545           0,527           0,497           0,482       0,474     0,470    0,488
+Extremadura                         0,525           0,529           0,526           0,530           0,530          0,514           0,511           0,469           0,463       0,458     0,454    0,458
+Galicia                             0,521           0,524           0,527           0,529           0,529          0,525           0,524           0,461           0,455       0,449     0,444    0,448
+Madrid (C. de)                      0,535           0,541           0,547           0,554           0,553          0,548           0,546           0,502           0,488       0,469     0,465    0,468
+Murcia (R. de)                      0,530           0,534           0,537           0,539           0,539          0,526           0,518           0,491           0,484       0,486     0,480    0,486
+Navarra (C.F. de)                   0,521           0,533           0,545           0,551           0,550          0,546           0,547           0,518           0,510       0,482     0,475    0,473
+País Vasco                          0,542           0,567           0,577           0,582           0,587          0,585           0,577           0,560           0,555       0,510     0,499    0,496
+Rioja (La)                          0,537           0,552           0,568           0,567           0,567          0,565           0,556           0,532           0,526       0,499     0,486    0,487
+Valenciana (C.)                     0,546           0,561           0,567           0,570           0,574          0,564           0,557           0,557           0,540       0,515     0,502    0,506
+España                             0,529           0,535           0,542           0,542           0,541           0,538           0,534           0,489          0,477       0,469     0,465     0,469
+En el informe se muestran los importes medios ponderados percibidos por los ganaderos de la comunidad autónoma indicada, independientemente de la ubicación del comprador.
+                                                                        SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                                        DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                            11
+                                                                    7. EVOLUCIÓN DEL IMPORTE MEDIO.
+                                Evolución del precio medio declarado (€/litro)
+0,720
+0,710
+0,700
+0,690
+0,680
+0,670
+0,660
+0,650
+0,640
+0,630
+0,620
+0,610
+0,600
+0,590
+0,580
+0,570
+0,560
+                        0,542     0,542    0,541
+0,550
+                0,535                              0,538   0,534
+0,540   0,529
+0,530
+0,520
+0,510
+0,500                                                              0,489
+0,490
+                                                                           0,477    0,469
+0,480                                                                                               0,469
+                                                                                            0,465
+0,470
+0,460
+0,450
+0,440
+0,430
+0,420
+0,410
+0,400
+         SEP    OCT      NOV        DIC     ENE     FEB    MAR      ABR    MAY     JUN       JUL    AGO
+                                  SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                  DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       12
+                                                                                                                                                                                                             8. EVOLUCIÓN DEL IMPORTE MEDIO
+                                                                                                                                                                                                                DECLARADO POR MES Y AÑO.
+ EVOLUCIÓN IMPORTE MEDIO DECLARADO POR                                                                           Evolución del precio medio declarado por mes y año 2023-2026 (€/litro)
+   MES Y AÑO (€/litro) (medias ponderadas)                       0,620
+                                                                 0,610
+Mes           2022      2023      2024      2025       2026      0,600
+                                                                 0,590
+Enero           0,371     0,599     0,517     0,495      0,541   0,580
+                                                                 0,570
+Febrero         0,378     0,603     0,514     0,496      0,538   0,560
+                                                                 0,550
+Marzo           0,383     0,595     0,511     0,496      0,534   0,540
+                                                                 0,530
+Abril          0,420     0,560     0,488     0,501      0,489    0,520
+                                                                 0,510
+Mayo           0,431     0,543     0,484     0,502      0,477    0,500
+                                                                 0,490
+Junio          0,438     0,534     0,478     0,496      0,469    0,480
+                                                                 0,470
+Julio          0,463     0,530     0,473     0,502      0,465    0,460
+                                                                 0,450
+Agosto         0,476     0,518     0,473     0,519      0,469    0,440
+                                                                 0,430
+Septiembre     0,495     0,515     0,480     0,529      0,000    0,420
+                                                                 0,410
+Octubre        0,556     0,517     0,487     0,535      0,000    0,400
+                                                                 0,390
+Noviembre      0,587     0,522     0,492     0,542      0,000    0,380
+                                                                 0,370
+Diciembre      0,597     0,521     0,494     0,542      0,000    0,360
+                                                                 0,350
+Media anual    0,464     0,547     0,491     0,513      0,498    0,340
+                                                                 0,330
+                                                                 0,320
+                                                                 0,310
+                                                                 0,300
+                                                                 0,290
+                                                                 0,280
+                                                                 0,270
+                                                                 0,260
+                                                                 0,250
+                                                                                                                                     jul.-23
+                                                                                                                                                                                                                                                             jul.-24
+                                                                                                                                                                                                                                                                                                                                                                                     jul.-25
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             jul.-26
+                                                                                                                                                                                                                                                   jun.-24
+                                                                                                                           jun.-23
+                                                                                                                                                                                                                                                                                                                                                                           jun.-25
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   jun.-26
+                                                                                                                                                                   oct.-23
+                                                                                                                                                                                                                                                                                           oct.-24
+                                                                                                                                                                                                                                                                                                                                                                                                                   oct.-25
+                                                                                             mar.-23
+                                                                                                                                                                                                                     mar.-24
+                                                                                                                                                                                                                                                                                                                                             mar.-25
+                                                                         ene.-23
+                                                                                                       abr.-23
+                                                                                                                                                                                                 ene.-24
+                                                                                                                                                                                                                               abr.-24
+                                                                                                                                                                                                                                                                                                                         ene.-25
+                                                                                                                                                                                                                                                                                                                                                       abr.-25
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                     mar.-26
+                                                                                                                                                                                                                                                                                                                                                                                                                                                 ene.-26
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               abr.-26
+                                                                                                                                                                                                                                                                                                                                                                                                                                       dic.-25
+                                                                                                                                                                                       dic.-23
+                                                                                                                                               ago.-23
+                                                                                                                                                                                                                                                                       ago.-24
+                                                                                                                                                                                                                                                                                                     nov.-24
+                                                                                                                                                                                                                                                                                                               dic.-24
+                                                                                                                                                                                                                                                                                                                                                                                               ago.-25
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ago.-26
+                                                                                                                 may.-23
+                                                                                                                                                                             nov.-23
+                                                                                                                                                                                                                                                                                                                                                                                                                             nov.-25
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         may.-26
+                                                                                                                                                                                                                                         may.-24
+                                                                                                                                                                                                                                                                                                                                                                 may.-25
+                                                                                   feb.-23
+                                                                                                                                                                                                                                                                                                                                                                                                         sep.-25
+                                                                                                                                                         sep.-23
+                                                                                                                                                                                                           feb.-24
+                                                                                                                                                                                                                                                                                 sep.-24
+                                                                                                                                                                                                                                                                                                                                   feb.-25
+                                                                                                                                                                                                                                                                                                                                                                                                                                                           feb.-26
+                                                      SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                      DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                      13
+                                                                                               9. GANADEROS CON ENTREGAS.
+                                                                        GANADEROS CON ENTREGAS
+                                                 2025                                                         2026
+    CA Productor
+                              SEP          OCT          NOV       DIC        ENE      FEB      MAR      ABR          MAY      JUN      JUL      AGO
+Andalucía                         362         360          358       357        357      356      356      355          355      353      353      353
+Aragón                             33          30           30        30         31       30       31       30           30       30       29       30
+Asturias (P. de)                1.111       1.104        1.101     1.090      1.085    1.077    1.075    1.071        1.069    1.063    1.056    1.051
+Baleares (Illes)                   85          86           84        85         86       86       86       85           84       85       82       75
+Canarias                           58          55           55        55         54       57       57       57           57       56       57       56
+Cantabria                         749         745          740       732        720      718      717      716          714      709      702      698
+Castilla - La Mancha              135         133          134       134        134      134      134      132          132      131      131      128
+Castilla y León                   616         614          610       606        604      597      599      595          594      589      590      584
+Cataluña                          326         326          321       322        321      321      319      319          317      314      315      314
+Extremadura                        30          28           27        28         26       24       22       22           22       20       20       21
+Galicia                         5.011       4.987        4.963     4.944      4.918    4.893    4.874    4.850        4.835    4.801    4.780    4.745
+Madrid (C. de)                     25          25           25        25         25       23       23       23           23       23       23       23
+Murcia (R. de)                     20          20           21        21         20       20       20       20           20       20       19       19
+Navarra (C.F. de)                 113         112          112       111        109      109      108      108          108      108      108      106
+País Vasco                        207         208          207       208        204      204      203      202          203      204      204      204
+Rioja (La)                          6           6            6         6          6        6        6        6            6        6        6        6
+Valenciana (C.)                    15          15           14        14         14       14       14       13           13       14       13       12
+*Otros                              1           0            0         0          0        0        0        0            0        0        0        0
+España                          8.903       8.854        8.808     8.768      8.714    8.669    8.644    8.604        8.582    8.526    8.488    8.425
+* Ganadero de Portugal (Septiembre 2025)
+                                                              SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                              DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                           14
+                                                                                                 10. LECHE CRUDA PRODUCIDA POR
+                                                                                                     CCAA.
+                                                     LECHE CRUDA PRODUCIDA POR COMUNIDAD AUTÓNOMA (T.)
+                                                 2025                                                           2026
+    CA Productor
+                              SEP          OCT          NOV       DIC       ENE       FEB       MAR       ABR          MAY       JUN       JUL       AGO
+Andalucía                      41.926       43.793       43.283    45.983    47.431    44.114    50.504    49.124       49.400    45.191    46.028    45.405
+Aragón                         14.384       14.828       13.561    15.459    15.344    14.146    16.180    15.799       15.491    15.601    15.171    14.479
+Asturias (P. de)               39.303       40.222       39.259    41.283    41.662    38.602    44.030    42.994       43.857    41.765    42.160    41.136
+Baleares (Illes)                1.935        2.342        2.432     3.201     3.239     3.141     3.561     3.222        2.954     2.588     2.030     1.353
+Canarias                        4.156        4.202        3.927     4.568     4.346     3.959     4.484     4.445        4.545     4.803     4.844     4.662
+Cantabria                      29.284       30.003       29.224    30.879    31.468    29.288    33.132    32.024       32.541    30.935    31.494    31.266
+Castilla - La Mancha           22.687       23.351       23.014    24.485    25.015    23.563    26.407    25.574       25.940    23.971    24.038    23.699
+Castilla y León                73.853       75.987       73.122    76.722    78.100    72.118    81.749    79.377       81.855    77.375    80.229    79.184
+Cataluña                       59.186       59.967       57.011    64.495    65.497    61.656    69.625    67.437       67.886    66.734    65.738    62.144
+Extremadura                     1.360        1.406        1.345     1.429     1.466     1.304     1.471     1.425        1.413     1.285     1.343     1.362
+Galicia                       249.321      255.406      248.500   262.271   266.999   245.776   277.422   269.442      276.349   264.868   271.260   267.795
+Madrid (C. de)                  4.035        4.256        4.068     4.242     4.351     4.032     4.495     4.365        4.506     4.164     4.250     4.224
+Murcia (R. de)                  4.749        4.860        5.101     5.753     6.109     5.947     6.919     6.671        6.750     6.039     5.116     4.802
+Navarra (C.F. de)              22.859       22.926       22.000    23.394    23.760    21.966    25.189    23.821       24.406    23.047    23.508    22.803
+País Vasco                     11.659       12.004       11.737    12.487    12.647    11.703    13.318    12.853       13.166    12.376    12.563    12.450
+Rioja (La)                      1.391        1.420        1.309     1.435     1.405     1.304     1.591     1.633        1.693     1.604     1.611     1.542
+Valenciana (C.)                 6.516        6.773        6.387     7.005     7.242     6.962     7.952     7.615        7.854     7.418     6.844     6.640
+Total                        588.630       603.745      585.281   625.092   636.081   589.582   668.028   647.820      660.607   629.765   638.229   624.947
+* Ganadero de Portugal (Septiembre 2025)
+**Leche producida por CCAA en toneladas
+                                                              SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                              DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                           15
+                                                                                               11.    CARACTERÍSTICAS CUALITATIVAS:
+                                                                                                      MATERIA GRASA.
+                                                 CARACTERÍSTICAS CUALITATIVAS. MATERIA GRASA (%)
+                                          2025                                                              2026
+    CA Productor
+                       SEP          OCT          NOV      DIC          ENE      FEB          MAR      ABR          MAY      JUN      JUL          AGO
+Andalucía                    3,83     3,89         3,94         3,96     3,96         3,89     3,81     3,73         3,70     3,61         3,55     3,58
+Aragón                       3,77     3,94         4,01         4,09     4,07         4,03     3,99     3,95         3,79     3,74         3,79     3,81
+Asturias (P. de)             3,86     3,92         3,95         4,01     4,00         4,00     3,96     3,93         3,88     3,82         3,75     3,76
+Baleares (Illes)             3,81     3,92         3,96         3,87     3,79         3,75     3,79     3,77         3,74     3,78         3,77     3,80
+Canarias                     3,61     3,72         3,80         3,78     3,75         3,69     3,76     3,67         3,61     3,56         3,57     3,62
+Cantabria                    3,83     3,91         3,94         3,96     3,96         3,94     3,90     3,86         3,81     3,75         3,66     3,69
+Castilla - La Mancha         3,71     3,84         3,93         4,00     3,96         3,87     3,81     3,77         3,64     3,60         3,59     3,59
+Castilla y León              3,76     3,86         3,93         3,98     3,96         3,91     3,86     3,79         3,70     3,62         3,58     3,62
+Cataluña                     3,77     3,92         3,99         4,00     3,96         3,90     3,89     3,85         3,74     3,69         3,64     3,67
+Extremadura                  3,77     3,87         3,92         3,96     3,95         3,88     3,80     3,69         3,64     3,58         3,49     3,57
+Galicia                      3,93     3,98         4,02         4,04     4,05         4,00     3,97     3,94         3,91     3,81         3,76     3,79
+Madrid (C. de)               3,74     3,78         3,86         3,93     3,93         3,87     3,84     3,84         3,76     3,63         3,59     3,58
+Murcia (R. de)               3,59     3,76         3,81         3,84     3,80         3,74     3,68     3,58         3,46     3,50         3,51     3,60
+Navarra (C.F. de)            3,61     3,72         3,87         3,89     3,91         3,84     3,81     3,75         3,65     3,60         3,57     3,60
+País Vasco                   3,87     3,95         4,03         4,06     4,07         4,05     3,97     3,94         3,87     3,82         3,77     3,79
+Rioja (La)                   3,63     3,72         3,86         3,82     3,82         3,81     3,67     3,57         3,56     3,52         3,56     3,60
+Valenciana (C.)              3,79     3,89         3,94         4,02     3,98         3,90     3,76     3,82         3,74     3,68         3,67     3,70
+España                   3,84         3,92         3,98     4,01         4,00     3,95         3,91     3,87         3,81     3,73     3,69         3,71
+                                                       SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                       DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                          16
+                                                                                              12.      CARACTERÍSTICAS CUALITATIVAS:
+                                                                                                       PROTEÍNA.
+                                                   CARACTERÍSTICAS CUALITATIVAS. PROTEÍNA (%)
+                                          2025                                                                2026
+    CA Productor
+                       SEP          OCT          NOV       DIC          ENE      FEB          MAR       ABR          MAY      JUN      JUL          AGO
+Andalucía                    3,42     3,46         3,51          3,51     3,47         3,45     3,42      3,41         3,39     3,33         3,31     3,32
+Aragón                       3,41     3,47         3,49          3,53     3,53         3,47     3,45      3,44         3,39     3,34         3,29     3,32
+Asturias (P. de)             3,36     3,40         3,42          3,41     3,41         3,39     3,38      3,36         3,34     3,29         3,26     3,29
+Baleares (Illes)             3,28     3,27         3,29          3,32     3,31         3,29     3,33      3,33         3,27     3,19         3,15     3,24
+Canarias                     3,41     3,43         3,45          3,45     3,44         3,43     3,44      3,39         3,38     3,41         3,41     3,41
+Cantabria                    3,38     3,43         3,44          3,42     3,43         3,42     3,39      3,39         3,37     3,32         3,29     3,33
+Castilla - La Mancha         3,40     3,45         3,49          3,50     3,46         3,41     3,38      3,37         3,33     3,29         3,28     3,33
+Castilla y León              3,43     3,48         3,47          3,51     3,49         3,47     3,45      3,41         3,39     3,31         3,24     3,31
+Cataluña                     3,38     3,45         3,50          3,52     3,50         3,46     3,44      3,41         3,36     3,31         3,28     3,31
+Extremadura                  3,42     3,46         3,51          3,53     3,50         3,48     3,46      3,44         3,41     3,33         3,29     3,32
+Galicia                      3,41     3,46         3,48          3,48     3,46         3,44     3,46      3,43         3,39     3,33         3,30     3,34
+Madrid (C. de)               3,39     3,45         3,51          3,54     3,47         3,44     3,42      3,40         3,38     3,33         3,28     3,33
+Murcia (R. de)               3,45     3,49         3,49          3,51     3,48         3,47     3,44      3,40         3,37     3,33         3,29     3,36
+Navarra (C.F. de)            3,32     3,40         3,43          3,42     3,35         3,36     3,37      3,32         3,28     3,24         3,21     3,21
+País Vasco                   3,31     3,39         3,42          3,41     3,35         3,34     3,35      3,32         3,30     3,26         3,23     3,25
+Rioja (La)                   3,29     3,42         3,44          3,40     3,33         3,33     3,32      3,28         3,24     3,16         3,14     3,18
+Valenciana (C.)              3,42     3,49         3,53          3,53     3,50         3,49     3,48      3,47         3,49     3,43         3,38     3,42
+Total                    3,40         3,45         3,47      3,48         3,46     3,44         3,43      3,40         3,38     3,32     3,28         3,32
+                                                       SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                       DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                          17
+                                                                          13.    DETALLE MENSUAL                                DE   LA
+                                                                                 PRODUCCIÓN.
+              DETALLE DE LA PRODUCCIÓN AÑO ACUMULADO (ENERO-AGOSTO 2026)
+                                          % sobre el Entregas misma CA     % sobre       Entregas distinta        % sobre
+    CA Productor       Producción (Kg.)
+                                            total           (Kg.)         total CC.AA        CA (Kg.)            total CC.AA
+Andalucía                   377.197.806              7     323.111.394             86          54.086.412                 14
+Aragón                      122.211.751              2      63.274.476             52          58.937.275                 48
+Asturias (P. de)            336.205.098              7     318.494.706             95          17.710.392                   5
+Baleares (Illes)             22.087.134              0      21.400.206             97              686.928                  3
+Canarias                     36.089.281              1      36.089.281            100                        0              0
+Cantabria                   252.148.793              5     135.031.013             54         117.117.780                 46
+Castilla - La Mancha        198.207.271              4     147.261.184             74          50.946.087                 26
+Castilla y León             629.986.489             12     531.866.739             84          98.119.750                 16
+Cataluña                    526.717.948             10     344.297.910             65         182.420.038                 35
+Extremadura                  11.070.001              0         936.946               8         10.133.055                 92
+Galicia                   2.139.909.903             42    1.356.894.497            63         783.015.406                 37
+Madrid (C. de)               34.387.437              1        6.557.817            19          27.829.620                 81
+Murcia (R. de)               48.353.337              1      27.397.743             57          20.955.594                 43
+Navarra (C.F. de)           188.499.342              4      89.061.172             47          99.438.170                 53
+País Vasco                  101.076.829              2      97.325.596             96            3.751.233                  4
+Rioja (La)                   12.384.372              0        3.348.729            27            9.035.643                73
+Valenciana (C.)              58.526.844              1      13.210.390             23          45.316.454                 77
+España                   5.095.059.636          100      3.515.559.799             69      1.579.499.837                  31
+                                 SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                 DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                            18
+                                                                                   14.      LECHE   CRUDA   ECOLÓGICA
+                                                                                           DECLARADA POR COMPRADORES.
+                                       LECHE CRUDA ECOLÓGICA DECLARADA POR COMPRADORES (T.)
+                                      2025                                                       2026
+ CA 1er comprador
+                       SEP      OCT          NOV       DIC      ENE      FEB      MAR      ABR          MAY      JUN      JUL      AGO
+Andalucía                   0        0            0         0        0        0        0        0            0        0        0        0
+Aragón                      0        0            0         0        0        0        0        0            0        0        0        0
+Asturias (P. de)          123      144          162       105      105      133      187      122          113      105       91       82
+Baleares (Illes)            0        0            0         0        0        0        0        0            0        0        0        0
+Canarias                    0        0            0         0        0        0        0        0            0        0        0        0
+Cantabria                 118      130          127       135      136      133      153      145          145      134      141      129
+Castilla - La Mancha      106      137          113       112      101      118      134      106           90      107      104       97
+Castilla y León             0        0            0         0        0        0        0        0            0        0        0        0
+Cataluña                  687      649          555       681      696      637      746      731          762      808      796      743
+Extremadura                 0        0            0         0        0        0        0        0            0        0        0        0
+Galicia                 2.113    2.282        2.117     2.187    2.282    2.064    2.452    2.558        2.624    2.433    2.309    2.281
+Madrid (C. de)              0        0            0         0        0        0        0        0            0        0        0        0
+Murcia (R. de)              0        0            0         0        0        0        0        0            0        0        0        0
+Navarra (C.F. de)           7        6            6         4        0        0        0        0            0        0        0        0
+País Vasco                 18       15           14        14       14       14       15       17           16       20       18       21
+Rioja (La)                  0        0            0         0        0        0        0        0            0        0        0        0
+Valenciana (C.)             0        0            0         0        0        0        0        0            0        0        0        0
+España                  3.171    3.363        3.095     3.238    3.334    3.100    3.688    3.679        3.750    3.608    3.458    3.353
+                                                   SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                   DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                                                                          19
+                                                                                                                                  15. EVOLUCIÓN DEL IMPORTE MEDIO
+                                                                                                                                      LECHE CRUDA ECOLÓGICA.
+   EVOLUCIÓN DE IMPORTE MEDIO DECLARADO LECHE CRUDA ECOLÓGICA POR COMUNIDAD AUTÓNOMA (€/litro) (medias ponderadas)
+                                                        2025                                                                                           2026
+    CA Productor
+                                 SEP            OCT             NOV              DIC            ENE             FEB             MAR             ABR            MAY           JUN       JUL       AGO
+Andalucía
+Aragón
+Asturias (P. de)                    0,604           0,606           0,611           0,615           0,615          0,612           0,607           0,591           0,576       0,540     0,570    0,520
+Baleares (Illes)
+Canarias
+Cantabria                           0,615           0,623           0,634           0,640           0,633          0,628           0,625           0,600           0,582       0,578     0,577    0,579
+Castilla - La Mancha                0,880           0,880           0,880           0,880           0,880          0,880           0,880           0,880           0,880       0,880     0,880    0,880
+Castilla y León
+Cataluña                            0,670           0,683           0,690           0,683           0,694          0,697           0,675           0,672           0,657       0,652     0,650    0,652
+Extremadura
+Galicia                             0,624           0,629           0,638           0,640           0,639          0,636           0,629           0,613           0,600       0,592     0,588    0,587
+Madrid (C. de)
+Murcia (R. de)
+Navarra (C.F. de)                   0,560           0,560           0,560           0,560
+País Vasco                          0,697           0,700           0,700           0,701           0,700          0,655           0,711           0,709           0,719       0,800     0,800    0,763
+Rioja (La)
+Valenciana (C.)
+España                             0,638           0,643           0,649           0,654           0,653           0,651           0,640           0,627          0,612       0,606     0,607     0,602
+En el informe se muestran los importes medios ponderados percibidos por los ganaderos de la comunidad autónoma indicada, independientemente de la ubicación del comprador.
+                                                                        SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                                        DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                           20
+                                                                 15. EVOLUCIÓN DEL IMPORTE MEDIO
+                                                                     LECHE CRUDA ECOLÓGICA.
+                 Evolución del precio medio declarado leche cruda ecológica (€/litro)
+0,800
+0,790
+0,780
+0,770
+0,760
+0,750
+0,740
+0,730
+0,720
+0,710
+0,700
+0,690
+0,680
+0,670
+0,660                   0,649    0,654   0,653   0,651
+0,650   0,638   0,643                                    0,640
+0,640                                                            0,627
+0,630
+0,620                                                                    0,612   0,606     0,607
+0,610                                                                                              0,602
+0,600
+0,590
+0,580
+0,570
+0,560
+0,550
+0,540
+0,530
+0,520
+0,510
+0,500
+0,490
+0,480
+0,470
+0,460
+0,450
+         SEP     OCT     NOV      DIC     ENE     FEB     MAR     ABR     MAY     JUN    JUL        AGO
+                                SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                                                                    21
+                                                                                                 16.        LECHE   CRUDA    ECOLÓGICA
+                                                                                                            PRODUCIDA POR CCAA.
+                                   LECHE CRUDA ECOLÓGICA PRODUCIDA POR COMUNIDAD AUTÓNOMA (T.)
+                                          2025                                                                     2026
+    CA Productor
+                       SEP         OCT           NOV        DIC         ENE         FEB         MAR         ABR           MAY        JUN         JUL         AGO
+Andalucía                      0           0            0           0           0           0           0           0            0           0           0          0
+Aragón                         0           0            0           0           0           0           0           0            0           0           0          0
+Asturias (P. de)             366         403       389            331         343         354         465         417       407            368         333     311
+Baleares (Illes)               0           0            0           0           0           0           0           0            0           0           0          0
+Canarias                       0           0            0           0           0           0           0           0            0           0           0          0
+Cantabria                    437         464       451            474         498         469         535         528       534            491         498     484
+Castilla - La Mancha          97          95           86         101          96          88         102          97           90         107         104         97
+Castilla y León                0           0            0           0           0           0           0           0            0           0           0          0
+Cataluña                     639         637       538            658         654         623         709         661       683            731         717     666
+Extremadura                    0           0            0           0           0           0           0           0            0           0           0          0
+Galicia                  1.608       1.743        1.610       1.655       1.729       1.552      1.862        1.959        2.019       1.892       1.788      1.775
+Madrid (C. de)                 0           0            0           0           0           0           0           0            0           0           0          0
+Murcia (R. de)                 0           0            0           0           0           0           0           0            0           0           0          0
+Navarra (C.F. de)              7           6            6           4           0           0           0           0            0           0           0          0
+País Vasco                    18          15           14          14          14          14          15          17           16          20          18         21
+Rioja (La)                     0           0            0           0           0           0           0           0            0           0           0          0
+Valenciana (C.)                0           0            0           0           0           0           0           0            0           0           0          0
+España                  3.171       3.363         3.095      3.238       3.334       3.100       3.688       3.679         3.750      3.608       3.458       3.353
+                                                       SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                                       DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS
+                                                                                                                22
+Más información:
+https://www.mapa.gob.es/es/ganaderia/temas/produccion-y-mercados-ganaderos/sectores-ganaderos/vacuno-lechero/
+                                  SUBDIRECCIÓN GENERAL DE PRODUCCIONES GANADERAS Y CINEGÉTICAS
+                                  DIRECCIÓN GENERAL DE PRODUCCIONES Y MERCADOS AGRARIOS

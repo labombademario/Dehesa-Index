@@ -581,6 +581,12 @@
    [
     "spain_olive"
    ]
+  ],
+  "spain-milk/infolac.json": [
+   "spain-milk",
+   [
+    "spain_milk"
+   ]
   ]
  },
  "globs": {

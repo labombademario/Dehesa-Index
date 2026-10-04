@@ -1766,6 +1766,6 @@ html[data-density="expanded"] .pt-table td, html[data-density="expanded"] .pa-t 
 #in-ca[hidden], #cs-ca[hidden] { display: none !important; }
 #ex-ca[hidden], #ex-body[hidden] { display: none !important; }
 #rd-es[hidden] { display: none !important; }
-#in-es[hidden], #ex-es[hidden], #cs-es[hidden], #gn-esm[hidden], #gn-es[hidden] { display: none !important; }
+#in-es[hidden], #ex-es[hidden], #cs-es[hidden], #gn-esm[hidden], #gn-es[hidden], #gn-esl[hidden] { display: none !important; }
 
 #od-es[hidden], #od-body[hidden] { display:none !important }

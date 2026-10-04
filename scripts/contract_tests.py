@@ -1840,6 +1840,42 @@ def spain_olive(doc, errs, warns, stats):
         if af["campaign"] <= max(camps): errs.append("spain-olive aforo: la campaña del aforo no es posterior a la del balance")
     stats["spain-olive campañas"] = len(camps)
 
+def _sm_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_spain_milk", str(Path(__file__).resolve().parent / "update-spain-milk.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
+
+def spain_milk(doc, errs, warns, stats):
+    """Leche cruda de INFOLAC (MAPA): periodos ordenados y sin repetir, series de la longitud de los periodos, 17 comunidades esperadas, sin negativos, precio/grasa/proteina en rango, leche ecologica <= entregas,
+    comunidades suman las entregas del mes (el total puede superar la suma solo por el ganadero de otro pais que declara el MAPA, <= 0,1 %), ganaderos por comunidad <= total, y el ultimo periodo es el mes del ultimo informe."""
+    m = _sm_mod(); P = doc["periods"]; n = len(P)
+    if P != sorted(set(P)): errs.append("spain-milk: periodos desordenados o repetidos"); return
+    if set(doc["ccaa"]) != set(m.CCAA): errs.append("spain-milk: comunidades distintas de las 17 esperadas"); return
+    N = doc["national"]
+    for k, a in N.items():
+        if len(a) != n: errs.append("spain-milk: la serie nacional %s no tiene la longitud de los periodos" % k); return
+        if any(x is not None and x < 0 for x in a): errs.append("spain-milk: valor negativo en %s" % k); return
+    for c, vs in doc["ccaa"].items():
+        for v, a in vs.items():
+            if len(a) != n: errs.append("spain-milk: %s %s no tiene la longitud de los periodos" % (c, v)); return
+            if any(x is not None and x < 0 for x in a): errs.append("spain-milk: valor negativo en %s %s" % (c, v)); return
+            if v == "fat" and any(x is not None and not 2.5 <= x <= 6 for x in a): errs.append("spain-milk: grasa fuera de rango en %s" % c); return
+            if v == "protein" and any(x is not None and not 2.5 <= x <= 4.5 for x in a): errs.append("spain-milk: proteina fuera de rango en %s" % c); return
+    if P[-1] != doc["report"]["month"]: errs.append("spain-milk: el ultimo periodo (%s) no es el mes del informe (%s)" % (P[-1], doc["report"]["month"])); return
+    for i, p in enumerate(P):
+        d = N["deliveries"][i]
+        if N["price"][i] is not None and not 0.2 <= N["price"][i] <= 1.0: errs.append("spain-milk %s: precio fuera de rango" % p)
+        if N["fat"][i] is not None and not 2.5 <= N["fat"][i] <= 6: errs.append("spain-milk %s: grasa fuera de rango" % p)
+        if N["protein"][i] is not None and not 2.5 <= N["protein"][i] <= 4.5: errs.append("spain-milk %s: proteina fuera de rango" % p)
+        if d is not None and N["organic"][i] is not None and N["organic"][i] > d: errs.append("spain-milk %s: leche ecologica mayor que las entregas" % p)
+        pr = [doc["ccaa"][c]["production"][i] for c in doc["ccaa"]]
+        if d is not None and all(x is not None for x in pr):
+            s = sum(pr); tol = 10 + 0.00002 * d
+            if not (-tol <= d - s <= tol + 0.001 * d): errs.append("spain-milk %s: las comunidades suman %s t y las entregas %s t" % (p, round(s), d))
+        fm = [doc["ccaa"][c]["farmers"][i] for c in doc["ccaa"]]
+        if N["farmers"][i] is not None and all(x is not None for x in fm) and sum(fm) > N["farmers"][i] + 2: errs.append("spain-milk %s: mas ganaderos en las comunidades que en el total" % p)
+    stats["spain-milk meses"] = n
+
 
 def ers_cost_reference(doc, errs, warns, stats):
     """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""

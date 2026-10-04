@@ -84,6 +84,18 @@ sources:
     data: [spain-balances/olive.json, spain-olive-log.txt]
     extra: ['!data/spain-balances']
     message: Datos balance del olivar y aforo de aceite de oliva de España (MAPA)
+  - id: spain-milk
+    name: Update Spain raw milk deliveries, prices and quality (MAPA INFOLAC)
+    cron: ['5 8 * * 4']
+    script: scripts/update-spain-milk.py
+    pre: ['sudo apt-get install -y -q poppler-utils >/dev/null']
+    timeout: 15
+    script_timeout: 8
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-milk)
+    data: [spain-milk/infolac.json, spain-milk-log.txt]
+    extra: ['!data/spain-milk']
+    message: Datos leche cruda de España, entregas, precio y calidad (MAPA INFOLAC)
   - id: austria
     name: Update Austria (Eurostat)
     cron: ['25 16 * * 2,5']

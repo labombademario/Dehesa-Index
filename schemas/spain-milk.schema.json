@@ -1,0 +1,225 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Espana: leche cruda entregada a los primeros compradores (MAPA, INFOLAC)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "checkedAt",
+  "source",
+  "units",
+  "periods",
+  "national",
+  "ccaa",
+  "ccaaNames",
+  "report"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "checkedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "mapa_es"
+     ]
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "units": {
+   "type": "object"
+  },
+  "periods": {
+   "type": "array",
+   "minItems": 12,
+   "items": {
+    "type": "string",
+    "pattern": "^\\d{4}-(0[1-9]|1[0-2])$"
+   }
+  },
+  "national": {
+   "type": "object",
+   "required": [
+    "deliveries",
+    "price",
+    "fat",
+    "protein",
+    "farmers",
+    "buyers",
+    "organic"
+   ],
+   "properties": {
+    "deliveries": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "price": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "fat": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "protein": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "farmers": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "buyers": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "organic": {
+     "type": "array",
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    }
+   }
+  },
+  "ccaa": {
+   "type": "object",
+   "minProperties": 17,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "production",
+     "fat",
+     "protein",
+     "farmers"
+    ],
+    "properties": {
+     "production": {
+      "type": "array",
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      }
+     },
+     "fat": {
+      "type": "array",
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      }
+     },
+     "protein": {
+      "type": "array",
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      }
+     },
+     "farmers": {
+      "type": "array",
+      "items": {
+       "type": [
+        "number",
+        "null"
+       ]
+      }
+     }
+    }
+   }
+  },
+  "ccaaNames": {
+   "type": "object"
+  },
+  "report": {
+   "type": "object",
+   "required": [
+    "month"
+   ],
+   "properties": {
+    "month": {
+     "type": "string",
+     "pattern": "^\\d{4}-(0[1-9]|1[0-2])$"
+    },
+    "extracted": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "published": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "pdf": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  },
+  "revisions": {
+   "type": "integer"
+  }
+ }
+}
