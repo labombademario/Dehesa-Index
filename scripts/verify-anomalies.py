@@ -79,6 +79,24 @@ def fetch_statcan(v, fx):
     return statcan_points(csv.DictReader(io.TextIOWrapper(z.open(name), encoding="utf-8-sig")), v["filters"]), "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=%d01" % (v["pid"] // 100)
 
 
+def statcan_table_points(rows, filters, prefix, div):
+    """{periodo: (valor, estado)} de una tabla de StatCan filtrando por columnas (igualdad exacta o prefijo); valor = VALUE x factor de escala / div (misma conversion que update-canada-stats.py)."""
+    out = {}
+    for r in rows:
+        if any(r.get(k) != x for k, x in filters.items()) or any(not (r.get(k) or "").startswith(x) for k, x in prefix.items()): continue
+        if r.get("VALUE") in ("", None): continue
+        out[r["REF_DATE"]] = (float(r["VALUE"]) * SC.get((r.get("SCALAR_FACTOR") or "units").strip().lower(), 1) / div, r.get("STATUS") or None)
+    return out
+
+
+def fetch_statcan_table(v, fx):
+    url = "https://www150.statcan.gc.ca/t1/wds/rest/getFullTableDownloadCSV/%d/en" % v["pid"]
+    z = zipfile.ZipFile(io.BytesIO(fx("statcan-%d" % v["pid"], url, big=True)))
+    name = [n for n in z.namelist() if n.endswith(".csv") and "MetaData" not in n][0]
+    pts = statcan_table_points(csv.DictReader(io.TextIOWrapper(z.open(name), encoding="utf-8-sig")), v["filters"], v.get("prefix", {}), v.get("div", 1))
+    return pts, "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=%d01" % (v["pid"] // 100)
+
+
 # ---------------------------------------------------------------- ABS (SDMX CSV)
 def abs_points(rows):
     return {r["TIME_PERIOD"]: (float(r["OBS_VALUE"]) * 10 ** int(r.get("UNIT_MULT") or 0) / 1e6, r.get("OBS_STATUS") or None) for r in rows if r.get("OBS_VALUE") not in (None, "")}
@@ -143,6 +161,7 @@ def check(a, fx, now):
                 ps, _ = fetch_eurostat({"dataset": v["dataset"], "filters": dict(v["filters"], **v["parent"])}, fx)
                 ctx.append("%s: %s" % (v["parent"]["meat"], ", ".join("%s=%s" % (p, ps[p][0]) for p in v["periods"] if p in ps)))
         elif kind == "statcan": src, url = fetch_statcan(v, fx)
+        elif kind == "statcan_table": src, url = fetch_statcan_table(v, fx)
         elif kind == "abs": src, url, ctx = fetch_abs(v, fx)
         else: raise ValueError("verificador desconocido " + kind)
     except Exception as e:

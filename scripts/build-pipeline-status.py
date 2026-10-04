@@ -52,6 +52,15 @@ def expected_gap_h(crons):
     all_.sort()
     gaps = [(b - a).total_seconds() / 3600 for a, b in zip(all_, all_[1:])]
     return max(gaps) if gaps else None
+def is_late(crons, last_start):
+    """Retraso real: se compara AHORA con la siguiente ejecucion que tocaba despues de la ultima (segun el cron, con fines de semana y dias laborables),
+    mas una tolerancia (la mayor entre 12 h y un intervalo entero), porque GitHub retrasa o salta ejecuciones programadas."""
+    exp = [next_run(c, last_start) for c in crons]; exp = [x for x in exp if x]
+    if not exp: return False
+    e = min(exp)
+    nxt = [next_run(c, e) for c in crons]; nxt = [x for x in nxt if x]
+    interval = (min(nxt) - e).total_seconds() / 3600 if nxt else 24
+    return NOW > e + datetime.timedelta(hours=max(12, interval))
 def iso(d): return d.strftime("%Y-%m-%dT%H:%M:%SZ") if d else None
 def pdate(s): return datetime.datetime.strptime(s[:19], "%Y-%m-%dT%H:%M:%S") if s else None
 def main():
@@ -91,7 +100,7 @@ def main():
                 item["recent"] = {"runs": len(rr), "success": ok, "failed": sum(1 for x in rr if x.get("conclusion") == "failure")}
                 age_h = (NOW - st).total_seconds() / 3600 if st else None
                 if r.get("conclusion") == "failure": item["status"] = "error"
-                elif gap and age_h is not None and age_h > max(gap * 2.5, 30): item["status"] = "late"
+                elif crons and st and is_late(crons, st): item["status"] = "late"
                 else: item["status"] = "ok"
         # NOT_RUN_YET: la API respondio y el workflow no tiene ninguna ejecucion (distinto de "unknown": no hemos podido consultarlo)
         if runs is not None and not runs.get("workflow_runs"): item["status"] = "not_run"

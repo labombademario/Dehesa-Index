@@ -156,6 +156,117 @@
    "verifiedAt": "2026-10-03",
    "sourceUrl": "https://data.api.abs.gov.au/rest/data/MERCH_IMP/044.TOT.TOT.M",
    "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "CA/ca-meat-cattle-live-imports",
+   "file": "canada-stats.json",
+   "status": "UNEXPLAINED_ANOMALY",
+   "detected": "Importaciones de ganado vacuno vivo (miles de cabezas, anual): 4,4 a 2,7 en 1958 (mediana previa 0,1) y 64,0 a 208,5 en 1973 (mediana previa 7,7).",
+   "hypothesis": "Serie con base muy pequena y cambios reales en el comercio de ganado vivo; no se ha comprobado la causa.",
+   "verification": "Pendiente: scripts/verify-anomalies.py compara con la fuente primaria; si coincide pasa a KNOWN_VERIFIED_ANOMALY (la hipotesis sigue siendo hipotesis).",
+   "since": "2026-10-04",
+   "verifier": {
+    "kind": "statcan_table",
+    "pid": 32100125,
+    "filters": {
+     "GEO": "Canada",
+     "Livestock": "Cattle",
+     "Livestock estimates": "Live imports"
+    },
+    "periods": [
+     "1957",
+     "1958",
+     "1959",
+     "1972",
+     "1973",
+     "1974"
+    ],
+    "div": 1000
+   },
+   "nextAction": "Ejecutar el workflow verify-anomalies (compara con la tabla de Statistics Canada); si los periodos coinciden, promover a KNOWN_VERIFIED_ANOMALY sin tocar las cifras."
+  },
+  {
+   "series": "CA/ca-meat-calves-live-exports",
+   "file": "canada-stats.json",
+   "status": "UNEXPLAINED_ANOMALY",
+   "detected": "Exportaciones de terneros vivos (miles de cabezas, anual): 81,6 a 197,5 en 1958 (mediana previa 4).",
+   "hypothesis": "Serie con base pequena y cambios reales en el comercio de ganado vivo; no se ha comprobado la causa.",
+   "verification": "Pendiente: scripts/verify-anomalies.py compara con la fuente primaria; si coincide pasa a KNOWN_VERIFIED_ANOMALY (la hipotesis sigue siendo hipotesis).",
+   "since": "2026-10-04",
+   "verifier": {
+    "kind": "statcan_table",
+    "pid": 32100125,
+    "filters": {
+     "GEO": "Canada",
+     "Livestock": "Calves",
+     "Livestock estimates": "Live exports"
+    },
+    "periods": [
+     "1957",
+     "1958",
+     "1959"
+    ],
+    "div": 1000
+   },
+   "nextAction": "Ejecutar el workflow verify-anomalies (compara con la tabla de Statistics Canada); si los periodos coinciden, promover a KNOWN_VERIFIED_ANOMALY sin tocar las cifras."
+  },
+  {
+   "series": "CA/ca-tpr-exp-pe-japan",
+   "file": "canada-stats.json",
+   "status": "UNEXPLAINED_ANOMALY",
+   "detected": "Exportaciones nacionales de la Isla del Principe Eduardo a Japon (millones de CAD, mensual): 0,183 a 1,279 en 2020-09 y 1,279 a 1,096 en 2020-10 (mediana previa 0,011).",
+   "hypothesis": "Base casi nula en una provincia pequena; un envio puntual puede multiplicar la cifra. No comprobado.",
+   "verification": "Pendiente: scripts/verify-anomalies.py compara con la fuente primaria; si coincide pasa a KNOWN_VERIFIED_ANOMALY (la hipotesis sigue siendo hipotesis).",
+   "since": "2026-10-04",
+   "verifier": {
+    "kind": "statcan_table",
+    "pid": 12100175,
+    "filters": {
+     "GEO": "Prince Edward Island",
+     "Trade": "Domestic export",
+     "Principal trading partners": "Japan"
+    },
+    "periods": [
+     "2020-08",
+     "2020-09",
+     "2020-10",
+     "2020-11"
+    ],
+    "prefix": {
+     "North American Product Classification System (NAPCS)": "Farm, fishing"
+    },
+    "div": 1000000.0
+   },
+   "nextAction": "Ejecutar el workflow verify-anomalies (compara con la tabla de Statistics Canada); si los periodos coinciden, promover a KNOWN_VERIFIED_ANOMALY sin tocar las cifras."
+  },
+  {
+   "series": "CA/ca-tpr-exp-qc-china",
+   "file": "canada-stats.json",
+   "status": "UNEXPLAINED_ANOMALY",
+   "detected": "Exportaciones nacionales de Quebec a China (millones de CAD, mensual): 90,635 a 172,837 en 2018-11 (mediana previa 3,93).",
+   "hypothesis": "Posible efecto de estacionalidad o de un envio grande; no comprobado.",
+   "verification": "Pendiente: scripts/verify-anomalies.py compara con la fuente primaria; si coincide pasa a KNOWN_VERIFIED_ANOMALY (la hipotesis sigue siendo hipotesis).",
+   "since": "2026-10-04",
+   "verifier": {
+    "kind": "statcan_table",
+    "pid": 12100175,
+    "filters": {
+     "GEO": "Quebec",
+     "Trade": "Domestic export",
+     "Principal trading partners": "China"
+    },
+    "periods": [
+     "2018-09",
+     "2018-10",
+     "2018-11",
+     "2018-12"
+    ],
+    "prefix": {
+     "North American Product Classification System (NAPCS)": "Farm, fishing"
+    },
+    "div": 1000000.0
+   },
+   "nextAction": "Ejecutar el workflow verify-anomalies (compara con la tabla de Statistics Canada); si los periodos coinciden, promover a KNOWN_VERIFIED_ANOMALY sin tocar las cifras."
   }
  ]
 }

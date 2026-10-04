@@ -57,6 +57,7 @@
         "enum": [
          "eurostat",
          "statcan",
+         "statcan_table",
          "abs"
         ]
        },
