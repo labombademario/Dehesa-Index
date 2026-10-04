@@ -39,7 +39,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
 
   // vacío: sin elección no hay datos y se ofrecen ejemplos
   await page.goto(BASE + '/mi-mercado.html', { waitUntil: 'networkidle' }); await page.waitForSelector('#mm-body [data-mm="c"]');
-  ok(tag + ': sin elección no hay tarjetas', (await page.$$('[data-mm-sec]')).length === 0 && (await page.$$('[data-mm-ex]')).length === 5);
+  ok(tag + ': sin elección no hay tarjetas', (await page.$$('[data-mm-sec]')).length === 0 && (await page.$$('[data-mm-ex]')).length === 7);
 
   // Kansas · ganado (por URL)
   await page.goto(BASE + '/mi-mercado.html?c=US&r=KS&p=cattle', { waitUntil: 'networkidle' }); await ready('price'); await ready('ins'); await ready('dr');

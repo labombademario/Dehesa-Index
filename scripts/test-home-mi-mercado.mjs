@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Portada: panel «Mi mercado». Sin elección guardada ofrece empezar (4 ejemplos con enlace); con elección guardada carga el módulo en modo compacto con las mismas cifras que la página completa
+// Portada: panel «Mi mercado». Sin elección guardada ofrece empezar (6 ejemplos con enlace); con elección guardada carga el módulo en modo compacto con las mismas cifras que la página completa
 // (precio local = JSON), sin tocar la URL de la portada, sin undefined/NaN ni desborde a 390 px, y el bloque «Más datos» queda plegado. 4 idiomas, 1280/390.
 // Uso: node scripts/test-home-mi-mercado.mjs [--base http://localhost:8123]
 import fs from 'node:fs';
@@ -23,7 +23,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
     await page.goto(BASE + '/', { waitUntil: 'networkidle' });
     if (!saved) {
       await page.waitForSelector('#home-mm a[href*="mi-mercado.html"]');
-      ok(t2 + ': 4 ejemplos con enlace', (await page.$$('#home-mm a[href*="mi-mercado.html?c="]')).length === 4);
+      ok(t2 + ': 6 ejemplos con enlace', (await page.$$('#home-mm a[href*="mi-mercado.html?c="]')).length === 6);
       ok(t2 + ': no descarga el módulo', mm === 0);
     } else {
       await page.waitForFunction(() => { const n = document.querySelector('#home-mm [data-mm-body="price"]'); return n && n.innerText.length > 40 && !/…$/.test(n.innerText.trim()); }, null, { timeout: 12000 });
