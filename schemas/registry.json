@@ -600,6 +600,12 @@
     "spain_wine"
    ]
   ],
+  "spain-slaughter/census.json": [
+   "spain-slaughter-census",
+   [
+    "spain_slaughter_census"
+   ]
+  ],
   "spain-slaughter/slaughter.json": [
    "spain-slaughter",
    [

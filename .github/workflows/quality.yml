@@ -93,6 +93,9 @@ jobs:
       - name: Spain livestock slaughter by species and region (MAPA xlsx reader on the real August 2026 workbook, weights, source inconsistency noted, history accumulation and revisions; no network)
         run: python3 scripts/test-spain-slaughter.py
 
+      - name: Spain slaughter census by province (MAPA annual census reader on the real 2025 .xlsx and 2007 .xls workbooks, unit change of poultry and rabbits, DC cells as gap with class, province aliases, sums, accumulation and revisions; no network)
+        run: pip install openpyxl xlrd && python3 scripts/test-spain-slaughter-census.py
+
       - name: Spain wine by campaign and region (MAPA INFOVI July extended report reader on the real 2021 and 2026 workbooks, cross-checks, link discovery, accumulation and revisions; no network)
         run: python3 scripts/test-spain-wine.py
 

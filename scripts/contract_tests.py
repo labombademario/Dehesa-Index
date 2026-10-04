@@ -1857,6 +1857,10 @@ def _swm_mod():
     sp = _u.spec_from_file_location("update_spain_wine_monthly", str(Path(__file__).resolve().parent / "update-spain-wine-monthly.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
 
 
+def _ssc_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_spain_slaughter_census", str(Path(__file__).resolve().parent / "update-spain-slaughter-census.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
 def spain_wine_monthly(doc, errs, warns, stats):
     """Vino mensual de INFOVI (MAPA): meses ordenados y sin repetir, 17 comunidades, series de la longitud de los meses, sin negativos, comunidades = total, salidas = interiores + exteriores, exteriores = UE + terceros,
     identidad de existencias (inicial + produccion + entradas - salidas - operaciones propias = final) con un residuo < 10 % y una fuente por mes."""
@@ -1942,6 +1946,52 @@ def spain_slaughter(doc, errs, warns, stats):
                 t = N[s][k][i]; v = [d[s][k][i] for d in doc["ccaa"].values() if d[s][k][i] is not None]
                 if t is not None and v and sum(v) > t * 1.005 + 1: errs.append("spain-slaughter %s %s %s: las comunidades suman mas que el nacional" % (p, s, k))
     stats["spain-slaughter meses"] = n
+
+
+def spain_slaughter_census(doc, errs, warns, stats):
+    """Censo anual de sacrificio por provincia (MAPA): años ordenados y sin repetir, 50 provincias (id del mapa) y 17 comunidades esperadas, series de la longitud de los años, sin negativos, una celda DC es null (nunca cifra) y las claves de dc existen,
+    aves y conejos en cabezas (orden de magnitud nacional), las comunidades suman el TOTAL y TOTAL + otros sacrificios = España, y toda diferencia entre las provincias y su comunidad (cifras publicadas del MAPA) esta anotada en notes."""
+    m = _ssc_mod(); Y = doc["years"]; n = len(Y); S = m.SPECIES
+    if Y != sorted(set(Y)): errs.append("spain-slaughter-census: años desordenados o repetidos"); return
+    if set(doc["v"]) != {"ES"} | {p[0] for p in m.PROV}: errs.append("spain-slaughter-census: provincias distintas de las 50 esperadas"); return
+    if set(doc["ccaa"]) != set(m.CCAA): errs.append("spain-slaughter-census: comunidades distintas de las 17 esperadas"); return
+    if set(doc["files"]) != {str(y) for y in Y} or set(doc["basis"]) != {str(y) for y in Y} or set(doc["titles"]) != {str(y) for y in Y}: errs.append("spain-slaughter-census: files, basis y titles no coinciden con los años"); return
+    groups = {"v": doc["v"], "ccaa": doc["ccaa"], "provTotal": {"TOTAL": doc["provTotal"]}, "others": {"OTROS": doc["others"]}}
+    for gname, g in groups.items():
+        for k, d in g.items():
+            for s in S:
+                for me in ("heads", "meat"):
+                    a = d[s][me]
+                    if len(a) != n: errs.append("spain-slaughter-census: %s %s %s no tiene la longitud de los años" % (k, s, me)); return
+                    if any(x is not None and x < 0 for x in a): errs.append("spain-slaughter-census: valor negativo en %s %s %s" % (k, s, me)); return
+    cls = {p[0]: p[2] for p in m.PROV}
+    for key, sd in doc["dc"].items():
+        if key != "ES" and key not in doc["v"] and key not in doc["ccaa"]: errs.append("spain-slaughter-census: dc de una region que no existe (%s)" % key); return
+        for s, md in sd.items():
+            for me, yd in md.items():
+                for y, c in yd.items():
+                    if s not in S or me not in ("heads", "meat") or int(y) not in Y or c not in (0, 1, 2, 3, 4): errs.append("spain-slaughter-census: dc mal formado en %s %s %s %s" % (key, s, me, y)); return
+                    series = (doc["v"].get(key) or doc["ccaa"].get(key))
+                    if series[s][me][Y.index(int(y))] is not None: errs.append("spain-slaughter-census: %s %s %s %s es DC y trae cifra" % (key, s, me, y))
+    noted = {(x["year"], x["region"], x["species"], x["measure"]) for x in doc["notes"] if x.get("kind") == "sum"}
+    tol = lambda x: 2.0 + 0.0005 * abs(x)
+    for i, y in enumerate(Y):
+        for s in S:
+            for me in ("heads", "meat"):
+                T = doc["provTotal"][s][me][i]; E = doc["v"]["ES"][s][me][i]; O = doc["others"][s][me][i]
+                cs = [doc["ccaa"][k][s][me][i] for k in m.CCAA]
+                if T is not None and all(c is not None for c in cs) and abs(sum(cs) - T) > tol(T): errs.append("spain-slaughter-census %d %s %s: las comunidades suman %s y el TOTAL %s" % (y, s, me, round(sum(cs), 1), round(T, 1)))
+                if T is not None and E is not None and O is not None and abs(T + O - E) > tol(E): errs.append("spain-slaughter-census %d %s %s: TOTAL + otros sacrificios distinto de España" % (y, s, me))
+                for slug in m.CCAA:
+                    if slug in m.UNI: continue
+                    c = doc["ccaa"][slug][s][me][i]; vv = [doc["v"][p[0]][s][me][i] for p in m.PROV if p[2] == slug]; ok_ = [x for x in vv if x is not None]
+                    if c is None: continue
+                    gap = sum(ok_) - c if len(ok_) == len(vv) else max(0.0, sum(ok_) - c)
+                    if abs(gap) > tol(c) and (y, slug, s, me) not in noted: errs.append("spain-slaughter-census %d %s %s %s: las provincias suman %s y la comunidad %s y la diferencia no esta anotada" % (y, slug, s, me, round(sum(ok_), 1), round(c, 1)))
+        for s in ("aves", "conejos"):
+            h = doc["v"]["ES"][s]["heads"][i]; lo, hi = m.MAGN[s]
+            if h is not None and not lo <= h <= hi: errs.append("spain-slaughter-census %d %s: %.0f cabezas en España fuera de orden de magnitud (¿miles?)" % (y, s, h))
+    stats["spain-slaughter-census años"] = n
 
 
 def spain_milk(doc, errs, warns, stats):

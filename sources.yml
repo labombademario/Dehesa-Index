@@ -107,6 +107,18 @@ sources:
     data: [spain-slaughter/slaughter.json, spain-slaughter-log.txt]
     extra: ['!data/spain-slaughter']
     message: Datos sacrificio de ganado de España por especie y comunidad (MAPA)
+  - id: spain-slaughter-census
+    name: Update Spain annual livestock slaughter by province (MAPA census)
+    cron: ['10 9 * * 4']
+    pre: ['pip install openpyxl xlrd']
+    script: scripts/update-spain-slaughter-census.py
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-slaughter)
+    data: [spain-slaughter/census.json, spain-slaughter-census-log.txt]
+    extra: ['!data/spain-slaughter']
+    message: Datos sacrificio anual de ganado de España por provincia (MAPA, censo)
   - id: spain-wine
     name: Update Spain wine by campaign and region (MAPA INFOVI)
     cron: ['45 8 * * 4']
