@@ -104,6 +104,49 @@
     }
    },
    "minItems": 20
+  },
+  "deploy": {
+   "type": "object",
+   "required": [
+    "status",
+    "site"
+   ],
+   "properties": {
+    "status": {
+     "enum": [
+      "ok",
+      "error",
+      "unknown"
+     ]
+    },
+    "site": {
+     "type": "string"
+    },
+    "lagHours": {
+     "type": [
+      "number",
+      "null"
+     ]
+    },
+    "build": {
+     "type": [
+      "object",
+      "null"
+     ]
+    },
+    "prodGeneratedAt": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "repoGeneratedAt": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
   }
  }
 }

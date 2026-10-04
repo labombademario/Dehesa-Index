@@ -61,6 +61,39 @@ def is_late(crons, last_start):
     nxt = [next_run(c, e) for c in crons]; nxt = [x for x in nxt if x]
     interval = (min(nxt) - e).total_seconds() / 3600 if nxt else 24
     return NOW > e + datetime.timedelta(hours=max(12, interval))
+SITE = "https://dehesaindex.com"
+def fetch_json(url):
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "dehesa-status", "Cache-Control": "no-cache"}), timeout=30) as r: return json.load(r)
+    except Exception as e: print("fetch", url[:60], repr(e)[:80]); return None
+def check_deploy():
+    """Vigila que lo que sirve dehesaindex.com sea lo que hay en main: (1) el check 'Workers Builds' de Cloudflare del ultimo commit con resultado
+    (si falla, el sitio se queda congelado aunque GitHub este verde); (2) desfase entre el news-status.json servido y el del repo (se reescribe cada 3 h).
+    Sin red o sin token queda 'unknown'; nunca inventa un estado."""
+    out = {"status": "unknown", "site": SITE, "build": None, "lagHours": None, "prodGeneratedAt": None, "repoGeneratedAt": None}
+    try:
+        import subprocess
+        shas = subprocess.run(["git", "log", "--format=%H", "-8"], capture_output=True, text=True, cwd=str(ROOT)).stdout.split()
+    except Exception: shas = []
+    for sha in shas:
+        cr = api("commits/%s/check-runs" % sha)
+        if not cr: break
+        runs = [c for c in cr.get("check_runs", []) if str(c.get("name", "")).startswith("Workers Builds")]
+        done = [c for c in runs if c.get("status") == "completed"]
+        if done:
+            c = done[0]; out["build"] = {"sha": sha[:8], "conclusion": c.get("conclusion"), "url": c.get("details_url") or c.get("html_url"), "completedAt": c.get("completed_at")}; break
+        if runs: continue  # en curso: mirar el commit anterior
+    try:
+        rep = json.loads((ROOT / "data" / "news-status.json").read_text()).get("generatedAt")
+        out["repoGeneratedAt"] = rep
+        prod = fetch_json(SITE + "/data/news-status.json?t=" + NOW.strftime("%Y%m%d%H%M"))
+        pg = prod.get("generatedAt") if prod else None; out["prodGeneratedAt"] = pg
+        if rep and pg: out["lagHours"] = round(max(0.0, (pdate(rep) - pdate(pg)).total_seconds() / 3600), 1)
+    except Exception as e: print("deploy lag", repr(e)[:80])
+    b = out["build"]
+    if (b and b["conclusion"] == "failure") or (out["lagHours"] is not None and out["lagHours"] > 6): out["status"] = "error"
+    elif (b and b["conclusion"] == "success") or out["lagHours"] is not None: out["status"] = "ok"
+    return out
 def iso(d): return d.strftime("%Y-%m-%dT%H:%M:%SZ") if d else None
 def pdate(s): return datetime.datetime.strptime(s[:19], "%Y-%m-%dT%H:%M:%S") if s else None
 def main():
@@ -107,7 +140,8 @@ def main():
         if any(f.get("valid") == "error" for f in item["files"]): item["status"] = "error"
         out.append(item)
     cnt = {k: sum(1 for i in out if i["status"] == k) for k in ("ok", "late", "error", "not_run", "unknown")}
-    doc = {"schemaVersion": 1, "generatedAt": iso(NOW), "repo": REPO, "summary": cnt, "global": "error" if cnt["error"] else ("late" if cnt["late"] else ("ok" if cnt["ok"] else "unknown")), "pipelines": out}
+    dep = check_deploy()
+    doc = {"schemaVersion": 1, "generatedAt": iso(NOW), "repo": REPO, "summary": cnt, "global": "error" if (cnt["error"] or dep["status"] == "error") else ("late" if cnt["late"] else ("ok" if cnt["ok"] else "unknown")), "deploy": dep, "pipelines": out}
     (ROOT / "data" / "pipeline-status.json").write_text(json.dumps(doc, ensure_ascii=False, indent=1))
-    print("pipelines", len(out), cnt)
+    print("pipelines", len(out), cnt, "deploy", dep["status"], dep.get("lagHours"), (dep.get("build") or {}).get("conclusion"))
 main()

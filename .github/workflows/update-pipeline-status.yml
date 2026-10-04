@@ -9,6 +9,7 @@ on:
 permissions:
   contents: write
   actions: read
+  issues: write
 concurrency:
   group: dehesa-data-writes
   cancel-in-progress: false
@@ -40,6 +41,13 @@ jobs:
             [ "$ok" = 1 ] || { echo "no se pudo publicar el estado"; exit 1; }
           fi
           exit $VALIDATE_RC
+
+      # 1b) Alerta: si el estado global esta en rojo (pipeline con error o despliegue roto) abre o actualiza un issue; al volver a verde lo cierra. GitHub avisa por correo.
+      - name: Alerta por issue si el estado esta en rojo
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/alert-issue.py
 
       # 2) Datos derivados: construir TODO, validar TODO y solo entonces commitear. Sin "|| true".
       - name: Registro de series
