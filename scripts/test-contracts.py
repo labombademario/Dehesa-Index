@@ -22,6 +22,7 @@ def _sl(d): return d["v"]
 def _sbv(d, y="2025"): return d["campaigns"][y]["v"]
 def _sov(d, y="2025"): return d["campaigns"][y]["v"]
 def _smk(d): return d["ccaa"]["galicia"]
+def _ssl(d): return d["national"]["bovino"]
 CASES = [
  ("spain-milk/infolac.json", "comunidades que no suman las entregas", lambda d: _smk(d)["production"].__setitem__(-1, _smk(d)["production"][-1] + 5000)),
  ("spain-milk/infolac.json", "precio imposible", lambda d: d["national"]["price"].__setitem__(-1, 5.0)),
@@ -31,6 +32,13 @@ CASES = [
  ("spain-milk/infolac.json", "comunidad que falta", lambda d: d["ccaa"].pop("galicia")),
  ("spain-milk/infolac.json", "serie mas corta que los periodos", lambda d: d["national"]["farmers"].pop()),
  ("spain-milk/infolac.json", "informe que no es el ultimo periodo", lambda d: d["report"].__setitem__("month", "2025-01")),
+ ("spain-slaughter/slaughter.json", "cabezas negativas", lambda d: _ssl(d)["heads"].__setitem__(-1, -1)),
+ ("spain-slaughter/slaughter.json", "peso canal imposible", lambda d: d["national"]["porcino"]["carcass"].__setitem__(-1, 9e6)),
+ ("spain-slaughter/slaughter.json", "comunidades que superan el nacional", lambda d: d["ccaa"]["galicia"]["bovino"]["heads"].__setitem__(-1, 9e7)),
+ ("spain-slaughter/slaughter.json", "comunidad que falta", lambda d: d["ccaa"].pop("galicia")),
+ ("spain-slaughter/slaughter.json", "serie mas corta que los periodos", lambda d: d["national"]["ovino"]["heads"].pop()),
+ ("spain-slaughter/slaughter.json", "libro que no es el ultimo periodo", lambda d: d["report"].__setitem__("last", "2025-01")),
+ ("spain-slaughter/slaughter.json", "periodos desordenados", lambda d: d["periods"].reverse()),
  ("spain-balances/olive.json", "produccion que rompe el total de origen", lambda d: _sov(d)["oil"].__setitem__("production", _sov(d)["oil"]["production"] + 300)),
  ("spain-balances/olive.json", "existencias finales que no cuadran", lambda d: _sov(d)["oil"].__setitem__("endingStocks", _sov(d)["oil"]["endingStocks"] + 80)),
  ("spain-balances/olive.json", "exportaciones UE + extra UE que no suman", lambda d: _sov(d, "2024")["oil"].__setitem__("exportsEU", _sov(d, "2024")["oil"]["exportsEU"] + 50)),

@@ -1,0 +1,518 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Espana: sacrificio de ganado por especie y comunidad (MAPA)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "checkedAt",
+  "source",
+  "units",
+  "species",
+  "periods",
+  "national",
+  "ccaa",
+  "ccaaNames",
+  "notes",
+  "report"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "checkedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "mapa_es"
+     ]
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "units": {
+   "type": "object"
+  },
+  "species": {
+   "type": "array",
+   "minItems": 7
+  },
+  "periods": {
+   "type": "array",
+   "minItems": 12,
+   "items": {
+    "type": "string",
+    "pattern": "^\\d{4}-(0[1-9]|1[0-2])$"
+   }
+  },
+  "national": {
+   "type": "object",
+   "required": [
+    "bovino",
+    "ovino",
+    "caprino",
+    "porcino",
+    "equino",
+    "aves",
+    "conejos"
+   ],
+   "properties": {
+    "bovino": {
+     "type": "object",
+     "required": [
+      "heads",
+      "carcass"
+     ],
+     "properties": {
+      "heads": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      },
+      "carcass": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      }
+     }
+    },
+    "ovino": {
+     "type": "object",
+     "required": [
+      "heads",
+      "carcass"
+     ],
+     "properties": {
+      "heads": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      },
+      "carcass": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      }
+     }
+    },
+    "caprino": {
+     "type": "object",
+     "required": [
+      "heads",
+      "carcass"
+     ],
+     "properties": {
+      "heads": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      },
+      "carcass": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      }
+     }
+    },
+    "porcino": {
+     "type": "object",
+     "required": [
+      "heads",
+      "carcass"
+     ],
+     "properties": {
+      "heads": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      },
+      "carcass": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      }
+     }
+    },
+    "equino": {
+     "type": "object",
+     "required": [
+      "heads",
+      "carcass"
+     ],
+     "properties": {
+      "heads": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      },
+      "carcass": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      }
+     }
+    },
+    "aves": {
+     "type": "object",
+     "required": [
+      "heads",
+      "carcass"
+     ],
+     "properties": {
+      "heads": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      },
+      "carcass": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      }
+     }
+    },
+    "conejos": {
+     "type": "object",
+     "required": [
+      "heads",
+      "carcass"
+     ],
+     "properties": {
+      "heads": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      },
+      "carcass": {
+       "type": "array",
+       "items": {
+        "type": [
+         "number",
+         "null"
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  "ccaa": {
+   "type": "object",
+   "minProperties": 17,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "bovino",
+     "ovino",
+     "caprino",
+     "porcino",
+     "equino",
+     "aves",
+     "conejos"
+    ],
+    "properties": {
+     "bovino": {
+      "type": "object",
+      "required": [
+       "heads",
+       "carcass"
+      ],
+      "properties": {
+       "heads": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "carcass": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       }
+      }
+     },
+     "ovino": {
+      "type": "object",
+      "required": [
+       "heads",
+       "carcass"
+      ],
+      "properties": {
+       "heads": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "carcass": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       }
+      }
+     },
+     "caprino": {
+      "type": "object",
+      "required": [
+       "heads",
+       "carcass"
+      ],
+      "properties": {
+       "heads": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "carcass": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       }
+      }
+     },
+     "porcino": {
+      "type": "object",
+      "required": [
+       "heads",
+       "carcass"
+      ],
+      "properties": {
+       "heads": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "carcass": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       }
+      }
+     },
+     "equino": {
+      "type": "object",
+      "required": [
+       "heads",
+       "carcass"
+      ],
+      "properties": {
+       "heads": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "carcass": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       }
+      }
+     },
+     "aves": {
+      "type": "object",
+      "required": [
+       "heads",
+       "carcass"
+      ],
+      "properties": {
+       "heads": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "carcass": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       }
+      }
+     },
+     "conejos": {
+      "type": "object",
+      "required": [
+       "heads",
+       "carcass"
+      ],
+      "properties": {
+       "heads": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "carcass": {
+        "type": "array",
+        "items": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "ccaaNames": {
+   "type": "object"
+  },
+  "notes": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "period",
+     "species",
+     "kind"
+    ]
+   }
+  },
+  "report": {
+   "type": "object",
+   "required": [
+    "last"
+   ],
+   "properties": {
+    "last": {
+     "type": "string",
+     "pattern": "^\\d{4}-(0[1-9]|1[0-2])$"
+    },
+    "url": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "lastModified": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  },
+  "revisions": {
+   "type": "integer"
+  }
+ }
+}

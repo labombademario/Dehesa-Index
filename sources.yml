@@ -96,6 +96,17 @@ sources:
     data: [spain-milk/infolac.json, spain-milk-log.txt]
     extra: ['!data/spain-milk']
     message: Datos leche cruda de España, entregas, precio y calidad (MAPA INFOLAC)
+  - id: spain-slaughter
+    name: Update Spain livestock slaughter by species and region (MAPA)
+    cron: ['25 8 * * 4']
+    script: scripts/update-spain-slaughter.py
+    timeout: 15
+    script_timeout: 8
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-slaughter)
+    data: [spain-slaughter/slaughter.json, spain-slaughter-log.txt]
+    extra: ['!data/spain-slaughter']
+    message: Datos sacrificio de ganado de España por especie y comunidad (MAPA)
   - id: austria
     name: Update Austria (Eurostat)
     cron: ['25 16 * * 2,5']

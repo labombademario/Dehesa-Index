@@ -1,0 +1,15 @@
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'bovino', 'kind': 'heads', 'national': 203429.0, 'monthSheetTotal': 209658.0}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'bovino', 'kind': 'carcass', 'national': 63818.268, 'monthSheetTotal': 65899.788}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'ovino', 'kind': 'heads', 'national': 509527.0, 'monthSheetTotal': 535676.0}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'ovino', 'kind': 'carcass', 'national': 7183.923, 'monthSheetTotal': 7571.307}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'caprino', 'kind': 'heads', 'national': 36365.0, 'monthSheetTotal': 52323.0}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'caprino', 'kind': 'carcass', 'national': 376.085, 'monthSheetTotal': 514.125}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'porcino', 'kind': 'heads', 'national': 4153821.0, 'monthSheetTotal': 4400518.0}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'porcino', 'kind': 'carcass', 'national': 356202.431, 'monthSheetTotal': 396095.534}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'equino', 'kind': 'heads', 'national': 2132.0, 'monthSheetTotal': 2685.0}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'equino', 'kind': 'carcass', 'national': 586.864, 'monthSheetTotal': 737.206}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'aves', 'kind': 'heads', 'national': 72672.133, 'monthSheetTotal': 82754.953}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'aves', 'kind': 'carcass', 'national': 156820.163, 'monthSheetTotal': 179296.072}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'conejos', 'kind': 'heads', 'national': 1962.786, 'monthSheetTotal': 2222.161}
+INCOHERENCIA de la fuente (hoja mensual vs serie nacional): {'period': '2026-08', 'species': 'conejos', 'kind': 'carcass', 'national': 2399.952, 'monthSheetTotal': 2733.904}
+OK: 2022-01..2026-08 (56 meses), 17 comunidades, 14 incoherencias de la fuente anotadas, 0 revisiones

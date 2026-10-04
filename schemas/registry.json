@@ -587,6 +587,12 @@
    [
     "spain_milk"
    ]
+  ],
+  "spain-slaughter/slaughter.json": [
+   "spain-slaughter",
+   [
+    "spain_slaughter"
+   ]
   ]
  },
  "globs": {

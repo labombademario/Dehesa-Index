@@ -90,6 +90,9 @@ jobs:
       - name: Spain raw milk deliveries, price and quality (MAPA INFOLAC PDF parser on a real pdftotext extract, 17 regions sum to the national total, price table cross-check, history accumulation and revisions; no network)
         run: python3 scripts/test-spain-milk.py
 
+      - name: Spain livestock slaughter by species and region (MAPA xlsx reader on the real August 2026 workbook, weights, source inconsistency noted, history accumulation and revisions; no network)
+        run: python3 scripts/test-spain-slaughter.py
+
       - name: Spain CAP (BOE RD 1048/2022 annex parser, change tracking, refusal on corrupted text, rules vs watched articles; extract of the BOE text as fixture, no network)
         run: python3 scripts/test-cap-es.py
 

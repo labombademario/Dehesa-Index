@@ -1844,6 +1844,42 @@ def _sm_mod():
     import importlib.util as _u
     sp = _u.spec_from_file_location("update_spain_milk", str(Path(__file__).resolve().parent / "update-spain-milk.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
 
+def _ss_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_spain_slaughter", str(Path(__file__).resolve().parent / "update-spain-slaughter.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
+
+def spain_slaughter(doc, errs, warns, stats):
+    """Sacrificio de ganado del MAPA: periodos ordenados y sin repetir, 7 especies y 17 comunidades, series de la longitud de los periodos, sin negativos, peso canal medio en el rango de cada especie,
+    comunidades <= nacional (+0,5 %), el ultimo periodo es el del ultimo libro y toda incoherencia de la fuente esta anotada en notes."""
+    m = _ss_mod(); P = doc["periods"]; n = len(P); N = doc["national"]
+    if P != sorted(set(P)): errs.append("spain-slaughter: periodos desordenados o repetidos"); return
+    if set(doc["ccaa"]) != set(m.CCAA): errs.append("spain-slaughter: comunidades distintas de las 17 esperadas"); return
+    if P[-1] != doc["report"]["last"]: errs.append("spain-slaughter: el ultimo periodo (%s) no es el del ultimo libro (%s)" % (P[-1], doc["report"]["last"])); return
+    for s in m.SPECIES:
+        for k in ("heads", "carcass"):
+            a = N[s][k]
+            if len(a) != n: errs.append("spain-slaughter: %s %s no tiene la longitud de los periodos" % (s, k)); return
+            if any(x is not None and x < 0 for x in a): errs.append("spain-slaughter: valor negativo en %s %s" % (s, k)); return
+        lo, hi = m.WEIGHT[s]
+        for i, p in enumerate(P):
+            h, t = N[s]["heads"][i], N[s]["carcass"][i]
+            if h and t is not None:
+                kg = t / h if s in ("aves", "conejos") else t * 1000 / h
+                if not lo <= kg <= hi: errs.append("spain-slaughter %s %s: peso canal medio %.1f kg fuera de rango" % (p, s, kg))
+    for c, d in doc["ccaa"].items():
+        for s in m.SPECIES:
+            for k in ("heads", "carcass"):
+                a = d[s][k]
+                if len(a) != n: errs.append("spain-slaughter: %s %s %s no tiene la longitud de los periodos" % (c, s, k)); return
+                if any(x is not None and x < 0 for x in a): errs.append("spain-slaughter: valor negativo en %s %s %s" % (c, s, k)); return
+    for i, p in enumerate(P):
+        for s in m.SPECIES:
+            for k in ("heads", "carcass"):
+                t = N[s][k][i]; v = [d[s][k][i] for d in doc["ccaa"].values() if d[s][k][i] is not None]
+                if t is not None and v and sum(v) > t * 1.005 + 1: errs.append("spain-slaughter %s %s %s: las comunidades suman mas que el nacional" % (p, s, k))
+    stats["spain-slaughter meses"] = n
+
 
 def spain_milk(doc, errs, warns, stats):
     """Leche cruda de INFOLAC (MAPA): periodos ordenados y sin repetir, series de la longitud de los periodos, 17 comunidades esperadas, sin negativos, precio/grasa/proteina en rango, leche ecologica <= entregas,
