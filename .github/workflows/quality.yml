@@ -316,6 +316,14 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-precios-region.mjs
+      - name: Noticias por región y país del medio (opciones = países con noticias en la región; recuentos = JSON; cambiar de región reinicia el país; 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-news-country.mjs
+      - name: Blog semanal automático (semana abierta con las cifras del JSON, titulares enlazados, artículos a mano intactos; 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-blog-weekly.mjs
       - name: PAC España (importes y estimación = los JSON del real decreto; cita del BOE con su texto obligatorio; cambios pendientes visibles; elección guardada; 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

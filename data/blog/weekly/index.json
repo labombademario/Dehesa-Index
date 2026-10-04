@@ -1,0 +1,15 @@
+{
+ "schemaVersion": 1,
+ "weeks": [
+  {
+   "week": "2026-W40",
+   "from": "2026-09-28",
+   "to": "2026-10-04",
+   "complete": false,
+   "items": 2138,
+   "sources": 569,
+   "coverageFrom": "2026-09-29"
+  }
+ ],
+ "generatedAt": "2026-10-04T16:04:12Z"
+}

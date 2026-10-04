@@ -1,0 +1,54 @@
+name: Weekly blog digest (news archive + weekly summary)
+
+on:
+  schedule:
+    - cron: "55 23 * * *"
+    - cron: "40 6 * * 1"
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/update-weekly-blog.py"
+      - ".github/workflows/update-weekly-blog.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+
+jobs:
+  weekly-blog:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Archive this week's news and rebuild the weekly summaries
+        run: python3 scripts/update-weekly-blog.py
+
+      - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/blog/weekly/*.json data/news-archive/*.json
+
+      - name: Commit weekly blog data
+        run: |
+          git add data/news-archive data/blog
+          if git diff --cached --quiet; then
+            echo "No blog changes."
+            exit 0
+          fi
+          git config user.name "Dehesa Index News Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: weekly blog digest and news archive"
+          for i in 1 2 3; do
+            git pull -q --rebase --autostash origin main && git push && exit 0
+            sleep $((i * 5))
+          done
+          echo '::error::no se pudo publicar tras 3 intentos'; exit 1
+
+      - name: Cierre (rojo si hubo datos invalidos)
+        if: always()
+        uses: ./.github/actions/finish

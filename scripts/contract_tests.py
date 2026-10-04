@@ -2665,3 +2665,72 @@ def us_county_status(doc, errs, warns, stats):
         seen.add(e["slug"])
         if e["status"] in ("OK", "PARTIAL") and not (isinstance(e.get("latest"), int) and isinstance(e.get("years"), list) and len(e["years"]) == 2 and e["years"][1] == e["latest"]): errs.append("us-county status/%s: latest o years incoherentes" % e["slug"]); return
     stats["us-county cultivos"] = len(doc["crops"])
+
+
+def _wk_bounds(week):
+    import datetime as _d
+    y, w = int(week[:4]), int(week[6:]); mon = _d.date.fromisocalendar(y, w, 1); return mon.isoformat(), (mon + _d.timedelta(days=6)).isoformat()
+
+
+def news_archive(doc, errs, warns, stats):
+    """Archivo semanal de noticias: la semana y sus fechas coinciden (lunes a domingo ISO), todas las noticias caen dentro de la semana, sin ids repetidos entre registros completos y ligeros,
+    la cobertura empieza dentro de la semana y los registros ligeros tienen la forma [id, fecha, region, tema, productos, medio]."""
+    try: lo, hi = _wk_bounds(doc["week"])
+    except Exception: errs.append("news-archive: semana invalida %r" % doc.get("week")); return
+    if (doc["from"], doc["to"]) != (lo, hi): errs.append("news-archive %s: from/to no son lunes-domingo de la semana" % doc["week"]); return
+    if not (lo <= doc["coverage"]["from"] <= hi): errs.append("news-archive %s: la cobertura empieza fuera de la semana" % doc["week"]); return
+    ids = set()
+    for i in doc["items"]:
+        if not (lo <= i["date"] <= hi): errs.append("news-archive %s: noticia %s fuera de la semana (%s)" % (doc["week"], i["id"], i["date"])); return
+        if i["id"] in ids: errs.append("news-archive %s: id repetido %s" % (doc["week"], i["id"])); return
+        ids.add(i["id"])
+    for r in doc["rest"]:
+        if not (isinstance(r[0], str) and isinstance(r[1], str) and isinstance(r[4], list) and isinstance(r[5], str)): errs.append("news-archive %s: registro ligero malformado %r" % (doc["week"], r[:2])); return
+        if not (lo <= r[1] <= hi): errs.append("news-archive %s: noticia %s fuera de la semana (%s)" % (doc["week"], r[0], r[1])); return
+        if r[0] in ids: errs.append("news-archive %s: id repetido %s (completo y ligero)" % (doc["week"], r[0])); return
+        ids.add(r[0])
+    stats["news-archive noticias"] = len(ids)
+
+
+def blog_weekly(doc, errs, warns, stats):
+    """Resumen semanal del blog: semana y fechas coherentes; los totales cuadran (suma por region, por tema y por dia = total de noticias; solo dias de la cobertura);
+    la cobertura es de al menos 3 dias y al menos 40 noticias; los titulares destacados caen dentro de la cobertura, tienen enlace https, no se repiten y no hay mas de 2 por medio en cada bloque;
+    complete solo si la semana ya termino."""
+    import datetime as _d
+    try: lo, hi = _wk_bounds(doc["week"])
+    except Exception: errs.append("blog-weekly: semana invalida %r" % doc.get("week")); return
+    if (doc["from"], doc["to"]) != (lo, hi): errs.append("blog-weekly %s: from/to no son lunes-domingo" % doc["week"]); return
+    c = doc["coverage"]; t = doc["totals"]
+    if not (lo <= c["from"] <= hi): errs.append("blog-weekly %s: la cobertura empieza fuera de la semana" % doc["week"]); return
+    if t["items"] < 40: errs.append("blog-weekly %s: solo %d noticias (< 40): no debe publicarse" % (doc["week"], t["items"])); return
+    for k in ("byRegion", "byDay"):
+        if sum(t[k].values()) != t["items"]: errs.append("blog-weekly %s: totals.%s suma %d y hay %d noticias" % (doc["week"], k, sum(t[k].values()), t["items"])); return
+    if sum(t["byTopic"].values()) > t["items"]: errs.append("blog-weekly %s: los temas suman mas que las noticias" % doc["week"]); return
+    if any(not (c["from"] <= d <= hi) for d in t["byDay"]): errs.append("blog-weekly %s: dias fuera de la cobertura" % doc["week"]); return
+    if c["days"] < 3: errs.append("blog-weekly %s: cobertura de %d dias (< 3)" % (doc["week"], c["days"])); return
+    if doc["complete"] != (_d.date.fromisoformat(hi) < _d.datetime.now(_d.timezone.utc).date()) and doc["complete"]: errs.append("blog-weekly %s: marcada completa antes de terminar la semana" % doc["week"]); return
+    def block(name, rows):
+        seen = set(); per = {}
+        for h in rows:
+            if not (c["from"] <= h["date"] <= hi): errs.append("blog-weekly %s %s: titular fuera de la cobertura (%s)" % (doc["week"], name, h["date"])); return False
+            if not h["url"].startswith("https://") and not h["url"].startswith("http://"): errs.append("blog-weekly %s %s: enlace invalido" % (doc["week"], name)); return False
+            if h["url"] in seen: errs.append("blog-weekly %s %s: titular repetido" % (doc["week"], name)); return False
+            seen.add(h["url"]); per[h["source"]] = per.get(h["source"], 0) + 1
+            if per[h["source"]] > 2: errs.append("blog-weekly %s %s: mas de 2 titulares de %s" % (doc["week"], name, h["source"])); return False
+        return True
+    if not block("top", doc["top"]): return
+    for r, rows in doc["byRegion"].items():
+        if r not in t["byRegion"]: errs.append("blog-weekly %s: region %s sin noticias en los totales" % (doc["week"], r)); return
+        if not block(r, rows): return
+    stats["blog-weekly noticias"] = t["items"]
+
+
+def blog_weekly_index(doc, errs, warns, stats):
+    """Indice del blog semanal: semanas ordenadas de la mas nueva a la mas antigua, sin repetir, con fechas de lunes a domingo."""
+    ws = [w["week"] for w in doc["weeks"]]
+    if ws != sorted(set(ws), reverse=True): errs.append("blog-weekly-index: semanas desordenadas o repetidas"); return
+    for w in doc["weeks"]:
+        try: lo, hi = _wk_bounds(w["week"])
+        except Exception: errs.append("blog-weekly-index: semana invalida %r" % w["week"]); return
+        if (w["from"], w["to"]) != (lo, hi) or not (lo <= w["coverageFrom"] <= hi): errs.append("blog-weekly-index %s: fechas incoherentes" % w["week"]); return
+    stats["blog-weekly semanas"] = len(ws)

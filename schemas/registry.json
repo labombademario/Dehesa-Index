@@ -635,6 +635,12 @@
    [
     "us_county_status"
    ]
+  ],
+  "blog/weekly/index.json": [
+   "blog-weekly-index",
+   [
+    "blog_weekly_index"
+   ]
   ]
  },
  "globs": {
@@ -716,6 +722,18 @@
    "us-county-yields",
    [
     "us_county_yields"
+   ]
+  ],
+  "blog/weekly/20*.json": [
+   "blog-weekly",
+   [
+    "blog_weekly"
+   ]
+  ],
+  "news-archive/*.json": [
+   "news-archive",
+   [
+    "news_archive"
    ]
   ]
  },

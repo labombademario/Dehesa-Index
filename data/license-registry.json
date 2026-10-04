@@ -1816,6 +1816,14 @@
    "default": "usda_ams_mars",
    "notes": "Informes MARS (data/ams/)"
   },
+  "data/news-archive/": {
+   "sources": [],
+   "notes": "Archivo semanal de noticias (scripts/update-weekly-blog.py): solo titular, medio, fecha, region, temas y enlace de las noticias que ya enlaza Noticias; no se guarda ni se reproduce el texto de la noticia. La fuente de cada noticia es el medio enlazado."
+  },
+  "data/blog/": {
+   "sources": [],
+   "notes": "Resumen semanal del blog (scripts/update-weekly-blog.py): cifras contadas por Dehesa Index sobre el archivo de noticias y los titulares mas relevantes con enlace al medio original; sin prosa generada ni texto de las noticias."
+  },
   "data/views/": {
    "sources": [
     "eu_agrifood"

@@ -184,7 +184,7 @@ window.DINews.feed().then(function () {
   var CURATED_COUNT = NEWS_ITEMS.length;
   (FEED.items || []).forEach(function(a) {
     var tr = { headline: a.h, summary: a.x || '' };
-    NEWS_ITEMS.push({ id: a.id, source: a.s, url: a.u, date: a.d, region: a.r, lang: a.l, auto: true,
+    NEWS_ITEMS.push({ id: a.id, source: a.s, url: a.u, date: a.d, region: a.r, country: a.c || '', lang: a.l, auto: true,
       products: a.p || [], topics: a.t || [], rel: a.v || 0, es: tr, en: tr, fr: tr, it: tr });
   });
   NEWS_ITEMS.sort(function(a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : (b.rel || 100) - (a.rel || 100); });
@@ -200,7 +200,7 @@ window.DINews.feed().then(function () {
       disclaimer: 'Estos titulares son reales y verificados, cada uno enlazado directamente a su fuente original. Se actualizan periódicamente mediante una tarea programada, no mediante un feed en directo, así que puede haber un pequeño desfase entre una noticia y su publicación aquí. Los titulares automáticos llegan en su idioma original (ES, EN, FR, IT, DE, NL, DA, PT) y no se traducen: una etiqueta te avisa del idioma. Automatic headlines keep their original language (ES, EN, FR, IT, DE, NL, DA, PT) and are not translated: a tag tells you which. Les titres automatiques restent dans leur langue d\'origine (ES, EN, FR, IT, DE, NL, DA, PT), sans traduction : une étiquette l\'indique. I titoli automatici restano nella lingua originale (ES, EN, FR, IT, DE, NL, DA, PT) e non vengono tradotti: un\'etichetta indica la lingua.',
       readMore: 'Leer en la fuente',
       filterAll: 'Todas', filterGlobal: 'Global', filterEuropa: 'Europa', filterAmerica: 'América',
-      regionLabel: 'Región', productLabel: 'Producto / mercado', topicLabel: 'Tema',
+      regionLabel: 'Región', countryLabel: 'País del medio', productLabel: 'Producto / mercado', topicLabel: 'Tema',
       intelTitle: 'Qué está moviendo estos mercados', intelSub: 'Contexto editorial construido a partir de las noticias visibles y sus etiquetas.',
       intelEmpty: 'No hay suficiente cobertura para generar contexto con estos filtros.',
       filterSummary: 'Mostrando {count} noticias', tagMarket: 'Mercado', tagTopic: 'Tema',
@@ -227,7 +227,7 @@ window.DINews.feed().then(function () {
       disclaimer: "These headlines are real and verified, each linking directly to its original source. They're refreshed periodically by a scheduled task rather than a live feed, so there can be a short delay between a story breaking and appearing here.",
       readMore: 'Read at the source',
       filterAll: 'All', filterGlobal: 'Global', filterEuropa: 'Europe', filterAmerica: 'Americas',
-      regionLabel: 'Region', productLabel: 'Product / market', topicLabel: 'Theme',
+      regionLabel: 'Region', countryLabel: 'Outlet country', productLabel: 'Product / market', topicLabel: 'Theme',
       intelTitle: 'What is moving these markets', intelSub: 'Editorial context built from the visible stories and their tags.',
       intelEmpty: 'There is not enough coverage to build context with these filters.',
       filterSummary: 'Showing {count} stories', tagMarket: 'Market', tagTopic: 'Theme',
@@ -254,7 +254,7 @@ window.DINews.feed().then(function () {
       disclaimer: "Ces titres sont réels et vérifiés, chacun renvoyant directement à sa source d'origine. Ils sont actualisés périodiquement par une tâche programmée plutôt que par un flux en direct : un léger décalage peut donc exister entre la publication d'une actualité et son apparition ici.",
       readMore: 'Lire la source',
       filterAll: 'Toutes', filterGlobal: 'Mondial', filterEuropa: 'Europe', filterAmerica: 'Amériques',
-      regionLabel: 'Région', productLabel: 'Produit / marché', topicLabel: 'Thème',
+      regionLabel: 'Région', countryLabel: 'Pays du média', productLabel: 'Produit / marché', topicLabel: 'Thème',
       intelTitle: 'Ce qui fait bouger ces marchés', intelSub: 'Contexte éditorial construit à partir des actualités visibles et de leurs étiquettes.',
       intelEmpty: 'Couverture insuffisante pour générer un contexte avec ces filtres.',
       filterSummary: '{count} actualités affichées', tagMarket: 'Marché', tagTopic: 'Thème',
@@ -281,7 +281,7 @@ window.DINews.feed().then(function () {
       disclaimer: "Questi titoli sono reali e verificati, ciascuno con un link diretto alla fonte originale. Vengono aggiornati periodicamente tramite un'attività pianificata anziché in tempo reale, quindi può trascorrere un breve intervallo tra la pubblicazione di una notizia e la sua comparsa qui.",
       readMore: 'Leggi alla fonte',
       filterAll: 'Tutte', filterGlobal: 'Globale', filterEuropa: 'Europa', filterAmerica: 'Americhe',
-      regionLabel: 'Regione', productLabel: 'Prodotto / mercato', topicLabel: 'Tema',
+      regionLabel: 'Regione', countryLabel: 'Paese della testata', productLabel: 'Prodotto / mercato', topicLabel: 'Tema',
       intelTitle: 'Cosa sta muovendo questi mercati', intelSub: 'Contesto editoriale costruito dalle notizie visibili e dalle relative etichette.',
       intelEmpty: 'Copertura insufficiente per generare contesto con questi filtri.',
       filterSummary: 'Visualizzate {count} notizie', tagMarket: 'Mercato', tagTopic: 'Tema',
@@ -307,11 +307,13 @@ window.DINews.feed().then(function () {
     region: initialParams.get('region') || 'all',
     product: initialParams.get('product') || 'all',
     topic: initialParams.get('topic') || 'all',
+    country: initialParams.get('country') || 'all',
     limit: PAGE
   };
   function syncUrl() {
     var params = [];
     if (state.region !== 'all') params.push('region=' + encodeURIComponent(state.region));
+    if (state.country !== 'all') params.push('country=' + encodeURIComponent(state.country));
     if (state.product !== 'all') params.push('product=' + encodeURIComponent(state.product));
     if (state.topic !== 'all') params.push('topic=' + encodeURIComponent(state.topic));
     var next = window.location.pathname + (params.length ? '?' + params.join('&') : '');
@@ -323,6 +325,7 @@ window.DINews.feed().then(function () {
     state.region = p.get('region') || 'all';
     state.product = p.get('product') || 'all';
     state.topic = p.get('topic') || 'all';
+    state.country = p.get('country') || 'all';
     render();
   });
 
@@ -340,7 +343,8 @@ window.DINews.feed().then(function () {
       var r = key === 'region' ? value : state.region;
       var p = key === 'product' ? value : state.product;
       var tp = key === 'topic' ? value : state.topic;
-      return (r === 'all' || item.region === r) &&
+      var c = key === 'country' ? value : (key === 'region' ? 'all' : state.country);
+      return (r === 'all' || item.region === r) && (c === 'all' || item.country === c) &&
         (p === 'all' || item.products.indexOf(p) !== -1) &&
         (tp === 'all' || item.topics.indexOf(tp) !== -1);
     }).length;
@@ -363,6 +367,7 @@ window.DINews.feed().then(function () {
   function getFilteredItems() {
     return NEWS_ITEMS.filter(function(item) {
       return (state.region === 'all' || item.region === state.region) &&
+        (state.country === 'all' || item.country === state.country) &&
         (state.product === 'all' || item.products.indexOf(state.product) !== -1) &&
         (state.topic === 'all' || item.topics.indexOf(state.topic) !== -1);
     });
@@ -418,6 +423,17 @@ window.DINews.feed().then(function () {
     document.getElementById('nw-topic-label').textContent = t.topicLabel;
 
     var regions = ['all','us','eu','uk','ca','global'];
+    var countries = [];
+    NEWS_ITEMS.forEach(function(item) {
+      if (item.country && (state.region === 'all' || item.region === state.region) && countries.indexOf(item.country) === -1) countries.push(item.country);
+    });
+    if (state.country !== 'all' && countries.indexOf(state.country) === -1) state.country = 'all';
+    var cname = function(code) {
+      try { if (window.Intl && Intl.DisplayNames) return new Intl.DisplayNames([lang], { type: 'region' }).of(code) || code; } catch (e) { /* sin Intl */ }
+      return code;
+    };
+    countries.sort(function(a, b) { return cname(a).localeCompare(cname(b), lang); });
+    document.getElementById('nw-country-label').textContent = t.countryLabel;
     var products = [];
     var topics = [];
     NEWS_ITEMS.forEach(function(item) {
@@ -428,14 +444,16 @@ window.DINews.feed().then(function () {
     topics.sort(function(a,b){ return (topicLabels[a] || a).localeCompare(topicLabels[b] || b); });
 
     document.getElementById('nw-region-filter').innerHTML = regions.map(function(v){ return optionHtml(v, regionLabels[v], state.region === v, v === 'all' ? undefined : coverageCount('region', v)); }).join('');
+    document.getElementById('nw-country-filter').innerHTML = optionHtml('all', lang === 'es' ? 'Todos' : lang === 'fr' ? 'Tous' : lang === 'it' ? 'Tutti' : 'All', state.country === 'all') +
+      countries.map(function(v){ return optionHtml(v, cname(v), state.country === v, coverageCount('country', v)); }).join('');
     document.getElementById('nw-product-filter').innerHTML = optionHtml('all', lang === 'es' ? 'Todos' : lang === 'fr' ? 'Tous' : lang === 'it' ? 'Tutti' : 'All', state.product === 'all') +
       products.map(function(v){ return optionHtml(v, productLabels[v], state.product === v, coverageCount('product', v)); }).join('');
     document.getElementById('nw-topic-filter').innerHTML = optionHtml('all', lang === 'es' ? 'Todos' : lang === 'fr' ? 'Tous' : lang === 'it' ? 'Tutti' : 'All', state.topic === 'all') +
       topics.map(function(v){ return optionHtml(v, topicLabels[v], state.topic === v, coverageCount('topic', v)); }).join('');
 
-    ['region','product','topic'].forEach(function(key) {
+    ['region','country','product','topic'].forEach(function(key) {
       var el = document.getElementById('nw-' + key + '-filter');
-      el.onchange = function(){ state[key] = el.value; state.limit = PAGE; syncUrl(); render(); };
+      el.onchange = function(){ state[key] = el.value; if (key === 'region') state.country = 'all'; state.limit = PAGE; syncUrl(); render(); };
     });
 
     var filteredItems = getFilteredItems();
@@ -469,7 +487,7 @@ window.DINews.feed().then(function () {
     var moreBtn = document.getElementById('nw-more');
     if (moreBtn) moreBtn.onclick = function() { state.limit += PAGE; render(); };
     var resetBtn = document.getElementById('nw-reset');
-    if (resetBtn) resetBtn.onclick = function() { state.region = 'all'; state.product = 'all'; state.topic = 'all'; state.limit = PAGE; syncUrl(); render(); };
+    if (resetBtn) resetBtn.onclick = function() { state.region = 'all'; state.country = 'all'; state.product = 'all'; state.topic = 'all'; state.limit = PAGE; syncUrl(); render(); };
 
     document.getElementById('nw-sources-title').textContent = t.sourcesTitle;
     var pubCount = {};

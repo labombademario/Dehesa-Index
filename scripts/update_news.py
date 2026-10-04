@@ -15,6 +15,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 from pathlib import Path
+from news_country import country_of
 
 ROOT = Path(__file__).resolve().parents[1]; DATA = ROOT / "data"; VIEWS = DATA / "views"
 DATA.mkdir(exist_ok=True)
@@ -622,7 +623,7 @@ def fetch(feed):
         rows.append({
             "id": "auto-" + hashlib.sha1((pub + title + x["link"]).encode()).hexdigest()[:10],
             "date": d, "region": reg, "topic": topics[0] if topics else "", "topics": topics, "products": products,
-            "source": pub, "lang": feed["lang"],
+            "source": pub, "lang": feed["lang"], **({"country": cc} if (cc := country_of(pub)) else {}),
             "headline": {"en": title, "es": title, "fr": title, "it": title},
             "description": desc[:280], "url": x["link"], "relevance": score, "auto": True,
             "impactChannel": links[0]["channel"] if links else "market_impact", "marketLinks": links})
@@ -648,7 +649,7 @@ def write_views(rows, now):
     (VIEWS / "news-index.json").write_text(json.dumps({"generatedAt": now, "stories": stories, "keys": {p: [pos[x["id"]] for x in keyed[p]] for p in keyed}},
                                                        ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     # lista plana compacta (la usa Noticias y la ficha de producto)
-    feed = [{"id": x["id"], "d": x["date"], "r": x["region"], "l": x["lang"], "s": x["source"], "h": x["headline"]["en"],
+    feed = [{"id": x["id"], "d": x["date"], "r": x["region"], "l": x["lang"], "s": x["source"], **({"c": x["country"]} if x.get("country") else {}), "h": x["headline"]["en"],
              "x": x["description"][:220], "u": x["url"], "p": x["products"], "t": x["topics"], "v": x["relevance"]} for x in rows[:MAX_FEED]]
     (VIEWS / "news-feed.json").write_text(json.dumps({"generatedAt": now, "items": feed}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
@@ -679,7 +680,14 @@ def main():
     print(f"[OK] {len(rows)} stories · {len(srcs)} publishers · {ok}/{len(status)} feeds reachable")
 
 if __name__ == "__main__":
-    if "--rebuild-views" in sys.argv:  # reconstruye las vistas desde data/news.json sin tocar la red
+    if "--backfill-country" in sys.argv:  # añade el país del medio a data/news.json existente y reconstruye vistas (sin red)
+        d = json.loads((DATA / "news.json").read_text(encoding="utf-8"))
+        for x in d["items"]:
+            c = country_of(x["source"])
+            if c: x["country"] = c
+            else: x.pop("country", None)
+        (DATA / "news.json").write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); write_views(d["items"], d["generatedAt"])
+    elif "--rebuild-views" in sys.argv:  # reconstruye las vistas desde data/news.json sin tocar la red
         d = json.loads((DATA / "news.json").read_text(encoding="utf-8")); write_views(d["items"], d["generatedAt"])
     else:
         main()

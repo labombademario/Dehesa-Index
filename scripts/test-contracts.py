@@ -28,6 +28,20 @@ def _swm(d): return d["national"]
 def _swn(d): return d["national"]
 def _ssl(d): return d["national"]["bovino"]
 CASES = [
+ ("blog/weekly/2026-W40.json", "totales por region que no suman", lambda d: d["totals"]["byRegion"].__setitem__("eu", d["totals"]["byRegion"]["eu"] + 1)),
+ ("blog/weekly/2026-W40.json", "titular fuera de la cobertura", lambda d: d["top"][0].__setitem__("date", "2026-09-20")),
+ ("blog/weekly/2026-W40.json", "mas de dos titulares del mismo medio", lambda d: [d["top"][i].__setitem__("source", "Mismo medio") for i in range(3)]),
+ ("blog/weekly/2026-W40.json", "enlace que no es http", lambda d: d["top"][0].__setitem__("url", "ftp://x")),
+ ("blog/weekly/2026-W40.json", "cobertura de solo 2 dias", lambda d: d["coverage"].__setitem__("days", 2)),
+ ("blog/weekly/2026-W40.json", "pocas noticias", lambda d: d["totals"].__setitem__("items", 10)),
+ ("blog/weekly/2026-W40.json", "fechas que no son lunes-domingo", lambda d: d.__setitem__("from", "2026-09-29")),
+ ("news-archive/2026-W40.json", "noticia fuera de la semana", lambda d: d["items"][0].__setitem__("date", "2026-01-01")),
+ ("news-archive/2026-W40.json", "id repetido entre completo y ligero", lambda d: d["rest"].append([d["items"][0]["id"], d["items"][0]["date"], "eu", "", [], "X"])),
+ ("news-archive/2026-W40.json", "cobertura fuera de la semana", lambda d: d["coverage"].__setitem__("from", "2026-10-20")),
+ ("news-archive/2026-W40.json", "registro ligero malformado", lambda d: d["rest"].__setitem__(0, ["x", "2026-09-30", "eu", "", "no-lista", "M"])),
+ ("blog/weekly/index.json", "semanas repetidas", lambda d: d["weeks"].append(dict(d["weeks"][0]))),
+ ("blog/weekly/index.json", "cobertura fuera de la semana", lambda d: d["weeks"][0].__setitem__("coverageFrom", "2026-01-01")),
+
  ("spain-milk/infolac.json", "comunidades que no suman las entregas", lambda d: _smk(d)["production"].__setitem__(-1, _smk(d)["production"][-1] + 5000)),
  ("spain-milk/infolac.json", "precio imposible", lambda d: d["national"]["price"].__setitem__(-1, 5.0)),
  ("spain-milk/infolac.json", "entregas negativas", lambda d: d["national"]["deliveries"].__setitem__(-1, -1)),
