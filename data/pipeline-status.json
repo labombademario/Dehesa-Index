@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T17:13:00Z",
+ "generatedAt": "2026-10-04T17:45:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 70,
@@ -1733,7 +1733,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-04T16:51:18Z"
+     "lastChange": "2026-10-04T17:29:25Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1741,7 +1741,7 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-04T16:51:18Z"
+     "lastChange": "2026-10-04T17:29:25Z"
     },
     {
      "path": "data/watch-index.json",
@@ -1766,7 +1766,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-04T16:51:18Z"
+     "lastChange": "2026-10-04T17:29:25Z"
     },
     {
      "path": "data/products"
@@ -1777,15 +1777,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-04T16:51:18Z"
+     "lastChange": "2026-10-04T17:29:25Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-04T16:51:18Z"
+     "lastChange": "2026-10-04T17:29:25Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-04T16:51:18Z"
+     "lastChange": "2026-10-04T17:29:25Z"
     },
     {
      "path": "data/premium-tracker.json",
@@ -2251,7 +2251,7 @@
    "files": [
     {
      "path": "data/uk-stats.json",
-     "lastChange": "2026-10-04T16:52:31Z"
+     "lastChange": "2026-10-04T17:30:15Z"
     },
     {
      "path": "data/revisions.json",
@@ -2261,13 +2261,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-04T16:51:26Z",
-    "durationSec": 68,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37218309730"
+    "startedAt": "2026-10-04T17:29:34Z",
+    "durationSec": 55,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37220707511"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
