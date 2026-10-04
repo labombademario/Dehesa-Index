@@ -33,7 +33,7 @@
     var C1 = PAL.line || '#8a2d2d', C2 = PAL.line2 || '#b8a98a', SEQ = PAL.seq || ['#f6ecea', '#e6c3bd', '#cf8f86', '#b05a52', '#8a2d2d'];
     function tr() { return cfg.texts[lang()] || cfg.texts.es; }
     function itemLabel(id) { for (var i = 0; i < cfg.items.length; i++) if (cfg.items[i].id === id) return cfg.items[i].label[li()]; return id; }
-    var NAT = cfg.nat || 'CA', CTRY = cfg.country || 'CA', LOC = null;
+    var NAT = cfg.nat || 'CA', CTRY = cfg.country || 'CA', KEY = (cfg.tabKey || CTRY).toUpperCase(), LOC = null;
     function getD() { return cfg.load ? LOC : DATA; }
     function loadD() { return cfg.load ? cfg.load().then(function (d) { LOC = d; return window.DICite ? window.DICite.load().catch(function () {}) : null; }) : load(); }
     function pnm(id) { return cfg.pname ? cfg.pname(id, li()) : pname(id); }
@@ -96,15 +96,15 @@
       Array.prototype.forEach.call(document.querySelectorAll(G.usExtra || '.ca-hide-in-ca'), function (n) { n.hidden = any; });
       tabs();
       if (ca) { heading(); loadD().then(function () { render(); heading(); }); } else if (!any && G.usRender) G.usRender();
-      if (!noUrl) { try { var q = new URLSearchParams(window.location.search); if (ca) q.set('c', CTRY); else if ((q.get('c') || '').toUpperCase() === CTRY) q.delete('c'); var s = q.toString(); history.replaceState(null, '', window.location.pathname + (s ? '?' + s : '') + window.location.hash); } catch (e) {} }
+      if (!noUrl) { try { var q = new URLSearchParams(window.location.search); if (ca) q.set('c', KEY); else if ((q.get('c') || '').toUpperCase() === KEY) q.delete('c'); var s = q.toString(); history.replaceState(null, '', window.location.pathname + (s ? '?' + s : '') + window.location.hash); } catch (e) {} }
     }
     function off() { if (!ACTIVE) return; ACTIVE = false; var el = document.getElementById(cfg.id); if (el) el.hidden = true; }
-    ME = { setTab: setTab, off: off, isOn: function () { return ACTIVE; }, active: function () { return G.list.some(function (o) { return o.isOn(); }); }, label: function () { return tr().tabCA; }, key: CTRY }; G.list.push(ME);
+    ME = { setTab: setTab, off: off, isOn: function () { return ACTIVE; }, active: function () { return G.list.some(function (o) { return o.isOn(); }); }, label: function () { return tr().tabCA; }, key: KEY }; G.list.push(ME);
     var prev = window.DehesaShared.onLangChange;
     window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); tabs(); if (ACTIVE) { render(); heading(); } };
     var q = new URLSearchParams(window.location.search);
     if (q.get('item') && cfg.items.some(function (i) { return i.id === q.get('item'); })) SEL.item = q.get('item');
-    tabs(); if ((q.get('c') || '').toUpperCase() === CTRY) setTab(true, true);
+    tabs(); if ((q.get('c') || '').toUpperCase() === KEY) setTab(true, true);
     return ME;
   }
   window.CAExplorer = { create: create, load: load };

@@ -1,13 +1,13 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T02:48:00Z",
+ "generatedAt": "2026-10-04T02:55:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 70,
   "late": 0,
   "error": 0,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "ok",
  "pipelines": [
@@ -22,13 +22,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-02T21:45:00Z",
-    "durationSec": 57,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37068664230"
+    "startedAt": "2026-10-04T02:49:34Z",
+    "durationSec": 59,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37172228154"
    },
    "recent": {
-    "runs": 4,
-    "success": 4,
+    "runs": 5,
+    "success": 5,
     "failed": 0
    },
    "status": "ok",
@@ -1702,11 +1702,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-03T22:22:34Z"
+     "lastChange": "2026-10-04T02:49:29Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-03T19:03:45Z"
+     "lastChange": "2026-10-04T02:49:29Z"
     },
     {
      "path": "data/series-registry.json",
@@ -1714,11 +1714,11 @@
     },
     {
      "path": "data/watch-index.json",
-     "lastChange": "2026-10-03T19:03:59Z"
+     "lastChange": "2026-10-04T02:49:36Z"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-03T19:03:59Z"
+     "lastChange": "2026-10-04T02:49:36Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1735,7 +1735,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-04T01:48:45Z"
+     "lastChange": "2026-10-04T02:49:36Z"
     },
     {
      "path": "data/products"
@@ -1746,27 +1746,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-03T22:22:34Z"
+     "lastChange": "2026-10-04T02:49:36Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-03T22:22:34Z"
+     "lastChange": "2026-10-04T02:49:36Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-04T01:48:45Z"
+     "lastChange": "2026-10-04T02:49:36Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-03T19:03:59Z"
+     "lastChange": "2026-10-04T02:49:36Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-03T19:03:59Z"
+     "lastChange": "2026-10-04T02:49:36Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-03T19:03:59Z"
+     "lastChange": "2026-10-04T02:49:36Z"
     },
     {
      "path": "data/home-explore.json",
@@ -1779,13 +1779,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-03T19:02:34Z",
-    "durationSec": 89,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37146463315"
+    "startedAt": "2026-10-04T02:47:38Z",
+    "durationSec": 122,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37172135956"
    },
    "recent": {
-    "runs": 9,
-    "success": 7,
+    "runs": 10,
+    "success": 8,
     "failed": 2
    },
    "status": "ok",
@@ -1947,6 +1947,30 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-spain-livestock.yml",
+   "name": "Update Spain livestock headcounts by province (MAPA)",
+   "crons": [
+    "20 7 * * 4"
+   ],
+   "nextRun": "2026-10-08T07:20:00Z",
+   "files": [
+    {
+     "path": "data/spain-livestock/index.json"
+    },
+    {
+     "path": "data/spain-livestock"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 168.0
   },
   {

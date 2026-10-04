@@ -1,0 +1,95 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Espana: indice de efectivos de ganado por provincia (MAPA)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "checkedAt",
+  "source",
+  "species"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "checkedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "mapa_es"
+     ]
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "page": {
+   "type": "string"
+  },
+  "lastModified": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "species": {
+   "type": "object",
+   "minProperties": 4,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "file",
+     "first",
+     "last",
+     "periods",
+     "vars",
+     "areas"
+    ],
+    "properties": {
+     "file": {
+      "type": "string",
+      "pattern": "^livestock-[a-z]+\\.json$"
+     },
+     "first": {
+      "type": "string",
+      "pattern": "^\\d{4}-(05|11)$"
+     },
+     "last": {
+      "type": "string",
+      "pattern": "^\\d{4}-(05|11)$"
+     },
+     "periods": {
+      "type": "integer",
+      "minimum": 2
+     },
+     "vars": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "areas": {
+      "type": "integer",
+      "enum": [50]
+     }
+    }
+   }
+  }
+ }
+}

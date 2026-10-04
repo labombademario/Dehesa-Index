@@ -540,7 +540,7 @@
    "evidence": "Aviso legal del MAPA (read 2026-10-01): la informacion puede reutilizarse sin autorizacion expresa citando la fuente y manteniendo fechas de actualizacion y metadatos de reutilizacion; excluye derechos de terceros. Mario (propietario del sitio) confirmo el 2026-10-02 que ese aviso resuelve el uso comercial y las obras derivadas y dio luz verde a marcar la fuente VERIFIED.",
    "used": true,
    "aliases": [],
-   "notes": "Estado VERIFIED por instruccion expresa de Mario el 2026-10-02. Mantener cita y fechas de actualizacion; excluido el contenido de terceros.",
+   "notes": "Estado VERIFIED por instruccion expresa de Mario el 2026-10-02. Mantener cita y fechas de actualizacion; excluido el contenido de terceros. Mario confirma el 2026-10-03 que la informacion de todos los organismos publicos de Espana (MAPA, INE y demas) es de reutilizacion libre y sin termino de uso siempre que se cite la fuente: se tratan como aprobados con atribucion y la cita se muestra junto a las cifras.",
    "short": "MAPA (España)"
   },
   "boe_es": {
@@ -1872,6 +1872,12 @@
     "mapa_es"
    ],
    "notes": "Cultivos de España por provincia (scripts/update-spain-crops.py): superficies, producciones y rendimientos de la estadística «Superficies y producciones anuales de cultivos» del MAPA (Reglamento CE 543/2009), leídos de la hoja de base de datos de los libros Excel que publica el propio MAPA; datos provisionales de la campaña que indica cada enlace. La página del MAPA de esta estadística no declara una licencia propia para estos libros: se cubren con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente, manteniendo fechas de actualización; contenido de terceros excluido), con confianza media. Se conservan la campaña, el estado «provisional» y la fecha de la última comprobación (data/spain-crops/index.json) y se cita la fuente en la ficha de España. El rendimiento (producción ÷ superficie cosechada) lo calcula Dehesa Index y se rotula como cifra derivada. No es el recuento de ESYRCE."
+  },
+  "data/spain-livestock/": {
+   "sources": [
+    "mapa_es"
+   ],
+   "notes": "Efectivos de ganado de España por provincia (scripts/update-spain-livestock.py): censos de mayo y noviembre de bovino, ovino, caprino y porcino (porcino ibérico y no ibérico) de las Encuestas ganaderas del MAPA, leídos de la hoja de datos del libro Excel efectivos_ganado.xlsx que publica el propio MAPA. Licencia: el titular de Dehesa Index confirma (3 oct 2026) que la información de los organismos públicos de España es de reutilización libre y sin término de uso siempre que se cite la fuente; además se cubre con el aviso legal general del MAPA ya registrado en mapa_es (reutilización citando la fuente, manteniendo fechas de actualización; contenido de terceros excluido). Se guardan los valores tal cual (redondeo a 1 decimal), se ignoran las filas de comunidad autónoma (duplican las uniprovinciales) y los valores negativos de la fuente se dejan como hueco; las incoherencias internas de la fuente se avisan y se publican sin corregir. La fuente se cita junto a las cifras."
   },
   "data/us-cash-bids/": {
    "default": "usda_ams_mars",

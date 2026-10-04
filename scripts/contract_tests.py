@@ -1750,6 +1750,40 @@ def spain_crops_index(doc, errs, warns, stats):
     stats["spain-crops grupos"] = len(doc["groups"])
 
 
+def _sl_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_spain_livestock", str(Path(__file__).resolve().parent / "update-spain-livestock.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
+
+def spain_livestock(doc, errs, warns, stats):
+    """MAPA efectivos de ganado por provincia (mayo/noviembre). Valores >= 0 o null y de la longitud de los periodos; periodos ordenados y sin repetir; solo provincias INE (01-52, 50 en total) y ES;
+    las provincias suman el total nacional de cada variable y periodo (la tolerancia es el redondeo del MAPA); el total nacional suma sus componentes. Un total provincial que no suma sus componentes
+    es una incoherencia de la fuente: aviso, no error."""
+    m = _sl_mod(); sp = doc["species"]; n = len(doc["periods"]); V = doc["v"]
+    if doc["periods"] != sorted(set(doc["periods"])): errs.append("spain-livestock %s: periodos desordenados o repetidos" % sp); return
+    ids = {x["id"] for x in doc["vars"]}
+    if len(ids) != len(doc["vars"]): errs.append("spain-livestock %s: variable repetida" % sp); return
+    if "ES" not in V: errs.append("spain-livestock %s: falta ES" % sp); return
+    bad = [k for k in V if k != "ES" and not (re.match(r"^\d{2}$", k) and 1 <= int(k) <= 52)]
+    if bad or len(V) != 51: errs.append("spain-livestock %s: areas distintas de ES + 50 provincias (%s)" % (sp, bad[:3])); return
+    for ar, vs in V.items():
+        for cd, arr in vs.items():
+            if cd not in ids: errs.append("spain-livestock %s %s: variable %s sin declarar" % (sp, ar, cd)); return
+            if len(arr) != n: errs.append("spain-livestock %s %s %s: longitud distinta de los periodos" % (sp, ar, cd)); return
+            if any(x is not None and (isinstance(x, bool) or not isinstance(x, (int, float)) or x < 0) for x in arr): errs.append("spain-livestock %s %s %s: valor negativo o no numerico" % (sp, ar, cd)); return
+    e, w = m.validate({sp: {"periods": doc["periods"], "v": V}})
+    errs.extend("spain-livestock " + x for x in e[:5]); warns.extend("spain-livestock " + x for x in w[:5])
+    stats["spain-livestock especies"] = stats.get("spain-livestock especies", 0) + 1
+
+
+def spain_livestock_index(doc, errs, warns, stats):
+    """Indice: cada especie apunta a su fichero y la revision no es anterior a la generacion."""
+    for k, si in doc["species"].items():
+        if si["file"] != "livestock-" + k + ".json": errs.append("spain-livestock index: %s apunta a %s" % (k, si["file"])); return
+        if si["first"] > si["last"]: errs.append("spain-livestock index: %s primero > ultimo" % k); return
+    if doc["checkedAt"] < doc["generatedAt"]: errs.append("spain-livestock index: checkedAt anterior a generatedAt")
+
+
 def ers_cost_reference(doc, errs, warns, stats):
     """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""
     keys = set(doc["map"])

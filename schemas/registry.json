@@ -563,6 +563,12 @@
    [
     "cap_dk_watch"
    ]
+  ],
+  "spain-livestock/index.json": [
+   "spain-livestock-index",
+   [
+    "spain_livestock_index"
+   ]
   ]
  },
  "globs": {
@@ -632,6 +638,12 @@
    "spain-crops",
    [
     "spain_crops"
+   ]
+  ],
+  "spain-livestock/livestock-*.json": [
+   "spain-livestock",
+   [
+    "spain_livestock"
    ]
   ]
  },

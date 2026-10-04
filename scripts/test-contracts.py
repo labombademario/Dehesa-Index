@@ -18,7 +18,15 @@ def _lw(d): return d["weeks"][sorted(d["weeks"])[-1]]
 def _sc(d): return d["campaigns"]["2024"]["crops"]
 def _scp(d):
     x = _sc(d)[0]; return x, next(iter(x["v"]))
+def _sl(d): return d["v"]
 CASES = [
+ ("spain-livestock/livestock-bovino.json", "provincia que no suma el total nacional", lambda d: _sl(d)["ES"]["01"].__setitem__(-1, _sl(d)["ES"]["01"][-1] + 50000)),
+ ("spain-livestock/livestock-bovino.json", "valor negativo", lambda d: _sl(d)["28"]["01"].__setitem__(-1, -5)),
+ ("spain-livestock/livestock-bovino.json", "total nacional que no suma sus componentes", lambda d: (_sl(d)["ES"]["01"].__setitem__(-1, _sl(d)["ES"]["01"][-1] + 90000), [_sl(d)["28"]["01"].__setitem__(-1, _sl(d)["28"]["01"][-1] + 90000)])),
+ ("spain-livestock/livestock-bovino.json", "provincia inexistente", lambda d: _sl(d).__setitem__("77", dict(_sl(d)["28"]))),
+ ("spain-livestock/livestock-bovino.json", "serie de longitud distinta", lambda d: _sl(d)["28"]["01"].pop()),
+ ("spain-livestock/livestock-porcino.json", "periodos desordenados", lambda d: d["periods"].reverse()),
+ ("spain-livestock/index.json", "fichero que no es el de la especie", lambda d: d["species"]["bovino"].__setitem__("file", "livestock-ovino.json")),
  ("latest.json", "valor no numerico", lambda d: first(d).__setitem__("value", "n/a")),
  ("latest.json", "region desconocida", lambda d: first(d).__setitem__("region", "mars")),
  ("latest.json", "id repetido", lambda d: d["observations"].append(copy.deepcopy(d["observations"][0]))),

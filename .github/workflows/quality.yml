@@ -78,6 +78,9 @@ jobs:
       - name: Spain crops by province (MAPA workbook parser, sums, provisional campaigns, failure safety; synthetic workbook, no network)
         run: pip install openpyxl && python3 scripts/test-spain-crops.py
 
+      - name: Spain livestock headcounts by province (MAPA workbook parser, negatives as gaps, sums, refusal on corrupted data; synthetic workbook, no network)
+        run: pip install openpyxl && python3 scripts/test-spain-livestock.py
+
       - name: Spain CAP (BOE RD 1048/2022 annex parser, change tracking, refusal on corrupted text, rules vs watched articles; extract of the BOE text as fixture, no network)
         run: python3 scripts/test-cap-es.py
 
@@ -251,6 +254,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-es-crops.mjs
+      - name: España, ganadería por provincia (cifras del MAPA = los JSON, selectores, cita, 4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-es-livestock.mjs
       - name: Manitoba, ganado en subastas (cifras de Manitoba Agriculture, selectores, atribución OpenMB, 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''
