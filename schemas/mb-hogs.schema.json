@@ -1,0 +1,69 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Manitoba: porcino semanal (procesadoras de Manitoba, Manitoba Agriculture)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "fields",
+  "units",
+  "disputed",
+  "weeks"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "mb_agri"
+     ]
+    },
+    "name": {
+     "type": "string"
+    },
+    "url": {
+     "type": "string",
+     "pattern": "^https://www\\.gov\\.mb\\.ca/"
+    }
+   }
+  },
+  "fields": {
+   "type": "array",
+   "minItems": 4,
+   "maxItems": 4
+  },
+  "units": {
+   "type": "object",
+   "minProperties": 4
+  },
+  "disputed": {
+   "type": "array"
+  },
+  "weeks": {
+   "type": "object",
+   "minProperties": 1,
+   "additionalSchema": {
+    "type": "array",
+    "minItems": 4,
+    "maxItems": 4
+   }
+  }
+ }
+}

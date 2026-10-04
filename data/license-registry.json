@@ -1871,7 +1871,7 @@
    "sources": [
     "mb_agri"
    ],
-   "notes": "Ganado vacuno en subastas de Manitoba (scripts/update-mb-cattle.py): minimo, maximo y media semanales en C$/cwt por clase y tramo de peso en siete subastas, cabezas vendidas y acumulado del ano, leidos de los PDF semanales de Manitoba Agriculture. Licencia OpenMB (uso comercial y derivados con atribucion); ver mb_agri. No se ingiere el historico mensual en Excel de la misma pagina porque sus precios de ganado son de Canfax (terceros). La atribucion se muestra junto a las cifras."
+   "notes": "Ganado vacuno en subastas de Manitoba (scripts/update-mb-cattle.py), ovino y caprino en las subastas de Winnipeg y Grunthal y porcino semanal de las procesadoras de Manitoba (scripts/update-mb-smallstock.py; informes semanales de Manitoba Agriculture, misma licencia OpenMB; las cabras salen en C$/cwt convertidas por Manitoba con pesos medios que ella estima, y solo se aceptan cuando el informe lo rotula; no se ingieren los precios de lechones de USDA AMS que el informe de porcino reproduce). Ganado vacuno: minimo, maximo y media semanales en C$/cwt por clase y tramo de peso en siete subastas, cabezas vendidas y acumulado del ano, leidos de los PDF semanales de Manitoba Agriculture. Licencia OpenMB (uso comercial y derivados con atribucion); ver mb_agri. No se ingiere el historico mensual en Excel de la misma pagina porque sus precios de ganado son de Canfax (terceros). La atribucion se muestra junto a las cifras."
   },
   "data/spain-crops/": {
    "sources": [

@@ -78,6 +78,9 @@ jobs:
       - name: Manitoba weekly auction cattle (PDF text parser, NA/no-sale, head totals, failure safety; real extracts as fixtures, no network)
         run: python3 scripts/test-mb-cattle.py
 
+      - name: Manitoba sheep, goat and hogs (PDF text parsers, goat unit rule, disputed cells, date and range checks, failure safety; real extracts as fixtures, no network)
+        run: python3 scripts/test-mb-smallstock.py
+
       - name: Spain crops by province (MAPA workbook parser, sums, provisional campaigns, failure safety; synthetic workbook, no network)
         run: pip install openpyxl && python3 scripts/test-spain-crops.py
 
@@ -297,7 +300,11 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-mb-cattle.mjs
-      - name: Mi mercado (cifras de ganado, heno, granos, seguro, sequía y cultivos de España = los JSON; lo que falta se dice; elección guardada; 4 idiomas, 1280/390)
+      - name: Manitoba sheep, goat and hogs in the country page (figures = JSON, goat rule, gaps shown as dash, disputed cells blank; 4 languages, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-mb-smallstock.mjs
+      - name: Mi mercado (cifras de ganado, heno, granos, seguro, sequía, cultivos de España y Canadá = los JSON; lo que falta se dice; elección guardada; 4 idiomas, 1280/390)
         env:
           CHROMIUM: ''
         run: node scripts/test-mi-mercado.mjs

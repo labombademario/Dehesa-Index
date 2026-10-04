@@ -15,6 +15,8 @@ def run(rel, mutate):
         return vd.validate_contract(p, rel, sch, tests)
 def first(doc, key="observations"): return doc[key][0]
 def _lw(d): return d["weeks"][sorted(d["weeks"])[-1]]
+def _ls(d, m="Winnipeg"): return d["sales"][m][sorted(d["sales"][m])[-1]]
+def _lh(d): return d["weeks"][sorted(d["weeks"])[-1]]
 def _sc(d): return d["campaigns"]["2024"]["crops"]
 def _scp(d):
     x = _sc(d)[0]; return x, next(iter(x["v"]))
@@ -171,6 +173,20 @@ CASES = [
  ("mb-markets/cattle.json", "sin venta pero con precios", lambda d: next(m for m in _lw(d)["marts"].values() if m["date"]).__setitem__("date", None)),
  ("mb-markets/cattle.json", "semanas desordenadas", lambda d: d.__setitem__("weeks", dict(reversed(list(d["weeks"].items()))))),
  ("mb-markets/cattle.json", "resumen con una clase menos", lambda d: _lw(d)["summary"].pop()),
+ ("mb-markets/sheep-goat.json", "media por encima del maximo", lambda d: _ls(d).__setitem__(0, [_ls(d)[0][0], _ls(d)[0][1], _ls(d)[0][1] + 20])),
+ ("mb-markets/sheep-goat.json", "precio de cabra por cabeza colado como C$/cwt (absurdo)", lambda d: _ls(d).__setitem__(7, [5.0, 9.0, 7.0])),
+ ("mb-markets/sheep-goat.json", "venta en domingo", lambda d: d["sales"]["Winnipeg"].__setitem__("2026-09-20", d["sales"]["Winnipeg"].pop(sorted(d["sales"]["Winnipeg"])[-1]))),
+ ("mb-markets/sheep-goat.json", "ventas desordenadas", lambda d: d["sales"].__setitem__("Winnipeg", dict(reversed(list(d["sales"]["Winnipeg"].items()))))),
+ ("mb-markets/sheep-goat.json", "una clase menos", lambda d: _ls(d).pop()),
+ ("mb-markets/sheep-goat.json", "subasta inexistente", lambda d: d["sales"].__setitem__("Atlantis", d["sales"].pop("Grunthal"))),
+ ("mb-markets/sheep-goat.json", "celda en disputa con valor", lambda d: d["disputed"].append("Winnipeg|%s|1" % sorted(d["sales"]["Winnipeg"])[-1])),
+ ("mb-markets/sheep-goat.json", "fuente distinta", lambda d: d["source"].__setitem__("id", "canfax")),
+ ("mb-markets/hogs.json", "all-in absurdo", lambda d: _lh(d).__setitem__(0, 24.0)),
+ ("mb-markets/hogs.json", "all-in y Index 100 incoherentes", lambda d: _lh(d).__setitem__(1, _lh(d)[0] * 2)),
+ ("mb-markets/hogs.json", "semana que no acaba en viernes", lambda d: d["weeks"].__setitem__("2026-09-26", d["weeks"].pop(sorted(d["weeks"])[-1]))),
+ ("mb-markets/hogs.json", "peso de canal de 12 kg", lambda d: _lh(d).__setitem__(3, 12.0)),
+ ("mb-markets/hogs.json", "salto semanal del 60 %", lambda d: _lh(d).__setitem__(0, _lh(d)[0] * 1.8) or _lh(d).__setitem__(1, _lh(d)[1] * 1.8)),
+ ("mb-markets/hogs.json", "semanas desordenadas", lambda d: d.__setitem__("weeks", dict(reversed(list(d["weeks"].items()))))),
  ("mb-markets/cattle.json", "unidad cambiada", lambda d: d.__setitem__("unit", "US$/cwt")),
  ("mb-markets/cattle.json", "fuente distinta", lambda d: d["source"].__setitem__("id", "canfax")),
  ("germany-agri.json", "licencia cambiada", lambda d: d["source"].__setitem__("license", "CC0")),

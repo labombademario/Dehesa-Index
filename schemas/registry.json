@@ -498,6 +498,18 @@
     "mb_cattle"
    ]
   ],
+  "mb-markets/sheep-goat.json": [
+   "mb-sheep-goat",
+   [
+    "mb_sheep_goat"
+   ]
+  ],
+  "mb-markets/hogs.json": [
+   "mb-hogs",
+   [
+    "mb_hogs"
+   ]
+  ],
   "spain-crops/index.json": [
    "spain-crops-index",
    [

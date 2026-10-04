@@ -1,0 +1,265 @@
+    January 7, 2025
+
+    Click here for definitions of how data is collected and calculated.
+
+
+    Exchange rates (Friday close)
+         1 US $ = C $1.4442                         1 EURO = C $1.4870                     1 Yen = C $0.00919
+
+    Data source: Bank of Canada
+
+    Click to view the interactive hog dashboards for current and historical charts.
+
+
+
+    Manitoba Weighted Average Carcass Prices (including premiums and discounts)
+
+
+    All In Weights C$/100 kg
+                                                                                       Change from      Change from
+         Week           Week ending date                   2025               2024
+                                                                                      Previous Week     Previous Year
+           50              2024-12-13                    236.03             199.13             -0.5%           18.5%
+           51              2024-12-20                    240.57             193.91              1.9%           24.1%
+           52              2024-12-27                    241.85             190.69              0.5%           26.8%
+           1               2025-01-03                    223.56             192.01             -7.6%           16.4%
+                        Four week average                235.50             193.94                  -          21.4%
+    Source: Manitoba major processors.
+
+
+
+
+1
+    Index 100, C$/100 kg
+                                                                                                                    Change from               Change from
+            Week             Week ending date                                2025                       2024
+                                                                                                                   Previous Week              Previous Year
+             50                2024-12-13                                  224.14                     190.17                -0.5%                    17.9%
+             51                2024-12-20                                  229.55                     184.37                 2.4%                    24.5%
+             52                2024-12-27                                  229.87                     182.37                 0.1%                    26.0%
+             1                 2025-01-03                                  212.94                     182.56                -7.4%                    16.6%
+                            Four week average                              224.13                     184.87                     -                   21.2%
+    Source: Manitoba major processors.
+
+
+
+
+                                     MANITOBA WEIGHTED AVERAGE INDEX 100 HOG PRICES WEEKLY
+
+
+      C$/100 KG                                           2025              2024             5-YEAR AVE (2020-2024)
+      260
+
+      250
+
+      240
+
+      230
+
+      220
+
+      210
+
+      200
+
+      190
+
+      180
+
+      170
+
+      160
+
+      150
+
+      140
+
+      130
+
+      120
+
+      110
+             1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52
+
+                                                                                WEEK
+      Source: Manitoba major processors
+
+
+
+
+2
+    Number of Pigs Processed by Major Processors
+                                                                                                                      Change from                Change from
+         Week                Week ending date                                   2025                      2024
+                                                                                                                     Previous Week               Previous Year
+           50                  2024-12-13                                 123,937                     128,428                -11.7%                      -3.5%
+           51                  2024-12-20                                 128,604                     118,950                  3.8%                       8.1%
+           52                  2024-12-27                                  72,809                      80,331                -43.4%                      -9.4%
+           1                   2025-01-03                                 112,761                      94,153                 54.9%                     19.8%
+                            Four week average                             109,528                     105,466                      -                      3.9%
+    Source: Manitoba major processors.
+
+
+
+
+                                   NUMBER OF PIGS PROCESSED BY MAJOR PROCESSORS WEEKLY
+
+      NUMBER OF PIGS                                    2025             2024              5-YEAR AVE (2020-2024)
+      130,000
+
+
+
+      120,000
+
+
+
+      110,000
+
+
+
+      100,000
+
+
+
+       90,000
+
+
+
+       80,000
+
+
+
+       70,000
+
+
+
+       60,000
+
+
+
+       50,000
+                1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52
+
+                                                                                WEEK
+     Source: Manitoba major processors
+
+
+
+
+3
+    Average Weight of Hogs Processed by Major Processors, Kg
+                                                                                                                     Change from              Change from
+            Week              Week ending date                                 2025                     2024
+                                                                                                                    Previous Week             Previous Year
+             50                 2024-12-13                                 106.21                     105.68                 -0.2%                    -0.2%
+             51                 2024-12-20                                 106.46                     105.12                  0.2%                     0.2%
+             52                 2024-12-27                                 106.90                     107.36                  0.4%                     0.4%
+             1                  2025-01-03                                 108.42                     107.12                  1.4%                     1.4%
+                             Four week average                             107.00                     106.32                      -                    0.5%
+    Source: Manitoba major processors.
+
+
+
+
+                            AVERAGE WEIGHT OF HOGS PROCESSED BY MAJOR PROCESSORS WEEKLY
+
+
+       KILOGRAMS                                          2025          2024           5-YEAR AVE (2020-2024)
+
+      109
+
+
+      108
+
+
+      107
+
+
+      106
+
+
+      105
+
+
+      104
+
+
+      103
+
+
+      102
+
+
+      101
+
+
+      100
+             1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52
+
+
+                                                                                WEEK
+     Source: Manitoba major processors
+
+
+
+
+4
+    Weaning Pigs (U.S. Total Composite Weighted Average Price per Head)
+
+                                                               Formula and Cash Formula and Cash                       Wtd Avg Price,           Wtd Avg Price,
+                                                                  Low, US$/Head    High, US$/Head                           US$/Head                  C$/Head
+                             Early Weaned (10-12 lb)                            51.50                     93.00                     80.48                   116.23
+                                  Feeder Pigs (40 lb)                           88.00                    103.00                     95.33                   137.68
+    Source: USDA, AMS
+
+
+
+
+                       EARLY WEANED PIGS (U.S. TOTAL COMPOSITE WEIGHTED AVERAGE PRICE PER HEAD)
+                                                        WEEKLY
+
+      C$/HEAD                                                  2025           2024           5-YEAR AVE (2020-2024)
+     140
+
+
+
+     120
+
+
+
+     100
+
+
+
+      80
+
+
+
+      60
+
+
+
+      40
+
+
+
+      20
+
+
+
+       0
+               1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52
+
+                                                                                 WEEK
+     Source: USDA, AMS
+
+
+
+
+           Contact us
+           •         www.manitoba.ca/agriculture/markets-and-statistics/
+           •         Email us at industryintelligence@gov.mb.ca
+           •         Follow us on X @MBGovAg
+
+5
+

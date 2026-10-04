@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T14:11:00Z",
+ "generatedAt": "2026-10-04T14:41:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 69,
   "late": 1,
   "error": 0,
-  "not_run": 9,
+  "not_run": 10,
   "unknown": 1
  },
  "global": "late",
@@ -1520,6 +1520,35 @@
    "expectedEveryHours": 103.7
   },
   {
+   "workflow": "update-mb-smallstock.yml",
+   "name": "Update Manitoba sheep, goat and hog prices (Manitoba Agriculture)",
+   "crons": [
+    "40 20 * * 2",
+    "10 22 * * 5",
+    "20 14 * * 3"
+   ],
+   "nextRun": "2026-10-06T20:40:00Z",
+   "files": [
+    {
+     "path": "data/mb-markets/sheep-goat.json"
+    },
+    {
+     "path": "data/mb-markets/hogs.json"
+    },
+    {
+     "path": "data/mb-markets"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-01T05:15:44Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 94.5
+  },
+  {
    "workflow": "update-nass-data.yml",
    "name": "Dehesa Data — NASS snapshot",
    "crons": [
@@ -1702,7 +1731,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-04T13:14:49Z"
+     "lastChange": "2026-10-04T14:13:42Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1735,7 +1764,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-04T13:14:49Z"
+     "lastChange": "2026-10-04T14:13:42Z"
     },
     {
      "path": "data/products"
@@ -1746,7 +1775,7 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-04T13:14:49Z"
+     "lastChange": "2026-10-04T14:13:42Z"
     },
     {
      "path": "data/source-candidates.json",
@@ -1754,7 +1783,7 @@
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-04T13:14:49Z"
+     "lastChange": "2026-10-04T14:13:42Z"
     },
     {
      "path": "data/premium-tracker.json",
@@ -2267,7 +2296,8 @@
    "nextRun": "2026-10-08T07:25:00Z",
    "files": [
     {
-     "path": "data/us-county/status.json"
+     "path": "data/us-county/status.json",
+     "lastChange": "2026-10-04T14:13:42Z"
     },
     {
      "path": "data/us-county"
@@ -2279,7 +2309,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 744.0
   },
   {
@@ -2357,7 +2387,7 @@
    "files": [
     {
      "path": "data/us-local/status.json",
-     "lastChange": "2026-10-03T14:57:07Z"
+     "lastChange": "2026-10-04T14:13:42Z"
     },
     {
      "path": "data/us-local"

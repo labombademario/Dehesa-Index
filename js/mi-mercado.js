@@ -173,6 +173,67 @@
   var root = document.getElementById('mm-body'), TOK = 0, CACHE = {};
   function lang() { var l = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; return T[l] ? l : 'es'; }
   function tr() { return T[lang()]; }
+
+  /* ---------- Canadá: textos propios (es, en, fr, it) ---------- */
+  var TCA = {
+    es: { ca: 'Canadá', sIns: 'Seguro agrario en tu provincia', sDr: 'Sequía en tu provincia', sProd: 'Tu provincia en este producto', cattle: 'Vacuno', hogs: 'Porcino', sheep: 'Ovino', loadingMod: 'Cargando…',
+      pNo: 'No tenemos un precio local para {p} en {s}. Lo que sí seguimos: Manitoba (vacuno, ovino y caprino en subastas y porcino de las procesadoras) y Alberta (precios semanales de cereales, novillos y cerdo).', pAbNote: 'Boletines semanales de Alberta Agriculture and Irrigation (Open Government Licence - Alberta): ofertas de elevador o al contado, y ventas directas de ganado. Es un precio de Alberta, no de toda la provincia ni de un elevador concreto. Cambios sobre nuestra propia serie semanal.',
+      pAbSrc: 'Precio de Alberta', last: 'Última semana', vsW: 'Vs. semana anterior', vs4: 'Vs. 4 semanas', vsY: 'Vs. hace un año', noCmp: 'sin dato comparable', chart: 'Evolución semanal',
+      ab: { canola_elevador: 'Canola, oferta de elevador (Alberta centro)', trigo_pienso_ab: 'Trigo forrajero, oferta de elevador', cebada_pienso_ab: 'Cebada forrajera, oferta de elevador', avena_pienso_ab: 'Avena forrajera, oferta de elevador', trigo_cwrs_ab: 'Trigo CWRS n.º 1/2, oferta media de elevador', lenteja_laird_ab: 'Lenteja Laird n.º 1, oferta al contado', guisante_verde_ab: 'Guisante verde n.º 2, oferta al contado', novillo_ab: 'Novillos, ventas directas (peso vivo)', cerdo_ab: 'Cerdo en canal, precio al contado (Index 100)' },
+      insIndem: 'Indemnizaciones del seguro de cosechas', insHail: 'Indemnizaciones de granizo (seguro privado)', insPrem: 'Primas de seguro de cosecha y granizo pagadas por las explotaciones', insShare: 'de Canadá', y: 'Año', mc: 'M C$', insVs: 'Vs. año anterior',
+      insNote: 'Statistics Canada, tablas 32-10-0045-01 (pagos del seguro de cosechas y del seguro privado de granizo) y 32-10-0049-01 (gasto de las explotaciones en seguro de cosecha y granizo). Son totales de la provincia, todos los cultivos juntos; no un cociente por cultivo. Miles de dólares canadienses convertidos a millones. Un hueco es un dato que Statistics Canada no publica.', insNo: 'No hay cifras de seguro para esta provincia.',
+      drNow: 'Fin del último mes', dr1: 'Hace 1 mes', dr12: 'Hace 12 meses', d1: 'D1+ sequía moderada o peor', d2: 'D2+ sequía severa o peor', d3: 'D3+ sequía extrema o peor', pp: 'pp', drNote: 'Canadian Drought Monitor (Agriculture and Agri-Food Canada y socios): porcentaje de la SUPERFICIE TOTAL de la provincia (tierra y aguas interiores) en cada categoría, acumulado (D1+ incluye D2 a D4), a fin de cada mes. No es tu municipio ni tu finca.', drNo: 'No hay datos de sequía para esta provincia.', drChart: 'Superficie de la provincia en D1+ y D2+ (fin de mes)',
+      area: 'Superficie sembrada', harea: 'Superficie cosechada', yl: 'Rendimiento', prod: 'Producción', kha: 'miles de ha', kgha: 'kg/ha', kt: 'miles de t', rank: 'Puesto {r} de {n} provincias', shareCa: 'del total de Canadá', vsPrev: 'Vs. año anterior', year: 'Año',
+      pNoCrop: 'Statistics Canada no publica {p} en {s}. Provincias con dato:', stock: 'Existencias (miles de cabezas)', stockNote: 'Existencias de ganado de Statistics Canada (encuesta semestral, enero y julio): cabezas vivas, no precio. Cambio frente al mismo mes del año anterior.', cropNote: 'Statistics Canada: superficie, rendimiento y producción por provincia. El último año puede ser una estimación o previsión hasta que se cierre la campaña. Puesto y porcentaje calculados por Dehesa Index sobre las provincias que publican dato.',
+      cattleItems: { 'total-cattle': 'Total vacuno', 'beef-cows': 'Vacas de carne', 'dairy-cows': 'Vacas lecheras', 'total-heifers': 'Novillas', 'calves-under-1-year': 'Terneros de menos de 1 año' }, hogsItems: { 'hogs-total': 'Total porcino', 'sows-and-gilts-6-months-and-over': 'Cerdas reproductoras (6 meses o más)' }, sheepItems: { 'sheep-and-lambs-total': 'Total ovino', 'ewes': 'Ovejas', 'lambs-for-marketing': 'Corderos para sacrificio' },
+      crops: { 'wheat-all': 'Trigo (total)', 'wheat-durum': 'Trigo duro', barley: 'Cebada', oats: 'Avena', 'rye-all': 'Centeno', 'canola-rapeseed': 'Canola (colza)', 'corn-for-grain': 'Maíz grano', soybeans: 'Soja', 'peas-dry': 'Guisantes secos', lentils: 'Lentejas', flaxseed: 'Lino', 'sunflower-seed': 'Girasol', 'mustard-seed': 'Mostaza', 'chick-peas': 'Garbanzos', 'canary-seed': 'Alpiste' },
+      no_ca1: 'Precios locales: solo Manitoba (subastas de vacuno, ovino y caprino y porcino de las procesadoras) y Alberta (cereales, novillos y cerdo semanales). Para el resto de provincias no tenemos precio local.', no_ca2: 'Seguro agrario: solo el total de la provincia (todos los cultivos y el granizo), no por cultivo ni por póliza.', no_ca3: 'Sequía: porcentaje de la provincia, no de tu municipio.', no_ca4: 'Costes (fertilizante, diésel, pienso) y clima: solo cifras nacionales o mundiales, no por provincia.',
+      mCa: 'Canadá: detalle del país', mMb: 'Manitoba: ganado y porcino', mRend: 'Rendimientos de Canadá', mGan: 'Ganadería de Canadá' },
+    en: { ca: 'Canada', sIns: 'Crop insurance in your province', sDr: 'Drought in your province', sProd: 'Your province in this product', cattle: 'Cattle', hogs: 'Hogs', sheep: 'Sheep', loadingMod: 'Loading…',
+      pNo: 'We have no local price for {p} in {s}. What we do follow: Manitoba (cattle, sheep and goats at auction and processor hog prices) and Alberta (weekly grain, steer and hog prices).', pAbNote: 'Weekly reviews by Alberta Agriculture and Irrigation (Open Government Licence - Alberta): elevator or cash bids, and direct livestock sales. It is an Alberta price, not the whole province or a specific elevator. Changes computed from our own weekly series.',
+      pAbSrc: 'Alberta price', last: 'Latest week', vsW: 'Vs. previous week', vs4: 'Vs. 4 weeks', vsY: 'Vs. a year ago', noCmp: 'no comparable data', chart: 'Weekly evolution',
+      ab: { canola_elevador: 'Canola, elevator bid (central Alberta)', trigo_pienso_ab: 'Feed wheat, elevator bid', cebada_pienso_ab: 'Feed barley, elevator bid', avena_pienso_ab: 'Feed oats, elevator bid', trigo_cwrs_ab: 'CWRS wheat no. 1/2, average elevator bid', lenteja_laird_ab: 'Laird lentils no. 1, cash bid', guisante_verde_ab: 'Green peas no. 2, cash bid', novillo_ab: 'Steers, direct sales (live weight)', cerdo_ab: 'Hogs (carcass), cash price (Index 100)' },
+      insIndem: 'Crop insurance indemnities', insHail: 'Hail indemnities (private insurance)', insPrem: 'Crop and hail insurance premiums paid by farms', insShare: 'of Canada', y: 'Year', mc: 'C$ M', insVs: 'Vs. previous year',
+      insNote: 'Statistics Canada, tables 32-10-0045-01 (crop insurance and private hail insurance payments) and 32-10-0049-01 (farm spending on crop and hail insurance). Province totals, all crops together; not a per-crop ratio. Thousands of Canadian dollars converted to millions. A gap is a figure Statistics Canada does not publish.', insNo: 'No insurance figures for this province.',
+      drNow: 'End of the latest month', dr1: '1 month ago', dr12: '12 months ago', d1: 'D1+ moderate drought or worse', d2: 'D2+ severe drought or worse', d3: 'D3+ extreme drought or worse', pp: 'pp', drNote: 'Canadian Drought Monitor (Agriculture and Agri-Food Canada and partners): share of the province\'s TOTAL area (land and inland water) in each category, cumulative (D1+ includes D2 to D4), at the end of each month. It is not your municipality or farm.', drNo: 'No drought data for this province.', drChart: 'Share of the province in D1+ and D2+ (month end)',
+      area: 'Planted area', harea: 'Harvested area', yl: 'Yield', prod: 'Production', kha: 'thousand ha', kgha: 'kg/ha', kt: 'thousand t', rank: 'Rank {r} of {n} provinces', shareCa: 'of Canada\'s total', vsPrev: 'Vs. previous year', year: 'Year',
+      pNoCrop: 'Statistics Canada does not publish {p} in {s}. Provinces with data:', stock: 'Inventories (thousand head)', stockNote: 'Statistics Canada livestock inventories (semi-annual survey, January and July): live animals, not price. Change against the same month a year earlier.', cropNote: 'Statistics Canada: area, yield and production by province. The latest year may be an estimate or forecast until the crop year closes. Rank and share calculated by Dehesa Index over the provinces that publish a figure.',
+      cattleItems: { 'total-cattle': 'Total cattle', 'beef-cows': 'Beef cows', 'dairy-cows': 'Dairy cows', 'total-heifers': 'Heifers', 'calves-under-1-year': 'Calves under 1 year' }, hogsItems: { 'hogs-total': 'Total hogs', 'sows-and-gilts-6-months-and-over': 'Sows and gilts (6 months and over)' }, sheepItems: { 'sheep-and-lambs-total': 'Total sheep and lambs', 'ewes': 'Ewes', 'lambs-for-marketing': 'Lambs for marketing' },
+      crops: { 'wheat-all': 'Wheat (all)', 'wheat-durum': 'Durum wheat', barley: 'Barley', oats: 'Oats', 'rye-all': 'Rye', 'canola-rapeseed': 'Canola', 'corn-for-grain': 'Grain corn', soybeans: 'Soybeans', 'peas-dry': 'Dry peas', lentils: 'Lentils', flaxseed: 'Flaxseed', 'sunflower-seed': 'Sunflower seed', 'mustard-seed': 'Mustard seed', 'chick-peas': 'Chickpeas', 'canary-seed': 'Canary seed' },
+      no_ca1: 'Local prices: only Manitoba (cattle, sheep and goat auctions and processor hog prices) and Alberta (weekly grains, steers and hogs). For the other provinces we have no local price.', no_ca2: 'Crop insurance: only the province total (all crops plus hail), not by crop or policy.', no_ca3: 'Drought: share of the province, not of your municipality.', no_ca4: 'Costs (fertiliser, diesel, feed) and weather: national or world figures only, not by province.',
+      mCa: 'Canada: country detail', mMb: 'Manitoba: livestock and hogs', mRend: 'Canada yields', mGan: 'Canada livestock' },
+    fr: { ca: 'Canada', sIns: 'Assurance récolte dans votre province', sDr: 'Sécheresse dans votre province', sProd: 'Votre province pour ce produit', cattle: 'Bovins', hogs: 'Porcs', sheep: 'Ovins', loadingMod: 'Chargement…',
+      pNo: 'Nous n\'avons pas de prix local pour {p} en {s}. Ce que nous suivons : le Manitoba (bovins, ovins et caprins aux encans et porcs des transformateurs) et l\'Alberta (prix hebdomadaires des grains, bouvillons et porcs).', pAbNote: 'Revues hebdomadaires d\'Alberta Agriculture and Irrigation (Open Government Licence - Alberta) : offres d\'élévateur ou au comptant et ventes directes de bétail. C\'est un prix d\'Alberta, pas de toute la province ni d\'un élévateur précis. Variations calculées sur notre propre série hebdomadaire.',
+      pAbSrc: 'Prix de l\'Alberta', last: 'Dernière semaine', vsW: 'Vs. semaine préc.', vs4: 'Vs. 4 semaines', vsY: 'Vs. il y a un an', noCmp: 'pas de donnée comparable', chart: 'Évolution hebdomadaire',
+      ab: { canola_elevador: 'Canola, offre d\'élévateur (centre de l\'Alberta)', trigo_pienso_ab: 'Blé fourrager, offre d\'élévateur', cebada_pienso_ab: 'Orge fourragère, offre d\'élévateur', avena_pienso_ab: 'Avoine fourragère, offre d\'élévateur', trigo_cwrs_ab: 'Blé CWRS n° 1/2, offre moyenne d\'élévateur', lenteja_laird_ab: 'Lentilles Laird n° 1, offre au comptant', guisante_verde_ab: 'Pois verts n° 2, offre au comptant', novillo_ab: 'Bouvillons, ventes directes (poids vif)', cerdo_ab: 'Porcs (carcasse), prix au comptant (Index 100)' },
+      insIndem: 'Indemnités de l\'assurance récolte', insHail: 'Indemnités de grêle (assurance privée)', insPrem: 'Primes d\'assurance récolte et grêle payées par les exploitations', insShare: 'du Canada', y: 'Année', mc: 'M $ CA', insVs: 'Vs. année précédente',
+      insNote: 'Statistique Canada, tableaux 32-10-0045-01 (paiements de l\'assurance récolte et de l\'assurance privée contre la grêle) et 32-10-0049-01 (dépenses des exploitations en assurance récolte et grêle). Totaux de la province, toutes cultures réunies ; pas un ratio par culture. Milliers de dollars canadiens convertis en millions. Un vide est un chiffre que Statistique Canada ne publie pas.', insNo: 'Aucun chiffre d\'assurance pour cette province.',
+      drNow: 'Fin du dernier mois', dr1: 'Il y a 1 mois', dr12: 'Il y a 12 mois', d1: 'D1+ sécheresse modérée ou pire', d2: 'D2+ sécheresse sévère ou pire', d3: 'D3+ sécheresse extrême ou pire', pp: 'pp', drNote: 'Moniteur canadien de la sécheresse (Agriculture et Agroalimentaire Canada et partenaires) : part de la superficie TOTALE de la province (terres et eaux intérieures) dans chaque catégorie, cumulée (D1+ inclut D2 à D4), à la fin de chaque mois. Ce n\'est pas votre municipalité ni votre ferme.', drNo: 'Aucune donnée de sécheresse pour cette province.', drChart: 'Part de la province en D1+ et D2+ (fin de mois)',
+      area: 'Superficie ensemencée', harea: 'Superficie récoltée', yl: 'Rendement', prod: 'Production', kha: 'milliers d\'ha', kgha: 'kg/ha', kt: 'milliers de t', rank: 'Rang {r} sur {n} provinces', shareCa: 'du total du Canada', vsPrev: 'Vs. année précédente', year: 'Année',
+      pNoCrop: 'Statistique Canada ne publie pas {p} en {s}. Provinces avec données :', stock: 'Inventaires (milliers de têtes)', stockNote: 'Inventaires de bétail de Statistique Canada (enquête semestrielle, janvier et juillet) : animaux vivants, pas un prix. Variation par rapport au même mois un an plus tôt.', cropNote: 'Statistique Canada : superficie, rendement et production par province. La dernière année peut être une estimation ou une prévision tant que la campagne n\'est pas close. Rang et part calculés par Dehesa Index sur les provinces qui publient un chiffre.',
+      cattleItems: { 'total-cattle': 'Total bovins', 'beef-cows': 'Vaches de boucherie', 'dairy-cows': 'Vaches laitières', 'total-heifers': 'Génisses', 'calves-under-1-year': 'Veaux de moins d\'un an' }, hogsItems: { 'hogs-total': 'Total porcs', 'sows-and-gilts-6-months-and-over': 'Truies et cochettes (6 mois et plus)' }, sheepItems: { 'sheep-and-lambs-total': 'Total ovins', 'ewes': 'Brebis', 'lambs-for-marketing': 'Agneaux de marché' },
+      crops: { 'wheat-all': 'Blé (total)', 'wheat-durum': 'Blé dur', barley: 'Orge', oats: 'Avoine', 'rye-all': 'Seigle', 'canola-rapeseed': 'Canola', 'corn-for-grain': 'Maïs-grain', soybeans: 'Soja', 'peas-dry': 'Pois secs', lentils: 'Lentilles', flaxseed: 'Lin', 'sunflower-seed': 'Tournesol', 'mustard-seed': 'Moutarde', 'chick-peas': 'Pois chiches', 'canary-seed': 'Alpiste' },
+      no_ca1: 'Prix locaux : seulement le Manitoba (encans de bovins, ovins et caprins et porcs des transformateurs) et l\'Alberta (grains, bouvillons et porcs hebdomadaires). Pour les autres provinces, nous n\'avons pas de prix local.', no_ca2: 'Assurance récolte : seulement le total de la province (toutes cultures et grêle), pas par culture ni par police.', no_ca3: 'Sécheresse : part de la province, pas de votre municipalité.', no_ca4: 'Coûts (engrais, diesel, aliments) et météo : chiffres nationaux ou mondiaux seulement, pas par province.',
+      mCa: 'Canada : détail du pays', mMb: 'Manitoba : bétail et porcs', mRend: 'Rendements du Canada', mGan: 'Élevage du Canada' },
+    it: { ca: 'Canada', sIns: 'Assicurazione dei raccolti nella tua provincia', sDr: 'Siccità nella tua provincia', sProd: 'La tua provincia in questo prodotto', cattle: 'Bovini', hogs: 'Suini', sheep: 'Ovini', loadingMod: 'Caricamento…',
+      pNo: 'Non abbiamo un prezzo locale per {p} in {s}. Ciò che seguiamo: il Manitoba (bovini, ovini e caprini alle aste e suini dei trasformatori) e l\'Alberta (prezzi settimanali di cereali, manzi e suini).', pAbNote: 'Rassegne settimanali di Alberta Agriculture and Irrigation (Open Government Licence - Alberta): offerte di elevatore o a pronti e vendite dirette di bestiame. È un prezzo dell\'Alberta, non di tutta la provincia né di un elevatore preciso. Variazioni calcolate sulla nostra serie settimanale.',
+      pAbSrc: 'Prezzo dell\'Alberta', last: 'Ultima settimana', vsW: 'Vs. settimana prec.', vs4: 'Vs. 4 settimane', vsY: 'Vs. un anno fa', noCmp: 'nessun dato confrontabile', chart: 'Andamento settimanale',
+      ab: { canola_elevador: 'Canola, offerta elevatore (Alberta centrale)', trigo_pienso_ab: 'Grano da foraggio, offerta elevatore', cebada_pienso_ab: 'Orzo da foraggio, offerta elevatore', avena_pienso_ab: 'Avena da foraggio, offerta elevatore', trigo_cwrs_ab: 'Grano CWRS n. 1/2, offerta media elevatore', lenteja_laird_ab: 'Lenticchie Laird n. 1, offerta a pronti', guisante_verde_ab: 'Piselli verdi n. 2, offerta a pronti', novillo_ab: 'Manzi, vendite dirette (peso vivo)', cerdo_ab: 'Suini (carcassa), prezzo a pronti (Index 100)' },
+      insIndem: 'Indennizzi dell\'assicurazione dei raccolti', insHail: 'Indennizzi grandine (assicurazione privata)', insPrem: 'Premi di assicurazione raccolto e grandine pagati dalle aziende', insShare: 'del Canada', y: 'Anno', mc: 'M C$', insVs: 'Vs. anno precedente',
+      insNote: 'Statistics Canada, tabelle 32-10-0045-01 (pagamenti dell\'assicurazione dei raccolti e dell\'assicurazione privata contro la grandine) e 32-10-0049-01 (spesa delle aziende per assicurazione raccolto e grandine). Totali della provincia, tutte le colture insieme; non un rapporto per coltura. Migliaia di dollari canadesi convertite in milioni. Un vuoto è un dato che Statistics Canada non pubblica.', insNo: 'Nessuna cifra assicurativa per questa provincia.',
+      drNow: 'Fine dell\'ultimo mese', dr1: '1 mese fa', dr12: '12 mesi fa', d1: 'D1+ siccità moderata o peggio', d2: 'D2+ siccità severa o peggio', d3: 'D3+ siccità estrema o peggio', pp: 'pp', drNote: 'Canadian Drought Monitor (Agriculture and Agri-Food Canada e partner): quota della superficie TOTALE della provincia (terra e acque interne) in ciascuna categoria, cumulata (D1+ include D2-D4), a fine mese. Non è il tuo comune né la tua azienda.', drNo: 'Nessun dato di siccità per questa provincia.', drChart: 'Quota della provincia in D1+ e D2+ (fine mese)',
+      area: 'Superficie seminata', harea: 'Superficie raccolta', yl: 'Resa', prod: 'Produzione', kha: 'migliaia di ha', kgha: 'kg/ha', kt: 'migliaia di t', rank: 'Posto {r} su {n} province', shareCa: 'del totale del Canada', vsPrev: 'Vs. anno precedente', year: 'Anno',
+      pNoCrop: 'Statistics Canada non pubblica {p} in {s}. Province con dato:', stock: 'Consistenze (migliaia di capi)', stockNote: 'Consistenze di bestiame di Statistics Canada (indagine semestrale, gennaio e luglio): animali vivi, non prezzo. Variazione rispetto allo stesso mese dell\'anno prima.', cropNote: 'Statistics Canada: superficie, resa e produzione per provincia. L\'ultimo anno può essere una stima o previsione finché la campagna non è chiusa. Posto e quota calcolati da Dehesa Index sulle province che pubblicano un dato.',
+      cattleItems: { 'total-cattle': 'Totale bovini', 'beef-cows': 'Vacche da carne', 'dairy-cows': 'Vacche da latte', 'total-heifers': 'Giovenche', 'calves-under-1-year': 'Vitelli sotto 1 anno' }, hogsItems: { 'hogs-total': 'Totale suini', 'sows-and-gilts-6-months-and-over': 'Scrofe e scrofette (6 mesi e oltre)' }, sheepItems: { 'sheep-and-lambs-total': 'Totale ovini', 'ewes': 'Pecore', 'lambs-for-marketing': 'Agnelli da macello' },
+      crops: { 'wheat-all': 'Frumento (totale)', 'wheat-durum': 'Frumento duro', barley: 'Orzo', oats: 'Avena', 'rye-all': 'Segale', 'canola-rapeseed': 'Canola', 'corn-for-grain': 'Mais da granella', soybeans: 'Soia', 'peas-dry': 'Piselli secchi', lentils: 'Lenticchie', flaxseed: 'Lino', 'sunflower-seed': 'Girasole', 'mustard-seed': 'Senape', 'chick-peas': 'Ceci', 'canary-seed': 'Scagliola' },
+      no_ca1: 'Prezzi locali: solo Manitoba (aste di bovini, ovini e caprini e suini dei trasformatori) e Alberta (cereali, manzi e suini settimanali). Per le altre province non abbiamo un prezzo locale.', no_ca2: 'Assicurazione dei raccolti: solo il totale della provincia (tutte le colture e la grandine), non per coltura né per polizza.', no_ca3: 'Siccità: quota della provincia, non del tuo comune.', no_ca4: 'Costi (fertilizzanti, gasolio, mangimi) e meteo: solo cifre nazionali o mondiali, non per provincia.',
+      mCa: 'Canada: dettaglio del paese', mMb: 'Manitoba: bestiame e suini', mRend: 'Rese del Canada', mGan: 'Zootecnia del Canada' }
+  };
+  var CA_LIVE = ['cattle', 'hogs', 'sheep'], CA_CROP_ORDER = ['wheat-all', 'wheat-durum', 'barley', 'oats', 'rye-all', 'canola-rapeseed', 'corn-for-grain', 'soybeans', 'peas-dry', 'lentils', 'flaxseed', 'sunflower-seed', 'mustard-seed', 'chick-peas', 'canary-seed'];
+  var CA_AB = { barley: ['cebada_pienso_ab'], oats: ['avena_pienso_ab'], 'wheat-all': ['trigo_cwrs_ab', 'trigo_pienso_ab'], 'canola-rapeseed': ['canola_elevador'], lentils: ['lenteja_laird_ab'], 'peas-dry': ['guisante_verde_ab'], cattle: ['novillo_ab'], hogs: ['cerdo_ab'] };
+  var CA_AB_UNIT = { novillo_ab: 'C$/cwt', cerdo_ab: 'C$/kg' };
+  function tc() { return TCA[lang()]; }
+
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function nf(v, d) { try { return v.toLocaleString(lang(), { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: 'always' }); } catch (e) { return v.toFixed(d); } }
   function pc(v) { if (v == null || !isFinite(v)) return '–'; if (Math.abs(v) < 0.05) v = 0; var c = v > 0 ? '#2f6b4a' : v < 0 ? '#a33' : 'inherit'; return '<span style="color:' + c + ';font-weight:600">' + (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1) + ' %</span>'; }
@@ -212,7 +273,7 @@
     try { var raw = window.localStorage.getItem(LSK); if (raw) s = JSON.parse(raw) || {}; } catch (e) { s = {}; }
     try { var u = new URLSearchParams(location.search); ['c', 'r', 'p', 'k'].forEach(function (k) { if (u.get(k)) q[k] = u.get(k); }); } catch (e) { q = {}; }
     var o = q.c ? q : s;
-    ST.c = o.c === 'US' || o.c === 'ES' ? o.c : ''; ST.r = o.r || ''; ST.p = o.p || ''; ST.k = o.k || '';
+    ST.c = o.c === 'US' || o.c === 'ES' || o.c === 'CA' ? o.c : ''; ST.r = o.r || ''; ST.p = o.p || ''; ST.k = o.k || '';
   }
   function save() {
     try { window.localStorage.setItem(LSK, JSON.stringify({ c: ST.c, r: ST.r, p: ST.p, k: ST.k })); } catch (e) { /* sin almacenamiento: la página funciona igual */ }
@@ -221,15 +282,22 @@
   function clearSaved() { try { window.localStorage.removeItem(LSK); } catch (e) { /* idem */ } ST.c = ST.r = ST.p = ST.k = ''; save(); }
 
   /* ---------- selectores ---------- */
-  var ES_PROV = null, ES_IDX = null;
+  var ES_PROV = null, ES_IDX = null, CAD = null;
+  function caName(code) { var N = window.DehesaRegionNames && window.DehesaRegionNames.CA, v = N && N[code]; return v ? (v.split('|')[LIDX[lang()]] || v.split('|')[0]) : code; }
+  function caPlaces() { return CAD ? Object.keys(CAD.provinces).filter(function (k) { return k !== 'CA'; }).sort(function (a, b) { return caName(a).localeCompare(caName(b), lang()); }) : []; }
+  function caProdName(p) { var c = tc(); return CA_LIVE.indexOf(p) >= 0 ? c[p] : (c.crops[p] || p); }
+  function caProducts() { var have = {}; if (CAD) Object.keys(CAD.provinces).forEach(function (k) { Object.keys(CAD.provinces[k].crops || {}).forEach(function (c) { have[c] = 1; }); }); return CA_LIVE.concat(CA_CROP_ORDER.filter(function (c) { return have[c]; })); }
   function usPlaces() { var N = window.DehesaRegionNames && window.DehesaRegionNames.US || {}; return Object.keys(N).sort(function (a, b) { return usName(a).localeCompare(usName(b), lang()); }); }
   function opt(v, l, cur) { return '<option value="' + esc(v) + '"' + (String(v) === String(cur) ? ' selected' : '') + '>' + esc(l) + '</option>'; }
   function selectors() {
     var t = tr(), h = '<div class="de-ctl" role="group" aria-label="' + esc(t.title) + '">';
-    h += '<label>' + esc(t.country) + '<br><select class="di-compare-select" data-mm="c">' + opt('', t.choose, ST.c) + opt('US', t.us, ST.c) + opt('ES', t.es, ST.c) + '</select></label>';
+    h += '<label>' + esc(t.country) + '<br><select class="di-compare-select" data-mm="c">' + opt('', t.choose, ST.c) + opt('US', t.us, ST.c) + opt('CA', tc().ca, ST.c) + opt('ES', t.es, ST.c) + '</select></label>';
     if (ST.c === 'US') {
       h += '<label>' + esc(t.place) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + usPlaces().map(function (k) { return opt(k, usName(k), ST.r); }).join('') + '</select></label>';
       h += '<label>' + esc(t.product) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + US_PROD.map(function (k) { return opt(k, prodName(k), ST.p); }).join('') + '</select></label>';
+    } else if (ST.c === 'CA') {
+      h += '<label>' + esc(t.placeES) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + caPlaces().map(function (k) { return opt(k, caName(k), ST.r); }).join('') + '</select></label>';
+      h += '<label>' + esc(t.product) + '<br><select class="di-compare-select" data-mm="p">' + opt('', t.choose, ST.p) + caProducts().map(function (k) { return opt(k, caProdName(k), ST.p); }).join('') + '</select></label>';
     } else if (ST.c === 'ES') {
       var provs = ES_PROV ? Object.keys(ES_PROV).sort(function (a, b) { return ES_PROV[a].localeCompare(ES_PROV[b], 'es'); }) : [];
       h += '<label>' + esc(t.placeES) + '<br><select class="di-compare-select" data-mm="r">' + opt('', t.choose, ST.r) + provs.map(function (k) { return opt(k, ES_PROV[k], ST.r); }).join('') + '</select></label>';
@@ -381,6 +449,105 @@
     });
   }
 
+
+  /* ---------- Canadá ---------- */
+  function mountMod(tok, id, src, glob, kind) {
+    var b = secBody(id); if (!b || tok !== TOK) return;
+    b.innerHTML = '<div data-mm-mod="1"><p class="di-movers-hint">' + esc(tc().loadingMod) + '</p></div>';
+    var go = function () { var d = b.querySelector('[data-mm-mod]'); if (tok === TOK && d && window[glob]) window[glob].mount(d, lang(), kind); };
+    if (window[glob]) go(); else { var sc = document.createElement('script'); sc.src = src; sc.onload = go; sc.onerror = function () { failSec(tok, id); }; document.head.appendChild(sc); }
+  }
+  function caList(p) {
+    if (!CAD) return '';
+    var have = Object.keys(CAD.provinces).filter(function (k) { return k !== 'CA' && CAD.provinces[k].crops && CAD.provinces[k].crops[p]; });
+    return '<p class="di-movers-hint">' + have.sort(function (a, b) { return caName(a).localeCompare(caName(b), lang()); }).map(function (c) { return '<a href="?c=CA&amp;r=' + c + '&amp;p=' + encodeURIComponent(p) + '" data-mm-go="' + c + '">' + esc(caName(c)) + '</a>'; }).join(' · ') + '</p>';
+  }
+  function priceCa(tok) {
+    var t = tr(), c = tc(), p = ST.p, keys = ST.r === 'AB' ? CA_AB[p] : null;
+    if (ST.r === 'MB' && p === 'cattle') { mountMod(tok, 'price', 'js/mb-cattle.js?v=20261003', 'MBCattle'); return; }
+    if (ST.r === 'MB' && p === 'sheep') { mountMod(tok, 'price', 'js/mb-smallstock.js?v=20261004', 'MBSmall', 'sg'); return; }
+    if (ST.r === 'MB' && p === 'hogs') { mountMod(tok, 'price', 'js/mb-smallstock.js?v=20261004', 'MBSmall', 'hog'); return; }
+    if (!keys) { putSec(tok, 'price', note(fill(c.pNo, { p: caProdName(p).toLowerCase(), s: caName(ST.r) }))); return; }
+    return get('data/alberta-weekly.json').then(function (d) {
+      if (tok !== TOK) return;
+      var ds = Object.keys(d.issues).sort(), h = '', lastAll = '';
+      keys.forEach(function (k) {
+        var pts = []; ds.forEach(function (x) { var iss = d.issues[x], v = iss.crop && iss.crop[k] != null ? iss.crop[k] : (iss.livestock && iss.livestock[k] != null ? iss.livestock[k] : null); if (v != null) pts.push([x, v]); });
+        if (!pts.length) return;
+        var last = pts[pts.length - 1], prev = near(pts, addDays(last[0], -7), 3), p4 = near(pts, addDays(last[0], -28), 5), yr = near(pts, addDays(last[0], -364), 10), u = CA_AB_UNIT[k] || 'C$/t', dec = u === 'C$/kg' ? 3 : 2;
+        var cmp = function (x) { return x ? pc(pct(last[1], x[1])) : '<span class="di-movers-hint">' + esc(c.noCmp) + '</span>'; };
+        lastAll = last[0] > lastAll ? last[0] : lastAll;
+        h += '<p class="di-movers-hint" style="margin:10px 0 2px"><b>' + esc(c.ab[k]) + '</b></p><div class="de-tiles">' + tile(c.last + ' · ' + u, nf(last[1], dec), esc(dt(last[0]))) + tile(c.vsW, cmp(prev), prev ? esc(dt(prev[0])) + ': ' + nf(prev[1], dec) : '') +
+          tile(c.vs4, cmp(p4), p4 ? esc(dt(p4[0])) + ': ' + nf(p4[1], dec) : '') + tile(c.vsY, cmp(yr), yr ? esc(dt(yr[0])) + ': ' + nf(yr[1], dec) : '') + '</div>';
+        if (pts.length > 1) h += chart([{ name: c.ab[k], color: '#2f6b4a', pts: pts.map(function (x) { return { x: Date.parse(x[0] + 'T00:00:00Z'), y: x[1], l: x[0] }; }) }], { y: u, aria: c.chart + ' ' + c.ab[k], d: dec });
+      });
+      putSec(tok, 'price', (h || note(fill(c.pNo, { p: caProdName(p).toLowerCase(), s: caName(ST.r) }))) + (h ? note(c.pAbNote) + cite('alberta_ag', lastAll) : ''));
+    });
+  }
+  function mc(v) { return v == null ? '–' : nf(v / 1000, Math.abs(v) >= 1e5 ? 0 : 1) + ' ' + tc().mc; }
+  function insuranceCa(tok) {
+    var c = tc();
+    return get('data/crop-insurance-ca.json').then(function (d) {
+      var s = d.data[ST.r], n = d.data.CA;
+      if (!s) { putSec(tok, 'ins', note(c.insNo)); return; }
+      var yi = d.years.length - 1; while (yi >= 0 && s.indemnities[yi] == null && s.farmPremiums[yi] == null) yi--;
+      if (yi < 0) { putSec(tok, 'ins', note(c.insNo)); return; }
+      var yr = d.years[yi], share = function (m) { return s[m][yi] != null && n[m][yi] > 0 ? nf(s[m][yi] / n[m][yi] * 100, 1) + ' % ' + c.insShare : ''; };
+      var vs = function (m) { return yi > 0 && s[m][yi] != null && s[m][yi - 1] > 0 ? esc(c.insVs) + ': ' + pc(pct(s[m][yi], s[m][yi - 1])) : ''; };
+      var h = '<div class="de-tiles">' + [['indemnities', c.insIndem], ['hailIndemnities', c.insHail], ['farmPremiums', c.insPrem]].map(function (m) { return tile(m[1] + ' · ' + yr, mc(s[m[0]][yi]), [esc(share(m[0])), vs(m[0])].filter(function (x) { return x; }).join('<br>')); }).join('') + '</div>';
+      var rows = d.years.map(function (y, i) { return i; }).slice(-6).reverse();
+      h += '<div class="de-sc"><table class="de-t" data-no-cards><thead><tr><th scope="col">' + esc(c.y) + '</th><th scope="col" class="r">' + esc(c.insIndem) + '</th><th scope="col" class="r">' + esc(c.insHail) + '</th><th scope="col" class="r">' + esc(c.insPrem) + '</th></tr></thead><tbody>' +
+        rows.map(function (i) { return '<tr><td>' + d.years[i] + '</td><td class="r">' + mc(s.indemnities[i]) + '</td><td class="r">' + mc(s.hailIndemnities[i]) + '</td><td class="r">' + mc(s.farmPremiums[i]) + '</td></tr>'; }).join('') + '</tbody></table></div>';
+      h += note(c.insNote) + cite('statcan', yr);
+      putSec(tok, 'ins', h);
+    });
+  }
+  function droughtCa(tok) {
+    var c = tc();
+    return get('data/canada-drought.json').then(function (d) {
+      var pr = d.provinces && d.provinces[ST.r];
+      if (!pr || !pr.v || !pr.v.length) { putSec(tok, 'dr', note(c.drNo)); return; }
+      var n = pr.v.length, last = pr.v[n - 1], p1 = n > 1 ? pr.v[n - 2] : null, p12 = n > 12 ? pr.v[n - 13] : null, per = d.periods[n - 1] || d.asOf;
+      var ds = [[1, c.d1], [2, c.d2], [3, c.d3]];
+      var pp2 = function (v) { if (v == null || !isFinite(v)) return '–'; if (Math.abs(v) < 0.05) v = 0; return (v > 0 ? '+' : v < 0 ? '−' : '') + nf(Math.abs(v), 1) + ' ' + c.pp; };
+      var h = '<p class="di-movers-hint">' + esc(c.drNow) + ': ' + esc(dt(per)) + '</p><div class="de-tiles">' + ds.map(function (x) {
+        var i = x[0], v = last[i], sub = (p1 ? esc(c.dr1) + ': ' + nf(p1[i], 1) + ' % (' + pp2(v - p1[i]) + ')' : '') + (p12 ? '<br>' + esc(c.dr12) + ': ' + nf(p12[i], 1) + ' % (' + pp2(v - p12[i]) + ')' : '');
+        return tile(x[1], nf(v, 1) + ' %', sub);
+      }).join('') + '</div>';
+      var xs = function (i) { return Date.parse(d.periods[i] + 'T00:00:00Z'); };
+      if (n > 1) h += chart([{ name: 'D1+', color: '#c9822b', pts: pr.v.map(function (r, i) { return { x: xs(i), y: r[1], l: d.periods[i] }; }) }, { name: 'D2+', color: '#a33', pts: pr.v.map(function (r, i) { return { x: xs(i), y: r[2], l: d.periods[i] }; }) }], { y: '%', aria: c.drChart + ' ' + caName(ST.r), d: 1 });
+      h += note(c.drNote) + cite('aafc_drought', per);
+      putSec(tok, 'dr', h);
+    });
+  }
+  function lastOf(a) { return a && a.length ? a[a.length - 1] : null; }
+  function prodCa(tok) {
+    var c = tc(), P = CAD.provinces[ST.r], p = ST.p;
+    if (CA_LIVE.indexOf(p) >= 0) {
+      var grp = P[p], items = p === 'cattle' ? c.cattleItems : p === 'hogs' ? c.hogsItems : c.sheepItems;
+      if (!grp) { putSec(tok, 'crop', note(c.insNo)); return; }
+      var tl = '', lastP = '';
+      Object.keys(items).forEach(function (k) {
+        var s = grp[k]; if (!s || !s.pts || !s.pts.length) return;
+        var l = lastOf(s.pts), py = l[0].replace(/^(\d{4})/, function (m) { return String(+m - 1); }), pv = null; s.pts.forEach(function (x) { if (x[0] === py) pv = x[1]; });
+        lastP = l[0] > lastP ? l[0] : lastP;
+        tl += tile(items[k], nf(l[1], l[1] < 100 ? 1 : 0), esc(l[0]) + (pv != null ? '<br>' + esc(c.vsPrev) + ': ' + pc(pct(l[1], pv)) : ''));
+      });
+      putSec(tok, 'crop', '<p class="di-movers-hint"><b>' + esc(c.stock) + '</b> · ' + esc(caName(ST.r)) + '</p><div class="de-tiles">' + tl + '</div>' + note(c.stockNote) + cite('statcan', lastP));
+      return;
+    }
+    var cr = P.crops && P.crops[p];
+    if (!cr) { putSec(tok, 'crop', note(fill(c.pNoCrop, { p: caProdName(p).toLowerCase(), s: caName(ST.r) })) + caList(p)); return; }
+    var yr = lastOf(cr.prod || cr.area || []); yr = yr && yr[0]; if (!yr) { putSec(tok, 'crop', note(fill(c.pNoCrop, { p: caProdName(p).toLowerCase(), s: caName(ST.r) })) + caList(p)); return; }
+    var at = function (a, y) { var v = null; (a || []).forEach(function (x) { if (x[0] === y) v = x[1]; }); return v; }, py = String(+yr - 1);
+    var peers = Object.keys(CAD.provinces).filter(function (k) { return k !== 'CA' && CAD.provinces[k].crops && CAD.provinces[k].crops[p] && at(CAD.provinces[k].crops[p].prod, yr) != null; }).map(function (k) { return { k: k, v: at(CAD.provinces[k].crops[p].prod, yr) }; }).sort(function (a, b) { return b.v - a.v; });
+    var tot = peers.reduce(function (m, x) { return m + x.v; }, 0), rank = peers.map(function (x) { return x.k; }).indexOf(ST.r) + 1;
+    var m = function (key, lab, unit, dec) { var v = at(cr[key], yr), q = at(cr[key], py); if (v == null) return ''; return tile(lab + ' · ' + yr, nf(v, dec) + ' <span class="di-movers-hint">' + esc(unit) + '</span>', q != null && q > 0 ? esc(c.vsPrev) + ': ' + pc(pct(v, q)) : ''); };
+    var h = '<div class="de-tiles">' + m('area', c.area, c.kha, 1) + m('harea', c.harea, c.kha, 1) + m('yield', c.yl, c.kgha, 0) + m('prod', c.prod, c.kt, 1) + '</div>';
+    if (rank) h += '<p class="di-movers-hint">' + esc(fill(c.rank, { r: rank, n: peers.length })) + (tot > 0 ? ' · ' + nf(at(cr.prod, yr) / tot * 100, 1) + ' % ' + esc(c.shareCa) : '') + '</p>';
+    putSec(tok, 'crop', h + note(c.cropNote) + cite('statcan', yr) + citeCalc(['statcan'], 'rank and share of provincial production'));
+  }
+
   /* ---------- España: cultivo en tu provincia ---------- */
   function spainGroup(g) { return get(SC + ES_IDX.groups[g].file); }
   function yl(a) { return a && a[3] > 0 && a[4] != null ? a[4] / a[3] : null; }
@@ -430,12 +597,15 @@
       return '<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + l.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
     });
   }
+  function missingCA() { var c = tc(); return Promise.resolve('<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + [c.no_ca1, c.no_ca2, c.no_ca3, c.no_ca4].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'); }
   function missingES() { var t = tr(); return Promise.resolve('<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + [t.no_es1, t.no_es2, t.no_es3, t.no_es4, t.no_es5].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'); }
   function moreLinks() {
     var t = tr(), h = '';
     if (ST.c === 'US') {
       var tab = ST.p === 'cattle' || ST.p === 'hay' ? ST.p : 'grain';
       h += link('precios-locales.html?' + (tab === 'grain' ? 's=' + ST.r + '&c=' + ST.p : 't=' + tab + '&s=' + ST.r), t.mPrice) + link('precios.html?tab=seguro', t.mIns) + link('sequia.html?state=' + encodeURIComponent(ST.r), t.mDrought) + link('insumos.html', t.mCosts) + link('clima.html', t.mClima);
+    } else if (ST.c === 'CA') {
+      var cc = tc(); h += link('paises.html?c=CA', cc.mCa) + (ST.r === 'MB' ? link('paises.html?c=CA#' + (ST.p === 'hogs' ? 'mb-hogs' : ST.p === 'sheep' ? 'mb-sheep-goat' : 'mb-cattle'), cc.mMb) : '') + link('rendimientos.html', cc.mRend) + link('ganaderia.html', cc.mGan) + link('clima.html', t.mClima) + link('insumos.html', t.mCosts);
     } else h += link('paises.html?c=ES#es-crops', t.mCrops) + link('clima.html', t.mClima) + link('precios.html', t.mPrices) + link('insumos.html', t.mCosts);
     return h;
   }
@@ -444,7 +614,7 @@
   function examples() {
     var t = tr();
     return '<p class="di-movers-hint">' + esc(t.intro) + '</p><p>' + [
-      ['US', 'KS', 'cattle', usName('KS') + ' · ' + prodName('cattle')], ['US', 'IA', 'corn', usName('IA') + ' · ' + prodName('corn')], ['ES', '47', 'cereales', 'Valladolid · ' + (t.grp.cereales)]
+      ['US', 'KS', 'cattle', usName('KS') + ' · ' + prodName('cattle')], ['US', 'IA', 'corn', usName('IA') + ' · ' + prodName('corn')], ['CA', 'MB', 'cattle', caName('MB') + ' · ' + tc().cattle], ['CA', 'SK', 'canola-rapeseed', caName('SK') + ' · ' + tc().crops['canola-rapeseed']], ['ES', '47', 'cereales', 'Valladolid · ' + (t.grp.cereales)]
     ].map(function (e) { return '<button type="button" class="di-src-tab" data-mm-ex="' + e.slice(0, 3).join('|') + '">' + esc(e[3]) + '</button> '; }).join('') + '</p>';
   }
   function draw() {
@@ -455,6 +625,8 @@
     h += '<p class="di-movers-hint">' + esc(t.saved) + ' <button type="button" class="di-src-tab" data-mm-reset="1">' + esc(t.reset) + '</button></p>';
     if (ST.c === 'US') {
       h += sect('price', t.sPrice + ' · ' + prodName(ST.p)) + sect('ins', t.sIns) + sect('dr', t.sDrought);
+    } else if (ST.c === 'CA') {
+      h += sect('price', t.sPrice + ' · ' + caProdName(ST.p)) + sect('crop', tc().sProd) + sect('ins', tc().sIns) + sect('dr', tc().sDr);
     } else h += sect('crop', t.sCrop);
     h += sect('missing', t.sMissing) + '<section class="di-card" style="padding:14px 16px;margin:14px 0"><h2 style="font-size:18px;margin:0 0 6px">' + esc(t.sMore) + '</h2>' + moreLinks() + '</section>';
     root.innerHTML = h;
@@ -463,6 +635,9 @@
       run('price', function () { return ST.p === 'cattle' ? priceCattle(tok) : ST.p === 'hay' ? priceHay(tok) : priceGrain(tok); });
       run('ins', function () { return insurance(tok); }); run('dr', function () { return drought(tok); });
       run('missing', function () { return locStatus().then(missingUS).then(function (x) { putSec(tok, 'missing', x); }); });
+    } else if (ST.c === 'CA') {
+      run('price', function () { return priceCa(tok); }); run('crop', function () { prodCa(tok); }); run('ins', function () { return insuranceCa(tok); }); run('dr', function () { return droughtCa(tok); });
+      run('missing', function () { return missingCA().then(function (x) { putSec(tok, 'missing', x); }); });
     } else {
       run('crop', function () { return spainCrop(tok); });
       run('missing', function () { return missingES().then(function (x) { putSec(tok, 'missing', x); }); });
@@ -472,6 +647,11 @@
   /* ---------- eventos ---------- */
   function refocus(sel) { var n = root.querySelector(sel); if (n && n.focus) n.focus(); }
   function prepare() {
+    if (ST.c === 'CA') {
+      return (CAD ? Promise.resolve(CAD) : get('data/canada-provinces.json').then(function (d) { CAD = d; return d; })).then(function (d) {
+        if (ST.r && !d.provinces[ST.r]) ST.r = ''; if (ST.p && caProducts().indexOf(ST.p) < 0) ST.p = '';
+      });
+    }
     // España: hace falta el índice y un grupo cargados para los selectores
     if (ST.c === 'ES') {
       var need = function () { return ES_IDX ? Promise.resolve(ES_IDX) : get(SC + 'index.json').then(function (ix) { ES_IDX = ix; return ix; }); };

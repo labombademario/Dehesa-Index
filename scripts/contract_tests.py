@@ -1701,6 +1701,63 @@ def mb_cattle(doc, errs, warns, stats):
     stats["mb-cattle semanas"] = len(ks)
 
 
+def mb_sheep_goat(doc, errs, warns, stats):
+    """Manitoba, ovino y caprino en subastas (Winnipeg y Grunthal, C$/cwt): 8 clases fijas (oveja, cordero en 4 tramos, macho, cabra, cabrito); por subasta, fechas de venta crecientes y de martes a viernes,
+    cada [minimo, maximo, media] con minimo <= media <= maximo y rango plausible (40-800 ovino, 40-1500 caprino) o null (hueco o celda en disputa entre informes), y las celdas en disputa siempre vacias."""
+    import datetime as _d
+    CL = ["sheep", "lamb100", "lamb80", "lamb60", "lambU60", "billy", "nanny", "kid"]
+    if doc["classes"] != CL or doc["marts"] != ["Winnipeg", "Grunthal"]: errs.append("mb-sheep-goat: clases o subastas distintas de las esperadas"); return
+    if not set(doc["sales"]) <= set(doc["marts"]): errs.append("mb-sheep-goat: subasta desconocida"); return
+    n = 0; newest = None
+    for m, ss in doc["sales"].items():
+        ks = list(ss)
+        if ks != sorted(ks) or len(set(ks)) != len(ks): errs.append("mb-sheep-goat %s: ventas desordenadas o repetidas" % m); return
+        for k in ks:
+            try: dd = _d.date.fromisoformat(k)
+            except ValueError: errs.append("mb-sheep-goat %s: fecha de venta invalida %r" % (m, k)); return
+            if dd > _d.date.today() + _d.timedelta(days=1): errs.append("mb-sheep-goat %s %s: venta en el futuro" % (m, k)); return
+            if dd.weekday() not in (1, 2, 3, 4): errs.append("mb-sheep-goat %s %s: la venta no cae de martes a viernes" % (m, k)); return
+            rows = ss[k]
+            if len(rows) != 8: errs.append("mb-sheep-goat %s %s: faltan clases" % (m, k)); return
+            for i, t in enumerate(rows):
+                if t is None: continue
+                if not (isinstance(t, list) and len(t) == 3 and all(isinstance(x, (int, float)) and not isinstance(x, bool) for x in t)): errs.append("mb-sheep-goat %s %s: precio invalido %r" % (m, k, t)); return
+                if not (t[0] <= t[2] <= t[1]): errs.append("mb-sheep-goat %s %s %s: minimo/media/maximo incoherentes %r" % (m, k, CL[i], t)); return
+                if not (40 <= t[2] <= (1500 if i >= 5 else 800)): errs.append("mb-sheep-goat %s %s %s: precio fuera de rango %r" % (m, k, CL[i], t)); return
+                if "%s|%s|%d" % (m, k, i) in doc["disputed"]: errs.append("mb-sheep-goat %s %s %s: celda en disputa con valor" % (m, k, CL[i])); return
+            if not any(rows): warns.append("mb-sheep-goat %s %s: venta sin ninguna clase con precio" % (m, k))
+            n += 1; newest = k if newest is None or k > newest else newest
+    if n == 0: errs.append("mb-sheep-goat: sin ventas"); return
+    if (_d.date.today() - _d.date.fromisoformat(newest)).days > 60: warns.append("mb-sheep-goat: la ultima venta es del %s" % newest)
+    stats["mb-sheep-goat ventas"] = n
+
+
+def mb_hogs(doc, errs, warns, stats):
+    """Manitoba, porcino semanal (procesadoras): semanas que acaban en viernes y crecen; [all-in C$/100 kg, Index 100 C$/100 kg, cerdos procesados, peso de canal kg] con rangos plausibles,
+    all-in/Index 100 entre 0,95 y 1,2 (el Index 100 es el all-in dividido por el indice medio), sin saltos semanales superiores al 40 % y sin huecos de mas de una semana."""
+    import datetime as _d
+    if doc["fields"] != ["allIn", "index100", "pigs", "kg"]: errs.append("mb-hogs: campos distintos de los esperados"); return
+    ks = list(doc["weeks"])
+    if ks != sorted(ks) or len(set(ks)) != len(ks): errs.append("mb-hogs: semanas desordenadas o repetidas"); return
+    prev = None
+    for k in ks:
+        try: d = _d.date.fromisoformat(k)
+        except ValueError: errs.append("mb-hogs: fecha invalida %r" % k); return
+        if d.weekday() != 4: errs.append("mb-hogs %s: la semana no acaba en viernes" % k); return
+        if d > _d.date.today() + _d.timedelta(days=1): errs.append("mb-hogs %s: semana en el futuro" % k); return
+        a, x, p, w = doc["weeks"][k]
+        for v, lo, hi, nm in ((a, 100, 500, "all-in"), (x, 100, 500, "Index 100"), (p, 20000, 250000, "cerdos"), (w, 80, 130, "peso")):
+            if v is None: continue
+            if isinstance(v, bool) or not isinstance(v, (int, float)) or not (lo <= v <= hi): errs.append("mb-hogs %s: %s fuera de rango (%r)" % (k, nm, v)); return
+        if a is not None and x is not None and not (0.95 <= a / x <= 1.2): errs.append("mb-hogs %s: all-in/Index 100 incoherente (%s/%s)" % (k, a, x)); return
+        if prev is not None:
+            if (d - prev[0]).days > 7: warns.append("mb-hogs: hueco entre %s y %s" % (prev[0], k))
+            if prev[1] is not None and a is not None and abs(a / prev[1] - 1) > 0.4: errs.append("mb-hogs %s: salto del all-in superior al 40 %% (%s -> %s)" % (k, prev[1], a)); return
+        prev = (d, a if a is not None else (prev[1] if prev else None))
+    if (_d.date.today() - _d.date.fromisoformat(ks[-1])).days > 21: warns.append("mb-hogs: la ultima semana es del %s" % ks[-1])
+    stats["mb-hogs semanas"] = len(ks)
+
+
 def spain_crops(doc, errs, warns, stats):
     """MAPA superficies y producciones por provincia. Por cultivo y campana: 5 medidas [total, secano, regadio, cosechada, produccion], todas >= 0 o null; provincias que existen en el diccionario;
     el total nacional del cultivo es la suma de sus provincias (nulo solo si ninguna lo trae); secano + regadio = total; cosechada <= total a nivel nacional (por provincia el MAPA a veces la da mayor: aviso); campana con estado y no futura; codigos de cultivo sin repetir."""

@@ -12,6 +12,7 @@ const J = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 const cattle = J('data/us-local/cattle-KS.json'), hay = J('data/us-local/hay-KS.json'), ins = J('data/crop-insurance.json'), dr = J('data/drought.json');
 const corn = J('data/us-cash-bids/KS/corn.json'), man = J('data/us-cash-bids/manifest.json'), status = J('data/us-local/status.json');
 const es = J('data/spain-crops/crops-cereales.json');
+const hogs = J('data/mb-markets/hogs.json'), hk = Object.keys(hogs.weeks).sort(), hl = hogs.weeks[hk[hk.length - 1]];
 const nrm = s => s.replace(/[., \s\u00a0\u202f]/g, '');
 const f = (v, d) => v.toFixed(d);
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
@@ -38,7 +39,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
 
   // vacío: sin elección no hay datos y se ofrecen ejemplos
   await page.goto(BASE + '/mi-mercado.html', { waitUntil: 'networkidle' }); await page.waitForSelector('#mm-body [data-mm="c"]');
-  ok(tag + ': sin elección no hay tarjetas', (await page.$$('[data-mm-sec]')).length === 0 && (await page.$$('[data-mm-ex]')).length === 3);
+  ok(tag + ': sin elección no hay tarjetas', (await page.$$('[data-mm-sec]')).length === 0 && (await page.$$('[data-mm-ex]')).length === 5);
 
   // Kansas · ganado (por URL)
   await page.goto(BASE + '/mi-mercado.html?c=US&r=KS&p=cattle', { waitUntil: 'networkidle' }); await ready('price'); await ready('ins'); await ready('dr');
@@ -105,6 +106,19 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ': ES grupo con campaña 2025 la usa', /2025/.test(await sec('crop')));
   ok(tag + ': ES sin undefined/NaN', !/undefined|NaN|\[object|Infinity/.test(await body()));
   if (w === 390) ok(tag + ': ES sin desborde horizontal', await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1));
+  // Canadá: Manitoba · porcino (precio local), Ontario (sin precio local, se dice), Alberta · cebada
+  await page.goto(BASE + '/mi-mercado.html?c=CA&r=MB&p=hogs', { waitUntil: 'networkidle' }); await ready('price'); t = await sec('price');
+  ok(tag + ': CA porcino MB: precio todo incluido = JSON', nrm(t).includes(nrm(f(hl[0], 2))) && nrm(t).includes(hk[hk.length - 1]));
+  ok(tag + ': CA porcino MB: fuente Manitoba Agriculture', (await page.evaluate(() => document.querySelector('[data-mm-body="price"]').parentNode.innerHTML)).includes('mb_agri'));
+  ok(tag + ': CA seguro y sequía de provincia', (await page.$$('[data-mm-body="ins"] .de-tile')).length >= 3 && (await page.$$('[data-mm-body="dr"] .de-tile')).length === 3);
+  await page.goto(BASE + '/mi-mercado.html?c=CA&r=MB&p=sheep', { waitUntil: 'networkidle' }); await ready('price'); t = await sec('price');
+  ok(tag + ': CA ovino MB: hay cifras y gráfico', /\d/.test(t) && (await page.$$('[data-mm-body="price"] svg')).length >= 1);
+  await page.goto(BASE + '/mi-mercado.html?c=CA&r=ON&p=cattle', { waitUntil: 'networkidle' }); await ready('price');
+  ok(tag + ': CA Ontario: sin precio local (sin tarjetas de precio)', (await page.$$('[data-mm-body="price"] .de-tile')).length === 0);
+  await page.goto(BASE + '/mi-mercado.html?c=CA&r=AB&p=barley', { waitUntil: 'networkidle' }); await ready('price'); t = await sec('price');
+  ok(tag + ': CA cebada AB: precio semanal', /\d{3}[.,]\d{2}/.test(t) && (await page.$$('[data-mm-body="price"] .de-tile')).length >= 3);
+  ok(tag + ': CA sin undefined/NaN', !/undefined|NaN|\[object|Infinity/.test(await body()));
+  if (w === 390) ok(tag + ': CA sin desborde horizontal', await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1));
   ok(tag + ': sin errores de consola' + (errs.length ? ' ' + errs.join(' | ') : ''), errs.length === 0);
   // idioma: los títulos cambian
   const h1 = await page.$eval('#mm-h1', n => n.textContent);
