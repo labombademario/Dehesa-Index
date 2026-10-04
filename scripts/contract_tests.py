@@ -1810,6 +1810,37 @@ def spain_balances(doc, errs, warns, stats):
     stats["spain-balances campañas"] = len(camps)
 
 
+def _so_mod():
+    import importlib.util as _u
+    sp = _u.spec_from_file_location("update_spain_olive", str(Path(__file__).resolve().parent / "update-spain-olive.py")); m = _u.module_from_spec(sp); sp.loader.exec_module(m); return m
+
+
+def spain_olive(doc, errs, warns, stats):
+    """Balance del olivar del MAPA: por campaña y producto sin negativos; origen = existencias iniciales + produccion + importaciones; destino (mercado interior + exportaciones + ajustes + existencias finales) = total = origen;
+    UE-27 + extra UE-27 = total cuando hay desglose. Estado y mes de actualizacion validos. Aforo: las comunidades suman el total nacional y la campaña del aforo es posterior a la ultima del balance."""
+    m = _so_mod()
+    if doc["products"] != m.PRODUCTS or doc["items"] != m.ITEMS: errs.append("spain-olive: productos o partidas distintos de los esperados"); return
+    camps = {}
+    for k, c in doc["campaigns"].items():
+        if not re.match(r"^\d{4}$", k): errs.append("spain-olive: campaña %r invalida" % k); return
+        y = int(k)
+        if c["label"] != "%d/%02d" % (y, (y + 1) % 100): errs.append("spain-olive %s: etiqueta %s" % (k, c["label"])); return
+        if c["status"] not in (None, "provisional", "definitivo", "estimación"): errs.append("spain-olive %s: estado %r inventado" % (k, c["status"])); return
+        if c["update"] is not None and not re.match(r"^\d{4}-(0[1-9]|1[0-2])$", c["update"]): errs.append("spain-olive %s: mes de actualizacion invalido" % k); return
+        if set(c["v"]) != set(m.PRODUCTS) or any(set(v) != set(m.ITEMS) for v in c["v"].values()): errs.append("spain-olive %s: productos o partidas incompletos" % k); return
+        camps[y] = c
+    e, w = m.validate(camps)
+    errs.extend("spain-olive " + x for x in e[:5]); warns.extend("spain-olive " + x for x in w[:5])
+    af = doc.get("aforo")
+    if af:
+        rows = af["ccaa"]
+        for k in ("mean6", "previous", "estimate"):
+            if abs(sum(r[k] for r in rows) - af["total"][k]) > 3: errs.append("spain-olive aforo: las comunidades no suman el total nacional (%s)" % k)
+        if any(r[k] < 0 for r in rows for k in ("mean6", "previous", "estimate")): errs.append("spain-olive aforo: valor negativo")
+        if af["campaign"] <= max(camps): errs.append("spain-olive aforo: la campaña del aforo no es posterior a la del balance")
+    stats["spain-olive campañas"] = len(camps)
+
+
 def ers_cost_reference(doc, errs, warns, stats):
     """Referencia ERS: las partidas deben sumar el total publicado, los costes imputados no pueden exceder el total y no hay valores negativos."""
     keys = set(doc["map"])

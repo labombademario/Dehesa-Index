@@ -72,6 +72,18 @@ sources:
     data: [spain-balances/cereals.json, spain-balances-log.txt]
     extra: ['!data/spain-balances']
     message: Datos balances de cereales de España (MAPA)
+  - id: spain-olive
+    name: Update Spain olive sector balance and oil forecast (MAPA)
+    cron: ['50 7 * * 4']
+    script: scripts/update-spain-olive.py
+    pre: ['sudo apt-get install -y -q poppler-utils >/dev/null']
+    timeout: 20
+    script_timeout: 12
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/spain-balances)
+    data: [spain-balances/olive.json, spain-olive-log.txt]
+    extra: ['!data/spain-balances']
+    message: Datos balance del olivar y aforo de aceite de oliva de España (MAPA)
   - id: austria
     name: Update Austria (Eurostat)
     cron: ['25 16 * * 2,5']

@@ -7,6 +7,7 @@ let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(p
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
 let fail = 0; const ok = (n, c) => { if (!c) { fail++; console.log('FALLA', n); } };
 const J = JSON.parse(readFileSync('data/spain-balances/cereals.json', 'utf8')), ys = Object.keys(J.campaigns).sort(), Y = ys[ys.length - 1];
+const OL = JSON.parse(readFileSync('data/spain-balances/olive.json', 'utf8')), oys = Object.keys(OL.campaigns).sort(), OY = oys[oys.length - 1];
 const digits = s => s.replace(/\D/g, '');
 for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const ctx = await browser.newContext({ viewport: { width: w, height: 800 }, serviceWorkers: 'block' });
@@ -23,6 +24,23 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ' 9 filas de cereales en la comparacion', m.cmp === 9);
   ok(tag + ' dos graficos', m.svgs >= 2);
   ok(tag + ' cita MAPA', /MAPA/.test(m.txt));
+  if (w === 1280) {
+    await page.selectOption('#od-es-p', 'olive'); await page.waitForSelector('#od-es-oy');
+    const o = await page.evaluate(() => { var e = document.getElementById('od-es'); var tb = e.querySelectorAll('table'); var rows = [].map.call(tb[0].querySelectorAll('tbody tr'), r => [].map.call(r.cells, c => c.innerText.trim())); var ar = [].map.call(tb[1].querySelectorAll('tbody tr'), r => [].map.call(r.cells, c => c.innerText.trim())); return { rows: rows, ar: ar, svgs: e.querySelectorAll('svg').length, txt: e.innerText, h1: document.getElementById('pg-h1').textContent, over: document.documentElement.scrollWidth > innerWidth + 1 }; });
+    const ov = OL.campaigns[OY].v.oil, A = OL.aforo;
+    ok(tag + ' aceite: produccion = JSON', o.rows.some(r => digits(r[1]) === String(ov.production).replace(/\D/g, '')));
+    ok(tag + ' aceite: existencias finales = JSON', o.rows.some(r => digits(r[1]) === String(ov.endingStocks).replace(/\D/g, '')));
+    ok(tag + ' aforo: una fila por CCAA y el total', o.ar.length === A.ccaa.length + 1);
+    ok(tag + ' aforo: total = JSON', digits(o.ar[o.ar.length - 1][3]) === String(A.total.estimate));
+    ok(tag + ' aforo rotulado como estimacion', /ESTIMACI|ESTIMATE|ESTIMATION|STIMA/.test(o.txt));
+    ok(tag + ' aceite: dos graficos y cita MAPA', o.svgs >= 2 && /MAPA/.test(o.txt));
+    ok(tag + ' aceite: titulo propio', /aceite|olive|olive|olio|huile/i.test(o.h1));
+    ok(tag + ' aceite: sin desborde', !o.over);
+    await page.selectOption('#od-es-op', 'tableOlive');
+    const tt = await page.evaluate(() => document.getElementById('od-es').innerText);
+    ok(tag + ' aceituna de mesa: ajustes y perdidas = JSON', new RegExp(String(OL.campaigns[OY].v.tableOlive.lossesAdj).replace('.', '[.,]')).test(tt));
+    await page.selectOption('#od-es-p', 'cer'); await page.waitForSelector('#od-es-y');
+  }
   ok(tag + ' sin desborde', !m.over); ok(tag + ' sin errores de consola', errs.length === 0); if (errs.length) console.log(errs);
   if (w === 1280 && lang === 'es') {
     await page.selectOption('#od-es-y', '2019'); await page.selectOption('#od-es-c', 'total');

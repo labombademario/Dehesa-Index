@@ -20,7 +20,15 @@ def _scp(d):
     x = _sc(d)[0]; return x, next(iter(x["v"]))
 def _sl(d): return d["v"]
 def _sbv(d, y="2025"): return d["campaigns"][y]["v"]
+def _sov(d, y="2025"): return d["campaigns"][y]["v"]
 CASES = [
+ ("spain-balances/olive.json", "produccion que rompe el total de origen", lambda d: _sov(d)["oil"].__setitem__("production", _sov(d)["oil"]["production"] + 300)),
+ ("spain-balances/olive.json", "existencias finales que no cuadran", lambda d: _sov(d)["oil"].__setitem__("endingStocks", _sov(d)["oil"]["endingStocks"] + 80)),
+ ("spain-balances/olive.json", "exportaciones UE + extra UE que no suman", lambda d: _sov(d, "2024")["oil"].__setitem__("exportsEU", _sov(d, "2024")["oil"]["exportsEU"] + 50)),
+ ("spain-balances/olive.json", "importacion negativa", lambda d: _sov(d)["pomace"].__setitem__("imports", -5)),
+ ("spain-balances/olive.json", "estado inventado", lambda d: d["campaigns"]["2024"].__setitem__("status", "oficial")),
+ ("spain-balances/olive.json", "aforo que no suma el total", lambda d: d["aforo"]["ccaa"][0].__setitem__("estimate", d["aforo"]["ccaa"][0]["estimate"] + 90000)),
+ ("spain-balances/olive.json", "aforo de una campaña ya cerrada", lambda d: d["aforo"].__setitem__("campaign", 2024)),
  ("spain-balances/cereals.json", "produccion que rompe las disponibilidades de un cereal", lambda d: _sbv(d)["barley"].__setitem__("production", _sbv(d)["barley"]["production"] + 5000)),
  ("spain-balances/cereals.json", "existencias finales que no cuadran", lambda d: _sbv(d)["maize"].__setitem__("endingStocks", _sbv(d)["maize"]["endingStocks"] + 900)),
  ("spain-balances/cereals.json", "exportacion negativa", lambda d: _sbv(d)["oats"].__setitem__("exports", -3)),

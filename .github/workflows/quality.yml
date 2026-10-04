@@ -84,6 +84,9 @@ jobs:
       - name: Spain cereal balance sheets (MAPA PDF parser on real pdftotext extracts, column assignment, empty cells, TOTAL discrepancies as notes, refusal on corrupted tables; no network)
         run: python3 scripts/test-spain-balances.py
 
+      - name: Spain olive sector balance and oil forecast (MAPA PDF parser on real pdftotext extracts, both layouts, UE split, forecast by region sums to the national total; no network)
+        run: python3 scripts/test-spain-olive.py
+
       - name: Spain CAP (BOE RD 1048/2022 annex parser, change tracking, refusal on corrupted text, rules vs watched articles; extract of the BOE text as fixture, no network)
         run: python3 scripts/test-cap-es.py
 

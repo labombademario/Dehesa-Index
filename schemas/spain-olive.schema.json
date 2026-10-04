@@ -1,0 +1,106 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - Espana: balance del sector del olivar (MAPA) y aforo de aceite de oliva",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "checkedAt",
+  "source",
+  "unit",
+  "products",
+  "items",
+  "campaigns"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "checkedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "url"
+   ],
+   "properties": {
+    "id": {
+     "enum": [
+      "mapa_es"
+     ]
+    },
+    "url": {
+     "type": "string"
+    }
+   }
+  },
+  "unit": {
+   "type": "string"
+  },
+  "products": {
+   "type": "array",
+   "minItems": 3
+  },
+  "items": {
+   "type": "array",
+   "minItems": 13
+  },
+  "campaigns": {
+   "type": "object",
+   "minProperties": 4,
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "label",
+     "status",
+     "update",
+     "v"
+    ],
+    "properties": {
+     "label": {
+      "type": "string",
+      "pattern": "^\\d{4}/\\d{2}$"
+     },
+     "status": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "update": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "pdf": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "v": {
+      "type": "object",
+      "minProperties": 3
+     }
+    }
+   }
+  },
+  "aforo": {
+   "type": [
+    "object",
+    "null"
+   ]
+  }
+ }
+}

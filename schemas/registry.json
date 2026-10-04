@@ -575,6 +575,12 @@
    [
     "spain_balances"
    ]
+  ],
+  "spain-balances/olive.json": [
+   "spain-olive",
+   [
+    "spain_olive"
+   ]
   ]
  },
  "globs": {
