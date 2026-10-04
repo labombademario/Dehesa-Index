@@ -2558,3 +2558,53 @@ def cap_dk_watch(doc, errs, warns, stats):
     if need: warns.append("cap-dk: los decretos han cambiado (%s): revisar data/cap/dk/amounts.json" % "; ".join(str(x) for x in doc["reviewNeeded"][:4]))
     if (TODAY - cd).days > 21: warns.append("cap-dk watch: ultima comprobacion el %s" % doc["checkedAt"])
     stats["cap-dk parrafos vigilados"] = len(c["sections"])
+
+
+_UCY_MOD = None
+def _ucy_mod():
+    global _UCY_MOD
+    if _UCY_MOD is None:
+        import importlib.util as _iu, pathlib as _p
+        sp = _iu.spec_from_file_location("ucy", _p.Path(__file__).resolve().parent / "update-us-county-yields.py"); m = _iu.module_from_spec(sp); sp.loader.exec_module(m); _UCY_MOD = m
+    return _UCY_MOD
+UCY_MAX = {"corn": 400, "soybeans": 120, "wheat-winter": 250, "wheat-spring": 200, "cotton-upland": 3500, "sorghum": 300, "rice": 11000, "peanuts": 7000, "hay-alfalfa": 12, "barley": 250, "oats": 250}   # rendimiento maximo plausible por condado (unidades de NASS)
+UCY_STATES = {"01", "02", "04", "05", "06", "08", "09", "10", "11", "12", "13", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "44", "45", "46", "47", "48", "49", "50", "51", "53", "54", "55", "56"}
+
+
+def us_county_yields(doc, errs, warns, stats):
+    """Rendimiento, superficie cosechada y produccion por condado (NASS): cultivo y series del script, anos seguidos y no futuros, FIPS de 5 cifras de un estado conocido, tres series con un valor por ano
+    (null = hueco, nunca cero para algo que NASS no publica), rendimiento plausible, superficie cosechada > 0 en 'OTHER COUNTIES' y produccion = rendimiento x superficie / divisor (4 %), con a lo sumo un 1 % de condados-ano fuera."""
+    import datetime as _d
+    m = _ucy_mod(); c = next((x for x in m.CROPS if x["slug"] == doc["slug"]), None)
+    if c is None: errs.append("us-county: cultivo %r desconocido" % doc["slug"]); return
+    if doc["crop"] != c["key"] or doc["series"] != {k: c[k] for k in m.METRICS} or doc["units"] != c["units"] or doc["metrics"] != list(m.METRICS): errs.append("us-county/%s: clave, series o unidades distintas de las del script" % c["slug"]); return
+    ys = doc["years"]
+    if ys != list(range(ys[0], ys[0] + len(ys))) or ys[-1] > _d.date.today().year: errs.append("us-county/%s: anos no seguidos o en el futuro %r" % (c["slug"], ys)); return
+    bad = tot = n_latest = 0; mx = UCY_MAX[c["slug"]]
+    for f, arrs in doc["counties"].items():
+        if not re.fullmatch(r"\d{5}", f) or f[:2] not in UCY_STATES: errs.append("us-county/%s: FIPS invalido %r" % (c["slug"], f)); return
+        if not (isinstance(arrs, list) and len(arrs) == 3 and all(isinstance(a, list) and len(a) == len(ys) for a in arrs)): errs.append("us-county/%s %s: forma de las series invalida" % (c["slug"], f)); return
+        for a in arrs:
+            for v in a:
+                if v is not None and (isinstance(v, bool) or not isinstance(v, (int, float)) or v < 0): errs.append("us-county/%s %s: valor invalido %r" % (c["slug"], f, v)); return
+        for i in range(len(ys)):
+            a, b, p = arrs[0][i], arrs[1][i], arrs[2][i]
+            if a is not None and a > mx: errs.append("us-county/%s %s %d: rendimiento %s fuera de rango (max %s)" % (c["slug"], f, ys[i], a, mx)); return
+            if f.endswith("998") and b is not None and b <= 0: errs.append("us-county/%s %s %d: 'otros condados' con superficie 0" % (c["slug"], f, ys[i])); return
+            if a is None or b is None or p is None: continue
+            tot += 1; exp = a * b / c["div"]
+            if (exp == 0 and p != 0) or (exp and abs(p / exp - 1) > m.TOL): bad += 1
+        if arrs[0][-1] is not None and not f.endswith("998"): n_latest += 1
+    if tot and bad / tot > 0.01: errs.append("us-county/%s: %d de %d condados-ano con produccion distinta de rendimiento x superficie" % (c["slug"], bad, tot)); return
+    stats["us-county condados (ultimo ano)"] = stats.get("us-county condados (ultimo ano)", 0) + n_latest
+    if n_latest < 5: warns.append("us-county/%s: solo %d condados con rendimiento en %d" % (c["slug"], n_latest, ys[-1]))
+
+
+def us_county_status(doc, errs, warns, stats):
+    """Estado de ingesta de rendimientos por condado: un cultivo del script por entrada, sin repetidos, y 'latest' coherente con el rango de anos."""
+    m = _ucy_mod(); known = {c["slug"]: c["key"] for c in m.CROPS}; seen = set()
+    for e in doc["crops"]:
+        if e["slug"] not in known or known[e["slug"]] != e["key"] or e["slug"] in seen: errs.append("us-county status: cultivo desconocido o repetido %r" % e["slug"]); return
+        seen.add(e["slug"])
+        if e["status"] in ("OK", "PARTIAL") and not (isinstance(e.get("latest"), int) and isinstance(e.get("years"), list) and len(e["years"]) == 2 and e["years"][1] == e["latest"]): errs.append("us-county status/%s: latest o years incoherentes" % e["slug"]); return
+    stats["us-county cultivos"] = len(doc["crops"])

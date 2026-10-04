@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Contornos de condados de EE. UU. por estado -> data/us-county/geo/<ST>.json (trazados SVG ya proyectados, listos para pintar).
+// Contornos de condados de EE. UU. por estado -> vendor/us-counties/<ST>.json (trazados SVG ya proyectados, listos para pintar).
 // Fuente: us-atlas 3.0.1 (counties-albers-10m.json), derivado de los ficheros cartograficos del Censo de EE. UU. (dominio publico) con
 // licencia ISC del paquete (Mike Bostock). Uso: npm i --no-save us-atlas topojson-client && node scripts/build-us-county-geo.mjs
 // No hay datos agrarios aqui: solo geometria y nombre del condado. Los codigos FIPS son los del Censo (estado + condado).
@@ -17,12 +17,12 @@ function path(g) { const polys = g.type === 'Polygon' ? [g.coordinates] : g.coor
 function bbox(g, b) { const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates; for (const pl of polys) for (const p of pl[0]) { b[0] = Math.min(b[0], p[0]); b[1] = Math.min(b[1], p[1]); b[2] = Math.max(b[2], p[0]); b[3] = Math.max(b[3], p[1]); } }
 const by = {};
 for (const f of feats) { const st = ST[String(f.id).slice(0, 2)]; if (!st || !f.geometry) continue; (by[st] = by[st] || []).push(f); }
-mkdirSync('data/us-county/geo', { recursive: true });
+mkdirSync('vendor/us-counties', { recursive: true });
 let total = 0;
 for (const st of Object.keys(by).sort()) {
   const b = [1e9, 1e9, -1e9, -1e9]; by[st].forEach(f => bbox(f.geometry, b));
   const c = by[st].sort((x, y) => String(x.id).localeCompare(String(y.id))).map(f => [String(f.id), f.properties.name, path(f.geometry)]);
   const doc = { schemaVersion: 1, state: st, vb: [r1(b[0] - 2), r1(b[1] - 2), r1(b[2] - b[0] + 4), r1(b[3] - b[1] + 4)], source: 'us-atlas 3.0.1 (Censo de EE. UU., dominio publico; ISC)', c };
-  const s = JSON.stringify(doc); writeFileSync('data/us-county/geo/' + st + '.json', s + '\n'); total += s.length;
+  const s = JSON.stringify(doc); writeFileSync('vendor/us-counties/' + st + '.json', s + '\n'); total += s.length;
 }
 console.log(Object.keys(by).length, 'estados,', feats.length, 'condados,', Math.round(total / 1024), 'KB');

@@ -617,6 +617,12 @@
    [
     "spain_slaughter"
    ]
+  ],
+  "us-county/status.json": [
+   "us-county-status",
+   [
+    "us_county_status"
+   ]
   ]
  },
  "globs": {
@@ -692,6 +698,12 @@
    "spain-livestock",
    [
     "spain_livestock"
+   ]
+  ],
+  "us-county/yields/*.json": [
+   "us-county-yields",
+   [
+    "us_county_yields"
    ]
   ]
  },

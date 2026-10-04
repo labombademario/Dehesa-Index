@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""EE. UU. rendimiento, superficie cosechada y produccion por CONDADO: USDA NASS Quick Stats -> data/us-county/<cultivo>.json + data/us-county/status.json
+"""EE. UU. rendimiento, superficie cosechada y produccion por CONDADO: USDA NASS Quick Stats -> data/us-county/yields/<cultivo>.json + data/us-county/status.json
 Fuente: encuestas de NASS (county estimates), nivel COUNTY, periodo YEAR, todas las practicas. Una consulta por serie (short_desc) y ano.
 NASS publica estimaciones por condado solo donde la encuesta lo permite y la cobertura cambia de un ano a otro (maiz: unos 1.500 condados en 2024).
 Lo que NASS no publica o suprime ((D) y similares) queda como hueco (null), nunca como cero. 'OTHER COUNTIES' (codigo 998) es la suma que NASS
@@ -18,6 +18,7 @@ YEARS_BACK = 9              # ventana: ano actual - 9 .. ano actual (10 campanas
 REFRESH_YEARS = 3           # NASS revisa los ultimos anos: se vuelven a pedir siempre
 TOL = 0.04                  # tolerancia produccion vs rendimiento x superficie (heno llega al 1,8 %)
 LOG = []
+LOGPATH = ROOT / "data" / "us-county-yields-log.txt"
 # slug, clave del selector de la web (nombre de la serie de NASS sin el sufijo), unidades de rendimiento y produccion, divisor de produccion (cotton: 480 lb por paca; rice: 100 lb por cwt)
 def spec(slug, key, yu, pu, div=1):
     return {"slug": slug, "key": key, "yield": key + " - YIELD, MEASURED IN " + yu, "harvested": key + " - ACRES HARVESTED", "production": key + " - PRODUCTION, MEASURED IN " + pu,
@@ -153,6 +154,8 @@ def _other(f): return f.endswith("998")
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--full", action="store_true"); ap.add_argument("--only"); ap.add_argument("--fixture-dir"); ap.add_argument("--out"); ap.add_argument("--now"); a = ap.parse_args()
     out = Path(a.out) if a.out else ROOT / "data" / "us-county"; out.mkdir(parents=True, exist_ok=True)
+    global LOGPATH
+    if a.out: LOGPATH = out / "log.txt"
     now = datetime.date.fromisoformat(a.now) if a.now else datetime.date.today(); ts = now_iso()
     key = os.environ.get("NASS_API_KEY", "")
     only = set(a.only.split(",")) if a.only else None
@@ -164,7 +167,7 @@ def main():
     rc = 0
     for c in CROPS:
         if only and c["slug"] not in only: status["crops"].append({"slug": c["slug"], "key": c["key"], "status": "NOT_RUN"}); continue
-        path = out / (c["slug"] + ".json"); old = read_json(path); stats = {"other_series": 0, "bad_fips": 0, "suppressed": 0, "negative": 0}; err = []
+        path = out / "yields" / (c["slug"] + ".json"); old = read_json(path); stats = {"other_series": 0, "bad_fips": 0, "suppressed": 0, "negative": 0}; err = []
         ent = {"slug": c["slug"], "key": c["key"], "status": "OK"}
         try: built = build_crop(c, key, a.fixture_dir, old, now, a.full, stats, err)
         except ApiError as e:
@@ -193,6 +196,6 @@ def main():
 
 if __name__ == "__main__":
     rc = main()
-    try: (ROOT / "data" / "us-county-yields-log.txt").write_text("\n".join(LOG) + "\n", "utf-8")
+    try: LOGPATH.write_text("\n".join(LOG) + "\n", "utf-8")
     except Exception: pass
     sys.exit(rc)
