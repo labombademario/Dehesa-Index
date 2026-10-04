@@ -1,1 +1,5 @@
+pagina infovi_2021: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivini
+pagina infovi_2022: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivini
+pagina infovi_2023: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivini
+pagina infovi_2024: GET https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/vitivini
 OK: campañas 2020..2025 (6), 0 revisiones
