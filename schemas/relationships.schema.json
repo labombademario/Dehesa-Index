@@ -72,7 +72,8 @@
      "frequency": {
       "enum": [
        "monthly",
-       "quarterly"
+       "quarterly",
+       "annual"
       ]
      },
      "lagsTested": {
@@ -157,13 +158,16 @@
        "fertilizer",
        "energy",
        "feed",
-       "feedstock"
+       "feedstock",
+       "weather",
+       "stocks"
       ]
      },
      "frequency": {
       "enum": [
        "monthly",
-       "quarterly"
+       "quarterly",
+       "annual"
       ]
      },
      "input": {
@@ -180,7 +184,7 @@
       "properties": {
        "key": {
         "type": "string",
-        "pattern": "^P/.+/.+"
+        "pattern": "^[PCS]/.+"
        },
        "product": {
         "type": "string",
@@ -251,7 +255,7 @@
       "properties": {
        "key": {
         "type": "string",
-        "pattern": "^P/.+/.+"
+        "pattern": "^[PCS]/.+"
        },
        "product": {
         "type": "string",
@@ -359,7 +363,8 @@
        "lagUnit": {
         "enum": [
          "month",
-         "quarter"
+         "quarter",
+         "year"
         ]
        },
        "n": {
@@ -368,11 +373,11 @@
        },
        "periodStart": {
         "type": "string",
-        "pattern": "^\\d{4}-(\\d{2}|Q[1-4])$"
+        "pattern": "^\\d{4}(-(\\d{2}|Q[1-4]))?$"
        },
        "periodEnd": {
         "type": "string",
-        "pattern": "^\\d{4}-(\\d{2}|Q[1-4])$"
+        "pattern": "^\\d{4}(-(\\d{2}|Q[1-4]))?$"
        },
        "coverage": {
         "type": "number",

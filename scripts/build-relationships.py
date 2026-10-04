@@ -19,7 +19,7 @@ LATEST = {}
 for r in ('eu', 'us', 'ca', 'uk'):
     for o in json.loads((D / 'prices' / 'latest' / (r + '.json')).read_text())['observations']: LATEST[r + '/' + o['product']] = o
 
-NAMES = {'urea': META['urea']['name'], 'diesel': META['diesel']['name'], 'trigo': META['trigo']['name'], 'maiz': META['maiz']['name'], 'leche': META['leche']['name'], 'vaca': META['vacuno']['name'],
+NAMES = {'defra_oilseed_rape_output_index': L4('Colza · índice de producción', 'Oilseed rape · output index', 'Colza · indice de production', 'Colza · indice di produzione'), 'cebada': META['cebada']['name'], 'colza': META['colza']['name'], 'avena': META['avena']['name'], 'urea': META['urea']['name'], 'diesel': META['diesel']['name'], 'trigo': META['trigo']['name'], 'maiz': META['maiz']['name'], 'leche': META['leche']['name'], 'vaca': META['vacuno']['name'],
          'harina_soja': L4('Harina de soja', 'Soybean meal', 'Tourteau de soja', 'Farina di soia'), 'gas_natural': L4('Gas natural', 'Natural gas', 'Gaz naturel', 'Gas naturale'),
          'eurostat_energy_input_index': L4('Energía · índice de compra', 'Energy · purchase index', 'Énergie · indice d’achat', 'Energia · indice di acquisto'),
          'eurostat_fertiliser_input_index': L4('Fertilizantes · índice de compra', 'Fertiliser · purchase index', 'Engrais · indice d’achat', 'Fertilizzanti · indice di acquisto'),
@@ -34,8 +34,21 @@ NAMES = {'urea': META['urea']['name'], 'diesel': META['diesel']['name'], 'trigo'
          'defra_pigs_output_index': L4('Cerdo · índice de producción', 'Pigs · output index', 'Porcins · indice de production', 'Suini · indice di produzione')}
 REGN = {'eu': L4('UE', 'EU', 'UE', 'UE'), 'us': L4('EE. UU.', 'US', 'É.-U.', 'USA'), 'ca': L4('Canadá', 'Canada', 'Canada', 'Canada'), 'uk': L4('Reino Unido', 'UK', 'R.-U.', 'Regno Unito')}
 
+LOCN = {'uk-lincolnshire': L4('Lincolnshire', 'Lincolnshire', 'Lincolnshire', 'Lincolnshire'), 'uk-east-anglia': L4('East Anglia', 'East Anglia', 'East Anglia', 'East Anglia'), 'us-iowa': L4('Iowa', 'Iowa', 'Iowa', 'Iowa'),
+        'us-illinois': L4('Illinois', 'Illinois', 'Illinois', 'Illinois'), 'us-kansas': L4('Kansas', 'Kansas', 'Kansas', 'Kansas'), 'eu-beauce': L4('Beauce (Francia)', 'Beauce (France)', 'Beauce (France)', 'Beauce (Francia)'),
+        'eu-castilla-leon': L4('Castilla y León', 'Castilla y León', 'Castille-et-León', 'Castiglia e León'), 'eu-saxony-anhalt': L4('Sajonia-Anhalt', 'Saxony-Anhalt', 'Saxe-Anhalt', 'Sassonia-Anhalt'),
+        'ca-saskatchewan-south': L4('sur de Saskatchewan', 'southern Saskatchewan', 'sud de la Saskatchewan', 'Saskatchewan meridionale')}
+KIND = {'precip': (L4('Precipitación · anomalía', 'Precipitation · anomaly', 'Précipitations · anomalie', 'Precipitazioni · anomalia'), '% vs 2001-2020'),
+        'temp': (L4('Temperatura · anomalía', 'Temperature · anomaly', 'Température · anomalie', 'Temperatura · anomalia'), '°C vs 2001-2020')}
+STOCKN = {'ca-gb-canola-ending-stocks': L4('Existencias finales de colza (campaña ago-jul)', 'Canola ending stocks (Aug–Jul crop year)', 'Stocks finaux de colza (campagne août-juil.)', 'Scorte finali di colza (campagna ago-lug)'),
+          'ca-gb-barley-ending-stocks': L4('Existencias finales de cebada (campaña ago-jul)', 'Barley ending stocks (Aug–Jul crop year)', 'Stocks finaux d’orge (campagne août-juil.)', 'Scorte finali di orzo (campagna ago-lug)'),
+          'ca-gb-oats-ending-stocks': L4('Existencias finales de avena (campaña ago-jul)', 'Oats ending stocks (Aug–Jul crop year)', 'Stocks finaux d’avoine (campagne août-juil.)', 'Scorte finali di avena (campagna ago-lug)')}
+CLIM = json.loads((D / 'climate-history.json').read_text())
+STOCKS = {x['id']: x for x in json.loads((D / 'series' / 'CA' / 'stocks.json').read_text())['series']}
+
 CH = {'fertilizer': L4('coste del fertilizante', 'fertiliser cost', 'coût des engrais', 'costo dei fertilizzanti'), 'energy': L4('coste de la energía', 'energy cost', 'coût de l’énergie', 'costo dell’energia'),
-      'feed': L4('coste del pienso', 'feed cost', 'coût de l’alimentation animale', 'costo dei mangimi'), 'feedstock': L4('materia prima de la fabricación de fertilizantes', 'feedstock for fertiliser manufacturing', 'matière première de la fabrication d’engrais', 'materia prima per la produzione di fertilizzanti')}
+      'feed': L4('coste del pienso', 'feed cost', 'coût de l’alimentation animale', 'costo dei mangimi'), 'weather': L4('clima del mes', 'monthly weather', 'météo du mois', 'meteo del mese'), 'stocks': L4('existencias finales de la campaña', 'end-of-crop-year stocks', 'stocks de fin de campagne', 'scorte di fine campagna'),
+      'feedstock': L4('materia prima de la fabricación de fertilizantes', 'feedstock for fertiliser manufacturing', 'matière première de la fabrication d’engrais', 'materia prima per la produzione di fertilizzanti')}
 # familia -> canal, hipotesis (4 idiomas), rezagos probados (en periodos de la frecuencia de la serie) y pares (entrada, mercado)
 FAMILIES = {
  'fertiliser_to_grain': {'channel': 'fertilizer', 'freq': 'monthly', 'lags': [0, 1, 2, 3, 4, 6, 9, 12],
@@ -61,7 +74,7 @@ FAMILIES = {
                     'Feed is the largest variable cost of milk: dear feed squeezes margins and, over time, may reduce supply; milk prices also depend on dairy markets, demand and policy.',
                     'L’alimentation animale est le premier coût variable du lait : un aliment cher comprime les marges et, avec le temps, peut réduire l’offre ; le prix du lait dépend aussi des marchés laitiers, de la demande et des politiques.',
                     'Il mangime è il principale costo variabile del latte: un mangime caro comprime i margini e, col tempo, può ridurre l’offerta; il prezzo del latte dipende anche da mercati lattiero-caseari, domanda e politiche.'),
-   'pairs': [(('eu', 'maiz'), ('eu', 'leche')), (('us', 'maiz'), ('us', 'leche')), (('ca', 'maiz'), ('ca', 'leche')), (('eu', 'harina_soja'), ('eu', 'leche')), (('us', 'harina_soja'), ('us', 'leche'))]},
+   'pairs': [(('eu', 'maiz'), ('eu', 'leche')), (('us', 'maiz'), ('us', 'leche')), (('ca', 'maiz'), ('ca', 'leche')), (('eu', 'harina_soja'), ('eu', 'leche')), (('us', 'harina_soja'), ('us', 'leche')), (('uk', 'defra_feed_input_index'), ('uk', 'leche'))]},
  'feed_to_beef': {'channel': 'feed', 'freq': 'monthly', 'lags': [0, 1, 2, 3, 6, 9, 12],
    'hypothesis': L4('El pienso pesa mucho en el coste de cebo; un pienso caro puede reducir el número de animales cebados y, tras el ciclo de producción, la oferta de carne. El ciclo ganadero es largo y tiene muchos otros factores.',
                     'Feed weighs heavily in finishing costs; dear feed may reduce the number of animals fed and, after the production cycle, beef supply. The cattle cycle is long and has many other drivers.',
@@ -74,6 +87,22 @@ FAMILIES = {
                     'Le gazole est un coût direct des exploitations (fourrage, traite, transport) ; son effet sur le prix du lait ou de la viande est indirect et faible face aux autres facteurs.',
                     'Il gasolio è un costo diretto delle aziende (foraggio, mungitura, trasporto); il suo effetto sul prezzo di latte o carne è indiretto e piccolo rispetto ad altri fattori.'),
    'pairs': [(('eu', 'diesel'), ('eu', 'leche')), (('us', 'diesel'), ('us', 'leche')), (('eu', 'diesel'), ('eu', 'vaca')), (('us', 'diesel'), ('us', 'vaca'))]},
+ 'weather_to_market': {'channel': 'weather', 'freq': 'monthly', 'lags': [0, 1, 2, 3, 4, 6], 'xmode': 'level',
+   'hypothesis': L4('Un mes más seco o más cálido que la media de 2001-2020 puede afectar al desarrollo del cultivo y a las expectativas de cosecha, y con ello al precio; pero el precio también depende de la oferta y la demanda mundiales, las existencias y la política, y el clima de una sola comarca no explica un mercado entero.',
+                    'A month drier or warmer than the 2001-2020 average can affect crop development and harvest expectations, and through them prices; but prices also depend on world supply and demand, stocks and policy, and the weather of a single region does not explain a whole market.',
+                    'Un mois plus sec ou plus chaud que la moyenne 2001-2020 peut affecter le développement de la culture et les attentes de récolte, donc les prix ; mais les prix dépendent aussi de l’offre et de la demande mondiales, des stocks et des politiques, et la météo d’une seule région n’explique pas tout un marché.',
+                    'Un mese più secco o più caldo della media 2001-2020 può influire sullo sviluppo della coltura e sulle attese di raccolto, e quindi sul prezzo; ma il prezzo dipende anche da offerta e domanda mondiali, scorte e politica, e il meteo di una sola zona non spiega un intero mercato.'),
+   'pairs': [(('uk', 'clim:uk-lincolnshire:precip'), ('uk', 'defra_wheat_output_index')), (('uk', 'clim:uk-lincolnshire:temp'), ('uk', 'defra_wheat_output_index')), (('uk', 'clim:uk-east-anglia:precip'), ('uk', 'defra_wheat_output_index')),
+             (('uk', 'clim:uk-east-anglia:temp'), ('uk', 'defra_barley_output_index')), (('uk', 'clim:uk-east-anglia:precip'), ('uk', 'defra_oilseed_rape_output_index')), (('uk', 'clim:uk-lincolnshire:precip'), ('uk', 'defra_barley_output_index')),
+             (('us', 'clim:us-iowa:precip'), ('us', 'maiz')), (('us', 'clim:us-iowa:temp'), ('us', 'maiz')), (('us', 'clim:us-illinois:precip'), ('us', 'maiz')), (('us', 'clim:us-kansas:precip'), ('us', 'trigo')), (('us', 'clim:us-kansas:temp'), ('us', 'trigo')),
+             (('eu', 'clim:eu-beauce:precip'), ('eu', 'trigo')), (('eu', 'clim:eu-beauce:temp'), ('eu', 'trigo')), (('eu', 'clim:eu-saxony-anhalt:precip'), ('eu', 'trigo')), (('eu', 'clim:eu-castilla-leon:precip'), ('eu', 'cebada')),
+             (('ca', 'clim:ca-saskatchewan-south:precip'), ('ca', 'colza')), (('ca', 'clim:ca-saskatchewan-south:temp'), ('ca', 'colza')), (('ca', 'clim:ca-saskatchewan-south:precip'), ('ca', 'trigo'))]},
+ 'stocks_to_price': {'channel': 'stocks', 'freq': 'annual', 'lags': [0, 1],
+   'hypothesis': L4('Unas existencias finales altas suelen indicar oferta holgada y presionar el precio; unas existencias bajas, lo contrario. La relación puede ir también en sentido inverso (unos precios bajos frenan las ventas y acumulan existencias), y se mide sobre la misma campaña o la siguiente. Además el precio también refleja la demanda, el tipo de cambio, los mercados vecinos y la calidad de cada cosecha, y los balances recientes son estimaciones que se revisan.',
+                    'High ending stocks usually signal ample supply and weigh on the price; low stocks, the opposite. The link can also run the other way (low prices slow sales and build stocks), and it is measured within the same crop year or the next. Also, prices also reflect demand, exchange rates, neighbouring markets and the quality of each crop, and recent balances are estimates that get revised.',
+                    'Des stocks finaux élevés signalent généralement une offre abondante et pèsent sur le prix ; des stocks bas, l’inverse. Le lien peut aussi jouer en sens inverse (des prix bas freinent les ventes et accumulent des stocks) et se mesure sur la même campagne ou la suivante. De plus, le prix reflète aussi la demande, le change, les marchés voisins et la qualité de chaque récolte, et les bilans récents sont des estimations révisées.',
+                    'Scorte finali elevate indicano di solito un’offerta abbondante e pesano sul prezzo; scorte basse, il contrario. Il legame può anche andare in senso inverso (prezzi bassi frenano le vendite e accumulano scorte) e si misura nella stessa campagna o nella successiva. Inoltre, il prezzo riflette anche domanda, cambio, mercati vicini e qualità di ogni raccolto, e i bilanci recenti sono stime che vengono riviste.'),
+   'pairs': [(('ca', 'stock:ca-gb-canola-ending-stocks'), ('ca', 'colza')), (('ca', 'stock:ca-gb-barley-ending-stocks'), ('ca', 'cebada')), (('ca', 'stock:ca-gb-oats-ending-stocks'), ('ca', 'avena'))]},
  'index_eu': {'channel': 'energy', 'freq': 'quarterly', 'lags': [0, 1, 2, 4],
    'hypothesis': L4('Los índices oficiales de precios de insumos (energía, fertilizantes) y de producción (cereales) de Eurostat recogen la misma cadena de costes y precios a escala de la UE; con pocos datos trimestrales la lectura es frágil.',
                     'Eurostat’s official input (energy, fertiliser) and output (cereals) price indices capture the same cost-and-price chain at EU level; with few quarterly observations the reading is fragile.',
@@ -89,10 +118,10 @@ FAMILIES = {
              (('uk', 'defra_feed_input_index'), ('uk', 'defra_milk_output_index')), (('uk', 'defra_feed_input_index'), ('uk', 'defra_cattle_output_index')), (('uk', 'defra_feed_input_index'), ('uk', 'defra_pigs_output_index')), (('uk', 'defra_energy_input_index'), ('uk', 'defra_milk_output_index'))]}}
 # el canal de cada par puede diferir del de la familia (indices): se fija por producto de entrada
 CHANNEL_OF = {'urea': 'fertilizer', 'gas_natural': 'feedstock', 'diesel': 'energy', 'maiz': 'feed', 'harina_soja': 'feed', 'eurostat_energy_input_index': 'energy', 'eurostat_fertiliser_input_index': 'fertilizer',
-              'defra_fertiliser_input_index': 'fertilizer', 'defra_energy_input_index': 'energy', 'defra_feed_input_index': 'feed'}
+              'defra_fertiliser_input_index': 'fertilizer', 'defra_energy_input_index': 'energy', 'defra_feed_input_index': 'feed', 'weather': 'weather', 'stocks': 'stocks'}
 
-UNITW = {'monthly': L4('mes', 'month', 'mois', 'mese'), 'quarterly': L4('trimestre', 'quarter', 'trimestre', 'trimestre')}
-UNITP = {'monthly': L4('meses', 'months', 'mois', 'mesi'), 'quarterly': L4('trimestres', 'quarters', 'trimestres', 'trimestri')}
+UNITW = {'annual': L4('año', 'year', 'an', 'anno'), 'monthly': L4('mes', 'month', 'mois', 'mese'), 'quarterly': L4('trimestre', 'quarter', 'trimestre', 'trimestre')}
+UNITP = {'annual': L4('años', 'years', 'ans', 'anni'), 'monthly': L4('meses', 'months', 'mois', 'mesi'), 'quarterly': L4('trimestres', 'quarters', 'trimestres', 'trimestri')}
 STR = {'negligible': L4('insignificante', 'negligible', 'négligeable', 'trascurabile'), 'weak': L4('débil', 'weak', 'faible', 'debole'), 'moderate': L4('moderada', 'moderate', 'modérée', 'moderata'), 'strong': L4('fuerte', 'strong', 'forte', 'forte')}
 STATUS_TXT = {'OBSERVED_RELATIONSHIP': L4('Relación observada.', 'Observed relationship.', 'Relation observée.', 'Relazione osservata.'),
               'WEAK_OR_UNSTABLE': L4('Asociación débil o inestable: no hay una relación estadística que merezca ese nombre.', 'Weak or unstable association: there is no statistical relationship worth the name.', 'Association faible ou instable : pas de relation statistique digne de ce nom.', 'Associazione debole o instabile: non c’è una relazione statistica degna di questo nome.'),
@@ -113,7 +142,10 @@ def explain(rel):
               'none': L4('no mostraron una asociación lineal clara', 'showed no clear linear association', 'n’ont pas montré d’association linéaire claire', 'non hanno mostrato un’associazione lineare chiara')}[s['direction']][lg]
         lagtxt = {'es': 'en el mismo periodo' if lag == 0 else 'con %d %s de rezago' % (lag, lu), 'en': 'in the same period' if lag == 0 else 'with a %d-%s lag' % (lag, u1), 'fr': 'sur la même période' if lag == 0 else 'avec un décalage de %d %s' % (lag, lu), 'it': 'nello stesso periodo' if lag == 0 else 'con un ritardo di %d %s' % (lag, lu)}[lg]
         stab = '' if s['signStability'] is None else {'es': ' El signo se mantuvo en el %s %% de las ventanas de %d %s.', 'en': ' The sign held in %s %% of the %d-%s windows.', 'fr': ' Le signe s’est maintenu dans %s %% des fenêtres de %d %s.', 'it': ' Il segno si è mantenuto nel %s %% delle finestre di %d %s.'}[lg] % (num(s['signStability'] * 100, 0, lg), s['window'], up)
-        head = {'es': 'Entre %s (%d %s), los cambios de %s y los de %s %s %s: correlación %s (%s).', 'en': 'Between %s (%d %s), changes in %s and in %s %s %s: correlation %s (%s).',
+        if s.get('inputTransform') == 'anomaly':
+            head = {'es': 'Entre %s (%d %s), la anomalía mensual de %s y los cambios de %s %s %s: correlación %s (%s).', 'en': 'Between %s (%d %s), the monthly anomaly of %s and changes in %s %s %s: correlation %s (%s).',
+                    'fr': 'Entre %s (%d %s), l’anomalie mensuelle de %s et les variations de %s %s %s : corrélation %s (%s).', 'it': 'Tra %s (%d %s), l’anomalia mensile di %s e le variazioni di %s %s %s: correlazione %s (%s).'}[lg] % (per, n, up, a, b, sd, lagtxt, num(r, 2, lg), STR[s['strength']][lg])
+        else: head = {'es': 'Entre %s (%d %s), los cambios de %s y los de %s %s %s: correlación %s (%s).', 'en': 'Between %s (%d %s), changes in %s and in %s %s %s: correlation %s (%s).',
                 'fr': 'Entre %s (%d %s), les variations de %s et de %s %s %s : corrélation %s (%s).', 'it': 'Tra %s (%d %s), le variazioni di %s e di %s %s %s: correlazione %s (%s).'}[lg] % (per, n, up, a, b, sd, lagtxt, num(r, 2, lg), STR[s['strength']][lg])
         best = {'es': ' El rezago se eligió entre %d probados: la correlación es optimista.', 'en': ' The lag was chosen among %d tested: the correlation is optimistic.', 'fr': ' Le décalage a été choisi parmi %d testés : la corrélation est optimiste.', 'it': ' Il ritardo è stato scelto tra %d provati: la correlazione è ottimistica.'}[lg] % s['lagsTested']
         tail = {'es': ' Es una asociación estadística descriptiva, no una predicción; la hipótesis económica (%s) es una explicación plausible que estos datos no prueban.', 'en': ' This is a descriptive statistical association, not a forecast; the economic hypothesis (%s) is a plausible explanation that these data do not prove.',
@@ -134,35 +166,58 @@ def last_move(series, freq, o):
     ks = sorted(series)
     if not ks: return None
     i = ks[-1]; prev = series.get(i - 1)
-    return {'period': RE.ym_of(i, freq), 'value': round(series[i], 4), 'changePct': None if not prev else round((series[i] / prev - 1) * 100, 2)}
+    return {'period': RE.ym_of(i, freq), 'value': round(series[i], 4), 'changePct': None if (o == 'level' or not prev) else round((series[i] / prev - 1) * 100, 2)}
+
+def special(region, ref):
+    """Series de entrada/mercado que no son un historico de precios. -> dict(series, cur, side, last, srcfreq) o None."""
+    if ref.startswith('clim:'):
+        _, loc, kind = ref.split(':'); ser = RE.climate_series(CLIM, loc, kind)
+        if not ser: return None
+        lab = {lg: KIND[kind][0][lg] + ' · ' + LOCN[loc][lg] for lg in ('es', 'en', 'fr', 'it')}
+        last = max(ser); date = RE.ym_of(last, 'monthly')
+        return {'series': ser, 'cur': 'INDEX', 'xmode': 'anomaly', 'freqsrc': 'monthly', 'date': date, 'src': 'nasa_power',
+                'side': {'key': 'C/%s/%s' % (loc, kind), 'product': '%s-%s' % (kind, loc), 'region': region, 'label': lab, 'sourceId': 'nasa_power', 'unit': KIND[kind][1], 'currency': 'INDEX'}}
+    if ref.startswith('stock:'):
+        sid = ref.split(':', 1)[1]; st = STOCKS.get(sid)
+        if not st: return None
+        ser = {int(a): b for a, b in st['points'] if isinstance(b, (int, float))}
+        return {'series': ser, 'cur': 'INDEX', 'xmode': 'change', 'freqsrc': 'annual', 'date': str(max(ser)), 'src': 'statcan',
+                'side': {'key': 'S/%s' % sid, 'product': 'stocks-' + sid.split('-')[2], 'region': region, 'label': STOCKN[sid], 'sourceId': 'statcan', 'unit': st['unit'], 'currency': 'INDEX'}}
+    return None
+
 
 def main():
     now_day = FR.today_ord(); rels = []
     for fam, spec in FAMILIES.items():
         freq = spec['freq']
         for (ia, ib) in spec['pairs']:
-            ha, hb = hist(*ia), hist(*ib)
-            if not ha or not hb: print('SIN HISTORICO', ia, ib); continue
-            if ha['frequency'] != hb['frequency'] and freq == 'quarterly': continue
-            sa = RE.aggregate(ha['history'], freq); sb = RE.aggregate(hb['history'], freq)
-            ca, cb = ha['currency'], hb['currency']; treat = 'original'
+            sp_a = special(*ia)
+            ha, hb = (None if sp_a else hist(*ia)), hist(*ib)
+            if (not ha and not sp_a) or not hb: print('SIN HISTORICO', ia, ib); continue
+            if ha and ha['frequency'] != hb['frequency'] and freq == 'quarterly': continue
+            xmode = 'level' if spec.get('xmode') == 'level' else 'change'
+            if sp_a: sa = sp_a['series']; ca = sp_a['cur']
+            else: sa = RE.aggregate(ha['history'], freq); ca = ha['currency']
+            sb = RE.crop_year_average(hb['history']) if freq == 'annual' else RE.aggregate(hb['history'], freq)
+            cb = hb['currency']; treat = 'original'
             if ca != cb and 'INDEX' not in (ca, cb):
                 sa2, sb2 = RE.to_eur(sa, ca, FX, freq), RE.to_eur(sb, cb, FX, freq); treat = 'EUR'
             else: sa2, sb2 = sa, sb
-            res = RE.analyse(sa2, sb2, freq, spec['lags'])
+            res = RE.analyse(sa2, sb2, freq, spec['lags'], xmode=xmode)
             if not res: print('SIN PARES', ia, ib); continue
             n = res['n']; r = res['r']; stab = res['stability']; st = RE.status_of(n, r, stab, freq)
             conf = RE.confidence(n, r, stab, res['coverage'], freq)
-            rel = {'id': '%s__%s-%s__%s-%s' % (fam, ia[1], ia[0], ib[1], ib[0]), 'family': fam, 'status': st, 'channel': CHANNEL_OF[ia[1]], 'frequency': freq,
-                   'input': side(*ia), 'market': side(*ib),
+            rel = {'id': ('%s__%s-%s__%s-%s' % (fam, ia[1], ia[0], ib[1], ib[0])).replace(':', '-'), 'family': fam, 'status': st, 'channel': spec['channel'] if sp_a else CHANNEL_OF[ia[1]], 'frequency': freq,
+                   'input': sp_a['side'] if sp_a else side(*ia), 'market': side(*ib),
                    'stat': {'correlation': r, 'direction': 'none' if r is None or abs(r) < 0.1 else ('positive' if r > 0 else 'negative'), 'strength': RE.strength(r) if r is not None else 'negligible',
-                            'lag': res['lag'], 'lagUnit': 'month' if freq == 'monthly' else 'quarter', 'n': n, 'periodStart': RE.ym_of(res['first'], freq), 'periodEnd': RE.ym_of(res['last'], freq),
+                            'lag': res['lag'], 'lagUnit': {'monthly': 'month', 'quarterly': 'quarter', 'annual': 'year'}[freq], 'inputTransform': 'anomaly' if xmode == 'level' else 'change', 'n': n, 'periodStart': RE.ym_of(res['first'], freq), 'periodEnd': RE.ym_of(res['last'], freq),
                             'coverage': res['coverage'], 'signStability': stab, 'window': RE.WINDOW[freq], 'windows': res['windows'], 'recentCorrelation': res['recentR'],
                             'lagsTested': res['lagsTested'], 'lagProfile': res['profile'], 'currencyTreatment': treat},
                    'confidence': conf,
-                   'last': {'input': last_move(sa, freq, None), 'market': last_move(sb, freq, None)}}
+                   'last': {'input': last_move(sa, freq, xmode), 'market': last_move(sb, freq, None)}}
             fs = {}
             for k, (rg, pr) in (('input', ia), ('market', ib)):
+                if k == 'input' and sp_a: fs[k] = FR.evaluate(sp_a['date'], sp_a['freqsrc'], sp_a['src'], now_day)['state']; continue
                 o = LATEST.get(rg + '/' + pr); fs[k] = FR.evaluate(o['observationDate'], o['frequency'], o['sourceId'], now_day)['state'] if o else 'PENDING'
             rel['freshness'] = fs
             rel['explanation'] = explain(rel)
@@ -179,7 +234,8 @@ def main():
                            'status': 'OBSERVED_RELATIONSHIP: enough data, |r|>=0.2 and sign stability>=0.5. WEAK_OR_UNSTABLE otherwise. INSUFFICIENT_DATA: fewer pairs than the minimum.',
                            'currency': 'If the two series have different currencies both are converted to EUR with the ECB monthly rate (exact month or previous, at most 2 months); otherwise original currency. Index series are unitless.',
                            'causality': 'No causal inference. The economic hypothesis (families.*.hypothesis) is a plausible explanation written by hand; the data do not prove it.',
-                           'catalogue': 'Only economically justifiable relationships (product-metadata related + Eurostat/DEFRA index families); pairs are not mined at random.'},
+                           'catalogue': 'Only economically justifiable relationships (product-metadata related + Eurostat/DEFRA index families + monthly weather anomalies of the main growing regions + Canadian end-of-crop-year stocks); pairs are not mined at random.',
+                           'anomalies': 'Weather input = monthly anomaly vs the 2001-2020 climatology of the same calendar month (NASA POWER): precipitation in % of the climatological value, temperature in degrees C. The anomaly is a level, not a change, so it is correlated as is with the market change. Stocks input = year-on-year change in AAFC/Statistics Canada ending stocks (crop year Aug-Jul) against the change in the crop-year average price (annual frequency, minimum 20 pairs); recent balances are estimates and get revised.'},
            'families': fams, 'channels': CH, 'regions': REGN, 'relationships': rels}
     path = D / 'relationships.json'
     new = json.dumps(doc, ensure_ascii=False, separators=(',', ':'))

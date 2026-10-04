@@ -7,7 +7,7 @@
   "late": 0,
   "error": 0,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "ok",
  "deploy": {
@@ -610,6 +610,23 @@
     "failed": 0
    },
    "status": "ok",
+   "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-cpi.yml",
+   "name": "Update consumer price indices (Eurostat, ONS, BLS, StatCan)",
+   "crons": [
+    "25 9 * * 3"
+   ],
+   "nextRun": "2026-10-07T09:25:00Z",
+   "files": [
+    {
+     "path": "data/cpi.json"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
    "expectedEveryHours": 168.0
   },
   {

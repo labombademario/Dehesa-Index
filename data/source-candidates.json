@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-04T21:38:22Z",
+ "generatedAt": "2026-10-04T22:15:25Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 84,
+  "total": 85,
   "byStatus": {
-   "ACTIVE": 53,
+   "ACTIVE": 54,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -2737,6 +2737,43 @@
    "derivatives": "yes",
    "attribution": "NASA Prediction of Worldwide Energy Resources (POWER) Project, accessed <date> from https://power.larc.nasa.gov",
    "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "ons",
+   "registryId": "ons",
+   "country": "UK",
+   "scope": "integrated",
+   "institution": "UK Office for National Statistics (consumer price index)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OGL-UK-3.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Office for National Statistics.",
+   "lastChecked": "2026-10-04",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {

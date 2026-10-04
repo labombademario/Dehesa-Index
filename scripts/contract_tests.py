@@ -505,6 +505,38 @@ def recan(doc, errs, warns, stats):
         if not (0 <= r[0] < ny and 0 <= r[1] < nc and 0 <= r[2] < nt and 0 <= r[3] < nd): errs.append("fila con indices fuera de rango %s" % r[:4]); break
         if not isinstance(r[6], list) or len(r[6]) != nv: errs.append("fila con %s variables (esperadas %d)" % (len(r[6]) if isinstance(r[6], list) else '?', nv)); break
     stats["rows"] = len(doc["rows"])
+def cpi(doc, errs, warns, stats):
+    """Indices de precios de consumo: bloques mensual (m) y anual (a) con valores positivos, sin saltos mensuales > 12 %, sin meses futuros y con la fuente que toca."""
+    import math as _m
+    n = 0
+    for cc, c in doc["countries"].items():
+        if "m" not in c and "a" not in c: errs.append("%s: sin bloque m ni a" % cc)
+        m = c.get("m")
+        if m:
+            ym = _ym(m["s"])
+            if not ym: errs.append("%s: mes inicial invalido" % cc); continue
+            v = m["v"]; n += 1
+            if v[0] is None or v[-1] is None: errs.append("%s: la serie mensual debe empezar y acabar con dato" % cc)
+            last = (ym[0] * 12 + ym[1] - 1) + len(v) - 1
+            if last >= TODAY.year * 12 + TODAY.month: errs.append("%s: mes futuro en el IPC mensual" % cc)
+            prev = None
+            for i, x in enumerate(v):
+                if x is None: prev = None; continue
+                if not _num(x) or x <= 0 or not _m.isfinite(x): errs.append("%s: valor invalido en la posicion %d" % (cc, i)); break
+                if prev and abs(x / prev - 1) > 0.12: errs.append("%s: salto mensual de %.1f %% en la posicion %d" % (cc, (x / prev - 1) * 100, i)); break
+                prev = x
+            exp = {"US": "bls", "UK": "ons", "CA": "statcan"}.get(cc)
+            if exp and m["src"] != exp: errs.append("%s: la fuente mensual deberia ser %s" % (cc, exp))
+            if not exp and m["src"] != "eurostat": errs.append("%s: la fuente mensual deberia ser eurostat" % cc)
+        a = c.get("a")
+        if a:
+            n += 1
+            if a["y0"] + len(a["v"]) - 1 > TODAY.year: errs.append("%s: año futuro en el IPC anual" % cc)
+            if a["v"][0] is None or a["v"][-1] is None: errs.append("%s: la serie anual debe empezar y acabar con dato" % cc)
+            if any(x is not None and (not _num(x) or x <= 0) for x in a["v"]): errs.append("%s: valor anual no positivo" % cc)
+    if n < 8: errs.append("cpi: solo %d bloques" % n)
+    stats["cpi bloques"] = n
+
 def fx_history(doc, errs, warns, stats):
     rng = {"USD": (0.5, 2.0), "CAD": (1.0, 2.2), "AUD": (1.0, 2.5), "GBP": (0.5, 1.2), "DKK": (7.0, 7.7)}
     for c, rows in doc["currencies"].items():
@@ -1023,6 +1055,8 @@ def relationships(doc, errs, warns, stats):
         if r["family"] not in doc["families"]: errs.append("%s: familia desconocida" % rid); continue
         if doc["families"][r["family"]]["frequency"] != f: errs.append("%s: frecuencia distinta de la de su familia" % rid)
         if r["input"]["key"] == r["market"]["key"]: errs.append("%s: entrada y mercado son la misma serie" % rid)
+        if (r["input"]["key"].startswith("C/")) != (s.get("inputTransform") == "anomaly"): errs.append("%s: inputTransform incoherente con el tipo de serie de entrada (el clima es una anomalia, no un cambio)" % rid)
+        if r["input"]["key"].startswith(("C/", "S/")) and r["input"]["currency"] != "INDEX": errs.append("%s: la entrada climatica o de existencias debe ir sin moneda" % rid)
         if r["status"] != RE.status_of(s["n"], c, s["signStability"], f): errs.append("%s: status %s no sigue la regla (n=%s r=%s estab=%s)" % (rid, r["status"], s["n"], c, s["signStability"]))
         if r["confidence"] != RE.confidence(s["n"], c, s["signStability"], s["coverage"], f): errs.append("%s: confianza %s no sigue la regla" % (rid, r["confidence"]))
         if c is not None:
@@ -1041,14 +1075,23 @@ def relationships(doc, errs, warns, stats):
         if c is not None and r["status"] != "INSUFFICIENT_DATA" and ("%.2f" % c).replace(".", ",") not in r["explanation"]["es"]: errs.append("%s: la explicacion no cita r" % rid)
         if "predic" not in r["explanation"]["es"].lower() and r["status"] != "INSUFFICIENT_DATA": errs.append("%s: la explicacion no declara que no es una prediccion" % rid)
         # recalculo independiente (solo cuando ambas series estan en su moneda original: no depende del tipo de cambio)
-        if s["currencyTreatment"] == "original" and recomputed < 40:
-            hs = []
+        if s["currencyTreatment"] == "original" and recomputed < 80:
+            ser = []; bad = False
             for side in ("input", "market"):
+                k = r[side]["key"]
+                if side == "input" and k.startswith("C/"):
+                    _, loc, kind = k.split("/")
+                    ser.append(RE.climate_series(json.loads((D / "climate-history.json").read_text(encoding="utf-8")), loc, kind)); continue
+                if side == "input" and k.startswith("S/"):
+                    st = next((x for x in json.loads((D / "series" / "CA" / "stocks.json").read_text(encoding="utf-8"))["series"] if x["id"] == k[2:]), None)
+                    ser.append({int(a): b for a, b in st["points"] if isinstance(b, (int, float))} if st else None); continue
                 fh = D / "prices" / "history" / r[side]["region"] / (r[side]["product"] + ".json")
-                if not fh.exists(): errs.append("%s: falta el historico de %s" % (rid, r[side]["key"])); break
-                hs.append(json.loads(fh.read_text(encoding="utf-8")))
-            else:
-                res = RE.analyse(RE.aggregate(hs[0]["history"], f), RE.aggregate(hs[1]["history"], f), f, doc["families"][r["family"]]["lagsTested"])
+                if not fh.exists(): errs.append("%s: falta el historico de %s" % (rid, k)); bad = True; break
+                h = json.loads(fh.read_text(encoding="utf-8"))["history"]
+                ser.append(RE.crop_year_average(h) if (f == "annual" and side == "market") else RE.aggregate(h, f))
+            if not bad and ser[0] is None: errs.append("%s: no se pudo reconstruir la serie de entrada" % rid); bad = True
+            if not bad:
+                res = RE.analyse(ser[0], ser[1], f, doc["families"][r["family"]]["lagsTested"], xmode="level" if s.get("inputTransform") == "anomaly" else "change")
                 recomputed += 1
                 if not res: errs.append("%s: el recalculo no encuentra pares" % rid)
                 elif res["lag"] != s["lag"] or res["n"] != s["n"] or (res["r"] is not None and c is not None and abs(res["r"] - c) > 1e-3): errs.append("%s: el recalculo desde el historico (lag %s n %s r %s) difiere del publicado (lag %s n %s r %s)" % (rid, res["lag"], res["n"], res["r"], s["lag"], s["n"], c))

@@ -555,7 +555,7 @@
       var s = r.stat, rg = function (x) { return reg(x.region); };
       h += '<tr><td data-l="' + esc(t('relsPair')) + '"><strong>' + esc(r.input.label[lg]) + '</strong> <span class="pt-sub">' + esc(rg(r.input)) + '</span><div class="pt-sub">→ ' + esc(r.market.label[lg]) + ' ' + esc(rg(r.market)) + '</div></td>' +
         '<td data-l="' + esc(t('relsSt')) + '"><span class="pt-badge">' + esc((RST[r.status] || [r.status.replace(/_/g, ' ')])[li()] || r.status) + '</span></td>' +
-        '<td class="r" data-l="r">' + (s.correlation === null ? '—' : nf(s.correlation, 2)) + '</td><td data-l="lag">' + esc(s.lag === 0 ? t('relsLag0') : tf('relsLag', s.lag + (r.frequency === 'monthly' ? 'm' : 'T'))) + '</td><td class="r" data-l="n">' + s.n + '</td>' +
+        '<td class="r" data-l="r">' + (s.correlation === null ? '—' : nf(s.correlation, 2)) + '</td><td data-l="lag">' + esc(s.lag === 0 ? t('relsLag0') : tf('relsLag', s.lag + (r.frequency === 'monthly' ? 'm' : r.frequency === 'annual' ? 'a' : 'T'))) + '</td><td class="r" data-l="n">' + s.n + '</td>' +
         '<td data-l="' + esc(t('cDate')) + '">' + esc(s.periodStart + '–' + s.periodEnd) + '</td><td data-l="' + esc(t('relsConf')) + '">' + esc((RCF[r.confidence] || [r.confidence])[li()] || r.confidence) + '</td><td><a href="relaciones.html?id=' + encodeURIComponent(r.id) + '">' + esc(t('relsDetail')) + ' →</a></td></tr>';
     });
     return h + '</tbody></table></div><p class="pt-src"><a href="relaciones.html?p=' + encodeURIComponent(CTX.pid) + '">' + esc(t('relsAll')) + ' →</a></p>';

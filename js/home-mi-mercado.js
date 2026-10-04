@@ -15,11 +15,13 @@
   var EX = [['US', 'KS', 'cattle', { es: 'Kansas · Vacuno', en: 'Kansas · Cattle', fr: 'Kansas · Bovins', it: 'Kansas · Bovini' }],
     ['US', 'IA', 'corn', { es: 'Iowa · Maíz', en: 'Iowa · Corn', fr: 'Iowa · Maïs', it: 'Iowa · Mais' }],
     ['CA', 'MB', 'hogs', { es: 'Manitoba · Porcino', en: 'Manitoba · Hogs', fr: 'Manitoba · Porcs', it: 'Manitoba · Suini' }],
-    ['ES', '47', 'cereales', { es: 'Valladolid · Cereales', en: 'Valladolid · Cereals', fr: 'Valladolid · Céréales', it: 'Valladolid · Cereali' }]];
+    ['ES', '47', 'cereales', { es: 'Valladolid · Cereales', en: 'Valladolid · Cereals', fr: 'Valladolid · Céréales', it: 'Valladolid · Cereali' }],
+    ['DE', 'BY', 'wheat', { es: 'Baviera · Trigo', en: 'Bavaria · Wheat', fr: 'Bavière · Blé', it: 'Baviera · Frumento' }],
+    ['UK', 'eastern', 'wheat', { es: 'Eastern (Reino Unido) · Trigo', en: 'Eastern (UK) · Wheat', fr: 'Eastern (Royaume-Uni) · Blé', it: 'Eastern (Regno Unito) · Frumento' }]];
   function lang() { var l = window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; return TX[l] ? l : 'es'; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   var saved = null;
-  try { var o = JSON.parse(window.localStorage.getItem('di-mi-mercado-v1') || 'null'); if (o && /^(US|CA|ES)$/.test(o.c) && o.r && o.p) saved = o; } catch (e) { saved = null; }
+  try { var o = JSON.parse(window.localStorage.getItem('di-mi-mercado-v1') || 'null'); if (o && /^(US|CA|ES|DE|UK)$/.test(o.c) && o.r && o.p) saved = o; } catch (e) { saved = null; }
   function prompt() {
     var l = lang(), t = TX[l];
     wrap.className = 'di-home-section'; box.innerHTML = '<div class="di-card" style="padding:14px 16px"><h2 style="font-size:20px;margin:0 0 4px">' + esc(t.h) + '</h2><p style="margin:0 0 8px">' + esc(t.p) + '</p><p style="margin:0"><a class="di-btn-gold" href="mi-mercado.html">' + esc(t.start) + '</a> ' +

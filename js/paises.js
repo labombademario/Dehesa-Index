@@ -23,7 +23,7 @@
       r6m: '6 mesi', r1: '1 anno', r3: '3 anni', r5: '5 anni', r10: '10 anni', r20: '20 anni', rmax: 'Massimo', date: 'Data', table: 'Vedi tutte le serie', src: 'Fonte', lic: 'Licenza', updated: 'Aggiornato', note: 'Dati ufficiali come pubblicati da ciascuna fonte; i nomi delle serie restano in inglese. Le esportazioni australiane sono in valore (dollari australiani), non in volume. L’ultimo periodo può essere provvisorio.', none: 'Nessun dato disponibile.',
       countries: { US: 'Stati Uniti', EU: 'Unione europea', ES: 'Spagna', FR: 'Francia', DE: 'Germania', BE: 'Belgio', AT: 'Austria', PT: 'Portugal', CA: 'Canada', DK: 'Danimarca', NL: 'Paesi Bassi', AU: 'Australia', UK: 'Regno Unito' }, freq: { monthly: 'mensile', weekly: 'settimanale', quarterly: 'trimestrale', annual: 'annuale', semiannual: 'semestrale' } }
   };
-  var MACRO = null, WAGES = null, DATA = null, ST = { c: 'ES', g: 'all', s: null, r: 'max', fx: false };
+  var MACRO = null, WAGES = null, DATA = null, ST = { c: 'ES', g: 'all', s: null, r: 'max', fx: false, real: false };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
   function tt() { return T[lang()] || T.es; }
   function TL(l) { return window.DIClear ? window.DIClear.tl(l, lang()) : l; }
@@ -105,6 +105,31 @@
     return '<label style="display:block;font-size:12.5px;margin:0 0 8px"><input type="checkbox" id="ps-fx"' + (ST.fx ? ' checked' : '') + '> ' + esc(w[0]) + ' (' + esc(curOf(cur0.unit)) + ' → EUR)</label>' +
       (ST.fx && cur._fx ? '<div class="di-movers-hint" style="margin:0 0 6px">' + esc(w[1]) + ' ' + nf(cur0.latest, dec(cur0.latest)) + ' ' + esc(cur0.unit) + (cur._fx.miss ? '. ' + esc(w[2]) : '') + '</div>' : '');
   }
+
+  /* Precios reales: el mismo dato deflactado con el IPC del país (data/cpi.json, se descarga solo al activarlo). Es aritmética nuestra: el valor publicado sigue siendo el original. */
+  var RCPI = null, RCT = {
+    es: ['Precios reales (ajustados por la inflación)', 'Deflactado con {src} ({base}) y expresado en precios de {ref}: valor × IPC de {ref} ÷ IPC del periodo. Es un cálculo nuestro, no un dato publicado; original:', '{n} puntos sin IPC disponible se omiten.', 'Desmarca la casilla para ver los valores publicados (nominales).', 'Sin IPC utilizable para esta serie (el país no lo tiene en la frecuencia que hace falta); se muestran los valores publicados.', 'precios de {ref}'],
+    en: ['Real prices (inflation-adjusted)', 'Deflated with {src} ({base}) and expressed in {ref} prices: value × CPI of {ref} ÷ CPI of the period. This is our own calculation, not a published figure; original:', '{n} points without an available CPI are omitted.', 'Untick to see the published (nominal) values.', 'No usable CPI for this series (the country has none at the frequency needed); published values are shown.', '{ref} prices'],
+    fr: ['Prix réels (corrigés de l’inflation)', 'Déflaté avec {src} ({base}) et exprimé en prix de {ref} : valeur × IPC de {ref} ÷ IPC de la période. C’est un calcul de notre part, pas une donnée publiée ; original :', '{n} points sans IPC disponible sont omis.', 'Décochez pour voir les valeurs publiées (nominales).', 'Pas d’IPC utilisable pour cette série (le pays n’en a pas à la fréquence requise) ; les valeurs publiées sont affichées.', 'prix de {ref}'],
+    it: ['Prezzi reali (corretti per l’inflazione)', 'Deflazionato con {src} ({base}) ed espresso in prezzi di {ref}: valore × IPC di {ref} ÷ IPC del periodo. È un calcolo nostro, non un dato pubblicato; originale:', '{n} punti senza IPC disponibile vengono omessi.', 'Deseleziona per vedere i valori pubblicati (nominali).', 'Nessun IPC utilizzabile per questa serie (il paese non ne ha alla frequenza necessaria); si mostrano i valori pubblicati.', 'prezzi di {ref}']
+  };
+  var RSRC = { eurostat: 'Eurostat HICP', ons: 'ONS CPI', bls: 'BLS CPI-U', statcan: 'Statistics Canada CPI', world_bank_wdi: 'World Bank CPI' };
+  function rfill(x, o) { return String(x).replace(/\{(\w+)\}/g, function (m, k) { return o[k] != null ? o[k] : m; }); }
+  function rref(r) { return r.kind === 'm' && /^\d{4}-\d{2}$/.test(r.ref) ? plabel(r.ref, 'monthly') : r.ref; }
+  function realConv(sr) {
+    if (!RCPI || !window.DehesaChart || !window.DehesaChart.real || !window.DehesaChart.real.can(ST.c, sr.unit)) return sr;
+    var d = window.DehesaChart.real.deflate(ST.c, sr.points, sr.frequency); if (!d) { var z = {}, kk; for (kk in sr) z[kk] = sr[kk]; z._realNo = true; return z; }
+    var pts = d.points, o = {}, k; for (k in sr) o[k] = sr[k];
+    o.points = pts; o.latestPeriod = pts[pts.length - 1][0]; o.latest = pts[pts.length - 1][1]; o.changePct = pts.length > 1 && pts[pts.length - 2][1] ? (o.latest - pts[pts.length - 2][1]) / Math.abs(pts[pts.length - 2][1]) * 100 : null;
+    o.unit = sr.unit + ' · ' + rfill((RCT[lang()] || RCT.es)[5], { ref: rref(d) }); o._real = { orig: sr, d: d }; return o;
+  }
+  function realBox(cur0, cur) {
+    if (!window.DehesaChart || !window.DehesaChart.real || !window.DehesaChart.real.can(ST.c, cur0.unit)) return ''; var w = RCT[lang()] || RCT.es, r = cur._real;
+    var cite = r && window.DICite && window.DICite.derived ? window.DICite.derived([r.d.src], { what: 'CPI deflation' }) : '';
+    return '<label style="display:block;font-size:12.5px;margin:0 0 8px"><input type="checkbox" id="ps-real"' + (ST.real ? ' checked' : '') + (ST.fx ? ' disabled' : '') + '> ' + esc(w[0]) + '</label>' +
+      (ST.real && r ? '<div class="di-movers-hint" style="margin:0 0 6px">' + esc(rfill(w[1], { src: RSRC[r.d.src] || r.d.name, base: r.d.base, ref: rref(r.d) })) + ' ' + nf(cur0.latest, dec(cur0.latest)) + ' ' + esc(cur0.unit) + (r.d.miss ? '. ' + esc(rfill(w[2], { n: r.d.miss })) : '') + ' ' + esc(w[3]) + cite + '</div>' : '') +
+      (ST.real && RCPI && cur._realNo ? '<div class="di-movers-hint" style="margin:0 0 6px">' + esc(w[4]) + '</div>' : '');
+  }
   fetch('data/fx-history.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.currencies) { FX = d; if (DATA) build(); } }).catch(function () {});
   var PS = null,
     LV = { es: ['Linaje del dato', 'Fichero', 'último cambio', 'próxima ejecución prevista', 'última ejecución'], en: ['Data lineage', 'File', 'last change', 'next run due', 'last run'], fr: ['Lignage de la donnée', 'Fichier', 'dernier changement', 'prochaine exécution prévue', 'dernière exécution'], it: ['Lignaggio del dato', 'File', 'ultima modifica', 'prossima esecuzione prevista', 'ultima esecuzione'] };
@@ -185,7 +210,7 @@
     var t = tt(), c = DATA.countries[ST.c];
     var list = selectedList(c);
     var cur0 = list.filter(function (s) { return s.id === ST.s; })[0]; if (cur0 && !cur0.points) cur0 = null;
-    var cur = cur0 && ST.fx ? fxConv(cur0) : cur0;
+    var cur = cur0 && ST.fx ? fxConv(cur0) : cur0 && ST.real ? realConv(cur0) : cur0;
     var countries = CCODES.filter(function (k) { return AVAIL[k]; }).sort(function (x, y) { var o = { ES: 0, FR: 1, DE: 2, BE: 3, AT: 4, PT: 5, CA: 6, US: 7, EU: 8 }; return (o[x] == null ? 9 : o[x]) - (o[y] == null ? 9 : o[y]); });
     var groups = groupsOf(c);
     var opt = function (arr, sel, lab) { return arr.map(function (k) { return '<option value="' + esc(k) + '"' + (k === sel ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; }).join(''); };
@@ -199,7 +224,7 @@
       sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + '</div>';
     if (cur) {
       var ch = cur.changePct;
-      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(TL(cur.label).toUpperCase()) + ' (' + esc(cur.unit) + ')' + watchBtn(cur) + '</div>' + fxBox(cur0, cur) + chartFor(cur) +
+      html += '<div class="di-card" style="padding:16px 18px"><div style="font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);margin-bottom:4px">' + esc(TL(cur.label).toUpperCase()) + ' (' + esc(cur.unit) + ')' + watchBtn(cur) + '</div>' + fxBox(cur0, cur) + realBox(cur0, cur) + chartFor(cur) +
         '<div class="di-movers-hint" style="margin-top:6px">' + t.latest + ' (' + esc(plabel(cur.latestPeriod, cur.frequency)) + '): <b>' + nf(cur.latest, dec(cur.latest)) + ' ' + esc(cur.unit) + '</b>' + (ch == null ? '' : ' · ' + (ch > 0 ? '+' : ch < 0 ? '−' : '') + nf(Math.abs(ch), 1) + ' %') + ' · ' + t.freq[cur.frequency] + '</div>' + localBox(cur, c) + revBox(cur) + '</div>';
     } else html += '<p class="di-movers-hint">' + t.none + '</p>';
     html += '<details style="margin-top:14px"><summary style="cursor:pointer;font-size:13px">' + t.table + '</summary><div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-top:8px"><table style="border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px"><tr style="font-size:10.5px;font-weight:700;letter-spacing:.4px;color:var(--text-faint);text-align:left"><th style="padding:8px 6px">' + t.series.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.latest.toUpperCase() + '</th><th style="padding:8px 6px;text-align:right">' + t.change.toUpperCase() + '</th><th style="padding:8px 6px">' + t.period.toUpperCase() + '</th><th style="padding:8px 6px">' + t.unit.toUpperCase() + '</th></tr>' +
@@ -231,7 +256,8 @@
     if (/^(DK|NL|FR)$/.test(ST.c)) { var eun = document.getElementById('ps-eu'), euG = function () { window.EUHeads.mount(eun, ST.c, lang()); }; if (eun) { if (window.EUHeads) euG(); else { var hs = document.createElement('script'); hs.src = 'js/eu-heads.js?v=20261003'; hs.onload = euG; document.head.appendChild(hs); } } } /* DK, NL y FR en profundidad: js/eu-heads.js pinta las cabeceras y js/eu-depth.js solo se descarga al abrir un bloque */
     if (window.DIAgri) { var agn = document.getElementById('ps-agri'); if (agn) window.DIAgri.mount(agn, ST.c, lang()); } if (window.DITradePartners) { var tpn = document.getElementById('ps-tp'); if (tpn) window.DITradePartners.mount(tpn, ST.c, lang()); } if (ST.c === 'PT' && window.DIIfapMap) { var im = document.getElementById('ps-ifap'); if (im) window.DIIfapMap.mount(im, lang()); }
     var bind = function (id, key) { var el = document.getElementById(id); if (el) el.onchange = function (e) { ST[key] = e.target.value; if (key === 'c') { ST.g = 'all'; ST.s = null; } if (key === 'g') ST.s = null; build(); var n = document.getElementById(id); if (n) n.focus(); }; };
-    var fb = document.getElementById('ps-fx'); if (fb) fb.onchange = function () { ST.fx = fb.checked; build(); };
+    var fb = document.getElementById('ps-fx'); if (fb) fb.onchange = function () { ST.fx = fb.checked; if (ST.fx) ST.real = false; build(); };
+    var rb = document.getElementById('ps-real'); if (rb) rb.onchange = function () { ST.real = rb.checked; if (ST.real) { ST.fx = false; if (!RCPI) { window.DehesaChart.real.load().then(function (d) { RCPI = d || false; build(); }); return; } } build(); };
     var wb = document.getElementById('ps-watch'); if (wb && cur) wb.onclick = function () { DIWatch.toggle(ST.c, cur.id); build(); };
     if (wb && cur && DIWatch.editor) { // avisos locales de esta serie (desplegable bajo el titulo del grafico)
       var card = wb.parentNode.parentNode, det = document.createElement('details'), sm = document.createElement('summary'), rl = (DIWatch.rl[lang()] || DIWatch.rl.es), nr = DIWatch.rules(ST.c, cur.id).length;
@@ -247,7 +273,7 @@
   var prev = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prev) prev.apply(this, arguments); shell(); build(); };
   shell();
-  var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('fx') === '1') ST.fx = true;
+  var q = new URLSearchParams(window.location.search); if (q.get('c')) ST.c = q.get('c').toUpperCase(); if (q.get('g')) ST.g = q.get('g'); if (q.get('s')) ST.s = q.get('s'); if (q.get('r')) ST.r = q.get('r'); if (q.get('fx') === '1') ST.fx = true; if (q.get('real') === '1' && !ST.fx) { ST.real = true; window.addEventListener('load', function () { if (window.DehesaChart && window.DehesaChart.real) window.DehesaChart.real.load().then(function (d) { RCPI = d || false; if (DATA) build(); }); }); }
   /* Carga por catalogo (capa de datos unificada): manifiesto -> catalogo del pais -> trozo de la serie. Nunca se piden los *-stats.json. */
   var GROUPS = ['production', 'crops', 'livestock', 'trade', 'quotes', 'prices', 'prices_paid', 'milk', 'milk_regions', 'crops_regions', 'prices_lv', 'meat_regions', 'prices_fv', 'inputs', 'inputs_f', 'inputs_a', 'idx_perc', 'idx_pag', 'costs', 'environment', 'organic', 'stocks', 'income', 'partners', 'rates'];
   var CCODES = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'DK', 'NL', 'CA', 'US', 'EU', 'AU', 'UK'], AVAIL = {}, CAT = {}, TOK = 0, LREG = null;

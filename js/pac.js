@@ -252,6 +252,11 @@
   function save() {
     try { window.localStorage.setItem(LSK, JSON.stringify({ y: ST.y, r: ST.r, ha: ST.ha, jv: ST.jv, eco: ST.eco })); } catch (e) { /* sin almacenamiento: funciona igual */ }
     try {
+      var es = estimate();
+      if (es) window.localStorage.setItem('di-pac-est-v1', JSON.stringify({ y: ST.y, r: ST.r, ha: es.ha, mid: es.mid, lo: es.lo, hi: es.hi, at: new Date().toISOString().slice(0, 10) }));
+      else window.localStorage.removeItem('di-pac-est-v1');
+    } catch (e) { /* idem */ }
+    try {
       var q = ['y=' + ST.y]; if (ST.r) q.push('r=' + ST.r); if (ST.ha) q.push('ha=' + encodeURIComponent(ST.ha)); if (ST.jv) q.push('jv=' + ST.jv);
       if (ST.eco.length) q.push('e=' + ST.eco.map(function (r) { return [r.id, r.ha, r.bonus ? 1 : 0, r.cost].join(':'); }).join('_'));
       history.replaceState(null, '', '?' + q.join('&'));

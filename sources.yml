@@ -229,6 +229,16 @@ sources:
     data: [worldbank-agri.json]
     log: worldbank-agri-log.txt
     message: Perfil agrario por país (Banco Mundial WDI)
+  - id: cpi
+    name: Update consumer price indices (Eurostat, ONS, BLS, StatCan)
+    cron: ['25 9 * * 3']
+    script: scripts/update-cpi.py
+    timeout: 15
+    script_timeout: 10
+    continue: true
+    data: [cpi.json]
+    log: cpi-log.txt
+    message: Índices de precios de consumo (para precios reales)
   - id: us-tariffs
     name: Update US tariffs (USITC HTS)
     cron: ['20 8 * * 2,5']

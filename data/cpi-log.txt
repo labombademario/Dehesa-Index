@@ -1,0 +1,21 @@
+22:11:40   error https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_midx?format=J: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:11:43   error https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_midx?format=J: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:11:50   error https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_midx?format=J: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:11:59   error https://www.ons.gov.uk/generator?format=csv&uri=/economy/inflationandpriceindices/timeseri: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:12:02   error https://www.ons.gov.uk/generator?format=csv&uri=/economy/inflationandpriceindices/timeseri: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:12:08   error https://www.ons.gov.uk/generator?format=csv&uri=/economy/inflationandpriceindices/timeseri: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:12:17 ons: sin datos; se conserva lo anterior
+22:12:18   error https://api.bls.gov/publicAPI/v1/timeseries/data/: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:12:21   error https://api.bls.gov/publicAPI/v1/timeseries/data/: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:12:27   error https://api.bls.gov/publicAPI/v1/timeseries/data/: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:12:37   error https://api.bls.gov/publicAPI/v1/timeseries/data/: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:12:40   error https://api.bls.gov/publicAPI/v1/timeseries/data/: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:12:46   error https://api.bls.gov/publicAPI/v1/timeseries/data/: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:12:56   error https://api.bls.gov/publicAPI/v1/timeseries/data/: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:12:59   error https://api.bls.gov/publicAPI/v1/timeseries/data/: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:13:05   error https://api.bls.gov/publicAPI/v1/timeseries/data/: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:13:14 bls: sin datos; se conserva lo anterior
+22:13:14   error https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorsAndLatestNPeriods: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:13:18   error https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorsAndLatestNPeriods: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:13:24   error https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorsAndLatestNPeriods: <urlopen error Tunnel connection failed: 403 Forbidden>
+22:13:33 statcan: sin datos; se conserva lo anterior

@@ -236,5 +236,38 @@
   document.documentElement.addEventListener('mouseleave', clear);
   document.addEventListener('scroll', function () { if (cur) clear(); }, { passive: true, capture: true });
   document.addEventListener('pointerup', function (e) { if (e.pointerType === 'touch') setTimeout(clear, 1600); }, { passive: true });
-  window.DehesaChart = { render: render, attr: attr, fmtDate: fmtDate, fmtDateFull: fmtDateFull, fmtMonth: fmtMonth, histTs: histTs, clear: clear };
+
+  /* ---- precios reales: deflactar con el IPC del país (data/cpi.json). Solo aritmética sobre datos publicados; lo que no se puede deflactar se omite y se cuenta ---- */
+  var CPIDOC = null, CPIP = null;
+  var EUR_CC = { AT: 1, BE: 1, BG: 1, CY: 1, DE: 1, EE: 1, EL: 1, ES: 1, FI: 1, FR: 1, HR: 1, IE: 1, IT: 1, LT: 1, LU: 1, LV: 1, MT: 1, NL: 1, PT: 1, SI: 1, SK: 1, EU: 1, EA: 1 };
+  var CUR_CC = { USD: { US: 1 }, GBP: { UK: 1 }, CAD: { CA: 1 }, AUD: { AU: 1 }, DKK: { DK: 1 }, EUR: EUR_CC };
+  function curOfUnit(u) {
+    u = String(u || ''); if (/index|%|unit as in source/i.test(u)) return null;
+    if (/€|\bEUR\b/.test(u)) return 'EUR'; if (/^(USD|US\$|\$)|\bUSD\b/.test(u)) return 'USD'; if (/£|\bGBP\b|^p\//.test(u)) return 'GBP'; if (/^(CAD|C\$)|\bCAD\b/.test(u)) return 'CAD'; if (/^(A\$|AUD)|\bAUD\b/.test(u)) return 'AUD'; if (/\bDKK\b/.test(u)) return 'DKK'; return null;
+  }
+  function realCan(cc, unit) { var c = curOfUnit(unit); return !!(c && CUR_CC[c] && CUR_CC[c][cc]); }
+  function realLoad() { if (CPIDOC) return Promise.resolve(CPIDOC); if (!CPIP) CPIP = fetch('data/cpi.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { CPIDOC = d; return d; }).catch(function () { return null; }); return CPIP; }
+  function cpiMonths(b) { var o = {}; if (!b) return o; var y = +b.s.slice(0, 4), m = +b.s.slice(5, 7); for (var i = 0; i < b.v.length; i++) if (b.v[i] != null) { var k = m - 1 + i; o[(y + Math.floor(k / 12)) + '-' + ('0' + (k % 12 + 1)).slice(-2)] = b.v[i]; } return o; }
+  function cpiYears(b) { var o = {}; if (!b) return o; for (var i = 0; i < b.v.length; i++) if (b.v[i] != null) o[b.y0 + i] = b.v[i]; return o; }
+  function mean(M, keys) { var s = 0; for (var i = 0; i < keys.length; i++) { if (M[keys[i]] == null) return null; s += M[keys[i]]; } return s / keys.length; }
+  function mkeys(y, a, b) { var k = []; for (var m = a; m <= b; m++) k.push(y + '-' + ('0' + m).slice(-2)); return k; }
+  // points: [[periodo, valor], ...] (periodo 'AAAA', 'AAAA-MM', 'AAAA-MM-DD', 'AAAA-Qn', 'AAAA-Sn'). Devuelve null si el país no tiene IPC utilizable para esa frecuencia.
+  function realDeflate(cc, points, freq) {
+    var c = CPIDOC && CPIDOC.countries && CPIDOC.countries[cc]; if (!c || !points || !points.length) return null;
+    var M = cpiMonths(c.m), A = cpiYears(c.a), hasM = !!c.m, annual = /^\d{4}$/.test(points[0][0]) && (freq === 'annual' || !freq);
+    var at, ref, refLabel, kind, src;
+    if (annual) {
+      if (c.a) { at = function (p) { return A[p] == null ? null : A[p]; }; var ys = Object.keys(A).map(Number).sort(function (x, y) { return x - y; }); ref = A[ys[ys.length - 1]]; refLabel = String(ys[ys.length - 1]); kind = 'a'; src = c.a; }
+      else if (hasM) { var cy = {}, ks = Object.keys(M).sort(); ks.forEach(function (k) { cy[k.slice(0, 4)] = 1; }); at = function (p) { return mean(M, mkeys(p, 1, 12)); }; var last = null; Object.keys(cy).sort().forEach(function (y) { if (mean(M, mkeys(y, 1, 12)) != null) last = y; }); if (!last) return null; ref = mean(M, mkeys(last, 1, 12)); refLabel = last; kind = 'm'; src = c.m; }
+      else return null;
+    } else {
+      if (!hasM) return null; var mk = Object.keys(M).sort(); ref = M[mk[mk.length - 1]]; refLabel = mk[mk.length - 1]; kind = 'm'; src = c.m;
+      at = function (p) { var m = /^(\d{4})-(\d{2})/.exec(p), q = /^(\d{4})-Q([1-4])$/.exec(p), h = /^(\d{4})-S([12])$/.exec(p);
+        if (q) return mean(M, mkeys(q[1], +q[2] * 3 - 2, +q[2] * 3)); if (h) return mean(M, mkeys(h[1], h[2] === '1' ? 1 : 7, h[2] === '1' ? 6 : 12)); if (m) return M[m[1] + '-' + m[2]] == null ? null : M[m[1] + '-' + m[2]]; return null; };
+    }
+    var out = [], miss = 0;
+    points.forEach(function (p) { var d = p[1] == null ? null : at(p[0]); if (d && p[1] != null) out.push([p[0], p[1] * ref / d]); else miss++; });
+    return out.length >= 2 ? { points: out, ref: refLabel, kind: kind, miss: miss, src: src.src, name: src.name, base: src.base } : null;
+  }
+  window.DehesaChart = { real: { load: realLoad, can: realCan, curOf: curOfUnit, deflate: realDeflate }, render: render, attr: attr, fmtDate: fmtDate, fmtDateFull: fmtDateFull, fmtMonth: fmtMonth, histTs: histTs, clear: clear };
 })();

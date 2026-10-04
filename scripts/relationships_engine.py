@@ -14,12 +14,13 @@ Definiciones (identicas a las publicadas en data/relationships.json -> methodolo
 import datetime, math
 
 MON = {m: i + 1 for i, m in enumerate('JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC'.split())}
-MIN_N = {'monthly': 24, 'quarterly': 12}
-WINDOW = {'monthly': 36, 'quarterly': 12}
+MIN_N = {'monthly': 24, 'quarterly': 12, 'annual': 20}
+WINDOW = {'monthly': 36, 'quarterly': 12, 'annual': 12}
 
 def period_index(year, period, freq):
     """Indice entero del periodo de una fila de historico, o None. Mensual: 'JAN', '1', '01', 'MM-DD'; trimestral: 'Qn'."""
     p = str(period).strip().upper()
+    if freq == 'annual': return year
     if freq == 'quarterly':
         if len(p) == 2 and p[0] == 'Q' and p[1] in '1234': return year * 4 + int(p[1]) - 1
         return None
@@ -31,6 +32,7 @@ def period_index(year, period, freq):
     return year * 12 + m - 1
 
 def ym_of(idx, freq):
+    if freq == 'annual': return '%04d' % idx
     if freq == 'quarterly': return '%04d-Q%d' % (idx // 4, idx % 4 + 1)
     return '%04d-%02d' % (idx // 12, idx % 12 + 1)
 
@@ -103,7 +105,7 @@ def strength(r):
 def confidence(n, r, stab, cov, freq):
     """HIGH / MEDIUM / LOW segun muestra, fuerza, estabilidad de signo y cobertura. Describe cuanto se sostiene la ASOCIACION, no la hipotesis economica."""
     if r is None: return 'LOW'
-    a = abs(r); big = 60 if freq == 'monthly' else 24; mid = 36 if freq == 'monthly' else 16
+    a = abs(r); big = {'monthly': 60, 'quarterly': 24, 'annual': 25}[freq]; mid = {'monthly': 36, 'quarterly': 16, 'annual': 18}[freq]
     if n >= big and a >= 0.4 and stab is not None and stab >= 0.75 and cov >= 0.8: return 'HIGH'
     if n >= mid and a >= 0.25 and stab is not None and stab >= 0.6: return 'MEDIUM'
     return 'LOW'
@@ -113,9 +115,9 @@ def status_of(n, r, stab, freq):
     if abs(r) < 0.2 or (stab is not None and stab < 0.5): return 'WEAK_OR_UNSTABLE'
     return 'OBSERVED_RELATIONSHIP'
 
-def analyse(x, y, freq, lags, recent_pairs=36):
+def analyse(x, y, freq, lags, recent_pairs=36, xmode='change'):
     """x, y: series {indice: valor} ya en la misma moneda. Devuelve el resultado estadistico completo o None si no hay ningun par."""
-    xr, yr = changes(x), changes(y)
+    xr, yr = (dict(x) if xmode == 'level' else changes(x)), changes(y)
     prof = []; best = None
     for L in lags:
         r, n, p = corr_at(xr, yr, L)
@@ -132,3 +134,31 @@ def analyse(x, y, freq, lags, recent_pairs=36):
     rec = p[-recent_pairs:]; rr = pearson([a[1] for a in rec], [a[2] for a in rec]) if len(rec) >= recent_pairs else None
     return {'lag': L, 'r': None if r is None else round(r, 4), 'n': n, 'first': first, 'last': last, 'coverage': cov, 'stability': stab, 'windows': nw,
             'recentR': None if rr is None else round(rr, 4), 'profile': prof, 'lagsTested': len(lags)}
+
+def climate_series(clim, loc_id, kind):
+    """data/climate-history.json -> {indice mensual: anomalia}. precip: (precipitacion del mes / climatologia 2001-2020 del mismo mes - 1) x 100 (%); temp: temperatura media - climatologia (grados C).
+    Se omite el mes sin dato o sin climatologia. Es un NIVEL de anomalia (no un cambio), por eso se usa con xmode='level'."""
+    L = next((l for l in clim['locations'] if l['id'] == loc_id), None)
+    if not L: return None
+    y0, m0 = int(clim['start'][:4]), int(clim['start'][5:7]); out = {}
+    vals, base = (L['precipMmDay'], L['baselinePrecipMmDay']) if kind == 'precip' else (L['tempC'], L['baselineTempC'])
+    for k, v in enumerate(vals):
+        m = (m0 - 1 + k) % 12; b = base[m]
+        if v is None or b is None: continue
+        if kind == 'precip':
+            if b <= 0: continue
+            out[y0 * 12 + m0 - 1 + k] = (v / b - 1) * 100
+        else: out[y0 * 12 + m0 - 1 + k] = v - b
+    return out
+
+def crop_year_average(history, start_month=8):
+    """Serie mensual -> {anio de inicio de campana: media} solo con los 12 meses de la campana (agosto-julio por defecto). Una campana incompleta se descarta."""
+    by = {}
+    for h in history:
+        v = h.get('value')
+        if not isinstance(v, (int, float)) or isinstance(v, bool) or not math.isfinite(v): continue
+        i = period_index(h['year'], h['period'], 'monthly')
+        if i is None: continue
+        cy = (i - (start_month - 1)) // 12
+        by.setdefault(cy, {})[i] = v
+    return {cy: sum(m.values()) / 12 for cy, m in by.items() if len(m) == 12}

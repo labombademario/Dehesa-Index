@@ -26,6 +26,11 @@
     errFormat: ['El archivo no es una lista de seguimiento de Dehesa Index válida; no se ha cambiado nada.', 'The file is not a valid Dehesa Index watchlist; nothing was changed.', 'Le fichier n’est pas une liste de suivi Dehesa Index valide ; rien n’a été modifié.', 'Il file non è una lista di Dehesa Index valida; non è stato modificato nulla.'], errRead: ['No se pudo leer el archivo como JSON.', 'The file could not be read as JSON.', 'Le fichier n’a pas pu être lu comme JSON.', 'Impossibile leggere il file come JSON.'], errSize: ['El archivo es demasiado grande (máx. 300 KB).', 'The file is too large (max 300 KB).', 'Le fichier est trop volumineux (max 300 Ko).', 'Il file è troppo grande (max 300 KB).'],
     clear: ['Borrar toda mi lista', 'Delete my whole list', 'Supprimer toute ma liste', 'Cancella tutta la lista'], confirmClear: ['Pulsa otra vez para borrarla', 'Press again to delete it', 'Appuyez encore pour la supprimer', 'Premi di nuovo per cancellarla'], privacy: ['Privacidad: nada de esto sale de tu navegador. Si borras los datos del navegador, la lista se pierde: exporta una copia.', 'Privacy: none of this leaves your browser. If you clear browser data, the list is lost: export a copy.', 'Confidentialité : rien de tout cela ne quitte votre navigateur. Si vous effacez les données du navigateur, la liste est perdue : exportez une copie.', 'Privacy: nulla di tutto questo lascia il tuo browser. Se cancelli i dati del browser la lista si perde: esporta una copia.'],
     fs_LIVE: ['EN DIRECTO', 'LIVE', 'EN DIRECT', 'LIVE'], fs_FRESH: ['AL DÍA', 'FRESH', 'À JOUR', 'AGGIORNATO'], fs_EXPECTED_DELAY: ['RETRASO HABITUAL', 'EXPECTED DELAY', 'RETARD HABITUEL', 'RITARDO ABITUALE'], fs_DELAYED: ['RETRASADO', 'DELAYED', 'EN RETARD', 'IN RITARDO'], fs_STALE: ['DESACTUALIZADO', 'STALE', 'OBSOLÈTE', 'OBSOLETO'], fs_HISTORICAL: ['HISTÓRICA', 'HISTORICAL', 'HISTORIQUE', 'STORICA'], fs_DISCONTINUED: ['DISCONTINUADA', 'DISCONTINUED', 'ARRÊTÉE', 'INTERROTTA'], fs_PENDING: ['PENDIENTE', 'PENDING', 'EN ATTENTE', 'IN SOSPESO'],
+    crossed: ['Ha cruzado tu umbral:', 'Has crossed your threshold:', 'A franchi votre seuil :', 'Ha superato la tua soglia:'],
+    feed: ['Feed personal (Atom)', 'Personal feed (Atom)', 'Flux personnel (Atom)', 'Feed personale (Atom)'],
+    feedHint: ['instantánea de tus series y avisos para tu lector de noticias', 'snapshot of your series and alerts for your feed reader', 'instantané de vos séries et alertes pour votre lecteur de flux', 'istantanea delle tue serie e avvisi per il tuo lettore di feed'],
+    feedNote: ['Es un archivo generado en tu navegador con los datos de este momento: no se actualiza solo. Una suscripción en directo exigiría un servidor que conociera tu lista, y aquí no sale nada de tu navegador. Vuelve a descargarlo cuando quieras refrescarlo.', 'This file is generated in your browser from today’s data: it does not update by itself. A live subscription would need a server that knows your list, and nothing leaves your browser here. Download it again whenever you want a refresh.', 'Ce fichier est généré dans votre navigateur avec les données du moment : il ne se met pas à jour seul. Un abonnement en direct exigerait un serveur connaissant votre liste, et ici rien ne quitte votre navigateur. Retéléchargez-le pour l’actualiser.', 'Il file è generato nel tuo browser con i dati del momento: non si aggiorna da solo. Un abbonamento in diretta richiederebbe un server che conosca la tua lista, e qui nulla lascia il tuo browser. Scaricalo di nuovo per aggiornarlo.'],
+    feedDl: ['Descargar feed Atom', 'Download Atom feed', 'Télécharger le flux Atom', 'Scarica feed Atom'], feedEmpty: ['Sigue alguna serie para generar el feed.', 'Follow a series to generate the feed.', 'Suivez une série pour générer le flux.', 'Segui una serie per generare il feed.'],
     twRel: ['relación', 'relationship', 'relation', 'relazione'], mode_all: ['deben cumplirse todas', 'all must hold', 'toutes doivent être remplies', 'devono valere tutte'], mode_any: ['basta una', 'any one', 'une suffit', 'ne basta una']
   };
   function t(k) { var a = TX[k]; if (!a) return k; var v = a[li()]; return v === undefined ? a[0] : v; }
@@ -44,12 +49,18 @@
   function sec(id, title, hint, body) { return '<section class="pt-sec" id="' + id + '" aria-labelledby="' + id + '-h"><div class="di-movers-head-row"><h2 id="' + id + '-h">' + esc(title) + '</h2>' + (hint ? '<span class="di-movers-hint">' + esc(hint) + '</span>' : '') + '</div>' + body + '</section>'; }
   function card(n, l) { return '<div class="di-card pt-card"><div class="pt-v">' + n + '</div><div class="pt-k">' + esc(l) + '</div></div>'; }
 
+  // regla cumplida: los cruces de umbral se dicen con todas las letras («Ha cruzado tu umbral: sube de 300»)
+  function hitText(r, html) {
+    if (r.t !== 'cross') return esc(W.ruleText(r, lang()));
+    var rl = W.rl && W.rl[lang()] ? W.rl[lang()] : null, tx = rl ? (r.d === 'below' ? rl.below : rl.above) + ' ' + r.v : W.ruleText(r, lang());
+    return html ? '<strong>' + esc(t('crossed')) + '</strong> ' + esc(tx) : t('crossed') + ' ' + tx;
+  }
   function secAlerts() {
     if (!EV.length) return sec('alertas', t('alerts'), t('alertsHint'), '<p class="pt-note">' + esc(t('noAlerts')) + '</p>');
     var h = '<div class="pt-bar-ctl"><button type="button" class="pt-chip" data-markall="1">' + esc(t('markAll')) + '</button></div><div class="ms-alerts">';
     EV.forEach(function (e, i) {
       h += '<article class="di-card ms-alert"><div class="ms-head"><a href="' + esc(link(e.c, e.s)) + '"><strong>' + esc(e.label) + '</strong></a> <span class="pt-sub">' + esc(e.period) + ' · ' + nf(e.value, Math.abs(e.value) >= 100 ? 1 : 2) + ' ' + esc(e.unit) + '</span>' + chg(e.change) + (e.revised ? ' <span class="pt-badge pt-fs-DELAYED">' + esc(t('revised')) + '</span>' : '') + '</div>' + ci(e.c, e.s, e.period);
-      h += '<ul class="pt-list">' + e.hits.map(function (r) { return '<li>🔔 ' + esc(W.ruleText(r, lang())) + '</li>'; }).join('') + '</ul>';
+      h += '<ul class="pt-list">' + e.hits.map(function (r) { return '<li>🔔 ' + hitText(r, true) + '</li>'; }).join('') + '</ul>';
       if (e.state) h += '<p class="pt-sub">' + fsB(e.state.state, e.state.approx) + '</p>';
       if (e.tw && e.tw.length) h += '<p class="pt-sub">' + e.tw.slice(0, 3).map(function (z) { return '<a href="relaciones.html?id=' + encodeURIComponent(z.id) + '">' + esc(t('twRel')) + ': ' + esc(z.other.replace(/^P\//, '')) + ' (' + (z.changePct > 0 ? '+' : '') + nf(z.changePct, 1) + ' %)</a>'; }).join(' · ') + '</p>';
       if (e.prev) h += '<p class="pt-sub">' + esc(t('prev')) + ': ' + esc(e.prev.p) + ' → ' + (typeof e.prev.v === 'number' ? nf(e.prev.v, 2) : '—') + '</p>';
@@ -96,6 +107,23 @@
     h += '<div class="pt-bar-ctl"><button type="button" class="pt-chip" data-clear="1">' + esc(ST.confirm === 'clear' ? t('confirmClear') : t('clear')) + '</button></div><p class="pt-sub">' + esc(t('privacy')) + '</p>';
     return sec('datos', t('data'), t('dataHint'), h);
   }
+  function secFeed(l) {
+    var h = l.length ? '<div class="pt-bar-ctl"><button type="button" class="pt-chip" data-feed="1">' + esc(t('feedDl')) + '</button></div>' : '<p class="pt-note">' + esc(t('feedEmpty')) + '</p>';
+    return sec('feed', t('feed'), t('feedHint'), h + '<p class="pt-sub">' + esc(t('feedNote')) + '</p>');
+  }
+  function xe(s) { return String(s === null || s === undefined ? '' : s).replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function absUrl(rel) { try { return new URL(rel, location.href).href; } catch (e) { return rel; } }
+  function atom() {
+    var l = W.list(), now = new Date().toISOString(), fired = {}; EV.forEach(function (e) { fired[W.key(e.c, e.s)] = e; });
+    var x = '<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="' + lang() + '">\n<title>' + xe(t('title')) + ' | Dehesa Index</title>\n<id>urn:dehesa-index:watchlist</id>\n<updated>' + now + '</updated>\n<author><name>Dehesa Index</name></author>\n<link rel="alternate" href="' + xe(absUrl('mi-seguimiento.html')) + '"/>\n';
+    l.forEach(function (it) {
+      var r = rowOf(it); if (!r) return; var ev = fired[W.key(it.c, it.s)];
+      var body = r.period + ' · ' + nf(r.value, Math.abs(r.value) >= 100 ? 1 : 2) + ' ' + r.unit + (typeof r.change === 'number' ? ' (' + (r.change > 0 ? '+' : '') + nf(r.change, 2) + ' %)' : '');
+      if (ev) body += ' — ' + ev.hits.map(function (h) { return hitText(h, false); }).join('; ');
+      x += '<entry><title>' + xe((ev ? '🔔 ' : '') + r.label) + '</title><id>urn:dehesa-index:' + xe(W.key(it.c, it.s)) + ':' + xe(r.period) + '</id><updated>' + now + '</updated><link href="' + xe(absUrl(link(it.c, it.s))) + '"/><summary>' + xe(body) + '</summary></entry>\n';
+    });
+    return x + '</feed>\n';
+  }
   var PENDING = null;
   function render() {
     var body = document.getElementById('ms-body'); if (!body) return;
@@ -104,8 +132,8 @@
     var l = W.list(), nR = 0, nP = 0; l.forEach(function (it) { nR += (it.r || []).length; if (it.c === 'P') nP++; });
     var m = W.meta();
     var h = '<div class="pt-cards ms-cards">' + card(l.length, t('cItems')) + card(nP, t('cProducts')) + card(l.length - nP, t('cSeries')) + card(nR, t('cRules')) + card(EV.length, t('cAlerts')) + card(m && m.lastEval ? esc(when(m.lastEval)) : esc(t('never')), t('cEval')) + '</div>';
-    h += '<nav class="pt-tabs">' + [['alertas', 'alerts'], ['series', 'mine'], ['anadir', 'add'], ['historial', 'hist'], ['datos', 'data']].map(function (x) { return '<a class="pt-chip" href="#' + x[0] + '">' + esc(t(x[1])) + '</a>'; }).join('') + '</nav>';
-    h += secAlerts() + secMine(l) + secAdd(l) + secHist(l) + secData();
+    h += '<nav class="pt-tabs">' + [['alertas', 'alerts'], ['series', 'mine'], ['anadir', 'add'], ['historial', 'hist'], ['feed', 'feed'], ['datos', 'data']].map(function (x) { return '<a class="pt-chip" href="#' + x[0] + '">' + esc(t(x[1])) + '</a>'; }).join('') + '</nav>';
+    h += secAlerts() + secMine(l) + secAdd(l) + secHist(l) + secFeed(l) + secData();
     var keepQ = document.activeElement && document.activeElement.id === 'ms-q', open = {};
     Array.prototype.forEach.call(body.querySelectorAll('.ms-item'), function (a) { var d = a.querySelector('details'); if (d && d.open) open[a.getAttribute('data-k')] = 1; });
     body.innerHTML = h;
@@ -126,6 +154,7 @@
     if (b.hasAttribute('data-unfollow')) { var it = l[+b.getAttribute('data-unfollow')]; if (it) { W.remove(it.c, it.s); W.resetContext(); evaluate(); } return; }
     if (b.hasAttribute('data-fk')) { var p = b.getAttribute('data-fk').split('/'), c = p[0], s = p.slice(1).join('/'); if (!W.has(c, s)) W.toggle(c, s); W.ack(c, s); evaluate(); return; }
     if (b.hasAttribute('data-clearhist')) { W.clearHist(); render(); return; }
+    if (b.hasAttribute('data-feed')) { try { var bb = new Blob([atom()], { type: 'application/atom+xml' }), uu = URL.createObjectURL(bb), aa = document.createElement('a'); aa.href = uu; aa.download = 'dehesa-index-seguimiento.atom'; document.body.appendChild(aa); aa.click(); document.body.removeChild(aa); setTimeout(function () { URL.revokeObjectURL(uu); }, 500); } catch (er) { /* sin descarga */ } return; }
     var ex = b.getAttribute('data-export');
     if (ex) { var txt = JSON.stringify(W.exportAll(), null, 1); if (ex === 'dl') download('dehesa-index-seguimiento-' + new Date().toISOString().slice(0, 10) + '.json', txt); else { try { navigator.clipboard.writeText(txt).then(function () { b.textContent = t('copied'); }); } catch (err) { /* sin portapapeles */ } } return; }
     if (b.hasAttribute('data-import')) {

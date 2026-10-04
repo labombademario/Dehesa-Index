@@ -97,7 +97,7 @@
     if (c !== 'P' || !ctx || !ctx.rel) return [];
     var k = key(c, s), out = [];
     ctx.rel.relationships.forEach(function (r) {
-      if (r.status !== 'OBSERVED_RELATIONSHIP') return;
+      if (r.status !== 'OBSERVED_RELATIONSHIP' || r.input.key.charAt(0) !== 'P') return; // el clima y las existencias no son precios de insumo
       var mv = r.last && r.last.input, ch = mv && mv.changePct;
       if (typeof ch !== 'number' || Math.abs(ch) < TW_PCT) return;
       if (r.input.key === k) out.push({ id: r.id, role: 'input', changePct: ch, other: r.market.key });

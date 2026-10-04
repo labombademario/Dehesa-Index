@@ -42,6 +42,15 @@ jobs:
       - name: Contract tests bite (corrupted real data must be rejected)
         run: python3 scripts/test-contracts.py
 
+      - name: CPI pipeline parsers and integrity checks (no network)
+        run: python3 scripts/test-cpi.py
+
+      - name: Real prices arithmetic (CPI deflation in chart.js)
+        run: node scripts/test-real-prices.mjs
+
+      - name: Spain margin reference (PAC only from the saved estimate, no hard-coded amounts)
+        run: node scripts/test-margen-es.mjs
+
       - name: Country profile in plain language (series names, summary, 5-year range)
         run: node scripts/test-perfil-claro.mjs
 

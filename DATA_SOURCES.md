@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 46 VERIFIED, 11 PENDING, 4 RESTRICTED, 4 BLOCKED; 6646 series en el catalogo unificado.
+Resumen: 47 VERIFIED, 11 PENDING, 4 RESTRICTED, 4 BLOCKED; 6646 series en el catalogo unificado.
 
-## VERIFIED (46)
+## VERIFIED (47)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -40,6 +40,7 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `mapa_es` | Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA) | ES | CUSTOM | si/si | si | 219 | Keep update-date and reuse-condition metadata; third-party content excluded. The sibling SIAR notice explicitly allows commercial use but th… |
 | `mb_agri` | Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba) | CA | OpenMB-1.0 | si/si | si | 0 | No suggestion of official status or endorsement; excludes official symbols and logos, personal information and third-party rights. |
 | `nasa_power` | NASA POWER (Prediction Of Worldwide Energy Resources) | US | CC-BY-4.0 | si/si | si | 0 | Do not imply NASA endorsement. The power.larc.nasa.gov services page states no licence; requests should not be finer than about 0.5 degrees. |
+| `ons` | UK Office for National Statistics (consumer price index) | UK | OGL-UK-3.0 | si/si | si | 0 | Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Solo se usa la serie del índice… |
 | `rba` | Reserve Bank of Australia (statistical tables) | AU | CC-BY-4.0 | si/si | si | 1 | No implied RBA endorsement; no improper commercial exploitation; excludes the RBA logo and banknote images. |
 | `retsinformation` | Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser) | DK | CUSTOM | si/si | si | 0 | Retsinformation's own terms page needs JavaScript and could not be read from a runner; the basis is the statutory exclusion of laws and regu… |
 | `rvo` | RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk) | NL | CUSTOM | si/si | si | 0 | No formal licence name (not CC0/CC BY); the open-data page states re-use is allowed and lists the market-ordering statistics for cereals, ca… |

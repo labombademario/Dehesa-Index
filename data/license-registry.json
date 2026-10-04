@@ -1564,6 +1564,30 @@
    "evidence": "Informe de licencias DEFRA aportado por el titular (4 oct 2026).",
    "attributionText": null,
    "thirdPartyNote": "Múltiples derechos de terceros (Ordnance Survey, UKCEH, etc.)."
+  },
+  "ons": {
+   "name": "UK Office for National Statistics (consumer price index)",
+   "url": "https://www.ons.gov.uk/economy/inflationandpriceindices",
+   "country": "UK",
+   "licenseId": "OGL-UK-3.0",
+   "licenseName": "Open Government Licence v3.0",
+   "licenseUrl": "https://www.ons.gov.uk/help/terms-conditions",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Office for National Statistics.",
+   "additionalRestrictions": "Sin respaldo oficial implícito; la OGL excluye fotografías, ilustraciones y vídeos de terceros (no se usan). Solo se usa la serie del índice de precios de consumo (CPI, D7BT).",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-04",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "La página de condiciones del ONS dice que la mayor parte del contenido es copyright de la Corona y se publica bajo la Open Government Licence (leída el 4 oct 2026).",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "ONS (Reino Unido)"
   }
  },
  "files": {
@@ -2071,6 +2095,16 @@
    "byCountry": {
     "UK": "defra"
    }
+  },
+  "data/cpi.json": {
+   "sources": [
+    "eurostat",
+    "statcan",
+    "ons",
+    "bls",
+    "world_bank_wdi"
+   ],
+   "notes": "Índices de precios de consumo para deflactar precios (mensuales: Eurostat HICP, ONS, BLS, Statistics Canada; anuales: Banco Mundial WDI a partir de data/worldbank-agri.json). Cada país indica su fuente; si una fuente falla se conserva el valor anterior y nunca se rellena ni se estima."
   }
  },
  "derived": [
