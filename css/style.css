@@ -841,7 +841,7 @@ html[data-theme="dark"] .di-badge-green { background: #1E3328; color: #7FCF9B; b
 
 /* ---------- Mobile UX pass: navigation, controls, cards, tables and charts ---------- */
 html{overflow-x:hidden}
-body{overflow-x:hidden}
+body{overflow-x:hidden;overflow-x:clip}
 button,a,input,select{touch-action:manipulation}
 input,select,button{font-size:16px}
 .di-header-inner{min-width:0}
@@ -1661,3 +1661,13 @@ html[data-theme="dark"] .di-fd-wait { background: #E0B04A; }
 .di-today-more { margin: 10px 0 0; font-size: 13px; }
 .di-today-more a { color: var(--accent); }
 @media (max-width: 800px) { .di-today { grid-template-columns: 1fr; } .di-today-col + .di-today-col { border-left: 0; border-top: 1px solid var(--border); } }
+
+/* Barra contextual de la ficha de producto: fija bajo el menu, salta a los bloques de este producto */
+.pt-ctx { position: sticky; top: var(--di-hdr, 60px); z-index: 20; display: flex; align-items: center; gap: 4px; margin: 10px 0 8px; padding: 6px 4px; overflow-x: auto; white-space: nowrap; background: var(--bg); border-bottom: 1px solid var(--border); scrollbar-width: thin; }
+.pt-ctx-t { margin-right: 8px; font: 600 16px 'Source Serif 4', Georgia, serif; }
+.pt-ctx a { padding: 6px 12px; border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--nav-inactive); text-decoration: none; }
+.pt-ctx a:hover, .pt-ctx a:focus-visible { background: var(--surface-alt); color: var(--accent); }
+.pt-ctx a[aria-current="location"] { background: var(--accent); color: var(--accent-ink); }
+.pt-sec { scroll-margin-top: calc(var(--di-hdr, 60px) + 70px); }
+#di-nav-root { display: contents; }
+@media (min-width: 701px) and (max-width: 1099px) { .di-header { position: static; } }

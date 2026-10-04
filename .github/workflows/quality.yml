@@ -223,6 +223,10 @@ jobs:
         env:
           CHROMIUM: ''
         run: node scripts/test-home-today.mjs
+      - name: Ficha de producto, barra contextual y marcas dato / lectura / relación (4 idiomas, 1280/390)
+        env:
+          CHROMIUM: ''
+        run: node scripts/test-product-ctx.mjs
       - name: Portada, buscador grande y ejemplos (4 idiomas, 1280/390)
         env:
           CHROMIUM: ''

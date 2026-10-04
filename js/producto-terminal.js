@@ -668,6 +668,27 @@
     Object.keys(META.products).forEach(function (k) { var g = META.products[k].group || 'otros'; if (!groups[g]) { groups[g] = []; order.push(g); } groups[g].push(k); });
     return '<nav class="pt-tabs" aria-label="' + esc(t('nav')) + '">' + Object.keys(META.products).map(function (k) { return '<a class="pt-chip' + (k === ST.p ? ' on' : '') + '" href="producto.html?p=' + k + '"' + (k === ST.p ? ' aria-current="page"' : '') + '>' + esc(nm(k)) + '</a>'; }).join('') + '</nav>';
   }
+  // Barra contextual fija bajo el menu: salta a cada bloque de ESTA ficha (solo los que existen para el producto).
+  var CTXL = { head: ['Precio', 'Price', 'Prix', 'Prezzo'], changed: ['Cambios', 'Changes', 'Changements', 'Cambiamenti'], local: ['Ofertas locales', 'Local bids', 'Offres locales', 'Offerte locali'], prem: ['Prima', 'Premium', 'Prime', 'Premio'], compare: ['Países', 'Countries', 'Pays', 'Paesi'], hist: ['Histórico', 'History', 'Historique', 'Storico'], sd: ['Oferta y demanda', 'Supply & demand', 'Offre et demande', 'Offerta e domanda'], trade: ['Comercio', 'Trade', 'Commerce', 'Commercio'], tariffs: ['Aranceles', 'Tariffs', 'Droits de douane', 'Dazi'], costs: ['Costes', 'Costs', 'Coûts', 'Costi'], rels: ['Relaciones', 'Relationships', 'Relations', 'Relazioni'], drivers: ['Factores', 'Factors', 'Facteurs', 'Fattori'], news: ['Noticias', 'News', 'Actualités', 'Notizie'] },
+    CTXA = ['Alertas', 'Alerts', 'Alertes', 'Avvisi'];
+  function ctxBar() {
+    var ids = ['head'].concat(CUR.map(function (b) { return b.id; })).filter(function (id) { return CTXL[id]; });
+    return '<nav class="pt-ctx" aria-label="' + esc(nm(CTX.pid)) + '"><strong class="pt-ctx-t">' + esc(nm(CTX.pid)) + '</strong>' + ids.map(function (id) { return '<a href="#pt-' + id + '" data-ctx="' + id + '">' + esc(CTXL[id][li()]) + '</a>'; }).join('') + '<a href="mi-seguimiento.html">' + esc(CTXA[li()]) + '</a></nav>';
+  }
+  function ctxSpy() {
+    var links = document.querySelectorAll('.pt-ctx a[data-ctx]'); if (!links.length) return;
+    function hdr() { var h = document.querySelector('.di-header'); var sticky = h && window.getComputedStyle(h).position === 'sticky'; document.documentElement.style.setProperty('--di-hdr', (sticky ? h.offsetHeight : 0) + 'px'); }
+    hdr(); if (!CTX.hdr) { CTX.hdr = true; window.addEventListener('resize', hdr); }
+    function upd() { var cur = null, i; for (i = 0; i < links.length; i++) { var el = document.getElementById('pt-' + links[i].getAttribute('data-ctx')); if (el && el.getBoundingClientRect().top <= (parseInt(document.documentElement.style.getPropertyValue('--di-hdr'), 10) || 0) + 100) cur = links[i]; } for (i = 0; i < links.length; i++) { if (links[i] === cur) links[i].setAttribute('aria-current', 'location'); else links[i].removeAttribute('aria-current'); } }
+    if (!CTX.spy) { CTX.spy = true; var tk = false; window.addEventListener('scroll', function () { if (tk) return; tk = true; (window.requestAnimationFrame || setTimeout)(function () { tk = false; upd(); }); }, { passive: true }); }
+    upd();
+    if (!CTX.clk) { CTX.clk = true; document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('.pt-ctx a[data-ctx]') : null; if (!a) return;
+      var id = 'pt-' + a.getAttribute('data-ctx'), el = document.getElementById(id); if (!el) return;
+      e.preventDefault(); el.scrollIntoView({ behavior: 'auto', block: 'start' });
+      [500, 1400].forEach(function (ms) { setTimeout(function () { var h = parseInt(document.documentElement.style.getPropertyValue('--di-hdr'), 10) || 0, top = el.getBoundingClientRect().top; if (Math.abs(top - (h + 56)) > 40) el.scrollIntoView({ behavior: 'auto', block: 'start' }); }, ms); });
+    }); }
+  }
   function shell(el) {
     var gname = (TX.group[li()] || TX.group[0])[CTX.meta.group] || CTX.meta.group;
     document.getElementById('pg-h1').textContent = t('title') + ': ' + nm(CTX.pid);
@@ -675,10 +696,10 @@
     document.title = t('title') + ': ' + nm(CTX.pid) + ' | Dehesa Index';
     CUR = blocks();
     var legacy = OPTS && OPTS.legacy && OPTS.legacy.has ? '<section class="pt-sec" id="pt-legacy"><div class="di-movers-head-row"><h2>' + esc(t('legacy')) + '</h2><span class="di-movers-hint">' + esc(t('legacyHint')) + '</span></div><div id="pr-legacy-body"><button type="button" class="pt-chip" id="pt-legacy-btn">' + esc(t('legacyBtn')) + '</button></div></section>' : '';
-    el.innerHTML = '<div class="pt-wrap">' + tabsHtml() + '<section class="pt-sec" id="pt-head" style="margin-top:6px"><div class="di-movers-head-row"><h2>' + esc(t('price')) + '</h2><span class="di-movers-hint">' + esc(nm(CTX.pid)) + '</span></div>' + headHtml() + '</section>' +
+    el.innerHTML = '<div class="pt-wrap">' + tabsHtml() + ctxBar() + '<section class="pt-sec" id="pt-head" style="margin-top:6px"><div class="di-movers-head-row"><h2>' + esc(t('price')) + '</h2><span class="di-movers-hint">' + esc(nm(CTX.pid)) + '</span></div>' + headHtml() + '</section>' +
       CUR.map(secHtml).join('') + legacy + '<section class="pt-sec" id="pt-sources"><div class="di-movers-head-row"><h2>' + esc(t('sources')) + '</h2></div>' + htmlSources() + '</section></div>';
     CUR.forEach(function (b) { if (BLK[b.id] && BLK[b.id].done) paint(b); else if (BLK[b.id] && BLK[b.id].err) { BLK[b.id] = null; } });
-    observe();
+    observe(); ctxSpy();
     var lb = document.getElementById('pt-legacy-btn');
     if (lb) {
       var go = function () { lb.disabled = true; lb.textContent = t('loading'); OPTS.legacy.load().then(function () { OPTS.legacy.render(document.getElementById('pr-legacy-body')); }); };
