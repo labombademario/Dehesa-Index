@@ -6,7 +6,7 @@ const BASE = arg('--base', 'http://localhost:8123');
 let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
 let fail = 0; const ok = (n, c) => { if (!c) { fail++; console.log('FALLA', n); } };
-const PAGES = [['rendimientos', 'rd-ca', 5], ['ganaderia', 'gn-ca', 5], ['insumos', 'in-ca', 3], ['costes', 'cs-ca', 3]];
+const PAGES = [['rendimientos', 'rd-ca', 5], ['ganaderia', 'gn-ca', 5], ['insumos', 'in-ca', 3], ['costes', 'cs-ca', 3], ['exportaciones', 'ex-ca', 3]];
 for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   const ctx = await browser.newContext({ viewport: { width: w, height: 800 }, serviceWorkers: 'block' });
   await ctx.addInitScript(l => { try { localStorage.setItem('dehesaIndexLang', l); localStorage.setItem('dehesaIndexTourSeen', '1'); localStorage.setItem('dehesaIndexLocation', 'us'); } catch (e) {} }, lang);

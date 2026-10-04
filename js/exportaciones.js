@@ -162,9 +162,11 @@
 function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}) : ''; }
     function render() {
     var t = tr();
+    if (!(window.CGCanada && window.CGCanada.active())) {
     document.title = t.title + ' | Dehesa Index';
     document.getElementById('pg-h1').textContent = t.title;
     document.getElementById('pg-sub').textContent = t.sub;
+    }
     var tab = function (k, label) { return '<button type="button" class="di-link-btn" data-tab="' + k + '" aria-pressed="' + (SEL.tab === k) + '" style="' + (SEL.tab === k ? 'font-weight:700;text-decoration:underline;' : '') + 'margin-right:18px;font-size:15px">' + esc(label) + '</button>'; };
     document.getElementById('ex-body').innerHTML = '<div style="margin-bottom:14px">' + (ESR ? tab('esr', t.tabEsr) : '') + (GATS ? tab('gats', t.tabGats) : '') + '</div>' + (SEL.tab === 'esr' ? renderEsr(t) : renderGats(t)) + '<p class="di-movers-hint" style="margin-top:6px">' + esc(t.src) + '</p>' + (SEL.tab === 'esr' ? ci('usda_fas_esr') : ci('usda_fas_gats'));
     var q = function (s) { return document.getElementById('ex-body').querySelectorAll(s); };
@@ -174,6 +176,7 @@ function ci(id, o) { return window.DICite && id ? window.DICite.html(id, o || {}
     e = document.getElementById('ex-sel-group'); if (e) e.onchange = function () { SEL.group = e.value; render(); };
     e = document.getElementById('ex-sel-period'); if (e) e.onchange = function () { SEL.period = e.value; render(); };
   }
+  window.__exUsRender = function () { render(); };
   window.DehesaShared.init('informacion');
   var prevCb = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prevCb) prevCb.apply(this, arguments); render(); };

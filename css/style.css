@@ -1764,3 +1764,4 @@ html[data-density="expanded"] .pt-table td, html[data-density="expanded"] .pa-t 
 .pt-chip[data-catab][aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 #cof[hidden], #nd[hidden], #nl[hidden], #rd-ca[hidden], #gn-ca[hidden] { display: none !important; }
 #in-ca[hidden], #cs-ca[hidden] { display: none !important; }
+#ex-ca[hidden], #ex-body[hidden] { display: none !important; }
