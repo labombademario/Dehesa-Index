@@ -1,0 +1,27 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Region map metrics view (paises.html and region.html maps)",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "countries"],
+ "properties": {
+  "schemaVersion": {"type": ["integer", "string"]},
+  "generatedAt": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"},
+  "note": {"type": "string"},
+  "countries": {
+   "type": "object",
+   "minProperties": 9,
+   "additionalSchema": {
+    "type": "object",
+    "additionalSchema": {
+     "type": "object",
+     "required": ["period", "source", "vals"],
+     "properties": {
+      "period": {"type": "string"},
+      "source": {"type": "string"},
+      "vals": {"type": "object", "minProperties": 1, "additionalSchema": {"type": "number"}}
+     }
+    }
+   }
+  }
+ }
+}

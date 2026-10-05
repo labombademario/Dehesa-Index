@@ -444,6 +444,17 @@
   }
   var MODS = { US: [['drought', usDrought], ['crops', usCrops], ['cattle', usCattle], ['bids', usBids], ['fert', usFert], ['tax', usTax]], CA: [['drought', caDrought], ['cacrops', caCrops], ['lvst', caLivestock], ['inc', caIncome], ['rec', caReceipts], ['costs', caCosts], ['prices', caPrices], ['fuel', caFuel]], ES: [['eaa', euEaa], ['recan', esRecan], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], FR: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], NL: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], AT: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], IT: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], AU: [['auex', auExports]], DE: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms], ['deprices', dePrices]] };
   var MOD_NAME = { auex: 'auex', recan: 'recan', eaa: 'eaa', ercrops: 'ercrops', erlive: 'erlive', erfarms: 'erfarms', deprices: 'deprices', cacrops: 'cacrops', lvst: 'lvst', inc: 'inc', rec: 'rec', drought: 'drought', crops: 'crops', cattle: 'cattle', bids: 'bids', fert: 'fert', tax: 'tax', costs: 'costs', prices: 'prices', fuel: 'fuel' };
+  /* bloques adicionales (js/region-more.js): clima, seguros, mercados locales, cultivos y ganado de España por comunidad, agua y maíz de Francia, producción, tierra y ganado de Alemania, CBS de Países Bajos */
+  var OPTIONAL = {};
+  (function () {
+    if (!window.DehesaRegionMore) return;
+    var mon = function (p) { if (!/^\d{4}-\d{2}$/.test(String(p))) return String(p); var q = String(p).split('-'); try { return new Date(Date.UTC(+q[0], +q[1] - 1, 1)).toLocaleDateString(lang(), { month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return String(p); } };
+    var M = window.DehesaRegionMore({ get: get, card: card, cite: cite, table: table, nf: nf, esc: esc, tt: tt, day: day, pct: pct, dec: dec, lang: lang, plabel: mon,
+      nameFr: function (r) { var s = C.FR.names[r]; return s ? s.split('|')[2] : r; }, yearWord: function () { return tt().yearL || ''; } });
+    Object.keys(M.T).forEach(function (l) { if (!T[l]) return; Object.keys(M.T[l]).forEach(function (k) { if (T[l][k] == null) T[l][k] = M.T[l][k]; }); });
+    Object.keys(M.mods).forEach(function (c) { if (!MODS[c]) MODS[c] = []; M.mods[c].forEach(function (m) { MODS[c].push(m); MOD_NAME[m[0]] = m[0]; }); });
+    OPTIONAL = M.optional || {};
+  })();
   /* ---------- mapa y página ---------- */
   function mapSvg(cfg, r) {
     var M = window[cfg.map]; if (!M) return '';
@@ -472,7 +483,8 @@
     bind(); bindMetric(); var my = ++seq, x = { c: ST.c, r: ST.r };
     Promise.all(MODS[ST.c].map(function (m) { return m[1](x).catch(function () { return null; }); })).then(function (out) {
       if (my !== seq) return; var el = document.getElementById('rg-main'); if (!el) return; var miss = [];
-      var html = out.map(function (h, i) { if (!h) miss.push(t[MOD_NAME[MODS[ST.c][i][0]]]); return h || ''; }).join('');
+      var toc = [], html = out.map(function (h, i) { var k = MODS[ST.c][i][0]; if (!h) { if (!OPTIONAL[k]) miss.push(t[MOD_NAME[k]]); return ''; } toc.push('<a href="#rg-' + k + '">' + esc(t[MOD_NAME[k]] || k) + '</a>'); return '<div id="rg-' + k + '" class="rg-blk">' + h + '</div>'; }).join('');
+      if (toc.length > 1) html = '<nav class="rg-toc" aria-label="' + esc(t.toc || '') + '"><span>' + esc(t.toc || '') + '</span>' + toc.join('') + '</nav>' + html;
       if (miss.length) html += '<section class="di-card" style="padding:14px 18px;margin-top:14px"><b>' + esc(t.missing) + '</b><p class="di-movers-hint" style="margin:6px 0 0">' + esc(t.missingHint) + ' ' + esc(miss.join(', ')) + '.</p></section>';
       html += staticLinks();
       el.innerHTML = html;

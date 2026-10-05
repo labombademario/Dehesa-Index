@@ -806,6 +806,22 @@ def views_eu_preview(doc, errs, warns, stats):
             if c.get(f) is not None and not (_date(c[f][0]) and _num(c[f][1])): errs.append("%s: %s invalido" % (c["k"], f))
         if c.get("prev") and c["prev"][0] >= c["last"][0]: errs.append("%s: prev no es anterior a last" % c["k"])
         if _date(c["last"][0]) and _date(c["last"][0]) > TODAY: errs.append("%s: dato en el futuro" % c["k"])
+def views_region_metrics(doc, errs, warns, stats):
+    """Valores del mapa de regiones: cada clave es una region con contorno y nombre (js/region-names.js) y cada valor es un numero finito."""
+    import re as _re
+    names = (ROOT / "js" / "region-names.js").read_text() if "ROOT" in globals() else open("js/region-names.js").read()
+    n = 0
+    for cc, ms in doc["countries"].items():
+        m = _re.search(r"var " + cc + r" = \{(.*?)\};", names, _re.S)
+        ids = set(_re.findall(r"(\w+): '", m.group(1))) if m else set()
+        if not ids: errs.append("%s: pais sin nombres de region" % cc); continue
+        for mid, b in ms.items():
+            bad = [k for k in b["vals"] if k not in ids]
+            if bad: errs.append("%s/%s: regiones desconocidas %s" % (cc, mid, bad[:5]))
+            for k, v in b["vals"].items():
+                if not _num(v): errs.append("%s/%s/%s: valor no numerico" % (cc, mid, k))
+            n += len(b["vals"])
+    stats["series"] = n
 def series_shard(doc, errs, warns, stats):
     freq_rx = {"annual": r"^\d{4}$", "monthly": r"^\d{4}-\d{2}$", "weekly": r"^\d{4}-\d{2}-\d{2}$", "daily": r"^\d{4}-\d{2}-\d{2}$"}
     for s in doc["series"]:

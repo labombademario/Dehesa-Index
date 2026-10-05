@@ -657,6 +657,12 @@
   "coverage-overrides.json": [
    "coverage-overrides",
    []
+  ],
+  "views/region-metrics.json": [
+   "views-region-metrics",
+   [
+    "views_region_metrics"
+   ]
   ]
  },
  "globs": {
@@ -776,6 +782,7 @@
   "views/home-summary.json",
   "views/news-index.json",
   "views/news-feed.json",
+  "views/region-metrics.json",
   "prices/manifest.json",
   "freshness.json",
   "source-candidates.json",

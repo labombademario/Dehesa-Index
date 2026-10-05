@@ -190,6 +190,7 @@
       '<div style="font-size:13px;color:var(--text-muted);text-align:right"><b>' + S.length + '</b> ' + t.total + ' <b>' + gk.length + '</b> ' + t.cats + '<br>' + esc(t.from) + ' ' + esc(x.plabel(minP, 'annual')) + ' ' + t.to + ' ' + esc(x.plabel(maxP, /^\d{4}-\d{2}$/.test(maxP) ? 'monthly' : 'annual')) + '</div></div>';
     h += macroStrip(x.macro, x);
     h += '<div style="margin-top:10px;font-size:12.5px;color:var(--text-muted)">' + esc(t.freq) + ': ' + Object.keys(freqs).map(function (k) { return freqs[k] + ' ' + esc((x.t.freq && x.t.freq[k]) || k); }).join(' · ') + (srcList.length ? '<br>' + esc(t.sources) + ': ' + srcList.map(esc).join(' · ') : '') + '</div></section>';
+    if (x.afterHero) h += x.afterHero;   // mapa de regiones (paises.js), pegado a la cabecera con las cifras macro
     var kp = kpis(cc, S, groups), C = window.DIClear, present = { sum: true, kpi: kp.length > 0, trade: !!(groups.partners && groups.partners.length), exp: true };
     var qs = C ? C.questions(groups, x.lang) : []; present.ask = qs.length > 0;
     var pl = C ? C.plain({ lang: x.lang, kpis: kp, partners: groups.partners || [], unusual: partial(S) ? [] : unusual(S), plabel: x.plabel }) : null;

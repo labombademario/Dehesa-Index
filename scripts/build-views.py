@@ -2,6 +2,7 @@
 """data/views/*.json — vistas pequenas para las paginas de entrada. Cada pagina descarga SOLO su vista (KB), nunca el dataset entero.
   home-summary.json cifras, 4 ultimos movimientos y los datos justos de las tarjetas de la Home (cultivos, oferta y demanda, clima, mercados USDA)
   eu-preview.json   tarjetas de la vista previa de la UE de perfiles.html (media UE publicada por la Comision; sin recalcular)
+  region-metrics.json  el valor por region con el que se colorea el mapa de regiones de cada ficha de pais (js/region-metrics.js): asi el mapa no baja el fichero regional entero (hasta ~350 KB)
 Se regenera junto con el catalogo (update-pipeline-status.yml) y es estricto: si una fuente falta, falla en lugar de publicar una vista incompleta."""
 import datetime, json, sys
 from pathlib import Path
@@ -63,8 +64,71 @@ def trade_products():
         except Exception: continue
         for cc, rep in (d.get('reporters') or {}).items():
             write('trade-products/%s.json' % cc, dict({k: v for k, v in d.items() if k != 'reporters'}, reporters={cc: rep}))
+
+def _last(a):
+    for p in reversed(a or []):
+        if p and p[1] is not None: return p
+    return None
+def _at(a, y):
+    for p in a or []:
+        if str(p[0]) == str(y) and p[1] is not None: return p[1]
+    return None
+def region_metrics():
+    """Mismo calculo que compute() de js/region-metrics.js (el JS lo sigue haciendo si esta vista falta). Valores tal cual de la fuente; perha = produccion / SAU (calculo, como en el JS)."""
+    import re
+    C = {}
+    names = (ROOT / 'js' / 'region-names.js').read_text()
+    def ids(cc):
+        m = re.search(r"var " + cc + r" = \{(.*?)\};", names, re.S); return set(re.findall(r"(\w+): '", m.group(1))) if m else set()
+    def put(cc, mid, vals, period, src):
+        ok = ids(cc); vals = {k: x for k, x in vals.items() if k in ok and isinstance(x, (int, float))}   # fuera totales nacionales (p. ej. «CA») y claves sin contorno
+        if vals: C.setdefault(cc, {})[mid] = {'period': str(period or ''), 'source': src, 'vals': {k: (round(x, 4) if isinstance(x, float) else x) for k, x in sorted(vals.items())}}
+    d = load('drought.json'); v = {}; per = ''
+    for k, r in (d.get('states') or {}).items():
+        if r: v[k] = r[-1][2]; per = max(per, str(r[-1][0]))
+    put('US', 'drought', v, per, 'drought.json')
+    m = re.search(r"var US = \{(.*?)\};", names, re.S)
+    en = {b: a for a, b in re.findall(r"(\w+): '([^|']+)\|", m.group(1))} if m else {}
+    d = load('cattle-on-feed.json'); r = (d.get('reports') or [None])[-1]; v = {}
+    if r:
+        for st in r.get('states') or []:
+            if st.get('state') in en and st.get('current') is not None: v[en[st['state']]] = st['current']
+        put('US', 'cattle', v, r.get('inventoryDate'), 'cattle-on-feed.json')
+    d = load('other-tax.json'); S = (d.get('us') or {}).get('states') or {}
+    put('US', 'tax', {k: (0 if x.get('noStateSalesTax') else x.get('rate')) for k, x in S.items() if x.get('noStateSalesTax') or x.get('rate') is not None}, d.get('reviewedAt', ''), 'other-tax.json')
+    d = load('canada-drought.json'); v = {}; n = len(d.get('periods') or [])
+    for k, x in (d.get('provinces') or {}).items():
+        row = (x.get('v') or [])[n - 1] if n and len(x.get('v') or []) >= n else None
+        if row: v[k] = row[1]
+    put('CA', 'drought', v, d.get('asOf'), 'canada-drought.json')
+    d = load('canada-provinces.json'); v = {}; per = ''
+    for k, x in (d.get('provinces') or {}).items():
+        o = (x.get('receipts') or {}).get('total-farm-cash-receipts'); p = _last(o and o.get('pts'))
+        if p: v[k] = p[1]; per = max(per, str(p[0]))
+    put('CA', 'receipts', v, per, 'canada-provinces.json')
+    d = load('au-states.json')
+    for mid in ('agrifood', 'beef', 'wheat', 'wine'):
+        v = {}; per = ''
+        for k, x in (d.get('states') or {}).items():
+            p = _last(x.get(mid))
+            if p: v[k] = p[1]; per = max(per, str(p[0]))
+        put('AU', mid, v, per, 'au-states.json')
+    for cc in ('ES', 'FR', 'IT', 'DE', 'NL', 'AT'):
+        f = 'eu-regions-%s.json' % cc.lower(); d = load(f); vo = {}; vu = {}; vp = {}; po = pu = pp = ''
+        for k, b in (d.get('regions') or {}).items():
+            o = (b.get('eaa') or {}).get('AM180000'); ua = ((b.get('crops') or {}).get('UAA') or {}).get('area')
+            p = _last(o)
+            if p: vo[k] = p[1]; po = max(po, str(p[0]))
+            q = _last(ua)
+            if q: vu[k] = q[1]; pu = max(pu, str(q[0]))
+            if p:
+                u2 = _at(ua, p[0])
+                if u2: vp[k] = p[1] / u2 * 1000; pp = max(pp, str(p[0]))
+        put(cc, 'output', vo, po, f); put(cc, 'uaa', vu, pu, f); put(cc, 'perha', vp, pp, f)
+    return {'schemaVersion': 1, 'generatedAt': now(), 'note': 'Valor por region para colorear los mapas de las fichas de pais; derivado de los ficheros de data/ indicados en source.', 'countries': C}
 def main():
     write('home-summary.json', home_summary())
     write('eu-preview.json', eu_preview())
+    write('region-metrics.json', region_metrics())
     trade_products()
 main()

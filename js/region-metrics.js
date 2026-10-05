@@ -27,20 +27,24 @@
     { id: 'uaa', ramp: G, unit: ' kha', label: ['Utilised agricultural area (thousand ha)', 'Superficie agraria útil (miles de ha)', 'Surface agricole utilisée (milliers d’ha)', 'Superficie agricola utilizzata (migliaia di ha)'], dec: 0 },
     { id: 'perha', ramp: G, unit: ' EUR/ha', label: ['Output per hectare of farmland (EUR/ha)', 'Producción por hectárea de superficie agraria (EUR/ha)', 'Production par hectare de surface agricole (EUR/ha)', 'Produzione per ettaro di superficie agricola (EUR/ha)'], dec: 0 }];
   ['ES', 'FR', 'IT', 'DE', 'NL', 'AT'].forEach(function (c) { M[c] = EU; });
+  // vista precalculada (scripts/build-views.py -> data/views/region-metrics.json, ~7 KB): el mapa no baja el fichero regional entero; si falta, se calcula aquí
   function compute(cc, id) {
+    return get('data/views/region-metrics.json').then(function (V) { var m = V && V.countries && V.countries[cc] && V.countries[cc][id]; return m && m.vals ? { vals: m.vals, period: m.period } : computeFull(cc, id); });
+  }
+  function computeFull(cc, id) {
     var v = {}, per = '';
-    if (cc === 'US' && id === 'drought') return get('data/drought.json').then(function (d) { if (!d || !d.states) return null; Object.keys(d.states).forEach(function (k) { var r = d.states[k]; if (r && r.length) { v[k] = r[r.length - 1][2]; per = r[r.length - 1][0]; } }); return { vals: v, period: per }; });
+    if (cc === 'US' && id === 'drought') return get('data/drought.json').then(function (d) { if (!d || !d.states) return null; Object.keys(d.states).forEach(function (k) { var r = d.states[k]; if (r && r.length) { v[k] = r[r.length - 1][2]; if (String(r[r.length - 1][0]) > per) per = String(r[r.length - 1][0]); } }); return { vals: v, period: per }; });
     if (cc === 'US' && id === 'cattle') return Promise.all([get('data/cattle-on-feed.json'), window.DehesaRegionNames ? 1 : 0]).then(function (a) { var d = a[0], N = window.DehesaRegionNames && window.DehesaRegionNames.US; if (!d || !d.reports || !N) return null; var r = d.reports[d.reports.length - 1], en = {}; Object.keys(N).forEach(function (k) { en[N[k].split('|')[0]] = k; }); (r.states || []).forEach(function (s) { if (en[s.state]) v[en[s.state]] = s.current; }); return { vals: v, period: r.inventoryDate }; });
     if (cc === 'US' && id === 'tax') return get('data/other-tax.json').then(function (d) { var S = d && d.us && d.us.states; if (!S) return null; Object.keys(S).forEach(function (k) { v[k] = S[k].noStateSalesTax ? 0 : S[k].rate; }); return { vals: v, period: d.reviewedAt || '' }; });
     if (cc === 'CA' && id === 'drought') return get('data/canada-drought.json').then(function (d) { if (!d || !d.provinces) return null; Object.keys(d.provinces).forEach(function (k) { var r = d.provinces[k].v[d.periods.length - 1]; if (r) v[k] = r[1]; }); return { vals: v, period: d.asOf }; });
-    if (cc === 'CA' && id === 'receipts') return get('data/canada-provinces.json').then(function (d) { if (!d || !d.provinces) return null; Object.keys(d.provinces).forEach(function (k) { var o = d.provinces[k].receipts && d.provinces[k].receipts['total-farm-cash-receipts'], p = o && last(o.pts); if (p) { v[k] = p[1]; per = p[0]; } }); return { vals: v, period: per }; });
-    if (cc === 'AU') return get('data/au-states.json').then(function (d) { if (!d || !d.states) return null; Object.keys(d.states).forEach(function (k) { var p = d.states[k][id] && last(d.states[k][id]); if (p) { v[k] = p[1]; per = p[0]; } }); return { vals: v, period: per }; });
+    if (cc === 'CA' && id === 'receipts') return get('data/canada-provinces.json').then(function (d) { if (!d || !d.provinces) return null; Object.keys(d.provinces).forEach(function (k) { if (k === 'CA') return; var o = d.provinces[k].receipts && d.provinces[k].receipts['total-farm-cash-receipts'], p = o && last(o.pts); if (p) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }); return { vals: v, period: per }; });
+    if (cc === 'AU') return get('data/au-states.json').then(function (d) { if (!d || !d.states) return null; Object.keys(d.states).forEach(function (k) { var p = d.states[k][id] && last(d.states[k][id]); if (p) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }); return { vals: v, period: per }; });
     var f = EU_FILE[cc] || cc.toLowerCase();
     return get('data/eu-regions-' + f + '.json').then(function (d) { if (!d || !d.regions) return null;
       Object.keys(d.regions).forEach(function (k) { var b = d.regions[k], o = b.eaa && b.eaa.AM180000, ua = b.crops && b.crops.UAA && b.crops.UAA.area;
-        if (id === 'output') { var p = last(o); if (p) { v[k] = p[1]; per = p[0]; } }
-        else if (id === 'uaa') { var q = last(ua); if (q) { v[k] = q[1]; per = q[0]; } }
-        else if (id === 'perha') { var p2 = last(o), u2 = p2 && at(ua, p2[0]); if (p2 && u2) { v[k] = p2[1] / u2 * 1000; per = p2[0]; } } });
+        if (id === 'output') { var p = last(o); if (p) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }
+        else if (id === 'uaa') { var q = last(ua); if (q) { v[k] = q[1]; if (String(q[0]) > per) per = String(q[0]); } }
+        else if (id === 'perha') { var p2 = last(o), u2 = p2 && at(ua, p2[0]); if (p2 && u2) { v[k] = p2[1] / u2 * 1000; if (String(p2[0]) > per) per = String(p2[0]); } } });
       return { vals: v, period: per }; });
   }
   function distinct(a) { var o = {}, c = 0; a.forEach(function (x) { if (!o[x]) { o[x] = 1; c++; } }); return c; }
