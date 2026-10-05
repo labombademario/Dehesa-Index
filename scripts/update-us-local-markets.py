@@ -97,6 +97,9 @@ def cattle_rows(raw, stats):
         if pmn is None: pmn = p
         if pmx is None: pmx = p
         if not (pmn - 0.01 <= p <= pmx + 0.01 and pmn <= pmx): stats["skipped"] += 1; continue
+        un = txt(r.get("price_unit")); rng = {"Per Cwt": (20, 1500), "Per Unit": (100, 20000)}.get(un)
+        if rng and not (rng[0] <= p <= rng[1]) and not (com == "Slaughter Cattle" and p >= 20):
+            log("DESCARTADA fila con unidad incoherente (publicada asi por AMS):", d, com, cl, p, un); stats["skipped"] += 1; continue
         extra = " · ".join(x for x in (txt(r.get("age")), txt(r.get("pregnancy_stage")), ("dressing " + txt(r.get("dressing"))) if txt(r.get("dressing")) else "") if x)
         out.append({"date": d, "commodity": com, "class": cl, "frame": txt(r.get("frame")), "grade": txt(r.get("muscle_grade")), "lot": txt(r.get("lot_desc")), "unit": txt(r.get("price_unit")),
                     "wbLow": num(r.get("weight_break_low")), "wbHigh": num(r.get("weight_break_high")), "head": head, "wt": num(r.get("avg_weight")), "pMin": pmn, "pMax": pmx, "p": p, "x": extra,
