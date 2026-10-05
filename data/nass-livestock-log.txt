@@ -18,10 +18,10 @@ frigoríficos TURKEYS filas 612 usadas 612
 frigoríficos CHICKENS filas 816 usadas 816
 frigoríficos LAMB & MUTTON filas 68 usadas 68
 frigoríficos VEAL filas 68 usadas 68
-frigoríficos MILK filas 261 usadas 0
-frigoríficos WHEY filas 737 usadas 0
-leche producción estados filas 5398 usadas 4252
-leche producción nacional filas 952 usadas 180
+frigoríficos MILK filas 264 usadas 0
+frigoríficos WHEY filas 748 usadas 0
+leche producción estados filas 5401 usadas 4252
+leche producción nacional filas 958 usadas 180
 leche precio recibido filas 198 usadas 188
 vacas lecheras filas 0 usadas 0
 vacas lecheras nacional filas 0 usadas 0
