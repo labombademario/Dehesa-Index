@@ -183,7 +183,8 @@
       g += '<rect x="' + x.toFixed(1) + '" y="' + y1.toFixed(1) + '" width="' + (bw - 2).toFixed(1) + '" height="' + hh.toFixed(1) + '" fill="' + (v >= 0 ? pos : neg) + '"' + (last ? ' stroke="currentColor" stroke-width="1.5"' : '') + '><title>' + r.year + ': ' + sgn(v, dec, unit) + '</title></rect>';
       if ((r.year % 5 === 0 && r.year <= rows[n - 1].year - 2) || last) g += '<text x="' + (x + (bw - 2) / 2).toFixed(1) + '" y="' + (h - 6) + '" text-anchor="middle" font-size="10" fill="currentColor" fill-opacity=".7">' + r.year + '</text>';
     });
-    return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" role="img" aria-label="' + String(label || '').replace(/"/g, '&quot;') + '" style="display:block;max-width:760px">' + g + '</svg>';
+    var spec = { L: pl, R: w - pr, T: pt, B: h - pb, nm: 1, s: [{ n: '', c: pos, p: rows.map(function (r, i) { var v = r[key]; return [+(pl + i * bw + 1 + (bw - 2) / 2).toFixed(1), +Y(v).toFixed(1), sgn(v, dec, unit ? ' ' + unit : ''), String(r.year), v]; }) }] };
+    return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" role="img" aria-label="' + String(label || '').replace(/"/g, '&quot;') + '"' + window.DehesaChart.attr(spec).replace(' style="touch-action:pan-y"', '') + ' style="display:block;max-width:760px;touch-action:pan-y">' + g + '</svg>';
   }
   function rank(rows, key, desc) { var cur = rows[rows.length - 1][key]; var r = 1; rows.forEach(function (x) { if (desc ? x[key] > cur : x[key] < cur) r++; }); return r; }
   function fill(str, o) { return str.replace(/\{(\w+)\}/g, function (_, k) { return o[k]; }); }

@@ -469,6 +469,9 @@ img { max-width: 100%; }
 .di-momentum-legend { display: flex; flex-wrap: wrap; gap: 10px 16px; margin-top: 10px; font-size: 11.5px; }
 .di-momentum-legend span { display: inline-flex; align-items: center; gap: 5px; }
 .di-momentum-legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.di-momentum-point circle { transition: r .12s; }
+.di-momentum-point:hover circle, .di-momentum-point:focus circle { r: 8; stroke-width: 2.5; }
+.di-momentum-point:hover text { font-weight: 700; font-size: 11px; }
 
 /* Correlation matrix */
 .di-corr-scroll { overflow-x: auto; }

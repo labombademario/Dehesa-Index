@@ -170,7 +170,7 @@
     if (e.pointerType === 'mouse' && e.button !== 0) return;
     var svg = e.target && e.target.closest ? e.target.closest('svg[data-dh]') : null;
     if (!svg) return;
-    var spec = specOf(svg); if (!spec || !spec.s.length) return;
+    var spec = specOf(svg); if (!spec || !spec.s.length || spec.nm) return; // nm: solo valor al pasar, sin medir cambios entre barras
     var pt = plotPt(svg, e, spec, false); if (!pt) return;
     if (pt.x < spec.L - 4 || pt.x > spec.R + 4 || pt.y < spec.T - 6 || pt.y > spec.B + 6) return;
     drag = { svg: svg, ax: pt.x, id: e.pointerId, moved: false };
@@ -212,7 +212,7 @@
     var lines = hits.filter(function (h) { return Math.abs(h.p[0] - gx) < 40; }).map(function (h) {
       return '<div style="display:flex;gap:8px;align-items:baseline;justify-content:space-between"><span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:' + h.s.c + ';margin-right:6px"></span>' + (spec.s.length > 1 ? esc(h.s.n) : '') + '</span><strong>' + esc(h.p[2]) + '</strong></div>' + (h.p[3] !== best.p[3] ? '<div style="color:var(--text-faint,#7a7466);font-size:11.5px;margin:-2px 0 2px 15px">' + esc(h.p[3]) + '</div>' : '');
     }).join('');
-    var hint = best.p[4] !== undefined && best.p[4] !== null && !drag && e.pointerType === 'mouse' ? '<div style="margin-top:5px;color:var(--text-faint,#7a7466);font-size:11px">' + esc(HINT[lang()] || HINT.es) + '</div>' : '';
+    var hint = best.p[4] !== undefined && best.p[4] !== null && !spec.nm && !drag && e.pointerType === 'mouse' ? '<div style="margin-top:5px;color:var(--text-faint,#7a7466);font-size:11px">' + esc(HINT[lang()] || HINT.es) + '</div>' : '';
     var t = tipEl(); t.innerHTML = '<div style="color:var(--text-faint,#7a7466);font-size:11.5px;margin-bottom:3px">' + esc(best.p[3]) + '</div>' + lines + hint; t.style.display = 'block';
     place(svg, t, gx, best.p[1]);
   }

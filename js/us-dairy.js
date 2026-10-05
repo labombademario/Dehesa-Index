@@ -19,6 +19,7 @@
   function pc(a, b) { if (!b) return '—'; var v = (a / b - 1) * 100; return (v > 0.05 ? '+' : v < -0.05 ? '−' : '') + nf(Math.abs(v), 1) + ' %'; }
   function col(a, b) { return !b ? 'inherit' : a > b ? 'var(--up, #2c6e49)' : a < b ? 'var(--down, #a33)' : 'inherit'; }
   function back(s, i, days) { var t = Date.parse(s[i][0]) - days * 86400000, best = null; for (var k = i - 1; k >= 0; k--) { var g = Math.abs(Date.parse(s[k][0]) - t); if (g <= 3.5 * 86400000 && (best === null || g < best[0])) best = [g, s[k][1]]; if (Date.parse(s[k][0]) < t - 5 * 86400000) break; } return best ? best[1] : null; }
+  function niceTicks(a, b) { var raw = (b - a) / 3, e = Math.pow(10, Math.floor(Math.log(raw) / Math.LN10)), f = raw / e, st = (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * e, out = [], v = Math.ceil(a / st - 1e-9) * st; for (; v <= b + 1e-9; v += st) out.push(Math.round(v / st) * st); return out; }
   function chart(p, t) {
     var s = p.series.slice(-104); if (s.length < 4) return '';
     var W = 640, H = 170, L = 46, R = 10, Tp = 12, B = 24, mn = Infinity, mx = -Infinity;
@@ -26,7 +27,7 @@
     var pad = (mx - mn) * 0.12 || 0.05; mn -= pad; mx += pad;
     function X(i) { return L + i * (W - L - R) / (s.length - 1); } function Y(v) { return Tp + (mx - v) * (H - Tp - B) / (mx - mn); }
     var path = s.map(function (x, i) { return (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(x[1]).toFixed(1); }).join(' ');
-    var ticks = [mn + pad, (mn + mx) / 2, mx - pad].map(function (v) { return '<g><line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(v).toFixed(1) + '" y2="' + Y(v).toFixed(1) + '" stroke="var(--border)"/><text x="' + (L - 6) + '" y="' + (Y(v) + 4).toFixed(1) + '" text-anchor="end" font-size="11" fill="var(--text-faint)">' + nf(v, 2) + '</text></g>'; }).join('');
+    var ticks = niceTicks(mn, mx).map(function (v) { return '<g><line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(v).toFixed(1) + '" y2="' + Y(v).toFixed(1) + '" stroke="var(--border)"/><text x="' + (L - 6) + '" y="' + (Y(v) + 4).toFixed(1) + '" text-anchor="end" font-size="11" fill="var(--text-faint)">' + nf(v, 2) + '</text></g>'; }).join('');
     var a = s[0], b = s[s.length - 1], nm = N[p.id][LI[lang()] || 0];
     var alt = t.alt.replace('{n}', nm).replace('{a}', day(a[0])).replace('{x}', nf(a[1], 2)).replace('{b}', day(b[0])).replace('{y}', nf(b[1], 2));
     return '<h3 class="cof-h3">' + esc(nm) + ' · ' + esc(t.hist) + '</h3><svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(alt) + '" style="width:100%;height:auto;max-width:720px">' + ticks + '<path d="' + path + '" fill="none" stroke="var(--accent)" stroke-width="2"/><text x="' + L + '" y="' + (H - 6) + '" font-size="11" fill="var(--text-faint)">' + esc(a[0]) + '</text><text x="' + (W - R) + '" y="' + (H - 6) + '" text-anchor="end" font-size="11" fill="var(--text-faint)">' + esc(b[0]) + '</text></svg>';

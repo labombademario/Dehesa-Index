@@ -98,13 +98,17 @@
   }
   var AXX = { es: 'Periodo', en: 'Period', fr: 'Période', it: 'Periodo' };
   function axTitle(y, x, yx) { return '<text transform="translate(12 ' + yx + ') rotate(-90)" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(y) + '</text><text x="' + x[0] + '" y="' + x[1] + '" font-size="11" font-weight="600" text-anchor="middle" fill="var(--text-faint)">' + esc(x[2]) + '</text>'; }
+  function niceStep(raw) { var e = Math.pow(10, Math.floor(Math.log(raw) / Math.LN10)), f = raw / e; return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * e; }
   function lineChart(a, u, t) {
     var W = 720, H = 252, L = 80, R = 12, Tp = 12, Bt = 48, n = a.length, min = Infinity, max = -Infinity;
     a.forEach(function (x) { if (x[1] > max) max = x[1]; if (x[1] < min) min = x[1]; });
     if (n < 2) return '';
-    var lo = min >= 0 ? Math.max(0, min - (max - min) * 0.15) : min, hi = max + (max - min) * 0.1 || max * 1.1;
+    var lo0 = min >= 0 ? Math.max(0, min - (max - min) * 0.15) : min, hi0 = max + (max - min) * 0.1 || max * 1.1;
+    if (hi0 === lo0) { lo0 -= 1; hi0 += 1; }
+    var st = niceStep((hi0 - lo0) / 4), lo = Math.floor(lo0 / st) * st, hi = Math.ceil(hi0 / st) * st; if (min >= 0 && lo < 0) lo = 0;
+    var nt = Math.round((hi - lo) / st);
     var x = function (i) { return L + (W - L - R) * i / (n - 1); }, y = function (v) { return Tp + (H - Tp - Bt) * (1 - (v - lo) / (hi - lo)); };
-    var g = ''; for (var k = 0; k <= 4; k++) { var vv = lo + (hi - lo) * k / 4; g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(vv) + '" y2="' + y(vv) + '" stroke="var(--border)"/><text x="' + (L - 6) + '" y="' + (y(vv) + 4) + '" font-size="11" text-anchor="end" fill="var(--text-faint)">' + esc(fmt(u, vv, t)) + '</text>'; }
+    var g = ''; for (var k = 0; k <= nt; k++) { var vv = lo + st * k; g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(vv) + '" y2="' + y(vv) + '" stroke="var(--border)"/><text x="' + (L - 6) + '" y="' + (y(vv) + 4) + '" font-size="11" text-anchor="end" fill="var(--text-faint)">' + esc(fmt(u, vv, t)) + '</text>'; }
     var d = a.map(function (p, i) { return (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(p[1]).toFixed(1); }).join(' ');
     var dots = n <= 40 ? a.map(function (p, i) { return '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(p[1]).toFixed(1) + '" r="3" fill="' + C1 + '"><title>' + esc(p[0] + ': ' + fmt(u, p[1], t)) + '</title></circle>'; }).join('') : '';
     var xl = [0, Math.floor((n - 1) / 2), n - 1].map(function (i) { return '<text x="' + x(i) + '" y="' + (H - Bt + 17) + '" font-size="11" text-anchor="' + (i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle') + '" fill="var(--text-faint)">' + esc(a[i][0]) + '</text>'; }).join('') + axTitle(u === '$ / CWT' ? '$ / cwt' : unitNote(u, t), [(L + W - R) / 2, H - 5, AXX[lang()] || AXX.es], (Tp + H - Bt) / 2);

@@ -774,7 +774,7 @@
       var h = Math.max(Math.abs(y1 - y0), 1);
       if (pct === null) return { month: monthNames[idx], x: barX, w: barW, y: originY, h: 0, color: 'transparent', labelX: slotX + slotW / 2, tooltip: monthNames[idx] + ': sin observación' };
       var style = tileStyle(pct, maxAbs);
-      return { month: monthNames[idx], x: barX, w: barW, y: top, h: h, color: style.bg, labelX: slotX + slotW / 2, tooltip: monthNames[idx] + ': ' + D.fmtChange(pct) };
+      return { month: monthNames[idx], x: barX, w: barW, y: top, h: h, color: style.bg, labelX: slotX + slotW / 2, pct: pct, endY: y1, tooltip: monthNames[idx] + ': ' + D.fmtChange(pct) };
     });
     var yGrid = ticks.ticks.filter(function (v) { return v !== 0; }).map(function (v) { return { y: toPy(v), label: fmtTick(v) }; });
     return {
@@ -805,8 +805,9 @@
       return '<rect x="' + mo.x + '" y="' + mo.y + '" width="' + mo.w + '" height="' + mo.h + '" fill="' + mo.color + '" rx="2"><title>' + esc(mo.tooltip) + '</title></rect>' +
         '<text x="' + mo.labelX + '" y="' + (s.plotBottom + 14) + '" font-size="9.5" text-anchor="middle" fill="' + p.textMuted + '">' + esc(mo.month) + '</text>';
     }).join('');
+    var hov = window.DehesaChart && window.DehesaChart.attr ? window.DehesaChart.attr({ L: s.plotX, R: s.plotX + s.plotW, T: s.plotY, B: s.plotBottom, nm: 1, s: [{ n: '', c: p.border, p: s.months.filter(function (mo) { return mo.pct !== undefined; }).map(function (mo) { return [+(mo.labelX).toFixed(1), +(mo.endY).toFixed(1), D.fmtChange(mo.pct), mo.month, mo.pct]; }) }] }).replace(' style="touch-action:pan-y"', '') : '';
     var svg =
-      '<svg viewBox="0 0 ' + SEASON_CANVAS_W + ' ' + SEASON_CANVAS_H + '">' +
+      '<svg viewBox="0 0 ' + SEASON_CANVAS_W + ' ' + SEASON_CANVAS_H + '" role="img"' + hov + '>' +
         yGrid +
         '<line x1="' + s.plotX + '" y1="' + s.originY + '" x2="' + (s.plotX + s.plotW) + '" y2="' + s.originY + '" stroke="' + p.borderStrong + '" stroke-width="1.5"/>' +
         bars +

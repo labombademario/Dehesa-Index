@@ -27,6 +27,7 @@
   function mon(iso, withYear) { var p = iso.split('-'); try { return new Date(Date.UTC(+p[0], +p[1] - 1, +(p[2] || 1))).toLocaleDateString(lang(), withYear ? { month: 'long', year: 'numeric', timeZone: 'UTC' } : { month: 'long', timeZone: 'UTC' }); } catch (e) { return iso; } }
   function day(iso) { var p = iso.split('-'); try { return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).toLocaleDateString(lang(), { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return iso; } }
   function fm(t, m) { return t.replace('{m}', m); }
+  function niceTicks(a, b) { var raw = (b - a) / 3, e = Math.pow(10, Math.floor(Math.log(raw) / Math.LN10)), f = raw / e, st = (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * e, out = [], v = Math.ceil(a / st - 1e-9) * st; for (; v <= b + 1e-9; v += st) out.push(Math.round(v / st) * st); return out; }
   function chart(reps, t) {
     var pts = reps.slice(-24).map(function (r) { return { d: r.inventoryDate, v: r.national.current.onFeedEnd }; });
     if (pts.length < 3) return '';
@@ -36,7 +37,7 @@
     function X(i) { return L + i * (W - L - R) / (pts.length - 1); }
     function Y(v) { return Tp + (mx - v) * (H - Tp - B) / (mx - mn); }
     var path = pts.map(function (p, i) { return (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(p.v).toFixed(1); }).join(' ');
-    var ticks = [mn + pad, (mn + mx) / 2, mx - pad].map(function (v) { return '<g><line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(v).toFixed(1) + '" y2="' + Y(v).toFixed(1) + '" stroke="var(--border)" stroke-width="1"/><text x="' + (L - 6) + '" y="' + (Y(v) + 4).toFixed(1) + '" text-anchor="end" font-size="11" fill="var(--text-faint)">' + esc(nf(Math.round(v / 10) * 10)) + '</text></g>'; }).join('');
+    var ticks = niceTicks(mn, mx).map(function (v) { return '<g><line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(v).toFixed(1) + '" y2="' + Y(v).toFixed(1) + '" stroke="var(--border)" stroke-width="1"/><text x="' + (L - 6) + '" y="' + (Y(v) + 4).toFixed(1) + '" text-anchor="end" font-size="11" fill="var(--text-faint)">' + esc(nf(Math.round(v))) + '</text></g>'; }).join('');
     var first = pts[0], last = pts[pts.length - 1];
     var xl = '<text x="' + L + '" y="' + (H - 6) + '" font-size="11" fill="var(--text-faint)">' + esc(mon(first.d, true)) + '</text><text x="' + (W - R) + '" y="' + (H - 6) + '" text-anchor="end" font-size="11" fill="var(--text-faint)">' + esc(mon(last.d, true)) + '</text>';
     var alt = t.histAlt.replace('{a}', mon(first.d, true)).replace('{x}', nf(first.v)).replace('{b}', mon(last.d, true)).replace('{y}', nf(last.v));

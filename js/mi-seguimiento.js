@@ -40,7 +40,7 @@
   function when(iso) { try { return new Date(iso).toLocaleString(lang(), { dateStyle: 'short', timeStyle: 'short' }); } catch (e) { return iso; } }
   var W = window.DIWatch, IDX = null, CTX = {}, EV = [], ST = { q: '', confirm: '', msg: null };
   var PAGE = { vaca: 'vacuno', harina_soja: 'soja' };
-  function link(c, s) { if (c === 'CB') { var q = s.split('/'); return 'precios-locales.html?s=' + encodeURIComponent(q[0]) + '&c=' + encodeURIComponent(q[1]) + '&id=' + encodeURIComponent(q.slice(2).join('/')); } if (c === 'P') { var p = s.split('/')[0]; return 'producto.html?p=' + encodeURIComponent(PAGE[p] || p); } return 'paises.html?c=' + encodeURIComponent(c) + '&s=' + encodeURIComponent(s); }
+  function link(c, s) { if (c === 'DI') return 'index.html' + (s === 'eu' ? '' : '?ix=' + encodeURIComponent(s)) + '#home-dehesa-index'; if (c === 'CB') { var q = s.split('/'); return 'precios-locales.html?s=' + encodeURIComponent(q[0]) + '&c=' + encodeURIComponent(q[1]) + '&id=' + encodeURIComponent(q.slice(2).join('/')); } if (c === 'P') { var p = s.split('/')[0]; return 'producto.html?p=' + encodeURIComponent(PAGE[p] || p); } return 'paises.html?c=' + encodeURIComponent(c) + '&s=' + encodeURIComponent(s); }
   function fsB(st, approx) { return '<span class="pt-badge pt-fs-' + esc(st) + '">' + esc(t('fs_' + st)) + (approx ? ' ' + esc(t('approx')) : '') + '</span>'; }
   function chg(c) { if (typeof c !== 'number') return ''; return ' <span class="' + (c > 0 ? 'pt-up' : c < 0 ? 'pt-down' : 'pt-flat') + '">' + (c > 0 ? '+' : '') + nf(c, 2) + ' %</span>'; }
   function ci(c, s, per) { var id = W.srcOf && W.srcOf(c, s); return window.DICite && id ? window.DICite.html(id, { period: per }) : ''; }
