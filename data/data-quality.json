@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-05T09:31:04Z",
+ "generatedAt": "2026-10-05T12:33:45Z",
  "summary": {
   "files": 19,
   "errors": 0,
@@ -207,10 +207,10 @@
    "warnings": [],
    "stats": {
     "series": 57,
-    "points": 12271,
+    "points": 12308,
     "lines": 0
    },
-   "generatedAt": "2026-10-01T01:41:52Z",
+   "generatedAt": "2026-10-05T11:42:04Z",
    "info": [
     "AU/au-imp-wheat: salto 0.004 -> 8.944 en 2003-01 (mediana previa 0.013) [KNOWN_VERIFIED_ANOMALY]",
     "AU/au-imp-wheat: salto 8.944 -> 9.325 en 2003-02 (mediana previa 0.013) [KNOWN_VERIFIED_ANOMALY]",
