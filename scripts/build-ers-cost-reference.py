@@ -36,7 +36,11 @@ def main():
             print('omitido', ers, round(sum(costs.values()), 2), total); continue
         out[key] = {'ersCommodity': ers, 'year': year, 'region': 'U.S. total', 'unit': 'USD per planted acre', 'costs': costs, 'totalCostsListed': total,
                     'operatingCosts': line('Operating costs', 'Total, operating costs'), 'yieldBuPerAcre': y, 'priceUsdPerBu': p, 'enterpriseAcres': line('Supporting information', 'Enterprise size'),
-                    'imputed': round(sum(line('Allocated overhead', n) or 0 for n in IMPUTED), 2)}
+                    'imputed': round(sum(line('Allocated overhead', n) or 0 for n in IMPUTED), 2),
+                    # lineas de resultado PUBLICADAS por ERS (no calculadas aqui): valor de la produccion y valor menos costes
+                    'grossValue': line('Gross value of production', 'Total, gross value of production'),
+                    'netOperating': line('Net value', 'Value of production less operating costs'),
+                    'netTotal': line('Net value', 'Value of production less total costs listed')}
     doc = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'sourceIds': ['usda_ers'],
            'doc': 'USDA ERS Commodity Costs and Returns, U.S. total, ultimo ano publicado. Cada partida es la suma de lineas ERS (ver map). La partida rent es el coste de oportunidad de la tierra y parte de labour es mano de obra no remunerada: costes imputados, no desembolsos. Media nacional: no representa ninguna explotacion concreta.',
            'map': MAP, 'imputedLines': IMPUTED, 'crops': out}

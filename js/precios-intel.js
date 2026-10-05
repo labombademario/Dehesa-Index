@@ -60,7 +60,8 @@
   function entryByDashKey(dashKey) { return core().PRODUCT_BY_KEY[dashKey.replace('-', ':')]; }
   function regionFor(entry) {
     var Core = core();
-    return Core.resolveDisplay(entry, Core.getLocation(), Core.getEuCountry()).region;
+    var d = Core.resolveDisplay(entry, Core.getLocation(), Core.getEuCountry());
+    return d.ukGap ? null : d.region; // sin dato propio del mercado elegido: no se usa el europeo
   }
   function seedFor(entry) { return core().seedKeyFor(entry, core().defaultRegionFor(entry)); }
   var REAL_HISTORY_READY = false;

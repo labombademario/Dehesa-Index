@@ -26,7 +26,7 @@ check('price category ids are canonical',prices.includes("['cereales','lacteos',
 check('prices consume verified published observations from the light layer (DIPrices)',prices.includes("global.DIPrices.latest()"));
 check('prices never download data/latest.json or data/history.json at entry',!/fetch\('data\/(latest|history)\.json'/.test(prices) && !/fetch\('data\/(latest|history)\.json'/.test(await read('js/precios-intel.js')));
 check('news come from data/views (no 600 KB blocking script)',!/news-(index|feed)\.js/.test((await read('precios.html'))+(await read('noticias.html'))));
-check('unverified samples never show a value (only verified observations do)',prices.includes("var showValue = !!observation && observation.status === 'verified'"));
+check('unverified samples never show a value (only verified observations do)',/var showValue = (!disp\.ukGap && )?!!observation && observation\.status === 'verified'/.test(prices));
 check('every published observation is applied (no short-circuit some())',!prices.includes('observations.some(applyPublishedObservation)'));
 check('published prices enforce source contract',prices.includes("observationMatchesContract"));
 

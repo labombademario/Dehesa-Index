@@ -82,6 +82,37 @@
     document.addEventListener('click', function (ev) { var ds = document.querySelectorAll('details.di-cite[open]'); for (var i = 0; i < ds.length; i++) if (!ds[i].contains(ev.target)) ds[i].removeAttribute('open'); });
     document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') { var ds = document.querySelectorAll('details.di-cite[open]'); for (var i = 0; i < ds.length; i++) ds[i].removeAttribute('open'); } });
   }
-  var API = { load: load, use: use, html: html, derived: derived, custom: custom, text: text, bind: bind, per: per, entry: entry, _T: T };
+  /* Una cita completa por fuente y bloque: si varias cifras del mismo bloque citan la misma fuente y periodo, la primera
+     conserva el desplegable y las siguientes llevan solo el nombre (cada cifra sigue con su fuente al lado). */
+  function compact(rootEl, blockSel) {
+    if (!rootEl || !rootEl.querySelectorAll) return;
+    var seen = {}, ds = rootEl.querySelectorAll('details.di-cite');
+    if (blockSel) { // un bloque = el elemento mas cercano que case con blockSel (secciones anidadas no se mezclan)
+      var bl = rootEl.querySelectorAll(blockSel);
+      for (var j = 0; j < bl.length; j++) compactOwn(bl[j], blockSel);
+      return;
+    }
+    for (var i = 0; i < ds.length; i++) {
+      var s = ds[i].querySelector('summary'); if (!s) continue;
+      var key = (ds[i].getAttribute('data-src') || '') + '|' + s.textContent.replace(/\s+/g, ' ').trim();
+      if (!seen[key]) { seen[key] = 1; continue; }
+      var sp = document.createElement('span'); sp.className = 'di-cite di-cite-same';
+      sp.textContent = s.textContent.replace('\u24D8', '').replace(/\s+/g, ' ').trim();
+      ds[i].parentNode.replaceChild(sp, ds[i]);
+    }
+  }
+  function compactOwn(block, blockSel) {
+    var seen = {}, ds = block.querySelectorAll('details.di-cite');
+    for (var i = 0; i < ds.length; i++) {
+      if (ds[i].parentNode.closest && ds[i].parentNode.closest(blockSel) !== block) continue;
+      var s = ds[i].querySelector('summary'); if (!s) continue;
+      var key = (ds[i].getAttribute('data-src') || '') + '|' + s.textContent.replace(/\s+/g, ' ').trim();
+      if (!seen[key]) { seen[key] = 1; continue; }
+      var sp = document.createElement('span'); sp.className = 'di-cite di-cite-same';
+      sp.textContent = s.textContent.replace('\u24D8', '').replace(/\s+/g, ' ').trim();
+      ds[i].parentNode.replaceChild(sp, ds[i]);
+    }
+  }
+  var API = { load: load, use: use, html: html, compact: compact, derived: derived, custom: custom, text: text, bind: bind, per: per, entry: entry, _T: T };
   if (typeof module !== 'undefined' && module.exports) module.exports = API; else { root.DICite = API; bind(); }
 })(typeof window !== 'undefined' ? window : this);

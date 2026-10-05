@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-05T00:36:28Z",
+ "generatedAt": "2026-10-05T01:27:06Z",
  "sourceIds": [
   "usda_ers"
  ],
@@ -64,7 +64,10 @@
    "yieldBuPerAcre": 198,
    "priceUsdPerBu": 3.93,
    "enterpriseAcres": 296,
-   "imputed": 221.67
+   "imputed": 221.67,
+   "grossValue": 782.44,
+   "netOperating": 342.33,
+   "netTotal": -102.99
   },
   "soja": {
    "ersCommodity": "soybeans",
@@ -86,7 +89,10 @@
    "yieldBuPerAcre": 58,
    "priceUsdPerBu": 9.76,
    "enterpriseAcres": 374,
-   "imputed": 200.81
+   "imputed": 200.81,
+   "grossValue": 562.15,
+   "netOperating": 317.35,
+   "netTotal": -92.98
   },
   "trigo": {
    "ersCommodity": "wheat",
@@ -108,7 +114,10 @@
    "yieldBuPerAcre": 52,
    "priceUsdPerBu": 5.05,
    "enterpriseAcres": 451,
-   "imputed": 85.18
+   "imputed": 85.18,
+   "grossValue": 269.35,
+   "netOperating": 113.83,
+   "netTotal": -127.06
   },
   "cebada": {
    "ersCommodity": "barley",
@@ -130,7 +139,10 @@
    "yieldBuPerAcre": 68,
    "priceUsdPerBu": 5.28,
    "enterpriseAcres": 282,
-   "imputed": 113.09
+   "imputed": 113.09,
+   "grossValue": 374,
+   "netOperating": 184.66,
+   "netTotal": -123.97
   },
   "avena": {
    "ersCommodity": "oats",
@@ -152,7 +164,10 @@
    "yieldBuPerAcre": 64,
    "priceUsdPerBu": 3.34,
    "enterpriseAcres": 76,
-   "imputed": 156.89
+   "imputed": 156.89,
+   "grossValue": 275.34,
+   "netOperating": 106.08,
+   "netTotal": -217.59
   }
  }
 }

@@ -678,7 +678,7 @@
     var key = entry.catId + ':' + entry.nameKey;
     var disp = resolveDisplay(entry, state.location, state.euCountry);
     var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
-    var observation = trustObservationFor(entry, disp);
+    var observation = disp.ukGap ? null : trustObservationFor(entry, disp);
     var dataState = productDataState(observation);
     var stateLabel = (dataState.label[lang()] || dataState.label.es);
     var fav = isFavorite(key);
@@ -686,7 +686,8 @@
     var foot = entry.product.footnoteKey ? (D.FOOT[lang()] || D.FOOT.es)[entry.product.footnoteKey] : '';
     // Se muestra el valor de toda observación verificada (REAL y NO COMPARABLE); el estado va en la etiqueta.
     // Solo lo pendiente (sin observación verificada) se oculta: nunca se enseña un valor de muestra.
-    var showValue = !!observation && observation.status === 'verified';
+    // Reino Unido / Canada sin cotizacion propia: nunca se ensena el valor europeo en su lugar (regla de cobertura).
+    var showValue = !disp.ukGap && !!observation && observation.status === 'verified';
     var price = showValue ? built.price : '—';
     var unit = showValue ? built.unit : '';
     var change = showValue ? built.changeLabel : '';
@@ -703,7 +704,7 @@
           '</div>' +
         '</div>' +
         (showValue ? quoteBadgeHtml(disp.quoteType) : '') +
-        (global.DehesaDataTrust ? global.DehesaDataTrust.render(entry, disp) : '') +
+        (global.DehesaDataTrust && !disp.ukGap ? global.DehesaDataTrust.render(entry, disp) : '') +
         (showValue ? productCiteHtml(entry, disp, observation) : '') +
         '<div class="di-product-price-row">' +
           '<span class="di-product-price">' + esc(price) + '</span>' +
@@ -711,7 +712,7 @@
           '<span class="di-product-change" style="color:' + (showValue ? built.changeColor : 'var(--text-faint)') + ';">' + esc(change) + '</span>' +
         '</div>' +
         (showValue ? '<svg class="di-product-spark" viewBox="0 0 120 36" preserveAspectRatio="none"><path d="' + built.sparkPath + '" stroke="' + built.sparkColor + '" fill="none" stroke-width="2"/></svg>' : '<div class="di-product-no-value">' + esc(noValueText()) + '</div>') +
-        (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(state.location === 'ca' ? t.caGapNote : t.ukGapNote) + '</div>' : '') +
+        (disp.ukGap ? '<div class="di-uk-gap-note">' + esc(state.location === 'ca' ? t.caGapNote : t.ukGapNote) + ' <a href="precios.html?region=eu&amp;product=' + encodeURIComponent(key) + '">' + esc(({ es: 'Ver en la vista de la UE', en: 'See it in the EU view', fr: 'Voir dans la vue UE', it: 'Vedi nella vista UE' })[lang()] || 'Ver en la vista de la UE') + '</a></div>' : '') +
         relatedNewsHtml(entry) +
         (foot ? '<div class="di-product-footnote">' + esc(foot) + '</div>' : '') +
         (opts.compact ? '' :

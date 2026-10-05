@@ -363,6 +363,7 @@
     document.getElementById('home-cta-secondary').textContent = t.ctaSecondary;
 
     document.getElementById('home-stats').innerHTML = tapeHtml(lang, esc);
+    if (window.DICite && window.DICite.compact) window.DICite.compact(document.getElementById('home-stats'));
 
     document.getElementById('home-movers-title').textContent = t.moversTitle;
     var ms = document.getElementById('home-more-sum'); if (ms) ms.textContent = t.moreData;
@@ -386,6 +387,7 @@
         '<div class="num">' + esc(row.date) + '</div></div>';
     }).join('') : '<div class="di-home-empty">Sin observaciones reales disponibles todavía.</div>';
     document.getElementById('home-movers-table').innerHTML = headRow + bodyRows;
+    if (window.DICite && window.DICite.compact) window.DICite.compact(document.getElementById('home-movers-table'));
 
     document.getElementById('home-cover-title').textContent = t.coverTitle;
     document.getElementById('home-cover-sub').textContent = t.coverSub;

@@ -691,6 +691,49 @@
   }
   function missingCA() { var c = tc(); return Promise.resolve('<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + [c.no_ca1, c.no_ca2, c.no_ca3, c.no_ca4].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'); }
   function missingES() { var t = tr(); return Promise.resolve('<ul style="margin:4px 0 0 18px;padding:0;font-size:14px;line-height:1.5">' + [t.no_es1, t.no_es2, t.no_es3, t.no_es4, t.no_es5].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'); }
+  /* ---------- EE. UU.: proximos informes USDA y margen de referencia ERS ---------- */
+  var TN = {
+    es: { sNext: 'Próximos informes de USDA para este producto', nextNone: 'No hay fechas cargadas de los informes de este producto después de hoy (el calendario cargado llega hasta {d}).', nextNote: 'Fechas del calendario oficial de USDA NASS y del WASDE (hora del este de EE. UU.). USDA puede cambiar una fecha.', cal: 'Calendario completo',
+      sMarg: 'Margen de referencia (USDA ERS, media de EE. UU.)', gv: 'Valor de la producción', mOp: 'Menos costes operativos', mTot: 'Menos costes totales', perAc: 'USD por acre sembrado', impNote: 'Los costes totales incluyen {v} $/acre imputados (coste de oportunidad de la tierra y de la mano de obra no pagada), no desembolsos.', margNote: 'Cifras publicadas por USDA ERS (Commodity Costs and Returns) para el total de EE. UU., año {y}. No son tu estado ni tu explotación: para tu caso, usa la calculadora.', calc: 'Calcular mi margen', margNo: 'ERS no publica una referencia de costes y márgenes para este producto en la tabla cargada.' },
+    en: { sNext: 'Upcoming USDA reports for this product', nextNone: 'No dates loaded for this product’s reports after today (the loaded calendar runs to {d}).', nextNote: 'Dates from the official USDA NASS calendar and the WASDE (US Eastern time). USDA may change a date.', cal: 'Full calendar',
+      sMarg: 'Reference margin (USDA ERS, U.S. average)', gv: 'Value of production', mOp: 'Less operating costs', mTot: 'Less total costs', perAc: 'USD per planted acre', impNote: 'Total costs include {v} $/acre of imputed costs (opportunity cost of land and unpaid labour), not cash outlays.', margNote: 'Figures published by USDA ERS (Commodity Costs and Returns) for the U.S. total, year {y}. They are not your state or your farm: for your case, use the calculator.', calc: 'Calculate my margin', margNo: 'ERS does not publish a cost and return reference for this product in the loaded table.' },
+    fr: { sNext: 'Prochains rapports de l’USDA pour ce produit', nextNone: 'Aucune date chargée pour les rapports de ce produit après aujourd’hui (le calendrier chargé va jusqu’au {d}).', nextNote: 'Dates du calendrier officiel de l’USDA NASS et du WASDE (heure de l’Est des États-Unis). L’USDA peut modifier une date.', cal: 'Calendrier complet',
+      sMarg: 'Marge de référence (USDA ERS, moyenne des États-Unis)', gv: 'Valeur de la production', mOp: 'Moins les coûts opérationnels', mTot: 'Moins les coûts totaux', perAc: 'USD par acre semé', impNote: 'Les coûts totaux incluent {v} $/acre de coûts imputés (coût d’opportunité de la terre et du travail non rémunéré), pas des décaissements.', margNote: 'Chiffres publiés par l’USDA ERS (Commodity Costs and Returns) pour l’ensemble des États-Unis, année {y}. Ce n’est ni votre État ni votre exploitation : pour votre cas, utilisez le calculateur.', calc: 'Calculer ma marge', margNo: 'L’ERS ne publie pas de référence de coûts et de marges pour ce produit dans la table chargée.' },
+    it: { sNext: 'Prossimi rapporti USDA per questo prodotto', nextNone: 'Nessuna data caricata per i rapporti di questo prodotto dopo oggi (il calendario caricato arriva al {d}).', nextNote: 'Date dal calendario ufficiale di USDA NASS e del WASDE (ora della costa est degli USA). L’USDA può cambiare una data.', cal: 'Calendario completo',
+      sMarg: 'Margine di riferimento (USDA ERS, media USA)', gv: 'Valore della produzione', mOp: 'Meno costi operativi', mTot: 'Meno costi totali', perAc: 'USD per acro seminato', impNote: 'I costi totali includono {v} $/acro di costi imputati (costo opportunità della terra e del lavoro non retribuito), non esborsi.', margNote: 'Cifre pubblicate da USDA ERS (Commodity Costs and Returns) per il totale USA, anno {y}. Non sono il tuo stato né la tua azienda: per il tuo caso, usa il calcolatore.', calc: 'Calcola il mio margine', margNo: 'L’ERS non pubblica un riferimento di costi e margini per questo prodotto nella tabella caricata.' }
+  };
+  function tn() { return TN[lang()] || TN.es; }
+  var GRAIN_REL = ['crop-progress', 'crop-production', 'wasde', 'grain-stocks', 'small-grains-summary', 'agricultural-prices'];
+  var USDA_REL = { cattle: ['cattle-on-feed', 'livestock-slaughter', 'wasde', 'agricultural-prices'], hay: ['crop-production', 'agricultural-prices'], corn: GRAIN_REL, soybeans: GRAIN_REL.concat(['fats-oils']), wheat: GRAIN_REL.concat(['flour-milling']), sorghum: GRAIN_REL, barley: GRAIN_REL, oats: GRAIN_REL };
+  var ERS_KEY = { corn: 'maiz', soybeans: 'soja', wheat: 'trigo', barley: 'cebada', oats: 'avena' };
+  function isoToday() { var d = new Date(); return d.getUTCFullYear() + '-' + ('0' + (d.getUTCMonth() + 1)).slice(-2) + '-' + ('0' + d.getUTCDate()).slice(-2); }
+  function dayLabel(iso) { var p = String(iso).split('-'); try { return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).toLocaleDateString(lang(), { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }); } catch (e) { return iso; } }
+  function nextReports(tok) {
+    var x = tn(), ids = USDA_REL[ST.p] || [];
+    return get('data/usda-calendar.json').then(function (d) {
+      var today = isoToday(), last = '';
+      (d.releases || []).forEach(function (r) { if (r.date > last) last = r.date; });
+      var up = (d.releases || []).filter(function (r) { return r.date >= today && ids.indexOf(r.id) >= 0; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+      var seen = {}, list = [];
+      up.forEach(function (r) { if (list.length < 4 && !seen[r.id]) { seen[r.id] = 1; list.push(r); } }); // la proxima fecha de cada informe
+      var h = list.length ? '<ul style="margin:4px 0 6px 18px;padding:0;font-size:14px;line-height:1.6">' + list.map(function (r) { return '<li><b>' + esc(dayLabel(r.date)) + '</b>' + (r.time ? ' · ' + esc(r.time) : '') + ' · ' + esc(r.name) + ' <span class="di-movers-hint">(' + esc(r.agency) + ')</span></li>'; }).join('') + '</ul>'
+        : note(fill(x.nextNone, { d: last ? dayLabel(last) : '–' }));
+      h += note(x.nextNote) + '<p style="margin:4px 0">' + link('calendario.html', x.cal) + '</p>' + cite('usda_nass', '') + (ids.indexOf('wasde') >= 0 ? cite('usda_oce_wasde', '') : '');
+      putSec(tok, 'next', h);
+    });
+  }
+  function ersMargin(tok) {
+    var x = tn(), k = ERS_KEY[ST.p];
+    return get('data/ers-cost-reference.json').then(function (d) {
+      var c = k && d.crops && d.crops[k];
+      if (!c || typeof c.grossValue !== 'number' || typeof c.netOperating !== 'number' || typeof c.netTotal !== 'number') { putSec(tok, 'marg', note(x.margNo)); return; }
+      var sg = function (v) { return (v > 0 ? '+' : v < 0 ? '−' : '') + '$' + nf(Math.abs(v), 0); };
+      var h = '<div class="de-tiles">' + tile(x.gv + ' · ' + c.year, '$' + nf(c.grossValue, 0), esc(x.perAc)) + tile(x.mOp + ' · ' + c.year, sg(c.netOperating), esc(x.perAc)) + tile(x.mTot + ' · ' + c.year, sg(c.netTotal), esc(x.perAc)) + '</div>';
+      if (typeof c.imputed === 'number' && c.imputed > 0) h += note(fill(x.impNote, { v: nf(c.imputed, 0) }));
+      h += note(fill(x.margNote, { y: c.year })) + '<p style="margin:4px 0">' + link('calculadora.html', x.calc) + '</p>' + cite('usda_ers', c.year);
+      putSec(tok, 'marg', h);
+    });
+  }
   function moreLinks() {
     var t = tr(), h = '';
     if (ST.c === 'US') {
@@ -737,7 +780,7 @@
       h += '<p class="di-movers-hint">' + esc(t.saved) + ' <button type="button" class="di-src-tab" data-mm-reset="1">' + esc(t.reset) + '</button></p>';
     }
     if (ST.c === 'US') {
-      h += sect('price', t.sPrice + ' · ' + prodName(ST.p)) + sect('ins', t.sIns) + sect('dr', t.sDrought);
+      h += sect('price', t.sPrice + ' · ' + prodName(ST.p)) + (ERS_KEY[ST.p] ? sect('marg', tn().sMarg) : '') + sect('next', tn().sNext) + sect('ins', t.sIns) + sect('dr', t.sDrought);
     } else if (ST.c === 'CA') {
       h += sect('price', t.sPrice + ' · ' + caProdName(ST.p)) + sect('crop', tc().sProd) + sect('ins', tc().sIns) + sect('dr', tc().sDr);
     } else if (ST.c === 'DE') {
@@ -750,6 +793,8 @@
     var run = function (id, fn) { Promise.resolve().then(fn).catch(function () { failSec(tok, id); }); };
     if (ST.c === 'US') {
       run('price', function () { return ST.p === 'cattle' ? priceCattle(tok) : ST.p === 'hay' ? priceHay(tok) : priceGrain(tok); });
+      if (ERS_KEY[ST.p]) run('marg', function () { return ersMargin(tok); });
+      run('next', function () { return nextReports(tok); });
       run('ins', function () { return insurance(tok); }); run('dr', function () { return drought(tok); });
       if (!COMPACT) run('missing', function () { return locStatus().then(missingUS).then(function (x) { putSec(tok, 'missing', x); }); });
     } else if (ST.c === 'CA') {
