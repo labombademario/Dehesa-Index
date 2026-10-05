@@ -118,13 +118,17 @@ def plc(year, href):
                     "loanRate": loan, "effPrice": eff, "rate": rate, "rateFlag": (str(r[11] or "").strip() or None), "maxRate": mx})
     if len(out) < 10: raise RuntimeError("PLC %s: solo %d cultivos" % (year, len(out)))
     log("PLC", year, len(out), "cultivos", u.rsplit("/", 1)[-1]); return out, (u if u.startswith("http") else Path(u).name)
+def now_s(): return __import__('datetime').datetime.now(__import__('datetime').timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 def main():
     a = sys.argv[1:]; outdir = Path(a[a.index("--outdir") + 1]) if "--outdir" in a else ROOT / "data" / "us-arcplc"
     years = int(a[a.index("--years") + 1]) if "--years" in a else 5
     global FROM
     if "--from-dir" in a: FROM = a[a.index("--from-dir") + 1]
     outdir.mkdir(parents=True, exist_ok=True)
-    arc_l, plc_l = links(); log("enlaces ARC-CO", sorted(arc_l), "PLC", sorted(plc_l))
+    try: arc_l, plc_l = links()
+    except Exception as e:
+        log("la web de la FSA no responde (%s): no se toca ningun dato; se reintenta en la proxima ejecucion" % str(e)[:160]); (outdir / "log.txt").write_text(now_s() + "\n" + "\n".join(LOG) + "\n"); return 0
+    log("enlaces ARC-CO", sorted(arc_l), "PLC", sorted(plc_l))
     last = max(list(arc_l) + list(plc_l) + [0])
     if not last: log("la pagina de la FSA no tiene enlaces reconocibles"); (outdir / "log.txt").write_text("\n".join(LOG) + "\n"); return 1
     want = [y for y in range(last - years + 1, last + 1)]
