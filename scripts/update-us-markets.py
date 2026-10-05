@@ -143,11 +143,27 @@ def fuel(years):
             s["points"] = sorted([k, v] for k, v in seen.items())
     return out
 
+# ---------------- EIA etanol ----------------
+ETH = [("prod_NUS", "W_EPOOXE_YOP_NUS_MBBLD", "kbd"), ("prod_R20", "W_EPOOXE_YOP_R20_MBBLD", "kbd"), ("stocks_NUS", "W_EPOOXE_SAE_NUS_MBBL", "kbbl"), ("stocks_R20", "W_EPOOXE_SAE_R20_MBBL", "kbbl")]
+def ethanol(years):
+    """Produccion de etanol de combustible (miles de barriles al dia) y existencias (miles de barriles), semanal, EE. UU. y Medio Oeste (PADD 2)."""
+    since = (datetime.date.today() - datetime.timedelta(days=365 * years + 14)).isoformat()
+    rows = eia("petroleum/sum/sndw", [s for _, s, _ in ETH], since)
+    by = {s: k for k, s, _ in ETH}; un = {k: u for k, _, u in ETH}; out = {}
+    for r in rows:
+        k = by.get(r.get("series")); v = num(r.get("value"))
+        if not k or v is None: continue
+        out.setdefault(k, {"series": r.get("series"), "name": r.get("series-description"), "unit": un[k], "points": {}})["points"][day(r.get("period"))] = v
+    if "prod_NUS" not in out: raise RuntimeError("EIA etanol sin la produccion de EE. UU.")
+    for s in out.values(): s["points"] = sorted([d0, v] for d0, v in s["points"].items())
+    log("EIA etanol", sorted(out), "ultima", out["prod_NUS"]["points"][-1][0])
+    return {"schemaVersion": 1, "generatedAt": now(), "sourceId": "eia", "series": out}
+
 def main():
     a = sys.argv[1:]; outdir = Path(a[a.index("--outdir") + 1]) if "--outdir" in a else ROOT / "data" / "us-markets"
     years = int(a[a.index("--years") + 1]) if "--years" in a else 5
     outdir.mkdir(parents=True, exist_ok=True); ok = 0
-    for name, fn in (("cot", cot), ("transport", transport), ("fuel", fuel)):
+    for name, fn in (("cot", cot), ("transport", transport), ("fuel", fuel), ("ethanol", ethanol)):
         try:
             doc = fn(years); (outdir / (name + ".json")).write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); ok += 1; log("OK", name)
         except Exception as e: log("FALLO", name, e, "(se conserva el fichero anterior)")

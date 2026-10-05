@@ -4,7 +4,7 @@
 (function () {
   'use strict';
   var T = {
-    es: { h: 'Mercado e insumos de EE. UU.', sub: 'Lo que mueve la base y el coste: posiciones de los fondos, fletes del grano y combustible por región. Datos oficiales semanales.',
+    es: { dem: 'Demanda de maíz y soja', demSub: 'Lo que tira del maíz y la soja dentro y fuera: etanol (EIA), embarques de exportación inspeccionados (USDA AMS) y precio de los créditos de biocombustible RIN (EPA).', eth: 'Etanol de combustible (EIA)', ethP: 'Producción', ethS: 'Existencias', kbd: 'miles de barriles/día', kbbl: 'miles de barriles', avg4: 'Media de 4 semanas', mw: 'Medio Oeste (PADD 2)', chartEth: 'Producción de etanol', h: 'Mercado e insumos de EE. UU.', sub: 'Lo que mueve la base y el coste: posiciones de los fondos, fletes del grano y combustible por región. Datos oficiales semanales.',
       cot: 'Posiciones de los fondos (CFTC)', cotSub: 'Informe Commitments of Traders desagregado, solo futuros, a cierre del martes. «Fondos» son los gestores de dinero (managed money); neto = largos − cortos.',
       mkt: 'Mercado', net: 'Fondos netos', wk: 'Semana', oi: '% de contratos abiertos', rng: 'Rango 3 años', prod: 'Productores netos', contracts: 'contratos', rngH: 'Dónde está la posición neta de esta semana frente a las 156 anteriores: 0 = la más corta, 100 = la más larga (cálculo de Dehesa Index sobre los datos de la CFTC).',
       chartCot: 'Fondos netos', pick: 'Ver', date: 'Fecha',
@@ -15,7 +15,7 @@
       fuel: 'Gasóleo y propano (EIA)', fuelSub: 'Gasóleo de automoción, precio de venta al público (USD por galón, semanal) por región PADD. Propano residencial y mayorista: la EIA solo lo publica en temporada de calefacción (octubre a marzo).',
       area: 'Región', diesel: 'Gasóleo', prop: 'Propano', res: 'Residencial', whs: 'Mayorista', season: 'fuera de temporada: último dato de', chartFuel: 'Gasóleo: EE. UU. y Medio Oeste', usd: 'USD por galón',
       none: 'Sin datos todavía: el primer proceso aún no se ha ejecutado.', src: 'Fuente' },
-    en: { h: 'U.S. markets and inputs', sub: 'What drives basis and costs: fund positioning, grain freight and fuel by region. Official weekly data.',
+    en: { dem: 'Corn and soybean demand', demSub: 'What pulls on corn and soybeans at home and abroad: ethanol (EIA), inspected export shipments (USDA AMS) and biofuel RIN credit prices (EPA).', eth: 'Fuel ethanol (EIA)', ethP: 'Production', ethS: 'Stocks', kbd: 'thousand barrels/day', kbbl: 'thousand barrels', avg4: '4-week average', mw: 'Midwest (PADD 2)', chartEth: 'Ethanol production', h: 'U.S. markets and inputs', sub: 'What drives basis and costs: fund positioning, grain freight and fuel by region. Official weekly data.',
       cot: 'Fund positioning (CFTC)', cotSub: 'Disaggregated Commitments of Traders, futures only, as of Tuesday. "Funds" means managed money; net = long − short.',
       mkt: 'Market', net: 'Funds net', wk: 'Week', oi: '% of open interest', rng: '3-year range', prod: 'Producers net', contracts: 'contracts', rngH: 'Where this week\'s net position sits against the previous 156 weeks: 0 = most short, 100 = most long (Dehesa Index calculation on CFTC data).',
       chartCot: 'Funds net', pick: 'Show', date: 'Date',
@@ -26,7 +26,7 @@
       fuel: 'Diesel and propane (EIA)', fuelSub: 'On-highway diesel retail price (USD per gallon, weekly) by PADD region. Residential and wholesale propane: EIA only publishes it in the heating season (October to March).',
       area: 'Region', diesel: 'Diesel', prop: 'Propane', res: 'Residential', whs: 'Wholesale', season: 'off season: last value from', chartFuel: 'Diesel: U.S. and Midwest', usd: 'USD per gallon',
       none: 'No data yet: the first run has not happened.', src: 'Source' },
-    fr: { h: 'Marchés et intrants des États-Unis', sub: 'Ce qui fait la base et les coûts : positions des fonds, fret du grain et carburant par région. Données officielles hebdomadaires.',
+    fr: { dem: 'Demande de maïs et de soja', demSub: 'Ce qui tire le maïs et le soja, aux États-Unis et à l’export : éthanol (EIA), expéditions inspectées à l’exportation (USDA AMS) et prix des crédits de biocarburant RIN (EPA).', eth: 'Éthanol carburant (EIA)', ethP: 'Production', ethS: 'Stocks', kbd: 'milliers de barils/jour', kbbl: 'milliers de barils', avg4: 'Moyenne sur 4 semaines', mw: 'Midwest (PADD 2)', chartEth: 'Production d’éthanol', h: 'Marchés et intrants des États-Unis', sub: 'Ce qui fait la base et les coûts : positions des fonds, fret du grain et carburant par région. Données officielles hebdomadaires.',
       cot: 'Positions des fonds (CFTC)', cotSub: 'Rapport Commitments of Traders désagrégé, contrats à terme seuls, au mardi. « Fonds » = gestionnaires de fonds (managed money) ; net = acheteurs − vendeurs.',
       mkt: 'Marché', net: 'Fonds nets', wk: 'Semaine', oi: '% des positions ouvertes', rng: 'Fourchette 3 ans', prod: 'Producteurs nets', contracts: 'contrats', rngH: 'Position nette de la semaine face aux 156 précédentes : 0 = la plus vendeuse, 100 = la plus acheteuse (calcul de Dehesa Index sur les données de la CFTC).',
       chartCot: 'Fonds nets', pick: 'Voir', date: 'Date',
@@ -37,7 +37,7 @@
       fuel: 'Gazole et propane (EIA)', fuelSub: 'Gazole routier, prix à la pompe (USD par gallon, hebdomadaire) par région PADD. Propane résidentiel et de gros : l’EIA ne le publie qu’en saison de chauffage (octobre à mars).',
       area: 'Région', diesel: 'Gazole', prop: 'Propane', res: 'Résidentiel', whs: 'Gros', season: 'hors saison : dernière donnée du', chartFuel: 'Gazole : États-Unis et Midwest', usd: 'USD par gallon',
       none: 'Pas encore de données : le premier traitement n’a pas encore tourné.', src: 'Source' },
-    it: { h: 'Mercati e input degli USA', sub: 'Ciò che muove base e costi: posizioni dei fondi, noli del grano e carburante per regione. Dati ufficiali settimanali.',
+    it: { dem: 'Domanda di mais e soia', demSub: 'Ciò che traina mais e soia in patria e all’estero: etanolo (EIA), spedizioni all’export ispezionate (USDA AMS) e prezzo dei crediti di biocarburante RIN (EPA).', eth: 'Etanolo carburante (EIA)', ethP: 'Produzione', ethS: 'Scorte', kbd: 'migliaia di barili/giorno', kbbl: 'migliaia di barili', avg4: 'Media di 4 settimane', mw: 'Midwest (PADD 2)', chartEth: 'Produzione di etanolo', h: 'Mercati e input degli USA', sub: 'Ciò che muove base e costi: posizioni dei fondi, noli del grano e carburante per regione. Dati ufficiali settimanali.',
       cot: 'Posizioni dei fondi (CFTC)', cotSub: 'Rapporto Commitments of Traders disaggregato, solo futures, al martedì. «Fondi» = gestori di fondi (managed money); netto = lunghi − corti.',
       mkt: 'Mercato', net: 'Fondi netti', wk: 'Settimana', oi: '% dei contratti aperti', rng: 'Intervallo 3 anni', prod: 'Produttori netti', contracts: 'contratti', rngH: 'Dove si colloca la posizione netta della settimana rispetto alle 156 precedenti: 0 = la più corta, 100 = la più lunga (calcolo di Dehesa Index sui dati CFTC).',
       chartCot: 'Fondi netti', pick: 'Mostra', date: 'Data',
@@ -158,14 +158,30 @@
       '<h4 class="usm-h4">' + esc(x.prop) + ' · ' + esc(x.usd) + (off ? ' · ' + esc(x.season) + ' ' + esc(day(lp[0])) : '') + '</h4>' + table([x.area, x.res, x.whs, x.date], prow, 460) + cite('eia', us ? day(lastOf(us)[0]) : '');
     return card('usm-fuel', x.fuel, x.fuelSub, body);
   }
+  /* ---------- demanda: etanol (EIA), inspecciones de exportación (AMS) y RIN (EPA) ---------- */
+  function avgN(p, i, n) { if (i - n + 1 < 0) return null; var s = 0; for (var j = i - n + 1; j <= i; j++) s += p[j][1]; return s / n; }
+  function ethHtml(d) {
+    var x = t(); if (!d || !d.series || !d.series.prod_NUS) return '';
+    var S = d.series, rows = [];
+    [['prod_NUS', x.ethP + ' · ' + L(AREA.NUS), x.kbd], ['prod_R20', x.ethP + ' · ' + x.mw, x.kbd], ['stocks_NUS', x.ethS + ' · ' + L(AREA.NUS), x.kbbl], ['stocks_R20', x.ethS + ' · ' + x.mw, x.kbbl]].forEach(function (z) {
+      var s = S[z[0]]; if (!s || !s.points.length) return; var p = s.points, i = p.length - 1, a = p[i], b = p[i - 1], c = back(p, i, 364), a4 = avgN(p, i, 4), ci = c ? p.indexOf(c) : -1, c4 = ci >= 3 ? avgN(p, ci, 4) : null;
+      rows.push([esc(z[1]) + ' <span style="color:var(--text-faint)">(' + esc(z[2]) + ')</span>', nf(a[1], 0), chg(pctChg(a[1], b && b[1])), a4 != null ? nf(a4, 0) : '—', chg(pctChg(a4, c4)), esc(day(a[0]))]);
+    });
+    var pr = S.prod_NUS.points, ser = [{ name: L(AREA.NUS), color: '#5b7f2a', pts: pr.map(function (q) { return { x: ts(q[0]), y: q[1], l: day(q[0]) }; }) }];
+    return '<h4 class="usm-h4">' + esc(x.eth) + '</h4>' + table(['', x.now, x.vsW, x.avg4, x.vsY, x.date], rows, 620) + chart(ser, x.kbd, x.chartEth, false, 0) + cite('eia', day(pr[pr.length - 1][0]));
+  }
+  function demHtml(eth, insp, rin) {
+    var x = t(), body = ethHtml(eth) + (window.DehesaUsMarketDemand ? window.DehesaUsMarketDemand(insp, rin, { t: x, esc: esc, nf: nf, table: table, chart: chart, cite: cite, day: day, ts: ts, chg: chg, pctChg: pctChg, back: back, L: L }) : '');
+    return body ? card('usm-dem', x.dem, x.demSub, body) : '';
+  }
   /* ---------- montaje ---------- */
-  function sectorOf(id) { return id === 'usm-tr' ? 'agri' : 'common'; }
+  function sectorOf(id) { return id === 'usm-tr' || id === 'usm-dem' ? 'agri' : 'common'; }
   function render(el, opts) {
     if (!el) return Promise.resolve(); opts = opts || {}; var x = t();
     el.innerHTML = '<p class="di-movers-hint" role="status">…</p>';
-    return Promise.all([get('cot'), get('transport'), get('fuel')]).then(function (r) {
+    return Promise.all([get('cot'), get('transport'), get('fuel'), get('ethanol'), get('inspections'), get('rin')]).then(function (r) {
       if (!r[0] && !r[1] && !r[2]) { el.innerHTML = ''; return; }
-      var parts = [['usm-cot', cotHtml(r[0])], ['usm-tr', trHtml(r[1])], ['usm-fuel', fuelHtml(r[2])]], SEC = window.DehesaSector, shown = [], folded = [];
+      var parts = [['usm-cot', cotHtml(r[0])], ['usm-tr', trHtml(r[1])], ['usm-dem', demHtml(r[3], r[4], r[5])], ['usm-fuel', fuelHtml(r[2])]].filter(function (p) { return p[1]; }), SEC = window.DehesaSector, shown = [], folded = [];
       parts.forEach(function (p) { (opts.sector && SEC && !SEC.visible(sectorOf(p[0])) ? folded : shown).push(p[1]); });
       el.innerHTML = '<section class="usm" style="margin-top:18px"><h2 class="cof-h2" style="margin:0 0 4px">' + esc(x.h) + '</h2><p class="di-movers-hint" style="margin:0">' + esc(x.sub) + '</p>' + shown.join('') + (folded.length ? SEC.foldHtml(folded.length, folded.join('')) : '') + '</section>';
       Array.prototype.forEach.call(el.querySelectorAll('[data-cot]'), function (b) { b.onclick = function () { SEL.cot = b.getAttribute('data-cot'); render(el, opts).then(function () { var c = document.getElementById('usm-cot'); if (c && c.scrollIntoView) c.scrollIntoView({ block: 'nearest' }); }); }; });
