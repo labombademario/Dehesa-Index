@@ -28,7 +28,13 @@ Countries with profiles: Spain, France, Germany, Belgium, Austria, Portugal, Den
 
 ## How it works
 
-- `scripts/update-*.py|js` fetch and normalise one source each and write to `data/` (about 60 scripts, 46 workflows in `.github/workflows/`, most generated from `sources.yml`).
+- `scripts/update-*.py|js` fetch and normalise one source each and write to `data/`; most workflows are generated from `sources.yml`. Figures:
+<!-- status:start (generado por scripts/build-readme-status.py; no editar) -->
+- 84 data pipelines (`update-*.yml`, 84 source scripts `scripts/update-*`) plus 89 workflows in total in `.github/workflows/`; the pipeline-status report tracks 84 of them.
+- 123 JSON schemas in `schemas/`; licence registry: 66 sources, 93 data files.
+- Catalogue: 41 entities (31 countries, 7 aggregates, 3 regions) and more than 6500 series.
+- Live pipeline state (OK, late, error, not run) and coverage gaps are not copied here: see [`status.html`](https://dehesaindex.com/status.html), built from `data/pipeline-status.json` and `data/coverage-gaps.json`.
+<!-- status:end -->
 - All data workflows share the concurrency group `dehesa-data-writes` so they commit one at a time. Each writes a `*-log.txt` next to its output.
 - Country files share one schema: `{ schemaVersion, generatedAt, countries: { XX: { name, source, extend?, series: [{ id, group, label, unit, frequency, latestPeriod, latest, changePct, points }] } } }`. `js/country-data.js` loads and merges them; `js/paises.js` renders the explorer and `js/perfil-pais.js` the profiles.
 - Only real series published by each source are shown: nothing is estimated or filled in. Licences and citations are in `legal.html` and `metodologia.html`.
@@ -37,7 +43,7 @@ Countries with profiles: Spain, France, Germany, Belgium, Austria, Portugal, Den
 ## Quality checks
 
 ```
-python3 scripts/validate-data.py --all --no-report   # 50 schemas + semantic tests + consistency
+python3 scripts/validate-data.py --all --no-report   # all schemas + semantic tests + consistency
 python3 scripts/test-contracts.py                    # corrupted real data must be rejected
 python3 scripts/check-licenses.py && python3 scripts/check-catalog.py --strict
 node scripts/qa-site.mjs && node scripts/qa-navigation.mjs && node scripts/qa-seo.mjs
