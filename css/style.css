@@ -1866,3 +1866,17 @@ details.di-eu-country-hint>summary{cursor:pointer;min-height:32px;display:inline
   #pr-search-wrap{margin:10px 0}
 }
 .pr-flow>#di-related{order:99}
+/* PAC en la UE (js/pac-eu.js) */
+.pac-eu-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 12px; }
+.pac-eu-bl { font-size: 13px; color: var(--text-tertiary); margin-right: 4px; }
+.pac-eu-bar a.di-src-tab { text-decoration: none; display: inline-block; }
+.pac-eu-bar a.di-src-tab[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.pac-eu-h2 { font-size: 17px; margin: 20px 0 8px; }
+.pac-bar-c { width: 22%; min-width: 60px; }
+.pac-bar { display: block; height: 8px; border-radius: 4px; background: var(--accent); }
+.pac-eu-all { margin: 12px 0; }
+.pac-eu-all > summary, .pac-eu-esbox > summary { cursor: pointer; font-weight: 600; }
+.pac-eu-esbox { padding: 10px 16px; margin: 0 0 14px; }
+.pac-eu-esbox[open] > summary { margin-bottom: 10px; }
+@media (max-width: 640px) { .pac-bar-c { display: none; } }
+@media (max-width: 640px) { .pac-eu-bar { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; } .pac-eu-bar a.di-src-tab { flex: 0 0 auto; } }

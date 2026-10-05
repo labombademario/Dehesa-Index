@@ -426,7 +426,9 @@
     [['mi-mercado.html?c=ES', t.lMi]].forEach(function (l) { h += '<a href="' + l[0] + '" style="display:inline-block;margin:3px 8px 3px 0;padding:4px 12px;border:1px solid var(--border);border-radius:14px;font-size:13px">' + esc(l[1]) + '</a>'; });
     return h + '</p>';
   }
+  function notES() { return !!(window.DehesaPacEU && window.DehesaPacEU.country !== 'ES'); }   // js/pac-eu.js pinta la vista UE / otros países
   function draw() {
+    if (notES()) return;
     var t = tr(), tok = ++TOK;
     document.getElementById('pac-h1').textContent = t.title; document.getElementById('pac-sub').textContent = t.sub; document.title = t.title + ' | Dehesa Index';
     if (!DATA) { root.innerHTML = note(t.err); return; }
@@ -463,6 +465,7 @@
   }
 
   function boot() {
+    if (notES()) return;
     Promise.all([get('amounts.json'), get('rules.json'), get('watch.json')]).then(function (r) { DATA = { amounts: r[0], rules: r[1], watch: r[2] }; readSaved(); draw(); }, function () { DATA = null; draw(); });
   }
   if (window.DehesaShared) { window.DehesaShared.init('tools'); var prevL = window.DehesaShared.onLangChange; window.DehesaShared.onLangChange = function () { if (prevL) prevL.apply(this, arguments); draw(); }; }
