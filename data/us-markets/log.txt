@@ -1,0 +1,19 @@
+2026-10-05T17:36:17Z
+CFTC 002602 corn 262 semanas, ultima 2026-09-29
+CFTC 005602 soybeans 262 semanas, ultima 2026-09-29
+CFTC 026603 soymeal 262 semanas, ultima 2026-09-29
+CFTC 007601 soyoil 262 semanas, ultima 2026-09-29
+CFTC 001602 wheat_srw 262 semanas, ultima 2026-09-29
+CFTC 001612 wheat_hrw 262 semanas, ultima 2026-09-29
+CFTC 057642 live_cattle 262 semanas, ultima 2026-09-29
+CFTC 061641 feeder_cattle 262 semanas, ultima 2026-09-29
+CFTC 054642 lean_hogs 262 semanas, ultima 2026-09-29
+OK cot
+AgTransport indicadores 263 semanas, ultima 2026-09-30
+AgTransport barcaza % tarifa 7 tramos
+AgTransport barcaza USD/t 26 tramos
+OK transport
+EIA gasoleo 11 areas, ultima 2026-09-28
+EIA propano residential 46 areas
+EIA propano wholesale 33 areas
+OK fuel

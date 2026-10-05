@@ -126,6 +126,21 @@
       nlcrops: 'Seminativi', nlcropsSub: 'Superficie e produzione per coltura nella provincia (CBS). La superficie dell’anno in corso può essere pubblicata prima della produzione.', openDe: 'Vedi la scheda Germania: terreni, produzione e margine per Land', shareNl: 'Quota dei Paesi Bassi', nlfarms: 'Aziende e bestiame', nlfarmsSub: 'Censimento agricolo della provincia (CBS), ultimo anno pubblicato di ogni variabile.', varL: 'Variabile', valL: 'Valore', yearL2: 'Anno' }
   };
 
+  var T2 = {
+    es: { usfuel: 'Gasóleo y propano', usFuelSub: 'Gasóleo de automoción (precio de venta al público, USD por galón) del estado si la EIA lo publica y de su región PADD; propano residencial y mayorista del estado (solo en temporada de calefacción, de octubre a marzo).',
+      usarc: 'ARC/PLC: tasas de pago por condado', usArcSub: 'Tasa de pago ARC-CO de cada condado en dólares por acre base, tal como la publica la FSA (no son los dólares pagados: el pago se aplica al 85 % de los acres base y puede reducirse por el secuestro presupuestario). PLC tiene una tasa nacional por unidad de producto.',
+      arcCrop: 'Cultivo', arcN: 'condados', arcPay: 'con pago', arcMax: 'tasa máxima', arcRate: 'Tasa ARC-CO', arcBm: 'Ingreso de referencia', arcAct: 'Ingreso real', arcGuar: 'Ingreso garantizado', perBase: 'USD por acre base', plcT: 'PLC: tasa nacional de pago por unidad', plcRate: 'Tasa PLC', plcRef: 'Precio de referencia efectivo', plcMya: 'Precio medio de campaña', unitL: 'Unidad', flagP: 'proyectado', flagF: 'final', county2: 'Condado', arcType: { Irrigated: 'regadío', Nonirrigated: 'secano', 'Non-Irrigated': 'secano' }, arcNone: 'La FSA aún no ha publicado tasas para esta campaña.' },
+    en: { usfuel: 'Diesel and propane', usFuelSub: 'On-highway diesel retail price (USD per gallon) for the state where EIA publishes it and for its PADD region; residential and wholesale propane for the state (heating season only, October to March).',
+      usarc: 'ARC/PLC: payment rates by county', usArcSub: 'ARC-CO payment rate for each county in dollars per base acre, as published by FSA (not dollars paid: payments apply to 85% of base acres and may be reduced by sequestration). PLC has one national rate per unit.',
+      arcCrop: 'Crop', arcN: 'counties', arcPay: 'with payment', arcMax: 'highest rate', arcRate: 'ARC-CO rate', arcBm: 'Benchmark revenue', arcAct: 'Actual revenue', arcGuar: 'Guarantee revenue', perBase: 'USD per base acre', plcT: 'PLC: national payment rate per unit', plcRate: 'PLC rate', plcRef: 'Effective reference price', plcMya: 'Marketing-year average price', unitL: 'Unit', flagP: 'projected', flagF: 'final', county2: 'County', arcType: { Irrigated: 'irrigated', Nonirrigated: 'non-irrigated', 'Non-Irrigated': 'non-irrigated' }, arcNone: 'FSA has not published rates for this program year yet.' },
+    fr: { usfuel: 'Gazole et propane', usFuelSub: 'Gazole routier (prix à la pompe, USD par gallon) de l’État quand l’EIA le publie et de sa région PADD ; propane résidentiel et de gros de l’État (seulement en saison de chauffage, d’octobre à mars).',
+      usarc: 'ARC/PLC : taux de paiement par comté', usArcSub: 'Taux de paiement ARC-CO de chaque comté en dollars par acre de base, tel que publié par la FSA (ce ne sont pas les dollars versés : le paiement porte sur 85 % des acres de base et peut être réduit par le séquestre budgétaire). Le PLC a un taux national par unité.',
+      arcCrop: 'Culture', arcN: 'comtés', arcPay: 'avec paiement', arcMax: 'taux maximal', arcRate: 'Taux ARC-CO', arcBm: 'Revenu de référence', arcAct: 'Revenu réel', arcGuar: 'Revenu garanti', perBase: 'USD par acre de base', plcT: 'PLC : taux national de paiement par unité', plcRate: 'Taux PLC', plcRef: 'Prix de référence effectif', plcMya: 'Prix moyen de campagne', unitL: 'Unité', flagP: 'projeté', flagF: 'définitif', county2: 'Comté', arcType: { Irrigated: 'irrigué', Nonirrigated: 'non irrigué', 'Non-Irrigated': 'non irrigué' }, arcNone: 'La FSA n’a pas encore publié de taux pour cette campagne.' },
+    it: { usfuel: 'Gasolio e propano', usFuelSub: 'Gasolio per autotrazione (prezzo al dettaglio, USD per gallone) dello Stato se l’EIA lo pubblica e della sua regione PADD; propano residenziale e all’ingrosso dello Stato (solo nella stagione di riscaldamento, ottobre-marzo).',
+      usarc: 'ARC/PLC: tassi di pagamento per contea', usArcSub: 'Tasso di pagamento ARC-CO di ogni contea in dollari per acro di base, come lo pubblica la FSA (non sono i dollari pagati: il pagamento si applica all’85% degli acri di base e può essere ridotto dal sequestro di bilancio). Il PLC ha un tasso nazionale per unità.',
+      arcCrop: 'Coltura', arcN: 'contee', arcPay: 'con pagamento', arcMax: 'tasso massimo', arcRate: 'Tasso ARC-CO', arcBm: 'Ricavo di riferimento', arcAct: 'Ricavo effettivo', arcGuar: 'Ricavo garantito', perBase: 'USD per acro di base', plcT: 'PLC: tasso nazionale di pagamento per unità', plcRate: 'Tasso PLC', plcRef: 'Prezzo di riferimento effettivo', plcMya: 'Prezzo medio di campagna', unitL: 'Unità', flagP: 'previsto', flagF: 'definitivo', county2: 'Contea', arcType: { Irrigated: 'irriguo', Nonirrigated: 'non irriguo', 'Non-Irrigated': 'non irriguo' }, arcNone: 'La FSA non ha ancora pubblicato i tassi per questa campagna.' }
+  };
+  Object.keys(T2).forEach(function (l) { var x = T[l]; if (!x) return; Object.keys(T2[l]).forEach(function (k) { x[k] = T2[l][k]; }); });
   Object.keys(T).forEach(function (l) { var x = T[l]; x.usprices = x.usPr; x.usstocks = x.usSt; x.usslaughter = x.usSl; x.usdairy = x.usDa; x.usland = x.usLand; x.usincome = x.usIn; x.uscensus = x.usCe; });   // títulos de los bloques para el índice
   window.DehesaRegionMore = function (H) {
     var get = H.get, card = H.card, cite = H.cite, table = H.table, nf = H.nf, esc = H.esc, tt = H.tt, day = H.day, pct = H.pct, dec = H.dec;
@@ -396,11 +411,52 @@
         return card(t.usIn, t.usInSub, table([''].concat(ys), rows, 520), cite('usda_ers', ys[ys.length - 1]));
       });
     }
+    /* Gasóleo por región PADD y propano del estado (js/us-market.js se baja solo aquí) */
+    function usFuel(x) {
+      if (x.r === 'US') return Promise.resolve(null);
+      var need = window.DehesaUsMarket ? Promise.resolve() : new Promise(function (ok) { var e = document.createElement('script'); e.src = 'js/us-market.js'; e.onload = ok; e.onerror = ok; document.head.appendChild(e); });
+      return need.then(function () { return window.DehesaUsMarket ? window.DehesaUsMarket.stateHtml(x.r) : null; }).then(function (o) { var t = tt(); return o && o.html ? card(t.usfuel, t.usFuelSub, o.html, '') : null; });
+    }
+    var FSA_CROP = { corn: 'Maíz|Corn|Maïs|Mais', soybeans: 'Soja|Soybeans|Soja|Soia', wheat: 'Trigo|Wheat|Blé|Frumento', barley: 'Cebada|Barley|Orge|Orzo', oats: 'Avena|Oats|Avoine|Avena',
+      'grain sorghum': 'Sorgo grano|Grain sorghum|Sorgho grain|Sorgo da granella', peanuts: 'Cacahuete|Peanuts|Arachide|Arachidi', 'seed cotton': 'Algodón en semilla|Seed cotton|Coton graine|Cotone in seme',
+      canola: 'Canola|Canola|Canola|Canola', sunflowers: 'Girasol|Sunflowers|Tournesol|Girasole', 'sunflower seed': 'Pipa de girasol|Sunflower seed|Graine de tournesol|Seme di girasole', 'dry peas': 'Guisantes secos|Dry peas|Pois secs|Piselli secchi',
+      lentils: 'Lentejas|Lentils|Lentilles|Lenticchie', 'large chickpeas': 'Garbanzo grande|Large chickpeas|Gros pois chiches|Ceci grandi', 'small chickpeas': 'Garbanzo pequeño|Small chickpeas|Petits pois chiches|Ceci piccoli',
+      flaxseed: 'Linaza|Flaxseed|Graine de lin|Seme di lino', 'long grain rice': 'Arroz de grano largo|Long grain rice|Riz long|Riso a grana lunga', 'medium grain rice': 'Arroz de grano medio|Medium grain rice|Riz moyen|Riso a grana media',
+      'temperate japonica rice': 'Arroz japónica templado|Temperate japonica rice|Riz japonica tempéré|Riso japonica temperato', safflower: 'Cártamo|Safflower|Carthame|Cartamo', 'mustard seed': 'Semilla de mostaza|Mustard seed|Graine de moutarde|Seme di senape',
+      rapeseed: 'Colza|Rapeseed|Colza|Colza', 'rice (long grain)': 'Arroz de grano largo|Long grain rice|Riz long|Riso a grana lunga', 'rice (med/short grain)': 'Arroz de grano medio y corto|Medium/short grain rice|Riz moyen et rond|Riso a grana media e corta', 'rice (temperate japonica)': 'Arroz japónica templado|Temperate japonica rice|Riz japonica tempéré|Riso japonica temperato', crambe: 'Crambe|Crambe|Crambe|Crambe', 'sesame seed': 'Sésamo|Sesame seed|Sésame|Sesamo' };
+    function fsaCrop(c) { var v = FSA_CROP[String(c).toLowerCase().replace(/\s+\d\/$/, '').trim()]; return v ? L(v) : c; }
+    /* ARC-CO por condado (FSA): tasas por acre base tal como se publican; el resumen por cultivo (condados con pago, tasa máxima) se cuenta aquí */
+    function usArc(x) {
+      if (x.r === 'US') return Promise.resolve(null);
+      return Promise.all([get('data/us-arcplc/' + x.r + '.json'), get('data/us-arcplc/national.json')]).then(function (a) {
+        var D = a[0], N = a[1], t = tt(); if (!D || !D.counties) return null;
+        var crops = {}, years = (D.years || []).slice().sort();
+        Object.keys(D.counties).forEach(function (f) { var c = D.counties[f]; Object.keys(c.crops).forEach(function (k) { var e = c.crops[k]; (crops[k] = crops[k] || { e: e, rows: [] }).rows.push({ name: c.name, y: e.years }); }); });
+        var Y = null; years.slice().reverse().some(function (y) { var any = Object.keys(crops).some(function (k) { return crops[k].rows.some(function (r) { return r.y[y] && r.y[y].rate != null; }); }); if (any) Y = y; return any; });
+        var body = '';
+        if (Y) {
+          var y0 = String(+Y - 1), list = Object.keys(crops).map(function (k) { var c = crops[k], rs = c.rows.filter(function (r) { return r.y[Y] && r.y[Y].rate != null; }); return { k: k, c: c, rs: rs, paid: rs.filter(function (r) { return r.y[Y].rate > 0; }).length, mx: rs.reduce(function (m, r) { return Math.max(m, r.y[Y].rate); }, 0) }; })
+            .filter(function (z) { return z.rs.length; }).sort(function (p, q) { return q.rs.length - p.rs.length; });
+          body += '<p class="di-movers-hint" style="margin:0 0 8px">' + esc(H.yearWord()) + ' ' + esc(Y) + ' · ' + esc(t.perBase) + '</p>' + list.map(function (z) {
+            var e = z.c.e, lab = fsaCrop(e.crop) + (e.type && e.type !== 'All' ? ' (' + ((t.arcType || {})[e.type] || e.type) + ')' : '') + (e.sub ? ' · ' + e.sub : '');
+            var rows = z.rs.slice().sort(function (p, q) { return q.y[Y].rate - p.y[Y].rate || (p.name < q.name ? -1 : 1); }).map(function (r) { var v = r.y[Y], w = r.y[y0]; return [esc(r.name), nf(v.rate, 2), w && w.rate != null ? nf(w.rate, 2) : '—', v.bmRev != null ? nf(v.bmRev, 2) : '—', v.actRev != null ? nf(v.actRev, 2) : '—']; });
+            return '<details class="usm-more"><summary>' + esc(lab) + ' — ' + z.rs.length + ' ' + esc(t.arcN) + ', ' + z.paid + ' ' + esc(t.arcPay) + (z.paid ? ', ' + esc(t.arcMax) + ' ' + nf(z.mx, 2) : '') + '</summary>' + table([t.county2, t.arcRate + ' ' + Y, t.arcRate + ' ' + y0, t.arcBm + ' ' + Y, t.arcAct + ' ' + Y], rows, 560) + '</details>';
+          }).join('');
+        } else body += '<p class="di-movers-hint">' + esc(t.arcNone) + '</p>';
+        var P = N && N.plc, py = P ? Object.keys(P).sort().slice(-3) : [];
+        if (py.length) {
+          var names = {}; py.forEach(function (y) { P[y].forEach(function (r) { names[r.crop] = r.unit; }); });
+          var pr = Object.keys(names).map(function (c) { return [esc(fsaCrop(c)), esc(names[c])].concat(py.map(function (y) { var r = P[y].filter(function (q) { return q.crop === c; })[0]; return !r || r.rate == null ? '—' : nf(r.rate, r.rate < 1 ? 4 : 2) + (r.rateFlag === 'P' ? ' <span style="color:var(--text-faint)">(' + esc(t.flagP) + ')</span>' : ''); })); });
+          body += '<details class="usm-more"><summary>' + esc(t.plcT) + ' (' + pr.length + ')</summary>' + table([t.arcCrop, t.unitL].concat(py.map(function (y) { return t.plcRate + ' ' + y; })), pr, 560) + '</details>';
+        }
+        return card(t.usarc, t.usArcSub, body, cite('usda_fsa', Y || ''));
+      });
+    }
     var C = function (k, fn) { return [k, fn]; };
     return {
-      T: T, us: { usprices: usPrices, usstocks: usStocks, usslaughter: usSlaughter, usdairy: usDairy, usland: usLand, usincome: usIncome, uscensus: usCensus },
+      T: T, us: { usprices: usPrices, usstocks: usStocks, usslaughter: usSlaughter, usdairy: usDairy, usland: usLand, usincome: usIncome, uscensus: usCensus, usarc: usArc, usfuel: usFuel },
       mods: {
-        US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usincome', usIncome), C('uscensus', usCensus), C('ins', usIns), C('clim', clim)],
+        US: [C('usprices', usPrices), C('usstocks', usStocks), C('usslaughter', usSlaughter), C('usdairy', usDairy), C('local', usLocal), C('usland', usLand), C('usarc', usArc), C('usfuel', usFuel), C('usincome', usIncome), C('uscensus', usCensus), C('ins', usIns), C('clim', clim)],
         CA: [C('mb', caMb), C('insca', caIns), C('clim', clim)],
         ES: [C('escrops', esCrops), C('eslv', esLive), C('essl', esSlaughter), C('esmilk', esMilk), C('clim', clim)],
         FR: [C('vig', frVig), C('cere', frCere), C('clim', clim)],
@@ -409,7 +465,7 @@
         AT: [C('clim', clim)], IT: [C('clim', clim)], AU: [C('clim', clim)], BE: [C('clim', clim)], DK: [C('clim', clim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»
-      optional: { clim: 1, mb: 1, local: 1, cere: 1, deland: 0, usslaughter: 1, usdairy: 1, usstocks: 1, usprices: 1 }
+      optional: { clim: 1, mb: 1, local: 1, cere: 1, deland: 0, usslaughter: 1, usdairy: 1, usstocks: 1, usprices: 1, usarc: 1, usfuel: 1 }
     };
   };
 })();

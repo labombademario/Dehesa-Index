@@ -6,7 +6,7 @@
   "ok": 84,
   "late": 0,
   "error": 1,
-  "not_run": 2,
+  "not_run": 4,
   "unknown": 0
  },
  "global": "error",
@@ -2884,6 +2884,42 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-us-markets.yml",
+   "name": "Update US market and input data (CFTC Commitments of Traders, USDA AMS grain transportation, EIA regional diesel and propane)",
+   "crons": [
+    "10 22 * * 1-5"
+   ],
+   "nextRun": "2026-10-05T22:10:00Z",
+   "files": [
+    {
+     "path": "data/us-markets/cot.json",
+     "lastChange": null
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 72.0
+  },
+  {
+   "workflow": "update-us-arcplc.yml",
+   "name": "Update US ARC-CO county payment rates and PLC rates (USDA FSA)",
+   "crons": [
+    "35 6 3,17 * *"
+   ],
+   "nextRun": "2026-10-17T06:35:00Z",
+   "files": [
+    {
+     "path": "data/us-arcplc/index.json",
+     "lastChange": null
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 408.0
   }
  ]
 }

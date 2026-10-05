@@ -47,21 +47,6 @@
         { value: '4', label: 'mercados de precios — EE. UU., Europa, Reino Unido y Canadá' },
         { value: 'Diario', label: 'ritmo de actualización' }
       ],
-      coverTitle: 'Qué cubrimos',
-      coverSub: 'Once categorías clave de la agricultura, con precios de referencia de ambos lados del Atlántico.',
-      categories: [
-        { label: 'Cereales', items: 'Maíz · Trigo · Arroz', desc: 'Precios de USDA NASS y de la Comisión Europea (Agri-food), en la misma unidad.' },
-        { label: 'Lácteos', items: 'Leche', desc: 'Precios USDA NASS frente a referencias de la Comisión Europea.' },
-        { label: 'Ganado', items: 'Vaca · Cabra', desc: 'Cotizaciones CME Group y lonjas europeas, en pie y en canal.' },
-        { label: 'Porcino', items: 'Cerdo', desc: 'Referencia de porcino blanco de EE. UU. y la UE, más Mercolleida como lonja española.' },
-        { label: 'Ovino', items: 'Cordero', desc: 'Precios de cordero en EE. UU. y referencias de canal en la Unión Europea.' },
-        { label: 'Avicultura', items: 'Huevos · Pollo', desc: 'Precios de huevo y pollo en EE. UU. y la Unión Europea.' },
-        { label: 'Pienso', items: 'Pienso compuesto · Harina de soja', desc: 'Índices de referencia de EE. UU. y la UE para el coste de alimentación.' },
-        { label: 'Fertilizantes', items: 'Urea · DAP · Potasa', desc: 'DTN Fertilizer Index frente a referencias internacionales.' },
-        { label: 'Azúcar', items: 'Azúcar', desc: 'Referencia USDA frente al precio del azúcar blanco en la Unión Europea.' },
-        { label: 'Aceite de oliva', items: 'Aceite de oliva', desc: 'El dashboard semanal de la Comisión Europea, con España como referencia mundial.' },
-        { label: 'Energía', items: 'Diésel agrícola', desc: 'Precio del gasóleo en EE. UU. (por región) y Europa (por país) — clave para el coste de la maquinaria.' }
-      ],
       howTitle: 'Cómo funciona',
       howSub: 'Tres pasos para comparar precios de distintos mercados con la unidad y la moneda a la vista.',
       steps: [
@@ -95,21 +80,6 @@
         { value: '18', label: 'markets tracked' },
         { value: '4', label: 'price markets — U.S., Europe, UK and Canada' },
         { value: 'Daily', label: 'update pace' }
-      ],
-      coverTitle: 'What we cover',
-      coverSub: 'Eleven key agricultural categories, with reference prices from both sides of the Atlantic.',
-      categories: [
-        { label: 'Grains', items: 'Corn · Wheat · Rice', desc: 'USDA NASS and European Commission (Agri-food) prices, in the same unit.' },
-        { label: 'Dairy', items: 'Milk', desc: 'USDA NASS prices against European Commission references.' },
-        { label: 'Livestock', items: 'Cattle · Goat', desc: 'CME Group quotes and European markets, live weight and carcass.' },
-        { label: 'Pork', items: 'Pork', desc: 'Standard pork reference for the U.S. and EU, plus Mercolleida as a Spanish market.' },
-        { label: 'Sheep & Lamb', items: 'Lamb', desc: 'U.S. lamb prices against EU carcass references.' },
-        { label: 'Poultry & Eggs', items: 'Eggs · Chicken', desc: 'Egg and chicken prices in the U.S. and the EU.' },
-        { label: 'Feed', items: 'Compound feed · Soybean meal', desc: 'U.S. and EU reference indices for feed costs.' },
-        { label: 'Fertilizer', items: 'Urea · DAP · Potash', desc: 'DTN Fertilizer Index against international references.' },
-        { label: 'Sugar', items: 'Sugar', desc: 'USDA reference against the EU white sugar price.' },
-        { label: 'Olive Oil', items: 'Olive oil', desc: "The European Commission's weekly dashboard, with Spain as the world benchmark." },
-        { label: 'Energy', items: 'Agricultural diesel', desc: 'Diesel prices in the U.S. (by region) and Europe (by country) — key to machinery running costs.' }
       ],
       howTitle: 'How it works',
       howSub: 'Three steps to compare prices across markets with the unit and currency in view.',
@@ -145,21 +115,6 @@
         { value: '4', label: 'marchés de prix — États-Unis, Europe, Royaume-Uni et Canada' },
         { value: 'Quotidien', label: 'rythme de mise à jour' }
       ],
-      coverTitle: 'Ce que nous couvrons',
-      coverSub: "Onze catégories agricoles clés, avec des prix de référence des deux côtés de l'Atlantique.",
-      categories: [
-        { label: 'Céréales', items: 'Maïs · Blé · Riz', desc: 'Prix USDA NASS et Commission européenne (Agri-food), dans la même unité.' },
-        { label: 'Produits laitiers', items: 'Lait', desc: 'Prix USDA NASS face aux références de la Commission européenne.' },
-        { label: 'Bétail', items: 'Bovins · Chèvre', desc: 'Cotations CME Group et marchés européens, sur pied et en carcasse.' },
-        { label: 'Porc', items: 'Porc', desc: "Référence porc standard pour les États-Unis et l'UE, avec Mercolleida comme marché espagnol." },
-        { label: 'Ovins', items: 'Agneau', desc: "Prix de l'agneau aux États-Unis face aux références carcasse dans l'UE." },
-        { label: 'Volaille et œufs', items: 'Œufs · Poulet', desc: "Prix des œufs et du poulet aux États-Unis et dans l'UE." },
-        { label: 'Aliments pour animaux', items: 'Aliment composé · Tourteau de soja', desc: "Indices de référence américains et européens pour le coût de l'alimentation animale." },
-        { label: 'Engrais', items: 'Urée · DAP · Potasse', desc: 'DTN Fertilizer Index face aux références internationales.' },
-        { label: 'Sucre', items: 'Sucre', desc: "Référence USDA face au prix du sucre blanc dans l'UE." },
-        { label: "Huile d'olive", items: "Huile d'olive", desc: "Le tableau de bord hebdomadaire de la Commission européenne, avec l'Espagne comme référence mondiale." },
-        { label: 'Énergie', items: 'Gazole agricole', desc: 'Prix du gazole aux États-Unis (par région) et en Europe (par pays) — un poste clé du coût de la machinerie.' }
-      ],
       howTitle: 'Comment ça marche',
       howSub: "Trois étapes pour comparer les prix entre marchés, unité et devise d'origine toujours visibles.",
       steps: [
@@ -193,21 +148,6 @@
         { value: '18', label: 'mercati monitorati' },
         { value: '4', label: 'mercati dei prezzi — Stati Uniti, Europa, Regno Unito e Canada' },
         { value: 'Giornaliero', label: 'ritmo di aggiornamento' }
-      ],
-      coverTitle: 'Cosa copriamo',
-      coverSub: "Undici categorie chiave dell'agricoltura, con prezzi di riferimento da entrambe le sponde dell'Atlantico.",
-      categories: [
-        { label: 'Cereali', items: 'Mais · Grano · Riso', desc: 'Prezzi USDA NASS e Commissione europea (Agri-food), nella stessa unità di misura.' },
-        { label: 'Lattiero-caseario', items: 'Latte', desc: 'Prezzi USDA NASS a confronto con i riferimenti della Commissione europea.' },
-        { label: 'Bestiame', items: 'Bovini · Capre', desc: 'Quotazioni CME Group e mercati europei, peso vivo e peso morto.' },
-        { label: 'Suini', items: 'Maiale', desc: 'Riferimento del mercato suino standard per Stati Uniti e UE, più Mercolleida come mercato spagnolo.' },
-        { label: 'Ovini', items: 'Agnello', desc: "Prezzi dell'agnello negli Stati Uniti a confronto con i riferimenti di peso morto nell'UE." },
-        { label: 'Avicoltura', items: 'Uova · Pollo', desc: "Prezzi di uova e pollo negli Stati Uniti e nell'UE." },
-        { label: 'Mangimi', items: 'Mangime composto · Farina di soia', desc: "Indici di riferimento statunitensi ed europei per il costo dell'alimentazione." },
-        { label: 'Fertilizzanti', items: 'Urea · DAP · Potassa', desc: 'DTN Fertilizer Index a confronto con i riferimenti internazionali.' },
-        { label: 'Zucchero', items: 'Zucchero', desc: "Riferimento USDA a confronto con il prezzo dello zucchero bianco nell'UE." },
-        { label: "Olio d'oliva", items: "Olio d'oliva", desc: "Il dashboard settimanale della Commissione europea, con la Spagna come riferimento mondiale." },
-        { label: 'Energia', items: 'Gasolio agricolo', desc: 'Prezzo del gasolio negli Stati Uniti (per regione) e in Europa (per paese) — una voce chiave nel costo dei macchinari.' }
       ],
       howTitle: 'Come funziona',
       howSub: 'Tre passi per confrontare i prezzi tra mercati con unità e valuta in vista.',
@@ -389,11 +329,6 @@
     document.getElementById('home-movers-table').innerHTML = headRow + bodyRows;
     if (window.DICite && window.DICite.compact) window.DICite.compact(document.getElementById('home-movers-table'));
 
-    document.getElementById('home-cover-title').textContent = t.coverTitle;
-    document.getElementById('home-cover-sub').textContent = t.coverSub;
-    document.getElementById('home-cat-grid').innerHTML = t.categories.map(function(c) {
-      return '<a class="di-cat-card" href="precios.html"><div class="di-cat-bar"></div><div class="di-cat-label serif">' + esc(c.label) + '</div><div class="di-cat-items">' + esc(c.items) + '</div><div class="di-cat-desc">' + esc(c.desc) + '</div></a>';
-    }).join('');
     document.getElementById('home-how-title').textContent = t.howTitle;
     document.getElementById('home-how-sub').textContent = t.howSub;
     document.getElementById('home-steps-grid').innerHTML = t.steps.map(function(s) {

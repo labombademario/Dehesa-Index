@@ -847,6 +847,68 @@ def us_states_index(doc, errs, warns, stats):
     bad = [k for k in S if k != "US" and k not in _US_ST]
     if bad: errs.append("estados desconocidos %s" % bad)
     stats["series"] = sum(v.get("series", 0) for v in S.values())
+def us_markets_cot(doc, errs, warns, stats):
+    """COT de la CFTC: semanas ordenadas sin repetir, contratos enteros no negativos, largos de gestores de dinero <= contratos abiertos."""
+    n = len(doc["fields"])
+    for m in doc["markets"]:
+        ds = [p[0] for p in m["points"]]
+        if ds != sorted(set(ds)) or any(not re.match(r"^\d{4}-\d{2}-\d{2}$", d) for d in ds): errs.append("%s: fechas desordenadas, repetidas o raras" % m["code"]); continue
+        for p in m["points"]:
+            if len(p) != n + 1: errs.append("%s %s: %d campos" % (m["code"], p[0], len(p) - 1)); break
+            v = p[1:]
+            if any(x is not None and (not _num(x) or x < 0) for x in v): errs.append("%s %s: valor negativo o no numerico" % (m["code"], p[0])); break
+            if v[0] and v[1] is not None and v[1] > v[0]: errs.append("%s %s: largos de fondos > contratos abiertos" % (m["code"], p[0])); break
+        if ds and ds[-1] < (datetime.date.today() - datetime.timedelta(days=60)).isoformat(): warns.append("%s: ultima semana %s" % (m["code"], ds[-1]))
+    stats["series"] = len(doc["markets"])
+def _dated_series(label, pts, errs, lo=0, hi=None):
+    ds = [p[0] for p in pts]
+    if ds != sorted(set(ds)) or any(not re.match(r"^\d{4}-\d{2}-\d{2}$", str(d)) for d in ds): errs.append("%s: fechas desordenadas, repetidas o raras" % label); return False
+    for p in pts:
+        for x in p[1:]:
+            if x is not None and (not _num(x) or x < lo or (hi is not None and x > hi)): errs.append("%s %s: valor fuera de rango %r" % (label, p[0], x)); return False
+    return True
+def us_markets_transport(doc, errs, warns, stats):
+    """Transporte de grano (AgTransport): indices > 0 y fletes de barcaza positivos, fechas ordenadas."""
+    _dated_series("indicadores", doc["indicators"]["points"], errs, 0, 5000)
+    for s in doc["bargePctTariff"]["series"]: _dated_series("barcaza %s" % s["location"], s["points"], errs, 0, 5000)
+    for s in (doc.get("bargeUsdTon") or {}).get("series", []): _dated_series("barcaza USD/t %s" % s["location"], s["points"], errs, 0, 1000)
+    stats["series"] = 1 + len(doc["bargePctTariff"]["series"]) + len((doc.get("bargeUsdTon") or {}).get("series", []))
+def us_markets_fuel(doc, errs, warns, stats):
+    """Gasoleo y propano (EIA): USD por galon entre 0 y 20, fechas ordenadas."""
+    n = 0
+    for k, s in doc["diesel"].items(): _dated_series("gasoleo %s" % k, s["points"], errs, 0, 20); n += 1
+    for kind in ("residential", "wholesale"):
+        for k, s in doc["propane"].get(kind, {}).items(): _dated_series("propano %s %s" % (kind, k), s["points"], errs, 0, 20); n += 1
+    stats["series"] = n
+def us_arcplc(doc, errs, warns, stats):
+    """ARC-CO por condado (FSA): FIPS validos del estado, campanas AAAA, tasa de pago entre 0 y el maximo (con margen de redondeo), sin negativos."""
+    st = doc["state"]
+    if st not in _US_ST: errs.append("estado desconocido %s" % st); return
+    n = 0
+    for f, c in doc["counties"].items():
+        if not re.match(r"^\d{5}$", f): errs.append("%s FIPS raro %s" % (st, f)); return
+        for key, e in c["crops"].items():
+            for y, v in e["years"].items():
+                if not re.match(r"^20\d\d$", y): errs.append("%s %s %s: campana rara %s" % (st, f, key, y)); return
+                for k, x in v.items():
+                    if x is not None and (not _num(x) or x < 0): errs.append("%s %s %s %s %s: valor negativo o no numerico" % (st, f, key, y, k)); return
+                r, mx = v.get("rate"), v.get("maxRate")
+                if r is not None and mx is not None and r > mx + 0.05: errs.append("%s %s %s %s: tasa %s > maxima %s" % (st, f, key, y, r, mx)); return
+                n += 1
+    stats["series"] = n
+def us_arcplc_national(doc, errs, warns, stats):
+    """PLC nacional (FSA): tasas no negativas y <= tasa maxima; precio efectivo >= tasa de prestamo."""
+    for y, rows in doc["plc"].items():
+        if not re.match(r"^20\d\d$", y): errs.append("campana rara %s" % y); continue
+        for r in rows:
+            for k in ("refPrice", "mya", "loanRate", "effPrice", "rate", "maxRate"):
+                if r.get(k) is not None and (not _num(r[k]) or r[k] < 0): errs.append("PLC %s %s %s invalido" % (y, r.get("crop"), k)); break
+            if r.get("rate") is not None and r.get("maxRate") is not None and r["rate"] > r["maxRate"] + 1e-6: errs.append("PLC %s %s: tasa > maxima" % (y, r.get("crop")))
+    stats["series"] = len(doc["plc"])
+def us_arcplc_index(doc, errs, warns, stats):
+    bad = [k for k in doc["states"] if k not in _US_ST]
+    if bad: errs.append("estados desconocidos %s" % bad)
+    stats["series"] = len(doc["states"])
 def series_shard(doc, errs, warns, stats):
     freq_rx = {"annual": r"^\d{4}$", "monthly": r"^\d{4}-\d{2}$", "weekly": r"^\d{4}-\d{2}-\d{2}$", "daily": r"^\d{4}-\d{2}-\d{2}$"}
     for s in doc["series"]:

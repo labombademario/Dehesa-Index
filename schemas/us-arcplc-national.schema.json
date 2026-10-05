@@ -1,0 +1,39 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "US PLC national payment rates (USDA FSA): data/us-arcplc/national.json",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "sourceId",
+  "plc"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "sourceId": {
+   "enum": [
+    "usda_fsa"
+   ]
+  },
+  "plc": {
+   "type": "object",
+   "minProperties": 1,
+   "additionalSchema": {
+    "type": "array",
+    "minItems": 10
+   }
+  },
+  "files": {
+   "type": "object"
+  }
+ }
+}

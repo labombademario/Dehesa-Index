@@ -648,6 +648,24 @@
     "us_county_status"
    ]
   ],
+  "us-markets/cot.json": [
+   "us-markets-cot",
+   [
+    "us_markets_cot"
+   ]
+  ],
+  "us-markets/transport.json": [
+   "us-markets-transport",
+   [
+    "us_markets_transport"
+   ]
+  ],
+  "us-markets/fuel.json": [
+   "us-markets-fuel",
+   [
+    "us_markets_fuel"
+   ]
+  ],
   "us-states/index.json": [
    "us-states-index",
    [
@@ -684,6 +702,24 @@
   ]
  },
  "globs": {
+  "us-arcplc/nationa[l].json": [
+   "us-arcplc-national",
+   [
+    "us_arcplc_national"
+   ]
+  ],
+  "us-arcplc/inde[x].json": [
+   "us-arcplc-index",
+   [
+    "us_arcplc_index"
+   ]
+  ],
+  "us-arcplc/[A-Z][A-Z].json": [
+   "us-arcplc",
+   [
+    "us_arcplc"
+   ]
+  ],
   "us-states/[A-Z][A-Z].json": [
    "us-states",
    [

@@ -1,0 +1,54 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update US market and input data (CFTC Commitments of Traders, USDA AMS grain transportation, EIA regional diesel and propane)
+on:
+  schedule:
+    - cron: '10 22 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: python3 scripts/update-us-markets.py
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+        timeout-minutes: 20
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/us-markets/cot.json data/us-markets/transport.json data/us-markets/fuel.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/us-markets/cot.json data/us-markets/transport.json data/us-markets/fuel.json
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard -- 'data/us-markets/*.json')
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/us-markets/cot.json data/us-markets/transport.json data/us-markets/fuel.json data/us-markets/log.txt data/revisions.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "Mercado e insumos de EE. UU. (CFTC, USDA AMS transporte, EIA)"
+          for i in 1 2 3 4 5 6; do
+            git pull -q --rebase --autostash && git push && exit 0
+            sleep $((i * 5 + RANDOM % 10))
+          done
+          echo '::error::no se pudo publicar tras 6 intentos'; exit 1
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

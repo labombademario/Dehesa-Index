@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-05T18:33:46Z",
+ "generatedAt": "2026-10-05T18:44:36Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 86,
+  "total": 89,
   "byStatus": {
-   "ACTIVE": 55,
+   "ACTIVE": 58,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -1776,6 +1776,43 @@
    "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
   },
   {
+   "sourceId": "cftc",
+   "registryId": "cftc",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "U.S. Commodity Futures Trading Commission (Commitments of Traders, Public Reporting Environment)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: U.S. Commodity Futures Trading Commission (CFTC), Commitments of Traders",
+   "lastChecked": "2026-10-05",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "cgc",
    "registryId": "cgc",
    "country": "CA",
@@ -3244,6 +3281,43 @@
    ]
   },
   {
+   "sourceId": "usda_ams_agtransport",
+   "registryId": "usda_ams_agtransport",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA AMS Agricultural Transportation Open Data Platform (AgTransport)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (AgTransport, Grain Transportation Report)",
+   "lastChecked": "2026-10-05",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "usda_ams_mars",
    "registryId": "usda_ams_mars",
    "country": "US",
@@ -3418,6 +3492,43 @@
    "derivatives": "yes",
    "attribution": "Source: USDA Foreign Agricultural Service, Production, Supply and Distribution (PSD) Online",
    "lastChecked": "2026-10-01",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "usda_fsa",
+   "registryId": "usda_fsa",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA Farm Service Agency (ARC/PLC program data)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "U. S. Department of Agriculture, Farm Service Agency.",
+   "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {

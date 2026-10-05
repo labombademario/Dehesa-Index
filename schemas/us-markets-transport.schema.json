@@ -1,0 +1,60 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "US grain transportation (USDA AMS AgTransport): data/us-markets/transport.json",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "sourceId",
+  "indicators",
+  "bargePctTariff"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": [
+    "integer",
+    "string"
+   ]
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "sourceId": {
+   "enum": [
+    "usda_ams_agtransport"
+   ]
+  },
+  "indicators": {
+   "type": "object",
+   "required": [
+    "fields",
+    "points"
+   ],
+   "properties": {
+    "points": {
+     "type": "array",
+     "minItems": 20
+    }
+   }
+  },
+  "bargePctTariff": {
+   "type": "object",
+   "required": [
+    "series"
+   ],
+   "properties": {
+    "series": {
+     "type": "array",
+     "minItems": 3
+    }
+   }
+  },
+  "bargeUsdTon": {
+   "type": "object",
+   "required": [
+    "series"
+   ]
+  }
+ }
+}

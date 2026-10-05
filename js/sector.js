@@ -18,7 +18,7 @@
   var RX_AGRI = /\b(wheat|maize|corn|barley|oats|rye|rice|triticale|sorghum|soy\w*|rapeseed|canola|sunflower\w*|potato\w*|sugar|beet\w*|wine|grapes?|must|vine\w*|olives?|fruits?|apples?|pears?|citrus|oranges?|vegetables?|tomato\w*|onions?|cereals?|crops?|harvest\w*|seeds?|fertili\w*|nitrogen|urea|phosph\w*|potash|pulses?|peas|beans|flax|hemp|chicory|tobacco|cotton|cabbage|lettuce|trigo|ma[ií]z|cebada|avena|centeno|arroz|soja|colza|girasol|patatas?|remolacha|vino|uvas?|aceit\w*|olivar|frutas?|hortalizas|cereales|cultivos?|abonos?|fertilizantes?)\b/i;
   var MOD = { // bloques de region.js y region-more.js
     ercrops: 'agri', crops: 'agri', cacrops: 'agri', escrops: 'agri', cere: 'agri', deprod: 'agri', nlcrops: 'agri', bids: 'agri', fert: 'agri',
-    usprices: 'agri', usstocks: 'agri', usslaughter: 'live', usdairy: 'live', erlive: 'live', cattle: 'live', lvst: 'live', eslv: 'live', essl: 'live', esmilk: 'live', delive: 'live', mb: 'live', local: 'live', deprices: 'live' };
+    usprices: 'agri', usstocks: 'agri', usarc: 'agri', usslaughter: 'live', usdairy: 'live', erlive: 'live', cattle: 'live', lvst: 'live', eslv: 'live', essl: 'live', esmilk: 'live', delive: 'live', mb: 'live', local: 'live', deprices: 'live' };
   // bloques de detalle de la ficha de país (paises.html)
   var DETAIL = { 'ps-us': 'common', 'ps-mb': 'live', 'ps-es': 'agri', 'ps-de': 'agri', 'ps-ifap': 'agri' };
   function lang() { return window.DehesaShared && window.DehesaShared.getLang ? window.DehesaShared.getLang() : 'es'; }
