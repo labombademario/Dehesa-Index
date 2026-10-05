@@ -119,6 +119,20 @@
     body.innerHTML = h;
   }
 
+  var RT = {
+    es: ['Precios reales (ajustados por la inflación)', 'Gráficas deflactadas con el IPC anual de Alemania ({src}, {base}) y expresadas en euros de {ref}: valor × IPC de {ref} ÷ IPC del año. Es un cálculo nuestro; la tabla sigue con los precios publicados.', 'Años sin IPC publicado (se omiten): {n}.', 'Cargando el IPC…'],
+    en: ['Real prices (inflation-adjusted)', 'Charts deflated with Germany’s annual CPI ({src}, {base}) and shown in {ref} euros: value × CPI of {ref} ÷ CPI of the year. This is our own calculation; the table keeps the published prices.', 'Years without a published CPI (left out): {n}.', 'Loading the CPI…'],
+    fr: ['Prix réels (corrigés de l’inflation)', 'Graphiques déflatés avec l’IPC annuel de l’Allemagne ({src}, {base}) et exprimés en euros de {ref} : valeur × IPC de {ref} ÷ IPC de l’année. C’est un calcul de notre part ; le tableau garde les prix publiés.', 'Années sans IPC publié (omises) : {n}.', 'Chargement de l’IPC…'],
+    it: ['Prezzi reali (corretti per l’inflazione)', 'Grafici deflazionati con l’IPC annuale della Germania ({src}, {base}) ed espressi in euro del {ref}: valore × IPC del {ref} ÷ IPC dell’anno. È un calcolo nostro; la tabella mantiene i prezzi pubblicati.', 'Anni senza IPC pubblicato (omessi): {n}.', 'Caricamento dell’IPC…']
+  };
+  var RSRC_DE = { world_bank_wdi: 'World Bank CPI', eurostat: 'Eurostat HICP' };
+  function rf(s, o) { return String(s).replace(/\{(\w+)\}/g, function (m, k) { return o[k] != null ? o[k] : m; }); }
+  // Deflacta una serie anual [[año, valor]] con el IPC de Alemania; devuelve null si no hay IPC cargado o utilizable.
+  function realSer(a, acc) {
+    var R = window.DehesaChart && window.DehesaChart.real; if (!R || !a || a.length < 2) return null;
+    var d = R.deflate('DE', a.map(function (p) { return [String(p[0]), p[1]]; }), 'annual'); if (!d) return null;
+    acc.d = d; acc.miss += d.miss; return d.points.map(function (p) { return [+p[0], p[1]]; });
+  }
   /* ---------- pestaña 2: tierra ---------- */
   function renderLand(body, st, lang, t) {
     var K = st.kind, LP = A.landPrice, R = A.rent, py = 0, ry = 0, rows = [];
@@ -141,11 +155,20 @@
     h += '</tbody></table></div><p class="di-movers-hint">' + esc(t.click) + '</p>';
     var sel = st.sel && LP.land[st.sel] ? st.sel : 'DE', nm = sel === 'DE' ? t.de : pick(LANDS, sel, lang), ps, rs;
     if (sel === 'DE') {
-      ps = []; if (K === 'lf' && LP.natPre.length) ps.push({ name: t.oldS, color: '#8a8a8a', pts: pts(LP.natPre) });
-      ps.push({ name: t.newS, color: '#2f6b4a', pts: pts(natP) }); rs = natR;
-    } else { ps = [{ name: nm, color: '#b7791f', pts: pts(LP.land[sel][K] && LP.land[sel][K].p) }]; rs = R.land[sel] && R.land[sel][K]; }
-    h += '<p class="di-movers-hint" style="margin:10px 0 2px"><b>' + esc(t.buy) + ' · ' + esc(nm) + '</b> · ' + esc(t.kinds[K]) + ' · ' + esc(t.eurha) + '</p>' + chart(ps, { lang: lang, unit: t.eurha, aria: t.buy + ' ' + nm, vFmt: function (v) { return nf(v, 0, lang) + ' ' + t.eurha; } });
-    if (rs && rs.length > 1) h += '<p class="di-movers-hint" style="margin:10px 0 2px"><b>' + esc(t.rent) + ' · ' + esc(nm) + '</b> · ' + esc(t.kinds[K]) + ' · ' + esc(t.eurha) + '</p>' + chart([{ name: t.rentS, color: '#1f4e79', pts: pts(rs) }], { lang: lang, unit: t.eurha, aria: t.rent + ' ' + nm, vFmt: function (v) { return nf(v, 0, lang) + ' ' + t.eurha; } });
+      ps = []; if (K === 'lf' && LP.natPre.length) ps.push({ name: t.oldS, color: '#8a8a8a', pts: pts(LP.natPre), raw: LP.natPre });
+      ps.push({ name: t.newS, color: '#2f6b4a', pts: pts(natP), raw: natP }); rs = natR;
+    } else { var lp0 = LP.land[sel][K] && LP.land[sel][K].p; ps = [{ name: nm, color: '#b7791f', pts: pts(lp0), raw: lp0 }]; rs = R.land[sel] && R.land[sel][K]; }
+    var rt = RT[lang] || RT.es, racc = { d: null, miss: 0 }, realOn = !!st.real && !!(window.DehesaChart && window.DehesaChart.real);
+    if (realOn && st.cpiReady) {
+      ps = ps.map(function (s) { var raw = s.raw; var r = raw ? realSer(raw, racc) : null; return r ? { name: s.name, color: s.color, pts: pts(r) } : null; }).filter(Boolean);
+      if (rs) { var rr = realSer(rs, racc); rs = rr; }
+    }
+    h += '<label style="display:block;font-size:12.5px;margin:12px 0 4px"><input type="checkbox" data-dreal="1"' + (st.real ? ' checked' : '') + '> ' + esc(rt[0]) + '</label>';
+    if (realOn && !st.cpiReady) h += '<p class="di-movers-hint">' + esc(rt[3]) + '</p>';
+    if (realOn && st.cpiReady && racc.d) h += '<p class="di-movers-hint">' + esc(rf(rt[1], { src: RSRC_DE[racc.d.src] || racc.d.name, base: racc.d.base, ref: racc.d.ref })) + (racc.miss ? ' ' + esc(rf(rt[2], { n: racc.miss })) : '') + '</p>' + cite(['destatis', racc.d.src], null, 'CPI deflation');
+    var unitL = realOn && st.cpiReady && racc.d ? t.eurha + ' (' + racc.d.ref + ')' : t.eurha;
+    h += '<p class="di-movers-hint" style="margin:10px 0 2px"><b>' + esc(t.buy) + ' · ' + esc(nm) + '</b> · ' + esc(t.kinds[K]) + ' · ' + esc(unitL) + '</p>' + chart(ps, { lang: lang, unit: t.eurha, aria: t.buy + ' ' + nm, vFmt: function (v) { return nf(v, 0, lang) + ' ' + t.eurha; } });
+    if (rs && rs.length > 1) h += '<p class="di-movers-hint" style="margin:10px 0 2px"><b>' + esc(t.rent) + ' · ' + esc(nm) + '</b> · ' + esc(t.kinds[K]) + ' · ' + esc(unitL) + '</p>' + chart([{ name: t.rentS, color: '#1f4e79', pts: pts(rs) }], { lang: lang, unit: t.eurha, aria: t.rent + ' ' + nm, vFmt: function (v) { return nf(v, 0, lang) + ' ' + t.eurha; } });
     h += '<p class="di-movers-hint">' + esc(t.lnote) + '</p>' + cite(['destatis'], py);
     body.innerHTML = h;
   }
@@ -214,6 +237,7 @@
       if ((b = tg.closest('[data-dt]'))) { st.tab = b.getAttribute('data-dt'); st.sel = 'DE'; render(el, lang, st); }
       else if ((b = tg.closest('[data-dv]'))) { st.v = b.getAttribute('data-dv'); render(el, lang, st); }
       else if ((b = tg.closest('[data-dk]'))) { st.kind = b.getAttribute('data-dk'); render(el, lang, st); }
+      else if ((b = tg.closest('[data-dreal]'))) { st.real = !!b.checked; if (st.real && !st.cpiReady && window.DehesaChart && window.DehesaChart.real) { window.DehesaChart.real.load().then(function (d) { st.cpiReady = !!d; render(el, lang, st); }); } render(el, lang, st); }
       else if ((b = tg.closest('[data-dw]'))) { st.win = b.getAttribute('data-dw') === 'all' ? 'all' : +b.getAttribute('data-dw'); render(el, lang, st); }
       else if ((b = tg.closest('[data-dpair]'))) { var pr = PAIRS[b.getAttribute('data-dpair')]; st.out = pr[0]; st.inp = pr[1]; render(el, lang, st); }
       else if ((b = tg.closest('[data-lsub]'))) { st.lv = b.getAttribute('data-lsub'); render(el, lang, st); }

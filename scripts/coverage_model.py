@@ -28,6 +28,9 @@ for p in ('potato', 'sugar', 'fruit', 'wine', 'olive'): KIND_OF[p] = 'crop'
 for p in ('cattle', 'pigs', 'sheep', 'poultry', 'eggs'): KIND_OF[p] = 'livestock'
 for p in ('milk', 'butter', 'cheese'): KIND_OF[p] = 'dairy'
 KIND_OF['fertilizer'] = 'input'; KIND_OF['energy'] = 'energy'
+def cell_metric(tag, m):
+    """El precio de un insumo (gasoleo, urea) cuenta como precio de insumo: para energia y fertilizantes la metrica 'price' no aplica."""
+    return 'input_price' if m == 'price' and KIND_OF.get(tag) in ('energy', 'input') else m
 APPLICABLE = {  # metricas con sentido por tipo de producto (no se cuentan huecos donde la metrica no aplica)
   'grain': ['price', 'price_index', 'production', 'trade', 'stocks'],
   'crop': ['price', 'price_index', 'production', 'trade'],
@@ -55,6 +58,12 @@ AMS_GRAIN_PRODUCT = {'maiz': 'maize', 'soja': 'soy', 'trigo': 'wheat'}          
 NASS_PRICES_PRODUCT = (('FERTILIZER', 'fertilizer'), ('FUELS', 'energy'), ('ENERGY', 'energy'))  # nass-prices.json: indices de precios pagados (price_index)
 DE_AGRI_PRODUCT = {'wheat': 'wheat', 'rye': 'rye', 'barley': 'barley', 'oats': 'oats', 'maize': 'maize', 'rapeseed': 'rapeseed', 'potato': 'potato', 'sugarbeet': 'sugar'}   # germany-agri.json: produccion nacional/Land de Destatis (cereals, triticale, sunflower y silage no son producto de la matriz)
 DE_LIVESTOCK_PRODUCT = {'cattle': 'cattle', 'calves': 'cattle', 'pigs': 'pigs', 'sheep': 'sheep'}   # germany-livestock.json: sacrificios (cabezas y peso de canal)
+# Paises Bajos (CBS, data/netherlands-farm.json) y Dinamarca (Danmarks Statistik, data/denmark-depth.json): ficheros de formato propio con cifras nacionales reales.
+NL_CROP_PRODUCT = {'A042170': 'wheat', 'A042160': 'barley', 'A042169': 'rye', 'A042164': 'oats', 'A042167': 'maize', 'A042180': 'rapeseed', 'A042355': 'potato', 'A042194': 'sugar'}   # 85636NED, total nacional NL01, produccion
+NL_SLAUGHTER_PRODUCT = {'cattle': 'cattle', 'pigs': 'pigs', 'sheep': 'sheep', 'chickens': 'poultry'}   # 7123SLAC: peso en canal (t)
+DK_HARVEST_PRODUCT = {'wheat_winter': 'wheat', 'wheat_spring': 'wheat', 'rye': 'rye', 'barley_winter': 'barley', 'barley_spring': 'barley', 'oats': 'oats', 'maize_grain': 'maize', 'rapeseed': 'rapeseed', 'potato_food': 'potato', 'sugarbeet': 'sugar'}   # HST77/HST88, nacional '000'
+DK_SLAUGHTER_PRODUCT = {'cattle': 'cattle', 'pigs': 'pigs'}
+DK_MILK_PRODUCT = {'milk_total': 'milk', 'butter': 'butter', 'cheese': 'cheese'}
 OUTSIDE_NOT_MAPPED = {'ers.json': 'costes de produccion, prevision de renta y IPC/IPP de alimentos del ERS: la metrica input_price no aplica a cereales/ganado en la matriz y la renta/IPC no son un producto',
                       'crop-progress.json': 'progreso y condicion semanal del cultivo (porcentajes): no corresponde a ninguna metrica de la matriz (precio, indice, produccion, comercio, existencias)',
                       'drought.json': 'Drought Monitor por estado: no es un producto ni una metrica de la matriz'}

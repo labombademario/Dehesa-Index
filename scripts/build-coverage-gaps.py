@@ -65,6 +65,20 @@ for key in ((_gl.get('slaughter') or {}).get('nat') or {}):
 if (_gl.get('poultry') or {}).get('total'): add_ext('DE', 'poultry', 'production', 'germany-livestock.json')
 if (_gl.get('eggs') or {}).get('nat', {}).get('eggs'): add_ext('DE', 'eggs', 'production', 'germany-livestock.json')
 if _gl.get('fruit'): add_ext('DE', 'fruit', 'production', 'germany-livestock.json')
+def _has(pts): return isinstance(pts, list) and any(isinstance(x, list) and len(x) > 1 and isinstance(x[1], (int, float)) for x in pts)
+_nl = CM.J('netherlands-farm.json', {})   # Paises Bajos (CBS): cultivos nacionales y peso en canal sacrificado
+for code, p in CM.NL_CROP_PRODUCT.items():
+    if _has((((_nl.get('crops') or {}).get('data') or {}).get(code) or {}).get('NL01', {}).get('prod')): add_ext('NL', p, 'production', 'netherlands-farm.json')
+for key, p in CM.NL_SLAUGHTER_PRODUCT.items():
+    if _has((((_nl.get('slaughter') or {}).get('data') or {}).get(key) or {}).get('weight')): add_ext('NL', p, 'production', 'netherlands-farm.json')
+_dk = CM.J('denmark-depth.json', {})   # Dinamarca (Danmarks Statistik): cosecha nacional, sacrificio y leche/lacteos
+for key, p in CM.DK_HARVEST_PRODUCT.items():
+    if _has((((_dk.get('harvest') or {}).get('data') or {}).get(key) or {}).get('000', {}).get('prod')): add_ext('DK', p, 'production', 'denmark-depth.json')
+for grp, p in CM.DK_SLAUGHTER_PRODUCT.items():
+    g = (_dk.get('slaughter') or {}).get(grp) or {}
+    if any(_has(v.get('prod')) for v in g.values() if isinstance(v, dict)): add_ext('DK', p, 'production', 'denmark-depth.json')
+for key, p in CM.DK_MILK_PRODUCT.items():
+    if _has((_dk.get('milk') or {}).get(key)): add_ext('DK', p, 'production', 'denmark-depth.json')
 for k in ext:  # sin duplicados
     seen = []; [seen.append(x) for x in ext[k] if x not in seen]; ext[k] = seen
 
@@ -82,13 +96,14 @@ for cc, name, etype, files in CM.entities():
         if not tags: untagged[s['group']] += 1; unt[m] += 1; continue
         for t in tags:
             trk[t] += 1
-            c = cells[(t, m)]; c['n'] += 1; c['sources'].add(s.get('sourceId')); c['groups'].add(s['group'])
+            mt = CM.cell_metric(t, m)   # el precio de un insumo (gasoleo, urea) es un precio de insumo
+            c = cells[(t, mt)]; c['n'] += 1; c['sources'].add(s.get('sourceId')); c['groups'].add(s['group'])
             if s.get('fs') in CM.OK_STATES: c['ok'] += 1
             if s.get('fs') in CM.ARCHIVE_STATES: c['arch'] += 1
             k = CM.period_key(s.get('latestPeriod'))
             if k > c['latest']: c['latest'] = k; c['latestPeriod'] = s.get('latestPeriod')
             if s.get('fs') not in CM.OK_STATES and s.get('fs') not in CM.ARCHIVE_STATES:  # las historicas no son un pipeline retrasado
-                sb = stale_by_source[s.get('sourceId')]; sb['cells'].add((cc, t, m)); sb['series'] += 1; sb['countries'].add(cc)
+                sb = stale_by_source[s.get('sourceId')]; sb['cells'].add((cc, t, mt)); sb['series'] += 1; sb['countries'].add(cc)
     rows = {}
     for p in PRODUCTS:
         for m in CM.APPLICABLE[CM.KIND_OF[p]]:

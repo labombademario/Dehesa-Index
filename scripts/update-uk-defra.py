@@ -522,6 +522,34 @@ def auk_more():
          'uk-auk-land-', 'crops', 'Agricultural land use, United Kingdom: %s (hectares)', 'ha', 1000, hdr_row=2)
     wide(2, 'Table_2_5', None, [('Total workforce', 'total', 'total'), ('Farmers, business partners', 'farmers', 'farmers, partners and spouses'), ('Regular employees, salaried', 'employees', 'employees, managers and casual workers')],
          'uk-auk-workforce-', 'production', 'Agricultural workforce, United Kingdom: %s (people)', 'people', 1000, hdr_row=2)
+    # superficies que no salen de otras tablas (2.2a), aves por tipo (2.2b) y explotaciones por tamaño (2.3a/b): series desde 1984 y 2005
+    N_ENG = {'periodNote': 'The latest year is provisional (Defra). Figures for England from 2010 relate to commercial holdings only.'}
+    wide(2, 'Table_2_2', 'Table 2.2a', [('Total area of arable crops', 'arable-total', 'all arable crops'), ('Maize', 'maize', 'maize'), ('Peas for harvesting dry and field beans', 'pulses', 'dry peas and field beans'),
+         ('Orchard fruit', 'orchard-fruit', 'orchard fruit'), ('Small fruit', 'small-fruit', 'small fruit'), ('Glasshouse crops', 'glasshouse', 'glasshouse crops'), ('Hardy nursery stock', 'nursery', 'hardy nursery stock, bulbs and flowers')],
+         'uk-auk-croparea-', 'crops', 'Crop area, United Kingdom: %s (hectares)', 'ha', 1000, note=N_ENG)
+    wide(2, 'Table_2_2', 'Table 2.2b', [('Total poultry', 'total', 'all poultry'), ('Table chickens', 'broilers', 'table chickens (broilers)'), ('Laying flock', 'laying', 'laying flock (including pullets)'),
+         ('Breeding flock', 'breeding', 'breeding flock'), ('Turkeys, ducks, geese', 'other', 'turkeys, ducks, geese and other poultry')],
+         'uk-auk-poultry-', 'livestock', 'Poultry on holdings, United Kingdom: %s (head)', 'head', 1000, note=N_ENG)
+    N_HOLD = {'periodNote': 'The latest year is provisional (Defra). Figures for England from 2010 relate to commercial holdings only; in 2014 Wales removed obsolete holdings from its data.'}
+    # auk_row quita el numero inicial de la etiqueta («20 to under 50 hectares» -> «to under 50 hectares»); la primera coincidencia es el bloque de todas las explotaciones
+    SIZES = [('Under 20 hectares', 'under-20ha', 'under 20 ha'), ('to under 50 hectares', '20-50ha', '20 to under 50 ha'), ('to under 100 hectares', '50-100ha', '50 to under 100 ha'), ('hectares and over', '100ha-plus', '100 ha and over')]
+    wide(2, 'Table_2_3', 'Table 2.3a', [('Total holdings', 'total', 'all holdings')] + SIZES, 'uk-auk-holdings-', 'production', 'Agricultural holdings by size, United Kingdom: %s (holdings)', 'holdings', 1000, note=N_HOLD)
+    wide(2, 'Table_2_3', 'Table 2.3b', [('Total area on holdings', 'total', 'all holdings')] + SIZES, 'uk-auk-holdings-area-', 'production', 'Area on agricultural holdings by size, United Kingdom: %s (hectares)', 'ha', 1000, note=N_HOLD)
+    wide(2, 'Table_2_3', 'Table 2.3b', [('Average area (hectares)', 'average', 'average area per holding')], 'uk-auk-holdings-area-', 'production', 'Agricultural holdings, United Kingdom: %s (hectares)', 'ha', 1, note=N_HOLD)
+    # --- agricultura y medio ambiente (cap. 11): series largas que publica Defra en las hojas de figuras
+    N_GHG = {'periodNote': 'Defra revises the whole greenhouse gas series every year when methods change; the latest year shown is the latest inventory year.'}
+    for sh, gas, nm in (('Figure_11_2', 'n2o', 'nitrous oxide'), ('Figure_11_3', 'methane', 'methane'), ('Figure_11_4', 'co2', 'carbon dioxide')):
+        wide(11, sh, None, [('Agriculture', gas, nm)], 'uk-auk-emissions-', 'environment', 'Emissions from agriculture, United Kingdom: %s (million tonnes CO2 equivalent)', 'Mt CO2e', 1, hdr_row=2, note=N_GHG)
+    wide(11, 'Figure_11_5', None, [('Agriculture', 'ammonia', 'ammonia')], 'uk-auk-emissions-', 'environment', 'Emissions from agriculture, United Kingdom: %s (tonnes)', 't', 1000, hdr_row=2, note=N_GHG)
+    wide(11, 'Figure_11_6', None, [('Fungicides', 'fungicides', 'fungicides'), ('Growth regulators', 'growth-regulators', 'growth regulators'), ('Herbicides', 'herbicides', 'herbicides'), ('Insecticides', 'insecticides', 'insecticides'),
+         ('Molluscicides', 'molluscicides', 'molluscicides'), ('Other', 'other', 'other pesticides')], 'uk-auk-pesticides-', 'environment', 'Weight of pesticides applied to arable crops: %s (tonnes)', 't', 1, hdr_row=2,
+         note={'periodNote': 'Pesticide Usage Survey, every two years; includes seed treatment.'})
+    for sh, nut, nm in (('Figure_11_7', 'n', 'nitrogen (N)'), ('Figure_11_8', 'p2o5', 'phosphate (P2O5)')):
+        wide(11, sh, None, [('Cropped land', nut + '-cropped', nm + ' on tillage crops'), ('Grassland', nut + '-grass', nm + ' on grassland'), ('All crops and grass', nut + '-all', nm + ' on all crops and grass')],
+             'uk-auk-fertiliser-use-', 'environment', 'Fertiliser use, Great Britain: %s (kg per hectare)', 'kg/ha', 1, hdr_row=2, note={'periodNote': 'British Survey of Fertiliser Practice.'})
+    for sh, nut, nm in (('Figure_11_9', 'n', 'nitrogen (N)'), ('Figure_11_10', 'p', 'phosphorus (P)')):
+        wide(11, sh, None, [('Commercial farms', nut, nm)], 'uk-auk-soil-balance-', 'environment', 'Soil nutrient balance, United Kingdom: %s, commercial farms (kg per hectare)', 'kg/ha', 1, hdr_row=2,
+             note={'periodNote': 'From 2010 England collects June survey data only for commercial farms; the all-farms series ended in 2009 and is not shown.'})
     # --- cuentas (cap. 4), a precios corrientes
     ACC = [('Output of cereals', 'cereals', 'output of cereals'), ('Output of industrial crops', 'industrial', 'output of industrial crops'), ('Output of forage plants', 'forage', 'output of forage plants'),
            ('Output of vegetables and horticultural', 'horticulture', 'output of vegetables and horticultural products'), ('Output of potatoes', 'potatoes', 'output of potatoes'), ('Output of fruit', 'fruit', 'output of fruit'),
