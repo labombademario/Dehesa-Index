@@ -1779,7 +1779,7 @@ def us_local_cattle(doc, errs, warns, stats):
         a, b = UL_UNITS[unit]
         if not (a <= p <= b) and not (com == "Slaughter Cattle" and p >= 20): errs.append("us-local cattle/%s %s %s: precio fuera de rango (%s %s)" % (st, com, cl, p, unit)); return
         if lo is not None and hi is not None and not (lo < hi): errs.append("us-local cattle/%s %s: tramo de peso invertido (%s-%s)" % (st, cl, lo, hi)); return
-        if wt is not None and not ((10 if ("Goat" in com or "Sheep" in com or "Lamb" in com) else 30) <= wt <= 2600): errs.append("us-local cattle/%s %s: peso medio fuera de rango (%s)" % (st, cl, wt)); return
+        if wt is not None and not ((10 if ("Goat" in com or "Sheep" in com or "Lamb" in com) else 30) <= wt <= 3200): errs.append("us-local cattle/%s %s: peso medio fuera de rango (%s)" % (st, cl, wt)); return
     ref = {}
     for r in rows:
         if r[0] == "Feeder Cattle" and r[2] == "Medium and Large" and r[3] == "1" and r[4] == "" and r[5] == "Per Cwt" and r[1] in ("Steers", "Heifers", "Bulls") and r[6] is not None:
