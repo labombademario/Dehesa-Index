@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-05T18:32:00Z",
+ "generatedAt": "2026-10-05T21:32:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 84,
+  "ok": 82,
   "late": 0,
-  "error": 1,
-  "not_run": 4,
+  "error": 5,
+  "not_run": 2,
   "unknown": 0
  },
  "global": "error",
@@ -14,14 +14,14 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "bd8b94f2",
+   "sha": "10b3edb6",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/5cd5054a-ac96-4088-95ce-7bb9610bdef9",
-   "completedAt": "2026-10-05T17:04:07Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/cba6e49c-d762-49b9-a977-e6bd6f61435c",
+   "completedAt": "2026-10-05T18:46:23Z"
   },
   "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-05T15:32:45.854956+00:00",
-  "repoGeneratedAt": "2026-10-05T15:32:45.854956+00:00"
+  "prodGeneratedAt": "2026-10-05T18:34:27.791940+00:00",
+  "repoGeneratedAt": "2026-10-05T18:34:27.791940+00:00"
  },
  "pipelines": [
   {
@@ -60,7 +60,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-05T14:17:46Z"
+     "lastChange": "2026-10-05T18:44:42Z"
     }
    ],
    "last": {
@@ -92,7 +92,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-05T14:17:46Z"
+     "lastChange": "2026-10-05T18:44:42Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -705,7 +705,7 @@
     "30 21 * * 1",
     "30 13 * * 2"
    ],
-   "nextRun": "2026-10-05T21:30:00Z",
+   "nextRun": "2026-10-06T13:30:00Z",
    "files": [
     {
      "path": "data/crop-progress.json",
@@ -891,7 +891,7 @@
    "crons": [
     "50 20 * * 1"
    ],
-   "nextRun": "2026-10-05T20:50:00Z",
+   "nextRun": "2026-10-12T20:50:00Z",
    "files": [
     {
      "path": "data/ers.json",
@@ -899,18 +899,18 @@
     }
    ],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-09-30T08:02:18Z",
-    "durationSec": 93,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36687230349"
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-10-05T20:59:07Z",
+    "durationSec": 904,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37373085458"
    },
    "recent": {
-    "runs": 3,
+    "runs": 4,
     "success": 3,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -1690,21 +1690,21 @@
    "crons": [
     "20 20 * * 1"
    ],
-   "nextRun": "2026-10-05T20:20:00Z",
+   "nextRun": "2026-10-12T20:20:00Z",
    "files": [],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-09-30T08:07:52Z",
-    "durationSec": 181,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/36687803251"
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-10-05T20:33:09Z",
+    "durationSec": 904,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37370449385"
    },
    "recent": {
-    "runs": 3,
+    "runs": 4,
     "success": 3,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 168.0
   },
   {
@@ -1713,31 +1713,31 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-05T21:17:00Z",
+   "nextRun": "2026-10-06T00:17:00Z",
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-05T15:32:47Z"
+     "lastChange": "2026-10-05T18:34:29Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-05T15:32:47Z"
+     "lastChange": "2026-10-05T18:34:29Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-05T15:32:47Z"
+     "lastChange": "2026-10-05T18:34:29Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-05T15:32:47Z"
+     "lastChange": "2026-10-05T18:34:29Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-05T15:30:17Z",
-    "durationSec": 157,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37333352184"
+    "startedAt": "2026-10-05T18:32:27Z",
+    "durationSec": 126,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37356709320"
    },
    "recent": {
     "runs": 9,
@@ -1840,15 +1840,15 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-05T21:10:00Z",
+   "nextRun": "2026-10-06T00:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-05T16:20:51Z"
+     "lastChange": "2026-10-05T18:44:42Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-05T15:31:39Z"
+     "lastChange": "2026-10-05T18:33:36Z"
     },
     {
      "path": "data/series-registry.json",
@@ -1860,7 +1860,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-05T16:20:51Z"
+     "lastChange": "2026-10-05T18:44:42Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1877,7 +1877,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-05T16:20:51Z"
+     "lastChange": "2026-10-05T18:44:42Z"
     },
     {
      "path": "data/products"
@@ -1888,27 +1888,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-05T16:20:51Z"
+     "lastChange": "2026-10-05T18:44:42Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-05T16:20:51Z"
+     "lastChange": "2026-10-05T18:44:42Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-05T16:20:51Z"
+     "lastChange": "2026-10-05T18:44:42Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-05T15:31:49Z"
+     "lastChange": "2026-10-05T18:33:52Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-05T15:31:49Z"
+     "lastChange": "2026-10-05T18:33:52Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-05T15:31:49Z"
+     "lastChange": "2026-10-05T18:33:52Z"
     },
     {
      "path": "data/home-explore.json",
@@ -1921,9 +1921,9 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-05T15:29:59Z",
-    "durationSec": 120,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37333311081"
+    "startedAt": "2026-10-05T18:31:47Z",
+    "durationSec": 130,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37356627682"
    },
    "recent": {
     "runs": 9,
@@ -2479,6 +2479,46 @@
    "expectedEveryHours": 96.0
   },
   {
+   "workflow": "update-us-arcplc.yml",
+   "name": "Update US ARC-CO county payment rates and PLC rates (USDA FSA)",
+   "crons": [
+    "35 6 3,17 * *"
+   ],
+   "nextRun": "2026-10-17T06:35:00Z",
+   "files": [
+    {
+     "path": "data/us-arcplc/index.json"
+    },
+    {
+     "path": "data/us-arcplc/national.json"
+    },
+    {
+     "path": "data/us-arcplc/log.txt"
+    },
+    {
+     "path": "data/us-arcplc"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-05T11:42:05Z"
+    }
+   ],
+   "last": {
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-05T18:52:57Z",
+    "durationSec": 569,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37359298289"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 0,
+    "failed": 1
+   },
+   "status": "error",
+   "expectedEveryHours": 408.0
+  },
+  {
    "workflow": "update-us-cash-bids.yml",
    "name": "Update US local cash bids (USDA AMS MARS)",
    "crons": [
@@ -2600,7 +2640,7 @@
    "crons": [
     "30 20 * * 1-5"
    ],
-   "nextRun": "2026-10-05T20:30:00Z",
+   "nextRun": "2026-10-06T20:30:00Z",
    "files": [
     {
      "path": "data/us-lamb.json",
@@ -2612,18 +2652,18 @@
     }
    ],
    "last": {
-    "conclusion": "success",
+    "conclusion": "failure",
     "event": "schedule",
-    "startedAt": "2026-10-02T20:45:45Z",
-    "durationSec": 27,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37062645814"
+    "startedAt": "2026-10-05T20:48:24Z",
+    "durationSec": 904,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37372013055"
    },
    "recent": {
-    "runs": 1,
+    "runs": 2,
     "success": 1,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 24.0
   },
   {
@@ -2659,6 +2699,49 @@
     "failed": 1
    },
    "status": "error",
+   "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-us-markets.yml",
+   "name": "Update US market and input data (CFTC Commitments of Traders, USDA AMS grain transportation, EIA regional diesel and propane)",
+   "crons": [
+    "10 22 * * 1-5"
+   ],
+   "nextRun": "2026-10-05T22:10:00Z",
+   "files": [
+    {
+     "path": "data/us-markets/cot.json",
+     "lastChange": "2026-10-05T18:45:30Z"
+    },
+    {
+     "path": "data/us-markets/transport.json",
+     "lastChange": "2026-10-05T18:45:30Z"
+    },
+    {
+     "path": "data/us-markets/fuel.json",
+     "lastChange": "2026-10-05T18:45:30Z"
+    },
+    {
+     "path": "data/us-markets/log.txt"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-05T11:42:05Z"
+    }
+   ],
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-05T18:44:52Z",
+    "durationSec": 58,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37358277502"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 24.0
   },
   {
@@ -2884,42 +2967,6 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
-  },
-  {
-   "workflow": "update-us-markets.yml",
-   "name": "Update US market and input data (CFTC Commitments of Traders, USDA AMS grain transportation, EIA regional diesel and propane)",
-   "crons": [
-    "10 22 * * 1-5"
-   ],
-   "nextRun": "2026-10-05T22:10:00Z",
-   "files": [
-    {
-     "path": "data/us-markets/cot.json",
-     "lastChange": null
-    }
-   ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 72.0
-  },
-  {
-   "workflow": "update-us-arcplc.yml",
-   "name": "Update US ARC-CO county payment rates and PLC rates (USDA FSA)",
-   "crons": [
-    "35 6 3,17 * *"
-   ],
-   "nextRun": "2026-10-17T06:35:00Z",
-   "files": [
-    {
-     "path": "data/us-arcplc/index.json",
-     "lastChange": null
-    }
-   ],
-   "last": null,
-   "recent": null,
-   "status": "not_run",
-   "expectedEveryHours": 408.0
   }
  ]
 }
