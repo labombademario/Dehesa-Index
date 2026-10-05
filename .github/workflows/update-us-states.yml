@@ -32,7 +32,7 @@ jobs:
       - id: qa
         name: Control de calidad antes de publicar (si falla, no se publica)
         if: always()
-        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/us-states)
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard -- 'data/us-states/*.json')
         continue-on-error: true
       - name: Publicar
         if: always() && steps.qa.outcome != 'failure'

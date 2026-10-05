@@ -475,7 +475,7 @@ sources:
     timeout: 60
     script_timeout: 50
     continue: true
-    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/us-states)
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard -- 'data/us-states/*.json')
     data: [us-states/index.json, us-states/log.txt]
     extra: ['!data/us-states']
     message: Datos de EE. UU. por estado (USDA NASS y ERS)
@@ -587,7 +587,7 @@ sources:
     timeout: 15
     script_timeout: 8
     continue: true
-    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap/eu)
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard -- 'data/cap/eu/*.json')
     data: [cap/eu/allocations.json]
     extra: [cap/eu/allocations-log.txt]
     message: PAC de la UE por Estado miembro (Reglamento 2021/2115)
