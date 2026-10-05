@@ -1,4 +1,4 @@
-01:40:45 mensual 37
-01:40:48 columnas STRUCTURE,STRUCTURE_ID,STRUCTURE_NAME,ACTION,COMMODITY_SITC,Commodity by SITC,COUNTRY_DEST,Country of Destination,STATE_ORIGIN,State of Origin,FREQ,Frequency,TIME_PERIOD,Time Period,OBS_VALUE,Observation Value,UNIT_MEASURE,Unit of Measure,UNIT_MULT,Unit of Multiplier,OBS_STATUS,Observation Status,OBS_COMMENT,Observation Comment
-01:41:52 socios 20
-01:41:52 series 57 productos 15
+11:40:57 mensual 37
+11:41:00 columnas STRUCTURE,STRUCTURE_ID,STRUCTURE_NAME,ACTION,COMMODITY_SITC,Commodity by SITC,COUNTRY_DEST,Country of Destination,STATE_ORIGIN,State of Origin,FREQ,Frequency,TIME_PERIOD,Time Period,OBS_VALUE,Observation Value,UNIT_MEASURE,Unit of Measure,UNIT_MULT,Unit of Multiplier,OBS_STATUS,Observation Status,OBS_COMMENT,Observation Comment
+11:42:04 socios 20
+11:42:04 series 57 productos 15
