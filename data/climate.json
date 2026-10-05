@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-30T22:59:54.814Z",
+  "generatedAt": "2026-10-05T16:32:51.340Z",
   "lastPeriod": "2026-08",
   "baseline": "2001-2020",
   "source": {
@@ -501,6 +501,2081 @@
           "tempC": 22,
           "tempBaselineC": 20.6,
           "tempAnomalyC": 1.4
+        }
+      ]
+    },
+    {
+      "id": "us-nebraska",
+      "name": "Nebraska (Platte central)",
+      "region": "us",
+      "country": "US",
+      "lat": 40.8,
+      "lon": -98.4,
+      "crops": [
+        "maiz",
+        "soja"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 53.4,
+          "precipBaselineMm": 66,
+          "precipAnomalyPct": -19.1,
+          "tempC": 20.2,
+          "tempBaselineC": 19.3,
+          "tempAnomalyC": 0.9
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 34.7,
+          "precipBaselineMm": 59.8,
+          "precipAnomalyPct": -42,
+          "tempC": 14.6,
+          "tempBaselineC": 10.8,
+          "tempAnomalyC": 3.8
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 12.3,
+          "precipBaselineMm": 23.7,
+          "precipAnomalyPct": -48.1,
+          "tempC": 5.5,
+          "tempBaselineC": 4,
+          "tempAnomalyC": 1.6
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 2.8,
+          "precipBaselineMm": 24.5,
+          "precipAnomalyPct": -88.6,
+          "tempC": -0.1,
+          "tempBaselineC": -2.4,
+          "tempAnomalyC": 2.4
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 16.4,
+          "precipBaselineMm": 14.6,
+          "precipAnomalyPct": 12.8,
+          "tempC": -3.3,
+          "tempBaselineC": -3.6,
+          "tempAnomalyC": 0.4
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 7,
+          "precipBaselineMm": 17.6,
+          "precipAnomalyPct": -60.3,
+          "tempC": 3.1,
+          "tempBaselineC": -2.3,
+          "tempAnomalyC": 5.4
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 7.4,
+          "precipBaselineMm": 35.3,
+          "precipAnomalyPct": -78.9,
+          "tempC": 8.4,
+          "tempBaselineC": 4.3,
+          "tempAnomalyC": 4.1
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 62.1,
+          "precipBaselineMm": 71.7,
+          "precipAnomalyPct": -13.4,
+          "tempC": 12.2,
+          "tempBaselineC": 10.6,
+          "tempAnomalyC": 1.6
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 114.1,
+          "precipBaselineMm": 120.6,
+          "precipAnomalyPct": -5.4,
+          "tempC": 18,
+          "tempBaselineC": 16.6,
+          "tempAnomalyC": 1.4
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 123.3,
+          "precipBaselineMm": 111.3,
+          "precipAnomalyPct": 10.8,
+          "tempC": 22.6,
+          "tempBaselineC": 22.8,
+          "tempAnomalyC": -0.2
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 85.6,
+          "precipBaselineMm": 77.8,
+          "precipAnomalyPct": 10,
+          "tempC": 27.2,
+          "tempBaselineC": 25.7,
+          "tempAnomalyC": 1.6
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 129,
+          "precipBaselineMm": 91.5,
+          "precipAnomalyPct": 41,
+          "tempC": 24.3,
+          "tempBaselineC": 23.7,
+          "tempAnomalyC": 0.6
+        }
+      ]
+    },
+    {
+      "id": "us-minnesota",
+      "name": "Minnesota (suroeste)",
+      "region": "us",
+      "country": "US",
+      "lat": 44.2,
+      "lon": -95.3,
+      "crops": [
+        "maiz",
+        "soja"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 40.5,
+          "precipBaselineMm": 85.5,
+          "precipAnomalyPct": -52.6,
+          "tempC": 19.4,
+          "tempBaselineC": 17.4,
+          "tempAnomalyC": 2
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 41.2,
+          "precipBaselineMm": 61.1,
+          "precipAnomalyPct": -32.5,
+          "tempC": 12.5,
+          "tempBaselineC": 8.6,
+          "tempAnomalyC": 3.9
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 26.1,
+          "precipBaselineMm": 28.8,
+          "precipAnomalyPct": -9.4,
+          "tempC": 2.8,
+          "tempBaselineC": 1.4,
+          "tempAnomalyC": 1.4
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 14.6,
+          "precipBaselineMm": 28.8,
+          "precipAnomalyPct": -49.5,
+          "tempC": -6.3,
+          "tempBaselineC": -5.8,
+          "tempAnomalyC": -0.5
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 8.4,
+          "precipBaselineMm": 16.1,
+          "precipAnomalyPct": -48.1,
+          "tempC": -9.5,
+          "tempBaselineC": -8.8,
+          "tempAnomalyC": -0.7
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 5.9,
+          "precipBaselineMm": 22.1,
+          "precipAnomalyPct": -73.4,
+          "tempC": -1.8,
+          "tempBaselineC": -7.2,
+          "tempAnomalyC": 5.4
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 37.8,
+          "precipBaselineMm": 40,
+          "precipAnomalyPct": -5.4,
+          "tempC": 3.5,
+          "tempBaselineC": 0.7,
+          "tempAnomalyC": 2.8
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 86.4,
+          "precipBaselineMm": 77.4,
+          "precipAnomalyPct": 11.6,
+          "tempC": 8.5,
+          "tempBaselineC": 7.9,
+          "tempAnomalyC": 0.6
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 66.3,
+          "precipBaselineMm": 103.2,
+          "precipAnomalyPct": -35.7,
+          "tempC": 16.1,
+          "tempBaselineC": 14.6,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 84.3,
+          "precipBaselineMm": 114.9,
+          "precipAnomalyPct": -26.6,
+          "tempC": 22.1,
+          "tempBaselineC": 20.6,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 122.8,
+          "precipBaselineMm": 81.5,
+          "precipAnomalyPct": 50.6,
+          "tempC": 26.3,
+          "tempBaselineC": 23.6,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 48.4,
+          "precipBaselineMm": 89.6,
+          "precipAnomalyPct": -46,
+          "tempC": 23.2,
+          "tempBaselineC": 21.8,
+          "tempAnomalyC": 1.4
+        }
+      ]
+    },
+    {
+      "id": "us-indiana",
+      "name": "Indiana (centro)",
+      "region": "us",
+      "country": "US",
+      "lat": 40.2,
+      "lon": -86.4,
+      "crops": [
+        "maiz",
+        "soja"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 42.6,
+          "precipBaselineMm": 81.3,
+          "precipAnomalyPct": -47.6,
+          "tempC": 21,
+          "tempBaselineC": 19.2,
+          "tempAnomalyC": 1.8
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 46.5,
+          "precipBaselineMm": 92.7,
+          "precipAnomalyPct": -49.8,
+          "tempC": 14.1,
+          "tempBaselineC": 12.1,
+          "tempAnomalyC": 2
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 50.7,
+          "precipBaselineMm": 82.2,
+          "precipAnomalyPct": -38.3,
+          "tempC": 5.5,
+          "tempBaselineC": 5.1,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 58.3,
+          "precipBaselineMm": 82.8,
+          "precipAnomalyPct": -29.6,
+          "tempC": -1.2,
+          "tempBaselineC": -0.5,
+          "tempAnomalyC": -0.7
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 25.4,
+          "precipBaselineMm": 75,
+          "precipAnomalyPct": -66.1,
+          "tempC": -4.9,
+          "tempBaselineC": -3.1,
+          "tempAnomalyC": -1.8
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 28.8,
+          "precipBaselineMm": 67.2,
+          "precipAnomalyPct": -57.1,
+          "tempC": -0.1,
+          "tempBaselineC": -1.6,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 160.3,
+          "precipBaselineMm": 88.4,
+          "precipAnomalyPct": 81.4,
+          "tempC": 8.8,
+          "tempBaselineC": 4.4,
+          "tempAnomalyC": 4.4
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 103.2,
+          "precipBaselineMm": 111,
+          "precipAnomalyPct": -7,
+          "tempC": 14.3,
+          "tempBaselineC": 11,
+          "tempAnomalyC": 3.3
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 129.9,
+          "precipBaselineMm": 118.7,
+          "precipAnomalyPct": 9.4,
+          "tempC": 15.8,
+          "tempBaselineC": 16.8,
+          "tempAnomalyC": -0.9
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 139.2,
+          "precipBaselineMm": 134.4,
+          "precipAnomalyPct": 3.6,
+          "tempC": 21.6,
+          "tempBaselineC": 21.6,
+          "tempAnomalyC": 0
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 68.2,
+          "precipBaselineMm": 111.9,
+          "precipAnomalyPct": -39.1,
+          "tempC": 25,
+          "tempBaselineC": 23.4,
+          "tempAnomalyC": 1.6
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 217.6,
+          "precipBaselineMm": 95.2,
+          "precipAnomalyPct": 128.7,
+          "tempC": 23,
+          "tempBaselineC": 22.7,
+          "tempAnomalyC": 0.3
+        }
+      ]
+    },
+    {
+      "id": "us-ohio",
+      "name": "Ohio (noroeste)",
+      "region": "us",
+      "country": "US",
+      "lat": 40.9,
+      "lon": -83.8,
+      "crops": [
+        "maiz",
+        "soja"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 32.4,
+          "precipBaselineMm": 78.9,
+          "precipAnomalyPct": -58.9,
+          "tempC": 20.3,
+          "tempBaselineC": 18.8,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 51.5,
+          "precipBaselineMm": 73.2,
+          "precipAnomalyPct": -29.7,
+          "tempC": 13.3,
+          "tempBaselineC": 11.6,
+          "tempAnomalyC": 1.7
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 32.4,
+          "precipBaselineMm": 69,
+          "precipAnomalyPct": -53,
+          "tempC": 4.7,
+          "tempBaselineC": 4.8,
+          "tempAnomalyC": -0.2
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 42.8,
+          "precipBaselineMm": 64.5,
+          "precipAnomalyPct": -33.7,
+          "tempC": -1.9,
+          "tempBaselineC": -0.7,
+          "tempAnomalyC": -1.2
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 18.6,
+          "precipBaselineMm": 57.4,
+          "precipAnomalyPct": -67.6,
+          "tempC": -5.2,
+          "tempBaselineC": -3.5,
+          "tempAnomalyC": -1.8
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 13.2,
+          "precipBaselineMm": 54.3,
+          "precipAnomalyPct": -75.8,
+          "tempC": -1,
+          "tempBaselineC": -2.2,
+          "tempAnomalyC": 1.2
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 111.9,
+          "precipBaselineMm": 69.4,
+          "precipAnomalyPct": 61.2,
+          "tempC": 7.4,
+          "tempBaselineC": 3.1,
+          "tempAnomalyC": 4.3
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 126,
+          "precipBaselineMm": 87.6,
+          "precipAnomalyPct": 43.8,
+          "tempC": 13.6,
+          "tempBaselineC": 9.8,
+          "tempAnomalyC": 3.7
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 94.2,
+          "precipBaselineMm": 106.6,
+          "precipAnomalyPct": -11.6,
+          "tempC": 15.2,
+          "tempBaselineC": 16,
+          "tempAnomalyC": -0.8
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 88.2,
+          "precipBaselineMm": 96.9,
+          "precipAnomalyPct": -9,
+          "tempC": 21.6,
+          "tempBaselineC": 21,
+          "tempAnomalyC": 0.6
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 64.2,
+          "precipBaselineMm": 91.8,
+          "precipAnomalyPct": -30.1,
+          "tempC": 25.1,
+          "tempBaselineC": 23.3,
+          "tempAnomalyC": 1.8
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 127.1,
+          "precipBaselineMm": 87.7,
+          "precipAnomalyPct": 44.9,
+          "tempC": 23.2,
+          "tempBaselineC": 22.6,
+          "tempAnomalyC": 0.6
+        }
+      ]
+    },
+    {
+      "id": "us-south-dakota",
+      "name": "South Dakota (este)",
+      "region": "us",
+      "country": "US",
+      "lat": 44.3,
+      "lon": -97.9,
+      "crops": [
+        "maiz",
+        "soja",
+        "trigo"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 37.5,
+          "precipBaselineMm": 66.9,
+          "precipAnomalyPct": -43.9,
+          "tempC": 20.1,
+          "tempBaselineC": 17.8,
+          "tempAnomalyC": 2.3
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 23.6,
+          "precipBaselineMm": 51.8,
+          "precipAnomalyPct": -54.5,
+          "tempC": 12.9,
+          "tempBaselineC": 8.6,
+          "tempAnomalyC": 4.3
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 28.5,
+          "precipBaselineMm": 18.3,
+          "precipAnomalyPct": 55.7,
+          "tempC": 2.5,
+          "tempBaselineC": 1.1,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 18.6,
+          "precipBaselineMm": 19.8,
+          "precipAnomalyPct": -6.3,
+          "tempC": -5.3,
+          "tempBaselineC": -5.8,
+          "tempAnomalyC": 0.5
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 6.5,
+          "precipBaselineMm": 12.7,
+          "precipAnomalyPct": -48.8,
+          "tempC": -8.4,
+          "tempBaselineC": -8.1,
+          "tempAnomalyC": -0.3
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 10.4,
+          "precipBaselineMm": 18.5,
+          "precipAnomalyPct": -43.9,
+          "tempC": -1.1,
+          "tempBaselineC": -6.5,
+          "tempAnomalyC": 5.5
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 14.9,
+          "precipBaselineMm": 30.4,
+          "precipAnomalyPct": -51,
+          "tempC": 3.6,
+          "tempBaselineC": 1.1,
+          "tempAnomalyC": 2.5
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 60.9,
+          "precipBaselineMm": 60.3,
+          "precipAnomalyPct": 1,
+          "tempC": 8,
+          "tempBaselineC": 8.1,
+          "tempAnomalyC": -0.1
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 44.9,
+          "precipBaselineMm": 84.6,
+          "precipAnomalyPct": -46.9,
+          "tempC": 16.2,
+          "tempBaselineC": 14.9,
+          "tempAnomalyC": 1.4
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 106.2,
+          "precipBaselineMm": 103.5,
+          "precipAnomalyPct": 2.6,
+          "tempC": 21.5,
+          "tempBaselineC": 21.1,
+          "tempAnomalyC": 0.4
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 89.3,
+          "precipBaselineMm": 76.9,
+          "precipAnomalyPct": 16.1,
+          "tempC": 27.3,
+          "tempBaselineC": 24.9,
+          "tempAnomalyC": 2.4
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 50.2,
+          "precipBaselineMm": 78.7,
+          "precipAnomalyPct": -36.2,
+          "tempC": 24.1,
+          "tempBaselineC": 22.8,
+          "tempAnomalyC": 1.4
+        }
+      ]
+    },
+    {
+      "id": "us-missouri",
+      "name": "Missouri (norte)",
+      "region": "us",
+      "country": "US",
+      "lat": 39.6,
+      "lon": -92.6,
+      "crops": [
+        "maiz",
+        "soja",
+        "vacuno"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 52.8,
+          "precipBaselineMm": 86.4,
+          "precipAnomalyPct": -38.9,
+          "tempC": 22.5,
+          "tempBaselineC": 20.1,
+          "tempAnomalyC": 2.4
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 58.6,
+          "precipBaselineMm": 91.1,
+          "precipAnomalyPct": -35.7,
+          "tempC": 16.5,
+          "tempBaselineC": 12.5,
+          "tempAnomalyC": 3.9
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 67.2,
+          "precipBaselineMm": 54.9,
+          "precipAnomalyPct": 22.4,
+          "tempC": 6.9,
+          "tempBaselineC": 5.8,
+          "tempAnomalyC": 1.1
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 20.8,
+          "precipBaselineMm": 49.3,
+          "precipAnomalyPct": -57.9,
+          "tempC": -0.1,
+          "tempBaselineC": -0.2,
+          "tempAnomalyC": 0.2
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 22.6,
+          "precipBaselineMm": 42.2,
+          "precipAnomalyPct": -46.3,
+          "tempC": -3.4,
+          "tempBaselineC": -2.8,
+          "tempAnomalyC": -0.6
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 10.9,
+          "precipBaselineMm": 45.6,
+          "precipAnomalyPct": -76.1,
+          "tempC": 2.9,
+          "tempBaselineC": -1.2,
+          "tempAnomalyC": 4
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 98.9,
+          "precipBaselineMm": 71.9,
+          "precipAnomalyPct": 37.5,
+          "tempC": 10.2,
+          "tempBaselineC": 5.7,
+          "tempAnomalyC": 4.4
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 183.6,
+          "precipBaselineMm": 105.6,
+          "precipAnomalyPct": 73.9,
+          "tempC": 15,
+          "tempBaselineC": 12.3,
+          "tempAnomalyC": 2.8
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 125.9,
+          "precipBaselineMm": 125.2,
+          "precipAnomalyPct": 0.5,
+          "tempC": 17.7,
+          "tempBaselineC": 17.8,
+          "tempAnomalyC": -0.1
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 165.6,
+          "precipBaselineMm": 125.1,
+          "precipAnomalyPct": 32.4,
+          "tempC": 22.9,
+          "tempBaselineC": 23.2,
+          "tempAnomalyC": -0.3
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 61.4,
+          "precipBaselineMm": 107,
+          "precipAnomalyPct": -42.6,
+          "tempC": 26.5,
+          "tempBaselineC": 25.6,
+          "tempAnomalyC": 1
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 91.5,
+          "precipBaselineMm": 108.8,
+          "precipAnomalyPct": -16,
+          "tempC": 25.9,
+          "tempBaselineC": 24.6,
+          "tempAnomalyC": 1.3
+        }
+      ]
+    },
+    {
+      "id": "us-texas",
+      "name": "Texas (Panhandle)",
+      "region": "us",
+      "country": "US",
+      "lat": 35.2,
+      "lon": -101.8,
+      "crops": [
+        "trigo",
+        "sorgo",
+        "vacuno"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 30.3,
+          "precipBaselineMm": 49.2,
+          "precipAnomalyPct": -38.4,
+          "tempC": 23.3,
+          "tempBaselineC": 22,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 17.4,
+          "precipBaselineMm": 52.1,
+          "precipAnomalyPct": -66.7,
+          "tempC": 18.2,
+          "tempBaselineC": 14.9,
+          "tempAnomalyC": 3.3
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 16.8,
+          "precipBaselineMm": 18.6,
+          "precipAnomalyPct": -9.7,
+          "tempC": 11,
+          "tempBaselineC": 8.4,
+          "tempAnomalyC": 2.6
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 1.9,
+          "precipBaselineMm": 14.3,
+          "precipAnomalyPct": -87,
+          "tempC": 7.5,
+          "tempBaselineC": 3.3,
+          "tempAnomalyC": 4.1
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 8.4,
+          "precipBaselineMm": 14.6,
+          "precipAnomalyPct": -42.6,
+          "tempC": 3.7,
+          "tempBaselineC": 3.1,
+          "tempAnomalyC": 0.6
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 1.4,
+          "precipBaselineMm": 15.7,
+          "precipAnomalyPct": -91.1,
+          "tempC": 10.6,
+          "tempBaselineC": 4.8,
+          "tempAnomalyC": 5.7
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 1.9,
+          "precipBaselineMm": 31.3,
+          "precipAnomalyPct": -94.1,
+          "tempC": 16.1,
+          "tempBaselineC": 10.3,
+          "tempAnomalyC": 5.9
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 6.6,
+          "precipBaselineMm": 32.1,
+          "precipAnomalyPct": -79.4,
+          "tempC": 18.6,
+          "tempBaselineC": 15,
+          "tempAnomalyC": 3.6
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 29.8,
+          "precipBaselineMm": 58,
+          "precipAnomalyPct": -48.7,
+          "tempC": 21.6,
+          "tempBaselineC": 20.3,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 73.5,
+          "precipBaselineMm": 70.2,
+          "precipAnomalyPct": 4.7,
+          "tempC": 27.1,
+          "tempBaselineC": 25.8,
+          "tempAnomalyC": 1.4
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 32.6,
+          "precipBaselineMm": 59.5,
+          "precipAnomalyPct": -45.3,
+          "tempC": 29.9,
+          "tempBaselineC": 27.5,
+          "tempAnomalyC": 2.3
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 23.3,
+          "precipBaselineMm": 75.3,
+          "precipAnomalyPct": -69.1,
+          "tempC": 31.1,
+          "tempBaselineC": 26.4,
+          "tempAnomalyC": 4.7
+        }
+      ]
+    },
+    {
+      "id": "us-oklahoma",
+      "name": "Oklahoma (oeste)",
+      "region": "us",
+      "country": "US",
+      "lat": 36,
+      "lon": -98.6,
+      "crops": [
+        "trigo",
+        "vacuno"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 38.7,
+          "precipBaselineMm": 63,
+          "precipAnomalyPct": -38.6,
+          "tempC": 23.2,
+          "tempBaselineC": 23,
+          "tempAnomalyC": 0.2
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 50.5,
+          "precipBaselineMm": 70.4,
+          "precipAnomalyPct": -28.2,
+          "tempC": 19,
+          "tempBaselineC": 15.4,
+          "tempAnomalyC": 3.6
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 25.2,
+          "precipBaselineMm": 31.5,
+          "precipAnomalyPct": -20,
+          "tempC": 10.8,
+          "tempBaselineC": 8.7,
+          "tempAnomalyC": 2.1
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 0.6,
+          "precipBaselineMm": 28.8,
+          "precipAnomalyPct": -97.8,
+          "tempC": 5.5,
+          "tempBaselineC": 2.8,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 17.4,
+          "precipBaselineMm": 24.5,
+          "precipAnomalyPct": -29.1,
+          "tempC": 2.6,
+          "tempBaselineC": 2.1,
+          "tempAnomalyC": 0.5
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 9.2,
+          "precipBaselineMm": 31.1,
+          "precipAnomalyPct": -70.3,
+          "tempC": 9.4,
+          "tempBaselineC": 3.8,
+          "tempAnomalyC": 5.7
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 12.4,
+          "precipBaselineMm": 47.1,
+          "precipAnomalyPct": -73.7,
+          "tempC": 15.1,
+          "tempBaselineC": 9.9,
+          "tempAnomalyC": 5.2
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 51,
+          "precipBaselineMm": 71.7,
+          "precipAnomalyPct": -28.9,
+          "tempC": 18.9,
+          "tempBaselineC": 15.2,
+          "tempAnomalyC": 3.7
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 46.5,
+          "precipBaselineMm": 103.2,
+          "precipAnomalyPct": -55,
+          "tempC": 21.9,
+          "tempBaselineC": 20.7,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 111.9,
+          "precipBaselineMm": 100.5,
+          "precipAnomalyPct": 11.3,
+          "tempC": 27.1,
+          "tempBaselineC": 26.2,
+          "tempAnomalyC": 0.9
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 30.1,
+          "precipBaselineMm": 69.4,
+          "precipAnomalyPct": -56.7,
+          "tempC": 30.9,
+          "tempBaselineC": 28.9,
+          "tempAnomalyC": 2
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 11.5,
+          "precipBaselineMm": 81.5,
+          "precipAnomalyPct": -85.9,
+          "tempC": 32.5,
+          "tempBaselineC": 27.8,
+          "tempAnomalyC": 4.8
+        }
+      ]
+    },
+    {
+      "id": "us-colorado",
+      "name": "Colorado (noreste)",
+      "region": "us",
+      "country": "US",
+      "lat": 40.4,
+      "lon": -103.3,
+      "crops": [
+        "trigo",
+        "vacuno"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 92.7,
+          "precipBaselineMm": 32.7,
+          "precipAnomalyPct": 183.5,
+          "tempC": 19.4,
+          "tempBaselineC": 19,
+          "tempAnomalyC": 0.4
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 11.5,
+          "precipBaselineMm": 26.3,
+          "precipAnomalyPct": -56.5,
+          "tempC": 13,
+          "tempBaselineC": 10.4,
+          "tempAnomalyC": 2.5
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 14.4,
+          "precipBaselineMm": 11.4,
+          "precipAnomalyPct": 26.3,
+          "tempC": 6.9,
+          "tempBaselineC": 4.1,
+          "tempAnomalyC": 2.8
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 0.9,
+          "precipBaselineMm": 10.2,
+          "precipAnomalyPct": -90.9,
+          "tempC": 4.5,
+          "tempBaselineC": -1,
+          "tempAnomalyC": 5.5
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 5,
+          "precipBaselineMm": 7.4,
+          "precipAnomalyPct": -33.3,
+          "tempC": 1.2,
+          "tempBaselineC": -0.6,
+          "tempAnomalyC": 1.9
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 5.6,
+          "precipBaselineMm": 11.5,
+          "precipAnomalyPct": -51.2,
+          "tempC": 5.6,
+          "tempBaselineC": -0.1,
+          "tempAnomalyC": 5.7
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 10.5,
+          "precipBaselineMm": 20.2,
+          "precipAnomalyPct": -47.7,
+          "tempC": 11.2,
+          "tempBaselineC": 5.5,
+          "tempAnomalyC": 5.7
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 21.6,
+          "precipBaselineMm": 49.5,
+          "precipAnomalyPct": -56.4,
+          "tempC": 11.9,
+          "tempBaselineC": 9.8,
+          "tempAnomalyC": 2.1
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 64.5,
+          "precipBaselineMm": 74.4,
+          "precipAnomalyPct": -13.3,
+          "tempC": 16.3,
+          "tempBaselineC": 15.2,
+          "tempAnomalyC": 1
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 68.1,
+          "precipBaselineMm": 63.3,
+          "precipAnomalyPct": 7.6,
+          "tempC": 22.7,
+          "tempBaselineC": 22.1,
+          "tempAnomalyC": 0.6
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 49.6,
+          "precipBaselineMm": 63.5,
+          "precipAnomalyPct": -22,
+          "tempC": 27.6,
+          "tempBaselineC": 25.8,
+          "tempAnomalyC": 1.8
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 65.4,
+          "precipBaselineMm": 55.8,
+          "precipAnomalyPct": 17.2,
+          "tempC": 26.1,
+          "tempBaselineC": 23.9,
+          "tempAnomalyC": 2.2
+        }
+      ]
+    },
+    {
+      "id": "us-montana",
+      "name": "Montana (centro-norte)",
+      "region": "us",
+      "country": "US",
+      "lat": 48.3,
+      "lon": -110.9,
+      "crops": [
+        "trigo"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 7.5,
+          "precipBaselineMm": 34.5,
+          "precipAnomalyPct": -78.3,
+          "tempC": 18.4,
+          "tempBaselineC": 14.4,
+          "tempAnomalyC": 4
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 15.8,
+          "precipBaselineMm": 26,
+          "precipAnomalyPct": -39.3,
+          "tempC": 7.8,
+          "tempBaselineC": 6.6,
+          "tempAnomalyC": 1.2
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 25.2,
+          "precipBaselineMm": 18,
+          "precipAnomalyPct": 40,
+          "tempC": 3.2,
+          "tempBaselineC": 0.2,
+          "tempAnomalyC": 3
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 48.4,
+          "precipBaselineMm": 15.8,
+          "precipAnomalyPct": 205.9,
+          "tempC": -1.8,
+          "tempBaselineC": -5,
+          "tempAnomalyC": 3.2
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 4.3,
+          "precipBaselineMm": 16.4,
+          "precipAnomalyPct": -73.6,
+          "tempC": -1.8,
+          "tempBaselineC": -5.3,
+          "tempAnomalyC": 3.5
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 7.3,
+          "precipBaselineMm": 14.8,
+          "precipAnomalyPct": -50.9,
+          "tempC": -0.1,
+          "tempBaselineC": -4.5,
+          "tempAnomalyC": 4.4
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 25.4,
+          "precipBaselineMm": 18.6,
+          "precipAnomalyPct": 36.7,
+          "tempC": 3.7,
+          "tempBaselineC": 0.9,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 22.8,
+          "precipBaselineMm": 36,
+          "precipAnomalyPct": -36.7,
+          "tempC": 6.7,
+          "tempBaselineC": 6.4,
+          "tempAnomalyC": 0.4
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 63.9,
+          "precipBaselineMm": 59.5,
+          "precipAnomalyPct": 7.3,
+          "tempC": 14.7,
+          "tempBaselineC": 12.4,
+          "tempAnomalyC": 2.3
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 119.7,
+          "precipBaselineMm": 69.3,
+          "precipAnomalyPct": 72.7,
+          "tempC": 15.6,
+          "tempBaselineC": 17.4,
+          "tempAnomalyC": -1.8
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 14.9,
+          "precipBaselineMm": 26.7,
+          "precipAnomalyPct": -44.2,
+          "tempC": 24.5,
+          "tempBaselineC": 22.4,
+          "tempAnomalyC": 2.1
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 42.8,
+          "precipBaselineMm": 29.8,
+          "precipAnomalyPct": 43.8,
+          "tempC": 20.8,
+          "tempBaselineC": 20.6,
+          "tempAnomalyC": 0.2
+        }
+      ]
+    },
+    {
+      "id": "us-washington",
+      "name": "Washington (Palouse)",
+      "region": "us",
+      "country": "US",
+      "lat": 46.9,
+      "lon": -117.4,
+      "crops": [
+        "trigo"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 18,
+          "precipBaselineMm": 21.3,
+          "precipAnomalyPct": -15.5,
+          "tempC": 19.1,
+          "tempBaselineC": 16.3,
+          "tempAnomalyC": 2.9
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 58.3,
+          "precipBaselineMm": 50.8,
+          "precipAnomalyPct": 14.6,
+          "tempC": 8.6,
+          "tempBaselineC": 8.9,
+          "tempAnomalyC": -0.3
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 91.2,
+          "precipBaselineMm": 76.5,
+          "precipAnomalyPct": 19.2,
+          "tempC": 4.9,
+          "tempBaselineC": 2.5,
+          "tempAnomalyC": 2.4
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 136.1,
+          "precipBaselineMm": 87.1,
+          "precipAnomalyPct": 56.2,
+          "tempC": 2.8,
+          "tempBaselineC": -1.9,
+          "tempAnomalyC": 4.6
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 41.5,
+          "precipBaselineMm": 83.7,
+          "precipAnomalyPct": -50.4,
+          "tempC": 0,
+          "tempBaselineC": -1.6,
+          "tempAnomalyC": 1.6
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 66.9,
+          "precipBaselineMm": 55.7,
+          "precipAnomalyPct": 20.1,
+          "tempC": 2,
+          "tempBaselineC": -0.1,
+          "tempAnomalyC": 2
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 115,
+          "precipBaselineMm": 73.8,
+          "precipAnomalyPct": 55.9,
+          "tempC": 5.2,
+          "tempBaselineC": 3.8,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 69.6,
+          "precipBaselineMm": 50.4,
+          "precipAnomalyPct": 38.1,
+          "tempC": 8.1,
+          "tempBaselineC": 7.5,
+          "tempAnomalyC": 0.6
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 37.5,
+          "precipBaselineMm": 53.3,
+          "precipAnomalyPct": -29.7,
+          "tempC": 13.9,
+          "tempBaselineC": 12.7,
+          "tempAnomalyC": 1.2
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 27.3,
+          "precipBaselineMm": 40.2,
+          "precipAnomalyPct": -32.1,
+          "tempC": 16.4,
+          "tempBaselineC": 16.4,
+          "tempAnomalyC": 0
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 3.1,
+          "precipBaselineMm": 10.8,
+          "precipAnomalyPct": -71.4,
+          "tempC": 22.2,
+          "tempBaselineC": 21.8,
+          "tempAnomalyC": 0.5
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 17.1,
+          "precipBaselineMm": 15.2,
+          "precipAnomalyPct": 12.2,
+          "tempC": 21.5,
+          "tempBaselineC": 21.3,
+          "tempAnomalyC": 0.2
+        }
+      ]
+    },
+    {
+      "id": "us-california",
+      "name": "California (valle de San Joaquín)",
+      "region": "us",
+      "country": "US",
+      "lat": 36.5,
+      "lon": -119.8,
+      "crops": [
+        "leche",
+        "algodon"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 22.2,
+          "precipBaselineMm": 1.5,
+          "precipAnomalyPct": 1380,
+          "tempC": 26.5,
+          "tempBaselineC": 25.7,
+          "tempAnomalyC": 0.8
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 35.3,
+          "precipBaselineMm": 14.6,
+          "precipAnomalyPct": 142.6,
+          "tempC": 18.5,
+          "tempBaselineC": 19.7,
+          "tempAnomalyC": -1.2
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 66.9,
+          "precipBaselineMm": 26.4,
+          "precipAnomalyPct": 153.4,
+          "tempC": 13.8,
+          "tempBaselineC": 13.5,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 72.2,
+          "precipBaselineMm": 58.3,
+          "precipAnomalyPct": 23.9,
+          "tempC": 9.1,
+          "tempBaselineC": 9.1,
+          "tempAnomalyC": -0.1
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 39.4,
+          "precipBaselineMm": 55.8,
+          "precipAnomalyPct": -29.4,
+          "tempC": 11.1,
+          "tempBaselineC": 9.5,
+          "tempAnomalyC": 1.6
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 70.3,
+          "precipBaselineMm": 48.7,
+          "precipAnomalyPct": 44.3,
+          "tempC": 12.8,
+          "tempBaselineC": 10.7,
+          "tempAnomalyC": 2.1
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 0.9,
+          "precipBaselineMm": 47.1,
+          "precipAnomalyPct": -98,
+          "tempC": 18.3,
+          "tempBaselineC": 13.3,
+          "tempAnomalyC": 5
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 34.5,
+          "precipBaselineMm": 27.3,
+          "precipAnomalyPct": 26.4,
+          "tempC": 17.6,
+          "tempBaselineC": 16,
+          "tempAnomalyC": 1.5
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 7.4,
+          "precipBaselineMm": 12.1,
+          "precipAnomalyPct": -38.5,
+          "tempC": 22.4,
+          "tempBaselineC": 21.1,
+          "tempAnomalyC": 1.4
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 0.3,
+          "precipBaselineMm": 2.4,
+          "precipAnomalyPct": -87.5,
+          "tempC": 27.7,
+          "tempBaselineC": 26.4,
+          "tempAnomalyC": 1.2
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 1.6,
+          "precipBaselineMm": 0.9,
+          "precipAnomalyPct": 66.7,
+          "tempC": 30.3,
+          "tempBaselineC": 30.2,
+          "tempAnomalyC": 0
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 1.9,
+          "precipBaselineMm": 0.6,
+          "precipAnomalyPct": 200,
+          "tempC": 30.9,
+          "tempBaselineC": 28.8,
+          "tempAnomalyC": 2.1
+        }
+      ]
+    },
+    {
+      "id": "us-arkansas",
+      "name": "Arkansas (Delta)",
+      "region": "us",
+      "country": "US",
+      "lat": 35,
+      "lon": -91,
+      "crops": [
+        "arroz",
+        "soja"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 80.7,
+          "precipBaselineMm": 80.7,
+          "precipAnomalyPct": 0,
+          "tempC": 25.1,
+          "tempBaselineC": 23.9,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 111.9,
+          "precipBaselineMm": 107.6,
+          "precipAnomalyPct": 4,
+          "tempC": 18.8,
+          "tempBaselineC": 17.2,
+          "tempAnomalyC": 1.7
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 55.8,
+          "precipBaselineMm": 105.6,
+          "precipAnomalyPct": -47.2,
+          "tempC": 12.5,
+          "tempBaselineC": 10.6,
+          "tempAnomalyC": 1.9
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 20.8,
+          "precipBaselineMm": 132.7,
+          "precipAnomalyPct": -84.3,
+          "tempC": 6.4,
+          "tempBaselineC": 5.7,
+          "tempAnomalyC": 0.8
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 64.5,
+          "precipBaselineMm": 85.9,
+          "precipAnomalyPct": -24.9,
+          "tempC": 2.4,
+          "tempBaselineC": 4,
+          "tempAnomalyC": -1.6
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 72,
+          "precipBaselineMm": 110,
+          "precipAnomalyPct": -34.6,
+          "tempC": 8.5,
+          "tempBaselineC": 6,
+          "tempAnomalyC": 2.5
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 70.4,
+          "precipBaselineMm": 127.4,
+          "precipAnomalyPct": -44.8,
+          "tempC": 15.8,
+          "tempBaselineC": 11.2,
+          "tempAnomalyC": 4.6
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 119.4,
+          "precipBaselineMm": 132,
+          "precipAnomalyPct": -9.5,
+          "tempC": 20,
+          "tempBaselineC": 16.5,
+          "tempAnomalyC": 3.5
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 175.8,
+          "precipBaselineMm": 140.4,
+          "precipAnomalyPct": 25.2,
+          "tempC": 21.4,
+          "tempBaselineC": 21.1,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 109.5,
+          "precipBaselineMm": 82.5,
+          "precipAnomalyPct": 32.7,
+          "tempC": 26.3,
+          "tempBaselineC": 25.7,
+          "tempAnomalyC": 0.6
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 70.4,
+          "precipBaselineMm": 90.8,
+          "precipAnomalyPct": -22.5,
+          "tempC": 29.9,
+          "tempBaselineC": 27.7,
+          "tempAnomalyC": 2.2
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 43.7,
+          "precipBaselineMm": 96.4,
+          "precipAnomalyPct": -54.7,
+          "tempC": 31.1,
+          "tempBaselineC": 27.6,
+          "tempAnomalyC": 3.5
+        }
+      ]
+    },
+    {
+      "id": "us-mississippi",
+      "name": "Mississippi (Delta)",
+      "region": "us",
+      "country": "US",
+      "lat": 33.5,
+      "lon": -90.7,
+      "crops": [
+        "soja",
+        "algodon"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 34.5,
+          "precipBaselineMm": 90.9,
+          "precipAnomalyPct": -62,
+          "tempC": 26.7,
+          "tempBaselineC": 25.2,
+          "tempAnomalyC": 1.4
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 121.2,
+          "precipBaselineMm": 119.4,
+          "precipAnomalyPct": 1.6,
+          "tempC": 20.9,
+          "tempBaselineC": 18.7,
+          "tempAnomalyC": 2.2
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 69.3,
+          "precipBaselineMm": 100.8,
+          "precipAnomalyPct": -31.3,
+          "tempC": 14.3,
+          "tempBaselineC": 12.1,
+          "tempAnomalyC": 2.2
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 38.1,
+          "precipBaselineMm": 138,
+          "precipAnomalyPct": -72.4,
+          "tempC": 8.1,
+          "tempBaselineC": 7.6,
+          "tempAnomalyC": 0.5
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 96.4,
+          "precipBaselineMm": 115.6,
+          "precipAnomalyPct": -16.6,
+          "tempC": 5.3,
+          "tempBaselineC": 5.9,
+          "tempAnomalyC": -0.6
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 33.9,
+          "precipBaselineMm": 134.1,
+          "precipAnomalyPct": -74.7,
+          "tempC": 10.8,
+          "tempBaselineC": 8,
+          "tempAnomalyC": 2.8
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 92.7,
+          "precipBaselineMm": 126.2,
+          "precipAnomalyPct": -26.5,
+          "tempC": 16.9,
+          "tempBaselineC": 12.9,
+          "tempAnomalyC": 4.1
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 101.1,
+          "precipBaselineMm": 134.4,
+          "precipAnomalyPct": -24.8,
+          "tempC": 20.7,
+          "tempBaselineC": 17.6,
+          "tempAnomalyC": 3.1
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 130.5,
+          "precipBaselineMm": 123.1,
+          "precipAnomalyPct": 6,
+          "tempC": 22.6,
+          "tempBaselineC": 22.2,
+          "tempAnomalyC": 0.4
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 108,
+          "precipBaselineMm": 93.3,
+          "precipAnomalyPct": 15.8,
+          "tempC": 27.3,
+          "tempBaselineC": 26.6,
+          "tempAnomalyC": 0.8
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 63.5,
+          "precipBaselineMm": 100.8,
+          "precipAnomalyPct": -36.9,
+          "tempC": 30.8,
+          "tempBaselineC": 28.3,
+          "tempAnomalyC": 2.5
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 45.9,
+          "precipBaselineMm": 90.2,
+          "precipAnomalyPct": -49.1,
+          "tempC": 32,
+          "tempBaselineC": 28.3,
+          "tempAnomalyC": 3.6
+        }
+      ]
+    },
+    {
+      "id": "us-georgia",
+      "name": "Georgia (sur)",
+      "region": "us",
+      "country": "US",
+      "lat": 31.5,
+      "lon": -83.6,
+      "crops": [
+        "algodon",
+        "maiz"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 11.7,
+          "precipBaselineMm": 96,
+          "precipAnomalyPct": -87.8,
+          "tempC": 25.8,
+          "tempBaselineC": 24.8,
+          "tempAnomalyC": 0.9
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 23.9,
+          "precipBaselineMm": 63.2,
+          "precipAnomalyPct": -62.3,
+          "tempC": 20.6,
+          "tempBaselineC": 20.2,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 15.3,
+          "precipBaselineMm": 71.4,
+          "precipAnomalyPct": -78.6,
+          "tempC": 16,
+          "tempBaselineC": 14.2,
+          "tempAnomalyC": 1.8
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 70.1,
+          "precipBaselineMm": 120,
+          "precipAnomalyPct": -41.6,
+          "tempC": 10.8,
+          "tempBaselineC": 10.7,
+          "tempAnomalyC": 0.2
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 49.3,
+          "precipBaselineMm": 86.8,
+          "precipAnomalyPct": -43.2,
+          "tempC": 9.4,
+          "tempBaselineC": 8.6,
+          "tempAnomalyC": 0.7
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 47.3,
+          "precipBaselineMm": 111.4,
+          "precipAnomalyPct": -57.5,
+          "tempC": 11.8,
+          "tempBaselineC": 10.8,
+          "tempAnomalyC": 1
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 43.7,
+          "precipBaselineMm": 110,
+          "precipAnomalyPct": -60.3,
+          "tempC": 17.9,
+          "tempBaselineC": 14.5,
+          "tempAnomalyC": 3.5
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 36,
+          "precipBaselineMm": 102.3,
+          "precipAnomalyPct": -64.8,
+          "tempC": 21.6,
+          "tempBaselineC": 18.7,
+          "tempAnomalyC": 2.9
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 192.2,
+          "precipBaselineMm": 75.3,
+          "precipAnomalyPct": 155.1,
+          "tempC": 23.4,
+          "tempBaselineC": 23.3,
+          "tempAnomalyC": 0.1
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 121.8,
+          "precipBaselineMm": 136.5,
+          "precipAnomalyPct": -10.8,
+          "tempC": 26.5,
+          "tempBaselineC": 26.5,
+          "tempAnomalyC": 0
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 80,
+          "precipBaselineMm": 130.8,
+          "precipAnomalyPct": -38.9,
+          "tempC": 29.1,
+          "tempBaselineC": 27.5,
+          "tempAnomalyC": 1.6
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 132.1,
+          "precipBaselineMm": 139.2,
+          "precipAnomalyPct": -5.1,
+          "tempC": 28.5,
+          "tempBaselineC": 27.3,
+          "tempAnomalyC": 1.2
+        }
+      ]
+    },
+    {
+      "id": "us-wisconsin",
+      "name": "Wisconsin (centro)",
+      "region": "us",
+      "country": "US",
+      "lat": 44.5,
+      "lon": -89.6,
+      "crops": [
+        "leche",
+        "maiz"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 72.3,
+          "precipBaselineMm": 92.7,
+          "precipAnomalyPct": -22,
+          "tempC": 17,
+          "tempBaselineC": 15.8,
+          "tempAnomalyC": 1.1
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 33.8,
+          "precipBaselineMm": 81.5,
+          "precipAnomalyPct": -58.6,
+          "tempC": 10.6,
+          "tempBaselineC": 7.9,
+          "tempAnomalyC": 2.7
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 30.3,
+          "precipBaselineMm": 49.5,
+          "precipAnomalyPct": -38.8,
+          "tempC": 1.1,
+          "tempBaselineC": 0.8,
+          "tempAnomalyC": 0.3
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 42.2,
+          "precipBaselineMm": 47.4,
+          "precipAnomalyPct": -11.1,
+          "tempC": -9.2,
+          "tempBaselineC": -6.5,
+          "tempAnomalyC": -2.7
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 50.5,
+          "precipBaselineMm": 29.1,
+          "precipAnomalyPct": 73.4,
+          "tempC": -13,
+          "tempBaselineC": -10.1,
+          "tempAnomalyC": -2.9
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 42.6,
+          "precipBaselineMm": 33.6,
+          "precipAnomalyPct": 26.7,
+          "tempC": -6.3,
+          "tempBaselineC": -8.8,
+          "tempAnomalyC": 2.5
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 88,
+          "precipBaselineMm": 53.6,
+          "precipAnomalyPct": 64.2,
+          "tempC": 0.8,
+          "tempBaselineC": -1.1,
+          "tempAnomalyC": 2
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 217.2,
+          "precipBaselineMm": 86.1,
+          "precipAnomalyPct": 152.3,
+          "tempC": 7.3,
+          "tempBaselineC": 5.9,
+          "tempAnomalyC": 1.4
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 47.4,
+          "precipBaselineMm": 108.2,
+          "precipAnomalyPct": -56.2,
+          "tempC": 12.4,
+          "tempBaselineC": 12.8,
+          "tempAnomalyC": -0.4
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 113.1,
+          "precipBaselineMm": 122.4,
+          "precipAnomalyPct": -7.6,
+          "tempC": 18.6,
+          "tempBaselineC": 18.4,
+          "tempAnomalyC": 0.2
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 91.1,
+          "precipBaselineMm": 90.8,
+          "precipAnomalyPct": 0.3,
+          "tempC": 22.5,
+          "tempBaselineC": 21.3,
+          "tempAnomalyC": 1.3
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 79.7,
+          "precipBaselineMm": 95.8,
+          "precipAnomalyPct": -16.8,
+          "tempC": 20.2,
+          "tempBaselineC": 20,
+          "tempAnomalyC": 0.2
+        }
+      ]
+    },
+    {
+      "id": "us-north-carolina",
+      "name": "North Carolina (este)",
+      "region": "us",
+      "country": "US",
+      "lat": 35.5,
+      "lon": -78,
+      "crops": [
+        "cerdo",
+        "soja"
+      ],
+      "months": [
+        {
+          "period": "2025-09",
+          "precipMm": 35.1,
+          "precipBaselineMm": 137.7,
+          "precipAnomalyPct": -74.5,
+          "tempC": 23.2,
+          "tempBaselineC": 22.8,
+          "tempAnomalyC": 0.5
+        },
+        {
+          "period": "2025-10",
+          "precipMm": 62,
+          "precipBaselineMm": 83.1,
+          "precipAnomalyPct": -25.4,
+          "tempC": 17,
+          "tempBaselineC": 16.9,
+          "tempAnomalyC": 0.1
+        },
+        {
+          "period": "2025-11",
+          "precipMm": 30.6,
+          "precipBaselineMm": 87.9,
+          "precipAnomalyPct": -65.2,
+          "tempC": 11.6,
+          "tempBaselineC": 10.7,
+          "tempAnomalyC": 0.8
+        },
+        {
+          "period": "2025-12",
+          "precipMm": 62.3,
+          "precipBaselineMm": 94.9,
+          "precipAnomalyPct": -34.3,
+          "tempC": 5,
+          "tempBaselineC": 6.7,
+          "tempAnomalyC": -1.7
+        },
+        {
+          "period": "2026-01",
+          "precipMm": 52.4,
+          "precipBaselineMm": 71.6,
+          "precipAnomalyPct": -26.8,
+          "tempC": 4,
+          "tempBaselineC": 4.4,
+          "tempAnomalyC": -0.4
+        },
+        {
+          "period": "2026-02",
+          "precipMm": 55.2,
+          "precipBaselineMm": 79.2,
+          "precipAnomalyPct": -30.4,
+          "tempC": 4.8,
+          "tempBaselineC": 6.2,
+          "tempAnomalyC": -1.3
+        },
+        {
+          "period": "2026-03",
+          "precipMm": 42.5,
+          "precipBaselineMm": 94.9,
+          "precipAnomalyPct": -55.2,
+          "tempC": 14.1,
+          "tempBaselineC": 10.3,
+          "tempAnomalyC": 3.8
+        },
+        {
+          "period": "2026-04",
+          "precipMm": 38.1,
+          "precipBaselineMm": 88.2,
+          "precipAnomalyPct": -56.8,
+          "tempC": 18.9,
+          "tempBaselineC": 15.7,
+          "tempAnomalyC": 3.2
+        },
+        {
+          "period": "2026-05",
+          "precipMm": 98,
+          "precipBaselineMm": 103.5,
+          "precipAnomalyPct": -5.4,
+          "tempC": 21.7,
+          "tempBaselineC": 20.6,
+          "tempAnomalyC": 1
+        },
+        {
+          "period": "2026-06",
+          "precipMm": 90.9,
+          "precipBaselineMm": 120.6,
+          "precipAnomalyPct": -24.6,
+          "tempC": 27,
+          "tempBaselineC": 25.1,
+          "tempAnomalyC": 1.8
+        },
+        {
+          "period": "2026-07",
+          "precipMm": 157.8,
+          "precipBaselineMm": 137,
+          "precipAnomalyPct": 15.2,
+          "tempC": 28.4,
+          "tempBaselineC": 27,
+          "tempAnomalyC": 1.4
+        },
+        {
+          "period": "2026-08",
+          "precipMm": 90.5,
+          "precipBaselineMm": 143.8,
+          "precipAnomalyPct": -37.1,
+          "tempC": 27.8,
+          "tempBaselineC": 26.1,
+          "tempAnomalyC": 1.7
         }
       ]
     },
