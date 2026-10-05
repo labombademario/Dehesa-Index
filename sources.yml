@@ -559,3 +559,23 @@ sources:
     script: scripts/update-fr-cereobs.py
     data: [france-cereobs.json]
     message: Datos Francia estado del maíz grano (Céré'Obs, FranceAgriMer)
+  - id: eu-gapfill
+    name: Update coverage gaps with harmonised official data (Eurostat, Destatis)
+    cron: ['25 9 * * 4']
+    script: scripts/update-eu-gapfill.py
+    timeout: 20
+    script_timeout: 15
+    data: [eu-gapfill-stats.json]
+    log: eu-gapfill-log.txt
+    message: Datos huecos de cobertura (Eurostat, Destatis)
+  - id: eu-cap
+    name: Update EU CAP allocations by Member State (Regulation 2021/2115, EUR-Lex)
+    cron: ['40 7 * * 1']
+    script: scripts/update-eu-cap.py
+    timeout: 15
+    script_timeout: 8
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap/eu)
+    data: [cap/eu/allocations.json]
+    extra: [cap/eu/allocations-log.txt]
+    message: PAC de la UE por Estado miembro (Reglamento 2021/2115)

@@ -1,0 +1,50 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - clasificacion de huecos de cobertura con prueba",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "doc",
+  "rules",
+  "entries"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "doc": {
+   "type": "string",
+   "minLength": 20
+  },
+  "rules": {
+   "type": "object"
+  },
+  "entries": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "cc",
+     "product",
+     "metric",
+     "state",
+     "evidence",
+     "reason"
+    ],
+    "properties": {
+     "state": {
+      "enum": [
+       "NOT_APPLICABLE",
+       "NOT_MATERIAL",
+       "SOURCE_RESTRICTED"
+      ]
+     },
+     "reason": {
+      "type": "string",
+      "minLength": 20
+     }
+    }
+   }
+  }
+ }
+}

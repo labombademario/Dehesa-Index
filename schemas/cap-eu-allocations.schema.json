@@ -1,0 +1,90 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - PAC de la UE: asignaciones por Estado miembro (Reglamento 2021/2115, anexos V y XI)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "sourceIds",
+  "source",
+  "unit",
+  "directPayments",
+  "ruralDevelopment"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string"
+  },
+  "sourceIds": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "minItems": 1
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "title",
+    "celex",
+    "consolidatedVersion",
+    "url"
+   ],
+   "properties": {
+    "celex": {
+     "type": "string",
+     "pattern": "^02021R2115-\\d{8}$"
+    },
+    "url": {
+     "type": "string",
+     "pattern": "^https://eur-lex\\.europa\\.eu/"
+    }
+   }
+  },
+  "unit": {
+   "type": "string"
+  },
+  "directPayments": {
+   "type": "object",
+   "required": [
+    "annex",
+    "years",
+    "countries"
+   ],
+   "properties": {
+    "years": {
+     "type": "array",
+     "minItems": 5,
+     "maxItems": 5
+    },
+    "countries": {
+     "type": "object",
+     "minProperties": 27
+    }
+   }
+  },
+  "ruralDevelopment": {
+   "type": "object",
+   "required": [
+    "annex",
+    "years",
+    "countries",
+    "totalEU27"
+   ],
+   "properties": {
+    "countries": {
+     "type": "object",
+     "minProperties": 27
+    },
+    "totalEU27": {
+     "type": "array",
+     "minItems": 5,
+     "maxItems": 5
+    }
+   }
+  }
+ }
+}

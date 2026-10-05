@@ -212,6 +212,10 @@
          "HISTORICAL_ONLY",
          "SOURCE_AVAILABLE_NOT_INGESTED",
          "LICENSE_PENDING",
+         "INDEX_ONLY",
+         "SOURCE_RESTRICTED",
+         "NOT_MATERIAL",
+         "NOT_APPLICABLE",
          "MISSING"
         ]
        },

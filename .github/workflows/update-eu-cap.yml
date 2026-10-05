@@ -1,0 +1,52 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update EU CAP allocations by Member State (Regulation 2021/2115, EUR-Lex)
+on:
+  schedule:
+    - cron: '40 7 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: python3 scripts/update-eu-cap.py
+        timeout-minutes: 8
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/cap/eu/allocations.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/cap/eu/allocations.json
+      - id: qa
+        name: Control de calidad antes de publicar (si falla, no se publica)
+        if: always()
+        run: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap/eu)
+        continue-on-error: true
+      - name: Publicar
+        if: always() && steps.qa.outcome != 'failure'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/cap/eu/allocations.json data/cap/eu/allocations-log.txt data/revisions.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "PAC de la UE por Estado miembro (Reglamento 2021/2115)"
+          for i in 1 2 3 4 5 6; do
+            git pull -q --rebase --autostash && git push && exit 0
+            sleep $((i * 5 + RANDOM % 10))
+          done
+          echo '::error::no se pudo publicar tras 6 intentos'; exit 1
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }} ${{ steps.qa.outcome }}

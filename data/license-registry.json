@@ -1588,6 +1588,30 @@
    "aliases": [],
    "notes": null,
    "short": "ONS (Reino Unido)"
+  },
+  "eur_lex": {
+   "name": "EUR-Lex (Publications Office of the European Union) — EU legislation",
+   "url": "https://eur-lex.europa.eu/",
+   "country": "EU",
+   "licenseId": "EU-REUSE-2011-833",
+   "licenseName": "Reuse of Commission documents (Commission Decision 2011/833/EU); © European Union",
+   "licenseUrl": "https://eur-lex.europa.eu/content/legal-notice/legal-notice.html",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: EUR-Lex, Regulation (EU) 2021/2115, consolidated text. © European Union. Only the Official Journal is authentic.",
+   "additionalRestrictions": "Acknowledge the source and do not distort the meaning (Decision 2011/833/EU, art. 6). Only the Official Journal is authentic; we publish figures extracted from the annexes of the consolidated text, not the legal text.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-05",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Commission Decision 2011/833/EU, Article 4 (read 2026-10-05 from the Publications Office Cellar, CELEX 32011D0833): 'All documents shall be available for reuse: (a) for commercial or non-commercial purposes under the conditions laid down in Article 6; (b) without charge ...; and (c) without the need to make an individual application'. EUR-Lex refers to this Decision for reuse. The EUR-Lex legal-notice page itself returned an empty body to the runner, hence confidence medium.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "EUR-Lex"
   }
  },
  "files": {
@@ -2105,6 +2129,17 @@
     "world_bank_wdi"
    ],
    "notes": "Índices de precios de consumo para deflactar precios (mensuales: Eurostat HICP, ONS, BLS, Statistics Canada; anuales: Banco Mundial WDI a partir de data/worldbank-agri.json). Cada país indica su fuente; si una fuente falla se conserva el valor anterior y nunca se rellena ni se estima."
+  },
+  "data/eu-gapfill-stats.json": {
+   "bySourceGroupPrefix": {
+    "Eurostat": "eurostat",
+    "Destatis": "destatis"
+   }
+  },
+  "data/cap/eu/allocations.json": {
+   "sources": [
+    "eur_lex"
+   ]
   }
  },
  "derived": [
@@ -2142,7 +2177,8 @@
   "home-explore.json",
   "ers-cost-reference.json",
   "series-lifecycle.json",
-  "instrument-identity.json"
+  "instrument-identity.json",
+  "coverage-overrides.json"
  ],
  "pendingBaseline": {
   "note": "Fuentes PENDING que ya se publicaban antes del License Gate estricto. check-licenses.py --strict falla si una fuente PENDING en uso NO figura aqui (ninguna fuente nueva puede publicarse sin verificar) y avisa por cada una de las listadas. Quitar una fuente de esta lista al resolverla; --strict-all falla mientras la lista no este vacia.",

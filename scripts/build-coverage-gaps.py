@@ -17,7 +17,7 @@ for k, v in reg.items():
     for a in v.get('aliases', []): alias[a] = k
 cand = CM.J('source-candidates.json')['candidates']
 PRODUCTS = sorted(CM.KIND_OF)
-STATES = ['AVAILABLE', 'AVAILABLE_OUTSIDE_CATALOG', 'STALE', 'HISTORICAL_ONLY', 'SOURCE_AVAILABLE_NOT_INGESTED', 'LICENSE_PENDING', 'MISSING']
+STATES = ['AVAILABLE', 'AVAILABLE_OUTSIDE_CATALOG', 'STALE', 'HISTORICAL_ONLY', 'INDEX_ONLY', 'SOURCE_AVAILABLE_NOT_INGESTED', 'LICENSE_PENDING', 'SOURCE_RESTRICTED', 'NOT_MATERIAL', 'NOT_APPLICABLE', 'MISSING']
 
 def lic_of(sid):
     r = reg.get(alias.get(sid)); return r['status'] if r else 'UNKNOWN'
@@ -152,6 +152,35 @@ for cc, rows in matrix.items():
                 cell['confidence'] = 'high' if b['metricIngested'] and b['productTracked'] and b['peers'] > 0 and b['untaggedCandidates'] == 0 else 'medium' if b['peers'] > 0 and (b['metricIngested'] or b['productTracked']) else 'low'
             elif st == 'AVAILABLE_OUTSIDE_CATALOG': cell['confidence'] = 'medium'   # el dato existe, pero fuera del catalogo y sin frescura evaluada
             else: cell['confidence'] = 'high'   # AVAILABLE/STALE/HISTORICAL_ONLY se observan en series reales; LICENSE_PENDING/SOURCE_AVAILABLE tienen candidata identificada
+# ---- huecos que no son un MISSING normal (despues de calcular la confianza):
+#   INDEX_ONLY: falta el precio absoluto pero el mismo pais y producto tienen indice de precios oficial
+#   NOT_APPLICABLE / NOT_MATERIAL / SOURCE_RESTRICTED: data/coverage-overrides.json, cada uno con su prueba y su regla (si la prueba no cumple, la celda sigue MISSING)
+OV = CM.J('coverage-overrides.json', {'entries': [], 'rules': {}}); GAPEV = (CM.J('eu-gapfill-stats.json', {}) or {}).get('evidence') or {}
+def ev_ok(e, rules):
+    st, ev = e['state'], e.get('evidence')
+    if st == 'SOURCE_RESTRICTED': return isinstance(ev, dict) and bool(ev.get('url') and ev.get('quote') and ev.get('checked'))
+    if not isinstance(ev, str) or '#' not in ev: return False
+    x = GAPEV.get(ev.split('#', 1)[1]) or {}; a, pr = x.get('area_ha'), x.get('prod_t')
+    if st == 'NOT_APPLICABLE': return bool(a and pr) and a['max'] == 0 and pr['max'] == 0
+    if st == 'NOT_MATERIAL': r = rules.get('NOT_MATERIAL', {}); return bool(a and pr) and a['latest'] < r.get('maxAreaHa', 0) and pr['latest'] < r.get('maxProdT', 0)
+    return False
+def demote(cell, st, extra):
+    cell['state'] = st; cell.pop('basis', None); cell.update(extra)
+for cc, rows in matrix.items():
+    for p, ms in rows.items():
+        c, ix = ms.get('price'), ms.get('price_index')
+        if c and ix and c['state'] == 'MISSING' and ix['state'] in ('AVAILABLE', 'AVAILABLE_OUTSIDE_CATALOG', 'STALE', 'HISTORICAL_ONLY'):
+            demote(c, 'INDEX_ONLY', {'note': 'No official absolute price; an official price index exists for this product (price_index: %s)' % ix['state']})
+for e in OV.get('entries', []):
+    cell = ((matrix.get(e['cc']) or {}).get(e['product']) or {}).get(e['metric'])
+    if not cell: print('AVISO override sin celda', e['cc'], e['product'], e['metric']); continue
+    if cell['state'] != 'MISSING': print('AVISO override sobre una celda que ya no es MISSING', e['cc'], e['product'], e['metric'], cell['state']); continue
+    if not ev_ok(e, OV.get('rules', {})): print('AVISO override sin prueba valida: queda MISSING', e['cc'], e['product'], e['metric']); continue
+    ref = e['evidence'] if isinstance(e['evidence'], dict) else dict(GAPEV.get(e['evidence'].split('#', 1)[1]), ref=e['evidence'])
+    demote(cell, e['state'], {'reason': e['reason'], 'evidence': ref})
+for cc, rows in matrix.items():
+    cnt = collections.Counter(cell['state'] for r in rows.values() for cell in r.values())
+    countries[cc]['byState'] = {s: cnt.get(s, 0) for s in STATES}
 for cc, rows in matrix.items():
     mc = collections.Counter(cell['confidence'] for r in rows.values() for cell in r.values() if cell['state'] == 'MISSING')
     countries[cc]['missingByConfidence'] = {k: mc.get(k, 0) for k in ('high', 'medium', 'low')}
@@ -177,7 +206,7 @@ doc = {'schemaVersion': 1, 'generatedAt': NOW,
                   'states': {'AVAILABLE': 'al menos una serie del catalogo con frescura LIVE/FRESH/EXPECTED_DELAY', 'STALE': 'hay series, ninguna al dia y alguna deberia seguir publicandose (STALE/DELAYED)', 'HISTORICAL_ONLY': 'todas las series de la celda son historicas o discontinuadas: hay historia pero no hay fuente viva en el catalogo; no es un pipeline retrasado',
                              'AVAILABLE_OUTSIDE_CATALOG': 'sin serie en el catalogo unificado, pero el dato existe en un fichero USDA propio (supply-demand/gats/export-sales); frescura no evaluada',
                              'SOURCE_AVAILABLE_NOT_INGESTED': 'candidata READY segun el License Gate (data/source-candidates.json) con producto y metrica confirmados',
-                             'LICENSE_PENDING': 'candidata con licencia en revision (o sin revisar con dataset identificado) y producto confirmado', 'MISSING': 'ninguna de las anteriores; cada celda lleva confidence y basis (metricIngested, productTracked, peers, untaggedCandidates)'},
+                             'LICENSE_PENDING': 'candidata con licencia en revision (o sin revisar con dataset identificado) y producto confirmado', 'INDEX_ONLY': 'falta el precio absoluto, pero el pais publica un indice de precios oficial de ese producto (celda price_index disponible)', 'NOT_APPLICABLE': 'la fuente oficial publica cero en todos los anos (el producto no se produce en el pais); prueba en data/coverage-overrides.json', 'NOT_MATERIAL': 'produccion testimonial segun la fuente oficial (umbral documentado en data/coverage-overrides.json)', 'SOURCE_RESTRICTED': 'hay fuente, pero su licencia por defecto no permite uso comercial; prueba en data/coverage-overrides.json', 'MISSING': 'ninguna de las anteriores; cada celda lleva confidence y basis (metricIngested, productTracked, peers, untaggedCandidates)'},
                   'metricOfGroup': CM.GROUP_METRIC, 'applicable': CM.APPLICABLE, 'kindOf': CM.KIND_OF, 'okStates': list(CM.OK_STATES),
                   'limits': ['Las etiquetas de producto son heuristicas: MISSING significa que no hay serie etiquetada, no que el dato no exista.',
                              'Una candidata solo rellena celdas si sus productos estan CONFIRMADOS por las notas (productsConfirmed).',

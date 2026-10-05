@@ -2,7 +2,7 @@
 import json, subprocess
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-STATS = ['country-stats', 'spain-stats', 'france-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'uk-stats', 'portugal-stats', 'portugal-eurostat-stats',
+STATS = ['country-stats', 'spain-stats', 'france-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'uk-stats', 'portugal-stats', 'portugal-eurostat-stats', 'eu-gapfill-stats',
          'canada-stats', 'eu-trade-stats', 'australia-trade-stats', 'interest-rates-stats']
 def git_show(rev, path):
     try:
@@ -115,7 +115,7 @@ WORKFLOW_KINDS = {
     'update-partner-tariffs.yml': ['TARIFF'], 'update-portugal-eurostat.yml': ['PRODUCTION'], 'update-portugal.yml': ['PRODUCTION', 'PRICE'], 'update-recan.yml': ['PRODUCTION'], 'update-spain.yml': ['PRICE', 'INPUT', 'PRODUCTION'],
     'update-us-cash-bids.yml': ['PRICE'], 'update-us-local-markets.yml': ['PRICE'], 'update-us-county-yields.yml': ['PRODUCTION'], 'update-spain-crops.yml': ['PRODUCTION'], 'update-spain-livestock.yml': ['PRODUCTION'], 'update-spain-balances.yml': ['PRODUCTION'], 'update-spain-olive.yml': ['PRODUCTION'], 'update-spain-milk.yml': ['PRODUCTION', 'PRICE'], 'update-spain-slaughter.yml': ['PRODUCTION'], 'update-spain-slaughter-census.yml': ['PRODUCTION'], 'update-spain-wine.yml': ['PRODUCTION'], 'update-spain-wine-monthly.yml': ['PRODUCTION'], 'update-spain-wine-balance-historic.yml': ['PRODUCTION'], 'update-mb-cattle.yml': ['PRICE'], 'update-mb-smallstock.yml': ['PRICE'], 'update-us-tariffs.yml': ['TARIFF'], 'update-denmark-depth.yml': ['PRODUCTION', 'PRICE'], 'update-nl-cbs.yml': ['PRODUCTION', 'PRICE'], 'update-nl-rvo.yml': ['PRICE'], 'update-fr-vigieau.yml': ['CLIMATE'], 'update-fr-cereobs.yml': ['CROP'], 'update-usda-calendar.yml': [], 'update-weekly-blog.yml': [], 'update-usda-psd.yml': ['PRODUCTION'], 'update-worldbank-urea.yml': ['INPUT'],
     # no son datos agricolas: noticias (no entran en el brief) y trabajos internos
-    'update-news.yml': [], 'update-pipeline-status.yml': [], 'update-seo-pages.yml': [], 'update-cap-es.yml': [], 'update-cap-dk.yml': [],  # cap-es: normativa de la PAC (reglas e importes del real decreto), no una serie de datos
+    'update-news.yml': [], 'update-pipeline-status.yml': [], 'update-seo-pages.yml': [], 'update-cap-es.yml': [], 'update-cap-dk.yml': [], 'update-eu-cap.yml': [], 'update-eu-gapfill.yml': ['PRODUCTION'],  # cap-es: normativa de la PAC (reglas e importes del real decreto), no una serie de datos
 }
 VOLATILE = {'generatedAt', 'revisedAt', 'verifiedAt', 'fetchedAt', 'updatedAt', 'checkedAt'}
 def _strip(o):

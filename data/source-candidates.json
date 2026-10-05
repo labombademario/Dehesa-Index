@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-05T06:38:34Z",
+ "generatedAt": "2026-10-05T06:47:27Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 85,
+  "total": 86,
   "byStatus": {
-   "ACTIVE": 54,
+   "ACTIVE": 55,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -1879,7 +1879,7 @@
    "country": "DE",
    "scope": "integrated",
    "institution": "Destatis (GENESIS-Online)",
-   "dataset": "Ya integrada (136 series en el catalogo unificado)",
+   "dataset": "Ya integrada (138 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
@@ -1901,7 +1901,8 @@
    ],
    "productsConfirmed": true,
    "metrics": [
-    "price_index"
+    "price_index",
+    "production"
    ],
    "frequency": "mixed",
    "access": {
@@ -2245,12 +2246,49 @@
    ]
   },
   {
+   "sourceId": "eur_lex",
+   "registryId": "eur_lex",
+   "country": "EU",
+   "scope": "integrated",
+   "institution": "EUR-Lex (Publications Office of the European Union) — EU legislation",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "EU-REUSE-2011-833",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: EUR-Lex, Regulation (EU) 2021/2115, consolidated text. © European Union. Only the Official Journal is authentic.",
+   "lastChecked": "2026-10-05",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "eurostat",
    "registryId": "eurostat",
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat",
-   "dataset": "Ya integrada (471 series en el catalogo unificado)",
+   "dataset": "Ya integrada (481 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",

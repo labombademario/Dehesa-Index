@@ -1204,7 +1204,8 @@ def coverage_gaps(doc, errs, warns, stats):
     import importlib.util, collections
     sp = importlib.util.spec_from_file_location("coverage_model", ROOT / "scripts" / "coverage_model.py"); CM = importlib.util.module_from_spec(sp); sp.loader.exec_module(CM)
     cand = {c["sourceId"]: c for c in json.loads((D / "source-candidates.json").read_text(encoding="utf-8"))["candidates"]}
-    ST = ["AVAILABLE", "AVAILABLE_OUTSIDE_CATALOG", "STALE", "HISTORICAL_ONLY", "SOURCE_AVAILABLE_NOT_INGESTED", "LICENSE_PENDING", "MISSING"]
+    ST = ["AVAILABLE", "AVAILABLE_OUTSIDE_CATALOG", "STALE", "HISTORICAL_ONLY", "INDEX_ONLY", "SOURCE_AVAILABLE_NOT_INGESTED", "LICENSE_PENDING", "SOURCE_RESTRICTED", "NOT_MATERIAL", "NOT_APPLICABLE", "MISSING"]
+    OVR = {(e["cc"], e["product"], e["metric"]): e for e in json.loads((D / "coverage-overrides.json").read_text(encoding="utf-8"))["entries"]}; GEV = (json.loads((D / "eu-gapfill-stats.json").read_text(encoding="utf-8")).get("evidence") or {}) if (D / "eu-gapfill-stats.json").exists() else {}
     mx = doc["matrix"]; stats["series"] = doc["summary"]["cells"]
     if doc["summary"]["notInMatrix"]["unmappedGroups"]: errs.append("grupos del catalogo sin tipo de metrica: %s (anadirlos a GROUP_METRIC)" % doc["summary"]["notInMatrix"]["unmappedGroups"])
     ents = {e[0]: e for e in CM.entities()}
@@ -1245,6 +1246,16 @@ def coverage_gaps(doc, errs, warns, stats):
                 if st == "STALE" and (ns == 0 or nf > 0 or na == ns): errs.append("%s/%s/%s: STALE incoherente" % (cc, p, m))
                 if st == "HISTORICAL_ONLY" and (ns == 0 or nf > 0 or na != ns): errs.append("%s/%s/%s: HISTORICAL_ONLY incoherente (todas las series deben ser historicas)" % (cc, p, m))
                 if st not in ("AVAILABLE", "STALE", "HISTORICAL_ONLY") and ns: errs.append("%s/%s/%s: %s pero hay %d series en el catalogo" % (cc, p, m, st, ns))
+                if st == "INDEX_ONLY" and not (m == "price" and got[p].get("price_index", {}).get("state") in ("AVAILABLE", "AVAILABLE_OUTSIDE_CATALOG", "STALE", "HISTORICAL_ONLY")): errs.append("%s/%s/%s: INDEX_ONLY sin indice de precios disponible" % (cc, p, m))
+                if st in ("NOT_APPLICABLE", "NOT_MATERIAL", "SOURCE_RESTRICTED"):
+                    e = OVR.get((cc, p, m))
+                    if not e or e["state"] != st: errs.append("%s/%s/%s: %s sin entrada en coverage-overrides.json" % (cc, p, m, st))
+                    elif st == "SOURCE_RESTRICTED" and not (isinstance(e["evidence"], dict) and e["evidence"].get("url") and e["evidence"].get("quote")): errs.append("%s/%s/%s: SOURCE_RESTRICTED sin cita de la licencia" % (cc, p, m))
+                    elif st != "SOURCE_RESTRICTED":
+                        x = GEV.get(str(e["evidence"]).split("#", 1)[-1]) or {}; a_, p_ = x.get("area_ha"), x.get("prod_t")
+                        if not (a_ and p_): errs.append("%s/%s/%s: %s sin prueba en eu-gapfill-stats.json" % (cc, p, m, st))
+                        elif st == "NOT_APPLICABLE" and (a_["max"] != 0 or p_["max"] != 0): errs.append("%s/%s/%s: NOT_APPLICABLE pero la fuente publica superficie o produccion" % (cc, p, m))
+                        elif st == "NOT_MATERIAL" and not (a_["latest"] < 1000 and p_["latest"] < 5000): errs.append("%s/%s/%s: NOT_MATERIAL por encima del umbral" % (cc, p, m))
                 if st == "AVAILABLE_OUTSIDE_CATALOG" and not ext: errs.append("%s/%s/%s: AVAILABLE_OUTSIDE_CATALOG sin evidencia externa" % (cc, p, m))
                 if st in ("MISSING", "LICENSE_PENDING", "SOURCE_AVAILABLE_NOT_INGESTED") and ext: errs.append("%s/%s/%s: %s con evidencia externa" % (cc, p, m, st))
                 for k in cl:
@@ -2778,3 +2789,18 @@ def blog_weekly_index(doc, errs, warns, stats):
         except Exception: errs.append("blog-weekly-index: semana invalida %r" % w["week"]); return
         if (w["from"], w["to"]) != (lo, hi) or not (lo <= w["coverageFrom"] <= hi): errs.append("blog-weekly-index %s: fechas incoherentes" % w["week"]); return
     stats["blog-weekly semanas"] = len(ws)
+
+
+def cap_eu_allocations(doc, errs, warns, stats):
+    """PAC UE (Reglamento 2021/2115): 27 Estados, anos 2023-2027, importes enteros positivos y, en el anexo XI, la suma de paises igual al total EU-27 de cada ano."""
+    dp, rd = doc["directPayments"], doc["ruralDevelopment"]
+    for blk in (dp, rd):
+        if len(blk["countries"]) != 27 or any(not isinstance(v, list) or len(v) != 5 for v in blk["countries"].values()): errs.append("cap-eu: se esperaban 27 Estados con 5 anos cada uno"); return
+    if dp["years"] != ["2023", "2024", "2025", "2026", "2027"]: errs.append("cap-eu: anos de pagos directos inesperados %s" % dp["years"]); return
+    for blk, name in ((dp, "pagos directos"), (rd, "desarrollo rural")):
+        for cc, v in blk["countries"].items():
+            if any((not isinstance(x, int)) or x <= 0 for x in v): errs.append("cap-eu %s %s: importe no positivo" % (name, cc)); return
+    for k in range(5):
+        s = sum(v[k] for v in rd["countries"].values())
+        if s != rd["totalEU27"][k]: errs.append("cap-eu: anexo XI, la suma de paises (%d) no coincide con el total EU-27 (%d) en %s" % (s, rd["totalEU27"][k], rd["years"][k])); return
+    stats["series"] = len(dp["countries"]) + len(rd["countries"])

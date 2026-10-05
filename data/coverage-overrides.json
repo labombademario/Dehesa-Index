@@ -1,0 +1,12 @@
+{
+ "schemaVersion": 1,
+ "doc": "Huecos de cobertura que no son un MISSING normal. Cada entrada lleva su prueba; el motor (scripts/build-coverage-gaps.py) solo la aplica si la celda seria MISSING y si la prueba cumple la regla del estado. NOT_APPLICABLE: la fuente oficial publica 0 ha y 0 t en todos los anos. NOT_MATERIAL: superficie del ultimo ano < 1.000 ha y produccion < 5.000 t (umbral de Dehesa Index, documentado aqui). SOURCE_RESTRICTED: hay fuente, pero su licencia por defecto no permite uso comercial.",
+ "rules": {"NOT_MATERIAL": {"maxAreaHa": 1000, "maxProdT": 5000}},
+ "entries": [
+  {"cc": "DE", "product": "rice", "metric": "production", "state": "NOT_APPLICABLE", "evidence": "eu-gapfill-stats.json#DE/rice", "reason": "Alemania no cultiva arroz: Eurostat (apro_cpsh1, C2000) publica 0 ha y 0 t en todos los años."},
+  {"cc": "DK", "product": "wine", "metric": "production", "state": "NOT_MATERIAL", "evidence": "eu-gapfill-stats.json#DK/wine", "reason": "Viñedo testimonial: Eurostat (apro_cpsh1, uva de vinificación) publica unas 220 ha y 180 t de uva en 2025."},
+  {"cc": "NL", "product": "wine", "metric": "production", "state": "NOT_MATERIAL", "evidence": "eu-gapfill-stats.json#NL/wine", "reason": "Viñedo testimonial: Eurostat (apro_cpsh1, uva de vinificación) publica unas 240 ha y 2.380 t de uva en 2025."},
+  {"cc": "NL", "product": "soy", "metric": "production", "state": "NOT_MATERIAL", "evidence": "eu-gapfill-stats.json#NL/soy", "reason": "Soja testimonial: Eurostat (apro_cpsh1) publica 180 ha en 2026 y 0 t en 2025 (máximo histórico 990 t)."},
+  {"cc": "AU", "product": "wine", "metric": "production", "state": "SOURCE_RESTRICTED", "evidence": {"url": "https://www.wineaustralia.com/copyright", "checked": "2026-10-05", "quote": "you may download and use that material for personal non-commercial use but you may not otherwise copy or change the material"}, "reason": "Wine Australia publica la producción, pero por defecto solo para uso personal no comercial; solo el material marcado CC BY 4.0 se puede reutilizar. Pendiente de identificar un informe con CC BY o pedir permiso."}
+ ]
+}

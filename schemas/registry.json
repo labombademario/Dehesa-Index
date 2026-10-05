@@ -647,6 +647,16 @@
    [
     "cpi"
    ]
+  ],
+  "cap/eu/allocations.json": [
+   "cap-eu-allocations",
+   [
+    "cap_eu_allocations"
+   ]
+  ],
+  "coverage-overrides.json": [
+   "coverage-overrides",
+   []
   ]
  },
  "globs": {
