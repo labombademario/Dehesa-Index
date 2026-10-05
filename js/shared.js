@@ -76,64 +76,69 @@
   function pg(file, label, query) { var o = { file: file, label: label }; if (query) o.query = query; return o; }
   function ctry(c, es, en, fr, it) { return pg('paises.html', L(es, en, fr, it), '?c=' + c); }
   var NAV_ORDER = ['g:markets', 'g:countries', 'g:intel', 'g:tools', 'g:data'];
+  // Cada hoja lleva una descripcion corta (d) que dice que hay y de donde (alcance): el menu es un panel con columnas, no acordeones.
+  function pd(file, label, d, query) { var o = pg(file, label, query); o.d = d; return o; }
+  function cd(c, es, en, fr, it) { var o = ctry(c, es, en, fr, it); o.chip = 1; return o; }
   var NAV_GROUPS = {
-    markets: { label: L('Mercados', 'Markets', 'Marchés', 'Mercati'), items: [
-      pg('precios.html', L('Precios de todos los productos', 'Prices for every product', 'Prix de tous les produits', 'Prezzi di tutti i prodotti')),
-      pg('producto.html', L('Ficha de producto', 'Product page', 'Fiche produit', 'Scheda prodotto'), '?p=trigo'),
-      pg('europa.html', L('Precios de la UE (todos los países)', 'EU prices (all countries)', 'Prix de l’UE (tous les pays)', 'Prezzi UE (tutti i paesi)')),
-      { file: 'index.html', hash: '#home-dehesa-index', noActive: true, label: L('Índice Dehesa (UE, EE. UU. y Canadá)', 'Dehesa Index (EU, US and Canada)', 'Indice Dehesa (UE, États-Unis et Canada)', 'Indice Dehesa (UE, Stati Uniti e Canada)') },
+    markets: { label: L('Mercados', 'Markets', 'Marchés', 'Mercati'), mega: 1, first: L('Precios', 'Prices', 'Prix', 'Prezzi'), items: [
+      pd('precios.html', L('Panel de precios', 'Price dashboard', 'Tableau des prix', 'Pannello dei prezzi'), L('Todos los productos en EE. UU., UE, Reino Unido y Canadá', 'Every product in the US, EU, UK and Canada', 'Tous les produits aux États-Unis, dans l’UE, au Royaume-Uni et au Canada', 'Tutti i prodotti in USA, UE, Regno Unito e Canada')),
+      pd('producto.html', L('Ficha de producto', 'Product page', 'Fiche produit', 'Scheda prodotto'), L('Un producto a fondo: precio, países, histórico y comercio', 'One product in depth: price, countries, history and trade', 'Un produit en détail : prix, pays, historique et commerce', 'Un prodotto a fondo: prezzo, paesi, storico e commercio'), '?p=trigo'),
+      pd('europa.html', L('Precios de la UE', 'EU prices', 'Prix de l’UE', 'Prezzi UE'), L('UE · cotizaciones país por país, con histórico', 'EU · country-by-country quotes, with history', 'UE · cotations pays par pays, avec historique', 'UE · quotazioni paese per paese, con storico')),
+      { file: 'index.html', hash: '#home-dehesa-index', noActive: true, label: L('Índice Dehesa', 'Dehesa Index', 'Indice Dehesa', 'Indice Dehesa'), d: L('Índice de precios agrícolas de la UE, EE. UU. y Canadá', 'Farm price index for the EU, US and Canada', 'Indice des prix agricoles UE, États-Unis et Canada', 'Indice dei prezzi agricoli UE, USA e Canada') },
       { label: L('Mercado y comercio', 'Market and trade', 'Marché et commerce', 'Mercato e commercio'), items: [
-        pg('mercados.html', L('Mercados USDA', 'USDA markets', 'Marchés USDA', 'Mercati USDA')),
-        pg('oferta-demanda.html', L('Oferta y demanda', 'Supply and demand', 'Offre et demande', 'Offerta e domanda')),
-        pg('exportaciones.html', L('Exportaciones', 'Exports', 'Exportations', 'Esportazioni')),
-        pg('aranceles.html', L('Aranceles', 'Tariffs', 'Droits de douane', 'Dazi'))
+        pd('mercados.html', L('Mercados USDA', 'USDA markets', 'Marchés USDA', 'Mercati USDA'), L('EE. UU. · precios de AMS Market News: grano, ganado, heno…', 'US · AMS Market News prices: grain, livestock, hay…', 'États-Unis · prix AMS Market News : grains, bétail, foin…', 'USA · prezzi AMS Market News: cereali, bestiame, fieno…')),
+        pd('oferta-demanda.html', L('Oferta y demanda', 'Supply and demand', 'Offre et demande', 'Offerta e domanda'), L('Mundo · producción, consumo y existencias por país', 'World · production, use and stocks by country', 'Monde · production, consommation et stocks par pays', 'Mondo · produzione, consumi e scorte per paese')),
+        pd('exportaciones.html', L('Exportaciones', 'Exports', 'Exportations', 'Esportazioni'), L('EE. UU. · ventas semanales y comercio por país comprador', 'US · weekly sales and trade by buyer country', 'États-Unis · ventes hebdomadaires et commerce par pays acheteur', 'USA · vendite settimanali e commercio per paese acquirente')),
+        pd('aranceles.html', L('Aranceles', 'Tariffs', 'Droits de douane', 'Dazi'), L('EE. UU., UE, Canadá y México · por producto', 'US, EU, Canada and Mexico · by product', 'États-Unis, UE, Canada et Mexique · par produit', 'USA, UE, Canada e Messico · per prodotto')),
+        pd('canada-granos.html', L('Granos de Canadá', 'Canadian grain', 'Grains du Canada', 'Cereali del Canada'), L('Canadá · exportaciones, entregas y existencias semanales', 'Canada · weekly exports, deliveries and stocks', 'Canada · exportations, livraisons et stocks hebdomadaires', 'Canada · esportazioni, consegne e scorte settimanali'))
       ] },
       { label: L('Campo, costes y clima', 'Farm, costs and weather', 'Terrain, coûts et météo', 'Campo, costi e meteo'), items: [
-        pg('cultivos.html', L('Estado de los cultivos', 'Crop progress', 'État des cultures', 'Stato delle colture')),
-        pg('rendimientos.html', L('Rendimientos', 'Yields', 'Rendements', 'Rese')),
-        pg('ganaderia.html', L('Ganadería', 'Livestock', 'Élevage', 'Zootecnia')),
-        pg('insumos.html', L('Insumos', 'Inputs', 'Intrants', 'Input')),
-        pg('costes.html', L('Costes', 'Costs', 'Coûts', 'Costi')),
-        pg('sequia.html', L('Sequía', 'Drought', 'Sécheresse', 'Siccità')),
-        pg('clima.html', L('Clima agrícola', 'Farm weather', 'Météo agricole', 'Meteo agricolo')),
-        pg('mapa.html', L('Mapa agrícola', 'Farm map', 'Carte agricole', 'Mappa agricola'))
+        pd('cultivos.html', L('Estado de los cultivos', 'Crop progress', 'État des cultures', 'Stato delle colture'), L('EE. UU. · condición y avance semanal por estado', 'US · weekly condition and progress by state', 'États-Unis · état et avancement hebdomadaires par État', 'USA · condizione e avanzamento settimanali per stato')),
+        pd('rendimientos.html', L('Rendimientos', 'Yields', 'Rendements', 'Rese'), L('EE. UU. · rendimiento, superficie y producción por estado', 'US · yield, acreage and output by state', 'États-Unis · rendement, surface et production par État', 'USA · resa, superficie e produzione per stato')),
+        pd('ganaderia.html', L('Ganadería', 'Livestock', 'Élevage', 'Zootecnia'), L('EE. UU. · censos, leche por estado y existencias en frío', 'US · inventories, milk by state and cold storage', 'États-Unis · cheptels, lait par État et stocks frigorifiques', 'USA · consistenze, latte per stato e scorte in frigo')),
+        pd('insumos.html', L('Insumos', 'Inputs', 'Intrants', 'Input'), L('EE. UU. · fertilizantes por estado y precios pagados', 'US · fertilizer by state and prices paid', 'États-Unis · engrais par État et prix payés', 'USA · fertilizzanti per stato e prezzi pagati')),
+        pd('costes.html', L('Costes', 'Costs', 'Coûts', 'Costi'), L('EE. UU. · costes por cultivo y renta agraria (ERS)', 'US · costs by crop and farm income (ERS)', 'États-Unis · coûts par culture et revenu agricole (ERS)', 'USA · costi per coltura e reddito agricolo (ERS)')),
+        pd('recan.html', L('Costes y rentas (RECAN)', 'Farm costs and incomes (RECAN)', 'Coûts et revenus (RECAN)', 'Costi e redditi (RECAN)'), L('España · por comunidad, tipo y tamaño de explotación', 'Spain · by region, farm type and size', 'Espagne · par région, type et taille d’exploitation', 'Spagna · per regione, tipo e dimensione aziendale')),
+        pd('sequia.html', L('Sequía', 'Drought', 'Sécheresse', 'Siccità'), L('EE. UU. por estado y Europa por país, semana a semana', 'US by state and Europe by country, week by week', 'États-Unis par État et Europe par pays, semaine par semaine', 'USA per stato ed Europa per paese, settimana per settimana')),
+        pd('clima.html', L('Clima agrícola', 'Farm weather', 'Météo agricole', 'Meteo agricolo'), L('Lluvia y temperatura frente a la media, por zona productora', 'Rain and temperature vs normal, by growing area', 'Pluie et température par rapport à la normale, par zone', 'Pioggia e temperatura rispetto alla media, per zona')),
+        pd('mapa.html', L('Mapa agrícola', 'Farm map', 'Carte agricole', 'Mappa agricola'), L('Precios, clima, producción y comercio sobre el mapa', 'Prices, weather, output and trade on a map', 'Prix, météo, production et commerce sur une carte', 'Prezzi, meteo, produzione e commercio sulla mappa'))
       ] }
     ] },
-    countries: { label: L('Países', 'Countries', 'Pays', 'Paesi'), items: [
-      pg('perfiles.html', L('Perfiles de país y comparador', 'Country profiles and comparison', 'Profils de pays et comparateur', 'Profili paese e confronto')),
-      ctry('US', 'EE. UU.', 'United States', 'États-Unis', 'Stati Uniti'),
-      ctry('EU', 'Unión Europea', 'European Union', 'Union européenne', 'Unione Europea'),
-      ctry('ES', 'España', 'Spain', 'Espagne', 'Spagna'),
-      ctry('FR', 'Francia', 'France', 'France', 'Francia'),
-      ctry('DE', 'Alemania', 'Germany', 'Allemagne', 'Germania'),
-      ctry('BE', 'Bélgica', 'Belgium', 'Belgique', 'Belgio'),
-      ctry('AT', 'Austria', 'Austria', 'Autriche', 'Austria'),
-      ctry('PT', 'Portugal', 'Portugal', 'Portugal', 'Portogallo'),
-      ctry('DK', 'Dinamarca', 'Denmark', 'Danemark', 'Danimarca'),
-      ctry('NL', 'Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi'),
-      ctry('CA', 'Canadá', 'Canada', 'Canada', 'Canada'),
-      ctry('AU', 'Australia', 'Australia', 'Australie', 'Australia'),
-      ctry('UK', 'Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito')
+    countries: { label: L('Países', 'Countries', 'Pays', 'Paesi'), mega: 1, items: [
+      pd('perfiles.html', L('Perfiles de país y comparador', 'Country profiles and comparison', 'Profils de pays et comparateur', 'Profili paese e confronto'), L('Qué datos hay de cada país y comparación de dos países', 'What we have for each country and a two-country comparison', 'Les données de chaque pays et la comparaison de deux pays', 'I dati di ogni paese e il confronto tra due paesi')),
+      cd('US', 'EE. UU.', 'United States', 'États-Unis', 'Stati Uniti'),
+      cd('EU', 'Unión Europea', 'European Union', 'Union européenne', 'Unione Europea'),
+      cd('ES', 'España', 'Spain', 'Espagne', 'Spagna'),
+      cd('FR', 'Francia', 'France', 'France', 'Francia'),
+      cd('DE', 'Alemania', 'Germany', 'Allemagne', 'Germania'),
+      cd('BE', 'Bélgica', 'Belgium', 'Belgique', 'Belgio'),
+      cd('AT', 'Austria', 'Austria', 'Autriche', 'Austria'),
+      cd('PT', 'Portugal', 'Portugal', 'Portugal', 'Portogallo'),
+      cd('DK', 'Dinamarca', 'Denmark', 'Danemark', 'Danimarca'),
+      cd('NL', 'Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi'),
+      cd('CA', 'Canadá', 'Canada', 'Canada', 'Canada'),
+      cd('AU', 'Australia', 'Australia', 'Australie', 'Australia'),
+      cd('UK', 'Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito')
     ] },
-    intel: { label: L('Inteligencia', 'Intelligence', 'Intelligence', 'Intelligence'), items: [
-      pg('brief.html', L('Qué ha cambiado hoy', 'What changed today', 'Ce qui a changé aujourd’hui', 'Cosa è cambiato oggi')),
-      pg('noticias.html', L('Noticias', 'News', 'Actualités', 'Notizie')),
-      pg('calendario.html', L('Calendario de publicaciones', 'Release calendar', 'Calendrier des publications', 'Calendario delle pubblicazioni')),
-      pg('relaciones.html', L('Relaciones entre mercados', 'Cross-market relationships', 'Relations entre marchés', 'Relazioni tra mercati')),
-      pg('observatorio.html', L('Observatorio de datos', 'Data observatory', 'Observatoire des données', 'Osservatorio dei dati'))
+    intel: { label: L('Análisis', 'Analysis', 'Analyse', 'Analisi'), items: [
+      pd('brief.html', L('Qué ha cambiado hoy', 'What changed today', 'Ce qui a changé aujourd’hui', 'Cosa è cambiato oggi'), L('Datos nuevos, mayores movimientos y revisiones del día', 'New data, biggest moves and revisions of the day', 'Nouvelles données, plus fortes variations et révisions du jour', 'Nuovi dati, maggiori movimenti e revisioni del giorno')),
+      pd('noticias.html', L('Noticias', 'News', 'Actualités', 'Notizie'), L('Titulares recientes de agencias y fuentes oficiales', 'Recent headlines from agencies and official sources', 'Titres récents d’agences et de sources officielles', 'Titoli recenti da agenzie e fonti ufficiali')),
+      pd('calendario.html', L('Calendario agrícola', 'Farm calendar', 'Calendrier agricole', 'Calendario agricolo'), L('Próximas publicaciones oficiales: USDA, UE, Canadá, Australia', 'Upcoming official releases: USDA, EU, Canada, Australia', 'Prochaines publications officielles : USDA, UE, Canada, Australie', 'Prossime pubblicazioni ufficiali: USDA, UE, Canada, Australia')),
+      pd('relaciones.html', L('Relaciones entre mercados', 'Cross-market relationships', 'Relations entre marchés', 'Relazioni tra mercati'), L('Cómo se mueven juntos insumos, clima, existencias y precios', 'How inputs, weather, stocks and prices move together', 'Comment intrants, météo, stocks et prix évoluent ensemble', 'Come si muovono insieme input, meteo, scorte e prezzi')),
+      pd('observatorio.html', L('Observatorio de datos', 'Data observatory', 'Observatoire des données', 'Osservatorio dei dati'), L('Novedades, frescura, cobertura y próximas publicaciones', 'What’s new, freshness, coverage and upcoming releases', 'Nouveautés, fraîcheur, couverture et prochaines publications', 'Novità, freschezza, copertura e prossime pubblicazioni'))
     ] },
     tools: { label: L('Herramientas', 'Tools', 'Outils', 'Strumenti'), items: [
-      pg('comparador.html', L('Comparador por producto y país', 'Product and country comparator', 'Comparateur par produit et pays', 'Confronto per prodotto e paese')),
-      pg('calculadora.html', L('Calculadora de margen', 'Margin calculator', 'Calculateur de marge', 'Calcolatore di margine')),
-      pg('mi-seguimiento.html', L('Mi seguimiento', 'My watchlist', 'Mon suivi', 'Il mio seguito')),
-      pg('mi-mercado.html', L('Mi mercado (tu zona y tu producto)', 'My market (your area and product)', 'Mon marché (votre zone et produit)', 'Il mio mercato (zona e prodotto)')),
-      pg('pac.html', L('PAC España (ayudas, calendario y reglas)', 'Spain CAP (payments, calendar and rules)', 'PAC Espagne (aides, calendrier et règles)', 'PAC Spagna (aiuti, calendario e regole)'))
+      pd('mi-mercado.html', L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato'), L('Tu zona y tu producto: precio local, seguro, sequía y más', 'Your area and product: local price, insurance, drought and more', 'Votre zone et votre produit : prix local, assurance, sécheresse…', 'La tua zona e il tuo prodotto: prezzo locale, assicurazione, siccità…')),
+      pd('mi-seguimiento.html', L('Mi seguimiento', 'My watchlist', 'Mon suivi', 'Il mio seguito'), L('Sigue productos y series con avisos, sin cuenta', 'Follow products and series with alerts, no account', 'Suivez produits et séries avec alertes, sans compte', 'Segui prodotti e serie con avvisi, senza account')),
+      pd('calculadora.html', L('Calculadora de margen', 'Margin calculator', 'Calculateur de marge', 'Calcolatore di margine'), L('Coste por hectárea y tonelada, precio de equilibrio y margen', 'Cost per hectare and tonne, break-even price and margin', 'Coût par hectare et tonne, prix d’équilibre et marge', 'Costo per ettaro e tonnellata, prezzo di pareggio e margine')),
+      pd('comparador.html', L('Comparador por producto y país', 'Product and country comparator', 'Comparateur par produit et pays', 'Confronto per prodotto e paese'), L('El precio de un producto en varios países, misma unidad', 'One product’s price across countries, same unit', 'Le prix d’un produit dans plusieurs pays, même unité', 'Il prezzo di un prodotto in più paesi, stessa unità')),
+      pd('pac.html', L('PAC España', 'Spain CAP', 'PAC Espagne', 'PAC Spagna'), L('España · ayudas por hectárea, calendario y reglas', 'Spain · payments per hectare, calendar and rules', 'Espagne · aides à l’hectare, calendrier et règles', 'Spagna · aiuti per ettaro, calendario e regole'))
     ] },
     data: { label: L('Datos', 'Data', 'Données', 'Dati'), items: [
-      pg('catalogo.html', L('Catálogo de datos', 'Data catalogue', 'Catalogue de données', 'Catalogo dei dati')),
-      pg('metodologia.html', L('Metodología', 'Methodology', 'Méthodologie', 'Metodologia')),
-      pg('status.html', L('Estado de los datos', 'Data status', 'État des données', 'Stato dei dati')),
-      pg('informacion.html', L('Cómo funciona Dehesa Index', 'How Dehesa Index works', 'Comment fonctionne Dehesa Index', 'Come funziona Dehesa Index'))
+      pd('catalogo.html', L('Catálogo de datos', 'Data catalogue', 'Catalogue de données', 'Catalogo dei dati'), L('Más de 5.800 series por país, métrica y producto', 'Over 5,800 series by country, metric and product', 'Plus de 5 800 séries par pays, mesure et produit', 'Oltre 5.800 serie per paese, metrica e prodotto')),
+      pd('metodologia.html', L('Metodología', 'Methodology', 'Méthodologie', 'Metodologia'), L('Cómo se verifican, fechan y convierten los datos', 'How data are verified, dated and converted', 'Comment les données sont vérifiées, datées et converties', 'Come i dati sono verificati, datati e convertiti')),
+      pd('status.html', L('Estado de los datos', 'Data status', 'État des données', 'Stato dei dati'), L('Última y próxima actualización de cada fuente', 'Last and next update of each source', 'Dernière et prochaine mise à jour de chaque source', 'Ultimo e prossimo aggiornamento di ogni fonte')),
+      pd('informacion.html', L('Información', 'About', 'Informations', 'Informazioni'), L('Quiénes somos y de qué fuentes se nutre el panel', 'Who we are and which sources feed the dashboard', 'Qui nous sommes et quelles sources alimentent le tableau', 'Chi siamo e quali fonti alimentano il pannello'))
     ] }
   };
   function currentFile() { var f = window.location.pathname.split('/').pop(); return f || 'index.html'; }
@@ -145,17 +150,25 @@
   }
   function branchActive(list) { return list.some(function (i) { return i.items ? branchActive(i.items) : leafActive(i); }); }
   function groupIsActive(g) { return branchActive(g.items); }
-  // Menú recursivo: las ramas son acordeones; se abre sola la que contiene la página actual.
-  function navItems(list, cls, sub) {
-    return list.map(function (i) {
-      var lab = esc(i.label[lang] || i.label.es);
-      if (i.items) {
-        var on = branchActive(i.items);
-        return '<div class="di-nav-sub' + (on ? ' is-open' : '') + '"><button type="button" class="di-nav-subbtn' + (on ? ' active' : '') + '" aria-expanded="' + (on ? 'true' : 'false') + '">' + lab + ' <span aria-hidden="true">▾</span></button><div class="di-nav-subitems">' + navItems(i.items, cls, true) + '</div></div>';
-      }
-      return '<a class="' + cls + (leafActive(i) ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + (i.hash || '') + '">' + lab + '</a>';
-    }).join('');
+  // Menú en panel: cada grupo se abre en un panel con columnas (las ramas son columnas con título, no acordeones) y los países como botones.
+  function itemHtml(i) {
+    var on = leafActive(i), d = i.d ? (i.d[lang] || i.d.es) : '';
+    return '<a class="di-nav-item' + (on ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + (i.hash || '') + '"' + (on ? ' aria-current="page"' : '') + '><span class="di-nav-it">' + esc(i.label[lang] || i.label.es) + '</span>' + (d ? '<span class="di-nav-id">' + esc(d) + '</span>' : '') + '</a>';
   }
+  function chipHtml(i) {
+    var on = leafActive(i);
+    return '<a class="di-nav-chip' + (on ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + '"' + (on ? ' aria-current="page"' : '') + '>' + esc(i.label[lang] || i.label.es) + '</a>';
+  }
+  function panelHtml(g) {
+    var leaves = g.items.filter(function (i) { return !i.items && !i.chip; }), chips = g.items.filter(function (i) { return i.chip; }), cols = [];
+    if (leaves.length) cols.push({ h: g.first, items: leaves });
+    g.items.forEach(function (i) { if (i.items) cols.push({ h: i.label, items: i.items }); });
+    var h = cols.map(function (c) { return '<div class="di-nav-col">' + (c.h ? '<div class="di-nav-colh">' + esc(c.h[lang] || c.h.es) + '</div>' : '') + c.items.map(itemHtml).join('') + '</div>'; }).join('');
+    if (chips.length) h += '<div class="di-nav-chips">' + chips.map(chipHtml).join('') + '</div>';
+    return h;
+  }
+  var QUICK = { mm: L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato'), news: L('Noticias', 'News', 'Actualités', 'Notizie'), cal: L('Calendario', 'Calendar', 'Calendrier', 'Calendario') };
+  function quickLink(file, key, cls) { var on = currentFile() === file; return '<a class="' + cls + (on ? ' active' : '') + '" href="' + sitePath(file) + '"' + (on ? ' aria-current="page"' : '') + '>' + esc(QUICK[key][lang] || QUICK[key].es) + '</a>'; }
 
   var FOOTER_STRINGS = {
     es: {
@@ -401,22 +414,25 @@
     var inGroup = NAV_ORDER.some(function (k) { return k.indexOf('g:') === 0 && groupIsActive(NAV_GROUPS[k.slice(2)]); });
     var linksHtml = NAV_ORDER.map(function (k) {
       if (k.indexOf('g:') === 0) {
-        var g = NAV_GROUPS[k.slice(2)], on = groupIsActive(g);
-        return '<div class="di-nav-group"><button type="button" class="di-nav-gbtn' + (on ? ' active' : '') + '" aria-haspopup="true" aria-expanded="false">' + esc(g.label[lang] || g.label.es) + ' <span aria-hidden="true">▾</span></button>' +
-          '<div class="di-nav-menu">' + navItems(g.items, '') + '</div></div>';
+        var g = NAV_GROUPS[k.slice(2)], on = groupIsActive(g), gl = g.label[lang] || g.label.es;
+        return '<div class="di-nav-group' + (g.mega ? ' di-nav-g-mega' : '') + '"><button type="button" class="di-nav-gbtn' + (on ? ' active' : '') + '" aria-haspopup="true" aria-expanded="false">' + esc(gl) + ' <span aria-hidden="true">▾</span></button>' +
+          '<div class="di-nav-menu' + (g.mega ? ' di-nav-mega' : '') + '" role="group" aria-label="' + esc(gl) + '"><div class="di-nav-cols">' + panelHtml(g) + '</div></div></div>';
       }
       var isActive = k === activePage && !inGroup;
       return '<a class="' + (isActive ? 'active' : '') + '" href="' + sitePath(NAV_PAGES[k]) + '" role="button">' + esc(t[k]) + '</a>';
-    }).join('');
+    }).join('') + quickLink('noticias.html', 'news', 'di-nav-top') + quickLink('calendario.html', 'cal', 'di-nav-top');
 
+    // En pantallas estrechas el selector de idioma muestra bandera y codigo (ES, EN…) para que no se corte.
+    var narrowMq = window.matchMedia ? window.matchMedia('(max-width: 700px)') : null;
+    function langLabel(o, narrow) { return narrow ? o.label.split(' ')[0] + ' ' + o.code.toUpperCase() : o.label; }
     var langOptionsHtml = LANG_OPTIONS.map(function (o) {
-      return '<option value="' + o.code + '"' + (o.code === lang ? ' selected' : '') + '>' + o.label + '</option>';
+      return '<option value="' + o.code + '"' + (o.code === lang ? ' selected' : '') + '>' + langLabel(o, narrowMq && narrowMq.matches) + '</option>';
     }).join('');
 
-    var mobileHtml = NAV_ORDER.map(function (k) {
+    var mobileHtml = '<div class="di-nav-mquick">' + quickLink('mi-mercado.html', 'mm', 'di-nav-cta') + quickLink('noticias.html', 'news', 'di-nav-qlink') + quickLink('calendario.html', 'cal', 'di-nav-qlink') + '</div>' + NAV_ORDER.map(function (k) {
       if (k.indexOf('g:') === 0) {
-        var g = NAV_GROUPS[k.slice(2)];
-        return '<div class="di-nav-mgroup">' + esc(g.label[lang] || g.label.es) + '</div>' + navItems(g.items, 'di-nav-msub');
+        var g = NAV_GROUPS[k.slice(2)], on = groupIsActive(g);
+        return '<div class="di-nav-msec' + (on ? ' is-open' : '') + '"><button type="button" class="di-nav-mbtn' + (on ? ' active' : '') + '" aria-expanded="' + (on ? 'true' : 'false') + '">' + esc(g.label[lang] || g.label.es) + ' <span aria-hidden="true">▾</span></button><div class="di-nav-mbody">' + panelHtml(g) + '</div></div>';
       }
       var isActive = k === activePage && !inGroup;
       return '<a class="' + (isActive ? 'active' : '') + '" href="' + sitePath(NAV_PAGES[k]) + '">' + esc(t[k]) + '</a>';
@@ -428,6 +444,7 @@
           '<a class="di-nav-logo" href="' + sitePath('index.html') + '"><img src="' + sitePath('assets/logo-nav.png') + '" width="116" height="100" alt="Dehesa Index"></a>' +
           '<nav class="di-nav-links">' + linksHtml + '</nav>' +
           '<div class="di-nav-side">' +
+            quickLink('mi-mercado.html', 'mm', 'di-nav-cta di-nav-cta-d') +
             '<button type="button" class="di-search-btn" id="di-search-btn" title="' + esc(t.search) + ' ( / )" aria-label="' + esc(t.search) + '">🔍</button>' +
             '<select class="di-lang-select" id="di-lang-select" title="' + esc(t.langSelect) + '">' + langOptionsHtml + '</select>' +
             '<span class="di-vsep"></span>' +
@@ -455,12 +472,16 @@
         if (!open) { b.parentNode.classList.add('is-open'); b.setAttribute('aria-expanded', 'true'); }
       });
     });
-    Array.prototype.forEach.call(document.querySelectorAll('.di-nav-subbtn'), function (b) {
-      b.addEventListener('click', function (e) {
-        e.stopPropagation();
-        var p = b.parentNode, open = p.classList.toggle('is-open');
+    Array.prototype.forEach.call(root.querySelectorAll('.di-nav-mbtn'), function (b) {
+      b.addEventListener('click', function () {
+        var open = b.parentNode.classList.toggle('is-open');
         b.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
+    });
+    Array.prototype.forEach.call(root.querySelectorAll('.di-nav-menu'), function (m) { m.addEventListener('click', function (e) { e.stopPropagation(); }); });
+    if (narrowMq && narrowMq.addEventListener) narrowMq.addEventListener('change', function (ev) {
+      var opts = document.querySelectorAll('#di-lang-select option');
+      Array.prototype.forEach.call(opts, function (op, ix) { if (LANG_OPTIONS[ix]) op.textContent = langLabel(LANG_OPTIONS[ix], ev.matches); });
     });
     document.addEventListener('click', closeGroups);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeGroups(); });
