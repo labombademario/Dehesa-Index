@@ -1,5 +1,5 @@
 # GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
-name: Update US market and input data (CFTC Commitments of Traders, USDA AMS grain transportation, EIA regional diesel and propane)
+name: Update US market and input data (CFTC Commitments of Traders, USDA AMS grain transportation, EIA diesel, propane and ethanol, USDA AMS/FGIS export inspections, USDA AMS livestock and meat reference prices)
 on:
   schedule:
     - cron: '10 22 * * 1-5'
@@ -25,10 +25,10 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/us-markets/cot.json data/us-markets/transport.json data/us-markets/fuel.json
+          files: data/us-markets/cot.json data/us-markets/transport.json data/us-markets/fuel.json data/us-markets/ethanol.json data/us-markets/inspections.json data/us-markets/lmr.json
       - name: Detectar revisiones oficiales
         if: always()
-        run: python3 scripts/detect-revisions.py data/us-markets/cot.json data/us-markets/transport.json data/us-markets/fuel.json
+        run: python3 scripts/detect-revisions.py data/us-markets/cot.json data/us-markets/transport.json data/us-markets/fuel.json data/us-markets/ethanol.json data/us-markets/inspections.json data/us-markets/lmr.json
       - id: qa
         name: Control de calidad antes de publicar (si falla, no se publica)
         if: always()
@@ -39,9 +39,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/us-markets/cot.json data/us-markets/transport.json data/us-markets/fuel.json data/us-markets/log.txt data/revisions.json
+          git add data/us-markets/cot.json data/us-markets/transport.json data/us-markets/fuel.json data/us-markets/ethanol.json data/us-markets/inspections.json data/us-markets/lmr.json data/us-markets/log.txt data/revisions.json
           git diff --cached --quiet && exit 0
-          git commit -qm "Mercado e insumos de EE. UU. (CFTC, USDA AMS transporte, EIA)"
+          git commit -qm "Mercado e insumos de EE. UU. (CFTC, USDA AMS transporte y precios de referencia, FGIS, EIA)"
           for i in 1 2 3 4 5 6; do
             git pull -q --rebase --autostash && git push && exit 0
             sleep $((i * 5 + RANDOM % 10))

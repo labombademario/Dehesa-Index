@@ -159,11 +159,112 @@ def ethanol(years):
     log("EIA etanol", sorted(out), "ultima", out["prod_NUS"]["points"][-1][0])
     return {"schemaVersion": 1, "generatedAt": now(), "sourceId": "eia", "series": out}
 
+# ---------------- USDA AMS: precios de referencia de la Notificacion Obligatoria de Precios (LMR) ----------------
+DM = "https://mpr.datamart.ams.usda.gov/services/v1.1/reports/"
+def mmdd(d): return d.strftime("%m/%d/%Y")
+def iso(s):
+    try: return datetime.datetime.strptime(str(s).strip(), "%m/%d/%Y").strftime("%Y-%m-%d")
+    except Exception: return None
+def dm(rid, sec, since, until, step=100):
+    """Filas de una seccion de un informe del datamart de AMS (publico, sin clave) entre dos fechas, en tramos para no topar con limites."""
+    rows = []; a = since
+    while a <= until:
+        b = min(a + datetime.timedelta(days=step - 1), until)
+        url = "%s%s/%s?q=report_date=%s:%s" % (DM, rid, urllib.parse.quote(sec), mmdd(a), mmdd(b))
+        try: rows += get(url).get("results") or []
+        except RuntimeError as e: log("datamart", rid, sec, mmdd(a), "->", e)
+        a = b + datetime.timedelta(days=1)
+    return rows
+def slug(s): return "".join(c if c.isalnum() else "_" for c in str(s).lower()).strip("_")
+def lmr(years):
+    today = datetime.date.today(); since = today - datetime.timedelta(days=365 * min(years, 2) + 10); out = {}
+    # carne de vacuno en caja: indice de corte Choice y Select, LM_XB403 (negociado, tarde); USD por 100 lb
+    cut = {iso(r["report_date"]): r for r in dm("2453", "Current Cutout Values", since, today)}
+    vol = {iso(r["report_date"]): r for r in dm("2453", "Current Volume", since, today)}
+    beef = []
+    for d in sorted(k for k in cut if k):
+        r = cut[d]; c, s_ = num(r.get("choice_600_900_current")), num(r.get("select_600_900_current"))
+        if c is None and s_ is None: continue
+        v = vol.get(d, {}); beef.append([d, c, s_, num(v.get("choice_volume_loads")), num(v.get("select_volume_loads"))])
+    out["beef"] = {"report": "LM_XB403", "id": "2453", "title": "National Daily Boxed Beef Cutout & Boxed Beef Cuts - Negotiated Sales - PM", "unit": "USD/cwt",
+                   "columns": ["date", "choice", "select", "choiceLoads", "selectLoads"], "rows": beef}
+    # porcino: indice de canal y piezas, LM_PK602 (FOB planta, tarde); USD por 100 lb
+    pk = []
+    for r in sorted(dm("2498", "Cutout and Primal Values", since, today), key=lambda r: iso(r["report_date"]) or ""):
+        d = iso(r["report_date"]); f = [num(r.get(k)) for k in ("pork_carcass", "pork_loin", "pork_butt", "pork_picnic", "pork_rib", "pork_ham", "pork_belly", "total_loads_date_1")]
+        if d and f[0] is not None: pk.append([d] + f)
+    out["pork"] = {"report": "LM_PK602", "id": "2498", "title": "National Daily Pork FOB Plant - Negotiated Sales - Afternoon", "unit": "USD/cwt",
+                   "columns": ["date", "cutout", "loin", "butt", "picnic", "rib", "ham", "belly", "loads"], "rows": pk}
+    # porcino vivo: precio base de la canal de los cerdos sacrificados el dia anterior, LM_HG201; USD por 100 lb de canal
+    hs = {iso(r["report_date"]): r for r in dm("2511", "Summary", since, today)}; hg = []
+    for r in sorted(dm("2511", "Carcass Measurements", since, today), key=lambda r: iso(r["report_date"]) or ""):
+        d = iso(r["report_date"]); base = num(r.get("wtd_avg_base"))
+        if d and base is not None: hg.append([d, base, num(r.get("wtd_avg_net_price")), num(r.get("avg_carcass_weight")), num((hs.get(d) or {}).get("barrows_head_count"))])
+    out["hogs"] = {"report": "LM_HG201", "id": "2511", "title": "National Daily Direct Prior Day Slaughtered Swine", "unit": "USD/cwt carcass",
+                   "columns": ["date", "base", "net", "carcassWeight", "barrowsGilts"], "rows": hg}
+    # vacuno de sacrificio: media ponderada de las 5 zonas (negociado), LM_CT100; dolares por 100 lb (vivo o en canal)
+    ser = {}; seen = set()
+    for r in dm("2466", "Detail", today - datetime.timedelta(days=365 * min(years, 2) + 10), today, 30):
+        d = iso(r.get("report_date")); g = str(r.get("grade_description") or "")
+        if not d or "total all" not in g.lower(): continue
+        p = num(r.get("weighted_avg_price")); k = slug(r.get("class_description")) + "|" + slug(r.get("selling_basis_description")); seen.add(k)
+        if p is None: continue
+        ser.setdefault(k, {})[d] = [p, num(r.get("head_count")), num(r.get("weight_range_avg"))]
+    log("vacuno 5 zonas, series:", sorted(seen))
+    out["cattle"] = {"report": "LM_CT100", "id": "2466", "title": "5 Area Daily Weighted Average Direct Slaughter Cattle - Negotiated", "unit": "USD/cwt",
+                     "columns": ["date", "price", "head", "avgWeight"], "series": {k: [[d] + v for d, v in sorted(x.items())] for k, x in ser.items()}}
+    for k, v in out.items(): log("LMR", k, len(v.get("rows") or v.get("series") or []), "ultimo", (v["rows"][-1][0] if v.get("rows") else {a: b[-1][0] for a, b in v["series"].items()}))
+    if not (beef and pk and hg and ser): raise RuntimeError("LMR incompleto: vacuno en caja %d, pork %d, hogs %d, cattle %d" % (len(beef), len(pk), len(hg), len(ser)))
+    return {"schemaVersion": 1, "generatedAt": now(), "sourceId": "usda_ams_lmr", "reports": out}
+
+# ---------------- USDA AMS / FGIS: inspecciones de exportacion de grano ----------------
+FGIS = "https://fgisonline.ams.usda.gov/ExportGrainReport/CY%d.csv"
+GRAINS = ["CORN", "SOYBEANS", "WHEAT", "SORGHUM"]
+def inspections(years):
+    import csv, io
+    this = datetime.date.today().year; wk = {g: {} for g in GRAINS}; dest = {g: {} for g in GRAINS}
+    for y in (this - 1, this):
+        raw = None
+        for i in range(3):
+            try:
+                req = urllib.request.Request(FGIS % y, headers={"User-Agent": "dehesaindex.com data pipeline (+https://dehesaindex.com)"})
+                with urllib.request.urlopen(req, timeout=240) as r: raw = r.read()
+                break
+            except Exception as e: log("FGIS", y, repr(e)[:120]); time.sleep(5 * (i + 1))
+        if raw is None:
+            if y == this: raise RuntimeError("FGIS CY%d no disponible" % y)
+            continue
+        rd = csv.reader(io.StringIO(raw.decode("cp1252", "replace"))); head = [h.strip() for h in next(rd)]
+        ix = {h: i for i, h in enumerate(head)}
+        for need in ("Thursday", "Grain", "Metric Ton", "Destination"):
+            if need not in ix: raise RuntimeError("FGIS: falta la columna " + need)
+        n = 0
+        for row in rd:
+            if len(row) <= ix["Metric Ton"]: continue
+            g = row[ix["Grain"]].strip().upper()
+            if g not in wk: continue
+            t = num(row[ix["Metric Ton"]]); d = row[ix["Thursday"]].strip()
+            if t is None or len(d) != 8: continue
+            d = "%s-%s-%s" % (d[:4], d[4:6], d[6:]); wk[g][d] = wk[g].get(d, 0) + t; n += 1
+            dest[g].setdefault(d, {}); k = row[ix["Destination"]].strip().title(); dest[g][d][k] = dest[g][d].get(k, 0) + t
+        log("FGIS", y, len(raw), "bytes,", n, "filas de", GRAINS)
+    out = {}; top = {}
+    for g in GRAINS:
+        pts = sorted([d, round(v)] for d, v in wk[g].items())
+        if pts: out[g] = pts
+        last = sorted(dest[g])[-4:]; c = {}
+        for d in last:
+            for k, v in dest[g][d].items(): c[k] = c.get(k, 0) + v
+        if c: top[g] = {"weeks": last, "countries": [[k, round(v)] for k, v in sorted(c.items(), key=lambda kv: -kv[1])[:8]]}
+    if not out.get("CORN") or not out.get("SOYBEANS"): raise RuntimeError("FGIS sin maiz o soja")
+    log("FGIS ultima semana maiz", out["CORN"][-1], "soja", out["SOYBEANS"][-1])
+    return {"schemaVersion": 1, "generatedAt": now(), "sourceId": "usda_ams_fgis", "unit": "metric tons inspected for export, by week ending Thursday", "series": out, "destinations": top}
+
 def main():
     a = sys.argv[1:]; outdir = Path(a[a.index("--outdir") + 1]) if "--outdir" in a else ROOT / "data" / "us-markets"
     years = int(a[a.index("--years") + 1]) if "--years" in a else 5
     outdir.mkdir(parents=True, exist_ok=True); ok = 0
-    for name, fn in (("cot", cot), ("transport", transport), ("fuel", fuel), ("ethanol", ethanol)):
+    for name, fn in (("cot", cot), ("transport", transport), ("fuel", fuel), ("ethanol", ethanol), ("lmr", lmr), ("inspections", inspections)):
         try:
             doc = fn(years); (outdir / (name + ".json")).write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"); ok += 1; log("OK", name)
         except Exception as e: log("FALLO", name, e, "(se conserva el fichero anterior)")

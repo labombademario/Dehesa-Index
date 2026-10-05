@@ -1684,6 +1684,54 @@
    "aliases": [],
    "notes": null,
    "short": "USDA FSA"
+  },
+  "usda_ams_lmr": {
+   "name": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "url": "https://mpr.datamart.ams.usda.gov/",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/policies-and-links",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
+   "additionalRestrictions": "Only AMS-produced reports are used (LM_XB403 boxed beef cutout, LM_PK602 pork cutout, LM_HG201 prior-day swine, LM_CT100 5-area slaughter cattle). No USDA logo/name to imply endorsement.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "USDA says some materials are protected and used with permission; they are labelled as such. Only agency-produced series are used.",
+   "verifiedAt": "2026-10-05",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "USDA Policies and Links (read 2026-10-05): \"Most information presented on the USDA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested. Attribution may be cited as follows: \"U.S. Department of Agriculture.\"\" The public datamart API (mpr.datamart.ams.usda.gov) is published by AMS Market News without a key and has no separate licence page, so confidence stays medium. Official US government data: green by Mario's rule of 2026-10-05, cited.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "USDA AMS LMR"
+  },
+  "usda_ams_fgis": {
+   "name": "USDA AMS / Federal Grain Inspection Service, Export Grain Inspections",
+   "url": "https://fgisonline.ams.usda.gov/ExportGrainReport/default.aspx",
+   "country": "US",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); USDA credit requested",
+   "licenseUrl": "https://www.usda.gov/policies-and-links",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": false,
+   "attributionText": "Source: U.S. Department of Agriculture, Agricultural Marketing Service, Federal Grain Inspection Service (Export Grain Inspections)",
+   "additionalRestrictions": "Weekly metric tons by grain and destination aggregated from the yearly CSV (CY2025, CY2026). No USDA logo/name to imply endorsement.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "USDA says some materials are protected and used with permission; they are labelled as such. Only agency-produced series are used.",
+   "verifiedAt": "2026-10-05",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "USDA Policies and Links (read 2026-10-05): \"Most information presented on the USDA Web site is considered public domain information. Public domain information may be freely distributed or copied, but use of appropriate byline/photo/image credits is requested. Attribution may be cited as follows: \"U.S. Department of Agriculture.\"\" The FGIS Export Grain Report page (fgisonline.ams.usda.gov) carries no separate licence statement, so confidence stays medium. Official US government data: green by Mario's rule of 2026-10-05, cited.",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "short": "USDA FGIS exportaciones"
   }
  },
  "files": {
@@ -2234,9 +2282,11 @@
    "sources": [
     "cftc",
     "usda_ams_agtransport",
-    "eia"
+    "eia",
+    "usda_ams_lmr",
+    "usda_ams_fgis"
    ],
-   "notes": "Mercado e insumos de EE. UU. (scripts/update-us-markets.py): posiciones de los fondos del informe Commitments of Traders desagregado, solo futuros (CFTC, Public Reporting Environment, conjunto 72hh-3qpy) de maiz, soja, harina y aceite de soja, trigo SRW y HRW, vacuno vivo, vacuno de engorde y porcino magro; indicadores semanales de coste del transporte de grano por modo y fletes de barcaza rio abajo por el sistema del Misisipi (USDA AMS AgTransport, conjuntos 8uye-ieij, deqi-uken y 7spn-fbua, atribuidos a USDA/AMS); gasoleo por region PADD y estado y propano residencial y mayorista (EIA API v2, petroleum/pri/gnd y petroleum/pri/wfr). Tal como lo publica cada fuente; se cita la fuente de cada bloque."
+   "notes": "Mercado e insumos de EE. UU. (scripts/update-us-markets.py): posiciones de los fondos del informe Commitments of Traders desagregado, solo futuros (CFTC, Public Reporting Environment, conjunto 72hh-3qpy) de maiz, soja, harina y aceite de soja, trigo SRW y HRW, vacuno vivo, vacuno de engorde y porcino magro; indicadores semanales de coste del transporte de grano por modo y fletes de barcaza rio abajo por el sistema del Misisipi (USDA AMS AgTransport, conjuntos 8uye-ieij, deqi-uken y 7spn-fbua, atribuidos a USDA/AMS); gasoleo por region PADD y estado y propano residencial y mayorista (EIA API v2, petroleum/pri/gnd y petroleum/pri/wfr). produccion y existencias semanales de etanol de combustible (EIA, petroleum/sum/sndw); inspecciones semanales de exportacion de maiz, soja, trigo y sorgo por destino (USDA AMS/FGIS, Export Grain Report); precios de referencia de la Notificacion Obligatoria de Precios (USDA AMS LMR): indice de vacuno en caja Choice y Select (LM_XB403), indice de la canal de cerdo y piezas (LM_PK602), precio base del cerdo (LM_HG201) y novillos y novillas de las 5 zonas (LM_CT100). Tal como lo publica cada fuente; se cita la fuente de cada bloque."
   },
   "data/us-arcplc/": {
    "sources": [

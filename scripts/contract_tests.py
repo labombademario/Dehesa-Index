@@ -880,6 +880,26 @@ def us_markets_fuel(doc, errs, warns, stats):
     for kind in ("residential", "wholesale"):
         for k, s in doc["propane"].get(kind, {}).items(): _dated_series("propano %s %s" % (kind, k), s["points"], errs, 0, 20); n += 1
     stats["series"] = n
+def us_markets_ethanol(doc, errs, warns, stats):
+    """Etanol (EIA): produccion 0 a 3000 mil barriles/dia, existencias 0 a 60000 mil barriles, fechas ordenadas."""
+    n = 0
+    for k, sr in doc["series"].items(): _dated_series("etanol %s" % k, sr["points"], errs, 0, 60000 if k.startswith("stocks") else 3000); n += 1
+    stats["series"] = n
+def us_markets_inspections(doc, errs, warns, stats):
+    """Inspecciones de exportacion (FGIS): toneladas semanales no negativas (maximo 6 millones), fechas ordenadas y sin repetir."""
+    n = 0
+    for g, pts in doc["series"].items(): _dated_series("inspecciones %s" % g, pts, errs, 0, 6000000); n += 1
+    stats["series"] = n
+def us_markets_lmr(doc, errs, warns, stats):
+    """Precios de referencia LMR (AMS): USD por cwt entre 0 y 1500 (piezas de vacuno de hasta ~1500), fechas ordenadas."""
+    R = doc["reports"]; n = 0
+    for k in ("beef", "pork", "hogs"):
+        r = R[k]
+        if not r["rows"]: errs.append("%s sin filas" % k); continue
+        for p in r["rows"]: pass
+        _dated_series("lmr %s" % k, [[p[0]] + [x for x, c in zip(p[1:], r["columns"][1:]) if not c.lower().endswith("loads") and c not in ("carcassWeight", "barrowsGilts")] for p in r["rows"]], errs, 0, 1500); n += 1
+    for k, pts in R["cattle"]["series"].items(): _dated_series("lmr vacuno %s" % k, [[p[0], p[1]] for p in pts], errs, 0, 1500); n += 1
+    stats["series"] = n
 def us_arcplc(doc, errs, warns, stats):
     """ARC-CO por condado (FSA): FIPS validos del estado, campanas AAAA, tasa de pago entre 0 y el maximo (con margen de redondeo), sin negativos."""
     st = doc["state"]

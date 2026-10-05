@@ -480,7 +480,7 @@ sources:
     extra: ['!data/us-states']
     message: Datos de EE. UU. por estado (USDA NASS y ERS)
   - id: us-markets
-    name: Update US market and input data (CFTC Commitments of Traders, USDA AMS grain transportation, EIA regional diesel and propane)
+    name: Update US market and input data (CFTC Commitments of Traders, USDA AMS grain transportation, EIA diesel, propane and ethanol, USDA AMS/FGIS export inspections, USDA AMS livestock and meat reference prices)
     cron: ['10 22 * * 1-5']
     script: scripts/update-us-markets.py
     env: {EIA_API_KEY: '${{ secrets.EIA_API_KEY }}'}
@@ -488,8 +488,8 @@ sources:
     script_timeout: 20
     continue: true
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard -- 'data/us-markets/*.json')
-    data: [us-markets/cot.json, us-markets/transport.json, us-markets/fuel.json, us-markets/log.txt]
-    message: Mercado e insumos de EE. UU. (CFTC, USDA AMS transporte, EIA)
+    data: [us-markets/cot.json, us-markets/transport.json, us-markets/fuel.json, us-markets/ethanol.json, us-markets/inspections.json, us-markets/lmr.json, us-markets/log.txt]
+    message: Mercado e insumos de EE. UU. (CFTC, USDA AMS transporte y precios de referencia, FGIS, EIA)
   - id: us-arcplc
     name: Update US ARC-CO county payment rates and PLC rates (USDA FSA)
     cron: ['35 6 3,17 * *']

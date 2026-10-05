@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-05T21:34:05Z",
+ "generatedAt": "2026-10-05T22:45:05Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 89,
+  "total": 91,
   "byStatus": {
-   "ACTIVE": 58,
+   "ACTIVE": 60,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -3301,6 +3301,80 @@
    "commercialReuse": "yes",
    "derivatives": "yes",
    "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (AgTransport, Grain Transportation Report)",
+   "lastChecked": "2026-10-05",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "usda_ams_fgis",
+   "registryId": "usda_ams_fgis",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA AMS / Federal Grain Inspection Service, Export Grain Inspections",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service, Federal Grain Inspection Service (Export Grain Inspections)",
+   "lastChecked": "2026-10-05",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "usda_ams_lmr",
+   "registryId": "usda_ams_lmr",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
    "datasetIdentified": true,

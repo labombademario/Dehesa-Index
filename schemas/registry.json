@@ -666,6 +666,24 @@
     "us_markets_fuel"
    ]
   ],
+  "us-markets/ethanol.json": [
+   "us-markets-ethanol",
+   [
+    "us_markets_ethanol"
+   ]
+  ],
+  "us-markets/inspections.json": [
+   "us-markets-inspections",
+   [
+    "us_markets_inspections"
+   ]
+  ],
+  "us-markets/lmr.json": [
+   "us-markets-lmr",
+   [
+    "us_markets_lmr"
+   ]
+  ],
   "us-states/index.json": [
    "us-states-index",
    [
