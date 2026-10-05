@@ -26,7 +26,7 @@
     { id: 'output', ramp: G, unit: ' M EUR', label: ['Agricultural industry output (M EUR)', 'Producción de la rama agraria (M EUR)', 'Production de la branche agricole (M EUR)', 'Produzione del ramo agricolo (M EUR)'], dec: 0 },
     { id: 'uaa', ramp: G, unit: ' kha', label: ['Utilised agricultural area (thousand ha)', 'Superficie agraria útil (miles de ha)', 'Surface agricole utilisée (milliers d’ha)', 'Superficie agricola utilizzata (migliaia di ha)'], dec: 0 },
     { id: 'perha', ramp: G, unit: ' EUR/ha', label: ['Output per hectare of farmland (EUR/ha)', 'Producción por hectárea de superficie agraria (EUR/ha)', 'Production par hectare de surface agricole (EUR/ha)', 'Produzione per ettaro di superficie agricola (EUR/ha)'], dec: 0 }];
-  ['ES', 'FR', 'IT', 'DE', 'NL', 'AT'].forEach(function (c) { M[c] = EU; });
+  ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK'].forEach(function (c) { M[c] = EU; });
   // vista precalculada (scripts/build-views.py -> data/views/region-metrics.json, ~7 KB): el mapa no baja el fichero regional entero; si falta, se calcula aquí
   function compute(cc, id) {
     return get('data/views/region-metrics.json').then(function (V) { var m = V && V.countries && V.countries[cc] && V.countries[cc][id]; return m && m.vals ? { vals: m.vals, period: m.period } : computeFull(cc, id); });
@@ -42,9 +42,9 @@
     var f = EU_FILE[cc] || cc.toLowerCase();
     return get('data/eu-regions-' + f + '.json').then(function (d) { if (!d || !d.regions) return null;
       Object.keys(d.regions).forEach(function (k) { var b = d.regions[k], o = b.eaa && b.eaa.AM180000, ua = b.crops && b.crops.UAA && b.crops.UAA.area;
-        if (id === 'output') { var p = last(o); if (p) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }
+        if (id === 'output') { var p = last(o); if (p && p[1] > 0) { v[k] = p[1]; if (String(p[0]) > per) per = String(p[0]); } }
         else if (id === 'uaa') { var q = last(ua); if (q) { v[k] = q[1]; if (String(q[0]) > per) per = String(q[0]); } }
-        else if (id === 'perha') { var p2 = last(o), u2 = p2 && at(ua, p2[0]); if (p2 && u2) { v[k] = p2[1] / u2 * 1000; if (String(p2[0]) > per) per = String(p2[0]); } } });
+        else if (id === 'perha') { var p2 = last(o), u2 = p2 && at(ua, p2[0]); if (p2 && p2[1] > 0 && u2) { v[k] = p2[1] / u2 * 1000; if (String(p2[0]) > per) per = String(p2[0]); } } });
       return { vals: v, period: per }; });
   }
   function distinct(a) { var o = {}, c = 0; a.forEach(function (x) { if (!o[x]) { o[x] = 1; c++; } }); return c; }

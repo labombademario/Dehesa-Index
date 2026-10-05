@@ -249,7 +249,7 @@ def eu_drought(doc, errs, warns, stats):
         if sum(eu[:3]) < min(sum(es[:3]), 100) * 0.05 and sum(es[:3]) > 90: warns.append("UE-27 sin sequia aunque Espana este casi toda en sequia")
     stats["countries"] = len(doc["countries"])
 
-_EUREG = {"ES": 17, "FR": 13, "IT": 20, "DE": 16, "NL": 12, "AT": 9}
+_EUREG = {"ES": 17, "FR": 13, "IT": 20, "DE": 16, "NL": 12, "AT": 9, "BE": 11, "DK": 5}
 def eu_regions(doc, errs, warns, stats):
     cc = doc["country"]; R = doc["regions"]
     if cc not in _EUREG: errs.append("pais no previsto: %s" % cc); return

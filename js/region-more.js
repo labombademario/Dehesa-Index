@@ -9,6 +9,7 @@
   // Punto de clima (NASA POWER, data/climate.json) que cae dentro de cada región. El Valle del Po (45,0 N 10,5 E) queda en la frontera Lombardía/Emilia-Romaña y no se asigna.
   var CLIM = { US: { IA: 'us-iowa', IL: 'us-illinois', KS: 'us-kansas', ND: 'us-north-dakota' }, ES: { AR: 'eu-aragon', CL: 'eu-castilla-leon' }, FR: { CVL: 'eu-beauce' }, DE: { ST: 'eu-saxony-anhalt' },
     CA: { SK: ['ca-saskatchewan-south', 'ca-saskatchewan-north'], AB: ['ca-alberta-south', 'ca-alberta-peace'], MB: 'ca-manitoba', ON: 'ca-ontario', QC: 'ca-quebec' },
+    BE: { WLG: 'eu-belgium-hesbaye', VWV: 'eu-belgium-flanders' }, DK: { MID: 'eu-denmark-jutland', SJA: 'eu-denmark-zealand' },
     NL: { FL: 'eu-netherlands-flevoland', GR: 'eu-netherlands-groningen', NB: 'eu-netherlands-brabant' }, AT: { NO: 'eu-austria-marchfeld', OO: 'eu-austria-upper' },
     AU: { WA: 'au-wheatbelt-wa', SA: 'au-sa-mallee', VIC: 'au-vic-wimmera', NSW: ['au-nsw-central-west', 'au-nsw-north'], QLD: ['au-qld-darling-downs', 'au-qld-central'] } };
   // Provincias del MAPA (código INE) por comunidad autónoma, tal como las agrupa el propio MAPA en la encuesta de sacrificio (data/spain-slaughter/census.json)
@@ -303,7 +304,7 @@
         FR: [C('vig', frVig), C('cere', frCere), C('clim', clim)],
         DE: [C('deprod', deProd), C('deland', deLand), C('delive', deLive), C('clim', clim)],
         NL: [C('nlcrops', nlCbs), C('clim', clim)],
-        AT: [C('clim', clim)], IT: [C('clim', clim)], AU: [C('clim', clim)]
+        AT: [C('clim', clim)], IT: [C('clim', clim)], AU: [C('clim', clim)], BE: [C('clim', clim)], DK: [C('clim', clim)]
       },
       // bloques que solo existen para algunas regiones del país: si faltan no se listan como «sin dato»
       optional: { clim: 1, mb: 1, local: 1, cere: 1, deland: 0 }

@@ -113,11 +113,12 @@ def region_metrics():
             p = _last(x.get(mid))
             if p: v[k] = p[1]; per = max(per, str(p[0]))
         put('AU', mid, v, per, 'au-states.json')
-    for cc in ('ES', 'FR', 'IT', 'DE', 'NL', 'AT'):
+    for cc in ('ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK'):
         f = 'eu-regions-%s.json' % cc.lower(); d = load(f); vo = {}; vu = {}; vp = {}; po = pu = pp = ''
         for k, b in (d.get('regions') or {}).items():
             o = (b.get('eaa') or {}).get('AM180000'); ua = ((b.get('crops') or {}).get('UAA') or {}).get('area')
             p = _last(o)
+            if p and p[1] <= 0: p = None   # Bruselas-Capital: Eurostat da 0,0 en todas las partidas de 2023 aunque hay explotaciones; un 0 de produccion no es un dato, el mapa la deja sin dato
             if p: vo[k] = p[1]; po = max(po, str(p[0]))
             q = _last(ua)
             if q: vu[k] = q[1]; pu = max(pu, str(q[0]))

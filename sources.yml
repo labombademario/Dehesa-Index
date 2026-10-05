@@ -338,7 +338,7 @@ sources:
     timeout: 20
     script_timeout: 16
     continue: true
-    data: [eu-regions-es.json, eu-regions-fr.json, eu-regions-it.json, eu-regions-de.json, eu-regions-nl.json, eu-regions-at.json, eu-regions-log.txt]
+    data: [eu-regions-es.json, eu-regions-fr.json, eu-regions-it.json, eu-regions-de.json, eu-regions-nl.json, eu-regions-at.json, eu-regions-be.json, eu-regions-dk.json, eu-regions-log.txt]
     message: Datos agrarios por region (Eurostat)
   - id: canada-provinces
     name: Update Canada by province (Statistics Canada)

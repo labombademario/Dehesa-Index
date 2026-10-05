@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Datos agrarios por region (Espana, Francia, Italia, Alemania) desde Eurostat, para las paginas de region.
-Salida: data/eu-regions-es.json, -fr.json, -it.json, -de.json, -nl.json, -at.json (una region por comunidad, region, provincia o Land).
+"""Datos agrarios por region (Espana, Francia, Italia, Alemania, Paises Bajos, Austria, Belgica y Dinamarca) desde Eurostat, para las paginas de region.
+Salida: data/eu-regions-es.json, -fr.json, -it.json, -de.json, -nl.json, -at.json, -be.json, -dk.json (una region por comunidad, region, provincia o Land).
 Datasets (todos por region NUTS, reutilizacion con cita de la fuente):
   aact_eaa01_r  cuentas economicas de la agricultura (millones EUR, precios corrientes)
   apro_cpshr    cultivos: superficie y produccion
@@ -21,10 +21,14 @@ IT = {"PIE": ("ITC1", ["ITC1"]), "VDA": ("ITC2", ["ITC2"]), "LIG": ("ITC3", ["IT
 DE = {"BW": ("DE1", ["DE11", "DE12", "DE13", "DE14"]), "BY": ("DE2", ["DE21", "DE22", "DE23", "DE24", "DE25", "DE26", "DE27"]), "BE": ("DE3", ["DE30"]), "BB": ("DE4", ["DE40"]), "HB": ("DE5", ["DE50"]), "HH": ("DE6", ["DE60"]), "HE": ("DE7", ["DE71", "DE72", "DE73"]), "MV": ("DE8", ["DE80"]), "NI": ("DE9", ["DE91", "DE92", "DE93", "DE94"]), "NW": ("DEA", ["DEA1", "DEA2", "DEA3", "DEA4", "DEA5"]), "RP": ("DEB", ["DEB1", "DEB2", "DEB3"]), "SL": ("DEC", ["DEC0"]), "SN": ("DED", ["DED2", "DED4", "DED5"]), "ST": ("DEE", ["DEE0"]), "SH": ("DEF", ["DEF0"]), "TH": ("DEG", ["DEG0"])}
 NL = {"GR": ("NL11", ["NL11"]), "FR": ("NL12", ["NL12"]), "DR": ("NL13", ["NL13"]), "OV": ("NL21", ["NL21"]), "GE": ("NL22", ["NL22"]), "FL": ("NL23", ["NL23"]), "UT": ("NL31", ["NL31"]), "NH": ("NL32", ["NL32"]), "ZH": ("NL33", ["NL33"]), "ZE": ("NL34", ["NL34"]), "NB": ("NL41", ["NL41"]), "LI": ("NL42", ["NL42"])}
 AT = {"B": ("AT11", ["AT11"]), "NO": ("AT12", ["AT12"]), "W": ("AT13", ["AT13"]), "K": ("AT21", ["AT21"]), "ST": ("AT22", ["AT22"]), "OO": ("AT31", ["AT31"]), "S": ("AT32", ["AT32"]), "T": ("AT33", ["AT33"]), "V": ("AT34", ["AT34"])}
+# Belgica: 11 provincias (NUTS 2; Bruselas-Capital es una region propia). Dinamarca: 5 regiones (NUTS 2).
+BE = {"BRU": ("BE10", ["BE10"]), "VAN": ("BE21", ["BE21"]), "VLI": ("BE22", ["BE22"]), "VOV": ("BE23", ["BE23"]), "VBR": ("BE24", ["BE24"]), "VWV": ("BE25", ["BE25"]),
+      "WBR": ("BE31", ["BE31"]), "WHT": ("BE32", ["BE32"]), "WLG": ("BE33", ["BE33"]), "WLX": ("BE34", ["BE34"]), "WNA": ("BE35", ["BE35"])}
+DK = {"HOV": ("DK01", ["DK01"]), "SJA": ("DK02", ["DK02"]), "SYD": ("DK03", ["DK03"]), "MID": ("DK04", ["DK04"]), "NJY": ("DK05", ["DK05"])}
 # Puntos de la fuente descartados por error evidente. Gelderland y Flevoland (NL) tienen la produccion de patata de 2022 intercambiada en Eurostat
 # (807 y 255 mil t frente a ~260 y ~790 en los demas anios; la suma de ambas es normal): rendimiento de 128 y 14 t/ha. Se descarta la produccion de ese anio, no se corrige.
 EXCLUDE = {("NL", "GE", "R1000", 2022), ("NL", "FL", "R1000", 2022)}
-COUNTRIES = {"es": ES, "fr": FR, "it": IT, "de": DE, "nl": NL, "at": AT}
+COUNTRIES = {"es": ES, "fr": FR, "it": IT, "de": DE, "nl": NL, "at": AT, "be": BE, "dk": DK}
 EAA = ["AM180000", "AM160000", "AM100000", "AM110000", "AM120000", "AM010000", "AM020000", "AM030000", "AM040000", "AM050000", "AM060000", "AM064000", "AM065000", "AM070000", "AM080000", "AM111000", "AM112000", "AM114000", "AM115000", "AM121000", "AM122000",
        "AM200000", "AM206000", "AM203000", "AM202000", "AM260000", "AM280000", "AM310000", "AM320000", "AM330000", "AM370000"]
 CROPS = ["UAA", "ARA", "J0000", "C0000", "C1110", "C1120", "C1200", "C1300", "C1400", "C1500", "R1000", "R2000", "I1110", "I1120", "I1130", "P0000", "G3000", "F0000", "T0000", "W1000", "O1000"]
