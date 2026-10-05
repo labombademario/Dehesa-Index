@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-05T15:30:18Z",
+ "generatedAt": "2026-10-05T18:32:09Z",
  "summary": {
   "files": 19,
   "errors": 0,
@@ -66,7 +66,7 @@
     "points": 63174,
     "lines": 0
    },
-   "generatedAt": "2026-10-03T00:56:25Z",
+   "generatedAt": "2026-10-05T15:50:11Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -185,7 +185,7 @@
     "points": 79750,
     "lines": 0
    },
-   "generatedAt": "2026-10-02T04:52:27Z",
+   "generatedAt": "2026-10-05T15:52:21Z",
    "info": [
     "CA/ca-trade-imp-wheat: salto 2.5 -> 2.8 en 1996-01 (mediana previa 0.1) [KNOWN_VERIFIED_ANOMALY]",
     "CA/ca-trade-imp-wheat: salto 5.3 -> 10.1 en 2002-12 (mediana previa 0.4) [KNOWN_VERIFIED_ANOMALY]",
