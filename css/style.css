@@ -1843,3 +1843,26 @@ a.di-nav-cta.active{outline:2px solid var(--accent);outline-offset:2px}
 .di-nav-mobile-panel a.di-nav-chip{min-height:44px;border-bottom:1px solid var(--border-strong)}
 @media (prefers-reduced-motion:reduce){.di-nav-gbtn span,.di-nav-mbtn span{transition:none}}
 .di-cite-same{padding:2px 0}
+/* Bloque «Relacionado» al final de cada página del menú */
+.di-related{margin:36px 0 8px;padding-top:18px;border-top:1px solid var(--border)}
+.di-related h2{font-size:17px;margin:0 0 10px}
+.di-related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+a.di-related-card{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid var(--border-strong);border-radius:10px;background:var(--surface);text-decoration:none;color:var(--text);min-height:44px}
+a.di-related-card:hover,a.di-related-card:focus-visible{border-color:var(--accent)}
+a.di-related-card:hover .di-nav-it{color:var(--accent)}
+/* Precios: nota de precios por país plegada; en móvil, cabecera compacta y pestañas fijas al bajar */
+details.di-eu-country-hint{font-size:12.5px;color:var(--text-muted);flex-basis:100%}
+details.di-eu-country-hint>summary{cursor:pointer;min-height:32px;display:inline-flex;align-items:center}
+@media (max-width:700px){
+  .di-precios-head .di-precios-sub{font-size:13px;margin:2px 0 0}
+  .di-precios-head .di-updated{font-size:11.5px}
+  #pr-location-bar.di-location-bar{flex-wrap:wrap;gap:6px;margin:10px 0}
+  #pr-location-bar .di-location-label{display:none}
+  #pr-location-bar .di-location-btn{padding:6px 10px;font-size:13px;min-height:40px;flex:1 1 40%}
+  #pr-location-bar .di-eu-country-select{min-height:40px;flex:1 1 100%}
+  #pr-location-bar .di-fx-label{flex-basis:100%;font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #pr-favorites.is-empty{display:none}
+  .pr-flow>#pr-tabs{position:sticky;top:var(--di-hdr-h,0px);z-index:20;background:var(--bg);margin:8px -14px 12px;padding:8px 14px;box-shadow:0 1px 0 var(--border)}
+  #pr-search-wrap{margin:10px 0}
+}
+.pr-flow>#di-related{order:99}

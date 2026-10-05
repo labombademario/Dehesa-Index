@@ -105,6 +105,7 @@
     var b = FR.catalog.byState, f = FT[lang()] || FT.es, ok = (b.LIVE || 0) + (b.FRESH || 0) + (b.EXPECTED_DELAY || 0), arch = (FR.catalog.historicalTotal || 0) + (FR.catalog.discontinuedTotal || 0);
     return '<h2 style="margin:26px 0 8px;font-size:18px">' + esc(f[0]) + '</h2><div style="font-size:13px;margin:8px 0">' + esc(f[1]) + ': <strong>' + nf(ok) + '</strong> · ' + esc(f[2]) + ': <strong>' + nf(b.DELAYED || 0) + '</strong> · ' + esc(f[3]) + ': <strong>' + nf(b.STALE || 0) + '</strong> · ' + esc(f[4]) + ': <strong>' + nf(arch) + '</strong> / ' + nf(FR.catalog.total) + '</div><p style="color:var(--text-muted);font-size:13px;max-width:760px">' + esc(f[5]) + '</p>';
   }
+  if (window.DehesaShared && window.DehesaShared.init) window.DehesaShared.init('status'); // menu, pie, migas y Relacionado (antes faltaban)
   function get(u) { return fetch(u, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
   Promise.all([get('data/pipeline-status.json'), get('data/data-quality.json'), get('data/freshness.json')]).then(function (r) { P = r[0]; Q = r[1]; FR = r[2]; render(); });
   var prev = window.DehesaShared && window.DehesaShared.onLangChange;

@@ -481,7 +481,7 @@
       html += '<select class="di-eu-country-select" id="pr-eu-country">' + countries.map(function (c) {
         return '<option value="' + c.code + '"' + (c.code === state.euCountry ? ' selected' : '') + '>' + c.flag + ' ' + esc(c.label) + '</option>';
       }).join('') + '</select>';
-      html += '<div class="di-eu-country-hint">' + esc(t.euCountryHint) + '</div>';
+      html += '<details class="di-eu-country-hint"><summary>' + esc(({ es: 'Cómo se fijan los precios por país', en: 'How country prices are set', fr: 'Comment sont fixés les prix par pays', it: 'Come si fissano i prezzi per paese' })[lang()] || 'Cómo se fijan los precios por país') + '</summary>' + esc(t.euCountryHint) + '</details>';
     }
     var fxTxt = fxLabelText(t);
     if (fxTxt) html += '<div class="di-fx-label">' + esc(fxTxt) + '</div>';
@@ -524,6 +524,7 @@
       }).join('') + '</div>';
     }
     root.innerHTML = html;
+    root.classList.toggle('is-empty', !state.favorites.length); // en movil, sin favoritos no ocupa sitio
     wireCardEvents(root);
   }
 
@@ -1519,6 +1520,12 @@
       syncPriceUrl();
       S.renderContextBar('precios');
       renderTabsAndCategory();
+      // Si las pestanas van pegadas arriba (movil), la categoria nueva empieza justo debajo de ellas, no a media pagina.
+      var bar = document.getElementById('pr-tabs'), cat = document.getElementById('pr-category');
+      if (bar && cat && window.getComputedStyle(bar).position === 'sticky') {
+        var under = bar.getBoundingClientRect().bottom, top = cat.getBoundingClientRect().top;
+        if (top < under) window.scrollTo(0, window.pageYOffset + top - under - 4);
+      }
     });
   }
 

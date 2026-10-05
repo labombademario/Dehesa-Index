@@ -387,11 +387,46 @@
     var navs = document.querySelectorAll('.di-crumbs[data-crumb-group]'); if (!navs.length) return;
     var HM = { es: 'Inicio', en: 'Home', fr: 'Accueil', it: 'Home' };
     Array.prototype.forEach.call(navs, function (n) {
-      var g = NAV_GROUPS[n.getAttribute('data-crumb-group')], h1 = document.querySelector('.di-page-head h1'); if (!g) return;
-      var first = (g.items || []).filter(function (i) { return i.file; })[0];
-      var draw = function () { frCrumbs(n, [[HM[lang] || HM.es, sitePath('index.html')], [g.label[lang] || g.label.es, first ? sitePath(first.file) + (first.query || '') : null], [h1 ? h1.textContent : '', null]]); };
+      var gk = n.getAttribute('data-crumb-group'), g = NAV_GROUPS[gk], h1 = document.querySelector('.di-page-head h1') || document.querySelector('main h1, .di-page h1, h1');
+      if (!g && gk !== 'none') return;
+      var first = g ? (g.items || []).filter(function (i) { return i.file; })[0] : null;
+      var draw = function () { var it = [[HM[lang] || HM.es, sitePath('index.html')]]; if (g) it.push([g.label[lang] || g.label.es, first ? sitePath(first.file) + (first.query || '') : null]); it.push([h1 ? h1.textContent : '', null]); frCrumbs(n, it); };
       draw(); if (h1 && window.MutationObserver && !n.getAttribute('data-obs')) { n.setAttribute('data-obs', '1'); new MutationObserver(draw).observe(h1, { childList: true, characterData: true, subtree: true }); }
     });
+  }
+  /* Bloque «Relacionado» al final de cada pagina del menu: hermanas de la misma columna del menu (max. 4) y dos enlaces de otro tipo.
+     Sale del propio NAV_GROUPS (mismas etiquetas y descripciones), asi que no hay una segunda lista que mantener. */
+  var REL_T = L('Relacionado', 'Related', 'Voir aussi', 'Correlati');
+  var REL_X = { markets: ['mi-mercado.html', 'calendario.html'], countries: ['comparador.html', 'catalogo.html'], intel: ['precios.html', 'mi-seguimiento.html'], tools: ['precios.html', 'perfiles.html'], data: ['catalogo.html', 'status.html'] };
+  function findLeaf(file) {
+    var found = null;
+    NAV_ORDER.forEach(function (k) { var g = NAV_GROUPS[k.slice(2)]; (function walk(list, col) { list.forEach(function (i) { if (i.items) walk(i.items, i.items); else if (!found && i.file === file && !i.chip && !i.hash) found = i; }); })(g.items, null); });
+    return found;
+  }
+  function renderRelated() {
+    if (document.getElementById('di-related')) return;
+    var host = document.querySelector('main') || document.querySelector('.di-page'); if (!host) return;
+    var cur = null, gkey = null, col = null;
+    NAV_ORDER.forEach(function (k) {
+      var g = NAV_GROUPS[k.slice(2)];
+      (function walk(list, parent) { list.forEach(function (i) { if (cur) return; if (i.items) walk(i.items, i.items); else if (leafActive(i)) { cur = i; gkey = k.slice(2); col = parent || g.items.filter(function (x) { return !x.items && !x.chip; }); } }); })(g.items, null);
+    });
+    if (!cur) return;
+    var picks = [], seen = {}; seen[cur.file + (cur.query || '')] = 1;
+    var add = function (i) { var key = i.file + (i.query || ''); if (!i || seen[key] || i.hash) return; seen[key] = 1; picks.push(i); };
+    if (cur.chip) ['perfiles.html', 'mi-mercado.html', 'comparador.html', 'catalogo.html'].forEach(function (f) { var x = findLeaf(f); if (x) add(x); });
+    else {
+      col.filter(function (i) { return !i.chip; }).slice(0).forEach(function (i) { if (picks.length < 4) add(i); });
+      (REL_X[gkey] || []).forEach(function (f) { var x = findLeaf(f); if (x && currentFile() !== f) add(x); });
+    }
+    if (!picks.length) return;
+    var sec = document.createElement('section'); sec.id = 'di-related'; sec.className = 'di-related'; sec.setAttribute('aria-labelledby', 'di-related-h');
+    sec.innerHTML = '<h2 id="di-related-h">' + esc(REL_T[lang] || REL_T.es) + '</h2><div class="di-related-grid">' + picks.slice(0, 6).map(function (i) {
+      var d = i.d ? (i.d[lang] || i.d.es) : '';
+      return '<a class="di-related-card" href="' + sitePath(i.file) + (i.query || '') + '"><span class="di-nav-it">' + esc(i.label[lang] || i.label.es) + '</span>' + (d ? '<span class="di-nav-id">' + esc(d) + '</span>' : '') + '</a>';
+    }).join('') + '</div>';
+    var inner = host.querySelector(':scope > .di-container') || host;
+    inner.appendChild(sec);
   }
   function openSearch(q) {
     q = typeof q === 'string' ? q : '';
@@ -485,6 +520,9 @@
     });
     document.addEventListener('click', closeGroups);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeGroups(); });
+    // Altura de la cabecera fija para lo que se pega debajo (p. ej. pestanas de Precios en movil); 0 si la cabecera no es fija.
+    var setHdr = function () { var h = root.querySelector('.di-header'); if (!h) return; var st = window.getComputedStyle(h).position; document.documentElement.style.setProperty('--di-hdr-h', (st === 'sticky' || st === 'fixed' ? h.offsetHeight : 0) + 'px'); };
+    setHdr(); if (!root.getAttribute('data-hdr')) { root.setAttribute('data-hdr', '1'); window.addEventListener('resize', setHdr); }
     var toggleBtn = document.getElementById('di-mobile-toggle');
     var panel = document.getElementById('di-mobile-panel');
     toggleBtn.addEventListener('click', function () {
@@ -715,6 +753,7 @@
     if (opts && opts.skipReload) {
       renderNav(global.DehesaShared.activePage);
       renderFooter();
+      var rel = document.getElementById('di-related'); if (rel) rel.parentNode.removeChild(rel); renderRelated(); frAuto();
       if (typeof global.DehesaShared.onLangChange === 'function') global.DehesaShared.onLangChange(code);
       return;
     }
@@ -856,6 +895,7 @@
     renderWelcomeAndTour();
     initTableSort();
     frAuto();
+    renderRelated();
   }
 
   global.DehesaShared = {
