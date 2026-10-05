@@ -347,7 +347,7 @@
   function sharePct(v, tot) { return tot ? nf(v / tot * 100, v / tot < .1 ? 1 : 0) + ' %' : '<span style="color:var(--text-faint)">—</span>'; }
   function euEaa(x) {
     return euData(x.c).then(function (D) {
-      var b = D && D.regions && D.regions[x.r], o = b && b.eaa; if (!o || !o.AM180000 || !(lastP(o.AM180000)[1] > 0)) return null;   // producción 0 en todas las partidas (Bruselas-Capital, 2023): no es un dato, se lista como «sin dato» var t = tt(), y = lastP(o.AM180000)[0], f = function (it) { return o[it] ? ycell(o[it], y) : null; };
+      var b = D && D.regions && D.regions[x.r], o = b && b.eaa; /* producción 0 en todas las partidas (Bruselas-Capital, 2023): no es un dato, se lista como «sin dato» */ if (!o || !o.AM180000 || !(lastP(o.AM180000)[1] > 0)) return null; var t = tt(), y = lastP(o.AM180000)[0], f = function (it) { return o[it] ? ycell(o[it], y) : null; };
       var yoy = function (it) { var a = f(it), c = o[it] ? ycell(o[it], y - 1) : null; return a != null && c ? (a / c - 1) * 100 : null; };
       var tiles = EAA_COLS.map(function (c) { var it = c[0], v = f(it); if (v == null) return ''; var yy = yoy(it), tt0 = countryTotal(D, function (r) { return r.eaa && r.eaa[it]; }, y);
         return '<div style="flex:1;min-width:140px"><div style="font-size:12px;color:var(--text-faint)">' + esc(EL[it][li()]) + '</div><div style="font-size:22px;font-weight:700">' + nf(v, dec(v)) + ' <span style="font-size:13px;font-weight:400;color:var(--text-faint)">' + esc(t.eMeUr) + '</span></div><div style="font-size:12px;color:var(--text-faint)">' + (yy != null ? esc(pct(yy)) + ' ' + esc(t.eaYoy) : '') + (tt0 ? ' · ' + esc(t.ec) + ' ' + sharePct(v, tt0) : '') + '</div></div>'; }).join('');
@@ -485,11 +485,18 @@
     bind(); bindMetric(); var my = ++seq, x = { c: ST.c, r: ST.r };
     Promise.all(MODS[ST.c].map(function (m) { return m[1](x).catch(function () { return null; }); })).then(function (out) {
       if (my !== seq) return; var el = document.getElementById('rg-main'); if (!el) return; var miss = [];
-      var toc = [], html = out.map(function (h, i) { var k = MODS[ST.c][i][0]; if (!h) { if (!OPTIONAL[k]) miss.push(t[MOD_NAME[k]]); return ''; } toc.push('<a href="#rg-' + k + '">' + esc(t[MOD_NAME[k]] || k) + '</a>'); return '<div id="rg-' + k + '" class="rg-blk">' + h + '</div>'; }).join('');
-      if (toc.length > 1) html = '<nav class="rg-toc" aria-label="' + esc(t.toc || '') + '"><span>' + esc(t.toc || '') + '</span>' + toc.join('') + '</nav>' + html;
+      // vista por sector (js/sector.js): lo de la otra vista se pliega al final, no se borra; lo común se ve siempre
+      var SEC = window.DehesaSector, toc = [], tocA = [], tocB = [], main = [], folded = [], first = [];
+      out.forEach(function (h, i) { var k = MODS[ST.c][i][0]; if (!h) { if (!OPTIONAL[k]) miss.push(t[MOD_NAME[k]]); return; }
+        var blk = '<div id="rg-' + k + '" class="rg-blk">' + h + '</div>', sec = SEC ? SEC.ofModule(k) : 'common';
+        if (SEC && !SEC.visible(sec)) { folded.push(blk); return; }
+        var lead = SEC && SEC.get() !== 'all' && sec !== 'common', a = '<a href="#rg-' + k + '">' + esc(t[MOD_NAME[k]] || k) + '</a>'; (lead ? first : main).push(blk); (lead ? tocA : tocB).push(a); });
+      toc = tocA.concat(tocB);
+      var html = (SEC ? '<div id="rg-sector">' + SEC.barHtml() + '</div>' : '') + (toc.length > 1 ? '<nav class="rg-toc" aria-label="' + esc(t.toc || '') + '"><span>' + esc(t.toc || '') + '</span>' + toc.join('') + '</nav>' : '') + first.join('') + main.join('') + (folded.length ? SEC.foldHtml(folded.length, folded.join('')) : '');
       if (miss.length) html += '<section class="di-card" style="padding:14px 18px;margin-top:14px"><b>' + esc(t.missing) + '</b><p class="di-movers-hint" style="margin:6px 0 0">' + esc(t.missingHint) + ' ' + esc(miss.join(', ')) + '.</p></section>';
       html += staticLinks();
       el.innerHTML = html;
+      if (SEC) SEC.bind(document.getElementById('rg-sector'), function () { render(); });
     });
   }
   var SL = { es: ['Resumen fijo de ', 'Todas las regiones: '], en: ['Fixed summary page for ', 'All regions: '], fr: ['Page de synthèse de ', 'Toutes les régions : '], it: ['Pagina di sintesi di ', 'Tutte le regioni: '] };

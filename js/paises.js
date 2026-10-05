@@ -161,7 +161,7 @@
   function rmName(cc, s) { var N = window.DehesaRegionNames && window.DehesaRegionNames[cc], v = N && N[s.id]; if (!v) return s.name || s.id; var p = v.split('|'), L = { en: 0, es: 1, fr: 2, it: 3 }[lang()]; return p[L == null ? 1 : L] || p[0]; }
   var HL = { es: 'Todas las regiones en una página: cifras y enlaces', en: 'All regions on one page: figures and links', fr: 'Toutes les régions sur une page : chiffres et liens', it: 'Tutte le regioni in una pagina: cifre e link' };
   function hubLink(cc) { var U = window.DehesaRegionUrls, h = U && U.hub(cc, lang()); return h ? '<p class="di-movers-hint" style="margin:8px 0 0;text-align:center"><a href="' + h + '">' + esc(HL[lang()] || HL.es) + ' →</a></p>' : ''; }
-  function metricSel(cc) { var R = window.DehesaRegionMetrics; return R ? R.selectHtml(cc, lang(), 'ps-metric', (R.list(cc)[0] || {}).id) : ''; }
+  function metricSel(cc) { var R = window.DehesaRegionMetrics; if (!R) return ''; var L = R.list(cc), sec = window.DehesaSector ? window.DehesaSector.get() : 'all', pref = { live: ['cattle'], agri: ['uaa', 'wheat'] }[sec] || [], d = (L[0] || {}).id; pref.some(function (p) { return L.some(function (m) { if (m.id === p) { d = p; return true; } }); }); return R.selectHtml(cc, lang(), 'ps-metric', d); }
   function paintReg(cc, el) {
     var R = window.DehesaRegionMetrics, sel = document.getElementById('ps-metric'), svg = el.querySelector('svg'), lg = document.getElementById('ps-legend'); if (!R || !svg || !lg) return;
     var run = function () { R.paint(svg, cc, sel ? sel.value : '', lang(), '').then(function (h) { lg.innerHTML = h; listVals(el, svg); }); };
@@ -208,6 +208,22 @@
     return list;
   }
   function pt(s) { return DISeries.series(s.cc, s.id).then(function (f) { s.points = f.points; }).catch(function () {}); }
+  /* Grupos del selector ordenados por la vista de sector (js/sector.js): primero los del sector elegido, luego los comunes y al final los del otro sector, en grupos con nombre. Con «Ambos», lista plana. */
+  function groupOpts(groups, t) {
+    var SEC = window.DehesaSector, lab = function (k) { return k === 'all' ? t.all : t[k]; }, one = function (k) { return '<option value="' + esc(k) + '"' + (k === ST.g ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; };
+    if (!SEC || SEC.get() === 'all') return groups.map(one).join('');
+    var cur = SEC.get(), oth = SEC.other(), by = { agri: [], live: [], common: [] };
+    groups.forEach(function (g) { if (g !== 'all') by[SEC.ofGroup(g)].push(g); });
+    return one('all') + [cur, 'common', oth].filter(function (k) { return by[k].length; }).map(function (k) { return '<optgroup label="' + esc(SEC.label(k)) + '">' + by[k].map(one).join('') + '</optgroup>'; }).join('');
+  }
+  function sectorUp() {
+    var SEC = window.DehesaSector, bar = document.getElementById('ps-sector'), det = document.getElementById('ps-detail'); if (!SEC || !bar) return;
+    bar.innerHTML = SEC.barHtml(); SEC.bind(bar, function () { var y = window.pageYOffset; build(); setTimeout(function () { try { window.scrollTo(0, y); } catch (e) {} }, 0); });
+    if (!det || SEC.get() === 'all') return;
+    var hide = [].filter.call(det.children, function (el) { return el.id && !SEC.visible(SEC.ofDetail(el.id)); }); if (!hide.length) return;
+    var wrap = document.createElement('div'); wrap.innerHTML = SEC.foldHtml(hide.length, ''); var fold = wrap.firstChild; if (!fold) return;
+    hide.forEach(function (el) { fold.appendChild(el); }); det.appendChild(fold);
+  }
   function groupsOf(c) { return ['all'].concat(GROUPS.filter(function (g) { return c.series.some(function (s) { return s.group === g; }); })); }
   /* Solo se descargan los puntos que se van a pintar: la serie elegida, sus comparables locales/nacionales y los KPI del perfil (cada uno en su trozo pequeño). */
   function prep() {
@@ -238,10 +254,10 @@
     var opt = function (arr, sel, lab) { return arr.map(function (k) { return '<option value="' + esc(k) + '"' + (k === sel ? ' selected' : '') + '>' + esc(lab(k)) + '</option>'; }).join(''); };
     var sel = function (id, label, inner) { return '<label style="font-size:13px;flex:1;min-width:150px">' + label + '<br><select id="' + id + '" class="di-compare-select">' + inner + '</select></label>'; };
     var rng = ['6m', '1', '3', '5', '10', '20', 'max'];
-    var prof = window.DIProfile ? window.DIProfile.html(ST.c, c, { lang: lang(), t: t, groups: groups, esc: esc, nf: nf, dec: dec, plabel: plabel, macro: MACRO && MACRO.countries[ST.c], wage: WAGES && WAGES.countries[ST.c], rate: window.DIProfile.rateOf(c), afterHero: REGMAP[ST.c] ? '<div id="ps-regmap" class="pp-anchor"></div>' : '' }) : '';
+    var prof = window.DIProfile ? window.DIProfile.html(ST.c, c, { lang: lang(), t: t, groups: groups, esc: esc, nf: nf, dec: dec, plabel: plabel, macro: MACRO && MACRO.countries[ST.c], wage: WAGES && WAGES.countries[ST.c], rate: window.DIProfile.rateOf(c), afterHero: (window.DehesaSector ? '<div id="ps-sector"></div>' : '') + (REGMAP[ST.c] ? '<div id="ps-regmap" class="pp-anchor"></div>' : '') }) : '';
     var html = prof + '<div style="display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px">' +
       sel('ps-c', t.country, opt(countries, ST.c, function (k) { return t.countries[k] || k; })) +
-      sel('ps-g', t.group, opt(groups, ST.g, function (k) { return k === 'all' ? t.all : t[k]; })) +
+      sel('ps-g', t.group, groupOpts(groups, t)) +
       sel('ps-s', t.series, opt(list.map(function (s) { return s.id; }), ST.s, function (id) { return TL(list.filter(function (s) { return s.id === id; })[0].label); })) +
       sel('ps-r', t.range, opt(rng, ST.r, function (k) { return k === 'max' ? t.rmax : t['r' + k]; })) + '</div>';
     if (cur) {
@@ -258,7 +274,7 @@
     if (ST.c === 'US') { var UL = { es: ['Precios locales del grano en EE. UU.', 'Lo que pagan los compradores por maíz, soja, trigo y más en cada estado (ofertas en efectivo de USDA AMS), además de ganado y heno.'], en: ['Local grain prices in the United States', 'What buyers are paying for corn, soybeans, wheat and more in each state (USDA AMS cash bids), plus cattle and hay.'], fr: ['Prix locaux des grains aux États-Unis', 'Ce que paient les acheteurs pour le maïs, le soja, le blé et plus dans chaque État (offres au comptant de l\'USDA AMS), ainsi que bétail et foin.'], it: ['Prezzi locali dei cereali negli Stati Uniti', 'Quanto pagano gli acquirenti per mais, soia, frumento e altro in ogni Stato (offerte in contanti USDA AMS), più bestiame e fieno.'] }[lang()] || []; html += '<a class="di-card" href="precios-locales.html" style="display:block;padding:14px 18px;margin-top:14px;text-decoration:none;color:inherit"><b>' + esc(UL[0]) + ' →</b><div class="di-movers-hint" style="margin:4px 0 0">' + esc(UL[1]) + '</div></a>'; }
     html += '<div id="ps-detail">'; if (REGMAP[ST.c] && !window.DIProfile) html += '<div id="ps-regmap"></div>';
     if (ST.c === 'PT') html += '<div id="ps-ifap"></div>'; html += (ST.c === 'DE' ? '<div id="ps-de"></div>' : '') + (ST.c === 'CA' ? '<div id="ps-mb"></div>' : '') + (ST.c === 'ES' ? '<div id="ps-es"></div>' : '') + (/^(DK|NL|FR)$/.test(ST.c) ? '<div id="ps-eu"></div>' : '') + '<div id="ps-agri"></div><div id="ps-tp"></div></div>' + srcHtml;
-    root.innerHTML = html; if (window.DICite && window.DICite.compact) window.DICite.compact(root, 'section, .pp-kgrid, #pp-trade'); frameUp(c); if (REGMAP[ST.c]) regMap(ST.c); if (window.DIClear) { DIClear.bindHelp(); DIClear.bindShare(); DIClear.bindNav(); if (!ST.hashDone) { ST.hashDone = 1; var hh = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (hh) setTimeout(function () { hh.scrollIntoView(); }, 60); } }
+    root.innerHTML = html; sectorUp(); if (window.DICite && window.DICite.compact) window.DICite.compact(root, 'section, .pp-kgrid, #pp-trade'); frameUp(c); if (REGMAP[ST.c]) regMap(ST.c); if (window.DIClear) { DIClear.bindHelp(); DIClear.bindShare(); DIClear.bindNav(); if (!ST.hashDone) { ST.hashDone = 1; var hh = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (hh) setTimeout(function () { hh.scrollIntoView(); }, 60); } }
     var ub = root.querySelector('[data-unusual]'); if (ub) ub.onclick = function () { ub.disabled = true; ub.textContent = ub.getAttribute('data-busy'); Promise.all(c.series.filter(function (x) { return !x.points && x.n >= 24; }).map(pt)).then(function () { build(); }); };
     if (ST.c === 'DE') { var den = document.getElementById('ps-de'), mdf = function () { if (window.DEFarm && den) window.DEFarm.mount(den, lang()); }; if (window.DEFarm) mdf(); else { var dsc = document.createElement('script'); dsc.src = 'js/de-agri.js?v=20261003'; dsc.onload = mdf; document.head.appendChild(dsc); } }
     if (ST.c === 'CA') { var mbn = document.getElementById('ps-mb'); if (mbn) { /* Manitoba (vacuno, ovino y caprino, porcino): cabeceras aqui, modulos (js/mb-cattle.js, js/mb-smallstock.js) solo al abrir */

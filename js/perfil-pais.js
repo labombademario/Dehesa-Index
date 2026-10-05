@@ -49,9 +49,15 @@
   }
   function CITE(s) { var Q = window.DICite; return Q && s && s.sourceId ? Q.html(s.sourceId, { period: s.latestPeriod }) : ''; }
   function kpis(cc, S, groups) {
-    var kp = picked(cc, S);
+    // vista por sector (js/sector.js): con «Agricultura» o «Ganadería» las cifras clave salen de ese sector y de lo común; con «Ambos», como siempre
+    var SEC = window.DehesaSector, sec = SEC ? SEC.get() : 'all', okS = function (s) { return sec === 'all' || SEC.visible(SEC.ofSeries(s)); }, mine = function (s) { return sec !== 'all' && SEC.ofSeries(s) === sec; };
+    var kp = picked(cc, S).filter(okS);
+    if (sec !== 'all') { var own = S.filter(function (s) { return mine(s) && plen(s) >= 6 && kp.indexOf(s) < 0; }).sort(function (a, b) { return score(b) - score(a); }), gseen = {};
+      kp.forEach(function (s) { gseen[s.group] = (gseen[s.group] || 0) + 1; });
+      own.forEach(function (s) { if (kp.length < 6 && (gseen[s.group] || 0) < 2) { kp.push(s); gseen[s.group] = (gseen[s.group] || 0) + 1; } });
+      kp.sort(function (a, b) { return (mine(b) ? 1 : 0) - (mine(a) ? 1 : 0); }); }
     if (kp.length >= 4) return kp.slice(0, 6);
-    KPI_ORDER.forEach(function (g) { if (kp.length < 6 && groups[g]) { var best = groups[g].filter(function (s) { return plen(s) >= 6 && kp.indexOf(s) < 0; }).sort(function (a, b) { return score(b) - score(a); })[0]; if (best) kp.push(best); } });
+    KPI_ORDER.forEach(function (g) { if (kp.length < 6 && groups[g]) { var best = groups[g].filter(function (s) { return plen(s) >= 6 && kp.indexOf(s) < 0 && okS(s); }).sort(function (a, b) { return score(b) - score(a); })[0]; if (best) kp.push(best); } });
     return kp;
   }
   var M = {

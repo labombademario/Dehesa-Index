@@ -52,7 +52,7 @@ const PAGES = [
   { n: 'costes', url: '/costes.html', crit: [] },
   { n: 'rendimientos', url: '/rendimientos.html', crit: [] },
   { n: 'legal', url: '/legal.html', crit: [] },
-  { n: 'region', url: '/region.html?c=NL&r=GR', crit: [] },
+  { n: 'region', url: '/region.html?c=NL&r=GR', crit: ['#rg-eaa', '#rg-erlive', '#rg-sector'] },
   { n: 'region-estatica', url: '/regiones/espana/andalucia/', crit: [] },
 ];
 const VIEWPORTS = [{ k: 'desktop', w: 1280, h: 900 }, { k: 'mobile', w: 390, h: 800 }];
