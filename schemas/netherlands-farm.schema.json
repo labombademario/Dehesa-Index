@@ -133,6 +133,28 @@
      "type": "object"
     }
    }
+  },
+  "fruit": {
+   "type": "object",
+   "required": [
+    "data"
+   ],
+   "properties": {
+    "data": {
+     "type": "object"
+    }
+   }
+  },
+  "dairy": {
+   "type": "object",
+   "required": [
+    "data"
+   ],
+   "properties": {
+    "data": {
+     "type": "object"
+    }
+   }
   }
  }
 }

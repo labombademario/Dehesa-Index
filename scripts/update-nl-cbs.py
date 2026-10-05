@@ -2,7 +2,7 @@
 """Paises Bajos: cultivos por region, estructura de las explotaciones y censo de ganado por region, sacrificios mensuales e indice de precios agrarios
 de Statistics Netherlands (CBS StatLine, OData API) -> data/netherlands-farm.json
 Tablas: 85636NED (superficie, rendimiento y produccion por cultivo, provincia y landsdeel, 1994-), 80780NED (explotaciones, uso del suelo y animales por region, 2000-),
-7123SLAC (sacrificios mensuales desde 1990), 86125NED (indice de precios de los productos agrarios, trimestral).
+7123SLAC (sacrificios mensuales desde 1990), 86125NED (indice de precios de los productos agrarios, trimestral); opcionales: 84499NED (manzana y pera, 1997-) y 7425zuiv (lecherias, mensual 1995-).
 Todo se guarda como lo publica el CBS: area en ha (80780: are/100 = ha, conversion exacta), rendimiento en t/ha, produccion en toneladas. Los valores vacios se omiten.
 Si una tabla falla, falla todo: no se escribe un fichero a medias. Modo sin red: NL_FIXTURES=<carpeta>."""
 import datetime, json, os, re, sys, time, urllib.parse, urllib.request
@@ -86,6 +86,35 @@ def lpi():
         out.setdefault(k, {})["%s-Q%d" % (m.group(1), int(m.group(2)))] = r["LandbouwprijsindexLPI_1"]; n += 1
     log("indice de precios", n, "valores")
     return {"base": "2020=100", "labels": {LPI[c]: nm[c] for c in LPI if c in nm}, "data": {k: ser(s) for k, s in out.items()}}
+# ------------------------------------------------------------ fruta 84499NED (cosecha y superficie de manzana y pera, anual desde 1997)
+FRUIT = {"A041297": "apples", "A041309": "pears"}
+def fruit():
+    nm = dim("84499NED", "Fruitgewassen"); st = periods("84499NED"); out = {}; n = 0
+    for r in rows("84499NED/TypedDataSet", "cbs84499"):
+        k = FRUIT.get(r["Fruitgewassen"].strip()); m = re.match(r"^(\d{4})JJ00$", r["Perioden"].strip())
+        if not k or not m: continue
+        if r.get("Oogst_1") is not None: out.setdefault(k, {}).setdefault("prod", {})[m.group(1)] = r["Oogst_1"] * 1000; n += 1   # mln kg -> toneladas (x1000, exacto)
+        if r.get("Teeltoppervlakte_2") is not None: out.setdefault(k, {}).setdefault("area", {})[m.group(1)] = r["Teeltoppervlakte_2"]; n += 1
+    log("fruta", n, "valores")
+    prov = sorted(int(k[:4]) for k, v in st.items() if k.endswith("JJ00") and v == "Voorlopig")
+    return {"labels": {FRUIT[c]: nm[c] for c in FRUIT if c in nm}, "units": {"prod": "tonnes", "area": "ha"}, "data": {k: {u: ser(s) for u, s in us.items()} for k, us in out.items()}, "provisional": prov}
+# ------------------------------------------------------------ lacteos 7425zuiv (leche recogida y productos de las lecherias, mensual desde 1995)
+DAIRY = {"Hoeveelheid_1": "milk_intake", "Vetgehalte_2": "fat_pct", "Eiwitgehalte_3": "protein_pct", "Boter_4": "butter", "Fabriekskaas_5": "cheese", "MelkpoederTotaal_6": "milk_powder",
+         "MagerMelkpoeder_8": "smp", "GecondenseerdeMelk_9": "condensed", "Weipoeder_10": "whey_powder"}
+def dairy():
+    st = periods("7425zuiv"); out = {}; n = 0
+    for r in rows("7425zuiv/TypedDataSet", "cbs7425"):
+        m = re.match(r"^(\d{4})MM(\d{2})$", r["Perioden"].strip())
+        if not m: continue
+        p = "%s-%s" % (m.group(1), m.group(2))
+        for fld, k in DAIRY.items():
+            if r.get(fld) is not None: out.setdefault(k, {})[p] = r[fld]; n += 1   # 1 000 kg = 1 tonelada; grasa y proteina en %
+    log("lacteos", n, "valores; sin dato publicado:", sorted(set(DAIRY.values()) - set(out)))   # el CBS deja la mantequilla vacia: no se rellena
+    prov = sorted(k.strip() for k, v in st.items() if "MM" in k and v == "Voorlopig")
+    return {"units": {"milk_intake": "tonnes", "fat_pct": "%", "protein_pct": "%", "default": "tonnes"}, "note": "1 000 kg of milk = 971 litres (CBS)", "data": {k: ser(s) for k, s in out.items()}, "provisional": prov}
+def optional(fn, name):
+    try: return fn()
+    except Exception as e: log("AVISO: bloque opcional", name, "no se pudo leer:", type(e).__name__, str(e)[:200]); return None
 def build():
     y = datetime.date.today().year
     doc = {"schemaVersion": 1, "generatedAt": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "country": "NL",
@@ -93,6 +122,9 @@ def build():
                       "tables": ["85636NED", "80780NED", "7123SLAC", "86125NED"]},
            "units": {"area": "ha", "yield": "t/ha", "prod": "tonnes", "heads": "thousand head", "weight": "tonnes carcass weight", "animals": "head", "index": "2020=100"}}
     doc["crops"] = crops(range(1994, y + 1)); doc["farms"] = farms(range(2000, y + 1)); doc["slaughter"] = slaughter(); doc["priceIndex"] = lpi()
+    for key, fn, tb in (("fruit", fruit, "84499NED"), ("dairy", dairy, "7425zuiv")):   # opcionales: si fallan, el resto se publica igual
+        v = optional(fn, key)
+        if v: doc[key] = v; doc["source"]["tables"].append(tb)
     return doc
 def main():
     args = sys.argv[1:]; outdir = ROOT / "data"
