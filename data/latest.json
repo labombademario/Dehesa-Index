@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-05T12:50:55.080Z",
+  "generatedAt": "2026-10-05T13:50:43.221Z",
   "observations": [
     {
       "id": "di_cereales_arroz_eu",
@@ -71946,7 +71946,7 @@
       "unit": "index_2020_100",
       "frequency": "quarterly",
       "status": "verified",
-      "verifiedAt": "2026-10-01T06:02:09.211Z",
+      "verifiedAt": "2026-10-05T13:50:42.960Z",
       "comparability": "directional",
       "methodology": "apri_pi_outq; EU27_2020; nominal agricultural price index, 2020=100.",
       "history": [
@@ -72071,7 +72071,7 @@
           "value": 115.44
         }
       ],
-      "snapshotDate": "2026-10-01"
+      "snapshotDate": "2026-10-05"
     },
     {
       "id": "di_eurostat_energy_input_index",
@@ -72084,7 +72084,7 @@
       "unit": "index_2020_100",
       "frequency": "quarterly",
       "status": "verified",
-      "verifiedAt": "2026-10-01T06:02:09.211Z",
+      "verifiedAt": "2026-10-05T13:50:42.960Z",
       "comparability": "directional",
       "methodology": "apri_pi_inq; EU27_2020; nominal agricultural price index, 2020=100.",
       "history": [
@@ -72209,7 +72209,7 @@
           "value": 178.92
         }
       ],
-      "snapshotDate": "2026-10-01"
+      "snapshotDate": "2026-10-05"
     },
     {
       "id": "di_eurostat_fertiliser_input_index",
@@ -72222,7 +72222,7 @@
       "unit": "index_2020_100",
       "frequency": "quarterly",
       "status": "verified",
-      "verifiedAt": "2026-10-01T06:02:09.211Z",
+      "verifiedAt": "2026-10-05T13:50:42.960Z",
       "comparability": "directional",
       "methodology": "apri_pi_inq; EU27_2020; nominal agricultural price index, 2020=100.",
       "history": [
@@ -72347,7 +72347,7 @@
           "value": 182.37
         }
       ],
-      "snapshotDate": "2026-10-01"
+      "snapshotDate": "2026-10-05"
     },
     {
       "id": "di_eurostat_milk_output_index",
@@ -72360,7 +72360,7 @@
       "unit": "index_2020_100",
       "frequency": "quarterly",
       "status": "verified",
-      "verifiedAt": "2026-10-01T06:02:09.211Z",
+      "verifiedAt": "2026-10-05T13:50:42.960Z",
       "comparability": "directional",
       "methodology": "apri_pi_outq; EU27_2020; nominal agricultural price index, 2020=100.",
       "history": [
@@ -72485,7 +72485,7 @@
           "value": 129.6
         }
       ],
-      "snapshotDate": "2026-10-01"
+      "snapshotDate": "2026-10-05"
     },
     {
       "id": "di_gas_natural_eu",
