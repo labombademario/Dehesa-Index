@@ -2,4 +2,6 @@ cultivos 33973 valores
 explotaciones 7990 valores
 sacrificios 8516 valores
 indice de precios 54 valores
-escrito netherlands-farm.json 745 KB
+fruta 120 valores
+lacteos 1516 valores; sin dato publicado: ['butter', 'condensed', 'milk_powder', 'smp', 'whey_powder']
+escrito netherlands-farm.json 774 KB
