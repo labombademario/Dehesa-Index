@@ -71,6 +71,9 @@ for code, p in CM.NL_CROP_PRODUCT.items():
     if _has((((_nl.get('crops') or {}).get('data') or {}).get(code) or {}).get('NL01', {}).get('prod')): add_ext('NL', p, 'production', 'netherlands-farm.json')
 for key, p in CM.NL_SLAUGHTER_PRODUCT.items():
     if _has((((_nl.get('slaughter') or {}).get('data') or {}).get(key) or {}).get('weight')): add_ext('NL', p, 'production', 'netherlands-farm.json')
+if any(_has(((_nl.get('fruit') or {}).get('data') or {}).get(k, {}).get('prod')) for k in ('apples', 'pears')): add_ext('NL', 'fruit', 'production', 'netherlands-farm.json')   # 84499NED
+for key, p in (('milk_intake', 'milk'), ('cheese', 'cheese'), ('butter', 'butter')):   # 7425zuiv: la mantequilla solo cuenta si el CBS la publica (hoy vacia)
+    if _has(((_nl.get('dairy') or {}).get('data') or {}).get(key)): add_ext('NL', p, 'production', 'netherlands-farm.json')
 _dk = CM.J('denmark-depth.json', {})   # Dinamarca (Danmarks Statistik): cosecha nacional, sacrificio y leche/lacteos
 for key, p in CM.DK_HARVEST_PRODUCT.items():
     if _has((((_dk.get('harvest') or {}).get('data') or {}).get(key) or {}).get('000', {}).get('prod')): add_ext('DK', p, 'production', 'denmark-depth.json')

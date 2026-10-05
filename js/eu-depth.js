@@ -28,6 +28,12 @@
     farmNote: 'Censo de explotaciones y animales del CBS a 1 de enero/mayo según el indicador; la superficie se convierte de áreas a ha (÷100, exacto).|CBS farm and animal census; area converted from ares to ha (÷100, exact).|Recensement des exploitations et des animaux du CBS ; surface convertie d\'ares en ha (÷100, exact).|Censimento CBS di aziende e animali; superficie convertita da are a ha (÷100, esatto).',
     mk: 'Mercado|Market|Marché|Mercato', pig: 'Cerdo de cebo (clase E, EUR/100 kg)|Fattening pig (class E, EUR/100 kg)|Porc charcutier (classe E, EUR/100 kg)|Suino da ingrasso (classe E, EUR/100 kg)', pgl: 'Lechón (EUR/animal)|Piglet (EUR/head)|Porcelet (EUR/tête)|Suinetto (EUR/capo)',
     cattleP: 'Vacuno (EUR/kg canal)|Cattle (EUR/kg carcass)|Bovins (EUR/kg carcasse)|Bovini (EUR/kg carcassa)', slW: 'Sacrificio semanal de cerdos|Weekly pig slaughter|Abattage hebdomadaire de porcs|Macellazione settimanale di suini', lean: '% de carne magra|Lean meat %|% de viande maigre|% di carne magra',
+    fdV: 'Ver|View|Voir|Vedi', fdPrevM: 'Vs. mes anterior|Vs. prior month|Vs. mois préc.|Vs. mese prec.', fdApples: 'Manzana: cosecha|Apples: harvest|Pommes : récolte|Mele: raccolto', fdPears: 'Pera: cosecha|Pears: harvest|Poires : récolte|Pere: raccolto', fdArea: 'Superficie de frutales (ha)|Orchard area (ha)|Surface des vergers (ha)|Superficie dei frutteti (ha)',
+    fdMilk: 'Leche recogida por las lecherías (t)|Milk delivered to dairies (t)|Lait livré aux laiteries (t)|Latte consegnato ai caseifici (t)', fdCheese: 'Queso fabricado (t)|Cheese made (t)|Fromage fabriqué (t)|Formaggio prodotto (t)', fdFat: 'Grasa de la leche (%)|Milk fat (%)|Matière grasse du lait (%)|Grasso del latte (%)', fdProt: 'Proteína de la leche (%)|Milk protein (%)|Protéines du lait (%)|Proteine del latte (%)',
+    fdProv: 'El último año es una estimación provisional del CBS.|The latest year is a provisional CBS estimate.|La dernière année est une estimation provisoire du CBS.|L’ultimo anno è una stima provvisoria del CBS.',
+    fdFruitNote: 'Cosecha de manzana y pera de los Países Bajos (CBS, tabla 84499NED), en toneladas (el CBS publica millones de kg: ×1.000, exacto) y superficie de frutales en ha.|Apple and pear harvest in the Netherlands (CBS, table 84499NED), in tonnes (CBS publishes million kg: ×1,000, exact) and orchard area in ha.|Récolte de pommes et de poires aux Pays-Bas (CBS, tableau 84499NED), en tonnes (le CBS publie des millions de kg : ×1 000, exact) et surface des vergers en ha.|Raccolto di mele e pere nei Paesi Bassi (CBS, tabella 84499NED), in tonnellate (il CBS pubblica milioni di kg: ×1.000, esatto) e superficie dei frutteti in ha.',
+    fdMilkNote: 'Leche de vaca recibida por las lecherías y queso de fábrica, mensual (CBS, tabla 7425zuiv); 1.000 kg de leche = 971 litros. El CBS no publica la mantequilla ni las leches en polvo en esta tabla (celdas vacías): no se rellenan.|Cow’s milk received by dairies and factory cheese, monthly (CBS, table 7425zuiv); 1,000 kg of milk = 971 litres. CBS does not publish butter or milk powders in this table (empty cells): they are not filled in.|Lait de vache reçu par les laiteries et fromage d’usine, mensuel (CBS, tableau 7425zuiv) ; 1 000 kg de lait = 971 litres. Le CBS ne publie pas le beurre ni les poudres de lait dans ce tableau (cellules vides) : ils ne sont pas complétés.|Latte vaccino ricevuto dai caseifici e formaggio industriale, mensile (CBS, tabella 7425zuiv); 1.000 kg di latte = 971 litri. Il CBS non pubblica burro e latte in polvere in questa tabella (celle vuote): non vengono riempiti.',
+    fdNone: 'El CBS no ha publicado todavía este bloque en el fichero cargado.|CBS has not yet published this block in the loaded file.|Le CBS n’a pas encore publié ce bloc dans le fichier chargé.|Il CBS non ha ancora pubblicato questo blocco nel file caricato.',
     cbsSl: 'Sacrificios mensuales (CBS)|Monthly slaughter (CBS)|Abattages mensuels (CBS)|Macellazioni mensili (CBS)', pidx: 'Índice de precios agrarios (2020=100)|Farm price index (2020=100)|Indice des prix agricoles (2020=100)|Indice dei prezzi agricoli (2020=100)',
     wk: 'Semana|Week|Semaine|Settimana', vsW: 'Vs. semana anterior|Vs. prior week|Vs. semaine préc.|Vs. settimana prec.', vsY: 'Vs. misma semana del año anterior|Vs. same week last year|Vs. même semaine l\'an dernier|Vs. stessa settimana dell\'anno scorso',
     atyp: 'Semanas atípicas publicadas por RVO (precio inferior a la mitad de las semanas vecinas); se muestran tal cual|Atypical weeks as published by RVO (price below half of neighbouring weeks); shown as published|Semaines atypiques publiées par RVO (prix inférieur à la moitié des semaines voisines) ; affichées telles quelles|Settimane atipiche pubblicate da RVO (prezzo sotto la metà delle settimane vicine); mostrate così come sono',
@@ -187,6 +193,31 @@
       body.innerHTML = h;
     });
   }
+  function nlFruitDairy(body, lang, st) {
+    return get(NLF).then(function (D) {
+      var v = st.v === 'milk' || st.v === 'cheese' || st.v === 'fat' || st.v === 'prot' || st.v === 'pears' ? st.v : 'apples';
+      var opts = [['apples', tx('fdApples', lang)], ['pears', tx('fdPears', lang)], ['milk', tx('fdMilk', lang)], ['cheese', tx('fdCheese', lang)], ['fat', tx('fdFat', lang)], ['prot', tx('fdProt', lang)]];
+      var h = '<div class="de-ctl">' + sel('v', tx('fdV', lang), opts, v) + '</div>', fruitV = v === 'apples' || v === 'pears';
+      var B = fruitV ? D.fruit : D.dairy; if (!B || !B.data) { body.innerHTML = h + note(tx('fdNone', lang)); return; }
+      if (fruitV) {
+        var F = B.data[v] || {}, pr = F.prod, ar = F.area, lp = lastP(pr); if (!lp) { body.innerHTML = h + note(tx('fdNone', lang)); return; }
+        var y = lp[0], prov = (B.provisional || []).indexOf(+y) >= 0;
+        h += tiles([[(v === 'apples' ? tx('fdApples', lang) : tx('fdPears', lang)) + ' ' + y + (prov ? ' *' : ''), nf(lp[1], 0, lang) + ' t'], [tx('vsPrev', lang), pc(delta(lp[1], at(pr, String(+y - 1))), lang)], [tx('fdArea', lang) + ' ' + y, ar && at(ar, y) != null ? nf(at(ar, y), 0, lang) : '–']]);
+        h += chart([{ name: v === 'apples' ? tx('fdApples', lang) : tx('fdPears', lang), pts: pts(pr) }], { unit: 't', lang: lang, yMin: 0, aria: tx('fdApples', lang) });
+        if (ar) h += chart([{ name: tx('fdArea', lang), pts: pts(ar) }], { unit: 'ha', lang: lang, yMin: 0, aria: tx('fdArea', lang) });
+        h += (prov ? note('* ' + tx('fdProv', lang)) : '') + note(tx('fdFruitNote', lang)) + cite('cbs_nl', y);
+      } else {
+        var key = { milk: 'milk_intake', cheese: 'cheese', fat: 'fat_pct', prot: 'protein_pct' }[v], S = B.data[key], lm = lastP(S); if (!lm) { body.innerHTML = h + note(tx('fdNone', lang)); return; }
+        var pct = v === 'fat' || v === 'prot', ly = (+lm[0].slice(0, 4) - 1) + lm[0].slice(4), pv = (B.provisional || []).indexOf(lm[0].replace('-', 'MM')) >= 0;
+        var lab = tx(v === 'milk' ? 'fdMilk' : v === 'cheese' ? 'fdCheese' : v === 'fat' ? 'fdFat' : 'fdProt', lang);
+        h += tiles([[tx('month', lang) + ' ' + lm[0] + (pv ? ' *' : ''), nf(lm[1], pct ? 2 : 0, lang)], [tx('sameM', lang), pct ? (at(S, ly) != null ? nf(lm[1] - at(S, ly), 2, lang) + ' pp' : '–') : pc(delta(lm[1], at(S, ly)), lang)], [tx('fdPrevM', lang), pct ? '–' : pc(delta(lm[1], S.length > 1 ? S[S.length - 2][1] : null), lang)]]);
+        h += chart([{ name: lab, pts: pts(S, String(+lm[0].slice(0, 4) - 10)) }], { unit: pct ? '%' : 't', lang: lang, yMin: pct ? undefined : 0, aria: lab });
+        h += (pv ? note('* ' + tx('fdProv', lang)) : '') + note(tx('fdMilkNote', lang)) + cite('cbs_nl', lm[0]);
+      }
+      h += '<p class="di-movers-hint">' + esc(tx('checked', lang)) + ': ' + esc((D.generatedAt || '').slice(0, 10)) + '</p>';
+      body.innerHTML = h;
+    });
+  }
   /* --------- Francia --------- */
   var LV = [null, 'vigilance', 'alerte', 'alerte_renforcee', 'crise'];
   function frWater(body, lang, st) {
@@ -221,7 +252,7 @@
       body.innerHTML = h;
     });
   }
-  var MODS = { 'dk-harvest': dkHarvest, 'dk-live': dkLive, 'dk-cap': dkCap, 'nl-crops': nlCrops, 'nl-farms': nlFarms, 'nl-markets': nlMarkets, 'fr-water': frWater, 'fr-maize': frMaize };
+  var MODS = { 'dk-harvest': dkHarvest, 'dk-live': dkLive, 'dk-cap': dkCap, 'nl-crops': nlCrops, 'nl-farms': nlFarms, 'nl-markets': nlMarkets, 'nl-fruit-dairy': nlFruitDairy, 'fr-water': frWater, 'fr-maize': frMaize };
   function mount(body, mod, lang) {
     lang = LI[lang] != null ? lang : 'es'; var st = {}, fn = MODS[mod]; if (!fn) return;
     function draw() { return fn(body, lang, st); }
