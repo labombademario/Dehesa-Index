@@ -822,6 +822,31 @@ def views_region_metrics(doc, errs, warns, stats):
                 if not _num(v): errs.append("%s/%s/%s: valor no numerico" % (cc, mid, k))
             n += len(b["vals"])
     stats["series"] = n
+_US_ST = set("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split())
+def us_states(doc, errs, warns, stats):
+    """Series de EE. UU. por estado: periodos ordenados y sin repetir (AAAA o AAAA-MM), valores numericos; nada negativo salvo las rentas netas de ERS; censo y condados con claves validas."""
+    st = doc["state"]
+    if st != "US" and st not in _US_ST: errs.append("estado desconocido %s" % st); return
+    n = 0
+    for k, s in doc["series"].items():
+        ps = [p[0] for p in s["points"]]
+        if ps != sorted(set(ps)): errs.append("%s %s: periodos desordenados o repetidos" % (st, k))
+        if any(not re.match(r"^\d{4}(-\d{2})?$", str(p)) for p in ps): errs.append("%s %s: periodo con formato raro" % (st, k))
+        for p in s["points"]:
+            if not _num(p[1]): errs.append("%s %s %s: valor no numerico" % (st, k, p[0])); break
+            if p[1] < 0 and not k.startswith("ers_net"): errs.append("%s %s %s: valor negativo" % (st, k, p[0])); break
+        n += len(ps)
+    for k, v in (doc.get("census2022") or {}).items():
+        if not _num(v) or v < 0: errs.append("%s censo %s invalido" % (st, k))
+    for f, c in (doc.get("counties") or {}).items():
+        if not re.match(r"^\d{5}$", f): errs.append("%s condado con FIPS raro %s" % (st, f)); break
+    stats["series"] = n
+def us_states_index(doc, errs, warns, stats):
+    S = doc["states"]
+    if "US" not in S: errs.append("falta el fichero nacional")
+    bad = [k for k in S if k != "US" and k not in _US_ST]
+    if bad: errs.append("estados desconocidos %s" % bad)
+    stats["series"] = sum(v.get("series", 0) for v in S.values())
 def series_shard(doc, errs, warns, stats):
     freq_rx = {"annual": r"^\d{4}$", "monthly": r"^\d{4}-\d{2}$", "weekly": r"^\d{4}-\d{2}-\d{2}$", "daily": r"^\d{4}-\d{2}-\d{2}$"}
     for s in doc["series"]:

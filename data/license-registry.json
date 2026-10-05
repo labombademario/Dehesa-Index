@@ -1950,6 +1950,13 @@
    ],
    "notes": "Bloques precalculados de la ficha de producto (scripts/build-product-profiles.py): estructura del comercio mundial (USDA PSD) y resumen de aranceles por partida HS. Cada bloque cita su fuente; la licencia la fija esa fuente."
   },
+  "data/us-states/": {
+   "sources": [
+    "usda_nass",
+    "usda_ers"
+   ],
+   "notes": "EE. UU. por estado y nacional (scripts/update-us-states.py): sacrificio comercial, existencias de grano, valor de la tierra y arrendamientos (tambien por condado), leche, huevos y ponedoras, precios recibidos por estado y Censo Agrario 2022 (estado y condado) de USDA NASS Quick Stats; renta agraria por estado de USDA ERS (Farm Income and Wealth Statistics, ultimo fichero publicado). Lo suprimido por NASS queda como hueco. Se cita la fuente de cada bloque."
+  },
   "data/us-county/": {
    "sources": [
     "usda_nass"

@@ -1,0 +1,140 @@
+sl_cattle_hd STATE 3784 filas, 3004 puntos
+sl_cattle_hd NATIONAL 86 filas, 80 puntos
+sl_cattle_lb STATE 3784 filas, 3004 puntos
+sl_cattle_lb NATIONAL 86 filas, 80 puntos
+sl_calves_hd STATE 3784 filas, 940 puntos
+sl_calves_hd NATIONAL 86 filas, 80 puntos
+sl_calves_lb STATE 3784 filas, 940 puntos
+sl_calves_lb NATIONAL 86 filas, 80 puntos
+sl_hogs_hd STATE 3784 filas, 2977 puntos
+sl_hogs_hd NATIONAL 86 filas, 80 puntos
+sl_hogs_lb STATE 3784 filas, 2977 puntos
+sl_hogs_lb NATIONAL 86 filas, 80 puntos
+sl_sheep_hd STATE 3784 filas, 2824 puntos
+sl_sheep_hd NATIONAL 86 filas, 80 puntos
+sl_sheep_lb STATE 3784 filas, 2824 puntos
+sl_sheep_lb NATIONAL 86 filas, 80 puntos
+sl_chick_hd STATE 2613 filas, 1835 puntos
+sl_chick_hd NATIONAL 86 filas, 80 puntos
+sl_chick_lb STATE 2613 filas, 1835 puntos
+sl_chick_lb NATIONAL 86 filas, 80 puntos
+sl_turkey_hd STATE 1660 filas, 964 puntos
+sl_turkey_hd NATIONAL 86 filas, 80 puntos
+sl_turkey_lb STATE 1660 filas, 1007 puntos
+sl_turkey_lb NATIONAL 86 filas, 80 puntos
+sl_chick_all_hd NATIONAL 86 filas, 80 puntos
+sl_turkey_all_hd NATIONAL 86 filas, 80 puntos
+dw_cattle NATIONAL 437 filas, 80 puntos
+dw_hogs NATIONAL 437 filas, 80 puntos
+dw_sheep NATIONAL 437 filas, 80 puntos
+dw_calves NATIONAL 437 filas, 80 puntos
+st_corn STATE 1188 filas, 432 puntos
+st_corn NATIONAL 27 filas, 27 puntos
+st_corn_on STATE 1134 filas, 432 puntos
+st_corn_on NATIONAL 27 filas, 27 puntos
+st_corn_off STATE 1188 filas, 932 puntos
+st_corn_off NATIONAL 27 filas, 27 puntos
+st_soy STATE 1188 filas, 351 puntos
+st_soy NATIONAL 27 filas, 27 puntos
+st_soy_on STATE 810 filas, 324 puntos
+st_soy_on NATIONAL 27 filas, 27 puntos
+st_soy_off STATE 1188 filas, 615 puntos
+st_soy_off NATIONAL 27 filas, 27 puntos
+st_wheat STATE 1188 filas, 576 puntos
+st_wheat NATIONAL 27 filas, 27 puntos
+st_wheat_on STATE 1017 filas, 511 puntos
+st_wheat_on NATIONAL 27 filas, 27 puntos
+st_wheat_off STATE 1188 filas, 874 puntos
+st_wheat_off NATIONAL 27 filas, 27 puntos
+lv_all STATE 336 filas, 335 puntos
+lv_all NATIONAL 7 filas, 7 puntos
+lv_crop STATE 312 filas, 299 puntos
+lv_crop NATIONAL 7 filas, 7 puntos
+lv_crop_irr STATE 154 filas, 134 puntos
+lv_crop_irr NATIONAL 0 filas, 0 puntos
+lv_crop_dry STATE 141 filas, 140 puntos
+lv_crop_dry NATIONAL 0 filas, 0 puntos
+lv_pasture STATE 305 filas, 286 puntos
+lv_pasture NATIONAL 7 filas, 7 puntos
+rt_crop STATE 314 filas, 314 puntos
+rt_crop NATIONAL 7 filas, 7 puntos
+rt_crop_irr STATE 304 filas, 304 puntos
+rt_crop_irr NATIONAL 7 filas, 7 puntos
+rt_crop_dry STATE 321 filas, 321 puntos
+rt_crop_dry NATIONAL 7 filas, 7 puntos
+rt_pasture STATE 305 filas, 305 puntos
+rt_pasture NATIONAL 7 filas, 7 puntos
+mk_prod STATE 3383 filas, 1920 puntos
+mk_prod NATIONAL 112 filas, 80 puntos
+mk_cow STATE 2199 filas, 1920 puntos
+mk_cow NATIONAL 112 filas, 80 puntos
+mk_cows STATE 314 filas, 312 puntos
+mk_cows NATIONAL 13 filas, 13 puntos
+eg_prod STATE 2464 filas, 2177 puntos
+eg_prod NATIONAL 86 filas, 80 puntos
+eg_layers STATE 207 filas, 201 puntos
+eg_layers NATIONAL 81 filas, 81 puntos
+pr_corn STATE 1974 filas, 1440 puntos
+pr_corn NATIONAL 92 filas, 80 puntos
+pr_soy STATE 1618 filas, 1388 puntos
+pr_soy NATIONAL 92 filas, 80 puntos
+pr_wheat STATE 1927 filas, 1427 puntos
+pr_wheat NATIONAL 92 filas, 80 puntos
+pr_oats STATE 1152 filas, 510 puntos
+pr_oats NATIONAL 92 filas, 80 puntos
+pr_barley STATE 770 filas, 386 puntos
+pr_barley NATIONAL 92 filas, 80 puntos
+pr_sorghum STATE 393 filas, 292 puntos
+pr_sorghum NATIONAL 92 filas, 80 puntos
+pr_hay STATE 2454 filas, 2160 puntos
+pr_hay NATIONAL 92 filas, 80 puntos
+pr_alfalfa STATE 2418 filas, 2160 puntos
+pr_alfalfa NATIONAL 86 filas, 80 puntos
+pr_hay_other STATE 2454 filas, 2160 puntos
+pr_hay_other NATIONAL 86 filas, 80 puntos
+pr_cotton STATE 908 filas, 318 puntos
+pr_cotton NATIONAL 92 filas, 80 puntos
+pr_peanuts STATE 952 filas, 765 puntos
+pr_peanuts NATIONAL 444 filas, 80 puntos
+pr_canola STATE 367 filas, 141 puntos
+pr_canola NATIONAL 86 filas, 80 puntos
+pr_milk STATE 2199 filas, 1920 puntos
+pr_milk NATIONAL 92 filas, 80 puntos
+censo ce_farms NATIONAL 1 filas, 1 valores
+censo ce_farms STATE 50 filas, 50 valores
+censo ce_farms COUNTY 3078 filas, 3078 valores
+censo ce_acres NATIONAL 1 filas, 1 valores
+censo ce_acres STATE 50 filas, 50 valores
+censo ce_acres COUNTY 3078 filas, 3059 valores
+censo ce_avgsize NATIONAL 1 filas, 1 valores
+censo ce_avgsize STATE 50 filas, 50 valores
+censo ce_avgsize COUNTY 3078 filas, 3059 valores
+censo ce_sales NATIONAL 1 filas, 1 valores
+censo ce_sales STATE 50 filas, 50 valores
+censo ce_sales COUNTY 3078 filas, 3055 valores
+censo ce_crops NATIONAL 1 filas, 1 valores
+censo ce_crops STATE 50 filas, 50 valores
+censo ce_crops COUNTY 3074 filas, 2979 valores
+censo ce_animals NATIONAL 1 filas, 1 valores
+censo ce_animals STATE 50 filas, 50 valores
+censo ce_animals COUNTY 3076 filas, 2979 valores
+censo ce_govt NATIONAL 1 filas, 1 valores
+censo ce_govt STATE 50 filas, 50 valores
+censo ce_govt COUNTY 3039 filas, 2943 valores
+censo ce_cropland NATIONAL 1 filas, 1 valores
+censo ce_cropland STATE 50 filas, 50 valores
+censo ce_cropland COUNTY 3076 filas, 3055 valores
+censo ce_irrigated NATIONAL 1 filas, 1 valores
+censo ce_irrigated STATE 50 filas, 50 valores
+censo ce_irrigated COUNTY 3048 filas, 2852 valores
+censo ce_age NATIONAL 1 filas, 1 valores
+censo ce_age STATE 50 filas, 50 valores
+censo ce_age COUNTY 3078 filas, 3074 valores
+rentas condado rt_crop_dry 9498 filas, 9323 valores
+rentas condado rt_crop_irr 2733 filas, 2556 valores
+rentas condado rt_pasture 7503 filas, 7325 valores
+ERS ultima publicacion 2026-09-03 https://www.ers.usda.gov/media/29517/september-3-2026-release.zip
+ERS ficheros ['FarmIncome_WealthStatisticsData_September2026.csv']
+ERS columnas FarmIncome_WealthStatisticsData_September2026.csv ['Year', 'State', 'artificialKey', 'VariableDescriptionTotal', 'VariableDescriptionPart1', 'VariableDescriptionPart2', 'Amount', 'unit_desc', 'PublicationDate', 'Source', 'ChainType_GDP_Deflator']
+ERS valores 35137 por variable: {'cash_receipts': 51, 'cr_crops': 51, 'cr_animals': 51, 'govt': 51, 'expenses': 51, 'gross_income': 51, 'net_cash': 51, 'net_income': 51}
+ERS descripciones de totales disponibles: ['average net cash income, $1,000,000 or more gross sales', 'average net cash income, $100,000 - 249,999 gross sales', 'average net cash income, $250,000 - 499,999 gross sales', 'average net cash income, $5000,000 - 999,999 gross sales', 'average net cash income, all farms', 'average net cash income, basin and range', 'average net cash income, cattle and calves', 'average net cash income, commercial farms', 'average net cash income, corn', 'average net cash income, cotton', 'average net cash income, dairy', 'average net cash income, eastern uplands', 'average net cash income, family farms', 'average net cash income, farm businesses', 'average net cash income, fruitful rim', 'average net cash income, heartland', 'average net cash income, hogs', 'average net cash income, intermediate farms', 'average net cash income, less than $100,000 gross sales', 'average net cash income, mississippi portal', 'average net cash income, northern cresent', 'average net cash income, northern great plains', 'average net cash income, other crops', 'average net cash income, other livestock', 'average net cash income, poultry', 'average net cash income, praire gateway', 'average net cash income, residence farms', 'average net cash income, southern seaboard', 'average net cash income, soybeans', 'average net cash income, specialty crops', 'average net cash income, wheat', 'dec. 31 value of purchased inputs inventory, production expenses', 'gross cash income', 'gross farm income', 'gross noncash income, returns to operators', 'net cash income', 'net farm income', 'net farm income ratio', 'net government transactions', 'production expenses, all, excl. operator dwellings', 'production expenses, all, incl. operator dwellings', 'production expenses, cash production expenses, excl. operator dwellings', 'production expenses, cash production expenses, net rent, nonoperator landlords', 'production expenses, operating expenses, excl. operator dwellings', 'production expenses, operating expenses, incl. operator dwellings', 'value of government payments, total']

@@ -467,6 +467,18 @@ sources:
     check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/cap)
     data: [cap/es/amounts.json, cap/es/watch.json]
     message: Seguimiento de la PAC de España (texto consolidado del BOE)
+  - id: us-states
+    name: Update US data by state (USDA NASS Quick Stats and USDA ERS farm income)
+    cron: ['40 21 * * 5']
+    script: scripts/update-us-states.py
+    env: {NASS_API_KEY: '${{ secrets.NASS_API_KEY }}'}
+    timeout: 60
+    script_timeout: 50
+    continue: true
+    check: python3 scripts/validate-data.py --no-report --files $(git ls-files -m -o --exclude-standard data/us-states)
+    data: [us-states/index.json, us-states/log.txt]
+    extra: ['!data/us-states']
+    message: Datos de EE. UU. por estado (USDA NASS y ERS)
   - id: us-county-yields
     name: Update US county yields, harvested area and production (USDA NASS Quick Stats)
     cron: ['25 7 8 * *']

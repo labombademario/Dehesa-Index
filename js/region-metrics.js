@@ -12,6 +12,9 @@
     US: [
       { id: 'drought', ramp: O, unit: ' %', label: ['Drought (moderate or worse)', 'Sequía (moderada o peor)', 'Sécheresse (modérée ou pire)', 'Siccità (moderata o peggiore)'], dec: 1 },
       { id: 'cattle', ramp: G, unit: '', label: ['Cattle on feed (thousand head)', 'Vacuno en cebaderos (miles de cabezas)', 'Bovins en engraissement (milliers de têtes)', 'Bovini in ingrasso (migliaia di capi)'], dec: 0 },
+      { id: 'landval', ramp: G, unit: ' USD/acre', label: ['Cropland value (USD per acre)', 'Valor de la tierra de cultivo (USD por acre)', 'Valeur des terres de culture (USD par acre)', 'Valore dei seminativi (USD per acro)'], dec: 0 },
+      { id: 'milk', ramp: G, unit: ' M lb', label: ['Milk production, latest month (million lb)', 'Producción de leche, último mes (millones de lb)', 'Production de lait, dernier mois (millions de lb)', 'Produzione di latte, ultimo mese (milioni di lb)'], dec: 0 },
+      { id: 'sales', ramp: G, unit: ' M USD', label: ['Agricultural sales, 2022 Census (million USD)', 'Ventas agrarias, Censo 2022 (millones de USD)', 'Ventes agricoles, recensement 2022 (millions USD)', 'Vendite agricole, censimento 2022 (milioni USD)'], dec: 0 },
       { id: 'tax', ramp: G, unit: ' %', label: ['State sales tax rate', 'Impuesto estatal sobre las ventas', 'Taxe de vente de l’État', 'Imposta statale sulle vendite'], dec: 2 }],
     CA: [
       { id: 'drought', ramp: O, unit: ' %', label: ['Drought (moderate or worse)', 'Sequía (moderada o peor)', 'Sécheresse (modérée ou pire)', 'Siccità (moderata o peggiore)'], dec: 1 },
@@ -33,6 +36,7 @@
   }
   function computeFull(cc, id) {
     var v = {}, per = '';
+    if (cc === 'US' && /^(landval|milk|sales)$/.test(id)) return Promise.resolve(null);
     if (cc === 'US' && id === 'drought') return get('data/drought.json').then(function (d) { if (!d || !d.states) return null; Object.keys(d.states).forEach(function (k) { var r = d.states[k]; if (r && r.length) { v[k] = r[r.length - 1][2]; if (String(r[r.length - 1][0]) > per) per = String(r[r.length - 1][0]); } }); return { vals: v, period: per }; });
     if (cc === 'US' && id === 'cattle') return Promise.all([get('data/cattle-on-feed.json'), window.DehesaRegionNames ? 1 : 0]).then(function (a) { var d = a[0], N = window.DehesaRegionNames && window.DehesaRegionNames.US; if (!d || !d.reports || !N) return null; var r = d.reports[d.reports.length - 1], en = {}; Object.keys(N).forEach(function (k) { en[N[k].split('|')[0]] = k; }); (r.states || []).forEach(function (s) { if (en[s.state]) v[en[s.state]] = s.current; }); return { vals: v, period: r.inventoryDate }; });
     if (cc === 'US' && id === 'tax') return get('data/other-tax.json').then(function (d) { var S = d && d.us && d.us.states; if (!S) return null; Object.keys(S).forEach(function (k) { v[k] = S[k].noStateSalesTax ? 0 : S[k].rate; }); return { vals: v, period: d.reviewedAt || '' }; });

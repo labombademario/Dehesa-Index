@@ -6,7 +6,7 @@
   "ok": 83,
   "late": 0,
   "error": 1,
-  "not_run": 2,
+  "not_run": 3,
   "unknown": 0
  },
  "global": "error",
@@ -2846,6 +2846,24 @@
    },
    "status": "ok",
    "expectedEveryHours": 744.0
+  },
+  {
+   "workflow": "update-us-states.yml",
+   "name": "Update US data by state (USDA NASS Quick Stats and USDA ERS farm income)",
+   "crons": [
+    "40 21 * * 5"
+   ],
+   "nextRun": "2026-10-09T21:40:00Z",
+   "files": [
+    {
+     "path": "data/us-states/index.json",
+     "lastChange": null
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "not_run",
+   "expectedEveryHours": 168.0
   }
  ]
 }

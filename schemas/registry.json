@@ -648,6 +648,12 @@
     "us_county_status"
    ]
   ],
+  "us-states/index.json": [
+   "us-states-index",
+   [
+    "us_states_index"
+   ]
+  ],
   "blog/weekly/index.json": [
    "blog-weekly-index",
    [
@@ -678,6 +684,12 @@
   ]
  },
  "globs": {
+  "us-states/[A-Z][A-Z].json": [
+   "us-states",
+   [
+    "us_states"
+   ]
+  ],
   "catalog/[A-Z]*.json": [
    "catalog-country",
    []

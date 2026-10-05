@@ -96,6 +96,22 @@ def region_metrics():
         put('US', 'cattle', v, r.get('inventoryDate'), 'cattle-on-feed.json')
     d = load('other-tax.json'); S = (d.get('us') or {}).get('states') or {}
     put('US', 'tax', {k: (0 if x.get('noStateSalesTax') else x.get('rate')) for k, x in S.items() if x.get('noStateSalesTax') or x.get('rate') is not None}, d.get('reviewedAt', ''), 'other-tax.json')
+    # EE. UU. por estado (data/us-states, scripts/update-us-states.py): valor de la tierra de cultivo, leche y ventas del Censo 2022
+    import glob as _g
+    vl, vm, vs = {}, {}, {}; pl = pm = ''
+    for f in sorted(_g.glob(str(D / 'us-states' / '[A-Z][A-Z].json'))):
+        try: u = json.loads(Path(f).read_text())
+        except Exception: continue
+        st = u.get('state'); S = u.get('series') or {}
+        if st == 'US': continue
+        p = (S.get('lv_crop') or {}).get('points'); p = p[-1] if p else None
+        if p: vl[st] = p[1]; pl = max(pl, str(p[0]))
+        p = (S.get('mk_prod') or {}).get('points'); p = p[-1] if p else None
+        if p: vm[st] = (str(p[0]), p[1] / 1e6); pm = max(pm, str(p[0]))
+        c = (u.get('census2022') or {}).get('ce_sales')
+        if c: vs[st] = c / 1e6
+    vm = {k: x[1] for k, x in vm.items() if x[0] == pm}   # solo los estados con dato del ultimo mes (los demas publican por trimestre)
+    put('US', 'landval', vl, pl, 'us-states/*.json'); put('US', 'milk', vm, pm, 'us-states/*.json'); put('US', 'sales', vs, '2022', 'us-states/*.json')
     d = load('canada-drought.json'); v = {}; n = len(d.get('periods') or [])
     for k, x in (d.get('provinces') or {}).items():
         row = (x.get('v') or [])[n - 1] if n and len(x.get('v') or []) >= n else None
