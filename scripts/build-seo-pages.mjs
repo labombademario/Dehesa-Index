@@ -100,3 +100,4 @@ fs.writeFileSync('sitemap.xml', sm);
 console.log('paginas SEO', n);
 await import('./build-product-pages.mjs');  // paginas de producto (precios/<producto>/) con el ultimo precio real
 await import('./build-region-pages.mjs');  // paginas por region (regiones/<pais>/<region>/) con las cifras reales de data/
+await import('./sitemap-lastmod.mjs');  // lastmod solo cuando cambia el contenido de la pagina

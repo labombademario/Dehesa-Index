@@ -13,6 +13,7 @@ const toFile = u => { const p = u.replace(ORIGIN, '').split('#')[0].split('?')[0
 const sm = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
 const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 ok(new Set(locs).size === locs.length, 'sitemap: URLs duplicadas');
+ok([...sm.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].every(m => /^\d{4}-\d{2}-\d{2}$/.test(m[1]) && m[1] <= new Date(Date.now() + 864e5).toISOString().slice(0, 10)), 'sitemap: lastmod con formato invalido o en el futuro');
 ok((sm.match(/<url>/g) || []).length === locs.length, 'sitemap: numero de <url> distinto del de <loc> (XML mal formado)');
 ok(locs.length <= 50000 && Buffer.byteLength(sm) <= 50 * 1024 * 1024, 'sitemap: supera los limites del protocolo (50.000 URLs / 50 MB)');
 for (const m of sm.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)) ok(/^\d{4}-\d{2}-\d{2}(T[\d:.+Z-]+)?$/.test(m[1]) && new Date(m[1]) <= new Date(Date.now() + 864e5), 'sitemap: lastmod invalido o en el futuro ' + m[1]);
