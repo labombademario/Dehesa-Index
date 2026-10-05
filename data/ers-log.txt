@@ -13,4 +13,4 @@ costes cow-calf 872
 costes hogs-all 624
 previsión costes 306
 renta agraria 4874 Data as of September 3, 2026.
-bytes 1308197
+bytes 1308216
