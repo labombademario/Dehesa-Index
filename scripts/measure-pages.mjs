@@ -4,7 +4,7 @@
 // Con --check aplica el presupuesto por pagina de scripts/page-budget.json y falla si se supera o si se pide un fichero prohibido.
 import { readFile, writeFile } from 'node:fs/promises';
 import { gzipSync } from 'node:zlib';
-const FONT_MAX_KB = 125;   // woff2 propios (Source Serif 4 + Public Sans, latin ~78 KB); el subconjunto latin-ext de Source Serif (42 KB) se descarga solo cuando un titular de noticias trae letras como ł, ő o ș
+const FONT_MAX_KB = 140;   // woff2 propios (Source Serif 4 + Public Sans): latin ~78 KB; con titulares de noticias que traen letras como ł, ő o ș el navegador descarga ademas los subconjuntos latin-ext (Source Serif 41 KB + Public Sans 18 KB) = 135 KB en /noticias.html. Se mantiene el limite justo por encima para detectar cualquier fuente nueva.
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
