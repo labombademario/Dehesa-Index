@@ -1,16 +1,1 @@
-valor negativo en la fuente, se deja como hueco: porcino 27 32IBCebo80a109 2011-05 = -0.317770049
-valor negativo en la fuente, se deja como hueco: porcino 32 27IBTanimales 2011-05 = -1
-valor negativo en la fuente, se deja como hueco: porcino 32 35IBTCerdasR 2011-05 = -1
-valor negativo en la fuente, se deja como hueco: porcino 19 27IBTanimales 2017-05 = -0.460325426
-valor negativo en la fuente, se deja como hueco: porcino 19 30IBTCebo 2017-05 = -0.45509276
-valor negativo en la fuente, se deja como hueco: porcino 19 35IBTCerdasR 2017-05 = -0.005232666
-valor negativo en la fuente, se deja como hueco: bovino 21 02ANI0A12DS 2010-05 = -1
-AVISO (incoherencia de la fuente, se publica tal cual): porcino 28 var 17 2018-05: componentes 7348.3 != total 7246.0
-AVISO (incoherencia de la fuente, se publica tal cual): porcino 28 var 22 2018-05: componentes 2706.8 != total 2680.7
-AVISO (incoherencia de la fuente, se publica tal cual): porcino 28 var 30 2018-05: componentes 104.8 != total 207.2
-AVISO (incoherencia de la fuente, se publica tal cual): porcino 28 var 35 2018-05: componentes 81.7 != total 107.8
-AVISO (incoherencia de la fuente, se publica tal cual): porcino 38 var 17 2018-05: componentes 9178.6 != total 9035.1
-AVISO (incoherencia de la fuente, se publica tal cual): porcino 38 var 22 2018-05: componentes 3239.6 != total 3098.3
-AVISO (incoherencia de la fuente, se publica tal cual): porcino 38 var 30 2018-05: componentes 0 != total 143.5
-AVISO (incoherencia de la fuente, se publica tal cual): porcino 38 var 35 2018-05: componentes 0 != total 141.2
-OK: bovino 2010-05..2025-11, ovino 2010-11..2025-11, caprino 2010-11..2025-11, porcino 2010-05..2025-11
+ERROR al leer: cabecera inesperada: ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X']

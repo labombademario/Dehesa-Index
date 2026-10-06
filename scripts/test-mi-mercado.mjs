@@ -72,7 +72,8 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ': heno: la fila de más cantidad = JSON', nrm(t).includes(nrm(f(hayRows[0][14], 2))) && nrm(t).includes(String(hayRows[0][11])));
   // maíz: ofertas al contado
   await page.selectOption('[data-mm="p"]', 'corn'); await ready('price'); t = await sec('price');
-  ok(tag + ': maíz: ofertas = JSON y se rotula región/terminal', cs.every(s => nrm(t).includes(nrm(f(s.avg, 2)))) && /(region|región|région|regione)/i.test(t) && /terminal/i.test(t));
+  const tc = await page.evaluate(() => document.querySelector('[data-mm-body="price"]').textContent);   // textContent: las filas a partir de la 9 van en un <details> plegado y innerText no las incluye
+  ok(tag + ': maíz: ofertas = JSON y se rotula región/terminal', cs.every(s => nrm(tc).includes(nrm(f(s.avg, 2)))) && /(region|región|région|regione)/i.test(t) && /terminal/i.test(t));
   ok(tag + ': maíz: basis publicado', cs.some(s => s.bLo != null && nrm(t).includes(String(Math.abs(s.bLo)))));
   // estado sin dato: se dice y no se inventa
   await page.selectOption('[data-mm="r"]', 'AL'); await page.selectOption('[data-mm="p"]', 'wheat'); await ready('price'); t = await sec('price');
