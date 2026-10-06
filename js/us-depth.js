@@ -47,7 +47,7 @@
     Promise.all(ORDER.map(function (k) { return m.us[k]({ c: 'US', r: 'US' }).catch(function () { return null; }); })).then(function (out) {
       var shown = [], folded = [];
       out.forEach(function (html, i) { if (!html) return; var sec = SEC ? SEC.ofModule(ORDER[i]) : 'common'; (SEC && !SEC.visible(sec) ? folded : shown).push(html); });
-      el.innerHTML = (shown.length || folded.length ? '<section style="margin-top:18px"><h2 class="cof-h2" style="margin:0 0 4px">' + esc(h[0]) + '</h2><p class="di-movers-hint" style="margin:0">' + esc(h[1]) + '</p>' + shown.join('') + (folded.length ? SEC.foldHtml(folded.length, folded.join('')) : '') + '</section>' : '') + '<div id="ps-usm"></div>';
+      el.innerHTML = (shown.length || folded.length ? '<section style="margin-top:18px"><p class="di-movers-hint" style="margin:0">' + esc(h[1]) + '</p>' + shown.join('') + (folded.length ? SEC.foldHtml(folded.length, folded.join('')) : '') + '</section>' : '') + '<div id="ps-usm"></div>';
       fold(el);
       market(document.getElementById('ps-usm'));
     });

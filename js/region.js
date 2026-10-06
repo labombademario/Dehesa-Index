@@ -519,6 +519,13 @@
     Object.keys(M.mods).forEach(function (c) { if (!MODS[c]) MODS[c] = []; M.mods[c].forEach(function (m) { MODS[c].push(m); MOD_NAME[m[0]] = m[0]; }); });
     OPTIONAL = M.optional || {};
   })();
+  (function () {
+    /* Orden unico en todos los paises: resumen, precios y mercado, costes, produccion (cuentas, cultivos, ganado, explotaciones), PAC y seguros, clima y comercio. Estable: dentro de cada grupo se respeta el orden de cada pais. */
+    var RANK = { macro: 0, usprices: 10, prices: 10, bids: 11, local: 12, deprices: 13, mb: 14, fert: 20, fuel: 21, usfuel: 21, costs: 22, tax: 23, usland: 24, deland: 24,
+      eaa: 30, recan: 31, inc: 32, rec: 33, usincome: 34, crops: 40, cacrops: 40, ercrops: 40, escrops: 40, vig: 80, cere: 41, deprod: 41, nlcrops: 41, usstocks: 42,
+      cattle: 50, lvst: 50, erlive: 50, eslv: 51, essl: 52, esmilk: 53, usslaughter: 54, usdairy: 55, delive: 56, erfarms: 60, uscensus: 61, usarc: 70, ins: 71, insca: 71, drought: 80, clim: 81, auex: 90 };
+    Object.keys(MODS).forEach(function (c) { var L = MODS[c].map(function (m, i) { return [m, i, RANK[m[0]] == null ? 65 : RANK[m[0]]]; }); L.sort(function (a, b) { return a[2] - b[2] || a[1] - b[1]; }); MODS[c] = L.map(function (e) { return e[0]; }); });
+  })();
   /* ---------- mapa y página ---------- */
   function mapSvg(cfg, r) {
     var M = window[cfg.map]; if (!M) return '';
