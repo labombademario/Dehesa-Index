@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T09:28:16Z",
+ "generatedAt": "2026-10-06T12:32:09Z",
  "summary": {
   "files": 20,
   "errors": 0,
@@ -116,7 +116,7 @@
     "points": 47470,
     "lines": 0
    },
-   "generatedAt": "2026-10-04T18:25:13Z",
+   "generatedAt": "2026-10-06T09:35:14Z",
    "info": [
     "UK/uk-egg-exports-eu: salto 1.556 -> 57.111 en 2019-12 (mediana previa 1.86) [KNOWN_VERIFIED_ANOMALY]",
     "UK/uk-egg-exports-products: salto 0.5 -> 10.1 en 2016-12 (mediana previa 0.3) [KNOWN_VERIFIED_ANOMALY]",
