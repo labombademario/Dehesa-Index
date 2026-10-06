@@ -126,8 +126,54 @@ def accounts():
     for a, pts in by.items():
         n += put('it-es-eaa-%s' % a.lower(), 'income', '%s (EUR million, current prices, Eurostat)' % clean(labs['am_item'][a]), 'EUR million', 'annual', pts, 'Eurostat aact_eaa01 %s PRD_BP' % a)
     log('cuentas agrarias', n, 'series')
+def inputs():
+    recs, labs = es('apri_pi_inq', unit='I20'); by = {}
+    for r, v in recs:
+        if r['p_adj'] == 'NI': by.setdefault(r['am_item'], []).append((r['time'], v))
+    n = 0; seen = set()
+    for a, pts in sorted(by.items()):
+        nm = clean(labs['am_item'][a]); key = frozenset(re.findall(r'[a-z0-9]+', nm.lower()))
+        if key in seen: nm += ' (code %s)' % a
+        seen.add(key)
+        g = 'inputs_f' if re.search(r'fertili|nitrate|urea|phosphate|potash|ammonia|lime|compound', nm, re.I) and not re.search(r'feed', nm, re.I) else 'inputs_a' if re.search(r'feed|straw|hay|cake|meal|concentrate', nm, re.I) else 'inputs'
+        n += put('it-es-inpidx-%s' % a.lower(), g, 'Input price index (prices paid by farmers), nominal: %s (2020=100, Eurostat)' % nm, 'index 2020=100', 'quarterly', pts, 'Eurostat apri_pi_inq %s' % a)
+    log('indices de precios de insumos', n, 'series')
+def fertiliser():
+    recs, labs = es('aei_fm_usefert'); by = {}
+    for r, v in recs:
+        if r['unit'] == 'T': by.setdefault(r['nutrient'], []).append((r['time'], v))
+    n = 0
+    for k, pts in by.items(): n += put('it-es-fert-%s' % k.lower(), 'inputs_f', 'Consumption of inorganic fertilisers: %s (tonnes of nutrient, Eurostat)' % clean(labs['nutrient'][k]), 't', 'annual', pts, 'Eurostat aei_fm_usefert %s' % k)
+    log('fertilizantes', n, 'series')
+def labour():
+    recs, labs = es('aact_ali01'); by = {}
+    for r, v in recs:
+        if r['unit'] == 'THS_AWU': by.setdefault(r['am_item'], []).append((r['time'], v))
+    n = 0
+    for k, pts in by.items(): n += put('it-es-ali-%s' % k.lower(), 'income', 'Agricultural labour input: %s (annual work units, Eurostat)' % clean(labs['am_item'][k]), 'AWU', 'annual', pts, 'Eurostat aact_ali01 %s' % k, 1000)
+    log('empleo agrario', n, 'series')
+ORG_KEEP = re.compile(r'^(utili[sz]ed agricultural area|arable|cereals|oilseeds|potatoes|permanent grassland|permanent crops|vineyards|grapes|olives|fruit|fresh vegetables|vegetables)', re.I)
+def organic():
+    n = 0
+    recs, labs = es('org_cropar', agprdmet='TOTAL'); by = {}
+    for r, v in recs:
+        if r['unit'] == 'HA' and ORG_KEEP.match(clean(labs['crops'][r['crops']])): by.setdefault(r['crops'], []).append((r['time'], v))
+    for c, pts in by.items(): n += put('it-es-organic-%s' % c.lower(), 'organic', 'Organic area (certified + in conversion): %s (Eurostat)' % clean(labs['crops'][c]), 'ha', 'annual', pts, 'Eurostat org_cropar %s' % c)
+    recs, labs = es('org_lstspec'); by = {}
+    for r, v in recs:
+        if r['unit'] == 'HD': by.setdefault(r['animals'], []).append((r['time'], v))
+    for a, pts in by.items(): n += put('it-es-organic-ls-%s' % a.lower(), 'organic', 'Organic livestock: %s (head, Eurostat)' % clean(labs['animals'][a]), 'head', 'annual', pts, 'Eurostat org_lstspec %s' % a)
+    log('ecologico', n, 'series')
+def slaughter_m():
+    recs, labs = es('apro_mt_pwgtm', meatitem='SLAUGHT'); by = {}
+    for r, v in recs:
+        if r['unit'] in ('THS_T', 'THS_HD'): by.setdefault((r['meat'], r['unit']), []).append((r['time'], v))
+    n = 0
+    for (m, u), pts in by.items():
+        n += put('it-es-meatm-%s-%s' % (m.lower(), u.lower()), 'production', '%s: slaughterings, monthly (%s, Eurostat)' % (clean(labs['meat'][m]), 'tonnes carcass weight' if u == 'THS_T' else 'head'), 't' if u == 'THS_T' else 'head', 'monthly', pts, 'Eurostat apro_mt_pwgtm %s' % m, 1000)
+    log('sacrificio mensual', n, 'series')
 def main():
-    for fn in (crops, herds, slaughter, milk, poultry, priceidx, absprices, accounts):
+    for fn in (crops, herds, slaughter, slaughter_m, milk, poultry, priceidx, absprices, accounts, inputs, fertiliser, labour, organic):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:300])
     if len(OUT) < 50:

@@ -1,8 +1,13 @@
 cultivos 345 series
 censos 84 series
 carne 48 series
+sacrificio mensual 46 series
 leche 22 series
 aves 73 series
 indices de precios 91 series
 precios absolutos 23 series
 cuentas agrarias 157 series
+indices de precios de insumos 52 series
+fertilizantes 2 series
+empleo agrario 3 series
+ecologico 8 series
