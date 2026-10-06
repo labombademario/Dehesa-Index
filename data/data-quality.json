@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T18:28:38Z",
+ "generatedAt": "2026-10-06T23:14:33Z",
  "summary": {
   "files": 22,
   "errors": 0,
-  "warnings": 1
+  "warnings": 2
  },
  "files": [
   {
@@ -34,7 +34,7 @@
     "points": 58767,
     "lines": 0
    },
-   "generatedAt": "2026-10-02T14:48:38Z",
+   "generatedAt": "2026-10-06T19:53:27Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -203,17 +203,25 @@
   {
    "file": "eurostat-depth-stats.json",
    "schema": "country-stats",
-   "status": "ok",
+   "status": "warning",
    "errors": [],
-   "warnings": [],
+   "warnings": [
+    "BE/be-eus-poultry-exp_xeu-a5130pn: salto 53300.0 -> 1245700.0 en 2007 (mediana previa 2.9e+04)",
+    "BE/be-eus-poultry-imp-a5231p: salto 98000 -> 180000 en 1995 (mediana previa 5e+03)",
+    "BE/be-eus-poultry-imp-a5231p: salto 180000 -> 171000 en 1996 (mediana previa 5e+03)",
+    "BE/be-eus-poultry-imp-a5231p: salto 226000 -> 464000 en 1999 (mediana previa 1.4e+04)",
+    "BE/be-eus-poultry-imp_ieu-a5231p: salto 98000 -> 180000 en 1995 (mediana previa 5e+03)",
+    "BE/be-eus-poultry-imp_ieu-a5231p: salto 180000 -> 171000 en 1996 (mediana previa 5e+03)",
+    "BE/be-eus-poultry-imp_ieu-a5231p: salto 226000 -> 464000 en 1999 (mediana previa 1.4e+04)"
+   ],
    "stats": {
-    "series": 319,
-    "points": 19841,
+    "series": 660,
+    "points": 34757,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T17:51:17Z",
+   "generatedAt": "2026-10-06T22:27:20Z",
    "info": [],
-   "nWarnings": 0,
+   "nWarnings": 7,
    "nErrors": 0
   },
   {
@@ -239,11 +247,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 457,
-    "points": 79750,
+    "series": 480,
+    "points": 80695,
     "lines": 0
    },
-   "generatedAt": "2026-10-05T15:52:21Z",
+   "generatedAt": "2026-10-06T21:59:05Z",
    "info": [
     "CA/ca-trade-imp-wheat: salto 2.5 -> 2.8 en 1996-01 (mediana previa 0.1) [KNOWN_VERIFIED_ANOMALY]",
     "CA/ca-trade-imp-wheat: salto 5.3 -> 10.1 en 2002-12 (mediana previa 0.4) [KNOWN_VERIFIED_ANOMALY]",
@@ -309,11 +317,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 579,
-    "points": 131311,
+    "series": 582,
+    "points": 132265,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T17:44:24Z",
+   "generatedAt": "2026-10-06T19:14:47Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
