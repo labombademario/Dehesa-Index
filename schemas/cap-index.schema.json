@@ -1,0 +1,131 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Dehesa Index - PAC 2.0: contrato comun por pais y vigilancia (derivado de data/cap/<CC>/)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "asOf",
+  "contract",
+  "countries",
+  "watch"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "asOf": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "contract": {
+   "type": "object",
+   "required": [
+    "doc",
+    "components",
+    "states"
+   ]
+  },
+  "countries": {
+   "type": "array",
+   "minItems": 3,
+   "items": {
+    "type": "object",
+    "required": [
+     "cc",
+     "name",
+     "scheme",
+     "legalAct",
+     "updatedAt",
+     "components"
+    ],
+    "properties": {
+     "cc": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+     },
+     "name": {
+      "type": "string"
+     },
+     "components": {
+      "type": "object",
+      "required": [
+       "strategicPlan",
+       "interventions",
+       "amounts",
+       "rules",
+       "importantDates",
+       "watch"
+      ],
+      "additionalSchema": {
+       "type": "object",
+       "required": [
+        "state"
+       ],
+       "properties": {
+        "state": {
+         "enum": [
+          "INGESTED",
+          "PARTIAL",
+          "NOT_INGESTED"
+         ]
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "watch": {
+   "type": "object",
+   "required": [
+    "eventTypes",
+    "events",
+    "deadlines"
+   ],
+   "properties": {
+    "events": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "type",
+       "cc",
+       "detail",
+       "detectedAt",
+       "officialUrl"
+      ],
+      "properties": {
+       "type": {
+        "enum": [
+         "RULE_CHANGED",
+         "AMOUNT_CHANGED"
+        ]
+       }
+      }
+     }
+    },
+    "deadlines": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "cc",
+       "id",
+       "kind",
+       "date",
+       "text",
+       "legalBasis",
+       "officialUrl"
+      ],
+      "properties": {
+       "date": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

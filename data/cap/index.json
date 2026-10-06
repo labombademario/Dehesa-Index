@@ -1,0 +1,515 @@
+{
+ "schemaVersion": 1,
+ "asOf": "2026-10-06",
+ "contract": {
+  "doc": "Contrato comun de la PAC por pais en data/cap/<CC>/. Cada componente declara INGESTED, PARTIAL o NOT_INGESTED (con razon). Un pais solo pasa a INGESTED con una fuente institucional oficial y licencia aprobada en el License Gate. Sin consejo juridico ni calculo de ayudas individuales.",
+  "components": [
+   "strategicPlan",
+   "interventions",
+   "amounts",
+   "rules",
+   "importantDates",
+   "watch"
+  ],
+  "states": [
+   "INGESTED",
+   "PARTIAL",
+   "NOT_INGESTED"
+  ]
+ },
+ "countries": [
+  {
+   "cc": "ES",
+   "name": "Espana",
+   "scheme": "PEPAC 2023-2027",
+   "legalAct": {
+    "title": "Real Decreto 1048/2022, de 27 de diciembre",
+    "ref": "BOE-A-2022-23048",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048",
+    "sourceId": "boe_es"
+   },
+   "updatedAt": "2026-10-05",
+   "components": {
+    "strategicPlan": {
+     "state": "INGESTED",
+     "file": "es/rules.json",
+     "scheme": "PEPAC 2023-2027",
+     "note": "Reglas del PEPAC leidas del Real Decreto 1048/2022; el texto del plan estrategico en si no se reproduce"
+    },
+    "interventions": {
+     "state": "INGESTED",
+     "file": "es/amounts.json",
+     "count": 33,
+     "note": "Ecorregimenes con practica y tipo de superficie; ayudas asociadas en amounts.json"
+    },
+    "amounts": {
+     "state": "INGESTED",
+     "file": "es/amounts.json",
+     "campaigns": [
+      2023,
+      2024,
+      2025,
+      2026,
+      2027
+     ],
+     "kind": "RD_PLANNED_MIN_MAX",
+     "note": "Importes planificados, minimos y maximos fijados por el Real Decreto; no son importes pagados por campana"
+    },
+    "rules": {
+     "state": "INGESTED",
+     "file": "es/rules.json",
+     "count": 14
+    },
+    "importantDates": {
+     "state": "INGESTED",
+     "file": "es/rules.json",
+     "count": 10,
+     "note": "Fechas generales de la norma; cada comunidad autonoma puede modificarlas"
+    },
+    "watch": {
+     "state": "INGESTED",
+     "file": "es/watch.json",
+     "checkedAt": "2026-10-05",
+     "reviewNeeded": 0
+    }
+   }
+  },
+  {
+   "cc": "DK",
+   "name": "Dinamarca",
+   "scheme": "Direct payments 2026 (Bekendtgorelser)",
+   "legalAct": {
+    "title": "Bekendtgørelse om grundbetaling m.v. til landbrugere for 2026 / Bekendtgørelse om tilskud til bio-ordninger for 2026",
+    "ref": "BEK 1363, BEK 1381",
+    "url": "https://www.retsinformation.dk/eli/lta/2025/1363",
+    "sourceId": "retsinformation"
+   },
+   "updatedAt": "2026-10-05",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "el plan estrategico danes no se ha leido: solo los decretos de pagos directos",
+     "reasonCode": "NOT_READ"
+    },
+    "interventions": {
+     "state": "INGESTED",
+     "file": "dk/amounts.json",
+     "count": 7,
+     "note": "Esquemas de pago directo con sus importes"
+    },
+    "amounts": {
+     "state": "INGESTED",
+     "file": "dk/amounts.json",
+     "campaigns": [
+      2026
+     ],
+     "kind": "DECREE_AMOUNTS"
+    },
+    "rules": {
+     "state": "PARTIAL",
+     "file": "dk/amounts.json",
+     "count": 3,
+     "note": "Solo umbrales numericos (superficies minimas, agricultor activo); no hay catalogo de reglas"
+    },
+    "importantDates": {
+     "state": "NOT_INGESTED",
+     "reason": "los decretos daneses leidos no fijan un calendario estructurado",
+     "reasonCode": "NOT_READ"
+    },
+    "watch": {
+     "state": "INGESTED",
+     "file": "dk/watch.json",
+     "checkedAt": "2026-10-05",
+     "reviewNeeded": 0
+    }
+   }
+  },
+  {
+   "cc": "EU",
+   "name": "Union Europea",
+   "scheme": "CAP Strategic Plans Regulation (EU) 2021/2115",
+   "legalAct": {
+    "title": "Regulation (EU) 2021/2115 (CAP Strategic Plans Regulation)",
+    "ref": "CELEX 02021R2115-20260818",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02021R2115-20260818",
+    "sourceId": "eur_lex"
+   },
+   "updatedAt": "2026-10-05",
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "los planes estrategicos nacionales no se ingieren; solo las asignaciones del Reglamento",
+     "reasonCode": "EU_LEVEL_ONLY"
+    },
+    "interventions": {
+     "state": "NOT_INGESTED",
+     "reason": "el Reglamento define tipos de intervencion, no importes por pais",
+     "reasonCode": "EU_LEVEL_ONLY"
+    },
+    "amounts": {
+     "state": "INGESTED",
+     "file": "eu/allocations.json",
+     "note": "Asignaciones financieras de los anexos V y XI por Estado miembro, a precios corrientes"
+    },
+    "rules": {
+     "state": "NOT_INGESTED",
+     "reason": "no se reproduce el articulado",
+     "reasonCode": "NOT_READ"
+    },
+    "importantDates": {
+     "state": "NOT_INGESTED",
+     "reason": "el Reglamento no fija un calendario de solicitud (lo fija cada Estado miembro)",
+     "reasonCode": "NOT_APPLICABLE"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin vigilancia de cambios del texto consolidado (solo se anota la version consolidada)",
+     "reasonCode": "NOT_BUILT"
+    }
+   }
+  },
+  {
+   "cc": "FR",
+   "name": "Francia",
+   "scheme": null,
+   "legalAct": null,
+   "updatedAt": null,
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes los fijan arretes del JORF (Legifrance): responde 403 a todo acceso automatico y su API exige cuenta; las copias de prensa agraria no tienen licencia",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    },
+    "interventions": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes los fijan arretes del JORF (Legifrance): responde 403 a todo acceso automatico y su API exige cuenta; las copias de prensa agraria no tienen licencia",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes los fijan arretes del JORF (Legifrance): responde 403 a todo acceso automatico y su API exige cuenta; las copias de prensa agraria no tienen licencia",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    },
+    "rules": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes los fijan arretes del JORF (Legifrance): responde 403 a todo acceso automatico y su API exige cuenta; las copias de prensa agraria no tienen licencia",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    },
+    "importantDates": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes los fijan arretes del JORF (Legifrance): responde 403 a todo acceso automatico y su API exige cuenta; las copias de prensa agraria no tienen licencia",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes los fijan arretes del JORF (Legifrance): responde 403 a todo acceso automatico y su API exige cuenta; las copias de prensa agraria no tienen licencia",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "DE",
+   "name": "Alemania",
+   "scheme": null,
+   "legalAct": null,
+   "updatedAt": null,
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    },
+    "interventions": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    },
+    "rules": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    },
+    "importantDates": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "los importes estan en las Bekanntmachungen del ministerio federal (Bundesanzeiger): no hay copia oficial legible; las copias estatales o de prensa no llevan licencia declarada o prohiben la lectura automatica",
+     "reasonCode": "SOURCE_UNREACHABLE"
+    }
+   }
+  },
+  {
+   "cc": "PT",
+   "name": "Portugal",
+   "scheme": null,
+   "legalAct": null,
+   "updatedAt": null,
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "interventions": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "rules": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "importantDates": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    }
+   }
+  },
+  {
+   "cc": "NL",
+   "name": "Paises Bajos",
+   "scheme": null,
+   "legalAct": null,
+   "updatedAt": null,
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "interventions": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "rules": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "importantDates": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    }
+   }
+  },
+  {
+   "cc": "BE",
+   "name": "Belgica",
+   "scheme": null,
+   "legalAct": null,
+   "updatedAt": null,
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "interventions": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "rules": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "importantDates": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    }
+   }
+  },
+  {
+   "cc": "AT",
+   "name": "Austria",
+   "scheme": null,
+   "legalAct": null,
+   "updatedAt": null,
+   "components": {
+    "strategicPlan": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "interventions": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "amounts": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "rules": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "importantDates": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    },
+    "watch": {
+     "state": "NOT_INGESTED",
+     "reason": "sin sondeo de fuente oficial legible; requiere fuente institucional y aprobacion del License Gate antes de ingerir",
+     "reasonCode": "NOT_ASSESSED"
+    }
+   }
+  }
+ ],
+ "watch": {
+  "eventTypes": {
+   "RULE_CHANGED": "ACTIVE",
+   "AMOUNT_CHANGED": "ACTIVE",
+   "DEADLINE_APPROACHING": "ACTIVE",
+   "NEW_RULE": "NOT_DETECTABLE"
+  },
+  "newRuleNote": "NEW_RULE exige un indice de articulos del acto legal para detectar disposiciones nuevas; hoy solo se vigilan las huellas de las ya leidas, asi que no se emite.",
+  "deadlineNote": "Cada plazo es la siguiente fecha general de la norma; el cliente calcula la proximidad. Las comunidades autonomas pueden modificarlo.",
+  "events": [],
+  "deadlines": [
+   {
+    "cc": "ES",
+    "id": "advance",
+    "kind": "window",
+    "date": "2026-10-16",
+    "text": "Periodo de anticipos: hasta el 50 % en pagos directos.",
+    "regionalNote": "Lo paga la comunidad autónoma.",
+    "legalBasis": "RD 1048/2022, art. 118.2",
+    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "ES",
+    "id": "fega-revised",
+    "kind": "publication",
+    "date": "2026-11-15",
+    "text": "El FEGA publica el importe unitario provisional revisado y el porcentaje del primer saldo (a más tardar el 15 de noviembre).",
+    "legalBasis": "RD 1048/2022, art. 124.3",
+    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "ES",
+    "id": "balance",
+    "kind": "window",
+    "date": "2026-12-01",
+    "text": "Periodo de pago del saldo, del 1 de diciembre al 30 de junio del año siguiente.",
+    "legalBasis": "RD 1048/2022, art. 118.1",
+    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "ES",
+    "id": "su-open",
+    "kind": "window-start",
+    "date": "2027-02-01",
+    "text": "Empieza el plazo de la solicitud única (desde 2024).",
+    "regionalNote": "La comunidad autónoma publica su convocatoria.",
+    "legalBasis": "RD 1048/2022, art. 108.2",
+    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "ES",
+    "id": "su-close",
+    "kind": "deadline",
+    "date": "2027-04-30",
+    "text": "Termina el plazo de la solicitud única (desde 2024).",
+    "regionalNote": "Cada comunidad puede ampliarlo con comunicación motivada al FEGA, sin pasar del 15 de mayo.",
+    "legalBasis": "RD 1048/2022, art. 108.2",
+    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "ES",
+    "id": "su-modify-end",
+    "kind": "deadline",
+    "date": "2027-05-31",
+    "text": "Último día para modificar la solicitud, añadir intervenciones, parcelas o derechos (desde 2024).",
+    "regionalNote": "Cada comunidad puede fijar otro día, al menos diez días hábiles después del cierre y sin pasar del 31 de mayo.",
+    "legalBasis": "RD 1048/2022, art. 112.1",
+    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "ES",
+    "id": "fega-final",
+    "kind": "publication",
+    "date": "2027-06-30",
+    "text": "Importes unitarios definitivos para el último pago del saldo (antes del 30 de junio del año siguiente).",
+    "legalBasis": "RD 1048/2022, art. 124.4",
+    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "ES",
+    "id": "su-adapt",
+    "kind": "deadline",
+    "date": "2027-08-31",
+    "text": "Último día para adaptar las parcelas de la solicitud en las intervenciones controladas por monitorización.",
+    "regionalNote": "Las comunidades pueden ampliarlo hasta diez días hábiles antes del primer pago.",
+    "legalBasis": "RD 1048/2022, art. 112.3",
+    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "ES",
+    "id": "withdrawal",
+    "kind": "deadline",
+    "date": "2027-08-31",
+    "text": "Último día para retirar total o parcialmente una solicitud de ayuda.",
+    "regionalNote": "Cada comunidad puede cambiarlo si el pago se procesa a tiempo.",
+    "legalBasis": "RD 1048/2022, art. 113.1",
+    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   },
+   {
+    "cc": "ES",
+    "id": "fega-provisional",
+    "kind": "publication",
+    "date": "2027-09-15",
+    "text": "El FEGA publica en su web los importes unitarios provisionales de cada intervención y campaña (a más tardar el 15 de septiembre).",
+    "legalBasis": "RD 1048/2022, art. 124.2",
+    "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-23048"
+   }
+  ]
+ }
+}

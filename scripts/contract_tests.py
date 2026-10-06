@@ -2781,6 +2781,39 @@ def cap_dk_amounts(doc, errs, warns, stats):
     stats["cap-dk esquemas"] = len(doc["schemes"]); stats["cap-dk umbrales"] = len(doc["thresholds"])
 
 
+def cap_index(doc, errs, warns, stats):
+    """PAC 2.0, contrato comun: cada pais declara sus seis componentes; INGESTED/PARTIAL exigen fichero existente en data/cap y NOT_INGESTED una razon; ES, DK y EU
+    coinciden con sus ficheros; los eventos solo usan tipos activos (NEW_RULE no se emite: no es detectable) y enlazan el texto oficial https; los plazos no son anteriores a asOf."""
+    ao = _cap_date(doc["asOf"])
+    if ao is None or ao > TODAY: errs.append("cap-index: asOf invalido o en el futuro"); return
+    ccs = [c["cc"] for c in doc["countries"]]
+    if len(ccs) != len(set(ccs)): errs.append("cap-index: paises repetidos"); return
+    for need in ("ES", "DK", "EU"):
+        if need not in ccs: errs.append("cap-index: falta %s" % need); return
+    ing = 0
+    for c in doc["countries"]:
+        for k, v in c["components"].items():
+            if k not in doc["contract"]["components"]: errs.append("cap-index %s: componente desconocido %s" % (c["cc"], k)); return
+            if v["state"] in ("INGESTED", "PARTIAL"):
+                ing += 1
+                if not v.get("file") or not (D / "cap" / v["file"]).exists(): errs.append("cap-index %s/%s: fichero inexistente %r" % (c["cc"], k, v.get("file"))); return
+            elif not v.get("reason") or not v.get("reasonCode"): errs.append("cap-index %s/%s: NOT_INGESTED sin razon" % (c["cc"], k)); return
+        if any(v["state"] != "NOT_INGESTED" for v in c["components"].values()):
+            la = c.get("legalAct")
+            if not la or not str(la.get("url", "")).startswith("https://") or not la.get("ref"): errs.append("cap-index %s: pais con datos sin acto legal oficial https" % c["cc"]); return
+    w = doc["watch"]
+    if w["eventTypes"].get("NEW_RULE") != "NOT_DETECTABLE" or any(e["type"] == "NEW_RULE" for e in w["events"]): errs.append("cap-index: NEW_RULE no es detectable y no puede emitirse"); return
+    for e in w["events"]:
+        if not str(e["officialUrl"]).startswith("https://"): errs.append("cap-index: evento sin enlace oficial https"); return
+    for x in w["deadlines"]:
+        d = _cap_date(x["date"])
+        if d is None or d < ao or not str(x["officialUrl"]).startswith("https://"): errs.append("cap-index: plazo %s invalido o anterior a asOf" % x["id"]); return
+    es = next(c for c in doc["countries"] if c["cc"] == "ES")
+    if not all(v["state"] == "INGESTED" for v in es["components"].values()): errs.append("cap-index: ES debe tener los seis componentes (ficheros de data/cap/es)"); return
+    if (TODAY - ao).days > 60: warns.append("cap-index: los plazos se calcularon el %s; reconstruir con scripts/build-cap-index.py" % doc["asOf"])
+    stats["cap-index componentes con dato"] = ing; stats["cap-index plazos"] = len(w["deadlines"])
+
+
 def cap_dk_watch(doc, errs, warns, stats):
     """PAC Dinamarca, seguimiento: 'reviewNeeded' debe ser EXACTAMENTE la diferencia entre linea base y lectura actual (huellas de paragrafos y modificaciones nuevas)."""
     cd = _cap_date(doc["checkedAt"])

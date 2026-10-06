@@ -608,6 +608,12 @@
     "cap_dk_watch"
    ]
   ],
+  "cap/index.json": [
+   "cap-index",
+   [
+    "cap_index"
+   ]
+  ],
   "spain-livestock/index.json": [
    "spain-livestock-index",
    [
