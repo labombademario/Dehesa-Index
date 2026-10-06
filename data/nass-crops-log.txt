@@ -71,13 +71,19 @@ PEANUTS AREA PLANTED STATE filas 491 usadas 128
 PEANUTS PRODUCTION NATIONAL filas 2267 usadas 21
 PEANUTS PRODUCTION STATE filas 690 usadas 239
 HAY YIELD NATIONAL filas 93 usadas 33
-HAY YIELD STATE filas 2767 usadas 1482
-HAY AREA HARVESTED NATIONAL filas 136 usadas 33
-HAY AREA HARVESTED STATE filas 5113 usadas 1559
+ERROR {"commodity_desc":"HAY","statisticcat_desc":"YIELD","agg_level_desc":"STATE","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
+HAY YIELD STATE filas 0 usadas 0
+ERROR {"commodity_desc":"HAY","statisticcat_desc":"AREA HARVESTED","agg_level_desc":"NATIONAL","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
+HAY AREA HARVESTED NATIONAL filas 0 usadas 0
+ERROR {"commodity_desc":"HAY","statisticcat_desc":"AREA HARVESTED","agg_level_desc":"STATE","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
+HAY AREA HARVESTED STATE filas 0 usadas 0
+ERROR {"commodity_desc":"HAY","statisticcat_desc":"AREA PLANTED","agg_level_desc":"NATIONAL","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
 HAY AREA PLANTED NATIONAL filas 0 usadas 0
+ERROR {"commodity_desc":"HAY","statisticcat_desc":"AREA PLANTED","agg_level_desc":"STATE","source_desc":"SURVEY","year__GE":"2016"} HTTP 403
 HAY AREA PLANTED STATE filas 0 usadas 0
 HAY PRODUCTION NATIONAL filas 123 usadas 63
 HAY PRODUCTION STATE filas 4166 usadas 2880
+OATS STOCKS NATIONAL filas 129 usadas 129
  • BARLEY - ACRES HARVESTED | ACRES | nac 11 2026 | estados 24
  • BARLEY - ACRES PLANTED | ACRES | nac 11 2026 | estados 24
  • BARLEY - PRODUCTION, MEASURED IN $ | $ | nac 10 2025 | estados 24
@@ -111,23 +117,23 @@ HAY PRODUCTION STATE filas 4166 usadas 2880
  • COTTON, UPLAND, BIOTECH, BT - AREA PLANTED, MEASURED IN PCT BY TYPE | PCT BY TYPE | nac 11 2026 | estados 11
  • COTTON, UPLAND, BIOTECH, HERBICIDE RESISTANT - AREA PLANTED, MEASURED IN PCT BY TYPE | PCT BY TYPE | nac 11 2026 | estados 11
  • COTTON, UPLAND, BIOTECH, STACKED GENE - AREA PLANTED, MEASURED IN PCT BY TYPE | PCT BY TYPE | nac 11 2026 | estados 11
- • HAY - ACRES HARVESTED | ACRES | nac 11 2026 | estados 49
  • HAY - PRODUCTION, MEASURED IN $ | $ | nac 10 2025 | estados 49
  • HAY - PRODUCTION, MEASURED IN TONS | TONS | nac 11 2026 | estados 49
- • HAY - YIELD, MEASURED IN TONS / ACRE | TONS / ACRE | nac 11 2026 | estados 49
- • HAY, (EXCL ALFALFA) - ACRES HARVESTED | ACRES | nac 11 2026 | estados 50
+ • HAY - YIELD, MEASURED IN TONS / ACRE | TONS / ACRE | nac 11 2026 | estados 0
  • HAY, (EXCL ALFALFA) - PRODUCTION, MEASURED IN $ | $ | nac 10 2025 | estados 49
  • HAY, (EXCL ALFALFA) - PRODUCTION, MEASURED IN TONS | TONS | nac 11 2026 | estados 50
- • HAY, (EXCL ALFALFA) - YIELD, MEASURED IN TONS / ACRE | TONS / ACRE | nac 11 2026 | estados 50
- • HAY, ALFALFA - ACRES HARVESTED | ACRES | nac 11 2026 | estados 43
+ • HAY, (EXCL ALFALFA) - YIELD, MEASURED IN TONS / ACRE | TONS / ACRE | nac 11 2026 | estados 0
  • HAY, ALFALFA - PRODUCTION, MEASURED IN $ | $ | nac 10 2025 | estados 43
  • HAY, ALFALFA - PRODUCTION, MEASURED IN TONS | TONS | nac 11 2026 | estados 43
- • HAY, ALFALFA - YIELD, MEASURED IN TONS / ACRE | TONS / ACRE | nac 11 2026 | estados 43
+ • HAY, ALFALFA - YIELD, MEASURED IN TONS / ACRE | TONS / ACRE | nac 11 2026 | estados 0
  • OATS - ACRES HARVESTED | ACRES | nac 11 2026 | estados 30
  • OATS - ACRES PLANTED | ACRES | nac 11 2026 | estados 30
  • OATS - PRODUCTION, MEASURED IN $ | $ | nac 10 2025 | estados 30
  • OATS - PRODUCTION, MEASURED IN BU | BU | nac 11 2026 | estados 30
+ • OATS - STOCKS, MEASURED IN BU | BU | nac 43 2026-09 | estados 0
  • OATS - YIELD, MEASURED IN BU / ACRE | BU / ACRE | nac 11 2026 | estados 30
+ • OATS, OFF FARM - STOCKS, MEASURED IN BU | BU | nac 43 2026-09 | estados 0
+ • OATS, ON FARM - STOCKS, MEASURED IN BU | BU | nac 43 2026-09 | estados 0
  • PEANUTS - ACRES HARVESTED | ACRES | nac 11 2026 | estados 13
  • PEANUTS - ACRES PLANTED | ACRES | nac 11 2026 | estados 13
  • PEANUTS - PRODUCTION, MEASURED IN $ | $ | nac 10 2025 | estados 13

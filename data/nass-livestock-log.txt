@@ -20,6 +20,7 @@ frigoríficos LAMB & MUTTON filas 68 usadas 68
 frigoríficos VEAL filas 68 usadas 68
 frigoríficos MILK filas 264 usadas 0
 frigoríficos WHEY filas 748 usadas 0
+leche existencias lácteos secos filas 264 usadas 264
 leche producción estados filas 5401 usadas 4252
 leche producción nacional filas 958 usadas 180
 leche precio recibido filas 198 usadas 188
@@ -107,8 +108,12 @@ vacas lecheras nacional filas 0 usadas 0
  • MILK - PRICE RECEIVED, MEASURED IN $ / CWT | $ / CWT | nac 68 2026-08 | estados 0
  • MILK - PRODUCTION, MEASURED IN LB | LB | nac 68 2026-08 | estados 49
  • MILK - PRODUCTION, MEASURED IN LB / HEAD | LB / HEAD | nac 68 2026-08 | estados 24
+ • MILK, DRY, NONFAT, HUMAN - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
  • MILK, DRY, SKIM, ANIMAL - PRICE RECEIVED, MEASURED IN CENTS / LB | CENTS / LB | nac 60 2025-12 | estados 0
+ • MILK, DRY, SKIM, ANIMAL - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
  • MILK, DRY, WHOLE - PRICE RECEIVED, MEASURED IN CENTS / LB | CENTS / LB | nac 60 2025-12 | estados 0
+ • MILK, DRY, WHOLE - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
+ • MILK, WHOLE, EVAPORATED & CONDENSED - STOCKS, MEASURED IN LB | LB | nac 60 2025-12 | estados 0
  • PORK, BELLIES, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
  • PORK, BUTTS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
  • PORK, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
@@ -134,4 +139,4 @@ vacas lecheras nacional filas 0 usadas 0
  • TURKEYS, WHOLE, HENS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
  • TURKEYS, WHOLE, TOMS, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
  • VEAL, COLD STORAGE, FROZEN - STOCKS, MEASURED IN LB | LB | nac 68 2026-08 | estados 0
-series: 109
+series: 113
