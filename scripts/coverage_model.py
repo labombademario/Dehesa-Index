@@ -53,7 +53,8 @@ PSD_PRODUCT = {'trigo': 'wheat', 'maiz': 'maize', 'arroz': 'rice', 'cebada': 'ba
                'pollo': 'poultry', 'leche': 'milk', 'azucar': 'sugar'}
 PSD_METRIC = {'production': 'production', 'area': 'production', 'endingStocks': 'stocks', 'exports': 'trade', 'imports': 'trade'}
 GATS_PRODUCT = {'trigo': 'wheat', 'maiz': 'maize', 'arroz': 'rice', 'soja': 'soy', 'cebada': 'barley', 'vacuno': 'cattle', 'cerdo': 'pigs', 'pollo': 'poultry', 'huevos': 'eggs',
-                'lacteos': 'milk', 'fertilizantes': 'fertilizer'}
+                'lacteos': 'milk', 'fertilizantes': 'fertilizer',
+                'avena': 'oats', 'centeno': 'rye', 'colza': 'rapeseed', 'patata': 'potato', 'azucar': 'sugar', 'mantequilla': 'butter', 'queso': 'cheese', 'ovino': 'sheep', 'fruta': 'fruit', 'aceite_oliva': 'olive', 'vino': 'wine'}
 # ficheros USDA con formato propio (fuera del catalogo unificado): la clave de cada serie nombra producto y metrica; se mapea SOLO lo que el fichero contiene de verdad
 NASS_CROP_PRODUCT = {'WHEAT': 'wheat', 'CORN': 'maize', 'SOYBEANS': 'soy', 'BARLEY': 'barley', 'OATS': 'oats', 'RICE': 'rice', 'RYE': 'rye', 'POTATOES': 'potato', 'SUGARBEETS': 'sugar', 'SUGARCANE': 'sugar', 'APPLES': 'fruit', 'OLIVES': 'olive'}   # nass-crops.json: area, produccion, rendimiento
 NASS_LIVESTOCK_PRODUCT = {'HOGS': 'pigs', 'PORK': 'pigs', 'CATTLE': 'cattle', 'BEEF': 'cattle', 'VEAL': 'cattle', 'CHICKENS': 'poultry', 'TURKEYS': 'poultry', 'EGGS': 'eggs', 'MILK': 'milk',

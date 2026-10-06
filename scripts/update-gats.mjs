@@ -14,9 +14,14 @@ const GROUPS = [
   { id: 'trigo', hs: ['1001'] }, { id: 'maiz', hs: ['1005'] }, { id: 'arroz', hs: ['1006'] }, { id: 'sorgo', hs: ['1007'] }, { id: 'cebada', hs: ['1003'] },
   { id: 'soja', hs: ['1201'] }, { id: 'harina_soja', hs: ['2304'] }, { id: 'aceite_soja', hs: ['1507'] }, { id: 'ddgs', hs: ['2303'] }, { id: 'etanol', hs: ['2207'] },
   { id: 'vacuno', hs: ['0201', '0202'] }, { id: 'cerdo', hs: ['0203'] }, { id: 'pollo', hs: ['0207'] }, { id: 'lacteos', hs: ['0401', '0402', '0403', '0404', '0405', '0406'] },
-  { id: 'huevos', hs: ['0407', '0408'] }, { id: 'algodon', hs: ['5201'] }, { id: 'fertilizantes', hs: ['3102', '3103', '3104', '3105'] }, { id: 'ganado_vivo', hs: ['0102'] }
+  { id: 'huevos', hs: ['0407', '0408'] }, { id: 'algodon', hs: ['5201'] }, { id: 'fertilizantes', hs: ['3102', '3103', '3104', '3105'] }, { id: 'ganado_vivo', hs: ['0102'] },
+  { id: 'avena', hs: ['1004'] }, { id: 'centeno', hs: ['1002'] }, { id: 'colza', hs: ['1205'] }, { id: 'patata', hs: ['0701'] }, { id: 'azucar', hs: ['1701'] },
+  { id: 'mantequilla', hs: ['0405'] }, { id: 'queso', hs: ['0406'] }, { id: 'ovino', hs: ['0104', '0204'] }, { id: 'fruta', hs: ['0805', '0806', '0808', '0809', '0810'] },
+  { id: 'aceite_oliva', hs: ['1509'] }, { id: 'vino', hs: ['2204'] }
 ];
-function groupOf(h) { for (const g of GROUPS) for (const p of g.hs) if (h.startsWith(p)) return g.id; return null; }
+// huella del conjunto de grupos: si cambia, los meses ya guardados se vuelven a pedir (nuevos primero) para que lleven los grupos nuevos
+const GKEY = GROUPS.map(g => g.id + ':' + g.hs.join('+')).join('|');
+function groupsOf(h) { const r = []; for (const g of GROUPS) if (g.hs.some(p => h.startsWith(p))) r.push(g.id); return r; }  // un codigo puede estar en dos grupos (lacteos y mantequilla/queso)
 async function get(p, ok404 = true) {
   let err = '';
   for (let i = 0; i < 40; i++) {
@@ -57,8 +62,10 @@ console.log('último mes con datos:', latest);
 const want = []; { let y = Number(latest.slice(0, 4)), m = Number(latest.slice(4)); for (let i = 0; i < 25; i++) { want.push(ym(y, m)); m--; if (m === 0) { m = 12; y--; } } }
 const have = new Set(doc.months);
 const stale = !doc.revisedAt || (Date.now() - new Date(doc.revisedAt).getTime()) > 25 * 864e5;
-const queue = want.filter(m => !have.has(m));
+doc.gkeys = doc.gkeys || {};
+const queue = want.filter(m => !have.has(m) || doc.gkeys[m] !== GKEY);
 if (stale) for (const m of want.slice(0, 2)) if (have.has(m) && queue.indexOf(m) < 0) queue.unshift(m);
+for (const m of Object.keys(doc.gkeys)) if (!have.has(m)) delete doc.gkeys[m];
 console.log('meses pendientes:', queue.join(',') || 'ninguno');
 const BUDGET = 100000; let used = 0;
 async function pool(items, n, fn) { let i = 0; await Promise.all(Array.from({ length: n }, async () => { while (i < items.length) { const it = items[i++]; await fn(it); } })); }
@@ -68,11 +75,12 @@ async function fetchMonth(mo) {
     await pool(plist, 2, async p => {
       const arr = await get('/' + ep + '/partnerCode/' + p.code + '/year/' + y + '/month/' + mm); used++;
       for (const r of arr) {
-        const g = groupOf(String(r.hS10Code || '').trim()); if (!g) continue;
+        for (const g of groupsOf(String(r.hS10Code || '').trim())) {
         rows++;
         const a = ((res[fk][g] = res[fk][g] || {})[p.code] = res[fk][g][p.code] || [0, 0, 1]);
         a[0] += Number(r.value) || 0;
         if (kgIds.has(r.censusUOMId1)) a[1] += (Number(r.quantity1) || 0) / 1000; else a[2] = 0;
+        }
       }
     });
   }
@@ -99,6 +107,7 @@ for (const mo of queue) {
       for (const g of Object.keys(res[fk])) { doc[fk][g] = doc[fk][g] || {}; for (const pc of Object.keys(res[fk][g])) { const a = res[fk][g][pc]; (doc[fk][g][pc] = doc[fk][g][pc] || {})[mo] = [Math.round(a[0]), a[2] ? Math.round(a[1]) : null]; } }
     }
     if (doc.months.indexOf(mo) < 0) doc.months.push(mo);
+    doc.gkeys[mo] = GKEY;
     done++;
     if (mo === want[0] || stale) doc.revisedAt = new Date().toISOString();
     await save();
