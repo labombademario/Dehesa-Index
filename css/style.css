@@ -1929,5 +1929,13 @@ details.di-eu-country-hint>summary{cursor:pointer;min-height:32px;display:inline
 .usm-pick:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .usm-sel { display: inline-block; font-size: 13px; margin-top: 10px; }
 .usm-more { margin-top: 12px; }
+.di-fold > summary { cursor: pointer; list-style: none; position: relative; padding-right: 28px; }
+.di-fold > summary::-webkit-details-marker { display: none; }
+.di-fold > summary::after { content: ''; position: absolute; right: 4px; top: 8px; width: 8px; height: 8px; border-right: 2px solid var(--text-faint); border-bottom: 2px solid var(--text-faint); transform: rotate(45deg); transition: transform .15s; }
+.di-fold[open] > summary::after { transform: rotate(-135deg); top: 12px; }
+.di-fold > summary > p { margin-bottom: 0 !important; }
+.di-fold > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
+.di-fold[open] > summary { margin-bottom: 12px; }
+@media (prefers-reduced-motion: reduce) { .di-fold > summary::after { transition: none; } }
 .usm-more > summary { cursor: pointer; font-size: 13.5px; }
 .usm-t td:first-child { white-space: nowrap; }

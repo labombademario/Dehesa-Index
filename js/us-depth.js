@@ -23,6 +23,23 @@
       tt: function () { var x = M.T[lang()] || M.T.es; if (x.vs == null) x.vs = VS[lang()] || VS.es; return x; }, nameFr: function (r) { return r; }, yearWord: function () { return ''; } });
     return M;
   }
+  /* Pliega cada tarjeta (section.di-card con h3 + subtítulo) en un <details> cerrado: se ve el título y una línea que explica qué es; el cuerpo se abre a demanda.
+     No cambia ninguna cifra. El estado abierto/cerrado se recuerda por título para sobrevivir a los repintados (selectores del mercado). */
+  var OPEN = {};
+  function fold(root) {
+    if (!root) return;
+    Array.prototype.forEach.call(root.querySelectorAll('section.di-card'), function (c) {
+      var h = c.firstElementChild; if (!h || h.tagName !== 'H3' || c.querySelector(':scope > details.di-fold')) return;
+      var sub = h.nextElementSibling; if (sub && sub.tagName !== 'P') sub = null;
+      var key = h.textContent.trim(), d = document.createElement('details'), sm = document.createElement('summary'), body = document.createElement('div');
+      d.className = 'di-fold'; body.className = 'di-fold-body';
+      sm.appendChild(h); if (sub) sm.appendChild(sub);
+      while (c.firstChild) body.appendChild(c.firstChild);
+      d.appendChild(sm); d.appendChild(body); c.appendChild(d);
+      if (OPEN[key]) d.open = true;
+      d.addEventListener('toggle', function () { OPEN[key] = d.open; });
+    });
+  }
   var ORDER = ['usslaughter', 'usstocks', 'usdairy', 'usland', 'usincome', 'uscensus'];
   function render(el) {
     var m = mods(); if (!el || !m || !m.us) return; var SEC = window.DehesaSector, h = HEAD[lang()] || HEAD.es;
@@ -31,6 +48,7 @@
       var shown = [], folded = [];
       out.forEach(function (html, i) { if (!html) return; var sec = SEC ? SEC.ofModule(ORDER[i]) : 'common'; (SEC && !SEC.visible(sec) ? folded : shown).push(html); });
       el.innerHTML = (shown.length || folded.length ? '<section style="margin-top:18px"><h2 class="cof-h2" style="margin:0 0 4px">' + esc(h[0]) + '</h2><p class="di-movers-hint" style="margin:0">' + esc(h[1]) + '</p>' + shown.join('') + (folded.length ? SEC.foldHtml(folded.length, folded.join('')) : '') + '</section>' : '') + '<div id="ps-usm"></div>';
+      fold(el);
       market(document.getElementById('ps-usm'));
     });
   }
@@ -40,5 +58,5 @@
     if (window.DehesaUsMarket) return go();
     var x = document.createElement('script'); x.src = 'js/us-market.js'; x.onload = go; x.onerror = function () {}; document.head.appendChild(x);
   }
-  window.DehesaUsDepth = { render: render };
+  window.DehesaUsDepth = { render: render, fold: fold };
 })();

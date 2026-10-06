@@ -217,6 +217,7 @@
       parts.forEach(function (p) { (opts.sector && SEC && !SEC.visible(sectorOf(p[0])) ? folded : shown).push(p[1]); });
       el.innerHTML = '<section class="usm" style="margin-top:18px"><h2 class="cof-h2" style="margin:0 0 4px">' + esc(x.h) + '</h2><p class="di-movers-hint" style="margin:0">' + esc(x.sub) + '</p>' + shown.join('') + (folded.length ? SEC.foldHtml(folded.length, folded.join('')) : '') + '</section>';
       Array.prototype.forEach.call(el.querySelectorAll('[data-cot]'), function (b) { b.onclick = function () { SEL.cot = b.getAttribute('data-cot'); render(el, opts).then(function () { var c = document.getElementById('usm-cot'); if (c && c.scrollIntoView) c.scrollIntoView({ block: 'nearest' }); }); }; });
+      if (window.DehesaUsDepth && window.DehesaUsDepth.fold) window.DehesaUsDepth.fold(el);
       var s = el.querySelector('#usm-loc'); if (s) s.onchange = function () { SEL.loc = s.value; render(el, opts); };
     });
   }
