@@ -170,6 +170,10 @@
    "nass-quickstats",
    []
   ],
+  "nass-received.json": [
+   "nass-quickstats",
+   []
+  ],
   "nass-crops.json": [
    "nass-quickstats",
    []

@@ -40,7 +40,7 @@ jobs:
         if: always()
         uses: ./.github/actions/validate-files
         with:
-          files: data/nass-livestock.json data/nass-prices.json data/nass-crops.json
+          files: data/nass-livestock.json data/nass-prices.json data/nass-crops.json data/nass-received.json
       - name: Commit
         if: always()
         run: |

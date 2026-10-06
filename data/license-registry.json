@@ -2173,6 +2173,11 @@
     "usda_nass"
    ]
   },
+  "data/nass-received.json": {
+   "sources": [
+    "usda_nass"
+   ]
+  },
   "data/nass-crops.json": {
    "sources": [
     "usda_nass"
