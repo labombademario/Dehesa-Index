@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T15:27:31Z",
+ "generatedAt": "2026-10-06T15:19:55Z",
  "summary": {
-  "files": 21,
+  "files": 22,
   "errors": 0,
   "warnings": 1
  },
@@ -47,10 +47,10 @@
    "warnings": [],
    "stats": {
     "series": 47,
-    "points": 29284,
+    "points": 29259,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T15:22:49Z",
+   "generatedAt": "2026-10-02T15:24:28Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -198,6 +198,22 @@
    "generatedAt": "2026-10-06T15:00:16Z",
    "info": [],
    "nWarnings": 36,
+   "nErrors": 0
+  },
+  {
+   "file": "eurostat-depth-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 579,
+    "points": 46543,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-06T15:19:20Z",
+   "info": [],
+   "nWarnings": 0,
    "nErrors": 0
   },
   {

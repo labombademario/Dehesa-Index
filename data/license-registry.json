@@ -2021,6 +2021,13 @@
     "IT": "eurostat"
    }
   },
+  "data/eurostat-depth-stats.json": {
+   "byCountry": {
+    "ES": "eurostat",
+    "FR": "eurostat",
+    "DK": "eurostat"
+   }
+  },
   "data/canada-stats.json": {
    "byCountry": {
     "CA": "statcan"

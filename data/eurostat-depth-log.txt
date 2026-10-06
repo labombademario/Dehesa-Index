@@ -1,0 +1,6 @@
+cultivos 235 series
+censos 28 series
+carne 72 series
+leche 58 series
+indices de precios 137 series
+insumos 49 series
