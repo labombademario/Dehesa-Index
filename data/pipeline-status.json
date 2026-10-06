@@ -1,27 +1,22 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T03:25:00Z",
+ "generatedAt": "2026-10-06T03:34:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 85,
   "late": 0,
   "error": 2,
   "not_run": 4,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "unknown",
   "site": "https://dehesaindex.com",
-  "build": {
-   "sha": "0e36deb3",
-   "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/705bba4d-fbc7-4008-b9e7-48d0be195a42",
-   "completedAt": "2026-10-06T03:03:00Z"
-  },
-  "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-06T00:38:54.553279+00:00",
-  "repoGeneratedAt": "2026-10-06T00:38:54.553279+00:00"
+  "build": null,
+  "lagHours": null,
+  "prodGeneratedAt": null,
+  "repoGeneratedAt": "2026-10-06T03:27:23.960449+00:00"
  },
  "pipelines": [
   {
@@ -1739,27 +1734,27 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-06T00:38:55Z"
+     "lastChange": "2026-10-06T03:27:24Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-06T00:38:55Z"
+     "lastChange": "2026-10-06T03:27:24Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-06T00:38:55Z"
+     "lastChange": "2026-10-06T03:27:24Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-06T00:38:55Z"
+     "lastChange": "2026-10-06T03:27:24Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-06T00:36:48Z",
-    "durationSec": 130,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37394920805"
+    "startedAt": "2026-10-06T03:26:26Z",
+    "durationSec": 62,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37408979781"
    },
    "recent": {
     "runs": 10,
@@ -1866,11 +1861,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-06T03:02:13Z"
+     "lastChange": "2026-10-06T03:26:33Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-06T00:37:47Z"
+     "lastChange": "2026-10-06T03:26:33Z"
     },
     {
      "path": "data/series-registry.json",
@@ -1882,7 +1877,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-06T03:02:13Z"
+     "lastChange": "2026-10-06T03:26:48Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1899,7 +1894,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-06T03:02:13Z"
+     "lastChange": "2026-10-06T03:26:48Z"
     },
     {
      "path": "data/products"
@@ -1910,27 +1905,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-06T03:02:13Z"
+     "lastChange": "2026-10-06T03:26:48Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-06T02:33:59Z"
+     "lastChange": "2026-10-06T03:26:48Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-06T03:02:13Z"
+     "lastChange": "2026-10-06T03:26:48Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-06T00:38:01Z"
+     "lastChange": "2026-10-06T03:26:48Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-06T00:38:01Z"
+     "lastChange": "2026-10-06T03:26:48Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-06T00:38:01Z"
+     "lastChange": "2026-10-06T03:26:48Z"
     },
     {
      "path": "data/home-explore.json",
@@ -1943,13 +1938,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-06T00:35:55Z",
-    "durationSec": 130,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37394845258"
+    "startedAt": "2026-10-06T03:25:21Z",
+    "durationSec": 91,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37408895364"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -2777,6 +2772,27 @@
    },
    "status": "ok",
    "expectedEveryHours": 24.0
+  },
+  {
+   "workflow": "update-us-states-macro.yml",
+   "name": "Update US state GDP, population and unemployment (BEA, Census, BLS)",
+   "crons": [
+    "40 7 * * 4"
+   ],
+   "nextRun": "2026-10-08T07:40:00Z",
+   "files": [
+    {
+     "path": "data/us-states-macro.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-05T11:42:05Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-us-states.yml",
