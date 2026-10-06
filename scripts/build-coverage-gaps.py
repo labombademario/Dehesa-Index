@@ -44,7 +44,8 @@ if es.get('commodities'):
 # ficheros USDA de formato propio: se lee el fichero real y se mapea lo que contiene (ver coverage_model.py)
 FILE_SRC = {f[len('data/'):]: v['sources'][0] for f, v in CM.J('license-registry.json')['files'].items() if f.startswith('data/') and len(v.get('sources', [])) == 1}
 def add_ext(cc, p, m, f):
-    ext[(cc, p, m)].append({'sourceId': FILE_SRC.get(f, 'usda_nass'), 'file': f})
+    _bc = (CM.J('license-registry.json')['files'].get('data/' + f) or {}).get('byCountry') or {}
+    ext[(cc, p, m)].append({'sourceId': _bc.get(cc) or FILE_SRC.get(f, 'usda_nass'), 'file': f})
 for key in (CM.J('nass-crops.json', {'series': {}}).get('series') or {}):
     p = CM.NASS_CROP_PRODUCT.get(key.split(' - ')[0].split(',')[0].strip())
     if p: add_ext('US', p, 'stocks' if key.partition(' - ')[2].upper().startswith('STOCKS') else 'production', 'nass-crops.json')   # existencias trimestrales (avena) no son produccion
@@ -62,6 +63,9 @@ for key, v in (CM.J('nass-received.json', {'series': {}}).get('series') or {}).i
     elif 'PRICE RECEIVED' in key:
         pp = CM.NASS_RECEIVED_PRICE_PRODUCT.get(key.split(' - ')[0].split(',')[0].strip())
         if pp: add_ext('US', pp, 'price', 'nass-received.json')
+for _s in (CM.J('canada-stats.json', {'countries': {'CA': {'series': []}}})['countries']['CA']['series'] or []):   # StatCan: indice de precios agrarios por grupo (ver CA_FPPI_PRODUCT)
+    for _pp in CM.CA_FPPI_PRODUCT.get(_s.get('id'), []):
+        if _s.get('points'): add_ext('CA', _pp, 'price_index', 'canada-stats.json')
 def _has(pts): return isinstance(pts, list) and any(isinstance(x, list) and len(x) > 1 and isinstance(x[1], (int, float)) for x in pts)
 _ud = CM.J('us-dairy.json', {'products': []})   # USDA AMS: precios semanales de mantequilla y queso cheddar (EE. UU.)
 for _p in (_ud.get('products') or []):

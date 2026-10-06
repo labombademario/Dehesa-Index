@@ -72,7 +72,7 @@ def series_of(rows, keyfn, valfn=num):
 
 # ───────── 1. Cultivos de campo (32-10-0359): Canadá ─────────
 CROPS = {"Wheat, all": "Wheat (all)", "Wheat, durum": "Durum wheat", "Barley": "Barley", "Oats": "Oats", "Rye, all": "Rye", "Canola (rapeseed)": "Canola", "Corn for grain": "Grain corn",
-         "Soybeans": "Soybeans", "Peas, dry": "Dry peas", "Lentils": "Lentils", "Flaxseed": "Flaxseed", "Sunflower seed": "Sunflower seed", "Mustard seed": "Mustard seed", "Chick peas": "Chickpeas", "Canary seed": "Canary seed"}
+         "Soybeans": "Soybeans", "Peas, dry": "Dry peas", "Lentils": "Lentils", "Flaxseed": "Flaxseed", "Sunflower seed": "Sunflower seed", "Mustard seed": "Mustard seed", "Chick peas": "Chickpeas", "Canary seed": "Canary seed", "Sugar beets": "Sugar beets"}
 def crops():
     rows = [r for r in load(32100359) if r["GEO"] == "Canada" and r["Type of crop"] in CROPS]
     spec = {"Seeded area (hectares)": ("crops", "Seeded area", "thousand ha", 1e-3, "area"), "Harvested area (hectares)": ("crops", "Harvested area", "thousand ha", 1e-3, "harea"),
@@ -148,6 +148,32 @@ def supply():
         t = "t" if e.startswith("Estimated") else "head"
         put("ca-meat-%s-%s" % (slug(l), slug(e)), "production", "%s: %s" % (l, e.lower()), "thousand t" if t == "t" else "thousand head", "annual", [(p, v / 1000) for p, v in pts], "StatCan 32-10-0126"); n += 1
     log("oferta ganado", n)
+
+# ───────── 1b. Patata (32-10-0358), fruta fresca (32-10-0364), mantequilla y queso (32-10-0482/0483) ─────────
+CWT_T = 0.045359237   # 1 hundredweight = 100 libras = 45,359237 kg (exacto)
+def potatoes():
+    rows = [r for r in load(32100358) if r["GEO"] == "Canada"]; col = "Area, production and farm value of potatoes"
+    spec = {"Production": ("production", "Production", "thousand t", CWT_T / 1e3, "prod"), "Harvested area": ("crops", "Harvested area", "thousand acres", 1e-3, "harea"),
+            "Seeded area": ("crops", "Seeded area", "thousand acres", 1e-3, "area"), "Average farm price, potatoes": ("prices", "Average farm price", "CAD/cwt", 1, "price")}
+    by = series_of(rows, lambda r: r[col] if r[col] in spec else None); n = 0
+    for k, pts in by.items():
+        g, nm, u, f, tag = spec[k]
+        put("ca-potato-%s" % tag, g, "Potatoes: %s%s" % (nm.lower(), " (1 cwt = 100 lb)" if tag == "price" else ""), u, "annual", [(p, v * f) for p, v in pts], "StatCan 32-10-0358"); n += 1
+    log("patata", n)
+FRUIT = {"Total fresh fruit": "Total fresh fruit", "Fresh apples": "Apples", "Fresh grapes": "Grapes", "Fresh peaches": "Peaches", "Fresh pears": "Pears", "Fresh blueberries": "Blueberries", "Fresh strawberries": "Strawberries"}
+def fruit():
+    rows = [r for r in load(32100364) if r["GEO"] == "Canada" and r["UOM"] == "Metric tonnes" and r["Estimates"] in ("Total production", "Marketed production")]
+    by = series_of(rows, lambda r: (clean(r["Commodity"]), r["Estimates"]) if clean(r["Commodity"]) in FRUIT else None); n = 0
+    for (c, e), pts in by.items():
+        put("ca-fruit-%s-%s" % (slug(c), slug(e)), "production", "%s: %s (annual)" % (FRUIT[clean(c)], e.lower()), "t", "annual", pts, "StatCan 32-10-0364"); n += 1
+    log("fruta", n)
+def dairy_products():
+    def q(p): return re.sub(r"-(\d\d)$", lambda m: "-Q%d" % ((int(m.group(1)) - 1) // 3 + 1), p)
+    n = 0
+    for pid, items, tag in ((32100482, ("Creamery butter",), "butter"), (32100483, ("Cheddar cheese", "Speciality cheese", "Mozzarella cheese"), "cheese")):
+        by = series_of([r for r in load(pid) if r["GEO"] == "Canada" and r["UOM"] == "Tonnes" and r["Commodity"] in items], lambda r: r["Commodity"])
+        for k, pts in by.items(): put("ca-prod-%s" % slug(k), "production", "Production: %s (quarterly)" % k.lower(), "t", "quarterly", [(q(p), v) for p, v in pts], "StatCan 32-10-%s" % str(pid)[-4:]); n += 1
+    log("mantequilla y queso", n)
 
 # ───────── 5. Leche, huevos y aves ─────────
 def dairy():
@@ -367,7 +393,7 @@ def province_trade():
 def main():
     import os
     only = [x for x in os.environ.get("ONLY", "").replace(",", " ").split() if x]
-    allf = (crops, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, costs, balance, fuel, trade, partners, grain_balance, beef, province_trade)
+    allf = (crops, potatoes, fruit, dairy_products, stocks, deliveries, crush, inventories, supply, dairy, eggs_poultry, finance, fertilizer, costs, balance, fuel, trade, partners, grain_balance, beef, province_trade)
     if only:
         try:
             for x in json.loads((ROOT / "data" / "canada-stats.json").read_text())["countries"]["CA"]["series"]: OUT[x["id"]] = x
