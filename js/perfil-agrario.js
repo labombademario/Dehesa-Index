@@ -4,7 +4,7 @@
   'use strict';
   var FILE = 'data/worldbank-agri.json', DATA = null, LOADING = null;
   var UNITS = {
-    pct: '%', km2: 'km²', ha: 'ha', haPc: { es: 'ha/persona', en: 'ha/person', fr: 'ha/personne', it: 'ha/persona' }, mha: 'M ha', kgha: 'kg/ha', mt: 'Mt',
+    pct: '%', km2: 'km²', ha: 'ha', haPc: { es: 'ha/persona', en: 'ha/person', fr: 'ha/personne', it: 'ha/persona' }, mha: 'M ha', kgha: 'kg/ha', mt: 'Mt', tract: { es: 'por 100 km²', en: 'per 100 km²', fr: 'pour 100 km²', it: 'ogni 100 km²' },
     idx: { es: 'índice 2014-16 = 100', en: 'index 2014-16 = 100', fr: 'indice 2014-16 = 100', it: 'indice 2014-16 = 100' },
     cpi: { es: 'índice 2010 = 100', en: 'index 2010 = 100', fr: 'indice 2010 = 100', it: 'indice 2010 = 100' },
     usdK: { es: 'US$ constantes 2015 por trabajador', en: 'constant 2015 US$ per worker', fr: 'US$ constants 2015 par travailleur', it: 'US$ costanti 2015 per lavoratore' },
@@ -39,17 +39,26 @@
     inflation: ['Inflación anual', 'Annual inflation', 'Inflation annuelle', 'Inflazione annua', 'ann', null],
     fxUsd: ['Tipo de cambio oficial frente al dólar', 'Official exchange rate per US dollar', 'Taux de change officiel par dollar', 'Cambio ufficiale per dollaro', 'lcu', 'pct'],
     gdpGrowth: ['Crecimiento del PIB', 'GDP growth', 'Croissance du PIB', 'Crescita del PIL', 'ann', null],
+    forestPct: ['Superficie forestal (% del territorio)', 'Forest area (% of land area)', 'Surface forestière (% du territoire)', 'Superficie forestale (% del territorio)', 'pct', 'pp'],
+    permCropPct: ['Cultivos permanentes (% del territorio)', 'Permanent cropland (% of land area)', 'Cultures permanentes (% du territoire)', 'Colture permanenti (% del territorio)', 'pct', 'pp'],
+    ruralPopPct: ['Población rural (% del total)', 'Rural population (% of total)', 'Population rurale (% du total)', 'Popolazione rurale (% del totale)', 'pct', 'pp'],
+    agriEmpFemalePct: ['Empleo agrario femenino (% del empleo femenino)', 'Female employment in agriculture (% of female employment)', 'Emploi agricole féminin (% de l’emploi féminin)', 'Occupazione agricola femminile (% dell’occupazione femminile)', 'pct', 'pp'],
+    agriEmpMalePct: ['Empleo agrario masculino (% del empleo masculino)', 'Male employment in agriculture (% of male employment)', 'Emploi agricole masculin (% de l’emploi masculin)', 'Occupazione agricola maschile (% dell’occupazione maschile)', 'pct', 'pp'],
+    tractors: ['Tractores por 100 km² de tierra de cultivo', 'Tractors per 100 km² of arable land', 'Tracteurs pour 100 km² de terres arables', 'Trattori ogni 100 km² di seminativo', 'tract', 'pct'],
+    agriVaGrowth: ['Crecimiento del valor añadido agrario', 'Agricultural value added growth', 'Croissance de la valeur ajoutée agricole', 'Crescita del valore aggiunto agricolo', 'ann', null],
+    ch4AgriPct: ['Metano agrario (% del total)', 'Agricultural methane emissions (% of total)', 'Méthane agricole (% du total)', 'Metano agricolo (% del totale)', 'pct', 'pp'],
+    n2oAgriPct: ['Óxido nitroso agrario (% del total)', 'Agricultural nitrous oxide emissions (% of total)', 'Protoxyde d’azote agricole (% du total)', 'Protossido di azoto agricolo (% del totale)', 'pct', 'pp'],
     ch4Agri: ['Metano de la agricultura', 'Agricultural methane emissions', 'Méthane de l’agriculture', 'Metano dell’agricoltura', 'co2', 'pct'],
     n2oAgri: ['Óxido nitroso de la agricultura', 'Agricultural nitrous oxide emissions', 'Protoxyde d’azote de l’agriculture', 'Protossido di azoto dell’agricoltura', 'co2', 'pct'],
     waterAgriPct: ['Agua dulce usada por la agricultura (% del total)', 'Freshwater used by agriculture (% of total)', 'Eau douce utilisée par l’agriculture (% du total)', 'Acqua dolce usata dall’agricoltura (% del totale)', 'pct', 'pp']
   };
   var BLOCKS = [
-    ['structure', ['agriLandPct', 'arableLandPct', 'arablePerCap', 'irrigatedPct', 'agriEmploymentPct', 'agriVaPerWorker', 'agriVaPct', 'agriVaUsd', 'agriLandKm2']],
-    ['yield', ['cerealYield', 'cerealArea', 'cerealProd', 'fertKgHa']],
-    ['indices', ['cropIdx', 'livestockIdx', 'foodIdx']],
+    ['structure', ['agriLandPct', 'arableLandPct', 'arablePerCap', 'irrigatedPct', 'agriEmploymentPct', 'agriVaPerWorker', 'agriVaPct', 'agriVaUsd', 'agriLandKm2', 'permCropPct', 'forestPct', 'ruralPopPct', 'agriEmpFemalePct', 'agriEmpMalePct']],
+    ['yield', ['cerealYield', 'cerealArea', 'cerealProd', 'fertKgHa', 'tractors']],
+    ['indices', ['cropIdx', 'livestockIdx', 'foodIdx', 'agriVaGrowth']],
     ['trade', ['foodExpPct', 'foodImpPct', 'agriRawExpPct', 'agriRawImpPct']],
     ['macro', ['cpi', 'inflation', 'fxUsd', 'gdpGrowth']],
-    ['environment', ['ch4Agri', 'n2oAgri', 'waterAgriPct']]
+    ['environment', ['ch4Agri', 'n2oAgri', 'ch4AgriPct', 'n2oAgriPct', 'waterAgriPct']]
   ];
   var T = {
     es: { title: 'Perfil agrario', open: 'Ver el perfil agrario y la comparación con otros países', hint: 'Estructura del campo, rendimientos, comercio agrario, precios y medio ambiente, con serie desde 1990 y el año de cada dato. Fuente: Banco Mundial (WDI).',
@@ -74,10 +83,10 @@
       notes: { macro: 'L’IPC permette di deflazionare i prezzi (prezzo reale = prezzo ÷ IPC × 100), ma non lo applichiamo ancora alle serie di prezzi del sito. Prima del 1999 la Banca mondiale dà i cambi dei paesi dell’euro nella vecchia valuta nazionale: non li mostriamo. Nessun IPC né cambio per l’UE nel suo insieme.', structure: 'Il valore aggiunto per lavoratore della Banca mondiale per gli USA copre solo il 2015.', yield: 'Cereali: grano, mais, orzo, riso e altri, secondo la FAO.', trade: 'Percentuali sul totale delle merci, non sul commercio agroalimentare.', environment: 'Emissioni agricole secondo EDGAR (JRC), in milioni di tonnellate di CO₂ equivalente. L’acqua dolce proviene da AQUASTAT (FAO).', indices: 'Base 2014-2016 = 100 (FAO).' } }
   };
   var CN = {
-    es: { US: 'Estados Unidos', EU: 'Unión Europea', ES: 'España', FR: 'Francia', DE: 'Alemania', BE: 'Bélgica', AT: 'Austria', PT: 'Portugal', DK: 'Dinamarca', NL: 'Países Bajos', CA: 'Canadá', AU: 'Australia' },
-    en: { US: 'United States', EU: 'European Union', ES: 'Spain', FR: 'France', DE: 'Germany', BE: 'Belgium', AT: 'Austria', PT: 'Portugal', DK: 'Denmark', NL: 'Netherlands', CA: 'Canada', AU: 'Australia' },
-    fr: { US: 'États-Unis', EU: 'Union européenne', ES: 'Espagne', FR: 'France', DE: 'Allemagne', BE: 'Belgique', AT: 'Autriche', PT: 'Portugal', DK: 'Danemark', NL: 'Pays-Bas', CA: 'Canada', AU: 'Australie' },
-    it: { US: 'Stati Uniti', EU: 'Unione europea', ES: 'Spagna', FR: 'Francia', DE: 'Germania', BE: 'Belgio', AT: 'Austria', PT: 'Portogallo', DK: 'Danimarca', NL: 'Paesi Bassi', CA: 'Canada', AU: 'Australia' }
+    es: { US: 'Estados Unidos', EU: 'Unión Europea', ES: 'España', FR: 'Francia', DE: 'Alemania', BE: 'Bélgica', AT: 'Austria', PT: 'Portugal', IT: 'Italia', DK: 'Dinamarca', NL: 'Países Bajos', CA: 'Canadá', AU: 'Australia' },
+    en: { US: 'United States', EU: 'European Union', ES: 'Spain', FR: 'France', DE: 'Germany', BE: 'Belgium', AT: 'Austria', PT: 'Portugal', IT: 'Italy', DK: 'Denmark', NL: 'Netherlands', CA: 'Canada', AU: 'Australia' },
+    fr: { US: 'États-Unis', EU: 'Union européenne', ES: 'Espagne', FR: 'France', DE: 'Allemagne', BE: 'Belgique', AT: 'Autriche', PT: 'Portugal', IT: 'Italie', DK: 'Danemark', NL: 'Pays-Bas', CA: 'Canada', AU: 'Australie' },
+    it: { US: 'Stati Uniti', EU: 'Unione europea', ES: 'Spagna', FR: 'Francia', DE: 'Germania', BE: 'Belgio', AT: 'Austria', PT: 'Portogallo', IT: 'Italia', DK: 'Danimarca', NL: 'Paesi Bassi', CA: 'Canada', AU: 'Australia' }
   };
   var LI = { es: 0, en: 1, fr: 2, it: 3 };
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }

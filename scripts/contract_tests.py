@@ -1539,9 +1539,9 @@ def home_explore(doc, errs, warns, stats):
     stats["facts"] = len(doc["facts"])
 
 
-WBA_PCT = {"agriLandPct", "arableLandPct", "irrigatedPct", "agriEmploymentPct", "agriVaPct", "agriRawExpPct", "agriRawImpPct", "foodExpPct", "foodImpPct", "waterAgriPct"}
+WBA_PCT = {"forestPct", "permCropPct", "ruralPopPct", "agriEmpFemalePct", "agriEmpMalePct", "ch4AgriPct", "n2oAgriPct", "agriLandPct", "arableLandPct", "irrigatedPct", "agriEmploymentPct", "agriVaPct", "agriRawExpPct", "agriRawImpPct", "foodExpPct", "foodImpPct", "waterAgriPct"}
 WBA_RANGE = {"cropIdx": (0, 400), "livestockIdx": (0, 400), "foodIdx": (0, 400), "cerealYield": (0, 20000), "fertKgHa": (0, 3000), "inflation": (-50, 500), "gdpGrowth": (-50, 100), "cpi": (0, 100000), "fxUsd": (0, 100000)}
-WBA_NONNEG = {"agriLandKm2", "arablePerCap", "agriVaPerWorker", "agriVaUsd", "cerealArea", "cerealProd", "ch4Agri", "n2oAgri"}
+WBA_NONNEG = {"tractors", "agriLandKm2", "arablePerCap", "agriVaPerWorker", "agriVaUsd", "cerealArea", "cerealProd", "ch4Agri", "n2oAgri"}
 
 
 def worldbank_agri(doc, errs, warns, stats):
@@ -1551,7 +1551,7 @@ def worldbank_agri(doc, errs, warns, stats):
     ind = doc["indicators"]
     for k, i in ind.items():
         if i.get("license") != "CC BY-4.0": errs.append("worldbank-agri %s: licencia %r, solo se admite CC BY-4.0" % (k, i.get("license")))
-    euro = {"ES", "FR", "DE", "BE", "AT", "PT", "NL"}
+    euro = {"ES", "FR", "DE", "BE", "AT", "PT", "IT", "NL"}
     n = 0
     for c, ser in doc["countries"].items():
         for k, s in ser.items():

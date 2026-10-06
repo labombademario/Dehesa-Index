@@ -16,6 +16,10 @@ IND = {
     'cropIdx': ('AG.PRD.CROP.XD', 'indices'), 'livestockIdx': ('AG.PRD.LVSK.XD', 'indices'), 'foodIdx': ('AG.PRD.FOOD.XD', 'indices'),
     'agriRawExpPct': ('TX.VAL.AGRI.ZS.UN', 'trade'), 'agriRawImpPct': ('TM.VAL.AGRI.ZS.UN', 'trade'), 'foodExpPct': ('TX.VAL.FOOD.ZS.UN', 'trade'), 'foodImpPct': ('TM.VAL.FOOD.ZS.UN', 'trade'),
     'cpi': ('FP.CPI.TOTL', 'macro'), 'inflation': ('FP.CPI.TOTL.ZG', 'macro'), 'fxUsd': ('PA.NUS.FCRF', 'macro'), 'gdpGrowth': ('NY.GDP.MKTP.KD.ZG', 'macro'),
+    'forestPct': ('AG.LND.FRST.ZS', 'structure'), 'permCropPct': ('AG.LND.CROP.ZS', 'structure'), 'ruralPopPct': ('SP.RUR.TOTL.ZS', 'structure'),
+    'agriEmpFemalePct': ('SL.AGR.EMPL.FE.ZS', 'structure'), 'agriEmpMalePct': ('SL.AGR.EMPL.MA.ZS', 'structure'),
+    'tractors': ('AG.LND.TRAC.ZS', 'yield'), 'agriVaGrowth': ('NV.AGR.TOTL.KD.ZG', 'indices'),
+    'ch4AgriPct': ('EN.ATM.METH.AG.ZS', 'environment'), 'n2oAgriPct': ('EN.ATM.NOXE.AG.ZS', 'environment'),
     'ch4Agri': ('EN.GHG.CH4.AG.MT.CE.AR5', 'environment'), 'n2oAgri': ('EN.GHG.N2O.AG.MT.CE.AR5', 'environment'), 'waterAgriPct': ('ER.H2O.FWAG.ZS', 'environment'),
 }
 OK_LICENSE = 'CC BY-4.0'
