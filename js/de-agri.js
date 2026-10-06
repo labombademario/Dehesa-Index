@@ -1,9 +1,9 @@
 /* Alemania: producción por estado federado, precios y alquileres de la tierra, y «margen del agricultor» (relación de índices de precios).
-   Fuentes: Destatis GENESIS (data/germany-agri.json; la pestaña de ganadería usa data/germany-livestock.json vía js/de-livestock.js) y data/germany-stats.json (índices de precios 2020=100). ES5, sin librerías.
+   Fuentes: Destatis GENESIS (data/germany-agri.json; la pestaña de ganadería usa data/germany-livestock.json vía js/de-livestock.js) y los índices de precios 2020=100 del catálogo de Alemania (data/catalog/DE.json y data/series/DE/idx_*.json). ES5, sin librerías.
    Uso: DEFarm.mount(el, lang). Los datos se cargan solo al abrir el desplegable. */
 (function () {
   'use strict';
-  var FA = 'data/germany-agri.json', FS = 'data/germany-stats.json', A = null, S = null, LA = null, LS = null;
+  var FA = 'data/germany-agri.json', A = null, S = null, LA = null, LS = null;
   var LI = { en: 0, es: 1, fr: 2, it: 3 };
   var LANDS = { BW: 'Baden-Württemberg|Baden-Wurtemberg|Bade-Wurtemberg|Baden-Württemberg', BY: 'Bavaria|Baviera|Bavière|Baviera', BE: 'Berlin|Berlín|Berlin|Berlino', BB: 'Brandenburg|Brandeburgo|Brandebourg|Brandeburgo', HB: 'Bremen|Bremen|Brême|Brema', HH: 'Hamburg|Hamburgo|Hambourg|Amburgo', HE: 'Hesse|Hesse|Hesse|Assia', MV: 'Mecklenburg-Western Pomerania|Mecklemburgo-Pomerania Occidental|Mecklembourg-Poméranie-Occidentale|Meclemburgo-Pomerania Anteriore', NI: 'Lower Saxony|Baja Sajonia|Basse-Saxe|Bassa Sassonia', NW: 'North Rhine-Westphalia|Renania del Norte-Westfalia|Rhénanie-du-Nord-Westphalie|Renania Settentrionale-Vestfalia', RP: 'Rhineland-Palatinate|Renania-Palatinado|Rhénanie-Palatinat|Renania-Palatinato', SL: 'Saarland|Sarre|Sarre|Saarland', SN: 'Saxony|Sajonia|Saxe|Sassonia', ST: 'Saxony-Anhalt|Sajonia-Anhalt|Saxe-Anhalt|Sassonia-Anhalt', SH: 'Schleswig-Holstein|Schleswig-Holstein|Schleswig-Holstein|Schleswig-Holstein', TH: 'Thuringia|Turingia|Thuringe|Turingia' };
   var CROP = { cereals: 'Cereals (incl. grain maize)|Cereales (con maíz grano)|Céréales (avec maïs grain)|Cereali (con mais da granella)', wheat: 'Wheat|Trigo|Blé|Frumento', rye: 'Rye|Centeno|Seigle|Segale', barley: 'Barley|Cebada|Orge|Orzo', oats: 'Oats|Avena|Avoine|Avena', triticale: 'Triticale|Triticale|Triticale|Triticale', maize: 'Grain maize|Maíz grano|Maïs grain|Mais da granella', rapeseed: 'Rapeseed|Colza|Colza|Colza', sunflower: 'Sunflower|Girasol|Tournesol|Girasole', sugarbeet: 'Sugar beet|Remolacha azucarera|Betterave sucrière|Barbabietola da zucchero', potato: 'Potatoes|Patata|Pommes de terre|Patate', silage: 'Silage maize|Maíz forrajero|Maïs fourrage|Mais da foraggio' };
@@ -74,7 +74,8 @@
     return v >= 1e6 ? nf(v / 1e6, 2, lang) + ' M ha' : nf(v, 0, lang) + ' ha';
   }
   function loadA() { if (A) return Promise.resolve(A); if (!LA) LA = fetch(FA).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { A = d; return d; }); return LA; }
-  function loadS() { if (S) return Promise.resolve(S); if (!LS) LS = fetch(FS).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { var m = {}; ((d.countries && d.countries.DE && d.countries.DE.series) || []).forEach(function (s) { m[s.id] = s; }); S = { map: m, generatedAt: d.generatedAt }; return S; }); return LS; }
+  /* Indices de Destatis: solo las 87 series de la vista de margen (de-out-m-*, de-in-q-*), por el catalogo del pais y sus trozos (en lugar de germany-stats.json, 1,2 MB). */
+  function loadS() { if (S) return Promise.resolve(S); if (!LS) LS = window.DISeries.country('DE', true).then(function (c) { var rows = (c.series || []).filter(function (s) { return /^de-(out-m|in-q)-/.test(s.id); }); return Promise.all(rows.map(function (r) { return window.DISeries.series('DE', r.id); })).then(function (all) { var m = {}; all.forEach(function (s) { m[s.id] = s; }); S = { map: m }; return S; }); }); return LS; }
   function chart(series, o) {
     var C = window.DehesaChart; if (!C) return '';
     return C.render({ series: series, xMode: 'time', yTitle: o.unit, aria: o.aria, noLegend: series.length < 2, yMin: o.yMin, vFmt: o.vFmt, yFmt: o.yFmt || function (v) { return nf(v, Math.abs(v) >= 100 ? 0 : 1, o.lang); }, xFmt: o.xFmt || function (x) { return new Date(x).getUTCFullYear(); } });

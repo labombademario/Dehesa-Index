@@ -67,8 +67,8 @@
    "note": "Series de Canada: alimentan el catalogo. region.js ya lee data/catalog/CA.json (6-oct) y ninguna pagina descarga este fichero."
   },
   "data/germany-stats.json": {
-   "class": "RUNTIME",
-   "note": "solo de-agri.js lo descarga (1,2 MB, indices de precios). region.js ya lee data/catalog/DE.json (6-oct). Deuda tecnica: servir fragmentos por tema."
+   "class": "BUILD_ONLY",
+   "note": "Series de Alemania: alimentan el catalogo. Ni region.js ni de-agri.js lo descargan ya (6-oct): leen data/catalog/DE.json y data/series/DE/idx_*.json."
   },
   "data/ers.json": {
    "class": "RUNTIME",

@@ -170,6 +170,8 @@ const foot = (lg, up) => `  </article>
 </body>
 </html>
 `;
+/* Mismo orden de bloques que la ficha interactiva (js/region.js, RANK): costes, produccion (cuentas, cultivos, ganado, explotaciones), clima y comercio. */
+const BRANK = { tax: 23, eaa: 30, inc: 32, mix: 33, land: 40, crops: 40, lvst: 50, cattle: 50, animals: 50, farms: 60, drought: 80, exp: 90 };
 const table = (cols, rows) => '<div class="di-card" style="padding:6px 16px;overflow-x:auto;margin-bottom:12px"><table style="border-collapse:collapse;width:100%;min-width:420px;font-size:14px"><thead><tr>' + cols.map((h, i) => '<th scope="col" style="text-align:' + (i ? 'right' : 'left') + ';padding:8px 6px;font-size:11px">' + esc(h) + '</th>').join('') + '</tr></thead><tbody>' + rows.map(r => '<tr>' + r.map((v, i) => i ? '<td style="text-align:right;padding:8px 6px">' + esc(v) + '</td>' : '<th scope="row" style="text-align:left;padding:8px 6px;font-weight:600">' + esc(v) + '</th>').join('') + '</tr>').join('') + '</tbody></table></div>';
 // regiones por pais
 const REG = {};
@@ -197,7 +199,7 @@ for (const c of CORDER) {
         { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Dehesa Index', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: cname, item: urlR(lg, c) }, { '@type': 'ListItem', position: 3, name: rn, item: url }] }] };
       let h = head(lg, title, desc, url, alt, ld, up);
       h += '    <div class="di-page-head"><h1>' + esc(t.h1(rn, cname)) + '</h1><p>' + esc(t.lead(rn, cname, F.head, t.kindS[c])) + '</p></div>\n';
-      for (const b of F.B) h += '    <h2 style="font-size:17px;margin:18px 0 6px">' + esc(t.tbl[b.k]) + '</h2>\n    ' + table(b.cols, b.rows) + (b.note ? '\n    <p class="di-movers-hint" style="margin:-4px 0 8px">' + esc(b.note) + '</p>' : '') + '\n';
+      for (const b of F.B.map((x, i) => [x, i]).sort((a, c) => (BRANK[a[0].k] ?? 65) - (BRANK[c[0].k] ?? 65) || a[1] - c[1]).map(x => x[0])) h += '    <h2 style="font-size:17px;margin:18px 0 6px">' + esc(t.tbl[b.k]) + '</h2>\n    ' + table(b.cols, b.rows) + (b.note ? '\n    <p class="di-movers-hint" style="margin:-4px 0 8px">' + esc(b.note) + '</p>' : '') + '\n';
       h += '    <p style="margin:16px 0"><a class="di-btn-gold-solid" href="' + up + 'region.html?c=' + c + '&amp;r=' + r + '">' + esc(t.cta) + '</a></p>\n';
       h += '    <p class="di-movers-hint">' + esc(t.src) + ': ' + SRC[c].map(s => '<a href="' + esc(s[1]) + '" rel="noopener">' + esc(s[0]) + '</a>').join(' · ') + ' · <a href="' + up + profile + '">' + esc(t.profile + ' · ' + cname) + '</a> · ' + esc(t.gen) + ' ' + lastDay + '.</p>\n';
       h += '    <p class="di-movers-hint">' + esc(t.note) + ' <a href="' + up + t.metodo + '">' + esc(t.methodology) + '</a></p>\n';
