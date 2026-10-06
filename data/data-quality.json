@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T15:53:03Z",
+ "generatedAt": "2026-10-06T18:28:38Z",
  "summary": {
   "files": 22,
   "errors": 0,
@@ -82,7 +82,7 @@
     "points": 20813,
     "lines": 0
    },
-   "generatedAt": "2026-10-03T01:56:50Z",
+   "generatedAt": "2026-10-06T15:55:57Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -98,7 +98,7 @@
     "points": 9053,
     "lines": 0
    },
-   "generatedAt": "2026-10-02T16:38:34Z",
+   "generatedAt": "2026-10-06T16:39:36Z",
    "info": [
     "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -195,7 +195,7 @@
     "points": 56120,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T15:52:14Z",
+   "generatedAt": "2026-10-06T17:45:22Z",
    "info": [],
    "nWarnings": 36,
    "nErrors": 0
@@ -211,7 +211,7 @@
     "points": 19841,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T15:50:57Z",
+   "generatedAt": "2026-10-06T17:51:17Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -313,7 +313,7 @@
     "points": 131311,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T14:51:46Z",
+   "generatedAt": "2026-10-06T17:44:24Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
