@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // USDA NASS Quick Stats: ganadería y lácteo (livestock) y precios pagados por los agricultores (prices).
-// Uso: node scripts/update-nass.mjs livestock|prices   Clave: NASS_API_KEY
+// Uso: node scripts/update-nass.mjs livestock|prices|crops|received   Clave: NASS_API_KEY
 // Copia las cifras tal como las publica NASS (sin recalcular ni estimar). Cada serie = short_desc de Quick Stats.
 import { writeFile } from 'node:fs/promises';
 const KEY = process.env.NASS_API_KEY; if (!KEY) { console.error('falta NASS_API_KEY'); process.exit(1); }
@@ -28,10 +28,11 @@ function period(r) {
   if (m) return y + '-' + String(MON[m[1]]).padStart(2, '0');
   m = rp.match(/^(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC) THRU (JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$/);
   if (m && MON[m[2]] >= MON[m[1]]) return y + '-' + String(MON[m[2]]).padStart(2, '0'); // trimestre: se etiqueta con su último mes
-  if (ANNUAL && (rp === 'YEAR' || rp === 'ANNUAL')) return String(y);
+  if (ANNUAL && (rp === 'YEAR' || rp === 'ANNUAL' || (MARKET_YEAR && rp === 'MARKETING YEAR'))) return String(y);
   return null;
 }
 let ANNUAL = false;
+let MARKET_YEAR = false; // solo en los trabajos de precios recibidos anuales (campaña de comercialización)
 const num = v => { const s = String(v).replace(/,/g, '').trim(); return /^-?\d+(\.\d+)?$/.test(s) ? Number(s) : null; };
 const store = {};
 function add(rows, keep) {
@@ -66,6 +67,11 @@ if (MODE === 'livestock') {
   await job('leche precio recibido', { commodity_desc: 'MILK', statisticcat_desc: 'PRICE RECEIVED', agg_level_desc: 'NATIONAL' });
   await job('vacas lecheras', { commodity_desc: 'MILK', statisticcat_desc: 'INVENTORY', agg_level_desc: 'STATE' });
   await job('vacas lecheras nacional', { commodity_desc: 'MILK', statisticcat_desc: 'INVENTORY', agg_level_desc: 'NATIONAL' });
+  // ovino, huevos y lacteos: produccion y existencias nacionales (informes Sheep and Goats, Chickens and Eggs y Dairy Products; cifras tal como las publica NASS)
+  for (const sd of ['SHEEP, INCL LAMBS - INVENTORY', 'SHEEP, EWES, BREEDING, GE 1 YEAR - INVENTORY', 'SHEEP - LAMB CROP, MEASURED IN HEAD']) await job('ovino ' + sd, { commodity_desc: 'SHEEP', short_desc: sd, agg_level_desc: 'NATIONAL' });
+  await job('cordero y cordero adulto producción', { commodity_desc: 'LAMB & MUTTON', statisticcat_desc: 'PRODUCTION', agg_level_desc: 'NATIONAL' }, r => r.short_desc === 'LAMB & MUTTON, SLAUGHTER, COMMERCIAL - PRODUCTION, MEASURED IN LB' && r.freq_desc === 'MONTHLY');
+  await job('huevos producción', { commodity_desc: 'EGGS', statisticcat_desc: 'PRODUCTION', agg_level_desc: 'NATIONAL' }, r => r.short_desc === 'EGGS, TABLE - PRODUCTION, MEASURED IN EGGS' && r.freq_desc === 'MONTHLY');
+  for (const c of ['BUTTER', 'CHEESE']) await job(c + ' producción', { commodity_desc: c, statisticcat_desc: 'PRODUCTION', agg_level_desc: 'NATIONAL' }, r => r.short_desc === c + ' - PRODUCTION, MEASURED IN LB' && r.freq_desc === 'MONTHLY');
 } else if (MODE === 'prices') {
   ANNUAL = true;
   await job('índices pagados nacional', { statisticcat_desc: 'INDEX FOR PRICE PAID, 2011', agg_level_desc: 'NATIONAL', freq_desc: 'MONTHLY' });
@@ -85,6 +91,20 @@ if (MODE === 'livestock') {
   }
   // existencias trimestrales de avena (Grain Stocks): 1 mar/jun/sep/dic, total, en granja y fuera de granja, bushels
   await job('OATS STOCKS NATIONAL', { commodity_desc: 'OATS', statisticcat_desc: 'STOCKS', agg_level_desc: 'NATIONAL', source_desc: 'SURVEY', year__GE: Y10 }, r => /^OATS(, (ON|OFF) FARM)? - STOCKS, MEASURED IN BU$/.test(r.short_desc) && r.freq_desc === 'POINT IN TIME');
+  // centeno, patata, remolacha y cana de azucar, uva, manzana y aceituna: produccion, rendimiento y superficie nacionales (anuales)
+  const EXTRA = { RYE: ['RYE - PRODUCTION, MEASURED IN BU', 'RYE - YIELD, MEASURED IN BU / ACRE', 'RYE - ACRES HARVESTED'], POTATOES: ['POTATOES - PRODUCTION, MEASURED IN CWT', 'POTATOES - YIELD, MEASURED IN CWT / ACRE', 'POTATOES - ACRES HARVESTED'],
+    SUGARBEETS: ['SUGARBEETS - PRODUCTION, MEASURED IN TONS', 'SUGARBEETS - YIELD, MEASURED IN TONS / ACRE', 'SUGARBEETS - ACRES HARVESTED'], SUGARCANE: ['SUGARCANE, SUGAR & SEED - PRODUCTION, MEASURED IN TONS', 'SUGARCANE, SUGAR & SEED - YIELD, MEASURED IN TONS / ACRE', 'SUGARCANE, SUGAR & SEED - ACRES HARVESTED'],
+    GRAPES: ['GRAPES - PRODUCTION, MEASURED IN TONS', 'GRAPES - YIELD, MEASURED IN TONS / ACRE'], APPLES: ['APPLES - PRODUCTION, MEASURED IN LB', 'APPLES - YIELD, MEASURED IN LB / ACRE'], OLIVES: ['OLIVES - PRODUCTION, MEASURED IN TONS', 'OLIVES - YIELD, MEASURED IN TONS / ACRE'] };
+  for (const c of Object.keys(EXTRA)) for (const sd of EXTRA[c]) await job(sd, { commodity_desc: c, short_desc: sd, agg_level_desc: 'NATIONAL', source_desc: 'SURVEY', year__GE: Y10 }, r => r.freq_desc === 'ANNUAL');
+  await job('RYE STOCKS NATIONAL', { commodity_desc: 'RYE', short_desc: 'RYE - STOCKS, MEASURED IN BU', agg_level_desc: 'NATIONAL', source_desc: 'SURVEY', year__GE: Y10 }, r => r.freq_desc === 'POINT IN TIME');
+} else if (MODE === 'received') {
+  // Indices de precios RECIBIDOS por los agricultores (2011=100, mensual) y precios recibidos de los productos que NASS publica a nivel nacional. Mismas cifras que Quick Stats.
+  await job('índices recibidos nacional', { statisticcat_desc: 'INDEX FOR PRICE RECEIVED, 2011', agg_level_desc: 'NATIONAL', freq_desc: 'MONTHLY', source_desc: 'SURVEY' });
+  for (const [c, sd] of [['POTATOES', 'POTATOES, FRESH MARKET - PRICE RECEIVED, MEASURED IN $ / CWT'], ['APPLES', 'APPLES, FRESH MARKET - PRICE RECEIVED, MEASURED IN $ / LB'], ['GRAPES', 'GRAPES, FRESH MARKET - PRICE RECEIVED, MEASURED IN $ / TON']]) await job(sd, { commodity_desc: c, short_desc: sd, agg_level_desc: 'NATIONAL', source_desc: 'SURVEY', freq_desc: 'MONTHLY' });
+  ANNUAL = true; MARKET_YEAR = true;
+  for (const [c, sd] of [['RYE', 'RYE - PRICE RECEIVED, MEASURED IN $ / BU'], ['POTATOES', 'POTATOES - PRICE RECEIVED, MEASURED IN $ / CWT'], ['SUGARBEETS', 'SUGARBEETS - PRICE RECEIVED, MEASURED IN $ / TON'], ['SUGARCANE', 'SUGARCANE, SUGAR - PRICE RECEIVED, MEASURED IN $ / TON'],
+                         ['GRAPES', 'GRAPES - PRICE RECEIVED, MEASURED IN $ / TON'], ['APPLES', 'APPLES - PRICE RECEIVED, MEASURED IN $ / LB'], ['OLIVES', 'OLIVES - PRICE RECEIVED, MEASURED IN $ / TON']])
+    await job(sd, { commodity_desc: c, short_desc: sd, agg_level_desc: 'NATIONAL', source_desc: 'SURVEY', freq_desc: 'ANNUAL', year__GE: String(new Date().getUTCFullYear() - 10) }, r => r.freq_desc === 'ANNUAL');
 } else { console.error('modo desconocido'); process.exit(1); }
 const out = { schemaVersion: '1.0', source: 'USDA NASS Quick Stats', mode: MODE, generatedAt: new Date().toISOString(), series: {} };
 let total = 0;

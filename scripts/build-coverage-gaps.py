@@ -55,6 +55,20 @@ for key in (CM.J('nass-livestock.json', {'series': {}}).get('series') or {}):
 for key in (CM.J('nass-prices.json', {'series': {}}).get('series') or {}):
     p = next((pp for tok, pp in CM.NASS_PRICES_PRODUCT if key.upper().startswith(tok)), None)
     if p: add_ext('US', p, 'price_index', 'nass-prices.json')
+for key, v in (CM.J('nass-received.json', {'series': {}}).get('series') or {}).items():   # precios e indices RECIBIDOS por los agricultores (NASS)
+    if not v.get('n'): continue
+    if 'INDEX FOR PRICE RECEIVED' in key:
+        for pp in CM.NASS_RECEIVED_INDEX_PRODUCT.get(key.split(' - ')[0].strip(), []): add_ext('US', pp, 'price_index', 'nass-received.json')
+    elif 'PRICE RECEIVED' in key:
+        pp = CM.NASS_RECEIVED_PRICE_PRODUCT.get(key.split(' - ')[0].split(',')[0].strip())
+        if pp: add_ext('US', pp, 'price', 'nass-received.json')
+def _has(pts): return isinstance(pts, list) and any(isinstance(x, list) and len(x) > 1 and isinstance(x[1], (int, float)) for x in pts)
+_ud = CM.J('us-dairy.json', {'products': []})   # USDA AMS: precios semanales de mantequilla y queso cheddar (EE. UU.)
+for _p in (_ud.get('products') or []):
+    _pp = CM.US_DAIRY_PRODUCT.get(_p.get('id'))
+    if _pp and _has(_p.get('series')): add_ext('US', _pp, 'price', 'us-dairy.json')
+_ul = CM.J('us-lamb.json', {'rows': []})   # USDA AMS: valor de la canal de cordero (precio mayorista semanal)
+if any(isinstance(r, list) and len(r) > 1 and isinstance(r[1], (int, float)) for r in (_ul.get('rows') or [])): add_ext('US', 'sheep', 'price', 'us-lamb.json')
 for k, v in (CM.J('ams-grain-daily.json', {'products': {}}).get('products') or {}).items():
     if v and CM.AMS_GRAIN_PRODUCT.get(k): add_ext('US', CM.AMS_GRAIN_PRODUCT[k], 'price', 'ams-grain-daily.json')
 for key in ((CM.J('germany-agri.json', {'production': {'nat': {}}}).get('production') or {}).get('nat') or {}):   # produccion agricola de Alemania (Destatis)

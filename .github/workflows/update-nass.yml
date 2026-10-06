@@ -31,6 +31,11 @@ jobs:
         env:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
         run: node scripts/update-nass.mjs crops 2>&1 | tee data/nass-crops-log.txt; test ${PIPESTATUS[0]} -eq 0
+      - name: Precios e índices recibidos
+        if: always()
+        env:
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+        run: node scripts/update-nass.mjs received 2>&1 | tee data/nass-received-log.txt; test ${PIPESTATUS[0]} -eq 0
       - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
         if: always()
         uses: ./.github/actions/validate-files

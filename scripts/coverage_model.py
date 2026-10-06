@@ -55,11 +55,16 @@ PSD_METRIC = {'production': 'production', 'area': 'production', 'endingStocks': 
 GATS_PRODUCT = {'trigo': 'wheat', 'maiz': 'maize', 'arroz': 'rice', 'soja': 'soy', 'cebada': 'barley', 'vacuno': 'cattle', 'cerdo': 'pigs', 'pollo': 'poultry', 'huevos': 'eggs',
                 'lacteos': 'milk', 'fertilizantes': 'fertilizer'}
 # ficheros USDA con formato propio (fuera del catalogo unificado): la clave de cada serie nombra producto y metrica; se mapea SOLO lo que el fichero contiene de verdad
-NASS_CROP_PRODUCT = {'WHEAT': 'wheat', 'CORN': 'maize', 'SOYBEANS': 'soy', 'BARLEY': 'barley', 'OATS': 'oats', 'RICE': 'rice'}   # nass-crops.json: area, produccion, rendimiento
+NASS_CROP_PRODUCT = {'WHEAT': 'wheat', 'CORN': 'maize', 'SOYBEANS': 'soy', 'BARLEY': 'barley', 'OATS': 'oats', 'RICE': 'rice', 'RYE': 'rye', 'POTATOES': 'potato', 'SUGARBEETS': 'sugar', 'SUGARCANE': 'sugar', 'APPLES': 'fruit', 'OLIVES': 'olive'}   # nass-crops.json: area, produccion, rendimiento
 NASS_LIVESTOCK_PRODUCT = {'HOGS': 'pigs', 'PORK': 'pigs', 'CATTLE': 'cattle', 'BEEF': 'cattle', 'VEAL': 'cattle', 'CHICKENS': 'poultry', 'TURKEYS': 'poultry', 'EGGS': 'eggs', 'MILK': 'milk',
-                          'CHEESE': 'cheese', 'BUTTER': 'butter', 'LAMB & MUTTON': 'sheep'}
+                          'CHEESE': 'cheese', 'BUTTER': 'butter', 'LAMB & MUTTON': 'sheep', 'SHEEP': 'sheep'}
 NASS_LIVESTOCK_METRIC = (('STOCKS', 'stocks'), ('PRICE RECEIVED', 'price'), ('INVENTORY', 'production'), ('PRODUCTION', 'production'), ('PIG CROP', 'production'))  # 'OPERATIONS WITH INVENTORY' cuenta explotaciones, no se mapea
+US_DAIRY_PRODUCT = {'mantequilla': 'butter', 'cheddar': 'cheese'}   # us-dairy.json: precios semanales AMS (suero y leche en polvo no son productos del sitio)
 AMS_GRAIN_PRODUCT = {'maiz': 'maize', 'soja': 'soy', 'trigo': 'wheat'}                         # ams-grain-daily.json: precios diarios USDA AMS
+# nass-received.json: indices de precios RECIBIDOS por grupo (2011=100). Solo se mapea donde el grupo cubre claramente el producto; patata, centeno, azucar, mantequilla, queso, ovino, aceituna y vino NO se mapean
+NASS_RECEIVED_INDEX_PRODUCT = {'FOOD GRAINS': ['wheat', 'rice'], 'FEED GRAINS': ['maize', 'barley', 'oats'], 'OIL-BEARING CROPS': ['soy'], 'CATTLE INCL CALVES': ['cattle'], 'HOGS': ['pigs'], 'DAIRY PRODUCT TOTALS': ['milk'],
+                              'POULTRY TOTALS INCL EGGS': ['eggs', 'poultry'], 'FRUIT & TREE NUT TOTALS': ['fruit']}
+NASS_RECEIVED_PRICE_PRODUCT = {'RYE': 'rye', 'POTATOES': 'potato', 'SUGARBEETS': 'sugar', 'SUGARCANE': 'sugar', 'APPLES': 'fruit', 'OLIVES': 'olive'}   # precios recibidos nacionales (mensual fresco o campana de comercializacion)
 NASS_PRICES_PRODUCT = (('FERTILIZER', 'fertilizer'), ('FUELS', 'energy'), ('ENERGY', 'energy'))  # nass-prices.json: indices de precios pagados (price_index)
 DE_AGRI_PRODUCT = {'wheat': 'wheat', 'rye': 'rye', 'barley': 'barley', 'oats': 'oats', 'maize': 'maize', 'rapeseed': 'rapeseed', 'potato': 'potato', 'sugarbeet': 'sugar'}   # germany-agri.json: produccion nacional/Land de Destatis (cereals, triticale, sunflower y silage no son producto de la matriz)
 DE_LIVESTOCK_PRODUCT = {'cattle': 'cattle', 'calves': 'cattle', 'pigs': 'pigs', 'sheep': 'sheep'}   # germany-livestock.json: sacrificios (cabezas y peso de canal)
