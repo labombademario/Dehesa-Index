@@ -17,4 +17,4 @@ AUK: omitida (sin datos recientes) uk-auk-price-poultry-ducks 2021
 AUK: omitida (sin datos recientes) uk-auk-price-poultry-geese 2021
 Agriculture in the UK: 112 series; publicado 2026-09-03
 AUK: omitida (sin datos recientes) uk-auk-value-flowers
-Agriculture in the UK (resto de capítulos): 186 series; publicado 2026-09-03
+Agriculture in the UK (resto de capítulos): 227 series; publicado 2026-09-03
