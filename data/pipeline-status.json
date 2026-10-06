@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T20:56:00Z",
+ "generatedAt": "2026-10-06T22:02:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 92,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "c3f6ff54",
+   "sha": "39a73481",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/c98baab9-bb38-41bc-85d6-df42e8726512",
-   "completedAt": "2026-10-06T20:53:10Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/44b05ce0-a467-4578-ad5c-9879dae57b32",
+   "completedAt": "2026-10-06T22:01:06Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -408,7 +408,7 @@
      "series": 457,
      "points": 79750,
      "lines": 0,
-     "lastChange": "2026-10-05T15:52:24Z"
+     "lastChange": "2026-10-06T21:59:21Z"
     },
     {
      "path": "data/revisions.json",
@@ -417,14 +417,14 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-05T15:50:41Z",
-    "durationSec": 121,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37336089282"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-06T21:29:02Z",
+    "durationSec": 1823,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37534201996"
    },
    "recent": {
-    "runs": 8,
-    "success": 6,
+    "runs": 9,
+    "success": 7,
     "failed": 1
    },
    "status": "ok",
@@ -1320,7 +1320,7 @@
   },
   {
    "workflow": "update-eurostat-depth.yml",
-   "name": "Update Eurostat depth (ES, FR, DK)",
+   "name": "Update Eurostat depth (ES, FR, DK, NL, BE, DE)",
    "crons": [
     "40 17 * * 2,5"
    ],
@@ -1332,7 +1332,7 @@
      "series": 319,
      "points": 19841,
      "lines": 0,
-     "lastChange": "2026-10-06T17:51:18Z"
+     "lastChange": "2026-10-06T22:02:56Z"
     },
     {
      "path": "data/revisions.json",
@@ -1341,14 +1341,14 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-06T17:50:57Z",
-    "durationSec": 36,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37506708652"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-06T22:02:15Z",
+    "durationSec": 59,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37537974380"
    },
    "recent": {
-    "runs": 2,
-    "success": 2,
+    "runs": 4,
+    "success": 3,
     "failed": 0
    },
    "status": "ok",
@@ -1571,15 +1571,15 @@
    "files": [
     {
      "path": "data/gats.json",
-     "lastChange": "2026-09-30T13:36:22Z"
+     "lastChange": "2026-10-06T21:58:45Z"
     }
    ],
    "last": {
     "conclusion": "success",
-    "event": "schedule",
-    "startedAt": "2026-10-06T06:36:40Z",
-    "durationSec": 17,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37424700917"
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-06T21:10:24Z",
+    "durationSec": 2906,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37531954156"
    },
    "recent": {
     "runs": 10,
@@ -1886,7 +1886,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-06T21:17:00Z",
+   "nextRun": "2026-10-07T00:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -1906,15 +1906,15 @@
     }
    ],
    "last": {
-    "conclusion": "success",
+    "conclusion": "cancelled",
     "event": "schedule",
-    "startedAt": "2026-10-06T18:29:14Z",
-    "durationSec": 104,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37511675085"
+    "startedAt": "2026-10-06T21:25:32Z",
+    "durationSec": 212,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37533792045"
    },
    "recent": {
     "runs": 10,
-    "success": 10,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -2042,11 +2042,11 @@
    "crons": [
     "10 */3 * * *"
    ],
-   "nextRun": "2026-10-06T21:10:00Z",
+   "nextRun": "2026-10-07T00:10:00Z",
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-06T19:52:29Z"
+     "lastChange": "2026-10-06T21:02:10Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2062,7 +2062,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-06T19:52:29Z"
+     "lastChange": "2026-10-06T21:02:10Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2079,7 +2079,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-06T19:52:29Z"
+     "lastChange": "2026-10-06T21:02:10Z"
     },
     {
      "path": "data/products"
@@ -2090,19 +2090,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-06T19:52:29Z"
+     "lastChange": "2026-10-06T21:02:10Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-06T19:52:29Z"
+     "lastChange": "2026-10-06T21:02:10Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-06T20:44:03Z"
+     "lastChange": "2026-10-06T22:00:23Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-06T19:52:29Z"
+     "lastChange": "2026-10-06T21:02:10Z"
     },
     {
      "path": "data/ers-cost-reference.json",
@@ -2110,7 +2110,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-06T19:52:29Z"
+     "lastChange": "2026-10-06T21:02:10Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2125,15 +2125,15 @@
     }
    ],
    "last": {
-    "conclusion": "success",
+    "conclusion": "cancelled",
     "event": "schedule",
-    "startedAt": "2026-10-06T18:28:19Z",
-    "durationSec": 119,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37511561458"
+    "startedAt": "2026-10-06T21:24:46Z",
+    "durationSec": 48,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37533696426"
    },
    "recent": {
     "runs": 10,
-    "success": 10,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",

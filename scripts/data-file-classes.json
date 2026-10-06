@@ -117,6 +117,14 @@
   "data/supply-demand.json": {
    "class": "RUNTIME",
    "note": "oferta-demanda.js y producto.js."
+  },
+  "data/gats.json": {
+   "class": "RUNTIME",
+   "note": "Comercio agrario de EE. UU. por pais y grupo (USDA FAS GATS): la pestana de exportaciones y el mapa lo piden bajo demanda; crece con los grupos nuevos.",
+   "via": {
+    "file": "js/exportaciones.js",
+    "pattern": "data/gats.json"
+   }
   }
  },
  "prefixes": {
