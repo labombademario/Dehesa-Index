@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Profundidad con Eurostat para ES, FR, DK, NL y BE (NL: solo precios e insumos; BE: sin censos ni sacrificio) -> data/eurostat-depth-stats.json (countries.ES/FR/DK, extend)
+"""Profundidad con Eurostat para ES, FR, DK, NL, BE y DE (DE: solo indices de precios de avena, soja, arroz, mantequilla y queso) (NL: solo precios e insumos; BE: sin censos ni sacrificio) -> data/eurostat-depth-stats.json (countries.ES/FR/DK, extend)
 Francia: produccion (cultivos, censos, sacrificio, leche), indices de precios e insumos. Espana y Dinamarca: solo indices de precios de produccion e insumos (su produccion ya sale de MAPA y Statistics Denmark).
 Solo los productos de la matriz de cobertura (cereales, oleaginosas, patata, remolacha, vid, olivo, vacuno, porcino, ovino, aves, leche) y los insumos clave: cultivos, censos, sacrificio, leche, indices de precios de produccion y de insumos. Complementa las fuentes nacionales (tier 1); las duplicadas las ordena el registro de series.
 Cultivos, censos de ganado, sacrificio, leche, aves, indices de precios, precios absolutos y cuentas agrarias. Solo lo que Eurostat publica; ninguna serie se completa ni se estima.
@@ -17,7 +17,7 @@ def get(u, t=180):
             with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t) as r: return r.read()
         except Exception as e: last = e
     raise RuntimeError('%s -> %s' % (u, last))
-GEOS = ['ES', 'FR', 'DK', 'NL', 'BE']; NAMES = {'ES': 'Spain', 'FR': 'France', 'DK': 'Denmark', 'NL': 'Netherlands', 'BE': 'Belgium'}
+GEOS = ['ES', 'FR', 'DK', 'NL', 'BE', 'DE']; NAMES = {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France', 'DK': 'Denmark', 'NL': 'Netherlands', 'BE': 'Belgium'}
 NEW = ('NL', 'BE')   # precios absolutos de productor y aves: solo para los paises anadidos despues, para no tocar las series ya publicadas de ES, FR y DK
 def es(ds, **flt):
     q = 'lang=EN' + ''.join('&geo=' + g for g in GEOS) + ''.join('&%s=%s' % (k, urllib.parse.quote(v)) for k, v in flt.items())
@@ -139,6 +139,7 @@ def main():
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:300])
     for k in [k for k in OUT if k.split('-')[0].upper() in NAT and OUT[k]['group'] in ('crops', 'livestock', 'production', 'milk')]: del OUT[k]   # ES y DK ya publican su produccion con fuente nacional (MAPA, Statistics Denmark): aqui solo lo que les falta (indices de precios de produccion e insumos)
     for k in [k for k in OUT if k.startswith('be-eus-') and (OUT[k]['group'] == 'livestock' or k.startswith('be-eus-meat-'))]: del OUT[k]   # BE: censos y sacrificio ya salen de Statbel; aqui solo cultivos, leche, aves, precios e insumos
+    for k in [k for k in OUT if k.startswith('de-eus-') and not (OUT[k]['group'] == 'idx_perc' and re.search(r'oat|soya|soy|rice|butter|cheese', OUT[k]['label'], re.I))]: del OUT[k]   # DE: Destatis ya publica sus indices y produccion; de Eurostat solo los indices de precios de los productos que Destatis no trae
     for k in [k for k in OUT if k.startswith(DUP)]: del OUT[k]   # ya publicadas por eu-gapfill (mismas series de Eurostat): evita duplicados en el registro
     if len(OUT) < 60:
         log('demasiado pocas series (%d); no se escribe nada' % len(OUT)); open('data/eurostat-depth-log.txt', 'w').write('\n'.join(LOG) + '\n'); sys.exit(1)

@@ -35,6 +35,7 @@ def cell_metrics(tag, m, s):
     """Un indice de precios pagados (grupo inputs*, 'Input price index') es tambien un indice de precios: cuenta como precio de insumo y como price_index."""
     out = [cell_metric(tag, m)]
     if str(s.get('group', '')).startswith('inputs') and 'price index' in str(s.get('label', '')).lower() and 'price_index' not in out: out.append('price_index')
+    if s.get('group') == 'idx_pag' and str(s.get('label', '')).lower().startswith('input price index') and KIND_OF.get(tag) in ('energy', 'input') and 'input_price' not in out: out.append('input_price')   # Destatis: indices de precios de insumos (energia, fertilizantes)
     return out
 APPLICABLE = {  # metricas con sentido por tipo de producto (no se cuentan huecos donde la metrica no aplica)
   'grain': ['price', 'price_index', 'production', 'trade', 'stocks'],

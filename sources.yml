@@ -206,12 +206,12 @@ sources:
     log: italy-eurostat-log.txt
     message: Datos Italia (Eurostat)
   - id: eurostat-depth
-    name: Update Eurostat depth (ES, FR, DK, NL, BE)
+    name: Update Eurostat depth (ES, FR, DK, NL, BE, DE)
     cron: ['40 17 * * 2,5']
     script: scripts/update-eurostat-depth.py
     data: [eurostat-depth-stats.json]
     log: eurostat-depth-log.txt
-    message: Datos Eurostat ES, FR, DK, NL, BE (profundidad)
+    message: Datos Eurostat ES, FR, DK, NL, BE, DE (profundidad)
   - id: canada-stats
     name: Update Canada stats (Statistics Canada)
     cron: ['35 15 * * 1,4']
