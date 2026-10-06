@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T00:39:52Z",
+ "generatedAt": "2026-10-06T00:58:27Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 91,
+  "total": 92,
   "byStatus": {
-   "ACTIVE": 60,
+   "ACTIVE": 61,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -2132,6 +2132,43 @@
     "result": "NOT_READY",
     "reasons": [
      "VERIFIED pero con condiciones no inequivocas: derivados conditional"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "enesa",
+   "registryId": "enesa",
+   "country": "ES",
+   "scope": "integrated",
+   "institution": "Spain — Entidad Estatal de Seguros Agrarios (ENESA, MAPA): Informes de Contratación del Seguro Agrario",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CUSTOM",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Informe de Contratación del Seguro Agrario nº NN, ENESA (MAPA). Datos de Agroseguro; elaboración ENESA",
+   "lastChecked": "2026-10-05",
+   "verification": "REGISTRY",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
     ]
    },
    "ingestionStatus": "ACTIVE",

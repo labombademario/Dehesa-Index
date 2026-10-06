@@ -108,12 +108,34 @@
     h += '<div class="di-info-scope-note" style="margin-top:6px">* ' + esc(t.prov) + '</div>';
     return h;
   }
+  var TH = {
+    es: { badge: 'HISTÓRICO (ENESA) · ÚLTIMO INFORME Nº 31, 1.ER SEMESTRE 2022', title: 'España — Informes de Contratación de ENESA: ejercicios cerrados', yr: 'Ejercicio', pol: 'Pólizas', an: 'Animales (M)', pr: 'Producción (miles t)', cap: 'Capital asegurado (M€)', net: 'Coste neto (M€)', se: 'Subv. ENESA (M€)', sc: 'Subv. CC.AA. (M€)', ind: 'Indemnizaciones (M€)', rep: 'Informe',
+      prov: 'Dato provisional en el informe.', note: 'Serie histórica cerrada: ENESA no ha publicado informes posteriores al nº 31, así que no es un dato actual. Los datos son de Agroseguro y los elabora ENESA; aquí se copian tal cual de la tabla «Grandes cifras» de cada PDF, y si varios informes recogen el mismo ejercicio prevalece el más reciente. Falta el ejercicio 2014 cerrado (los informes solo traen cortes parciales) y 2022 está incompleto.', src: 'Fuente: Informes de Contratación del Seguro Agrario nº 1-31, ENESA (MAPA). Datos de Agroseguro; elaboración ENESA.', link: 'Ver los informes' },
+    en: { badge: 'HISTORICAL (ENESA) · LAST REPORT NO. 31, 1H 2022', title: 'Spain — ENESA contracting reports: closed years', yr: 'Year', pol: 'Policies', an: 'Animals (M)', pr: 'Production (000 t)', cap: 'Insured capital (€M)', net: 'Net cost (€M)', se: 'ENESA subsidy (€M)', sc: 'Regional subsidy (€M)', ind: 'Indemnities (€M)', rep: 'Report',
+      prov: 'Provisional figure in the report.', note: 'Closed historical series: ENESA has published no report after no. 31, so this is not current data. The data come from Agroseguro and are compiled by ENESA; they are copied as printed from the “Grandes cifras” table of each PDF, and when several reports cover the same year the most recent one prevails. The closed year 2014 is missing (the reports only give partial cut-offs) and 2022 is incomplete.', src: 'Source: Informes de Contratación del Seguro Agrario nos. 1-31, ENESA (MAPA). Data by Agroseguro; compiled by ENESA.', link: 'See the reports' },
+    fr: { badge: 'HISTORIQUE (ENESA) · DERNIER RAPPORT N° 31, 1ER SEMESTRE 2022', title: 'Espagne — Rapports de souscription de l’ENESA : exercices clos', yr: 'Exercice', pol: 'Polices', an: 'Animaux (M)', pr: 'Production (milliers t)', cap: 'Capital assuré (M€)', net: 'Coût net (M€)', se: 'Subv. ENESA (M€)', sc: 'Subv. régions (M€)', ind: 'Indemnités (M€)', rep: 'Rapport',
+      prov: 'Chiffre provisoire dans le rapport.', note: 'Série historique close : l’ENESA n’a publié aucun rapport après le n° 31, ce ne sont donc pas des données actuelles. Les données viennent d’Agroseguro et sont élaborées par l’ENESA ; elles sont copiées telles quelles du tableau « Grandes cifras » de chaque PDF et, si plusieurs rapports couvrent le même exercice, le plus récent prévaut. L’exercice 2014 clos manque (les rapports ne donnent que des coupes partielles) et 2022 est incomplet.', src: 'Source : Informes de Contratación del Seguro Agrario n° 1-31, ENESA (MAPA). Données d’Agroseguro ; élaboration ENESA.', link: 'Voir les rapports' },
+    it: { badge: 'STORICO (ENESA) · ULTIMO RAPPORTO N. 31, 1º SEMESTRE 2022', title: 'Spagna — Rapporti di contrattazione dell’ENESA: esercizi chiusi', yr: 'Esercizio', pol: 'Polizze', an: 'Animali (M)', pr: 'Produzione (migliaia t)', cap: 'Capitale assicurato (M€)', net: 'Costo netto (M€)', se: 'Sussidio ENESA (M€)', sc: 'Sussidio regioni (M€)', ind: 'Indennizzi (M€)', rep: 'Rapporto',
+      prov: 'Dato provvisorio nel rapporto.', note: 'Serie storica chiusa: l’ENESA non ha pubblicato rapporti dopo il n. 31, quindi non sono dati attuali. I dati sono di Agroseguro ed elaborati dall’ENESA; sono copiati così come stampati dalla tabella «Grandes cifras» di ogni PDF e, se più rapporti coprono lo stesso esercizio, prevale il più recente. Manca l’esercizio 2014 chiuso (i rapporti danno solo tagli parziali) e il 2022 è incompleto.', src: 'Fonte: Informes de Contratación del Seguro Agrario n. 1-31, ENESA (MAPA). Dati di Agroseguro; elaborazione ENESA.', link: 'Vedi i rapporti' }
+  };
+  function enesaHist(N) {
+    var h = TH[lang()] || TH.es, rows = N.annual.slice().reverse().map(function (r) {
+      var f = function (v, d) { if (v == null) return '—'; if (!d) return grp(v); var i = Math.trunc(v), fr = dec(Math.abs(v - i), d).split(/[.,]/)[1] || '0'; return grp(i) + (lang() === 'en' ? '.' : ',') + fr; };
+      return [esc(r.year + (r.provisional ? ' *' : '')), f(r.polizas), f(r.animales_millones, 1), f(r.produccion_kt, 1), f(r.capital_meur, 1), f(r.coste_neto_meur, 1), f(r.subv_enesa_meur, 1), f(r.subv_ccaa_meur, 1), f(r.indemnizaciones_meur, 1), esc('nº ' + r.report)];
+    });
+    return '<div class="di-badge di-badge-green di-info-badge" style="margin-top:28px">' + esc(h.badge) + '</div>' +
+      '<h3 class="di-info-card-title" style="margin:12px 0 8px">' + esc(h.title) + '</h3>' +
+      tbl([h.yr, h.pol, h.an, h.pr, h.cap, h.net, h.se, h.sc, h.ind, h.rep], rows) +
+      '<div class="di-info-scope-note" style="margin-top:6px">* ' + esc(h.prov) + '</div>' +
+      '<div class="di-info-scope-note" style="margin-top:10px">' + esc(h.note) + '</div>' +
+      '<div class="di-info-scope-note" style="margin-top:6px">' + esc(h.src) + ' <a href="' + esc(N.meta.url) + '" rel="noopener" target="_blank">' + esc(h.link) + '</a></div>';
+  }
   function render(el) {
-    var t = tx(), D = null, E = null, C = null;
+    var t = tx(), D = null, E = null, C = null, N = null;
     el.innerHTML = '<div class="di-info-scope-note">…</div>';
     function get(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
-    Promise.all([get('data/crop-insurance.json'), get('data/insurance-es.json').catch(function () { return null; }), get('data/crop-insurance-ca.json').catch(function () { return null; }), root.DICite ? root.DICite.load() : null]).then(function (a) {
-      D = a[0]; E = a[1]; C = a[2]; paint(String(D.latestCompleteYear), C ? String(C.latestYear) : null);
+    Promise.all([get('data/crop-insurance.json'), get('data/insurance-es.json').catch(function () { return null; }), get('data/crop-insurance-ca.json').catch(function () { return null; }), get('data/enesa-contratacion.json').catch(function () { return null; }), root.DICite ? root.DICite.load() : null]).then(function (a) {
+      D = a[0]; E = a[1]; C = a[2]; N = a[3]; paint(String(D.latestCompleteYear), C ? String(C.latestYear) : null);
     }, function () { el.innerHTML = '<div class="di-info-scope-note">' + esc(t.err) + '</div>'; });
     function paint(y, cy) {
       t = tx(); var c = tc();
@@ -126,7 +148,8 @@
         '<div class="di-info-scope-note" style="margin-top:14px">' + esc(t.note) + '</div>' +
         (C ? '<div class="di-badge di-badge-green di-info-badge" style="margin-top:28px">' + esc(c.badge) + '</div>' +
           '<div style="margin:0 0 16px"><label class="di-field-hint" for="sg-ca-year">' + esc(c.yearL) + ' </label><select id="sg-ca-year" class="di-eu-country-select">' + copts + '</select></div>' +
-          caDetails(C, cy) + '<div class="di-info-scope-note" style="margin-top:14px">' + esc(c.note) + '</div>' : '');
+          caDetails(C, cy) + '<div class="di-info-scope-note" style="margin-top:14px">' + esc(c.note) + '</div>' : '') +
+        (N ? enesaHist(N) : '');
       var sel = el.querySelector('#sg-year'); if (sel) sel.addEventListener('change', function () { paint(sel.value, cy); });
       var csel = el.querySelector('#sg-ca-year'); if (csel) csel.addEventListener('change', function () { paint(y, csel.value); });
     }

@@ -1732,6 +1732,32 @@
    "aliases": [],
    "notes": null,
    "short": "USDA FGIS exportaciones"
+  },
+  "enesa": {
+   "name": "Spain — Entidad Estatal de Seguros Agrarios (ENESA, MAPA): Informes de Contratación del Seguro Agrario",
+   "url": "https://www.mapa.gob.es/es/enesa/datos_sobre_el_seguro/informes_de_contratacion_del_seguro_agrario/",
+   "country": "ES",
+   "licenseId": "CUSTOM",
+   "licenseName": "ENESA: utilización total o parcial autorizada siempre que se cite expresamente su origen (nota en cada informe); aviso legal del MAPA",
+   "licenseUrl": "https://www.mapa.gob.es/es/atencion-al-ciudadano/aviso-legal",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Fuente: Informe de Contratación del Seguro Agrario nº NN, ENESA (MAPA). Datos de Agroseguro; elaboración ENESA",
+   "additionalRestrictions": "Citar el informe como 'Informe de Contratación del Seguro Agrario nº NN ENESA'. Tablas con 'Fuente Agroseguro. Elaboración ENESA': solo se copian las cifras de la tabla Grandes cifras, sin reelaborarlas. Serie histórica cerrada (último informe nº 31, 1.er semestre 2022).",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "Los datos de origen son de Agroseguro; ENESA los publica con su autorización de uso citando el origen. No se usan otros contenidos de Agroseguro.",
+   "verifiedAt": "2026-10-05",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "Frase en cada informe: 'Se autoriza su utilización total o parcial siempre que se cite expresamente su origen. Referenciar el documento como: Informe de Contratación del Seguro Agrario nº NN ENESA' (leída en los 31 PDF el 2026-10-05). Organismo oficial del Estado: regla de Mario (licencia oficial = verde, referenciada).",
+   "used": true,
+   "aliases": [
+    "enesa_contratacion"
+   ],
+   "notes": "Histórico de los Informes de Contratación (nº 1-31).",
+   "short": "ENESA"
   }
  },
  "files": {
@@ -2293,6 +2319,12 @@
     "usda_fsa"
    ],
    "notes": "Tasas de ARC/PLC de la FSA (scripts/update-us-arcplc.py): por condado y cultivo, las cifras ARC-CO que publica la FSA (rendimiento y precio de referencia, ingreso de referencia y garantizado, rendimiento real, precio nacional, ingreso real y tasa de pago en USD por acre base) y las tablas nacionales PLC (precio de referencia efectivo, precio medio de campana, tasa de prestamo, tasa de pago por unidad y tasa maxima). Son tasas por acre base o por unidad, no dolares pagados. Ficheros enlazados desde la pagina oficial ARC/PLC Program Data. Lo que la FSA deja en blanco queda como hueco. Cita: \"U. S. Department of Agriculture, Farm Service Agency.\""
+  },
+  "data/enesa-contratacion.json": {
+   "sources": [
+    "enesa"
+   ],
+   "notes": "Histórico 2011-2022 de los Informes de Contratación nº 1-31 de ENESA: ejercicios cerrados, cortes parciales del año y fotos a fecha. Cifras copiadas del cuadro Grandes cifras de cada PDF; el informe más reciente prevalece y las discrepancias entre informes se anotan en meta.notes."
   }
  },
  "derived": [

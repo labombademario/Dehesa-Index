@@ -1,0 +1,16 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Seguro agrario de España: Informes de Contratación de ENESA nº 1-31 (histórico, 2011-2022)",
+ "type": "object",
+ "required": ["schemaVersion", "generatedAt", "meta", "annual", "ytd", "snapshots"],
+ "properties": {
+  "schemaVersion": {"type": "integer"},
+  "generatedAt": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"},
+  "meta": {"type": "object", "required": ["source", "dataSource", "url", "license", "historical", "lastReport", "note", "units", "reports", "notes"],
+   "properties": {"historical": {"type": "boolean", "enum": [true]}, "lastReport": {"type": "integer", "enum": [31]}, "url": {"type": "string", "pattern": "^https://"}, "reports": {"type": "array", "minItems": 20}, "notes": {"type": "array"}}},
+  "annual": {"type": "array", "minItems": 7, "items": {"type": "object", "required": ["year", "report", "polizas", "animales_millones", "produccion_kt", "capital_meur", "coste_neto_meur", "subv_enesa_meur", "subv_ccaa_meur", "indemnizaciones_meur"],
+   "properties": {"year": {"type": "integer", "minimum": 2008, "maximum": 2022}, "report": {"type": "integer", "minimum": 1, "maximum": 31}, "polizas": {"type": "number", "minimum": 50000, "maximum": 1000000}, "animales_millones": {"type": "number", "minimum": 10, "maximum": 1000}, "produccion_kt": {"type": "number", "minimum": 1000, "maximum": 100000}, "capital_meur": {"type": "number", "minimum": 500, "maximum": 30000}, "coste_neto_meur": {"type": "number", "minimum": 20, "maximum": 2000}}}},
+  "ytd": {"type": "array", "minItems": 10, "items": {"type": "object", "required": ["year", "report", "cutoff", "polizas"], "properties": {"cutoff": {"type": "object", "required": ["day", "month"]}}}},
+  "snapshots": {"type": "array", "items": {"type": "object", "required": ["year", "report", "as_of", "polizas"], "properties": {"as_of": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}}}}
+ }
+}

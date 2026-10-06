@@ -1,0 +1,1299 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-06T00:57:15Z",
+ "meta": {
+  "source": "ENESA (MAPA) — Informes de Contratación del Seguro Agrario nº 1-31",
+  "dataSource": "Agroseguro; elaboración ENESA",
+  "url": "https://www.mapa.gob.es/es/enesa/datos_sobre_el_seguro/informes_de_contratacion_del_seguro_agrario/",
+  "license": "ENESA autoriza su utilización total o parcial siempre que se cite expresamente su origen",
+  "historical": true,
+  "lastReport": 31,
+  "lastReportPeriod": "1.er semestre 2022",
+  "note": "Serie histórica cerrada: ENESA no ha publicado informes posteriores al nº 31. No es un dato actual.",
+  "units": {
+   "polizas": "nº",
+   "animales_millones": "millones",
+   "produccion_kt": "miles de t",
+   "capital_meur": "M€",
+   "coste_neto_meur": "M€",
+   "subv_enesa_meur": "M€",
+   "subv_ccaa_meur": "M€",
+   "indemnizaciones_meur": "M€"
+  },
+  "reports": [
+   {
+    "report": 1,
+    "file": "02-12-2013_avance_contrat_n1.txt",
+    "rows": 0
+   },
+   {
+    "report": 1,
+    "file": "10-07-2013_130709_icp_1-2013.txt",
+    "rows": 0
+   },
+   {
+    "report": 3,
+    "file": "23-12-2013_131220_icp_3-2013.txt",
+    "rows": 3
+   },
+   {
+    "report": 5,
+    "file": "26-06-2014_icp5_2014.txt",
+    "rows": 3
+   },
+   {
+    "report": 8,
+    "file": "27-03-2015_ic8.txt",
+    "rows": 5
+   },
+   {
+    "report": 7,
+    "file": "29-12-2014_ic7.txt",
+    "rows": 3
+   },
+   {
+    "report": 9,
+    "file": "30-06-2015_ic9.txt",
+    "rows": 5
+   },
+   {
+    "report": 2,
+    "file": "30-09-2013_130930_icp_2-2013.txt",
+    "rows": 3
+   },
+   {
+    "report": 6,
+    "file": "30-09-2014_ic6.txt",
+    "rows": 3
+   },
+   {
+    "report": 4,
+    "file": "31-03-2014_icp4_2014.txt",
+    "rows": 3
+   },
+   {
+    "report": 10,
+    "file": "ic10_sept_2015.txt",
+    "rows": 3
+   },
+   {
+    "report": 11,
+    "file": "ic11-final.txt",
+    "rows": 3
+   },
+   {
+    "report": 12,
+    "file": "ic12-plantilla_def2.txt",
+    "rows": 3
+   },
+   {
+    "report": 13,
+    "file": "ic13definitivo.txt",
+    "rows": 3
+   },
+   {
+    "report": 14,
+    "file": "ic14-plantillav7.txt",
+    "rows": 3
+   },
+   {
+    "report": 15,
+    "file": "ic15_v5.txt",
+    "rows": 5
+   },
+   {
+    "report": 17,
+    "file": "ic17_a18deoctubre.txt",
+    "rows": 5
+   },
+   {
+    "report": 18,
+    "file": "ic18_def.txt",
+    "rows": 3
+   },
+   {
+    "report": 19,
+    "file": "ic19.txt",
+    "rows": 5
+   },
+   {
+    "report": 21,
+    "file": "ic21.txt",
+    "rows": 5
+   },
+   {
+    "report": 22,
+    "file": "ic22def.txt",
+    "rows": 5
+   },
+   {
+    "report": 23,
+    "file": "ic23.txt",
+    "rows": 5
+   },
+   {
+    "report": 24,
+    "file": "ic24a28dejunio.txt",
+    "rows": 5
+   },
+   {
+    "report": 25,
+    "file": "ic25_vf.txt",
+    "rows": 5
+   },
+   {
+    "report": 26,
+    "file": "ic26_vf.txt",
+    "rows": 5
+   },
+   {
+    "report": 27,
+    "file": "ic27_vf.txt",
+    "rows": 5
+   },
+   {
+    "report": 28,
+    "file": "ic28vfplan4041.txt",
+    "rows": 5
+   },
+   {
+    "report": 29,
+    "file": "ic29vf1ersemestre2021.txt",
+    "rows": 5
+   },
+   {
+    "report": 31,
+    "file": "ic31v3.txt",
+    "rows": 5
+   },
+   {
+    "report": 20,
+    "file": "ic_20.txt",
+    "rows": 5
+   },
+   {
+    "report": 16,
+    "file": "informe_contratacion_n_16.txt",
+    "rows": 5
+   },
+   {
+    "report": 30,
+    "file": "informedecontrataciondelseguroagrarion302trimestre2021.txt",
+    "rows": 0
+   }
+  ],
+  "notes": [
+   "nº 1: fila descartada (ytd): 2013                         409.167                        263,2                23.962.89",
+   "nº 1: fila descartada (ytd): 2012                         411.148                        270,1                21.716.90",
+   "nº 1: fila descartada (ytd): 2012           485.002             5.537.644                   299,4             28.237.13",
+   "nº 1: sin filas válidas (formato no reconocido)",
+   "nº 1: sin filas válidas (formato no reconocido)",
+   "nº 3: fila descartada (ytd): 2012           485.003             5.537.985                299,4           28.252.882    ",
+   "nº 5: fila descartada (ytd): 2013              489.674             7.021.228               289          31.902.401     ",
+   "nº 7: fila descartada (ytd): 2013        489.719          7.021.833        291         31.924.237            11.523    ",
+   "ytd 2014: nº 5 vs nº 9 difieren en subv_ccaa_meur (se usa el nº 9)",
+   "ytd 2013: nº 5 vs nº 9 difieren en subv_ccaa_meur (se usa el nº 9)",
+   "nº 2: fila descartada (ytd): 2012           484.930                5.537.644             299,4            28.237.132   ",
+   "nº 6: fila descartada (ytd): 2013        489.696          7.021.813        290         31.904.750            11.514    ",
+   "nº 4: fila descartada (ytd): 2013             489.610            7.015.205             288,7          31.914.552       ",
+   "nº 10: fila descartada (ytd): 2014          447.557                290          29.515.512            11.094           5",
+   "nº 10: fila descartada (ytd): 2013          489.718                291          31.924.637            11.523           6",
+   "nº 11: fila descartada (ytd): 2014          447.566                290           29.534.969         11.104            58",
+   "nº 12: fila descartada (ytd): 2015          441.011                284           33.431.781         12.083            66",
+   "nº 13: fila descartada (ytd): 2015            441.060                288           33.466.212         12.095            ",
+   "ytd 2015: nº 10 vs nº 13 difieren en coste_neto_meur (se usa el nº 13)",
+   "ytd 2014: nº 10 vs nº 13 difieren en subv_ccaa_meur (se usa el nº 13)",
+   "nº 14: fila descartada (ytd): 2015                  441.062                      290                 33.501.619         ",
+   "nº 17: título y frase de corte no coinciden (8 SEPTIEMRBE vs 8/9); se usa la frase",
+   "nº 18: fila descartada (ytd): 2017               363.138               264                    27.471.                  1",
+   "nº 18: fila descartada (ytd): 2015               374.426               261                    24.771.                   ",
+   "nº 24: título y frase de corte no coinciden (8 MARZO vs 8/6); se usa la frase",
+   "annual 2018: nº 23 vs nº 24 difieren en animales_millones (se usa el nº 24)",
+   "annual 2018: nº 24 vs nº 26 difieren en animales_millones,subv_ccaa_meur (se usa el nº 26)",
+   "annual 2017: nº 25 vs nº 26 difieren en subv_ccaa_meur (se usa el nº 26)",
+   "annual 2018: nº 26 vs nº 27 difieren en subv_ccaa_meur (se usa el nº 27)",
+   "annual 2020: nº 29 vs nº 31 difieren en subv_ccaa_meur (se usa el nº 31)",
+   "nº 20: título y frase de corte no coinciden (8 MARZO vs 8/6); se usa la frase",
+   "nº 30: sin filas válidas (formato no reconocido)"
+  ]
+ },
+ "annual": [
+  {
+   "polizas": 489718.0,
+   "animales_millones": 291.0,
+   "produccion_kt": 31924.6,
+   "capital_meur": 11523.0,
+   "coste_neto_meur": 644.0,
+   "subv_enesa_meur": 206.0,
+   "subv_ccaa_meur": 46.0,
+   "indemnizaciones_meur": 474.0,
+   "year": 2013,
+   "provisional": false,
+   "report": 9
+  },
+  {
+   "polizas": 441063.0,
+   "animales_millones": 290.0,
+   "produccion_kt": 33502.0,
+   "capital_meur": 12113.0,
+   "coste_neto_meur": 665.0,
+   "subv_enesa_meur": 229.0,
+   "subv_ccaa_meur": 61.0,
+   "indemnizaciones_meur": 456.0,
+   "year": 2015,
+   "provisional": false,
+   "report": 18
+  },
+  {
+   "polizas": 423888.0,
+   "animales_millones": 258.0,
+   "produccion_kt": 34266.0,
+   "capital_meur": 12788.0,
+   "coste_neto_meur": 706.0,
+   "subv_enesa_meur": 256.0,
+   "subv_ccaa_meur": 72.0,
+   "indemnizaciones_meur": 468.0,
+   "year": 2016,
+   "provisional": false,
+   "report": 22
+  },
+  {
+   "polizas": 426603.0,
+   "animales_millones": 308.0,
+   "produccion_kt": 36322.0,
+   "capital_meur": 13770.0,
+   "coste_neto_meur": 789.0,
+   "subv_enesa_meur": 253.0,
+   "subv_ccaa_meur": 64.0,
+   "indemnizaciones_meur": 700.0,
+   "year": 2017,
+   "provisional": false,
+   "report": 26
+  },
+  {
+   "polizas": 419875.0,
+   "animales_millones": 316.0,
+   "produccion_kt": 36556.0,
+   "capital_meur": 14079.25,
+   "coste_neto_meur": 757.79,
+   "subv_enesa_meur": 226.05,
+   "subv_ccaa_meur": 91.8,
+   "indemnizaciones_meur": 703.92,
+   "year": 2018,
+   "provisional": false,
+   "report": 28
+  },
+  {
+   "polizas": 397073.0,
+   "animales_millones": 337.0,
+   "produccion_kt": 36337.0,
+   "capital_meur": 14219.0,
+   "coste_neto_meur": 782.0,
+   "subv_enesa_meur": 239.0,
+   "subv_ccaa_meur": 93.0,
+   "indemnizaciones_meur": 591.0,
+   "year": 2019,
+   "provisional": false,
+   "report": 29
+  },
+  {
+   "polizas": 415184.0,
+   "animales_millones": 328.3,
+   "produccion_kt": 41044.9,
+   "capital_meur": 15259.9,
+   "coste_neto_meur": 797.9,
+   "subv_enesa_meur": 238.3,
+   "subv_ccaa_meur": 94.0,
+   "indemnizaciones_meur": 585.5,
+   "year": 2020,
+   "provisional": false,
+   "report": 31
+  },
+  {
+   "polizas": 408901.0,
+   "animales_millones": 344.2,
+   "produccion_kt": 41065.3,
+   "capital_meur": 15668.2,
+   "coste_neto_meur": 830.4,
+   "subv_enesa_meur": 262.5,
+   "subv_ccaa_meur": 99.5,
+   "indemnizaciones_meur": 708.1,
+   "year": 2021,
+   "provisional": true,
+   "report": 31
+  }
+ ],
+ "ytd": [
+  {
+   "polizas": 380782.0,
+   "animales_millones": 214.5,
+   "produccion_kt": 24323.3,
+   "capital_meur": 8722.0,
+   "coste_neto_meur": 511.0,
+   "subv_enesa_meur": 193.0,
+   "subv_ccaa_meur": 99.0,
+   "indemnizaciones_meur": null,
+   "year": 2011,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 9
+   },
+   "report": 2
+  },
+  {
+   "polizas": 429022.0,
+   "animales_millones": 278.9,
+   "produccion_kt": 25522.6,
+   "capital_meur": 9900.0,
+   "coste_neto_meur": 581.0,
+   "subv_enesa_meur": 221.0,
+   "subv_ccaa_meur": 109.0,
+   "indemnizaciones_meur": null,
+   "year": 2011,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 12
+   },
+   "report": 3
+  },
+  {
+   "polizas": 105589.0,
+   "animales_millones": 59.3,
+   "produccion_kt": 2872.0,
+   "capital_meur": 2144.0,
+   "coste_neto_meur": 216.0,
+   "subv_enesa_meur": 86.0,
+   "subv_ccaa_meur": 39.0,
+   "indemnizaciones_meur": null,
+   "year": 2012,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 3
+   },
+   "report": 4
+  },
+  {
+   "polizas": 283878.0,
+   "animales_millones": 144.2,
+   "produccion_kt": 16578.3,
+   "capital_meur": 5907.0,
+   "coste_neto_meur": 406.0,
+   "subv_enesa_meur": 163.0,
+   "subv_ccaa_meur": 69.0,
+   "indemnizaciones_meur": null,
+   "year": 2012,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 6
+   },
+   "report": 5
+  },
+  {
+   "polizas": 375188.0,
+   "animales_millones": 219.7,
+   "produccion_kt": 21213.8,
+   "capital_meur": 8563.0,
+   "coste_neto_meur": 542.0,
+   "subv_enesa_meur": 218.0,
+   "subv_ccaa_meur": 88.0,
+   "indemnizaciones_meur": null,
+   "year": 2012,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 9
+   },
+   "report": 6
+  },
+  {
+   "polizas": 422930.0,
+   "animales_millones": 278.0,
+   "produccion_kt": 22128.4,
+   "capital_meur": 9664.0,
+   "coste_neto_meur": 600.0,
+   "subv_enesa_meur": 243.0,
+   "subv_ccaa_meur": 92.0,
+   "indemnizaciones_meur": null,
+   "year": 2012,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 12
+   },
+   "report": 7
+  },
+  {
+   "polizas": 87838.0,
+   "animales_millones": 59.0,
+   "produccion_kt": 2229.7,
+   "capital_meur": 1745.0,
+   "coste_neto_meur": 177.0,
+   "subv_enesa_meur": 71.0,
+   "subv_ccaa_meur": 19.0,
+   "indemnizaciones_meur": null,
+   "year": 2013,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 3
+   },
+   "report": 8
+  },
+  {
+   "polizas": 87838.0,
+   "animales_millones": 58.6,
+   "produccion_kt": 2229.7,
+   "capital_meur": 1745.0,
+   "coste_neto_meur": 177.0,
+   "subv_enesa_meur": 71.0,
+   "subv_ccaa_meur": 19.0,
+   "indemnizaciones_meur": null,
+   "year": 2013,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 3
+   },
+   "report": 4
+  },
+  {
+   "polizas": 291744.0,
+   "animales_millones": 144.0,
+   "produccion_kt": 17990.9,
+   "capital_meur": 5957.0,
+   "coste_neto_meur": 355.0,
+   "subv_enesa_meur": 123.0,
+   "subv_ccaa_meur": 30.0,
+   "indemnizaciones_meur": null,
+   "year": 2013,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 6
+   },
+   "report": 9
+  },
+  {
+   "polizas": 373638.0,
+   "animales_millones": 209.4,
+   "produccion_kt": 23259.7,
+   "capital_meur": 8346.0,
+   "coste_neto_meur": 456.0,
+   "subv_enesa_meur": 148.0,
+   "subv_ccaa_meur": 38.0,
+   "indemnizaciones_meur": null,
+   "year": 2013,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 9
+   },
+   "report": 10
+  },
+  {
+   "polizas": 422568.0,
+   "animales_millones": 274.0,
+   "produccion_kt": 24537.1,
+   "capital_meur": 9671.0,
+   "coste_neto_meur": 514.0,
+   "subv_enesa_meur": 164.0,
+   "subv_ccaa_meur": 41.0,
+   "indemnizaciones_meur": null,
+   "year": 2013,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 12
+   },
+   "report": 11
+  },
+  {
+   "polizas": 80470.0,
+   "animales_millones": 52.0,
+   "produccion_kt": 1978.7,
+   "capital_meur": 1603.0,
+   "coste_neto_meur": 144.0,
+   "subv_enesa_meur": 45.0,
+   "subv_ccaa_meur": 10.0,
+   "indemnizaciones_meur": null,
+   "year": 2014,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 3
+   },
+   "report": 8
+  },
+  {
+   "polizas": 92250.0,
+   "animales_millones": 59.4,
+   "produccion_kt": 2282.4,
+   "capital_meur": 1804.0,
+   "coste_neto_meur": 160.0,
+   "subv_enesa_meur": 50.0,
+   "subv_ccaa_meur": 11.0,
+   "indemnizaciones_meur": null,
+   "year": 2014,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 3
+   },
+   "report": 4
+  },
+  {
+   "polizas": 139532.0,
+   "animales_millones": 88.0,
+   "produccion_kt": 4867.5,
+   "capital_meur": 2792.31,
+   "coste_neto_meur": 210.73,
+   "subv_enesa_meur": 63.1,
+   "subv_ccaa_meur": 13.33,
+   "indemnizaciones_meur": null,
+   "year": 2014,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 4
+   },
+   "report": 12
+  },
+  {
+   "polizas": 258380.0,
+   "animales_millones": 138.0,
+   "produccion_kt": 15732.4,
+   "capital_meur": 5444.0,
+   "coste_neto_meur": 306.0,
+   "subv_enesa_meur": 86.0,
+   "subv_ccaa_meur": 26.0,
+   "indemnizaciones_meur": null,
+   "year": 2014,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 6
+   },
+   "report": 9
+  },
+  {
+   "polizas": 338977.0,
+   "animales_millones": 204.0,
+   "produccion_kt": 21404.2,
+   "capital_meur": 7902.0,
+   "coste_neto_meur": 413.0,
+   "subv_enesa_meur": 117.0,
+   "subv_ccaa_meur": 28.0,
+   "indemnizaciones_meur": null,
+   "year": 2014,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 9
+   },
+   "report": 13
+  },
+  {
+   "polizas": 391524.0,
+   "animales_millones": 270.0,
+   "produccion_kt": 23281.0,
+   "capital_meur": 9455.0,
+   "coste_neto_meur": 479.0,
+   "subv_enesa_meur": 139.0,
+   "subv_ccaa_meur": 31.0,
+   "indemnizaciones_meur": null,
+   "year": 2014,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 12
+   },
+   "report": 14
+  },
+  {
+   "polizas": 75226.0,
+   "animales_millones": 56.0,
+   "produccion_kt": 1960.0,
+   "capital_meur": 1480.0,
+   "coste_neto_meur": 142.0,
+   "subv_enesa_meur": 48.0,
+   "subv_ccaa_meur": 12.0,
+   "indemnizaciones_meur": null,
+   "year": 2015,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 3
+   },
+   "report": 15
+  },
+  {
+   "polizas": 126093.0,
+   "animales_millones": 88.0,
+   "produccion_kt": 5270.4,
+   "capital_meur": 2653.4,
+   "coste_neto_meur": 212.91,
+   "subv_enesa_meur": 70.55,
+   "subv_ccaa_meur": 16.19,
+   "indemnizaciones_meur": null,
+   "year": 2015,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 4
+   },
+   "report": 12
+  },
+  {
+   "polizas": 247741.0,
+   "animales_millones": 133.0,
+   "produccion_kt": 16776.0,
+   "capital_meur": 5424.43,
+   "coste_neto_meur": 311.97,
+   "subv_enesa_meur": 96.37,
+   "subv_ccaa_meur": 20.85,
+   "indemnizaciones_meur": null,
+   "year": 2015,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 6
+   },
+   "report": 16
+  },
+  {
+   "polizas": 323890.0,
+   "animales_millones": 202.0,
+   "produccion_kt": 22569.0,
+   "capital_meur": 7948.71,
+   "coste_neto_meur": 422.38,
+   "subv_enesa_meur": 130.85,
+   "subv_ccaa_meur": 32.32,
+   "indemnizaciones_meur": null,
+   "year": 2015,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 9
+   },
+   "report": 17
+  },
+  {
+   "polizas": 327959.0,
+   "animales_millones": 205.0,
+   "produccion_kt": 22749.4,
+   "capital_meur": 8174.0,
+   "coste_neto_meur": 431.0,
+   "subv_enesa_meur": 134.0,
+   "subv_ccaa_meur": 33.0,
+   "indemnizaciones_meur": null,
+   "year": 2015,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 9
+   },
+   "report": 13
+  },
+  {
+   "polizas": 374426.0,
+   "animales_millones": 261.0,
+   "produccion_kt": 24771.0,
+   "capital_meur": 9884.0,
+   "coste_neto_meur": 508.0,
+   "subv_enesa_meur": 163.0,
+   "subv_ccaa_meur": 36.0,
+   "indemnizaciones_meur": null,
+   "year": 2015,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 12
+   },
+   "report": 14
+  },
+  {
+   "polizas": 76887.0,
+   "animales_millones": 48.0,
+   "produccion_kt": 2905.0,
+   "capital_meur": 1966.0,
+   "coste_neto_meur": 197.0,
+   "subv_enesa_meur": 78.0,
+   "subv_ccaa_meur": 15.0,
+   "indemnizaciones_meur": null,
+   "year": 2016,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 3
+   },
+   "report": 19
+  },
+  {
+   "polizas": 128534.0,
+   "animales_millones": 76.0,
+   "produccion_kt": 6595.7,
+   "capital_meur": 3161.34,
+   "coste_neto_meur": 260.99,
+   "subv_enesa_meur": 99.26,
+   "subv_ccaa_meur": 18.86,
+   "indemnizaciones_meur": null,
+   "year": 2016,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 4
+   },
+   "report": 12
+  },
+  {
+   "polizas": 248663.0,
+   "animales_millones": 107.0,
+   "produccion_kt": 18485.0,
+   "capital_meur": 6030.0,
+   "coste_neto_meur": 368.0,
+   "subv_enesa_meur": 131.0,
+   "subv_ccaa_meur": 25.0,
+   "indemnizaciones_meur": null,
+   "year": 2016,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 6
+   },
+   "report": 20
+  },
+  {
+   "polizas": 323125.0,
+   "animales_millones": 164.0,
+   "produccion_kt": 24817.0,
+   "capital_meur": 8888.0,
+   "coste_neto_meur": 493.0,
+   "subv_enesa_meur": 174.0,
+   "subv_ccaa_meur": 37.0,
+   "indemnizaciones_meur": null,
+   "year": 2016,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 9
+   },
+   "report": 21
+  },
+  {
+   "polizas": 327532.0,
+   "animales_millones": 167.0,
+   "produccion_kt": 25086.2,
+   "capital_meur": 9092.0,
+   "coste_neto_meur": 506.0,
+   "subv_enesa_meur": 178.0,
+   "subv_ccaa_meur": 37.0,
+   "indemnizaciones_meur": null,
+   "year": 2016,
+   "provisional": false,
+   "cutoff": {
+    "day": 15,
+    "month": 9
+   },
+   "report": 13
+  },
+  {
+   "polizas": 372530.0,
+   "animales_millones": 228.0,
+   "produccion_kt": 27205.0,
+   "capital_meur": 10858.0,
+   "coste_neto_meur": 587.0,
+   "subv_enesa_meur": 208.0,
+   "subv_ccaa_meur": 41.0,
+   "indemnizaciones_meur": null,
+   "year": 2016,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 12
+   },
+   "report": 18
+  },
+  {
+   "polizas": 72612.0,
+   "animales_millones": 58.0,
+   "produccion_kt": 2593.0,
+   "capital_meur": 1892.0,
+   "coste_neto_meur": 177.0,
+   "subv_enesa_meur": 60.0,
+   "subv_ccaa_meur": 15.0,
+   "indemnizaciones_meur": null,
+   "year": 2017,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 3
+   },
+   "report": 23
+  },
+  {
+   "polizas": 237183.0,
+   "animales_millones": 134.0,
+   "produccion_kt": 18295.0,
+   "capital_meur": 6261.68,
+   "coste_neto_meur": 367.13,
+   "subv_enesa_meur": 114.12,
+   "subv_ccaa_meur": 28.66,
+   "indemnizaciones_meur": null,
+   "year": 2017,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 6
+   },
+   "report": 24
+  },
+  {
+   "polizas": 302468.0,
+   "animales_millones": 197.0,
+   "produccion_kt": 23456.0,
+   "capital_meur": 9021.0,
+   "coste_neto_meur": 502.0,
+   "subv_enesa_meur": 151.0,
+   "subv_ccaa_meur": 44.0,
+   "indemnizaciones_meur": null,
+   "year": 2017,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 9
+   },
+   "report": 25
+  },
+  {
+   "polizas": 72777.0,
+   "animales_millones": 63.0,
+   "produccion_kt": 3058.0,
+   "capital_meur": 2136.0,
+   "coste_neto_meur": 193.0,
+   "subv_enesa_meur": 65.0,
+   "subv_ccaa_meur": 19.0,
+   "indemnizaciones_meur": null,
+   "year": 2018,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 3
+   },
+   "report": 23
+  },
+  {
+   "polizas": 247466.0,
+   "animales_millones": 137.0,
+   "produccion_kt": 20095.0,
+   "capital_meur": 6799.96,
+   "coste_neto_meur": 382.87,
+   "subv_enesa_meur": 111.89,
+   "subv_ccaa_meur": 36.2,
+   "indemnizaciones_meur": null,
+   "year": 2018,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 6
+   },
+   "report": 24
+  },
+  {
+   "polizas": 311765.0,
+   "animales_millones": 205.0,
+   "produccion_kt": 25395.0,
+   "capital_meur": 9663.0,
+   "coste_neto_meur": 517.0,
+   "subv_enesa_meur": 149.0,
+   "subv_ccaa_meur": 51.0,
+   "indemnizaciones_meur": null,
+   "year": 2018,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 9
+   },
+   "report": 27
+  },
+  {
+   "polizas": 71000.0,
+   "animales_millones": 63.0,
+   "produccion_kt": 3315.0,
+   "capital_meur": 2246.0,
+   "coste_neto_meur": 205.0,
+   "subv_enesa_meur": 68.0,
+   "subv_ccaa_meur": 23.0,
+   "indemnizaciones_meur": null,
+   "year": 2019,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 3
+   },
+   "report": 23
+  },
+  {
+   "polizas": 221515.0,
+   "animales_millones": 146.0,
+   "produccion_kt": 18608.0,
+   "capital_meur": 6543.51,
+   "coste_neto_meur": 385.55,
+   "subv_enesa_meur": 114.92,
+   "subv_ccaa_meur": 38.21,
+   "indemnizaciones_meur": null,
+   "year": 2019,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 6
+   },
+   "report": 24
+  },
+  {
+   "polizas": 247819.0,
+   "animales_millones": 161.0,
+   "produccion_kt": 21394.0,
+   "capital_meur": 7629.0,
+   "coste_neto_meur": 438.0,
+   "subv_enesa_meur": 128.0,
+   "subv_ccaa_meur": 46.0,
+   "indemnizaciones_meur": null,
+   "year": 2019,
+   "provisional": false,
+   "cutoff": {
+    "day": 30,
+    "month": 6
+   },
+   "report": 29
+  },
+  {
+   "polizas": 287244.0,
+   "animales_millones": 216.0,
+   "produccion_kt": 24509.0,
+   "capital_meur": 9612.0,
+   "coste_neto_meur": 524.0,
+   "subv_enesa_meur": 154.0,
+   "subv_ccaa_meur": 54.0,
+   "indemnizaciones_meur": null,
+   "year": 2019,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 9
+   },
+   "report": 27
+  },
+  {
+   "polizas": 270730.0,
+   "animales_millones": 151.0,
+   "produccion_kt": 26565.6,
+   "capital_meur": 8803.1,
+   "coste_neto_meur": 472.4,
+   "subv_enesa_meur": 135.6,
+   "subv_ccaa_meur": 46.7,
+   "indemnizaciones_meur": null,
+   "year": 2020,
+   "provisional": false,
+   "cutoff": {
+    "day": 30,
+    "month": 6
+   },
+   "report": 31
+  },
+  {
+   "polizas": 307264.0,
+   "animales_millones": 206.0,
+   "produccion_kt": 29221.0,
+   "capital_meur": 10732.0,
+   "coste_neto_meur": 550.0,
+   "subv_enesa_meur": 158.0,
+   "subv_ccaa_meur": 54.0,
+   "indemnizaciones_meur": null,
+   "year": 2020,
+   "provisional": false,
+   "cutoff": {
+    "day": 8,
+    "month": 9
+   },
+   "report": 27
+  },
+  {
+   "polizas": 261597.0,
+   "animales_millones": 164.0,
+   "produccion_kt": 26410.0,
+   "capital_meur": 9010.2,
+   "coste_neto_meur": 477.4,
+   "subv_enesa_meur": 141.8,
+   "subv_ccaa_meur": 47.4,
+   "indemnizaciones_meur": null,
+   "year": 2021,
+   "provisional": true,
+   "cutoff": {
+    "day": 30,
+    "month": 6
+   },
+   "report": 31
+  },
+  {
+   "polizas": 243680.0,
+   "animales_millones": 224.0,
+   "produccion_kt": 23816.2,
+   "capital_meur": 9066.1,
+   "coste_neto_meur": 487.2,
+   "subv_enesa_meur": 153.2,
+   "subv_ccaa_meur": 54.6,
+   "indemnizaciones_meur": null,
+   "year": 2022,
+   "provisional": true,
+   "cutoff": {
+    "day": 30,
+    "month": 6
+   },
+   "report": 31
+  }
+ ],
+ "snapshots": [
+  {
+   "polizas": 447490.0,
+   "animales_millones": 289.0,
+   "produccion_kt": 29501.2,
+   "capital_meur": 11081.0,
+   "coste_neto_meur": 585.0,
+   "subv_enesa_meur": 199.0,
+   "subv_ccaa_meur": 52.0,
+   "indemnizaciones_meur": 435.0,
+   "year": 2014,
+   "provisional": false,
+   "as_of": "2015-03-08",
+   "report": 8
+  },
+  {
+   "polizas": 447529.0,
+   "animales_millones": 290.0,
+   "produccion_kt": 29513.8,
+   "capital_meur": 11090.0,
+   "coste_neto_meur": 586.0,
+   "subv_enesa_meur": 200.0,
+   "subv_ccaa_meur": 52.0,
+   "indemnizaciones_meur": 458.0,
+   "year": 2014,
+   "provisional": false,
+   "as_of": "2015-06-08",
+   "report": 9
+  },
+  {
+   "polizas": 423221.0,
+   "animales_millones": 245.0,
+   "produccion_kt": 33939.0,
+   "capital_meur": 12626.0,
+   "coste_neto_meur": 698.0,
+   "subv_enesa_meur": 253.0,
+   "subv_ccaa_meur": 72.0,
+   "indemnizaciones_meur": null,
+   "year": 2016,
+   "provisional": false,
+   "as_of": "2017-01-08",
+   "report": 22
+  },
+  {
+   "polizas": 423772.0,
+   "animales_millones": 248.0,
+   "produccion_kt": 34164.0,
+   "capital_meur": 12722.0,
+   "coste_neto_meur": 703.0,
+   "subv_enesa_meur": 255.0,
+   "subv_ccaa_meur": 72.0,
+   "indemnizaciones_meur": 468.0,
+   "year": 2016,
+   "provisional": false,
+   "as_of": "2017-03-08",
+   "report": 15
+  },
+  {
+   "polizas": 423843.0,
+   "animales_millones": 254.0,
+   "produccion_kt": 34194.0,
+   "capital_meur": 12741.66,
+   "coste_neto_meur": 704.61,
+   "subv_enesa_meur": 255.65,
+   "subv_ccaa_meur": 71.67,
+   "indemnizaciones_meur": 467.79,
+   "year": 2016,
+   "provisional": false,
+   "as_of": "2017-06-08",
+   "report": 16
+  },
+  {
+   "polizas": 423881.0,
+   "animales_millones": 257.0,
+   "produccion_kt": 34201.0,
+   "capital_meur": 12748.37,
+   "coste_neto_meur": 704.95,
+   "subv_enesa_meur": 255.75,
+   "subv_ccaa_meur": 71.67,
+   "indemnizaciones_meur": 467.79,
+   "year": 2016,
+   "provisional": false,
+   "as_of": "2017-09-08",
+   "report": 17
+  },
+  {
+   "polizas": 425516.0,
+   "animales_millones": 282.0,
+   "produccion_kt": 36017.0,
+   "capital_meur": 13633.0,
+   "coste_neto_meur": 782.0,
+   "subv_enesa_meur": 250.0,
+   "subv_ccaa_meur": 80.0,
+   "indemnizaciones_meur": null,
+   "year": 2017,
+   "provisional": false,
+   "as_of": "2018-01-08",
+   "report": 26
+  },
+  {
+   "polizas": 426428.0,
+   "animales_millones": 291.0,
+   "produccion_kt": 36249.0,
+   "capital_meur": 13709.0,
+   "coste_neto_meur": 787.0,
+   "subv_enesa_meur": 252.0,
+   "subv_ccaa_meur": 79.0,
+   "indemnizaciones_meur": 702.0,
+   "year": 2017,
+   "provisional": false,
+   "as_of": "2018-03-08",
+   "report": 19
+  },
+  {
+   "polizas": 426578.0,
+   "animales_millones": 302.0,
+   "produccion_kt": 36256.0,
+   "capital_meur": 13727.0,
+   "coste_neto_meur": 787.0,
+   "subv_enesa_meur": 253.0,
+   "subv_ccaa_meur": 80.0,
+   "indemnizaciones_meur": 702.0,
+   "year": 2017,
+   "provisional": false,
+   "as_of": "2018-06-08",
+   "report": 20
+  },
+  {
+   "polizas": 426602.0,
+   "animales_millones": 307.0,
+   "produccion_kt": 36265.0,
+   "capital_meur": 13738.0,
+   "coste_neto_meur": 788.0,
+   "subv_enesa_meur": 253.0,
+   "subv_ccaa_meur": 80.0,
+   "indemnizaciones_meur": 702.0,
+   "year": 2017,
+   "provisional": false,
+   "as_of": "2018-09-08",
+   "report": 21
+  },
+  {
+   "polizas": 419178.0,
+   "animales_millones": 297.0,
+   "produccion_kt": 36245.0,
+   "capital_meur": 13982.0,
+   "coste_neto_meur": 752.0,
+   "subv_enesa_meur": 223.0,
+   "subv_ccaa_meur": 88.0,
+   "indemnizaciones_meur": null,
+   "year": 2018,
+   "provisional": false,
+   "as_of": "2019-01-08",
+   "report": 26
+  },
+  {
+   "polizas": 419742.0,
+   "animales_millones": 300.0,
+   "produccion_kt": 36443.0,
+   "capital_meur": 14022.33,
+   "coste_neto_meur": 754.15,
+   "subv_enesa_meur": 224.77,
+   "subv_ccaa_meur": 91.37,
+   "indemnizaciones_meur": null,
+   "year": 2018,
+   "provisional": false,
+   "as_of": "2019-02-15",
+   "report": 28
+  },
+  {
+   "polizas": 419867.0,
+   "animales_millones": 315.0,
+   "produccion_kt": 36552.0,
+   "capital_meur": 14072.0,
+   "coste_neto_meur": 757.0,
+   "subv_enesa_meur": 226.0,
+   "subv_ccaa_meur": 92.0,
+   "indemnizaciones_meur": 708.0,
+   "year": 2018,
+   "provisional": false,
+   "as_of": "2019-09-08",
+   "report": 25
+  },
+  {
+   "polizas": 397159.0,
+   "animales_millones": 323.0,
+   "produccion_kt": 36225.0,
+   "capital_meur": 14163.0,
+   "coste_neto_meur": 778.0,
+   "subv_enesa_meur": 237.0,
+   "subv_ccaa_meur": 94.0,
+   "indemnizaciones_meur": null,
+   "year": 2019,
+   "provisional": false,
+   "as_of": "2020-01-08",
+   "report": 26
+  },
+  {
+   "polizas": 397107.0,
+   "animales_millones": 328.0,
+   "produccion_kt": 36263.0,
+   "capital_meur": 14178.64,
+   "coste_neto_meur": 778.41,
+   "subv_enesa_meur": 237.56,
+   "subv_ccaa_meur": 92.64,
+   "indemnizaciones_meur": null,
+   "year": 2019,
+   "provisional": false,
+   "as_of": "2020-02-15",
+   "report": 28
+  },
+  {
+   "polizas": 397073.0,
+   "animales_millones": 337.0,
+   "produccion_kt": 36337.0,
+   "capital_meur": 14219.0,
+   "coste_neto_meur": 782.0,
+   "subv_enesa_meur": 239.0,
+   "subv_ccaa_meur": 93.0,
+   "indemnizaciones_meur": 593.0,
+   "year": 2019,
+   "provisional": false,
+   "as_of": "2020-09-08",
+   "report": 27
+  },
+  {
+   "polizas": 415915.0,
+   "animales_millones": 318.0,
+   "produccion_kt": 40985.0,
+   "capital_meur": 15222.26,
+   "coste_neto_meur": 795.14,
+   "subv_enesa_meur": 237.25,
+   "subv_ccaa_meur": 92.69,
+   "indemnizaciones_meur": null,
+   "year": 2020,
+   "provisional": false,
+   "as_of": "2021-02-15",
+   "report": 28
+  }
+ ]
+}
