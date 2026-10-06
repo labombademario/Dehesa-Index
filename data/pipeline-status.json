@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T18:59:00Z",
+ "generatedAt": "2026-10-06T19:05:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 91,
@@ -11,17 +11,12 @@
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "unknown",
   "site": "https://dehesaindex.com",
-  "build": {
-   "sha": "7ee942d5",
-   "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/3ebacba8-3ddb-4549-841f-453da025e98f",
-   "completedAt": "2026-10-06T18:08:10Z"
-  },
+  "build": null,
   "lagHours": null,
   "prodGeneratedAt": null,
-  "repoGeneratedAt": "2026-10-06T15:30:19.502413+00:00"
+  "repoGeneratedAt": "2026-10-06T18:30:50.458679+00:00"
  },
  "pipelines": [
   {
