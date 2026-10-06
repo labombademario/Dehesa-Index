@@ -8,6 +8,7 @@ on:
   push:
     paths:
       - "scripts/update-weekly-blog.py"
+      - "scripts/build-blog-editions.py"
       - ".github/workflows/update-weekly-blog.yml"
 
 permissions:
@@ -28,10 +29,13 @@ jobs:
       - name: Archive this week's news and rebuild the weekly summaries
         run: python3 scripts/update-weekly-blog.py
 
+      - name: Ediciones del blog (borrador DRAFT en 4 idiomas, Markdown, newsletter corta, fuentes y canonica; nunca publica en Substack)
+        run: python3 scripts/build-blog-editions.py
+
       - name: Validar contrato de datos (lo invalido se descarta y la ejecucion queda en rojo)
         uses: ./.github/actions/validate-files
         with:
-          files: data/blog/weekly/*.json data/news-archive/*.json
+          files: data/blog/weekly/*.json data/blog/editions/*.json data/news-archive/*.json
 
       - name: Commit weekly blog data
         run: |

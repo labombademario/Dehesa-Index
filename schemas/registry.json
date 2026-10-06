@@ -854,6 +854,12 @@
     "us_county_yields"
    ]
   ],
+  "blog/editions/20*.json": [
+   "blog-edition",
+   [
+    "blog_edition"
+   ]
+  ],
   "blog/weekly/20*.json": [
    "blog-weekly",
    [

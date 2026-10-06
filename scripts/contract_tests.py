@@ -2949,6 +2949,34 @@ def blog_weekly_index(doc, errs, warns, stats):
     stats["blog-weekly semanas"] = len(ws)
 
 
+def blog_edition(doc, errs, warns, stats):
+    """Edicion del blog semanal (archivo editorial unico, derivado del resumen): nace DRAFT sin revisor; APPROVED/PUBLISHED exigen revisor y fecha; Substack solo distribuye (nada
+    publicado mientras sea DRAFT); canonica en dehesaindex.com; 4 idiomas con titulo, extracto, Markdown limpio y newsletter mas corta; cada fuente es un titular del resumen de esa semana."""
+    try: lo, hi = _wk_bounds(doc["week"])
+    except Exception: errs.append("blog-edition: semana invalida %r" % doc.get("week")); return
+    if (doc["from"], doc["to"]) != (lo, hi): errs.append("blog-edition %s: from/to no son lunes-domingo" % doc["week"]); return
+    ed, st = doc["editorial"], doc["status"]
+    if st == "DRAFT" and (ed["reviewedBy"] or ed["reviewedAt"]): errs.append("blog-edition %s: DRAFT con revisor" % doc["week"]); return
+    if st != "DRAFT" and (not ed["reviewedBy"] or _cap_date(ed["reviewedAt"] or "") is None): errs.append("blog-edition %s: %s sin revisor o fecha de revision" % (doc["week"], st)); return
+    sub = doc["distribution"]["substack"]
+    if st != "PUBLISHED" and sub["state"] != "NOT_PUBLISHED": errs.append("blog-edition %s: Substack marcado publicado sin estado PUBLISHED" % doc["week"]); return
+    if st == "DRAFT" and sub["url"]: errs.append("blog-edition %s: DRAFT con URL de Substack" % doc["week"]); return
+    if doc["canonicalUrl"] != "https://dehesaindex.com/blog.html#" + doc["week"]: errs.append("blog-edition %s: canonica distinta de dehesaindex.com" % doc["week"]); return
+    for lg in ("es", "en", "fr", "it"):
+        L = doc["languages"].get(lg)
+        if not L or not all(L.get(k, "").strip() for k in ("title", "excerpt", "markdown", "newsletterMarkdown")): errs.append("blog-edition %s: idioma %s incompleto" % (doc["week"], lg)); return
+        if not L["markdown"].startswith("# " + L["title"]) or not L["newsletterMarkdown"].startswith("# " + L["title"]): errs.append("blog-edition %s %s: el Markdown no abre con el titulo" % (doc["week"], lg)); return
+        if len(L["newsletterMarkdown"]) >= len(L["markdown"]): errs.append("blog-edition %s %s: la newsletter debe ser mas corta que el articulo" % (doc["week"], lg)); return
+        if doc["canonicalUrl"] not in L["newsletterMarkdown"]: errs.append("blog-edition %s %s: la newsletter no enlaza a la canonica" % (doc["week"], lg)); return
+        if "<" in L["markdown"] or "<script" in L["newsletterMarkdown"]: errs.append("blog-edition %s %s: HTML dentro del Markdown" % (doc["week"], lg)); return
+    wf = D / "blog" / "weekly" / (doc["week"] + ".json")
+    if doc["derivedFrom"] != "data/blog/weekly/%s.json" % doc["week"] or not wf.exists(): errs.append("blog-edition %s: resumen de origen inexistente" % doc["week"]); return
+    w = json.loads(wf.read_text(encoding="utf-8")); urls = {h["url"] for h in w["top"]} | {h["url"] for r in w["byRegion"].values() for h in r}
+    for s in doc["sources"]:
+        if not s["url"].startswith("http") or s["url"] not in urls: errs.append("blog-edition %s: fuente que no es un titular del resumen (%s)" % (doc["week"], s["url"])); return
+    stats["blog-edition fuentes"] = len(doc["sources"])
+
+
 def cap_eu_allocations(doc, errs, warns, stats):
     """PAC UE (Reglamento 2021/2115): 27 Estados, anos 2023-2027, importes enteros positivos y, en el anexo XI, la suma de paises igual al total EU-27 de cada ano."""
     dp, rd = doc["directPayments"], doc["ruralDevelopment"]
