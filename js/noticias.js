@@ -195,9 +195,9 @@ window.DINews.feed().then(function () {
     es: {
       title: 'Noticias | Dehesa Index', h1: 'Noticias',
       origLang: 'Titular en idioma original', showMore: 'Mostrar {n} más',
-      sub: 'Los titulares más recientes del mundo agrícola, seleccionados de agencias de noticias y fuentes oficiales.',
+      sub: '',
       badge: 'TITULARES REALES', updatedLabel: 'Actualizado',
-      disclaimer: 'Estos titulares son reales y verificados, cada uno enlazado directamente a su fuente original. Se actualizan periódicamente mediante una tarea programada, no mediante un feed en directo, así que puede haber un pequeño desfase entre una noticia y su publicación aquí. Los titulares automáticos llegan en su idioma original (ES, EN, FR, IT, DE, NL, DA, PT) y no se traducen: una etiqueta te avisa del idioma. Automatic headlines keep their original language (ES, EN, FR, IT, DE, NL, DA, PT) and are not translated: a tag tells you which. Les titres automatiques restent dans leur langue d\'origine (ES, EN, FR, IT, DE, NL, DA, PT), sans traduction : une étiquette l\'indique. I titoli automatici restano nella lingua originale (ES, EN, FR, IT, DE, NL, DA, PT) e non vengono tradotti: un\'etichetta indica la lingua.',
+      disclaimer: 'Titulares enlazados a su fuente original, actualizados periódicamente (no en directo) y en su idioma original.',
       readMore: 'Leer en la fuente',
       filterAll: 'Todas', filterGlobal: 'Global', filterEuropa: 'Europa', filterAmerica: 'América',
       regionLabel: 'Región', countryLabel: 'País del medio', productLabel: 'Producto / mercado', topicLabel: 'Tema',
@@ -222,9 +222,9 @@ window.DINews.feed().then(function () {
     en: {
       title: 'News | Dehesa Index', h1: 'News',
       origLang: 'Headline in its original language', showMore: 'Show {n} more',
-      sub: 'The most recent headlines from the agricultural world, curated from news agencies and official sources.',
+      sub: '',
       badge: 'REAL HEADLINES', updatedLabel: 'Updated',
-      disclaimer: "These headlines are real and verified, each linking directly to its original source. They're refreshed periodically by a scheduled task rather than a live feed, so there can be a short delay between a story breaking and appearing here.",
+      disclaimer: 'Headlines linked to their original source, refreshed periodically (not live) and shown in their original language.',
       readMore: 'Read at the source',
       filterAll: 'All', filterGlobal: 'Global', filterEuropa: 'Europe', filterAmerica: 'Americas',
       regionLabel: 'Region', countryLabel: 'Outlet country', productLabel: 'Product / market', topicLabel: 'Theme',
@@ -249,9 +249,9 @@ window.DINews.feed().then(function () {
     fr: {
       title: 'Actualités | Dehesa Index', h1: 'Actualités',
       origLang: 'Titre dans sa langue d\'origine', showMore: 'Afficher {n} de plus',
-      sub: "Les derniers titres du monde agricole, sélectionnés auprès d'agences de presse et de sources officielles.",
+      sub: '',
       badge: 'TITRES RÉELS', updatedLabel: 'Mis à jour',
-      disclaimer: "Ces titres sont réels et vérifiés, chacun renvoyant directement à sa source d'origine. Ils sont actualisés périodiquement par une tâche programmée plutôt que par un flux en direct : un léger décalage peut donc exister entre la publication d'une actualité et son apparition ici.",
+      disclaimer: "Titres liés à leur source d'origine, actualisés périodiquement (pas en direct) et dans leur langue d'origine.",
       readMore: 'Lire la source',
       filterAll: 'Toutes', filterGlobal: 'Mondial', filterEuropa: 'Europe', filterAmerica: 'Amériques',
       regionLabel: 'Région', countryLabel: 'Pays du média', productLabel: 'Produit / marché', topicLabel: 'Thème',
@@ -276,9 +276,9 @@ window.DINews.feed().then(function () {
     it: {
       title: 'Notizie | Dehesa Index', h1: 'Notizie',
       origLang: 'Titolo nella lingua originale', showMore: 'Mostra altre {n}',
-      sub: 'I titoli più recenti dal mondo agricolo, selezionati da agenzie di stampa e fonti ufficiali.',
+      sub: '',
       badge: 'TITOLI REALI', updatedLabel: 'Aggiornato',
-      disclaimer: "Questi titoli sono reali e verificati, ciascuno con un link diretto alla fonte originale. Vengono aggiornati periodicamente tramite un'attività pianificata anziché in tempo reale, quindi può trascorrere un breve intervallo tra la pubblicazione di una notizia e la sua comparsa qui.",
+      disclaimer: 'Titoli collegati alla fonte originale, aggiornati periodicamente (non in tempo reale) e nella lingua originale.',
       readMore: 'Leggi alla fonte',
       filterAll: 'Tutte', filterGlobal: 'Globale', filterEuropa: 'Europa', filterAmerica: 'Americhe',
       regionLabel: 'Regione', countryLabel: 'Paese della testata', productLabel: 'Prodotto / mercato', topicLabel: 'Tema',
@@ -415,7 +415,7 @@ window.DINews.feed().then(function () {
     document.getElementById('nw-badge').textContent = t.badge;
     document.getElementById('nw-updated').textContent = t.updatedLabel + ': ' + fmtNewsDate(UPDATED_ISO, lang);
     document.getElementById('nw-h1').textContent = t.h1;
-    document.getElementById('nw-sub').textContent = t.sub;
+    document.getElementById('nw-sub').textContent = t.sub; document.getElementById('nw-sub').hidden = !t.sub;
     document.getElementById('nw-disclaimer').textContent = t.disclaimer;
 
     document.getElementById('nw-region-label').textContent = t.regionLabel;
