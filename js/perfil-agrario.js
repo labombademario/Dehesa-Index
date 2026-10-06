@@ -4,7 +4,7 @@
   'use strict';
   var FILE = 'data/worldbank-agri.json', DATA = null, LOADING = null;
   var UNITS = {
-    pct: '%', km2: 'km²', ha: 'ha', haPc: { es: 'ha/persona', en: 'ha/person', fr: 'ha/personne', it: 'ha/persona' }, mha: 'M ha', kgha: 'kg/ha', mt: 'Mt', tract: { es: 'por 100 km²', en: 'per 100 km²', fr: 'pour 100 km²', it: 'ogni 100 km²' },
+    pct: '%', km2: 'km²', ha: 'ha', haPc: { es: 'ha/persona', en: 'ha/person', fr: 'ha/personne', it: 'ha/persona' }, mha: 'M ha', kgha: 'kg/ha', mt: 'Mt',
     idx: { es: 'índice 2014-16 = 100', en: 'index 2014-16 = 100', fr: 'indice 2014-16 = 100', it: 'indice 2014-16 = 100' },
     cpi: { es: 'índice 2010 = 100', en: 'index 2010 = 100', fr: 'indice 2010 = 100', it: 'indice 2010 = 100' },
     usdK: { es: 'US$ constantes 2015 por trabajador', en: 'constant 2015 US$ per worker', fr: 'US$ constants 2015 par travailleur', it: 'US$ costanti 2015 per lavoratore' },
@@ -44,21 +44,18 @@
     ruralPopPct: ['Población rural (% del total)', 'Rural population (% of total)', 'Population rurale (% du total)', 'Popolazione rurale (% del totale)', 'pct', 'pp'],
     agriEmpFemalePct: ['Empleo agrario femenino (% del empleo femenino)', 'Female employment in agriculture (% of female employment)', 'Emploi agricole féminin (% de l’emploi féminin)', 'Occupazione agricola femminile (% dell’occupazione femminile)', 'pct', 'pp'],
     agriEmpMalePct: ['Empleo agrario masculino (% del empleo masculino)', 'Male employment in agriculture (% of male employment)', 'Emploi agricole masculin (% de l’emploi masculin)', 'Occupazione agricola maschile (% dell’occupazione maschile)', 'pct', 'pp'],
-    tractors: ['Tractores por 100 km² de tierra de cultivo', 'Tractors per 100 km² of arable land', 'Tracteurs pour 100 km² de terres arables', 'Trattori ogni 100 km² di seminativo', 'tract', 'pct'],
     agriVaGrowth: ['Crecimiento del valor añadido agrario', 'Agricultural value added growth', 'Croissance de la valeur ajoutée agricole', 'Crescita del valore aggiunto agricolo', 'ann', null],
-    ch4AgriPct: ['Metano agrario (% del total)', 'Agricultural methane emissions (% of total)', 'Méthane agricole (% du total)', 'Metano agricolo (% del totale)', 'pct', 'pp'],
-    n2oAgriPct: ['Óxido nitroso agrario (% del total)', 'Agricultural nitrous oxide emissions (% of total)', 'Protoxyde d’azote agricole (% du total)', 'Protossido di azoto agricolo (% del totale)', 'pct', 'pp'],
     ch4Agri: ['Metano de la agricultura', 'Agricultural methane emissions', 'Méthane de l’agriculture', 'Metano dell’agricoltura', 'co2', 'pct'],
     n2oAgri: ['Óxido nitroso de la agricultura', 'Agricultural nitrous oxide emissions', 'Protoxyde d’azote de l’agriculture', 'Protossido di azoto dell’agricoltura', 'co2', 'pct'],
     waterAgriPct: ['Agua dulce usada por la agricultura (% del total)', 'Freshwater used by agriculture (% of total)', 'Eau douce utilisée par l’agriculture (% du total)', 'Acqua dolce usata dall’agricoltura (% del totale)', 'pct', 'pp']
   };
   var BLOCKS = [
     ['structure', ['agriLandPct', 'arableLandPct', 'arablePerCap', 'irrigatedPct', 'agriEmploymentPct', 'agriVaPerWorker', 'agriVaPct', 'agriVaUsd', 'agriLandKm2', 'permCropPct', 'forestPct', 'ruralPopPct', 'agriEmpFemalePct', 'agriEmpMalePct']],
-    ['yield', ['cerealYield', 'cerealArea', 'cerealProd', 'fertKgHa', 'tractors']],
+    ['yield', ['cerealYield', 'cerealArea', 'cerealProd', 'fertKgHa']],
     ['indices', ['cropIdx', 'livestockIdx', 'foodIdx', 'agriVaGrowth']],
     ['trade', ['foodExpPct', 'foodImpPct', 'agriRawExpPct', 'agriRawImpPct']],
     ['macro', ['cpi', 'inflation', 'fxUsd', 'gdpGrowth']],
-    ['environment', ['ch4Agri', 'n2oAgri', 'ch4AgriPct', 'n2oAgriPct', 'waterAgriPct']]
+    ['environment', ['ch4Agri', 'n2oAgri', 'waterAgriPct']]
   ];
   var T = {
     es: { title: 'Perfil agrario', open: 'Ver el perfil agrario y la comparación con otros países', hint: 'Estructura del campo, rendimientos, comercio agrario, precios y medio ambiente, con serie desde 1990 y el año de cada dato. Fuente: Banco Mundial (WDI).',

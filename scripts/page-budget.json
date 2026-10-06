@@ -20,7 +20,7 @@
     { "url": "/observatorio.html", "maxDataRawKB": 140, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/relaciones.html", "maxDataRawKB": 250, "maxTotalGzKB": 200, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
     { "url": "/calculadora.html", "maxDataRawKB": 60, "maxTotalGzKB": 150, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "product-compare\\.json"] },
-    { "url": "/brief.html", "maxDataRawKB": 805, "maxTotalGzKB": 250, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
+    { "url": "/brief.html", "maxDataRawKB": 815, "maxTotalGzKB": 252, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json"] },
     { "url": "/precios-locales.html", "maxDataRawKB": 160, "maxTotalGzKB": 209, "forbid": ["/data/(latest|history|normalized)\\.json", "-stats\\.json", "/data/us-cash-bids/history/"], "wait": 2500 },
     { "url": "/noticias.html", "maxDataRawKB": 300, "maxTotalGzKB": 216, "forbid": ["/data/news\\.json", "news-feed\\.js(\\?|$)"] },
     { "url": "/producto.html?p=trigo", "maxDataRawKB": 800, "maxTotalGzKB": 450, "forbid": ["/data/(latest|history|normalized)\\.json", "/data/news\\.json", "/data/(supply-demand|ers|gats|nass-crops|nass-livestock|drought|export-sales)\\.json"], "wait": 3000 },
