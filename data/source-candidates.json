@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T00:37:55Z",
+ "generatedAt": "2026-10-06T00:39:52Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1425,7 +1425,7 @@
    "commercialReuse": "unclear",
    "derivatives": "unclear",
    "attribution": "Fuente: Agroseguro",
-   "lastChecked": "2026-10-03",
+   "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
