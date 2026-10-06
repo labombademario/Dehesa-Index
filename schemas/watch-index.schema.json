@@ -1,11 +1,12 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "title": "Watchlist index",
+ "title": "Watchlist index shard (data/watch/<PREFIX>.json)",
  "type": "object",
  "required": [
   "schemaVersion",
   "generatedAt",
-  "series"
+  "series",
+  "prefix"
  ],
  "properties": {
   "schemaVersion": {
@@ -22,7 +23,7 @@
    "type": "object",
    "required": [],
    "properties": {},
-   "minProperties": 1000,
+   "minProperties": 1,
    "additionalSchema": {
     "type": "array",
     "minItems": 7,
@@ -34,6 +35,10 @@
    "items": {
     "type": "string"
    }
+  },
+  "prefix": {
+   "type": "string",
+   "pattern": "^[A-Z]{1,3}$"
   }
  }
 }

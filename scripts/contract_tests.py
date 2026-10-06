@@ -566,9 +566,12 @@ def product_compare(doc, errs, warns, stats):
             elif s["latest"][0][:7] < pts[-1][0]: errs.append("%s/%s: latest %s anterior al ultimo mes mensual %s" % (pid, k, s["latest"][0], pts[-1][0]))
     stats["series"] = n
 def watch_index(doc, errs, warns, stats):
-    s = doc["series"]; stats["series"] = len(s)
+    # un trozo de data/watch/<PREFIJO>.json: todas las claves llevan su prefijo y los indices de fuente caben en su lista local
+    s = doc["series"]; stats["series"] = stats.get("series", 0) + len(s); pre = doc.get("prefix"); ns = len(doc.get("sources") or [])
     for k, v in s.items():
         if not re.match(r"^([A-Z]{2,3}|P)/.+", k): errs.append("clave invalida %s" % k); break
+        if k.split("/", 1)[0] != pre: errs.append("%s: clave fuera del trozo %s" % (k, pre)); break
+        if len(v) > 8 and v[8] is not None and not (isinstance(v[8], int) and 0 <= v[8] < ns): errs.append("%s: indice de fuente %r fuera de la lista del trozo" % (k, v[8])); break
         if not (isinstance(v[0], str) and isinstance(v[1], str) and isinstance(v[4], str) and _num(v[5]) and (v[6] is None or _num(v[6]))): errs.append("%s: entrada mal formada %s" % (k, v)); break
 def daily_brief(doc, errs, warns, stats):
     c = doc["counts"]
@@ -639,24 +642,23 @@ def search_index(doc, errs, warns, stats):
         if not (x["n"].get("es") and x["n"].get("en")): errs.append("%s: sin nombre es/en" % x["i"]); break
     stats["entries"] = len(e)
 def catalog_index(doc, errs, warns, stats):
-    # el indice global debe ser exactamente el catalogo: mismas series, ids unicos, indices dentro del diccionario y punteros a ficheros existentes
+    # un trozo del indice de busqueda (data/catalog/index/<CC>.json) debe ser exactamente el catalogo de su entidad: mismas series, ids unicos, indices dentro del diccionario y punteros validos
     D_ = doc["dict"]; rows = doc["rows"]; man = json.loads((D / "catalog/manifest.json").read_text(encoding="utf-8"))
+    cc = doc.get("cc"); c = man["countries"].get(cc)
+    if not c: errs.append("trozo de una entidad que no esta en el manifiesto: %r" % cc); return
     if doc["total"] != len(rows): errs.append("total %d != filas %d" % (doc["total"], len(rows)))
-    if len(rows) != man["seriesTotal"]: errs.append("indice con %d series, manifiesto %d" % (len(rows), man["seriesTotal"]))
+    if len(rows) != c["n"]: errs.append("%s: indice con %d series, manifiesto %d" % (cc, len(rows), c["n"]))
     seen = set(); fsok = {"LIVE", "FRESH", "EXPECTED_DELAY", "DELAYED", "STALE", "HISTORICAL", "DISCONTINUED", "PENDING"}
     for r in rows:
-        if len(r) != 12: errs.append("fila con %d columnas (se esperan 12)" % len(r)); break
-        k = (D_["cc"][r[2]] if r[2] < len(D_["cc"]) else None, r[0])
-        if k[0] is None or r[3] >= len(D_["group"]) or r[4] >= len(D_["unit"]) or r[5] >= len(D_["freq"]) or r[7] >= len(D_["fs"]) or r[11] >= len(D_["src"]) or any(t >= len(D_["tag"]) for t in r[8]): errs.append("%s: indice fuera del diccionario" % r[0]); break
-        if k in seen: errs.append("serie repetida %s/%s" % k); break
-        seen.add(k)
+        if len(r) != 11: errs.append("fila con %d columnas (se esperan 11)" % len(r)); break
+        if r[2] >= len(D_["cc"]) or r[3] >= len(D_["group"]) or r[4] >= len(D_["unit"]) or r[5] >= len(D_["freq"]) or r[7] >= len(D_["fs"]) or r[10] >= len(D_["src"]) or any(t >= len(D_["tag"]) for t in r[8]): errs.append("%s: indice fuera del diccionario" % r[0]); break
+        if D_["cc"][r[2]] != cc: errs.append("%s: fila de %s en el trozo de %s" % (r[0], D_["cc"][r[2]], cc)); break
+        if r[0] in seen: errs.append("serie repetida %s/%s" % (cc, r[0])); break
+        seen.add(r[0])
         if D_["fs"][r[7]] not in fsok: errs.append("%s: estado de frescura %r invalido" % (r[0], D_["fs"][r[7]])); break
-        c = man["countries"].get(k[0])
-        if not c or r[10] not in (0, 1) or (r[10] == 1 and not c.get("catalogEu")): errs.append("%s: puntero a catalogo invalido" % r[0]); break
-    n = {0: 0, 1: 0}
-    for r in rows: n[r[10]] = n.get(r[10], 0) + 1
-    if n[1] != sum(c.get("nEu", 0) for c in man["countries"].values()): errs.append("series UE del indice != manifiesto")
-    stats["series"] = len(rows)
+        if r[9] not in (0, 1) or (r[9] == 1 and not c.get("catalogEu")): errs.append("%s: puntero a catalogo invalido" % r[0]); break
+    if sum(1 for r in rows if r[9] == 1) != c.get("nEu", 0): errs.append("%s: series UE del indice != manifiesto" % cc)
+    stats["series"] = stats.get("series", 0) + len(rows)
 
 # ---------- US Local Cash Bids (data/us-cash-bids) ----------
 _CB_SECRET = re.compile(r"authorization|basic [A-Za-z0-9+/=]{16,}|api[_-]?key|apikey|secret|token=", re.I)
@@ -1039,7 +1041,16 @@ def _consistency(errs, warns):
             if abs(h["value"] - o["value"]) > tol * max(1, abs(o["value"]), abs(h["value"])): errs.append("%s: latest %s vs history del mes %s (%s)" % (o["id"], o["value"], h["value"], o["frequency"]))
     if cat and lat and len(cat["latest"]) != len(lat["observations"]): errs.append("catalog.latest %d != latest %d" % (len(cat["latest"]), len(lat["observations"])))
     if cat and lat and cat["observationCount"] < len(lat["observations"]): errs.append("catalog.observationCount (filas de snapshots) %d < latest %d" % (cat["observationCount"], len(lat["observations"])))
-    wi, reg, man = ld("watch-index.json"), ld("series-registry.json"), ld("catalog/manifest.json")
+    wi, reg, man = ld("watch/P.json"), ld("series-registry.json"), ld("catalog/manifest.json")
+    if man:   # indice de busqueda troceado: cada entidad del manifiesto tiene su trozo, y no sobra ninguno
+        want = {"catalog/index/" + c["catalog"].split("/")[-1] for c in man["countries"].values()}
+        have = {"catalog/index/" + p.name for p in (D / "catalog/index").glob("*.json")}
+        if want - have: errs.append("trozos de indice que faltan: %s" % sorted(want - have)[:5])
+        if have - want: errs.append("trozos de indice huerfanos: %s" % sorted(have - want)[:5])
+    wix = ld("watch/index.json")
+    if wix:
+        have = sorted(p.stem for p in (D / "watch").glob("*.json") if p.name != "index.json")
+        if wix["prefixes"] != have: errs.append("watch/index.json: prefijos %s != trozos %s" % (wix["prefixes"][:6], have[:6]))
     if wi and lat:
         n = sum(1 for k in wi["series"] if k.startswith("P/"))
         if n != len(lat["observations"]): errs.append("watch-index: %d productos != %d en latest" % (n, len(lat["observations"])))

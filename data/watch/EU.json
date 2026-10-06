@@ -1,0 +1,1 @@
+{"schemaVersion":2,"generatedAt":"2026-10-06T22:40:39Z","prefix":"EU","sources":["ecb"],"series":{"EU/eu-deposit-rate":["ECB deposit facility rate (monthly)","%","monthly","rates","2026-09",2.5,null,null,0],"EU/eu-policy-rate":["ECB main refinancing operations rate (monthly)","%","monthly","rates","2026-09",2.65,null,null,0]}}

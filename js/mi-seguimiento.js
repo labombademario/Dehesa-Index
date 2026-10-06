@@ -165,7 +165,8 @@
     }
     if (b.hasAttribute('data-clear')) { if (ST.confirm !== 'clear') { ST.confirm = 'clear'; render(); return; } try { window.localStorage.removeItem('di-watchlist-v1'); window.localStorage.removeItem('di-watchlist-meta-v1'); } catch (err) { /* nada */ } ST.confirm = ''; ST.msg = null; W.resetContext(); evaluate(); }
   }
-  function onInput(e) { if (e.target.id === 'ms-q') { ST.q = e.target.value; render(); } }
+  // la busqueda para anadir series necesita el indice completo: los trozos que faltan se bajan solo al escribir (no al abrir la pagina)
+  function onInput(e) { if (e.target.id === 'ms-q') { ST.q = e.target.value; render(); if (ST.q.length >= 2 && window.DIWatch && window.DIWatch.loadAll) window.DIWatch.loadAll().then(function () { if (ST.q.length >= 2) render(); }); } }
   function onChange(e) {
     if (e.target.id === 'ms-mode') { ST.confirm = ''; render(); document.getElementById('ms-mode').value = e.target.value; return; }
     if (e.target.id !== 'ms-file') return;

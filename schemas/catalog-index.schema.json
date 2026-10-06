@@ -1,13 +1,14 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "title": "Global catalogue search index",
+ "title": "Catalogue search index shard (data/catalog/index/<CC>.json)",
  "type": "object",
  "required": [
   "schemaVersion",
   "generatedAt",
   "total",
   "dict",
-  "rows"
+  "rows",
+  "cc"
  ],
  "properties": {
   "schemaVersion": {
@@ -82,6 +83,10 @@
     "type": "array",
     "minItems": 11
    }
+  },
+  "cc": {
+   "type": "string",
+   "minLength": 1
   }
  }
 }

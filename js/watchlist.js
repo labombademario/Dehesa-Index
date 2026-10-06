@@ -22,7 +22,7 @@
    Elemento: {c, s, r:[reglas], m:'any'|'all', seen:{p,v}, ack:periodo, ak:{f,tw}, hist:[{at,p,v,h:[reglas]}]}. Series de pais: c='ES', s=id. Productos: c='P', s='trigo/eu'.
    Reglas: {t:'cross',v,d:'above'|'below'} precio | {t:'pct',v,d?:'up'|'down'} cambio ±% del ultimo dato | {t:'new'} dato nuevo | {t:'rev'} revision oficial (mismo periodo, otro valor)
            | {t:'fresh',v:'DELAYED'|'STALE'} la frescura llega a ese estado | {t:'tw'} Transmission Watch elevado (relacion OBSERVED_RELATIONSHIP con un movimiento del insumo >= 10 %; descriptivo, no una prediccion).
-   m='any' (por defecto): avisa si se cumple alguna regla; m='all': solo si se cumplen todas. Todo se evalua en el navegador contra data/watch-index.json (+ observatory.json y relationships.json solo si hay
+   m='any' (por defecto): avisa si se cumple alguna regla; m='all': solo si se cumplen todas. Todo se evalua en el navegador contra data/watch/<PAIS>.json (solo los trozos de las series seguidas) (+ observatory.json y relationships.json solo si hay
    reglas de frescura o Transmission Watch). Exportar/importar JSON validado; nada se envia. */
 (function () {
   'use strict';
@@ -33,24 +33,35 @@
   function find(l, c, s) { for (var i = 0; i < l.length; i++) if (l[i].c === c && l[i].s === s) return l[i]; return null; }
   function key(c, s) { return c === 'P' ? 'P/' + s : c + '/' + s; }
   function sp(f) { return window.DehesaShared && window.DehesaShared.sitePath ? window.DehesaShared.sitePath(f) : f; }
-  var IDX = null, IP = null, CP = null, CBF = false, SRCS = [];
+  var IDX = null, IP = null, CP = null, CBF = false, SRCS = {}, SH = {};
   // Mercados locales de grano (c='CB', s='ESTADO/producto/idSerie'): su indice (data/us-cash-bids/watch.json) solo se descarga si sigues alguno o la pagina de precios locales lo pide
   function wantCB() { return CBF || read().some(function (i) { return i.c === 'CB'; }); }
-  function load() {
-    if (IP) return IP;
-    IP = fetch(sp('data/watch-index.json')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { IDX = d && d.series ? d.series : {}; SRCS = d && d.sources ? d.sources : []; return IDX; }).catch(function () { IDX = {}; return IDX; })
-      .then(function (idx) {
-        if (!wantCB()) return idx;
-        return fetch(sp('data/us-cash-bids/watch.json')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.series) Object.keys(d.series).forEach(function (k) { idx['CB/' + k] = d.series[k]; }); return idx; }).catch(function () { return idx; });
-      });
-    return IP;
+  // data/watch/<PREFIJO>.json: solo los trozos de las series seguidas (y need)
+  function shard(p) {
+    if (SH[p]) return SH[p];
+    if (!/^[A-Z]{1,3}$/.test(p)) return (SH[p] = Promise.resolve(null));
+    return SH[p] = fetch(sp('data/watch/' + p + '.json')).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) {
+      if (d && d.series) { var src = d.sources || []; Object.keys(d.series).forEach(function (k) { var a = d.series[k]; IDX[k] = a; SRCS[k] = typeof a[8] === 'number' ? src[a[8]] || null : null; }); }
+      return d;
+    });
   }
-  W.withCashBids = function () { if (!CBF) { CBF = true; IP = null; } return load(); };
+  function load(need) {
+    IDX = IDX || {};
+    var ps = {}; read().forEach(function (i) { if (i.c !== 'CB') ps[i.c] = 1; }); (need || []).forEach(function (c) { if (c !== 'CB') ps[c] = 1; });
+    var all = Object.keys(ps).map(shard);
+    if (wantCB() && !SH.CB) SH.CB = fetch(sp('data/us-cash-bids/watch.json')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.series) Object.keys(d.series).forEach(function (k) { IDX['CB/' + k] = d.series[k]; }); return d; }).catch(function () { return null; });
+    if (SH.CB) all.push(SH.CB);
+    return IP = Promise.all(all).then(function () { return IDX; });
+  }
+  W.withCashBids = function () { CBF = true; return load(); };
+  // todos los trozos (buscador para anadir)
+  var AP = null;
+  W.loadAll = function () { return AP || (AP = fetch(sp('data/watch/index.json')).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }).then(function (d) { return load(d && d.prefixes ? d.prefixes : []); })); };
   function row(idx, c, s) { var a = idx[key(c, s)]; return a ? { label: a[0], unit: a[1], freq: a[2], group: a[3], period: a[4], value: a[5], change: a[6], basis: typeof a[7] === 'number' ? a[7] : null } : null; }
   function snap(x) { var o = { p: x.period, v: x.value }; if (typeof x.basis === 'number') o.b = x.basis; return o; }
   function cond(r, v) { return r.d === 'below' ? v <= r.v : v >= r.v; }
   function today() { return new Date().toISOString().slice(0, 10); }
-  W.srcOf = function (c, s) { if (c === 'CB') return 'usda_ams_mars'; var a = IDX && IDX[key(c, s)]; return a && typeof a[8] === 'number' && SRCS[a[8]] ? SRCS[a[8]] : null; };
+  W.srcOf = function (c, s) { if (c === 'CB') return 'usda_ams_mars'; return SRCS[key(c, s)] || null; };
   W.key = key; W.loadIndex = load; W.TW_PCT = TW_PCT;
   W.rules = function (c, s) { var it = find(read(), c, s); return it && it.r ? it.r : []; };
   W.mode = function (c, s) { var it = find(read(), c, s); return it && it.m === 'all' ? 'all' : 'any'; };
@@ -58,7 +69,7 @@
   W.addRule = function (c, s, rule) {
     var l = read(), it = find(l, c, s); if (!it) { it = { c: c, s: s }; l.unshift(it); }
     it.r = it.r || []; if (it.r.length >= MAXRULES) return Promise.resolve(it.r); it.r.push(rule);
-    return load().then(function (idx) { var x = idx && row(idx, c, s); if (x) { it.seen = snap(x); it.ack = x.period; } write(l.slice(0, MAXITEMS)); return it.r; });
+    return load([c]).then(function (idx) { var x = idx && row(idx, c, s); if (x) { it.seen = snap(x); it.ack = x.period; } write(l.slice(0, MAXITEMS)); return it.r; });
   };
   W.delRule = function (c, s, i) { var l = read(), it = find(l, c, s); if (it && it.r) { it.r.splice(i, 1); write(l); } };
   W.ack = function (c, s) { var l = read(), it = find(l, c, s); if (!it) return; var x = IDX && row(IDX, c, s); if (x) { it.seen = snap(x); it.ack = x.period; write(l); } };

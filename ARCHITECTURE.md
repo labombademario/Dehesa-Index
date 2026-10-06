@@ -18,7 +18,7 @@ fuentes oficiales ──► scripts/update-*.py|mjs ──► data/<fuente>.json
 | **Capa ligera de precios** | `data/prices/manifest.json`, `latest/<region>.json`, `history/<region>/<producto>.json` (perezoso), `intelligence/<region>.json` | `scripts/build-price-views.py` (accion `price-engine`) | `js/prices-store.js` (`DIPrices`) |
 | Vistas de entrada | `data/views/{home-summary,eu-preview,news-index,news-feed}.json` | `scripts/build-views.py`, `scripts/update_news.py` | Home, Precios, Noticias |
 | Frescura | `data/freshness-policy.json`, `data/freshness.json` | `scripts/build-freshness.py` (motor `scripts/freshness.py`) | `js/freshness.js` (mismo motor, test de paridad) |
-| Derivados de producto | `data/product-compare.json`, `data/daily-brief.json`, `data/watch-index.json`, `data/series-registry.json`, `data/revisions.json` | `build-product-compare.py`, `build-daily-brief.py`, `build-watch-index.py`, `build-series-registry.py`, `detect-revisions.py` | comparador, brief, lista de seguimiento |
+| Derivados de producto | `data/product-compare.json`, `data/daily-brief.json`, `data/watch/<PREFIJO>.json` (troceado), `data/series-registry.json`, `data/revisions.json` | `build-product-compare.py`, `build-daily-brief.py`, `build-watch-index.py`, `build-series-registry.py`, `detect-revisions.py` | comparador, brief, lista de seguimiento |
 | Fichas de producto | `data/products/<id>.json` | `scripts/build-product-profiles.py` (en `update-pipeline-status.yml`) | `js/producto-terminal.js` (bloques perezosos) |
 | Gobierno | `data/license-registry.json`, `data/data-anomalies.json`, `data/product-metadata.json`, `data/pipeline-status.json`, `data/data-quality.json` | curados a mano / `build-pipeline-status.py` | CI y paginas de estado |
 

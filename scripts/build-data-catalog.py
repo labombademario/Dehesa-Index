@@ -190,7 +190,7 @@ def main():
     for c in man['countries'].values(): ents[c['entityType']] = ents.get(c['entityType'], 0) + 1
     srcs_used = {}
     for f in sorted((ROOT / 'data/catalog').glob('*.json')) + sorted((ROOT / 'data/catalog/eu').glob('*.json')):
-        if f.name in ('manifest.json', 'series-index.json'): continue
+        if f.name in ('manifest.json', 'series-index.json'): continue   # series-index.json: indice unico antiguo (se borra al regenerar)
         for x in json.loads(f.read_text())['series']: srcs_used[x['sourceId']] = srcs_used.get(x['sourceId'], 0) + 1
     man['provenance'] = {
         'doc': 'Procedencia por serie = fila del catalogo (sourceId, licenseId, source=fichero de origen, canonical, latestPeriod=observationDate, fs=frescura) + este bloque (nombre, URL oficial y licencia de la fuente; transformacion y agregacion por tipo de dato). El catalogo se genera en generatedAt. publicationDate no la publican la mayoria de las fuentes estadisticas: se omite en vez de inventarla.',
@@ -199,26 +199,24 @@ def main():
         'role': 'Todas las series del catalogo son la representacion preferida (primary); los duplicados no preferidos se excluyen (data/series-registry.json, nonPreferred=0).'}
     man.update({'entities': {**ents, 'total': len(man['countries'])}, 'schemaVersion': 1, 'seriesTotal': total, 'tiers': {'1': 'national official body', '2': 'Eurostat harmonised', '3': 'international organisation', '4': 'secondary / aggregator'},
                 'seriesByKind': {'stats': total - neu - nprod, 'product': nprod, 'eu-regions': neu}, 'layout': 'manifest -> catalog/<CC>.json (metadata) -> series/<CC>/<metric>.json (points)', 'products': {k: sorted(v) for k, v in sorted(prods.items())}, 'tagsNote': 'products are keyword tags derived from series labels (heuristic), not an official classification'})
-    # indice global compacto (solo lo necesario para buscar): la busqueda global no descarga ningun catalogo de pais
-    idx_rows, DICT = [], {k: [] for k in ('cc', 'group', 'unit', 'freq', 'fs', 'tag', 'src')}
-    def di(k, v):
-        if v not in DICT[k]: DICT[k].append(v)
-        return DICT[k].index(v)
+    # indice de busqueda TROCEADO por entidad (data/catalog/index/<CC>.json, mismo nombre que su catalogo; js/series-search.js): el navegador solo baja el trozo del pais que mira;
+    # la busqueda global baja todos los trozos. Sin la columna canonical (redundante: era pais|grupo|frecuencia|unidad|palabras de la etiqueta, todo ya presente en la fila).
+    IDOC = 'Indice de busqueda de una entidad: una fila por serie [id, label, cc, group, unit, freq, latestPeriod, fs, tags, kind, sourceId]; cc/group/unit/freq/fs/tags/src son indices en dict. kind 0 = catalog/<cc>.json, kind 1 = catalog/eu/<cc>.json (puntero al catalogo de la entidad; los puntos siguen en el fichero de la serie). El trozo de una entidad es catalog/index/ + el nombre de fichero de su catalogo (manifest.countries[cc].catalog).'
     for cc in sorted(man['countries']):
-        c = man['countries'][cc]
+        c = man['countries'][cc]; idx_rows, DICT = [], {k: [] for k in ('cc', 'group', 'unit', 'freq', 'fs', 'tag', 'src')}
+        def di(k, v):
+            if v not in DICT[k]: DICT[k].append(v)
+            return DICT[k].index(v)
         for rel, kind in ((c['catalog'], 0), (c.get('catalogEu'), 1)):
             if not rel: continue
             for x in json.loads((ROOT / 'data' / rel).read_text(encoding='utf-8'))['series']:
-                idx_rows.append([x['id'], x['label'], di('cc', cc), di('group', x['group']), di('unit', x['unit']), di('freq', x['freq']), x['latestPeriod'], di('fs', x['fs']), [di('tag', t) for t in x['tags']], x['canonical'], kind, di('src', x['sourceId'])])
-    ig = ''
-    try: ig = json.loads((ROOT / 'data/catalog/series-index.json').read_text()).get('generatedAt', '')
-    except Exception: pass
-    ibody = {'schemaVersion': 1, 'doc': 'Indice global de busqueda: una fila por serie [id, label, cc, group, unit, freq, latestPeriod, fs, tags, canonicalSeriesId, kind, sourceId]; cc/group/unit/freq/fs/tags/src son indices en dict. kind 0 = catalog/<cc>.json, kind 1 = catalog/eu/<cc>.json (puntero al catalogo de la entidad; los puntos viven en el shard de la fila). Sin puntos ni valores.', 'total': len(idx_rows), 'dict': DICT, 'rows': idx_rows}
-    old_i = None
-    try: old_i = json.loads((ROOT / 'data/catalog/series-index.json').read_text()); og = old_i.pop('generatedAt', None)
-    except Exception: og = None
-    ibody['generatedAt'] = og if old_i is not None and dump(old_i) == dump(ibody) else datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
-    changed += write_if_changed(ROOT / 'data/catalog/series-index.json', dump(ibody), written)
+                idx_rows.append([x['id'], x['label'], di('cc', cc), di('group', x['group']), di('unit', x['unit']), di('freq', x['freq']), x['latestPeriod'], di('fs', x['fs']), [di('tag', t) for t in x['tags']], kind, di('src', x['sourceId'])])
+        rel_i = 'catalog/index/' + c['catalog'].split('/')[-1]; ip = ROOT / 'data' / rel_i   # ruta deducible del catalogo: no se anade nada al manifiesto (lo bajan todas las paginas)
+        ibody = {'schemaVersion': 2, 'doc': IDOC, 'cc': cc, 'total': len(idx_rows), 'dict': DICT, 'rows': idx_rows}
+        try: old_i = json.loads(ip.read_text()); og = old_i.pop('generatedAt', None); same_i = dump(old_i) == dump(ibody)
+        except Exception: og = None; same_i = False
+        ibody['generatedAt'] = og if same_i and og else datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+        changed += write_if_changed(ip, dump(ibody), written)
     # el manifiesto solo cambia de generatedAt si cambia algo mas
     mp = ROOT / 'data/catalog/manifest.json'; body = dump(man)
     try: old = json.loads(mp.read_text()); g0 = old.pop('generatedAt', None); same = dump(old) == body

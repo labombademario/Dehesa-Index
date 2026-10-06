@@ -2304,6 +2304,11 @@
    ],
    "notes": "Capa ligera de precios (scripts/build-price-views.py): reparto por region/producto de data/latest.json y data/history.json; cada observacion conserva su sourceId, que es lo que fija la licencia."
   },
+  "data/watch/": {
+   "sources": [],
+   "derived": true,
+   "notes": "Indice de la lista de seguimiento troceado por pais (scripts/build-watch-index.py): etiqueta, unidad, ultimo dato y cambio de series ya publicadas en el catalogo. Cada serie conserva el sourceId de su fuente (lista sources del trozo); no hay datos nuevos."
+  },
   "data/products/": {
    "sources": [
     "usda_fas_psd",
@@ -2605,8 +2610,7 @@
   "series-registry.json",
   "snapshot-contract.json",
   "source-candidates.json",
-  "source-status.json",
-  "watch-index.json"
+  "source-status.json"
  ],
  "pendingBaseline": {
   "note": "Fuentes PENDING que ya se publicaban antes del License Gate estricto. check-licenses.py --strict falla si una fuente PENDING en uso NO figura aqui (ninguna fuente nueva puede publicarse sin verificar) y avisa por cada una de las listadas. Quitar una fuente de esta lista al resolverla; --strict-all falla mientras la lista no este vacia.",

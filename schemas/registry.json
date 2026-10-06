@@ -104,12 +104,6 @@
     "product_compare"
    ]
   ],
-  "watch-index.json": [
-   "watch-index",
-   [
-    "watch_index"
-   ]
-  ],
   "daily-brief.json": [
    "daily-brief",
    [
@@ -194,12 +188,6 @@
    "catalog-manifest",
    [
     "catalog_manifest"
-   ]
-  ],
-  "catalog/series-index.json": [
-   "catalog-index",
-   [
-    "catalog_index"
    ]
   ],
   "views/eu-preview.json": [
@@ -747,6 +735,10 @@
    [
     "views_region_metrics"
    ]
+  ],
+  "watch/index.json": [
+   "watch-shards",
+   []
   ]
  },
  "globs": {
@@ -875,11 +867,22 @@
    [
     "news_archive"
    ]
+  ],
+  "catalog/index/*.json": [
+   "catalog-index",
+   [
+    "catalog_index"
+   ]
+  ],
+  "watch/[A-Z]*.json": [
+   "watch-index",
+   [
+    "watch_index"
+   ]
   ]
  },
  "derived": [
   "product-compare.json",
-  "watch-index.json",
   "daily-brief.json",
   "pipeline-status.json",
   "series-registry.json",
@@ -909,13 +912,16 @@
   "instrument-identity.json",
   "us-cash-bids/manifest.json",
   "us-cash-bids/reports.json",
-  "us-cash-bids/watch.json"
+  "us-cash-bids/watch.json",
+  "watch/index.json"
  ],
  "derivedGlobs": [
   "products/*.json",
   "series/*/*.json",
   "catalog/[A-Z]*.json",
   "catalog/eu/*.json",
-  "us-cash-bids/*/*.json"
+  "us-cash-bids/*/*.json",
+  "catalog/index/*.json",
+  "watch/[A-Z]*.json"
  ]
 }

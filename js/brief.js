@@ -1,4 +1,4 @@
-/* Dehesa Index — Qué ha cambiado hoy: lee data/daily-brief.json (cambios reales de datos) y data/watch-index.json (lista de seguimiento local). ES5. */
+/* Dehesa Index — Qué ha cambiado hoy: lee data/daily-brief.json (cambios reales de datos) y data/watch/<PAIS>.json (lista de seguimiento local; solo los trozos que hacen falta). ES5. */
 (function () {
   'use strict';
   var T = {
@@ -140,8 +140,9 @@
     Array.prototype.forEach.call(root.querySelectorAll('[data-ack]'), function (b) { b.addEventListener('click', function () { var p = b.getAttribute('data-ack').split('|'); W.ack(p[0], p.slice(1).join('|')); render(); }); });
     if (W) W.bindEditor(root, render);
     var q = document.getElementById('br-q'), res = document.getElementById('br-res');
-    if (q && res) q.addEventListener('input', function () {
+    if (q && res) q.addEventListener('input', function search() {
       var v = q.value.toLowerCase().trim().split(/\s+/).filter(Boolean); if (!v.length) { res.innerHTML = ''; return; }
+      if (W && W.loadAll && !q._all) { q._all = 1; W.loadAll().then(function () { search(); }); }   // los trozos del indice que faltan se bajan al escribir, no al abrir la pagina
       var out = [], ks = Object.keys(IDX), i;
       for (i = 0; i < ks.length && out.length < 8; i++) { var k = ks[i], hay = (k.split('/')[0] + ' ' + IDX[k][0] + ' ' + (k.indexOf('P/') === 0 ? k : '')).toLowerCase(); if (v.every(function (w) { return hay.indexOf(w) > -1; })) out.push(k); }
       res.innerHTML = out.length ? out.map(function (k) { var p = k.split('/'), c = p[0] === 'P' ? 'P' : p[0], s = p[0] === 'P' ? p.slice(1).join('/') : p.slice(1).join('/'); return '<div style="display:flex;gap:8px;align-items:center;padding:3px 0"><span aria-hidden="true">' + (c === 'P' ? '📈' : flag(c)) + '</span><span style="flex:1;font-size:13px">' + esc(IDX[k][0]) + '</span><button type="button" data-fol="' + esc(c) + '|' + esc(s) + '" style="font:inherit;font-size:12px;padding:2px 10px;border:1px solid var(--border);border-radius:999px;background:transparent;color:inherit;cursor:pointer">' + esc(W.has(c, s) ? t.following : t.follow) + '</button></div>'; }).join('') : '<div class="di-movers-hint">' + esc(t.nores) + '</div>';

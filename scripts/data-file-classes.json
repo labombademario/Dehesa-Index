@@ -34,18 +34,6 @@
     "pattern": "e.catalog"
    }
   },
-  "data/catalog/series-index.json": {
-   "class": "RUNTIME",
-   "note": "Indice del catalogo unificado para la capa de datos del navegador.",
-   "via": {
-    "file": "js/series-store.js",
-    "pattern": "series-index"
-   }
-  },
-  "data/watch-index.json": {
-   "class": "RUNTIME",
-   "note": "Indice compacto (ultimo dato y cambio por serie) que evalua la lista de seguimiento en el navegador sin cargar ficheros grandes."
-  },
   "data/coverage-gaps.json": {
    "class": "DERIVED",
    "note": "Matriz de cobertura generada por build-coverage-gaps.py; la leen constructores y pruebas, no el navegador."
@@ -147,6 +135,22 @@
   "data/news-archive/": {
    "class": "ARCHIVE",
    "note": "Archivo semanal de noticias que alimenta el blog semanal; el navegador lee data/blog/weekly."
+  },
+  "data/catalog/index/": {
+   "class": "RUNTIME",
+   "note": "Indice de busqueda del catalogo troceado por entidad: el navegador baja solo el trozo del pais que mira (la busqueda global baja todos). Ruta = catalog/index/ + nombre del catalogo de la entidad.",
+   "via": {
+    "file": "js/series-search.js",
+    "pattern": "catalog/index/"
+   }
+  },
+  "data/watch/": {
+   "class": "RUNTIME",
+   "note": "Indice de la lista de seguimiento troceado por pais/P/DI: el navegador baja solo los trozos de las series seguidas; el buscador para anadir baja el resto al escribir (data/watch/index.json).",
+   "via": {
+    "file": "js/watchlist.js",
+    "pattern": "data/watch/"
+   }
   }
  }
 }
