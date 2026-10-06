@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T00:11:36Z",
+ "generatedAt": "2026-10-06T00:16:13Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -3221,18 +3221,18 @@
     "csv": null,
     "json": null
    },
-   "licenseStatus": "PENDING",
+   "licenseStatus": "VERIFIED",
    "licenseId": "UNKNOWN",
    "commercialReuse": "unclear",
    "derivatives": "unclear",
    "attribution": "The U.S. Drought Monitor is jointly produced by the National Drought Mitigation Center at the University of Nebraska-Lincoln, the USDA, NOAA and NASA.",
-   "lastChecked": "2026-10-01",
+   "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
     "reasons": [
-     "Registro: PENDING (licencia poco clara o no verificable)"
+     "VERIFIED pero con condiciones no inequivocas: uso comercial unclear, derivados unclear"
     ]
    },
    "ingestionStatus": "ACTIVE",
@@ -3240,8 +3240,7 @@
    "canStart": false,
    "evidence": [
     "data/license-registry.json"
-   ],
-   "notes": "ACTIVE por used=true en el registro; la licencia se muestra tal cual (PENDING)."
+   ]
   },
   {
    "sourceId": "us_tariffs",

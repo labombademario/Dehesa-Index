@@ -171,10 +171,10 @@
    "additionalRestrictions": "Footer shows an NDMC (University of Nebraska-Lincoln) copyright notice; no terms for the statistics web service. Written confirmation advisable (DroughtMonitor@unl.edu).",
    "thirdPartyExceptions": false,
    "thirdPartyNote": null,
-   "verifiedAt": "2026-10-01",
-   "status": "PENDING",
+   "verifiedAt": "2026-10-05",
+   "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "The Permission page only prescribes the credit line; it is silent on commercial use and derivatives.",
+   "evidence": "The Permission page only prescribes the credit line; it is silent on commercial use and derivatives. Decision of the site owner (Mario, 2026-10-05): treated as green as long as it is cited. Every use carries the NDMC credit line prescribed on the Permission page (\"The U.S. Drought Monitor is jointly produced by the National Drought Mitigation Center at the University of Nebraska-Lincoln, the USDA, NOAA and NASA.\"). Confidence stays medium: the Permission page is silent on commercial use, the footer shows an NDMC (University of Nebraska-Lincoln) copyright notice, and no written confirmation has been obtained.",
    "used": true,
    "aliases": [],
    "notes": null,
@@ -2343,10 +2343,6 @@
    "alberta_ag": {
     "since": "2026-10-01",
     "nextAction": "Confirmar OGL-Alberta para la serie o contactar con Alberta Agriculture."
-   },
-   "us_drought_monitor": {
-    "since": "2026-10-01",
-    "nextAction": "Pedir confirmacion a NDMC sobre uso comercial/derivados mas alla del credito obligatorio."
    },
    "cbsa_tariff": {
     "since": "2026-10-01",
