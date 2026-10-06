@@ -129,14 +129,14 @@ for cc, name, etype, files in CM.entities():
         if not tags: untagged[s['group']] += 1; unt[m] += 1; continue
         for t in tags:
             trk[t] += 1
-            mt = CM.cell_metric(t, m)   # el precio de un insumo (gasoleo, urea) es un precio de insumo
-            c = cells[(t, mt)]; c['n'] += 1; c['sources'].add(s.get('sourceId')); c['groups'].add(s['group'])
-            if s.get('fs') in CM.OK_STATES: c['ok'] += 1
-            if s.get('fs') in CM.ARCHIVE_STATES: c['arch'] += 1
-            k = CM.period_key(s.get('latestPeriod'))
-            if k > c['latest']: c['latest'] = k; c['latestPeriod'] = s.get('latestPeriod')
-            if s.get('fs') not in CM.OK_STATES and s.get('fs') not in CM.ARCHIVE_STATES:  # las historicas no son un pipeline retrasado
-                sb = stale_by_source[s.get('sourceId')]; sb['cells'].add((cc, t, mt)); sb['series'] += 1; sb['countries'].add(cc)
+            for mt in CM.cell_metrics(t, m, s):   # un indice de insumos cuenta tambien como indice de precios
+                c = cells[(t, mt)]; c['n'] += 1; c['sources'].add(s.get('sourceId')); c['groups'].add(s['group'])
+                if s.get('fs') in CM.OK_STATES: c['ok'] += 1
+                if s.get('fs') in CM.ARCHIVE_STATES: c['arch'] += 1
+                k = CM.period_key(s.get('latestPeriod'))
+                if k > c['latest']: c['latest'] = k; c['latestPeriod'] = s.get('latestPeriod')
+                if s.get('fs') not in CM.OK_STATES and s.get('fs') not in CM.ARCHIVE_STATES:  # las historicas no son un pipeline retrasado
+                    sb = stale_by_source[s.get('sourceId')]; sb['cells'].add((cc, t, mt)); sb['series'] += 1; sb['countries'].add(cc)
     rows = {}
     for p in PRODUCTS:
         for m in CM.APPLICABLE[CM.KIND_OF[p]]:

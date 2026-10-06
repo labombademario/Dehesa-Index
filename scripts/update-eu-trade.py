@@ -19,7 +19,7 @@ CH = ["%02d" % i for i in range(1, 25)]
 KEY = {"01": "live animals", "02": "meat", "04": "dairy, eggs and honey", "07": "vegetables", "08": "fruit and nuts", "10": "cereals", "12": "oilseeds", "15": "fats and oils", "17": "sugar", "22": "beverages (incl. wine)", "23": "animal feed and food residues", "31": "fertilisers"}
 HS4 = {"1001": "wheat and meslin", "1002": "rye", "1003": "barley", "1004": "oats", "1005": "maize", "1006": "rice", "1201": "soya beans", "1205": "rape or colza seeds", "1701": "cane or beet sugar", "0701": "potatoes",
        "0201": "bovine meat, fresh or chilled", "0202": "bovine meat, frozen", "0203": "pig meat", "0204": "sheep and goat meat", "0207": "poultry meat", "0401": "milk and cream", "0405": "butter", "0406": "cheese and curd", "0407": "birds' eggs", "2204": "wine of fresh grapes"}   # solo producto x socio anual (top 6 socios); sin series mensuales para no engordar el indice global
-EXTRA = {"ES": {"1509": "olive oil"}, "PT": {"1509": "olive oil", "45": "cork"}, "IT": {"1509": "olive oil"}}
+EXTRA = {"ES": {"1509": "olive oil"}, "PT": {"1509": "olive oil", "45": "cork"}, "IT": {"1509": "olive oil"}, "FR": {"1509": "olive oil"}}
 def get(params, tries=4):
     q = urllib.parse.urlencode(params, doseq=True) + "&format=JSON&lang=EN&indicators=VALUE_IN_EUROS"
     last = None

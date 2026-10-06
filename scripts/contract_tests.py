@@ -1347,10 +1347,10 @@ def coverage_gaps(doc, errs, warns, stats):
             for t in [t for t in (sr.get("tags") or []) if t in CM.KIND_OF]: trk[t] += 1
             for t in sr.get("tags") or []:
                 if t in CM.KIND_OF:
-                    mt = CM.cell_metric(t, m)
-                    cnt[(t, mt)][0] += 1; cnt[(t, mt)][1] += 1 if ok else 0; cnt[(t, mt)][2] += 1 if sr.get("fs") in ("HISTORICAL", "DISCONTINUED") else 0
-                    if not ok and sr.get("fs") not in ("HISTORICAL", "DISCONTINUED"): stale[sr.get("sourceId")][0] += 1; stale[sr.get("sourceId")][1].add((cc, t, mt))
-        got = mx.get(cc, {}); tot = 0
+                    for mt in CM.cell_metrics(t, m, sr):
+                        cnt[(t, mt)][0] += 1; cnt[(t, mt)][1] += 1 if ok else 0; cnt[(t, mt)][2] += 1 if sr.get("fs") in ("HISTORICAL", "DISCONTINUED") else 0
+                        if not ok and sr.get("fs") not in ("HISTORICAL", "DISCONTINUED"): stale[sr.get("sourceId")][0] += 1; stale[sr.get("sourceId")][1].add((cc, t, mt))
+            got = mx.get(cc, {}); tot = 0
         for p, kind in CM.KIND_OF.items():
             exp_m = CM.APPLICABLE[kind]
             if sorted(got.get(p, {})) != sorted(exp_m): errs.append("%s/%s: metricas %s != aplicables %s" % (cc, p, sorted(got.get(p, {})), sorted(exp_m))); continue
