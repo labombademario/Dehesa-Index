@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T12:34:05Z",
+ "generatedAt": "2026-10-06T14:35:28Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2532,7 +2532,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat",
-   "dataset": "Ya integrada (481 series en el catalogo unificado)",
+   "dataset": "Ya integrada (1324 series en el catalogo unificado)",
    "products": [
     "barley",
     "butter",

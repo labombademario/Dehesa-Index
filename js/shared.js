@@ -114,6 +114,7 @@
       cd('BE', 'Bélgica', 'Belgium', 'Belgique', 'Belgio'),
       cd('AT', 'Austria', 'Austria', 'Autriche', 'Austria'),
       cd('PT', 'Portugal', 'Portugal', 'Portugal', 'Portogallo'),
+      cd('IT', 'Italia', 'Italy', 'Italie', 'Italia'),
       cd('DK', 'Dinamarca', 'Denmark', 'Danemark', 'Danimarca'),
       cd('NL', 'Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi'),
       cd('CA', 'Canadá', 'Canada', 'Canada', 'Canada'),

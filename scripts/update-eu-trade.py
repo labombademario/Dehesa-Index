@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Comercio exterior agroalimentario de ES, FR, DE, BE, AT, PT, DK y NL (Eurostat Comext, DS-045409, CC BY 4.0).
+"""Comercio exterior agroalimentario de ES, FR, DE, BE, AT, PT, IT, DK y NL (Eurostat Comext, DS-045409, CC BY 4.0).
 Escribe data/eu-trade-stats.json (extend: añade series a cada país) y data/eu-trade-log.txt.
  - Mensual desde 2000: exportaciones, importaciones y balanza de total agroalimentario (cap. 01-24 del SA) y de capítulos clave; socio WORLD (incluye comercio intra-UE).
  - Anual por socio: ranking de destinos y orígenes del total agroalimentario, top 10 por país y flujo, con serie desde 2002.
@@ -14,10 +14,10 @@ def log(*a):
     s = " ".join(str(x) for x in a); LOG.append("%s %s" % (time.strftime("%H:%M:%S"), s)); print(s, flush=True)
     try: (ROOT / "data" / "eu-trade-log.txt").write_text("\n".join(LOG))
     except Exception: pass
-REP = {"ES": "Spain", "FR": "France", "DE": "Germany", "BE": "Belgium", "AT": "Austria", "PT": "Portugal", "DK": "Denmark", "NL": "Netherlands"}
+REP = {"ES": "Spain", "FR": "France", "DE": "Germany", "BE": "Belgium", "AT": "Austria", "PT": "Portugal", "IT": "Italy", "DK": "Denmark", "NL": "Netherlands"}
 CH = ["%02d" % i for i in range(1, 25)]
 KEY = {"01": "live animals", "02": "meat", "04": "dairy, eggs and honey", "07": "vegetables", "08": "fruit and nuts", "10": "cereals", "12": "oilseeds", "15": "fats and oils", "17": "sugar", "22": "beverages (incl. wine)", "23": "animal feed and food residues", "31": "fertilisers"}
-EXTRA = {"ES": {"1509": "olive oil"}, "PT": {"1509": "olive oil", "45": "cork"}}
+EXTRA = {"ES": {"1509": "olive oil"}, "PT": {"1509": "olive oil", "45": "cork"}, "IT": {"1509": "olive oil"}}
 def get(params, tries=4):
     q = urllib.parse.urlencode(params, doseq=True) + "&format=JSON&lang=EN&indicators=VALUE_IN_EUROS"
     last = None

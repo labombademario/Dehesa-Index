@@ -1,0 +1,8 @@
+cultivos 345 series
+censos 84 series
+carne 48 series
+leche 22 series
+aves 73 series
+indices de precios 91 series
+precios absolutos 23 series
+cuentas agrarias 157 series

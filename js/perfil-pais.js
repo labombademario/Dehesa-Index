@@ -2,7 +2,7 @@
    ES5, sin librerías. Uso: DIProfile.html(cc, country, ctx) devuelve el HTML; ctx = { lang, t, groups, esc, nf, dec, plabel }. */
 (function () {
   var NOTRADE = { es: 'Todavía no hay cifras de comercio exterior de este país en Dehesa Index.', en: 'Dehesa Index does not show foreign-trade figures for this country yet.', fr: 'Dehesa Index n’affiche pas encore de chiffres de commerce extérieur pour ce pays.', it: 'Dehesa Index non mostra ancora cifre del commercio estero per questo paese.' };
-  var FLAG = { US: '🇺🇸', EU: '🇪🇺', ES: '🇪🇸', FR: '🇫🇷', DE: '🇩🇪', BE: '🇧🇪', AT: '🇦🇹', PT: '🇵🇹', DK: '🇩🇰', NL: '🇳🇱', CA: '🇨🇦', AU: '🇦🇺' };
+  var FLAG = { US: '🇺🇸', EU: '🇪🇺', ES: '🇪🇸', FR: '🇫🇷', DE: '🇩🇪', BE: '🇧🇪', AT: '🇦🇹', PT: '🇵🇹', IT: '🇮🇹', DK: '🇩🇰', NL: '🇳🇱', CA: '🇨🇦', AU: '🇦🇺' };
   var T = {
     es: { overview: 'Perfil del país', kpi: 'Indicadores clave', explore: 'Qué puedes explorar', go: 'Explorar', series: 'series', last: 'Último dato', dest: 'Principales destinos', orig: 'Principales orígenes', trade: 'Comercio agroalimentario', from: 'Datos desde', to: 'hasta', sources: 'Fuentes', cover: 'Cobertura', exploreTitle: 'Explorar los datos de', examples: 'Por ejemplo', freq: 'Frecuencias', total: 'series en', cats: 'categorías', yr: 'último año completo', since: 'desde', hint: 'Elige una categoría para filtrar el explorador de abajo.' },
     en: { overview: 'Country profile', kpi: 'Key indicators', explore: 'What you can explore', go: 'Explore', series: 'series', last: 'Latest', dest: 'Main destinations', orig: 'Main origins', trade: 'Agri-food trade', from: 'Data from', to: 'to', sources: 'Sources', cover: 'Coverage', exploreTitle: 'Explore the data for', examples: 'For example', freq: 'Frequencies', total: 'series in', cats: 'categories', yr: 'latest full year', since: 'since', hint: 'Pick a category to filter the explorer below.' },
@@ -29,6 +29,7 @@
     BE: ['^be-out-cereals$', '^be-.*(pig|hog)', '^be-.*(milk|dairy)', '^eu-be-trade-exp-agrifood$', '^eu-be-trade-bal-agrifood$'],
     AT: ['^at-milk-D1110D$', '^at-milk-D7121$', '^at-milk-D6000$', '^eu-at-trade-exp-agrifood$', '^eu-at-trade-bal-agrifood$'],
     PT: ['^pt-es-milk-D1110D$', '^eu-pt-trade-exp-olive-oil$', '^eu-pt-trade-exp-agrifood$', '^eu-pt-trade-bal-agrifood$'],
+    IT: ['^it-es-crop-c1120-production$', '^it-es-crop-w1100-production$', '^it-es-herd-a2000-m05_m06$', '^it-es-milk-a-d1110d$', '^eu-it-trade-exp-agrifood$', '^eu-it-trade-bal-agrifood$'],
     DK: ['^dk-milk-prod$', '^dk-pig-slaught$', '^dk-cattle-prod$', '^eu-dk-trade-exp-agrifood$', '^eu-dk-trade-bal-agrifood$'],
     NL: ['^nl-milk-supply$', '^eu-nl-trade-exp-agrifood$', '^eu-nl-trade-imp-agrifood$', '^eu-nl-trade-bal-agrifood$'],
     CA: ['^ca-policy-rate$', '^ca-fppi-total-index$', '^ca-milk-fluid-purposes$', '^ca-fppi-cattle-and-calves$', '^ca-fppi-hogs$', '^ca-fppi-grains$'],

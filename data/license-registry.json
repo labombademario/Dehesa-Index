@@ -2016,6 +2016,11 @@
     "PT": "eurostat"
    }
   },
+  "data/italy-eurostat-stats.json": {
+   "byCountry": {
+    "IT": "eurostat"
+   }
+  },
   "data/canada-stats.json": {
    "byCountry": {
     "CA": "statcan"

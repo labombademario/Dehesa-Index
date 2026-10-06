@@ -2,10 +2,10 @@
 """Indicadores macro por país: Banco Mundial (PIB, PIB per cápita, población, paro, peso agrario) y FMI DataMapper (deuda/PIB)."""
 import json, os, sys, time, datetime, urllib.request
 
-WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU'}
+WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'IT': 'ITA', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU'}
 IND = {'gdp': 'NY.GDP.MKTP.CD', 'gdppc': 'NY.GDP.PCAP.CD', 'pop': 'SP.POP.TOTL', 'unemp': 'SL.UEM.TOTL.ZS', 'agri': 'NV.AGR.TOTL.ZS'}
 CUR = {'US': 'USD'}
-CUR.update({c: 'EUR' for c in ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'NL', 'EU']})
+CUR.update({c: 'EUR' for c in ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'NL', 'EU']})
 CUR.update({'DK': 'DKK', 'CA': 'CAD', 'AU': 'AUD'})
 LOG = []
 

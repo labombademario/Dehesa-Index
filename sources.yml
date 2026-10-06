@@ -197,6 +197,13 @@ sources:
     data: [portugal-eurostat-stats.json]
     log: portugal-eurostat-log.txt
     message: Datos Portugal (Eurostat)
+  - id: italy-eurostat
+    name: Update Italy (Eurostat)
+    cron: ['25 17 * * 2,5']
+    script: scripts/update-italy-eurostat.py
+    data: [italy-eurostat-stats.json]
+    log: italy-eurostat-log.txt
+    message: Datos Italia (Eurostat)
   - id: canada-stats
     name: Update Canada stats (Statistics Canada)
     cron: ['35 15 * * 1,4']

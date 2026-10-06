@@ -7,7 +7,7 @@ import fs from 'node:fs';
 import { seoTitle, seoDesc, socialMeta } from './lib_seo.mjs';
 const read = f => fs.readFileSync(f, 'utf8');
 const SITE = 'https://dehesaindex.com';
-const FILES = ['country-stats', 'spain-stats', 'france-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'uk-stats', 'portugal-stats', 'portugal-eurostat-stats', 'eu-gapfill-stats', 'canada-stats', 'us-stats', 'australia-trade-stats', 'eu-trade-stats', 'interest-rates-stats'];
+const FILES = ['country-stats', 'spain-stats', 'france-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'uk-stats', 'portugal-stats', 'portugal-eurostat-stats', 'italy-eurostat-stats', 'eu-gapfill-stats', 'canada-stats', 'us-stats', 'australia-trade-stats', 'eu-trade-stats', 'interest-rates-stats'];
 const CN = { ES: ['España', 'Spain'], FR: ['Francia', 'France'], DE: ['Alemania', 'Germany'], BE: ['Bélgica', 'Belgium'], AT: ['Austria', 'Austria'], PT: ['Portugal', 'Portugal'], DK: ['Dinamarca', 'Denmark'], NL: ['Países Bajos', 'Netherlands'], CA: ['Canadá', 'Canada'], AU: ['Australia', 'Australia'], US: ['EE. UU.', 'United States'], EU: ['Unión Europea', 'European Union'] };
 // etiquetas de grupo (es/en) tomadas de js/paises.js
 const pl = read('js/paises.js').split('\n'), GL = {};

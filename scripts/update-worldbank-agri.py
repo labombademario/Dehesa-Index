@@ -4,8 +4,8 @@ Cada indicador se comprueba contra sus metadatos oficiales (License_Type): solo 
 Si un indicador falla en una ejecucion, se conserva el valor anterior (nunca se rellena ni se estima)."""
 import json, os, sys, time, datetime, urllib.request
 
-WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU'}
-EURO = {'ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'NL'}
+WB = {'US': 'USA', 'ES': 'ESP', 'FR': 'FRA', 'DE': 'DEU', 'BE': 'BEL', 'AT': 'AUT', 'PT': 'PRT', 'IT': 'ITA', 'DK': 'DNK', 'NL': 'NLD', 'CA': 'CAN', 'AU': 'AUS', 'EU': 'EUU'}
+EURO = {'ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'NL'}
 FIRST = 1990
 # clave -> (codigo WDI, grupo)
 IND = {
