@@ -45,6 +45,11 @@ jobs:
       - name: CPI pipeline parsers and integrity checks (no network)
         run: python3 scripts/test-cpi.py
 
+      - name: ARC/PLC pipeline is fail-safe (provider outage keeps last valid data, touches no file)
+        run: |
+          pip install openpyxl
+          python3 scripts/test-us-arcplc-failsafe.py
+
       - name: Real prices arithmetic (CPI deflation in chart.js)
         run: node scripts/test-real-prices.mjs
 

@@ -56,8 +56,8 @@
   function lr(v) { return v[1] ? dec(v[3] / v[1], 2) : '—'; }
   function row(l, v) { return '<div class="di-info-stat-row"><span class="di-info-stat-label">' + esc(l) + '</span><span class="di-info-stat-value">' + v + '</span></div>'; }
   function cite(id, period, note) { return root.DICite ? root.DICite.html(id, { period: period, note: note }) : ''; }
-  function tbl(head, rows) {
-    return '<div class="pt-tblwrap"><table class="pt-table" data-no-rows><thead><tr>' + head.map(function (h, i) { return '<th' + (i ? ' style="text-align:right"' : '') + '>' + esc(h) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+  function tbl(head, rows, key) {
+    return '<div class="pt-tblwrap"><table class="pt-table" data-no-rows' + (key ? ' data-tbl="' + key + '"' : '') + '><thead><tr>' + head.map(function (h, i) { return '<th' + (i ? ' style="text-align:right"' : '') + '>' + esc(h) + '</th>'; }).join('') + '</tr></thead><tbody>' +
       rows.map(function (r) { return '<tr>' + r.map(function (c, i) { return '<td' + (i ? ' style="text-align:right;white-space:nowrap"' : '') + '>' + c + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>';
   }
   function topBy(group, y, n, k) {
@@ -81,10 +81,10 @@
   function caDetails(C, y) {
     var t = tc(), i = C.years.indexOf(+y), P = PROV[lang()] || PROV.es, h = '';
     h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.prov + ' · ' + y) + '</h3>' + tbl([t.provC, t.indS, t.hailS, t.expS],
-      PORDER.map(function (k) { var d = C.data[k]; return [esc(P[k]), mcad(d.indemnities[i]), mcad(d.hailIndemnities[i]), mcad(d.farmPremiums[i])]; }));
+      PORDER.map(function (k) { var d = C.data[k]; return [esc(P[k]), mcad(d.indemnities[i]), mcad(d.hailIndemnities[i]), mcad(d.farmPremiums[i])]; }), 'ca-prov');
     var from = Math.max(0, C.years.length - 15), rows = [];
     for (var j = C.years.length - 1; j >= from; j--) rows.push([esc(C.years[j]), mcad(C.data.CA.indemnities[j]), mcad(C.data.CA.hailIndemnities[j]), mcad(C.data.CA.farmPremiums[j])]);
-    h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.tr) + '</h3>' + tbl([t.yearC, t.indS, t.hailS, t.expS], rows);
+    h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.tr) + '</h3>' + tbl([t.yearC, t.indS, t.hailS, t.expS], rows, 'ca-trend');
     return h;
   }
   function esCard(E) {
@@ -97,14 +97,14 @@
   function details(D, y) {
     var t = tx(), st = D.states, cr = D.crops, h = '';
     h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.st) + '</h3>' + tbl([t.stateC, t.liab, t.prem, t.ind, t.lr],
-      topBy(st, y, 10, 0).map(function (k) { var v = st[k][y]; return [esc(k + ' · ' + (STATES[k] || k)), mus(v[0]), mus(v[1]), mus(v[3]), lr(v)]; }));
+      topBy(st, y, 10, 0).map(function (k) { var v = st[k][y]; return [esc(k + ' · ' + (STATES[k] || k)), mus(v[0]), mus(v[1]), mus(v[3]), lr(v)]; }), 'us-states');
     h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.cr) + '</h3>' + tbl([t.cropC, t.liab, t.prem, t.ind, t.lr],
-      topBy(cr, y, 10, 0).map(function (k) { var v = cr[k][y]; return [esc(k), mus(v[0]), mus(v[1]), mus(v[3]), lr(v)]; }));
+      topBy(cr, y, 10, 0).map(function (k) { var v = cr[k][y]; return [esc(k), mus(v[0]), mus(v[1]), mus(v[3]), lr(v)]; }), 'us-crops');
     var ci = D.causeIndemnity, ks = Object.keys(ci).filter(function (k) { return ci[k][y]; }).sort(function (a, b) { return ci[b][y] - ci[a][y]; }), tot = D.national[y][F.ind], mx = ks.length ? ci[ks[0]][y] : 1;
     h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.ca) + '</h3>' + tbl([t.causeC, t.ind, ''],
-      ks.slice(0, 8).map(function (k) { return [esc(k), mus(ci[k][y]), '<span style="display:inline-block;height:8px;border-radius:4px;background:var(--accent);width:' + Math.max(2, Math.round(80 * ci[k][y] / mx)) + 'px;vertical-align:middle" title="' + esc(pct(ci[k][y], tot)) + '"></span> ' + esc(pct(ci[k][y], tot))]; }));
+      ks.slice(0, 8).map(function (k) { return [esc(k), mus(ci[k][y]), '<span style="display:inline-block;height:8px;border-radius:4px;background:var(--accent);width:' + Math.max(2, Math.round(80 * ci[k][y] / mx)) + 'px;vertical-align:middle" title="' + esc(pct(ci[k][y], tot)) + '"></span> ' + esc(pct(ci[k][y], tot))]; }), 'us-causes');
     h += '<h3 class="di-info-card-title" style="margin:22px 0 8px">' + esc(t.tr) + '</h3>' + tbl([t.yearC, t.liab, t.prem, t.sub, t.ind, t.lr],
-      D.cropYears.slice().reverse().map(function (yy) { var v = D.national[yy]; return [esc(yy + (+yy >= D.provisionalFrom ? ' *' : '')), mus(v[0]), mus(v[1]), mus(v[2]), mus(v[3]), lr(v)]; }));
+      D.cropYears.slice().reverse().map(function (yy) { var v = D.national[yy]; return [esc(yy + (+yy >= D.provisionalFrom ? ' *' : '')), mus(v[0]), mus(v[1]), mus(v[2]), mus(v[3]), lr(v)]; }), 'us-trend');
     h += '<div class="di-info-scope-note" style="margin-top:6px">* ' + esc(t.prov) + '</div>';
     return h;
   }
@@ -125,10 +125,11 @@
     });
     return '<div class="di-badge di-badge-green di-info-badge" style="margin-top:28px">' + esc(h.badge) + '</div>' +
       '<h3 class="di-info-card-title" style="margin:12px 0 8px">' + esc(h.title) + '</h3>' +
-      tbl([h.yr, h.pol, h.an, h.pr, h.cap, h.net, h.se, h.sc, h.ind, h.rep], rows) +
+      tbl([h.yr, h.pol, h.an, h.pr, h.cap, h.net, h.se, h.sc, h.ind, h.rep], rows, 'es-enesa') +
       '<div class="di-info-scope-note" style="margin-top:6px">* ' + esc(h.prov) + '</div>' +
       '<div class="di-info-scope-note" style="margin-top:10px">' + esc(h.note) + '</div>' +
-      '<div class="di-info-scope-note" style="margin-top:6px">' + esc(h.src) + ' <a href="' + esc(N.meta.url) + '" rel="noopener" target="_blank">' + esc(h.link) + '</a></div>';
+      '<div class="di-info-scope-note" style="margin-top:6px">' + esc(h.src) + ' <a href="' + esc(N.meta.url) + '" rel="noopener" target="_blank">' + esc(h.link) + '</a></div>' +
+      cite('enesa', String(N.annual[N.annual.length - 1].year));
   }
   function render(el) {
     var t = tx(), D = null, E = null, C = null, N = null;

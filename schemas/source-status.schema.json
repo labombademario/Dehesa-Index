@@ -1,0 +1,46 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Cortes de fuente: workflows cuyo proveedor no respondio (el ultimo dato valido se conserva)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "workflows"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "workflows": {
+   "type": "object",
+   "additionalSchema": {
+    "type": "object",
+    "required": [
+     "state",
+     "since",
+     "lastAttempt",
+     "reason",
+     "consecutive"
+    ],
+    "properties": {
+     "state": {
+      "type": "string"
+     },
+     "since": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+     },
+     "lastAttempt": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+     },
+     "reason": {
+      "type": "string"
+     },
+     "consecutive": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ }
+}

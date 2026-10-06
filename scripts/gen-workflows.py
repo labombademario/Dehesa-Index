@@ -26,7 +26,8 @@ def render(x):
         L.append("        env:"); L += ["          %s: %s" % (k, v) for k, v in x["env"].items()]
     if x.get("script_timeout"): L.append("        timeout-minutes: %d" % x["script_timeout"])
     if x.get("continue"): L.append("        continue-on-error: true")
-    always = ["        if: always()"] if x.get("continue") else []
+    fs = x.get("failsafe")  # el script publica source=unavailable cuando el PROVEEDOR no responde: no se valida, no se detectan revisiones y no se publica nada
+    always = ["        if: always()" + (" && steps.fetch.outputs.source != 'unavailable'" if fs else "")] if x.get("continue") else []
     reg = json.loads((ROOT / "schemas" / "registry.json").read_text())["files"]
     vlist = [f for f in x["data"] if f.endswith(".json")] + [e for e in x.get("extra", []) if not e.startswith("!") and e in reg]  # tambien los ficheros extra con contrato
     files = " ".join("data/" + f for f in vlist)
@@ -37,10 +38,14 @@ def render(x):
     if qa:
         L += ["      - id: qa", "        name: Control de calidad antes de publicar (si falla, no se publica)"] + always + ["        run: " + qa, "        continue-on-error: true"]
     adds = " ".join([(f[1:] if f.startswith("!") else "data/" + f) for f in x["data"] + x.get("extra", [])] + (["data/" + x["log"]] if x.get("log") else []) + (["data/revisions.json"] if vlist else []))
-    pub_if = ["        if: always() && steps.qa.outcome != 'failure'"] if qa else always
+    pub_if = ["        if: always() && steps.qa.outcome != 'failure'" + (" && steps.fetch.outputs.source != 'unavailable'" if fs else "")] if qa else always
     L += ["      - name: Publicar"] + pub_if + ["        run: |", '          git config user.name "github-actions[bot]"', '          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"',
           "          git add " + adds, "          git diff --cached --quiet && exit 0", "          git commit -qm " + json.dumps(x["message"], ensure_ascii=False),
           "          for i in 1 2 3 4 5 6; do", "            git pull -q --rebase --autostash && git push && exit 0", "            sleep $((i * 5 + RANDOM % 10))", "          done", "          echo '::error::no se pudo publicar tras 6 intentos'; exit 1"]
+    if fs:
+        L += ["      - name: Estado de la fuente (un corte del proveedor se registra como retraso, no como error de Dehesa Index)", "        if: always()", "        env:", "          REASON: ${{ steps.fetch.outputs.reason }}",
+              "        run: python3 scripts/source-status.py ${{ steps.fetch.outputs.source == 'unavailable' && 'mark' || (steps.fetch.outcome == 'success' && 'clear' || 'none') }} update-%s.yml \"$REASON\"" % x["id"],
+              "      - name: Publicar estado de la fuente", "        if: always()", "        uses: ./.github/actions/publish", "        with:", "          optional: data/source-status.json", "          message: " + q("Estado de la fuente: " + x["id"])]
     if vlist or x.get("continue"):
         L += ["      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)", "        if: always()", "        uses: ./.github/actions/finish", "        with:", "          outcomes: ${{ steps.fetch.outcome }}" + (" ${{ steps.qa.outcome }}" if qa else "")]
     return "\n".join(L) + "\n"

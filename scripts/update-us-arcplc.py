@@ -10,7 +10,7 @@ Lo que la FSA deja en blanco (campana aun abierta) queda como hueco, nunca como 
 Atribucion: "U. S. Department of Agriculture, Farm Service Agency."
 Uso: update-us-arcplc.py [--outdir DIR] [--years N] [--from-dir DIR]
   --from-dir: lee la pagina (program-data.html) y los xlsx de una carpeta en vez de la red (mismo procesado; para una carga inicial si la FSA no responde al servidor)."""
-import datetime, io, json, re, sys, time, urllib.error, urllib.parse, urllib.request
+import datetime, io, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PAGE = "https://www.fsa.usda.gov/resources/programs/arc-plc/program-data"
@@ -118,40 +118,47 @@ def plc(year, href):
                     "loanRate": loan, "effPrice": eff, "rate": rate, "rateFlag": (str(r[11] or "").strip() or None), "maxRate": mx})
     if len(out) < 10: raise RuntimeError("PLC %s: solo %d cultivos" % (year, len(out)))
     log("PLC", year, len(out), "cultivos", u.rsplit("/", 1)[-1]); return out, (u if u.startswith("http") else Path(u).name)
-def now_s(): return __import__('datetime').datetime.now(__import__('datetime').timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-def main():
-    a = sys.argv[1:]; outdir = Path(a[a.index("--outdir") + 1]) if "--outdir" in a else ROOT / "data" / "us-arcplc"
+def now_s(): return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+def emit(status, reason=""):
+    """Estado de la fuente para el workflow: 'available' o 'unavailable'. Con 'unavailable' no se ha tocado ningun fichero de datos."""
+    log("ESTADO DE LA FUENTE:", status, reason)
+    p = os.environ.get("GITHUB_OUTPUT")
+    if p:
+        with open(p, "a") as fh: fh.write("source=%s\nreason=%s\n" % (status, reason.replace("\n", " ")[:200]))
+def load_json(p):
+    try: return json.loads(Path(p).read_text())
+    except Exception: return None
+def run(a, outdir):
+    """Devuelve ('available', '') si se ha escrito un conjunto nuevo y valido, o ('unavailable', motivo) sin haber tocado NINGUN fichero:
+    un corte, una respuesta parcial o una cabecera inesperada de la FSA no pueden convertirse en datos corruptos de Dehesa Index."""
     years = int(a[a.index("--years") + 1]) if "--years" in a else 5
-    global FROM
-    if "--from-dir" in a: FROM = a[a.index("--from-dir") + 1]
-    outdir.mkdir(parents=True, exist_ok=True)
+    min_states = int(a[a.index("--min-states") + 1]) if "--min-states" in a else 40
     try: arc_l, plc_l = links()
-    except Exception as e:
-        log("la web de la FSA no responde (%s): no se toca ningun dato; se reintenta en la proxima ejecucion" % str(e)[:160]); (outdir / "log.txt").write_text(now_s() + "\n" + "\n".join(LOG) + "\n"); return 0
+    except Exception as e: return "unavailable", "la web de la FSA no responde (%s)" % str(e)[:140]
     log("enlaces ARC-CO", sorted(arc_l), "PLC", sorted(plc_l))
     last = max(list(arc_l) + list(plc_l) + [0])
-    if not last: log("la pagina de la FSA no tiene enlaces reconocibles"); (outdir / "log.txt").write_text("\n".join(LOG) + "\n"); return 1
+    if not last: return "unavailable", "la pagina de la FSA no tiene enlaces reconocibles"
     want = [y for y in range(last - years + 1, last + 1)]
     out, files = {}, {}
     for y in want:
         if y in arc_l:
             try: files["arcco_%d" % y] = arcco(y, arc_l[y], out)
             except Exception as e: log("ARC-CO", y, "FALLO", e)
-    oldus = None
-    try: oldus = json.loads((outdir / "national.json").read_text())
-    except Exception: pass
+    oldus = load_json(outdir / "national.json")
     plcs = dict((oldus or {}).get("plc") or {}); pfiles = dict((oldus or {}).get("files") or {})
+    got_plc = 0
     for y in want:
         if y in plc_l:
-            try: plcs[str(y)], files["plc_%d" % y] = plc(y, plc_l[y])
+            try: plcs[str(y)], files["plc_%d" % y] = plc(y, plc_l[y]); got_plc += 1
             except Exception as e: log("PLC", y, "FALLO", e)
+    if not out and not got_plc: return "unavailable", "ningun fichero de la FSA se pudo descargar o leer"
+    prev = load_json(outdir / "index.json"); prev_n = len((prev or {}).get("states") or {})
+    if out and prev_n and len(out) < prev_n * 0.9: return "unavailable", "respuesta parcial: ARC-CO trae %d estados frente a %d ya publicados" % (len(out), prev_n)
+    if out and len(out) < min_states: return "unavailable", "respuesta parcial: ARC-CO trae solo %d estados (minimo %d)" % (len(out), min_states)
     plcs = {k: v for k, v in plcs.items() if int(k) >= want[0]}
-    idx = {}
+    new_files, idx = {}, {}  # nada se escribe hasta comprobar que el conjunto completo es coherente
     for st in sorted(NAMES.values()):
-        p = outdir / (st + ".json"); old = None
-        try: old = json.loads(p.read_text())
-        except Exception: pass
-        cur = out.get(st, {})
+        old = load_json(outdir / (st + ".json")); cur = out.get(st, {})
         if old:  # una campana que no se pudo leer conserva sus datos anteriores
             for fips, c in (old.get("counties") or {}).items():
                 for key, e in c["crops"].items():
@@ -161,12 +168,21 @@ def main():
                         ne["years"].setdefault(y, v)
         if not cur: continue
         ys = sorted({y for c in cur.values() for e in c["crops"].values() for y in e["years"]})
-        doc = {"schemaVersion": 1, "generatedAt": now(), "state": st, "sourceId": "usda_fsa", "unit": "USD per base acre", "years": ys, "counties": cur}
-        p.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-        idx[st] = {"counties": len(cur), "years": ys, "bytes": p.stat().st_size}
-    if len(idx) < (int(a[a.index("--min-states") + 1]) if "--min-states" in a else 40): log("demasiados pocos estados", len(idx)); (outdir / "log.txt").write_text("\n".join(LOG) + "\n"); return 1
+        txt = json.dumps({"schemaVersion": 1, "generatedAt": now(), "state": st, "sourceId": "usda_fsa", "unit": "USD per base acre", "years": ys, "counties": cur}, ensure_ascii=False, separators=(",", ":"))
+        new_files[st] = txt; idx[st] = {"counties": len(cur), "years": ys, "bytes": len(txt.encode("utf-8"))}
+    if len(idx) < min_states: return "unavailable", "respuesta parcial: solo %d estados (minimo %d)" % (len(idx), min_states)
+    if prev_n and len(idx) < prev_n * 0.9: return "unavailable", "respuesta parcial: %d estados frente a %d ya publicados" % (len(idx), prev_n)
+    outdir.mkdir(parents=True, exist_ok=True)
+    for st, txt in new_files.items(): (outdir / (st + ".json")).write_text(txt, encoding="utf-8")
     pfiles.update(files)
     (outdir / "national.json").write_text(json.dumps({"schemaVersion": 1, "generatedAt": now(), "sourceId": "usda_fsa", "plc": plcs, "files": pfiles}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (outdir / "index.json").write_text(json.dumps({"schemaVersion": 1, "generatedAt": now(), "page": PAGE, "states": idx}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    (outdir / "log.txt").write_text(now() + "\n" + "\n".join(LOG[-300:]) + "\n", encoding="utf-8"); log("estados", len(idx)); return 0
+    log("estados", len(idx)); (outdir / "log.txt").write_text(now() + "\n" + "\n".join(LOG[-300:]) + "\n", encoding="utf-8")
+    return "available", ""
+def main():
+    a = sys.argv[1:]; outdir = Path(a[a.index("--outdir") + 1]) if "--outdir" in a else ROOT / "data" / "us-arcplc"
+    global FROM
+    if "--from-dir" in a: FROM = a[a.index("--from-dir") + 1]
+    status, reason = run(a, outdir); emit(status, reason)
+    return 0
 if __name__ == "__main__": sys.exit(main())

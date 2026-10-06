@@ -496,6 +496,10 @@
    "eu-regions-macro",
    []
   ],
+  "source-status.json": [
+   "source-status",
+   []
+  ],
   "us-states-macro.json": [
    "us-states-macro",
    []

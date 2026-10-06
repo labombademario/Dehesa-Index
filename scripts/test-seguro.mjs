@@ -7,7 +7,7 @@ import { execSync } from 'node:child_process';
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
 const BASE = arg('--base', 'http://localhost:8123');
 let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
-const D = JSON.parse(fs.readFileSync('data/crop-insurance.json', 'utf8')), E = JSON.parse(fs.readFileSync('data/insurance-es.json', 'utf8')), C = JSON.parse(fs.readFileSync('data/crop-insurance-ca.json', 'utf8'));
+const D = JSON.parse(fs.readFileSync('data/crop-insurance.json', 'utf8')), E = JSON.parse(fs.readFileSync('data/insurance-es.json', 'utf8')), C = JSON.parse(fs.readFileSync('data/crop-insurance-ca.json', 'utf8')), N = JSON.parse(fs.readFileSync('data/enesa-contratacion.json', 'utf8'));
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
 let fail = 0; const ok = (n, c) => { if (!c) { fail++; console.log('FALLA', n); } };
 const grp = (n, sep) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, sep);
@@ -31,8 +31,23 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   ok(tag + ': indemnizaciones exactas', text.includes(grp(v[3] / 1e6, sep)));
   ok(tag + ': subvencion exacta', text.includes(grp(v[2] / 1e6, sep)));
   ok(tag + ': cifras de Espana de insurance-es.json', text.includes(grp(E.stats.premiumsMEur, sep)) && text.includes(grp(E.stats.indemnitiesMEur, sep)));
-  const n = await page.evaluate(() => [...document.querySelectorAll('#pr-category table')].map(t => t.querySelectorAll('tbody tr').length));
-  ok(tag + ': tablas 10/10/8/' + D.cropYears.length + '/10/15 filas (hay ' + n + ')', JSON.stringify(n) === JSON.stringify([10, 10, 8, D.cropYears.length, 10, 15]));
+  /* Las tablas se identifican por su bloque (data-tbl), no por su posicion: la pagina puede ganar bloques sin romper la prueba. */
+  const tb = await page.evaluate(() => { const o = {}; document.querySelectorAll('#pr-category table[data-tbl]').forEach(t => { o[t.getAttribute('data-tbl')] = [...t.querySelectorAll('tbody tr')].map(r => [...r.children].map(c => c.innerText.trim())); }); return o; });
+  const top = (g, k) => Object.keys(g).filter(c => g[c][y]).sort((a, b) => g[b][y][k] - g[a][y][k]);
+  ok(tag + ': hay tablas por bloque (' + Object.keys(tb).join(',') + ')', ['us-states', 'us-crops', 'us-causes', 'us-trend', 'ca-prov', 'ca-trend'].every(k => tb[k] && tb[k].length));
+  ok(tag + ': estados: 10 filas y el primero es el mayor capital asegurado', (tb['us-states'] || []).length === 10 && (tb['us-states'][0][0] || '').startsWith(top(D.states, 0)[0] + ' ·'));
+  ok(tag + ': cultivos: 10 filas y el primero es el mayor capital asegurado', (tb['us-crops'] || []).length === 10 && (tb['us-crops'][0][0] || '') === top(D.crops, 0)[0]);
+  const nc = Object.keys(D.causeIndemnity).filter(k => D.causeIndemnity[k][y]).length;
+  ok(tag + ': causas: ' + Math.min(8, nc) + ' filas, la primera es la mayor indemnizacion', (tb['us-causes'] || []).length === Math.min(8, nc) && (tb['us-causes'][0][0] || '') === Object.keys(D.causeIndemnity).filter(k => D.causeIndemnity[k][y]).sort((a, b) => D.causeIndemnity[b][y] - D.causeIndemnity[a][y])[0]);
+  ok(tag + ': serie anual de EE. UU.: ' + D.cropYears.length + ' filas, la primera es el ultimo año', (tb['us-trend'] || []).length === D.cropYears.length && (tb['us-trend'][0][0] || '').startsWith(String(D.cropYears[D.cropYears.length - 1])));
+  const provs = Object.keys(C.data).filter(k => k !== 'CA').length;
+  ok(tag + ': Canadá por provincia: ' + provs + ' filas', (tb['ca-prov'] || []).length === provs);
+  ok(tag + ': Canadá serie: ' + Math.min(15, C.years.length) + ' filas, la primera es el ultimo año', (tb['ca-trend'] || []).length === Math.min(15, C.years.length) && (tb['ca-trend'][0][0] || '') === String(C.years[C.years.length - 1]));
+  /* ENESA historico: una fila por ejercicio del JSON y las pólizas de cada fila coinciden con el fichero */
+  const en = (tb['es-enesa'] || []), ea = N.annual.slice().reverse();
+  ok(tag + ': ENESA: ' + ea.length + ' filas, una por ejercicio', en.length === ea.length && en.every((r, i) => r[0].startsWith(String(ea[i].year))));
+  ok(tag + ': ENESA: las pólizas de cada ejercicio son las del JSON', en.length === ea.length && en.every((r, i) => ea[i].polizas == null ? r[1] === '—' : r[1] === grp(ea[i].polizas, sep)));
+  ok(tag + ': ENESA: se declara histórico y no actual', /31/.test(text) && await page.evaluate(() => !!document.querySelector('#pr-category .di-cite[data-src="enesa"]')));
   ok(tag + ': Canadá, indemnizaciones exactas', text.includes(mcad(C.data.CA.indemnities[ci], sep, lang)));
   ok(tag + ': Canadá, gasto exacto', text.includes(mcad(C.data.CA.farmPremiums[ci], sep, lang)));
   ok(tag + ': Canadá, granizo exacto', text.includes(mcad(C.data.CA.hailIndemnities[ci], sep, lang)));

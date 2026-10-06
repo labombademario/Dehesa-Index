@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T03:53:00Z",
+ "generatedAt": "2026-10-06T04:33:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 85,
   "late": 0,
   "error": 2,
-  "not_run": 5,
-  "unknown": 1
+  "not_run": 6,
+  "unknown": 0
  },
  "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "50f91096",
+   "sha": "f4b6562d",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/a91adbc6-3e6f-44f6-bdd7-5c058a46a790",
-   "completedAt": "2026-10-06T03:38:06Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/fc7b43d6-0339-417d-89bc-d2353066f5be",
+   "completedAt": "2026-10-06T04:20:41Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -31,7 +31,11 @@
     "30 21 * * 5,6"
    ],
    "nextRun": "2026-10-09T21:30:00Z",
-   "files": [],
+   "files": [
+    {
+     "path": "data/alberta-weekly-debug.txt"
+    }
+   ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
@@ -335,7 +339,8 @@
    "nextRun": "2026-10-08T07:50:00Z",
    "files": [
     {
-     "path": "data/canada-provinces-macro.json"
+     "path": "data/canada-provinces-macro.json",
+     "lastChange": "2026-10-06T04:19:54Z"
     },
     {
      "path": "data/revisions.json",
@@ -344,7 +349,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 168.0
   },
   {
@@ -617,7 +622,20 @@
     "50 14 * * 3"
    ],
    "nextRun": "2026-10-07T14:50:00Z",
-   "files": [],
+   "files": [
+    {
+     "path": "data/country-stats.json",
+     "valid": "ok",
+     "series": 133,
+     "points": 11262,
+     "lines": 0,
+     "lastChange": "2026-09-30T18:27:45Z"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-05T11:42:05Z"
+    }
+   ],
    "last": {
     "conclusion": "cancelled",
     "event": "workflow_dispatch",
@@ -1861,7 +1879,36 @@
     "30 8 6 * *"
    ],
    "nextRun": "2026-10-06T08:30:00Z",
-   "files": [],
+   "files": [
+    {
+     "path": "data/tariffs-eu.json",
+     "valid": "ok",
+     "series": 0,
+     "points": 0,
+     "lines": 2315,
+     "lastChange": "2026-10-01T03:06:36Z"
+    },
+    {
+     "path": "data/tariffs-mx.json",
+     "valid": "ok",
+     "series": 0,
+     "points": 0,
+     "lines": 1184,
+     "lastChange": "2026-10-01T03:06:36Z"
+    },
+    {
+     "path": "data/tariffs-ca.json",
+     "valid": "ok",
+     "series": 0,
+     "points": 0,
+     "lines": 1688,
+     "lastChange": "2026-10-01T03:06:36Z"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-05T11:42:05Z"
+    }
+   ],
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
@@ -1887,7 +1934,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-06T03:36:56Z"
+     "lastChange": "2026-10-06T04:19:54Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1903,7 +1950,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-06T03:36:56Z"
+     "lastChange": "2026-10-06T04:19:54Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1920,7 +1967,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-06T03:36:56Z"
+     "lastChange": "2026-10-06T04:19:54Z"
     },
     {
      "path": "data/products"
@@ -1931,15 +1978,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-06T03:36:56Z"
+     "lastChange": "2026-10-06T04:19:54Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-06T03:36:56Z"
+     "lastChange": "2026-10-06T04:19:54Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-06T03:36:56Z"
+     "lastChange": "2026-10-06T04:19:54Z"
     },
     {
      "path": "data/premium-tracker.json",
@@ -2544,6 +2591,9 @@
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-05T11:42:05Z"
+    },
+    {
+     "path": "data/source-status.json"
     }
    ],
    "last": {

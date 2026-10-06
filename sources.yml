@@ -531,6 +531,7 @@ sources:
     cron: ['35 6 3,17 * *']
     pre: ['pip install openpyxl']
     script: scripts/update-us-arcplc.py
+    failsafe: true
     timeout: 40
     script_timeout: 30
     continue: true

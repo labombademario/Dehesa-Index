@@ -100,13 +100,15 @@ def main():
     dq = {}
     try: dq = {f["file"]: f for f in json.loads((ROOT / "data" / "data-quality.json").read_text())["files"]}
     except Exception: pass
+    try: ss = json.loads((ROOT / "data" / "source-status.json").read_text(encoding="utf-8")).get("workflows") or {}
+    except Exception: ss = {}
     out = []; changed_cache = {}
     for wf in sorted((ROOT / ".github" / "workflows").glob("update-*.yml")):
         s = wf.read_text(encoding="utf-8")
         name = (re.search(r"^name:\s*(.+)$", s, re.M) or [None, wf.stem])[1].strip().strip("'\"")
         crons = re.findall(r"cron:\s*['\"]([^'\"]+)['\"]", s)
         files = []
-        for a in re.findall(r"git add ([^\n]+)", s):
+        for a in re.findall(r"git add ([^\n]+)", s) + re.findall(r"^\s+(?:optional|paths):\s*([^\n]+)", s, re.M):
             for t in a.split():
                 t = t.rstrip(";")
                 if t.startswith("data/") and not t.endswith("-log.txt") and "*" not in t and t not in files: files.append(t)
@@ -141,6 +143,9 @@ def main():
         # NOT_RUN_YET: la API respondio y el workflow no tiene ninguna ejecucion (distinto de "unknown": no hemos podido consultarlo)
         if runs is not None and not runs.get("workflow_runs"): item["status"] = "not_run"
         if any(f.get("valid") == "error" for f in item["files"]): item["status"] = "error"
+        # Corte del PROVEEDOR (la fuente no respondio): el ultimo dato valido se conserva; es un retraso explicito, no un error de Dehesa Index ni un exito inventado.
+        if wf.name in ss and item["status"] in ("ok", "late", "not_run", "unknown"):
+            item["status"] = "late"; item["sourceUnavailable"] = {k: ss[wf.name].get(k) for k in ("since", "lastAttempt", "reason", "consecutive")}
         out.append(item)
     cnt = {k: sum(1 for i in out if i["status"] == k) for k in ("ok", "late", "error", "not_run", "unknown")}
     dep = check_deploy()

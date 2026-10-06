@@ -37,16 +37,13 @@ jobs:
         uses: ./.github/actions/validate-files
         with:
           files: data/ams-grain-daily.json data/us-fertilizers.json data/search-index.json
-      - name: Commit updated data
+      - name: Publicar (commit una vez; si falla el push se reintenta solo pull/rebase/push, sin volver a descargar ni reconstruir)
         if: always()
-        run: |
-          git config user.name "dehesa-index-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/ams data/search-index.json data/ams-grain-daily.json data/us-fertilizers.json
-          if git diff --cached --quiet; then echo "No data changes."; exit 0; fi
-          git commit -m "data: update USDA AMS markets"
-          git pull --rebase origin main
-          git push origin HEAD:main
+        uses: ./.github/actions/publish
+        with:
+          optional: data/ams data/search-index.json data/ams-grain-daily.json data/us-fertilizers.json
+          message: 'data: update USDA AMS markets'
+          user: dehesa-index-bot
       - name: Cierre (rojo si hubo datos invalidos)
         if: always()
         uses: ./.github/actions/finish
