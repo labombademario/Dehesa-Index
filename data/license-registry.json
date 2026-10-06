@@ -932,23 +932,23 @@
    "url": "https://open.alberta.ca/",
    "country": "CA",
    "licenseId": "OGL-Alberta",
-   "licenseName": "Open Government Licence – Alberta (only where a publication is marked under it; not confirmed for this series)",
+   "licenseName": "Open Government Licence – Alberta (Government of Alberta information; third-party material within the reviews excluded)",
    "licenseUrl": "https://open.alberta.ca/licence",
    "commercialUse": "yes",
    "derivatives": "yes",
    "redistribution": "yes",
    "attributionRequired": true,
    "attributionText": "Contains information licensed under the Open Government Licence – Alberta.",
-   "additionalRestrictions": "No suggestion of official status; excludes personal information, logos and trademarks.",
+   "additionalRestrictions": "No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; alberta.ca pages without an OGL-Alberta line do not allow commercial reproduction without permission.",
    "thirdPartyExceptions": true,
-   "thirdPartyNote": "Rights the provider is not authorised to license are excluded.",
-   "verifiedAt": "2026-10-01",
-   "status": "PENDING",
+   "thirdPartyNote": "The OGL-Alberta grants no rights over third-party material the Government of Alberta cannot sublicense. The reviews include ICE Futures Canada and US futures, elevator and special-crop cash bids collected 'from various sources', and (livestock) CANFAX prices and US boxed beef and hog prices. They are reproduced as published and cited to the Alberta report; the original third-party owners are not licensed by this entry. No Alberta, ICE or CANFAX logos or marks are reused.",
+   "verifiedAt": "2026-10-05",
+   "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "open.alberta.ca listing shows no licence for the dataset in use; licence unconfirmed. Stays PENDING.",
+   "evidence": "Direct check 2026-10-05: the open.alberta.ca publication page for the Weekly Crop Market Review (publications/3479492) names Alberta Agriculture and Irrigation, Statistics and Data Development Section as publisher but shows no licence line. Analysis supplied by Mario 2026-10-05: the Alberta Open Government catalogue entries for the Weekly Crop Market Review and the Weekly Livestock Market Review list 'Access: unrestricted, License: Open Government Licence – Alberta, Owner: Agriculture and Irrigation', and the Alberta publications guide says government information is released under OGL-Alberta unless an exception applies. I could not reproduce that catalogue line from the page I read. Decision of the site owner (Mario, 2026-10-05): official Government of Alberta publication, green as long as it is cited. Confidence stays medium.",
    "used": true,
    "aliases": [],
-   "notes": null,
+   "notes": "Per-series origin tags (government vs ICE/CANFAX/private bids) are a possible refinement; not implemented.",
    "short": "Alberta Agriculture"
   },
   "abs": {
@@ -2339,10 +2339,6 @@
    "ble": {
     "since": "2026-10-01",
     "nextAction": "Leer la pagina de Open Data de BLE (bloqueada por robots.txt) o pedir licencia; alternativa: Destatis DL-DE-BY."
-   },
-   "alberta_ag": {
-    "since": "2026-10-01",
-    "nextAction": "Confirmar OGL-Alberta para la serie o contactar con Alberta Agriculture."
    },
    "cbsa_tariff": {
     "since": "2026-10-01",
