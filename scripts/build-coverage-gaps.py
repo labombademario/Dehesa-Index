@@ -74,6 +74,36 @@ for key, p in CM.NL_SLAUGHTER_PRODUCT.items():
 if any(_has(((_nl.get('fruit') or {}).get('data') or {}).get(k, {}).get('prod')) for k in ('apples', 'pears')): add_ext('NL', 'fruit', 'production', 'netherlands-farm.json')   # 84499NED
 for key, p in (('milk_intake', 'milk'), ('cheese', 'cheese'), ('butter', 'butter')):   # 7425zuiv: la mantequilla solo cuenta si el CBS la publica (hoy vacia)
     if _has(((_nl.get('dairy') or {}).get('data') or {}).get(key)): add_ext('NL', p, 'production', 'netherlands-farm.json')
+# Espana (MAPA, MITECO/FEGA, InfoLac, InfoVi): lo que ya publica la web con fuente nacional pero fuera del catalogo unificado. Cada celda solo cuenta si el fichero trae cifras reales del producto.
+ES_CROP_PRODUCT = {'CE1100': 'wheat', 'CE1200': 'rye', 'CE1300': 'barley', 'CE1400': 'oats', 'CE1500': 'maize', 'CE2000': 'rice', 'IN1100': 'rapeseed', 'IN1300': 'soy', 'IN7200': 'sugar', 'TH1100': 'potato', 'OL1000': 'olive', 'VI1000': 'wine', 'NC0000': 'fruit'}
+_es_seen = set()
+for _f in ('cereales', 'industriales', 'tuberculos', 'olivar', 'vinedo', 'frutales'):
+    _c = CM.J('spain-crops/crops-%s.json' % _f, {}); _camps = _c.get('campaigns') or {}
+    for _y in sorted(_camps, reverse=True)[:3]:
+        _meas = _c.get('measures') or []; _ip = _meas.index('production') if 'production' in _meas else None
+        for _x in _camps[_y].get('crops') or []:
+            _p = ES_CROP_PRODUCT.get(_x.get('c'))
+            if _p and _ip is not None and isinstance(_x.get('t'), list) and len(_x['t']) > _ip and isinstance(_x['t'][_ip], (int, float)) and _x['t'][_ip] > 0 and _p not in _es_seen:
+                _es_seen.add(_p); add_ext('ES', _p, 'production', 'spain-crops/crops-%s.json' % _f)
+_es_sl = CM.J('spain-slaughter/slaughter.json', {}).get('national') or {}
+for _k, _p in (('bovino', 'cattle'), ('porcino', 'pigs'), ('ovino', 'sheep'), ('aves', 'poultry')):
+    if _es_sl.get(_k): add_ext('ES', _p, 'production', 'spain-slaughter/slaughter.json')
+if (CM.J('spain-milk/infolac.json', {}).get('national') or {}).get('deliveries'): add_ext('ES', 'milk', 'production', 'spain-milk/infolac.json')
+if (CM.J('spain-wine/infovi.json', {}).get('national') or {}).get('wine'): add_ext('ES', 'wine', 'production', 'spain-wine/infovi.json')
+_esb = CM.J('spain-balances/cereals.json', {}); _bc = _esb.get('campaigns') or {}
+if _bc:
+    _by = _bc[-1] if isinstance(_bc, list) else _bc[sorted(_bc)[-1]]
+    for _k, _p in (('wheat_soft', 'wheat'), ('barley', 'barley'), ('maize', 'maize'), ('rye', 'rye'), ('oats', 'oats')):
+        _v = (_by.get('v') or {}).get(_k) or {}
+        if isinstance(_v.get('endingStocks'), (int, float)): add_ext('ES', _p, 'stocks', 'spain-balances/cereals.json')
+        if isinstance(_v.get('imports'), (int, float)) and isinstance(_v.get('exports'), (int, float)): add_ext('ES', _p, 'trade', 'spain-balances/cereals.json')
+# Comercio por producto (Eurostat Comext, eu-trade-products.json): una celda de comercio cuenta si hay exportaciones e importaciones mundiales del codigo SA del producto en el ultimo ano.
+EU_TRADE_PRODUCT = {'1001': 'wheat', '1002': 'rye', '1003': 'barley', '1004': 'oats', '1005': 'maize', '1006': 'rice', '1201': 'soy', '1205': 'rapeseed', '1701': 'sugar', '0701': 'potato', '0201': 'cattle', '0202': 'cattle', '0203': 'pigs', '0204': 'sheep',
+                    '0207': 'poultry', '0401': 'milk', '0405': 'butter', '0406': 'cheese', '0407': 'eggs', '2204': 'wine', '1509': 'olive', '08': 'fruit'}
+for _cc, _rows in (CM.J('eu-trade-products.json', {}).get('reporters') or {}).items():
+    for _hs, _p in EU_TRADE_PRODUCT.items():
+        _r = _rows.get(_hs) or {}
+        if all(isinstance((_r.get(_fl) or {}).get('world'), list) and any(isinstance(x, (int, float)) for x in _r[_fl]['world']) for _fl in ('exp', 'imp')): add_ext(_cc, _p, 'trade', 'eu-trade-products.json')
 _dk = CM.J('denmark-depth.json', {})   # Dinamarca (Danmarks Statistik): cosecha nacional, sacrificio y leche/lacteos
 for key, p in CM.DK_HARVEST_PRODUCT.items():
     if _has((((_dk.get('harvest') or {}).get('data') or {}).get(key) or {}).get('000', {}).get('prod')): add_ext('DK', p, 'production', 'denmark-depth.json')

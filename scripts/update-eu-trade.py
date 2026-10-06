@@ -17,6 +17,8 @@ def log(*a):
 REP = {"ES": "Spain", "FR": "France", "DE": "Germany", "BE": "Belgium", "AT": "Austria", "PT": "Portugal", "IT": "Italy", "DK": "Denmark", "NL": "Netherlands"}
 CH = ["%02d" % i for i in range(1, 25)]
 KEY = {"01": "live animals", "02": "meat", "04": "dairy, eggs and honey", "07": "vegetables", "08": "fruit and nuts", "10": "cereals", "12": "oilseeds", "15": "fats and oils", "17": "sugar", "22": "beverages (incl. wine)", "23": "animal feed and food residues", "31": "fertilisers"}
+HS4 = {"1001": "wheat and meslin", "1002": "rye", "1003": "barley", "1004": "oats", "1005": "maize", "1006": "rice", "1201": "soya beans", "1205": "rape or colza seeds", "1701": "cane or beet sugar", "0701": "potatoes",
+       "0201": "bovine meat, fresh or chilled", "0202": "bovine meat, frozen", "0203": "pig meat", "0204": "sheep and goat meat", "0207": "poultry meat", "0401": "milk and cream", "0405": "butter", "0406": "cheese and curd", "0407": "birds' eggs", "2204": "wine of fresh grapes"}   # solo producto x socio anual (top 6 socios); sin series mensuales para no engordar el indice global
 EXTRA = {"ES": {"1509": "olive oil"}, "PT": {"1509": "olive oil", "45": "cork"}, "IT": {"1509": "olive oil"}}
 def get(params, tries=4):
     q = urllib.parse.urlencode(params, doseq=True) + "&format=JSON&lang=EN&indicators=VALUE_IN_EUROS"
@@ -101,7 +103,7 @@ PRODS = {}
 def products(cc):
     """Producto x socio, anual (ultimos 6 anos completos): top 10 socios + agregados extra/intra/mundo."""
     yr = datetime.date.today().year - 1; years = [str(y) for y in range(yr - 5, yr + 1)]
-    label = dict(KEY); label.update(EXTRA.get(cc, {})); n = 0
+    label = dict(KEY); label.update(EXTRA.get(cc, {})); label.update(HS4); n = 0
     for flow, tag in (("2", "exp"), ("1", "imp")):
         j = get({"reporter": cc, "product": list(label), "flow": flow, "freq": "A", "sinceTimePeriod": years[0], "untilTimePeriod": years[-1]})
         names = j["dimension"]["partner"]["category"]["label"]
@@ -110,7 +112,7 @@ def products(cc):
         for c in label:
             d = by.get(c, {})
             cand = {k: v for k, v in d.items() if len(k) == 2 and k != cc and v.get(years[-1])}
-            top = sorted(cand, key=lambda k: -cand[k][years[-1]])[:10]
+            top = sorted(cand, key=lambda k: -cand[k][years[-1]])[:6 if c in HS4 else 10]
             if not top: continue
             row = lambda k: [round(d[k].get(y, 0), 3) if d.get(k, {}).get(y) is not None else None for y in years]
             PRODS.setdefault(cc, {}).setdefault(c, {"name": label[c]})[tag] = {
