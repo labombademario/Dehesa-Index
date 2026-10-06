@@ -31,8 +31,9 @@ for (const u of locs) {
   else if (cs.length === 1) { ok(cs[0] === u, u + ': canonical = ' + cs[0]); if (!u.includes('?') && canon.has(cs[0])) ok(false, u + ': canonical repetida con ' + canon.get(cs[0])); canon.set(cs[0], u); }
   ok(!/<meta[^>]+name="robots"[^>]+noindex/i.test(h), u + ': esta en el sitemap pero tiene noindex');
   ok(/<title>[^<]{5,}<\/title>/.test(h), u + ': sin <title>'); ok(/<meta name="description" content="[^"]{20,}"/.test(h), u + ': sin meta description');
-  for (const m of h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) { try { const j = JSON.parse(m[1]); ok(!!(j['@context'] || j['@graph']), u + ': JSON-LD sin @context'); } catch (e) { ok(false, u + ': JSON-LD invalido (' + e.message.slice(0, 40) + ')'); } }
+  for (const m of h.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) { try { const j = JSON.parse(m[1]); ok(!!(j['@context'] || j['@graph']), u + ': JSON-LD sin @context'); } catch (e) { ok(false, u + ': JSON-LD invalido (' + e.message.slice(0, 40) + ')'); } }
   const body = h.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+  if (/\/(datos|precios|regiones|regions|regioni|prices|prix|prezzi)\//.test(u)) { const tt = (h.match(/<title>([^<]*)<\/title>/) || [])[1] || ''; ok(tt.replace(/&amp;/g, '&').length <= 65, u + ': titulo de ' + tt.length + ' caracteres (maximo 65: Google recorta)'); }
   if (/\/(datos|precios|regiones|regions|regioni)\//.test(u)) ok(body.trim().length > 200, u + ': landing con contenido vacio');
   const alts = [...h.matchAll(/<link[^>]+rel="alternate"[^>]+hreflang="([^"]+)"[^>]+href="([^"]+)"/g)].map(m => [m[1], m[2]]);
   if (alts.length) {

@@ -101,7 +101,8 @@ for (const lg of Object.keys(L)) {
     const url = urlOf(lg, p), up = T.up, rg = o => T.reg[o.r], un = o => T.unit[o.unit] || '/' + o.unit;
     const line = o => nf(o.value) + ' ' + CUR[o.currency] + ((T.unitS && T.unitS[o.unit]) || US[o.unit] || '/' + o.unit);
     const head = obs.slice(0, 2).map(o => (T.regShort[o.r] || T.reg[o.r]) + ' ' + line(o)).join(' · ');
-    const title = seoTitle(T.title(de, head));
+    const head1 = obs.slice(0, 1).map(o => (T.regShort[o.r] || T.reg[o.r]) + ' ' + line(o)).join(' · ');
+    const title = seoTitle(T.title(de, T.title(de, head).length <= 62 ? head : head1));   // <= ~62 caracteres: si dos mercados no caben, solo el primero (el resto va en la descripcion)
     const latest = obs.reduce((m, o) => o.observationDate > m ? o.observationDate : m, '');
     const desc = (T.descIntro(de) + obs.map(o => rg(o) + ' ' + line(o) + ' (' + per(o.observationDate) + (o.changePct != null ? ', ' + pct(o.changePct) : '') + ')').join('; ') + T.descEnd).slice(0, 300);
     const rows = obs.map(o => { const s = cite[o.sourceId] || {};
