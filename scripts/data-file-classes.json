@@ -1,0 +1,128 @@
+{
+ "classes": {
+  "RUNTIME": "lo descarga el navegador",
+  "BUILD_ONLY": "solo lo leen scripts y workflows (el navegador usa fragmentos o derivados mas ligeros)",
+  "DERIVED": "se regenera desde otros datos; lo leen otros constructores",
+  "ARCHIVE": "historico o instantaneas; no se sirve al navegador"
+ },
+ "files": {
+  "data/normalized.json": {
+   "class": "BUILD_ONLY",
+   "note": "Serie normalizada de precios (JSON con sangria). Solo la leen constructores, pruebas y las acciones price-engine/publish; el navegador usa data/prices/*. Candidato a compactar (docs/REPO_GROWTH.md)."
+  },
+  "data/history.json": {
+   "class": "BUILD_ONLY",
+   "note": "Historico completo de precios: fuente de data/prices/history/* (lo que descarga el navegador, un producto cada vez). Ningun js lo pide."
+  },
+  "data/latest.json": {
+   "class": "BUILD_ONLY",
+   "note": "Ultimas observaciones: fuente de data/prices/latest/<region>.json. Desde 6-oct-2026 region.js ya no lo descarga (usa el fragmento ca.json)."
+  },
+  "data/history.csv": {
+   "class": "BUILD_ONLY",
+   "note": "Exportacion CSV del historico generada por build-csv.mjs; sin enlace ni descarga en la web."
+  },
+  "data/series-registry.json": {
+   "class": "DERIVED",
+   "note": "Registro de series generado por build-series-registry.py; lo leen build-data-catalog, check-catalog y las pruebas. El navegador usa data/catalog/*."
+  },
+  "data/catalog/series-index.json": {
+   "class": "RUNTIME",
+   "note": "Indice del catalogo unificado para la capa de datos del navegador.",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "series-index"
+   }
+  },
+  "data/watch-index.json": {
+   "class": "RUNTIME",
+   "note": "Indice compacto (ultimo dato y cambio por serie) que evalua la lista de seguimiento en el navegador sin cargar ficheros grandes."
+  },
+  "data/coverage-gaps.json": {
+   "class": "DERIVED",
+   "note": "Matriz de cobertura generada por build-coverage-gaps.py; la leen constructores y pruebas, no el navegador."
+  },
+  "data/eu-trade-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Estadisticas de comercio UE: alimentan el catalogo; el navegador lee las vistas por pais (data/views/trade-products/)."
+  },
+  "data/uk-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Reino Unido: alimentan el catalogo; paises.js carga por catalogo y no pide los *-stats.json."
+  },
+  "data/spain-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Espana: alimentan el catalogo; paises.js carga por catalogo y no pide los *-stats.json."
+  },
+  "data/france-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Francia: alimentan el catalogo; paises.js carga por catalogo y no pide los *-stats.json."
+  },
+  "data/portugal-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Portugal: alimentan el catalogo; paises.js carga por catalogo y no pide los *-stats.json."
+  },
+  "data/canada-stats.json": {
+   "class": "RUNTIME",
+   "note": "region.js lo descarga (1,5 MB) para el bloque de costes de las provincias. Deuda tecnica: servir un fragmento por provincia."
+  },
+  "data/germany-stats.json": {
+   "class": "RUNTIME",
+   "note": "de-agri.js y region.js lo descargan (1,2 MB). Deuda tecnica: servir fragmentos por tema."
+  },
+  "data/ers.json": {
+   "class": "RUNTIME",
+   "note": "costes.js y producto.js (costes de produccion USDA ERS)."
+  },
+  "data/tariffs-eu.json": {
+   "class": "RUNTIME",
+   "note": "aranceles.js."
+  },
+  "data/tariffs-ca.json": {
+   "class": "RUNTIME",
+   "note": "aranceles.js y comercio-socios.js."
+  },
+  "data/us-tariffs.json": {
+   "class": "RUNTIME",
+   "note": "aranceles.js y comercio-socios.js."
+  },
+  "data/recan.json": {
+   "class": "RUNTIME",
+   "note": "recan.js, margen-es.js y region.js (costes de produccion Espana)."
+  },
+  "data/netherlands-farm.json": {
+   "class": "RUNTIME",
+   "note": "eu-depth.js y region-more.js."
+  },
+  "data/search-index.json": {
+   "class": "RUNTIME",
+   "note": "search.js (buscador)."
+  },
+  "data/news.json": {
+   "class": "RUNTIME",
+   "note": "search.js y la pagina de noticias (ventana movil de ~4 dias)."
+  },
+  "data/supply-demand.json": {
+   "class": "RUNTIME",
+   "note": "oferta-demanda.js y producto.js."
+  }
+ },
+ "prefixes": {
+  "data/ams/": {
+   "class": "RUNTIME",
+   "note": "mercados.js descarga data/ams/<id>.json bajo demanda (un informe cada vez).",
+   "via": {
+    "file": "js/mercados.js",
+    "pattern": "data/ams/'"
+   }
+  },
+  "data/snapshots/": {
+   "class": "ARCHIVE",
+   "note": "Instantaneas diarias (retencion 7 dias + una por semana, prune-snapshots.py); no se sirven al navegador."
+  },
+  "data/news-archive/": {
+   "class": "ARCHIVE",
+   "note": "Archivo semanal de noticias que alimenta el blog semanal; el navegador lee data/blog/weekly."
+  }
+ }
+}

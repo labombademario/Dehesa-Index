@@ -205,7 +205,7 @@
     });
   }
   function caPrices(x) {
-    return get('data/latest.json').then(function (d) {
+    return get('data/prices/latest/ca.json').then(function (d) {   // fragmento por region (el monolito data/latest.json no se descarga)
       if (!d || !d.observations) return null; var t = tt(), N = (window.DehesaData && window.DehesaData.NAMES && window.DehesaData.NAMES[lang()]) || {}, en = nameEn(C.CA, x.r), rows = [];
       d.observations.forEach(function (o) { if (o.region !== 'ca' || o.province !== en || o.value == null) return; rows.push([esc(N[o.product] || o.product), nf(o.value, dec(o.value)) + ' <span style="color:var(--text-faint);font-size:12px">' + esc(o.currency || 'CAD') + '/' + esc(o.unit) + '</span>', esc(pct(o.changePct)), esc(day(o.observationDate)), o.sourceId]); });
       if (!rows.length) return null; rows.sort(function (a, b) { return a[0] < b[0] ? -1 : 1; });

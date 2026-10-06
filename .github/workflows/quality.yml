@@ -190,6 +190,12 @@ jobs:
       - name: Repo growth budget (tamano de ficheros, data/ e historial)
         run: python3 scripts/check-repo-growth.py
 
+      - name: Ficheros de datos grandes clasificados (RUNTIME / BUILD_ONLY / DERIVED / ARCHIVE) frente a sus consumidores reales
+        run: python3 scripts/check-data-classes.py
+
+      - name: Inventario de workflows al dia (docs/WORKFLOWS.md)
+        run: python3 scripts/workflow-inventory.py --check
+
       - name: Performance budget (gzip)
         run: node scripts/check-performance-budget.mjs
 
