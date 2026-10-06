@@ -16,12 +16,12 @@ def nice(s):
     s = re.sub(r'\bexcl\b', 'excluding', s); s = re.sub(r'\bincl\b', 'including', s); s = re.sub(r'\bge (\d+) lbs\b', r'\1 lb and over', s)
     s = re.sub(r'\bpitw\b', 'PITW', s); s = re.sub(r'\bppitw\b', 'PPITW', s)
     return s[:1].upper() + s[1:]
-def metric(m):
+def metric(m, cold=True):
     m = m.strip()
     for pat, name in [(r'^ACRES HARVESTED', 'area harvested'), (r'^ACRES PLANTED', 'area planted'), (r'^PRODUCTION, MEASURED IN \$', 'production value'), (r'^PRODUCTION', 'production'),
                       (r'^YIELD', 'yield'), (r'^INVENTORY, MEASURED IN \$ / HEAD', None), (r'^INVENTORY, MEASURED IN \$', None), (r'^INVENTORY', 'inventory'), (r'^OPERATIONS', None),
                       (r'^STOCKS', 'cold storage stocks'), (r'^LITTER RATE', 'litter rate'), (r'^PIG CROP', 'pig crop'), (r'^INDEX FOR PRICE PAID', 'prices paid index')]:
-        if re.match(pat, m): return name
+        if re.match(pat, m): return ('stocks' if name == 'cold storage stocks' and not cold else name)
     return None
 def freq_of(pts):
     if all(re.fullmatch(r'\d{4}', p[0]) for p in pts): return 'annual'
@@ -35,7 +35,7 @@ def build(fn, group_of, log):
         if ' - ' not in key: continue
         name, rest = key.split(' - ', 1)
         if 'BIOTECH' in name or 'PCT BY TYPE' in rest: continue
-        mt = metric(rest)
+        mt = metric(rest, 'COLD STORAGE' in key)
         if not mt: continue
         pts = [[p, x] for p, x in v.get('n', []) if x is not None]
         if len(pts) < 5: continue
@@ -61,8 +61,8 @@ def build(fn, group_of, log):
     return out
 def main():
     log = []; series = []
-    series += build('nass-crops.json', lambda k: 'crops', log)
-    series += build('nass-livestock.json', lambda k: 'stocks' if 'COLD STORAGE' in k else 'livestock', log)
+    series += build('nass-crops.json', lambda k: 'stocks' if ' - STOCKS' in k else 'crops', log)
+    series += build('nass-livestock.json', lambda k: 'stocks' if ('COLD STORAGE' in k or ' - STOCKS' in k) else 'livestock', log)
     series += build('nass-prices.json', lambda k: 'prices_paid', log)
     ids = [s['id'] for s in series]
     if len(ids) != len(set(ids)): raise SystemExit('ids duplicados: %s' % sorted({i for i in ids if ids.count(i) > 1})[:5])

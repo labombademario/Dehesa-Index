@@ -47,7 +47,7 @@ def add_ext(cc, p, m, f):
     ext[(cc, p, m)].append({'sourceId': FILE_SRC.get(f, 'usda_nass'), 'file': f})
 for key in (CM.J('nass-crops.json', {'series': {}}).get('series') or {}):
     p = CM.NASS_CROP_PRODUCT.get(key.split(' - ')[0].split(',')[0].strip())
-    if p: add_ext('US', p, 'production', 'nass-crops.json')
+    if p: add_ext('US', p, 'stocks' if key.partition(' - ')[2].upper().startswith('STOCKS') else 'production', 'nass-crops.json')   # existencias trimestrales (avena) no son produccion
 for key in (CM.J('nass-livestock.json', {'series': {}}).get('series') or {}):
     head, _, tail = key.partition(' - '); p = CM.NASS_LIVESTOCK_PRODUCT.get(head.split(',')[0].strip())
     m = next((mm for tok, mm in CM.NASS_LIVESTOCK_METRIC if tail.upper().startswith(tok)), None)

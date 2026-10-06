@@ -59,6 +59,8 @@ if (MODE === 'livestock') {
   for (const sc of ['INVENTORY', 'PLACEMENTS', 'MARKETINGS']) await job('vacuno nacional ' + sc, { commodity_desc: 'CATTLE', statisticcat_desc: sc, agg_level_desc: 'NATIONAL' });
   for (const sd of ['CATTLE, INCL CALVES - INVENTORY', 'CATTLE, COWS, BEEF - INVENTORY', 'CATTLE, COWS, MILK - INVENTORY', 'CATTLE, ON FEED - INVENTORY']) await job('vacuno estados ' + sd, { commodity_desc: 'CATTLE', short_desc: sd, agg_level_desc: 'STATE', domain_desc: 'TOTAL' });
   for (const c of ['BEEF', 'PORK', 'BUTTER', 'CHEESE', 'EGGS', 'TURKEYS', 'CHICKENS', 'LAMB & MUTTON', 'VEAL', 'MILK', 'WHEY']) await job('frigoríficos ' + c, { commodity_desc: c, statisticcat_desc: 'STOCKS', agg_level_desc: 'NATIONAL' }, r => /COLD STORAGE/.test(r.short_desc));
+  // existencias de lacteos secos y condensados (informe Dairy Products, mensual, libras): no llevan 'COLD STORAGE' en el nombre; se copian tal cual
+  await job('leche existencias lácteos secos', { commodity_desc: 'MILK', statisticcat_desc: 'STOCKS', agg_level_desc: 'NATIONAL' }, r => /^MILK, [A-Z ,&]+ - STOCKS, MEASURED IN LB$/.test(r.short_desc) && r.freq_desc === 'POINT IN TIME');
   await job('leche producción estados', { commodity_desc: 'MILK', statisticcat_desc: 'PRODUCTION', agg_level_desc: 'STATE' }, r => /^MILK - PRODUCTION/.test(r.short_desc));
   await job('leche producción nacional', { commodity_desc: 'MILK', statisticcat_desc: 'PRODUCTION', agg_level_desc: 'NATIONAL' }, r => /^MILK - PRODUCTION/.test(r.short_desc));
   await job('leche precio recibido', { commodity_desc: 'MILK', statisticcat_desc: 'PRICE RECEIVED', agg_level_desc: 'NATIONAL' });
@@ -81,6 +83,8 @@ if (MODE === 'livestock') {
       for (const lvl of ['NATIONAL', 'STATE']) await job(c + ' ' + sc + ' ' + lvl, { commodity_desc: c, statisticcat_desc: sc, agg_level_desc: lvl, source_desc: 'SURVEY', year__GE: Y10 }, r => !/IRRIGATED|SILAGE|SEED|ORGANIC|UTILIZED|FORAGE/.test(r.short_desc) && r.freq_desc === 'ANNUAL');
     }
   }
+  // existencias trimestrales de avena (Grain Stocks): 1 mar/jun/sep/dic, total, en granja y fuera de granja, bushels
+  await job('OATS STOCKS NATIONAL', { commodity_desc: 'OATS', statisticcat_desc: 'STOCKS', agg_level_desc: 'NATIONAL', source_desc: 'SURVEY', year__GE: Y10 }, r => /^OATS(, (ON|OFF) FARM)? - STOCKS, MEASURED IN BU$/.test(r.short_desc) && r.freq_desc === 'POINT IN TIME');
 } else { console.error('modo desconocido'); process.exit(1); }
 const out = { schemaVersion: '1.0', source: 'USDA NASS Quick Stats', mode: MODE, generatedAt: new Date().toISOString(), series: {} };
 let total = 0;
