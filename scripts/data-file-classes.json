@@ -63,12 +63,12 @@
    "note": "Series de Portugal: alimentan el catalogo; paises.js carga por catalogo y no pide los *-stats.json."
   },
   "data/canada-stats.json": {
-   "class": "RUNTIME",
-   "note": "region.js lo descarga (1,5 MB) para el bloque de costes de las provincias. Deuda tecnica: servir un fragmento por provincia."
+   "class": "BUILD_ONLY",
+   "note": "Series de Canada: alimentan el catalogo. region.js ya lee data/catalog/CA.json (6-oct) y ninguna pagina descarga este fichero."
   },
   "data/germany-stats.json": {
    "class": "RUNTIME",
-   "note": "de-agri.js y region.js lo descargan (1,2 MB). Deuda tecnica: servir fragmentos por tema."
+   "note": "solo de-agri.js lo descarga (1,2 MB, indices de precios). region.js ya lee data/catalog/DE.json (6-oct). Deuda tecnica: servir fragmentos por tema."
   },
   "data/ers.json": {
    "class": "RUNTIME",

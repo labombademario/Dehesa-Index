@@ -195,8 +195,8 @@
   var EXP_L = { total: ['Total expenses', 'Total de gastos', 'Total des dépenses', 'Totale spese'], interest: ['Interest', 'Intereses', 'Intérêts', 'Interessi'], 'machinery-fuel': ['Machinery fuel', 'Combustible de maquinaria', 'Carburant des machines', 'Carburante macchinari'], feed: ['Feed', 'Piensos', 'Aliments du bétail', 'Mangimi'], 'fertiliser-and-lime': ['Fertiliser and lime', 'Fertilizantes y cal', 'Engrais et chaux', 'Fertilizzanti e calce'] };
   function caCosts(x) {
     var slug = CA_SLUG[x.r]; if (!slug) return Promise.resolve(null);
-    return get('data/canada-stats.json').then(function (d) {
-      var S = d && d.countries && d.countries.CA && d.countries.CA.series; if (!S) return null; var t = tt(), tot = null, rows = [], per = null;
+    return get('data/catalog/CA.json').then(function (d) {   // catalogo del pais (220 KB): mismos id, etiqueta, ultimo valor y periodo que el monolito canada-stats.json (1,5 MB)
+      var S = d && d.series; if (!S) return null; var t = tt(), tot = null, rows = [], per = null;
       S.forEach(function (s) { if (s.id.indexOf('ca-exp-' + slug + '-') !== 0) return; var k = s.id.slice(('ca-exp-' + slug + '-').length); if (k === 'total-expenses') { tot = s; per = s.latestPeriod; } });
       if (!tot) return null;
       S.forEach(function (s) { if (s.id.indexOf('ca-exp-' + slug + '-') !== 0) return; var k = s.id.slice(('ca-exp-' + slug + '-').length); if (k === 'total-expenses' || !EXP_L[k]) return; rows.push([esc(EXP_L[k][li()]), nf(s.latest, 0), nf(s.latest / tot.latest * 100, 1) + ' %', esc(s.latestPeriod)]); });
@@ -215,8 +215,8 @@
   }
   function caFuel(x) {
     var cities = CA_CITY[x.r]; if (!cities) return Promise.resolve(null);
-    return get('data/canada-stats.json').then(function (d) {
-      var S = d && d.countries && d.countries.CA && d.countries.CA.series; if (!S) return null; var t = tt(), rows = [], per = '';
+    return get('data/catalog/CA.json').then(function (d) {   // catalogo del pais (220 KB): mismos id, etiqueta, ultimo valor y periodo que el monolito canada-stats.json (1,5 MB)
+      var S = d && d.series; if (!S) return null; var t = tt(), rows = [], per = '';
       S.forEach(function (s) { cities.forEach(function (c) { if (s.id.indexOf('ca-fuel-' + c + '-') !== 0) return; var k = /diesel/.test(s.id) ? 'diesel' : 'gasoline'; rows.push([esc(CA_CITY_N[c]), esc(LBL.fuel[k][li()]), nf(s.latest, 1), esc(day(s.latestPeriod))]); per = s.latestPeriod; }); });
       if (!rows.length) return null;
       return card(t.fuel, t.fuelSub, table([t.city, t.fuelkind, 'c/L', t.date], rows, 420), cite('statcan', per));
@@ -412,8 +412,8 @@
   var DE_EN = { BW: 'Baden-Württemberg', BY: 'Bavaria', BE: 'Berlin', BB: 'Brandenburg', HB: 'Bremen', HH: 'Hamburg', HE: 'Hesse', MV: 'Mecklenburg-Western Pomerania', NI: 'Lower Saxony', NW: 'North Rhine-Westphalia', RP: 'Rhineland-Palatinate', SL: 'Saarland', SN: 'Saxony', ST: 'Saxony-Anhalt', SH: 'Schleswig-Holstein', TH: 'Thuringia' };
   function deGroupHas(txt, en) { return txt.split(/\s*\/\s*|,\s*|\s+and\s+/).some(function (z) { return z === en; }); }
   function dePrices(x) {
-    return get('data/germany-stats.json').then(function (d) {
-      var S = d && d.countries && d.countries.DE && d.countries.DE.series, en = DE_EN[x.r]; if (!S || !en) return null; var t = tt(), milk = [], meat = [];
+    return get('data/catalog/DE.json').then(function (d) {   // catalogo del pais (160 KB) en lugar de germany-stats.json (1,2 MB)
+      var S = d && d.series, en = DE_EN[x.r]; if (!S || !en) return null; var t = tt(), milk = [], meat = [];
       S.forEach(function (s) {
         if (s.latest == null) return;
         if (s.group === 'milk_regions') { var m = /^(.*), (organic|conventional) milk/.exec(s.label); if (m && deGroupHas(m[1], en)) milk.push([esc(m[1]), esc(t[m[2] === 'organic' ? 'organic' : 'conv']), nf(s.latest, 2) + ' <span style="color:var(--text-faint);font-size:12px">' + esc(t.pricesCt) + '</span>', s.changePct != null ? esc(pct(s.changePct)) : '', esc(day(s.latestPeriod))]); }
