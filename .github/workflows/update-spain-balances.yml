@@ -15,6 +15,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v6
+      - run: bash scripts/trust-fnmt.sh
       - run: sudo apt-get install -y -q poppler-utils >/dev/null
       - id: fetch
         run: python3 scripts/update-spain-balances.py

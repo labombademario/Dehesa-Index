@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
+      - run: bash scripts/trust-fnmt.sh
       - id: fetch
         run: python3 scripts/update-mapa-spain.py
       - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo

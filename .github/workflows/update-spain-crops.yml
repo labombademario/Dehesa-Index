@@ -15,6 +15,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
+      - run: bash scripts/trust-fnmt.sh
       - run: pip install openpyxl
       - id: fetch
         run: python3 scripts/update-spain-crops.py

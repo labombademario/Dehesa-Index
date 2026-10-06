@@ -8,6 +8,7 @@ sources:
   - id: spain
     name: Update Spain (MAPA)
     cron: ['35 14 * * 2,5']
+    pre: ['bash scripts/trust-fnmt.sh']
     script: scripts/update-mapa-spain.py
     data: [spain-stats.json]
     log: spain-log.txt
@@ -40,7 +41,7 @@ sources:
     name: Update Spain crop areas and production by province (MAPA)
     cron: ['50 6 * * 4']
     script: scripts/update-spain-crops.py
-    pre: ['pip install openpyxl']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl']
     timeout: 30
     script_timeout: 20
     continue: true
@@ -52,7 +53,7 @@ sources:
     name: Update Spain livestock headcounts by province (MAPA)
     cron: ['20 7 * * 4']
     script: scripts/update-spain-livestock.py
-    pre: ['pip install openpyxl']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl']
     timeout: 30
     script_timeout: 20
     continue: true
@@ -64,7 +65,7 @@ sources:
     name: Update Spain cereal balance sheets (MAPA)
     cron: ['35 7 * * 4']
     script: scripts/update-spain-balances.py
-    pre: ['sudo apt-get install -y -q poppler-utils >/dev/null']
+    pre: ['bash scripts/trust-fnmt.sh', 'sudo apt-get install -y -q poppler-utils >/dev/null']
     timeout: 20
     script_timeout: 12
     continue: true
@@ -76,7 +77,7 @@ sources:
     name: Update Spain olive sector balance and oil forecast (MAPA)
     cron: ['50 7 * * 4']
     script: scripts/update-spain-olive.py
-    pre: ['sudo apt-get install -y -q poppler-utils >/dev/null']
+    pre: ['bash scripts/trust-fnmt.sh', 'sudo apt-get install -y -q poppler-utils >/dev/null']
     timeout: 20
     script_timeout: 12
     continue: true
@@ -88,7 +89,7 @@ sources:
     name: Update Spain raw milk deliveries, prices and quality (MAPA INFOLAC)
     cron: ['5 8 * * 4']
     script: scripts/update-spain-milk.py
-    pre: ['sudo apt-get install -y -q poppler-utils >/dev/null']
+    pre: ['bash scripts/trust-fnmt.sh', 'sudo apt-get install -y -q poppler-utils >/dev/null']
     timeout: 15
     script_timeout: 8
     continue: true
@@ -100,7 +101,7 @@ sources:
     name: Update Spain livestock slaughter by species and region (MAPA)
     cron: ['25 8 * * 4']
     script: scripts/update-spain-slaughter.py
-    pre: ['pip install openpyxl xlrd']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl xlrd']
     timeout: 15
     script_timeout: 8
     continue: true
@@ -111,7 +112,7 @@ sources:
   - id: spain-slaughter-census
     name: Update Spain annual livestock slaughter by province (MAPA census)
     cron: ['10 9 * * 4']
-    pre: ['pip install openpyxl xlrd']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl xlrd']
     script: scripts/update-spain-slaughter-census.py
     timeout: 20
     script_timeout: 12
@@ -124,7 +125,7 @@ sources:
     name: Update Spain wine by campaign and region (MAPA INFOVI)
     cron: ['45 8 * * 4']
     script: scripts/update-spain-wine.py
-    pre: ['pip install openpyxl xlrd']
+    pre: ['bash scripts/trust-fnmt.sh', 'pip install openpyxl xlrd']
     timeout: 20
     script_timeout: 12
     continue: true
