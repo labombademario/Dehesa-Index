@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T01:59:00Z",
+ "generatedAt": "2026-10-06T02:48:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 85,
   "late": 0,
   "error": 2,
-  "not_run": 2,
+  "not_run": 3,
   "unknown": 1
  },
  "global": "error",
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "4ba49ccc",
+   "sha": "c2f5f3dc",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/ab069f6d-ceac-4c21-a1df-7f1c530fdb4d",
-   "completedAt": "2026-10-06T01:51:55Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/2aae1f8c-deb8-4120-9a3c-b46fe5fa7f08",
+   "completedAt": "2026-10-06T02:34:45Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -60,7 +60,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-05T23:01:17Z"
+     "lastChange": "2026-10-06T02:33:59Z"
     }
    ],
    "last": {
@@ -92,7 +92,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-05T23:01:17Z"
+     "lastChange": "2026-10-06T02:33:59Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -1086,6 +1086,27 @@
    "expectedEveryHours": 168.0
   },
   {
+   "workflow": "update-eu-regions-macro.yml",
+   "name": "Update regional GDP, population and unemployment (Eurostat NUTS 2)",
+   "crons": [
+    "20 7 * * 4"
+   ],
+   "nextRun": "2026-10-08T07:20:00Z",
+   "files": [
+    {
+     "path": "data/eu-regions-macro.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-05T11:42:05Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
+  },
+  {
    "workflow": "update-eu-regions.yml",
    "name": "Update regional farm data (Eurostat NUTS 2)",
    "crons": [
@@ -1844,7 +1865,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-06T00:37:47Z"
+     "lastChange": "2026-10-06T02:33:59Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1852,15 +1873,15 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-05T16:20:51Z"
+     "lastChange": "2026-10-06T02:33:59Z"
     },
     {
      "path": "data/watch-index.json",
-     "lastChange": "2026-10-05T12:35:05Z"
+     "lastChange": "2026-10-06T02:33:59Z"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-06T00:38:01Z"
+     "lastChange": "2026-10-06T02:33:59Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1877,7 +1898,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-06T00:38:01Z"
+     "lastChange": "2026-10-06T02:33:59Z"
     },
     {
      "path": "data/products"
@@ -1888,15 +1909,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-06T00:38:01Z"
+     "lastChange": "2026-10-06T02:33:59Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-06T01:12:07Z"
+     "lastChange": "2026-10-06T02:33:59Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-06T01:12:07Z"
+     "lastChange": "2026-10-06T02:33:59Z"
     },
     {
      "path": "data/premium-tracker.json",
@@ -2800,10 +2821,11 @@
    "crons": [
     "30 2 * * *"
    ],
-   "nextRun": "2026-10-06T02:30:00Z",
+   "nextRun": "2026-10-07T02:30:00Z",
    "files": [
     {
-     "path": "data/us-stats.json"
+     "path": "data/us-stats.json",
+     "lastChange": "2026-10-06T02:33:59Z"
     },
     {
      "path": "data/revisions.json",
@@ -2812,7 +2834,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 24.0
   },
   {

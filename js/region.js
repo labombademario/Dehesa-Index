@@ -446,6 +446,34 @@
   }
   var MODS = { US: [['drought', usDrought], ['crops', usCrops], ['cattle', usCattle], ['bids', usBids], ['fert', usFert], ['tax', usTax]], CA: [['drought', caDrought], ['cacrops', caCrops], ['lvst', caLivestock], ['inc', caIncome], ['rec', caReceipts], ['costs', caCosts], ['prices', caPrices], ['fuel', caFuel]], ES: [['eaa', euEaa], ['recan', esRecan], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], FR: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], NL: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], AT: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], BE: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], DK: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], IT: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms]], AU: [['auex', auExports]], DE: [['eaa', euEaa], ['ercrops', euCrops], ['erlive', euLive], ['erfarms', euFarms], ['deprices', dePrices]] };
   var MOD_NAME = { auex: 'auex', recan: 'recan', eaa: 'eaa', ercrops: 'ercrops', erlive: 'erlive', erfarms: 'erfarms', deprices: 'deprices', cacrops: 'cacrops', lvst: 'lvst', inc: 'inc', rec: 'rec', drought: 'drought', crops: 'crops', cattle: 'cattle', bids: 'bids', fert: 'fert', tax: 'tax', costs: 'costs', prices: 'prices', fuel: 'fuel' };
+  /* Economía y población de la región (Eurostat NUTS 2): PIB, PIB por habitante (calculado), población y paro. Solo lo que Eurostat publica para esa región. */
+  var MAC = {
+    es: { t: 'Economía y población', sub: 'PIB, población y paro de la región según Eurostat (nivel NUTS 2). Solo se muestra lo que la fuente publica.', gdp: 'PIB', gdppc: 'PIB por habitante', pop: 'Población', unemp: 'Paro (15-74 años)', yoy: 'frente al año anterior', note: 'El PIB por habitante lo calcula Dehesa Index dividiendo el PIB por la población de 1 de enero. La tasa de paro y el resto de cifras aparecen solo cuando Eurostat las publica para esa región; Dehesa Index no las estima ni suma tasas.', mn: ' M', bn: ' mil M' },
+    en: { t: 'Economy and population', sub: 'GDP, population and unemployment of the region from Eurostat (NUTS 2 level). Only what the source publishes is shown.', gdp: 'GDP', gdppc: 'GDP per inhabitant', pop: 'Population', unemp: 'Unemployment (15-74)', yoy: 'vs previous year', note: 'GDP per inhabitant is calculated by Dehesa Index as GDP divided by the 1 January population. The unemployment rate and the other figures appear only when Eurostat publishes them for that region; Dehesa Index does not estimate them or add up rates.', mn: ' M', bn: ' bn' },
+    fr: { t: 'Économie et population', sub: 'PIB, population et chômage de la région selon Eurostat (niveau NUTS 2). Seul ce que la source publie est affiché.', gdp: 'PIB', gdppc: 'PIB par habitant', pop: 'Population', unemp: 'Chômage (15-74 ans)', yoy: 'par rapport à l’année précédente', note: 'Le PIB par habitant est calculé par Dehesa Index en divisant le PIB par la population au 1er janvier. Le taux de chômage et les autres chiffres n’apparaissent que si Eurostat les publie pour cette région ; Dehesa Index ne les estime pas et n’additionne pas de taux.', mn: ' M', bn: ' Md' },
+    it: { t: 'Economia e popolazione', sub: 'PIL, popolazione e disoccupazione della regione secondo Eurostat (livello NUTS 2). Si mostra solo ciò che la fonte pubblica.', gdp: 'PIL', gdppc: 'PIL pro capite', pop: 'Popolazione', unemp: 'Disoccupazione (15-74 anni)', yoy: 'rispetto all’anno precedente', note: 'Il PIL pro capite è calcolato da Dehesa Index dividendo il PIL per la popolazione al 1° gennaio. Il tasso di disoccupazione e le altre cifre compaiono solo se Eurostat le pubblica per quella regione; Dehesa Index non le stima e non somma tassi.', mn: ' M', bn: ' mld' }
+  };
+  function euMacro(x) {
+    return get('data/eu-regions-macro.json').then(function (d) {
+      var R = d && d.regions && d.regions[x.c] && d.regions[x.c][x.r]; if (!R) return null;
+      var m = MAC[lang()] || MAC.es, tiles = [], yrs = [];
+      var last = function (a) { return a && a.length ? a[a.length - 1] : null; };
+      var add = function (k, fmt) {
+        var a = R[k], l = last(a); if (!l || l[0] < new Date().getFullYear() - 5) return; /* series paradas hace años no se muestran como actuales */ var pv = a.length > 1 && a[a.length - 2][0] === l[0] - 1 ? a[a.length - 2][1] : null; yrs.push(l[0]);
+        tiles.push('<div style="min-width:130px"><div style="font-size:11px;color:var(--text-faint)">' + esc(m[k]) + '</div><div style="font-size:18px;font-weight:700;font-variant-numeric:tabular-nums">' + fmt(l[1]) + ' <span style="font-weight:400;font-size:12px;color:var(--text-faint)">(' + l[0] + ')</span></div>' +
+          (pv ? '<div style="font-size:11px;color:var(--text-muted)">' + (k === 'unemp' ? esc((l[1] - pv > 0 ? '+' : l[1] - pv < 0 ? '−' : '') + nf(Math.abs(l[1] - pv), 1) + ' pp') : esc(pct((l[1] / pv - 1) * 100))) + ' ' + esc(m.yoy) + '</div>' : '') + '</div>');
+      };
+      add('gdp', function (v) { return nf(v, 0) + m.mn + ' €'; });
+      add('gdppc', function (v) { return nf(v, 0) + ' €'; });
+      add('pop', function (v) { return v >= 1e6 ? nf(v / 1e6, 2) + m.mn : nf(v / 1000, 0) + ' k'; });
+      add('unemp', function (v) { return nf(v, 1) + ' %'; });
+      if (!tiles.length) return null;
+      var body = '<div style="display:flex;flex-wrap:wrap;gap:14px 28px">' + tiles.join('') + '</div><p class="di-movers-hint" style="margin:10px 0 0">' + esc(m.note) + '</p>';
+      return card(m.t, m.sub, body, cite('eurostat', String(Math.max.apply(null, yrs))));
+    });
+  }
+  ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK'].forEach(function (c) { if (MODS[c]) MODS[c].unshift(['macro', euMacro]); else MODS[c] = [['macro', euMacro]]; });
+  MOD_NAME.macro = 'macro'; ['es', 'en', 'fr', 'it'].forEach(function (l) { if (T[l]) T[l].macro = MAC[l].t; });
   /* bloques adicionales (js/region-more.js): clima, seguros, mercados locales, cultivos y ganado de España por comunidad, agua y maíz de Francia, producción, tierra y ganado de Alemania, CBS de Países Bajos */
   var OPTIONAL = {};
   (function () {
