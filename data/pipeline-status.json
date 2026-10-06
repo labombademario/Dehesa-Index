@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T22:02:00Z",
+ "generatedAt": "2026-10-06T22:18:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 92,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "39a73481",
+   "sha": "da7c3748",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/44b05ce0-a467-4578-ad5c-9879dae57b32",
-   "completedAt": "2026-10-06T22:01:06Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/3096a9c5-c73f-4319-a735-988225d0378a",
+   "completedAt": "2026-10-06T22:11:59Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -2046,7 +2046,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-06T21:02:10Z"
+     "lastChange": "2026-10-06T22:11:01Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2054,15 +2054,15 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-06T19:52:29Z"
+     "lastChange": "2026-10-06T22:11:01Z"
     },
     {
      "path": "data/watch-index.json",
-     "lastChange": "2026-10-06T19:52:29Z"
+     "lastChange": "2026-10-06T22:11:01Z"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-06T21:02:10Z"
+     "lastChange": "2026-10-06T22:11:01Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2079,7 +2079,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-06T21:02:10Z"
+     "lastChange": "2026-10-06T22:11:01Z"
     },
     {
      "path": "data/products"
@@ -2090,19 +2090,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-06T21:02:10Z"
+     "lastChange": "2026-10-06T22:11:01Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-06T21:02:10Z"
+     "lastChange": "2026-10-06T22:11:01Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-06T22:00:23Z"
+     "lastChange": "2026-10-06T22:11:01Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-06T21:02:10Z"
+     "lastChange": "2026-10-06T22:11:01Z"
     },
     {
      "path": "data/ers-cost-reference.json",
@@ -2110,7 +2110,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-06T21:02:10Z"
+     "lastChange": "2026-10-06T22:11:01Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2923,7 +2923,7 @@
    "crons": [
     "10 22 * * 1-5"
    ],
-   "nextRun": "2026-10-06T22:10:00Z",
+   "nextRun": "2026-10-07T22:10:00Z",
    "files": [
     {
      "path": "data/us-markets/cot.json",
@@ -2970,7 +2970,7 @@
     "failed": 0
    },
    "status": "ok",
-   "expectedEveryHours": 24.0
+   "expectedEveryHours": 72.0
   },
   {
    "workflow": "update-us-states-macro.yml",

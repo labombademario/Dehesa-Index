@@ -32,7 +32,7 @@ Countries with profiles: Spain, France, Germany, Belgium, Austria, Portugal, Den
 <!-- status:start (generado por scripts/build-readme-status.py; no editar) -->
 - 95 data pipelines (`update-*.yml`, 95 source scripts `scripts/update-*`) plus 100 workflows in total in `.github/workflows/`; the pipeline-status report tracks 95 of them.
 - 144 JSON schemas in `schemas/`; licence registry: 75 sources, 108 data files.
-- Catalogue: 41 entities (31 countries, 7 aggregates, 3 regions) and more than 8000 series.
+- Catalogue: 41 entities (31 countries, 7 aggregates, 3 regions) and more than 8500 series.
 - Live pipeline state (OK, late, error, not run) and coverage gaps are not copied here: see [`status.html`](https://dehesaindex.com/status.html), built from `data/pipeline-status.json` and `data/coverage-gaps.json`.
 <!-- status:end -->
 - All data workflows share the concurrency group `dehesa-data-writes` so they commit one at a time. Each writes a `*-log.txt` next to its output.

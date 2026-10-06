@@ -66,6 +66,10 @@
    "class": "BUILD_ONLY",
    "note": "Series de Francia: alimentan el catalogo; paises.js carga por catalogo y no pide los *-stats.json."
   },
+  "data/eurostat-depth-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Eurostat para ES, FR, DK, NL, BE y DE: alimentan los catalogos por pais; la ficha de pais carga por catalogo y no pide este fichero."
+  },
   "data/italy-eurostat-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Series de Italia (Eurostat): alimentan el catalogo data/catalog/IT.json; paises.js carga por catalogo y no pide este fichero."

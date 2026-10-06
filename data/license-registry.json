@@ -2025,7 +2025,10 @@
    "byCountry": {
     "ES": "eurostat",
     "FR": "eurostat",
-    "DK": "eurostat"
+    "DK": "eurostat",
+    "NL": "eurostat",
+    "BE": "eurostat",
+    "DE": "eurostat"
    }
   },
   "data/canada-stats.json": {

@@ -139,7 +139,7 @@ def main():
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:300])
     for k in [k for k in OUT if k.split('-')[0].upper() in NAT and OUT[k]['group'] in ('crops', 'livestock', 'production', 'milk')]: del OUT[k]   # ES y DK ya publican su produccion con fuente nacional (MAPA, Statistics Denmark): aqui solo lo que les falta (indices de precios de produccion e insumos)
     for k in [k for k in OUT if k.startswith('be-eus-') and (OUT[k]['group'] == 'livestock' or k.startswith('be-eus-meat-'))]: del OUT[k]   # BE: censos y sacrificio ya salen de Statbel; aqui solo cultivos, leche, aves, precios e insumos
-    for k in [k for k in OUT if k.startswith('de-eus-') and not (OUT[k]['group'] == 'idx_perc' and re.search(r'oat|soya|soy|rice|butter|cheese', OUT[k]['label'], re.I))]: del OUT[k]   # DE: Destatis ya publica sus indices y produccion; de Eurostat solo los indices de precios de los productos que Destatis no trae
+    for k in [k for k in OUT if k.startswith('de-eus-') and not (OUT[k]['group'] == 'idx_perc' and re.search(r'\b(oats?|soya?|rice|butter|cheese)\b', OUT[k]['label'].split(': ', 1)[-1], re.I))]: del OUT[k]   # DE: Destatis ya publica sus indices y produccion; de Eurostat solo los indices de precios de los productos que Destatis no trae
     for k in [k for k in OUT if k.startswith(DUP)]: del OUT[k]   # ya publicadas por eu-gapfill (mismas series de Eurostat): evita duplicados en el registro
     if len(OUT) < 60:
         log('demasiado pocas series (%d); no se escribe nada' % len(OUT)); open('data/eurostat-depth-log.txt', 'w').write('\n'.join(LOG) + '\n'); sys.exit(1)
