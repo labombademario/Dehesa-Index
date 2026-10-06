@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T03:25:42Z",
+ "generatedAt": "2026-10-06T05:46:02Z",
  "summary": {
   "files": 20,
   "errors": 0,
-  "warnings": 1
+  "warnings": 0
  },
  "files": [
   {
@@ -108,22 +108,22 @@
   {
    "file": "uk-stats.json",
    "schema": "country-stats",
-   "status": "warning",
+   "status": "ok",
    "errors": [],
-   "warnings": [
-    "UK/uk-egg-exports-eu: salto 1.556 -> 57.111 en 2019-12 (mediana previa 1.86)",
-    "UK/uk-egg-exports-products: salto 0.5 -> 10.1 en 2016-12 (mediana previa 0.3)",
-    "UK/uk-egg-exports-shell: salto 0.93 -> 56.559 en 2019-12 (mediana previa 1.36)",
-    "UK/uk-egg-exports-total: salto 1.567 -> 57.134 en 2019-12 (mediana previa 1.92)"
-   ],
+   "warnings": [],
    "stats": {
     "series": 686,
     "points": 47470,
     "lines": 0
    },
    "generatedAt": "2026-10-04T18:25:13Z",
-   "info": [],
-   "nWarnings": 4,
+   "info": [
+    "UK/uk-egg-exports-eu: salto 1.556 -> 57.111 en 2019-12 (mediana previa 1.86) [KNOWN_VERIFIED_ANOMALY]",
+    "UK/uk-egg-exports-products: salto 0.5 -> 10.1 en 2016-12 (mediana previa 0.3) [KNOWN_VERIFIED_ANOMALY]",
+    "UK/uk-egg-exports-shell: salto 0.93 -> 56.559 en 2019-12 (mediana previa 1.36) [KNOWN_VERIFIED_ANOMALY]",
+    "UK/uk-egg-exports-total: salto 1.567 -> 57.134 en 2019-12 (mediana previa 1.92) [KNOWN_VERIFIED_ANOMALY]"
+   ],
+   "nWarnings": 0,
    "nErrors": 0
   },
   {
@@ -169,7 +169,7 @@
     "points": 400,
     "lines": 0
    },
-   "generatedAt": "2026-10-05T06:23:03Z",
+   "generatedAt": "2026-10-06T05:39:16Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -206,11 +206,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 234,
-    "points": 8893,
+    "series": 238,
+    "points": 9253,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T02:07:34Z",
+   "generatedAt": "2026-10-06T05:35:55Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
