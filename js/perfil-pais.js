@@ -20,7 +20,7 @@
   function score(s) { return yearOf(s.latestPeriod) * 1000 + Math.min(plen(s), 500) + (KEY.test(s.label) ? 5000 : 0) + (/^Exports?:? .*(agri-food|farm, fishing)/i.test(s.label) ? 8000 : 0) - (s.changePct == null ? 300 : 0); }
   // KPI elegidos a mano por país (expresiones sobre el id de la serie; se toma la de mayor puntuación que case).
   var PICKS = {
-    US: ['^us-policy-rate$'],
+    US: ['^us-nass-corn-grain-production-m', '^us-nass-soybeans-production-m', '^us-nass-cattle-incl-calves-inventory-', '^us-nass-milk-production-m', '^us-nass-farm-sector-prices-paid-index', '^us-policy-rate$'],
     EU: ['^eu-policy-rate$'],
     ES: ['^es-perc-leche-vaca$', '^es-perc-trigo$', '^es-perc-aceite$', '^es-perc-(cerdo|porcino)', '^eu-es-trade-exp-agrifood$', '^eu-es-trade-bal-agrifood$'],
     FR: ['^fr-meat-porc-e$', '^fr-cot-soft-wheat-rouen-fcw-1-fob$', '^fr-meat-(jeune|vache|gros|bovin|jb)', '^eu-fr-trade-exp-agrifood$', '^eu-fr-trade-bal-agrifood$'],

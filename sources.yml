@@ -408,6 +408,15 @@ sources:
     data: [interest-rates-stats.json]
     log: interest-rates-log.txt
     message: Tipos de interés oficiales
+  - id: us-stats
+    name: Update US national series (USDA NASS)
+    cron: ['30 2 * * *']
+    script: scripts/update-us-stats.py
+    timeout: 10
+    continue: true
+    data: [us-stats.json]
+    log: us-stats-log.txt
+    message: Series nacionales de EE. UU. (USDA NASS) para el catalogo
   - id: fx-history
     name: Update historical exchange rates (ECB)
     cron: ['20 8 4 * *']

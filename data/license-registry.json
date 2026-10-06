@@ -2325,6 +2325,10 @@
     "enesa"
    ],
    "notes": "Histórico 2011-2022 de los Informes de Contratación nº 1-31 de ENESA: ejercicios cerrados, cortes parciales del año y fotos a fecha. Cifras copiadas del cuadro Grandes cifras de cada PDF; el informe más reciente prevalece y las discrepancias entre informes se anotan en meta.notes."
+  },
+  "data/us-stats.json": {
+   "default": "usda_nass",
+   "notes": "Totales nacionales de USDA NASS (cultivos, existencias, precios pagados) reordenados desde nass-crops/nass-livestock/nass-prices sin cambiar valores."
   }
  },
  "derived": [

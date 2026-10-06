@@ -429,7 +429,7 @@
     [lead, second].forEach(function (s) {
       if (!s) return;
       var txt = clean(s.label) + ' — ' + unitTxt(s.latest, s.unit, lang) + ' (' + inp.plabel(s.latestPeriod, s.frequency) + ')';
-      if (s.changePct != null) { var c = Math.abs(s.changePct) < 0.05; txt += ', ' + (c ? t.same : pct(s.changePct, lang) + ' ') + (t.cmp[s.frequency] || t.cmp.monthly); }
+      if (s.changePct != null) { var c = Math.abs(s.changePct) < 0.05; txt += ', ' + (c ? t.same : pct(s.changePct, lang) + ' ') + (t.cmp[s.frequency] || t.cmp[s.frequency === 'semiannual' ? 'half-year' : 'monthly'] || t.cmp.monthly); }
       var cx = ctx(s); if (cx && (cx.isMax || cx.isMin)) txt += ', ' + (cx.isMax ? t.hi : t.lo).replace('{n}', cx.yrs);
       out.push(txt + '.'); done[s.id] = 1;
     });
