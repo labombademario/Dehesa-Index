@@ -2593,7 +2593,7 @@
   "sources": {
    "ble": {
     "since": "2026-10-01",
-    "nextAction": "Leer la pagina de Open Data de BLE (bloqueada por robots.txt) o pedir licencia; alternativa: Destatis DL-DE-BY."
+    "nextAction": "Leer la pagina de Open Data de BLE (bloqueada por robots.txt) o pedir licencia (opendata@ble.de). Evaluacion 6-oct-2026 de sustituir por Destatis (DL-DE-BY): las 45 series de precios de frutas y hortalizas (prices_fv) y las 23 de precios de ganado (prices_lv) son precios de mercado de BLE y Destatis no publica ese concepto (publica indices de precios), asi que NO son sustituibles; las 28 de carne por Land (meat_regions) y las 33 de leche (milk, milk_regions) podrian tener equivalente en Destatis (sacrificios por Land, leche recogida) pero no se ha comprobado serie a serie concepto, unidad y periodo: no se sustituye nada sin esa comprobacion."
    },
    "cbsa_tariff": {
     "since": "2026-10-01",
