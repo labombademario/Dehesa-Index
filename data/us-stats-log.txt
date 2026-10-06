@@ -1,2 +1,2 @@
-02:07:34: 234 series (crops 103, livestock 24, prices_paid 56, stocks 51)
+05:35:55: 238 series (crops 100, livestock 24, prices_paid 56, stocks 58)
 descartada MILK - PRODUCTION, MEASURED IN LB / HEAD: unidad 'LB / HEAD' sin traduccion
