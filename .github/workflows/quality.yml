@@ -129,7 +129,9 @@ jobs:
         run: python3 scripts/test-cap-es.py
 
       - name: Anomaly verifier (promotes only when the primary source reproduces the value; offline fixtures)
-        run: python3 scripts/test-verify-anomalies.py
+        run: |
+          pip install pandas odfpy
+          python3 scripts/test-verify-anomalies.py
 
       - name: Derived builders run end-to-end on the committed data (the same chain update-pipeline-status.yml runs; a crash here would turn that pipeline red)
         run: |

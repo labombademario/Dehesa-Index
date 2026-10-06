@@ -14,6 +14,7 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v6
+      - run: pip install pandas odfpy
       - name: Offline tests of the verifier (no network)
         run: python3 scripts/test-verify-anomalies.py
       - id: verify

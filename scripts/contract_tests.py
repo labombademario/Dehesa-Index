@@ -1286,6 +1286,8 @@ def source_candidates(doc, errs, warns, stats):
     for c in cs:
         k = c["sourceId"]; r = reg.get(c.get("registryId")) if c.get("registryId") else None
         if c.get("registryId") and not r: errs.append("%s: registryId %s no existe en el registro" % (k, c["registryId"])); continue
+        if r and c.get("legalConfidence") != r.get("legalConfidence"): errs.append("%s: legalConfidence %s no coincide con el registro (%s)" % (k, c.get("legalConfidence"), r.get("legalConfidence")))
+        if c.get("registryAlignment") == "DIVERGENT": errs.append("%s: las notas historicas contradicen el registro de licencias (%s); el registro manda" % (k, "; ".join(c.get("divergences", []))))
         if (r["status"] if r else "UNREVIEWED") != c["licenseStatus"]: errs.append("%s: licenseStatus %s no coincide con el registro (%s)" % (k, c["licenseStatus"], r["status"] if r else "UNREVIEWED"))
         if r:
             for a, b in (("licenseId", "licenseId"), ("commercialReuse", "commercialUse"), ("derivatives", "derivatives")):

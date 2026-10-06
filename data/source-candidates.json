@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T03:53:50Z",
+ "generatedAt": "2026-10-06T04:54:04Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -25,6 +25,7 @@
   "canStart": [
    "au_abs_slaughter_state"
   ],
+  "divergent": [],
   "newCountries": [
    "AR",
    "BR",
@@ -78,7 +79,9 @@
    "evidence": [
     "claude/roadmap.md"
    ],
-   "notes": "Los terminos prohiben scraping y explotacion comercial; solo con licencia escrita."
+   "notes": "Los terminos prohiben scraping y explotacion comercial; solo con licencia escrita.",
+   "legalConfidence": "NOT_APPLICABLE",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "cepea",
@@ -117,7 +120,9 @@
    "evidence": [
     "claude/paises-datos-abiertos.md"
    ],
-   "notes": "Uso orientado a widgets con su marca y historico de pago: no automatizar sin permiso."
+   "notes": "Uso orientado a widgets con su marca y historico de pago: no automatizar sin permiso.",
+   "legalConfidence": "NOT_APPLICABLE",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "cme",
@@ -156,7 +161,9 @@
    "evidence": [
     "data/license-registry.json"
    ],
-   "notes": "BLOCKED en el registro."
+   "notes": "BLOCKED en el registro.",
+   "legalConfidence": "NOT_APPLICABLE",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "conab",
@@ -197,7 +204,9 @@
    "evidence": [
     "claude/paises-datos-abiertos.md"
    ],
-   "notes": "El sitio declara CC BY-ND 3.0 (sin derivados): convertir o reexpresar es dudoso; preguntar a gesip@conab.gov.br."
+   "notes": "El sitio declara CC BY-ND 3.0 (sin derivados): convertir o reexpresar es dudoso; preguntar a gesip@conab.gov.br.",
+   "legalConfidence": "NOT_APPLICABLE",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "de_grain_exchanges",
@@ -234,7 +243,8 @@
    "evidence": [
     "claude/alemania.md"
    ],
-   "notes": "Bloqueada por decision del proyecto, no por una licencia revisada."
+   "notes": "Bloqueada por decision del proyecto, no por una licencia revisada.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "dtn",
@@ -275,7 +285,9 @@
    "evidence": [
     "claude/roadmap.md"
    ],
-   "notes": "Sin licencia publica: PENDIENTE, sin scraping. BLOCKED en el registro."
+   "notes": "Sin licencia publica: PENDIENTE, sin scraping. BLOCKED en el registro.",
+   "legalConfidence": "NOT_APPLICABLE",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "faostat",
@@ -318,7 +330,9 @@
     "claude/australia-paises-bajos-dinamarca.md",
     "claude/roadmap-paises.md"
    ],
-   "notes": "CC BY 4.0 con clausula de no promocion comercial: RESTRICTED en el registro."
+   "notes": "CC BY 4.0 con clausula de no promocion comercial: RESTRICTED en el registro.",
+   "legalConfidence": "NOT_APPLICABLE",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "mla",
@@ -363,7 +377,9 @@
     "claude/roadmap-paises.md",
     "claude/australia-paises-bajos-dinamarca.md"
    ],
-   "notes": "Productos deducidos del nombre de la institucion, no de la nota (productsConfirmed=false)."
+   "notes": "Productos deducidos del nombre de la institucion, no de la nota (productsConfirmed=false).",
+   "legalConfidence": "NOT_APPLICABLE",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "au_abs_slaughter_state",
@@ -408,7 +424,9 @@
     "claude/australia-paises-bajos-dinamarca.md",
     "claude/roadmap-paises.md"
    ],
-   "notes": "Ampliacion P1 del roadmap (desglose por estado). Australia ya tiene sacrificio nacional en el catalogo."
+   "notes": "Ampliacion P1 del roadmap (desglose por estado). Australia ya tiene sacrificio nacional en el catalogo.",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "de_genesis_api",
@@ -454,7 +472,9 @@
     "claude/alemania.md",
     "claude/roadmap.md"
    ],
-   "notes": "La licencia del editor (dl-de/by-2.0) esta VERIFIED en el registro; el bloqueo es tecnico, no de licencia."
+   "notes": "La licencia del editor (dl-de/by-2.0) esta VERIFIED en el registro; el bloqueo es tecnico, no de licencia.",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "abares",
@@ -498,7 +518,9 @@
     "claude/roadmap-paises.md",
     "claude/australia-paises-bajos-dinamarca.md"
    ],
-   "notes": "La parte de precios de granja no enumera productos en la nota."
+   "notes": "La parte de precios de granja no enumera productos en la nota.",
+   "legalConfidence": "PENDING",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "de_ble_balances",
@@ -538,7 +560,9 @@
    "evidence": [
     "claude/alemania.md"
    ],
-   "notes": "Licencia PENDING en el registro (BLE)."
+   "notes": "Licencia PENDING en el registro (BLE).",
+   "legalConfidence": "PENDING",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "sima_gpp",
@@ -588,7 +612,9 @@
     "claude/roadmap-paises.md",
     "claude/portugal.md"
    ],
-   "notes": "Cereales, corcho y fruta figuran en la nota sin detalle de producto y no se cuentan."
+   "notes": "Cereales, corcho y fruta figuran en la nota sin detalle de producto y no se cuentan.",
+   "legalConfidence": "PENDING",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "ar_exchanges",
@@ -626,7 +652,8 @@
    "evidence": [
     "claude/paises-datos-abiertos.md"
    ],
-   "notes": "Pais nuevo."
+   "notes": "Pais nuevo.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "ar_magyp_open_data",
@@ -667,7 +694,8 @@
    "evidence": [
     "claude/paises-datos-abiertos.md"
    ],
-   "notes": "Licencia y frecuencia no confirmadas en las paginas. Pais nuevo."
+   "notes": "Licencia y frecuencia no confirmadas en las paginas. Pais nuevo.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "at_ama_prices",
@@ -707,7 +735,8 @@
    "evidence": [
     "claude/roadmap-paises.md"
    ],
-   "notes": "Sin esto los precios de Austria son anuales (Eurostat)."
+   "notes": "Sin esto los precios de Austria son anuales (Eurostat).",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "at_gruener_bericht_invekos",
@@ -746,7 +775,8 @@
    "evidence": [
     "claude/roadmap-paises.md"
    ],
-   "notes": "Statistik Austria open data (CC BY 4.0) no trae estadistica agraria."
+   "notes": "Statistik Austria open data (CC BY 4.0) no trae estadistica agraria.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "ca_cgc_aafc",
@@ -788,7 +818,8 @@
    "evidence": [
     "claude/roadmap-paises.md"
    ],
-   "notes": "Prioridad P3 en el roadmap de paises."
+   "notes": "Prioridad P3 en el roadmap de paises.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "ca_prairie_provincial_reports",
@@ -827,7 +858,8 @@
    "evidence": [
     "claude/roadmap-paises.md"
    ],
-   "notes": "Complementaria a Alberta."
+   "notes": "Complementaria a Alberta.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "ca_statcan_rye",
@@ -871,7 +903,9 @@
    "evidence": [
     "claude/roadmap-paises.md"
    ],
-   "notes": "Licencia del editor VERIFIED; sin tabla identificada no hay nada que ingerir."
+   "notes": "Licencia del editor VERIFIED; sin tabla identificada no hay nada que ingerir.",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED"
   },
   {
    "sourceId": "cn_nbs_mara",
@@ -911,7 +945,8 @@
    "evidence": [
     "claude/paises-datos-abiertos.md"
    ],
-   "notes": "No verificado en detalle; descartado para esta fase. Pais nuevo."
+   "notes": "No verificado en detalle; descartado para esta fase. Pais nuevo.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "es_aemet_opendata",
@@ -950,7 +985,8 @@
    "evidence": [
     "claude/espana.md"
    ],
-   "notes": "Licencia y terminos primero (nota del proyecto)."
+   "notes": "Licencia y terminos primero (nota del proyecto).",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "es_esyrce_mapa",
@@ -989,7 +1025,8 @@
    "evidence": [
     "claude/espana.md"
    ],
-   "notes": "Alcance por investigar."
+   "notes": "Alcance por investigar.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "es_ine_fega",
@@ -1028,7 +1065,8 @@
    "evidence": [
     "claude/espana.md"
    ],
-   "notes": "Alcance por investigar."
+   "notes": "Alcance por investigar.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "es_siar",
@@ -1069,7 +1107,8 @@
     "claude/espana.md",
     "claude/roadmap.md"
    ],
-   "notes": "Clima, no precios: no rellena celdas de producto."
+   "notes": "Clima, no precios: no rellena celdas de producto.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "ibge_sidra",
@@ -1110,7 +1149,8 @@
    "evidence": [
     "claude/paises-datos-abiertos.md"
    ],
-   "notes": "Pais nuevo: no se anade ninguno esta noche."
+   "notes": "Pais nuevo: no se anade ninguno esta noche.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "mx_siap_sniim",
@@ -1150,7 +1190,8 @@
    "evidence": [
     "claude/paises-datos-abiertos.md"
    ],
-   "notes": "Contrario a la regla de no scrapear sin permiso. Pais nuevo."
+   "notes": "Contrario a la regla de no scrapear sin permiso. Pais nuevo.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "pt_ifap_crop_area",
@@ -1191,7 +1232,8 @@
     "claude/roadmap-paises.md",
     "claude/portugal.md"
    ],
-   "notes": "El visor IFAP ya se usa por WMS; esto seria el dato agregado."
+   "notes": "El visor IFAP ya se usa por WMS; esto seria el dato agregado.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "pt_siaz_dgadr",
@@ -1230,7 +1272,8 @@
    "evidence": [
     "claude/roadmap-paises.md"
    ],
-   "notes": "Alcance por investigar."
+   "notes": "Alcance por investigar.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "ru_rosstat_mcx",
@@ -1271,7 +1314,8 @@
    "evidence": [
     "claude/paises-datos-abiertos.md"
    ],
-   "notes": "No verificado en detalle; descartado para esta fase. Pais nuevo."
+   "notes": "No verificado en detalle; descartado para esta fase. Pais nuevo.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "tr_tuik_tmo",
@@ -1311,7 +1355,8 @@
    "evidence": [
     "claude/paises-datos-abiertos.md"
    ],
-   "notes": "No verificado en detalle. Pais nuevo."
+   "notes": "No verificado en detalle. Pais nuevo.",
+   "registryAlignment": "NO_REGISTRY"
   },
   {
    "sourceId": "aafc_drought",
@@ -1336,6 +1381,8 @@
    "attribution": "Contains information licensed under the Open Government Licence – Canada.",
    "lastChecked": "2026-10-02",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -1390,6 +1437,8 @@
    "attribution": "Source: Australian Bureau of Statistics",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -1427,6 +1476,8 @@
    "attribution": "Fuente: Agroseguro",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "PENDING",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -1474,6 +1525,8 @@
    "attribution": "Contains information licensed under the Open Government Licence – Alberta.",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -1511,6 +1564,8 @@
    "attribution": "Source: Bank of Canada",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -1548,6 +1603,8 @@
    "attribution": "Source: U.S. Bureau of Economic Analysis",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -1585,6 +1642,8 @@
    "attribution": "Source: BIS",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -1632,6 +1691,8 @@
    "attribution": "Quelle: Bundesanstalt für Landwirtschaft und Ernährung (BLE)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "PENDING",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -1670,6 +1731,8 @@
    "attribution": "Source: U.S. Bureau of Labor Statistics",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -1707,6 +1770,8 @@
    "attribution": "Basado en datos de la Agencia Estatal Boletín Oficial del Estado (https://www.boe.es). Texto consolidado de carácter meramente informativo.",
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -1760,6 +1825,8 @@
    "attribution": "Source: CBS (Statistics Netherlands), StatLine. Own calculations where we derive values.",
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -1796,6 +1863,8 @@
    "derivatives": "unclear",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "PENDING",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -1834,6 +1903,8 @@
    "attribution": "Source: U.S. Census Bureau, Population Estimates Program",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -1871,6 +1942,8 @@
    "attribution": "Source: U.S. Commodity Futures Trading Commission (CFTC), Commitments of Traders",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -1908,6 +1981,8 @@
    "attribution": "Contains information licensed under the Open Government Licence – Canada.",
    "lastChecked": "2026-10-02",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -1969,6 +2044,8 @@
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Defra.",
    "lastChecked": "2026-10-04",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2027,6 +2104,8 @@
    "attribution": "Datenquelle: Statistisches Bundesamt (Destatis), Genesis-Online; Datenlizenz by-2-0",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2086,6 +2165,8 @@
    "attribution": "Source: Statistics Denmark – StatBank.dk/<table code>. For modified data: 'Own calculations based on data from Statistics Denmark.'",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2123,6 +2204,8 @@
    "attribution": "Source: ECB statistics",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -2160,6 +2243,8 @@
    "attribution": "Source: European Drought Observatory (EDO), https://drought.emergency.copernicus.eu © European Commission - JRC",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2201,6 +2286,8 @@
    "attribution": "Source: U.S. Energy Information Administration",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -2238,6 +2325,8 @@
    "attribution": "Fuente: Informe de Contratación del Seguro Agrario nº NN, ENESA (MAPA). Datos de Agroseguro; elaboración ENESA",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2300,6 +2389,8 @@
    "attribution": "Source: European Commission (Agri-food data portal)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -2341,6 +2432,8 @@
    "attribution": "Source: European Commission (Weekly Oil Bulletin)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -2378,6 +2471,8 @@
    "attribution": "Source: European Commission (TARIC / Customs Tariff)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -2415,6 +2510,8 @@
    "attribution": "Source: EUR-Lex, Regulation (EU) 2021/2115, consolidated text. © European Union. Only the Official Journal is authentic.",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2481,6 +2578,8 @@
    "attribution": "Source: Eurostat (online data code: <code>). Adapted by dehesaindex.com where data are modified.",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -2528,6 +2627,8 @@
    "attribution": "Source: Eurostat (Comext). Adapted by dehesaindex.com where applicable.",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -2579,6 +2680,8 @@
    "attribution": "Source : FranceAgriMer – Données originales téléchargées depuis https://visionet.franceagrimer.fr/ – Licence Ouverte 2.0",
    "lastChecked": "2026-10-04",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2616,6 +2719,8 @@
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0 (HM Revenue & Customs).",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2653,6 +2758,8 @@
    "attribution": "Fuente: Sitio web del INE: www.ine.es (con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2715,6 +2822,8 @@
    "attribution": "Fonte: Instituto Nacional de Estatística (INE), CC BY 4.0",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2752,6 +2861,8 @@
    "attribution": "Source: Insee",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2789,6 +2900,8 @@
    "attribution": "Source: Internal Revenue Service, Instructions for Schedule A (Form 1040) (2025).",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2850,6 +2963,8 @@
    "attribution": "Fuente: Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
    "lastChecked": "2026-10-02",
    "verification": "REGISTRY",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2887,6 +3002,8 @@
    "attribution": "Contains information from the Government of Manitoba, licensed under the OpenMB Information and Data Use License (Manitoba.ca/OpenMB)",
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2924,6 +3041,8 @@
    "attribution": "NASA Prediction of Worldwide Energy Resources (POWER) Project, accessed <date> from https://power.larc.nasa.gov",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2961,6 +3080,8 @@
    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Office for National Statistics.",
    "lastChecked": "2026-10-04",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -2998,6 +3119,8 @@
    "attribution": "Source: Reserve Bank of Australia <year>",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3035,6 +3158,8 @@
    "attribution": "Kilde: Retsinformation (Civilstyrelsen), bekendtgørelse 1363 og 1381 af 2025. Uddrag.",
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3072,6 +3197,8 @@
    "attribution": "Bron: RVO (Rijksdienst voor Ondernemend Nederland), marktinformatie statistieken",
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3108,6 +3235,8 @@
    "derivatives": "unclear",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "PENDING",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -3163,6 +3292,8 @@
    "attribution": "Source: Statbel (Statistics Belgium)",
    "lastChecked": "2026-09-30",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3227,6 +3358,8 @@
    "attribution": "Adapted from Statistics Canada, <table name/number>, <reference date>. This does not constitute an endorsement by Statistics Canada of this product.",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3264,6 +3397,8 @@
    "attribution": "Datenquelle: Statistik Austria — data.statistik.gv.at",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3301,6 +3436,8 @@
    "attribution": "Source: European Commission, Taxes in Europe Database (TEDB). Rates are reported by the Member States.",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3338,6 +3475,8 @@
    "attribution": "The U.S. Drought Monitor is jointly produced by the National Drought Mitigation Center at the University of Nebraska-Lincoln, the USDA, NOAA and NASA.",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "NOT_READY",
@@ -3375,6 +3514,8 @@
    "attribution": "Source: U.S. International Trade Commission, Harmonized Tariff Schedule of the United States",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3412,6 +3553,8 @@
    "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (AgTransport, Grain Transportation Report)",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3449,6 +3592,8 @@
    "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service, Federal Grain Inspection Service (Export Grain Inspections)",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3486,6 +3631,8 @@
    "attribution": "Source: U.S. Department of Agriculture, Agricultural Marketing Service (Livestock Mandatory Reporting)",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3528,6 +3675,8 @@
    "attribution": "Source: U.S. Department of Agriculture (AMS Market News (MARS))",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3565,6 +3714,8 @@
    "attribution": "Source: U.S. Department of Agriculture (ERS data products)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3602,6 +3753,8 @@
    "attribution": "Source: U.S. Department of Agriculture (FAS Export Sales Reporting)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3639,6 +3792,8 @@
    "attribution": "Source: USDA Foreign Agricultural Service, GATS, based on US Census Bureau trade data",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3676,6 +3831,8 @@
    "attribution": "Source: USDA Foreign Agricultural Service, Production, Supply and Distribution (PSD) Online",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3713,6 +3870,8 @@
    "attribution": "U. S. Department of Agriculture, Farm Service Agency.",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3772,6 +3931,8 @@
    "attribution": "Source: USDA National Agricultural Statistics Service (NASS), Quick Stats",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3809,6 +3970,8 @@
    "attribution": "Source: U.S. Department of Agriculture (WASDE release schedule)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3846,6 +4009,8 @@
    "attribution": "Source: U.S. Department of Agriculture, Risk Management Agency (Summary of Business). Aggregated by Dehesa Index.",
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3883,6 +4048,8 @@
    "attribution": "Source : VigiEau, Ministère de la Transition écologique — Licence Ouverte 2.0",
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3925,6 +4092,8 @@
    "attribution": "The World Bank: Commodity Price Data (The Pink Sheet)",
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",
@@ -3962,6 +4131,8 @@
    "attribution": "The World Bank: <indicator name> (World Development Indicators)",
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
     "result": "READY",

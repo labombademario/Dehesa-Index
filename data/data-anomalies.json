@@ -295,6 +295,135 @@
    "evidence": "Comparado con la fuente primaria el 2026-10-04: los 4 periodos revisados coinciden exactamente con los que publica la fuente (2018-09: 2.845; 2018-10: 90.635; 2018-11: 172.837; 2018-12: 84.759). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
    "verifiedAt": "2026-10-04",
    "sourceUrl": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=12100101"
+  },
+  {
+   "series": "UK/uk-egg-exports-eu",
+   "file": "uk-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Salto mensual muy superior a la mediana de los 12 meses previos en 2019-12 (aviso de validate-data).",
+   "hypothesis": "Valor mensual de HMRC recogido tal cual por Defra (Total EU 57,1 millones de docenas frente a 1-4 los meses vecinos): no hay en la hoja ninguna nota que lo explique; podria ser una exportacion excepcional o un error de origen de HMRC, no verificado.",
+   "since": "2026-10-06",
+   "verifier": {
+    "slug": "egg-statistics",
+    "pattern": "Trade_dataset.*\\.ods$",
+    "dataset": "egg_trade",
+    "sheet": "Exports_Monthly",
+    "kindSheet": "DM",
+    "kind": "defra_ods",
+    "column": "Total EU",
+    "periods": [
+     "2019-10",
+     "2019-11",
+     "2019-12",
+     "2020-01"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-06T04:47:17Z",
+    "result": "REPRODUCED",
+    "detail": "2019-10 3.807/3.807; 2019-11 1.556/1.556; 2019-12 57.111/57.111; 2020-01 3.362/3.362"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-06: los 4 periodos revisados coinciden exactamente con los que publica la fuente (2019-10: 3.807; 2019-11: 1.556; 2019-12: 57.111; 2020-01: 3.362). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-06",
+   "sourceUrl": "https://www.gov.uk/government/statistical-data-sets/egg-statistics",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "UK/uk-egg-exports-shell",
+   "file": "uk-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Salto mensual muy superior a la mediana de los 12 meses previos en 2019-12 (aviso de validate-data).",
+   "hypothesis": "Valor mensual de HMRC recogido tal cual por Defra (Total EU 57,1 millones de docenas frente a 1-4 los meses vecinos): no hay en la hoja ninguna nota que lo explique; podria ser una exportacion excepcional o un error de origen de HMRC, no verificado.",
+   "since": "2026-10-06",
+   "verifier": {
+    "slug": "egg-statistics",
+    "pattern": "Trade_dataset.*\\.ods$",
+    "dataset": "egg_trade",
+    "sheet": "Exports_Monthly",
+    "kindSheet": "DM",
+    "kind": "defra_ods",
+    "column": "Shell Eggs Total",
+    "periods": [
+     "2019-10",
+     "2019-11",
+     "2019-12",
+     "2020-01"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-06T04:47:17Z",
+    "result": "REPRODUCED",
+    "detail": "2019-10 3.193/3.193; 2019-11 0.93/0.93; 2019-12 56.559/56.559; 2020-01 2.174/2.174"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-06: los 4 periodos revisados coinciden exactamente con los que publica la fuente (2019-10: 3.193; 2019-11: 0.93; 2019-12: 56.559; 2020-01: 2.174). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-06",
+   "sourceUrl": "https://www.gov.uk/government/statistical-data-sets/egg-statistics",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "UK/uk-egg-exports-total",
+   "file": "uk-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Salto mensual muy superior a la mediana de los 12 meses previos en 2019-12 y 2016-12 (aviso de validate-data).",
+   "hypothesis": "Valor mensual de HMRC recogido tal cual por Defra (Total EU 57,1 millones de docenas frente a 1-4 los meses vecinos): no hay en la hoja ninguna nota que lo explique; podria ser una exportacion excepcional o un error de origen de HMRC, no verificado.",
+   "since": "2026-10-06",
+   "verifier": {
+    "slug": "egg-statistics",
+    "pattern": "Trade_dataset.*\\.ods$",
+    "dataset": "egg_trade",
+    "sheet": "Exports_Monthly",
+    "kindSheet": "DM",
+    "kind": "defra_ods",
+    "column": "Overall Total",
+    "periods": [
+     "2016-11",
+     "2016-12",
+     "2017-01",
+     "2019-11",
+     "2019-12",
+     "2020-01"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-06T04:47:17Z",
+    "result": "REPRODUCED",
+    "detail": "2016-11 1.2/1.2; 2016-12 10.9/10.9; 2017-01 0.96/0.96; 2019-11 1.567/1.567; 2019-12 57.134/57.134; 2020-01 3.37/3.37"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-06: los 6 periodos revisados coinciden exactamente con los que publica la fuente (2016-11: 1.2; 2016-12: 10.9; 2017-01: 0.96; 2019-11: 1.567; 2019-12: 57.134; 2020-01: 3.37). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-06",
+   "sourceUrl": "https://www.gov.uk/government/statistical-data-sets/egg-statistics",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
+  },
+  {
+   "series": "UK/uk-egg-exports-products",
+   "file": "uk-stats.json",
+   "status": "KNOWN_VERIFIED_ANOMALY",
+   "detected": "Salto mensual muy superior a la mediana de los 12 meses previos en 2016-12 (aviso de validate-data).",
+   "hypothesis": "Los productos de huevo (Egg Products Total) pasan de 0,2-0,5 a 10,1 millones de docenas en diciembre de 2016, tambien en la fuente; sin nota explicativa en la hoja, sin verificar la causa.",
+   "since": "2026-10-06",
+   "verifier": {
+    "slug": "egg-statistics",
+    "pattern": "Trade_dataset.*\\.ods$",
+    "dataset": "egg_trade",
+    "sheet": "Exports_Monthly",
+    "kindSheet": "DM",
+    "kind": "defra_ods",
+    "column": "Egg Products Total",
+    "periods": [
+     "2016-11",
+     "2016-12",
+     "2017-01"
+    ]
+   },
+   "lastCheck": {
+    "at": "2026-10-06T04:47:17Z",
+    "result": "REPRODUCED",
+    "detail": "2016-11 0.5/0.5; 2016-12 10.1/10.1; 2017-01 0.292/0.292"
+   },
+   "evidence": "Comparado con la fuente primaria el 2026-10-06: los 3 periodos revisados coinciden exactamente con los que publica la fuente (2016-11: 0.5; 2016-12: 10.1; 2017-01: 0.292). Que la cifra sea la publicada no explica por si sola su causa: la hipotesis se mantiene como hipotesis.",
+   "verifiedAt": "2026-10-06",
+   "sourceUrl": "https://www.gov.uk/government/statistical-data-sets/egg-statistics",
+   "verification": "Verificada contra la fuente primaria por scripts/verify-anomalies.py (ver evidence)."
   }
  ]
 }

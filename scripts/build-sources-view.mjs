@@ -15,7 +15,7 @@ for (const [id, s] of Object.entries(reg)) {
     id, n: String(s.name).replace(/^(Spain|Portugal|Mexico|Australia|Brazil) — /, ''),
     u: s.url, c: s.country === 'GB' ? 'UK' : s.country,
     l: s.status === 'VERIFIED' ? s.licenseId : '', lu: s.status === 'VERIFIED' ? (s.licenseUrl || '') : '',
-    p: s.status === 'VERIFIED' ? 0 : 1
+    p: s.status === 'VERIFIED' ? 0 : 1, t: s.legalConfidence === 'OWNER_ACCEPTED' ? 'O' : s.legalConfidence === 'MEDIUM' ? 'M' : ''
   });
 }
 rows.sort((a, b) => a.c.localeCompare(b.c) || a.n.localeCompare(b.n));

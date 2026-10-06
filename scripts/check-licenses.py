@@ -16,8 +16,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]; D = ROOT / "data"
 STRICT = "--strict" in sys.argv or "--strict-all" in sys.argv; STRICT_ALL = "--strict-all" in sys.argv
 REQ = ["name", "url", "country", "licenseId", "licenseName", "licenseUrl", "commercialUse", "derivatives", "redistribution", "attributionRequired", "attributionText",
-       "additionalRestrictions", "thirdPartyExceptions", "thirdPartyNote", "verifiedAt", "status", "confidence", "evidence", "used", "aliases"]
+       "additionalRestrictions", "thirdPartyExceptions", "thirdPartyNote", "verifiedAt", "status", "confidence", "evidence", "used", "aliases", "legalConfidence", "legalConfidenceReason"]
 YNC = {"yes", "no", "conditional", "unclear"}; STATUS = {"VERIFIED", "PENDING", "RESTRICTED", "BLOCKED"}
+LEGAL = {"HIGH", "MEDIUM", "OWNER_ACCEPTED", "PENDING", "NOT_APPLICABLE"}  # confianza juridica: no todas las fuentes VERIFIED significan lo mismo
 errs, warns = [], []
 reg = json.loads(Path(os.environ.get("DEHESA_LICENSE_REGISTRY") or (D / "license-registry.json")).read_text(encoding="utf-8"))
 S = reg["sources"]; alias = {}
@@ -43,6 +44,14 @@ for k, v in S.items():
             age = (today - datetime.date.fromisoformat(v["verifiedAt"])).days
             if age > reg["policy"]["maxAgeDaysVerified"]: warns.append("registro/%s: verificada hace %d dias (> %d): reverificar" % (k, age, reg["policy"]["maxAgeDaysVerified"]))
         except Exception: errs.append("registro/%s: verifiedAt invalido" % k)
+    lc = v.get("legalConfidence")
+    if lc not in LEGAL: errs.append("registro/%s: legalConfidence invalido %r" % (k, lc))
+    elif v.get("status") == "VERIFIED" and lc not in ("HIGH", "MEDIUM", "OWNER_ACCEPTED"): errs.append("registro/%s: VERIFIED exige legalConfidence HIGH/MEDIUM/OWNER_ACCEPTED (hay %s)" % (k, lc))
+    elif v.get("status") == "PENDING" and lc != "PENDING": errs.append("registro/%s: PENDING exige legalConfidence PENDING" % k)
+    elif v.get("status") in ("RESTRICTED", "BLOCKED") and lc != "NOT_APPLICABLE": errs.append("registro/%s: %s exige legalConfidence NOT_APPLICABLE" % (k, v["status"]))
+    if lc == "HIGH" and v.get("confidence") != "high": errs.append("registro/%s: legalConfidence HIGH exige confidence high" % k)
+    if lc == "OWNER_ACCEPTED" and not re.search(r"owner|propietari|Mario", (v.get("evidence") or "") + (v.get("notes") or ""), re.I): errs.append("registro/%s: OWNER_ACCEPTED exige que la decision del propietario conste en evidence/notes" % k)
+    if not v.get("legalConfidenceReason"): errs.append("registro/%s: falta legalConfidenceReason" % k)
     if v.get("status") in ("RESTRICTED", "BLOCKED") and v.get("used"): errs.append("registro/%s: %s no puede estar usada" % (k, v["status"]))
     if v.get("status") == "PENDING" and not v.get("evidence"): errs.append("registro/%s: PENDING sin explicacion (evidence)" % k)
     if v.get("licenseId") == "UNKNOWN" and v.get("status") == "VERIFIED": errs.append("registro/%s: VERIFIED con licenseId UNKNOWN" % k)
@@ -126,6 +135,11 @@ print("Licencias: %d fuentes %s; %d series de catalogo revisadas; %d PENDING en 
 if "--report" in sys.argv:
     tot = sum(per_src.values()) or 1
     for k, n in sorted(per_src.items(), key=lambda x: -x[1]): print("  %-18s %5d series  %-9s %s" % (k, n, S[k]["status"], S[k]["licenseId"]))
+if "--tiers" in sys.argv:  # VERIFIED+HIGH por separado de VERIFIED+MEDIUM/OWNER_ACCEPTED (antes de cualquier monetizacion)
+    print("\nConfianza juridica de las fuentes EN USO (series de catalogo por nivel):")
+    for tier in ("HIGH", "MEDIUM", "OWNER_ACCEPTED", "PENDING"):
+        ks = sorted((k for k, v in S.items() if v.get("used") and v.get("legalConfidence") == tier), key=lambda k: -per_src.get(k, 0))
+        print("  %-15s %2d fuentes, %5d series: %s" % (tier, len(ks), sum(per_src.get(k, 0) for k in ks), ", ".join("%s(%d)" % (k, per_src.get(k, 0)) for k in ks)))
 if "--inventory" in sys.argv:
     print("\nInventario de PENDING en uso (series de catalogo y ficheros que dependen de cada fuente):")
     for k in pend: print("  %-18s %5d series | ficheros: %s" % (k, per_src.get(k, 0), ", ".join(sorted(used_by.get(k, []))) or "-"))

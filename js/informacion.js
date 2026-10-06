@@ -16,10 +16,10 @@
   };
 
   var UI = {
-    es: { byCountry: 'Por país', all: 'Todas', src: ['fuente', 'fuentes'], pending: 'licencia pendiente de confirmar', lic: 'Licencia', G: { US: 'Estados Unidos', EU: 'Unión Europea', UK: 'Reino Unido', CA: 'Canadá', ES: 'España', FR: 'Francia', DE: 'Alemania', PT: 'Portugal', BE: 'Bélgica', NL: 'Países Bajos', AT: 'Austria', DK: 'Dinamarca', AU: 'Australia', MX: 'México', INT: 'Internacional' } },
-    en: { byCountry: 'By country', all: 'All', src: ['source', 'sources'], pending: 'licence to be confirmed', lic: 'Licence', G: { US: 'United States', EU: 'European Union', UK: 'United Kingdom', CA: 'Canada', ES: 'Spain', FR: 'France', DE: 'Germany', PT: 'Portugal', BE: 'Belgium', NL: 'Netherlands', AT: 'Austria', DK: 'Denmark', AU: 'Australia', MX: 'Mexico', INT: 'International' } },
-    fr: { byCountry: 'Par pays', all: 'Toutes', src: ['source', 'sources'], pending: 'licence à confirmer', lic: 'Licence', G: { US: 'États-Unis', EU: 'Union européenne', UK: 'Royaume-Uni', CA: 'Canada', ES: 'Espagne', FR: 'France', DE: 'Allemagne', PT: 'Portugal', BE: 'Belgique', NL: 'Pays-Bas', AT: 'Autriche', DK: 'Danemark', AU: 'Australie', MX: 'Mexique', INT: 'International' } },
-    it: { byCountry: 'Per paese', all: 'Tutte', src: ['fonte', 'fonti'], pending: 'licenza da confermare', lic: 'Licenza', G: { US: 'Stati Uniti', EU: 'Unione europea', UK: 'Regno Unito', CA: 'Canada', ES: 'Spagna', FR: 'Francia', DE: 'Germania', PT: 'Portogallo', BE: 'Belgio', NL: 'Paesi Bassi', AT: 'Austria', DK: 'Danimarca', AU: 'Australia', MX: 'Messico', INT: 'Internazionale' } }
+    es: { byCountry: 'Por país', all: 'Todas', src: ['fuente', 'fuentes'], pending: 'licencia pendiente de confirmar', lic: 'Licencia', tM: 'base jurídica general', tO: 'aceptada por el propietario del sitio', G: { US: 'Estados Unidos', EU: 'Unión Europea', UK: 'Reino Unido', CA: 'Canadá', ES: 'España', FR: 'Francia', DE: 'Alemania', PT: 'Portugal', BE: 'Bélgica', NL: 'Países Bajos', AT: 'Austria', DK: 'Dinamarca', AU: 'Australia', MX: 'México', INT: 'Internacional' } },
+    en: { byCountry: 'By country', all: 'All', src: ['source', 'sources'], pending: 'licence to be confirmed', lic: 'Licence', tM: 'general legal basis', tO: 'accepted by the site owner', G: { US: 'United States', EU: 'European Union', UK: 'United Kingdom', CA: 'Canada', ES: 'Spain', FR: 'France', DE: 'Germany', PT: 'Portugal', BE: 'Belgium', NL: 'Netherlands', AT: 'Austria', DK: 'Denmark', AU: 'Australia', MX: 'Mexico', INT: 'International' } },
+    fr: { byCountry: 'Par pays', all: 'Toutes', src: ['source', 'sources'], pending: 'licence à confirmer', lic: 'Licence', tM: 'base juridique générale', tO: 'acceptée par le propriétaire du site', G: { US: 'États-Unis', EU: 'Union européenne', UK: 'Royaume-Uni', CA: 'Canada', ES: 'Espagne', FR: 'France', DE: 'Allemagne', PT: 'Portugal', BE: 'Belgique', NL: 'Pays-Bas', AT: 'Autriche', DK: 'Danemark', AU: 'Australie', MX: 'Mexique', INT: 'International' } },
+    it: { byCountry: 'Per paese', all: 'Tutte', src: ['fonte', 'fonti'], pending: 'licenza da confermare', lic: 'Licenza', tM: 'base giuridica generale', tO: 'accettata dal proprietario del sito', G: { US: 'Stati Uniti', EU: 'Unione europea', UK: 'Regno Unito', CA: 'Canada', ES: 'Spagna', FR: 'Francia', DE: 'Germania', PT: 'Portogallo', BE: 'Belgio', NL: 'Paesi Bassi', AT: 'Austria', DK: 'Danimarca', AU: 'Australia', MX: 'Messico', INT: 'Internazionale' } }
   };
   var ORDER = ['US', 'EU', 'UK', 'CA', 'ES', 'FR', 'DE', 'PT', 'BE', 'NL', 'AT', 'DK', 'AU', 'MX', 'INT'];
   var FLAG = { US: '🇺🇸', EU: '🇪🇺', UK: '🇬🇧', CA: '🇨🇦', ES: '🇪🇸', FR: '🇫🇷', DE: '🇩🇪', PT: '🇵🇹', BE: '🇧🇪', NL: '🇳🇱', AT: '🇦🇹', DK: '🇩🇰', AU: '🇦🇺', MX: '🇲🇽', INT: '🌐' };
@@ -28,7 +28,8 @@
   function srcItem(r, u, esc) {
     var lic = r.p ? '<span class="di-src-lic di-src-lic-pend">' + esc(u.pending) + '</span>'
       : '<span class="di-src-lic">' + esc(u.lic) + ': ' + (r.lu ? '<a href="' + esc(r.lu) + '" target="_blank" rel="noopener noreferrer">' + esc(r.l) + '</a>' : esc(r.l)) + '</span>';
-    return '<li><a href="' + esc(r.u) + '" target="_blank" rel="noopener noreferrer">' + esc(r.n) + '</a> ' + lic + '</li>';
+    var tier = !r.p && r.t ? ' <span class="di-src-lic di-src-lic-pend">(' + esc(r.t === 'O' ? u.tO : u.tM) + ')</span>' : '';
+    return '<li><a href="' + esc(r.u) + '" target="_blank" rel="noopener noreferrer">' + esc(r.n) + '</a> ' + lic + tier + '</li>';
   }
 
   function renderSources(lang) {

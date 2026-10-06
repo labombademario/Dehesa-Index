@@ -12,6 +12,21 @@ reg = CM.J('license-registry.json'); S = reg['sources']
 seed = json.loads((ROOT / 'scripts' / 'source-candidates-seed.json').read_text(encoding='utf-8'))
 FREQ = {'daily', 'weekly', 'monthly', 'quarterly', 'annual', 'irregular', 'mixed', 'unknown'}
 
+import re
+NC = re.compile(r"non.?commercial|no comercial|uso no comercial|CC[ -]BY[ -]NC", re.I)
+STW = re.compile(r"\b(VERIFIED|PENDING|RESTRICTED|BLOCKED)\b")
+def divergences(c, r):
+    """Notas historicas del seed que contradicen el registro de licencias (fuente de verdad). Nunca cambia el estado juridico: solo lo senala."""
+    if not r: return []
+    txt = " ".join([str(c.get('licenseClaim') or '')] + [x for x in c.get('evidence', []) if not str(x).startswith(('claude/', 'data/', 'scripts/'))] + [str(c.get('notes') or ''), " ".join(c.get('technicalBlockers') or [])])
+    out = []
+    words = set(STW.findall(txt))
+    if words and r['status'] not in words: out.append("las notas dicen %s pero el registro dice %s" % ("/".join(sorted(words)), r['status']))
+    if NC.search(txt) and r['commercialUse'] == 'yes' and not re.search(r"no es|not|cl[aá]usula|clause|promoci|no .{0,20}comercial.{0,40}(registro|antes)|antiguas|earlier", txt, re.I): out.append("las notas hablan de uso no comercial pero el registro lo permite")
+    lid = r['licenseId'].lower().replace('-', ' ')
+    for m in re.findall(r"CC BY(?:[- ](?:NC|ND|SA))*[ -]?\d\.\d", txt):
+        if re.sub(r"[- ]+", " ", m.lower()) not in re.sub(r"[- ]+", " ", lid) and r['licenseId'] not in ('CUSTOM', 'UNKNOWN'): out.append("las notas citan %s y el registro dice %s" % (m, r['licenseId']))
+    return out
 def clean(d): return {k: v for k, v in d.items() if v is not None}
 
 def entry_from_seed(c):
@@ -26,6 +41,9 @@ def entry_from_seed(c):
          'datasetIdentified': bool(c['datasetIdentified']), 'gate': {'result': gr, 'reasons': why}, 'ingestionStatus': st,
          'technicalBlockers': c['technicalBlockers'], 'canStart': st == 'READY' and not c['technicalBlockers'],
          'evidence': c['evidence'], 'notes': c.get('notes')}
+    e['legalConfidence'] = r['legalConfidence'] if r else None
+    dv = divergences(c, r); e['registryAlignment'] = 'NO_REGISTRY' if not r else ('DIVERGENT' if dv else 'ALIGNED')
+    if dv: e['divergences'] = dv
     return e
 
 def active_entries():
@@ -52,7 +70,7 @@ def active_entries():
                     'products': sorted(a['tags']) if a else [], 'productsConfirmed': bool(a), 'metrics': sorted(a['metrics']) if a else [], 'frequency': freq,
                     'access': {'api': None, 'csv': None, 'json': None}, 'licenseStatus': r['status'], 'licenseId': r['licenseId'], 'licenseClaim': None,
                     'commercialReuse': r['commercialUse'], 'derivatives': r['derivatives'], 'attribution': r.get('attributionText'), 'lastChecked': r['verifiedAt'],
-                    'verification': 'REGISTRY', 'datasetIdentified': True, 'gate': {'result': gr, 'reasons': why}, 'ingestionStatus': 'ACTIVE', 'technicalBlockers': [], 'canStart': False,
+                    'verification': 'REGISTRY', 'legalConfidence': r['legalConfidence'], 'registryAlignment': 'ALIGNED', 'datasetIdentified': True, 'gate': {'result': gr, 'reasons': why}, 'ingestionStatus': 'ACTIVE', 'technicalBlockers': [], 'canStart': False,
                     'evidence': ['data/license-registry.json'], 'notes': 'ACTIVE por used=true en el registro; la licencia se muestra tal cual (%s).' % r['status'] if r['status'] != 'VERIFIED' else None})
     return out
 
@@ -73,7 +91,8 @@ doc = {'schemaVersion': 1, 'generatedAt': NOW,
                              'BLOCKED': 'RESTRICTED/BLOCKED en el registro o decision documentada: no se usa'},
                   'gate': 'READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia.'},
        'summary': {'total': len(cands), 'byStatus': dict(sorted(by.items())), 'canStart': sorted(c['sourceId'] for c in cands if c['canStart']),
-                   'newCountries': sorted({c['country'] for c in cands if c['scope'] == 'outside' and c['country'] != 'INT'})},
+                   'divergent': sorted(c['sourceId'] for c in cands if c.get('registryAlignment') == 'DIVERGENT'), 'newCountries': sorted({c['country'] for c in cands if c['scope'] == 'outside' and c['country'] != 'INT'})},
        'candidates': cands}
 (D / 'source-candidates.json').write_text(json.dumps(doc, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+if doc['summary']['divergent']: print('DIVERGENCIAS con el registro de licencias (el registro manda):', doc['summary']['divergent'])
 print('source-candidates.json: %d fuentes %s; canStart=%s' % (len(cands), dict(by), doc['summary']['canStart']))

@@ -34,7 +34,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA NASS"
+   "short": "USDA NASS",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "usda_ams_mars": {
    "name": "USDA AMS Market News (MARS API)",
@@ -58,7 +60,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA AMS"
+   "short": "USDA AMS",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "usda_fas_psd": {
    "name": "USDA FAS — Production, Supply and Distribution (PSD Online)",
@@ -82,7 +86,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA FAS · PSD"
+   "short": "USDA FAS · PSD",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "usda_fas_esr": {
    "name": "USDA FAS — Export Sales Reporting (ESR)",
@@ -106,7 +112,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA FAS · Export Sales"
+   "short": "USDA FAS · Export Sales",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "usda_fas_gats": {
    "name": "USDA FAS — Global Agricultural Trade System (GATS)",
@@ -130,7 +138,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA FAS · GATS"
+   "short": "USDA FAS · GATS",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "usda_ers": {
    "name": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
@@ -154,7 +164,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA ERS"
+   "short": "USDA ERS",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "us_drought_monitor": {
    "name": "U.S. Drought Monitor (NDMC, USDA, NOAA)",
@@ -178,7 +190,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "U.S. Drought Monitor"
+   "short": "U.S. Drought Monitor",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio; el texto de la fuente deja incertidumbre documentada (ver evidence)."
   },
   "eia": {
    "name": "U.S. Energy Information Administration (Open Data API)",
@@ -202,7 +216,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "EIA"
+   "short": "EIA",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "nasa_power": {
    "name": "NASA POWER (Prediction Of Worldwide Energy Resources)",
@@ -226,7 +242,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "NASA POWER"
+   "short": "NASA POWER",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "us_tariffs": {
    "name": "USITC Harmonized Tariff Schedule, CBP trade remedies, USTR",
@@ -250,7 +268,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USITC HTS"
+   "short": "USITC HTS",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio; el texto de la fuente deja incertidumbre documentada (ver evidence)."
   },
   "eurostat": {
    "name": "Eurostat",
@@ -276,7 +296,9 @@
     "eurostat"
    ],
    "notes": null,
-   "short": "Eurostat"
+   "short": "Eurostat",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "eurostat_comext": {
    "name": "Eurostat — Comext international trade in goods",
@@ -300,7 +322,9 @@
    "used": true,
    "aliases": [],
    "notes": "Dehesa Index only uses HS 2-digit chapters and agri-food totals (dataset DS-045409), so the Austria CN8 exclusion does not apply; keep it that way.",
-   "short": "Eurostat · Comext"
+   "short": "Eurostat · Comext",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "eu_agrifood": {
    "name": "European Commission — Agri-food Data Portal (DG AGRI)",
@@ -326,7 +350,9 @@
     "european_commission"
    ],
    "notes": null,
-   "short": "Comisión Europea · Agri-food"
+   "short": "Comisión Europea · Agri-food",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "eu_oil_bulletin": {
    "name": "European Commission — Weekly Oil Bulletin (DG ENER)",
@@ -350,7 +376,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "Comisión Europea · Oil Bulletin"
+   "short": "Comisión Europea · Oil Bulletin",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "ecb": {
    "name": "European Central Bank (euro reference rates, ECB Data Portal)",
@@ -374,7 +402,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "BCE"
+   "short": "BCE",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "eu_taric": {
    "name": "European Commission — TARIC / EU customs tariff (DG TAXUD)",
@@ -398,7 +428,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "Comisión Europea · TARIC"
+   "short": "Comisión Europea · TARIC",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "world_bank": {
    "name": "World Bank — Commodity Price Data (Pink Sheet)",
@@ -422,7 +454,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "Banco Mundial · Pink Sheet"
+   "short": "Banco Mundial · Pink Sheet",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio; el texto de la fuente deja incertidumbre documentada (ver evidence)."
   },
   "world_bank_wdi": {
    "name": "World Bank Open Data (World Development Indicators)",
@@ -446,7 +480,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "Banco Mundial · WDI"
+   "short": "Banco Mundial · WDI",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "bis": {
    "name": "Bank for International Settlements (central bank policy rates)",
@@ -470,7 +506,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "BIS"
+   "short": "BIS",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "faostat": {
    "name": "FAO — FAOSTAT",
@@ -493,7 +531,9 @@
    "evidence": "Terms say CC BY 4.0 (not CC BY-NC-SA) but bar use in conjunction with promotion of a commercial enterprise; not used by Dehesa Index.",
    "used": false,
    "aliases": [],
-   "notes": "Earlier project notes said 'CC BY-NC-SA / no comercial'; the current FAO terms say CC BY 4.0 with the promotion restriction above."
+   "notes": "Earlier project notes said 'CC BY-NC-SA / no comercial'; the current FAO terms say CC BY 4.0 with the promotion restriction above.",
+   "legalConfidence": "NOT_APPLICABLE",
+   "legalConfidenceReason": "Fuente RESTRICTED: no se usa."
   },
   "mb_agri": {
    "name": "Manitoba Agriculture — Cattle, Sheep and Goat Prices (subastas de Manitoba)",
@@ -517,7 +557,9 @@
    "used": true,
    "aliases": [],
    "notes": "Optional: confirm in writing with IndustryIntelligence@gov.mb.ca that the weekly reports have no third-party restrictions.",
-   "short": "Manitoba Agriculture"
+   "short": "Manitoba Agriculture",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "mapa_es": {
    "name": "Spain — Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
@@ -541,7 +583,9 @@
    "used": true,
    "aliases": [],
    "notes": "Estado VERIFIED por instruccion expresa de Mario el 2026-10-02. Mantener cita y fechas de actualizacion; excluido el contenido de terceros. Mario confirma el 2026-10-03 que la informacion de todos los organismos publicos de Espana (MAPA, INE y demas) es de reutilizacion libre y sin termino de uso siempre que se cite la fuente: se tratan como aprobados con atribucion y la cita se muestra junto a las cifras.",
-   "short": "MAPA (España)"
+   "short": "MAPA (España)",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio; el texto de la fuente deja incertidumbre documentada (ver evidence)."
   },
   "boe_es": {
    "name": "Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada",
@@ -565,7 +609,9 @@
    "used": true,
    "aliases": [],
    "notes": "Se usa para las cifras y reglas del RD 1048/2022 (PAC España): los importes se extraen tal cual de los anexos y se rotulan como importes del real decreto, no como importes de campaña. La página debe mostrar la cita, «texto consolidado de carácter meramente informativo» y la fecha de última actualización del BOE.",
-   "short": "BOE (España)"
+   "short": "BOE (España)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "franceagrimer": {
    "name": "FranceAgriMer (VISIONet)",
@@ -589,7 +635,9 @@
    "used": true,
    "aliases": [],
    "notes": "Resuelto el 4 oct 2026: VERIFIED (antes PENDING por la contradicción VISIONet / Licence Ouverte).",
-   "short": "FranceAgriMer"
+   "short": "FranceAgriMer",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "destatis": {
    "name": "Destatis (GENESIS-Online)",
@@ -613,7 +661,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "Destatis"
+   "short": "Destatis",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "ble": {
    "name": "BLE — Bundesanstalt für Landwirtschaft und Ernährung (open-data.ble.de)",
@@ -637,7 +687,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "BLE (Alemania)"
+   "short": "BLE (Alemania)",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
   },
   "statbel": {
    "name": "Statbel (Statistics Belgium)",
@@ -661,7 +713,9 @@
    "used": true,
    "aliases": [],
    "notes": "Evidence is the project's own earlier reading of the Statbel page; not re-confirmable by automated fetch (CAPTCHA).",
-   "short": "Statbel"
+   "short": "Statbel",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "ine_pt": {
    "name": "INE — Statistics Portugal",
@@ -685,7 +739,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "INE Portugal"
+   "short": "INE Portugal",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "dst_dk": {
    "name": "Statistics Denmark (StatBank)",
@@ -709,7 +765,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "Statistics Denmark"
+   "short": "Statistics Denmark",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "rvo": {
    "name": "RVO (Rijksdienst voor Ondernemend Nederland) — market statistics (pigs, calves, cattle, milk)",
@@ -733,7 +791,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "RVO (Países Bajos)"
+   "short": "RVO (Países Bajos)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "vigieau": {
    "name": "VigiEau — Ministère de la Transition écologique (restrictions d'usage de l'eau)",
@@ -757,7 +817,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "VigiEau"
+   "short": "VigiEau",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "retsinformation": {
    "name": "Retsinformation (Civilstyrelsen) — Danish statutory orders (bekendtgørelser)",
@@ -781,7 +843,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "Retsinformation (DK)"
+   "short": "Retsinformation (DK)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "cbs_nl": {
    "name": "Statistics Netherlands (CBS StatLine)",
@@ -805,7 +869,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "CBS (Países Bajos)"
+   "short": "CBS (Países Bajos)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "defra": {
    "name": "UK Defra (gov.uk agricultural statistics)",
@@ -829,7 +895,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "Defra (Reino Unido)"
+   "short": "Defra (Reino Unido)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "statistik_austria": {
    "name": "Statistik Austria (open.data)",
@@ -853,7 +921,9 @@
    "used": true,
    "aliases": [],
    "notes": "Austrian series in Dehesa Index are fetched through Eurostat (source 'eurostat'); this entry documents the national publisher.",
-   "short": "Statistik Austria"
+   "short": "Statistik Austria",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "statcan": {
    "name": "Statistics Canada",
@@ -877,7 +947,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "Statistics Canada"
+   "short": "Statistics Canada",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "bank_of_canada": {
    "name": "Bank of Canada (Valet API)",
@@ -901,7 +973,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "Bank of Canada"
+   "short": "Bank of Canada",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "cbsa_tariff": {
    "name": "Canada Border Services Agency — Customs Tariff",
@@ -925,7 +999,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "CBSA (Canadá)"
+   "short": "CBSA (Canadá)",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
   },
   "alberta_ag": {
    "name": "Alberta Agriculture and Irrigation — Weekly Market Review",
@@ -949,7 +1025,9 @@
    "used": true,
    "aliases": [],
    "notes": "Per-series origin tags (government vs ICE/CANFAX/private bids) are a possible refinement; not implemented.",
-   "short": "Alberta Agriculture"
+   "short": "Alberta Agriculture",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio; el texto de la fuente deja incertidumbre documentada (ver evidence)."
   },
   "abs": {
    "name": "Australian Bureau of Statistics (Data API)",
@@ -973,7 +1051,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "ABS (Australia)"
+   "short": "ABS (Australia)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "rba": {
    "name": "Reserve Bank of Australia (statistical tables)",
@@ -997,7 +1077,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "RBA"
+   "short": "RBA",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "snice_mx": {
    "name": "Mexico — Secretaría de Economía (SNICE, LIGIE tariff)",
@@ -1021,7 +1103,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "SNICE (México)"
+   "short": "SNICE (México)",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
   },
   "ahdb": {
    "name": "AHDB (UK Agriculture and Horticulture Development Board)",
@@ -1044,7 +1128,9 @@
    "evidence": "The terms bar automated access and scraping, commercial exploitation and republishing elsewhere; only limited personal or internal use is licensed.",
    "used": false,
    "aliases": [],
-   "notes": "El titular de Dehesa Index confirmó (4 oct 2026) que casi todo AHDB requiere permiso: no se usa. Se retiró también su feed de noticias."
+   "notes": "El titular de Dehesa Index confirmó (4 oct 2026) que casi todo AHDB requiere permiso: no se usa. Se retiró también su feed de noticias.",
+   "legalConfidence": "NOT_APPLICABLE",
+   "legalConfidenceReason": "Fuente BLOCKED: no se usa."
   },
   "cme": {
    "name": "CME Group (futures market data)",
@@ -1067,7 +1153,9 @@
    "evidence": "Website terms grant only a personal, non-commercial licence; redistribution requires a licensed-distributor agreement.",
    "used": false,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "legalConfidence": "NOT_APPLICABLE",
+   "legalConfidenceReason": "Fuente BLOCKED: no se usa."
   },
   "dtn": {
    "name": "DTN / Progressive Farmer (fertilizer prices)",
@@ -1090,7 +1178,9 @@
    "evidence": "No free public licence; a negotiated licence would be needed.",
    "used": false,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "legalConfidence": "NOT_APPLICABLE",
+   "legalConfidenceReason": "Fuente BLOCKED: no se usa."
   },
   "sima_gpp": {
    "name": "Portugal — SIMA (GPP) weekly prices",
@@ -1113,7 +1203,9 @@
    "evidence": "Documented in project notes (not re-verified): no explicit reuse licence.",
    "used": false,
    "aliases": [],
-   "notes": "From claude/portugal.md; not re-verified in this session."
+   "notes": "From claude/portugal.md; not re-verified in this session.",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
   },
   "conab": {
    "name": "Brazil — CONAB",
@@ -1136,7 +1228,9 @@
    "evidence": "Documented in project notes (not re-verified): site declares CC BY-ND 3.0.",
    "used": false,
    "aliases": [],
-   "notes": "From claude/paises-datos-abiertos.md; not re-verified in this session."
+   "notes": "From claude/paises-datos-abiertos.md; not re-verified in this session.",
+   "legalConfidence": "NOT_APPLICABLE",
+   "legalConfidenceReason": "Fuente RESTRICTED: no se usa."
   },
   "cepea": {
    "name": "Brazil — CEPEA/ESALQ",
@@ -1159,7 +1253,9 @@
    "evidence": "Documented in project notes (not re-verified).",
    "used": false,
    "aliases": [],
-   "notes": "From claude/paises-datos-abiertos.md; not re-verified in this session."
+   "notes": "From claude/paises-datos-abiertos.md; not re-verified in this session.",
+   "legalConfidence": "NOT_APPLICABLE",
+   "legalConfidenceReason": "Fuente RESTRICTED: no se usa."
   },
   "abares": {
    "name": "Australia — ABARES",
@@ -1182,7 +1278,9 @@
    "evidence": "Documented in project notes (not re-verified): the site blocks GitHub Actions; no series adopted.",
    "used": false,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
   },
   "mla": {
    "name": "Australia — Meat & Livestock Australia (MLA)",
@@ -1205,7 +1303,9 @@
    "evidence": "Documented in project notes (not re-verified).",
    "used": false,
    "aliases": [],
-   "notes": null
+   "notes": null,
+   "legalConfidence": "NOT_APPLICABLE",
+   "legalConfidenceReason": "Fuente RESTRICTED: no se usa."
   },
   "usda_oce_wasde": {
    "name": "USDA Office of the Chief Economist / World Agricultural Outlook Board (WASDE release dates)",
@@ -1229,7 +1329,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA WASDE"
+   "short": "USDA WASDE",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "ine_es": {
    "country": "ES",
@@ -1253,7 +1355,9 @@
    "attributionText": "Fuente: Sitio web del INE: www.ine.es (con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»)",
    "additionalRestrictions": "Citar la fuente («Fuente: Sitio web del INE: www.ine.es»; con tratamiento de datos: «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»); mencionar la fecha de última actualización si figura en el original; no insinuar que el INE participa, patrocina o apoya la reutilización; uso bajo cuenta y riesgo del reutilizador.",
    "evidence": "Aviso legal del INE: «La licencia de uso general a aplicar a la información estadística de este sitio web, salvo que se indique lo contrario, es la Creative Commons Reconocimiento 4.0 (CC BY 4.0)», con reutilización también comercial citando la autoría. Texto confirmado por Mario (2026-10-01) y leído en el aviso legal.",
-   "short": "INE (España)"
+   "short": "INE (España)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "insee": {
    "country": "FR",
@@ -1277,7 +1381,9 @@
    "attributionText": "Source: Insee",
    "additionalRestrictions": "Indicar la fecha de la última actualización cuando se conozca; no alterar el sentido de la información.",
    "evidence": "Aviso legal de Insee (leído 2026-10-01): reutilización libre, también comercial, bajo la Licence Ouverte 2.0 (Etalab) citando «Source: Insee». Las condiciones generales (insee.fr/fr/information/2381855) conceden el derecho de reutilización sin licencia ni canon con fuente y fecha de actualización.",
-   "short": "INSEE (Francia)"
+   "short": "INSEE (Francia)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "bls": {
    "country": "US",
@@ -1301,7 +1407,9 @@
    "attributionText": "Source: U.S. Bureau of Labor Statistics",
    "additionalRestrictions": "El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como protegido.",
    "evidence": "BLS (leído 2026-10-01): «You are free to use our public domain material without specific permission, although we do ask that you cite the Bureau of Labor Statistics as the source.»",
-   "short": "BLS (EE. UU.)"
+   "short": "BLS (EE. UU.)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "gep_pt": {
    "country": "PT",
@@ -1325,7 +1433,9 @@
    "attributionText": "Fonte: GEP — Gabinete de Estratégia e Planeamento (MTSSS)",
    "additionalRestrictions": "Los «Termos e Condições» del BTE Online (leídos 2026-10-01) solo tratan privacidad y estadísticas de acceso; no dicen nada sobre reutilización de datos.",
    "evidence": "No se ha encontrado ninguna página del GEP que conceda o niegue la reutilización de los datos. No se da por concedido: la cifra de sueldo de Portugal se cita sin afirmar licencia.",
-   "short": "GEP (Portugal)"
+   "short": "GEP (Portugal)",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
   },
   "edo_cdi": {
    "name": "European Drought Observatory (EDO) — Combined Drought Indicator (JRC / Copernicus EMS)",
@@ -1349,7 +1459,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "EDO · CDI"
+   "short": "EDO · CDI",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "tedb": {
    "commercialUse": "yes",
@@ -1373,7 +1485,9 @@
    "additionalRestrictions": "Acknowledge the source and do not distort the meaning (Decision 2011/833/EU). TEDB states the information is provided by the Member States; it is not legal advice.",
    "confidence": "medium",
    "evidence": "Decision 2011/833/EU art. 4 (read 2026-10-01): Commission documents are available for reuse for commercial or non-commercial purposes, free of charge, acknowledging the source and without distorting the content. The TEDB SOAP service (VatRetrievalService) is public and keyless; the Commission VAT rates page states the rates in TEDB are provided by the Member States.",
-   "short": "TEDB"
+   "short": "TEDB",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "hmrc_govuk": {
    "commercialUse": "yes",
@@ -1397,7 +1511,9 @@
    "additionalRestrictions": "Third-party material and logos excluded. Same licence the registry already applies to GOV.UK content from Defra.",
    "confidence": "medium",
    "evidence": "GOV.UK publishes its content under the Open Government Licence v3.0 unless stated otherwise (same basis as the defra entry). Page 'Rates of VAT on different goods and services' read 2026-10-01, updated 10 July 2026; only the standard (20 %) and reduced (5 %) rates are used.",
-   "short": "HMRC"
+   "short": "HMRC",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "irs_sales_tax": {
    "commercialUse": "yes",
@@ -1421,7 +1537,9 @@
    "additionalRestrictions": "Only the state general sales tax rate is used; local rates are not included. Not tax advice.",
    "confidence": "medium",
    "evidence": "IRS Instructions for Schedule A (2025), 'Optional State Sales Tax Tables' (page last reviewed 30-Apr-2026, read 2026-10-01): lists the state general sales tax rate for 46 jurisdictions. A work of the US federal government is not subject to copyright (17 U.S.C. 105).",
-   "short": "IRS"
+   "short": "IRS",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "cgc": {
    "country": "CA",
@@ -1445,7 +1563,9 @@
    "name": "Canadian Grain Commission — Grain Statistics Weekly",
    "url": "https://www.grainscanada.gc.ca/en/grain-research/statistics/grain-statistics-weekly/",
    "evidence": "The Open Government Licence – Canada (open.canada.ca, read 2026-10-02) permits copying, modifying, publishing, adapting and distributing the Information for any lawful purpose, including commercial use, with the attribution statement. The open.canada.ca catalogue lists the dataset 'Grain Statistics Weekly' (CGC) under this licence (checked 2026-10-02 through the catalogue API).",
-   "short": "Canadian Grain Commission"
+   "short": "Canadian Grain Commission",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "aafc_drought": {
    "country": "CA",
@@ -1469,7 +1589,9 @@
    "name": "Agriculture and Agri-Food Canada — Canadian Drought Monitor",
    "url": "https://agriculture.canada.ca/en/agricultural-production/weather/canadian-drought-monitor",
    "evidence": "The Open Government Licence – Canada (open.canada.ca, read 2026-10-02) permits use, adaptation and distribution including commercially, with the attribution statement. The open.canada.ca catalogue lists the dataset 'Canadian Drought Monitor' (AAFC) under this licence (checked 2026-10-02 through the catalogue API).",
-   "short": "AAFC Drought Monitor"
+   "short": "AAFC Drought Monitor",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "usda_rma": {
    "name": "USDA Risk Management Agency (RMA) — Summary of Business (federal crop insurance)",
@@ -1493,7 +1615,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA RMA"
+   "short": "USDA RMA",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "agroseguro": {
    "name": "Agroseguro (Agrupacion Espanola de Entidades Aseguradoras de los Seguros Agrarios Combinados)",
@@ -1517,7 +1641,9 @@
    "used": true,
    "aliases": [],
    "notes": "Declarada el 2026-10-03: ya se publicaba (js/data.js) sin figurar en el registro.",
-   "short": "Agroseguro"
+   "short": "Agroseguro",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
   },
   "defra_ncgl_geo": {
    "commercialUse": "no",
@@ -1540,7 +1666,9 @@
    "additionalRestrictions": "Uso comercial prohibido. Incluye Peaty Soils Location, Moorland Deep Peat, capas de riesgo de tritón crestado y la Second Land Utilisation Survey (CC BY-NC-SA 4.0). No se usan.",
    "evidence": "Informe de licencias DEFRA aportado por el titular (4 oct 2026): estas capas están bajo NCGL o CC BY-NC-SA, incompatibles con un sitio que pueda monetizarse.",
    "attributionText": null,
-   "thirdPartyNote": "Múltiples derechos de terceros (Ordnance Survey, UKCEH, etc.)."
+   "thirdPartyNote": "Múltiples derechos de terceros (Ordnance Survey, UKCEH, etc.).",
+   "legalConfidence": "NOT_APPLICABLE",
+   "legalConfidenceReason": "Fuente BLOCKED: no se usa."
   },
   "defra_rpa_land": {
    "commercialUse": "no",
@@ -1563,7 +1691,9 @@
    "additionalRestrictions": "Defra indica que no están disponibles para «otros usuarios»; agricultores y agentes tienen condiciones propias. No se ingiere como dataset general. Excepción posible: RPA Parcel Points (England), publicado bajo OGL.",
    "evidence": "Informe de licencias DEFRA aportado por el titular (4 oct 2026).",
    "attributionText": null,
-   "thirdPartyNote": "Múltiples derechos de terceros (Ordnance Survey, UKCEH, etc.)."
+   "thirdPartyNote": "Múltiples derechos de terceros (Ordnance Survey, UKCEH, etc.).",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Licencia poco clara o no verificada; no se ha resuelto."
   },
   "ons": {
    "name": "UK Office for National Statistics (consumer price index)",
@@ -1587,7 +1717,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "ONS (Reino Unido)"
+   "short": "ONS (Reino Unido)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "eur_lex": {
    "name": "EUR-Lex (Publications Office of the European Union) — EU legislation",
@@ -1611,7 +1743,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "EUR-Lex"
+   "short": "EUR-Lex",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "cftc": {
    "name": "U.S. Commodity Futures Trading Commission (Commitments of Traders, Public Reporting Environment)",
@@ -1635,7 +1769,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "CFTC"
+   "short": "CFTC",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "usda_ams_agtransport": {
    "name": "USDA AMS Agricultural Transportation Open Data Platform (AgTransport)",
@@ -1659,7 +1795,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA AMS AgTransport"
+   "short": "USDA AMS AgTransport",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "usda_fsa": {
    "name": "USDA Farm Service Agency (ARC/PLC program data)",
@@ -1683,7 +1821,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA FSA"
+   "short": "USDA FSA",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "usda_ams_lmr": {
    "name": "USDA AMS Livestock Mandatory Reporting (LMR), Market News datamart",
@@ -1707,7 +1847,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA AMS LMR"
+   "short": "USDA AMS LMR",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "usda_ams_fgis": {
    "name": "USDA AMS / Federal Grain Inspection Service, Export Grain Inspections",
@@ -1731,7 +1873,9 @@
    "used": true,
    "aliases": [],
    "notes": null,
-   "short": "USDA FGIS exportaciones"
+   "short": "USDA FGIS exportaciones",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
   },
   "enesa": {
    "name": "Spain — Entidad Estatal de Seguros Agrarios (ENESA, MAPA): Informes de Contratación del Seguro Agrario",
@@ -1757,7 +1901,9 @@
     "enesa_contratacion"
    ],
    "notes": "Histórico de los Informes de Contratación (nº 1-31).",
-   "short": "ENESA"
+   "short": "ENESA",
+   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio; el texto de la fuente deja incertidumbre documentada (ver evidence)."
   },
   "bea": {
    "country": "US",
@@ -1781,7 +1927,9 @@
    "attributionText": "Source: U.S. Bureau of Economic Analysis",
    "additionalRestrictions": "El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como protegido.",
    "evidence": "BEA, preguntas frecuentes (bea.gov/help/faq/145, leido 2026-10-05): la informacion publicada en el sitio de BEA es de dominio publico y puede usarse o reproducirse sin permiso especifico; se agradece citar «Source: U.S. Bureau of Economic Analysis».",
-   "short": "BEA (EE. UU.)"
+   "short": "BEA (EE. UU.)",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Texto oficial explicito que concede la reutilizacion."
   },
   "census": {
    "country": "US",
@@ -1793,7 +1941,7 @@
    "thirdPartyNote": null,
    "verifiedAt": "2026-10-05",
    "status": "VERIFIED",
-   "confidence": "high",
+   "confidence": "medium",
    "used": true,
    "aliases": [],
    "notes": null,
@@ -1805,7 +1953,9 @@
    "attributionText": "Source: U.S. Census Bureau, Population Estimates Program",
    "additionalRestrictions": "El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como protegido.",
    "evidence": "Census Bureau, Open Government (census.gov/about/policies/open-gov.html, leido 2026-10-05): publica sus datos como datos abiertos, de libre uso y reutilizacion por el publico. Obra del gobierno federal; se cita la fuente.",
-   "short": "Census Bureau (EE. UU.)"
+   "short": "Census Bureau (EE. UU.)",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Politica de datos abiertos del Census Bureau: libre uso y reutilizacion; sin licencia ni texto de atribucion explicitos para este conjunto."
   }
  },
  "files": {

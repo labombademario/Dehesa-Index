@@ -126,6 +126,23 @@ def fetch_abs(v, fx):
     return pts, base + v["key"], ctx
 
 
+# ---------------------------------------------------------------- Defra (hojas ODS de GOV.UK)
+def fetch_defra(v, fx):
+    """Columna de una hoja del ODS oficial de Defra: {periodo: (valor|None, None)}. Reutiliza el parser de update-uk-defra.py (misma tabla, mismas filas)."""
+    import importlib.util, pandas as pd
+    sp = importlib.util.spec_from_file_location("defra", ROOT / "scripts" / "update-uk-defra.py"); D = importlib.util.module_from_spec(sp); sp.loader.exec_module(D)
+    if getattr(fx, "fixtures", False): raw = fx("defra-" + v["dataset"] + ".ods", "")
+    else: raw = fx("defra-" + v["dataset"], D.find(v["slug"], v["pattern"])[0])
+    xl = pd.ExcelFile(io.BytesIO(raw), engine="odf"); names, rows = D.table(xl.parse(v["sheet"], header=None), v["kindSheet"])
+    hit = [k for k, c in enumerate(names) if c == v["column"]]
+    if len(hit) != 1: raise RuntimeError("columna ausente o ambigua: %s" % v["column"])
+    pts = {}
+    for r in rows:
+        x = D.num(r[hit[0]]); p = D.per(r, v["kindSheet"])
+        pts[p] = (None if x is None else x, None)
+    return pts, "https://www.gov.uk/government/statistical-data-sets/" + v["slug"]
+
+
 # ---------------------------------------------------------------- comparacion
 def compare(ours, src, periods):
     """Filas {period, ours, source, flag, match} para cada periodo pedido; match=None si falta algun lado."""
@@ -163,6 +180,7 @@ def check(a, fx, now):
         elif kind == "statcan": src, url = fetch_statcan(v, fx)
         elif kind == "statcan_table": src, url = fetch_statcan_table(v, fx)
         elif kind == "abs": src, url, ctx = fetch_abs(v, fx)
+        elif kind == "defra_ods": src, url = fetch_defra(v, fx)
         else: raise ValueError("verificador desconocido " + kind)
     except Exception as e:
         return {"at": now, "result": "UNAVAILABLE", "detail": "fuente no disponible: %s" % str(e)[:160], "rows": []}, None
@@ -193,7 +211,9 @@ def main(argv=None):
         def fx(name, url, big=False):
             if big:  # tabla completa de StatCan: la URL real sale de la respuesta de la API
                 return http(json.loads(http(url, {"Content-Type": "application/json"}))["object"], timeout=600)
+            if "assets.publishing.service.gov.uk" in url: return http(url, timeout=300)
             return http(url, {"Accept": "application/vnd.sdmx.data+csv" if "abs.gov.au" in url else "application/json"})
+    fx.fixtures = bool(o.fixtures)
     doc = json.loads(ANOM.read_text(encoding="utf-8")); out = []; unavailable = 0
     for a in doc["anomalies"]:
         if a["status"] != "UNEXPLAINED_ANOMALY" or not a.get("verifier"): continue

@@ -58,7 +58,8 @@
          "eurostat",
          "statcan",
          "statcan_table",
-         "abs"
+         "abs",
+         "defra_ods"
         ]
        },
        "periods": {
