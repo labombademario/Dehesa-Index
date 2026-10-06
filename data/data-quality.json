@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T12:32:09Z",
+ "generatedAt": "2026-10-06T14:52:44Z",
  "summary": {
-  "files": 20,
+  "files": 21,
   "errors": 0,
-  "warnings": 0
+  "warnings": 1
  },
  "files": [
   {
@@ -159,6 +159,48 @@
    "nErrors": 0
   },
   {
+   "file": "italy-eurostat-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "IT/it-es-eaa-am021100: salto 6.44 -> 21.84 en 1986 (mediana previa 0.27)",
+    "IT/it-es-eaa-am021100: salto 21.84 -> 23.12 en 1987 (mediana previa 0.27)",
+    "IT/it-es-poultry-epi-a5211p: salto 2634000 -> 6487000 en 2014 (mediana previa 2.09e+05)",
+    "IT/it-es-poultry-exp-a5130on: salto 42000 -> 1352000 en 1994 (mediana previa 2.4e+04)",
+    "IT/it-es-poultry-exp-a5130on: salto 1352000 -> 1158000 en 1995 (mediana previa 2.4e+04)",
+    "IT/it-es-poultry-exp-a5130on: salto 595000 -> 1814000 en 1998 (mediana previa 4.9e+04)",
+    "IT/it-es-poultry-exp-a5130p: salto 1259000 -> 1338000 en 1997 (mediana previa 1.9e+03)",
+    "IT/it-es-poultry-exp-a5130p: salto 1338000 -> 7776000 en 1998 (mediana previa 1.75e+05)",
+    "IT/it-es-poultry-exp-a5130p: salto 7776000 -> 11408000 en 1999 (mediana previa 2.11e+05)",
+    "IT/it-es-poultry-exp-a5231p: salto 814000 -> 578000 en 1995 (mediana previa 1.1e+04)",
+    "IT/it-es-poultry-exp_ieu-a5130on: salto 62000 -> 135000 en 1997 (mediana previa 1e+03)",
+    "IT/it-es-poultry-exp_ieu-a5130on: salto 135000 -> 65000 en 1998 (mediana previa 2e+03)",
+    "IT/it-es-poultry-exp_ieu-a5130on: salto 332000 -> 3078000 en 2009 (mediana previa 9.3e+04)",
+    "IT/it-es-poultry-exp_ieu-a5130on: salto 3078000 -> 4272000 en 2010 (mediana previa 1.35e+05)",
+    "IT/it-es-poultry-exp_ieu-a5130p: salto 1304000 -> 6116000 en 1998 (mediana previa 1e+03)",
+    "IT/it-es-poultry-exp_ieu-a5130p: salto 6116000 -> 7632000 en 1999 (mediana previa 3.5e+04)",
+    "IT/it-es-poultry-exp_ieu-a5130p: salto 7632000 -> 5431000 en 2000 (mediana previa 1.1e+05)",
+    "IT/it-es-poultry-exp_ieu-a5130pn: salto 1423000 -> 6736000 en 1997 (mediana previa 6.5e+04)",
+    "IT/it-es-poultry-exp_ieu-a5130pn: salto 0 -> 996000 en 2005 (mediana previa 3e+04)",
+    "IT/it-es-poultry-exp_ieu-a5130pn: salto 850000 -> 1184000 en 2011 (mediana previa 4.6e+04)",
+    "IT/it-es-poultry-exp_ieu-a5130pn: salto 1184000 -> 1317000 en 2012 (mediana previa 4.6e+04)",
+    "IT/it-es-poultry-exp_ieu-a5130pn: salto 1317000 -> 1498000 en 2013 (mediana previa 4.6e+04)",
+    "IT/it-es-poultry-exp_xeu-a5130on: salto 42000 -> 1106000 en 1994 (mediana previa 4.2e+04)",
+    "IT/it-es-poultry-exp_xeu-a5130on: salto 1106000 -> 1091000 en 1995 (mediana previa 4.3e+04)",
+    "IT/it-es-poultry-exp_xeu-a5130on: salto 460000 -> 1749000 en 1998 (mediana previa 6.7e+04)"
+   ],
+   "stats": {
+    "series": 843,
+    "points": 32168,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-06T14:28:10Z",
+   "info": [],
+   "nWarnings": 36,
+   "nErrors": 0
+  },
+  {
    "file": "eu-gapfill-stats.json",
    "schema": "country-stats",
    "status": "ok",
@@ -251,11 +293,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 513,
-    "points": 116201,
+    "series": 579,
+    "points": 131311,
     "lines": 0
    },
-   "generatedAt": "2026-10-01T01:18:42Z",
+   "generatedAt": "2026-10-06T14:51:46Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -347,7 +389,7 @@
     "points": 0,
     "lines": 0
    },
-   "generatedAt": "2026-10-03T07:27:09Z",
+   "generatedAt": "2026-10-06T14:46:14Z",
    "nWarnings": 0,
    "nErrors": 0
   }
