@@ -414,11 +414,11 @@
    "attributionText": "The World Bank: Commodity Price Data (The Pink Sheet)",
    "additionalRestrictions": "No endorsement; no World Bank names or logos without written consent.",
    "thirdPartyExceptions": true,
-   "thirdPartyNote": "The Pink Sheet compiles third-party price sources and carries no explicit licence line; its PDF footer says 'Official Use Only'.",
-   "verifiedAt": "2026-10-01",
-   "status": "PENDING",
+   "thirdPartyNote": "The Pink Sheet compiles third-party price sources and carries no explicit licence line; its PDF footer says 'Official Use Only'. Cited as published; the decision to publish is recorded above.",
+   "verifiedAt": "2026-10-05",
+   "status": "VERIFIED",
    "confidence": "medium",
-   "evidence": "Dataset terms (data.worldbank.org/summary-terms-of-use, read 2026-10-01) apply CC BY 4.0 to World Bank datasets but exclude third-party datasets; the Pink Sheet does not state its licence and compiles third-party sources, so it is not covered with certainty.",
+   "evidence": "Dataset terms (data.worldbank.org/summary-terms-of-use, read 2026-10-01) apply CC BY 4.0 to World Bank datasets but exclude third-party datasets; the Pink Sheet does not state its licence and compiles third-party sources, so it is not covered with certainty. Decision of the site owner (Mario, 2026-10-05): World Bank data is treated as green as long as it is cited. Every use shows the attribution \"The World Bank: Commodity Price Data (The Pink Sheet)\" or the dataset name, and no World Bank name or logo is used to imply endorsement. Confidence stays medium because the Pink Sheet compiles third-party prices.",
    "used": true,
    "aliases": [],
    "notes": null,
@@ -2343,10 +2343,6 @@
    "alberta_ag": {
     "since": "2026-10-01",
     "nextAction": "Confirmar OGL-Alberta para la serie o contactar con Alberta Agriculture."
-   },
-   "world_bank": {
-    "since": "2026-10-01",
-    "nextAction": "Confirmar la licencia del Pink Sheet (datos de terceros) o sustituirlo por series propias."
    },
    "us_drought_monitor": {
     "since": "2026-10-01",
