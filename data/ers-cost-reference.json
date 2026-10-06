@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-05T21:34:06Z",
+ "generatedAt": "2026-10-06T00:37:56Z",
  "sourceIds": [
   "usda_ers"
  ],
@@ -50,24 +50,24 @@
    "region": "U.S. total",
    "unit": "USD per planted acre",
    "costs": {
-    "fert": 158.88,
-    "seed": 111.11,
-    "prot": 48.86,
+    "fert": 171.89,
+    "seed": 113.1,
+    "prot": 49.24,
     "energy": 26.71,
-    "mach": 220.64,
+    "mach": 220.04,
     "labour": 36.03,
     "rent": 190.3,
-    "other": 92.89
+    "other": 93.2
    },
-   "totalCostsListed": 885.43,
-   "operatingCosts": 440.11,
+   "totalCostsListed": 900.52,
+   "operatingCosts": 455.8,
    "yieldBuPerAcre": 198,
    "priceUsdPerBu": 3.93,
    "enterpriseAcres": 296,
    "imputed": 221.67,
    "grossValue": 782.44,
-   "netOperating": 342.33,
-   "netTotal": -102.99
+   "netOperating": 326.64,
+   "netTotal": -118.08
   },
   "soja": {
    "ersCommodity": "soybeans",
@@ -75,24 +75,24 @@
    "region": "U.S. total",
    "unit": "USD per planted acre",
    "costs": {
-    "fert": 54.7,
-    "seed": 61.94,
-    "prot": 48.57,
+    "fert": 59.18,
+    "seed": 63.05,
+    "prot": 48.94,
     "energy": 16.86,
-    "mach": 212.52,
+    "mach": 211.93,
     "labour": 25.98,
     "rent": 184.23,
-    "other": 50.33
+    "other": 50.45
    },
-   "totalCostsListed": 655.13,
-   "operatingCosts": 244.8,
+   "totalCostsListed": 660.62,
+   "operatingCosts": 250.88,
    "yieldBuPerAcre": 58,
    "priceUsdPerBu": 9.76,
    "enterpriseAcres": 374,
    "imputed": 200.81,
    "grossValue": 562.15,
-   "netOperating": 317.35,
-   "netTotal": -92.98
+   "netOperating": 311.27,
+   "netTotal": -98.47
   },
   "trigo": {
    "ersCommodity": "wheat",
@@ -100,24 +100,24 @@
    "region": "U.S. total",
    "unit": "USD per planted acre",
    "costs": {
-    "fert": 58.76,
-    "seed": 16.32,
-    "prot": 16.63,
-    "energy": 12.2,
-    "mach": 164.48,
-    "labour": 20.14,
-    "rent": 68.11,
-    "other": 39.77
+    "fert": 63.93,
+    "seed": 16.93,
+    "prot": 17.54,
+    "energy": 12.3,
+    "mach": 167.58,
+    "labour": 20.35,
+    "rent": 69.41,
+    "other": 40.51
    },
-   "totalCostsListed": 396.41,
-   "operatingCosts": 155.52,
-   "yieldBuPerAcre": 52,
-   "priceUsdPerBu": 5.05,
-   "enterpriseAcres": 451,
-   "imputed": 85.18,
-   "grossValue": 269.35,
-   "netOperating": 113.83,
-   "netTotal": -127.06
+   "totalCostsListed": 408.55,
+   "operatingCosts": 162.96,
+   "yieldBuPerAcre": 54,
+   "priceUsdPerBu": 5.07,
+   "enterpriseAcres": 440,
+   "imputed": 86.77,
+   "grossValue": 280.32,
+   "netOperating": 117.36,
+   "netTotal": -128.23
   },
   "cebada": {
    "ersCommodity": "barley",
@@ -125,24 +125,24 @@
    "region": "U.S. total",
    "unit": "USD per planted acre",
    "costs": {
-    "fert": 68.13,
-    "seed": 24.2,
-    "prot": 24.87,
+    "fert": 73.71,
+    "seed": 24.63,
+    "prot": 25.06,
     "energy": 20.46,
-    "mach": 185.45,
+    "mach": 184.93,
     "labour": 26.57,
     "rent": 92.15,
-    "other": 56.14
+    "other": 56.26
    },
-   "totalCostsListed": 497.97,
-   "operatingCosts": 189.34,
+   "totalCostsListed": 503.77,
+   "operatingCosts": 195.66,
    "yieldBuPerAcre": 68,
-   "priceUsdPerBu": 5.28,
+   "priceUsdPerBu": 5.27,
    "enterpriseAcres": 282,
    "imputed": 113.09,
-   "grossValue": 374,
-   "netOperating": 184.66,
-   "netTotal": -123.97
+   "grossValue": 373.31,
+   "netOperating": 177.65,
+   "netTotal": -130.46
   },
   "avena": {
    "ersCommodity": "oats",
@@ -150,24 +150,24 @@
    "region": "U.S. total",
    "unit": "USD per planted acre",
    "costs": {
-    "fert": 64.56,
-    "seed": 25.26,
-    "prot": 5.85,
+    "fert": 69.85,
+    "seed": 25.72,
+    "prot": 5.89,
     "energy": 21.4,
-    "mach": 174.49,
+    "mach": 174.01,
     "labour": 35.15,
     "rent": 124.3,
-    "other": 41.92
+    "other": 42.03
    },
-   "totalCostsListed": 492.93,
-   "operatingCosts": 169.26,
+   "totalCostsListed": 498.35,
+   "operatingCosts": 175.16,
    "yieldBuPerAcre": 64,
    "priceUsdPerBu": 3.34,
    "enterpriseAcres": 76,
    "imputed": 156.89,
-   "grossValue": 275.34,
-   "netOperating": 106.08,
-   "netTotal": -217.59
+   "grossValue": 275.3,
+   "netOperating": 100.14,
+   "netTotal": -223.05
   }
  }
 }
