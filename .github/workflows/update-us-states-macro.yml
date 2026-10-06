@@ -1,0 +1,47 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update US state GDP, population and unemployment (BEA, Census, BLS)
+on:
+  schedule:
+    - cron: '40 7 * * 4'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: python3 scripts/update-us-states-macro.py
+        timeout-minutes: 15
+        continue-on-error: true
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        if: always()
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/us-states-macro.json
+      - name: Detectar revisiones oficiales
+        if: always()
+        run: python3 scripts/detect-revisions.py data/us-states-macro.json
+      - name: Publicar
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/us-states-macro.json data/us-states-macro-log.txt data/revisions.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "PIB, poblacion y paro por estado de EE. UU. (BEA, Census, BLS)"
+          for i in 1 2 3 4 5 6; do
+            git pull -q --rebase --autostash && git push && exit 0
+            sleep $((i * 5 + RANDOM % 10))
+          done
+          echo '::error::no se pudo publicar tras 6 intentos'; exit 1
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

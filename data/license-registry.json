@@ -1758,6 +1758,54 @@
    ],
    "notes": "Histórico de los Informes de Contratación (nº 1-31).",
    "short": "ENESA"
+  },
+  "bea": {
+   "country": "US",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-05",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "U.S. Bureau of Economic Analysis",
+   "url": "https://www.bea.gov/",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (public domain); BEA citation request",
+   "licenseUrl": "https://bea.gov/help/faq/145",
+   "attributionText": "Source: U.S. Bureau of Economic Analysis",
+   "additionalRestrictions": "El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como protegido.",
+   "evidence": "BEA, preguntas frecuentes (bea.gov/help/faq/145, leido 2026-10-05): la informacion publicada en el sitio de BEA es de dominio publico y puede usarse o reproducirse sin permiso especifico; se agradece citar «Source: U.S. Bureau of Economic Analysis».",
+   "short": "BEA (EE. UU.)"
+  },
+  "census": {
+   "country": "US",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-05",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "used": true,
+   "aliases": [],
+   "notes": null,
+   "name": "U.S. Census Bureau",
+   "url": "https://www.census.gov/",
+   "licenseId": "US-PD",
+   "licenseName": "US Government work (open data); Census Bureau citation",
+   "licenseUrl": "https://www.census.gov/about/policies/open-gov.html",
+   "attributionText": "Source: U.S. Census Bureau, Population Estimates Program",
+   "additionalRestrictions": "El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como protegido.",
+   "evidence": "Census Bureau, Open Government (census.gov/about/policies/open-gov.html, leido 2026-10-05): publica sus datos como datos abiertos, de libre uso y reutilizacion por el publico. Obra del gobierno federal; se cita la fuente.",
+   "short": "Census Bureau (EE. UU.)"
   }
  },
  "files": {
@@ -2335,6 +2383,14 @@
     "eurostat"
    ],
    "notes": "PIB (nama_10r_2gdp), poblacion a 1 de enero (demo_r_d2jan) y paro 15-74 (lfst_r_lfu3rt) por region NUTS 2; el PIB por habitante lo calcula Dehesa Index (PIB / poblacion)."
+  },
+  "data/us-states-macro.json": {
+   "sources": [
+    "bea",
+    "census",
+    "bls"
+   ],
+   "notes": "PIB estatal (BEA SAGDP1 linea 3, USD corrientes), poblacion a 1 de julio (Census PEP NST-EST) y paro mensual desestacionalizado (BLS LAUS); el PIB por habitante lo calcula Dehesa Index (PIB / poblacion)."
   }
  },
  "derived": [

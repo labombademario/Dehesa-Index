@@ -349,6 +349,15 @@ sources:
     continue: true
     data: [eu-regions-macro.json, eu-regions-macro-log.txt]
     message: PIB, poblacion y paro por region (Eurostat)
+  - id: us-states-macro
+    name: Update US state GDP, population and unemployment (BEA, Census, BLS)
+    cron: ['40 7 * * 4']
+    script: scripts/update-us-states-macro.py
+    timeout: 20
+    script_timeout: 15
+    continue: true
+    data: [us-states-macro.json, us-states-macro-log.txt]
+    message: PIB, poblacion y paro por estado de EE. UU. (BEA, Census, BLS)
   - id: canada-provinces
     name: Update Canada by province (Statistics Canada)
     cron: ['50 15 * * 3']

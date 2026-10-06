@@ -4,9 +4,9 @@
 
 Regla: **no se asume ninguna licencia**. `PENDING` significa que la licencia es poco clara o no verificable: la fuente solo se sigue usando si ya estaba, y se muestra como pendiente. `RESTRICTED` y `BLOCKED` no se usan. El gate de CI (`scripts/check-licenses.py`) lo hace cumplir.
 
-Resumen: 57 VERIFIED, 8 PENDING, 4 RESTRICTED, 4 BLOCKED; 6933 series en el catalogo unificado.
+Resumen: 59 VERIFIED, 8 PENDING, 4 RESTRICTED, 4 BLOCKED; 6933 series en el catalogo unificado.
 
-## VERIFIED (57)
+## VERIFIED (59)
 
 una pagina oficial concede explicitamente la reutilizacion (uso comercial y derivados) con o sin atribucion.
 
@@ -16,10 +16,12 @@ una pagina oficial concede explicitamente la reutilizacion (uso comercial y deri
 | `abs` | Australian Bureau of Statistics (Data API) | AU | CC-BY-4.0 | si/si | si | 76 | Excludes the Coat of Arms, ABS logo, trademarks and unit-record microdata; no endorsement claims. The page does not address the Data API spe… |
 | `alberta_ag` | Alberta Agriculture and Irrigation — Weekly Market Review | CA | OGL-Alberta | si/si | si | 9 | No suggestion of official status; excludes personal information, logos and trademarks. Only open.alberta.ca publications under OGL-Alberta; … |
 | `bank_of_canada` | Bank of Canada (Valet API) | CA | CUSTOM | conditional/si | si | 1 | Attribute the Bank of Canada and indicate changes; commercial reuse requires telling buyers the content is available free on the Bank websit… |
+| `bea` | U.S. Bureau of Economic Analysis | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `bis` | Bank for International Settlements (central bank policy rates) | INT | BIS-TERMS | conditional/conditional | si | 1 | Inclusion in a commercial product must not cause an additional charge to users; no implied BIS endorsement; no investment-recommendation fra… |
 | `bls` | U.S. Bureau of Labor Statistics | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `boe_es` | Spain — Agencia Estatal Boletín Oficial del Estado (BOE), legislación consolidada | ES | CUSTOM | si/si | si | 0 | No desnaturalizar el sentido; citar la fuente con enlace a https://www.boe.es; no sugerir carácter oficial ni patrocinio del BOE; en legisla… |
 | `cbs_nl` | Statistics Netherlands (CBS StatLine) | NL | CUSTOM | si/si | si | 67 | Cite CBS as the source (mandatory); state when figures are modified or derived. The separate Dutch 'Disclaimer open data' text was not read. |
+| `census` | U.S. Census Bureau | US | US-PD | si/si | si | 0 | El material de dominio público se puede usar sin permiso; BLS pide citarlo como fuente. Excluye material de terceros que BLS marque como pro… |
 | `cftc` | U.S. Commodity Futures Trading Commission (Commitments of Traders, Public Reporting Environment) | US | US-PD | si/si | no | 0 | Acknowledgement of the CFTC requested. Contributed or licensed third-party materials on cftc.gov may be copyrighted; the Commitments of Trad… |
 | `cgc` | Canadian Grain Commission — Grain Statistics Weekly | CA | OGL-Canada | si/si | si | 0 | No suggestion of official status or endorsement by the Information Provider; excludes personal information, third-party rights, official sym… |
 | `defra` | UK Defra (gov.uk agricultural statistics) | UK | OGL-UK-3.0 | si/si | si | 698 | Sin respaldo oficial implícito; excluye datos personales, logotipos y derechos de terceros. Verificado dataset a dataset (4 oct 2026): Agric… |

@@ -496,6 +496,10 @@
    "eu-regions-macro",
    []
   ],
+  "us-states-macro.json": [
+   "us-states-macro",
+   []
+  ],
   "enesa-contratacion.json": [
    "enesa-contratacion",
    []
