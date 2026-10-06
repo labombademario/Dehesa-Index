@@ -1,0 +1,10 @@
+descargada 36100222 2307 KB
+tabla 36100222 176371 filas
+gdp regiones: 13 ['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'NT', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT']
+descargada 17100005 3789 KB
+tabla 17100005 308448 filas
+pop regiones: 13 ['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'NT', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT']
+descargada 14100287 59022 KB
+tabla 14100287 111360 filas filtradas
+unemp regiones: 10 ['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'ON', 'PE', 'QC', 'SK']
+escrito canada-provinces-macro.json 43 KB

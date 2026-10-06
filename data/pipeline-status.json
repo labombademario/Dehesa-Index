@@ -1,19 +1,24 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T03:34:00Z",
+ "generatedAt": "2026-10-06T03:53:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 85,
   "late": 0,
   "error": 2,
-  "not_run": 4,
+  "not_run": 5,
   "unknown": 1
  },
  "global": "error",
  "deploy": {
-  "status": "unknown",
+  "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": null,
+  "build": {
+   "sha": "50f91096",
+   "conclusion": "success",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/a91adbc6-3e6f-44f6-bdd7-5c058a46a790",
+   "completedAt": "2026-10-06T03:38:06Z"
+  },
   "lagHours": null,
   "prodGeneratedAt": null,
   "repoGeneratedAt": "2026-10-06T03:27:23.960449+00:00"
@@ -320,6 +325,27 @@
    },
    "status": "ok",
    "expectedEveryHours": 120.0
+  },
+  {
+   "workflow": "update-canada-provinces-macro.yml",
+   "name": "Update Canada province GDP, population and unemployment (Statistics Canada)",
+   "crons": [
+    "50 7 * * 4"
+   ],
+   "nextRun": "2026-10-08T07:50:00Z",
+   "files": [
+    {
+     "path": "data/canada-provinces-macro.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-05T11:42:05Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-canada-provinces.yml",
@@ -1861,7 +1887,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-06T03:26:33Z"
+     "lastChange": "2026-10-06T03:36:56Z"
     },
     {
      "path": "data/data-quality.json",
@@ -1877,7 +1903,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-06T03:26:48Z"
+     "lastChange": "2026-10-06T03:36:56Z"
     },
     {
      "path": "data/product-compare.json",
@@ -1894,7 +1920,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-06T03:26:48Z"
+     "lastChange": "2026-10-06T03:36:56Z"
     },
     {
      "path": "data/products"
@@ -1905,15 +1931,15 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-06T03:26:48Z"
+     "lastChange": "2026-10-06T03:36:56Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-06T03:26:48Z"
+     "lastChange": "2026-10-06T03:36:56Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-06T03:26:48Z"
+     "lastChange": "2026-10-06T03:36:56Z"
     },
     {
      "path": "data/premium-tracker.json",
@@ -2782,7 +2808,8 @@
    "nextRun": "2026-10-08T07:40:00Z",
    "files": [
     {
-     "path": "data/us-states-macro.json"
+     "path": "data/us-states-macro.json",
+     "lastChange": "2026-10-06T03:34:08Z"
     },
     {
      "path": "data/revisions.json",
@@ -2791,7 +2818,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 168.0
   },
   {

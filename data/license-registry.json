@@ -2391,6 +2391,12 @@
     "bls"
    ],
    "notes": "PIB estatal (BEA SAGDP1 linea 3, USD corrientes), poblacion a 1 de julio (Census PEP NST-EST) y paro mensual desestacionalizado (BLS LAUS); el PIB por habitante lo calcula Dehesa Index (PIB / poblacion)."
+  },
+  "data/canada-provinces-macro.json": {
+   "sources": [
+    "statcan"
+   ],
+   "notes": "PIB a precios de mercado (36-10-0222-01), poblacion a 1 de julio (17-10-0005-01) y paro 15+ desestacionalizado (14-10-0287-01) por provincia y territorio; el paro no existe para los territorios; el PIB por habitante lo calcula Dehesa Index (PIB / poblacion)."
   }
  },
  "derived": [

@@ -358,6 +358,15 @@ sources:
     continue: true
     data: [us-states-macro.json, us-states-macro-log.txt]
     message: PIB, poblacion y paro por estado de EE. UU. (BEA, Census, BLS)
+  - id: canada-provinces-macro
+    name: Update Canada province GDP, population and unemployment (Statistics Canada)
+    cron: ['50 7 * * 4']
+    script: scripts/update-canada-provinces-macro.py
+    timeout: 25
+    script_timeout: 20
+    continue: true
+    data: [canada-provinces-macro.json, canada-provinces-macro-log.txt]
+    message: PIB, poblacion y paro por provincia de Canada (Statistics Canada)
   - id: canada-provinces
     name: Update Canada by province (Statistics Canada)
     cron: ['50 15 * * 3']

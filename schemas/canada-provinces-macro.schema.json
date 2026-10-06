@@ -1,0 +1,86 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "PIB, poblacion y paro por provincia y territorio de Canada (Statistics Canada)",
+ "type": "object",
+ "required": [
+  "schemaVersion",
+  "generatedAt",
+  "source",
+  "units",
+  "regions"
+ ],
+ "properties": {
+  "schemaVersion": {
+   "type": "integer"
+  },
+  "generatedAt": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}"
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "name",
+    "url",
+    "license"
+   ],
+   "properties": {
+    "url": {
+     "type": "string",
+     "pattern": "^https://"
+    }
+   }
+  },
+  "units": {
+   "type": "object",
+   "required": [
+    "gdp",
+    "pop",
+    "unemp",
+    "gdppc"
+   ]
+  },
+  "regions": {
+   "type": "object",
+   "minProperties": 9,
+   "additionalSchema": {
+    "type": "object",
+    "minProperties": 2,
+    "properties": {
+     "gdp": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "minItems": 2,
+       "maxItems": 2
+      }
+     },
+     "pop": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "minItems": 2,
+       "maxItems": 2
+      }
+     },
+     "unemp": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "minItems": 2,
+       "maxItems": 2
+      }
+     },
+     "gdppc": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "minItems": 2,
+       "maxItems": 2
+      }
+     }
+    }
+   }
+  }
+ }
+}

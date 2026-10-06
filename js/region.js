@@ -475,13 +475,13 @@
   ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK'].forEach(function (c) { if (MODS[c]) MODS[c].unshift(['macro', euMacro]); else MODS[c] = [['macro', euMacro]]; });
   /* Economía y población de cada estado de EE. UU.: PIB (BEA), población (Census), paro (BLS) y PIB por habitante (calculado). */
   var MACUS = {
-    es: { sub: 'PIB, población y paro del estado según BEA, Census Bureau y BLS. Solo se muestra lo que las fuentes publican.', note: 'El PIB por habitante lo calcula Dehesa Index dividiendo el PIB del año por la población a 1 de julio. El paro es la tasa mensual desestacionalizada de BLS (LAUS); Dehesa Index no estima ni suma tasas.', unemp: 'Paro', mn: ' M', bn: ' mil M' },
-    en: { sub: 'GDP, population and unemployment of the state from BEA, the Census Bureau and BLS. Only what the sources publish is shown.', note: 'GDP per inhabitant is calculated by Dehesa Index as the year’s GDP divided by the 1 July population. Unemployment is the seasonally adjusted monthly rate from BLS (LAUS); Dehesa Index does not estimate it or add up rates.', unemp: 'Unemployment', mn: ' M', bn: ' bn' },
-    fr: { sub: 'PIB, population et chômage de l’État selon le BEA, le Census Bureau et le BLS. Seul ce que les sources publient est affiché.', note: 'Le PIB par habitant est calculé par Dehesa Index en divisant le PIB de l’année par la population au 1er juillet. Le chômage est le taux mensuel désaisonnalisé du BLS (LAUS) ; Dehesa Index ne l’estime pas et n’additionne pas de taux.', unemp: 'Chômage', mn: ' M', bn: ' Md' },
-    it: { sub: 'PIL, popolazione e disoccupazione dello stato secondo BEA, Census Bureau e BLS. Si mostra solo ciò che le fonti pubblicano.', note: 'Il PIL pro capite è calcolato da Dehesa Index dividendo il PIL dell’anno per la popolazione al 1° luglio. La disoccupazione è il tasso mensile destagionalizzato del BLS (LAUS); Dehesa Index non lo stima e non somma tassi.', unemp: 'Disoccupazione', mn: ' M', bn: ' mld' }
+    es: { subCA: 'PIB, población y paro de la provincia o territorio según Statistics Canada. Solo se muestra lo que la fuente publica.', noteCA: 'El PIB por habitante lo calcula Dehesa Index dividiendo el PIB del año por la población a 1 de julio. El paro es la tasa mensual desestacionalizada de la población de 15 años o más; Statistics Canada no la publica para los territorios y Dehesa Index no la estima ni suma tasas.', sub: 'PIB, población y paro del estado según BEA, Census Bureau y BLS. Solo se muestra lo que las fuentes publican.', note: 'El PIB por habitante lo calcula Dehesa Index dividiendo el PIB del año por la población a 1 de julio. El paro es la tasa mensual desestacionalizada de BLS (LAUS); Dehesa Index no estima ni suma tasas.', unemp: 'Paro', mn: ' M', bn: ' mil M' },
+    en: { subCA: 'GDP, population and unemployment of the province or territory from Statistics Canada. Only what the source publishes is shown.', noteCA: 'GDP per inhabitant is calculated by Dehesa Index as the year’s GDP divided by the 1 July population. Unemployment is the seasonally adjusted monthly rate for people aged 15 and over; Statistics Canada does not publish it for the territories, and Dehesa Index does not estimate it or add up rates.', sub: 'GDP, population and unemployment of the state from BEA, the Census Bureau and BLS. Only what the sources publish is shown.', note: 'GDP per inhabitant is calculated by Dehesa Index as the year’s GDP divided by the 1 July population. Unemployment is the seasonally adjusted monthly rate from BLS (LAUS); Dehesa Index does not estimate it or add up rates.', unemp: 'Unemployment', mn: ' M', bn: ' bn' },
+    fr: { subCA: 'PIB, population et chômage de la province ou du territoire selon Statistique Canada. Seul ce que la source publie est affiché.', noteCA: 'Le PIB par habitant est calculé par Dehesa Index en divisant le PIB de l’année par la population au 1er juillet. Le chômage est le taux mensuel désaisonnalisé des 15 ans et plus ; Statistique Canada ne le publie pas pour les territoires et Dehesa Index ne l’estime pas et n’additionne pas de taux.', sub: 'PIB, population et chômage de l’État selon le BEA, le Census Bureau et le BLS. Seul ce que les sources publient est affiché.', note: 'Le PIB par habitant est calculé par Dehesa Index en divisant le PIB de l’année par la population au 1er juillet. Le chômage est le taux mensuel désaisonnalisé du BLS (LAUS) ; Dehesa Index ne l’estime pas et n’additionne pas de taux.', unemp: 'Chômage', mn: ' M', bn: ' Md' },
+    it: { subCA: 'PIL, popolazione e disoccupazione della provincia o del territorio secondo Statistics Canada. Si mostra solo ciò che la fonte pubblica.', noteCA: 'Il PIL pro capite è calcolato da Dehesa Index dividendo il PIL dell’anno per la popolazione al 1° luglio. La disoccupazione è il tasso mensile destagionalizzato dei 15 anni e più; Statistics Canada non lo pubblica per i territori e Dehesa Index non lo stima e non somma tassi.', sub: 'PIL, popolazione e disoccupazione dello stato secondo BEA, Census Bureau e BLS. Si mostra solo ciò che le fonti pubblicano.', note: 'Il PIL pro capite è calcolato da Dehesa Index dividendo il PIL dell’anno per la popolazione al 1° luglio. La disoccupazione è il tasso mensile destagionalizzato del BLS (LAUS); Dehesa Index non lo stima e non somma tassi.', unemp: 'Disoccupazione', mn: ' M', bn: ' mld' }
   };
-  function usMacro(x) {
-    return get('data/us-states-macro.json').then(function (d) {
+  function nMacro(file, cur, srcs, k, x) {
+    return get(file).then(function (d) {
       var R = d && d.regions && d.regions[x.r]; if (!R) return null;
       var m = MAC[lang()] || MAC.es, u = MACUS[lang()] || MACUS.es, tiles = [], yrs = [];
       var last = function (a) { return a && a.length ? a[a.length - 1] : null; };
@@ -494,16 +494,19 @@
         tiles.push('<div style="min-width:130px"><div style="font-size:11px;color:var(--text-faint)">' + esc(lab) + '</div><div style="font-size:18px;font-weight:700;font-variant-numeric:tabular-nums">' + fmt(l[1]) + ' <span style="font-weight:400;font-size:12px;color:var(--text-faint)">(' + esc(per) + ')</span></div>' +
           (pv != null ? '<div style="font-size:11px;color:var(--text-muted)">' + (k === 'unemp' ? esc((l[1] - pv > 0 ? '+' : l[1] - pv < 0 ? '−' : '') + nf(Math.abs(l[1] - pv), 1) + ' pp') : esc(pct((l[1] / pv - 1) * 100))) + ' ' + esc(m.yoy) + '</div>' : '') + '</div>');
       };
-      add('gdp', function (v) { return '$' + nf(v / 1000, 1) + m.bn; }, m.gdp);
-      add('gdppc', function (v) { return '$' + nf(v, 0); }, m.gdppc);
+      add('gdp', function (v) { return cur[0] + nf(v / 1000, 1) + m.bn + cur[1]; }, m.gdp);
+      add('gdppc', function (v) { return cur[0] + nf(v, 0) + cur[1]; }, m.gdppc);
       add('pop', function (v) { return v >= 1e6 ? nf(v / 1e6, 2) + m.mn : nf(v / 1000, 0) + ' k'; }, m.pop);
       add('unemp', function (v) { return nf(v, 1) + ' %'; }, u.unemp);
       if (!tiles.length) return null;
-      var body = '<div style="display:flex;flex-wrap:wrap;gap:14px 28px">' + tiles.join('') + '</div><p class="di-movers-hint" style="margin:10px 0 0">' + esc(u.note) + '</p>';
-      return card(m.t, u.sub, body, cite('bea', R.gdp && R.gdp.length ? String(R.gdp[R.gdp.length - 1][0]) : '') + ' ' + cite('census', R.pop && R.pop.length ? String(R.pop[R.pop.length - 1][0]) : '') + ' ' + cite('bls', R.unemp && R.unemp.length ? R.unemp[R.unemp.length - 1][0] : ''));
+      var body = '<div style="display:flex;flex-wrap:wrap;gap:14px 28px">' + tiles.join('') + '</div><p class="di-movers-hint" style="margin:10px 0 0">' + esc(u['note' + k] || u.note) + '</p>';
+      return card(m.t, u['sub' + k] || u.sub, body, srcs(R));
     });
   }
-  (function () { if (MODS.US) MODS.US.unshift(['macro', usMacro]); else MODS.US = [['macro', usMacro]]; })();
+  var perOf = function (a) { return a && a.length ? String(a[a.length - 1][0]) : ''; };
+  function usMacro(x) { return nMacro('data/us-states-macro.json', ['$', ''], function (R) { return cite('bea', perOf(R.gdp)) + ' ' + cite('census', perOf(R.pop)) + ' ' + cite('bls', perOf(R.unemp)); }, '', x); }
+  function caMacro(x) { return nMacro('data/canada-provinces-macro.json', ['', ' CAD'], function (R) { return cite('statcan', perOf(R.gdp)); }, 'CA', x); }
+  (function () { MODS.US.unshift(['macro', usMacro]); MODS.CA.unshift(['macro', caMacro]); })();
   MOD_NAME.macro = 'macro'; ['es', 'en', 'fr', 'it'].forEach(function (l) { if (T[l]) T[l].macro = MAC[l].t; });
   /* bloques adicionales (js/region-more.js): clima, seguros, mercados locales, cultivos y ganado de España por comunidad, agua y maíz de Francia, producción, tierra y ganado de Alemania, CBS de Países Bajos */
   var OPTIONAL = {};
