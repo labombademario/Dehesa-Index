@@ -2656,6 +2656,16 @@
     "statcan"
    ],
    "notes": "PIB a precios de mercado (36-10-0222-01), poblacion a 1 de julio (17-10-0005-01) y paro 15+ desestacionalizado (14-10-0287-01) por provincia y territorio; el paro no existe para los territorios; el PIB por habitante lo calcula Dehesa Index (PIB / poblacion)."
+  },
+  "data/chile-stats.json": {
+   "byCountry": {
+    "CL": "odepa_chile"
+   }
+  },
+  "data/argentina-stats.json": {
+   "byCountry": {
+    "AR": "argentina_datos_abiertos"
+   }
   }
  },
  "derived": [

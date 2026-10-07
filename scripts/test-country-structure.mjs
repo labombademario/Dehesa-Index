@@ -7,7 +7,7 @@ const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? proce
 const BASE = arg('--base', 'http://localhost:8123'), QUICK = process.argv.includes('--quick');
 let pw; try { pw = await import('playwright'); } catch (e) { pw = await import(process.env.PLAYWRIGHT_MODULE || execSync('npm root -g').toString().trim() + '/playwright/index.mjs'); }
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
-const CC = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'DK', 'NL', 'CA', 'US', 'EU', 'AU', 'UK'];
+const CC = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'DK', 'NL', 'CA', 'US', 'EU', 'AU', 'UK', 'AR', 'CL'];
 const ORDER = ['ps-regmap', 'pp-kpi', 'pp-trade', 'pp-ask', 'ps-explorer', 'ps-detail', 'ps-own', 'ps-agri', 'ps-sources']; // orden en pantalla, igual en todos
 const BAR = ['ps-regmap', 'pp-kpi', 'pp-trade', 'pp-ask', 'ps-explorer', 'ps-detail', 'ps-sources'];
 let fail = 0; const ok = (n, c) => { if (!c) { fail++; console.log('FALLA', n); } };

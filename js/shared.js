@@ -119,7 +119,9 @@
       cd('NL', 'Países Bajos', 'Netherlands', 'Pays-Bas', 'Paesi Bassi'),
       cd('CA', 'Canadá', 'Canada', 'Canada', 'Canada'),
       cd('AU', 'Australia', 'Australia', 'Australie', 'Australia'),
-      cd('UK', 'Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito')
+      cd('UK', 'Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito'),
+      cd('AR', 'Argentina', 'Argentina', 'Argentine', 'Argentina'),
+      cd('CL', 'Chile', 'Chile', 'Chili', 'Cile')
     ] },
     intel: { label: L('Análisis', 'Analysis', 'Analyse', 'Analisi'), items: [
       pd('brief.html', L('Qué ha cambiado hoy', 'What changed today', 'Ce qui a changé aujourd’hui', 'Cosa è cambiato oggi'), L('Datos nuevos, mayores movimientos y revisiones del día', 'New data, biggest moves and revisions of the day', 'Nouvelles données, plus fortes variations et révisions du jour', 'Nuovi dati, maggiori movimenti e revisioni del giorno')),
