@@ -49,6 +49,8 @@
   function nf(v, d) { if (typeof v !== 'number' || !isFinite(v)) return '–'; var dd = d != null ? d : (Math.abs(v) >= 1000 ? 0 : Math.abs(v) >= 100 ? 1 : 2); try { return v.toLocaleString(lang(), { minimumFractionDigits: dd, maximumFractionDigits: dd }); } catch (e) { return v.toFixed(dd); } }
   function iso(c) { return c === 'EL' ? 'GR' : c === 'UK' ? 'GB' : c; }
   function flag(c) { if (c === 'EU') return '🇪🇺'; if (window.DIAgg && DIAgg.flag(c)) return DIAgg.flag(c); var i = iso(c); if (!/^[A-Z]{2}$/.test(i)) return ''; return String.fromCodePoint(127397 + i.charCodeAt(0), 127397 + i.charCodeAt(1)); }
+  var MKT_GRADE = { es: 'Mercado de referencia (el país no publica media nacional)', en: 'Reference market (no national average published)', fr: 'Marché de référence (pas de moyenne nationale publiée)', it: 'Mercato di riferimento (nessuna media nazionale pubblicata)' };
+  function lbl(s) { return cname(s.c) + (s.m ? ' · ' + s.m : ''); }  // mercado de referencia cuando el pais no publica media nacional
   function cname(c) { if (c === 'EU') return tt().eu; var ag = window.DIAgg && DIAgg.label(c, lang()); if (ag) return ag; try { return new Intl.DisplayNames([lang()], { type: 'region' }).of(iso(c)) || c; } catch (e) { return c; } }
   function ts(ym) { return Date.UTC(+ym.slice(0, 4), +ym.slice(5, 7) - 1, 1); }
   // Unit Engine central (js/unit-engine.js): sin conversion valida devuelve null; nunca se rellena con "el ultimo tipo de cambio".
@@ -72,7 +74,7 @@
       if (!base) return '';
     }
     list.forEach(function (s, idx) {
-      var name = flag(s.c) + ' ' + cname(s.c), pts = [], b0 = null;
+      var name = flag(s.c) + ' ' + lbl(s), pts = [], b0 = null;
       cut(s).forEach(function (q) {
         if (mode === 'idx') { if (q[0] < base) return; if (b0 == null) b0 = q[1]; if (!b0) return; pts.push({ x: ts(q[0]), y: q[1] / b0 * 100, o: q[1], l: DehesaChart.fmtMonth(ts(q[0])) }); }
         else { var y = convert(s, q[1], q[0], mode, per); if (y == null) SKIP++; if (y != null) pts.push({ x: ts(q[0]), y: y, o: q[1], l: DehesaChart.fmtMonth(ts(q[0])) }); }
@@ -88,7 +90,7 @@
   function smallMultiples(list, p, t) {
     return '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px">' + list.map(function (s, i) {
       var pts = cut(s).map(function (q) { return { x: ts(q[0]), y: q[1], l: DehesaChart.fmtMonth(ts(q[0])) }; });
-      return '<div><div style="font-weight:600;font-size:13px;margin:0 0 2px">' + flag(s.c) + ' ' + esc(cname(s.c)) + ' <span style="font-weight:400;color:var(--text-faint)">· ' + esc(s.unit) + '</span></div>' + DehesaChart.render({ series: [{ name: cname(s.c), color: COL[i % COL.length], pts: pts }], xMode: 'time', yTitle: s.unit, noLegend: true, width: 420, height: 200, aria: cname(s.c) + ' (' + s.unit + ')' }) + '</div>';
+      return '<div><div style="font-weight:600;font-size:13px;margin:0 0 2px">' + flag(s.c) + ' ' + esc(lbl(s)) + ' <span style="font-weight:400;color:var(--text-faint)">· ' + esc(s.unit) + '</span></div>' + DehesaChart.render({ series: [{ name: lbl(s), color: COL[i % COL.length], pts: pts }], xMode: 'time', yTitle: s.unit, noLegend: true, width: 420, height: 200, aria: lbl(s) + ' (' + s.unit + ')' }) + '</div>';
     }).join('') + '</div>';
   }
   function fsBadge(s) {
@@ -103,7 +105,7 @@
   function ident(s) {
     var I = window.DIIdentity; if (!I || !I.data()) return null;
     if (s.iid) return I.get(s.iid);
-    var e = I.comparator(ST.p); return e ? { kind: 'price', concept: e.concept, product: e.product, form: e.form, grade: e.grade, stage: e.stage, market: { es: cname(s.c), en: cname(s.c), fr: cname(s.c), it: cname(s.c) }, location: null } : null;
+    var e = I.comparator(ST.p); return e ? { kind: 'price', concept: e.concept, product: e.product, form: e.form, grade: s.m ? MKT_GRADE : e.grade, stage: s.m ? 'silo_exit' : e.stage, market: { es: lbl(s), en: lbl(s), fr: lbl(s), it: lbl(s) }, location: null } : null;
   }
   function identLine(s) { var e = ident(s); return e ? '<div class="pt-ident">' + esc(window.DIIdentity.line(e, lang())) + '</div>' : ''; }
   function mixNote(list, t) {
@@ -116,7 +118,7 @@
     var rows = list.map(function (s) {
       var ym = s.latest[0].slice(0, 7), cv = convert(s, s.latest[1], ym, cmode, p.per);
       var conv = cv == null ? '<span style="color:var(--text-faint);font-size:12px">' + esc(t.noConv) + '</span>' : '<strong>' + nf(cv) + '</strong> ' + esc(cu);
-      return '<tr><th scope="row" style="text-align:left;font-weight:600">' + flag(s.c) + ' ' + esc(cname(s.c)) + identLine(s) + '</th>' +
+      return '<tr><th scope="row" style="text-align:left;font-weight:600">' + flag(s.c) + ' ' + esc(lbl(s)) + identLine(s) + '</th>' +
         '<td data-label="' + esc(t.cOrigH) + '"><strong>' + esc(orgTxt(s)) + '</strong></td>' +
         '<td data-label="' + esc(t.cNormH) + ' (' + esc(cu) + ')">' + conv + '</td>' +
         '<td data-label="' + esc(t.cDate) + '">' + esc(s.latest[0]) + '</td>' +
@@ -124,7 +126,7 @@
         '<td data-label="' + esc(t.cComp) + '">' + compBadge(s, t) + '</td></tr>';
     }).join('');
     var th = function (x) { return '<th scope="col" style="text-align:left;font-size:11px;color:var(--text-faint);padding:4px 8px;border-bottom:1px solid var(--border)">' + esc(x) + '</th>'; };
-    return '<div class="di-table-wrap"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr>' + th(t.countries.replace(/s$/, '')) + th(t.cOrigH) + th(t.cNormH + ' (' + cu + ')') + th(t.cDate) + th(t.cFresh) + th(t.cSrc) + th(t.cComp) + '</tr></thead><tbody>' + rows + '</tbody></table></div>' + mixNote(list, t) + '<p class="di-movers-hint">' + esc(t.identNote) + '</p><p class="di-movers-hint">' + esc(t.normNote) + '</p>';
+    return '<div class="di-table-wrap"><table class="' + (window.matchMedia && matchMedia('(max-width:560px)').matches ? 'di-nosort' : '') + '" style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr>' + th(({ es: 'País', en: 'Country', fr: 'Pays', it: 'Paese' })[lang()] || 'País') + th(t.cOrigH) + th(t.cNormH + ' (' + cu + ')') + th(t.cDate) + th(t.cFresh) + th(t.cSrc) + th(t.cComp) + '</tr></thead><tbody>' + rows + '</tbody></table></div>' + mixNote(list, t) + '<p class="di-movers-hint">' + esc(t.identNote) + '</p><p class="di-movers-hint">' + esc(t.normNote) + '</p>';
   }
   function csvCell(v) {
     if (v === null || v === undefined) return '';
@@ -137,7 +139,7 @@
     var head = ['country_code', 'country', 'product', 'original_value', 'original_unit', 'converted_value', 'converted_unit', 'date', 'freshness', 'source', 'comparability', 'instrument'];
     var rows = list.map(function (s) {
       var e = ident(s), ym = s.latest[0].slice(0, 7), cv = convert(s, s.latest[1], ym, cmode, p.per);
-      return [s.c, cname(s.c), ST.p, s.latest[1], s.unit, cv == null ? null : Math.round(cv * 100) / 100, cv == null ? '' : cu, s.latest[0], s.fs || '', s.src, s.comp || '', e && window.DIIdentity ? window.DIIdentity.line(e, lang()) : ''];
+      return [s.c, lbl(s), ST.p, s.latest[1], s.unit, cv == null ? null : Math.round(cv * 100) / 100, cv == null ? '' : cu, s.latest[0], s.fs || '', s.src, s.comp || '', e && window.DIIdentity ? window.DIIdentity.line(e, lang()) : ''];
     });
     return '\ufeff' + [head].concat(rows).map(function (r) { return r.map(csvCell).join(','); }).join('\r\n') + '\r\n';
   }
@@ -159,7 +161,7 @@
       '<label style="font-size:13px">' + esc(t.range) + '<br><select id="cp-r" class="di-compare-select">' + t.yrs.map(function (y, i) { return '<option value="' + i + '"' + (i === (ST.r_i != null ? ST.r_i : 3) ? ' selected' : '') + '>' + esc(y) + '</option>'; }).join('') + '</select></label></div>';
     var byC = {}; p.series.forEach(function (s) { byC[s.c] = s; });
     var fresh = codes.filter(function (c) { return !isOld(byC[c], p); }), hist = codes.filter(function (c) { return isOld(byC[c], p); });
-    var chip = function (c) { var on = ST.c.indexOf(c) > -1, o = isOld(byC[c], p); return '<button type="button" data-c="' + c + '" aria-pressed="' + on + '" style="' + chipStyle(on) + (o ? ';opacity:.8' : '') + '">' + flag(c) + ' ' + esc(cname(c)) + (o ? ' <span style="font-size:11px;color:var(--text-faint)">· ' + esc(byC[c].latest[0].slice(0, 4)) + '</span>' : '') + '</button>'; };
+    var chip = function (c) { var on = ST.c.indexOf(c) > -1, o = isOld(byC[c], p); return '<button type="button" data-c="' + c + '" aria-pressed="' + on + '" style="' + chipStyle(on) + (o ? ';opacity:.8' : '') + '">' + flag(c) + ' ' + esc(byC[c] ? lbl(byC[c]) : cname(c)) + (o ? ' <span style="font-size:11px;color:var(--text-faint)">· ' + esc(byC[c].latest[0].slice(0, 4)) + '</span>' : '') + '</button>'; };
     h += '<div style="font-size:13px;margin-bottom:4px">' + esc(t.countries) + '</div><div role="group" aria-label="' + esc(t.countries) + '">' + fresh.map(chip).join('') + '<span style="' + chipStyle(false) + ';cursor:default;border-style:dashed;color:var(--text-muted)" title="' + esc(t.au) + '">🇦🇺 ' + esc(cname('AU')) + ' · ' + esc(t.noprice) + '</span></div>';
     if (hist.length) {
       if (ST.old) h += '<div style="font-size:12px;color:var(--text-faint);margin-bottom:2px">' + esc(t.oldL) + '</div><div role="group" aria-label="' + esc(t.oldL) + '">' + hist.map(chip).join('') + '</div>';

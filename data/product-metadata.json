@@ -71,6 +71,13 @@
      "en": "Bread wheat",
      "fr": "Blé tendre",
      "it": "Frumento tenero"
+    },
+    "marketFallback": {
+     "ES": [
+      "cereales",
+      "milling-wheat-departure-from-silo-after-some-storage-on-truck-or-other",
+      "Zaragoza"
+     ]
     }
    }
   },
@@ -135,6 +142,13 @@
      "en": "Maize (corn)",
      "fr": "Maïs",
      "it": "Mais"
+    },
+    "marketFallback": {
+     "ES": [
+      "cereales",
+      "feed-maize-departure-from-silo-after-some-storage-on-truck-or-other-tr",
+      "Zaragoza"
+     ]
     }
    }
   },
