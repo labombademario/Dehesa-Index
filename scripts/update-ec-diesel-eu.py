@@ -48,3 +48,26 @@ if not obs['publicationDate']:
     # 2) el boletín no expone fecha de publicación: se registra el día en que se recuperó por primera vez
     obs['publicationDate']=datetime.utcnow().date().isoformat()
 doc['observations']=[o for o in doc['observations'] if not(o.get('product')=='diesel' and o.get('region')=='eu')]+[obs]; f.write_text(json.dumps(doc,indent=2)+'\n'); tmp.unlink(missing_ok=True); print('EC diesel EU:',latest)
+
+# --- Paises: gasoleo automocion con impuestos (EUR/litro) por pais miembro, misma hoja y misma fuente (Boletin Semanal del Petroleo de la CE). ---
+# Las filas por pais se publican como columnas XX_price_with_tax_diesel; el valor oficial es EUR/1000 l. Sin interpolar ni estimar: si falta un pais, no se escribe.
+CTRS = {'DE': 'euAlemania', 'FR': 'euFrancia', 'ES': 'euEspana', 'IT': 'euItalia'}
+ccols = {c: next((i for i, x in enumerate(hdr) if x == c.lower() + '_price_with_tax_diesel'), None) for c in CTRS}
+out = {}
+for c, i in ccols.items():
+    if i is None: print('EC diesel pais', c, 'columna no encontrada'); continue
+    pts = {}
+    for row in rows[3:]:
+        if len(row) <= i or not isinstance(row[0], datetime) or not str(row[1] or '').startswith('EU'): continue
+        try: v = float(row[i]) / 1000.0
+        except (TypeError, ValueError): continue
+        if v > 0: pts[row[0].date().isoformat()] = round(v, 5)
+    pts = sorted(pts.items())
+    if len(pts) < 100: print('EC diesel pais', c, 'pocos puntos', len(pts)); continue
+    last, prv = pts[-1], pts[-2]
+    out[c] = {'key': CTRS[c], 'observationDate': last[0], 'price': last[1], 'changePct': round((last[1] / prv[1] - 1) * 100, 4), 'points': [[d, v] for d, v in pts[-260:]]}
+if out:
+    (ROOT / 'data' / 'diesel-eu-countries.json').write_text(json.dumps({'schemaVersion': 1, 'generatedAt': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'), 'sourceId': 'eu_oil_bulletin', 'unit': 'EUR/l',
+        'note': 'Gasoleo automocion con impuestos, precio medio ponderado comunicado por cada Estado miembro (Boletin Semanal del Petroleo, Comision Europea). Las comparaciones entre paises tienen validez limitada por diferencias de calidad, comercializacion y estructura de mercado.',
+        'countries': out}, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+    print('EC diesel paises:', {c: (v['observationDate'], v['price']) for c, v in out.items()})

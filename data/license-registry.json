@@ -2843,6 +2843,12 @@
    "sources": [
     "foag_ch"
    ]
+  },
+  "data/diesel-eu-countries.json": {
+   "sources": [
+    "eu_oil_bulletin"
+   ],
+   "notes": "Gasoleo automocion con impuestos por pais (DE, FR, ES, IT) del Boletin Semanal del Petroleo de la Comision Europea; columnas XX_price_with_tax_diesel de la misma hoja que el dato UE."
   }
  },
  "derived": [

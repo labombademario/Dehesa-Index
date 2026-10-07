@@ -684,11 +684,12 @@
     { key: 'usOeste', price: 7.456, changePct: 1.0, history: [7.30, 7.34, 7.38, 7.36, 7.40, 7.44, 7.456], currency: 'USD', kgPerUnit: GAL_KG },
     { key: 'usEste', price: 6.268, changePct: 0.7, history: [6.15, 6.17, 6.20, 6.19, 6.22, 6.25, 6.268], currency: 'USD', kgPerUnit: GAL_KG }
   ];
+  // Sin cifras fijas: price/history se rellenan en precios.js desde data/diesel-eu-countries.json (Boletin Semanal del Petroleo, CE). Sin ese fichero no se muestra valor.
   var DIESEL_EU_COUNTRIES = [
-    { key: 'euAlemania', price: 2.13, changePct: 0.6, history: [2.07, 2.08, 2.09, 2.10, 2.11, 2.12, 2.13], currency: 'EUR', kgPerUnit: LITRO_KG },
-    { key: 'euFrancia', price: 2.01, changePct: 0.5, history: [1.96, 1.97, 1.98, 1.99, 2.00, 2.00, 2.01], currency: 'EUR', kgPerUnit: LITRO_KG },
-    { key: 'euEspana', price: 2.30, changePct: 0.8, history: [2.24, 2.25, 2.27, 2.27, 2.28, 2.29, 2.30], currency: 'EUR', kgPerUnit: LITRO_KG },
-    { key: 'euItalia', price: 2.11, changePct: 0.5, history: [2.06, 2.07, 2.08, 2.09, 2.09, 2.10, 2.11], currency: 'EUR', kgPerUnit: LITRO_KG }
+    { key: 'euAlemania', code: 'DE', price: null, changePct: null, history: [], currency: 'EUR', kgPerUnit: LITRO_KG, observed: false },
+    { key: 'euFrancia', code: 'FR', price: null, changePct: null, history: [], currency: 'EUR', kgPerUnit: LITRO_KG, observed: false },
+    { key: 'euEspana', code: 'ES', price: null, changePct: null, history: [], currency: 'EUR', kgPerUnit: LITRO_KG, observed: false },
+    { key: 'euItalia', code: 'IT', price: null, changePct: null, history: [], currency: 'EUR', kgPerUnit: LITRO_KG, observed: false }
   ];
   var DIESEL_COUNTRY_TO_KEY = { de: 'euAlemania', fr: 'euFrancia', es: 'euEspana', it: 'euItalia' };
   var DIESEL_QUOTE_TYPES = { us: { type: 'indice', market: 'EIA' }, eu: { type: 'indice', market: 'Boletín Semanal del Petróleo (CE)' }, uk: { type: 'indice', market: 'RAC Fuel Watch' } };

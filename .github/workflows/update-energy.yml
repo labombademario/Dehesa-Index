@@ -31,7 +31,7 @@ jobs:
         uses: ./.github/actions/publish
         with:
           paths: >-
-            js/data.js
+            js/data.js data/diesel-eu-countries.json
           preset: price-engine
           message: "data: refresh diesel energy series"
           user: "Dehesa Index Bot"

@@ -272,6 +272,24 @@
     });
   }
 
+  // Gasoleo por pais (DE/FR/ES/IT): valores observados del Boletin Semanal del Petroleo (CE), publicados por scripts/update-ec-diesel-eu.py.
+  function loadDieselCountries() {
+    if (typeof global.fetch !== 'function') return;
+    global.fetch('data/diesel-eu-countries.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.countries) return;
+      var changed = false;
+      D.DIESEL_EU_COUNTRIES.forEach(function (r) {
+        var c = d.countries[r.code];
+        if (!c || !c.points || c.points.length < 2) return;
+        var pts = c.points.map(function (q) { var t = q[0].split('-'); return { ts: Date.UTC(+t[0], +t[1] - 1, +t[2]), value: Number(q[1]) }; }).filter(function (q) { return Number.isFinite(q.value); });
+        if (pts.length < 2) return;
+        r.price = pts[pts.length - 1].value; r.changePct = c.changePct; r.history = pts.slice(-7).map(function (q) { return q.value; });
+        r.histPts = pts; r.histFull = true; r.histGran = 'day'; r.observed = true; r.observationDate = c.observationDate; changed = true;
+      });
+      if (changed) renderAll();
+    }).catch(function () {});
+  }
+
   function loadPublishedPrices() {
     if (typeof global.fetch !== 'function' || !global.DIPrices) return;
     global.DIPrices.latest()
@@ -320,7 +338,8 @@
       var region = p.eu, derived = false, unverified = false;
       if (p.isEnergy) {
         var dr = dieselCountryRegion(country);
-        if (dr) { region = dr; unverified = true; }
+        if (dr && dr.observed) region = dr;
+        else if (dr) unverified = true;
       } else if (p.countryFactors && country !== 'es' && p.countryFactors[country] != null && p.countryFactors[country] !== 1) {
         region = D.deriveCountryRaw(p.eu, p.countryFactors[country]); derived = true;
       }
@@ -619,9 +638,11 @@
     } else if (state.location === 'eu') {
       title = ER.euTitle;
       rows = D.DIESEL_EU_COUNTRIES.map(function (r) {
-        return '<div class="di-energy-region-row"><span>' + esc(ER[r.key] || r.key) + '</span><b>—</b></div>';
+        if (!r.observed) return '<div class="di-energy-region-row"><span>' + esc(ER[r.key] || r.key) + '</span><b>—</b></div>';
+        var built = D.buildRegion(r, ER[r.key] || r.key, 'EUR', D.LITRO_KG, (D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es).litro, D.FX, T());
+        return '<div class="di-energy-region-row"><span>' + esc(ER[r.key] || r.key) + '</span><b>' + esc(built.price) + esc(built.unit) + '</b></div>';
       });
-      rows.push('<div class="di-derived-note">' + esc(UNVERIFIED_NOTE[lang()] || UNVERIFIED_NOTE.es) + '</div>');
+      if (D.DIESEL_EU_COUNTRIES.some(function (r) { return !r.observed; })) rows.push('<div class="di-derived-note">' + esc(UNVERIFIED_NOTE[lang()] || UNVERIFIED_NOTE.es) + '</div>');
     } else {
       return '';
     }
@@ -1610,6 +1631,7 @@
     renderAll();
     if (global.DICite) global.DICite.load().then(function (r) { if (r) renderAll(); });
     loadPublishedPrices();
+    loadDieselCountries();
     if (global.DINews) global.DINews.index().then(function (idx) {
       if (!idx || !Object.keys(idx).length) return;
       renderAll();
