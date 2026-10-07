@@ -1,0 +1,19 @@
+precios 17 series
+  var 4401 descartados 1 valores con atributo distinto de 1
+  var 4402 descartados 1 valores con atributo distinto de 1
+  var 4406 descartados 1 valores con atributo distinto de 1
+cultivos 101 series
+  var 10520 descartados 1 valores con atributo distinto de 1
+  var 10521 descartados 1 valores con atributo distinto de 1
+  var 10522 descartados 1 valores con atributo distinto de 1
+  var 10523 descartados 1 valores con atributo distinto de 1
+  var 10524 descartados 1 valores con atributo distinto de 1
+  var 10525 descartados 1 valores con atributo distinto de 1
+censos 40 series
+descartada (valor negativo en una cantidad) pl-gus-slaught-4455 Production of animals for slaughter, veal (GUS)
+produccion 13 series
+  var 218072 descartados 1 valores con atributo distinto de 1
+  var 218073 descartados 1 valores con atributo distinto de 1
+  var 218074 descartados 1 valores con atributo distinto de 1
+  var 218075 descartados 1 valores con atributo distinto de 1
+acopio mensual 13 series

@@ -1054,7 +1054,8 @@ def _consistency(errs, warns):
     if wi and lat:
         n = sum(1 for k in wi["series"] if k.startswith("P/"))
         if n != len(lat["observations"]): errs.append("watch-index: %d productos != %d en latest" % (n, len(lat["observations"])))
-    if reg and man and reg["summary"]["series"] != man["seriesByKind"]["stats"]: errs.append("series-registry %d != manifest stats %d" % (reg["summary"]["series"], man["seriesByKind"]["stats"]))
+    # el catalogo solo publica la serie preferida de cada duplicado (build-data-catalog); el registro las cuenta todas
+    if reg and man and reg["summary"]["series"] - reg["summary"].get("nonPreferred", 0) != man["seriesByKind"]["stats"]: errs.append("series-registry %d (menos %d duplicadas no preferidas) != manifest stats %d" % (reg["summary"]["series"], reg["summary"].get("nonPreferred", 0), man["seriesByKind"]["stats"]))
     ps = ld("pipeline-status.json")
     if ps:
         wf = {p.name for p in (ROOT / ".github/workflows").glob("update-*.yml")}

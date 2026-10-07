@@ -117,6 +117,18 @@
     "file": "js/exportaciones.js",
     "pattern": "data/gats.json"
    }
+  },
+  "data/catalog/PL.json": {
+   "class": "RUNTIME",
+   "note": "Metadatos de las series de Polonia (sin puntos): la ficha del pais los pide por DISeries.country('PL'); unos 40 KB comprimidos.",
+   "via": {
+    "file": "js/series-store.js",
+    "pattern": "e.catalog"
+   }
+  },
+  "data/poland-eurostat-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Polonia (Eurostat): alimentan el catalogo data/catalog/PL.json; paises.js carga por catalogo y no pide este fichero."
   }
  },
  "prefixes": {

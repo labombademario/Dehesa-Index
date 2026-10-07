@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-103 workflows (69 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+105 workflows (71 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -135,6 +135,8 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-mb-cattle.yml | generado | 2 veces/semana | detect-revisions.py, gen-workflows.py, update-mb-cattle.py | mb-markets, mb-markets-log.txt, mb-markets/cattle.json … | finish, validate-files |
 | update-mb-smallstock.yml | generado | 3 veces/semana | detect-revisions.py, gen-workflows.py, update-mb-smallstock.py | mb-markets, mb-markets/hogs.json, mb-markets/sheep-goat.json … | finish, validate-files |
 | update-partner-tariffs.yml | a mano | mensual | detect-revisions.py, update-partner-tariffs.py | tariffs-ca.json, tariffs-eu.json, tariffs-mx.json | finish, publish, validate-files |
+| update-poland-eurostat.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-poland-eurostat.py | poland-eurostat-log.txt, poland-eurostat-stats.json, revisions.json | finish, validate-files |
+| update-poland.yml | generado | semanal (2) | detect-revisions.py, gen-workflows.py, update-poland.py | poland-log.txt, poland-stats.json, revisions.json | finish, validate-files |
 | update-portugal-eurostat.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal-eurostat.py | portugal-eurostat-log.txt, portugal-eurostat-stats.json, revisions.json | finish, validate-files |
 | update-portugal.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-portugal.py | portugal-log.txt, portugal-stats.json, revisions.json | finish, validate-files |
 | update-recan.yml | a mano | semanal (4) | update-recan.py | recan-log.txt, recan.json | finish, validate-files |

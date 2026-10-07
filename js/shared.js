@@ -121,7 +121,8 @@
       cd('AU', 'Australia', 'Australia', 'Australie', 'Australia'),
       cd('UK', 'Reino Unido', 'United Kingdom', 'Royaume-Uni', 'Regno Unito'),
       cd('AR', 'Argentina', 'Argentina', 'Argentine', 'Argentina'),
-      cd('CL', 'Chile', 'Chile', 'Chili', 'Cile')
+      cd('CL', 'Chile', 'Chile', 'Chili', 'Cile'),
+      cd('PL', 'Polonia', 'Poland', 'Pologne', 'Polonia')
     ] },
     intel: { label: L('Análisis', 'Analysis', 'Analyse', 'Analisi'), items: [
       pd('brief.html', L('Qué ha cambiado hoy', 'What changed today', 'Ce qui a changé aujourd’hui', 'Cosa è cambiato oggi'), L('Datos nuevos, mayores movimientos y revisiones del día', 'New data, biggest moves and revisions of the day', 'Nouvelles données, plus fortes variations et révisions du jour', 'Nuovi dati, maggiori movimenti e revisioni del giorno')),
@@ -165,7 +166,7 @@
   }
   /* Paises agrupados por region en el menu: Sur America, Norte America, Europa (UE y Reino Unido incluidos) y Otros */
   var REGIONS = [{ k: 'SA', l: L('Sudamérica', 'South America', 'Amérique du Sud', 'Sud America') }, { k: 'NA', l: L('Norteamérica', 'North America', 'Amérique du Nord', 'Nord America') }, { k: 'EU', l: L('Europa', 'Europe', 'Europe', 'Europa') }, { k: 'OT', l: L('Otros', 'Others', 'Autres', 'Altri') }];
-  var REG_OF = { AR: 'SA', CL: 'SA', US: 'NA', CA: 'NA', EU: 'EU', ES: 'EU', FR: 'EU', DE: 'EU', BE: 'EU', AT: 'EU', PT: 'EU', IT: 'EU', DK: 'EU', NL: 'EU', UK: 'EU' };
+  var REG_OF = { AR: 'SA', CL: 'SA', US: 'NA', CA: 'NA', EU: 'EU', ES: 'EU', FR: 'EU', DE: 'EU', BE: 'EU', AT: 'EU', PT: 'EU', IT: 'EU', DK: 'EU', NL: 'EU', UK: 'EU', PL: 'EU' };
   function panelHtml(g) {
     var leaves = g.items.filter(function (i) { return !i.items && !i.chip; }), chips = g.items.filter(function (i) { return i.chip; }), cols = [];
     if (leaves.length) cols.push({ h: g.first, items: leaves });

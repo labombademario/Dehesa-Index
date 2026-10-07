@@ -239,6 +239,22 @@ sources:
     data: [argentina-stats.json]
     log: argentina-log.txt
     message: Datos Argentina (datos abiertos)
+  - id: poland-eurostat
+    name: Update Poland (Eurostat)
+    cron: ['45 17 * * 2,5']
+    script: scripts/update-poland-eurostat.py
+    data: [poland-eurostat-stats.json]
+    log: poland-eurostat-log.txt
+    message: Datos Polonia (Eurostat)
+  - id: poland
+    name: Update Poland (GUS, Local Data Bank)
+    cron: ['30 18 * * 2']
+    script: scripts/update-poland.py
+    timeout: 100
+    script_timeout: 90
+    data: [poland-stats.json]
+    log: poland-log.txt
+    message: Datos Polonia (GUS BDL)
   - id: canada-stats
     name: Update Canada stats (Statistics Canada)
     cron: ['35 15 * * 1,4']

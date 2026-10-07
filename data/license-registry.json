@@ -2034,6 +2034,32 @@
    "evidence": "La API CKAN de datos.gob.ar (package_show, leida el 2026-10-06 desde GitHub Actions) devuelve license_id CC-BY-4.0 para los conjuntos de cultivos, ganaderia, comercio y 'Creative Commons Attribution 4.0' para los de Programacion Macroeconomica (FOB oficiales, exportaciones por rubro).",
    "short": "Argentina",
    "legalConfidenceReason": "Licencia explicita en los metadatos oficiales de cada conjunto."
+  },
+  "gus_poland": {
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": null,
+   "verifiedAt": "2026-10-07",
+   "status": "VERIFIED",
+   "used": true,
+   "aliases": [],
+   "confidence": "medium",
+   "legalConfidence": "MEDIUM",
+   "notes": "No es una licencia tipo (CC): es el aviso de copyright de GUS, que no pone objeciones a copiar archivos y paginas ni a elaborar resumenes y cambios propios si se cita la fuente. La API del Banco de Datos Locales es publica y funciona sin clave (limites anonimos por peticiones).",
+   "name": "Statistics Poland (GUS) - Local Data Bank (BDL)",
+   "url": "https://bdl.stat.gov.pl/",
+   "country": "PL",
+   "licenseId": "GUS-COPYRIGHT-NOTICE",
+   "licenseName": "Aviso de copyright de Statistics Poland: copia y obras propias permitidas citando la fuente",
+   "licenseUrl": "https://stat.gov.pl/en/copyright/",
+   "attributionText": "Fuente: Statistics Poland (GUS), Local Data Bank (BDL). Elaboracion propia de dehesaindex.com cuando los datos se convierten (dt a t).",
+   "additionalRestrictions": "Citar la fuente. GUS no se responsabiliza de los resumenes ni cambios de texto basados en sus datos.",
+   "evidence": "https://stat.gov.pl/en/copyright/ y https://stat.gov.pl/copyright (leidas el 2026-10-07 desde GitHub Actions): «There is no objection connected with copywriting of data and websites and printing including personal changes and summaries on condition that the source is given.» La portada de stat.gov.pl enlaza ademas al texto legal de CC BY 4.0, pero la condicion explicita de la pagina de copyright es la cita de la fuente.",
+   "short": "GUS (Polonia)",
+   "legalConfidenceReason": "Permiso explicito con condicion de citar la fuente, sin identificador de licencia estandar."
   }
  },
  "files": {
@@ -2665,6 +2691,16 @@
   "data/argentina-stats.json": {
    "byCountry": {
     "AR": "argentina_datos_abiertos"
+   }
+  },
+  "data/poland-eurostat-stats.json": {
+   "byCountry": {
+    "PL": "eurostat"
+   }
+  },
+  "data/poland-stats.json": {
+   "byCountry": {
+    "PL": "gus_poland"
    }
   }
  },
