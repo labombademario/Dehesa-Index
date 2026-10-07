@@ -2079,13 +2079,13 @@
    "thirdPartyNote": "The FOAG cubes also contain third-party foreign comparison prices; they are excluded. Some datasets may carry a statutory citation duty (opendata.swiss).",
    "verifiedAt": "2026-10-07",
    "status": "VERIFIED",
-   "confidence": "medium",
+   "confidence": "high",
    "evidence": "opendata.swiss terms of use (https://opendata.swiss/en/terms-of-use): category 'Open use. Must provide the source' permits non-commercial and commercial use with source (author, title, link). The FOAG market-figure records on opendata.swiss/ckan.opendata.swiss state terms_by and, for the LINDAS SPARQL resource of Marktzahlen Eier, 'Non-commercial Allowed / Commercial Allowed / Reference Required'. Data is read from the public SPARQL endpoint https://lindas.admin.ch/query (graph https://lindas.admin.ch/foag/agricultural-market-data); reachable from GitHub Actions (probe 7 Oct 2026).",
    "used": true,
    "aliases": [],
-   "notes": "Terms checked on the general terms page and on two dataset records (milk annual producer prices, eggs SPARQL resource); the other cubes are assumed to share the FOAG terms_by terms and should be spot-checked when new cubes are added. SwissImpex (foreign trade) and Tares are NOT used: commercial use requires permission.",
-   "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "Condiciones generales de opendata.swiss verificadas y dos registros del BLW con uso comercial permitido y cita obligatoria; no se ha abierto ficha por ficha cada uno de los 49 cubos.",
+   "notes": "Terms checked on the general terms page and on two dataset records (milk annual producer prices, eggs SPARQL resource); the other cubes are assumed to share the FOAG terms_by terms and should be spot-checked when new cubes are added. SwissImpex (foreign trade) and Tares are NOT used: commercial use requires permission. Owner decision 7 Oct 2026: treat all FOAG data as verified / high.",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Condiciones generales de opendata.swiss (uso comercial permitido citando fuente) verificadas y fichas del BLW con 'Commercial Allowed / Reference Required'. Confianza alta fijada por el propietario (7 oct 2026) para toda la fuente FOAG.",
    "short": "FOAG (Suiza)"
   }
  },

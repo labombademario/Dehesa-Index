@@ -95,6 +95,26 @@ for en, key in (("Rapeseed, conv., CH", "rapeseed-conv"), ("Rapeseed, organic, C
 for en, key in (("Rapeseed, total", "rapeseed"), ("Sunflower, total", "sunflower"), ("Soybeans, total", "soybeans")):
     spec("ch-foag-oilseed-prod-%s" % key, "crops", "%s: production (FOAG)" % en.replace(", total", ""), "t", "Oilseeds/Production_Quantity_Year", en, origin=None)
 
+# --- Cadena de valor: transformacion (sin IVA) y consumo (con IVA), mensual. Se publican como series separadas: no se restan etapas ---
+for pid, key, nm in (("product/288", "butter", "Cooking butter (industrial)"), ("product/289", "smp", "Skimmed milk powder"), ("product/291", "wmp", "Whole milk powder 26%")):
+    spec("ch-foag-milk-proc-%s" % key, "prices", "%s: processing price, ex-processing (FOAG)" % nm, "CHF/kg", "MilkDairyProducts/WholesaleProcessing_Price_Month", pid, origin=None)
+for pid, key, nm, un in (("product/268", "uht-milk", "Whole milk UHT", "CHF/l"), ("product/292", "past-milk", "Whole milk, pasteurised", "CHF/l"), ("product/283", "cream", "Cream UHT 35%", "CHF/l"),
+                         ("product/270", "butter", "Cooking butter", "CHF/kg"), ("product/296", "yogurt", "Plain yoghurt", "CHF/kg"), ("product/316", "emmental", "Emmentaler, mild", "CHF/kg"),
+                         ("product/319", "gruyere", "Gruyere, mild", "CHF/kg"), ("product/311", "mozzarella", "Mozzarella", "CHF/kg"), ("product/293", "raclette", "Raclette cheese", "CHF/kg")):
+    spec("ch-foag-milk-retail-%s" % key, "prices", "%s: retail price (FOAG)" % nm, un, "MilkDairyProducts/Consumption_Price_Month", pid, origin=None)
+for pid, key, nm in (("product/163", "all", "all production forms"), ("product/152", "barn", "barn"), ("product/142", "freerange", "free range"), ("product/131", "organic", "organic")):
+    spec("ch-foag-egg-retail-%s" % key, "prices", "Eggs, %s: retail price, raw (FOAG)" % nm, "CHF cent/egg", "Eggs/Consumption_Price_Month", pid, origin=None, cur="Centime")
+for pid, key, nm in (("product/954", "topwheat-conv", "Top wheat, conventional"), ("product/955", "wheat1-conv", "Wheat I, conventional"), ("product/958", "topwheat-ip", "Top wheat, IP Suisse"), ("product/964", "wheat-organic", "Wheat, organic")):
+    spec("ch-foag-cereal-mill-%s" % key, "prices", "%s: franco-mill price (FOAG)" % nm, "CHF/100 kg", "BreadCerealsFlourBakedGoods/WholesaleProcessing_Price_Month", pid, origin=None)
+spec("ch-foag-cereal-mill-flour", "prices", "Industrial flour, conventional: ex-processing price (FOAG)", "CHF/100 kg", "BreadCerealsFlourBakedGoods/WholesaleProcessing_Price_Month", "product/974", origin=None)
+for pid, key, nm in (("product/1299", "rapeseed-oil", "Rapeseed oil, non-organic"), ("product/1300", "sunflower-oil", "Sunflower oil, non-organic")):
+    spec("ch-foag-oil-retail-%s" % key, "prices", "%s: retail price (FOAG)" % nm, "CHF/l", "Oilseeds/Consumption_Price_Month", pid, origin=None)
+
+# Carne (anual): oferta total del mercado (produccion suiza mas importaciones), kg de equivalente carne fresca -> t. FOAG no publica un precio mensual de carne con historia.
+for en, key, nm in (("Beef - All product groups - Supply", "beef", "Beef"), ("Pork - All product groups - Supply", "pork", "Pork"), ("Poultry - All product groups - Supply", "poultry", "Poultry"),
+                    ("Sheep - All product groups - Supply", "sheep", "Sheep meat"), ("Veal - All product groups - Supply", "veal", "Veal"), ("All types of meat - All product groups - Supply", "all", "All meat")):
+    spec("ch-foag-meat-supply-%s" % key, "livestock", "%s: market supply, domestic production plus imports (FOAG)" % nm, "t", "MeatMeatProductsSausages/Production_Quantity_Year", en, factor=0.001, origin=None)
+
 def build_series(sp, diag):
     rs = rows(sp["cube"])
     keep = []
