@@ -1,21 +1,26 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T18:10:00Z",
+ "generatedAt": "2026-10-07T18:31:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 96,
   "late": 1,
   "error": 3,
-  "not_run": 1,
-  "unknown": 1
+  "not_run": 2,
+  "unknown": 0
  },
  "global": "error",
  "deploy": {
-  "status": "unknown",
+  "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": null,
-  "lagHours": null,
-  "prodGeneratedAt": null,
+  "build": {
+   "sha": "768a3f31",
+   "conclusion": "success",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/653caa7c-b5e4-4857-9a41-28ea7d7ad292",
+   "completedAt": "2026-10-07T18:15:21Z"
+  },
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-07T15:41:00.672458+00:00",
   "repoGeneratedAt": "2026-10-07T15:41:00.672458+00:00"
  },
  "pipelines": [
@@ -594,7 +599,7 @@
    "crons": [
     "20 18 * * 3"
    ],
-   "nextRun": "2026-10-07T18:20:00Z",
+   "nextRun": "2026-10-14T18:20:00Z",
    "files": [
     {
      "path": "data/chile-stats.json",
@@ -1957,7 +1962,7 @@
    "crons": [
     "17 */3 * * *"
    ],
-   "nextRun": "2026-10-07T18:17:00Z",
+   "nextRun": "2026-10-07T21:17:00Z",
    "files": [
     {
      "path": "data/news.json",
@@ -1984,8 +1989,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37645525473"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 0
    },
    "status": "ok",
@@ -2117,7 +2122,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T16:20:41Z"
+     "lastChange": "2026-10-07T18:14:42Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2125,14 +2130,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-07T16:20:41Z"
+     "lastChange": "2026-10-07T18:10:27Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-07T16:20:41Z"
+     "lastChange": "2026-10-07T18:14:42Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2149,7 +2154,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-07T16:20:41Z"
+     "lastChange": "2026-10-07T18:14:42Z"
     },
     {
      "path": "data/products"
@@ -2160,27 +2165,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-07T16:20:41Z"
+     "lastChange": "2026-10-07T18:14:42Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-07T16:20:41Z"
+     "lastChange": "2026-10-07T18:14:42Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-07T16:20:41Z"
+     "lastChange": "2026-10-07T18:14:42Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-07T16:20:41Z"
+     "lastChange": "2026-10-07T18:14:42Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-07T16:20:41Z"
+     "lastChange": "2026-10-07T18:14:42Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-07T16:20:41Z"
+     "lastChange": "2026-10-07T18:14:42Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2202,8 +2207,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37645502907"
    },
    "recent": {
-    "runs": 10,
-    "success": 7,
+    "runs": 9,
+    "success": 6,
     "failed": 2
    },
    "status": "ok",
@@ -2799,7 +2804,12 @@
    "nextRun": "2026-10-14T06:20:00Z",
    "files": [
     {
-     "path": "data/switzerland-foag-stats.json"
+     "path": "data/switzerland-foag-stats.json",
+     "valid": "ok",
+     "series": 29,
+     "points": 3640,
+     "lines": 0,
+     "lastChange": "2026-10-07T18:10:27Z"
     },
     {
      "path": "data/revisions.json",
@@ -2808,7 +2818,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 168.0
   },
   {

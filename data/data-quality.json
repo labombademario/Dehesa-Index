@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T15:38:35Z",
+ "generatedAt": "2026-10-07T18:31:24Z",
  "summary": {
-  "files": 27,
+  "files": 29,
   "errors": 0,
-  "warnings": 7
+  "warnings": 8
  },
  "files": [
   {
@@ -235,7 +235,7 @@
     "points": 375,
     "lines": 0
    },
-   "generatedAt": "2026-10-07T02:08:46Z",
+   "generatedAt": "2026-10-07T18:01:54Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -327,6 +327,48 @@
    "generatedAt": "2026-10-07T10:33:36Z",
    "info": [],
    "nWarnings": 40,
+   "nErrors": 0
+  },
+  {
+   "file": "abares-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "AU/au-ab-lentils-prod: salto 2.02 -> 15.5 en 1995 (mediana previa 0.52)",
+    "AU/au-ab-lentils-prod: salto 15.5 -> 28.347 en 1996 (mediana previa 0.52)",
+    "AU/au-ab-lentils-prod: salto 28.347 -> 31.458 en 1997 (mediana previa 1.24)",
+    "AU/au-ab-lentils-prod: salto 31.458 -> 38.699 en 1998 (mediana previa 1.24)",
+    "AU/au-ab-lentils-prod: salto 38.699 -> 115.361 en 1999 (mediana previa 2.02)",
+    "AU/au-ab-lentils-prod: salto 115.361 -> 138.245 en 2000 (mediana previa 2.02)",
+    "AU/au-ab-lentils-area: salto 6.503 -> 13.763 en 1996 (mediana previa 0.479)",
+    "AU/au-ab-lentils-area: salto 13.763 -> 41.99 en 1997 (mediana previa 0.98)",
+    "AU/au-ab-lentils-area: salto 41.99 -> 66.17 en 1998 (mediana previa 0.98)"
+   ],
+   "stats": {
+    "series": 58,
+    "points": 3377,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-07T16:00:53Z",
+   "info": [],
+   "nWarnings": 9,
+   "nErrors": 0
+  },
+  {
+   "file": "switzerland-foag-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 29,
+    "points": 3640,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-07T16:43:52Z",
+   "info": [],
+   "nWarnings": 0,
    "nErrors": 0
   },
   {
