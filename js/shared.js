@@ -163,12 +163,18 @@
     var on = leafActive(i);
     return '<a class="di-nav-chip' + (on ? ' active' : '') + '" href="' + sitePath(i.file) + (i.query || '') + '"' + (on ? ' aria-current="page"' : '') + '>' + esc(i.label[lang] || i.label.es) + '</a>';
   }
+  /* Paises agrupados por region en el menu: Sur America, Norte America, Europa (UE y Reino Unido incluidos) y Otros */
+  var REGIONS = [{ k: 'SA', l: L('Sudamérica', 'South America', 'Amérique du Sud', 'Sud America') }, { k: 'NA', l: L('Norteamérica', 'North America', 'Amérique du Nord', 'Nord America') }, { k: 'EU', l: L('Europa', 'Europe', 'Europe', 'Europa') }, { k: 'OT', l: L('Otros', 'Others', 'Autres', 'Altri') }];
+  var REG_OF = { AR: 'SA', CL: 'SA', US: 'NA', CA: 'NA', EU: 'EU', ES: 'EU', FR: 'EU', DE: 'EU', BE: 'EU', AT: 'EU', PT: 'EU', IT: 'EU', DK: 'EU', NL: 'EU', UK: 'EU' };
   function panelHtml(g) {
     var leaves = g.items.filter(function (i) { return !i.items && !i.chip; }), chips = g.items.filter(function (i) { return i.chip; }), cols = [];
     if (leaves.length) cols.push({ h: g.first, items: leaves });
     g.items.forEach(function (i) { if (i.items) cols.push({ h: i.label, items: i.items }); });
     var h = cols.map(function (c) { return '<div class="di-nav-col">' + (c.h ? '<div class="di-nav-colh">' + esc(c.h[lang] || c.h.es) + '</div>' : '') + c.items.map(itemHtml).join('') + '</div>'; }).join('');
-    if (chips.length) h += '<div class="di-nav-chips">' + chips.map(chipHtml).join('') + '</div>';
+    if (chips.length) h += '<div class="di-nav-regs">' + REGIONS.map(function (r) {
+      var rc = chips.filter(function (i) { return (REG_OF[(i.query || '').slice(3)] || 'OT') === r.k; });
+      return rc.length ? '<section class="di-nav-reg"><div class="di-nav-regh">' + esc(r.l[lang] || r.l.es) + '</div><div class="di-nav-chips">' + rc.map(chipHtml).join('') + '</div></section>' : '';
+    }).join('') + '</div>';
     return h;
   }
   var QUICK = { mm: L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato'), news: L('Noticias', 'News', 'Actualités', 'Notizie'), cal: L('Calendario', 'Calendar', 'Calendrier', 'Calendario') };
