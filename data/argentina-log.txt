@@ -1,0 +1,35 @@
+wheat ok
+maize ok
+soy ok
+barley ok
+oats ok
+rye ok
+rice ok
+estimaciones ok
+descartada ar-fob-rice ultimo 2022-10
+fob ok
+descartada ar-insc-steer ultimo 2019-12
+insc ok
+descartada ar-sagyp-cattle-steer ultimo 2019-08
+descartada ar-sagyp-cattle-calf ultimo 2019-08
+descartada ar-sagyp-cattle-maize ultimo 2019-08
+descartada ar-sagyp-cattle-cull-cow ultimo 2019-08
+indicadores ok
+descartada ar-liniers-steer-price ultimo 2018-07
+descartada ar-liniers-cow-price ultimo 2018-07
+descartada ar-liniers-calf-price ultimo 2018-07
+descartada ar-liniers-heads ultimo 2018-07
+liniers ok
+descartada ar-sagyp-cattle-slaughter ultimo 2018-12
+descartada ar-sagyp-beef-production ultimo 2018-12
+descartada ar-sagyp-beef-consumption ultimo 2018-12
+descartada ar-sagyp-beef-exports ultimo 2018-12
+bovinos ok
+descartada ar-sagyp-poultry-slaughter ultimo 2020-06
+poultry-slaughter ok
+descartada ar-sagyp-poultry-meat ultimo 2020-06
+poultry-meat ok
+descartada ar-sagyp-milk ultimo 2020-10
+milk ok
+comercio ok
+series 54
