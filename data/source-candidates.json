@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T02:33:40Z",
+ "generatedAt": "2026-10-07T03:14:27Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 95,
+  "total": 97,
   "byStatus": {
-   "ACTIVE": 64,
+   "ACTIVE": 66,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -1526,6 +1526,45 @@
    "lastChecked": "2026-10-05",
    "verification": "REGISTRY",
    "legalConfidence": "OWNER_ACCEPTED",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "argentina_datos_abiertos",
+   "registryId": "argentina_datos_abiertos",
+   "country": "AR",
+   "scope": "integrated",
+   "institution": "Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: Secretaria de Agricultura, Ganaderia y Pesca / Ministerio de Economia / INDEC, Argentina (datos.gob.ar), licencia CC BY 4.0.",
+   "lastChecked": "2026-10-06",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
@@ -3094,6 +3133,45 @@
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "odepa_chile",
+   "registryId": "odepa_chile",
+   "country": "CL",
+   "scope": "integrated",
+   "institution": "ODEPA (Chile) - Portal de datos abiertos",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Fuente: ODEPA (Oficina de Estudios y Politicas Agrarias, Chile), datos abiertos, licencia Creative Commons Attribution. Comercio exterior: Servicio Nacional de Aduanas.",
+   "lastChecked": "2026-10-06",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

@@ -51,7 +51,7 @@ APPLICABLE = {  # metricas con sentido por tipo de producto (no se cuentan hueco
 SITE_PRODUCT = {'wheat': ['trigo'], 'maize': ['maiz'], 'barley': ['cebada'], 'oats': ['avena'], 'rice': ['arroz'], 'soy': ['soja'], 'rapeseed': ['colza'], 'milk': ['leche'],
                 'cattle': ['vacuno'], 'pigs': ['cerdo'], 'eggs': ['huevos'], 'fertilizer': ['urea', 'fertilizantes'], 'energy': ['diesel'], 'olive': ['oliva']}
 # datos que existen FUERA del catalogo unificado (ficheros USDA con su propio formato). Se comprueban contra el fichero real; no se evalua su frescura.
-PSD_COUNTRY = {'United States': 'US', 'Canada': 'CA', 'Australia': 'AU', 'European Union': 'EU', 'United Kingdom': 'UK'}
+PSD_COUNTRY = {'United States': 'US', 'Canada': 'CA', 'Australia': 'AU', 'European Union': 'EU', 'United Kingdom': 'UK', 'Argentina': 'AR', 'Chile': 'CL'}
 PSD_PRODUCT = {'trigo': 'wheat', 'maiz': 'maize', 'arroz': 'rice', 'cebada': 'barley', 'soja': 'soy', 'colza': 'rapeseed', 'oliva': 'olive', 'cerdo': 'pigs', 'vacuno': 'cattle',
                'pollo': 'poultry', 'leche': 'milk', 'azucar': 'sugar'}
 PSD_METRIC = {'production': 'production', 'area': 'production', 'endingStocks': 'stocks', 'exports': 'trade', 'imports': 'trade'}

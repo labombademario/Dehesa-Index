@@ -221,6 +221,24 @@ sources:
     data: [uk-trade-stats.json]
     log: uk-trade-log.txt
     message: Datos comercio exterior Reino Unido (HMRC)
+  - id: chile
+    name: Update Chile (ODEPA)
+    cron: ['20 18 * * 3']
+    script: scripts/update-chile.py
+    timeout: 60
+    script_timeout: 50
+    data: [chile-stats.json]
+    log: chile-log.txt
+    message: Datos Chile (ODEPA)
+  - id: argentina
+    name: Update Argentina (datos abiertos)
+    cron: ['10 18 * * 4']
+    script: scripts/update-argentina.py
+    timeout: 30
+    script_timeout: 20
+    data: [argentina-stats.json]
+    log: argentina-log.txt
+    message: Datos Argentina (datos abiertos)
   - id: canada-stats
     name: Update Canada stats (Statistics Canada)
     cron: ['35 15 * * 1,4']

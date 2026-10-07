@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-101 workflows (67 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+103 workflows (69 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -13,6 +13,12 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 - salida data/spain-balances publicada por varios workflows: update-spain-balances.yml, update-spain-olive.yml
 - salida data/spain-slaughter publicada por varios workflows: update-spain-slaughter-census.yml, update-spain-slaughter.yml
 - salida data/spain-wine publicada por varios workflows: update-spain-wine-balance-historic.yml, update-spain-wine-monthly.yml, update-spain-wine.yml
+
+## AR
+
+| Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
+|---|---|---|---|---|---|
+| update-argentina.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-argentina.py | argentina-log.txt, argentina-stats.json, revisions.json | finish, validate-files |
 
 ## AU
 
@@ -36,6 +42,12 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-cap-dk.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-dk.py | cap/dk/amounts.json, cap/dk/watch.json, revisions.json | finish, validate-files |
 | update-cap-es.yml | generado | semanal (1) | detect-revisions.py, gen-workflows.py, update-cap-es.py | cap/es/amounts.json, cap/es/watch.json, revisions.json | finish, validate-files |
 | update-cattle-on-feed.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-cattle-on-feed.py | cattle-on-feed.json, revisions.json | finish, validate-files |
+
+## CL
+
+| Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
+|---|---|---|---|---|---|
+| update-chile.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-chile.py | chile-log.txt, chile-stats.json, revisions.json | finish, validate-files |
 
 ## Calidad
 
