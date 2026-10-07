@@ -1,27 +1,22 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T09:28:00Z",
+ "generatedAt": "2026-10-07T10:27:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 94,
   "late": 1,
   "error": 3,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 2
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "unknown",
   "site": "https://dehesaindex.com",
-  "build": {
-   "sha": "db814dc3",
-   "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/ce075ade-0321-48aa-aaea-904e77484c23",
-   "completedAt": "2026-10-07T08:54:47Z"
-  },
-  "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-07T03:29:37.057941+00:00",
-  "repoGeneratedAt": "2026-10-07T03:29:37.057941+00:00"
+  "build": null,
+  "lagHours": null,
+  "prodGeneratedAt": null,
+  "repoGeneratedAt": "2026-10-07T09:31:38.191944+00:00"
  },
  "pipelines": [
   {
@@ -743,7 +738,7 @@
    "files": [
     {
      "path": "data/cpi.json",
-     "lastChange": "2026-10-06T04:42:54Z"
+     "lastChange": "2026-10-07T09:41:17Z"
     },
     {
      "path": "data/revisions.json",
@@ -752,14 +747,14 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-06T05:39:49Z",
-    "durationSec": 70,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37419649478"
+    "event": "schedule",
+    "startedAt": "2026-10-07T09:41:00Z",
+    "durationSec": 35,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37602294390"
    },
    "recent": {
-    "runs": 2,
-    "success": 2,
+    "runs": 3,
+    "success": 3,
     "failed": 0
    },
    "status": "ok",
@@ -1962,31 +1957,31 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-07T03:29:37Z"
+     "lastChange": "2026-10-07T09:31:39Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-07T03:29:37Z"
+     "lastChange": "2026-10-07T09:31:39Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-07T03:29:37Z"
+     "lastChange": "2026-10-07T09:31:39Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-07T03:29:37Z"
+     "lastChange": "2026-10-07T09:31:39Z"
     }
    ],
    "last": {
-    "conclusion": "cancelled",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-07T06:31:52Z",
-    "durationSec": 10,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37582005645"
+    "startedAt": "2026-10-07T09:29:00Z",
+    "durationSec": 163,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37600911773"
    },
    "recent": {
-    "runs": 9,
-    "success": 7,
+    "runs": 10,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -2118,11 +2113,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T06:32:32Z"
+     "lastChange": "2026-10-07T09:30:23Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-07T06:32:32Z"
+     "lastChange": "2026-10-07T09:30:23Z"
     },
     {
      "path": "data/series-registry.json",
@@ -2133,7 +2128,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-07T06:32:45Z"
+     "lastChange": "2026-10-07T09:30:39Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2150,7 +2145,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-07T06:32:45Z"
+     "lastChange": "2026-10-07T09:30:39Z"
     },
     {
      "path": "data/products"
@@ -2161,27 +2156,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-07T06:32:45Z"
+     "lastChange": "2026-10-07T09:30:39Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-07T06:32:45Z"
+     "lastChange": "2026-10-07T09:30:39Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-07T06:32:45Z"
+     "lastChange": "2026-10-07T09:30:39Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-07T06:32:45Z"
+     "lastChange": "2026-10-07T09:30:39Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-07T06:32:45Z"
+     "lastChange": "2026-10-07T09:30:39Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-07T06:32:45Z"
+     "lastChange": "2026-10-07T09:30:39Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2198,17 +2193,59 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-07T06:30:57Z",
-    "durationSec": 112,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37581921959"
+    "startedAt": "2026-10-07T09:28:15Z",
+    "durationSec": 150,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37600826957"
    },
    "recent": {
-    "runs": 9,
-    "success": 6,
+    "runs": 10,
+    "success": 7,
     "failed": 2
    },
    "status": "ok",
    "expectedEveryHours": 3.0
+  },
+  {
+   "workflow": "update-poland-eurostat.yml",
+   "name": "Update Poland (Eurostat)",
+   "crons": [
+    "45 17 * * 2,5"
+   ],
+   "nextRun": "2026-10-09T17:45:00Z",
+   "files": [
+    {
+     "path": "data/poland-eurostat-stats.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-07T00:12:14Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-poland.yml",
+   "name": "Update Poland (GUS, Local Data Bank)",
+   "crons": [
+    "30 18 * * 2"
+   ],
+   "nextRun": "2026-10-13T18:30:00Z",
+   "files": [
+    {
+     "path": "data/poland-stats.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-07T00:12:14Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-portugal-eurostat.yml",
