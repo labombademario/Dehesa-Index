@@ -1145,6 +1145,8 @@ body.di-modal-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 .di-news-reset:hover { background: var(--surface-2, var(--surface)); }
 
 .di-search-btn{border:1px solid var(--border);background:transparent;color:inherit;border-radius:8px;min-width:36px;min-height:34px;font-size:15px;cursor:pointer;padding:0 8px;line-height:1}
+.di-search-lbl{display:none}
+@media(min-width:1200px){.di-search-btn{display:inline-flex;align-items:center;gap:6px;padding:0 14px}.di-search-lbl{display:inline;font-size:14px;font-weight:600}}
 .di-search-btn:hover{background:var(--bg-soft,rgba(120,110,80,.12))}
 @media(max-width:700px){.di-search-btn{min-width:42px;min-height:42px}}
 

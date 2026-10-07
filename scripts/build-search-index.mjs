@@ -232,5 +232,22 @@ for (const [u, n, k] of CON) add({ t: 'concept', u, n, s: tri('Cómo se calcula'
   if (!n || ['en', 'fr', 'it'].some(l => per[l].length !== n)) throw new Error('blog.js: numero de notas distinto por idioma');
   for (let i = 0; i < n; i++) add({ t: 'page', u: 'blog.html', n: { es: per.es[i], en: per.en[i], fr: per.fr[i], it: per.it[i] }, s: tri('Blog', 'Blog', 'Blog', 'Blog'), k: 'blog nota analisis análisis' });
 }
+// Menu de la web (js/shared.js NAV_GROUPS) como fuente unica: cada pagina del menu se encuentra por su nombre en el menu, su descripcion y su grupo
+{
+  const sh = read('js/shared.js'), a = sh.indexOf('var NAV_GROUPS = {'), b = sh.indexOf('\n  };\n', a), blk = sh.slice(a, b);
+  const Q = "'((?:[^'\\\\]|\\\\.)*)'", L4 = 'L\\(' + [Q, Q, Q, Q].join(', ') + '\\)', un = x => x.replace(/\\'/g, '’');
+  const reG = new RegExp('^    ([a-z]+): \\{ label: ' + L4), reP = new RegExp("pd\\('([a-z0-9-]+\\.html)', " + L4 + ', ' + L4 + "(?:, '(\\?c=[A-Z]+)')?\\)");
+  let grp = null, n = 0;
+  for (const line of blk.split('\n')) {
+    const g = reG.exec(line); if (g) { grp = tri(un(g[2]), un(g[3]), un(g[4]), un(g[5])); continue; }
+    const m = reP.exec(line); if (!m || !grp) continue;
+    const u = m[1] + (m[10] || ''), name = tri(un(m[2]), un(m[3]), un(m[4]), un(m[5])), d = [m[6], m[7], m[8], m[9]].map(un).join(' ');
+    const k = (Object.values(name).join(' ') + ' ' + d + ' ' + Object.values(grp).join(' ')).toLowerCase();
+    const hits = out.filter(e => e.t === 'page' && e.u === u);
+    if (hits.length) hits.forEach(h => { h.s = grp; h.k = (h.k || '') + ' ' + k; }); else { add({ t: 'page', u, n: name, s: grp, k }); n++; }
+  }
+  if (!grp) throw new Error('search: no se pudo leer NAV_GROUPS de js/shared.js');
+  console.log('menu -> buscador: ' + n + ' paginas nuevas');
+}
 fs.writeFileSync('data/search-index.json', JSON.stringify({ schemaVersion: '1.0', generatedAt: new Date().toISOString().slice(0, 10), entries: out.map((e, i) => ({ i, ...e })) }) + '\n');
 console.log('entradas', out.length, Object.entries(out.reduce((a, e) => (a[e.t] = (a[e.t] || 0) + 1, a), {})).map(x => x.join(':')).join(' '));

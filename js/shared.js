@@ -70,42 +70,37 @@
     empresas: 'empresas.html', contacto: 'contacto.html'
   };
 
-  // Navegacion en 5 intenciones: Mercados, Paises, Inteligencia, Herramientas y Datos. Blog, Empresas y Contacto viven en el pie (NAV_KEYS).
+  // Navegacion por tareas (igual en la web y en la app): Hoy, Precios, Paises, Produccion y clima, Comercio, Costes, Mi espacio y Datos. Blog, Empresas y Contacto viven en el pie (NAV_KEYS).
   // Hojas: { file, query?, hash?, label }. Ramas: { items: [...], label } (se despliegan dentro del menu).
   function L(es, en, fr, it) { return { es: es, en: en, fr: fr, it: it }; }
   function pg(file, label, query) { var o = { file: file, label: label }; if (query) o.query = query; return o; }
   function ctry(c, es, en, fr, it) { return pg('paises.html', L(es, en, fr, it), '?c=' + c); }
-  var NAV_ORDER = ['g:markets', 'g:countries', 'g:intel', 'g:tools', 'g:data'];
+  var NAV_ORDER = ['g:today', 'g:prices', 'g:countries', 'g:production', 'g:trade', 'g:costs', 'g:mine', 'g:data'];
   // Cada hoja lleva una descripcion corta (d) que dice que hay y de donde (alcance): el menu es un panel con columnas, no acordeones.
   function pd(file, label, d, query) { var o = pg(file, label, query); o.d = d; return o; }
   function cd(c, es, en, fr, it) { var o = ctry(c, es, en, fr, it); o.chip = 1; return o; }
   var NAV_GROUPS = {
-    markets: { label: L('Mercados', 'Markets', 'Marchés', 'Mercati'), mega: 1, first: L('Precios', 'Prices', 'Prix', 'Prezzi'), items: [
+    today: { label: L('Hoy', 'Today', 'Aujourd’hui', 'Oggi'), items: [
+      pd('brief.html', L('Qué ha cambiado hoy', 'What changed today', 'Ce qui a changé aujourd’hui', 'Cosa è cambiato oggi'), L('Datos nuevos, mayores movimientos y revisiones del día', 'New data, biggest moves and revisions of the day', 'Nouvelles données, plus fortes variations et révisions du jour', 'Nuovi dati, maggiori movimenti e revisioni del giorno')),
+      pd('noticias.html', L('Noticias', 'News', 'Actualités', 'Notizie'), L('Titulares recientes de agencias y fuentes oficiales', 'Recent headlines from agencies and official sources', 'Titres récents d’agences et de sources officielles', 'Titoli recenti da agenzie e fonti ufficiali')),
+      pd('calendario.html', L('Calendario agrícola', 'Farm calendar', 'Calendrier agricole', 'Calendario agricolo'), L('Próximas publicaciones oficiales: USDA, UE, Canadá, Australia', 'Upcoming official releases: USDA, EU, Canada, Australia', 'Prochaines publications officielles : USDA, UE, Canada, Australie', 'Prossime pubblicazioni ufficiali: USDA, UE, Canada, Australia')),
+      pd('blog.html', L('Resumen semanal', 'Weekly summary', 'Résumé hebdomadaire', 'Riepilogo settimanale'), L('Lo más importante de la semana, con sus datos', 'The week’s key moves, with their data', 'L’essentiel de la semaine, avec ses données', 'Il più importante della settimana, con i dati'))
+    ] },
+    prices: { label: L('Precios', 'Prices', 'Prix', 'Prezzi'), mega: 1, first: L('Precios', 'Prices', 'Prix', 'Prezzi'), items: [
       pd('precios.html', L('Panel de precios', 'Price dashboard', 'Tableau des prix', 'Pannello dei prezzi'), L('Todos los productos en EE. UU., UE, Reino Unido y Canadá', 'Every product in the US, EU, UK and Canada', 'Tous les produits aux États-Unis, dans l’UE, au Royaume-Uni et au Canada', 'Tutti i prodotti in USA, UE, Regno Unito e Canada')),
       pd('producto.html', L('Ficha de producto', 'Product page', 'Fiche produit', 'Scheda prodotto'), L('Un producto a fondo: precio, países, histórico y comercio', 'One product in depth: price, countries, history and trade', 'Un produit en détail : prix, pays, historique et commerce', 'Un prodotto a fondo: prezzo, paesi, storico e commercio'), '?p=trigo'),
       pd('europa.html', L('Precios de la UE', 'EU prices', 'Prix de l’UE', 'Prezzi UE'), L('UE · cotizaciones país por país, con histórico', 'EU · country-by-country quotes, with history', 'UE · cotations pays par pays, avec historique', 'UE · quotazioni paese per paese, con storico')),
       { file: 'index.html', hash: '#home-dehesa-index', noActive: true, label: L('Índice Dehesa', 'Dehesa Index', 'Indice Dehesa', 'Indice Dehesa'), d: L('Índice de precios agrícolas de la UE, EE. UU. y Canadá', 'Farm price index for the EU, US and Canada', 'Indice des prix agricoles UE, États-Unis et Canada', 'Indice dei prezzi agricoli UE, USA e Canada') },
-      { label: L('Mercado y comercio', 'Market and trade', 'Marché et commerce', 'Mercato e commercio'), items: [
-        pd('mercados.html', L('Mercados USDA', 'USDA markets', 'Marchés USDA', 'Mercati USDA'), L('EE. UU. · precios de AMS Market News: grano, ganado, heno…', 'US · AMS Market News prices: grain, livestock, hay…', 'États-Unis · prix AMS Market News : grains, bétail, foin…', 'USA · prezzi AMS Market News: cereali, bestiame, fieno…')),
-        pd('oferta-demanda.html', L('Oferta y demanda', 'Supply and demand', 'Offre et demande', 'Offerta e domanda'), L('Mundo · producción, consumo y existencias por país', 'World · production, use and stocks by country', 'Monde · production, consommation et stocks par pays', 'Mondo · produzione, consumi e scorte per paese')),
-        pd('exportaciones.html', L('Exportaciones', 'Exports', 'Exportations', 'Esportazioni'), L('EE. UU. · ventas semanales y comercio por país comprador', 'US · weekly sales and trade by buyer country', 'États-Unis · ventes hebdomadaires et commerce par pays acheteur', 'USA · vendite settimanali e commercio per paese acquirente')),
-        pd('aranceles.html', L('Aranceles', 'Tariffs', 'Droits de douane', 'Dazi'), L('EE. UU., UE, Canadá y México · por producto', 'US, EU, Canada and Mexico · by product', 'États-Unis, UE, Canada et Mexique · par produit', 'USA, UE, Canada e Messico · per prodotto')),
-        pd('canada-granos.html', L('Granos de Canadá', 'Canadian grain', 'Grains du Canada', 'Cereali del Canada'), L('Canadá · exportaciones, entregas y existencias semanales', 'Canada · weekly exports, deliveries and stocks', 'Canada · exportations, livraisons et stocks hebdomadaires', 'Canada · esportazioni, consegne e scorte settimanali'))
-      ] },
-      { label: L('Campo, costes y clima', 'Farm, costs and weather', 'Terrain, coûts et météo', 'Campo, costi e meteo'), items: [
-        pd('cultivos.html', L('Estado de los cultivos', 'Crop progress', 'État des cultures', 'Stato delle colture'), L('EE. UU. · condición y avance semanal por estado', 'US · weekly condition and progress by state', 'États-Unis · état et avancement hebdomadaires par État', 'USA · condizione e avanzamento settimanali per stato')),
-        pd('rendimientos.html', L('Rendimientos', 'Yields', 'Rendements', 'Rese'), L('EE. UU. · rendimiento, superficie y producción por estado', 'US · yield, acreage and output by state', 'États-Unis · rendement, surface et production par État', 'USA · resa, superficie e produzione per stato')),
-        pd('ganaderia.html', L('Ganadería', 'Livestock', 'Élevage', 'Zootecnia'), L('EE. UU. · censos, leche por estado y existencias en frío', 'US · inventories, milk by state and cold storage', 'États-Unis · cheptels, lait par État et stocks frigorifiques', 'USA · consistenze, latte per stato e scorte in frigo')),
-        pd('insumos.html', L('Insumos', 'Inputs', 'Intrants', 'Input'), L('EE. UU. · fertilizantes por estado y precios pagados', 'US · fertilizer by state and prices paid', 'États-Unis · engrais par État et prix payés', 'USA · fertilizzanti per stato e prezzi pagati')),
-        pd('costes.html', L('Costes', 'Costs', 'Coûts', 'Costi'), L('EE. UU. · costes por cultivo y renta agraria (ERS)', 'US · costs by crop and farm income (ERS)', 'États-Unis · coûts par culture et revenu agricole (ERS)', 'USA · costi per coltura e reddito agricolo (ERS)')),
-        pd('recan.html', L('Costes y rentas (RECAN)', 'Farm costs and incomes (RECAN)', 'Coûts et revenus (RECAN)', 'Costi e redditi (RECAN)'), L('España · por comunidad, tipo y tamaño de explotación', 'Spain · by region, farm type and size', 'Espagne · par région, type et taille d’exploitation', 'Spagna · per regione, tipo e dimensione aziendale')),
-        pd('sequia.html', L('Sequía', 'Drought', 'Sécheresse', 'Siccità'), L('EE. UU. por estado y Europa por país, semana a semana', 'US by state and Europe by country, week by week', 'États-Unis par État et Europe par pays, semaine par semaine', 'USA per stato ed Europa per paese, settimana per settimana')),
-        pd('clima.html', L('Clima agrícola', 'Farm weather', 'Météo agricole', 'Meteo agricolo'), L('Lluvia y temperatura frente a la media, por zona productora', 'Rain and temperature vs normal, by growing area', 'Pluie et température par rapport à la normale, par zone', 'Pioggia e temperatura rispetto alla media, per zona')),
-        pd('mapa.html', L('Mapa agrícola', 'Farm map', 'Carte agricole', 'Mappa agricola'), L('Precios, clima, producción y comercio sobre el mapa', 'Prices, weather, output and trade on a map', 'Prix, météo, production et commerce sur une carte', 'Prezzi, meteo, produzione e commercio sulla mappa'))
+      pd('comparador.html', L('Comparador por producto y país', 'Product and country comparator', 'Comparateur par produit et pays', 'Confronto per prodotto e paese'), L('El precio de un producto en varios países, misma unidad', 'One product’s price across countries, same unit', 'Le prix d’un produit dans plusieurs pays, même unité', 'Il prezzo di un prodotto in più paesi, stessa unità')),
+      { label: L('Mercados y relaciones', 'Markets and relationships', 'Marchés et relations', 'Mercati e relazioni'), items: [
+        pd('mercados.html', L('Precios de mercado de EE. UU.', 'US market prices', 'Prix de marché des États-Unis', 'Prezzi di mercato USA'), L('EE. UU. · precios de AMS Market News: grano, ganado, heno…', 'US · AMS Market News prices: grain, livestock, hay…', 'États-Unis · prix AMS Market News : grains, bétail, foin…', 'USA · prezzi AMS Market News: cereali, bestiame, fieno…')),
+        pd('relaciones.html', L('Relaciones entre mercados', 'Cross-market relationships', 'Relations entre marchés', 'Relazioni tra mercati'), L('Cómo se mueven juntos insumos, clima, existencias y precios', 'How inputs, weather, stocks and prices move together', 'Comment intrants, météo, stocks et prix évoluent ensemble', 'Come si muovono insieme input, meteo, scorte e prezzi'))
       ] }
     ] },
-    countries: { label: L('Países', 'Countries', 'Pays', 'Paesi'), mega: 1, items: [
+    countries: { label: L('Países', 'Countries', 'Pays', 'Paesi'), mega: 1, first: L('Por país', 'By country', 'Par pays', 'Per paese'), items: [
       pd('perfiles.html', L('Perfiles de país y comparador', 'Country profiles and comparison', 'Profils de pays et comparateur', 'Profili paese e confronto'), L('Qué datos hay de cada país y comparación de dos países', 'What we have for each country and a two-country comparison', 'Les données de chaque pays et la comparaison de deux pays', 'I dati di ogni paese e il confronto tra due paesi')),
+      pd('pac.html', L('PAC en la UE', 'EU CAP', 'PAC dans l’UE', 'PAC nell’UE'), L('UE-27 · asignaciones por país; ocho países con su ficha', 'EU-27 · allocations by country; eight countries with their own page', 'UE-27 · dotations par pays ; huit pays avec leur fiche', 'UE-27 · dotazioni per paese; otto paesi con la loro scheda'), '?c=EU'),
+      pd('pac.html', L('PAC España', 'Spain CAP', 'PAC Espagne', 'PAC Spagna'), L('España · ayudas por hectárea, calendario y reglas', 'Spain · payments per hectare, calendar and rules', 'Espagne · aides à l’hectare, calendrier et règles', 'Spagna · aiuti per ettaro, calendario e regole'), '?c=ES'),
       cd('US', 'EE. UU.', 'United States', 'États-Unis', 'Stati Uniti'),
       cd('EU', 'Unión Europea', 'European Union', 'Union européenne', 'Unione Europea'),
       cd('ES', 'España', 'Spain', 'Espagne', 'Spagna'),
@@ -125,26 +120,38 @@
       cd('PL', 'Polonia', 'Poland', 'Pologne', 'Polonia'),
       cd('CH', 'Suiza', 'Switzerland', 'Suisse', 'Svizzera')
     ] },
-    intel: { label: L('Análisis', 'Analysis', 'Analyse', 'Analisi'), items: [
-      pd('brief.html', L('Qué ha cambiado hoy', 'What changed today', 'Ce qui a changé aujourd’hui', 'Cosa è cambiato oggi'), L('Datos nuevos, mayores movimientos y revisiones del día', 'New data, biggest moves and revisions of the day', 'Nouvelles données, plus fortes variations et révisions du jour', 'Nuovi dati, maggiori movimenti e revisioni del giorno')),
-      pd('noticias.html', L('Noticias', 'News', 'Actualités', 'Notizie'), L('Titulares recientes de agencias y fuentes oficiales', 'Recent headlines from agencies and official sources', 'Titres récents d’agences et de sources officielles', 'Titoli recenti da agenzie e fonti ufficiali')),
-      pd('calendario.html', L('Calendario agrícola', 'Farm calendar', 'Calendrier agricole', 'Calendario agricolo'), L('Próximas publicaciones oficiales: USDA, UE, Canadá, Australia', 'Upcoming official releases: USDA, EU, Canada, Australia', 'Prochaines publications officielles : USDA, UE, Canada, Australie', 'Prossime pubblicazioni ufficiali: USDA, UE, Canada, Australia')),
-      pd('relaciones.html', L('Relaciones entre mercados', 'Cross-market relationships', 'Relations entre marchés', 'Relazioni tra mercati'), L('Cómo se mueven juntos insumos, clima, existencias y precios', 'How inputs, weather, stocks and prices move together', 'Comment intrants, météo, stocks et prix évoluent ensemble', 'Come si muovono insieme input, meteo, scorte e prezzi')),
-      pd('observatorio.html', L('Observatorio de datos', 'Data observatory', 'Observatoire des données', 'Osservatorio dei dati'), L('Novedades, frescura, cobertura y próximas publicaciones', 'What’s new, freshness, coverage and upcoming releases', 'Nouveautés, fraîcheur, couverture et prochaines publications', 'Novità, freschezza, copertura e prossime pubblicazioni'))
+    production: { label: L('Producción y clima', 'Production and weather', 'Production et météo', 'Produzione e meteo'), mega: 1, first: L('Cultivos y ganado', 'Crops and livestock', 'Cultures et élevage', 'Colture e allevamento'), items: [
+      pd('cultivos.html', L('Estado de los cultivos (EE. UU.)', 'Crop progress (US)', 'État des cultures (É.-U.)', 'Stato delle colture (USA)'), L('EE. UU. · condición y avance semanal por estado', 'US · weekly condition and progress by state', 'États-Unis · état et avancement hebdomadaires par État', 'USA · condizione e avanzamento settimanali per stato')),
+      pd('rendimientos.html', L('Rendimientos (EE. UU.)', 'Yields (US)', 'Rendements (É.-U.)', 'Rese (USA)'), L('EE. UU. · rendimiento, superficie y producción por estado', 'US · yield, acreage and output by state', 'États-Unis · rendement, surface et production par État', 'USA · resa, superficie e produzione per stato')),
+      pd('ganaderia.html', L('Ganadería (EE. UU.)', 'Livestock (US)', 'Élevage (É.-U.)', 'Zootecnia (USA)'), L('EE. UU. · censos, leche por estado y existencias en frío', 'US · inventories, milk by state and cold storage', 'États-Unis · cheptels, lait par État et stocks frigorifiques', 'USA · consistenze, latte per stato e scorte in frigo')),
+      pd('oferta-demanda.html', L('Oferta y demanda mundial', 'World supply and demand', 'Offre et demande mondiales', 'Offerta e domanda mondiale'), L('Mundo · producción, consumo y existencias por país', 'World · production, use and stocks by country', 'Monde · production, consommation et stocks par pays', 'Mondo · produzione, consumi e scorte per paese')),
+      { label: L('Clima y mapa', 'Weather and map', 'Météo et carte', 'Meteo e mappa'), items: [
+        pd('sequia.html', L('Sequía', 'Drought', 'Sécheresse', 'Siccità'), L('EE. UU. por estado y Europa por país, semana a semana', 'US by state and Europe by country, week by week', 'États-Unis par État et Europe par pays, semaine par semaine', 'USA per stato ed Europa per paese, settimana per settimana')),
+        pd('clima.html', L('Clima agrícola', 'Farm weather', 'Météo agricole', 'Meteo agricolo'), L('Lluvia y temperatura frente a la media, por zona productora', 'Rain and temperature vs normal, by growing area', 'Pluie et température par rapport à la normale, par zone', 'Pioggia e temperatura rispetto alla media, per zona')),
+        pd('mapa.html', L('Mapa agrícola', 'Farm map', 'Carte agricole', 'Mappa agricola'), L('Precios, clima, producción y comercio sobre el mapa', 'Prices, weather, output and trade on a map', 'Prix, météo, production et commerce sur une carte', 'Prezzi, meteo, produzione e commercio sulla mappa'))
+      ] }
     ] },
-    tools: { label: L('Herramientas', 'Tools', 'Outils', 'Strumenti'), items: [
+    trade: { label: L('Comercio', 'Trade', 'Commerce', 'Commercio'), items: [
+      pd('exportaciones.html', L('Exportaciones de EE. UU.', 'US exports', 'Exportations des États-Unis', 'Esportazioni USA'), L('EE. UU. · ventas semanales y comercio por país comprador', 'US · weekly sales and trade by buyer country', 'États-Unis · ventes hebdomadaires et commerce par pays acheteur', 'USA · vendite settimanali e commercio per paese acquirente')),
+      pd('aranceles.html', L('Aranceles', 'Tariffs', 'Droits de douane', 'Dazi'), L('EE. UU., UE, Canadá y México · por producto', 'US, EU, Canada and Mexico · by product', 'États-Unis, UE, Canada et Mexique · par produit', 'USA, UE, Canada e Messico · per prodotto')),
+      pd('canada-granos.html', L('Granos de Canadá', 'Canadian grain', 'Grains du Canada', 'Cereali del Canada'), L('Canadá · exportaciones, entregas y existencias semanales', 'Canada · weekly exports, deliveries and stocks', 'Canada · exportations, livraisons et stocks hebdomadaires', 'Canada · esportazioni, consegne e scorte settimanali'))
+    ] },
+    costs: { label: L('Costes', 'Costs', 'Coûts', 'Costi'), items: [
+      pd('insumos.html', L('Insumos (EE. UU.)', 'Inputs (US)', 'Intrants (É.-U.)', 'Input (USA)'), L('EE. UU. · fertilizantes por estado y precios pagados', 'US · fertilizer by state and prices paid', 'États-Unis · engrais par État et prix payés', 'USA · fertilizzanti per stato e prezzi pagati')),
+      pd('costes.html', L('Costes por cultivo (EE. UU.)', 'Crop costs (US)', 'Coûts par culture (É.-U.)', 'Costi per coltura (USA)'), L('EE. UU. · costes por cultivo y renta agraria (ERS)', 'US · costs by crop and farm income (ERS)', 'États-Unis · coûts par culture et revenu agricole (ERS)', 'USA · costi per coltura e reddito agricolo (ERS)')),
+      pd('recan.html', L('Costes y rentas en España (RECAN)', 'Spanish farm costs and incomes (RECAN)', 'Coûts et revenus en Espagne (RECAN)', 'Costi e redditi in Spagna (RECAN)'), L('España · por comunidad, tipo y tamaño de explotación', 'Spain · by region, farm type and size', 'Espagne · par région, type et taille d’exploitation', 'Spagna · per regione, tipo e dimensione aziendale')),
+      pd('calculadora.html', L('Calculadora de margen', 'Margin calculator', 'Calculateur de marge', 'Calcolatore di margine'), L('Coste por hectárea y tonelada, precio de equilibrio y margen', 'Cost per hectare and tonne, break-even price and margin', 'Coût par hectare et tonne, prix d’équilibre et marge', 'Costo per ettaro e tonnellata, prezzo di pareggio e margine'))
+    ] },
+    mine: { label: L('Mi espacio', 'My space', 'Mon espace', 'Il mio spazio'), items: [
       pd('mi-mercado.html', L('Mi mercado', 'My market', 'Mon marché', 'Il mio mercato'), L('Tu zona y tu producto: precio local, seguro, sequía y más', 'Your area and product: local price, insurance, drought and more', 'Votre zone et votre produit : prix local, assurance, sécheresse…', 'La tua zona e il tuo prodotto: prezzo locale, assicurazione, siccità…')),
       pd('mi-explotacion.html', L('Mi explotación', 'My farm', 'Mon exploitation', 'La mia azienda'), L('Tus cultivos y costes: margen, equilibrio y qué ha cambiado', 'Your crops and costs: margin, break-even and what changed', 'Vos cultures et coûts : marge, équilibre et ce qui a changé', 'Le tue colture e costi: margine, pareggio e cosa è cambiato')),
-      pd('mi-seguimiento.html', L('Mi seguimiento', 'My watchlist', 'Mon suivi', 'Il mio seguito'), L('Sigue productos y series con avisos, sin cuenta', 'Follow products and series with alerts, no account', 'Suivez produits et séries avec alertes, sans compte', 'Segui prodotti e serie con avvisi, senza account')),
-      pd('calculadora.html', L('Calculadora de margen', 'Margin calculator', 'Calculateur de marge', 'Calcolatore di margine'), L('Coste por hectárea y tonelada, precio de equilibrio y margen', 'Cost per hectare and tonne, break-even price and margin', 'Coût par hectare et tonne, prix d’équilibre et marge', 'Costo per ettaro e tonnellata, prezzo di pareggio e margine')),
-      pd('comparador.html', L('Comparador por producto y país', 'Product and country comparator', 'Comparateur par produit et pays', 'Confronto per prodotto e paese'), L('El precio de un producto en varios países, misma unidad', 'One product’s price across countries, same unit', 'Le prix d’un produit dans plusieurs pays, même unité', 'Il prezzo di un prodotto in più paesi, stessa unità')),
-      pd('pac.html', L('PAC en la UE', 'EU CAP', 'PAC dans l’UE', 'PAC nell’UE'), L('UE-27 · asignaciones por país; ocho países con su ficha', 'EU-27 · allocations by country; eight countries with their own page', 'UE-27 · dotations par pays ; huit pays avec leur fiche', 'UE-27 · dotazioni per paese; otto paesi con la loro scheda'), '?c=EU'),
-      pd('pac.html', L('PAC España', 'Spain CAP', 'PAC Espagne', 'PAC Spagna'), L('España · ayudas por hectárea, calendario y reglas', 'Spain · payments per hectare, calendar and rules', 'Espagne · aides à l’hectare, calendrier et règles', 'Spagna · aiuti per ettaro, calendario e regole'), '?c=ES')
+      pd('mi-seguimiento.html', L('Mi seguimiento', 'My watchlist', 'Mon suivi', 'Il mio seguito'), L('Sigue productos y series con avisos, sin cuenta', 'Follow products and series with alerts, no account', 'Suivez produits et séries avec alertes, sans compte', 'Segui prodotti e serie con avvisi, senza account'))
     ] },
     data: { label: L('Datos', 'Data', 'Données', 'Dati'), items: [
       pd('catalogo.html', L('Catálogo de datos', 'Data catalogue', 'Catalogue de données', 'Catalogo dei dati'), L('Más de 5.800 series por país, métrica y producto', 'Over 5,800 series by country, metric and product', 'Plus de 5 800 séries par pays, mesure et produit', 'Oltre 5.800 serie per paese, metrica e prodotto')),
       pd('metodologia.html', L('Metodología', 'Methodology', 'Méthodologie', 'Metodologia'), L('Cómo se verifican, fechan y convierten los datos', 'How data are verified, dated and converted', 'Comment les données sont vérifiées, datées et converties', 'Come i dati sono verificati, datati e convertiti')),
       pd('status.html', L('Estado de los datos', 'Data status', 'État des données', 'Stato dei dati'), L('Última y próxima actualización de cada fuente', 'Last and next update of each source', 'Dernière et prochaine mise à jour de chaque source', 'Ultimo e prossimo aggiornamento di ogni fonte')),
+      pd('observatorio.html', L('Observatorio de datos', 'Data observatory', 'Observatoire des données', 'Osservatorio dei dati'), L('Novedades, frescura, cobertura y próximas publicaciones', 'What’s new, freshness, coverage and upcoming releases', 'Nouveautés, fraîcheur, couverture et prochaines publications', 'Novità, freschezza, copertura e prossime pubblicazioni')),
       pd('informacion.html', L('Información', 'About', 'Informations', 'Informazioni'), L('Quiénes somos y de qué fuentes se nutre el panel', 'Who we are and which sources feed the dashboard', 'Qui nous sommes et quelles sources alimentent le tableau', 'Chi siamo e quali fonti alimentano il pannello'))
     ] }
   };
@@ -410,7 +417,7 @@
   /* Bloque «Relacionado» al final de cada pagina del menu: hermanas de la misma columna del menu (max. 4) y dos enlaces de otro tipo.
      Sale del propio NAV_GROUPS (mismas etiquetas y descripciones), asi que no hay una segunda lista que mantener. */
   var REL_T = L('Relacionado', 'Related', 'Voir aussi', 'Correlati');
-  var REL_X = { markets: ['mi-mercado.html', 'calendario.html'], countries: ['comparador.html', 'catalogo.html'], intel: ['precios.html', 'mi-seguimiento.html'], tools: ['precios.html', 'perfiles.html'], data: ['catalogo.html', 'status.html'] };
+  var REL_X = { today: ['precios.html', 'mi-seguimiento.html'], prices: ['mi-mercado.html', 'calendario.html'], countries: ['comparador.html', 'catalogo.html'], production: ['precios.html', 'calendario.html'], trade: ['precios.html', 'oferta-demanda.html'], costs: ['mi-explotacion.html', 'precios.html'], mine: ['precios.html', 'brief.html'], data: ['catalogo.html', 'status.html'] };
   function findLeaf(file) {
     var found = null;
     NAV_ORDER.forEach(function (k) { var g = NAV_GROUPS[k.slice(2)]; (function walk(list, col) { list.forEach(function (i) { if (i.items) walk(i.items, i.items); else if (!found && i.file === file && !i.chip && !i.hash) found = i; }); })(g.items, null); });
@@ -468,7 +475,7 @@
       }
       var isActive = k === activePage && !inGroup;
       return '<a class="' + (isActive ? 'active' : '') + '" href="' + sitePath(NAV_PAGES[k]) + '" role="button">' + esc(t[k]) + '</a>';
-    }).join('') + quickLink('noticias.html', 'news', 'di-nav-top') + quickLink('calendario.html', 'cal', 'di-nav-top');
+    }).join('');
 
     // En pantallas estrechas el selector de idioma muestra bandera y codigo (ES, EN…) para que no se corte.
     var narrowMq = window.matchMedia ? window.matchMedia('(max-width: 700px)') : null;
@@ -493,7 +500,7 @@
           '<nav class="di-nav-links">' + linksHtml + '</nav>' +
           '<div class="di-nav-side">' +
             quickLink('mi-mercado.html', 'mm', 'di-nav-cta di-nav-cta-d') +
-            '<button type="button" class="di-search-btn" id="di-search-btn" title="' + esc(t.search) + ' ( / )" aria-label="' + esc(t.search) + '">🔍</button>' +
+            '<button type="button" class="di-search-btn" id="di-search-btn" title="' + esc(t.search) + ' ( / )" aria-label="' + esc(t.search) + '">🔍<span class="di-search-lbl" aria-hidden="true">' + esc(t.search) + '</span></button>' +
             '<select class="di-lang-select" id="di-lang-select" title="' + esc(t.langSelect) + '">' + langOptionsHtml + '</select>' +
             '<span class="di-vsep"></span>' +
             '<button class="di-theme-toggle" id="di-theme-toggle" title="' + esc(theme === 'dark' ? t.toLight : t.toDark) + '">' + (theme === 'dark' ? '☀️' : '🌙') + '</button>' +

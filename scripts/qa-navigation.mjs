@@ -29,8 +29,8 @@ const calendar = read('js/calendario.js');
 const prices = read('js/precios.js');
 
 check(shared.includes('function renderContextBar'), 'shared context bar exists');
-check(shared.includes('NAV_GROUPS') && ['markets', 'countries', 'intel', 'tools', 'data'].every(g => shared.includes("'g:" + g + "'")) && shared.includes('panelHtml'), 'nav has the 5 intent menus: Markets, Countries, Intelligence, Tools, Data');
-check(/var NAV_ORDER = \['g:markets', 'g:countries', 'g:intel', 'g:tools', 'g:data'\];/.test(shared), 'top navigation exposes exactly 5 entries');
+check(shared.includes('NAV_GROUPS') && ['today', 'prices', 'countries', 'production', 'trade', 'costs', 'mine', 'data'].every(g => shared.includes("'g:" + g + "'")) && shared.includes('panelHtml'), 'nav has the 8 task menus: Today, Prices, Countries, Production and weather, Trade, Costs, My space, Data');
+check(/var NAV_ORDER = \['g:today', 'g:prices', 'g:countries', 'g:production', 'g:trade', 'g:costs', 'g:mine', 'g:data'\];/.test(shared), 'top navigation exposes exactly the 8 task menus');
 {
   const groupFiles = [...shared.matchAll(/(?:file: |pg\(|pd\()'([a-z-]+\.html)'/g)].map(m => m[1]);
   check(groupFiles.length >= 12, 'submenus list their pages (' + groupFiles.length + ')');
