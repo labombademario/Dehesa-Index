@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T11:05:59Z",
+ "generatedAt": "2026-10-07T11:12:18Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2657,7 +2657,7 @@
    "country": "EU",
    "scope": "integrated",
    "institution": "Eurostat — Comext international trade in goods",
-   "dataset": "Ya integrada (582 series en el catalogo unificado)",
+   "dataset": "Ya integrada (645 series en el catalogo unificado)",
    "products": [
     "eggs",
     "fertilizer",
