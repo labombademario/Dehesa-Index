@@ -29,6 +29,7 @@ for (const p of P) {
   ok(typeof p.value === 'number' && isFinite(p.value), p.id + ': valor no numerico');
   ok(iso(p.date) && p.date.slice(0, 10) <= today, p.id + ': fecha invalida o futura ' + p.date);
   ok(reg[p.sourceId] && reg[p.sourceId].status === 'VERIFIED', p.id + ': fuente sin licencia verificada ' + p.sourceId);
+  ok(typeof p.sourceName === 'string' && p.sourceName.length > 1, p.id + ': sin nombre de fuente');
   ok(Array.isArray(p.points) && p.points.every(x => iso(x[0]) && typeof x[1] === 'number'), p.id + ': puntos mal formados');
   ok(p.points.every((x, i, a) => i === 0 || a[i - 1][0] < x[0]), p.id + ': puntos desordenados');
   if (p.yearAgo) ok(iso(p.yearAgo.date) && typeof p.yearAgo.value === 'number', p.id + ': yearAgo mal formado');

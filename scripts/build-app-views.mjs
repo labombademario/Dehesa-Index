@@ -91,7 +91,7 @@ for (const region of ['eu', 'us', 'uk', 'ca']) {
     if (o.product === 'diesel') Object.assign(name, t4('Gasóleo de automoción (surtidor)', 'Road diesel (pump price)', 'Gazole routier (prix à la pompe)', 'Gasolio per autotrazione (alla pompa)'));
     prices.push({ id: o.id, product: o.product, region, name, place: place(o), unit: unit(o), currency: o.currency, value: o.value,
       changePct: typeof o.changePct === 'number' ? Math.round(o.changePct * 100) / 100 : null, date: o.observationDate, frequency: o.frequency,
-      sourceId: canon(o.sourceId), comparability: o.comparability || null, note: o.methodology ? { es: o.methodology } : null,
+      sourceId: canon(o.sourceId), sourceName: (REG[canon(o.sourceId)] || {}).short || (REG[canon(o.sourceId)] || {}).name || canon(o.sourceId), comparability: o.comparability || null, note: o.methodology ? { es: o.methodology } : null,
       ...history(region, o.product, o.frequency) });
   }
 }
@@ -138,7 +138,7 @@ if (countries.length < 10) throw new Error('app-views: no se leyeron los paises 
 const W = 'https://dehesaindex.com/';
 const sections = [];
 const sec = (id, group, name, page, fig) => sections.push(Object.assign({ id, group, name, url: W + page }, fig ? { figure: fig } : {}));
-const fig = (value, unit, label, period, sourceId) => ({ value, unit, label, period, sourceId });
+const fig = (value, unit, label, period, sourceId) => ({ value, unit, label, period, sourceId, sourceName: sourceId === 'dehesa' ? 'Dehesa Index' : ((REG[sourceId] || {}).short || (REG[sourceId] || {}).name || sourceId) });
 try { const c = read('data/crop-progress.json'), s = c.crops.find(x => x.id === 'corn').seasons[c.lastWeekEnding.slice(0, 4)], last = s.condition.at(-1);
   sec('cultivos', 'production', t4('Estado de los cultivos (EE. UU.)', 'Crop progress (US)', 'État des cultures (É.-U.)', 'Stato delle colture (USA)'), 'cultivos.html',
     fig(last[4] + last[5], '%', t4('Maíz en estado bueno o excelente', 'Corn in good or excellent condition', 'Maïs en bon ou excellent état', 'Mais in condizioni buone o eccellenti'), last[0], 'usda_nass'));
