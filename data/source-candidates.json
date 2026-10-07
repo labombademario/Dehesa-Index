@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T15:40:18Z",
+ "generatedAt": "2026-10-07T15:48:10Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -16,9 +16,9 @@
  "summary": {
   "total": 98,
   "byStatus": {
-   "ACTIVE": 67,
+   "ACTIVE": 68,
    "BLOCKED": 8,
-   "DISCOVERED": 19,
+   "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
    "READY": 2
   },
@@ -567,53 +567,6 @@
    ],
    "notes": "Cereales, corcho y fruta figuran en la nota sin detalle de producto y no se cuentan.",
    "legalConfidence": "PENDING",
-   "registryAlignment": "ALIGNED"
-  },
-  {
-   "sourceId": "abares",
-   "registryId": "abares",
-   "country": "AU",
-   "scope": "catalog",
-   "institution": "ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences)",
-   "dataset": "Precios de granja y costes/fertilizantes",
-   "products": [
-    "fertilizer"
-   ],
-   "productsConfirmed": true,
-   "metrics": [
-    "input_price"
-   ],
-   "frequency": "unknown",
-   "access": {
-    "api": null,
-    "csv": null,
-    "json": null
-   },
-   "licenseStatus": "VERIFIED",
-   "licenseId": "CC-BY-4.0",
-   "commercialReuse": "yes",
-   "derivatives": "yes",
-   "attribution": "Source: ABARES, Department of Agriculture, Fisheries and Forestry (CC BY 4.0)",
-   "lastChecked": "2026-10-07",
-   "verification": "NOT_REVERIFIED",
-   "datasetIdentified": false,
-   "gate": {
-    "result": "READY",
-    "reasons": [
-     "Registro: VERIFIED, uso comercial y derivados permitidos"
-    ]
-   },
-   "ingestionStatus": "DISCOVERED",
-   "technicalBlockers": [
-    "ABARES bloquea las peticiones desde GitHub Actions y no muestra descarga automatizable"
-   ],
-   "canStart": false,
-   "evidence": [
-    "claude/roadmap-paises.md",
-    "claude/australia-paises-bajos-dinamarca.md"
-   ],
-   "notes": "La parte de precios de granja no enumera productos en la nota.",
-   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED"
   },
   {
@@ -1382,6 +1335,57 @@
    "lastChecked": "2026-10-02",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "abares",
+   "registryId": "abares",
+   "country": "AU",
+   "scope": "integrated",
+   "institution": "Australia — ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences)",
+   "dataset": "Ya integrada (49 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "maize",
+    "oats",
+    "rapeseed",
+    "rice",
+    "soy",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price",
+    "production",
+    "trade"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: ABARES | Dataset: Australian Crop Report, September 2026 (No. 219) | Date: 2026-09-01 | Licence: CC BY 4.0 | Original: https://doi.org/10.25814/5s62-8a44",
+   "lastChecked": "2026-10-07",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
