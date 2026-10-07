@@ -95,7 +95,8 @@ def slaughter():
     log('sacrificio', len(by), 'series')
 
 CROPS = {'C1110': 'Common wheat and spelt', 'C1120': 'Durum wheat', 'C1210': 'Rye', 'C1300': 'Barley', 'C1400': 'Oats and spring cereal mixtures', 'C1500': 'Grain maize', 'C1600': 'Triticale',
-         'I1110': 'Rape and turnip rape seeds', 'I1120': 'Sunflower seed', 'I1130': 'Soya', 'R1000': 'Potatoes', 'R2000': 'Sugar beet', 'C0000': 'Cereals for grain', 'P1100': 'Field peas'}
+         'I1110': 'Rape and turnip rape seeds', 'I1120': 'Sunflower seed', 'I1130': 'Soya', 'R1000': 'Potatoes', 'R2000': 'Sugar beet', 'C0000': 'Cereals for grain', 'P1100': 'Field peas',
+         'W1100': 'Grapes for wines', 'F1110': 'Apples', 'F1120': 'Pears', 'F0000': 'Fruits, berries and nuts (excl. citrus and grapes)'}
 MET = {'AR_THS_HA': ('Area', 'thousand ha'), 'HPRD_HUMD_EU_THS_T': ('Harvested production', 'thousand t'), 'YLD_HUMD_EU_T_HA': ('Yield', 't/ha')}
 def crops():
     j = fetch('apro_cpsh1'); recs, labs = records(j); by = {}
@@ -120,6 +121,7 @@ def herds():
         except Exception as e: log('ERROR', ds, repr(e))
     log('censo', n, 'series')
 
+OUT_EXTRA = ('AM021100', 'AM021200', 'AM021300', 'AM065000', 'AM080000')   # colza, girasol, soja, aceituna y aceite de oliva: productos concretos de la matriz de cobertura (nivel inferior al de agrupacion)
 def quarterly():
     """Índices trimestrales de precios agrícolas (Eurostat apri_pi_outq / apri_pi_inq), base 2020=100, índice nominal.
     Solo agrupaciones de 2.º nivel (código acabado en 000) para no inundar la lista."""
@@ -127,7 +129,7 @@ def quarterly():
         j = fetch(ds, p_adj='NI', unit='I20'); recs, labs = records(j); by = {}
         for r, v in recs:
             c = r['am_item']
-            if c.endswith('000'): by.setdefault(c, []).append((r['time'], v))
+            if c.endswith('000') or c in OUT_EXTRA: by.setdefault(c, []).append((r['time'], v))
         n = 0
         for c, pts in by.items():
             name = re.sub(r'\s*\(Input \d\)$', '', labs['am_item'][c])
