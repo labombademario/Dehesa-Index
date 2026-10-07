@@ -1,0 +1,797 @@
+{
+  "head" : {
+    "vars" : [
+      "cube",
+      "title",
+      "modified"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/GastronomyWholesale_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Annual  catering wholesale prices "
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:08.205Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/Consumption_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Annual consumer prices "
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:35:44.821Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/Export_Quantity_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Annual export quantities "
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:07.548Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/Production_Contribution_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Annual funds available and contributions"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:08.671Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/Import_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Annual import prices "
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:14.048Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/Import_Quantity_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Annual import quantities "
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:12.944Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/Production_Percentage_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Annual market structure (production)"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:35:59.148Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/Production_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Annual producer prices "
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:20.974Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/Production_Quantity_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Annual production quantitites "
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:08.557Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/WholesaleProcessing_Quantity_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Annual wholesale/processing quantities"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:04.222Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/Consumption_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Monthly consumer prices "
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:26.169Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/Import_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Monthly import prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:19.824Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Eggs/Production_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures eggs - Monthly producer prices "
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:30.983Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/Consumption_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for bread cereals - Annual consumer prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:31:12.311Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/Production_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for bread cereals - Annual gross producer prices, reference prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:31:10.234Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/WholesaleProcessing_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for bread cereals - Annual processing prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:07.168Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/Production_Quantity_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for bread cereals - Annual production quantities"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:35:15.083Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/Consumption_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for bread cereals - Monthly consumer prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:35:09.177Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/BreadCerealsFlourBakedGoods/WholesaleProcessing_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for bread cereals - Monthly processing prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:35:35.987Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Feed/Production_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for feedstuffs - Annual gross producer prices, reference prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:05.377Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Feed/WholesaleProcessing_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for feedstuffs - Annual processing prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:35:55.049Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Feed/Production_Quantity_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for feedstuffs - Annual production quantities"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:13.532Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Feed/WholesaleProcessing_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for feedstuffs - Monthly processing prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:32:15.249Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/GastronomyWholesale_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for milk and dairy products – Annual catering wholesale prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:35:45.051Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Oilseeds/Consumption_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for oilseeds - Annual consumer prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:37:18.352Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Oilseeds/Production_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for oilseeds - Annual processing prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:44:25.283Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Oilseeds/Production_Quantity_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for oilseeds - Annual production quantities"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:38:05.418Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/Oilseeds/Consumption_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for oilseeds - Monthly consumer prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:35:40.503Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/ProteinCrops/Production_Quantity_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures for protein crops - Annual production quantities"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:39:15.405Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Consumption_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures fruit, vegetables, and potatoes - Annual consumer prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:37:21.062Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Import_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures fruit, vegetables, and potatoes - Annual import prices "
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:38:14.763Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Import_Quantity_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures fruit, vegetables, and potatoes - Annual import quantities"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:38:21.231Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Consumption_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures fruit, vegetables, and potatoes - Monthly consumer prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:40:57.225Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Import_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures fruit, vegetables, and potatoes - Monthly import prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:34:12.560Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/FruitsVegetablesPotatoes/Import_Quantity_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures fruit, vegetables, and potatoes - Monthly import quantities"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:34:44.429Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MeatMeatProductsSausages/Production_Quantity_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures meat, meat products, and sausages - Annual production quantitites "
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:42:23.762Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MeatMeatProductsSausages/Production_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures meat, meat products, and sausages - Monthly producer prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:34:47.051Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Consumption_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Annual consumer prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:42:26.506Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Index_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Annual index (production)"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:42:31.763Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/WholesaleProcessing_Index_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Annual price indices (wholesale/processing)"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:35:43.901Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Annual producer prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:42:17.614Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Quantity_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Annual production quantities"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:34:02.827Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/WholesaleProcessing_Price_Year"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Annual wholesale/processing prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:35:46.173Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Consumption_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Monthly consumer prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:36:17.604Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Index_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Monthly index (production)"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:42:13.748Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/WholesaleProcessing_Index_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Monthly price indices (wholesale/processing)"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:42:04.053Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Monthly producer prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:44:05.085Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Quantity_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Monthly production quantities"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:42:33.403Z"
+        }
+      },
+      {
+        "cube" : {
+          "type" : "uri",
+          "value" : "https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/WholesaleProcessing_Price_Month"
+        },
+        "title" : {
+          "xml:lang" : "en",
+          "type" : "literal",
+          "value" : "Market figures milk and dairy products - Monthly wholesale/processing prices"
+        },
+        "modified" : {
+          "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type" : "literal",
+          "value" : "2026-10-07T13:35:48.423Z"
+        }
+      }
+    ]
+  }
+}
