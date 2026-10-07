@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T12:22:00Z",
+ "generatedAt": "2026-10-07T12:34:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 96,
@@ -14,13 +14,13 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "b7199fa1",
+   "sha": "893e620c",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/6442e43a-cc35-446e-8416-40064f27dd3a",
-   "completedAt": "2026-10-07T11:20:00Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/ddae3b69-8cae-493c-830b-41e7e1740361",
+   "completedAt": "2026-10-07T12:29:45Z"
   },
-  "lagHours": null,
-  "prodGeneratedAt": null,
+  "lagHours": 0.0,
+  "prodGeneratedAt": "2026-10-07T09:31:38.191944+00:00",
   "repoGeneratedAt": "2026-10-07T09:31:38.191944+00:00"
  },
  "pipelines": [
@@ -64,7 +64,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-07T00:05:33Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     }
    ],
    "last": {
@@ -96,7 +96,7 @@
     },
     {
      "path": "data/search-index.json",
-     "lastChange": "2026-10-07T00:05:33Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/ams-grain-daily.json",
@@ -1236,7 +1236,7 @@
    "files": [
     {
      "path": "data/eu-regions-macro.json",
-     "lastChange": "2026-10-06T05:36:40Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/revisions.json",
@@ -1299,7 +1299,8 @@
      "lastChange": "2026-10-05T14:17:46Z"
     },
     {
-     "path": "data/eu-regions-pl.json"
+     "path": "data/eu-regions-pl.json",
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/revisions.json",
@@ -1331,9 +1332,9 @@
    "files": [
     {
      "path": "data/eu-trade-stats.json",
-     "valid": "ok",
-     "series": 582,
-     "points": 132265,
+     "valid": "warning",
+     "series": 645,
+     "points": 146421,
      "lines": 0,
      "lastChange": "2026-10-07T10:51:52Z"
     },
@@ -1988,8 +1989,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37600911773"
    },
    "recent": {
-    "runs": 10,
-    "success": 8,
+    "runs": 9,
+    "success": 7,
     "failed": 0
    },
    "status": "ok",
@@ -2121,7 +2122,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T11:19:23Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2136,7 +2137,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-07T11:19:23Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2153,7 +2154,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-07T11:19:23Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/products"
@@ -2164,27 +2165,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-07T11:19:23Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-07T11:19:23Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-07T11:19:23Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-07T11:19:23Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-07T11:19:23Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-07T11:19:23Z"
+     "lastChange": "2026-10-07T12:28:54Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2206,8 +2207,8 @@
     "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37600826957"
    },
    "recent": {
-    "runs": 10,
-    "success": 7,
+    "runs": 9,
+    "success": 6,
     "failed": 2
    },
    "status": "ok",
@@ -2223,6 +2224,10 @@
    "files": [
     {
      "path": "data/poland-eurostat-stats.json",
+     "valid": "warning",
+     "series": 898,
+     "points": 33535,
+     "lines": 0,
      "lastChange": "2026-10-07T10:33:38Z"
     },
     {
@@ -2255,6 +2260,10 @@
    "files": [
     {
      "path": "data/poland-stats.json",
+     "valid": "warning",
+     "series": 184,
+     "points": 5943,
+     "lines": 0,
      "lastChange": "2026-10-07T10:39:46Z"
     },
     {

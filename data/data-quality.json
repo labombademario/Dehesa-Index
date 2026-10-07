@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T09:28:38Z",
+ "generatedAt": "2026-10-07T12:34:39Z",
  "summary": {
-  "files": 25,
+  "files": 27,
   "errors": 0,
-  "warnings": 4
+  "warnings": 7
  },
  "files": [
   {
@@ -288,6 +288,72 @@
    "nErrors": 0
   },
   {
+   "file": "poland-eurostat-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "PL/pl-es-crop-i1130-area: salto 6200.0 -> 7600.0 en 2016 (mediana previa 300)",
+    "PL/pl-es-crop-i1130-area: salto 7600.0 -> 9330.0 en 2017 (mediana previa 300)",
+    "PL/pl-es-crop-i1130-production: salto 2020.0 -> 8900.0 en 2015 (mediana previa 300)",
+    "PL/pl-es-crop-i1130-production: salto 8900.0 -> 14870.0 en 2016 (mediana previa 300)",
+    "PL/pl-es-crop-i1130-production: salto 14870.0 -> 20540.0 en 2017 (mediana previa 300)",
+    "PL/pl-es-crop-i2200-production: salto 700.0 -> 9800.0 en 2007 (mediana previa 100)",
+    "PL/pl-es-crop-i2200-production: salto 9800.0 -> 5700.0 en 2008 (mediana previa 100)",
+    "PL/pl-es-crop-i2200-production: salto 5700.0 -> 3300.0 en 2009 (mediana previa 100)",
+    "PL/pl-es-meatm-b4200-ths_hd: salto 3780.0 -> 3280.0 en 2003-07 (mediana previa 20)",
+    "PL/pl-es-meatm-b4200-ths_hd: salto 3280.0 -> 2900.0 en 2003-08 (mediana previa 20)",
+    "PL/pl-es-meatm-b4200-ths_hd: salto 2900.0 -> 3100.0 en 2003-09 (mediana previa 60)",
+    "PL/pl-es-meatm-b4200-ths_hd: salto 3100.0 -> 3250.0 en 2003-10 (mediana previa 60)",
+    "PL/pl-es-meatm-b7490-ths_hd: salto 0 -> 260.0 en 2005-01 (mediana previa 10)",
+    "PL/pl-es-meatm-b7490-ths_hd: salto 320.0 -> 3546720.0 en 2009-01 (mediana previa 330)",
+    "PL/pl-es-meatm-b7490-ths_hd: salto 3546720.0 -> 2568450.0 en 2009-02 (mediana previa 330)",
+    "PL/pl-es-meatm-b7490-ths_hd: salto 2568450.0 -> 3537680.0 en 2009-03 (mediana previa 390)",
+    "PL/pl-es-meatm-b7490-ths_hd: salto 3537680.0 -> 3977810.0 en 2009-04 (mediana previa 400)",
+    "PL/pl-es-meatm-b7490-ths_hd: salto 3977810.0 -> 4706660.0 en 2009-05 (mediana previa 410)",
+    "PL/pl-es-meatm-b7490-ths_hd: salto 4706660.0 -> 4717580.0 en 2009-06 (mediana previa 450)",
+    "PL/pl-es-meatm-b7490-ths_t: salto 20.0 -> 5850.0 en 2009-01 (mediana previa 20)",
+    "PL/pl-es-meatm-b7490-ths_t: salto 5850.0 -> 3870.0 en 2009-02 (mediana previa 20)",
+    "PL/pl-es-meatm-b7490-ths_t: salto 3870.0 -> 4740.0 en 2009-03 (mediana previa 30)",
+    "PL/pl-es-meatm-b7490-ths_t: salto 4740.0 -> 6790.0 en 2009-04 (mediana previa 30)",
+    "PL/pl-es-meatm-b7490-ths_t: salto 6790.0 -> 8910.0 en 2009-05 (mediana previa 30)",
+    "PL/pl-es-meatm-b7490-ths_t: salto 8910.0 -> 9330.0 en 2009-06 (mediana previa 30)"
+   ],
+   "stats": {
+    "series": 898,
+    "points": 33535,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-07T10:33:36Z",
+   "info": [],
+   "nWarnings": 40,
+   "nErrors": 0
+  },
+  {
+   "file": "poland-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "PL/pl-gus-crop-47782: salto 855.0 -> 7514.0 en 2016 (mediana previa 268)",
+    "PL/pl-gus-crop-47782: salto 7514.0 -> 9333.0 en 2017 (mediana previa 294)",
+    "PL/pl-gus-crop-47784: salto 1460.1 -> 14743.6 en 2016 (mediana previa 334)",
+    "PL/pl-gus-crop-47784: salto 14743.6 -> 20297.4 en 2017 (mediana previa 336)",
+    "PL/pl-gus-crop-47784: salto 20297.4 -> 10270.9 en 2018 (mediana previa 336)",
+    "PL/pl-gus-crop-47784: salto 10270.9 -> 12380.1 en 2019 (mediana previa 429)",
+    "PL/pl-gus-crop-47784: salto 12380.1 -> 15777.6 en 2020 (mediana previa 524)"
+   ],
+   "stats": {
+    "series": 184,
+    "points": 5943,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-07T10:39:30Z",
+   "info": [],
+   "nWarnings": 7,
+   "nErrors": 0
+  },
+  {
    "file": "eu-gapfill-stats.json",
    "schema": "country-stats",
    "status": "ok",
@@ -376,17 +442,24 @@
   {
    "file": "eu-trade-stats.json",
    "schema": "country-stats",
-   "status": "ok",
+   "status": "warning",
    "errors": [],
-   "warnings": [],
+   "warnings": [
+    "PL/eu-pl-trade-exp-cereals: salto 3.353 -> 11.187 en 2002-07 (mediana previa 0.205)",
+    "PL/eu-pl-trade-exp-cereals: salto 11.187 -> 10.488 en 2002-08 (mediana previa 0.209)",
+    "PL/eu-pl-trade-exp-cereals: salto 10.488 -> 5.657 en 2002-09 (mediana previa 0.21)",
+    "PL/eu-pl-trade-exp-cereals: salto 5.657 -> 13.342 en 2002-10 (mediana previa 0.21)",
+    "PL/eu-pl-trade-exp-cereals: salto 3.849 -> 9.441 en 2004-09 (mediana previa 0.348)",
+    "PL/eu-pl-trade-exp-cereals: salto 9.441 -> 11.892 en 2004-10 (mediana previa 0.348)"
+   ],
    "stats": {
-    "series": 582,
-    "points": 132265,
+    "series": 645,
+    "points": 146421,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T19:14:47Z",
+   "generatedAt": "2026-10-07T10:51:48Z",
    "info": [],
-   "nWarnings": 0,
+   "nWarnings": 6,
    "nErrors": 0
   },
   {
