@@ -100,7 +100,7 @@ for pid, key, nm in (("product/288", "butter", "Cooking butter (industrial)"), (
     spec("ch-foag-milk-proc-%s" % key, "prices", "%s: processing price, ex-processing (FOAG)" % nm, "CHF/kg", "MilkDairyProducts/WholesaleProcessing_Price_Month", pid, origin=None)
 for pid, key, nm, un in (("product/268", "uht-milk", "Whole milk UHT", "CHF/l"), ("product/292", "past-milk", "Whole milk, pasteurised", "CHF/l"), ("product/283", "cream", "Cream UHT 35%", "CHF/l"),
                          ("product/270", "butter", "Cooking butter", "CHF/kg"), ("product/296", "yogurt", "Plain yoghurt", "CHF/kg"), ("product/316", "emmental", "Emmentaler, mild", "CHF/kg"),
-                         ("product/319", "gruyere", "Gruyere, mild", "CHF/kg"), ("product/311", "mozzarella", "Mozzarella", "CHF/kg"), ("product/293", "raclette", "Raclette cheese", "CHF/kg")):
+                         ("product/319", "gruyere", "Gruyere, mild", "CHF/kg"), ("product/311", "mozzarella", "Mozzarella", "CHF/kg")):
     spec("ch-foag-milk-retail-%s" % key, "prices", "%s: retail price (FOAG)" % nm, un, "MilkDairyProducts/Consumption_Price_Month", pid, origin=None)
 for pid, key, nm in (("product/163", "all", "all production forms"), ("product/152", "barn", "barn"), ("product/142", "freerange", "free range"), ("product/131", "organic", "organic")):
     spec("ch-foag-egg-retail-%s" % key, "prices", "Eggs, %s: retail price, raw (FOAG)" % nm, "CHF cent/egg", "Eggs/Consumption_Price_Month", pid, origin=None, cur="Centime")

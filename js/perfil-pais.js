@@ -79,7 +79,7 @@
     if (m.unemp) add('unemp', nf(m.unemp.v, 1) + ' %', m.unemp);
     if (m.agri) add('agri', nf(m.agri.v, 1) + ' %', m.agri);
     if (m.debt) add('debt', nf(m.debt.v, 0) + ' %' + (m.debt.src === 'wb-central' ? ' *' : ''), m.debt);
-    var SY = { EUR: '€', USD: '$', CAD: 'C$', AUD: 'A$', DKK: 'kr' };
+    var SY = { EUR: '€', USD: '$', CAD: 'C$', AUD: 'A$', DKK: 'kr', CHF: 'CHF' };
     var w = x.wage;
     if (w) items.push('<div style="min-width:150px" title="' + x.esc((w.scope && (w.scope[x.lang] || w.scope.es)) || '') + ' · ' + x.esc(w.src) + '"><div style="font-size:11px;color:var(--text-faint)">' + x.esc(w.basis === 'mean' ? t.wagem : t.wage) + '</div><div style="font-size:15px;font-weight:700;font-variant-numeric:tabular-nums">' + nf(w.v, w.v >= 1000 ? 0 : 2) + ' ' + (SY[w.cur] || w.cur) + ' <span style="font-weight:400;font-size:12px;color:var(--text-muted)">/ ' + x.esc(t.per[w.per]) + ' · ' + x.esc(t[w.tax]) + '</span> <span style="font-weight:400;color:var(--text-faint)">(' + x.esc(w.y) + ')</span></div></div>');
     else if (m.wageh) items.push('<div style="min-width:150px"><div style="font-size:11px;color:var(--text-faint)">' + x.esc(t.wageh) + '</div><div style="font-size:15px;font-weight:700;font-variant-numeric:tabular-nums">' + nf(m.wageh.v, 2) + ' € <span style="font-weight:400;font-size:12px;color:var(--text-muted)">/ ' + x.esc(t.per.hour) + '</span> <span style="font-weight:400;color:var(--text-faint)">(' + m.wageh.y + ')</span></div></div>');

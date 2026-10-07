@@ -92,7 +92,7 @@
   var FX = null, FXT = { es: ['Convertir a EUR con el tipo de cada periodo', 'Convertido a euros con la media mensual del tipo de referencia del BCE de cada periodo (anual y trimestral: media de sus meses); no con el tipo de hoy. Original:', 'Sin tipo de cambio disponible para algún periodo: esos puntos se omiten.'], en: ['Convert to EUR at each period’s rate', 'Converted to euros using the ECB reference rate monthly average of each period (annual and quarterly: average of their months), not today’s rate. Original:', 'No exchange rate for some periods: those points are omitted.'], fr: ['Convertir en EUR au taux de chaque période', 'Converti en euros avec la moyenne mensuelle du taux de référence de la BCE de chaque période (annuel et trimestriel : moyenne de leurs mois), pas le taux d’aujourd’hui. Original :', 'Pas de taux pour certaines périodes : ces points sont omis.'], it: ['Converti in EUR al cambio di ogni periodo', 'Convertito in euro con la media mensile del tasso di riferimento BCE di ciascun periodo (annuale e trimestrale: media dei mesi), non il cambio di oggi. Originale:', 'Nessun tasso per alcuni periodi: quei punti sono omessi.'] };
   function curOf(u) {
     u = String(u || ''); if (/index|øre|unit as in source|%/i.test(u)) return null;
-    if (/^(CAD|C\$)/.test(u)) return 'CAD'; if (/^(A\$|AUD)/.test(u)) return 'AUD'; if (/^DKK/.test(u)) return 'DKK'; if (/^(USD|US\$|\$)/.test(u)) return 'USD'; if (/^(GBP|£)/.test(u)) return 'GBP'; return null;
+    if (/^(CAD|C\$)/.test(u)) return 'CAD'; if (/^(A\$|AUD)/.test(u)) return 'AUD'; if (/^DKK/.test(u)) return 'DKK'; if (/^CHF/.test(u)) return 'CHF'; if (/^(USD|US\$|\$)/.test(u)) return 'USD'; if (/^(GBP|£)/.test(u)) return 'GBP'; return null;
   }
   function fxRate(cur, per) {
     var a = FX && FX.currencies[cur]; if (!a) return null; if (!FX._m) FX._m = {};
@@ -108,7 +108,7 @@
     sr.points.forEach(function (p) { var r = fxRate(cu, p[0]); if (r && p[1] != null) pts.push([p[0], p[1] / r]); else miss = true; });
     if (pts.length < 2) return sr; var o = {}, k; for (k in sr) o[k] = sr[k];
     o.points = pts; o.latestPeriod = pts[pts.length - 1][0]; o.latest = pts[pts.length - 1][1]; o.changePct = pts.length > 1 && pts[pts.length - 2][1] ? (o.latest - pts[pts.length - 2][1]) / Math.abs(pts[pts.length - 2][1]) * 100 : null;
-    o.unit = sr.unit.replace(/^(CAD|C\$|A\$|AUD|DKK|USD|US\$|\$|GBP|£)/, 'EUR'); o._fx = { from: cu, orig: sr, miss: miss }; return o;
+    o.unit = sr.unit.replace(/^(CAD|C\$|A\$|AUD|DKK|CHF|USD|US\$|\$|GBP|£)/, 'EUR'); o._fx = { from: cu, orig: sr, miss: miss }; return o;
   }
   function fxBox(cur0, cur) {
     if (!FX || !curOf(cur0.unit)) return ''; var w = FXT[lang()] || FXT.es;

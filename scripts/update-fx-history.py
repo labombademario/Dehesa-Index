@@ -6,7 +6,7 @@ con el tipo de cada periodo (no el de hoy)."""
 import csv, datetime, io, json, sys, time, urllib.request
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-CUR = ["USD", "CAD", "AUD", "GBP", "DKK"]
+CUR = ["USD", "CAD", "AUD", "GBP", "DKK", "CHF"]
 URL = "https://data-api.ecb.europa.eu/service/data/EXR/M.%s.EUR.SP00.A?format=csvdata&startPeriod=1999-01"
 LOG = []
 def log(*a):

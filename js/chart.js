@@ -240,10 +240,10 @@
   /* ---- precios reales: deflactar con el IPC del país (data/cpi.json). Solo aritmética sobre datos publicados; lo que no se puede deflactar se omite y se cuenta ---- */
   var CPIDOC = null, CPIP = null;
   var EUR_CC = { AT: 1, BE: 1, BG: 1, CY: 1, DE: 1, EE: 1, EL: 1, ES: 1, FI: 1, FR: 1, HR: 1, IE: 1, IT: 1, LT: 1, LU: 1, LV: 1, MT: 1, NL: 1, PT: 1, SI: 1, SK: 1, EU: 1, EA: 1 };
-  var CUR_CC = { USD: { US: 1 }, GBP: { UK: 1 }, CAD: { CA: 1 }, AUD: { AU: 1 }, DKK: { DK: 1 }, EUR: EUR_CC };
+  var CUR_CC = { USD: { US: 1 }, GBP: { UK: 1 }, CAD: { CA: 1 }, AUD: { AU: 1 }, DKK: { DK: 1 }, CHF: { CH: 1 }, EUR: EUR_CC };
   function curOfUnit(u) {
     u = String(u || ''); if (/index|%|unit as in source/i.test(u)) return null;
-    if (/€|\bEUR\b/.test(u)) return 'EUR'; if (/^(USD|US\$|\$)|\bUSD\b/.test(u)) return 'USD'; if (/£|\bGBP\b|^p\//.test(u)) return 'GBP'; if (/^(CAD|C\$)|\bCAD\b/.test(u)) return 'CAD'; if (/^(A\$|AUD)|\bAUD\b/.test(u)) return 'AUD'; if (/\bDKK\b/.test(u)) return 'DKK'; return null;
+    if (/€|\bEUR\b/.test(u)) return 'EUR'; if (/^(USD|US\$|\$)|\bUSD\b/.test(u)) return 'USD'; if (/£|\bGBP\b|^p\//.test(u)) return 'GBP'; if (/^(CAD|C\$)|\bCAD\b/.test(u)) return 'CAD'; if (/^(A\$|AUD)|\bAUD\b/.test(u)) return 'AUD'; if (/\bDKK\b/.test(u)) return 'DKK'; if (/\bCHF\b/.test(u)) return 'CHF'; return null;
   }
   function realCan(cc, unit) { var c = curOfUnit(unit); return !!(c && CUR_CC[c] && CUR_CC[c][cc]); }
   function realLoad() { if (CPIDOC) return Promise.resolve(CPIDOC); if (!CPIP) CPIP = fetch('data/cpi.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { CPIDOC = d; return d; }).catch(function () { return null; }); return CPIP; }
