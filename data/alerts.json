@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-10-05T13:55:59.184Z",
+  "generatedAt": "2026-10-07T15:41:59.844Z",
   "status": "informational",
   "rules": [
     {
@@ -34,8 +34,8 @@
       "region": "eu",
       "sourceId": "world_bank",
       "severity": "high",
-      "changePct": 16.89,
-      "observationDate": "2026-08-01"
+      "changePct": 20.42,
+      "observationDate": "2026-09-01"
     },
     {
       "type": "period_move",
