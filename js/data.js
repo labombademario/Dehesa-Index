@@ -7,12 +7,12 @@
 (function (global) {
   'use strict';
 
-  // --- Tipos de cambio (Banco Central Europeo, referencia del 6 oct 2026) -
-  var EURUSD = 1.1269;
-  var GBPUSD = 1.3276;
-  var FX_DATE = '2026-10-06'; // fecha ISO de la cotización, la actualiza scripts/update-fx.mjs
-  var CADUSD = 0.7018;
-  var DKKUSD = 0.1508; // corona danesa (ERM II, ~7,46 por EUR); la actualiza scripts/update-fx.mjs
+  // --- Tipos de cambio (Banco Central Europeo, referencia del 7 oct 2026) -
+  var EURUSD = 1.1177;
+  var GBPUSD = 1.3205;
+  var FX_DATE = '2026-10-07'; // fecha ISO de la cotización, la actualiza scripts/update-fx.mjs
+  var CADUSD = 0.7016;
+  var DKKUSD = 0.1495; // corona danesa (ERM II, ~7,46 por EUR); la actualiza scripts/update-fx.mjs
   var FX = { USD: 1, EUR: EURUSD, GBP: GBPUSD, CAD: CADUSD, DKK: DKKUSD };
   var CCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', CAD: 'C$', DKK: 'kr ' };
 
