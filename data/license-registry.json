@@ -2087,6 +2087,84 @@
    "legalConfidence": "HIGH",
    "legalConfidenceReason": "Condiciones generales de opendata.swiss (uso comercial permitido citando fuente) verificadas y fichas del BLW con 'Commercial Allowed / Reference Required'. Confianza alta fijada por el propietario (7 oct 2026) para toda la fuente FOAG.",
    "short": "FOAG (Suiza)"
+  },
+  "meteoswiss": {
+   "name": "Switzerland — MeteoSwiss (Federal Office of Meteorology and Climatology), Open Government Data: automatic weather stations SwissMetNet",
+   "url": "https://opendata.swiss/en/dataset/automatische-wetterstationen-aktuelle-messwerte",
+   "country": "CH",
+   "licenseId": "CC-BY-4.0",
+   "licenseName": "Creative Commons Attribution 4.0 International",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: MeteoSwiss | Dataset: Automatic weather stations (ogd-smn), monthly | Licence: CC BY 4.0 | Original: https://opendata.swiss/en/dataset/automatische-wetterstationen-aktuelle-messwerte",
+   "additionalRestrictions": "Source must read 'Source: MeteoSwiss'; MeteoSwiss warnings must not be altered; no implication of MeteoSwiss endorsement; avoid high-frequency downloads (monthly refresh used).",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-07",
+   "status": "VERIFIED",
+   "confidence": "high",
+   "evidence": "MeteoSwiss OGD terms (CC BY 4.0, 'Source: MeteoSwiss') on opendata.swiss and the MeteoSwiss OGD documentation; files read from https://data.geo.admin.ch/ch.meteoschweiz.ogd-smn/ from GitHub Actions (probe 7 Oct 2026).",
+   "used": true,
+   "aliases": [],
+   "notes": "Monthly mean temperature (tre200m0) and monthly precipitation (rre150m0) for 9 stations from 1991; no value is altered other than date format.",
+   "legalConfidence": "HIGH",
+   "legalConfidenceReason": "Licencia CC BY 4.0 explicita con atribucion 'Source: MeteoSwiss'.",
+   "short": "MeteoSwiss (Suiza)"
+  },
+  "bfs_ch": {
+   "name": "Switzerland — FSO/BFS (Federal Statistical Office), agricultural statistics (cantons, farm accounts, structure)",
+   "url": "https://www.bfs.admin.ch/bfs/en/home/statistics/agriculture-forestry.html",
+   "country": "CH",
+   "licenseId": "PERMISSION-REQUIRED",
+   "licenseName": "Commercial use requires permission of the data owner",
+   "licenseUrl": "https://www.bfs.admin.ch/bfs/en/home/statistics/agriculture-forestry.html",
+   "commercialUse": "conditional",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": "",
+   "additionalRestrictions": "Agricultural datasets of the FSO on opendata.swiss are marked 'Use for commercial purposes requires permission of the data owner'.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-07",
+   "status": "PENDING",
+   "confidence": "high",
+   "evidence": "Agricultural datasets of the FSO on opendata.swiss are marked 'Use for commercial purposes requires permission of the data owner'. Not ingested.",
+   "used": false,
+   "aliases": [],
+   "notes": "Not used. Permission from the data owner would be needed before any ingestion.",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Uso comercial sujeto a permiso del titular; no se ingiere.",
+   "short": "BFS (Suiza)"
+  },
+  "swissimpex_ch": {
+   "name": "Switzerland — FOCBS/BAZG, SwissImpex and Tares foreign trade statistics",
+   "url": "https://www.swiss-impex.admin.ch",
+   "country": "CH",
+   "licenseId": "PERMISSION-REQUIRED",
+   "licenseName": "Commercial use requires permission of the data owner",
+   "licenseUrl": "https://www.swiss-impex.admin.ch",
+   "commercialUse": "conditional",
+   "derivatives": "unclear",
+   "redistribution": "unclear",
+   "attributionRequired": true,
+   "attributionText": "",
+   "additionalRestrictions": "SwissImpex/Tares terms: commercial use requires permission of the data owner.",
+   "thirdPartyExceptions": false,
+   "thirdPartyNote": "",
+   "verifiedAt": "2026-10-07",
+   "status": "PENDING",
+   "confidence": "high",
+   "evidence": "SwissImpex/Tares terms: commercial use requires permission of the data owner. Not ingested.",
+   "used": false,
+   "aliases": [],
+   "notes": "Not used. Permission from the data owner would be needed before any ingestion.",
+   "legalConfidence": "PENDING",
+   "legalConfidenceReason": "Uso comercial sujeto a permiso del titular; no se ingiere.",
+   "short": "SwissImpex (Suiza)"
   }
  },
  "files": {
@@ -2755,6 +2833,16 @@
    "byCountry": {
     "CH": "foag_ch"
    }
+  },
+  "data/switzerland-meteo-stats.json": {
+   "byCountry": {
+    "CH": "meteoswiss"
+   }
+  },
+  "data/ch-chain.json": {
+   "sources": [
+    "foag_ch"
+   ]
   }
  },
  "derived": [

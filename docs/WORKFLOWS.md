@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-107 workflows (73 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+108 workflows (74 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -151,7 +151,8 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-spain-wine-monthly.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-wine-monthly.py | revisions.json, spain-wine, spain-wine-monthly-log.txt … | finish, validate-files |
 | update-spain-wine.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-spain-wine.py | revisions.json, spain-wine, spain-wine-log.txt … | finish, validate-files |
 | update-spain.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-mapa-spain.py | revisions.json, spain-log.txt, spain-stats.json | finish, validate-files |
-| update-switzerland-foag.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-ch-foag.py | revisions.json, switzerland-foag-log.txt, switzerland-foag-stats.json | finish, validate-files |
+| update-switzerland-foag.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-ch-foag.py | ch-chain.json, revisions.json, switzerland-foag-log.txt … | finish, validate-files |
+| update-switzerland-meteo.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-ch-meteo.py | revisions.json, switzerland-meteo-log.txt, switzerland-meteo-stats.json | finish, validate-files |
 | update-usda-calendar.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-usda-calendar.py | revisions.json, usda-calendar.json | finish, validate-files |
 | update-usda-psd.yml | a mano | mensual | update-usda-psd.mjs | supply-demand-map.json, supply-demand.json | finish, validate-files |
 | update-worldbank-agri.yml | generado | mensual | detect-revisions.py, gen-workflows.py, update-worldbank-agri.py | revisions.json, worldbank-agri-log.txt, worldbank-agri.json | finish, validate-files |

@@ -245,9 +245,18 @@ sources:
     script: scripts/update-ch-foag.py
     timeout: 30
     script_timeout: 20
-    data: [switzerland-foag-stats.json]
+    data: [switzerland-foag-stats.json, ch-chain.json]
     log: switzerland-foag-log.txt
     message: Datos Suiza (FOAG, mercados agrarios)
+  - id: switzerland-meteo
+    name: Update Switzerland (MeteoSwiss climate)
+    cron: ['35 5 4 * *']
+    script: scripts/update-ch-meteo.py
+    timeout: 20
+    script_timeout: 10
+    data: [switzerland-meteo-stats.json]
+    log: switzerland-meteo-log.txt
+    message: Datos Suiza (MeteoSuisse, clima)
   - id: poland-eurostat
     name: Update Poland (Eurostat)
     cron: ['45 17 * * 2,5']

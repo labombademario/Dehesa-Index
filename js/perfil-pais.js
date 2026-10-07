@@ -114,7 +114,7 @@
     fr: { blocks: 'Résumé', B: { markets: 'Marchés', production: 'Production', trade: 'Commerce', inputs: 'Intrants et coûts' }, ser: 'séries', upto: 'jusqu’à', changed: 'Ce qui a changé', changedHint: 'Seulement les variations de la dernière période inhabituellement fortes pour la série (plus de 2,5 écarts-types de son propre historique) et récentes.', none: 'Aucun mouvement inhabituel dans les données récentes.', vs: 'vs. période précédente', rare: 'x sa variation habituelle' },
     it: { blocks: 'Riepilogo', B: { markets: 'Mercati', production: 'Produzione', trade: 'Commercio', inputs: 'Input e costi' }, ser: 'serie', upto: 'fino a', changed: 'Cosa è cambiato', changedHint: 'Solo variazioni dell’ultimo periodo insolitamente grandi per quella serie (oltre 2,5 deviazioni standard del suo storico) e recenti.', none: 'Nessun movimento insolito nei dati recenti.', vs: 'vs. periodo precedente', rare: 'x la sua variazione abituale' }
   };
-  var BLK = { markets: ['quotes', 'prices', 'prices_lv', 'prices_fv', 'milk', 'milk_regions', 'meat_regions'], production: ['production', 'crops', 'crops_regions', 'livestock', 'stocks', 'environment', 'organic'], trade: ['trade', 'partners'], inputs: ['inputs', 'inputs_f', 'inputs_a', 'costs', 'prices_paid', 'idx_perc', 'idx_pag', 'income'] };
+  var BLK = { markets: ['quotes', 'prices', 'prices_lv', 'prices_fv', 'milk', 'milk_regions', 'meat_regions'], production: ['production', 'crops', 'crops_regions', 'livestock', 'stocks', 'environment', 'organic', 'climate'], trade: ['trade', 'partners'], inputs: ['inputs', 'inputs_f', 'inputs_a', 'costs', 'prices_paid', 'idx_perc', 'idx_pag', 'income'] };
   var MAXAGE = { daily: 10, weekly: 25, monthly: 80, quarterly: 160, semiannual: 220, annual: 520 };
   function pms(p) { var m = /^(\d{4})(?:-(\d{2}|Q[1-4]|S[12]))?(?:-(\d{2}))?$/.exec(p); if (!m) return NaN; var mo = 0; if (m[2]) mo = m[2][0] === 'Q' ? (+m[2][1] - 1) * 3 : m[2][0] === 'S' ? (+m[2][1] - 1) * 6 : +m[2] - 1; return Date.UTC(+m[1], mo, m[3] ? +m[3] : 1); }
   function unusual(S) {
@@ -182,6 +182,12 @@
     }).join('') + '</div>';
     return h;
   }
+
+  function chainBox(x) {
+    var d = document, run = function () { if (window.DIChChain) window.DIChChain.box(x); };
+    if (window.DIChChain) setTimeout(run, 0); else { var sc = d.createElement('script'); sc.src = 'js/ch-chain.js'; sc.onload = run; d.head.appendChild(sc); }
+    return '<div id="ch-chain-box"></div>';
+  }
   function html(cc, c, x) {
     var t = T[x.lang] || T.es, esc = x.esc, nf = x.nf, S = c.series, groups = {}, i;
     S.forEach(function (s) { (groups[s.group] = groups[s.group] || []).push(s); });
@@ -245,6 +251,7 @@
         '<div style="font-size:12px;font-weight:700;color:#2f6b4a;margin-top:8px">' + esc(t.go) + ' →</div></button>';
     });
     h += '</div>' + (qs.length ? '</details>' : '') + '<h2 id="ps-explorer" class="pp-anchor" style="margin:6px 0 12px;font-size:19px">' + esc(t.exploreTitle) + ' ' + esc(x.t.countries[cc] || c.name) + ' ' + SHR(x, 'ps-explorer') + '</h2>';
+    if (cc === 'CH') h += chainBox(x);
     return h;
   }
   window.DIProfile = { coverage: coverage, html: html, macroStrip: macroStrip, rateOf: rateOf, kpis: kpis, spark: spark, flag: function (cc) { return FLAG[cc] || ''; } };

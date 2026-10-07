@@ -174,3 +174,6 @@ if not DEV or os.environ.get("CH_WRITE"):
     OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     LOG.write_text("\n".join(log) + "\n", encoding="utf-8")
 print("series:", len(series), "omitidas:", len(skipped))
+if not DEV or os.environ.get("CH_WRITE"):
+    import subprocess
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "build-ch-chain.py")], check=True)
