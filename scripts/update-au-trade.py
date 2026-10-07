@@ -27,7 +27,8 @@ def abs_csv(path, tries=3):
 EXISTING = {"041": "wheat", "043": "barley", "044": "maize", "222": "oilseeds", "011": "beef", "012": "sheepmeat", "024": "cheese", "001": "live"}
 PROD = [("0", "agri-food total (SITC 0, food and live animals)", "agrifood"), ("001", "live animals", "live"), ("011", "bovine meat", "beef"), ("012", "other meat (incl. sheep meat)", "sheepmeat"),
         ("022", "milk and cream", "milk"), ("024", "cheese and curd", "cheese"), ("041", "wheat", "wheat"), ("043", "barley", "barley"), ("044", "maize", "maize"), ("061", "sugar", "sugar"),
-        ("112", "alcoholic beverages (incl. wine)", "wine"), ("222", "oilseeds (canola etc.)", "oilseeds"), ("263", "cotton", "cotton"), ("268", "wool", "wool"), ("56", "fertilisers", "fertilisers")]
+        ("112", "alcoholic beverages (incl. wine)", "wine"), ("222", "oilseeds (canola etc.)", "oilseeds"), ("263", "cotton", "cotton"), ("268", "wool", "wool"), ("56", "fertilisers", "fertilisers"),
+        ("023", "butter and other milk fats", "butter"), ("025", "birds eggs", "eggs"), ("057", "fruit and nuts (fresh or dried)", "fruit"), ("042", "rice", "rice")]
 def mult(r): return 10 ** int(r.get("UNIT_MULT") or 0)
 def put(sid, group, label, unit, freq, pts, src, ch=True):
     d = {p: v for p, v in pts}

@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T13:55:00Z",
+ "generatedAt": "2026-10-07T14:23:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 96,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "e15276ad",
+   "sha": "6c914342",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/c8a0bd64-06c2-427f-ad30-6fe94c94bc13",
-   "completedAt": "2026-10-07T13:26:39Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/f3a58ea9-7b44-49bb-98bc-0526eff62287",
+   "completedAt": "2026-10-07T14:09:58Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -1877,7 +1877,7 @@
     "10 22 * * 5",
     "20 14 * * 3"
    ],
-   "nextRun": "2026-10-07T14:20:00Z",
+   "nextRun": "2026-10-09T22:10:00Z",
    "files": [
     {
      "path": "data/mb-markets/sheep-goat.json",
@@ -2122,7 +2122,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T13:25:48Z"
+     "lastChange": "2026-10-07T14:09:10Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2137,7 +2137,7 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-07T13:25:48Z"
+     "lastChange": "2026-10-07T14:09:10Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2154,7 +2154,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-07T13:25:48Z"
+     "lastChange": "2026-10-07T14:09:10Z"
     },
     {
      "path": "data/products"
@@ -2165,27 +2165,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-07T13:25:48Z"
+     "lastChange": "2026-10-07T14:09:10Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-07T13:25:48Z"
+     "lastChange": "2026-10-07T14:09:10Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-07T13:25:48Z"
+     "lastChange": "2026-10-07T14:09:10Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-07T13:25:48Z"
+     "lastChange": "2026-10-07T14:09:10Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-07T13:25:48Z"
+     "lastChange": "2026-10-07T14:09:10Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-07T13:25:48Z"
+     "lastChange": "2026-10-07T14:09:10Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2924,7 +2924,7 @@
     "15 14 * * 1-5",
     "30 23 * * 1-5"
    ],
-   "nextRun": "2026-10-07T14:15:00Z",
+   "nextRun": "2026-10-07T23:30:00Z",
    "files": [
     {
      "path": "data/us-cash-bids/manifest.json",

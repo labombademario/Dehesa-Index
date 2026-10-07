@@ -215,6 +215,17 @@ try:
         if s: au.append(s)
 except Exception as e:
     log.append("ERROR AU slaughter: " + str(e)[:200])
+try:  # ABS LSTOCK_MEAT: carne producida (toneladas), nacional, serie original, trimestral
+    rows = abs_csv("LSTOCK_MEAT/all?startPeriod=1990&format=csvfilewithlabels")
+    for code, id_, label in [("171", "au-chicken-meat-prod", "Chicken meat produced"), ("1101", "au-pig-meat-prod", "Pig meat produced"), ("301", "au-beef-prod", "Beef produced")]:
+        pts = []
+        for r in rows:
+            if r.get("LSTOCK_MEAT") == code and r.get("STATE") == "AUS" and r.get("TSEST") == "10" and r.get("OBS_VALUE") not in (None, "") and (r.get("UNIT_MEASURE") or "T") == "T":
+                pts.append((r["TIME_PERIOD"], float(r["OBS_VALUE"]) * (10 ** int(r.get("UNIT_MULT") or 0))))
+        s = mk(id_, label, "tonnes", "quarterly", pts, "production")
+        if s: au.append(s)
+except Exception as e:
+    log.append("ERROR AU meat produced: " + str(e)[:200])
 for code, id_, label in [("041", "au-exp-wheat", "Exports: wheat"), ("043", "au-exp-barley", "Exports: barley"), ("044", "au-exp-maize", "Exports: maize"), ("222", "au-exp-oilseeds", "Exports: oilseeds (canola etc.)"),
                          ("011", "au-exp-beef", "Exports: bovine meat"), ("012", "au-exp-sheepmeat", "Exports: other meat (incl. sheep meat)"), ("024", "au-exp-cheese", "Exports: cheese and curd"), ("001", "au-exp-live", "Exports: live animals")]:
     try:
@@ -229,7 +240,7 @@ for code, id_, label in [("041", "au-exp-wheat", "Exports: wheat"), ("043", "au-
     except Exception as e:
         log.append("ERROR AU " + id_ + ": " + str(e)[:200])
 
-for code, id_, label in [("3117007", "au-xpi-cereals", "Export price index: cereals"), ("3117002", "au-xpi-meat", "Export price index: meat and offal"), ("3117004", "au-xpi-dairy", "Export price index: dairy products"), ("3117009", "au-xpi-oilseeds", "Export price index: oil seeds"), ("3117001", "au-xpi-live", "Export price index: live animals"), ("3117012", "au-xpi-sugar", "Export price index: sugars"), ("3117034", "au-xpi-wool", "Export price index: wool and animal hair")]:
+for code, id_, label in [("3117006", "au-xpi-fruit", "Export price index: edible fruit and nuts"), ("3117007", "au-xpi-cereals", "Export price index: cereals"), ("3117002", "au-xpi-meat", "Export price index: meat and offal"), ("3117004", "au-xpi-dairy", "Export price index: dairy products"), ("3117009", "au-xpi-oilseeds", "Export price index: oil seeds"), ("3117001", "au-xpi-live", "Export price index: live animals"), ("3117012", "au-xpi-sugar", "Export price index: sugars"), ("3117034", "au-xpi-wool", "Export price index: wool and animal hair")]:
     try:
         rows = abs_csv("ITPI_EXP/1.%s.Q?format=csvfilewithlabels" % code)
         pts = [(r["TIME_PERIOD"], float(r["OBS_VALUE"])) for r in rows if r.get("OBS_VALUE") not in (None, "")]
