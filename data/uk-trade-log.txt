@@ -1,0 +1,10 @@
+fertilizer ok
+maize ok
+oats ok
+potato ok
+rice ok
+descartada rye exp 6 puntos
+rye ok
+soy ok
+wine ok
+series 15
