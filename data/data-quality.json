@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-06T23:14:33Z",
+ "generatedAt": "2026-10-07T00:37:08Z",
  "summary": {
   "files": 22,
   "errors": 0,
@@ -215,11 +215,11 @@
     "BE/be-eus-poultry-imp_ieu-a5231p: salto 226000 -> 464000 en 1999 (mediana previa 1.4e+04)"
    ],
    "stats": {
-    "series": 660,
-    "points": 34757,
+    "series": 783,
+    "points": 31862,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T22:27:20Z",
+   "generatedAt": "2026-10-07T00:20:38Z",
    "info": [],
    "nWarnings": 7,
    "nErrors": 0
@@ -248,10 +248,10 @@
    "warnings": [],
    "stats": {
     "series": 480,
-    "points": 80695,
+    "points": 80829,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T21:59:05Z",
+   "generatedAt": "2026-10-07T00:12:10Z",
    "info": [
     "CA/ca-trade-imp-wheat: salto 2.5 -> 2.8 en 1996-01 (mediana previa 0.1) [KNOWN_VERIFIED_ANOMALY]",
     "CA/ca-trade-imp-wheat: salto 5.3 -> 10.1 en 2002-12 (mediana previa 0.4) [KNOWN_VERIFIED_ANOMALY]",
