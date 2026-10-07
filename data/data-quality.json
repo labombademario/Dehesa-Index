@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T00:37:08Z",
+ "generatedAt": "2026-10-07T03:27:21Z",
  "summary": {
-  "files": 22,
+  "files": 25,
   "errors": 0,
-  "warnings": 2
+  "warnings": 4
  },
  "files": [
   {
@@ -94,11 +94,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 244,
-    "points": 9053,
+    "series": 255,
+    "points": 9284,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T16:39:36Z",
+   "generatedAt": "2026-10-07T02:30:55Z",
    "info": [
     "AT/at-slaughter-ths_hd-b4110: salto 246 -> 248 en 2013 (mediana previa 0.01) [KNOWN_VERIFIED_ANOMALY]"
    ],
@@ -215,13 +215,76 @@
     "BE/be-eus-poultry-imp_ieu-a5231p: salto 226000 -> 464000 en 1999 (mediana previa 1.4e+04)"
    ],
    "stats": {
-    "series": 783,
-    "points": 31862,
+    "series": 823,
+    "points": 39656,
     "lines": 0
    },
-   "generatedAt": "2026-10-07T00:20:38Z",
+   "generatedAt": "2026-10-07T00:44:48Z",
    "info": [],
    "nWarnings": 7,
+   "nErrors": 0
+  },
+  {
+   "file": "uk-trade-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 15,
+    "points": 375,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-07T02:08:46Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "chile-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "CL/cl-odepa-trade-oats-imp-usd: salto 0.032 -> 32.904 en 2020 (mediana previa 0.06)",
+    "CL/cl-odepa-trade-oats-imp-usd: salto 32.904 -> 25.144 en 2021 (mediana previa 0.06)",
+    "CL/cl-odepa-trade-oats-imp-usd: salto 0.137 -> 29.546 en 2023 (mediana previa 0.144)",
+    "CL/cl-odepa-trade-oats-imp-vol: salto 39.008 -> 7325.514 en 2016 (mediana previa 54.9)",
+    "CL/cl-odepa-trade-oats-imp-vol: salto 31.218 -> 120457.376 en 2020 (mediana previa 54.9)",
+    "CL/cl-odepa-trade-oats-imp-vol: salto 120457.376 -> 87730.235 en 2021 (mediana previa 54.9)",
+    "CL/cl-odepa-trade-oats-imp-vol: salto 387.764 -> 99510.155 en 2023 (mediana previa 78)",
+    "CL/cl-odepa-trade-rapeseed-imp-vol: salto 207.312 -> 27199.307 en 2020 (mediana previa 207)",
+    "CL/cl-odepa-trade-rapeseed-imp-vol: salto 27199.307 -> 26374.209 en 2021 (mediana previa 207)",
+    "CL/cl-odepa-trade-rapeseed-imp-vol: salto 4625.049 -> 46065.936 en 2024 (mediana previa 354)",
+    "CL/cl-odepa-trade-rapeseed-imp-vol: salto 46065.936 -> 33508.683 en 2025 (mediana previa 516)",
+    "CL/cl-odepa-trade-rye-exp-vol: salto 0.016 -> 464.16 en 2025 (mediana previa 9.05)"
+   ],
+   "stats": {
+    "series": 114,
+    "points": 4298,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-07T03:19:27Z",
+   "info": [],
+   "nWarnings": 12,
+   "nErrors": 0
+  },
+  {
+   "file": "argentina-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "AR/ar-sagyp-soy-production: salto 1400000.0 -> 2500000.0 en 1977 (mediana previa 7.8e+04)"
+   ],
+   "stats": {
+    "series": 54,
+    "points": 10382,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-07T03:20:44Z",
+   "info": [],
+   "nWarnings": 1,
    "nErrors": 0
   },
   {
@@ -272,11 +335,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 238,
-    "points": 9253,
+    "series": 258,
+    "points": 9635,
     "lines": 0
    },
-   "generatedAt": "2026-10-06T05:35:55Z",
+   "generatedAt": "2026-10-07T02:46:42Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
