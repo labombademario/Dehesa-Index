@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T12:34:39Z",
+ "generatedAt": "2026-10-07T15:38:35Z",
  "summary": {
   "files": 27,
   "errors": 0,
@@ -14,11 +14,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 133,
-    "points": 11262,
+    "series": 136,
+    "points": 11812,
     "lines": 0
    },
-   "generatedAt": "2026-09-30T18:27:45Z",
+   "generatedAt": "2026-10-07T15:02:16Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -401,11 +401,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 258,
-    "points": 9635,
+    "series": 283,
+    "points": 18395,
     "lines": 0
    },
-   "generatedAt": "2026-10-07T02:46:42Z",
+   "generatedAt": "2026-10-07T13:20:16Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
@@ -417,11 +417,11 @@
    "errors": [],
    "warnings": [],
    "stats": {
-    "series": 57,
-    "points": 12308,
+    "series": 69,
+    "points": 16316,
     "lines": 0
    },
-   "generatedAt": "2026-10-05T11:42:04Z",
+   "generatedAt": "2026-10-07T14:19:22Z",
    "info": [
     "AU/au-imp-wheat: salto 0.004 -> 8.944 en 2003-01 (mediana previa 0.013) [KNOWN_VERIFIED_ANOMALY]",
     "AU/au-imp-wheat: salto 8.944 -> 9.325 en 2003-02 (mediana previa 0.013) [KNOWN_VERIFIED_ANOMALY]",
