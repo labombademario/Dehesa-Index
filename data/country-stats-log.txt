@@ -1,4 +1,4 @@
-Series: {'DK': 47, 'NL': 67, 'AU': 19}
+Series: {'DK': 46, 'NL': 67, 'AU': 23}
   dk-cattle-prod | Cattle: meat production (total) | 2026-07 10.0 | n= 379 | first 1995-01
   dk-cattle-slaught | Cattle: slaughterings and live exports (total) | 2026-07 40.0 | n= 379 | first 1995-01
   dk-pig-prod | Pigs: meat production (total) | 2026-07 162.9 | n= 379 | first 1995-01
@@ -22,7 +22,6 @@ Series: {'DK': 47, 'NL': 67, 'AU': 19}
   dk-area-maize | Grain maize: area (1.6 Grain maize and corn-cob mix) | 2025 8479.0 | n= 17 | first 2009
   dk-area-rape | Rapeseed: area (4.1 Rape) | 2025 160711.0 | n= 44 | first 1982
   dk-area-potatoes | Potatoes: area (3.1 Potatoes) | 2025 72073.0 | n= 44 | first 1982
-  dk-area-sugarbeet | Sugar beet: area (3.2 Sugar beets) | 2025 31725.0 | n= 44 | first 1982
   dk-harvarea-winter-wheat | Winter wheat: harvested area | 2025 462.0 | n= 26 | first 2000
   dk-harvarea-winter-barley | Winter barley: harvested area | 2025 66.0 | n= 26 | first 2000
   dk-harvarea-winter-rape | Winter rapeseed: harvested area | 2025 160.0 | n= 26 | first 2000
@@ -117,14 +116,18 @@ Series: {'DK': 47, 'NL': 67, 'AU': 19}
   au-pig-slaught | Pigs slaughtered | 2026-Q2 1467.4 | n= 146 | first 1990-Q1
   au-sheep-slaught | Sheep slaughtered | 2026-Q2 1334.2 | n= 146 | first 1990-Q1
   au-lamb-slaught | Lambs slaughtered | 2026-Q2 5286.2 | n= 146 | first 1990-Q1
-  au-exp-wheat | Exports: wheat | 2026-07 769.013 | n= 373 | first 1995-07
-  au-exp-barley | Exports: barley | 2026-07 290.206 | n= 373 | first 1995-07
-  au-exp-maize | Exports: maize | 2026-07 1.895 | n= 373 | first 1995-07
-  au-exp-oilseeds | Exports: oilseeds (canola etc.) | 2026-07 168.29 | n= 373 | first 1995-07
-  au-exp-beef | Exports: bovine meat | 2026-07 1979.017 | n= 373 | first 1995-07
-  au-exp-sheepmeat | Exports: other meat (incl. sheep meat) | 2026-07 681.688 | n= 373 | first 1995-07
-  au-exp-cheese | Exports: cheese and curd | 2026-07 91.724 | n= 373 | first 1995-07
-  au-exp-live | Exports: live animals | 2026-07 110.176 | n= 373 | first 1995-07
+  au-chicken-meat-prod | Chicken meat produced | 2026-Q2 411509.0 | n= 146 | first 1990-Q1
+  au-pig-meat-prod | Pig meat produced | 2026-Q2 123250.0 | n= 146 | first 1990-Q1
+  au-beef-prod | Beef produced | 2026-Q2 780620.0 | n= 146 | first 1990-Q1
+  au-exp-wheat | Exports: wheat | 2026-08 635.356 | n= 374 | first 1995-07
+  au-exp-barley | Exports: barley | 2026-08 229.806 | n= 374 | first 1995-07
+  au-exp-maize | Exports: maize | 2026-08 1.375 | n= 374 | first 1995-07
+  au-exp-oilseeds | Exports: oilseeds (canola etc.) | 2026-08 236.011 | n= 374 | first 1995-07
+  au-exp-beef | Exports: bovine meat | 2026-08 1670.364 | n= 374 | first 1995-07
+  au-exp-sheepmeat | Exports: other meat (incl. sheep meat) | 2026-08 643.8 | n= 374 | first 1995-07
+  au-exp-cheese | Exports: cheese and curd | 2026-08 95.344 | n= 374 | first 1995-07
+  au-exp-live | Exports: live animals | 2026-08 116.284 | n= 374 | first 1995-07
+  au-xpi-fruit | Export price index: edible fruit and nuts | 2026-Q2 216.8 | n= 148 | first 1989-Q3
   au-xpi-cereals | Export price index: cereals | 2026-Q2 112.6 | n= 148 | first 1989-Q3
   au-xpi-meat | Export price index: meat and offal | 2026-Q2 241.8 | n= 148 | first 1989-Q3
   au-xpi-dairy | Export price index: dairy products | 2026-Q2 141.7 | n= 148 | first 1989-Q3
@@ -132,6 +135,7 @@ Series: {'DK': 47, 'NL': 67, 'AU': 19}
   au-xpi-live | Export price index: live animals | 2026-Q2 104.0 | n= 148 | first 1989-Q3
   au-xpi-sugar | Export price index: sugars | 2026-Q2 88.1 | n= 148 | first 1989-Q3
   au-xpi-wool | Export price index: wool and animal hair | 2026-Q2 112.7 | n= 148 | first 1989-Q3
+LOG ERROR dk-area-sugarbeet: Remote end closed connection without response
 LOG JORD1 sin partida para seed
 LOG JORD1 sin partida para pest
 LOG JORD1 sin partida para wages
