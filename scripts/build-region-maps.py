@@ -31,7 +31,7 @@ js = "/* Contornos de las provincias y territorios de Canada (proyeccion Albers 
 import math
 from shapely.ops import unary_union
 from shapely.affinity import translate
-adm = json.loads((ROOT / "scripts" / "ref" / "ne-admin1-4c.json").read_text(encoding="utf-8")); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-au.json").read_text(encoding="utf-8"))); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-nlat.json").read_text(encoding="utf-8"))); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-bedkpt.json").read_text(encoding="utf-8")))
+adm = json.loads((ROOT / "scripts" / "ref" / "ne-admin1-4c.json").read_text(encoding="utf-8")); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-au.json").read_text(encoding="utf-8"))); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-nlat.json").read_text(encoding="utf-8"))); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-bedkpt.json").read_text(encoding="utf-8"))); adm.update(json.loads((ROOT / "scripts" / "ref" / "ne-admin1-pl.json").read_text(encoding="utf-8")))
 def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0):
     byreg = {}
     for f in feats:
@@ -57,7 +57,7 @@ def europe_map(cc, feats, codes, key, var, label, tol, canarias=False, W2=900.0)
         return "".join(o)
     items = [{"id": i, "name": n, "d": p2(g)} for i, (n, g) in sorted(out.items())]
     js = "/* Contornos de " + label + " a partir de Natural Earth 1:10m (dominio publico); unidades administrativas disueltas por region. Generado por scripts/build-region-maps.py. */\nwindow." + var + " = " + json.dumps({"viewBox": "0 0 %d %s" % (W2, H2), "states": items}, ensure_ascii=False, separators=(",", ":")) + ";\n"
-    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states", "NL": "nl-provinces", "AT": "at-laender", "ESP": "es-provinces", "BE": "be-provinces", "DK": "dk-regions"}[cc]
+    fn = {"ES": "es-ccaa", "FR": "fr-regions", "IT": "it-regions", "DE": "de-laender", "AU": "au-states", "NL": "nl-provinces", "AT": "at-laender", "ESP": "es-provinces", "BE": "be-provinces", "DK": "dk-regions", "PL": "pl-voivodeships"}[cc]
     (ROOT / "vendor" / (fn + ".js")).write_text(js, encoding="utf-8"); print("vendor/%s.js" % fn, len(js), "bytes", len(items), "regiones, viewBox", "0 0 %d %s" % (W2, H2))
 ES_CODES = {"Andalucía": "AN", "Aragón": "AR", "Asturias": "AS", "Canary Is.": "CN", "Cantabria": "CB", "Castilla y León": "CL", "Castilla-La Mancha": "CM", "Cataluña": "CT", "Extremadura": "EX", "Foral de Navarra": "NC", "Galicia": "GA", "Islas Baleares": "IB", "La Rioja": "RI", "Madrid": "MD", "Murcia": "MC", "País Vasco": "PV", "Valenciana": "VC"}
 FR_CODES = {"Auvergne-Rhône-Alpes": "ARA", "Bourgogne-Franche-Comté": "BFC", "Bretagne": "BRE", "Centre-Val de Loire": "CVL", "Corse": "COR", "Grand Est": "GES", "Hauts-de-France": "HDF", "Normandie": "NOR", "Nouvelle-Aquitaine": "NAQ", "Occitanie": "OCC", "Pays de la Loire": "PDL", "Provence-Alpes-Côte-d'Azur": "PAC", "Île-de-France": "IDF"}
@@ -80,3 +80,5 @@ BE_CODES = {"Brussels": "BRU", "Antwerp": "VAN", "Limburg": "VLI", "East Flander
 DK_CODES = {"Hovedstaden": "HOV", "Sjaælland": "SJA", "Syddanmark": "SYD", "Midtjylland": "MID", "Nordjylland": "NJY"}
 europe_map("BE", adm["BEL"], BE_CODES, "name", "DEHESA_BE_PROVINCES", "las provincias de Belgica y la Region de Bruselas-Capital", 0.003)
 europe_map("DK", adm["DNK"], DK_CODES, "name", "DEHESA_DK_REGIONS", "las regiones de Dinamarca (sin Groenlandia ni las Feroe)", 0.006)
+PL_CODES = {"Lower Silesian": "DS", "Kuyavian-Pomeranian": "KP", "Lublin": "LU", "Lubusz": "LB", "Łódź": "LD", "Lesser Poland": "MA", "Masovian": "MZ", "Opole": "OP", "Subcarpathian": "PK", "Podlachian": "PD", "Pomeranian": "PM", "Silesian": "SL", "Świętokrzyskie": "SK", "Warmian-Masurian": "WN", "Greater Poland": "WP", "West Pomeranian": "ZP"}
+europe_map("PL", adm["POL"], PL_CODES, "name", "DEHESA_PL_VOIVODESHIPS", "las 16 voivodias de Polonia", 0.006)

@@ -2578,6 +2578,11 @@
     "eurostat"
    ]
   },
+  "data/eu-regions-pl.json": {
+   "sources": [
+    "eurostat"
+   ]
+  },
   "data/au-states.json": {
    "sources": [
     "abs"

@@ -129,7 +129,7 @@ def region_metrics():
             p = _last(x.get(mid))
             if p: v[k] = p[1]; per = max(per, str(p[0]))
         put('AU', mid, v, per, 'au-states.json')
-    for cc in ('ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK'):
+    for cc in ('ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL'):
         f = 'eu-regions-%s.json' % cc.lower(); d = load(f); vo = {}; vu = {}; vp = {}; po = pu = pp = ''
         for k, b in (d.get('regions') or {}).items():
             o = (b.get('eaa') or {}).get('AM180000'); ua = ((b.get('crops') or {}).get('UAA') or {}).get('area')

@@ -29,7 +29,7 @@
     { id: 'output', ramp: G, unit: ' M EUR', label: ['Agricultural industry output (M EUR)', 'Producción de la rama agraria (M EUR)', 'Production de la branche agricole (M EUR)', 'Produzione del ramo agricolo (M EUR)'], dec: 0 },
     { id: 'uaa', ramp: G, unit: ' kha', label: ['Utilised agricultural area (thousand ha)', 'Superficie agraria útil (miles de ha)', 'Surface agricole utilisée (milliers d’ha)', 'Superficie agricola utilizzata (migliaia di ha)'], dec: 0 },
     { id: 'perha', ramp: G, unit: ' EUR/ha', label: ['Output per hectare of farmland (EUR/ha)', 'Producción por hectárea de superficie agraria (EUR/ha)', 'Production par hectare de surface agricole (EUR/ha)', 'Produzione per ettaro di superficie agricola (EUR/ha)'], dec: 0 }];
-  ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK'].forEach(function (c) { M[c] = EU; });
+  ['ES', 'FR', 'IT', 'DE', 'NL', 'AT', 'BE', 'DK', 'PL'].forEach(function (c) { M[c] = EU; });
   // vista precalculada (scripts/build-views.py -> data/views/region-metrics.json, ~7 KB): el mapa no baja el fichero regional entero; si falta, se calcula aquí
   function compute(cc, id) {
     return get('data/views/region-metrics.json').then(function (V) { var m = V && V.countries && V.countries[cc] && V.countries[cc][id]; return m && m.vals ? { vals: m.vals, period: m.period } : computeFull(cc, id); });

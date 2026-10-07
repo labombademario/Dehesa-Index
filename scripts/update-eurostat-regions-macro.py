@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PIB, poblacion y paro por region (Eurostat, NUTS 2) para las mismas regiones que ya tienen pagina (ES, FR, IT, DE, NL, AT, BE, DK).
+"""PIB, poblacion y paro por region (Eurostat, NUTS 2) para las mismas regiones que ya tienen pagina (ES, FR, IT, DE, NL, AT, BE, DK, PL).
 Salida: data/eu-regions-macro.json  {regions: {PAIS: {REGION: {nuts, gdp, pop, unemp, gdppc}}}}, cada serie [[anio, valor]].
 Datasets (reutilizacion con cita de la fuente):
   nama_10r_2gdp   PIB a precios corrientes, millones EUR            -> gdp   (suma de NUTS 2 si la region no tiene NUTS propio)
