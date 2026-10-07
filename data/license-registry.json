@@ -1268,19 +1268,20 @@
    "derivatives": "yes",
    "redistribution": "yes",
    "attributionRequired": true,
-   "attributionText": "Source: ABARES, Department of Agriculture, Fisheries and Forestry (CC BY 4.0)",
+   "attributionText": "Source: ABARES | Dataset: Australian Crop Report, September 2026 (No. 219) | Date: 2026-09-01 | Licence: CC BY 4.0 | Original: https://doi.org/10.25814/5s62-8a44",
    "additionalRestrictions": "Cite source, dataset, date, licence and original link on every use. Excludes content supplied by third parties, logos and the Commonwealth Coat of Arms; no endorsement claims. Licence questions: copyright@aff.gov.au.",
    "thirdPartyExceptions": true,
    "thirdPartyNote": "ABARES licenses its own material under CC BY 4.0 except content supplied by third parties, logos and the Coat of Arms; only ABARES-produced tables are used.",
    "verifiedAt": "2026-10-07",
    "status": "VERIFIED",
    "confidence": "high",
-   "evidence": "ABARES publication information page: \"All material in this publication is licensed under a Creative Commons Attribution 4.0 International Licence except content supplied by third parties, logos and the Commonwealth Coat of Arms.\" Same licence in the data.gov.au / Research Data Australia records of the Australian Crop Report (e.g. No. 185). Research by the owner (7 Oct 2026) confirmed use. The department site footer shows only (c) Department of Agriculture, Fisheries and Forestry. Access from GitHub Actions still untested: no series adopted yet.",
-   "used": false,
+   "evidence": "ABARES publication information page: \"All material in this publication is licensed under a Creative Commons Attribution 4.0 International Licence except content supplied by third parties, logos and the Commonwealth Coat of Arms.\" Same licence in the data.gov.au / Research Data Australia records of the Australian Crop Report (e.g. No. 185). Research by the owner (7 Oct 2026) confirmed use. The department site footer shows only (c) Department of Agriculture, Fisheries and Forestry. Not reachable from GitHub Actions: data is loaded manually from the official xlsx of each edition (manual-sources/abares/).",
+   "used": true,
    "aliases": [],
-   "notes": "Reference required on every figure: Fuente: ABARES | Dataset: Australian Crop Report (or the exact dataset) | Fecha | Licencia: CC BY 4.0 | Original: official link.",
+   "notes": "Reference required on every figure: Fuente: ABARES | Dataset: Australian Crop Report (or the exact dataset) | Fecha | Licencia: CC BY 4.0 | Original: official link. Update attributionText (edition, date, DOI) each time a new Crop Report xlsx is loaded (scripts/build-abares-crop-report.py).",
    "legalConfidence": "HIGH",
-   "legalConfidenceReason": "Licencia CC BY 4.0 declarada en la página oficial de ABARES y en los registros de data.gov.au; excluye terceros, logotipos y escudo."
+   "legalConfidenceReason": "Licencia CC BY 4.0 declarada en la página oficial de ABARES y en los registros de data.gov.au; excluye terceros, logotipos y escudo.",
+   "short": "ABARES (Australia)"
   },
   "mla": {
    "name": "Australia — Meat & Livestock Australia (MLA)",
@@ -2718,6 +2719,11 @@
    "sources": [
     "bls"
    ]
+  },
+  "data/abares-stats.json": {
+   "byCountry": {
+    "AU": "abares"
+   }
   }
  },
  "derived": [

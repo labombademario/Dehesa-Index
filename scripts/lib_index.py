@@ -2,7 +2,7 @@
 import json, subprocess
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-STATS = ['country-stats', 'spain-stats', 'france-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'uk-stats', 'portugal-stats', 'portugal-eurostat-stats', 'italy-eurostat-stats', 'eurostat-depth-stats', 'uk-trade-stats', 'chile-stats', 'argentina-stats', 'poland-eurostat-stats', 'poland-stats', 'eu-gapfill-stats',
+STATS = ['country-stats', 'spain-stats', 'france-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'uk-stats', 'portugal-stats', 'portugal-eurostat-stats', 'italy-eurostat-stats', 'eurostat-depth-stats', 'uk-trade-stats', 'chile-stats', 'argentina-stats', 'poland-eurostat-stats', 'abares-stats', 'poland-stats', 'eu-gapfill-stats',
          'canada-stats', 'us-stats', 'eu-trade-stats', 'australia-trade-stats', 'interest-rates-stats']
 def git_show(rev, path):
     try:
