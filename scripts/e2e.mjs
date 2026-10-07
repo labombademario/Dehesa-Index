@@ -27,6 +27,7 @@ const PAGES = [
   { n: 'perfiles', url: '/perfiles.html', crit: ['#perfiles-body'] },
   { n: 'comparador', url: '/comparador.html', crit: ['#cmp-body'] },
   { n: 'calculadora', url: '/calculadora.html', crit: ['#cc-body'] },
+  { n: 'mi-explotacion', url: '/mi-explotacion.html', crit: ['#fx-body .fx-line'] },
   { n: 'relaciones', url: '/relaciones.html', crit: ['#rl-body .rl-card'] },
   { n: 'observatorio', url: '/observatorio.html', crit: ['#ob-body #moves'] },
   { n: 'mi-seguimiento', url: '/mi-seguimiento.html', crit: ['#ms-body #series'] },

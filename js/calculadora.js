@@ -479,6 +479,12 @@
     else if (f === 'inst') { c.inst = el.value; drawRef(); }
   }
 
+  // API reutilizable (Mi explotación): el mismo motor de cálculo y de precio de referencia, sin duplicar lógica.
+  window.DICalc = { calc: function (c, o) { return calc(c, o); }, blank: blank, canon: canon, state: function () { return S; },
+    loadRef: loadRef, refPerT: refPerT, instruments: instruments, CROPS: CROPS, CORDER: CORDER, COSTS: COSTS, REG: REG, SRC: SRC, UL: UL, CURS: CURS,
+    fmt: { esc: esc, num: num, nf: nf, money: money, r2: r2, dstr: dstr }, bushelKg: bushelKg, convertCase: convertCase };
+  if (!document.getElementById('cc-body')) return; // cargado como librería: no pinta la calculadora
+
   var prevCb = window.DehesaShared.onLangChange;
   window.DehesaShared.onLangChange = function () { if (prevCb) prevCb.apply(this, arguments); shell(); };
   window.DehesaShared.init('informacion');
@@ -489,5 +495,4 @@
   var go = function () { shell(); };
   var taxReady = function () { return loadTax().then(function (v) { TAXD.v = v; }, function () { /* sin impuestos: la calculadora sigue */ }); };
   (window.DICite ? window.DICite.load() : Promise.resolve()).then(taxReady, taxReady).then(go, go);
-  window.DICalc = { calc: function (c, o) { return calc(c, o); }, blank: blank, canon: canon, state: function () { return S; } };
 })();

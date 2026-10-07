@@ -1284,6 +1284,17 @@ html[data-theme="dark"] .pt-fs-DELAYED, html[data-theme="dark"] .pt-cp-not_compa
 .cc-fs { border: 1px solid var(--border); border-radius: 10px; margin: 12px 0; padding: 8px 12px 12px; min-width: 0; }
 .cc-fs legend { font-size: 13px; font-weight: 700; padding: 0 6px; }
 
+/* ---------- Mi explotación (js/mi-explotacion.js) ---------- */
+.fx-line { border: 1px solid var(--border); border-radius: 12px; padding: 4px 14px 14px; margin: 14px 0; }
+.fx-line h3 { margin: 10px 0 4px; font-size: 17px; }
+.fx-line summary { cursor: pointer; font-weight: 700; font-size: 13px; min-height: 32px; display: flex; align-items: center; }
+.fx-line .pt-card .pt-badge { align-self: flex-start; margin: 0 0 6px; }
+.fx-tag-off { color: var(--accent, #1f5f3a); }
+.fx-tag-calc { color: var(--text-faint); border-style: dashed; }
+.fx-ch { list-style: none; padding: 0; margin: 4px 0 10px; }
+.fx-ch li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; line-height: 1.5; }
+.fx-tot th, .fx-tot td { border-top: 2px solid var(--border-strong); }
+
 /* ---------- Relaciones entre mercados: relaciones.html ---------- */
 .rl-disclaimer { font-size: 14px; }
 .rl-det { margin: 8px 0; font-size: 13.5px; }

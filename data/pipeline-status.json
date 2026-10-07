@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T13:20:00Z",
+ "generatedAt": "2026-10-07T13:55:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 96,
   "late": 1,
   "error": 3,
-  "not_run": 0,
-  "unknown": 1
+  "not_run": 1,
+  "unknown": 0
  },
  "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "c8127fe0",
+   "sha": "e15276ad",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/24c21169-016a-4cab-b6ad-7a007a3c3097",
-   "completedAt": "2026-10-07T13:10:55Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/c8a0bd64-06c2-427f-ad30-6fe94c94bc13",
+   "completedAt": "2026-10-07T13:26:39Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -2122,7 +2122,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T13:10:11Z"
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2130,14 +2130,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-07T11:19:23Z"
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-07T13:10:11Z"
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2154,7 +2154,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-07T13:10:11Z"
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/products"
@@ -2165,27 +2165,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-07T13:10:11Z"
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-07T13:10:11Z"
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-07T13:10:11Z"
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-07T13:10:11Z"
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-07T13:10:11Z"
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-07T13:10:11Z"
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/home-explore.json",
@@ -3164,7 +3164,8 @@
    "nextRun": "2026-10-08T14:20:00Z",
    "files": [
     {
-     "path": "data/us-ppi.json"
+     "path": "data/us-ppi.json",
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/revisions.json",
@@ -3173,7 +3174,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 168.0
   },
   {
@@ -3260,7 +3261,7 @@
      "series": 258,
      "points": 9635,
      "lines": 0,
-     "lastChange": "2026-10-07T02:46:42Z"
+     "lastChange": "2026-10-07T13:25:48Z"
     },
     {
      "path": "data/revisions.json",
