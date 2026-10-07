@@ -84,9 +84,17 @@ def main():
            'newData': [mk(x) for x in sorted(fresh, key=lambda x: -abs(x['c'] if isinstance(x['c'], (int, float)) else 0))[:150]],
            'cashBids': CB.brief_section(now, iso), 'revisions': revs[:30], 'stale': stale, 'upcoming': upcoming, 'coverage': cover, 'byKind': by_kind,
            'pipelinesCovered': {'total': len(ps.get('pipelines', [])), 'withKind': len([p for p in ps.get('pipelines', []) if WORKFLOW_KINDS.get(p['workflow'])]), 'internal': sorted(w for w, k in WORKFLOW_KINDS.items() if not k)}}
+    (ROOT / 'data/views').mkdir(exist_ok=True)
+    def views():
+        # la Home solo necesita las cifras y los mayores movimientos: vista pequena (el resumen completo crece con la actividad del dia y rompia el presupuesto de la portada)
+        # la ficha de producto solo cruza las claves de producto (P/...): sin el resto de las 150 novedades del dia
+        (ROOT / 'data/views/product-brief.json').write_text(json.dumps({'schemaVersion': 1, 'generatedAt': doc['generatedAt'], 'newData': [x for x in doc['newData'] if str(x.get('k', '')).startswith('P/')]}, ensure_ascii=False, separators=(',', ':')))
+        (ROOT / 'data/views/home-brief.json').write_text(json.dumps({'schemaVersion': 1, 'generatedAt': doc['generatedAt'], 'counts': doc['counts'], 'movers': doc['movers']}, ensure_ascii=False, separators=(',', ':')))
+    if not (ROOT / 'data/views/product-brief.json').exists() or not (ROOT / 'data/views/home-brief.json').exists(): views()
     # no reescribir si solo cambia la hora
     a = dict(doc); a.pop('generatedAt'); b = dict(old); b.pop('generatedAt', None)
     if a == b: print('sin cambios'); return
     (ROOT / 'data/daily-brief.json').write_text(json.dumps(doc, ensure_ascii=False, separators=(',', ':')))
+    views()
     print(json.dumps(doc['counts']))
 main()

@@ -42,7 +42,7 @@
   function render() {
     var box = document.getElementById('home-today'); if (!box) return;
     var t = T[lang()] || T.es, U = window.DIUsdaCal;
-    Promise.all([getJ('data/daily-brief.json'), U ? U.load().catch(function () { return null; }) : Promise.resolve(null)]).then(function (r) {
+    Promise.all([getJ('data/views/home-brief.json'), U ? U.load().catch(function () { return null; }) : Promise.resolve(null)]).then(function (r) {
       box.innerHTML = '<div class="di-movers-head-row"><h2>' + esc(t.h) + '</h2>' + (r[0] && r[0].generatedAt ? '<span class="di-movers-hint">' + esc(t.asof) + ': ' + esc(String(r[0].generatedAt).slice(0, 16).replace('T', ' ')) + ' UTC</span>' : '') + '</div><div class="di-today">' + changed(r[0], t) + coming(U, r[1], t) + watching(t) + '</div>';
     });
   }

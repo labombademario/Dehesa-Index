@@ -1,19 +1,24 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T10:27:00Z",
+ "generatedAt": "2026-10-07T11:04:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 94,
+  "ok": 96,
   "late": 1,
   "error": 3,
   "not_run": 0,
-  "unknown": 2
+  "unknown": 0
  },
  "global": "error",
  "deploy": {
-  "status": "unknown",
+  "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": null,
+  "build": {
+   "sha": "7ba8a31a",
+   "conclusion": "success",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/1b7e7158-5310-4e28-804a-36394573993f",
+   "completedAt": "2026-10-07T10:40:23Z"
+  },
   "lagHours": null,
   "prodGeneratedAt": null,
   "repoGeneratedAt": "2026-10-07T09:31:38.191944+00:00"
@@ -1327,11 +1332,11 @@
      "series": 582,
      "points": 132265,
      "lines": 0,
-     "lastChange": "2026-10-06T19:14:50Z"
+     "lastChange": "2026-10-07T10:51:52Z"
     },
     {
      "path": "data/eu-trade-products.json",
-     "lastChange": "2026-10-06T19:14:50Z"
+     "lastChange": "2026-10-07T10:51:52Z"
     },
     {
      "path": "data/revisions.json",
@@ -1341,13 +1346,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-06T19:10:24Z",
-    "durationSec": 285,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37516944666"
+    "startedAt": "2026-10-07T10:44:08Z",
+    "durationSec": 483,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37609354756"
    },
    "recent": {
-    "runs": 5,
-    "success": 5,
+    "runs": 7,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -2113,7 +2118,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T09:30:23Z"
+     "lastChange": "2026-10-07T10:33:09Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2121,7 +2126,7 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-07T03:55:47Z"
+     "lastChange": "2026-10-07T10:27:13Z"
     },
     {
      "path": "data/watch"
@@ -2132,7 +2137,7 @@
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-07T06:32:45Z"
+     "lastChange": "2026-10-07T10:33:09Z"
     },
     {
      "path": "data/catalog"
@@ -2145,38 +2150,38 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-07T09:30:39Z"
+     "lastChange": "2026-10-07T10:33:09Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-07T06:32:45Z"
+     "lastChange": "2026-10-07T10:33:09Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-07T09:30:39Z"
+     "lastChange": "2026-10-07T10:33:09Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-07T09:30:39Z"
+     "lastChange": "2026-10-07T10:33:09Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-07T09:30:39Z"
+     "lastChange": "2026-10-07T10:33:09Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-07T09:30:39Z"
+     "lastChange": "2026-10-07T10:33:09Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-07T09:30:39Z"
+     "lastChange": "2026-10-07T10:33:09Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-07T09:30:39Z"
+     "lastChange": "2026-10-07T10:33:09Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2214,16 +2219,27 @@
    "nextRun": "2026-10-09T17:45:00Z",
    "files": [
     {
-     "path": "data/poland-eurostat-stats.json"
+     "path": "data/poland-eurostat-stats.json",
+     "lastChange": "2026-10-07T10:33:38Z"
     },
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-07T00:12:14Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-07T10:33:18Z",
+    "durationSec": 36,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37608169686"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 96.0
   },
   {
@@ -2235,16 +2251,27 @@
    "nextRun": "2026-10-13T18:30:00Z",
    "files": [
     {
-     "path": "data/poland-stats.json"
+     "path": "data/poland-stats.json",
+     "lastChange": "2026-10-07T10:39:46Z"
     },
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-07T00:12:14Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-07T10:33:20Z",
+    "durationSec": 390,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37608174925"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {

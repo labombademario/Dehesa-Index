@@ -394,7 +394,7 @@
 
   /* ---------- bloques ---------- */
   function blkChanged() {
-    return Promise.all([J('daily-brief.json', { cache: 'no-cache' }).catch(function () { return null; }), J('revisions.json', { cache: 'no-cache' }).catch(function () { return null; })]).then(function (a) { return { brief: a[0], revs: a[1] }; });
+    return Promise.all([J('views/product-brief.json', { cache: 'no-cache' }).catch(function () { return null; }), J('revisions.json', { cache: 'no-cache' }).catch(function () { return null; })]).then(function (a) { return { brief: a[0], revs: a[1] }; });
   }
   function htmlChanged(d) {
     var keys = {}, ids = {}; CTX.inst.concat(CTX.idx).forEach(function (o) { keys['P/' + obsKey(o)] = o; ids[o.id] = o; });
