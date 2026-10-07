@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T18:33:00Z",
+ "generatedAt": "2026-10-07T18:58:22Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 99,
+  "total": 100,
   "byStatus": {
-   "ACTIVE": 69,
+   "ACTIVE": 70,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -2732,16 +2732,21 @@
    "country": "CH",
    "scope": "integrated",
    "institution": "Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen)",
-   "dataset": "Ya integrada (29 series en el catalogo unificado)",
+   "dataset": "Ya integrada (57 series en el catalogo unificado)",
    "products": [
     "barley",
+    "butter",
+    "cattle",
     "cheese",
     "eggs",
     "maize",
     "milk",
     "oats",
+    "pigs",
+    "poultry",
     "rapeseed",
     "rye",
+    "sheep",
     "soy",
     "wheat"
    ],
@@ -2763,7 +2768,7 @@
    "attribution": "Source: Federal Office for Agriculture FOAG/BLW, Agricultural market data (Marktzahlen), via LINDAS / opendata.swiss | Licence: opendata.swiss Open use, must provide the source | Original: https://opendata.swiss/en/organization/bundesamt-fur-landwirtschaft-blw",
    "lastChecked": "2026-10-07",
    "verification": "REGISTRY",
-   "legalConfidence": "MEDIUM",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
@@ -3248,6 +3253,45 @@
    "lastChecked": "2026-10-03",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "meteoswiss",
+   "registryId": "meteoswiss",
+   "country": "CH",
+   "scope": "integrated",
+   "institution": "Switzerland — MeteoSwiss (Federal Office of Meteorology and Climatology), Open Government Data: automatic weather stations SwissMetNet",
+   "dataset": "Ya integrada (18 series en el catalogo unificado)",
+   "products": [],
+   "productsConfirmed": true,
+   "metrics": [],
+   "frequency": "monthly",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "CC-BY-4.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: MeteoSwiss | Dataset: Automatic weather stations (ogd-smn), monthly | Licence: CC BY 4.0 | Original: https://opendata.swiss/en/dataset/automatische-wetterstationen-aktuelle-messwerte",
+   "lastChecked": "2026-10-07",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

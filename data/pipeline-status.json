@@ -1,27 +1,22 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T18:31:00Z",
+ "generatedAt": "2026-10-07T18:56:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 96,
   "late": 1,
   "error": 3,
   "not_run": 2,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "unknown",
   "site": "https://dehesaindex.com",
-  "build": {
-   "sha": "768a3f31",
-   "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/653caa7c-b5e4-4857-9a41-28ea7d7ad292",
-   "completedAt": "2026-10-07T18:15:21Z"
-  },
-  "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-07T15:41:00.672458+00:00",
-  "repoGeneratedAt": "2026-10-07T15:41:00.672458+00:00"
+  "build": null,
+  "lagHours": null,
+  "prodGeneratedAt": null,
+  "repoGeneratedAt": "2026-10-07T18:34:26.631916+00:00"
  },
  "pipelines": [
   {
@@ -607,7 +602,7 @@
      "series": 114,
      "points": 4298,
      "lines": 0,
-     "lastChange": "2026-10-07T03:19:28Z"
+     "lastChange": "2026-10-07T18:45:59Z"
     },
     {
      "path": "data/revisions.json",
@@ -616,14 +611,14 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-07T03:16:45Z",
-    "durationSec": 179,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37566005197"
+    "event": "schedule",
+    "startedAt": "2026-10-07T18:41:55Z",
+    "durationSec": 270,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37668811936"
    },
    "recent": {
-    "runs": 1,
-    "success": 1,
+    "runs": 2,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -1966,31 +1961,31 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-07T15:41:01Z"
+     "lastChange": "2026-10-07T18:34:27Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-07T15:41:01Z"
+     "lastChange": "2026-10-07T18:34:27Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-07T15:41:01Z"
+     "lastChange": "2026-10-07T18:34:27Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-07T15:41:01Z"
+     "lastChange": "2026-10-07T18:34:27Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-07T15:38:17Z",
-    "durationSec": 168,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37645525473"
+    "startedAt": "2026-10-07T18:31:26Z",
+    "durationSec": 186,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37667487851"
    },
    "recent": {
-    "runs": 9,
-    "success": 7,
+    "runs": 10,
+    "success": 8,
     "failed": 0
    },
    "status": "ok",
@@ -2122,11 +2117,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T18:14:42Z"
+     "lastChange": "2026-10-07T18:32:48Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-07T15:40:07Z"
+     "lastChange": "2026-10-07T18:32:48Z"
     },
     {
      "path": "data/series-registry.json",
@@ -2137,11 +2132,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-07T18:14:42Z"
+     "lastChange": "2026-10-07T18:33:09Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T18:33:09Z"
     },
     {
      "path": "data/catalog"
@@ -2154,38 +2149,38 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-07T18:14:42Z"
+     "lastChange": "2026-10-07T18:33:09Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T18:33:09Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-07T18:14:42Z"
+     "lastChange": "2026-10-07T18:33:09Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-07T18:14:42Z"
+     "lastChange": "2026-10-07T18:33:09Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-07T18:14:42Z"
+     "lastChange": "2026-10-07T18:33:09Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-07T18:14:42Z"
+     "lastChange": "2026-10-07T18:33:09Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-07T18:14:42Z"
+     "lastChange": "2026-10-07T18:33:09Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-07T18:14:42Z"
+     "lastChange": "2026-10-07T18:33:09Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2202,13 +2197,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-07T15:38:07Z",
-    "durationSec": 143,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37645502907"
+    "startedAt": "2026-10-07T18:30:55Z",
+    "durationSec": 140,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37667421161"
    },
    "recent": {
-    "runs": 9,
-    "success": 6,
+    "runs": 10,
+    "success": 7,
     "failed": 2
    },
    "status": "ok",
@@ -2812,6 +2807,9 @@
      "lastChange": "2026-10-07T18:10:27Z"
     },
     {
+     "path": "data/ch-chain.json"
+    },
+    {
      "path": "data/revisions.json",
      "lastChange": "2026-10-07T00:12:14Z"
     }
@@ -2820,6 +2818,27 @@
    "recent": null,
    "status": "not_run",
    "expectedEveryHours": 168.0
+  },
+  {
+   "workflow": "update-switzerland-meteo.yml",
+   "name": "Update Switzerland (MeteoSwiss climate)",
+   "crons": [
+    "35 5 4 * *"
+   ],
+   "nextRun": "2026-11-04T05:35:00Z",
+   "files": [
+    {
+     "path": "data/switzerland-meteo-stats.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-07T00:12:14Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 744.0
   },
   {
    "workflow": "update-uk-defra.yml",
