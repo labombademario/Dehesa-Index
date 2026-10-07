@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T16:03:04Z",
+ "generatedAt": "2026-10-07T16:49:23Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 98,
+  "total": 99,
   "byStatus": {
-   "ACTIVE": 68,
+   "ACTIVE": 69,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -2717,6 +2717,59 @@
     "result": "NOT_READY",
     "reasons": [
      "VERIFIED pero con condiciones no inequivocas: uso comercial conditional"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "foag_ch",
+   "registryId": "foag_ch",
+   "country": "CH",
+   "scope": "integrated",
+   "institution": "Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen)",
+   "dataset": "Ya integrada (29 series en el catalogo unificado)",
+   "products": [
+    "barley",
+    "cheese",
+    "eggs",
+    "maize",
+    "milk",
+    "oats",
+    "rapeseed",
+    "rye",
+    "soy",
+    "wheat"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price",
+    "production"
+   ],
+   "frequency": "mixed",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OPENDATA-SWISS-BY",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: Federal Office for Agriculture FOAG/BLW, Agricultural market data (Marktzahlen), via LINDAS / opendata.swiss | Licence: opendata.swiss Open use, must provide the source | Original: https://opendata.swiss/en/organization/bundesamt-fur-landwirtschaft-blw",
+   "lastChecked": "2026-10-07",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
     ]
    },
    "ingestionStatus": "ACTIVE",

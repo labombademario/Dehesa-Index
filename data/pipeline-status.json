@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T16:00:00Z",
+ "generatedAt": "2026-10-07T16:47:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 96,
   "late": 1,
   "error": 3,
   "not_run": 1,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "b3a4ec37",
+   "sha": "3bc886f9",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/e2c73322-9376-4222-9e2d-62b4eb745c7a",
-   "completedAt": "2026-10-07T16:00:24Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/7ef2a549-d92c-402a-8164-7cfa0fe64498",
+   "completedAt": "2026-10-07T16:21:35Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -340,7 +340,7 @@
    "crons": [
     "40 16 * * 3,4,5"
    ],
-   "nextRun": "2026-10-07T16:40:00Z",
+   "nextRun": "2026-10-08T16:40:00Z",
    "files": [
     {
      "path": "data/canada-grain.json",
@@ -408,7 +408,7 @@
    "files": [
     {
      "path": "data/canada-provinces.json",
-     "lastChange": "2026-10-03T02:09:27Z"
+     "lastChange": "2026-10-07T16:04:14Z"
     },
     {
      "path": "data/revisions.json",
@@ -417,14 +417,14 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-03T02:08:50Z",
-    "durationSec": 51,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37088757482"
+    "event": "schedule",
+    "startedAt": "2026-10-07T16:03:35Z",
+    "durationSec": 44,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37649038086"
    },
    "recent": {
-    "runs": 2,
-    "success": 1,
+    "runs": 3,
+    "success": 2,
     "failed": 0
    },
    "status": "ok",
@@ -2122,7 +2122,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T16:20:41Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2130,14 +2130,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T16:20:41Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T16:20:41Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2154,7 +2154,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T16:20:41Z"
     },
     {
      "path": "data/products"
@@ -2165,27 +2165,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T16:20:41Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T16:20:41Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T16:20:41Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T16:20:41Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T16:20:41Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-07T15:59:19Z"
+     "lastChange": "2026-10-07T16:20:41Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2794,6 +2794,27 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-switzerland-foag.yml",
+   "name": "Update Switzerland (FOAG market data)",
+   "crons": [
+    "20 6 * * 3"
+   ],
+   "nextRun": "2026-10-14T06:20:00Z",
+   "files": [
+    {
+     "path": "data/switzerland-foag-stats.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-07T00:12:14Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-uk-defra.yml",
