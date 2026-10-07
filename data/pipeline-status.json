@@ -1,23 +1,23 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T01:32:00Z",
+ "generatedAt": "2026-10-07T02:02:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 90,
   "late": 1,
   "error": 4,
   "not_run": 0,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "a8b82154",
+   "sha": "3610649a",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/4967ab8f-097d-4957-82d8-5c92f042b442",
-   "completedAt": "2026-10-07T01:17:43Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/1805827d-ac40-4da9-9741-df319b67a341",
+   "completedAt": "2026-10-07T01:47:55Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -2046,7 +2046,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T01:16:49Z"
+     "lastChange": "2026-10-07T01:47:07Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2054,7 +2054,7 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-07T01:16:49Z"
+     "lastChange": "2026-10-07T01:47:07Z"
     },
     {
      "path": "data/watch"
@@ -2078,7 +2078,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-07T01:16:49Z"
+     "lastChange": "2026-10-07T01:47:07Z"
     },
     {
      "path": "data/products"
@@ -2089,19 +2089,19 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-07T01:16:49Z"
+     "lastChange": "2026-10-07T01:47:07Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-07T01:16:49Z"
+     "lastChange": "2026-10-07T01:47:07Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-07T01:16:49Z"
+     "lastChange": "2026-10-07T01:47:07Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-07T01:16:49Z"
+     "lastChange": "2026-10-07T01:47:07Z"
     },
     {
      "path": "data/ers-cost-reference.json",
@@ -2109,7 +2109,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-07T01:16:49Z"
+     "lastChange": "2026-10-07T01:47:07Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2682,6 +2682,27 @@
    },
    "status": "ok",
    "expectedEveryHours": 96.0
+  },
+  {
+   "workflow": "update-uk-trade.yml",
+   "name": "Update UK trade (HMRC)",
+   "crons": [
+    "50 17 * * 3"
+   ],
+   "nextRun": "2026-10-07T17:50:00Z",
+   "files": [
+    {
+     "path": "data/uk-trade-stats.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-07T00:12:14Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-us-arcplc.yml",

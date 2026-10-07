@@ -212,6 +212,15 @@ sources:
     data: [eurostat-depth-stats.json]
     log: eurostat-depth-log.txt
     message: Datos Eurostat ES, FR, DK, NL, BE, DE y UE-27 (profundidad)
+  - id: uk-trade
+    name: Update UK trade (HMRC)
+    cron: ['50 17 * * 3']
+    script: scripts/update-uk-trade.py
+    timeout: 30
+    script_timeout: 20
+    data: [uk-trade-stats.json]
+    log: uk-trade-log.txt
+    message: Datos comercio exterior Reino Unido (HMRC)
   - id: canada-stats
     name: Update Canada stats (Statistics Canada)
     cron: ['35 15 * * 1,4']

@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib_tags import tags as product_tags
 import coverage_model as CM
 ROOT = Path(__file__).resolve().parents[1]
-FILES = {"country-stats": 1, "spain-stats": 1, "france-stats": 1, "germany-stats": 1, "belgium-stats": 1, "austria-stats": 1, "uk-stats": 1, "portugal-stats": 1, "eu-gapfill-stats": 1, "canada-stats": 1, "us-stats": 1, "australia-trade-stats": 1, "portugal-eurostat-stats": 2, "italy-eurostat-stats": 2, "eurostat-depth-stats": 2, "eu-trade-stats": 2, "interest-rates-stats": 1}
+FILES = {"country-stats": 1, "spain-stats": 1, "france-stats": 1, "germany-stats": 1, "belgium-stats": 1, "austria-stats": 1, "uk-stats": 1, "portugal-stats": 1, "eu-gapfill-stats": 1, "canada-stats": 1, "us-stats": 1, "australia-trade-stats": 1, "portugal-eurostat-stats": 2, "italy-eurostat-stats": 2, "eurostat-depth-stats": 2, "uk-trade-stats": 2, "eu-trade-stats": 2, "interest-rates-stats": 1}
 TIER_OVERRIDE = {"us-policy-rate": 3}  # BIS (organizacion internacional) en vez del banco central
 TIERS = {1: "national official body", 2: "Eurostat harmonised", 3: "international organisation", 4: "secondary / aggregator"}
 def split_label(label):

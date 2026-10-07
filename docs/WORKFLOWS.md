@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-100 workflows (66 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+101 workflows (67 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -147,6 +147,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
 | update-uk-defra.yml | generado | semanal (2,5) | detect-revisions.py, gen-workflows.py, update-uk-defra.py | revisions.json, uk-log.txt, uk-stats.json | finish, validate-files |
+| update-uk-trade.yml | generado | semanal (3) | detect-revisions.py, gen-workflows.py, update-uk-trade.py | revisions.json, uk-trade-log.txt, uk-trade-stats.json | finish, validate-files |
 
 ## US
 

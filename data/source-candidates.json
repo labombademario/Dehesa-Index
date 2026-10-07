@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T01:34:21Z",
+ "generatedAt": "2026-10-07T02:03:40Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 94,
+  "total": 95,
   "byStatus": {
-   "ACTIVE": 63,
+   "ACTIVE": 64,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 3,
@@ -2722,6 +2722,45 @@
    "lastChecked": "2026-10-01",
    "verification": "REGISTRY",
    "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
+   "sourceId": "hmrc_uktradeinfo",
+   "registryId": "hmrc_uktradeinfo",
+   "country": "GB",
+   "scope": "integrated",
+   "institution": "HM Revenue & Customs - UK Trade Info (OTS, API OData)",
+   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
+   "products": [],
+   "productsConfirmed": false,
+   "metrics": [],
+   "frequency": "unknown",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "OGL-UK-3.0",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0 (HM Revenue & Customs, UK Trade Info).",
+   "lastChecked": "2026-10-06",
+   "verification": "REGISTRY",
+   "legalConfidence": "HIGH",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {
