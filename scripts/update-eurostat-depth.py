@@ -19,8 +19,8 @@ def get(u, t=180):
     raise RuntimeError('%s -> %s' % (u, last))
 GEOS = ['ES', 'FR', 'DK', 'NL', 'BE', 'DE', 'EU27_2020']; NAMES = {'EU': 'European Union', 'DE': 'Germany', 'ES': 'Spain', 'FR': 'France', 'DK': 'Denmark', 'NL': 'Netherlands', 'BE': 'Belgium'}
 NEW = ('NL', 'BE', 'EU')   # precios absolutos de productor y aves: solo para los paises anadidos despues, para no tocar las series ya publicadas de ES, FR y DK
-def es(ds, **flt):
-    q = 'lang=EN' + ''.join('&geo=' + g for g in GEOS) + ''.join('&%s=%s' % (k, urllib.parse.quote(v)) for k, v in flt.items())
+def es(ds, geos=None, **flt):
+    q = 'lang=EN' + ''.join('&geo=' + g for g in (geos or GEOS)) + ''.join('&%s=%s' % (k, urllib.parse.quote(v)) for k, v in flt.items())
     j = json.loads(get(API + ds + '?' + q)); ids, size = j['id'], j['size']; cats = {}; labs = {}
     for d in ids:
         c = j['dimension'][d]['category']; idx = c['index']; o = [None] * len(idx)
@@ -75,7 +75,12 @@ MEAT_RX = re.compile(r'^(bovine meat|pig ?meat|sheep ?meat|poultry|chicken|turke
 def slaughter():
     n = 0
     for ds, fq, t in (('apro_mt_pann', 'annual', None), ('apro_mt_pwgtm', 'monthly', None)):
-        recs, labs = es(ds, meatitem='SLAUGHT'); by = {}
+        recs = []; labs = {}; by = {}
+        for g0 in GEOS:   # un pais por peticion: con el agregado UE-27 la consulta mensual conjunta devolvia HTTP 413
+            try:
+                r0, l0 = es(ds, geos=[g0], meatitem='SLAUGHT'); recs += r0
+                for dk, dv in l0.items(): labs.setdefault(dk, {}).update(dv)
+            except Exception as e: log('ERROR', ds, g0, repr(e)[:120])
         for r, v in recs:
             if r['unit'] in ('THS_T', 'THS_HD') and MEAT_RX.match(clean(labs['meat'][r['meat']])): by.setdefault((r['geo'], r['meat'], r['unit']), []).append((r['time'], v))
         for (g, m, u), pts in by.items():
@@ -134,8 +139,39 @@ def poultry():
     for (g, h, a), pts in by.items():
         n += put(sid(g, 'poultry', h, a), 'production', '%s: %s (Eurostat)' % (clean(labs['animals'][a]), clean(labs['hatchitm'][h])), 'head', 'annual', pts, 'Eurostat apro_ec_poula', 1000)
     log('aves', n, 'series')
+
+def dairy_eu():
+    """Mantequilla y queso producidos por las lecheras de la UE-27 (apro_mk_pobta, 'Products obtained'). El codigo se busca por su nombre, no se supone."""
+    recs, labs = es('apro_mk_pobta', geos=['EU27_2020'], milkitem='PRO'); n = 0
+    for tag, rx in (('butter', r'^butter\b'), ('cheese', r'^cheese\b')):
+        codes = [c for c, l in labs['dairyprod'].items() if re.match(rx, l.strip(), re.I)]
+        if not codes: log('apro_mk_pobta: sin categoria', tag, '; etiquetas:', list(labs['dairyprod'].values())[:30]); continue
+        code = codes[0]; log('lacteo UE', tag, '=', code, labs['dairyprod'][code], '(%d candidatos)' % len(codes))
+        pts = [(r['time'], v) for r, v in recs if r['dairyprod'] == code]
+        n += put('eu-eus-dairy-%s-production' % tag, 'production', '%s: production by dairies, EU-27 (Eurostat)' % tag.capitalize(), 't', 'annual', pts, 'Eurostat apro_mk_pobta %s' % code, 1000)
+    log('lacteos UE', n, 'series')
+COMEXT = 'https://ec.europa.eu/eurostat/api/comext/dissemination/statistics/1.0/data/ds-045409'
+# (codigo SA, nombre; sin las palabras milk/dairy/cream en butter y cheese, para que la etiqueta no cuente tambien como leche)
+TRADE_HS = (('0405', 'Butter and spreads'), ('0406', 'Cheese and curd'), ('0407', "Birds' eggs in shell"), ('31', 'Fertilisers'), ('08', 'Edible fruit and nuts'), ('1004', 'Oats'), ('0701', 'Potatoes, fresh or chilled'),
+            ('1002', 'Rye'), ('0104', 'Sheep and goats, live'), ('0204', 'Meat of sheep or goats'), ('2204', 'Wine of fresh grapes'))
+def trade_eu():
+    """Comercio exterior de la UE-27 con terceros paises (Comext ds-045409, socio EXT_EU27_2020), cantidad en 100 kg -> t (x0,1 exacto), anual. El ano en curso se omite (incompleto)."""
+    n = 0; year = datetime.date.today().year
+    for hs, nm in TRADE_HS:
+        for flow, fl in (('1', 'imports'), ('2', 'exports')):
+            q = '?lang=EN&reporter=EU27_2020&partner=EXT_EU27_2020&product=%s&flow=%s&freq=A&indicators=QUANTITY_IN_100KG' % (hs, flow)
+            try: j = json.loads(get(COMEXT + q))
+            except Exception as e: log('ERROR comext', hs, flow, repr(e)[:150]); continue
+            tc = j['dimension']['time']['category']['index']; tl = [None] * len(tc)
+            for k, v in (tc.items() if isinstance(tc, dict) else enumerate(tc)): tl[v if isinstance(tc, dict) else k] = k if isinstance(tc, dict) else v
+            pts = []
+            for k, v in j.get('value', {}).items():
+                t = tl[int(k) % len(tl)]
+                if t and t.isdigit() and int(t) < year and v is not None: pts.append((t, v))
+            n += put('eu-eus-trade-%s-%s' % (hs, fl[0]), 'trade', '%s (HS %s): extra-EU-27 %s, quantity (Eurostat Comext)' % (nm, hs, fl), 't', 'annual', pts, 'Eurostat Comext ds-045409 %s' % hs, 0.1)
+    log('comercio UE', n, 'series')
 def main():
-    for fn in (crops, herds, slaughter, milk, poultry, absprices, priceidx, inputs):
+    for fn in (crops, herds, slaughter, milk, poultry, absprices, priceidx, inputs, dairy_eu, trade_eu):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:300])
     for k in [k for k in OUT if k.split('-')[0].upper() in NAT and OUT[k]['group'] in ('crops', 'livestock', 'production', 'milk')]: del OUT[k]   # ES y DK ya publican su produccion con fuente nacional (MAPA, Statistics Denmark): aqui solo lo que les falta (indices de precios de produccion e insumos)
