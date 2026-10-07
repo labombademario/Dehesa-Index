@@ -56,7 +56,7 @@
   },
   "data/eurostat-depth-stats.json": {
    "class": "BUILD_ONLY",
-   "note": "Series de Eurostat para ES, FR, DK, NL, BE y DE: alimentan los catalogos por pais; la ficha de pais carga por catalogo y no pide este fichero."
+   "note": "Series de Eurostat para ES, FR, DK, NL, BE, DE y el agregado UE-27: alimentan los catalogos por pais; la ficha de pais carga por catalogo y no pide este fichero."
   },
   "data/italy-eurostat-stats.json": {
    "class": "BUILD_ONLY",

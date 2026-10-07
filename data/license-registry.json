@@ -2028,7 +2028,8 @@
     "DK": "eurostat",
     "NL": "eurostat",
     "BE": "eurostat",
-    "DE": "eurostat"
+    "DE": "eurostat",
+    "EU": "eurostat"
    }
   },
   "data/canada-stats.json": {

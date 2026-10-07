@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Profundidad con Eurostat para ES, FR, DK, NL, BE y DE (DE: solo indices de precios de avena, soja, arroz, mantequilla y queso) (NL: solo precios e insumos; BE: sin censos ni sacrificio) -> data/eurostat-depth-stats.json (countries.ES/FR/DK, extend)
+"""Profundidad con Eurostat para ES, FR, DK, NL, BE, DE y el agregado UE-27 (EU27_2020 -> EU) (DE: solo indices de precios de avena, soja, arroz, mantequilla y queso) (NL: solo precios e insumos; BE: sin censos ni sacrificio) -> data/eurostat-depth-stats.json (countries.ES/FR/DK, extend)
 Francia: produccion (cultivos, censos, sacrificio, leche), indices de precios e insumos. Espana y Dinamarca: solo indices de precios de produccion e insumos (su produccion ya sale de MAPA y Statistics Denmark).
 Solo los productos de la matriz de cobertura (cereales, oleaginosas, patata, remolacha, vid, olivo, vacuno, porcino, ovino, aves, leche) y los insumos clave: cultivos, censos, sacrificio, leche, indices de precios de produccion y de insumos. Complementa las fuentes nacionales (tier 1); las duplicadas las ordena el registro de series.
 Cultivos, censos de ganado, sacrificio, leche, aves, indices de precios, precios absolutos y cuentas agrarias. Solo lo que Eurostat publica; ninguna serie se completa ni se estima.
@@ -17,8 +17,8 @@ def get(u, t=180):
             with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t) as r: return r.read()
         except Exception as e: last = e
     raise RuntimeError('%s -> %s' % (u, last))
-GEOS = ['ES', 'FR', 'DK', 'NL', 'BE', 'DE']; NAMES = {'DE': 'Germany', 'ES': 'Spain', 'FR': 'France', 'DK': 'Denmark', 'NL': 'Netherlands', 'BE': 'Belgium'}
-NEW = ('NL', 'BE')   # precios absolutos de productor y aves: solo para los paises anadidos despues, para no tocar las series ya publicadas de ES, FR y DK
+GEOS = ['ES', 'FR', 'DK', 'NL', 'BE', 'DE', 'EU27_2020']; NAMES = {'EU': 'European Union', 'DE': 'Germany', 'ES': 'Spain', 'FR': 'France', 'DK': 'Denmark', 'NL': 'Netherlands', 'BE': 'Belgium'}
+NEW = ('NL', 'BE', 'EU')   # precios absolutos de productor y aves: solo para los paises anadidos despues, para no tocar las series ya publicadas de ES, FR y DK
 def es(ds, **flt):
     q = 'lang=EN' + ''.join('&geo=' + g for g in GEOS) + ''.join('&%s=%s' % (k, urllib.parse.quote(v)) for k, v in flt.items())
     j = json.loads(get(API + ds + '?' + q)); ids, size = j['id'], j['size']; cats = {}; labs = {}
@@ -32,6 +32,7 @@ def es(ds, **flt):
     for k, v in j.get('value', {}).items():
         k = int(k); rec = {}
         for d, n in reversed(list(zip(ids, size))): rec[d] = cats[d][k % n]; k //= n
+        if rec.get('geo') == 'EU27_2020': rec['geo'] = 'EU'   # agregado UE-27 de Eurostat: entidad 'EU' de la matriz
         out.append((rec, v))
     return out, labs
 OUT = {}
