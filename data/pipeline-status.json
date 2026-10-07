@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T15:46:00Z",
+ "generatedAt": "2026-10-07T16:00:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 96,
@@ -11,9 +11,14 @@
  },
  "global": "error",
  "deploy": {
-  "status": "unknown",
+  "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": null,
+  "build": {
+   "sha": "b3a4ec37",
+   "conclusion": "success",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/e2c73322-9376-4222-9e2d-62b4eb745c7a",
+   "completedAt": "2026-10-07T16:00:24Z"
+  },
   "lagHours": null,
   "prodGeneratedAt": null,
   "repoGeneratedAt": "2026-10-07T15:41:00.672458+00:00"
@@ -399,7 +404,7 @@
    "crons": [
     "50 15 * * 3"
    ],
-   "nextRun": "2026-10-07T15:50:00Z",
+   "nextRun": "2026-10-14T15:50:00Z",
    "files": [
     {
      "path": "data/canada-provinces.json",
@@ -1670,7 +1675,7 @@
    "files": [
     {
      "path": "data/germany-livestock.json",
-     "lastChange": "2026-10-03T14:36:40Z"
+     "lastChange": "2026-10-07T15:56:18Z"
     },
     {
      "path": "data/revisions.json",
@@ -1679,14 +1684,14 @@
    ],
    "last": {
     "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-03T14:35:36Z",
-    "durationSec": 76,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37130153215"
+    "event": "schedule",
+    "startedAt": "2026-10-07T15:54:36Z",
+    "durationSec": 106,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37647791688"
    },
    "recent": {
-    "runs": 4,
-    "success": 2,
+    "runs": 5,
+    "success": 3,
     "failed": 2
    },
    "status": "ok",
@@ -2117,7 +2122,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T15:40:07Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2125,18 +2130,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-07T15:40:24Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-07T15:40:24Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-07T15:40:24Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/catalog"
@@ -2149,38 +2154,38 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-07T15:40:24Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-07T15:40:24Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-07T15:40:24Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-07T15:40:24Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-07T15:40:24Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-07T15:40:24Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-07T15:40:24Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-07T15:40:24Z"
+     "lastChange": "2026-10-07T15:59:19Z"
     },
     {
      "path": "data/home-explore.json",

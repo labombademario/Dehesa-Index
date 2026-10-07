@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T15:48:10Z",
+ "generatedAt": "2026-10-07T16:03:04Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1356,7 +1356,7 @@
    "country": "AU",
    "scope": "integrated",
    "institution": "Australia — ABARES (Australian Bureau of Agricultural and Resource Economics and Sciences)",
-   "dataset": "Ya integrada (49 series en el catalogo unificado)",
+   "dataset": "Ya integrada (58 series en el catalogo unificado)",
    "products": [
     "barley",
     "maize",

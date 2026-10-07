@@ -1271,7 +1271,7 @@
    "attributionText": "Source: ABARES | Dataset: Australian Crop Report, September 2026 (No. 219) | Date: 2026-09-01 | Licence: CC BY 4.0 | Original: https://doi.org/10.25814/5s62-8a44",
    "additionalRestrictions": "Cite source, dataset, date, licence and original link on every use. Excludes content supplied by third parties, logos and the Commonwealth Coat of Arms; no endorsement claims. Licence questions: copyright@aff.gov.au.",
    "thirdPartyExceptions": true,
-   "thirdPartyNote": "ABARES licenses its own material under CC BY 4.0 except content supplied by third parties, logos and the Coat of Arms; only ABARES-produced tables are used.",
+   "thirdPartyNote": "ABARES licenses its own material under CC BY 4.0 except content supplied by third parties, logos and the Coat of Arms. Own tables and ABS export unit values are used. The domestic price columns of Table 17 are compiled by ABARES from third-party reports (Farm Weekly, The Land, The Weekly Times, Jumbuk AG): published on the site owner's decision (7 Oct 2026), flagged on each series, citing ABARES as compiler. International columns (CME, USDA, IGC) are NOT used.",
    "verifiedAt": "2026-10-07",
    "status": "VERIFIED",
    "confidence": "high",

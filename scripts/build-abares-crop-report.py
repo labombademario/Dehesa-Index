@@ -6,8 +6,8 @@ y este script lo convierte. Para actualizar: sustituir el xlsx por el de la nuev
 Cargamos solo lo que es de ABARES o de ABS (valores unitarios de exportacion):
   - Tablas 11 y 12: produccion (kt) y superficie ('000 ha) por cultivo, Australia, anual, campana 1989-90 -> ultima estimacion.
   - Tablas 15 y 16: exportaciones por campana comercial (kt).
-  - Tabla 17: SOLO las columnas "Export" (valor unitario FOB de ABS, A$/t, trimestral).
-NO se cargan: las columnas "International" (precios de terceros: CME, USDA, IGC...) ni las "Domestic" (compiladas de Farm Weekly, The Land, etc.,
+  - Tabla 17: columnas "Export" (valor unitario FOB de ABS) y "Domestic" (A$/t, trimestral).
+Tambien las columnas "Domestic" (compiladas de Farm Weekly, The Land, etc.; decision del propietario, con advertencia). NO se cargan las "International" (precios de terceros: CME, USDA, IGC...);
 contenido de terceros excluido de la CC BY 4.0 de ABARES). Las previsiones (f) no entran en los puntos: van en la nota de la serie.
 Convencion de periodo: la campana 2025-26 se registra como 2025 (anyo de siembra)."""
 import json, re, sys, datetime
@@ -146,11 +146,35 @@ for c, h in heads.items():
     add("au-ab-euv-%s" % key, "prices", "Export unit value (FOB): %s (ABS via ABARES)" % nm, "A$/t", "quarterly", pts,
         "Valor unitario medio FOB de las exportaciones del trimestre (ABS, recogido por ABARES): no es un precio de mercado corriente; puede haber desfase entre la negociacion y el embarque.", sg="ABARES Australian Crop Report (ABS export unit values)")
 
+# Tabla 17: precios DOMESTICOS (decision del propietario, 7 oct 2026). ABARES los compila de informes de terceros (Farm Weekly, The Land, The Weekly Times, Jumbuk AG):
+# se publican con esa advertencia en la nota y en el registro de licencias. Siguen excluidas las columnas "International".
+DOM = {"Wheat": "wheat", "Barley": "barley", "Grain sorghum": "sorghum", "Oats": "oats", "Corn (maize)": "maize", "Oilseeds": "canola"}
+PULSE = {"lupins": "lupins", "chickpeas": "chickpeas", "field peas": "field-peas"}
+for c, h in heads.items():
+    if not h.startswith("Domestic"): continue
+    h1 = re.sub(r"\s+", " ", h); crop = crop_row[c]
+    if crop == "Pulses":
+        m = re.match(r"Domestic: ([a-z ]+),", h1); key = PULSE.get(m.group(1)) if m else None
+    else: key = DOM.get(crop)
+    if not key: print("Domestic sin mapear", crop, h); sys.exit(1)
+    pts, yr = [], None
+    for r in range(10, ws.max_row + 1):
+        lab = str(ws.cell(r, 2).value or "").strip()
+        m = re.match(r"^(\d{4}) (Q[1-4])$", lab)
+        if m: yr, q = m.group(1), m.group(2)
+        elif re.match(r"^Q[1-4]$", lab): q = lab
+        else: continue
+        v = num(ws.cell(r, c).value)
+        if v is not None: pts.append(("%s-%s" % (yr, q), v))
+    add("au-ab-dom-%s" % key, "prices", "Domestic price (%s): %s (ABARES)" % (h1.replace("Domestic: ", ""), LABEL[key]), "A$/t", "quarterly", pts,
+        "Media trimestral de precios domesticos que ABARES compila de informes de terceros (Farm Weekly, The Land, The Weekly Times, Jumbuk AG); sin GST. Publicado por decision del propietario del sitio, citando a ABARES como compilador.",
+        sg="ABARES Australian Crop Report (domestic prices compiled from third-party reports)")
+
 ids = [s["id"] for s in series]
 assert len(ids) == len(set(ids)), "ids duplicados"
 now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 doc = {"schemaVersion": 1, "generatedAt": now, "edition": EDITION,
        "countries": {"AU": {"name": "Australia", "extend": True, "source": {"name": "ABARES, Australian Crop Report (September 2026, No. 219)", "url": EDITION["doi"], "license": "CC BY 4.0"}, "series": series}},
-       "log": ["ABARES Australian Crop Report %s: %d series (Tablas 11, 12, 15, 16 y columnas Export de la 17). No se cargan precios internacionales ni domesticos (terceros)." % (EDITION["date"], len(series))]}
+       "log": ["ABARES Australian Crop Report %s: %d series (Tablas 11, 12, 15, 16 y columnas Export de la 17). Domesticos incluidos por decision del propietario; no se cargan los internacionales (terceros)." % (EDITION["date"], len(series))]}
 OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 print("OK", len(series), "series ->", OUT.name)
