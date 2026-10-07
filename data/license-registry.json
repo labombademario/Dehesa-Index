@@ -2533,6 +2533,11 @@
     "UK": "defra"
    }
   },
+  "data/uk-trade-stats.json": {
+   "byCountry": {
+    "UK": "hmrc_uktradeinfo"
+   }
+  },
   "data/cpi.json": {
    "sources": [
     "eurostat",

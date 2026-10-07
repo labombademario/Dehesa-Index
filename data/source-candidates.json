@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T02:03:40Z",
+ "generatedAt": "2026-10-07T02:10:56Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2743,11 +2743,22 @@
    "country": "GB",
    "scope": "integrated",
    "institution": "HM Revenue & Customs - UK Trade Info (OTS, API OData)",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "dataset": "Ya integrada (15 series en el catalogo unificado)",
+   "products": [
+    "fertilizer",
+    "maize",
+    "oats",
+    "potato",
+    "rice",
+    "rye",
+    "soy",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "trade"
+   ],
+   "frequency": "annual",
    "access": {
     "api": null,
     "csv": null,
