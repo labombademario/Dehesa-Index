@@ -2849,6 +2849,24 @@
     "eu_oil_bulletin"
    ],
    "notes": "Gasoleo automocion con impuestos por pais (DE, FR, ES, IT) del Boletin Semanal del Petroleo de la Comision Europea; columnas XX_price_with_tax_diesel de la misma hoja que el dato UE."
+  },
+  "data/app/": {
+   "sources": [
+    "alberta_ag",
+    "cgc",
+    "defra",
+    "eia",
+    "eu_agrifood",
+    "eu_oil_bulletin",
+    "statcan",
+    "us_drought_monitor",
+    "usda_ams_mars",
+    "usda_fas_esr",
+    "usda_fas_psd",
+    "usda_nass",
+    "world_bank"
+   ],
+   "notes": "Vistas pequenas para la app movil (scripts/build-app-views.mjs): copian valores ya publicados en data/ y cada uno conserva su sourceId; noticias solo con titular, medio y enlace."
   }
  },
  "derived": [
