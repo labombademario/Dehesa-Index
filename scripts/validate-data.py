@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"; SCH = ROOT / "schemas"
 JUMP = 25.0          # salto maximo respecto a la mediana de los 12 puntos previos antes de avisar
 FAMILY = {  # archivo -> esquema
-    **{n: "country-stats" for n in ["country-stats", "spain-stats", "france-stats", "germany-stats", "belgium-stats", "austria-stats", "uk-stats", "portugal-stats", "portugal-eurostat-stats", "italy-eurostat-stats", "eurostat-depth-stats", "uk-trade-stats", "chile-stats", "argentina-stats", "poland-eurostat-stats", "abares-stats", "poland-stats", "eu-gapfill-stats", "canada-stats", "us-stats", "australia-trade-stats", "eu-trade-stats", "interest-rates-stats"]},
+    **{n: "country-stats" for n in ["country-stats", "spain-stats", "france-stats", "germany-stats", "belgium-stats", "austria-stats", "uk-stats", "portugal-stats", "portugal-eurostat-stats", "italy-eurostat-stats", "eurostat-depth-stats", "uk-trade-stats", "chile-stats", "argentina-stats", "poland-eurostat-stats", "abares-stats", "switzerland-foag-stats", "poland-stats", "eu-gapfill-stats", "canada-stats", "us-stats", "australia-trade-stats", "eu-trade-stats", "interest-rates-stats"]},
     **{n: "tariffs" for n in ["us-tariffs", "tariffs-mx", "tariffs-ca", "tariffs-eu"]},
     "country-macro": "country-macro"}
 FREQ_RE = {"annual": r"^\d{4}$", "monthly": r"^\d{4}-\d{2}$", "weekly": r"^\d{4}-\d{2}-\d{2}$", "daily": r"^\d{4}-\d{2}-\d{2}$",

@@ -13,7 +13,7 @@ from lib_index import ROOT, STATS
 import freshness as FR
 SHARD_MAX = 160_000  # trozos pequenos: un perfil de pais solo baja los que contienen sus cifras clave y la serie elegida
 from lib_tags import TAGS, tags
-ISO_EN = {'AR': 'Argentina', 'CL': 'Chile', 'AT': 'Austria', 'AU': 'Australia', 'BE': 'Belgium', 'BG': 'Bulgaria', 'CA': 'Canada', 'CY': 'Cyprus', 'CZ': 'Czechia', 'DE': 'Germany', 'DK': 'Denmark', 'EE': 'Estonia', 'EL': 'Greece', 'ES': 'Spain', 'FI': 'Finland',
+ISO_EN = {'AR': 'Argentina', 'CH': 'Switzerland', 'CL': 'Chile', 'AT': 'Austria', 'AU': 'Australia', 'BE': 'Belgium', 'BG': 'Bulgaria', 'CA': 'Canada', 'CY': 'Cyprus', 'CZ': 'Czechia', 'DE': 'Germany', 'DK': 'Denmark', 'EE': 'Estonia', 'EL': 'Greece', 'ES': 'Spain', 'FI': 'Finland',
           'FR': 'France', 'HR': 'Croatia', 'HU': 'Hungary', 'IE': 'Ireland', 'IT': 'Italy', 'LT': 'Lithuania', 'LU': 'Luxembourg', 'LV': 'Latvia', 'MT': 'Malta', 'NL': 'Netherlands', 'PL': 'Poland', 'PT': 'Portugal',
           'RO': 'Romania', 'SE': 'Sweden', 'SI': 'Slovenia', 'SK': 'Slovakia', 'UK': 'United Kingdom', 'US': 'United States'}
 SPECIAL = {'EL': 'Greece', 'UK': 'United Kingdom', 'EU': 'European Union', 'EU+UK': 'EU and UK (average)', 'EU-UK': 'EU excluding UK (average)', 'EU Average': 'EU average', 'EU13': 'EU-13 (Member States since 2004)', 'EU14': 'EU-14 (EU-15 without UK)', 'EU15': 'EU-15 (members before 2004)', 'Region 1': 'Sugar region 1', 'Region 2': 'Sugar region 2', 'Region 3': 'Sugar region 3'}

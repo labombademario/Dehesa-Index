@@ -25,7 +25,7 @@
       key: 'Indicatori chiave', cover: 'Copertura', seriesN: 'Serie', catsN: 'Categorie di dati', from: 'Dati dal', last: 'Ultimo dato', sources: 'Fonti', common: 'Stesso concetto, due paesi', concept: 'Concetto', exp12: 'Esportazioni agroalimentari (ultimi 12 mesi)', imp12: 'Importazioni agroalimentari (ultimi 12 mesi)', bal12: 'Saldo agroalimentare (ultimi 12 mesi)', cur: 'Attenzione: le valute differiscono (UE in euro; Canada e Australia in valuta locale), confronto non diretto.', cat: 'Categoria', wk: 'Settimana', vsprev: 'vs. precedente', vsyr: 'vs. un anno fa', date: 'Data', none: 'Nessun dato',
       eun: { cerdo: 'Suino, classe E', vacuno: 'Vitelloni (A, O2)', trigo: 'Frumento panificabile', cebada: 'Orzo da foraggio', mantequilla: 'Burro', leche_polvo: 'Latte scremato in polvere', huevos: 'Uova (gabbia)', pollo: 'Pollo intero 65%', cordero: 'Agnello pesante', nitrogeno: 'Fertilizzante azotato', leche: 'Latte crudo (Germania)', aceite: 'Olio extra vergine (Spagna)' } }
   };
-  var ORDER = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'DK', 'NL', 'US', 'CA', 'AU', 'UK', 'PL', 'AR', 'CL', 'EU'];
+  var ORDER = ['ES', 'FR', 'DE', 'BE', 'AT', 'PT', 'IT', 'DK', 'NL', 'US', 'CA', 'AU', 'UK', 'PL', 'CH', 'AR', 'CL', 'EU'];
   var D = null, EUD = null, MAC = null, WAG = null, ST = { a: 'ES', b: 'FR' };
   function lang() { return CD.lang(); }
   function tt() { return T[lang()] || T.es; }

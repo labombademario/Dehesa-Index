@@ -239,6 +239,15 @@ sources:
     data: [argentina-stats.json]
     log: argentina-log.txt
     message: Datos Argentina (datos abiertos)
+  - id: switzerland-foag
+    name: Update Switzerland (FOAG market data)
+    cron: ['20 6 * * 3']
+    script: scripts/update-ch-foag.py
+    timeout: 30
+    script_timeout: 20
+    data: [switzerland-foag-stats.json]
+    log: switzerland-foag-log.txt
+    message: Datos Suiza (FOAG, mercados agrarios)
   - id: poland-eurostat
     name: Update Poland (Eurostat)
     cron: ['45 17 * * 2,5']

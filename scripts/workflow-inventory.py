@@ -10,7 +10,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]; W = ROOT / '.github' / 'workflows'; OUT = ROOT / 'docs' / 'WORKFLOWS.md'
 FAM = [('update-us-', 'US'), ('update-ca', 'CA'), ('update-canada', 'CA'), ('update-au', 'AU'), ('update-uk', 'UK'), ('update-eu', 'EU'), ('update-cap', 'PAC'), ('update-nass', 'US'), ('update-ams', 'US'), ('update-ers', 'US'),
        ('update-news', 'Noticias y blog'), ('update-weekly-blog', 'Noticias y blog'), ('update-pipeline', 'Derivados y estado'), ('update-seo', 'Derivados y estado'), ('verify-', 'Calidad'), ('quality', 'Calidad'), ('qa-', 'Calidad'), ('ux-', 'Calidad')]
-COUNTRY = {'es': 'ES', 'fr': 'FR', 'de': 'DE', 'it': 'IT', 'nl': 'NL', 'dk': 'DK', 'pt': 'PT', 'be': 'BE', 'at': 'AT', 'ie': 'IE', 'pl': 'PL', 'manitoba': 'CA', 'alberta': 'CA', 'saskatchewan': 'CA', 'mx': 'MX', 'br': 'BR', 'ar': 'AR', 'chile': 'CL', 'argentina': 'AR'}
+COUNTRY = {'es': 'ES', 'fr': 'FR', 'de': 'DE', 'it': 'IT', 'nl': 'NL', 'dk': 'DK', 'pt': 'PT', 'be': 'BE', 'at': 'AT', 'ie': 'IE', 'pl': 'PL', 'ch': 'CH', 'manitoba': 'CA', 'alberta': 'CA', 'saskatchewan': 'CA', 'mx': 'MX', 'br': 'BR', 'ar': 'AR', 'chile': 'CL', 'argentina': 'AR'}
 def family(n):
     for pre, f in FAM:
         if n.startswith(pre): return f

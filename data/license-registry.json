@@ -2061,6 +2061,32 @@
    "evidence": "https://stat.gov.pl/en/copyright/ y https://stat.gov.pl/copyright (leidas el 2026-10-07 desde GitHub Actions): «There is no objection connected with copywriting of data and websites and printing including personal changes and summaries on condition that the source is given.» La portada de stat.gov.pl enlaza ademas al texto legal de CC BY 4.0, pero la condicion explicita de la pagina de copyright es la cita de la fuente.",
    "short": "GUS (Polonia)",
    "legalConfidenceReason": "Permiso explicito con condicion de citar la fuente, sin identificador de licencia estandar."
+  },
+  "foag_ch": {
+   "name": "Switzerland — FOAG/BLW (Federal Office for Agriculture), Agricultural market data (Marktzahlen)",
+   "url": "https://www.agrarmarktdaten.ch",
+   "country": "CH",
+   "licenseId": "OPENDATA-SWISS-BY",
+   "licenseName": "opendata.swiss: Open use. Must provide the source (terms_by)",
+   "licenseUrl": "https://opendata.swiss/en/terms-of-use",
+   "commercialUse": "yes",
+   "derivatives": "yes",
+   "redistribution": "yes",
+   "attributionRequired": true,
+   "attributionText": "Source: Federal Office for Agriculture FOAG/BLW, Agricultural market data (Marktzahlen), via LINDAS / opendata.swiss | Licence: opendata.swiss Open use, must provide the source | Original: https://opendata.swiss/en/organization/bundesamt-fur-landwirtschaft-blw",
+   "additionalRestrictions": "Cite author, title and link to the dataset. Only FOAG-produced Swiss series are used; the foreign comparison series that appear in the same cubes (EU, Austria, Italy, USA, NZ...; CLAL, AMA, BLE, FranceAgriMer...) are not used.",
+   "thirdPartyExceptions": true,
+   "thirdPartyNote": "The FOAG cubes also contain third-party foreign comparison prices; they are excluded. Some datasets may carry a statutory citation duty (opendata.swiss).",
+   "verifiedAt": "2026-10-07",
+   "status": "VERIFIED",
+   "confidence": "medium",
+   "evidence": "opendata.swiss terms of use (https://opendata.swiss/en/terms-of-use): category 'Open use. Must provide the source' permits non-commercial and commercial use with source (author, title, link). The FOAG market-figure records on opendata.swiss/ckan.opendata.swiss state terms_by and, for the LINDAS SPARQL resource of Marktzahlen Eier, 'Non-commercial Allowed / Commercial Allowed / Reference Required'. Data is read from the public SPARQL endpoint https://lindas.admin.ch/query (graph https://lindas.admin.ch/foag/agricultural-market-data); reachable from GitHub Actions (probe 7 Oct 2026).",
+   "used": true,
+   "aliases": [],
+   "notes": "Terms checked on the general terms page and on two dataset records (milk annual producer prices, eggs SPARQL resource); the other cubes are assumed to share the FOAG terms_by terms and should be spot-checked when new cubes are added. SwissImpex (foreign trade) and Tares are NOT used: commercial use requires permission.",
+   "legalConfidence": "MEDIUM",
+   "legalConfidenceReason": "Condiciones generales de opendata.swiss verificadas y dos registros del BLW con uso comercial permitido y cita obligatoria; no se ha abierto ficha por ficha cada uno de los 49 cubos.",
+   "short": "FOAG (Suiza)"
   }
  },
  "files": {
@@ -2723,6 +2749,11 @@
   "data/abares-stats.json": {
    "byCountry": {
     "AU": "abares"
+   }
+  },
+  "data/switzerland-foag-stats.json": {
+   "byCountry": {
+    "CH": "foag_ch"
    }
   }
  },
