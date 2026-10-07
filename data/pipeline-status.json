@@ -1,19 +1,24 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T18:56:00Z",
+ "generatedAt": "2026-10-07T19:25:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 96,
   "late": 1,
   "error": 3,
-  "not_run": 2,
-  "unknown": 1
+  "not_run": 3,
+  "unknown": 0
  },
  "global": "error",
  "deploy": {
-  "status": "unknown",
+  "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": null,
+  "build": {
+   "sha": "f88b6c4d",
+   "conclusion": "success",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/2a39a15c-ac9b-468f-b6b7-c22b9e13c275",
+   "completedAt": "2026-10-07T19:10:25Z"
+  },
   "lagHours": null,
   "prodGeneratedAt": null,
   "repoGeneratedAt": "2026-10-07T18:34:26.631916+00:00"
@@ -1587,7 +1592,7 @@
    "files": [
     {
      "path": "data/fx-history.json",
-     "lastChange": "2026-10-04T15:51:16Z"
+     "lastChange": "2026-10-07T18:56:10Z"
     },
     {
      "path": "data/revisions.json",
@@ -2117,7 +2122,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T18:32:48Z"
+     "lastChange": "2026-10-07T19:09:17Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2125,18 +2130,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-07T18:10:27Z"
+     "lastChange": "2026-10-07T18:56:10Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-07T18:33:09Z"
+     "lastChange": "2026-10-07T19:09:17Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-07T18:33:09Z"
+     "lastChange": "2026-10-07T19:09:17Z"
     },
     {
      "path": "data/catalog"
@@ -2149,38 +2154,38 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-07T18:33:09Z"
+     "lastChange": "2026-10-07T19:09:17Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-07T18:33:09Z"
+     "lastChange": "2026-10-07T19:09:17Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-07T18:33:09Z"
+     "lastChange": "2026-10-07T19:09:17Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-07T18:33:09Z"
+     "lastChange": "2026-10-07T19:09:17Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-07T18:33:09Z"
+     "lastChange": "2026-10-07T19:09:17Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-07T18:33:09Z"
+     "lastChange": "2026-10-07T19:09:17Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-07T18:33:09Z"
+     "lastChange": "2026-10-07T19:09:17Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-07T18:33:09Z"
+     "lastChange": "2026-10-07T19:09:17Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2804,10 +2809,11 @@
      "series": 29,
      "points": 3640,
      "lines": 0,
-     "lastChange": "2026-10-07T18:10:27Z"
+     "lastChange": "2026-10-07T18:55:59Z"
     },
     {
-     "path": "data/ch-chain.json"
+     "path": "data/ch-chain.json",
+     "lastChange": "2026-10-07T18:56:10Z"
     },
     {
      "path": "data/revisions.json",
@@ -2828,7 +2834,8 @@
    "nextRun": "2026-11-04T05:35:00Z",
    "files": [
     {
-     "path": "data/switzerland-meteo-stats.json"
+     "path": "data/switzerland-meteo-stats.json",
+     "lastChange": "2026-10-07T18:56:10Z"
     },
     {
      "path": "data/revisions.json",
@@ -2837,7 +2844,7 @@
    ],
    "last": null,
    "recent": null,
-   "status": "unknown",
+   "status": "not_run",
    "expectedEveryHours": 744.0
   },
   {

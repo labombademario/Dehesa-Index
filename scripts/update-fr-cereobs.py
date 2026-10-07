@@ -2,7 +2,7 @@
 """Francia: estado semanal del maiz grano (Cere'Obs, FranceAgriMer) -> data/france-cereobs.json
 Excel historico "depuis 2015" publicado en data.gouv.fr (la direccion se lee del conjunto de datos). Nacional todas las semanas desde 2015; regiones los ultimos 6 anos.
 Por semana: % de superficie en cada etapa (siembra, emergencia, 6-8 hojas, floracion femenina, humedad del grano 50 %, cosecha) y % por estado (muy malo ... muy bueno). Vacios se omiten (null).
-Licencia: data.gouv declara Licence Ouverte 2.0 pero el propio fichero dice 'tous droits reserves'; la fuente sigue PENDING hasta aclararlo con FranceAgriMer.
+Licencia: data.gouv declara Licence Ouverte 2.0 pero el propio fichero dice 'tous droits reserves'; el registro la mantiene VERIFIED por decision del propietario (4 oct 2026, OWNER_ACCEPTED); la contradiccion sigue sin aclararse con FranceAgriMer.
 Modo sin red: FR_FIXTURES=<carpeta con cereobs.xlsx>."""
 import datetime, io, json, os, re, sys, time, urllib.request
 from pathlib import Path

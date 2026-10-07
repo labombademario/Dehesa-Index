@@ -56,7 +56,7 @@
   }
   function compLabel(v,t){return v==='conditional'?t.conditional:v==='directional'?t.directional:v==='direct'?t.direct:t.review;}
   function render(entry,disp){
-    if(!entry||!disp||!disp.quoteType)return'';
+    if(!entry||!disp||!disp.quoteType||disp.unverified)return'';
     var lang=S.getLang?S.getLang():'es',t=I18N[lang]||I18N.es;
     var region=disp.regionCode||disp.region||disp.quoteType.region||null;
     var productId=entry.catId+'-'+entry.product.nameKey;
@@ -87,6 +87,7 @@
       review:t.review
     }[observation.comparability]||t.review;
     var statusClass=observation.status==='verified'?'verified':'sample';
+    if(disp.derived){statusLabel=lang==='es'?'Estimado':lang==='fr'?'Estimé':lang==='it'?'Stimato':'Estimated';statusClass='sample';}
     var observationDate=observation.observationDate||t.notDeclared;
     var publicationDate=observation.publicationDate||t.notDeclared;
     var sourceHtml=observation.sourceUrl

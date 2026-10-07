@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T18:58:22Z",
+ "generatedAt": "2026-10-07T19:27:38Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2821,7 +2821,7 @@
    "attribution": "Source : FranceAgriMer – Données originales téléchargées depuis https://visionet.franceagrimer.fr/ – Licence Ouverte 2.0",
    "lastChecked": "2026-10-04",
    "verification": "REGISTRY",
-   "legalConfidence": "MEDIUM",
+   "legalConfidence": "OWNER_ACCEPTED",
    "registryAlignment": "ALIGNED",
    "datasetIdentified": true,
    "gate": {

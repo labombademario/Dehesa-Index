@@ -317,14 +317,14 @@
       return { region: p.us, regionCode: 'us', targetCcy: 'USD', targetKgPerUnit: p.imperialKgPerUnit, targetUnitLabel: UL[p.imperialUnitKey], quoteType: p.quoteTypes && p.quoteTypes.us, ukGap: false };
     }
     if (loc === 'eu') {
-      var region = p.eu;
+      var region = p.eu, derived = false, unverified = false;
       if (p.isEnergy) {
         var dr = dieselCountryRegion(country);
-        if (dr) region = dr;
-      } else if (p.countryFactors && country !== 'es' && p.countryFactors[country] != null) {
-        region = D.deriveCountryRaw(p.eu, p.countryFactors[country]);
+        if (dr) { region = dr; unverified = true; }
+      } else if (p.countryFactors && country !== 'es' && p.countryFactors[country] != null && p.countryFactors[country] !== 1) {
+        region = D.deriveCountryRaw(p.eu, p.countryFactors[country]); derived = true;
       }
-      return { region: region, regionCode: 'eu', targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: false };
+      return { region: region, regionCode: 'eu', targetCcy: 'EUR', targetKgPerUnit: p.metricKgPerUnit, targetUnitLabel: UL[p.metricUnitKey], quoteType: p.quoteTypes && p.quoteTypes.eu, ukGap: false, derived: derived, unverified: unverified };
     }
     if (loc === 'ca') {
       var caUnit = p.caUnitKey || p.metricUnitKey;
@@ -619,9 +619,9 @@
     } else if (state.location === 'eu') {
       title = ER.euTitle;
       rows = D.DIESEL_EU_COUNTRIES.map(function (r) {
-        var built = D.buildRegion(r, ER[r.key] || r.key, 'EUR', D.LITRO_KG, (D.UNIT_LABELS[lang()] || D.UNIT_LABELS.es).litro, D.FX, T());
-        return '<div class="di-energy-region-row"><span>' + esc(ER[r.key] || r.key) + '</span><b>' + esc(built.price) + esc(built.unit) + '</b></div>';
+        return '<div class="di-energy-region-row"><span>' + esc(ER[r.key] || r.key) + '</span><b>—</b></div>';
       });
+      rows.push('<div class="di-derived-note">' + esc(UNVERIFIED_NOTE[lang()] || UNVERIFIED_NOTE.es) + '</div>');
     } else {
       return '';
     }
@@ -635,7 +635,21 @@
     return D.DATA_TRUST[productId + '-' + region] || null;
   }
 
-  function productDataState(observation) {
+  var DERIVED_NOTE = {
+    es: 'Estimación: referencia de la UE multiplicada por un factor fijo de país. No es una cotización observada en ese país.',
+    en: 'Estimate: EU reference multiplied by a fixed country factor. Not a price observed in that country.',
+    fr: 'Estimation : référence UE multipliée par un facteur fixe par pays. Ce n’est pas un prix observé dans ce pays.',
+    it: 'Stima: riferimento UE moltiplicato per un fattore fisso per paese. Non è un prezzo osservato in quel paese.'
+  };
+  var UNVERIFIED_NOTE = {
+    es: 'Sin fuente verificada por país todavía (Boletín Semanal del Petróleo de la CE en preparación).',
+    en: 'No verified country-level source yet (EC Weekly Oil Bulletin ingestion in preparation).',
+    fr: 'Pas encore de source vérifiée par pays (Bulletin pétrolier hebdomadaire de la CE en préparation).',
+    it: 'Nessuna fonte verificata per paese al momento (Bollettino petrolifero settimanale della CE in preparazione).'
+  };
+  function productDataState(observation, disp) {
+    if (disp && disp.unverified) return { key: 'pending', label: { es: 'PENDIENTE', en: 'PENDING', fr: 'EN ATTENTE', it: 'IN ATTESA' } };
+    if (disp && disp.derived && observation && observation.status === 'verified') return { key: 'derived', label: { es: 'ESTIMADO', en: 'ESTIMATED', fr: 'ESTIMÉ', it: 'STIMATO' } };
     if (!observation) return { key: 'pending', label: { es: 'PENDIENTE', en: 'PENDING', fr: 'EN ATTENTE', it: 'IN ATTESA' } };
     if (observation.comparability === 'not_comparable') return { key: 'not-comparable', label: { es: 'NO COMPARABLE', en: 'NOT COMPARABLE', fr: 'NON COMPARABLE', it: 'NON COMPARABILE' } };
     if (observation.status === 'verified') return { key: 'real', label: { es: 'REAL', en: 'REAL', fr: 'RÉEL', it: 'REALE' } };
@@ -680,7 +694,7 @@
     var disp = resolveDisplay(entry, state.location, state.euCountry);
     var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
     var observation = disp.ukGap ? null : trustObservationFor(entry, disp);
-    var dataState = productDataState(observation);
+    var dataState = productDataState(observation, disp);
     var stateLabel = (dataState.label[lang()] || dataState.label.es);
     var fav = isFavorite(key);
     var expanded = !!state.expanded[key];
@@ -688,7 +702,7 @@
     // Se muestra el valor de toda observación verificada (REAL y NO COMPARABLE); el estado va en la etiqueta.
     // Solo lo pendiente (sin observación verificada) se oculta: nunca se enseña un valor de muestra.
     // Reino Unido / Canada sin cotizacion propia: nunca se ensena el valor europeo en su lugar (regla de cobertura).
-    var showValue = !disp.ukGap && !!observation && observation.status === 'verified';
+    var showValue = !disp.ukGap && !disp.unverified && !!observation && observation.status === 'verified';
     var price = showValue ? built.price : '—';
     var unit = showValue ? built.unit : '';
     var change = showValue ? built.changeLabel : '';
@@ -706,6 +720,8 @@
         '</div>' +
         (showValue ? quoteBadgeHtml(disp.quoteType) : '') +
         (global.DehesaDataTrust && !disp.ukGap ? global.DehesaDataTrust.render(entry, disp) : '') +
+        (disp.unverified ? '<div class="di-derived-note">' + esc(UNVERIFIED_NOTE[lang()] || UNVERIFIED_NOTE.es) + '</div>' : '') +
+        (disp.derived ? '<div class="di-derived-note">' + esc(DERIVED_NOTE[lang()] || DERIVED_NOTE.es) + '</div>' : '') +
         (showValue ? productCiteHtml(entry, disp, observation) : '') +
         '<div class="di-product-price-row">' +
           '<span class="di-product-price">' + esc(price) + '</span>' +
@@ -1637,7 +1653,7 @@
       var disp = resolveDisplay(entry, loc, state.euCountry);
       if (disp.ukGap || disp.regionCode !== loc) return null;
       var obs = trustObservationFor(entry, disp);
-      if (!obs || obs.status !== 'verified') return null;
+      if (!obs || obs.status !== 'verified' || disp.derived || disp.unverified) return null;
       var built = D.buildRegion(disp.region, productName(entry.nameKey), disp.targetCcy, disp.targetKgPerUnit, disp.targetUnitLabel, D.FX, T());
       var base = entry.product[disp.regionCode];
       return { price: built.price, unit: built.unit, kg: disp.targetKgPerUnit, ccy: disp.targetCcy, date: obs.observationDate || null, pts: base && base.histPts ? base.histPts : null, full: !!(base && base.histFull) };

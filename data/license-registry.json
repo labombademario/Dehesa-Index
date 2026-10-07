@@ -625,7 +625,7 @@
    "redistribution": "yes",
    "attributionRequired": true,
    "attributionText": "Source : FranceAgriMer – Données originales téléchargées depuis https://visionet.franceagrimer.fr/ – Licence Ouverte 2.0",
-   "additionalRestrictions": "Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre derechos de terceros.",
+   "additionalRestrictions": "Citar siempre la fuente (FranceAgriMer) y la fecha; mantener la integridad de los datos; no implica respaldo oficial. La licencia no cubre derechos de terceros. Licencia por conjunto/recurso pendiente de comprobar para los recursos listados en notes.",
    "thirdPartyExceptions": true,
    "thirdPartyNote": "LO 2.0 does not cover third-party rights.",
    "verifiedAt": "2026-10-04",
@@ -634,10 +634,10 @@
    "evidence": "Investigación del titular de Dehesa Index (4 oct 2026): todos los datos de FranceAgriMer son públicos y gratuitos siempre que se referencien. Coherente con el aviso legal del RNM (reutilización incluso comercial citando fuente) y con la Licence Ouverte 2.0 de data.gouv.fr; sustituye la duda previa sobre el pie «tous droits réservés» de VISIONet. Confianza media: la resolución viene de la investigación del titular, no de una carta de FranceAgriMer.",
    "used": true,
    "aliases": [],
-   "notes": "Resuelto el 4 oct 2026: VERIFIED (antes PENDING por la contradicción VISIONet / Licence Ouverte).",
+   "notes": "Decision del propietario (Mario) del 4 oct 2026: datos publicos y gratuitos citando la fuente. Auditoria externa (7 oct 2026) senala que la licencia debe comprobarse por conjunto/recurso. Con Licence Ouverte explicita en data.gouv.fr: cotizaciones de cereales francesas y datos vitivinicolas historicos (tableur). SIN licencia acreditada por recurso: PDF de vino NCO-VIN-CS usado en la web y el Excel de Cere'Obs (data.gouv declara LO 2.0 pero el fichero dice «tous droits reserves»). Pendiente: identificar la licencia de cada recurso o pedir confirmacion a FranceAgriMer.",
    "short": "FranceAgriMer",
-   "legalConfidence": "MEDIUM",
-   "legalConfidenceReason": "Base juridica razonable pero no explicita para este conjunto (politica general del organismo o analisis indirecto)."
+   "legalConfidence": "OWNER_ACCEPTED",
+   "legalConfidenceReason": "VERIFIED por decision del propietario del sitio (Mario, 4 oct 2026). La licencia no esta acreditada por conjunto y recurso: el aviso legal de FranceAgriMer condiciona la Licence Ouverte a que el conjunto este identificado como tal."
   },
   "destatis": {
    "name": "Destatis (GENESIS-Online)",
