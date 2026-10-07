@@ -2665,8 +2665,14 @@
    "notes": "Histórico 2011-2022 de los Informes de Contratación nº 1-31 de ENESA: ejercicios cerrados, cortes parciales del año y fotos a fecha. Cifras copiadas del cuadro Grandes cifras de cada PDF; el informe más reciente prevalece y las discrepancias entre informes se anotan en meta.notes."
   },
   "data/us-stats.json": {
-   "default": "usda_nass",
-   "notes": "Totales nacionales de USDA NASS (cultivos, existencias, precios pagados) reordenados desde nass-crops/nass-livestock/nass-prices sin cambiar valores."
+   "bySourceGroupPrefix": {
+    "crops": "usda_nass",
+    "stocks": "usda_nass",
+    "livestock": "usda_nass",
+    "prices_paid": "usda_nass",
+    "BLS": "bls"
+   },
+   "notes": "Totales nacionales de USDA NASS (cultivos, existencias, precios pagados) reordenados desde nass-crops/nass-livestock/nass-prices sin cambiar valores; los indices de precios de produccion (PPI) son del BLS (data/us-ppi.json), sin cambiar valores."
   },
   "data/eu-regions-macro.json": {
    "sources": [
@@ -2707,6 +2713,11 @@
    "byCountry": {
     "PL": "gus_poland"
    }
+  },
+  "data/us-ppi.json": {
+   "sources": [
+    "bls"
+   ]
   }
  },
  "derived": [

@@ -493,6 +493,14 @@ sources:
     data: [interest-rates-stats.json]
     log: interest-rates-log.txt
     message: Tipos de interés oficiales
+  - id: us-ppi
+    name: Update US producer price indices for farm and food products (BLS PPI)
+    cron: ['20 14 * * 4']
+    script: scripts/update-us-ppi.py
+    timeout: 10
+    data: [us-ppi.json]
+    log: us-ppi-log.txt
+    message: Indices de precios de produccion de EE. UU. (BLS PPI)
   - id: us-stats
     name: Update US national series (USDA NASS)
     cron: ['30 2 * * *']

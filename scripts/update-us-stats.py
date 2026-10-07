@@ -3,7 +3,7 @@
 No hace llamadas de red: solo reordena a la forma de los demas *-stats.json (id, grupo, etiqueta, unidad, frecuencia, puntos), para que
 la grafica "Explorar los datos" de la ficha de EE. UU. tenga mas que el tipo de la Reserva Federal.
 No transforma las cifras (mismos valores y periodos que NASS); solo se descartan series de un solo punto y los porcentajes de semillas biotecnologicas.
-Grupos: crops (area, produccion, rendimiento), livestock (existencias de animales), stocks (camaras frigorificas), prices_paid (indices de precios pagados)."""
+Grupos: crops (area, produccion, rendimiento), livestock (existencias de animales), stocks (camaras frigorificas), prices_paid (indices de precios pagados), idx_perc (indices de precios de produccion, BLS PPI, data/us-ppi.json)."""
 import datetime, json, re, statistics, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
@@ -20,16 +20,22 @@ def metric(m, cold=True):
     m = m.strip()
     for pat, name in [(r'^ACRES HARVESTED', 'area harvested'), (r'^ACRES PLANTED', 'area planted'), (r'^PRODUCTION, MEASURED IN \$', 'production value'), (r'^PRODUCTION', 'production'),
                       (r'^YIELD', 'yield'), (r'^INVENTORY, MEASURED IN \$ / HEAD', None), (r'^INVENTORY, MEASURED IN \$', None), (r'^INVENTORY', 'inventory'), (r'^OPERATIONS', None),
-                      (r'^STOCKS', 'cold storage stocks'), (r'^LITTER RATE', 'litter rate'), (r'^PIG CROP', 'pig crop'), (r'^INDEX FOR PRICE PAID', 'prices paid index')]:
+                      (r'^STOCKS', 'cold storage stocks'), (r'^LITTER RATE', 'litter rate'), (r'^PIG CROP', 'pig crop'), (r'^INDEX FOR PRICE PAID', 'prices paid index'), (r'^PRODUCER PRICE INDEX', 'producer price index')]:
         if re.match(pat, m): return ('stocks' if name == 'cold storage stocks' and not cold else name)
     return None
+MON = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+def ppi_unit(u):
+    """'INDEX 198200' (BLS PPI: base YYYYMM, MM=00 -> media anual) -> 'index (1982=100)' / 'index (Dec 2011=100)'."""
+    m = re.fullmatch(r'INDEX (\d{4})(\d{2})', u or '')
+    if not m: return None
+    return 'index (%s=100)' % (m.group(1) if m.group(2) == '00' else '%s %s' % (MON[int(m.group(2))], m.group(1)))
 def freq_of(pts):
     if all(re.fullmatch(r'\d{4}', p[0]) for p in pts): return 'annual'
     ms = [int(p[0][:4]) * 12 + int(p[0][5:7]) for p in pts if re.fullmatch(r'\d{4}-\d{2}', p[0])]
     if len(ms) != len(pts) or len(ms) < 3: return None
     g = statistics.median([b - a for a, b in zip(ms, ms[1:])])
     return {1: 'monthly', 3: 'quarterly', 6: 'semiannual', 12: 'annual'}.get(g)
-def build(fn, group_of, log):
+def build(fn, group_of, log, sg=None, pre='us-nass-'):
     d = json.loads((ROOT / 'data' / fn).read_text(encoding='utf-8')); out = []
     for key, v in d['series'].items():
         if ' - ' not in key: continue
@@ -41,7 +47,7 @@ def build(fn, group_of, log):
         if len(pts) < 5: continue
         fq = freq_of(pts)
         if not fq: log.append('descartada %s: periodicidad irregular' % key); continue
-        u = UNIT.get(v.get('u'))
+        u = UNIT.get(v.get('u')) or ppi_unit(v.get('u'))
         if not u: log.append('descartada %s: unidad %r sin traduccion' % (key, v.get('u'))); continue
         mo = None
         if fq == 'annual' and not all(re.fullmatch(r'\d{4}', p[0]) for p in pts):  # existencias a una fecha fija del anio: periodo = anio, el mes va en la etiqueta
@@ -50,20 +56,21 @@ def build(fn, group_of, log):
             mo = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][int(mm.pop())]
             pts = [[p[0][:4], p[1]] for p in pts]
         mx = max(abs(p[1]) for p in pts)  # cifras enormes (miles de millones de bushels) -> "millones"/"miles"; division exacta, sin redondeo de los datos
-        if u not in ('index (2011=100)', 'bu/acre', 'lb/acre', 'short tons/acre', 'pigs/litter', 'USD/head'):
+        if not u.startswith('index (') and u not in ('bu/acre', 'lb/acre', 'short tons/acre', 'pigs/litter', 'USD/head'):
             if mx >= 1e8: pts = [[p[0], round(p[1] / 1e6, 6)] for p in pts]; u = 'million ' + u
             elif mx >= 1e5: pts = [[p[0], round(p[1] / 1e3, 6)] for p in pts]; u = 'thousand ' + u
         prev = pts[-2][1] if len(pts) > 1 else None
         chg = round((pts[-1][1] / prev - 1) * 100, 2) if prev else None
         label = '%s: %s' % (nice(re.sub(r', INDEX FOR PRICE PAID.*', '', name)), mt) + (' (%s)' % mo if mo else '')
-        sid = 'us-nass-' + re.sub(r'[^a-z0-9]+', '-', ('%s %s %s' % (name, mt, u)).lower()).strip('-')
-        out.append({'id': sid, 'group': group_of(key), 'label': label, 'unit': u, 'frequency': fq, 'latestPeriod': pts[-1][0], 'latest': pts[-1][1], 'changePct': chg, 'points': pts, 'sourceGroup': group_of(key)})
+        sid = pre + re.sub(r'[^a-z0-9]+', '-', ('%s %s %s' % (name, mt, u)).lower()).strip('-')
+        out.append({'id': sid, 'group': group_of(key), 'label': label, 'unit': u, 'frequency': fq, 'latestPeriod': pts[-1][0], 'latest': pts[-1][1], 'changePct': chg, 'points': pts, 'sourceGroup': sg or group_of(key)})
     return out
 def main():
     log = []; series = []
     series += build('nass-crops.json', lambda k: 'stocks' if ' - STOCKS' in k else 'crops', log)
     series += build('nass-livestock.json', lambda k: 'stocks' if ('COLD STORAGE' in k or ' - STOCKS' in k) else 'livestock', log)
     series += build('nass-prices.json', lambda k: 'prices_paid', log)
+    series += build('us-ppi.json', lambda k: 'idx_perc', log, 'BLS - Producer Price Index (PPI)', 'us-ppi-')
     ids = [s['id'] for s in series]
     if len(ids) != len(set(ids)): raise SystemExit('ids duplicados: %s' % sorted({i for i in ids if ids.count(i) > 1})[:5])
     series.sort(key=lambda s: (s['group'], s['label']))

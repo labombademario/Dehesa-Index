@@ -1,4 +1,4 @@
-02:46:42: 258 series (crops 115, livestock 28, prices_paid 56, stocks 59)
+13:20:16: 283 series (crops 115, idx_perc 25, livestock 28, prices_paid 56, stocks 59)
 descartada POTATOES - YIELD, MEASURED IN CWT / ACRE: unidad 'CWT / ACRE' sin traduccion
 descartada EGGS, TABLE - PRODUCTION, MEASURED IN EGGS: unidad 'EGGS' sin traduccion
 descartada MILK - PRODUCTION, MEASURED IN LB / HEAD: unidad 'LB / HEAD' sin traduccion

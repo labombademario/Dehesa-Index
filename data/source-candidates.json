@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T13:08:42Z",
+ "generatedAt": "2026-10-07T13:22:42Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1769,11 +1769,28 @@
    "country": "US",
    "scope": "integrated",
    "institution": "U.S. Bureau of Labor Statistics",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "dataset": "Ya integrada (25 series en el catalogo unificado)",
+   "products": [
+    "butter",
+    "cattle",
+    "cheese",
+    "eggs",
+    "milk",
+    "pigs",
+    "potato",
+    "poultry",
+    "rapeseed",
+    "rice",
+    "sheep",
+    "soy",
+    "sugar",
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price_index"
+   ],
+   "frequency": "monthly",
    "access": {
     "api": null,
     "csv": null,

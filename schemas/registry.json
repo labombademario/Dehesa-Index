@@ -164,6 +164,10 @@
    "nass-quickstats",
    []
   ],
+  "us-ppi.json": [
+   "us-ppi",
+   []
+  ],
   "nass-received.json": [
    "nass-quickstats",
    []

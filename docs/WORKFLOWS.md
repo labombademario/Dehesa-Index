@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-105 workflows (71 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+106 workflows (72 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -179,6 +179,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | update-us-lamb.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-lamb.py | revisions.json, us-lamb.json | finish, validate-files |
 | update-us-local-markets.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-local-markets.py | revisions.json, us-local, us-local/status.json | finish, validate-files |
 | update-us-markets.yml | generado | semanal (1-5) | detect-revisions.py, gen-workflows.py, update-us-markets.py | revisions.json, us-markets/cot.json, us-markets/ethanol.json … | finish, validate-files |
+| update-us-ppi.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-ppi.py | revisions.json, us-ppi-log.txt, us-ppi.json | finish, validate-files |
 | update-us-states-macro.yml | generado | semanal (4) | detect-revisions.py, gen-workflows.py, update-us-states-macro.py | revisions.json, us-states-macro-log.txt, us-states-macro.json | finish, validate-files |
 | update-us-states.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-us-states.py | revisions.json, us-states, us-states/index.json … | finish, validate-files |
 | update-us-stats.yml | generado | diaria | detect-revisions.py, gen-workflows.py, update-us-stats.py | revisions.json, us-stats-log.txt, us-stats.json | finish, validate-files |

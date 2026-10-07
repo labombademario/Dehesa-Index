@@ -66,8 +66,8 @@ NASS_LIVESTOCK_METRIC = (('STOCKS', 'stocks'), ('PRICE RECEIVED', 'price'), ('IN
 US_DAIRY_PRODUCT = {'mantequilla': 'butter', 'cheddar': 'cheese'}   # us-dairy.json: precios semanales AMS (suero y leche en polvo no son productos del sitio)
 AMS_GRAIN_PRODUCT = {'maiz': 'maize', 'soja': 'soy', 'trigo': 'wheat'}                         # ams-grain-daily.json: precios diarios USDA AMS
 # nass-received.json: indices de precios RECIBIDOS por grupo (2011=100). Solo se mapea donde el grupo cubre claramente el producto; patata, centeno, azucar, mantequilla, queso, ovino, aceituna y vino NO se mapean
-NASS_RECEIVED_INDEX_PRODUCT = {'FOOD GRAINS': ['wheat', 'rice'], 'FEED GRAINS': ['maize', 'barley', 'oats'], 'OIL-BEARING CROPS': ['soy'], 'CATTLE INCL CALVES': ['cattle'], 'HOGS': ['pigs'], 'DAIRY PRODUCT TOTALS': ['milk'],
-                              'POULTRY TOTALS INCL EGGS': ['eggs', 'poultry'], 'FRUIT & TREE NUT TOTALS': ['fruit']}
+NASS_RECEIVED_INDEX_PRODUCT = {'FOOD GRAINS': ['wheat', 'rice'], 'FEED GRAINS': ['maize', 'barley', 'oats'], 'OIL-BEARING CROPS': ['soy'], 'CATTLE, INCL CALVES': ['cattle'], 'HOGS': ['pigs'], 'DAIRY PRODUCT TOTALS': ['milk'],
+                              'POULTRY TOTALS, INCL EGGS': ['eggs', 'poultry'], 'FRUIT & TREE NUT TOTALS': ['fruit']}
 NASS_RECEIVED_PRICE_PRODUCT = {'RYE': 'rye', 'POTATOES': 'potato', 'SUGARBEETS': 'sugar', 'SUGARCANE': 'sugar', 'APPLES': 'fruit', 'OLIVES': 'olive'}   # precios recibidos nacionales (mensual fresco o campana de comercializacion)
 # Canada: indices de precios agrarios (StatCan 32-10-0098) por grupo de productos; cuentan como price_index de los productos que el grupo contiene (indice de GRUPO, no del producto suelto)
 CA_FPPI_PRODUCT = {'ca-fppi-grains': ['wheat', 'barley', 'oats', 'rye', 'maize'], 'ca-fppi-oilseeds': ['soy', 'rapeseed']}
