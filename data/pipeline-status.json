@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T00:37:00Z",
+ "generatedAt": "2026-10-07T01:02:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 91,
+  "ok": 90,
   "late": 1,
-  "error": 3,
+  "error": 4,
   "not_run": 0,
   "unknown": 0
  },
@@ -14,14 +14,14 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "544a5685",
+   "sha": "4bc82d18",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/b301d647-5e74-4093-946d-2d3272bcc056",
-   "completedAt": "2026-10-07T00:21:42Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/1b286b0a-7723-4cbf-8c15-49badef23e14",
+   "completedAt": "2026-10-07T00:45:49Z"
   },
-  "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-06T18:30:50.458679+00:00",
-  "repoGeneratedAt": "2026-10-06T18:30:50.458679+00:00"
+  "lagHours": null,
+  "prodGeneratedAt": null,
+  "repoGeneratedAt": "2026-10-07T00:39:37.404546+00:00"
  },
  "pipelines": [
   {
@@ -1332,7 +1332,7 @@
      "series": 783,
      "points": 31862,
      "lines": 0,
-     "lastChange": "2026-10-07T00:20:40Z"
+     "lastChange": "2026-10-07T00:44:49Z"
     },
     {
      "path": "data/revisions.json",
@@ -1342,13 +1342,13 @@
    "last": {
     "conclusion": "success",
     "event": "workflow_dispatch",
-    "startedAt": "2026-10-07T00:20:10Z",
-    "durationSec": 47,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37551419156"
+    "startedAt": "2026-10-07T00:43:36Z",
+    "durationSec": 92,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37553469219"
    },
    "recent": {
-    "runs": 6,
-    "success": 5,
+    "runs": 7,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",
@@ -1890,31 +1890,31 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-06T18:30:53Z"
+     "lastChange": "2026-10-07T00:39:38Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-06T18:30:53Z"
+     "lastChange": "2026-10-07T00:39:38Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-06T18:30:53Z"
+     "lastChange": "2026-10-07T00:39:38Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-06T18:30:53Z"
+     "lastChange": "2026-10-07T00:39:38Z"
     }
    ],
    "last": {
-    "conclusion": "cancelled",
+    "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-06T21:25:32Z",
-    "durationSec": 212,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37533792045"
+    "startedAt": "2026-10-07T00:37:33Z",
+    "durationSec": 130,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37552943544"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -2046,11 +2046,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-06T23:16:18Z"
+     "lastChange": "2026-10-07T00:38:22Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-06T23:16:18Z"
+     "lastChange": "2026-10-07T00:38:22Z"
     },
     {
      "path": "data/series-registry.json",
@@ -2124,18 +2124,18 @@
     }
    ],
    "last": {
-    "conclusion": "success",
-    "event": "workflow_dispatch",
-    "startedAt": "2026-10-06T23:14:06Z",
-    "durationSec": 153,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37545408299"
+    "conclusion": "failure",
+    "event": "schedule",
+    "startedAt": "2026-10-07T00:36:41Z",
+    "durationSec": 123,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37552869661"
    },
    "recent": {
-    "runs": 9,
+    "runs": 10,
     "success": 8,
-    "failed": 0
+    "failed": 1
    },
-   "status": "ok",
+   "status": "error",
    "expectedEveryHours": 3.0
   },
   {
