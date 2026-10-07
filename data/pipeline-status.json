@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T01:02:00Z",
+ "generatedAt": "2026-10-07T01:32:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 90,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "4bc82d18",
+   "sha": "a8b82154",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/1b286b0a-7723-4cbf-8c15-49badef23e14",
-   "completedAt": "2026-10-07T00:45:49Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/4967ab8f-097d-4957-82d8-5c92f042b442",
+   "completedAt": "2026-10-07T01:17:43Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -2046,7 +2046,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-07T00:38:22Z"
+     "lastChange": "2026-10-07T01:16:49Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2054,7 +2054,7 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-06T22:34:13Z"
+     "lastChange": "2026-10-07T01:16:49Z"
     },
     {
      "path": "data/watch"
@@ -2065,7 +2065,7 @@
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-06T23:16:34Z"
+     "lastChange": "2026-10-07T01:16:49Z"
     },
     {
      "path": "data/catalog"
@@ -2078,30 +2078,30 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-06T23:16:34Z"
+     "lastChange": "2026-10-07T01:16:49Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-06T23:16:34Z"
+     "lastChange": "2026-10-07T01:16:49Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-06T23:16:34Z"
+     "lastChange": "2026-10-07T01:16:49Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-06T23:16:34Z"
+     "lastChange": "2026-10-07T01:16:49Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-06T23:16:34Z"
+     "lastChange": "2026-10-07T01:16:49Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-06T23:16:34Z"
+     "lastChange": "2026-10-07T01:16:49Z"
     },
     {
      "path": "data/ers-cost-reference.json",
@@ -2109,7 +2109,7 @@
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-06T23:16:34Z"
+     "lastChange": "2026-10-07T01:16:49Z"
     },
     {
      "path": "data/home-explore.json",

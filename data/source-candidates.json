@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-07T01:03:56Z",
+ "generatedAt": "2026-10-07T01:34:21Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2352,6 +2352,7 @@
     "barley",
     "butter",
     "cattle",
+    "cheese",
     "eggs",
     "fertilizer",
     "fruit",

@@ -171,7 +171,7 @@ def trade_eu():
             n += put('eu-eus-trade-%s-%s' % (hs, fl[0]), 'trade', '%s (HS %s): extra-EU-27 %s, quantity (Eurostat Comext)' % (nm, hs, fl), 't', 'annual', pts, 'Eurostat Comext ds-045409 %s' % hs, 0.1)
     log('comercio UE', n, 'series')
 def main():
-    for fn in (crops, herds, slaughter, milk, poultry, absprices, priceidx, inputs, dairy_eu, trade_eu):
+    for fn in (crops, herds, slaughter, milk, poultry, absprices, priceidx, inputs, trade_eu):   # dairy_eu (apro_mk_pobta UE-27) no se usa: la fuente solo llega a 2018-2021 para mantequilla y queso
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:300])
     for k in [k for k in OUT if k.split('-')[0].upper() in NAT and OUT[k]['group'] in ('crops', 'livestock', 'production', 'milk')]: del OUT[k]   # ES y DK ya publican su produccion con fuente nacional (MAPA, Statistics Denmark): aqui solo lo que les falta (indices de precios de produccion e insumos)
