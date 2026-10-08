@@ -554,6 +554,14 @@ sources:
     data: [us-ers-stats.json, us-ttb-stats.json]
     log: us-ers-log.txt
     message: Datos de EE. UU. del USDA ERS (margenes de carne, lacteos, arroz) y del TTB (vino)
+  - id: fr-insee
+    name: Update France INSEE agricultural price indices (IPPAP, IPAMPA)
+    cron: ['30 7 * * 5']
+    script: scripts/update-fr-insee.py
+    timeout: 15
+    data: [france-insee-stats.json]
+    log: france-insee-log.txt
+    message: Indices de precios agricolas de Francia (INSEE - IPPAP, IPAMPA)
   - id: fx-history
     name: Update historical exchange rates (ECB)
     cron: ['20 8 4 * *']

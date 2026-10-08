@@ -2991,6 +2991,12 @@
     "US": "ttb"
    },
    "notes": "Produccion anual de vino (total y por tipo) y salidas para exportacion del TTB en galones, convertidas a millones de galones sin cambiar valores."
+  },
+  "data/france-insee-stats.json": {
+   "byCountry": {
+    "FR": "insee"
+   },
+   "notes": "Indices mensuales de precios agricolas del INSEE (IPPAP: precios percibidos por el agricultor; IPAMPA: precios de los medios de produccion), base 2020=100, sin cambiar valores. Conjunto IPAGRI-BASE-2020 de la BDM; scripts/update-fr-insee.py."
   }
  },
  "derived": [

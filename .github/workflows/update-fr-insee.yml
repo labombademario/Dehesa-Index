@@ -1,0 +1,42 @@
+# GENERADO por scripts/gen-workflows.py a partir de sources.yml. No editar a mano.
+name: Update France INSEE agricultural price indices (IPPAP, IPAMPA)
+on:
+  schedule:
+    - cron: '30 7 * * 5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dehesa-data-writes
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - id: fetch
+        run: python3 scripts/update-fr-insee.py
+      - name: Validar datos (esquema y tests); lo invalido se descarta y la ejecucion queda en rojo
+        uses: ./.github/actions/validate-files
+        with:
+          files: data/france-insee-stats.json
+      - name: Detectar revisiones oficiales
+        run: python3 scripts/detect-revisions.py data/france-insee-stats.json
+      - name: Publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/france-insee-stats.json data/france-insee-log.txt data/revisions.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "Indices de precios agricolas de Francia (INSEE - IPPAP, IPAMPA)"
+          for i in 1 2 3 4 5 6; do
+            git pull -q --rebase --autostash && git push && exit 0
+            sleep $((i * 5 + RANDOM % 10))
+          done
+          echo '::error::no se pudo publicar tras 6 intentos'; exit 1
+      - name: Cierre (rojo si hubo datos invalidos o un paso fallo)
+        if: always()
+        uses: ./.github/actions/finish
+        with:
+          outcomes: ${{ steps.fetch.outcome }}

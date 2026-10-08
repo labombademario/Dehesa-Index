@@ -2,7 +2,7 @@
 
 Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estado, la duracion y la proxima ejecucion de cada uno estan en `data/pipeline-status.json`.
 
-111 workflows (77 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
+112 workflows (78 generados desde `sources.yml`, 34 escritos a mano). Acciones compuestas: finish, price-engine, publish, validate-files.
 
 ## Hallazgos a revisar (no son fallos: un script o una salida compartida puede ser intencionado)
 
@@ -89,6 +89,7 @@ Generado por `scripts/workflow-inventory.py` (no editar a mano). El ultimo estad
 | Workflow | Origen | Frecuencia | Scripts | Salidas | Acciones |
 |---|---|---|---|---|---|
 | update-fr-cereobs.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-fr-cereobs.py | france-cereobs.json, revisions.json | finish, validate-files |
+| update-fr-insee.yml | generado | semanal (5) | detect-revisions.py, gen-workflows.py, update-fr-insee.py | france-insee-log.txt, france-insee-stats.json, revisions.json | finish, validate-files |
 | update-fr-vigieau.yml | generado | semanal (1,3,5) | detect-revisions.py, gen-workflows.py, update-fr-vigieau.py | france-vigieau.json, revisions.json | finish, validate-files |
 
 ## NL

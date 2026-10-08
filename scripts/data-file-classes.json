@@ -82,6 +82,10 @@
    "class": "BUILD_ONLY",
    "note": "Series de EE. UU. del USDA ERS (margenes de carne, lacteos, trigo, azucar, oleaginosas, arroz): alimentan el catalogo. Ninguna pagina descarga este fichero; el navegador usa data/catalog/US.json."
   },
+  "data/france-insee-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Indices de precios agricolas de Francia (INSEE, IPPAP e IPAMPA): alimentan el catalogo. Ninguna pagina descarga este fichero; el navegador usa data/catalog/FR.json."
+  },
   "data/germany-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Series de Alemania: alimentan el catalogo. Ni region.js ni de-agri.js lo descargan ya (6-oct): leen data/catalog/DE.json y data/series/DE/idx_*.json."
