@@ -250,6 +250,25 @@ for code, id_, label in [("3117006", "au-xpi-fruit", "Export price index: edible
     except Exception as e:
         log.append("ERROR AU " + id_ + ": " + str(e)[:200])
 
+# Desglose por estado (ABS LSTOCK_SLAUGHT / LSTOCK_MEAT, serie original trimestral); solo los seis estados con serie completa
+AU_ST = [("1", "NSW", "New South Wales"), ("2", "VIC", "Victoria"), ("3", "QLD", "Queensland"), ("4", "SA", "South Australia"), ("5", "WA", "Western Australia"), ("6", "TAS", "Tasmania")]
+for flow, col, unit, items in [
+    ("LSTOCK_SLAUGHT", "LSTOCK_SLAUGHT", "1,000 head", [("30", "cattle-slaught", "Cattle (excl. calves) slaughtered"), ("70", "sheep-slaught", "Sheep slaughtered"), ("80", "lamb-slaught", "Lambs slaughtered"), ("110", "pig-slaught", "Pigs slaughtered"), ("170", "chicken-slaught", "Chickens slaughtered")]),
+    ("LSTOCK_MEAT", "LSTOCK_MEAT", "tonnes", [("301", "beef-prod", "Beef produced"), ("801", "lamb-prod", "Lamb produced"), ("701", "mutton-prod", "Mutton produced"), ("1101", "pig-meat-prod", "Pig meat produced"), ("171", "chicken-meat-prod", "Chicken meat produced")])]:
+    try:
+        rows = abs_csv("%s/all?startPeriod=1990&format=csvfilewithlabels" % flow)
+        for code, sid, label in items:
+            for sc, sab, sname in AU_ST:
+                pts = []
+                for r in rows:
+                    if r.get(col) == code and r.get("STATE") == sc and r.get("TSEST") == "10" and r.get("OBS_VALUE") not in (None, ""):
+                        v = float(r["OBS_VALUE"]) * (10 ** int(r.get("UNIT_MULT") or 0))
+                        pts.append((r["TIME_PERIOD"], v / 1000.0 if flow == "LSTOCK_SLAUGHT" else v))
+                s_ = mk("au-%s-%s" % (sid, sab.lower()), "%s - %s" % (label, sname), unit, "quarterly", pts, "production")
+                if s_: au.append(s_)
+    except Exception as e:
+        log.append("ERROR AU states " + flow + ": " + str(e)[:200])
+
 countries["AU"] = {"name": "Australia", "source": {"name": "Australian Bureau of Statistics (ABS Data API)", "url": "https://www.abs.gov.au/", "license": "CC BY 4.0"}, "series": au}
 
 total = sum(len(c["series"]) for c in countries.values())
