@@ -1,27 +1,22 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T18:30:00Z",
+ "generatedAt": "2026-10-08T18:53:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 94,
   "late": 2,
   "error": 7,
   "not_run": 2,
-  "unknown": 0
+  "unknown": 1
  },
  "global": "error",
  "deploy": {
-  "status": "ok",
+  "status": "unknown",
   "site": "https://dehesaindex.com",
-  "build": {
-   "sha": "bd3e30b7",
-   "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/852691b7-9369-4418-996a-236372240a7f",
-   "completedAt": "2026-10-08T18:30:50Z"
-  },
-  "lagHours": 0.0,
-  "prodGeneratedAt": "2026-10-08T15:33:09.857273+00:00",
-  "repoGeneratedAt": "2026-10-08T15:33:09.857273+00:00"
+  "build": null,
+  "lagHours": null,
+  "prodGeneratedAt": null,
+  "repoGeneratedAt": "2026-10-08T18:33:23.311043+00:00"
  },
  "pipelines": [
   {
@@ -2036,31 +2031,31 @@
    "files": [
     {
      "path": "data/news.json",
-     "lastChange": "2026-10-08T15:33:10Z"
+     "lastChange": "2026-10-08T18:33:24Z"
     },
     {
      "path": "data/news-status.json",
-     "lastChange": "2026-10-08T15:33:10Z"
+     "lastChange": "2026-10-08T18:33:24Z"
     },
     {
      "path": "data/views/news-index.json",
-     "lastChange": "2026-10-08T15:33:10Z"
+     "lastChange": "2026-10-08T18:33:24Z"
     },
     {
      "path": "data/views/news-feed.json",
-     "lastChange": "2026-10-08T15:33:10Z"
+     "lastChange": "2026-10-08T18:33:24Z"
     }
    ],
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-08T15:30:17Z",
-    "durationSec": 178,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37801293990"
+    "startedAt": "2026-10-08T18:30:43Z",
+    "durationSec": 164,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37824848914"
    },
    "recent": {
-    "runs": 9,
-    "success": 8,
+    "runs": 10,
+    "success": 9,
     "failed": 0
    },
    "status": "ok",
@@ -2192,11 +2187,11 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-08T18:08:00Z"
+     "lastChange": "2026-10-08T18:32:12Z"
     },
     {
      "path": "data/data-quality.json",
-     "lastChange": "2026-10-08T15:31:28Z"
+     "lastChange": "2026-10-08T18:32:12Z"
     },
     {
      "path": "data/series-registry.json",
@@ -2207,11 +2202,11 @@
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-08T18:08:00Z"
+     "lastChange": "2026-10-08T18:32:40Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-08T16:04:30Z"
+     "lastChange": "2026-10-08T18:32:40Z"
     },
     {
      "path": "data/catalog"
@@ -2224,41 +2219,41 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-08T18:08:00Z"
+     "lastChange": "2026-10-08T18:32:40Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-08T16:04:30Z"
+     "lastChange": "2026-10-08T18:32:40Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-08T18:08:00Z"
+     "lastChange": "2026-10-08T18:32:40Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-08T18:08:00Z"
+     "lastChange": "2026-10-08T18:32:40Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-08T18:08:00Z"
+     "lastChange": "2026-10-08T18:32:40Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-08T18:08:00Z"
+     "lastChange": "2026-10-08T18:32:40Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-08T18:08:00Z"
+     "lastChange": "2026-10-08T18:32:40Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-08T18:08:00Z"
+     "lastChange": "2026-10-08T18:32:40Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2278,13 +2273,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-08T15:29:29Z",
-    "durationSec": 189,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37801185507"
+    "startedAt": "2026-10-08T18:30:02Z",
+    "durationSec": 163,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37824750016"
    },
    "recent": {
-    "runs": 9,
-    "success": 9,
+    "runs": 10,
+    "success": 10,
     "failed": 0
    },
    "status": "ok",
@@ -3174,6 +3169,30 @@
    },
    "status": "ok",
    "expectedEveryHours": 150.0
+  },
+  {
+   "workflow": "update-us-ers.yml",
+   "name": "Update US ERS data products and TTB wine statistics (public domain)",
+   "crons": [
+    "40 14 * * 3"
+   ],
+   "nextRun": "2026-10-14T14:40:00Z",
+   "files": [
+    {
+     "path": "data/us-ers-stats.json"
+    },
+    {
+     "path": "data/us-ttb-stats.json"
+    },
+    {
+     "path": "data/revisions.json",
+     "lastChange": "2026-10-08T15:54:55Z"
+    }
+   ],
+   "last": null,
+   "recent": null,
+   "status": "unknown",
+   "expectedEveryHours": 168.0
   },
   {
    "workflow": "update-us-lamb.yml",

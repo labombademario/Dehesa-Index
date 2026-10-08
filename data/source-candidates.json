@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T18:32:29Z",
+ "generatedAt": "2026-10-08T18:55:32Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -14,9 +14,9 @@
   "gate": "READY solo si el registro dice VERIFIED con uso comercial y derivados = yes. licenseClaim recoge lo que dicen las notas del proyecto y nunca cuenta como licencia."
  },
  "summary": {
-  "total": 100,
+  "total": 101,
   "byStatus": {
-   "ACTIVE": 70,
+   "ACTIVE": 71,
    "BLOCKED": 8,
    "DISCOVERED": 18,
    "LICENSE_REVIEW": 2,
@@ -3823,6 +3823,50 @@
    ]
   },
   {
+   "sourceId": "ttb",
+   "registryId": "ttb",
+   "country": "US",
+   "scope": "integrated",
+   "institution": "Alcohol and Tobacco Tax and Trade Bureau, U.S. Department of the Treasury (wine statistics)",
+   "dataset": "Ya integrada (7 series en el catalogo unificado)",
+   "products": [
+    "wine"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "production",
+    "trade"
+   ],
+   "frequency": "annual",
+   "access": {
+    "api": null,
+    "csv": null,
+    "json": null
+   },
+   "licenseStatus": "VERIFIED",
+   "licenseId": "US-PD",
+   "commercialReuse": "yes",
+   "derivatives": "yes",
+   "attribution": "Source: U.S. Alcohol and Tobacco Tax and Trade Bureau (TTB), wine statistics",
+   "lastChecked": "2026-10-08",
+   "verification": "REGISTRY",
+   "legalConfidence": "MEDIUM",
+   "registryAlignment": "ALIGNED",
+   "datasetIdentified": true,
+   "gate": {
+    "result": "READY",
+    "reasons": [
+     "Registro: VERIFIED, uso comercial y derivados permitidos"
+    ]
+   },
+   "ingestionStatus": "ACTIVE",
+   "technicalBlockers": [],
+   "canStart": false,
+   "evidence": [
+    "data/license-registry.json"
+   ]
+  },
+  {
    "sourceId": "us_drought_monitor",
    "registryId": "us_drought_monitor",
    "country": "US",
@@ -4067,11 +4111,25 @@
    "country": "US",
    "scope": "integrated",
    "institution": "USDA Economic Research Service (Food Price Outlook, costs and returns, farm income)",
-   "dataset": "Ya integrada (ficheros propios fuera del catalogo unificado)",
-   "products": [],
-   "productsConfirmed": false,
-   "metrics": [],
-   "frequency": "unknown",
+   "dataset": "Ya integrada (95 series en el catalogo unificado)",
+   "products": [
+    "butter",
+    "cattle",
+    "cheese",
+    "eggs",
+    "milk",
+    "pigs",
+    "poultry",
+    "rice"
+   ],
+   "productsConfirmed": true,
+   "metrics": [
+    "price",
+    "production",
+    "stocks",
+    "trade"
+   ],
+   "frequency": "mixed",
    "access": {
     "api": null,
     "csv": null,
