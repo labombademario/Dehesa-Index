@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T18:30:45Z",
+ "generatedAt": "2026-10-08T21:27:51Z",
  "summary": {
-  "files": 37,
+  "files": 39,
   "errors": 0,
-  "warnings": 12
+  "warnings": 13
  },
  "files": [
   {
@@ -494,6 +494,62 @@
    "nErrors": 0
   },
   {
+   "file": "us-ers-stats.json",
+   "schema": "country-stats",
+   "status": "warning",
+   "errors": [],
+   "warnings": [
+    "US/us-ers-oc-soybean-oil-imports: salto 7.703 -> 15.0 en 1986 (mediana previa 0.092)",
+    "US/us-ers-oc-soybean-oil-imports: salto 15.0 -> 193.872 en 1987 (mediana previa 0.092)",
+    "US/us-ers-oc-peanuts-imports: salto 1.8886 -> 73.6621 en 1994 (mediana previa 2)",
+    "US/us-ers-oc-peanuts-imports: salto 73.6621 -> 152.668 en 1995 (mediana previa 2.3)",
+    "US/us-ers-oc-peanuts-imports: salto 152.668 -> 126.7424 en 1996 (mediana previa 2.57)",
+    "US/us-ers-oc-peanuts-imports: salto 126.7424 -> 141.293 en 1997 (mediana previa 4.2)",
+    "US/us-ers-oc-peanuts-imports: salto 141.293 -> 155.4869 en 1998 (mediana previa 5.3)",
+    "US/us-ers-oc-cottonseed-imports: salto 20.1832 -> 96.4413 en 1997 (mediana previa 1.88)",
+    "US/us-ers-oc-cottonseed-imports: salto 96.4413 -> 206.388 en 1998 (mediana previa 2)",
+    "US/us-ers-oc-cottonseed-imports: salto 206.388 -> 308.4791 en 1999 (mediana previa 2.43)",
+    "US/us-ers-oc-cottonseed-imports: salto 308.4791 -> 373.7253 en 2000 (mediana previa 3.12)",
+    "US/us-ers-oc-cottonseed-imports: salto 373.7253 -> 327.0281 en 2001 (mediana previa 3.12)",
+    "US/us-ers-oc-cottonseed-imports: salto 0.0009 -> 90.5993 en 2013 (mediana previa 2.58)",
+    "US/us-ers-oc-cottonseed-oil-imports: salto 0.0176 -> 12.638 en 1989 (mediana previa 0.0176)",
+    "US/us-ers-oc-cottonseed-oil-imports: salto 0.2022 -> 10.3472 en 2011 (mediana previa 0.269)",
+    "US/us-ers-oc-cottonseed-oil-imports: salto 10.3472 -> 19.9174 en 2012 (mediana previa 0.269)",
+    "US/us-ers-oc-cottonseed-oil-imports: salto 0.3106 -> 21.3652 en 2020 (mediana previa 0.311)",
+    "US/us-ers-oc-sunflowerseed-meal-imports: salto 28.3845 -> 69.1094 en 2002 (mediana previa 2.32)",
+    "US/us-ers-oc-sunflowerseed-oil-imports: salto 0.026 -> 33.44 en 1987 (mediana previa 0.026)",
+    "US/us-ers-oc-sunflowerseed-oil-imports: salto 33.44 -> 18.351 en 1988 (mediana previa 0.089)",
+    "US/us-ers-oc-sunflowerseed-oil-imports: salto 18.351 -> 4.5168 en 1989 (mediana previa 0.089)",
+    "US/us-ers-oc-sunflowerseed-oil-imports: salto 4.5168 -> 32.8319 en 1990 (mediana previa 0.231)",
+    "US/us-ers-oc-sunflowerseed-oil-imports: salto 32.8319 -> 8.9089 en 1991 (mediana previa 0.231)"
+   ],
+   "stats": {
+    "series": 298,
+    "points": 46176,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-08T20:09:12Z",
+   "info": [],
+   "nWarnings": 23,
+   "nErrors": 0
+  },
+  {
+   "file": "us-ttb-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 7,
+    "points": 94,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-08T20:09:12Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
    "file": "abares-stats.json",
    "schema": "country-stats",
    "status": "warning",
@@ -627,11 +683,11 @@
     "CA/ca-pay-livestock-insurance-gross: salto 5.816 -> 32.271 en 2016 (mediana previa 0.877)"
    ],
    "stats": {
-    "series": 690,
-    "points": 96254,
+    "series": 713,
+    "points": 96648,
     "lines": 0
    },
-   "generatedAt": "2026-10-08T17:56:19Z",
+   "generatedAt": "2026-10-08T19:45:24Z",
    "info": [
     "CA/ca-trade-imp-wheat: salto 2.5 -> 2.8 en 1996-01 (mediana previa 0.1) [KNOWN_VERIFIED_ANOMALY]",
     "CA/ca-trade-imp-wheat: salto 5.3 -> 10.1 en 2002-12 (mediana previa 0.4) [KNOWN_VERIFIED_ANOMALY]",
