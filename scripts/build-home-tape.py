@@ -5,6 +5,8 @@ Existe para que la portada no tenga que descargar los ficheros completos de prec
 No calcula ni convierte nada: valor, moneda, unidad, fecha y variacion son los de la observacion original. Si falta una fila, no se inventa: se omite."""
 import datetime, json, sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib_markets import market
 ROOT = Path(__file__).resolve().parents[1]; D = ROOT / 'data'
 ROWS = [('trigo', 'eu'), ('trigo', 'us'), ('trigo', 'ca'), ('maiz', 'eu'), ('maiz', 'us'), ('maiz', 'ca'), ('leche', 'eu'), ('leche', 'us')]
 KEEP = ['id', 'product', 'region', 'sourceId', 'observationDate', 'value', 'currency', 'unit', 'changePct']
@@ -18,7 +20,9 @@ def main():
     for k in ROWS:
         o = by.get(k)
         if not o or not isinstance(o.get('value'), (int, float)): continue
-        rows.append({f: o.get(f) for f in KEEP}); src.add(o['sourceId'])
+        row = {f: o.get(f) for f in KEEP}; m = market(o)
+        if m: row['market'] = m   # [es, en, fr, it]: lugar y etapa comercial exactos
+        rows.append(row); src.add(o['sourceId'])
     if not rows: print('home-tape: sin observaciones; no se genera'); return 1
     out = {'schemaVersion': 1, 'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'sourceIds': sorted(src), 'rows': rows}
     (D / 'home-tape.json').write_text(json.dumps(out, ensure_ascii=False, indent=1) + '\n')

@@ -179,7 +179,7 @@ sections('js/metodologia.js', 'metodologia.html', tri('Metodología', 'Methodolo
 sections('js/legal.js', 'legal.html', tri('Aviso legal', 'Legal notice', 'Mentions légales', 'Note legali'));
 // --- conceptos
 const CON = [
-  ['metodologia.html#etiquetas', tri('REAL, NO COMPARABLE y PENDIENTE', 'REAL, NOT COMPARABLE and PENDING', 'RÉEL, NON COMPARABLE et EN ATTENTE', 'REALE, NON COMPARABILE e IN ATTESA'), 'etiquetas labels verificado pendiente comparable real estado'],
+  ['metodologia.html#etiquetas', tri('DATO OFICIAL, NO COMPARABLE y PENDIENTE', 'OFFICIAL DATA, NOT COMPARABLE and PENDING', 'DONNÉE OFFICIELLE, NON COMPARABLE et EN ATTENTE', 'DATO UFFICIALE, NON COMPARABILE e IN ATTESA'), 'etiquetas labels verificado pendiente comparable real estado'],
   ['metodologia.html#indice', tri('Dehesa Index: el índice compuesto', 'Dehesa Index: the composite index', 'Dehesa Index : l’indice composite', 'Dehesa Index: l’indice composito'), 'indice índice index composite base 100 crea tu propio indice personalizado']
 ];
 for (const [u, n, k] of CON) add({ t: 'concept', u, n, s: tri('Cómo se calcula', 'How it works', 'Comment ça marche', 'Come funziona'), k });

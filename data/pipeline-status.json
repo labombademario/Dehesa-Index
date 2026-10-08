@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T04:30:00Z",
+ "generatedAt": "2026-10-08T05:19:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
   "ok": 96,
@@ -14,10 +14,10 @@
   "status": "ok",
   "site": "https://dehesaindex.com",
   "build": {
-   "sha": "d2490f48",
+   "sha": "354a14da",
    "conclusion": "success",
-   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/3710214e-26b7-4d16-9dbb-46b5ea8313f1",
-   "completedAt": "2026-10-08T04:18:48Z"
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/53e81d0d-c95c-4e7b-8af5-78845b52b94c",
+   "completedAt": "2026-10-08T04:39:52Z"
   },
   "lagHours": null,
   "prodGeneratedAt": null,
@@ -2148,7 +2148,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-08T04:17:57Z"
+     "lastChange": "2026-10-08T04:38:54Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2156,14 +2156,14 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-08T04:07:45Z"
+     "lastChange": "2026-10-08T04:38:54Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-08T04:17:57Z"
+     "lastChange": "2026-10-08T04:38:54Z"
     },
     {
      "path": "data/product-compare.json",
@@ -2180,7 +2180,7 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-08T04:17:57Z"
+     "lastChange": "2026-10-08T04:38:54Z"
     },
     {
      "path": "data/products"
@@ -2191,27 +2191,27 @@
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-08T04:17:57Z"
+     "lastChange": "2026-10-08T04:38:54Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-08T04:17:57Z"
+     "lastChange": "2026-10-08T04:38:54Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-08T04:17:57Z"
+     "lastChange": "2026-10-08T04:38:54Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-08T04:17:57Z"
+     "lastChange": "2026-10-08T04:38:54Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-08T04:17:57Z"
+     "lastChange": "2026-10-08T04:38:54Z"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-08T04:17:57Z"
+     "lastChange": "2026-10-08T04:38:54Z"
     },
     {
      "path": "data/home-explore.json",
@@ -2421,7 +2421,7 @@
    "crons": [
     "10 5 * * *"
    ],
-   "nextRun": "2026-10-08T05:10:00Z",
+   "nextRun": "2026-10-09T05:10:00Z",
    "files": [],
    "last": {
     "conclusion": "success",

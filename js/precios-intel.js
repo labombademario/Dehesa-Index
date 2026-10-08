@@ -1214,7 +1214,7 @@
       eurostat_fertiliser_input_index:{es:'Fertilizantes EU · índice de compra',en:'Fertiliser EU · purchase index',fr:'Engrais UE · indice d’achat',it:'Fertilizzanti UE · indice di acquisto'},
       eurostat_energy_input_index:{es:'Energía EU · índice de compra',en:'Energy EU · purchase index',fr:'Énergie UE · indice d’achat',it:'Energia UE · indice di acquisto'}
     };
-    var T={pend:X({es:'Pendiente',en:'Pending',fr:'En attente',it:'In attesa'}),real:X({es:'REAL',en:'REAL',fr:'RÉEL',it:'REALE'}),pending:X({es:'PENDIENTE',en:'PENDING',fr:'EN ATTENTE',it:'IN ATTESA'}),last:X({es:'Último periodo',en:'Latest period',fr:'Dernière période',it:'Ultimo periodo'}),yoy:X({es:'Interanual',en:'Year on year',fr:'Sur un an',it:'Su base annua'}),vol:X({es:'Volatilidad',en:'Volatility',fr:'Volatilité',it:'Volatilità'}),obs:X({es:'observaciones',en:'observations',fr:'observations',it:'osservazioni'})};
+    var T={pend:X({es:'Pendiente',en:'Pending',fr:'En attente',it:'In attesa'}),real:X({es:'DATO OFICIAL',en:'OFFICIAL DATA',fr:'DONNÉE OFFICIELLE',it:'DATO UFFICIALE'}),pending:X({es:'PENDIENTE',en:'PENDING',fr:'EN ATTENTE',it:'IN ATTESA'}),last:X({es:'Último periodo',en:'Latest period',fr:'Dernière période',it:'Ultimo periodo'}),yoy:X({es:'Interanual',en:'Year on year',fr:'Sur un an',it:'Su base annua'}),vol:X({es:'Volatilidad',en:'Volatility',fr:'Volatilité',it:'Volatilità'}),obs:X({es:'observaciones',en:'observations',fr:'observations',it:'osservazioni'})};
     var num=function(v,d){var t=Number(v).toFixed(d);return lang()==='en'?t:t.replace('.',',');};
     var cards=rows.filter(function(r){return /^eurostat_/.test(r.product);}).map(function(r){
       var ch=r.periodChangePct, yoy=r.yoyPct;

@@ -70,8 +70,18 @@
     calc: null,    // { key, region, mode }
     alert: null    // { key, region, direction, attempted, confirmed }
   };
-  var showLocationWelcome = !state.location;
-  if (!state.location) state.location = 'us';
+  // Sin mercado guardado se deduce de la zona horaria (y si no, del idioma), sin ventana: la barra de ubicacion queda visible para cambiarlo (auditoria 8-oct-2026).
+  var showLocationWelcome = false;
+  function guessLocation() {
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    if (/^America\/(Toronto|Vancouver|Edmonton|Winnipeg|Halifax|Regina|St_Johns|Moncton|Whitehorse|Yellowknife|Iqaluit|Glace_Bay|Goose_Bay|Swift_Current|Dawson_Creek|Fort_Nelson|Creston|Rankin_Inlet|Cambridge_Bay|Inuvik|Atikokan|Blanc-Sablon)$/.test(tz)) return 'ca';
+    if (/^Europe\/(London|Belfast|Guernsey|Jersey|Isle_of_Man)$/.test(tz)) return 'uk';
+    if (/^Europe\//.test(tz) || /^Atlantic\/(Canary|Madeira|Azores)$/.test(tz)) return 'eu';
+    if (/^(America|Pacific\/Honolulu)/.test(tz)) return 'us';
+    return lang() === 'en' ? 'us' : 'eu';
+  }
+  if (!state.location) state.location = guessLocation();
 
   // ---------------------------------------------------------------------
   // Base de productos (RAW + diésel sintético) -----------------------------
@@ -216,6 +226,7 @@
     if (trust) {
       trust.value = region.price;
       trust.status = observation.status;
+      trust.obsId = observation.id || null; trust.obsSource = observation.sourceId || null;
       trust.observationDate = observation.observationDate || null;
       trust.publicationDate = observation.publicationDate || null;
       trust.verifiedAt = observation.verifiedAt || null;
@@ -403,6 +414,7 @@
     document.getElementById('pr-subtitle').textContent = t.pageSubtitle;
     document.getElementById('pr-updated').textContent = t.updated;
     document.getElementById('pr-banner').textContent = t.banner;
+    var ah = document.getElementById('pr-analysis-h'); if (ah) ah.textContent = ({ es: 'Análisis del mercado', en: 'Market analysis', fr: 'Analyse du marché', it: 'Analisi di mercato' })[lang()] || 'Análisis del mercado';
     var fs = document.getElementById('pr-fold-sum'); if (fs) fs.textContent = ({ es: 'Estado y verificación de los datos', en: 'Data status and verification', fr: 'État et vérification des données', it: 'Stato e verifica dei dati' })[lang()] || 'Estado y verificación de los datos';
   }
 
@@ -673,7 +685,7 @@
     if (disp && disp.derived && observation && observation.status === 'verified') return { key: 'derived', label: { es: 'ESTIMADO', en: 'ESTIMATED', fr: 'ESTIMÉ', it: 'STIMATO' } };
     if (!observation) return { key: 'pending', label: { es: 'PENDIENTE', en: 'PENDING', fr: 'EN ATTENTE', it: 'IN ATTESA' } };
     if (observation.comparability === 'not_comparable') return { key: 'not-comparable', label: { es: 'NO COMPARABLE', en: 'NOT COMPARABLE', fr: 'NON COMPARABLE', it: 'NON COMPARABILE' } };
-    if (observation.status === 'verified') return { key: 'real', label: { es: 'REAL', en: 'REAL', fr: 'RÉEL', it: 'REALE' } };
+    if (observation.status === 'verified') return { key: 'real', label: { es: 'DATO OFICIAL', en: 'OFFICIAL DATA', fr: 'DONNÉE OFFICIELLE', it: 'DATO UFFICIALE' } };
     return { key: 'pending', label: { es: 'PENDIENTE', en: 'PENDING', fr: 'EN ATTENTE', it: 'IN ATTESA' } };
   }
 
@@ -727,10 +739,15 @@
     var price = showValue ? built.price : '—';
     var unit = showValue ? built.unit : '';
     var change = showValue ? built.changeLabel : '';
+    // Trazabilidad visible sin abrir el detalle: mercado exacto y fecha de observacion en formato local (auditoria 8-oct-2026)
+    var mk = showValue && observation ? S.marketLabel({ id: observation.obsId, sourceId: observation.obsSource }, lang()) : '';
+    var od = showValue && observation && observation.observationDate ? S.fmtDate(observation.observationDate, lang()) : '';
+    var est = disp.derived ? ({ es: 'Estimación', en: 'Estimate', fr: 'Estimation', it: 'Stima' })[lang()] : '';
+    var meta = [est, mk, od ? (({ es: 'dato del ', en: 'as of ', fr: 'donnée du ', it: 'dato del ' })[lang()] || '') + od : ''].filter(Boolean).join(' · ');
     return (
       '<div class="di-card di-product-card di-product-state-' + dataState.key + '" data-key="' + key + '">' +
         '<div class="di-product-head">' +
-          '<div><h3 class="di-product-name">' + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span></div>' +
+          '<div><h3 class="di-product-name">' + esc(productName(entry.nameKey)) + '</h3><span class="di-product-state di-product-state-badge ' + dataState.key + '">' + esc(stateLabel) + '</span>' + (meta ? '<div class="di-product-meta">' + esc(meta) + '</div>' : '') + '</div>' +
           '<div class="di-product-icons">' +
             '<button type="button" class="di-row-exp" data-action="rowexp" aria-expanded="false">' + esc((VW[lang()] || VW.es)[3]) + '</button>' +
             (showValue ? '<button type="button" class="di-icon-btn" data-action="calc" data-key="' + key + '" title="' + esc(t.calcButtonTitle) + '">🧮</button>' : '') +
@@ -1630,6 +1647,7 @@
     window.addEventListener('popstate', restorePriceUrl);
     renderAll();
     if (global.DICite) global.DICite.load().then(function (r) { if (r) renderAll(); });
+    if (S.loadMarkets) S.loadMarkets().then(function (m) { if (m) renderAll(); });
     loadPublishedPrices();
     loadDieselCountries();
     if (global.DINews) global.DINews.index().then(function (idx) {

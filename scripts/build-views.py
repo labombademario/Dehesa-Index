@@ -5,6 +5,10 @@
   region-metrics.json  el valor por region con el que se colorea el mapa de regiones de cada ficha de pais (js/region-metrics.js): asi el mapa no baja el fichero regional entero (hasta ~350 KB)
 Se regenera junto con el catalogo (update-pipeline-status.yml) y es estricto: si una fuente falta, falla en lugar de publicar una vista incompleta."""
 import datetime, json, sys
+import sys as _s
+from pathlib import Path as _P
+_s.path.insert(0, str(_P(__file__).resolve().parent))
+from lib_markets import market
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]; D = ROOT / 'data'; V = D / 'views'
 def now(): return datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -39,7 +43,7 @@ def load(rel): return json.loads((D / rel).read_text())      # estricto: si falt
 def home_summary():
     latest = load('latest.json')['observations']; cat = load('catalog.json')
     rows = sorted(latest, key=lambda o: str(o.get('observationDate')), reverse=True)[:4]
-    movers = [{k: v for k, v in o.items() if k != 'history'} for o in rows]
+    movers = [dict({k: v for k, v in o.items() if k != 'history'}, **({'market': market(o)} if market(o) else {})) for o in rows]
     cp = load('crop-progress.json')
     crops = []
     for c in cp['crops']:

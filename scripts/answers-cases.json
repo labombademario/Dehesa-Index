@@ -923,5 +923,44 @@
    "kind": "movers",
    "moversCheck": true
   }
+ },
+ {
+  "q": "Precio del trigo en Francia",
+  "lang": "es",
+  "expect": {
+   "kind": "country",
+   "product": "trigo",
+   "tradeCheck": true,
+   "nCards": 3
+  }
+ },
+ {
+  "q": "wheat price in France",
+  "lang": "en",
+  "expect": {
+   "kind": "country",
+   "product": "trigo",
+   "tradeCheck": true,
+   "nCards": 3
+  }
+ },
+ {
+  "q": "Leche en Alemania",
+  "lang": "es",
+  "expect": {
+   "kind": "country",
+   "product": "leche",
+   "tradeCheck": true,
+   "nCards": 3
+  }
+ },
+ {
+  "q": "precio de la urea en Francia",
+  "lang": "es",
+  "expect": {
+   "kind": "country",
+   "product": "urea",
+   "noCards": true
+  }
  }
 ]

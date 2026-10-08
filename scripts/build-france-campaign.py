@@ -21,6 +21,7 @@ def en(name):
     k = norm(name); return EN.get(k)
 def ymq(camp, q):
     y = int(camp[:4]); return ("%d-Q3" % y, "%d-Q4" % y, "%d-Q1" % (y + 1), "%d-Q2" % (y + 1))[q - 1]
+DUP_PAID = {"soft-wheat", "durum-wheat", "barley", "maize", "rye", "oats", "sorghum", "triticale", "rapeseed", "pea", "sunflower", "faba", "soy"}
 def farmgate(f):
     ws = openpyxl.load_workbook(f, data_only=True)["Publication nationale"]
     hdr = next(r for r in range(1, 30) if str(ws.cell(r, 1).value).startswith("Trimestre")); rows = []
@@ -36,6 +37,7 @@ def farmgate(f):
         if len(pts) < 8: continue
         assert all(40 < v < 1500 for _p, v in pts), h
         s, lab = en(h)
+        if s in DUP_PAID: continue   # ya publicados como fr-paid-* en data/france-stats.json (mismo fichero de FranceAgriMer)
         out.append(mk("fr-fam-farmgate-" + s, "prices", "%s: farm-gate price, campaign average" % lab, "€/t", "quarterly", pts, "FranceAgriMer – prix payés aux producteurs (trimestriels, cumul de campagne)"))
     return out
 PAC_EN = {"total cereales": "All cereals", "ble tendre d'hiver": "Winter soft wheat", "ble dur d'hiver": "Winter durum wheat", "avoine d'hiver": "Winter oats", "avoine de printemps": "Spring oats", "ble tendre de printemps": "Spring soft wheat", "mais doux": "Sweet maize", "lin non textile": "Linseed", "colza de printemps": "Spring rapeseed", "orge d'hiver": "Winter barley", "orge de printemps": "Spring barley",

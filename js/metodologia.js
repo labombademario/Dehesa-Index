@@ -8,7 +8,7 @@
       sections: [
         { h: 'Principio: solo datos verificables', p: ['Cada cifra del panel viene de una fuente oficial o abierta, con su fecha y un enlace para comprobarla. Si no hay una serie trazable, no se muestra ningún valor: no rellenamos huecos con estimaciones ni con datos de muestra.'] },
         { h: 'Qué significan las etiquetas', id: 'etiquetas', ul: [
-          { b: 'REAL.', t: 'Dato verificado en su fuente oficial, con fecha de observación y de publicación.' },
+          { b: 'DATO OFICIAL.', t: 'Dato verificado en su fuente oficial, con fecha de observación y de publicación.' },
           { b: 'NO COMPARABLE.', t: 'El dato es real, pero su definición no equivale a la del otro mercado. Ejemplos: el precio de EE. UU. de cerdo, vacuno y pollo es en peso vivo, frente a la canal de la UE; los fertilizantes de la UE son índices agregados de nutriente, no un producto concreto. Se muestra con la etiqueta y no entra en comparaciones directas.' },
           { b: 'PENDIENTE.', t: 'Aún no hay una fuente verificable y con licencia adecuada. La tarjeta no muestra cifra hasta que la haya.' }
         ] },
@@ -75,7 +75,7 @@
       sections: [
         { h: 'Principle: verifiable data only', p: ['Every figure on the dashboard comes from an official or open source, with its date and a link to check it. If there is no traceable series, no value is shown: we do not fill gaps with estimates or sample data.'] },
         { h: 'What the labels mean', id: 'etiquetas', ul: [
-          { b: 'REAL.', t: 'Data verified at its official source, with observation and publication dates.' },
+          { b: 'OFFICIAL DATA.', t: 'Data verified at its official source, with observation and publication dates.' },
           { b: 'NOT COMPARABLE.', t: 'The data is real, but its definition is not equivalent to the other market’s. Examples: U.S. hog, cattle and chicken prices are live weight, versus EU carcass weight; EU fertiliser figures are aggregated nutrient indices, not a specific product. It is shown with the label and left out of direct comparisons.' },
           { b: 'PENDING.', t: 'There is no verifiable, properly licensed source yet. The card shows no figure until there is one.' }
         ] },
@@ -142,7 +142,7 @@
       sections: [
         { h: 'Principe : uniquement des données vérifiables', p: ['Chaque chiffre du tableau de bord provient d’une source officielle ou ouverte, avec sa date et un lien pour le vérifier. Sans série traçable, aucune valeur n’est affichée : nous ne comblons pas les trous avec des estimations ni des données fictives.'] },
         { h: 'Signification des étiquettes', id: 'etiquettes', ul: [
-          { b: 'RÉEL.', t: 'Donnée vérifiée à sa source officielle, avec date d’observation et de publication.' },
+          { b: 'DONNÉE OFFICIELLE.', t: 'Donnée vérifiée à sa source officielle, avec date d’observation et de publication.' },
           { b: 'NON COMPARABLE.', t: 'La donnée est réelle, mais sa définition n’équivaut pas à celle de l’autre marché. Exemples : les prix américains du porc, du bovin et du poulet sont en poids vif, contre le poids carcasse dans l’UE ; les engrais de l’UE sont des indices agrégés d’éléments nutritifs. Elle est affichée avec l’étiquette et exclue des comparaisons directes.' },
           { b: 'EN ATTENTE.', t: 'Il n’existe pas encore de source vérifiable et correctement licenciée. La fiche n’affiche aucun chiffre tant qu’il n’y en a pas.' }
         ] },
@@ -209,7 +209,7 @@
       sections: [
         { h: 'Principio: solo dati verificabili', p: ['Ogni cifra del pannello proviene da una fonte ufficiale o aperta, con la sua data e un link per verificarla. Se non c’è una serie tracciabile, non viene mostrato alcun valore: non riempiamo i vuoti con stime né con dati campione.'] },
         { h: 'Cosa significano le etichette', id: 'etichette', ul: [
-          { b: 'REALE.', t: 'Dato verificato alla fonte ufficiale, con data di osservazione e di pubblicazione.' },
+          { b: 'DATO UFFICIALE.', t: 'Dato verificato alla fonte ufficiale, con data di osservazione e di pubblicazione.' },
           { b: 'NON COMPARABILE.', t: 'Il dato è reale, ma la sua definizione non equivale a quella dell’altro mercato. Esempi: i prezzi USA di suini, bovini e pollo sono a peso vivo, contro il peso della carcassa nell’UE; i fertilizzanti UE sono indici aggregati di nutrienti. Viene mostrato con l’etichetta ed escluso dai confronti diretti.' },
           { b: 'IN ATTESA.', t: 'Non esiste ancora una fonte verificabile e con licenza adeguata. La scheda non mostra alcuna cifra finché non c’è.' }
         ] },

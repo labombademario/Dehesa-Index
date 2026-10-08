@@ -106,7 +106,7 @@
     ['milk-production', ['milk production', 'produccion de leche', 'production de lait', 'produzione di latte']], ['hogs-and-pigs', ['hogs and pigs']],
     ['grain-stocks', ['grain stocks', 'existencias de granos', 'existencias de cereales']], ['agricultural-prices', ['agricultural prices', 'precios agricolas']], ['cold-storage', ['cold storage']]
   ];
-  var FILLER = 'vers verso depuis desde hacia principal principales mayor mayores main largest biggest top premier première principale principaux plus grand grande primo prima principali maggiore della delle degli dei qui quien quienes who whom chi quoi an ans locales local locali locaux perfil perfiles profile profil profilo does do did sur sul sulla sullo nel nella nello negli dans au aux pour avec con per at from durante en el sobre hace precio precios price prices prix prezzo prezzi cuanto cuesta cuestan vale valen costar cost costa combien coute quanto how much is are what whats the cual cuales que quel quelle quali che es son hoy actual actuales ultimo ultima ultimos ultimas reciente recientes latest current now today aujourd hui dernier derniere derniers attuale oggi dato datos data dame dime muestrame muestra show me tell give donne dimmi mostrami ahora del de la el los las en of in for por para al y and et e le les du des di il lo da un una un l a to el cuando sale when what\'s del sobre about on a ver vs versus frente contra entre between con with compara comparar compare comparer confronta confronto when next is quand sort rapport quando prossimo prochain proximo proxima'.split(' ');
+  var FILLER = 'ofertas bids bid offres offerte agrarias agrarios agraria agrario agroalimentarias agroalimentarios agrarie agrari vers verso depuis desde hacia principal principales mayor mayores main largest biggest top premier première principale principaux plus grand grande primo prima principali maggiore della delle degli dei qui quien quienes who whom chi quoi an ans locales local locali locaux perfil perfiles profile profil profilo does do did sur sul sulla sullo nel nella nello negli dans au aux pour avec con per at from durante en el sobre hace precio precios price prices prix prezzo prezzi cuanto cuesta cuestan vale valen costar cost costa combien coute quanto how much is are what whats the cual cuales que quel quelle quali che es son hoy actual actuales ultimo ultima ultimos ultimas reciente recientes latest current now today aujourd hui dernier derniere derniers attuale oggi dato datos data dame dime muestrame muestra show me tell give donne dimmi mostrami ahora del de la el los las en of in for por para al y and et e le les du des di il lo da un una un l a to el cuando sale when what\'s del sobre about on a ver vs versus frente contra entre between con with compara comparar compare comparer confronta confronto when next is quand sort rapport quando prossimo prochain proximo proxima'.split(' ');
 
   var TRADE_EXP = toSet('exportaciones exportacion exportar exporta exportan exports export exportations exportation exporte exportent esportazioni esportazione esporta esportano destino destinos destination destinations destinazione destinazioni vende venden vender sell sells selling vend vendent vendre vendono');
   var TRADE_IMP = toSet('importaciones importacion importar importa importan imports import importations importation importe importent importazioni importazione importano origen origenes origin origins origine origini compra compran comprar buy buys buying achete achetent acheter comprano');
@@ -322,12 +322,28 @@
     var t = tx(lang), slug = intent.product.slug, pn = pname(intent.product, lang);
     return obsFor(env, slug, intent.regions).then(function (obs) {
       if (!obs.length) {
-        if (intent.regions.length) return obsFor(env, slug, null).then(function (all) {
-          var where = all.map(function (o) { return REGN[o.region][lang]; }).filter(function (x, i, a) { return a.indexOf(x) === i; }).join(', ');
-          return { kind: 'price', heading: pn, cards: [], notes: [fmt(t.noneReg, { p: pn, r: intent.regions.map(function (r) { return REGN[r][lang]; }).join(', ') }) + (where ? ' ' + fmt(t.noneProd, { p: pn, r: where }) : '')], link: { href: env.href('producto.html?p=' + encodeURIComponent(slug)), label: t.open } };
-        });
-        return { kind: 'price', heading: pn, cards: [], notes: [t.none + ': ' + pn + '.'], link: null };
+          var noneHere = function () {
+          if (intent.regions.length) return obsFor(env, slug, null).then(function (all) {
+            var Sh = root.DehesaShared;
+            var where = all.map(function (o) { return (Sh && Sh.marketLabel && Sh.marketLabel(o, lang)) || REGN[o.region][lang]; }).filter(function (x, i, a) { return a.indexOf(x) === i; }).join(', ');
+            return { kind: 'price', heading: pn, cards: [], notes: [(fmt(t.noneReg, { p: pn, r: intent.regions.map(function (r) { return REGN[r][lang]; }).join(', ') }) + (where ? ' ' + fmt(t.noneProd, { p: pn, r: where }) : '')).replace(/\.\./g, '.')], link: { href: env.href('producto.html?p=' + encodeURIComponent(slug)), label: t.open } };
+          });
+          return { kind: 'price', heading: pn, cards: [], notes: [t.none + ': ' + pn + '.'], link: null };
+        };
+        // Fertilizantes en EE. UU.: no hay serie nacional, pero sí los informes estatales de costes de USDA AMS (precio por estado, nunca una media inventada)
+        var FERT = { urea: 'urea', amoniaco: 'amoniaco', dap: 'dap', map: 'map', potasa: 'potasa', uan: 'uan' };
+        if (FERT[slug] && intent.regions.length === 1 && intent.regions[0] === 'us') return J(env, 'us-fertilizers.json').then(function (d) {
+          var P = d && (d.products || []).filter(function (p) { return p.id === FERT[slug]; })[0];
+          if (!P || !P.states || !P.states.length) return null;
+          var Sh = root.DehesaShared, fd = function (p) { return Sh && Sh.fmtDate ? Sh.fmtDate(p, lang) : p; };
+          var cards = P.states.slice().sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; }).slice(0, 4).map(function (x) {
+            return { sid: 'usda_ams_mars', trade: true, label: pn + ' · ' + x.state + (x.spec ? ' (' + x.spec + ')' : ''), id: x.state, value: x.avg, valueTxt: nf(x.avg, lang, 0) + ' USD/short ton', unit: 'USD/short ton', date: x.date, dateTxt: fd(x.date), src: 'USDA AMS', region: 'us', href: env.href('insumos.html') };
+          });
+          return { kind: 'price', heading: pn + ' · ' + REGN.us[lang], cards: cards, notes: [({ es: 'Precio medio por estado de los informes de costes de producción de USDA AMS. No es una media nacional.', en: 'State average from USDA AMS production cost reports. Not a national average.', fr: 'Prix moyen par État des rapports de coûts de production de l’USDA AMS. Ce n’est pas une moyenne nationale.', it: 'Prezzo medio per stato dai rapporti sui costi di produzione USDA AMS. Non è una media nazionale.' })[lang]], link: { href: env.href('insumos.html'), label: ({ es: 'Ver insumos', en: 'See inputs', fr: 'Voir les intrants', it: 'Vedi gli input' })[lang] } };
+        }).then(function (r) { return r || noneHere(); });
+        return noneHere();
       }
+
       return J(env, 'instrument-identity.json').then(function (d) { env.identityData = d; }).then(function () {
         var cards = obs.map(function (o) { return card(env, o, lang); });
         var done = Promise.resolve();
@@ -429,9 +445,37 @@
       return { kind: 'trade', heading: sname + ' · ' + t.tradeHead, cards: cards, notes: [t.tNote], link: { href: env.href('paises.html?c=' + subj + '&g=partners'), label: fmt(t.tOpen, { c: sname }) } };
     });
   }
+  // «Precio del trigo en Francia»: con producto + país se busca la cotización del propio país en su catálogo (auditoría 8-oct-2026).
+  // Solo precios en moneda (nunca índices 2020=100); si no hay ninguna, se dice claramente y se ofrece el perfil, sin sustituir otro mercado en silencio.
+  var CPRICE = { trigo: /\b(soft |common |milling )?wheat\b/i, maiz: /\b(maize|corn)\b/i, cebada: /\bbarley\b/i, avena: /\boats?\b/i, centeno: /\brye\b/i, colza: /\b(rapeseed|canola)\b/i,
+    soja: /\bsoy(beans?)?\b/i, girasol: /\bsunflower/i, leche: /\bmilk\b[^:]*:?.*\bprice\b|\bmilk price\b/i, vacuno: /\b(cow|cattle|young bull|steer|heifer|beef)\b/i, cerdo: /\b(pig|pork|hog)s?\b/i,
+    cordero: /\blambs?\b/i, pollo: /\b(chicken|broiler)s?\b/i, huevos: /\beggs?\b/i, arroz: /\brice\b/i, urea: /\burea\b/i, oliva: /\bolive oil\b/i };
+  var PGRP = { quotes: 0, prices_lv: 1, milk: 1, prices: 2, prices_fv: 2, prices_paid: 3 };
+  var CTX2 = {
+    es: { found: 'Precios de {p} en {c}', none: 'No hay un precio verificado de {p} en {c} en nuestros datos. El perfil del país tiene producción, comercio y otros indicadores; los precios de otros mercados no equivalen al de {c}.', open: 'Abrir el perfil de {c}', note: 'Último dato publicado de cada serie, en su unidad original.' },
+    en: { found: '{p} prices in {c}', none: 'There is no verified {p} price for {c} in our data. The country profile has production, trade and other indicators; prices from other markets are not equivalent to {c}.', open: 'Open the {c} profile', note: 'Latest published figure of each series, in its original unit.' },
+    fr: { found: 'Prix : {p} en {c}', none: 'Aucun prix vérifié pour {p} en {c} dans nos données. Le profil du pays présente production, commerce et autres indicateurs ; les prix d’autres marchés n’équivalent pas à celui de {c}.', open: 'Ouvrir le profil : {c}', note: 'Dernière donnée publiée de chaque série, dans son unité d’origine.' },
+    it: { found: 'Prezzi: {p} in {c}', none: 'Non c’è un prezzo verificato di {p} per {c} nei nostri dati. Il profilo del paese ha produzione, commercio e altri indicatori; i prezzi di altri mercati non equivalgono a quello di {c}.', open: 'Apri il profilo: {c}', note: 'Ultimo dato pubblicato di ogni serie, nella sua unità originale.' } };
   function rCountry(intent, lang, env) {
     var t = tx(lang), cc = intent.countries[0], row = COUNTRY_WORDS.filter(function (c) { return c[0] === cc; })[0], name = row[1][lang];
-    return Promise.resolve({ kind: 'country', heading: t.countryHead + ' · ' + name, cards: [], notes: [fmt(t.countryText, { c: name })], link: { href: env.href('paises.html?c=' + cc), label: t.countryLink } });
+    var base = { kind: 'country', heading: t.countryHead + ' · ' + name, cards: [], notes: [fmt(t.countryText, { c: name })], link: { href: env.href('paises.html?c=' + cc), label: t.countryLink } };
+    var slug = intent.product && intent.product.slug, re = slug && CPRICE[slug];
+    if (!re) return Promise.resolve(base);
+    var k2 = CTX2[lang] || CTX2.es, pn = pname(intent.product, lang).toLowerCase();
+    return Promise.all([J(env, 'catalog/' + cc + '.json'), J(env, 'license-registry.json')]).then(function (rr) {
+      var cat = rr[0], reg = (rr[1] && rr[1].sources) || {};
+      var S = ((cat && cat.series) || []).filter(function (x) { return PGRP[x.group] != null && x.latest != null && re.test(x.label || '') && (x.group !== 'milk' || /price/i.test(x.label || '')) && !/2020=100|index/i.test((x.unit || '') + ' ' + (x.label || '')) && x.fs !== 'HISTORICAL' && x.fs !== 'DISCONTINUED'; });
+      if (slug === 'trigo') S = S.filter(function (x) { return !/durum/i.test(x.label); });
+      var org = function (x) { return /organic/i.test(x.label) ? 1 : 0; };
+      S.sort(function (a, b) { return (PGRP[a.group] - PGRP[b.group]) || (org(a) - org(b)) || (String(b.latestPeriod) > String(a.latestPeriod) ? 1 : String(b.latestPeriod) < String(a.latestPeriod) ? -1 : 0); });
+      var Sh = root.DehesaShared, fd = function (p) { return Sh && Sh.fmtDate ? Sh.fmtDate(p, lang) : p; };
+      var cards = S.slice(0, 3).map(function (x) {
+        return { sid: x.sourceId, trade: true, label: x.label, id: x.id, value: x.latest, valueTxt: nf(x.latest, lang, Math.abs(x.latest) >= 100 ? 1 : 2) + ' ' + x.unit, unit: x.unit, date: x.latestPeriod, dateTxt: fd(x.latestPeriod), src: (reg[x.sourceId] && reg[x.sourceId].name) || '', cc: cc, region: cc,
+          href: env.href('paises.html?c=' + cc + '&g=' + encodeURIComponent(x.group) + '&s=' + encodeURIComponent(x.id)) };
+      });
+      if (!cards.length) return { kind: 'country', heading: fmt(k2.found, { p: pname(intent.product, lang), c: name }), cards: [], notes: [fmt(k2.none, { p: pn, c: name })], link: { href: env.href('paises.html?c=' + cc), label: fmt(k2.open, { c: name }) } };
+      return { kind: 'country', heading: fmt(k2.found, { p: pname(intent.product, lang), c: name }), cards: cards, notes: [k2.note], link: { href: env.href('paises.html?c=' + cc), label: fmt(k2.open, { c: name }) } };
+    }, function () { return base; });
   }
 
   /* ---------- resolutores nuevos: oferta y demanda (USDA PSD), Alemania (Destatis), mayores variaciones, comparar productos ---------- */

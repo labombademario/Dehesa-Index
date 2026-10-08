@@ -9,12 +9,12 @@
       h1: 'Datos agrícolas listos para integrar en tu operación',
       sub: 'Dehesa Index está construyendo una API de precios agrícolas por producto y región — pensada para quien necesita estos datos dentro de su propio sistema, no solo en una web para consultar a mano.',
       whatTitle: 'QUÉ HAY DETRÁS',
-      whatP1: 'El panel público ya cubre 18 líneas de producto (cereales, ganado, lácteos, fertilizantes, pienso, vino a granel) en EE. UU., Europa, Reino Unido y Canadá, con desglose por país dentro de la UE (Alemania, Francia, España, Italia) y hasta 5 años de histórico diario simulado por producto y región.',
+      whatP1: 'El panel público cubre 40 productos en 11 categorías (cereales, ganado, lácteos, fertilizantes, pienso, energía y más) en cuatro mercados de precios: EE. UU., la UE, Reino Unido y Canadá. Cada precio es una observación oficial con su fuente y su fecha, y el histórico es real (en algunas series desde 1970; la profundidad varía según la fuente). El desglose por país dentro de la UE (Alemania, Francia, Italia) es una estimación y se marca como tal.',
       whatP2: 'La API llevará ese mismo modelo interno de datos — cada precio identificado por producto y región — a un formato pensado para integrarse en hojas de cálculo, ERPs o sistemas de gestión de riesgo, en lugar de tener que copiarlo a mano desde el panel.',
       stats: [
-        { value: '18', label: 'líneas de producto' },
-        { value: '2', label: 'regiones (EE. UU., Europa, Reino Unido y Canadá)' },
-        { value: '5', label: 'años de histórico por producto' }
+        { value: '40', label: 'productos en 11 categorías' },
+        { value: '4', label: 'mercados de precios (EE. UU., UE, Reino Unido y Canadá)' },
+        { value: '1970', label: 'primer año de histórico real (varía por serie)' }
       ],
       audienceTitle: 'PENSADO PARA',
       audiences: [
@@ -46,12 +46,12 @@
       h1: 'Agricultural data ready to plug into your operation',
       sub: "Dehesa Index is building a price API by product and region — built for teams that need this data inside their own systems, not just a dashboard to check by hand.",
       whatTitle: "WHAT'S BEHIND IT",
-      whatP1: 'The public dashboard already covers 18 product lines (grains, livestock, dairy, fertilizer, feed, bulk wine) across the US and Europe, broken down by country within the EU (Germany, France, Spain, Italy), with up to 5 years of simulated daily history per product and region.',
+      whatP1: 'The public dashboard covers 40 products in 11 categories (grains, livestock, dairy, fertilizer, feed, energy and more) across four price markets: the US, the EU, the UK and Canada. Every price is an official observation with its source and date, and the history is real (back to 1970 for some series; depth varies by source). The country breakdown within the EU (Germany, France, Italy) is an estimate and is labelled as such.',
       whatP2: 'The API will bring that same internal data model — every price identified by product and region — into a format meant to plug into spreadsheets, ERPs or risk-management systems, instead of copying it by hand from the dashboard.',
       stats: [
-        { value: '18', label: 'product lines' },
-        { value: '2', label: 'regions (US and Europe)' },
-        { value: '5', label: 'years of history per product' }
+        { value: '40', label: 'products in 11 categories' },
+        { value: '4', label: 'price markets (US, EU, UK and Canada)' },
+        { value: '1970', label: 'earliest year of real history (varies by series)' }
       ],
       audienceTitle: 'BUILT FOR',
       audiences: [
@@ -83,12 +83,12 @@
       h1: 'Des données agricoles prêtes à intégrer dans votre activité',
       sub: "Dehesa Index construit une API de prix agricoles par produit et par région — pensée pour ceux qui ont besoin de ces données dans leurs propres systèmes, pas seulement d'un tableau de bord à consulter à la main.",
       whatTitle: 'CE QUI EST DÉJÀ LÀ',
-      whatP1: "Le tableau de bord public couvre déjà 18 lignes de produits (céréales, élevage, produits laitiers, engrais, aliments pour bétail, vin en vrac) aux États-Unis, en Europe, au Royaume-Uni et au Canada, avec une répartition par pays au sein de l'UE (Allemagne, France, Espagne, Italie) et jusqu'à 5 ans d'historique quotidien simulé par produit et région.",
+      whatP1: "Le tableau de bord public couvre 40 produits dans 11 catégories (céréales, élevage, produits laitiers, engrais, aliments du bétail, énergie, etc.) sur quatre marchés de prix : États-Unis, UE, Royaume-Uni et Canada. Chaque prix est une observation officielle avec sa source et sa date, et l'historique est réel (depuis 1970 pour certaines séries ; la profondeur varie selon la source). La répartition par pays au sein de l'UE (Allemagne, France, Italie) est une estimation et est signalée comme telle.",
       whatP2: "L'API reprendra ce même modèle de données interne — chaque prix identifié par produit et région — dans un format pensé pour s'intégrer dans des tableurs, des ERP ou des systèmes de gestion des risques, plutôt que de devoir le recopier à la main depuis le tableau de bord.",
       stats: [
-        { value: '18', label: 'lignes de produits' },
-        { value: '2', label: 'régions (États-Unis, Europe, Royaume-Uni et Canada)' },
-        { value: '5', label: "ans d'historique par produit" }
+        { value: '40', label: 'produits dans 11 catégories' },
+        { value: '4', label: 'marchés de prix (États-Unis, UE, Royaume-Uni et Canada)' },
+        { value: '1970', label: "première année d'historique réel (selon la série)" }
       ],
       audienceTitle: 'CONÇU POUR',
       audiences: [
@@ -120,12 +120,12 @@
       h1: 'Dati agricoli pronti da integrare nella tua attività',
       sub: "Dehesa Index sta costruendo un'API di prezzi agricoli per prodotto e regione — pensata per chi ha bisogno di questi dati dentro i propri sistemi, non solo di una dashboard da consultare a mano.",
       whatTitle: "COSA C'È DIETRO",
-      whatP1: "La dashboard pubblica copre già 18 linee di prodotto (cereali, bestiame, lattiero-caseario, fertilizzanti, mangimi, vino sfuso) negli Stati Uniti e in Europa, con ripartizione per paese all'interno dell'UE (Germania, Francia, Spagna, Italia) e fino a 5 anni di storico giornaliero simulato per prodotto e regione.",
+      whatP1: "La dashboard pubblica copre 40 prodotti in 11 categorie (cereali, bestiame, lattiero-caseario, fertilizzanti, mangimi, energia e altro) su quattro mercati di prezzo: Stati Uniti, UE, Regno Unito e Canada. Ogni prezzo è un'osservazione ufficiale con fonte e data, e lo storico è reale (dal 1970 per alcune serie; la profondità varia secondo la fonte). La ripartizione per paese nell'UE (Germania, Francia, Italia) è una stima ed è indicata come tale.",
       whatP2: "L'API porterà questo stesso modello di dati interno — ogni prezzo identificato per prodotto e regione — in un formato pensato per integrarsi in fogli di calcolo, ERP o sistemi di gestione del rischio, invece di doverlo copiare a mano dalla dashboard.",
       stats: [
-        { value: '18', label: 'linee di prodotto' },
-        { value: '2', label: 'regioni (Stati Uniti, Europa, Regno Unito e Canada)' },
-        { value: '5', label: 'anni di storico per prodotto' }
+        { value: '40', label: 'prodotti in 11 categorie' },
+        { value: '4', label: 'mercati di prezzo (Stati Uniti, UE, Regno Unito e Canada)' },
+        { value: '1970', label: 'primo anno di storico reale (varia per serie)' }
       ],
       audienceTitle: 'PENSATO PER',
       audiences: [

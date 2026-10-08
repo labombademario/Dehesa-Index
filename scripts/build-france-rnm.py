@@ -8,8 +8,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ws = lambda s: re.sub(r"\s+", " ", s).strip()
 # (mercado, producto, id, grupo, etiqueta, unidad, divisor para pasar a la unidad final)
-SER = [("France : porc charcutier entrée abattoir", "PORC (carcasse) France classe E", "pork-e", "Pig carcass, France, class E, slaughterhouse intake", "€/kg", 1),
-       ("France : porc charcutier entrée abattoir", "PORC (carcasse) France classe S", "pork-s", "Pig carcass, France, class S, slaughterhouse intake", "€/kg", 1),
+# El cerdo clase E ya esta en data/france-stats.json (fr-meat-porc-e, desde 2002): no se duplica.
+SER = [("France : porc charcutier entrée abattoir", "PORC (carcasse) France classe S", "pork-s", "Pig carcass, France, class S, slaughterhouse intake", "€/kg", 1),
        ("Cadran de Plérin : porc charcutier", "PORC (carcasse) 56% taux-de-muscle-des-pièces Bretagne", "pork-plerin", "Pig carcass 56% lean, Cadran de Plérin (Brittany)", "€/100 kg", 1),
        ("Bassin Bretagne : porcelets", "PORCELET 25 kg Bretagne", "piglet-25-bre", "Piglet 25 kg, Brittany, with premium", "€/kg", 1),
        ("MIN de Rungis : ovins", "AGNEAU (carcasse) couvert 16-22 kg France cat. R", "lamb-rungis-r", "Lamb carcass 16-22 kg, France, class R, Rungis wholesale", "€/kg", 1),

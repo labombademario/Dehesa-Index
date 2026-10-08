@@ -177,26 +177,23 @@ img { max-width: 100%; }
   padding: 14px 10px; border-radius: 12px; border: 1px solid var(--welcome-border-strong);
   background: var(--welcome-surface-alt); color: var(--welcome-text); font-size: 14px; font-weight: 700; cursor: pointer;
 }
-.di-tour-overlay { z-index: 390; }
-.di-tour-card {
-  background: var(--welcome-surface); border-radius: 18px; max-width: 440px; width: 100%;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.4); display: flex; flex-direction: column; padding: 28px 32px 24px;
-}
-.di-tour-skip-row { display: flex; justify-content: flex-end; }
-.di-tour-skip { background: none; border: none; cursor: pointer; font-size: 12.5px; font-weight: 600; color: var(--welcome-border-strong); text-decoration: underline; text-underline-offset: 2px; padding: 0; }
-.di-tour-body { text-align: center; padding: 4px 0 10px; }
-.di-tour-icon { font-size: 34px; line-height: 1; margin-bottom: 12px; }
-.di-tour-body h2 { font-size: 19px; font-weight: 600; margin: 0 0 10px; color: var(--welcome-text); }
-.di-tour-body p { font-size: 13.5px; line-height: 1.6; color: var(--welcome-text); opacity: 0.85; margin: 0; }
-.di-tour-dots { display: flex; justify-content: center; gap: 6px; padding: 12px 0 18px; }
-.di-tour-dots span { border-radius: 999px; display: inline-block; background: var(--welcome-border-strong); }
-.di-tour-dots span.active { background: var(--tour-accent); }
-.di-tour-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.di-tour-back { padding: 10px 16px; border-radius: 999px; border: 1px solid var(--welcome-border-strong); background: none; color: var(--welcome-text); font-size: 13px; font-weight: 600; cursor: pointer; }
-.di-tour-next { padding: 10px 20px; border-radius: 999px; border: none; background: #1E3328; color: #FBF9F3; font-size: 13px; font-weight: 700; cursor: pointer; margin-left: auto; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 420px) {
   .di-modal-card { padding: 26px 18px; }
-  .di-tour-card { padding: 22px 18px 18px; }
+
 }
 
 /* ---------- Home data clarity ---------- */
@@ -1958,3 +1955,16 @@ details.di-eu-country-hint>summary{cursor:pointer;min-height:32px;display:inline
 @media (prefers-reduced-motion: reduce) { .di-fold > summary::after { transition: none; } }
 .usm-more > summary { cursor: pointer; font-size: 13.5px; }
 .usm-t td:first-child { white-space: nowrap; }
+
+/* Panel de precios: cabecera del bloque de analisis (va despues de los precios) */
+.pr-analysis-h { font-size: 20px; margin: 32px 0 12px; padding-top: 16px; border-top: 1px solid var(--border, #ddd); }
+.di-product-meta { font-size: 12px; color: var(--text-muted, #5b6b5b); margin-top: 4px; line-height: 1.35; }
+/* Portada movil mas corta (auditoria 8-oct-2026): titular compacto, resumen en dos lineas, tres sugerencias y una sola llamada principal; el precio entra en la primera pantalla */
+@media (max-width: 600px) {
+  .di-hero2 h1#home-h1 { font-size: 26px; line-height: 1.15; margin-bottom: 8px; }
+  .di-hero2 .di-hero-sub { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 14px; margin-bottom: 12px; }
+  .di-hs-try button:nth-child(n+4) { display: none; }
+  .di-hero-ctas #home-cta-secondary { display: none; }
+  .di-hero-ctas { margin-top: 12px; }
+}
+.di-contact-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 14px; }

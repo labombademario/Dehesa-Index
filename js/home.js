@@ -36,7 +36,7 @@
       moversColProducto: 'Producto', moversColPrecio: 'Último', moversCol1D: 'Estado', moversCol1W: 'Fecha',
       moversCta: 'Abrir panel completo →',
       moversLabels: {
-        trigo: { name: 'Trigo', unit: 'tonelada', market: 'Europa · Comisión Europea (Zaragoza)' },
+        trigo: { name: 'Trigo', unit: 'tonelada', market: 'España · Zaragoza · salida de silo (datos de la Comisión Europea)' },
         maiz: { name: 'Maíz', unit: 'bushel', market: 'EE. UU. · USDA NASS' },
         leche: { name: 'Leche', unit: 'cwt', market: 'EE. UU. · USDA NASS' },
         urea: { name: 'Urea', unit: 'ton corta', market: 'EE. UU. · DTN Fertilizer Index' }
@@ -70,7 +70,7 @@
       moversColProducto: 'Commodity', moversColPrecio: 'Latest', moversCol1D: 'Status', moversCol1W: 'Date',
       moversCta: 'Open full dashboard →',
       moversLabels: {
-        trigo: { name: 'Wheat', unit: 'tonne', market: 'Europe · European Commission (Zaragoza)' },
+        trigo: { name: 'Wheat', unit: 'tonne', market: 'Spain · Zaragoza · ex-silo (European Commission data)' },
         maiz: { name: 'Corn', unit: 'bushel', market: 'U.S. · USDA NASS' },
         leche: { name: 'Milk', unit: 'cwt', market: 'U.S. · USDA NASS' },
         urea: { name: 'Urea', unit: 'short ton', market: 'U.S. · DTN Fertilizer Index' }
@@ -104,7 +104,7 @@
       moversColProducto: 'Produit', moversColPrecio: 'Prix', moversCol1D: '1J', moversCol1W: '1S',
       moversCta: 'Voir tous les prix →',
       moversLabels: {
-        trigo: { name: 'Blé', unit: 'tonne', market: 'Europe · Commission européenne (Zaragoza)' },
+        trigo: { name: 'Blé', unit: 'tonne', market: 'Espagne · Saragosse · départ silo (données de la Commission européenne)' },
         maiz: { name: 'Maïs', unit: 'bushel', market: 'États-Unis · USDA NASS' },
         leche: { name: 'Lait', unit: 'cwt', market: 'États-Unis · USDA NASS' },
         urea: { name: 'Urée', unit: 'tonne courte', market: 'États-Unis · DTN Fertilizer Index' }
@@ -138,7 +138,7 @@
       moversColProducto: 'Prodotto', moversColPrecio: 'Prezzo', moversCol1D: '1G', moversCol1W: '1S',
       moversCta: 'Vedi tutti i prezzi →',
       moversLabels: {
-        trigo: { name: 'Grano', unit: 'tonnellata', market: 'Europa · Commissione europea (Zaragoza)' },
+        trigo: { name: 'Grano', unit: 'tonnellata', market: 'Spagna · Saragozza · franco silo (dati della Commissione europea)' },
         maiz: { name: 'Mais', unit: 'bushel', market: 'Stati Uniti · USDA NASS' },
         leche: { name: 'Latte', unit: 'cwt', market: 'Stati Uniti · USDA NASS' },
         urea: { name: 'Urea', unit: 'tonnellata corta', market: 'Stati Uniti · DTN Fertilizer Index' }
@@ -250,13 +250,13 @@
 
   /* ---------- Precios publicados (franja de la portada) ---------- */
   var TAPE = {
-    es: { cols: ['Producto', 'Región', 'Precio', 'Variación', 'Fecha'], title: 'Lo que se paga hoy en cada mercado', note: 'Cada precio va en la unidad y la moneda de su fuente: no se comparan entre regiones.', all: 'Ver todos los precios →', loading: 'Cargando precios…', none: 'No se han podido cargar los precios.', obs: 'observaciones', src: 'fuentes',
+    es: { cols: ['Producto', 'Mercado', 'Precio', 'Variación', 'Fecha del dato'], title: 'Últimos precios publicados en cada mercado', note: 'Cada precio va en la unidad y la moneda de su fuente: no se comparan entre regiones.', all: 'Ver todos los precios →', loading: 'Cargando precios…', none: 'No se han podido cargar los precios.', obs: 'observaciones', src: 'fuentes',
       p: { trigo: 'Trigo', maiz: 'Maíz', leche: 'Leche' }, r: { eu: 'UE', us: 'EE. UU.', ca: 'Canadá' }, u: { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg' } },
-    en: { cols: ['Product', 'Region', 'Price', 'Change', 'Date'], title: 'What each market is paying today', note: 'Each price is in its source’s unit and currency: they are not compared across regions.', all: 'See all prices →', loading: 'Loading prices…', none: 'Prices could not be loaded.', obs: 'observations', src: 'sources',
+    en: { cols: ['Product', 'Market', 'Price', 'Change', 'Data date'], title: 'Latest published prices in each market', note: 'Each price is in its source’s unit and currency: they are not compared across regions.', all: 'See all prices →', loading: 'Loading prices…', none: 'Prices could not be loaded.', obs: 'observations', src: 'sources',
       p: { trigo: 'Wheat', maiz: 'Corn', leche: 'Milk' }, r: { eu: 'EU', us: 'US', ca: 'Canada' }, u: { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg' } },
-    fr: { cols: ['Produit', 'Région', 'Prix', 'Variation', 'Date'], title: 'Ce que paie chaque marché aujourd’hui', note: 'Chaque prix est dans l’unité et la devise de sa source : ils ne sont pas comparés entre régions.', all: 'Voir tous les prix →', loading: 'Chargement des prix…', none: 'Impossible de charger les prix.', obs: 'observations', src: 'sources',
+    fr: { cols: ['Produit', 'Marché', 'Prix', 'Variation', 'Date de la donnée'], title: 'Derniers prix publiés sur chaque marché', note: 'Chaque prix est dans l’unité et la devise de sa source : ils ne sont pas comparés entre régions.', all: 'Voir tous les prix →', loading: 'Chargement des prix…', none: 'Impossible de charger les prix.', obs: 'observations', src: 'sources',
       p: { trigo: 'Blé', maiz: 'Maïs', leche: 'Lait' }, r: { eu: 'UE', us: 'É.-U.', ca: 'Canada' }, u: { tonelada: 't', bushel: 'boisseau', cwt: 'cwt', '100kg': '100 kg' } },
-    it: { cols: ['Prodotto', 'Regione', 'Prezzo', 'Variazione', 'Data'], title: 'Cosa paga oggi ogni mercato', note: 'Ogni prezzo è nell’unità e nella valuta della sua fonte: non vengono confrontati tra regioni.', all: 'Vedi tutti i prezzi →', loading: 'Caricamento prezzi…', none: 'Impossibile caricare i prezzi.', obs: 'osservazioni', src: 'fonti',
+    it: { cols: ['Prodotto', 'Mercato', 'Prezzo', 'Variazione', 'Data del dato'], title: 'Ultimi prezzi pubblicati in ogni mercato', note: 'Ogni prezzo è nell’unità e nella valuta della sua fonte: non vengono confrontati tra regioni.', all: 'Vedi tutti i prezzi →', loading: 'Caricamento prezzi…', none: 'Impossibile caricare i prezzi.', obs: 'osservazioni', src: 'fonti',
       p: { trigo: 'Frumento', maiz: 'Mais', leche: 'Latte' }, r: { eu: 'UE', us: 'USA', ca: 'Canada' }, u: { tonelada: 't', bushel: 'bu', cwt: 'cwt', '100kg': '100 kg' } }
   };
   var TAPE_ROWS = [['trigo', 'eu'], ['trigo', 'us'], ['trigo', 'ca'], ['maiz', 'eu'], ['maiz', 'us'], ['maiz', 'ca'], ['leche', 'eu'], ['leche', 'us']];
@@ -276,7 +276,7 @@
       var first = k[0] !== prev; prev = k[0];
       var ch = typeof o.changePct === 'number' ? o.changePct : null;
       var chTxt = ch === null ? '' : (ch > 0 ? '+' : ch < 0 ? '−' : '') + Math.abs(ch).toFixed(1).replace('.', lang === 'en' ? '.' : ',') + ' %';
-      return '<tr' + (first ? ' class="first"' : '') + '><th scope="row">' + '<span class="' + (first ? 'di-tape-p' : 'di-sr') + '">' + esc(t.p[k[0]] || k[0]) + '</span>' + '</th><td class="rg">' + esc(t.r[k[1]] || k[1]) + (window.DICite && o.sourceId ? window.DICite.html(o.sourceId, { period: o.observationDate }) : '') + '</td>' +
+      return '<tr' + (first ? ' class="first"' : '') + '><th scope="row">' + '<span class="' + (first ? 'di-tape-p' : 'di-sr') + '">' + esc(t.p[k[0]] || k[0]) + '</span>' + '</th><td class="rg">' + esc((window.DehesaShared.marketLabel && window.DehesaShared.marketLabel(o, lang)) || t.r[k[1]] || k[1]) + (window.DICite && o.sourceId ? window.DICite.html(o.sourceId, { period: o.observationDate }) : '') + '</td>' +
         '<td class="v"><strong>' + esc(tapeNum(o.value, lang)) + '</strong> <span class="u">' + esc(o.currency + '/' + (t.u[o.unit] || o.unit)) + '</span></td>' +
         '<td class="c ' + (ch > 0 ? 'up' : ch < 0 ? 'dn' : '') + '">' + esc(chTxt) + '</td><td class="d">' + esc(tapeDate(o.observationDate, lang)) + '</td></tr>';
     }).join('');
@@ -313,15 +313,16 @@
     var movers = HOME_DATA.rows.slice(0, 4).map(function(o) {
       var key = o.product;
       var label = (t.moversLabels && t.moversLabels[key]) || { name: productLabel(key), unit: o.unit || '', market: (o.region || '').toUpperCase() };
+      var mkx = window.DehesaShared.marketLabel && window.DehesaShared.marketLabel(o, lang); if (mkx) label = { name: label.name, unit: label.unit, market: mkx };
       var status = o.status === 'verified' ? (o.comparability === 'not_comparable' ? 'not-comparable' : 'real') : 'pending';
-      var statusLabel = status === 'real' ? (lang === 'es' ? 'REAL' : lang === 'fr' ? 'RÉEL' : lang === 'it' ? 'REALE' : 'REAL') : status === 'not-comparable' ? (lang === 'es' ? 'NO COMPARABLE' : lang === 'fr' ? 'NON COMPARABLE' : lang === 'it' ? 'NON COMPARABILE' : 'NOT COMPARABLE') : (lang === 'es' ? 'PENDIENTE' : lang === 'fr' ? 'EN ATTENTE' : lang === 'it' ? 'IN ATTESA' : 'PENDING');
-      return { name: label.name, market: label.market, source: o.sourceId || '—', sid: o.sourceId || '', pub: o.publicationDate || '', price: status === 'real' ? fmtMoverPrice(o.value) + (o.currency ? ' ' + o.currency : '') + (o.unit ? '/' + o.unit : '') : '—', status: status, statusLabel: statusLabel, date: o.observationDate || '—' };
+      var statusLabel = status === 'real' ? (lang === 'es' ? 'DATO OFICIAL' : lang === 'fr' ? 'DONNÉE OFFICIELLE' : lang === 'it' ? 'DATO UFFICIALE' : 'OFFICIAL DATA') : status === 'not-comparable' ? (lang === 'es' ? 'NO COMPARABLE' : lang === 'fr' ? 'NON COMPARABLE' : lang === 'it' ? 'NON COMPARABILE' : 'NOT COMPARABLE') : (lang === 'es' ? 'PENDIENTE' : lang === 'fr' ? 'EN ATTENTE' : lang === 'it' ? 'IN ATTESA' : 'PENDING');
+      return { name: label.name, market: label.market, source: o.sourceId || '—', sid: o.sourceId || '', pub: o.publicationDate || '', price: status === 'real' ? fmtMoverPrice(o.value) + (o.currency ? ' ' + o.currency : '') + (o.unit ? '/' + o.unit : '') : '—', status: status, statusLabel: statusLabel, date: o.observationDate ? window.DehesaShared.fmtDate(o.observationDate, lang) : '—', dateIso: o.observationDate || '' };
     });
     var headRow = '<div class="di-movers-row head"><span>' + esc(t.moversColProducto) + '</span><span class="num">' + esc(t.moversColPrecio) + '</span><span class="num">' + esc(t.moversCol1D) + '</span><span class="num">' + esc(t.moversCol1W) + '</span></div>';
     var bodyRows = movers.length ? movers.map(function(row, i) {
       var borderStyle = i === movers.length - 1 ? 'border-bottom:none;' : '';
       return '<div class="di-movers-row" style="' + borderStyle + '">' +
-        '<div><div class="di-movers-name">' + esc(row.name) + '</div><div class="di-movers-market">' + esc(row.market) + '</div><div class="di-movers-source">' + ((window.DICite && row.sid && window.DICite.html(row.sid, { period: row.date === '—' ? '' : row.date, pub: row.pub })) || esc(row.source)) + '</div></div>' +
+        '<div><div class="di-movers-name">' + esc(row.name) + '</div><div class="di-movers-market">' + esc(row.market) + '</div><div class="di-movers-source">' + ((window.DICite && row.sid && window.DICite.html(row.sid, { period: row.dateIso, pub: row.pub })) || esc(row.source)) + '</div></div>' +
         '<div class="num">' + esc(row.price) + '</div>' +
         '<div class="num"><span class="di-home-status ' + row.status + '">' + esc(row.statusLabel) + '</span></div>' +
         '<div class="num">' + esc(row.date) + '</div></div>';

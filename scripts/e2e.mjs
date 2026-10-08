@@ -166,7 +166,7 @@ for (const w of [1280, 390]) {
       if (Math.abs(parseFloat(await page.inputValue('#cc-y')) - 104.0911) > 0.01) throw new Error('7 t/ha de trigo no son 104,09 bu/acre');
       if (!(await page.innerText('#cc-results')).includes('90.000')) throw new Error('cambiar de unidad cambia el coste total');
       await page.click('[data-seg=pSrc][data-v=dehesa]'); await page.waitForSelector('#cc-ref .pt-card', { timeout: 8000 });
-      if (!/EN DIRECTO|AL DÍA|RETRASO|RETRASADO|DESACTUALIZADO/.test(await page.innerText('#cc-ref'))) throw new Error('el precio de Dehesa no muestra su frescura');
+      if (!/RECIÉN PUBLICADO|AL DÍA|RETRASO|RETRASADO|DESACTUALIZADO/.test(await page.innerText('#cc-ref'))) throw new Error('el precio de Dehesa no muestra su frescura');
       if (!/Fuente:/.test(await page.innerText('#cc-ref'))) throw new Error('el precio de Dehesa no muestra la fuente');
     });
     await flow('relaciones: filtros, descargo y enlace profundo', w, async (page) => {

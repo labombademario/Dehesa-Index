@@ -1,1 +1,1 @@
-{"schemaVersion":1,"generatedAt":"2026-10-08T04:32:32Z","newData":[{"k":"P/gas_natural/eu","kind":"INPUT","label":"gas_natural (EU)","unit":"USD/mmbtu","period":"2026-09-01","value":25.42,"changePct":20.4169,"group":"product","sourceId":"world_bank"}]}
+{"schemaVersion":1,"generatedAt":"2026-10-08T05:21:23Z","newData":[{"k":"P/gas_natural/eu","kind":"INPUT","label":"gas_natural (EU)","unit":"USD/mmbtu","period":"2026-09-01","value":25.42,"changePct":20.4169,"group":"product","sourceId":"world_bank"}]}

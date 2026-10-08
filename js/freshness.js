@@ -71,7 +71,7 @@
       var u = root.DehesaShared && root.DehesaShared.sitePath ? root.DehesaShared.sitePath('data/freshness-policy.json') : 'data/freshness-policy.json';
       return F._p = fetch(u).then(function (r) { if (!r.ok) throw new Error('freshness-policy ' + r.status); return r.json(); }).then(function (p) { P = p; return F; }).catch(function (e) { F._p = null; throw e; });
     },
-    label: { LIVE: { es: 'EN DIRECTO', en: 'LIVE', fr: 'EN DIRECT', it: 'IN DIRETTA' }, FRESH: { es: 'AL DÍA', en: 'FRESH', fr: 'À JOUR', it: 'AGGIORNATO' },
+    label: { LIVE: { es: 'RECIÉN PUBLICADO', en: 'JUST RELEASED', fr: 'TOUT JUSTE PUBLIÉ', it: 'APPENA PUBBLICATO' }, FRESH: { es: 'AL DÍA', en: 'FRESH', fr: 'À JOUR', it: 'AGGIORNATO' },
       EXPECTED_DELAY: { es: 'RETRASO HABITUAL', en: 'EXPECTED DELAY', fr: 'RETARD HABITUEL', it: 'RITARDO ATTESO' }, DELAYED: { es: 'RETRASADO', en: 'DELAYED', fr: 'EN RETARD', it: 'IN RITARDO' },
       STALE: { es: 'DESACTUALIZADO', en: 'STALE', fr: 'OBSOLÈTE', it: 'OBSOLETO' }, HISTORICAL: { es: 'HISTÓRICA', en: 'HISTORICAL', fr: 'HISTORIQUE', it: 'STORICA' }, DISCONTINUED: { es: 'DISCONTINUADA', en: 'DISCONTINUED', fr: 'ARRÊTÉE', it: 'INTERROTTA' }, PENDING: { es: 'PENDIENTE', en: 'PENDING', fr: 'EN ATTENTE', it: 'IN ATTESA' } }
   };

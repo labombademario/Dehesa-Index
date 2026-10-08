@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T04:32:40Z",
+ "generatedAt": "2026-10-08T05:21:29Z",
  "sourceIds": [
   "eu_agrifood",
   "european_commission",
@@ -17,7 +17,13 @@
    "value": 264.1,
    "currency": "EUR",
    "unit": "tonelada",
-   "changePct": 0.5329
+   "changePct": 0.5329,
+   "market": [
+    "España · Zaragoza · salida de silo",
+    "Spain · Zaragoza · ex-silo",
+    "Espagne · Saragosse · départ silo",
+    "Spagna · Saragozza · franco silo"
+   ]
   },
   {
    "id": "di_trigo_us",
@@ -28,7 +34,13 @@
    "value": 6.23,
    "currency": "USD",
    "unit": "bushel",
-   "changePct": 2.81
+   "changePct": 2.81,
+   "market": [
+    "EE. UU. · media nacional · precio recibido por el productor",
+    "US · national average · price received by farmers",
+    "É.-U. · moyenne nationale · prix reçu par les producteurs",
+    "USA · media nazionale · prezzo ricevuto dai produttori"
+   ]
   },
   {
    "id": "di_cereales_trigo_ca",
@@ -39,7 +51,13 @@
    "value": 298,
    "currency": "CAD",
    "unit": "tonelada",
-   "changePct": 2.9574
+   "changePct": 2.9574,
+   "market": [
+    "Saskatchewan · precio pagado al productor",
+    "Saskatchewan · price paid to farmers",
+    "Saskatchewan · prix payé aux producteurs",
+    "Saskatchewan · prezzo pagato ai produttori"
+   ]
   },
   {
    "id": "di_cereales_maiz_eu",
@@ -50,7 +68,13 @@
    "value": 260,
    "currency": "EUR",
    "unit": "tonelada",
-   "changePct": 0.3861
+   "changePct": 0.3861,
+   "market": [
+    "España · Zaragoza · salida de silo",
+    "Spain · Zaragoza · ex-silo",
+    "Espagne · Saragosse · départ silo",
+    "Spagna · Saragozza · franco silo"
+   ]
   },
   {
    "id": "di_maiz_us",
@@ -61,7 +85,13 @@
    "value": 4.45,
    "currency": "USD",
    "unit": "bushel",
-   "changePct": 4.46
+   "changePct": 4.46,
+   "market": [
+    "EE. UU. · media nacional · precio recibido por el productor",
+    "US · national average · price received by farmers",
+    "É.-U. · moyenne nationale · prix reçu par les producteurs",
+    "USA · media nazionale · prezzo ricevuto dai produttori"
+   ]
   },
   {
    "id": "di_cereales_maiz_ca",
@@ -72,7 +102,13 @@
    "value": 261.78,
    "currency": "CAD",
    "unit": "tonelada",
-   "changePct": -0.8709
+   "changePct": -0.8709,
+   "market": [
+    "Ontario · precio pagado al productor",
+    "Ontario · price paid to farmers",
+    "Ontario · prix payé aux producteurs",
+    "Ontario · prezzo pagato ai produttori"
+   ]
   },
   {
    "id": "di_leche_eu",
@@ -83,7 +119,13 @@
    "value": 45.53,
    "currency": "EUR",
    "unit": "100kg",
-   "changePct": 0
+   "changePct": 0,
+   "market": [
+    "España · leche cruda al productor",
+    "Spain · raw milk paid to farmers",
+    "Espagne · lait cru payé aux producteurs",
+    "Spagna · latte crudo pagato ai produttori"
+   ]
   },
   {
    "id": "di_leche_us",
@@ -94,7 +136,13 @@
    "value": 19.8,
    "currency": "USD",
    "unit": "cwt",
-   "changePct": -2.46
+   "changePct": -2.46,
+   "market": [
+    "EE. UU. · media nacional · precio recibido por el productor",
+    "US · national average · price received by farmers",
+    "É.-U. · moyenne nationale · prix reçu par les producteurs",
+    "USA · media nazionale · prezzo ricevuto dai produttori"
+   ]
   }
  ]
 }

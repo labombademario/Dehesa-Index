@@ -1,87 +1,68 @@
-/* Dehesa Index — página de Contacto */
+/* Dehesa Index — página de Contacto: el correo es la acción principal (no hay formulario hasta que pueda enviarse de verdad) */
 (function () {
   'use strict';
 
   var STRINGS = {
-    es: {
-      title: 'Contacto | Dehesa Index',
-      h1: 'Contacto',
-      sub: '¿Preguntas, datos que quieras aportar o interés en colaborar? Escríbenos.',
-      emailLabel: 'EMAIL',
-      formTitle: 'O ESCRÍBENOS DESDE AQUÍ',
-      nameLabel: 'Nombre',
-      namePlaceholder: 'Tu nombre',
-      emailFieldLabel: 'Email',
-      emailPlaceholder: 'tucorreo@ejemplo.com',
-      messageLabel: 'Mensaje',
-      messagePlaceholder: 'Cuéntanos en qué podemos ayudarte',
-      submitButton: 'Enviar mensaje',
-      formNote: 'Formulario en construcción — de momento, escríbenos directamente a hola@dehesaindex.com.'
+    "es": {
+      "title": "Contacto | Dehesa Index",
+      "h1": "Contacto",
+      "sub": "¿Preguntas, datos que quieras aportar o interés en colaborar? Escríbenos por correo: lo leemos nosotros.",
+      "emailLabel": "CORREO",
+      "write": "Escribir un correo",
+      "copy": "Copiar la dirección",
+      "copied": "Dirección copiada",
+      "subject": "Consulta desde Dehesa Index",
+      "note": "No hay formulario: escribir directamente es más rápido y no guardamos tus datos en ningún sitio."
     },
-    en: {
-      title: 'Contact | Dehesa Index',
-      h1: 'Contact',
-      sub: "Questions, data you'd like to contribute, or interested in collaborating? Get in touch.",
-      emailLabel: 'EMAIL',
-      formTitle: 'OR WRITE TO US HERE',
-      nameLabel: 'Name',
-      namePlaceholder: 'Your name',
-      emailFieldLabel: 'Email',
-      emailPlaceholder: 'youremail@example.com',
-      messageLabel: 'Message',
-      messagePlaceholder: 'Tell us how we can help',
-      submitButton: 'Send message',
-      formNote: 'Form under construction — for now, email us directly at hola@dehesaindex.com.'
+    "en": {
+      "title": "Contact | Dehesa Index",
+      "h1": "Contact",
+      "sub": "Questions, data you would like to contribute or interest in working together? Email us: we read it ourselves.",
+      "emailLabel": "EMAIL",
+      "write": "Write an email",
+      "copy": "Copy the address",
+      "copied": "Address copied",
+      "subject": "Enquiry from Dehesa Index",
+      "note": "There is no form: writing directly is faster and we do not store your details anywhere."
     },
-    fr: {
-      title: 'Contact | Dehesa Index',
-      h1: 'Contact',
-      sub: "Des questions, des données à partager ou l'envie de collaborer ? Écrivez-nous.",
-      emailLabel: 'E-MAIL',
-      formTitle: 'OU ÉCRIVEZ-NOUS ICI',
-      nameLabel: 'Nom',
-      namePlaceholder: 'Votre nom',
-      emailFieldLabel: 'E-mail',
-      emailPlaceholder: 'votreemail@exemple.com',
-      messageLabel: 'Message',
-      messagePlaceholder: 'Dites-nous comment nous pouvons vous aider',
-      submitButton: 'Envoyer le message',
-      formNote: 'Formulaire en construction — en attendant, écrivez-nous directement à hola@dehesaindex.com.'
+    "fr": {
+      "title": "Contact | Dehesa Index",
+      "h1": "Contact",
+      "sub": "Des questions, des données à partager ou envie de collaborer ? Écrivez-nous : nous lisons nous-mêmes.",
+      "emailLabel": "E-MAIL",
+      "write": "Écrire un e-mail",
+      "copy": "Copier l'adresse",
+      "copied": "Adresse copiée",
+      "subject": "Demande depuis Dehesa Index",
+      "note": "Il n'y a pas de formulaire : écrire directement est plus rapide et nous ne stockons vos données nulle part."
     },
-    it: {
-      title: 'Contatti | Dehesa Index',
-      h1: 'Contatti',
-      sub: 'Domande, dati che vuoi contribuire o interesse a collaborare? Scrivici.',
-      emailLabel: 'EMAIL',
-      formTitle: 'OPPURE SCRIVICI QUI',
-      nameLabel: 'Nome',
-      namePlaceholder: 'Il tuo nome',
-      emailFieldLabel: 'Email',
-      emailPlaceholder: 'tuaemail@esempio.com',
-      messageLabel: 'Messaggio',
-      messagePlaceholder: 'Raccontaci come possiamo aiutarti',
-      submitButton: 'Invia messaggio',
-      formNote: 'Modulo in costruzione — nel frattempo, scrivici direttamente a hola@dehesaindex.com.'
+    "it": {
+      "title": "Contatti | Dehesa Index",
+      "h1": "Contatti",
+      "sub": "Domande, dati da condividere o interesse a collaborare? Scrivici un'e-mail: la leggiamo noi.",
+      "emailLabel": "E-MAIL",
+      "write": "Scrivi un'e-mail",
+      "copy": "Copia l'indirizzo",
+      "copied": "Indirizzo copiato",
+      "subject": "Richiesta da Dehesa Index",
+      "note": "Non c’è un modulo: scrivere direttamente è più rapido e non conserviamo i tuoi dati da nessuna parte."
     }
   };
 
   function render() {
     var lang = window.DehesaShared.getLang();
     var t = STRINGS[lang] || STRINGS.es;
-
     document.title = t.title;
     document.getElementById('ct-h1').textContent = t.h1;
     document.getElementById('ct-sub').textContent = t.sub;
     document.getElementById('ct-email-label').textContent = t.emailLabel;
-    document.getElementById('ct-form-title').textContent = t.formTitle;
-    document.getElementById('ct-name-label').textContent = t.nameLabel;
-    document.getElementById('ct-name-input').setAttribute('placeholder', t.namePlaceholder);
-    document.getElementById('ct-email-field-label').textContent = t.emailFieldLabel;
-    document.getElementById('ct-email-input').setAttribute('placeholder', t.emailPlaceholder);
-    document.getElementById('ct-message-label').textContent = t.messageLabel;
-    document.getElementById('ct-message-input').setAttribute('placeholder', t.messagePlaceholder);
-    document.getElementById('ct-submit').textContent = t.submitButton;
-    document.getElementById('ct-form-note').textContent = t.formNote;
+    var w = document.getElementById('ct-write'); w.textContent = t.write; w.setAttribute('href', 'mailto:hola@dehesaindex.com?subject=' + encodeURIComponent(t.subject));
+    var c = document.getElementById('ct-copy'); c.textContent = t.copy;
+    c.onclick = function () {
+      var done = function () { document.getElementById('ct-copied').textContent = t.copied; };
+      try { navigator.clipboard.writeText('hola@dehesaindex.com').then(done, function () {}); } catch (e) { /* sin portapapeles: el enlace de correo sigue funcionando */ }
+    };
+    document.getElementById('ct-note').textContent = t.note;
   }
 
   window.DehesaShared.init('contacto');

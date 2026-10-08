@@ -56,7 +56,7 @@ def main(pdf):
                 vals = [v[col] for _m, v in blk if _m <= 7 and v[col] is not None]
                 if len(vals) == 7 and st[ix] is not None: assert abs(sum(vals) / 7 / st[ix] - 1) < 0.015, (col, sum(vals) / 7, st[ix])
     S = []
-    S.append(mk("fr-dairy-collection", "Cow milk collection, all milks, France", "1000 l", two_years(coll, 0, 1, year)))
+    # la recogida total ya esta en el catalogo con mas historia (Eurostat fr-eus-milk-m-d1110d, desde 1968): aqui solo grasa, proteina, bio y precios
     S.append(mk("fr-dairy-fat", "Cow milk fat content, all milks, France", "g/l", two_years(coll, 3, 4, year)))
     S.append(mk("fr-dairy-protein", "Cow milk protein content, all milks, France", "g/l", two_years(coll, 6, 7, year)))
     S.append(mk("fr-dairy-collection-organic", "Organic cow milk collection, France", "1000 l", two_years(org, 0, 1, year)))
