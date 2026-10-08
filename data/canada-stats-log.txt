@@ -1,109 +1,109 @@
-00:10:45 descargada 32100359 5073 KB
-00:10:46 tabla 32100359 393079 filas
-00:10:46 descartada ca-crop-barley-price: 77 puntos, ultimo 1984
-00:10:46 descartada ca-crop-corn-for-grain-price: 77 puntos, ultimo 1984
-00:10:46 descartada ca-crop-flaxseed-price: 77 puntos, ultimo 1984
-00:10:46 descartada ca-crop-oats-price: 77 puntos, ultimo 1984
-00:10:46 descartada ca-crop-peas-dry-price: 77 puntos, ultimo 1984
-00:10:46 descartada ca-crop-rye-all-price: 77 puntos, ultimo 1984
-00:10:46 descartada ca-crop-sugar-beets-price: 77 puntos, ultimo 1984
-00:10:46 descartada ca-crop-wheat-all-price: 77 puntos, ultimo 1984
-00:10:46 descartada ca-crop-soybeans-price: 44 puntos, ultimo 1984
-00:10:46 descartada ca-crop-canola-rapeseed-price: 42 puntos, ultimo 1984
-00:10:46 descartada ca-crop-sunflower-seed-price: 42 puntos, ultimo 1984
-00:10:46 descartada ca-crop-mustard-seed-price: 34 puntos, ultimo 1984
-00:10:46 descartada ca-crop-lentils-price: 4 puntos, ultimo 1984
-00:10:46 cultivos 77
-00:10:47 descargada 32100358 53 KB
-00:10:47 tabla 32100358 6955 filas
-00:10:47 descartada ca-potato-price: 105 puntos, ultimo 2012
-00:10:47 patata 4
-00:10:48 descargada 32100364 494 KB
-00:10:48 tabla 32100364 46771 filas
-00:10:49 fruta 12
-00:10:49 descargada 32100482 2 KB
-00:10:49 tabla 32100482 120 filas
-00:10:50 descargada 32100483 5 KB
-00:10:50 tabla 32100483 468 filas
-00:10:50 mantequilla y queso 4
-00:10:51 descargada 32100007 129 KB
-00:10:51 tabla 32100007 20654 filas
-00:10:51 existencias 11
-00:10:52 descargada 32100351 319 KB
-00:10:52 tabla 32100351 42039 filas
-00:10:52 entregas 8
-00:10:53 descargada 32100352 70 KB
-00:10:53 tabla 32100352 12636 filas
-00:10:53 molturacion 6
-00:10:54 descargada 32100130 548 KB
-00:10:54 tabla 32100130 51554 filas
-00:10:55 descargada 32100160 67 KB
-00:10:55 tabla 32100160 5434 filas
-00:10:56 descargada 32100129 70 KB
-00:10:56 tabla 32100129 11083 filas
-00:10:56 inventarios 10
-00:10:57 descargada 32100139 101 KB
-00:10:57 tabla 32100139 8162 filas
-00:10:57 descargada 32100200 67 KB
-00:10:57 tabla 32100200 5434 filas
-00:10:58 descargada 32100126 16 KB
-00:10:58 tabla 32100126 1939 filas
-00:10:58 oferta ganado 11
-00:10:59 descargada 32100113 193 KB
-00:10:59 tabla 32100113 26715 filas
-00:10:59 descartada ca-milk-milk-production-total: 396 puntos, ultimo 1978-12
-00:11:00 descargada 32100480 5 KB
-00:11:00 tabla 32100480 468 filas
-00:11:00 lacteos 7
-00:11:01 descargada 32100121 772 KB
-00:11:01 tabla 32100121 121116 filas
-00:11:03 descargada 32100122 704 KB
-00:11:03 tabla 32100122 109484 filas
-00:11:04 descargada 32100117 188 KB
-00:11:04 tabla 32100117 21174 filas
-00:11:04 huevos y aves 9
-00:11:05 descargada 32100045 446 KB
-00:11:05 tabla 32100045 31979 filas
-00:11:07 descargada 32100046 1698 KB
-00:11:07 tabla 32100046 129293 filas
-00:11:08 descargada 32100052 74 KB
-00:11:08 tabla 32100052 8661 filas
-00:11:08 descartada ca-nfi-operating-expenses-and-depreciation-charges: 45 puntos, ultimo 1970
-00:11:08 descartada ca-nfi-supplementary-payments: 32 puntos, ultimo 1970
-00:11:09 descargada 32100098 991 KB
-00:11:10 tabla 32100098 191052 filas
-00:11:11 descargada 18100258 456 KB
-00:11:11 tabla 18100258 39057 filas
-00:11:11 finanzas 50
-00:11:12 descargada 32100038 91 KB
-00:11:12 tabla 32100038 8631 filas
-00:11:12 fertilizantes 9
-00:11:13 descargada 32100049 415 KB
-00:11:13 tabla 32100049 33360 filas
-00:11:13 costes 40
-00:11:13 descargada 32100050 81 KB
-00:11:13 tabla 32100050 9466 filas
-00:11:14 descargada 32100051 41 KB
-00:11:14 tabla 32100051 4760 filas
-00:11:14 balance 10
-00:11:15 descargada 18100001 297 KB
-00:11:15 tabla 18100001 46192 filas
-00:11:15 combustible 9
-00:11:18 descargada 12100163 7737 KB
-00:11:21 tabla 12100163 562368 filas
-00:11:21 comercio 48
-00:11:22 descargada 12100011 1138 KB
-00:11:23 tabla 12100011 92916 filas
-00:11:31 descargada 12100173 26187 KB
-00:11:40 tabla 12100173 13986 filas filtradas
-00:11:40 socios 50
-00:11:41 descargada 32100013 267 KB
-00:11:41 tabla 32100013 21782 filas
-00:11:41 balance de granos 50
-00:11:42 descargada 32100125 14 KB
-00:11:42 tabla 32100125 1812 filas
-00:11:42 vacuno y sacrificio 12
-00:11:57 descargada 12100175 49028 KB
-00:12:10 tabla 12100175 35600 filas filtradas
-00:12:10 comercio por provincia 60
-00:12:10 series 480
+15:52:46 descargada 32100359 5073 KB
+15:52:47 tabla 32100359 393079 filas
+15:52:47 descartada ca-crop-barley-price: 77 puntos, ultimo 1984
+15:52:47 descartada ca-crop-corn-for-grain-price: 77 puntos, ultimo 1984
+15:52:47 descartada ca-crop-flaxseed-price: 77 puntos, ultimo 1984
+15:52:47 descartada ca-crop-oats-price: 77 puntos, ultimo 1984
+15:52:47 descartada ca-crop-peas-dry-price: 77 puntos, ultimo 1984
+15:52:47 descartada ca-crop-rye-all-price: 77 puntos, ultimo 1984
+15:52:47 descartada ca-crop-sugar-beets-price: 77 puntos, ultimo 1984
+15:52:47 descartada ca-crop-wheat-all-price: 77 puntos, ultimo 1984
+15:52:47 descartada ca-crop-soybeans-price: 44 puntos, ultimo 1984
+15:52:47 descartada ca-crop-canola-rapeseed-price: 42 puntos, ultimo 1984
+15:52:47 descartada ca-crop-sunflower-seed-price: 42 puntos, ultimo 1984
+15:52:47 descartada ca-crop-mustard-seed-price: 34 puntos, ultimo 1984
+15:52:47 descartada ca-crop-lentils-price: 4 puntos, ultimo 1984
+15:52:47 cultivos 77
+15:52:48 descargada 32100358 53 KB
+15:52:48 tabla 32100358 6955 filas
+15:52:48 descartada ca-potato-price: 105 puntos, ultimo 2012
+15:52:48 patata 4
+15:52:49 descargada 32100364 494 KB
+15:52:49 tabla 32100364 46771 filas
+15:52:49 fruta 12
+15:52:50 descargada 32100482 2 KB
+15:52:50 tabla 32100482 120 filas
+15:52:51 descargada 32100483 5 KB
+15:52:51 tabla 32100483 468 filas
+15:52:51 mantequilla y queso 4
+15:52:51 descargada 32100007 129 KB
+15:52:52 tabla 32100007 20654 filas
+15:52:52 existencias 11
+15:52:53 descargada 32100351 319 KB
+15:52:53 tabla 32100351 42039 filas
+15:52:53 entregas 8
+15:52:54 descargada 32100352 70 KB
+15:52:54 tabla 32100352 12636 filas
+15:52:54 molturacion 6
+15:52:55 descargada 32100130 548 KB
+15:52:55 tabla 32100130 51554 filas
+15:52:57 descargada 32100160 67 KB
+15:52:57 tabla 32100160 5434 filas
+15:52:58 descargada 32100129 70 KB
+15:52:58 tabla 32100129 11083 filas
+15:52:58 inventarios 10
+15:52:59 descargada 32100139 101 KB
+15:52:59 tabla 32100139 8162 filas
+15:53:00 descargada 32100200 67 KB
+15:53:00 tabla 32100200 5434 filas
+15:53:00 descargada 32100126 16 KB
+15:53:00 tabla 32100126 1939 filas
+15:53:00 oferta ganado 11
+15:53:01 descargada 32100113 193 KB
+15:53:01 tabla 32100113 26715 filas
+15:53:01 descartada ca-milk-milk-production-total: 396 puntos, ultimo 1978-12
+15:53:02 descargada 32100480 5 KB
+15:53:02 tabla 32100480 468 filas
+15:53:02 lacteos 7
+15:53:04 descargada 32100121 772 KB
+15:53:04 tabla 32100121 121116 filas
+15:53:06 descargada 32100122 704 KB
+15:53:06 tabla 32100122 109484 filas
+15:53:07 descargada 32100117 188 KB
+15:53:07 tabla 32100117 21174 filas
+15:53:07 huevos y aves 9
+15:53:08 descargada 32100045 446 KB
+15:53:08 tabla 32100045 31979 filas
+15:53:10 descargada 32100046 1698 KB
+15:53:10 tabla 32100046 129293 filas
+15:53:12 descargada 32100052 74 KB
+15:53:12 tabla 32100052 8661 filas
+15:53:12 descartada ca-nfi-operating-expenses-and-depreciation-charges: 45 puntos, ultimo 1970
+15:53:12 descartada ca-nfi-supplementary-payments: 32 puntos, ultimo 1970
+15:53:13 descargada 32100098 991 KB
+15:53:14 tabla 32100098 191052 filas
+15:53:15 descargada 18100258 461 KB
+15:53:16 tabla 18100258 39459 filas
+15:53:16 finanzas 50
+15:53:17 descargada 32100038 91 KB
+15:53:17 tabla 32100038 8631 filas
+15:53:17 fertilizantes 9
+15:53:18 descargada 32100049 415 KB
+15:53:18 tabla 32100049 33360 filas
+15:53:18 costes 40
+15:53:22 descargada 32100050 81 KB
+15:53:22 tabla 32100050 9466 filas
+15:53:23 descargada 32100051 41 KB
+15:53:23 tabla 32100051 4760 filas
+15:53:23 balance 10
+15:53:24 descargada 18100001 297 KB
+15:53:24 tabla 18100001 46192 filas
+15:53:24 combustible 9
+15:53:35 descargada 12100163 7737 KB
+15:53:37 tabla 12100163 562368 filas
+15:53:38 comercio 48
+15:53:39 descargada 12100011 1138 KB
+15:53:40 tabla 12100011 92916 filas
+15:53:52 descargada 12100173 26187 KB
+15:54:01 tabla 12100173 13986 filas filtradas
+15:54:01 socios 50
+15:54:01 descargada 32100013 267 KB
+15:54:02 tabla 32100013 21782 filas
+15:54:02 balance de granos 50
+15:54:02 descargada 32100125 14 KB
+15:54:02 tabla 32100125 1812 filas
+15:54:02 vacuno y sacrificio 12
+15:54:24 descargada 12100175 49028 KB
+15:54:38 tabla 12100175 35600 filas filtradas
+15:54:38 comercio por provincia 60
+15:54:38 series 480
