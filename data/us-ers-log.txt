@@ -28,6 +28,12 @@ descartada us-ers-dairy-wholesale-dairy-product-cheddar-cheese-40-pound-blocks-a
 descartada us-ers-dairy-wholesale-dairy-product-cheddar-cheese-500-pound-barrels-a: 2 puntos, ultimo 2025
 descartada us-ers-dairy-wholesale-dairy-product-dry-whey-a: 2 puntos, ultimo 2025
 descartada us-ers-dairy-wholesale-dairy-product-nonfat-dry-milk-a: 2 puntos, ultimo 2025
+descartada por antigua us-ers-wheat-px-no-1-soft-white-ordinary-portland-or-average-cash
+descartada por antigua us-ers-wheat-px-no-1-hard-amber-durum-minneapolis-mn-average-cash
+descartada por antigua us-ers-wheat-px-no-1-dark-northern-spring-13-protein-chicago-il-average-cash
+descartada por antigua us-ers-wheat-px-no-1-dark-northern-spring-14-protein-chicago-il-average-cash
+descartada por antigua us-ers-wheat-px-no-1-dark-northern-spring-14-protein-rotterdam-average-cash
 TTB vino 336 filas
-us-ers-stats.json series 96
+id duplicado descartado us-ers-wheat-px-no-1-hard-red-winter-ordinary-protein-kansas-city-mo-average-cash
+us-ers-stats.json series 298
 us-ttb-stats.json series 7
