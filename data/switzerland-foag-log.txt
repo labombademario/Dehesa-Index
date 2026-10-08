@@ -38,7 +38,6 @@ OK ch-foag-milk-retail-yogurt 264 pts 2004-09..2026-08 FOAG: etapa Ex-retail; ba
 OK ch-foag-milk-retail-emmental 264 pts 2004-09..2026-08 FOAG: etapa Ex-retail; base de IVA: incl. VAT.
 OK ch-foag-milk-retail-gruyere 264 pts 2004-09..2026-08 FOAG: etapa Ex-retail; base de IVA: incl. VAT.
 OK ch-foag-milk-retail-mozzarella 320 pts 2000-01..2026-08 FOAG: etapa Ex-retail; base de IVA: incl. VAT.
-OK ch-foag-milk-retail-raclette 320 pts 2000-01..2026-08 FOAG: etapa Ex-retail; base de IVA: incl. VAT.
 OK ch-foag-egg-retail-all 80 pts 2020-01..2026-08 FOAG: etapa Ex-retail; base de IVA: incl. VAT.
 OK ch-foag-egg-retail-barn 79 pts 2020-01..2026-08 FOAG: etapa Ex-retail; base de IVA: incl. VAT.
 OK ch-foag-egg-retail-freerange 80 pts 2020-01..2026-08 FOAG: etapa Ex-retail; base de IVA: incl. VAT.
@@ -56,3 +55,60 @@ OK ch-foag-meat-supply-poultry 9 pts 2017..2025 FOAG: etapa Production, not furt
 OK ch-foag-meat-supply-sheep 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
 OK ch-foag-meat-supply-veal 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
 OK ch-foag-meat-supply-all 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
+OK ch-foag-compound-laying-hens-rearing 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-laying-hens-1 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-laying-hens-2 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-broilers 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-pigs-pre 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-pigs-finish 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-sows-pregnant 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-sows-lactating 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-piglets 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-beef-cattle 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-dairy-energy 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-dairy-perf1 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-dairy-perf2 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-compound-dairy-protein 30 pts 2024-01..2026-06 FOAG: etapa Ex-processing/industry; base de IVA: NA.
+OK ch-foag-cereal-mill-wheat2-conv 98 pts 2017-07..2026-08 FOAG: etapa Franco mill; base de IVA: excl. VAT.
+OK ch-foag-cereal-mill-wheat1-ip 101 pts 2016-10..2026-08 FOAG: etapa Franco mill; base de IVA: excl. VAT.
+OK ch-foag-cereal-mill-wheat2-ip 7 pts 2018-03..2025-09 FOAG: etapa Franco mill; base de IVA: excl. VAT.
+OK ch-foag-cereal-mill-rye-ip 41 pts 2017-08..2026-06 FOAG: etapa Franco mill; base de IVA: excl. VAT.
+OK ch-foag-cereal-mill-rye-organic 15 pts 2017-07..2026-07 FOAG: etapa Franco mill; base de IVA: excl. VAT.
+OK ch-foag-cereal-mill-spelt-ip 99 pts 2017-08..2026-07 FOAG: etapa Franco mill; base de IVA: excl. VAT.
+OK ch-foag-cereal-mill-spelt-organic 59 pts 2016-10..2026-08 FOAG: etapa Franco mill; base de IVA: excl. VAT.
+OK ch-foag-cereal-mill-wheat-europe 67 pts 2017-10..2026-06 FOAG: etapa Franco mill; base de IVA: excl. VAT.
+OK ch-foag-cereal-mill-wheat-organic-europe 94 pts 2016-08..2026-06 FOAG: etapa Franco mill; base de IVA: excl. VAT.
+OK ch-foag-cereal-prod-top-wheat 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-wheat-1 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-biscuit-wheat 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-rye 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-spelt 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-food-oats 9 pts 2016..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-food-barley 9 pts 2016..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-durum 5 pts 2020..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-buckwheat 9 pts 2016..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-quinoa 6 pts 2019..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-emmer-einkorn 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-mixed-baking 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-cereal-prod-wheat-organic 5 pts 2020..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-feed-prod-wheat 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-feed-prod-barley 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-feed-prod-maize 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-feed-prod-triticale 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-feed-prod-mixed 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-protein-prod-peas 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-protein-prod-fava 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-protein-prod-lupins 11 pts 2014..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-protein-prod-lentils 9 pts 2016..2024 FOAG: etapa Ex-collection point (production stage); base de IVA: NA.
+OK ch-foag-egg-prod-total 25 pts 2001..2025 FOAG: etapa Ex-farm (production stage); base de IVA: NA.
+OK ch-foag-egg-prod-table 10 pts 2016..2025 FOAG: etapa Ex-farm (production stage); base de IVA: NA.
+OK ch-foag-egg-prod-organic 19 pts 2007..2025 FOAG: etapa Ex-farm (production stage); base de IVA: NA.
+OK ch-foag-egg-prod-consumption 24 pts 2002..2025 FOAG: etapa Production, not further defined; base de IVA: NA.
+OK ch-foag-milk-prod-year-total 26 pts 2000..2025 FOAG: etapa Ex-farm (production stage) / Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
+OK ch-foag-milk-prod-year-organic 16 pts 2010..2025 FOAG: etapa Ex-farm (production stage); base de IVA: NA. Convertido de kg a toneladas.
+OK ch-foag-potato-import-processing 108 pts 2017-01..2026-08 FOAG: etapa Import; base de IVA: incl. VAT, incl. customs duties.
+OK ch-foag-potato-import-table 114 pts 2017-01..2026-08 FOAG: etapa Import; base de IVA: incl. VAT, incl. customs duties.
+OK ch-foag-potato-import-frozen 116 pts 2017-01..2026-08 FOAG: etapa Import; base de IVA: incl. VAT, incl. customs duties.
+OK ch-foag-meat-supply-rabbit 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
+OK ch-foag-meat-supply-horse 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
+OK ch-foag-meat-supply-goat 9 pts 2017..2025 FOAG: etapa Production, not further defined; base de IVA: NA. Convertido de kg a toneladas.
