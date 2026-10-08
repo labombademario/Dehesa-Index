@@ -2903,6 +2903,12 @@
     "franceagrimer"
    ],
    "notes": "Calidad tecnologica del trigo blando por region (12 regiones, 2013-2025) y del trigo duro por cuenca (4 cuencas), encuesta de calidad a la entrada de silos de FranceAgriMer; scripts/build-france-quality-regions.py. No incluye micotoxinas (esas estan a nivel nacional en france-extras-stats.json). Corcega sin dato."
+  },
+  "data/france-campaign-stats.json": {
+   "byCountry": {
+    "FR": "franceagrimer"
+   },
+   "notes": "Precios pagados a productores (trimestrales, media acumulada de campana), superficies declaradas PAC (ASP), molineria, piensos y stocks en deposito, de ficheros VISIONet de FranceAgriMer; scripts/build-france-campaign.py. Datos provisionales; los meses sin publicar (0 en origen) se descartan. FranceAgriMer exige mencionar la fuente. Decision del propietario 7-oct-2026: todo FranceAgriMer verde."
   }
  },
  "derived": [

@@ -36,7 +36,7 @@ def wine(paths):
     for i, (k, lab) in enumerate(WINE):
         pts = [(p, v[i]) for p, v in sorted(data.items()) if isinstance(v[i], (int, float)) and not isinstance(v[i], bool)]
         assert all(5 < v < 600 for _p, v in pts), "precio de vino fuera de rango en " + k
-        if len(pts) > 12: series.append(mk("fr-fam-wine-" + k, "quotes", "%s: bulk price (FranceAgriMer)" % lab, "€/hl", "monthly", pts, "FranceAgriMer – cotations des vins (historique depuis 2009)"))
+        if len(pts) > 12: series.append(mk("fr-fam-wine-" + k, "quotes", "%s: bulk price" % lab, "€/hl", "monthly", pts, "FranceAgriMer – cotations des vins (historique depuis 2009)"))
     return series
 
 def organic(f):
@@ -51,7 +51,7 @@ def organic(f):
             if isinstance(lab, str) and re.match(r"^\d{4}/\d{2}$", lab.strip()) and isinstance(v, (int, float)): pts.append((lab.strip()[:4], float(v)))
         if pts and c in names:
             assert all(50 < v < 900 for _p, v in pts)
-            series.append(mk("fr-fam-organic-" + names[c][0], "organic", "%s, organic: price paid to producers, campaign starting in the period year (FranceAgriMer)" % names[c][1], "€/t", "annual", pts, "FranceAgriMer – enquête prix payés aux producteurs (bio)"))
+            series.append(mk("fr-fam-organic-" + names[c][0], "organic", "%s, organic: producer price (campaign starting that year)" % names[c][1], "€/t", "annual", pts, "FranceAgriMer – enquête prix payés aux producteurs (bio)"))
     return series
 
 QUAL = [("Blé tendre - DON", "fr-fam-q-soft-wheat-don", "Soft wheat, deoxynivalenol (DON)"), ("Blé tendre - ergot", "fr-fam-q-soft-wheat-ergot", "Soft wheat, ergot sclerotia"),
@@ -73,7 +73,7 @@ def quality(f, sheets):
             for r in range(hdr + 1, ws.max_row + 1):
                 y, v = ws.cell(r, 1).value, ws.cell(r, col).value
                 if isinstance(y, (int, float)) and isinstance(v, (int, float)) and 0 <= v <= 1.0001: pts.append((str(int(y)), round(v * 100, 2)))
-            if len(pts) >= 3: out.append(mk(sid + ("-human" if kind.startswith("human") else "-feed"), "crops", "%s: share of collected volume below the %s (FranceAgriMer survey)" % (lab, kind), "%", "annual", pts, SRCQ))
+            if len(pts) >= 3: out.append(mk(sid + ("-human" if kind.startswith("human") else "-feed"), "crops", "%s: share of volume below the %s" % (lab, kind), "%", "annual", pts, SRCQ))
     return out
 
 def main(args):
