@@ -2950,7 +2950,8 @@
    "byCountry": {
     "DE": "eurostat",
     "ES": "eurostat",
-    "NL": "eurostat"
+    "NL": "eurostat",
+    "DK": "eurostat"
    }
   }
  },
