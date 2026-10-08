@@ -3,6 +3,7 @@
 el campo license_id de cada conjunto en la API CKAN del portal es CC-BY-4.0, leido el 6 oct 2026) -> data/argentina-stats.json (countries.AR) y data/argentina-log.txt.
 Todos los conjuntos se descubren en tiempo de ejecucion con la API CKAN (package_show) y se descargan como CSV. Conjuntos usados:
   trigo, maiz, soja, cebada, avena, centeno, arroz (...-siembra-cosecha-produccion-rendimiento): series anuales oficiales de superficie, produccion y rendimiento
+  lino, poroto, mijo, yerba mate, te (series anuales), faena-pecuaria (SSPM, mensual) e indicadores-de-evolucion-del-sector-agropecuario (algodon, alpiste, cartamo, cebadas)
   estimaciones-agricolas: suma de las estimaciones departamentales de colza, girasol, sorgo y mani (la serie no se publica ya agregada)
   precios-fob-oficiales (USD/t, diarios -> media mensual), indice-novillo-sio-carnes-insc, indicadores-economicos-para-ganaderia-bovina, mercado-liniers-sa-resumen-precios...
   indicadores-mensuales-sector-bovino, faena-aviar, produccion-de-carne-aviar, produccion-nacional-lactea-por-mes-y-por-anio,   exportaciones-fob-por-rubro (INDEC, Intercambio Comercial Argentino, millones de USD)
@@ -175,8 +176,49 @@ def trade():
                'INDEC ICA exportaciones por rubro')
         log('comercio ok')
     except Exception as e: log('ERROR comercio', repr(e)[:200])
+# ---------------- ampliacion: cultivos menores, faena por especie y campanas (8 oct) ----------------
+MINOR = (('lino-siembra-cosecha-produccion-rendimiento', 'flax', 'Flax (linseed)', 'lino-serie'), ('poroto-siembra-cosecha-produccion-rendimiento', 'bean', 'Dry beans', 'poroto-'), ('mijo-siembra-cosecha-produccion-rendimiento', 'millet', 'Millet', 'mijo-serie'),
+         ('yerba-mate-siembra-cosecha-produccion-rendimiento', 'mate', 'Yerba mate', 'yerba-mate-'), ('te-siembra-cosecha-produccion-rendimiento', 'tea', 'Tea', 'te-1970'))
+def minor_crops():
+    for name, key, en, pick in MINOR:
+        try:
+            pkg = package(name)
+            head, rows = table(csv_url(pkg, lambda n, u: pick in u.split('/')[-1] and u.endswith('-anual.csv')))
+            ip, ih, isw, iy = col(head, r'^produccion_'), col(head, r'^superficie_cosechada'), col(head, r'^superficie_sembrada'), col(head, r'^rendimiento')
+            def pts(i): return [(r[0][:4], num(r[i])) for r in rows if len(r) > i and r[0][:4].isdigit()]
+            sg = 'SAGyP serie historica ' + key
+            mk('ar-sagyp-%s-production' % key, 'crops', '%s: production, Argentina (SAGyP)' % en, 't', 'annual', pts(ip), sg)
+            mk('ar-sagyp-%s-area-harvested' % key, 'crops', '%s: harvested area, Argentina (SAGyP)' % en, 'ha', 'annual', pts(ih), sg)
+            mk('ar-sagyp-%s-area-sown' % key, 'crops', '%s: sown area, Argentina (SAGyP)' % en, 'ha', 'annual', pts(isw), sg)
+            mk('ar-sagyp-%s-yield' % key, 'crops', '%s: yield, Argentina (SAGyP)' % en, 'kg/ha', 'annual', pts(iy), sg)
+            log(key, 'ok')
+        except Exception as e: log('ERROR', key, repr(e)[:200])
+SLAUGHTER = (('vacunos_cabezas', 'cattle-head', 'Cattle: slaughter, head', 'head'), ('vacunos_toneladas', 'cattle-t', 'Cattle: slaughter, carcass weight', 't'), ('ovinos_cabezas', 'sheep-head', 'Sheep: slaughter, head', 'head'),
+             ('porcinos_cabezas', 'pigs-head', 'Pigs: slaughter, head', 'head'), ('porcinos_toneladas', 'pigs-t', 'Pigs: slaughter, carcass weight', 't'), ('aves_cabezas', 'poultry-head', 'Poultry: slaughter, head', 'thousand head'), ('aves_toneladas', 'poultry-t', 'Poultry: slaughter, carcass weight', 't'))
+def slaughter():
+    try:
+        pkg = package('faena-pecuaria'); head, rows = table(csv_url(pkg, lambda n, u: 'valores-mensuales' in u))
+        for rx, key, en, unit in SLAUGHTER:
+            i = col(head, '^' + rx + '$')
+            mk('ar-sspm-slaughter-%s' % key, 'livestock', '%s, Argentina (SSPM, Faena pecuaria)' % en, unit, 'monthly', [(r[0][:7], num(r[i])) for r in rows if len(r) > i and r[0][:4].isdigit()], 'SSPM faena pecuaria mensual',
+               'Serie mensual de la Subsecretaria de Programacion Macroeconomica; las aves en cabezas segun la unidad publicada por la fuente.')
+        log('faena ok')
+    except Exception as e: log('ERROR faena', repr(e)[:200])
+CAMP = (('algodon', 'cotton', 'Cotton'), ('alpiste', 'canary-seed', 'Canary seed'), ('cartamo', 'safflower', 'Safflower'), ('cebada_cervecera', 'barley-malting', 'Malting barley'), ('cebada_forrajera', 'barley-feed', 'Feed barley'))
+def campaigns():
+    try:
+        pkg = package('indicadores-de-evolucion-del-sector-agropecuario')
+        ha_head, ha = table(csv_url(pkg, lambda n, u: '34.1' in u)); t_head, tt = table(csv_url(pkg, lambda n, u: '34.2' in u))
+        for rx, key, en in CAMP:
+            nt = 'Valores por campana de la SSPM (indice_tiempo = ano de inicio de la campana segun la fuente).'
+            try: i = col(ha_head, '^' + rx + r's?_hectareas$'); mk('ar-sspm-%s-area' % key, 'crops', '%s: area, Argentina by crop year (SSPM)' % en, 'ha', 'annual', [(r[0][:4], num(r[i])) for r in ha if len(r) > i and r[0][:4].isdigit()], 'SSPM evolucion del sector agropecuario', nt)
+            except KeyError: log('sin superficie', key)
+            try: i = col(t_head, '^' + rx + r's?_tonelad'); mk('ar-sspm-%s-production' % key, 'crops', '%s: production, Argentina by crop year (SSPM)' % en, 't', 'annual', [(r[0][:4], num(r[i])) for r in tt if len(r) > i and r[0][:4].isdigit()], 'SSPM evolucion del sector agropecuario', nt)
+            except KeyError: log('sin produccion', key)
+        log('campanas ok')
+    except Exception as e: log('ERROR campanas', repr(e)[:200])
 def main():
-    for fn in (crops, fob, livestock, trade):
+    for fn in (crops, fob, livestock, trade, minor_crops, slaughter, campaigns):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:200])
     log('series', len(OUT))
