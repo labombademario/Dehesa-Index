@@ -118,3 +118,15 @@ indices de precios de insumos 14 series
 fertilizantes 2 series
 empleo agrario 3 series
 NL series 412
+cultivos 110 series
+censos 74 series
+carne 46 series
+sacrificio mensual 46 series
+leche 20 series
+indices de precios 34 series
+precios absolutos 19 series
+cuentas agrarias 55 series
+indices de precios de insumos 12 series
+fertilizantes 2 series
+empleo agrario 3 series
+DK series 421
