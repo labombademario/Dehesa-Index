@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T03:27:44Z",
+ "generatedAt": "2026-10-08T06:34:08Z",
  "summary": {
-  "files": 32,
+  "files": 35,
   "errors": 0,
   "warnings": 8
  },
@@ -82,7 +82,55 @@
     "points": 1588,
     "lines": 0
    },
-   "generatedAt": "2026-10-08T02:23:16Z",
+   "generatedAt": "2026-10-08T03:50:10Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "france-campaign-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 60,
+    "points": 1802,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-08T04:57:39Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "france-rnm-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 11,
+    "points": 1004,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-08T04:57:48Z",
+   "info": [],
+   "nWarnings": 0,
+   "nErrors": 0
+  },
+  {
+   "file": "france-dairy-stats.json",
+   "schema": "country-stats",
+   "status": "ok",
+   "errors": [],
+   "warnings": [],
+   "stats": {
+    "series": 10,
+    "points": 191,
+    "lines": 0
+   },
+   "generatedAt": "2026-10-08T04:57:49Z",
    "info": [],
    "nWarnings": 0,
    "nErrors": 0
