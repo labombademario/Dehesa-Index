@@ -217,8 +217,41 @@ def campaigns():
             except KeyError: log('sin produccion', key)
         log('campanas ok')
     except Exception as e: log('ERROR campanas', repr(e)[:200])
+# ───────── Precios medios minoristas del INDEC (IPC-GBA y regiones): unica fuente de precios viva (los conjuntos de precios del ministerio estan parados desde 2017-2019) ─────────
+# Son precios al consumidor (promedio de relevamiento del INDEC), no precios al productor ni mayoristas: el rotulo lo dice.
+RET_REG = {'gba': 'Greater Buenos Aires', 'pampeana': 'Pampeana region', 'nea': 'Northeast (NEA)', 'noa': 'Northwest (NOA)', 'cuyo': 'Cuyo', 'patagonia': 'Patagonia'}
+RET_REG_ITEMS = {  # columna del CSV de precios regionales -> (nombre, unidad indicada en el propio nombre de la columna)
+    'pan_frances_kg': ('French bread', 'ARS/kg'), 'harina_de_trigo_comun_000_kg': ('Wheat flour 000', 'ARS/kg'), 'arroz_blanco_simple_kg': ('White rice', 'ARS/kg'),
+    'fideos_secos_tipo_guisero_500_gr': ('Dry pasta (500 g pack)', 'ARS/500 g'), 'carne_picada_comun_kg': ('Ground beef', 'ARS/kg'), 'pollo_entero_kg': ('Whole chicken', 'ARS/kg'),
+    'aceite_de_girasol_1_litro_medio': ('Sunflower oil', 'ARS/litre'), 'leche_fresca_entera_sachet_litro': ('Whole milk (sachet)', 'ARS/litre'), 'huevos_de_gallina_docena': ('Hen eggs', 'ARS/dozen'),
+    'papa_kg': ('Potato', 'ARS/kg'), 'azucar_kg': ('Sugar', 'ARS/kg')}
+RET_GBA_ONLY = {  # item del CSV de precios del GBA que no esta en el regional; el INDEC no indica la unidad en el nombre de la columna
+    'asado': 'Beef, asado cut', 'paleta': 'Beef, paleta cut', 'cuadril': 'Beef, cuadril cut', 'nalga': 'Beef, nalga cut', 'leche_polvo_entera': 'Whole milk powder', 'queso_cremoso': 'Cremoso cheese',
+    'queso_pate_grass': 'Pate-grass cheese', 'queso_sardo': 'Sardo cheese', 'manteca': 'Butter', 'yogur_firme': 'Firm yoghurt', 'manzana_deliciosa': 'Apple (Red Delicious)', 'limon': 'Lemon', 'naranja': 'Orange',
+    'banana': 'Banana', 'batata': 'Sweet potato', 'cebolla': 'Onion', 'lechuga': 'Lettuce', 'tomate_redondo': 'Tomato (round)', 'zapallo': 'Pumpkin (zapallo)', 'arvejas_secas_remojadas': 'Soaked dry peas',
+    'yerba_mate': 'Yerba mate', 'vino_comun': 'Table wine', 'aceite_mezcla': 'Blended oil'}
+def ipc_prices():
+    n = 0
+    pk = package('indice-de-precios-al-consumidor-nacional-ipc-base-diciembre-2016')
+    head, rows = table(csv_url(pk, lambda nm, u: 'canasta-ipc-regiones' in u))
+    for j, h in enumerate(head):
+        if j == 0: continue
+        reg = next((r for r in RET_REG if h.startswith(r + '_')), None)
+        item = RET_REG_ITEMS.get(h[len(reg) + 1:]) if reg else None
+        if not item: continue
+        pts = [(r[0][:7], num(r[j])) for r in rows if len(r) > j]
+        mk('ar-indec-retail-%s-%s' % (reg, re.sub(r'[^a-z0-9]+', '-', item[0].lower()).strip('-')), 'prices', '%s: retail price, %s (INDEC average price survey)' % (item[0], RET_REG[reg]), item[1], 'monthly', pts, 'INDEC precios medios minoristas'); n += 1
+    pk = package('indice-de-precios-al-consumidor-gba-ipc-gba-base-diciembre-2016')
+    head, rows = table(csv_url(pk, lambda nm, u: 'conjunto-alimentos-bebidas' in u and 'mensual' in u))
+    for j, h in enumerate(head):
+        key = re.sub(r'^ipc_2016_', '', h)
+        if key not in RET_GBA_ONLY: continue
+        pts = [(r[0][:7], num(r[j])) for r in rows if len(r) > j]
+        mk('ar-indec-retail-gba-%s' % key.replace('_', '-'), 'prices', '%s: retail price, Greater Buenos Aires (INDEC average price survey)' % RET_GBA_ONLY[key], 'ARS (INDEC reference unit)', 'monthly', pts, 'INDEC precios medios minoristas'); n += 1
+    log('precios minoristas INDEC', n)
+
 def main():
-    for fn in (crops, fob, livestock, trade, minor_crops, slaughter, campaigns):
+    for fn in (crops, fob, livestock, trade, minor_crops, slaughter, campaigns, ipc_prices):
         try: fn()
         except Exception as e: log('ERROR', fn.__name__, repr(e)[:200])
     log('series', len(OUT))

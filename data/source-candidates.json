@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T21:45:03Z",
+ "generatedAt": "2026-10-08T22:40:32Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -1556,16 +1556,19 @@
    "country": "AR",
    "scope": "integrated",
    "institution": "Argentina - Portal de datos abiertos (datos.gob.ar) y Secretaria de Agricultura, Ganaderia y Pesca",
-   "dataset": "Ya integrada (89 series en el catalogo unificado)",
+   "dataset": "Ya integrada (177 series en el catalogo unificado)",
    "products": [
     "barley",
+    "butter",
     "cattle",
+    "cheese",
     "eggs",
     "fruit",
     "maize",
     "milk",
     "oats",
     "pigs",
+    "potato",
     "poultry",
     "rapeseed",
     "rice",
@@ -1573,7 +1576,8 @@
     "sheep",
     "soy",
     "sugar",
-    "wheat"
+    "wheat",
+    "wine"
    ],
    "productsConfirmed": true,
    "metrics": [

@@ -1,19 +1,24 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T21:42:00Z",
+ "generatedAt": "2026-10-08T22:38:00Z",
  "repo": "labombademario/Dehesa-Index",
  "summary": {
-  "ok": 95,
+  "ok": 96,
   "late": 2,
   "error": 7,
   "not_run": 2,
-  "unknown": 1
+  "unknown": 0
  },
  "global": "error",
  "deploy": {
-  "status": "unknown",
+  "status": "ok",
   "site": "https://dehesaindex.com",
-  "build": null,
+  "build": {
+   "sha": "b33231d0",
+   "conclusion": "success",
+   "url": "https://dash.cloudflare.com/fcf03818f175b00a72f7a4392a8a2dd0/workers/services/view/dehesa-index/production/builds/4d3009a5-caa0-48dd-82ad-7cb2fbfa5dad",
+   "completedAt": "2026-10-08T21:51:30Z"
+  },
   "lagHours": null,
   "prodGeneratedAt": null,
   "repoGeneratedAt": "2026-10-08T21:30:41.710768+00:00"
@@ -1588,16 +1593,27 @@
    "nextRun": "2026-10-09T07:30:00Z",
    "files": [
     {
-     "path": "data/france-insee-stats.json"
+     "path": "data/france-insee-stats.json",
+     "lastChange": "2026-10-08T21:50:31Z"
     },
     {
      "path": "data/revisions.json",
      "lastChange": "2026-10-08T15:54:55Z"
     }
    ],
-   "last": null,
-   "recent": null,
-   "status": "unknown",
+   "last": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "startedAt": "2026-10-08T21:49:45Z",
+    "durationSec": 68,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37849468489"
+   },
+   "recent": {
+    "runs": 1,
+    "success": 1,
+    "failed": 0
+   },
+   "status": "ok",
    "expectedEveryHours": 168.0
   },
   {
@@ -2208,7 +2224,7 @@
    "files": [
     {
      "path": "data/pipeline-status.json",
-     "lastChange": "2026-10-08T21:29:16Z"
+     "lastChange": "2026-10-08T21:49:15Z"
     },
     {
      "path": "data/data-quality.json",
@@ -2216,18 +2232,18 @@
     },
     {
      "path": "data/series-registry.json",
-     "lastChange": "2026-10-08T20:08:42Z"
+     "lastChange": "2026-10-08T21:42:51Z"
     },
     {
      "path": "data/watch"
     },
     {
      "path": "data/daily-brief.json",
-     "lastChange": "2026-10-08T21:29:44Z"
+     "lastChange": "2026-10-08T21:49:15Z"
     },
     {
      "path": "data/product-compare.json",
-     "lastChange": "2026-10-08T21:29:44Z"
+     "lastChange": "2026-10-08T21:49:15Z"
     },
     {
      "path": "data/catalog"
@@ -2240,41 +2256,41 @@
     },
     {
      "path": "data/freshness.json",
-     "lastChange": "2026-10-08T21:29:44Z"
+     "lastChange": "2026-10-08T21:49:15Z"
     },
     {
      "path": "data/products"
     },
     {
      "path": "data/relationships.json",
-     "lastChange": "2026-10-08T21:29:44Z"
+     "lastChange": "2026-10-08T21:49:15Z"
     },
     {
      "path": "data/observatory.json",
-     "lastChange": "2026-10-08T21:29:44Z"
+     "lastChange": "2026-10-08T21:49:15Z"
     },
     {
      "path": "data/source-candidates.json",
-     "lastChange": "2026-10-08T21:29:44Z"
+     "lastChange": "2026-10-08T21:49:15Z"
     },
     {
      "path": "data/coverage-gaps.json",
-     "lastChange": "2026-10-08T21:29:44Z"
+     "lastChange": "2026-10-08T21:49:15Z"
     },
     {
      "path": "data/premium-tracker.json",
-     "lastChange": "2026-10-08T21:29:44Z"
+     "lastChange": "2026-10-08T21:49:15Z"
     },
     {
      "path": "data/ers-cost-reference.json",
-     "lastChange": "2026-10-08T21:29:44Z"
+     "lastChange": "2026-10-08T21:49:15Z"
     },
     {
      "path": "data/sowing"
     },
     {
      "path": "data/home-tape.json",
-     "lastChange": "2026-10-08T21:29:44Z"
+     "lastChange": "2026-10-08T21:49:15Z"
     },
     {
      "path": "data/home-explore.json",
@@ -3308,31 +3324,31 @@
    "crons": [
     "10 22 * * 1-5"
    ],
-   "nextRun": "2026-10-08T22:10:00Z",
+   "nextRun": "2026-10-09T22:10:00Z",
    "files": [
     {
      "path": "data/us-markets/cot.json",
-     "lastChange": "2026-10-07T22:23:57Z"
+     "lastChange": "2026-10-08T22:27:19Z"
     },
     {
      "path": "data/us-markets/transport.json",
-     "lastChange": "2026-10-07T22:23:57Z"
+     "lastChange": "2026-10-08T22:27:19Z"
     },
     {
      "path": "data/us-markets/fuel.json",
-     "lastChange": "2026-10-07T22:23:57Z"
+     "lastChange": "2026-10-08T22:27:19Z"
     },
     {
      "path": "data/us-markets/ethanol.json",
-     "lastChange": "2026-10-07T22:23:57Z"
+     "lastChange": "2026-10-08T22:27:19Z"
     },
     {
      "path": "data/us-markets/inspections.json",
-     "lastChange": "2026-10-07T22:23:57Z"
+     "lastChange": "2026-10-08T22:27:19Z"
     },
     {
      "path": "data/us-markets/lmr.json",
-     "lastChange": "2026-10-07T22:23:57Z"
+     "lastChange": "2026-10-08T22:27:19Z"
     },
     {
      "path": "data/us-markets/log.txt"
@@ -3345,13 +3361,13 @@
    "last": {
     "conclusion": "success",
     "event": "schedule",
-    "startedAt": "2026-10-07T22:22:43Z",
-    "durationSec": 93,
-    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37695788714"
+    "startedAt": "2026-10-08T22:25:45Z",
+    "durationSec": 116,
+    "url": "https://github.com/labombademario/Dehesa-Index/actions/runs/37853406205"
    },
    "recent": {
-    "runs": 5,
-    "success": 5,
+    "runs": 6,
+    "success": 6,
     "failed": 0
    },
    "status": "ok",

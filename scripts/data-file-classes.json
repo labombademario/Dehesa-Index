@@ -78,6 +78,10 @@
    "class": "BUILD_ONLY",
    "note": "Series de Canada: alimentan el catalogo. region.js ya lee data/catalog/CA.json (6-oct) y ninguna pagina descarga este fichero."
   },
+  "data/argentina-stats.json": {
+   "class": "BUILD_ONLY",
+   "note": "Series de Argentina (SAGyP, INDEC, datos.gob.ar): alimentan el catalogo. Ninguna pagina descarga este fichero; el navegador usa data/catalog/AR.json."
+  },
   "data/us-ers-stats.json": {
    "class": "BUILD_ONLY",
    "note": "Series de EE. UU. del USDA ERS (margenes de carne, lacteos, trigo, azucar, oleaginosas, arroz): alimentan el catalogo. Ninguna pagina descarga este fichero; el navegador usa data/catalog/US.json."
