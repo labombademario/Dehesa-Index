@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-10-08T04:09:43Z",
+ "generatedAt": "2026-10-08T04:32:38Z",
  "policy": {
   "doc": "Cola de descubrimiento de fuentes. NO concede licencias ni activa ingestas: el estado se calcula desde data/license-registry.json con scripts/source_gate.py.",
   "states": {
@@ -2790,10 +2790,12 @@
    "country": "FR",
    "scope": "integrated",
    "institution": "FranceAgriMer (VISIONet)",
-   "dataset": "Ya integrada (188 series en el catalogo unificado)",
+   "dataset": "Ya integrada (228 series en el catalogo unificado)",
    "products": [
     "barley",
     "cattle",
+    "cheese",
+    "eggs",
     "maize",
     "milk",
     "oats",

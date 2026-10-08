@@ -2909,6 +2909,18 @@
     "FR": "franceagrimer"
    },
    "notes": "Precios pagados a productores (trimestrales, media acumulada de campana), superficies declaradas PAC (ASP), molineria, piensos y stocks en deposito, de ficheros VISIONet de FranceAgriMer; scripts/build-france-campaign.py. Datos provisionales; los meses sin publicar (0 en origen) se descartan. FranceAgriMer exige mencionar la fuente. Decision del propietario 7-oct-2026: todo FranceAgriMer verde."
+  },
+  "data/france-rnm-stats.json": {
+   "byCountry": {
+    "FR": "franceagrimer"
+   },
+   "notes": "Cotizaciones semanales RNM (Reseau des Nouvelles des Marches, FranceAgriMer): cerdo (entrada de matadero y cadran de Plerin), lechon, cordero, vacuno, ternera y huevos en Rungis, conejo; scripts/build-france-rnm.py a partir de los CSV anuales COT-MUL-prd_RNM. Ventana corta (desde enero 2025). Las cotizaciones diarias de Rungis se resumen en la ultima de cada semana ISO. Decision del propietario 7-oct-2026: todo FranceAgriMer verde."
+  },
+  "data/france-dairy-stats.json": {
+   "byCountry": {
+    "FR": "franceagrimer"
+   },
+   "notes": "Leche de vaca mensual de Francia (recogida, grasa, proteina, precio al ganadero estandar y real) y precio del Comte (RNM), del Tableau de bord hebdomadaire du lait de FranceAgriMer (PDF); scripts/build-france-dairy.py. Los quesos de ZMB e ISMEA de la misma pagina son de terceros y no se usan. Decision del propietario 7-oct-2026: todo FranceAgriMer verde."
   }
  },
  "derived": [

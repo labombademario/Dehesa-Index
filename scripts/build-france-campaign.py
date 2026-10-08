@@ -33,12 +33,12 @@ def farmgate(f):
         if not h or not en(h): continue
         pts = [(p, float(ws.cell(r, col).value)) for p, r in rows if isinstance(ws.cell(r, col).value, (int, float))]
         pts.sort()
-        if len(pts) < 20: continue   # los cultivos menores (11 trimestres) no compensan el peso del indice
+        if len(pts) < 8: continue
         assert all(40 < v < 1500 for _p, v in pts), h
         s, lab = en(h)
         out.append(mk("fr-fam-farmgate-" + s, "prices", "%s: farm-gate price, campaign average" % lab, "€/t", "quarterly", pts, "FranceAgriMer – prix payés aux producteurs (trimestriels, cumul de campagne)"))
     return out
-PAC_EN = {"total cereales": "All cereals", "ble tendre d'hiver": "Winter soft wheat", "ble dur d'hiver": "Winter durum wheat", "orge d'hiver": "Winter barley", "orge de printemps": "Spring barley",
+PAC_EN = {"total cereales": "All cereals", "ble tendre d'hiver": "Winter soft wheat", "ble dur d'hiver": "Winter durum wheat", "avoine d'hiver": "Winter oats", "avoine de printemps": "Spring oats", "ble tendre de printemps": "Spring soft wheat", "mais doux": "Sweet maize", "lin non textile": "Linseed", "colza de printemps": "Spring rapeseed", "orge d'hiver": "Winter barley", "orge de printemps": "Spring barley",
           "mais grain et ensilage": "Grain and silage maize", "triticale": "Triticale", "seigle": "Rye", "sorgho": "Sorghum", "total oleagineux": "All oilseeds",
           "colza d'hiver": "Winter rapeseed", "tournesol": "Sunflower", "soja": "Soybeans", "total legumineuses et fourrageres": "All pulses and forage legumes",
           "pois": "Peas", "feverole": "Faba beans", "luzerne": "Alfalfa", "lentilles": "Lentils", "ble tendre": "Soft wheat", "ble dur": "Durum wheat", "orge": "Barley", "mais grain": "Grain maize", "avoine": "Oats", "triticale d'hiver": "Winter triticale",
@@ -114,7 +114,7 @@ def depot(f):
             camp = ws.cell(7, c).value; v = ws.cell(tot, c).value
             if cur and norm(cur) in MON and isinstance(camp, str) and re.match(r"^\d{4}/\d{2}$", camp) and isinstance(v, (int, float)): pts.append((camp_month(camp, cur), float(v)))
         pts = clean(pts); s, lab = en(sh)
-        if len(pts) < 20 or s in ("flax", "soy", "sorghum", "rye", "faba"): continue
+        if len(pts) < 20: continue
         out.append(mk("fr-fam-depot-" + s, "stocks", "%s: depot stocks held for farmers" % lab, "t", "monthly", pts, "FranceAgriMer – Etat 2 stocks de dépôt"))
     return out
 def main(args):

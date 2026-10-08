@@ -2,7 +2,7 @@
 import json, subprocess
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-STATS = ['country-stats', 'spain-stats', 'france-stats', 'france-crops-stats', 'france-extras-stats', 'france-campaign-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'uk-stats', 'portugal-stats', 'portugal-eurostat-stats', 'italy-eurostat-stats', 'eurostat-depth-stats', 'uk-trade-stats', 'chile-stats', 'argentina-stats', 'poland-eurostat-stats', 'abares-stats', 'switzerland-foag-stats', 'switzerland-meteo-stats', 'poland-stats', 'eu-gapfill-stats',
+STATS = ['country-stats', 'spain-stats', 'france-stats', 'france-crops-stats', 'france-extras-stats', 'france-campaign-stats', 'france-rnm-stats', 'france-dairy-stats', 'germany-stats', 'belgium-stats', 'austria-stats', 'uk-stats', 'portugal-stats', 'portugal-eurostat-stats', 'italy-eurostat-stats', 'eurostat-depth-stats', 'uk-trade-stats', 'chile-stats', 'argentina-stats', 'poland-eurostat-stats', 'abares-stats', 'switzerland-foag-stats', 'switzerland-meteo-stats', 'poland-stats', 'eu-gapfill-stats',
          'canada-stats', 'us-stats', 'eu-trade-stats', 'australia-trade-stats', 'interest-rates-stats']
 def git_show(rev, path):
     try:
