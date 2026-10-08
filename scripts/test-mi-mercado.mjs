@@ -15,6 +15,7 @@ const es = J('data/spain-crops/crops-cereales.json');
 const hogs = J('data/mb-markets/hogs.json'), hk = Object.keys(hogs.weeks).sort(), hl = hogs.weeks[hk[hk.length - 1]];
 const nrm = s => s.replace(/[., \s\u00a0\u202f]/g, '');
 const f = (v, d) => v.toFixed(d);
+const fr = (v, d) => new Intl.NumberFormat('en', { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: false }).format(v);   // como las cifras de la pagina (Intl): 4.895 -> 4,90; toFixed da 4.89 por el binario
 const browser = await pw.chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] }).catch(() => pw.chromium.launch());
 let fail = 0; const ok = (n, c) => { if (!c) { fail++; console.log('FALLA', n); } };
 
@@ -73,7 +74,7 @@ for (const lang of ['es', 'en', 'fr', 'it']) for (const w of [1280, 390]) {
   // maíz: ofertas al contado
   await page.selectOption('[data-mm="p"]', 'corn'); await ready('price'); t = await sec('price');
   const tc = await page.evaluate(() => document.querySelector('[data-mm-body="price"]').textContent);   // textContent: las filas a partir de la 9 van en un <details> plegado y innerText no las incluye
-  ok(tag + ': maíz: ofertas = JSON y se rotula región/terminal', cs.every(s => nrm(tc).includes(nrm(f(s.avg, 2)))) && /(region|región|région|regione)/i.test(t) && /terminal/i.test(t));
+  ok(tag + ': maíz: ofertas = JSON y se rotula región/terminal', cs.every(s => nrm(tc).includes(nrm(fr(s.avg, 2)))) && /(region|región|région|regione)/i.test(t) && /terminal/i.test(t));
   ok(tag + ': maíz: basis publicado', cs.some(s => s.bLo != null && nrm(t).includes(String(Math.abs(s.bLo)))));
   // estado sin dato: se dice y no se inventa
   await page.selectOption('[data-mm="r"]', 'AL'); await page.selectOption('[data-mm="p"]', 'wheat'); await ready('price'); t = await sec('price');

@@ -1876,7 +1876,7 @@ details.di-eu-country-hint>summary{cursor:pointer;min-height:32px;display:inline
   #pr-location-bar .di-location-label{display:none}
   #pr-location-bar .di-location-btn{padding:6px 10px;font-size:13px;min-height:40px;flex:1 1 40%}
   #pr-location-bar .di-eu-country-select{min-height:40px;flex:1 1 100%}
-  #pr-location-bar .di-fx-label{flex-basis:100%;font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #pr-location-bar .di-fx-label{flex-basis:100%;font-size:11.5px;white-space:normal;line-height:1.35}
   #pr-favorites.is-empty{display:none}
   .pr-flow>#pr-tabs{position:sticky;top:var(--di-hdr-h,0px);z-index:20;background:var(--bg);margin:8px -14px 12px;padding:8px 14px;box-shadow:0 1px 0 var(--border)}
   #pr-search-wrap{margin:10px 0}
